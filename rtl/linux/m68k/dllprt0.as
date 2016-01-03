@@ -21,6 +21,7 @@
 _startlib:
         .globl  FPC_SHARED_LIB_START
         .type   FPC_SHARED_LIB_START,@function
+<<<<<<< HEAD
 # This is a normal C function with args (argc,argv,envp)
 FPC_SHARED_LIB_START:
         link.w   %a6,#0
@@ -30,6 +31,17 @@ FPC_SHARED_LIB_START:
         move.l   %d0,operatingsystem_parameter_argv
         move.l   16(%fp),%d0
         move.l   %d0,operatingsystem_parameter_envp
+=======
+FPC_SHARED_LIB_START:
+|
+|       The args and envs are not tested yet
+|
+        move.l   (%sp)+, %d0
+        lea      4(%sp,%d0*4),%a0
+        move.l   %a0, U_SYSLINUX_ENVP
+        move.l   %sp,U_SYSLINUX_ARGV
+        move.l   %d0,U_SYSLINUX_ARGC
+>>>>>>> graemeg/cpstrnew
         jsr      PASCALMAIN
         unlk     %a6
         rts
@@ -37,7 +49,14 @@ FPC_SHARED_LIB_START:
 
         .globl  _haltproc
         .type   _haltproc,@function
+<<<<<<< HEAD
 _haltproc:
+=======
+haltproc:
+        .globl  FPC_SHARED_LIB_EXIT
+        .type   FPC_SHARED_LIB_EXIT,@function
+FPC_SHARED_LIB_EXIT:
+>>>>>>> graemeg/cpstrnew
         moveq.l   #1,%d0
         move.w    operatingsystem_result,%d1
         trap      #0

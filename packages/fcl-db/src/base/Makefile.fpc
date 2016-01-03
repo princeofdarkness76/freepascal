@@ -4,7 +4,11 @@
 
 [package]
 main=fcl-db
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+>>>>>>> graemeg/cpstrnew
 
 [target]
 units=dbconst db dbwhtml bufdataset_parser bufdataset dbcoll sqlscript xmldatapacketreader

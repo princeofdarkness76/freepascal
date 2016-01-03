@@ -563,8 +563,18 @@ begin
     FFreeNotifies:=TFpList.Create;
   If FFreeNotifies.IndexOf(AComponent)=-1 then
     begin
+<<<<<<< HEAD
     FFreeNotifies.Add(AComponent);
     AComponent.FreeNotification (self);
+=======
+    If not (Assigned(FFreeNotifies)) then
+      FFreeNotifies:=TFpList.Create;
+    If FFreeNotifies.IndexOf(AComponent)=-1 then
+      begin
+      FFreeNotifies.Add(AComponent);
+      AComponent.FreeNotification (self);
+      end;
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 
@@ -622,7 +632,11 @@ end;
 
 
 Function  TComponent.SafeCallException(ExceptObject: TObject;
+<<<<<<< HEAD
   ExceptAddr: CodePointer): HResult;
+=======
+  ExceptAddr: Pointer): HResult;
+>>>>>>> graemeg/cpstrnew
 begin
   if Assigned(VCLComObject) then
     Result := IVCLComObject(VCLComObject).SafeCallException(ExceptObject, ExceptAddr)
@@ -661,7 +675,11 @@ begin
     Result := E_NOINTERFACE;
 end;
 
+<<<<<<< HEAD
 function TComponent._AddRef: Longint;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function TComponent._AddRef: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 begin
   if Assigned(VCLComObject) then
     Result := IVCLComObject(VCLComObject)._AddRef
@@ -669,7 +687,11 @@ begin
     Result := -1;
 end;
 
+<<<<<<< HEAD
 function TComponent._Release: Longint;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function TComponent._Release: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 begin
   if Assigned(VCLComObject) then
     Result := IVCLComObject(VCLComObject)._Release

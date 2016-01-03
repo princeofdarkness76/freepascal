@@ -42,7 +42,11 @@
 { NSOpenPanel }
   NSOpenPanel = objcclass external (NSSavePanel)
   private
+<<<<<<< HEAD
     _reservedOpenPanel: array[0..(4)-1] of char;
+=======
+        _reservedOpenPanel: array[0..3] of char;
+>>>>>>> graemeg/cpstrnew
     _privateOpenPanel: Pointer;
     
   public

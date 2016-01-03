@@ -19,6 +19,10 @@ interface
 
 {$define FPC_IS_SYSTEM}
 {$define HAS_CMDLINE}
+<<<<<<< HEAD
+=======
+{$define FPC_HAS_FEATURE_THREADING}
+>>>>>>> graemeg/cpstrnew
 {$define FPC_HAS_FEATURE_CONSOLEIO}
 {$define FPC_HAS_FEATURE_COMMANDARGS}
 {$define FPC_HAS_FEATURE_TEXTIO}
@@ -57,7 +61,10 @@ const
   StdErrorHandle  = 2;
 
   FileNameCaseSensitive : boolean = true;
+<<<<<<< HEAD
   FileNameCasePreserving: boolean = true;
+=======
+>>>>>>> graemeg/cpstrnew
   CtrlZMarksEOF: boolean = true; (* #26 not considered as end of file *)
 
   sLineBreak = LineEnding;
@@ -235,7 +242,11 @@ begin
         buf[bufsize]:='"';
         inc(bufsize);
       end;
+<<<<<<< HEAD
      if i<argc-1 then
+=======
+     if i<argc then
+>>>>>>> graemeg/cpstrnew
       buf[bufsize]:=' '
      else
       buf[bufsize]:=#0;
@@ -247,6 +258,10 @@ begin
 end;
 
 function get_cmdline:Pchar;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   if calculated_cmdline=nil then
     setupcmdline;
@@ -256,11 +271,19 @@ end;
 
 procedure SysInitStdIO;
 begin
+<<<<<<< HEAD
   OpenStdIO(Input,fmInput,StdInputHandle);
   OpenStdIO(Output,fmOutput,StdOutputHandle);
   OpenStdIO(ErrOutput,fmOutput,StdErrorHandle);
   OpenStdIO(StdOut,fmOutput,StdOutputHandle);
   OpenStdIO(StdErr,fmOutput,StdErrorHandle);
+=======
+  OpenStdIO(Input,fmInput,0);
+  OpenStdIO(Output,fmOutput,0);
+  OpenStdIO(ErrOutput,fmOutput,0);
+  OpenStdIO(StdOut,fmOutput,0);
+  OpenStdIO(StdErr,fmOutput,0);
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -284,6 +307,10 @@ begin
 
   SetupCmdLine;
   
+<<<<<<< HEAD
+=======
+  
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_CONSOLEIO}
   { Setup stdin, stdout and stderr }
   SysInitStdIO;

@@ -133,6 +133,15 @@ type
   end;
   P_fd_set = ^_fd_set;
 
+<<<<<<< HEAD
+=======
+  timeval = record
+    tv_sec: cint32;
+    tv_usec: cint32;
+  end;
+  Ptimeval = ^timeval;
+
+>>>>>>> graemeg/cpstrnew
 procedure FD_SET(n: longint; var p: _fd_set); inline;
 procedure FD_CLR(n: longint; var p: _fd_set); inline;
 function FD_ISSET(n: longint; p: _fd_set): boolean; inline;

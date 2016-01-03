@@ -105,6 +105,11 @@ function CreateFileW(lpFileName:pwidechar; dwDesiredAccess:DWORD; dwShareMode:DW
 
 
 {$ifdef CPUARM}
+<<<<<<< HEAD
+=======
+{ the external directive isn't really necessary here because it is overridden by external (FK) }
+
+>>>>>>> graemeg/cpstrnew
 function addd(d1,d2 : double) : double; compilerproc;
    cdecl;external 'coredll' name '__addd';
 
@@ -1771,7 +1776,17 @@ initialization
   ProcessID := GetCurrentProcessID;
   { threading }
   InitSystemThreads;
+<<<<<<< HEAD
   InitSystemDynLibs;
+=======
+  { Reset internal error variable }
+  errno:=0;
+  initvariantmanager;
+{$ifndef VER2_2}
+  initunicodestringmanager;
+{$endif VER2_2}
+  InitWinCEWidestrings;
+>>>>>>> graemeg/cpstrnew
   DispCallByIDProc:=@DoDispCallByIDError;
 
 finalization

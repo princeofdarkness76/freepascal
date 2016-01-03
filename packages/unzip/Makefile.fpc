@@ -4,10 +4,23 @@
 
 [package]
 name=unzip
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.5.1
+
+[target]
+units=ziptypes unzip51g
+units_emx=unzipdll
+units_os2=unzipdll
+
+[compiler]
+includedir=src
+sourcedir=src tests
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y

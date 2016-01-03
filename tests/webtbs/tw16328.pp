@@ -10,7 +10,11 @@ const
 type
   TmydbID = type Longword;
   TmydbCLSID = type Word;
+<<<<<<< HEAD
   TmydbDBID   = 0..(qword(1) shl 48)-1;  // Unique ID of the database
+=======
+  TmydbDBID   = 0..(1 shl 48)-1;  // Unique ID of the database
+>>>>>>> graemeg/cpstrnew
   TmydbDBTYPE = type Byte;
 
   tarr = bitpacked array[0..10] of TmydbDBID;

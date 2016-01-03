@@ -16,6 +16,7 @@
 
 
 Procedure UniqueString (Var S : WideString);external name 'FPC_WIDESTR_UNIQUE';
+<<<<<<< HEAD
 Function Pos (Const Substr : WideString; Const Source : WideString; Offset : SizeInt = 1) : SizeInt;
 Function Pos (c : Char; Const s : WideString; Offset : SizeInt = 1) : SizeInt;
 Function Pos (c : WideChar; Const s : WideString; Offset : SizeInt = 1) : SizeInt;
@@ -23,6 +24,15 @@ Function Pos (c : WideChar; Const s : RawByteString; Offset : SizeInt = 1) : Siz
 Function Pos (const c : RawByteString; Const s : WideString; Offset : SizeInt = 1) : SizeInt;
 Function Pos (const c : WideString; Const s : RawByteString; Offset : SizeInt = 1) : SizeInt;
 Function Pos (const c : ShortString; Const s : WideString; Offset : SizeInt = 1) : SizeInt;
+=======
+Function Pos (Const Substr : WideString; Const Source : WideString) : SizeInt;
+Function Pos (c : Char; Const s : WideString) : SizeInt;
+Function Pos (c : WideChar; Const s : WideString) : SizeInt;
+Function Pos (c : WideChar; Const s : RawByteString) : SizeInt;
+Function Pos (c : RawByteString; Const s : WideString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+Function Pos (c : WideString; Const s : RawByteString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+Function Pos (c : ShortString; Const s : WideString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> graemeg/cpstrnew
 
 Function UpCase(const s : WideString) : WideString;
 
@@ -31,6 +41,10 @@ Procedure Delete (Var S : WideString; Index,Size: SizeInt);
 Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_widestr_pwidechar{$else}SetString{$endif}(Out S : WideString; Buf : PWideChar; Len : SizeInt); {$ifdef FPC_HAS_CPSTRING} compilerproc; {$endif FPC_HAS_CPSTRING}
 Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_widestr_pansichar{$else}SetString{$endif}(Out S : WideString; Buf : PChar; Len : SizeInt); {$ifdef FPC_HAS_CPSTRING} compilerproc; {$endif FPC_HAS_CPSTRING}
 
+<<<<<<< HEAD
+=======
+procedure DefaultWide2AnsiMove(source:pwidechar;var dest:ansistring;cp : TSystemCodePage;len:SizeInt);
+>>>>>>> graemeg/cpstrnew
 procedure DefaultAnsi2WideMove(source:pchar;cp : TSystemCodePage;var dest:widestring;len:SizeInt);
 
 type

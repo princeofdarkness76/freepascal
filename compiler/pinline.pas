@@ -83,7 +83,11 @@ implementation
         if target_info.system in systems_managed_vm then
           message(parser_e_feature_unsupported_for_vm);
         consume(_LKLAMMER);
+<<<<<<< HEAD
         p:=comp_expr([ef_accept_equal]);
+=======
+        p:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
         { calc return type }
         if is_new then
           begin
@@ -178,7 +182,11 @@ implementation
               begin
                  Message1(type_e_pointer_type_expected,p.resultdef.typename);
                  p.free;
+<<<<<<< HEAD
                  p:=factor(false,[]);
+=======
+                 p:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
                  p.free;
                  consume(_RKLAMMER);
                  new_dispose_statement:=cerrornode.create;
@@ -189,7 +197,11 @@ implementation
               begin
                  Message(parser_e_pointer_to_class_expected);
                  p.free;
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
                  consume_all_until(_RKLAMMER);
                  consume(_RKLAMMER);
                  exit;
@@ -199,7 +211,11 @@ implementation
             if is_class(classh) then
               begin
                  Message(parser_e_no_new_or_dispose_for_classes);
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
                  consume_all_until(_RKLAMMER);
                  consume(_RKLAMMER);
                  exit;
@@ -340,8 +356,13 @@ implementation
 
                      { create call to fpc_initialize }
                      if is_managed_type(tpointerdef(p.resultdef).pointeddef) or
+<<<<<<< HEAD
                        ((m_isolike_io in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
                        addstatement(newstatement,cnodeutils.initialize_data_node(cderefnode.create(ctemprefnode.create(temp)),false));
+=======
+                       ((m_iso in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
+                       addstatement(newstatement,initialize_data_node(cderefnode.create(ctemprefnode.create(temp))));
+>>>>>>> graemeg/cpstrnew
 
                      { copy the temp to the destination }
                      addstatement(newstatement,cassignmentnode.create(
@@ -398,7 +419,11 @@ implementation
                    begin
                      { create call to fpc_finalize }
                      if is_managed_type(tpointerdef(p.resultdef).pointeddef) then
+<<<<<<< HEAD
                        addstatement(newstatement,cnodeutils.finalize_data_node(cderefnode.create(p.getcopy)));
+=======
+                       addstatement(newstatement,finalize_data_node(cderefnode.create(p.getcopy)));
+>>>>>>> graemeg/cpstrnew
 
                      { create call to fpc_freemem }
                      para := ccallparanode.create(p,nil);
@@ -421,7 +446,11 @@ implementation
         if target_info.system in systems_managed_vm then
           message(parser_e_feature_unsupported_for_vm);
         consume(_LKLAMMER);
+<<<<<<< HEAD
         p1:=factor(false,[]);
+=======
+        p1:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
         if p1.nodetype<>typen then
          begin
            Message(type_e_type_id_expected);
@@ -451,7 +480,29 @@ implementation
             if p1.nodetype=typen then
               ttypenode(p1).allowed:=true;
 
+<<<<<<< HEAD
             p1:=cinlinenode.create(in_new_x,false,p1);
+=======
+            { create call to fpc_initialize }
+            if is_managed_type(tpointerdef(p1.resultdef).pointeddef) then
+             begin
+               para := ccallparanode.create(caddrnode.create_internal(crttinode.create
+                          (tstoreddef(tpointerdef(p1.resultdef).pointeddef),initrtti,rdt_normal)),
+                       ccallparanode.create(ctemprefnode.create
+                          (temp),nil));
+               addstatement(newstatement,ccallnode.createintern('fpc_initialize',para));
+             end;
+
+            { the last statement should return the value as
+              location and type, this is done be referencing the
+              temp and converting it first from a persistent temp to
+              normal temp }
+            addstatement(newstatement,ctempdeletenode.create_normal_temp(temp));
+            addstatement(newstatement,ctemprefnode.create(temp));
+
+            p1.destroy;
+            p1:=newblock;
+>>>>>>> graemeg/cpstrnew
           end
         else
           begin
@@ -507,6 +558,7 @@ implementation
            CGMessage1(parser_e_wrong_parameter_size,'SetLength');
            exit;
          end;
+<<<<<<< HEAD
         result:=cinlinenode.create(in_setlength_x,false,paras);
       end;
 
@@ -560,6 +612,126 @@ implementation
       end;
 
 
+=======
+
+        dims:=0;
+        if assigned(paras) then
+         begin
+           { check type of lengths }
+           ppn:=tcallparanode(paras);
+           while assigned(ppn.right) do
+            begin
+              set_varstate(ppn.left,vs_read,[vsf_must_be_valid]);
+              inserttypeconv(ppn.left,sinttype);
+              inc(dims);
+              ppn:=tcallparanode(ppn.right);
+            end;
+         end;
+        if dims=0 then
+         begin
+           CGMessage1(parser_e_wrong_parameter_size,'SetLength');
+           paras.free;
+           exit;
+         end;
+        { last param must be var }
+        destppn:=ppn.left;
+        valid_for_var(destppn,true);
+        set_varstate(destppn,vs_written,[]);
+        { first param must be a string or dynamic array ...}
+        isarray:=is_dynamic_array(destppn.resultdef);
+        if not((destppn.resultdef.typ=stringdef) or
+               isarray) then
+         begin
+           CGMessage(type_e_mismatch);
+           paras.free;
+           exit;
+         end;
+
+        { only dynamic arrays accept more dimensions }
+        if (dims>1) then
+         begin
+           if (not isarray) then
+            CGMessage(type_e_mismatch)
+           else
+            begin
+              { check if the amount of dimensions is valid }
+              def := tarraydef(destppn.resultdef).elementdef;
+              counter:=dims;
+              while counter > 1 do
+                begin
+                  if not(is_dynamic_array(def)) then
+                    begin
+                      CGMessage1(parser_e_wrong_parameter_size,'SetLength');
+                      break;
+                    end;
+                  dec(counter);
+                  def := tarraydef(def).elementdef;
+                end;
+            end;
+         end;
+
+        if isarray then
+         begin
+            { create statements with call initialize the arguments and
+              call fpc_dynarr_setlength }
+            newblock:=internalstatements(newstatement);
+
+            { get temp for array of lengths }
+            temp := ctempcreatenode.create(sinttype,dims*sinttype.size,tt_persistent,false);
+            addstatement(newstatement,temp);
+
+            { load array of lengths }
+            ppn:=tcallparanode(paras);
+            counter:=0;
+            while assigned(ppn.right) do
+             begin
+               addstatement(newstatement,cassignmentnode.create(
+                   ctemprefnode.create_offset(temp,counter*sinttype.size),
+                   ppn.left));
+               ppn.left:=nil;
+               inc(counter);
+               ppn:=tcallparanode(ppn.right);
+             end;
+            { destppn is also reused }
+            ppn.left:=nil;
+
+            { create call to fpc_dynarr_setlength }
+            npara:=ccallparanode.create(caddrnode.create_internal
+                      (ctemprefnode.create(temp)),
+                   ccallparanode.create(cordconstnode.create
+                      (counter,s32inttype,true),
+                   ccallparanode.create(caddrnode.create_internal
+                      (crttinode.create(tstoreddef(destppn.resultdef),initrtti,rdt_normal)),
+                   ccallparanode.create(ctypeconvnode.create_internal(destppn,voidpointertype),nil))));
+            addstatement(newstatement,ccallnode.createintern('fpc_dynarray_setlength',npara));
+            addstatement(newstatement,ctempdeletenode.create(temp));
+
+            { we don't need original the callparanodes tree }
+            paras.free;
+         end
+        else if is_ansistring(destppn.resultdef) then
+         begin
+            newblock:=ccallnode.createintern(
+              'fpc_'+tstringdef(destppn.resultdef).stringtypname+'_setlength',
+              ccallparanode.create(
+                cordconstnode.create(tstringdef(destppn.resultdef).encoding,u16inttype,true),
+                paras
+              )
+            );           
+         end
+        else
+         begin
+            { we can reuse the supplied parameters }
+            newblock:=ccallnode.createintern(
+               'fpc_'+tstringdef(destppn.resultdef).stringtypname+'_setlength',paras);
+         end;
+
+        result.free;
+        result:=newblock;
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     function inline_initfinal(isinit: boolean): tnode;
       var
         newblock,
@@ -607,9 +779,15 @@ implementation
         else
          begin
            if isinit then
+<<<<<<< HEAD
              newblock:=cnodeutils.initialize_data_node(ppn.left,true)
            else
              newblock:=cnodeutils.finalize_data_node(ppn.left);
+=======
+             newblock:=initialize_data_node(ppn.left)
+           else
+             newblock:=finalize_data_node(ppn.left);
+>>>>>>> graemeg/cpstrnew
          end;
         ppn.left:=nil;
         paras.free;
@@ -641,6 +819,43 @@ implementation
         paras:=parse_paras(false,false,_RKLAMMER);
         consume(_RKLAMMER);
         if not assigned(paras) then
+<<<<<<< HEAD
+=======
+         begin
+           CGMessage1(parser_e_wrong_parameter_size,'Copy');
+           exit;
+         end;
+
+        { determine copy function to use based on the first argument,
+          also count the number of arguments in this loop }
+        counter:=1;
+        ppn:=tcallparanode(paras);
+        while assigned(ppn.right) do
+         begin
+           inc(counter);
+           ppn:=tcallparanode(ppn.right);
+         end;
+        paradef:=ppn.left.resultdef;
+        if is_ansistring(paradef) or
+           (is_chararray(paradef) and
+            (paradef.size>255)) or
+           ((cs_ansistrings in current_settings.localswitches) and
+            is_pchar(paradef)) then
+          copynode:=ccallnode.createintern('fpc_ansistr_copy',paras)
+        else
+         if is_widestring(paradef) then
+           copynode:=ccallnode.createintern('fpc_widestr_copy',paras)
+        else
+         if is_unicodestring(paradef) or
+            is_widechararray(paradef) or
+            is_pwidechar(paradef) then
+           copynode:=ccallnode.createintern('fpc_unicodestr_copy',paras)
+        else
+         if is_char(paradef) then
+           copynode:=ccallnode.createintern('fpc_char_copy',paras)
+        else
+         if is_dynamic_array(paradef) then
+>>>>>>> graemeg/cpstrnew
           begin
             CGMessage1(parser_e_wrong_parameter_size,'Copy');
             exit;

@@ -21,7 +21,11 @@ begin
   pack := (r shl 16) or (g shl 8) or b;
 end;
 
+<<<<<<< HEAD
 procedure generate_flower(flower: IPTCSurface);
+=======
+procedure generate_flower(flower: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 var
   data: PUint8;
   x, y, fx, fy, fx2, fy2: Integer;
@@ -56,13 +60,21 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure generate(palette: IPTCPalette);
+=======
+procedure generate(palette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 var
   data: PUint32;
   i, c: Integer;
 begin
   { lock palette data }
+<<<<<<< HEAD
   data := palette.Lock;
+=======
+  data := palette.lock;
+>>>>>>> graemeg/cpstrnew
 
   try
     { black to yellow }
@@ -103,17 +115,30 @@ begin
     end;
   finally
     { unlock palette }
+<<<<<<< HEAD
     palette.Unlock;
+=======
+    palette.unlock;
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   flower_surface: IPTCSurface;
   surface: IPTCSurface;
   palette: IPTCPalette;
   area: IPTCArea;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  flower_surface: TPTCSurface = nil;
+  surface: TPTCSurface = nil;
+  palette: TPTCPalette = nil;
+  area: TPTCArea = nil;
+>>>>>>> graemeg/cpstrnew
   time, delta: Single;
   scr, map: PUint8;
   width, height, mapWidth: Integer;
@@ -213,6 +238,15 @@ begin
     finally
       if Assigned(console) then
         console.close;
+<<<<<<< HEAD
+=======
+      area.Free;
+      format.Free;
+      palette.Free;
+      surface.Free;
+      flower_surface.Free;
+      console.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

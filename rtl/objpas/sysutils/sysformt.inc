@@ -44,12 +44,17 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
       While (ChPos<=Len) and
             (Fmt[ChPos]<='9') and (Fmt[ChPos]>='0') do inc(ChPos);
       If ChPos>len then
+<<<<<<< HEAD
         DoFormatError(feInvalidFormat,ansistring(Fmt));
+=======
+        DoFormatError(feInvalidFormat,Fmt);
+>>>>>>> graemeg/cpstrnew
       If Fmt[ChPos]='*' then
         begin
 
         if Index=-1 then
           ArgN:=Argpos
+<<<<<<< HEAD
         else
         begin
           ArgN:=Index;
@@ -67,6 +72,25 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
           vtQWord: Value := Args[ArgN].VQWord^;
         else
           DoFormatError(feInvalidFormat,ansistring(Fmt));
+=======
+        else
+        begin
+          ArgN:=Index;
+          Inc(Index);
+        end;
+
+        If (ChPos>OldPos) or (ArgN>High(Args)) then
+          DoFormatError(feInvalidFormat,Fmt);
+
+        ArgPos:=ArgN+1;
+
+        case Args[ArgN].Vtype of
+          vtInteger: Value := Args[ArgN].VInteger;
+          vtInt64: Value := Args[ArgN].VInt64^;
+          vtQWord: Value := Args[ArgN].VQWord^;
+        else
+          DoFormatError(feInvalidFormat,Fmt);
+>>>>>>> graemeg/cpstrnew
         end;
         Inc(ChPos);
         end
@@ -76,7 +100,11 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
           begin
           Val (Copy(Fmt,OldPos,ChPos-OldPos),value,code);
           // This should never happen !!
+<<<<<<< HEAD
           If Code>0 then DoFormatError (feInvalidFormat,ansistring(Fmt));
+=======
+          If Code>0 then DoFormatError (feInvalidFormat,Fmt);
+>>>>>>> graemeg/cpstrnew
           end
         else
           Value:=-1;
@@ -92,7 +120,11 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
         value:=0; // Delphi undocumented behaviour, assume 0, #11099
       If Fmt[ChPos]=':' then
         begin
+<<<<<<< HEAD
         If Value=-1 then DoFormatError(feMissingArgument,ansistring(Fmt));
+=======
+        If Value=-1 then DoFormatError(feMissingArgument,fmt);
+>>>>>>> graemeg/cpstrnew
         Index:=Value;
         Value:=-1;
         Inc(ChPos);
@@ -214,7 +246,11 @@ begin
   If (Doarg>High(Args)) or (Args[Doarg].Vtype<>AT) then
    begin
      if err then
+<<<<<<< HEAD
       DoFormatError(feInvalidArgindex,ansistring(Fmt));
+=======
+      DoFormatError(feInvalidArgindex,Fmt);
+>>>>>>> graemeg/cpstrnew
      dec(ArgPos);
      exit;
    end;
@@ -326,6 +362,15 @@ begin
                   if CheckArg(vtUnicodeString,false) then
                     hs:=TFormatString(UnicodeString(Args[doarg].VUnicodeString))
                 else
+<<<<<<< HEAD
+=======
+                  if CheckArg(vtAnsiString,false) then
+                    hs:=ansistring(Args[doarg].VAnsiString)
+                else
+                  if CheckArg(vtUnicodeString,false) then
+                    hs:=UnicodeString(Args[doarg].VUnicodeString)
+                else
+>>>>>>> graemeg/cpstrnew
                   if CheckArg(vtVariant,true) then
                     hs:=Args[doarg].VVariant^;
                 Index:=Length(hs);

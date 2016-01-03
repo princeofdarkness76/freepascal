@@ -78,7 +78,10 @@ type
     FContext : TPasElement;
     FTopics  : TList;
     FImgExt : String;
+<<<<<<< HEAD
     FBeforeEmitNote : TWriterNoteEvent;
+=======
+>>>>>>> graemeg/cpstrnew
     procedure ConvertURL(AContext: TPasElement; El: TDOMElement);
     
   protected
@@ -513,6 +516,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TFPDocWriter.ConvertNotes(AContext: TPasElement; El: TDOMElement
   ): Boolean;
 
@@ -556,6 +560,19 @@ begin
     DescrEmitNotesFooter(AContext);
   finally
     L.Free;
+=======
+  Node := El.FirstChild;
+  while Assigned(Node) do
+  begin
+    if (Node.NodeType = ELEMENT_NODE) and (Node.NodeName = 'link') then
+      ConvertLink(AContext, TDOMElement(Node))
+    else if (Node.NodeType = ELEMENT_NODE) and (Node.NodeName = 'url') then
+      ConvertURL(AContext, TDOMElement(Node))
+    else
+      if not ConvertBaseShort(AContext, Node) then
+        exit;
+    Node := Node.NextSibling;
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
@@ -706,6 +723,7 @@ begin
   DescrEndURL;
 end;
 
+<<<<<<< HEAD
 procedure TFPDocWriter.DoLog(const Msg: String);
 begin
   If Assigned(FEngine.OnLog) then
@@ -717,6 +735,8 @@ begin
   DoLog(Format(Fmt,Args));
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 function TFPDocWriter.ConvertExtShort(AContext: TPasElement;
   Node: TDOMNode): Boolean;
 begin

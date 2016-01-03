@@ -389,6 +389,21 @@ function  NoThreadHandler (threadHandle : TThreadID) : dword;
 begin
   NoThreadError;
   result:=dword(-1);
+<<<<<<< HEAD
+=======
+end;
+
+procedure NoThreadSwitch;  {give time to other threads}
+begin
+  NoThreadError;
+>>>>>>> graemeg/cpstrnew
+end;
+
+function NoCloseThread  (threadHandle : TThreadID):dword;
+
+begin
+ Result:=0;      // avoid warnings.
+ NoThreadError;
 end;
 
 function  NoWaitForThreadTerminate (threadHandle : TThreadID; TimeoutMs : longint) : dword;  {0=no timeout}
@@ -428,6 +443,7 @@ begin
 end;
 
 function NoTryEnterCriticalSection(var CS):longint;
+<<<<<<< HEAD
 
 begin
   if IsMultiThread then
@@ -435,6 +451,34 @@ begin
   else
     ThreadingAlreadyUsed:=true;
   Result:=-1;
+=======
+
+begin
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+end;
+
+procedure NoInitThreadvar(var offset : dword;size : dword);
+
+begin
+  NoThreadError;
+end;
+
+function NoRelocateThreadvar(offset : dword) : pointer;
+
+begin
+  NoThreadError;
+  result:=nil;
+end;
+
+
+procedure NoAllocateThreadVars;
+
+begin
+  NoThreadError;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure NoInitThreadvar(var offset : {$ifdef cpu16}word{$else}dword{$endif};size : dword);
@@ -446,10 +490,28 @@ end;
 function NoRelocateThreadvar(offset : {$ifdef cpu16}word{$else}dword{$endif}) : pointer;
 
 begin
+<<<<<<< HEAD
   NoThreadError;
   result:=nil;
 end;
 
+=======
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+  result:=nil;
+end;
+
+procedure nobasiceventdestroy(state:peventstate);
+
+begin
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+end;
+>>>>>>> graemeg/cpstrnew
 
 function  NoBasicEventCreate(EventAttributes : Pointer; AManualReset,InitialState : Boolean;const Name : ansistring):pEventState;
 
@@ -458,7 +520,10 @@ begin
     NoThreadError
   else
     ThreadingAlreadyUsed:=true;
+<<<<<<< HEAD
   result:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure NoBasicEvent(state:peventstate);
@@ -505,8 +570,47 @@ begin
     NoThreadError
   else
     ThreadingAlreadyUsed:=true;
+<<<<<<< HEAD
 end;
 
+=======
+end;
+
+procedure NORTLeventResetEvent(state:pRTLEvent);
+
+begin
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+end;
+
+procedure NORTLeventWaitFor(state:pRTLEvent);
+  begin
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+  end;
+
+
+procedure NORTLeventWaitForTimeout(state:pRTLEvent;timeout : longint);
+  begin
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+  end;
+
+
+procedure NORTLeventsync(m:trtlmethod;p:tprocedure);
+  begin
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+  end;
+>>>>>>> graemeg/cpstrnew
 
 function NoSemaphoreInit: Pointer;
 begin
@@ -528,6 +632,17 @@ begin
     NoThreadError
   else
     ThreadingAlreadyUsed:=true;
+<<<<<<< HEAD
+=======
+end;
+
+procedure NoSemaphoreDestroy(const FSem: Pointer);
+begin
+  if IsMultiThread then
+    NoThreadError
+  else
+    ThreadingAlreadyUsed:=true;
+>>>>>>> graemeg/cpstrnew
 end;
 
 const
@@ -614,6 +729,51 @@ const
 Procedure SetNoThreadManager;
 
 begin
+<<<<<<< HEAD
+=======
+  With NoThreadManager do
+    begin
+    InitManager            :=Nil;
+    DoneManager            :=Nil;
+    BeginThread            :=@NoBeginThread;
+    EndThread              :=@NoEndThread;
+    SuspendThread          :=@NoThreadHandler;
+    ResumeThread           :=@NoThreadHandler;
+    KillThread             :=@NoThreadHandler;
+    CloseThread		   :=@NoCloseThread;
+    ThreadSwitch           :=@NoThreadSwitch;
+    WaitForThreadTerminate :=@NoWaitForThreadTerminate;
+    ThreadSetPriority      :=@NoThreadSetPriority;
+    ThreadGetPriority      :=@NoThreadGetPriority;
+    GetCurrentThreadId     :=@NoGetCurrentThreadId;
+    InitCriticalSection    :=@NoCriticalSection;
+    DoneCriticalSection    :=@NoCriticalSection;
+    EnterCriticalSection   :=@NoCriticalSection;
+    TryEnterCriticalSection:=@NoTryEnterCriticalSection;
+    LeaveCriticalSection   :=@NoCriticalSection;
+    InitThreadVar          :=@NoInitThreadVar;
+    RelocateThreadVar      :=@NoRelocateThreadVar;
+    AllocateThreadVars     :=@NoAllocateThreadVars;
+    ReleaseThreadVars      :=@NoReleaseThreadVars;
+    BasicEventCreate       :=@NoBasicEventCreate;
+    basiceventdestroy      :=@Nobasiceventdestroy;
+    basiceventResetEvent   :=@NobasiceventResetEvent;
+    basiceventSetEvent     :=@NobasiceventSetEvent;
+    basiceventWaitFor      :=@NobasiceventWaitFor;
+    rtlEventCreate         :=@NortlEventCreate;
+    rtleventdestroy        :=@Nortleventdestroy;
+    rtleventSetEvent       :=@NortleventSetEvent;
+    rtleventResetEvent     :=@NortleventResetEvent;
+    rtleventWaitFor        :=@NortleventWaitFor;
+    rtleventsync           :=@Nortleventsync;
+    rtleventwaitfortimeout :=@NortleventWaitForTimeout;
+    // semaphores stuff
+    SemaphoreInit          :=@NoSemaphoreInit;
+    SemaphoreDestroy       :=@NoSemaphoreDestroy;
+    SemaphoreWait          :=@NoSemaphoreWait;
+    SemaphorePost          :=@NoSemaphorePost;
+    end;
+>>>>>>> graemeg/cpstrnew
   SetThreadManager(NoThreadManager);
 end;
 

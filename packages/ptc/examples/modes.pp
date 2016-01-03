@@ -15,7 +15,11 @@ program ModesExample;
 uses
   ptc;
 
+<<<<<<< HEAD
 procedure print(format: IPTCFormat);
+=======
+procedure print(const format: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 begin
   { check format type }
   if format.direct then
@@ -31,7 +35,11 @@ begin
     Write('Format(', format.bits:2, ')');
 end;
 
+<<<<<<< HEAD
 procedure print(mode: IPTCMode);
+=======
+procedure print(const mode: TPTCMode);
+>>>>>>> graemeg/cpstrnew
 begin
   { print mode width and height }
   Write(' ', mode.width:4, ' x ', mode.height);
@@ -51,6 +59,7 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   modes: TPTCModeList;
   index: Integer;
@@ -77,6 +86,44 @@ begin
         { print mode }
         print(modes[index]);
       end;
+=======
+  console: TPTCConsole = nil;
+  modes: PPTCMode;
+  index: Integer;
+begin
+  try
+    try
+      { create console }
+      console := TPTCConsole.Create;
+
+      { get list of console modes }
+      modes := console.modes;
+
+      { check for empty list }
+      if not modes[0].valid then
+        { the console mode list was empty }
+        Writeln('[console mode list is not available]')
+      else
+      begin
+        { print mode list header }
+        Writeln('[console modes]');
+
+        { mode index }
+        index := 0;
+
+        { iterate through all modes }
+        while modes[index].valid do
+        begin
+          { print mode }
+          print(modes[index]);
+
+          { next mode }
+          Inc(index);
+        end;
+      end;
+    finally
+      console.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

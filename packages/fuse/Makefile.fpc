@@ -1,17 +1,31 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for FUSE bindings
+>>>>>>> graemeg/cpstrnew
 #
 
 [package]
 name=fuse
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.5.1
+
+[target]
+units=fuse
+
+[require]
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 [default]
 fpcdir=../..
 
@@ -100,3 +114,14 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+includedir=src
+sourcedir=src 
+
+[default]
+fpcdir=../..
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/cpstrnew

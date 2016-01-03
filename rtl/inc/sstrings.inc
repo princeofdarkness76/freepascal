@@ -587,9 +587,15 @@ begin
         end;
       { temporarily disable range checking because of the access to the array[0..0]
         member of Tenum_ord_to_string_lookup }
+<<<<<<< HEAD
 {$push}{$R-}
         res:=enum_o2s^.lookup_data[ordinal];
 {$pop}
+=======
+{$PUSH}{$R-}
+        res:=enum_o2s^.lookup_data[ordinal];
+{$POP}
+>>>>>>> graemeg/cpstrnew
         if (not assigned(res)) then
           exit;
         s:=res^;
@@ -602,7 +608,11 @@ begin
       l:=0;
       { temporarily disable range checking because of the access to the array[0..0]
         member of Tenum_ord_to_string_search }
+<<<<<<< HEAD
 {$push}{$R-}
+=======
+{$PUSH}{$R-}
+>>>>>>> graemeg/cpstrnew
       h:=enum_o2s^.num_entries-1;
       repeat
         m:=(l+h) div 2;
@@ -615,7 +625,11 @@ begin
         if l>h then
           exit; { Ordinal value not found? Exit }
       until false;
+<<<<<<< HEAD
 {$pop}
+=======
+{$POP}
+>>>>>>> graemeg/cpstrnew
       s:=sorted_data[m].name^;
     end;
 
@@ -656,9 +670,16 @@ begin
 end;
 
 { also define alias for internal use in the system unit }
+<<<<<<< HEAD
 procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external {$ifndef cpujvm}name 'FPC_SHORTSTR_BOOL'{$endif};
 
 procedure fpc_shortstr_currency({$ifdef cpujvm}constref{$endif} c : currency; len,f : SizeInt; out s : shortstring);[public,alias:'FPC_SHORTSTR_CURRENCY']; compilerproc;
+=======
+procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external name 'FPC_SHORTSTR_BOOL';
+
+
+procedure fpc_shortstr_currency(c : currency; len,f : SizeInt; out s : shortstring);[public,alias:'FPC_SHORTSTR_CURRENCY']; compilerproc;
+>>>>>>> graemeg/cpstrnew
 const
   MinLen = 8; { Minimal string length in scientific format }
 var
@@ -736,6 +757,7 @@ begin
   { rounding string if r > 0 }
   if r > 0 then
     begin
+<<<<<<< HEAD
       k := 0;
       i := r+2;
       if i > tlen then
@@ -750,6 +772,26 @@ begin
                k := 1;
              end;
          end;
+=======
+      i:=1;
+      k:=0;
+      for j:=0 to r do
+        begin
+          if (k=1) and (buf[i]='9') then
+            buf[i]:='0'
+          else
+            begin
+            buf[i]:=chr(ord(buf[i]) + k);
+            if buf[i] >= '5' then
+              k:=1
+            else
+              k:=0;
+            end;
+          Inc(i);
+          if i>tlen  then
+            break;
+        end;
+>>>>>>> graemeg/cpstrnew
       If (k=1) and (buf[i-1]='0') then
 	    begin
 		  { 1.9996 rounded to two decimal digits after the decimal separator must result in
@@ -765,7 +807,11 @@ begin
 		    e.g. 99.9996 to two decimal digits after the decimal separator which should result in
 			100.00
 		  }
+<<<<<<< HEAD
 		  if i>tlen then
+=======
+		  if i>reslen then
+>>>>>>> graemeg/cpstrnew
 		    begin
 			  inc(reslen);
 			  inc(tlen);
@@ -1004,28 +1050,41 @@ begin
 end;
 {$endif}
 
+<<<<<<< HEAD
 {$ifndef FPC_STR_ENUM_INTERN}
 { currently, the avr code generator fails on this procedure, so we disable it,
   this is not a good solution but fixing compilation of this procedure for
   avr is hard, requires significant changes to the register allocator to take
   care of different register classes }
+=======
+
+>>>>>>> graemeg/cpstrnew
 procedure fpc_chararray_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out a : array of char);compilerproc;
 var
   ss : shortstring;
   maxlen : SizeInt;
 begin
+<<<<<<< HEAD
 {$ifdef EXCLUDE_COMPLEX_PROCS}
   runerror(219);
 {$else EXCLUDE_COMPLEX_PROCS}
+=======
+>>>>>>> graemeg/cpstrnew
   fpc_shortstr_enum(ordinal,len,typinfo,ord2strindex,ss);
   if length(ss)<high(a)+1 then
     maxlen:=length(ss)
   else
     maxlen:=high(a)+1;
+<<<<<<< HEAD
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
 {$endif EXCLUDE_COMPLEX_PROCS}
 end;
 {$endif not FPC_STR_ENUM_INTERN}
+=======
+  move(ss[1],pchar(@a)^,maxlen);
+end;
+
+>>>>>>> graemeg/cpstrnew
 
 procedure fpc_chararray_bool(b : boolean;len:sizeint;out a : array of char);compilerproc;
 var
@@ -1037,12 +1096,20 @@ begin
     maxlen:=length(ss)
   else
     maxlen:=high(a)+1;
+<<<<<<< HEAD
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
 end;
 
 
 {$ifndef FPC_HAS_CHARARRAY_CURRENCY}
 {$define FPC_HAS_CHARARRAY_CURRENCY}
+=======
+  move(ss[1],pchar(@a)^,maxlen);
+end;
+
+
+{$ifdef FPC_HAS_STR_CURRENCY}
+>>>>>>> graemeg/cpstrnew
 procedure fpc_chararray_Currency(c : Currency;len,fr : SizeInt;out a : array of char);compilerproc;
 {$ifdef EXCLUDE_COMPLEX_PROCS}
 begin
@@ -1719,6 +1786,7 @@ end;
 Function fpc_Val_Real_ShortStr(const s : shortstring; out Code : ValSInt): ValReal; [public, alias:'FPC_VAL_REAL_SHORTSTR']; compilerproc;
 var
   hd,
+<<<<<<< HEAD
   sign : valreal;
   esign,
   exponent,
@@ -1728,6 +1796,12 @@ var
   nlz,
   explimit,
   explastdigit: SizeInt;
+=======
+  esign,sign : valreal;
+  exponent,
+  decpoint,i : SizeInt;
+  flags      : byte;
+>>>>>>> graemeg/cpstrnew
 begin
   fpc_Val_Real_ShortStr:=0.0;
   code:=1;
@@ -1757,6 +1831,7 @@ begin
   expstart:=code;
   while (Code<=Length(s)) do
     begin
+<<<<<<< HEAD
       case s[code] of
         '0':
           begin
@@ -1781,6 +1856,23 @@ begin
         break;
       end;
       inc(code);
+=======
+      inc(code);
+      while (length(s)>=code) and (s[code] in ['0'..'9']) do
+        begin
+           { Read fractional part. }
+          flags:=flags or 2;
+          fpc_Val_Real_ShortStr:=fpc_Val_Real_ShortStr*10+(ord(s[code])-ord('0'));
+          inc(decpoint);
+          inc(code);
+        end;
+   end;
+ { Again, read integer and fractional part}
+  if flags=0 then
+    begin
+      fpc_Val_Real_ShortStr:=0.0;
+      exit;
+>>>>>>> graemeg/cpstrnew
     end;
   { must have seen at least one digit }
   if (code-expstart)<1+ord(decpoint<>0) then
@@ -1843,7 +1935,22 @@ begin
       esign:=-1;
       exponent:=-exponent;
     end;
+<<<<<<< HEAD
 
+=======
+{ adjust exponent based on decimal point }
+  if esign>0 then
+    begin
+      dec(exponent,decpoint);
+      if (exponent<0) then
+        begin
+          esign:=-1;
+          exponent:=-exponent;
+        end
+    end
+  else
+    inc(exponent,decpoint);
+>>>>>>> graemeg/cpstrnew
 { evaluate sign }
 { (before exponent, because the exponent may turn it into a denormal) }
   fpc_Val_Real_ShortStr:=hd*sign;

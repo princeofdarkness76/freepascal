@@ -36,9 +36,12 @@ interface
 
       tcgprocinfo = class(tprocinfo)
       private
+<<<<<<< HEAD
         procedure CreateInlineInfo;
         { returns the node which is the start of the user code, this is needed by the dfa }
         function GetUserCode: tnode;
+=======
+>>>>>>> graemeg/cpstrnew
         procedure maybe_add_constructor_wrapper(var tocode: tnode; withexceptblock: boolean);
         procedure add_entry_exit_code;
         procedure setup_tempgen;
@@ -52,6 +55,7 @@ interface
         stackcheck_asmnode,
         init_asmnode,
         final_asmnode : tasmnode;
+<<<<<<< HEAD
         final_used : boolean;
         dfabuilder : TDFABuilder;
 
@@ -59,6 +63,10 @@ interface
 
         function calc_stackframe_size : longint;override;
 
+=======
+        dfabuilder : TDFABuilder;
+        destructor  destroy;override;
+>>>>>>> graemeg/cpstrnew
         procedure printproc(pass:string);
         procedure generate_code;
         procedure generate_code_tree;
@@ -96,7 +104,13 @@ implementation
        cutils,
        { global }
        globtype,tokens,verbose,comphook,constexp,
+<<<<<<< HEAD
        systems,cpubase,aasmbase,aasmtai,aasmdata,
+=======
+       systems,
+       { aasm }
+       cpuinfo,cpubase,aasmbase,aasmtai,aasmdata,
+>>>>>>> graemeg/cpstrnew
        { symtable }
        symconst,symbase,symsym,symtype,symtable,defutil,symcreat,
        paramgr,
@@ -115,11 +129,15 @@ implementation
        scanner,gendef,
        pbase,pstatmnt,pdecl,pdecsub,pexports,pgenutil,pparautl,pgentype,
        { codegen }
+<<<<<<< HEAD
        tgobj,cgbase,cgobj,cgutils,hlcgobj,hlcgcpu,dbgbase,
 {$ifdef llvm}
       { override create_hlcodegen from hlcgcpu }
       hlcgllvm,
 {$endif}
+=======
+       tgobj,cgbase,cgobj,cgcpu,dbgbase,
+>>>>>>> graemeg/cpstrnew
        ncgutil,regvars,
        optbase,
        opttail,
@@ -278,6 +296,7 @@ implementation
 
     procedure check_finalize_paras(p:TObject;arg:pointer);
       begin
+<<<<<<< HEAD
         if (tsym(p).typ=paravarsym) then
           begin
             if tparavarsym(p).needs_finalization then
@@ -291,6 +310,12 @@ implementation
                is_rtti_managed_type(tparavarsym(p).vardef) then
               include(current_procinfo.flags,pi_needs_got);
           end;
+=======
+        if (tsym(p).typ=paravarsym) and
+           (tparavarsym(p).varspez=vs_value) and
+           is_managed_type(tparavarsym(p).vardef) then
+          include(current_procinfo.flags,pi_needs_implicit_finally);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -301,6 +326,7 @@ implementation
         if (tsym(p).typ=localvarsym) and
            (tlocalvarsym(p).refs>0) and
            is_managed_type(tlocalvarsym(p).vardef) then
+<<<<<<< HEAD
           begin
             include(current_procinfo.flags,pi_needs_implicit_finally);
             include(current_procinfo.flags,pi_do_call);
@@ -309,6 +335,9 @@ implementation
               (tf_pic_uses_got in target_info.flags) then
               include(current_procinfo.flags,pi_needs_got);
           end;
+=======
+          include(current_procinfo.flags,pi_needs_implicit_finally);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -355,6 +384,12 @@ implementation
                         { The library init code is already called and does not
                           need to be in the initfinal table (PFV) }
                         block:=statement_block(_INITIALIZATION);
+                        { optimize empty initialization block away }
+                        if (block.nodetype=blockn) and (tblocknode(block).left=nil) then
+                          FreeAndNil(block)
+                        else
+                          if not islibrary then
+                            current_module.flags:=current_module.flags or uf_init;
                      end
                    else if token=_FINALIZATION then
                      begin
@@ -362,9 +397,22 @@ implementation
                          point when we try to read the nonh existing initalization section
                          so we've to check if we are really try to parse the finalization }
                        if current_procinfo.procdef.proctypeoption=potype_unitfinalize then
+<<<<<<< HEAD
                          block:=statement_block(_FINALIZATION)
                        else
                          block:=nil;
+=======
+                         begin
+                           block:=statement_block(_FINALIZATION);
+                           { optimize empty finalization block away }
+                           if (block.nodetype=blockn) and (tblocknode(block).left=nil) then
+                             FreeAndNil(block)
+                           else
+                             current_module.flags:=current_module.flags or uf_finalize;
+                         end
+                         else
+                           block:=nil;
+>>>>>>> graemeg/cpstrnew
                      end
                    else
                      block:=statement_block(_BEGIN);
@@ -458,6 +506,7 @@ implementation
             { a constructor needs a help procedure }
             if (current_procinfo.procdef.proctypeoption=potype_constructor) then
               begin
+<<<<<<< HEAD
                 if is_class(current_structdef) or
                     (
                       is_objectpascal_helper(current_structdef) and
@@ -469,6 +518,12 @@ implementation
                     else
                       def:=current_structdef;
                     srsym:=search_struct_member(def,'NEWINSTANCE');
+=======
+                if is_class(current_structdef) then
+                  begin
+                    include(current_procinfo.flags,pi_needs_implicit_finally);
+                    srsym:=search_struct_member(current_structdef,'NEWINSTANCE');
+>>>>>>> graemeg/cpstrnew
                     if assigned(srsym) and
                        (srsym.typ=procsym) then
                       begin
@@ -517,6 +572,7 @@ implementation
                           ccallnode.createintern('fpc_help_constructor',para)));
                     end
                 else
+<<<<<<< HEAD
                   if is_javaclass(current_structdef) or
                      ((target_info.system in systems_jvm) and
                       is_record(current_structdef)) then
@@ -547,11 +603,19 @@ implementation
                             (tobjectdef(current_structdef).extendeddef.typ<>objectdef)
                          ) then
                     internalerror(200305103);
+=======
+                  if not is_record(current_structdef) then
+                  internalerror(200305103);
+>>>>>>> graemeg/cpstrnew
                 { if self=nil then exit
                   calling fail instead of exit is useless because
                   there is nothing to dispose (PFV) }
                 if is_class_or_object(current_structdef) then
+<<<<<<< HEAD
                   addstatement(newstatement,cifnode.create(
+=======
+                addstatement(newstatement,cifnode.create(
+>>>>>>> graemeg/cpstrnew
                     caddnode.create(equaln,
                         load_self_pointer_node,
                         cnilnode.create),
@@ -641,7 +705,11 @@ implementation
                             caddnode.create(unequaln,
                               ctypeconvnode.create_internal(load_vmt_pointer_node,voidpointertype),
                               cnilnode.create),
+<<<<<<< HEAD
                             cnodeutils.finalize_data_node(load_self_node),
+=======
+                            finalize_data_node(load_self_node),
+>>>>>>> graemeg/cpstrnew
                             nil));
                         end;
                       { parameter 3 : vmt_offset }
@@ -673,6 +741,91 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+=======
+    function generate_except_block:tnode;
+      var
+        newstatement : tstatementnode;
+        { safecall handling }
+        exceptobjnode,exceptaddrnode: ttempcreatenode;
+        sym,exceptsym: tsym;
+      begin
+        generate_except_block:=internalstatements(newstatement);
+
+        { a constructor needs call destructor (if available) when it
+          is not inherited }
+        if not assigned(current_structdef) or
+           (current_procinfo.procdef.proctypeoption<>potype_constructor) then
+          begin
+            { no constructor }
+            { must be the return value finalized before reraising the exception? }
+            if (not is_void(current_procinfo.procdef.returndef)) and
+               is_managed_type(current_procinfo.procdef.returndef) and
+               (not paramanager.ret_in_param(current_procinfo.procdef.returndef, current_procinfo.procdef.proccalloption)) and
+               (not is_class(current_procinfo.procdef.returndef)) then
+              addstatement(newstatement,finalize_data_node(load_result_node));
+{$if defined(x86) or defined(arm)}
+            { safecall handling }
+            if (tf_safecall_exceptions in target_info.flags) and
+               (current_procinfo.procdef.proccalloption=pocall_safecall) then
+              begin
+                { create a local hidden variable "safe_result"    }
+                { it will be used in ncgflw unit                  }
+                { to set "real" result value for safecall routine }
+                sym:=tlocalvarsym.create('$safe_result',vs_value,hresultdef,[]);
+                include(sym.symoptions,sp_internal);
+                current_procinfo.procdef.localst.insert(sym);
+                { if safecall is used for a class method we need to call }
+                { SafecallException virtual method                       }
+                { In other case we return E_UNEXPECTED error value       }
+                if is_class(current_procinfo.procdef.struct) then
+                  begin
+                    { temp variable to store exception address }
+                    exceptaddrnode:=ctempcreatenode.create(voidpointertype,voidpointertype.size,
+                      tt_persistent,true);
+                    addstatement(newstatement,exceptaddrnode);
+                    addstatement(newstatement,
+                      cassignmentnode.create(
+                        ctemprefnode.create(exceptaddrnode),
+                        ccallnode.createintern('fpc_getexceptionaddr',nil)));
+                    { temp variable to store popped up exception }
+                    exceptobjnode:=ctempcreatenode.create(class_tobject,class_tobject.size,
+                      tt_persistent,true);
+                    addstatement(newstatement,exceptobjnode);
+                    addstatement(newstatement,
+                      cassignmentnode.create(
+                        ctemprefnode.create(exceptobjnode),
+                        ccallnode.createintern('fpc_popobjectstack', nil)));
+                    exceptsym:=search_struct_member(tobjectdef(current_procinfo.procdef.struct),'SAFECALLEXCEPTION');
+                    addstatement(newstatement,
+                      cassignmentnode.create(
+                        cloadnode.create(sym,sym.Owner),
+                        ccallnode.create(
+                          ccallparanode.create(ctemprefnode.create(exceptaddrnode),
+                          ccallparanode.create(ctemprefnode.create(exceptobjnode),nil)),
+                          tprocsym(exceptsym), tprocsym(exceptsym).owner,load_self_node,[])));
+                    addstatement(newstatement,ccallnode.createintern('fpc_destroyexception',
+                      ccallparanode.create(ctemprefnode.create(exceptobjnode),nil)));
+                    addstatement(newstatement,ctempdeletenode.create(exceptobjnode));
+                    addstatement(newstatement,ctempdeletenode.create(exceptaddrnode));
+                  end
+                else
+                  begin
+                    { pop up and destroy an exception }
+                    addstatement(newstatement,ccallnode.createintern('fpc_destroyexception',
+                      ccallparanode.create(ccallnode.createintern('fpc_popobjectstack', nil),nil)));
+                    addstatement(newstatement,
+                      cassignmentnode.create(
+                        cloadnode.create(sym,sym.Owner),
+                        genintconstnode(HResult($8000FFFF))));
+                  end;
+              end;
+{$endif}
+          end;
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
 {****************************************************************************
                                   TCGProcInfo
 ****************************************************************************}
@@ -687,12 +840,15 @@ implementation
        end;
 
 
+<<<<<<< HEAD
     function tcgprocinfo.calc_stackframe_size:longint;
       begin
         result:=Align(tg.direction*tg.lasttemp,current_settings.alignment.localalignmin);
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
     procedure tcgprocinfo.printproc(pass:string);
       begin
         assign(printnodefile,treelogfilename);
@@ -726,21 +882,33 @@ implementation
         newstatement: tstatementnode;
         pd: tprocdef;
       begin
+<<<<<<< HEAD
         if assigned(procdef.struct) and
            (procdef.proctypeoption=potype_constructor) then
           begin
             withexceptblock:=
               withexceptblock and
               not(target_info.system in systems_garbage_collected_managed_types);
+=======
+        if assigned(current_structdef) and
+           (current_procinfo.procdef.proctypeoption=potype_constructor) then
+          begin
+>>>>>>> graemeg/cpstrnew
             { Don't test self and the vmt here. See generate_bodyexit_block }
             { why (JM)                                                      }
             oldlocalswitches:=current_settings.localswitches;
             current_settings.localswitches:=oldlocalswitches-[cs_check_object,cs_check_range];
 
             { call AfterConstruction for classes }
+<<<<<<< HEAD
             if is_class(procdef.struct) then
               begin
                 srsym:=search_struct_member(procdef.struct,'AFTERCONSTRUCTION');
+=======
+            if is_class(current_structdef) then
+              begin
+                srsym:=search_struct_member(current_structdef,'AFTERCONSTRUCTION');
+>>>>>>> graemeg/cpstrnew
                 if assigned(srsym) and
                    (srsym.typ=procsym) then
                   begin
@@ -750,6 +918,7 @@ implementation
                       occurred then we will execute afterconstruction,
                       otherwise we won't (the exception will jump over us) }
                     addstatement(newstatement,tocode);
+<<<<<<< HEAD
                     { if implicit finally node wasn't created, then exit label and
                       finalization code must be handled here and placed before
                       afterconstruction }
@@ -761,6 +930,8 @@ implementation
                         final_used:=true;
                       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
                     { Self can be nil when fail is called }
                     { if self<>nil and vmt<>nil then afterconstruction }
                     addstatement(newstatement,cifnode.create(
@@ -771,7 +942,11 @@ implementation
                         caddnode.create(unequaln,
                           load_vmt_pointer_node,
                           cnilnode.create)),
+<<<<<<< HEAD
                         ccallnode.create(nil,tprocsym(srsym),srsym.owner,load_self_node,[],nil),
+=======
+                        ccallnode.create(nil,tprocsym(srsym),srsym.owner,load_self_node,[]),
+>>>>>>> graemeg/cpstrnew
                         nil));
                     tocode:=afterconstructionblock;
                   end
@@ -779,6 +954,7 @@ implementation
                   internalerror(200305106);
               end;
 
+<<<<<<< HEAD
             if withexceptblock and (procdef.struct.typ=objectdef) then
               begin
                 { Generate the implicit "fail" code for a constructor (destroy
@@ -787,10 +963,21 @@ implementation
                 { this will always be the case for classes, since tobject has
                   a destructor }
                 if assigned(pd) or is_object(procdef.struct) then
+=======
+            if withexceptblock and (current_structdef.typ=objectdef) then
+              begin
+                { Generate the implicit "fail" code for a constructor (destroy
+                  in case an exception happened) }
+                pd:=tobjectdef(current_structdef).find_destructor;
+                { this will always be the case for classes, since tobject has
+                  a destructor }
+                if assigned(pd) then
+>>>>>>> graemeg/cpstrnew
                   begin
                     current_filepos:=exitpos;
                     exceptblock:=internalstatements(newstatement);
                     { first free the instance if non-nil }
+<<<<<<< HEAD
                     if assigned(pd) then
                       { if vmt<>0 then call destructor }
                       addstatement(newstatement,
@@ -817,6 +1004,16 @@ implementation
                               voidpointertype),
                           nil))))
                       );
+=======
+                    { if vmt<>0 then call destructor }
+                    addstatement(newstatement,cifnode.create(
+                      caddnode.create(unequaln,
+                        load_vmt_pointer_node,
+                        cnilnode.create),
+                      { cnf_create_failed -> don't call BeforeDestruction }
+                      ccallnode.create(nil,tprocsym(pd.procsym),pd.procsym.owner,load_self_node,[cnf_create_failed]),
+                      nil));
+>>>>>>> graemeg/cpstrnew
                     { then re-raise the exception }
                     addstatement(newstatement,craisenode.create(nil,nil,nil));
                     current_filepos:=entrypos;
@@ -844,8 +1041,14 @@ implementation
         finalcode,
         bodyentrycode,
         bodyexitcode,
+<<<<<<< HEAD
         wrappedbody,
         newblock     : tnode;
+=======
+        exceptcode,
+        wrappedbody: tnode;
+        newblock     : tblocknode;
+>>>>>>> graemeg/cpstrnew
         codestatement,
         newstatement : tstatementnode;
         oldfilepos   : tfileposinfo;
@@ -904,7 +1107,11 @@ implementation
             wrappedbody:=ctryfinallynode.create_implicit(
                code,
                finalcode,
+<<<<<<< HEAD
                cnothingnode.create);
+=======
+               exceptcode);
+>>>>>>> graemeg/cpstrnew
             { afterconstruction must be called after final_asmnode, because it
                has to execute after the temps have been finalised in case of a
                refcounted class (afterconstruction decreases the refcount
@@ -919,10 +1126,19 @@ implementation
           end
         else
           begin
+<<<<<<< HEAD
             { constructors need destroy-on-exception code even if they don't
               have managed variables/temps }
             maybe_add_constructor_wrapper(code,
               cs_implicit_exceptions in current_settings.moduleswitches);
+=======
+            maybe_add_constructor_wrapper(code,false);
+            addstatement(newstatement,loadpara_asmnode);
+            addstatement(newstatement,stackcheck_asmnode);
+            addstatement(newstatement,entry_asmnode);
+            addstatement(newstatement,init_asmnode);
+            addstatement(newstatement,bodyentrycode);
+>>>>>>> graemeg/cpstrnew
             addstatement(newstatement,code);
             if assigned(nestedexitlabel) then
               addstatement(newstatement,clabelnode.create(cnothingnode.create,nestedexitlabel));
@@ -934,7 +1150,7 @@ implementation
                 final_used:=true;
               end;
           end;
-        do_firstpass(newblock);
+        do_firstpass(tnode(newblock));
         code:=newblock;
         current_filepos:=oldfilepos;
       end;
@@ -969,6 +1185,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 {$if defined(i386) or defined(x86_64) or defined(arm)}
     const
       exception_flags: array[boolean] of tprocinfoflags = (
@@ -1084,6 +1301,8 @@ implementation
         set_first_temp_offset;
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
     function tcgprocinfo.has_assembler_child : boolean;
       var
         hp : tprocinfo;
@@ -1265,6 +1484,7 @@ implementation
         current_procinfo:=self;
         current_filepos:=entrypos;
         current_structdef:=procdef.struct;
+<<<<<<< HEAD
 
         { store start of user code, it must be a block node, it will be used later one to
           check variable lifeness }
@@ -1299,6 +1519,8 @@ implementation
                 CreateInlineInfo;
               end;
           end;
+=======
+>>>>>>> graemeg/cpstrnew
 
         templist:=TAsmList.create;
 
@@ -1345,6 +1567,10 @@ implementation
         if paraprintnodetree=1 then
           printproc( 'after the firstpass');
 
+        { Print the node to tree.log }
+        if paraprintnodetree=1 then
+          printproc( 'after the firstpass');
+
         { do this before adding the entry code else the tail recursion recognition won't work,
           if this causes troubles, it must be if'ed
         }
@@ -1361,6 +1587,36 @@ implementation
           begin
             dfabuilder:=TDFABuilder.Create;
             dfabuilder.createdfainfo(code);
+<<<<<<< HEAD
+=======
+            { when life info is available, we can give more sophisticated warning about unintialized
+              variables }
+
+            { iterate through life info of the first node }
+            for i:=0 to dfabuilder.nodemap.count-1 do
+              begin
+                if DFASetIn(code.optinfo^.life,i) then
+                  case tnode(dfabuilder.nodemap[i]).nodetype of
+                    loadn:
+                      begin
+                        varsym:=tabstractnormalvarsym(tloadnode(dfabuilder.nodemap[i]).symtableentry);
+
+                        { Give warning/note for living locals }
+                        if assigned(varsym.owner) and
+                          not(vo_is_external in varsym.varoptions) then
+                          begin
+                            if (vo_is_funcret in varsym.varoptions) then
+                              CGMessage(sym_w_function_result_uninitialized)
+                            else
+                              begin
+                                if (varsym.owner=procdef.localst) and not (vo_is_typed_const in varsym.varoptions) then
+                                  CGMessage1(sym_w_uninitialized_local_variable,varsym.realname);
+                              end;
+                          end;
+                      end;
+                  end;
+              end;
+>>>>>>> graemeg/cpstrnew
             include(flags,pi_dfaavailable);
 
             { when life info is available, we can give more sophisticated warning about uninitialized
@@ -1398,7 +1654,11 @@ implementation
         if (cs_opt_loopstrength in current_settings.optimizerswitches)
           { our induction variable strength reduction doesn't like
             for loops with more than one entry }
+<<<<<<< HEAD
           and not(pi_has_label in flags) then
+=======
+          and not(pi_has_label in current_procinfo.flags) then
+>>>>>>> graemeg/cpstrnew
           begin
             {RedoDFA:=}OptimizeInductionVariables(code);
           end;
@@ -1417,10 +1677,68 @@ implementation
         { only do secondpass if there are no errors }
         if (ErrorCount=0) then
           begin
+<<<<<<< HEAD
             create_hlcodegen;
 
             if (procdef.proctypeoption<>potype_exceptfilter) then
               setup_tempgen;
+=======
+            create_codegen;
+
+            { set the start offset to the start of the temp area in the stack }
+            tg:=ttgobj.create;
+
+{$if defined(x86) or defined(arm)}
+            { try to strip the stack frame }
+            { set the framepointer to esp if:
+              - no assembler directive, those are handled in assembler_block
+                in pstatment.pas (for cases not caught by the Delphi
+                exception below)
+              - no exceptions are used
+              - no pushes are used/esp modifications, could be:
+                * outgoing parameters on the stack
+                * incoming parameters on the stack
+                * open arrays
+              - no inline assembler
+             or
+              - Delphi mode
+              - assembler directive
+              - no pushes are used/esp modifications, could be:
+                * outgoing parameters on the stack
+                * incoming parameters on the stack
+                * open arrays
+              - no local variables
+            }
+            if ((po_assembler in procdef.procoptions) and
+                (m_delphi in current_settings.modeswitches) and
+                { localst at main_program_level is a staticsymtable }
+                (procdef.localst.symtablelevel<>main_program_level) and
+                (tabstractlocalsymtable(procdef.localst).count_locals = 0)) or
+               ((cs_opt_stackframe in current_settings.optimizerswitches) and
+                not(cs_generate_stackframes in current_settings.localswitches) and
+                not(po_assembler in procdef.procoptions) and
+                ((flags*[pi_has_assembler_block,pi_uses_exceptions,pi_is_assembler,
+                        pi_needs_implicit_finally,pi_has_implicit_finally,pi_has_stackparameter,
+                        pi_needs_stackframe])=[])
+               )
+             then
+               begin
+                 { we need the parameter info here to determine if the procedure gets
+                   parameters on the stack
+
+                   calling generate_parameter_info doesn't hurt but it costs time
+                   (necessary to init para_stack_size)
+                 }
+                 generate_parameter_info;
+                 if not(procdef.stack_tainting_parameter(calleeside)) and
+                   not(has_assembler_child) and (para_stack_size=0) then
+                   begin
+                     { Only need to set the framepointer }
+                     framepointer:=NR_STACK_POINTER_REG;
+                     tg.direction:=1;
+                   end;
+               end;
+>>>>>>> graemeg/cpstrnew
 
             { Create register allocator, must come after framepointer is known }
             hlcg.init_register_allocators;
@@ -1448,7 +1766,11 @@ implementation
 {$endif oldreg}
             current_filepos:=entrypos;
 
+<<<<<<< HEAD
             hlcg.gen_load_para_value(templist);
+=======
+            gen_load_para_value(templist);
+>>>>>>> graemeg/cpstrnew
 
             { caller paraloc info is also necessary in the stackframe_entry
               code of the ppc (and possibly other processors)               }
@@ -1578,6 +1900,7 @@ implementation
             { re-enable if more code at the end is ever generated here
             cg.set_regalloc_live_range_direction(rad_forward);
             }
+<<<<<<< HEAD
 
 
 {$ifndef NoOpt}
@@ -1588,6 +1911,8 @@ implementation
               preregallocschedule(aktproccode);
 {$endif i386}
 {$endif NoOpt}
+=======
+>>>>>>> graemeg/cpstrnew
 
             { The procedure body is finished, we can now
               allocate the registers }
@@ -1678,8 +2003,16 @@ implementation
               end;
 {$endif NoOpt}
 
+<<<<<<< HEAD
             { Perform target-specific processing if necessary }
             postprocess_code;
+=======
+
+{$ifdef ARM}
+            { because of the limited constant size of the arm, all data access is done pc relative }
+            finalizearmcode(aktproccode,aktlocaldata);
+{$endif ARM}
+>>>>>>> graemeg/cpstrnew
 
             { Add end symbol and debug info }
             { this must be done after the pcrelativedata is appended else the distance calculation of
@@ -1705,8 +2038,15 @@ implementation
                 tg:=nil;
               end;
             { stop tempgen and ra }
+<<<<<<< HEAD
             hlcg.done_register_allocators;
             destroy_hlcodegen;
+=======
+            tg.free;
+            cg.done_register_allocators;
+            destroy_codegen;
+            tg:=nil;
+>>>>>>> graemeg/cpstrnew
           end;
 
         dfabuilder.free;
@@ -1777,6 +2117,59 @@ implementation
        end;
 
 
+<<<<<<< HEAD
+=======
+    function checknodeinlining(procdef: tprocdef): boolean;
+      var
+        i : integer;
+        currpara : tparavarsym;
+      begin
+        result := false;
+        if (pi_has_assembler_block in current_procinfo.flags) then
+          begin
+            Message1(parser_w_not_supported_for_inline,'assembler');
+            Message(parser_w_inlining_disabled);
+            exit;
+          end;
+        for i:=0 to procdef.paras.count-1 do
+          begin
+            currpara:=tparavarsym(procdef.paras[i]);
+            case currpara.vardef.typ of
+              formaldef :
+                begin
+                  if (currpara.varspez in [vs_out,vs_var,vs_const,vs_constref]) then
+                    begin
+                      Message1(parser_w_not_supported_for_inline,'formal parameter');
+                      Message(parser_w_inlining_disabled);
+                      exit;
+                    end;
+                end;
+              arraydef :
+                begin
+                  if is_array_of_const(currpara.vardef) or
+                     is_variant_array(currpara.vardef) then
+                    begin
+                      Message1(parser_w_not_supported_for_inline,'array of const');
+                      Message(parser_w_inlining_disabled);
+                      exit;
+                    end;
+                  { open arrays might need re-basing of the index, i.e. if you pass
+                    an array[1..10] as open array, you have to add 1 to all index operations
+                    if you directly inline it }
+                  if is_open_array(currpara.vardef) then
+                    begin
+                      Message1(parser_w_not_supported_for_inline,'open array');
+                      Message(parser_w_inlining_disabled);
+                      exit;
+                    end;
+                end;
+            end;
+        end;
+        result:=true;
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     procedure tcgprocinfo.parse_body;
       var
          old_current_procinfo : tprocinfo;
@@ -1785,23 +2178,33 @@ implementation
          old_current_structdef: tabstractrecorddef;
          old_current_genericdef,
          old_current_specializedef: tstoreddef;
+<<<<<<< HEAD
          old_parse_generic: boolean;
 
+=======
+>>>>>>> graemeg/cpstrnew
       begin
          old_current_procinfo:=current_procinfo;
          old_block_type:=block_type;
          old_current_structdef:=current_structdef;
          old_current_genericdef:=current_genericdef;
          old_current_specializedef:=current_specializedef;
+<<<<<<< HEAD
          old_parse_generic:=parse_generic;
+=======
+>>>>>>> graemeg/cpstrnew
 
          current_procinfo:=self;
          current_structdef:=procdef.struct;
          if assigned(current_structdef) and (df_generic in current_structdef.defoptions) then
+<<<<<<< HEAD
            begin
              current_genericdef:=current_structdef;
              parse_generic:=true;
            end;
+=======
+           current_genericdef:=current_structdef;
+>>>>>>> graemeg/cpstrnew
          if assigned(current_structdef) and (df_specialization in current_structdef.defoptions) then
            current_specializedef:=current_structdef;
 
@@ -1939,10 +2342,15 @@ implementation
         if tsym(p).typ<>paravarsym then
          exit;
         with tparavarsym(p) do
+<<<<<<< HEAD
           if (is_managed_type(vardef) and
              (varspez in [vs_value,vs_out])) or
              (is_shortstring(vardef) and
              (varspez=vs_value)) then
+=======
+          if is_managed_type(vardef) and
+             (varspez in [vs_value,vs_out]) then
+>>>>>>> graemeg/cpstrnew
             include(current_procinfo.flags,pi_do_call);
       end;
 
@@ -1954,6 +2362,25 @@ implementation
         generates the code for it
       }
 
+<<<<<<< HEAD
+=======
+      procedure do_generate_code(pi:tcgprocinfo);
+        var
+          hpi : tcgprocinfo;
+        begin
+          { generate code for this procedure }
+          pi.generate_code;
+          { process nested procs }
+          hpi:=tcgprocinfo(pi.get_first_nestedproc);
+          while assigned(hpi) do
+           begin
+             do_generate_code(hpi);
+             hpi:=tcgprocinfo(hpi.next);
+           end;
+          pi.resetprocdef;
+        end;
+
+>>>>>>> graemeg/cpstrnew
       var
         oldfailtokenmode : tmodeswitches;
         isnestedproc     : boolean;
@@ -2042,7 +2469,11 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure read_proc(isclassmethod:boolean; usefwpd: tprocdef;isgeneric:boolean);
+=======
+    procedure read_proc(isclassmethod:boolean);
+>>>>>>> graemeg/cpstrnew
       {
         Parses the procedure directives, then parses the procedure body, then
         generates the code for it
@@ -2069,11 +2500,16 @@ implementation
          current_genericdef:=nil;
          current_specializedef:=nil;
 
+<<<<<<< HEAD
          if not assigned(usefwpd) then
            { parse procedure declaration }
            pd:=parse_proc_dec(isclassmethod,old_current_structdef,isgeneric)
          else
            pd:=usefwpd;
+=======
+         { parse procedure declaration }
+         pd:=parse_proc_dec(isclassmethod,old_current_structdef);
+>>>>>>> graemeg/cpstrnew
 
          { set the default function options }
          if parse_only then
@@ -2101,10 +2537,17 @@ implementation
              { parse the directives that may follow }
              parse_proc_directives(pd,pdflags);
 
+<<<<<<< HEAD
              { hint directives, these can be separated by semicolons here,
                that needs to be handled here with a loop (PFV) }
              while try_consume_hintdirective(pd.symoptions,pd.deprecatedmsg) do
               Consume(_SEMICOLON);
+=======
+         { hint directives, these can be separated by semicolons here,
+           that needs to be handled here with a loop (PFV) }
+         while try_consume_hintdirective(pd.symoptions,pd.deprecatedmsg) do
+          Consume(_SEMICOLON);
+>>>>>>> graemeg/cpstrnew
 
              { Set calling convention }
              handle_calling_convention(pd);
@@ -2155,6 +2598,28 @@ implementation
              { Handle imports }
              if (po_external in pd.procoptions) then
                begin
+<<<<<<< HEAD
+=======
+                 { External declared in implementation, and there was already a
+                   forward (or interface) declaration then we need to generate
+                   a stub that calls the external routine }
+                 if (not pd.forwarddef) and
+                    (pd.hasforward)
+                    { it is unclear to me what's the use of the following condition,
+                      so commented out, see also issue #18371 (FK)
+                    and
+                    not(
+                        assigned(pd.import_dll) and
+                        (target_info.system in [system_i386_wdosx,
+                                                system_arm_wince,system_i386_wince])
+                       ) } then
+                   begin
+                     s:=proc_get_importname(pd);
+                     if s<>'' then
+                       gen_external_stub(current_asmdata.asmlists[al_procedures],pd,s);
+                   end;
+
+>>>>>>> graemeg/cpstrnew
                  { Import DLL specified? }
                  if assigned(pd.import_dll) then
                    begin
@@ -2234,6 +2699,7 @@ implementation
 
     procedure read_declarations(islibrary : boolean);
       var
+<<<<<<< HEAD
         hadgeneric : boolean;
 
         procedure handle_unexpected_had_generic;
@@ -2250,6 +2716,11 @@ implementation
       begin
         is_classdef:=false;
         hadgeneric:=false;
+=======
+        is_classdef:boolean;
+      begin
+        is_classdef:=false;
+>>>>>>> graemeg/cpstrnew
         repeat
            if not assigned(current_procinfo) then
              internalerror(200304251);
@@ -2275,18 +2746,27 @@ implementation
                   var_dec(hadgeneric);
                 end;
               _THREADVAR:
+<<<<<<< HEAD
                 begin
                   handle_unexpected_had_generic;
                   threadvar_dec(hadgeneric);
                 end;
+=======
+                threadvar_dec;
+>>>>>>> graemeg/cpstrnew
               _CLASS:
                 begin
                   is_classdef:=false;
                   if try_to_consume(_CLASS) then
                    begin
                      { class modifier is only allowed for procedures, functions, }
+<<<<<<< HEAD
                      { constructors, destructors                                 }
                      if not(token in [_FUNCTION,_PROCEDURE,_CONSTRUCTOR,_DESTRUCTOR,_OPERATOR]) and
+=======
+                     { constructors, destructors, fields and properties          }
+                     if not(token in [_FUNCTION,_PROCEDURE,_PROPERTY,_VAR,_CONSTRUCTOR,_DESTRUCTOR,_OPERATOR]) and
+>>>>>>> graemeg/cpstrnew
                         not((token=_ID) and (idtoken=_OPERATOR)) then
                        Message(parser_e_procedure_or_function_expected);
 
@@ -2303,6 +2783,7 @@ implementation
               _PROCEDURE,
               _OPERATOR:
                 begin
+<<<<<<< HEAD
                   if hadgeneric and not (token in [_PROCEDURE,_FUNCTION]) then
                     begin
                       Message(parser_e_procedure_or_function_expected);
@@ -2311,6 +2792,10 @@ implementation
                   read_proc(is_classdef,nil,hadgeneric);
                   is_classdef:=false;
                   hadgeneric:=false;
+=======
+                  read_proc(is_classdef);
+                  is_classdef:=false;
+>>>>>>> graemeg/cpstrnew
                 end;
               _EXPORTS:
                 begin
@@ -2351,6 +2836,7 @@ implementation
                           break;}
                       end;
                     _OPERATOR:
+<<<<<<< HEAD
                       begin
                         handle_unexpected_had_generic;
                         if is_classdef then
@@ -2358,6 +2844,24 @@ implementation
                             read_proc(is_classdef,nil,false);
                             is_classdef:=false;
                           end
+=======
+                      begin
+                        if is_classdef then
+                          begin
+                            read_proc(is_classdef);
+                            is_classdef:=false;
+                          end
+                        else
+                          break;
+                      end;
+                    _PROPERTY:
+                      begin
+                        if (m_fpc in current_settings.modeswitches) then
+                        begin
+                          property_dec(is_classdef);
+                          is_classdef:=false;
+                        end
+>>>>>>> graemeg/cpstrnew
                         else
                           break;
                       end;
@@ -2432,6 +2936,7 @@ implementation
              _FUNCTION,
              _PROCEDURE,
              _OPERATOR :
+<<<<<<< HEAD
                begin
                  if hadgeneric and not (token in [_FUNCTION, _PROCEDURE]) then
                    begin
@@ -2441,6 +2946,9 @@ implementation
                  read_proc(false,nil,hadgeneric);
                  hadgeneric:=false;
                end;
+=======
+               read_proc(false);
+>>>>>>> graemeg/cpstrnew
              else
                begin
                  case idtoken of
@@ -2453,7 +2961,7 @@ implementation
                      begin
                        handle_unexpected_had_generic;
                        if (m_fpc in current_settings.modeswitches) then
-                         property_dec
+                         property_dec(false)
                        else
                          break;
                      end;
@@ -2488,6 +2996,7 @@ implementation
 
     procedure specialize_objectdefs(p:TObject;arg:pointer);
       var
+<<<<<<< HEAD
         specobj : tabstractrecorddef;
         state : tspecializationstate;
 
@@ -2589,6 +3098,71 @@ implementation
                 exit;
 
               specialization_init(specobj.genericdef,state);
+=======
+        i  : longint;
+        hp : tdef;
+        oldcurrent_filepos : tfileposinfo;
+        oldsymtablestack   : tsymtablestack;
+        pu : tused_unit;
+        hmodule : tmodule;
+        specobj : tabstractrecorddef;
+      begin
+        if not((tsym(p).typ=typesym) and
+               (ttypesym(p).typedef.typesym=tsym(p)) and
+               (ttypesym(p).typedef.typ in [objectdef,recorddef]) and
+               (df_specialization in ttypesym(p).typedef.defoptions)
+              ) then
+          exit;
+
+        { Setup symtablestack a definition time }
+        specobj:=tabstractrecorddef(ttypesym(p).typedef);
+        oldsymtablestack:=symtablestack;
+        symtablestack:=tsymtablestack.create;
+        if not assigned(specobj.genericdef) then
+          internalerror(200705151);
+        hmodule:=find_module_from_symtable(specobj.genericdef.owner);
+        if hmodule=nil then
+          internalerror(200705152);
+        pu:=tused_unit(hmodule.used_units.first);
+        while assigned(pu) do
+          begin
+            if not assigned(pu.u.globalsymtable) then
+              internalerror(200705153);
+            symtablestack.push(pu.u.globalsymtable);
+            pu:=tused_unit(pu.next);
+          end;
+        if assigned(hmodule.globalsymtable) then
+          symtablestack.push(hmodule.globalsymtable);
+        if assigned(hmodule.localsymtable) then
+          symtablestack.push(hmodule.localsymtable);
+
+        { procedure definitions for classes or objects }
+        if is_class_or_object(specobj) or is_record(specobj) then
+          begin
+            for i:=0 to specobj.symtable.DefList.Count-1 do
+              begin
+                hp:=tdef(specobj.symtable.DefList[i]);
+                if hp.typ=procdef then
+                 begin
+                   if assigned(tprocdef(hp).genericdef) and
+                     (tprocdef(hp).genericdef.typ=procdef) and
+                     assigned(tprocdef(tprocdef(hp).genericdef).generictokenbuf) then
+                     begin
+                       oldcurrent_filepos:=current_filepos;
+                       current_filepos:=tprocdef(tprocdef(hp).genericdef).fileinfo;
+                       { use the index the module got from the current compilation process }
+                       current_filepos.moduleindex:=hmodule.unit_index;
+                       current_tokenpos:=current_filepos;
+                       current_scanner.startreplaytokens(tprocdef(tprocdef(hp).genericdef).generictokenbuf);
+                       read_proc_body(nil,tprocdef(hp));
+                       current_filepos:=oldcurrent_filepos;
+                     end
+                   else
+                     MessagePos1(tprocdef(hp).fileinfo,sym_e_forward_not_resolved,tprocdef(hp).fullprocname(false));
+                 end;
+             end;
+          end;
+>>>>>>> graemeg/cpstrnew
 
               { procedure definitions for classes or objects }
               process_abstractrecorddef(specobj);

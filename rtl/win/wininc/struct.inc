@@ -1560,6 +1560,7 @@ Const
 
 {$ifndef UNICODE}
      CPINFOEX   = CPINFOEXA;
+<<<<<<< HEAD
      LPCPINFOEX = PCPINFOEXA;
      _cpinfoex  = CPINFOEXA;
      Tcpinfoex  = CPINFOEXA;
@@ -1570,6 +1571,18 @@ Const
      _cpinfoex  = CPINFOEXW;
      Tcpinfoex  = CPINFOEXW;
      Pcpinfoex  = PCPINFOEXW;
+=======
+     LPCPINFOEX = ^CPINFOEXA;
+     _cpinfoex  = CPINFOEXA;
+     Tcpinfoex  = CPINFOEXA;
+     Pcpinfoex  = ^CPINFOEXA;
+{$ELSE}
+     CPINFOEX   = CPINFOEXW;
+     LPCPINFOEX = ^CPINFOEXW;
+     _cpinfoex  = CPINFOEXW;
+     Tcpinfoex  = CPINFOEXW;
+     Pcpinfoex  = ^CPINFOEXW;
+>>>>>>> graemeg/cpstrnew
 {$ENDIF}
 
      CPLINFO = record
@@ -4042,8 +4055,11 @@ Const
           iCtrlId : longint;
           hItemHandle : HANDLE;
           dwContextId : DWORD_PTR;
+<<<<<<< HEAD
  // NOTE:  this is defined as DWORD in http://msdn.microsoft.com/en-us/library/windows/desktop/bb773313%28v=vs.85%29.asp
 // but mingw has it as DWORD_PTR, so we will use that
+=======
+>>>>>>> graemeg/cpstrnew
           MousePos : POINT;
        end;
      LPHELPINFO = ^HELPINFO;
@@ -4892,7 +4908,11 @@ Const
           lpszText : LPCTSTR;
           lpszCaption : LPCTSTR;
           dwStyle : DWORD;
+<<<<<<< HEAD
           lpszIcon : LPCTSTR;
+=======
+          lpszIcon : LPCSTR;
+>>>>>>> graemeg/cpstrnew
           dwContextHelpId : DWORD_PTR;
           lpfnMsgBoxCallback : MSGBOXCALLBACK;
           dwLanguageId : DWORD;
@@ -5416,6 +5436,7 @@ Const
      LPOSVERSIONINFOW = ^OSVERSIONINFOW;
      _OSVERSIONINFOW = OSVERSIONINFOW;
      TOSVERSIONINFOW = OSVERSIONINFOW;
+<<<<<<< HEAD
      POSVERSIONINFOW = LPOSVERSIONINFOW;
 
      {$IFNDEF UNICODE}
@@ -5431,11 +5452,19 @@ Const
        POSVERSIONINFO   = ^OSVERSIONINFOW;
        OSVERSIONINFO    = OSVERSIONINFOW;
      {$ENDIF}
+=======
+     POSVERSIONINFOW = ^OSVERSIONINFOW;
+
+>>>>>>> graemeg/cpstrnew
 
      {$push}
      {$packrecords 4}
 
+<<<<<<< HEAD
      TEXTMETRICA = record
+=======
+     TEXTMETRIC = record
+>>>>>>> graemeg/cpstrnew
           tmHeight : LONG;
           tmAscent : LONG;
           tmDescent : LONG;
@@ -5457,11 +5486,23 @@ Const
           tmPitchAndFamily : BYTE;
           tmCharSet : BYTE;
        end;
+<<<<<<< HEAD
      LPTEXTMETRICA  = ^TEXTMETRICA;
      tagTEXTMETRICA = TEXTMETRICA;
      _TEXTMETRICA   = TEXTMETRICA;
      TTEXTMETRICA   = TEXTMETRICA;
      PTEXTMETRICA   = LPTEXTMETRICA;
+=======
+     LPTEXTMETRIC = ^TEXTMETRIC;
+     tagTEXTMETRIC = TEXTMETRIC;
+     TTEXTMETRIC = TEXTMETRIC;
+     PTEXTMETRIC = ^TEXTMETRIC;
+     TEXTMETRICA   = TEXTMETRIC;
+     LPTEXTMETRICA = ^TEXTMETRICA;
+     tagTEXTMETRICA = TEXTMETRICA;
+     TTEXTMETRICA = TEXTMETRICA;
+     PTEXTMETRICA = ^TEXTMETRICA;
+>>>>>>> graemeg/cpstrnew
 
      TEXTMETRICW = record
           tmHeight : LONG;
@@ -5490,7 +5531,9 @@ Const
      _TEXTMETRICW   = TEXTMETRICW;
      TTEXTMETRICW = TEXTMETRICW;
      PTEXTMETRICW = ^TEXTMETRICW;
+     {$PACKRECORDS C}
 
+<<<<<<< HEAD
 
      {$IFNDEF UNICODE}
        LPTEXTMETRIC       = ^TEXTMETRICA;
@@ -5509,6 +5552,8 @@ Const
      {$ENDIF}
      {$PACKRECORDS C}
 
+=======
+>>>>>>> graemeg/cpstrnew
      OUTLINETEXTMETRICA = record
           otmSize : UINT;
           otmTextMetrics : TEXTMETRICA;
@@ -5585,6 +5630,7 @@ Const
      LPOUTLINETEXTMETRICW = ^OUTLINETEXTMETRICW;
      _OUTLINETEXTMETRICW = OUTLINETEXTMETRICW;
      TOUTLINETEXTMETRICW = OUTLINETEXTMETRICW;
+<<<<<<< HEAD
      POUTLINETEXTMETRICW = LPOUTLINETEXTMETRICW;
 
      {$ifdef Unicode}
@@ -5601,6 +5647,23 @@ Const
      OUTLINETEXTMETRIC   = OUTLINETEXTMETRICA;
      {$endif}
 
+=======
+     POUTLINETEXTMETRICW = ^OUTLINETEXTMETRICW;
+
+     {$ifdef Unicode}
+     LPOUTLINETEXTMETRIC = ^OUTLINETEXTMETRICW;
+     _OUTLINETEXTMETRIC  = OUTLINETEXTMETRICW;
+     TOUTLINETEXTMETRIC  = OUTLINETEXTMETRICW;
+     POUTLINETEXTMETRIC  = ^OUTLINETEXTMETRICW;
+     OUTLINETEXTMETRIC   = OUTLINETEXTMETRICW;
+     {$else}
+     LPOUTLINETEXTMETRIC = ^OUTLINETEXTMETRICA;
+     _OUTLINETEXTMETRIC  = OUTLINETEXTMETRICA;
+     TOUTLINETEXTMETRIC  = OUTLINETEXTMETRICA;
+     POUTLINETEXTMETRIC  = ^OUTLINETEXTMETRICA;
+     OUTLINETEXTMETRIC   = OUTLINETEXTMETRICA;
+     {$endif}
+>>>>>>> graemeg/cpstrnew
      {$POP}
      OVERLAPPED = record
           Internal : ULONG_PTR;

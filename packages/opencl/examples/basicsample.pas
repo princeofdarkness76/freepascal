@@ -92,15 +92,19 @@ var
   gpu   : cl_device_type;
 
   tmpd  : single;
+<<<<<<< HEAD
   platformids : Pcl_platform_id;
   num_platforms : cl_uint;
   
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   // Fill our data set with random float values
   count := DATA_SIZE;
   for i:=0 to count - 1 do
     data[i]:= random;
 
+<<<<<<< HEAD
   err:=clGetPlatformIDs(0,nil,@num_platforms);
   Writeln('clGetPlatformIDs ', num_platforms);
   if (err <> CL_SUCCESS) then
@@ -118,12 +122,18 @@ begin
       Halt($FF);
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
   // Connect to a compute device
   // change CL_DEVICE_TYPE_CPU to CL_DEVICE_TYPE_GPU is you have powerful video (GeForce 8800/8600M or higher)
   gpu := CL_DEVICE_TYPE_GPU;
 
   device_id:=nil;
+<<<<<<< HEAD
   err := clGetDeviceIDs(platformids[0], gpu, 1, @device_id, nil);
+=======
+  err := clGetDeviceIDs(nil, gpu, 1, @device_id, nil);
+>>>>>>> graemeg/cpstrnew
   writeln('clGetDeviceIDs ', err);
   if (err <> CL_SUCCESS) then begin
     Writeln('Error: Failed to create a device group!');

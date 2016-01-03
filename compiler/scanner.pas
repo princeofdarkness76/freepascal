@@ -68,6 +68,7 @@ interface
        // stack for replay buffers
        treplaystack = class
          token    : ttoken;
+<<<<<<< HEAD
          idtoken  : ttoken;
          orgpattern,
          pattern  : string;
@@ -81,6 +82,12 @@ interface
            apatternw:pcompilerwidestring;asettings:tsettings;
            atokenbuf:tdynamicarray;anext:treplaystack);
          destructor destroy;override;
+=======
+         settings : tsettings;
+         tokenbuf : tdynamicarray;
+         next     : treplaystack;
+         constructor Create(atoken: ttoken;asettings:tsettings;atokenbuf:tdynamicarray;anext:treplaystack);
+>>>>>>> graemeg/cpstrnew
        end;
 
        tcompile_time_predicate = function(var valuedescr: String) : Boolean;
@@ -100,8 +107,11 @@ interface
          procedure setnexttoken;
          procedure savetokenpos;
          procedure restoretokenpos;
+<<<<<<< HEAD
          procedure writetoken(t: ttoken);
          function readtoken : ttoken;
+=======
+>>>>>>> graemeg/cpstrnew
        public
           inputfile    : tinputfile;  { current inputfile list }
           inputfilecount : longint;
@@ -171,7 +181,10 @@ interface
           procedure elseifpreprocstack(compile_time_predicate:tcompile_time_predicate);
           procedure elsepreprocstack;
           procedure popreplaystack;
+<<<<<<< HEAD
           function replay_stack_depth:longint;
+=======
+>>>>>>> graemeg/cpstrnew
           procedure handleconditional(p:tdirectiveitem);
           procedure handledirectives;
           procedure linebreak;
@@ -497,9 +510,12 @@ implementation
          if s='ISO' then
           current_settings.modeswitches:=isomodeswitches
         else
+<<<<<<< HEAD
          if s='EXTENDEDPASCAL' then
           current_settings.modeswitches:=extpasmodeswitches
         else
+=======
+>>>>>>> graemeg/cpstrnew
          b:=false;
 
 {$ifdef jvm}
@@ -517,16 +533,26 @@ implementation
 
            HandleModeSwitches(m_none,changeinit);
 
+<<<<<<< HEAD
            { turn on bitpacking for mode macpas and iso pascal as well as extended pascal }
            if ([m_mac,m_iso,m_extpas] * current_settings.modeswitches <> []) then
+=======
+           { turn on bitpacking for mode macpas and iso pascal }
+           if ([m_mac,m_iso] * current_settings.modeswitches <> []) then
+>>>>>>> graemeg/cpstrnew
              begin
                include(current_settings.localswitches,cs_bitpacking);
                if changeinit then
                  include(init_settings.localswitches,cs_bitpacking);
              end;
 
+<<<<<<< HEAD
            { support goto/label by default in delphi/tp7/mac/iso/extpas modes }
            if ([m_delphi,m_tp7,m_mac,m_iso,m_extpas] * current_settings.modeswitches <> []) then
+=======
+           { support goto/label by default in delphi/tp7/mac modes }
+           if ([m_delphi,m_tp7,m_mac,m_iso] * current_settings.modeswitches <> []) then
+>>>>>>> graemeg/cpstrnew
              begin
                include(current_settings.moduleswitches,cs_support_goto);
                if changeinit then
@@ -652,6 +678,7 @@ implementation
                  not(target_info.system in systems_objc_supported) then
                 begin
                   Message1(option_unsupported_target_for_feature,'Objective-C');
+<<<<<<< HEAD
                   break;
                 end;
 
@@ -661,6 +688,8 @@ implementation
                  not(target_info.system in systems_blocks_supported) then
                 begin
                   Message1(option_unsupported_target_for_feature,'Blocks');
+=======
+>>>>>>> graemeg/cpstrnew
                   break;
                 end;
 
@@ -2062,8 +2091,23 @@ type
           hs1,hs2: texprvalue;
           op: ttoken;
         begin
+<<<<<<< HEAD
            if pred_level=highest_precedence then
              result:=preproc_factor(eval)
+=======
+           hs1:=read_simple_expr(exprType, eval);
+           op:=current_scanner.preproc_token;
+           if (op = _ID) and (current_scanner.preproc_pattern = 'IN') then
+             op := _IN;
+           if not (op in [_IN,_EQ,_NE,_LT,_GT,_LTE,_GTE]) then
+             begin
+                read_expr:=hs1;
+                exit;
+             end;
+
+           if (op = _IN) then
+             preproc_consume(_ID)
+>>>>>>> graemeg/cpstrnew
            else
              result:=preproc_sub_expr(succ(pred_level),eval);
           repeat
@@ -2093,6 +2137,7 @@ type
                  end
                else
                  begin
+<<<<<<< HEAD
                    if pred_level=highest_precedence then
                      hs2:=preproc_factor(eval)
                    else
@@ -2101,6 +2146,47 @@ type
                      result:=hs1.evaluate(hs2,op)
                    else
                      result:=texprvalue.create_bool(false); {Just to have something}
+=======
+                   if (exprType * exprType2) = [] then
+                     CTEError(exprType2, exprType, '"'+hs1+' '+tokeninfo^[op].str+' '+hs2+'"');
+
+                   if is_number(hs1) and is_number(hs2) then
+                     begin
+                       val(hs1,l1,w);
+                       val(hs2,l2,w);
+                       case op of
+                         _EQ :
+                           b:=l1=l2;
+                         _NE :
+                           b:=l1<>l2;
+                         _LT :
+                           b:=l1<l2;
+                         _GT :
+                           b:=l1>l2;
+                         _GTE :
+                           b:=l1>=l2;
+                         _LTE :
+                           b:=l1<=l2;
+                       end;
+                     end
+                   else
+                     begin
+                       case op of
+                         _EQ:
+                           b:=hs1=hs2;
+                         _NE :
+                           b:=hs1<>hs2;
+                         _LT :
+                           b:=hs1<hs2;
+                         _GT :
+                            b:=hs1>hs2;
+                         _GTE :
+                            b:=hs1>=hs2;
+                         _LTE :
+                           b:=hs1<=hs2;
+                       end;
+                     end;
+>>>>>>> graemeg/cpstrnew
                  end;
                hs1.free;
                hs2.free;
@@ -2574,6 +2660,7 @@ type
 {*****************************************************************************
                               TReplayStack
 *****************************************************************************}
+<<<<<<< HEAD
     constructor treplaystack.Create(atoken:ttoken;aidtoken:ttoken;
       const aorgpattern,apattern:string;const acstringpattern:ansistring;
       apatternw:pcompilerwidestring;asettings:tsettings;
@@ -2590,16 +2677,24 @@ type
             setlengthwidestring(patternw,apatternw^.len);
             move(apatternw^.data^,patternw^.data^,apatternw^.len*sizeof(tcompilerwidechar));
           end;
+=======
+    constructor treplaystack.Create(atoken:ttoken;asettings:tsettings;atokenbuf:tdynamicarray;anext:treplaystack);
+      begin
+        token:=atoken;
+>>>>>>> graemeg/cpstrnew
         settings:=asettings;
         tokenbuf:=atokenbuf;
         next:=anext;
       end;
+<<<<<<< HEAD
 
 
     destructor treplaystack.destroy;
       begin
         donewidestring(patternw);
       end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 {*****************************************************************************
                               TDirectiveItem
@@ -3129,10 +3224,14 @@ type
       var
         t : ttoken;
         s : tspecialgenerictoken;
+<<<<<<< HEAD
         len,msgnb,copy_size : asizeint;
         val : longint;
         b : byte;
         pmsg : pmessagestaterecord;
+=======
+        len : sizeint;
+>>>>>>> graemeg/cpstrnew
       begin
         if not assigned(recordtokenbuf) then
           internalerror(200511176);
@@ -3145,10 +3244,16 @@ type
           begin
             { use a special token to record it }
             s:=ST_LOADSETTINGS;
+<<<<<<< HEAD
             writetoken(t);
             recordtokenbuf.write(s,1);
             copy_size:=sizeof(current_settings)-sizeof(pointer);
             tokenwritesettings(current_settings,copy_size);
+=======
+            recordtokenbuf.write(t,SizeOf(t));
+            recordtokenbuf.write(s,1);
+            recordtokenbuf.write(current_settings,sizeof(current_settings));
+>>>>>>> graemeg/cpstrnew
             last_settings:=current_settings;
           end;
 
@@ -3187,14 +3292,21 @@ type
         if current_tokenpos.line<>last_filepos.line then
           begin
             s:=ST_LINE;
+<<<<<<< HEAD
             writetoken(t);
             recordtokenbuf.write(s,1);
             tokenwritelongint(current_tokenpos.line);
+=======
+            recordtokenbuf.write(t,SizeOf(t));
+            recordtokenbuf.write(s,1);
+            recordtokenbuf.write(current_tokenpos.line,sizeof(current_tokenpos.line));
+>>>>>>> graemeg/cpstrnew
             last_filepos.line:=current_tokenpos.line;
           end;
         if current_tokenpos.column<>last_filepos.column then
           begin
             s:=ST_COLUMN;
+<<<<<<< HEAD
             writetoken(t);
             { can the column be written packed? }
             if current_tokenpos.column<$80 then
@@ -3207,11 +3319,17 @@ type
                 recordtokenbuf.write(s,1);
                 tokenwriteword(current_tokenpos.column);
               end;
+=======
+            recordtokenbuf.write(t,SizeOf(t));
+            recordtokenbuf.write(s,1);
+            recordtokenbuf.write(current_tokenpos.column,sizeof(current_tokenpos.column));
+>>>>>>> graemeg/cpstrnew
             last_filepos.column:=current_tokenpos.column;
           end;
         if current_tokenpos.fileindex<>last_filepos.fileindex then
           begin
             s:=ST_FILEINDEX;
+<<<<<<< HEAD
             writetoken(t);
             recordtokenbuf.write(s,1);
             tokenwriteword(current_tokenpos.fileindex);
@@ -3221,6 +3339,17 @@ type
         writetoken(token);
         if token<>_GENERICSPECIALTOKEN then
           writetoken(idtoken);
+=======
+            recordtokenbuf.write(t,SizeOf(t));
+            recordtokenbuf.write(s,1);
+            recordtokenbuf.write(current_tokenpos.fileindex,sizeof(current_tokenpos.fileindex));
+            last_filepos.fileindex:=current_tokenpos.fileindex;
+          end;
+
+        recordtokenbuf.write(token,SizeOf(token));
+        if token=_ID then
+          recordtokenbuf.write(idtoken,SizeOf(idtoken));
+>>>>>>> graemeg/cpstrnew
         case token of
           _CWCHAR,
           _CWSTRING :
@@ -3235,6 +3364,12 @@ type
               tokenwritesizeint(len);
               if len>0 then
                 recordtokenbuf.write(cstringpattern[1],len);
+            end;
+          _CSTRING:
+            begin
+              len:=length(cstringpattern);
+              recordtokenbuf.write(len,sizeof(sizeint));
+              recordtokenbuf.write(cstringpattern[1],length(cstringpattern));
             end;
           _CCHAR,
           _INTCONST,
@@ -3262,9 +3397,16 @@ type
       begin
         if not assigned(buf) then
           internalerror(200511175);
+<<<<<<< HEAD
         { save current scanner state }
         replaystack:=treplaystack.create(token,idtoken,orgpattern,pattern,
           cstringpattern,patternw,current_settings,replaytokenbuf,replaystack);
+=======
+        { save current token }
+        if token in [_CWCHAR,_CWSTRING,_CCHAR,_CSTRING,_INTCONST,_REALNUMBER,_ID] then
+          internalerror(200511178);
+        replaystack:=treplaystack.create(token,current_settings,replaytokenbuf,replaystack);
+>>>>>>> graemeg/cpstrnew
         if assigned(inputpointer) then
           dec(inputpointer);
         { install buffer }
@@ -3304,12 +3446,15 @@ type
         if replaytokenbuf.pos>=replaytokenbuf.size then
           begin
             token:=replaystack.token;
+<<<<<<< HEAD
             idtoken:=replaystack.idtoken;
             pattern:=replaystack.pattern;
             orgpattern:=replaystack.orgpattern;
             setlengthwidestring(patternw,replaystack.patternw^.len);
             move(replaystack.patternw^.data^,patternw^.data^,replaystack.patternw^.len*sizeof(tcompilerwidechar));
             cstringpattern:=replaystack.cstringpattern;
+=======
+>>>>>>> graemeg/cpstrnew
             replaytokenbuf:=replaystack.tokenbuf;
             { restore compiler settings }
             current_settings:=replaystack.settings;
@@ -3323,9 +3468,15 @@ type
           end;
         repeat
           { load token from the buffer }
+<<<<<<< HEAD
           token:=readtoken;
           if token<>_GENERICSPECIALTOKEN then
             idtoken:=readtoken
+=======
+          replaytokenbuf.read(token,SizeOf(token));
+          if token=_ID then
+            replaytokenbuf.read(idtoken,SizeOf(idtoken))
+>>>>>>> graemeg/cpstrnew
           else
             idtoken:=_NOID;
           case token of
@@ -3334,14 +3485,19 @@ type
               begin
                 wlen:=tokenreadsizeint;
                 setlengthwidestring(patternw,wlen);
+<<<<<<< HEAD
                 if wlen>0 then
                   replaytokenbuf.read(patternw^.data^,patternw^.len*sizeof(tcompilerwidechar));
+=======
+                replaytokenbuf.read(patternw^.data^,patternw^.len*sizeof(tcompilerwidechar));
+>>>>>>> graemeg/cpstrnew
                 orgpattern:='';
                 pattern:='';
                 cstringpattern:='';
               end;
             _CSTRING:
               begin
+<<<<<<< HEAD
                 wlen:=tokenreadsizeint;
                 if wlen>0 then
                   begin
@@ -3350,6 +3506,11 @@ type
                   end
                 else
                   cstringpattern:='';
+=======
+                replaytokenbuf.read(wlen,sizeof(sizeint));
+                setlength(cstringpattern,wlen);
+                replaytokenbuf.read(cstringpattern[1],wlen);
+>>>>>>> graemeg/cpstrnew
                 orgpattern:='';
                 pattern:='';
               end;
@@ -3370,10 +3531,47 @@ type
             _GENERICSPECIALTOKEN:
               begin
                 replaytokenbuf.read(specialtoken,1);
+<<<<<<< HEAD
                 { packed column? }
                 if (ord(specialtoken) and $80)<>0 then
                   begin
                       current_tokenpos.column:=ord(specialtoken) and $7f;
+=======
+                case specialtoken of
+                  ST_LOADSETTINGS:
+                    replaytokenbuf.read(current_settings,sizeof(current_settings));
+                  ST_LINE:
+                    begin
+                      replaytokenbuf.read(current_tokenpos.line,sizeof(current_tokenpos.line));
+
+                      { don't generate invalid line info if no sources are available for the current module }
+                      if not(get_module(current_filepos.moduleindex).sources_avail) then
+                        current_tokenpos.line:=0;
+
+                      current_filepos:=current_tokenpos;
+                    end;
+                  ST_COLUMN:
+                    begin
+                      replaytokenbuf.read(current_tokenpos.column,sizeof(current_tokenpos.column));
+
+                      { don't generate invalid line info if no sources are available for the current module }
+                      if not(get_module(current_filepos.moduleindex).sources_avail) then
+                        current_tokenpos.column:=0;
+
+                      current_filepos:=current_tokenpos;
+                    end;
+                  ST_FILEINDEX:
+                    begin
+                      replaytokenbuf.read(current_tokenpos.fileindex,sizeof(current_tokenpos.fileindex));
+
+                      { don't generate invalid line info if no sources are available for the current module }
+                      if not(get_module(current_filepos.moduleindex).sources_avail) then
+                        begin
+                          current_tokenpos.column:=0;
+                          current_tokenpos.line:=0;
+                        end;
+
+>>>>>>> graemeg/cpstrnew
                       current_filepos:=current_tokenpos;
                   end
                 else
@@ -3570,7 +3768,43 @@ type
     { load the values of tokenpos and lasttokenpos }
       begin
         do_gettokenpos(lasttokenpos,current_tokenpos);
+<<<<<<< HEAD
         current_filepos:=current_tokenpos;
+      end;
+
+
+    procedure tscannerfile.cachenexttokenpos;
+      begin
+        do_gettokenpos(nexttokenpos,next_filepos);
+      end;
+
+
+    procedure tscannerfile.setnexttoken;
+      begin
+        token:=nexttoken;
+        nexttoken:=NOTOKEN;
+        lasttokenpos:=nexttokenpos;
+        current_tokenpos:=next_filepos;
+=======
+>>>>>>> graemeg/cpstrnew
+        current_filepos:=current_tokenpos;
+        nexttokenpos:=0;
+      end;
+
+
+    procedure tscannerfile.savetokenpos;
+      begin
+        oldlasttokenpos:=lasttokenpos;
+        oldcurrent_filepos:=current_filepos;
+        oldcurrent_tokenpos:=current_tokenpos;
+      end;
+
+
+    procedure tscannerfile.restoretokenpos;
+      begin
+        lasttokenpos:=oldlasttokenpos;
+        current_filepos:=oldcurrent_filepos;
+        current_tokenpos:=oldcurrent_tokenpos;
       end;
 
 
@@ -3811,6 +4045,7 @@ type
          end;
       end;
 
+<<<<<<< HEAD
 
     function tscannerfile.replay_stack_depth:longint;
       var
@@ -3825,6 +4060,8 @@ type
           end;
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
     procedure tscannerfile.handleconditional(p:tdirectiveitem);
       begin
         savetokenpos;
@@ -4544,7 +4781,11 @@ type
         w : word;
         m       : longint;
         mac     : tmacro;
+<<<<<<< HEAD
         asciinr : string[33];
+=======
+        asciinr : string[6];
+>>>>>>> graemeg/cpstrnew
         iswidestring : boolean;
       label
          exit_label;
@@ -4696,9 +4937,12 @@ type
                     readnumber;
                     if length(pattern)=1 then
                       begin
+<<<<<<< HEAD
                         { does really an identifier follow? }
                         if not (c in ['_','A'..'Z','a'..'z']) then
                           message2(scan_f_syn_expected,tokeninfo^[_ID].str,c);
+=======
+>>>>>>> graemeg/cpstrnew
                         readstring;
                         token:=_ID;
                         idtoken:=_ID;
@@ -5064,9 +5308,15 @@ type
                                   if not iswidestring then
                                    begin
                                      if len>0 then
+<<<<<<< HEAD
                                        ascii2unicode(@cstringpattern[1],len,current_settings.sourcecodepage,patternw)
                                      else
                                        ascii2unicode(nil,len,current_settings.sourcecodepage,patternw);
+=======
+                                       ascii2unicode(@cstringpattern[1],len,patternw)
+                                     else
+                                       ascii2unicode(nil,len,patternw);
+>>>>>>> graemeg/cpstrnew
                                      iswidestring:=true;
                                      len:=0;
                                    end;
@@ -5108,9 +5358,15 @@ type
                                if not iswidestring then
                                  begin
                                    if len>0 then
+<<<<<<< HEAD
                                      ascii2unicode(@cstringpattern[1],len,current_settings.sourcecodepage,patternw)
                                    else
                                      ascii2unicode(nil,len,current_settings.sourcecodepage,patternw);
+=======
+                                     ascii2unicode(@cstringpattern[1],len,patternw)
+                                   else
+                                     ascii2unicode(nil,len,patternw);
+>>>>>>> graemeg/cpstrnew
                                    iswidestring:=true;
                                    len:=0;
                                  end;
@@ -5188,6 +5444,19 @@ type
                       break;
                    end;
                  until false;
+                 //------------------
+                 { convert existing string to an utf-8 string }
+                 if (not iswidestring) and 
+                    (current_settings.sourcecodepage<>default_settings.sourcecodepage) then
+                   begin
+                     if len>0 then
+                       ascii2unicode(@cstringpattern[1],len,patternw)
+                     else
+                       ascii2unicode(nil,len,patternw);
+                     iswidestring:=true;
+                     len:=0;
+                   end;                  
+                 //-------------------
                  { strings with length 1 become const chars }
                  if iswidestring then
                    begin

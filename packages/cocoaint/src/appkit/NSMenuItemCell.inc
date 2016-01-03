@@ -48,17 +48,27 @@
     _titleSize: NSSize;
     _keyEquivalentSize: NSSize;
     _size: NSSize;
+<<<<<<< HEAD
     __micFlags: record
       case byte of
        0: (_anonbitfield_NSMenuItemCell0: cuint);
        1: (data: bitpacked record
+=======
+    __micFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSMenuItemCell0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _needsSizing: 0..1;
         reserved: 0..1;
         _needsDisplay: 0..1;
         keyEquivGlyphWidth: 0..((1 shl 16)-1);
         uniqueAgainstMain: 0..1;
         _RESERVED: 0..((1 shl 12)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

@@ -57,7 +57,10 @@ Type
 
 Type
   TEventType = (etCustom,etInfo,etWarning,etError,etDebug);
+<<<<<<< HEAD
   TEventTypes = Set of TEventType;
+=======
+>>>>>>> graemeg/cpstrnew
 
 Var
   OnGetVendorName      : TGetVendorNameEvent;

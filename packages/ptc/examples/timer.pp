@@ -16,10 +16,17 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
   timer: IPTCTimer;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  surface: TPTCSurface = nil;
+  timer: TPTCTimer = nil;
+>>>>>>> graemeg/cpstrnew
   time, t: Double;
   pixels: PDWord;
   width, height: Integer;
@@ -97,8 +104,16 @@ begin
         console.update;
       end;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      timer.Free;
+      surface.Free;
+      console.close;
+      console.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

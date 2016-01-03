@@ -48,6 +48,7 @@
     _name: NSString;
     _valueExpression: NSExpression;
     _userInfo: NSDictionary;
+<<<<<<< HEAD
     __propertyMappingFlags: record
       case byte of
        0: (_anonbitfield_NSPropertyMapping0: cuint);
@@ -55,6 +56,14 @@
         _isInUse: 0..1;
         _reservedPropertyMapping: 0..((1 shl 31)-1);
        end;
+=======
+    __propertyMappingFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSPropertyMapping0: cuint);
+       1: (
+        _isInUse: 0..1;
+        _reservedPropertyMapping: 0..((1 shl 31)-1);
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

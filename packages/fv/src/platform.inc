@@ -59,7 +59,10 @@
 {  1.33    16 Oct 00  LdB    WIN32/WIN16 defines added     }
 {  1.34    02 May 02  MvdV   FreeBSD, NetBSD, OS_UNIX      }
 {  1.35    28 Nov 10  PM     64 bit OS Linux, Win64, FreeBSD }
+<<<<<<< HEAD
 {  1.36    22 Mar 15  PM     64 bit OS DragonFly           }
+=======
+>>>>>>> graemeg/cpstrnew
 {**********************************************************}
 
 { ****************************************************************************
@@ -94,12 +97,15 @@
 
  FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
  FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
+<<<<<<< HEAD
           OS_UNIX
 
  DRAGONFLY OS_DRAGONFLYBSD FPC PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
           OS_UNIX
 
  OPENBSD  OS_OPENBSD  FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
+=======
+>>>>>>> graemeg/cpstrnew
           OS_UNIX
 
  NETBSD   OS_NETBSD   FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
@@ -484,6 +490,20 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$IFDEF BIT_64}
     {$DEFINE WIN64}                                   { 64 BIT WINDOWS }
   {$ENDIF}
+<<<<<<< HEAD
+{$ENDIF}
+
+
+{---------------------------------------------------------------------------}
+{  BIT_32_OR_MORE                                                           }
+{---------------------------------------------------------------------------}
+
+{$ifdef BIT_16}
+  {$UNDEF BIT_32_OR_MORE}
+{$ELSE}
+  {$DEFINE BIT_32_OR_MORE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ENDIF}
 
 
@@ -496,6 +516,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
 {$ELSE}
   {$DEFINE BIT_32_OR_MORE}
 {$ENDIF}
+
 
 
 

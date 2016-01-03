@@ -7,8 +7,13 @@ main=rtl
 
 [target]
 loaders=prt0 prt1
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       ports os2def doscalls doscall2 moncalls kbdcalls moucalls viocalls \
+=======
+units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
+      ports os2def doscalls moncalls kbdcalls moucalls viocalls \
+>>>>>>> graemeg/cpstrnew
       pmbitmap pmwin pmgpi pmstddlg pmhelp pmdev pmspl pmshl pmwp pmwsock pmbidi \
       dos \
       sysutils classes fgl math typinfo \

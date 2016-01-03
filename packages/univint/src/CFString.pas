@@ -1,6 +1,13 @@
 {	CFString.h
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
+=======
+	Copyright (c) 1998-2009, Apple, Inc. All rights reserved.
+}
+{	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+{	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -55,11 +62,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -78,33 +88,49 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -154,6 +180,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -283,7 +337,11 @@ type
    Call CFStringGetSystemEncoding() to get the default system encoding.
 }
 type
+<<<<<<< HEAD
 	CFStringBuiltInEncodings = CFStringEncoding;
+=======
+	CFStringBuiltInEncodings = UInt32;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFStringEncodingInvalidId = $FFFFFFFF;
 	kCFStringEncodingMacRoman = 0;
@@ -428,8 +486,12 @@ function CFStringCreateWithCStringNoCopy( alloc: CFAllocatorRef; cStr: ConstCStr
 
 { The following takes an explicit length, and allows you to specify whether the data is an external format --- that is, whether to pay attention to the BOM character (if any) and do byte swapping if necessary
 }
+<<<<<<< HEAD
 function CFStringCreateWithBytesNoCopy( alloc: CFAllocatorRef; bytes: UnivPtr; numBytes: CFIndex; encoding: CFStringEncoding; isExternalRepresentation: Boolean; contentsDeallocator: CFAllocatorRef ): CFStringRef; external name '_CFStringCreateWithBytesNoCopy';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+=======
+function CFStringCreateWithBytesNoCopy( alloc: CFAllocatorRef; bytes: UnivPtr; numBytes: CFIndex; encoding: CFStringEncoding; isExternalRepresentation: Boolean; contentsDeallocator: CFAllocatorRef ): CFStringRef; external name '_CFStringCreateWithBytesNoCopy'; (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 function CFStringCreateWithCharactersNoCopy( alloc: CFAllocatorRef; chars: UniCharPtr; numChars: CFIndex; contentsDeallocator: CFAllocatorRef ): CFStringRef; external name '_CFStringCreateWithCharactersNoCopy';
 
@@ -511,19 +573,33 @@ function CFStringGetCharactersPtr( theString: CFStringRef ): UniCharPtr; externa
    maxBufLength indicates the maximum number of bytes to generate. It is ignored when buffer==NULL.
    Does not zero-terminate. If you want to create Pascal or C string, allow one extra byte at start or end. 
    Setting isExternalRepresentation causes any extra bytes that would allow 
+<<<<<<< HEAD
        the data to be made persistent to be included; for instance, the Unicode BOM. Note that
        CFString prepends UTF encoded data with the Unicode BOM <http://www.unicode.org/faq/utf_bom.html> 
        when generating external representation if the target encoding allows. It's important to note that
        only UTF-8, UTF-16, and UTF-32 define the handling of the byte order mark character, and the "LE"
        and "BE" variants of UTF-16 and UTF-32 don't.
+=======
+   the data to be made persistent to be included; for instance, the Unicode BOM <http://www.unicode.org/faq/utf_bom.html> 
+   when generating external representation if the target encoding allows. It's important to note that
+   only UTF-8, UTF-16, and UTF-32 define the handling of the byte order mark character, and the "LE"
+   and "BE" variants of UTF-16 and UTF-32 don't.
+>>>>>>> graemeg/cpstrnew
 }
 function CFStringGetBytes( theString: CFStringRef; range: CFRange; encoding: CFStringEncoding; lossByte: ByteParameter; isExternalRepresentation: Boolean; buffer: UInt8Ptr; maxBufLen: CFIndex; var usedBufLen: CFIndex ): CFIndex; external name '_CFStringGetBytes';
 
 { Convenience functions String <-> Data. These generate "external" formats, that is, formats that
+<<<<<<< HEAD
    can be written out to disk. For instance, if the encoding is Unicode,
    CFStringCreateFromExternalRepresentation() pays attention to the BOM character (if any) 
    and does byte swapping if necessary. Similarly CFStringCreateExternalRepresentation() will  
    include a BOM character if appropriate. See CFStringGetBytes() for more on this and lossByte.
+=======
+  can be written out to disk. For instance, if the encoding is Unicode,
+  CFStringCreateFromExternalRepresentation() pays attention to the BOM character (if any) 
+  and does byte swapping if necessary. Similarly CFStringCreateExternalRepresentation() will  
+  include a BOM character if appropriate. See CFStringGetBytes() for more on this and lossByte.
+>>>>>>> graemeg/cpstrnew
 }
 function CFStringCreateFromExternalRepresentation( alloc: CFAllocatorRef; data: CFDataRef; encoding: CFStringEncoding ): CFStringRef; external name '_CFStringCreateFromExternalRepresentation';	{ May return NULL on conversion error }
 
@@ -562,10 +638,17 @@ function CFStringCreateWithFileSystemRepresentation( alloc: CFAllocatorRef; buff
 
 {** Comparison functions. **}
 
+<<<<<<< HEAD
 { Find and compare flags; these are OR'ed together and provided as CFStringCompareFlags in the various functions. 
 }
 type
 	CFStringCompareFlags = CFOptionFlags;
+=======
+{ Find and compare flags; these are OR'ed together as compareOptions or searchOptions in the various functions. 
+}
+type
+	CFStringCompareFlags = UNSIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 																{  Flags used in all find and compare operations  }
 	kCFCompareCaseInsensitive = 1;
@@ -574,6 +657,7 @@ const
 	kCFCompareNonliteral = 16;							{  If specified, loose equivalence is performed (o-umlaut == o, umlaut)  }
 	kCFCompareLocalized = 32;							{  User's default locale is used for the comparisons  }
 	kCFCompareNumerically = 64;							{  Numeric comparison is used; that is, Foo2.txt < Foo7.txt < Foo25.txt  }
+<<<<<<< HEAD
 	kCFCompareDiacriticInsensitive = 128; (* CF_AVAILABLE_STARTING(10_5, 2_0) *) { If specified, ignores diacritics (o-umlaut == o) }
 	kCFCompareWidthInsensitive = 256; (* CF_AVAILABLE_STARTING(10_5, 2_0) *) { If specified, ignores width differences ('a' == UFF41) }
 	kCFCompareForcedOrdering = 512; (* CF_AVAILABLE_STARTING(10_5, 2_0) *) { If specified, comparisons are forced to return either kCFCompareLessThan or kCFCompareGreaterThan if the strings are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with kCFCompareCaseInsensitive specified) }
@@ -588,6 +672,22 @@ function CFStringCompareWithOptionsAndLocale( theString1: CFStringRef; theString
 
 { Comparison convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if kCFCompareLocalized.
 }
+=======
+	kCFCompareDiacriticInsensitive = 128; (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *) { If specified, ignores diacritics (o-umlaut == o) }
+	kCFCompareWidthInsensitive = 256; (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *) { If specified, ignores width differences ('a' == UFF41) }
+	kCFCompareForcedOrdering = 512; (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *) { If specified, comparisons are forced to return either kCFCompareLessThan or kCFCompareGreaterThan if the strings are equivalent but not strictly equal, for stability when sorting (e.g. "aaa" > "AAA" with kCFCompareCaseInsensitive specified) }
+
+{ The main comparison routine; compares specified range of the first string to (the full range of) the second string.
+   locale == NULL indicates canonical locale (the return value from CFLocaleGetSystem()).
+   kCFCompareNumerically, added in 10.2, does not work if kCFCompareLocalized is specified on systems before 10.3
+   kCFCompareBackwards and kCFCompareAnchored are not applicable.
+}
+function CFStringCompareWithOptionsAndLocale( theString1: CFStringRef; theString2: CFStringRef; rangeToCompare: CFRange; compareOptions: CFStringCompareFlags; locale: CFLocaleRef ): CFComparisonResult; external name '_CFStringCompareWithOptionsAndLocale';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{ Comparison convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if kCFCompareLocalized.
+}
+>>>>>>> graemeg/cpstrnew
 function CFStringCompareWithOptions( theString1: CFStringRef; theString2: CFStringRef; rangeToCompare: CFRange; compareOptions: CFStringCompareFlags ): CFComparisonResult; external name '_CFStringCompareWithOptions';
 
 { Comparison convenience suitable for passing as sorting functions.
@@ -600,12 +700,21 @@ function CFStringCompare( theString1: CFStringRef; theString2: CFStringRef; comp
  locale == NULL indicates canonical locale (the return value from CFLocaleGetSystem()).
  If stringToFind is the empty string (zero length), nothing is found.
  Ignores the kCFCompareNumerically option.
+<<<<<<< HEAD
 }
 function CFStringFindWithOptionsAndLocale( theString: CFStringRef; stringToFind: CFStringRef; rangeToSearch: CFRange; searchOptions: CFStringCompareFlags; locale: CFLocaleRef; var result: CFRange ): Boolean; external name '_CFStringFindWithOptionsAndLocale';
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 
 { Find convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if kCFCompareLocalized.
 }
+=======
+}
+function CFStringFindWithOptionsAndLocale( theString: CFStringRef; stringToFind: CFStringRef; rangeToSearch: CFRange; searchOptions: CFStringCompareFlags; locale: CFLocaleRef; var result: CFRange ): Boolean; external name '_CFStringFindWithOptionsAndLocale';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{ Find convenience. Uses the current user locale (the return value from CFLocaleCopyCurrent()) if kCFCompareLocalized.
+}
+>>>>>>> graemeg/cpstrnew
 function CFStringFindWithOptions( theString: CFStringRef; stringToFind: CFStringRef; rangeToSearch: CFRange; searchOptions: CFStringCompareFlags; var result: CFRange ): Boolean; external name '_CFStringFindWithOptions';
 
 { CFStringCreateArrayWithFindResults() returns an array of CFRange pointers, or NULL if there are no matches.
@@ -646,8 +755,8 @@ function CFStringGetRangeOfComposedCharactersAtIndex( theString: CFStringRef; th
 	@function CFStringFindCharacterFromSet
 	Query the range of the first character contained in the specified character set.
 	@param theString The CFString which is to be searched.  If this
-                		parameter is not a valid CFString, the behavior is
-              		undefined.
+      parameter is not a valid CFString, the behavior is
+      undefined.
 	@param theSet The CFCharacterSet against which the membership
 			of characters is checked.  If this parameter is not a valid
 			CFCharacterSet, the behavior is undefined.
@@ -662,11 +771,16 @@ function CFStringGetRangeOfComposedCharactersAtIndex( theString: CFStringRef; th
 			the search behavior.  The supported options are
 			kCFCompareBackwards andkCFCompareAnchored.
 			If other option flags are specified, the behavior
-                        is undefined.
+      is undefined.
 	@param result The pointer to a CFRange supplied by the caller in
 			which the search result is stored.  Note that the length
+<<<<<<< HEAD
 			of this range can be more than 1, if for instance the 
 			result is a composed character. If a pointer to an invalid
+=======
+      of this range can be more than 1, if for instance the
+      result is a composed character. If a pointer to an invalid
+>>>>>>> graemeg/cpstrnew
 			memory is specified, the behavior is undefined.
 	@result true, if at least a character which is a member of the character
 			set is found and result is filled, otherwise, false.
@@ -688,6 +802,7 @@ procedure CFStringGetLineBounds( theString: CFStringRef; range: CFRange; var lin
 { Same as CFStringGetLineBounds(), however, will only look for paragraphs. Won't stop at Unicode NextLine or LineSeparator characters.
 }
 procedure CFStringGetParagraphBounds( strng: CFStringRef; range: CFRange; var parBeginIndex: CFIndex; var parEndIndex: CFIndex; var contentsEndIndex: CFIndex ); external name '_CFStringGetParagraphBounds';
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 
 {!
@@ -720,6 +835,9 @@ function CFStringGetHyphenationLocationBeforeIndex( strng: CFStringRef; location
 
 function CFStringIsHyphenationAvailableForLocale( locale: CFLocaleRef ): Boolean; external name '_CFStringIsHyphenationAvailableForLocale';
 (* CF_AVAILABLE_STARTING(10_7, 4_3) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {** Exploding and joining strings with a separator string **}
 
@@ -823,7 +941,11 @@ procedure CFStringCapitalize( theString: CFMutableStringRef; locale: CFLocaleRef
 	system calls, use CFStringGetFileSystemRepresentation().
 }
 type
+<<<<<<< HEAD
 	CFStringNormalizationForm = CFIndex;
+=======
+	CFStringNormalizationForm = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFStringNormalizationFormD = 0; // Canonical Decomposition
 	kCFStringNormalizationFormKD = 1; // Compatibility Decomposition
@@ -870,7 +992,11 @@ procedure CFStringNormalize( theString: CFMutableStringRef; theForm: CFStringNor
 }
 
 procedure CFStringFold( theString: CFMutableStringRef; theFlags: CFOptionFlags; theLocale: CFLocaleRef ); external name '_CFStringFold';
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {#endif MAC_OS_X_VERSION_10_5 <= MAC_OS_X_VERSION_MAX_ALLOWED }
 
 
@@ -914,7 +1040,11 @@ var kCFStringTransformToXMLHex: CFStringRef; external name '_kCFStringTransformT
 var kCFStringTransformToUnicodeName: CFStringRef; external name '_kCFStringTransformToUnicodeName'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 var kCFStringTransformStripDiacritics: CFStringRef; external name '_kCFStringTransformStripDiacritics'; (* attribute const *)
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {** General encoding related functionality **}

@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 { %skiptarget=go32v2,os2 }
 { %opt=-gl -O- win32,win64%-WN }
 { %delopt=-XX }
+=======
+{ %skiptarget=go32v2 }
+{ %opt=-gl -O- }
+>>>>>>> graemeg/cpstrnew
 { %norun }
 library tlib1a;
 {$goto on}

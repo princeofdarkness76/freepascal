@@ -151,7 +151,10 @@ type
     function Last: TObject; {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure Move(CurIndex, NewIndex: Integer); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure Assign(Obj:TFPObjectList);
+<<<<<<< HEAD
     procedure ConcatListCopy(Obj:TFPObjectList);
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Pack; {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure Sort(Compare: TListSortCompare); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure ForEachCall(proc2call:TObjectListCallback;arg:pointer); {$ifdef CCLASSESINLINE}inline;{$endif}
@@ -220,7 +223,11 @@ type
     destructor Destroy; override;
     function Add(const AName:TSymStr;Item: Pointer): Integer;
     procedure Clear;
+<<<<<<< HEAD
     function NameOfIndex(Index: Integer): TSymStr;
+=======
+    function NameOfIndex(Index: Integer): ShortString;
+>>>>>>> graemeg/cpstrnew
     function HashOfIndex(Index: Integer): LongWord;
     function GetNextCollision(Index: Integer): Integer;
     procedure Delete(Index: Integer);
@@ -269,11 +276,19 @@ type
     function GetHash:Longword;virtual;
   public
     constructor CreateNotOwned;
+<<<<<<< HEAD
     constructor Create(HashObjectList:TFPHashObjectList;const s:TSymStr);
     procedure ChangeOwner(HashObjectList:TFPHashObjectList);
     procedure ChangeOwnerAndName(HashObjectList:TFPHashObjectList;const s:TSymStr); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure Rename(const ANewName:TSymStr);
     property Name:TSymStr read GetName;
+=======
+    constructor Create(HashObjectList:TFPHashObjectList;const s:shortstring);
+    procedure ChangeOwner(HashObjectList:TFPHashObjectList);
+    procedure ChangeOwnerAndName(HashObjectList:TFPHashObjectList;const s:shortstring); {$ifdef CCLASSESINLINE}inline;{$endif}
+    procedure Rename(const ANewName:shortstring);
+    property Name:shortstring read GetName;
+>>>>>>> graemeg/cpstrnew
     property Hash:Longword read GetHash;
     property OwnerList: TFPHashObjectList read FOwner;
   end;
@@ -1551,9 +1566,17 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 function TFPHashList.InternalFind(AHash:LongWord;const AName:TSymStr;out PrevIndex:Integer):Integer;
 begin
   prefetch(AName[1]);
+=======
+function TFPHashList.InternalFind(AHash:LongWord;const AName:shortstring;out PrevIndex:Integer):Integer;
+var
+  HashIndex : Integer;
+begin
+  prefetch(AName);
+>>>>>>> graemeg/cpstrnew
   Result:=FHashTable^[AHash and FCapacityMask];
   PrevIndex:=-1;
   while Result<>-1 do
@@ -1562,7 +1585,11 @@ begin
         begin
           if assigned(Data) and
              (HashValue=AHash) and
+<<<<<<< HEAD
              (AName=PSymStr(@FStrs[StrIndex])^) then
+=======
+             (AName=PShortString(@FStrs[StrIndex])^) then
+>>>>>>> graemeg/cpstrnew
             exit;
           PrevIndex:=Result;
           Result:=NextIndex;

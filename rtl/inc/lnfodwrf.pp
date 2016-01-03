@@ -235,7 +235,7 @@ end;
 { Reads the next size bytes into dest. Returns true if successful,
   false otherwise. Note that dest may be partially overwritten after
   returning false. }
-function ReadNext(var dest; size : SizeInt) : Boolean;
+function ReadNext(var dest; size : SizeInt) : Boolean; inline;
 var
   bytesread, totalread : SizeInt;
   r: Boolean;

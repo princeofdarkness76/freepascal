@@ -1,4 +1,5 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -8,6 +9,13 @@ version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+#   Makefile.fpc for Free Pascal Utils
+#
+
+[target]
+programs=rmwait
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y
@@ -15,6 +23,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -100,3 +109,7 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[rules]
+rmwait$(EXEEXT): rmwait.pas
+>>>>>>> graemeg/cpstrnew

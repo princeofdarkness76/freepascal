@@ -15,10 +15,19 @@ begin
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
     P.OSes:=[Linux,beos,haiku,win32,freebsd,openbsd,netbsd,dragonfly];
     P.Version:='3.1.1';
     T:=P.Targets.AddUnit('src/pxlib.pp');
     T:=P.Targets.AddExampleunit('examples/ppxview.pp');
+=======
+    P.OSes:=[Linux,beos,win32,darwin,freebsd,openbsd,netbsd];
+    P.Version:='2.2.2-0';
+    T:=P.Targets.AddUnit('src/pxlib.pp');
+      T.OSes:=[Linux,beos,win32,darwin,freebsd,openbsd,netbsd];
+    T:=P.Targets.AddExampleunit('examples/ppxview.pp');
+      T.OSes:=[Linux,beos,win32,darwin,freebsd,openbsd,netbsd];
+>>>>>>> graemeg/cpstrnew
 {$ifndef ALLPACKAGES}
     Run;
     end;

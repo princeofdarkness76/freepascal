@@ -372,9 +372,26 @@ implementation
           procname:=procname+'enum'
         else
           case torddef(source.resultdef).ordtype of
+<<<<<<< HEAD
             pasbool8,pasbool16,pasbool32,pasbool64,
             bool8bit,bool16bit,bool32bit,bool64bit:
               procname := procname + 'bool';
+=======
+{$ifdef cpu64bitaddr}
+            u64bit:
+              procname := procname + 'uint';
+{$else}
+            u32bit:
+              procname := procname + 'uint';
+            u64bit:
+              procname := procname + 'qword';
+            scurrency,
+            s64bit:
+              procname := procname + 'int64';
+            pasbool,bool8bit,bool16bit,bool32bit,bool64bit:
+              procname := procname + 'bool';
+{$endif}
+>>>>>>> graemeg/cpstrnew
             else
               procname := procname + get_str_int_func(source.resultdef);
           end;
@@ -539,7 +556,11 @@ implementation
           tfiledef(left.resultdef).typedfiledef.size,s32inttype,true),
           ccallparanode.create(left,nil));
         { create the correct call }
+<<<<<<< HEAD
         if m_isolike_io in current_settings.modeswitches then
+=======
+        if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
           begin
             if inlinenumber=in_reset_typedfile then
               result := ccallnode.createintern('fpc_reset_typed_iso',left)
@@ -661,7 +682,10 @@ implementation
         temp:Ttempcreatenode;
         readfunctype:Tdef;
         name:string[63];
+<<<<<<< HEAD
         func_suffix:string[8];
+=======
+>>>>>>> graemeg/cpstrnew
 
     begin
       para:=Tcallparanode(params);
@@ -750,9 +774,15 @@ implementation
                     begin
                       name := procprefixes[do_read]+'char';
                       { iso pascal needs a different handler }
+<<<<<<< HEAD
                       if (m_isolike_io in current_settings.modeswitches) and do_read then
                         name:=name+'_iso';
                       readfunctype:=cansichartype;
+=======
+                      if (m_iso in current_settings.modeswitches) and do_read then
+                        name:=name+'_iso';
+                      readfunctype:=cchartype;
+>>>>>>> graemeg/cpstrnew
                     end;
                   uwidechar :
                     begin
@@ -817,7 +847,11 @@ implementation
           end;
 
           { iso pascal needs a different handler }
+<<<<<<< HEAD
           if (m_isolike_io in current_settings.modeswitches) and not(do_read) then
+=======
+          if (m_iso in current_settings.modeswitches) and not(do_read) then
+>>>>>>> graemeg/cpstrnew
             name:=name+'_iso';
 
           { check for length/fractional colon para's }
@@ -868,7 +902,11 @@ implementation
                     begin
                       if not assigned(lenpara) then
                         begin
+<<<<<<< HEAD
                           if m_isolike_io in current_settings.modeswitches then
+=======
+                          if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
                             lenpara := ccallparanode.create(
                               cordconstnode.create(-1,s32inttype,false),nil)
                           else
@@ -1051,7 +1089,11 @@ implementation
             in_readln_x:
               begin
                 name:='fpc_readln_end';
+<<<<<<< HEAD
                 if m_isolike_io in current_settings.modeswitches then
+=======
+                if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
                   name:=name+'_iso';
               end;
             in_writeln_x:
@@ -1460,8 +1502,11 @@ implementation
            exit;
          end;
 
+<<<<<<< HEAD
          suffix:='';
 
+=======
+>>>>>>> graemeg/cpstrnew
          { in case we are in a generic definition, we cannot
            do all checks, the parameters might be type parameters }
          if df_generic in current_procinfo.procdef.defoptions then
@@ -1936,6 +1981,42 @@ implementation
                   vl:=1;
                   vl2:=tordconstnode(left).value;
                 end;
+<<<<<<< HEAD
+=======
+
+              bits:=def.size*8;
+              shift:=vl.svalue and (bits-1);
+              case bits of
+                 8:
+                   mask:=$ff;
+                 16:
+                   mask:=$ffff;
+                 32:
+                   mask:=$ffffffff;
+                 64:
+                   mask:=qword($ffffffffffffffff);
+                 else
+                   mask:=qword(1 shl bits)-1;
+              end;
+{$push}
+{$r-,q-}
+              if shift=0 then
+                result:=cordconstnode.create(vl2.svalue,def,false)
+              else if vl2.svalue<0 then
+                result:=cordconstnode.create(((vl2.svalue shr shift) or (mask shl (bits-shift))) and mask,def,false)
+              else
+                result:=cordconstnode.create((vl2.svalue shr shift) and mask,def,false);
+{$pop}
+            end
+          else
+        end;
+
+
+      var
+        hp        : tnode;
+        vl,vl2    : TConstExprInt;
+        vr        : bestreal;
+>>>>>>> graemeg/cpstrnew
 
               bits:=def.size*8;
               shift:=vl.svalue and (bits-1);
@@ -2295,7 +2376,11 @@ implementation
                         result:=create_simplified_ord_const(vl,resultdef,forinline)
                       else
                         { check the range for enums, chars, booleans }
+<<<<<<< HEAD
                         result:=cordconstnode.create(vl,left.resultdef,not(nf_internal in flags))
+=======
+                        result:=cordconstnode.create(vl,left.resultdef,true)
+>>>>>>> graemeg/cpstrnew
                     end
                 end;
               in_low_x,
@@ -2453,11 +2538,14 @@ implementation
                 begin
                   result:=handle_const_sar;
                 end;
+<<<<<<< HEAD
               in_rol_x,
               in_rol_x_y,
               in_ror_x,
               in_ror_x_y :
                 result:=handle_const_rox;
+=======
+>>>>>>> graemeg/cpstrnew
             end;
           end;
       end;
@@ -2470,6 +2558,7 @@ implementation
         var
           hnode: tnode;
         begin
+<<<<<<< HEAD
           { System unit declares internal functions like this:
               function foo(x: valreal): valreal; [internproc: number];
             Calls to such functions are initially processed by callnode,
@@ -2488,6 +2577,9 @@ implementation
               resultdef:=left.resultdef;
             end
           else if (left.resultdef.typ=floatdef) and
+=======
+          if (left.resultdef.typ=floatdef) and
+>>>>>>> graemeg/cpstrnew
             (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,sc80real,s128real]) then
             resultdef:=left.resultdef
           else
@@ -2583,7 +2675,11 @@ implementation
           encodedtype:='';
           if not objctryencodetype(left.resultdef,encodedtype,errordef) then
             Message1(type_e_objc_type_unsupported,errordef.typename);
+<<<<<<< HEAD
           result:=cstringconstnode.createpchar(ansistring2pchar(encodedtype),length(encodedtype),nil);
+=======
+          result:=cstringconstnode.createpchar(ansistring2pchar(encodedtype),length(encodedtype));
+>>>>>>> graemeg/cpstrnew
         end;
 
 
@@ -2838,8 +2934,14 @@ implementation
                       tcallparanode(left).get_paratype;
                     end;
 
+<<<<<<< HEAD
                   { Postpone conversion into addnode until firstpass, so targets
                     may override first_assigned and insert specific code. }
+=======
+                  { converting to an add node is tricky because of differences
+                    in procvar handling between FPC and Delphi handling, so
+                    handle specially }
+>>>>>>> graemeg/cpstrnew
                   set_varstate(tcallparanode(left).left,vs_read,[vsf_must_be_valid]);
                   resultdef:=pasbool8type;
                 end;
@@ -2902,6 +3004,7 @@ implementation
                               { two paras ? }
                               if assigned(tcallparanode(left).right) then
                                begin
+<<<<<<< HEAD
                                  if is_integer(tcallparanode(left).right.resultdef) then
                                    begin
                                      set_varstate(tcallparanode(tcallparanode(left).right).left,vs_read,[vsf_must_be_valid]);
@@ -2954,6 +3057,51 @@ implementation
                       else
                         CGMessagePos(fileinfo,type_e_mismatch);
                     end;
+=======
+                                 set_varstate(tcallparanode(tcallparanode(left).right).left,vs_read,[vsf_must_be_valid]);
+                                 { when range/overflow checking is on, we
+                                   convert this to a regular add, and for proper
+                                   checking we need the original type }
+                                 if ([cs_check_range,cs_check_overflow]*current_settings.localswitches=[]) then
+                                   if (tcallparanode(left).left.resultdef.typ=pointerdef) then
+                                     begin
+                                       { don't convert values added to pointers into the pointer types themselves,
+                                         because that will turn signed values into unsigned ones, which then
+                                         goes wrong when they have to be multiplied with the size of the elements
+                                         to which the pointer points in ncginl (mantis #17342) }
+                                       if is_signed(tcallparanode(tcallparanode(left).right).left.resultdef) then
+                                         inserttypeconv(tcallparanode(tcallparanode(left).right).left,ptrsinttype)
+                                       else
+                                         inserttypeconv(tcallparanode(tcallparanode(left).right).left,ptruinttype)
+                                     end
+                                   else if is_integer(tcallparanode(left).left.resultdef) then
+                                     inserttypeconv(tcallparanode(tcallparanode(left).right).left,tcallparanode(left).left.resultdef)
+                                   else
+                                     inserttypeconv_internal(tcallparanode(tcallparanode(left).right).left,tcallparanode(left).left.resultdef);
+                                 if assigned(tcallparanode(tcallparanode(left).right).right) then
+                                   { should be handled in the parser (JM) }
+                                   internalerror(2006020901);
+                               end
+                             else
+                               CGMessagePos(tcallparanode(left).right.fileinfo,type_e_ordinal_expr_expected);
+                           end;
+                        end
+                       else
+                         begin
+                           hp:=self;
+                           if isunaryoverloaded(hp) then
+                             begin
+                               { inc(rec) and dec(rec) assigns result value to argument }
+                               result:=cassignmentnode.create(tcallparanode(left).left.getcopy,hp);
+                               exit;
+                             end
+                           else
+                             CGMessagePos(left.fileinfo,type_e_ordinal_expr_expected);
+                         end;
+                    end
+                  else
+                    CGMessagePos(fileinfo,type_e_mismatch);
+>>>>>>> graemeg/cpstrnew
                 end;
 
               in_read_x,
@@ -3136,8 +3284,13 @@ implementation
                     temp_pnode := @left;
                   set_varstate(temp_pnode^,vs_read,[vsf_must_be_valid]);
                   { for direct float rounding, no best real type cast should be necessary }
+<<<<<<< HEAD
                   if not((temp_pnode^.resultdef.typ=floatdef) and
                          (tfloatdef(temp_pnode^.resultdef).floattype in [s32real,s64real,s80real,sc80real,s128real])) and
+=======
+                  if not((left.resultdef.typ=floatdef) and
+                         (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,sc80real,s128real])) and
+>>>>>>> graemeg/cpstrnew
                      { converting an int64 to double on platforms without }
                      { extended can cause precision loss                  }
                      not(temp_pnode^.nodetype in [ordconstn,realconstn]) then
@@ -3169,7 +3322,10 @@ implementation
                 begin
                 end;
 {$endif SUPPORT_MMX}
+<<<<<<< HEAD
               in_aligned_x,
+=======
+>>>>>>> graemeg/cpstrnew
               in_unaligned_x:
                 begin
                   resultdef:=left.resultdef;
@@ -3215,8 +3371,13 @@ implementation
                   set_varstate(left,vs_read,[vsf_must_be_valid]);
                   resultdef:=left.resultdef;
                 end;
+<<<<<<< HEAD
               in_rol_x_y,
               in_ror_x_y,
+=======
+              in_rol_x_x,
+              in_ror_x_x,
+>>>>>>> graemeg/cpstrnew
               in_sar_x_y:
                 begin
                   set_varstate(tcallparanode(left).left,vs_read,[vsf_must_be_valid]);
@@ -3235,6 +3396,7 @@ implementation
                      resultdef:=u32inttype
                  end;
 
+<<<<<<< HEAD
               in_popcnt_x:
                  begin
                    set_varstate(left,vs_read,[vsf_must_be_valid]);
@@ -3243,6 +3405,8 @@ implementation
                    resultdef:=left.resultdef;
                  end;
 
+=======
+>>>>>>> graemeg/cpstrnew
               in_objc_selector_x:
                 begin
                   result:=cobjcselectornode.create(left);
@@ -3259,6 +3423,7 @@ implementation
                 begin
                   result:=handle_objc_encode;
                 end;
+<<<<<<< HEAD
               in_default_x:
                 begin
                   result:=handle_default;
@@ -3281,6 +3446,8 @@ implementation
                   set_varstate(tcallparanode(tcallparanode(tcallparanode(left).right).right).left,vs_read,[vsf_must_be_valid]);
                   resultdef:=tcallparanode(left).left.resultdef;
                 end;
+=======
+>>>>>>> graemeg/cpstrnew
               else
                 internalerror(8);
             end;
@@ -3395,10 +3562,14 @@ implementation
               expectloc:=LOC_REGISTER;
               { in case of range/overflow checking, use a regular addnode
                 because it's too complex to handle correctly otherwise }
+<<<<<<< HEAD
 {$ifndef jvm}
               { enums are class instances in the JVM -> always need conversion }
               if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
 {$endif}
+=======
+              if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
+>>>>>>> graemeg/cpstrnew
                 begin
                   { create constant 1 }
                   hp:=cordconstnode.create(1,left.resultdef,false);
@@ -3417,15 +3588,23 @@ implementation
                     hp:=caddnode.create(subn,left,hp);
                   { assign result of addition }
                   if not(is_integer(resultdef)) then
+<<<<<<< HEAD
                     inserttypeconv(hp,corddef.create(
+=======
+                    inserttypeconv(hp,torddef.create(
+>>>>>>> graemeg/cpstrnew
 {$ifdef cpu64bitaddr}
                       s64bit,
 {$else cpu64bitaddr}
                       s32bit,
 {$endif cpu64bitaddr}
                       get_min_value(resultdef),
+<<<<<<< HEAD
                       get_max_value(resultdef),
                       true))
+=======
+                      get_max_value(resultdef)))
+>>>>>>> graemeg/cpstrnew
                   else
                     inserttypeconv(hp,resultdef);
 
@@ -3456,7 +3635,92 @@ implementation
           in_inc_x,
           in_dec_x:
             begin
+<<<<<<< HEAD
               result:=first_IncDec;
+=======
+               expectloc:=LOC_VOID;
+
+               { range/overflow checking doesn't work properly }
+               { with the inc/dec code that's generated (JM)   }
+               if (current_settings.localswitches * [cs_check_overflow,cs_check_range] <> []) and
+                 { No overflow check for pointer operations, because inc(pointer,-1) will always
+                   trigger an overflow. For uint32 it works because then the operation is done
+                   in 64bit. Range checking is not applicable to pointers either }
+                  (tcallparanode(left).left.resultdef.typ<>pointerdef) then
+                 { convert to simple add (JM) }
+                 begin
+                   newblock := internalstatements(newstatement);
+                   { extra parameter? }
+                   if assigned(tcallparanode(left).right) then
+                     begin
+                       { Yes, use for add node }
+                       hpp := tcallparanode(tcallparanode(left).right).left;
+                       tcallparanode(tcallparanode(left).right).left := nil;
+                       if assigned(tcallparanode(tcallparanode(left).right).right) then
+                         CGMessage(parser_e_illegal_expression);
+                     end
+                   else
+                     begin
+                       { no, create constant 1 }
+                       hpp := cordconstnode.create(1,tcallparanode(left).left.resultdef,false);
+                     end;
+                   typecheckpass(hpp);
+
+                   { make sure we don't call functions part of the left node twice (and generally }
+                   { optimize the code generation)                                                }
+                   if node_complexity(tcallparanode(left).left) > 1 then
+                     begin
+                       tempnode := ctempcreatenode.create(voidpointertype,voidpointertype.size,tt_persistent,true);
+                       addstatement(newstatement,tempnode);
+                       addstatement(newstatement,cassignmentnode.create(ctemprefnode.create(tempnode),
+                         caddrnode.create_internal(tcallparanode(left).left.getcopy)));
+                       hp := cderefnode.create(ctemprefnode.create(tempnode));
+                       inserttypeconv_internal(hp,tcallparanode(left).left.resultdef);
+                     end
+                   else
+                     begin
+                       hp := tcallparanode(left).left.getcopy;
+                       tempnode := nil;
+                     end;
+
+                   resultnode := hp.getcopy;
+                   { avoid type errors from the addn/subn }
+                   if not is_integer(resultnode.resultdef) then
+                     begin
+                       inserttypeconv_internal(hp,sinttype);
+                       inserttypeconv_internal(hpp,sinttype);
+                     end;
+
+                   { addition/substraction depending on inc/dec }
+                   if inlinenumber = in_inc_x then
+                     hpp := caddnode.create(addn,hp,hpp)
+                   else
+                     hpp := caddnode.create(subn,hp,hpp);
+                   { assign result of addition }
+                   if not(is_integer(resultnode.resultdef)) then
+                     inserttypeconv(hpp,torddef.create(
+{$ifdef cpu64bitaddr}
+                       s64bit,
+{$else cpu64bitaddr}
+                       s32bit,
+{$endif cpu64bitaddr}
+                       get_min_value(resultnode.resultdef),
+                       get_max_value(resultnode.resultdef)))
+                   else
+                     inserttypeconv(hpp,resultnode.resultdef);
+                   { avoid any possible warnings }
+                   inserttypeconv_internal(hpp,resultnode.resultdef);
+
+                   addstatement(newstatement,cassignmentnode.create(resultnode,hpp));
+                   { deallocate the temp }
+                   if assigned(tempnode) then
+                     addstatement(newstatement,ctempdeletenode.create(tempnode));
+                   { firstpass it }
+                   firstpass(tnode(newblock));
+                   { return new node }
+                   result := newblock;
+                 end;
+>>>>>>> graemeg/cpstrnew
             end;
 
          in_include_x_y,
@@ -3603,7 +3867,10 @@ implementation
            begin
              expectloc:=LOC_VOID;
            end;
+<<<<<<< HEAD
          in_aligned_x,
+=======
+>>>>>>> graemeg/cpstrnew
          in_unaligned_x:
            begin
              expectloc:=tcallparanode(left).left.expectloc;
@@ -3611,7 +3878,13 @@ implementation
          in_rol_x,
          in_rol_x_y,
          in_ror_x,
+<<<<<<< HEAD
          in_ror_x_y,
+=======
+         in_ror_x_x,
+         in_sar_x,
+         in_sar_x_y,
+>>>>>>> graemeg/cpstrnew
          in_bsf_x,
          in_bsr_x:
            expectloc:=LOC_REGISTER;
@@ -4338,6 +4611,7 @@ implementation
          result := loop;
        end;
 
+<<<<<<< HEAD
 
      function tinlinenode.first_fma: tnode;
        begin
@@ -4345,5 +4619,7 @@ implementation
          result:=nil;
        end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 end.
 

@@ -6,8 +6,13 @@
 # Warning: no package should contain more than 31 files (32-bit version
 # of TV/FV cannot hold more than 31 members of a checkbox group)
 
+<<<<<<< HEAD
 title=Free Pascal Compiler 3.1.1
 version=3.1.1
+=======
+title=Free Pascal Compiler 2.5.1
+version=2.5.1
+>>>>>>> graemeg/cpstrnew
 
 #
 # General
@@ -90,6 +95,7 @@ package=ufcl-resdos.zip[ufcledos.zip],Free Component Library (FCL)-resources
 package=ubzip2dos.zip[ubz2dos.zip],Units for bzip2 decompression
 # Dos 31
 package=ufcl-jsdos.zip[ufcjsdos.zip],Free Component Library (FCL)-Javascript support
+<<<<<<< HEAD
 
 #
 # Go32v2 packages 2nd part
@@ -142,6 +148,10 @@ package=utils-lexyaccdos.zip[tplydos.zip],Compiler generator for TP and compatib
 package=units-ptcdos.zip[uptcdos.zip],Free portable framebuffer library
 # Dos-2 23
 package=utils-dxegendos.zip[dxegdos.zip],Generation of D~X~E modules loadable at runtime
+=======
+# Dos 32
+package=uhermesdos.zip[uhermdos.zip],Port of Hermes graphics library
+>>>>>>> graemeg/cpstrnew
 
 #
 # Win32 packages
@@ -201,6 +211,7 @@ package=units-openal.i386-win32.zip,OpenAL interface units
 package=units-openssl.i386-win32.zip,OpenSSL interface units
 # Win32 23
 package=units-hermes.i386-win32.zip,Port of Hermes graphics library
+<<<<<<< HEAD
 # Win32 24
 package=units-fppkg.i386-win32.zip,Units for FPPkg packaging support
 # Win32 25
@@ -217,6 +228,8 @@ package=units-rtl-extra.i386-win32.zip,RTL-additional units not needed for boots
 package=units-rtl-objpas.i386-win32.zip,RTL-Object Pascal units (e.g. Delphi compatibility)
 # Win32 31
 package=units-rtl-unicode.i386-win32.zip,RTL-miscellaneous Unicode support units
+=======
+>>>>>>> graemeg/cpstrnew
 
 #
 # Win32 packages 2nd part
@@ -279,6 +292,7 @@ package=units-libgd.i386-win32.zip,GD library interface unit
 package=units-symbolic.i386-win32.zip,Symbolic (unit for parsing and evaluating expressions)
 # Win32-2 27
 package=units-fcl-res.i386-win32.zip,Free Component Library (FCL)-resources
+<<<<<<< HEAD
 # Win32-2 28
 package=units-bzip2.i386-win32.zip,Units for bzip2 decompression
 # Win32-2 29
@@ -287,6 +301,13 @@ package=units-fcl-js.i386-win32.zip,Free Component Library (FCL)-Javascript supp
 package=units-fcl-sound.i386-win32.zip,Free Component Library (FCL)-sound files
 # Win32-1 31
 package=utils-unicode.i386-win32.zip,Transformation of Unicode consortium data for FPC
+=======
+# Win32-2 29
+package=units-bzip2.i386-win32.zip,Units for bzip2 decompression
+# Win32-2 30
+package=units-fcl-js.i386-win32.zip,Free Component Library (FCL)-Javascript support
+
+>>>>>>> graemeg/cpstrnew
 
 #
 # OS/2 packages
@@ -341,6 +362,7 @@ package=ufcl-registryos2.zip[ufclros2.zip],Free Component Library (FCL)-registry
 package=ufcl-xmlos2.zip[ufclxos2.zip],Free Component Library (FCL)-XML
 # OS/2
 #package=ufcl-webos2.zip[ufclwos2.zip],Free Component Library (FCL)-Web
+<<<<<<< HEAD
 # OS/2 20
 package=uhermesos2.zip[uhermos2.zip],Port of Hermes graphics library
 # OS/2 21
@@ -365,6 +387,10 @@ package=utils-pas2fpmos2.zip[p2fmos2.zip],Generate fpmake.pp for Pascal source
 package=utils-pas2jnios2.zip[p2jnos2.zip],Generate JNI bridge for Pascal code
 # OS/2 31
 package=utils-pas2utos2.zip[p2utos2.zip],Pascal source to FPC Unit test generator
+=======
+# OS/2 21
+package=uhermesos2.zip[uhermos2.zip],Port of Hermes graphics library
+>>>>>>> graemeg/cpstrnew
 
 #
 # OS/2 packages 2nd part
@@ -426,6 +452,7 @@ package=ufcl-soundos2.zip[ufsndos2.zip],Free Component Library (FCL)-sound files
 # OS/2-2 22
 package=ufcl-sdoos2.zip[ufcsdos2.zip],Free Component Library (FCL)-Service Data Objects
 # OS/2-2 23
+<<<<<<< HEAD
 package=ufcl-stlos2.zip[ufcstos2.zip],Free Component Library (FCL)-generic container library
 # OS/2-2 24
 package=ulibtaros2.zip[ultaros2.zip],Unit for .tar file handling
@@ -445,6 +472,13 @@ package=utils-lexyaccos2.zip[tplyos2.zip],Compiler generator for TP and compatib
 package=utils-fpcmos2.zip[fpcmos2.zip],Generate Makefiles out of Makefile.fpc files
 # OS/2-2 32
 package=utils-unicodeos2.zip[ucodeos2.zip],Transformation of Unicode consortium data for FPC
+=======
+package=ufcl-resos2.zip[ufcleos2.zip],Free Component Library (FCL)-resources
+# OS/2-2 24
+package=ubzip2os2.zip[ubz2os2.zip],Units for bzip2 decompression
+# OS/2-2 25
+package=ufcl-jsos2.zip[ufcjsos2.zip],Free Component Library (FCL)-Javascript support
+>>>>>>> graemeg/cpstrnew
 
 
 
@@ -501,6 +535,7 @@ package=ufcl-registryemx.zip[ufclremx.zip],Free Component Library (FCL)-registry
 package=ufcl-xmlemx.zip[ufclxemx.zip],Free Component Library (FCL)-XML
 # EMX
 #package=ufcl-webemx.zip[ufclwemx.zip],Free Component Library (FCL)-Web
+<<<<<<< HEAD
 # EMX 19
 package=uhermesemx.zip[uhermemx.zip],Port of Hermes graphics library
 # EMX 20
@@ -527,6 +562,10 @@ package=utils-pas2fpmemx.zip[p2fmemx.zip],Generate fpmake.pp for Pascal source
 package=utils-pas2jniemx.zip[p2jnemx.zip],Generate JNI bridge for Pascal code
 # EMX 31
 package=utils-pas2utemx.zip[p2utemx.zip],Pascal source to FPC Unit test generator
+=======
+# EMX 21
+package=uhermesemx.zip[uhermemx.zip],Port of Hermes graphics library
+>>>>>>> graemeg/cpstrnew
 
 #
 # EMX packages 2nd part
@@ -588,6 +627,7 @@ package=ufcl-soundemx.zip[ufsndemx.zip],Free Component Library (FCL)-sound files
 # EMX-2 22
 package=ufcl-sdoemx.zip[ufcsdemx.zip],Free Component Library (FCL)-Service Data Objects
 # EMX-2 23
+<<<<<<< HEAD
 package=ufcl-stlemx.zip[ufcstemx.zip],Free Component Library (FCL)-generic container library
 # EMX-2 24
 package=ulibtaremx.zip[ultaremx.zip],Unit for .tar file handling
@@ -607,6 +647,13 @@ package=utils-lexyaccemx.zip[tplyemx.zip],Compiler generator for TP and compatib
 package=utils-fpcmemx.zip[fpcmemx.zip],Generate Makefiles out of Makefile.fpc files
 # EMX-3 32
 package=utils-unicodeemx.zip[ucodeemx.zip],Transformation of Unicode consortium data for FPC
+=======
+package=ufcl-resemx.zip[ufcleemx.zip],Free Component Library (FCL)-resources
+# EMX-2 24
+package=ubzip2emx.zip[ubz2emx.zip],Units for bzip2 decompression
+# EMX-2 25
+package=ufcl-jsemx.zip[ufcjsemx.zip],Free Component Library (FCL)-Javascript support
+>>>>>>> graemeg/cpstrnew
 
 
 #
@@ -659,6 +706,7 @@ package=units-zlib.source.zip[uzlibsrc.zip],ZLib interface units sources
 # Source 14
 package=units-gdbint.source.zip[ugdbsrc.zip],GDB interface units sources
 # Source 15
+<<<<<<< HEAD
 package=units-postgres.source.zip[upgrsrc.zip],PostGreSQL interface sources
 # Source 16
 package=units-graph.source.zip[ugrphsrc.zip],Unit Graph sources
@@ -692,6 +740,13 @@ package=utils-pas2jni.source.zip[p2jnsrc.zip],Generate JNI bridge for Pascal cod
 package=utils-pas2ut.source.zip[p2utsrc.zip],Pascal source to FPC Unit test generator
 # Source 31
 package=utils-rmwait.source.zip[rmwsrc.zip],Remove (delete) file(s) with optional retries
+=======
+package=units-postgres.source.zip[upgrsrc.zip],PostGreSQL interface units
+# Source 16
+package=units-graph.source.zip[ugrphsrc.zip],Unit Graph
+# Source 17
+package=units-hermes.source.zip[uhermsrc.zip],Port of Hermes graphics library
+>>>>>>> graemeg/cpstrnew
 
 #
 # Source packages 2nd part
@@ -752,6 +807,7 @@ package=units-libgd.source.zip[ulgdsrc.zip],GD library interface unit
 package=units-symbolic.source.zip[usymbsrc.zip],Symbolic (unit for parsing and evaluating expressions)
 # Source-2 23
 package=units-fcl-res.source.zip[ufclesrc.zip],Free Component Library (FCL)-resources
+<<<<<<< HEAD
 # Source-2 24
 package=units-bzip2.source.zip[ubz2src.zip],Units for bzip2 decompression
 # Source-2 25
@@ -762,6 +818,12 @@ package=units-ptc.source.zip[uptcsrc.zip],Free portable framebuffer library
 package=units-x11.source.zip[ux11src.zip],X Window (X11) interface units
 # Source-2 28
 package=units-sdl.source.zip[usdlsrc.zip],SDL (Simple DirectMedia Layer) interface units sources
+=======
+# Source-2 25
+package=units-bzip2.source.zip[ubz2src.zip],Units for bzip2 decompression
+# Source-2 26
+package=fcl-js.source.zip[ufcjssrc.zip],Free Component Library (FCL)-Javascript support
+>>>>>>> graemeg/cpstrnew
 
 
 #

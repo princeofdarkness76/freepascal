@@ -22,8 +22,11 @@ begin
     P.Dependencies.Add('openssl',AllOSes - AllAmigaLikeOSes);
     P.Dependencies.Add('fcl-xml');
     P.Dependencies.Add('fcl-passrc');
+<<<<<<< HEAD
     P.Dependencies.Add('fcl-async',[linux,freebsd,netbsd,openbsd,dragonfly]);
     P.Dependencies.Add('rtl-extra');
+=======
+>>>>>>> graemeg/cpstrnew
 
     P.Author := 'Sebastian Guenther and Free Pascal development team';
     P.License := 'LGPL with modification, ';
@@ -54,6 +57,7 @@ begin
         begin
           AddUnit('resolve');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
     T:=P.Targets.AddUnit('sslsockets.pp',AllUnixOSes+AllWindowsOSes);
       with T.Dependencies do
@@ -64,14 +68,22 @@ begin
 
     // HTTP Client
     T:=P.Targets.AddUnit('fpsock.pp',[linux,freebsd,netbsd,openbsd,dragonfly]);
+=======
+
+    // HTTP Client
+    T:=P.Targets.AddUnit('fpsock.pp',AllUnixOSes);
+>>>>>>> graemeg/cpstrnew
       with T.Dependencies do
         begin
           AddUnit('resolve');
         end;
+<<<<<<< HEAD
     T.ResourceStrings := True;
 
     T:=P.Targets.AddUnit('cnetdb.pp',[linux,freebsd,solaris]);
 
+=======
+>>>>>>> graemeg/cpstrnew
     P.ExamplePath.Add('examples');
     P.Targets.AddExampleProgram('examples/ip6test.pp');
     P.Targets.AddExampleProgram('examples/svrclass.pp');

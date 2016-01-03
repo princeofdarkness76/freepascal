@@ -12,19 +12,25 @@
 {$endif}
 
 { From i_bsd.pas, all i386 but freebsd seem to have underscore prefixes }
+<<<<<<< HEAD
 { This is not true anyore at least for OpenBSD 4.9 PM 2011-10-10 }
 { Also false for new NetBSD targets PM 2012-02-12 }
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef bsd}
   {$ifdef cpui386}
     {$ifndef freebsd}
       {$define FPC_HAS_UNDERSCORE_PREFIX}
     {$endif}
+<<<<<<< HEAD
     {$ifdef openbsd}
       {$undef FPC_HAS_UNDERSCORE_PREFIX}
     {$endif}
     {$ifdef netbsd}
       {$undef FPC_HAS_UNDERSCORE_PREFIX}
     {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
   {$endif}
   {$ifdef darwin}
     {$define FPC_HAS_UNDERSCORE_PREFIX}

@@ -23,7 +23,10 @@ uses SysUtils, Classes;
 
 resourcestring
   SErrInvalidCharacter = 'Invalid character at line %d, pos %d: ''%s''';
+<<<<<<< HEAD
   SUnterminatedComment = 'Unterminated comment at line %d, pos %d: ''%s''';
+=======
+>>>>>>> graemeg/cpstrnew
   SErrOpenString = 'string exceeds end of line';
 
 type
@@ -44,7 +47,10 @@ type
     tkSquaredBraceOpen,       // '['
     tkSquaredBraceClose,      // ']'
     tkIdentifier,            // Any Javascript identifier
+<<<<<<< HEAD
     tkComment,
+=======
+>>>>>>> graemeg/cpstrnew
     tkUnknown
     );
 
@@ -60,6 +66,8 @@ Type
 
   { TJSONScanner }
 
+  { TJSONScanner }
+
   TJSONScanner = class
   private
     FAllowComments: Boolean;
@@ -68,6 +76,7 @@ Type
     FCurToken: TJSONToken;
     FCurTokenString: string;
     FCurLine: string;
+    FStrict: Boolean;
     TokenStr: PChar;
     FOptions : TJSONOptions;
     function GetCurColumn: Integer;
@@ -78,10 +87,15 @@ Type
     procedure Error(const Msg: string; Const Args: array of Const);overload;
     function DoFetchToken: TJSONToken;
   public
+<<<<<<< HEAD
     constructor Create(Source : TStream; AUseUTF8 : Boolean = True); overload; deprecated 'use options form instead';
     constructor Create(const Source : String; AUseUTF8 : Boolean = True); overload; deprecated  'use options form instead';
     constructor Create(Source: TStream; AOptions: TJSONOptions); overload;
     constructor Create(const Source: String; AOptions: TJSONOptions); overload;
+=======
+    constructor Create(Source : TStream); overload;
+    constructor Create(const Source : String); overload;
+>>>>>>> graemeg/cpstrnew
     destructor Destroy; override;
     function FetchToken: TJSONToken;
 
@@ -93,11 +107,15 @@ Type
     property CurToken: TJSONToken read FCurToken;
     property CurTokenString: string read FCurTokenString;
     // Use strict JSON: " for strings, object members are strings, not identifiers
+<<<<<<< HEAD
     Property Strict : Boolean Index joStrict Read GetO Write SetO ; deprecated 'use options instead';
     // if set to TRUE, then strings will be converted to UTF8 ansistrings, not system codepage ansistrings.
     Property UseUTF8 : Boolean index joUTF8 Read GetO Write SetO; deprecated 'Use options instead';
     // Parsing options
     Property Options : TJSONOptions Read FOptions Write FOptions;
+=======
+    Property Strict : Boolean Read FStrict Write FStrict;
+>>>>>>> graemeg/cpstrnew
   end;
 
 const
@@ -116,7 +134,10 @@ const
     '[',
     ']',
     'identifier',
+<<<<<<< HEAD
     'comment',
+=======
+>>>>>>> graemeg/cpstrnew
     ''
   );
 
@@ -157,7 +178,11 @@ begin
   FOptions:=AOptions;
 end;
 
+<<<<<<< HEAD
 constructor TJSONScanner.Create(const Source: String; AOptions: TJSONOptions);
+=======
+constructor TJSONScanner.Create(const Source : String);
+>>>>>>> graemeg/cpstrnew
 begin
   FSource:=TStringList.Create;
   FSource.Text:=Source;
@@ -247,7 +272,11 @@ begin
     '"','''':
       begin
         C:=TokenStr[0];
+<<<<<<< HEAD
         If (C='''') and (joStrict in Options) then
+=======
+        If (C='''') and Strict then
+>>>>>>> graemeg/cpstrnew
           Error(SErrInvalidCharacter, [CurRow,CurColumn,TokenStr[0]]);
         Inc(TokenStr);
         TokenStart := TokenStr;
@@ -353,7 +382,13 @@ begin
           end;
         end;
         SectionLength := TokenStr - TokenStart;
+<<<<<<< HEAD
         SetString(FCurTokenString, TokenStart, SectionLength);
+=======
+        SetLength(FCurTokenString, SectionLength);
+        if SectionLength > 0 then
+          Move(TokenStart^, FCurTokenString[1], SectionLength);
+>>>>>>> graemeg/cpstrnew
         If (FCurTokenString[1]='.') then
           FCurTokenString:='0'+FCurTokenString;
         Result := tkNumber;
@@ -383,6 +418,7 @@ begin
         Inc(TokenStr);
         Result := tkSquaredBraceClose;
       end;
+<<<<<<< HEAD
     '/' :
       begin
       if Not (joComments in Options) then
@@ -428,6 +464,9 @@ begin
       Result:=tkComment;
       end;
     'a'..'z','A'..'Z','_':
+=======
+    'a'..'z','_':
+>>>>>>> graemeg/cpstrnew
       begin
         TokenStart := TokenStr;
         repeat
@@ -442,7 +481,11 @@ begin
             FCurToken := Result;
             exit;
             end;
+<<<<<<< HEAD
         if (joStrict in Options) then
+=======
+        if Strict then
+>>>>>>> graemeg/cpstrnew
           Error(SErrInvalidCharacter, [CurRow,CurColumn,TokenStr[0]])
         else
           Result:=tkIdentifier;

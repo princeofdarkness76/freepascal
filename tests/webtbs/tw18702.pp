@@ -2,6 +2,14 @@ program project1;
 
 {$mode objfpc}{$H+}
 {$modeswitch nestedprocvars}
+<<<<<<< HEAD
+=======
+uses
+{$ifdef unix}
+  cwstring,
+{$endif unix}
+  SysUtils;
+>>>>>>> graemeg/cpstrnew
 
 type
   TGetSQLTextProc = function() : string is nested;

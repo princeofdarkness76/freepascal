@@ -50,8 +50,16 @@ begin
 end;
 
 Function TRefItem.GetCopy : TLinkedListItem;
+<<<<<<< HEAD
 begin
   Result:=TRefItem.Create(RefInfo);
+=======
+var
+  NR : TRefItem;
+begin
+  NR.Create(RefInfo);
+  GetCopy:=NR;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TRefLinkedList.WriteToPPU;

@@ -66,7 +66,10 @@ interface
           function  needrecompile:boolean;
           procedure setdefgeneration;
           procedure reload_flagged_units;
+<<<<<<< HEAD
           procedure end_of_parsing;override;
+=======
+>>>>>>> graemeg/cpstrnew
        private
          { Each time a unit's defs are (re)created, its defsgeneration is
            set to the value of a global counter, and the global counter is
@@ -1549,6 +1552,7 @@ var
          end;
       end;
 
+<<<<<<< HEAD
     procedure tppumodule.end_of_parsing;
       begin
         { module is now compiled }
@@ -1564,6 +1568,8 @@ var
         inherited end_of_parsing;
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 
     procedure tppumodule.loadppu;
       const
@@ -1741,7 +1747,11 @@ var
               { compile this module }
               if not(state in [ms_compile,ms_second_compile]) then
                 state:=ms_compile;
+<<<<<<< HEAD
               compile(mainsource);
+=======
+              compile(mainsource^);
+>>>>>>> graemeg/cpstrnew
               setdefgeneration;
             end
            else

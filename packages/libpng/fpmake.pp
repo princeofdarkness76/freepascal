@@ -18,7 +18,11 @@ begin
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
     P.Version:='3.1.1';
+=======
+    P.Version:='2.2.2-0';
+>>>>>>> graemeg/cpstrnew
     P.Dependencies.Add('zlib');
     P.SourcePath.Add('src');
     P.OSes := AllUnixOSes-[qnx]+[win32,os2,emx];

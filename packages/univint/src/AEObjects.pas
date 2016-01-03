@@ -3,7 +3,11 @@
  
      Contains:   Object Support Library Interfaces.
  
+<<<<<<< HEAD
     
+=======
+     Version:    AppleEvents-496~1
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
  
@@ -13,6 +17,10 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
+=======
+{  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -67,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -87,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -106,13 +118,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -122,13 +154,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -171,6 +207,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -345,7 +403,11 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLAccessorUPP( userRoutine: OSLAccessorProcPtr ): OSLAccessorUPP; external name '_NewOSLAccessorUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewOSLCompareUPP()
@@ -356,7 +418,11 @@ function NewOSLAccessorUPP( userRoutine: OSLAccessorProcPtr ): OSLAccessorUPP; e
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLCompareUPP( userRoutine: OSLCompareProcPtr ): OSLCompareUPP; external name '_NewOSLCompareUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewOSLCountUPP()
@@ -367,7 +433,11 @@ function NewOSLCompareUPP( userRoutine: OSLCompareProcPtr ): OSLCompareUPP; exte
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLCountUPP( userRoutine: OSLCountProcPtr ): OSLCountUPP; external name '_NewOSLCountUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewOSLDisposeTokenUPP()
@@ -378,7 +448,11 @@ function NewOSLCountUPP( userRoutine: OSLCountProcPtr ): OSLCountUPP; external n
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLDisposeTokenUPP( userRoutine: OSLDisposeTokenProcPtr ): OSLDisposeTokenUPP; external name '_NewOSLDisposeTokenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewOSLGetMarkTokenUPP()
@@ -389,7 +463,11 @@ function NewOSLDisposeTokenUPP( userRoutine: OSLDisposeTokenProcPtr ): OSLDispos
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLGetMarkTokenUPP( userRoutine: OSLGetMarkTokenProcPtr ): OSLGetMarkTokenUPP; external name '_NewOSLGetMarkTokenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewOSLGetErrDescUPP()
@@ -400,7 +478,11 @@ function NewOSLGetMarkTokenUPP( userRoutine: OSLGetMarkTokenProcPtr ): OSLGetMar
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLGetErrDescUPP( userRoutine: OSLGetErrDescProcPtr ): OSLGetErrDescUPP; external name '_NewOSLGetErrDescUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewOSLMarkUPP()
@@ -411,7 +493,11 @@ function NewOSLGetErrDescUPP( userRoutine: OSLGetErrDescProcPtr ): OSLGetErrDesc
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLMarkUPP( userRoutine: OSLMarkProcPtr ): OSLMarkUPP; external name '_NewOSLMarkUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewOSLAdjustMarksUPP()
@@ -422,7 +508,11 @@ function NewOSLMarkUPP( userRoutine: OSLMarkProcPtr ): OSLMarkUPP; external name
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewOSLAdjustMarksUPP( userRoutine: OSLAdjustMarksProcPtr ): OSLAdjustMarksUPP; external name '_NewOSLAdjustMarksUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLAccessorUPP()
@@ -433,7 +523,11 @@ function NewOSLAdjustMarksUPP( userRoutine: OSLAdjustMarksProcPtr ): OSLAdjustMa
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLAccessorUPP( userUPP: OSLAccessorUPP ); external name '_DisposeOSLAccessorUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLCompareUPP()
@@ -444,7 +538,11 @@ procedure DisposeOSLAccessorUPP( userUPP: OSLAccessorUPP ); external name '_Disp
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLCompareUPP( userUPP: OSLCompareUPP ); external name '_DisposeOSLCompareUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLCountUPP()
@@ -455,7 +553,11 @@ procedure DisposeOSLCompareUPP( userUPP: OSLCompareUPP ); external name '_Dispos
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLCountUPP( userUPP: OSLCountUPP ); external name '_DisposeOSLCountUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLDisposeTokenUPP()
@@ -466,7 +568,11 @@ procedure DisposeOSLCountUPP( userUPP: OSLCountUPP ); external name '_DisposeOSL
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLDisposeTokenUPP( userUPP: OSLDisposeTokenUPP ); external name '_DisposeOSLDisposeTokenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLGetMarkTokenUPP()
@@ -477,7 +583,11 @@ procedure DisposeOSLDisposeTokenUPP( userUPP: OSLDisposeTokenUPP ); external nam
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLGetMarkTokenUPP( userUPP: OSLGetMarkTokenUPP ); external name '_DisposeOSLGetMarkTokenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLGetErrDescUPP()
@@ -488,7 +598,11 @@ procedure DisposeOSLGetMarkTokenUPP( userUPP: OSLGetMarkTokenUPP ); external nam
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLGetErrDescUPP( userUPP: OSLGetErrDescUPP ); external name '_DisposeOSLGetErrDescUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLMarkUPP()
@@ -499,7 +613,11 @@ procedure DisposeOSLGetErrDescUPP( userUPP: OSLGetErrDescUPP ); external name '_
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLMarkUPP( userUPP: OSLMarkUPP ); external name '_DisposeOSLMarkUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeOSLAdjustMarksUPP()
@@ -510,7 +628,11 @@ procedure DisposeOSLMarkUPP( userUPP: OSLMarkUPP ); external name '_DisposeOSLMa
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeOSLAdjustMarksUPP( userUPP: OSLAdjustMarksUPP ); external name '_DisposeOSLAdjustMarksUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLAccessorUPP()
@@ -521,7 +643,11 @@ procedure DisposeOSLAdjustMarksUPP( userUPP: OSLAdjustMarksUPP ); external name 
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLAccessorUPP( desiredClass: DescType; const (*var*) container: AEDesc; containerClass: DescType; form: DescType; const (*var*) selectionData: AEDesc; var value: AEDesc; accessorRefcon: SRefCon; userUPP: OSLAccessorUPP ): OSErr; external name '_InvokeOSLAccessorUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLCompareUPP()
@@ -532,7 +658,11 @@ function InvokeOSLAccessorUPP( desiredClass: DescType; const (*var*) container: 
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLCompareUPP( oper: DescType; const (*var*) obj1: AEDesc; const (*var*) obj2: AEDesc; var result: Boolean; userUPP: OSLCompareUPP ): OSErr; external name '_InvokeOSLCompareUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLCountUPP()
@@ -543,7 +673,11 @@ function InvokeOSLCompareUPP( oper: DescType; const (*var*) obj1: AEDesc; const 
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLCountUPP( desiredType: DescType; containerClass: DescType; const (*var*) container: AEDesc; var result: SIGNEDLONG; userUPP: OSLCountUPP ): OSErr; external name '_InvokeOSLCountUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLDisposeTokenUPP()
@@ -554,7 +688,11 @@ function InvokeOSLCountUPP( desiredType: DescType; containerClass: DescType; con
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLDisposeTokenUPP( var unneededToken: AEDesc; userUPP: OSLDisposeTokenUPP ): OSErr; external name '_InvokeOSLDisposeTokenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLGetMarkTokenUPP()
@@ -565,7 +703,11 @@ function InvokeOSLDisposeTokenUPP( var unneededToken: AEDesc; userUPP: OSLDispos
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLGetMarkTokenUPP( const (*var*) dContainerToken: AEDesc; containerClass: DescType; var result: AEDesc; userUPP: OSLGetMarkTokenUPP ): OSErr; external name '_InvokeOSLGetMarkTokenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLGetErrDescUPP()
@@ -576,7 +718,11 @@ function InvokeOSLGetMarkTokenUPP( const (*var*) dContainerToken: AEDesc; contai
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLGetErrDescUPP( var appDescPtr: AEDescPtr; userUPP: OSLGetErrDescUPP ): OSErr; external name '_InvokeOSLGetErrDescUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLMarkUPP()
@@ -587,7 +733,11 @@ function InvokeOSLGetErrDescUPP( var appDescPtr: AEDescPtr; userUPP: OSLGetErrDe
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLMarkUPP( const (*var*) dToken: AEDesc; const (*var*) markToken: AEDesc; index: SIGNEDLONG; userUPP: OSLMarkUPP ): OSErr; external name '_InvokeOSLMarkUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeOSLAdjustMarksUPP()
@@ -598,7 +748,11 @@ function InvokeOSLMarkUPP( const (*var*) dToken: AEDesc; const (*var*) markToken
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeOSLAdjustMarksUPP( newStart: SIGNEDLONG; newStop: SIGNEDLONG; const (*var*) markToken: AEDesc; userUPP: OSLAdjustMarksUPP ): OSErr; external name '_InvokeOSLAdjustMarksUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  AEObjectInit()
@@ -612,7 +766,11 @@ function InvokeOSLAdjustMarksUPP( newStart: SIGNEDLONG; newStop: SIGNEDLONG; con
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AEObjectInit: OSErr; external name '_AEObjectInit';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Not done by inline, but by direct linking into code.  It sets up the pack
@@ -629,7 +787,11 @@ function AEObjectInit: OSErr; external name '_AEObjectInit';
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AESetObjectCallbacks( myCompareProc: OSLCompareUPP; myCountProc: OSLCountUPP; myDisposeTokenProc: OSLDisposeTokenUPP; myGetMarkTokenProc: OSLGetMarkTokenUPP; myMarkProc: OSLMarkUPP; myAdjustMarksProc: OSLAdjustMarksUPP; myGetErrDescProcPtr: OSLGetErrDescUPP ): OSErr; external name '_AESetObjectCallbacks';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -644,7 +806,11 @@ function AESetObjectCallbacks( myCompareProc: OSLCompareUPP; myCountProc: OSLCou
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AEResolve( const (*var*) objectSpecifier: AEDesc; callbackFlags: SInt16; var theToken: AEDesc ): OSErr; external name '_AEResolve';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -659,7 +825,11 @@ function AEResolve( const (*var*) objectSpecifier: AEDesc; callbackFlags: SInt16
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AEInstallObjectAccessor( desiredClass: DescType; containerType: DescType; theAccessor: OSLAccessorUPP; accessorRefcon: SRefCon; isSysHandler: Boolean ): OSErr; external name '_AEInstallObjectAccessor';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -674,7 +844,11 @@ function AEInstallObjectAccessor( desiredClass: DescType; containerType: DescTyp
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AERemoveObjectAccessor( desiredClass: DescType; containerType: DescType; theAccessor: OSLAccessorUPP; isSysHandler: Boolean ): OSErr; external name '_AERemoveObjectAccessor';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -689,7 +863,11 @@ function AERemoveObjectAccessor( desiredClass: DescType; containerType: DescType
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AEGetObjectAccessor( desiredClass: DescType; containerType: DescType; var accessor: OSLAccessorUPP; var accessorRefcon: SRefCon; isSysHandler: Boolean ): OSErr; external name '_AEGetObjectAccessor';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -704,7 +882,11 @@ function AEGetObjectAccessor( desiredClass: DescType; containerType: DescType; v
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AEDisposeToken( var theToken: AEDesc ): OSErr; external name '_AEDisposeToken';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -719,7 +901,11 @@ function AEDisposeToken( var theToken: AEDesc ): OSErr; external name '_AEDispos
  *    Non-Carbon CFM:   in ObjectSupportLib 1.0 and later
  }
 function AECallObjectAccessor( desiredClass: DescType; const (*var*) containerToken: AEDesc; containerClass: DescType; keyForm: DescType; const (*var*) keyData: AEDesc; var token: AEDesc ): OSErr; external name '_AECallObjectAccessor';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}

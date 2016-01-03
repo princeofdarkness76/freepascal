@@ -98,7 +98,10 @@ type
     FBuffer: array of Char;
     FBufferIndex: Integer;
     FBufferEnd: Integer;
+<<<<<<< HEAD
     FSubcommandCallbacks: TLSubcommandArray;
+=======
+>>>>>>> graemeg/cpstrnew
     procedure InflateBuffer;
     function AddToBuffer(const aStr: string): Boolean; inline;
     
@@ -119,7 +122,11 @@ type
     procedure StackFull;
     procedure DoubleIAC(var s: string);
     function TelnetParse(const msg: string): Integer;
+<<<<<<< HEAD
     function React(const Operation, Command: Char): boolean; virtual; abstract;
+=======
+    procedure React(const Operation, Command: Char); virtual; abstract;
+>>>>>>> graemeg/cpstrnew
     procedure SendCommand(const Command: Char; const Value: Boolean); virtual; abstract;
 
     procedure OnCs(aSocket: TLSocket);
@@ -137,10 +144,14 @@ type
     function RegisterOption(const aOption: Char; const aCommand: Boolean): Boolean;
     procedure SetOption(const Option: Char);
     procedure UnSetOption(const Option: Char);
+<<<<<<< HEAD
 
     function RegisterSubcommand(aOption: char; callback: TLSubcommandCallback;
                 const defaultResponse: string= ''; requiredParams: integer= 0): boolean;
 
+=======
+    
+>>>>>>> graemeg/cpstrnew
     procedure Disconnect(const Forced: Boolean = True); override;
     
     procedure SendCommand(const aCommand: Char; const How: TLHowEnum); virtual;
@@ -193,9 +204,13 @@ function LTelnetSubcommandCallback(command: char; const parameters, defaultRespo
 implementation
 
 uses
+<<<<<<< HEAD
   Math;
 
 const   subcommandEndLength= 2;
+=======
+  SysUtils, Math;
+>>>>>>> graemeg/cpstrnew
 
 var
   zz: Char;
@@ -399,6 +414,7 @@ begin
     SendCommand(Option, False);
 end;
 
+<<<<<<< HEAD
 (* If already set, the callback can be reverted to nil but it can't be changed  *)
 (* in a single step. The default response, if specified, is used by the         *)
 (* LTelnetSubcommandCallback() function and is available to others; the         *)
@@ -422,6 +438,10 @@ end { TLTelnet.RegisterSubcommand } ;
 
 procedure TLTelnet.Disconnect(const Forced: Boolean = True);
 begin
+=======
+procedure TLTelnet.Disconnect(const Forced: Boolean = True);
+begin
+>>>>>>> graemeg/cpstrnew
   FConnection.Disconnect(Forced);
 end;
 
@@ -565,6 +585,7 @@ begin
               else Refuse(TS_DONT, Command);
                  
     TS_WONT : if Command in FPossible then FActiveOpts := FActiveOpts - [Command];
+<<<<<<< HEAD
     TS_SB   : if not Assigned(FSubcommandCallbacks[command].callback) then
                 refuse(TS_WONT, command)
               else
@@ -574,6 +595,8 @@ begin
 (* parameters to keep the subcommand happy have not yet been parsed out of the  *)
 (* message.                                                                     *)
 
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 

@@ -11,10 +11,16 @@
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+                     http://www.freepascal.org/bugs.html
+}
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -92,29 +101,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -124,13 +148,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -142,17 +170,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -168,6 +205,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -263,9 +304,12 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$definec kPMFaxModemPDEKindID CFSTRP('com.apple.print.pde.FaxModemKind')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+<<<<<<< HEAD
 {$definec kPMFaxAddressesPDEKindID CFSTRP('com.apple.print.pde.FaxAddressesKind')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+=======
+>>>>>>> graemeg/cpstrnew
 {$definec kPMPaperHandlingPDEKindID CFSTRP('com.apple.print.pde.PaperHandlingKind')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
@@ -274,9 +318,12 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMSummaryPanelKindID CFSTRP('com.apple.print.pde.SummaryKind')}
 {$endc}
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMUniPrinterPDEKindID CFSTRP('com.apple.print.pde.UniPrinterKind')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 { Unimplemented Universal }
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMPaperSourcePDEKindID CFSTRP('com.apple.print.pde.PaperSourceKind')}
@@ -287,9 +334,12 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMRotationScalingPDEKindID CFSTRP('com.apple.print.pde.RotationScalingKind')}
 {$endc}
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMUnsupportedPDEKindID CFSTRP('com.apple.print.pde.UnsupportedPDEKind')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 { Implemented Standard }
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMErrorHandlingPDEKindID CFSTRP('com.apple.print.pde.ErrorHandlingKind')}
@@ -310,19 +360,25 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMQualityMediaPDEKindID CFSTRP('com.apple.print.pde.QualityMediaPDEKind')}
 {$endc}
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMMediaQualityPDEKindID CFSTRP('com.apple.print.pde.MediaQualityPDEKind')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Key to represent information about display order for Cocoa summary info }
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec SUMMARY_DISPLAY_ORDER CFSTRP('Summary Display Order')}
 {$endc}
 
+<<<<<<< HEAD
 {  Boolean key in the Bundle's Info.plist file that sepecifies whether the PDEPanels created by the Bundle are Sandbox compatible }
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMSandboxCompatiblePDEs CFSTRP('PMSandboxCompatiblePDEs')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     Type Definitions

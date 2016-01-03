@@ -1338,7 +1338,25 @@ Procedure TStringList.Clear;
 begin
   if FCount = 0 then Exit;
   Changing;
+<<<<<<< HEAD
   InternalClear;
+=======
+  if FOwnsObjects then
+    begin
+      For I:=0 to FCount-1 do
+        begin
+          Flist^[I].FString:='';
+          freeandnil(Flist^[i].FObject);
+        end;
+    end
+  else
+    begin
+      For I:=0 to FCount-1 do
+        Flist^[I].FString:='';
+    end;
+  FCount:=0;
+  SetCapacity(0);
+>>>>>>> graemeg/cpstrnew
   Changed;
 end;
 
@@ -1397,12 +1415,15 @@ Function TStringList.DoCompareText(const s1,s2 : string) : PtrInt;
   end;
 
 
+<<<<<<< HEAD
 function TStringList.CompareStrings(const s1,s2 : string) : Integer;
 begin
   Result := DoCompareText(s1, s2);
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 Function TStringList.Find(const S: string; Out Index: Integer): Boolean;
 
 var
@@ -1501,7 +1522,10 @@ begin
   FMap := TFPStrObjMap.Create;
   FMap.OnPtrCompare := @MapPtrCompare;
   FOnCompareText := @DefaultCompareText;
+<<<<<<< HEAD
   NameValueSeparator:='=';
+=======
+>>>>>>> graemeg/cpstrnew
   CheckSpecialChars;
 end;
 

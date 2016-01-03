@@ -4,8 +4,22 @@
      Contains:   Multiprocessing interfaces
                  The contents of this header file are deprecated.
  
+<<<<<<< HEAD
      Copyright:  © 1995-2011 DayStar Digital, Inc.
 }
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1995-2008 DayStar Digital, Inc.
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -60,11 +74,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -80,6 +97,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -99,17 +117,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -159,6 +198,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -206,11 +273,14 @@ uses MacTypes;
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 {********************************************************************************************
  
  The Multiprocessing Utilities are deprecated.  Callers should use blocks, libDispatch, or pthreads.
   
 ********************************************************************************************}
+=======
+>>>>>>> graemeg/cpstrnew
 {
    ===========================================================================================
    *** WARNING: You must properly check the availability of MP services before calling them!
@@ -227,11 +297,19 @@ uses MacTypes;
    As of Mac OS X v10.6, the APIs in this header file are discouraged. These APIs are slated
    for deprecation in the next major release of OS X. The new dispatch APIs (see dispatch(3))
    replace the Multiprocessing APIs and the pthread threading APIs.
+<<<<<<< HEAD
    ===========================================================================================
 }
 
 {
    ===========================================================================================
+=======
+   ===========================================================================================
+}
+
+{
+   ===========================================================================================
+>>>>>>> graemeg/cpstrnew
    This is the header file for version 2.2 of the Mac OS multiprocessing support.  This version
    has been totally reimplemented and has significant new services.  The main goal of the
    reimplementation has been to transfer task management into the core operating system to provide
@@ -385,6 +463,7 @@ const
 
 
 type
+<<<<<<< HEAD
 	MPProcessID = ^OpaqueMPProcessID; { an opaque type }
 	OpaqueMPProcessID = record end;
 	MPProcessIDPtr = ^MPProcessID;
@@ -426,6 +505,35 @@ type
 	MPConsoleIDPtr = ^MPConsoleID;
 	MPOpaqueID = ^OpaqueMPOpaqueID; { an opaque type }
 	OpaqueMPOpaqueID = record end;
+=======
+	MPProcessID = ^SInt32; { an opaque type }
+	MPProcessIDPtr = ^MPProcessID;
+	MPTaskID = ^SInt32; { an opaque type }
+	MPTaskIDPtr = ^MPTaskID;
+	MPQueueID = ^SInt32; { an opaque type }
+	MPQueueIDPtr = ^MPQueueID;
+	MPSemaphoreID = ^SInt32; { an opaque type }
+	MPSemaphoreIDPtr = ^MPSemaphoreID;
+	MPCriticalRegionID = ^SInt32; { an opaque type }
+	MPCriticalRegionIDPtr = ^MPCriticalRegionID;
+	MPTimerID = ^SInt32; { an opaque type }
+	MPTimerIDPtr = ^MPTimerID;
+	MPEventID = ^SInt32; { an opaque type }
+	MPEventIDPtr = ^MPEventID;
+	MPAddressSpaceID = ^SInt32; { an opaque type }
+	MPAddressSpaceIDPtr = ^MPAddressSpaceID;
+	MPNotificationID = ^SInt32; { an opaque type }
+	MPNotificationIDPtr = ^MPNotificationID;
+	MPCoherenceID = ^SInt32; { an opaque type }
+	MPCoherenceIDPtr = ^MPCoherenceID;
+	MPCpuID = ^SInt32; { an opaque type }
+	MPCpuIDPtr = ^MPCpuID;
+	MPAreaID = ^SInt32; { an opaque type }
+	MPAreaIDPtr = ^MPAreaID;
+	MPConsoleID = ^SInt32; { an opaque type }
+	MPConsoleIDPtr = ^MPConsoleID;
+	MPOpaqueID = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	MPOpaqueIDPtr = ^MPOpaqueID;
 const
 { Values for MPOpaqueIDClass.}
@@ -487,18 +595,30 @@ const
 
 
 {
+<<<<<<< HEAD
  *  MPProcessors()   *** DEPRECATED ***
+=======
+ *  MPProcessors()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPProcessors: ItemCount; external name '_MPProcessors';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { The physical total.}
@@ -509,13 +629,24 @@ function MPProcessors: ItemCount; external name '_MPProcessors';
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Those currently in use.}
@@ -543,18 +674,30 @@ type
 	TaskProc = function( parameter: UnivPtr ): OSStatus;
 
 {
+<<<<<<< HEAD
  *  MPCreateTask()   *** DEPRECATED ***
+=======
+ *  MPCreateTask()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateTask( entryPoint: TaskProc; parameter: UnivPtr; stackSize: ByteCount; notifyQueue: MPQueueID; terminationParameter1: UnivPtr; terminationParameter2: UnivPtr; options: MPTaskOptions; task: MPTaskIDPtr ): OSStatus; external name '_MPCreateTask';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -563,13 +706,24 @@ function MPCreateTask( entryPoint: TaskProc; parameter: UnivPtr; stackSize: Byte
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPTerminateTask( task: MPTaskID; terminationStatus: OSStatus ): OSStatus; external name '_MPTerminateTask';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -578,13 +732,24 @@ function MPTerminateTask( task: MPTaskID; terminationStatus: OSStatus ): OSStatu
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetTaskWeight( task: MPTaskID; weight: MPTaskWeight ): OSStatus; external name '_MPSetTaskWeight';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -593,13 +758,24 @@ function MPSetTaskWeight( task: MPTaskID; weight: MPTaskWeight ): OSStatus; exte
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPTaskIsPreemptive( taskID: MPTaskID ): Boolean; external name '_MPTaskIsPreemptive';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { May be kInvalidID.}
@@ -610,13 +786,24 @@ function MPTaskIsPreemptive( taskID: MPTaskID ): Boolean; external name '_MPTask
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure MPExit( status: OSStatus ); external name '_MPExit';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -625,13 +812,24 @@ procedure MPExit( status: OSStatus ); external name '_MPExit';
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure MPYield; external name '_MPYield';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -640,13 +838,24 @@ procedure MPYield; external name '_MPYield';
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -661,7 +870,11 @@ function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
  *    Non-Carbon CFM:   in MPLibrary 2.3 and later
  }
 function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external name '_MPSetTaskType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -679,13 +892,24 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPAllocateTaskStorageIndex( var taskIndex: TaskStorageIndex ): OSStatus; external name '_MPAllocateTaskStorageIndex';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -694,13 +918,24 @@ function MPAllocateTaskStorageIndex( var taskIndex: TaskStorageIndex ): OSStatus
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDeallocateTaskStorageIndex( taskIndex: TaskStorageIndex ): OSStatus; external name '_MPDeallocateTaskStorageIndex';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -709,13 +944,24 @@ function MPDeallocateTaskStorageIndex( taskIndex: TaskStorageIndex ): OSStatus; 
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetTaskStorageValue( taskIndex: TaskStorageIndex; value: TaskStorageValue ): OSStatus; external name '_MPSetTaskStorageValue';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -724,13 +970,24 @@ function MPSetTaskStorageValue( taskIndex: TaskStorageIndex; value: TaskStorageV
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue; external name '_MPGetTaskStorageValue';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -747,13 +1004,24 @@ function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue;
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateQueue( var queue: MPQueueID ): OSStatus; external name '_MPCreateQueue';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -762,13 +1030,24 @@ function MPCreateQueue( var queue: MPQueueID ): OSStatus; external name '_MPCrea
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPDeleteQueue( queue: MPQueueID ): OSStatus; external name '_MPDeleteQueue';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -777,13 +1056,24 @@ function MPDeleteQueue( queue: MPQueueID ): OSStatus; external name '_MPDeleteQu
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPNotifyQueue( queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; param3: UnivPtr ): OSStatus; external name '_MPNotifyQueue';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -792,13 +1082,24 @@ function MPNotifyQueue( queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; para
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPWaitOnQueue( queue: MPQueueID; var param1: UnivPtr; var param2: UnivPtr; var param3: UnivPtr; timeout: Duration ): OSStatus; external name '_MPWaitOnQueue';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -807,13 +1108,24 @@ function MPWaitOnQueue( queue: MPQueueID; var param1: UnivPtr; var param2: UnivP
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetQueueReserve( queue: MPQueueID; count: ItemCount ): OSStatus; external name '_MPSetQueueReserve';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -825,13 +1137,24 @@ function MPSetQueueReserve( queue: MPQueueID; count: ItemCount ): OSStatus; exte
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateSemaphore( maximumValue: MPSemaphoreCount; initialValue: MPSemaphoreCount; var semaphore: MPSemaphoreID ): OSStatus; external name '_MPCreateSemaphore';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -840,13 +1163,24 @@ function MPCreateSemaphore( maximumValue: MPSemaphoreCount; initialValue: MPSema
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPDeleteSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name '_MPDeleteSemaphore';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -855,13 +1189,24 @@ function MPDeleteSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPSignalSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name '_MPSignalSemaphore';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -870,14 +1215,25 @@ function MPSignalSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPWaitOnSemaphore( semaphore: MPSemaphoreID; timeout: Duration ): OSStatus; external name '_MPWaitOnSemaphore';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -889,13 +1245,24 @@ function MPWaitOnSemaphore( semaphore: MPSemaphoreID; timeout: Duration ): OSSta
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateCriticalRegion( var criticalRegion: MPCriticalRegionID ): OSStatus; external name '_MPCreateCriticalRegion';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -904,13 +1271,24 @@ function MPCreateCriticalRegion( var criticalRegion: MPCriticalRegionID ): OSSta
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPDeleteCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; external name '_MPDeleteCriticalRegion';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -919,13 +1297,24 @@ function MPDeleteCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus;
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPEnterCriticalRegion( criticalRegion: MPCriticalRegionID; timeout: Duration ): OSStatus; external name '_MPEnterCriticalRegion';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -934,13 +1323,24 @@ function MPEnterCriticalRegion( criticalRegion: MPCriticalRegionID; timeout: Dur
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPExitCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; external name '_MPExitCriticalRegion';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -952,13 +1352,24 @@ function MPExitCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; e
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPCreateEvent( var event: MPEventID ): OSStatus; external name '_MPCreateEvent';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -967,13 +1378,24 @@ function MPCreateEvent( var event: MPEventID ): OSStatus; external name '_MPCrea
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDeleteEvent( event: MPEventID ): OSStatus; external name '_MPDeleteEvent';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -982,13 +1404,24 @@ function MPDeleteEvent( event: MPEventID ): OSStatus; external name '_MPDeleteEv
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetEvent( event: MPEventID; flags: MPEventFlags ): OSStatus; external name '_MPSetEvent';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -997,13 +1430,24 @@ function MPSetEvent( event: MPEventID; flags: MPEventFlags ): OSStatus; external
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Duration ): OSStatus; external name '_MPWaitForEvent';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1021,12 +1465,20 @@ function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Dura
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPCreateNotification( var notificationID: MPNotificationID ): OSStatus; external name '_MPCreateNotification';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1035,13 +1487,24 @@ function MPCreateNotification( var notificationID: MPNotificationID ): OSStatus;
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPDeleteNotification( notificationID: MPNotificationID ): OSStatus; external name '_MPDeleteNotification';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1050,13 +1513,24 @@ function MPDeleteNotification( notificationID: MPNotificationID ): OSStatus; ext
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPModifyNotification( notificationID: MPNotificationID; anID: MPOpaqueID; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr ): OSStatus; external name '_MPModifyNotification';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1065,13 +1539,24 @@ function MPModifyNotification( notificationID: MPNotificationID; anID: MPOpaqueI
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.3 and later
  }
 function MPModifyNotificationParameters( notificationID: MPNotificationID; kind: MPOpaqueIDClass; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr ): OSStatus; external name '_MPModifyNotificationParameters';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1080,13 +1565,24 @@ function MPModifyNotificationParameters( notificationID: MPNotificationID; kind:
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPCauseNotification( notificationID: MPNotificationID ): OSStatus; external name '_MPCauseNotification';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1111,18 +1607,30 @@ const
 
 
 {
+<<<<<<< HEAD
  *  MPDelayUntil()   *** DEPRECATED ***
+=======
+ *  MPDelayUntil()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external name '_MPDelayUntil';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1141,13 +1649,24 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPCreateTimer( var timerID: MPTimerID ): OSStatus; external name '_MPCreateTimer';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1156,13 +1675,24 @@ function MPCreateTimer( var timerID: MPTimerID ): OSStatus; external name '_MPCr
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDeleteTimer( timerID: MPTimerID ): OSStatus; external name '_MPDeleteTimer';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1171,13 +1701,24 @@ function MPDeleteTimer( timerID: MPTimerID ): OSStatus; external name '_MPDelete
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetTimerNotify( timerID: MPTimerID; anID: MPOpaqueID; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr ): OSStatus; external name '_MPSetTimerNotify';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1186,13 +1727,24 @@ function MPSetTimerNotify( timerID: MPTimerID; anID: MPOpaqueID; notifyParam1: U
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPArmTimer( timerID: MPTimerID; var expirationTime: AbsoluteTime; options: OptionBits ): OSStatus; external name '_MPArmTimer';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1201,13 +1753,24 @@ function MPArmTimer( timerID: MPTimerID; var expirationTime: AbsoluteTime; optio
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPCancelTimer( timerID: MPTimerID; timeRemaining: AbsoluteTimePtr ): OSStatus; external name '_MPCancelTimer';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1250,20 +1813,34 @@ const
 
 
 {
+<<<<<<< HEAD
  *  MPAllocateAligned()   *** DEPRECATED ***
+=======
+ *  MPAllocateAligned()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPAllocateAligned( size: ByteCount; alignment: UInt8; options: OptionBits ): LogicalAddress; external name '_MPAllocateAligned';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { ! MPAllocateAligned is new in version 2.0.}
 
 {
@@ -1272,15 +1849,28 @@ function MPAllocateAligned( size: ByteCount; alignment: UInt8; options: OptionBi
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPAllocate( size: ByteCount ): LogicalAddress; external name '_MPAllocate';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Use MPAllocateAligned instead.}
 
 {
@@ -1289,13 +1879,24 @@ function MPAllocate( size: ByteCount ): LogicalAddress; external name '_MPAlloca
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure MPFree( objct: LogicalAddress ); external name '_MPFree';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1304,13 +1905,24 @@ procedure MPFree( objct: LogicalAddress ); external name '_MPFree';
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPGetAllocatedBlockSize( objct: LogicalAddress ): ByteCount; external name '_MPGetAllocatedBlockSize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -1322,13 +1934,24 @@ function MPGetAllocatedBlockSize( objct: LogicalAddress ): ByteCount; external n
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure MPBlockCopy( source: LogicalAddress; destination: LogicalAddress; size: ByteCount ); external name '_MPBlockCopy';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1337,13 +1960,24 @@ procedure MPBlockCopy( source: LogicalAddress; destination: LogicalAddress; size
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 procedure MPBlockClear( address: LogicalAddress; size: ByteCount ); external name '_MPBlockClear';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$ifc not TARGET_CPU_64}
@@ -1353,13 +1987,24 @@ procedure MPBlockClear( address: LogicalAddress; size: ByteCount ); external nam
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only]
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 procedure MPDataToCode( address: LogicalAddress; size: ByteCount ); external name '_MPDataToCode';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { NOTE:    MPDataToCode is not supported for 64-bit applications. Use mprotect(2) instead.}
@@ -1471,6 +2116,7 @@ type
 	MPTaskInfoPtr = ^MPTaskInfo;
 	MPTaskInfo = record
 		version: PBVersion;                { Version 3 of the data structure requested}
+<<<<<<< HEAD
 
 		name: OSType;                   { Task name}
 
@@ -1506,21 +2152,86 @@ type
 
 
 { -------------------------------------------------------------------------------------------}
+=======
+
+		name: OSType;                   { Task name}
+
+		queueName: OSType;              { Task's queue owner name}
+		runState: UInt16;               { Running, ready, blocked}
+		lastCPU: UInt16;                { Address of CPU where task previously ran}
+		weight: UInt32;                 { Processing weight: 1 - 10,000}
+
+		processID: MPProcessID;              { Owning process ID}
+
+		cpuTime: AbsoluteTime;                { Accumulated task time}
+		schedTime: AbsoluteTime;              { Time when last scheduled}
+		creationTime: AbsoluteTime;           { Time when task created}
+
+		codePageFaults: ItemCount;         { Page faults from code execution}
+		dataPageFaults: ItemCount;         { Page faults from data access}
+		preemptions: ItemCount;            { Number of times task was preempted}
+>>>>>>> graemeg/cpstrnew
+
+		cpuID: MPCpuID;                  { ID of CPU where task previously ran.}
+		blockedObject: MPOpaqueID;          { ID of blocked object.}
+		spaceID: MPAddressSpaceID;                { Address space ID of this task.}
+
+		stackBase: LogicalAddress;              { Base of stack (lowest address).}
+		stackLimit: LogicalAddress;             { Stack limit (highest address).}
+		stackCurr: LogicalAddress;              { Current stack address.}
+	end;
+{
+<<<<<<< HEAD
+ *  MPSetExceptionHandler()   *** DEPRECATED ***
+=======
+    Upon a task exception, the following message is sent to the designated queue:
+      1. The MPTaskID, 
+      2. The exception kind. These are enumerated in the interfaces header MachineExceptions.h 
+      3. N/A
+}
+
+
+{ -------------------------------------------------------------------------------------------}
 
 
 {
- *  MPSetExceptionHandler()   *** DEPRECATED ***
+ *  MPSetExceptionHandler()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatus; external name '_MPSetExceptionHandler';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatus; external name '_MPSetExceptionHandler';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MPDisposeTaskException()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+function MPDisposeTaskException( task: MPTaskID; action: OptionBits ): OSStatus; external name '_MPDisposeTaskException';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1529,13 +2240,25 @@ function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatu
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDisposeTaskException( task: MPTaskID; action: OptionBits ): OSStatus; external name '_MPDisposeTaskException';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+function MPExtractTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ): OSStatus; external name '_MPExtractTaskState';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1544,13 +2267,25 @@ function MPDisposeTaskException( task: MPTaskID; action: OptionBits ): OSStatus;
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPExtractTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ): OSStatus; external name '_MPExtractTaskState';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+function MPSetTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ): OSStatus; external name '_MPSetTaskState';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1559,7 +2294,11 @@ function MPExtractTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPt
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
@@ -1576,11 +2315,18 @@ function MPSetTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ):
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPThrowException( task: MPTaskID; kind: MPExceptionKind ): OSStatus; external name '_MPThrowException';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -1595,18 +2341,30 @@ const
 
 
 {
+<<<<<<< HEAD
  *  MPRegisterDebugger()   *** DEPRECATED ***
+=======
+ *  MPRegisterDebugger()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPRegisterDebugger( queue: MPQueueID; level: MPDebuggerLevel ): OSStatus; external name '_MPRegisterDebugger';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1615,13 +2373,24 @@ function MPRegisterDebugger( queue: MPQueueID; level: MPDebuggerLevel ): OSStatu
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPUnregisterDebugger( queue: MPQueueID ): OSStatus; external name '_MPUnregisterDebugger';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1645,7 +2414,11 @@ const
 
 
 {
+<<<<<<< HEAD
  *  MPRemoteCall()   *** DEPRECATED ***
+=======
+ *  MPRemoteCall()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Summary:
  *    Calls a nonreentrant function and blocks the current task.
@@ -1674,8 +2447,12 @@ const
  *    shared library. Even these functions may switch to 68K mode if
  *    the operands to them are not aligned. If you need to access
  *    system software functions from a preemptive task, you must do so
+<<<<<<< HEAD
  *    using the MPRemoteCall function. %%     @deprecated Use blocks to
  *    make a call on anothed dispatch queue() and block on the result.
+=======
+ *    using the MPRemoteCall function.
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -1700,11 +2477,16 @@ const
  *      values.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; context: MPRemoteContext ): UnivPtr; external name '_MPRemoteCall';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 
 
@@ -1714,6 +2496,13 @@ function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; contex
  *  Deprecated:
  *    No longer applicable now that the Multiprocessing Utilities have
  *    been deprecated.
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MPRemoteCallCFM()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Summary:
  *    Calls a nonreentrant function and blocks the current task.
@@ -1761,12 +2550,20 @@ function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; contex
  *      values.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; context: MPRemoteContext ): UnivPtr; external name '_MPRemoteCallCFM';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1839,13 +2636,24 @@ function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; con
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function _MPIsFullyInitialized: Boolean; external name '__MPIsFullyInitialized';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 type
@@ -1862,15 +2670,26 @@ const
 
 
 {
+<<<<<<< HEAD
  *  _MPLibraryVersion()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *  _MPLibraryVersion()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Ptr; minor: UInt32Ptr; release: UInt32Ptr; revision: UInt32Ptr ); external name '__MPLibraryVersion';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1930,12 +2749,20 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
  *  _MPLibraryIsCompatible()   *** DEPRECATED ***
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function _MPLibraryIsCompatible( versionCString: ConstCStringPtr; major: UInt32; minor: UInt32; release: UInt32; revision: UInt32 ): Boolean; external name '__MPLibraryIsCompatible';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
    ¤

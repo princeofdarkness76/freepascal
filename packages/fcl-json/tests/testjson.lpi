@@ -4,7 +4,10 @@
     <Version Value="9"/>
     <General>
       <Flags>
+<<<<<<< HEAD
         <SaveOnlyProjectUnits Value="True"/>
+=======
+>>>>>>> graemeg/cpstrnew
         <LRSInOutputDirectory Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
@@ -25,7 +28,11 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+<<<<<<< HEAD
         <CommandLineParams Value="--suite=TTestParser.TestComment"/>
+=======
+        <CommandLineParams Value="--format=plain --suite=TCJSONStreamer"/>
+>>>>>>> graemeg/cpstrnew
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
@@ -50,15 +57,27 @@
       <Unit3>
         <Filename Value="testjsonrtti.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="testjsonrtti"/>
+>>>>>>> graemeg/cpstrnew
       </Unit3>
       <Unit4>
         <Filename Value="../src/fpjsonrtti.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="fpjsonrtti"/>
+>>>>>>> graemeg/cpstrnew
       </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
+<<<<<<< HEAD
     <Version Value="11"/>
+=======
+    <Version Value="9"/>
+>>>>>>> graemeg/cpstrnew
     <SearchPaths>
       <OtherUnitFiles Value="../src"/>
     </SearchPaths>
@@ -67,6 +86,21 @@
         <UseAnsiStrings Value="False"/>
       </SyntaxOptions>
     </Parsing>
+<<<<<<< HEAD
+=======
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="True"/>
+        <UseHeaptrc Value="True"/>
+      </Debugging>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+>>>>>>> graemeg/cpstrnew
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="2">

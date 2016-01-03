@@ -336,9 +336,13 @@ begin
   test_fillchar;
   test_move;
   test_move_large(500);   // 512 longints=2048 bytes
+<<<<<<< HEAD
 {$ifndef CPU16}
   test_move_large(500000);
 {$endif CPU16}
+=======
+  test_move_large(500000);
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc}
   test_fillword;
   test_filldword;

@@ -362,6 +362,7 @@ type
     FHashTable: TFPObjectList;
     FHashFunction: THashFunction;
     FCount: Longword;
+<<<<<<< HEAD
     Function GetDensity: Longword;
     Function GetNumberOfCollisions: Longword;
     Procedure SetHashTableSize(const Value: Longword);
@@ -373,6 +374,18 @@ type
   protected
     FHashTableSize: Longword;
     Function Chain(const index: Longword):TFPObjectList;
+=======
+    function GetDensity: Longword;
+    function GetNumberOfCollisions: Longword;
+    procedure SetHashTableSize(const Value: Longword);
+    procedure InitializeHashTable;
+    function GetVoidSlots: Longword;
+    function GetLoadFactor: double;
+    function GetAVGChainLen: double;
+    function GetMaxChainLength: Longword;
+  protected
+    function Chain(const index: Longword):TFPObjectList;
+>>>>>>> graemeg/cpstrnew
     Function CreateNewNode(const aKey : string) : THTCustomNode; virtual; abstract;
     Procedure AddNode(ANode : THTCustomNode); virtual; abstract;
     Function ChainLength(const ChainIndex: Longword): Longword; virtual;

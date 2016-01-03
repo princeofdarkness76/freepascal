@@ -214,7 +214,11 @@ asm
    movq   _environ@GOTPCREL(%rip),%rcx
    movq   (%rcx),%rcx
 {$else FPC_PIC}
+<<<<<<< HEAD
    movq   _environ(%rip),%rcx
+=======
+   movq   _environ{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif},%rcx
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_PIC}
    testq  %rcx,%rcx
    jne    .Label3
@@ -224,14 +228,22 @@ asm
    movq   _environ@GOTPCREL(%rip),%rbx
    movq   %rcx,(%rbx)
 {$else FPC_PIC}
+<<<<<<< HEAD
    movq   %rcx,_environ(%rip)
+=======
+   movq   %rcx,_environ{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_PIC}
    // Specific to Free Pascal
 {$ifdef FPC_PIC}
    movq   envp@GOTPCREL(%rip),%rbx
    movq   %rcx,(%rbx)
 {$else FPC_PIC}
+<<<<<<< HEAD
    movq   %rcx,envp(%rip)
+=======
+   movq   %rcx,envp{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_PIC}
 
 (*
@@ -247,7 +259,11 @@ asm
    movq   ___Argv@GOTPCREL(%rip),%rbx
    movq   %rdx,(%rbx)
 {$else FPC_PIC}
+<<<<<<< HEAD
    movq   %rdx,___Argv(%rip)
+=======
+   movq   %rdx,___Argv{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_PIC}
 {$ifdef FPC_PIC}
    movq   argv@GOTPCREL(%rip),%rbx

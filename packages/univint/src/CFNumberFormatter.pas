@@ -1,6 +1,15 @@
 {	CFNumberFormatter.h
+<<<<<<< HEAD
 	Copyright (c) 2003-2013, Apple Inc. All rights reserved.
 }
+=======
+	Copyright (c) 2003-2009, Apple Inc. All rights reserved.
+}
+{   Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+{   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
+{   Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -55,11 +64,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -78,29 +90,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -110,13 +137,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -128,12 +159,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -147,13 +184,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -205,8 +249,12 @@ uses MacTypes,CFBase,CFNumber,CFLocale;
 
 
 type
+<<<<<<< HEAD
 	CFNumberFormatterRef = ^__CFNumberFormatter; { an opaque type }
 	__CFNumberFormatter = record end;
+=======
+	CFNumberFormatterRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 // CFNumberFormatters are not thread-safe.  Do not use one from multiple threads!
 
@@ -215,7 +263,11 @@ function CFNumberFormatterGetTypeID: CFTypeID; external name '_CFNumberFormatter
 
 // number format styles
 type
+<<<<<<< HEAD
 	CFNumberFormatterStyle = CFIndex;
+=======
+	CFNumberFormatterStyle = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFNumberFormatterNoStyle = 0;
 	kCFNumberFormatterDecimalStyle = 1;
@@ -260,7 +312,11 @@ function CFNumberFormatterCreateStringWithValue( allocator: CFAllocatorRef; form
 
 
 type
+<<<<<<< HEAD
 	CFNumberFormatterOptionFlags = CFOptionFlags;
+=======
+	CFNumberFormatterOptionFlags = UNSIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFNumberFormatterParseIntegersOnly = 1;	{ only parse integers }
 
@@ -355,6 +411,7 @@ var kCFNumberFormatterPerMillSymbol: CFStringRef; external name '_kCFNumberForma
 var kCFNumberFormatterInternationalCurrencySymbol: CFStringRef; external name '_kCFNumberFormatterInternationalCurrencySymbol'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *) // CFString
 var kCFNumberFormatterCurrencyGroupingSeparator: CFStringRef; external name '_kCFNumberFormatterCurrencyGroupingSeparator'; (* attribute const *)
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *) // CFString
 var kCFNumberFormatterIsLenient: CFStringRef; external name '_kCFNumberFormatterIsLenient'; (* attribute const *)
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)		// CFBoolean
@@ -367,6 +424,20 @@ var kCFNumberFormatterMaxSignificantDigits: CFStringRef; external name '_kCFNumb
 
 type
 	CFNumberFormatterRoundingMode = CFIndex;
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *) // CFString
+var kCFNumberFormatterIsLenient: CFStringRef; external name '_kCFNumberFormatterIsLenient'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)		// CFBoolean
+var kCFNumberFormatterUseSignificantDigits: CFStringRef; external name '_kCFNumberFormatterUseSignificantDigits'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)	// CFBoolean
+var kCFNumberFormatterMinSignificantDigits: CFStringRef; external name '_kCFNumberFormatterMinSignificantDigits'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)	// CFNumber
+var kCFNumberFormatterMaxSignificantDigits: CFStringRef; external name '_kCFNumberFormatterMaxSignificantDigits'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)	// CFNumber
+
+type
+	CFNumberFormatterRoundingMode = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFNumberFormatterRoundCeiling = 0;
 	kCFNumberFormatterRoundFloor = 1;
@@ -377,7 +448,11 @@ const
 	kCFNumberFormatterRoundHalfUp = 6;
 
 type
+<<<<<<< HEAD
 	CFNumberFormatterPadPosition = CFIndex;
+=======
+	CFNumberFormatterPadPosition = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFNumberFormatterPadBeforePrefix = 0;
 	kCFNumberFormatterPadAfterPrefix = 1;

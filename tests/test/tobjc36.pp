@@ -1,5 +1,9 @@
 { %target=darwin }
+<<<<<<< HEAD
 { %cpu=powerpc,powerpc64,i386,x86_64,arm,aarch64 }
+=======
+{ %cpu=powerpc,powerpc64,i386,x86_64,arm }
+>>>>>>> graemeg/cpstrnew
 
 { Written by Jonas Maebe in 2010, released into the public domain }
 
@@ -20,11 +24,14 @@ type
     procedure extraproc(a: longint); override;
   end;
 
+<<<<<<< HEAD
   MyObject2 = objcclass(NSObject)
     // overrides extraproc added to NSObject
     procedure extraproc(a: longint); override;
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure MyCategory.extraproc(a: longint);
   begin
     if a<>1 then
@@ -38,6 +45,7 @@ procedure MyObject.extraproc(a: longint);
     inherited extraproc(1);
   end;
 
+<<<<<<< HEAD
 procedure MyObject2.extraproc(a: longint);
   begin
     if a<>3 then
@@ -45,11 +53,16 @@ procedure MyObject2.extraproc(a: longint);
     inherited extraproc(1);
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 var
   a: NSObject;
   b: MyObject;
+<<<<<<< HEAD
   c: MyObject2;
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   a:=NSObject.alloc.init;
   a.extraproc(1);
@@ -57,7 +70,10 @@ begin
   b:=MyObject.alloc.init;
   b.extraproc(2);
   b.release;
+<<<<<<< HEAD
   c:=MyObject.alloc.init;
   c.extraproc(2);
   c.release;
+=======
+>>>>>>> graemeg/cpstrnew
 end.

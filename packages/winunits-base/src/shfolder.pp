@@ -84,7 +84,11 @@ Const
 { Original entry points }
 
 Function SHGetFolderPathA(Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall; external LibName name 'SHGetFolderPathA';
+<<<<<<< HEAD
 Function SHGetFolderPathW(Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DWord; Path: PWideChar): HRESULT; stdcall; external LibName name 'SHGetFolderPathW';
+=======
+Function SHGetFolderPathW(Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall; external LibName name 'SHGetFolderPathW';
+>>>>>>> graemeg/cpstrnew
 
 Function SHGetFolderPath (Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall; external LibName name 'SHGetFolderPathA';
 
@@ -93,7 +97,11 @@ Function SHGetFolderPath (Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DW
 
 type
   PFNSHGetFolderPathA = Function(Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
+<<<<<<< HEAD
   PFNSHGetFolderPathW = Function(Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DWord; Path: PWideChar): HRESULT; stdcall;
+=======
+  PFNSHGetFolderPathW = Function(Ahwnd: HWND; Csidl: longint; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
+>>>>>>> graemeg/cpstrnew
   PFNSHGetFolderPath = PFNSHGetFolderPathA;
 
   TSHGetFolderPathA = PFNSHGetFolderPathA;

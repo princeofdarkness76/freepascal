@@ -176,6 +176,7 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
         s := 'finishing externally started thread'#10;
         fpwrite(0,s[1],length(s));
 {$endif DEBUG_MT}
+<<<<<<< HEAD
         { Restore tlskey value as it may already have been set to null,
           in which case
             a) DoneThread can't release the memory
@@ -183,11 +184,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
                calls would allocate new threadvar memory
         }
         pthread_setspecific(tlskey,p);
+=======
+>>>>>>> graemeg/cpstrnew
         { clean up }
         DoneThread;
         { the pthread routine that calls us is supposed to do this, but doesn't
           at least on Mac OS X 10.6 }
         pthread_setspecific(CleanupKey,nil);
+<<<<<<< HEAD
         pthread_setspecific(tlskey,nil);
       end;
 
@@ -208,6 +212,23 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
         pthread_setspecific(CleanupKey,pthread_getspecific(tlskey));
       end;
 
+=======
+      end;
+
+
+    procedure HookThread;
+      begin
+        { Allocate local thread vars, this must be the first thing,
+          because the exception management and io depends on threadvars }
+        CAllocateThreadVars;
+        { we cannot know the stack size of the current thread, so pretend it
+          is really large to prevent spurious stack overflow errors }
+        InitThread(1000000000);
+        { instruct the pthreads system to clean up this thread when it exits }
+        pthread_setspecific(CleanupKey,pointer(1));
+      end;
+
+>>>>>>> graemeg/cpstrnew
 
     function CRelocateThreadvar(offset : dword) : pointer;
       var
@@ -339,7 +360,28 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 {$endif DEBUG_MT}
       { Initialize multithreading if not done }
       if not IsMultiThread then
+<<<<<<< HEAD
         InitCThreading;
+=======
+        begin
+          if (InterLockedExchange(longint(IsMultiThread),ord(true)) = 0) then
+            begin
+              { We're still running in single thread mode, setup the TLS }
+              pthread_key_create(@TLSKey,nil);
+              InitThreadVars(@CRelocateThreadvar);
+              { used to clean up threads that we did not create ourselves:
+                 a) the default value for a key (and hence also this one) in
+                    new threads is NULL, and if it's still like that when the
+                    thread terminates, nothing will happen
+                 b) if it's non-NULL, the destructor routine will be called
+                    when the thread terminates
+               -> we will set it to 1 if the threadvar relocation routine is
+                  called from a thread we did not create, so that we can
+                  clean up everything at the end }
+              pthread_key_create(@CleanupKey,@CthreadCleanup);
+            end
+        end;
+>>>>>>> graemeg/cpstrnew
       { the only way to pass data to the newly created thread
         in a MT safe way, is to use the heap }
       new(ti);
@@ -351,13 +393,22 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
       writeln('Starting new thread');
 {$endif DEBUG_MT}
       pthread_attr_init(@thread_attr);
+<<<<<<< HEAD
       {$if not defined(HAIKU) and not defined(ANDROID)}
       {$if defined (solaris) or defined (netbsd) }
+=======
+      {$ifndef HAIKU}
+      {$ifdef solaris}
+>>>>>>> graemeg/cpstrnew
       pthread_attr_setinheritsched(@thread_attr, PTHREAD_INHERIT_SCHED);
       {$else not solaris}
       pthread_attr_setinheritsched(@thread_attr, PTHREAD_EXPLICIT_SCHED);
       {$endif not solaris}
+<<<<<<< HEAD
       {$ifend}
+=======
+      {$endif}
+>>>>>>> graemeg/cpstrnew
 
       // will fail under linux -- apparently unimplemented
       pthread_attr_setscope(@thread_attr, PTHREAD_SCOPE_PROCESS);
@@ -409,6 +460,10 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 
   function  CResumeThread  (threadHandle : TThreadID) : dword;
     begin
+<<<<<<< HEAD
+=======
+//      result := pthread_kill(threadHandle,SIGCONT);
+>>>>>>> graemeg/cpstrnew
       result:=dword(-1);
     end;
 

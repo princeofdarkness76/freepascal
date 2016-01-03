@@ -3,8 +3,11 @@
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -59,11 +62,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -82,33 +88,49 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -163,6 +185,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -211,7 +266,11 @@ uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
    A typical event in Mac OS X originates when the user manipulates an input
    device such as a mouse or a keyboard. The device driver associated with
    that device, through the I/O Kit, creates a low-level event, puts it in
+<<<<<<< HEAD
    the window server’s event queue, and notifies the window server. The
+=======
+   the window serverÕs event queue, and notifies the window server. The
+>>>>>>> graemeg/cpstrnew
    window server creates a Quartz event, annotates the event, and dispatches
    the event to the appropriate run-loop port of the target process. There
    the event is picked up by the Carbon Event Manager and forwarded to the
@@ -223,8 +282,12 @@ uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
    that all Core Foundation types have in common. }
 
 type
+<<<<<<< HEAD
 	CGEventRef = ^__CGEvent; { an opaque type }
 	__CGEvent = record end;
+=======
+	CGEventRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 { Constants that specify buttons on a one, two, or three-button mouse. }
 const
@@ -238,6 +301,7 @@ type
 const
 	kCGScrollEventUnitPixel = 0;
 	kCGScrollEventUnitLine = 1;
+<<<<<<< HEAD
 type
 	CGScrollEventUnit = UInt32;
 
@@ -270,6 +334,10 @@ const
 	kCGGesturePhaseMayBegin = 128;
 type
 	CGGesturePhase = UInt32;
+=======
+type
+	CGScrollEventUnit = UInt32;
+>>>>>>> graemeg/cpstrnew
 
 { Constants that indicate the modifier key state at the time an event is
    created, as well as other event-related states.
@@ -445,6 +513,7 @@ const
 
   { This field is not used. }
 	kCGScrollWheelEventPointDeltaAxis3 = 98;
+<<<<<<< HEAD
     
   {  }
 	kCGScrollWheelEventScrollPhase = 99;
@@ -453,6 +522,9 @@ const
 	kCGScrollWheelEventScrollCount = 100;
 	kCGScrollWheelEventMomentumPhase = 123;
     
+=======
+
+>>>>>>> graemeg/cpstrnew
   { Key to access an integer field that indicates whether the event should
      be ignored by the Inkwell subsystem. If the value is non-zero, the
      event should be ignored. }
@@ -584,10 +656,13 @@ const
      when the scrolling data is pixel-based and zero when the scrolling data
      is line-based. }
 	kCGScrollWheelEventIsContinuous = 88;
+<<<<<<< HEAD
   
   { Added in 10.5; made public in 10.7 }
 	kCGMouseEventWindowUnderMousePointer = 91;
 	kCGMouseEventWindowUnderMousePointerThatCanHandleThisEvent = 92;
+=======
+>>>>>>> graemeg/cpstrnew
 type
 	CGEventField = UInt32;
 
@@ -630,8 +705,12 @@ type
 {
 Generate an event mask for a single type of event.
 #define CGEventMaskBit(eventType)	((CGEventMask)1 << (eventType))
+
+An event mask that represents all event types.
+#define kCGEventMaskForAllEvents	(~(CGEventMask)0)
 }
 
+<<<<<<< HEAD
 { Generate an event mask for a single type of event.
 #define kCGEventMaskForAllEvents	(~(CGEventMask)0)
 }
@@ -646,6 +725,15 @@ type
 	__CGEventTapProxy = record end;
 
 { A client-supplied callback function that’s invoked whenever an associated
+=======
+
+{ An opaque type that represents state within the client application thatÕs
+   associated with an event tap. }
+type
+	CGEventTapProxy = ^SInt32; { an opaque type }
+
+{ A client-supplied callback function thatÕs invoked whenever an associated
+>>>>>>> graemeg/cpstrnew
    event tap receives a Quartz event.
 
    The callback is passed a proxy for the tap, the event type, the incoming
@@ -694,9 +782,16 @@ type
 
 { An opaque type that represents the source of a Quartz event. }
 type
+<<<<<<< HEAD
 	CGEventSourceRef = ^__CGEventSource; { an opaque type }
 	__CGEventSource = record end;
 
+=======
+	CGEventSourceRef = ^SInt32; { an opaque type }
+
+type
+	CGEventSourceStateID = UInt32;
+>>>>>>> graemeg/cpstrnew
 { Constants that specify the possible source states of an event source. }
 const
 	kCGEventSourceStatePrivate = -1;
@@ -705,6 +800,10 @@ const
 type
 	CGEventSourceStateID = UInt32;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 { A code that represents the type of keyboard used with a specified event
    source. }
 type

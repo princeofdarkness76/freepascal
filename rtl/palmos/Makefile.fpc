@@ -7,7 +7,11 @@ main=rtl
 
 [target]
 loaders= prt0
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar ctypes objpas macpas iso7185 extpas strings \
+=======
+units=$(SYSTEMUNIT) ctypes objpas macpas iso7185 strings \
+>>>>>>> graemeg/cpstrnew
       lnfodwrf lineinfo heaptrc \
       windows messages dynlibs \
       dos objects \
@@ -170,5 +174,9 @@ libinstall: staticlibinstall sharedlibinstall
 
 libsclean : clean
 	-$(DEL) *$(SMARTLIBEXT) *$(SHAREDLIBEXT) *$(PPLEXT)
+<<<<<<< HEAD
 
 
+=======
+
+>>>>>>> graemeg/cpstrnew

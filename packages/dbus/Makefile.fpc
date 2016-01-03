@@ -4,7 +4,15 @@
 
 [package]
 name=dbus
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=dbus
+exampledirs=examples
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

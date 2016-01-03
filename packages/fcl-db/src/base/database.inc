@@ -477,6 +477,14 @@ end;
     TCustomConnection
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
+=======
+procedure TCustomConnection.SetAfterConnect(const AValue: TNotifyEvent);
+begin
+  FAfterConnect:=AValue;
+end;
+
+>>>>>>> graemeg/cpstrnew
 function TCustomConnection.GetDataSet(Index: Longint): TDataSet;
 begin
   Result := nil;
@@ -567,6 +575,7 @@ end;
 
 procedure TCustomConnection.GetLoginParams(out ADatabaseName, AUserName, APassword: string);
 begin
+<<<<<<< HEAD
   if IsPublishedProp(Self,'DatabaseName') then
     ADatabaseName := GetStrProp(Self,'DatabaseName');
   if IsPublishedProp(Self,'UserName') then
@@ -583,6 +592,9 @@ begin
     SetStrProp(Self,'UserName',AUserName);
   if IsPublishedProp(Self,'Password') then
     SetStrProp(Self,'Password',APassword);
+=======
+  FBeforeDisconnect:=AValue;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TCustomConnection.DoConnect;

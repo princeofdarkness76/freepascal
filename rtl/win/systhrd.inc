@@ -96,6 +96,8 @@ var
       threadvarblocksize : dword; public name '_FPC_TlsSize';
       TLSKey : DWord = $ffffffff; public name '_FPC_TlsKey';
 
+    const
+      TLSKey : DWord = $ffffffff;
     var
       MainThreadIdWin32 : DWORD;
 
@@ -154,16 +156,54 @@ var
 
     procedure SysFiniMultithreading;
       begin
+<<<<<<< HEAD
         if TLSKey<>$ffffffff then
           TlsFree(TLSKey);
         TLSKey:=$ffffffff;
+=======
+        if IsMultiThread then
+          begin
+            TlsFree(TLSKey);
+            TLSKey:=$ffffffff;
+          end;
+>>>>>>> graemeg/cpstrnew
       end;
 
     function SysRelocateThreadvar(offset : dword) : pointer;
       var
         dataindex : pointer;
         errorsave : dword;
+<<<<<<< HEAD
       begin
+=======
+      begin	
+{$ifdef dummy}
+        { it least in the on windows 7 x64, this still doesn't not work, fs:(0x2c) is
+          self referencing on this system (FK)
+          MVC: It also does not work on Windows Vista 32-bit, Home Premium, SP 1. Results in a crash}
+        asm
+          movl TLSKey,%edx
+          movl %fs:(0x2c),%eax
+          orl  %eax,%eax
+          jnz  .LAddressInEAX
+          { this works on Windows 7, but I don't know if it works on other OSes (FK) }
+          movl %fs:(0x18),%eax
+          movl 0xe10(%eax,%edx,4),%eax
+          jmp  .LToDataIndex
+          .LAddressInEAX:
+           movl (%eax,%edx,4),%eax
+          .LToDataIndex:
+          movl %eax,dataindex
+        end;
+        if DataIndex=nil then
+          begin
+            errorsave:=GetLastError;
+            SysAllocateThreadVars;
+            DataIndex:=TlsGetValue(tlskey);
+            SetLastError(errorsave);
+          end;
+{$else win32}
+>>>>>>> graemeg/cpstrnew
         errorsave:=GetLastError;
         dataindex:=TlsGetValue(tlskey);
         if dataindex=nil then
@@ -487,7 +527,11 @@ end;
 Var
   WinThreadManager : TThreadManager;
 
+<<<<<<< HEAD
 Procedure InitSystemThreads;public name '_FPC_InitSystemThreads';
+=======
+Procedure InitSystemThreads;
+>>>>>>> graemeg/cpstrnew
 {$IFDEF SUPPORT_WIN95}
 var
   KernelHandle : THandle;
@@ -531,6 +575,7 @@ begin
     end;
   SetThreadManager(WinThreadManager);
   ThreadID := GetCurrentThreadID;
+<<<<<<< HEAD
 {$ifndef FPC_USE_TLS_DIRECTORY}
   if IsLibrary then
 {$endif}
@@ -540,6 +585,18 @@ begin
   KernelHandle:=GetModuleHandle(KernelDLL);
   if KernelHandle<>0 then
     WinTryEnterCriticalSection:=TTryEnterCriticalSection(GetProcAddress(KernelHandle,'TryEnterCriticalSection'));
+=======
+  if IsLibrary then
+    SysInitMultithreading;
+{$IFDEF SUPPORT_WIN95}
+  { Try to find TryEnterCriticalSection function }
+  KernelHandle:=LoadLibrary(KernelDLL);
+  if KernelHandle<>0 then
+    begin
+      WinTryEnterCriticalSection:=TTryEnterCriticalSection(GetProcAddress(KernelHandle,'TryEnterCriticalSection'));
+      FreeLibrary(KernelHandle);
+    end;
+>>>>>>> graemeg/cpstrnew
   if not assigned(WinTryEnterCriticalSection) then
     WinTryEnterCriticalSection:=@Win95TryEnterCriticalSection;
 {$ENDIF SUPPORT_WIN95}

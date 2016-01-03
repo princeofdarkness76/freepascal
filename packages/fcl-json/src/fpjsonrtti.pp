@@ -5,7 +5,11 @@ unit fpjsonrtti;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, contnrs, typinfo, fpjson, rttiutils, jsonparser;
+=======
+  Classes, SysUtils, typinfo, fpjson, rttiutils, jsonparser;
+>>>>>>> graemeg/cpstrnew
 
 Type
 
@@ -20,9 +24,14 @@ Type
                        jsoComponentsInline,       // Always stream components inline. Default is to stream name, unless csSubcomponent in ComponentStyle
                        jsoTStringsAsArray,        // Stream TStrings as an array of strings. Associated objects are not streamed.
                        jsoTStringsAsObject,       // Stream TStrings as an object : string = { object }
+<<<<<<< HEAD
                        jsoDateTimeAsString,       // Format a TDateTime value as a string
                        jsoUseFormatString,        // Use FormatString when creating JSON strings.
                        jsoCheckEmptyDateTime);    // If TDateTime value is empty and jsoDateTimeAsString is used, 0 date returns empty string
+=======
+                       jsoDateTimeAsString,
+                       jsoUseFormatString);       // Use FormatString when creating JSON strings.
+>>>>>>> graemeg/cpstrnew
   TJSONStreamOptions = Set of TJSONStreamOption;
 
   TJSONFiler = Class(TComponent)
@@ -62,8 +71,11 @@ Type
     Function ObjectToJSON(Const AObject : TObject) : TJSONObject;
     // Stream a collection - always returns an array
     function StreamCollection(Const ACollection: TCollection): TJSONArray;
+<<<<<<< HEAD
     // Stream an objectlist - always returns an array
     function StreamObjectList(Const AnObjectList: TObjectList): TJSONArray;
+=======
+>>>>>>> graemeg/cpstrnew
     // Stream a TStrings instance as an array
     function StreamTStringsArray(Const AStrings: TStrings): TJSONArray;
     // Stream a TStrings instance as an object
@@ -109,7 +121,10 @@ Type
     FOnGetObject: TJSONGetObjectEvent;
     FOnPropError: TJSONpropertyErrorEvent;
     FOnRestoreProp: TJSONRestorePropertyEvent;
+<<<<<<< HEAD
     FCaseInsensitive : Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
     procedure DeStreamClassProperty(AObject: TObject; PropInfo: PPropInfo; PropData: TJSONData);
   protected
     function GetObject(AInstance : TObject; const APropName: TJSONStringType; D: TJSONObject; PropInfo: PPropInfo): TObject;
@@ -142,8 +157,11 @@ Type
     // Called when a object-typed property must be restored, and the property is Nil. Must return an instance for the property.
     // Published Properties of the instance will be further restored with available data.
     Property OngetObject : TJSONGetObjectEvent Read FOnGetObject Write FOnGetObject;
+<<<<<<< HEAD
     // JSON is by definition case sensitive. Should properties be looked up case-insentive ?
     Property CaseInsensitive : Boolean Read FCaseInsensitive Write FCaseInsensitive;
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 
   EJSONRTTI = Class(Exception);
@@ -247,7 +265,10 @@ begin
         ntFloat   : Result:=Data.AsFloat;
         ntInteger : Result:=Data.AsInteger;
         ntInt64   : Result:=Data.Asint64;
+<<<<<<< HEAD
         ntQWord   : Result:=Data.AsQWord;
+=======
+>>>>>>> graemeg/cpstrnew
       end;
     jtString :
       Result:=Data.AsString;
@@ -400,7 +421,11 @@ begin
     tkAString:
       SetStrProp(AObject,PI,PropData.AsString);
     tkWString :
+<<<<<<< HEAD
       SetWideStrProp(AObject,PI,PropData.AsUnicodeString);
+=======
+      SetWideStrProp(AObject,PI,PropData.AsString);
+>>>>>>> graemeg/cpstrnew
     tkVariant:
       SetVariantProp(AObject,PI,JSONToVariant(PropData));
     tkClass:
@@ -425,7 +450,11 @@ begin
     tkMethod :
       Error(SErrUnsupportedPropertyKind,[PI^.Name]);
     tkUString :
+<<<<<<< HEAD
       SetUnicodeStrProp(AObject,PI,PropData.AsUnicodeString);
+=======
+      SetUnicodeStrProp(AObject,PI,PropData.AsString);
+>>>>>>> graemeg/cpstrnew
     tkUChar:
       begin
       JS:=PropData.asString;
@@ -453,7 +482,11 @@ begin
     try
       For I:=0 to PIL.Count-1 do
         begin
+<<<<<<< HEAD
         J:=JSON.IndexOfName(Pil.Items[i]^.Name,FCaseInsensitive);
+=======
+        J:=JSON.IndexOfName(Pil.Items[i]^.Name);
+>>>>>>> graemeg/cpstrnew
         If (J<>-1) then
           RestoreProperty(AObject,PIL.Items[i],JSON.Items[J]);
         end;
@@ -671,8 +704,11 @@ begin
       Result.Add('Strings',StreamTStrings(Tstrings(AObject)))
     else If AObject is TCollection then
       Result.Add('Items',StreamCollection(TCollection(AObject)))
+<<<<<<< HEAD
     else If AObject is TObjectList then
       Result.Add('Objects',StreamObjectList(TObjectList(AObject)))
+=======
+>>>>>>> graemeg/cpstrnew
     else
       begin
       PIL:=TPropInfoList.Create(AObject,tkProperties);
@@ -893,6 +929,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TJSONStreamer.StreamObjectList(const AnObjectList: TObjectList): TJSONArray;
 Var
   I : Integer;
@@ -911,6 +948,9 @@ begin
 end;
 
 function TJSONStreamer.StreamClassProperty(const AObject: TObject): TJSONData;
+=======
+Function TJSONStreamer.StreamClassProperty(Const AObject : TObject): TJSONData;
+>>>>>>> graemeg/cpstrnew
 
 Var
   C : TCollection;
@@ -931,8 +971,11 @@ begin
     Result:=StreamTStrings(TStrings(AObject))
   else if (AObject is TCollection) then
     Result:=StreamCollection(TCollection(Aobject))
+<<<<<<< HEAD
   else If AObject is TObjectList then
     Result:=StreamObjectList(TObjectList(AObject))
+=======
+>>>>>>> graemeg/cpstrnew
   else // Normally, this is only TPersistent.
     Result:=ObjectToJSON(AObject);
 end;
@@ -1003,8 +1046,12 @@ begin
       Result:=TJSONInt64Number.Create(GetOrdProp(AObject,PropertyInfo));
     tkQWord :
       Result:=TJSONFloatNumber.Create(GetOrdProp(AObject,PropertyInfo));
+<<<<<<< HEAD
     tkObject :
       Result:=ObjectToJSON(GetObjectProp(AObject,PropertyInfo));
+=======
+    tkObject,
+>>>>>>> graemeg/cpstrnew
     tkArray,
     tkRecord,
     tkInterface,
@@ -1028,9 +1075,13 @@ Var
   S: String;
 
 begin
+<<<<<<< HEAD
   if (jsoCheckEmptyDateTime in Options) and (DateTime=0) then
     S:=''
   else if (DateTimeFormat<>'') then
+=======
+  if (DateTimeFormat<>'') then
+>>>>>>> graemeg/cpstrnew
     S:=FormatDateTime(DateTimeFormat,DateTime)
   else if Frac(DateTime)=0 then
     S:=DateToStr(DateTime)

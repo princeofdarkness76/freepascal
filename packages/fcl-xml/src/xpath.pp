@@ -356,6 +356,8 @@ type
     function LookupNamespaceURI(const aPrefix: DOMString): DOMString; virtual;
   end;
 
+  TXPathNSResolver = TDOMNode {!!! experimental};
+
 { XPath lexical scanner }
 
   TXPathScanner = class

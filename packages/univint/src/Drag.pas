@@ -3,7 +3,11 @@
  
      Contains:   Drag and Drop Interfaces.
  
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
+=======
+     Version:    HIToolbox-437~1
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved.
  
@@ -15,7 +19,10 @@
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -70,11 +77,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -90,6 +100,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -109,13 +120,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -125,13 +156,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -143,17 +178,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -174,6 +218,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -225,8 +278,12 @@ uses MacTypes,AEDataModel,CGImage,CGGeometry,Events,Files,AppleEvents,QuickdrawT
   _________________________________________________________________________________________________________
 }
 type
+<<<<<<< HEAD
 	DragRef = ^OpaqueDragRef; { an opaque type }
 	OpaqueDragRef = record end;
+=======
+	DragRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	DragRefPtr = ^DragRef;  { when a var xx:DragRef parameter can be nil, it is changed to xx: DragRefPtr }
 	DragItemRef = URefCon;
 	FlavorType = OSType;
@@ -448,6 +505,9 @@ function InvokeDragInputUPP( var mouse: Point; var modifiers: SInt16; dragInputR
 {$ifc not TARGET_CPU_64}
 {
  *  SetDragInputProc()
+<<<<<<< HEAD
+ *  
+=======
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -462,13 +522,55 @@ function SetDragInputProc( theDrag: DragRef; inputProc: DragInputUPP; dragInputR
 
 
 {
+ *  NewDrag()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+<<<<<<< HEAD
+function SetDragInputProc( theDrag: DragRef; inputProc: DragInputUPP; dragInputRefCon: UnivPtr ): OSErr; external name '_SetDragInputProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+=======
+function NewDrag( var theDrag: DragRef ): OSErr; external name '_NewDrag';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DisposeDrag()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function DisposeDrag( theDrag: DragRef ): OSErr; external name '_DisposeDrag';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
   _________________________________________________________________________________________________________
       
+<<<<<<< HEAD
    ¥ CREATING & DISPOSING
+=======
+   ¥ DRAG PASTEBOARD
+>>>>>>> graemeg/cpstrnew
   _________________________________________________________________________________________________________
 }
 
 {
+<<<<<<< HEAD
  *  NewDrag()
  *  
  *  Mac OS X threading:
@@ -481,9 +583,49 @@ function SetDragInputProc( theDrag: DragRef; inputProc: DragInputUPP; dragInputR
  }
 function NewDrag( var theDrag: DragRef ): OSErr; external name '_NewDrag';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *  NewDragWithPasteboard()
+ *  
+ *  Discussion:
+ *    Creates a new Drag reference containing the pasteboard reference
+ *    provided.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inPasteboard:
+ *      A pasteboard created by the drag sender for use with the drag.
+ *      Items may be added to the pasteboard via the Pasteboard Manager
+ *      API either before or after this routine is called. It is still
+ *      possible to add data via the Drag Manager API, but only after
+ *      this routine is called. It is the drag sender's responsibility
+ *      to clear the pasteboard before adding items. It is also the
+ *      drag sender's responsibility to release the pasteboard.  This
+ *      may be done at any time after this routine is called. The
+ *      pasteboard is retained by the Drag Manager for the duration of
+ *      the drag.
+ *    
+ *    outDrag:
+ *      A drag reference which receives the newly created drag.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function NewDragWithPasteboard( inPasteboard: PasteboardRef; var outDrag: DragRef ): OSStatus; external name '_NewDragWithPasteboard';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 
 {
+<<<<<<< HEAD
  *  DisposeDrag()
  *  
  *  Mac OS X threading:
@@ -552,6 +694,14 @@ function NewDragWithPasteboard( inPasteboard: PasteboardRef; var outDrag: DragRe
  *    drag reference. This routine may be called by a drag sender or
  *    receiver at any point after a valid drag reference has been
  *    created/received.
+=======
+ *  GetDragPasteboard()
+ *  
+ *  Discussion:
+ *    Returns the pasteboard reference contained within the provided
+ *    drag reference. This routine may be called by a drag sender or
+ *    receiver at any point after a valid drag reference has been
+ *    created/received.
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -585,6 +735,88 @@ function GetDragPasteboard( inDrag: DragRef; var outPasteboard: PasteboardRef ):
 }
 
 {
+ *  SetDragImageWithCGImage()
+ *  
+ *  Discussion:
+ *    Used by the sender of the drag to set the image, in CGImage
+ *    format, to be displayed as user feedback during the drag.  This
+ *    API may be called  at any point during the drag to update the
+ *    image.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inDrag:
+<<<<<<< HEAD
+ *      The drag reference containing the requested pasteboard.
+ *    
+ *    outPasteboard:
+ *      A pasteboard reference which receives the pasteboard contained
+ *      by the drag.
+=======
+ *      The drag reference for which the image will be displayed.
+ *    
+ *    inCGImage:
+ *      The CGImageRef for the image to be displayed during the drag. 
+ *      The image is retained internally by the Drag Manager for the
+ *      duration of the drag so it may be released by the client
+ *      immediately after setting. For Mac OS X 10.4 and earlier only
+ *      images with an alpha info value between
+ *      kCGImageAlphaPremultipliedLast and kCGImageAlphaFirst inclusive
+ *      are properly accepted. All alpha info values are accepted in
+ *      later versions.
+ *    
+ *    inImageOffsetPt:
+ *      A pointer to the offset from the mouse to the upper left of the
+ *      image (normally expressed in negative values).  This differs
+ *      from the usage of the offset passed to SetDragImage().  Here,
+ *      an offset of ( -30, -30 ) will center a 60x60 pixel image on
+ *      the drag mouse. In order to support resolution independence the
+ *      kDragDoNotScaleImage flag must be set. In this case, the
+ *      inImageOffsetPt parameter will be interpreted in pixels rather
+ *      than points.
+ *    
+ *    inImageFlags:
+ *      The flags determining image drawing during the drag.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetDragPasteboard( inDrag: DragRef; var outPasteboard: PasteboardRef ): OSStatus; external name '_GetDragPasteboard';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ }
+function SetDragImageWithCGImage( inDrag: DragRef; inCGImage: CGImageRef; const (*var*) inImageOffsetPt: HIPoint; inImageFlags: DragImageFlags ): OSStatus; external name '_SetDragImageWithCGImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+  _________________________________________________________________________________________________________
+      
+<<<<<<< HEAD
+   ¥ SETTING THE DRAG IMAGE
+=======
+   ¥ ALTERING THE BEHAVIOR OF A DRAG
+>>>>>>> graemeg/cpstrnew
+  _________________________________________________________________________________________________________
+}
+
+{
+<<<<<<< HEAD
  *  SetDragImageWithCGImage()
  *  
  *  Discussion:
@@ -635,10 +867,26 @@ function GetDragPasteboard( inDrag: DragRef; var outPasteboard: PasteboardRef ):
 function SetDragImageWithCGImage( inDrag: DragRef; inCGImage: CGImageRef; const (*var*) inImageOffsetPt: HIPoint; inImageFlags: DragImageFlags ): OSStatus; external name '_SetDragImageWithCGImage';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
+=======
+ *  ChangeDragBehaviors()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 9.0 and later
+ }
+function ChangeDragBehaviors( theDrag: DragRef; inBehaviorsToSet: DragBehaviors; inBehaviorsToClear: DragBehaviors ): OSErr; external name '_ChangeDragBehaviors';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
 
 {
   _________________________________________________________________________________________________________
       
+<<<<<<< HEAD
    ¥ ALTERING THE BEHAVIOR OF A DRAG
   _________________________________________________________________________________________________________
 }
@@ -656,9 +904,15 @@ function SetDragImageWithCGImage( inDrag: DragRef; inCGImage: CGImageRef; const 
  }
 function ChangeDragBehaviors( theDrag: DragRef; inBehaviorsToSet: DragBehaviors; inBehaviorsToClear: DragBehaviors ): OSErr; external name '_ChangeDragBehaviors';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+   ¥ PERFORMING A DRAG
+  _________________________________________________________________________________________________________
+}
+>>>>>>> graemeg/cpstrnew
 
 
 {
+<<<<<<< HEAD
   _________________________________________________________________________________________________________
       
    ¥ PERFORMING A DRAG
@@ -666,6 +920,8 @@ function ChangeDragBehaviors( theDrag: DragRef; inBehaviorsToSet: DragBehaviors;
 }
 
 {
+=======
+>>>>>>> graemeg/cpstrnew
  *  TrackDrag()
  *  
  *  Summary:

@@ -15,13 +15,22 @@ program ImageExample;
 uses
   SysUtils, ptc;
 
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: String);
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> graemeg/cpstrnew
 var
   F: File;
   width, height: Integer;
   pixels: PByte = nil;
   y: Integer;
+<<<<<<< HEAD
   img_format: IPTCFormat;
+=======
+  img_format: TPTCFormat = nil;
+  img_palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
 begin
   { open image file }
   AssignFile(F, filename);
@@ -44,32 +53,60 @@ begin
 
     { load pixels to surface }
     {$IFDEF FPC_LITTLE_ENDIAN}
+<<<<<<< HEAD
     img_format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     img_format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
     {$ENDIF FPC_LITTLE_ENDIAN}
     surface.Load(pixels, width, height, width * 3, img_format, TPTCPaletteFactory.CreateNew);
+=======
+    img_format := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
+    {$ELSE FPC_LITTLE_ENDIAN}
+    img_format := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
+    {$ENDIF FPC_LITTLE_ENDIAN}
+    img_palette := TPTCPalette.Create;
+    surface.load(pixels, width, height, width * 3, img_format, img_palette);
+>>>>>>> graemeg/cpstrnew
 
   finally
     CloseFile(F);
 
     { free image pixels }
     FreeMem(pixels);
+<<<<<<< HEAD
+=======
+
+    img_palette.Free;
+    img_format.Free;
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> graemeg/cpstrnew
 begin
   try
     try
       { create console }
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 
       { create format }
       format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
+=======
+      console := TPTCConsole.Create;
+
+      { create format }
+      format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
+>>>>>>> graemeg/cpstrnew
 
       try
         { try to open the console matching the image resolution }
@@ -81,7 +118,11 @@ begin
       end;
 
       { create surface }
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
+=======
+      surface := TPTCSurface.Create(320, 200, format);
+>>>>>>> graemeg/cpstrnew
 
       { load image to surface }
       load(surface, 'image.tga');
@@ -97,8 +138,16 @@ begin
 
     finally
       { close console }
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+
+      console.Free;
+      surface.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

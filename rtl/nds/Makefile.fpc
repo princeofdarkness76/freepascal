@@ -6,6 +6,7 @@
 main=rtl
 
 [target]
+<<<<<<< HEAD
 loaders=$(LOADERS)
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
 #      dos \
@@ -13,6 +14,15 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       classes math typinfo ctypes \
       charset cpall getopts \
       types rtlconsts sysconst lineinfo fgl
+=======
+loaders=prt07 prt09 cprt07 cprt09
+units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
+#      dos \
+      sysutils \
+      classes math typinfo varutils fmtbcd ctypes \
+      charset ucomplex getopts matrix \
+      variants types rtlconsts sysconst dateutil lineinfo fgl varutils \
+>>>>>>> graemeg/cpstrnew
 #      exec timer doslib utility hardware inputevent graphics layers \
 # these can be moved to packages later
 #      clipboard datatypes asl ahi tinygl get9 muihelper \

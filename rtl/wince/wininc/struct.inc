@@ -269,8 +269,18 @@
      LPPOINT = PPOINT;
      tagPOINT = TPOINT;
 
+<<<<<<< HEAD
      RECT = TRect;
      LPRECT = PRECT;
+=======
+     RECT = record
+          case Integer of
+             0: (Left,Top,Right,Bottom : Longint);
+             1: (TopLeft,BottomRight : TPoint);
+       end;
+     LPRECT = ^RECT;
+     LPCRECT = ^RECT;
+>>>>>>> graemeg/cpstrnew
      _RECT = RECT;
      LPRCECT = PRECT;
 

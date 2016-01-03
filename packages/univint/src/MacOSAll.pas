@@ -11,7 +11,11 @@
 unit MacOSAll;
 interface
 
+<<<<<<< HEAD
 {$ifc (defined CPUPOWERPC32 or defined CPUI386) and not defined(iphonesim)}
+=======
+{$ifc defined CPUPOWERPC32 or defined CPUI386}
+>>>>>>> graemeg/cpstrnew
 {$linkframework Carbon}
 {$elsec}
 {$linkframework CoreFoundation}
@@ -56,11 +60,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -76,6 +83,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -95,13 +103,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -111,13 +139,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -129,12 +161,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -148,13 +186,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -214,8 +259,13 @@ interface
 {unit Multiprocessing}
 {$i Multiprocessing.pas}
 (* conflicts with FPC ObjC support
+<<<<<<< HEAD
 {unit ObjC}
 {$i ObjC.pas}
+=======
+{unit ObjCRuntime}
+{$i ObjCRuntime.pas}
+>>>>>>> graemeg/cpstrnew
 *)
 {unit PEFBinaryFormat}
 {$i PEFBinaryFormat.pas}
@@ -395,8 +445,11 @@ interface
 {$i DateTimeUtils.pas}
 {unit Debugging}
 {$i Debugging.pas}
+<<<<<<< HEAD
 {unit DictionaryServices}
 {$i DictionaryServices.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit DigitalHubRegistry}
 {$i DigitalHubRegistry.pas}
 {unit DriverServices}
@@ -499,8 +552,11 @@ interface
 {$i Video.pas}
 {unit WSTypes}
 {$i WSTypes.pas}
+<<<<<<< HEAD
 {unit acl}
 {$i acl.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit certextensions}
 {$i certextensions.pas}
 {unit cssmapple}
@@ -519,8 +575,11 @@ interface
 {$i AXTextAttributedString.pas}
 {unit AXValue}
 {$i AXValue.pas}
+<<<<<<< HEAD
 {unit AudioHardwareBase}
 {$i AudioHardwareBase.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit AuthSession}
 {$i AuthSession.pas}
 {unit BackupCore}
@@ -545,8 +604,11 @@ interface
 {$i CFUUID.pas}
 {unit CGAffineTransforms}
 {$i CGAffineTransforms.pas}
+<<<<<<< HEAD
 {unit CGImageMetadata}
 {$i CGImageMetadata.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit CGLCurrent}
 {$i CGLCurrent.pas}
 {unit CGLDevice}
@@ -559,18 +621,28 @@ interface
 {$i CGPDFDictionary.pas}
 {unit CGPath}
 {$i CGPath.pas}
+<<<<<<< HEAD
 {unit CSIdentityBase}
 {$i CSIdentityBase.pas}
 {unit CTFontDescriptor}
 {$i CTFontDescriptor.pas}
+=======
+{unit CTFontDescriptor}
+{$i CTFontDescriptor.pas}
+{unit CTFontManager}
+{$i CTFontManager.pas}
+>>>>>>> graemeg/cpstrnew
 {unit CTParagraphStyle}
 {$i CTParagraphStyle.pas}
 {unit CTTextTab}
 {$i CTTextTab.pas}
 {unit CVBuffer}
 {$i CVBuffer.pas}
+<<<<<<< HEAD
 {unit CaptiveNetwork}
 {$i CaptiveNetwork.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit ColorSyncProfile}
 {$i ColorSyncProfile.pas}
 {unit ColorSyncTransform}
@@ -603,10 +675,13 @@ interface
 {$i PictUtils.pas}
 {unit QDOffscreen}
 {$i QDOffscreen.pas}
+<<<<<<< HEAD
 {unit SKAnalysis}
 {$i SKAnalysis.pas}
 {unit SKSummary}
 {$i SKSummary.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit Scrap}
 {$i Scrap.pas}
 {unit SecTrust}
@@ -621,8 +696,11 @@ interface
 {$i CFCalendar.pas}
 {unit CFDateFormatter}
 {$i CFDateFormatter.pas}
+<<<<<<< HEAD
 {unit CFFileSecurity}
 {$i CFFileSecurity.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit CFRunLoop}
 {$i CFRunLoop.pas}
 {unit CFSocket}
@@ -647,10 +725,13 @@ interface
 {$i ABActions.pas}
 {unit AudioHardware}
 {$i AudioHardware.pas}
+<<<<<<< HEAD
 {unit AudioHardwareDeprecated}
 {$i AudioHardwareDeprecated.pas}
 {unit CFFileDescriptor}
 {$i CFFileDescriptor.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit CFMachPort}
 {$i CFMachPort.pas}
 {unit CFMessagePort}
@@ -689,8 +770,11 @@ interface
 {$i CFURL.pas}
 {unit CFURLAccess}
 {$i CFURLAccess.pas}
+<<<<<<< HEAD
 {unit CFURLEnumerator}
 {$i CFURLEnumerator.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit CFUserNotification}
 {$i CFUserNotification.pas}
 {unit CFXMLNode}
@@ -711,8 +795,15 @@ interface
 {$i CGPDFPage.pas}
 {unit CGPSConverter}
 {$i CGPSConverter.pas}
+<<<<<<< HEAD
 {unit CTFontManager}
 {$i CTFontManager.pas}
+=======
+{unit CTFont}
+{$i CTFont.pas}
+{unit CTGlyphInfo}
+{$i CTGlyphInfo.pas}
+>>>>>>> graemeg/cpstrnew
 {unit CarbonEventsCore}
 {$i CarbonEventsCore.pas}
 {unit ColorSyncDeprecated}
@@ -737,12 +828,15 @@ interface
 {$i PMCoreDeprecated.pas}
 {unit Pasteboard}
 {$i Pasteboard.pas}
+<<<<<<< HEAD
 {unit SKDocument}
 {$i SKDocument.pas}
 {unit SKIndex}
 {$i SKIndex.pas}
 {unit SKSearch}
 {$i SKSearch.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit SpeechSynthesis}
 {$i SpeechSynthesis.pas}
 {unit TextInputSources}
@@ -807,8 +901,11 @@ interface
 {$i CVOpenGLTextureCache.pas}
 {unit CVPixelBuffer}
 {$i CVPixelBuffer.pas}
+<<<<<<< HEAD
 {unit CVPixelBufferIOSurface}
 {$i CVPixelBufferIOSurface.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit CVPixelBufferPool}
 {$i CVPixelBufferPool.pas}
 {unit CVPixelFormatDescription}
@@ -909,12 +1006,17 @@ interface
 {$i CGPDFContext.pas}
 {unit CGPattern}
 {$i CGPattern.pas}
+<<<<<<< HEAD
 {unit CTFont}
 {$i CTFont.pas}
 {unit CTFrame}
 {$i CTFrame.pas}
 {unit CTGlyphInfo}
 {$i CTGlyphInfo.pas}
+=======
+{unit CTFrame}
+{$i CTFrame.pas}
+>>>>>>> graemeg/cpstrnew
 {unit CTLine}
 {$i CTLine.pas}
 {unit CTRun}
@@ -951,8 +1053,11 @@ interface
 {$i QDPictToCGContext.pas}
 {unit QLGenerator}
 {$i QLGenerator.pas}
+<<<<<<< HEAD
 {unit QLThumbnail}
 {$i QLThumbnail.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 {unit Quickdraw}
 {$i Quickdraw.pas}
 {unit SCDynamicStore}
@@ -1457,6 +1562,40 @@ begin
 end;
 
 
+function CGRectMake(x: CGFloat; y: CGFloat; width: CGFloat; height: CGFloat): CGRect;
+begin
+<<<<<<< HEAD
+  CFConvertFloatSwappedToHost := Float32(CFSwappedFloat32(CFSwapInt32(arg.v)));
+end;
+
+function CFConvertDoubleHostToSwapped( arg: Float64 ): CFSwappedFloat64; inline;
+begin
+  CFConvertDoubleHostToSwapped.v := CFSwapInt64(CFSwappedFloat64(arg).v);
+end;
+
+function CFConvertDoubleSwappedToHost( arg: CFSwappedFloat64 ): Float64; inline;
+begin
+  CFConvertDoubleSwappedToHost := Float64(CFSwappedFloat64(CFSwapInt64(arg.v)));
+end;
+{$endc}
+
+
+{implementation of unit CGGeometry}
+
+function CGPointMake(x: CGFloat; y: CGFloat): CGPoint; inline;
+begin
+  CGPointMake.x := x;
+  CGPointMake.y := y;
+end;
+
+
+function CGSizeMake(width: CGFloat; height: CGFloat): CGSize; inline;
+begin
+  CGSizeMake.width := width;
+  CGSizeMake.height := height;
+end;
+
+
 function CGVectorMake(dx: CGFloat; dy: CGFloat): CGVector; inline;
 begin
   CGVectorMake.dx := dx;
@@ -1466,6 +1605,8 @@ end;
 
 function CGRectMake(x: CGFloat; y: CGFloat; width: CGFloat; height: CGFloat): CGRect;
 begin
+=======
+>>>>>>> graemeg/cpstrnew
   CGRectMake.origin.x := x;
   CGRectMake.origin.y := y;
   CGRectMake.size.width := width;
@@ -1778,6 +1919,7 @@ function EndianS16_LtoB( arg: SInt16 ): SInt16; inline;
 begin
   EndianS16_LtoB:=EndianS16_Swap(arg);
 end;
+<<<<<<< HEAD
 
 function EndianS16_BtoL( arg: SInt16 ): SInt16; inline;
 begin
@@ -1861,8 +2003,96 @@ end;
 
 {implementation of unit MIDIServices}
 {$ifc TARGET_OS_MAC}
+=======
+
+function EndianS16_BtoL( arg: SInt16 ): SInt16; inline;
+begin
+  EndianS16_BtoL:=EndianS16_Swap(arg);
+end;
+
+function EndianU16_LtoB( arg: UInt16 ): UInt16; inline;
+begin
+  EndianU16_LtoB:=Endian16_Swap(arg);
+end;
+
+function EndianU16_BtoL( arg: UInt16 ): UInt16; inline;
+begin
+  EndianU16_BtoL:=Endian16_Swap(arg);
+end;
+
+function EndianS32_LtoB( arg: SInt32 ): SInt32; inline;
+begin
+  EndianS32_LtoB:=EndianS32_Swap(arg);
+end;
+
+function EndianS32_BtoL( arg: SInt32 ): SInt32; inline;
+begin
+  EndianS32_BtoL:=EndianS32_Swap(arg);
+end;
+
+function EndianU32_LtoB( arg: UInt32 ): UInt32; inline;
+begin
+  EndianU32_LtoB:=Endian32_Swap(arg);
+end;
+
+function EndianU32_BtoL( arg: UInt32 ): UInt32; inline;
+begin
+  EndianU32_BtoL:=Endian32_Swap(arg);
+end;
+
+function EndianS64_LtoB( arg: SInt64 ): SInt64; inline;
+begin
+  EndianS64_LtoB:=EndianS64_Swap(arg);
+end;
+
+function EndianS64_BtoL( arg: SInt64 ): SInt64; inline;
+begin
+  EndianS64_BtoL:=EndianS64_Swap(arg);
+end;
+
+function EndianU64_LtoB( arg: UInt64 ): UInt64; inline;
+begin
+  EndianU64_LtoB:=Endian64_Swap_Pascal(arg);
+end;
+
+function EndianU64_BtoL( arg: UInt64 ): UInt64; inline;
+begin
+  EndianU64_BtoL:=Endian64_Swap_Pascal(arg);
+end;
 
 
+
+{implementation of unit IOKitReturn}
+
+>>>>>>> graemeg/cpstrnew
+
+{$push}
+{$R-,Q-}
+
+<<<<<<< HEAD
+=======
+function iokit_common_err(ret: IOReturn): IOReturn; inline;
+begin
+  iokit_common_err:=(sys_iokit or sub_iokit_common or (ret))
+end;
+
+function iokit_family_err(sub, ret: IOReturn): IOReturn; inline;
+begin
+  iokit_family_err:=(sys_iokit or (sub) or (ret))
+end;
+
+function iokit_vendor_specific_err(ret: IOReturn): IOReturn; inline;
+begin
+  iokit_vendor_specific_err:=(sys_iokit or sub_iokit_vendor_specific or (ret))
+end;
+
+{$pop}
+
+{implementation of unit MIDIServices}
+{$ifc TARGET_OS_MAC}
+
+
+>>>>>>> graemeg/cpstrnew
 {$R-}
 function MIDIPacketNext(pkt : MIDIPacketPtr) : MIDIPacketPtr; inline;
 begin
@@ -2117,19 +2347,28 @@ begin
 	kMDExporterInterfaceID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$B4,$1C,$60,$74,$7D,$FB,$40,$57,$96,$9D,$31,$C8,$E8,$61,$A8,$D4)
 end;
 
+<<<<<<< HEAD
 function kMDImporterURLInterfaceID: CFUUIDRef; inline;
 begin
 	kMDImporterURLInterfaceID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$13,$F6,$0F,$02,$36,$22,$4F,$35,$98,$91,$EC,$10,$E6,$CD,$08,$F8)
 end;
+=======
+{$endc} {TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 
+{implementation of unit MIDIDriver}
 
+{$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 {$endc} {TARGET_OS_MAC}
 
 {implementation of unit MIDIDriver}
 
 {$ifc TARGET_OS_MAC}
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 function kMIDIDriverTypeID : CFUUIDRef; inline;
 begin

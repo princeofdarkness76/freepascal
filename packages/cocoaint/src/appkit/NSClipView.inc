@@ -48,10 +48,17 @@
     _oldDocFrame: NSRect;
     _cursor: NSCursor;
     _scrollAnimationHelper: id;
+<<<<<<< HEAD
     __cvFlags: record
       case byte of
        0: (_anonbitfield_NSClipView0: cuint);
        1: (data: bitpacked record
+=======
+    __cvFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSClipView0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _isFlipped: 0..1;
         onlyUncovered: 0..1;
         reflectScroll: 0..1;
@@ -69,7 +76,10 @@
         documentViewAlignment: 0..((1 shl 4)-1);
         redrawnWhileScrolling: 0..1;
         RESERVED: 0..((1 shl 13)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

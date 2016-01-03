@@ -72,7 +72,11 @@ type
     procedure VisitDocumentType(Node: TDOMNode);
     procedure VisitPI(Node: TDOMNode);
   public
+<<<<<<< HEAD
     constructor Create(AStream: TStream; ACapacity : Cardinal = 4096);
+=======
+    constructor Create(AStream: TStream);
+>>>>>>> graemeg/cpstrnew
     destructor Destroy; override;
   end;
 
@@ -111,7 +115,11 @@ end;
     THTMLWriter
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
 constructor THTMLWriter.Create(AStream: TStream; ACapacity : Cardinal = 4096);
+=======
+constructor THTMLWriter.Create(AStream: TStream);
+>>>>>>> graemeg/cpstrnew
 begin
   inherited Create;
   FStream := AStream;

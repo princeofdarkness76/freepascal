@@ -71,6 +71,7 @@ type
     _entityMigrationPolicyClassName: NSString;
     _attributeMappings: NSMutableArray;
     _relationshipMappings: NSMutableArray;
+<<<<<<< HEAD
     __entityMappingFlags: record
       case byte of
        0: (_anonbitfield_NSEntityMapping0: cuint);
@@ -78,6 +79,14 @@ type
         _isInUse: 0..1;
         _reservedEntityMapping: 0..((1 shl 31)-1);
        end;
+=======
+    __entityMappingFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSEntityMapping0: cuint);
+       1: (
+        _isInUse: 0..1;
+        _reservedEntityMapping: 0..((1 shl 31)-1);
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

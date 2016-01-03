@@ -1,6 +1,10 @@
 { Test for resource enumeration functions. }
 
+<<<<<<< HEAD
 {%TARGET=win32,win64,wince,linux,freebsd,darwin,netbsd,openbsd,solaris,haiku,aix,android}
+=======
+{%TARGET=win32,win64,wince,linux,freebsd,darwin,netbsd,openbsd,solaris,haiku}
+>>>>>>> graemeg/cpstrnew
 
 {$mode objfpc}
 

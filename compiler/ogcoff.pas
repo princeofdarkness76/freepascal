@@ -497,7 +497,11 @@ implementation
        StrsMaxGrow   = 8192;
 
        coffsecnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+<<<<<<< HEAD
           '.text','.data','.rdata','.rdata','.bss','.tls',
+=======
+          '.text','.data','.data','.data','.bss','.tls',
+>>>>>>> graemeg/cpstrnew
           '.pdata',{pdata}
           '.text', {stub}
           '.data',
@@ -545,9 +549,13 @@ implementation
           '.objc_nlclasslist',
           '.objc_catlist',
           '.obcj_nlcatlist',
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
         );
 
 const go32v2stub : array[0..2047] of byte=(
@@ -992,16 +1000,27 @@ const pemagic : array[0..3] of byte = (
             data.Seek(objreloc.dataoffset);
             data.Write(address,address_size);
 {$ifdef cpu64bitaddr}
+<<<<<<< HEAD
             if (objreloc.typ = RELOC_ABSOLUTE32) and (objsec.name <> '.stab') then
+=======
+            if (objreloc.typ = RELOC_ABSOLUTE32) and (name <> '.stab') then
+>>>>>>> graemeg/cpstrnew
               begin
                 if assigned(objreloc.symbol) then
                   s:=objreloc.symbol.Name
                 else
                   s:=objreloc.objsection.Name;
+<<<<<<< HEAD
                 Message2(link_w_32bit_absolute_reloc, objsec.ObjData.Name, s);
+=======
+                Message2(link_w_32bit_absolute_reloc, ObjData.Name, s);
+>>>>>>> graemeg/cpstrnew
               end;
 {$endif cpu64bitaddr}
           end;
+        {for size = 0 data is not valid PM }
+        if assigned(data) and (data.size <> size) then
+          internalerror(2010092801);
       end;
 
 
@@ -1028,10 +1047,13 @@ const pemagic : array[0..3] of byte = (
           result:=aname
         else
           begin
+<<<<<<< HEAD
             { non-PECOFF targets lack rodata support }
             if (atype in [sec_rodata,sec_rodata_norel]) and
                not (target_info.system in systems_all_windows) then
               atype:=sec_data;
+=======
+>>>>>>> graemeg/cpstrnew
             secname:=coffsecnames[atype];
             if create_smartlink_sections and
                (aname<>'') then
@@ -1049,6 +1071,7 @@ const pemagic : array[0..3] of byte = (
             else
               result:=secname;
           end;
+<<<<<<< HEAD
       end;
 
 
@@ -1062,6 +1085,8 @@ const pemagic : array[0..3] of byte = (
               aType:=sec_data;
           end;
         result:=inherited sectiontype2options(aType);
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -2101,10 +2126,13 @@ const pemagic : array[0..3] of byte = (
                   sechdr.flags:=peencodesechdrflags(SecOptions,SecAlign) or PE_SCN_MEM_NOT_PAGED
                 else
                   sechdr.flags:=peencodesechdrflags(SecOptions,SecAlign);
+<<<<<<< HEAD
                 { some flags are invalid in executables, reset them }
                 sechdr.flags:=sechdr.flags and
                   not(PE_SCN_LNK_INFO or PE_SCN_LNK_REMOVE or
                       PE_SCN_LNK_COMDAT or PE_SCN_ALIGN_MASK);
+=======
+>>>>>>> graemeg/cpstrnew
               end
             else
               sechdr.flags:=djencodesechdrflags(SecOptions);
@@ -2384,12 +2412,16 @@ const pemagic : array[0..3] of byte = (
                   peoptheader.Subsystem:=PE_SUBSYSTEM_WINDOWS_GUI
                 else
                   peoptheader.Subsystem:=PE_SUBSYSTEM_WINDOWS_CUI;
+<<<<<<< HEAD
 
             if SetPEOptFlagsSetExplicity then
               peoptheader.DllCharacteristics:=peoptflags
             else
               peoptheader.DllCharacteristics:=0;
 
+=======
+            peoptheader.DllCharacteristics:=0;
+>>>>>>> graemeg/cpstrnew
             peoptheader.SizeOfStackReserve:=stacksize;
             peoptheader.SizeOfStackCommit:=$1000;
             if MinStackSizeSetExplicity then

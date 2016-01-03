@@ -4,10 +4,27 @@
 
 [package]
 name=winceunits
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.5.1
+
+[target]
+units_wince=comobj buildwinceunits
+implicitunits_wince=aygshell commctrl commdlg iphlpapi notify oleauto power shellapi simmgr tapi \
+                    gpsapi todaycmn windbase cesync gx winioctl msgqueue pm service htmlctrl \
+                    sipapi cpl bt_api bt_sdp bthapi bthutil pimstore ril sms ws2bth keybd nled \
+                    phone connmgr devload devmgmt mmreg mmsystem msacm wininet ras raserror \
+                    sip projects wap tsp extapi imm \
+                    activex ole2 comconst rapitypes tlhelp32
+
+units_win32=rapi cesync rapitypes
+
+rsts=comconst
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y

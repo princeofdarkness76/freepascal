@@ -3,9 +3,15 @@
  
      Contains:   QuickTime Interfaces.
  
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -13,8 +19,12 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +79,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -89,6 +102,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -108,17 +122,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -168,6 +203,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -218,8 +281,32 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 {$ALIGN MAC68K}
 
 { QuickTime is not available to 64-bit clients }
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
+=======
+
+{$ifc not TARGET_CPU_64}
+
+const
+	kaiToneDescType = FourCharCode('tone');
+	kaiNoteRequestInfoType = FourCharCode('ntrq');
+	kaiKnobListType = FourCharCode('knbl');
+	kaiKeyRangeInfoType = FourCharCode('sinf');
+	kaiSampleDescType = FourCharCode('sdsc');
+	kaiSampleInfoType = FourCharCode('smin');
+	kaiSampleDataType = FourCharCode('sdat');
+	kaiSampleDataQUIDType = FourCharCode('quid');
+	kaiInstInfoType = FourCharCode('iinf');
+	kaiPictType = FourCharCode('pict');
+	kaiWriterType = FourCharCode('©wrt');
+	kaiCopyrightType = FourCharCode('©cpy');
+	kaiOtherStrType = FourCharCode('str ');
+	kaiInstrumentRefType = FourCharCode('iref');
+	kaiInstGMQualityType = FourCharCode('qual');
+	kaiLibraryInfoType = FourCharCode('linf');
+	kaiLibraryDescType = FourCharCode('ldsc');
+>>>>>>> graemeg/cpstrnew
 
 const
 	kaiToneDescType = FourCharCode('tone');
@@ -571,8 +658,13 @@ const
 	kQTMSKnobReverbThresholdID = $0200003E;
 	kQTMSKnobVolumeAttackVelScalingID = $0200003F;
 	kQTMSKnobLastIDPlus1 = $02000040;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 const
 	kControllerMaximum = $00007FFF; { +01111111.11111111 }
 	kControllerMinimum = $FFFF8000; { -10000000.00000000 }
@@ -597,9 +689,15 @@ type
 		outputCount: UNSIGNEDLONG;            { number of audio outputs (usually two) }
 		latency: UNSIGNEDLONG;                { response time in µSec }
 
+<<<<<<< HEAD
 		controllers: array [0..4-1] of UNSIGNEDLONG;         { array of 128 bits }
 		gmInstruments: array [0..4-1] of UNSIGNEDLONG;       { array of 128 bits }
 		gmDrums: array [0..4-1] of UNSIGNEDLONG;             { array of 128 bits }
+=======
+		controllers: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmInstruments: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmDrums: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+>>>>>>> graemeg/cpstrnew
 	end;
 const
 	kVoiceCountDynamic = -1;    { constant to use to specify dynamic voicing }
@@ -634,6 +732,7 @@ const
 	kInstrumentMatchNumber = 8;
 	kInstrumentMatchGMNumber = 16;
 	kInstrumentMatchGSNumber = 32;
+<<<<<<< HEAD
 
 { KnobFlags}
 const
@@ -657,6 +756,31 @@ const
 	kKnobTypeButton = 10 shl 12; { momentary trigger push button }
 
 
+=======
+
+{ KnobFlags}
+const
+	kKnobBasic = 8;    { knob shows up in certain simplified lists of knobs }
+	kKnobReadOnly = 16;   { knob value cannot be changed by user or with a SetKnob call }
+	kKnobInterruptUnsafe = 32;   { only alter this knob from foreground task time (may access toolbox) }
+	kKnobKeyrangeOverride = 64;   { knob can be overridden within a single keyrange (software synth only) }
+	kKnobGroupStart = 128;  { knob is first in some logical group of knobs }
+	kKnobFixedPoint8 = 1024;
+	kKnobFixedPoint16 = 2048; { One of these may be used at a time. }
+	kKnobTypeNumber = 0 shl 12;
+	kKnobTypeGroupName = 1 shl 12; { "knob" is really a group name for display purposes }
+	kKnobTypeBoolean = 2 shl 12; { if range is greater than 1, its a multi-checkbox field }
+	kKnobTypeNote = 3 shl 12; { knob range is equivalent to MIDI keys }
+	kKnobTypePan = 4 shl 12; { range goes left/right (lose this? ) }
+	kKnobTypeInstrument = 5 shl 12; { knob value = reference to another instrument number }
+	kKnobTypeSetting = 6 shl 12; { knob value is 1 of n different things (eg, fm algorithms) popup menu }
+	kKnobTypeMilliseconds = 7 shl 12; { knob is a millisecond time range }
+	kKnobTypePercentage = 8 shl 12; { knob range is displayed as a Percentage }
+	kKnobTypeHertz = 9 shl 12; { knob represents frequency }
+	kKnobTypeButton = 10 shl 12; { momentary trigger push button }
+
+
+>>>>>>> graemeg/cpstrnew
 const
 	kUnknownKnobValue = $7FFFFFFF; { a knob with this value means, we don't know it. }
 	kDefaultKnobValue = $7FFFFFFE; { used to SET a knob to its default value. }
@@ -675,7 +799,11 @@ type
 	GCInstrumentData = record
 		tone: ToneDescription;
 		knobCount: SIGNEDLONG;
+<<<<<<< HEAD
 		knob: array [0..1-1] of SIGNEDLONG;
+=======
+		knob: array [0..0] of SInt32;
+>>>>>>> graemeg/cpstrnew
 	end;
 	GCInstrumentDataPtr = ^GCInstrumentData;
 type
@@ -817,6 +945,16 @@ const
 	kMusicDerivedRange = $0200;
 
 {
+<<<<<<< HEAD
+=======
+ * Calls specific to the GenericMusicComponent
+ }
+const
+	kMusicGenericRange = $0100;
+	kMusicDerivedRange = $0200;
+
+{
+>>>>>>> graemeg/cpstrnew
  * Flags in GenericMusicConfigure call
  }
 const
@@ -2148,8 +2286,13 @@ function TuneGetTimeScale( tp: TunePlayer; var scale: TimeScale ): ComponentResu
  }
 function TuneGetIndexedNoteChannel( tp: TunePlayer; i: SIGNEDLONG; var nc: NoteChannel ): ComponentResult; external name '_TuneGetIndexedNoteChannel';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { Values for when to start. }
 const
 	kTuneStartNow = 1;    { start after buffer is implied }
@@ -2374,8 +2517,13 @@ function TuneSetSoundLocalization( tp: TunePlayer; data: Handle ): ComponentResu
  }
 function TuneSetHeaderWithSize( tp: TunePlayer; var header: UNSIGNEDLONG; size: UNSIGNEDLONG ): ComponentResult; external name '_TuneSetHeaderWithSize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { flags for part mix. }
 const
 	kTuneMixMute = 1;    { disable a part }
@@ -2412,6 +2560,7 @@ type
 	MusicOpWord = UNSIGNEDLONG;
 	MusicOpWordPtr = ^MusicOpWord;
 {    QuickTime Music Track Event Formats:
+<<<<<<< HEAD
 
     At this time, QuickTime music tracks support 5 different event types -- REST events,
     short NOTE events, short CONTROL events, short GENERAL events, Long NOTE events, 
@@ -2478,6 +2627,74 @@ type
             Key Pressure, and Channel Pressure).    
 }
 
+=======
+
+    At this time, QuickTime music tracks support 5 different event types -- REST events,
+    short NOTE events, short CONTROL events, short GENERAL events, Long NOTE events, 
+    long CONTROL events, and variable GENERAL events.
+ 
+        ¥ REST Event (4 bytes/event):
+    
+            (0 0 0) (5-bit UNUSED) (24-bit Rest Duration)
+        
+        ¥ÊShort NOTE Events (4 bytes/event):
+    
+            (0 0 1) (5-bit Part) (6-bit Pitch) (7-bit Volume) (11-bit Duration)
+        
+            where:  Pitch is offset by 32 (Actual pitch = pitch field + 32)
+
+        ¥ÊShort CONTROL Events (4 bytes/event):
+    
+            (0 1 0) (5-bit Part) (8-bit Controller) (1-bit UNUSED) (1-bit Sign) (7-bit MSB) (7-bit LSB)
+                                                                         ( or 15-bit Signed Value)
+        ¥ Short GENERAL Event (4 bytes/event):
+    
+            (0 1 1) (1-bit UNUSED) (12-bit Sub-Type) (16-bit Value)
+    
+        ¥ Long NOTE Events (8 bytes/event):
+    
+            (1 0 0 1) (12-bit Part) (1-bit UNUSED) (7-bit Pitch) (1-bit UNUSED) (7-bit Volume)
+            (1 0) (8-bit UNUSED) (22-bit Duration)
+        
+        ¥ÊLong CONTROL Event (8 bytes/event):
+        
+            (1 0 1 0) (12-bit Part) (16-bit Value MSB) 
+            (1 0) (14-bit Controller) (16-bit Value LSB)
+    
+        ¥ÊLong KNOB Event (8 bytes/event):
+    
+            (1 0 1 1) (12-bit Sub-Type) (16-bit Value MSB)
+            (1 0) (14-bit KNOB) (16-bit Value LSB)
+    
+        ¥ÊVariable GENERAL Length Events (N bytes/event):
+    
+            (1 1 1 1) (12-bit Sub-Type) (16-bit Length)
+                :
+            (32-bit Data values)
+                :
+            (1 1) (14-bit UNUSED) (16-bit Length)
+    
+            where:  Length field is the number of LONG words in the record.
+                    Lengths include the first and last long words (Minimum length = 2)
+                
+    The following event type values have not been used yet and are reserved for 
+    future expansion:
+        
+        ¥ (1 0 0 0)     (8 bytes/event)
+        ¥ (1 1 0 0)     (N bytes/event)
+        ¥ (1 1 0 1)     (N bytes/event)
+        ¥ (1 1 1 0)     (N bytes/event)
+        
+    For all events, the following generalizations apply:
+    
+        -   All duration values are specified in Millisecond units.
+        -   Pitch values are intended to map directly to the MIDI key numbers.
+        -   Controllers from 0 to 127 correspond to the standard MIDI controllers.
+            Controllers greater than 127 correspond to other controls (i.e., Pitch Bend, 
+            Key Pressure, and Channel Pressure).    
+}
+
+>>>>>>> graemeg/cpstrnew
 { Defines for the implemented music event data fields}
 const
 	kRestEventType = $00000000; { lower 3-bits }

@@ -3,7 +3,13 @@
  
      Contains:   Types, constants, and prototypes for Unicode Converter
  
+<<<<<<< HEAD
      Copyright:  © 1994-2011 Apple Inc. All rights reserved.
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1994-2008 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -11,6 +17,10 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -65,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,29 +101,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -120,13 +148,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -138,17 +170,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -169,6 +210,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -287,6 +337,7 @@ const
 	kUnicodeDefaultDirection = 0;
 	kUnicodeLeftToRight = 1;
 	kUnicodeRightToLeft = 2;
+<<<<<<< HEAD
 
 { Directionality masks for control flags }
 const
@@ -315,6 +366,36 @@ const
    effect on its operation.
 }
 
+=======
+
+{ Directionality masks for control flags }
+const
+	kUnicodeDefaultDirectionMask = kUnicodeDefaultDirection shl kUnicodeDirectionalityBits;
+	kUnicodeLeftToRightMask = kUnicodeLeftToRight shl kUnicodeDirectionalityBits;
+	kUnicodeRightToLeftMask = kUnicodeRightToLeft shl kUnicodeDirectionalityBits;
+
+
+{ Control flags for TruncateForUnicodeToText: }
+{
+   Now TruncateForUnicodeToText uses control flags from the same set as used by
+   ConvertFromTextToUnicode, ConvertFromUnicodeToText, etc., but only
+   kUnicodeStringUnterminatedMask is meaningful for TruncateForUnicodeToText.
+   
+   Previously two special control flags were defined for TruncateForUnicodeToText:
+        kUnicodeTextElementSafeBit = 0
+        kUnicodeRestartSafeBit = 1
+   However, neither of these was implemented.
+   Instead of implementing kUnicodeTextElementSafeBit, we now use
+   kUnicodeStringUnterminatedMask since it accomplishes the same thing and avoids
+   having special flags just for TruncateForUnicodeToText
+   Also, kUnicodeRestartSafeBit is unnecessary, since restart-safeness is handled by
+   setting kUnicodeKeepInfoBit with ConvertFromUnicodeToText.
+   If TruncateForUnicodeToText is called with one or both of the old special control
+   flags set (bits 0 or 1), it will not generate a paramErr, but the old bits have no
+   effect on its operation.
+}
+
+>>>>>>> graemeg/cpstrnew
 { Filter bits for filter field in QueryUnicodeMappings and CountUnicodeMappings: }
 const
 	kUnicodeMatchUnicodeBaseBit = 0;
@@ -346,8 +427,13 @@ const
 	kUnicodeFallbackCustomOnly = 1;
 	kUnicodeFallbackDefaultFirst = 2;
 	kUnicodeFallbackCustomFirst = 3;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { Caller-supplied entry point to a fallback handler }
 type
 	UnicodeToTextFallbackProcPtr = function( iSrcUniStr: UniCharPtr; iSrcUniStrLen: ByteCount; var oSrcConvLen: ByteCount; oDestStr: TextPtr; iDestStrLen: ByteCount; var oDestConvLen: ByteCount; iInfoPtr: LogicalAddress; iUnicodeMappingPtr: ConstUnicodeMappingPtr ): OSStatus;
@@ -361,7 +447,11 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewUnicodeToTextFallbackUPP( userRoutine: UnicodeToTextFallbackProcPtr ): UnicodeToTextFallbackUPP; external name '_NewUnicodeToTextFallbackUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeUnicodeToTextFallbackUPP()
@@ -372,7 +462,11 @@ function NewUnicodeToTextFallbackUPP( userRoutine: UnicodeToTextFallbackProcPtr 
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeUnicodeToTextFallbackUPP( userUPP: UnicodeToTextFallbackUPP ); external name '_DisposeUnicodeToTextFallbackUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeUnicodeToTextFallbackUPP()
@@ -383,7 +477,11 @@ procedure DisposeUnicodeToTextFallbackUPP( userUPP: UnicodeToTextFallbackUPP ); 
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeUnicodeToTextFallbackUPP( iSrcUniStr: UniCharPtr; iSrcUniStrLen: ByteCount; var oSrcConvLen: ByteCount; oDestStr: TextPtr; iDestStrLen: ByteCount; var oDestConvLen: ByteCount; iInfoPtr: LogicalAddress; iUnicodeMappingPtr: ConstUnicodeMappingPtr; userUPP: UnicodeToTextFallbackUPP ): OSStatus; external name '_InvokeUnicodeToTextFallbackUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 { Function prototypes }
 {
@@ -395,7 +493,11 @@ function InvokeUnicodeToTextFallbackUPP( iSrcUniStr: UniCharPtr; iSrcUniStrLen: 
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CreateTextToUnicodeInfo( iUnicodeMapping: ConstUnicodeMappingPtr; var oTextToUnicodeInfo: TextToUnicodeInfo ): OSStatus; external name '_CreateTextToUnicodeInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -407,7 +509,11 @@ function CreateTextToUnicodeInfo( iUnicodeMapping: ConstUnicodeMappingPtr; var o
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CreateTextToUnicodeInfoByEncoding( iEncoding: TextEncoding; var oTextToUnicodeInfo: TextToUnicodeInfo ): OSStatus; external name '_CreateTextToUnicodeInfoByEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -419,7 +525,11 @@ function CreateTextToUnicodeInfoByEncoding( iEncoding: TextEncoding; var oTextTo
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CreateUnicodeToTextInfo( iUnicodeMapping: ConstUnicodeMappingPtr; var oUnicodeToTextInfo: UnicodeToTextInfo ): OSStatus; external name '_CreateUnicodeToTextInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -431,7 +541,11 @@ function CreateUnicodeToTextInfo( iUnicodeMapping: ConstUnicodeMappingPtr; var o
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CreateUnicodeToTextInfoByEncoding( iEncoding: TextEncoding; var oUnicodeToTextInfo: UnicodeToTextInfo ): OSStatus; external name '_CreateUnicodeToTextInfoByEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -443,7 +557,11 @@ function CreateUnicodeToTextInfoByEncoding( iEncoding: TextEncoding; var oUnicod
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CreateUnicodeToTextRunInfo( iNumberOfMappings: ItemCount; {const} iUnicodeMappings: {variable-size-array} UnicodeMappingPtr; var oUnicodeToTextInfo: UnicodeToTextRunInfo ): OSStatus; external name '_CreateUnicodeToTextRunInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -455,7 +573,11 @@ function CreateUnicodeToTextRunInfo( iNumberOfMappings: ItemCount; {const} iUnic
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CreateUnicodeToTextRunInfoByEncoding( iNumberOfEncodings: ItemCount; {const} iEncodings: {variable-size-array} TextEncodingPtr; var oUnicodeToTextInfo: UnicodeToTextRunInfo ): OSStatus; external name '_CreateUnicodeToTextRunInfoByEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -467,7 +589,11 @@ function CreateUnicodeToTextRunInfoByEncoding( iNumberOfEncodings: ItemCount; {c
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CreateUnicodeToTextRunInfoByScriptCode( iNumberOfScriptCodes: ItemCount; {const} iScripts: {variable-size-array} ScriptCodePtr; var oUnicodeToTextInfo: UnicodeToTextRunInfo ): OSStatus; external name '_CreateUnicodeToTextRunInfoByScriptCode';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Change the TextToUnicodeInfo to another mapping. }
@@ -480,7 +606,11 @@ function CreateUnicodeToTextRunInfoByScriptCode( iNumberOfScriptCodes: ItemCount
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ChangeTextToUnicodeInfo( ioTextToUnicodeInfo: TextToUnicodeInfo; iUnicodeMapping: ConstUnicodeMappingPtr ): OSStatus; external name '_ChangeTextToUnicodeInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Change the UnicodeToTextInfo to another mapping. }
@@ -493,7 +623,11 @@ function ChangeTextToUnicodeInfo( ioTextToUnicodeInfo: TextToUnicodeInfo; iUnico
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ChangeUnicodeToTextInfo( ioUnicodeToTextInfo: UnicodeToTextInfo; iUnicodeMapping: ConstUnicodeMappingPtr ): OSStatus; external name '_ChangeUnicodeToTextInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -505,7 +639,11 @@ function ChangeUnicodeToTextInfo( ioUnicodeToTextInfo: UnicodeToTextInfo; iUnico
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function DisposeTextToUnicodeInfo( var ioTextToUnicodeInfo: TextToUnicodeInfo ): OSStatus; external name '_DisposeTextToUnicodeInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -517,7 +655,11 @@ function DisposeTextToUnicodeInfo( var ioTextToUnicodeInfo: TextToUnicodeInfo ):
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function DisposeUnicodeToTextInfo( var ioUnicodeToTextInfo: UnicodeToTextInfo ): OSStatus; external name '_DisposeUnicodeToTextInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -529,7 +671,11 @@ function DisposeUnicodeToTextInfo( var ioUnicodeToTextInfo: UnicodeToTextInfo ):
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function DisposeUnicodeToTextRunInfo( var ioUnicodeToTextRunInfo: UnicodeToTextRunInfo ): OSStatus; external name '_DisposeUnicodeToTextRunInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -541,7 +687,11 @@ function DisposeUnicodeToTextRunInfo( var ioUnicodeToTextRunInfo: UnicodeToTextR
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ConvertFromTextToUnicode( iTextToUnicodeInfo: TextToUnicodeInfo; iSourceLen: ByteCount; iSourceStr: ConstLogicalAddress; iControlFlags: OptionBits; iOffsetCount: ItemCount; {const} iOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; oOffsetCount: ItemCountPtr { can be NULL }; oOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; iOutputBufLen: ByteCount; var oSourceRead: ByteCount; var oUnicodeLen: ByteCount; oUnicodeStr: {variable-size-array} UniCharPtr ): OSStatus; external name '_ConvertFromTextToUnicode';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -553,7 +703,11 @@ function ConvertFromTextToUnicode( iTextToUnicodeInfo: TextToUnicodeInfo; iSourc
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ConvertFromUnicodeToText( iUnicodeToTextInfo: UnicodeToTextInfo; iUnicodeLen: ByteCount; {const} iUnicodeStr: {variable-size-array} UniCharPtr; iControlFlags: OptionBits; iOffsetCount: ItemCount; {const} iOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; oOffsetCount: ItemCountPtr { can be NULL }; oOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; iOutputBufLen: ByteCount; var oInputRead: ByteCount; var oOutputLen: ByteCount; oOutputStr: LogicalAddress ): OSStatus; external name '_ConvertFromUnicodeToText';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -565,7 +719,11 @@ function ConvertFromUnicodeToText( iUnicodeToTextInfo: UnicodeToTextInfo; iUnico
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ConvertFromUnicodeToTextRun( iUnicodeToTextInfo: UnicodeToTextRunInfo; iUnicodeLen: ByteCount; {const} iUnicodeStr: {variable-size-array} UniCharPtr; iControlFlags: OptionBits; iOffsetCount: ItemCount; {const} iOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; oOffsetCount: ItemCountPtr { can be NULL }; oOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; iOutputBufLen: ByteCount; var oInputRead: ByteCount; var oOutputLen: ByteCount; oOutputStr: LogicalAddress; iEncodingRunBufLen: ItemCount; var oEncodingRunOutLen: ItemCount; oEncodingRuns: {variable-size-array} TextEncodingRunPtr ): OSStatus; external name '_ConvertFromUnicodeToTextRun';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -577,7 +735,11 @@ function ConvertFromUnicodeToTextRun( iUnicodeToTextInfo: UnicodeToTextRunInfo; 
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ConvertFromUnicodeToScriptCodeRun( iUnicodeToTextInfo: UnicodeToTextRunInfo; iUnicodeLen: ByteCount; {const} iUnicodeStr: {variable-size-array} UniCharPtr; iControlFlags: OptionBits; iOffsetCount: ItemCount; {const} iOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; oOffsetCount: ItemCountPtr { can be NULL }; oOffsetArray: {variable-size-array} ByteOffsetPtr { can be NULL }; iOutputBufLen: ByteCount; var oInputRead: ByteCount; var oOutputLen: ByteCount; oOutputStr: LogicalAddress; iScriptRunBufLen: ItemCount; var oScriptRunOutLen: ItemCount; oScriptCodeRuns: {variable-size-array} ScriptCodeRunPtr ): OSStatus; external name '_ConvertFromUnicodeToScriptCodeRun';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Truncate a multibyte string at a safe place. }
@@ -590,7 +752,11 @@ function ConvertFromUnicodeToScriptCodeRun( iUnicodeToTextInfo: UnicodeToTextRun
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function TruncateForTextToUnicode( iTextToUnicodeInfo: ConstTextToUnicodeInfo; iSourceLen: ByteCount; iSourceStr: ConstLogicalAddress; iMaxLen: ByteCount; var oTruncatedLen: ByteCount ): OSStatus; external name '_TruncateForTextToUnicode';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Truncate a Unicode string at a safe place. }
@@ -603,7 +769,11 @@ function TruncateForTextToUnicode( iTextToUnicodeInfo: ConstTextToUnicodeInfo; i
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function TruncateForUnicodeToText( iUnicodeToTextInfo: ConstUnicodeToTextInfo; iSourceLen: ByteCount; iSourceStr: ConstUniCharPtr; iControlFlags: OptionBits; iMaxLen: ByteCount; var oTruncatedLen: ByteCount ): OSStatus; external name '_TruncateForUnicodeToText';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Convert a Pascal string to Unicode string. }
@@ -616,7 +786,11 @@ function TruncateForUnicodeToText( iUnicodeToTextInfo: ConstUnicodeToTextInfo; i
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ConvertFromPStringToUnicode( iTextToUnicodeInfo: TextToUnicodeInfo; const (*var*) iPascalStr: Str255; iOutputBufLen: ByteCount; var oUnicodeLen: ByteCount; oUnicodeStr: UniCharPtr ): OSStatus; external name '_ConvertFromPStringToUnicode';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Convert a Unicode string to Pascal string. }
@@ -629,7 +803,11 @@ function ConvertFromPStringToUnicode( iTextToUnicodeInfo: TextToUnicodeInfo; con
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ConvertFromUnicodeToPString( iUnicodeToTextInfo: UnicodeToTextInfo; iUnicodeLen: ByteCount; {const} iUnicodeStr: {variable-size-array} UniCharPtr; var oPascalStr: Str255 ): OSStatus; external name '_ConvertFromUnicodeToPString';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Count the available conversion mappings. }
@@ -642,7 +820,11 @@ function ConvertFromUnicodeToPString( iUnicodeToTextInfo: UnicodeToTextInfo; iUn
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function CountUnicodeMappings( iFilter: OptionBits; iFindMapping: ConstUnicodeMappingPtr; var oActualCount: ItemCount ): OSStatus; external name '_CountUnicodeMappings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Get a list of the available conversion mappings. }
@@ -655,7 +837,11 @@ function CountUnicodeMappings( iFilter: OptionBits; iFindMapping: ConstUnicodeMa
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function QueryUnicodeMappings( iFilter: OptionBits; iFindMapping: ConstUnicodeMappingPtr; iMaxCount: ItemCount; var oActualCount: ItemCount; oReturnedMappings: {variable-size-array} UnicodeMappingPtr ): OSStatus; external name '_QueryUnicodeMappings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Setup the fallback handler for converting Unicode To Text. }
@@ -668,7 +854,11 @@ function QueryUnicodeMappings( iFilter: OptionBits; iFindMapping: ConstUnicodeMa
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function SetFallbackUnicodeToText( iUnicodeToTextInfo: UnicodeToTextInfo; iFallback: UnicodeToTextFallbackUPP; iControlFlags: OptionBits; iInfoPtr: LogicalAddress ): OSStatus; external name '_SetFallbackUnicodeToText';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Setup the fallback handler for converting Unicode To TextRuns. }
@@ -681,7 +871,11 @@ function SetFallbackUnicodeToText( iUnicodeToTextInfo: UnicodeToTextInfo; iFallb
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function SetFallbackUnicodeToTextRun( iUnicodeToTextRunInfo: UnicodeToTextRunInfo; iFallback: UnicodeToTextFallbackUPP; iControlFlags: OptionBits; iInfoPtr: LogicalAddress ): OSStatus; external name '_SetFallbackUnicodeToTextRun';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Re-initialize all state information kept by the context objects. }
@@ -694,7 +888,11 @@ function SetFallbackUnicodeToTextRun( iUnicodeToTextRunInfo: UnicodeToTextRunInf
  *    Non-Carbon CFM:   in UnicodeConverter 1.3 and later
  }
 function ResetTextToUnicodeInfo( ioTextToUnicodeInfo: TextToUnicodeInfo ): OSStatus; external name '_ResetTextToUnicodeInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Re-initialize all state information kept by the context objects. }
@@ -707,7 +905,11 @@ function ResetTextToUnicodeInfo( ioTextToUnicodeInfo: TextToUnicodeInfo ): OSSta
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ResetUnicodeToTextInfo( ioUnicodeToTextInfo: UnicodeToTextInfo ): OSStatus; external name '_ResetUnicodeToTextInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Re-initialize all state information kept by the context objects in TextRun conversions. }
@@ -720,10 +922,16 @@ function ResetUnicodeToTextInfo( ioUnicodeToTextInfo: UnicodeToTextInfo ): OSSta
  *    Non-Carbon CFM:   in UnicodeConverter 1.1 and later
  }
 function ResetUnicodeToTextRunInfo( ioUnicodeToTextRunInfo: UnicodeToTextRunInfo ): OSStatus; external name '_ResetUnicodeToTextRunInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

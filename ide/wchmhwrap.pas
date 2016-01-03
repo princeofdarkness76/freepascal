@@ -161,6 +161,7 @@ begin
   for i:=0 to findex.items.count-1 do
     begin
       item:=findex.items.item[i];
+<<<<<<< HEAD
       s:=formatalias(item.text);
       if s<>'' then
         begin
@@ -171,6 +172,14 @@ begin
           TLI:=EncodeHTMLCtx(ID,TLI+1);
           IndexEntries^.Insert(NewIndexEntry(  FormatAlias(item.text),ID,TLI));
         end;
+=======
+      if (length(item.local)>0) and (item.local[1]<>'/') then
+        tli:=TopicLinks^.AddItem('/'+item.local)
+      else
+        tli:=TopicLinks^.AddItem(item.local);
+      TLI:=EncodeHTMLCtx(ID,TLI+1);
+      IndexEntries^.Insert(NewIndexEntry(  FormatAlias(item.text),ID,TLI));
+>>>>>>> graemeg/cpstrnew
     end;
    {$ifdef wdebug}
      debugmessageS({$i %file%},'TCHMWrapper: endloadindex ',{$i %line%},'1',0,0);
@@ -274,6 +283,7 @@ begin
     debugmessageS({$i %file%},'TCHMWrapper: destroying ',{$i %line%},'1',0,0);
   {$endif}
 
+<<<<<<< HEAD
 end;
 
 function CHMResolve( href: ansistring; var AFileId,ALinkId : longint):boolean;
@@ -311,6 +321,45 @@ begin
     end
 end;
 
+=======
+end;
+
+function CHMResolve( href: ansistring; var AFileId,ALinkId : longint):boolean;
+
+var filename, restlink : ansistring;
+    I :integer;
+    chmw: TCHMWrapper;
+begin
+  result:=false;
+  if copy(href,1,7)='ms-its:' then
+    begin
+      {$ifdef wdebug}
+              debugmessageS({$i %file%},'TCHMWrapper: resolving '+href,{$i %line%},'1',0,0);
+      {$endif}
+
+       delete(href,1,7);
+       i:=pos('::',href);
+       if i<>0 then
+         begin
+           filename:=lowercase(copy(href,1,i-1));
+           restlink:=lowercase(copy(href,i+2,length(href)-(I+2)+1));
+           i:=chmindex.indexof(filename);
+           if i<>-1 then
+             begin
+               {$ifdef wdebug}
+                 debugmessageS({$i %file%},'TCHMWrapper: resolving '+filename+' '+inttostr(i),{$i %line%},'1',0,0);
+                 debugmessageS({$i %file%},'TCHMWrapper: resolving '+restlink+' ',{$i %line%},'1',0,0);
+               {$endif}
+               chmw:=TCHMWrapper(chmindex.objects[i]);
+               Afileid:=chmw.fileid;
+               alinkid:=chmw.fTopicLinks.additem(restlink);
+               result:=true;
+            end;
+         end;
+    end
+end;
+
+>>>>>>> graemeg/cpstrnew
 function stringreplace(const s:ansistring;const oldstr:ansistring; const newstr:ansistring):ansistring;
 
 begin

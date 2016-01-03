@@ -66,6 +66,7 @@ interface
          RELOC_GOT32,
          RELOC_PLT32,
 {$endif i386}
+<<<<<<< HEAD
 {$ifdef i8086}
          RELOC_ABSOLUTE32,
          RELOC_RELATIVE32,
@@ -78,6 +79,8 @@ interface
          RELOC_FARDATASEG,
          RELOC_FARDATASEGREL,
 {$endif i8086}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef arm}
          RELOC_RELATIVE_24,
          RELOC_RELATIVE_24_THUMB,
@@ -98,11 +101,15 @@ interface
            links to some sections }
          RELOC_NONE,
          { Darwin relocation, using PAIR }
+<<<<<<< HEAD
          RELOC_PIC_PAIR,
          { Relative to GOT/gp }
          RELOC_GOTOFF,
          { Untranslated target-specific value }
          RELOC_RAW
+=======
+         RELOC_PIC_PAIR
+>>>>>>> graemeg/cpstrnew
       );
 
 {$if not defined(x86_64) and not defined(i8086)}
@@ -189,12 +196,15 @@ interface
        { Darwin asm is using indirect symbols resolving }
        indsymbol  : TObjSymbol;
 
+<<<<<<< HEAD
        { Used by the OMF object format and its complicated relocation records }
        group: TObjSectionGroup;
 {$ifdef ARM}
        ThumbFunc : boolean;
 {$endif ARM}
 
+=======
+>>>>>>> graemeg/cpstrnew
        constructor create(AList:TFPHashObjectList;const AName:string);
        function  address:qword;
        procedure SetAddress(apass:byte;aobjsec:TObjSection;abind:TAsmsymbind;atyp:Tasmsymtype);
@@ -730,10 +740,14 @@ implementation
           internalerror(200603016);
         if not assigned(aobjsec) then
           internalerror(200603017);
+<<<<<<< HEAD
         if (bind in [AB_EXTERNAL,AB_LAZY]) or
           { Put all COMMON to GLOBAL in step 3 of
             TExeOutput.ResolveSymbols }
            ((abind=AB_GLOBAL) and (bind=AB_COMMON)) then
+=======
+        if (bind in [AB_EXTERNAL,AB_LAZY]) then
+>>>>>>> graemeg/cpstrnew
           begin
             { Do not change the AB_TYPE of common symbols yet }
             { This will be done in FixupSymbols }
@@ -1113,6 +1127,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function TObjData.sectiontype2options(atype:TAsmSectiontype):TObjSectionOptions;
       const
         secoptions : array[TAsmSectiontype] of TObjSectionOptions = ([],
@@ -1129,12 +1144,111 @@ implementation
           {threadvar} [oso_load,oso_write],
           {pdata} [oso_data,oso_load],
           {stub} [oso_Data,oso_load,oso_executable],
+=======
+    function TObjData.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
+      const
+        secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+          'code',
+          'Data',
+          'Data',
+          'roData',
+          'bss',
+          'threadvar',
+          'pdata',
+          'stub',
+          'data_nonlazy',
+          'data_lazy',
+          'init_func',
+          'term_func',
+          'stab','stabstr',
+          'iData2','iData4','iData5','iData6','iData7','eData',
+          'eh_frame',
+          'debug_frame','debug_info','debug_line','debug_abbrev',
+          'fpc',
+          'toc',
+          'init',
+          'fini',
+          'objc_class',
+          'objc_meta_class',
+          'objc_cat_cls_meth',
+          'objc_cat_inst_meth',
+          'objc_protocol',
+          'objc_string_object',
+          'objc_cls_meth',
+          'objc_inst_meth',
+          'objc_cls_refs',
+          'objc_message_refs',
+          'objc_symbols',
+          'objc_category',
+          'objc_class_vars',
+          'objc_instance_vars',
+          'objc_module_info',
+          'objc_class_names',
+          'objc_meth_var_types',
+          'objc_meth_var_names',
+          'objc_selector_strs',
+          'objc_protocol_ext',
+          'objc_class_ext',
+          'objc_property',
+          'objc_image_info',
+          'objc_cstring_object',
+          'objc_sel_fixup',
+          '__DATA,__objc_data',
+          '__DATA,__objc_const',
+          '.objc_superrefs',
+          '__DATA, __datacoal_nt,coalesced',
+          '.objc_classlist',
+          '.objc_nlclasslist',
+          '.objc_catlist',
+          '.obcj_nlcatlist',
+          '.objc_protolist'
+        );
+      var
+        sep : string[3];
+      begin
+        if aname<>'' then
+          begin
+            case aorder of
+              secorder_begin :
+                sep:='.b_';
+              secorder_end :
+                sep:='.z_';
+              else
+                sep:='.n_';
+            end;
+            result:=secnames[atype]+sep+aname
+          end
+        else
+          result:=secnames[atype];
+      end;
+
+
+    function TObjData.sectiontype2options(atype:TAsmSectiontype):TObjSectionOptions;
+      const
+        secoptions : array[TAsmSectiontype] of TObjSectionOptions = ([],
+          {user} [oso_Data,oso_load,oso_write,oso_executable,oso_keep],
+          {code} [oso_Data,oso_load,oso_readonly,oso_executable,oso_keep],
+          {Data} [oso_Data,oso_load,oso_write,oso_keep],
+{ TODO: Fix sec_rodata be read-only-with-relocs}
+          {roData} [oso_Data,oso_load,oso_write,oso_keep],
+{ TODO: Fix sec_rodata_norel be read-only/constant}
+          {roData_norel} [oso_Data,oso_load,oso_write,oso_keep],
+          {bss} [oso_load,oso_write,oso_keep],
+          {threadvar} [oso_load,oso_write],
+          {pdata} [oso_load,oso_readonly,oso_keep],
+          {stub} [oso_Data,oso_load,oso_readonly,oso_executable],
+>>>>>>> graemeg/cpstrnew
           {data_nonlazy}  [oso_Data,oso_load,oso_write],
           {data_lazy} [oso_Data,oso_load,oso_write],
           {init_func} [oso_Data,oso_load],
           {term_func} [oso_Data,oso_load],
+<<<<<<< HEAD
           {stab} [oso_Data,oso_debug],
           {stabstr} [oso_Data,oso_strings,oso_debug],
+=======
+          {stab} [oso_Data,oso_noload,oso_debug],
+          {stabstr} [oso_Data,oso_noload,oso_strings,oso_debug],
+>>>>>>> graemeg/cpstrnew
           {iData2} [oso_Data,oso_load,oso_write],
           {iData4} [oso_Data,oso_load,oso_write],
           {iData5} [oso_Data,oso_load,oso_write],
@@ -1183,9 +1297,13 @@ implementation
           {sec_objc_nlclasslist} [oso_data,oso_load],
           {sec_objc_catlist} [oso_data,oso_load],
           {sec_objc_nlcatlist} [oso_data,oso_load],
+<<<<<<< HEAD
           {sec_objc_protolist'} [oso_data,oso_load],
           {stack} [oso_load,oso_write],
           {heap} [oso_load,oso_write]
+=======
+          {sec_objc_protolist'} [oso_data,oso_load]
+>>>>>>> graemeg/cpstrnew
         );
       begin
         result:=secoptions[atype];
@@ -1825,7 +1943,10 @@ implementation
         SectionMemAlign:=$1000;
         SectionDataAlign:=$200;
 {$endif cpu16bitaddr}
+<<<<<<< HEAD
         FixedSectionAlign:=True;
+=======
+>>>>>>> graemeg/cpstrnew
         FCExeSection:=TExeSection;
         FCObjData:=TObjData;
         FCObjSymbol:=TObjSymbol;

@@ -642,13 +642,19 @@
 'pmovzxwq',
 'pmovzxdq',
 'pmuldq',
+<<<<<<< HEAD
 'pmulld',
+=======
+>>>>>>> graemeg/cpstrnew
 'ptest',
 'roundps',
 'roundpd',
 'roundss',
 'roundsd',
+<<<<<<< HEAD
 'crc32',
+=======
+>>>>>>> graemeg/cpstrnew
 'pcmpestri',
 'pcmpestrm',
 'pcmpistri',
@@ -660,6 +666,7 @@
 'aesdec',
 'aesdeclast',
 'aesimc',
+<<<<<<< HEAD
 'aeskeygenassist',
 'rdtscp',
 'stosq',
@@ -1020,4 +1027,10 @@
 'vfnmsub132ss',
 'vfnmsub213ss',
 'vfnmsub231ss'
+=======
+'aeskeygen',
+'stosq',
+'lodsq',
+'cmpsq'
+>>>>>>> graemeg/cpstrnew
 );

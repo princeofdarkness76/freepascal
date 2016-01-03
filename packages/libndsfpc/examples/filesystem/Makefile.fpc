@@ -3,7 +3,11 @@
 #
 
 [target]
+<<<<<<< HEAD
 dirs=libfat nitrofs
+=======
+dirs=embedded_gbfs libfat nitrofs
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=libndsfpc

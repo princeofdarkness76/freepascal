@@ -68,6 +68,7 @@ type
     _valueTransformerName: NSString;
     _type: NSAttributeType;
     _attributeValueClassName: NSString;
+<<<<<<< HEAD
     __attributeDescriptionFlags: record
       case byte of
        0: (_anonbitfield_NSAttributeDescription0: cuint);
@@ -75,6 +76,14 @@ type
         _useForLocking: 0..1;
         _reservedAttributeDescription: 0..((1 shl 31)-1);
        end;
+=======
+    __attributeDescriptionFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSAttributeDescription0: cuint);
+       1: (
+        _useForLocking: 0..1;
+        _reservedAttributeDescription: 0..((1 shl 31)-1);
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _defaultValue: id;

@@ -5,7 +5,11 @@ unit wmxmlusers;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, 
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
+>>>>>>> graemeg/cpstrnew
     fpwebdata, extjsxml;
 
 type
@@ -26,9 +30,15 @@ var
 
 implementation
 
+<<<<<<< HEAD
 {$R *.lfm}
 
 initialization
+=======
+initialization
+  {$I wmxmlusers.lrs}
+
+>>>>>>> graemeg/cpstrnew
   RegisterHTTPModule('XMLProvider', TFPWebProviderDataModule2);
 end.
 

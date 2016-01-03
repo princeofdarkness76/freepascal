@@ -123,8 +123,31 @@ asm
   movq param6,%r9
   syscall                 { Do the system call. }
   jnb .LSyscOK            { branch to exit if ok, errorhandler otherwise}
+<<<<<<< HEAD
   movq  %rax,%rdi
   call  SetErrno
+=======
+  movq  %rax,%rdx
+{$ifdef FPC_PIC}
+  movq  fpc_threadvar_relocate_proc@GOTPCREL(%rip),%rax
+  movq  (%rax),%rax
+  movq  Errno@GOTPCREL(%rip),%r11
+{$else FPC_PIC}
+  movq  fpc_threadvar_relocate_proc,%rax
+  leaq  Errno,%r11
+{$endif FPC_PIC}
+  testq %rax,%rax
+  jne   .LThread
+  movl  %edx,8(%r11)
+  jmp   .LNoThread
+.LThread:
+  pushq %rdx
+  movq  (%r11),%rdi
+  call  *%rax
+  popq  %rdx
+  movl  %edx,(%rax)
+.LNoThread:
+>>>>>>> graemeg/cpstrnew
   movq  $-1,%rax
 .LSyscOK:
 

@@ -32,7 +32,10 @@ type
   end;
 
   DISC_INTERFACE = DISC_INTERFACE_STRUCT;
+<<<<<<< HEAD
   PDISC_INTERFACE = ^DISC_INTERFACE;
+=======
+>>>>>>> graemeg/cpstrnew
 {$ENDIF}
 
 

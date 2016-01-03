@@ -225,9 +225,15 @@ unit typinfo;
                   end;
               followed by
                   ResultType : ShortString     // for mkFunction, mkClassFunction only
+<<<<<<< HEAD
                   ResultTypeRef : PTypeInfo;  // for mkFunction, mkClassFunction only
                   CC : TCallConv;
                   ParamTypeRefs : array[1..ParamCount] of PTypeInfo;}
+=======
+                  ResultTypeRef : PPTypeInfo;  // for mkFunction, mkClassFunction only
+                  CC : TCallConv;
+                  ParamTypeRefs : array[1..ParamCount] of PPTypeInfo;}
+>>>>>>> graemeg/cpstrnew
               );
             tkProcVar:
               (ProcSig: TProcedureSignature);
@@ -569,7 +575,11 @@ end;
 Function SetToString(TypeInfo: PTypeInfo; Value: Integer; Brackets: Boolean) : String;
 
 type
+<<<<<<< HEAD
   tsetarr = bitpacked array[0..SizeOf(Integer)*8-1] of 0..1;
+=======
+  tsetarr = bitpacked array[0..31] of 0..1;
+>>>>>>> graemeg/cpstrnew
 Var
   I : Integer;
   PTI : PTypeInfo;

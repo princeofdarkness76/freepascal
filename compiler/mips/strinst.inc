@@ -1,9 +1,15 @@
 'none',
+<<<<<<< HEAD
 'p_set_nomips16',
+=======
+'p_stk2',
+'p_lw',
+>>>>>>> graemeg/cpstrnew
 'p_set_noreorder',
 'p_set_nomacro',
 'p_set_macro',
 'p_set_reorder',
+<<<<<<< HEAD
 'p_set_noat',
 'p_set_at',
 '.frame',
@@ -12,11 +18,21 @@
 '.cpload',
 '.cprestore',
 '.cpadd',
+=======
+'p_frame',
+'p_mask',
+'p_fmask',
+'p_sw',
+'sparc8unimp',
+>>>>>>> graemeg/cpstrnew
 'nop',
 'not',
 'neg',
 'negu',
+<<<<<<< HEAD
 'b ',
+=======
+>>>>>>> graemeg/cpstrnew
 'b',
 'li',
 'dli',
@@ -94,10 +110,44 @@
 'mthi',
 'mflo',
 'mtlo',
+<<<<<<< HEAD
+=======
+'multg',
+'dmultg',
+'multug',
+'dmultug',
+'divg',
+'ddivg',
+'divug',
+'ddivug',
+'modg',
+'dmodg',
+'modug',
+'dmodug',
+>>>>>>> graemeg/cpstrnew
 'j',
 'jal',
 'jr',
 'jalr',
+<<<<<<< HEAD
+=======
+'beq',
+'bne',
+'blez',
+'bgtz',
+'bltz',
+'bgez',
+'bltzal',
+'bgezal',
+'beql',
+'bnel',
+'blezl',
+'bgtzl',
+'bltzl',
+'bgezl',
+'bltzall',
+'bgezall',
+>>>>>>> graemeg/cpstrnew
 'sll',
 'srl',
 'sra',
@@ -165,12 +215,40 @@
 'floor.w.d',
 'floor.l.s',
 'floor.l.d',
+<<<<<<< HEAD
+=======
+'bc1t',
+'bc1f',
+'bc1tl',
+'bc1fl',
+>>>>>>> graemeg/cpstrnew
 'c.eq.d',
 'c.eq.s',
 'c.le.d',
 'c.le.s',
 'c.lt.d',
 'c.lt.s',
+<<<<<<< HEAD
+=======
+'beqi',
+'bnei',
+'blti',
+'blei',
+'bgti',
+'bgei',
+'bltui',
+'bleui',
+'bgtui',
+'bgeui',
+'blt',
+'ble',
+'bgt',
+'bge',
+'bltu',
+'bleu',
+'bgtu',
+'bgeu',
+>>>>>>> graemeg/cpstrnew
 'seq',
 'sge',
 'sgeu',
@@ -180,6 +258,7 @@
 'sleu',
 'sne',
 'syscall',
+<<<<<<< HEAD
 'break',
 'ehb',
 'ext',
@@ -205,4 +284,17 @@
 'movz.s',
 'movn.d',
 'movz.d',
+=======
+'add64sub',
+'sub64sub',
+'mul64sub',
+'div64sub',
+'neg64sub',
+'not64sub',
+'or64sub',
+'sar64sub',
+'shl64sub',
+'shr64sub',
+'xor64sub',
+>>>>>>> graemeg/cpstrnew
 'end_def'

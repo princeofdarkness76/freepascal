@@ -176,17 +176,63 @@ end;
 
 procedure TDBFDBConnector.CreateFieldDataset;
 begin
+<<<<<<< HEAD
   // All datasets are created in InternalGet*Dataset
+=======
+  with TDbf.Create(nil) do
+    begin
+    FilePath := dbname;
+    TableName := 'fpdev_field.db';
+    FieldDefs.Add('ID',ftInteger);
+    FieldDefs.Add('FSTRING',ftString,10);
+    FieldDefs.Add('FSMALLINT',ftSmallint);
+    FieldDefs.Add('FINTEGER',ftInteger);
+//    FieldDefs.Add('FWORD',ftWord);
+    FieldDefs.Add('FBOOLEAN',ftBoolean);
+    FieldDefs.Add('FFLOAT',ftFloat);
+//    FieldDefs.Add('FCURRENCY',ftCurrency);
+//    FieldDefs.Add('FBCD',ftBCD);
+    FieldDefs.Add('FDATE',ftDate);
+//    FieldDefs.Add('FTIME',ftTime);
+    FieldDefs.Add('FDATETIME',ftDateTime);
+    FieldDefs.Add('FLARGEINT',ftLargeint);
+    CreateTable;
+    Open;
+    for i := 0 to testValuesCount-1 do
+      begin
+      Append;
+      FieldByName('ID').AsInteger := i;
+      FieldByName('FSTRING').AsString := testStringValues[i];
+      FieldByName('FSMALLINT').AsInteger := testSmallIntValues[i];
+      FieldByName('FINTEGER').AsInteger := testIntValues[i];
+      FieldByName('FBOOLEAN').AsBoolean := testBooleanValues[i];
+      FieldByName('FFLOAT').AsFloat := testFloatValues[i];
+      FieldByName('FDATE').AsDateTime := StrToDate(testDateValues[i], 'yyyy/mm/dd', '-');
+      FieldByName('FLARGEINT').AsLargeInt := testLargeIntValues[i];
+      Post;
+      end;
+    Close;
+    end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TDBFDBConnector.DropNDatasets;
 begin
+<<<<<<< HEAD
   // Nothing to be done here; the dataset is cleaned up in TDBFAutoClean.Destroy
+=======
+  for n := 0 to MaxDataSet do
+    DeleteFile(ExtractFilePath(dbname)+'fpdev_'+inttostr(n)+'.db');
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TDBFDBConnector.DropFieldDataset;
 begin
+<<<<<<< HEAD
   // Nothing to be done here; the dataset is cleaned up in TDBFAutoClean.Destroy
+=======
+  DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TDBFDBConnector.InternalGetNDataset(n: integer): TDataset;

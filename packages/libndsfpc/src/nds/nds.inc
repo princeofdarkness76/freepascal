@@ -105,7 +105,10 @@
   {$include arm9/sassert.inc}
   {$include arm9/sound.inc}
   {$include arm9/sprite.inc}
+<<<<<<< HEAD
   {$include arm9/window.inc}
+=======
+>>>>>>> graemeg/cpstrnew
   {$include arm9/trig_lut.inc}
   {$include arm9/video.inc}
   {$include arm9/videoGL.inc}

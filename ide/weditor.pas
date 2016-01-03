@@ -59,7 +59,11 @@ const
       cmExpandFold           = 51267;
       cmDelToEndOfWord       = 51268;
       cmInputLineLen         = 51269;
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> graemeg/cpstrnew
       EditorTextBufSize = 32768;
       MaxLineLength     = 255;
       MaxLineCount      = 2000000;
@@ -711,12 +715,20 @@ type
          Procedure   HandleEvent(var Event : TEvent);virtual;
     end;
     PEditorInputLine = ^TEditorInputLine;
-
+ 
     TSearchHelperDialog = object(TDialog)
              OkButton: PButton;
              Procedure   HandleEvent(var Event : TEvent);virtual;
     end;
 
+<<<<<<< HEAD
+    TSearchHelperDialog = object(TDialog)
+             OkButton: PButton;
+             Procedure   HandleEvent(var Event : TEvent);virtual;
+    end;
+
+=======
+>>>>>>> graemeg/cpstrnew
     PSearchHelperDialog = ^TSearchHelperDialog;
 
 const
@@ -6950,13 +6962,22 @@ begin
      evBroadcast :
            case Event.Command of
                    cminputlinelen : begin
+<<<<<<< HEAD
                                       if PtrInt(Event.InfoPtr)=0 then
                                         okbutton^.DisableCommands([cmok])
+=======
+                                      if Event.InfoLong=0 then
+                                        okbutton^.DisableCommands([cmok]) 
+>>>>>>> graemeg/cpstrnew
                                       else
                                         okbutton^.EnableCommands([cmok]);
                                       clearevent(event);
                                     end;
+<<<<<<< HEAD
              end;
+=======
+             end;      
+>>>>>>> graemeg/cpstrnew
        end;
   inherited HandleEvent(Event);
 end;

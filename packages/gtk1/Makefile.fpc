@@ -4,10 +4,35 @@
 
 [package]
 name=gtk1
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.5.1
+
+[require]
+libc=y
+packages=opengl
+
+[target]
+units=glib gmodule gdk gtk gdkpixbuf
+units_beos=gtkglarea
+units_freebsd=gtkglarea
+units_darwin=gtkglarea
+units_iphonesim=gtkglarea
+units_solaris=gtkglarea
+units_netbsd=gtkglarea
+units_openbsd=gtkglarea
+units_linux=gtkglarea
+units_win32=gtkglarea
+units_win64=gtkglarea
+exampledirs=examples
+
+[compiler]
+sourcedir=src/glib src/gdk src/gtk src/gtkgl
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y

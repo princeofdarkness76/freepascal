@@ -22,9 +22,13 @@
  *
  * CertExtensions.h -- X.509 Cert Extensions as C structs
  }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -79,11 +83,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -102,29 +109,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -134,13 +156,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -152,12 +178,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -171,13 +203,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -295,7 +334,10 @@ type
 		typeId: CSSM_OID;
 		value: CSSM_DATA;		// unparsed, BER-encoded
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
   CE_GeneralNamePtr = ^CE_GeneralName;
@@ -304,15 +346,22 @@ type
 		berEncoded: CSSM_BOOL;
 		name: CSSM_DATA;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
   CE_GeneralNamesPtr = ^CE_GeneralNames;
 	CE_GeneralNames = record
 		numNames: UInt32;
 		generalName: CE_GeneralNamePtr;
+<<<<<<< HEAD
 	end;
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+	end;	
+>>>>>>> graemeg/cpstrnew
 
 {
  * id-ce-authorityKeyIdentifier OBJECT IDENTIFIER ::=  ( id-ce 35 )
@@ -336,7 +385,10 @@ type
 		serialNumberPresent: CSSM_BOOL;
 		serialNumber: CSSM_DATA;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * id-ce-subjectKeyIdentifier OBJECT IDENTIFIER ::=  ( id-ce 14 )
@@ -346,7 +398,10 @@ type
  }
 type
 	CE_SubjectKeyID = CSSM_DATA;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * id-ce-keyUsage OBJECT IDENTIFIER ::=  ( id-ce 15 )
@@ -367,7 +422,10 @@ type
  }
 type
 	CE_KeyUsage = UInt16;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	CE_KU_DigitalSignature = $8000;
@@ -408,7 +466,10 @@ const
  }
 type
 	CE_CrlReason = UInt32;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	CE_CR_Unspecified = 0;
@@ -468,8 +529,12 @@ type
 		cA: CSSM_BOOL;
 		pathLenConstraintPresent: CSSM_BOOL;
 		pathLenConstraint: UInt32;
+<<<<<<< HEAD
 	end;
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+	end;	
+>>>>>>> graemeg/cpstrnew
 
 {
  * id-ce-certificatePolicies OBJECT IDENTIFIER ::=  ( id-ce 32 )
@@ -529,7 +594,10 @@ type
 		qualifier: CSSM_DATA;					// CSSMOID_QT_CPS: IA5String contents
 											// CSSMOID_QT_UNOTICE : Sequence contents
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
   CE_PolicyInformationPtr = ^CE_PolicyInformation;
@@ -538,7 +606,10 @@ type
 		numPolicyQualifiers: UInt32;	// size of *policyQualifiers;
 		policyQualifiers: CE_PolicyQualifierInfoPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
   CE_CertPoliciesPtr = ^CE_CertPolicies;
@@ -546,7 +617,10 @@ type
 		numPolicies: UInt32;			// size of *policies;
 		policies: CE_PolicyInformationPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * netscape-cert-type, a bit string.
@@ -557,7 +631,10 @@ type
  }
 type
 	CE_NetscapeCertType = UInt16;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * CRLDistributionPoints.
@@ -601,7 +678,10 @@ type
  }
 type
 	CE_CrlDistReasonFlags = UInt8;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	CE_CD_Unspecified = $80;
@@ -630,14 +710,20 @@ type
       0: (fullName: CE_GeneralNamesPtr);
       1: (rdn: CSSM_X509_RDN_PTR);
   end;
+<<<<<<< HEAD
   (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 	CE_DistributionPointNamePtr = ^CE_DistributionPointName;
 	CE_DistributionPointName = record
 		nameType: CE_CrlDistributionPointNameType;
 		dpn: __embedded_dpn;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * The top-level CRLDistributionPoint.
@@ -651,7 +737,10 @@ type
 		reasons: CE_CrlDistReasonFlags;
 		crlIssuer: CE_GeneralNamesPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
 	CE_CRLDistPointsSyntaxPtr = ^CE_CRLDistPointsSyntax;
@@ -659,7 +748,10 @@ type
 		numDistPoints: UInt32;
 		distPoints: CE_CRLDistributionPointPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 { 
  * Authority Information Access and Subject Information Access.
@@ -680,7 +772,10 @@ type
 		accessMethod: CSSM_OID;
 		accessLocation: CE_GeneralName;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
 	CE_AuthorityInfoAccessPtr = ^CE_AuthorityInfoAccess;
@@ -688,7 +783,10 @@ type
 		numAccessDescriptions: UInt32;
 		accessDescriptions: CE_AccessDescriptionPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * Qualified Certificate Statement support, per RFC 3739.
@@ -700,7 +798,10 @@ type
 type
   CE_NameRegistrationAuthoritiesPtr = ^CE_NameRegistrationAuthorities;
 	CE_NameRegistrationAuthorities = CE_GeneralNames;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * SemanticsInformation, identified as the qcType field
@@ -713,7 +814,10 @@ type
 		semanticsIdentifier: CSSM_OIDPtr;	
 		nameRegistrationAuthorities: CE_NameRegistrationAuthoritiesPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 { 
  * One Qualified Certificate Statement. 
@@ -731,7 +835,10 @@ type
 		semanticsInfo: CE_SemanticsInformationPtr;
 		otherInfo: CSSM_DATAPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * The top-level Qualified Certificate Statements extension.
@@ -742,7 +849,10 @@ type
 		numQCStatements: UInt32;
 		qcStatements: CE_QC_StatementPtr;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {** CRL extensions **}
 
@@ -789,6 +899,7 @@ type
 		indirectCrlPresent: CSSM_BOOL;
 		indirectCrl: CSSM_BOOL;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 {
@@ -892,6 +1003,8 @@ type
 type
   CE_InhibitAnyPolicy = UInt32;
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * An enumerated list identifying one of the above per-extension
@@ -917,10 +1030,13 @@ const
 	DT_AuthorityInfoAccess = 14;		// CE_AuthorityInfoAccess
 	DT_Other = 15;					// unknown, raw data as a CSSM_DATA
 	DT_QC_Statements = 16;			// CE_QC_Statements
+<<<<<<< HEAD
 	DT_NameConstraints = 17;			// CE_NameConstraints
 	DT_PolicyMappings = 18;			// CE_PolicyMappings
 	DT_PolicyConstraints = 19;		// CE_PolicyConstraints
 	DT_InhibitAnyPolicy = 20;			// CE_InhibitAnyPolicy
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -946,6 +1062,7 @@ type
       DT_IssuingDistributionPoint: (issuingDistPoint: CE_IssuingDistributionPoint);
       DT_AuthorityInfoAccess: (authorityInfoAccess: CE_AuthorityInfoAccess);
       DT_QC_Statements: (qualifiedCertStatements: CE_QC_Statements);
+<<<<<<< HEAD
       DT_NameConstraints: (nameConstraints: CE_NameConstraints);
       DT_PolicyMappings: (policyMappings: CE_PolicyMappings);
       DT_PolicyConstraints: (policyConstraints: CE_PolicyConstraints);
@@ -953,6 +1070,10 @@ type
       65535: (rawData: CSSM_DATA); // unknown, not decoded
   end;
   (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+      65535: (rawData: CSSM_DATA); // unknown, not decoded
+  end;
+>>>>>>> graemeg/cpstrnew
 
 
 type
@@ -962,7 +1083,10 @@ type
 		extension: CE_Data;
 		critical: CSSM_BOOL;
 	end;
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

@@ -276,6 +276,7 @@ constructor TPQConnection.Create(AOwner : TComponent);
 
 begin
   inherited;
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqSupportParams, sqSupportEmptyDatabaseName, sqEscapeRepeat, sqEscapeSlash, sqImplicitTransaction,sqSupportReturning];
   FieldNameQuoteChars:=DoubleQuotes;
   VerboseErrors:=True;
@@ -288,6 +289,10 @@ begin
   Connected:=False;
   FreeAndNil(FConnectionPool);
   inherited destroy;
+=======
+  FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat] + [sqEscapeSlash];
+  FieldNameQuoteChars:=DoubleQuotes;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TPQConnection.CreateDB;
@@ -826,17 +831,40 @@ begin
 end;
 
 procedure TPQConnection.PrepareStatement(cursor: TSQLCursor;ATransaction : TSQLTransaction;buf : string; AParams : TParams);
+<<<<<<< HEAD
                           
 const TypeStrings : array[TFieldType] of string =
     (
       'Unknown',   // ftUnknown
       'text',      // ftString
       'smallint',  // ftSmallint
+=======
+{
+  TFieldType = (ftUnknown, ftString, ftSmallint, ftInteger, ftWord,
+      ftBoolean, ftFloat, ftCurrency, ftBCD, ftDate,  ftTime, ftDateTime,
+          ftBytes, ftVarBytes, ftAutoInc, ftBlob, ftMemo, ftGraphic, ftFmtMemo,
+              ftParadoxOle, ftDBaseOle, ftTypedBinary, ftCursor, ftFixedChar,
+                  ftWideString, ftLargeint, ftADT, ftArray, ftReference,
+                      ftDataSet, ftOraBlob, ftOraClob, ftVariant, ftInterface,
+                          ftIDispatch, ftGuid, ftTimeStamp, ftFMTBcd, ftFixedWideChar, ftWideMemo);
+                          
+                          
+}
+const TypeStrings : array[TFieldType] of string =
+    (
+      'Unknown',   // ftUnknown
+      'text',     // ftString
+      'int',       // ftSmallint
+>>>>>>> graemeg/cpstrnew
       'int',       // ftInteger
       'int',       // ftWord
       'bool',      // ftBoolean
       'float',     // ftFloat
+<<<<<<< HEAD
       'money',     // ftCurrency
+=======
+      'numeric',   // ftCurrency
+>>>>>>> graemeg/cpstrnew
       'numeric',   // ftBCD
       'date',      // ftDate
       'time',      // ftTime
@@ -852,7 +880,11 @@ const TypeStrings : array[TFieldType] of string =
       'Unknown',   // ftDBaseOle
       'Unknown',   // ftTypedBinary
       'Unknown',   // ftCursor
+<<<<<<< HEAD
       'char',      // ftFixedChar
+=======
+      'text',      // ftFixedChar
+>>>>>>> graemeg/cpstrnew
       'text',      // ftWideString
       'bigint',    // ftLargeint
       'Unknown',   // ftADT
@@ -864,9 +896,15 @@ const TypeStrings : array[TFieldType] of string =
       'Unknown',   // ftVariant
       'Unknown',   // ftInterface
       'Unknown',   // ftIDispatch
+<<<<<<< HEAD
       'uuid',      // ftGuid
       'Unknown',   // ftTimeStamp
       'numeric',   // ftFMTBcd
+=======
+      'Unknown',   // ftGuid
+      'Unknown',   // ftTimeStamp
+      'Unknown',   // ftFMTBcd
+>>>>>>> graemeg/cpstrnew
       'Unknown',   // ftFixedWideChar
       'Unknown'    // ftWideMemo
     );
@@ -898,6 +936,7 @@ begin
         s := s + '(';
         for i := 0 to AParams.Count-1 do
           begin
+<<<<<<< HEAD
           P:=AParams[i];
           If (P is TSQLDBParam) then
             PQ:=TSQLDBParam(P)
@@ -924,6 +963,12 @@ begin
             else
               DatabaseErrorFmt(SUnsupportedParameter,[Fieldtypenames[AParams[i].DataType]],self);
             end;
+=======
+          if AParams[i].DataType = ftUnknown then 
+            DatabaseErrorFmt(SUnknownParamFieldType,[AParams[i].Name],self)
+          else 
+            DatabaseErrorFmt(SUnsupportedParameter,[Fieldtypenames[AParams[i].DataType]],self);
+>>>>>>> graemeg/cpstrnew
           end;
         s[length(s)] := ')';
         buf := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
@@ -947,7 +992,11 @@ begin
       FPrepared := True;
       end
     else
+<<<<<<< HEAD
       Statement := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
+=======
+      statement := AParams.ParseSQL(buf,false,sqEscapeSlash in ConnOptions, sqEscapeRepeat in ConnOptions,psPostgreSQL);
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 
@@ -961,12 +1010,20 @@ begin
       begin
       if assigned(tr) and (PQtransactionStatus(tr.PGConn) <> PQTRANS_INERROR) then
         begin
+<<<<<<< HEAD
         res := PQexec(tr.PGConn,pchar('deallocate '+StmtName));
         CheckResultError(res,nil,SErrUnPrepareFailed);
         PQclear(res);
         res:=nil;
         end;
       FPrepared := False;
+=======
+          pqclear(res);
+          DatabaseError(SErrPrepareFailed + ' (PostgreSQL: ' + PQerrorMessage(tr.PGConn) + ')',self)
+        end
+      else
+        pqclear(res);
+>>>>>>> graemeg/cpstrnew
       end;
     end;
 end;
@@ -974,11 +1031,16 @@ end;
 procedure TPQConnection.Execute(cursor: TSQLCursor;atransaction:tSQLtransaction;AParams : TParams);
 
 var ar  : array of pchar;
+<<<<<<< HEAD
     l,i : integer;
+=======
+    l,i   : integer;
+>>>>>>> graemeg/cpstrnew
     s   : string;
     lengths,formats : array of integer;
     ParamNames,
     ParamValues : array of string;
+<<<<<<< HEAD
     cash: int64;
 
     function FormatTimeInterval(Time: TDateTime): string; // supports Time >= '24:00:00'
@@ -987,6 +1049,8 @@ var ar  : array of pchar;
       DecodeTime(Time, hour, minute, second, millisecond);
       Result := Format('%.2d:%.2d:%.2d.%.3d',[Trunc(Time)*24+hour,minute,second,millisecond]);
     end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 begin
   with cursor as TPQCursor do
@@ -998,11 +1062,19 @@ begin
         LogParams(AParams);
       if Assigned(AParams) and (AParams.Count > 0) then
         begin
+<<<<<<< HEAD
         l:=AParams.Count;
         setlength(ar,l);
         setlength(lengths,l);
         setlength(formats,l);
         for i := 0 to AParams.Count -1 do if not AParams[i].IsNull then
+=======
+        l:=Aparams.count;
+        setlength(ar,l);
+        setlength(lengths,l);
+        setlength(formats,l);
+        for i := 0 to AParams.count -1 do if not AParams[i].IsNull then
+>>>>>>> graemeg/cpstrnew
           begin
           case AParams[i].DataType of
             ftDateTime:
@@ -1025,17 +1097,29 @@ begin
               s := AParams[i].AsString;
           end; {case}
           GetMem(ar[i],length(s)+1);
+<<<<<<< HEAD
           StrMove(PChar(ar[i]),PChar(s),Length(S)+1);
           lengths[i]:=Length(s);
           if (AParams[i].DataType in [ftBlob,ftMemo,ftGraphic,ftCurrency]) then
             Formats[i]:=1
+=======
+          StrMove(PChar(ar[i]),Pchar(s),Length(S)+1);
+          lengths[i]:=Length(s);
+          if (AParams[i].DataType in [ftBlob,ftgraphic]) then
+            formats[i]:=1 
+>>>>>>> graemeg/cpstrnew
           else
             Formats[i]:=0;  
           end
         else
           FreeAndNil(ar[i]);
+<<<<<<< HEAD
         res := PQexecPrepared(tr.PGConn,pchar(StmtName),AParams.Count,@Ar[0],@Lengths[0],@Formats[0],1);
         for i := 0 to AParams.Count -1 do
+=======
+        res := PQexecPrepared(tr.PGConn,pchar('prepst'+nr),Aparams.count,@Ar[0],@Lengths[0],@Formats[0],1);
+        for i := 0 to AParams.count -1 do
+>>>>>>> graemeg/cpstrnew
           FreeMem(ar[i]);
         end
       else
@@ -1059,6 +1143,7 @@ begin
         end
       else
         s := Statement;
+<<<<<<< HEAD
       res := PQexec(tr.PGConn,pchar(s));
       if (PQresultStatus(res) in [PGRES_COMMAND_OK]) then
         begin
@@ -1067,6 +1152,15 @@ begin
         end;
       end;
 
+=======
+      res := pqexec(tr.PGConn,pchar(s));
+      if (PQresultStatus(res) in [PGRES_COMMAND_OK,PGRES_TUPLES_OK]) then
+        begin
+          pqclear(res); 
+          res:=nil;
+        end;
+      end;
+>>>>>>> graemeg/cpstrnew
     if assigned(res) and not (PQresultStatus(res) in [PGRES_COMMAND_OK,PGRES_TUPLES_OK]) then
       begin
       // Don't perform the rollback, only make it possible to do a rollback.

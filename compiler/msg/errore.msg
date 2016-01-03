@@ -138,7 +138,11 @@ general_e_exception_raised=01026_E_Compilation raised exception internally
 #
 # Scanner
 #
+<<<<<<< HEAD
 # 02098 is the last used one
+=======
+# 02087 is the last used one
+>>>>>>> graemeg/cpstrnew
 #
 % \section{Scanner messages.}
 % This section lists the messages that the scanner emits. The scanner takes
@@ -374,6 +378,7 @@ scan_w_multiple_main_name_overrides=02086_W_Overriding name of "main" procedure 
 % name will be used.
 scanner_w_illegal_warn_identifier=02087_W_Illegal identifier "$1" for $WARN directive
 % Identifier is not known by a \var{\{\$WARN\}} compiler directive.
+<<<<<<< HEAD
 scanner_e_illegal_alignment_directive=02088_E_Illegal alignment directive
 % The alignment directive is not valid. Either the alignment type is not known or the alignment
 % value is not a power of two.
@@ -409,11 +414,17 @@ scan_w_heapmax_lessthan_heapmin=02097_W_The specified HeapMax value is smaller t
 scan_e_illegal_hugepointernormalization=02098_E_Illegal argument for HUGEPOINTERNORMALIZATION
 % The only allowed values for HUGEPOINTERNORMALIZATION are BORLANDC, MICROSOFTC
 % and WATCOMC.
+=======
+>>>>>>> graemeg/cpstrnew
 % \end{description}
 #
 # Parser
 #
+<<<<<<< HEAD
 # 03343 is the last used one
+=======
+# 03304 is the last used one
+>>>>>>> graemeg/cpstrnew
 #
 % \section{Parser messages}
 % This section lists all parser messages. The parser takes care of the
@@ -575,7 +586,11 @@ parser_e_only_class_members_via_class_ref=03053_E_Only class methods, class prop
 % \end{verbatim}
 % \var{Free} is not a class method and hence cannot be called with a class
 % reference.
+<<<<<<< HEAD
 parser_e_only_class_members=03054_E_Only class methods, class properties and class variables can be accessed in class methods
+=======
+parser_e_only_class_members=03054_E_Only class class methods, class properties and class variables can be accessed in class methods
+>>>>>>> graemeg/cpstrnew
 % This is related to the previous error. You cannot call a method of an object
 % from inside a class method. The following code would produce this error:
 % \begin{verbatim}
@@ -959,6 +974,7 @@ parser_e_no_con_des_in_interfaces=03171_E_Con- and destructors are not allowed i
 % Constructor and destructor declarations are not allowed in interfaces.
 % In the most cases method \var{QueryInterface} of \var{IUnknown} can
 % be used to create a new interface.
+<<<<<<< HEAD
 parser_e_no_access_specifier_in_interfaces=03172_E_Access specifiers cannot be used in INTERFACEs and OBJCPROTOCOLs
 % The access specifiers \var{public}, \var{private}, \var{protected} and
 % \var{published} cannot be used in interfaces, Objective-C protocols and categories because all methods
@@ -967,6 +983,16 @@ parser_e_no_vars_in_interfaces=03173_E_An interface, helper or Objective-C proto
 % Declarations of fields are not allowed in interfaces, helpers and Objective-C protocols and categories.
 % An interface/helper/protocol/category can contain only methods and properties with method read/write specifiers.
 parser_e_no_local_proc_external=03174_E_Cannot declare local procedure as EXTERNAL
+=======
+parser_e_no_access_specifier_in_interfaces=03172_E_Access specifiers can't be used in INTERFACEs and OBJCPROTOCOLs
+% The access specifiers \var{public}, \var{private}, \var{protected} and
+% \var{published} can't be used in interfaces, Objective-C protocols and categories because all methods
+% of an interface/protocol/category must be public.
+parser_e_no_vars_in_interfaces=03173_E_An interface or Objective-C protocol or category cannot contain fields
+% Declarations of fields are not allowed in interfaces and Objective-C protocols and categories.
+% An interface/protocol/category can contain only methods and properties with method read/write specifiers.
+parser_e_no_local_proc_external=03174_E_Can't declare local procedure as EXTERNAL
+>>>>>>> graemeg/cpstrnew
 % Declaring local procedures as external is not possible. Local procedures
 % get hidden parameters that will make the chance of errors very high.
 parser_w_skipped_fields_before=03175_W_Some fields coming before "$1" were not initialized
@@ -1039,7 +1065,11 @@ parser_e_procedure_or_function_expected=03194_E_Procedure or Function expected
 parser_e_illegal_calling_convention=03195_W_Calling convention directive ignored: "$1"
 % Some calling conventions are supported only by certain CPUs. I.e. most non-i386 ports support
 % only the standard ABI calling convention of the CPU.
+<<<<<<< HEAD
 parser_e_no_object_reintroduce=03196_E_REINTRODUCE cannot be used in objects
+=======
+parser_e_no_object_reintroduce=03196_E_REINTRODUCE can't be used in objects
+>>>>>>> graemeg/cpstrnew
 % \var{reintroduce} is not supported for objects, Objective-C classes and Objective-C protocols.
 parser_e_paraloc_only_one_para=03197_E_Each argument must have its own location
 % If locations for arguments are specified explicitly as it is required by
@@ -1123,8 +1153,13 @@ parser_e_protected_or_private_expected=03214_E_Protected or private expected
 % \var{strict} can be only used together with \var{protected} or \var{private}.
 parser_e_illegal_slice=03215_E_SLICE cannot be used outside of parameter list
 % \var{slice} can be used only for arguments accepting an open array parameter.
+<<<<<<< HEAD
 parser_e_dispinterface_cant_have_parent=03216_E_A DISPINTERFACE cannot have a parent class
 % A DISPINTERFACE is a special type of interface which cannot have a parent class. Dispinterface always derive from IDispatch type.
+=======
+parser_e_dispinterface_cant_have_parent=03216_E_A DISPINTERFACE can't have a parent class
+% A DISPINTERFACE is a special type of interface which can't have a parent class. Dispinterface always derive from IDispatch type.
+>>>>>>> graemeg/cpstrnew
 parser_e_dispinterface_needs_a_guid=03217_E_A DISPINTERFACE needs a guid
 % A DISPINTERFACE always needs an interface identification (a GUID).
 parser_w_overridden_methods_not_same_ret=03218_W_Overridden methods must have a related return type. This code may crash, it depends on a Delphi parser bug ("$2" is overridden by "$1" which has another return type)
@@ -1155,7 +1190,11 @@ parser_e_packed_element_no_loop=03223_E_Bit packed array elements and record fie
 parser_e_type_var_const_only_in_records_and_classes=03224_E_VAR, TYPE and CONST are allowed only in records, objects and classes
 % The usage of VAR, TYPE and CONST to declare new types inside an object is allowed only inside
 % records, objects and classes.
+<<<<<<< HEAD
 parser_e_cant_create_generics_of_this_type=03225_E_This type cannot be a generic
+=======
+parser_e_cant_create_generics_of_this_type=03225_E_This type can't be a generic
+>>>>>>> graemeg/cpstrnew
 % Only Classes, Objects, Interfaces and Records are allowed to be used as generic.
 parser_w_no_lineinfo_use_switch=03226_W_Don't load LINEINFO unit manually, Use the -gl compiler switch instead
 % Do not use the \file{lineinfo} unit directly, Use the \var{-gl} switch which
@@ -1293,6 +1332,7 @@ parser_e_no_objc_published=03271_E_Objective-C classes cannot have published sec
 parser_f_need_objc=03272_F_This module requires an Objective-C mode switch to be compiled
 % This error indicates the use of Objective-C language features without an Objective-C mode switch
 % active. Enable one via the -M command line switch, or the {\$modeswitch x} directive.
+<<<<<<< HEAD
 parser_e_must_use_override=03273_E_Inherited methods can only be overridden in Objective-C and Java, add "override" (inherited method defined in $1)
 parser_h_should_use_override=03274_H_Inherited methods can only be overridden in Objective-C and Java, add "override" (inherited method defined in $1).
 % It is not possible to \var{reintroduce} methods in Objective-C or Java like in Object Pascal. Methods with the same
@@ -1303,10 +1343,23 @@ parser_h_should_use_override=03274_H_Inherited methods can only be overridden in
 % which makes it hard for automated header conversion tools to include it everywhere.
 % The type in which the inherited method is defined is explicitly mentioned, because this may either
 % be an objcclass or an objccategory in case of Objective-C.
+=======
+parser_e_must_use_override_objc=03273_E_Inherited methods can only be overridden in Objective-C, add "override" (inherited method defined in $1)
+parser_h_should_use_override_objc=03274_H_Inherited methods can only be overridden in Objective-C, add "override" (inherited method defined in $1).
+% It is not possible to \var{reintroduce} methods in Objective-C like in Object Pascal. Methods with the same
+% name always map to the same virtual method entry. In order to make this clear in the source code,
+% the compiler always requires the \var{override} directive to be specified when implementing overriding
+% Objective-C methods in Pascal. If the implementation is external, this rule is relaxed because Objective-C
+% does not have any \var{override}-style keyword (since it's the default and only behaviour in that language),
+% which makes it hard for automated header conversion tools to include it everywhere.
+% The type in which the inherited method is defined is explicitly mentioned, because this may either
+% be an objcclass or an objccategory.
+>>>>>>> graemeg/cpstrnew
 parser_e_objc_message_name_changed=03275_E_Message name "$1" in inherited class is different from message name "$2" in current class.
 % An overriding Objective-C method cannot have a different message name than an inherited method. The reason
 % is that these message names uniquely define the message to the Objective-C runtime, which means that
 % giving them a different message name breaks the ``override'' semantics.
+<<<<<<< HEAD
 parser_e_unique_unsupported=03276_E_It is not yet possible to make unique copies of Objective-C or Java types
 % Duplicating an Objective-C or Java type using \var{type x = type y;} is not yet supported. You may be able to
 % obtain the desired effect using \var{type x = objcclass(y) end;} resp.{} \var{type x = class(y) end;} instead.
@@ -1316,6 +1369,14 @@ parser_e_no_category_as_types=03277_E_Objective-C categories and Object Pascal c
 % methods to the scope of an existing class, but does not define a type by
 % itself. An exception of this rule is when inheriting an Object Pascal class
 % helper from another class helper.
+=======
+parser_e_no_objc_unique=03276_E_It is not yet possible to make unique copies of Objective-C types
+% Duplicating an Objective-C type using \var{type x = type y;} is not yet supported. You may be able to
+% obtain the desired effect using \var{type x = objcclass(y) end;} instead.
+parser_e_no_category_as_types=03277_E_Objective-C categories cannot be used as types
+% It is not possible to declare a variable as an instance of an Objective-C category. A
+% category adds methods to the scope of an existing class, but does not define a type by itself.
+>>>>>>> graemeg/cpstrnew
 parser_e_no_category_override=03278_E_Categories do not override, but replace methods. Use "reintroduce" instead.
 parser_e_must_use_reintroduce_objc=03279_E_Replaced methods can only be reintroduced in Objective-C, add "reintroduce" (replaced method defined in $1).
 parser_h_should_use_reintroduce_objc=03280_H_Replaced methods can only be reintroduced in Objective-C, add "reintroduce" (replaced method defined in $1).
@@ -1353,6 +1414,7 @@ parser_e_only_one_class_constructor_allowed=03288_E_Only one class constructor c
 % You are trying to declare more than one class constructor but only one class constructor can be declared.
 parser_e_only_one_class_destructor_allowed=03289_E_Only one class destructor can be declared in class: "$1"
 % You are trying to declare more than one class destructor but only one class destructor can be declared.
+<<<<<<< HEAD
 parser_e_no_paras_for_class_constructor=03290_E_Class constructors cannot have parameters
 % You are declaring a class constructor with a parameter list. Class constructor methods
 % cannot have parameters.
@@ -1367,6 +1429,17 @@ parser_e_widestring_to_ansi_compile_time=03293_E_Unicodechar/string constants ca
 % constant expressions that have to be converted into an ansistring or shortstring
 % at compile time, for example inside typed constants. The reason is that the
 % compiler cannot know what the actual ansi encoding will be at run time.
+=======
+parser_e_no_paras_for_class_constructor=03290_E_Class constructors can't have parameters
+% You are declaring a class constructor with a parameter list. Class constructor methods
+% cannot have parameters.
+parser_e_no_paras_for_class_destructor=03291_E_Class destructors can't have parameters
+% You are declaring a class destructor with a parameter list. Class destructor methods
+% cannot have parameters.
+parser_f_modeswitch_objc_required=03293_F_This construct requires the \{\$modeswitch objectivec1\} mode switch to be active
+% Objective-Pascal constructs are not supported when \{\$modeswitch ObjectiveC1\}
+% is not active.
+>>>>>>> graemeg/cpstrnew
 parser_e_objc_enumerator_2_0=03294_E_For-in Objective-Pascal loops require \{\$modeswitch ObjectiveC2\} to be active
 % Objective-C ``fast enumeration'' support was added in Objective-C 2.0, and
 % hence the appropriate modeswitch has to be activated to expose this feature.
@@ -1389,9 +1462,15 @@ parser_f_no_generic_inside_generic=03297_F_Declaration of generic class inside a
 % (guarded by internal error 200511173 in tscannerfile.startrecordtokens).
 % Since generics are implemented by recording tokens, it is not possible to
 % have declaration of generic class inside another generic class.
+<<<<<<< HEAD
 parser_e_forward_intf_declaration_must_be_resolved=03298_E_Forward declaration "$1" must be resolved before a class can conform to or implement it
 % An Objective-C protocol or Java Interface must be fully defined before classes can conform to it.
 % This error occurs in the following situation (example for Objective-C, but the same goes for Java interfaces):
+=======
+parser_e_forward_protocol_declaration_must_be_resolved=03298_E_Forward declaration of objcprotocol "$1" must be resolved before an objcclass can conform to it
+% An objcprotocol must be fully defined before classes can conform to it.
+% This error occurs in the following situation:
+>>>>>>> graemeg/cpstrnew
 % \begin{verbatim}
 %  Type MyProtocol = objcprotoocl;
 %       ChildClass = Class(NSObject,MyProtocol)
@@ -1401,6 +1480,7 @@ parser_e_forward_intf_declaration_must_be_resolved=03298_E_Forward declaration "
 % where \var{MyProtocol} is declared but not defined.
 parser_e_no_record_published=03299_E_Record types cannot have published sections
 % Published sections can be used only inside classes.
+<<<<<<< HEAD
 parser_e_no_destructor_in_records=03300_E_Destructors are not allowed in records or helpers
 % Destructor declarations are not allowed in records or helpers.
 parser_e_class_methods_only_static_in_records=03301_E_Class methods must be static in records
@@ -1414,10 +1494,26 @@ parser_e_at_least_one_argument_must_be_of_type=03303_E_Either the result or at l
 parser_e_cant_use_type_parameters_here=03304_E_Type parameters may require initialization/finalization - cannot be used in variant records
 % Type parameters may be specialized with types which (e.g. \var{ansistring}) need initialization/finalization
 % code which is implicitly generated by the compiler.
+=======
+parser_e_no_destructor_in_records=03300_E_Destructors aren't allowed in records
+% Destructor declarations aren't allowed in records.
+parser_e_class_methods_only_static_in_records=03301_E_Class methods must be static in records
+% Class methods declarations aren't allowed in records without static modifier.
+% Records have no inheritance and therefore non static class methods have no sence for them.
+parser_e_no_constructor_in_records=03302_E_Constructors aren't allowed in records
+% Constructor declarations aren't allowed in records.
+parser_e_at_least_one_argument_must_be_of_type=03303_E_Either the result or at least one parameter must be of type "$1"
+% It is required that either the result of the routine or at least one of its parameters be of the specified type.
+% For example class operators either take an instance of the structured type in which they are defined, or they return one.
+parser_e_cant_use_type_parameters_here=03304_E_Type parameters may require initialization/finalization - can't be used in variant records
+% Type parameters may be specialized with types which (e.g. \var{ansistring}) need initialization/finalization
+% code which is implicitly generated by the compiler. 
+>>>>>>> graemeg/cpstrnew
 parser_e_externals_no_section=03305_E_Variables being declared as external cannot be in a custom section
 % A section directive is not valid for variables being declared as external.
 parser_e_section_no_locals=03306_E_Non-static and non-global variables cannot have a section directive
 % A variable placed in a custom section is always statically allocated so it must be either a static or global variable.
+<<<<<<< HEAD
 parser_e_not_allowed_in_helper=03307_E_"$1" is not allowed in helper types
 % Some directives and specifiers like "virtual", "dynamic", "override" are not
 % allowed inside helper types in mode ObjFPC (they are ignored in mode Delphi),
@@ -1551,6 +1647,19 @@ parser_e_genfuncs_cannot_be_virtual=03343_E_Generic methods can not be virtual
 # Type Checking
 #
 # 04123 is the last used one
+=======
+parser_e_invalid_codepage=03307_E_Invalid codepage
+% When declaring a string with a given codepage, the range of valid codepages values is limited
+parser_e_widestring_to_ansi_compile_time=03308_E_Unicodechar/string constants cannot be converted to ansi/shortstring at compile-time
+% It is not possible to use unicodechar and unicodestring constants in
+% constant expressions that have to be converted into an ansistring or shortstring
+% at compile time, for example inside typed constants. The reason is that the
+% compiler cannot know what the actual ansi encoding will be at run time.
+% \end{description}
+# Type Checking
+#
+# 04095 is the last used one
+>>>>>>> graemeg/cpstrnew
 #
 % \section{Type checking errors}
 % This section lists all errors that can occur when type checking is
@@ -1858,13 +1967,22 @@ type_w_zero_to_nil=04090_W_Converting 0 to NIL
 % Use NIL rather than 0 when initialising a pointer.
 type_e_protocol_type_expected=04091_E_Objective-C protocol type expected, but got "$1"
 % The compiler expected a protocol type name, but found something else.
+<<<<<<< HEAD
 type_e_objc_type_unsupported=04092_E_The type "$1" is not supported for interaction with the Objective-C and the blocks runtime.
 % Objective-C and Blocks make extensive use of run time type information (RTTI). This format
+=======
+type_e_objc_type_unsupported=04092_E_The type "$1" is not supported for interaction with the Objective-C runtime.
+% Objective-C makes extensive use of run time type information (RTTI). This format
+>>>>>>> graemeg/cpstrnew
 % is defined by the maintainers of the run time and can therefore not be adapted
 % to all possible Object Pascal types. In particular, types that depend on
 % reference counting by the compiler (such as ansistrings and certain kinds of
 % interfaces) cannot be used as fields of Objective-C classes, cannot be
+<<<<<<< HEAD
 % directly passed to Objective-C methods or Blocks, and cannot be encoded using \var{objc\_encode}.
+=======
+% directly passed to Objective-C methods, and cannot be encoded using \var{objc\_encode}.
+>>>>>>> graemeg/cpstrnew
 type_e_class_or_objcclass_type_expected=04093_E_Class or objcclass type expected, but got "$1"
 % It is only possible to create class reference types of \var{class} and \var{objcclass}
 type_e_objcclass_type_expected=04094_E_Objcclass type expected
@@ -1892,7 +2010,11 @@ type_w_procvar_univ_conflicting_para=04095_W_Coerced univ parameter type in proc
 % \end{verbatim}
 % This code may however crash on platforms that pass integers in registers and
 % floating point values on the stack, because then the stack will be unbalanced.
+<<<<<<< HEAD
 % Note that this warning will not flag all potentially dangerous situations.
+=======
+% Note that this warning will not flagg all potentially dangerous situations.
+>>>>>>> graemeg/cpstrnew
 % when \var{test} returns.
 type_e_generics_cannot_reference_itself=04096_E_Type parameters of specializations of generics cannot reference the currently specialized type
 % Recursive specializations of generics like \var{Type MyType = specialize MyGeneric<MyType>;} are not possible.
@@ -1900,6 +2022,7 @@ type_e_type_parameters_are_not_allowed_here=04097_E_Type parameters are not allo
 % Type parameters are only allowed for methods of generic classes, records or objects
 type_e_generic_declaration_does_not_match=04098_E_Generic declaration of "$1" differs from previous declaration
 % Generic declaration does not match the previous declaration
+<<<<<<< HEAD
 type_e_helper_type_expected=04099_E_Helper type expected
 % The compiler expected a \var{class helper} type.
 type_e_record_type_expected=04100_E_Record type expected
@@ -1983,11 +2106,18 @@ type_w_instance_abstract_class=04122_W_Creating an instance of abstract class "$
 type_e_function_reference_kind=04123_E_Subroutine references cannot be declared as "of object" or "is nested", they can always refer to any kind of subroutine
 % Subroutine references can refer to any kind of subroutine and hence do not
 % require specialisation for methods or nested subroutines.
+=======
+%
+>>>>>>> graemeg/cpstrnew
 % \end{description}
 #
 # Symtable
 #
+<<<<<<< HEAD
 # 05095 is the last used one
+=======
+# 05080 is the last used one
+>>>>>>> graemeg/cpstrnew
 #
 % \section{Symbol handling}
 % This section lists all the messages that concern the handling of symbols.
@@ -2168,8 +2298,13 @@ sym_w_deprecated_symbol_with_msg=05066_W_Symbol "$1" is deprecated: "$2"
 % be available in newer versions of the unit / library. Use of this symbol
 % should be avoided as much as possible.
 sym_e_no_enumerator=05067_E_Cannot find an enumerator for the type "$1"
+<<<<<<< HEAD
 % This means that compiler cannot find an appropriate enumerator to use in the for-in loop.
 % To create an enumerator you need to define an operator enumerator or add a public or published
+=======
+% This means that compiler cannot find an apropriate enumerator to use in the for-in loop.
+% To create an enumerator you need to defind an operator enumerator or add a public or published
+>>>>>>> graemeg/cpstrnew
 % GetEnumerator method to the class or object definition.
 sym_e_no_enumerator_move=05068_E_Cannot find a "MoveNext" method in enumerator "$1"
 % This means that compiler cannot find a public MoveNext method with the Boolean return type in
@@ -2218,14 +2353,20 @@ sym_w_experimental_unit=05079_W_Unit "$1" is experimental
 % declared as \var{experimental} is used. Experimental units
 % might disappear or change semantics in future versions. Usage of this unit
 % should be avoided as much as possible.
+<<<<<<< HEAD
 sym_e_formal_class_not_resolved=05080_E_No full definition of the formally declared class "$1" is in scope. Add the unit containing its full definition to the uses clause.
 % Objecive-C and Java classes can be imported formally, without using the unit in which it is fully declared.
+=======
+sym_e_objc_formal_class_not_resolved=05080_E_No complete definition of the formally declared objcclass "$1" is in scope
+% Objecive-C classes can be imported formally, without using the the unit in which it is fully declared.
+>>>>>>> graemeg/cpstrnew
 % This enables making forward references to such classes and breaking circular dependencies amongst units.
 % However, as soon as you wish to actually do something with an entity of this class type (such as
 % access one of its fields, send a message to it, or use it to inherit from), the compiler requires the full definition
 % of the class to be in scope.
 sym_e_interprocgoto_into_init_final_code_not_allowed=05081_E_Gotos into initialization or finalization blocks of units are not allowed
 % Gotos into initialization or finalization blockse of units are not allowed.
+<<<<<<< HEAD
 sym_e_external_class_name_mismatch1=05082_E_Invalid external name "$1" for formal class "$2"
 sym_e_external_class_name_mismatch2=05083_E_Complete class definition with external name "$1" here
 % When a class is declared using a formal external definition, the actual external
@@ -2296,6 +2437,14 @@ sym_w_duplicate_id=05095_W_Duplicate identifier "$1"
 % same scope as the current identifier. This is a warning instead of an error,
 % because while this hides the identifier from the category, there are often
 % many unused categories in scope.
+=======
+sym_e_external_class_name_mismatch1=05082=E_Invalid external name "$1" for formal class "$2"
+sym_e_external_class_name_mismatch2=05083=E_Complete class definition with external name "$1" here
+% When a class is declared using a formal external definition, the actual external
+% definition (if any) must specify the same external name as the formal definition
+% (since both definitions refer to the same actual class type).
+%
+>>>>>>> graemeg/cpstrnew
 % \end{description}
 #
 # Codegenerator
@@ -2440,6 +2589,7 @@ cg_e_labels_cannot_defined_outside_declaration_scope=06052_E_Label must be defin
 cg_e_goto_across_procedures_with_exceptions_not_allowed=06053_E_Leaving procedures containing explicit or implicit exceptions frames using goto is not allowed
 % Non-local gotos might not be used to leave procedures using exceptions either implicitly or explicitly. Procedures
 % which use automated types like ansistrings or class constructurs are affected by this too.
+<<<<<<< HEAD
 cg_e_mod_only_defined_for_pos_quotient=06054_E_In ISO mode, the mod operator is defined only for positive quotient
 % In ISO pascal, only positive values are allowed for the quotient: \var{n mod m} is only valid if \var{m>0}.
 cg_d_autoinlining=06055_DL_Auto inlining: $1
@@ -2452,12 +2602,18 @@ cg_f_max_units_reached=06057_F_Maximum number of units ($1) reached for the curr
 % Depending of target architecture, the number of units is limited. This limit
 % has been reached. A unit counts only if it contains initialization or finalization count.
 %
+=======
+>>>>>>> graemeg/cpstrnew
 % \end{description}
 # EndOfTeX
 #
 # Assembler reader
 #
+<<<<<<< HEAD
 # 07128 is the last used one
+=======
+# 07110 is the last used one
+>>>>>>> graemeg/cpstrnew
 #
 asmr_d_start_reading=07000_DL_Starting $1 styled assembler parsing
 % This informs you that an assembler block is being parsed
@@ -2709,6 +2865,7 @@ asmr_e_mixing_regtypes=07108_E_All registers in a register set must be of the sa
 asmr_e_empty_regset=07109_E_A register set cannot be empty
 % Instructions on the ARM architecture that take a register set as argument require that such a set
 % contains at least one register.
+<<<<<<< HEAD
 asmr_w_useless_got_for_local=07110_W_@GOTPCREL is useless and potentially dangerous for local symbols
 % The use of @GOTPCREL supposes an extra indirection that is
 % not present if the symbol is local, which might lead to wrong assembler code
@@ -2768,6 +2925,12 @@ asmr_e_const16bit_for_segment=07128_E_Not enough space (16 bits required) for th
 % least 16 bits of space for the segment. This error occurs, if you specify
 % less, for example, if you use 'DB SEG symbol' instead of 'DW SEG symbol'.
 
+=======
+
+asmr_w_useless_got_for_local=07110_W_@GOTPCREL is useless and potentially dangereous for local symbols
+% The use of @GOTPCREL supposes an extra indirection that is
+% not present if the symbol is local, which might lead to wrong asembler code
+>>>>>>> graemeg/cpstrnew
 #
 # Assembler/binary writers
 #
@@ -2920,12 +3083,15 @@ exec_e_cant_open_resource_file=09031_E_Can't open resource file "$1"
 % An error occurred resource file cannot be opened.
 exec_e_cant_write_resource_file=09032_E_Can't write resource file "$1"
 % An error occurred resource file cannot be written.
+<<<<<<< HEAD
 exec_n_backquote_cat_file_not_found=09033_N_File "$1" not found for backquoted cat command
 % The compiler did not find the file that should be expanded into linker parameters
 exec_w_init_file_not_found=09034_W_"$1" not found, this will probably cause a linking failure
 % The compiler adds certain startup code files to the linker only when they are found.
 % If they are not found, they are not added and this might cause a linking failure.
 %
+=======
+>>>>>>> graemeg/cpstrnew
 %\end{description}
 # EndOfTeX
 
@@ -3196,16 +3362,23 @@ unit_u_indirect_crc_changed=10062_U_Indirect interface (objects/classes) CRC cha
 % indirect CRC calculated for the unit (this is the CRC of all classes/objects/interfaces/$\ldots$
 % in the interfaces of units directly or indirectly used by this unit in the interface) has been changed after the
 % implementation has been parsed.
+<<<<<<< HEAD
 unit_u_ppu_invalid_memory_model=10063_U_PPU is compiled for another i8086 memory model
 % This unit file was compiled for a different i8086 memory model and
 % cannot be read.
+=======
+>>>>>>> graemeg/cpstrnew
 % \end{description}
 # EndOfTeX
 
 #
 #  Options
 #
+<<<<<<< HEAD
 # 11057 is the last used one
+=======
+# 11048 is the last used one
+>>>>>>> graemeg/cpstrnew
 #
 option_usage=11000_O_$1 [options] <inputfile> [options]
 # BeginOfTeX
@@ -3334,6 +3507,7 @@ option_debug_external_unsupported=11048_W_Disabling external debug information b
 option_dwarf_smartlink_creation=11049_N_DWARF debug information cannot be used with smart linking with external assembler, disabling static library creation.
 % Smart linking is currently incompatble with DWARF debug information on most
 % platforms, so smart linking is disabled in such cases.
+<<<<<<< HEAD
 option_invalid_macosx_deployment_target=11050_E_Invalid value for MACOSX_DEPLOYMENT_TARGET environment variable: $1
 option_invalid_iphoneos_deployment_target=11051_E_Invalid value for IPHONEOS_DEPLOYMENT_TARGET environment variable: $1
 % On Mac OS X, the MACOSX\_DEPLOYMENT\_TARGET/IPHONEOS\_DEPLOYMENT\_TARGET environment variable can be
@@ -3353,6 +3527,14 @@ option_smart_link_requires_external_linker=11056_W_Smart linking requires extern
 option_com_files_require_tiny_model=11057_E_Creating .COM files is not supported in the current memory model. Only the tiny memory model supports making .COM files.
 
 
+=======
+option_ignored_target=11047_W_Option "$1" is ignored for the current target platform.
+% Not all options are supported or implemented for all target platforms. This message informs you that a chosen
+% option is ignored for the currently selected target platform.
+option_debug_external_unsupported=11048_W_Disabling external debug information because it is unsupported for the selected target/debug format combination.
+% Not all debug formats can be stored in an external file on all platforms. In particular, on
+% Mac OS X only DWARF debug information can be stored externally.
+>>>>>>> graemeg/cpstrnew
 %\end{description}
 # EndOfTeX
 
@@ -3438,7 +3620,11 @@ wpo_cant_create_feedback_file=12019_E_Cannot create specified whole program opti
 #
 option_logo=11023_[
 Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] for $FPCCPU
+<<<<<<< HEAD
 Copyright (c) 1993-2015 by Florian Klaempfl and others
+=======
+Copyright (c) 1993-2011 by Florian Klaempfl and others
+>>>>>>> graemeg/cpstrnew
 ]
 
 #
@@ -3497,8 +3683,11 @@ new features, etc.):
 #    3 = 80x86 targets
 #    4 = x86_64
 #    6 = 680x0 targets
+<<<<<<< HEAD
 #    8 = 8086 (16-bit) targets
 #    a = AArch64
+=======
+>>>>>>> graemeg/cpstrnew
 #    A = ARM
 #    e = in extended debug mode only
 #    F = help for the 'fpc' binary (independent of the target compiler)
@@ -3533,9 +3722,12 @@ F*0*_Only options valid for the default or selected platform are listed.
 **2Adefault_Use default assembler
 3*2Aas_Assemble using GNU AS
 3*2Amacho_Mach-O (Darwin, Intel 32 bit) using internal writer
+<<<<<<< HEAD
 8*2Anasm_Assemble using Nasm
 8*2Anasmobj_Assemble using Nasm
 3*2Anasm_Assemble using Nasm
+=======
+>>>>>>> graemeg/cpstrnew
 3*2Anasmcoff_COFF (Go32v2) file using Nasm
 3*2Anasmelf_ELF32 (Linux) file using Nasm
 3*2Anasmwin32_Win32 object file using Nasm
@@ -3571,9 +3763,15 @@ S*2Aas_Assemble using GNU AS
 **2bl_Generate local symbol info
 **1B_Build all modules
 **1C<x>_Code generation options:
+<<<<<<< HEAD
 **2C3_Turn on ieee error checking for constants
 **2Ca<x>_Select ABI; see fpc -i or fpc -ia for possible values
 **2Cb_Generate code for a big-endian variant of the target architecture
+=======
+**2C3<x>_Turn on ieee error checking for constants
+**2Ca<x>_Select ABI, see fpc -i for possible values
+**2Cb_Generate big-endian code
+>>>>>>> graemeg/cpstrnew
 **2Cc<x>_Set default calling convention to <x>
 **2CD_Create also dynamic library (not supported)
 **2Ce_Compilation with emulated floating point opcodes
@@ -3734,7 +3932,10 @@ F*2P<x>_Set target CPU (arm,avr,i386,jvm,m68k,mips,mipsel,powerpc,powerpc64,spar
 **2Sm_Support macros like C (global)
 **2So_Same as -Mtp
 **2Ss_Constructor name must be init (destructor must be done)
+<<<<<<< HEAD
 **2Sv_Support vector processing (use CPU vector extensions if available)
+=======
+>>>>>>> graemeg/cpstrnew
 **2Sx_Enable exception keywords (default in Delphi/ObjFPC modes)
 **2Sy_@<pointer> returns a typed pointer, same as $T+
 **1s_Do not call assembler and linker
@@ -3742,6 +3943,7 @@ F*2P<x>_Set target CPU (arm,avr,i386,jvm,m68k,mips,mipsel,powerpc,powerpc64,spar
 **2st_Generate script to link on target
 **2sr_Skip register allocation phase (use with -alr)
 **1T<x>_Target operating system:
+<<<<<<< HEAD
 3*2Tandroid_Android
 3*2Taros_AROS
 3*2Tbeos_BeOS
@@ -3751,6 +3953,12 @@ F*2P<x>_Set target CPU (arm,avr,i386,jvm,m68k,mips,mipsel,powerpc,powerpc64,spar
 3*2Tfreebsd_FreeBSD
 3*2Tgo32v2_Version 2 of DJ Delorie DOS extender
 3*2Thaiku_Haiku
+=======
+3*2Tdarwin_Darwin/Mac OS X
+3*2Temx_OS/2 via EMX (including EMX/RSX extender)
+3*2Tfreebsd_FreeBSD
+3*2Tgo32v2_Version 2 of DJ Delorie DOS extender
+>>>>>>> graemeg/cpstrnew
 3*2Tiphonesim_ iPhoneSimulator from iOS SDK 3.2+ (older versions: -Tdarwin)
 3*2Tlinux_Linux
 3*2Tnativent_Native NT API (experimental)
@@ -3767,27 +3975,36 @@ F*2P<x>_Set target CPU (arm,avr,i386,jvm,m68k,mips,mipsel,powerpc,powerpc64,spar
 3*2Twin32_Windows 32 Bit
 3*2Twince_Windows CE
 4*2Tdarwin_Darwin/Mac OS X
+<<<<<<< HEAD
 4*2Tfreebsd_FreeBSD
 4*2Tiphonesim_ iPhoneSimulator
 4*2Tlinux_Linux
 4*2Tnetbsd_NetBSD
 4*2Topenbsd_OpenBSD
 4*2Tsolaris_Solaris
+=======
+4*2Tlinux_Linux
+>>>>>>> graemeg/cpstrnew
 4*2Twin64_Win64 (64 bit Windows systems)
 6*2Tamiga_Commodore Amiga
 6*2Tatari_Atari ST/STe/TT
 6*2Tlinux_Linux
 6*2Tpalmos_PalmOS
+<<<<<<< HEAD
 8*2Tmsdos_MS-DOS (and compatible)
 a*2Tdarwin_Darwin/iOS
 A*2Tandroid_Android
 A*2Tdarwin_Darwin/iPhoneOS/iOS
 A*2Tembedded_Embedded
 A*2Tgba_Game Boy Advance
+=======
+A*2Tdarwin_Darwin/iPhoneOS/iOS
+>>>>>>> graemeg/cpstrnew
 A*2Tlinux_Linux
 A*2Tnds_Nintendo DS
 A*2Tsymbian_Symbian
 A*2Twince_Windows CE
+<<<<<<< HEAD
 J*2Tandroid_Android
 J*2Tjava_Java
 m*2Tembedded_Embedded
@@ -3795,16 +4012,21 @@ M*2Tandroid_Android
 M*2Tembedded_Embedded
 M*2Tlinux_Linux
 P*2Taix_AIX
+=======
+>>>>>>> graemeg/cpstrnew
 P*2Tamiga_AmigaOS
 P*2Tdarwin_Darwin/Mac OS X
 P*2Tlinux_Linux
 P*2Tmacos_Mac OS (classic)
 P*2Tmorphos_MorphOS
+<<<<<<< HEAD
 P*2Tnetbsd_NetBSD
 P*2Twii_Wii
 p*2Taix_AIX
 p*2Tdarwin_Darwin/Mac OS X
 p*2Tlinux_Linux
+=======
+>>>>>>> graemeg/cpstrnew
 S*2Tsolaris_Solaris
 S*2Tlinux_Linux
 V*2Tembedded_Embedded
@@ -3852,7 +4074,10 @@ P*2WC_Specify console type application (Classic Mac OS)
 A*2WD_Use DEFFILE to export functions of DLL or EXE (Windows)
 3*2We_Use external resources (Darwin)
 4*2We_Use external resources (Darwin)
+<<<<<<< HEAD
 a*2We_Use external resources (Darwin)
+=======
+>>>>>>> graemeg/cpstrnew
 A*2We_Use external resources (Darwin)
 P*2We_Use external resources (Darwin)
 p*2We_Use external resources (Darwin)

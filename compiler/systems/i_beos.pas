@@ -35,7 +35,11 @@ unit i_beos;
             name         : 'Beos for i386';
             shortname    : 'Beos';
             flags        : [tf_under_development,tf_needs_symbol_size,tf_files_case_sensitive,
+<<<<<<< HEAD
                             tf_smartlink_sections];
+=======
+                            tf_smartlink_sections, tf_smartlink_library];
+>>>>>>> graemeg/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'BEOSUNITS';
             extradefines : 'UNIX;HASUNIX';

@@ -125,10 +125,16 @@ implementation
         cg.a_op_const_reg(current_asmdata.CurrAsmList,OP_SHL,OS_INT,1,indexreg);
 {$else i8086}
         href.scalefactor:=sizeof(aint);
+<<<<<<< HEAD
 {$endif i8086}
 
         if (not (target_info.system in [system_i386_darwin,system_i386_iphonesim])) and
            (cs_create_pic in current_settings.moduleswitches) then
+=======
+        emit_ref(A_JMP,S_NO,href);
+        { generate jump table }
+        if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> graemeg/cpstrnew
           begin
             labeltyp:=aitconst_gotoff_symbol;
             jumpreg:=cg.getintregister(current_asmdata.CurrAsmList,OS_ADDR);
@@ -705,6 +711,7 @@ implementation
                 end
                else
                 begin
+<<<<<<< HEAD
 {$ifdef i8086}
                   hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,false);
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,opdef,left.location,setbase);
@@ -799,6 +806,12 @@ implementation
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,opdef,left.location,setbase);
                   if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
                     hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,opdef,true);
+=======
+                  location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
+                  register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+                  if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
+                    location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
+>>>>>>> graemeg/cpstrnew
                   pleftreg:=left.location.register;
 
                   if (opsize >= OS_S8) or { = if signed }

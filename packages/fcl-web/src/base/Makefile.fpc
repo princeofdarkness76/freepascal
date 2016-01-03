@@ -4,6 +4,7 @@
 
 [package]
 main=fcl-web
+<<<<<<< HEAD
 version=3.1.1
 
 [target]
@@ -15,6 +16,18 @@ rsts=fpcgi fphtml fpweb websession cgiapp fphttpserver fphttpclient
 # these units are listed separately because they don't work for
 # darwin (which does support the rest of fcl-web)
 units_beos=custfcgi fpfcgi 
+=======
+version=2.5.1
+
+[target]
+units=httpdefs fphttp custweb custcgi fpcgi fphtml websession fpweb \
+      webutil fpdatasetform cgiapp ezcgi fpapache webpage fcgigate
+rsts=fpcgi fphtml fpweb websession cgiapp
+
+# these units are listed separately because they don't work for
+# darwin (which does support the rest of fcl-web)
+units_beos=custfcgi fpfcgi
+>>>>>>> graemeg/cpstrnew
 units_haiku=custfcgi fpfcgi
 units_freebsd=custfcgi fpfcgi
 units_solaris=custfcgi fpfcgi
@@ -23,10 +36,17 @@ units_openbsd=custfcgi fpfcgi
 units_linux=custfcgi fpfcgi
 units_win32=custfcgi fpfcgi
 units_win64=custfcgi fpfcgi
+<<<<<<< HEAD
 units_aix=custfcgi fpfcgi
 
 [require]
 packages=fcl-base fcl-xml fcl-db fcl-process httpd22 fastcgi fcl-net httpd24
+=======
+units_wince=custfcgi fpfcgi
+
+[require]
+packages=fcl-base fcl-xml fcl-db fcl-process httpd22 fastcgi fcl-net
+>>>>>>> graemeg/cpstrnew
 packages_darwin=univint
 packages_iphonesim=univint
 

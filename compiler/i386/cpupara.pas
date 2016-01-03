@@ -43,7 +43,11 @@ unit cpupara;
           function create_paraloc_info(p : tabstractprocdef; side: tcallercallee):longint;override;
           function create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;override;
           procedure createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);override;
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): TCGPara;override;
+=======
+          function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): TCGPara;override;
+>>>>>>> graemeg/cpstrnew
        private
           procedure create_stdcall_paraloc_info(p : tabstractprocdef; side: tcallercallee;paras:tparalist;var parasize:longint);
           procedure create_register_paraloc_info(p : tabstractprocdef; side: tcallercallee;paras:tparalist;var parareg,parasize:longint);
@@ -90,14 +94,24 @@ unit cpupara;
       var
         size: longint;
       begin
+<<<<<<< HEAD
         if handle_common_ret_in_param(def,pd,result) then
           exit;
+=======
+        if (tf_safecall_exceptions in target_info.flags) and
+           (calloption=pocall_safecall) then
+          begin
+            result:=true;
+            exit;
+          end;
+>>>>>>> graemeg/cpstrnew
         case target_info.system of
           system_i386_win32 :
             begin
               case def.typ of
                 recorddef :
                   begin
+<<<<<<< HEAD
                     { Win32 GCC returns small records in the FUNCTION_RETURN_REG up to 8 bytes in registers.
 
                       For stdcall and register we follow delphi instead of GCC which returns
@@ -107,6 +121,13 @@ unit cpupara;
                        ((pd.proccalloption in [pocall_cdecl,pocall_cppdecl]) and
                         (def.size>0) and
                         (def.size<=8)) then
+=======
+                    { Win32 GCC returns small records in the FUNCTION_RETURN_REG.
+                      For stdcall we follow delphi instead of GCC }
+                    if (calloption in [pocall_cdecl,pocall_cppdecl]) and
+                       (def.size>0) and
+                       (def.size<=8) then
+>>>>>>> graemeg/cpstrnew
                      begin
                        result:=false;
                        exit;
@@ -114,8 +135,13 @@ unit cpupara;
                   end;
               end;
             end;
+<<<<<<< HEAD
           system_i386_os2,
           system_i386_emx:
+=======
+          system_i386_darwin,
+          system_i386_iphonesim :
+>>>>>>> graemeg/cpstrnew
             begin
               case def.typ of
                 recorddef :
@@ -202,7 +228,11 @@ unit cpupara;
                 result:=false
               else
                 result:=
+<<<<<<< HEAD
                   (not(calloption in (cdecl_pocalls)) and
+=======
+                  (not(calloption in (cdecl_pocalls+[pocall_mwpascal])) and
+>>>>>>> graemeg/cpstrnew
                    (def.size>sizeof(aint))) or
                   (((calloption = pocall_mwpascal) or (target_info.system=system_i386_wince)) and
                    (varspez=vs_const));
@@ -286,6 +316,7 @@ unit cpupara;
       end;
 
 
+<<<<<<< HEAD
     function  tcpuparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): TCGPara;
       var
         retcgsize  : tcgsize;
@@ -330,16 +361,115 @@ unit cpupara;
             result.intsize:=sizeof(aint);
             retcgsize:=OS_SINT;
             result.size:=retcgsize;
+=======
+    procedure ti386paramanager.getintparaloc(calloption : tproccalloption; nr : longint;var cgpara:TCGPara);
+      var
+        paraloc : pcgparalocation;
+      begin
+        cgpara.reset;
+        cgpara.size:=OS_ADDR;
+        cgpara.intsize:=sizeof(pint);
+        cgpara.alignment:=get_para_align(calloption);
+        paraloc:=cgpara.add_location;
+        with paraloc^ do
+         begin
+           size:=OS_INT;
+           if calloption=pocall_register then
+             begin
+               if (nr<=high(parasupregs)+1) then
+                 begin
+                   if nr=0 then
+                     internalerror(200309271);
+                   loc:=LOC_REGISTER;
+                   register:=newreg(R_INTREGISTER,parasupregs[nr-1],R_SUBWHOLE);
+                 end
+               else
+                 begin
+                   loc:=LOC_REFERENCE;
+                   reference.index:=NR_STACK_POINTER_REG;
+                   reference.offset:=sizeof(aint)*nr;
+                 end;
+             end
+           else
+             begin
+               loc:=LOC_REFERENCE;
+               reference.index:=NR_STACK_POINTER_REG;
+               reference.offset:=sizeof(aint)*nr;
+             end;
+          end;
+      end;
+
+
+    procedure ti386paramanager.create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
+      begin
+        p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
+      end;
+
+
+    function  ti386paramanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): TCGPara;
+      var
+        retcgsize  : tcgsize;
+        paraloc : pcgparalocation;
+        sym: tfieldvarsym;
+      begin
+        result.init;
+        result.alignment:=get_para_align(p.proccalloption);
+        { void has no location }
+        if is_void(def) then
+          begin
+            paraloc:=result.add_location;
+            result.size:=OS_NO;
+            result.intsize:=0;
+            paraloc^.size:=OS_NO;
+            paraloc^.loc:=LOC_VOID;
+            exit;
+          end;
+        { on darwin/i386, if a record has only one field and that field is a
+          single or double, it has to be returned like a single/double }
+        if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
+           ((def.typ=recorddef) or
+            is_object(def)) and
+           tabstractrecordsymtable(tabstractrecorddef(def).symtable).has_single_field(sym) and
+           (sym.vardef.typ=floatdef) and
+           (tfloatdef(sym.vardef).floattype in [s32real,s64real]) then
+          def:=sym.vardef;
+        { Constructors return self instead of a boolean }
+        if (p.proctypeoption=potype_constructor) then
+          begin
+            retcgsize:=OS_ADDR;
+            result.intsize:=sizeof(pint);
+          end
+        else
+          begin
+            retcgsize:=def_cgsize(def);
+            result.intsize:=def.size;
+          end;
+        result.size:=retcgsize;
+        { Return is passed as var parameter }
+        if ret_in_param(def,p.proccalloption) then
+          begin
+            paraloc:=result.add_location;
+            paraloc^.loc:=LOC_REFERENCE;
+            paraloc^.size:=retcgsize;
+            exit;
+>>>>>>> graemeg/cpstrnew
           end;
 
         { Return in FPU register? }
+<<<<<<< HEAD
         if result.def.typ=floatdef then
+=======
+        if def.typ=floatdef then
+>>>>>>> graemeg/cpstrnew
           begin
             paraloc:=result.add_location;
             paraloc^.loc:=LOC_FPUREGISTER;
             paraloc^.register:=NR_FPU_RESULT_REG;
             paraloc^.size:=retcgsize;
+<<<<<<< HEAD
             paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
           end
         else
          { Return in register }
@@ -354,7 +484,10 @@ unit cpupara;
                else
                  paraloc^.register:=NR_FUNCTION_RETURN64_LOW_REG;
                paraloc^.size:=OS_32;
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 
                { high 32bits }
                paraloc:=result.add_location;
@@ -364,12 +497,18 @@ unit cpupara;
                else
                  paraloc^.register:=NR_FUNCTION_RETURN64_HIGH_REG;
                paraloc^.size:=OS_32;
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
              end
             else
              begin
                paraloc^.size:=retcgsize;
+<<<<<<< HEAD
                paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
                if side=callerside then
                  paraloc^.register:=newreg(R_INTREGISTER,RS_FUNCTION_RESULT_REG,cgsize2subreg(R_INTREGISTER,retcgsize))
                else
@@ -601,8 +740,12 @@ unit cpupara;
                     if (parareg<=high(parasupregs)) and
                        (paralen<=sizeof(aint)) and
                        (not(hp.vardef.typ in [floatdef,recorddef,arraydef]) or
+<<<<<<< HEAD
                         pushaddr or
                         is_dynamic_array(hp.vardef)) and
+=======
+                        pushaddr) and
+>>>>>>> graemeg/cpstrnew
                        (not(vo_is_parentfp in hp.varoptions) or
                         not(po_delphi_nested_cc in p.procoptions)) then
                       begin
@@ -743,7 +886,11 @@ unit cpupara;
       end;
 
 
+<<<<<<< HEAD
     procedure tcpuparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
+=======
+    procedure ti386paramanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
+>>>>>>> graemeg/cpstrnew
       begin
         { Never a need for temps when value is pushed (calls inside parameters
           will simply allocate even more stack space for their parameters) }

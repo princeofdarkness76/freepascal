@@ -42,7 +42,11 @@ type
     procedure GC(obj: TObject);
     procedure Load(out doc; const uri: string);
     procedure LoadStringData(out Doc; const data: string);
+<<<<<<< HEAD
     function getResourceURI(const res: XMLString): XMLString;
+=======
+    function getResourceURI(const res: WideString): WideString;
+>>>>>>> graemeg/cpstrnew
     function ContentTypeIs(const t: string): Boolean;
     function GetImplementation: TDOMImplementation;
     procedure CheckFeature(const name: string);

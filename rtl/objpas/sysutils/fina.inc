@@ -465,7 +465,11 @@ begin
   Result:=Copy(Path,1,L);
 end;
 
+<<<<<<< HEAD
 function IncludeLeadingPathDelimiter(Const Path : PathStr) : PathStr;
+=======
+function IncludeLeadingPathDelimiter(Const Path : String) : String;
+>>>>>>> graemeg/cpstrnew
 
 Var
   l : Integer;
@@ -473,6 +477,7 @@ Var
 begin
   Result:=Path;
   l:=Length(Result);
+<<<<<<< HEAD
   If (L=0) or not CharInSet(Result[1],AllowDirectorySeparators) then
 {$ifdef SYSUTILSUNICODE}
     Result:=DirectorySeparator+Result;
@@ -489,6 +494,25 @@ function ExcludeLeadingPathDelimiter(Const Path: PathStr): PathStr;
 
 Var
   L : Integer;
+=======
+  If (L=0) or not(Result[1] in AllowDirectorySeparators) then
+    Result:=DirectorySeparator+Result;
+end;
+
+function ExcludeLeadingPathDelimiter(Const Path: string): string;
+
+Var
+  L : Integer;
+
+begin
+  L:=Length(Path);
+  If (L>0) and (Path[1] in AllowDirectorySeparators) then
+    Dec(L);
+  Result:=Copy(Path,2,L);
+end;
+
+function IsPathDelimiter(Const Path: string; Index: Integer): Boolean;
+>>>>>>> graemeg/cpstrnew
 
 begin
   Result:=Path;
@@ -497,15 +521,36 @@ begin
     Delete(Result,1,1);
 end;
 
+<<<<<<< HEAD
 function IsPathDelimiter(Const Path: PathStr; Index: Integer): Boolean;
+=======
+function ConcatPaths(const Paths: array of String): String;
+var
+  I: Integer;
+begin
+  if Length(Paths) > 0 then
+  begin
+    Result := Paths[0];
+    for I := 1 to Length(Paths) - 1 do
+      Result := IncludeTrailingPathDelimiter(Result) + ExcludeLeadingPathDelimiter(Paths[I]);
+  end else
+    Result := '';
+end;
+
+Function GetFileHandle(var f : File):THandle;
+>>>>>>> graemeg/cpstrnew
 
 begin
   Result:=(Index>0) and (Index<=Length(Path)) and CharInSet(Path[Index],AllowDirectorySeparators);
 end;
 
+<<<<<<< HEAD
 function ConcatPaths(const Paths: array of PathStr): PathStr;
 var
   I: Integer;
+=======
+Function GetFileHandle(var f : Text):THandle;
+>>>>>>> graemeg/cpstrnew
 begin
   if Length(Paths) > 0 then
   begin

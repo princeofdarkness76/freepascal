@@ -222,10 +222,14 @@ begin
         S.Insert(0,Format('%dx%d',[P.dwXCountChars,P.dwYCountChars]));
         S.Insert(0,'-geometry');
         end;
+<<<<<<< HEAD
       If (P.XTermProgram<>'') then
         S.Insert(0,P.XTermProgram)
       else
         S.Insert(0,DetectXterm);
+=======
+      S.Insert(0,'xterm');
+>>>>>>> graemeg/cpstrnew
       {$endif}
       end;
     {$ifndef haiku}
@@ -351,6 +355,7 @@ begin
           child borrows the execution thread of the parent
           unit it either exits or execs -> potential 
           deadlock depending on how quickly the SIGSTOP
+<<<<<<< HEAD
           signal is delivered
 
           We also can't use vfork in case we have to change the working
@@ -361,6 +366,10 @@ begin
         if (([poRunSuspended,PoUsePipes,poNoConsole] * Options) = []) and
            (FCurrentDirectory='') and
            not assigned(FForkEvent) then
+=======
+          signal is delivered }
+        if not(poRunSuspended in Options) then
+>>>>>>> graemeg/cpstrnew
           Pid:=fpvfork
         else
           Pid:=fpfork;
@@ -414,7 +423,11 @@ begin
                 safefpdup2(fd,2);
               end;
             if Assigned(FForkEvent) then
+<<<<<<< HEAD
               FForkEvent(Self);
+=======
+              FForkEvent;
+>>>>>>> graemeg/cpstrnew
             if (poRunSuspended in Options) then
               fpkill(fpgetpid,SIGSTOP);
             if FEnv<>Nil then

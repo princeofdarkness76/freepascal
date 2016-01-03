@@ -59,10 +59,17 @@
     _horizontalEdgePad: CGFloat;
     trackingState: Pointer;
     _scrollingView: id;
+<<<<<<< HEAD
     __mvFlags: record
       case byte of
        0: (_anonbitfield_NSMenuView0: cuint);
        1: (data: bitpacked record
+=======
+    __mvFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSMenuView0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _needsSizing: 0..1;
         releasingWindow: 0..1;
         _isHorizontal: 0..1;
@@ -76,7 +83,10 @@
         savedHODState: 0..1;
         drawCenter: 0..1;
         RESERVED: 0..((1 shl 5)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

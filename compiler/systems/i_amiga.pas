@@ -34,7 +34,11 @@ unit i_amiga;
             system       : system_m68k_Amiga;
             name         : 'Commodore Amiga';
             shortname    : 'amiga';
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_has_winlike_resources];
+=======
+            flags        : [tf_files_case_aware];
+>>>>>>> graemeg/cpstrnew
             cpu          : cpu_m68k;
             unit_env     : 'AMIGAUNITS';
             extradefines : 'HASAMIGA';

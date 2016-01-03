@@ -41,6 +41,7 @@ implementation
 {$ifndef iconv_is_in_libc}
  {$if defined(haiku)}
    {$linklib textencoding}
+   {$linklib locale}
  {$else}
    {$linklib iconv}
  {$endif}
@@ -188,7 +189,11 @@ type
   nl_item = cint;
 
 {$ifdef haiku}
+<<<<<<< HEAD
   function nl_langinfo(__item:nl_item):pchar;cdecl;external 'root' name 'nl_langinfo';
+=======
+  function nl_langinfo(__item:nl_item):pchar;cdecl;external 'locale' name 'nl_langinfo';
+>>>>>>> graemeg/cpstrnew
 {$else}
   {$ifndef beos}
   function nl_langinfo(__item:nl_item):pchar;cdecl;external libiconvname name 'nl_langinfo';
@@ -266,7 +271,10 @@ begin
     iconv_close(iconv_ansi2wide);
 end;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$if defined(beos) and not defined(haiku)}
 function nl_langinfo(__item:nl_item):pchar;
 begin
@@ -283,6 +291,7 @@ begin
 end;
 {$endif}
 
+<<<<<<< HEAD
 
 function open_iconv_for_cps(cp: TSystemCodePage; const otherencoding: pchar; cp_is_from: boolean): iconv_t;
   var
@@ -314,6 +323,8 @@ function open_iconv_for_cps(cp: TSystemCodePage; const otherencoding: pchar; cp_
 {$i cwstraix.inc}
 {$endif aix}
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCodePage; len:SizeInt);
   var
     outlength,
@@ -332,6 +343,7 @@ procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCode
     intermediate: rawbytestring;
 {$endif aix}
   begin
+<<<<<<< HEAD
 {$ifdef aix}
     { AIX libiconv does not support converting cp866 to anything else except
       for iso-8859-5 -> always first convert to iso-8859-5, then to UTF-16 }
@@ -367,10 +379,18 @@ procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCode
       end;
     { unsupported encoding -> default move }
     if use_iconv=iconv_t(-1) then
+=======
+{$ifndef VER2_2}
+    if PtrInt(iconv_wide2ansi)=-1 then
+>>>>>>> graemeg/cpstrnew
       begin
         DefaultUnicode2AnsiMove(source,dest,DefaultSystemCodePage,len);
         exit;
       end;
+<<<<<<< HEAD
+=======
+{$endif VER2_2}
+>>>>>>> graemeg/cpstrnew
     mynil:=nil;
     my0:=0;
     { rought estimation }
@@ -439,6 +459,7 @@ procedure Ansi2WideMove(source:pchar; cp:TSystemCodePage; var dest:widestring; l
     intermediate: rawbytestring;
 {$endif aix}
   begin
+<<<<<<< HEAD
 {$ifdef aix}
     { AIX libiconv does not support converting cp866 to anything else except
       for iso-8859-5 -> always first convert to iso-8859-5, then to UTF-16 }
@@ -473,10 +494,18 @@ procedure Ansi2WideMove(source:pchar; cp:TSystemCodePage; var dest:widestring; l
       end;
     { unsupported encoding -> default move }
     if use_iconv=iconv_t(-1) then
+=======
+{$ifndef VER2_2}
+    if PtrInt(iconv_ansi2wide)=-1 then
+>>>>>>> graemeg/cpstrnew
       begin
         DefaultAnsi2UnicodeMove(source,DefaultSystemCodePage,dest,len);
         exit;
       end;
+<<<<<<< HEAD
+=======
+{$endif VER2_2}
+>>>>>>> graemeg/cpstrnew
     mynil:=nil;
     my0:=0;
     // extra space
@@ -842,7 +871,11 @@ function CharLengthPChar(const Str: PChar): PtrInt;
   begin
     result:=0;
     s:=str;
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/cpstrnew
     fillchar(mbstate,sizeof(mbstate),0);
 {$endif not beos}
     repeat
@@ -861,12 +894,22 @@ function CharLengthPChar(const Str: PChar): PtrInt;
 
 
 function CodePointLength(const Str: PChar; maxlookahead: ptrint): PtrInt;
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
   var
     mbstate: mbstate_t;
 {$endif not beos}
   begin
 {$if defined(beos) and not defined(haiku)}
+=======
+  var
+    nextlen: ptrint;
+{$ifndef beos}
+    mbstate: mbstate_t;
+{$endif not beos}
+  begin
+{$ifdef beos}
+>>>>>>> graemeg/cpstrnew
     result:=ptrint(mblen(str,maxlookahead));
 {$else beos}
     fillchar(mbstate,sizeof(mbstate),0);
@@ -1121,8 +1164,12 @@ begin
       UpperUnicodeStringProc:=@UpperWideString;
       LowerUnicodeStringProc:=@LowerWideString;
       CompareUnicodeStringProc:=@CompareWideString;
+<<<<<<< HEAD
       { CodePage }
       GetStandardCodePageProc:=@GetStandardCodePage;
+=======
+      CompareTextUnicodeStringProc:=@CompareTextWideString;
+>>>>>>> graemeg/cpstrnew
     end;
   SetUnicodeStringManager(CWideStringManager);
 end;

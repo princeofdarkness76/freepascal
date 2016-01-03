@@ -60,7 +60,11 @@ type
     {$ifdef cpu64}
     _reserved: Pointer;
     {$else}
+<<<<<<< HEAD
     _reserved: array[0..(2)-1] of cuint;
+=======
+        _reserved: array[0..1] of cuint;
+>>>>>>> graemeg/cpstrnew
     {$endif}
     
   public

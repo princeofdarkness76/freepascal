@@ -72,8 +72,14 @@ interface
 {$ifdef m68k}
           ait_labeled_instruction,
 {$endif m68k}
+<<<<<<< HEAD
           ait_symbolpair,
           ait_weak,
+=======
+{$ifdef arm}
+          ait_thumb_func,
+{$endif arm}
+>>>>>>> graemeg/cpstrnew
           { used to split into tiny assembler files }
           ait_cutobject,
           ait_regalloc,
@@ -203,8 +209,14 @@ interface
 {$ifdef m68k}
           'labeled_instr',
 {$endif m68k}
+<<<<<<< HEAD
           'symbolpair',
           'weak',
+=======
+{$ifdef arm}
+          'thumb_func',
+{$endif arm}
+>>>>>>> graemeg/cpstrnew
           'cut',
           'regalloc',
           'tempalloc',
@@ -228,8 +240,14 @@ interface
 {$ifdef arm}
        { ARM only }
        ,top_regset
+<<<<<<< HEAD
        ,top_modeflags
        ,top_specialreg
+=======
+       ,top_shifterop
+       ,top_conditioncode
+       ,top_modeflags
+>>>>>>> graemeg/cpstrnew
 {$endif arm}
 {$if defined(arm) or defined(aarch64)}
        ,top_conditioncode
@@ -276,6 +294,32 @@ interface
       end;
       plocaloper = ^tlocaloper;
 
+<<<<<<< HEAD
+=======
+      { please keep the size of this record <=12 bytes and keep it properly aligned }
+      toper = record
+        ot : longint;
+        case typ : toptype of
+          top_none   : ();
+          top_reg    : (reg:tregister);
+          top_ref    : (ref:preference);
+          top_const  : (val:aint);
+          top_bool   : (b:boolean);
+          { local varsym that will be inserted in pass_generate_code }
+          top_local  : (localoper:plocaloper);
+      {$ifdef arm}
+          top_regset : (regset:^tcpuregisterset; regtyp: tregistertype; subreg: tsubregister);
+          top_shifterop : (shifterop : pshifterop);
+          top_conditioncode : (cc : TAsmCond);
+          top_modeflags : (modeflags : tcpumodeflags);
+      {$endif arm}
+      {$ifdef m68k}
+          top_regset : (regset:^tcpuregisterset);
+      {$endif m68k}
+      end;
+      poper=^toper;
+
+>>>>>>> graemeg/cpstrnew
     const
       { ait_* types which don't result in executable code or which don't influence
         the way the program runs/behaves, but which may be encountered by the
@@ -296,6 +340,7 @@ interface
       SkipLineInfo =[ait_label,
                      ait_regalloc,ait_tempalloc,
                      ait_stab,ait_function_name,
+<<<<<<< HEAD
                      ait_cutobject,ait_marker,ait_varloc,ait_align,ait_section,ait_comment,
                      ait_const,ait_directive,
                      ait_symbolpair,ait_weak,
@@ -308,6 +353,15 @@ interface
                      ait_llvmdecl,
 {$endif llvm}
                      ait_seh_directive
+=======
+                     ait_cutobject,ait_marker,ait_align,ait_section,ait_comment,
+                     ait_const,
+{$ifdef arm}
+                     ait_thumb_func,
+{$endif arm}
+                     ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_comp_64bit,ait_real_128bit,
+                     ait_symbol
+>>>>>>> graemeg/cpstrnew
                     ];
 
 
@@ -340,6 +394,7 @@ interface
         asd_indirect_symbol,
         asd_extern,asd_nasm_import, asd_toc_entry,
         asd_reference,asd_no_dead_strip,asd_weak_reference,asd_lazy_reference,
+<<<<<<< HEAD
         asd_weak_definition,
         { for Jasmin }
         asd_jclass,asd_jinterface,asd_jsuper,asd_jfield,asd_jlimit,asd_jline,
@@ -349,6 +404,9 @@ interface
         asd_data_region, asd_end_data_region,
         { .thumb_func for ARM }
         asd_thumb_func
+=======
+        asd_weak_definition
+>>>>>>> graemeg/cpstrnew
       );
 
       TAsmSehDirective=(
@@ -375,6 +433,7 @@ interface
       directivestr : array[TAsmDirective] of string[23]=(
         'indirect_symbol',
         'extern','nasm_import', 'tc', 'reference',
+<<<<<<< HEAD
         'no_dead_strip','weak_reference','lazy_reference','weak_definition',
         { for Jasmin }
         'class','interface','super','field','limit','line',
@@ -394,6 +453,9 @@ interface
       );
       symbolpairkindstr: array[TSymbolPairKind] of string[11]=(
         '.set', '.thumb_set', '.localentry'
+=======
+        'no_dead_strip','weak_reference','lazy_reference','weak_definition'
+>>>>>>> graemeg/cpstrnew
       );
 
     type
@@ -559,12 +621,19 @@ interface
           destructor Destroy;override;
           constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
+<<<<<<< HEAD
 {$push}{$warnings off}
          private
           { this constructor is made private on purpose }
           { because sections should be created via new_section() }
           constructor Create(Asectype:TAsmSectiontype;const Aname:string;Aalign:byte;Asecorder:TasmSectionorder=secorder_default);
 {$pop}
+=======
+         private
+          { this constructor is made private on purpose }
+          { because sections should be created via new_section() }
+          constructor Create(Asectype:TAsmSectiontype;Aname:string;Aalign:byte;Asecorder:TasmSectionorder=secorder_default);
+>>>>>>> graemeg/cpstrnew
        end;
 
 
@@ -573,7 +642,11 @@ interface
           is_global : boolean;
           sym       : tasmsymbol;
           size      : asizeint;
+<<<<<<< HEAD
           constructor Create(const _name : string;_size : asizeint);
+=======
+          constructor Create(const _name : string;_size : aint);
+>>>>>>> graemeg/cpstrnew
           constructor Create_global(const _name : string;_size : asizeint);
           constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
@@ -621,6 +694,7 @@ interface
           constructor Create_rel_sym(_typ:taiconst_type;_sym,_endsym:tasmsymbol);
           constructor Create_rel_sym_offset(_typ : taiconst_type; _sym,_endsym : tasmsymbol; _ofs : int64);
           constructor Create_rva_sym(_sym:tasmsymbol);
+<<<<<<< HEAD
           constructor Createname(const name:string;ofs:asizeint);
           constructor Createname(const name:string;_symtyp:Tasmsymtype;ofs:asizeint);
           constructor Create_type_name(_typ:taiconst_type;const name:string;ofs:asizeint);
@@ -634,6 +708,9 @@ interface
           constructor Create_dgroup;
           constructor Create_fardataseg;
 {$endif i8086}
+=======
+          constructor Createname(const name:string;ofs:aint);
+>>>>>>> graemeg/cpstrnew
           constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
           procedure derefimpl;override;
@@ -657,6 +734,7 @@ interface
 {$ifdef ARM}
           formatoptions : tformatoptions;
 {$endif ARM}
+<<<<<<< HEAD
           constructor create_s32real(val: ts32real);
           constructor create_s64real(val: ts64real);
 {$ifdef ARM}
@@ -669,6 +747,30 @@ interface
           procedure ppuwrite(ppufile: tcompilerppufile); override;
           function getcopy:tlinkedlistitem;override;
           function datasize: word;
+=======
+          constructor Create(_value : ts64real);
+          constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
+          procedure ppuwrite(ppufile:tcompilerppufile);override;
+       end;
+
+
+       { Generates an extended float (80 bit real) }
+       tai_real_80bit = class(tai)
+          value : ts80real;
+          savesize : byte;
+          constructor Create(_value : ts80real; _savesize: byte);
+          constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
+          procedure ppuwrite(ppufile:tcompilerppufile);override;
+       end;
+
+
+       { Generates an float128 (128 bit real) }
+       tai_real_128bit = class(tai)
+          value : ts128real;
+          constructor Create(_value : ts128real);
+          constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
+          procedure ppuwrite(ppufile:tcompilerppufile);override;
+>>>>>>> graemeg/cpstrnew
        end;
 
        { tai_stab }
@@ -913,7 +1015,10 @@ interface
       { target specific tais, possibly overwritten in target specific aasmcpu }
       cai_align : tai_align_class = tai_align_abstract;
       cai_cpu   : tai_cpu_class = tai_cpu_abstract;
+<<<<<<< HEAD
       cai_seh_directive: tai_seh_directive_class = tai_seh_directive;
+=======
+>>>>>>> graemeg/cpstrnew
 
       { hook to notify uses of registers }
       add_reg_instruction_hook : tadd_reg_instruction_proc;
@@ -1749,6 +1854,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     constructor tai_const.Createname(const name:string;ofs:asizeint);
       begin
          self.Createname(name,AT_NONE,ofs);
@@ -1756,6 +1862,9 @@ implementation
 
 
     constructor tai_const.Createname(const name:string;_symtyp:Tasmsymtype;ofs:asizeint);
+=======
+    constructor tai_const.Createname(const name:string;ofs:aint);
+>>>>>>> graemeg/cpstrnew
       begin
          self.create_sym_offset(current_asmdata.RefAsmSymbol(name,_symtyp),ofs);
       end;
@@ -1890,11 +1999,17 @@ implementation
             result:=1;
           aitconst_16bit,aitconst_16bit_unaligned :
             result:=2;
+<<<<<<< HEAD
           aitconst_32bit,aitconst_darwin_dwarf_delta32,
 	  aitconst_32bit_unaligned:
             result:=4;
           aitconst_64bit,aitconst_darwin_dwarf_delta64,
 	  aitconst_64bit_unaligned:
+=======
+          aitconst_32bit,aitconst_darwin_dwarf_delta32:
+            result:=4;
+          aitconst_64bit,aitconst_darwin_dwarf_delta64:
+>>>>>>> graemeg/cpstrnew
             result:=8;
           aitconst_secrel32_symbol,
           aitconst_rva_symbol :
@@ -1960,24 +2075,55 @@ implementation
       end;
 
 {$endif ARM}
+<<<<<<< HEAD
+=======
+      end;
+
+
+{****************************************************************************
+                               TAI_real_80bit
+ ****************************************************************************}
+
+    constructor tai_real_80bit.Create(_value : ts80real; _savesize: byte);
+
+      begin
+         inherited Create;
+         typ:=ait_real_80bit;
+         value:=_value;
+         savesize:=_savesize;
+      end;
+
+>>>>>>> graemeg/cpstrnew
 
     constructor tai_realconst.create_s80real(val: ts80real; _savesize: byte);
       begin
+<<<<<<< HEAD
         inherited create;
         typ:=ait_realconst;
         realtyp:=aitrealconst_s80bit;
         savesize:=_savesize;
         value.s80val:=val;
+=======
+        inherited ppuload(t,ppufile);
+        value:=ppufile.getreal;
+        savesize:=ppufile.getbyte;
+>>>>>>> graemeg/cpstrnew
       end;
 
 
     constructor tai_realconst.create_s128real(val: ts128real);
       begin
+<<<<<<< HEAD
         inherited create;
         typ:=ait_realconst;
         realtyp:=aitrealconst_s128bit;
         savesize:=16;
         value.s128val:=val;
+=======
+        inherited ppuwrite(ppufile);
+        ppufile.putreal(value);
+        ppufile.putbyte(savesize);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -2145,6 +2291,10 @@ implementation
         typ:=ait_label;
         labsym:=_labsym;
         labsym.is_set:=true;
+<<<<<<< HEAD
+=======
+        is_global:=(labsym.bind in [AB_GLOBAL,AB_PRIVATE_EXTERN]);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -3046,6 +3196,7 @@ implementation
         ppufile.putbyte(byte(use_op));
       end;
 
+<<<<<<< HEAD
 
 {****************************************************************************
                               tai_seh_directive
@@ -3256,4 +3407,6 @@ begin
   if ord(high(taitype))>31 then
     internalerror(201108181);
 {$pop}
+=======
+>>>>>>> graemeg/cpstrnew
 end.

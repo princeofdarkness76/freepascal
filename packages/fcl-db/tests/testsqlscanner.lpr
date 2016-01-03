@@ -20,8 +20,11 @@ var
   Application: TMyTestRunner;
 
 
+<<<<<<< HEAD
 {$R *.res}
 
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   Application := TMyTestRunner.Create(nil);
   Application.Initialize;

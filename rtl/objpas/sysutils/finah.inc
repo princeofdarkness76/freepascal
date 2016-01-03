@@ -14,6 +14,7 @@
     System Utilities For Free Pascal
 }
 
+<<<<<<< HEAD
 {$if not declared(TFilenameCaseMatch)}
 type
   TFilenameCaseMatch = (mkNone, mkExactMatch, mkSingleMatch, mkAmbiguous);
@@ -41,4 +42,28 @@ Procedure DoDirSeparators (Var FileName : PathStr); {$ifdef FPC_HAS_CPSTRING}rtl
 Function SetDirSeparators (Const FileName : PathStr) : PathStr;
 Function GetDirs (Var DirName : PathStr; Var Dirs : Array of PathPChar) : Longint; {$ifdef FPC_HAS_CPSTRING}rtlproc;{$endif}
 function ConcatPaths(const Paths: array of PathStr): PathStr;
+=======
+function ChangeFileExt(const FileName, Extension: string): string;
+function ExtractFilePath(const FileName: string): string;
+function ExtractFileDrive(const FileName: string): string;
+function ExtractFileName(const FileName: string): string;
+function ExtractFileExt(const FileName: string): string;
+function ExtractFileDir(Const FileName : string): string;
+function ExtractShortPathName(Const FileName : String) : String;
+function ExpandFileName (Const FileName : string): String;
+function ExpandUNCFileName (Const FileName : string): String;
+function ExtractRelativepath (Const BaseName,DestNAme : String): String;
+function IncludeTrailingPathDelimiter(Const Path : String) : String;
+function IncludeTrailingBackslash(Const Path : String) : String;
+function ExcludeTrailingBackslash(Const Path: string): string;
+function ExcludeTrailingPathDelimiter(Const Path: string): string;
+function IncludeLeadingPathDelimiter(Const Path : String) : String;
+function ExcludeLeadingPathDelimiter(Const Path: string): string;
+function IsPathDelimiter(Const Path: string; Index: Integer): Boolean;
+Procedure DoDirSeparators (Var FileName : String);
+Function SetDirSeparators (Const FileName : String) : String;
+Function GetDirs (Var DirName : String; Var Dirs : Array of pchar) : Longint;
+Function SameFileName(const S1, S2: string): Boolean;
+function ConcatPaths(const Paths: array of String): String;
+>>>>>>> graemeg/cpstrnew
 

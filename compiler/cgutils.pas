@@ -77,6 +77,7 @@ unit cgutils;
          { (An)+ and -(An)                      }
          direction : tdirection;
 {$endif m68k}
+<<<<<<< HEAD
 {$ifdef jvm}
          arrayreftype: tarrayreftype;
          indexbase: tregister;
@@ -84,6 +85,8 @@ unit cgutils;
          indexoffset: aint;
          checkcast: boolean;
 {$endif jvm}
+=======
+>>>>>>> graemeg/cpstrnew
          alignment : byte;
       end;
 
@@ -182,7 +185,10 @@ unit cgutils;
     procedure location_reset_jump(out l: tlocation; truelab, falselab: tasmlabel);
     procedure location_copy(var destloc:tlocation; const sourceloc : tlocation);
     procedure location_swap(var destloc,sourceloc : tlocation);
+<<<<<<< HEAD
     function location_reg2string(const locreg: tlocation): string;
+=======
+>>>>>>> graemeg/cpstrnew
 
     { returns r with the given alignment }
     function setalignment(const r : treference;b : byte) : treference;
@@ -296,6 +302,7 @@ uses
       end;
 
 
+<<<<<<< HEAD
     function location_reg2string(const locreg: tlocation): string;
       begin
         if not (locreg.loc in [LOC_REGISTER,LOC_CREGISTER,
@@ -463,5 +470,7 @@ uses
       end;
 {$pop}
 
+=======
+>>>>>>> graemeg/cpstrnew
 end.
 

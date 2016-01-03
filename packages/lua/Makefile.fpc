@@ -1,10 +1,22 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for LUA library
+>>>>>>> graemeg/cpstrnew
 #
 
 [package]
 name=lua
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=lua lualib lauxlib
+examples=
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

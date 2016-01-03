@@ -3,7 +3,10 @@ unit iPhoneAll;
 {$mode delphi}
 {$modeswitch objectivec1}
 {$modeswitch cvar}
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 
 interface
 
@@ -106,4 +109,8 @@ implementation
 {$undef USER_PATCHES}
 
 {$undef IMPLEMENTATION}
+<<<<<<< HEAD
 end.
+=======
+end.
+>>>>>>> graemeg/cpstrnew

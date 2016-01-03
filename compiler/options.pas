@@ -34,9 +34,13 @@ Type
     FirstPass,
     ParaLogo,
     NoPressEnter,
+<<<<<<< HEAD
     FPCHelpLines,
     LogoWritten,
     ABISetExplicitly,
+=======
+    LogoWritten,
+>>>>>>> graemeg/cpstrnew
     FPUSetExplicitly,
     CPUSetExplicitly,
     OptCPUSetExplicitly: boolean;
@@ -60,6 +64,7 @@ Type
     procedure WriteInfo (More: string);
     procedure WriteHelpPages;
     procedure WriteQuickInfo;
+<<<<<<< HEAD
     procedure IllegalPara(const opt:TCmdStr);
     procedure UnsupportedPara(const opt:TCmdStr);
     procedure IgnoredPara(const opt:TCmdStr);
@@ -67,6 +72,15 @@ Type
     procedure interpret_option(const opt :TCmdStr;ispara:boolean);
     procedure Interpret_envvar(const envname : TCmdStr);
     procedure Interpret_file(const filename : TPathStr);
+=======
+    procedure IllegalPara(const opt:string);
+    procedure UnsupportedPara(const opt:string);
+    procedure IgnoredPara(const opt:string);
+    function  Unsetbool(var Opts:TCmdStr; Pos: Longint):boolean;
+    procedure interpret_option(const opt :string;ispara:boolean);
+    procedure Interpret_envvar(const envname : string);
+    procedure Interpret_file(const filename : string);
+>>>>>>> graemeg/cpstrnew
     procedure Read_Parameters;
     procedure parsecmd(cmd:TCmdStr);
     procedure TargetOptions(def:boolean);
@@ -95,12 +109,17 @@ uses
   cutils,cmsgs,
   comphook,
   symtable,scanner,rabase,
+<<<<<<< HEAD
   symconst,
 {$ifdef llvm}
   { override supported optimizer transformations at the compiler level }
   llvminfo,
 {$endif llvm}
   dirparse,
+=======
+  wpobase,
+  symconst,
+>>>>>>> graemeg/cpstrnew
   i_bsd;
 
 const
@@ -132,8 +151,12 @@ const
 
   suppported_targets_x_smallr = systems_linux + systems_solaris
                              + [system_i386_haiku]
+<<<<<<< HEAD
                              + [system_i386_beos]
                              + [system_m68k_amiga];
+=======
+                             + [system_i386_beos];
+>>>>>>> graemeg/cpstrnew
 
 {****************************************************************************
                                  Defines
@@ -780,7 +803,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure toption.IgnoredPara(const opt: TCmdStr);
+=======
+procedure toption.IgnoredPara(const opt: string);
+>>>>>>> graemeg/cpstrnew
 begin
   Message1(option_ignored_target,opt);
 end;
@@ -1112,7 +1139,11 @@ begin
                 begin
                   case more[j] of
                     '3' :
+<<<<<<< HEAD
                       If UnsetBool(More, j, opt, false) then
+=======
+                      If UnsetBool(More, j) then
+>>>>>>> graemeg/cpstrnew
                         exclude(init_settings.localswitches,cs_ieee_errors)
                       Else
                         include(init_settings.localswitches,cs_ieee_errors);
@@ -1499,7 +1530,11 @@ begin
                  'm' :
                    begin
                      s:=ExtractFileDir(more);
+<<<<<<< HEAD
                      if TryStrToInt(ExtractFileName(more),j) then
+=======
+                     if TryStrToInt(ExtractFileName(more),j) then 
+>>>>>>> graemeg/cpstrnew
                        begin
                          unicodemapping:=loadunicodemapping(More,More+'.txt',j);
                          if assigned(unicodemapping) then
@@ -2003,7 +2038,11 @@ begin
                                                                                        cs_typed_addresses];
 
                            init_settings.moduleswitches:=init_settings.moduleswitches - [cs_support_c_operators, cs_support_goto,
+<<<<<<< HEAD
                                                                                          cs_support_macro];
+=======
+                                                                     cs_support_macro];
+>>>>>>> graemeg/cpstrnew
                          end;
                        else
                          IllegalPara(opt);
@@ -2390,7 +2429,11 @@ begin
                       end;
                     'n' :
                       begin
+<<<<<<< HEAD
                         If UnsetBool(More, j, opt, false) then
+=======
+                        If UnsetBool(More, j) then
+>>>>>>> graemeg/cpstrnew
                           exclude(init_settings.globalswitches,cs_link_native)
                         else
                           include(init_settings.globalswitches,cs_link_native);
@@ -3031,11 +3074,14 @@ begin
     system_i386_nativent:
       // until these features are implemented, they are disabled in the compiler
       target_unsup_features:=[f_stackcheck];
+<<<<<<< HEAD
     system_jvm_java32,
     system_jvm_android32:
       target_unsup_features:=[f_heap,f_textio,f_consoleio,f_fileio,
          f_variants,f_objects,f_commandargs,
          f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources];
+=======
+>>>>>>> graemeg/cpstrnew
     else
       target_unsup_features:=[];
   end;
@@ -3083,6 +3129,7 @@ begin
       Message(option_debug_external_unsupported);
       exclude(init_settings.globalswitches,cs_link_separate_dbg_file);
     end;
+<<<<<<< HEAD
   { Also create a smartlinked version, on an assembler that
     does not support smartlink sections like nasm?
     This is not compatible with using internal linker. }
@@ -3097,6 +3144,8 @@ begin
       Message(option_smart_link_requires_external_linker);
       include(init_settings.globalswitches,cs_link_extern);
     end;
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -3105,7 +3154,10 @@ begin
   LogoWritten:=false;
   NoPressEnter:=false;
   FirstPass:=false;
+<<<<<<< HEAD
   ABISetExplicitly:=false;
+=======
+>>>>>>> graemeg/cpstrnew
   FPUSetExplicitly:=false;
   CPUSetExplicitly:=false;
   OptCPUSetExplicitly:=false;
@@ -3250,9 +3302,13 @@ begin
 
 { target is set here, for wince the default app type is gui }
   if target_info.system in systems_wince then
+<<<<<<< HEAD
     SetApptype(app_gui)
   else
     SetApptype(apptype);
+=======
+    apptype:=app_gui;
+>>>>>>> graemeg/cpstrnew
 
 { default defines }
   def_system_macro(target_info.shortname);
@@ -3262,6 +3318,7 @@ begin
   def_system_macro('VER'+version_nr+'_'+release_nr+'_'+patch_nr);
 
 { Temporary defines, until things settle down }
+<<<<<<< HEAD
   def_system_macro('FPC_HAS_OPERATOR_ENUMERATOR');
   def_system_macro('FPC_HAS_CONSTREF');
   def_system_macro('FPC_STATICRIPFIXED');
@@ -3269,6 +3326,22 @@ begin
   def_system_macro('FPC_DYNARRAYCOPY_FIXED');
 
 { abs(long) is handled internally on all CPUs }
+=======
+  def_system_macro('RESSTRSECTIONS');
+  def_system_macro('FPC_HASFIXED64BITVARIANT');
+  def_system_macro('FPC_HASINTERNALOLEVARIANT2VARIANTCAST');
+  def_system_macro('FPC_HAS_VARSETS');
+  def_system_macro('FPC_HAS_VALGRINDBOOL');
+  def_system_macro('FPC_HAS_STR_CURRENCY');
+  def_system_macro('FPC_REAL2REAL_FIXED');
+  def_system_macro('FPC_STRTOCHARARRAYPROC');
+  def_system_macro('FPC_STRTOSHORTSTRINGPROC');
+  def_system_macro('FPC_OBJFPC_EXTENDED_IF');
+  def_system_macro('FPC_HAS_OPERATOR_ENUMERATOR');
+  def_system_macro('FPC_HAS_CONSTREF');
+  def_system_macro('FPC_STATICRIPFIXED');
+{$if defined(x86) or defined(powerpc) or defined(powerpc64)}
+>>>>>>> graemeg/cpstrnew
   def_system_macro('FPC_HAS_INTERNAL_ABS_LONG');
 {$if defined(x86_64) or defined(powerpc64) or defined(cpuaarch64)}
   def_system_macro('FPC_HAS_INTERNAL_ABS_INT64');
@@ -3281,7 +3354,10 @@ begin
   def_system_macro('FPC_HAS_RIP_RELATIVE');
 {$endif x86_64}
   def_system_macro('FPC_HAS_CEXTENDED');
+<<<<<<< HEAD
   def_system_macro('FPC_HAS_RESSTRINITS');
+=======
+>>>>>>> graemeg/cpstrnew
 
 { these cpus have an inline rol/ror implementaion }
 {$ifdef cpurox}
@@ -3290,10 +3366,22 @@ begin
 
 { these cpus have an inline sar implementaion }
 { currently, all supported CPUs have an internal sar implementation }
+<<<<<<< HEAD
 { $if defined(x86) or defined(arm) or defined(powerpc) or defined(powerpc64) or defined(sparc) or defined(mips)}
   def_system_macro('FPC_HAS_INTERNAL_SAR');
 { $endif}
 
+=======
+{ $if defined(x86) or defined(arm) or defined(powerpc) or defined(powerpc64) or defined(sparc)}
+  def_system_macro('FPC_HAS_INTERNAL_SAR');
+{ $endif}
+
+{ inline bsf/bsr implementation }
+{$if defined(x86) or defined(x86_64)}
+  def_system_macro('FPC_HAS_INTERNAL_BSX');
+{$endif}
+
+>>>>>>> graemeg/cpstrnew
 {$ifdef powerpc64}
   def_system_macro('FPC_HAS_LWSYNC');
 {$endif}
@@ -3713,6 +3801,7 @@ begin
      not(cs_link_separate_dbg_file in init_settings.globalswitches) then
     exclude(init_settings.globalswitches,cs_link_strip);
 
+<<<<<<< HEAD
   { set Mac OS X version default macros if not specified explicitly }
   option.MaybeSetDefaultMacVersionMacro;
 
@@ -3724,6 +3813,19 @@ begin
          system_arm_nds,system_arm_embedded])
 {$ifdef arm}
       or (target_info.abi=abi_eabi)
+=======
+  { force fpu emulation on arm/wince, arm/gba, arm/embedded, arm/nds and
+    arm/darwin if fpu type not explicitly set }
+  if not(option.FPUSetExplicitly) and
+     ((target_info.system in [system_arm_wince,system_arm_gba,system_m68k_amiga,
+         system_m68k_linux,system_arm_nds,system_arm_embedded,system_arm_darwin])
+{$ifdef arm}
+      or (target_info.abi=abi_eabi)
+{$endif arm}
+     )
+{$ifdef arm}
+     or (init_settings.fputype=fpu_soft)
+>>>>>>> graemeg/cpstrnew
 {$endif arm}
      )
 {$if defined(arm) or defined (m68k)}
@@ -3739,6 +3841,7 @@ begin
     end;
 
 {$ifdef arm}
+<<<<<<< HEAD
   if target_info.abi = abi_eabihf then
     begin
       if not(option.FPUSetExplicitly) then
@@ -3788,10 +3891,16 @@ if (target_info.abi = abi_eabihf) then
       inherit this setting, e.g. Raspian is armhf but
       only armv6, this makes rebuilds of the compiler
       easier }
+=======
+{ set default cpu type to ARMv6 for Darwin unless specified otherwise }
+if (target_info.system=system_arm_darwin) then
+  begin
+>>>>>>> graemeg/cpstrnew
     if not option.CPUSetExplicitly then
       init_settings.cputype:=cpu_armv6;
     if not option.OptCPUSetExplicitly then
       init_settings.optimizecputype:=cpu_armv6;
+<<<<<<< HEAD
 {$else CPUARMV6}
     if not option.CPUSetExplicitly then
       init_settings.cputype:=cpu_armv7a;
@@ -3857,6 +3966,11 @@ if (target_info.abi = abi_eabihf) then
   end;
 {$endif mipsel}
 
+=======
+  end;
+{$endif arm}
+
+>>>>>>> graemeg/cpstrnew
   { now we can define cpu and fpu type }
   def_system_macro('CPU'+Cputypestr[init_settings.cputype]);
 
@@ -4021,7 +4135,11 @@ if (target_info.abi = abi_eabihf) then
   Option:=nil;
 
   clearstack_pocalls := [pocall_cdecl,pocall_cppdecl,pocall_syscall,pocall_mwpascal];
+<<<<<<< HEAD
   cdecl_pocalls := [pocall_cdecl, pocall_cppdecl, pocall_mwpascal];
+=======
+  cdecl_pocalls := [pocall_cdecl, pocall_cppdecl];
+>>>>>>> graemeg/cpstrnew
   if (tf_safecall_clearstack in target_info.flags) then
     begin
       include (cdecl_pocalls, pocall_safecall);

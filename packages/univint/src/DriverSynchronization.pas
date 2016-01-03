@@ -5,8 +5,22 @@
                  The contents of this header file are deprecated.
                  Use OSAtomic API instead.
  
+<<<<<<< HEAD
      Copyright:  © 1985-2011 by Apple Inc. All rights reserved.
 }
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -61,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -81,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -100,13 +118,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -116,13 +154,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -165,6 +207,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -249,7 +313,11 @@ uses MacTypes;
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32 ): Boolean; external name '_CompareAndSwap';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -296,7 +364,11 @@ function CompareAndSwap( oldValue: UInt32; newValue: UInt32; var address: UInt32
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '_TestAndClear';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -333,7 +405,11 @@ function TestAndClear( bit: UInt32; address: UnivPtr ): Boolean; external name '
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_TestAndSet';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -366,7 +442,11 @@ function TestAndSet( bit: UInt32; address: UnivPtr ): Boolean; external name '_T
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_IncrementAtomic8';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -399,7 +479,11 @@ function IncrementAtomic8( var address: SInt8 ): SInt8; external name '_Incremen
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_DecrementAtomic8';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -435,7 +519,11 @@ function DecrementAtomic8( var address: SInt8 ): SInt8; external name '_Decremen
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name '_AddAtomic8';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -472,7 +560,11 @@ function AddAtomic8( amount: SInt32; var address: SInt8 ): SInt8; external name 
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name '_BitAndAtomic8';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -509,7 +601,11 @@ function BitAndAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name '_BitOrAtomic8';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -546,7 +642,11 @@ function BitOrAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name 
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name '_BitXorAtomic8';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -579,7 +679,11 @@ function BitXorAtomic8( mask: UInt32; var address: UInt8 ): UInt8; external name
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_IncrementAtomic16';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -612,7 +716,11 @@ function IncrementAtomic16( var address: SInt16 ): SInt16; external name '_Incre
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_DecrementAtomic16';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -648,7 +756,11 @@ function DecrementAtomic16( var address: SInt16 ): SInt16; external name '_Decre
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external name '_AddAtomic16';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -685,7 +797,11 @@ function AddAtomic16( amount: SInt32; var address: SInt16 ): SInt16; external na
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external name '_BitAndAtomic16';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -722,7 +838,11 @@ function BitAndAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external name '_BitOrAtomic16';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -759,7 +879,11 @@ function BitOrAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external na
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external name '_BitXorAtomic16';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -792,7 +916,11 @@ function BitXorAtomic16( mask: UInt32; var address: UInt16 ): UInt16; external n
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function IncrementAtomic( var address: SInt32 ): SInt32; external name '_IncrementAtomic';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -825,7 +953,11 @@ function IncrementAtomic( var address: SInt32 ): SInt32; external name '_Increme
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function DecrementAtomic( var address: SInt32 ): SInt32; external name '_DecrementAtomic';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -861,7 +993,11 @@ function DecrementAtomic( var address: SInt32 ): SInt32; external name '_Decreme
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name '_AddAtomic';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -898,7 +1034,11 @@ function AddAtomic( amount: SInt32; var address: SInt32 ): SInt32; external name
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name '_BitAndAtomic';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -935,7 +1075,11 @@ function BitAndAtomic( mask: UInt32; var address: UInt32 ): UInt32; external nam
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name '_BitOrAtomic';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -972,7 +1116,11 @@ function BitOrAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function BitXorAtomic( mask: UInt32; var address: UInt32 ): UInt32; external name '_BitXorAtomic';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

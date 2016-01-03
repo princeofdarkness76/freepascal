@@ -39,7 +39,11 @@ unit cgcpu;
         procedure done_register_allocators;override;
 
         procedure a_load_reg_cgpara(list : TAsmList;size : tcgsize;r : tregister;const cgpara : tcgpara);override;
+<<<<<<< HEAD
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);override;
+=======
+        procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
+>>>>>>> graemeg/cpstrnew
         procedure a_load_ref_cgpara(list : TAsmList;size : tcgsize;const r : treference;const cgpara : tcgpara);override;
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const cgpara : tcgpara);override;
 
@@ -61,10 +65,21 @@ unit cgcpu;
         procedure a_loadfpu_reg_cgpara(list : TAsmList; size : tcgsize;const reg : tregister;const cgpara : TCGPara); override;
         procedure a_loadfpu_ref_cgpara(list : TAsmList; size : tcgsize;const ref : treference;const cgpara : TCGPara);override;
 
+<<<<<<< HEAD
         procedure a_op_const_reg(list : TAsmList; Op: TOpCG; size: tcgsize; a: tcgint; reg: TRegister); override;
         procedure a_op_const_ref(list : TAsmList; Op: TOpCG; size: TCGSize; a: tcgint; const ref: TReference); override;
         procedure a_op_reg_reg(list : TAsmList; Op: TOpCG; size: TCGSize; src, dst: TRegister); override;
         procedure a_op_reg_ref(list : TAsmList; Op: TOpCG; size: TCGSize; reg: TRegister; const ref: TReference); override;
+=======
+        procedure a_loadmm_reg_reg(list: TAsmList;fromsize,tosize : tcgsize; reg1, reg2: tregister;shuffle : pmmshuffle); override;
+        procedure a_loadmm_ref_reg(list: TAsmList;fromsize,tosize : tcgsize; const ref: treference; reg: tregister;shuffle : pmmshuffle); override;
+        procedure a_loadmm_reg_ref(list: TAsmList;fromsize,tosize : tcgsize; reg: tregister; const ref: treference;shuffle : pmmshuffle); override;
+        procedure a_loadmm_reg_cgpara(list: TAsmList; size: tcgsize; reg: tregister;const locpara : TCGPara;shuffle : pmmshuffle); override;
+
+        procedure a_op_const_reg(list : TAsmList; Op: TOpCG; size: tcgsize; a: aint; reg: TRegister); override;
+//        procedure a_op_const_ref(list : TAsmList; Op: TOpCG; size: TCGSize; a: aint; const ref: TReference); override;
+        procedure a_op_reg_reg(list : TAsmList; Op: TOpCG; size: TCGSize; reg1, reg2: TRegister); override;
+>>>>>>> graemeg/cpstrnew
 
         procedure a_cmp_const_reg_label(list : TAsmList;size : tcgsize;cmp_op : topcmp;a : tcgint;reg : tregister; l : tasmlabel);override;
         procedure a_cmp_const_ref_label(list : TAsmList;size : tcgsize;cmp_op : topcmp;a : tcgint;const ref : treference; l : tasmlabel); override;
@@ -121,6 +136,15 @@ unit cgcpu;
      function isvalidrefoffset(const ref: treference): boolean;
      function isvalidreference(const ref: treference): boolean;
 
+<<<<<<< HEAD
+=======
+    const
+      TCGSize2OpSize: Array[tcgsize] of topsize =
+        (S_NO,S_B,S_W,S_L,S_L,S_NO,S_B,S_W,S_L,S_L,S_NO,
+         S_FS,S_FD,S_FX,S_NO,S_NO,
+         S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO);
+
+>>>>>>> graemeg/cpstrnew
     procedure create_codegen;
 
   implementation
@@ -282,6 +306,12 @@ unit cgcpu;
         pushsize : tcgsize;
         ref : treference;
       begin
+<<<<<<< HEAD
+=======
+{$ifdef DEBUG_CHARLIE}
+//        writeln('a_load_reg');_cgpara
+{$endif DEBUG_CHARLIE}
+>>>>>>> graemeg/cpstrnew
         { it's probably necessary to port this from x86 later, or provide an m68k solution (KB) }
 { TODO: FIX ME! check_register_size()}
         // check_register_size(size,r);
@@ -302,11 +332,21 @@ unit cgcpu;
       end;
 
 
+<<<<<<< HEAD
     procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);
+=======
+    procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
+>>>>>>> graemeg/cpstrnew
       var
         pushsize : tcgsize;
         ref : treference;
       begin
+<<<<<<< HEAD
+=======
+{$ifdef DEBUG_CHARLIE}
+//        writeln('a_load_const');_cgpara
+{$endif DEBUG_CHARLIE}
+>>>>>>> graemeg/cpstrnew
         if use_push(cgpara) then
           begin
             cgpara.check_simple_location;
@@ -373,6 +413,13 @@ unit cgcpu;
         len : tcgint;
         href : treference;
       begin
+<<<<<<< HEAD
+=======
+{$ifdef DEBUG_CHARLIE}
+//        writeln('a_load_ref');_cgpara
+{$endif DEBUG_CHARLIE}
+
+>>>>>>> graemeg/cpstrnew
         { cgpara.size=OS_NO requires a copy on the stack }
         if use_push(cgpara) then
           begin
@@ -404,6 +451,7 @@ unit cgcpu;
       var
         tmpref : treference;
       begin
+<<<<<<< HEAD
         { 68k always passes arguments on the stack }
         if use_push(cgpara) then
           begin
@@ -415,6 +463,43 @@ unit cgcpu;
           end
         else
           inherited a_loadaddr_ref_cgpara(list,r,cgpara);
+=======
+{$ifdef DEBUG_CHARLIE}
+//        writeln('a_loadaddr_ref');_cgpara
+{$endif DEBUG_CHARLIE}
+        with r do
+          begin
+            { i suppose this is not required for m68k (KB) }
+//            if (segment<>NR_NO) then
+//              cgmessage(cg_e_cant_use_far_pointer_there);
+            if not use_push(cgpara) then
+              begin
+                cgpara.check_simple_location;
+                opsize:=tcgsize2opsize[OS_ADDR];
+                if (segment=NR_NO) and (base=NR_NO) and (index=NR_NO) then
+                  begin
+                    if assigned(symbol) then
+//                      list.concat(Taicpu.Op_sym_ofs(A_PUSH,opsize,symbol,offset))
+                    else;
+//                      list.concat(Taicpu.Op_const(A_PUSH,opsize,offset));
+                  end
+                else if (segment=NR_NO) and (base=NR_NO) and (index<>NR_NO) and
+                        (offset=0) and (scalefactor=0) and (symbol=nil) then
+//                  list.concat(Taicpu.Op_reg(A_PUSH,opsize,index))
+                else if (segment=NR_NO) and (base<>NR_NO) and (index=NR_NO) and
+                        (offset=0) and (symbol=nil) then
+//                  list.concat(Taicpu.Op_reg(A_PUSH,opsize,base))
+                else
+                  begin
+                    tmpreg:=getaddressregister(list);
+                    a_loadaddr_ref_reg(list,r,tmpreg);
+//                    list.concat(taicpu.op_reg(A_PUSH,opsize,tmpreg));
+                  end;
+              end
+            else
+              inherited a_loadaddr_ref_cgpara(list,r,cgpara);
+          end;
+>>>>>>> graemeg/cpstrnew
       end;
 
     function tcg68k.fixref(list: TAsmList; var ref: treference): boolean;
@@ -1055,11 +1140,16 @@ unit cgcpu;
           inherited a_loadfpu_reg_cgpara(list,size,reg,cgpara);
       end;
 
+<<<<<<< HEAD
     procedure tcg68k.a_loadfpu_ref_cgpara(list : TAsmList; size : tcgsize;const ref : treference;const cgpara : TCGPara);
       var
         href : treference;
         fref : treference;
         freg : tregister;
+=======
+
+    procedure tcg68k.a_loadmm_reg_cgpara(list: TAsmList; size: tcgsize; reg: tregister;const locpara : TCGPara;shuffle : pmmshuffle);
+>>>>>>> graemeg/cpstrnew
       begin
         if current_settings.fputype = fpu_soft then
           case cgpara.location^.loc of
@@ -2124,13 +2214,37 @@ unit cgcpu;
           end;
       end;
 
+<<<<<<< HEAD
 
     procedure tcg68k.g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: tcgint);
+=======
+        procedure op_onr11methodaddr;
+        var
+          href : treference;
+        begin
+          if (procdef.extnumber=$ffff) then
+            Internalerror(200006139);
+          { call/jmp  vmtoffs(%eax) ; method offs }
+          reference_reset_base(href,NR_R11,tobjectdef(procdef.struct).vmtmethodoffset(procdef.extnumber));
+          if not((longint(href.offset) >= low(smallint)) and
+                 (longint(href.offset) <= high(smallint))) then
+            begin
+              list.concat(taicpu.op_reg_reg_const(A_ADDIS,NR_R11,NR_R11,
+                smallint((href.offset shr 16)+ord(smallint(href.offset and $ffff) < 0))));
+              href.offset := smallint(href.offset and $ffff);
+            end;
+          list.concat(taicpu.op_reg_ref(A_LWZ,NR_R11,href));
+          list.concat(taicpu.op_reg(A_MTCTR,NR_R11));
+          list.concat(taicpu.op_none(A_BCTR));
+        end;
+}
+>>>>>>> graemeg/cpstrnew
       var
         hsym : tsym;
         href : treference;
         paraloc : Pcgparalocation;
       begin
+<<<<<<< HEAD
         { calculate the parameter info for the procdef }
         procdef.init_paraloc_info(callerside);
         hsym:=tsym(procdef.parast.Find('self'));
@@ -2161,6 +2275,27 @@ unit cgcpu;
               paraloc:=next;
             end;
       end;
+=======
+        if not(procdef.proctypeoption in [potype_function,potype_procedure]) then
+          Internalerror(200006137);
+        if not assigned(procdef.struct) or
+           (procdef.procoptions*[po_classmethod, po_staticmethod,
+             po_methodpointer, po_interrupt, po_iocheck]<>[]) then
+          Internalerror(200006138);
+        if procdef.owner.symtabletype<>ObjectSymtable then
+          Internalerror(200109191);
+
+        make_global:=false;
+        if (not current_module.is_unit) or
+           create_smartlink or
+           (procdef.owner.defowner.owner.symtabletype=globalsymtable) then
+          make_global:=true;
+
+        if make_global then
+          List.concat(Tai_symbol.Createname_global(labelname,AT_FUNCTION,0))
+        else
+          List.concat(Tai_symbol.Createname(labelname,AT_FUNCTION,0));
+>>>>>>> graemeg/cpstrnew
 
 
     procedure tcg68k.g_stackpointer_alloc(list : TAsmList;localsize : longint);
@@ -2329,6 +2464,13 @@ unit cgcpu;
       end;
 
 
+procedure create_codegen;
+  begin
+    cg := tcg68k.create;
+    cg64 :=tcg64f68k.create;
+  end;
+  
+  
 procedure create_codegen;
   begin
     cg := tcg68k.create;

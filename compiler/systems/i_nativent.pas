@@ -35,14 +35,22 @@ unit i_nativent;
             system       : system_i386_NATIVENT;
             name         : 'Native NT for i386';
             shortname    : 'NativeNT';
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_use_function_relative_addresses
+=======
+            flags        : [tf_files_case_aware,tf_use_function_relative_addresses,tf_smartlink_library
+>>>>>>> graemeg/cpstrnew
                             ,tf_smartlink_sections{,tf_section_threadvars}{,tf_needs_dwarf_cfi},
                             tf_no_pic_supported,
                             tf_no_generic_stackcheck{,tf_has_winlike_resources},tf_under_development,
                             tf_dwarf_only_local_labels];
             cpu          : cpu_i386;
             unit_env     : 'NTUNITS';
+<<<<<<< HEAD
             extradefines : 'NATIVENT;FPC_OS_UNICODE';
+=======
+            extradefines : 'NATIVENT,UNICODE';
+>>>>>>> graemeg/cpstrnew
             exeext       : '.exe';
             defext       : '.def';
             scriptext    : '.bat';
@@ -68,8 +76,13 @@ unit i_nativent;
             dirsep       : '\';
             assem        : as_i386_pecoff;
             assemextern  : as_gas;
+<<<<<<< HEAD
             link         : ld_int_nativent;
             linkextern   : ld_none;
+=======
+            link         : nil;
+            linkextern   : nil;
+>>>>>>> graemeg/cpstrnew
             ar           : ar_gnu_ar;
             res          : res_gnu_windres;
             dbg          : dbg_stabs;
@@ -92,17 +105,29 @@ unit i_nativent;
               );
             first_parm_offset : 8;
             stacksize    : 16*1024*1024;
+<<<<<<< HEAD
             stackalign   : 4;
             abi          : abi_default;
             llvmdatalayout : 'e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-f80:128:128-v64:64:64-v128:128:128-a0:0:64-f80:32:32-n8:16:32-S32';
+=======
+            abi          : abi_default;
+>>>>>>> graemeg/cpstrnew
           );
 
   implementation
 
 initialization
+<<<<<<< HEAD
 {$ifdef CPUI386}
   {$ifdef NATIVENT}
     set_source_info(system_i386_nativent_info);
   {$endif NATIVENT}
 {$endif CPUI386}
+=======
+{$ifdef CPU86}
+  {$ifdef NATIVENT}
+    set_source_info(system_i386_nativent_info);
+  {$endif NATIVENT}
+{$endif CPU86}
+>>>>>>> graemeg/cpstrnew
 end.

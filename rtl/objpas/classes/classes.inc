@@ -193,10 +193,15 @@ function ThreadProc(ThreadObjPtr: Pointer): PtrInt;
       { The thread may be already terminated at this point, e.g. if it was intially
         suspended, or if it wasn't ever scheduled for execution for whatever reason.
         So bypass user code if terminated. }
+<<<<<<< HEAD
       if not Thread.Terminated then begin
         CurrentThreadVar := Thread;
         Thread.Execute;
       end;
+=======
+      if not Thread.Terminated then
+        Thread.Execute;
+>>>>>>> graemeg/cpstrnew
     except
       Thread.FFatalException := TObject(AcquireExceptionObject);
     end;
@@ -212,6 +217,14 @@ function ThreadProc(ThreadObjPtr: Pointer): PtrInt;
 { system-dependent code }
 {$i tthread.inc}
 
+procedure TThread.Start;
+begin
+  { suspend/resume are now deprecated in Delphi (they also don't work
+    on most platforms in FPC), so a different method was required
+    to start a thread if it's create with fSuspended=true -> that's
+    what this method is for. }
+  Resume;
+end;
 
 constructor TThread.Create(CreateSuspended: Boolean;
                            const StackSize: SizeUInt);
@@ -259,8 +272,13 @@ begin
 // enable for all platforms once http://bugs.freepascal.org/view.php?id=16884
 // is fixed for all platforms (in case the fix for non-unix platforms also
 // requires this field at least)
+<<<<<<< HEAD
 {$if defined(unix) or defined(windows) or defined(os2) or defined(hasamiga)}
   if not FExternalThread and not FInitialSuspended then
+=======
+{$if defined(unix) or defined(windows)}
+  if not FInitialSuspended then
+>>>>>>> graemeg/cpstrnew
     Resume;
 {$endif}
 end;
@@ -1347,7 +1365,11 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
         if not InString then
           NewInString := True;
         NewStr := '''''';
+<<<<<<< HEAD
         end
+=======
+        end 
+>>>>>>> graemeg/cpstrnew
       else if (Ord(w) >= 32) and ((Ord(w) < 127) or (UseBytes and (Ord(w)<256))) then
         begin //printable ascii or bytes
         if not InString then

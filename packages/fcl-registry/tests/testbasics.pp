@@ -21,8 +21,11 @@ type
   published
     procedure TestSimpleWinRegistry;
     procedure TestDoubleWrite;
+<<<<<<< HEAD
     procedure bug16395;
     procedure TestAdv;
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 
 implementation
@@ -73,11 +76,29 @@ begin
 end;
 
 procedure TTestBasics.TestDoubleWrite;
+<<<<<<< HEAD
 begin
   DeleteUserXmlFile;
   with TRegistry.Create do
     try
       OpenKey('FirstNode', true);
+=======
+
+{$ifndef windows}
+Var
+  FN : String;
+{$endif}
+
+begin
+{$ifndef windows}
+  FN:=includetrailingpathdelimiter(GetAppConfigDir(False))+'reg.xml';
+  if FileExists(FN) then
+    AssertTrue(DeleteFile(FN));
+{$endif}
+  with TRegistry.Create do
+    try
+      OpenKey('test', true);
+>>>>>>> graemeg/cpstrnew
       WriteString('LAYOUT', '');
       CloseKey;
     finally
@@ -85,12 +106,17 @@ begin
     end;
   with TRegistry.Create do
     try
+<<<<<<< HEAD
       OpenKey('FirstNode', true);
+=======
+      OpenKey('test', true);
+>>>>>>> graemeg/cpstrnew
       WriteString('LAYOUT', '');
       CloseKey;
     finally
       Free;
     end;
+<<<<<<< HEAD
   DeleteUserXmlFile;
 end;
 
@@ -157,6 +183,13 @@ begin
 {$ifdef windows}
   DoRegTest2;
 {$endif windows}
+=======
+{$ifndef windows}
+  FN:=includetrailingpathdelimiter(GetAppConfigDir(False))+'reg.xml';
+  if FileExists(FN) then
+    AssertTrue(DeleteFile(FN));
+{$endif}
+>>>>>>> graemeg/cpstrnew
 end;
 
 initialization

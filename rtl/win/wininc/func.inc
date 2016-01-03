@@ -374,8 +374,13 @@ function MakeAbsoluteSD(pSelfRelativeSecurityDescriptor:PSECURITY_DESCRIPTOR; pA
 function SetKernelObjectSecurity(Handle:HANDLE; SecurityInformation:SECURITY_INFORMATION; SecurityDescriptor:PSECURITY_DESCRIPTOR):WINBOOL; external 'advapi32' name 'SetKernelObjectSecurity';
 function FindNextChangeNotification(hChangeHandle:HANDLE):WINBOOL; external 'kernel32' name 'FindNextChangeNotification';
 function FindCloseChangeNotification(hChangeHandle:HANDLE):WINBOOL; external 'kernel32' name 'FindCloseChangeNotification';
+<<<<<<< HEAD
 function VirtualLock(lpAddress:LPVOID; dwSize:PTRUINT):WINBOOL; external 'kernel32' name 'VirtualLock';
 function VirtualUnlock(lpAddress:LPVOID; dwSize:PTRUINT):WINBOOL; external 'kernel32' name 'VirtualUnlock';
+=======
+function VirtualLock(lpAddress:LPVOID; dwSize:DWORD):WINBOOL; external 'kernel32' name 'VirtualLock';
+function VirtualUnlock(lpAddress:LPVOID; dwSize:DWORD):WINBOOL; external 'kernel32' name 'VirtualUnlock';
+>>>>>>> graemeg/cpstrnew
 function MapViewOfFileEx(hFileMappingObject:HANDLE; dwDesiredAccess:DWORD; dwFileOffsetHigh:DWORD; dwFileOffsetLow:DWORD; dwNumberOfBytesToMap:SIZE_T;lpBaseAddress:LPVOID):LPVOID; external 'kernel32' name 'MapViewOfFileEx';
 function SetPriorityClass(hProcess:HANDLE; dwPriorityClass:DWORD):WINBOOL; external 'kernel32' name 'SetPriorityClass';
 function GetPriorityClass(hProcess:HANDLE):DWORD; external 'kernel32' name 'GetPriorityClass';
@@ -1274,7 +1279,10 @@ function EndMenu:BOOL; external 'user32' name 'EndMenu';
 
 
 function GetMenuBarInfo(_hwnd:HWND; idObject:longint; idItem:longint; pmbi:LPMENUBARINFO):BOOL; external 'user32' name 'GetMenuBarInfo';
+<<<<<<< HEAD
 function IMAGE_FIRST_SECTION(ntheader : PIMAGE_NT_HEADERS):PIMAGE_SECTION_HEADER;
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$endif read_interface}
 

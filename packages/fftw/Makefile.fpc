@@ -4,7 +4,16 @@
 
 [package]
 name=fftw
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=fftw_s
+programs=
+exampledirs=
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

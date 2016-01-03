@@ -58,6 +58,11 @@ procedure tcgobjcselectornode.pass_generate_code;
     entry  : PHashSetItem;
     name   : pshortstring;
   begin
+<<<<<<< HEAD
+=======
+    if current_asmdata.ConstPools[sp_varnamerefs]=nil then
+      current_asmdata.ConstPools[sp_varnamerefs]:=THashSet.Create(64, True, False);
+>>>>>>> graemeg/cpstrnew
     pool:=current_asmdata.ConstPools[sp_varnamerefs];
 
     case left.nodetype of

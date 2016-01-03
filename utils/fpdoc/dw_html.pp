@@ -120,8 +120,12 @@ type
     FUseMenuBrackets: Boolean;
 
     Procedure CreateAllocator; virtual;
+<<<<<<< HEAD
     procedure CreateCSSFile; virtual;
     function ResolveLinkID(const Name: String; Level : Integer = 0): DOMString;
+=======
+    function ResolveLinkID(const Name: String): DOMString;
+>>>>>>> graemeg/cpstrnew
     function ResolveLinkIDInUnit(const Name,AUnitName: String): DOMString;
     function ResolveLinkWithinPackage(AElement: TPasElement;
       ASubpageIndex: Integer): String;
@@ -798,6 +802,10 @@ var
   i: Integer;
   PageDoc: TXMLDocument;
   Filename: String;
+<<<<<<< HEAD
+=======
+  TempStream: TMemoryStream;
+>>>>>>> graemeg/cpstrnew
 
 begin
   if Engine.Output <> '' then
@@ -819,6 +827,7 @@ begin
         PageDoc.Free;
       end;
     end;
+<<<<<<< HEAD
   CreateCSSFile;
   CreatePlusImage;
   CreateMinusImage;
@@ -892,6 +901,20 @@ begin
    TempStream.Position := 0;
    TempStream.SaveToFile(Engine.output+'fpdoc.css');
   finally
+=======
+  
+  if FCSSFile <> '' then
+  begin
+    if not FileExists(FCSSFile) Then
+      begin
+        Writeln(stderr,'Can''t find CSS file "',FCSSFILE,'"');
+        halt(1);
+      end;
+    TempStream := TMemoryStream.Create;
+    TempStream.LoadFromFile(FCSSFile);
+    TempStream.Position := 0;
+    TempStream.SaveToFile(Engine.output+ExtractFileName(FCSSFile));
+>>>>>>> graemeg/cpstrnew
     TempStream.Free;
   end;
 end;
@@ -953,8 +976,13 @@ function THTMLWriter.ResolveLinkIDInUnit(const Name,AUnitName: String): DOMStrin
 
 begin
   Result:=ResolveLinkID(Name);
+<<<<<<< HEAD
   If (Result='') and (AUnitName<>'') and (length(Name)>0) and (Name[1]<>'#') then
      Result:=ResolveLinkID(AUnitName+'.'+Name);
+=======
+  If (Result='') and (AUnitName<>'')  then
+    Result:=ResolveLinkID(AUnitName+'.'+Name);
+>>>>>>> graemeg/cpstrnew
 end;
 
 function THTMLWriter.ResolveLinkID(const Name: String; Level : Integer = 0): DOMString;
@@ -2399,7 +2427,11 @@ procedure THTMLWriter.CreateClassHierarchyPage(AList : TStringList; AddUnit : Bo
     PushOutputNode(h);
   end;
 
+<<<<<<< HEAD
   Procedure AppendClass(E : TDomElement);
+=======
+	procedure THTMLWriter.CreateIndexPage(L : TStringList);
+>>>>>>> graemeg/cpstrnew
 
   Var
     N : TDomNode;
@@ -3340,6 +3372,10 @@ var
   var
     TableEl, TREl, TDEl, CodeEl: TDOMElement;
     i: Integer;
+<<<<<<< HEAD
+=======
+    s: String;
+>>>>>>> graemeg/cpstrnew
     ThisInterface,
     ThisClass: TPasClassType;
     HaveSeenTObject: Boolean;
@@ -3378,7 +3414,66 @@ var
 
     if Assigned(AClass.AncestorType) then
     begin
+<<<<<<< HEAD
       if AClass.ObjKind=okSpecialize then
+=======
+      AppendSym(CodeEl, '(');
+      AppendHyperlink(CodeEl, AClass.AncestorType);
+      if AClass.Interfaces.count>0 Then
+        begin
+          for i:=0 to AClass.interfaces.count-1 do
+           begin
+             AppendSym(CodeEl, ', ');
+             AppendHyperlink(CodeEl,TPasClassType(AClass.Interfaces[i]));
+           end; 
+        end;
+      AppendSym(CodeEl, ')');
+    end;
+
+    if AClass.Members.Count > 0 then
+    begin
+      CurVisibility := visDefault;
+      for i := 0 to AClass.Members.Count - 1 do
+      begin
+        Member := TPasElement(AClass.Members[i]);
+        if CurVisibility <> Member.Visibility then
+        begin
+          CurVisibility := Member.Visibility;
+          if ((CurVisibility = visPrivate) and Engine.HidePrivate) or
+            ((CurVisibility = visProtected) and Engine.HideProtected) then
+            continue;
+          case CurVisibility of
+            visPrivate: s := 'private';
+            visProtected: s := 'protected';
+            visPublic: s := 'public';
+            visPublished: s := 'published';
+            visAutomated: s := 'automated';
+          end;
+          AppendKw(CreateCode(CreatePara(CreateTD(CreateTR(TableEl)))), s);
+        end else
+          if ((CurVisibility = visPrivate) and Engine.HidePrivate) or
+            ((CurVisibility = visProtected) and Engine.HideProtected) then
+            continue;
+
+        TREl := CreateTR(TableEl);
+        CodeEl := CreateCode(CreatePara(CreateTD_vtop(TREl)));
+        AppendNbSp(CodeEl, 2);
+        AppendShortDescrCell(TREl, Member);
+
+        if Member.InheritsFrom(TPasProcedureBase) then
+        begin
+          AppendKw(CodeEl, TPasProcedureBase(Member).TypeName + ' ');
+          AppendHyperlink(CodeEl, Member);
+          if (Member.ClassType = TPasOverloadedProc) or
+            (TPasProcedure(Member).ProcType.Args.Count > 0) then
+            AppendSym(CodeEl, '();')
+          else
+            AppendSym(CodeEl, ';');
+          if Member.ClassType <> TPasOverloadedProc then
+            AppendProcExt(CodeEl, TPasProcedure(Member));
+        end else
+        if Member.ClassType = TPasVariable then
+>>>>>>> graemeg/cpstrnew
         begin
         AppendHyperlink(CodeEl, AClass.AncestorType);
         AppendGenericTypes(CodeEl,AClass.GenericTemplateTypes,true)
@@ -3418,6 +3513,7 @@ var
       TDEl := CreateTD_vtop(TREl);
       TDEl['align'] := 'center';
       CodeEl := CreateCode(CreatePara(TDEl));
+<<<<<<< HEAD
       if Assigned(ThisClass) then
         LName:=ThisClass.Name
       Else
@@ -3427,6 +3523,10 @@ var
       else
         AppendHyperlink(CodeEl, ThisNode);
       if Assigned(ThisClass) and (ThisClass.Interfaces.count>0) then
+=======
+      AppendHyperlink(CodeEl, ThisClass);
+      if ThisClass.Interfaces.count>0 then
+>>>>>>> graemeg/cpstrnew
         begin
           for i:=0 to ThisClass.interfaces.count-1 do
             begin

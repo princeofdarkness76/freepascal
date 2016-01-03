@@ -573,11 +573,18 @@ Var
   Info : Stat;
   SystemFileName: RawByteString;
 begin
+<<<<<<< HEAD
   SystemFileName:=ToSingleByteFileSystemEncodedFileName(FileName);
   If  (fpstat(pchar(SystemFileName),Info)<0) or fpS_ISDIR(info.st_mode) then
     exit(-1)
   else 
     Result:=info.st_mtime;
+=======
+  If  (fpstat (pointer(FileName),Info)<0) or fpS_ISDIR(info.st_mode) then
+    exit(-1)
+  else 
+    Result:=UnixToWinAge(info.st_mtime);
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -1525,12 +1532,15 @@ begin
   Write(#7);
   Flush(Output);
 end;
+<<<<<<< HEAD
 
 function GetLocalTimeOffset: Integer;
 
 begin
  Result := -Tzseconds div 60; 
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 {****************************************************************************
                               Initialization code

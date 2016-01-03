@@ -63,11 +63,19 @@ type
     _trackingArea: id;
     _lastCell: id;
     _lastCellFrame: NSRect;
+<<<<<<< HEAD
     _reserved: array[0..(7)-1] of id;
     __tfcFlags: record
       case byte of
        0: (_anonbitfield_NSTokenFieldCell0: cuint);
        1: (data: bitpacked record
+=======
+        _reserved: array[0..6] of id;
+    __tfcFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSTokenFieldCell0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _style: 0..((1 shl 4)-1);
         
         _invalidCache: 0..1;
@@ -79,7 +87,10 @@ type
         _performingDrop: 0..1;
         
         __reserved: 0..((1 shl 20)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

@@ -117,9 +117,15 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
+=======
+  format: TPTCFormat = nil;
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> graemeg/cpstrnew
   TheTunnel: TTunnel = nil;
   time, delta: Single;
   buffer: PUint32;
@@ -136,7 +142,11 @@ begin
       console.open('Tunnel demo', 320, 200, format);
 
       { create surface }
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
+=======
+      surface := TPTCSurface.Create(320, 200, format);
+>>>>>>> graemeg/cpstrnew
 
       { create tunnel }
       TheTunnel := TTunnel.Create;
@@ -169,8 +179,15 @@ begin
       end;
     finally
       TheTunnel.Free;
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      surface.Free;
+      console.close;
+      console.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

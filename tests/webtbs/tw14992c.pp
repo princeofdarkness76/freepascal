@@ -10,19 +10,31 @@ uses
 var
   dll1, dll2: HModule;
 
+<<<<<<< HEAD
 function T1(Parameter: Pointer): PtrInt;
+=======
+function T1(Parameter: Pointer): LongInt;
+>>>>>>> graemeg/cpstrnew
 begin
   //Sleep(100);
 end;
 
+<<<<<<< HEAD
 function T2(Parameter: Pointer): PtrInt;
+=======
+function T2(Parameter: Pointer): LongInt;
+>>>>>>> graemeg/cpstrnew
 begin
   //Sleep(100);
 end;
 
 var
   h: array[0..1] of THandle;
+<<<<<<< HEAD
   id1, id2: TThreadID;
+=======
+  id1, id2: DWORD;
+>>>>>>> graemeg/cpstrnew
   p : pointer;
 begin
   IsMultiThread:=True;

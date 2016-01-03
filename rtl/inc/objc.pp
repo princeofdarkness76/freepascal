@@ -3,7 +3,11 @@ unit objc;
 
 {$ifdef darwin}
 {$define targethandled}
+<<<<<<< HEAD
 {$if defined(iphonesim) or defined(cpuarm) or defined(cpux86_64) or defined(cpupowerpc64) or defined(cpuaarch64)}
+=======
+{$if defined(iphonesim) or defined(cpuarm) or defined(cpux86_64) or defined(cpupowerpc64)}
+>>>>>>> graemeg/cpstrnew
 {$i objcnf.inc}
 {$endif}
 

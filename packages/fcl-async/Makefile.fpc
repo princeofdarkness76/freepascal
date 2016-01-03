@@ -4,7 +4,11 @@
 
 [package]
 name=fcl-async
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
@@ -12,6 +16,31 @@ packages=rtl fpmkunit
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
+=======
+[compiler]
+sourcedir=src
+sourcedir_linux=src/unix
+sourcedir_beos=src/unix
+sourcedir_haiku=src/unix
+sourcedir_freebsd=src/unix
+sourcedir_darwin=src/unix
+sourcedir_iphonesim=src/unix
+sourcedir_solaris=src/unix
+sourcedir_netbsd=src/unix
+sourcedir_openbsd=src/unix
+includedir=src
+includedir_linux=src/unix
+includedir_beos=src/unix
+includedir_haiku=src/unix
+includedir_freebsd=src/unix
+includedir_darwin=src/unix
+includedir_iphonesim=src/unix
+includedir_solaris=src/unix
+includedir_netbsd=src/unix
+includedir_openbsd=src/unix
+
+>>>>>>> graemeg/cpstrnew
 [default]
 fpcdir=../..
 

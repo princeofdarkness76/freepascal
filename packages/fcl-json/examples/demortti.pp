@@ -5,6 +5,11 @@ program demortti;
 uses
   Classes, SysUtils, fpjson, fpjsonrtti, variants;
 
+<<<<<<< HEAD
+=======
+{$R *.res}
+
+>>>>>>> graemeg/cpstrnew
 Var
   JS : TJSONStreamer;
 

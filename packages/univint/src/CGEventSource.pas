@@ -3,8 +3,11 @@
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -59,11 +62,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -82,33 +88,49 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -158,6 +180,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -269,6 +319,7 @@ function CGEventSourceGetPixelsPerLine( source: CGEventSourceRef ): Float64; ext
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 
 { Set the scale of pixels per line in a scrolling event source.
+<<<<<<< HEAD
 
    This function sets the scale of pixels per line in the specified event
    source. For example, if you pass the value 12 as the `pixelsPerLine'
@@ -335,6 +386,74 @@ function CGEventSourceSecondsSinceLastEventType( stateID: CGEventSourceStateID; 
 function CGEventSourceCounterForEventType( stateID: CGEventSourceStateID; eventType: CGEventType ): UInt32; external name '_CGEventSourceCounterForEventType';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
+=======
+
+   This function sets the scale of pixels per line in the specified event
+   source. For example, if you pass the value 12 as the `pixelsPerLine'
+   parameter, the scale of pixels per line in the event source would be
+   changed to 12. Every scrolling event can be interpreted to be scrolling
+   by pixel or by line. By default, the scale is about ten pixels per
+   line. }
+
+procedure CGEventSourceSetPixelsPerLine( source: CGEventSourceRef; pixelsPerLine: Float64 ); external name '_CGEventSourceSetPixelsPerLine';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+
+{ Return the source state associated with a Quartz event source.
+
+   For event sources created with the `kCGEventSourceStatePrivate' source
+   state, this function returns the ID of the private source state table
+   created for the event source. This unique ID may be passed to the
+   `CGEventSourceCreate' function to create a second event source sharing
+   the same state table. This may be useful, for example, in creating
+   separate mouse and keyboard sources which share a common private state. }
+
+function CGEventSourceGetSourceStateID( source: CGEventSourceRef ): CGEventSourceStateID; external name '_CGEventSourceGetSourceStateID';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return a Boolean value indicating the current button state of a Quartz
+   event source. If true, the button is down; if false, the button is up. }
+
+function CGEventSourceButtonState( stateID: CGEventSourceStateID; button: CGMouseButton ): CBool; external name '_CGEventSourceButtonState';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return a Boolean value indicating the current keyboard state of a Quartz
+   event source. If true, the key is down; if false, the key is up. }
+
+function CGEventSourceKeyState( stateID: CGEventSourceStateID; key: CGKeyCode ): CBool; external name '_CGEventSourceKeyState';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return the current flags of a Quartz event source. If true, the key is
+   down; if false, the key is up. }
+
+function CGEventSourceFlagsState( stateID: CGEventSourceStateID ): CGEventFlags; external name '_CGEventSourceFlagsState';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return the elapsed time since the last event for a Quartz event source.
+
+   To get the elapsed time since the previous input event --- keyboard,
+   mouse, or tablet --- specify `kCGAnyInputEventType'. }
+
+function CGEventSourceSecondsSinceLastEventType( stateID: CGEventSourceStateID; eventType: CGEventType ): CFTimeInterval; external name '_CGEventSourceSecondsSinceLastEventType';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return a count of events of a given type seen since the Window Server
+   started.
+
+   Modifier keys produce `kCGEventFlagsChanged' events, not `kCGEventKeyDown'
+   events, and do so both on press and release. The volume, brightness, and
+   CD eject keys on some keyboards (both desktop and laptop) do not generate
+   key up or key down events.
+
+   For various reasons, the number of key up and key down events may not be
+   the same when all keyboard keys are up. As a result, a mismatch does not
+   necessarily indicate that some keys are down.
+
+   Key autorepeat events are not counted. }
+
+function CGEventSourceCounterForEventType( stateID: CGEventSourceStateID; eventType: CGEventType ): UInt32; external name '_CGEventSourceCounterForEventType';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+>>>>>>> graemeg/cpstrnew
 { Set the 64-bit user-specified data for a Quartz event source.
 
    Each input event includes 64 bits of user-specified data. This function

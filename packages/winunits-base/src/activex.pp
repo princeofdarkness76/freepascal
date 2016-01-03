@@ -29,10 +29,17 @@ type
    POleStr = Types.POleStr;
    PPOleStr = Types.PPOleStr;
    TBStr = POleStr;
+<<<<<<< HEAD
    TBStrList = array[0..65535] of TBstr;
    PBStrList = ^TBStrList;
    POleStrList = ^TOleStrList;
    TOleStrList = array[0..65535] of POleStr;
+=======
+   TBStrList = array[0..(high(integer) div sizeof(TBSTR))-1] of TBstr;
+   PBStrList = ^TBStrList;
+   POleStrList = ^TOleStrList;
+   TOleStrList = array[0..(high(integer) div sizeof(POleStr))-1] of POleStr;
+>>>>>>> graemeg/cpstrnew
 
    PBStr = ^TBStr;
    TOleEnum = type LongWord;
@@ -60,6 +67,7 @@ type
    BSTR	               = POLESTR;
    TOleDate	       = DATE;
    POleDate	       = ^TOleDate;	
+<<<<<<< HEAD
    TOleBool	       = wordbool;
    OLE_HANDLE	       = UINT;
    OLE_XSIZE_HIMETRIC = LONG;
@@ -84,6 +92,9 @@ type
    FONTITALIC = WordBool;
    FONTUNDERSCORE = WordBool;
    FONTSTRIKETHROUGH = WordBool;
+=======
+   OLE_HANDLE	       = UINT;
+>>>>>>> graemeg/cpstrnew
    LPOLE_HANDLE        = ^OLE_HANDLE;
    OLE_COLOR	       = DWORD;
    LPOLE_COLOR         = ^OLE_COLOR;
@@ -91,7 +102,10 @@ type
    POleHandle          = LPOLE_HANDLE;
    TOleColor           = OLE_COLOR;
    POleColor           = LPOle_Color;
+<<<<<<< HEAD
    HHandle             = UINT_PTR;
+=======
+>>>>>>> graemeg/cpstrnew
 
 CONST
    GUID_NULL  : TGUID =  '{00000000-0000-0000-0000-000000000000}';

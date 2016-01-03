@@ -6,7 +6,11 @@
 main=rtl
 
 [target]
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar fpintres ctypes objpas macpas iso7185 extpas strings \
+=======
+units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
+>>>>>>> graemeg/cpstrnew
       lineinfo heaptrc \
       windows messages dynlibs \
       dos \
@@ -143,8 +147,12 @@ messages$(PPUEXT): messages.pp $(WININC)/messages.inc windows$(PPUEXT) $(SYSTEMU
 
 #winmouse$(PPUEXT) : winmouse.pp $(SYSTEMUNIT)$(PPUEXT) windows$(PPUEXT) graph$(PPUEXT)
 
+<<<<<<< HEAD
 dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 	$(COMPILER) $(INC)/dynlibs.pas
+=======
+dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT)
+>>>>>>> graemeg/cpstrnew
 
 #
 # TP7 Compatible RTL Units

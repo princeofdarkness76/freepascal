@@ -4,7 +4,18 @@
 
 [package]
 name=chm
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=fasthtmlparser htmlutil paslzx paslzxcomp paslznonslide chmbase chmtypes \
+      chmspecialfiles chmsitemap chmwriter chmfilewriter chmreader htmlindexer \
+      chmfiftimain lzxcompressthread itolitlstypes itsftransform itolitlsreader
+programs=chmcmd chmls
+examples=
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
@@ -43,6 +54,7 @@ FPMAKE_OPT+=--compiler=$(FPC)
 FPMAKE_OPT+=-bu
 .NOTPARALLEL:
 
+<<<<<<< HEAD
 fpmake$(SRCEXEEXT): fpmake.pp
 	$(FPCFPMAKE) fpmake.pp $(FPMAKE_SKIP_CONFIG) $(addprefix -Fu,$(COMPILER_FPMAKE_UNITDIR)) $(FPCMAKEOPT) $(OPT)
 all:	fpmake$(SRCEXEEXT)
@@ -100,3 +112,10 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+cdmcmd$(EXEEXT): chmcmd.lpr
+
+chmls$(EXEEXT): chmls.lpr
+
+
+>>>>>>> graemeg/cpstrnew

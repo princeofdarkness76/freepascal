@@ -39,7 +39,11 @@ unit cgcpu;
 
         { passing parameter using push instead of mov }
         procedure a_load_reg_cgpara(list : TAsmList;size : tcgsize;r : tregister;const cgpara : tcgpara);override;
+<<<<<<< HEAD
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);override;
+=======
+        procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
+>>>>>>> graemeg/cpstrnew
         procedure a_load_ref_cgpara(list : TAsmList;size : tcgsize;const r : treference;const cgpara : tcgpara);override;
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const cgpara : tcgpara);override;
 
@@ -58,6 +62,8 @@ unit cgcpu;
       private
         procedure get_64bit_ops(op:TOpCG;var op1,op2:TAsmOp);
       end;
+      
+    procedure create_codegen;
 
     procedure create_codegen;
 
@@ -80,8 +86,14 @@ unit cgcpu;
     procedure tcg386.init_register_allocators;
       begin
         inherited init_register_allocators;
+<<<<<<< HEAD
         if (cs_useebp in current_settings.optimizerswitches) and assigned(current_procinfo) and (current_procinfo.framepointer<>NR_EBP) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_EBX,RS_ESI,RS_EDI,RS_EBP],first_int_imreg,[])
+=======
+        if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
+           (cs_create_pic in current_settings.moduleswitches) then
+          rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_ESI,RS_EDI],first_int_imreg,[RS_EBP])
+>>>>>>> graemeg/cpstrnew
         else
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_EBX,RS_ESI,RS_EDI],first_int_imreg,[RS_EBP]);
         rg[R_MMXREGISTER]:=trgcpu.create(R_MMXREGISTER,R_SUBNONE,[RS_XMM0,RS_XMM1,RS_XMM2,RS_XMM3,RS_XMM4,RS_XMM5,RS_XMM6,RS_XMM7],first_mm_imreg,[]);
@@ -89,7 +101,21 @@ unit cgcpu;
         rgfpu:=Trgx86fpu.create;
       end;
 
+<<<<<<< HEAD
 
+=======
+    procedure tcg386.do_register_allocation(list:TAsmList;headertai:tai);
+      begin
+        if (pi_needs_got in current_procinfo.flags) then
+          begin
+            if getsupreg(current_procinfo.got) < first_int_imreg then
+              include(rg[R_INTREGISTER].used_in_proc,getsupreg(current_procinfo.got));
+          end;
+        inherited do_register_allocation(list,headertai);
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     procedure tcg386.a_load_reg_cgpara(list : TAsmList;size : tcgsize;r : tregister;const cgpara : tcgpara);
       var
         pushsize : tcgsize;
@@ -109,7 +135,11 @@ unit cgcpu;
       end;
 
 
+<<<<<<< HEAD
     procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);
+=======
+    procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
+>>>>>>> graemeg/cpstrnew
       var
         pushsize : tcgsize;
       begin
@@ -306,12 +336,25 @@ unit cgcpu;
             if (current_procinfo.framepointer=NR_STACK_POINTER_REG) or
                (current_procinfo.procdef.proctypeoption=potype_exceptfilter) then
               begin
+<<<<<<< HEAD
                 if current_procinfo.final_localsize<>0 then
                   increase_sp(current_procinfo.final_localsize);
                 if (not paramanager.use_fixed_stack) then
                   internal_restore_regs(list,true);
                 if (current_procinfo.procdef.proctypeoption=potype_exceptfilter) then
                   list.concat(Taicpu.op_reg(A_POP,tcgsize2opsize[OS_ADDR],NR_FRAME_POINTER_REG));
+=======
+                stacksize:=current_procinfo.calc_stackframe_size;
+                if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
+                   ((stacksize <> 0) or
+                    (pi_do_call in current_procinfo.flags) or
+                    { can't detect if a call in this case -> use nostackframe }
+                    { if you (think you) know what you are doing              }
+                    (po_assembler in current_procinfo.procdef.procoptions)) then
+                  stacksize := align(stacksize+sizeof(aint),16) - sizeof(aint);
+                if (stacksize<>0) then
+                  cg.a_op_const_reg(list,OP_ADD,OS_ADDR,stacksize,current_procinfo.framepointer);
+>>>>>>> graemeg/cpstrnew
               end
             else
               begin
@@ -325,7 +368,11 @@ unit cgcpu;
         { return from proc }
         if (po_interrupt in current_procinfo.procdef.procoptions) and
            { this messes up stack alignment }
+<<<<<<< HEAD
            (target_info.stackalign=4) then
+=======
+           not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> graemeg/cpstrnew
           begin
             if assigned(current_procinfo.procdef.funcretloc[calleeside].location) and
                (current_procinfo.procdef.funcretloc[calleeside].location^.loc=LOC_REGISTER) then
@@ -371,8 +418,12 @@ unit cgcpu;
            { but not on win32 }
            { and not for safecall with hidden exceptions, because the result }
            { wich contains the exception is passed in EAX }
+<<<<<<< HEAD
            if ((target_info.system <> system_i386_win32) or
                (target_info.abi=abi_old_win32_gnu)) and
+=======
+           if (target_info.system <> system_i386_win32) and
+>>>>>>> graemeg/cpstrnew
               not ((current_procinfo.procdef.proccalloption = pocall_safecall) and
                (tf_safecall_exceptions in target_info.flags)) and
               paramanager.ret_in_param(current_procinfo.procdef.returndef,
@@ -402,10 +453,20 @@ unit cgcpu;
         again,ok : tasmlabel;
 {$endif}
       begin
+<<<<<<< HEAD
+=======
+        if paramanager.use_fixed_stack then
+          begin
+            inherited g_copyvaluepara_openarray(list,ref,lenloc,elesize,destreg);
+            exit;
+          end;
+
+>>>>>>> graemeg/cpstrnew
         { get stack space }
         getcpuregister(list,NR_EDI);
         a_load_loc_reg(list,OS_INT,lenloc,NR_EDI);
         list.concat(Taicpu.op_reg(A_INC,S_L,NR_EDI));
+<<<<<<< HEAD
         { Now EDI contains (high+1). }
 
         { special case handling for elesize=8, 4 and 2:
@@ -421,6 +482,11 @@ unit cgcpu;
             list.concat(Taicpu.op_reg_reg(A_MOV,S_L,NR_EDI,NR_ECX));
           end;
         { EDI := EDI * elesize }
+=======
+        { Now EDI contains (high+1). Copy it to ECX for later use. }
+        getcpuregister(list,NR_ECX);
+        list.concat(Taicpu.op_reg_reg(A_MOV,S_L,NR_EDI,NR_ECX));
+>>>>>>> graemeg/cpstrnew
         if (elesize<>1) then
          begin
            if ispowerof2(elesize, power) then
@@ -499,8 +565,18 @@ unit cgcpu;
             list.concat(Taicpu.op_const_reg(A_SHR,S_L,1,NR_ECX))
           end;
 
+<<<<<<< HEAD
         if ts_cld in current_settings.targetswitches then
           list.concat(Taicpu.op_none(A_CLD,S_NO));
+=======
+        if len>1 then
+          begin
+            if ispowerof2(len, power) then
+              list.concat(Taicpu.op_const_reg(A_SHL,S_L,power,NR_ECX))
+            else
+              list.concat(Taicpu.op_const_reg(A_IMUL,S_L,len,NR_ECX));
+          end;
+>>>>>>> graemeg/cpstrnew
         list.concat(Taicpu.op_none(A_REP,S_NO));
         case opsize of
           S_B : list.concat(Taicpu.Op_none(A_MOVSB,S_NO));
@@ -520,20 +596,65 @@ unit cgcpu;
 
     procedure tcg386.g_releasevaluepara_openarray(list : TAsmList;const l:tlocation);
       begin
+<<<<<<< HEAD
+=======
+        if paramanager.use_fixed_stack then
+          begin
+            inherited g_releasevaluepara_openarray(list,l);
+            exit;
+          end;
+>>>>>>> graemeg/cpstrnew
         { Nothing to release }
+      end;
+
+
+<<<<<<< HEAD
+    procedure tcg386.g_maybe_got_init(list: TAsmList);
+      var
+        i: longint;
+        tmpreg: TRegister;
+=======
+    procedure tcg386.g_exception_reason_save(list : TAsmList; const href : treference);
+      begin
+        if not paramanager.use_fixed_stack then
+          list.concat(Taicpu.op_reg(A_PUSH,tcgsize2opsize[OS_INT],NR_FUNCTION_RESULT_REG))
+        else
+         inherited g_exception_reason_save(list,href);
+      end;
+
+
+    procedure tcg386.g_exception_reason_save_const(list : TAsmList;const href : treference; a: aint);
+      begin
+        if not paramanager.use_fixed_stack then
+          list.concat(Taicpu.op_const(A_PUSH,tcgsize2opsize[OS_INT],a))
+        else
+          inherited g_exception_reason_save_const(list,href,a);
+      end;
+
+
+    procedure tcg386.g_exception_reason_load(list : TAsmList; const href : treference);
+      begin
+        if not paramanager.use_fixed_stack then
+          begin
+            cg.a_reg_alloc(list,NR_FUNCTION_RESULT_REG);
+            list.concat(Taicpu.op_reg(A_POP,tcgsize2opsize[OS_INT],NR_FUNCTION_RESULT_REG))
+          end
+        else
+          inherited g_exception_reason_load(list,href);
       end;
 
 
     procedure tcg386.g_maybe_got_init(list: TAsmList);
       var
-        i: longint;
-        tmpreg: TRegister;
+        notdarwin: boolean;
+>>>>>>> graemeg/cpstrnew
       begin
         { allocate PIC register }
         if (cs_create_pic in current_settings.moduleswitches) and
            (tf_pic_uses_got in target_info.flags) and
            (pi_needs_got in current_procinfo.flags) then
           begin
+<<<<<<< HEAD
             if not (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
               begin
                 { Use ECX as a temp register by default }
@@ -569,6 +690,21 @@ unit cgcpu;
                   with tparavarsym(current_procinfo.procdef.paras[i]).paraloc[calleeside].Location^ do
                     if Loc in [LOC_REGISTER, LOC_CREGISTER] then
                       a_reg_dealloc(list, register);
+=======
+            notdarwin:=not(target_info.system in [system_i386_darwin,system_i386_iphonesim]);
+            { on darwin, the got register is virtual (and allocated earlier
+              already) }
+            if notdarwin then
+              { ecx could be used in leaf procedures that don't use ecx to pass
+                aparameter }
+              current_procinfo.got:=NR_EBX;
+            if notdarwin { needs testing before it can be enabled for non-darwin platforms
+                and
+               (current_settings.optimizecputype in [cpu_Pentium2,cpu_Pentium3,cpu_Pentium4]) } then
+              begin
+                current_module.requires_ebx_pic_helper:=true;
+                cg.a_call_name_static(list,'fpc_geteipasebx');
+>>>>>>> graemeg/cpstrnew
               end
             else
               begin
@@ -579,11 +715,174 @@ unit cgcpu;
                 a_call_name_static(list,current_procinfo.CurrGOTLabel.name);
                 a_label(list,current_procinfo.CurrGotLabel);
                 list.concat(taicpu.op_reg(A_POP,S_L,current_procinfo.got))
+<<<<<<< HEAD
+=======
+              end;
+            if notdarwin then
+              begin
+                list.concat(taicpu.op_sym_ofs_reg(A_ADD,S_L,current_asmdata.RefAsmSymbol('_GLOBAL_OFFSET_TABLE_'),0,NR_PIC_OFFSET_REG));
+                list.concat(tai_regalloc.alloc(NR_PIC_OFFSET_REG,nil));
+>>>>>>> graemeg/cpstrnew
               end;
           end;
       end;
 
 
+<<<<<<< HEAD
+=======
+    procedure tcg386.g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);
+      {
+      possible calling conventions:
+                    default stdcall cdecl pascal register
+      default(0):      OK     OK    OK     OK       OK
+      virtual(1):      OK     OK    OK     OK       OK(2)
+
+      (0):
+          set self parameter to correct value
+          jmp mangledname
+
+      (1): The wrapper code use %eax to reach the virtual method address
+           set self to correct value
+           move self,%eax
+           mov  0(%eax),%eax ; load vmt
+           jmp  vmtoffs(%eax) ; method offs
+
+      (2): Virtual use values pushed on stack to reach the method address
+           so the following code be generated:
+           set self to correct value
+           push %ebx ; allocate space for function address
+           push %eax
+           mov  self,%eax
+           mov  0(%eax),%eax ; load vmt
+           mov  vmtoffs(%eax),eax ; method offs
+           mov  %eax,4(%esp)
+           pop  %eax
+           ret  0; jmp the address
+
+      }
+
+      procedure getselftoeax(offs: longint);
+        var
+          href : treference;
+          selfoffsetfromsp : longint;
+        begin
+          { mov offset(%esp),%eax }
+          if (procdef.proccalloption<>pocall_register) then
+            begin
+              { framepointer is pushed for nested procs }
+              if procdef.parast.symtablelevel>normal_function_level then
+                selfoffsetfromsp:=2*sizeof(aint)
+              else
+                selfoffsetfromsp:=sizeof(aint);
+              reference_reset_base(href,NR_ESP,selfoffsetfromsp+offs,4);
+              cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_EAX);
+            end;
+        end;
+
+      procedure loadvmttoeax;
+        var
+          href : treference;
+        begin
+          { mov  0(%eax),%eax ; load vmt}
+          reference_reset_base(href,NR_EAX,0,4);
+          cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_EAX);
+        end;
+
+      procedure op_oneaxmethodaddr(op: TAsmOp);
+        var
+          href : treference;
+        begin
+          if (procdef.extnumber=$ffff) then
+            Internalerror(200006139);
+          { call/jmp  vmtoffs(%eax) ; method offs }
+          reference_reset_base(href,NR_EAX,tobjectdef(procdef.struct).vmtmethodoffset(procdef.extnumber),4);
+          list.concat(taicpu.op_ref(op,S_L,href));
+        end;
+
+
+      procedure loadmethodoffstoeax;
+        var
+          href : treference;
+        begin
+          if (procdef.extnumber=$ffff) then
+            Internalerror(200006139);
+          { mov vmtoffs(%eax),%eax ; method offs }
+          reference_reset_base(href,NR_EAX,tobjectdef(procdef.struct).vmtmethodoffset(procdef.extnumber),4);
+          cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_EAX);
+        end;
+
+
+      var
+        lab : tasmsymbol;
+        make_global : boolean;
+        href : treference;
+      begin
+        if not(procdef.proctypeoption in [potype_function,potype_procedure]) then
+          Internalerror(200006137);
+        if not assigned(procdef.struct) or
+           (procdef.procoptions*[po_classmethod, po_staticmethod,
+             po_methodpointer, po_interrupt, po_iocheck]<>[]) then
+          Internalerror(200006138);
+        if procdef.owner.symtabletype<>ObjectSymtable then
+          Internalerror(200109191);
+
+        make_global:=false;
+        if (not current_module.is_unit) or
+           create_smartlink or
+           (procdef.owner.defowner.owner.symtabletype=globalsymtable) then
+          make_global:=true;
+
+        if make_global then
+          List.concat(Tai_symbol.Createname_global(labelname,AT_FUNCTION,0))
+        else
+          List.concat(Tai_symbol.Createname(labelname,AT_FUNCTION,0));
+
+        { set param1 interface to self  }
+        g_adjust_self_value(list,procdef,ioffset);
+
+        if po_virtualmethod in procdef.procoptions then
+          begin
+            if (procdef.proccalloption=pocall_register) then
+              begin
+                { case 2 }
+                list.concat(taicpu.op_reg(A_PUSH,S_L,NR_EBX)); { allocate space for address}
+                list.concat(taicpu.op_reg(A_PUSH,S_L,NR_EAX));
+                getselftoeax(8);
+                loadvmttoeax;
+                loadmethodoffstoeax;
+                { mov %eax,4(%esp) }
+                reference_reset_base(href,NR_ESP,4,4);
+                list.concat(taicpu.op_reg_ref(A_MOV,S_L,NR_EAX,href));
+                { pop  %eax }
+                list.concat(taicpu.op_reg(A_POP,S_L,NR_EAX));
+                { ret  ; jump to the address }
+                list.concat(taicpu.op_none(A_RET,S_L));
+              end
+            else
+              begin
+                { case 1 }
+                getselftoeax(0);
+                loadvmttoeax;
+                op_oneaxmethodaddr(A_JMP);
+              end;
+          end
+        { case 0 }
+        else
+          begin
+            if (target_info.system <> system_i386_darwin) then
+              begin
+                lab:=current_asmdata.RefAsmSymbol(procdef.mangledname);
+                list.concat(taicpu.op_sym(A_JMP,S_NO,lab))
+              end
+            else
+              list.concat(taicpu.op_sym(A_JMP,S_NO,get_darwin_call_stub(procdef.mangledname,false)))
+          end;
+
+        List.concat(Tai_symbol_end.Createname(labelname));
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
 { ************* 64bit operations ************ }
 
     procedure tcg64f386.get_64bit_ops(op:TOpCG;var op1,op2:TAsmOp);
@@ -726,5 +1025,9 @@ unit cgcpu;
         cg := tcg386.create;
         cg64 := tcg64f386.create;
       end;
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> graemeg/cpstrnew
 end.

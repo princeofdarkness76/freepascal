@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 { %OPT=-vh -Seh -CO  -Cr- }
+=======
+{ %OPT=-vh -Seh -CO }
+>>>>>>> graemeg/cpstrnew
 { %fail }
 
 var

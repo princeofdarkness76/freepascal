@@ -43,7 +43,11 @@ Function SearchLabel(const s: string; var hl: tasmlabel;emit:boolean): boolean;
 
 type
   TOprType=(OPR_NONE,OPR_CONSTANT,OPR_SYMBOL,OPR_LOCAL,
+<<<<<<< HEAD
             OPR_REFERENCE,OPR_REGISTER,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS,OPR_SPECIALREG);
+=======
+            OPR_REFERENCE,OPR_REGISTER,OPR_REGLIST,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS);
+>>>>>>> graemeg/cpstrnew
 
   TOprRec = record
     case typ:TOprType of
@@ -63,11 +67,18 @@ type
       OPR_COND      : (cond : tasmcond);
 {$endif POWERPC64}
 {$ifdef arm}
+<<<<<<< HEAD
       OPR_REGSET    : (regset : tcpuregisterset; regtype: tregistertype; subreg: tsubregister; usermode: boolean);
       OPR_SHIFTEROP : (shifterop : tshifterop);
       OPR_COND      : (cc : tasmcond);
       OPR_MODEFLAGS : (flags : tcpumodeflags);
       OPR_SPECIALREG: (specialreg : tregister; specialregflags : tspecialregflags);
+=======
+      OPR_REGSET    : (regset : tcpuregisterset; regtype: tregistertype; subreg: tsubregister);
+      OPR_SHIFTEROP : (shifterop : tshifterop);
+      OPR_COND      : (cc : tasmcond);
+      OPR_MODEFLAGS : (flags : tcpumodeflags);
+>>>>>>> graemeg/cpstrnew
 {$endif arm}
 {$ifdef aarch64}
       OPR_SHIFTEROP : (shifterop : tshifterop);
@@ -1111,11 +1122,21 @@ end;
 {$endif}
 {$ifdef ARM}
               OPR_REGSET:
+<<<<<<< HEAD
                 ai.loadregset(i-1,regtype,subreg,regset,usermode);
               OPR_MODEFLAGS:
                 ai.loadmodeflags(i-1,flags);
               OPR_SPECIALREG:
                 ai.loadspecialreg(i-1,specialreg,specialregflags);
+=======
+                ai.loadregset(i-1,regtype,subreg,regset);
+              OPR_SHIFTEROP:
+                ai.loadshifterop(i-1,shifterop);
+              OPR_COND:
+                ai.loadconditioncode(i-1,cc);
+              OPR_MODEFLAGS:
+                ai.loadmodeflags(i-1,flags);
+>>>>>>> graemeg/cpstrnew
 {$endif ARM}
 {$if defined(arm) or defined(aarch64)}
              OPR_SHIFTEROP:
@@ -1542,12 +1563,19 @@ end;
              p.concat(tai_realconst.create_s64real_hiloswapped(value))
            else
 {$endif ARM}
+<<<<<<< HEAD
              p.concat(tai_realconst.create_s64real(value));
           s80real : p.concat(tai_realconst.create_s80real(value,s80floattype.size));
           sc80real : p.concat(tai_realconst.create_s80real(value,sc80floattype.size));
           s64comp : p.concat(tai_realconst.create_s64compreal(trunc(value)));
           else
             internalerror(2014050608);
+=======
+             p.concat(Tai_real_64bit.Create(value));
+          s80real : p.concat(Tai_real_80bit.Create(value,s80floattype.size));
+          sc80real : p.concat(Tai_real_80bit.Create(value,sc80floattype.size));
+          s64comp : p.concat(Tai_comp_64bit.Create(trunc(value)));
+>>>>>>> graemeg/cpstrnew
        end;
     end;
 

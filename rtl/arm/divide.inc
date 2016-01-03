@@ -28,6 +28,7 @@
 function fpc_div_dword(n,z:dword):dword;assembler;nostackframe;
 {$ifdef FPC_IS_SYSTEM}[public,alias: 'FPC_DIV_DWORD'];{$endif}
 asm
+<<<<<<< HEAD
   // Handle division by zero
   cmp   r0, #0
   beq   .Lhandle_div_by_zero
@@ -120,6 +121,157 @@ asm
 {$ifdef FPC_IS_SYSTEM}
   b   handleerrorframe
 {$endif}
+=======
+  {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
+  {$ifdef CPUCORTEXM3}
+  udiv r0, r1, r0
+  {$else}
+  mov r3, #0
+  rsbs r2, r0, r1, LSR#3
+  bcc .Ldiv_3bits
+  rsbs r2, r0, r1, LSR#8
+  bcc .Ldiv_8bits
+  mov r0, r0, LSL#8
+  orr r3, r3, #0xFF000000
+  rsbs r2, r0, r1, LSR#4
+  bcc .Ldiv_4bits
+  rsbs r2, r0, r1, LSR#8
+  bcc .Ldiv_8bits
+  mov r0, r0, LSL#8
+  orr r3, r3, #0x00FF0000
+  rsbs r2, r0, r1, LSR#8
+  itt cs
+  movcs r0, r0, LSL#8
+  orrcs r3, r3, #0x0000FF00
+  rsbs r2, r0, r1, LSR#4
+  bcc .Ldiv_4bits
+  rsbs r2, r0, #0
+  bcs .Ldiv_by_0
+.Ldiv_loop:
+  it cs
+  movcs r0, r0, LSR#8
+.Ldiv_8bits:
+  rsbs r2, r0, r1, LSR#7
+  it cs
+  subcs r1, r1, r0, LSL#7
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#6
+  it cs
+  subcs r1, r1, r0, LSL#6
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#5
+  it cs
+  subcs r1, r1, r0, LSL#5
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#4
+  it cs
+  subcs r1, r1, r0, LSL#4
+  adc r3, r3, r3
+.Ldiv_4bits:
+  rsbs r2, r0, r1, LSR#3
+  it cs
+  subcs r1, r1, r0, LSL#3
+  adc r3, r3, r3
+.Ldiv_3bits:
+  rsbs r2, r0, r1, LSR#2
+  it cs
+  subcs r1, r1, r0, LSL#2
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#1
+  it cs
+  subcs r1, r1, r0, LSL#1
+  adc r3, r3, r3
+  rsbs r2, r0, r1
+  it cs
+  subcs r1, r1, r0
+  adcs r3, r3, r3
+.Ldiv_next:
+  bcs .Ldiv_loop
+  mov r0, r3
+{$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
+  mov pc, lr
+{$else}
+  bx  lr
+{$endif}
+.Ldiv_by_0:
+  mov r0, #200
+  mov r1, r11
+  bl handleerrorframe
+{$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
+  mov pc, lr
+{$else}
+  bx  lr
+{$endif}
+  {$endif}
+  {$else}
+  mov r3, #0
+  rsbs r2, r0, r1, LSR#3
+  bcc .Ldiv_3bits
+  rsbs r2, r0, r1, LSR#8
+  bcc .Ldiv_8bits
+  mov r0, r0, LSL#8
+  orr r3, r3, #0xFF000000
+  rsbs r2, r0, r1, LSR#4
+  bcc .Ldiv_4bits
+  rsbs r2, r0, r1, LSR#8
+  bcc .Ldiv_8bits
+  mov r0, r0, LSL#8
+  orr r3, r3, #0x00FF0000
+  rsbs r2, r0, r1, LSR#8
+  movcs r0, r0, LSL#8
+  orrcs r3, r3, #0x0000FF00
+  rsbs r2, r0, r1, LSR#4
+  bcc .Ldiv_4bits
+  rsbs r2, r0, #0
+  bcs .Ldiv_by_0
+.Ldiv_loop:
+  movcs r0, r0, LSR#8
+.Ldiv_8bits:
+  rsbs r2, r0, r1, LSR#7
+  subcs r1, r1, r0, LSL#7
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#6
+  subcs r1, r1, r0, LSL#6
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#5
+  subcs r1, r1, r0, LSL#5
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#4
+  subcs r1, r1, r0, LSL#4
+  adc r3, r3, r3
+.Ldiv_4bits:
+  rsbs r2, r0, r1, LSR#3
+  subcs r1, r1, r0, LSL#3
+  adc r3, r3, r3
+.Ldiv_3bits:
+  rsbs r2, r0, r1, LSR#2
+  subcs r1, r1, r0, LSL#2
+  adc r3, r3, r3
+  rsbs r2, r0, r1, LSR#1
+  subcs r1, r1, r0, LSL#1
+  adc r3, r3, r3
+  rsbs r2, r0, r1
+  subcs r1, r1, r0
+  adcs r3, r3, r3
+.Ldiv_next:
+  bcs .Ldiv_loop
+  mov r0, r3
+{$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
+  mov pc, lr
+{$else}
+  bx  lr
+{$endif}
+.Ldiv_by_0:
+  mov r0, #200
+  mov r1, r11
+  bl handleerrorframe
+{$if defined(cpuarmv3) or defined(cpuarmv4) or defined(cpuarmv5)}
+  mov pc, lr
+{$else}
+  bx  lr
+{$endif}
+  {$endif}
+>>>>>>> graemeg/cpstrnew
 end;
 
 {It is a compilerproc (systemh.inc), make an alias for internal use.}
@@ -134,8 +286,33 @@ function fpc_div_longint(n,z:longint):longint;assembler;nostackframe;
 {$ifdef FPC_IS_SYSTEM}[public,alias: 'FPC_DIV_LONGINT'];{$endif}
 
 asm
+<<<<<<< HEAD
   stmfd sp!, {r4,lr}
   ands r4, r0, #1<<31       (* r12:=r0 and $80000000 *)
+=======
+  {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
+  {$ifdef CPUCORTEXM3}
+  sdiv r0, r1, r0
+  {$else}
+  stmfd sp!, {lr}
+  ands r12, r0, #1<<31       (* r12:=r0 and $80000000 *)
+  it mi
+  rsbmi r0, r0, #0           (* if signed(r0) then r0:=0-r0 *)
+  eors r12, r12, r1, ASR#32  (* r12:=r12 xor (r1 asr 32) *)
+  it cs
+  rsbcs r1, r1, #0           (* if signed(r12) then r1:=0-r1 *)
+  bl fpc_div_dword
+  movs r12, r12, LSL#1       (* carry:=sign(r12) *)
+  it cs
+  rsbcs r0, r0, #0
+  it mi
+  rsbmi r1, r1, #0
+  ldmfd sp!, {pc}
+  {$endif}
+  {$else}
+  stmfd sp!, {lr}
+  ands r12, r0, #1<<31       (* r12:=r0 and $80000000 *)
+>>>>>>> graemeg/cpstrnew
   rsbmi r0, r0, #0           (* if signed(r0) then r0:=0-r0 *)
   eors r4, r4, r1, ASR#32  (* r12:=r12 xor (r1 asr 32) *)
   rsbcs r1, r1, #0           (* if signed(r12) then r1:=0-r1 *)
@@ -143,7 +320,12 @@ asm
   movs r4, r4, LSL#1       (* carry:=sign(r12) *)
   rsbcs r0, r0, #0
   rsbmi r1, r1, #0
+<<<<<<< HEAD
   ldmfd sp!, {r4,pc}
+=======
+  ldmfd sp!, {pc}
+  {$endif}
+>>>>>>> graemeg/cpstrnew
 end;
 
 {It is a compilerproc (systemh.inc), make an alias for internal use.}

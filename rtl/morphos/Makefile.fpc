@@ -7,6 +7,7 @@ main=rtl
 
 [target]
 loaders=prt0
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       fpintres dos heaptrc ctypes \
       sysutils classes fgl math typinfo \
@@ -19,6 +20,17 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
 #      kvm \
 # disabled temporarily because it doesn't build
 #     sockets \
+=======
+units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
+      dos heaptrc ctypes \
+      sysutils classes fgl strutils math typinfo varutils \
+      charset ucomplex getopts matrix fmtbcd \
+      variants types rtlconsts sysconst dateutil objects \
+      exec timer doslib utility hardware inputevent keymap graphics layers \
+      intuition aboxlib mui \
+# these units are here, because they depend on system interface units above
+      kvm video mouse keyboard sockets \
+>>>>>>> graemeg/cpstrnew
 # these can be moved to packages later
 #      clipboard datatypes asl ahi tinygl get9 muihelper
 #implicitunits=exeinfo\
@@ -127,7 +139,11 @@ sysutils$(PPUEXT) : sysutils.pp $(wildcard $(OBJPASDIR)/sysutils/*.inc) \
 
 classes$(PPUEXT) : classes.pp $(wildcard $(OBJPASDIR)/classes/*.inc) \
                    sysutils$(PPUEXT) rtlconsts$(PPUEXT) typinfo$(PPUEXT) types$(PPUEXT) fgl$(PPUEXT)
+<<<<<<< HEAD
         $(COMPILER) -Fi$(OBJPASDIR)/classes $(AMIINC)/classes.pp
+=======
+        $(COMPILER) -Fi$(OBJPASDIR)/classes classes.pp
+>>>>>>> graemeg/cpstrnew
 
 fgl$(PPUEXT) : $(OBJPASDIR)/fgl.pp objpas$(PPUEXT) types$(PPUEXT) system$(PPUEXT) sysutils$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/fgl.pp

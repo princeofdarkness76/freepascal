@@ -1,6 +1,10 @@
 %{
 program h2pas;
+<<<<<<< HEAD
 {$H+}
+=======
+
+>>>>>>> graemeg/cpstrnew
 (*
     Copyright (c) 1998-2000 by Florian Klaempfl
 
@@ -1072,9 +1076,14 @@ program h2pas;
                            hp3:=hp2^.p2;
                            while assigned(hp3) do
                              begin
+<<<<<<< HEAD
                                 if assigned(hp3^.p1) and
                                    (not assigned(hp3^.p1^.p3) or
                                    (hp3^.p1^.p3^.typ <> t_size_specifier)) then
+=======
+                                if not assigned(hp3^.p1^.p3) or
+                                   (hp3^.p1^.p3^.typ <> t_size_specifier) then
+>>>>>>> graemeg/cpstrnew
                                   begin
                                      if is_sized then
                                        begin
@@ -1094,8 +1103,12 @@ program h2pas;
                                      popshift;
                                   end;
                                 { size specifier  or default value ? }
+<<<<<<< HEAD
                                 if assigned(hp3^.p1) and
                                    assigned(hp3^.p1^.p3) then
+=======
+                                if assigned(hp3^.p1^.p3) then
+>>>>>>> graemeg/cpstrnew
                                   begin
                                      { we could use mask to implement this }
                                      { because we need to respect the positions }
@@ -2433,7 +2446,11 @@ special_type_name :
      SHORT INT
      {
      if UseCTypesUnit then
+<<<<<<< HEAD
        $$:=new(presobject,init_id(cshort_STR))
+=======
+       $$:=new(presobject,init_id(csint_STR))
+>>>>>>> graemeg/cpstrnew
      else
        $$:=new(presobject,init_intid(SMALL_STR));
      } |

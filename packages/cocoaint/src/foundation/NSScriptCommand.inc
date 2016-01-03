@@ -63,6 +63,7 @@ const
     _evaluatedReceivers: id;
     _arguments: NSDictionary;
     _evaluatedArguments: NSMutableDictionary;
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSScriptCommand0: cuint);
@@ -71,6 +72,15 @@ const
         hasEvaluatedArguments: 0..1;
         RESERVED: 0..((1 shl 30)-1);
        end;
+=======
+    __flags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSScriptCommand0: cuint);
+       1: (
+        hasEvaluatedReceivers: 0..1;
+        hasEvaluatedArguments: 0..1;
+        RESERVED: 0..((1 shl 30)-1);
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _moreVars: id;

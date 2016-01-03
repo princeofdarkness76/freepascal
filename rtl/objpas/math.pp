@@ -187,10 +187,17 @@ function EnsureRange(const AValue, AMin, AMax: Double): Double;inline;  overload
 {$endif FPC_HAS_TYPE_DOUBLE}
 
 
+<<<<<<< HEAD
 procedure DivMod(Dividend: LongInt; Divisor: Word;  var Result, Remainder: Word);
 procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: SmallInt);
 procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
 procedure DivMod(Dividend: LongInt; Divisor: LongInt; var Result, Remainder: LongInt);
+=======
+procedure DivMod(Dividend: Integer; Divisor: Word;  var Result, Remainder: Word);
+procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
+procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
+procedure DivMod(Dividend: Integer; Divisor: Integer; var Result, Remainder: Integer);
+>>>>>>> graemeg/cpstrnew
 
 // Sign functions
 Type
@@ -222,6 +229,7 @@ function IsZero(const A: Extended; Epsilon: Extended): Boolean; overload;
 function IsZero(const A: Extended): Boolean;inline; overload;
 {$endif FPC_HAS_TYPE_EXTENDED}
 
+<<<<<<< HEAD
 function IsNan(const d : Single): Boolean; overload;
 {$ifdef FPC_HAS_TYPE_DOUBLE}
 function IsNan(const d : Double): Boolean; overload;
@@ -229,6 +237,9 @@ function IsNan(const d : Double): Boolean; overload;
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 function IsNan(const d : Extended): Boolean; overload;
 {$endif FPC_HAS_TYPE_EXTENDED}
+=======
+function IsNan(const d : Double): Boolean; overload;
+>>>>>>> graemeg/cpstrnew
 function IsInfinite(const d : Double): Boolean;
 
 {$ifdef FPC_HAS_TYPE_EXTENDED}
@@ -598,6 +609,7 @@ function RandomFrom(const AValues: array of Double): Double; overload;
 function RandomFrom(const AValues: array of Integer): Integer; overload;
 function RandomFrom(const AValues: array of Int64): Int64; overload;
 
+<<<<<<< HEAD
 { cpu specific stuff }
 type
   TFPURoundingMode = system.TFPURoundingMode;
@@ -613,6 +625,10 @@ function GetExceptionMask: TFPUExceptionMask;
 function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 procedure ClearExceptions(RaisePending: Boolean =true);
 
+=======
+{ include cpu specific stuff }
+{$i mathuh.inc}
+>>>>>>> graemeg/cpstrnew
 
 implementation
 
@@ -2298,7 +2314,11 @@ end;
 // Some CPUs probably allow a faster way of doing this in a single operation...
 // There weshould define  FPC_MATH_HAS_CPUDIVMOD in the header mathuh.inc and implement it using asm.
 {$ifndef FPC_MATH_HAS_DIVMOD}
+<<<<<<< HEAD
 procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: Word);
+=======
+procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: Word);
+>>>>>>> graemeg/cpstrnew
 begin
   if Dividend < 0 then
     begin
@@ -2310,13 +2330,18 @@ begin
         Result and Remainder, and all it's Ok. }
       Result:=-(Dividend Div Divisor);
       Remainder:=-(Dividend+(Result*Divisor));
+<<<<<<< HEAD
     end
+=======
+    end 
+>>>>>>> graemeg/cpstrnew
   else
     begin
 	  Result:=Dividend Div Divisor;
       Remainder:=Dividend-(Result*Divisor);
 	end;
 end;
+<<<<<<< HEAD
 
 
 procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: SmallInt);
@@ -2340,14 +2365,10 @@ begin
 end;
 
 
-procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
-begin
-  Result:=Dividend Div Divisor;
-  Remainder:=Dividend-(Result*Divisor);
-end;
+=======
 
 
-procedure DivMod(Dividend: LongInt; Divisor: LongInt; var Result, Remainder: LongInt);
+procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
 begin
   if Dividend < 0 then
     begin
@@ -2359,7 +2380,44 @@ begin
         Result and Remainder, and all it's Ok. }
       Result:=-(Dividend Div Divisor);
       Remainder:=-(Dividend+(Result*Divisor));
+    end 
+  else
+    begin
+	  Result:=Dividend Div Divisor;
+      Remainder:=Dividend-(Result*Divisor);
+	end;
+end;
+
+
+>>>>>>> graemeg/cpstrnew
+procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
+begin
+  Result:=Dividend Div Divisor;
+  Remainder:=Dividend-(Result*Divisor);
+end;
+
+
+<<<<<<< HEAD
+procedure DivMod(Dividend: LongInt; Divisor: LongInt; var Result, Remainder: LongInt);
+=======
+procedure DivMod(Dividend: Integer; Divisor: Integer; var Result, Remainder: Integer);
+>>>>>>> graemeg/cpstrnew
+begin
+  if Dividend < 0 then
+    begin
+      { Use DivMod with >=0 dividend }
+	  Dividend:=-Dividend;
+      { The documented behavior of Pascal's div/mod operators and DivMod
+        on negative dividends is to return Result closer to zero and
+        a negative Remainder. Which means that we can just negate both
+        Result and Remainder, and all it's Ok. }
+      Result:=-(Dividend Div Divisor);
+      Remainder:=-(Dividend+(Result*Divisor));
+<<<<<<< HEAD
     end
+=======
+    end 
+>>>>>>> graemeg/cpstrnew
   else
     begin
 	  Result:=Dividend Div Divisor;
@@ -2551,6 +2609,7 @@ begin
   result:=AValues[random(High(AValues)+1)];
 end;
 
+<<<<<<< HEAD
 function FutureValue(ARate: Float; NPeriods: Integer;
   APayment, APresentValue: Float; APaymentTime: TPaymentTime): Float;
 var
@@ -2655,6 +2714,8 @@ begin
     Result := -(AFutureValue + APayment*factor) / qn;
   end;
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$else}
 implementation

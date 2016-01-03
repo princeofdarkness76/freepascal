@@ -4,7 +4,14 @@
 
 [package]
 name=oggvorbis
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=ogg vorbis
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

@@ -158,6 +158,7 @@ unit optloop;
 
                     if getridoffor then
                       begin
+<<<<<<< HEAD
                         foreachnodestatic(tnode(unrollstatement),@replaceloadnodes,@replaceinfo);
                         if lnf_backward in tfornode(node).loopflags then
                           replaceinfo.value:=replaceinfo.value-1
@@ -178,6 +179,16 @@ unit optloop;
                                 geninlinenode(in_inc_x,false,ccallparanode.create(tfornode(node).left.getcopy,nil)));
                           end;
                        end;
+=======
+                        { insert incr/decrementation of counter var }
+                        if lnf_backward in tfornode(node).loopflags then
+                          addstatement(unrollstatement,
+                            geninlinenode(in_dec_x,false,ccallparanode.create(tfornode(node).left.getcopy,nil)))
+                        else
+                          addstatement(unrollstatement,
+                            geninlinenode(in_inc_x,false,ccallparanode.create(tfornode(node).left.getcopy,nil)));
+                      end;
+>>>>>>> graemeg/cpstrnew
                   end;
                 { can we get rid of the for statement? }
                 if getridoffor then

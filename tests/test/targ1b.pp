@@ -1,5 +1,8 @@
 {%skiptarget=wince}
+<<<<<<< HEAD
 {%delfiles=targ1a}
+=======
+>>>>>>> graemeg/cpstrnew
 
 { This file is to check if there is some memory corruption
   due to startup code with argument loading

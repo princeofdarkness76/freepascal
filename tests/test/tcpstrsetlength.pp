@@ -1,11 +1,19 @@
 uses
 {$ifdef unix}
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
+=======
+  cwstring,
+>>>>>>> graemeg/cpstrnew
 {$endif unix}
   SysUtils;
 
 type
+<<<<<<< HEAD
   ts866 = type AnsiString(866);
+=======
+  ts866 = type string<866>;
+>>>>>>> graemeg/cpstrnew
 var
   a866 : ts866;
 begin

@@ -7,11 +7,15 @@ unit TestDBBasics;
 interface
 
 uses
+<<<<<<< HEAD
 {$IFDEF FPC}
   testregistry,
 {$ELSE FPC}
   TestFramework,
 {$ENDIF FPC}
+=======
+  fpcunit, testutils, testregistry, testdecorator,
+>>>>>>> graemeg/cpstrnew
   Classes, SysUtils, db, ToolsUnit;
 
 type
@@ -24,6 +28,7 @@ type
     procedure TestFieldDefinition(AFld: TField; AFieldType : TFieldType; ADataSize : integer); overload;
     procedure TestCalculatedField_OnCalcfields(DataSet: TDataSet);
 
+<<<<<<< HEAD
   published
     // fields
     procedure TestSetFieldValues;
@@ -45,12 +50,29 @@ type
     procedure TestSupportFixedStringFields;
     procedure TestSupportBlobFields;
     procedure TestSupportMemoFields;
+=======
+    procedure FTestDelete1(TestCancelUpdate : boolean);
+    procedure FTestDelete2(TestCancelUpdate : boolean);
+  protected
+    procedure SetUp; override;
+    procedure TearDown; override;
+  published
+    procedure TestCancelUpdDelete1;
+    procedure TestCancelUpdDelete2;
+    procedure TestAppendInsertRecord;
+    procedure TestBookmarks;
+    procedure TestBookmarkValid;
+
+    procedure TestLocate;
+    procedure TestLocateCaseIns;
+>>>>>>> graemeg/cpstrnew
 
     procedure TestBlobBlobType; //bug 26064
 
     procedure TestCalculatedField;
     procedure TestCanModifySpecialFields;
 
+<<<<<<< HEAD
     // dataset
     procedure TestDoubleClose;
     procedure TestFieldDefsUpdate;
@@ -155,18 +177,54 @@ type
     procedure TestStringFilter; //String filter expressions
 
     procedure TestNullAtOpen;
+=======
+    procedure TestNullAtOpen;
+
+    procedure TestSupportIntegerFields;
+    procedure TestSupportSmallIntFields;
+    procedure TestSupportStringFields;
+    procedure TestSupportBooleanFields;
+    procedure TestSupportFloatFields;
+    procedure TestSupportLargeIntFields;
+    procedure TestSupportDateFields;
+    procedure TestSupportTimeFields;
+    procedure TestSupportCurrencyFields;
+    procedure TestSupportBCDFields;
+    procedure TestSupportfmtBCDFields;
+    procedure TestSupportFixedStringFields;
+>>>>>>> graemeg/cpstrnew
 
     procedure TestAppendOnEmptyDataset;
     procedure TestInsertOnEmptyDataset;
 
+<<<<<<< HEAD
     procedure TestFirst;
     procedure TestEofAfterFirst;           // bug 7211
+=======
+    procedure TestEofAfterFirst;           //bug 7211
+    procedure TestDoubleClose;
+    procedure TestCalculatedField;
+    procedure TestAssignFieldftString;
+    procedure TestAssignFieldftFixedChar;
+    procedure TestSelectQueryBasics;
+    procedure TestPostOnlyInEditState;
+    procedure TestMove;                    // bug 5048
+    procedure TestActiveBufferWhenClosed;
+    procedure TestEOFBOFClosedDataset;
+    procedure TestLayoutChangedEvents;
+    procedure TestDataEventsResync;
+    procedure TestBug7007;
+    procedure TestBug6893;
+    procedure TestRecordcountAfterReopen;  // partly bug 8228
+    procedure TestdeFieldListChange;
+>>>>>>> graemeg/cpstrnew
     procedure TestLastAppendCancel;        // bug 5058
     procedure TestRecNo;                   // bug 5061
     procedure TestSetRecNo;                // bug 6919
     procedure TestBug7007;
     procedure TestBug6893;
     procedure TestRequired;
+<<<<<<< HEAD
     procedure TestModified;
     // fields
     procedure TestFieldOldValueObsolete;
@@ -177,6 +235,64 @@ type
 
   { TDBBasicsUniDirectionalTestSetup }
 {$ifdef fpc}
+=======
+    procedure TestExceptionLocateClosed;    // bug 13938
+    procedure TestCanModifySpecialFields;
+  end;
+
+  { TTestBufDatasetDBBasics }
+
+  TTestBufDatasetDBBasics = class(TTestCase)
+  private
+    procedure FTestXMLDatasetDefinition(ADataset : TDataset);
+    procedure TestAddIndexFieldType(AFieldType : TFieldType; ActiveDS : boolean);
+  protected
+    procedure SetUp; override;
+    procedure TearDown; override;
+  published
+    procedure TestClosedIndexFieldNames; // bug 16695
+    procedure TestFileNameProperty;
+    procedure TestClientDatasetAsMemDataset;
+    procedure TestSafeAsXML;
+    procedure TestIsEmpty;
+    procedure TestBufDatasetCancelUpd; //bug 6938
+    procedure TestBufDatasetCancelUpd1;
+    procedure TestMultipleDeleteUpdateBuffer;
+    procedure TestDoubleDelete;
+  // index tests
+    procedure TestAddIndexInteger;
+    procedure TestAddIndexSmallInt;
+    procedure TestAddIndexBoolean;
+    procedure TestAddIndexFloat;
+    procedure TestAddIndexLargeInt;
+    procedure TestAddIndexDateTime;
+    procedure TestAddIndexCurrency;
+    procedure TestAddIndexBCD;
+
+    procedure TestAddIndex;
+    procedure TestAddDescIndex;
+    procedure TestAddCaseInsIndex;
+    procedure TestInactSwitchIndex;
+
+    procedure TestAddIndexActiveDS;
+    procedure TestAddIndexEditDS;
+
+    procedure TestIndexFieldNames;
+    procedure TestIndexFieldNamesAct;
+
+    procedure TestIndexCurRecord;
+
+    procedure TestAddDblIndex;
+    procedure TestIndexEditRecord;
+  end;
+
+
+  TTestUniDirectionalDBBasics = class(TTestDBBasics)
+  end;
+
+  { TDBBasicsUniDirectionalTestSetup }
+
+>>>>>>> graemeg/cpstrnew
   TDBBasicsUniDirectionalTestSetup = class(TDBBasicsTestSetup)
   protected
     procedure OneTimeSetup; override;
@@ -186,6 +302,7 @@ type
 
 implementation
 
+<<<<<<< HEAD
 uses
 {$ifdef fpc}
   bufdataset,
@@ -196,6 +313,21 @@ uses
   FmtBCD;
 
 type THackDataLink=class(TDataLink);
+=======
+uses bufdataset, variants, strutils, sqldb, FmtBCD;
+
+type THackDataLink=class(TdataLink);
+
+procedure TTestBufDatasetDBBasics.TestIsEmpty;
+begin
+  with tCustombufdataset(DBConnector.GetNDataset(True,1)) do
+    begin
+    open;
+    delete;
+    Resync([]);
+    applyupdates;
+    AssertTrue(IsEmpty);
+>>>>>>> graemeg/cpstrnew
 
 { TTestCursorDBBasics }
 
@@ -309,16 +441,26 @@ begin
         begin
         i := 1;
         Open;
+<<<<<<< HEAD
         CheckEquals('deUpdateState:0;',DataEvents);
         DataEvents := '';
         while not EOF do
           begin
           CheckEquals(i,fields[0].AsInteger);
           CheckEquals('TestName'+inttostr(i),fields[1].AsString);
+=======
+        AssertEquals('deUpdateState:0;',DataEvents);
+        DataEvents := '';
+        while not EOF do
+          begin
+          AssertEquals(i,fields[0].AsInteger);
+          AssertEquals('TestName'+inttostr(i),fields[1].AsString);
+>>>>>>> graemeg/cpstrnew
           inc(i);
 
           Next;
           if (i > ABufferCount) and not EOF then
+<<<<<<< HEAD
             CheckEquals('deCheckBrowseMode:0;deDataSetScroll:-1;DataSetScrolled:1;DataSetChanged;',DataEvents)
           else
             CheckEquals('deCheckBrowseMode:0;deDataSetScroll:0;DataSetScrolled:0;DataSetChanged;',DataEvents);
@@ -327,6 +469,16 @@ begin
         CheckEquals(count,i-1);
         close;
         CheckEquals('deUpdateState:0;',DataEvents);
+=======
+            AssertEquals('deCheckBrowseMode:0;deDataSetScroll:-1;DataSetScrolled:1;DataSetChanged;',DataEvents)
+          else
+            AssertEquals('deCheckBrowseMode:0;deDataSetScroll:0;DataSetScrolled:0;DataSetChanged;',DataEvents);
+          DataEvents := '';
+          end;
+        AssertEquals(count,i-1);
+        close;
+        AssertEquals('deUpdateState:0;',DataEvents);
+>>>>>>> graemeg/cpstrnew
         DataEvents := '';
         end;
       end;
@@ -334,6 +486,36 @@ begin
     aDatalink.Free;
     aDatasource.Free;
   end;
+<<<<<<< HEAD
+=======
+end;
+
+procedure TTestDBBasics.TestdeFieldListChange;
+
+var i,count     : integer;
+    aDatasource : TDataSource;
+    aDatalink   : TDataLink;
+    ds          : TDataset;
+
+begin
+  aDatasource := TDataSource.Create(nil);
+  aDatalink := TTestDataLink.Create;
+  aDatalink.DataSource := aDatasource;
+  ds := DBConnector.GetNDataset(1);
+  with ds do
+    begin
+    aDatasource.DataSet := ds;
+    DataEvents := '';
+    open;
+    Fields.add(tfield.Create(DBConnector.GetNDataset(1)));
+    AssertEquals('deUpdateState:0;deFieldListChange:0;',DataEvents);
+    DataEvents := '';
+    fields.Clear;
+    AssertEquals('deFieldListChange:0;',DataEvents)
+    end;
+  aDatasource.Free;
+  aDatalink.Free;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TTestDBBasics.TestActiveBufferWhenClosed;
@@ -384,7 +566,11 @@ begin
       Active:=False;
       Active:=True;
       EnableControls;
+<<<<<<< HEAD
       CheckEquals('deLayoutChange:0;DataSetChanged;',DataEvents);
+=======
+      AssertEquals('deLayoutChange:0;DataSetChanged;',DataEvents);
+>>>>>>> graemeg/cpstrnew
 
       close;
       end;
@@ -410,6 +596,7 @@ begin
     with ds do
       begin
       aDatasource.DataSet := ds;
+<<<<<<< HEAD
       Open;
       DataEvents := '';
       Resync([rmExact]);
@@ -425,11 +612,22 @@ begin
         CheckEquals('deCheckBrowseMode:0;DataEvent;deDataSetScroll:0;DataSetScrolled:1;DataSetChanged;',DataEvents);
       DataEvents := '';
       Close;
+=======
+      open;
+      DataEvents := '';
+      Resync([rmExact]);
+      AssertEquals('deDataSetChange:0;DataSetChanged;',DataEvents);
+      DataEvents := '';
+      next;
+      AssertEquals('deCheckBrowseMode:0;DataEvent;deDataSetScroll:0;DataSetScrolled:1;DataSetChanged;',DataEvents);
+      close;
+>>>>>>> graemeg/cpstrnew
       end;
   finally
     aDatasource.Free;
     aDatalink.Free;
   end;
+<<<<<<< HEAD
 end;
 
 procedure TTestDBBasics.TestdeFieldListChange;
@@ -457,6 +655,8 @@ begin
     end;
   aDatasource.Free;
   aDatalink.Free;
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TTestDBBasics.TestRecordcountAfterReopen;
@@ -655,6 +855,49 @@ end;
 
 procedure TTestDBBasics.TestExceptionLocateClosed;
 var passed: boolean;
+<<<<<<< HEAD
+=======
+begin
+  with DBConnector.GetNDataset(15) do
+    begin
+    passed := false;
+    try
+      locate('name','TestName1',[]);
+    except on E: Exception do
+      begin
+      passed := E.classname = EDatabaseError.className
+      end;
+    end;
+    AssertTrue(passed);
+    end;
+end;
+
+
+procedure TTestDBBasics.SetUp;
+begin
+  DBConnector.StartTest;
+end;
+
+procedure TTestDBBasics.TearDown;
+begin
+  DBConnector.StopTest;
+end;
+
+procedure TTestBufDatasetDBBasics.TestClosedIndexFieldNames;
+var s : string;
+    bufds: TCustomBufDataset;
+begin
+  bufds := DBConnector.GetNDataset(5) as TCustomBufDataset;
+  s := bufds.IndexFieldNames;
+  s := bufds.IndexName;
+  bufds.CompareBookmarks(nil,nil);
+end;
+
+procedure TTestDBBasics.TestCanModifySpecialFields;
+var ds    : TDataset;
+    lds   : TDataset;
+    fld   : TField;
+>>>>>>> graemeg/cpstrnew
 begin
   with DBConnector.GetNDataset(15) do
     begin
@@ -670,6 +913,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TTestCursorDBBasics.TestModified;
 begin
   // Tests TDataSet.Modified property
@@ -706,6 +950,63 @@ begin
   // really done.
   ds := DBConnector.GetNDataset(true,6);
   with ds do
+=======
+procedure TTestBufDatasetDBBasics.TestSafeAsXML;
+var ds    : TDataset;
+    LoadDs: TCustomBufDataset;
+begin
+  ds := DBConnector.GetNDataset(true,5);
+
+  ds.open;
+  TCustomBufDataset(ds).SaveToFile('test.xml');
+  ds.close;
+
+  LoadDs := TCustomBufDataset.Create(nil);
+  LoadDs.LoadFromFile('test.xml');
+  FTestXMLDatasetDefinition(LoadDS);
+end;
+
+procedure TTestBufDatasetDBBasics.TestFileNameProperty;
+var ds1,ds2: TDataset;
+    LoadDs: TCustomBufDataset;
+begin
+  ds2 := nil;
+  ds1 := DBConnector.GetNDataset(true,5);
+  try
+    ds1.open;
+    TCustomBufDataset(ds1).FileName:='test.xml';
+    ds1.close;
+
+    ds2 := DBConnector.GetNDataset(True,7);
+    TCustomBufDataset(ds2).FileName:='test.xml';
+    ds2.Open;
+    FTestXMLDatasetDefinition(Ds2);
+  finally
+    TCustomBufDataset(ds1).FileName:='';
+    if assigned(ds2) then
+      TCustomBufDataset(ds2).FileName:='';
+  end;
+end;
+
+procedure TTestBufDatasetDBBasics.TestClientDatasetAsMemDataset;
+var ds : TCustomBufDataset;
+    i  : integer;
+begin
+  ds := TCustomBufDataset.Create(nil);
+  DS.FieldDefs.Add('ID',ftInteger);
+  DS.FieldDefs.Add('NAME',ftString,50);
+  DS.CreateDataset;
+  DS.Open;
+  for i := 1 to 10 do
+    begin
+    ds.Append;
+    ds.FieldByName('ID').AsInteger := i;
+    ds.FieldByName('NAME').AsString := 'TestName' + inttostr(i);
+    DS.Post;
+    end;
+  ds.first;
+  for i := 1 to 10 do
+>>>>>>> graemeg/cpstrnew
     begin
     open;
     close;
@@ -1091,6 +1392,24 @@ begin
     end;
 end;
 
+procedure TTestDBBasics.TestLocateCaseIns;
+begin
+  with DBConnector.GetNDataset(true,13) do
+    begin
+    open;
+    assertfalse(Locate('name',vararrayof(['TEstName5']),[]));
+    asserttrue(Locate('name',vararrayof(['TEstName5']),[loCaseInsensitive]));
+    AssertEquals(5,FieldByName('id').AsInteger);
+
+    assertfalse(Locate('name',vararrayof(['TestN']),[]));
+    asserttrue(Locate('name',vararrayof(['TestN']),[loPartialKey]));
+
+    assertfalse(Locate('name',vararrayof(['TestNA']),[loPartialKey]));
+    asserttrue(Locate('name',vararrayof(['TestNA']),[loPartialKey, loCaseInsensitive]));
+    close;
+    end;
+end;
+
 procedure TTestDBBasics.TestSetFieldValues;
 var PassException : boolean;
 begin
@@ -1305,7 +1624,30 @@ begin
 {$endif fpc}
 end;
 
+<<<<<<< HEAD
 procedure TTestCursorDBBasics.TestOnFilterProc(DataSet: TDataSet; var Accept: Boolean);
+=======
+procedure TTestBufDatasetDBBasics.FTestXMLDatasetDefinition(ADataset: TDataset);
+var i : integer;
+begin
+  AssertEquals(2,ADataset.FieldDefs.Count);
+  AssertEquals(2,ADataset.Fields.Count);
+  AssertTrue(SameText('ID',ADataset.Fields[0].FieldName));
+  AssertTrue(SameText('NAME',ADataset.Fields[1].FieldName));
+  AssertTrue('Incorrect fieldtype',ADataset.fields[1].DataType=ftString);
+  i := 1;
+  while not ADataset.EOF do
+    begin
+    AssertEquals('TestName'+inttostr(i),ADataset.FieldByName('name').AsString);
+    ADataset.Next;
+    inc(i);
+    end;
+end;
+
+procedure TTestDBBasics.TestOnFilterProc(DataSet: TDataSet; var Accept: Boolean);
+
+var a : TDataSetState;
+>>>>>>> graemeg/cpstrnew
 begin
   Accept := odd(Dataset.FieldByName('ID').AsInteger);
 end;
@@ -1805,6 +2147,10 @@ end;
 
 procedure TTestBufDatasetDBBasics.TestAddIndexFieldType(AFieldType: TFieldType; ActiveDS : boolean);
 var ds : TCustomBufDataset;
+<<<<<<< HEAD
+=======
+    FList : TStringList;
+>>>>>>> graemeg/cpstrnew
     LastValue : Variant;
 begin
   ds := DBConnector.GetFieldDataset as TCustomBufDataset;
@@ -1900,11 +2246,14 @@ begin
   TestAddIndexFieldType(ftBCD,False);
 end;
 
+<<<<<<< HEAD
 procedure TTestBufDatasetDBBasics.TestAddIndexFmtBCD;
 begin
   TestAddIndexFieldType(ftFmtBCD,False);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TTestBufDatasetDBBasics.TestAddIndex;
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
@@ -2078,12 +2427,21 @@ begin
 end;
 
 procedure TTestBufDatasetDBBasics.TestAddIndexActiveDS;
+<<<<<<< HEAD
+=======
+var ds   : TCustomBufDataset;
+    I    : integer;
+>>>>>>> graemeg/cpstrnew
 begin
   TestAddIndexFieldType(ftString,true);
 end;
 
 procedure TTestBufDatasetDBBasics.TestAddIndexEditDS;
 var ds        : TCustomBufDataset;
+<<<<<<< HEAD
+=======
+    I         : integer;
+>>>>>>> graemeg/cpstrnew
     LastValue : String;
 begin
   ds := DBConnector.GetNDataset(True,5) as TCustomBufDataset;
@@ -2115,7 +2473,11 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TTestBufDatasetDBBasics.TestIndexFieldNamesActive;
+=======
+procedure TTestBufDatasetDBBasics.TestIndexFieldNamesAct;
+>>>>>>> graemeg/cpstrnew
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
     FList : TStringList;
@@ -2284,9 +2646,12 @@ begin
 end;
 
 procedure TTestBufDatasetDBBasics.TestIndexEditRecord;
+<<<<<<< HEAD
 // Tests index sorting for string field type by
 // editing an existing record in the middle
 // with a value at the end of the alphabet
+=======
+>>>>>>> graemeg/cpstrnew
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
     OldID : Integer;
@@ -2322,6 +2687,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TTestBufDatasetDBBasics.TestIndexAppendRecord;
 var i: integer;
     LastValue: string;
@@ -2387,6 +2753,8 @@ begin
   end;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TTestBufDatasetDBBasics.TestIndexFieldNames;
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
@@ -2735,8 +3103,37 @@ begin
     ds.Next;
     end;
 
+<<<<<<< HEAD
   ds.Close;
 end;
+=======
+procedure TTestDBBasics.TestSupportTimeFields;
+var i          : byte;
+    ds         : TDataset;
+    Fld        : TField;
+    s          : string;
+    millisecond: word;
+    second     : word;
+    minute     : word;
+    hour       : word;
+begin
+  TestfieldDefinition(ftTime,8,ds,Fld);
+
+  for i := 0 to testValuesCount-1 do
+    begin
+    // Format the datetime in the format hh:nn:ss:zzz, where the hours can be bigger then 23.
+    DecodeTime(fld.AsDateTime,hour,minute,second,millisecond);
+    hour := hour + (trunc(Fld.AsDateTime) * 24);
+    s := Format('%.2d',[hour]) + ':' + format('%.2d',[minute]) + ':' + format('%.2d',[second]) + ':' + format('%.3d',[millisecond]);
+
+    AssertEquals(testTimeValues[i],s);
+    ds.Next;
+    end;
+  ds.close;
+end;
+
+procedure TTestDBBasics.TestSupportCurrencyFields;
+>>>>>>> graemeg/cpstrnew
 
 procedure TTestDBBasics.TestSupportFixedStringFields;
 var i          : byte;
@@ -2771,13 +3168,41 @@ begin
 
   for i := 0 to testValuesCount-1 do
     begin
+<<<<<<< HEAD
     CheckEquals(testValues[ftBlob,i],Fld.AsString);
+=======
+    AssertEquals(CurrToStr(testCurrencyValues[i]),Fld.AsString);
+    AssertEquals(testCurrencyValues[i],Fld.AsCurrency);
+    AssertEquals(testCurrencyValues[i],Fld.AsFloat);
+>>>>>>> graemeg/cpstrnew
     ds.Next;
     end;
   ds.Close;
 end;
 
+<<<<<<< HEAD
 procedure TTestDBBasics.TestSupportMemoFields;
+=======
+procedure TTestDBBasics.TestSupportfmtBCDFields;
+var i          : byte;
+    ds         : TDataset;
+    Fld        : TField;
+
+begin
+  TestfieldDefinition(ftFMTBcd,sizeof(TBCD),ds,Fld);
+
+  for i := 0 to testValuesCount-1 do
+    begin
+    AssertEquals(testFmtBCDValues[i],Fld.AsString);
+    AssertEquals(testFmtBCDValues[i],Fld.AsBCD);
+    AssertEquals(StrToFloat(testFmtBCDValues[i]),Fld.AsFloat);
+    ds.Next;
+    end;
+  ds.close;
+end;
+
+procedure TTestDBBasics.TestSupportFixedStringFields;
+>>>>>>> graemeg/cpstrnew
 var i          : byte;
     ds         : TDataset;
     Fld        : TField;
@@ -2995,7 +3420,39 @@ begin
   AParam.Free;
 end;
 
+<<<<<<< HEAD
 procedure TTestCursorDBBasics.TestBug7007;
+=======
+procedure TTestBufDatasetDBBasics.TestBufDatasetCancelUpd;
+var i : byte;
+begin
+  with DBConnector.GetNDataset(5) as TCustomBufDataset do
+    begin
+    open;
+    next;
+    next;
+
+    edit;
+    FieldByName('name').AsString := 'changed';
+    post;
+    next;
+    delete;
+    
+    CancelUpdates;
+
+    First;
+
+    for i := 1 to 5 do
+      begin
+      AssertEquals(i,fields[0].AsInteger);
+      AssertEquals('TestName'+inttostr(i),fields[1].AsString);
+      Next;
+      end;
+    end;
+end;
+
+procedure TTestDBBasics.Testbug7007;
+>>>>>>> graemeg/cpstrnew
 
 var
   datalink1: tdatalink;
@@ -3022,6 +3479,7 @@ begin
 
     DataEvents := '';
     query1.append;
+<<<<<<< HEAD
     CheckEquals('deCheckBrowseMode:0;deUpdateState:0;deDataSetChange:0;DataSetChanged;',DataEvents);
     CheckEquals(5, datalink1.ActiveRecord);
     CheckEquals(6, datalink1.RecordCount);
@@ -3035,6 +3493,21 @@ begin
     CheckEquals(6, datalink1.RecordCount);
     CheckEquals(6, query1.RecordCount);
     CheckEquals(6, query1.RecNo);
+=======
+    AssertEquals('deCheckBrowseMode:0;deUpdateState:0;deDataSetChange:0;DataSetChanged;',DataEvents);
+    AssertEquals(5, datalink1.ActiveRecord);
+    AssertEquals(6, datalink1.RecordCount);
+    AssertEquals(6, query1.RecordCount);
+    AssertTrue(query1.RecNo in [0,7]);
+
+    DataEvents := '';
+    query1.cancel;
+    AssertEquals('deCheckBrowseMode:0;deUpdateState:0;deDataSetChange:0;DataSetChanged;',DataEvents);
+    AssertEquals(5, datalink1.ActiveRecord);
+    AssertEquals(6, datalink1.RecordCount);
+    AssertEquals(6, query1.RecordCount);
+    AssertEquals(6, query1.RecNo);
+>>>>>>> graemeg/cpstrnew
   finally
     datalink1.free;
     datasource1.free;
@@ -3081,7 +3554,96 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TTestCursorDBBasics.TestNullAtOpen;
+=======
+procedure TTestBufDatasetDBBasics.TestBufDatasetCancelUpd1;
+var i : byte;
+begin
+  with DBConnector.GetNDataset(5) as TCustomBufDataset do
+    begin
+    open;
+    next;
+    next;
+
+    delete;
+    insert;
+    FieldByName('id').AsInteger := 100;
+    post;
+
+    CancelUpdates;
+
+    last;
+
+    for i := 5 downto 1 do
+      begin
+      AssertEquals(i,fields[0].AsInteger);
+      AssertEquals('TestName'+inttostr(i),fields[1].AsString);
+      Prior;
+      end;
+    end;
+end;
+
+procedure TTestBufDatasetDBBasics.TestMultipleDeleteUpdateBuffer;
+var ds    : TDataset;
+begin
+  ds := DBConnector.GetNDataset(true,5);
+
+  ds.open;
+  with TCustomBufDataset(ds) do
+    begin
+    AssertEquals(0,ChangeCount);
+    edit;
+    fieldbyname('id').asinteger := 500;
+    fieldbyname('name').AsString := 'JoJo';
+    post;
+    AssertEquals(1,ChangeCount);
+    next; next;
+    Delete;
+    AssertEquals(2,ChangeCount);
+    Delete;
+    AssertEquals(3,ChangeCount);
+    CancelUpdates;
+    end;
+  ds.close;
+end;
+
+procedure TTestBufDatasetDBBasics.TestDoubleDelete;
+var ds    : TCustomBufDataset;
+begin
+  ds := TCustomBufDataset(DBConnector.GetNDataset(true,5));
+
+  with ds do
+    begin
+    open;
+    next; next;
+    Delete;
+    Delete;
+
+    first;
+    AssertEquals(1,fieldbyname('id').AsInteger);
+    next;
+    AssertEquals(2,fieldbyname('id').AsInteger);
+    next;
+    AssertEquals(5,fieldbyname('id').AsInteger);
+
+    CancelUpdates;
+
+    first;
+    AssertEquals(1,fieldbyname('id').AsInteger);
+    next;
+    AssertEquals(2,fieldbyname('id').AsInteger);
+    next;
+    AssertEquals(3,fieldbyname('id').AsInteger);
+    next;
+    AssertEquals(4,fieldbyname('id').AsInteger);
+    next;
+    AssertEquals(5,fieldbyname('id').AsInteger);
+    end;
+end;
+
+procedure TTestDBBasics.TestNullAtOpen;
+>>>>>>> graemeg/cpstrnew
 begin
   with dbconnector.getndataset(0) do
     begin
@@ -3093,6 +3655,7 @@ begin
     cancel;
     CheckTrue(fieldbyname('id').IsNull,'Field isn''t NULL after cancel');
     end;
+<<<<<<< HEAD
 end;
 
 { TDBBasicsUniDirectionalTestSetup }
@@ -3107,6 +3670,34 @@ procedure TDBBasicsUniDirectionalTestSetup.OneTimeTearDown;
 begin
   DBConnector.TestUniDirectional:=false;
   inherited OneTimeTearDown;
+=======
+end;
+
+{ TDBBasicsUniDirectionalTestSetup }
+
+procedure TDBBasicsUniDirectionalTestSetup.OneTimeSetup;
+begin
+  inherited OneTimeSetup;
+  DBConnector.TestUniDirectional:=true;
+end;
+
+procedure TDBBasicsUniDirectionalTestSetup.OneTimeTearDown;
+begin
+  DBConnector.TestUniDirectional:=false;
+  inherited OneTimeTearDown;
+end;
+
+{ TTestBufDatasetDBBasics }
+
+procedure TTestBufDatasetDBBasics.SetUp;
+begin
+  DBConnector.StartTest;
+end;
+
+procedure TTestBufDatasetDBBasics.TearDown;
+begin
+  DBConnector.StopTest;
+>>>>>>> graemeg/cpstrnew
 end;
 {$endif fpc}
 
@@ -3114,15 +3705,23 @@ end;
 initialization
 {$ifdef fpc}
   RegisterTestDecorator(TDBBasicsTestSetup, TTestDBBasics);
+<<<<<<< HEAD
   RegisterTestDecorator(TDBBasicsTestSetup, TTestCursorDBBasics);
 
   // The SQL connectors are descendents of bufdataset and therefore benefit from testing:
   if (uppercase(dbconnectorname)='SQL') or (uppercase(dbconnectorname)='BUFDATASET') then
+=======
+
+  if uppercase(dbconnectorname)='SQL' then
+>>>>>>> graemeg/cpstrnew
     begin
     RegisterTestDecorator(TDBBasicsTestSetup, TTestBufDatasetDBBasics);
     RegisterTestDecorator(TDBBasicsUniDirectionalTestSetup, TTestUniDirectionalDBBasics);
     end;
+<<<<<<< HEAD
 {$else fpc}
   RegisterTest(TTestDBBasics.Suite);
 {$endif fpc}
+=======
+>>>>>>> graemeg/cpstrnew
 end.

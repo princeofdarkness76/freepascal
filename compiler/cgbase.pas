@@ -104,12 +104,19 @@ interface
          ,addr_fardataseg  // the far data segment of the current pascal module (unit or program)
          ,addr_seg         // used for getting the segment of an object, e.g. 'mov ax, SEG symbol'
          {$ENDIF}
+<<<<<<< HEAD
          {$IFDEF AARCH64}
          ,addr_page
          ,addr_pageoffset
          ,addr_gotpage
          ,addr_gotpageoffset
          {$ENDIF AARCH64}
+=======
+         {$IFDEF AVR}
+         ,addr_lo8
+         ,addr_hi8
+         {$ENDIF}
+>>>>>>> graemeg/cpstrnew
          );
 
 
@@ -391,8 +398,11 @@ interface
     }
     function int_cgsize(const a: tcgint): tcgsize;{$ifdef USEINLINE}inline;{$endif}
     function int_float_cgsize(const a: tcgint): tcgsize;
+<<<<<<< HEAD
 
     function tcgsize2str(cgsize: tcgsize):string;
+=======
+>>>>>>> graemeg/cpstrnew
 
     { return the inverse condition of opcmp }
     function inverse_opcmp(opcmp: topcmp): topcmp;{$ifdef USEINLINE}inline;{$endif}

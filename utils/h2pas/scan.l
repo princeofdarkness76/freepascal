@@ -20,7 +20,10 @@
 
 
 unit scan;
+<<<<<<< HEAD
 {$H+}
+=======
+>>>>>>> graemeg/cpstrnew
 
   interface
 

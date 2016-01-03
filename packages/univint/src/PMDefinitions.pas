@@ -11,8 +11,12 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -67,11 +71,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -90,29 +97,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -122,13 +144,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -140,12 +166,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -159,13 +191,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -209,10 +248,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MacErrors,CFString;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 {$ifc not TARGET_CPU_64}
 {$ALIGN MAC68K}
 {$elsec}
@@ -222,6 +269,7 @@ uses MacTypes,MacErrors,CFString;
 { Printing objects }
 type
 	PMObject = UnivPtr;
+<<<<<<< HEAD
 	PMPrintSettings = ^OpaquePMPrintSettings; { an opaque type }
 	OpaquePMPrintSettings = record end;
 	PMPrintSettingsPtr = ^PMPrintSettings; { when a var xx:PMPrintSettings parameter can be nil, it is changed to xx: PMPrintSettingsPtr }
@@ -242,6 +290,21 @@ type
 	PMPresetPtr = ^PMPreset; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPresetPtr }
 	PMPaper = ^OpaquePMPaper; { an opaque type }
 	OpaquePMPaper = record end;
+=======
+	PMPrintSettings = ^SInt32; { an opaque type }
+	PMPrintSettingsPtr = ^PMPrintSettings; { when a var xx:PMPrintSettings parameter can be nil, it is changed to xx: PMPrintSettingsPtr }
+	PMPageFormat = ^SInt32; { an opaque type }
+	PMPageFormatPtr = ^PMPageFormat; { when a var xx:PMPageFormat parameter can be nil, it is changed to xx: PMPageFormatPtr }
+	PMPrintSession = ^SInt32; { an opaque type }
+	PMPrintSessionPtr = ^PMPrintSession; { when a var xx:PMPrintSession parameter can be nil, it is changed to xx: PMPrintSessionPtr }
+	PMPrinter = ^SInt32; { an opaque type }
+	PMPrinterPtr = ^PMPrinter; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPrinterPtr }
+	PMServer = ^SInt32; { an opaque type }
+	PMServerPtr = ^PMServer; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMServerPtr }
+	PMPreset = ^SInt32; { an opaque type }
+	PMPresetPtr = ^PMPreset; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPresetPtr }
+	PMPaper = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	PMPaperPtr = ^PMPaper; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPaperPtr }
 const
 	kPMCancel = $0080; { user hit cancel button in dialog }
@@ -301,6 +364,7 @@ const
 	kPMColorSpaceModelCount = 4; { total number of color space models supported }
 	
 { Print quality modes "standard options" }
+<<<<<<< HEAD
 type
 	PMQualityMode = UInt32;
 const
@@ -317,6 +381,24 @@ const
 type
 	PMPaperType = UInt32;
 const
+=======
+type
+	PMQualityMode = UInt32;
+const
+	kPMQualityLowest = $0000; { Absolute lowest print quality }
+	kPMQualityInkSaver = $0001; { Saves ink but may be slower }
+	kPMQualityDraft = $0004; { Print at highest speed, ink used is secondary consideration }
+	kPMQualityNormal = $0008; { Print in printers "general usage" mode for good balance between quality and speed }
+	kPMQualityPhoto = $000B; { Optimize quality of photos on the page. Speed is not a concern }
+	kPMQualityBest = $000D; { Get best quality output for all objects and photos. }
+	kPMQualityHighest = $000F; { Absolute highest quality attained from a printers }
+
+
+{ Constants for our "standard" paper types }
+type
+	PMPaperType = UInt32;
+const
+>>>>>>> graemeg/cpstrnew
 	kPMPaperTypeUnknown = $0000; { Not sure yet what paper type we have. }
 	kPMPaperTypePlain = $0001; { Plain paper }
 	kPMPaperTypeCoated = $0002; { Has a special coating for sharper images and text }

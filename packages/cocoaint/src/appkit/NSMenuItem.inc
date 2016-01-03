@@ -56,10 +56,17 @@
     _action: SEL;
     _tag: NSInteger;
     _extraData: id;
+<<<<<<< HEAD
     __miFlags: record
       case byte of
        0: (_anonbitfield_NSMenuItem0: cuint);
        1: (data: bitpacked record
+=======
+    __miFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSMenuItem0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         disabled: 0..1;
         isSeparator: 0..1;
         hidden: 0..1;
@@ -75,7 +82,10 @@
         hiddenActiveKE: 0..1;
         noRepeatKEs: 0..1;
         RESERVED: 0..1;
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

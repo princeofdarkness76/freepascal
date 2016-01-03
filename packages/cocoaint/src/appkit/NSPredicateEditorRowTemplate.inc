@@ -48,6 +48,7 @@
     _leftAttributeType: NSUInteger;
     _rightAttributeType: NSUInteger;
     _views: NSArray;
+<<<<<<< HEAD
     __ptFlags: record
       case byte of
        0: (_anonbitfield_NSPredicateEditorRowTemplate0: cuint);
@@ -56,6 +57,15 @@
         rightIsWildcard: 0..1;
         reserved: 0..((1 shl 30)-1);
        end;
+=======
+    __ptFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSPredicateEditorRowTemplate0: cuint);
+       1: (
+        leftIsWildcard: 0..1;
+        rightIsWildcard: 0..1;
+        reserved: 0..((1 shl 30)-1);
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _patternReserved: id;

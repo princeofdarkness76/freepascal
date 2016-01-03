@@ -369,7 +369,11 @@ begin
 {$endif}
 end;
 
+<<<<<<< HEAD
 {$if defined(generic_linux_syscalls)}
+=======
+{$ifndef NO_SYSCALL_UTIME}
+>>>>>>> graemeg/cpstrnew
 
 Function fpUtime(path:pchar;times:putimbuf):cint;
 var
@@ -397,6 +401,7 @@ Function fpUtime(path:pchar;times:putimbuf):cint;
 var
   tva: Array[0..1] of timeval;
 begin
+<<<<<<< HEAD
   tva[0].tv_sec := times^.actime;
   tva[0].tv_usec := 0;
   tva[1].tv_sec := times^.modtime;
@@ -404,6 +409,24 @@ begin
   fputime:=do_syscall(syscall_nr_utimes,TSysParam(path),TSysParam(@tva));
 end;
 
+=======
+  fputime:=do_syscall(syscall_nr_utime,TSysParam(path),TSysParam(times));
+end;
+
+{$else}
+
+Function fpUtime(path:pchar;times:putimbuf):cint;
+var
+  tva: Array[0..1] of timeval;
+begin
+  tva[0].tv_sec := times^.actime;
+  tva[0].tv_usec := 0;
+  tva[1].tv_sec := times^.modtime;
+  tva[1].tv_usec := 0;
+  fputime:=do_syscall(syscall_nr_utimes,TSysParam(path),TSysParam(@tva));
+end;
+
+>>>>>>> graemeg/cpstrnew
 {$endif}
 
 

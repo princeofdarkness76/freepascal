@@ -269,6 +269,7 @@
 'popf',
 'popfd',
 'popfw',
+'popfq',
 'por',
 'prefetch',
 'prefetchw',
@@ -302,6 +303,7 @@
 'pushf',
 'pushfd',
 'pushfw',
+'pushfq',
 'pxor',
 'rcl',
 'rcr',
@@ -627,9 +629,17 @@
 'pcmpeqq',
 'pextrb',
 'pextrd',
+<<<<<<< HEAD
 'phminposuw',
 'pinsrb',
 'pinsrd',
+=======
+'pextrq',
+'phminposuw',
+'pinsrb',
+'pinsrd',
+'pinsrq',
+>>>>>>> graemeg/cpstrnew
 'pmaxsb',
 'pmaxsd',
 'pmaxud',
@@ -651,13 +661,19 @@
 'pmovzxwq',
 'pmovzxdq',
 'pmuldq',
+<<<<<<< HEAD
 'pmulld',
+=======
+>>>>>>> graemeg/cpstrnew
 'ptest',
 'roundps',
 'roundpd',
 'roundss',
 'roundsd',
+<<<<<<< HEAD
 'crc32',
+=======
+>>>>>>> graemeg/cpstrnew
 'pcmpestri',
 'pcmpestrm',
 'pcmpistri',
@@ -669,6 +685,7 @@
 'aesdec',
 'aesdeclast',
 'aesimc',
+<<<<<<< HEAD
 'aeskeygenassist',
 'rdtscp',
 'vaddpd',
@@ -1026,4 +1043,10 @@
 'vfnmsub132ss',
 'vfnmsub213ss',
 'vfnmsub231ss'
+=======
+'aeskeygen',
+'stosq',
+'lodsq',
+'cmpsq'
+>>>>>>> graemeg/cpstrnew
 );

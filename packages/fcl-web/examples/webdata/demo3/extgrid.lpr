@@ -9,8 +9,11 @@ uses
 
 {$IFDEF WINDOWS}{$R extgrid.rc}{$ENDIF}
 
+<<<<<<< HEAD
 {$R *.res}
 
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   Application.Initialize;
   Application.Run;

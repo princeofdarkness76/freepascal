@@ -4,7 +4,14 @@
 
 [package]
 name=imlib
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=gdk_imlib imlib
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

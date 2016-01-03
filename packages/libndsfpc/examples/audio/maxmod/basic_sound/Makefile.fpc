@@ -20,9 +20,13 @@ target=nds
 fpcdir=../../../../../..
 
 [compiler]
+<<<<<<< HEAD
 options=-Xm
 targetdir=$(BIN)  
 unittargetdir=$(BUILD)
+=======
+options=-g -O2
+>>>>>>> graemeg/cpstrnew
 
 [clean]
 files=*.elf *.o *.s *.nds *.nef *.h *.bin *.map \

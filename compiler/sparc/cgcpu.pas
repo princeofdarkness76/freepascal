@@ -46,6 +46,12 @@ interface
         procedure handle_load_store(list:TAsmList;isstore:boolean;op: tasmop;reg:tregister;ref: treference);
         procedure handle_reg_const_reg(list:TAsmList;op:Tasmop;src:tregister;a:tcgint;dst:tregister);
         { parameter }
+<<<<<<< HEAD
+=======
+        procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
+        procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
+        procedure a_loadaddr_ref_cgpara(list:TAsmList;const r:TReference;const paraloc:TCGPara);override;
+>>>>>>> graemeg/cpstrnew
         procedure a_loadfpu_reg_cgpara(list : TAsmList;size : tcgsize;const r : tregister;const paraloc : TCGPara);override;
         procedure a_loadfpu_ref_cgpara(list : TAsmList;size : tcgsize;const ref : treference;const paraloc : TCGPara);override;
         procedure a_call_name(list:TAsmList;const s:string; weak: boolean);override;
@@ -84,12 +90,21 @@ interface
         procedure g_maybe_got_init(list: TAsmList); override;
         procedure g_restore_registers(list:TAsmList);override;
         procedure g_save_registers(list : TAsmList);override;
+<<<<<<< HEAD
         procedure g_concatcopy(list : TAsmList;const source,dest : treference;len : tcgint);override;
         procedure g_concatcopy_unaligned(list : TAsmList;const source,dest : treference;len : tcgint);override;
         procedure g_concatcopy_move(list : TAsmList;const source,dest : treference;len : tcgint);
         procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: tcgint);override;
        private
         use_unlimited_pic_mode : boolean;
+=======
+        procedure g_concatcopy(list : TAsmList;const source,dest : treference;len : aint);override;
+        procedure g_concatcopy_unaligned(list : TAsmList;const source,dest : treference;len : aint);override;
+        procedure g_concatcopy_move(list : TAsmList;const source,dest : treference;len : aint);
+        procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);override;
+       private
+        g1_used : boolean;
+>>>>>>> graemeg/cpstrnew
       end;
 
       TCg64Sparc=class(tcg64f32)
@@ -106,6 +121,8 @@ interface
         procedure a_op64_const_reg_reg_checkoverflow(list: TAsmList;op:TOpCG;size : tcgsize;value : int64;regsrc,regdst : tregister64;setflags : boolean;var ovloc : tlocation);override;
         procedure a_op64_reg_reg_reg_checkoverflow(list: TAsmList;op:TOpCG;size : tcgsize;regsrc1,regsrc2,regdst : tregister64;setflags : boolean;var ovloc : tlocation);override;
       end;
+      
+    procedure create_codegen;
 
     procedure create_codegen;
 
@@ -272,9 +289,17 @@ implementation
         if (a<simm13lo) or
            (a>simm13hi) then
           begin
-            tmpreg:=GetIntRegister(list,OS_INT);
+            if g1_used then
+              GetIntRegister(list,OS_INT)
+            else
+              begin
+                tmpreg:=NR_G1;
+                g1_used:=true;
+              end;   
             a_load_const_reg(list,OS_INT,a,tmpreg);
             list.concat(taicpu.op_reg_reg_reg(op,src,tmpreg,dst));
+            if tmpreg=NR_G1 then
+              g1_used:=false;
           end
         else
           list.concat(taicpu.op_reg_const_reg(op,src,a,dst));
@@ -325,6 +350,103 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+=======
+    procedure TCgSparc.a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);
+      var
+        Ref:TReference;
+      begin
+        paraloc.check_simple_location;
+        paramanager.alloccgpara(list,paraloc);
+        case paraloc.location^.loc of
+          LOC_REGISTER,LOC_CREGISTER:
+            a_load_const_reg(list,size,a,paraloc.location^.register);
+          LOC_REFERENCE:
+            begin
+              { Code conventions need the parameters being allocated in %o6+92 }
+              with paraloc.location^.Reference do
+                begin
+                  if (Index=NR_SP) and (Offset<Target_info.first_parm_offset) then
+                    InternalError(2002081104);
+                  reference_reset_base(ref,index,offset,paraloc.alignment);
+                end;
+              a_load_const_ref(list,size,a,ref);
+            end;
+          else
+            InternalError(2002122200);
+        end;
+      end;
+
+
+    procedure TCgSparc.a_load_ref_cgpara(list:TAsmList;sz:TCgSize;const r:TReference;const paraloc:TCGPara);
+      var
+        ref: treference;
+        tmpreg:TRegister;
+      begin
+        paraloc.check_simple_location;
+        paramanager.alloccgpara(list,paraloc);
+        with paraloc.location^ do
+          begin
+            case loc of
+              LOC_REGISTER,LOC_CREGISTER :
+                a_load_ref_reg(list,sz,paraloc.location^.size,r,Register);
+              LOC_REFERENCE:
+                begin
+                  { Code conventions need the parameters being allocated in %o6+92 }
+                  with Reference do
+                    begin
+                      if (Index=NR_SP) and (Offset<Target_info.first_parm_offset) then
+                        InternalError(2002081104);
+                      reference_reset_base(ref,index,offset,paraloc.alignment);
+                    end;
+                  if g1_used then
+                    GetIntRegister(list,OS_INT)
+                  else
+                    begin
+                      tmpreg:=NR_G1;
+                      g1_used:=true;
+                    end;   
+                  a_load_ref_reg(list,sz,sz,r,tmpreg);
+                  a_load_reg_ref(list,sz,sz,tmpreg,ref);
+                  if tmpreg=NR_G1 then
+                    g1_used:=false;
+                end;
+              else
+                internalerror(2002081103);
+            end;
+          end;
+      end;
+
+
+    procedure TCgSparc.a_loadaddr_ref_cgpara(list:TAsmList;const r:TReference;const paraloc:TCGPara);
+      var
+        Ref:TReference;
+        TmpReg:TRegister;
+      begin
+        paraloc.check_simple_location;
+        paramanager.alloccgpara(list,paraloc);
+        with paraloc.location^ do
+          begin
+            case loc of
+              LOC_REGISTER,LOC_CREGISTER:
+                a_loadaddr_ref_reg(list,r,register);
+              LOC_REFERENCE:
+                begin
+                  reference_reset(ref,paraloc.alignment);
+                  ref.base := reference.index;
+                  ref.offset := reference.offset;
+                  tmpreg:=GetAddressRegister(list);
+                  a_loadaddr_ref_reg(list,r,tmpreg);
+                  a_load_reg_ref(list,OS_ADDR,OS_ADDR,tmpreg,ref);
+                end;
+              else
+                internalerror(2002080701);
+            end;
+          end;
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     procedure tcgsparc.a_loadfpu_ref_cgpara(list : TAsmList;size : tcgsize;const ref : treference;const paraloc : TCGPara);
       var
          href,href2 : treference;
@@ -1000,7 +1122,9 @@ implementation
         if LocalSize>4096 then
           begin
             a_load_const_reg(list,OS_ADDR,-LocalSize,NR_G1);
+            g1_used:=true;
             list.concat(Taicpu.Op_reg_reg_reg(A_SAVE,NR_STACK_POINTER_REG,NR_G1,NR_STACK_POINTER_REG));
+            g1_used:=false;
           end
         else
           list.concat(Taicpu.Op_reg_const_reg(A_SAVE,NR_STACK_POINTER_REG,-LocalSize,NR_STACK_POINTER_REG));
@@ -1102,10 +1226,17 @@ implementation
         paraloc1.init;
         paraloc2.init;
         paraloc3.init;
+<<<<<<< HEAD
         paramanager.getintparaloc(list,pd,1,paraloc1);
         paramanager.getintparaloc(list,pd,2,paraloc2);
         paramanager.getintparaloc(list,pd,3,paraloc3);
         a_load_const_cgpara(list,OS_SINT,len,paraloc3);
+=======
+        paramanager.getintparaloc(pocall_default,1,paraloc1);
+        paramanager.getintparaloc(pocall_default,2,paraloc2);
+        paramanager.getintparaloc(pocall_default,3,paraloc3);
+        a_load_const_cgpara(list,OS_INT,len,paraloc3);
+>>>>>>> graemeg/cpstrnew
         a_loadaddr_ref_cgpara(list,dest,paraloc2);
         a_loadaddr_ref_cgpara(list,source,paraloc1);
         paramanager.freecgpara(list,paraloc3);
@@ -1271,8 +1402,62 @@ implementation
 
     procedure tcgsparc.g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: tcgint);
       begin
+<<<<<<< HEAD
         { This method is integrated into g_intf_wrapper and shouldn't be called separately }
         InternalError(2013020102);
+=======
+        if not(procdef.proctypeoption in [potype_function,potype_procedure]) then
+          Internalerror(200006137);
+        if not assigned(procdef.struct) or
+           (procdef.procoptions*[po_classmethod, po_staticmethod,
+             po_methodpointer, po_interrupt, po_iocheck]<>[]) then
+          Internalerror(200006138);
+        if procdef.owner.symtabletype<>ObjectSymtable then
+          Internalerror(200109191);
+
+        make_global:=false;
+        if (not current_module.is_unit) or
+           (procdef.owner.defowner.owner.symtabletype=globalsymtable) then
+          make_global:=true;
+
+        if make_global then
+          List.concat(Tai_symbol.Createname_global(labelname,AT_FUNCTION,0))
+        else
+          List.concat(Tai_symbol.Createname(labelname,AT_FUNCTION,0));
+
+        { set param1 interface to self  }
+        g_adjust_self_value(list,procdef,ioffset);
+
+        if po_virtualmethod in procdef.procoptions then
+          begin
+            if (procdef.extnumber=$ffff) then
+              Internalerror(200006139);
+            { mov  0(%rdi),%rax ; load vmt}
+            reference_reset_base(href,NR_O0,0,sizeof(pint));
+            cg.a_load_ref_reg(list,OS_ADDR,OS_ADDR,href,NR_G1);
+            g1_used:=true; 
+            { jmp *vmtoffs(%eax) ; method offs }
+            reference_reset_base(href,NR_G1,tobjectdef(procdef.struct).vmtmethodoffset(procdef.extnumber),sizeof(pint));
+            list.concat(taicpu.op_ref_reg(A_LD,href,NR_G1));
+            list.concat(taicpu.op_reg(A_JMP,NR_G1));
+	    g1_used:=false;
+          end
+        else
+          begin
+            reference_reset_symbol(href,current_asmdata.RefAsmSymbol(procdef.mangledname),0,sizeof(pint));
+            href.refaddr := addr_high;
+            list.concat(taicpu.op_ref_reg(A_SETHI,href,NR_G1));
+	    g1_used:=true;
+            href.refaddr := addr_low;
+            list.concat(taicpu.op_reg_ref_reg(A_OR,NR_G1,href,NR_G1));
+            list.concat(taicpu.op_reg(A_JMP,NR_G1));
+	    g1_used:=false;
+          end;
+        { Delay slot }
+        list.Concat(TAiCpu.Op_none(A_NOP));
+
+        List.concat(Tai_symbol_end.Createname(labelname));
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -1439,6 +1624,7 @@ implementation
     procedure create_codegen;
       begin
         cg:=TCgSparc.Create;
+<<<<<<< HEAD
         if target_info.system=system_sparc_linux then
           TCgSparc(cg).use_unlimited_pic_mode:=true
         else
@@ -1446,4 +1632,9 @@ implementation
         cg64:=TCg64Sparc.Create;
       end;
 
+=======
+        cg64:=TCg64Sparc.Create;
+      end;
+      
+>>>>>>> graemeg/cpstrnew
 end.

@@ -3,9 +3,15 @@
  
      Contains:   QuickTime Interfaces.
  
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -14,7 +20,10 @@
  
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +78,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -89,6 +101,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -108,17 +121,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -168,6 +202,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -715,6 +777,7 @@ type
 	end;
 const
 	codecSuggestedBufferSentinel = FourCharCode('sent'); { codec public resource containing suggested data pattern to put past end of data buffer }
+<<<<<<< HEAD
 
 
 { name of parameters or effect -- placed in root container, required }
@@ -724,6 +787,80 @@ const
 
 { codec sub-type of parameters or effect -- placed in root container, required }
 const
+	kParameterWhatName = FourCharCode('what');
+	kParameterWhatID = 1;
+
+{ effect version -- placed in root container, optional, but recommended }
+const
+	kParameterVersionName = FourCharCode('vers');
+	kParameterVersionID = 1;
+=======
+>>>>>>> graemeg/cpstrnew
+
+{ is effect repeatable -- placed in root container, optional, default is TRUE}
+const
+	kParameterRepeatableName = FourCharCode('pete');
+	kParameterRepeatableID = 1;
+
+{ name of parameters or effect -- placed in root container, required }
+const
+	kParameterTitleName = FourCharCode('name');
+	kParameterTitleID = 1;
+
+{ codec sub-type of parameters or effect -- placed in root container, required }
+const
+<<<<<<< HEAD
+	kParameterRepeatableTrue = 1;
+	kParameterRepeatableFalse = 0;
+
+{ substitution codec in case effect is missing -- placed in root container, recommended }
+const
+	kParameterAlternateCodecName = FourCharCode('subs');
+	kParameterAlternateCodecID = 1;
+
+{ maximum number of sources -- placed in root container, required }
+const
+	kParameterSourceCountName = FourCharCode('srcs');
+	kParameterSourceCountID = 1;
+
+{ EFFECT CLASSES}
+
+{
+   The effect major class defines the major grouping of the effect.
+   Major classes are defined only by Apple and are not extendable by third
+   parties.  Major classes are used for filtering of the effect list by
+   applications, but do not define what UI sub-group may or may not be
+   presented to the user.  For example, the major class may be a transition,
+   but the minor class may be a wipe.  
+}
+
+{
+   Effects that fail to include a
+   kEffectMajorClassType will be classified as kMiscMajorClass.
+}
+const
+	kEffectMajorClassType = FourCharCode('clsa');
+	kEffectMajorClassID = 1;
+
+const
+	kGeneratorMajorClass = FourCharCode('genr'); { zero source effects}
+	kFilterMajorClass = FourCharCode('filt'); { one source effects}
+	kTransitionMajorClass = FourCharCode('tran'); { multisource morph effects }
+	kCompositorMajorClass = FourCharCode('comp'); { multisource layer effects}
+	kMiscMajorClass = FourCharCode('misc'); { all other effects}
+
+{
+   The effect minor class defines the grouping of effects for the purposes
+   of UI.  Apple defines a set of minor classes and will extend it over
+   time.  Apple also provides strings within the UI for minor classes
+   that it defines.  Third party developers may either classify
+   their effects as a type defined by Apple, or may define their own
+   minor class.  Effects which define a minor class of their own
+   must also then supply a kEffectMinorClassNameType atom.
+}
+
+{
+=======
 	kParameterWhatName = FourCharCode('what');
 	kParameterWhatID = 1;
 
@@ -788,10 +925,12 @@ const
 }
 
 {
+>>>>>>> graemeg/cpstrnew
    If a kEffectMinorClassNameType atom is present, but
    the minor type is one defined by Apple, the Apple supplied
    string will be used in the UI.
 }
+<<<<<<< HEAD
 
 {
    Effects that fail to supply a kEffectMinorClassType will be 
@@ -803,6 +942,19 @@ const
 	kEffectMinorClassNameType = FourCharCode('clsn');
 	kEffectMinorClassNameID = 1;
 
+=======
+
+{
+   Effects that fail to supply a kEffectMinorClassType will be 
+   classified as kMiscMinorClass.
+}
+const
+	kEffectMinorClassType = FourCharCode('clsi');
+	kEffectMinorClassID = 1;
+	kEffectMinorClassNameType = FourCharCode('clsn');
+	kEffectMinorClassNameID = 1;
+
+>>>>>>> graemeg/cpstrnew
 const
 	kGeneratorMinorClass = FourCharCode('genr'); { "Generators"}
 	kRenderMinorClass = FourCharCode('rend'); { "Render"}
@@ -850,7 +1002,11 @@ type
 	ParameterDependancyRecordPtr = ^ParameterDependancyRecord;
 	ParameterDependancyRecord = record
 		dependCount: SIGNEDLONG;
+<<<<<<< HEAD
 		depends: array [0..0] of OSType;
+=======
+    depends: array [0..0] of OSType;
+>>>>>>> graemeg/cpstrnew
 	end;
 {
    enumeration list in container -- placed in root container, optional unless used by a
@@ -869,7 +1025,11 @@ type
 	EnumListRecordPtr = ^EnumListRecord;
 	EnumListRecord = record
 		enumCount: SIGNEDLONG;              { number of enumeration items to follow}
+<<<<<<< HEAD
 		values: array [0..0] of EnumValuePair;              { values and names for them, packed }
+=======
+    values: array [0..0] of EnumValuePair;              { values and names for them, packed }
+>>>>>>> graemeg/cpstrnew
 	end;
 { atom type of parameter}
 const
@@ -939,7 +1099,11 @@ type
 	ParameterAlternateDataTypePtr = ^ParameterAlternateDataType;
 	ParameterAlternateDataType = record
 		numEntries: SIGNEDLONG;
+<<<<<<< HEAD
 		entries: array [0..0] of ParameterAlternateDataEntry;
+=======
+    entries: array [0..0] of ParameterAlternateDataEntry;
+>>>>>>> graemeg/cpstrnew
 	end;
 { legal values for the parameter}
 const

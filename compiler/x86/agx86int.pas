@@ -60,7 +60,11 @@ implementation
       line_length = 70;
 
       secnames : array[TAsmSectiontype] of string[4] = ('','',
+<<<<<<< HEAD
         'CODE','DATA','DATA','DATA','BSS','TLS',
+=======
+        'CODE','DATA','DATA','DATA','BSS','',
+>>>>>>> graemeg/cpstrnew
         '','','','','','',
         '','','','',
         '',
@@ -106,13 +110,20 @@ implementation
         '',
         '',
         '',
+<<<<<<< HEAD
         '',
         '',
+=======
+>>>>>>> graemeg/cpstrnew
         ''
       );
 
       secnamesml64 : array[TAsmSectiontype] of string[7] = ('','',
+<<<<<<< HEAD
         '_TEXT','_DATA','_DATA','_DATA','_BSS','_TLS',
+=======
+        '_TEXT','_DATE','_DATA','_DATA','_BSS','',
+>>>>>>> graemeg/cpstrnew
         '','','','',
         'idata$2','idata$4','idata$5','idata$6','idata$7','edata',
         '',
@@ -158,8 +169,11 @@ implementation
         '',
         '',
         '',
+<<<<<<< HEAD
         '',
         '',
+=======
+>>>>>>> graemeg/cpstrnew
         ''
       );
 
@@ -308,7 +322,11 @@ implementation
           top_reg :
             writer.AsmWrite(masm_regname(o.reg));
           top_const :
+<<<<<<< HEAD
             writer.AsmWrite(tostr(o.val));
+=======
+            AsmWrite(tostr(o.val));
+>>>>>>> graemeg/cpstrnew
           top_ref :
             begin
               if o.ref^.refaddr in [addr_no,addr_pic,addr_pic_no_got] then
@@ -392,7 +410,11 @@ implementation
         top_reg :
           writer.AsmWrite(masm_regname(o.reg));
         top_const :
+<<<<<<< HEAD
           writer.AsmWrite(tostr(o.val));
+=======
+          AsmWrite(tostr(o.val));
+>>>>>>> graemeg/cpstrnew
         top_ref :
           { what about lcall or ljmp ??? }
           begin
@@ -478,6 +500,7 @@ implementation
       hp:=tai(p.first);
       while assigned(hp) do
        begin
+<<<<<<< HEAD
          prefetch(pointer(hp.next)^);
          if not(hp.typ in SkipLineInfo) then
           begin
@@ -486,6 +509,53 @@ implementation
             if do_line and (inlinelevel=0) and not DoNotSplitLine then
               WriteSourceLine(hp as tailineinfo);
           end;
+=======
+         if do_line and not(hp.typ in SkipLineInfo) and
+            not DoNotSplitLine and (InlineLevel=0) then
+           begin
+              hp1:=hp as tailineinfo;
+           { load infile }
+             if lastfileinfo.fileindex<>hp1.fileinfo.fileindex then
+              begin
+                infile:=current_module.sourcefiles.get_file(hp1.fileinfo.fileindex);
+                if assigned(infile) then
+                 begin
+                   { open only if needed !! }
+                   if (cs_asm_source in current_settings.globalswitches) then
+                    infile.open;
+                 end;
+                { avoid unnecessary reopens of the same file !! }
+                lastfileinfo.fileindex:=hp1.fileinfo.fileindex;
+                { be sure to change line !! }
+                lastfileinfo.line:=-1;
+              end;
+           { write source }
+             if (cs_asm_source in current_settings.globalswitches) and
+                assigned(infile) then
+              begin
+                if (infile<>lastinfile) then
+                  begin
+                    AsmWriteLn(target_asm.comment+'['+infile.name^+']');
+                    if assigned(lastinfile) then
+                      lastinfile.close;
+                  end;
+                if (hp1.fileinfo.line<>lastfileinfo.line) and
+                   ((hp1.fileinfo.line<infile.maxlinebuf) or (InlineLevel>0)) then
+                  begin
+                    if (hp1.fileinfo.line<>0) and
+                       ((infile.linebuf^[hp1.fileinfo.line]>=0) or (InlineLevel>0)) then
+                      AsmWriteLn(target_asm.comment+'['+tostr(hp1.fileinfo.line)+'] '+
+                        fixline(infile.GetLineStr(hp1.fileinfo.line)));
+                    { set it to a negative value !
+                    to make that is has been read already !! PM }
+                    if (infile.linebuf^[hp1.fileinfo.line]>=0) then
+                      infile.linebuf^[hp1.fileinfo.line]:=-infile.linebuf^[hp1.fileinfo.line]-1;
+                  end;
+              end;
+             lastfileinfo:=hp1.fileinfo;
+             lastinfile:=infile;
+           end;
+>>>>>>> graemeg/cpstrnew
          DoNotSplitLine:=false;
 
          case hp.typ of
@@ -955,6 +1025,10 @@ implementation
       { better do this at end of WriteTree, but then there comes a trouble with
         al_const which does not have leading ait_section and thus goes out of segment }
 
+<<<<<<< HEAD
+=======
+      { TODO: probably ml64 needs 'closing' last section, too }
+>>>>>>> graemeg/cpstrnew
       if LastSecType <> sec_none then
         begin
           if asminfo^.id=as_x86_64_masm then

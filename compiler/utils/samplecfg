@@ -24,6 +24,7 @@ fi
 FPCBIN=`dirname "$1"`/../../bin/fpc
 FPBIN=`dirname "$1"`/../../bin/fp
 FPPKGBIN=`dirname "$1"`/../../bin/fppkg
+<<<<<<< HEAD
 FPCMKCFGBIN=`dirname "$1"`/../../bin/fpcmkcfg
 SHAREPATH=`dirname "$1"`/../../share/fpc/\$fpcversion
 # Look for one in the PATH, if no new one was installed.
@@ -31,6 +32,8 @@ if [ ! -f $FPCMKCFGBIN ]; then
   FPCMKCFGBIN=fpcmkcfg
 fi
 
+=======
+>>>>>>> graemeg/cpstrnew
 sysfpdirbase=`dirname "$1"`/`"$FPCBIN" -iV`
 sysfpdirbase2=$sysfpdirbase/ide
 sysfpdir=$sysfpdirbase2/text
@@ -74,6 +77,7 @@ FPCGLOBALPREFIX=`dirname "$1"`/../../
 
 # Write (.)fpc.cfg
 echo Writing sample configuration file to $fpccfgfile
+<<<<<<< HEAD
 ${FPCMKCFGBIN} -d "basepath=$FPCPATH" -d "sharepath=$SHAREPATH" -o $fpccfgfile
 
 if [ -f "$FPBIN" ] ; then
@@ -85,6 +89,31 @@ if [ -f "$FPBIN" ] ; then
   echo Writing sample configuration file to $fpinifile
   ${FPCMKCFGBIN} -p -2 -o $fpinifile
 fi
+=======
+fpcmkcfg -d "basepath=$FPCPATH" -o $fpccfgfile
+>>>>>>> graemeg/cpstrnew
+
+# Do not write fppkg configuration when fppkg is not available
+if ! [ -f "$FPPKGBIN" ] ; then
+  exit
+fi
+
+<<<<<<< HEAD
+# Write fppkg.cfg
+echo Writing sample configuration file to $fppkgfile
+${FPCMKCFGBIN} -p -3 $compilerconfigdir -o $fppkgfile
+
+# Write default
+echo Writing sample configuration file to $defaultfile
+${FPCMKCFGBIN} -p -4 -d "GlobalPrefix=$FPCGLOBALPREFIX" -d "FpcBin=$FPCBIN" -o $defaultfile
+=======
+# Write fp.cfg
+echo Writing sample configuration file to $fpcfgfile
+fpcmkcfg -p -1 -d "basepath=$FPCPATH" -o $fpcfgfile
+
+# Write fp.ini
+echo Writing sample configuration file to $fpinifile
+fpcmkcfg -p -2 -o $fpinifile
 
 # Do not write fppkg configuration when fppkg is not available
 if ! [ -f "$FPPKGBIN" ] ; then
@@ -93,8 +122,9 @@ fi
 
 # Write fppkg.cfg
 echo Writing sample configuration file to $fppkgfile
-${FPCMKCFGBIN} -p -3 $compilerconfigdir -o $fppkgfile
+fpcmkcfg -p -3 $compilerconfigdir -o $fppkgfile
 
 # Write default
 echo Writing sample configuration file to $defaultfile
-${FPCMKCFGBIN} -p -4 -d "GlobalPrefix=$FPCGLOBALPREFIX" -d "FpcBin=$FPCBIN" -o $defaultfile
+fpcmkcfg -p -4 -d "GlobalPrefix=$FPCGLOBALPREFIX" -o $defaultfile
+>>>>>>> graemeg/cpstrnew

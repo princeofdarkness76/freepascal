@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -44,12 +48,22 @@ begin
   FHeight := DisplayHeight(FDisplay, FScreen);
 end;
 
+<<<<<<< HEAD
 procedure TX11ModesNoModeSwitching.GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat);
 begin
   SetLength(AModes, 1);
   AModes[0] := TPTCMode.Create(FWidth,
                                FHeight,
                                ACurrentDesktopFormat);
+=======
+procedure TX11ModesNoModeSwitching.GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat);
+begin
+  SetLength(AModes, 2);
+  AModes[0] := TPTCMode.Create(FWidth,
+                               FHeight,
+                               ACurrentDesktopFormat);
+  AModes[1] := TPTCMode.Create;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TX11ModesNoModeSwitching.SetBestMode(AWidth, AHeight: Integer);
@@ -124,7 +138,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TX11ModesXrandr.GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat);
+=======
+procedure TX11ModesXrandr.GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 var
   ScreenSizes: PXRRScreenSize;
   ScreenSizesNum: cint;
@@ -132,7 +150,12 @@ var
 begin
   ScreenSizes := XRRConfigSizes(FXRRConfig, @ScreenSizesNum);
 
+<<<<<<< HEAD
   SetLength(AModes, ScreenSizesNum);
+=======
+  SetLength(AModes, ScreenSizesNum + 1);
+  AModes[ScreenSizesNum] := TPTCMode.Create;
+>>>>>>> graemeg/cpstrnew
   for I := 0 to ScreenSizesNum - 1 do
     AModes[I] := TPTCMode.Create(ScreenSizes[I].width,
                                  ScreenSizes[I].height,
@@ -184,9 +207,12 @@ begin
       end;
     end;
 
+<<<<<<< HEAD
   if found_mode <> -1 then
     exit(found_mode);
 
+=======
+>>>>>>> graemeg/cpstrnew
   raise TPTCError.Create('Cannot find matching video mode');
 end;
 
@@ -196,6 +222,10 @@ var
   ScreenSizesNum: cint;
   BestMode: Integer;
   CurrentRotation: TRotation;
+<<<<<<< HEAD
+=======
+  I: Integer;
+>>>>>>> graemeg/cpstrnew
 begin
   CreateScreenConfig;
   try
@@ -347,13 +377,22 @@ begin
   XF86VidModeGetAllModeLines(FDisplay, FScreen, @FModeListCount, @FModeList);
 end;
 
+<<<<<<< HEAD
 procedure TX11ModesXF86VidMode.GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat);
+=======
+procedure TX11ModesXF86VidMode.GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 var
   I: Integer;
 begin
   RetrieveModeList;
 
+<<<<<<< HEAD
   SetLength(AModes, FModeListCount);
+=======
+  SetLength(AModes, FModeListCount + 1);
+  AModes[FModeListCount] := TPTCMode.Create;
+>>>>>>> graemeg/cpstrnew
   for I := 0 to FModeListCount - 1 do
     AModes[I] := TPTCMode.Create(FModeList[I]^.hdisplay, FModeList[I]^.vdisplay, ACurrentDesktopFormat);
 end;

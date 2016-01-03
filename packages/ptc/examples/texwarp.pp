@@ -22,7 +22,11 @@ const
   green_balance: Uint32 = 3;
   blue_balance: Uint32 = 1;
 
+<<<<<<< HEAD
 procedure blur(s: IPTCSurface);
+=======
+procedure blur(s: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 var
   d: PUint8;
   pitch: Integer;
@@ -60,7 +64,11 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure generate(surface: IPTCSurface);
+=======
+procedure generate(surface: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 var
   dest: PUint32;
   i: Integer;
@@ -256,10 +264,17 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   format: IPTCFormat;
   texture: IPTCSurface;
   surface: IPTCSurface;
   console: IPTCConsole;
+=======
+  format: TPTCFormat = nil;
+  texture: TPTCSurface = nil;
+  surface: TPTCSurface = nil;
+  console: TPTCConsole = nil;
+>>>>>>> graemeg/cpstrnew
   lighttable: PUint8 = nil;
   { texture grid }
   grid: array [0..41*26*3-1] of Uint32;
@@ -270,7 +285,11 @@ begin
   try
     try
       { create format }
+<<<<<<< HEAD
       format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
+=======
+      format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
+>>>>>>> graemeg/cpstrnew
 
       { create texture surface }
       texture := TPTCSurfaceFactory.CreateNew(256, 256, format);
@@ -365,8 +384,16 @@ begin
         end;
       end;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+      surface.Free;
+      texture.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
       FreeMem(lighttable);
     end;
   except

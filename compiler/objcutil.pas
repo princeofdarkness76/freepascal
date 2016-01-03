@@ -40,15 +40,22 @@ interface
 
     { Encode a method's parameters and result type into the format used by the
       run time (for generating protocol and class rtti).  }
+<<<<<<< HEAD
     function objcencodemethod(pd: tabstractprocdef): ansistring;
+=======
+    function objcencodemethod(pd: tprocdef): ansistring;
+>>>>>>> graemeg/cpstrnew
 
     { Exports all assembler symbols related to the obj-c class }
     procedure exportobjcclass(def: tobjectdef);
 
+<<<<<<< HEAD
     { loads a field of an Objective-C root class (such as ISA) }
     function objcloadbasefield(n: tnode; const fieldname: string): tnode;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 implementation
 
     uses
@@ -116,10 +123,15 @@ end;
       var
         vs         : tsym;
       begin
+<<<<<<< HEAD
+=======
+        result:=cderefnode.create(ctypeconvnode.create_internal(n,objc_idtype));
+>>>>>>> graemeg/cpstrnew
         vs:=tsym(tabstractrecorddef(objc_objecttype).symtable.Find(fieldname));
         if not assigned(vs) or
            (vs.typ<>fieldvarsym) then
           internalerror(200911301);
+<<<<<<< HEAD
         if fieldname='ISA' then
           result:=ctypeconvnode.create_internal(
             cderefnode.create(
@@ -133,6 +145,9 @@ end;
             result:=cderefnode.create(ctypeconvnode.create_internal(n,objc_idtype));
             result:=csubscriptnode.create(vs,result);
           end;
+=======
+        result:=csubscriptnode.create(vs,result);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -153,16 +168,26 @@ end;
                 { in case we are in a category method, we need the metaclass of the
                   superclass class extended by this category (= metaclass of superclass of superclass)
                   for the fragile abi, and the metaclass of the superclass for the non-fragile ABI }
+<<<<<<< HEAD
 {$if defined(onlymacosx10_6) or defined(arm) or defined(aarch64)}
+=======
+{$if defined(onlymacosx10_6) or defined(arm) }
+>>>>>>> graemeg/cpstrnew
                 { NOTE: those send2 methods are only available on Mac OS X 10.6 and later!
                     (but also on all iPhone SDK revisions we support) }
                 if (target_info.system in systems_objc_nfabi) then
                   result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(tclassrefdef(def).pointeddef).childof))
                 else
+<<<<<<< HEAD
 {$endif onlymacosx10_6 or arm aarch64}
                   result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(tclassrefdef(def).pointeddef).childof.childof));
                 tloadvmtaddrnode(result).forcall:=true;
                 result:=cloadvmtaddrnode.create(result);
+=======
+{$endif onlymacosx10_6 or arm}
+                  result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(tclassrefdef(def).pointeddef).childof.childof));
+                result:=objcloadbasefield(result,'ISA');
+>>>>>>> graemeg/cpstrnew
                 typecheckpass(result);
                 { we're done }
                 exit;
@@ -179,18 +204,29 @@ end;
             if not(oo_is_classhelper in tobjectdef(def).objectoptions) then
               result:=cloadvmtaddrnode.create(ctypenode.create(def))
             else
+<<<<<<< HEAD
               result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(def).childof));
             tloadvmtaddrnode(result).forcall:=true;
           end;
 
 {$if defined(onlymacosx10_6) or defined(arm) or defined(aarch64)}
+=======
+              result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(def).childof))
+          end;
+
+{$if defined(onlymacosx10_6) or defined(arm) }
+>>>>>>> graemeg/cpstrnew
         { For the non-fragile ABI, the superclass send2 method itself loads the
           superclass. For the fragile ABI, we have to do this ourselves.
 
           NOTE: those send2 methods are only available on Mac OS X 10.6 and later!
             (but also on all iPhone SDK revisions we support) }
         if not(target_info.system in systems_objc_nfabi) then
+<<<<<<< HEAD
 {$endif onlymacosx10_6 or arm or aarch64}
+=======
+{$endif onlymacosx10_6 or arm}
+>>>>>>> graemeg/cpstrnew
           result:=objcloadbasefield(result,'SUPERCLASS');
         typecheckpass(result);
       end;
@@ -211,7 +247,11 @@ end;
       end;
 
 
+<<<<<<< HEAD
     function objcencodemethod(pd: tabstractprocdef): ansistring;
+=======
+    function objcencodemethod(pd: tprocdef): ansistring;
+>>>>>>> graemeg/cpstrnew
       var
         parasize,
         totalsize: aint;
@@ -245,11 +285,15 @@ end;
                (vs.varspez in [vs_var,vs_out,vs_constref]) then
               result:=result+'^';
             { Add the parameter type.  }
+<<<<<<< HEAD
             if (vo_is_parentfp in vs.varoptions) and
                (po_is_block in pd.procoptions) then
               { special case: self parameter of block procvars has to be @? }
               result:=result+'@?'
             else if not objcaddencodedtype(vs.vardef,ris_initial,false,result,founderror) then
+=======
+            if not objcaddencodedtype(vs.vardef,ris_initial,false,result,founderror) then
+>>>>>>> graemeg/cpstrnew
               { should be checked earlier on }
               internalerror(2009081701);
             { And the total size of the parameters coming before this one

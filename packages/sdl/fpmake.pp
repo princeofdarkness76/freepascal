@@ -73,7 +73,11 @@ begin
           AddInclude('jedi-sdl.inc');
           AddUnit('sdl');
         end;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('sdlutils.pas',[i386,powerpc],[linux,freebsd,win32,darwin,iphonesim]);
+=======
+    T:=P.Targets.AddUnit('sdlutils.pas',[i386,powerpc],[linux,freebsd,win32,darwin]);
+>>>>>>> graemeg/cpstrnew
       with T.Dependencies do
         begin
           AddInclude('jedi-sdl.inc');
@@ -99,4 +103,8 @@ end.
 
 
 
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> graemeg/cpstrnew

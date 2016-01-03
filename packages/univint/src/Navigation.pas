@@ -3,7 +3,11 @@
  
      Contains:   Navigation Services Interfaces
  
+<<<<<<< HEAD
      Version:    NavigationServices-200~178
+=======
+     Version:    NavigationServices-181~6
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved
  
@@ -13,8 +17,12 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +77,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -89,6 +100,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -108,13 +120,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -124,13 +156,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -168,6 +204,23 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -352,8 +405,12 @@ type
  *    interchangable with, a Dialog Manager DialogRef.
  }
 type
+<<<<<<< HEAD
 	NavDialogRef = ^__NavDialog; { an opaque type }
 	__NavDialog = record end;
+=======
+	NavDialogRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	NavDialogRefPtr = ^NavDialogRef;  { when a var xx:NavDialogRef parameter can be nil, it is changed to xx: NavDialogRefPtr }
 {$ifc CALL_NOT_IN_CARBON}
 	{	 NavContext is the old name for NavDialogRef 	}
@@ -864,6 +921,124 @@ const
  *  
  *  Summary:
  *    A structure describing the results of a Nav Services dialog
+<<<<<<< HEAD
+ *  
+ *  Discussion:
+ *    A reply record is the result of a Nav Services file dialog. Using
+ *    the older API, which is always modal, the client passes the
+ *    address of a reply record when invoking the dialog. In the Carbon
+ *    API, dialogs may also be window modal or modeless, so the client
+ *    requests the reply record by calling NavDialogGetReply when a
+ *    kNavCBUserAction event is received. Either way, a reply record
+ *    should be disposed of using NavDisposeReply.
+ }
+type
+	NavReplyRecordPtr = ^NavReplyRecord;
+	NavReplyRecord = record
+{
+   * The version of the structure. The first public version of the
+   * structure was version 0. Fields added after version 0, starting
+   * with the saveFileName field, are noted below.
+   }
+		version: UInt16;
+
+  {
+   * True if the reply contains a non-null selection
+   }
+		validRecord: Boolean;
+
+  {
+   * True if this reply is from a PutFile dialog and the file to be
+   * saved already exists and needs to be replaced. The user has
+   * already been warned unless the kNavDontConfirmReplacement option
+   * flag is used.
+   }
+		replacing: Boolean;
+
+  {
+   * True if this reply is from a PutFile dialog and the user wants to
+   * save the file as stationery.
+   }
+		isStationery: Boolean;
+
+  {
+   * True if translation was performed on the file(s) to be opened or
+   * if transtlation will be needed on the file to be saved.
+   }
+		translationNeeded: Boolean;
+
+  {
+   * For GetFile or Choose dialogs, a list of items chosen by the user.
+   * For the older NavPutFile dialog, a list containing one item: an
+   * FSSpec of the file to be saved. ** IMPORTANT NOTE *** For the new
+   * Carbon-only PutFile dialog created with NavCreatePutFileDialog,
+   * the selection is a list containing one item: the DIRECTORY where
+   * the file is to be saved. The file name is obtained from the
+   * saveFileName field. When using the original modal API, each
+   * descriptor will contain an FSSpec (typeFSS). When using the new
+   * Carbon-only dialogs created via the NavCreate*Dialog functions,
+   * each descriptor could contain either an FSSpec (typeFSS, used on
+   * Mac OS 8 or 9) or an FSRef (typeFSRef, used on Mac OS X). This
+   * divergence is caused by the need to use FSRef (for Unicode/HFS+
+   * support) on Mac OS X, while being unable to provide FSRefs on Mac
+   * OS 8.6.
+   }
+		selection: AEDescList;
+
+  {
+   * For NavPutFile: the script system associated with the name of the
+   * file to be saved.
+   }
+		keyScript: ScriptCode;
+
+  {
+   * A handle to an array of type FileTranslationSpec. Each array entry
+   * corresponds to an item in the selection and describes the
+   * translation that was performed (GetFile) or needs to be performed
+   * (PutFile) on that item.
+   }
+		fileTranslation: FileTranslationSpecArrayHandle;
+
+  {
+   * Reserved for private use.
+   }
+		reserved1: UInt32;
+
+  {
+   * Carbon PutFile dialog only: the name of the file to be saved. This
+   * field contains the true file name to saved, even if the extension
+   * will be hidden from the user. This field was added in structure
+   * version 1.
+   }
+		saveFileName: CFStringRef;
+
+  {
+   * The extension on the name of the saved file should be hidden. Once
+   * the file has been saved, the client should call NavCompleteSave.
+   * NavCompleteSave will take care of hiding the extension on the
+   * file. However, the client needs to know that the extension is
+   * hidden so that it can display the document name correctly in the
+   * UI, such as in window titles and menus. This field is only used if
+   * the client has r equested extension preservation using the
+   * kNavPreserveSaveFileExtension dialog option flag. This field was
+   * added in structure version 2.
+   }
+		saveFileExtensionHidden: Boolean;
+
+  {
+   * Reserved for future use.
+   }
+		reserved2: UInt8;
+
+  {
+   * Reserved for future use.
+   }
+		reserved: array [0..224] of SInt8;
+	end;
+{$ifc not TARGET_CPU_64}
+{
+ *  NavCompleteSave()
+=======
  *  
  *  Discussion:
  *    A reply record is the result of a Nav Services file dialog. Using
@@ -992,6 +1167,20 @@ function NavCompleteSave( const (*var*) reply: NavReplyRecord; howToTranslate: N
 
 {
  *  NavCustomControl()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in NavigationLib 1.0 and later
+ }
+<<<<<<< HEAD
+function NavCompleteSave( const (*var*) reply: NavReplyRecord; howToTranslate: NavTranslationOptions ): OSErr; external name '_NavCompleteSave';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  NavCustomControl()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
@@ -1001,6 +1190,11 @@ function NavCompleteSave( const (*var*) reply: NavReplyRecord; howToTranslate: N
 function NavCustomControl( dialog: NavDialogRef; selector: NavCustomControlMessage; parms: UnivPtr ): OSErr; external name '_NavCustomControl';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+function NavCustomControl( dialog: NavDialogRef; selector: NavCustomControlMessage; parms: UnivPtr ): OSErr; external name '_NavCustomControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NavCreatePreview()   *** DEPRECATED ***

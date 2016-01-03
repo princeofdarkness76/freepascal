@@ -63,6 +63,7 @@ procedure OleStrToStrVar(source : PWideChar;var dest : UnicodeString);inline;
 procedure OleStrToStrVar(source : PWideChar;var dest : AnsiString);inline;
 function StringToOleStr(const source : ansistring) : PWideChar;inline;
 function StringToOleStr(const source : UnicodeString) : PWideChar;inline;
+<<<<<<< HEAD
 
 type
   TStartupInfo = record
@@ -85,6 +86,8 @@ type
     hStdOutput : THandle;
     hStdError : THandle;
   end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 { package stuff }
 type

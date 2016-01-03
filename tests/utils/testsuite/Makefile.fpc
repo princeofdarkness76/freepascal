@@ -4,7 +4,11 @@
 
 [package]
 name=testsuite
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=fcl-base fcl-db

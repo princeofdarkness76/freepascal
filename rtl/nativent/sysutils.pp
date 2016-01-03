@@ -21,8 +21,11 @@ interface
 {$MODESWITCH OUT}
 { force ansistrings }
 {$H+}
+<<<<<<< HEAD
 {$modeswitch typehelpers}
 {$modeswitch advancedrecords}
+=======
+>>>>>>> graemeg/cpstrnew
 
 uses
   ndk;
@@ -30,6 +33,7 @@ uses
 {$DEFINE HAS_SLEEP}
 {$DEFINE HAS_CREATEGUID}
 
+<<<<<<< HEAD
 type
   TNativeNTFindData = record
     SearchSpec: UnicodeString;
@@ -47,6 +51,8 @@ type
   unicodestring, but that's not yet implemented) }
 {$define SYSUTILS_HAS_ANSISTR_ENVVAR_IMPL}
 
+=======
+>>>>>>> graemeg/cpstrnew
 { Include platform independent interface part }
 {$i sysutilh.inc}
 
@@ -64,7 +70,11 @@ implementation
                               File Functions
 ****************************************************************************}
 
+<<<<<<< HEAD
 function FileOpen(const FileName : UnicodeString; Mode : Integer) : THandle;
+=======
+function FileOpen(const FileName : string; Mode : Integer) : THandle;
+>>>>>>> graemeg/cpstrnew
 const
   AccessMode: array[0..2] of ACCESS_MASK  = (
     GENERIC_READ,
@@ -75,13 +85,21 @@ const
                0,
                FILE_SHARE_READ,
                FILE_SHARE_WRITE,
+<<<<<<< HEAD
                FILE_SHARE_READ or FILE_SHARE_WRITE or FILE_SHARE_DELETE);
+=======
+               FILE_SHARE_READ or FILE_SHARE_WRITE);
+>>>>>>> graemeg/cpstrnew
 var
   ntstr: UNICODE_STRING;
   objattr: OBJECT_ATTRIBUTES;
   iostatus: IO_STATUS_BLOCK;
 begin
+<<<<<<< HEAD
   UnicodeStrToNtStr(FileName, ntstr);
+=======
+  AnsiStrToNtStr(FileName, ntstr);
+>>>>>>> graemeg/cpstrnew
   InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
   NtCreateFile(@Result, AccessMode[Mode and 3] or NT_SYNCHRONIZE, @objattr,
     @iostatus, Nil, FILE_ATTRIBUTE_NORMAL, ShareMode[(Mode and $F0) shr 4],
@@ -90,6 +108,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function FileCreate(const FileName : UnicodeString) : THandle;
 begin
   FileCreate := FileCreate(FileName, fmShareDenyNone, 0);
@@ -110,22 +129,41 @@ const
                FILE_SHARE_READ,
                FILE_SHARE_WRITE,
                FILE_SHARE_READ or FILE_SHARE_WRITE or FILE_SHARE_DELETE);
+=======
+function FileCreate(const FileName : String) : THandle;
+>>>>>>> graemeg/cpstrnew
 var
   ntstr: UNICODE_STRING;
   objattr: OBJECT_ATTRIBUTES;
   iostatus: IO_STATUS_BLOCK;
   res: NTSTATUS;
 begin
+<<<<<<< HEAD
   UnicodeStrToNtStr(FileName, ntstr);
   InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
   NtCreateFile(@Result, GENERIC_READ or GENERIC_WRITE or NT_SYNCHRONIZE,
     @objattr, @iostatus, Nil, FILE_ATTRIBUTE_NORMAL,
     ShareModeFlags[(ShareMode and $F0) shr 4], FILE_OVERWRITE_IF,
+=======
+  AnsiStrToNTStr(FileName, ntstr);
+  InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
+  NtCreateFile(@Result, GENERIC_READ or GENERIC_WRITE or NT_SYNCHRONIZE,
+    @objattr, @iostatus, Nil, FILE_ATTRIBUTE_NORMAL, 0, FILE_OVERWRITE_IF,
+>>>>>>> graemeg/cpstrnew
     FILE_NON_DIRECTORY_FILE or FILE_SYNCHRONOUS_IO_NONALERT, Nil, 0);
   FreeNtStr(ntstr);
 end;
 
 
+<<<<<<< HEAD
+=======
+function FileCreate(const FileName : String; Mode: longint) : THandle;
+begin
+  FileCreate := FileCreate(FileName);
+end;
+
+
+>>>>>>> graemeg/cpstrnew
 function FileRead(Handle : THandle; out Buffer; Count : longint) : Longint;
 var
   iostatus: IO_STATUS_BLOCK;
@@ -313,14 +351,23 @@ begin
   aNtTime.QuadPart := local.QuadPart + bias.QuadPart;
 end;
 
+<<<<<<< HEAD
 function FileAge(const FileName: UnicodeString): Longint;
 begin
   { TODO }
+=======
+function FileAge(const FileName: String): Longint;
+begin
+>>>>>>> graemeg/cpstrnew
   Result := -1;
 end;
 
 
+<<<<<<< HEAD
 function FileExists(const FileName: UnicodeString): Boolean;
+=======
+function FileExists(const FileName: String): Boolean;
+>>>>>>> graemeg/cpstrnew
 var
   ntstr: UNICODE_STRING;
   objattr: OBJECT_ATTRIBUTES;
@@ -328,10 +375,17 @@ var
   iostatus: IO_STATUS_BLOCK;
   h: THandle;
 begin
+<<<<<<< HEAD
   UnicodeStrToNtStr(FileName, ntstr);
   InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
   res := NtOpenFile(@h, FILE_READ_ATTRIBUTES or NT_SYNCHRONIZE, @objattr,
            @iostatus, FILE_SHARE_READ or FILE_SHARE_WRITE,
+=======
+  AnsiStrToNtStr(FileName, ntstr);
+  InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
+  res := NtOpenFile(@h, 0, @objattr, @iostatus,
+           FILE_SHARE_READ or FILE_SHARE_WRITE,
+>>>>>>> graemeg/cpstrnew
            FILE_NON_DIRECTORY_FILE or FILE_SYNCHRONOUS_IO_NONALERT);
   Result := NT_SUCCESS(res);
 
@@ -341,7 +395,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function DirectoryExists(const Directory : UnicodeString) : Boolean;
+=======
+function DirectoryExists(const Directory : String) : Boolean;
+>>>>>>> graemeg/cpstrnew
 var
   ntstr: UNICODE_STRING;
   objattr: OBJECT_ATTRIBUTES;
@@ -349,19 +407,33 @@ var
   iostatus: IO_STATUS_BLOCK;
   h: THandle;
 begin
+<<<<<<< HEAD
   UnicodeStrToNtStr(Directory, ntstr);
   InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
 
   { first test wether this is a object directory }
   res := NtOpenDirectoryObject(@h, DIRECTORY_QUERY, @objattr);
+=======
+  AnsiStrToNtStr(Directory, ntstr);
+  InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
+
+  { first test wether this is a object directory }
+  res := NtOpenDirectoryObject(@h, 0, @objattr);
+>>>>>>> graemeg/cpstrnew
   if NT_SUCCESS(res) then
     Result := True
   else begin
     if res = STATUS_OBJECT_TYPE_MISMATCH then begin
       { this is a file object! }
+<<<<<<< HEAD
       res := NtOpenFile(@h, FILE_READ_ATTRIBUTES or NT_SYNCHRONIZE, @objattr,
                @iostatus, FILE_SHARE_READ or FILE_SHARE_WRITE,
                FILE_DIRECTORY_FILE or FILE_SYNCHRONOUS_IO_NONALERT);
+=======
+      res := NtOpenFile(@h, 0, @objattr, @iostatus,
+        FILE_SHARE_READ or FILE_SHARE_WRITE,
+        FILE_DIRECTORY_FILE or FILE_SYNCHRONOUS_IO_NONALERT);
+>>>>>>> graemeg/cpstrnew
       Result := NT_SUCCESS(res);
     end else
       Result := False;
@@ -372,6 +444,7 @@ begin
   FreeNtStr(ntstr);
 end;
 
+<<<<<<< HEAD
 { copied from rtl/unix/sysutils.pp and adapted to UTF-16 }
 Function FNMatch(const Pattern,Name:UnicodeString):Boolean;
 Var
@@ -844,6 +917,30 @@ Begin
   end;
   if Result <> 0 then
     InternalFindClose(Rslt.FindHandle,Rslt.FindData);
+=======
+
+function FindMatch(var f: TSearchRec): Longint;
+begin
+  Result := -1;
+end;
+
+
+function FindFirst(const Path: String; Attr: Longint; out Rslt: TSearchRec): Longint;
+begin
+  Result := -1;
+end;
+
+
+function FindNext(var Rslt: TSearchRec): Longint;
+begin
+  Result := -1;
+end;
+
+
+procedure FindClose(var F: TSearchrec);
+begin
+  { empty }
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -887,14 +984,22 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function FileGetAttr(const FileName: UnicodeString): Longint;
+=======
+function FileGetAttr(const FileName: String): Longint;
+>>>>>>> graemeg/cpstrnew
 var
   objattr: OBJECT_ATTRIBUTES;
   info: FILE_NETWORK_OPEN_INFORMATION;
   res: NTSTATUS;
   ntstr: UNICODE_STRING;
 begin
+<<<<<<< HEAD
   UnicodeStrToNtStr(FileName, ntstr);
+=======
+  AnsiStrToNtStr(FileName, ntstr);
+>>>>>>> graemeg/cpstrnew
   InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
 
   res := NtQueryFullAttributesFile(@objattr, @info);
@@ -907,7 +1012,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function FileSetAttr(const Filename: UnicodeString; Attr: LongInt): Longint;
+=======
+function FileSetAttr(const Filename: String; Attr: LongInt): Longint;
+>>>>>>> graemeg/cpstrnew
 var
   h: THandle;
   objattr: OBJECT_ATTRIBUTES;
@@ -916,7 +1025,11 @@ var
   res: NTSTATUS;
   iostatus: IO_STATUS_BLOCK;
 begin
+<<<<<<< HEAD
   UnicodeStrToNtStr(Filename, ntstr);
+=======
+  AnsiStrToNtStr(Filename, ntstr);
+>>>>>>> graemeg/cpstrnew
   InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
   res := NtOpenFile(@h,
            NT_SYNCHRONIZE or FILE_READ_ATTRIBUTES or FILE_WRITE_ATTRIBUTES,
@@ -942,7 +1055,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function DeleteFile(const FileName: UnicodeString): Boolean;
+=======
+function DeleteFile(const FileName: String): Boolean;
+>>>>>>> graemeg/cpstrnew
 var
   h: THandle;
   objattr: OBJECT_ATTRIBUTES;
@@ -951,7 +1068,11 @@ var
   res: NTSTATUS;
   iostatus: IO_STATUS_BLOCK;
 begin
+<<<<<<< HEAD
   UnicodeStrToNtStr(Filename, ntstr);
+=======
+  AnsiStrToNtStr(Filename, ntstr);
+>>>>>>> graemeg/cpstrnew
   InitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
   res := NtOpenFile(@h, NT_DELETE, @objattr, @iostatus,
            FILE_SHARE_READ or FILE_SHARE_WRITE or FILE_SHARE_DELETE,
@@ -973,7 +1094,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function RenameFile(const OldName, NewName: UnicodeString): Boolean;
+=======
+function RenameFile(const OldName, NewName: String): Boolean;
+>>>>>>> graemeg/cpstrnew
 var
   h: THandle;
   objattr: OBJECT_ATTRIBUTES;
@@ -983,7 +1108,11 @@ var
   res: LongInt;
 begin
   { check whether the destination exists first }
+<<<<<<< HEAD
   UnicodeStrToNtStr(NewName, dest);
+=======
+  AnsiStrToNtStr(NewName, dest);
+>>>>>>> graemeg/cpstrnew
   InitializeObjectAttributes(objattr, @dest, 0, 0, Nil);
 
   res := NtCreateFile(@h, 0, @objattr, @iostatus, Nil, 0,
@@ -994,7 +1123,11 @@ begin
     NtClose(h);
     Result := False;
   end else begin
+<<<<<<< HEAD
     UnicodeStrToNtStr(OldName, src);
+=======
+    AnsiStrToNtStr(OldName, src);
+>>>>>>> graemeg/cpstrnew
     InitializeObjectAttributes(objattr, @src, 0, 0, Nil);
 
     res := NtCreateFile(@h,
@@ -1053,6 +1186,42 @@ begin
 end;
 
 
+<<<<<<< HEAD
+=======
+function GetCurrentDir: String;
+begin
+  GetDir(0, result);
+end;
+
+
+function SetCurrentDir(const NewDir: String): Boolean;
+begin
+{$I-}
+  ChDir(NewDir);
+{$I+}
+  Result := IOResult = 0;
+end;
+
+
+function CreateDir(const NewDir: String): Boolean;
+begin
+{$I-}
+  MkDir(NewDir);
+{$I+}
+  Result := IOResult = 0;
+end;
+
+
+function RemoveDir(const Dir: String): Boolean;
+begin
+{$I-}
+  RmDir(Dir);
+{$I+}
+  Result := IOResult = 0;
+end;
+
+
+>>>>>>> graemeg/cpstrnew
 {****************************************************************************
                               Time Functions
 ****************************************************************************}
@@ -1118,11 +1287,19 @@ end;
                               Initialization code
 ****************************************************************************}
 
+<<<<<<< HEAD
 function wstrlen(p: PWideChar): SizeInt; external name 'FPC_PWIDECHAR_LENGTH';
 
 function GetEnvironmentVariable(const EnvVar: String): String;
 var
    s, upperenvvar : UTF8String;
+=======
+function wstrlen(p: PWideChar): LongInt; external name 'FPC_PWIDECHAR_LENGTH';
+
+function GetEnvironmentVariable(const EnvVar: String): String;
+var
+   s : string;
+>>>>>>> graemeg/cpstrnew
    i : longint;
    hp: pwidechar;
    len: sizeint;
@@ -1130,19 +1307,29 @@ begin
    { TODO : test once I know how to execute processes }
    Result:='';
    hp:=PPEB(CurrentPEB)^.ProcessParameters^.Environment;
+<<<<<<< HEAD
    { first convert to UTF-8, then uppercase in order to avoid potential data
      loss }
    upperenvvar:=EnvVar;
    upperenvvar:=UpperCase(upperenvvar);
+=======
+>>>>>>> graemeg/cpstrnew
    while hp^<>#0 do
      begin
         len:=UnicodeToUTF8(Nil, hp, 0);
         SetLength(s,len);
         UnicodeToUTF8(PChar(s), hp, len);
+<<<<<<< HEAD
         i:=pos('=',s);
         if uppercase(copy(s,1,i-1))=upperenvvar then
           begin
              { copy() returns a rawbytestring -> will keep UTF-8 encoding }
+=======
+        //s:=strpas(hp);
+        i:=pos('=',s);
+        if uppercase(copy(s,1,i-1))=upcase(envvar) then
+          begin
+>>>>>>> graemeg/cpstrnew
              Result:=copy(s,i+1,length(s)-i);
              break;
           end;
@@ -1165,7 +1352,11 @@ begin
       end;
 end;
 
+<<<<<<< HEAD
 function GetEnvironmentString(Index: Integer): {$ifdef FPC_RTL_UNICODE}UnicodeString{$else}AnsiString{$endif};
+=======
+function GetEnvironmentString(Index: Integer): String;
+>>>>>>> graemeg/cpstrnew
 var
   hp : pwidechar;
   len: sizeint;
@@ -1176,6 +1367,7 @@ begin
     begin
     while (hp^<>#0) and (Index>1) do
       begin
+<<<<<<< HEAD
         Dec(Index);
         hp:=hp+wstrlen(hp)+1;
       end;
@@ -1189,6 +1381,16 @@ begin
         UnicodeToUTF8(PChar(Result), hp, len);
         SetCodePage(RawByteString(Result),CP_UTF8,false);
 {$endif}
+=======
+      Dec(Index);
+      hp:=hp+wstrlen(hp)+1;
+      end;
+    If (hp^<>#0) then
+      begin
+        len:=UnicodeToUTF8(Nil, hp, 0);
+        SetLength(Result, len);
+        UnicodeToUTF8(PChar(Result), hp, len);
+>>>>>>> graemeg/cpstrnew
       end;
     end;
 end;

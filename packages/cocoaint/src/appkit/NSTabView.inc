@@ -77,15 +77,23 @@ type
     _tabHeight: CGFloat;
     _tabViewItemWithKeyView: NSTabViewItem;
     _originalNextKeyView: NSView;
+<<<<<<< HEAD
     __delegateRespondTo: record
       case byte of
        0: (_anonbitfield_NSTabView0: cuint);
        1: (data: bitpacked record
+=======
+    __delegateRespondTo: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSTabView0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         shouldSelectTabViewItem: 0..1;
         willSelectTabViewItem: 0..1;
         didSelectTabViewItem: 0..1;
         didChangeNumberOfTabViewItems: 0..1;
         reserved: 0..((1 shl 28)-1);
+<<<<<<< HEAD
        end;
       );
       end;
@@ -93,6 +101,14 @@ type
       case byte of
        0: (_anonbitfield_NSTabView1: cuint);
        1: (data: bitpacked record
+=======
+      );
+      end;
+    __flags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSTabView1: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         needsLayout: 0..1;
         _controlTint: 0..((1 shl 3)-1);
         _controlSize: 0..((1 shl 2)-1);
@@ -101,7 +117,10 @@ type
         originalNextKeyViewChanged: 0..1;
         liveResizeSkippedResetToolTips: 0..1;
         reserved: 0..((1 shl 22)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _focusedTabViewItem: NSTabViewItem;

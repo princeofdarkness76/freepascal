@@ -49,7 +49,11 @@ var
   private
     _delegate: id;
     _info: id;
+<<<<<<< HEAD
     _reserved: array[0..(6)-1] of id;
+=======
+        _reserved: array[0..5] of id;
+>>>>>>> graemeg/cpstrnew
     _sFlags: NSUInteger;
     
   public

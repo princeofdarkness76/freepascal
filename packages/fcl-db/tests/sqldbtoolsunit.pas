@@ -5,6 +5,7 @@ unit SQLDBToolsUnit;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, toolsunit
   ,db, sqldb
   ,mysql40conn, mysql41conn, mysql50conn, mysql51conn, mysql55conn, mysql56conn, mysql57conn
@@ -27,6 +28,61 @@ const
   MySQLConnTypes = [mysql40,mysql41,mysql50,mysql51,mysql55,mysql56,mysql57];
   SQLConnTypesNames : Array [TSQLConnType] of String[19] =
         ('MYSQL40','MYSQL41','MYSQL50','MYSQL51','MYSQL55','MYSQL56','MYSQL57','POSTGRESQL','INTERBASE','ODBC','ORACLE','SQLITE3','MSSQL','SYBASE');
+=======
+  Classes, SysUtils, toolsunit,
+  db,
+  sqldb, ibconnection, mysql40conn, mysql41conn, mysql50conn, mysql51conn, pqconnection,odbcconn,oracleconnection,sqlite3conn;
+
+type TSQLDBTypes = (mysql40,mysql41,mysql50,mysql51,postgresql,interbase,odbc,oracle,sqlite3);
+
+const MySQLdbTypes = [mysql40,mysql41,mysql50];
+      DBTypesNames : Array [TSQLDBTypes] of String[19] =
+             ('MYSQL40','MYSQL41','MYSQL50','MYSQL51','POSTGRESQL','INTERBASE','ODBC','ORACLE','SQLITE3');
+             
+      FieldtypeDefinitionsConst : Array [TFieldType] of String[15] =
+        (
+          '',
+          'VARCHAR(10)',
+          'SMALLINT',
+          'INTEGER',
+          '',
+          '',
+          'FLOAT',
+          '',
+          'DECIMAL(18,4)',
+          'DATE',
+          'TIME',
+          'TIMESTAMP',
+          '',
+          '',
+          '',
+          'BLOB',
+          'BLOB',
+          'BLOB',
+          '',
+          '',
+          '',
+          '',
+          '',
+          'CHAR(10)',
+          '',
+          'BIGINT',
+          '',
+          '',
+          '',
+          '',
+          '',
+          '',
+          '',
+          '',
+          '',
+          '',
+          'TIMESTAMP',
+          'NUMERIC(18,6)',
+          '',
+          ''
+        );
+>>>>>>> graemeg/cpstrnew
              
   STestNotApplicable = 'This test does not apply to this sqldb connection type';
 
@@ -202,8 +258,14 @@ begin
       LogEvents:=[detCustom,detCommit,detExecute,detRollBack];
       OnLog:=@DoLogEvent;
     end;
+<<<<<<< HEAD
 
     if (dbhostname='') and (SQLConnType=interbase) then
+=======
+  if SQLDbType = MYSQL50 then Fconnection := tMySQL50Connection.Create(nil);
+  if SQLDbType = MYSQL51 then Fconnection := tMySQL51Connection.Create(nil);
+  if SQLDbType = sqlite3 then
+>>>>>>> graemeg/cpstrnew
     begin
       // Firebird embedded: create database file if it doesn't yet exist
       // Note: pagesize parameter has influence on behavior. We're using
@@ -360,6 +422,7 @@ begin
 
   if SQLServerType in [ssMySQL] then
     begin
+<<<<<<< HEAD
     // Some DB's do not support milliseconds in datetime and time fields.
     for i := 0 to testValuesCount-1 do
       begin
@@ -368,10 +431,14 @@ begin
       if length(testValues[ftDateTime,i]) > 19 then
         testValues[ftDateTime,i] := copy(testValues[ftDateTime,i],1,19)+'.000';
       end;
+=======
+    Fconnection := tIBConnection.Create(nil);
+>>>>>>> graemeg/cpstrnew
     end;
 
   if SQLServerType in [ssFirebird, ssInterbase, ssMSSQL, ssOracle, ssPostgreSQL, ssSybase] then
     begin
+<<<<<<< HEAD
     // Some db's do not support times > 24:00:00
     testTimeValues[3]:='13:25:15.000';
     testValues[ftTime,3]:='13:25:15.000';
@@ -382,6 +449,18 @@ begin
       testTimeValues[2]:='23:59:59.997';
       testValues[ftTime,2]:='23:59:59.997';
       end;
+=======
+    DatabaseName := dbname;
+    UserName := dbuser;
+    Password := dbpassword;
+    HostName := dbhostname;
+    if length(dbQuoteChars)>1 then
+      begin
+      FieldNameQuoteChars[0] := dbQuoteChars[1];
+      FieldNameQuoteChars[1] := dbQuoteChars[2];
+      end;
+    open;
+>>>>>>> graemeg/cpstrnew
     end;
 
   if SQLServerType in [ssMSSQL, ssSybase] then
@@ -416,8 +495,11 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TSQLDBConnector.SetTestUniDirectional(const AValue: boolean);
 begin
   FUniDirectional:=avalue;
@@ -619,7 +701,11 @@ begin
   with (Result as TSQLQuery) do
     begin
     sql.clear;
+<<<<<<< HEAD
     sql.add('SELECT * FROM FPDEV WHERE ID < '+inttostr(n+1)+' ORDER BY ID');
+=======
+    sql.add('SELECT * FROM FPDEV WHERE ID < '+inttostr(n+1));
+>>>>>>> graemeg/cpstrnew
     UniDirectional:=TestUniDirectional;
     end;
 end;
@@ -631,7 +717,11 @@ begin
     begin
     sql.clear;
     sql.add('SELECT * FROM FPDEV_FIELD');
+<<<<<<< HEAD
     UniDirectional:=TestUniDirectional;
+=======
+    tsqlquery(Result).UniDirectional:=TestUniDirectional;
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 

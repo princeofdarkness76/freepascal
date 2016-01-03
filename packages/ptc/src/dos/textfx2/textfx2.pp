@@ -69,7 +69,11 @@ const
   use_charset: Pbyte = @charset_b7asc;
   { Character set to use. Can be changed run-time. }
 
+<<<<<<< HEAD
   colmap: PWord = nil;
+=======
+  colmap: PSmallInt = nil;
+>>>>>>> graemeg/cpstrnew
 
 procedure set80x43; { Sets up 80x43, no blink, no cursor. }
 procedure set80x50; { Sets up 80x50, no blink, no cursor. }
@@ -447,7 +451,11 @@ begin
   if colmap <> nil then
     FreeMem(colmap);
   f := 64.0 / COLMAPDIM;
+<<<<<<< HEAD
   colmap := GetMem(SizeOf(Word) * COLMAPDIM * COLMAPDIM * COLMAPDIM);
+=======
+  colmap := GetMem(SizeOf(SmallInt) * COLMAPDIM * COLMAPDIM * COLMAPDIM);
+>>>>>>> graemeg/cpstrnew
   for r := 0 to COLMAPDIM - 1 do
   begin
     for g := 0 to COLMAPDIM - 1 do

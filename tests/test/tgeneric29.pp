@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 { %NORUN }
+=======
+>>>>>>> graemeg/cpstrnew
 program tgeneric29;
 
 {$mode delphi}

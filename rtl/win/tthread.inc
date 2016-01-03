@@ -1,7 +1,12 @@
 { Thread management routines }
 
+<<<<<<< HEAD
 procedure TThread.SysCreate(CreateSuspended: Boolean;
                             const StackSize: SizeUInt);
+=======
+constructor TThread.Create(CreateSuspended: Boolean;
+                           const StackSize: SizeUInt = DefaultStackSize);
+>>>>>>> graemeg/cpstrnew
 begin
   FSuspended := CreateSuspended;
   FInitialSuspended := CreateSuspended;

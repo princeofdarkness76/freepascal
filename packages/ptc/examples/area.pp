@@ -16,14 +16,24 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> graemeg/cpstrnew
   pixels: PDWord;
   width, height: Integer;
   i: Integer;
   x, y, r, g, b: Integer;
+<<<<<<< HEAD
   area: IPTCArea;
+=======
+  area: TPTCArea = nil;
+>>>>>>> graemeg/cpstrnew
 begin
   try
     try
@@ -37,12 +47,20 @@ begin
       console.open('Area example', format);
 
       { create surface half the size of the console }
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(console.width div 2, console.height div 2, format);
+=======
+      surface := TPTCSurface.Create(console.width div 2, console.height div 2, format);
+>>>>>>> graemeg/cpstrnew
 
       { setup destination area }
       x := console.width div 4;
       y := console.height div 4;
+<<<<<<< HEAD
       area := TPTCAreaFactory.CreateNew(x, y, x + surface.width, y + surface.height);
+=======
+      area := TPTCArea.Create(x, y, x + surface.width, y + surface.height);
+>>>>>>> graemeg/cpstrnew
 
       { loop until a key is pressed }
       while not console.KeyPressed do
@@ -81,8 +99,16 @@ begin
         console.update;
       end;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+      surface.Free;
+      format.Free;
+      area.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

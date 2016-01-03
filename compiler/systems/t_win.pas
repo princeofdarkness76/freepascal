@@ -958,7 +958,11 @@ implementation
                     imagebase:=$10000
                   else
 {$ifdef cpu64bitaddr}
+<<<<<<< HEAD
                     if (target_dbg.id = dbg_stabs) then
+=======
+                    if (paratargetdbg = dbg_stabs) then
+>>>>>>> graemeg/cpstrnew
                       imagebase:=$400000
                     else
                       imagebase:= $100000000;
@@ -1278,8 +1282,11 @@ implementation
             Add('    *(.data2)');
             Add('    *(SORT(.data$*))');
             Add('    *(.jcr)');
+<<<<<<< HEAD
             Add('    PROVIDE ('+target_info.Cprefix+'_tls_index = .);');
             Add('    LONG (0);');
+=======
+>>>>>>> graemeg/cpstrnew
             Add('    __data_end__ = . ;');
             Add('    *(.data_cygwin_nocopy)');
             Add('  }');
@@ -1834,6 +1841,11 @@ initialization
   RegisterTarget(system_i386_wince_info);
 {$endif i386}
 {$ifdef x86_64}
+<<<<<<< HEAD
+=======
+  RegisterExternalLinker(system_x64_win64_info,TExternalLinkerWin);
+  RegisterInternalLinker(system_x64_win64_info,TInternalLinkerWin);
+>>>>>>> graemeg/cpstrnew
   RegisterImport(system_x86_64_win64,TImportLibWin);
   RegisterExport(system_x86_64_win64,TExportLibWin);
   RegisterDLLScanner(system_x86_64_win64,TDLLScannerWin);

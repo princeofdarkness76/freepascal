@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -42,10 +46,14 @@ type
                    PTC_X11_DITHER,
                    PTC_X11_FULLSCREEN_CURSOR_VISIBLE,
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE,
+<<<<<<< HEAD
                    PTC_X11_GRAB_MOUSE,
                    PTC_X11_INTERCEPT_WINDOW_CLOSE,
                    PTC_X11_RESIZABLE_WINDOW,
                    PTC_X11_USE_OPENGL);
+=======
+                   PTC_X11_GRAB_MOUSE);
+>>>>>>> graemeg/cpstrnew
   TX11Flags = set of TX11FlagsEnum;
 
 type
@@ -54,16 +62,28 @@ type
     { Conversion object }
     FCopy: TPTCCopy;
     FClear: TPTCClear;
+<<<<<<< HEAD
     FPalette: IPTCPalette;
 
     FArea: IPTCArea;
     FClip: IPTCArea;
 
+=======
+    FPalette: TPTCPalette;
+
+    FArea: TPTCArea;
+    FClip: TPTCArea;
+
+>>>>>>> graemeg/cpstrnew
     FEventQueue: TEventQueue;
 
     FFlags: TX11Flags;
     FWidth, FHeight: Integer;
+<<<<<<< HEAD
     FFormat: IPTCFormat;
+=======
+    FFormat: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 
     FDisplay: PDisplay;
     FScreen: Integer;
@@ -74,6 +94,7 @@ type
     FFunctionKeys: PInteger;
     FNormalKeys: PInteger;
 
+<<<<<<< HEAD
     function GetInterceptClose: Boolean;
     procedure SetInterceptClose(AInterceptClose: Boolean);
 
@@ -114,11 +135,47 @@ type
     procedure Update; virtual; abstract;
     procedure Update(AArea: IPTCArea); virtual; abstract;
 
+=======
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; virtual; abstract;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; virtual; abstract;
+
+    function GetX11DirectFormat(ABitsPerPixel: Integer;
+                                AR, AG, AB: DWord;
+                                AByteOrder: cint): TPTCFormat;
+    function GetX11Format(const AFormat: TPTCFormat): TPTCFormat;
+
+    { initialise the keyboard mapping table }
+    procedure SetKeyMapping;
+
+    { Data access }
+    function GetWidth: Integer;
+    function GetHeight: Integer;
+    function GetPitch: Integer; virtual; abstract;
+    function GetFormat: TPTCFormat;
+    function GetArea: TPTCArea;
+  public
+    constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); virtual;
+    destructor Destroy; override;
+
+    procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); virtual; abstract;
+
+    { This will always return a windowed console. The first version
+      fills the whole window, the second one has a custom size }
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat); virtual; abstract;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer); virtual; abstract;
+
+    procedure Close; virtual; abstract;
+
+    procedure Update; virtual; abstract;
+    procedure Update(const AArea: TPTCArea); virtual; abstract;
+
+>>>>>>> graemeg/cpstrnew
     function Lock: Pointer; virtual; abstract;
     procedure Unlock; virtual; abstract;
 
     { load pixels to console }
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
                    AFormat: IPTCFormat; APalette: IPTCPalette); virtual;
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
                    AFormat: IPTCFormat; APalette: IPTCPalette;
@@ -141,6 +198,30 @@ type
 
     { console clip area }
     procedure Clip(AArea: IPTCArea);
+=======
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
+    procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); virtual;
+
+    { save console pixels }
+    procedure Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
+    procedure Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); virtual;
+
+    { clear surface }
+    procedure Clear(const AColor: TPTCColor); virtual;
+    procedure Clear(const AColor: TPTCColor; const AArea: TPTCArea); virtual;
+
+    { Console palette }
+    procedure Palette(const APalette: TPTCPalette); virtual; abstract;
+    function Palette: TPTCPalette; virtual;
+
+    { console clip area }
+    procedure Clip(const AArea: TPTCArea);
+>>>>>>> graemeg/cpstrnew
 
     { cursor control }
     procedure SetCursor(AVisible: Boolean); virtual; abstract;
@@ -149,15 +230,25 @@ type
     procedure SetMouseGrab(AGrabMouse: Boolean); virtual; abstract;
 
     { Data access }
+<<<<<<< HEAD
     function Clip: IPTCArea;
 
     function IsFullScreen: Boolean; virtual; abstract;
     function IsOpen: Boolean; virtual; abstract;
+=======
+    function Clip: TPTCArea;
+
+    function IsFullScreen: Boolean; virtual; abstract;
+>>>>>>> graemeg/cpstrnew
 
     { set flags (only used internally now!) }
     procedure SetFlags(AFlags: TX11Flags);
 
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList); virtual; abstract;
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
+>>>>>>> graemeg/cpstrnew
 
     { X11 helper functions for your enjoyment }
 
@@ -173,10 +264,15 @@ type
     property Width: Integer read GetWidth;
     property Height: Integer read GetHeight;
     property Pitch: Integer read GetPitch;
+<<<<<<< HEAD
     property Area: IPTCArea read GetArea;
     property Format: IPTCFormat read GetFormat;
 
     procedure OpenGL_SwapBuffers; virtual;
     procedure OpenGL_SetSwapInterval(AInterval: Integer); virtual;
     function OpenGL_GetSwapInterval: Integer; virtual;
+=======
+    property Area: TPTCArea read GetArea;
+    property Format: TPTCFormat read GetFormat;
+>>>>>>> graemeg/cpstrnew
   end;

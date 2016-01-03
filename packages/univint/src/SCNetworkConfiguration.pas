@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
  * Copyright (c) 2004-2011 Apple Inc. All rights reserved.
+=======
+ * Copyright (c) 2004-2008 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,8 +24,12 @@
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
+<<<<<<< HEAD
 {  Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{   Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -76,11 +84,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -99,29 +110,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -131,13 +157,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -149,12 +179,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -168,13 +204,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -250,8 +293,12 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFNumber,SCPreferences;
 		a network interface.
  }
 type
+<<<<<<< HEAD
 	SCNetworkInterfaceRef = ^__SCNetworkInterface; { an opaque type }
 	__SCNetworkInterface = record end;
+=======
+	SCNetworkInterfaceRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 { until __IPHONE_NA is translated automatically }
 {$ifc TARGET_OS_MAC}
@@ -293,7 +340,11 @@ var kSCNetworkInterfaceTypeIEEE80211: CFStringRef; external name '_kSCNetworkInt
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)	// IEEE 802.11, AirPort
 
 {!
+<<<<<<< HEAD
 	@const kSCNetworkInterfaceTypeIPSec
+=======
+ @const kSCNetworkInterfaceTypeIPSec
+>>>>>>> graemeg/cpstrnew
  }
 var kSCNetworkInterfaceTypeIPSec: CFStringRef; external name '_kSCNetworkInterfaceTypeIPSec'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_NA) *)
@@ -383,9 +434,15 @@ type
 		the status of an Ethernet Bond interface.
  }
 type
+<<<<<<< HEAD
 	SCBondStatusRef = ^__SCBondStatus; { an opaque type }
 	__SCBondStatus = record end;
 
+=======
+	SCBondStatusRef = ^SInt32; { an opaque type }
+
+{$ifc not TARGET_OS_IPHONE}
+>>>>>>> graemeg/cpstrnew
 {!
 	@enum Ethernet Bond Aggregation Status (kSCBondStatusDeviceAggregationStatus) codes
 	@discussion Returned status codes.
@@ -401,21 +458,36 @@ const
 	kSCBondStatusNoPartner = 2;	{ The port on the switch that the device is connected doesn't seem to have 802.3ad Link Aggregation enabled }
 	kSCBondStatusNotInActiveGroup = 3;	{ We're talking to a partner, but the link aggregation group is different from the one that's active }
 	kSCBondStatusUnknown = 999;	{ Non-specific failure }
+<<<<<<< HEAD
 
 {!
 	@const kSCBondStatusDeviceAggregationStatus
+=======
+{$endc} {not TARGET_OS_IPHONE}
+
+{!
+  @const kSCBondStatusDeviceAggregationStatus
+>>>>>>> graemeg/cpstrnew
  }
 var kSCBondStatusDeviceAggregationStatus	{ CFNumber }: CFStringRef; external name '_kSCBondStatusDeviceAggregationStatus'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
 
 {!
+<<<<<<< HEAD
 	@const kSCBondStatusDeviceCollecting
+=======
+  @const kSCBondStatusDeviceCollecting
+>>>>>>> graemeg/cpstrnew
  }
 var kSCBondStatusDeviceCollecting		{ CFNumber (0 or 1) }: CFStringRef; external name '_kSCBondStatusDeviceCollecting'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
 
 {!
+<<<<<<< HEAD
 	@const kSCBondStatusDeviceDistributing
+=======
+  @const kSCBondStatusDeviceDistributing
+>>>>>>> graemeg/cpstrnew
  }
 var kSCBondStatusDeviceDistributing	{ CFNumber (0 or 1) }: CFStringRef; external name '_kSCBondStatusDeviceDistributing'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
@@ -448,8 +520,12 @@ type
 		a network protocol.
  }
 type
+<<<<<<< HEAD
 	SCNetworkProtocolRef = ^__SCNetworkProtocol; { an opaque type }
 	__SCNetworkProtocol = record end;
+=======
+	SCNetworkProtocolRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 { network "protocol" types }
 
@@ -502,8 +578,12 @@ var kSCNetworkProtocolTypeSMB: CFStringRef; external name '_kSCNetworkProtocolTy
 		a network service.
  }
 type
+<<<<<<< HEAD
 	SCNetworkServiceRef = ^__SCNetworkService; { an opaque type }
 	__SCNetworkService = record end;
+=======
+	SCNetworkServiceRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -722,7 +802,11 @@ function SCNetworkInterfaceCopyMediaSubTypes( available: CFArrayRef ): CFArrayRe
 	@discussion For the provided interface configuration options and specific
 		subtype, return a list of available media options.
 	@param available The available options as returned by the
+<<<<<<< HEAD
 		SCNetworkInterfaceCopyMediaOptions function.
+=======
+		NetworkInterfaceCopyMediaOptions function.
+>>>>>>> graemeg/cpstrnew
 	@param subType The subtype
 	@result An array of available media options.  Each of the available options
 		is returned as an array of CFString's (e.g. <half-duplex>,

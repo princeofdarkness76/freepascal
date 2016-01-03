@@ -115,8 +115,11 @@ interface
         '',
         '',
         '',
+<<<<<<< HEAD
         '',
         '',
+=======
+>>>>>>> graemeg/cpstrnew
         ''
       );
 

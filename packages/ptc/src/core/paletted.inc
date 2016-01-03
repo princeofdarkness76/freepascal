@@ -1,6 +1,10 @@
 {
     Free Pascal port of the OpenPTC C++ library.
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -31,7 +35,21 @@
 }
 
 type
+<<<<<<< HEAD
   IPTCPalette = interface
+=======
+  TPTCPalette = class
+  private
+    FLocked: Boolean;
+    FHandle: THermesPaletteHandle;
+  public
+    constructor Create;
+    constructor Create(const AData: array of Uint32);
+    constructor Create(const APalette: TPTCPalette);
+    destructor Destroy; override;
+    procedure Assign(const APalette: TPTCPalette);
+    function Equals(const APalette: TPTCPalette): Boolean;
+>>>>>>> graemeg/cpstrnew
     function Lock: PUint32;
     procedure Unlock;
     procedure Load(const AData: array of Uint32);
@@ -39,6 +57,7 @@ type
     procedure Save(var AData: array of Uint32);
     procedure Save(AData: Pointer);
     function Data: PUint32;
+<<<<<<< HEAD
     function GetHermesPaletteHandle: THermesPaletteHandle;
   end;
 
@@ -47,4 +66,6 @@ type
     class function CreateNew: IPTCPalette;
     class function CreateNew(const AData: array of Uint32): IPTCPalette;
     class function CreateNew(APalette: IPTCPalette): IPTCPalette;
+=======
+>>>>>>> graemeg/cpstrnew
   end;

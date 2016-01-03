@@ -31,8 +31,12 @@ const
 type
   IRQ_MASKSAUX = cuint;
 const
+<<<<<<< HEAD
   IRQ_I2C   : IRQ_MASKSAUX = (1 shl 6); (* Power Button interrupt mask (DSi ARM7) *)
  	IRQ_SDMMC : IRQ_MASKSAUX = (1 shl 8); (* Sdmmc interrupt mask (DSi ARM7) *)
+=======
+  IRQ_I2C: IRQ_MASKSAUX = (1 shl 6); (* Power Button interrupt mask (DSi ARM7) *)
+>>>>>>> graemeg/cpstrnew
 
 function IRQ_TIMER(n: cint): cint; inline;
 

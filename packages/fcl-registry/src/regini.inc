@@ -88,13 +88,21 @@ begin
         inherited WriteString(Ident,BoolToStr(Value));
     end;
   finally
+<<<<<<< HEAD
     CloseSection;
+=======
+	  CloseKey;
+>>>>>>> graemeg/cpstrnew
 	end;
 end;
 
 procedure TRegIniFile.WriteInteger(const Section, Ident: string; Value: LongInt);
 begin
+<<<<<<< HEAD
   if OpenSection(Section,True) then
+=======
+  if not OpenKey(fPath+Section,true) then Exit;
+>>>>>>> graemeg/cpstrnew
   try
     if not fPreferStringValues then
       inherited WriteInteger(Ident,Value)
@@ -105,12 +113,17 @@ begin
         inherited WriteString(Ident,IntToStr(Value));
     end;
   finally
+<<<<<<< HEAD
     CloseSection;
+=======
+    CloseKey;
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
 procedure TRegIniFile.WriteString(const Section, Ident, Value: String);
 begin
+<<<<<<< HEAD
   if OpenSection(Section,True) then
   try
     inherited WriteString(Ident,Value);
@@ -148,6 +161,13 @@ begin
         inherited WriteString(Ident,DateTimeToStr(Value));
   finally
     CloseKey;
+=======
+  if not OpenKey(fPath+Section,true) then Exit;
+  try
+   inherited WriteString(Ident,Value);
+  finally
+   CloseKey;
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 

@@ -3,7 +3,10 @@
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -58,11 +61,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -81,29 +87,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -113,13 +134,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -162,6 +187,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -207,8 +254,12 @@ uses MacTypes,CFBase,CFData,CFDictionary,CFArray,CGBase,CGDataProvider,CGGeometr
 { The type used to represent a CoreGraphics font. }
 
 type
+<<<<<<< HEAD
 	CGFontRef = ^OpaqueCGFontRef; { an opaque type }
 	OpaqueCGFontRef = record end;
+=======
+	CGFontRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 { A type to represent indexes in a CGFontRef. }
 
@@ -258,6 +309,7 @@ function CGFontCreateWithPlatformFont( platformFontReference: UnivPtr ): CGFontR
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6,
     __IPHONE_NA, __IPHONE_NA) *)
 {$endc}
+<<<<<<< HEAD
 
 { Return the font defined by the data provided by `provider', or NULL if
    the font can't be created. }
@@ -265,6 +317,15 @@ function CGFontCreateWithPlatformFont( platformFontReference: UnivPtr ): CGFontR
 function CGFontCreateWithDataProvider( provider: CGDataProviderRef ): CGFontRef; external name '_CGFontCreateWithDataProvider';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
+=======
+
+{ Return the font defined by the data provided by `provider', or NULL if
+   the font can't be created. }
+
+function CGFontCreateWithDataProvider( provider: CGDataProviderRef ): CGFontRef; external name '_CGFontCreateWithDataProvider';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+>>>>>>> graemeg/cpstrnew
 { Return the font identified by `name', corresponding to the font's
    PostScript name or its full name, or NULL if the font can't be
    created. }
@@ -403,10 +464,17 @@ function CGFontGetGlyphAdvances( font: CGFontRef; {const} glyphs: {variable-size
 
 function CGFontGetGlyphBBoxes( font: CGFontRef; {const} glyphs: {variable-size-array} CGGlyphPtr; count: size_t; bboxes: {variable-size-array} CGRectPtr ): CBool; external name '_CGFontGetGlyphBBoxes';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+<<<<<<< HEAD
 
 { Return the glyph associated with `name' in `font'. If `name' isn't found
    in the font, return 0. }
 
+=======
+
+{ Return the glyph associated with `name' in `font'. If `name' isn't found
+   in the font, return 0. }
+
+>>>>>>> graemeg/cpstrnew
 function CGFontGetGlyphWithGlyphName( font: CGFontRef; name: CFStringRef ): CGGlyph; external name '_CGFontGetGlyphWithGlyphName';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
@@ -434,6 +502,7 @@ function CGFontCreatePostScriptSubset( font: CGFontRef; subsetName: CFStringRef;
 
 { Return a PostScript encoding of `font' containing glyphs in
    `encoding'. }
+<<<<<<< HEAD
 
 function CGFontCreatePostScriptEncoding( font: CGFontRef; const (*var*) encoding: CGGlyph256Array ): CFDataRef; external name '_CGFontCreatePostScriptEncoding';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
@@ -442,6 +511,16 @@ function CGFontCreatePostScriptEncoding( font: CGFontRef; const (*var*) encoding
    a four-byte value representing a single TrueType or OpenType font table
    tag. }
 
+=======
+
+function CGFontCreatePostScriptEncoding( font: CGFontRef; const (*var*) encoding: CGGlyph256Array ): CFDataRef; external name '_CGFontCreatePostScriptEncoding';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+
+{ Return an array of font table tags in `font'. Each entry in the array is
+   a four-byte value representing a single TrueType or OpenType font table
+   tag. }
+
+>>>>>>> graemeg/cpstrnew
 function CGFontCopyTableTags( font: CGFontRef ): CFArrayRef; external name '_CGFontCopyTableTags';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 

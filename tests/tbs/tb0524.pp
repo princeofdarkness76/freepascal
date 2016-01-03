@@ -52,12 +52,20 @@ var s,t:string;
     i:byte;
 
 begin
+<<<<<<< HEAD
    reset_textfile;
    lsock:=fpsocket(af_inet,sock_stream,0);
    if lsock=-1 then
      begin
        writeln('socket call error:',socketerror);
        stop(1);
+=======
+   lsock:=fpsocket(af_inet,sock_stream,0);
+   if lsock=-1 then
+     begin
+       writeln('socket:',socketerror);
+       halt(1);
+>>>>>>> graemeg/cpstrnew
      end;
 
   with saddr do
@@ -69,22 +77,37 @@ begin
 
   if  fpbind(lsock,@saddr,sizeof(saddr))<>0 then
     begin
+<<<<<<< HEAD
       writeln('bind call error:',socketerror);
       stop(1);
+=======
+      writeln('bind:',socketerror);
+      halt(1);
+>>>>>>> graemeg/cpstrnew
     end;
 
   if  fplisten(lsock,1)<>0 then
     begin
+<<<<<<< HEAD
       writeln('listen call error:',socketerror);
       stop(1);
+=======
+      writeln('listen:',socketerror);
+      halt(1);
+>>>>>>> graemeg/cpstrnew
     end;
 
   len:=sizeof(saddr);
   usock:=fpaccept(lsock,@saddr,@len);
   if usock=-1 then
     begin
+<<<<<<< HEAD
       writeln('accept call error:',SocketError);
       stop(1);
+=======
+      writeln('accept:',SocketError);
+      halt(1);
+>>>>>>> graemeg/cpstrnew
     end;
   sock2text(usock,sin,sout);
 

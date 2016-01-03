@@ -36,7 +36,12 @@ begin
     begin
       // Create fpc-all package
       PBuild:=AddPackage('fpc-all');
+<<<<<<< HEAD
       PBuild.Version:='3.1.1';
+=======
+      PBuild.Version:='2.2.2-0';
+      Run;
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 

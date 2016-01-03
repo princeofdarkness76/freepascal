@@ -134,6 +134,7 @@ implementation
                 end;
               2,3 :
                 begin
+<<<<<<< HEAD
                   { avx instruction?
                     currently this rule is sufficient but it might be extended }
                   if (ops=3) and (opcode<>A_SHRD) and (opcode<>A_SHLD) and (opcode<>A_IMUL) then
@@ -161,6 +162,41 @@ implementation
                         replaceoper:=0;
                     end
                   else
+=======
+                  { We can handle opcodes with 2 and 3 operands the same way. The opcodes
+                    with 3 registers are shrd/shld, where the 3rd operand is const or CL,
+                    that doesn't need spilling.
+                    However, due to AT&T order inside the compiler, the 3rd operand is
+                    numbered 0, so look at operand no. 1 and 2 if we have 3 operands by
+                    adding a "n". }
+                  n:=0;
+                  if ops=3 then
+                    n:=1;
+                  if (oper[n+0]^.typ=top_reg) and
+                     (oper[n+1]^.typ=top_reg) and
+                     ((getregtype(oper[n+0]^.reg)<>regtype) or
+                      (getregtype(oper[n+1]^.reg)<>regtype) or
+                      (get_alias(getsupreg(oper[n+0]^.reg))<>get_alias(getsupreg(oper[n+1]^.reg)))) then
+                    begin
+                      if (getregtype(oper[n+0]^.reg)=regtype) and
+                         (get_alias(getsupreg(oper[n+0]^.reg))=orgreg) then
+                        replaceoper:=0+n
+                      else if (getregtype(oper[n+1]^.reg)=regtype) and
+                         (get_alias(getsupreg(oper[n+1]^.reg))=orgreg) then
+                        replaceoper:=1+n;
+                    end
+                  else if (oper[n+0]^.typ=top_reg) and
+                     (oper[n+1]^.typ=top_const) then
+                    begin
+                      if (getregtype(oper[0+n]^.reg)=regtype) and
+                         (get_alias(getsupreg(oper[0+n]^.reg))=orgreg) then
+                        replaceoper:=0+n
+                      else
+                        internalerror(200704282);
+                    end
+                  else if (oper[n+0]^.typ=top_const) and
+                     (oper[n+1]^.typ=top_reg) then
+>>>>>>> graemeg/cpstrnew
                     begin
                       { We can handle opcodes with 2 and 3-op imul/shrd/shld the same way, where the 3rd operand is const or CL,
                         that doesn't need spilling.
@@ -325,14 +361,24 @@ implementation
                 end;
              end;
 
+<<<<<<< HEAD
 {$ifdef x86_64}
+=======
+            {$ifdef x86_64}
+>>>>>>> graemeg/cpstrnew
             { 32 bit operations on 32 bit registers on x86_64 can result in
               zeroing the upper 32 bits of the register. This does not happen
               with memory operations, so we have to perform these calculations
               in registers.  }
+<<<<<<< HEAD
             if (opsize=S_L) then
               replaceoper:=-1;
 {$endif x86_64}
+=======
+            if (instr.opsize=S_L) then
+              replaceoper:=-1;
+            {$endif x86_64}
+>>>>>>> graemeg/cpstrnew
 
             { Replace register with spill reference }
             if replaceoper<>-1 then

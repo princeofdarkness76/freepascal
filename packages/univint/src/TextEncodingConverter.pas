@@ -3,7 +3,13 @@
  
      Contains:   Text Encoding Conversion Interfaces.
  
+<<<<<<< HEAD
      Copyright:  © 1994-2011 Apple Inc. All rights reserved.
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1994-2008 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -11,6 +17,10 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -65,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -85,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -104,13 +118,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -120,13 +154,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -164,6 +202,23 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -298,7 +353,11 @@ const
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
  }
 function TECCountAvailableTextEncodings( var numberEncodings: ItemCount ): OSStatus; external name '_TECCountAvailableTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { fill in an array of type TextEncoding passed in by the user with types of encodings the current configuration of the encoder can handle. }
@@ -311,7 +370,11 @@ function TECCountAvailableTextEncodings( var numberEncodings: ItemCount ): OSSta
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECGetAvailableTextEncodings( availableEncodings: {variable-size-array} TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount ): OSStatus; external name '_TECGetAvailableTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { return number of from-to encoding conversion pairs supported  }
@@ -324,7 +387,11 @@ function TECGetAvailableTextEncodings( availableEncodings: {variable-size-array}
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCountDirectTextEncodingConversions( var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountDirectTextEncodingConversions';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { fill in an array of type TextEncodingPair passed in by the user with types of encoding pairs the current configuration of the encoder can handle. }
@@ -337,7 +404,11 @@ function TECCountDirectTextEncodingConversions( var numberOfEncodings: ItemCount
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECGetDirectTextEncodingConversions( availableConversions: {variable-size-array} TECConversionInfoPtr; maxAvailableConversions: ItemCount; var actualAvailableConversions: ItemCount ): OSStatus; external name '_TECGetDirectTextEncodingConversions';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { return number of encodings a given encoding can be converter into }
@@ -350,7 +421,11 @@ function TECGetDirectTextEncodingConversions( availableConversions: {variable-si
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCountDestinationTextEncodings( inputEncoding: TextEncoding; var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountDestinationTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { fill in an array of type TextEncodingPair passed in by the user with types of encodings pairs the current configuration of the encoder can handle. }
@@ -363,7 +438,11 @@ function TECCountDestinationTextEncodings( inputEncoding: TextEncoding; var numb
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECGetDestinationTextEncodings( inputEncoding: TextEncoding; destinationEncodings: {variable-size-array} TextEncodingPtr; maxDestinationEncodings: ItemCount; var actualDestinationEncodings: ItemCount ): OSStatus; external name '_TECGetDestinationTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { get info about a text encoding }
@@ -376,7 +455,11 @@ function TECGetDestinationTextEncodings( inputEncoding: TextEncoding; destinatio
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
  }
 function TECGetTextEncodingInternetName( textEncoding_: TextEncoding; var encodingName: Str255 ): OSStatus; external name '_TECGetTextEncodingInternetName';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -388,7 +471,11 @@ function TECGetTextEncodingInternetName( textEncoding_: TextEncoding; var encodi
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
  }
 function TECGetTextEncodingFromInternetName( var textEncoding_: TextEncoding; const (*var*) encodingName: Str255 ): OSStatus; external name '_TECGetTextEncodingFromInternetName';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { create/dispose converters }
@@ -401,7 +488,11 @@ function TECGetTextEncodingFromInternetName( var textEncoding_: TextEncoding; co
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
  }
 function TECCreateConverter( var newEncodingConverter: TECObjectRef; inputEncoding: TextEncoding; outputEncoding: TextEncoding ): OSStatus; external name '_TECCreateConverter';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -413,7 +504,11 @@ function TECCreateConverter( var newEncodingConverter: TECObjectRef; inputEncodi
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCreateConverterFromPath( var newEncodingConverter: TECObjectRef; {const} inPath: {variable-size-array} TextEncodingPtr; inEncodings: ItemCount ): OSStatus; external name '_TECCreateConverterFromPath';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -425,7 +520,11 @@ function TECCreateConverterFromPath( var newEncodingConverter: TECObjectRef; {co
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
  }
 function TECDisposeConverter( newEncodingConverter: TECObjectRef ): OSStatus; external name '_TECDisposeConverter';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { convert text encodings }
@@ -438,7 +537,11 @@ function TECDisposeConverter( newEncodingConverter: TECObjectRef ): OSStatus; ex
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECClearConverterContextInfo( encodingConverter: TECObjectRef ): OSStatus; external name '_TECClearConverterContextInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -450,7 +553,11 @@ function TECClearConverterContextInfo( encodingConverter: TECObjectRef ): OSStat
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECConvertText( encodingConverter: TECObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; var actualInputLength: ByteCount; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount ): OSStatus; external name '_TECConvertText';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -462,7 +569,11 @@ function TECConvertText( encodingConverter: TECObjectRef; inputBuffer: ConstText
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECFlushText( encodingConverter: TECObjectRef; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount ): OSStatus; external name '_TECFlushText';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { one-to-many routines }
@@ -475,7 +586,11 @@ function TECFlushText( encodingConverter: TECObjectRef; outputBuffer: TextPtr; o
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCountSubTextEncodings( inputEncoding: TextEncoding; var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountSubTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -487,7 +602,11 @@ function TECCountSubTextEncodings( inputEncoding: TextEncoding; var numberOfEnco
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECGetSubTextEncodings( inputEncoding: TextEncoding; subEncodings: {variable-size-array} TextEncodingPtr; maxSubEncodings: ItemCount; var actualSubEncodings: ItemCount ): OSStatus; external name '_TECGetSubTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -512,7 +631,11 @@ function TECGetSubTextEncodings( inputEncoding: TextEncoding; subEncodings: {var
  *    Non-Carbon CFM:   in TextEncodingConverter 1.1 and later
  }
 function TECGetEncodingList( encodingConverter: TECObjectRef; var numEncodings: ItemCount; var encodingList: Handle ): OSStatus; external name '_TECGetEncodingList';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -524,7 +647,11 @@ function TECGetEncodingList( encodingConverter: TECObjectRef; var numEncodings: 
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCreateOneToManyConverter( var newEncodingConverter: TECObjectRef; inputEncoding: TextEncoding; numOutputEncodings: ItemCount; {const} outputEncodings: {variable-size-array} TextEncodingPtr ): OSStatus; external name '_TECCreateOneToManyConverter';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -536,7 +663,11 @@ function TECCreateOneToManyConverter( var newEncodingConverter: TECObjectRef; in
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECConvertTextToMultipleEncodings( encodingConverter: TECObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; var actualInputLength: ByteCount; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount; outEncodingsBuffer: {variable-size-array} TextEncodingRunPtr; maxOutEncodingRuns: ItemCount; var actualOutEncodingRuns: ItemCount ): OSStatus; external name '_TECConvertTextToMultipleEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -548,7 +679,11 @@ function TECConvertTextToMultipleEncodings( encodingConverter: TECObjectRef; inp
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECFlushMultipleEncodings( encodingConverter: TECObjectRef; outputBuffer: TextPtr; outputBufferLength: ByteCount; var actualOutputLength: ByteCount; outEncodingsBuffer: {variable-size-array} TextEncodingRunPtr; maxOutEncodingRuns: ItemCount; var actualOutEncodingRuns: ItemCount ): OSStatus; external name '_TECFlushMultipleEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { international internet info }
@@ -561,7 +696,11 @@ function TECFlushMultipleEncodings( encodingConverter: TECObjectRef; outputBuffe
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCountWebTextEncodings( locale: RegionCode; var numberEncodings: ItemCount ): OSStatus; external name '_TECCountWebTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -573,7 +712,11 @@ function TECCountWebTextEncodings( locale: RegionCode; var numberEncodings: Item
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECGetWebTextEncodings( locale: RegionCode; availableEncodings: {variable-size-array} TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount ): OSStatus; external name '_TECGetWebTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -585,7 +728,11 @@ function TECGetWebTextEncodings( locale: RegionCode; availableEncodings: {variab
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCountMailTextEncodings( locale: RegionCode; var numberEncodings: ItemCount ): OSStatus; external name '_TECCountMailTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -597,7 +744,11 @@ function TECCountMailTextEncodings( locale: RegionCode; var numberEncodings: Ite
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECGetMailTextEncodings( locale: RegionCode; availableEncodings: {variable-size-array} TextEncodingPtr; maxAvailableEncodings: ItemCount; var actualAvailableEncodings: ItemCount ): OSStatus; external name '_TECGetMailTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { examine text encodings }
@@ -610,7 +761,11 @@ function TECGetMailTextEncodings( locale: RegionCode; availableEncodings: {varia
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCountAvailableSniffers( var numberOfEncodings: ItemCount ): OSStatus; external name '_TECCountAvailableSniffers';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -622,7 +777,11 @@ function TECCountAvailableSniffers( var numberOfEncodings: ItemCount ): OSStatus
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECGetAvailableSniffers( availableSniffers: {variable-size-array} TextEncodingPtr; maxAvailableSniffers: ItemCount; var actualAvailableSniffers: ItemCount ): OSStatus; external name '_TECGetAvailableSniffers';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -634,7 +793,11 @@ function TECGetAvailableSniffers( availableSniffers: {variable-size-array} TextE
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECCreateSniffer( var encodingSniffer: TECSnifferObjectRef; {const} testEncodings: {variable-size-array} TextEncodingPtr; numTextEncodings: ItemCount ): OSStatus; external name '_TECCreateSniffer';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -646,7 +809,11 @@ function TECCreateSniffer( var encodingSniffer: TECSnifferObjectRef; {const} tes
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECSniffTextEncoding( encodingSniffer: TECSnifferObjectRef; inputBuffer: ConstTextPtr; inputBufferLength: ByteCount; testEncodings: {variable-size-array} TextEncodingPtr; numTextEncodings: ItemCount; numErrsArray: {variable-size-array} ItemCountPtr; maxErrs: ItemCount; numFeaturesArray: {variable-size-array} ItemCountPtr; maxFeatures: ItemCount ): OSStatus; external name '_TECSniffTextEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -658,7 +825,11 @@ function TECSniffTextEncoding( encodingSniffer: TECSnifferObjectRef; inputBuffer
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECDisposeSniffer( encodingSniffer: TECSnifferObjectRef ): OSStatus; external name '_TECDisposeSniffer';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -670,7 +841,11 @@ function TECDisposeSniffer( encodingSniffer: TECSnifferObjectRef ): OSStatus; ex
  *    Non-Carbon CFM:   in TextEncodingConverter 1.2 and later
  }
 function TECClearSnifferContextInfo( encodingSniffer: TECSnifferObjectRef ): OSStatus; external name '_TECClearSnifferContextInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -716,7 +891,11 @@ function TECClearSnifferContextInfo( encodingSniffer: TECSnifferObjectRef ): OSS
  *    Non-Carbon CFM:   in TextEncodingConverter 1.5 and later
  }
 function TECSetBasicOptions( encodingConverter: TECObjectRef; controlFlags: OptionBits ): OSStatus; external name '_TECSetBasicOptions';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Map TextEncoding values to/from IANA charset names and/or MIB enums, with usage control }
@@ -765,7 +944,11 @@ function TECSetBasicOptions( encodingConverter: TECObjectRef; controlFlags: Opti
  *    Non-Carbon CFM:   not available
  }
 function TECCopyTextEncodingInternetNameAndMIB( textEncoding_: TextEncoding; usage: TECInternetNameUsageMask; encodingNamePtr: CFStringRefPtr { can be NULL }; mibEnumPtr: SInt32Ptr { can be NULL } ): OSStatus; external name '_TECCopyTextEncodingInternetNameAndMIB';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -795,7 +978,11 @@ function TECCopyTextEncodingInternetNameAndMIB( textEncoding_: TextEncoding; usa
  *    Non-Carbon CFM:   not available
  }
 function TECGetTextEncodingFromInternetNameOrMIB( var textEncodingPtr: TextEncoding; usage: TECInternetNameUsageMask; encodingName: CFStringRef; mibEnum: SInt32 ): OSStatus; external name '_TECGetTextEncodingFromInternetNameOrMIB';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}

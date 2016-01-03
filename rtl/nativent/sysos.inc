@@ -368,6 +368,7 @@ begin
   aNtStr.Length := aLen * SizeOf(WideChar);
   aNtStr.MaximumLength := aNtStr.Length;
   aNtStr.Buffer := GetMem(aNtStr.Length);
+<<<<<<< HEAD
   for i := 0 to aLen-1 do
     aNtStr.Buffer[i] := aText[i];
 end;
@@ -396,6 +397,12 @@ begin
     Move(s[1],aNtStr.Buffer[0],aNtStr.Length);
 end;
 
+=======
+  for i := 0 to aLen do
+    aNtStr.Buffer[i] := aText[i];
+end;
+
+>>>>>>> graemeg/cpstrnew
 procedure SysFreeNtStr(var aNtStr: TNtUnicodeString);
 begin
   if aNtStr.Buffer <> Nil then begin

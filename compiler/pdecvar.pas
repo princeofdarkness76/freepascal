@@ -31,7 +31,11 @@ interface
       symtable,symsym,symdef;
 
     type
+<<<<<<< HEAD
       tvar_dec_option=(vd_record,vd_object,vd_threadvar,vd_class,vd_final,vd_canreorder,vd_check_generic);
+=======
+      tvar_dec_option=(vd_record,vd_object,vd_threadvar,vd_class);
+>>>>>>> graemeg/cpstrnew
       tvar_dec_options=set of tvar_dec_option;
 
     function  read_property_dec(is_classproperty:boolean;astruct:tabstractrecorddef):tpropertysym;
@@ -181,7 +185,11 @@ implementation
                          if def.typ=arraydef then
                           begin
                             idx:=0;
+<<<<<<< HEAD
                             p:=comp_expr([ef_accept_equal]);
+=======
+                            p:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
                             if (not codegenerror) then
                              begin
                                if (p.nodetype=ordconstn) then
@@ -251,7 +259,11 @@ implementation
               sym: tprocsym;
             begin
               handle_calling_convention(pd);
+<<<<<<< HEAD
               sym:=cprocsym.create(prefix+lower(p.realname));
+=======
+              sym:=tprocsym.create(prefix+lower(p.realname));
+>>>>>>> graemeg/cpstrnew
               symtablestack.top.insert(sym);
               pd.procsym:=sym;
               include(pd.procoptions,po_dispid);
@@ -275,7 +287,10 @@ implementation
 
               hasread:=true;
               haswrite:=true;
+<<<<<<< HEAD
               hdispid:=0;
+=======
+>>>>>>> graemeg/cpstrnew
 
               if try_to_consume(_READONLY) then
                 haswrite:=false
@@ -284,10 +299,17 @@ implementation
 
               if try_to_consume(_DISPID) then
                 begin
+<<<<<<< HEAD
                   pt:=comp_expr([ef_accept_equal]);
                   if is_constintnode(pt) then
                     if (Tordconstnode(pt).value<int64(low(longint))) or (Tordconstnode(pt).value>int64(high(longint))) then
                       message3(type_e_range_check_error_bounds,tostr(Tordconstnode(pt).value),tostr(low(longint)),tostr(high(longint)))
+=======
+                  pt:=comp_expr(true,false);
+                  if is_constintnode(pt) then
+                    if (Tordconstnode(pt).value<int64(low(longint))) or (Tordconstnode(pt).value>int64(high(longint))) then
+                      message(parser_e_range_check_error)
+>>>>>>> graemeg/cpstrnew
                     else
                       hdispid:=Tordconstnode(pt).value.svalue
                   else
@@ -312,7 +334,11 @@ implementation
                 begin
                   { add an extra parameter, a placeholder of the value to set }
                   inc(paranr);
+<<<<<<< HEAD
                   hparavs:=cparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
+=======
+                  hparavs:=tparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
+>>>>>>> graemeg/cpstrnew
                   writepd.parast.insert(hparavs);
 
                   writepd.proctypeoption:=potype_propsetter;
@@ -321,6 +347,20 @@ implementation
                 end;
             end;
 
+<<<<<<< HEAD
+=======
+          procedure add_index_parameter(var paranr: word; p: tpropertysym; readprocdef, writeprocdef: tprocdef);
+            var
+              hparavs: tparavarsym;
+            begin
+              inc(paranr);
+              hparavs:=tparavarsym.create('$index',10*paranr,vs_value,p.indexdef,[]);
+              readprocdef.parast.insert(hparavs);
+              hparavs:=tparavarsym.create('$index',10*paranr,vs_value,p.indexdef,[]);
+              writeprocdef.parast.insert(hparavs);
+            end;
+
+>>>>>>> graemeg/cpstrnew
       var
          sym : tsym;
          srsymtable: tsymtable;
@@ -343,12 +383,20 @@ implementation
          readprocdef,
          writeprocdef : tprocdef;
       begin
+<<<<<<< HEAD
          result:=nil;
          { Generate temp procdefs to search for matching read/write
            procedures. the readprocdef will store all definitions }
          paranr:=0;
          readprocdef:=cprocdef.create(normal_function_level,true);
          writeprocdef:=cprocdef.create(normal_function_level,true);
+=======
+         { Generate temp procdefs to search for matching read/write
+           procedures. the readprocdef will store all definitions }
+         paranr:=0;
+         readprocdef:=tprocdef.create(normal_function_level);
+         writeprocdef:=tprocdef.create(normal_function_level);
+>>>>>>> graemeg/cpstrnew
 
          readprocdef.struct:=astruct;
          writeprocdef.struct:=astruct;
@@ -422,7 +470,11 @@ implementation
                   tparavarsym(sc[i]).vardef:=hdef;
               until not try_to_consume(_SEMICOLON);
               sc.free;
+<<<<<<< HEAD
               symtablestack.pop(p.parast);
+=======
+              symtablestack.pop(readprocdef.parast);
+>>>>>>> graemeg/cpstrnew
               consume(_RECKKLAMMER);
 
               { the parser need to know if a property has parameters, the
@@ -440,7 +492,11 @@ implementation
          if (token=_COLON) or (paranr>0) or (astruct=nil) then
            begin
               consume(_COLON);
+<<<<<<< HEAD
               single_type(p.propdef,[stoAllowSpecialization]);
+=======
+              single_type(p.propdef,[]);
+>>>>>>> graemeg/cpstrnew
 
               if is_dispinterface(astruct) and not is_automatable(p.propdef) then
                 Message1(type_e_not_automatable,p.propdef.typename);
@@ -448,7 +504,11 @@ implementation
               if (idtoken=_INDEX) then
                 begin
                    consume(_INDEX);
+<<<<<<< HEAD
                    pt:=comp_expr([ef_accept_equal]);
+=======
+                   pt:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
                    { Only allow enum and integer indexes. Convert all integer
                      values to objpas.integer (s32int on 32- and 64-bit targets,
                      s16int on 16- and 8-bit) to be compatible with delphi,
@@ -477,14 +537,22 @@ implementation
                    p.indexdef:=pt.resultdef;
                    include(p.propoptions,ppo_indexed);
                    { concat a longint to the para templates }
+<<<<<<< HEAD
                    p.add_index_parameter(paranr,readprocdef,writeprocdef);
+=======
+                   add_index_parameter(paranr,p,readprocdef,writeprocdef);
+>>>>>>> graemeg/cpstrnew
                    pt.free;
                 end;
            end
          else
            begin
               { do an property override }
+<<<<<<< HEAD
               if (astruct.typ=objectdef) and assigned(tobjectdef(astruct).childof) then
+=======
+              if (astruct.typ=objectdef) then
+>>>>>>> graemeg/cpstrnew
                 overridden:=search_struct_member(tobjectdef(astruct).childof,p.name)
               else
                 overridden:=nil;
@@ -492,8 +560,20 @@ implementation
                  (overridden.typ=propertysym) and
                  not(is_dispinterface(astruct)) then
                 begin
+<<<<<<< HEAD
                   tpropertysym(overridden).makeduplicate(p,readprocdef,writeprocdef,paranr);
                   p.register_override(tpropertysym(overridden));
+=======
+                  p.overriddenpropsym:=tpropertysym(overridden);
+                  { inherit all type related entries }
+                  p.indexdef:=tpropertysym(overridden).indexdef;
+                  p.propdef:=tpropertysym(overridden).propdef;
+                  p.index:=tpropertysym(overridden).index;
+                  p.default:=tpropertysym(overridden).default;
+                  p.propoptions:=tpropertysym(overridden).propoptions;
+                  if ppo_indexed in p.propoptions then
+                    add_index_parameter(paranr,p,readprocdef,writeprocdef);
+>>>>>>> graemeg/cpstrnew
                 end
               else
                 begin
@@ -519,6 +599,7 @@ implementation
                  if parse_symlist(p.propaccesslist[palt_read],def) then
                   begin
                     sym:=p.propaccesslist[palt_read].firstsym^.sym;
+<<<<<<< HEAD
                     { getter is a function returning the type of the property }
                     if sym.typ=procsym then
                       begin
@@ -527,6 +608,46 @@ implementation
                         handle_calling_convention(readprocdef);
                       end;
                     p.add_getter_or_setter_for_sym(palt_read,sym,def,readprocdef);
+=======
+                    case sym.typ of
+                      procsym :
+                        begin
+                          { read is function returning the type of the property }
+                          readprocdef.returndef:=p.propdef;
+                          { Insert hidden parameters }
+                          handle_calling_convention(readprocdef);
+                          { search procdefs matching readprocdef }
+                          { we ignore hidden stuff here because the property access symbol might have
+                            non default calling conventions which might change the hidden stuff;
+                            see tw3216.pp (FK) }
+                          p.propaccesslist[palt_read].procdef:=Tprocsym(sym).Find_procdef_bypara(readprocdef.paras,p.propdef,[cpo_allowdefaults,cpo_ignorehidden]);
+                          if not assigned(p.propaccesslist[palt_read].procdef) or
+                            { because of cpo_ignorehidden we need to compare if it is a static class method and we have a class property }
+                            ((sp_static in p.symoptions) <> tprocdef(p.propaccesslist[palt_read].procdef).no_self_node) then
+                            Message(parser_e_ill_property_access_sym);
+                        end;
+                      fieldvarsym :
+                        begin
+                          if not assigned(def) then
+                            internalerror(200310071);
+                          if compare_defs(def,p.propdef,nothingn)>=te_equal then
+                           begin
+                             { property parameters are allowed if this is
+                               an indexed property, because the index is then
+                               the parameter.
+                               Note: In the help of Kylix it is written
+                               that it isn't allowed, but the compiler accepts it (PFV) }
+                             if (ppo_hasparameters in p.propoptions) or
+                                ((sp_static in p.symoptions) <> (sp_static in sym.symoptions)) then
+                               Message(parser_e_ill_property_access_sym);
+                           end
+                          else
+                           IncompatibleTypes(def,p.propdef);
+                        end;
+                      else
+                        Message(parser_e_ill_property_access_sym);
+                    end;
+>>>>>>> graemeg/cpstrnew
                   end;
                end
              else
@@ -538,6 +659,7 @@ implementation
                  if parse_symlist(p.propaccesslist[palt_write],def) then
                   begin
                     sym:=p.propaccesslist[palt_write].firstsym^.sym;
+<<<<<<< HEAD
                     if sym.typ=procsym then
                       begin
                         { settter is a procedure with an extra value parameter
@@ -550,6 +672,48 @@ implementation
                         handle_calling_convention(writeprocdef);
                       end;
                     p.add_getter_or_setter_for_sym(palt_write,sym,def,writeprocdef);
+=======
+                    case sym.typ of
+                      procsym :
+                        begin
+                          { write is a procedure with an extra value parameter
+                            of the of the property }
+                          writeprocdef.returndef:=voidtype;
+                          inc(paranr);
+                          hparavs:=tparavarsym.create('$value',10*paranr,vs_value,p.propdef,[]);
+                          writeprocdef.parast.insert(hparavs);
+                          { Insert hidden parameters }
+                          handle_calling_convention(writeprocdef);
+                          { search procdefs matching writeprocdef }
+                          if cs_varpropsetter in current_settings.localswitches then
+                            p.propaccesslist[palt_write].procdef:=Tprocsym(sym).Find_procdef_bypara(writeprocdef.paras,writeprocdef.returndef,[cpo_allowdefaults,cpo_ignorevarspez])
+                          else
+                            p.propaccesslist[palt_write].procdef:=Tprocsym(sym).Find_procdef_bypara(writeprocdef.paras,writeprocdef.returndef,[cpo_allowdefaults]);
+                          if not assigned(p.propaccesslist[palt_write].procdef) then
+                            Message(parser_e_ill_property_access_sym);
+                        end;
+                      fieldvarsym :
+                        begin
+                          if not assigned(def) then
+                            internalerror(200310072);
+                          if compare_defs(def,p.propdef,nothingn)>=te_equal then
+                           begin
+                             { property parameters are allowed if this is
+                               an indexed property, because the index is then
+                               the parameter.
+                               Note: In the help of Kylix it is written
+                               that it isn't allowed, but the compiler accepts it (PFV) }
+                             if (ppo_hasparameters in p.propoptions) or
+                                ((sp_static in p.symoptions) <> (sp_static in sym.symoptions)) then
+                              Message(parser_e_ill_property_access_sym);
+                           end
+                          else
+                           IncompatibleTypes(def,p.propdef);
+                        end;
+                      else
+                        Message(parser_e_ill_property_access_sym);
+                    end;
+>>>>>>> graemeg/cpstrnew
                   end;
                end
              else
@@ -574,6 +738,7 @@ implementation
               begin
                 include(p.propoptions,ppo_stored);
                 p.propaccesslist[palt_stored].clear;
+<<<<<<< HEAD
                 if token=_ID then
                   begin
                     { in the case that idtoken=_DEFAULT }
@@ -649,6 +814,84 @@ implementation
                               end;
                             else
                               Message(parser_e_ill_property_access_sym);
+=======
+                case token of
+                  _ID:
+                    begin
+                      { in the case that idtoken=_DEFAULT }
+                      { we have to do nothing except      }
+                      { setting ppo_stored, it's the same }
+                      { as stored true                    }
+                      if idtoken<>_DEFAULT then
+                       begin
+                         { parse_symlist cannot deal with constsyms, and
+                           we also don't want to put constsyms in symlists
+                           since they have to be evaluated immediately rather
+                           than each time the property is accessed
+
+                           The proper fix would be to always create a parse tree
+                           and then convert that one, if appropriate, to a symlist.
+                           Currently, we e.g. don't support any constant expressions
+                           yet either here, while Delphi does.
+
+                         }
+                         { make sure we don't let constants mask class fields/
+                           methods
+                         }
+                         if (not assigned(astruct) or
+                             (search_struct_member(astruct,pattern)=nil)) and
+                            searchsym(pattern,sym,srsymtable) and
+                            (sym.typ = constsym) then
+                           begin
+                              addsymref(sym);
+                              if not is_boolean(tconstsym(sym).constdef) then
+                                Message(parser_e_stored_property_must_be_boolean)
+                              else if (tconstsym(sym).value.valueord=0) then
+                                { same as for _FALSE }
+                                exclude(p.propoptions,ppo_stored)
+                              else
+                                { same as for _TRUE }
+                                p.default:=longint($80000000);
+                              consume(_ID);
+                            end
+                         else if parse_symlist(p.propaccesslist[palt_stored],def) then
+                          begin
+                            sym:=p.propaccesslist[palt_stored].firstsym^.sym;
+                            case sym.typ of
+                              procsym :
+                                begin
+                                   { Create a temporary procvardef to handle parameters }
+                                   storedprocdef:=tprocvardef.create(normal_function_level);
+                                   include(storedprocdef.procoptions,po_methodpointer);
+                                   { Return type must be boolean }
+                                   storedprocdef.returndef:=booltype;
+                                   { Add index parameter if needed }
+                                   if ppo_indexed in p.propoptions then
+                                     begin
+                                       hparavs:=tparavarsym.create('$index',10,vs_value,p.indexdef,[]);
+                                       storedprocdef.parast.insert(hparavs);
+                                     end;
+
+                                   { Insert hidden parameters }
+                                   handle_calling_convention(storedprocdef);
+                                   p.propaccesslist[palt_stored].procdef:=Tprocsym(sym).Find_procdef_bypara(storedprocdef.paras,storedprocdef.returndef,[cpo_allowdefaults,cpo_ignorehidden]);
+                                   if not assigned(p.propaccesslist[palt_stored].procdef) then
+                                     message(parser_e_ill_property_storage_sym);
+                                   { Not needed anymore }
+                                   storedprocdef.owner.deletedef(storedprocdef);
+                                end;
+                              fieldvarsym :
+                                begin
+                                  if not assigned(def) then
+                                    internalerror(200310073);
+                                  if (ppo_hasparameters in p.propoptions) or
+                                     not(is_boolean(def)) then
+                                   Message(parser_e_stored_property_must_be_boolean);
+                                end;
+                              else
+                                Message(parser_e_ill_property_access_sym);
+                            end;
+>>>>>>> graemeg/cpstrnew
                           end;
                         end;
                      end;
@@ -661,14 +904,22 @@ implementation
                 begin
                   Message(parser_e_property_cant_have_a_default_value);
                   { Error recovery }
+<<<<<<< HEAD
                   pt:=comp_expr([ef_accept_equal]);
+=======
+                  pt:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
                   pt.free;
                 end
               else
                 begin
                   { Get the result of the default, the firstpass is
                     needed to support values like -1 }
+<<<<<<< HEAD
                   pt:=comp_expr([ef_accept_equal]);
+=======
+                  pt:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
                   if (p.propdef.typ=setdef) and
                      (pt.nodetype=arrayconstructorn) then
                     begin
@@ -708,7 +959,11 @@ implementation
 *)
          { Parse possible "implements" keyword }
          if not is_record(astruct) and try_to_consume(_IMPLEMENTS) then
+<<<<<<< HEAD
            repeat
+=======
+           begin
+>>>>>>> graemeg/cpstrnew
              single_type(def,[]);
 
              if not(is_interface(def)) then
@@ -766,7 +1021,10 @@ implementation
                  exit;
                end;
              found:=false;
+<<<<<<< HEAD
              ImplIntf:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
              for i:=0 to tobjectdef(astruct).ImplementedInterfaces.Count-1 do
                begin
                  ImplIntf:=TImplementedInterface(tobjectdef(astruct).ImplementedInterfaces[i]);
@@ -800,10 +1058,15 @@ implementation
                    fieldvarsym :
                      begin
                        ImplIntf.IType:=etFieldValue;
+<<<<<<< HEAD
                        { this must be done in a more robust way. Can't read the
                          fieldvarsym's fieldoffset yet, because it may not yet
                          be set }
                        ImplIntf.ImplementsField:=p.propaccesslist[palt_read].firstsym^.sym;
+=======
+                       { this must be done more sophisticated, here is also probably the wrong place }
+                       ImplIntf.IOffset:=tfieldvarsym(p.propaccesslist[palt_read].firstsym^.sym).fieldoffset;
+>>>>>>> graemeg/cpstrnew
                      end
                    else
                      internalerror(200802161);
@@ -819,7 +1082,11 @@ implementation
                end
              else
                message1(parser_e_implements_uses_non_implemented_interface,def.typename);
+<<<<<<< HEAD
            until not try_to_consume(_COMMA);
+=======
+         end;
+>>>>>>> graemeg/cpstrnew
 
          { remove unneeded procdefs }
          if readprocdef.proctypeoption<>potype_propgetter then
@@ -1050,7 +1317,22 @@ implementation
     end;
 
 
+<<<<<<< HEAD
     procedure read_var_decls(options:Tvar_dec_options;out had_generic:boolean);
+=======
+    procedure try_consume_sectiondirective(var asection: ansistring);
+      begin
+        if idtoken=_SECTION then
+          begin
+            consume(_ID);
+            asection:=get_stringconst;
+            consume(_SEMICOLON);
+          end;
+      end;
+
+
+    procedure read_var_decls(options:Tvar_dec_options);
+>>>>>>> graemeg/cpstrnew
 
         procedure read_default_value(sc : TFPObjectList);
         var
@@ -1109,9 +1391,15 @@ implementation
           abssym : tabsolutevarsym;
           pt,hp  : tnode;
           st     : tsymtable;
+<<<<<<< HEAD
           {$if defined(i386) or defined(i8086)}
           tmpaddr : int64;
           {$endif defined(i386) or defined(i8086)}
+=======
+          {$ifdef i386}
+          tmpaddr : int64;
+          {$endif}
+>>>>>>> graemeg/cpstrnew
         begin
           abssym:=nil;
           { only allowed for one var }
@@ -1161,6 +1449,7 @@ implementation
                   pt:=expr(true);
                   if is_constintnode(pt) then
                     begin
+<<<<<<< HEAD
                       {$if defined(i8086)}
                         tcpuabsolutevarsym(abssym).addrsegment:=abssym.addroffset;
                         tmpaddr:=tordconstnode(pt).value.svalue;
@@ -1178,6 +1467,15 @@ implementation
                           abssym.addroffset:=tmpaddr;
                       {$endif}
                       tcpuabsolutevarsym(abssym).absseg:=true;
+=======
+                      tmpaddr:=abssym.addroffset shl 4+tordconstnode(pt).value.svalue;
+                      if (tmpaddr<int64(low(abssym.addroffset))) or
+                         (tmpaddr>int64(high(abssym.addroffset))) then
+                        message(parser_e_range_check_error)
+                      else
+                        abssym.addroffset:=tmpaddr;
+                      abssym.absseg:=true;
+>>>>>>> graemeg/cpstrnew
                     end
                   else
                     Message(type_e_ordinal_expr_expected);
@@ -1274,9 +1572,13 @@ implementation
          hintsymoptions  : tsymoptions;
          deprecatedmsg   : pshortstring;
          old_block_type  : tblock_type;
+<<<<<<< HEAD
          sectionname : ansistring;
          tmp_filepos,
          old_current_filepos     : tfileposinfo;
+=======
+         section : ansistring;
+>>>>>>> graemeg/cpstrnew
       begin
          old_block_type:=block_type;
          block_type:=bt_var;
@@ -1459,12 +1761,19 @@ implementation
                read_public_and_external_sc(sc);
 
              { try to parse a section directive }
+<<<<<<< HEAD
              if (target_info.system in systems_allow_section) and
                 (symtablestack.top.symtabletype in [staticsymtable,globalsymtable]) and
                 (idtoken=_SECTION) then
                begin
                  try_consume_sectiondirective(sectionname);
                  if sectionname<>'' then
+=======
+             if (target_info.system in systems_embedded) and (idtoken=_SECTION) then
+               begin
+                 try_consume_sectiondirective(section);
+                 if section<>'' then
+>>>>>>> graemeg/cpstrnew
                    begin
                      for i:=0 to sc.count-1 do
                        begin
@@ -1473,8 +1782,12 @@ implementation
                            Message(parser_e_externals_no_section);
                          if vs.typ<>staticvarsym then
                            Message(parser_e_section_no_locals);
+<<<<<<< HEAD
                          tstaticvarsym(vs).section:=sectionname;
                          include(vs.varoptions, vo_has_section);
+=======
+                         tstaticvarsym(vs).section:=section;
+>>>>>>> graemeg/cpstrnew
                        end;
                    end;
                end;
@@ -1501,8 +1814,13 @@ implementation
       var
          sc : TFPObjectList;
          i  : longint;
+<<<<<<< HEAD
          hs,sorg : string;
          hdef,casetype,tmpdef : tdef;
+=======
+         hs,sorg,static_name : string;
+         hdef,casetype : tdef;
+>>>>>>> graemeg/cpstrnew
          { maxsize contains the max. size of a variant }
          { startvarrec contains the start of the variant part of a record }
          maxsize, startvarrecsize : longint;
@@ -1518,18 +1836,27 @@ implementation
          srsymtable : TSymtable;
          visibility : tvisibility;
          recst : tabstractrecordsymtable;
+         recstlist : tfpobjectlist;
          unionsymtable : trecordsymtable;
          offset : longint;
          uniondef : trecorddef;
          hintsymoptions : tsymoptions;
          deprecatedmsg : pshortstring;
+<<<<<<< HEAD
          hadgendummy,
          semicoloneaten,
          removeclassoption: boolean;
+=======
+         semicoloneaten: boolean;
+>>>>>>> graemeg/cpstrnew
 {$if defined(powerpc) or defined(powerpc64)}
          tempdef: tdef;
          is_first_type: boolean;
 {$endif powerpc or powerpc64}
+<<<<<<< HEAD
+=======
+         sl: tpropaccesslist;
+>>>>>>> graemeg/cpstrnew
          old_block_type: tblock_type;
       begin
          old_block_type:=block_type;
@@ -1543,6 +1870,7 @@ implementation
            consume(_ID);
          { read vars }
          sc:=TFPObjectList.create(false);
+<<<<<<< HEAD
          removeclassoption:=false;
          had_generic:=false;
          while (token=_ID) and
@@ -1551,6 +1879,13 @@ implementation
                 ((idtoken in [_PUBLIC,_PRIVATE,_PUBLISHED,_PROTECTED,_STRICT]) or
                  ((m_final_fields in current_settings.modeswitches) and
                   (idtoken=_FINAL)))) do
+=======
+         recstlist:=TFPObjectList.create(false);;
+         while (token=_ID) and
+            not(((vd_object in options) or
+                 ((vd_record in options) and (m_advanced_records in current_settings.modeswitches))) and
+                (idtoken in [_PUBLIC,_PRIVATE,_PUBLISHED,_PROTECTED,_STRICT])) do
+>>>>>>> graemeg/cpstrnew
            begin
              visibility:=symtablestack.top.currentvisibility;
              semicoloneaten:=false;
@@ -1590,6 +1925,7 @@ implementation
                block_type:=bt_var_type
              else
                block_type:=old_block_type;
+<<<<<<< HEAD
              if had_generic and (sc.count=0) then
                break;
              consume(_COLON);
@@ -1629,6 +1965,36 @@ implementation
                        end;
                      stowner:=tdef(stowner.owner.defowner);
                    end;
+=======
+             consume(_COLON);
+
+             { Don't search for types where they can't be:
+               types can be only in objects, classes and records.
+               This just speedup the search a bit. }
+             recstlist.count:=0;
+             if not is_class_or_object(tdef(recst.defowner)) and
+                not is_record(tdef(recst.defowner)) then
+               begin
+                 recstlist.add(recst);
+                 symtablestack.pop(recst);
+               end;
+             read_anon_type(hdef,false);
+             block_type:=bt_var;
+             { allow only static fields reference to struct where they are declared }
+             if not (vd_class in options) and
+               (is_object(hdef) or is_record(hdef)) and
+               is_owned_by(tabstractrecorddef(recst.defowner),tabstractrecorddef(hdef)) then
+               begin
+                 Message1(type_e_type_is_not_completly_defined, tabstractrecorddef(hdef).RttiName);
+                 { for error recovery or compiler will crash later }
+                 hdef:=generrordef;
+               end;
+             { restore stack }
+             for i:=recstlist.count-1 downto 0 do
+               begin
+                 recst:=tabstractrecordsymtable(recstlist[i]);
+                 symtablestack.push(recst);
+>>>>>>> graemeg/cpstrnew
                end;
 
              { Process procvar directives }
@@ -1646,8 +2012,12 @@ implementation
                  (32-bit) alignment, in which case the alignment is determined by
                  the alignment of the first field.  */
              }
+<<<<<<< HEAD
              { TODO: check whether this is also for AIX }
              if (target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) and
+=======
+             if (target_info.system in [system_powerpc_darwin, system_powerpc_macos, system_powerpc64_darwin]) and
+>>>>>>> graemeg/cpstrnew
                 is_first_type and
                 (symtablestack.top.symtabletype=recordsymtable) and
                 (trecordsymtable(symtablestack.top).usefieldalignment=C_alignment) then
@@ -1707,11 +2077,26 @@ implementation
                 (hdef.typesym=nil) then
                handle_calling_convention(tprocvardef(hdef));
 
+<<<<<<< HEAD
+             if (vd_object in options) then
+=======
+             { check if it is a class field }
              if (vd_object in options) then
                begin
                  { if it is not a class var section and token=STATIC then it is a class field too }
                  if not (vd_class in options) and try_to_consume(_STATIC) then
                    begin
+                     consume(_SEMICOLON);
+                     include(options, vd_class);
+                   end;
+               end;
+             if vd_class in options then
+>>>>>>> graemeg/cpstrnew
+               begin
+                 { if it is not a class var section and token=STATIC then it is a class field too }
+                 if not (vd_class in options) and try_to_consume(_STATIC) then
+                   begin
+<<<<<<< HEAD
                      consume(_SEMICOLON);
                      include(options,vd_class);
                      removeclassoption:=true;
@@ -1721,6 +2106,21 @@ implementation
                  if is_java_class_or_interface(tdef(recst.defowner)) and
                     (oo_is_external in tobjectdef(recst.defowner).objectoptions) then
                    try_read_field_external_sc(sc);
+=======
+                     fieldvs:=tfieldvarsym(sc[i]);
+                     include(fieldvs.symoptions,sp_static);
+                     { generate the symbol which reserves the space }
+                     static_name:=lower(generate_nested_name(recst,'_'))+'_'+fieldvs.name;
+                     hstaticvs:=tstaticvarsym.create('$_static_'+static_name,vs_value,hdef,[]);
+                     include(hstaticvs.symoptions,sp_internal);
+                     recst.get_unit_symtable.insert(hstaticvs);
+                     insertbssdata(hstaticvs);
+                     { generate the symbol for the access }
+                     sl:=tpropaccesslist.create;
+                     sl.addsym(sl_load,hstaticvs);
+                     recst.insert(tabsolutevarsym.create_ref('$'+static_name,hdef,sl));
+                   end;
+>>>>>>> graemeg/cpstrnew
                end;
              if (visibility=vis_published) and
                 not(is_class(hdef)) then
@@ -1773,6 +2173,7 @@ implementation
                  table }
                reorderlist.concatlistcopy(sc)
            end;
+          recstlist.free;
 
          if m_delphi in current_settings.modeswitches then
            block_type:=bt_var_type
@@ -1822,8 +2223,13 @@ implementation
                 Message(type_e_ordinal_expr_expected);
               consume(_OF);
 
+<<<<<<< HEAD
               UnionSymtable:=trecordsymtable.create('',current_settings.packrecords,current_settings.alignment.recordalignmin,current_settings.alignment.maxCrecordalign);
               UnionDef:=crecorddef.create('',unionsymtable);
+=======
+              UnionSymtable:=trecordsymtable.create('',current_settings.packrecords);
+              UnionDef:=trecorddef.create('',unionsymtable);
+>>>>>>> graemeg/cpstrnew
               uniondef.isunion:=true;
 
               startvarrecsize:=UnionSymtable.datasize;
@@ -1837,6 +2243,7 @@ implementation
                 fillchar(variantdesc^^.branches[high(variantdesc^^.branches)],
                   sizeof(variantdesc^^.branches[high(variantdesc^^.branches)]),0);
                 repeat
+<<<<<<< HEAD
                   pt:=comp_expr([ef_accept_equal]);
                   if not(pt.nodetype=ordconstn) then
                     Message(parser_e_illegal_expression);
@@ -1851,6 +2258,13 @@ implementation
                           values[high(values)]:=tordconstnode(pt).value;
                         end;
                     end;
+=======
+                  pt:=comp_expr(true,false);
+                  if not(pt.nodetype=ordconstn) then
+                    Message(parser_e_illegal_expression);
+                  if try_to_consume(_POINTPOINT) then
+                    pt:=crangenode.create(pt,comp_expr(true,false));
+>>>>>>> graemeg/cpstrnew
                   pt.free;
                   if token=_COMMA then
                     consume(_COMMA)

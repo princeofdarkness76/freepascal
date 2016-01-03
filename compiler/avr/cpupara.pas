@@ -40,11 +40,16 @@ unit cpupara;
           function ret_in_param(def:tdef;pd:tabstractprocdef):boolean;override;
           function create_paraloc_info(p : tabstractprocdef; side: tcallercallee):longint;override;
           function create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;override;
+<<<<<<< HEAD
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
+=======
+          function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
+>>>>>>> graemeg/cpstrnew
          private
           procedure init_values(var curintreg, curfloatreg, curmmreg: tsuperregister; var cur_stack_offset: aword);
           function create_paraloc_info_intern(p : tabstractprocdef; side: tcallercallee; paras: tparalist;
             var curintreg, curfloatreg, curmmreg: tsuperregister; var cur_stack_offset: aword):longint;
+          procedure create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
        end;
 
   implementation
@@ -204,7 +209,11 @@ unit cpupara;
         begin
           { In case of po_delphi_nested_cc, the parent frame pointer
             is always passed on the stack. }
+<<<<<<< HEAD
            if (nextintreg>RS_R9) and
+=======
+           if (nextintreg<=RS_R3) and
+>>>>>>> graemeg/cpstrnew
               (not(vo_is_parentfp in hp.varoptions) or
                not(po_delphi_nested_cc in p.procoptions)) then
              begin
@@ -401,6 +410,7 @@ unit cpupara;
      end;
 
 
+<<<<<<< HEAD
     { TODO : fix tavrparamanager.get_funcretloc }
     function  tcpuparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;
       var
@@ -414,6 +424,55 @@ unit cpupara;
         paraloc:=result.add_location;
         { Return in FPU register? }
         if result.def.typ=floatdef then
+=======
+    procedure tavrparamanager.create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
+      begin
+        p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
+      end;
+
+
+    function  tavrparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
+      var
+        retcgsize : tcgsize;
+        paraloc : pcgparalocation;
+      begin
+        result.init;
+        result.alignment:=get_para_align(p.proccalloption);
+        { void has no location }
+        if is_void(def) then
+          begin
+            paraloc:=result.add_location;
+            result.size:=OS_NO;
+            result.intsize:=0;
+            paraloc^.size:=OS_NO;
+            paraloc^.loc:=LOC_VOID;
+            exit;
+          end;
+        { Constructors return self instead of a boolean }
+        if (p.proctypeoption=potype_constructor) then
+          begin
+            retcgsize:=OS_ADDR;
+            result.intsize:=sizeof(pint);
+          end
+        else
+          begin
+            retcgsize:=def_cgsize(def);
+            result.intsize:=def.size;
+          end;
+        result.size:=retcgsize;
+        { Return is passed as var parameter }
+        if ret_in_param(def,p.proccalloption) then
+          begin
+            paraloc:=result.add_location;
+            paraloc^.loc:=LOC_REFERENCE;
+            paraloc^.size:=retcgsize;
+            exit;
+          end;
+
+        paraloc:=result.add_location;
+        { Return in FPU register? }
+        if def.typ=floatdef then
+>>>>>>> graemeg/cpstrnew
           begin
             if (p.proccalloption in [pocall_softfloat]) or (cs_fp_emulation in current_settings.moduleswitches) then
               begin
@@ -424,12 +483,18 @@ unit cpupara;
                       paraloc^.loc:=LOC_REGISTER;
                       paraloc^.register:=NR_FUNCTION_RESULT64_LOW_REG;
                       paraloc^.size:=OS_32;
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
                       paraloc:=result.add_location;
                       paraloc^.loc:=LOC_REGISTER;
                       paraloc^.register:=NR_FUNCTION_RESULT64_HIGH_REG;
                       paraloc^.size:=OS_32;
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
                     end;
                   OS_32,
                   OS_F32:
@@ -437,7 +502,10 @@ unit cpupara;
                       paraloc^.loc:=LOC_REGISTER;
                       paraloc^.register:=NR_FUNCTION_RETURN_REG;
                       paraloc^.size:=OS_32;
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
                     end;
                   else
                     internalerror(2005082603);
@@ -448,7 +516,10 @@ unit cpupara;
                 paraloc^.loc:=LOC_FPUREGISTER;
                 paraloc^.register:=NR_FPU_RESULT_REG;
                 paraloc^.size:=retcgsize;
+<<<<<<< HEAD
                 paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
               end;
           end
           { Return in register }
@@ -508,20 +579,31 @@ unit cpupara;
                 paraloc^.loc:=LOC_REGISTER;
                 paraloc^.register:=NR_FUNCTION_RESULT64_LOW_REG;
                 paraloc^.size:=OS_32;
+<<<<<<< HEAD
                 paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
                 paraloc:=result.add_location;
                 paraloc^.loc:=LOC_REGISTER;
                 paraloc^.register:=NR_FUNCTION_RESULT64_HIGH_REG;
                 paraloc^.size:=OS_32;
+<<<<<<< HEAD
                 paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
               end
             else
               begin
                 paraloc^.loc:=LOC_REGISTER;
                 paraloc^.register:=NR_FUNCTION_RETURN_REG;
+<<<<<<< HEAD
                 paraloc^.size:=OS_INT;
                 paraloc^.def:=u16inttype;
               end;}
+=======
+                paraloc^.size:=OS_32;
+              end;
+>>>>>>> graemeg/cpstrnew
           end;
       end;
 

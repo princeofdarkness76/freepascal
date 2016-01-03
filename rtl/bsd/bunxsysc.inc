@@ -55,7 +55,10 @@ begin
 {$endif}
 end;
 
+<<<<<<< HEAD
 {$ifndef FPC_SYS_SIGTIMEDWAIT_UNAVAILABLE}
+=======
+>>>>>>> graemeg/cpstrnew
 function fpsigtimedwait(const sigset:TSigSet;info:Psiginfo;timeout:Ptimespec):cint;
 
 begin
@@ -64,7 +67,10 @@ begin
                              Tsysparam(info),
                              Tsysparam(timeout));
 end;
+<<<<<<< HEAD
 {$endif ndef FPC_SYS_SIGTIMEDWAIT_UNAVAILABLE}
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 Type // implementation side for now. Should move to BSD unit.

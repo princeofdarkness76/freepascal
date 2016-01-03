@@ -24,9 +24,13 @@ uses
     flatsb, winver, mmsystem, comconst, commctrl, comobj, commdlg,
     ole2, activex, shellapi, shlobj, oleserver,  shfolder, richedit,
     imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils,
+<<<<<<< HEAD
     comserv, winspool, imm, imm_dyn, nb30, win9xwsmanager, stdole2, 
     eventsink, typelib, libkinect10, urlmon,
     shlwapi;
+=======
+    comserv, winspool, imm, imm_dyn, nb30;
+>>>>>>> graemeg/cpstrnew
 
 implementation
 

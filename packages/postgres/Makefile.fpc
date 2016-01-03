@@ -4,7 +4,15 @@
 
 [package]
 name=postgres
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=dllist dllistdyn postgres postgres3 postgres3dyn
+exampledirs=examples
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

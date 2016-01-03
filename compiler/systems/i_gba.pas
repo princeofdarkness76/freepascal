@@ -88,9 +88,13 @@ unit i_gba;
               );
             first_parm_offset : 8;
             stacksize    : 16384;
+<<<<<<< HEAD
             stackalign   : 8;
             abi : abi_eabi;
             llvmdatalayout : 'todo';
+=======
+            abi : abi_eabi
+>>>>>>> graemeg/cpstrnew
           );
 
   implementation

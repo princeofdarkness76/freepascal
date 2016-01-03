@@ -1,6 +1,17 @@
 {	CFStream.h
+<<<<<<< HEAD
 	Copyright (c) 2000-2013, Apple Inc. All rights reserved.
 }
+=======
+	Copyright (c) 2000-2009, Apple Inc. All rights reserved.
+}
+{	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
+{	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+{     Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+{   Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
+{	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -55,11 +66,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -75,6 +89,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -94,17 +109,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -159,6 +195,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -195,7 +264,11 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,MacOSXPosix,CFBase,CFString,CFDictionary,CFURL,CFRunLoop,CFSocket,CFError;
+=======
+uses MacTypes,CFBase,CFString,CFDictionary,CFURL,CFRunLoop,CFSocket,CFError;
+>>>>>>> graemeg/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -233,8 +306,14 @@ type
 	end;
 
 type
+<<<<<<< HEAD
 	CFReadStreamRef = ^__CFReadStream; { an opaque type }
 	__CFReadStream = record end;
+=======
+	CFReadStreamRef = ^SInt32; { an opaque type }
+	CFReadStreamRefPtr = ^CFReadStreamRef;
+	CFWriteStreamRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	CFWriteStreamRefPtr = ^CFWriteStreamRef;
 	CFWriteStreamRef = ^__CFWriteStream; { an opaque type }
 	__CFWriteStream = record end;
@@ -264,9 +343,13 @@ function CFWriteStreamCreateWithAllocatedBuffers( alloc: CFAllocatorRef; bufferA
 { File streams }
 function CFReadStreamCreateWithFile( alloc: CFAllocatorRef; fileURL: CFURLRef ): CFReadStreamRef; external name '_CFReadStreamCreateWithFile';
 function CFWriteStreamCreateWithFile( alloc: CFAllocatorRef; fileURL: CFURLRef ): CFWriteStreamRef; external name '_CFWriteStreamCreateWithFile';
+<<<<<<< HEAD
 { CF_IMPLICIT_BRIDGING_DISABLED }
 procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef; transferBufferSize: CFIndex ); external name '_CFStreamCreateBoundPair';
 { CF_IMPLICIT_BRIDGING_ENABLED }
+=======
+procedure CFStreamCreateBoundPair( alloc: CFAllocatorRef; var readStream: CFReadStreamRef; var writeStream: CFWriteStreamRef; transferBufferSize: CFIndex ); external name '_CFStreamCreateBoundPair';
+>>>>>>> graemeg/cpstrnew
 
 {#if MAC_OS_X_VERSION_10_2 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 { Property for file write streams; value should be a CFBoolean.  Set to TRUE to append to a file, rather than to replace its contents }
@@ -304,9 +387,15 @@ function CFWriteStreamGetStatus( stream: CFWriteStreamRef ): CFStreamStatus; ext
 
 { Returns NULL if no error has occurred; otherwise returns the error. }
 function CFReadStreamCopyError( stream: CFReadStreamRef ): CFErrorRef; external name '_CFReadStreamCopyError';
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
 function CFWriteStreamCopyError( stream: CFWriteStreamRef ): CFErrorRef; external name '_CFWriteStreamCopyError';
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+function CFWriteStreamCopyError( stream: CFWriteStreamRef ): CFErrorRef; external name '_CFWriteStreamCopyError';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 { Returns success/failure.  Opening a stream causes it to reserve all the system
    resources it requires.  If the stream can open non-blocking, this will always 
@@ -389,6 +478,14 @@ function CFWriteStreamSetProperty( stream: CFWriteStreamRef; propertyName: CFStr
    is that your callback be called), you should pass in a valid context where every
    entry is 0 or NULL.
 
+<<<<<<< HEAD
+=======
+   NOTE: Unlike other CoreFoundation APIs, pasing a NULL clientContext here will remove
+   the client.  If you do not care about the client context (i.e. your only concern
+   is that your callback be called), you should pass in a valid context where every
+   entry is 0 or NULL.
+
+>>>>>>> graemeg/cpstrnew
 }
 
 function CFReadStreamSetClient( stream: CFReadStreamRef; streamEvents: CFOptionFlags; clientCB: CFReadStreamClientCallBack; var clientContext: CFStreamClientContext ): Boolean; external name '_CFReadStreamSetClient';
@@ -423,6 +520,28 @@ function CFReadStreamCopyDispatchQueue( stream: CFReadStreamRef ): dispatch_queu
 
 function CFWriteStreamCopyDispatchQueue( stream: CFWriteStreamRef ): dispatch_queue_t; external name '_CFWriteStreamCopyDispatchQueue';
 (* CF_AVAILABLE_STARTING(10_9, 7_0) *)
+
+{ The following API is deprecated starting in 10.5; please use CFRead/WriteStreamCopyError(), above, instead }
+const
+	kCFStreamErrorDomainCustom = -1;      { custom to the kind of stream in question }
+	kCFStreamErrorDomainPOSIX = 1;        { POSIX errno; interpret using <sys/errno.h> }
+	kCFStreamErrorDomainMacOSStatus = 2;      { OSStatus type from Carbon APIs; interpret using <MacTypes.h> }
+type
+	CFStreamErrorDomain = CFIndex;
+
+type
+	CFStreamError = record
+		domain: CFIndex; 
+		error: SInt32;
+	end;
+	CFStreamErrorPtr = ^CFStreamError;
+
+{ 0 is returned if no error has occurred.  errorDomain specifies the domain
+   in which the error code should be interpretted; pass NULL if you are not 
+   interested. }
+function CFReadStreamGetError( stream: CFReadStreamRef ): CFStreamError; external name '_CFReadStreamGetError';
+function CFWriteStreamGetError( stream: CFWriteStreamRef ): CFStreamError; external name '_CFWriteStreamGetError';
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 { The following API is deprecated starting in 10.5; please use CFRead/WriteStreamCopyError(), above, instead }
 const

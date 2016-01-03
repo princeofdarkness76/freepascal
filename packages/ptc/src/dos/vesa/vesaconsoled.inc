@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -30,10 +34,17 @@
 }
 
 type
+<<<<<<< HEAD
   TVESAConsole = class(TPTCOpenGLLessConsole)
   private
     { data }
     FModes: array of IPTCMode;
+=======
+  TVESAConsole = class(TPTCBaseConsole)
+  private
+    { data }
+    FModes: array of TPTCMode;
+>>>>>>> graemeg/cpstrnew
     FModesLast: Integer;
     FModesN: array of record
       Index: Integer;
@@ -66,6 +77,7 @@ type
     FDefaultWidth: Integer;
     FDefaultHeight: Integer;
 //    FDefaultPages: Integer;
+<<<<<<< HEAD
     FDefaultFormat: IPTCFormat;
 
     { objects }
@@ -76,6 +88,18 @@ type
 
 //    FClear: TPTCClear;
     FPalette: IPTCPalette;
+=======
+    FDefaultFormat: TPTCFormat;
+
+    { objects }
+    FCopy: TPTCCopy;
+    FArea: TPTCArea;
+    FClip: TPTCArea;
+//    FFormat: TPTCFormat;
+
+//    FClear: TPTCClear;
+    FPalette: TPTCPalette;
+>>>>>>> graemeg/cpstrnew
 
     FEventQueue: TEventQueue;
 
@@ -85,7 +109,11 @@ type
 
     { internal console management routines }
     procedure internal_close;
+<<<<<<< HEAD
     function FindBestMode(const AMode: IPTCMode): Integer;
+=======
+    function FindBestMode(const AMode: TPTCMode): Integer;
+>>>>>>> graemeg/cpstrnew
     
     procedure UpdateModeList;
     procedure EnableLFB;
@@ -101,6 +129,7 @@ type
   public
     constructor Create; override;
     destructor Destroy; override;
+<<<<<<< HEAD
     procedure Configure(const AFileName: string); override;
     function Option(const AOption: string): Boolean; override;
     function Modes: TPTCModeList; override;
@@ -110,19 +139,38 @@ type
     procedure Open(const ATitle: string; AWidth, AHeight: Integer;
                    AFormat: IPTCFormat; APages: Integer); overload; override;
     procedure Open(const ATitle: string; AMode: IPTCMode;
+=======
+    procedure Configure(const AFileName: String); override;
+    function Option(const AOption: String): Boolean; override;
+    function Modes: PPTCMode; override;
+    procedure Open(const ATitle: string; APages: Integer); overload; override;
+    procedure Open(const ATitle: string; const AFormat: TPTCFormat;
+                   APages: Integer); overload; override;
+    procedure Open(const ATitle: string; AWidth, AHeight: Integer;
+                   const AFormat: TPTCFormat; APages: Integer); overload; override;
+    procedure Open(const ATitle: string; const AMode: TPTCMode;
+>>>>>>> graemeg/cpstrnew
                    APages: Integer); overload; override;
     procedure Close; override;
     procedure Flush; override;
     procedure Finish; override;
     procedure Update; override;
+<<<<<<< HEAD
     procedure Update(AArea: IPTCArea); override;
     procedure Copy(ASurface: IPTCSurface); override;
     procedure Copy(ASurface: IPTCSurface;
                    ASource, ADestination: IPTCArea); override;
+=======
+    procedure Update(const AArea: TPTCArea); override;
+    procedure Copy(ASurface: TPTCBaseSurface); override;
+    procedure Copy(ASurface: TPTCBaseSurface;
+                   const ASource, ADestination: TPTCArea); override;
+>>>>>>> graemeg/cpstrnew
     function Lock: Pointer; override;
     procedure Unlock; override;
     procedure Load(const APixels: Pointer;
                    AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
                    AFormat: IPTCFormat;
                    APalette: IPTCPalette); override;
     procedure Load(const APixels: Pointer;
@@ -146,10 +194,36 @@ type
     procedure Palette(APalette: IPTCPalette); override;
     function Palette: IPTCPalette; override;
     procedure Clip(AArea: IPTCArea); override;
+=======
+                   const AFormat: TPTCFormat;
+                   const APalette: TPTCPalette); override;
+    procedure Load(const APixels: Pointer;
+                   AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat;
+                   const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); override;
+    procedure Save(APixels: Pointer;
+                   AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat;
+                   const APalette: TPTCPalette); override;
+    procedure Save(APixels: Pointer;
+                   AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat;
+                   const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); override;
+    procedure Clear; override;
+    procedure Clear(const AColor: TPTCColor); override;
+    procedure Clear(const AColor: TPTCColor;
+                    const AArea: TPTCArea); override;
+    procedure Palette(const APalette: TPTCPalette); override;
+    function Palette: TPTCPalette; override;
+    procedure Clip(const AArea: TPTCArea); override;
+>>>>>>> graemeg/cpstrnew
     function GetWidth: Integer; override;
     function GetHeight: Integer; override;
     function GetPitch: Integer; override;
     function GetPages: Integer; override;
+<<<<<<< HEAD
     function GetArea: IPTCArea; override;
     function Clip: IPTCArea; override;
     function GetFormat: IPTCFormat; override;
@@ -158,4 +232,14 @@ type
     function GetInformation: string; override;
     function NextEvent(out AEvent: IPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): IPTCEvent; override;
+=======
+    function GetArea: TPTCArea; override;
+    function Clip: TPTCArea; override;
+    function GetFormat: TPTCFormat; override;
+    function GetName: string; override;
+    function GetTitle: string; override;
+    function GetInformation: string; override;
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+>>>>>>> graemeg/cpstrnew
   end;

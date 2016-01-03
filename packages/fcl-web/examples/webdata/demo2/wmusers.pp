@@ -5,7 +5,11 @@ unit wmusers;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, fpwebdata, extjsjson, extjsxml,
+=======
+  Classes, SysUtils, FileUtil, LResources, fpwebdata, extjsjson, extjsxml,
+>>>>>>> graemeg/cpstrnew
   HTTPDefs, websession, fpHTTP, fpWeb, dbf, db;
 
 type
@@ -34,8 +38,11 @@ var
 
 implementation
 
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 uses dbugintf;
 
 { TFPWebModule1 }
@@ -82,6 +89,10 @@ begin
 end;
 
 initialization
+<<<<<<< HEAD
+=======
+  {$I wmusers.lrs}
+>>>>>>> graemeg/cpstrnew
   RegisterHTTPModule('Provider', TFPWebModule1);
 end.
 

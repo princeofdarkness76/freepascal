@@ -33,12 +33,15 @@ type
     procedure SeveralEditsChange(ADataset: TCustomBufDataset);
     procedure DeleteAllChange(ADataset: TCustomBufDataset);
     procedure DeleteAllInsertChange(ADataset: TCustomBufDataset);
+<<<<<<< HEAD
     procedure NullInsertChange(ADataset: TCustomBufDataset);
     procedure NullEditChange(ADataset: TCustomBufDataset);
     procedure AppendDeleteChange(ADataset: TCustomBufDataset);
 
     procedure TestStreamingDataFields(AFormat: TDataPacketFormat);
     procedure TestStreamingNullFields(AFormat: TDataPacketFormat);
+=======
+>>>>>>> graemeg/cpstrnew
   protected
     procedure SetUp; override;
     procedure TearDown; override;
@@ -81,11 +84,14 @@ type
 
     procedure TestAppendDeleteBIN;
 
+<<<<<<< HEAD
     procedure TestFileNameProperty;
     procedure TestXmlFileRecognition;
     procedure TestCloseDatasetNoConnection; // bug 17623
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 implementation
 
 uses toolsunit, SQLDBToolsUnit, sqldb, XMLDatapacketReader;
@@ -148,6 +154,7 @@ begin
   CompareDatasets(OrgDs,ChangedDs);
 end;
 
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.TestChanges(AUpdDatasetProc: TUpdDatasetProc;
   AFormat: TDataPacketFormat);
 var FileName: string;
@@ -160,6 +167,19 @@ begin
   SaveDs.Open;
   AUpdDatasetProc(SaveDs);
   SaveDs.SaveToFile(FileName, AFormat);
+=======
+procedure TTestBufDatasetStreams.TestChangesXML(AUpdDatasetProc: TUpdDatasetProc);
+var SaveDs,
+    LoadDs : TCustomBufDataset;
+begin
+  SaveDs := DBConnector.GetNDataset(true,15) as TCustomBufDataset;
+  SaveDs.Open;
+  AUpdDatasetProc(SaveDs);
+  SaveDs.SaveToFile('Basics.xml',dfXML);
+
+  LoadDs := TCustomBufDataset.Create(nil);
+  LoadDs.LoadFromFile('Basics.xml');
+>>>>>>> graemeg/cpstrnew
 
   LoadDs := TCustomBufDataset.Create(nil);
   LoadDs.LoadFromFile(FileName);
@@ -175,12 +195,15 @@ begin
   DeleteFile(FileName);
 end;
 
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.TestChangesXML(AUpdDatasetProc: TUpdDatasetProc);
 begin
   TestChanges(AUpdDatasetProc, dfXML);
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TTestBufDatasetStreams.SimpleEditChange(ADataset: TCustomBufDataset);
 begin
   ADataset.next;
@@ -417,7 +440,11 @@ begin
   SaveDs.SaveToFile(TestXMLFileName, dfXML);
 
   LoadDs := TCustomBufDataset.Create(nil);
+<<<<<<< HEAD
   LoadDs.LoadFromFile(TestXMLFileName);
+=======
+  LoadDs.LoadFromFile('Basics.xml');
+>>>>>>> graemeg/cpstrnew
   CompareDatasets(SaveDs,LoadDs);
   LoadDs.Free;
 end;
@@ -656,11 +683,19 @@ begin
   ds := DBConnector.GetNDataset(true,5);
 
   ds.open;
+<<<<<<< HEAD
   TCustomBufDataset(ds).FileName:=TestBINFileName;
   ds.close;
 
   LoadDs := DBConnector.GetNDataset(True,2);
   TCustomBufDataset(LoadDs).FileName:=TestBINFileName;
+=======
+  TCustomBufDataset(ds).FileName:='test.dat';
+  ds.close;
+
+  LoadDs := DBConnector.GetNDataset(True,2);
+  TCustomBufDataset(LoadDs).FileName:='test.dat';
+>>>>>>> graemeg/cpstrnew
   LoadDs.Open;
 
   ds := DBConnector.GetNDataset(true,4);
@@ -751,6 +786,7 @@ begin
   TestChangesApplyUpdates(@DeleteAllInsertChange, False);
 end;
 
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.NullInsertUpdateApplUpd;
 begin
   TestChangesApplyUpdates(@NullInsertChange, True);
@@ -769,6 +805,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 initialization
   if uppercase(dbconnectorname)='SQL' then
     RegisterTestDecorator(TDBBasicsTestSetup, TTestBufDatasetStreams);

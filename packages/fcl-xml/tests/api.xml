@@ -263,6 +263,7 @@
 <item id="documentURI" type="prop"/>
 <item id="baseURI"/>
 <!--
+<item id="baseURI"/>
 // assertNotEquals
 // assertLowerSeverity
 
@@ -289,7 +290,10 @@
 <item id="inputEncoding"/>
 <item id="xmlEncoding"/>
 <item id="xmlVersion" type="prop"/>
+<<<<<<< HEAD
 <item id="xmlStandalone" type="prop"/>
+=======
+>>>>>>> graemeg/cpstrnew
 
 <!-- XPath -->
 

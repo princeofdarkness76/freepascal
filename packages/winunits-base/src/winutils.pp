@@ -13,17 +13,26 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 {$mode objfpc}{$H+}
+=======
+{$mode objfpc}
+>>>>>>> graemeg/cpstrnew
 unit winutils;
 
 Interface
 
+<<<<<<< HEAD
 Uses Windows, ComObj, ActiveX;
+=======
+Uses Windows;
+>>>>>>> graemeg/cpstrnew
 
 // returns True if the currently logged Windows user has Administrator rights. Delphi.about.com
 // From Delphi.about.com with permission, http://delphi.about.com/od/delphitips2007/qt/is_win_admin.htm
 function IsWindowsAdmin: Boolean;
 
+<<<<<<< HEAD
 // Removes Browsers "downloaded" attribute from a file.
 procedure UnBlockFile(const name:String);
 
@@ -42,6 +51,8 @@ procedure AddProgramExceptionToFireWall(Const wsCaption, wsDescription, wsExecut
 // remove firewall rule, e.g.  RemoveExceptionFromFW(Application.Title);
 procedure RemoveExceptionFromFW(Const exCaption: WideString);
 
+=======
+>>>>>>> graemeg/cpstrnew
 implementation
 
 const
@@ -97,6 +108,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure UnBlockFile(const name:String);
 var f : file;
 begin
@@ -133,4 +145,6 @@ begin
   fwPolicy2.Rules.Remove(exCaption);
 end;   
 
+=======
+>>>>>>> graemeg/cpstrnew
 end.

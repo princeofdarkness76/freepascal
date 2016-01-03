@@ -39,6 +39,10 @@ Type
     Constructor Create;
     Destructor Destroy;override;
     Procedure LoadGlobalDefaults;
+<<<<<<< HEAD
+=======
+    Procedure LoadCompilerDefaults;
+>>>>>>> graemeg/cpstrnew
     Procedure ProcessCommandLine(FirstPass: boolean);
     Procedure DoRun; Override;
   end;
@@ -52,6 +56,11 @@ procedure TMakeTool.LoadGlobalDefaults;
 var
   i : integer;
   cfgfile : String;
+<<<<<<< HEAD
+=======
+  GeneratedConfig,
+  UseGlobalConfig : boolean;
+>>>>>>> graemeg/cpstrnew
 begin
   // Default verbosity
   LogLevels:=DefaultLogLevels;
@@ -61,12 +70,60 @@ begin
         LogLevels:=AllLogLevels+[llDebug];
         break;
       end;
+<<<<<<< HEAD
   // First try config file from command line
   if HasOption('C','config-file') then
     cfgfile:=GetOptionValue('C','config-file')
   else
     cfgfile:='';
   pkgoptions.LoadGlobalDefaults(cfgfile);
+=======
+  GeneratedConfig:=false;
+  UseGlobalConfig:=false;
+  // First try config file from command line
+  if HasOption('C','config-file') then
+    begin
+      cfgfile:=GetOptionValue('C','config-file');
+      if not FileExists(cfgfile) then
+        Error(SErrNoSuchFile,[cfgfile]);
+    end
+  else
+    begin
+      // Now try if a local config-file exists
+      cfgfile:=GetAppConfigFile(False,False);
+      if not FileExists(cfgfile) then
+        begin
+          // If not, try to find a global configuration file
+          cfgfile:=GetAppConfigFile(True,False);
+          if FileExists(cfgfile) then
+            UseGlobalConfig := true
+          else
+            begin
+              // Create a new configuration file
+              if not IsSuperUser then // Make a local, not global, configuration file
+                cfgfile:=GetAppConfigFile(False,False);
+              ForceDirectories(ExtractFilePath(cfgfile));
+              GlobalOptions.SaveGlobalToFile(cfgfile);
+              GeneratedConfig:=true;
+            end;
+        end;
+    end;
+  // Load file or create new default configuration
+  if not GeneratedConfig then
+    begin
+      GlobalOptions.LoadGlobalFromFile(cfgfile);
+      if GlobalOptions.SaveInifileChanges and (not UseGlobalConfig or IsSuperUser) then
+        GlobalOptions.SaveGlobalToFile(cfgfile);
+    end;
+  GlobalOptions.CompilerConfig:=GlobalOptions.DefaultCompilerConfig;
+  // Tracing of what we've done above, need to be done after the verbosity is set
+  if GeneratedConfig then
+    pkgglobals.Log(vlDebug,SLogGeneratingGlobalConfig,[cfgfile])
+  else
+    pkgglobals.Log(vlDebug,SLogLoadingGlobalConfig,[cfgfile]);
+  // Log configuration
+  GlobalOptions.LogValues(vlDebug);
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -78,6 +135,54 @@ begin
 end;
 
 
+<<<<<<< HEAD
+=======
+procedure TMakeTool.LoadCompilerDefaults;
+var
+  S : String;
+begin
+  // Load default compiler config
+  S:=GlobalOptions.CompilerConfigDir+GlobalOptions.CompilerConfig;
+  CompilerOptions.UpdateLocalRepositoryOption;
+  if FileExists(S) then
+    begin
+      pkgglobals.Log(vlDebug,SLogLoadingCompilerConfig,[S]);
+      CompilerOptions.LoadCompilerFromFile(S)
+    end
+  else
+    begin
+      // Generate a default configuration if it doesn't exists
+      if GlobalOptions.CompilerConfig='default' then
+        begin
+          pkgglobals.Log(vlDebug,SLogGeneratingCompilerConfig,[S]);
+          CompilerOptions.InitCompilerDefaults;
+          CompilerOptions.SaveCompilerToFile(S);
+          if CompilerOptions.SaveInifileChanges then
+            CompilerOptions.SaveCompilerToFile(S);
+        end
+      else
+        Error(SErrMissingCompilerConfig,[S]);
+    end;
+  // Log compiler configuration
+  CompilerOptions.LogValues(vlDebug,'');
+  // Load FPMake compiler config, this is normally the same config as above
+  S:=GlobalOptions.CompilerConfigDir+GlobalOptions.FPMakeCompilerConfig;
+  FPMakeCompilerOptions.UpdateLocalRepositoryOption;
+  if FileExists(S) then
+    begin
+      pkgglobals.Log(vlDebug,SLogLoadingFPMakeCompilerConfig,[S]);
+      FPMakeCompilerOptions.LoadCompilerFromFile(S);
+      if FPMakeCompilerOptions.SaveInifileChanges then
+        FPMakeCompilerOptions.SaveCompilerToFile(S);
+    end
+  else
+    Error(SErrMissingCompilerConfig,[S]);
+  // Log compiler configuration
+  FPMakeCompilerOptions.LogValues(vlDebug,'fpmake-building ');
+end;
+
+
+>>>>>>> graemeg/cpstrnew
 procedure TMakeTool.ShowUsage;
 begin
   Writeln('Usage: ',Paramstr(0),' [options] <action> <package>');
@@ -105,12 +210,18 @@ begin
   Writeln('  build             Build package');
   Writeln('  compile           Compile package');
   Writeln('  install           Install package');
+<<<<<<< HEAD
   Writeln('  uninstall         Uninstall package');
+=======
+>>>>>>> graemeg/cpstrnew
   Writeln('  clean             Clean package');
   Writeln('  archive           Create archive of package');
   Writeln('  download          Download package');
   Writeln('  convertmk         Convert Makefile.fpc to fpmake.pp');
+<<<<<<< HEAD
   Writeln('  info              Show more information about a package');
+=======
+>>>>>>> graemeg/cpstrnew
   Writeln('  fixbroken         Recompile all (broken) packages with changed dependencies');
   Writeln('  listsettings      Show the values for all fppkg settings');
 //  Writeln('  addconfig          Add a compiler configuration for the supplied compiler');
@@ -322,7 +433,11 @@ begin
           pkghandler.ExecuteAction('','update');
         except
           on E: Exception do
+<<<<<<< HEAD
             pkgglobals.Log(llWarning,E.Message);
+=======
+            pkgglobals.Log(vlWarning,E.Message);
+>>>>>>> graemeg/cpstrnew
         end;
       end;
     LoadLocalAvailableRepository;
@@ -345,7 +460,11 @@ begin
         (ParaAction='install') or
         (ParaAction='archive')) then
       begin
+<<<<<<< HEAD
         pkgglobals.Log(llDebug,SLogCheckBrokenDependenvies);
+=======
+        pkgglobals.Log(vlDebug,SLogCheckBrokenDependenvies);
+>>>>>>> graemeg/cpstrnew
         SL:=TStringList.Create;
         if FindBrokenPackages(SL) then
           Error(SErrBrokenPackagesFound);
@@ -370,7 +489,11 @@ begin
               end
             else
               begin
+<<<<<<< HEAD
                 pkgglobals.Log(llDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
+=======
+                pkgglobals.Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
+>>>>>>> graemeg/cpstrnew
                 pkghandler.ExecuteAction(ParaPackages[i],ParaAction);
               end;
           end;

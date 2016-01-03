@@ -95,7 +95,10 @@ const
      i : longint;
      t : text;
      e : word;
+<<<<<<< HEAD
      c : longint;
+=======
+>>>>>>> graemeg/cpstrnew
 
 begin
    if paramcount<>2 then

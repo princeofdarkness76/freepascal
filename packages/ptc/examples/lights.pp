@@ -28,10 +28,17 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
   palette: IPTCPalette;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
   dx, dy: Integer;
   divisor: Single;
   data: PUint32;
@@ -78,12 +85,20 @@ begin
       palette := TPTCPaletteFactory.CreateNew;
 
       { generate greyscale palette }
+<<<<<<< HEAD
       data := palette.Lock;
+=======
+      data := palette.lock;
+>>>>>>> graemeg/cpstrnew
       try
         for i := 0 to 255 do
           data[i] := (i shl 16) or (i shl 8) or i;
       finally
+<<<<<<< HEAD
         palette.Unlock;
+=======
+        palette.unlock;
+>>>>>>> graemeg/cpstrnew
       end;
 
       { set console palette }
@@ -271,8 +286,16 @@ begin
         console.update;
       end;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      surface.Free;
+      console.Free;
+      palette.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

@@ -5,8 +5,22 @@
                  The contents of this header file are deprecated.
                  Use Foundation or CoreFoundation collection objects instead.
  
+<<<<<<< HEAD
      Copyright:  © 1989-2011 by Apple Inc. All rights reserved.
 }
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -61,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -81,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -100,17 +118,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -160,6 +199,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -236,6 +303,7 @@ const
     Attribute bits 16 through 31 (entire high word) are reserved for use by the Collection Manager.
     Only bits 31 (kCollectionLockBit) and 30 (kCollectionPersistenceBit) currently have meaning.
 }
+<<<<<<< HEAD
 const
 	kCollectionUser0Bit = 0;
 	kCollectionUser1Bit = 1;
@@ -273,6 +341,45 @@ const
 
 { attribute masks }
 const
+=======
+const
+	kCollectionUser0Bit = 0;
+	kCollectionUser1Bit = 1;
+	kCollectionUser2Bit = 2;
+	kCollectionUser3Bit = 3;
+	kCollectionUser4Bit = 4;
+	kCollectionUser5Bit = 5;
+	kCollectionUser6Bit = 6;
+	kCollectionUser7Bit = 7;
+	kCollectionUser8Bit = 8;
+	kCollectionUser9Bit = 9;
+	kCollectionUser10Bit = 10;
+	kCollectionUser11Bit = 11;
+	kCollectionUser12Bit = 12;
+	kCollectionUser13Bit = 13;
+	kCollectionUser14Bit = 14;
+	kCollectionUser15Bit = 15;
+	kCollectionReserved0Bit = 16;
+	kCollectionReserved1Bit = 17;
+	kCollectionReserved2Bit = 18;
+	kCollectionReserved3Bit = 19;
+	kCollectionReserved4Bit = 20;
+	kCollectionReserved5Bit = 21;
+	kCollectionReserved6Bit = 22;
+	kCollectionReserved7Bit = 23;
+	kCollectionReserved8Bit = 24;
+	kCollectionReserved9Bit = 25;
+	kCollectionReserved10Bit = 26;
+	kCollectionReserved11Bit = 27;
+	kCollectionReserved12Bit = 28;
+	kCollectionReserved13Bit = 29;
+	kCollectionPersistenceBit = 30;
+	kCollectionLockBit = 31;
+
+
+{ attribute masks }
+const
+>>>>>>> graemeg/cpstrnew
 	kCollectionUser0Mask = 1 shl kCollectionUser0Bit;
 	kCollectionUser1Mask = 1 shl kCollectionUser1Bit;
 	kCollectionUser2Mask = 1 shl kCollectionUser2Bit;
@@ -312,8 +419,12 @@ const
 {*********}
 { abstract data type for a collection }
 type
+<<<<<<< HEAD
 	Collection = ^OpaqueCollection; { an opaque type }
 	OpaqueCollection = record end;
+=======
+	Collection = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 { collection member 4 byte tag }
 type
 	CollectionTag = FourCharCode;
@@ -330,7 +441,11 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewCollectionFlattenUPP( userRoutine: CollectionFlattenProcPtr ): CollectionFlattenUPP; external name '_NewCollectionFlattenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewCollectionExceptionUPP()
@@ -341,7 +456,11 @@ function NewCollectionFlattenUPP( userRoutine: CollectionFlattenProcPtr ): Colle
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewCollectionExceptionUPP( userRoutine: CollectionExceptionProcPtr ): CollectionExceptionUPP; external name '_NewCollectionExceptionUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeCollectionFlattenUPP()
@@ -352,7 +471,11 @@ function NewCollectionExceptionUPP( userRoutine: CollectionExceptionProcPtr ): C
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeCollectionFlattenUPP( userUPP: CollectionFlattenUPP ); external name '_DisposeCollectionFlattenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeCollectionExceptionUPP()
@@ -363,7 +486,11 @@ procedure DisposeCollectionFlattenUPP( userUPP: CollectionFlattenUPP ); external
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeCollectionExceptionUPP( userUPP: CollectionExceptionUPP ); external name '_DisposeCollectionExceptionUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeCollectionFlattenUPP()
@@ -374,7 +501,11 @@ procedure DisposeCollectionExceptionUPP( userUPP: CollectionExceptionUPP ); exte
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeCollectionFlattenUPP( size: SInt32; data: UnivPtr; refCon: UnivPtr; userUPP: CollectionFlattenUPP ): OSErr; external name '_InvokeCollectionFlattenUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeCollectionExceptionUPP()
@@ -385,7 +516,11 @@ function InvokeCollectionFlattenUPP( size: SInt32; data: UnivPtr; refCon: UnivPt
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeCollectionExceptionUPP( c: Collection; status: OSErr; userUPP: CollectionExceptionUPP ): OSErr; external name '_InvokeCollectionExceptionUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {*******************************************}
 {************ Public interfaces ************}
@@ -399,7 +534,11 @@ function InvokeCollectionExceptionUPP( c: Collection; status: OSErr; userUPP: Co
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function NewCollection: Collection; external name '_NewCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -411,7 +550,11 @@ function NewCollection: Collection; external name '_NewCollection';
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 procedure DisposeCollection( c: Collection ); external name '_DisposeCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -423,7 +566,11 @@ procedure DisposeCollection( c: Collection ); external name '_DisposeCollection'
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function CloneCollection( c: Collection ): Collection; external name '_CloneCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -435,7 +582,11 @@ function CloneCollection( c: Collection ): Collection; external name '_CloneColl
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function CountCollectionOwners( c: Collection ): SInt32; external name '_CountCollectionOwners';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -447,7 +598,11 @@ function CountCollectionOwners( c: Collection ): SInt32; external name '_CountCo
  *    Non-Carbon CFM:   not available
  }
 function RetainCollection( c: Collection ): OSStatus; external name '_RetainCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -459,7 +614,11 @@ function RetainCollection( c: Collection ): OSStatus; external name '_RetainColl
  *    Non-Carbon CFM:   not available
  }
 function ReleaseCollection( c: Collection ): OSStatus; external name '_ReleaseCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -471,7 +630,11 @@ function ReleaseCollection( c: Collection ): OSStatus; external name '_ReleaseCo
  *    Non-Carbon CFM:   not available
  }
 function GetCollectionRetainCount( c: Collection ): ItemCount; external name '_GetCollectionRetainCount';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -483,7 +646,11 @@ function GetCollectionRetainCount( c: Collection ): ItemCount; external name '_G
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function CopyCollection( srcCollection: Collection; dstCollection: Collection ): Collection; external name '_CopyCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -495,7 +662,11 @@ function CopyCollection( srcCollection: Collection; dstCollection: Collection ):
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetCollectionDefaultAttributes( c: Collection ): SInt32; external name '_GetCollectionDefaultAttributes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -507,7 +678,11 @@ function GetCollectionDefaultAttributes( c: Collection ): SInt32; external name 
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 procedure SetCollectionDefaultAttributes( c: Collection; whichAttributes: SInt32; newAttributes: SInt32 ); external name '_SetCollectionDefaultAttributes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -519,7 +694,11 @@ procedure SetCollectionDefaultAttributes( c: Collection; whichAttributes: SInt32
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function CountCollectionItems( c: Collection ): SInt32; external name '_CountCollectionItems';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -531,7 +710,11 @@ function CountCollectionItems( c: Collection ): SInt32; external name '_CountCol
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function AddCollectionItem( c: Collection; tag: CollectionTag; id: SInt32; itemSize: SInt32; itemData: {const} UnivPtr ): OSErr; external name '_AddCollectionItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -543,7 +726,11 @@ function AddCollectionItem( c: Collection; tag: CollectionTag; id: SInt32; itemS
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetCollectionItem( c: Collection; tag: CollectionTag; id: SInt32; var itemSize: SInt32; itemData: UnivPtr ): OSErr; external name '_GetCollectionItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -555,7 +742,11 @@ function GetCollectionItem( c: Collection; tag: CollectionTag; id: SInt32; var i
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function RemoveCollectionItem( c: Collection; tag: CollectionTag; id: SInt32 ): OSErr; external name '_RemoveCollectionItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -567,7 +758,11 @@ function RemoveCollectionItem( c: Collection; tag: CollectionTag; id: SInt32 ): 
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function SetCollectionItemInfo( c: Collection; tag: CollectionTag; id: SInt32; whichAttributes: SInt32; newAttributes: SInt32 ): OSErr; external name '_SetCollectionItemInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -579,7 +774,11 @@ function SetCollectionItemInfo( c: Collection; tag: CollectionTag; id: SInt32; w
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetCollectionItemInfo( c: Collection; tag: CollectionTag; id: SInt32; var itemIndex: SInt32; var itemSize: SInt32; var attributes: SInt32 ): OSErr; external name '_GetCollectionItemInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -591,7 +790,11 @@ function GetCollectionItemInfo( c: Collection; tag: CollectionTag; id: SInt32; v
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function ReplaceIndexedCollectionItem( c: Collection; itemIndex: SInt32; itemSize: SInt32; itemData: {const} UnivPtr ): OSErr; external name '_ReplaceIndexedCollectionItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -603,7 +806,11 @@ function ReplaceIndexedCollectionItem( c: Collection; itemIndex: SInt32; itemSiz
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetIndexedCollectionItem( c: Collection; itemIndex: SInt32; var itemSize: SInt32; itemData: UnivPtr ): OSErr; external name '_GetIndexedCollectionItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -615,7 +822,11 @@ function GetIndexedCollectionItem( c: Collection; itemIndex: SInt32; var itemSiz
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function RemoveIndexedCollectionItem( c: Collection; itemIndex: SInt32 ): OSErr; external name '_RemoveIndexedCollectionItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -627,7 +838,11 @@ function RemoveIndexedCollectionItem( c: Collection; itemIndex: SInt32 ): OSErr;
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function SetIndexedCollectionItemInfo( c: Collection; itemIndex: SInt32; whichAttributes: SInt32; newAttributes: SInt32 ): OSErr; external name '_SetIndexedCollectionItemInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -639,7 +854,11 @@ function SetIndexedCollectionItemInfo( c: Collection; itemIndex: SInt32; whichAt
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetIndexedCollectionItemInfo( c: Collection; itemIndex: SInt32; var tag: CollectionTag; var id: SInt32; var itemSize: SInt32; var attributes: SInt32 ): OSErr; external name '_GetIndexedCollectionItemInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -651,7 +870,11 @@ function GetIndexedCollectionItemInfo( c: Collection; itemIndex: SInt32; var tag
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function CollectionTagExists( c: Collection; tag: CollectionTag ): Boolean; external name '_CollectionTagExists';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -663,7 +886,11 @@ function CollectionTagExists( c: Collection; tag: CollectionTag ): Boolean; exte
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function CountCollectionTags( c: Collection ): SInt32; external name '_CountCollectionTags';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -675,7 +902,11 @@ function CountCollectionTags( c: Collection ): SInt32; external name '_CountColl
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetIndexedCollectionTag( c: Collection; tagIndex: SInt32; var tag: CollectionTag ): OSErr; external name '_GetIndexedCollectionTag';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -687,7 +918,11 @@ function GetIndexedCollectionTag( c: Collection; tagIndex: SInt32; var tag: Coll
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function CountTaggedCollectionItems( c: Collection; tag: CollectionTag ): SInt32; external name '_CountTaggedCollectionItems';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -699,7 +934,11 @@ function CountTaggedCollectionItems( c: Collection; tag: CollectionTag ): SInt32
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetTaggedCollectionItem( c: Collection; tag: CollectionTag; whichItem: SInt32; var itemSize: SInt32; itemData: UnivPtr ): OSErr; external name '_GetTaggedCollectionItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -711,7 +950,11 @@ function GetTaggedCollectionItem( c: Collection; tag: CollectionTag; whichItem: 
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetTaggedCollectionItemInfo( c: Collection; tag: CollectionTag; whichItem: SInt32; var id: SInt32; var itemIndex: SInt32; var itemSize: SInt32; var attributes: SInt32 ): OSErr; external name '_GetTaggedCollectionItemInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -723,7 +966,11 @@ function GetTaggedCollectionItemInfo( c: Collection; tag: CollectionTag; whichIt
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 procedure PurgeCollection( c: Collection; whichAttributes: SInt32; matchingAttributes: SInt32 ); external name '_PurgeCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -735,7 +982,11 @@ procedure PurgeCollection( c: Collection; whichAttributes: SInt32; matchingAttri
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 procedure PurgeCollectionTag( c: Collection; tag: CollectionTag ); external name '_PurgeCollectionTag';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -747,7 +998,11 @@ procedure PurgeCollectionTag( c: Collection; tag: CollectionTag ); external name
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 procedure EmptyCollection( c: Collection ); external name '_EmptyCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -759,7 +1014,11 @@ procedure EmptyCollection( c: Collection ); external name '_EmptyCollection';
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function FlattenCollection( c: Collection; flattenProc: CollectionFlattenUPP; refCon: UnivPtr ): OSErr; external name '_FlattenCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -771,7 +1030,11 @@ function FlattenCollection( c: Collection; flattenProc: CollectionFlattenUPP; re
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function FlattenPartialCollection( c: Collection; flattenProc: CollectionFlattenUPP; refCon: UnivPtr; whichAttributes: SInt32; matchingAttributes: SInt32 ): OSErr; external name '_FlattenPartialCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -783,7 +1046,11 @@ function FlattenPartialCollection( c: Collection; flattenProc: CollectionFlatten
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function UnflattenCollection( c: Collection; flattenProc: CollectionFlattenUPP; refCon: UnivPtr ): OSErr; external name '_UnflattenCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -795,7 +1062,11 @@ function UnflattenCollection( c: Collection; flattenProc: CollectionFlattenUPP; 
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetCollectionExceptionProc( c: Collection ): CollectionExceptionUPP; external name '_GetCollectionExceptionProc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -807,7 +1078,11 @@ function GetCollectionExceptionProc( c: Collection ): CollectionExceptionUPP; ex
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 procedure SetCollectionExceptionProc( c: Collection; exceptionProc: CollectionExceptionUPP ); external name '_SetCollectionExceptionProc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -819,7 +1094,11 @@ procedure SetCollectionExceptionProc( c: Collection; exceptionProc: CollectionEx
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetNewCollection( collectionID: SInt16 ): Collection; external name '_GetNewCollection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {********************************************************************}
@@ -834,7 +1113,11 @@ function GetNewCollection( collectionID: SInt16 ): Collection; external name '_G
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function AddCollectionItemHdl( aCollection: Collection; tag: CollectionTag; id: SInt32; itemData: Handle ): OSErr; external name '_AddCollectionItemHdl';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -846,7 +1129,11 @@ function AddCollectionItemHdl( aCollection: Collection; tag: CollectionTag; id: 
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetCollectionItemHdl( aCollection: Collection; tag: CollectionTag; id: SInt32; itemData: Handle ): OSErr; external name '_GetCollectionItemHdl';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -858,7 +1145,11 @@ function GetCollectionItemHdl( aCollection: Collection; tag: CollectionTag; id: 
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function ReplaceIndexedCollectionItemHdl( aCollection: Collection; itemIndex: SInt32; itemData: Handle ): OSErr; external name '_ReplaceIndexedCollectionItemHdl';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -870,7 +1161,11 @@ function ReplaceIndexedCollectionItemHdl( aCollection: Collection; itemIndex: SI
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function GetIndexedCollectionItemHdl( aCollection: Collection; itemIndex: SInt32; itemData: Handle ): OSErr; external name '_GetIndexedCollectionItemHdl';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -882,7 +1177,11 @@ function GetIndexedCollectionItemHdl( aCollection: Collection; itemIndex: SInt32
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function FlattenCollectionToHdl( aCollection: Collection; flattened: Handle ): OSErr; external name '_FlattenCollectionToHdl';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -894,7 +1193,11 @@ function FlattenCollectionToHdl( aCollection: Collection; flattened: Handle ): O
  *    Non-Carbon CFM:   in CollectionsLib 1.0 and later
  }
 function UnflattenCollectionFromHdl( aCollection: Collection; flattened: Handle ): OSErr; external name '_UnflattenCollectionFromHdl';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$ifc OLDROUTINENAMES}

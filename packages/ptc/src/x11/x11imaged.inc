@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -37,7 +41,11 @@ type
     FDisplay: PDisplay;
     FImage: PXImage;
   public
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); virtual;
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); virtual;
+>>>>>>> graemeg/cpstrnew
     procedure Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer); virtual; abstract;
     procedure Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,
                   AWidth, AHeight: Integer); virtual; abstract;
@@ -50,7 +58,11 @@ type
   private
     FPixels: PUint8;
   public
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); override;
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
+>>>>>>> graemeg/cpstrnew
     destructor Destroy; override;
     procedure Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer); override;
     procedure Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,
@@ -66,7 +78,11 @@ type
     FShmInfo: TXShmSegmentInfo;
     FShmAttached: Boolean;
   public
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); override;
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
+>>>>>>> graemeg/cpstrnew
     destructor Destroy; override;
     procedure Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer); override;
     procedure Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,

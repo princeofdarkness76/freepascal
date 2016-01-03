@@ -3,7 +3,11 @@
  
      Contains:   Public interface to the Font Manager.
  
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
+=======
+     Version:    Quickdraw-262~1
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 1985-2008 by Apple Inc. all rights reserved.
  
@@ -13,8 +17,12 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +77,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -92,33 +103,49 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -173,6 +200,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -211,7 +271,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,QuickdrawTypes,TextCommon,CGFont;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -332,6 +397,7 @@ const
 
 const
 	kFMDefaultOptions = kNilOptions;
+<<<<<<< HEAD
 
 { Activation contexts }
 const
@@ -356,6 +422,32 @@ const
 	appleMark = 20;
 
 const
+=======
+
+{ Activation contexts }
+const
+	kFMDefaultActivationContext = kFMDefaultOptions;
+	kFMGlobalActivationContext = $00000001;
+	kFMLocalActivationContext = kFMDefaultActivationContext;
+
+{ Iteration scopes }
+const
+	kFMDefaultIterationScope = kFMDefaultOptions;
+	kFMGlobalIterationScope = $00000001;
+	kFMLocalIterationScope = kFMDefaultIterationScope;
+
+{ kPlatformDefaultGuiFontID is used in QuickTime 3.0. }
+const
+	kPlatformDefaultGuiFontID = applFont;
+
+const
+	commandMark = 17;
+	checkMark = 18;
+	diamondMark = 19;
+	appleMark = 20;
+
+const
+>>>>>>> graemeg/cpstrnew
 	propFont = 36864;
 	prpFntH = 36865;
 	prpFntW = 36866;
@@ -395,6 +487,7 @@ type
 		denom: Point;
 	end;
 	FMInputPtr = ^FMInput;
+<<<<<<< HEAD
 type
 	FamRecPtr = ^FamRec;
 	FamRec = record
@@ -475,6 +568,36 @@ type
 		numer: Point;
 		denom: Point;
 	end;
+=======
+	FMInput = record
+		family: SInt16;
+		size: SInt16;
+		face: Style;
+		needBits: Boolean;
+		device: SInt16;
+		numer: Point;
+		denom: Point;
+	end;
+type
+	FMOutput = record
+		errNum: SInt16;
+		fontHandle: Handle;
+		boldPixels: UInt8;
+		italicPixels: UInt8;
+		ulOffset: UInt8;
+		ulShadow: UInt8;
+		ulThick: UInt8;
+		shadowPixels: UInt8;
+		extra: SInt8;
+		ascent: UInt8;
+		descent: UInt8;
+		widMax: UInt8;
+		leading: SInt8;
+		curStyle: SInt8;
+		numer: Point;
+		denom: Point;
+	end;
+>>>>>>> graemeg/cpstrnew
 	FMOutputPtr = ^FMOutput;
 type
 	FMOutPtr = FMOutputPtr;
@@ -1336,6 +1459,53 @@ type
 		numWidths: SInt16;              {number of entries - 1}
 	end;
 type
+<<<<<<< HEAD
+=======
+	AsscEntryPtr = ^AsscEntry;
+	AsscEntry = record
+		fontSize: SInt16;
+		fontStyle: SInt16;
+		fontID: SInt16;                 {font resource ID}
+	end;
+type
+	FontAssocPtr = ^FontAssoc;
+	FontAssoc = record
+		numAssoc: SInt16;               {number of entries - 1}
+	end;
+type
+	StyleTablePtr = ^StyleTable;
+	StyleTable = record
+		fontClass: SInt16;
+		offset: SInt32;
+		reserved: SInt32;
+		indexes: array [0..47] of SInt8;
+	end;
+type
+	NameTablePtr = ^NameTable;
+	NameTable = record
+		stringCount: SInt16;
+		baseFontName: Str255;
+	end;
+type
+	KernPairPtr = ^KernPair;
+	KernPair = record
+		kernFirst: char;              {1st character of kerned pair}
+		kernSecond: char;             {2nd character of kerned pair}
+		kernWidth: SInt16;              {kerning in 1pt fixed format}
+	end;
+type
+	KernEntryPtr = ^KernEntry;
+	KernEntry = record
+		kernStyle: SInt16;              {style the entry applies to}
+		kernLength: SInt16;             {length of this entry}
+	end;
+type
+	KernTablePtr = ^KernTable;
+	KernTable = record
+		numKerns: SInt16;               {number of kerning entries}
+	end;
+type
+>>>>>>> graemeg/cpstrnew
 	WidthTable = packed record
 		tabData: array [0..255] of Fixed;           {character widths}
 		tabFont: Handle;                {font record used to build table}
@@ -1357,10 +1527,53 @@ type
 		hFactor: SInt16;                {horizontal scale output value}
 		aSize: SInt16;                  {actual size of actual font used}
 		tabSize: SInt16;                {total size of table}
+<<<<<<< HEAD
 	end;
 	WidthTablePtr = ^WidthTable;
 type
 	WidthTableHdl = ^WidthTablePtr;
+=======
+	end;
+	WidthTablePtr = ^WidthTable;
+type
+	WidthTableHdl = ^WidthTablePtr;
+	FamRecPtr = ^FamRec;
+	FamRec = record
+		ffFlags: SInt16;                {flags for family}
+		ffFamID: SInt16;                {family ID number}
+		ffFirstChar: SInt16;            {ASCII code of 1st character}
+		ffLastChar: SInt16;             {ASCII code of last character}
+		ffAscent: SInt16;               {maximum ascent for 1pt font}
+		ffDescent: SInt16;              {maximum descent for 1pt font}
+		ffLeading: SInt16;              {maximum leading for 1pt font}
+		ffWidMax: SInt16;               {maximum widMax for 1pt font}
+		ffWTabOff: SInt32;              {offset to width table}
+		ffKernOff: SInt32;              {offset to kerning table}
+		ffStylOff: SInt32;              {offset to style mapping table}
+		ffProperty: array [0..8] of SInt16;          {style property info}
+		ffIntl: array [0..1] of SInt16;              {for international use}
+		ffVersion: SInt16;              {version number}
+	end;
+type
+	FontRec = record
+		fontType: SInt16;               {font type}
+		firstChar: SInt16;              {ASCII code of first character}
+		lastChar: SInt16;               {ASCII code of last character}
+		widMax: SInt16;                 {maximum character width}
+		kernMax: SInt16;                {negative of maximum character kern}
+		nDescent: SInt16;               {negative of descent}
+		fRectWidth: SInt16;             {width of font rectangle}
+		fRectHeight: SInt16;            {height of font rectangle}
+		owTLoc: UInt16;                 {offset to offset/width table}
+		ascent: SInt16;                 {ascent}
+		descent: SInt16;                {descent}
+		leading: SInt16;                {leading}
+		rowWords: SInt16;               {row width of bit image / 2 }
+	end;
+	FontRecPtr = ^FontRec;
+type
+	FontRecHdl = ^FontRecPtr;
+>>>>>>> graemeg/cpstrnew
 {$ifc OLDROUTINENAMES}
 const
 	newYork = kFontIDNewYork;

@@ -68,11 +68,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,6 +91,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -107,13 +111,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -123,13 +147,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -141,12 +169,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -160,13 +194,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -599,6 +640,7 @@ const
 	gestalt32BitAddressing = 0;    { using 32-bit addressing mode }
 	gestalt32BitSysZone = 1;    { 32-bit compatible system zone }
 	gestalt32BitCapable = 2;     { Machine is 32-bit capable }
+<<<<<<< HEAD
 
 const
 	gestaltAFPClient = FourCharCode('afps');
@@ -624,6 +666,33 @@ const
 
 
 const
+=======
+
+const
+	gestaltAFPClient = FourCharCode('afps');
+	gestaltAFPClientVersionMask = $0000FFFF; { low word of SInt32 is the }
+                                        { client version 0x0001 -> 0x0007}
+	gestaltAFPClient3_5 = $0001;
+	gestaltAFPClient3_6 = $0002;
+	gestaltAFPClient3_6_1 = $0003;
+	gestaltAFPClient3_6_2 = $0004;
+	gestaltAFPClient3_6_3 = $0005; { including 3.6.4, 3.6.5}
+	gestaltAFPClient3_7 = $0006; { including 3.7.1}
+	gestaltAFPClient3_7_2 = $0007; { including 3.7.3, 3.7.4}
+	gestaltAFPClient3_8 = $0008;
+	gestaltAFPClient3_8_1 = $0009; { including 3.8.2 }
+	gestaltAFPClient3_8_3 = $000A;
+	gestaltAFPClient3_8_4 = $000B; { including 3.8.5, 3.8.6 }
+	gestaltAFPClientAttributeMask = $FFFF0000; { high word of response is a }
+                                        { set of attribute bits}
+	gestaltAFPClientCfgRsrc = 16;   { Client uses config resources}
+	gestaltAFPClientSupportsIP = 29;   { Client supports AFP over TCP/IP}
+	gestaltAFPClientVMUI = 30;   { Client can put up UI from the PBVolMount trap}
+	gestaltAFPClientMultiReq = 31;    { Client supports multiple outstanding requests}
+
+
+const
+>>>>>>> graemeg/cpstrnew
 	gestaltAliasMgrAttr = FourCharCode('alis'); { Alias Mgr Attributes }
 	gestaltAliasMgrPresent = 0;    { True if the Alias Mgr is present }
 	gestaltAliasMgrSupportsRemoteAppletalk = 1; { True if the Alias Mgr knows about Remote Appletalk }
@@ -855,6 +924,7 @@ const
 
 const
 	gestaltCTBVersion = FourCharCode('ctbv'); { CommToolbox version }
+<<<<<<< HEAD
 
 const
 	gestaltDBAccessMgrAttr = FourCharCode('dbac'); { Database Access Mgr attributes }
@@ -876,6 +946,29 @@ const
 	gestaltDITLExtSupportsIctb = 1;     { True if AppendDITL, ShortenDITL support 'ictb's }
 
 const
+=======
+
+const
+	gestaltDBAccessMgrAttr = FourCharCode('dbac'); { Database Access Mgr attributes }
+	gestaltDBAccessMgrPresent = 0;     { True if Database Access Mgr present }
+
+const
+	gestaltDiskCacheSize = FourCharCode('dcsz'); { Size of disk cache's buffers, in bytes }
+
+const
+	gestaltSDPFindVersion = FourCharCode('dfnd'); { OCE Standard Directory Panel}
+
+const
+	gestaltDictionaryMgrAttr = FourCharCode('dict'); { Dictionary Manager attributes }
+	gestaltDictionaryMgrPresent = 0;     { Dictionary Manager attributes }
+
+const
+	gestaltDITLExtAttr = FourCharCode('ditl'); { AppenDITL, etc. calls from CTB }
+	gestaltDITLExtPresent = 0;    { True if calls are present }
+	gestaltDITLExtSupportsIctb = 1;     { True if AppendDITL, ShortenDITL support 'ictb's }
+
+const
+>>>>>>> graemeg/cpstrnew
 	gestaltDialogMgrAttr = FourCharCode('dlog'); { Dialog Mgr}
 	gestaltDialogMgrPresent = 1 shl 0; { NOTE: this is a bit mask, whereas all other Gestalt constants of}
                                         { this type are bit index values.   Universal Interfaces 3.2 slipped}

@@ -1,6 +1,10 @@
 {$mode objfpc}
 uses
+<<<<<<< HEAD
   ctypes, cl;
+=======
+  cl;
+>>>>>>> graemeg/cpstrnew
 
 const
   device_str_info : array[1..5] of record id : dword; name : pchar end =
@@ -20,7 +24,11 @@ var
   deviceids : pcl_device_id;
   i,j,k : Integer;
   buf : array[0..99999] of char;
+<<<<<<< HEAD
   bufwritten : csize_t;
+=======
+  bufwritten : LongWord;
+>>>>>>> graemeg/cpstrnew
 
 
 begin

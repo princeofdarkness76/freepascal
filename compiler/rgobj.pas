@@ -179,11 +179,18 @@ unit rgobj;
         { default subregister used }
         defaultsub        : tsubregister;
         live_registers:Tsuperregisterworklist;
+<<<<<<< HEAD
         spillednodes: tsuperregisterworklist;
 
         { can be overridden to add cpu specific interferences }
         procedure add_cpu_interferences(p : tai);virtual;
         procedure add_constraints(reg:Tregister);virtual;
+=======
+        { can be overridden to add cpu specific interferences }
+        procedure add_cpu_interferences(p : tai);virtual;
+        procedure add_constraints(reg:Tregister);virtual;
+        function  get_alias(n:Tsuperregister):Tsuperregister;
+>>>>>>> graemeg/cpstrnew
         function  getregisterinline(list:TAsmList;const subregconstraints:Tsubregisterset):Tregister;
         procedure ungetregisterinline(list:TAsmList;r:Tregister);
         function  get_spill_subreg(r : tregister) : tsubregister;virtual;
@@ -227,7 +234,10 @@ unit rgobj;
         constrained_moves : Tlinkedlist;
         extended_backwards,
         backwards_was_first : tbitset;
+<<<<<<< HEAD
         has_usedmarks: boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 
         { Disposes of the reginfo array.}
         procedure dispose_reginfo;
@@ -412,9 +422,14 @@ unit rgobj;
          regtype:=Aregtype;
          defaultsub:=Adefaultsub;
          preserved_by_proc:=Apreserved_by_proc;
+<<<<<<< HEAD
          // default values set by newinstance
          // used_in_proc:=[];
          // ssa_safe:=false;
+=======
+         // default value set by newinstance
+         // used_in_proc:=[];
+>>>>>>> graemeg/cpstrnew
          live_registers.init;
          { Get reginfo for CPU registers }
          maxreginfo:=first_imaginary;
@@ -1984,7 +1999,23 @@ unit rgobj;
               supregset_include(regs_to_spill_set,t);
               {Clear all interferences of the spilled register.}
               clear_interferences(t);
+<<<<<<< HEAD
               get_spill_temp(templist,spill_temps,t);
+=======
+              {Get a temp for the spilled register, the size must at least equal a complete register,
+               take also care of the fact that subreg can be larger than a single register like doubles
+               that occupy 2 registers }
+              { only force the whole register in case of integers. Storing a register that contains
+                a single precision value as a double can cause conversion errors on e.g. ARM VFP }
+              if (regtype=R_INTREGISTER) then
+                size:=max(tcgsize2size[reg_cgsize(newreg(regtype,t,R_SUBWHOLE))],
+                               tcgsize2size[reg_cgsize(newreg(regtype,t,reginfo[t].subreg))])
+              else
+                size:=tcgsize2size[reg_cgsize(newreg(regtype,t,reginfo[t].subreg))];
+              tg.gettemp(templist,
+                         size,size,
+                         tt_noreuse,spill_temps^[t]);
+>>>>>>> graemeg/cpstrnew
             end;
         list.insertlistafter(headertai,templist);
         templist.free;
@@ -2049,9 +2080,15 @@ unit rgobj;
       end;
 
 
+<<<<<<< HEAD
     procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister;orgsupreg:tsuperregister);
       var
         ins:tai_cpu_abstract_sym;
+=======
+    procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
+      var
+        ins:Taicpu;
+>>>>>>> graemeg/cpstrnew
       begin
         ins:=spilling_create_load(spilltemp,tempreg);
         add_cpu_interferences(ins);
@@ -2062,9 +2099,15 @@ unit rgobj;
       end;
 
 
+<<<<<<< HEAD
     procedure Trgobj.do_spill_written(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister;orgsupreg:tsuperregister);
       var
         ins:tai_cpu_abstract_sym;
+=======
+    procedure Trgobj.do_spill_written(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
+      var
+        ins:Taicpu;
+>>>>>>> graemeg/cpstrnew
       begin
         ins:=spilling_create_store(tempreg,spilltemp);
         add_cpu_interferences(ins);
@@ -2083,6 +2126,7 @@ unit rgobj;
 
     function trgobj.addreginfo(var regs: tspillregsinfo; const r: tsuperregisterset; reg: tregister; operation: topertype): boolean;
       var
+<<<<<<< HEAD
         i, tmpindex: longint;
         supreg: tsuperregister;
       begin
@@ -2092,6 +2136,31 @@ unit rgobj;
         { did we already encounter this register? }
         for i := 0 to pred(regs.reginfocount) do
           if (regs.reginfo[i].orgreg = supreg) then
+=======
+        counter, regindex: longint;
+        regs: tspillregsinfo;
+        spilled: boolean;
+
+      procedure addreginfo(reg: tregister; operation: topertype);
+        var
+          i, tmpindex: longint;
+          supreg : tsuperregister;
+        begin
+          tmpindex := regindex;
+          supreg:=get_alias(getsupreg(reg));
+          { did we already encounter this register? }
+          for i := 0 to pred(regindex) do
+            if (regs[i].orgreg = supreg) then
+              begin
+                tmpindex := i;
+                break;
+              end;
+          if tmpindex > high(regs) then
+            internalerror(2003120301);
+          regs[tmpindex].orgreg := supreg;
+          include(regs[tmpindex].spillregconstraints,get_spill_subreg(reg));
+          if supregset_in(r,supreg) then
+>>>>>>> graemeg/cpstrnew
             begin
               tmpindex := i;
               break;
@@ -2121,7 +2190,15 @@ unit rgobj;
       end;
 
 
+<<<<<<< HEAD
     function trgobj.instr_get_oper_spilling_info(var regs: tspillregsinfo; const r: tsuperregisterset; instr: tai_cpu_abstract_sym; opidx: longint): boolean;
+=======
+
+      var
+        loadpos,
+        storepos : tai;
+        oldlive_registers : tsuperregisterworklist;
+>>>>>>> graemeg/cpstrnew
       begin
         result:=false;
         with instr.oper[opidx]^ do
@@ -2255,6 +2332,7 @@ unit rgobj;
         if not spilled then
           exit;
 
+<<<<<<< HEAD
 {$if defined(x86) or defined(mips) or defined(sparc) or defined(arm) or defined(m68k)}
         { Try replacing the register with the spilltemp. This is useful only
           for the i386,x86_64 that support memory locations for several instructions
@@ -2263,6 +2341,13 @@ unit rgobj;
           with loads/stores to spilltemp (Sergei) }
         for counter := 0 to pred(regs.reginfocount) do
           with regs.reginfo[counter] do
+=======
+{$ifdef x86}
+        { Try replacing the register with the spilltemp. This is useful only
+          for the i386,x86_64 that support memory locations for several instructions }
+        for counter := 0 to pred(regindex) do
+          with regs[counter] do
+>>>>>>> graemeg/cpstrnew
             begin
               if mustbespilled then
                 begin
@@ -2335,8 +2420,13 @@ unit rgobj;
             begin
               if mustbespilled and regread then
                 begin
+<<<<<<< HEAD
                   loadreg:=getregisterinline(list,regs.reginfo[counter].spillregconstraints);
                   do_spill_read(list,tai(loadpos.previous),spilltemplist[orgreg],loadreg,orgreg);
+=======
+                  tempreg:=getregisterinline(list,regs[counter].spillregconstraints);
+                  do_spill_read(list,tai(loadpos.previous),spilltemplist[orgreg],tempreg);
+>>>>>>> graemeg/cpstrnew
                 end;
             end;
 
@@ -2368,6 +2458,7 @@ unit rgobj;
               if mustbespilled and regwritten then
                 begin
                   { When the register is also loaded there is already a register assigned }
+<<<<<<< HEAD
                   if (not regread) or
                      ssa_safe then
                     begin
@@ -2380,6 +2471,10 @@ unit rgobj;
                     end
                   else
                     storereg:=loadreg;
+=======
+                  if (not regread) then
+                    tempreg:=getregisterinline(list,regs[counter].spillregconstraints);
+>>>>>>> graemeg/cpstrnew
                   { The original instruction will be the next that uses this register, this
                     also needs to be done for read-write registers,
 

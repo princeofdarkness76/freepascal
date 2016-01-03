@@ -1,13 +1,24 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Component Library
+>>>>>>> graemeg/cpstrnew
 #
 
 [package]
 name=fcl-stl
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.5.1
+
+[target]
+units=garrayutils gdeque gmap gpriorityqueue gqueue gset gstack gutil gvector ghashset ghashmap
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y
@@ -15,6 +26,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -100,3 +112,11 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+options=-S2h
+sourcedir=src
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/cpstrnew

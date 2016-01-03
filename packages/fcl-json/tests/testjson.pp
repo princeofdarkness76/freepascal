@@ -17,7 +17,12 @@
 program testjson;
 
 uses
+<<<<<<< HEAD
   Classes, testjsondata, testjsonparser, consoletestrunner; //, testjsonrtti, fpjsonrtti;
+=======
+  Classes, consoletestrunner, testjsondata, testjsonparser,
+  fpcunitconsolerunner, testjsonrtti, fpjsonrtti;
+>>>>>>> graemeg/cpstrnew
 type
   { TLazTestRunner }
    TMyTestRunner = class(TTestRunner)

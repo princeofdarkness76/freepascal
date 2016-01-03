@@ -51,7 +51,10 @@ interface
        protected
           fprocdef : tprocdef;
           fprocdefderef : tderef;
+<<<<<<< HEAD
           function handle_threadvar_access: tnode; virtual;
+=======
+>>>>>>> graemeg/cpstrnew
        public
           loadnodeflags : set of tloadnodeflags;
           symtableentry : tsym;
@@ -221,7 +224,10 @@ implementation
         ppufile.getderef(symtableentryderef);
         symtable:=nil;
         ppufile.getderef(fprocdefderef);
+<<<<<<< HEAD
         ppufile.getsmallset(loadnodeflags);
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -230,7 +236,10 @@ implementation
         inherited ppuwrite(ppufile);
         ppufile.putderef(symtableentryderef);
         ppufile.putderef(fprocdefderef);
+<<<<<<< HEAD
         ppufile.putsmallset(loadnodeflags);
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -333,6 +342,7 @@ implementation
                    { and behaves as if its address escapes its parent block         }
                    make_not_regable(self,[ra_addr_taken]);
                  end;
+<<<<<<< HEAD
                resultdef:=tabstractvarsym(symtableentry).vardef;
                { self for objects is passed as var-parameter on the caller
                  side, but on the callee-side we use it as a pointer ->
@@ -345,6 +355,24 @@ implementation
                    else if (resultdef=objc_idtype) and
                       (po_classmethod in tprocdef(symtableentry.owner.defowner).procoptions) then
                      resultdef:=cclassrefdef.create(tprocdef(symtableentry.owner.defowner).struct)
+=======
+               { fix self type which is declared as voidpointer in the
+                 definition }
+               if vo_is_self in tabstractvarsym(symtableentry).varoptions then
+                 begin
+                   resultdef:=tprocdef(symtableentry.owner.defowner).struct;
+                   if (po_classmethod in tprocdef(symtableentry.owner.defowner).procoptions) or
+                      (po_staticmethod in tprocdef(symtableentry.owner.defowner).procoptions) then
+                     resultdef:=tclassrefdef.create(resultdef)
+                   else if (is_object(resultdef) or is_record(resultdef)) and
+                           (nf_load_self_pointer in flags) then
+                     resultdef:=tpointerdef.create(resultdef);
+                 end
+               else if vo_is_vmt in tabstractvarsym(symtableentry).varoptions then
+                 begin
+                   resultdef:=tprocdef(symtableentry.owner.defowner).struct;
+                   resultdef:=tclassrefdef.create(resultdef);
+>>>>>>> graemeg/cpstrnew
                  end
              end;
            procsym :
@@ -476,7 +504,11 @@ implementation
               begin
                 { parent frame pointer pointer as "self" }
                 left.free;
+<<<<<<< HEAD
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner),lpf_forpara);
+=======
+                left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
+>>>>>>> graemeg/cpstrnew
               end;
           end
         { we should never go from nested to non-nested }
@@ -808,8 +840,12 @@ implementation
         else if is_managed_type(left.resultdef) and
             (left.resultdef.typ in [arraydef,objectdef,recorddef]) and
             not is_interfacecom_or_dispinterface(left.resultdef) and
+<<<<<<< HEAD
             not is_dynamic_array(left.resultdef) and
             not(target_info.system in systems_garbage_collected_managed_types) then
+=======
+            not is_dynamic_array(left.resultdef) then
+>>>>>>> graemeg/cpstrnew
          begin
            hp:=ccallparanode.create(caddrnode.create_internal(
                   crttinode.create(tstoreddef(left.resultdef),initrtti,rdt_normal)),

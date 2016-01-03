@@ -1182,7 +1182,11 @@ const
     begin
       if not Assigned(fCnv) then
         IntReadStruct;
+<<<<<<< HEAD
       Result:={(index>=0) and }(index<fHdr.ncmds);
+=======
+      Result:=(index>=0) and (index<fHdr.ncmds);
+>>>>>>> graemeg/cpstrnew
       if not Result then
         Exit;
       Result:=true;
@@ -1198,7 +1202,11 @@ const
       if not Assigned(fCnv) then
         IntReadStruct;
 
+<<<<<<< HEAD
       Result:={(cmdindex>=0) and }
+=======
+      Result:=(cmdindex>=0) and
+>>>>>>> graemeg/cpstrnew
               (cmdindex<fHdr.ncmds) and
               (cmds[cmdindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
 
@@ -1226,7 +1234,11 @@ const
       if not Assigned(fCnv) then
         IntReadStruct;
 
+<<<<<<< HEAD
       if {(index<0) or}
+=======
+      if (index<0) or
+>>>>>>> graemeg/cpstrnew
          (index>=longword(length(cmdofs))) then
         Result:=0
       else
@@ -1245,7 +1257,11 @@ const
     begin
       if not Assigned(fCnv) then
         IntReadStruct;
+<<<<<<< HEAD
       Result:={(secindex>=0) and (segindex>=0) and }(segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
+=======
+      Result:=(secindex>=0) and (segindex>=0) and (segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
+>>>>>>> graemeg/cpstrnew
       if not Result then
         Exit;
 

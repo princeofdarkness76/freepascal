@@ -43,7 +43,11 @@
   CIColor = objcclass external (NSObject, NSCodingProtocol, NSCopyingProtocol)
   private
     _priv: Pointer;
+<<<<<<< HEAD
     _pad: array[0..(3)-1] of Pointer;
+=======
+        _pad: array[0..2] of Pointer;
+>>>>>>> graemeg/cpstrnew
     
   public
     class function colorWithCGColor(c: CGColorRef): CIColor; message 'colorWithCGColor:';

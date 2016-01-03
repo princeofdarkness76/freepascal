@@ -106,6 +106,7 @@ Resourcestring
   SStreamNotRecognised     = 'The data-stream format is not recognized';
   SNoReaderClassRegistered = 'There is no TDatapacketReaderClass registered for this kind of data-stream';
   SErrCircularDataSourceReferenceNotAllowed = 'Circular datasource references are not allowed.';
+<<<<<<< HEAD
   SCommitting               = 'Committing transaction';
   SRollingBack              = 'Rolling back transaction';
   SCommitRetaining          = 'Commit and retaining transaction';
@@ -124,6 +125,12 @@ Resourcestring
   SErrNoKeyFieldForRefreshClause = 'No key field found to construct refresh SQL WHERE clause';
   SErrFailedToFetchReturningResult = 'Failed to fetch returning result';
   SLogParamValue              = 'Parameter "%s" value : "%s"';
+=======
+  SCommitting              = 'Committing transaction';
+  SRollingBack             = 'Rolling back transaction';
+  SCommitRetaining         = 'Commit and retaining transaction';
+  SRollBackRetaining       = 'Rollback and retaining transaction';
+>>>>>>> graemeg/cpstrnew
 
 Implementation
 

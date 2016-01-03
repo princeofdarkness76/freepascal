@@ -34,6 +34,7 @@ unit iso7185;
     Function Eoln(Var t: Text): Boolean;
     Function Eoln:Boolean;
 
+<<<<<<< HEAD
     Procedure Page;
     Procedure Page(Var t: Text);
 
@@ -60,6 +61,16 @@ unit iso7185;
         Assign(t,'fpc_'+HexStr(NextIndex,4)+'.tmp');
         Inc(NextIndex);
 {$endif FPC_HAS_FEATURE_RANDOM}
+=======
+  implementation
+
+  {$i textrec.inc}
+
+{$i-}
+    procedure DoAssign(var t : Text);
+      begin
+        Assign(t,'fpc_'+HexStr(random(1000000000),8)+'.tmp');
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -91,6 +102,7 @@ unit iso7185;
       var
         OldCtrlZMarksEof : Boolean;
       Begin
+<<<<<<< HEAD
         { not sure if this is correct, but we are always at eof when
           writing to a file }
         if TextRec(t).mode=fmOutput then
@@ -102,6 +114,12 @@ unit iso7185;
             Eof:=System.Eof(t);
             CtrlZMarksEof:=OldCtrlZMarksEOF;
           end;
+=======
+        OldCtrlZMarksEof:=CtrlZMarksEOF;
+        CtrlZMarksEof:=false;
+        Eof:=System.Eof(t);
+        CtrlZMarksEof:=OldCtrlZMarksEOF;
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -127,6 +145,7 @@ unit iso7185;
         Eoln:=Eoln(Input);
       End;
 
+<<<<<<< HEAD
 
     Procedure Page;[IOCheck];
       begin
@@ -188,3 +207,14 @@ begin
   Filemode:=0;
 end.
 
+=======
+begin
+  { we shouldn't do this because it might confuse user programs, but for now it
+    is good enough to get pretty unique tmp file names }
+  Randomize;
+end.
+
+
+
+
+>>>>>>> graemeg/cpstrnew

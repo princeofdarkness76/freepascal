@@ -4,6 +4,7 @@
 
 [package]
 name=ptc-examples
+<<<<<<< HEAD
 version=3.1.1
 
 [target]
@@ -14,6 +15,15 @@ programs=area buffer clear clip con_info console fire  \
 programs_win32=ptcgl ptcgl2
 programs_win64=ptcgl ptcgl2
 programs_linux=ptcgl ptcgl2
+=======
+version=2.5.1
+
+[target]
+programs=area buffer clear clip con_info console fire  \
+         flower hicolor image keyboard keyboard2 land \
+         lights modes mojo palette pixel random save \
+         stretch texwarp timer tunnel3d tunnel
+>>>>>>> graemeg/cpstrnew
 
 [compiler]
 unitdir=../$(UNITTARGETDIRPREFIX)

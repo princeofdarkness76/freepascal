@@ -72,7 +72,11 @@ valuePtr = ^value;
     _signature: id;
     _container: id;
     _retainedArgs: cuint8;
+<<<<<<< HEAD
     _reserved: array[0..(15)-1] of cuint8;
+=======
+        _reserved: array[0..14] of cuint8;
+>>>>>>> graemeg/cpstrnew
     
   public
     class function invocationWithMethodSignature(sig: NSMethodSignature): NSInvocation; message 'invocationWithMethodSignature:';

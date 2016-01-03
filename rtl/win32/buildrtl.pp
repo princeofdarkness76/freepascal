@@ -10,9 +10,16 @@ unit buildrtl;
       windows,  initc, cmem, dynlibs, signals,
       dos, messages,
       rtlconsts, sysconst, sysutils, math, types,
+<<<<<<< HEAD
       typinfo, fgl, classes,
       cpu, mmx, charset, character, getopts,
       fpwidestring,
+=======
+      strutils, dateutils, varutils, variants, typinfo, fgl, classes,
+      convutils, stdconvs, cpu, mmx, charset, ucomplex, getopts,
+      winevent, sockets, printer,
+      video, mouse, keyboard, fmtbcd,
+>>>>>>> graemeg/cpstrnew
       winsysut, sharemem, fpintres, windirs;
 
   implementation

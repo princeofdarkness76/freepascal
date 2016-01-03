@@ -430,7 +430,11 @@ begin
       Include(current_settings.globalswitches, cs_link_nolink);
       exit;
     end;
+<<<<<<< HEAD
   dst:=CFileStreamClass.Create(current_module.outputpath+outf,fmCreate);
+=======
+  dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
+>>>>>>> graemeg/cpstrnew
   if CStreamError<>0 then
     begin
       Message1(exec_e_cant_write_resource_file, dst.FileName);

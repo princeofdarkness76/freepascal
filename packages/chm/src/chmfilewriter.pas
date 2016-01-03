@@ -60,6 +60,7 @@ type
     fOtherFiles : TStrings; // Files found in a scan.
     fAllowedExtensions: TStringList;
     fTotalFileList : TAvlTree;
+<<<<<<< HEAD
     fAnchorList    : TStringList;
     FSpareString   : TStringIndex;
     FBasePath      : String;     // location of the .hhp file. Needed to resolve relative paths
@@ -69,6 +70,10 @@ type
     FTocStream,
     FIndexStream   : TMemoryStream;
     FCores	   : integer;
+=======
+    FSpareString   : TStringIndex;
+    FBasePath       : String;     // location of the .hhp file. Needed to resolve relative paths
+>>>>>>> graemeg/cpstrnew
   protected
     function GetData(const DataName: String; out PathInChm: String; out FileName: String; var Stream: TStream): Boolean;
     procedure LastFileAdded(Sender: TObject);
@@ -77,7 +82,10 @@ type
     procedure ScanList(toscan,newfiles:TStrings;recursion:boolean);
     procedure ScanSitemap(sitemap:TChmSiteMap;newfiles:TStrings;recursion:boolean);
     function  FileInTotalList(const s:String):boolean;
+<<<<<<< HEAD
     function  SanitizeURL(const basepath, instring, localpath, localname:string; var outstring:String):Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
   public
     constructor Create; virtual;
     destructor Destroy; override;
@@ -85,9 +93,13 @@ type
     procedure LoadFromhhp (AFileName:String;LeaveInclude:Boolean); virtual;
     procedure SaveToFile(AFileName: String); virtual;
     procedure WriteChm(AOutStream: TStream); virtual;
+<<<<<<< HEAD
     procedure ShowUndefinedAnchors;
     function ProjectDir: String;
     procedure LoadSitemaps;
+=======
+    function ProjectDir: String;
+>>>>>>> graemeg/cpstrnew
     procedure AddFileWithContext(contextid:integer;filename:ansistring;contextname:ansistring='');
     procedure Error(errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
     // though stored in the project file, it is only there for the program that uses the unit
@@ -111,9 +123,13 @@ type
     property OnError   : TChmErrorCB read FOnError write FOnError;
     property DefaultWindow : String read FDefaultWindow write FDefaultWindow;
     property ScanHtmlContents  : Boolean read fScanHtmlContents write fScanHtmlContents;
+<<<<<<< HEAD
     property ReadmeMessage : String read FReadmeMessage write FReadmeMessage;
     property AllowedExtensions : TStringList read FAllowedExtensions;
     property Cores : integer read fcores write fcores; 
+=======
+    property AllowedExtensions : TStringList read FAllowedExtensions;
+>>>>>>> graemeg/cpstrnew
   end;
 
   TChmContextNode = Class
@@ -130,6 +146,7 @@ Const
 implementation
 
 uses XmlCfg, CHMTypes;
+<<<<<<< HEAD
 
 type
 
@@ -147,6 +164,8 @@ constructor TFirstReference.Create(const ALocation: string);
 begin
   Location := ALocation;
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 { TChmProject }
 
@@ -167,9 +186,12 @@ end;
 procedure TChmProject.LastFileAdded(Sender: TObject);
 var
   Writer: TChmWriter;
+  TOCSitemap  : TChmSiteMap;
+  IndexSiteMap: TChmSiteMap;
 begin
   // Assign the TOC and index files
   Writer := TChmWriter(Sender);
+<<<<<<< HEAD
   writer.cores:=fcores;
   {$ifdef chmindex}
     Writeln('binindex filename ',IndexFileName);
@@ -178,11 +200,20 @@ begin
     begin
     FIndexStream.position:=0;
     Writer.AppendIndex(FIndexStream);
+=======
+  {$ifdef chmindex}
+    Writeln('binindex filename ',IndexFileName);
+  {$endif}
+  if (IndexFileName <> '') and FileExists(IndexFileName) then begin
+    IndexStream := TFileStream.Create(IndexFileName, fmOpenRead);
+    Writer.AppendIndex(IndexStream);
+>>>>>>> graemeg/cpstrnew
     if MakeBinaryIndex then
     begin
       {$ifdef chmindex}
         Writeln('into binindex ');
       {$endif}
+<<<<<<< HEAD
       Writer.AppendBinaryIndexFromSiteMap(FIndex,False);
     end;
   end;
@@ -193,6 +224,28 @@ begin
     begin
       Writer.AppendBinaryTOCFromSiteMap(FToc);
     end;
+=======
+      IndexStream.Position := 0;
+      IndexSitemap := TChmSiteMap.Create(stIndex);
+      indexSitemap.LoadFromStream(IndexStream);
+      Writer.AppendBinaryIndexFromSiteMap(IndexSitemap,False);
+      IndexSitemap.Free;
+    end;
+    IndexStream.Free;
+  end;
+  if (TableOfContentsFileName <> '') and FileExists(TableOfContentsFileName) then begin
+    TOCStream := TFileStream.Create(TableOfContentsFileName, fmOpenRead);
+    Writer.AppendTOC(TOCStream);
+    if MakeBinaryTOC then
+    begin
+      TOCStream.Position := 0;
+      TOCSitemap := TChmSiteMap.Create(stTOC);
+      TOCSitemap.LoadFromStream(TOCStream);
+      Writer.AppendBinaryTOCFromSiteMap(TOCSitemap);
+      TOCSitemap.Free;
+    end;
+    TOCStream.Free;
+>>>>>>> graemeg/cpstrnew
   end;
   if not assigned(sender) then
     Writer.Free;
@@ -210,9 +263,12 @@ begin
   ScanHtmlContents:=False;
   FTotalFileList:=TAvlTree.Create(@CompareStrings);
   FSparestring  :=TStringIndex.Create;
+<<<<<<< HEAD
   fAnchorList := TStringList.Create;
   fAnchorList.Sorted := True;
   fAnchorList.OwnsObjects := True;
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 destructor TChmProject.Destroy;
@@ -227,12 +283,15 @@ begin
   FSpareString.Free;
   FTotalFileList.FreeAndClear;
   FTotalFileList.Free;
+<<<<<<< HEAD
   fAllowedExtensions.Free;
   FToc.free;
   FIndex.free;
   FTocStream.Free;
   FIndexStream.Free;
   fAnchorList.Free;
+=======
+>>>>>>> graemeg/cpstrnew
   inherited Destroy;
 end;
 
@@ -424,7 +483,11 @@ procedure addalias(const key,value :string);
 
 var i,j : integer;
     node: TCHMContextNode;
+<<<<<<< HEAD
     keyupper,valueupper : string;
+=======
+    keyupper : string;
+>>>>>>> graemeg/cpstrnew
 begin
  { Defaults other than global }
    MakeBinaryIndex:=True;
@@ -442,9 +505,13 @@ begin
     writeln('alias new node:',key);
    {$endif}
     node:=TCHMContextNode.create;
+<<<<<<< HEAD
     valueupper:=stringReplace(value, '\', '/', [rfReplaceAll]);
     valueupper:= StringReplace(valueupper, '//', '/', [rfReplaceAll]);
     node.URLName:=valueupper;
+=======
+    node.URLName:=value;
+>>>>>>> graemeg/cpstrnew
     node.contextname:=key;
   end
  else
@@ -577,7 +644,11 @@ begin
     for j:=0 to strs.count-1 do
       begin
           nd:=TChmContextNode.Create;
+<<<<<<< HEAD
           nd.urlname:=StringReplace(strs[j],'\', '/', [rfReplaceAll]);
+=======
+          nd.urlname:=strs[j];
+>>>>>>> graemeg/cpstrnew
           nd.contextnumber:=0;
           nd.contextname:='';
           Files.AddObject(nd.urlname,nd);
@@ -717,12 +788,20 @@ begin
 end;
 
 const
+<<<<<<< HEAD
    protocols   : array[0..3] of string = ('HTTP:','FTP:','MS-ITS:', 'MAILTO:');
    protocollen : array[0..3] of integer= ( 5 ,4 ,7, 7);
 
 function TChmProject.SanitizeURL(const basepath,instring,localpath,localname:string;var outstring:String):Boolean;
 var i,j,len : integer;
   Anchor: String;
+=======
+   protocols   : array[0..2] of string = ('HTTP:','FTP:','MS-ITS:');
+   protocollen : array[0..2] of integer= ( 5 ,4 ,7);
+
+function sanitizeurl(const basepath,instring:string;var outstring:String):Boolean;
+var i,j,len : integer;
+>>>>>>> graemeg/cpstrnew
 begin
   result:=true; outstring:='';
   if instring='' then
@@ -731,7 +810,10 @@ begin
   len:=length(instring);
   if len=0 then
     exit(false);
+<<<<<<< HEAD
   { Check for protocols before adding local path }
+=======
+>>>>>>> graemeg/cpstrnew
   i:=0;
   while (i<=high(protocols)) do
     begin
@@ -739,6 +821,7 @@ begin
         exit(false);
       inc(i);
     end;
+<<<<<<< HEAD
    outstring:=localpath+instring;
 
    i:=pos('#',outstring);
@@ -755,6 +838,13 @@ begin
      Error(CHMNote, 'Anchor found '+Anchor+' while scanning '+localname,1);
      delete(outstring,i,length(outstring)-i+1);
    end;
+=======
+   outstring:=instring;
+
+   i:=pos('#',outstring);
+   if i<>0 then
+     delete(outstring,i,length(outstring)-i+1);
+>>>>>>> graemeg/cpstrnew
 
   outstring:=expandfilename(StringReplace(outstring,'%20',' ',[rfReplaceAll]));// expandfilename(instring));
 
@@ -777,6 +867,7 @@ procedure TChmProject.ScanList(toscan,newfiles:TStrings;recursion:boolean);
 var
   localpath : string;
 
+<<<<<<< HEAD
 function findattribute(node:TDomNode;attributename:string):String;
 var
     Attributes: TDOMNamedNodeMap;
@@ -784,10 +875,20 @@ var
     n         : integer;
 begin
   Result := '';
+=======
+procedure checkattributes(node:TDomNode;attributename:string;filelist :TStringList);
+var
+    Attributes: TDOMNamedNodeMap;
+    atnode    : TDomNode;
+    fn        : String;
+    n         : integer;
+begin
+>>>>>>> graemeg/cpstrnew
   if assigned(node) then
     begin
       Attributes:=node.Attributes;
       if assigned(attributes) then
+<<<<<<< HEAD
         for n:=0 to attributes.length-1 do
           begin
             atnode :=attributes[n];
@@ -815,6 +916,28 @@ function scantags(prnt:TDomNode; const localname: string; filelist:TStringlist):
 var chld: TDomNode;
     s   : ansistring;
     i   : Integer;
+=======
+         begin
+           for n:=0 to attributes.length-1 do
+             begin
+               atnode :=attributes[n];
+               if assigned(atnode) and (uppercase(atnode.nodename)=attributename) then
+                 begin
+                   if sanitizeurl(fbasepath,localpath+atnode.nodevalue,fn) then
+                    if not FileInTotalList(uppercase(fn)) then
+                      filelist.add(fn);
+                 end;
+             end;
+         end;
+    end;
+end;
+
+
+function scantags(prnt:TDomNode;filelist:TStringlist):TDomNode;
+// Seach first matching tag in siblings
+var chld: TDomNode;
+    s   : ansistring;
+>>>>>>> graemeg/cpstrnew
 begin
   result:=nil;
   if assigned(prnt )  then
@@ -822,23 +945,36 @@ begin
       chld:=prnt.firstchild;
       while assigned(chld) do
         begin
+<<<<<<< HEAD
           scantags(chld, localname, filelist);  // depth first.
+=======
+          scantags(chld,filelist);  // depth first.
+>>>>>>> graemeg/cpstrnew
           if (chld is TDomElement) then
             begin
               s:=uppercase(tdomelement(chld).tagname);
               if s='LINK' then
                 begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
                   checkattributes(chld,'HREF',localname,filelist);
+=======
+                  checkattributes(chld,'HREF',filelist);
+>>>>>>> graemeg/cpstrnew
                 end;
              if s='IMG'then
                begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
                   checkattributes(chld,'SRC',localname,filelist);
+=======
+                  checkattributes(chld,'SRC',filelist);
+>>>>>>> graemeg/cpstrnew
                end;
              if s='A'then
                begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
                   checkattributes(chld,'HREF',localname,filelist);
                   s := findattribute(chld,'NAME');
                   if s <> '' then
@@ -855,6 +991,9 @@ begin
                         Error(ChmNote,'Anchor with name '+s+' defined while scanning '+localname,1);
                       end;
                     end;
+=======
+                  checkattributes(chld,'HREF',filelist);
+>>>>>>> graemeg/cpstrnew
                 end;
             end;
           chld:=chld.nextsibling;
@@ -880,7 +1019,11 @@ begin
   if FileInTotalList(vn2) then
    begin
      Error(ChmNote,'Found duplicate file '+vn+' while scanning '+fn,1);
+<<<<<<< HEAD
      exit(true);
+=======
+     exit(false);
+>>>>>>> graemeg/cpstrnew
    end;
 
   result:=false;
@@ -913,7 +1056,11 @@ begin
                localpath:=extractfilepath(fn);
                if (length(localpath)>0) and not (localpath[length(localpath)] in ['/','\']) then
                  localpath:=localpath+pathsep;
+<<<<<<< HEAD
                scantags(domdoc,extractfilename(fn),localfilelist);
+=======
+               scantags(domdoc,localfilelist);
+>>>>>>> graemeg/cpstrnew
                for i:=0 to localFilelist.count-1 do
                  begin
                    s:=localfilelist[i];
@@ -958,7 +1105,11 @@ begin
   for i:=0 to it.count -1 do
     begin
       x:=it.item[i];
+<<<<<<< HEAD
       if sanitizeurl(fbasepath,x.local,'','Site Map for '+x.Text,S) then   // sanitize, remove stuff etc.
+=======
+      if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
+>>>>>>> graemeg/cpstrnew
         begin
           if not FileInTotalList(uppercase(s)) then
             begin
@@ -1001,6 +1152,10 @@ var
   helplist,
   localfilelist: TStringList;
   i      : integer;
+<<<<<<< HEAD
+=======
+  x      : TChmSiteMap;
+>>>>>>> graemeg/cpstrnew
   strrec : TStringIndex;
 begin
 
@@ -1033,6 +1188,7 @@ begin
      otherfiles.addstrings(localfilelist);
      localfilelist.clear;
    end;
+<<<<<<< HEAD
  if assigned(FToc) then
    begin
        Error(chmnote,'Scanning TOC file : '+FTableOfContentsFileName+'.',3);
@@ -1056,6 +1212,47 @@ begin
           error(chmerror,'Error scanning index file ('+FIndexFileName+')');
         end;
     end;
+=======
+ if FTableOfContentsFileName<>'' then
+   begin
+     if fileexists(FTableOfContentsFileName) then
+       begin
+       Error(chmnote,'Scanning TOC file : '+FTableOfContentsFileName+'.',3);
+        x:=TChmSiteMap.Create(sttoc);
+        try
+          x.loadfromfile(FTableOfcontentsFilename);
+          scansitemap(x,localfilelist,true);
+          otherfiles.addstrings(localfilelist);
+        except
+          on e: Exception do
+            error(chmerror,'Error loading TOC file '+FTableOfContentsFileName);
+          end;
+        x.free;
+       end
+     else
+       error(chmerror,'Can''t find TOC file'+FTableOfContentsFileName);
+   end;
+  LocalFileList.clear;
+  if FIndexFileName<>'' then
+   begin
+     if fileexists(FIndexFileName) then
+       begin
+       Error(chmnote,'Scanning Index file : '+FIndexFileName+'.',3);
+        x:=TChmSiteMap.Create(stindex);
+        try
+          x.loadfromfile(FIndexFileName);
+          scansitemap(x,localfilelist,true);
+          otherfiles.addstrings(localfilelist);
+        except
+          on e: Exception do
+            error(chmerror,'Error loading index file '+FIndexFileName);
+          end;
+        x.free;
+       end
+     else
+       error(chmerror,'Can''t find TOC index file '+FIndexFileName);
+   end;
+>>>>>>> graemeg/cpstrnew
  localfilelist.free;
 end;
 
@@ -1068,10 +1265,15 @@ var
   nd         : TChmContextNode;
   I          : Integer;
 begin
+<<<<<<< HEAD
 
   LoadSiteMaps;
 
   // Scan html for "rest" files.
+=======
+  // Scan html for "rest" files.
+
+>>>>>>> graemeg/cpstrnew
   If ScanHtmlContents Then
     ScanHtml;                 // Since this is slowing we opt to skip this step, and only do this on html load.
 
@@ -1098,10 +1300,16 @@ begin
   Writer.FullTextSearch := MakeSearchable;
   Writer.HasBinaryTOC := MakeBinaryTOC;
   Writer.HasBinaryIndex := MakeBinaryIndex;
+<<<<<<< HEAD
   Writer.IndexName := ExtractFileName(IndexFileName);
   Writer.TocName   := ExtractFileName(TableOfContentsFileName);
   Writer.ReadmeMessage := ReadmeMessage;
   Writer.DefaultWindow := FDefaultWindow;
+=======
+  Writer.IndexName := IndexFileName;
+  Writer.TocName   := TableOfContentsFileName;
+
+>>>>>>> graemeg/cpstrnew
   for i:=0 to files.count-1 do
     begin
       nd:=TChmContextNode(files.objects[i]);
@@ -1112,10 +1320,13 @@ begin
     end;
   if FWIndows.Count>0 then
     Writer.Windows:=FWIndows;
+<<<<<<< HEAD
   if FMergeFiles.Count>0 then
     Writer.Mergefiles:=FMergeFiles;
   if assigned(ftoc) then
     Writer.TocSitemap:=ftoc;
+=======
+>>>>>>> graemeg/cpstrnew
 
   // and write!
 
@@ -1126,6 +1337,7 @@ begin
   if Assigned(TOCStream) then TOCStream.Free;
   if Assigned(IndexStream) then IndexStream.Free;
   Writer.Free;
+<<<<<<< HEAD
 end;
 
 procedure TChmProject.ShowUndefinedAnchors;
@@ -1135,6 +1347,8 @@ begin
   for i := 0 to fAnchorList.Count-1 do
     if fAnchorList.Objects[i] <> nil then
       Error(chmerror,'Anchor '+fAnchorList[i]+' undefined; first use '+TFirstReference(fAnchorList.Objects[i]).Location);
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TChmProject.LoadSitemaps;

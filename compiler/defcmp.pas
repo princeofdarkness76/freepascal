@@ -43,15 +43,20 @@ interface
           cpo_ignoreuniv,
           cpo_warn_incompatible_univ,
           cpo_ignorevarspez,          // ignore parameter access type
+<<<<<<< HEAD
           cpo_ignoreframepointer,     // ignore frame pointer parameter (for assignment-compatibility of global procedures to nested procvars)
           cpo_compilerproc,
           cpo_rtlproc,
           cpo_generic                 // two different undefined defs (or a constraint in the forward) alone or in open arrays are
                                       // treated as exactly equal (also in open arrays) if they are owned by their respective procdefs
+=======
+          cpo_ignoreframepointer      // ignore frame pointer parameter (for assignment-compatibility of global procedures to nested procvars)
+>>>>>>> graemeg/cpstrnew
        );
 
        tcompare_paras_options = set of tcompare_paras_option;
 
+<<<<<<< HEAD
        tcompare_defs_option = (
           cdo_internal,
           cdo_explicit,
@@ -61,6 +66,9 @@ interface
           cdo_warn_incompatible_univ,
           cdo_strict_undefined_check  // undefined defs are incompatible to everything except other undefined defs
        );
+=======
+       tcompare_defs_option = (cdo_internal,cdo_explicit,cdo_check_operator,cdo_allow_variant,cdo_parameter,cdo_warn_incompatible_univ);
+>>>>>>> graemeg/cpstrnew
        tcompare_defs_options = set of tcompare_defs_option;
 
        tconverttype = (tc_none,
@@ -247,6 +255,7 @@ implementation
             exit;
           end;
 
+<<<<<<< HEAD
          if cdo_strict_undefined_check in cdoptions then
            begin
              { two different undefined defs are not considered equal }
@@ -363,6 +372,16 @@ implementation
                  exit;
                end;
            end;
+=======
+         { undefined def? then mark it as equal }
+         if (def_from.typ=undefineddef) or
+            (def_to.typ=undefineddef) then
+          begin
+            doconv:=tc_equal;
+            compare_defs_ext:=te_exact;
+            exit;
+          end;
+>>>>>>> graemeg/cpstrnew
 
          { we walk the wanted (def_to) types and check then the def_from
            types if there is a conversion possible }
@@ -499,6 +518,7 @@ implementation
                            (tstringdef(def_to).encoding=globals.CP_NONE) or
                            (tstringdef(def_from).encoding=globals.CP_NONE) then
                          begin
+<<<<<<< HEAD
                            eq:=te_equal;
                          end
                         else
@@ -510,11 +530,41 @@ implementation
                              eq:=te_convert_l1
                            { else to AnsiString type }
                            else if def_to=getansistringdef then
+=======
+                           doconv:=tc_string_2_string;
+                           { Don't prefer conversions from widestring to a
+                             normal string as we can lose information }
+                           if (tstringdef(def_from).stringtype in [st_widestring,st_unicodestring]) and
+                             not (tstringdef(def_to).stringtype in [st_widestring,st_unicodestring]) then
+                             eq:=te_convert_l3
+                           else if tstringdef(def_to).stringtype in [st_widestring,st_unicodestring] then
+>>>>>>> graemeg/cpstrnew
                              eq:=te_convert_l2
                            { else to AnsiString with other codepage }
                            else
+<<<<<<< HEAD
                              eq:=te_convert_l3;
                          end
+=======
+                             eq:=te_convert_l1;
+                         end;
+                      end
+                     else if (tstringdef(def_from).stringtype=tstringdef(def_to).stringtype) and
+                             (tstringdef(def_from).stringtype=st_ansistring) then 
+                      begin
+                        if (tstringdef(def_from).encoding=tstringdef(def_to).encoding) or
+                           (tstringdef(def_from).encoding=globals.CP_NONE) or
+                           (tstringdef(def_to).encoding=globals.CP_NONE) then
+                          eq:=te_equal
+                        else 
+                         begin        
+                           doconv := tc_string_2_string;
+                           if (tstringdef(def_to).encoding=globals.CP_UTF8) then 
+                             eq:=te_convert_l1
+                           else
+                             eq:=te_convert_l2;
+                         end 
+>>>>>>> graemeg/cpstrnew
                       end          
                      else
                      { same string type ? }
@@ -524,7 +574,14 @@ implementation
                           (tstringdef(def_from).len=tstringdef(def_to).len)) and
                          { for ansi- and unicodestrings also the encoding must match }
                          (not(tstringdef(def_from).stringtype in [st_ansistring,st_unicodestring]) or
+<<<<<<< HEAD
                           (tstringdef(def_from).encoding=tstringdef(def_to).encoding)) then
+=======
+                          (tstringdef(def_from).encoding=tstringdef(def_to).encoding) //or
+                          { RawByteString is compatible with everything }
+                          {(tstringdef(def_from).encoding=65535) or
+                          (tstringdef(def_to).encoding=65535)}) then
+>>>>>>> graemeg/cpstrnew
                         eq:=te_equal
                      else
                        begin
@@ -532,6 +589,7 @@ implementation
                          case tstringdef(def_from).stringtype of
                            st_widestring :
                              begin
+<<<<<<< HEAD
                                case tstringdef(def_to).stringtype of
                                  { Prefer conversions to unicodestring }
                                  st_unicodestring: eq:=te_convert_l1;
@@ -551,6 +609,27 @@ implementation
                                  else
                                    eq:=te_convert_l3;
                                end;
+=======
+                               { Prefer conversions to unicodestring }
+                               if tstringdef(def_to).stringtype=st_unicodestring then
+                                 eq:=te_convert_l1
+                               { else prefer conversions to ansistring }
+                               else if tstringdef(def_to).stringtype=st_ansistring then
+                                 eq:=te_convert_l2
+                               else
+                                 eq:=te_convert_l3;
+                             end;
+                           st_unicodestring :
+                             begin
+                               { Prefer conversions to widestring }
+                               if tstringdef(def_to).stringtype=st_widestring then
+                                 eq:=te_convert_l1
+                               { else prefer conversions to ansistring }
+                               else if tstringdef(def_to).stringtype=st_ansistring then
+                                 eq:=te_convert_l2
+                               else
+                                 eq:=te_convert_l3;
+>>>>>>> graemeg/cpstrnew
                              end;
                            st_shortstring :
                              begin
@@ -1533,10 +1612,13 @@ implementation
                    begin
                      { procvar -> procvar }
                      eq:=proc_to_procvar_equal(tprocvardef(def_from),tprocvardef(def_to),cdo_warn_incompatible_univ in cdoptions);
+<<<<<<< HEAD
                      if eq<te_equal then
                        doconv:=tc_proc_2_procvar
                      else
                        doconv:=tc_equal;
+=======
+>>>>>>> graemeg/cpstrnew
                    end;
                  pointerdef :
                    begin
@@ -1567,9 +1649,23 @@ implementation
 
            objectdef :
              begin
-               { object pascal objects }
+               { Objective-C classes (handle anonymous externals) }
                if (def_from.typ=objectdef) and
+<<<<<<< HEAD
                   (def_is_related(tobjectdef(def_from),tobjectdef(def_to))) then
+=======
+                  (find_real_objcclass_definition(tobjectdef(def_from),false) =
+                   find_real_objcclass_definition(tobjectdef(def_to),false)) then
+                 begin
+                   doconv:=tc_equal;
+                   { exact, not equal, because can change between interface
+                     and implementation }
+                   eq:=te_exact;
+                 end
+               { object pascal objects }
+               else if (def_from.typ=objectdef) and
+                  (tobjectdef(def_from).is_related(tobjectdef(def_to))) then
+>>>>>>> graemeg/cpstrnew
                 begin
                   doconv:=tc_equal;
                   { also update in htypechk.pas/var_para_allowed if changed
@@ -1632,9 +1728,13 @@ implementation
                    else if ((is_interface(def_to) and
                              is_class(def_from)) or
                             (is_objcprotocol(def_to) and
+<<<<<<< HEAD
                              is_objcclass(def_from)) or
                             (is_javainterface(def_to) and
                              is_javaclass(def_from))) and
+=======
+                             is_objcclass(def_from))) and
+>>>>>>> graemeg/cpstrnew
                            assigned(tobjectdef(def_from).ImplementedInterfaces) then
                      begin
                         { we've to search in parent classes as well }
@@ -2114,6 +2214,7 @@ implementation
                             Message2(type_w_procvar_univ_conflicting_para,currpara1.vardef.typename,currpara2.vardef.typename)
                         end;
                     end
+<<<<<<< HEAD
                   else if (cpo_generic in cpoptions) then
                     begin
                       if equal_genfunc_paradefs(currpara1.vardef,currpara2.vardef) then
@@ -2140,6 +2241,11 @@ implementation
                         tstoreddef(currpara2.vardef).is_specialization then
                       eq:=te_exact;
                 end;
+=======
+                  else
+                    exit;
+                end;
+>>>>>>> graemeg/cpstrnew
               { open strings can never match exactly, since you cannot define }
               { a separate "open string" type -> we have to be able to        }
               { consider those as exact when resolving forward definitions.   }
@@ -2216,14 +2322,20 @@ implementation
 
     function proc_to_procvar_equal(def1:tabstractprocdef;def2:tprocvardef;checkincompatibleuniv: boolean):tequaltype;
       var
+<<<<<<< HEAD
         eq: tequaltype;
         po_comp: tprocoptions;
+=======
+        eq : tequaltype;
+        po_comp : tprocoptions;
+>>>>>>> graemeg/cpstrnew
         pa_comp: tcompare_paras_options;
       begin
          proc_to_procvar_equal:=te_incompatible;
          if not(assigned(def1)) or not(assigned(def2)) then
            exit;
          { check for method pointer and local procedure pointer:
+<<<<<<< HEAD
              a) anything but procvars can be assigned to blocks
              b) if one is a procedure of object, the other also has to be one
                 ("object static procedure" is equal to procedure as well)
@@ -2234,11 +2346,21 @@ implementation
              d) if def1 is a nested procedure, then def2 has to be a nested
                 procvar and def1 has to have the po_delphi_nested_cc option
              e) if def1 is a procvar, def1 and def2 both have to be nested or
+=======
+             a) if one is a procedure of object, the other also has to be one
+             b) if one is a pure address, the other also has to be one
+                except if def1 is a global proc and def2 is a nested procdef
+                (global procedures can be converted into nested procvars)
+             c) if def1 is a nested procedure, then def2 has to be a nested
+                procvar and def1 has to have the po_delphi_nested_cc option
+             d) if def1 is a procvar, def1 and def2 both have to be nested or
+>>>>>>> graemeg/cpstrnew
                 non-nested (we don't allow assignments from non-nested to
                 nested procvars to make sure that we can still implement
                 nested procvars using trampolines -- e.g., this would be
                 necessary for LLVM or CIL as long as they do not have support
                 for Delphi-style frame pointer parameter passing) }
+<<<<<<< HEAD
          if is_block(def2) then                                     { a) }
            { can't explicitly check against procvars here, because
              def1 may already be a procvar due to a proc_to_procvar;
@@ -2259,6 +2381,20 @@ implementation
          pa_comp:=[cpo_ignoreframepointer];
          if is_block(def2) then
            include(pa_comp,cpo_ignorehidden);
+=======
+         if (def1.is_methodpointer<>def2.is_methodpointer) or  { a) }
+            ((def1.is_addressonly<>def2.is_addressonly) and    { b) }
+             (is_nested_pd(def1) or
+              not is_nested_pd(def2))) or
+            ((def1.typ=procdef) and                            { c) }
+             is_nested_pd(def1) and
+             (not(po_delphi_nested_cc in def1.procoptions) or
+              not is_nested_pd(def2))) or
+            ((def1.typ=procvardef) and                         { d) }
+             (is_nested_pd(def1)<>is_nested_pd(def2))) then
+           exit;
+         pa_comp:=[cpo_ignoreframepointer];
+>>>>>>> graemeg/cpstrnew
          if checkincompatibleuniv then
            include(pa_comp,cpo_warn_incompatible_univ);
          { check return value and options, methodpointer is already checked }
@@ -2286,9 +2422,12 @@ implementation
                 { prefer non-nested to non-nested over non-nested to nested }
                 if (is_nested_pd(def1)<>is_nested_pd(def2)) then
                   eq:=te_convert_l1;
+<<<<<<< HEAD
                 { in case of non-block to block, we need a type conversion }
                 if (po_is_block in def1.procoptions) <> (po_is_block in def2.procoptions) then
                   eq:=te_convert_l1;
+=======
+>>>>>>> graemeg/cpstrnew
               end;
             proc_to_procvar_equal:=eq;
           end;
@@ -2301,6 +2440,7 @@ implementation
           (equal_defs(parentretdef,childretdef)) or
           ((parentretdef.typ=objectdef) and
            (childretdef.typ=objectdef) and
+<<<<<<< HEAD
            is_class_or_interface_or_objc_or_java(parentretdef) and
            is_class_or_interface_or_objc_or_java(childretdef) and
            (def_is_related(tobjectdef(childretdef),tobjectdef(parentretdef))))
@@ -2446,6 +2586,11 @@ implementation
              hp:=hp.childof;
           end;
         result:=false;
+=======
+           is_class_or_interface_or_objc(parentretdef) and
+           is_class_or_interface_or_objc(childretdef) and
+           (tobjectdef(childretdef).is_related(tobjectdef(parentretdef))))
+>>>>>>> graemeg/cpstrnew
       end;
 
 

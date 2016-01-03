@@ -7,6 +7,7 @@ main=rtl
 
 [target]
 loaders=
+<<<<<<< HEAD
 #units=system objpas macpas iso7185 extpas buildrtl lineinfo lnfodwrf
 units=system uuchar objpas iso7185 extpas cpall buildrtl
 implicitunits=ndk ndkutils ddk \
@@ -26,6 +27,27 @@ implicitunits=ndk ndkutils ddk \
 # shared=$(DLLS)
 
 rsts=math typinfo classes sysconst
+=======
+#units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
+units=system objpas iso7185 buildrtl
+implicitunits=ndk ndkutils ddk \
+      ctypes strings \
+#      heaptrc
+      matrix \
+#      initc cmem dynlibs signals \
+#      dos crt objects \
+      rtlconsts sysconst sysutils math types \
+      strutils dateutils varutils variants typinfo fgl classes \
+      convutils stdconvs $(CPU_UNITS) charset ucomplex getopts \
+#      sockets printer \
+#      video mouse keyboard
+       fmtbcd #\
+#      sharemem exeinfo fpintres
+
+# shared=$(DLLS)
+
+rsts=math varutils typinfo variants classes dateutils sysconst
+>>>>>>> graemeg/cpstrnew
 
 [require]
 nortl=y
@@ -51,12 +73,19 @@ DDKINC=ddk
 NDKINC=ndk
 
 UNITPREFIX=rtl
+<<<<<<< HEAD
 SYSTEMUNIT=system
+=======
+>>>>>>> graemeg/cpstrnew
 
 CPU_UNITS=
 
 ifeq ($(ARCH),i386)
+<<<<<<< HEAD
 CPU_UNITS=cpu mmx
+=======
+CPU_UNITS=x86 cpu mmx
+>>>>>>> graemeg/cpstrnew
 endif
 
 ifeq ($(ARCH),x86_64)
@@ -112,8 +141,11 @@ SYSDEPS=$(SYSINCDEPS) $(SYSCPUDEPS)
 system$(PPUEXT) : system.pp $(SYSDEPS)
         $(COMPILER) -Us -Sg system.pp
 
+<<<<<<< HEAD
 uuchar$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(INC)/uuchar.pp
 
+=======
+>>>>>>> graemeg/cpstrnew
 objpas$(PPUEXT): $(OBJPASDIR)/objpas.pp $(INC)/except.inc system$(PPUEXT)
         $(COMPILER) -I$(OBJPASDIR) $(OBJPASDIR)/objpas.pp
 
@@ -122,6 +154,9 @@ macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) buildrtl$(PPUEXT)
 
 buildrtl$(PPUEXT): buildrtl.pp system$(PPUEXT) objpas$(PPUEXT)
         $(COMPILER) -Fi$(OBJPASDIR)/sysutils -Fi$(OBJPASDIR)/classes -Fu$(PROCINC) -I$(OBJPASDIR) -Fi$(DDKINC) -I$(INC) -Fu$(INC) -Fu$(OBJPASDIR) buildrtl
+<<<<<<< HEAD
 
 cpall$(PPUEXT): $(RTL)/charmaps/cpall.pas system$(PPUEXT) objpas$(PPUEXT)
         $(COMPILER) -Fu$(INC) -Fi$(RTL)/charmaps $(RTL)/charmaps/cpall.pas
+=======
+>>>>>>> graemeg/cpstrnew

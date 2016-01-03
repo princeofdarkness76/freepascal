@@ -106,10 +106,13 @@ uses
 
     function setcondition(i : taicpu;c : tasmcond) : taicpu;
 
+<<<<<<< HEAD
     { replaces cond. branches by rjmp/jmp and the inverse cond. branch if needed
       and transforms special instructions to valid instruction encodings }
     procedure finalizeavrcode(list : TAsmList);
 
+=======
+>>>>>>> graemeg/cpstrnew
 implementation
 
 {*****************************************************************************
@@ -345,6 +348,7 @@ implementation
       begin
         case getregtype(r) of
           R_INTREGISTER :
+<<<<<<< HEAD
             if ref.offset<>0 then
               result:=taicpu.op_reg_ref(A_LDD,r,ref)
             else
@@ -354,6 +358,11 @@ implementation
               result:=taicpu.op_reg_ref(A_LDD,r,ref)
             else
               result:=taicpu.op_reg_ref(A_LD,r,ref);
+=======
+            result:=taicpu.op_ref_reg(A_LD,ref,r);
+          R_ADDRESSREGISTER :
+            result:=taicpu.op_ref_reg(A_LD,ref,r);
+>>>>>>> graemeg/cpstrnew
           else
             internalerror(200401041);
         end;
@@ -364,6 +373,7 @@ implementation
       begin
         case getregtype(r) of
           R_INTREGISTER :
+<<<<<<< HEAD
             if ref.offset<>0 then
               result:=taicpu.op_ref_reg(A_STD,ref,r)
             else
@@ -373,6 +383,11 @@ implementation
               result:=taicpu.op_ref_reg(A_STD,ref,r)
             else
               result:=taicpu.op_ref_reg(A_ST,ref,r);
+=======
+            result:=taicpu.op_reg_ref(A_ST,r,ref);
+          R_ADDRESSREGISTER :
+            result:=taicpu.op_reg_ref(A_ST,r,ref);
+>>>>>>> graemeg/cpstrnew
           else
             internalerror(200401041);
         end;
@@ -396,6 +411,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure finalizeavrcode(list : TAsmList);
       var
         CurrOffset : longint;
@@ -478,6 +494,8 @@ implementation
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   cai_cpu:=taicpu;
   cai_align:=tai_align;

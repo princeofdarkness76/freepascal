@@ -138,6 +138,7 @@ begin
 {$endif powerpc64}
 {$endif x86_64}
 
+<<<<<<< HEAD
 {$ifdef arm}
   { some newer Debian have the crt*.o files at uncommon locations,
     for other arm flavours, this cannot hurt }
@@ -159,6 +160,43 @@ begin
 {$endif aarch64}
     end;
 end;
+=======
+
+procedure TLinkerLinux.SetDefaultInfo;
+{
+  This will also detect which libc version will be used
+}
+
+const
+{$ifdef i386}      platform_select='-b elf32-i386 -m elf_i386';{$endif}
+{$ifdef x86_64}    platform_select='-b elf64-x86-64 -m elf_x86_64';{$endif}
+{$ifdef powerpc}   platform_select='-b elf32-powerpc -m elf32ppclinux';{$endif}
+{$ifdef POWERPC64} platform_select='-b elf64-powerpc -m elf64ppc';{$endif}
+{$ifdef sparc}     platform_select='-b elf32-sparc -m elf32_sparc';{$endif}
+{$ifdef arm}       platform_select='';{$endif} {unknown :( }
+{$ifdef m68k}      platform_select='';{$endif} {unknown :( }
+{$ifdef mips}
+  {$ifdef mipsel}  platform_select='-EL';{$else}
+                   platform_select='-EB';{$endif}
+{$endif}
+
+
+var
+  defdynlinker: string;
+begin
+  with Info do
+   begin
+     ExeCmd[1]:='ld '+platform_select+' $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -L. -o $EXE';
+     { when we want to cross-link we need to override default library paths }
+     if length(sysrootpath) > 0 then
+       ExeCmd[1]:=ExeCmd[1]+' -T';
+     ExeCmd[1]:=ExeCmd[1]+' $RES';
+     DllCmd[1]:='ld '+platform_select+' $OPT $INIT $FINI $SONAME -shared -L. -o $EXE $RES';
+     DllCmd[2]:='strip --strip-unneeded $EXE';
+     ExtDbgCmd[1]:='objcopy --only-keep-debug $EXE $DBG';
+     ExtDbgCmd[2]:='objcopy --add-gnu-debuglink=$DBG $EXE';
+     ExtDbgCmd[3]:='strip --strip-unneeded $EXE';
+>>>>>>> graemeg/cpstrnew
 
 {$ifdef m68k}
   const defdynlinker='/lib/ld.so.1';
@@ -464,12 +502,23 @@ begin
        begin
          { crti.o must come first }
          if librarysearchpath.FindFile('crti.o',false,s) then
+<<<<<<< HEAD
            AddFileName(s)
          else
            Message1(exec_w_init_file_not_found,'crti.o');
 
          { then the crtbegin* }
          if cs_create_pic in current_settings.moduleswitches then
+=======
+           AddFileName(s);
+         { then the crtbegin* }
+         { x86_64 requires this to use entry/exit code with pic,
+           see also issue #8210 regarding a discussion
+           no idea about the other non i386 CPUs (FK)
+         }
+{$ifdef x86_64}
+         if current_module.islibrary then
+>>>>>>> graemeg/cpstrnew
            begin
              if librarysearchpath.FindFile('crtbeginS.o',false,s) then
                AddFileName(s)
@@ -477,6 +526,7 @@ begin
                Message1(exec_w_init_file_not_found,'crtbeginS.o');
            end
          else
+<<<<<<< HEAD
            if (cs_link_staticflag in current_settings.globalswitches) then
              begin
                if librarysearchpath.FindFile('crtbeginT.o',false,s) then
@@ -488,6 +538,14 @@ begin
              AddFileName(s)
            else
              Message1(exec_w_init_file_not_found,'crtbegin.o');
+=======
+{$endif x86_64}
+           if (cs_link_staticflag in current_settings.globalswitches) and
+              librarysearchpath.FindFile('crtbeginT.o',false,s) then
+             AddFileName(s)
+           else if librarysearchpath.FindFile('crtbegin.o',false,s) then
+             AddFileName(s);
+>>>>>>> graemeg/cpstrnew
        end;
       { main objectfiles }
       while not ObjectFiles.Empty do
@@ -545,8 +603,13 @@ begin
                  end
                 else
                  begin
+<<<<<<< HEAD
                   linklibc:=true;
               end;
+=======
+                   linklibc:=true;
+                 end;
+>>>>>>> graemeg/cpstrnew
               end;
              Add(')');
            end
@@ -1825,6 +1888,7 @@ initialization
   RegisterExport(system_arm_linux,texportliblinux);
   RegisterTarget(system_arm_linux_info);
 {$endif ARM}
+<<<<<<< HEAD
 {$ifdef aarch64}
   RegisterImport(system_aarch64_linux,timportliblinux);
   RegisterExport(system_aarch64_linux,texportliblinux);
@@ -1832,13 +1896,25 @@ initialization
 {$endif aarch64}
 {$ifdef MIPS}
 {$ifdef MIPSEL}
+=======
+{$ifdef MIPS}
+{$ifdef MIPSEL}
+  RegisterExternalLinker(system_mipsel_linux_info,TLinkerLinux);
+>>>>>>> graemeg/cpstrnew
   RegisterImport(system_mipsel_linux,timportliblinux);
   RegisterExport(system_mipsel_linux,texportliblinux);
   RegisterTarget(system_mipsel_linux_info);
 {$else MIPS}
+<<<<<<< HEAD
   RegisterImport(system_mipseb_linux,timportliblinux);
   RegisterExport(system_mipseb_linux,texportliblinux);
   RegisterTarget(system_mipseb_linux_info);
+=======
+  RegisterExternalLinker(system_mips_linux_info,TLinkerLinux);
+  RegisterImport(system_mips_linux,timportliblinux);
+  RegisterExport(system_mips_linux,texportliblinux);
+  RegisterTarget(system_mips_linux_info);
+>>>>>>> graemeg/cpstrnew
 {$endif MIPSEL}
 {$endif MIPS}
   RegisterRes(res_elf_info,TWinLikeResourceFile);

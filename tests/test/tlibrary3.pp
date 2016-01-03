@@ -1,6 +1,9 @@
 { %NORUN }
 { %SKIPTARGET=macos, go32v2, win64 }
+<<<<<<< HEAD
 { %delfiles=tlibrary3 }
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifdef darwin}
 {$PIC+}

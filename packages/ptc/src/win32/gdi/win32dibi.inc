@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -69,5 +73,9 @@ destructor TWin32DIB.Destroy;
 begin
   FreeMem(FPixels);
   FreeMem(FBitmapInfo);
+<<<<<<< HEAD
+=======
+  FFormat.Free;
+>>>>>>> graemeg/cpstrnew
   inherited Destroy;
 end;

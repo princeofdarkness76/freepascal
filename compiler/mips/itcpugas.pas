@@ -42,7 +42,11 @@ uses
 
 const
   gas_regname_table: array[tregisterindex] of string[7] = (
+<<<<<<< HEAD
         {$i rmipsgas.inc}
+=======
+        {$i rmipsstd.inc}
+>>>>>>> graemeg/cpstrnew
     );
 
   gas_regname_index: array[tregisterindex] of tregisterindex = (
@@ -52,7 +56,11 @@ const
 
 function findreg_by_gasname(const s: string): tregisterindex;
 var
+<<<<<<< HEAD
   p: tregisterindex;
+=======
+  i, p: tregisterindex;
+>>>>>>> graemeg/cpstrnew
 begin
   for p := low(tregisterindex) to high(tregisterindex) do
   begin
@@ -93,4 +101,13 @@ begin
 end;
 
 end.
+<<<<<<< HEAD
 
+=======
+{
+  $Log: itcpugas.pas,v $
+  Revision 1.7  2005/02/14 17:13:10  peter
+    * truncate log
+
+}
+>>>>>>> graemeg/cpstrnew

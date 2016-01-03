@@ -42,7 +42,10 @@ type
     progname,
     progdir,
     progargs   : pchar;
+<<<<<<< HEAD
     TBreakNumber,
+=======
+>>>>>>> graemeg/cpstrnew
     start_break_number,
     in_command,
     init_count : longint;

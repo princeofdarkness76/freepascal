@@ -277,7 +277,10 @@ Begin
   fpc_cpucodeinit;
 {$endif cpui386}
 
+<<<<<<< HEAD
   initunicodestringmanager;
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Setup stdin, stdout and stderr }
   SysInitStdIO;

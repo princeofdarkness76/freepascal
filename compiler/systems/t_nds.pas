@@ -313,6 +313,7 @@ begin
         add('		. = ALIGN(4);   /* REQUIRED. LD is flaky without it. */');
         add('	} >ewram = 0xff');
         add('');
+<<<<<<< HEAD
         add('	.ARM.extab   : { *(.ARM.extab* .gnu.linkonce.armextab.*) } >ewram');
         add(' 	__exidx_start = .;');
         add('	ARM.exidx   : { *(.ARM.exidx* .gnu.linkonce.armexidx.*) } >ewram');
@@ -343,6 +344,34 @@ begin
         add('	} >ewram = 0xff');
         add('');
         add('	PROVIDE (__fini_array_end = .);');
+=======
+        add('  .ARM.extab   : { *(.ARM.extab* .gnu.linkonce.armextab.*) } >ewram');
+        add('   __exidx_start = .;');
+        add('  .ARM.exidx   : { *(.ARM.exidx* .gnu.linkonce.armexidx.*) } >ewram');
+        add('   __exidx_end = .;');
+        add('  /* Ensure the __preinit_array_start label is properly aligned.  We');
+        add('     could instead move the label definition inside the section, but');
+        add('     the linker would then create the section even if it turns out to');
+        add('     be empty, which isn''t pretty.  */');
+        add('  . = ALIGN(32 / 8);');
+        add('  PROVIDE (__preinit_array_start = .);');
+        add('  .preinit_array     : { KEEP (*(.preinit_array)) } >ewram = 0xff');
+        add('  PROVIDE (__preinit_array_end = .);');
+        add('  PROVIDE (__init_array_start = .);');
+        add('  .init_array     :');
+        add('  {');
+        add('       KEEP (*(SORT(.init_array.*)))');
+        add('       KEEP (*(.init_array))');
+        add('  } >ewram = 0xff');        
+        add('  PROVIDE (__init_array_end = .);');
+        add('  PROVIDE (__fini_array_start = .);');
+        add('  .fini_array     :');
+        add('  {');
+        add('       KEEP (*(.fini_array))');
+        add('       KEEP (*(SORT(.fini_array.*)))');
+        add('  } >ewram = 0xff');
+        add('  PROVIDE (__fini_array_end = .);');
+>>>>>>> graemeg/cpstrnew
         add('');
         add('	.ctors :');
         add('	{');
@@ -511,7 +540,10 @@ begin
         add('');
         add('__iwram_start	=	ORIGIN(iwram);');
         add('__iwram_top	=	ORIGIN(iwram)+ LENGTH(iwram);');
+<<<<<<< HEAD
         add('');
+=======
+>>>>>>> graemeg/cpstrnew
         add('__sp_irq	=	__iwram_top - 0x100;');
         add('__sp_svc	=	__sp_irq - 0x100;');
         add('__sp_usr	=	__sp_svc - 0x100;');
@@ -715,7 +747,11 @@ begin
      not(cs_link_separate_dbg_file in current_settings.globalswitches) then
    StripStr:='-s';
   if (cs_link_map in current_settings.globalswitches) then
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
+=======
+   StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
+>>>>>>> graemeg/cpstrnew
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
   if not(cs_link_nolink in current_settings.globalswitches) then

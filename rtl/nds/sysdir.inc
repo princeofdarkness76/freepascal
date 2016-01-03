@@ -19,6 +19,7 @@
 {*****************************************************************************
                            Directory Handling
 *****************************************************************************}
+<<<<<<< HEAD
 procedure do_mkdir(const s: rawbytestring);
 begin
 
@@ -32,6 +33,27 @@ end;
 procedure do_chdir(const s: rawbytestring);
 begin
 
+=======
+procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+begin
+  if not assigned(s) or (len=0) or (InOutRes<>0) then exit;
+  if FileIODevice.DirIO.DoMkdir <> nil then
+    FileIODevice.DirIO.DoMkdir(strpas(s));
+end;
+
+procedure rmdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+begin
+  if not assigned(s) or (len=0) then exit;
+  if FileIODevice.DirIO.DoRmdir <> nil then
+    FileIODevice.DirIO.DoRmdir(strpas(s));
+end;
+
+procedure chdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+begin
+  if not assigned(s) or (len=0) then exit;
+  if FileIODevice.DirIO.DoChdir <> nil then
+    FileIODevice.DirIO.DoChdir(strpas(s));
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure do_GetDir(DriveNr: byte; var Dir: RawByteString);

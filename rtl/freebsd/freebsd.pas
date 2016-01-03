@@ -334,6 +334,7 @@ function fpgetfsstat(buf:pstatfs;bufsize:clong;flags:cint):cint;
 begin
   fpgetfsstat:=do_syscall(syscall_nr_getfsstat,TSysParam(buf),TSysParam(Bufsize),TSysParam(Flags));
 end;
+<<<<<<< HEAD
 
 function clock_getres(clk_id: clockid_t; res: ptimespec): cint;
 begin
@@ -350,6 +351,8 @@ begin
   clock_settime := do_SysCall(syscall_nr_clock_settime,tsysparam(clk_id),tsysparam(tp));
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$ENDIF}
 
 function kernproc_getgenvalue(pid:pid_t;kernproc_variable:cint;var s:ansistring):cint;

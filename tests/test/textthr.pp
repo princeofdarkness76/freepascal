@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 { %target=darwin,linux,freebsd,solaris,haiku,aix }
+=======
+{ %target=darwin,linux,freebsd,solaris,haiku }
+>>>>>>> graemeg/cpstrnew
 
 {$mode objfpc}
 uses

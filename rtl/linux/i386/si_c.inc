@@ -54,13 +54,22 @@ Procedure fpc_geteipasebx;[external name 'fpc_geteipasebx'];
 {$asmmode ATT}
 
 procedure _FPC_libc_start; assembler; nostackframe; public name '_start';
+var
+  _ebx: LongInt;
+  _ecx: LongInt;
+  _libc_init_proc: LongInt;
 asm
   { First locate the start of the environment variables }
   popl    %ecx                    { Get argc in ecx }
 
   {$ifdef FPC_PIC}
+<<<<<<< HEAD
         movl    %esp,%ebp               { Points to the arguments }
         movl    %ecx,%esi               
+=======
+        movl    %esp,_ebx               { Points to the arguments }
+        movl    %ecx,_ecx               
+>>>>>>> graemeg/cpstrnew
   {$else FPC_PIC}
         movl    %esp,%ebx               { Points to the arguments }
   {$endif FPC_PIC}
@@ -79,15 +88,26 @@ asm
 
         pushl %eax
         movl  operatingsystem_parameter_argc@GOT(%ebx),%ecx
+<<<<<<< HEAD
         movl  %esi,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
         movl  %ebp,%eax
+=======
+        movl  _ecx,%eax
+        movl  %eax,(%ecx)
+        movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
+        movl  _ebx,%eax
+>>>>>>> graemeg/cpstrnew
         movl  %eax,(%ecx)
 	popl  %eax
 
         popl  %ecx
+<<<<<<< HEAD
         movl  %ebp,%ebx
+=======
+        movl  _ebx,%ebx
+>>>>>>> graemeg/cpstrnew
   {$else FPC_PIC}
 	movl    %eax,operatingsystem_parameter_envp    { Move the environment pointer }
 	movl    %ecx,operatingsystem_parameter_argc    { Move the argument counter    }
@@ -108,7 +128,12 @@ asm
         call  fpc_geteipasebx
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
         movl  libc_init_proc@GOT(%ebx),%ecx
+<<<<<<< HEAD
 	movl  (%ecx),%edi
+=======
+	movl  (%ecx),%ecx
+	movl  %ecx,_libc_init_proc
+>>>>>>> graemeg/cpstrnew
   	popl    %ebx
         popl    %ecx
   {$else FPC_PIC}
@@ -124,7 +149,11 @@ asm
   popl    %eax
 
   {$ifdef FPC_PIC}
+<<<<<<< HEAD
 	call    *%edi
+=======
+	call    _libc_init_proc
+>>>>>>> graemeg/cpstrnew
   {$else FPC_PIC}
 	call    libc_init_proc
   {$endif FPC_PIC}
@@ -153,7 +182,30 @@ end;
 procedure _FPC_libc_haltproc(e: longint); cdecl; assembler; public name '_haltproc';
 asm
 .Lhaltproc:
+<<<<<<< HEAD
   pushl   e
+=======
+
+ {$ifdef FPC_PIC}
+  call    fpc_geteipasebx
+  addl    $_GLOBAL_OFFSET_TABLE_,%ebx
+  movl    ExitCode@GOT(%ebx),%ebx
+ {$if sizeof(ExitCode)=2}
+  movzwl  (%ebx),%ebx
+ {$else}
+  mov     (%ebx),%ebx
+ {$endif}
+{$else FPC_PIC}
+ {$if sizeof(ExitCode)=2}
+  movzwl  ExitCode,%ebx
+ {$else}
+  mov     ExitCode,%ebx
+ {$endif}
+{$endif FPC_PIC}
+
+  pushl   %ebx
+
+>>>>>>> graemeg/cpstrnew
   call    libc_exit
   xorl    %eax,%eax
   incl    %eax                    { eax=1, exit call }

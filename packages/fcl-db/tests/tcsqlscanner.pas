@@ -1,6 +1,10 @@
 {
     This file is part of the Free Component Library
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 
     SQL source lexical scanner test suite
 
@@ -197,8 +201,13 @@ type
     Procedure TestStarting;
     procedure TestString;
     procedure TestSubtype;
+<<<<<<< HEAD
     procedure TestSum;
     procedure TestSuspend;
+=======
+    Procedure TestSum;
+    Procedure TestSuspend;
+>>>>>>> graemeg/cpstrnew
     Procedure TestTable;
     Procedure TestThen;
     Procedure TestTime;
@@ -244,8 +253,11 @@ type
     procedure TestFloatLiteral;
     procedure TestStringLiteral1;
     procedure TestStringLiteral2;
+<<<<<<< HEAD
     procedure TestSymbolLiteral1;
     procedure TestSymbolLiteral2;
+=======
+>>>>>>> graemeg/cpstrnew
     procedure TestStringError;
     procedure TestFloatError;
     Procedure TestOptionsoDoubleQuoteStringLiteral;
@@ -293,7 +305,11 @@ Var
 begin
   CreateScanner(ASource);
   J:=Scanner.FetchToken;
+<<<<<<< HEAD
   EN2:=GetEnumName(TypeInfo(TSQLToken),Ord(AToken));
+=======
+  EN2:=GetEnumName(TypeINfo(TSQLToken),Ord(AToken));
+>>>>>>> graemeg/cpstrnew
   AssertEquals(Format('Source %s should result in %s.',[ASource,EN2]),AToken,J);
 end;
 
@@ -364,7 +380,11 @@ begin
   FLineReader:=TStreamLineReader.Create(Fstream);
   FScanner:=TSQLScanner.Create(FLineReader);
   FScanner.Options:=AOptions;
+<<<<<<< HEAD
   Result:=FScanner;
+=======
+  Result:=FSCanner;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TTestSQLScanner.FreeScanner;
@@ -646,6 +666,7 @@ begin
   CheckToken(tsqlSuspend,'Suspend');
 end;
 
+<<<<<<< HEAD
 procedure TTestSQLScanner.TestSymbolLiteral1;
 begin
   CheckToken(tsqlSymbolString,'%');
@@ -656,6 +677,8 @@ begin
   CheckToken(tsqlSymbolString,'%^');
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TTestSQLScanner.TestStarting;
 begin
   CheckToken(tsqlStarting,'starting');
@@ -1404,8 +1427,13 @@ end;
 
 procedure TTestSQLScanner.TestIdentifier5;
 begin
+<<<<<<< HEAD
   // $0 should not be parsed as an identifier but as a symbol literal
   CheckToken(tsqlSymbolString,'$0');
+=======
+  FErrorSource:='$0';
+  AssertException('Identifier cannot start with _',ESQLScannerError,@TestErrorSource);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TTestSQLScanner.TestIdentifierDotIdentifier;

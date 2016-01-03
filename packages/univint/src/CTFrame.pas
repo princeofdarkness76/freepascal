@@ -2,12 +2,19 @@
  *	CTFrame.h
  *	CoreText
  *
+<<<<<<< HEAD
  *	Copyright (c) 2003-2012 Apple Inc. All rights reserved.
  *
  }
 {  Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+ *	Copyright (c) 2003-2008 Apple Inc. All rights reserved.
+ *
+ }
+{       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -62,11 +69,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -85,29 +95,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -117,13 +142,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -135,12 +164,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -154,13 +189,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -206,6 +248,11 @@ uses MacTypes,CFArray,CFDictionary,CFBase,CFNumber,CFString,CGContext,CGGeometry
 {$endc} {not MACOSALLINCLUDE}
 
 
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
  
@@ -223,8 +270,12 @@ uses MacTypes,CFArray,CFDictionary,CFBase,CFNumber,CFString,CGContext,CGGeometry
 { --------------------------------------------------------------------------- }
 
 type
+<<<<<<< HEAD
 	CTFrameRef = ^__CTFrame; { an opaque type }
 	__CTFrame = record end;
+=======
+	CTFrameRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -233,7 +284,11 @@ type
 }
 
 function CTFrameGetTypeID: CFTypeID; external name '_CTFrameGetTypeID';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { --------------------------------------------------------------------------- }
@@ -241,6 +296,7 @@ function CTFrameGetTypeID: CFTypeID; external name '_CTFrameGetTypeID';
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
     @enum		CTFrameProgression
     @abstract	These constants specify frame progression types.
 
@@ -258,12 +314,31 @@ function CTFrameGetTypeID: CFTypeID; external name '_CTFrameGetTypeID';
 
     @constant	kCTFrameProgressionLeftToRight
                 Lines are stacked left to right for vertical text.
+=======
+	@enum		CTFrameProgression
+	@abstract	These constants specify frame progression types.
+	
+	@discussion The lines of text within a frame may be stacked for either
+				horizontal or vertical text. Values are enumerated for each
+				stacking type supported by CTFrame. Frames created with a
+				progression type specifying vertical text will rotate lines
+				90 degrees counterclockwise when drawing.
+	
+	@constant	kCTFrameProgressionTopToBottom
+				Lines are stacked top to bottom for horizontal text.
+	
+	@constant	kCTFrameProgressionRightToLeft
+				Lines are stacked right to left for vertical text.
+>>>>>>> graemeg/cpstrnew
 }
 
 const
 	kCTFrameProgressionTopToBottom = 0;
 	kCTFrameProgressionRightToLeft = 1;
+<<<<<<< HEAD
         kCTFrameProgressionLeftToRight  = 2;
+=======
+>>>>>>> graemeg/cpstrnew
 type
 	CTFrameProgression = UInt32;
 
@@ -281,6 +356,7 @@ type
 }
 
 var kCTFrameProgressionAttributeName: CFStringRef; external name '_kCTFrameProgressionAttributeName'; (* attribute const *)
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
 {!
@@ -361,6 +437,10 @@ var kCTFrameClippingPathsAttributeName: CFStringRef; external name '_kCTFrameCli
 
 var kCTFramePathClippingPathAttributeName: CFStringRef; external name '_kCTFramePathClippingPathAttributeName'; (* attribute const *)
 (* CT_AVAILABLE_STARTING( __MAC_10_7, __IPHONE_4_3) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 { --------------------------------------------------------------------------- }
 { Frame Accessors }
@@ -381,7 +461,11 @@ var kCTFramePathClippingPathAttributeName: CFStringRef; external name '_kCTFrame
 }
 
 function CTFrameGetStringRange( frame: CTFrameRef ): CFRange; external name '_CTFrameGetStringRange';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -404,7 +488,11 @@ function CTFrameGetStringRange( frame: CTFrameRef ): CFRange; external name '_CT
 }
 
 function CTFrameGetVisibleStringRange( frame: CTFrameRef ): CFRange; external name '_CTFrameGetVisibleStringRange';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -416,7 +504,11 @@ function CTFrameGetVisibleStringRange( frame: CTFrameRef ): CFRange; external na
 }
 
 function CTFrameGetPath( frame: CTFrameRef ): CGPathRef; external name '_CTFrameGetPath';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -438,7 +530,11 @@ function CTFrameGetPath( frame: CTFrameRef ): CGPathRef; external name '_CTFrame
 }
 
 function CTFrameGetFrameAttributes( frame: CTFrameRef ): CFDictionaryRef; external name '_CTFrameGetFrameAttributes';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -460,7 +556,11 @@ function CTFrameGetFrameAttributes( frame: CTFrameRef ): CFDictionaryRef; extern
 }
 
 function CTFrameGetLines( frame: CTFrameRef ): CFArrayRef; external name '_CTFrameGetLines';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -495,7 +595,11 @@ function CTFrameGetLines( frame: CTFrameRef ): CFArrayRef; external name '_CTFra
 }
 
 procedure CTFrameGetLineOrigins( frame: CTFrameRef; range: CFRange; origins: {variable-size-array} CGPointPtr ); external name '_CTFrameGetLineOrigins';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {!
@@ -517,8 +621,14 @@ procedure CTFrameGetLineOrigins( frame: CTFrameRef; range: CFRange; origins: {va
 }
 
 procedure CTFrameDraw( frame: CTFrameRef; context: CGContextRef ); external name '_CTFrameDraw';
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

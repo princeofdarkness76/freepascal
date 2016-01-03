@@ -202,6 +202,7 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+<<<<<<< HEAD
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -353,5 +354,7 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+=======
+>>>>>>> graemeg/cpstrnew
 attsufNONE
 );

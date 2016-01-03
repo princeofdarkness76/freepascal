@@ -19,10 +19,13 @@ uses
 
 {$PACKRECORDS C}
 
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 // IME_Codes
 // bit field for conversion mode
 const
@@ -119,6 +122,7 @@ type
   NPREGISTERWORDW = PtagREGISTERWORDW;
   LPREGISTERWORDW = PtagREGISTERWORDW;
 
+<<<<<<< HEAD
 {$ifdef UNICODE}
   PtagREGISTERWORD = PtagREGISTERWORDW;
   tagREGISTERWORD  = tagREGISTERWORDW;
@@ -137,6 +141,8 @@ type
   LPREGISTERWORD   = LPREGISTERWORDA;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 type
   PtagRECONVERTSTRING = ^tagRECONVERTSTRING;
   tagRECONVERTSTRING = packed record
@@ -182,6 +188,7 @@ type
   NPSTYLEBUFW = PtagSTYLEBUFW;
   LPSTYLEBUFW = PtagSTYLEBUFW;
 
+<<<<<<< HEAD
 {$ifdef UNICODE}
   STYLEBUF    = STYLEBUFW;
   TSTYLEBUF   = TSTYLEBUFW;
@@ -196,6 +203,8 @@ type
   LPSTYLEBUF  = LPSTYLEBUFA;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 const
   IMEMENUITEM_STRING_SIZE = 80;
 
@@ -237,6 +246,7 @@ type
   NPIMEMENUITEMINFOW = PtagIMEMENUITEMINFOW;
   LPIMEMENUITEMINFOW = PtagIMEMENUITEMINFOW;
 
+<<<<<<< HEAD
 {$ifdef UNICODE}
   IMEMENUITEMINFO    = IMEMENUITEMINFOW;
   TIMEMENUITEMINFO   = TIMEMENUITEMINFOW;
@@ -251,6 +261,8 @@ type
   LPIMEMENUITEMINFO  = LPIMEMENUITEMINFOA;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 type
   PtagIMECHARPOSITION = ^tagIMECHARPOSITION;
   tagIMECHARPOSITION = packed record
@@ -277,6 +289,7 @@ const
 
 function ImmInstallIMEA(lpszIMEFileName, lpszLayoutText: LPCSTR): HKL; stdcall; external Imm name 'ImmInstallIMEA';
 function ImmInstallIMEW(lpszIMEFileName, lpszLayoutText: LPCWSTR): HKL; stdcall; external Imm name 'ImmInstallIMEW';
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmInstallIME(lpszIMEFileName, lpszLayoutText: LPCSTR): HKL; stdcall; external Imm name 'ImmInstallIMEA';
 {$else}
@@ -302,6 +315,15 @@ function ImmGetIMEFileName(kl: HKL; lpszFileName: LPSTR; uBufLen: UINT): UINT; s
 function ImmGetIMEFileName(kl: HKL; lpszFileName: LPWSTR; uBufLen: UINT): UINT; stdcall; external Imm name 'ImmGetIMEFileNameW';
 {$endif}
 
+=======
+function ImmGetDefaultIMEWnd(wnd: HWND): HWND; stdcall; external Imm name 'ImmGetDefaultIMEWnd';
+function ImmGetDescriptionA(kl: HKL; lpszDescription: LPSTR; uBufLen: UINT): UINT; stdcall; external Imm name 'ImmGetDescriptionA';
+function ImmGetDescriptionW(kl: HKL; lpszDescription: LPWSTR; uBufLen: UINT): UINT; stdcall; external Imm name 'ImmGetDescriptionW';
+
+function ImmGetIMEFileNameA(kl: HKL; lpszFileName: LPSTR; uBufLen: UINT): UINT; stdcall; external Imm name 'ImmGetIMEFileNameA';
+function ImmGetIMEFileNameW(kl: HKL; lpszFileName: LPWSTR; uBufLen: UINT): UINT; stdcall; external Imm name 'ImmGetIMEFileNameW';
+
+>>>>>>> graemeg/cpstrnew
 function ImmGetProperty (kl: HKL; fdwIndex: DWORD): DWORD; stdcall; external Imm name 'ImmGetProperty';
 function ImmIsIME(kl: HKL): LongBool; stdcall; external Imm name 'ImmIsIME';
 function ImmSimulateHotKey(wnd: HWND; dwHotKeyID: DWORD): LongBool; stdcall; external Imm name 'ImmSimulateHotKey';
@@ -314,6 +336,7 @@ function ImmReleaseContext(wnd: HWND; imc: HIMC): LongBool; stdcall; external Im
 function ImmAssociateContext(wnd: HWND; imc: HIMC): HIMC; stdcall; external Imm name 'ImmAssociateContext';
 
 function ImmAssociateContextEx(wnd: HWND; imc: HIMC; dwFlags: DWORD): LongBool; stdcall; external Imm name 'ImmAssociateContextEx';
+<<<<<<< HEAD
 function ImmGetCompositionStringA(imc: HIMC; dwIndex: LONG;
     lpBuf: LPVOID; dwBufLen: DWORD): Longword; stdcall; external Imm name 'ImmGetCompositionStringA';
 function ImmGetCompositionStringW(imc: HIMC; dwIndex: LONG;
@@ -327,11 +350,19 @@ function ImmGetCompositionString(imc: HIMC; dwIndex: DWORD;
     lpBuf: LPVOID; dwBufLen: DWORD): LONG; stdcall; external Imm name 'ImmGetCompositionStringW';
 {$endif}
 
+=======
+function ImmGetCompositionStringA(imc: HIMC; dwIndex: DWORD;
+    lpBuf: LPVOID; dwBufLen: DWORD): Longword; stdcall; external Imm name 'ImmGetCompositionStringA';
+function ImmGetCompositionStringW(imc: HIMC; dwIndex: DWORD;
+    lpBuf: LPVOID; dwBufLen: DWORD): Longword; stdcall; external Imm name 'ImmGetCompositionStringW';
+
+>>>>>>> graemeg/cpstrnew
 function ImmSetCompositionStringA(imc: HIMC; dwIndex: DWORD; lpComp: LPVOID;
     dwCompLen: DWORD; lpRead: LPVOID; dwReadLen: DWORD): LongBool; stdcall; external Imm name 'ImmSetCompositionStringA';
 function ImmSetCompositionStringW(imc: HIMC; dwIndex: DWORD; lpComp: LPVOID;
     dwCompLen: DWORD; lpRead: LPVOID; dwReadLen: DWORD): LongBool; stdcall; external Imm name 'ImmSetCompositionStringW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmSetCompositionString(imc: HIMC; dwIndex: DWORD; lpComp: LPVOID;
     dwCompLen: DWORD; lpRead: LPVOID; dwReadLen: DWORD): LongBool; stdcall; external Imm name 'ImmSetCompositionStringA';
@@ -349,11 +380,17 @@ function ImmGetCandidateListCount(imc: HIMC; lpdwListCount: LPDWORD): DWORD; std
 function ImmGetCandidateListCount(imc: HIMC; lpdwListCount: LPDWORD): DWORD; stdcall; external Imm name 'ImmGetCandidateListCountW';
 {$endif}
 
+=======
+function ImmGetCandidateListCountA(imc: HIMC; lpdwListCount: LPDWORD): DWORD; stdcall; external Imm name 'ImmGetCandidateListCountA';
+function ImmGetCandidateListCountW(imc: HIMC; lpdwListCount: LPDWORD): DWORD; stdcall; external Imm name 'ImmGetCandidateListCountW';
+
+>>>>>>> graemeg/cpstrnew
 function ImmGetCandidateListA(imc: HIMC; deIndex: DWORD;
     lpCandList: LPCANDIDATELIST; dwBufLen: DWORD): DWORD; stdcall; external Imm name 'ImmGetCandidateListA';
 function ImmGetCandidateListW(imc: HIMC; deIndex: DWORD;
     lpCandList: LPCANDIDATELIST; dwBufLen: DWORD): DWORD; stdcall; external Imm name 'ImmGetCandidateListW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmGetCandidateList(imc: HIMC; deIndex: DWORD;
     lpCandList: LPCANDIDATELIST; dwBufLen: DWORD): DWORD; stdcall; external Imm name 'ImmGetCandidateListA';
@@ -362,11 +399,14 @@ function ImmGetCandidateList(imc: HIMC; deIndex: DWORD;
     lpCandList: LPCANDIDATELIST; dwBufLen: DWORD): DWORD; stdcall; external Imm name 'ImmGetCandidateListW';
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 function ImmGetGuideLineA(imc: HIMC; dwIndex: DWORD; lpBuf: LPSTR;
     dwBufLen: DWORD): DWORD; stdcall ; external Imm name 'ImmGetGuideLineA';
 function ImmGetGuideLineW(imc: HIMC; dwIndex: DWORD; lpBuf: LPWSTR;
     dwBufLen: DWORD): DWORD; stdcall ; external Imm name 'ImmGetGuideLineW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmGetGuideLine(imc: HIMC; dwIndex: DWORD; lpBuf: LPSTR;
     dwBufLen: DWORD): DWORD; stdcall ; external Imm name 'ImmGetGuideLineA';
@@ -375,6 +415,8 @@ function ImmGetGuideLine(imc: HIMC; dwIndex: DWORD; lpBuf: LPWSTR;
     dwBufLen: DWORD): DWORD; stdcall ; external Imm name 'ImmGetGuideLineW';
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 function ImmGetConversionStatus(imc: HIMC; lpfdwConversion, lpfdwSentence: LPDWORD): LongBool; stdcall ; external Imm name 'ImmGetConversionStatus';
 function ImmSetConversionStatus(imc: HIMC; fdwConversion, fdwSentence: DWORD): LongBool; stdcall ; external Imm name 'ImmSetConversionStatus';
 function ImmGetOpenStatus(imc: HIMC): LongBool; stdcall ; external Imm name 'ImmGetOpenStatus';
@@ -383,6 +425,7 @@ function ImmSetOpenStatus(imc: HIMC; par1: LongBool): LongBool; stdcall ; extern
 function ImmGetCompositionFontA(imc: HIMC; lplf: PLOGFONTA): LongBool; stdcall ; external Imm name 'ImmGetCompositionFontA';
 function ImmGetCompositionFontW(imc: HIMC; lplf: PLOGFONTW): LongBool; stdcall ; external Imm name 'ImmGetCompositionFontW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmGetCompositionFont(imc: HIMC; lplf: PLOGFONTA): LongBool; stdcall ; external Imm name 'ImmGetCompositionFontA';
 {$else}
@@ -416,11 +459,23 @@ function ImmEscape(kl: HKL; imc: HIMC; uEscape: UINT; lpData: LPVOID): LRESULT; 
 function ImmEscape(kl: HKL; imc: HIMC; uEscape: UINT; lpData: LPVOID): LRESULT; stdcall ; external Imm name 'ImmEscapeW';
 {$endif}
 
+=======
+function ImmSetCompositionFontA(imc: HIMC; lplf: PLOGFONTA): LongBool; stdcall ; external Imm name 'ImmSetCompositionFontA';
+function ImmSetCompositionFontW(imc: HIMC; lplf: PLOGFONTW): LongBool; stdcall ; external Imm name 'ImmSetCompositionFontW';
+
+function ImmConfigureIMEA(kl: HKL; wnd: HWND; dwMode: DWORD; lpData: LPVOID): LongBool; stdcall ; external Imm name 'ImmConfigureIMEA';
+function ImmConfigureIMEW(kl: HKL; wnd: HWND; dwMode: DWORD; lpData: LPVOID): LongBool; stdcall ; external Imm name 'ImmConfigureIMEW';
+
+function ImmEscapeA(kl: HKL; imc: HIMC; uEscape: UINT; lpData: LPVOID): LRESULT; stdcall ; external Imm name 'ImmEscapeA';
+function ImmEscapeW(kl: HKL; imc: HIMC; uEscape: UINT; lpData: LPVOID): LRESULT; stdcall ; external Imm name 'ImmEscapeW';
+
+>>>>>>> graemeg/cpstrnew
 function ImmGetConversionListA(kl: HKL; imc: HIMC; lpSrc: LPCSTR;
     lpDst: LPCANDIDATELIST; dwBufLen: DWORD; uFlag: UINT): DWORD; stdcall ; external Imm name 'ImmGetConversionListA';
 function ImmGetConversionListW(kl: HKL; imc: HIMC; lpSrc: LPCWSTR;
     lpDst: LPCANDIDATELIST; dwBufLen: DWORD; uFlag: UINT): DWORD; stdcall ; external Imm name 'ImmGetConversionListW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmGetConversionList(kl: HKL; imc: HIMC; lpSrc: LPCSTR;
     lpDst: LPCANDIDATELIST; dwBufLen: DWORD; uFlag: UINT): DWORD; stdcall ; external Imm name 'ImmGetConversionListA';
@@ -429,6 +484,8 @@ function ImmGetConversionList(kl: HKL; imc: HIMC; lpSrc: LPCWSTR;
     lpDst: LPCANDIDATELIST; dwBufLen: DWORD; uFlag: UINT): DWORD; stdcall ; external Imm name 'ImmGetConversionListW';
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 function ImmNotifyIME(imc: HIMC; dwAction, dwIndex, dwValue: DWORD): LongBool; stdcall ; external Imm name 'ImmNotifyIME';
 function ImmGetStatusWindowPos(imc: HIMC; lpptPos: LPPOINT): LongBool; stdcall ; external Imm name 'ImmGetStatusWindowPos';
 function ImmSetStatusWindowPos(imc: HIMC; lpptPos: LPPOINT): LongBool; stdcall ; external Imm name 'ImmSetStatusWindowPos';
@@ -440,12 +497,15 @@ function ImmSetCandidateWindow(imc: HIMC; lpCandidate: LPCANDIDATEFORM): LongBoo
 function ImmIsUIMessageA(wnd: HWND; msg: UINT; wPar: WPARAM; lPar: LPARAM): LongBool; stdcall ; external Imm name 'ImmIsUIMessageA';
 function ImmIsUIMessageW(wnd: HWND; msg: UINT; wPar: WPARAM; lPar: LPARAM): LongBool; stdcall ; external Imm name 'ImmIsUIMessageW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmIsUIMessage(wnd: HWND; msg: UINT; wPar: WPARAM; lPar: LPARAM): LongBool; stdcall ; external Imm name 'ImmIsUIMessageA';
 {$else}
 function ImmIsUIMessage(wnd: HWND; msg: UINT; wPar: WPARAM; lPar: LPARAM): LongBool; stdcall ; external Imm name 'ImmIsUIMessageW';
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 function ImmGetVirtualKey(wnd: HWND): UINT; stdcall ; external Imm name 'ImmGetVirtualKey';
 
 type
@@ -456,6 +516,7 @@ type
   REGISTERWORDENUMPROCW = function(lpszReading: LPCWSTR; par1: DWORD;
     lpszString: LPCWSTR; par3: LPVOID): Integer; stdcall;
   TREGISTERWORDENUMPROCW = REGISTERWORDENUMPROCW;
+<<<<<<< HEAD
   {$ifdef UNICODE}
     TREGISTERWORDENUMPROC = REGISTERWORDENUMPROCW;
     REGISTERWORDENUMPROC  = REGISTERWORDENUMPROCW;
@@ -463,10 +524,13 @@ type
     TREGISTERWORDENUMPROC = REGISTERWORDENUMPROCA;
     REGISTERWORDENUMPROC  = REGISTERWORDENUMPROCA;
   {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 
 function ImmRegisterWordA(kl: HKL; lpszReading: LPCSTR; dwStyle: DWORD; lpszRegister: LPCSTR): LongBool; stdcall ; external Imm name 'ImmRegisterWordA';
 function ImmRegisterWordW(kl: HKL; lpszReading: LPCWSTR; dwStyle: DWORD; lpszRegister: LPCWSTR): LongBool; stdcall ; external Imm name 'ImmRegisterWordW';
 
+<<<<<<< HEAD
 
 {$ifndef UNICODE}
 function ImmRegisterWord(kl: HKL; lpszReading: LPCSTR; dwStyle: DWORD; lpszRegister: LPCSTR): LongBool; stdcall ; external Imm name 'ImmRegisterWordA';
@@ -492,11 +556,20 @@ function ImmGetRegisterWordStyle(kl: HKL; nItem: UINT; lpStyleBuf: LPSTYLEBUFA):
 function ImmGetRegisterWordStyle(kl: HKL; nItem: UINT; lpStyleBuf: LPSTYLEBUFW): UINT; stdcall ; external Imm name 'ImmGetRegisterWordStyleW';
 {$endif}
 
+=======
+function ImmUnregisterWordA(kl: HKL; lpszReading: LPCSTR; dwStyle: DWORD; lpszUnregister: LPCSTR): LongBool; stdcall ; external Imm name 'ImmUnregisterWordA';
+function ImmUnregisterWordW(kl: HKL; lpszReading: LPCWSTR; dwStyle: DWORD; lpszUnregister: LPCWSTR): LongBool; stdcall ; external Imm name 'ImmUnregisterWordW';
+
+function ImmGetRegisterWordStyleA(kl: HKL; nItem: UINT; lpStyleBuf: LPSTYLEBUFA): UINT; stdcall ; external Imm name 'ImmGetRegisterWordStyleA';
+function ImmGetRegisterWordStyleW(kl: HKL; nItem: UINT; lpStyleBuf: LPSTYLEBUFW): UINT; stdcall ; external Imm name 'ImmGetRegisterWordStyleW';
+
+>>>>>>> graemeg/cpstrnew
 function ImmEnumRegisterWordA(kl: HKL; lpfnEnumProc: REGISTERWORDENUMPROCA;
     lpszReading: LPCSTR; dwStyle: DWORD; lpszRegister: LPCSTR; lpData: LPVOID): UINT; stdcall ; external Imm name 'ImmEnumRegisterWordA';
 function ImmEnumRegisterWordW(kl: HKL; lpfnEnumProc: REGISTERWORDENUMPROCW;
     lpszReading: LPCWSTR; dwStyle: DWORD; lpszRegister: LPCWSTR; lpData: LPVOID): UINT; stdcall ; external Imm name 'ImmEnumRegisterWordW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmEnumRegisterWord(kl: HKL; lpfnEnumProc: REGISTERWORDENUMPROCA;
     lpszReading: LPCSTR; dwStyle: DWORD; lpszRegister: LPCSTR; lpData: LPVOID): UINT; stdcall ; external Imm name 'ImmEnumRegisterWordA';
@@ -505,6 +578,8 @@ function ImmEnumRegisterWord(kl: HKL; lpfnEnumProc: REGISTERWORDENUMPROCW;
     lpszReading: LPCWSTR; dwStyle: DWORD; lpszRegister: LPCWSTR; lpData: LPVOID): UINT; stdcall ; external Imm name 'ImmEnumRegisterWordW';
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 function ImmDisableIME(idThread: DWORD): LongBool; stdcall  ; external Imm name 'ImmDisableIME';
 function ImmEnumInputContext(idThread: DWORD; lpfn: IMCENUMPROC; lParam: LPARAM): LongBool; stdcall ; external Imm name 'ImmEnumInputContext';
 function ImmGetImeMenuItemsA(imc: HIMC; dwFlags, dwType: DWORD;
@@ -512,6 +587,7 @@ function ImmGetImeMenuItemsA(imc: HIMC; dwFlags, dwType: DWORD;
 function ImmGetImeMenuItemsW(par0: HIMC; dwFlags, dwType: DWORD;
     lpImeParentMenu, lpImeMenu: LPIMEMENUITEMINFOW; dwSize: DWORD): DWORD; stdcall ; external Imm name 'ImmGetImeMenuItemsW';
 
+<<<<<<< HEAD
 {$ifndef UNICODE}
 function ImmGetImeMenuItems(imc: HIMC; dwFlags, dwType: DWORD;
     lpImeParentMenu, lpImeMenu: LPIMEMENUITEMINFOA; dwSize: DWORD): DWORD; stdcall ; external Imm name 'ImmGetImeMenuItemsA';
@@ -520,6 +596,8 @@ function ImmGetImeMenuItems(par0: HIMC; dwFlags, dwType: DWORD;
     lpImeParentMenu, lpImeMenu: LPIMEMENUITEMINFOW; dwSize: DWORD): DWORD; stdcall ; external Imm name 'ImmGetImeMenuItemsW';
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 function ImmDisableTextFrameService(idThread: DWORD): LongBool; stdcall ; external Imm name 'ImmDisableTextFrameService';
 
 // wParam for WM_IME_CONTROL

@@ -16,6 +16,7 @@ unit xmlutils;
 
 {$ifdef fpc}{$mode objfpc}{$endif}
 {$H+}
+{$ifopt Q+}{$define overflow_check}{$endif}
 
 interface
 
@@ -41,6 +42,7 @@ function IsXmlWhiteSpace(c: WideChar): Boolean;
 function Hash(InitValue: LongWord; Key: PWideChar; KeyLen: Integer): LongWord;
 { beware, works in ASCII range only }
 function WStrLIComp(S1, S2: PWideChar; Len: Integer): Integer;
+<<<<<<< HEAD
 procedure WStrLower(var S: XMLString);
 
 
@@ -49,6 +51,15 @@ const
   // URIs of predefined namespaces
   stduri_xml: XMLString = 'http://www.w3.org/XML/1998/namespace';
   stduri_xmlns: XMLString = 'http://www.w3.org/2000/xmlns/';
+=======
+procedure WStrLower(var S: WideString);
+
+type
+  TXMLVersion = (xmlVersionUnknown, xmlVersion10, xmlVersion11);
+
+const
+  xmlVersionStr: array[TXMLVersion] of WideString = ('', '1.0', '1.1');
+>>>>>>> graemeg/cpstrnew
 
 type
   TXMLNodeType = (ntNone, ntElement, ntAttribute, ntText,
@@ -80,7 +91,11 @@ type
 {$ifndef fpc}
   PtrInt = LongInt;
   TFPList = TList;
+<<<<<<< HEAD
 {$endif}
+=======
+{$endif}  
+>>>>>>> graemeg/cpstrnew
 
   PPHashItem = ^PHashItem;
   PHashItem = ^THashItem;
@@ -90,11 +105,15 @@ type
     Next: PHashItem;
     Data: TObject;
   end;
+<<<<<<< HEAD
 {$ifdef CPU16}
   THashItemArray = array[0..MaxSmallInt div sizeof(Pointer)-1] of PHashItem;
 {$else CPU16}
   THashItemArray = array[0..MaxInt div sizeof(Pointer)-1] of PHashItem;
 {$endif CPU16}
+=======
+  THashItemArray = array[0..MaxInt div sizeof(Pointer)-1] of PHashItem;
+>>>>>>> graemeg/cpstrnew
   PHashItemArray = ^THashItemArray;
 
   THashForEach = function(Entry: PHashItem; arg: Pointer): Boolean;
@@ -131,11 +150,15 @@ type
     lname: PWideChar;
     lnameLen: Integer;
   end;
+<<<<<<< HEAD
 {$ifdef CPU16}
   TExpHashEntryArray = array[0..MaxSmallInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
 {$else CPU16}
   TExpHashEntryArray = array[0..MaxInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
 {$endif CPU16}
+=======
+  TExpHashEntryArray = array[0..MaxInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
+>>>>>>> graemeg/cpstrnew
   PExpHashEntryArray = ^TExpHashEntryArray;
 
   TDblHashArray = class(TObject)
@@ -143,7 +166,11 @@ type
     FSizeLog: Integer;
     FRevision: LongWord;
     FData: PExpHashEntryArray;
+<<<<<<< HEAD
   public
+=======
+  public  
+>>>>>>> graemeg/cpstrnew
     procedure Init(NumSlots: Integer);
     function Locate(uri: Pointer; localName: PWideChar; localLength: Integer): Boolean;
     destructor Destroy; override;
@@ -154,6 +181,94 @@ type
     Line: Integer;
     LinePos: Integer;
   end;
+<<<<<<< HEAD
+=======
+
+{ generic node info record, shared between DOM and reader }
+
+  PNodeData = ^TNodeData;
+  TNodeData = record
+    FNext: PNodeData;
+    FQName: PHashItem;
+    FPrefix: PHashItem;
+    FNsUri: PHashItem;
+    FColonPos: Integer;
+    FTypeInfo: TObject;
+    FLoc: TLocation;
+    FLoc2: TLocation;              // for attributes: start of value
+    FIDEntry: PHashItem;           // ID attributes: entry in ID map
+    FNodeType: TXMLNodeType;
+
+    FValueStr: WideString;
+    FValueStart: PWideChar;
+    FValueLength: Integer;
+    FIsDefault: Boolean;
+    FDenormalized: Boolean;        // Whether attribute value changes by normalization
+  end;
+
+{ TNSSupport provides tracking of prefix-uri pairs and namespace fixup for writer }
+
+  TBinding = class
+  public
+    uri: WideString;
+    next: TBinding;
+    prevPrefixBinding: TObject;
+    Prefix: PHashItem;
+  end;
+
+  TAttributeAction = (
+    aaUnchanged,
+    aaPrefix,         // only override the prefix
+    aaBoth            // override prefix and emit namespace definition
+  );
+
+  TNSSupport = class(TObject)
+  private
+    FNesting: Integer;
+    FPrefixSeqNo: Integer;
+    FFreeBindings: TBinding;
+    FBindings: TFPList;
+    FBindingStack: array of TBinding;
+    FPrefixes: THashTable;
+    FDefaultPrefix: THashItem;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure DefineBinding(const Prefix, nsURI: WideString; out Binding: TBinding);
+    function CheckAttribute(const Prefix, nsURI: WideString;
+      out Binding: TBinding): TAttributeAction;
+    function IsPrefixBound(P: PWideChar; Len: Integer; out Prefix: PHashItem): Boolean;
+    function GetPrefix(P: PWideChar; Len: Integer): PHashItem;
+    function BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
+    function DefaultNSBinding: TBinding;
+    procedure StartElement;
+    procedure EndElement;
+  end;
+
+{ Buffer builder, used to compose long strings without too much memory allocations }
+
+  PWideCharBuf = ^TWideCharBuf;
+  TWideCharBuf = record
+    Buffer: PWideChar;
+    Length: Integer;
+    MaxLength: Integer;
+  end;
+
+procedure BufAllocate(var ABuffer: TWideCharBuf; ALength: Integer);
+procedure BufAppend(var ABuffer: TWideCharBuf; wc: WideChar);
+procedure BufAppendChunk(var ABuf: TWideCharBuf; pstart, pend: PWideChar);
+function BufEquals(const ABuf: TWideCharBuf; const Arg: WideString): Boolean;
+procedure BufNormalize(var Buf: TWideCharBuf; out Modified: Boolean);
+
+{ Built-in decoder functions for UTF-8, UTF-16 and ISO-8859-1 }
+
+function Decode_UCS2(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+function Decode_UCS2_Swapped(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+function Decode_UTF8(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+function Decode_8859_1(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+
+{$i names.inc}
+>>>>>>> graemeg/cpstrnew
 
   IXmlLineInfo = interface(IInterface)['{FD0A892B-B26C-4954-9995-103B2A9D178A}']
     function GetHasLineInfo: Boolean;
@@ -437,7 +552,11 @@ begin
   result := c1 - c2;
 end;
 
+<<<<<<< HEAD
 procedure WStrLower(var S: XMLString);
+=======
+procedure WStrLower(var S: WideString);
+>>>>>>> graemeg/cpstrnew
 var
   i: Integer;
 begin
@@ -451,9 +570,15 @@ begin
   Result := InitValue;
   while KeyLen <> 0 do
   begin
+<<<<<<< HEAD
 {$push}{$r-}{$q-}
     Result := Result * $F4243 xor ord(Key^);
 {$pop}
+=======
+{$ifdef overflow_check}{$q-}{$endif}
+    Result := Result * $F4243 xor ord(Key^);
+{$ifdef overflow_check}{$q+}{$endif}
+>>>>>>> graemeg/cpstrnew
     Inc(Key);
     Dec(KeyLen);
   end;
@@ -461,7 +586,15 @@ end;
 
 function KeyCompare(const Key1: XMLString; Key2: Pointer; Key2Len: Integer): Boolean;
 begin
+<<<<<<< HEAD
   Result := (Length(Key1)=Key2Len) and CompareMem(Pointer(Key1), Key2, Key2Len*2);
+=======
+{$IFDEF FPC}
+  Result := (Length(Key1)=Key2Len) and (CompareWord(Pointer(Key1)^, Key2^, Key2Len) = 0);
+{$ELSE}
+  Result := (Length(Key1)=Key2Len) and CompareMem(Pointer(Key1), Key2, Key2Len*2);
+{$ENDIF}
+>>>>>>> graemeg/cpstrnew
 end;
 
 { THashTable }
@@ -714,7 +847,11 @@ begin
   result := True;
   while FData^[idx].rev = FRevision do
   begin
+<<<<<<< HEAD
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr = uri) and
+=======
+    if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
+>>>>>>> graemeg/cpstrnew
       (FData^[idx].lnameLen = localLength) and
        CompareMem(FData^[idx].lname, localName, localLength * sizeof(WideChar)) then
       Exit;
@@ -736,20 +873,32 @@ end;
 
 { TNSSupport }
 
+<<<<<<< HEAD
 constructor TNSSupport.Create(aNameTable: THashTable);
+=======
+constructor TNSSupport.Create;
+>>>>>>> graemeg/cpstrnew
 var
   b: TBinding;
 begin
   inherited Create;
+<<<<<<< HEAD
   FNameTable := aNameTable;
+=======
+>>>>>>> graemeg/cpstrnew
   FPrefixes := THashTable.Create(16, False);
   FBindings := TFPList.Create;
   SetLength(FBindingStack, 16);
 
   { provide implicit binding for the 'xml' prefix }
+<<<<<<< HEAD
   DefineBinding('xml', stduri_xml, b);
   { bind default namespace to empty string }
   DefineBinding('', '', b);
+=======
+  // TODO: move stduri_xml, etc. to this unit, so they are reused.
+  DefineBinding('xml', 'http://www.w3.org/XML/1998/namespace', b);
+>>>>>>> graemeg/cpstrnew
 end;
 
 destructor TNSSupport.Destroy;
@@ -763,7 +912,11 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 function TNSSupport.BindPrefix(nsURI, aPrefix: PHashItem): TBinding;
+=======
+function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
+>>>>>>> graemeg/cpstrnew
 begin
   { try to reuse an existing binding }
   result := FFreeBindings;
@@ -774,6 +927,353 @@ begin
     result := TBinding.Create;
     FBindings.Add(result);
   end;
+<<<<<<< HEAD
+=======
+
+  { link it into chain of bindings at the current element level }
+  result.Next := FBindingStack[FNesting];
+  FBindingStack[FNesting] := result;
+
+  { bind }
+  result.uri := nsURI;
+  result.Prefix := aPrefix;
+  result.PrevPrefixBinding := aPrefix^.Data;
+  aPrefix^.Data := result;
+end;
+
+function TNSSupport.DefaultNSBinding: TBinding;
+begin
+  result := TBinding(FDefaultPrefix.Data);
+end;
+
+procedure TNSSupport.DefineBinding(const Prefix, nsURI: WideString;
+  out Binding: TBinding);
+var
+  Pfx: PHashItem;
+begin
+  Pfx := @FDefaultPrefix;
+  if (nsURI <> '') and (Prefix <> '') then
+    Pfx := FPrefixes.FindOrAdd(PWideChar(Prefix), Length(Prefix));
+  if (Pfx^.Data = nil) or (TBinding(Pfx^.Data).uri <> nsURI) then
+    Binding := BindPrefix(nsURI, Pfx)
+  else
+    Binding := nil;
+end;
+
+function TNSSupport.CheckAttribute(const Prefix, nsURI: WideString;
+  out Binding: TBinding): TAttributeAction;
+var
+  Pfx: PHashItem;
+  I: Integer;
+  b: TBinding;
+  buf: array[0..31] of WideChar;
+  p: PWideChar;
+begin
+  Binding := nil;
+  Pfx := nil;
+  Result := aaUnchanged;
+  if Prefix <> '' then
+    Pfx := FPrefixes.FindOrAdd(PWideChar(Prefix), Length(Prefix))
+  else if nsURI = '' then
+    Exit;
+  { if the prefix is already bound to correct URI, we're done }
+  if Assigned(Pfx) and Assigned(Pfx^.Data) and (TBinding(Pfx^.Data).uri = nsURI) then
+    Exit;
+
+  { see if there's another prefix bound to the target URI }
+  // TODO: should use something faster than linear search
+  for i := FNesting downto 0 do
+  begin
+    b := FBindingStack[i];
+    while Assigned(b) do
+    begin
+      if (b.uri = nsURI) and (b.Prefix <> @FDefaultPrefix) then
+      begin
+        Binding := b;   // found one -> override the attribute's prefix
+        Result := aaPrefix;
+        Exit;
+      end;
+      b := b.Next;
+    end;
+  end;
+  { no prefix, or bound (to wrong URI) -> use generated prefix instead }
+  if (Pfx = nil) or Assigned(Pfx^.Data) then
+  repeat
+    Inc(FPrefixSeqNo);
+    i := FPrefixSeqNo;    // This is just 'NS'+IntToStr(FPrefixSeqNo);
+    p := @Buf[high(Buf)]; // done without using strings
+    while i <> 0 do
+    begin
+      p^ := WideChar(i mod 10+ord('0'));
+      dec(p);
+      i := i div 10;
+    end;
+    p^ := 'S'; dec(p);
+    p^ := 'N';
+    Pfx := FPrefixes.FindOrAdd(p, @Buf[high(Buf)]-p+1);
+  until Pfx^.Data = nil;
+  Binding := BindPrefix(nsURI, Pfx);
+  Result := aaBoth;
+end;
+
+function TNSSupport.IsPrefixBound(P: PWideChar; Len: Integer; out
+  Prefix: PHashItem): Boolean;
+begin
+  Prefix := FPrefixes.FindOrAdd(P, Len);
+  Result := Assigned(Prefix^.Data) and (TBinding(Prefix^.Data).uri <> '');
+end;
+
+function TNSSupport.GetPrefix(P: PWideChar; Len: Integer): PHashItem;
+begin
+  if Assigned(P) and (Len > 0) then
+    Result := FPrefixes.FindOrAdd(P, Len)
+  else
+    Result := @FDefaultPrefix;
+end;
+
+procedure TNSSupport.StartElement;
+begin
+  Inc(FNesting);
+  if FNesting >= Length(FBindingStack) then
+    SetLength(FBindingStack, FNesting * 2);
+end;
+
+procedure TNSSupport.EndElement;
+var
+  b, temp: TBinding;
+begin
+  temp := FBindingStack[FNesting];
+  while Assigned(temp) do
+  begin
+    b := temp;
+    temp := b.next;
+    b.next := FFreeBindings;
+    FFreeBindings := b;
+    b.Prefix^.Data := b.prevPrefixBinding;
+  end;
+  FBindingStack[FNesting] := nil;
+  if FNesting > 0 then
+    Dec(FNesting);
+end;
+
+{ Buffer builder utils }
+
+procedure BufAllocate(var ABuffer: TWideCharBuf; ALength: Integer);
+begin
+  ABuffer.MaxLength := ALength;
+  ABuffer.Length := 0;
+  ABuffer.Buffer := AllocMem(ABuffer.MaxLength*SizeOf(WideChar));
+end;
+
+procedure BufAppend(var ABuffer: TWideCharBuf; wc: WideChar);
+begin
+  if ABuffer.Length >= ABuffer.MaxLength then
+  begin
+    ReallocMem(ABuffer.Buffer, ABuffer.MaxLength * 2 * SizeOf(WideChar));
+    FillChar(ABuffer.Buffer[ABuffer.MaxLength], ABuffer.MaxLength * SizeOf(WideChar),0);
+    ABuffer.MaxLength := ABuffer.MaxLength * 2;
+  end;
+  ABuffer.Buffer[ABuffer.Length] := wc;
+  Inc(ABuffer.Length);
+end;
+
+procedure BufAppendChunk(var ABuf: TWideCharBuf; pstart, pend: PWideChar);
+var
+  Len: Integer;
+begin
+  Len := PEnd - PStart;
+  if Len <= 0 then
+    Exit;
+  if Len >= ABuf.MaxLength - ABuf.Length then
+  begin
+    ABuf.MaxLength := (Len + ABuf.Length)*2;
+    // note: memory clean isn't necessary here.
+    // To avoid garbage, control Length field.
+    ReallocMem(ABuf.Buffer, ABuf.MaxLength * sizeof(WideChar));
+  end;
+  Move(pstart^, ABuf.Buffer[ABuf.Length], Len * sizeof(WideChar));
+  Inc(ABuf.Length, Len);
+end;
+
+function BufEquals(const ABuf: TWideCharBuf; const Arg: WideString): Boolean;
+begin
+  Result := (ABuf.Length = Length(Arg)) and
+    CompareMem(ABuf.Buffer, Pointer(Arg), ABuf.Length*sizeof(WideChar));
+end;
+
+procedure BufNormalize(var Buf: TWideCharBuf; out Modified: Boolean);
+var
+  Dst, Src: Integer;
+begin
+  Dst := 0;
+  Src := 0;
+  // skip leading space if any
+  while (Src < Buf.Length) and (Buf.Buffer[Src] = ' ') do
+    Inc(Src);
+
+  while Src < Buf.Length do
+  begin
+    if Buf.Buffer[Src] = ' ' then
+    begin
+      // Dst cannot be 0 here, because leading space is already skipped
+      if Buf.Buffer[Dst-1] <> ' ' then
+      begin
+        Buf.Buffer[Dst] := ' ';
+        Inc(Dst);
+      end;
+    end
+    else
+    begin
+      Buf.Buffer[Dst] := Buf.Buffer[Src];
+      Inc(Dst);
+    end;
+    Inc(Src);
+  end;
+  // trailing space (only one possible due to compression)
+  if (Dst > 0) and (Buf.Buffer[Dst-1] = ' ') then
+    Dec(Dst);
+
+  Modified := Dst <> Buf.Length;
+  Buf.Length := Dst;
+end;
+
+{ standard decoders }
+
+function Decode_UCS2(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+var
+  cnt: Cardinal;
+begin
+  cnt := OutCnt;         // num of widechars
+  if cnt > InCnt div sizeof(WideChar) then
+    cnt := InCnt div sizeof(WideChar);
+  Move(InBuf^, OutBuf^, cnt * sizeof(WideChar));
+  Dec(InCnt, cnt*sizeof(WideChar));
+  Dec(OutCnt, cnt);
+  Result := cnt;
+end;
+
+function Decode_UCS2_Swapped(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+var
+  I: Integer;
+  cnt: Cardinal;
+  InPtr: PChar;
+begin
+  cnt := OutCnt;         // num of widechars
+  if cnt > InCnt div sizeof(WideChar) then
+    cnt := InCnt div sizeof(WideChar);
+  InPtr := InBuf;
+  for I := 0 to cnt-1 do
+  begin
+    OutBuf[I] := WideChar((ord(InPtr^) shl 8) or ord(InPtr[1]));
+    Inc(InPtr, 2);
+  end;
+  Dec(InCnt, cnt*sizeof(WideChar));
+  Dec(OutCnt, cnt);
+  Result := cnt;
+end;
+
+function Decode_8859_1(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+var
+  I: Integer;
+  cnt: Cardinal;
+begin
+  cnt := OutCnt;         // num of widechars
+  if cnt > InCnt then
+    cnt := InCnt;
+  for I := 0 to cnt-1 do
+    OutBuf[I] := WideChar(ord(InBuf[I]));
+  Dec(InCnt, cnt);
+  Dec(OutCnt, cnt);
+  Result := cnt;
+end;
+
+function Decode_UTF8(Context: Pointer; InBuf: PChar; var InCnt: Cardinal; OutBuf: PWideChar; var OutCnt: Cardinal): Integer; stdcall;
+const
+  MaxCode: array[1..4] of Cardinal = ($7F, $7FF, $FFFF, $1FFFFF);
+var
+  i, j, bc: Cardinal;
+  Value: Cardinal;
+begin
+  result := 0;
+  i := OutCnt;
+  while (i > 0) and (InCnt > 0) do
+  begin
+    bc := 1;
+    Value := ord(InBuf^);
+    if Value < $80 then
+      OutBuf^ := WideChar(Value)
+    else
+    begin
+      if Value < $C2 then
+      begin
+        Result := -1;
+        Break;
+      end;
+      Inc(bc);
+      if Value > $DF then
+      begin
+        Inc(bc);
+        if Value > $EF then
+        begin
+          Inc(bc);
+          if Value > $F7 then  // never encountered in the tests.
+          begin
+            Result := -1;
+            Break;
+          end;
+        end;
+      end;
+      if InCnt < bc then
+        Break;
+      j := 1;
+      while j < bc do
+      begin
+        if InBuf[j] in [#$80..#$BF] then
+          Value := (Value shl 6) or (Cardinal(InBuf[j]) and $3F)
+        else
+        begin
+          Result := -1;
+          Break;
+        end;
+        Inc(j);
+      end;
+      Value := Value and MaxCode[bc];
+      // RFC2279 check
+      if Value <= MaxCode[bc-1] then
+      begin
+        Result := -1;
+        Break;
+      end;
+      case Value of
+        0..$D7FF, $E000..$FFFF: OutBuf^ := WideChar(Value);
+        $10000..$10FFFF:
+        begin
+          if i < 2 then Break;
+          OutBuf^ := WideChar($D7C0 + (Value shr 10));
+          OutBuf[1] := WideChar($DC00 xor (Value and $3FF));
+          Inc(OutBuf); // once here
+          Dec(i);
+        end
+        else
+        begin
+          Result := -1;
+          Break;
+        end;
+      end;
+    end;
+    Inc(OutBuf);
+    Inc(InBuf, bc);
+    Dec(InCnt, bc);
+    Dec(i);
+  end;
+  if Result >= 0 then
+    Result := OutCnt-i;
+  OutCnt := i;
+end;
+
+
+initialization
+>>>>>>> graemeg/cpstrnew
 
   { link it into chain of bindings at the current element level }
   result.Next := FBindingStack[FNesting];

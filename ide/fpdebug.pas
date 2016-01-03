@@ -57,6 +57,11 @@ type
      NoSwitch : boolean;
      HasExe   : boolean;
      RunCount : longint;
+<<<<<<< HEAD
+=======
+     WindowWidth : longint;
+     TBreakNumber : longint;
+>>>>>>> graemeg/cpstrnew
      FPCBreakErrorNumber : longint;
 {$ifdef SUPPORT_REMOTE}
      isRemoteDebugging,
@@ -66,6 +71,11 @@ type
 {$endif SUPPORT_REMOTE}
     constructor Init;
     procedure SetExe(const exefn:string);
+<<<<<<< HEAD
+=======
+    procedure SetTBreak(tbreakstring : string);
+    procedure SetWidth(AWidth : longint);
+>>>>>>> graemeg/cpstrnew
     procedure SetSourceDirs;
     destructor  Done;
     function DoSelectSourceline(const fn:string;line,BreakIndex:longint): Boolean;virtual;
@@ -348,7 +358,11 @@ uses
 {$ifdef DOS}
   fpusrscr,
 {$endif DOS}
+<<<<<<< HEAD
   fpredir,
+=======
+
+>>>>>>> graemeg/cpstrnew
   App,Strings,
   FVConsts,
   MsgBox,
@@ -628,8 +642,12 @@ procedure UpdateDebugViews;
 
   begin
 {$ifdef SUPPORT_REMOTE}
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
+=======
+     if isRemoteDebugging then
+>>>>>>> graemeg/cpstrnew
        PushStatus(msg_getting_info_on+RemoteMachine);
 {$endif SUPPORT_REMOTE}
      DeskTop^.Lock;
@@ -647,8 +665,12 @@ procedure UpdateDebugViews;
        VectorWindow^.Update;
      DeskTop^.UnLock;
 {$ifdef SUPPORT_REMOTE}
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
+=======
+     if isRemoteDebugging then
+>>>>>>> graemeg/cpstrnew
        PopStatus;
 {$endif SUPPORT_REMOTE}
   end;
@@ -692,8 +714,15 @@ begin
       HasExe:=true;
       { Procedure HandleErrorAddrFrame
          (Errno : longint;addr,frame : longint);
+<<<<<<< HEAD
          [public,alias:'FPC_BREAK_ERROR'];}
       FPCBreakErrorNumber:=BreakpointInsert('FPC_BREAK_ERROR', []);
+=======
+         [public,alias:'FPC_BREAK_ERROR'];
+      Command('b HANDLEERRORADDRFRAME'); }
+      Command('b FPC_BREAK_ERROR');
+      FPCBreakErrorNumber:=last_breakpoint_number;
+>>>>>>> graemeg/cpstrnew
 {$ifdef FrameNameKnown}
       { this fails in GDB 5.1 because
         GDB replies that there is an attempt to dereference
@@ -721,6 +750,21 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
+=======
+
+procedure TDebugController.SetTBreak(tbreakstring : string);
+begin
+  Command('tbreak '+tbreakstring);
+  TBreakNumber:=Last_breakpoint_number;
+end;
+
+procedure TDebugController.SetWidth(AWidth : longint);
+begin
+  WindowWidth:=AWidth;
+  Command('set width '+inttostr(WindowWidth));
+end;
+>>>>>>> graemeg/cpstrnew
 
 procedure TDebugController.SetSourceDirs;
   const
@@ -920,9 +964,15 @@ begin
            ErrorBox(#3'Error in "target '+TargetProtocol+'"'#13#3+ErrorStr,nil);
            PopStatus;
            exit;
+<<<<<<< HEAD
         end
       else
         isConnectedToRemote:=true;
+=======
+        end;
+      s:=IDEApp.GetRemoteExecString;
+      MessageBox(#3'Start in remote'#13#3+s,nil,mfOKbutton);
+>>>>>>> graemeg/cpstrnew
       PopStatus;
     end
   else
@@ -1097,6 +1147,7 @@ begin
             gdberrorbuf.reset;
         end;
 
+<<<<<<< HEAD
 {$ifdef GDB_RAW_OUTPUT}
       If StrLen(GetRaw)>0 then
         begin
@@ -1105,6 +1156,8 @@ begin
             gdbrawbuf.reset;
         end;
 {$endif GDB_RAW_OUTPUT}
+=======
+>>>>>>> graemeg/cpstrnew
       If StrLen(GetOutput)>0 then
         begin
           GDBWindow^.WriteOutputText(GetOutput);

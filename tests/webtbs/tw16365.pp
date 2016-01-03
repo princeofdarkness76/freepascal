@@ -11,8 +11,13 @@ type
  
  timpclass = class(tobject,itest)
   protected
+<<<<<<< HEAD
    function _addref: longint; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
    function _release: longint; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+   function _addref: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+   function _release: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
    function QueryInterface(constref IID: TGUID; out Obj): HResult; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
   public
    function test: longint;
@@ -35,12 +40,20 @@ begin
  result:=123456;
 end;
 
+<<<<<<< HEAD
 function timpclass._addref: longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function timpclass._addref: integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 begin
  result:= -1;
 end;
 
+<<<<<<< HEAD
 function timpclass._release: longint;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function timpclass._release: integer;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 begin
  result:= -1;
 end;
@@ -51,7 +64,11 @@ begin
    Result:=0
  end
  else begin
+<<<<<<< HEAD
   result:= HResult(e_nointerface);
+=======
+  result:= integer(e_nointerface);
+>>>>>>> graemeg/cpstrnew
  end;
 end;
 

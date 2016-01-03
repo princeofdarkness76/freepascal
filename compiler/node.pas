@@ -110,8 +110,12 @@ interface
           loadparentfpn,    { Load the framepointer of the parent for nested procedures }
           dataconstn,       { node storing some binary data }
           objcselectorn,    { node for an Objective-C message selector }
+<<<<<<< HEAD
           objcprotocoln,    { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
           specializen       { parser-only node to handle Delphi-mode inline specializations }
+=======
+          objcprotocoln     { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
+>>>>>>> graemeg/cpstrnew
        );
 
        tnodetypeset = set of tnodetype;
@@ -195,6 +199,7 @@ interface
           'loadparentfpn',
           'dataconstn',
           'objcselectorn',
+<<<<<<< HEAD
           'objcprotocoln',
           'specializen');
 
@@ -205,6 +210,9 @@ interface
                         dataconstn,
                         guidconstn,
                         realconstn];
+=======
+          'objcprotocoln');
+>>>>>>> graemeg/cpstrnew
 
     type
        { all boolean field of ttree are now collected in flags }

@@ -36,6 +36,12 @@
 
 procedure PASCALMAIN; external name 'PASCALMAIN';
 
+function fpc_geteipasebx : pointer; compilerproc; nostackframe; assembler;
+asm  
+  movl (%esp),%ebx  
+  ret  
+end;
+
 {******************************************************************************
                           Process start/halt
  ******************************************************************************}
@@ -60,6 +66,7 @@ asm
   {$ifdef FPC_PIC}
         pushl %ebx
         pushl %ecx
+<<<<<<< HEAD
 
         call fpc_geteipasebxlocal
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
@@ -80,13 +87,43 @@ asm
   	movl  %ebx,operatingsystem_parameter_argv
   {$endif FPC_PIC}
 
+=======
+	
+	call fpc_geteipasebx
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+
+	movl  dlexitproc@GOT(%ebx),%ecx
+	movl  %edx,(%ecx)
+
+	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
+	movl  %eax,(%ecx)
+
+	movl  operatingsystem_parameter_argc@GOT(%ebx),%edx
+	popl  %ecx
+	movl  %ecx,(%edx)
+
+	movl  operatingsystem_parameter_argv@GOT(%ebx),%edx
+	popl  %ebx
+	movl  %ebx,(%edx)
+  {$else FPC_PIC}
+  	movl  %edx, dlexitproc
+  	movl  %eax,operatingsystem_parameter_envp
+  	movl  %ecx,operatingsystem_parameter_argc
+  	movl  %ebx,operatingsystem_parameter_argv
+  {$endif FPC_PIC}
+
+>>>>>>> graemeg/cpstrnew
   { Initialize FPU }
   call SysResetFPU
 
   { Save initial stackpointer }
   {$ifdef FPC_PIC}
         pushl %ebx
+<<<<<<< HEAD
         call  fpc_geteipasebxlocal
+=======
+        call  fpc_geteipasebx
+>>>>>>> graemeg/cpstrnew
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 	movl  initialstkptr@GOT(%ebx),%ebx
   	movl  %esp,(%ebx)
@@ -118,9 +155,16 @@ end;
 
 procedure _FPC_proc_haltproc(e:longint); cdecl; assembler; public name '_haltproc';
 asm
+<<<<<<< HEAD
   //addl  $12, %esp  { align stack back to 16 bytes }
   {$ifdef FPC_PIC}
         call  fpc_geteipasebxlocal
+=======
+
+.Lhaltproc:
+  {$ifdef FPC_PIC}
+        call  fpc_geteipasebx
+>>>>>>> graemeg/cpstrnew
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 	movl  dlexitproc@GOT(%ebx),%eax
 	movl  (%eax),%eax
@@ -133,11 +177,51 @@ asm
 .Lnodlexitproc:
   movl    syscall_nr_exit_group,%eax
 
+<<<<<<< HEAD
   movl    e,%ebx
   int     $0x80
   movl    syscall_nr_exit,%eax
 
   movl    e,%ebx
+=======
+{$ifdef FPC_PIC}
+  call    fpc_geteipasebx
+  addl    $_GLOBAL_OFFSET_TABLE_,%ebx
+  movl    ExitCode@GOT(%ebx),%ebx
+ {$if sizeof(ExitCode)=2}
+  movzwl  (%ebx),%ebx
+ {$else}
+  mov     (%ebx),%ebx
+ {$endif}
+{$else FPC_PIC}
+ {$if sizeof(ExitCode)=2}
+  movzwl  ExitCode,%ebx
+ {$else}
+  mov     ExitCode,%ebx
+ {$endif}
+{$endif FPC_PIC}
+
+  int     $0x80
+  movl    syscall_nr_exit,%eax
+
+{$ifdef FPC_PIC}
+  call    fpc_geteipasebx
+  addl    $_GLOBAL_OFFSET_TABLE_,%ebx
+  movl    ExitCode@GOT(%ebx),%ebx
+ {$if sizeof(ExitCode)=2}
+  movzwl  (%ebx),%ebx
+ {$else}
+  mov     (%ebx),%ebx
+ {$endif}
+{$else FPC_PIC}
+ {$if sizeof(ExitCode)=2}
+  movzwl  ExitCode,%ebx
+ {$else}
+  mov     ExitCode,%ebx
+ {$endif}
+{$endif FPC_PIC}
+
+>>>>>>> graemeg/cpstrnew
   int     $0x80
   jmp     .Lnodlexitproc
 end;

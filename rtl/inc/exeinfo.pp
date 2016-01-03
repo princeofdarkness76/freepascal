@@ -184,7 +184,11 @@ function getByte(var f:file):byte;
   begin
     for i := 1 to bytes do getbyte(f);
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
   function get0String (var f:file) : string;
   var c : char;
   begin
@@ -196,7 +200,11 @@ function getByte(var f:file):byte;
       c := char (getbyte(f));
     end;
   end;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
   function getint32 (var f:file): longint;
   begin
     blockread (F, getint32, 4);
@@ -213,7 +221,11 @@ var valid : boolean;
     hdrLength,
     dataOffset,
     dataLength : longint;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 
   function getLString : String;
   var Res:string;
@@ -239,12 +251,20 @@ var valid : boolean;
     blockread (e.F, getword, 2);
   end;
 
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 
 begin
   e.sechdrofs := 0;
   openNetwareNLM:=false;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
   // read and check header
   Skip (e.f,SIZE_OF_NLM_INTERNAL_FIXED_HEADER);
   getLString;  // NLM Description

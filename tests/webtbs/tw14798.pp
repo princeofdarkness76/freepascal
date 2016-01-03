@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 {%delfiles=dump.bin}
 
+=======
+>>>>>>> graemeg/cpstrnew
 { Source provided for Free Pascal Bug Report 14708 }
 { Submitted by "Anton Kavalenka" on  2009-11-11 }
 { e-mail:  }
@@ -129,7 +132,11 @@ begin
   tc.free;
   ms.free;
   os.Free;
+<<<<<<< HEAD
   if not ok then
+=======
+  if not ok then 
+>>>>>>> graemeg/cpstrnew
     halt(1);
 end.
 

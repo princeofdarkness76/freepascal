@@ -50,9 +50,12 @@ Interface
 {$ifdef sunos}
 {$define implemented}
 {$endif}
+<<<<<<< HEAD
 {$ifdef aix}
 {$define implemented}
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 
 Var
   IOStatus                   : Integer;
@@ -208,6 +211,7 @@ end;
 Type
   TExecuteFlags= set of (ExecInheritsHandles);
 {$ifdef redirexecuteprocess}
+<<<<<<< HEAD
 
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
 // win specific  function
@@ -239,6 +243,39 @@ begin
 
   ExecInherits:=ExecInheritsHandles in Flags;
 
+=======
+
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
+// win specific  function
+var
+  SI: TStartupInfo;
+  PI: TProcessInformation;
+  Proc : THandle;
+  l    : DWord;
+  CommandLine : ansistring;
+  e : EOSError;
+  ExecInherits : longbool;
+begin
+  FillChar(SI, SizeOf(SI), 0);
+  SI.cb:=SizeOf(SI);
+  SI.wShowWindow:=1;
+  { always surround the name of the application by quotes
+    so that long filenames will always be accepted. But don't
+    do it if there are already double quotes, since Win32 does not
+    like double quotes which are duplicated!
+  }
+  if pos('"',path)=0 then
+    CommandLine:='"'+path+'"'
+  else
+    CommandLine:=path;
+  if ComLine <> '' then
+    CommandLine:=Commandline+' '+ComLine+#0
+  else
+    CommandLine := CommandLine + #0;
+
+  ExecInherits:=ExecInheritsHandles in Flags;
+
+>>>>>>> graemeg/cpstrnew
   if not CreateProcess(nil, pchar(CommandLine),
     Nil, Nil, ExecInherits,$20, Nil, Nil, SI, PI) then
     begin
@@ -333,6 +370,7 @@ begin
 end;
 {$endif}
 
+<<<<<<< HEAD
 {$IFDEF OS2}
  {$IFDEF EMX}
 {$ASMMODE INTEL}
@@ -397,8 +435,16 @@ begin
   else
    if DosDupHandle (THandle (FH), THandle (NH)) <> 0 then
     fpDup2 := -1;
+=======
+{$ifdef os2}
+Function fpclose (Handle : Longint) : boolean;
+begin
+  { Do we need this ?? }
+  fpclose:=true;
+>>>>>>> graemeg/cpstrnew
 end;
 
+<<<<<<< HEAD
 function fpClose (Handle: longint): boolean;
 begin
   fpClose := DosClose (THandle (Handle)) = 0;
@@ -406,6 +452,8 @@ end;
  {$ENDIF EMX}
 {$ENDIF OS2}
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$I-}
 function FileExist(const FileName : PathStr) : Boolean;
@@ -1073,7 +1121,11 @@ end;
     { Must use shell/fpsystem() for *nix for the wildcard expansion (PFV) }
 {$ifdef UNIX}
     IOStatus:=0;
+<<<<<<< HEAD
     ExecuteResult:=Transformfpsystemtoshell(fpsystem((FixPath(Progname)+' '+Comline)));
+=======
+    ExecuteResult:=Shell(FixPath(Progname)+' '+Comline);
+>>>>>>> graemeg/cpstrnew
     if ExecuteResult<0 then
       begin
         IOStatus:=(-ExecuteResult) and $7f;

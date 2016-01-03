@@ -56,17 +56,27 @@ var
   private
     _editedRange: NSRange;
     _editedDelta: NSInteger;
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSTextStorage2: cuint);
        1: (data: bitpacked record
+=======
+    __flags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSTextStorage2: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _editedMask: 0..((1 shl 8)-1);
         _anonbitfield_NSTextStorage0: 0..((1 shl 8)-1);
         disabled: 0..((1 shl 16)-1);
         {$ifdef cpu64}
         _anonbitfield_NSTextStorage1: 0..((1 shl 32)-1);
         {$endif}
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _layoutManagers: NSMutableArray;

@@ -184,6 +184,7 @@ type
     FLastBookmark       :PtrInt;
     FSaveChanges        :Boolean;
     FDefaultRecordLength:Cardinal;
+    FDataOffset         : Integer;
   protected
     function AllocRecordBuffer: TRecordBuffer; override;
     procedure FreeRecordBuffer(var Buffer: TRecordBuffer); override;
@@ -506,7 +507,11 @@ function TFixedFormatDataSet.GetRecord(Buffer: TRecordBuffer; GetMode: TGetMode;
 var
   Accepted : Boolean;
 begin
+<<<<<<< HEAD
   if (FData.Count <= FDataOffset) then
+=======
+  if (FData.Count < (1+FDataOffset)) then
+>>>>>>> graemeg/cpstrnew
     Result := grEOF
   else
   begin
@@ -597,7 +602,46 @@ begin
   Result := RecBuf <> nil;
 end;
 
+<<<<<<< HEAD
 function TFixedFormatDataSet.RecordFilter(RecBuf: TRecordBuffer): Boolean;
+=======
+function TFixedFormatDataSet.TxtGetRecord(Buffer : PChar; GetMode: TGetMode): TGetResult;
+var
+  Accepted : Boolean;
+begin
+  Result := grOK;
+  repeat
+    Accepted := TRUE;
+    case GetMode of
+      gmNext:
+        if FCurRec >= RecordCount - 1  then
+          Result := grEOF
+        else
+          Inc(FCurRec);
+      gmPrior:
+        if FCurRec <= FDataOffset then
+          Result := grBOF
+        else
+          Dec(FCurRec);
+      gmCurrent:
+        if (FCurRec < FDataOffset) or (FCurRec >= RecordCount) then
+          Result := grError;
+    end;
+    if (Result = grOk) then
+    begin
+      Move(PChar(StoreToBuf(FData[FCurRec]))^, Buffer[0], FRecordSize);
+      if Filtered then
+      begin
+        Accepted := RecordFilter(Buffer, FCurRec +1);
+        if not Accepted and (GetMode = gmCurrent) then
+          Inc(FCurRec);
+      end;
+    end;
+  until Accepted;
+end;
+
+function TFixedFormatDataSet.RecordFilter(RecBuf: Pointer; ARecNo: Integer): Boolean;
+>>>>>>> graemeg/cpstrnew
 var
   SaveState: TDataSetState;
 begin                          // Returns true if accepted in the filter
@@ -1050,6 +1094,7 @@ var
 begin
   if not IsCursorOpen then
     exit;
+<<<<<<< HEAD
   if (FData.Count = 0) and (Schema.Count > 0) and FirstLineAsSchema then
   begin
     Schema.Delimiter := Delimiter;
@@ -1060,6 +1105,14 @@ begin
     FirstLineAsSchema := FALSE;
   end
   else if (Schema.Count = 0) or FirstLineAsSchema then
+=======
+  if (FData.Count = 0) or (Trim(FData[0]) = '') then
+    begin
+    FirstLineAsSchema := FALSE;
+    FDataOffset:=0;
+    end
+  else if (Schema.Count = 0) or (FirstLineAsSchema) then
+>>>>>>> graemeg/cpstrnew
   begin
     Schema.Clear;
     SchemaLine:=FData[0];
@@ -1087,6 +1140,32 @@ begin
   inherited;
 end;
 
+<<<<<<< HEAD
+=======
+function TSdfDataSet.GetRecord(Buffer: PChar; GetMode: TGetMode;
+  DoCheck: Boolean): TGetResult;
+begin
+  if FirstLineAsSchema then
+  begin
+    if (FData.Count < 2) then
+      begin
+      if GetMode=gmPrior then
+       Result := grBOF
+      else
+       Result := grEOF
+      end
+    else
+      begin
+      If (FCurrec=-1) and (GetMode=gmNext) then
+        inc(FCurrec);
+      Result := inherited GetRecord(Buffer, GetMode, DoCheck);
+      end;
+  end
+  else
+    Result := inherited GetRecord(Buffer, GetMode, DoCheck);
+end;
+
+>>>>>>> graemeg/cpstrnew
 function TSdfDataSet.StoreToBuf(Source: String): String;
 var
   MaxLen, // Maximum field length as defined in FieldDefs + null terminator

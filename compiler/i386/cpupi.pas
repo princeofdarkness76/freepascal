@@ -76,8 +76,13 @@ unit cpupi;
       begin
         { align to 4 bytes at least
           otherwise all those subl $2,%esp are meaningless PM }
+<<<<<<< HEAD
         if target_info.stackalign<=4 then
           result:=Align(tg.direction*tg.lasttemp,min(current_settings.alignment.localalignmax,4))
+=======
+        if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+          result:=Align(tg.direction*tg.lasttemp,min(current_settings.alignment.localalignmin,4))
+>>>>>>> graemeg/cpstrnew
         else
           { aligned during stack frame allocation, because also depends number
             of saved registers }
@@ -97,7 +102,12 @@ unit cpupi;
 
     procedure ti386procinfo.allocate_got_register(list: tasmlist);
       begin
+<<<<<<< HEAD
         if (cs_create_pic in current_settings.moduleswitches) then
+=======
+        if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
+           (cs_create_pic in current_settings.moduleswitches) then
+>>>>>>> graemeg/cpstrnew
           begin
             got := cg.getaddressregister(list);
           end;

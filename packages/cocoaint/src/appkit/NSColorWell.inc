@@ -45,16 +45,26 @@
     _color: NSColor;
     _target: id;
     _action: SEL;
+<<<<<<< HEAD
     __cwFlags: record
       case byte of
        0: (_anonbitfield_NSColorWell0: cuint);
        1: (data: bitpacked record
+=======
+    __cwFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSColorWell0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _isActive: 0..1;
         _isBordered: 0..1;
         cantDraw: 0..1;
         isNotContinuous: 0..1;
         reservedColorWell: 0..((1 shl 28)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

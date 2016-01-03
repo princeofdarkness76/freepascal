@@ -4,7 +4,14 @@
 
 [package]
 name=libc
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=kerneldefs kernelioctl libc
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

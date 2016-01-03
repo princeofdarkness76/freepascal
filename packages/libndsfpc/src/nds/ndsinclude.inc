@@ -1,6 +1,9 @@
 
 
+<<<<<<< HEAD
 {$include libversion.inc} 
+=======
+>>>>>>> graemeg/cpstrnew
 { $include helper.inc}
 {$include ndstypes.inc}
 {$include bios.inc}
@@ -16,7 +19,11 @@
 {$include system.inc}
 {$include timers.inc}
 {$include fifomessages.inc} 
+<<<<<<< HEAD
 {$include input.inc} 
+=======
+{$include input.inc} // testing...
+>>>>>>> graemeg/cpstrnew
  
 {$ifdef ARM9}
   {$include arm9/dynamicArray.inc}
@@ -44,8 +51,11 @@
   {$include arm9/guitarGrip.inc}
   {$include arm9/paddle.inc}
   {$include arm9/piano.inc}
+<<<<<<< HEAD
   {$include arm9/dldi.inc}
   {$include arm9/window.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 {$endif ARM9}
 
 {$ifdef ARM7}
@@ -54,6 +64,9 @@
   {$include arm7/input.inc}
   {$include arm7/i2c.inc}
   {$include arm7/serial.inc}
+<<<<<<< HEAD
   {$include arm7/sdmmc.inc}
+=======
+>>>>>>> graemeg/cpstrnew
   {$include arm7/touch.inc}
 {$endif ARM7}

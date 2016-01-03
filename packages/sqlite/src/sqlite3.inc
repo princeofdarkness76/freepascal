@@ -36,11 +36,111 @@ const
   {$DEFINE S}
 {$ENDIF}
 
+<<<<<<< HEAD
 {
   Header converted from Sqlite version 3.7.9
   SOURCE_ID = '2011-11-01 00:52:41 c7c6050ef060877ebe77b41d959e9df13f8c9b5e'
 }
 
+=======
+(*
+** 2001 September 15
+**
+** The author disclaims copyright to this source code.  In place of
+** a legal notice, here is a blessing:
+**
+**    May you do good and not evil.
+**    May you find forgiveness for yourself and forgive others.
+**    May you share freely, never taking more than you give.
+**
+*************************************************************************
+** This header file defines the interface that the SQLite library
+** presents to client programs.  If a C-function, structure, datatype,
+** or constant definition does not appear in this file, then it is
+** not a published API of SQLite, is subject to change without
+** notice, and should not be referenced by programs that use SQLite.
+**
+** Some of the definitions that are in this file are marked as
+** "experimental".  Experimental interfaces are normally new
+** features recently added to SQLite.  We do not anticipate changes 
+** to experimental interfaces but reserve to make minor changes if
+** experience from use "in the wild" suggest such changes are prudent.
+**
+** The official C-language API documentation for SQLite is derived
+** from comments in this file.  This file is the authoritative source
+** on how SQLite interfaces are suppose to operate.
+**
+** The name of this file under configuration management is "sqlite.h.in".
+** The makefile makes some minor changes to this file (such as inserting
+** the version number) and changes its name to "sqlite3.h" as
+** part of the build process.
+**
+** @(#) $Id: sqlite.h.in,v 1.312 2008/05/12 12:39:56 drh Exp $
+*)
+
+(*
+** CAPI3REF: Compile-Time Library Version Numbers {F10010}
+**
+** The SQLITE_VERSION and SQLITE_VERSION_NUMBER #defines in
+** the sqlite3.h file specify the version of SQLite with which
+** that header file is associated.
+**
+** The "version" of SQLite is a string of the form "X.Y.Z".
+** The phrase "alpha" or "beta" might be appended after the Z.
+** The X value is major version number always 3 in SQLite3.
+** The X value only changes when  backwards compatibility is
+** broken and we intend to never break
+** backwards compatibility.  The Y value is the minor version
+** number and only changes when
+** there are major feature enhancements that are forwards compatible
+** but not backwards compatible.  The Z value is release number
+** and is incremented with
+** each release but resets back to 0 when Y is incremented.
+**
+** See also: [sqlite3_libversion()] and [sqlite3_libversion_number()].
+**
+** INVARIANTS:
+**
+** {F10011} The SQLITE_VERSION #define in the sqlite3.h header file
+**          evaluates to a string literal that is the SQLite version
+**          with which the header file is associated.
+**
+** {F10014} The SQLITE_VERSION_NUMBER #define resolves to an integer
+**          with the value  (X*1000000 + Y*1000 + Z) where X, Y, and
+**          Z are the major version, minor version, and release number.
+*)
+const
+  SQLITE_VERSION        = '3.5.9';
+  SQLITE_VERSION_NUMBER = 3005009;
+
+(*
+** CAPI3REF: Run-Time Library Version Numbers {F10020}
+** KEYWORDS: sqlite3_version
+**
+** These features provide the same information as the [SQLITE_VERSION]
+** and [SQLITE_VERSION_NUMBER] #defines in the header, but are associated
+** with the library instead of the header file.  Cautious programmers might
+** include a check in their application to verify that 
+** sqlite3_libversion_number() always returns the value 
+** [SQLITE_VERSION_NUMBER].
+**
+** The sqlite3_libversion() function returns the same information as is
+** in the sqlite3_version[] string constant.  The function is provided
+** for use in DLLs since DLL users usually do not have direct access to string
+** constants within the DLL.
+**
+** INVARIANTS:
+**
+** {F10021} The [sqlite3_libversion_number()] interface returns an integer
+**          equal to [SQLITE_VERSION_NUMBER]. 
+**
+** {F10022} The [sqlite3_version] string constant contains the text of the
+**          [SQLITE_VERSION] string. 
+**
+** {F10023} The [sqlite3_libversion()] function returns
+**          a pointer to the [sqlite3_version] string constant.
+*)
+>>>>>>> graemeg/cpstrnew
 //SQLITE_EXTERN const char sqlite3_version[];
 {$IFDEF S}function{$ELSE}var{$ENDIF}sqlite3_libversion{$IFDEF D}: function{$ENDIF}(): pansichar; cdecl;{$IFDEF S}external Sqlite3Lib;{$ENDIF}
 {$IFDEF S}function{$ELSE}var{$ENDIF}sqlite3_libversion_number{$IFDEF D}: function{$ENDIF}(): cint; cdecl;{$IFDEF S}external Sqlite3Lib;{$ENDIF}
@@ -988,6 +1088,7 @@ Type
 
 {$IFDEF LOAD_DYNAMICALLY}
 
+<<<<<<< HEAD
 function InitializeSqliteANSI(const LibraryName: AnsiString = ''): Integer; //needed as TLibraryLoadFunction
 function InitializeSqlite(const LibraryName: UnicodeString = ''): Integer;
 function TryInitializeSqlite(const LibraryName: Unicodestring = ''): Integer;
@@ -996,11 +1097,22 @@ procedure ReleaseSqlite; //needed as TLibraryUnLoadFunction
 
 function InitialiseSQLite: Integer; deprecated;
 function InitialiseSQLite(const LibraryName: UnicodeString): Integer; deprecated;
+=======
+function InitializeSqlite(const LibraryName: String = ''): Integer;
+function TryInitializeSqlite(const LibraryName: string = ''): Integer;
+function ReleaseSqlite: Integer;
+
+function InitialiseSQLite: Integer; deprecated;
+function InitialiseSQLite(const LibraryName: String): Integer; deprecated;
+>>>>>>> graemeg/cpstrnew
 
 var
   SQLiteLibraryHandle: TLibHandle;
   SQLiteDefaultLibrary: String = Sqlite3Lib;
+<<<<<<< HEAD
   SQLiteLoadedLibrary: UnicodeString;
+=======
+>>>>>>> graemeg/cpstrnew
 {$ENDIF LOAD_DYNAMICALLY}
 
 implementation
@@ -1213,6 +1325,7 @@ end;
 var
   RefCount: Integer;
 
+<<<<<<< HEAD
 function TryInitializeSqlite(const LibraryName: UnicodeString): Integer;
 
 Var
@@ -1226,17 +1339,30 @@ begin
   if result  = 1 then
   begin
     SQLiteLibraryHandle := LoadLibrary(N);
+=======
+function TryInitializeSqlite(const LibraryName: string): Integer;
+begin
+  result:=InterlockedIncrement(RefCount);
+  if result  = 1 then
+  begin
+    SQLiteLibraryHandle := LoadLibrary(LibraryName);
+>>>>>>> graemeg/cpstrnew
     if (SQLiteLibraryHandle = NilHandle) then
     begin
       RefCount := 0;
       Exit(-1);
     end;
+<<<<<<< HEAD
     SQLiteLoadedLibrary := N;
+=======
+    LoadedLibrary := LibraryName;
+>>>>>>> graemeg/cpstrnew
     LoadAddresses(SQLiteLibraryHandle);
   end;
 end;
 
 function InitialiseSQLite:integer;
+<<<<<<< HEAD
 begin
   result:=InitializeSqlite(SQLiteDefaultLibrary);
 end;
@@ -1274,11 +1400,43 @@ begin
     SQLiteLoadedLibrary := '';
     RefCount := 0;
   end;
+=======
+begin
+  result:=InitializeSqlite(SQLiteDefaultLibrary);
 end;
 
-procedure ReleaseSQLite;
+function  InitializeSQLite(const LibraryName: String) :integer;
 begin
+  if (LoadedLibrary <> '') and (LoadedLibrary <> LibraryName) then
+    raise EInoutError.CreateFmt(SErrAlreadyLoaded,[LoadedLibrary]);
+
+  result:= TryInitializeSQLIte(LibraryName);
+  if result=-1 then
+    raise EInOutError.CreateFmt(SErrLoadFailed,[LibraryName]);
+>>>>>>> graemeg/cpstrnew
+end;
+
+function  InitialiseSQLite(const LibraryName: String):integer;
+begin
+<<<<<<< HEAD
   ReleaseSQLite;
 end;
 
+=======
+  result:=InitializeSqlite(LibraryName);
+end;
+
+function  ReleaseSQLite:integer;
+begin
+  if InterlockedDecrement(RefCount) <= 0 then
+  begin
+    if SQLiteLibraryHandle <> NilHandle then
+      UnloadLibrary(SQLiteLibraryHandle);
+    SQLiteLibraryHandle := NilHandle;
+    LoadedLibrary := '';
+    RefCount := 0;
+  end;
+end;
+
+>>>>>>> graemeg/cpstrnew
 {$ENDIF}

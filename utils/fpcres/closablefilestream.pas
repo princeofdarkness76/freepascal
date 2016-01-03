@@ -37,6 +37,10 @@ type
     fPosition : int64;
     procedure EnsureHandleOpen;
   protected
+<<<<<<< HEAD
+=======
+    procedure SetSize(NewSize: Longint); override;
+>>>>>>> graemeg/cpstrnew
     procedure SetSize(const NewSize: Int64); override;
     function RetryOpen : boolean;
   public
@@ -44,6 +48,10 @@ type
     destructor Destroy; override;
     function Read(var Buffer; Count: Longint): Longint; override;
     function Write(const Buffer; Count: Longint): Longint; override;
+<<<<<<< HEAD
+=======
+    function Seek(Offset: Longint; Origin: Word): Longint; override;
+>>>>>>> graemeg/cpstrnew
     function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
     procedure CloseHandle;
 end;
@@ -223,6 +231,14 @@ begin
   fListener.NotifyFileOpened(self);
 end;
 
+<<<<<<< HEAD
+=======
+procedure TClosableFileStream.SetSize(NewSize: Longint);
+begin
+  SetSize(int64(NewSize));
+end;
+
+>>>>>>> graemeg/cpstrnew
 procedure TClosableFileStream.SetSize(const NewSize: Int64);
 begin
   EnsureHandleOpen;
@@ -272,6 +288,15 @@ begin
   Result:=fStream.Write(Buffer,Count);
 end;
 
+<<<<<<< HEAD
+=======
+function TClosableFileStream.Seek(Offset: Longint; Origin: Word): Longint;
+begin
+  EnsureHandleOpen;
+  Result:=fStream.Seek(Offset,Origin);
+end;
+
+>>>>>>> graemeg/cpstrnew
 function TClosableFileStream.Seek(const Offset: Int64; Origin: TSeekOrigin
   ): Int64;
 begin

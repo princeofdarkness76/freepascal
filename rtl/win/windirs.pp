@@ -6,7 +6,12 @@ unit windirs;
 interface
 
 uses
+<<<<<<< HEAD
   windows;
+=======
+  windows,
+  strings;
+>>>>>>> graemeg/cpstrnew
 
 Const
   CSIDL_PROGRAMS                = $0002; { %SYSTEMDRIVE%\Program Files                                      }
@@ -59,7 +64,12 @@ uses
   sysutils;
 
 Type
+<<<<<<< HEAD
   PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: {$ifdef FPC_UNICODE_RTL}PWideChar{$ELSE}PChar{$ENDIF}): HRESULT; stdcall;
+=======
+  PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
+
+>>>>>>> graemeg/cpstrnew
 
 var
   SHGetFolderPath : PFNSHGetFolderPath = Nil;
@@ -68,7 +78,11 @@ var
 Procedure InitDLL;
 
 Var
+<<<<<<< HEAD
   pathBuf: array[0..MAX_PATH-1] of {$ifdef FPC_UNICODE_RTL}WideChar{$else}Ansichar{$endif};
+=======
+  pathBuf: array[0..MAX_PATH-1] of char;
+>>>>>>> graemeg/cpstrnew
   pathLength: Integer;
 begin
   { Load shfolder.dll using a full path, in order to prevent spoofing (Mantis #18185)
@@ -82,7 +96,11 @@ begin
 
     if (CFGDLLHandle<>0) then
     begin
+<<<<<<< HEAD
       Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,{$ifdef FPC_UNICODE_RTL}'SHGetFolderPathW'{$else}'SHGetFolderPathA'{$endif});
+=======
+      Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,'SHGetFolderPathA');
+>>>>>>> graemeg/cpstrnew
       If @ShGetFolderPath=nil then
       begin
         FreeLibrary(CFGDLLHandle);

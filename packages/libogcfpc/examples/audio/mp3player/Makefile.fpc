@@ -7,7 +7,11 @@ loaders=
 programs=playmp3
 
 [require]
+<<<<<<< HEAD
 packages=libogcfpc mad
+=======
+packages=libogcfpc
+>>>>>>> graemeg/cpstrnew
 tools=bin2s rmdir gxtexconv
 nortl=y
 

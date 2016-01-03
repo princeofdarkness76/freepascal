@@ -29,10 +29,13 @@ Uses Windows;
  {$define imagehlp64}
 {$endif}
 
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 Const 
      IMAGE_SEPARATION    = 64*1024;  	
      DBHHEADER_DEBUGDIRS = $1;     

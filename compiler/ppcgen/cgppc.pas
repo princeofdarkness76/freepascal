@@ -33,9 +33,14 @@ unit cgppc;
 
     type
       tcgppcgen = class(tcg)
+<<<<<<< HEAD
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
 
         procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: tcgsize; src, dst: TRegister); override;
+=======
+        procedure a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const paraloc : tcgpara); override;
+        procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
+>>>>>>> graemeg/cpstrnew
 
         procedure a_call_reg(list : TAsmList;reg: tregister); override;
 
@@ -190,6 +195,32 @@ unit cgppc;
       end;
 
 
+<<<<<<< HEAD
+=======
+    procedure tcgppcgen.a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const
+      paraloc: tcgpara);
+    var
+      ref: treference;
+    begin
+      paraloc.check_simple_location;
+      paramanager.allocparaloc(list,paraloc.location);
+      case paraloc.location^.loc of
+        LOC_REGISTER, LOC_CREGISTER:
+          a_load_const_reg(list, size, a, paraloc.location^.register);
+        LOC_REFERENCE:
+          begin
+            reference_reset(ref,paraloc.alignment);
+            ref.base := paraloc.location^.reference.index;
+            ref.offset := paraloc.location^.reference.offset;
+            a_load_const_ref(list, size, a, ref);
+          end;
+      else
+        internalerror(2002081101);
+      end;
+    end;
+
+
+>>>>>>> graemeg/cpstrnew
     procedure tcgppcgen.a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara);
       var
         ref: treference;
@@ -342,7 +373,11 @@ unit cgppc;
         else
           stubalign:=16;
         new_section(current_asmdata.asmlists[al_imports],sec_stub,'',stubalign);
+<<<<<<< HEAD
         result := current_asmdata.DefineAsmSymbol(stubname,AB_LOCAL,AT_FUNCTION);
+=======
+        result := current_asmdata.RefAsmSymbol(stubname);
+>>>>>>> graemeg/cpstrnew
         current_asmdata.asmlists[al_imports].concat(Tai_symbol.Create(result,0));
         { register as a weak symbol if necessary }
         if weak then
@@ -692,7 +727,11 @@ unit cgppc;
         begin
           pd:=search_system_proc('mcount');
           paraloc1.init;
+<<<<<<< HEAD
           paramanager.getintparaloc(list,pd,1,paraloc1);
+=======
+          paramanager.getintparaloc(pocall_cdecl,1,paraloc1);
+>>>>>>> graemeg/cpstrnew
           a_load_reg_cgpara(list,OS_ADDR,NR_R0,paraloc1);
           paramanager.freecgpara(list,paraloc1);
           paraloc1.done;
@@ -810,9 +849,17 @@ unit cgppc;
           (TPPCAsmData(current_asmdata).DirectTOCEntries<AutoDirectTOCLimit)) or
          force_direct_toc then
         begin
+<<<<<<< HEAD
           ref.refaddr:=addr_pic_no_got;
           ref.base:=NR_RTOC;
           if not assigned(ref.symbol) then
+=======
+          if (procdef.extnumber=$ffff) then
+            Internalerror(200006139);
+          { call/jmp  vmtoffs(%eax) ; method offs }
+          reference_reset_base(href,NR_R11,tobjectdef(procdef.struct).vmtmethodoffset(procdef.extnumber),sizeof(pint));
+          if hasLargeOffset(href) then
+>>>>>>> graemeg/cpstrnew
             begin
               TPPCAsmData(current_asmdata).DirectTOCEntries:=TPPCAsmData(current_asmdata).DirectTOCEntries+1;
               new_section(current_asmdata.AsmLists[al_picdata],sec_toc,'',sizeof(pint));
@@ -926,6 +973,7 @@ unit cgppc;
         hreg: tregister;
         needsecondreg: boolean;
       begin
+<<<<<<< HEAD
         hreg:=NR_NO;
         needsecondreg:=false;
         { get the bit to extract from the conditional register + its requested value (0 or 1) }
@@ -956,6 +1004,25 @@ unit cgppc;
               bitvalue:=true;
               needsecondreg:=true;
             end;
+=======
+        if not(procdef.proctypeoption in [potype_function,potype_procedure]) then
+          Internalerror(200006137);
+        if not assigned(procdef.struct) or
+           (procdef.procoptions*[po_classmethod, po_staticmethod,
+             po_methodpointer, po_interrupt, po_iocheck]<>[]) then
+          Internalerror(200006138);
+        if procdef.owner.symtabletype<>ObjectSymtable then
+          Internalerror(200109191);
+
+        make_global:=false;
+        if (not current_module.is_unit) or
+            create_smartlink or
+           (procdef.owner.defowner.owner.symtabletype=globalsymtable) then
+          make_global:=true;
+
+        if make_global then
+          List.concat(Tai_symbol.Createname_global(labelname,AT_FUNCTION,0))
+>>>>>>> graemeg/cpstrnew
         else
           internalerror(200112261);
         end;
@@ -1003,9 +1070,15 @@ unit cgppc;
            ((ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL,AB_PRIVATE_EXTERN,AB_COMMON]) or
             (cs_create_pic in current_settings.moduleswitches))then
           begin
+<<<<<<< HEAD
             if (ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL,AB_PRIVATE_EXTERN,AB_COMMON]) or
                ((target_info.system=system_powerpc64_darwin) and
                 (ref.symbol.bind=AB_GLOBAL)) then
+=======
+            if (ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL]) or
+               ((cs_create_pic in current_settings.moduleswitches) and
+                (ref.symbol.bind in [AB_COMMON,AB_GLOBAL,AB_PRIVATE_EXTERN])) then
+>>>>>>> graemeg/cpstrnew
               begin
                 tmpreg := g_indirect_sym_load(list,ref.symbol.name,asmsym2indsymflags(ref.symbol));
                 ref.symbol:=nil;

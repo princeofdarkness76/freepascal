@@ -32,6 +32,14 @@ function floatto12d3(n: cfloat): fixed12d3; inline;
 const
   GL_MAX_DEPTH     = $7FFF;
 
+<<<<<<< HEAD
+=======
+function inttof32(n: cint): cint32; inline;
+function f32toint(n: cint32): cint; inline;
+function floattof32(n: cfloat): cint32; inline;  //inlining it makes impossible to pass it to another function :/
+function f32tofloat(n: cint32): cfloat; inline;
+
+>>>>>>> graemeg/cpstrnew
 type
   t16 = cshort;//cint16?       // text coordinate 12.4 fixed point (or cint?)
 
@@ -291,7 +299,10 @@ type
     matrixMode: GL_MATRIX_MODE_ENUM; // holds the current Matrix Mode
 
     vramBlocks: array [0..1] of ps_vramBlock;		// Two classe instances, one for textures, and one for palettes
+<<<<<<< HEAD
     vramLock: array [0..1] of cint;				// Holds the current lock state of the VRAM banks
+=======
+>>>>>>> graemeg/cpstrnew
     
     // texture globals
     texturePtrs: DynamicArray;		// Pointers to each individual texture
@@ -353,7 +364,10 @@ procedure glRotatef32i(angle: cint; x, y, z: cint32); cdecl; external;
 function glTexImage2D(target, empty1: cint; _type: GL_TEXTURE_TYPE_ENUM; sizeX, sizeY, empty2, param: cint; texture: pointer): cint; cdecl; external;
 
 procedure glColorTableEXT(target, empty1: cint; width: cuint16; empty2, empty3: cint; const table: pcuint16); cdecl; external;
+<<<<<<< HEAD
 procedure glColorSubTableEXT(target, start, count, empty1, empty2: cint; const data: pcuint16); cdecl; external;
+=======
+>>>>>>> graemeg/cpstrnew
 procedure glAssignColorTable(target, name: cint); cdecl; external;
 
 //procedure glTexLoadPal(const pal: pcuint16; count: cuint16; addr: cuint32); cdecl; external;
@@ -455,6 +469,24 @@ procedure glTexCoord2f(s, t: cfloat); inline;
 
 {$ifdef NDS_IMPLEMENTATION}
 function intto12d3(n: cint): fixed12d3; inline;
+<<<<<<< HEAD
+=======
+begin
+  intto12d3 := fixed12d3(n shl 3);
+end;
+
+function floatto12d3(n: cfloat): fixed12d3; inline;
+begin
+  floatto12d3 := fixed12d3(trunc( n  * (1 shl 3)));
+end;
+
+function inttof32(n: cint): cint32; inline;
+begin
+  inttof32 := ((n) shl 12);
+end;
+
+function f32toint(n: cint32): cint; inline;
+>>>>>>> graemeg/cpstrnew
 begin
   intto12d3 := fixed12d3(n shl 3);
 end;

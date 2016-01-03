@@ -44,6 +44,7 @@
   private
     _movie: Pointer;
     _url: NSURL;
+<<<<<<< HEAD
     __movieFlags: record
       case byte of
        0: (_anonbitfield_NSMovie0: cint);
@@ -51,6 +52,14 @@
         _dispose: 0..1;
         reserved: 0..((1 shl 31)-1);
        end;
+=======
+    __movieFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSMovie0: cint);
+       1: (
+        _dispose: 0..1;
+        reserved: 0..((1 shl 31)-1);
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _reserved1: clong;

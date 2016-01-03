@@ -1,3 +1,4 @@
+<<<<<<< HEAD
   {
    * SGI FREE SOFTWARE LICENSE B (Version 2.0, Sept. 18, 2008)
    * Copyright (C) 1991-2000 Silicon Graphics, Inc. All Rights Reserved.
@@ -27,6 +28,73 @@
    * other dealings in this Software without prior written authorization from
    * Silicon Graphics, Inc.
     }
+=======
+{
+
+  Adaption of the delphi3d.net OpenGL units to FreePascal
+  Sebastian Guenther (sg@freepascal.org) in 2002
+  These units are free to use
+}
+
+{*++ BUILD Version: 0004    // Increment this if a change has global effects
+
+Copyright (c) 1985-95, Microsoft Corporation
+
+Module Name:
+
+    glu.h
+
+Abstract:
+
+    Procedure declarations, constant definitions and macros for the OpenGL
+    Utility Library.
+
+--*}
+
+{*
+** Copyright 1991-1993, Silicon Graphics, Inc.
+** All Rights Reserved.
+**
+** This is UNPUBLISHED PROPRIETARY SOURCE CODE of Silicon Graphics, Inc.;
+** the contents of this file may not be disclosed to third parties, copied or
+** duplicated in any form, in whole or in part, without the prior written
+** permission of Silicon Graphics, Inc.
+**
+** RESTRICTED RIGHTS LEGEND:
+** Use, duplication or disclosure by the Government is subject to restrictions
+** as set forth in subdivision (c)(1)(ii) of the Rights in Technical Data
+** and Computer Software clause at DFARS 252.227-7013, and/or in similar or
+** successor clauses in the FAR, DOD or NASA FAR Supplement. Unpublished -
+** rights reserved under the Copyright Laws of the United States.
+*}
+
+{*
+** Return the error string associated with a particular error code.
+** This will return 0 for an invalid error code.
+**
+** The generic function prototype that can be compiled for ANSI or Unicode
+** is defined as follows:
+**
+** LPCTSTR APIENTRY gluErrorStringWIN (GLenum errCode);
+*}
+
+{******************************************************************************}
+{ Converted to Delphi by Tom Nuydens (tom@delphi3d.net)                        }
+{ For the latest updates, visit Delphi3D: http://www.delphi3d.net              }
+{******************************************************************************}
+
+
+{******************************************************************************}
+{  									       }
+{ WARNING: CALLBACKS TYPES IN THIS UNIT (TCALLBACK) ARE SOMETIMES CDECL AND    }
+{ SOMETIMES STDCALL, DEPENDING ON THE EXACT DLL USED. THE MOST COMMON ONE SEEMS}
+{ TO USE STDCALL. THIS IS VERIFIED TO BE THE CASE FOR THE TESSELATOR ROUTINES  }
+{ BUT PROBABLY ALSO APPLIES TO THE OTHER CALLBACKS IN THIS UNIT                }               
+{ FOR UP TO DATE INFO SEE http://wiki.freepascal.org/OpenGL                    }
+{                                                                              }
+{******************************************************************************}
+
+>>>>>>> graemeg/cpstrnew
 {$MACRO ON}
 {$MODE OBJFPC}
 {$IFDEF Windows}
@@ -565,7 +633,27 @@ implementation
 
 
 initialization
+<<<<<<< HEAD
   LoadGLu(GLU_LIB);
+=======
+
+  {$IFDEF Windows}
+  LoadGLu('glu32.dll');
+  {$ELSE}
+  {$ifdef darwin}
+  LoadGLu('/System/Library/Frameworks/OpenGL.framework/Libraries/libGLU.dylib');
+  {$else}
+  {$IFDEF haiku}
+  LoadGLu('libGLU.so');
+  {$ELSE}
+  {$ifndef MorphOS}
+  LoadGLu('libGLU.so.1');
+  {$endif}
+  {$ENDIF}
+  {$ENDIF}
+  {$endif}
+
+>>>>>>> graemeg/cpstrnew
 finalization
   Freeglu;
 {$ENDIF MORPHOS}

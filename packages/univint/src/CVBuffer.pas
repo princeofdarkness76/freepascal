@@ -6,10 +6,15 @@
  *
  }
  
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
+=======
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+{	 Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
+>>>>>>> graemeg/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -65,11 +70,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,33 +96,49 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -164,6 +188,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -209,6 +261,11 @@ uses MacTypes, CFBase, CFDictionary, CVBase, CVReturns;
 {$endc} {not MACOSALLINCLUDE}
 
 
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
  
@@ -227,16 +284,26 @@ uses MacTypes, CFBase, CFDictionary, CVBase, CVReturns;
 { The following two keys are useful with the CoreVideo pool and texture cache APIs so that you can specify
    an initial set of default buffer attachments to automatically be attached to the buffer when it is created. }
 var kCVBufferPropagatedAttachmentsKey: CFStringRef; external name '_kCVBufferPropagatedAttachmentsKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 var kCVBufferNonPropagatedAttachmentsKey: CFStringRef; external name '_kCVBufferNonPropagatedAttachmentsKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
 //#pragma mark CVBufferRef attachment keys
 
 var kCVBufferMovieTimeKey: CFStringRef; external name '_kCVBufferMovieTimeKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)	// Generally only available for frames emitted by QuickTime; CFDictionary containing these two keys:
 var kCVBufferTimeValueKey: CFStringRef; external name '_kCVBufferTimeValueKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// Generally only available for frames emitted by QuickTime; CFDictionary containing these two keys:
+var kCVBufferTimeValueKey: CFStringRef; external name '_kCVBufferTimeValueKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 var kCVBufferTimeScaleKey: CFStringRef; external name '_kCVBufferTimeScaleKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
@@ -255,8 +322,12 @@ type
 
 }
 type
+<<<<<<< HEAD
 	CVBufferRef = ^__CVBuffer; { an opaque type }
 	__CVBuffer = record end;
+=======
+	CVBufferRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {!
     @function   CVBufferRetain
@@ -354,6 +425,10 @@ procedure CVBufferSetAttachments( buffer: CVBufferRef; theAttachments: CFDiction
 procedure CVBufferPropagateAttachments( sourceBuffer: CVBufferRef; destinationBuffer: CVBufferRef ); external name '_CVBufferPropagateAttachments';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
+<<<<<<< HEAD
+=======
+{$endc} {TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

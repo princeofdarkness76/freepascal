@@ -12,7 +12,11 @@
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
+<<<<<<< HEAD
       <Title Value="ppcavr"/>
+=======
+      <Title Value="pp"/>
+>>>>>>> graemeg/cpstrnew
     </General>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
@@ -42,7 +46,11 @@
     </Units>
   </ProjectOptions>
   <CompilerOptions>
+<<<<<<< HEAD
     <Version Value="11"/>
+=======
+    <Version Value="9"/>
+>>>>>>> graemeg/cpstrnew
     <PathDelim Value="\"/>
     <Target>
       <Filename Value="avr\pp"/>
@@ -69,9 +77,12 @@
       <ConfigFile>
         <StopAfterErrCount Value="50"/>
       </ConfigFile>
+<<<<<<< HEAD
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+=======
+>>>>>>> graemeg/cpstrnew
       <CustomOptions Value="-davr"/>
       <CompilerPath Value="$(CompPath)"/>
     </Other>

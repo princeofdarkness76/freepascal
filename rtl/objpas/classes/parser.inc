@@ -131,7 +131,10 @@ begin
   begin
     bom[i]:=fBuf[fPos];
     inc(fPos);
+<<<<<<< HEAD
     CheckLoadBuffer;
+=======
+>>>>>>> graemeg/cpstrnew
     inc(i);
   end;
   if (bom<>(#$EF+#$BB+#$BF)) then
@@ -293,7 +296,11 @@ begin
           // to ansistring does not give the original ansistring.
           // See bug http://bugs.freepascal.org/view.php?id=15841
           s:=HandleQuotedString;
+<<<<<<< HEAD
           fLastTokenWStr:=fLastTokenWStr+UnicodeString(s);
+=======
+          fLastTokenWStr:=fLastTokenWStr+s;
+>>>>>>> graemeg/cpstrnew
           fLastTokenStr:=fLastTokenStr+s;
         end;
       '#'  :

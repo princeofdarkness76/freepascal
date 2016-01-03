@@ -59,6 +59,7 @@ begin
     FXMLResultsWriter.Free;
     FDigestResultsWriter.Free;
   end;
+<<<<<<< HEAD
 end;
   
 Var
@@ -85,4 +86,7 @@ begin
   Finally    
     FreeDBConnector;
   end;  
+=======
+  FreeDBConnector;
+>>>>>>> graemeg/cpstrnew
 end.

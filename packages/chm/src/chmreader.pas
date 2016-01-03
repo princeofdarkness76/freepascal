@@ -116,6 +116,10 @@ type
     function  ReadURLSTR(APosition: DWord): String;
     function  CheckCommonStreams: Boolean;
     procedure ReadWindows(mem:TMemoryStream);
+<<<<<<< HEAD
+=======
+  public
+>>>>>>> graemeg/cpstrnew
     constructor Create(AStream: TStream; FreeStreamOnDestroy: Boolean); override;
     destructor Destroy; override;
     function GetContextUrl(Context: THelpContext): String;
@@ -276,7 +280,11 @@ procedure TChmReader.ReadCommonData;
      repeat
        Stream.Read(buf, 50);
        Result := Result + buf;
+<<<<<<< HEAD
      until IndexByte(buf, 50, 0) <> -1;
+=======
+     until Pos(#0, buf) > -1;
+>>>>>>> graemeg/cpstrnew
      if FixURL then
        Result := StringReplace(Result, '\', '/', [rfReplaceAll]);
    end;
@@ -1078,6 +1086,7 @@ begin
 end;
 
 procedure parselistingblock(p:pbyte);
+<<<<<<< HEAD
 var
     itemstack:TObjectStack;
     curitemdepth : integer;
@@ -1104,6 +1113,11 @@ var hdr:PBTreeBlockHeader;
     head,tail : pbyte;
     isseealso,
     entrydepth,
+=======
+var hdr:PBTreeBlockHeader;
+    head,tail : pbyte;
+    isseealso,
+>>>>>>> graemeg/cpstrnew
     nrpairs : Integer;
     i : integer;
     PE : PBtreeBlockEntry;
@@ -1113,8 +1127,13 @@ var hdr:PBTreeBlockHeader;
     seealsostr,
     topic,
     Name : AnsiString;
+<<<<<<< HEAD
 begin
   //setlength (curitem,10);
+=======
+    item : TChmSiteMapItem;
+begin
+>>>>>>> graemeg/cpstrnew
   hdr:=PBTreeBlockHeader(p);
   hdr^.Length          :=LEToN(hdr^.Length);
   hdr^.NumberOfEntries :=LEToN(hdr^.NumberOfEntries);
@@ -1124,12 +1143,18 @@ begin
   tail:=p+(2048-hdr^.length);
   head:=p+sizeof(TBtreeBlockHeader);
 
+<<<<<<< HEAD
   itemstack:=TObjectStack.create;
+=======
+>>>>>>> graemeg/cpstrnew
   {$ifdef binindex}
   writeln('previndex  : ',hdr^.IndexOfPrevBlock);
   writeln('nextindex  : ',hdr^.IndexOfNextBlock);
   {$endif}
+<<<<<<< HEAD
   curitemdepth:=0;
+=======
+>>>>>>> graemeg/cpstrnew
   while head<tail do
     begin
       if not ReadWCharString(Head,Tail,Name) Then
@@ -1142,6 +1167,7 @@ begin
       PE :=PBtreeBlockEntry(head);
       NrPairs  :=LEToN(PE^.nrpairs);
       IsSeealso:=LEToN(PE^.isseealso);
+<<<<<<< HEAD
       EntryDepth:=LEToN(PE^.entrydepth);
       CharIndex:=LEToN(PE^.CharIndex);
       {$ifdef binindex}
@@ -1150,6 +1176,15 @@ begin
         Writeln('charindex :  ',charindex );
         Writeln('Nrpairs   :  ',NrPairs);
         Writeln('CharIndex :  ',charindex);
+=======
+      CharIndex:=LEToN(PE^.CharIndex);
+      {$ifdef binindex}
+        Writeln('seealso:     ',IsSeeAlso);
+        Writeln('entrydepth:  ',LEToN(PE^.entrydepth));
+        Writeln('charindex :  ',charindex );
+        Writeln('Nrpairs   :  ',NrPairs);
+        writeln('seealso data : ');
+>>>>>>> graemeg/cpstrnew
       {$endif}
 
       inc(head,sizeof(TBtreeBlockEntry));
@@ -1158,6 +1193,7 @@ begin
           if not ReadWCharString(Head,Tail,SeeAlsoStr) Then
             Break;
           // have to figure out first what to do with it.
+<<<<<<< HEAD
           // is See Also really mutually exclusive with pairs?
           // or is the number of pairs equal to the number of seealso
           // strings?
@@ -1165,15 +1201,20 @@ begin
             writeln('seealso: ',seealsostr);
           {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
         end
       else
         begin
          if NrPairs>0 Then
+<<<<<<< HEAD
           begin
             {$ifdef binindex}
              writeln('Pairs   : ');
             {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
             for i:=0 to nrpairs-1 do
               begin
                 if head<tail Then
@@ -1188,7 +1229,10 @@ begin
                   end;
               end;
           end;
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
       if nrpairs<>0 Then
         createentry(Name,CharIndex,Topic,Title);
       inc(head,4); // always 1
@@ -1198,7 +1242,10 @@ begin
       {$endif}
       inc(head,4); // zero based index (13 higher than last
     end;
+<<<<<<< HEAD
   ItemStack.Free;
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 var TryTextual : boolean;
@@ -1222,10 +1269,16 @@ begin
    SiteMap:=TChmSitemap.Create(StIndex);
    Item   :=Nil;  // cached last created item, in case we need to make
                   // a child.
+<<<<<<< HEAD
 
    TryTextual:=True;
    BHdr.LastLstBlock:=0;
    if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>=0) Then
+=======
+   TryTextual:=True;
+   BHdr.LastLstBlock:=0;
+   if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
+>>>>>>> graemeg/cpstrnew
     begin
        if BHdr.BlockSize=defblocksize then
          begin
@@ -1245,8 +1298,12 @@ begin
     begin
       sitemap.free;
       Result:=AbortAndTryTextual;
+<<<<<<< HEAD
     end
   else Index.Free;
+=======
+    end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TChmReader.GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
@@ -1322,7 +1379,11 @@ begin
      Exit;
    end;
 
+<<<<<<< HEAD
      // Binary Toc Exists
+=======
+   // Binary Toc Exists
+>>>>>>> graemeg/cpstrnew
    Result := TChmSiteMap.Create(stTOC);
 
    EntryInfoOffset := NtoLE(TOC.ReadDWord);
@@ -1330,17 +1391,23 @@ begin
    EntryCount      := NtoLE(TOC.ReadDWord);
    TOPICSOffset    := NtoLE(TOC.ReadDWord);
 
+<<<<<<< HEAD
    if EntryCount = 0 then
      begin
        Toc.Free;
        Exit;
      end;
 
+=======
+>>>>>>> graemeg/cpstrnew
    NextItem := EntryInfoOffset;
    repeat
      NextItem := AddTOCItem(Toc, NextItem, Result.Items);
    until NextItem = 0;
+<<<<<<< HEAD
    TOC.Free;
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TChmReader.HasContextList: Boolean;
@@ -1618,7 +1685,11 @@ AChm: TChmReader;
 AIndex: Integer;
 begin
   if not FileExists(AFileName) then exit;
+<<<<<<< HEAD
   AStream := TFileStream.Create(AFileName, fmOpenRead or fmShareDenyWrite);
+=======
+  AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
+>>>>>>> graemeg/cpstrnew
   AChm := TChmReader.Create(AStream, True);
   AIndex := AddObject(AFileName, AChm);
   fLastChm := AChm;

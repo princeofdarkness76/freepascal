@@ -94,7 +94,10 @@ const
       {$linklib gdk_pixbuf-2.0.0}
       {$linklib atk-1.0.0}
       {$linklib gthread-2.0}
+<<<<<<< HEAD
       {$linklib pangocairo-1.0}
+=======
+>>>>>>> graemeg/cpstrnew
     {$else}
       {$ifdef UseCustomLibs}
       gtklib = '';

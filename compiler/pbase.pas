@@ -254,11 +254,17 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function try_consume_unitsym(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume:ttoken;consume_id,allow_specialize:boolean;out is_specialize:boolean):boolean;
       var
         hmodule: tmodule;
         ns:ansistring;
         nssym:tsym;
+=======
+    function try_consume_unitsym(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume : ttoken):boolean;
+      var
+        hmodule: tmodule;
+>>>>>>> graemeg/cpstrnew
       begin
         result:=false;
         tokentoconsume:=_ID;
@@ -360,6 +366,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function try_consume_unitsym_no_specialize(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume:ttoken;consume_id:boolean):boolean;
       var
         dummy: Boolean;
@@ -367,6 +374,8 @@ implementation
         result:=try_consume_unitsym(srsym,srsymtable,tokentoconsume,consume_id,false,dummy);
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
     function try_consume_hintdirective(var symopt:tsymoptions; var deprecatedmsg:pshortstring):boolean;
       var
         last_is_deprecated:boolean;
@@ -425,6 +434,7 @@ implementation
           { handle deprecated message }
           if ((token=_CSTRING) or (token=_CCHAR)) and last_is_deprecated then
             begin
+<<<<<<< HEAD
               if not assigned(deprecatedmsg) then
                 begin
                   if token=_CSTRING then
@@ -432,6 +442,14 @@ implementation
                   else
                     deprecatedmsg:=stringdup(pattern);
                 end;
+=======
+              if deprecatedmsg<>nil then
+                internalerror(200910181);
+              if token=_CSTRING then
+                deprecatedmsg:=stringdup(cstringpattern)
+              else
+                deprecatedmsg:=stringdup(pattern);
+>>>>>>> graemeg/cpstrnew
               consume(token);
               include(symopt,sp_has_deprecated_msg);
             end;

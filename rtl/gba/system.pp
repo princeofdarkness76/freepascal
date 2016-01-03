@@ -48,7 +48,11 @@ const
  MaxPathLen = 255;
  AllFilesMask = '*';
 
+<<<<<<< HEAD
  sLineBreak = LineEnding;
+=======
+ sLineBreak : string[1] = LineEnding;
+>>>>>>> graemeg/cpstrnew
  DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
 
   UnusedHandle    = $ffff;
@@ -56,10 +60,20 @@ const
   StdOutputHandle = 1;
   StdErrorHandle  = $ffff;
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> graemeg/cpstrnew
 var
   argc: LongInt = 0;
   argv: PPChar;
   envp: PPChar;
+<<<<<<< HEAD
+=======
+//  errno: integer;
+>>>>>>> graemeg/cpstrnew
   fake_heap_end: ^byte; cvar; external;
 
 
@@ -179,6 +193,9 @@ begin
   StackLength := CheckInitialStkLen(InitialStkLen);
   StackBottom := Sptr - StackLength;
 { OS specific startup }
+
+{ Set up signals handlers }
+//  fpc_cpucodeinit;
 
 { Setup heap }
   InitHeap;

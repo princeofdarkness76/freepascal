@@ -379,10 +379,13 @@ begin
   { Set up signals handlers (may be needed by init code to test cpu features) }
   InstallSignals;
 
+<<<<<<< HEAD
 {$ifdef cpui386}
   fpc_cpucodeinit;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
   { Setup heap }
   myheapsize:=4096*1;// $ 20000;
   myheaprealsize:=4096*1;// $ 20000;

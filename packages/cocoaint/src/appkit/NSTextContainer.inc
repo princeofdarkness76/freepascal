@@ -68,15 +68,25 @@ type
     _textView: NSTextView;
     _size: NSSize;
     _lineFragmentPadding: CGFloat;
+<<<<<<< HEAD
     __tcFlags: record
       case byte of
        0: (_anonbitfield_NSTextContainer0: cushort);
        1: (data: bitpacked record
+=======
+    __tcFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSTextContainer0: cushort);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _widthTracksTextView: 0..1;
         _heightTracksTextView: 0..1;
         observingFrameChanges: 0..1;
         _reserved: 0..((1 shl 13)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     

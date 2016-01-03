@@ -82,6 +82,10 @@ Type
     procedure EndOverview; override;
     procedure WriteOverviewMember(const ALabel,AName,Access,ADescr : String); override;
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
+<<<<<<< HEAD
+=======
+    Class Function FileNameExtension : String; override;
+>>>>>>> graemeg/cpstrnew
     // Description node conversion
     procedure DescrBeginBold; override;
     procedure DescrEndBold; override;
@@ -637,14 +641,22 @@ begin
   WriteLine(False);
 end;
 
+<<<<<<< HEAD
 procedure TTXTWriter.WriteOverviewMember(const ALabel, AName, Access,
   ADescr: String);
+=======
+procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 
 begin
   WriteLnF('%.30s %.10s  %s',[AName,Access,ADescr]);
 end;
 
+<<<<<<< HEAD
 procedure TTXTWriter.WriteOverviewMember(const ALabel, AName, ADescr: String);
+=======
+procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 
 begin
   WriteLnF('%.30s %s ',[AName,ADescr]);

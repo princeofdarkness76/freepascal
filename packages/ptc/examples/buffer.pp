@@ -16,8 +16,14 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
   width, height: Integer;
   pixels: PUint32 = nil;
   x, y, r, g, b: Integer;
@@ -41,6 +47,10 @@ begin
       { allocate a buffer of pixels }
       pixels := GetMem(width * height * SizeOf(Uint32));
       FillChar(pixels^, width * height * SizeOf(Uint32), 0);
+<<<<<<< HEAD
+=======
+      palette := TPTCPalette.Create;
+>>>>>>> graemeg/cpstrnew
 
       { loop until a key is pressed }
       while not console.KeyPressed do
@@ -65,13 +75,24 @@ begin
         console.Load(pixels, width, height, width * 4, format, TPTCPaletteFactory.CreateNew);
 
         { update console }
+<<<<<<< HEAD
         console.Update;
+=======
+        console.update;
+>>>>>>> graemeg/cpstrnew
       end;
     finally
       { free pixels buffer }
       FreeMem(pixels);
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      palette.Free;
+      format.Free;
+      console.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

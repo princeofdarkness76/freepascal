@@ -1,6 +1,10 @@
 {
     This file is part of the Free Pascal packages.
+<<<<<<< HEAD
     Copyright (c) 2009-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2009 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 
     Implements a SHA-1 digest algorithm (RFC 3174)
 
@@ -13,6 +17,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 // Normally, if an optimized version is available for OS/CPU, that will be used
 // Define to use existing unoptimized implementation
 { the assembler implementation does not work on darwin }
@@ -20,6 +25,8 @@
 {$DEFINE SHA1PASCAL}
 {$endif darwin}
 
+=======
+>>>>>>> graemeg/cpstrnew
 unit sha1;
 {$mode objfpc}{$h+}
 
@@ -27,7 +34,11 @@ interface
 
 type
   TSHA1Digest = array[0..19] of Byte;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
   TSHA1Context = record
     State: array[0..4] of Cardinal;
     Buffer: array[0..63] of Byte;
@@ -35,7 +46,11 @@ type
     Length: QWord;     { total count of bytes processed }
   end;
 
+<<<<<<< HEAD
 { core }
+=======
+{ core }  
+>>>>>>> graemeg/cpstrnew
 procedure SHA1Init(out ctx: TSHA1Context);
 procedure SHA1Update(var ctx: TSHA1Context; const Buf; BufLen: PtrUInt);
 procedure SHA1Final(var ctx: TSHA1Context; out Digest: TSHA1Digest);
@@ -83,6 +98,7 @@ const
   K40 = $6ED9EBA1;
   K60 = $8F1BBCDC;
   K80 = $CA62C1D6;
+<<<<<<< HEAD
 
 {$IF (NOT(DEFINED(SHA1PASCAL))) and (DEFINED(CPU386)) }
 // Use assembler version if we have a suitable CPU as well
@@ -90,6 +106,9 @@ const
 {$i sha1i386.inc}
 {$ELSE}
 // Use original version if asked for, or when we have no optimized assembler version
+=======
+  
+>>>>>>> graemeg/cpstrnew
 procedure SHA1Transform(var ctx: TSHA1Context; Buf: Pointer);
 var
   A, B, C, D, E, T: Cardinal;
@@ -115,7 +134,11 @@ begin
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
   until i > 19;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
   repeat
     T := (B xor C xor D) + K40 + E;
     E := D;
@@ -126,7 +149,11 @@ begin
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
   until i > 39;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
   repeat
     T := (B and C) or (B and D) or (C and D) + K60 + E;
     E := D;
@@ -136,8 +163,13 @@ begin
     A := T + roldword(A, 5) + Data[i and 15];
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
+<<<<<<< HEAD
   until i > 59;
 
+=======
+  until i > 59;  
+  
+>>>>>>> graemeg/cpstrnew
   repeat
     T := (B xor C xor D) + K80 + E;
     E := D;
@@ -147,7 +179,11 @@ begin
     A := T + roldword(A, 5) + Data[i and 15];
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
+<<<<<<< HEAD
   until i > 79;
+=======
+  until i > 79;  
+>>>>>>> graemeg/cpstrnew
 
   Inc(ctx.State[0], A);
   Inc(ctx.State[1], B);
@@ -157,7 +193,10 @@ begin
 {$pop}
   Inc(ctx.Length,64);
 end;
+<<<<<<< HEAD
 {$ENDIF}
+=======
+>>>>>>> graemeg/cpstrnew
 
 procedure SHA1Update(var ctx: TSHA1Context; const Buf; BufLen: PtrUInt);
 var
@@ -208,7 +247,11 @@ begin
 end;
 
 const
+<<<<<<< HEAD
   PADDING: array[0..63] of Byte =
+=======
+  PADDING: array[0..63] of Byte = 
+>>>>>>> graemeg/cpstrnew
     ($80,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
        0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -236,7 +279,11 @@ begin
 
   // 4. Invert state to digest
   Invert(@ctx.State, @Digest, 20);
+<<<<<<< HEAD
   FillChar(ctx, sizeof(TSHA1Context), 0);
+=======
+  FillChar(ctx, sizeof(TSHA1Context), 0);  
+>>>>>>> graemeg/cpstrnew
 end;
 
 function SHA1String(const S: String): TSHA1Digest;
@@ -268,11 +315,19 @@ begin
   SHA1Init(Context);
 
   Assign(F, Filename);
+<<<<<<< HEAD
   {$push}{$i-}
   ofm := FileMode;
   FileMode := 0;
   Reset(F, 1);
   {$pop}
+=======
+  {$i-}
+  ofm := FileMode;
+  FileMode := 0;
+  Reset(F, 1);
+  {$i+}
+>>>>>>> graemeg/cpstrnew
 
   if IOResult = 0 then
   begin
@@ -313,6 +368,7 @@ var
   A: array[0..4] of Cardinal absolute Digest1;
   B: array[0..4] of Cardinal absolute Digest2;
 begin
+<<<<<<< HEAD
 {$push}
 {$B+}
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
@@ -321,3 +377,9 @@ end;
 
 end.
 k
+=======
+  Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
+end;
+
+end.
+>>>>>>> graemeg/cpstrnew

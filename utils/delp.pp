@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     Copyright (c) 1999-2012 by Peter Vreman, Michael Van Canneyt
+=======
+    Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
+>>>>>>> graemeg/cpstrnew
 
     Deletes all files generated for Pascal (*.exe,units,objects,libs)
 
@@ -20,15 +24,25 @@
  ****************************************************************************}
 program Delp;
 
+<<<<<<< HEAD
 {$mode ObjFPC}{$H+}
 
+=======
+>>>>>>> graemeg/cpstrnew
 uses
   Sysutils,getopts;
 
 const
+<<<<<<< HEAD
   Version   = 'Version 1.3';
   Title     = 'DelPascal';
   Copyright = 'Copyright (c) 1999-2012 by the Free Pascal Development Team';
+=======
+  Version   = 'Version 1.2';
+  Title     = 'DelPascal';
+  Copyright = 'Copyright (c) 1999-2010 by the Free Pascal Development Team';
+
+>>>>>>> graemeg/cpstrnew
 
 function DStr(l:longint):string;
 var
@@ -296,6 +310,7 @@ begin
       writeln(Copyright);
       Writeln;
     end;
+<<<<<<< HEAD
   While (I<=ParamCount) do
     begin
     BaseDir:=IncludeTrailingPathDelimiter(Paramstr(I));
@@ -304,4 +319,51 @@ begin
     end;
   if Not Quiet then
     PrintResults;
+=======
+  Total:=0;
+  While (I<=ParamCount) do
+    begin
+    BaseDir:=Paramstr(I);
+    If BaseDir[Length(BaseDir)]<>DirectorySeparator then
+      BaseDir:=BaseDir+DirectorySeparator;
+    FindFirst(basedir+'*.*',anyfile,Dir);
+    while (doserror=0) do
+      begin
+      hp:=masklist;
+      while assigned(hp) do
+        begin
+        if MatchesMask(Dir.Name,hp^.mask) then
+          begin
+          EraseFile(BaseDir+Dir.Name);
+          inc(hp^.Files);
+          inc(hp^.Size,Dir.Size);
+          break;
+          end;
+        hp:=hp^.next;
+        end;
+        FindNext(Dir);
+      end;
+    FindClose(Dir);
+    Inc(I);
+    end;
+  { Write Results }
+  found:=false;
+  hp:=masklist;
+  while assigned(hp) do
+    begin
+    if hp^.Files>0 then
+      begin
+      if not quiet then
+        WriteLn(' - Removed ',hp^.Files:2,' ',hp^.Mask,' (',DStr(hp^.Size)+' Bytes)');
+      inc(Total,hp^.Size);
+      found:=true;
+      end;
+    hp:=hp^.next;
+    end;
+  if not quiet then
+    if not found then
+      WriteLn(' - No Redundant Files Found!')
+    else
+      WriteLn(' - Total ',DStr(Total),' Bytes Freed');
+>>>>>>> graemeg/cpstrnew
 end.

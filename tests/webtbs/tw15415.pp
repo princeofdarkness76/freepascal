@@ -2,7 +2,11 @@
 
 type
  TMyClass = class
+<<<<<<< HEAD
    i, i2 :LongInt;
+=======
+   i, i2 :Integer;
+>>>>>>> graemeg/cpstrnew
  end;
 
 begin

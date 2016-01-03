@@ -109,7 +109,11 @@ unit cpubase;
       { registers which may be destroyed by calls }
       VOLATILE_INTREGISTERS = [RS_R0..RS_R3,RS_R12..RS_R14];
       VOLATILE_FPUREGISTERS = [RS_F0..RS_F3];
+<<<<<<< HEAD
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31,RS_S1..RS_S15];
+=======
+      VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
+>>>>>>> graemeg/cpstrnew
 
       VOLATILE_INTREGISTERS_DARWIN = [RS_R0..RS_R3,RS_R9,RS_R12..RS_R14];
 
@@ -141,6 +145,7 @@ unit cpubase;
         { multiple load/store vfp address modes }
         PF_IAD,PF_DBD,PF_FDD,PF_EAD,
         PF_IAS,PF_DBS,PF_FDS,PF_EAS,
+<<<<<<< HEAD
         PF_IAX,PF_DBX,PF_FDX,PF_EAX,
         { VFP postfixes }
         PF_8,PF_16,PF_32,PF_64,
@@ -154,6 +159,9 @@ unit cpubase;
         PF_F64S16,PF_F64U16,PF_S16F64,PF_U16F64,
         PF_F32S32,PF_F32U32,PF_S32F32,PF_U32F32,
         PF_F64S32,PF_F64U32,PF_S32F64,PF_U32F64
+=======
+        PF_IAX,PF_DBX,PF_FDX,PF_EAX
+>>>>>>> graemeg/cpstrnew
       );
 
       TOpPostfixes = set of TOpPostfix;
@@ -166,7 +174,11 @@ unit cpubase;
         PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,PF_None,
         PF_S,PF_D,PF_E,PF_None,PF_None);
 
+<<<<<<< HEAD
       oppostfix2str : array[TOpPostfix] of string[8] = ('',
+=======
+      oppostfix2str : array[TOpPostfix] of string[3] = ('',
+>>>>>>> graemeg/cpstrnew
         's',
         'd','e','p','ep',
         'x',
@@ -175,6 +187,7 @@ unit cpubase;
         'ia','ib','da','db','fd','fa','ed','ea',
         'iad','dbd','fdd','ead',
         'ias','dbs','fds','eas',
+<<<<<<< HEAD
         'iax','dbx','fdx','eax',
         '.8','.16','.32','.64',
         '.i8','.i16','.i32','.i64',
@@ -187,6 +200,9 @@ unit cpubase;
         '.f64.s16','.f64.u16','.s16.f64','.u16.f64',
         '.f32.s32','.f32.u32','.s32.f32','.u32.f32',
         '.f64.s32','.f64.u32','.s32.f64','.u32.f64');
+=======
+        'iax','dbx','fdx','eax');
+>>>>>>> graemeg/cpstrnew
 
       roundingmode2str : array[TRoundingMode] of string[1] = ('',
         'p','m','z');
@@ -242,9 +258,12 @@ unit cpubase;
       tcpumodeflag = (mfA, mfI, mfF);
       tcpumodeflags = set of tcpumodeflag;
 
+<<<<<<< HEAD
       tspecialregflag = (srC, srX, srS, srF);
       tspecialregflags = set of tspecialregflag;
 
+=======
+>>>>>>> graemeg/cpstrnew
 {*****************************************************************************
                                  Constants
 *****************************************************************************}
@@ -625,12 +644,40 @@ unit cpubase;
       var
         msb : byte;
       begin
+<<<<<<< HEAD
         lsb:=BsfDword(d);
         msb:=BsrDword(d);
         
         width:=msb-lsb+1;
         
         result:=(lsb<>255) and (msb<>255) and ((((1 shl (msb-lsb+1))-1) shl lsb) = d);
+=======
+        if current_settings.cputype in cpu_thumb2 then
+          begin
+            for i:=0 to 24 do
+              begin
+                 if (dword(d) and not($ff shl i))=0 then
+                   begin
+                     imm_shift:=i;
+                     result:=true;
+                     exit;
+                   end;
+              end;
+          end
+        else
+          begin
+            for i:=0 to 15 do
+              begin
+                 if (dword(d) and not(rotl($ff,i*2)))=0 then
+                   begin
+                      imm_shift:=i*2;
+                      result:=true;
+                      exit;
+                   end;
+              end;
+          end;
+        result:=false;
+>>>>>>> graemeg/cpstrnew
       end;
 
 

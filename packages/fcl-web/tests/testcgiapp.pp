@@ -115,6 +115,11 @@ begin
   else
     begin
     Method:=Uppercase(Method);
+<<<<<<< HEAD
+=======
+    If (Method<>'POST') and (Method<>'GET') then
+      Raise Exception.CreateFmt(SerrUnsupportedMethod,['METHOD']);
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 (*

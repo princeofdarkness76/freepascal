@@ -1174,7 +1174,11 @@ begin
     exit(chunksize);
   end;
 
+<<<<<<< HEAD
   { insert the block in its freelist }
+=======
+  { insert the block in it's freelist }
+>>>>>>> graemeg/cpstrnew
   pmcv^.size := pmcv^.size and (not usedflag);
   append_to_list_var(pmcv);
   pmcv := try_concat_free_chunk(pmcv);

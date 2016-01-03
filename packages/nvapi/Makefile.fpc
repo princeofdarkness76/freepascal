@@ -1,9 +1,14 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Pascal NvAPI Packages
+>>>>>>> graemeg/cpstrnew
 #
 
 [package]
 name=nvapi
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -11,10 +16,25 @@ packages=rtl fpmkunit
 
 [install]
 fpcpackage=y
+=======
+version=2.4.0
+
+[target]
+units=nvapi
+
+[compiler]
+includedir=src
+sourcedir=src
+
+[install]
+fpcpackage=y
+fpcsubdir=packages
+>>>>>>> graemeg/cpstrnew
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -100,3 +120,10 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[shared]
+build=n
+
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/cpstrnew

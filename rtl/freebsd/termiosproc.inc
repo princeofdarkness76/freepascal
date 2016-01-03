@@ -31,11 +31,18 @@ begin
   case OptAct of
   {the three constants TIOCSETA, TIOCSETAW and TIOCSETAF are
    unsigned values above $80000000, so that they give range check errors
+<<<<<<< HEAD
    on 32-bit systems 
    Solved by using TIoCtlRequest type for FpIOCtl second parameter }
    TCSANOW   : nr:=TIOCSETA;
    TCSADRAIN : nr:=TIOCSETAW;
    TCSAFLUSH : nr:=TIOCSETAF;
+=======
+   on 32-bit systems }
+   TCSANOW   : nr:=cint(TIOCSETA);
+   TCSADRAIN : nr:=cint(TIOCSETAW);
+   TCSAFLUSH : nr:=cint(TIOCSETAF);
+>>>>>>> graemeg/cpstrnew
   else
    begin
      fpsetErrNo(ESysEINVAL);

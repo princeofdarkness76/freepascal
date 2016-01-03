@@ -3,7 +3,11 @@
  
      Contains:   AppleEvent Data Model Interfaces.
  
+<<<<<<< HEAD
     
+=======
+     Version:    AppleEvents-496~1
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved
  
@@ -13,6 +17,10 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
+=======
+{  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -67,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -87,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -106,13 +118,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -122,13 +154,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -171,6 +207,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -209,7 +267,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MixedMode;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -303,9 +366,15 @@ const
 	typeType = FourCharCode('type'); { OSType }
 	typeAppParameters = FourCharCode('appa');
 	typeProperty = FourCharCode('prop');
+<<<<<<< HEAD
 	typeFSRef = FourCharCode('fsrf'); { FSRef.  Deprecated; use typeFileURL or typeBookmark data to refer to files in AppleEvents }
 	typeFileURL = FourCharCode('furl'); { a UTF-8 encoded full path, using native path separators }
 	typeBookmarkData = FourCharCode('bmrk'); { the bytes of a CFURLBookmarkData }
+=======
+	typeFSRef = FourCharCode('fsrf'); { FSRef }
+	typeFileURL = FourCharCode('furl');
+	typeBookmarkData = FourCharCode('bmrk');
+>>>>>>> graemeg/cpstrnew
 	typeKeyword = FourCharCode('keyw'); { OSType }
 	typeSectionH = FourCharCode('sect');
 	typeWildCard = FourCharCode('****');
@@ -319,13 +388,18 @@ const
 {$ifc not TARGET_CPU_64}
 {
     FSSpecs are deprecated on Mac OS X, and their use in AppleEvents is discouraged.  You should change
+<<<<<<< HEAD
     your code to use typeFileURL or typeFileBookmark.  In __LP64__ code, coercions into typeFSS is not supported,
+=======
+    your code to use FSRefs.  In __LP64__ code, coercions into typeFSS is not supported,
+>>>>>>> graemeg/cpstrnew
     and coercion from typeFSS is not guaranteed to work correctly in all cases.
 }
 const
 	typeFSS = FourCharCode('fss '); { FSSpec }
 
 {$endc} {not TARGET_CPU_64}
+<<<<<<< HEAD
 
 const
 	typeCFAttributedStringRef = FourCharCode('cfas');
@@ -396,6 +470,69 @@ const
 	kSOAP2001Schema = FourCharCode('ss01');
 
 const
+=======
+
+const
+	typeCFAttributedStringRef = FourCharCode('cfas');
+	typeCFMutableAttributedStringRef = FourCharCode('cfaa');
+	typeCFStringRef = FourCharCode('cfst');
+	typeCFMutableStringRef = FourCharCode('cfms');
+	typeCFArrayRef = FourCharCode('cfar');
+	typeCFMutableArrayRef = FourCharCode('cfma');
+	typeCFDictionaryRef = FourCharCode('cfdc');
+	typeCFMutableDictionaryRef = FourCharCode('cfmd');
+	typeCFNumberRef = FourCharCode('cfnb');
+	typeCFBooleanRef = FourCharCode('cftf');
+	typeCFTypeRef = FourCharCode('cfty');
+
+{ New addressing modes for MacOS X }
+const
+	typeKernelProcessID = FourCharCode('kpid');
+	typeMachPort = FourCharCode('port');
+
+{ Targeting applications by bundle ID is only available in Mac OS X 10.3 or later. }
+const
+	typeApplicationBundleID = FourCharCode('bund');
+
+{ Keywords for Apple event attributes }
+const
+	keyTransactionIDAttr = FourCharCode('tran'); { AETransactionID }
+	keyReturnIDAttr = FourCharCode('rtid'); { AEReturnID }
+	keyEventClassAttr = FourCharCode('evcl'); { AEEventClass }
+	keyEventIDAttr = FourCharCode('evid'); { AEEventID }
+	keyAddressAttr = FourCharCode('addr');
+	keyOptionalKeywordAttr = FourCharCode('optk');
+	keyTimeoutAttr = FourCharCode('timo'); { SInt32 }
+	keyInteractLevelAttr = FourCharCode('inte'); { this attribute is read only - will be set in AESend }
+	keyEventSourceAttr = FourCharCode('esrc'); { this attribute is read only - returned as typeShortInteger }
+	keyMissedKeywordAttr = FourCharCode('miss'); { this attribute is read only }
+	keyOriginalAddressAttr = FourCharCode('from'); { new in 1.0.1 }
+	keyAcceptTimeoutAttr = FourCharCode('actm'); { new for Mac OS X }
+	keyReplyRequestedAttr = FourCharCode('repq'); { Was a reply requested for this event - returned as typeBoolean }
+	keySenderEUIDAttr = FourCharCode('seid'); { read only, returned as typeSInt32.  Will be the euid of the sender of this event. }
+	keySenderEGIDAttr = FourCharCode('sgid'); { read only, returned as typeSInt32.  Will be the egid of the sender of this event. }
+	keySenderUIDAttr = FourCharCode('uids'); { read only, returned as typeSInt32.  Will be the uid of the sender of this event. }
+	keySenderGIDAttr = FourCharCode('gids'); { read only, returned as typeSInt32.  Will be the gid of the sender of this event. }
+	keySenderPIDAttr = FourCharCode('spid'); { read only, returned as typeSInt32.  Will be the pid of the sender of this event. }
+
+{ These bits are specified in the keyXMLDebuggingAttr (an SInt32) }
+const
+	kAEDebugPOSTHeader = 1 shl 0; { headers of the HTTP post we sent - typeChar }
+	kAEDebugReplyHeader = 1 shl 1; { headers returned by the server }
+	kAEDebugXMLRequest = 1 shl 2; { the XML request we sent }
+	kAEDebugXMLResponse = 1 shl 3; { the XML reply from the server }
+	kAEDebugXMLDebugAll = $FFFFFFFF; { everything! }
+
+{ These values can be added as a parameter to the direct object of a
+   SOAP message to specify the serialization schema.  If not
+   specified, kSOAP1999Schema is the default. These should be added as
+   typeType. }
+const
+	kSOAP1999Schema = FourCharCode('ss99');
+	kSOAP2001Schema = FourCharCode('ss01');
+
+const
+>>>>>>> graemeg/cpstrnew
 { outgoing event attributes }
 	keyUserNameAttr = FourCharCode('unam');
 	keyUserPasswordAttr = FourCharCode('pass'); { not sent with the event }
@@ -498,8 +635,12 @@ type
 	AEKeyword							= FourCharCode;
 	AEKeywordPtr					= ^AEKeyword;
 {$ifc OPAQUE_TOOLBOX_STRUCTS}
+<<<<<<< HEAD
 	AEDataStorage = ^OpaqueAEDataStorage; { an opaque type }
 	OpaqueAEDataStorage = record end;
+=======
+	AEDataStorage    = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	AEDataStoragePtr = ^AEDataStorage;  { when a var xx:AEDataStorage parameter can be nil, it is changed to xx: AEDataStoragePtr }
 {$elsec}
 	AEDataStorage						= Handle;
@@ -519,6 +660,11 @@ type
 	end;
 { a list of AEDesc's is a special kind of AEDesc }
 
+<<<<<<< HEAD
+=======
+{ a list of AEDesc's is a special kind of AEDesc }
+
+>>>>>>> graemeg/cpstrnew
 type
 	AEDescList = AEDesc;
 	AEDescListPtr = ^AEDescList;
@@ -544,8 +690,13 @@ const
 	kAEPackedArray = 1;
 	kAEDescArray = 3;
 	kAEKeyDescArray = 4;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 const
 	kAEHandleArray = 2;
 
@@ -598,7 +749,10 @@ const
 	kAEDontRecord = $00001000; { don't record this event - available only in vers 1.0.1 and greater }
 	kAEDontExecute = $00002000; { don't send the event for recording - available only in vers 1.0.1 and greater }
 	kAEProcessNonReplyEvents = $00008000; { allow processing of non-reply events while awaiting synchronous AppleEvent reply }
+<<<<<<< HEAD
 	kAEDoNotAutomaticallyAddAnnotationsToEvent = $00010000; { if set, don't automatically add any sandbox or other annotations to the event }
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 { Constants for timeout durations }
@@ -624,7 +778,11 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewAECoerceDescUPP( userRoutine: AECoerceDescProcPtr ): AECoerceDescUPP; external name '_NewAECoerceDescUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  NewAECoercePtrUPP()
@@ -635,7 +793,11 @@ function NewAECoerceDescUPP( userRoutine: AECoerceDescProcPtr ): AECoerceDescUPP
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewAECoercePtrUPP( userRoutine: AECoercePtrProcPtr ): AECoercePtrUPP; external name '_NewAECoercePtrUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeAECoerceDescUPP()
@@ -646,7 +808,11 @@ function NewAECoercePtrUPP( userRoutine: AECoercePtrProcPtr ): AECoercePtrUPP; e
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeAECoerceDescUPP( userUPP: AECoerceDescUPP ); external name '_DisposeAECoerceDescUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeAECoercePtrUPP()
@@ -657,7 +823,11 @@ procedure DisposeAECoerceDescUPP( userUPP: AECoerceDescUPP ); external name '_Di
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeAECoercePtrUPP( userUPP: AECoercePtrUPP ); external name '_DisposeAECoercePtrUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeAECoerceDescUPP()
@@ -668,7 +838,11 @@ procedure DisposeAECoercePtrUPP( userUPP: AECoercePtrUPP ); external name '_Disp
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeAECoerceDescUPP( const (*var*) fromDesc: AEDesc; toType: DescType; handlerRefcon: SRefCon; var toDesc: AEDesc; userUPP: AECoerceDescUPP ): OSErr; external name '_InvokeAECoerceDescUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeAECoercePtrUPP()
@@ -679,7 +853,11 @@ function InvokeAECoerceDescUPP( const (*var*) fromDesc: AEDesc; toType: DescType
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeAECoercePtrUPP( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size; toType: DescType; handlerRefcon: SRefCon; var result: AEDesc; userUPP: AECoercePtrUPP ): OSErr; external name '_InvokeAECoercePtrUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 { a AECoercionHandlerUPP is by default a AECoerceDescUPP.  If you are registering a 
     Ptr based coercion handler you will have to add a cast to AECoerceDescUPP from 
@@ -753,7 +931,11 @@ type
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEInstallCoercionHandler( fromType: DescType; toType: DescType; handler: AECoercionHandlerUPP; handlerRefcon: SRefCon; fromTypeIsDesc: Boolean; isSysHandler: Boolean ): OSErr; external name '_AEInstallCoercionHandler';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -793,7 +975,11 @@ function AEInstallCoercionHandler( fromType: DescType; toType: DescType; handler
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AERemoveCoercionHandler( fromType: DescType; toType: DescType; handler: AECoercionHandlerUPP; isSysHandler: Boolean ): OSErr; external name '_AERemoveCoercionHandler';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -844,7 +1030,11 @@ function AERemoveCoercionHandler( fromType: DescType; toType: DescType; handler:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetCoercionHandler( fromType: DescType; toType: DescType; var handler: AECoercionHandlerUPP; var handlerRefcon: SRefCon; var fromTypeIsDesc: Boolean; isSysHandler: Boolean ): OSErr; external name '_AEGetCoercionHandler';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************
@@ -888,7 +1078,11 @@ function AEGetCoercionHandler( fromType: DescType; toType: DescType; var handler
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AECoercePtr( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size; toType: DescType; var result: AEDesc ): OSErr; external name '_AECoercePtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -923,7 +1117,11 @@ function AECoercePtr( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Si
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AECoerceDesc( const (*var*) theAEDesc: AEDesc; toType: DescType; var result: AEDesc ): OSErr; external name '_AECoerceDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************
@@ -956,7 +1154,11 @@ function AECoerceDesc( const (*var*) theAEDesc: AEDesc; toType: DescType; var re
  *    Non-Carbon CFM:   not available
  }
 procedure AEInitializeDesc( var desc: AEDesc ); external name '_AEInitializeDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  AECreateDesc()
@@ -1003,7 +1205,11 @@ procedure AEInitializeDesc( var desc: AEDesc ); external name '_AEInitializeDesc
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AECreateDesc( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size; var result: AEDesc ): OSErr; external name '_AECreateDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1041,7 +1247,11 @@ function AECreateDesc( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: S
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEDisposeDesc( var theAEDesc: AEDesc ): OSErr; external name '_AEDisposeDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1085,8 +1295,12 @@ function AEDisposeDesc( var theAEDesc: AEDesc ): OSErr; external name '_AEDispos
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEDuplicateDesc( const (*var*) theAEDesc: AEDesc; var result: AEDesc ): OSErr; external name '_AEDuplicateDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  * Create an AEDesc with memory "borrowed" from the application. The
@@ -1174,6 +1388,7 @@ type
  *    Non-Carbon CFM:   not available
  }
 function AECreateDescFromExternalPtr( descriptorType: OSType; dataPtr: {const} UnivPtr; dataLength: Size; disposeCallback: AEDisposeExternalUPP; disposeRefcon: SRefCon; var theDesc: AEDesc ): OSStatus; external name '_AECreateDescFromExternalPtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_2, __IPHONE_NA ) *)
 
 	
@@ -1214,6 +1429,10 @@ function AECreateDescFromExternalPtr( descriptorType: OSType; dataPtr: {const} U
 	 }
 function AECompareDesc( const (*var*) desc1: AEDesc; const (*var*) desc2: AEDesc; var resultP: Boolean ): OSStatus; external name '_AECompareDesc';
 (* __OSX_AVAILABLE_STARTING( __MAC_10_8, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
 
 {*************************************************************************
   The following calls apply to AEDescList. Since AEDescList is a subtype of
@@ -1262,7 +1481,11 @@ function AECompareDesc( const (*var*) desc1: AEDesc; const (*var*) desc2: AEDesc
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AECreateList( factoringPtr: {const} UnivPtr; factoredSize: Size; isRecord: Boolean; var resultList: AEDescList ): OSErr; external name '_AECreateList';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1290,7 +1513,11 @@ function AECreateList( factoringPtr: {const} UnivPtr; factoredSize: Size; isReco
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AECountItems( const (*var*) theAEDescList: AEDescList; var theCount: SIGNEDLONG ): OSErr; external name '_AECountItems';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1333,7 +1560,11 @@ function AECountItems( const (*var*) theAEDescList: AEDescList; var theCount: SI
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEPutPtr( var theAEDescList: AEDescList; index: SIGNEDLONG; typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size ): OSErr; external name '_AEPutPtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1370,7 +1601,11 @@ function AEPutPtr( var theAEDescList: AEDescList; index: SIGNEDLONG; typeCode: D
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEPutDesc( var theAEDescList: AEDescList; index: SIGNEDLONG; const (*var*) theAEDesc: AEDesc ): OSErr; external name '_AEPutDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1444,7 +1679,11 @@ function AEPutDesc( var theAEDescList: AEDescList; index: SIGNEDLONG; const (*va
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetNthPtr( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG; desiredType: DescType; theAEKeyword: AEKeywordPtr { can be NULL }; typeCode: DescTypePtr { can be NULL }; dataPtr: UnivPtr; maximumSize: Size; actualSize: SizePtr { can be NULL } ): OSErr; external name '_AEGetNthPtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1502,7 +1741,11 @@ function AEGetNthPtr( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetNthDesc( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG; desiredType: DescType; theAEKeyword: AEKeywordPtr { can be NULL }; var result: AEDesc ): OSErr; external name '_AEGetNthDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1542,7 +1785,11 @@ function AEGetNthDesc( const (*var*) theAEDescList: AEDescList; index: SIGNEDLON
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AESizeOfNthItem( const (*var*) theAEDescList: AEDescList; index: SIGNEDLONG; typeCode: DescTypePtr { can be NULL }; dataSize: SizePtr { can be NULL } ): OSErr; external name '_AESizeOfNthItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1606,7 +1853,11 @@ function AESizeOfNthItem( const (*var*) theAEDescList: AEDescList; index: SIGNED
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetArray( const (*var*) theAEDescList: AEDescList; arrayType: AEArrayType; arrayPtr: AEArrayDataPointer; maximumSize: Size; var itemType: DescType; var itemSize: Size; var itemCount: SIGNEDLONG ): OSErr; external name '_AEGetArray';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1662,7 +1913,11 @@ function AEGetArray( const (*var*) theAEDescList: AEDescList; arrayType: AEArray
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEPutArray( var theAEDescList: AEDescList; arrayType: AEArrayType; const (*var*) arrayPtr: AEArrayData; itemType: DescType; itemSize: Size; itemCount: SIGNEDLONG ): OSErr; external name '_AEPutArray';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1694,7 +1949,11 @@ function AEPutArray( var theAEDescList: AEDescList; arrayType: AEArrayType; cons
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEDeleteItem( var theAEDescList: AEDescList; index: SIGNEDLONG ): OSErr; external name '_AEDeleteItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************
@@ -1719,7 +1978,11 @@ function AEDeleteItem( var theAEDescList: AEDescList; index: SIGNEDLONG ): OSErr
  *    Non-Carbon CFM:   not available
  }
 function AECheckIsRecord( const (*var*) theDesc: AEDesc ): Boolean; external name '_AECheckIsRecord';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {*************************************************************************
   The following calls create and manipulate the AppleEvent data type.
@@ -1795,7 +2058,11 @@ function AECheckIsRecord( const (*var*) theDesc: AEDesc ): Boolean; external nam
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AECreateAppleEvent( theAEEventClass: AEEventClass; theAEEventID: AEEventID; const (*var*) target: AEAddressDesc; returnID: AEReturnID; transactionID: AETransactionID; var result: AppleEvent ): OSErr; external name '_AECreateAppleEvent';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************
@@ -1841,7 +2108,11 @@ function AECreateAppleEvent( theAEEventClass: AEEventClass; theAEEventID: AEEven
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEPutParamPtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size ): OSErr; external name '_AEPutParamPtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1874,7 +2145,11 @@ function AEPutParamPtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEPutParamDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; const (*var*) theAEDesc: AEDesc ): OSErr; external name '_AEPutParamDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1966,7 +2241,11 @@ function AEPutParamDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword;
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetParamPtr( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; actualType: DescTypePtr { can be NULL }; dataPtr: UnivPtr; maximumSize: Size; actualSize: SizePtr { can be NULL } ): OSErr; external name '_AEGetParamPtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2024,7 +2303,11 @@ function AEGetParamPtr( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: A
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetParamDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; var result: AEDesc ): OSErr; external name '_AEGetParamDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2060,7 +2343,11 @@ function AEGetParamDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AESizeOfParam( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescTypePtr { can be NULL }; dataSize: SizePtr { can be NULL } ): OSErr; external name '_AESizeOfParam';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2088,7 +2375,11 @@ function AESizeOfParam( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: A
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEDeleteParam( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword ): OSErr; external name '_AEDeleteParam';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************
@@ -2174,7 +2465,11 @@ function AEDeleteParam( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword )
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetAttributePtr( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; typeCode: DescTypePtr { can be NULL }; dataPtr: UnivPtr; maximumSize: Size; actualSize: SizePtr { can be NULL } ): OSErr; external name '_AEGetAttributePtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2228,7 +2523,11 @@ function AEGetAttributePtr( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEGetAttributeDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; desiredType: DescType; var result: AEDesc ): OSErr; external name '_AEGetAttributeDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2263,7 +2562,11 @@ function AEGetAttributeDesc( const (*var*) theAppleEvent: AppleEvent; theAEKeywo
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AESizeOfAttribute( const (*var*) theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescTypePtr { can be NULL }; dataSize: SizePtr { can be NULL } ): OSErr; external name '_AESizeOfAttribute';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2302,7 +2605,11 @@ function AESizeOfAttribute( const (*var*) theAppleEvent: AppleEvent; theAEKeywor
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEPutAttributePtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size ): OSErr; external name '_AEPutAttributePtr';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2346,7 +2653,11 @@ function AEPutAttributePtr( var theAppleEvent: AppleEvent; theAEKeyword: AEKeywo
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function AEPutAttributeDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyword; const (*var*) theAEDesc: AEDesc ): OSErr; external name '_AEPutAttributeDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************
@@ -2382,7 +2693,11 @@ function AEPutAttributeDesc( var theAppleEvent: AppleEvent; theAEKeyword: AEKeyw
  *    Non-Carbon CFM:   not available
  }
 function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; external name '_AESizeOfFlattenedDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2429,7 +2744,11 @@ function AESizeOfFlattenedDesc( const (*var*) theAEDesc: AEDesc ): Size; externa
  *    Non-Carbon CFM:   not available
  }
 function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize: Size; var actualSize: Size ): OSStatus; external name '_AEFlattenDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2462,7 +2781,11 @@ function AEFlattenDesc( const (*var*) theAEDesc: AEDesc; buffer: Ptr; bufferSize
  *    Non-Carbon CFM:   not available
  }
 function AEUnflattenDesc( buffer: {const} UnivPtr; var result: AEDesc ): OSStatus; external name '_AEUnflattenDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************
@@ -2509,7 +2832,11 @@ function AEUnflattenDesc( buffer: {const} UnivPtr; var result: AEDesc ): OSStatu
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
  }
 function AEGetDescData( const (*var*) theAEDesc: AEDesc; dataPtr: UnivPtr; maximumSize: Size ): OSErr; external name '_AEGetDescData';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2533,7 +2860,11 @@ function AEGetDescData( const (*var*) theAEDesc: AEDesc; dataPtr: UnivPtr; maxim
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
  }
 function AEGetDescDataSize( const (*var*) theAEDesc: AEDesc ): Size; external name '_AEGetDescDataSize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2567,7 +2898,11 @@ function AEGetDescDataSize( const (*var*) theAEDesc: AEDesc ): Size; external na
  *    Non-Carbon CFM:   in CarbonAccessors.o 1.0 and later
  }
 function AEReplaceDescData( typeCode: DescType; dataPtr: {const} UnivPtr; dataSize: Size; var theAEDesc: AEDesc ): OSErr; external name '_AEReplaceDescData';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -2637,7 +2972,11 @@ function NewAEDisposeExternalUPP( userRoutine: AEDisposeExternalProcPtr ): AEDis
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewAEEventHandlerUPP( userRoutine: AEEventHandlerProcPtr ): AEEventHandlerUPP; external name '_NewAEEventHandlerUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeAEDisposeExternalUPP()
@@ -2659,7 +2998,11 @@ procedure DisposeAEDisposeExternalUPP( userUPP: AEDisposeExternalUPP ); external
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeAEEventHandlerUPP( userUPP: AEEventHandlerUPP ); external name '_DisposeAEEventHandlerUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeAEDisposeExternalUPP()
@@ -2670,7 +3013,11 @@ procedure DisposeAEEventHandlerUPP( userUPP: AEEventHandlerUPP ); external name 
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure InvokeAEDisposeExternalUPP( dataPtr: {const} UnivPtr; dataLength: Size; refcon: SRefCon; userUPP: AEDisposeExternalUPP ); external name '_InvokeAEDisposeExternalUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_2, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeAEEventHandlerUPP()
@@ -2681,7 +3028,11 @@ procedure InvokeAEDisposeExternalUPP( dataPtr: {const} UnivPtr; dataLength: Size
  *    Non-Carbon CFM:   available as macro/inline
  }
  function InvokeAEEventHandlerUPP( const (*var*) theAppleEvent: AppleEvent; var reply: AppleEvent; handlerRefcon: SRefCon; userUPP: AEEventHandlerUPP ): OSErr; external name '_InvokeAEEventHandlerUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 

@@ -270,11 +270,19 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
   timer: IPTCTimer;
   key: IPTCKeyEvent;
+=======
+  format: TPTCFormat = nil;
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  timer: TPTCTimer = nil;
+  key: TPTCKeyEvent = nil;
+>>>>>>> graemeg/cpstrnew
   pixels: PUint32;
   Done: Boolean;
 
@@ -286,8 +294,14 @@ begin
   Done := False;
   try
     try
+<<<<<<< HEAD
       format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
       console := TPTCConsoleFactory.CreateNew;
+=======
+      key := TPTCKeyEvent.Create;
+      format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
+      console := TPTCConsole.Create;
+>>>>>>> graemeg/cpstrnew
       console.open('Land demo', SCREENWIDTH, SCREENHEIGHT, format);
       surface := TPTCSurfaceFactory.CreateNew(SCREENWIDTH, SCREENHEIGHT, format);
 
@@ -371,8 +385,17 @@ begin
         Inc(y0, Trunc(CurrentSpeed * SinT[index]) div 256);
       until Done;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+      surface.Free;
+      timer.Free;
+      format.Free;
+      key.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

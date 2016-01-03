@@ -50,9 +50,21 @@ const
     Function  FpChmod      (path : pChar; Mode : TMode): cInt; cdecl; external clib name 'chmod';
     Function  FpChown   (path : pChar; owner : TUid; group : TGid): cInt; cdecl; external clib name 'chown';
     Function  FPUtime(path:pchar;times:putimbuf):cint; cdecl; external clib name 'utime';
+<<<<<<< HEAD
     Function  FpPipe       (var fildes : tfildes):cInt; cdecl;external clib name 'pipe';
     function  FpDup     (oldd:cint):cint; cdecl; external clib name 'dup';
     function  FpDup2    (oldd:cint;newd:cint):cint; cdecl; external clib name 'dup2';
+=======
+    Function  FpGetcwd  (path:pChar; siz:TSize):pChar; cdecl;  external clib name 'getcwd';
+    function  FPSigProcMask(how:cint;nset : psigset;oset : psigset):cint;cdecl; external clib name 'sigprocmask';
+    function  FPSigProcMask(how:cint;const nset : sigset;var oset : sigset):cint;cdecl; external clib name 'sigprocmask';
+{$if not defined(darwin) and not defined(haiku)}
+    Function  FpSigTimedWait (Const sigset : TSigSet; info : Psiginfo; timeout:Ptimespec): cInt; cdecl; external clib name 'sigtimedwait';
+    Function  FpSigTimedWait (Const sigset : TSigSet; info : Psiginfo; var timeout:Ttimespec): cInt; cdecl; external clib name 'sigtimedwait';
+{$endif}
+    function  FpTime       (tloc:ptime_t): time_t; cdecl; external clib name 'time';
+    Function  FpTime       (var tloc : Time_t): Time_t; cdecl; external clib name 'time';
+>>>>>>> graemeg/cpstrnew
     function  FpTimes	(var buffer : tms): TClock; cdecl; external clib name 'times';
 
     Function  FpAlarm      (seconds : cuint) : cuint; cdecl;external clib name 'alarm';
@@ -166,7 +178,10 @@ const
 {$endif}
 
     function FpGetRLimit(resource : cInt; rlim : PRLimit) : cInt; cdecl; external clib name 'getrlimit';
+<<<<<<< HEAD
     function FpSetRLimit(resource : cInt; rlim : PRLimit) : cInt; cdecl; external clib name 'setrlimit';
+=======
+>>>>>>> graemeg/cpstrnew
 
     { not supported with syscalls }
     function  FpvFork  : TPid; cdecl; external clib name 'vfork';

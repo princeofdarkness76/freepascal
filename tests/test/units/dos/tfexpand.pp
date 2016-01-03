@@ -108,7 +108,11 @@ const
    {$IFDEF UNIX}
  DirectorySeparator = '/';
  DriveSeparator = '/';
+<<<<<<< HEAD
  FileNameCasePreserving = true;
+=======
+ FileNameCaseSensitive = true;
+>>>>>>> graemeg/cpstrnew
    {$ELSE UNIX}
     {$IFDEF HASAMIGA}
  DirectorySeparator = '/';

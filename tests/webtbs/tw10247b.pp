@@ -3,7 +3,10 @@ type
   generic TNode<T> = class
   public
     type
+<<<<<<< HEAD
       TAlias = T;
+=======
+>>>>>>> graemeg/cpstrnew
       PT = T;
   private
     var

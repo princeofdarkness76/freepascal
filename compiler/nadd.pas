@@ -203,6 +203,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function taddnode.cmp_of_disjunct_ranges(var res : boolean) : boolean;
       var
         hp          : tnode;
@@ -366,6 +367,8 @@ implementation
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
     function taddnode.simplify(forinline : boolean) : tnode;
       var
         t       : tnode;
@@ -559,6 +562,7 @@ implementation
              result:=t;
              exit;
           end
+<<<<<<< HEAD
         else if cmp_of_disjunct_ranges(res) then
           begin
             if res then
@@ -574,6 +578,117 @@ implementation
               result:=t;
             exit;
           end;
+=======
+        {Match against the ranges, i.e.:
+         var a:1..10;
+         begin
+           if a>0 then
+         ... always evaluates to true. (DM)}
+        else if is_constintnode(left) and (right.resultdef.typ=orddef) and
+            { don't ignore type checks }
+            is_subequal(left.resultdef,right.resultdef) then
+            begin
+              t:=nil;
+              hp:=right;
+              realdef:=hp.resultdef;
+              { stop with finding the real def when we either encounter
+                 a) an explicit type conversion (then the value has to be
+                    re-interpreted)
+                 b) an "absolute" type conversion (also requires
+                    re-interpretation)
+              }
+              while (hp.nodetype=typeconvn) and
+                    ([nf_internal,nf_explicit,nf_absolute] * hp.flags = []) do
+                begin
+                  hp:=ttypeconvnode(hp).left;
+                  realdef:=hp.resultdef;
+                end;
+              lv:=Tordconstnode(left).value;
+              with torddef(realdef) do
+                case nodetype of
+                 ltn:
+                   if lv<low then
+                     t:=Cordconstnode.create(1,booltype,true)
+                   else if lv>=high then
+                     t:=Cordconstnode.create(0,booltype,true);
+                 lten:
+                   if lv<=low then
+                     t:=Cordconstnode.create(1,booltype,true)
+                   else if lv>high then
+                     t:=Cordconstnode.create(0,booltype,true);
+                 gtn:
+                   if lv<=low then
+                     t:=Cordconstnode.create(0,booltype,true)
+                   else if lv>high then
+                     t:=Cordconstnode.create(1,booltype,true);
+                 gten :
+                   if lv<low then
+                     t:=Cordconstnode.create(0,booltype,true)
+                   else if lv>=high then
+                     t:=Cordconstnode.create(1,booltype,true);
+                 equaln:
+                   if (lv<low) or (lv>high) then
+                     t:=Cordconstnode.create(0,booltype,true);
+                 unequaln:
+                   if (lv<low) or (lv>high) then
+                     t:=Cordconstnode.create(1,booltype,true);
+                end;
+              if t<>nil then
+                begin
+                  result:=t;
+                  exit;
+                end
+            end
+          else if (left.resultdef.typ=orddef) and is_constintnode(right) and
+              { don't ignore type checks }
+              is_subequal(left.resultdef,right.resultdef) then
+            begin
+              t:=nil;
+              hp:=left;
+              realdef:=hp.resultdef;
+              while (hp.nodetype=typeconvn) and
+                    ([nf_internal,nf_explicit,nf_absolute] * hp.flags = []) do
+                begin
+                  hp:=ttypeconvnode(hp).left;
+                  realdef:=hp.resultdef;
+                end;
+              rv:=Tordconstnode(right).value;
+              with torddef(realdef) do
+                case nodetype of
+                 ltn:
+                   if high<rv then
+                     t:=Cordconstnode.create(1,booltype,true)
+                   else if low>=rv then
+                     t:=Cordconstnode.create(0,booltype,true);
+                 lten:
+                   if high<=rv then
+                     t:=Cordconstnode.create(1,booltype,true)
+                   else if low>rv then
+                     t:=Cordconstnode.create(0,booltype,true);
+                 gtn:
+                   if high<=rv then
+                     t:=Cordconstnode.create(0,booltype,true)
+                   else if low>rv then
+                     t:=Cordconstnode.create(1,booltype,true);
+                 gten:
+                   if high<rv then
+                     t:=Cordconstnode.create(0,booltype,true)
+                   else if low>=rv then
+                     t:=Cordconstnode.create(1,booltype,true);
+                 equaln:
+                   if (rv<low) or (rv>high) then
+                     t:=Cordconstnode.create(0,booltype,true);
+                 unequaln:
+                   if (rv<low) or (rv>high) then
+                     t:=Cordconstnode.create(1,booltype,true);
+                end;
+              if t<>nil then
+                begin
+                  result:=t;
+                  exit;
+                end
+            end;
+>>>>>>> graemeg/cpstrnew
 
         { Add,Sub,Mul,Or,Xor,Andn with constant 0, 1 or -1?  }
         if is_constintnode(right) and is_integer(left.resultdef) then
@@ -895,6 +1010,7 @@ implementation
              exit;
           end;
 
+<<<<<<< HEAD
         { slow simplifications }
         if (cs_opt_level2 in current_settings.optimizerswitches) then
           begin
@@ -1016,6 +1132,37 @@ implementation
               end;
 {$endif cpurox}
           end;
+=======
+        { the comparison is might be expensive and the nodes are usually only
+          equal if some previous optimizations were done so don't check
+          this simplification always
+        }
+        if (cs_opt_level2 in current_settings.optimizerswitches) and
+          is_boolean(left.resultdef) and is_boolean(right.resultdef) and
+          { since the expressions might have sideeffects, we may only remove them
+            if short boolean evaluation is turned on }
+          (nf_short_bool in flags) then
+            begin
+              if left.isequal(right) then
+                begin
+                  case nodetype of
+                    andn,orn:
+                      begin
+                        result:=left;
+                        left:=nil;
+                        exit;
+                      end;
+                    {
+                    xorn:
+                      begin
+                        result:=cordconstnode.create(0,resultdef,true);
+                        exit;
+                      end;
+                    }
+                  end;
+                end;
+            end;
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -1156,6 +1303,7 @@ implementation
           operation on a float and int are also handled }
 {$ifdef x86}
         { use extended as default real type only when the x87 fpu is used }
+<<<<<<< HEAD
   {$if defined(i386) or defined(i8086)}
         if not(current_settings.fputype=fpu_x87) then
           resultrealdef:=s64floattype
@@ -1169,6 +1317,19 @@ implementation
 {$else not x86}
         resultrealdef:=pbestrealtype^;
 {$endif not x86}
+=======
+{$ifdef i386}
+        if not(current_settings.fputype=fpu_x87) then
+{$endif i386}
+{$ifdef x86_64}
+        { x86-64 has no x87 only mode, so use always double as default }
+        if true then
+{$endif x86_6}
+          resultrealdef:=s64floattype
+        else
+{$endif x86}
+          resultrealdef:=pbestrealtype^;
+>>>>>>> graemeg/cpstrnew
 
         if (right.resultdef.typ=floatdef) or (left.resultdef.typ=floatdef) then
          begin
@@ -1450,14 +1611,21 @@ implementation
              { size either as long as both values are signed or unsigned   }
              { "xor" and "or" also don't care about the sign if the values }
              { occupy an entire register                                   }
+<<<<<<< HEAD
              { don't do it if either type is 64 bit (except for "and"),    }
              { since in that case we can't safely find a "common" type     }
+=======
+             { don't do it if either type is 64 bit, since in that case we }
+             { can't safely find a "common" type                           }
+>>>>>>> graemeg/cpstrnew
              else if is_integer(ld) and is_integer(rd) and
+                     not is_64bitint(ld) and not is_64bitint(rd) and
                      ((nodetype=andn) or
                       ((nodetype in [orn,xorn,equaln,unequaln,gtn,gten,ltn,lten]) and
                         not is_64bitint(ld) and not is_64bitint(rd) and
                        (is_signed(ld)=is_signed(rd)))) then
                begin
+<<<<<<< HEAD
                  { Delphi-compatible: prefer unsigned type for "and", when the
                    unsigned type is bigger than the signed one, and also bigger
                    than min(native_int, 32-bit) }
@@ -1490,6 +1658,38 @@ implementation
                      ) then
                begin
                  { done here }
+=======
+                 if (rd.size>ld.size) or
+                    { Delphi-compatible: prefer unsigned type for "and" with equal size }
+                    ((rd.size=ld.size) and
+                     not is_signed(rd)) then
+                   begin
+                     if (rd.size=ld.size) and
+                        is_signed(ld) then
+                       inserttypeconv_internal(left,rd)
+                     else
+                       begin
+                         { not to left right.resultdef, because that may
+                           cause a range error if left and right's def don't
+                           completely overlap }
+                         nd:=get_common_intdef(torddef(ld),torddef(rd),true);
+                         inserttypeconv(left,nd);
+                         inserttypeconv(right,nd);
+                       end;
+                   end
+                 else
+                   begin
+                     if (rd.size=ld.size) and
+                        is_signed(rd) then
+                       inserttypeconv_internal(right,ld)
+                     else
+                       begin
+                         nd:=get_common_intdef(torddef(ld),torddef(rd),true);
+                         inserttypeconv(left,nd);
+                         inserttypeconv(right,nd);
+                       end;
+                   end
+>>>>>>> graemeg/cpstrnew
                end
              { is there a signed 64 bit type ? }
              else if ((torddef(rd).ordtype=s64bit) or (torddef(ld).ordtype=s64bit)) then
@@ -1570,6 +1770,15 @@ implementation
                     is_signed(rd) or
                     (nodetype=subn) then
                    begin
+<<<<<<< HEAD
+=======
+{$ifdef cpunodefaultint}
+                     { for small cpus we use the smallest common type }
+                     nd:=get_common_intdef(torddef(ld),torddef(rd),false);
+                     inserttypeconv(right,nd);
+                     inserttypeconv(left,nd);
+{$else cpunodefaultint}
+>>>>>>> graemeg/cpstrnew
                      inserttypeconv(right,sinttype);
                      inserttypeconv(left,sinttype);
                    end

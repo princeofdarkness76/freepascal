@@ -83,12 +83,15 @@ const
    in_sar_x             = 73;
    in_bsf_x             = 74;
    in_bsr_x             = 75;
+<<<<<<< HEAD
    in_default_x         = 76;
    in_box_x             = 77; { managed platforms: wrap in class instance }
    in_unbox_x_y         = 78; { manage platforms: extract from class instance }
    in_popcnt_x          = 79;
    in_aligned_x         = 80;
    in_setstring_x_y_z   = 81;
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Internal constant functions }
    in_const_sqr        = 100;

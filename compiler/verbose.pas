@@ -123,7 +123,11 @@ interface
 implementation
 
     uses
+<<<<<<< HEAD
       comphook,fmodule,constexp,globals,cfileutl,switches;
+=======
+      comphook,fmodule,constexp,globals,cfileutl;
+>>>>>>> graemeg/cpstrnew
 
 {****************************************************************************
                        Extra Handlers for default compiler
@@ -206,7 +210,12 @@ implementation
     function ChangeMessageVerbosity(s: string; var i : integer;state:tmsgstate): boolean;
       var
         tok  : string;
+<<<<<<< HEAD
         msgnr, code : longint;
+=======
+        code : longint;
+        msgnr: longint;
+>>>>>>> graemeg/cpstrnew
       begin
         { delete everything up to and including 'm' }
         delete(s,1,i);
@@ -279,7 +288,12 @@ implementation
                           else
                             status.print_source_path:=true;
                        end;
+<<<<<<< HEAD
                  'M' : if not ChangeMessageVerbosity(s,i,message_verbosity[inverse]) then
+=======
+                 'M' : if inverse or
+                         not ClearMessageVerbosity(s, i) then
+>>>>>>> graemeg/cpstrnew
                          begin
                            result:=false;
                            exit
@@ -455,7 +469,10 @@ implementation
               status.currentmodulestate:=ModuleStateStr[module.state];
               status.currentsource:=module.sourcefiles.get_file_name(current_filepos.fileindex);
               status.currentsourcepath:=module.sourcefiles.get_file_path(current_filepos.fileindex);
+<<<<<<< HEAD
               status.sources_avail:=module.sources_avail;
+=======
+>>>>>>> graemeg/cpstrnew
               { if currentsourcepath is relative, make it absolute }
               if not path_absolute(status.currentsourcepath) then
                 status.currentsourcepath:=GetCurrentDir+status.currentsourcepath;
@@ -663,12 +680,19 @@ implementation
                       st:=ms_error
                     else
                       st:=GetMessageState(w);
+<<<<<<< HEAD
                     { We only want to know about local value }
                     st:= tmsgstate(ord(st) and ms_local_mask);
                     if st=ms_error then
                       begin
                         v:=v or V_Error;
                         GenerateError;
+=======
+                    if st=ms_error then
+                      begin
+                        v:=v or V_Error;
+                        inc(status.errorcount);
+>>>>>>> graemeg/cpstrnew
                       end
                     else if st<>ms_off then
                       case ch of
@@ -677,7 +701,11 @@ implementation
                            v:=v or V_Warning;
                            if CheckVerbosity(V_Warning) then
                              if status.errorwarning then
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
                              else
                               inc(status.countWarnings);
                          end;
@@ -686,7 +714,11 @@ implementation
                            v:=v or V_Note;
                            if CheckVerbosity(V_Note) then
                              if status.errornote then
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
                              else
                               inc(status.countNotes);
                          end;
@@ -695,7 +727,11 @@ implementation
                            v:=v or V_Hint;
                            if CheckVerbosity(V_Hint) then
                              if status.errorhint then
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
                              else
                               inc(status.countHints);
                          end;

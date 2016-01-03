@@ -72,11 +72,17 @@ interface
          function  GetTypeName:string;virtual;
          function  typesymbolprettyname:string;virtual;
          function  mangledparaname:string;
+<<<<<<< HEAD
          function  getmangledparaname:TSymStr;virtual;
          function  rtti_mangledname(rt:trttitype):TSymStr;virtual;abstract;
          function  OwnerHierarchyName: string; virtual; abstract;
          function  fullownerhierarchyname:TSymStr;virtual;abstract;
          function  unique_id_str: string;
+=======
+         function  getmangledparaname:string;virtual;
+         function  rtti_mangledname(rt:trttitype):string;virtual;abstract;
+         function  OwnerHierarchyName: string; virtual; abstract;
+>>>>>>> graemeg/cpstrnew
          function  size:asizeint;virtual;abstract;
          function  packedbitsize:asizeint;virtual;
          function  alignment:shortint;virtual;abstract;
@@ -112,6 +118,7 @@ interface
        function registered : boolean;
       public
          fileinfo   : tfileposinfo;
+<<<<<<< HEAD
          { size of fileinfo is 10 bytes, so if a >word aligned type would follow,
            two bytes of memory would be wasted, so we put two one byte fields over here }
          visibility : tvisibility;
@@ -124,6 +131,18 @@ interface
          constructor create(st:tsymtyp;const aname:string);
          destructor  destroy;override;
          function  mangledname:TSymStr; virtual;
+=======
+         symoptions : tsymoptions;
+         refs       : longint;
+         reflist    : TLinkedList;
+         visibility : tvisibility;
+         { deprecated optionally can have a message }
+         deprecatedmsg: pshortstring;
+         isdbgwritten : boolean;
+         constructor create(st:tsymtyp;const aname:string);
+         destructor  destroy;override;
+         function  mangledname:string; virtual;
+>>>>>>> graemeg/cpstrnew
          function  prettyname:string; virtual;
          procedure buildderef;virtual;
          procedure deref;virtual;
@@ -292,6 +311,7 @@ implementation
           result:=result+typesym.realname
         else
           result:=result+GetTypeName;
+<<<<<<< HEAD
       end;
 
     function tdef.fulltypename:string;
@@ -303,6 +323,8 @@ implementation
           result:=result+typesym.realname
         else
           result:=result+GetTypeName;
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -321,7 +343,10 @@ implementation
           result:=result+'<no type symbol>'
       end;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
     function tdef.mangledparaname:string;
       begin
         result:=OwnerHierarchyName;
@@ -376,7 +401,11 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function tdef.structalignment: shortint;
+=======
+    function tdef.packedbitsize:asizeint;
+>>>>>>> graemeg/cpstrnew
       begin
         result:=alignment;
       end;
@@ -461,7 +490,10 @@ implementation
          isdbgwritten := false;
          visibility:=vis_public;
          deprecatedmsg:=nil;
+<<<<<<< HEAD
          symid:=symid_not_registered;
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
     destructor  Tsym.destroy;

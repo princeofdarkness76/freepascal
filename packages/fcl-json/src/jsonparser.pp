@@ -28,11 +28,17 @@ Type
   TJSONParser = Class(TObject)
   Private
     FScanner : TJSONScanner;
+<<<<<<< HEAD
     function GetO(AIndex: TJSONOption): Boolean;
     function GetOptions: TJSONOptions;
     function ParseNumber: TJSONNumber;
     procedure SetO(AIndex: TJSONOption; AValue: Boolean);
     procedure SetOptions(AValue: TJSONOptions);
+=======
+    FStrict: Boolean;
+    function ParseNumber: TJSONNumber;
+    procedure SetStrict(const AValue: Boolean);
+>>>>>>> graemeg/cpstrnew
   Protected
     procedure DoError(const Msg: String);
     function DoParse(AtCurrent,AllowEOF: Boolean): TJSONData;
@@ -50,11 +56,15 @@ Type
     constructor Create(const Source: String; AOptions: TJSONOptions); overload;
     destructor Destroy();override;
     // Use strict JSON: " for strings, object members are strings, not identifiers
+<<<<<<< HEAD
     Property Strict : Boolean Index joStrict Read GetO Write SetO ; deprecated 'use options instead';
     // if set to TRUE, then strings will be converted to UTF8 ansistrings, not system codepage ansistrings.
     Property UseUTF8 : Boolean index joUTF8 Read GetO Write SetO; deprecated 'Use options instead';
     // Parsing options
     Property Options : TJSONOptions Read GetOptions Write SetOptions;
+=======
+    Property Strict : Boolean Read FStrict Write SetStrict;
+>>>>>>> graemeg/cpstrnew
   end;
   
   EJSONParser = Class(EParserError);
@@ -114,7 +124,11 @@ end;
 function TJSONParser.CurrentTokenString: String;
 
 begin
+<<<<<<< HEAD
   If CurrentToken in [tkString,tkIdentifier,tkNumber,tkComment] then
+=======
+  If CurrentToken in [tkString,tkIdentifier,tkNumber] then
+>>>>>>> graemeg/cpstrnew
     Result:=FScanner.CurTokenString
   else
     Result:=TokenInfos[CurrentToken];
@@ -230,6 +244,17 @@ begin
   FScanner.Options:=AValue;
 end;
 
+<<<<<<< HEAD
+=======
+procedure TJSONParser.SetStrict(const AValue: Boolean);
+begin
+  if (FStrict=AValue) then
+     exit;
+  FStrict:=AValue;
+  If Assigned(FScanner) then
+    FScanner.Strict:=Fstrict;
+end;
+>>>>>>> graemeg/cpstrnew
 
 // Current token is {, on exit current token is }
 function TJSONParser.ParseObject: TJSONObject;
@@ -309,7 +334,11 @@ begin
   Until (Not (Result in [tkComment,tkWhiteSpace]));
 end;
 
+<<<<<<< HEAD
 procedure TJSONParser.DoError(const Msg: String);
+=======
+Procedure TJSONParser.DoError(const Msg : String);
+>>>>>>> graemeg/cpstrnew
 
 Var
   S : String;

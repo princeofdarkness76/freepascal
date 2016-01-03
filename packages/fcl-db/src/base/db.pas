@@ -22,7 +22,11 @@ unit db;
 
 interface
 
+<<<<<<< HEAD
 uses Classes,SysUtils,Variants,FmtBCD,MaskUtils;
+=======
+uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
+>>>>>>> graemeg/cpstrnew
 
 const
 
@@ -273,7 +277,10 @@ type
     FDisplayLabel : String;
     FDisplayWidth : Longint;
     FEditMask: TEditMask;
+<<<<<<< HEAD
     FFieldDef: TFieldDef;
+=======
+>>>>>>> graemeg/cpstrnew
     FFieldKind : TFieldKind;
     FFieldName : String;
     FFieldNo : Longint;
@@ -691,7 +698,11 @@ type
     function GetDefaultWidth: Longint; override;
     procedure SetAsBoolean(AValue: Boolean); override;
     procedure SetAsString(const AValue: string); override;
+<<<<<<< HEAD
     procedure SetAsInteger(AValue: Longint); override;
+=======
+    procedure SetAsInteger(AValue: Integer); override;
+>>>>>>> graemeg/cpstrnew
     procedure SetVarValue(const AValue: Variant); override;
   public
     constructor Create(AOwner: TComponent); override;
@@ -834,8 +845,12 @@ type
     function GetAsBCD: TBCD; override;
     function GetAsCurrency: Currency; override;
     function GetAsFloat: Double; override;
+<<<<<<< HEAD
     function GetAsLargeInt: LargeInt; override;
     function GetAsInteger: Longint; override;
+=======
+    function GetAsLongint: Longint; override;
+>>>>>>> graemeg/cpstrnew
     function GetAsString: string; override;
     function GetAsVariant: variant; override;
     function GetDataSize: Integer; override;
@@ -843,8 +858,12 @@ type
     procedure GetText(var TheText: string; ADisplayText: Boolean); override;
     procedure SetAsBCD(const AValue: TBCD); override;
     procedure SetAsFloat(AValue: Double); override;
+<<<<<<< HEAD
     procedure SetAsLargeInt(AValue: LargeInt); override;
     procedure SetAsInteger(AValue: Longint); override;
+=======
+    procedure SetAsLongint(AValue: Longint); override;
+>>>>>>> graemeg/cpstrnew
     procedure SetAsString(const AValue: string); override;
     procedure SetAsCurrency(AValue: Currency); override;
     procedure SetVarValue(const AValue: Variant); override;
@@ -853,7 +872,11 @@ type
     function CheckRange(AValue : TBCD) : Boolean;
     property Value: TBCD read GetAsBCD write SetAsBCD;
   published
+<<<<<<< HEAD
     property Precision: Longint read FPrecision write FPrecision default 18;
+=======
+    property Precision: Longint read FPrecision write FPrecision default 15;
+>>>>>>> graemeg/cpstrnew
     property Currency: Boolean read FCurrency write FCurrency;
     property MaxValue: string read GetMaxValue write SetMaxValue;
     property MinValue: string read GetMinValue write SetMinValue;
@@ -2040,6 +2063,7 @@ type
 
 
 const
+<<<<<<< HEAD
   FieldTypetoVariantMap : array[TFieldType] of Integer =
     (
       {ftUnknown} varError,
@@ -2083,6 +2107,15 @@ const
       {ftFixedWideChar} varOleStr,
       {ftWideMemo} varOleStr
     );
+=======
+  FieldTypetoVariantMap : array[TFieldType] of Integer = (varError, varOleStr, varSmallint,
+    varInteger, varSmallint, varBoolean, varDouble, varCurrency, varCurrency,
+    varDate, varDate, varDate, varOleStr, varOleStr, varInteger, varOleStr,
+    varOleStr, varOleStr, varOleStr, varOleStr, varOleStr, varOleStr, varError,
+    varOleStr, varOleStr, varError, varError, varError, varError, varError,
+    varOleStr, varOleStr, varVariant, varUnknown, varDispatch, varOleStr,
+    varOleStr, varDouble, varOleStr,varOleStr);
+>>>>>>> graemeg/cpstrnew
 
 
 Const

@@ -3,16 +3,27 @@
  
      Contains:   Parameter constants for Apple AudioUnits
  
+<<<<<<< HEAD
      Copyright:  (c) 2002-2008 by Apple, Inc., all rights reserved.
+=======
+     Copyright:  (c) 2002-2008 by Apple Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
 {  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -68,11 +79,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -91,29 +105,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -123,13 +152,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -141,12 +174,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -160,13 +199,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -216,6 +262,11 @@ uses MacTypes;
 
 //#pragma mark General Declarations
 
+<<<<<<< HEAD
+=======
+//#if !TARGET_OS_IPHONE
+{$ifc not TARGET_OS_IPHONE}
+>>>>>>> graemeg/cpstrnew
 { ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following specifies the equivalent parameterID's for the Group scope for standard
 MIDI Controllers. This list is not exhaustive. It represents the parameters, and their corresponding 
@@ -226,7 +277,10 @@ Group scope parameter IDs from 0 < 512 are reserved for mapping MIDI controllers
 const
 	kAUGroupParameterID_Volume = 7;	// value 0 < 128
 	kAUGroupParameterID_Sustain = 64; 	// value 0-63 (off), 64-127 (on)
+<<<<<<< HEAD
 	kAUGroupParameterID_Sostenuto = 66; 	// value 0-63 (off), 64-127 (on)
+=======
+>>>>>>> graemeg/cpstrnew
 	kAUGroupParameterID_AllNotesOff = 123;	// value ignored
 	kAUGroupParameterID_ModWheel = 1;	// value 0 < 128
 	kAUGroupParameterID_PitchBend = $E0;	// value -8192 - 8191
@@ -248,6 +302,11 @@ const
 	
 	kAUGroupParameterID_KeyPressure_FirstKey = 256;	// value 0 < 128
 	kAUGroupParameterID_KeyPressure_LastKey = 383;	// value 0 < 128	
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Supporting the kAUGroupParameterID_KeyPressure parameter indicates to hosts that your audio unit
 supports polyphonic "aftertouch" key pressure. 
@@ -260,6 +319,7 @@ key number plus 256. For example, the aftertouch parameter ID for MIDI key #60 (
 	60 + kAUGroupParameterID_KeyPressure_FirstKey = 316
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ }
 
+<<<<<<< HEAD
 { ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The following sections specify the parameter IDs for the audio units included in Mac OS X.
 Host applications can use these IDs to directly address these parameters without first discovering 
@@ -293,10 +353,28 @@ const
         // Global, Meters, 0.01->1000, 1
 	kPannerParam_RefDistance = 5;
 {$endc} {not TARGET_OS_IPHONE}
+=======
+// Parameters for all Panner AudioUnits
+const
+	kPannerParam_Gain = 0;			// 0 .. 1
+	
+	kPannerParam_Azimuth = 1;		// -180 .. +180 degrees
+	kPannerParam_Elevation = 2;		// -90 .. +90 degrees
+	kPannerParam_Distance = 3;		// 0 .. 1
+	
+	kPannerParam_CoordScale = 4;	// 0.01 .. 1000 meters
+	kPannerParam_RefDistance = 5;	// 0.01 .. 1000 meters
+
+{$endc}	{ not TARGET_OS_IPHONE }
+>>>>>>> graemeg/cpstrnew
 
 //#pragma mark Apple Specific
 
 // Parameters for the AUMixer3D unit
+<<<<<<< HEAD
+=======
+// only some of these parameters are available in the embedded implementation of this AU
+>>>>>>> graemeg/cpstrnew
 const
 // Input, Degrees, -180->180, 0
 	k3DMixerParam_Azimuth = 0;
@@ -304,7 +382,11 @@ const
 		// Input, Degrees, -90->90, 0
 	k3DMixerParam_Elevation = 1;
         
+<<<<<<< HEAD
 		// Input, Metres, 0->10000, 0
+=======
+		// Input, Metres, 0->10000, 1
+>>>>>>> graemeg/cpstrnew
 	k3DMixerParam_Distance = 2;
         
 		// Input/Output, dB, -120->20, 0
@@ -313,9 +395,42 @@ const
 		// Input, rate scaler	0.5 -> 2.0
 	k3DMixerParam_PlaybackRate = 4;
 
+<<<<<<< HEAD
 {$ifc not TARGET_OS_IPHONE}
 		// Desktop specific 3D mixer parameters
 
+=======
+// Parameters for the AUMultiChannelMixer unit
+const
+	kMultiChannelMixerParam_Volume = 0;
+	kMultiChannelMixerParam_Enable = 1;
+
+		// read-only
+	// these report level in dB, as do the other mixers
+	kMultiChannelMixerParam_PreAveragePower = 1000;
+	kMultiChannelMixerParam_PrePeakHoldLevel = 2000;
+	kMultiChannelMixerParam_PostAveragePower = 3000;
+	kMultiChannelMixerParam_PostPeakHoldLevel = 4000;
+
+// Output Units
+// Parameters for the AudioDeviceOutput, DefaultOutputUnit, and SystemOutputUnit units
+const
+// Global, LinearGain, 0->1, 1
+	kHALOutputParam_Volume = 14;
+
+// Parameters for the AUTimePitch, AUTimePitch (offline), AUPitch units
+const
+	kTimePitchParam_Rate = 0;
+//#if !TARGET_OS_IPHONE
+{$ifc not TARGET_OS_IPHONE}
+	kTimePitchParam_Pitch = 1;
+	kTimePitchParam_EffectBlend = 2;		// only for the AUPitch unit
+{$endc} { not TARGET_OS_IPHONE }
+
+//#if !TARGET_OS_IPHONE
+{$ifc not TARGET_OS_IPHONE}
+const
+>>>>>>> graemeg/cpstrnew
 // Input, Dry/Wet equal-power blend, %	  0.0 -> 100.0
 	k3DMixerParam_ReverbBlend = 5;
 
@@ -323,6 +438,7 @@ const
 	k3DMixerParam_GlobalReverbGain = 6;
 	
 		// Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB
+<<<<<<< HEAD
 		// smaller values make both direct and reverb sound more muffled; a value of 0.0 indicates no filtering
 		// Occlusion is a filter applied to the sound prior to the reverb send
 	k3DMixerParam_OcclusionAttenuation = 7;
@@ -338,6 +454,15 @@ const
 		// Input/Output, dB, -120->20, 0
 	k3DMixerParam_MaxGain = 10;
 
+=======
+		// smaller values make sound more muffled; a value of 0.0 indicates no filtering
+	k3DMixerParam_OcclusionAttenuation = 7;
+	
+		// Input, Lowpass filter attenuation at 5KHz :		decibels -100.0dB -> 0.0dB
+		// smaller values make sound more muffled; a value of 0.0 indicates no filtering
+	k3DMixerParam_ObstructionAttenuation = 8;
+	
+>>>>>>> graemeg/cpstrnew
 		// read-only
 		//
 		// For each of the following, use the parameter ID plus the channel number
@@ -350,6 +475,7 @@ const
 	k3DMixerParam_PostPeakHoldLevel = 4000;
 {$endc} { not TARGET_OS_IPHONE }
 
+<<<<<<< HEAD
 // Parameters for the AUMultiChannelMixer unit
 // these are available for both desktop and iphone
 const
@@ -407,6 +533,26 @@ const
 	kNewTimePitchParam_Overlap = 4;
 		// Global, Boolean, 0->1, 1
 	kNewTimePitchParam_EnablePeakLocking = 6;
+=======
+//#pragma mark Apple Specific - Desktop
+
+//#if !TARGET_OS_IPHONE
+{$ifc not TARGET_OS_IPHONE}
+{ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The following sections specify the parameter IDs for the audio units included in Mac OS X.
+Host applications can use these IDs to directly address these parameters without first discovering 
+them through the AUParameterInfo mechanism (see the AudioUnitProperties.h header file)
+
+Each parameter is preceeded by a comment that indicates scope, unit of measurement, minimum
+value, maximum value, and default value.
+    
+See the AudioUnitProperties.h header file for additional information that a parameter may report
+
+When displaying to the user information about a parameter, a host application should always
+get the parameter information from the audio unit itself.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ }
+
+>>>>>>> graemeg/cpstrnew
 
 // Effect units
 // The values for some effect unit parameters depend on the audio unit's sample rate.
@@ -421,6 +567,14 @@ const
 		// Global, Cents, 100->12000, 600
 	kBandpassParam_Bandwidth = 1;
 
+<<<<<<< HEAD
+=======
+// Some parameters for the AUGraphicEQ unit
+const
+// Global, Indexed, currently either 10 or 31
+	kGraphicEQParam_NumberOfBands = 10000;
+
+>>>>>>> graemeg/cpstrnew
 // Parameters for the AUHipass unit
 const
 // Global, Hz, 10->(SampleRate/2), 6900
@@ -464,6 +618,7 @@ const
 		// Global, dB, -20->20, 0
 	kParametricEQParam_Gain = 2;
 
+<<<<<<< HEAD
 // Parameters for the AUPeakLimiter unit
 const
 // Global, Secs, 0.001->0.03, 0.012
@@ -561,6 +716,8 @@ const
 // Global, Indexed, currently either 10 or 31
 	kGraphicEQParam_NumberOfBands = 10000;
 
+=======
+>>>>>>> graemeg/cpstrnew
 // Parameters for the AUMatrixReverb unit
 const
 // Global, EqPow CrossFade, 0->100, 100
@@ -628,6 +785,7 @@ const
 		// Global, Hz, 10->(SampleRate/2), 15000
 	kDelayParam_LopassCutoff = 3;
 
+<<<<<<< HEAD
 // Parameters for the AUMultibandCompressor unit
 const
 // Global, dB, -40 -> 40, 0
@@ -732,6 +890,106 @@ const
 		// Global, Hertz, 10 -> (SampleRate/2), 100
 	kMultibandFilter_HighFrequency = 13;
 		// Global, dB, -18 -> +18, 0
+=======
+// Parameters for the AUPeakLimiter unit
+const
+// Global, Secs, 0.001->0.03, 0.012
+	kLimiterParam_AttackTime = 0;
+		
+		// Global, Secs, 0.001->0.06, 0.024
+	kLimiterParam_DecayTime = 1;
+		
+		// Global, dB, -40->40, 0
+	kLimiterParam_PreGain = 2;
+
+
+// Parameters for the AUDynamicsProcessor unit
+const
+// Global, dB, -40->20, -20
+	kDynamicsProcessorParam_Threshold = 0;
+		
+		// Global, dB, 0.1->40.0, 5
+	kDynamicsProcessorParam_HeadRoom = 1;
+		
+		// Global, rate, 1->50.0, 2
+	kDynamicsProcessorParam_ExpansionRatio = 2;
+		
+		// Global, dB
+	kDynamicsProcessorParam_ExpansionThreshold = 3;
+		
+		// Global, secs, 0.0001->0.2, 0.001
+	kDynamicsProcessorParam_AttackTime = 4;
+		
+		// Global, secs, 0.01->3, 0.05
+	kDynamicsProcessorParam_ReleaseTime = 5;
+		
+		// Global, dB, -40->40, 0
+	kDynamicsProcessorParam_MasterGain = 6;
+	
+		// Global, dB, read-only parameter
+	kDynamicsProcessorParam_CompressionAmount = 1000;
+	kDynamicsProcessorParam_InputAmplitude = 2000;
+	kDynamicsProcessorParam_OutputAmplitude = 3000;
+
+
+// Parameters for the AUMultibandCompressor unit
+const
+	kMultibandCompressorParam_Pregain = 0;
+	kMultibandCompressorParam_Postgain = 1;
+	kMultibandCompressorParam_Crossover1 = 2;
+	kMultibandCompressorParam_Crossover2 = 3;
+	kMultibandCompressorParam_Crossover3 = 4;
+	kMultibandCompressorParam_Threshold1 = 5;
+	kMultibandCompressorParam_Threshold2 = 6;
+	kMultibandCompressorParam_Threshold3 = 7;
+	kMultibandCompressorParam_Threshold4 = 8;
+	kMultibandCompressorParam_Headroom1 = 9;
+	kMultibandCompressorParam_Headroom2 = 10;
+	kMultibandCompressorParam_Headroom3 = 11;
+	kMultibandCompressorParam_Headroom4 = 12;
+	kMultibandCompressorParam_AttackTime = 13;
+	kMultibandCompressorParam_ReleaseTime = 14;
+	kMultibandCompressorParam_EQ1 = 15;
+	kMultibandCompressorParam_EQ2 = 16;
+	kMultibandCompressorParam_EQ3 = 17;
+	kMultibandCompressorParam_EQ4 = 18;
+	
+	// read-only parameters
+	kMultibandCompressorParam_CompressionAmount1 = 1000;
+	kMultibandCompressorParam_CompressionAmount2 = 2000;
+	kMultibandCompressorParam_CompressionAmount3 = 3000;
+	kMultibandCompressorParam_CompressionAmount4 = 4000;
+	kMultibandCompressorParam_InputAmplitude1 = 5000;
+	kMultibandCompressorParam_InputAmplitude2 = 6000;
+	kMultibandCompressorParam_InputAmplitude3 = 7000;
+	kMultibandCompressorParam_InputAmplitude4 = 8000;
+	kMultibandCompressorParam_OutputAmplitude1 = 9000;
+	kMultibandCompressorParam_OutputAmplitude2 = 10000;
+	kMultibandCompressorParam_OutputAmplitude3 = 11000;
+	kMultibandCompressorParam_OutputAmplitude4 = 12000;
+
+// Parameters for the AUVarispeed unit
+const
+	kVarispeedParam_PlaybackRate = 0;
+	kVarispeedParam_PlaybackCents = 1;
+
+// Parameters for the AUFilter unit
+const
+	kMultibandFilter_LowFilterType = 0;
+	kMultibandFilter_LowFrequency = 1;
+	kMultibandFilter_LowGain = 2;
+	kMultibandFilter_CenterFreq1 = 3;
+	kMultibandFilter_CenterGain1 = 4;
+	kMultibandFilter_Bandwidth1 = 5;
+	kMultibandFilter_CenterFreq2 = 6;
+	kMultibandFilter_CenterGain2 = 7;
+	kMultibandFilter_Bandwidth2 = 8;
+	kMultibandFilter_CenterFreq3 = 9;
+	kMultibandFilter_CenterGain3 = 10;
+	kMultibandFilter_Bandwidth3 = 11;
+	kMultibandFilter_HighFilterType = 12;
+	kMultibandFilter_HighFrequency = 13;
+>>>>>>> graemeg/cpstrnew
 	kMultibandFilter_HighGain = 14;
 
 // Mixer Units
@@ -775,13 +1033,19 @@ const
 
 // Parameters for the AUNetReceive unit
 const
+<<<<<<< HEAD
 // Global, indexed, 0 -> 5, read only
+=======
+>>>>>>> graemeg/cpstrnew
 	kAUNetReceiveParam_Status = 0;
 	kAUNetReceiveParam_NumParameters = 1;
 
 // Parameters for the AUNetSend unit
 const
+<<<<<<< HEAD
 // Global, indexed, 0 -> 5, read only
+=======
+>>>>>>> graemeg/cpstrnew
 	kAUNetSendParam_Status = 0;
 	kAUNetSendParam_NumParameters = 1;
 
@@ -795,6 +1059,7 @@ const
 	kAUNetStatus_Connecting = 4;
 	kAUNetStatus_Listening = 5;
 
+<<<<<<< HEAD
 // Parameters for AURogerBeep
 const
 // Global, dB, -80 -> 0, -6
@@ -810,6 +1075,35 @@ const
 		// Global, indexed, 0 -> 2, 0
 	kRogerBeepParam_RogerType = 5;
 		// Global, dB, -80 -> 20, -6
+=======
+// Parameters for the Distortion unit 
+const
+	kDistortionParam_Delay = 0;
+	kDistortionParam_Decay = 1;
+	kDistortionParam_DelayMix = 2;
+	kDistortionParam_Decimation = 3;
+	kDistortionParam_Rounding = 4;
+	kDistortionParam_DecimationMix = 5;
+	kDistortionParam_LinearTerm = 6;
+	kDistortionParam_SquaredTerm = 7;
+	kDistortionParam_CubicTerm = 8;
+	kDistortionParam_PolynomialMix = 9;
+	kDistortionParam_RingModFreq1 = 10;
+	kDistortionParam_RingModFreq2 = 11;
+	kDistortionParam_RingModBalance = 12;
+	kDistortionParam_RingModMix = 13;
+	kDistortionParam_SoftClipGain = 14;
+	kDistortionParam_FinalMix = 15;
+
+// Parameters for AURogerBeep
+const
+	kRogerBeepParam_InGateThreshold = 0;
+	kRogerBeepParam_InGateThresholdTime = 1;
+	kRogerBeepParam_OutGateThreshold = 2;
+	kRogerBeepParam_OutGateThresholdTime = 3;
+	kRogerBeepParam_Sensitivity = 4;
+	kRogerBeepParam_RogerType = 5;
+>>>>>>> graemeg/cpstrnew
 	kRogerBeepParam_RogerGain = 6;
 
 // Music Device
@@ -849,6 +1143,7 @@ const
 // See the MusicDevice.h header file for more about using the extended control semantics 
 // of this API.	
 
+<<<<<<< HEAD
 // Parameters for the AURoundTripAACParam unit
 const
 // Global, indexed : AAC, AAC HE, AAC HEv2, AAC ELD
@@ -866,6 +1161,9 @@ const
 	kRoundTripAACParam_CompressedFormatSampleRate = 3;
 {$endc} {not TARGET_OS_IPHONE}
 
+=======
+{$endc} { not TARGET_OS_IPHONE }
+>>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

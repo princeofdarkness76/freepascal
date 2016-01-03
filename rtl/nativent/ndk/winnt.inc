@@ -18,8 +18,11 @@
 type
   WCHAR = WideChar;
   PWSTR = PWideChar;
+<<<<<<< HEAD
   CCHAR = Byte;
   PCCHAR = ^CCHAR;
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
   NT_DELETE           = $00010000;

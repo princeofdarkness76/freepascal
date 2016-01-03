@@ -218,6 +218,7 @@ begin
         OS_64 : opsize:=S_IQ;
       end;
     end
+<<<<<<< HEAD
   else if gas_needsuffix[opcode]=AttSufMM then
   begin
     if (opr.typ=OPR_Reference) then
@@ -228,6 +229,8 @@ begin
       end;
     end;
   end
+=======
+>>>>>>> graemeg/cpstrnew
   else
     begin
       if size=OS_64 then
@@ -257,6 +260,7 @@ begin
         end;
       if (cs_create_pic in current_settings.moduleswitches) and
          assigned(opr.ref.symbol) and
+<<<<<<< HEAD
          not assigned(opr.ref.relsymbol) then
         begin
           if not(opr.ref.refaddr in [addr_pic,addr_pic_no_got]) then
@@ -283,6 +287,18 @@ begin
                 message(asmr_w_global_access_without_got);
 {$endif x86_64}
             end;
+=======
+         not assigned(opr.ref.relsymbol) and
+         not(opr.ref.refaddr in [addr_pic,addr_pic_no_got]) then
+        begin
+          if (opr.ref.symbol.name <> '_GLOBAL_OFFSET_TABLE_') then
+            begin
+              message(asmr_e_need_pic_ref);
+              result:=false;
+            end
+          else
+            opr.ref.refaddr:=addr_pic;
+>>>>>>> graemeg/cpstrnew
         end;
     end;
 end;
@@ -1234,7 +1250,10 @@ begin
                          integer operations it is seen as 32bit
 
                          this applies only to i386, see tw16622}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
                        if gas_needsuffix[opcode] in [attsufFPU,attsufFPUint] then
                          asize:=OT_BITS64
 {$ifdef i386}

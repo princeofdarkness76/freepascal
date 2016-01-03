@@ -14,16 +14,25 @@ begin
 
     P:=AddPackage('libsee');
 {$ifdef ALLPACKAGES}
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
+=======
+    P.Directory:='libsee';
+{$endif ALLPACKAGES}
+    P.Version:='2.5.1';
+>>>>>>> graemeg/cpstrnew
     P.Author := 'David Leonard';
     P.License := 'BSD style';
     P.HomepageURL := 'http://www.adaptive-enterprises.com.au/~d/software/see/';
     P.Email := 'leonard@users.sourceforge.net';
     P.Description := 'Headers for the libSEE library (javascript engine)';
     P.NeedLibC:= true;  // true for headers that indirectly link to libc?
+<<<<<<< HEAD
     P.OSes := [linux,win32];
+=======
+>>>>>>> graemeg/cpstrnew
 
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');

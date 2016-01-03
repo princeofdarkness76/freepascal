@@ -335,6 +335,7 @@ syscall sysvbase TinyGLBase 1270;
 
 procedure _GLColorMask(gcl: pointer; red, green, blue, alpha: GLboolean);
 syscall sysvbase TinyGLBase 1282;
+<<<<<<< HEAD
 {$ENDIF}
 
 {$IFDEF GLU_UNIT}
@@ -343,6 +344,9 @@ syscall sysvbase TinyGLBase 1348;
 {$ENDIF}
 
 {$IFDEF GL_UNIT}
+=======
+
+>>>>>>> graemeg/cpstrnew
 procedure _GLCopyTexImage2D(gcl: pointer; target: GLenum; level: GLint; internalFormat: GLenum; x, y: GLint; width, height: GLsizei; border: GLint); inline;
 syscall sysvbase TinyGLBase 1402;
 {$ENDIF GL_UNIT}

@@ -79,6 +79,10 @@ Type
     procedure EndOverview; override;
     procedure WriteOverviewMember(const ALabel,AName,Access,ADescr : String); override;
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
+<<<<<<< HEAD
+=======
+    Class Function FileNameExtension : String; override;
+>>>>>>> graemeg/cpstrnew
     // Description node conversion
     procedure DescrBeginBold; override;
     procedure DescrEndBold; override;
@@ -606,7 +610,11 @@ begin
   Writeln('\VersionInfo');
 end;
 
+<<<<<<< HEAD
 procedure TLaTeXWriter.StartAccess;
+=======
+Procedure TLatexWriter.StartAccess;
+>>>>>>> graemeg/cpstrnew
 
 begin
   Writeln('\Access')
@@ -661,14 +669,22 @@ begin
   WriteLn('\end{tabularx}');
 end;
 
+<<<<<<< HEAD
 procedure TLaTeXWriter.WriteOverviewMember(const ALabel, AName, Access,
   ADescr: String);
+=======
+procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 
 begin
   WriteLnF('\pageref{%s} & %s & %s & %s \\',[ALabel,EscapeText(AName),Access,ADescr]);
 end;
 
+<<<<<<< HEAD
 procedure TLaTeXWriter.WriteOverviewMember(const ALabel, AName, ADescr: String);
+=======
+procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 
 begin
   WriteLnF('\pageref{%s} & %s  & %s \\',[ALabel,EscapeText(AName),ADescr]);

@@ -370,6 +370,7 @@ implementation
          {*****************************************************************}
          {                     NO JUMP TABLE GENERATION                    }
          {*****************************************************************}
+<<<<<<< HEAD
            begin
              { We will now generated code to check the set itself, no jmps,
                handle smallsets separate, because it allows faster checks }
@@ -448,6 +449,78 @@ implementation
                          current_asmdata.getjumplabel(l);
                          current_asmdata.getjumplabel(l2);
                          needslabel := True;
+=======
+          begin
+            { location is always LOC_REGISTER }
+            location_reset(location, LOC_REGISTER, uopsize{def_cgsize(resultdef)});
+            { allocate a register for the result }
+            location.register := cg.getintregister(current_asmdata.CurrAsmList, uopsize);
+
+            { We will now generated code to check the set itself, no jmps,
+              handle smallsets separate, because it allows faster checks }
+            if use_small then
+             begin
+               {****************************  SMALL SET **********************}
+               if left.location.loc=LOC_CONSTANT then
+                begin
+                  cg.a_bit_test_const_loc_reg(current_asmdata.CurrAsmList,location.size,
+                    left.location.value-setbase,right.location,
+                    location.register);
+                end
+               else
+                begin
+                  location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
+                  register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+                  cg.a_bit_test_reg_loc_reg(current_asmdata.CurrAsmList,left.location.size,
+                    location.size,left.location.register,right.location,location.register);
+                end;
+             end
+            else
+             {************************** NOT SMALL SET ********************}
+             begin
+               if right.location.loc=LOC_CONSTANT then
+                begin
+                  { can it actually occur currently? CEC }
+                  { yes: "if bytevar in [1,3,5,7,9,11,13,15]" (JM) }
+
+                  { note: this code assumes that left in [0..255], which is a valid }
+                  { assumption (other cases will be caught by range checking) (JM)  }
+
+                  { load left in register }
+                  location_force_reg(current_asmdata.CurrAsmList,left.location,location.size,true);
+                  register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
+                  { emit bit test operation -- warning: do not use
+                    location_force_reg() to force a set into a register, except
+                    to a register of the same size as the set. The reason is
+                    that on big endian systems, this would require moving the
+                    set to the most significant part of the new register,
+                    and location_force_register can't do that (it does not
+                    know the type).
+
+                   a_bit_test_reg_loc_reg() properly takes into account the
+                   size of the set to adjust the register index to test }
+                  cg.a_bit_test_reg_loc_reg(current_asmdata.CurrAsmList,
+                    left.location.size,location.size,
+                    left.location.register,right.location,location.register);
+
+                  { now zero the result if left > nr_of_bits_in_right_register }
+                  hr := cg.getintregister(current_asmdata.CurrAsmList,location.size);
+                  { if left > tcgsize2size[opsize]*8 then hr := 0 else hr := $ffffffff }
+                  { (left.location.size = location.size at this point) }
+                  cg.a_op_const_reg_reg(current_asmdata.CurrAsmList, OP_SUB, location.size, tcgsize2size[opsize]*8, left.location.register, hr);
+                  cg.a_op_const_reg(current_asmdata.CurrAsmList, OP_SAR, location.size, (tcgsize2size[opsize]*8)-1, hr);
+
+                  { if left > tcgsize2size[opsize]*8-1, then result := 0 else result := result of bit test }
+                  cg.a_op_reg_reg(current_asmdata.CurrAsmList, OP_AND, location.size, hr, location.register);
+                end { of right.location.loc=LOC_CONSTANT }
+               { do search in a normal set which could have >32 elements
+                 but also used if the left side contains higher values > 32 }
+               else if (left.location.loc=LOC_CONSTANT) then
+                begin
+                  if (left.location.value < setbase) or (((left.location.value-setbase) shr 3) >= right.resultdef.size) then
+                    {should be caught earlier }
+                    internalerror(2007020402);
+>>>>>>> graemeg/cpstrnew
 
                          hlcg.a_cmp_const_reg_label(current_asmdata.CurrAsmList, opdef, OC_BE, tsetdef(right.resultdef).setmax-tsetdef(right.resultdef).setbase, pleftreg, l);
 

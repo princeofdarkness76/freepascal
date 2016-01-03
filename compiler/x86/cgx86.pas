@@ -82,7 +82,11 @@ unit cgx86;
         procedure a_loadaddr_ref_reg(list : TAsmList;const ref : treference;r : tregister);override;
 
         { bit scan instructions }
+<<<<<<< HEAD
         procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: TCGSize; src, dst: TRegister); override;
+=======
+        procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: TCGSize; src, dst: TRegister); override;
+>>>>>>> graemeg/cpstrnew
 
         { fpu move instructions }
         procedure a_loadfpu_reg_reg(list: TAsmList; fromsize, tosize: tcgsize; reg1, reg2: tregister); override;
@@ -172,6 +176,7 @@ unit cgx86;
       winstackpagesize = 4096;
 {$endif NOTARGETWIN}
 
+<<<<<<< HEAD
     function UseAVX: boolean;
 
     function UseIncDec: boolean;
@@ -179,6 +184,8 @@ unit cgx86;
     { returns true, if the compiler should use leave instead of mov/pop }
     function UseLeave: boolean;
 
+=======
+>>>>>>> graemeg/cpstrnew
   implementation
 
     uses
@@ -260,8 +267,12 @@ unit cgx86;
             result:=rg[R_MMREGISTER].getregister(list,R_SUBMMD);
           OS_F32:
             result:=rg[R_MMREGISTER].getregister(list,R_SUBMMS);
+<<<<<<< HEAD
           OS_M64:
             result:=rg[R_MMREGISTER].getregister(list,R_SUBQ);
+=======
+          OS_M64,
+>>>>>>> graemeg/cpstrnew
           OS_M128:
             result:=rg[R_MMREGISTER].getregister(list,R_SUBMMWHOLE);
           else
@@ -418,13 +429,20 @@ unit cgx86;
         add_hreg: boolean;
 {$endif not  x86_64}
       begin
+<<<<<<< HEAD
         hreg:=NR_NO;
+=======
+>>>>>>> graemeg/cpstrnew
         { make_simple_ref() may have already been called earlier, and in that
           case make sure we don't perform the PIC-simplifications twice }
         if (ref.refaddr in [addr_pic,addr_pic_no_got]) then
           exit;
 
+<<<<<<< HEAD
 {$if defined(x86_64)}
+=======
+{$ifdef x86_64}
+>>>>>>> graemeg/cpstrnew
         { Only 32bit is allowed }
         { Note that this isn't entirely correct: for RIP-relative targets/memory models,
           it is actually (offset+@symbol-RIP) that should fit into 32 bits. Since two last
@@ -474,8 +492,19 @@ unit cgx86;
           begin
             if cs_create_pic in current_settings.moduleswitches then
               begin
+<<<<<<< HEAD
                 { Local symbols must not be accessed via the GOT }
                 if (ref.symbol.bind=AB_LOCAL) then
+=======
+                { Local data symbols must not be accessed via the GOT on
+                  darwin/x86_64 under certain circumstances (and do not
+                  have to be in other cases); however, linux/x86_64 does
+                  require it; don't know about others, so do use GOT for
+                  safety reasons
+                }
+                if (ref.symbol.bind=AB_LOCAL) and
+                   (ref.symbol.typ=AT_DATA) then
+>>>>>>> graemeg/cpstrnew
                   begin
                     { unfortunately, RIP-based addresses don't support an index }
                     if (ref.base<>NR_NO) or
@@ -502,6 +531,10 @@ unit cgx86;
                     href.refaddr:=addr_pic;
                     href.base:=NR_RIP;
                     list.concat(taicpu.op_ref_reg(A_MOV,S_Q,href,hreg));
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
                     ref.symbol:=nil;
                   end;
 
@@ -517,13 +550,22 @@ unit cgx86;
                     { don't use add, as the flags may contain a value }
                     reference_reset_base(href,ref.base,0,8);
                     href.index:=hreg;
+<<<<<<< HEAD
                     ref.base:=getaddressregister(list);
                     list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,ref.base));
+=======
+                    list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,hreg));
+                    ref.base:=hreg;
+>>>>>>> graemeg/cpstrnew
                   end;
               end
             else
               { Always use RIP relative symbol addressing for Windows and Darwin targets. }
+<<<<<<< HEAD
               if (target_info.system in (systems_all_windows+[system_x86_64_darwin,system_x86_64_iphonesim])) and (ref.base<>NR_RIP) then
+=======
+              if (target_info.system in (systems_all_windows+[system_x86_64_darwin])) and (ref.base<>NR_RIP) then
+>>>>>>> graemeg/cpstrnew
                 begin
                   if (ref.refaddr=addr_no) and (ref.base=NR_NO) and (ref.index=NR_NO) then
                     begin
@@ -552,8 +594,13 @@ unit cgx86;
                           { don't use add, as the flags may contain a value }
                           reference_reset_base(href,ref.base,0,8);
                           href.index:=hreg;
+<<<<<<< HEAD
                           ref.base:=getaddressregister(list);
                           list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,ref.base));
+=======
+                          list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,hreg));
+                          ref.base:=hreg;
+>>>>>>> graemeg/cpstrnew
                         end;
                     end;
 
@@ -568,7 +615,13 @@ unit cgx86;
                ((ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL,AB_PRIVATE_EXTERN]) or
                 (cs_create_pic in current_settings.moduleswitches)) then
              begin
+<<<<<<< HEAD
                if ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL,AB_PRIVATE_EXTERN] then
+=======
+               if (ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL]) or
+                  ((cs_create_pic in current_settings.moduleswitches) and
+                   (ref.symbol.bind in [AB_COMMON,AB_GLOBAL,AB_PRIVATE_EXTERN])) then
+>>>>>>> graemeg/cpstrnew
                  begin
                    hreg:=g_indirect_sym_load(list,ref.symbol.name,asmsym2indsymflags(ref.symbol));
                    ref.symbol:=nil;
@@ -791,7 +844,11 @@ unit cgx86;
           current_asmdata.asmlists[al_imports]:=TAsmList.create;
 
         new_section(current_asmdata.asmlists[al_imports],sec_stub,'',0);
+<<<<<<< HEAD
         result := current_asmdata.DefineAsmSymbol(stubname,AB_LOCAL,AT_FUNCTION);
+=======
+        result := current_asmdata.RefAsmSymbol(stubname);
+>>>>>>> graemeg/cpstrnew
         current_asmdata.asmlists[al_imports].concat(Tai_symbol.Create(result,0));
         { register as a weak symbol if necessary }
         if weak then
@@ -826,7 +883,11 @@ unit cgx86;
             reference_reset_symbol(r,sym,0,sizeof(pint));
             if (cs_create_pic in current_settings.moduleswitches) and
                { darwin's assembler doesn't want @PLT after call symbols }
+<<<<<<< HEAD
                not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim,system_x86_64_iphonesim]) then
+=======
+               not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim]) then
+>>>>>>> graemeg/cpstrnew
               begin
 {$ifdef i386}
                 include(current_procinfo.flags,pi_needs_got);
@@ -1044,7 +1105,12 @@ unit cgx86;
                       end
                     else if (cs_create_pic in current_settings.moduleswitches)
 {$ifdef x86_64}
+<<<<<<< HEAD
                              and not(ref.symbol.bind=AB_LOCAL)
+=======
+                             and not((ref.symbol.bind=AB_LOCAL) and
+                                     (ref.symbol.typ=AT_DATA))
+>>>>>>> graemeg/cpstrnew
 {$endif x86_64}
                             then
                       begin
@@ -1064,7 +1130,11 @@ unit cgx86;
                           a_op_const_reg(list,OP_ADD,OS_ADDR,offset,r);
                       end
 {$ifdef x86_64}
+<<<<<<< HEAD
                     else if (target_info.system in (systems_all_windows+[system_x86_64_darwin,system_x86_64_iphonesim]))
+=======
+                    else if (target_info.system in (systems_all_windows+[system_x86_64_darwin]))
+>>>>>>> graemeg/cpstrnew
 			 or (cs_create_pic in current_settings.moduleswitches)
 			 then
                       begin
@@ -1219,6 +1289,7 @@ unit cgx86;
             OS_64:
               tosize:=OS_F64;
           end;
+<<<<<<< HEAD
         if (fromsize in [low(convertopsse)..high(convertopsse)]) and
            (tosize in [low(convertopsse)..high(convertopsse)]) then
           begin
@@ -1227,16 +1298,25 @@ unit cgx86;
             else
               result:=convertopsse[fromsize,tosize];
           end
+=======
+        if (fromsize in [low(convertop)..high(convertop)]) and
+           (tosize in [low(convertop)..high(convertop)]) then
+          result:=convertop[fromsize,tosize]
+>>>>>>> graemeg/cpstrnew
         { we can have OS_M64 (record in function result/LOC_MMREGISTER) to
           OS_64 (record in memory/LOC_REFERENCE) }
         else if (tcgsize2size[fromsize]=tcgsize2size[tosize]) and
                 (fromsize=OS_M64) then
+<<<<<<< HEAD
           begin
             if UseAVX then
               result:=A_VMOVQ
             else
               result:=A_MOVQ;
           end
+=======
+          result:=A_MOVQ
+>>>>>>> graemeg/cpstrnew
         else
           internalerror(2010060104);
         if result=A_NONE then
@@ -2022,6 +2102,7 @@ unit cgx86;
         end;
       end;
 
+<<<<<<< HEAD
      procedure tcgx86.a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: TCGSize; src, dst: TRegister);
      var
        tmpreg: tregister;
@@ -2052,6 +2133,17 @@ unit cgx86;
        a_label(list,l);
        if tmpreg<>dst then
          a_load_reg_reg(list,srcsize,dstsize,tmpreg,dst);
+=======
+     procedure tcgx86.a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: TCGSize; src, dst: TRegister);
+     var
+       opsize: topsize;
+     begin
+       opsize:=tcgsize2opsize[size];
+       if not reverse then
+         list.concat(taicpu.op_reg_reg(A_BSF,opsize,src,dst))
+       else
+         list.concat(taicpu.op_reg_reg(A_BSR,opsize,src,dst));
+>>>>>>> graemeg/cpstrnew
      end;
 
 {*************** compare instructructions ****************}
@@ -2962,7 +3054,11 @@ unit cgx86;
         { interrupt support for i386 }
         if (po_interrupt in current_procinfo.procdef.procoptions) and
            { this messes up stack alignment }
+<<<<<<< HEAD
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim,system_i386_android]) then
+=======
+           not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> graemeg/cpstrnew
           begin
             { .... also the segment registers }
             list.concat(Taicpu.Op_reg(A_PUSH,S_W,NR_GS));
@@ -3026,14 +3122,24 @@ unit cgx86;
 
             { allocate stackframe space }
             if (localsize<>0) or
+<<<<<<< HEAD
                ((target_info.stackalign>sizeof(pint)) and
+=======
+               ((target_info.system in systems_need_16_byte_stack_alignment) and
+>>>>>>> graemeg/cpstrnew
                 (stackmisalignment <> 0) and
                 ((pi_do_call in current_procinfo.flags) or
                  (po_assembler in current_procinfo.procdef.procoptions))) then
               begin
+<<<<<<< HEAD
                 if target_info.stackalign>sizeof(pint) then
                   localsize := align(localsize+stackmisalignment,target_info.stackalign)-stackmisalignment;
                 g_stackpointer_alloc(list,localsize);
+=======
+                if (target_info.system in systems_need_16_byte_stack_alignment) then
+                  localsize := align(localsize+stackmisalignment,16)-stackmisalignment;
+                cg.g_stackpointer_alloc(list,localsize);
+>>>>>>> graemeg/cpstrnew
                 if current_procinfo.framepointer=NR_STACK_POINTER_REG then
                   current_asmdata.asmcfi.cfa_def_cfa_offset(list,localsize+sizeof(pint));
                 current_procinfo.final_localsize:=localsize;
@@ -3175,4 +3281,32 @@ unit cgx86;
          a_label(list,hl);
       end;
 
+<<<<<<< HEAD
+=======
+    procedure tcgx86.g_external_wrapper(list: TAsmList; procdef: tprocdef; const externalname: string);
+      var
+        ref : treference;
+        sym : tasmsymbol;
+      begin
+       if (target_info.system = system_i386_darwin) then
+         begin
+           { a_jmp_name jumps to a stub which is always pic-safe on darwin }
+           inherited g_external_wrapper(list,procdef,externalname);
+           exit;
+         end;
+
+        sym:=current_asmdata.RefAsmSymbol(externalname);
+        reference_reset_symbol(ref,sym,0,sizeof(pint));
+
+        { create pic'ed? }
+        if (cs_create_pic in current_settings.moduleswitches) and
+           { darwin/x86_64's assembler doesn't want @PLT after call symbols }
+           not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim]) then
+          ref.refaddr:=addr_pic
+        else
+          ref.refaddr:=addr_full;
+        list.concat(taicpu.op_ref(A_JMP,S_NO,ref));
+      end;
+
+>>>>>>> graemeg/cpstrnew
 end.

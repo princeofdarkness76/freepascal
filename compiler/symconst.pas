@@ -64,10 +64,14 @@ const
   tkProcVar  = 23;
   tkUString  = 24;
   tkUChar    = 25;
+<<<<<<< HEAD
   tkHelper   = 26;
   tkFile     = 27;
   tkClassRef = 28;
   tkPointer  = 29;
+=======
+  tkFile     = 26;
+>>>>>>> graemeg/cpstrnew
 
   otSByte     = 0;
   otUByte     = 1;
@@ -113,6 +117,7 @@ const
   { implicit parameter positions, normal parameters start at 10
     and will increase with 10 for each parameter. The high parameters
     will be inserted with n+1 }
+<<<<<<< HEAD
   paranr_blockselfpara = 1;
   paranr_parentfp = 2;
   paranr_parentfp_delphi_cc_leftright = 2;
@@ -134,6 +139,18 @@ const
     after the hidden result parameter }
   paranr_objc_self = 5;
   paranr_objc_cmd = 6;
+=======
+  paranr_parentfp = 1;
+  paranr_parentfp_delphi_cc_leftright = 1;
+  paranr_self = 2;
+  paranr_result = 3;
+  paranr_vmt = 4;
+
+  { the implicit parameters for Objective-C methods need to come
+    after the hidden result parameter }
+  paranr_objc_self = 4;
+  paranr_objc_cmd = 5;
+>>>>>>> graemeg/cpstrnew
   { Required to support variations of syscalls on MorphOS }
   paranr_syscall_basesysv    = 9;
   paranr_syscall_sysvbase    = high(word)-5;
@@ -145,6 +162,7 @@ const
   { prefix for names of class helper procsyms added to regular symtables }
   class_helper_prefix = 'CH$';
 
+<<<<<<< HEAD
   { tsym.symid value in case the sym has not yet been registered }
   symid_not_registered = -2;
   { tsym.symid value in case the sym has been registered, but not put in a
@@ -155,6 +173,8 @@ const
   { tdef.defid value in case the sym has been registered, but not put in a
     symtable }
   defid_registered_nost = -1;
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
   { keep this in sync with TIntfFlag in rtl/objpas/typinfo.pp }
@@ -191,6 +211,7 @@ type
     sp_implicitrename,
     sp_hint_experimental,
     sp_generic_para,
+<<<<<<< HEAD
     sp_has_deprecated_msg,
     sp_generic_dummy,       { this is used for symbols that are generated when a
                               generic is encountered to ease inline
@@ -198,6 +219,9 @@ type
                               "overridden" with a completely different symbol }
     sp_explicitrename       { this is used to keep track of type renames created
                               by the user }
+=======
+    sp_has_deprecated_msg
+>>>>>>> graemeg/cpstrnew
   );
   tsymoptions=set of tsymoption;
 
@@ -294,9 +318,13 @@ type
     potype_class_constructor, { class constructor }
     potype_class_destructor,  { class destructor  }
     potype_propgetter,        { Dispinterface property accessors }
+<<<<<<< HEAD
     potype_propsetter,
     potype_exceptfilter,      { SEH exception filter or termination handler }
     potype_mainstub           { "main" function that calls through to FPC_SYSTEMMAIN }
+=======
+    potype_propsetter
+>>>>>>> graemeg/cpstrnew
   );
   tproctypeoptions=set of tproctypeoption;
 
@@ -342,8 +370,11 @@ type
     po_syscall_basesysv,
     po_syscall_sysvbase,
     po_syscall_r12base,
+<<<<<<< HEAD
     { Used to record the fact that a symbol is asociated to this syscall }
     po_syscall_has_libsym,
+=======
+>>>>>>> graemeg/cpstrnew
     { Procedure can be inlined }
     po_inline,
     { Procedure is used for internal compiler calls }
@@ -368,6 +399,7 @@ type
       (when calling a regular procedure using the above convention, it will
        simply not see the frame pointer parameter, and since the caller cleans
        up the stack will also remain balanced) }
+<<<<<<< HEAD
     po_delphi_nested_cc,
     { allows the routine's RawByteString var/out parameters to accept parameters
       that do not match exactly (without typeconversion) }
@@ -393,6 +425,9 @@ type
     po_is_function_ref,
     { procvar is a block (http://en.wikipedia.org/wiki/Blocks_(C_language_extension) ) }
     po_is_block
+=======
+    po_delphi_nested_cc
+>>>>>>> graemeg/cpstrnew
   );
   tprocoptions=set of tprocoption;
 
@@ -454,6 +489,7 @@ type
     odt_dispinterface,
     odt_objcclass,
     odt_objcprotocol,
+<<<<<<< HEAD
     odt_objccategory, { note that these are changed into odt_class afterwards }
     odt_helper,
     odt_javaclass,
@@ -465,6 +501,9 @@ type
     ht_class,
     ht_record,
     ht_type
+=======
+    odt_objccategory { note that these are changed into odt_class afterwards }
+>>>>>>> graemeg/cpstrnew
   );
 
   { Variations in interfaces implementation }
@@ -503,9 +542,13 @@ type
     oo_is_formal,         { the class is only formally defined in this module (x = objcclass; external [name 'x'];) }
     oo_is_classhelper,    { objcclasses that represent categories, and Delpi-style class helpers, are marked like this }
     oo_has_class_constructor, { the object/class has a class constructor }
+<<<<<<< HEAD
     oo_has_class_destructor,  { the object/class has a class destructor  }
     oo_is_enum_class,     { the class represents an enum (JVM) }
     oo_has_new_destructor { the object/class declares a destructor (apart from potentially inherting one from the parent) }
+=======
+    oo_has_class_destructor   { the object/class has a class destructor  }
+>>>>>>> graemeg/cpstrnew
   );
   tobjectoptions=set of tobjectoption;
 
@@ -525,10 +568,17 @@ type
     ppo_indexed,                  { delcared wwith "index" keyword }
     ppo_defaultproperty,
     ppo_stored,
+<<<<<<< HEAD
     ppo_hasparameters,            { has parameters: prop[param1, param2: type] }
     ppo_implements,
     ppo_enumerator_current,       { implements current property for enumerator }
     ppo_overrides,                { overrides ancestor property }
+=======
+    ppo_hasparameters,
+    ppo_implements,
+    ppo_enumerator_current,
+    ppo_dispid_read,              { no longer used }
+>>>>>>> graemeg/cpstrnew
     ppo_dispid_write              { no longer used }
   );
   tpropertyoptions=set of tpropertyoption;
@@ -562,6 +612,7 @@ type
     { first field of variant part of a record }
     vo_is_first_field,
     vo_volatile,
+<<<<<<< HEAD
     vo_has_section,
     { variable contains a winlike WideString which should be finalized
       even in $J- state }
@@ -569,6 +620,9 @@ type
     { this is an internal variable that is used for Default() intrinsic in code
       sections }
     vo_is_default_var
+=======
+    vo_has_section
+>>>>>>> graemeg/cpstrnew
   );
   tvaroptions=set of tvaroption;
 
@@ -649,7 +703,11 @@ type
     vs_referred_not_inited,vs_written,vs_readwritten
   );
 
+<<<<<<< HEAD
   tvarspez = (vs_value,vs_const,vs_var,vs_out,vs_constref,vs_final);
+=======
+  tvarspez = (vs_value,vs_const,vs_var,vs_out,vs_constref);
+>>>>>>> graemeg/cpstrnew
 
   absolutetyp = (tovar,toasm,toaddr);
 
@@ -665,6 +723,7 @@ type
     { Objective-C }
     objcmetartti,objcmetarortti,
     objcclassrtti,objcclassrortti
+<<<<<<< HEAD
   );
 
   { prefixes for internally generated type names (centralised to avoid
@@ -691,6 +750,8 @@ type
     itp_rtti_dyn_array,
     itp_rtti_proc_param,
     itp_threadvar_record
+=======
+>>>>>>> graemeg/cpstrnew
   );
 
   { The order is from low priority to high priority,
@@ -736,9 +797,12 @@ type
     dbg_state_queued
   );
 
+<<<<<<< HEAD
   tx86pointertyp = (x86pt_near, x86pt_near_cs, x86pt_near_ds, x86pt_near_ss,
     x86pt_near_es, x86pt_near_fs, x86pt_near_gs, x86pt_far, x86pt_huge);
 
+=======
+>>>>>>> graemeg/cpstrnew
 var
   clearstack_pocalls : tproccalloptions;
   cdecl_pocalls      : tproccalloptions;
@@ -748,12 +812,15 @@ const
    inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has_protected,
                 oo_has_strictprotected,oo_has_strictprivate,oo_has_constructor,oo_has_destructor,
                 oo_can_have_published];
+<<<<<<< HEAD
 {$else not jvm}
 { constructors are not inherited in Java }
 inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has_protected,
              oo_has_strictprotected,oo_has_strictprivate,oo_has_destructor,
              oo_can_have_published];
 {$endif not jvm}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifdef i386}
    { we only take this into account on i386, on other platforms we always
@@ -792,6 +859,7 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
        'public','published',''
      );
 
+<<<<<<< HEAD
      internaltypeprefixName : array[tinternaltypeprefix] of TSymStr = (
        '$1byte$',
        '$emptyrec',
@@ -822,6 +890,8 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
 {$else not jvm}
      default_class_type=odt_javaclass;
 {$endif not jvm}
+=======
+>>>>>>> graemeg/cpstrnew
 
 { !! Be sure to keep these in sync with ones in rtl/inc/varianth.inc }
       varempty = 0;
@@ -858,9 +928,12 @@ inherited_objectoptions : tobjectoptions = [oo_has_virtual,oo_has_private,oo_has
       vararray = $2000;
       varbyref = $4000;
 
+<<<<<<< HEAD
       { blocks-related constants }
       blocks_procvar_invoke_type_name = '__FPC_invoke_pvtype';
 
+=======
+>>>>>>> graemeg/cpstrnew
 implementation
 
 end.

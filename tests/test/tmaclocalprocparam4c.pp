@@ -6,7 +6,11 @@
 type
   tprocedure = procedure;
 
+<<<<<<< HEAD
 procedure test(p: codepointer);
+=======
+procedure test(p: pointer);
+>>>>>>> graemeg/cpstrnew
 
   procedure nested;
     begin

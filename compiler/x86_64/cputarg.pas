@@ -52,6 +52,9 @@ implementation
     {$ifndef NOTARGETAROS}
       ,t_aros
     {$endif}
+    {$ifndef NOTARGETSUNOS}
+      ,t_sunos
+    {$endif}
 
 
 {**************************************

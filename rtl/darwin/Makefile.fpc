@@ -8,6 +8,7 @@ main=rtl
 # disabled units: serial
 [target]
 loaders=
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar unixtype ctypes objpas macpas iso7185 extpas \
       strings sysctl baseunix unixutil \
       unix initc cmem dynlibs $(CPU_UNITS) \
@@ -23,6 +24,21 @@ implicitunits=exeinfo \
       unicodedata unicodenumtable 
 
 rsts=math typinfo classes sysconst rtlconsts
+=======
+units=$(SYSTEMUNIT) unixtype ctypes objpas macpas iso7185 \
+      strings sysctl baseunix unixutil \
+      unix initc cmem matrix dynlibs $(CPU_UNITS) \
+      dos dl objects printer sockets \
+      sysutils typinfo fgl classes math varutils types \
+      charset ucomplex getopts heaptrc lineinfo lnfodwrf \
+      errors ipc terminfo termio video crt mouse keyboard  \
+      variants dateutils convutils stdconvs \
+      sysconst cthreads strutils rtlconsts cwstring bsd fmtbcd \
+      fpintres fpextres clocale objc objcbase
+implicitunits=exeinfo
+
+rsts=math varutils typinfo classes variants dateutils sysconst rtlconsts
+>>>>>>> graemeg/cpstrnew
 
 [require]
 nortl=y
@@ -130,7 +146,14 @@ fpintres$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT)
 fpextres$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) baseunix$(PPUEXT)
 
 iso7185$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT)
+<<<<<<< HEAD
         $(COMPILER) $(INC)/iso7185.pp
+=======
+
+objpas$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(OBJPASDIR)/objpas.pp $(INC)/except.inc $(SYSTEMUNIT)$(PPUEXT)
+        $(COMPILER) -I$(OBJPASDIR) $(OBJPASDIR)/objpas.pp
+
+>>>>>>> graemeg/cpstrnew
 
 extpas$(PPUEXT) : $(INC)/extpas.pp dos$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) $(INC)/extpas.pp
@@ -145,8 +168,11 @@ strings$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/strings.pp $(INC)/stringsi.inc\
 objc$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) ctypes$(PPUEXT) unixtype$(PPUEXT) $(INC)/objc.pp $(INC)/objc1.inc $(INC)/objcnf.inc
 
 objcbase$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/objcbase.pp objc$(PPUEXT)
+<<<<<<< HEAD
 
 blockrtl$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) objpas$(PPUEXT) initc$(PPUEXT) ctypes$(PPUEXT) $(INC)/blockrtl.pp
+=======
+>>>>>>> graemeg/cpstrnew
 
 #
 # System Dependent Units
@@ -233,10 +259,23 @@ macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 # Other system-independent RTL Units
 #
 
+<<<<<<< HEAD
 ifeq ($(ARCH),x86_64)
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT)
 else
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
+=======
+video$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/video.inc $(INC)/videoh.inc $(UNIXINC)/video.pp baseunix$(PPUEXT) strings$(PPUEXT) terminfo$(PPUEXT) termio$(PPUEXT)
+
+keyboard$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/keyboard.inc $(INC)/keybrdh.inc $(UNIXINC)/keyboard.pp mouse$(PPUEXT) strings$(PPUEXT) terminfo$(PPUEXT) termio$(PPUEXT) baseunix$(PPUEXT)
+
+matrix$(PPUEXT) : $(INC)/matrix.pp $(SYSTEMUNIT)$(PPUEXT)
+
+ifeq ($(ARCH),x86_64)
+cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT)
+else
+cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT)
+>>>>>>> graemeg/cpstrnew
 endif
 
 mmx$(PPUEXT) : $(PROCINC)/mmx.pp cpu$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)

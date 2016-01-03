@@ -1,6 +1,10 @@
 { %norun }
+<<<<<<< HEAD
 { %needlibrary }
 { %target=darwin,linux,freebsd,solaris,beos,haiku,aix,android }
+=======
+{ %target=darwin,linux,freebsd,solaris,beos,haiku }
+>>>>>>> graemeg/cpstrnew
 
 {$mode delphi}
 

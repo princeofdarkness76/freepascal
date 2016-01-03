@@ -85,7 +85,12 @@ var
 begin
    if writefile(h,addr,len,size,nil)=0 then
     Begin
+<<<<<<< HEAD
       Errno2InoutRes(GetLastError);
+=======
+      errno:=GetLastError;
+      Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
 {$ifndef WINCE}
     end
    else if (size<len) then
@@ -145,7 +150,12 @@ begin
   rslt.low := SetFilePointer(handle, 0, @rslt.high, FILE_CURRENT);
   if (rslt.low = $FFFFFFFF) and (GetLastError <> 0) then
   begin
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
   end;
   do_filepos := int64(rslt);
 end;
@@ -160,7 +170,12 @@ begin
   { return value of -1 is valid unless GetLastError is non-zero }
     (GetLastError <> 0) then
   begin
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
@@ -173,7 +188,12 @@ begin
   rslt.low := SetFilePointer(handle, 0, @rslt.high, FILE_END);
   if (rslt.low = $FFFFFFFF) and (GetLastError <> 0) then
   begin
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
   end;
   do_seekend := int64(rslt);
 end;

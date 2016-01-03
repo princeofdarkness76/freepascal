@@ -3,9 +3,15 @@
  
      Contains:   QuickTime VR interfaces
  
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1997-2012 by Apple Inc., all rights reserved.
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -13,8 +19,12 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +79,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -89,6 +102,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -108,13 +122,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -124,13 +158,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -173,6 +211,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -211,7 +271,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,MacWindows,QuickdrawTypes,Movies;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -222,6 +287,7 @@ uses MacTypes,MacWindows,QuickdrawTypes,Movies;
 {$ifc not TARGET_CPU_64}
 
 type
+<<<<<<< HEAD
 	QTVRInstance = ^OpaqueQTVRInstance; { an opaque type }
 	OpaqueQTVRInstance = record end;
 	QTVRInstancePtr = ^QTVRInstance;  { when a var xx:QTVRInstance parameter can be nil, it is changed to xx: QTVRInstancePtr }
@@ -237,6 +303,22 @@ const
 
 { Version numbers for the API described in this header }
 const
+=======
+	QTVRInstance = ^SInt32; { an opaque type }
+	QTVRInstancePtr = ^QTVRInstance;  { when a var xx:QTVRInstance parameter can be nil, it is changed to xx: QTVRInstancePtr }
+
+{ Released API Version numbers }
+const
+  kQTVRAPIMajorVersion05 = $05;
+  kQTVRAPIMajorVersion02 = $02;
+  kQTVRAPIMinorVersion00 = $00;
+  kQTVRAPIMinorVersion01 = $01;
+  kQTVRAPIMinorVersion10 = $10;
+  kQTVRAPIMinorVersion20 = $20;
+
+{ Version numbers for the API described in this header }
+const
+>>>>>>> graemeg/cpstrnew
   kQTVRAPIMajorVersion = kQTVRAPIMajorVersion05;
   kQTVRAPIMinorVersion = kQTVRAPIMinorVersion00;
 
@@ -248,6 +330,7 @@ const
 	kQTVRObjectType = FourCharCode('obje');
 	kQTVROldPanoType = FourCharCode('STpn'); { Used in QTVR 1.0 release}
 	kQTVROldObjectType = FourCharCode('stna'); { Used in QTVR 1.0 release}
+<<<<<<< HEAD
 
   kQTVRUnknownType = FourCharCode('????'); { Unknown node type }
 
@@ -263,6 +346,23 @@ const
 	kQTVRPreviousNode = $80000000;
 	kQTVRDefaultNode = $80000001;
 
+=======
+
+  kQTVRUnknownType = FourCharCode('????'); { Unknown node type }
+
+{ QTVR hot spot types}
+const
+	kQTVRHotSpotLinkType = FourCharCode('link');
+	kQTVRHotSpotURLType = FourCharCode('url ');
+	kQTVRHotSpotUndefinedType = FourCharCode('undf');
+
+{ Special Values for nodeID in QTVRGoToNodeID}
+const
+	kQTVRCurrentNode = 0;
+	kQTVRPreviousNode = $80000000;
+	kQTVRDefaultNode = $80000001;
+
+>>>>>>> graemeg/cpstrnew
 { Panorama correction modes used for the kQTVRImagingCorrection imaging property}
 const
 	kQTVRNoCorrection = 0;
@@ -277,6 +377,7 @@ const
 	kQTVRMotion = 2;
 	kQTVRCurrentMode = 0;    { Special Value for QTVRUpdate}
 	kQTVRAllModes = 100;   { Special value for QTVRSetProperty}
+<<<<<<< HEAD
 
 { Imaging Properties used by QTVRSetImagingProperty, QTVRGetImagingProperty}
 const
@@ -320,6 +421,51 @@ const
 	kQTVRScrolling = 1 shl 3; { standard object arrow scrollers and joystick object}
 	kQTVRSelecting = 1 shl 4; { object absolute controller}
 
+=======
+
+{ Imaging Properties used by QTVRSetImagingProperty, QTVRGetImagingProperty}
+const
+	kQTVRImagingCorrection = 1;
+	kQTVRImagingQuality = 2;
+	kQTVRImagingDirectDraw = 3;
+	kQTVRImagingCurrentMode = 100;   { Get Only}
+
+{ OR the above with kImagingDefaultValue to get/set the default value}
+const
+	kImagingDefaultValue = $80000000;
+
+{ Transition Types used by QTVRSetTransitionProperty, QTVREnableTransition}
+const
+	kQTVRTransitionSwing = 1;
+
+{ Transition Properties QTVRSetTransitionProperty}
+const
+	kQTVRTransitionSpeed = 1;
+	kQTVRTransitionDirection = 2;
+
+{ Constraint values used to construct value returned by GetConstraintStatus}
+const
+	kQTVRUnconstrained = 0;
+	kQTVRCantPanLeft = 1 shl 0;
+	kQTVRCantPanRight = 1 shl 1;
+	kQTVRCantPanUp = 1 shl 2;
+	kQTVRCantPanDown = 1 shl 3;
+	kQTVRCantZoomIn = 1 shl 4;
+	kQTVRCantZoomOut = 1 shl 5;
+	kQTVRCantTranslateLeft = 1 shl 6;
+	kQTVRCantTranslateRight = 1 shl 7;
+	kQTVRCantTranslateUp = 1 shl 8;
+	kQTVRCantTranslateDown = 1 shl 9;
+
+{ Object-only mouse mode values used to construct value returned by QTVRGetCurrentMouseMode}
+const
+	kQTVRPanning = 1 shl 0; { standard objects, "object only" controllers}
+	kQTVRTranslating = 1 shl 1; { all objects}
+	kQTVRZooming = 1 shl 2; { all objects}
+	kQTVRScrolling = 1 shl 3; { standard object arrow scrollers and joystick object}
+	kQTVRSelecting = 1 shl 4; { object absolute controller}
+
+>>>>>>> graemeg/cpstrnew
 { Properties for use with QTVRSetInteractionProperty/GetInteractionProperty}
 const
 	kQTVRInteractionMouseClickHysteresis = 1; { pixels within which the mouse is considered not to have moved (UInt16)}
@@ -373,6 +519,7 @@ const
 	kQTVRAllHotSpots = 2;
 
 { Values for viewParameter for QTVRSet/GetViewParameter}
+<<<<<<< HEAD
 const
 	kQTVRPanAngle = $0100; { default units; &float, &float}
 	kQTVRTiltAngle = $0101; { default units; &float, &float}
@@ -386,6 +533,21 @@ const
 	kQTVRValueIsRate = 1 shl 1; { Is the value absolute or a rate of change to be applied?}
 	kQTVRValueIsUserPrefRelative = 1 shl 2; { Is the value a percentage of the user rate pref?}
 
+=======
+const
+	kQTVRPanAngle = $0100; { default units; &float, &float}
+	kQTVRTiltAngle = $0101; { default units; &float, &float}
+	kQTVRFieldOfViewAngle = $0103; { default units; &float, &float}
+	kQTVRViewCenter = $0104; { pixels (per object movies); &QTVRFloatPoint, &QTVRFloatPoint}
+	kQTVRHotSpotsVisible = $0200; { Boolean, &Boolean}
+
+{ Values for flagsIn for QTVRSet/GetViewParameter}
+const
+	kQTVRValueIsRelative = 1 shl 0; { Is the value absolute or relative to the current value?}
+	kQTVRValueIsRate = 1 shl 1; { Is the value absolute or a rate of change to be applied?}
+	kQTVRValueIsUserPrefRelative = 1 shl 2; { Is the value a percentage of the user rate pref?}
+
+>>>>>>> graemeg/cpstrnew
 { Values for kind parameter in QTVRGet/SetConstraints, QTVRGetViewingLimits}
 const
 	kQTVRPan = 0;
@@ -1074,8 +1236,13 @@ function QTVRGetNodeType( qtvr: QTVRInstance; nodeID: UInt32 ): OSType; external
  }
 function QTVRPtToHotSpotID( qtvr: QTVRInstance; pt: Point; var hotSpotID: UInt32 ): OSErr; external name '_QTVRPtToHotSpotID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { QTVRGetHotSpotType requires QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
 {
  *  QTVRGetHotSpotType()
@@ -1816,8 +1983,13 @@ function QTVRAnglesToCoord( qtvr: QTVRInstance; panAngle: Float32; tiltAngle: Fl
  }
 function QTVRPanToColumn( qtvr: QTVRInstance; panAngle: Float32 ): SInt16; external name '_QTVRPanToColumn';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { zero based   }
 {
  *  QTVRColumnToPan()
@@ -1830,8 +2002,13 @@ function QTVRPanToColumn( qtvr: QTVRInstance; panAngle: Float32 ): SInt16; exter
  }
 function QTVRColumnToPan( qtvr: QTVRInstance; column: SInt16 ): Float32; external name '_QTVRColumnToPan';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { zero based   }
 {
  *  QTVRTiltToRow()
@@ -1858,8 +2035,13 @@ function QTVRTiltToRow( qtvr: QTVRInstance; tiltAngle: Float32 ): SInt16; extern
  }
 function QTVRRowToTilt( qtvr: QTVRInstance; row: SInt16 ): Float32; external name '_QTVRRowToTilt';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { zero based               }
 {
  *  QTVRWrapAndConstrain()
@@ -2020,8 +2202,13 @@ function QTVRSetConstraints( qtvr: QTVRInstance; kind: UInt16; minValue: Float32
  }
 function QTVRGetAvailableResolutions( qtvr: QTVRInstance; var resolutionsMask: UInt16 ): OSErr; external name '_QTVRGetAvailableResolutions';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { These require QTVR 2.1 (kQTVRAPIMajorVersion02 + kQTVRAPIMinorVersion10)}
 {
  *  QTVRGetBackBufferMemInfo()

@@ -94,7 +94,10 @@ type
     // - Statement execution
     procedure Execute(cursor:TSQLCursor; ATransaction:TSQLTransaction; AParams:TParams); override;
     function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
+<<<<<<< HEAD
     function RefreshLastInsertID(Query : TCustomSQLQuery; Field : TField): boolean; override;
+=======
+>>>>>>> graemeg/cpstrnew
     // - Result retrieving
     procedure AddFieldDefs(cursor:TSQLCursor; FieldDefs:TFieldDefs); override;
     function Fetch(cursor:TSQLCursor):boolean; override;
@@ -395,9 +398,13 @@ var
   TimeVal: SQL_TIME_STRUCT;
   TimeStampVal: SQL_TIMESTAMP_STRUCT;
   BoolVal: byte;
+<<<<<<< HEAD
   NumericVal: SQL_NUMERIC_STRUCT;
   ColumnSize: SQLULEN;
   BufferLength, StrLenOrInd: SQLLEN;
+=======
+  ColumnSize, BufferLength, StrLenOrInd: SQLINTEGER;
+>>>>>>> graemeg/cpstrnew
   CType, SqlType, DecimalDigits:SQLSMALLINT;
   APD: SQLHDESC;
 begin
@@ -440,8 +447,12 @@ begin
           SqlType:=SQL_BIGINT;
           ColumnSize:=19;
         end;
+<<<<<<< HEAD
       ftString, ftFixedChar, ftBlob, ftMemo, ftGuid,
       ftBytes, ftVarBytes:
+=======
+      ftString, ftFixedChar, ftBlob, ftMemo:
+>>>>>>> graemeg/cpstrnew
         begin
           StrVal:=AParams[ParamIndex].AsString;
           StrLenOrInd:=Length(StrVal);
@@ -455,11 +466,14 @@ begin
           ColumnSize:=Size;
           BufferLength:=Size;
           case AParams[ParamIndex].DataType of
+<<<<<<< HEAD
             ftBytes, ftVarBytes:
               begin
               CType:=SQL_C_BINARY;
               SqlType:=SQL_VARBINARY;
               end;
+=======
+>>>>>>> graemeg/cpstrnew
             ftBlob:
               begin
               CType:=SQL_C_BINARY;
@@ -476,6 +490,7 @@ begin
               SqlType:=SQL_VARCHAR;
               end;
           end;
+<<<<<<< HEAD
         end;
       ftWideString, ftFixedWideChar, ftWideMemo:
         begin
@@ -495,6 +510,8 @@ begin
             ftWideMemo: SqlType:=SQL_WLONGVARCHAR;
             else        SqlType:=SQL_WVARCHAR;
           end;
+=======
+>>>>>>> graemeg/cpstrnew
         end;
       ftFloat:
         begin
@@ -1087,6 +1104,7 @@ begin
     begin
       SetLength(TypeName,TypeNameDefaultLength); // also garantuees uniqueness
 
+<<<<<<< HEAD
       ODBCCheckResult(
         SQLColAttribute(ODBCCursor.FSTMTHandle,  // statement handle
                         i,                       // column number
@@ -1115,6 +1133,17 @@ begin
           SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get datasource dependent type name for column %s.',[ColName]
         );
       end;
+=======
+  // execute the statement
+  case ODBCCursor.FSchemaType of
+    stNoSchema  : Res:=SQLExecute(ODBCCursor.FSTMTHandle); //SQL_NO_DATA returns searched update or delete statement that does not affect any rows
+    stTables    : Res:=SQLTables (ODBCCursor.FSTMTHandle, nil, 0, nil, 0, nil, 0, TABLE_TYPE_USER, length(TABLE_TYPE_USER) );
+    stSysTables : Res:=SQLTables (ODBCCursor.FSTMTHandle, nil, 0, nil, 0, nil, 0, TABLE_TYPE_SYSTEM, length(TABLE_TYPE_SYSTEM) );
+    stColumns   : Res:=SQLColumns(ODBCCursor.FSTMTHandle, nil, 0, nil, 0, @ODBCCursor.FQuery[1], length(ODBCCursor.FQuery), nil, 0 );
+    stProcedures: Res:=SQLProcedures(ODBCCursor.FSTMTHandle, nil, 0, nil, 0, nil, 0 );
+    else          Res:=SQL_NO_DATA;
+  end; {case}
+>>>>>>> graemeg/cpstrnew
 
       DatabaseErrorFmt('Column %s has an unknown or unsupported column type. Datasource dependent type name: %s. ODBC SQL data type code: %d.', [ColName, TypeName, DataType]);
     end;
@@ -1125,6 +1154,19 @@ begin
       if Updatable = SQL_ATTR_READONLY then Attributes := Attributes + [faReadonly];
     end;
   end;
+end;
+
+function TODBCConnection.RowsAffected(cursor: TSQLCursor): TRowsCount;
+var
+  RowCount: SQLINTEGER;
+begin
+  if assigned(cursor) then
+    if ODBCSucces( SQLRowCount((cursor as TODBCCursor).FSTMTHandle, RowCount) ) then
+       Result:=RowCount
+    else
+       Result:=-1
+  else
+    Result:=-1;
 end;
 
 function TODBCConnection.Fetch(cursor: TSQLCursor): boolean;
@@ -1171,7 +1213,11 @@ begin
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_CHAR, buffer, FieldDef.Size+1, @StrLenOrInd);
     ftSmallint:           // mapped to TSmallintField
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_SSHORT, buffer, SizeOf(Smallint), @StrLenOrInd);
+<<<<<<< HEAD
     ftInteger,ftAutoInc:  // mapped to TLongintField
+=======
+    ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
+>>>>>>> graemeg/cpstrnew
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_SLONG, buffer, SizeOf(Longint), @StrLenOrInd);
     ftWord:               // mapped to TWordField
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_USHORT, buffer, SizeOf(Word), @StrLenOrInd);
@@ -1346,14 +1392,204 @@ end;
 procedure TODBCConnection.FreeFldBuffers(cursor: TSQLCursor);
 var
   ODBCCursor:TODBCCursor;
+<<<<<<< HEAD
 begin
   ODBCCursor:=cursor as TODBCCursor;
 
   if ODBCCursor.FSTMTHandle <> SQL_NULL_HSTMT then
+=======
+{$IF NOT((FPC_VERSION>=2) AND (FPC_RELEASE>=1))}
+  i: integer;
+{$ENDIF}
+begin
+  ODBCCursor:=cursor as TODBCCursor;
+
+{$IF NOT((FPC_VERSION>=2) AND (FPC_RELEASE>=1))}
+  // Free TMemoryStreams in cursor.FBlobStreams and clear it
+  for i:=0 to ODBCCursor.FBlobStreams.Count-1 do
+    TObject(ODBCCursor.FBlobStreams[i]).Free;
+  ODBCCursor.FBlobStreams.Clear;
+{$ENDIF}
+
+  ODBCCheckResult(
+    SQLFreeStmt(ODBCCursor.FSTMTHandle, SQL_CLOSE),
+    SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not close ODBC statement cursor.'
+  );
+end;
+
+procedure TODBCConnection.AddFieldDefs(cursor: TSQLCursor; FieldDefs: TFieldDefs);
+const
+  ColNameDefaultLength  = 40; // should be > 0, because an ansistring of length 0 is a nil pointer instead of a pointer to a #0
+  TypeNameDefaultLength = 80; // idem
+{$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
+  BLOB_BUF_SIZE = 0;
+{$ELSE}
+  BLOB_BUF_SIZE = sizeof(pointer);
+{$ENDIF}
+var
+  ODBCCursor:TODBCCursor;
+  ColumnCount:SQLSMALLINT;
+  i:integer;
+  ColNameLength,TypeNameLength,DataType,DecimalDigits,Nullable:SQLSMALLINT;
+  ColumnSize:SQLUINTEGER;
+  ColName,TypeName:string;
+  FieldType:TFieldType;
+  FieldSize:word;
+  AutoIncAttr: SQLINTEGER;
+begin
+  ODBCCursor:=cursor as TODBCCursor;
+
+  // get number of columns in result set
+  ODBCCheckResult(
+    SQLNumResultCols(ODBCCursor.FSTMTHandle, ColumnCount),
+    SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not determine number of columns in result set.'
+  );
+
+  AutoIncAttr:=SQL_FALSE;
+  for i:=1 to ColumnCount do
+  begin
+    SetLength(ColName,ColNameDefaultLength); // also garantuees uniqueness
+
+    // call with default column name buffer
+>>>>>>> graemeg/cpstrnew
     ODBCCheckResult(
       SQLFreeStmt(ODBCCursor.FSTMTHandle, SQL_CLOSE),
       SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not close ODBC statement cursor.'
     );
+<<<<<<< HEAD
+=======
+
+    // truncate buffer or make buffer long enough for entire column name (note: the call is the same for both cases!)
+    SetLength(ColName,ColNameLength);
+    // check whether entire column name was returned
+    if ColNameLength>ColNameDefaultLength then
+    begin
+      // request column name with buffer that is long enough
+      ODBCCheckResult(
+        SQLColAttribute(ODBCCursor.FSTMTHandle, // statement handle
+                        i,                      // column number
+                        SQL_DESC_NAME,          // the column name or alias
+                        @(ColName[1]),          // buffer
+                        ColNameLength+1,        // buffer size
+                        @ColNameLength,         // actual length
+                        nil),                   // no numerical output
+        SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get column name for column %d.',[i]
+      );
+    end;
+
+    // convert type
+    // NOTE: I made some guesses here after I found only limited information about TFieldType; please report any problems
+    case DataType of
+      SQL_CHAR:          begin FieldType:=ftFixedChar;  FieldSize:=ColumnSize; end;
+      SQL_VARCHAR:       begin FieldType:=ftString;     FieldSize:=ColumnSize; end;
+      SQL_LONGVARCHAR:   begin FieldType:=ftMemo;       FieldSize:=BLOB_BUF_SIZE; end; // is a blob
+{$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
+      SQL_WCHAR:         begin FieldType:=ftFixedWideChar; FieldSize:=ColumnSize*sizeof(Widechar); end;
+      SQL_WVARCHAR:      begin FieldType:=ftWideString; FieldSize:=ColumnSize*sizeof(Widechar); end;
+      SQL_WLONGVARCHAR:  begin FieldType:=ftWideMemo;   FieldSize:=BLOB_BUF_SIZE; end; // is a blob
+{$ENDIF}
+      SQL_DECIMAL:       begin FieldType:=ftFloat;      FieldSize:=0; end;
+      SQL_NUMERIC:       begin FieldType:=ftFloat;      FieldSize:=0; end;
+      SQL_SMALLINT:      begin FieldType:=ftSmallint;   FieldSize:=0; end;
+      SQL_INTEGER:       begin FieldType:=ftInteger;    FieldSize:=0; end;
+      SQL_REAL:          begin FieldType:=ftFloat;      FieldSize:=0; end;
+      SQL_FLOAT:         begin FieldType:=ftFloat;      FieldSize:=0; end;
+      SQL_DOUBLE:        begin FieldType:=ftFloat;      FieldSize:=0; end;
+      SQL_BIT:           begin FieldType:=ftBoolean;    FieldSize:=0; end;
+      SQL_TINYINT:       begin FieldType:=ftSmallint;   FieldSize:=0; end;
+      SQL_BIGINT:        begin FieldType:=ftLargeint;   FieldSize:=0; end;
+      SQL_BINARY:        begin FieldType:=ftBytes;      FieldSize:=ColumnSize; end;
+      SQL_VARBINARY:     begin FieldType:=ftVarBytes;   FieldSize:=ColumnSize; end;
+      SQL_LONGVARBINARY: begin FieldType:=ftBlob;       FieldSize:=BLOB_BUF_SIZE; end; // is a blob
+      SQL_TYPE_DATE:     begin FieldType:=ftDate;       FieldSize:=0; end;
+      SQL_TYPE_TIME:     begin FieldType:=ftTime;       FieldSize:=0; end;
+      SQL_TYPE_TIMESTAMP:begin FieldType:=ftDateTime;   FieldSize:=0; end;
+{      SQL_TYPE_UTCDATETIME:FieldType:=ftUnknown;}
+{      SQL_TYPE_UTCTIME:    FieldType:=ftUnknown;}
+{      SQL_INTERVAL_MONTH:           FieldType:=ftUnknown;}
+{      SQL_INTERVAL_YEAR:            FieldType:=ftUnknown;}
+{      SQL_INTERVAL_YEAR_TO_MONTH:   FieldType:=ftUnknown;}
+{      SQL_INTERVAL_DAY:             FieldType:=ftUnknown;}
+{      SQL_INTERVAL_HOUR:            FieldType:=ftUnknown;}
+{      SQL_INTERVAL_MINUTE:          FieldType:=ftUnknown;}
+{      SQL_INTERVAL_SECOND:          FieldType:=ftUnknown;}
+{      SQL_INTERVAL_DAY_TO_HOUR:     FieldType:=ftUnknown;}
+{      SQL_INTERVAL_DAY_TO_MINUTE:   FieldType:=ftUnknown;}
+{      SQL_INTERVAL_DAY_TO_SECOND:   FieldType:=ftUnknown;}
+{      SQL_INTERVAL_HOUR_TO_MINUTE:  FieldType:=ftUnknown;}
+{      SQL_INTERVAL_HOUR_TO_SECOND:  FieldType:=ftUnknown;}
+{      SQL_INTERVAL_MINUTE_TO_SECOND:FieldType:=ftUnknown;}
+{$IF (FPC_VERSION>=2) AND (FPC_RELEASE>=1)}
+      SQL_GUID:          begin FieldType:=ftGuid;       FieldSize:=ColumnSize; end;
+{$ENDIF}
+    else
+      begin FieldType:=ftUnknown; FieldSize:=ColumnSize; end
+    end;
+
+    if (FieldType in [ftString,ftFixedChar]) and // field types mapped to TStringField
+       (FieldSize >= dsMaxStringSize) then
+    begin
+      FieldSize:=dsMaxStringSize-1;
+    end
+    else
+    if (FieldType in [ftInteger]) and (AutoIncAttr=SQL_FALSE) then //if the column is an autoincrementing column
+                                                                   //any exact numeric type with scale 0 can have identity attr.
+                                                                   //only one column per table can have identity attr.
+    begin
+      ODBCCheckResult(
+        SQLColAttribute(ODBCCursor.FSTMTHandle, // statement handle
+                        i,                      // column number
+                        SQL_DESC_AUTO_UNIQUE_VALUE, // FieldIdentifier
+                        nil,                        // buffer
+                        0,                          // buffer size
+                        nil,                        // actual length
+                        @AutoIncAttr),              // NumericAttribute
+        SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get autoincrement attribute for column %d.',[i]
+      );
+      if AutoIncAttr=SQL_TRUE then
+        FieldType:=ftAutoInc;
+    end;
+
+    if FieldType=ftUnknown then // if unknown field type encountered, try finding more specific information about the ODBC SQL DataType
+    begin
+      SetLength(TypeName,TypeNameDefaultLength); // also garantuees uniqueness
+
+      ODBCCheckResult(
+        SQLColAttribute(ODBCCursor.FSTMTHandle,  // statement handle
+                        i,                       // column number
+                        SQL_DESC_TYPE_NAME,      // FieldIdentifier indicating the datasource dependent data type name (useful for diagnostics)
+                        @(TypeName[1]),          // default buffer
+                        TypeNameDefaultLength+1, // and its length; we include the #0 terminating any ansistring of Length > 0 in the buffer
+                        @TypeNameLength,         // actual type name length
+                        nil                      // no need for a pointer to return a numeric attribute at
+        ),
+        SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get datasource dependent type name for column %s.',[ColName]
+      );
+      // truncate buffer or make buffer long enough for entire column name (note: the call is the same for both cases!)
+      SetLength(TypeName,TypeNameLength);
+      // check whether entire column name was returned
+      if TypeNameLength>TypeNameDefaultLength then
+      begin
+        // request column name with buffer that is long enough
+        ODBCCheckResult(
+          SQLColAttribute(ODBCCursor.FSTMTHandle, // statement handle
+                        i,                        // column number
+                        SQL_DESC_TYPE_NAME,       // FieldIdentifier indicating the datasource dependent data type name (useful for diagnostics)
+                        @(TypeName[1]),           // buffer
+                        TypeNameLength+1,         // buffer size
+                        @TypeNameLength,          // actual length
+                        nil),                     // no need for a pointer to return a numeric attribute at
+          SQL_HANDLE_STMT, ODBCCursor.FSTMTHandle, 'Could not get datasource dependent type name for column %s.',[ColName]
+        );
+      end;
+
+      DatabaseErrorFmt('Column %s has an unknown or unsupported column type. Datasource dependent type name: %s. ODBC SQL data type code: %d.', [ColName, TypeName, DataType]);
+    end;
+
+    // add FieldDef
+    TFieldDef.Create(FieldDefs, FieldDefs.MakeNameUnique(ColName), FieldType, FieldSize, False, i);
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TODBCConnection.UpdateIndexDefs(IndexDefs: TIndexDefs; TableName: string);
@@ -1558,6 +1794,7 @@ begin
     citClientVersion:
       i:=SQL_DRIVER_VER;
   else
+<<<<<<< HEAD
     Result:=inherited GetConnectionInfo(InfoType);
     Exit;
   end;
@@ -1566,6 +1803,11 @@ begin
     SetString(Result, @b, l)
   else
     Result:='';
+=======
+    Result := ' ';
+  if not (SchemaType in [stNoSchema, stTables, stSysTables, stColumns, stProcedures]) then
+    DatabaseError(SMetadataUnavailable);
+>>>>>>> graemeg/cpstrnew
 end;
 
 

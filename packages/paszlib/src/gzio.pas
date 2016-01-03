@@ -136,7 +136,10 @@ var
   doseek,
   exists,
   writing : boolean;
+<<<<<<< HEAD
   old_file_mode: byte;
+=======
+>>>>>>> graemeg/cpstrnew
 begin
 
   if (path='') or (mode='') then begin
@@ -228,6 +231,7 @@ begin
     GetFAttr(s^.gzfile, Attr);
     exists:=(DosError= 0);
   {$endif}
+<<<<<<< HEAD
 
   doseek:=false;
   if ((s^.mode='a') and not exists) or (s^.mode='w') then
@@ -245,6 +249,23 @@ begin
     end;
 
   {$POP}
+=======
+  
+  doseek:=false;
+  if ((s^.mode='a') and not exists) or (s^.mode='w') then
+    begin
+   
+    ReWrite (s^.gzfile,1)  
+    end
+  else
+    begin
+      Reset (s^.gzfile,1);  
+      if s^.mode='a' then
+        doseek:=true;      // seek AFTER I/O check.
+    end;
+    
+  {$IFDEF IOCheck} {$I+} {$ENDIF}
+>>>>>>> graemeg/cpstrnew
   if (IOResult <> 0) then begin
     destroy(s);
     gzopen := gzFile(nil);

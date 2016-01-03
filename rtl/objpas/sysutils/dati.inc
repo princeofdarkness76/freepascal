@@ -344,12 +344,21 @@ Const
   
 function DateTimeToStr(DateTime: TDateTime; ForceTimeIfZero : Boolean = False): string;
 begin
+<<<<<<< HEAD
   DateTimeToString(Result, DateTimeToStrFormat[ForceTimeIfZero], DateTime)
 end ;
 
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings; ForceTimeIfZero : Boolean = False): string;
 begin
   DateTimeToString(Result,  DateTimeToStrFormat[ForceTimeIfZero], DateTime ,FormatSettings);
+=======
+  DateTimeToString(Result, 'c', DateTime);
+end ;
+
+function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
+begin
+  DateTimeToString(Result, 'c', DateTime ,FormatSettings);
+>>>>>>> graemeg/cpstrnew
 end;
 
 {   StrToDate converts the string S to a TDateTime value
@@ -378,8 +387,11 @@ var
    YearMoreThenTwoDigits : boolean;
 begin
   ErrorMsg:='';   Result:=0;
+<<<<<<< HEAD
   While (Len>0) and (S[Len-1] in [' ',#8,#9,#10,#12,#13]) do
     Dec(len);
+=======
+>>>>>>> graemeg/cpstrnew
   if (Len=0) then
     begin
       FixErrorMsg(SInvalidDateFormat,'');
@@ -503,6 +515,7 @@ begin
   if not TryEncodeDate(y, m, d, result) then
     errormsg:='Invalid date';
 end;
+<<<<<<< HEAD
 
 function StrToDate(const S: PChar; Len : integer; const useformat : string; separator : char = #0): TDateTime;
 
@@ -539,22 +552,61 @@ function StrToDate(const S: ShortString; separator : char): TDateTime;
 begin
   // S[1] always exists for shortstring. Length 0 will trigger an error.
   result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+=======
+
+function StrToDate(const S: PChar; Len : integer; const useformat : string; separator : char = #0): TDateTime;
+
+Var
+  MSg : AnsiString;
+
+begin
+  Result:=IntStrToDate(Msg,S,Len,useFormat,DefaultFormatSettings,Separator);
+  If (Msg<>'') then
+    Raise EConvertError.Create(Msg);
+end;
+
+function StrToDate(const S: ShortString; const useformat : string; separator : char = #0): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),UseFormat,separator);
+end;
+
+function StrToDate(const S: AnsiString; const useformat : string; separator : char = #0): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),UseFormat,separator);
+end;
+
+function StrToDate(const S: ShortString; separator : char): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+>>>>>>> graemeg/cpstrnew
 end;
 
 function StrToDate(const S: ShortString): TDateTime;
 begin
+<<<<<<< HEAD
   // S[1] always exists for shortstring. Length 0 will trigger an error.
   result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+=======
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+>>>>>>> graemeg/cpstrnew
 end;
 
 function StrToDate(const S: AnsiString; separator : char): TDateTime;
 begin
+<<<<<<< HEAD
     result := StrToDate(Pchar(S),Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+=======
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+>>>>>>> graemeg/cpstrnew
 end;
 
 function StrToDate(const S: AnsiString): TDateTime;
 begin
+<<<<<<< HEAD
   result := StrToDate(Pchar(S),Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+=======
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+>>>>>>> graemeg/cpstrnew
 end;
 
 {   StrToTime converts the string S to a TDateTime value
@@ -708,6 +760,7 @@ var
      if (TimeIndex = tiHour) or ((AmPm <> AMPM_None) and ((TimeValues[tiHour] > 12) or (TimeValues[tiHour] = 0))) or DigitPending then Exit;
      Result := True;
    end;
+<<<<<<< HEAD
 
 begin
   if separator = #0 then
@@ -845,9 +898,64 @@ begin
     end;
 end; 
 
+=======
+
+begin
+  if separator = #0 then
+        separator := defs.TimeSeparator;
+  AmPm := AMPM_None;
+  if not SplitElements(TimeValues, AmPm) then
+  begin
+    ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
+    Exit;
+  end;
+  if (AmPm=AMPM_PM) and (TimeValues[tiHour]<>12) then Inc(TimeValues[tiHour], 12)
+  else if (AmPm=AMPM_AM) and (TimeValues[tiHour]=12) then TimeValues[tiHour]:=0;
+
+  if not TryEncodeTime(TimeValues[tiHour], TimeValues[tiMin], TimeValues[tiSec], TimeValues[tiMSec], result) Then
+    //errormsg:='Invalid time.';
+    ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
+end ;
+
+function StrToTime(const S: PChar; Len : integer; separator : char = #0): TDateTime;
+
+Var
+  Msg : AnsiString;
+
+begin
+  Result:=IntStrToTime(Msg,S,Len,DefaultFormatSettings,Separator);
+  If (Msg<>'') then
+    Raise EConvertError.Create(Msg);
+end;
+
+function StrToTime(const s: ShortString; separator : char): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), separator);
+end;
+
+function StrToTime(const s: AnsiString; separator : char): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), separator);
+end;
+
+function StrToTime(const s: ShortString): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), #0);
+end;
+
+function StrToTime(const s: AnsiString): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), #0);
+end;
+
+{   StrToDateTime converts the string S to a TDateTime value
+    if S does not represent a valid date and/or time value
+    an EConvertError will be raised   }
+>>>>>>> graemeg/cpstrnew
 
 function StrToDateTime(const s: AnsiString; const FormatSettings : TFormatSettings): TDateTime;
 var
+<<<<<<< HEAD
   TimeStr, DateStr: AnsiString;
   PartsFound: Integer;
 begin
@@ -875,10 +983,65 @@ var
 begin
   A:=S;
   Result:=StrToDateTime(A,FormatSettings);
+=======
+  I: integer;
+begin
+  I:=Pos(DefaultFormatSettings.TimeSeparator,S);
+  If (I>0) then
+    begin
+    While (I>0) and (S[I]<>' ') do
+      Dec(I);
+    If I>0 then
+      result:=ComposeDateTime(StrToDate(Copy(S,1,I-1)),StrToTime(Copy(S,i+1, Length(S)-i)))
+    else
+      result:=StrToTime(S)
+    end
+  else
+    Result:=StrToDate(S);
+end;
+
+function StrToDateTime(const s: AnsiString; const UseFormat : TFormatSettings): TDateTime;
+var
+  I: integer;
+begin
+  I:=Pos(UseFormat.TimeSeparator,S);
+  If (I>0) then
+    begin
+    While (I>0) and (S[I]<>' ') do
+      Dec(I);
+    If I>0 then
+      result:=ComposeDateTime(StrToDate(Copy(S,1,I-1),UseFormat.ShortDateFormat,UseFormat.DateSeparator),
+                              StrToTime(Copy(S,i+1, Length(S)-i),UseFormat.TimeSeparator))
+    else
+      result:=StrToTime(S,UseFormat.TimeSeparator)
+    end
+  else
+    Result:=StrToDate(S,UseFormat.ShortDateFormat,UseFormat.DateSeparator);
+end;
+
+function StrToDateTime(const s: ShortString; const UseFormat : TFormatSettings): TDateTime;
+var
+  I: integer;
+begin
+  I:=Pos(UseFormat.TimeSeparator,S);
+  If (I>0) then
+    begin
+    While (I>0) and (S[I]<>' ') do
+      Dec(I);
+    If I>0 then
+      result:=ComposeDateTime(StrToDate(Copy(S,1,I-1),UseFormat.ShortDateFormat,UseFormat.DateSeparator),
+                              StrToTime(Copy(S,i+1, Length(S)-i),UseFormat.TimeSeparator))
+    else
+      result:=StrToTime(S,UseFormat.TimeSeparator)
+    end
+  else
+    Result:=StrToDate(S,UseFormat.ShortDateFormat,UseFormat.DateSeparator);
+>>>>>>> graemeg/cpstrnew
 end;
 
 {   FormatDateTime formats DateTime to the given format string FormatStr   }
 
+<<<<<<< HEAD
 function FormatDateTime(const FormatStr: string; DateTime: TDateTime; Options : TFormatDateTimeOptions = []): string;
 begin
   DateTimeToString(Result, FormatStr, DateTime, DefaultFormatSettings,Options);
@@ -887,10 +1050,21 @@ end;
 function FormatDateTime(const FormatStr: string; DateTime: TDateTime; const FormatSettings: TFormatSettings; Options : TFormatDateTimeOptions = []): string;
 begin
   DateTimeToString(Result, FormatStr, DateTime, FormatSettings,Options);
+=======
+function FormatDateTime(const FormatStr: string; DateTime: TDateTime): string;
+begin
+  DateTimeToString(Result, FormatStr, DateTime, DefaultFormatSettings);
+end;
+
+function FormatDateTime(const FormatStr: string; DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
+begin
+  DateTimeToString(Result, FormatStr, DateTime, FormatSettings);
+>>>>>>> graemeg/cpstrnew
 end;
 
 {   DateTimeToString formats DateTime to the given format in FormatStr   }
 
+<<<<<<< HEAD
 procedure DateTimeToString(out Result: string; const FormatStr: string; 
   const DateTime: TDateTime; Options : TFormatDateTimeOptions = []);
 begin
@@ -899,6 +1073,14 @@ end;
 
 procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime; 
   const FormatSettings: TFormatSettings; Options : TFormatDateTimeOptions = []);
+=======
+procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime);
+begin
+  DateTimeToString(Result, FormatStr, DateTime, DefaultFormatSettings);
+end;
+
+procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime; const FormatSettings: TFormatSettings);
+>>>>>>> graemeg/cpstrnew
 var
   ResultLen: integer;
   ResultBuffer: array[0..255] of char;
@@ -982,6 +1164,7 @@ var
 
 var
   Year, Month, Day, DayOfWeek, Hour, Minute, Second, MilliSecond: word;
+<<<<<<< HEAD
 
   procedure StoreFormat(const FormatStr: string; Nesting: Integer; TimeFlag: Boolean);
   var
@@ -994,6 +1177,20 @@ var
     tmp: integer;
     isInterval: Boolean;
 
+=======
+
+
+  procedure StoreFormat(const FormatStr: string; Nesting: Integer; TimeFlag: Boolean);
+  var
+    Token, lastformattoken: char;
+    FormatCurrent: pchar;
+    FormatEnd: pchar;
+    Count: integer;
+    Clock12: boolean;
+    P: pchar;
+    tmp: integer;
+
+>>>>>>> graemeg/cpstrnew
   begin
     if Nesting > 1 then  // 0 is original string, 1 is included FormatString
       Exit;
@@ -1001,7 +1198,10 @@ var
     FormatCurrent := PChar(FormatStr);
     FormatEnd := FormatCurrent + Length(FormatStr);
     Clock12 := false;
+<<<<<<< HEAD
     isInterval := false;
+=======
+>>>>>>> graemeg/cpstrnew
     P := FormatCurrent;
     // look for unquoted 12-hour clock token
     while P < FormatEnd do
@@ -1029,7 +1229,10 @@ var
     end ;
     token := #255;
     lastformattoken := ' ';
+<<<<<<< HEAD
     prevlasttoken := 'H';
+=======
+>>>>>>> graemeg/cpstrnew
     while FormatCurrent < FormatEnd do
     begin
       Token := UpCase(FormatCurrent^);
@@ -1071,9 +1274,13 @@ var
         end ;
         '/': StoreStr(@FormatSettings.DateSeparator, 1);
         ':': StoreStr(@FormatSettings.TimeSeparator, 1);
+<<<<<<< HEAD
 	'[': if (fdoInterval in Options) then isInterval := true else StoreStr(FormatCurrent, 1);
 	']': if (fdoInterval in Options) then isInterval := false else StoreStr(FormatCurrent, 1);
         ' ', 'C', 'D', 'H', 'M', 'N', 'S', 'T', 'Y', 'Z', 'F' :
+=======
+        ' ', 'C', 'D', 'H', 'M', 'N', 'S', 'T', 'Y','Z' :
+>>>>>>> graemeg/cpstrnew
         begin
           while (P < FormatEnd) and (UpCase(P^) = Token) do
             Inc(P);
@@ -1087,9 +1294,12 @@ var
                 StoreInt(Year mod 100, 2);
             end;
             'M': begin
+<<<<<<< HEAD
 	      if isInterval and ((prevlasttoken = 'H') or TimeFlag) then
 	        StoreInt(Minute + (Hour + trunc(abs(DateTime))*24)*60, 0)
 	      else
+=======
+>>>>>>> graemeg/cpstrnew
               if (lastformattoken = 'H') or TimeFlag then
               begin
                 if Count = 1 then
@@ -1119,11 +1329,15 @@ var
                 StoreFormat(FormatSettings.LongDateFormat, Nesting+1, False);
               end ;
             end ;
+<<<<<<< HEAD
             'H': 
 	      if isInterval then
 	        StoreInt(Hour + trunc(abs(DateTime))*24, 0)
 	      else
 	      if Clock12 then
+=======
+            'H': if Clock12 then
+>>>>>>> graemeg/cpstrnew
               begin
                 tmp := hour mod 12;
                 if tmp=0 then tmp:=12;
@@ -1138,6 +1352,7 @@ var
                 else
                   StoreInt(Hour, 2);
               end;
+<<<<<<< HEAD
             'N': if isInterval then
 	           StoreInt(Minute + (Hour + trunc(abs(DateTime))*24)*60, 0)
 		 else
@@ -1149,6 +1364,13 @@ var
 	           StoreInt(Second + (Minute + (Hour + trunc(abs(DateTime))*24)*60)*60, 0)
 	         else 
 	         if Count = 1 then
+=======
+            'N': if Count = 1 then
+                   StoreInt(Minute, 0)
+                 else
+                   StoreInt(Minute, 2);
+            'S': if Count = 1 then
+>>>>>>> graemeg/cpstrnew
                    StoreInt(Second, 0)
                  else
                    StoreInt(Second, 2);
@@ -1168,11 +1390,14 @@ var
                       StoreFormat(FormatSettings.LongTimeFormat, Nesting+1, True);
                      end;
                  end;
+<<<<<<< HEAD
             'F': begin
                    StoreFormat(FormatSettings.ShortDateFormat, Nesting+1, False);
                    StoreString(' ');
                    StoreFormat(FormatSettings.LongTimeFormat, Nesting+1, True);
                  end;
+=======
+>>>>>>> graemeg/cpstrnew
 {$IFDEF MSWindows}
             'E':
                begin
@@ -1185,7 +1410,10 @@ var
                      Count := P - FormatCurrent;
                      StoreString(ConvertEraYearString(Count,Year,Month,Day));
                    end;
+<<<<<<< HEAD
 		 prevlasttoken := lastformattoken;  
+=======
+>>>>>>> graemeg/cpstrnew
                  lastformattoken:=token;
                end;
              'G':
@@ -1199,12 +1427,18 @@ var
                      Count := P - FormatCurrent;
                      StoreString(ConvertEraString(Count,Year,Month,Day));
                    end;
+<<<<<<< HEAD
 		 prevlasttoken := lastformattoken;
+=======
+>>>>>>> graemeg/cpstrnew
                  lastformattoken:=token;
                end;
 {$ENDIF MSWindows}
           end;
+<<<<<<< HEAD
 	  prevlasttoken := lastformattoken;
+=======
+>>>>>>> graemeg/cpstrnew
           lastformattoken := token;
         end;
         else
@@ -1291,7 +1525,10 @@ Var
   Msg : Ansistring;
 
 begin
+<<<<<<< HEAD
   // S[1] always exists for shortstring. Length 0 will trigger an error.
+=======
+>>>>>>> graemeg/cpstrnew
   Value:=IntStrToDate(Msg,@S[1],Length(S),useformat,defaultformatsettings,separator);
   Result:=(Msg='');
 end;
@@ -1306,6 +1543,7 @@ begin
   Result:=Length(S)<>0;
   If Result then
     begin
+<<<<<<< HEAD
     Value:=IntStrToDate(Msg,PChar(S),Length(S),useformat,DefaultFormatSettings,Separator);
     Result:=(Msg='');
     end;
@@ -1315,8 +1553,25 @@ function TryStrToDate(const S: ShortString; out Value: TDateTime; separator : ch
 begin
   Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,Separator);
 end;
+=======
+    Value:=IntStrToDate(Msg,@S[1],Length(S),useformat,DefaultFormatSettings,Separator);
+    Result:=(Msg='');
+    end;
+end;
+>>>>>>> graemeg/cpstrnew
+
+function TryStrToDate(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,Separator);
+end;
 
 
+function TryStrToDate(const S: AnsiString; out Value: TDateTime): Boolean;
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,#0);
+end;
+
+<<<<<<< HEAD
 function TryStrToDate(const S: AnsiString; out Value: TDateTime): Boolean;
 begin
   Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,#0);
@@ -1332,17 +1587,88 @@ function TryStrToDate(const S: string; out Value: TDateTime; const FormatSetting
 Var
   Msg : Ansistring;
 
+=======
+function TryStrToDate(const S: AnsiString; out Value: TDateTime; separator : char): Boolean;
+
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,Separator);
+end;
+
+function TryStrToDate(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+Var
+  Msg : Ansistring;
+
 begin
   Result:=Length(S)<>0;
   If Result then
     begin
-      Value:=IntStrToDate(Msg,PChar(S),Length(S),FormatSettings.ShortDateFormat,FormatSettings,#0);
+      Value:=IntStrToDate(Msg,@S[1],Length(S),FormatSettings.ShortDateFormat,FormatSettings,#0);
       Result:=(Msg='');
     end;
 end;
 
 function TryStrToTime(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
 
+Var
+  Msg : AnsiString;
+begin
+  Value:=IntStrToTime(Msg,@S[1],Length(S),DefaultFormatSettings,Separator);
+  result:=(Msg='');
+end;
+
+function TryStrToTime(const S: ShortString; out Value: TDateTime): Boolean;
+begin
+  Result := TryStrToTime(S,Value,#0);
+end;
+
+function TryStrToTime(const S: AnsiString; out Value: TDateTime; separator : char): Boolean;
+Var
+  Msg : AnsiString;
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+      Value:=IntStrToTime(Msg,@S[1],Length(S),DefaultFormatSettings,Separator);
+      Result:=(Msg='');
+    end;
+end;
+
+function TryStrToTime(const S: AnsiString; out Value: TDateTime): Boolean;
+begin
+    result := TryStrToTime(S,Value,#0);
+end;
+
+function TryStrToTime(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+Var msg : AnsiString;
+>>>>>>> graemeg/cpstrnew
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+<<<<<<< HEAD
+      Value:=IntStrToDate(Msg,PChar(S),Length(S),FormatSettings.ShortDateFormat,FormatSettings,#0);
+      Result:=(Msg='');
+=======
+      Value:=IntStrToTime(Msg,@S[1],Length(S),FormatSettings,#0);
+      Result:=(Msg='');
+    end;
+end;
+
+function TryStrToDateTime(const S: ShortString; out Value: TDateTime): Boolean;
+  begin
+    result:=true;
+    try
+      value:=StrToDateTime(s);
+    except
+      on EConvertError do
+        result:=false
+>>>>>>> graemeg/cpstrnew
+    end;
+end;
+
+function TryStrToTime(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
+
+<<<<<<< HEAD
 Var
   Msg : AnsiString;
 begin
@@ -1381,6 +1707,16 @@ begin
     begin
       Value:=IntStrToTime(Msg,PChar(S),Length(S),FormatSettings,#0);
       Result:=(Msg='');
+=======
+function TryStrToDateTime(const S: AnsiString; out Value: TDateTime): Boolean;
+  begin
+    result:=true;
+    try
+      value:=StrToDateTime(s);
+    except
+      on EConvertError do
+        result:=false
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 
@@ -1389,6 +1725,7 @@ function TryStrToDateTime(const S: ShortString; out Value: TDateTime): Boolean;
     result := TryStrToDateTime(S, Value, DefaultFormatSettings);
   end;
 
+<<<<<<< HEAD
 function TryStrToDateTime(const S: AnsiString; out Value: TDateTime): Boolean;
   begin
     result := TryStrToDateTime(S, Value, DefaultFormatSettings);
@@ -1431,6 +1768,45 @@ begin
    result := StrToTimeDef(S,DefValue,#0);
 end;
 
+=======
+function TryStrToDateTime(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+var
+  I: integer;
+  dtdate, dttime :TDateTime;
+begin
+  result:=false;
+  I:=Pos(FormatSettings.TimeSeparator,S);
+  If (I>0) then
+    begin
+      While (I>0) and (S[I]<>' ') do
+        Dec(I);
+      If I>0 then
+        begin
+          if not TryStrToDate(Copy(S,1,I-1),dtdate,Formatsettings) then
+            exit;
+          if not TryStrToTime(Copy(S,i+1, Length(S)-i),dttime,Formatsettings) then
+            exit;
+          Value:=ComposeDateTime(dtdate,dttime);
+          result:=true;
+        end
+      else
+         result:=TryStrToTime(s,Value,Formatsettings);
+    end
+  else
+    result:=TryStrToDate(s,Value,Formatsettings);
+end;
+
+function StrToDateDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+begin
+   result := StrToDateDef(S,DefValue,#0);
+end;
+
+function StrToTimeDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+begin
+   result := StrToTimeDef(S,DefValue,#0);
+end;
+
+>>>>>>> graemeg/cpstrnew
 function StrToDateTimeDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
 begin
   if not TryStrToDateTime(s,Result) Then

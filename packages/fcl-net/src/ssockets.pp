@@ -409,13 +409,23 @@ end;
 Function TSocketStream.Read (Var Buffer; Count : Longint) : longint;
 
 begin
+<<<<<<< HEAD
   Result:=FHandler.Recv(Buffer,Count);
+=======
+  Flags:=0;
+  Result:=fprecv(handle,@Buffer,count,flags);
+>>>>>>> graemeg/cpstrnew
 end;
 
 Function TSocketStream.Write (Const Buffer; Count : Longint) :Longint;
 
 begin
+<<<<<<< HEAD
   Result:=FHandler.Send(Buffer,Count);
+=======
+  Flags:=0;
+  Result:=fpsend(handle,@Buffer,count,flags);
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TSocketStream.GetLocalAddress: TSockAddr;
@@ -550,8 +560,22 @@ begin
         if Assigned(Stream) then
           begin
           Inc (NoConnections);
+<<<<<<< HEAD
           DoConnect(Stream);
           end;
+=======
+          If FAccepting and DoConnectQuery(NewSocket) Then
+            begin
+            Stream:=SockToStream(NewSocket);
+            DoConnect(Stream);
+            end
+          else
+            begin
+            CloseSocket(NewSocket);
+            NewSocket:=-1;
+            end;          
+          end
+>>>>>>> graemeg/cpstrnew
       except
         On E : ESocketError do
           begin
@@ -718,9 +742,15 @@ end;
 Procedure TInetServer.Bind;
 
 begin
+<<<<<<< HEAD
   Faddr.sin_family := AF_INET;
   Faddr.sin_port := ShortHostToNet(FPort);
   Faddr.sin_addr.s_addr := LongWord(StrToNetAddr(FHost));
+=======
+  Faddr.family := AF_INET;
+  Faddr.port := ShortHostToNet(FPort);
+  Faddr.addr := LongWord(StrToNetAddr(FHost));
+>>>>>>> graemeg/cpstrnew
   if  Sockets.fpBind(FSocket, @FAddr, Sizeof(FAddr))<>0 then
     raise ESocketError.Create(seBindFailed, [IntToStr(FPort)]);
   FBound:=True;
@@ -741,6 +771,7 @@ Var
   R : integer;
 begin
   L:=SizeOf(FAddr);
+<<<<<<< HEAD
 {$IFDEF UNIX}
   R:=ESysEINTR;
   While (R=ESysEINTR) do
@@ -749,6 +780,10 @@ begin
    Result:=Sockets.fpAccept(Socket,@Faddr,@L);
    R:=SocketError;
    end;
+=======
+  Result:=Sockets.fpAccept(Socket,@Faddr,@L);
+  If Result<0 then
+>>>>>>> graemeg/cpstrnew
 {$ifdef Unix}
   If (Result<0) then
     If R=ESysEWOULDBLOCK then
@@ -832,9 +867,14 @@ begin
   FHost:=AHost;
   FPort:=APort;
   S:=fpSocket(AF_INET,SOCK_STREAM,0);
+<<<<<<< HEAD
   Inherited Create(S,AHandler);
   if (AHandler=Nil) then // Backwards compatible behaviour.
     Connect;
+=======
+  DoConnect(S);
+  Inherited Create(S);
+>>>>>>> graemeg/cpstrnew
 end;
 
 Procedure TInetSocket.Connect;
@@ -855,6 +895,7 @@ begin
       finally
         free;
       end;
+<<<<<<< HEAD
   addr.sin_family := AF_INET;
   addr.sin_port := ShortHostToNet(FPort);
   addr.sin_addr.s_addr := HostToNet(a.s_addr);
@@ -871,6 +912,14 @@ begin
       end;
   If (Res<0) then
     Raise ESocketError.Create(seConnectFailed, [Format('%s:%d',[FHost, FPort])]);
+=======
+  addr.family := AF_INET;
+  addr.port := ShortHostToNet(FPort);
+  addr.addr := HostToNet(a.s_addr);
+
+  If  Sockets.fpConnect(ASocket, @addr, sizeof(addr))<>0 then
+    raise ESocketError.Create(seConnectFailed, [Format('%s:%d',[FHost, FPort])]);
+>>>>>>> graemeg/cpstrnew
 end;
 
 { ---------------------------------------------------------------------

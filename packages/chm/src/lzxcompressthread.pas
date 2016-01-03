@@ -12,7 +12,11 @@
 
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/cpstrnew
 }
 {
   See the file COPYING.FPC, included in this distribution,
@@ -294,7 +298,11 @@ begin
     FMemList.Delete(0);
   end
   else
+<<<<<<< HEAD
     Result := Getmem(FCompressor.BlockSize*2); // it's unlikely but possible for the block to be bigger than the orig size
+=======
+    Result := Getmem(FCompressor.BlockSize);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TLZXMasterThread.Lock;
@@ -514,9 +522,13 @@ begin
   FreeOnTerminate := True;
 
   Data  := GetMem(ABlockSize);
+<<<<<<< HEAD
 
   //it's possible to have a chunk be slightly bigger than the data it's compressing
   CompressedData:=GetMem(ABlockSize*2);
+=======
+  CompressedData:=GetMem(ABlockSize);
+>>>>>>> graemeg/cpstrnew
 
   lzx_init(@LZXdata, longint(WindowSizeCode),
            TGetBytesFunc(@TLZXWorkerThread.GetBytes), Self,

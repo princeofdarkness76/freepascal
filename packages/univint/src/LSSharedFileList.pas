@@ -1,17 +1,34 @@
 {
+<<<<<<< HEAD
      File:       LSSharedFileList.h
  
      Contains:   Services to load and share file lists.
  
      Copyright:  Copyright 2003-2009 by Apple Inc., all rights reserved.
+=======
+     File:       LaunchServices/LSSharedFileList.h
+ 
+     Contains:   Services to load and share file lists.
+ 
+     Version:    LaunchServices-360.3~1
+ 
+     Copyright:  © 2005-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 }
 {	 Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {	 Updated Pascal Translation: Jonas Maebe <jonas@freepascal.org>, September 2012 }
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{	 Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -67,11 +84,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -90,29 +110,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -122,13 +157,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -140,17 +179,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -166,6 +214,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -224,10 +276,15 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL,CFRunLoop,Files,IconsCore,Author
    Each list can also have various properties attached.
 }
 type
+<<<<<<< HEAD
 	LSSharedFileListRef = ^OpaqueLSSharedFileListRef; { an opaque type }
 	OpaqueLSSharedFileListRef = record end;
 	LSSharedFileListItemRef = ^OpaqueLSSharedFileListItemRef; { an opaque type }
 	OpaqueLSSharedFileListItemRef = record end;
+=======
+	LSSharedFileListRef = ^SInt32; { an opaque type }
+	LSSharedFileListItemRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 { list types }
 
@@ -235,71 +292,116 @@ type
  *  kLSSharedFileListFavoriteVolumes
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListFavoriteVolumes: CFStringRef; external name '_kLSSharedFileListFavoriteVolumes'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  kLSSharedFileListFavoriteItems
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListFavoriteItems: CFStringRef; external name '_kLSSharedFileListFavoriteItems'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  kLSSharedFileListRecentApplicationItems
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentApplicationItems: CFStringRef; external name '_kLSSharedFileListRecentApplicationItems'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  kLSSharedFileListRecentDocumentItems
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentDocumentItems: CFStringRef; external name '_kLSSharedFileListRecentDocumentItems'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  kLSSharedFileListRecentServerItems
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentServerItems: CFStringRef; external name '_kLSSharedFileListRecentServerItems'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  kLSSharedFileListSessionLoginItems
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListSessionLoginItems: CFStringRef; external name '_kLSSharedFileListSessionLoginItems'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 
 
@@ -311,11 +413,25 @@ var kLSSharedFileListSessionLoginItems: CFStringRef; external name '_kLSSharedFi
  *
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  kLSSharedFileListGlobalLoginItems
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListGlobalLoginItems: CFStringRef; external name '_kLSSharedFileListGlobalLoginItems'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_5, __MAC_10_9, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { LSSharedFileList property keys }
@@ -329,12 +445,20 @@ var kLSSharedFileListGlobalLoginItems: CFStringRef; external name '_kLSSharedFil
  *    CFNumber
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListRecentItemsMaxAmount: CFStringRef; external name '_kLSSharedFileListRecentItemsMaxAmount'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  kLSSharedFileListVolumesComputerVisible
@@ -344,12 +468,20 @@ var kLSSharedFileListRecentItemsMaxAmount: CFStringRef; external name '_kLSShare
  *    property is CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListVolumesComputerVisible: CFStringRef; external name '_kLSSharedFileListVolumesComputerVisible'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  kLSSharedFileListVolumesIDiskVisible
@@ -359,12 +491,20 @@ var kLSSharedFileListVolumesComputerVisible: CFStringRef; external name '_kLSSha
  *    property is CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListVolumesIDiskVisible: CFStringRef; external name '_kLSSharedFileListVolumesIDiskVisible'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_5, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  kLSSharedFileListVolumesNetworkVisible
@@ -374,12 +514,20 @@ var kLSSharedFileListVolumesIDiskVisible: CFStringRef; external name '_kLSShared
  *    property is CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListVolumesNetworkVisible: CFStringRef; external name '_kLSSharedFileListVolumesNetworkVisible'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 { item default positions }
 
@@ -392,12 +540,20 @@ var kLSSharedFileListVolumesNetworkVisible: CFStringRef; external name '_kLSShar
  *    the list.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListItemBeforeFirst: LSSharedFileListItemRef; external name '_kLSSharedFileListItemBeforeFirst'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  kLSSharedFileListItemLast
@@ -407,12 +563,20 @@ var kLSSharedFileListItemBeforeFirst: LSSharedFileListItemRef; external name '_k
  *    list.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListItemLast: LSSharedFileListItemRef; external name '_kLSSharedFileListItemLast'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { LSSharedFileListItem property keys }
@@ -425,12 +589,20 @@ var kLSSharedFileListItemLast: LSSharedFileListItemRef; external name '_kLSShare
  *    Is item hidden in UI? Associated property is CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListItemHidden: CFStringRef; external name '_kLSSharedFileListItemHidden'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSSharedFileListLoginItemHidden
  *  
@@ -439,12 +611,20 @@ var kLSSharedFileListItemHidden: CFStringRef; external name '_kLSSharedFileListI
  *    CFBoolean.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.6 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.6 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSSharedFileListLoginItemHidden: CFStringRef; external name '_kLSSharedFileListLoginItemHidden'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 { LSSharedFileListItemResolve flags }
 const
@@ -476,12 +656,20 @@ type
  *    CFTypeID for the LSSharedFileListRef type.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListGetTypeID: CFTypeID; external name '_LSSharedFileListGetTypeID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -498,12 +686,20 @@ function LSSharedFileListGetTypeID: CFTypeID; external name '_LSSharedFileListGe
  *    CFTypeID for the LSSharedFileListItemRef type.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemGetTypeID: CFTypeID; external name '_LSSharedFileListItemGetTypeID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -539,12 +735,20 @@ function LSSharedFileListItemGetTypeID: CFTypeID; external name '_LSSharedFileLi
  *    object is not needed anymore.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListCreate( inAllocator: CFAllocatorRef; inListType: CFStringRef; listOptions: CFTypeRef ): LSSharedFileListRef; external name '_LSSharedFileListCreate';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -572,12 +776,20 @@ function LSSharedFileListCreate( inAllocator: CFAllocatorRef; inListType: CFStri
  *      Authorization reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListSetAuthorization( inList: LSSharedFileListRef; inAuthorization: AuthorizationRef ): OSStatus; external name '_LSSharedFileListSetAuthorization';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -612,12 +824,20 @@ function LSSharedFileListSetAuthorization( inList: LSSharedFileListRef; inAuthor
  *      Context pointer defined by client.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure LSSharedFileListAddObserver( inList: LSSharedFileListRef; inRunloop: CFRunLoopRef; inRunloopMode: CFStringRef; callback: LSSharedFileListChangedProcPtr; context: UnivPtr ); external name '_LSSharedFileListAddObserver';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -650,12 +870,20 @@ procedure LSSharedFileListAddObserver( inList: LSSharedFileListRef; inRunloop: C
  *      Context pointer defined by client.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure LSSharedFileListRemoveObserver( inList: LSSharedFileListRef; inRunloop: CFRunLoopRef; inRunloopMode: CFStringRef; callback: LSSharedFileListChangedProcPtr; context: UnivPtr ); external name '_LSSharedFileListRemoveObserver';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -676,12 +904,20 @@ procedure LSSharedFileListRemoveObserver( inList: LSSharedFileListRef; inRunloop
  *      Shared list reference.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListGetSeedValue( inList: LSSharedFileListRef ): UInt32; external name '_LSSharedFileListGetSeedValue';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -710,12 +946,20 @@ function LSSharedFileListGetSeedValue( inList: LSSharedFileListRef ): UInt32; ex
  *    property object is not needed anymore.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListCopyProperty( inList: LSSharedFileListRef; inPropertyName: CFStringRef ): CFTypeRef; external name '_LSSharedFileListCopyProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -742,12 +986,20 @@ function LSSharedFileListCopyProperty( inList: LSSharedFileListRef; inPropertyNa
  *      Property data to set. Pass NULL to remove existing property.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListSetProperty( inList: LSSharedFileListRef; inPropertyName: CFStringRef; inPropertyData: CFTypeRef ): OSStatus; external name '_LSSharedFileListSetProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -776,12 +1028,20 @@ function LSSharedFileListSetProperty( inList: LSSharedFileListRef; inPropertyNam
  *    released with CFRelease when snapshot array is not needed anymore.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListCopySnapshot( inList: LSSharedFileListRef; var outSnapshotSeed: UInt32 ): CFArrayRef; external name '_LSSharedFileListCopySnapshot';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -831,12 +1091,20 @@ function LSSharedFileListCopySnapshot( inList: LSSharedFileListRef; var outSnaps
  *    item is not needed anymore.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListInsertItemURL( inList: LSSharedFileListRef; insertAfterThisItem: LSSharedFileListItemRef; inDisplayName: CFStringRef; inIconRef: IconRef; inURL: CFURLRef; inPropertiesToSet: CFDictionaryRef; inPropertiesToClear: CFArrayRef ): LSSharedFileListItemRef; external name '_LSSharedFileListInsertItemURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -886,12 +1154,20 @@ function LSSharedFileListInsertItemURL( inList: LSSharedFileListRef; insertAfter
  *    item is not needed anymore.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListInsertItemFSRef( inList: LSSharedFileListRef; insertAfterThisItem: LSSharedFileListItemRef; inDisplayName: CFStringRef; inIconRef: IconRef; const (*var*) inFSRef: FSRef; inPropertiesToSet: CFDictionaryRef; inPropertiesToClear: CFArrayRef ): LSSharedFileListItemRef; external name '_LSSharedFileListInsertItemFSRef';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -920,12 +1196,20 @@ function LSSharedFileListInsertItemFSRef( inList: LSSharedFileListRef; insertAft
  *      end of the shared list.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemMove( inList: LSSharedFileListRef; inItem: LSSharedFileListItemRef; inMoveAfterItem: LSSharedFileListItemRef ): OSStatus; external name '_LSSharedFileListItemMove';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -949,12 +1233,20 @@ function LSSharedFileListItemMove( inList: LSSharedFileListRef; inItem: LSShared
  *      Item to remove.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemRemove( inList: LSSharedFileListRef; inItem: LSSharedFileListItemRef ): OSStatus; external name '_LSSharedFileListItemRemove';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -975,12 +1267,20 @@ function LSSharedFileListItemRemove( inList: LSSharedFileListRef; inItem: LSShar
  *      Shared list to clear.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListRemoveAllItems( inList: LSSharedFileListRef ): OSStatus; external name '_LSSharedFileListRemoveAllItems';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -996,12 +1296,20 @@ function LSSharedFileListRemoveAllItems( inList: LSSharedFileListRef ): OSStatus
  *    Thread safe since version 10.5
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemGetID( inItem: LSSharedFileListItemRef ): UInt32; external name '_LSSharedFileListItemGetID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1021,12 +1329,20 @@ function LSSharedFileListItemGetID( inItem: LSSharedFileListItemRef ): UInt32; e
  *    calling ReleaseIconRef().
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemCopyIconRef( inItem: LSSharedFileListItemRef ): IconRef; external name '_LSSharedFileListItemCopyIconRef';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1043,12 +1359,20 @@ function LSSharedFileListItemCopyIconRef( inItem: LSSharedFileListItemRef ): Ico
  *    Thread safe since version 10.5
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemCopyDisplayName( inItem: LSSharedFileListItemRef ): CFStringRef; external name '_LSSharedFileListItemCopyDisplayName';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1079,12 +1403,20 @@ function LSSharedFileListItemCopyDisplayName( inItem: LSSharedFileListItemRef ):
  *      FSRef of original item. Can be NULL.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemResolve( inItem: LSSharedFileListItemRef; inFlags: UInt32; var outURL: CFURLRef; var outRef: FSRef ): OSStatus; external name '_LSSharedFileListItemResolve';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1101,12 +1433,20 @@ function LSSharedFileListItemResolve( inItem: LSSharedFileListItemRef; inFlags: 
  *    Thread safe since version 10.5
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemCopyProperty( inItem: LSSharedFileListItemRef; inPropertyName: CFStringRef ): CFTypeRef; external name '_LSSharedFileListItemCopyProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1122,12 +1462,21 @@ function LSSharedFileListItemCopyProperty( inItem: LSSharedFileListItemRef; inPr
  *    Thread safe since version 10.5
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSharedFileListItemSetProperty( inItem: LSSharedFileListItemRef; inPropertyName: CFStringRef; inPropertyData: CFTypeRef ): OSStatus; external name '_LSSharedFileListItemSetProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

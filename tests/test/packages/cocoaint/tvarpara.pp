@@ -1,5 +1,9 @@
 { %target=darwin }
+<<<<<<< HEAD
 { %cpu=powerpc,i386,powerpc64,x86_64 }
+=======
+{ %cpu=powerpc,i386 }
+>>>>>>> graemeg/cpstrnew
 
 {$mode objfpc}{$H+}
 {$modeswitch objectivec1}

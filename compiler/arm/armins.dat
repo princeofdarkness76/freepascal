@@ -239,9 +239,17 @@ reg32,reg32              \xC\x1\x40                     ARM32,ARMv4
 reg32,reg32,shifterop    \xE\x1\x40                     ARM32,ARMv4
 reg32,immshifter         \xF\x3\x40                     ARM32,ARMv4
 
+<<<<<<< HEAD
 [CMFcc]
 fpureg,fpureg            \xA2\xE\x90                    ARM32,FPA
 fpureg,immshifter        \xA2\xE\x90                    ARM32,FPA
+=======
+[CPS]
+[CPSID]
+[CPSIE]
+
+[DVFcc]
+>>>>>>> graemeg/cpstrnew
 
 [CMFEcc]
 fpureg,fpureg            \xA2\xE\xC0                    ARM32,FPA
@@ -1337,10 +1345,13 @@ vreg,memam2             \x95\xED\x10\xA               THUMB32,VFPv2
 vreg,memam2             \x45\xD\x10\xA                ARM32,VFPv2
 
 [FLDMcc]
+<<<<<<< HEAD
 memam4,reglist		      \x94\xEC\x10\xA		         THUMB32,VFPv2
 reg32,reglist		      \x94\xEC\x10\xA		         THUMB32,VFPv2
 memam4,reglist		      \x44\xC\x10\xA		            ARM32,VFPv2
 reg32,reglist		      \x44\xC\x10\xA		            ARM32,VFPv2
+=======
+>>>>>>> graemeg/cpstrnew
 
 [FLDScc]
 vreg,memam2             \x95\xED\x10\xA               THUMB32,VFPv2
@@ -1445,8 +1456,17 @@ vreg,vreg               \x92\xEE\xB1\xA\xC0\0         THUMB32,VFPv2
 vreg,vreg               \x42\xE\xB1\xA\xC0\0          ARM32,VFPv2
 
 [FSQRTScc]
+<<<<<<< HEAD
 vreg,vreg               \x92\xEE\xB1\xA\xC0\1         THUMB32,VFPv2
 vreg,vreg               \x42\xE\xB1\xA\xC0\1          ARM32,VFPv2
+=======
+
+[FSTDcc]
+
+[FSTMcc]
+
+[FSTScc]
+>>>>>>> graemeg/cpstrnew
 
 [FSUBDcc]
 vreg,vreg,vreg          \x92\xEE\x30\xA\x40\0         THUMB32,VFPv2
@@ -1477,8 +1497,11 @@ vreg,vreg               \x43\xEE\xB8\xB\x40          THUMB32,VFPv2
 vreg,vreg               \x43\xE\xB8\xB\x40           ARM32,VFPv2
 
 [FUITOScc]
+<<<<<<< HEAD
 vreg,vreg               \x43\xEE\xB8\xA\x40          THUMB32,VFPv2
 vreg,vreg               \x43\xE\xB8\xA\x40           ARM32,VFPv2
+=======
+>>>>>>> graemeg/cpstrnew
 
 [FMDRRcc]
 
@@ -1486,6 +1509,7 @@ vreg,vreg               \x43\xE\xB8\xA\x40           ARM32,VFPv2
 
 ; Thumb-2
 
+<<<<<<< HEAD
 [POP]
 reglist                       \x69\xBC                   THUMB,ARMv4T
 reglist		                  \x26\x8B		               ARM32,ARMv4
@@ -1839,3 +1863,52 @@ fpureg,immshifter           \xA1\1\xD                     ARM32,FPA
 [LOGcc]
 fpureg,fpureg               \xA1\1\xB                     ARM32,FPA
 fpureg,immshifter           \xA1\1\xB                     ARM32,FPA
+=======
+[ASRcc]
+
+[LSRcc]
+
+[LSLcc]
+
+[RORcc]
+
+[SDIVcc]
+
+[UDIVcc]
+
+[MOVTcc]
+
+[LDREXcc]
+
+[STREXcc]
+
+[IT]
+
+[ITE]
+
+[ITT]
+
+[ITEE]
+
+[ITTE]
+
+[ITET]
+
+[ITTT]
+
+[ITEEE]
+
+[ITTEE]
+
+[ITETE]
+
+[ITTTE]
+
+[ITEET]
+
+[ITTET]
+
+[ITETT]
+
+[ITTTT]
+>>>>>>> graemeg/cpstrnew

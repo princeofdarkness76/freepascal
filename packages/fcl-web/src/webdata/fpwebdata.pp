@@ -5,7 +5,11 @@ unit fpwebdata;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, httpdefs, fphttp, db;
+=======
+  Classes, SysUtils, httpdefs, fphttp, db, websession;
+>>>>>>> graemeg/cpstrnew
 
 
 type
@@ -17,12 +21,18 @@ type
   TWebDataAction = (wdaUnknown,wdaRead,wdaUpdate,wdaInsert,wdaDelete);
 
   { TCustomWebdataInputAdaptor }
+<<<<<<< HEAD
   TTransCodeEvent = Procedure (Sender : TObject; Var S : String);
+=======
+>>>>>>> graemeg/cpstrnew
 
   TCustomWebdataInputAdaptor = class(TComponent)
   private
     FAction: TWebDataAction;
+<<<<<<< HEAD
     FOntransCode: TTransCodeEvent;
+=======
+>>>>>>> graemeg/cpstrnew
     FRequest: TRequest;
     FBatchCount : Integer;
     FRequestPathInfo : String;
@@ -41,7 +51,10 @@ type
     Function GetFieldValue(Const AFieldName : String) : String;
     Property Request : TRequest Read FRequest Write SetRequest;
     Property Action : TWebDataAction Read GetAction Write FAction;
+<<<<<<< HEAD
     Property OnTransCode : TTransCodeEvent Read FOntransCode Write FOnTransCode;
+=======
+>>>>>>> graemeg/cpstrnew
   end;
   TCustomWebdataInputAdaptorClass = Class of TCustomWebdataInputAdaptor;
 
@@ -608,8 +621,11 @@ begin
   Result:=(I<>-1);
   If Result then
     L.GetNameValue(I,N,AValue);
+<<<<<<< HEAD
   If (AValue<>'') and Assigned(FOnTranscode) then
     FOnTransCode(Self,Avalue);
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TCustomWebdataInputAdaptor.TryFieldValue(const AFieldName: String;

@@ -28,11 +28,16 @@ interface
 uses
   cclasses,
   globtype, globals, verbose,
+<<<<<<< HEAD
   aasmbase, aasmdata, aasmsym, aasmtai,
+=======
+  aasmbase, aasmtai,
+>>>>>>> graemeg/cpstrnew
   cgbase, cgutils, cpubase, cpuinfo;
 
 const
   { "mov reg,reg" source operand number }
+<<<<<<< HEAD
   O_MOV_SOURCE = 1;
   { "mov reg,reg" source operand number }
   O_MOV_DEST   = 0;
@@ -40,6 +45,14 @@ const
 type
   { taicpu }
   taicpu = class(tai_cpu_abstract_sym)
+=======
+  O_MOV_SOURCE = 0;
+  { "mov reg,reg" source operand number }
+  O_MOV_DEST   = 1;
+
+type
+  taicpu = class(tai_cpu_abstract)
+>>>>>>> graemeg/cpstrnew
     delayslot_annulled: boolean;   { conditinal opcode with ,a }
     constructor op_none(op: tasmop);
 
@@ -50,15 +63,21 @@ type
     constructor op_reg_reg(op: tasmop; _op1, _op2: tregister);
     constructor op_reg_ref(op: tasmop; _op1: tregister; const _op2: treference);
     constructor op_reg_const(op: tasmop; _op1: tregister; _op2: longint);
+<<<<<<< HEAD
     constructor op_const_const(op: tasmop; _op1: aint; _op2: aint);
+=======
+>>>>>>> graemeg/cpstrnew
 
     constructor op_reg_reg_reg(op: tasmop; _op1, _op2, _op3: tregister);
 
     constructor op_reg_reg_ref(op: tasmop; _op1, _op2: tregister; const _op3: treference);
     constructor op_reg_reg_const(op: tasmop; _op1, _op2: tregister; _op3: aint);
+<<<<<<< HEAD
     { INS and EXT }
     constructor op_reg_reg_const_const(op: tasmop; _op1,_op2: tregister; _op3,_op4: aint);
     constructor op_reg_const_reg(op: tasmop; _op1: tregister; _op2: aint; _op3: tregister);
+=======
+>>>>>>> graemeg/cpstrnew
 
     { this is for Jmp instructions }
     constructor op_sym(op: tasmop; _op1: tasmsymbol);
@@ -76,24 +95,38 @@ type
   tai_align = class(tai_align_abstract)
     { nothing to add }
   end;
+<<<<<<< HEAD
 
   procedure InitAsm;
   procedure DoneAsm;
 
   procedure fixup_jmps(list: TAsmList);
+=======
+
+  procedure InitAsm;
+  procedure DoneAsm;
+>>>>>>> graemeg/cpstrnew
 
   function spilling_create_load(const ref: treference; r: tregister): taicpu;
   function spilling_create_store(r: tregister; const ref: treference): taicpu;
 
 implementation
 
+<<<<<<< HEAD
   uses
     cutils;
 
+=======
+>>>>>>> graemeg/cpstrnew
 {*****************************************************************************
                                  taicpu Constructors
 *****************************************************************************}
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 constructor taicpu.op_none(op: tasmop);
 begin
   inherited Create(op);
@@ -140,6 +173,7 @@ begin
   loadconst(1, _op2);
 end;
 
+<<<<<<< HEAD
 constructor taicpu.op_const_const(op: tasmop; _op1: aint; _op2: aint);
 begin
   inherited Create(op);
@@ -148,6 +182,8 @@ begin
   loadconst(1, _op2);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 constructor taicpu.op_reg_ref(op: tasmop; _op1: tregister; const _op2: treference);
 begin
@@ -169,6 +205,7 @@ end;
 
 
 constructor taicpu.op_reg_reg_ref(op: tasmop; _op1, _op2: tregister; const _op3: treference);
+<<<<<<< HEAD
 begin
   inherited create(op);
   ops := 3;
@@ -209,11 +246,40 @@ begin
   loadreg(2, _op3);
 end;
 
+=======
+ begin
+   inherited create(op);
+   ops := 3;
+   loadreg(0, _op1);
+   loadreg(1, _op2);
+   loadref(2, _op3);
+end;
+
+constructor taicpu.op_reg_reg_const(op: tasmop; _op1, _op2: tregister; _op3: aint);
+ begin
+   inherited create(op);
+   ops := 3;
+   loadreg(0, _op1);
+   loadreg(1, _op2);
+   loadconst(2, _op3);
+end;
+
+
+>>>>>>> graemeg/cpstrnew
 
 constructor taicpu.op_sym(op: tasmop; _op1: tasmsymbol);
 begin
   inherited Create(op);
+<<<<<<< HEAD
   is_jmp := op in [A_BC, A_BA];
+=======
+  is_jmp := op in [A_J, A_BEQI, A_BNEI, A_BLTI, A_BLEI, A_BGTI, A_BGEI,
+    A_BLTUI, A_BLEUI, A_BGTUI, A_BGEUI,
+    A_BEQ, A_BNE, A_BLT, A_BLE, A_BGT, A_BGE,
+    A_BLTU, A_BLEU, A_BGTU, A_BGEU
+    ];
+
+>>>>>>> graemeg/cpstrnew
   ops := 1;
   loadsymbol(0, _op1, 0);
 end;
@@ -221,7 +287,14 @@ end;
 constructor taicpu.op_reg_reg_sym(op: tasmop; _op1, _op2: tregister; _op3: tasmsymbol);
 begin
    inherited create(op);
+<<<<<<< HEAD
    is_jmp := op in [A_BC, A_BA];
+=======
+   is_jmp := op in [A_J,
+     A_BEQI, A_BNEI, A_BLTI, A_BLEI, A_BGTI, A_BGEI, A_BLTUI, A_BLEUI,
+     A_BGTUI, A_BGEUI,
+     A_BEQ, A_BNE, A_BLT, A_BLE, A_BGT, A_BGE, A_BLTU, A_BLEU, A_BGTU, A_BGEU];
+>>>>>>> graemeg/cpstrnew
    ops := 3;
    loadreg(0, _op1);
    loadreg(1, _op2);
@@ -231,7 +304,14 @@ end;
 constructor taicpu.op_reg_sym(op: tasmop; _op1: tregister; _op2: tasmsymbol);
 begin
    inherited create(op);
+<<<<<<< HEAD
    is_jmp := op in [A_BC, A_BA];
+=======
+   is_jmp := op in [A_J,
+     A_BEQI, A_BNEI, A_BLTI, A_BLEI, A_BGTI, A_BGEI, A_BLTUI, A_BLEUI,
+     A_BGTUI, A_BGEUI,
+     A_BEQ, A_BNE, A_BLT, A_BLE, A_BGT, A_BGE, A_BLTU, A_BLEU, A_BGTU, A_BGEU, A_BGTZ];
+>>>>>>> graemeg/cpstrnew
    ops := 2;
    loadreg(0, _op1);
    loadsymbol(1, _op2, 0);
@@ -305,30 +385,59 @@ end;
       A_OR,
       A_XOR,
       A_NOR,
+<<<<<<< HEAD
 { We can get into trouble if an instruction can be interpreted as
   macros with different operands. The following commented out ones
   refer to elementary instructions: DIV[U], MULT[U] do not modify
   first operand. Rest are subject to check. }
+=======
+>>>>>>> graemeg/cpstrnew
       A_MUL,
       A_MULO,
       A_MULOU,
       A_DMUL,
       A_DMULO,
       A_DMULOU,
+<<<<<<< HEAD
 //      A_DIV,
 //      A_DIVU,
+=======
+      A_DIV,
+      A_DIVU,
+>>>>>>> graemeg/cpstrnew
       A_DDIV,
       A_DDIVU,
       A_REM,
       A_REMU,
       A_DREM,
       A_DREMU,
+<<<<<<< HEAD
 //      A_MULT,
       A_DMULT,
 //      A_MULTU,
       A_DMULTU,
       A_MFHI,
       A_MFLO,
+=======
+      A_MULT,
+      A_DMULT,
+      A_MULTU,
+      A_DMULTU,
+      A_MFHI,
+      A_MFLO,
+      A_MULTG,
+      A_DMULTG,
+      A_MULTUG,
+      A_DMULTUG,
+      A_DIVG,
+      A_DDIVG,
+      A_DIVUG,
+      A_DDIVUG,
+      A_MODG,
+      A_DMODG,
+      A_MODUG,
+      A_DMODUG,
+>>>>>>> graemeg/cpstrnew
 
       A_SLL,
       A_SRL,
@@ -398,6 +507,7 @@ end;
       A_SGTU,
       A_SLE,
       A_SLEU,
+<<<<<<< HEAD
       A_SNE,
       A_EXT,
       A_INS,
@@ -417,6 +527,15 @@ end;
             if opnr = 0 then
               result := operand_write;
         end;
+=======
+      A_SNE];
+
+      begin
+        result := operand_read;
+        if opcode in op_write_set then
+          if opnr = 0 then
+            result := operand_write;
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -467,6 +586,7 @@ end;
 procedure InitAsm;
   begin
   end;
+<<<<<<< HEAD
 
 
 procedure DoneAsm;
@@ -667,6 +787,14 @@ procedure fixup_jmps(list: TAsmList);
     labelpositions.free;
   end;
 
+=======
+
+
+procedure DoneAsm;
+  begin
+  end;
+
+>>>>>>> graemeg/cpstrnew
 
 begin
   cai_cpu   := taicpu;

@@ -51,7 +51,11 @@ const
   SInvalidJulianDate            = '%f Julian cannot be represented as a DateTime';
   SErrIllegalDateFormatString   = '"%s" is not a valid date format string';
   SErrInvalidTimeFormat  = '"%s" is not a valid time';
+<<<<<<< HEAD
   SExceptionErrorMessage = 'Exception at %p: %s';
+=======
+  SExceptionErrorMessage = 'exception at %p';
+>>>>>>> graemeg/cpstrnew
   SExceptionStack        = 'Exception stack error';
   SExecuteProcessFailed  = 'Failed to execute "%s", error code: %d';
   SExternalException     = 'External exception %x';

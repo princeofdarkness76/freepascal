@@ -9,11 +9,14 @@ program Hello;
 
 type
   ptr = pointer;
+<<<<<<< HEAD
 {$ifdef fpc}
   codeptr = codepointer;
 {$else}
   codeptr = pointer;
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
   Int = ptrint;
   pPtr = ^ptr;
   UInt = ptruint;
@@ -114,7 +117,11 @@ var
 
   s0, s1, s2: UInt;
   v0, v1, v2: ptr;
+<<<<<<< HEAD
   cn0, cn1, cn2: codeptr;
+=======
+  cn0, cn1, cn2: ptr;
+>>>>>>> graemeg/cpstrnew
 
 begin
   // VMT Pointers

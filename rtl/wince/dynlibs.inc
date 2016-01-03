@@ -14,7 +14,51 @@
  **********************************************************************}
 
 
+<<<<<<< HEAD
 procedure InitDynLibs;
+=======
+{$ifdef readinterface}
+
+{ ---------------------------------------------------------------------
+    Interface declarations
+  ---------------------------------------------------------------------}
+
+Type
+  TLibHandle = Longint;
+
+Const
+  NilHandle = 0;
+// these are for easier crossplatform construction of dll names in dynloading libs.
+  SharedSuffix = 'dll';
+
+{$else}
+
+{ ---------------------------------------------------------------------
+    Implementation section
+  ---------------------------------------------------------------------}
+
+Uses windows;
+
+Function LoadLibrary(const Name : AnsiString) : TlibHandle;
+var
+  ws: PWideChar;
+begin
+  ws:=StringToPWideChar(Name);
+  Result:=Windows.LoadLibrary(ws);
+  FreeMem(ws);
+end;
+
+Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+var
+  ws: PWideChar;
+begin
+  ws:=StringToPWideChar(ProcName);
+  Result:=Windows.GetProcAddress(Lib, ws);
+  FreeMem(ws);
+end;
+
+Function UnloadLibrary(Lib : TLibHandle) : Boolean;
+>>>>>>> graemeg/cpstrnew
 begin
   { nothing to do here since Windows DynLibs is done in System }
 end;

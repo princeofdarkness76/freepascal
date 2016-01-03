@@ -159,6 +159,7 @@ implementation
 
             case nodetype of
               modn:
+<<<<<<< HEAD
                 if nf_isomod in flags then
                   begin
                     if lv>=0 then
@@ -173,6 +174,11 @@ implementation
                   result:=create_simplified_ord_const(lv mod rv,resultdef,forinline);
               divn:
                 result:=create_simplified_ord_const(lv div rv,resultdef,forinline);
+=======
+                t:=create_simplified_ord_const(lv mod rv,resultdef,forinline);
+              divn:
+                t:=create_simplified_ord_const(lv div rv,resultdef,forinline);
+>>>>>>> graemeg/cpstrnew
             end;
          end;
       end;
@@ -224,6 +230,13 @@ implementation
          maybe_call_procvar(left,true);
          maybe_call_procvar(right,true);
 
+<<<<<<< HEAD
+=======
+         result:=simplify(false);
+         if assigned(result) then
+           exit;
+
+>>>>>>> graemeg/cpstrnew
          { allow operator overloading }
          t:=self;
          if isbinaryoverloaded(t) then
@@ -655,6 +668,7 @@ implementation
         { constant folding }
         if is_constintnode(right) then
           begin
+<<<<<<< HEAD
             if forinline then
               begin
                 { shl/shr are unsigned operations, so cut off upper bits }
@@ -701,6 +715,16 @@ implementation
                 result:=left;
                 left:=nil;
               end;
+=======
+             case nodetype of
+                shrn:
+                  t:=create_simplified_ord_const(tordconstnode(left).value shr tordconstnode(right).value,resultdef,forinline);
+                shln:
+                  t:=create_simplified_ord_const(tordconstnode(left).value shl tordconstnode(right).value,resultdef,forinline);
+             end;
+             result:=t;
+             exit;
+>>>>>>> graemeg/cpstrnew
           end;
       end;
 
@@ -729,6 +753,13 @@ implementation
          maybe_call_procvar(left,true);
          maybe_call_procvar(right,true);
 
+<<<<<<< HEAD
+=======
+         result:=simplify(false);
+         if assigned(result) then
+           exit;
+
+>>>>>>> graemeg/cpstrnew
          { allow operator overloading }
          t:=self;
          if isbinaryoverloaded(t) then
@@ -1011,6 +1042,7 @@ implementation
       begin
         result:=nil;
         typecheckpass(left);
+<<<<<<< HEAD
 
         { avoid any problems with type parameters later on }
         if is_typeparam(left.resultdef) then
@@ -1019,6 +1051,8 @@ implementation
             exit;
           end;
 
+=======
+>>>>>>> graemeg/cpstrnew
         set_varstate(left,vs_read,[vsf_must_be_valid]);
         if codegenerror then
           exit;
@@ -1036,6 +1070,7 @@ implementation
             result:=left;
             left:=nil;
           end
+<<<<<<< HEAD
         else if is_oversizedord(left.resultdef) then
           begin
             if is_64bit(left.resultdef) then
@@ -1049,6 +1084,16 @@ implementation
             result:=left;
             left:=nil;
           end
+=======
+{$ifndef cpu64bitaddr}
+        else if is_64bit(left.resultdef) then
+          begin
+            inserttypeconv(left,s64inttype);
+            result:=left;
+            left:=nil;
+          end
+{$endif not cpu64bitaddr}
+>>>>>>> graemeg/cpstrnew
         else if (left.resultdef.typ=orddef) then
           begin
             inserttypeconv(left,sinttype);
@@ -1166,6 +1211,7 @@ implementation
                else
                  CGMessage(type_e_mismatch);
              end;
+<<<<<<< HEAD
              { not-nodes are not range checked by the code generator -> also
                don't range check while inlining; the resultdef is a bit tricky
                though: the node's resultdef gets changed in most cases compared
@@ -1181,6 +1227,12 @@ implementation
                  { now convert to node's resultdef }
                  inserttypeconv_explicit(t,def);
                end;
+=======
+             if not forinline then
+               t:=cordconstnode.create(v,def,false)
+             else
+               t:=create_simplified_ord_const(v,resultdef,true);
+>>>>>>> graemeg/cpstrnew
              result:=t;
              exit;
           end;

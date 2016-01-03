@@ -6,7 +6,11 @@
 main=rtl
 
 [target]
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 extpas buildrtl
+=======
+units=system objpas macpas iso7185 buildrtl
+>>>>>>> graemeg/cpstrnew
 implicitunits=ctypes strings \
       symbian
 

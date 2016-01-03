@@ -13,6 +13,10 @@
       <Title Value="FPDoc Documentation generator"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
+<<<<<<< HEAD
+=======
+      <Icon Value="0"/>
+>>>>>>> graemeg/cpstrnew
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -31,7 +35,12 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+<<<<<<< HEAD
         <CommandLineParams Value="--package=fpdoc --input=testunit.pp --output=testunit --format=html --descr=testunit.xml"/>
+=======
+        <CommandLineParams Value="--project=fpdoc.xml"/>
+        <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+>>>>>>> graemeg/cpstrnew
       </local>
     </RunParams>
     <RequiredPackages Count="1">
@@ -39,7 +48,11 @@
         <PackageName Value="FCL"/>
       </Item1>
     </RequiredPackages>
+<<<<<<< HEAD
     <Units Count="16">
+=======
+    <Units Count="14">
+>>>>>>> graemeg/cpstrnew
       <Unit0>
         <Filename Value="fpdoc.pp"/>
         <IsPartOfProject Value="True"/>
@@ -53,56 +66,101 @@
       <Unit2>
         <Filename Value="dw_dxml.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <UnitName Value="dw_dXML"/>
+=======
+        <UnitName Value="dw_dxml"/>
+>>>>>>> graemeg/cpstrnew
       </Unit2>
       <Unit3>
         <Filename Value="dw_html.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <UnitName Value="dw_HTML"/>
+=======
+        <UnitName Value="dw_html"/>
+>>>>>>> graemeg/cpstrnew
       </Unit3>
       <Unit4>
         <Filename Value="dw_ipflin.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="dw_ipflin"/>
+>>>>>>> graemeg/cpstrnew
       </Unit4>
       <Unit5>
         <Filename Value="dw_latex.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <UnitName Value="dw_LaTeX"/>
+=======
+        <UnitName Value="dw_latex"/>
+>>>>>>> graemeg/cpstrnew
       </Unit5>
       <Unit6>
         <Filename Value="dwlinear.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="dwlinear"/>
+>>>>>>> graemeg/cpstrnew
       </Unit6>
       <Unit7>
         <Filename Value="dw_linrtf.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <UnitName Value="dw_LinRTF"/>
+=======
+        <UnitName Value="dw_linrtf"/>
+>>>>>>> graemeg/cpstrnew
       </Unit7>
       <Unit8>
         <Filename Value="dw_man.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="dw_man"/>
+>>>>>>> graemeg/cpstrnew
       </Unit8>
       <Unit9>
         <Filename Value="dwriter.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <UnitName Value="dWriter"/>
+=======
+        <UnitName Value="dwriter"/>
+>>>>>>> graemeg/cpstrnew
       </Unit9>
       <Unit10>
         <Filename Value="dw_txt.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="dw_txt"/>
+>>>>>>> graemeg/cpstrnew
       </Unit10>
       <Unit11>
         <Filename Value="dw_xml.pp"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
         <UnitName Value="dw_XML"/>
+=======
+        <UnitName Value="dw_xml"/>
+>>>>>>> graemeg/cpstrnew
       </Unit11>
       <Unit12>
         <Filename Value="fpdocproj.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
+=======
+        <UnitName Value="fpdocproj"/>
+>>>>>>> graemeg/cpstrnew
       </Unit12>
       <Unit13>
         <Filename Value="fpdocxmlopts.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
       </Unit13>
       <Unit14>
         <Filename Value="mkfpdoc.pp"/>
@@ -116,6 +174,14 @@
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="11"/>
+=======
+        <UnitName Value="fpdocxmlopts"/>
+      </Unit13>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="9"/>
+>>>>>>> graemeg/cpstrnew
     <Target>
       <Filename Value="fpdoc"/>
     </Target>
@@ -123,6 +189,15 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+<<<<<<< HEAD
+=======
+    <Other>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+>>>>>>> graemeg/cpstrnew
   </CompilerOptions>
   <Debugging>
     <Exceptions Count="3">

@@ -32,6 +32,7 @@ interface
        tarmaddnode = class(tcgaddnode)
        private
           function  GetResFlags(unsigned:Boolean):TResFlags;
+<<<<<<< HEAD
           function  GetFpuResFlags:TResFlags;
        public
           function pass_1 : tnode;override;
@@ -40,6 +41,11 @@ interface
        protected
           function first_addfloat: tnode; override;
           procedure second_addordinal;override;
+=======
+       public
+          function pass_1 : tnode;override;
+       protected
+>>>>>>> graemeg/cpstrnew
           procedure second_addfloat;override;
           procedure second_cmpfloat;override;
           procedure second_cmpordinal;override;
@@ -162,7 +168,10 @@ interface
       var
         op : TAsmOp;
         singleprec: boolean;
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         pass_left_right;
         if (nf_swapped in flags) then
@@ -175,11 +184,22 @@ interface
             begin
               { force fpureg as location, left right doesn't matter
                 as both will be in a fpureg }
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,right.location,right.resultdef,true);
 
               location_reset(location,LOC_FPUREGISTER,def_cgsize(resultdef));
               location.register:=cg.getfpuregister(current_asmdata.CurrAsmList,location.size);
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
+              location_force_fpureg(current_asmdata.CurrAsmList,right.location,(left.location.loc<>LOC_CFPUREGISTER));
+
+              location_reset(location,LOC_FPUREGISTER,def_cgsize(resultdef));
+              if left.location.loc<>LOC_CFPUREGISTER then
+                location.register:=left.location.register
+              else
+                location.register:=right.location.register;
+>>>>>>> graemeg/cpstrnew
 
               case nodetype of
                 addn :
@@ -199,6 +219,7 @@ interface
                  cgsize2fpuoppostfix[def_cgsize(resultdef)]));
             end;
           fpu_vfpv2,
+<<<<<<< HEAD
           fpu_vfpv3,
           fpu_vfpv3_d16:
             begin
@@ -255,6 +276,51 @@ interface
               end;
 
               current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg_reg(op, location.register,left.location.register,right.location.register), PF_F32));
+=======
+          fpu_vfpv3:
+            begin
+              { force mmreg as location, left right doesn't matter
+                as both will be in a fpureg }
+              location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
+              location_force_mmregscalar(current_asmdata.CurrAsmList,right.location,true);
+
+              location_reset(location,LOC_MMREGISTER,def_cgsize(resultdef));
+              if left.location.loc<>LOC_CMMREGISTER then
+                location.register:=left.location.register
+              else if right.location.loc<>LOC_CMMREGISTER then
+                location.register:=right.location.register
+              else
+                location.register:=cg.getmmregister(current_asmdata.CurrAsmList,location.size);
+
+              singleprec:=tfloatdef(left.resultdef).floattype=s32real;
+              case nodetype of
+                addn :
+                  if singleprec then
+                    op:=A_FADDS
+                  else
+                    op:=A_FADDD;
+                muln :
+                  if singleprec then
+                    op:=A_FMULS
+                  else
+                    op:=A_FMULD;
+                subn :
+                  if singleprec then
+                    op:=A_FSUBS
+                  else
+                    op:=A_FSUBD;
+                slashn :
+                  if singleprec then
+                    op:=A_FDIVS
+                  else
+                    op:=A_FDIVD;
+                else
+                  internalerror(2009111401);
+              end;
+
+              current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg_reg(op,
+                 location.register,left.location.register,right.location.register));
+>>>>>>> graemeg/cpstrnew
             end;
           fpu_soft:
             { this case should be handled already by pass1 }
@@ -268,7 +334,10 @@ interface
     procedure tarmaddnode.second_cmpfloat;
       var
         op: TAsmOp;
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         pass_left_right;
         if (nf_swapped in flags) then
@@ -284,10 +353,16 @@ interface
             begin
               { force fpureg as location, left right doesn't matter
                 as both will be in a fpureg }
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,right.location,right.resultdef,true);
 
               cg.a_reg_alloc(current_asmdata.CurrAsmList,NR_DEFAULTFLAGS);
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
+              location_force_fpureg(current_asmdata.CurrAsmList,right.location,true);
+
+>>>>>>> graemeg/cpstrnew
               if nodetype in [equaln,unequaln] then
                 current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_CMF,
                    left.location.register,right.location.register),
@@ -298,11 +373,36 @@ interface
                    cgsize2fpuoppostfix[def_cgsize(resultdef)]));
             end;
           fpu_vfpv2,
+<<<<<<< HEAD
           fpu_vfpv3,
           fpu_vfpv3_d16:
             begin
               hlcg.location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
               hlcg.location_force_mmregscalar(current_asmdata.CurrAsmList,right.location,right.resultdef,true);
+=======
+          fpu_vfpv3:
+            begin
+              location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
+              location_force_mmregscalar(current_asmdata.CurrAsmList,right.location,true);
+
+              if (tfloatdef(left.resultdef).floattype=s32real) then
+                if nodetype in [equaln,unequaln] then
+                  op:=A_FCMPS
+                 else
+                   op:=A_FCMPES
+              else if nodetype in [equaln,unequaln] then
+                op:=A_FCMPD
+              else
+                op:=A_FCMPED;
+              current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(op,
+                left.location.register,right.location.register));
+              current_asmdata.CurrAsmList.concat(taicpu.op_none(A_FMSTAT));
+            end;
+          fpu_soft:
+            { this case should be handled already by pass1 }
+            internalerror(2009112404);
+        end;
+>>>>>>> graemeg/cpstrnew
 
               if nodetype in [equaln,unequaln] then
                 op:=A_VCMP
@@ -428,6 +528,7 @@ interface
            ) then
           begin
             location_reset(location,LOC_FLAGS,OS_NO);
+<<<<<<< HEAD
             if not(left.location.loc in [LOC_CREGISTER,LOC_REGISTER]) then
               hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,true);
 
@@ -449,6 +550,13 @@ interface
                 else
                   current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg_reg(A_ORR,dummyreg,left.location.register64.reglo,left.location.register64.reghi),PF_S));
               end;
+=======
+            location.resflags:=getresflags(unsigned);
+            current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(A_CMP,left.location.register64.reghi,right.location.register64.reghi));
+            if current_settings.cputype in cpu_thumb2 then
+              current_asmdata.CurrAsmList.concat(taicpu.op_cond(A_IT, C_EQ));
+            current_asmdata.CurrAsmList.concat(setcondition(taicpu.op_reg_reg(A_CMP,left.location.register64.reglo,right.location.register64.reglo),C_EQ));
+>>>>>>> graemeg/cpstrnew
           end
         else
           begin

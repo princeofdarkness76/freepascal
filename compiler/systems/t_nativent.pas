@@ -85,7 +85,11 @@ implementation
 initialization
 {$ifdef i386}
   { NativeNT }
+<<<<<<< HEAD
   RegisterLinker(ld_int_nativent,TInternalLinkerNativeNT);
+=======
+  RegisterInternalLinker(system_i386_nativent_info,TInternalLinkerNativeNT);
+>>>>>>> graemeg/cpstrnew
   RegisterImport(system_i386_nativent,TImportLibNativeNT);
   RegisterExport(system_i386_nativent,TExportLibNativeNT);
 //  RegisterRes(res_gnu_windres_info,TWinLikeResourceFile);

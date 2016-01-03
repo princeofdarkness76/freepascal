@@ -4,7 +4,15 @@
 
 [package]
 name=fcl-json
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=fpjson jsonscanner jsonparser jsonconf fpjsonrtti
+rsts=fpjson jsonscanner jsonparser jsonconf fpjsonrtti
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
@@ -43,6 +51,7 @@ FPMAKE_OPT+=--compiler=$(FPC)
 FPMAKE_OPT+=-bu
 .NOTPARALLEL:
 
+<<<<<<< HEAD
 fpmake$(SRCEXEEXT): fpmake.pp
 	$(FPCFPMAKE) fpmake.pp $(FPMAKE_SKIP_CONFIG) $(addprefix -Fu,$(COMPILER_FPMAKE_UNITDIR)) $(FPCMAKEOPT) $(OPT)
 all:	fpmake$(SRCEXEEXT)
@@ -100,3 +109,10 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+jsonparser$(PPUEXT): jsonparser.pp fpjson$(PPUEXT) jsonscanner$(PPUEXT)
+
+jsonconf$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
+
+fpjsonrtti$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
+>>>>>>> graemeg/cpstrnew

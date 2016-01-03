@@ -53,8 +53,12 @@ unit raatt;
         AS_DB,AS_DW,AS_DD,AS_DQ,AS_GLOBAL,
         AS_ALIGN,AS_BALIGN,AS_P2ALIGN,AS_ASCII,
         AS_ASCIIZ,AS_LCOMM,AS_COMM,AS_SINGLE,AS_DOUBLE,AS_EXTENDED,AS_CEXTENDED,
+<<<<<<< HEAD
         AS_DATA,AS_TEXT,AS_INIT,AS_FINI,AS_RVA,
         AS_SET,AS_WEAK,AS_SECTION,AS_END,
+=======
+        AS_DATA,AS_TEXT,AS_INIT,AS_FINI,AS_END,
+>>>>>>> graemeg/cpstrnew
         {------------------ Assembler Operators  --------------------}
         AS_TYPE,AS_SIZEOF,AS_VMTOFFSET,AS_MOD,AS_SHL,AS_SHR,AS_NOT,AS_AND,AS_OR,AS_XOR,AS_NOR,AS_AT,
         AS_LO,AS_HI,
@@ -80,10 +84,15 @@ unit raatt;
         '.byte','.word','.long','.quad','.globl',
         '.align','.balign','.p2align','.ascii',
         '.asciz','.lcomm','.comm','.single','.double','.tfloat','.tcfloat',
+<<<<<<< HEAD
         '.data','.text','.init','.fini','.rva',
         '.set','.weak','.section','END',
         'TYPE','SIZEOF','VMTOFFSET','%','<<','>>','!','&','|','^','~','@','lo','hi',
         'directive');
+=======
+        '.data','.text','.init','.fini','END',
+        'TYPE','SIZEOF','VMTOFFSET','%','<<','>>','!','&','|','^','~','@','lo','hi');
+>>>>>>> graemeg/cpstrnew
 
     type
        tattreader = class(tasmreader)
@@ -288,13 +297,18 @@ unit raatt;
            end;
 {$endif POWERPC}
 {$if defined(ARM)}
+<<<<<<< HEAD
            {
              Thumb-2 instructions can have a .W postfix to indicate 32bit instructions,
              Also in unified syntax sizes and types are indicated with something like a .<dt> prefix for example
+=======
+           { Thumb-2 instructions can have a .W postfix to indicate 32bit instructions
+>>>>>>> graemeg/cpstrnew
            }
            case c of
              '.':
                begin
+<<<<<<< HEAD
                  if len>1 then
                    begin
                      while c in ['A'..'Z','a'..'z','0'..'9','_','.'] do
@@ -306,6 +320,9 @@ unit raatt;
                      actasmpattern[0]:=chr(len);
                    end;
                  {actasmpattern:=actasmpattern+c;
+=======
+                 actasmpattern:=actasmpattern+c;
+>>>>>>> graemeg/cpstrnew
                  c:=current_scanner.asmgetchar;
 
                  if upcase(c) = 'W' then
@@ -314,6 +331,7 @@ unit raatt;
                      c:=current_scanner.asmgetchar;
                    end
                  else
+<<<<<<< HEAD
                    internalerror(2010122301);}
                end
            end;
@@ -330,6 +348,12 @@ unit raatt;
                end;
            end;
 {$endif aarch64}
+=======
+                   internalerror(2010122301);
+               end
+           end;
+{$endif ARM}
+>>>>>>> graemeg/cpstrnew
            { Opcode ? }
            If is_asmopcode(upper(actasmpattern)) then
             Begin

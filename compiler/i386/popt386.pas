@@ -673,7 +673,10 @@ begin
       case p.Typ Of
         ait_instruction:
           begin
+<<<<<<< HEAD
             current_filepos:=taicpu(p).fileinfo;
+=======
+>>>>>>> graemeg/cpstrnew
             if InsContainsSegRef(taicpu(p)) then
               begin
                 p := tai(p.next);

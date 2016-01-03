@@ -28,7 +28,11 @@ type
   var
     FData:TContainer;
     
+<<<<<<< HEAD
     procedure PushUp();
+=======
+    procedure PushUp(position:SizeUInt);
+>>>>>>> graemeg/cpstrnew
     function Left(a:SizeUInt):SizeUInt;inline;
     function Right(a:SizeUInt):SizeUInt;inline;
     procedure Heapify(position:SizeUInt);
@@ -79,10 +83,16 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TPriorityQueue.PushUp();
 var position,np:SizeUInt; temp:T;
 begin
   position:=FData.Size-1;
+=======
+procedure TPriorityQueue.PushUp(position:SizeUInt);
+var np:SizeUInt; temp:T;
+begin
+>>>>>>> graemeg/cpstrnew
   while(position>0) do
   begin
     np := Parent(position);
@@ -100,7 +110,11 @@ end;
 procedure TPriorityQueue.Push(value:T);inline;
 begin
   FData.PushBack(value);
+<<<<<<< HEAD
   PushUp();
+=======
+  PushUp(FData.Size-1);
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TPriorityQueue.Left(a:SizeUInt):SizeUInt;inline;

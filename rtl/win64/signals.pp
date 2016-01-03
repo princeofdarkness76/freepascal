@@ -345,7 +345,10 @@ interface
 
 implementation
 
+<<<<<<< HEAD
 {$asmmode att}
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
      EXCEPTION_ACCESS_VIOLATION = $c0000005;

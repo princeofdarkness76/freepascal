@@ -258,7 +258,11 @@ implementation
         use_bt:=true;
 {$endif i8086}
         if not(left.location.loc in [LOC_REGISTER,LOC_CREGISTER,LOC_REFERENCE,LOC_CREFERENCE]) then
+<<<<<<< HEAD
           hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,false);
+=======
+          location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,false);
+>>>>>>> graemeg/cpstrnew
         if use_vectorfpu(resultdef) and
 {$ifdef cpu64bitalu}
            (torddef(left.resultdef).ordtype in [s32bit,s64bit]) then
@@ -348,7 +352,11 @@ implementation
               signtested:=false;
     
             { We need to load from a reference }
+<<<<<<< HEAD
             hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef);
+=======
+            location_force_mem(current_asmdata.CurrAsmList,left.location);
+>>>>>>> graemeg/cpstrnew
             { don't change left.location.reference, because if it's a temp we
               need the original location at the end so we can free it }
             leftref:=left.location.reference;
@@ -389,6 +397,7 @@ implementation
     
                    if not(signtested) then
                      begin
+<<<<<<< HEAD
                        if use_bt then
                          begin
            {$if defined(cpu64bitalu) or defined(cpu32bitalu)}
@@ -421,6 +430,15 @@ implementation
                    else
                      cg.a_jmp_flags(current_asmdata.CurrAsmList,F_E,l2);
                    new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,l1.name,const_align(sizeof(pint)));
+=======
+                       inc(leftref.offset,4);
+                       emit_const_ref(A_BT,S_L,31,leftref);
+                       dec(leftref.offset,4);
+                     end;
+    
+                   current_asmdata.CurrAsmList.concat(taicpu.op_ref(A_FILD,S_IQ,leftref));
+                   cg.a_jmp_flags(current_asmdata.CurrAsmList,F_NC,l2);
+>>>>>>> graemeg/cpstrnew
                    current_asmdata.asmlists[al_typedconsts].concat(Tai_label.Create(l1));
                    { I got this constant from a test program (FK) }
                    current_asmdata.asmlists[al_typedconsts].concat(Tai_const.Create_32bit($5f800000));

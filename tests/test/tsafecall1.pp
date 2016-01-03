@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 { %TARGET=win32,win64,wince,linux,android }
+=======
+{ %TARGET=win32,win64,wince}
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc}
 {$mode objfpc}
 {$endif}

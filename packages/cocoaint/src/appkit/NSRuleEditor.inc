@@ -90,10 +90,17 @@ var
     _headerLocalizer: id;
     _predicate: NSPredicate;
     _nestingMode: NSInteger;
+<<<<<<< HEAD
     __ruleEditorFlags: record
       case byte of
        0: (_anonbitfield_NSRuleEditor0: cuint);
        1: (data: bitpacked record
+=======
+    __ruleEditorFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSRuleEditor0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         elideUpdating: 0..1;
         lastAlternateKeyValue: 0..1;
         extendedDelegateCalls: 0..1;
@@ -107,7 +114,10 @@ var
         allowsEmptyCompoundRows: 0..1;
         dropChangedRowCount: 0..1;
         reserved: 0..((1 shl 20)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _typeKeyPath: NSString;

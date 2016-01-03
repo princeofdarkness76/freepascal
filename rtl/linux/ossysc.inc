@@ -20,7 +20,11 @@
 *****************************************************************************}
 
 function Fptime(tloc:pTime_t): Time_t; [public, alias : 'FPC_SYSC_TIME'];
+<<<<<<< HEAD
 {$if defined(generic_linux_syscalls) or defined(FPC_USEGETTIMEOFDAY)}
+=======
+{$ifdef FPC_USEGETTIMEOFDAY}
+>>>>>>> graemeg/cpstrnew
 VAR tv     : timeval;
     tz     : timezone;
     retval : longint;
@@ -271,6 +275,7 @@ procedure linux_restore; cdecl; nostackframe; assembler;
 asm
 {$ifdef FPC_ABI_EABI}
   mov r7, syscall_nr_sigreturn
+<<<<<<< HEAD
 {$ifdef CPUTHUMB}
   // svc   #0x0
   // GNU 2.22 does not like svc #0x0
@@ -278,6 +283,9 @@ asm
 {$else CPUTHUMB}
   swi #0x0
 {$endif CPUTHUMB}
+=======
+  swi #0x0
+>>>>>>> graemeg/cpstrnew
 {$else}
   swi syscall_nr_sigreturn
 {$endif}
@@ -306,6 +314,7 @@ procedure linux_restore_rt; cdecl; nostackframe; assembler;
 asm
 {$ifdef FPC_ABI_EABI}
   mov r7, syscall_nr_rt_sigreturn
+<<<<<<< HEAD
 {$ifdef CPUTHUMB}
   // svc   #0x0
   // GNU 2.22 does not like svc #0x0
@@ -313,6 +322,9 @@ asm
 {$else CPUTHUMB}
   swi #0x0
 {$endif CPUTHUMB}
+=======
+  swi #0x0
+>>>>>>> graemeg/cpstrnew
 {$else}
   swi syscall_nr_rt_sigreturn
 {$endif}

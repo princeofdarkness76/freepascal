@@ -156,7 +156,11 @@ begin
                is loaded below that address. This avoids problems with the
                strange Windows-compatible resource handling that assumes
                that addresses below 64kb do not exist.
+<<<<<<< HEAD
 
+=======
+               
+>>>>>>> graemeg/cpstrnew
                On 64bit systems, page zero is 4GB by default, so no problems
                there.
              }
@@ -166,6 +170,7 @@ begin
                programs with problems that require Valgrind will have more
                than 60KB of data (first 4KB of address space is always invalid)
              }
+<<<<<<< HEAD
                ExeCmd[1]:='ld $PRTOBJ $TARGET $EMUL $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE $CATRES';
              if not(cs_gdb_valgrind in current_settings.globalswitches) then
                ExeCmd[1]:=ExeCmd[1]+' -pagezero_size 0x10000';
@@ -176,6 +181,18 @@ begin
                DllCmd[1]:='ld $PRTOBJ $TARGET $EMUL $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE $CATRES'
              else
                DllCmd[1]:='ld $PRTOBJ $TARGET $EMUL $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE $CATRES'
+=======
+               ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
+             if not(cs_gdb_valgrind in current_settings.globalswitches) then
+               ExeCmd[1]:=ExeCmd[1]+' -pagezero_size 0x10000';
+{$else ndef cpu64bitaddr}
+             ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
+{$endif ndef cpu64bitaddr}
+             if (apptype<>app_bundle) then
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE `cat $RES`'
+             else
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
+>>>>>>> graemeg/cpstrnew
            end
        end
      else
@@ -322,6 +339,7 @@ begin
         end
       else
         begin
+<<<<<<< HEAD
           case target_info.system of
             system_powerpc_darwin,
             system_powerpc64_darwin,
@@ -354,6 +372,10 @@ begin
               end;
           end;
           result:='dylib1.o';
+=======
+          if not librarysearchpath.FindFile('dylib1.o',false,result) then
+            result:='/usr/lib/dylib1.o'
+>>>>>>> graemeg/cpstrnew
         end;
     end;
 end;
@@ -465,6 +487,7 @@ begin
 
   if (target_info.system in systems_darwin) then
     begin
+<<<<<<< HEAD
       LinkRes.Add('-arch');
       case target_info.system of
         system_powerpc_darwin:
@@ -485,6 +508,26 @@ begin
           LinkRes.Add('arm64');
         else
           internalerror(2014121801);
+=======
+      if (target_info.system in systems_darwin) then
+        begin
+          LinkRes.Add('-arch');
+          case target_info.system of
+            system_powerpc_darwin:
+              LinkRes.Add('ppc');
+            system_i386_darwin,
+            system_i386_iphonesim:
+              LinkRes.Add('i386');
+            system_powerpc64_darwin:
+              LinkRes.Add('ppc64');
+            system_x86_64_darwin:
+              LinkRes.Add('x86_64');
+            system_arm_darwin:
+              { don't specify architecture subtype, because then CPU_SUBTYPE_ALL
+                files, such as compiled resources, are rejected }
+              LinkRes.Add('arm');
+          end;
+>>>>>>> graemeg/cpstrnew
       end;
       if MacOSXVersionMin<>'' then
         begin
@@ -697,8 +740,12 @@ var
   GCSectionsStr,
   StaticStr,
   StripStr   : string[63];
+<<<<<<< HEAD
   success,
   useshell : boolean;
+=======
+  success : boolean;
+>>>>>>> graemeg/cpstrnew
 begin
   if not(cs_link_nolink in current_settings.globalswitches) then
    Message1(exec_i_linking,current_module.exefilename);
@@ -848,7 +895,10 @@ var
 begin
   MakeSharedLibrary:=false;
   GCSectionsStr:='';
+<<<<<<< HEAD
   linkscript:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
   if not(cs_link_nolink in current_settings.globalswitches) then
    Message1(exec_i_linking,current_module.sharedlibfilename);
 
@@ -863,6 +913,7 @@ begin
     else
       GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
 
+<<<<<<< HEAD
   { i386_freebsd needs -b elf32-i386-freebsd and -m elf_i386_fbsd
     to avoid creation of a i386:x86_64 arch binary }
 
@@ -877,6 +928,8 @@ begin
       emulstr:='';
     end;
 
+=======
+>>>>>>> graemeg/cpstrnew
   InitStr:='-init FPC_LIB_START';
   FiniStr:='-fini FPC_LIB_EXIT';
   SoNameStr:='-soname '+ExtractFileName(current_module.sharedlibfilename);
@@ -1013,6 +1066,10 @@ initialization
   RegisterImport(system_i386_darwin,timportlibdarwin);
   RegisterExport(system_i386_darwin,texportlibdarwin);
   RegisterTarget(system_i386_darwin_info);
+<<<<<<< HEAD
+=======
+  RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
+>>>>>>> graemeg/cpstrnew
   RegisterImport(system_i386_iphonesim,timportlibdarwin);
   RegisterExport(system_i386_iphonesim,texportlibdarwin);
   RegisterTarget(system_i386_iphonesim_info);

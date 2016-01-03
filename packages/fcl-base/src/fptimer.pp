@@ -260,7 +260,11 @@ Procedure TFPThreadedTimerDriver.StartTimer;
 begin
   FThread:=TFPTimerThread.CreateTimerThread(Self);
   FThread.OnTerminate:=@DoNilTimer;
+<<<<<<< HEAD
   FThread.Start;
+=======
+  FThread.Resume;
+>>>>>>> graemeg/cpstrnew
 end;
 
 Procedure TFPThreadedTimerDriver.StopTimer;

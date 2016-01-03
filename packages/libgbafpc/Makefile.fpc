@@ -4,10 +4,28 @@
 
 [package]
 name=libgbafpc
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.4.0
+
+[target]
+loaders=core_asm
+units=gba maxmod
+#exampledirs=examples
+
+
+[compiler]
+options=
+includedir=src src/maxmod
+sourcedir=src tests
+
+[prerules]
+BINUTILSPREFIX=arm-eabi-
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y

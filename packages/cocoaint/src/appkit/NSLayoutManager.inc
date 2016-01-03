@@ -88,10 +88,17 @@ type
     _extraLineFragmentContainer: NSTextContainer;
     _glyphHoles: NSSortedArray;
     _layoutHoles: NSSortedArray;
+<<<<<<< HEAD
     __lmFlags: record
       case byte of
        0: (_anonbitfield_NSLayoutManager0: cuint);
        1: (data: bitpacked record
+=======
+    __lmFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSLayoutManager0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         containersAreFull: 0..1;
         glyphsMightDrawOutsideLines: 0..1;
         _backgroundLayoutEnabled: 0..1;
@@ -122,7 +129,10 @@ type
         flipsIfNeeded: 0..1;
         allowNonContig: 0..1;
         useNonContig: 0..1;
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _delegate: id;

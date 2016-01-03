@@ -1,6 +1,10 @@
 {
     Free Pascal port of the OpenPTC C++ library.
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -34,6 +38,7 @@ type
   TPTCClear = class
   private
     FHandle: THermesClearerHandle;
+<<<<<<< HEAD
     FFormat: IPTCFormat;
   public
     constructor Create;
@@ -42,4 +47,14 @@ type
     procedure Clear(APixels: Pointer;
                     AX, AY, AWidth, AHeight, APitch: Integer;
                     AColor: IPTCColor);
+=======
+    FFormat: TPTCFormat;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Request(const AFormat: TPTCFormat);
+    procedure Clear(APixels: Pointer;
+                    AX, AY, AWidth, AHeight, APitch: Integer;
+                    const AColor: TPTCColor);
+>>>>>>> graemeg/cpstrnew
   end;

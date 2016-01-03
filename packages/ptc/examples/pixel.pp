@@ -15,7 +15,11 @@ program PixelExample;
 uses
   ptc;
 
+<<<<<<< HEAD
 procedure putpixel(surface: IPTCSurface; x, y: Integer; r, g, b: Uint8);
+=======
+procedure putpixel(surface: TPTCSurface; x, y: Integer; r, g, b: Uint8);
+>>>>>>> graemeg/cpstrnew
 var
   pixels: PUint32;
   color: Uint32;
@@ -35,9 +39,15 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
 begin
   try
     try
@@ -65,8 +75,15 @@ begin
       { read key }
       console.ReadKey;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+      surface.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

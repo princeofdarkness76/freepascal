@@ -187,6 +187,7 @@ implementation
                    begin
                      p.free;
                      { switch to new node }
+<<<<<<< HEAD
                      p := hp;
                      { run firstpass }
                      firstpass(p);
@@ -207,6 +208,50 @@ implementation
                    include(p.flags,nf_error)
                   else
                    begin
+=======
+                     p:=hp;
+                     { run typecheckpass }
+                     typecheckpass(p);
+                  end;
+                 if codegenerror then
+                  begin
+                    include(p.flags,nf_error);
+                    { default to errortype if no type is set yet }
+                    if p.resultdef=nil then
+                     p.resultdef:=generrordef;
+                  end;
+                 codegenerror:=codegenerror or oldcodegenerror;
+               end;
+              if not(nf_error in p.flags) then
+               begin
+                 { first pass }
+                 hp:=p.pass_1;
+                 { should the node be replaced? }
+                 if assigned(hp) then
+                  begin
+                    p.free;
+                    { switch to new node }
+                    p := hp;
+                    { run firstpass }
+                    firstpass(p);
+                  end
+                 else
+                   begin
+                     { inlining happens in pass_1 and can cause new }
+                     { simplify opportunities                       }
+                     hp:=p.simplify(true);
+                     if assigned(hp) then
+                       begin
+                         p.free;
+                         p := hp;
+                         firstpass(p);
+                       end;
+                   end;
+                 if codegenerror then
+                  include(p.flags,nf_error)
+                 else
+                  begin
+>>>>>>> graemeg/cpstrnew
 {$ifdef EXTDEBUG}
                      if (p.expectloc=LOC_INVALID) then
                        Comment(V_Warning,'Expectloc is not set in firstpass: '+nodetype2str[p.nodetype]);

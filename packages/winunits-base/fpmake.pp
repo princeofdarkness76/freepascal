@@ -58,6 +58,7 @@ begin
           AddUnit('dwmapi');
           AddUnit('multimon');
           AddUnit('htmlhelp');
+<<<<<<< HEAD
           AddUnit('winutils');
           AddUnit('comserv');
           AddUnit('winspool');
@@ -70,6 +71,9 @@ begin
 		  AddUnit('typelib');
 		  AddUnit('libkinect10');
           AddUnit('urlmon');
+=======
+          AddUnit('winspool');
+>>>>>>> graemeg/cpstrnew
         end;
     T:=P.Targets.AddImplicitUnit('activex.pp');
     T:=P.Targets.AddImplicitUnit('urlmon.pp');
@@ -95,6 +99,7 @@ begin
     T:=P.Targets.AddImplicitUnit('multimon.pp');
     T:=P.Targets.AddImplicitUnit('dwmapi.pp');
     T:=P.Targets.AddImplicitUnit('htmlhelp.pp');
+<<<<<<< HEAD
     T:=P.Targets.AddImplicitUnit('winutils.pp');
     T:=P.Targets.AddImplicitUnit('comserv.pp');
     T:=P.Targets.AddImplicitUnit('winspool.pp');
@@ -106,6 +111,9 @@ begin
 	T:=P.Targets.AddImplicitUnit('eventsink.pp');
 	T:=P.Targets.AddImplicitUnit('typelib.pas');
 	T:=P.Targets.AddImplicitUnit('libkinect10.pp');
+=======
+    T:=P.Targets.AddImplicitUnit('winspool.pp');
+>>>>>>> graemeg/cpstrnew
     T.Dependencies.AddInclude('tmschema.inc');
     P.ExamplePath.Add('tests/');
     P.Targets.AddExampleProgram('testcom1.pp');

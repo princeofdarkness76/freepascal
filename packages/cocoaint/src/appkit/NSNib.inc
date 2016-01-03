@@ -51,6 +51,7 @@ var
     _images: NSArray;
     _sounds: NSArray;
     _bundle: NSBundle;
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSNib0: cuint);
@@ -58,6 +59,14 @@ var
         _isKeyed: 0..1;
         _reserved: 0..((1 shl 31)-1);
        end;
+=======
+    __flags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSNib0: cuint);
+       1: (
+        _isKeyed: 0..1;
+        _reserved: 0..((1 shl 31)-1);
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _path: NSString;

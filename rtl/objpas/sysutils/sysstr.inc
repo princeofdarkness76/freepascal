@@ -1245,6 +1245,7 @@ Begin
             Exponent := Exponent*10 + Ord(Result[Q])-Ord('0');
             Inc(Q);
           end;
+<<<<<<< HEAD
           if Result[PE+1] = '-' then
             Exponent := -Exponent;
           if (P+Exponent < PE) and (Exponent > -6) then begin
@@ -1302,6 +1303,57 @@ Begin
             while Result[PE+1] = '0' do
               { Delete leading zeros in exponent }
               System.Delete(Result,PE+1,1)
+=======
+          Negative := Result[1] = '-';
+          P := Pos('.', Result);
+          if P<>0 then
+            Result[P] := DS;
+          TooLarge :=(P > Precision + ord(Negative) + 1) or (Pos('E', Result)<>0);
+        End;
+
+        If TooSmall Or TooLarge Then
+          begin
+            Result := FloatToStrFIntl(Value, ffExponent, Precision, Digits, ValueType,FormatSettings);
+            // Strip unneeded zeroes.
+            P:=Pos('E',result)-1;
+            If P<>-1 then
+              begin
+                { delete superfluous +? }
+                if result[p+2]='+' then
+                  system.Delete(Result,P+2,1);
+                While (P>1) and (Result[P]='0') do
+                  begin
+                    system.Delete(Result,P,1);
+                    Dec(P);
+                  end;
+                If (P>0) and (Result[P]=DS) Then
+                  begin
+                    system.Delete(Result,P,1);
+                    Dec(P);
+                  end;
+              end;
+            end
+        else if (P<>0) then // we have a decimalseparator
+          begin
+            { it seems that in this unit "precision" must mean "number of }
+            { significant digits" rather than "number of digits after the }
+            { decimal point" (as it does in the system unit) -> adjust    }
+            { (precision+1 to count the decimal point character)          }
+            { don't just cut off the string, as rounding must be taken    }
+            { into account based on the final digit                       }
+            
+            if (Length(Result) > Precision + ord(Negative) + 1) and
+               (Precision + ord(Negative) + 1 >= P) then
+              Result := FloatToStrFIntl(Value, ffFixed,
+                0, Precision - (P - Ord(Negative) - 1),
+                ValueType, FormatSettings);
+            P := Length(Result);
+            While (P>0) and (Result[P] = '0') Do
+              Dec(P);
+            If (P>0) and (Result[P]=DS) Then
+              Dec(P);
+            SetLength(Result, P);
+>>>>>>> graemeg/cpstrnew
           end;
         end;
       End;
@@ -2284,7 +2336,11 @@ Var
                       Buf[0] := Digits[N];
                       Inc(Buf);
                     end;
+<<<<<<< HEAD
                   If thousand And (Not (Digits[N] in [' ','-'])) Then
+=======
+                  If thousand And (Digits[N]<>'-') Then
+>>>>>>> graemeg/cpstrnew
                     Begin
                     If (DigitExponent Mod 3 = 0) And (DigitExponent>0) Then
                       Begin

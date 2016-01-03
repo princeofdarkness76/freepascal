@@ -36,10 +36,14 @@ implementation
       the processor specific nodes must be included
       after the generic one (FK)
     }
+<<<<<<< HEAD
     ncpuadd,ncpucall,ncpumat,ncpuinln,
     ncpuld,ncpucnv,ncpuset,
     { symtable }
     symcpu
     ;
+=======
+    ncpuadd,ncpucall,ncpumat,ncpuinln,ncpucnv,ncpuset;
+>>>>>>> graemeg/cpstrnew
 
 end.

@@ -1,5 +1,8 @@
 { %target=win32 }
+<<<<<<< HEAD
 { %OPT=-Cr- }
+=======
+>>>>>>> graemeg/cpstrnew
 
 uses
   windows;

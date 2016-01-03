@@ -1747,5 +1747,9 @@ const
         cg := tcgppc.create;
         cg64 :=tcg64fppc.create;
       end;
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> graemeg/cpstrnew
 end.

@@ -34,10 +34,13 @@ implementation
 {$ifndef NOOPT}
       ,aoptcpu
 {$endif NOOPT}
+<<<<<<< HEAD
 {$ifndef NOMIPSGAS}
       ,racpugas
 {$endif NOMIPSGAS}
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {**************************************
              Targets
@@ -46,6 +49,7 @@ implementation
     {$ifndef NOTARGETLINUX}
       ,t_linux
     {$endif}
+<<<<<<< HEAD
     {$ifndef NOTARGETANDROID}
       {$ifdef MIPSEL}
         ,t_android
@@ -54,12 +58,15 @@ implementation
     {$ifndef NOTARGETEMBEDDED}
       ,t_embed
     {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {**************************************
              Assemblers
 **************************************}
 
       ,CpuGas
+<<<<<<< HEAD
       ,ogelf
       ,cpuelf
 
@@ -80,6 +87,8 @@ implementation
       ,dbgdwarf
   {$endif NoDbgDwarf}
 
+=======
+>>>>>>> graemeg/cpstrnew
       ;
 
 end.

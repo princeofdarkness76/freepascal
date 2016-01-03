@@ -1702,7 +1702,11 @@ procedure GX_PokeARGB(x, y: cuint16; color: GXColor); cdecl; external;
  * \return none
   *)
 
+<<<<<<< HEAD
 procedure GX_PeekARGB(x, y: cuint16; var color: GXColor); cdecl; external;
+=======
+procedure GX_PeekARGB(x, y: cuint16; color: PGXColor); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 
 (*!
@@ -1741,7 +1745,11 @@ procedure GX_PokeZ(x, y: cuint16; z: cuint32); cdecl; external;
  * \return none
   *)
 
+<<<<<<< HEAD
 procedure GX_PeekZ(x, y: cuint16; var z: cuint32); cdecl; external;
+=======
+procedure GX_PeekZ(x, y: cuint16; z: pcuint32); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 
 (*!
@@ -1802,6 +1810,7 @@ function GX_GetTexObjUserData(obj: PGXTexObj): pointer; cdecl; external;
 
 
 (*!
+<<<<<<< HEAD
  * \fn void* GX_GetTexObjData(GXTexObj *obj)
  * \brief Used to get a pointer to texture data from the \ref GXTexObj structure.
  *
@@ -1878,6 +1887,8 @@ procedure GX_GetTexObjAll(obj: PGXTexObj; var image_ptr: Pointer; var width: cui
 
 
 (*!
+=======
+>>>>>>> graemeg/cpstrnew
  * \fn u32 GX_GetTexBufferSize(u16 wd,u16 ht,u32 fmt,u8 mipmap,u8 maxlod)
  * \brief Returns the amount of memory in bytes needed to store a texture of the given size and \a fmt.
  *
@@ -2817,7 +2828,11 @@ procedure GX_InitXfRasMetric; cdecl; external;
  * \return none
   *)
 
+<<<<<<< HEAD
 procedure GX_ReadXfRasMetric(var xfwaitin: cuint32; var xfwaitout: cuint32; var rasbusy: cuint32; var clks: cuint32); cdecl; external;
+=======
+procedure GX_ReadXfRasMetric(xfwaitin, xfwaitout, rasbusy, clks: pcuint32); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 
 (*!
@@ -2850,7 +2865,11 @@ procedure GX_ClearVCacheMetric; cdecl; external;
  * \return none
   *)
 
+<<<<<<< HEAD
 procedure GX_ReadVCacheMetric(var check: cuint32; var miss: cuint32; var stall: cuint32); cdecl; external;
+=======
+procedure GX_ReadVCacheMetric(check, miss, stall: pcuint32); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 
 (*!
@@ -2888,7 +2907,11 @@ procedure GX_SetVCacheMetric(attr: cuint32); cdecl; external;
  * \return none
   *)
 
+<<<<<<< HEAD
 procedure GX_GetGPStatus(var overhi: cuint32; var underlow: cuint8; var readIdle: cuint8; var cmdIdle: cuint8; var brkpt: cuint8); cdecl; external;
+=======
+procedure GX_GetGPStatus(overhi, underlow, readIdle, cmdIdle, brkpt: pcuint8); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 
 (*!
@@ -2910,7 +2933,11 @@ procedure GX_GetGPStatus(var overhi: cuint32; var underlow: cuint8; var readIdle
  * \return none
   *)
 
+<<<<<<< HEAD
 procedure GX_ReadGPMetric(var cnt0: cuint32; var cnt1: cuint32); cdecl; external;
+=======
+procedure GX_ReadGPMetric(cnt0, cnt1: pcuint32); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 
 (*!
@@ -2931,7 +2958,11 @@ procedure GX_ReadGPMetric(var cnt0: cuint32; var cnt1: cuint32); cdecl; external
  * \return none
   *)
 
+<<<<<<< HEAD
 procedure GX_ReadBoundingBox(var top: cuint16; var bottom: cuint16; var left: cuint16; var right: cuint16); cdecl; external;
+=======
+procedure GX_ReadBoundingBox(top, bottom, left, right: pcuint16); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 
 (*!

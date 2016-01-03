@@ -47,16 +47,26 @@
     _document: NSDocument;
     _topLevelObjects: NSArray;
     _owner: id;
+<<<<<<< HEAD
     __wcFlags: record
       case byte of
        0: (_anonbitfield_NSWindowController0: cuint);
        1: (data: bitpacked record
+=======
+    __wcFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSWindowController0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _shouldCloseDocument: 0..1;
         shouldCascade: 0..1;
         nibIsLoaded: 0..1;
         nibNameIsPath: 0..1;
         RESERVED: 0..((1 shl 28)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _frameAutosaveName: NSString;

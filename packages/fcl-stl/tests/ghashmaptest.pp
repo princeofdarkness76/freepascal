@@ -81,6 +81,7 @@ begin
   end;
   it:=data.Iterator;
   repeat
+<<<<<<< HEAD
     inc(x[it.Data.key]);
     AssertEquals('bad value', it.Data.key*47, it.Data.value);
     AssertEquals('bad value2', it.Key*47, it.Value);
@@ -89,6 +90,10 @@ begin
     AssertEquals('bad value3', it.Key*2+46, it.Value);
     it.MutableValue^ := 222;
     AssertEquals('bad value4', 222, it.Value);
+=======
+    inc(x[it.GetValue.key]);
+    AssertEquals('bad value', it.GetValue.key*47, it.GetValue.value);
+>>>>>>> graemeg/cpstrnew
   until not it.next;
   for i:=0 to 1000 do begin
     AssertEquals('som not 1', 1, x[i]);

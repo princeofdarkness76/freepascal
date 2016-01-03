@@ -63,7 +63,11 @@ begin
   // Initialise the console, required for printf
   consoleDemoInit();
    
+<<<<<<< HEAD
   if nitroFSInit(nil) then
+=======
+  if (nitroFSInit()) then
+>>>>>>> graemeg/cpstrnew
   begin
     dirlist('/');
     begin

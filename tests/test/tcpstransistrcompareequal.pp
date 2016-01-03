@@ -1,10 +1,15 @@
 uses
 {$ifdef unix}
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
+=======
+  cwstring,
+>>>>>>> graemeg/cpstrnew
 {$endif unix}
   SysUtils;
   
 type
+<<<<<<< HEAD
   ts1253 = type AnsiString(1253);
   ts1251 = type AnsiString(1251);
 var
@@ -16,6 +21,19 @@ begin
   s1 := au;
   s2 := au;
   if (s1<>s2) then
+=======
+  ts850 = type string<850>;
+  ts1251 = type string<1251>;  
+var
+  a850:ts850;
+  a1251 : ts1251;  
+  au : utf8string;
+begin 
+  au := #$00AE#$00A7;
+  a850 := au; 
+  a1251 := au;
+  if (a850<>a1251) then
+>>>>>>> graemeg/cpstrnew
     halt(1);
   writeln('ok');
 end.

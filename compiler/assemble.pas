@@ -62,6 +62,7 @@ interface
         procedure MakeObject;virtual;abstract;
       end;
 
+<<<<<<< HEAD
       TExternalAssembler = class;
 
       IExternalAssemblerOutputFileDecorator=interface
@@ -71,6 +72,13 @@ interface
       end;
 
       TExternalAssemblerOutputFile=class
+=======
+      {# This is the base class which should be overridden for each each
+         assembler writer. It is used to actually assembler a file,
+         and write the output to the assembler file.
+      }
+      TExternalAssembler=class(TAssembler)
+>>>>>>> graemeg/cpstrnew
       private
         fdecorator: IExternalAssemblerOutputFileDecorator;
       protected
@@ -173,6 +181,15 @@ interface
 
         Function  DoAssemble:boolean;virtual;
 
+<<<<<<< HEAD
+=======
+        {# Write a new line to the assembler file }
+        Procedure AsmLn;
+
+        procedure AsmCreate(Aplace:tcutplace);
+        procedure AsmClose;
+
+>>>>>>> graemeg/cpstrnew
         {# This routine should be overridden for each assembler, it is used
            to actually write the abstract assembler stream to file.}
         procedure WriteTree(p:TAsmList);virtual;
@@ -193,6 +210,8 @@ interface
         property writer: TExternalAssemblerOutputFile read fwriter;
       end;
       TExternalAssemblerClass = class of TExternalAssembler;
+
+      { TInternalAssembler }
 
       { TInternalAssembler }
 
@@ -904,7 +923,12 @@ Implementation
         else if iPhoneOSVersionMin<>'' then
           Replace(result,'$DARWINVERSION','-miphoneos-version-min='+iPhoneOSVersionMin)
         else
+<<<<<<< HEAD
           Replace(result,'$DARWINVERSION','');
+=======
+          result:='-m68000 '+result;
+{$endif}
+>>>>>>> graemeg/cpstrnew
 {$ifdef arm}
         if (target_info.system=system_arm_darwin) then
           Replace(result,'$ARCH',lower(cputypestr[current_settings.cputype]));
@@ -1461,7 +1485,11 @@ Implementation
           begin
             { it's possible that indirect symbol is not present in the list,
               so we must create it as undefined }
+<<<<<<< HEAD
             indsym:=ObjData.CObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+=======
+            indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+>>>>>>> graemeg/cpstrnew
             indsym.typ:=AT_NONE;
             indsym.bind:=AB_NONE;
           end;
@@ -1507,8 +1535,19 @@ Implementation
                      ObjData.alloc(Tai_datablock(hp).size);
                    end;
                end;
+<<<<<<< HEAD
              ait_realconst:
                ObjData.alloc(tai_realconst(hp).savesize);
+=======
+             ait_real_80bit :
+               ObjData.alloc(tai_real_80bit(hp).savesize);
+             ait_real_64bit :
+               ObjData.alloc(8);
+             ait_real_32bit :
+               ObjData.alloc(4);
+             ait_comp_64bit :
+               ObjData.alloc(8);
+>>>>>>> graemeg/cpstrnew
              ait_const:
                begin
                  { if symbols are provided we can calculate the value for relative symbols.
@@ -1546,18 +1585,27 @@ Implementation
                      ;
                    asd_lazy_reference:
                      begin
+<<<<<<< HEAD
                        if tai_directive(hp).name='' then
                          Internalerror(2009112101);
                        objsym:=ObjData.symbolref(tai_directive(hp).name);
+=======
+                       if tai_directive(hp).name = nil then
+                         Internalerror(2009112101);
+                       objsym:=ObjData.symbolref(tai_directive(hp).name^);
+>>>>>>> graemeg/cpstrnew
                        objsym.bind:=AB_LAZY;
                      end;
                    asd_reference:
                      { ignore for now, but should be added}
                      ;
+<<<<<<< HEAD
 {$ifdef ARM}
                    asd_thumb_func:
                      ObjData.ThumbFunc:=true;
 {$endif ARM}
+=======
+>>>>>>> graemeg/cpstrnew
                    else
                      internalerror(2010011101);
                  end;
@@ -1636,8 +1684,19 @@ Implementation
                      ObjData.alloc(Tai_datablock(hp).size);
                    end;
                end;
+<<<<<<< HEAD
              ait_realconst:
                ObjData.alloc(tai_realconst(hp).savesize);
+=======
+             ait_real_80bit :
+               ObjData.alloc(tai_real_80bit(hp).savesize);
+             ait_real_64bit :
+               ObjData.alloc(8);
+             ait_real_32bit :
+               ObjData.alloc(4);
+             ait_comp_64bit :
+               ObjData.alloc(8);
+>>>>>>> graemeg/cpstrnew
              ait_const:
                begin
                  { Recalculate relative symbols }
@@ -1687,9 +1746,15 @@ Implementation
                begin
                  case tai_directive(hp).directive of
                    asd_indirect_symbol:
+<<<<<<< HEAD
                      if tai_directive(hp).name='' then
                        Internalerror(2009101103)
                      else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name) then
+=======
+                     if tai_directive(hp).name = nil then
+                       Internalerror(2009101103)
+                     else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name^) then
+>>>>>>> graemeg/cpstrnew
                        Internalerror(2009101102);
                    asd_lazy_reference:
                      { handled in TreePass0 }
@@ -1697,9 +1762,12 @@ Implementation
                    asd_reference:
                      { ignore for now, but should be added}
                      ;
+<<<<<<< HEAD
                    asd_thumb_func:
                      { ignore for now, but should be added}
                      ;
+=======
+>>>>>>> graemeg/cpstrnew
                    else
                      internalerror(2010011102);
                  end;
@@ -1720,6 +1788,7 @@ Implementation
         ref,
         objsymend : TObjSymbol;
         zerobuf : array[0..63] of byte;
+<<<<<<< HEAD
         relative_reloc: boolean;
         pdata : pointer;
         ssingle : single;
@@ -1733,14 +1802,21 @@ Implementation
         fillchar(zerobuf,sizeof(zerobuf),0);
         fillchar(objsym,sizeof(objsym),0);
         fillchar(objsymend,sizeof(objsymend),0);
+=======
+      begin
+        fillchar(zerobuf,sizeof(zerobuf),0);
+>>>>>>> graemeg/cpstrnew
         { main loop }
         while assigned(hp) do
          begin
            case hp.typ of
              ait_align :
                begin
+<<<<<<< HEAD
                  if tai_align_abstract(hp).aligntype>ObjData.CurrObjSec.secalign then
                    InternalError(2012072301);
+=======
+>>>>>>> graemeg/cpstrnew
                  if oso_data in ObjData.CurrObjSec.secoptions then
                    ObjData.writebytes(Tai_align_abstract(hp).calculatefillbuf(fillbuffer,oso_executable in ObjData.CurrObjSec.secoptions)^,
                      Tai_align_abstract(hp).fillsize)
@@ -1775,7 +1851,20 @@ Implementation
                      ObjData.alloc(Tai_datablock(hp).size);
                    end;
                end;
+<<<<<<< HEAD
              ait_realconst:
+=======
+             ait_real_80bit :
+               begin
+                 ObjData.writebytes(Tai_real_80bit(hp).value,10);
+                 ObjData.writebytes(zerobuf,Tai_real_80bit(hp).savesize-10);
+               end;
+             ait_real_64bit :
+               ObjData.writebytes(Tai_real_64bit(hp).value,8);
+             ait_real_32bit :
+               ObjData.writebytes(Tai_real_32bit(hp).value,4);
+             ait_comp_64bit :
+>>>>>>> graemeg/cpstrnew
                begin
                  case tai_realconst(hp).realtyp of
                    aitrealconst_s32bit:
@@ -1891,12 +1980,15 @@ Implementation
                    aitconst_darwin_dwarf_delta32,
                    aitconst_darwin_dwarf_delta64:
                      ObjData.writebytes(Tai_const(hp).value,tai_const(hp).size);
+<<<<<<< HEAD
                    aitconst_half16bit,
                    aitconst_gs:
                      begin
                        tmp:=Tai_const(hp).value div 2;
                        ObjData.writebytes(tmp,2);
                      end;
+=======
+>>>>>>> graemeg/cpstrnew
                    else
                      internalerror(200603254);
                  end;

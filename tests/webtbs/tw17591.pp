@@ -4,7 +4,11 @@ program comparetext;
 uses
  sysutils
 {$ifdef unix}
+<<<<<<< HEAD
  ,{$ifdef darwin}iosxwstr{$else}cwstring{$endif}
+=======
+ ,cwstring
+>>>>>>> graemeg/cpstrnew
 {$endif}
 ;
 var

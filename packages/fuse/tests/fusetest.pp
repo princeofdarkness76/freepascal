@@ -85,7 +85,11 @@ begin
       if (aFileOffset + aBufferSize > len) then
         aBufferSize := len - aFileOffset;
 
+<<<<<<< HEAD
       move((PChar(hello_str) + aFileOffset)^,ABuffer^, aBufferSize);
+=======
+      move(aBuffer^, (PChar(hello_str) + aFileOffset)^, aBufferSize);
+>>>>>>> graemeg/cpstrnew
     end else
       aBufferSize := 0;
 

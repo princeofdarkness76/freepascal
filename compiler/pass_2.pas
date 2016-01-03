@@ -152,8 +152,12 @@ implementation
              'loadparentfpn',
              'dataconstn',
              'objselectorn',
+<<<<<<< HEAD
              'objcprotocoln',
              'specializen'
+=======
+             'objcprotocoln'
+>>>>>>> graemeg/cpstrnew
              );
       var
         p: pchar;

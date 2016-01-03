@@ -147,7 +147,13 @@ end;
 procedure TBinaryObjectReader.BeginRootComponent;
 begin
   { Read filer signature }
+<<<<<<< HEAD
   ReadSignature;
+=======
+  Read(Signature, 4);
+  if Signature <> LongInt(unaligned(FilerSignature)) then
+    raise EReadError.Create(SInvalidImage);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TBinaryObjectReader.BeginComponent(var Flags: TFilerFlags;

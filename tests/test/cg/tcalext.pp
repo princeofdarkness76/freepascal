@@ -406,7 +406,11 @@ begin
 {$ifdef test_longdouble}
   array_long_double[1] := RESULT_LONGDOUBLE;
   test_array_param_longdouble(array_long_double);
+<<<<<<< HEAD
   if Abs(RESULT_LONGDOUBLE - global_long_double) > 1E-15 then
+=======
+  if trunc(global_long_double) <> trunc(RESULT_LONGDOUBLE) then
+>>>>>>> graemeg/cpstrnew
     failed := true;
 {$endif test_longdouble}
 

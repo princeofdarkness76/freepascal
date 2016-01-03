@@ -1,6 +1,10 @@
 {
     Free Pascal port of the OpenPTC C++ library.
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -30,6 +34,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 type
   TPTCTimer = class(TInterfacedObject, IPTCTimer)
   private
@@ -68,6 +73,8 @@ begin
   Result := TPTCTimer.Create(ATime);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 {Function timeGetTime: DWord; StdCall; external 'WINMM' name 'timeGetTime';}
 
 constructor TPTCTimer.Create;
@@ -91,6 +98,7 @@ begin
   SetTime(ATime);
 end;
 
+<<<<<<< HEAD
 {constructor TPTCTimer.Create(ATimer: IPTCTimer);
 begin
   internal_init_timer;
@@ -102,13 +110,25 @@ begin
   FRunning := ATimer.FRunning;
 end;
 }
+=======
+constructor TPTCTimer.Create(const ATimer: TPTCTimer);
+begin
+  internal_init_timer;
+  Assign(ATimer);
+end;
+
+>>>>>>> graemeg/cpstrnew
 destructor TPTCTimer.Destroy;
 begin
   Stop;
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 {procedure TPTCTimer.Assign(const ATimer: TPTCTimer);
+=======
+procedure TPTCTimer.Assign(const ATimer: TPTCTimer);
+>>>>>>> graemeg/cpstrnew
 begin
   if Self = ATimer then
     exit;
@@ -126,7 +146,11 @@ begin
             (FStart = ATimer.FStart) and (FCurrent = ATimer.FCurrent) and
             (FRunning = ATimer.FRunning);
 end;
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> graemeg/cpstrnew
 procedure TPTCTimer.SetTime(ATime: Double);
 begin
   FCurrent := ATime;

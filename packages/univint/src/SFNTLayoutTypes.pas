@@ -3,13 +3,27 @@
  
      Contains:   SFNT file layout structures and constants.
  
+<<<<<<< HEAD
      Version:    ATS
  
      Copyright:  © 1994-2012 by Apple Inc., all rights reserved.
+=======
+     Copyright:  © 1994-2008 by Apple Inc., all rights reserved.
  
-     Bugs?:      For bug reports, consult the following page on
-                 the World Wide Web:
+     Warning:    *** APPLE INTERNAL USE ONLY ***
+                 This file may contain unreleased API's
+>>>>>>> graemeg/cpstrnew
  
+     BuildInfo:  Built by:            root
+                 On:                  Fri Jul 24 22:21:51 2009
+                 With Interfacer:     3.0d46   (Mac OS X for PowerPC)
+                 From:                SFNTLayoutTypes.i
+                     Revision:        1.3
+                     Dated:           2007/01/15 23:28:27
+                     Last change by:  kurita
+                     Last comment:    <rdar://problem/4916090> updated copyright.
+ 
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -17,6 +31,14 @@
 {  Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+     Bugs:       Report bugs to Radar component "System Interfaces", "Latest"
+                 List the version information (from above) in the Problem Description.
+ 
+}
+
+{ Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -72,11 +94,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -92,6 +117,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -111,17 +137,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -176,6 +223,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -214,10 +294,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 //#pragma pack(push, 2)
 {$ALIGN MAC68K}
 
@@ -239,7 +327,11 @@ const
 	kAllTypographicFeaturesType = 0;
 	kLigaturesType = 1;
 	kCursiveConnectionType = 2;
+<<<<<<< HEAD
 	kLetterCaseType = 3;    { deprecated - use kLowerCaseType or kUpperCaseType instead }
+=======
+	kLetterCaseType = 3;
+>>>>>>> graemeg/cpstrnew
 	kVerticalSubstitutionType = 4;
 	kLinguisticRearrangementType = 5;
 	kNumberSpacingType = 6;
@@ -267,12 +359,15 @@ const
 	kIdeographicAlternativesType = 30;
 	kCJKVerticalRomanPlacementType = 31;
 	kItalicCJKRomanType = 32;
+<<<<<<< HEAD
 	kCaseSensitiveLayoutType = 33;
 	kAlternateKanaType = 34;
 	kStylisticAlternativesType = 35;
 	kContextualAlternatesType = 36;
 	kLowerCaseType = 37;
 	kUpperCaseType = 38;
+=======
+>>>>>>> graemeg/cpstrnew
 	kCJKRomanSpacingType = 103;
 	kLastFeatureType = -1;
 
@@ -309,10 +404,13 @@ const
 	kAbbrevSquaredLigaturesOffSelector = 15;
 	kSymbolLigaturesOnSelector = 16;
 	kSymbolLigaturesOffSelector = 17;
+<<<<<<< HEAD
 	kContextualLigaturesOnSelector = 18;
 	kContextualLigaturesOffSelector = 19;
 	kHistoricalLigaturesOnSelector = 20;
 	kHistoricalLigaturesOffSelector = 21;
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -330,12 +428,21 @@ const
  *    Selectors for feature type kLetterCaseType
  }
 const
+<<<<<<< HEAD
 	kUpperAndLowerCaseSelector = 0;    { deprecated }
 	kAllCapsSelector = 1;    { deprecated }
 	kAllLowerCaseSelector = 2;    { deprecated }
 	kSmallCapsSelector = 3;    { deprecated }
 	kInitialCapsSelector = 4;    { deprecated }
 	kInitialCapsAndSmallCapsSelector = 5;  { deprecated }
+=======
+	kUpperAndLowerCaseSelector = 0;
+	kAllCapsSelector = 1;
+	kAllLowerCaseSelector = 2;
+	kSmallCapsSelector = 3;
+	kInitialCapsSelector = 4;
+	kInitialCapsAndSmallCapsSelector = 5;
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -403,7 +510,10 @@ const
 	kSuperiorsSelector = 1;
 	kInferiorsSelector = 2;
 	kOrdinalsSelector = 3;
+<<<<<<< HEAD
 	kScientificInferiorsSelector = 4;
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -459,8 +569,11 @@ const
 	kInequalityLigaturesOffSelector = 7;
 	kExponentsOnSelector = 8;
 	kExponentsOffSelector = 9;
+<<<<<<< HEAD
 	kMathematicalGreekOnSelector = 10;
 	kMathematicalGreekOffSelector = 11;
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -526,10 +639,13 @@ const
 	kTraditionalAltFourSelector = 8;
 	kTraditionalAltFiveSelector = 9;
 	kExpertCharactersSelector = 10;
+<<<<<<< HEAD
 	kJIS2004CharactersSelector = 11;
 	kHojoCharactersSelector = 12;
 	kNLCCharactersSelector = 13;
 	kTraditionalNamesCharactersSelector = 14;
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -549,10 +665,13 @@ const
 	kProportionalTextSelector = 0;
 	kMonospacedTextSelector = 1;
 	kHalfWidthTextSelector = 2;
+<<<<<<< HEAD
 	kThirdWidthTextSelector = 3;
 	kQuarterWidthTextSelector = 4;
 	kAltProportionalTextSelector = 5;
 	kAltHalfWidthTextSelector = 6;
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -677,6 +796,7 @@ const
 	kCJKItalicRomanSelector = 1;    { deprecated - use kCJKItalicRomanOnSelector instead }
 	kCJKItalicRomanOnSelector = 2;
 	kCJKItalicRomanOffSelector = 3;
+<<<<<<< HEAD
 
 
 {
@@ -699,10 +819,13 @@ const
 	kAlternateHorizKanaOffSelector = 1;
 	kAlternateVertKanaOnSelector = 2;
 	kAlternateVertKanaOffSelector = 3;
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  Summary:
+<<<<<<< HEAD
  *    Selectors for feature type kStylisticAlternativesType
  }
 const
@@ -784,6 +907,8 @@ const
 
 {
  *  Summary:
+=======
+>>>>>>> graemeg/cpstrnew
  *    Selectors for feature type kCJKRomanSpacingType
  }
 const
@@ -1067,7 +1192,11 @@ type
 type
 	JustPCConditionalAddActionPtr = ^JustPCConditionalAddAction;
 	JustPCConditionalAddAction = record
+<<<<<<< HEAD
 		substThreshold: Fixed;        { threshold of growth factor at which subst occurs }
+=======
+		substThreshhold: Fixed;        { threshhold of growth factor at which subst occurs }
+>>>>>>> graemeg/cpstrnew
 		addGlyph: UInt16;
 		substGlyph: UInt16;
 	end;
@@ -1409,6 +1538,7 @@ type
 { --------------------------------------------------------------------------- }
 { FORMATS FOR TABLE: 'prop' }
 { CONSTANTS }
+<<<<<<< HEAD
 const
 	kPROPTag = $70726F70; { 'prop' }
 	kPROPCurrentVersion = $00030000; { current version number for 'prop' table }
@@ -1425,6 +1555,24 @@ const
 
 { These are the Unicode direction classes (plus the Special European Number class). }
 const
+=======
+const
+	kPROPTag = $70726F70; { 'prop' }
+	kPROPCurrentVersion = $00030000; { current version number for 'prop' table }
+	kPROPPairOffsetShift = 8;
+	kPROPPairOffsetSign = 7;
+	kPROPIsFloaterMask = $8000; { glyph is floater }
+	kPROPCanHangLTMask = $4000; { glyph can hang left/top }
+	kPROPCanHangRBMask = $2000; { glyph can hang right/bottom }
+	kPROPUseRLPairMask = $1000; { if glyph lands in RL streak, use paired glyph }
+	kPROPPairOffsetMask = $0F00; { 4-bit signed offset to other pair member }
+	kPROPRightConnectMask = $0080; { glyph connects to glyph on right }
+	kPROPZeroReserved = $0060; { must be zero }
+	kPROPDirectionMask = $001F; { direction bits }
+
+{ These are the Unicode direction classes (plus the Special European Number class). }
+const
+>>>>>>> graemeg/cpstrnew
 	kPROPLDirectionClass = 0;    { Left-to-Right }
 	kPROPRDirectionClass = 1;    { Right-to-Left }
 	kPROPALDirectionClass = 2;    { Right-to-Left Arabic Letter }
@@ -1684,7 +1832,11 @@ type
 		fsHeader: KernFormatSpecificHeader;         { format specific sub-header }
 	end;
 { Overall Subtable header format }
+<<<<<<< HEAD
 type
+=======
+	KernSubtableHeaderPtr = ^KernSubtableHeader;
+>>>>>>> graemeg/cpstrnew
 	KernSubtableHeader = record
 		length: SInt32;                 { length in bytes (including this header) }
 		stInfo: KernSubtableInfo;                 { subtable info }
@@ -1705,6 +1857,7 @@ const
 	kKERXUnusedBits = $1FFFFF00; { UNUSED, MUST BE ZERO }
 	kKERXFormatMask = $000000FF; { format of this subtable }
 
+<<<<<<< HEAD
 const
 	kKERXOrderedList = 0;    { ordered list of kerning pairs }
 	kKERXStateTable = 1;    { state table for n-way contextual kerning }
@@ -1907,6 +2060,12 @@ type
 { FORMATS FOR TABLE: 'bsln' }
 { CONSTANTS }
 const
+=======
+{ --------------------------------------------------------------------------- }
+{ FORMATS FOR TABLE: 'bsln' }
+{ CONSTANTS }
+const
+>>>>>>> graemeg/cpstrnew
 	kBSLNTag = $62736C6E; { 'bsln' }
 	kBSLNCurrentVersion = $00010000; { current version number for 'bsln' table }
 	kBSLNDistanceFormatNoMap = 0;
@@ -1990,6 +2149,7 @@ type
 	end;
 
 { The table format used in BaselineTable }
+<<<<<<< HEAD
 
 	BslnTableFormat = UInt16;
 { BaselineTable defines the top-level format of the baseline table in the font. }
@@ -2074,6 +2234,66 @@ type
 	end;
 { --------------------------------------------------------------------------- }
 
+=======
+
+	BslnTableFormat = UInt16;
+{ BaselineTable defines the top-level format of the baseline table in the font. }
+
+	BslnTablePtr = ^BslnTable;
+	BslnTable = record
+		version: Fixed;
+		format: BslnTableFormat;
+		defaultBaseline: UInt16;
+		parts: BslnFormatUnion;
+	end;
+
+{ --------------------------------------------------------------------------- }
+{ FORMATS FOR TABLE: 'ALMX' }
+{ TYPES }
+	ALMXHeaderPtr = ^ALMXHeader;
+	ALMXHeader = record
+		Version: Fixed;                { 16.16 format 1.0 by default }
+		Flags: UInt16;
+		NMasters: UInt16;
+		FirstGlyph: UInt16;
+		LastGlyph: UInt16;
+
+		lookup: SFNTLookupTable;                 { lookup table }
+	end;
+
+	ALMXGlyphEntryPtr = ^ALMXGlyphEntry;
+	ALMXGlyphEntry = record
+{ lookup data for ALMX table }
+		GlyphIndexOffset: SInt16;
+		HorizontalAdvance: SInt16;
+		XOffsetToHOrigin: SInt16;
+		VerticalAdvance: SInt16;
+		YOffsetToVOrigin: SInt16;
+	end;
+{ --------------------------------------------------------------------------- }
+{ FORMATS FOR TABLE: 'ROTA' }
+{ TYPES }
+	ROTAHeaderPtr = ^ROTAHeader;
+	ROTAHeader = record
+		Version: Fixed;                { 16.16 format 1.0 by default }
+		Flags: UInt16;
+		NMasters: UInt16;
+		FirstGlyph: UInt16;
+		LastGlyph: UInt16;
+
+		lookup: SFNTLookupTable;                 { lookup table }
+	end;
+
+	ROTAGlyphEntryPtr = ^ROTAGlyphEntry;
+	ROTAGlyphEntry = record
+{ lookup data for ROTA table }
+		GlyphIndexOffset: SInt16;
+		HBaselineOffset: SInt16;        { y offset to the rotated horizontal baseline }
+		VBaselineOffset: SInt16;        { x offset to the rotated vertical baseline }
+	end;
+{ --------------------------------------------------------------------------- }
+
+>>>>>>> graemeg/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

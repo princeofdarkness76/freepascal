@@ -3,7 +3,11 @@
 #
 [package]
 name=libgbafpc-template-examples
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.4.0
+>>>>>>> graemeg/cpstrnew
 
 [target]
 loaders=

@@ -16,9 +16,15 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
   pixels: PUint32;
   width, height: Integer;
   i: Integer;
@@ -75,8 +81,15 @@ begin
         console.update;
       end;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+      surface.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

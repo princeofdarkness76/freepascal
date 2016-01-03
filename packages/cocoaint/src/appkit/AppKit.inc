@@ -112,10 +112,15 @@
 {$include NSInterfaceStyle.inc} 
 {$include NSProgressIndicator.inc} 
 {$include NSTabView.inc} 
+<<<<<<< HEAD
 {$include NSTabViewItem.inc}
 {$ifndef cpu64}
 {$include NSMenuView.inc}
 {$endif}
+=======
+{$include NSTabViewItem.inc} 
+{$include NSMenuView.inc} 
+>>>>>>> graemeg/cpstrnew
 {$include NSMenuItemCell.inc} 
 {$include NSPopUpButtonCell.inc} 
 {$include NSAffineTransform.inc} 
@@ -125,6 +130,7 @@
 {$include NSStatusItem.inc} 
 {$include NSSound.inc} 
 {$include NSMovie.inc} 
+<<<<<<< HEAD
 {$ifndef cpu64}
 {$include NSMovieView.inc}
 {$endif}
@@ -132,6 +138,11 @@
 {$ifndef cpu64}
 {$include NSQuickDrawView.inc}
 {$endif}
+=======
+{$include NSMovieView.inc} 
+{$include NSPDFImageRep.inc} 
+{$include NSQuickDrawView.inc} 
+>>>>>>> graemeg/cpstrnew
 {$include NSDrawer.inc} 
 {$include NSOpenGL.inc} 
 {$include NSOpenGLView.inc} 

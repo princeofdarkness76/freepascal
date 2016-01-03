@@ -68,11 +68,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,6 +91,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -107,12 +111,30 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -131,6 +153,8 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -140,6 +164,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -154,19 +179,40 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
+=======
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+	{$setc TARGET_CPU_ARM := TRUE}
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -299,9 +345,89 @@ const
 	kDisabledDisplayBit = 9;
 	kMirrorDisplayBit = 10;
 	kUnMirrorDisplayBit = 11;
+<<<<<<< HEAD
 
 
 const
+{ Notification Messages for extended call back routines }
+	kDMNotifyRequestConnectionProbe = 0;  { Like kDMNotifyRequestDisplayProbe only not for smart displays (used in wake before all busses are awake) }
+	kDMNotifyInstalled = 1;    { At install time }
+	kDMNotifyEvent = 2;    { Post change time }
+	kDMNotifyRemoved = 3;    { At remove time }
+	kDMNotifyPrep = 4;    { Pre change time }
+	kDMNotifyExtendEvent = 5;    { Allow registrees to extend apple event before it is sent }
+	kDMNotifyDependents = 6;    { Minor notification check without full update }
+	kDMNotifySuspendConfigure = 7;    { Temporary end of configuration }
+	kDMNotifyResumeConfigure = 8;    { Resume configuration }
+	kDMNotifyRequestDisplayProbe = 9;    { Request smart displays re-probe (used in sleep and hot plugging) }
+	kDMNotifyDisplayWillSleep = 10;   { Mac OS X only }
+	kDMNotifyDisplayDidWake = 11;   { Mac OS X only }
+                                        { Notification Flags }
+	kExtendedNotificationProc = 1 shl 16;
+
+
+{ types for notifyType }
+const
+	kFullNotify = 0;    { This is the appleevent whole nine yards notify }
+	kFullDependencyNotify = 1;     { Only sends to those who want to know about interrelated functionality (used for updating UI) }
+
+{ DisplayID/DeviceID constants }
+const
+	kDummyDeviceID = $00FF; { This is the ID of the dummy display, used when the last ÒrealÓ display is disabled.}
+	kInvalidDisplayID = $0000; { This is the invalid ID}
+	kFirstDisplayID = $0100;
+
+const
+{ bits for panelListFlags }
+	kAllowDuplicatesBit = 0;
+
+const
+{ bits for nameFlags }
+	kSuppressNumberBit = 0;
+	kSuppressNumberMask = 1;
+	kForceNumberBit = 1;
+	kForceNumberMask = 2;
+	kSuppressNameBit = 2;
+	kSuppressNameMask = 4;
+
+{ DMGetNameByAVID masks}
+const
+	kDMSupressNumbersMask = 1 shl 0; { Supress the numbers and return only names}
+	kDMForceNumbersMask = 1 shl 1; { Force numbers to always be shown (even on single display configs)}
+	kDMSupressNameMask = 1 shl 2; { Supress the names and return only numbers.}
+
+
+{ Constants for fidelity checks }
+const
+	kNoFidelity = 0;
+	kMinimumFidelity = 1;
+	kDefaultFidelity = 500;  { I'm just picking a number for Apple default panels and engines}
+	kDefaultManufacturerFidelity = 1000;  { I'm just picking a number for Manufacturer's panels and engines (overrides apple defaults)}
+
+const
+	kAnyPanelType = 0;    { Pass to DMNewEngineList for list of all panels (as opposed to specific types)}
+	kAnyEngineType = 0;    { Pass to DMNewEngineList for list of all engines}
+	kAnyDeviceType = 0;    { Pass to DMNewDeviceList for list of all devices}
+	kAnyPortType = 0;     { Pass to DMNewDevicePortList for list of all devices}
+
+{ portListFlags for DM_NewDevicePortList }
+const
+{ Should offline devices be put into the port list (such as dummy display) }
+	kPLIncludeOfflineDevicesBit = 0;
+=======
+>>>>>>> graemeg/cpstrnew
+
+
+{ confirmFlags for DMConfirmConfiguration }
+const
+	kForceConfirmBit = 0;    { Force a confirm dialog }
+	kForceConfirmMask = 1 shl kForceConfirmBit;
+
+
+{ Flags for displayModeFlags }
+const
+<<<<<<< HEAD
+=======
 { Notification Messages for extended call back routines }
 	kDMNotifyRequestConnectionProbe = 0;  { Like kDMNotifyRequestDisplayProbe only not for smart displays (used in wake before all busses are awake) }
 	kDMNotifyInstalled = 1;    { At install time }
@@ -377,6 +503,7 @@ const
 
 { Flags for displayModeFlags }
 const
+>>>>>>> graemeg/cpstrnew
 	kDisplayModeListNotPreferredBit = 0;
 	kDisplayModeListNotPreferredMask = 1 shl kDisplayModeListNotPreferredBit;
 
@@ -405,6 +532,7 @@ const
 	kDisplayGestaltCalibratorAttr = FourCharCode('cali');
 	kDisplayGestaltBrightnessAffectsGammaMask = 1 shl 0; { Used by default calibrator (should we show brightness panel) }
 	kDisplayGestaltViewAngleAffectsGammaMask = 1 shl 1; { Currently not used by color sync}
+<<<<<<< HEAD
 
 
 type
@@ -416,6 +544,19 @@ type
 
 
 type
+=======
+
+
+type
+	DMFidelityType = UInt32;
+{
+   AVID is an ID for ports and devices the old DisplayID type
+    is carried on for compatibility
+}
+
+
+type
+>>>>>>> graemeg/cpstrnew
 	DMListType = UnivPtr;
 	DMListIndexType = UInt32;
 	AVPowerStateRec = VDPowerStateRec;
@@ -531,8 +672,13 @@ const
 	kIncludeOfflineDisplaysMask = 1 shl 2;
 	kIncludeOfflineDummyDisplaysMask = 1 shl 3;
 	kIncludeHardwareMirroredDisplaysMask = 1 shl 4;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 const
 { modeListFlags for DMNewDisplayModeList }
 	kDMModeListIncludeAllModesMask = 1 shl 0; { Include all timing modes not _explicitly_ excluded (see other bits)}

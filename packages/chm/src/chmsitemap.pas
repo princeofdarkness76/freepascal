@@ -246,6 +246,7 @@ begin
          end;
        end
        else begin // we are the properties of the object tag
+<<<<<<< HEAD
          if (smbtOBJECT in FSiteMapBodyTags) then
            begin
             if (FLevel > 0 ) then 
@@ -315,6 +316,39 @@ begin
                   // writeln('0:',flevel,' ' ,aactualtag,' ',tagname,' ' ,tagattributename, ' ' ,tagattributevalue);
                  end;
                  end;
+=======
+         if (FLevel > 0 ) and (smbtOBJECT in FSiteMapBodyTags) then begin
+
+           if LowerCase(GetTagName(AActualTag)) = 'param' then begin
+
+             TagAttributeName := GetVal(AActualTag, 'name');
+             TagAttributeValue := GetVal(AActualTag, 'value');
+
+             if TagAttributeName <> '' then begin
+               if CompareText(TagAttributeName, 'keyword') = 0 then begin
+                 ActiveItem.Text := TagAttributeValue;
+               end
+               else if CompareText(TagAttributeName, 'name') = 0 then begin
+                 if ActiveItem.Text = '' then ActiveItem.Text := TagAttributeValue;
+               end
+               else if CompareText(TagAttributeName, 'local') = 0 then begin
+                 ActiveItem.Local := TagAttributeValue;
+               end
+               else if CompareText(TagAttributeName, 'URL') = 0 then begin
+                 ActiveItem.URL := TagAttributeValue;
+               end
+               else if CompareText(TagAttributeName, 'ImageNumber') = 0 then begin
+                 ActiveItem.ImageNumber := StrToInt(TagAttributeValue);
+               end
+               else if CompareText(TagAttributeName, 'New') = 0 then begin
+                 ActiveItem.IncreaseImageIndex := (LowerCase(TagAttributeValue) = 'yes');
+               end
+               else if CompareText(TagAttributeName, 'Comment') = 0 then begin
+                 ActiveItem.Comment := TagAttributeValue;
+               end;
+               //else if CompareText(TagAttributeName, '') = 0 then begin
+               //end;
+>>>>>>> graemeg/cpstrnew
              end;
           end;
        end;
@@ -395,7 +429,11 @@ begin
     fs.free;
     end;
 end;
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> graemeg/cpstrnew
 procedure TChmSiteMap.SaveToStream(AStream: TStream);
 var
   Indent: Integer;

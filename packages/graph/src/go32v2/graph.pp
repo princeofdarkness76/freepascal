@@ -829,7 +829,11 @@ begin
       AndPut:
         begin
           { optimization }
+<<<<<<< HEAD
           if CurrentColor = 3 then
+=======
+          if CurrentColor = 1 then
+>>>>>>> graemeg/cpstrnew
             exit;
           Mem[SegB800:CurrentOffset] := Mem[SegB800:CurrentOffset] and (LBackMask or LForeMask);
         end;
@@ -882,8 +886,14 @@ begin
       AndPut:
         begin
           { optimization }
+<<<<<<< HEAD
           if CurrentColor = 3 then
             exit;
+=======
+          if CurrentColor = 1 then
+            exit;
+          { therefore, CurrentColor must be 0 }
+>>>>>>> graemeg/cpstrnew
           while MiddleAreaLength > 0 do
           begin
             Mem[SegB800:CurrentOffset] := Mem[SegB800:CurrentOffset] and ForeMask;
@@ -926,7 +936,11 @@ begin
       AndPut:
         begin
           { optimization }
+<<<<<<< HEAD
           if CurrentColor = 3 then
+=======
+          if CurrentColor = 1 then
+>>>>>>> graemeg/cpstrnew
             exit;
           Mem[SegB800:CurrentOffset] := Mem[SegB800:CurrentOffset] and (RBackMask or RForeMask);
         end;
@@ -2211,11 +2225,27 @@ End;
     end;
 
     PortW[$3ce]:=(LMask shl 8) or 8;
+<<<<<<< HEAD
 {$push}
+=======
+{$ifopt r+}
+{$define rangeOn}
+>>>>>>> graemeg/cpstrnew
 {$r-}
 {$q-}
     Mem[SegA000:ScrOfs]:=Mem[SegA000:ScrOfs]+1;
+<<<<<<< HEAD
 {$pop}
+=======
+{$ifdef rangeOn}
+{$undef rangeOn}
+{$r+}
+{$endif}
+{$ifdef overflowOn}
+{$undef overflowOn}
+{$q+}
+{$endif}
+>>>>>>> graemeg/cpstrnew
     {Port[$3ce]:=8;}{not needed, the register is already selected}
     if HLength>0 then
       begin
@@ -3435,6 +3465,7 @@ const CrtAddress: word = 0;
         Test6845 := False;
     end;
 
+<<<<<<< HEAD
     procedure FillCommonCGA320(var mode: TModeInfo);
     begin
       mode.HardwarePages := 0;
@@ -3574,6 +3605,13 @@ const CrtAddress: word = 0;
     EGAMonoDetected : Boolean = FALSE; { TRUE means true EGA with a monochrome (MDA) monitor }
     MCGADetected : Boolean = FALSE;
     VGADetected : Boolean = FALSE;
+=======
+   var
+    HGCDetected : Boolean;
+    CGADetected : Boolean; { TRUE means real CGA, *not* EGA or VGA }
+    EGADetected : Boolean; { TRUE means EGA or higher (VGA) }
+    VGADetected : Boolean;
+>>>>>>> graemeg/cpstrnew
     mode: TModeInfo;
     regs: TDPMIRegisters;
    begin
@@ -3584,6 +3622,7 @@ const CrtAddress: word = 0;
      if assigned(ModeList) then
        exit;
 
+<<<<<<< HEAD
      { check if VGA/MCGA adapter supported...       }
      regs.ax:=$1a00;
      RealIntr($10,regs);    { get display combination code...}
@@ -3609,6 +3648,42 @@ const CrtAddress: word = 0;
            end;
        end;
      if VGADetected then
+=======
+
+     HGCDetected := FALSE;
+     CGADetected := FALSE;
+     EGADetected := FALSE;
+     VGADetected := FALSE;
+     { check if EGA adapter supPorted...       }
+     asm
+       mov ah,12h
+       mov bx,0FF10h
+{$ifdef fpc}
+       push ebx
+       push ebp
+       push esi
+       push edi
+{$endif fpc}
+       int 10h              { get EGA information }
+{$ifdef fpc}
+       pop edi
+       pop esi
+       pop ebp
+{$endif fpc}
+       cmp bh,0ffh
+{$ifdef fpc}
+       pop ebx
+{$endif fpc}
+       jz  @noega
+       mov [EGADetected],TRUE
+     @noega:
+     end ['EBX','EAX'];
+{$ifdef logging}
+     LogLn('EGA detected: '+strf(Longint(EGADetected)));
+{$endif logging}
+     { check if VGA adapter supPorted...       }
+     if EGADetected then
+>>>>>>> graemeg/cpstrnew
        begin
          { now check if this is the ATI EGA }
          regs.ax:=$1c00; { get state size for save...     }
@@ -3661,6 +3736,17 @@ const CrtAddress: word = 0;
      LogLn('MCGA detected: '+strf(Longint(MCGADetected)));
      LogLn('VGA detected: '+strf(Longint(VGADetected)));
 {$endif logging}
+<<<<<<< HEAD
+=======
+     { older than EGA? }
+     if not EGADetected then
+       begin
+         { check if Hercules adapter supPorted ... }
+         HGCDetected := Test6845($3B4);
+         { check if CGA adapter supPorted ... }
+         CGADetected := Test6845($3D4);
+       end;
+>>>>>>> graemeg/cpstrnew
      if HGCDetected then
        begin
          { HACK:
@@ -3697,7 +3783,11 @@ const CrtAddress: word = 0;
          mode.YAspect := 10000;
          AddMode(mode);
        end;
+<<<<<<< HEAD
      if CGADetected or EGAColorDetected or MCGADetected or VGADetected then
+=======
+     if CGADetected or EGADetected then
+>>>>>>> graemeg/cpstrnew
        begin
          { HACK:
            until we create Save/RestoreStateCGA, we use Save/RestoreStateVGA
@@ -3710,6 +3800,7 @@ const CrtAddress: word = 0;
 
          { now add all standard CGA modes...       }
          InitMode(mode);
+<<<<<<< HEAD
          FillCommonCGA320(mode);
          mode.DriverNumber := CGA;
          mode.ModeNumber := CGAC0;
@@ -3751,6 +3842,129 @@ const CrtAddress: word = 0;
        end;
 
      if EGAColorDetected or VGADetected then
+=======
+         mode.DriverNumber := CGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := CGAC0;
+         mode.ModeName:='320 x 200 CGA C0';
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C0;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := CGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := CGAC1;
+         mode.ModeName:='320 x 200 CGA C1';
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C1;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := CGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := CGAC2;
+         mode.ModeName:='320 x 200 CGA C2';
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C2;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := CGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := CGAC3;
+         mode.ModeName:='320 x 200 CGA C3';
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C3;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := CGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := CGAHi;
+         mode.ModeName:='640 x 200 CGA';
+         mode.MaxColor := 2;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 639;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA640;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA640;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA640;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA640;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA640;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA640;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA640;
+         mode.XAspect := 4167;
+         mode.YAspect := 10000;
+         AddMode(mode);
+       end;
+
+     if EGADetected then
+>>>>>>> graemeg/cpstrnew
        begin
          { HACK:
            until we create Save/RestoreStateEGA, we use Save/RestoreStateVGA
@@ -3762,6 +3976,7 @@ const CrtAddress: word = 0;
          RestoreVideoState := @RestoreStateVGA;
 
          InitMode(mode);
+<<<<<<< HEAD
          FillCommonEGAVGA16(mode);
          mode.ModeNumber:=EGALo;
          mode.DriverNumber := EGA;
@@ -3772,11 +3987,35 @@ const CrtAddress: word = 0;
          mode.SetVisualPage := {$ifdef fpc}@{$endif}SetVisual200;
          mode.SetActivePage := {$ifdef fpc}@{$endif}SetActive200;
          mode.InitMode := {$ifdef fpc}@{$endif}Init640x200x16;
+=======
+         mode.ModeNumber:=EGALo;
+         mode.DriverNumber := EGA;
+         mode.ModeName:='640 x 200 EGA';
+         mode.MaxColor := 16;
+         mode.HardwarePages := 2;
+         mode.DirectColor := FALSE;
+         mode.PaletteSize := mode.MaxColor;
+         mode.MaxX := 639;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixel16;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixel16;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixel16;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.SetVisualPage := {$ifdef fpc}@{$endif}SetVisual200;
+         mode.SetActivePage := {$ifdef fpc}@{$endif}SetActive200;
+         mode.InitMode := {$ifdef fpc}@{$endif}Init640x200x16;
+         mode.HLine := {$ifdef fpc}@{$endif}HLine16;
+         mode.VLine := {$ifdef fpc}@{$endif}VLine16;
+         mode.GetScanLine := {$ifdef fpc}@{$endif}GetScanLine16;
+>>>>>>> graemeg/cpstrnew
          mode.XAspect := 4500;
          mode.YAspect := 10000;
          AddMode(mode);
 
          InitMode(mode);
+<<<<<<< HEAD
          FillCommonEGAVGA16(mode);
          mode.ModeNumber:=EGAHi;
          mode.DriverNumber := EGA;
@@ -3787,12 +4026,39 @@ const CrtAddress: word = 0;
          mode.SetVisualPage := {$ifdef fpc}@{$endif}SetVisual350;
          mode.SetActivePage := {$ifdef fpc}@{$endif}SetActive350;
          mode.InitMode := {$ifdef fpc}@{$endif}Init640x350x16;
+=======
+         mode.ModeNumber:=EGAHi;
+         mode.DriverNumber := EGA;
+         mode.ModeName:='640 x 350 EGA';
+         mode.HardwarePages := 1;
+         mode.MaxColor := 16;
+         mode.DirectColor := FALSE;
+         mode.PaletteSize := mode.MaxColor;
+         mode.MaxX := 639;
+         mode.MaxY := 349;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixel16;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixel16;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixel16;
+         mode.InitMode := {$ifdef fpc}@{$endif}Init640x350x16;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.SetVisualPage := {$ifdef fpc}@{$endif}SetVisual350;
+         mode.SetActivePage := {$ifdef fpc}@{$endif}SetActive350;
+         mode.HLine := {$ifdef fpc}@{$endif}HLine16;
+         mode.VLine := {$ifdef fpc}@{$endif}VLine16;
+         mode.GetScanLine := {$ifdef fpc}@{$endif}GetScanLine16;
+>>>>>>> graemeg/cpstrnew
          mode.XAspect := 7750;
          mode.YAspect := 10000;
          AddMode(mode);
        end;
 
+<<<<<<< HEAD
      if MCGADetected or VGADetected then
+=======
+     if VGADetected then
+>>>>>>> graemeg/cpstrnew
        begin
          { HACK:
            until we create Save/RestoreStateEGA, we use Save/RestoreStateVGA
@@ -3813,6 +4079,7 @@ const CrtAddress: word = 0;
          { yes, most of these are the same as the CGA modes; this is TP7
            compatible }
          InitMode(mode);
+<<<<<<< HEAD
          FillCommonCGA320(mode);
          mode.DriverNumber := MCGA;
          mode.ModeNumber := MCGAC0;
@@ -3850,6 +4117,125 @@ const CrtAddress: word = 0;
          mode.ModeNumber := MCGAMed;
          mode.ModeName:='640 x 200 CGA'; { yes, it says 'CGA' even for the MCGA driver; this is TP7 compatible }
          mode.InitMode := {$ifdef fpc}@{$endif}InitCGA640;
+=======
+         mode.DriverNumber := MCGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := MCGAC0;
+         mode.ModeName:='320 x 200 CGA C0'; { yes, it says 'CGA' even for the MCGA driver; this is TP7 compatible }
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C0;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := MCGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := MCGAC1;
+         mode.ModeName:='320 x 200 CGA C1'; { yes, it says 'CGA' even for the MCGA driver; this is TP7 compatible }
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C1;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := MCGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := MCGAC2;
+         mode.ModeName:='320 x 200 CGA C2'; { yes, it says 'CGA' even for the MCGA driver; this is TP7 compatible }
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C2;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := MCGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := MCGAC3;
+         mode.ModeName:='320 x 200 CGA C3'; { yes, it says 'CGA' even for the MCGA driver; this is TP7 compatible }
+         mode.MaxColor := 4;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 319;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA320;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA320;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA320;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA320C3;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA320;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA320;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA320;
+         mode.XAspect := 8333;
+         mode.YAspect := 10000;
+         AddMode(mode);
+
+         InitMode(mode);
+         mode.DriverNumber := MCGA;
+         mode.HardwarePages := 0;
+         mode.ModeNumber := MCGAMed;
+         mode.ModeName:='640 x 200 CGA'; { yes, it says 'CGA' even for the MCGA driver; this is TP7 compatible }
+         mode.MaxColor := 2;
+         mode.PaletteSize := 16;
+         mode.DirectColor := FALSE;
+         mode.MaxX := 639;
+         mode.MaxY := 199;
+         mode.DirectPutPixel:={$ifdef fpc}@{$endif}DirectPutPixelCGA640;
+         mode.PutPixel:={$ifdef fpc}@{$endif}PutPixelCGA640;
+         mode.GetPixel:={$ifdef fpc}@{$endif}GetPixelCGA640;
+         mode.SetRGBPalette := {$ifdef fpc}@{$endif}SetVGARGBPalette;
+         mode.GetRGBPalette := {$ifdef fpc}@{$endif}GetVGARGBPalette;
+         mode.SetAllPalette := {$ifdef fpc}@{$endif}SetVGARGBAllPalette;
+         mode.InitMode := {$ifdef fpc}@{$endif}InitCGA640;
+         mode.HLine := {$ifdef fpc}@{$endif}HLineCGA640;
+         mode.SetBkColor := {$ifdef fpc}@{$endif}SetBkColorCGA640;
+         mode.GetBkColor := {$ifdef fpc}@{$endif}GetBkColorCGA640;
+         mode.XAspect := 4167;
+         mode.YAspect := 10000;
+>>>>>>> graemeg/cpstrnew
          AddMode(mode);
 
          InitMode(mode);
@@ -3939,6 +4325,13 @@ const CrtAddress: word = 0;
          mode.ModeNumber:=VGALo;
          mode.DriverNumber := VGA;
          mode.ModeName:='640 x 200 EGA'; { yes, it says 'EGA' even for the VGA driver; this is TP7 compatible }
+<<<<<<< HEAD
+=======
+         mode.MaxColor := 16;
+         mode.HardwarePages := 2;
+         mode.DirectColor := FALSE;
+         mode.PaletteSize := mode.MaxColor;
+>>>>>>> graemeg/cpstrnew
          mode.MaxX := 639;
          mode.MaxY := 199;
          mode.HardwarePages := 3;
@@ -3954,6 +4347,13 @@ const CrtAddress: word = 0;
          mode.ModeNumber:=VGAMed;
          mode.DriverNumber := VGA;
          mode.ModeName:='640 x 350 EGA'; { yes, it says 'EGA' even for the VGA driver; this is TP7 compatible }
+<<<<<<< HEAD
+=======
+         mode.HardwarePages := 1;
+         mode.MaxColor := 16;
+         mode.DirectColor := FALSE;
+         mode.PaletteSize := mode.MaxColor;
+>>>>>>> graemeg/cpstrnew
          mode.MaxX := 639;
          mode.MaxY := 349;
          mode.HardwarePages := 1;
@@ -3973,6 +4373,12 @@ const CrtAddress: word = 0;
          mode.MaxY := 479;
          mode.HardwarePages := 0;
          mode.InitMode := {$ifdef fpc}@{$endif}Init640x480x16;
+<<<<<<< HEAD
+=======
+         mode.HLine := {$ifdef fpc}@{$endif}HLine16;
+         mode.VLine := {$ifdef fpc}@{$endif}VLine16;
+         mode.GetScanLine := {$ifdef fpc}@{$endif}GetScanLine16;
+>>>>>>> graemeg/cpstrnew
          mode.XAspect := 10000;
          mode.YAspect := 10000;
          AddMode(mode);
@@ -4097,6 +4503,12 @@ const CrtAddress: word = 0;
              mode.MaxX := 799;
              mode.MaxY := 599;
              mode.InitMode := {$ifdef fpc}@{$endif}Init800x600x16;
+<<<<<<< HEAD
+=======
+             mode.SetVisualPage := {$ifdef fpc}@{$endif}SetVisualVESA;
+             mode.SetActivePage := {$ifdef fpc}@{$endif}SetActiveVESA;
+             mode.HLine := {$ifdef fpc}@{$endif}HLineVESA16;
+>>>>>>> graemeg/cpstrnew
              mode.XAspect := 10000;
              mode.YAspect := 10000;
              AddMode(mode);
@@ -4153,6 +4565,12 @@ const CrtAddress: word = 0;
              mode.MaxX := 1023;
              mode.MaxY := 767;
              mode.InitMode := {$ifdef fpc}@{$endif}Init1024x768x16;
+<<<<<<< HEAD
+=======
+             mode.SetVisualPage := {$ifdef fpc}@{$endif}SetVisualVESA;
+             mode.SetActivePage := {$ifdef fpc}@{$endif}SetActiveVESA;
+             mode.HLine := {$ifdef fpc}@{$endif}HLineVESA16;
+>>>>>>> graemeg/cpstrnew
              mode.XAspect := 10000;
              mode.YAspect := 10000;
              AddMode(mode);
@@ -4209,6 +4627,12 @@ const CrtAddress: word = 0;
              mode.MaxX := 1279;
              mode.MaxY := 1023;
              mode.InitMode := {$ifdef fpc}@{$endif}Init1280x1024x16;
+<<<<<<< HEAD
+=======
+             mode.SetVisualPage := {$ifdef fpc}@{$endif}SetVisualVESA;
+             mode.SetActivePage := {$ifdef fpc}@{$endif}SetActiveVESA;
+             mode.HLine := {$ifdef fpc}@{$endif}HLineVESA16;
+>>>>>>> graemeg/cpstrnew
              mode.XAspect := 10000;
              mode.YAspect := 10000;
              AddMode(mode);

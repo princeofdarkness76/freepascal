@@ -5,7 +5,11 @@ unit wmjsonusers;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, 
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
+>>>>>>> graemeg/cpstrnew
     fpwebdata, extjsjson;
 
 type
@@ -26,9 +30,15 @@ var
 
 implementation
 
+<<<<<<< HEAD
 {$R *.lfm}
 
 initialization
+=======
+initialization
+  {$I wmjsonusers.lrs}
+
+>>>>>>> graemeg/cpstrnew
   RegisterHTTPModule('JSONProvider', TFPWebProviderDataModule1);
 end.
 

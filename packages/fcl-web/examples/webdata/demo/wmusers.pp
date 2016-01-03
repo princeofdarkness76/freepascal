@@ -5,7 +5,11 @@ unit wmusers;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb,
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb,
+>>>>>>> graemeg/cpstrnew
   db, dbf, fpwebdata, fpextjs,extjsjson,extjsxml;
 
 type
@@ -36,9 +40,12 @@ Var
   ResponseFileName : String; // Set to non empty to write request responses to a file.
 
 implementation
+<<<<<<< HEAD
 
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$define wmdebug}
 
 {$ifdef wmdebug}
@@ -297,6 +304,11 @@ begin
 end;
 
 initialization
+<<<<<<< HEAD
+=======
+  {$I wmusers.lrs}
+
+>>>>>>> graemeg/cpstrnew
   RegisterHTTPModule('Provider', TFPWebModule1);
 end.
 

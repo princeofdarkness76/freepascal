@@ -73,13 +73,44 @@ const
   sLineBreak = LineEnding;
   DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
 
+<<<<<<< HEAD
+=======
+type
+  TStartupInfo = record
+    cb : longint;
+    lpReserved : Pointer;
+    lpDesktop : Pointer;
+    lpTitle : Pointer;
+    dwX : longint;
+    dwY : longint;
+    dwXSize : longint;
+    dwYSize : longint;
+    dwXCountChars : longint;
+    dwYCountChars : longint;
+    dwFillAttribute : longint;
+    dwFlags : longint;
+    wShowWindow : Word;
+    cbReserved2 : Word;
+    lpReserved2 : Pointer;
+    hStdInput : THandle;
+    hStdOutput : THandle;
+    hStdError : THandle;
+  end;
+
+>>>>>>> graemeg/cpstrnew
 var
 { C compatible arguments }
   argc : longint;
   argv : ppchar;
 { Win32 Info }
+<<<<<<< HEAD
   startupinfo : tstartupinfo deprecated;  // Delphi does not have one in interface
   StartupConsoleMode : dword;
+=======
+  startupinfo : tstartupinfo;
+  StartupConsoleMode : dword;
+  hprevinst,
+>>>>>>> graemeg/cpstrnew
   MainInstance : qword;
   cmdshow     : longint;
   DLLreason : dword;
@@ -87,7 +118,11 @@ var
 const
   hprevinst: qword=0;
 type
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
+=======
+  TDLL_Entry_Hook = procedure (dllparam : longint);
+>>>>>>> graemeg/cpstrnew
 
 const
   Dll_Process_Detach_Hook : TDLL_Entry_Hook = nil;
@@ -100,13 +135,227 @@ Const
 	value
   }
   fmShareDenyNoneFlags : DWord = 3;
+<<<<<<< HEAD
+=======
+
+implementation
+
+var
+  SysInstance : qword;public;
+
+{ used by wstrings.inc because wstrings.inc is included before sysos.inc
+  this is put here (FK) }
+
+function SysAllocStringLen(psz:pointer;len:dword):pointer;stdcall;
+ external 'oleaut32.dll' name 'SysAllocStringLen';
+
+procedure SysFreeString(bstr:pointer);stdcall;
+ external 'oleaut32.dll' name 'SysFreeString';
+
+function SysReAllocStringLen(var bstr:pointer;psz: pointer;
+  len:dword): Integer; stdcall;external 'oleaut32.dll' name 'SysReAllocStringLen';
+
+>>>>>>> graemeg/cpstrnew
 
 implementation
 
 {$asmmode att}
 
 var
+<<<<<<< HEAD
   SysInstance : qword;public;
+=======
+  arglen,
+  count   : longint;
+  argstart,
+  pc,arg  : pchar;
+  quote   : char;
+  argvlen : longint;
+  buf: array[0..259] of char;  // need MAX_PATH bytes, not 256!
+
+  procedure allocarg(idx,len:longint);
+    var
+      oldargvlen : longint;
+    begin
+      if idx>=argvlen then
+       begin
+         oldargvlen:=argvlen;
+         argvlen:=(idx+8) and (not 7);
+         sysreallocmem(argv,argvlen*sizeof(pointer));
+         fillchar(argv[oldargvlen],(argvlen-oldargvlen)*sizeof(pointer),0);
+       end;
+      { use realloc to reuse already existing memory }
+      { always allocate, even if length is zero, since }
+      { the arg. is still present!                     }
+      sysreallocmem(argv[idx],len+1);
+    end;
+
+begin
+  { create commandline, it starts with the executed filename which is argv[0] }
+  { Win32 passes the command NOT via the args, but via getmodulefilename}
+  count:=0;
+  argv:=nil;
+  argvlen:=0;
+  ArgLen := GetModuleFileName(0, @buf[0], sizeof(buf));
+  buf[ArgLen] := #0; // be safe
+  allocarg(0,arglen);
+  move(buf,argv[0]^,arglen+1);
+  { Setup cmdline variable }
+  cmdline:=GetCommandLine;
+  { process arguments }
+  pc:=cmdline;
+{$IfDef SYSTEM_DEBUG_STARTUP}
+  Writeln(stderr,'Win32 GetCommandLine is #',pc,'#');
+{$EndIf }
+  while pc^<>#0 do
+   begin
+     { skip leading spaces }
+     while pc^ in [#1..#32] do
+      inc(pc);
+     if pc^=#0 then
+      break;
+     { calc argument length }
+     quote:=' ';
+     argstart:=pc;
+     arglen:=0;
+     while (pc^<>#0) do
+      begin
+        case pc^ of
+          #1..#32 :
+            begin
+              if quote<>' ' then
+               inc(arglen)
+              else
+               break;
+            end;
+          '"' :
+            begin
+              if quote<>'''' then
+               begin
+                 if pchar(pc+1)^<>'"' then
+                  begin
+                    if quote='"' then
+                     quote:=' '
+                    else
+                     quote:='"';
+                  end
+                 else
+                  inc(pc);
+               end
+              else
+               inc(arglen);
+            end;
+          '''' :
+            begin
+              if quote<>'"' then
+               begin
+                 if pchar(pc+1)^<>'''' then
+                  begin
+                    if quote=''''  then
+                     quote:=' '
+                    else
+                     quote:='''';
+                  end
+                 else
+                  inc(pc);
+               end
+              else
+               inc(arglen);
+            end;
+          else
+            inc(arglen);
+        end;
+        inc(pc);
+      end;
+     { copy argument }
+     { Don't copy the first one, it is already there.}
+     If Count<>0 then
+      begin
+        allocarg(count,arglen);
+        quote:=' ';
+        pc:=argstart;
+        arg:=argv[count];
+        while (pc^<>#0) do
+         begin
+           case pc^ of
+             #1..#32 :
+               begin
+                 if quote<>' ' then
+                  begin
+                    arg^:=pc^;
+                    inc(arg);
+                  end
+                 else
+                  break;
+               end;
+             '"' :
+                begin
+                 if quote<>'''' then
+                  begin
+                    if pchar(pc+1)^<>'"' then
+                     begin
+                       if quote='"' then
+                        quote:=' '
+                       else
+                        quote:='"';
+                     end
+                    else
+                     inc(pc);
+                  end
+                 else
+                  begin
+                    arg^:=pc^;
+                    inc(arg);
+                  end;
+               end;
+             '''' :
+               begin
+                 if quote<>'"' then
+                  begin
+                    if pchar(pc+1)^<>'''' then
+                     begin
+                       if quote=''''  then
+                        quote:=' '
+                       else
+                        quote:='''';
+                     end
+                    else
+                     inc(pc);
+                  end
+                 else
+                  begin
+                    arg^:=pc^;
+                    inc(arg);
+                  end;
+               end;
+             else
+               begin
+                 arg^:=pc^;
+                 inc(arg);
+               end;
+           end;
+           inc(pc);
+         end;
+        arg^:=#0;
+      end;
+ {$IfDef SYSTEM_DEBUG_STARTUP}
+     Writeln(stderr,'dos arg ',count,' #',arglen,'#',argv[count],'#');
+ {$EndIf SYSTEM_DEBUG_STARTUP}
+     inc(count);
+   end;
+  { get argc }
+  argc:=count;
+  { free unused memory, leaving a nil entry at the end }
+  sysreallocmem(argv,(count+1)*sizeof(pointer));
+  argv[count] := nil;
+end;
+
+
+function paramcount : longint;
+begin
+  paramcount := argc - 1;
+end;
+>>>>>>> graemeg/cpstrnew
 
 {$ifdef FPC_USE_WIN64_SEH}
 function main_wrapper(arg: Pointer; proc: Pointer): ptrint; assembler; nostackframe;
@@ -193,9 +442,34 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 {$endif FPC_USE_WIN64_SEH}
      ExitCode:=0;
      asm
+<<<<<<< HEAD
+=======
+        { allocate space for an exception frame }
+        pushq $0
+        pushq %gs:(0)
+        { movl  %rsp,%gs:(0)
+          but don't insert it as it doesn't
+          point to anything yet
+          this will be used in signals unit }
+        movq %rsp,%rax
+{$ifdef FPC_HAS_RIP_RELATIVE}
+        movq %rax,System_exception_frame(%rip)
+{$else}
+        movq %rax,System_exception_frame
+{$endif}
+        { keep stack aligned }
+        pushq $0
+        pushq %rbp
+        movq %rsp,%rax
+        movq %rax,st
+     end;
+     StackTop:=st;
+     asm
+>>>>>>> graemeg/cpstrnew
         xorq %rax,%rax
         movw %ss,%ax
         movl %eax,_SS(%rip)
+<<<<<<< HEAD
         movq %rbp,%rsi
         xorq %rbp,%rbp
 {$ifdef FPC_USE_WIN64_SEH}
@@ -203,6 +477,12 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
         lea  PASCALMAIN(%rip),%rdx
         call main_wrapper
 {$else FPC_USE_WIN64_SEH}
+=======
+{$else}
+        movl %eax,_SS
+{$endif}
+        xorq %rbp,%rbp
+>>>>>>> graemeg/cpstrnew
         call PASCALMAIN
 {$endif FPC_USE_WIN64_SEH}
         movq %rsi,%rbp
@@ -211,8 +491,30 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
      system_exit;
   end;
 
+function GetConsoleMode(hConsoleHandle: THandle; var lpMode: DWORD): Boolean; stdcall; external 'kernel32' name 'GetConsoleMode';
 
+<<<<<<< HEAD
 procedure _FPC_DLLMainCRTStartup(_hinstance : qword;_dllreason : dword;_dllparam:Pointer);stdcall;public name '_DLLMainCRTStartup';
+=======
+function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntryInformation){$endif FPC_HAS_INDIRECT_MAIN_INFORMATION} : longbool;forward;
+
+procedure _FPC_mainCRTStartup;stdcall;public name '_mainCRTStartup';
+begin
+  IsConsole:=true;
+  GetConsoleMode(GetStdHandle((Std_Input_Handle)),StartupConsoleMode);
+  Exe_entry;
+end;
+
+
+procedure _FPC_WinMainCRTStartup;stdcall;public name '_WinMainCRTStartup';
+begin
+  IsConsole:=false;
+  Exe_entry;
+end;
+
+
+procedure _FPC_DLLMainCRTStartup(_hinstance : qword;_dllreason,_dllparam:longint);stdcall;public name '_DLLMainCRTStartup';
+>>>>>>> graemeg/cpstrnew
 begin
   IsConsole:=true;
   sysinstance:=_hinstance;
@@ -461,6 +763,7 @@ procedure LinkIn(p1,p2,p3: Pointer); inline;
 begin
 end;
 
+<<<<<<< HEAD
 procedure _FPC_mainCRTStartup;stdcall;public name '_mainCRTStartup';
 begin
   IsConsole:=true;
@@ -471,6 +774,35 @@ begin
   Exe_entry;
 end;
 
+=======
+const
+  { MultiByteToWideChar  }
+     MB_PRECOMPOSED = 1;
+     CP_ACP = 0;
+     WC_NO_BEST_FIT_CHARS = $400;
+
+function MultiByteToWideChar(CodePage:UINT; dwFlags:DWORD; lpMultiByteStr:PChar; cchMultiByte:longint; lpWideCharStr:PWideChar;cchWideChar:longint):longint;
+    stdcall; external 'kernel32' name 'MultiByteToWideChar';
+function WideCharToMultiByte(CodePage:UINT; dwFlags:DWORD; lpWideCharStr:PWideChar; cchWideChar:longint; lpMultiByteStr:PChar;cchMultiByte:longint; lpDefaultChar:PChar; lpUsedDefaultChar:pointer):longint;
+    stdcall; external 'kernel32' name 'WideCharToMultiByte';
+function CharUpperBuff(lpsz:LPWSTR; cchLength:DWORD):DWORD;
+    stdcall; external 'user32' name 'CharUpperBuffW';
+function CharLowerBuff(lpsz:LPWSTR; cchLength:DWORD):DWORD;
+    stdcall; external 'user32' name 'CharLowerBuffW';
+
+
+procedure Win32Ansi2WideMove(source:pchar;var dest:widestring;len:SizeInt);
+  var
+    destlen: SizeInt;
+  begin
+    // retrieve length including trailing #0
+    // not anymore, because this must also be usable for single characters
+    destlen:=MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, source, len, nil, 0);
+    // this will null-terminate
+    setlength(dest, destlen);
+    MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, source, len, @dest[1], destlen);
+  end;
+>>>>>>> graemeg/cpstrnew
 
 procedure _FPC_WinMainCRTStartup;stdcall;public name '_WinMainCRTStartup';
 begin

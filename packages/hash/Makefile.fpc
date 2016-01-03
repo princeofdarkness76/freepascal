@@ -4,10 +4,19 @@
 
 [package]
 name=hash
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl
+=======
+version=2.5.1
+
+[target]
+units=md5 crc ntlm sha1 uuid
+units_linux=unixcrypt
+exampledirs=examples
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y

@@ -15,8 +15,13 @@ Type
   private
     FContent: String;
     FDescriptions: TStrings;
+<<<<<<< HEAD
     FImports: TStrings;
     FInputs: TStrings;
+=======
+    FIMports: TStrings;
+    FinPuts: TStrings;
+>>>>>>> graemeg/cpstrnew
     FName: String;
     FOutput: String;
   Public
@@ -50,7 +55,10 @@ Type
     FBackEndoptions: TStrings;
     FCPUTarget: String;
     FDefaultPackageName: String;
+<<<<<<< HEAD
     FEmitNotes: Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
     FFormat: String;
     FHidePrivate: Boolean;
     FHideProtected: Boolean;
@@ -60,7 +68,10 @@ Type
     FOSTarget: String;
     FSOPE: Boolean;
     FWarnNoNode: Boolean;
+<<<<<<< HEAD
     FDontTrim : Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
     procedure SetBackendOptions(const AValue: TStrings);
   Public
     Constructor Create;
@@ -79,8 +90,11 @@ Type
     Property InterfaceOnly : Boolean Read FIO Write FIO;
     Property MoDir : String Read FMoDir Write FMODir;
     Property DefaultPackageName : String Read FDefaultPackageName Write FDefaultPackageName;
+<<<<<<< HEAD
     Property DontTrim : Boolean Read FDontTrim Write FDontTrim;
     Property EmitNotes : Boolean Read FEmitNotes Write FEmitNotes;
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 
   { TFPDocProject }
@@ -98,6 +112,7 @@ Type
     Property Options : TEngineOptions Read FOptions Write setOptions;
   end;
 
+<<<<<<< HEAD
 Procedure SplitInputFileOption(Const AInputFile : String; Out AFile,AOption : String);
 
 implementation
@@ -150,6 +165,10 @@ begin
   AOption:=O;
 end;
 
+=======
+implementation
+
+>>>>>>> graemeg/cpstrnew
 { TEngineOptions }
 
 procedure TEngineOptions.SetBackendOptions(const AValue: TStrings);

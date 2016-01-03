@@ -205,6 +205,10 @@ const
     end;
     {$endif FPC_SYSTEM_HAS_COS}
 
+<<<<<<< HEAD
+=======
+{$ifdef FPC_HAS_TYPE_EXTENDED}
+>>>>>>> graemeg/cpstrnew
     {$ifndef FPC_SYSTEM_HAS_EXP}
     {$define FPC_SYSTEM_HAS_EXP}
     { exp function adapted from AMath library (C) Copyright 2009-2013 Wolfgang Ehrhardt
@@ -369,5 +373,9 @@ const
       asm
         cvtsd2si   %xmm0,%rax;
       end;
+<<<<<<< HEAD
 
+=======
+    {$endif FPC_SYSTEM_HAS_POWER}
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_HAS_TYPE_EXTENDED}

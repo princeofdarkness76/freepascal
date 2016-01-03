@@ -172,14 +172,19 @@
   {$define cpuflags}
   {$define cpunofpu}
   {$define cpunodefaultint}
+<<<<<<< HEAD
   {$define cpuneedsdivhelper}
   {$define cpuneedsmulhelper}
   {$define cpurefshaveindexreg}
   {$define cpucapabilities}
+=======
+  {$define cpuneedsdiv32helper}
+>>>>>>> graemeg/cpstrnew
 {$endif avr}
 
 {$ifdef mipsel}
   {$define mips}
+<<<<<<< HEAD
 {$else not mipsel}
   { Define both mips and mipseb if mipsel is not defined
     but mips cpu is wanted. }
@@ -229,10 +234,24 @@
   {$define SUPPORT_GET_FRAME}
 {$endif aarch64}
 
+=======
+{$endif mipsel}
+
+{$ifdef mips}
+  {$define cpu32bitalu}
+  {$define cpu32bitaddr}
+  { $define cpuflags}
+  {$define cputargethasfixedstack}
+  {$define cpurequiresproperalignment}
+  {$define cpumm}
+{$endif mips}
+
+>>>>>>> graemeg/cpstrnew
 {$IFDEF MACOS}
 {$DEFINE USE_FAKE_SYSUTILS}
 {$ENDIF MACOS}
 
+<<<<<<< HEAD
 { Stabs is not officially supported on 64 bit targets by gdb, except on Mac OS X
   (but there we don't support it)
 }
@@ -242,6 +261,8 @@
 {$endif}
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$if not defined(FPC_HAS_TYPE_EXTENDED) and defined(i386)}
 {$error Cross-compiling from systems without support for an 80 bit extended floating point type to i386 is not yet supported at this time }
 {$endif}

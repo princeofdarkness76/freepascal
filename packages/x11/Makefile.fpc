@@ -4,7 +4,14 @@
 
 [package]
 name=x11
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+
+[target]
+units=x xlib xutil xresource xcms xshm xrender keysym xi xkb xkblib xatom xinerama xv xvlib cursorfont xrandr xf86dga xf86vmode
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit

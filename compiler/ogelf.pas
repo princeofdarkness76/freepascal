@@ -739,16 +739,53 @@ implementation
 ****************************************************************************}
 
     constructor TElfObjData.create(const n:string);
+      var
+        need_datarel : boolean;
       begin
         inherited create(n);
         CObjSection:=TElfObjSection;
+<<<<<<< HEAD
+=======
+        { we need at least the following sections }
+        createsection(sec_code);
+        if (cs_create_pic in current_settings.moduleswitches) and
+           not(target_info.system in systems_darwin) then
+          begin
+            { We still need an empty data section }
+            system.exclude(current_settings.moduleswitches,cs_create_pic);
+            need_datarel:=true;
+          end
+        else
+          need_datarel:=false;
+        createsection(sec_data);
+        if need_datarel then
+          system.include(current_settings.moduleswitches,cs_create_pic);
+        createsection(sec_bss);
+        if need_datarel then
+          createsection(sec_data);
+        if tf_section_threadvars in target_info.flags then
+          createsection(sec_threadvar);
+        if (tf_needs_dwarf_cfi in target_info.flags) and
+           (af_supports_dwarf in target_asm.flags) then
+             createsection(sec_debug_frame);
+      end;
+
+
+    destructor TElfObjData.destroy;
+      begin
+        inherited destroy;
+>>>>>>> graemeg/cpstrnew
       end;
 
 
     function TElfObjData.sectionname(atype:TAsmSectiontype;const aname:string;aorder:TAsmSectionOrder):string;
       const
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+<<<<<<< HEAD
           { TODO: sec_rodata is still writable }
+=======
+{$ifdef userodata}
+>>>>>>> graemeg/cpstrnew
           '.text','.data','.data','.rodata','.bss','.threadvar',
           '.pdata',
           '.text', { darwin stubs }
@@ -797,9 +834,70 @@ implementation
           '.objc_nlclasslist',
           '.objc_catlist',
           '.obcj_nlcatlist',
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+        );
+        secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
+          '.text',
+          '.data.rel',
+          '.data.rel',
+          '.data.rel',
+          '.bss',
+          '.threadvar',
+          '.pdata',
+          '', { stubs }
+          '__DATA,__nl_symbol_ptr',
+          '__DATA,__la_symbol_ptr',
+          '__DATA,__mod_init_func',
+          '__DATA,__mod_term_func',
+          '.stab',
+          '.stabstr',
+          '.idata$2','.idata$4','.idata$5','.idata$6','.idata$7','.edata',
+          '.eh_frame',
+          '.debug_frame','.debug_info','.debug_line','.debug_abbrev',
+          '.fpc',
+          '.toc',
+          '.init',
+          '.fini',
+          '.objc_class',
+          '.objc_meta_class',
+          '.objc_cat_cls_meth',
+          '.objc_cat_inst_meth',
+          '.objc_protocol',
+          '.objc_string_object',
+          '.objc_cls_meth',
+          '.objc_inst_meth',
+          '.objc_cls_refs',
+          '.objc_message_refs',
+          '.objc_symbols',
+          '.objc_category',
+          '.objc_class_vars',
+          '.objc_instance_vars',
+          '.objc_module_info',
+          '.objc_class_names',
+          '.objc_meth_var_types',
+          '.objc_meth_var_names',
+          '.objc_selector_strs',
+          '.objc_protocol_ext',
+          '.objc_class_ext',
+          '.objc_property',
+          '.objc_image_info',
+          '.objc_cstring_object',
+          '.objc_sel_fixup',
+          '__DATA,__objc_data',
+          '__DATA,__objc_const',
+          '.objc_superrefs',
+          '__DATA, __datacoal_nt,coalesced',
+          '.objc_classlist',
+          '.objc_nlclasslist',
+          '.objc_catlist',
+          '.obcj_nlcatlist',
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
         );
       var
         sep : string[3];
@@ -810,7 +908,15 @@ implementation
           result:=aname
         else
           begin
+<<<<<<< HEAD
             secname:=secnames[atype];
+=======
+            if (cs_create_pic in current_settings.moduleswitches) and
+               not(target_info.system in systems_darwin) then
+              secname:=secnames_pic[atype]
+            else
+              secname:=secnames[atype];
+>>>>>>> graemeg/cpstrnew
             if (atype=sec_fpc) and (Copy(aname,1,3)='res') then
               begin
                 result:=secname+'.'+aname;
@@ -847,7 +953,10 @@ implementation
     procedure TElfObjData.writereloc(data:aint;len:aword;p:TObjSymbol;reltype:TObjRelocationType);
       var
         symaddr : aint;
+<<<<<<< HEAD
         objreloc: TObjRelocation;
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         if CurrObjSec=nil then
           internalerror(200403292);
@@ -874,6 +983,7 @@ implementation
              end
            else
              begin
+<<<<<<< HEAD
                objreloc:=TObjRelocation.CreateSymbol(CurrObjSec.Size,p,reltype);
                CurrObjSec.ObjRelocations.Add(objreloc);
                { If target is a local label and it isn't handled above,
@@ -881,6 +991,13 @@ implementation
                  This may happen e.g. when taking address of Pascal label in PIC mode. }
                if (p.bind=AB_LOCAL) and (p.typ=AT_LABEL) then
                  p.typ:=AT_ADDR;
+=======
+               CurrObjSec.addsymreloc(CurrObjSec.Size,p,reltype);
+{$ifndef x86_64}
+               if (reltype=RELOC_RELATIVE) or (reltype=RELOC_PLT32) then
+                 dec(data,len);
+{$endif x86_64}
+>>>>>>> graemeg/cpstrnew
             end;
          end;
         if assigned(objreloc) then
@@ -934,6 +1051,7 @@ implementation
       var
         dyn:boolean;
       begin
+<<<<<<< HEAD
         dyn:=(aKind=esk_dyn);
         create_ext(aObjData,symsecnames[dyn],symsectypes[dyn],symsecattrs[dyn],sizeof(pint),sizeof(TElfSymbol));
         fstrsec:=TElfObjSection.create_ext(aObjData,strsecnames[dyn],SHT_STRTAB,symsecattrs[dyn],1,0);
@@ -942,6 +1060,107 @@ implementation
         symidx:=1;
         shinfo:=1;
         kind:=aKind;
+=======
+        with elf32data do
+         begin
+{$ifdef userodata}
+           { rodata can't have relocations }
+           if s.sectype=sec_rodata then
+             begin
+               if assigned(s.relocations.first) then
+                 internalerror(200408251);
+               exit;
+             end;
+{$endif userodata}
+           { create the reloc section }
+{$ifdef i386}
+           relocsect:=TElfObjSection.create_ext(ObjSectionList,'.rel'+s.name,SHT_REL,0,symtabsect.secshidx,s.secshidx,4,sizeof(TElfReloc));
+{$else i386}
+           relocsect:=TElfObjSection.create_ext(ObjSectionList,'.rela'+s.name,SHT_RELA,0,symtabsect.secshidx,s.secshidx,4,sizeof(TElfReloc));
+{$endif i386}
+           { add the relocations }
+           for i:=0 to s.Objrelocations.count-1 do
+             begin
+               objreloc:=TObjRelocation(s.Objrelocations[i]);
+               fillchar(rel,sizeof(rel),0);
+               rel.address:=objreloc.dataoffset;
+
+               { when things settle down, we can create processor specific
+                 derived classes }
+               case objreloc.typ of
+{$ifdef i386}
+                 RELOC_RELATIVE :
+                   reltyp:=R_386_PC32;
+                 RELOC_ABSOLUTE :
+                   reltyp:=R_386_32;
+                 RELOC_GOT32 :
+                   reltyp:=R_386_GOT32;
+                 RELOC_GOTPC :
+                   reltyp:=R_386_GOTPC;
+                 RELOC_PLT32 :
+                   begin
+                     reltyp:=R_386_PLT32;
+                   end;
+{$endif i386}
+{$ifdef sparc}
+                 RELOC_ABSOLUTE :
+                   reltyp:=R_SPARC_32;
+{$endif sparc}
+{$ifdef x86_64}
+                 RELOC_RELATIVE :
+                   begin
+                     reltyp:=R_X86_64_PC32;
+                     { length of the relocated location is handled here }
+                     rel.addend:=qword(-4);
+                   end;
+                 RELOC_ABSOLUTE :
+                   reltyp:=R_X86_64_64;
+                 RELOC_ABSOLUTE32 :
+                   reltyp:=R_X86_64_32S;
+                 RELOC_GOTPCREL :
+                   begin
+                     reltyp:=R_X86_64_GOTPCREL;
+                     { length of the relocated location is handled here }
+                     rel.addend:=qword(-4);
+                   end;
+                 RELOC_PLT32 :
+                   begin
+                     reltyp:=R_X86_64_PLT32;
+                     { length of the relocated location is handled here }
+                     rel.addend:=qword(-4);
+                   end;
+{$endif x86_64}
+                 else
+                   internalerror(200602261);
+               end;
+
+               { Symbol }
+               if assigned(objreloc.symbol) then
+                 begin
+                   if objreloc.symbol.symidx=-1 then
+                     begin
+                       writeln(objreloc.symbol.Name);
+                       internalerror(200603012);
+                     end;
+                   relsym:=objreloc.symbol.symidx;
+                 end
+               else
+                 begin
+                   if objreloc.objsection<>nil then
+                     relsym:=objreloc.objsection.secsymidx
+                   else
+                     relsym:=SHN_UNDEF;
+                 end;
+{$ifdef cpu64bitaddr}
+               rel.info:=(qword(relsym) shl 32) or reltyp;
+{$else cpu64bitaddr}
+               rel.info:=(relsym shl 8) or reltyp;
+{$endif cpu64bitaddr}
+               { write reloc }
+               relocsect.write(MaybeSwapElfReloc(rel),sizeof(rel));
+             end;
+         end;
+>>>>>>> graemeg/cpstrnew
       end;
 
     procedure TElfSymtab.writeInternalSymbol(avalue:aword;astridx:longword;ainfo:byte;ashndx:word);
@@ -979,6 +1198,7 @@ implementation
         case objsym.bind of
           AB_LOCAL :
             begin
+<<<<<<< HEAD
               elfsym.st_info:=STB_LOCAL shl 4;
               inc(shinfo);
             end;
@@ -1017,6 +1237,31 @@ implementation
             if kind<>esk_obj then
               begin
                 if assigned(objsym.objsection) and assigned(objsym.objsection.ExeSection) then
+=======
+              fillchar(elfsym,sizeof(elfsym),0);
+              { symbolname, write the #0 separate to overcome 255+1 char not possible }
+              elfsym.st_name:=strtabsect.Size;
+              strtabsect.writestr(objsym.name);
+              strtabsect.writestr(#0);
+              elfsym.st_size:=objsym.size;
+              case objsym.bind of
+                AB_LOCAL :
+                  begin
+                    elfsym.st_value:=objsym.address;
+                    elfsym.st_info:=STB_LOCAL shl 4;
+                    inc(localsyms);
+                  end;
+                AB_COMMON :
+                  begin
+                    elfsym.st_value:=$10;
+                    elfsym.st_info:=STB_GLOBAL shl 4;
+                  end;
+                AB_EXTERNAL :
+                  elfsym.st_info:=STB_GLOBAL shl 4;
+                AB_WEAK_EXTERNAL :
+                  elfsym.st_info:=STB_WEAK shl 4;
+                AB_GLOBAL :
+>>>>>>> graemeg/cpstrnew
                   begin
                     if (objsym.typ=AT_TLS) then
                       elfsym.st_value:=elfsym.st_value-tlsbase
@@ -1222,11 +1467,19 @@ implementation
         with data do
          begin
            { default sections }
+<<<<<<< HEAD
            symtabsect:=TElfSymtab.create(data,esk_obj);
            shstrtabsect:=TElfObjSection.create_ext(data,'.shstrtab',SHT_STRTAB,0,1,0);
            { "no executable stack" marker }
            { TODO: used by OpenBSD/NetBSD as well? }
            if (target_info.system in (systems_linux + systems_android + systems_freebsd + systems_dragonfly)) and
+=======
+           symtabsect:=TElfObjSection.create_ext(ObjSectionList,'.symtab',SHT_SYMTAB,0,0,0,4,sizeof(telfsymbol));
+           strtabsect:=TElfObjSection.create_ext(ObjSectionList,'.strtab',SHT_STRTAB,0,0,0,1,0);
+           shstrtabsect:=TElfObjSection.create_ext(ObjSectionList,'.shstrtab',SHT_STRTAB,0,0,0,1,0);
+           { "no executable stack" marker for Linux }
+           if (target_info.system in systems_linux) and
+>>>>>>> graemeg/cpstrnew
               not(cs_executable_stack in current_settings.moduleswitches) then
              TElfObjSection.create_ext(data,'.note.GNU-stack',SHT_PROGBITS,0,1,0);
            { symbol for filename }
@@ -1972,6 +2225,7 @@ implementation
                                   TElfExeOutput
 *****************************************************************************}
 
+<<<<<<< HEAD
     constructor TElfExeOutput.Create;
       begin
         inherited Create;
@@ -3460,4 +3714,62 @@ implementation
       end;
 
 
+=======
+{$ifdef i386}
+     const
+       as_i386_elf32_info : tasminfo =
+          (
+            id     : as_i386_elf32;
+            idtxt  : 'ELF';
+            asmbin : '';
+            asmcmd : '';
+            supported_targets : [system_i386_linux,system_i386_beos,system_i386_freebsd,system_i386_haiku,system_i386_Netware,system_i386_netwlibc,
+	                              system_i386_solaris,system_i386_embedded];
+            flags : [af_outputbinary,af_smartlink_sections,af_supports_dwarf];
+            labelprefix : '.L';
+            comment : '';
+          );
+{$endif i386}
+{$ifdef x86_64}
+     const
+       as_x86_64_elf64_info : tasminfo =
+          (
+            id     : as_x86_64_elf64;
+            idtxt  : 'ELF';
+            asmbin : '';
+            asmcmd : '';
+            supported_targets : [system_x86_64_linux];
+            flags : [af_outputbinary,af_smartlink_sections,af_supports_dwarf];
+            labelprefix : '.L';
+            comment : '';
+          );
+{$endif x86_64}
+{$ifdef sparc}
+     const
+       as_sparc_elf32_info : tasminfo =
+          (
+            id     : as_sparc_elf32;
+            idtxt  : 'ELF';
+            asmbin : '';
+            asmcmd : '';
+            supported_targets : [];
+//            flags : [af_outputbinary,af_smartlink_sections];
+            flags : [af_outputbinary,af_supports_dwarf];
+            labelprefix : '.L';
+            comment : '';
+          );
+{$endif sparc}
+
+
+initialization
+{$ifdef i386}
+  RegisterAssembler(as_i386_elf32_info,TElfAssembler);
+{$endif i386}
+{$ifdef sparc}
+  RegisterAssembler(as_sparc_elf32_info,TElfAssembler);
+{$endif sparc}
+{$ifdef x86_64}
+  RegisterAssembler(as_x86_64_elf64_info,TElfAssembler);
+{$endif x86_64}
+>>>>>>> graemeg/cpstrnew
 end.

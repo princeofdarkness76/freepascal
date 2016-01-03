@@ -1,10 +1,17 @@
 { CoreGraphics - CGPDFContext.h
+<<<<<<< HEAD
    Copyright (c) 2000-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+ * Copyright (c) 2000-2008 Apple Inc.
+ * All rights reserved. }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -59,11 +66,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -82,33 +92,49 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -158,6 +184,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -199,7 +253,11 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CGGeometry,CFBase,CFData,CFDictionary,CFURL,CGBase,CGContext,CGDataConsumer;
+=======
+uses MacTypes,CGGeometry,CFBase,CFDictionary,CFURL,CGBase,CGContext,CGDataConsumer;
+>>>>>>> graemeg/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
@@ -240,6 +298,7 @@ procedure CGPDFContextBeginPage( context: CGContextRef; pageInfo: CFDictionaryRe
 
 procedure CGPDFContextEndPage( context: CGContextRef ); external name '_CGPDFContextEndPage';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+<<<<<<< HEAD
 
 { Add the metadata stream specified by `metadata' to the document catalog
    of `context', as described in Table 3.25, "Entries in the catalog
@@ -250,6 +309,8 @@ procedure CGPDFContextEndPage( context: CGContextRef ); external name '_CGPDFCon
 
 procedure CGPDFContextAddDocumentMetadata( context: CGContextRef; metadata: CFDataRef ); external name '_CGPDFContextAddDocumentMetadata';
 (* CG_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_4_0) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Set the URL associated with `rect' to `url' in the PDF context
    `context'. }
@@ -319,6 +380,7 @@ var kCGPDFContextArtBox: CFStringRef; external name '_kCGPDFContextArtBox'; (* a
 
 //const kCGPDFContextAuthor: CFStringRef;
 //CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0);
+<<<<<<< HEAD
 
 { The subject of a document. Optional; if present, the value of this key
    must be a CFString. }
@@ -339,6 +401,28 @@ var kCGPDFContextSubject: CFStringRef; external name '_kCGPDFContextSubject'; (*
 var kCGPDFContextKeywords: CFStringRef; external name '_kCGPDFContextKeywords'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
+=======
+
+{ The subject of a document. Optional; if present, the value of this key
+   must be a CFString. }
+
+var kCGPDFContextSubject: CFStringRef; external name '_kCGPDFContextSubject'; (* attribute const *)
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+{ The keywords for this document. This key is optional. If the value of
+   this key is a CFString, the /Keywords entry will be the specified string.
+   If the value of this key is a CFArray, then it must be an array of
+   CFStrings. The /Keywords entry will in this case be the concatenation of
+   the specified strings separated by commas (","). In addition, an entry
+   with the key "/AAPL:Keywords" will be stored in the document information
+   dictionary; its value is an array consisting of each of the specified
+   strings. The value of this key must be in one of the above forms;
+   otherwise, this key is ignored. }
+
+var kCGPDFContextKeywords: CFStringRef; external name '_kCGPDFContextKeywords'; (* attribute const *)
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+>>>>>>> graemeg/cpstrnew
 { The name of the application that created the original data used to create
    this document. Optional; if present, the value of this key must be a
    CFString. }
@@ -352,10 +436,17 @@ var kCGPDFContextKeywords: CFStringRef; external name '_kCGPDFContextKeywords'; 
    be a CFStringRef which can be represented in ASCII encoding; only the
    first 32 bytes will be used for the password. There is no default value
    for this key.
+<<<<<<< HEAD
 
    If the value of this key cannot be represented in ASCII, the document
    will not be created and the creation function will return NULL. }
 
+=======
+
+   If the value of this key cannot be represented in ASCII, the document
+   will not be created and the creation function will return NULL. }
+
+>>>>>>> graemeg/cpstrnew
 var kCGPDFContextOwnerPassword: CFStringRef; external name '_kCGPDFContextOwnerPassword'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 
@@ -367,10 +458,17 @@ var kCGPDFContextOwnerPassword: CFStringRef; external name '_kCGPDFContextOwnerP
 
    If the value of this key cannot be represented in ASCII, the document
    will not be created and the creation function will return NULL. }
+<<<<<<< HEAD
 
 var kCGPDFContextUserPassword: CFStringRef; external name '_kCGPDFContextUserPassword'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 
+=======
+
+var kCGPDFContextUserPassword: CFStringRef; external name '_kCGPDFContextUserPassword'; (* attribute const *)
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+
+>>>>>>> graemeg/cpstrnew
 { Specifies the encryption key length in bits; see Table 3.18 "Entries
    common to all encryption dictionaries", PDF Reference: Adobe PDF version
    1.5 (4th ed.) for more info. Optional; if present, the value of this key
@@ -409,53 +507,94 @@ var kCGPDFContextAllowsCopying: CFStringRef; external name '_kCGPDFContextAllows
 { The following keys are supported in the output intent dictionary:
 
    kCGPDFXOutputIntentSubtype ("S"): The output intent subtype. This key is
+<<<<<<< HEAD
    required; the value of this key must be a CFString equal to "GTS_PDFX";
    otherwise, the dictionary is ignored. }
+=======
+      required; the value of this key must be a CFString equal to
+      "GTS_PDFX"; otherwise, the dictionary is ignored. }
+>>>>>>> graemeg/cpstrnew
 
 var kCGPDFXOutputIntentSubtype: CFStringRef; external name '_kCGPDFXOutputIntentSubtype'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { kCGPDFXOutputConditionIdentifier ("OutputConditionIdentifier"): A string
+<<<<<<< HEAD
    identifying the intended output device or production condition in a
    human- or machine-readable form. This key is required; the value of this
    key must be a CFString. For best results, the string should be
    representable losslessly in ASCII encoding. }
+=======
+      identifying the intended output device or production condition in a
+      human- or machine-readable form. This key is required; the value of
+      this key must be a CFString. For best results, the string should be
+      representable losslessly in ASCII encoding. }
+>>>>>>> graemeg/cpstrnew
 
 var kCGPDFXOutputConditionIdentifier: CFStringRef; external name '_kCGPDFXOutputConditionIdentifier'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { kCGPDFXOutputCondition ("OutputCondition"): A text string identifying the
+<<<<<<< HEAD
    intended output device or production condition in a human-readable form.
    This key is optional; if present, the value of this key must be a
    CFString. }
+=======
+      intended output device or production condition in a human-readable
+      form. This key is optional; if present, the value of this key must be
+      a CFString. }
+>>>>>>> graemeg/cpstrnew
 
 var kCGPDFXOutputCondition: CFStringRef; external name '_kCGPDFXOutputCondition'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { kCGPDFXRegistryName ("RegistryName"): A string identifying the registry
+<<<<<<< HEAD
    in which the condition designated by `kCGPDFXOutputConditionIdentifier'
    is defined. This key is optional; if present, the value of this key must
    be a CFString. For best results, the string should be representable
    losslessly in ASCII encoding. }
+=======
+     in which the condition designated by `kCGPDFXOutputConditionIdentifier'
+     is defined. This key is optional; if present, the value of this key
+     must be a CFString. For best results, the string should be
+     representable losslessly in ASCII encoding. }
+>>>>>>> graemeg/cpstrnew
 
 var kCGPDFXRegistryName: CFStringRef; external name '_kCGPDFXRegistryName'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { kCGPDFXInfo ("Info"): A human-readable text string containing additional
+<<<<<<< HEAD
    information about the intended target device or production condition.
    This key is required if the value of `kCGPDFXOutputConditionIdentifier'
    does not specify a standard production condition; it is optional
    otherwise. If present, the value of this key must be a CFString. }
+=======
+      information or comments about the intended target device or production
+      condition. This key is required if the value of
+      `kCGPDFXOutputConditionIdentifier' does not specify a standard
+      production condition; it is optional otherwise. If present, the value
+      of this key must be a CFString. }
+>>>>>>> graemeg/cpstrnew
 
 var kCGPDFXInfo: CFStringRef; external name '_kCGPDFXInfo'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { kCGPDFXDestinationOutputProfile ("DestOutputProfile"): An ICC profile
+<<<<<<< HEAD
    stream defining the transformation from the PDF document's source colors
    to output device colorants. This key is required if the value of
    `kCGPDFXOutputConditionIdentifier' does not specify a standard production
    condition; it is optional otherwise. If present, the value of this key
    must be a ICC-based CGColorSpaceRef. }
+=======
+      stream defining the transformation from the PDF document's source
+      colors to output device colorants. This key is required if the value
+      of `kCGPDFXOutputConditionIdentifier' does not specify a standard
+      production condition; it is optional otherwise. If present, the value
+      of this key must be a ICC-based CGColorSpaceRef. }
+>>>>>>> graemeg/cpstrnew
 
 var kCGPDFXDestinationOutputProfile: CFStringRef; external name '_kCGPDFXDestinationOutputProfile'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)

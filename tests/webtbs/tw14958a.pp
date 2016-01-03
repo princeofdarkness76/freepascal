@@ -1,5 +1,8 @@
 { %target=linux }
+<<<<<<< HEAD
 { %needlibrary }
+=======
+>>>>>>> graemeg/cpstrnew
 { %norun }
 library tw14958a;
 

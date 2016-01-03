@@ -19,6 +19,7 @@ begin
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
     P.Dependencies.Add('pasjpeg');
+    P.Dependencies.Add('hash');
     P.Dependencies.Add('paszlib');
     P.Dependencies.Add('fcl-base');
 

@@ -92,6 +92,7 @@ interface
        PAInt = ^AInt;
 
        { target cpu specific type used to store data sizes }
+<<<<<<< HEAD
 {$ifdef cpu16bitaddr}
        { on small CPUs such as i8086, we use LongInt to support data structures
          larger than 32767 bytes and up to 65535 bytes in size. Since asizeint
@@ -102,6 +103,10 @@ interface
        ASizeInt = PInt;
        ASizeUInt = PUInt;
 {$endif cpu16bitaddr}
+=======
+       ASizeInt = PInt;
+       ASizeUInt = PUInt;
+>>>>>>> graemeg/cpstrnew
 
        { type used for handling constants etc. in the code generator }
        TCGInt = Int64;
@@ -141,12 +146,20 @@ interface
          cs_generate_stackframes,cs_do_assertion,cs_generate_rtti,
          cs_full_boolean_eval,cs_typed_const_writable,cs_allow_enum_calc,
          cs_do_inline,cs_fpu_fwait,cs_ieee_errors,
+<<<<<<< HEAD
          cs_check_low_addr_load,
          { mmx }
          cs_mmx,cs_mmx_saturation,
          { parser }
          cs_typed_addresses,cs_strict_var_strings,cs_refcountedstrings,
          cs_bitpacking,cs_varpropsetter,cs_scopedenums,cs_pointermath,
+=======
+         { mmx }
+         cs_mmx,cs_mmx_saturation,
+         { parser }
+         cs_typed_addresses,cs_strict_var_strings,cs_ansistrings,cs_bitpacking,
+         cs_varpropsetter,cs_scopedenums,cs_pointermath,
+>>>>>>> graemeg/cpstrnew
          { macpas specific}
          cs_external_var, cs_externally_visible,
          { jvm specific }
@@ -204,9 +217,13 @@ interface
          cs_link_strip,cs_link_staticflag,cs_link_on_target,cs_link_extern,cs_link_opt_vtable,
          cs_link_opt_used_sections,cs_link_separate_dbg_file,
          cs_link_map,cs_link_pthread,cs_link_no_default_lib_order,
+<<<<<<< HEAD
          cs_link_native,
          cs_link_pre_binutils_2_19,
          cs_link_vlink
+=======
+	 cs_link_native
+>>>>>>> graemeg/cpstrnew
        );
        tglobalswitches = set of tglobalswitch;
 
@@ -282,8 +299,12 @@ interface
          f_heap,f_init_final,f_rtti,f_classes,f_exceptions,f_exitcode,
          f_ansistrings,f_widestrings,f_textio,f_consoleio,f_fileio,
          f_random,f_variants,f_objects,f_dynarrays,f_threading,f_commandargs,
+<<<<<<< HEAD
          f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources,
          f_unicodestring
+=======
+         f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources
+>>>>>>> graemeg/cpstrnew
        );
        tfeatures = set of tfeature;
 
@@ -344,6 +365,7 @@ interface
 
        DebugSwitchStr : array[tdebugswitch] of string[22] = ('',
          'DWARFSETS','STABSABSINCLUDES','DWARFMETHODCLASSPREFIX');
+<<<<<<< HEAD
 
        TargetSwitchStr : array[ttargetswitch] of ttargetswitchinfo = (
          (name: '';                    hasvalue: false; isglobal: true ; define: ''),
@@ -358,6 +380,8 @@ interface
          (name: 'CLD';                 hasvalue: false; isglobal: true ; define: 'FPC_ENABLED_CLD'),
          (name: 'FARPROCSPUSHODDBP';   hasvalue: false; isglobal: false; define: 'FPC_FAR_PROCS_PUSH_ODD_BP')
        );
+=======
+>>>>>>> graemeg/cpstrnew
 
        { switches being applied to all CPUs at the given level }
        genericlevel1optimizerswitches = [cs_opt_level1,cs_opt_peephole];
@@ -374,15 +398,23 @@ interface
          'HEAP','INITFINAL','RTTI','CLASSES','EXCEPTIONS','EXITCODE',
          'ANSISTRINGS','WIDESTRINGS','TEXTIO','CONSOLEIO','FILEIO',
          'RANDOM','VARIANTS','OBJECTS','DYNARRAYS','THREADING','COMMANDARGS',
+<<<<<<< HEAD
          'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU','OBJECTIVEC1','RESOURCES',
          'UNICODESTRINGS'
+=======
+         'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU','OBJECTIVEC1','RESOURCES'
+>>>>>>> graemeg/cpstrnew
        );
 
     type
        { Switches which can be changed by a mode (fpc,tp7,delphi) }
        tmodeswitch = (m_none,
          { generic }
+<<<<<<< HEAD
          m_fpc,m_objfpc,m_delphi,m_tp7,m_mac,m_iso,m_extpas,
+=======
+         m_fpc,m_objfpc,m_delphi,m_tp7,m_mac,m_iso,
+>>>>>>> graemeg/cpstrnew
          {$ifdef fpc_mode}m_gpc,{$endif}
          { more specific }
          m_class,               { delphi class model }
@@ -410,6 +442,7 @@ interface
          m_objectivec2,         { support interfacing with Objective-C (2.0) }
          m_nested_procvars,     { support nested procedural variables }
          m_non_local_goto,      { support non local gotos (like iso pascal) }
+<<<<<<< HEAD
          m_advanced_records,    { advanced record syntax with visibility sections, methods and properties }
          m_isolike_unary_minus, { unary minus like in iso pascal: same precedence level as binary minus/plus }
          m_systemcodepage,      { use system codepage as compiler codepage by default, emit ansistrings with system codepage }
@@ -424,6 +457,9 @@ interface
          m_isolike_io,          { I/O as it required by an ISO compatible compiler }
          m_isolike_program_para, { program parameters as it required by an ISO compatible compiler }
          m_isolike_mod          { mod operation as it is required by an iso compatible compiler }
+=======
+         m_advanced_records     { advanced record syntax with visibility sections, methods and properties }
+>>>>>>> graemeg/cpstrnew
        );
        tmodeswitches = set of tmodeswitch;
 
@@ -553,10 +589,15 @@ interface
        pocall_default = pocall_stdcall;
 {$endif}
 
+<<<<<<< HEAD
        cstylearrayofconst = [pocall_cdecl,pocall_cppdecl,pocall_mwpascal];
 
        modeswitchstr : array[tmodeswitch] of string[18] = ('',
          '','','','','','','',
+=======
+       modeswitchstr : array[tmodeswitch] of string[18] = ('','',
+         '','','','','','',
+>>>>>>> graemeg/cpstrnew
          {$ifdef fpc_mode}'',{$endif}
          { more specific }
          'CLASS',
@@ -583,6 +624,7 @@ interface
          'OBJECTIVEC2',
          'NESTEDPROCVARS',
          'NONLOCALGOTO',
+<<<<<<< HEAD
          'ADVANCEDRECORDS',
          'ISOUNARYMINUS',
          'SYSTEMCODEPAGE',
@@ -594,6 +636,9 @@ interface
          'ISOPROGRAMPARAS',
          'ISOMOD'
          );
+=======
+         'ADVANCEDRECORDS');
+>>>>>>> graemeg/cpstrnew
 
 
      type
@@ -630,6 +675,7 @@ interface
          { dfa was generated for this proc }
          pi_dfaavailable,
          { subroutine contains interprocedural used labels }
+<<<<<<< HEAD
          pi_has_interproclabel,
          { subroutine has unwind info (win64) }
          pi_has_unwind_info,
@@ -645,6 +691,9 @@ interface
          pi_estimatestacksize,
          { the routine calls a C-style varargs function }
          pi_calls_c_varargs
+=======
+         pi_has_interproclabel
+>>>>>>> graemeg/cpstrnew
        );
        tprocinfoflags=set of tprocinfoflag;
 
@@ -693,8 +742,12 @@ interface
       end;
   {$endif}
 
+<<<<<<< HEAD
        tstringencoding = Word;
        tcodepagestring = string[20];
+=======
+      tstringencoding = word;
+>>>>>>> graemeg/cpstrnew
 
     const
        { link options }
@@ -707,6 +760,7 @@ interface
     type
       { a message state }
       tmsgstate = (
+<<<<<<< HEAD
         ms_on := 1,
         ms_off := 2,
         ms_error := 3,
@@ -746,6 +800,12 @@ interface
   { hide Sysutils.ExecuteProcess in units using this one after SysUtils}
   const
     ExecuteProcess = 'Do not use' deprecated 'Use cfileutil.RequotedExecuteProcess instead, ExecuteProcess cannot deal with single quotes as used by Unix command lines';
+=======
+        ms_on,    // turn on output
+        ms_off,   // turn off output
+        ms_error  // cast to error
+      );
+>>>>>>> graemeg/cpstrnew
 
 implementation
 

@@ -3,6 +3,7 @@
 type
   FifoMessageType = integer;
 const
+<<<<<<< HEAD
   SOUND_PLAY_MESSAGE        : FifoMessageType = $1234;
   SOUND_PSG_MESSAGE         : FifoMessageType = $1235;
   SOUND_NOISE_MESSAGE       : FifoMessageType = $1236;
@@ -11,6 +12,16 @@ const
   SYS_INPUT_MESSAGE         : FifoMessageType = $1239;
 	SDMMC_SD_READ_SECTORS     : FifoMessageType = $123A;
 	SDMMC_SD_WRITE_SECTORS    : FifoMessageType = $123B;
+=======
+  SOUND_PLAY_MESSAGE      : FifoMessageType = $1234;
+  SOUND_PSG_MESSAGE       : FifoMessageType = $1235;
+  SOUND_NOISE_MESSAGE     : FifoMessageType = $1236;
+  MIC_RECORD_MESSAGE      : FifoMessageType = $1237;
+  MIC_BUFFER_FULL_MESSAGE : FifoMessageType = $1238;
+  SYS_INPUT_MESSAGE       : FifoMessageType = $1239;
+	SYS_SD_READ_SECTORS     : FifoMessageType = $1240;
+	SYS_SD_WRITE_SECTORS    : FifoMessageType = $1241;
+>>>>>>> graemeg/cpstrnew
 
 type
 {$PACKRECORDS 4} 
@@ -66,6 +77,7 @@ type
 			    numsectors: cuint32;
 			  end;
 		  );
+<<<<<<< HEAD
       6: (
         fwParams: record
           buffer: pointer;
@@ -74,6 +86,8 @@ type
         end;      
       );  
         
+=======
+>>>>>>> graemeg/cpstrnew
   end;
   TFifoMessage = FifoMessage;
   PFifoMessage = ^FifoMessage;

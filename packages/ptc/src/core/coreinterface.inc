@@ -4,8 +4,6 @@
 {$INCLUDE eventd.inc}
 {$INCLUDE keyeventd.inc}
 {$INCLUDE mouseeventd.inc}
-{$INCLUDE closeeventd.inc}
-{$INCLUDE resizeeventd.inc}
 {$INCLUDE moded.inc}
 {$INCLUDE paletted.inc}
 {$INCLUDE cleard.inc}
@@ -13,7 +11,6 @@
 {$INCLUDE clipperd.inc}
 {$INCLUDE basesurfaced.inc}
 {$INCLUDE surfaced.inc}
-{$INCLUDE openglattributesd.inc}
 {$INCLUDE baseconsoled.inc}
 {$INCLUDE consoled.inc}
 {$INCLUDE errord.inc}

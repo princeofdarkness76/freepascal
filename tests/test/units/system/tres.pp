@@ -1,11 +1,18 @@
 { Test for resources support. }
 
+<<<<<<< HEAD
 {%TARGET=win32,win64,wince,linux,freebsd,darwin,netbsd,openbsd,solaris,haiku,aix,android}
 
 {$mode objfpc}
 
 uses sysutils;
 
+=======
+{%TARGET=win32,win64,wince,linux,freebsd,darwin,netbsd,openbsd,solaris,haiku}
+
+{$mode objfpc}
+
+>>>>>>> graemeg/cpstrnew
 {$R tres1.res}
 
 procedure Fail(const Msg: string);

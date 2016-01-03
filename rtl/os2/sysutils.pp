@@ -43,8 +43,250 @@ implementation
 
 
 type
+<<<<<<< HEAD
 (* Necessary here due to a different definition of TDateTime in DosCalls. *)
   TDateTime = System.TDateTime;
+=======
+        TFileStatus = object
+        end;
+        PFileStatus = ^TFileStatus;
+
+        TFileStatus3 = object (TFileStatus)
+            DateCreation,               {Date of file creation.}
+            TimeCreation,               {Time of file creation.}
+            DateLastAccess,             {Date of last access to file.}
+            TimeLastAccess,             {Time of last access to file.}
+            DateLastWrite,              {Date of last modification of file.}
+            TimeLastWrite:word;         {Time of last modification of file.}
+            FileSize,                   {Size of file.}
+            FileAlloc:cardinal;         {Amount of space the file really
+                                         occupies on disk.}
+            AttrFile:cardinal;          {Attributes of file.}
+        end;
+        PFileStatus3=^TFileStatus3;
+
+        TFileStatus4=object(TFileStatus3)
+            cbList:cardinal;            {Length of entire EA set.}
+        end;
+        PFileStatus4=^TFileStatus4;
+
+        TFileFindBuf3=object(TFileStatus)
+            NextEntryOffset: cardinal;  {Offset of next entry}
+            DateCreation,               {Date of file creation.}
+            TimeCreation,               {Time of file creation.}
+            DateLastAccess,             {Date of last access to file.}
+            TimeLastAccess,             {Time of last access to file.}
+            DateLastWrite,              {Date of last modification of file.}
+            TimeLastWrite:word;         {Time of last modification of file.}
+            FileSize,                   {Size of file.}
+            FileAlloc:cardinal;         {Amount of space the file really
+                                         occupies on disk.}
+            AttrFile:cardinal;          {Attributes of file.}
+            Name:shortstring;           {Also possible to use as ASCIIZ.
+                                         The byte following the last string
+                                         character is always zero.}
+        end;
+        PFileFindBuf3=^TFileFindBuf3;
+
+        TFileFindBuf4=object(TFileStatus)
+            NextEntryOffset: cardinal;  {Offset of next entry}
+            DateCreation,               {Date of file creation.}
+            TimeCreation,               {Time of file creation.}
+            DateLastAccess,             {Date of last access to file.}
+            TimeLastAccess,             {Time of last access to file.}
+            DateLastWrite,              {Date of last modification of file.}
+            TimeLastWrite:word;         {Time of last modification of file.}
+            FileSize,                   {Size of file.}
+            FileAlloc:cardinal;         {Amount of space the file really
+                                         occupies on disk.}
+            AttrFile:cardinal;          {Attributes of file.}
+            cbList:cardinal;            {Size of the file's extended attributes.}
+            Name:shortstring;           {Also possible to use as ASCIIZ.
+                                         The byte following the last string
+                                         character is always zero.}
+        end;
+        PFileFindBuf4=^TFileFindBuf4;
+
+        TFileFindBuf3L=object(TFileStatus)
+            NextEntryOffset: cardinal;  {Offset of next entry}
+            DateCreation,               {Date of file creation.}
+            TimeCreation,               {Time of file creation.}
+            DateLastAccess,             {Date of last access to file.}
+            TimeLastAccess,             {Time of last access to file.}
+            DateLastWrite,              {Date of last modification of file.}
+            TimeLastWrite:word;         {Time of last modification of file.}
+            FileSize,                   {Size of file.}
+            FileAlloc:int64;            {Amount of space the file really
+                                         occupies on disk.}
+            AttrFile:cardinal;          {Attributes of file.}
+            Name:shortstring;           {Also possible to use as ASCIIZ.
+                                         The byte following the last string
+                                         character is always zero.}
+        end;
+        PFileFindBuf3L=^TFileFindBuf3L;
+
+        TFileFindBuf4L=object(TFileStatus)
+            NextEntryOffset: cardinal;  {Offset of next entry}
+            DateCreation,               {Date of file creation.}
+            TimeCreation,               {Time of file creation.}
+            DateLastAccess,             {Date of last access to file.}
+            TimeLastAccess,             {Time of last access to file.}
+            DateLastWrite,              {Date of last modification of file.}
+            TimeLastWrite:word;         {Time of last modification of file.}
+            FileSize,                   {Size of file.}
+            FileAlloc:int64;            {Amount of space the file really
+                                         occupies on disk.}
+            AttrFile:cardinal;          {Attributes of file.}
+            cbList:cardinal;            {Size of the file's extended attributes.}
+            Name:shortstring;           {Also possible to use as ASCIIZ.
+                                         The byte following the last string
+                                         character is always zero.}
+        end;
+        PFileFindBuf4L=^TFileFindBuf4L;
+
+ TFSInfo = record
+            case word of
+             1:
+              (File_Sys_ID,
+               Sectors_Per_Cluster,
+               Total_Clusters,
+               Free_Clusters: cardinal;
+               Bytes_Per_Sector: word);
+             2:                           {For date/time description,
+                                           see file searching realted
+                                           routines.}
+              (Label_Date,                {Date when volume label was created.}
+               Label_Time: word;          {Time when volume label was created.}
+               VolumeLabel: ShortString); {Volume label. Can also be used
+                                           as ASCIIZ, because the byte
+                                           following the last character of
+                                           the string is always zero.}
+           end;
+ PFSInfo = ^TFSInfo;
+
+ TCountryCode=record
+               Country,            {Country to query info about (0=current).}
+               CodePage: cardinal; {Code page to query info about (0=current).}
+              end;
+ PCountryCode=^TCountryCode;
+
+ TTimeFmt = (Clock12, Clock24);
+
+ TCountryInfo=record
+               Country, CodePage: cardinal;  {Country and codepage requested.}
+               case byte of
+                0:
+                 (DateFormat: cardinal;     {1=ddmmyy 2=yymmdd 3=mmddyy}
+                  CurrencyUnit: array [0..4] of char;
+                  ThousandSeparator: char;  {Thousands separator.}
+                  Zero1: byte;              {Always zero.}
+                  DecimalSeparator: char;   {Decimals separator,}
+                  Zero2: byte;
+                  DateSeparator: char;      {Date separator.}
+                  Zero3: byte;
+                  TimeSeparator: char;      {Time separator.}
+                  Zero4: byte;
+                  CurrencyFormat,           {Bit field:
+                                             Bit 0: 0=indicator before value
+                                                    1=indicator after value
+                                             Bit 1: 1=insert space after
+                                                      indicator.
+                                             Bit 2: 1=Ignore bit 0&1, replace
+                                                      decimal separator with
+                                                      indicator.}
+                  DecimalPlace: byte;       {Number of decimal places used in
+                                             currency indication.}
+                  TimeFormat: TTimeFmt;     {12/24 hour.}
+                  Reserve1: array [0..1] of word;
+                  DataSeparator: char;      {Data list separator}
+                  Zero5: byte;
+                  Reserve2: array [0..4] of word);
+                1:
+                 (fsDateFmt: cardinal;      {1=ddmmyy 2=yymmdd 3=mmddyy}
+                  szCurrency: array [0..4] of char;
+                                            {null terminated currency symbol}
+                  szThousandsSeparator: array [0..1] of char;
+                                            {Thousands separator + #0}
+                  szDecimal: array [0..1] of char;
+                                            {Decimals separator + #0}
+                  szDateSeparator: array [0..1] of char;
+                                            {Date separator + #0}
+                  szTimeSeparator: array [0..1] of char;
+                                            {Time separator + #0}
+                  fsCurrencyFmt,            {Bit field:
+                                             Bit 0: 0=indicator before value
+                                                    1=indicator after value
+                                             Bit 1: 1=insert space after
+                                                      indicator.
+                                             Bit 2: 1=Ignore bit 0&1, replace
+                                                      decimal separator with
+                                                      indicator}
+                  cDecimalPlace: byte;      {Number of decimal places used in
+                                             currency indication}
+                  fsTimeFmt: byte;          {0=12,1=24 hours}
+                  abReserved1: array [0..1] of word;
+                  szDataSeparator: array [0..1] of char;
+                                            {Data list separator + #0}
+                  abReserved2: array [0..4] of word);
+              end;
+ PCountryInfo=^TCountryInfo;
+
+ TRequestData=record
+               PID,                {ID of process that wrote element.}
+               Data: cardinal;     {Information from process writing the data.}
+              end;
+ PRequestData=^TRequestData;
+
+{Queue data structure for synchronously started sessions.}
+ TChildInfo = record
+  case boolean of
+   false:
+    (SessionID,
+     Return: word);  {Return code from the child process.}
+   true:
+    (usSessionID,
+     usReturn: word);     {Return code from the child process.}
+ end;
+ PChildInfo = ^TChildInfo;
+
+ TStartData=record
+  {Note: to omit some fields, use a length smaller than SizeOf(TStartData).}
+  Length:word;                {Length, in bytes, of datastructure
+                               (24/30/32/50/60).}
+  Related:word;               {Independent/child session (0/1).}
+  FgBg:word;                  {Foreground/background (0/1).}
+  TraceOpt:word;              {No trace/trace this/trace all (0/1/2).}
+  PgmTitle:PChar;             {Program title.}
+  PgmName:PChar;              {Filename to program.}
+  PgmInputs:PChar;            {Command parameters (nil allowed).}
+  TermQ:PChar;                {System queue. (nil allowed).}
+  Environment:PChar;          {Environment to pass (nil allowed).}
+  InheritOpt:word;            {Inherit environment from shell/
+                               inherit environment from parent (0/1).}
+  SessionType:word;           {Auto/full screen/window/presentation
+                               manager/full screen Dos/windowed Dos
+                               (0/1/2/3/4/5/6/7).}
+  Iconfile:PChar;             {Icon file to use (nil allowed).}
+  PgmHandle:cardinal;         {0 or the program handle.}
+  PgmControl:word;            {Bitfield describing initial state
+                               of windowed sessions.}
+  InitXPos,InitYPos:word;     {Initial top coordinates.}
+  InitXSize,InitYSize:word;   {Initial size.}
+  Reserved:word;
+  ObjectBuffer:PChar;         {If a module cannot be loaded, its
+                               name will be returned here.}
+  ObjectBuffLen:cardinal;     {Size of your buffer.}
+ end;
+ PStartData=^TStartData;
+
+ TResultCodes=record
+  TerminateReason,        {0 = Normal termionation.
+                           1 = Critical error.
+                           2 = Trapped. (GPE, etc.)
+                           3 = Killed by DosKillProcess.}
+  ExitCode:cardinal;      {Exit code of child.}
+ end;
+>>>>>>> graemeg/cpstrnew
 
 threadvar
   LastOSError: cardinal;
@@ -505,11 +747,52 @@ begin
   if RC = 0 then
    DiskSize := int64 (FI.Total_Clusters) *
                    int64 (FI.Sectors_Per_Cluster) * int64 (FI.Bytes_Per_Sector)
+<<<<<<< HEAD
   else
    begin
     DiskSize := -1;
     OSErrorWatch (RC);
    end;
+=======
+            else
+                DiskSize := -1;
+end;
+
+
+function GetCurrentDir: string;
+begin
+ GetDir (0, Result);
+end;
+
+
+function SetCurrentDir (const NewDir: string): boolean;
+begin
+{$I-}
+{$WARNING Should be rewritten to avoid unit dos dependency!}
+ ChDir (NewDir);
+ Result := (IOResult = 0);
+{$I+}
+end;
+
+
+function CreateDir (const NewDir: string): boolean;
+begin
+{$I-}
+{$WARNING Should be rewritten to avoid unit dos dependency!}
+ MkDir (NewDir);
+ Result := (IOResult = 0);
+{$I+}
+end;
+
+
+function RemoveDir (const Dir: string): boolean;
+begin
+{$I-}
+{$WARNING Should be rewritten to avoid unit dos dependency!}
+ RmDir (Dir);
+ Result := (IOResult = 0);
+ {$I+}
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -568,9 +851,16 @@ end;
 procedure sysbeep;
 
 begin
+<<<<<<< HEAD
   DosBeep (800, 250);
 end;
 
+=======
+  // Maybe implement later on ?
+
+end;
+
+>>>>>>> graemeg/cpstrnew
 {****************************************************************************
                               Locale Functions
 ****************************************************************************}
@@ -991,8 +1281,11 @@ Initialization
   InitExceptions;       { Initialize exceptions. OS independent }
   InitInternational;    { Initialize internationalization settings }
   OnBeep:=@SysBeep;
+<<<<<<< HEAD
   LastOSError := 0;
   OrigOSErrorWatch := TOSErrorWatch (SetOSErrorTracking (@TrackLastOSError));
+=======
+>>>>>>> graemeg/cpstrnew
 Finalization
   DoneExceptions;
 end.

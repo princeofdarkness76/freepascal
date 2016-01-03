@@ -26,7 +26,11 @@ unit ppu;
 interface
 
   uses
+<<<<<<< HEAD
     systems,globtype,constexp,cstreams;
+=======
+    globtype,constexp,cstreams;
+>>>>>>> graemeg/cpstrnew
 
 { Also write the ppu if only crc if done, this can be used with ppudump to
   see the differences between the intf and implementation }
@@ -43,7 +47,11 @@ type
 {$endif Test_Double_checksum}
 
 const
+<<<<<<< HEAD
   CurrentPPUVersion = 181;
+=======
+  CurrentPPUVersion = 127;
+>>>>>>> graemeg/cpstrnew
 
 { buffer sizes }
   maxentrysize = 1024;
@@ -161,6 +169,7 @@ const
   uf_has_dwarf_debuginfo = $200000; { this unit has dwarf debuginfo generated }
   uf_wideinits           = $400000; { this unit has winlike widestring typed constants }
   uf_classinits          = $800000; { this unit has class constructors/destructors }
+<<<<<<< HEAD
   uf_resstrinits        = $1000000; { this unit has string consts referencing resourcestrings }
   uf_i8086_far_code     = $2000000; { this unit uses an i8086 memory model with far code (i.e. medium, large or huge) }
   uf_i8086_far_data     = $4000000; { this unit uses an i8086 memory model with far data (i.e. compact or large) }
@@ -212,6 +221,8 @@ const
     { 16 } 64 {'aarch64'}
     );
 {$endif generic_cpu}
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
   { bestreal is defined based on the target architecture }
@@ -273,7 +284,10 @@ type
     entrytyp : byte;
     header           : tppuheader;
     size             : integer;
+<<<<<<< HEAD
     change_endian    : boolean; { Used in ppudump util }
+=======
+>>>>>>> graemeg/cpstrnew
     { crc for the entire unit }
     crc,
     { crc for the interface definitions in this unit }
@@ -315,15 +329,26 @@ type
     function  getlongint:longint;
     function getint64:int64;
     function  getqword:qword;
+<<<<<<< HEAD
     function getaint:{$ifdef generic_cpu}int64{$else}aint{$endif};
     function getasizeint:{$ifdef generic_cpu}int64{$else}asizeint{$endif};
     function getaword:{$ifdef generic_cpu}qword{$else}aword{$endif};
+=======
+    function getaint:aint;
+    function getasizeint:asizeint;
+    function getaword:aword;
+>>>>>>> graemeg/cpstrnew
     function  getreal:ppureal;
     function  getrealsize(sizeofreal : longint):ppureal;
     function  getstring:string;
     function  getansistring:ansistring;
+<<<<<<< HEAD
     procedure getnormalset(out b);
     procedure getsmallset(out b);
+=======
+    procedure getnormalset(var b);
+    procedure getsmallset(var b);
+>>>>>>> graemeg/cpstrnew
     function  skipuntilentry(untilb:byte):boolean;
   {write}
     function  createfile:boolean;
@@ -807,7 +832,21 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function tppufile.getasizeint:{$ifdef generic_cpu}int64{$else}asizeint{$endif};
+=======
+function tppufile.getasizeint:asizeint;
+begin
+{$ifdef cpu64bitaddr}
+  result:=getint64;
+{$else cpu64bitaddr}
+  result:=getlongint;
+{$endif cpu32bitaddr}
+end;
+
+
+function tppufile.getaword:aword;
+>>>>>>> graemeg/cpstrnew
 begin
 {$ifdef generic_cpu}
   if CpuAddrBitSize[tsystemcpu(header.cpu)]=64 then
@@ -952,20 +991,35 @@ begin
 end;
 
 
+<<<<<<< HEAD
 function tppufile.getansistring:ansistring;
 var
   len: longint;
 begin
   len:=getlongint;
   if entryidx+len>entry.size then
+=======
+function tppufile.getansistring: ansistring;
+var
+  l : longint;
+begin
+  l:=getlongint;
+  if entryidx+l>entry.size then
+>>>>>>> graemeg/cpstrnew
    begin
      error:=true;
      result:='';
      exit;
    end;
+<<<<<<< HEAD
   setlength(result,len);
   if len>0 then
     getdata(result[1],len);
+=======
+  SetLength(Result,l);
+  ReadData(result[1],l);
+  inc(entryidx,l);
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -1321,6 +1375,7 @@ procedure tppufile.putstring(const s:string);
   end;
 
 
+<<<<<<< HEAD
 procedure tppufile.putansistring(const s:ansistring);
   var
     len: longint;
@@ -1329,6 +1384,15 @@ procedure tppufile.putansistring(const s:ansistring);
     putlongint(len);
     if len>0 then
       putdata(s[1],len);
+=======
+procedure tppufile.putansistring(const s: ansistring);
+  var
+    l : longint;
+  begin
+    l:=length(s);
+    putdata(l,4);
+    putdata(s[1],l);
+>>>>>>> graemeg/cpstrnew
   end;
 
 
@@ -1353,7 +1417,10 @@ procedure tppufile.tempclose;
      begin
        closepos:=f.Position;
        f.Free;
+<<<<<<< HEAD
        f:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
        closed:=true;
        tempclosed:=true;
      end;
@@ -1365,6 +1432,7 @@ function tppufile.tempopen:boolean;
     tempopen:=false;
     if not closed or not tempclosed then
      exit;
+<<<<<<< HEAD
    { MG: not sure, if this is correct
      f.position:=0;
        No, f was freed in tempclose above, we need to
@@ -1374,6 +1442,21 @@ function tppufile.tempopen:boolean;
     except
       exit;
     end;
+=======
+    // MG: not sure, if this is correct
+
+    f.Position:=0;
+    (*
+    ofm:=filemode;
+    filemode:=0;
+    {$I-}
+     reset(f,1);
+    {$I+}
+    filemode:=ofm;
+    if ioresult<>0 then
+     exit;
+    *)
+>>>>>>> graemeg/cpstrnew
     closed:=false;
     tempclosed:=false;
 

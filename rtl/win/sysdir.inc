@@ -20,9 +20,20 @@
 type
  TDirFnType=function(name:pointer):longbool;stdcall;
 
+<<<<<<< HEAD
 function CreateDirectoryTrunc(name:pointer):longbool;stdcall;
 begin
   CreateDirectoryTrunc:=CreateDirectoryW(name,nil);
+=======
+procedure dirfn(afunc : TDirFnType;s:pchar;len:integer);
+begin
+  DoDirSeparators(s);
+  if not aFunc(s) then
+    begin
+      errno:=GetLastError;
+      Errno2InoutRes;
+    end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure dirfn(afunc : TDirFnType;s:unicodestring);
@@ -34,6 +45,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 Procedure do_MkDir(const s: UnicodeString);
 begin
   dirfn(TDirFnType(@CreateDirectoryTrunc),s);
@@ -54,12 +66,34 @@ begin
     end;
   {$endif WINCE}
   dirfn(TDirFnType(@RemoveDirectoryW),s);
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+begin
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+   exit;
+  dirfn(TDirFnType(@CreateDirectoryTrunc),s,len);
+end;
+
+Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+
+begin
+  if (len=1) and (s^ ='.') then
+    InOutRes := 16;
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+   exit;
+{$ifdef WINCE}
+  if (len=2) and (s[0]='.') and (s[1]='.') then
+    InOutRes := 5;
+{$endif WINCE}
+  dirfn(TDirFnType(@RemoveDirectory),s,len);
+>>>>>>> graemeg/cpstrnew
 {$ifdef WINCE}
   if (Inoutres=3) and (Pos(DirectorySeparator, s)<2) then
     Inoutres:=2;
 {$endif WINCE}
 end;
 
+<<<<<<< HEAD
 Procedure do_ChDir(const s: UnicodeString);
 {$ifndef WINCE}
 var
@@ -95,6 +129,15 @@ begin
   else
 { Try SetCurrentDirectoryW with the original input if GetFullPathNameW errors out }
    dirfn(TDirFnType(@SetCurrentDirectoryW),s);
+=======
+Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+
+begin
+{$ifndef WINCE}
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+   exit;
+  dirfn(TDirFnType(@SetCurrentDirectory),s,len);
+>>>>>>> graemeg/cpstrnew
   if Inoutres=2 then
    Inoutres:=3;
 {$else WINCE}

@@ -119,7 +119,11 @@ var
     _promiseTypeNamesByIdentifier: NSMutableDictionary;
     _support: id;
     _pasteboardItems: id;
+<<<<<<< HEAD
     _reserved: array[0..(3)-1] of Pointer;
+=======
+        _reserved: array[0..2] of Pointer;
+>>>>>>> graemeg/cpstrnew
     
   public
     class function generalPasteboard: NSPasteboard; message 'generalPasteboard';

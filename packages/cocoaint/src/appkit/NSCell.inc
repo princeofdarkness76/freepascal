@@ -122,10 +122,17 @@ type
 
 { Records }
 type
+<<<<<<< HEAD
   __CFlags = record
     case byte of
     0: (_anonbitfield_NSCell0: cuint);
     1: (data: bitpacked record
+=======
+  __CFlags = bitpacked record
+    case byte of
+    0: (_anonbitfield_NSCell0: cuint);
+    1: (
+>>>>>>> graemeg/cpstrnew
           state: 0..1;
           highlighted: 0..1;
           disabled: 0..1;
@@ -175,7 +182,10 @@ type
           branchImageDisabled: 0..1;
           drawingInRevealover: 0..1;
           needsHighlightedTextHint: 0..1;
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
        );
   end;
 _CFlags = __CFlags;

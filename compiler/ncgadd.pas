@@ -89,8 +89,16 @@ interface
 {$if defined(x86) and not defined(llvm)}
       var
         tmpreg     : tregister;
+<<<<<<< HEAD
         pushedfpu  : boolean;
 {$endif x86 and not llvm}
+=======
+{$ifdef x86}
+        pushedfpu,
+{$endif x86}
+        isjump     : boolean;
+        otl,ofl    : tasmlabel;
+>>>>>>> graemeg/cpstrnew
       begin
         { calculate the operator which is more difficult }
         firstcomplex(self);
@@ -101,8 +109,19 @@ interface
 
         secondpass(left);
         if left.location.loc in [LOC_FLAGS,LOC_JUMP] then
+<<<<<<< HEAD
           hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,resultdef,false);
 {$if defined(x86) and not defined(llvm)}
+=======
+          location_force_reg(current_asmdata.CurrAsmList,left.location,def_cgsize(resultdef),false);
+        if isjump then
+          begin
+            current_procinfo.CurrTrueLabel:=otl;
+            current_procinfo.CurrFalseLabel:=ofl;
+          end;
+
+{$ifdef x86}
+>>>>>>> graemeg/cpstrnew
         { are too few registers free? }
         pushedfpu:=false;
         if (left.location.loc=LOC_FPUREGISTER) and
@@ -111,12 +130,26 @@ interface
             hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef);
             pushedfpu:=true;
           end;
+<<<<<<< HEAD
 {$endif x86 and not llvm}
+=======
+{$endif x86}
+>>>>>>> graemeg/cpstrnew
 
         secondpass(right);
         if right.location.loc in [LOC_FLAGS,LOC_JUMP] then
+<<<<<<< HEAD
           hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,resultdef,false);
 {$if defined(x86) and not defined(llvm)}
+=======
+          location_force_reg(current_asmdata.CurrAsmList,right.location,def_cgsize(resultdef),false);
+        if isjump then
+          begin
+            current_procinfo.CurrTrueLabel:=otl;
+            current_procinfo.CurrFalseLabel:=ofl;
+          end;
+{$ifdef x86}
+>>>>>>> graemeg/cpstrnew
         if pushedfpu then
           begin
             if use_vectorfpu(left.resultdef) then
@@ -139,7 +172,11 @@ interface
                   toggleflag(nf_swapped);
               end;
           end;
+<<<<<<< HEAD
 {$endif x86 and not llvm}
+=======
+{$endif x86}
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -269,6 +306,7 @@ interface
                   if (right.location.size<>left.location.size) or
                      (location.size<>left.location.size) then
                     internalerror(2010123001);
+<<<<<<< HEAD
                   { make sure that location.register is different from
                     left.location.register, since right will overwrite it
                     and we'll use left afterwards }
@@ -283,6 +321,15 @@ interface
                     hlcg.a_op_const_reg(current_asmdata.CurrAsmList,OP_AND,resultdef,left.location.value,location.register)
                   else
                     hlcg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_AND,resultdef,left.location.register,location.register);
+=======
+                  { make sure we don't modify left/right.location, because we told
+                    force_reg_left_right above that they can be constant }
+                  cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_NOT,location.size,right.location.register,location.register);
+                  if left.location.loc = LOC_CONSTANT then
+                    cg.a_op_const_reg(current_asmdata.CurrAsmList,OP_AND,location.size,left.location.value,location.register)
+                  else
+                    cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_AND,location.size,left.location.register,location.register);
+>>>>>>> graemeg/cpstrnew
                 end;
             end;
           else

@@ -82,9 +82,15 @@ var
     _presentedPrintInfo: NSPrintInfo;
     _windowController: NSWindowController;
     {$ifdef cpu64}
+<<<<<<< HEAD
     _reserved: array[0..(2)-1] of id;
     {$else}
     _compatibilityPadding: array[0..(192)-1] of char;
+=======
+        _reserved: array[0..1] of id;
+    {$else}
+        _compatibilityPadding: array[0..191] of char;
+>>>>>>> graemeg/cpstrnew
     {$endif}
     
   public

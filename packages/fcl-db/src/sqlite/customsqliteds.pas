@@ -65,12 +65,18 @@ type
     FFieldRow: PAnsiChar;
     FField: TField;
     FFieldOffset: Integer;
+<<<<<<< HEAD
     FRowSize: Int64;
     FPosition: Int64;
     FWriteMode: Boolean;
   protected
     function GetPosition: Int64; override;
     function GetSize: Int64; override;
+=======
+    FRowSize: Integer;
+    FPosition: LongInt;
+    FWriteMode: Boolean;
+>>>>>>> graemeg/cpstrnew
   public
     constructor Create(Dataset: TCustomSqliteDataset; Field: TField;
       FieldOffset: Integer; EditItem: PDataRecord; WriteMode: Boolean);
@@ -118,6 +124,10 @@ type
     FOptions: TSqliteOptions;
     FSQLList: TStrings;
     FStoreDefs: Boolean;
+<<<<<<< HEAD
+=======
+    procedure CopyCacheToItem(AItem: PDataRecord);
+>>>>>>> graemeg/cpstrnew
     function GetIndexFields(Value: Integer): TField;
     function GetSQLList: TStrings;
     procedure SetMasterIndexValue;
@@ -172,8 +182,13 @@ type
     function GetRowsAffected: Integer; virtual; abstract;
     procedure RetrieveFieldDefs; virtual; abstract;
     //TDataSet overrides
+<<<<<<< HEAD
     function AllocRecordBuffer: TRecordBuffer; override;
     procedure ClearCalcFields(Buffer: TRecordBuffer); override;
+=======
+    function AllocRecordBuffer: PChar; override;
+    procedure ClearCalcFields(Buffer: PChar); override;
+>>>>>>> graemeg/cpstrnew
     procedure DoBeforeClose; override;
     procedure DoAfterInsert; override;
     procedure DoBeforeInsert; override;
@@ -392,6 +407,7 @@ end;
 
 // TDSStream
 
+<<<<<<< HEAD
 function TDSStream.GetPosition: Int64;
 begin
   Result:=FPosition;
@@ -402,6 +418,8 @@ begin
   Result:=FRowSize;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TDSStream.Create(Dataset: TCustomSqliteDataset; Field: TField;
   FieldOffset: Integer; EditItem: PDataRecord; WriteMode: Boolean);
 begin
@@ -457,11 +475,19 @@ begin
     WriteLn('  FPosition(Before): ', FPosition);
     WriteLn('  FRowSize(Before): ', FRowSize);
     WriteLn('  FPosition(After): ', FPosition+Count);
+<<<<<<< HEAD
     WriteLn('  FRowSize(After): ', StrBufSize(NewRow) -1);
     //WriteLn('  Stream Value: ',NewRow);
     {$endif}
     FFieldRow := NewRow;
     FRowSize := StrBufSize(NewRow) - 1;
+=======
+    WriteLn('  FRowSize(After): ', StrLen(NewRow));
+    //WriteLn('  Stream Value: ',NewRow);
+    {$endif}
+    FFieldRow := NewRow;
+    FRowSize := StrLen(NewRow);
+>>>>>>> graemeg/cpstrnew
     Inc(FPosition, Count);
   end;
 end; 
@@ -539,7 +565,14 @@ var
 begin
   if Field.FieldNo >= 0 then
   begin
+<<<<<<< HEAD
     EditItem := PPDataRecord(ActiveBuffer)^;
+=======
+    if Mode = bmWrite then
+      EditItem := FCacheItem
+    else
+      EditItem := PPDataRecord(ActiveBuffer)^;
+>>>>>>> graemeg/cpstrnew
     FieldOffset := Field.FieldNo - 1;
   end
   else
@@ -667,6 +700,13 @@ begin
   Result := FSQLList;
 end;
 
+function TCustomSqliteDataset.GetSQLList: TStrings;
+begin
+  if FSQLList = nil then
+    FSQLList := TStringList.Create;
+  Result := FSQLList;
+end;
+
 procedure TCustomSqliteDataset.SetMasterIndexValue;
 var
   i: Integer;
@@ -755,6 +795,7 @@ begin
   else
     FieldOffset := FieldDefs.Count + FCalcFieldList.IndexOf(Field);
 
+<<<<<<< HEAD
   case State of
     dsCalcFields, dsInternalCalc:
       FieldRow := PPDataRecord(CalcBuffer)^^.Row[FieldOffset];
@@ -763,6 +804,12 @@ begin
     else
       FieldRow := PPDataRecord(ActiveBuffer)^^.Row[FieldOffset];
   end;
+=======
+  if not (State in [dsCalcFields, dsInternalCalc]) then
+    FieldRow := PPDataRecord(ActiveBuffer)^^.Row[FieldOffset]
+  else
+    FieldRow := PPDataRecord(CalcBuffer)^^.Row[FieldOffset];
+>>>>>>> graemeg/cpstrnew
 
   Result := FieldRow <> nil;  
   if Result and (Buffer <> nil) then //supports GetIsNull
@@ -1365,8 +1412,13 @@ begin
   begin
     SaveState := SetTempState(dsInternalCalc);
     try
+<<<<<<< HEAD
       CalculateFields(TRecordBuffer(@TempItem));
       Result := FieldValues[ResultFields];
+=======
+      CalculateFields(PChar(@TempItem));
+      Result := FieldByName(ResultFields).Value;
+>>>>>>> graemeg/cpstrnew
     finally
       RestoreState(SaveState);
     end;
@@ -1519,7 +1571,11 @@ var
   AFilter: String;
   i: Integer;
 begin
+<<<<<<< HEAD
   if not FMasterLink.Active then //Retrieve all data
+=======
+  if (FMasterLink.Dataset.RecordCount = 0) or not FMasterLink.Active then //Retrieve all data
+>>>>>>> graemeg/cpstrnew
     FEffectiveSQL := FSqlFilterTemplate
   else
   begin
@@ -1612,7 +1668,11 @@ procedure TCustomSqliteDataset.ExecSQL(ASqlList: TStrings);
 begin
   if FSqliteHandle = nil then
     GetSqliteHandle;
+<<<<<<< HEAD
   FReturnCode := SqliteExec(PAnsiChar(ASQLList.Text), nil, nil);
+=======
+  FReturnCode := SqliteExec(PChar(ASQLList.Text), nil, nil);
+>>>>>>> graemeg/cpstrnew
   if FReturnCode <> SQLITE_OK then
     DatabaseError(ReturnString, Self);
 end;
@@ -1622,7 +1682,11 @@ begin
   ExecSQL(SQLList);
 end;
 
+<<<<<<< HEAD
 function TCustomSqliteDataset.GetSQLValue(Values: PPAnsiChar; FieldIndex: Integer): String;
+=======
+function TCustomSqliteDataset.GetSQLValue(Values: PPChar; FieldIndex: Integer): String;
+>>>>>>> graemeg/cpstrnew
 begin
   if (State = dsInactive) or (FieldIndex < 0) or (FieldIndex >= FieldDefs.Count) then
     DatabaseError('Error retrieving SQL value: dataset inactive or field out of range', Self);

@@ -1,17 +1,33 @@
 #
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Apple Universal Interfaces for Free Pascal
+>>>>>>> graemeg/cpstrnew
 #
 
 [package]
 name=cocoaint
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
+=======
+version=2.5.1
+
+[target]
+units=CocoaAll WebKit CoreData
+implicitunits=AnonClassDefinitionsQuartzcore AnonClassDefinitionsWebkit
+
+[libs]
+libversion=2.5.1
+>>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 [default]
 fpcdir=../..
 
@@ -100,3 +116,18 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[compiler]
+sourcedir=src
+
+[default]
+fpcdir=../..
+
+[require]
+packages=univint
+
+[rules]
+WebKit$(PPUEXT): CocoaAll$(PPUEXT)
+
+CoreData$(PPUEXT): CocoaAll$(PPUEXT)
+>>>>>>> graemeg/cpstrnew

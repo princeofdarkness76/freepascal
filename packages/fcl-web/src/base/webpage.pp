@@ -61,8 +61,11 @@ type
     function CreateNewScript: TStringList; override;
     procedure ShowRegisteredScript(ScriptID: integer); override;
     procedure FreeScript(var AScript: TStringList); override;
+<<<<<<< HEAD
   published
     property OnGetURL;
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 
   { TWebPage }
@@ -91,6 +94,10 @@ type
     procedure DoHandleAjaxRequest(ARequest: TRequest; AnAjaxResponse: TAjaxResponse; var Handled: boolean); virtual;
     procedure DoBeforeRequest(ARequest: TRequest); virtual;
     procedure DoBeforeShowPage(ARequest: TRequest); virtual;
+<<<<<<< HEAD
+=======
+    property WebModule: TFPWebModule read FWebModule;
+>>>>>>> graemeg/cpstrnew
     procedure DoCleanupAfterRequest(const AContentProducer: THTMLContentProducer);
     procedure SetRequest(ARequest: TRequest); virtual;
     procedure GetChildren(Proc: TGetChildProc; Root: TComponent); override;
@@ -115,7 +122,10 @@ type
     property ContentProducers[Index: integer]: THTMLContentProducer read GetContentProducer;
     property HasWebController: boolean read GetHasWebController;
     property WebController: TWebController read GetWebController write FWebController;
+<<<<<<< HEAD
     property WebModule: TFPWebModule read FWebModule;
+=======
+>>>>>>> graemeg/cpstrnew
   published
     property BeforeRequest: TRequestEvent read FBeforeRequest write FBeforeRequest;
     property BeforeShowPage: TRequestEvent read FBeforeShowPage write FBeforeShowPage;
@@ -128,7 +138,11 @@ type
 
 implementation
 
+<<<<<<< HEAD
 uses typinfo, strutils;
+=======
+uses rtlconsts, typinfo, XMLWrite, strutils;
+>>>>>>> graemeg/cpstrnew
 
 var RegisteredScriptList : TStrings;
 
@@ -265,7 +279,11 @@ begin
               AComponent:=self;
               while (i > 0) and (assigned(AComponent)) do
                 begin
+<<<<<<< HEAD
                 AComponent := AComponent.FindComponent(copy(CompName,1,i-1));
+=======
+                AComponent := FindComponent(copy(CompName,1,i-1));
+>>>>>>> graemeg/cpstrnew
                 CompName := copy(compname,i+1,length(compname)-i);
                 i := pos('$',CompName);
                 end;
@@ -279,7 +297,10 @@ begin
                 if ASuffixID<>'' then
                   begin
                   SetIdSuffixes(THTMLContentProducer(AComponent));
+<<<<<<< HEAD
                   webcontroller.ResetIterationLevel;
+=======
+>>>>>>> graemeg/cpstrnew
                   end;
                 THTMLContentProducer(AComponent).HandleAjaxRequest(ARequest, AnAjaxResponse);
                 end;
@@ -375,7 +396,11 @@ end;
 function TWebPage.GetWebController: TWebController;
 begin
   if not assigned(FWebController) then
+<<<<<<< HEAD
     raise EHTTP.create('No webcontroller available');
+=======
+    raise exception.create('No webcontroller available');
+>>>>>>> graemeg/cpstrnew
   result := FWebController;
 end;
 
@@ -614,9 +639,13 @@ begin
 
   p := copy(qs,1,length(qs)-1);
   if p <> '' then
+<<<<<<< HEAD
     result := result + ConnectChar + p;
   if assigned(OnGetURL) then
     OnGetURL(ParamNames, ParamValues, KeepParams, Action, Result);
+=======
+    result := result + ConnectChar + p
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TStandardWebController.BindJavascriptCallstackToElement(AComponent: TComponent; AnElement: THtmlCustomElement; AnEvent: string);

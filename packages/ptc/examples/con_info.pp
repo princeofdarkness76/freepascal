@@ -15,7 +15,11 @@ program InfoExample;
 uses
   ptc;
 
+<<<<<<< HEAD
 procedure print(format: IPTCFormat);
+=======
+procedure print(const format: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 begin
   { check format type }
   if format.direct then
@@ -32,7 +36,11 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
+=======
+  console: TPTCConsole = nil;
+>>>>>>> graemeg/cpstrnew
 begin
   try
     try
@@ -64,8 +72,13 @@ begin
       Writeln('[console information]');
       Writeln(console.information);
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

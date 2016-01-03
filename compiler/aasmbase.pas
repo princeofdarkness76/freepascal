@@ -40,9 +40,13 @@ interface
        TAsmsymbind=(
          AB_NONE,AB_EXTERNAL,AB_COMMON,AB_LOCAL,AB_GLOBAL,AB_WEAK_EXTERNAL,
          { global in the current program/library, but not visible outside it }
+<<<<<<< HEAD
          AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT,
          { a symbol that's internal to the compiler and used as a temp }
          AB_TEMP);
+=======
+         AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT);
+>>>>>>> graemeg/cpstrnew
 
        TAsmsymtype=(
          AT_NONE,AT_FUNCTION,AT_DATA,AT_SECTION,AT_LABEL,
@@ -144,11 +148,15 @@ interface
          sec_objc_nlclasslist,
          sec_objc_catlist,
          sec_objc_nlcatlist,
+<<<<<<< HEAD
          sec_objc_protolist,
          { stack segment for 16-bit DOS }
          sec_stack,
          { initial heap segment for 16-bit DOS }
          sec_heap
+=======
+         sec_objc_protolist
+>>>>>>> graemeg/cpstrnew
        );
 
        TAsmSectionOrder = (secorder_begin,secorder_default,secorder_end);
@@ -428,9 +436,28 @@ implementation
                                  TAsmLabel
 *****************************************************************************}
 
+<<<<<<< HEAD
     constructor TAsmLabel.Createlocal(AList: TFPHashObjectList; nr: longint; ltyp: TAsmLabelType);
       begin
         create_non_global(AList,nr,ltyp,target_asm.labelprefix);
+=======
+    constructor TAsmLabel.Createlocal(AList:TFPHashObjectList;nr:longint;ltyp:TAsmLabelType);
+      var
+        asmtyp: TAsmsymtype;
+      begin
+        case ltyp of
+          alt_addr:
+            asmtyp:=AT_ADDR;
+          alt_data:
+            asmtyp:=AT_DATA;
+          else
+            asmtyp:=AT_LABEL;
+        end;
+        inherited Create(AList,target_asm.labelprefix+asmlabeltypeprefix[ltyp]+tostr(nr),AB_LOCAL,asmtyp);
+        labelnr:=nr;
+        labeltype:=ltyp;
+        is_set:=false;
+>>>>>>> graemeg/cpstrnew
       end;
 
 

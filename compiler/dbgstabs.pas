@@ -27,8 +27,13 @@ interface
 
     uses
       cclasses,
+<<<<<<< HEAD
       systems,dbgbase,cgbase,
       symconst,symtype,symdef,symsym,symtable,symbase,
+=======
+      dbgbase,cgbase,
+      symtype,symdef,symsym,symtable,symbase,
+>>>>>>> graemeg/cpstrnew
       aasmtai,aasmdata;
 
     const
@@ -75,8 +80,11 @@ interface
         writing_def_stabs  : boolean;
         global_stab_number : word;
         vardatadef: trecorddef;
+<<<<<<< HEAD
         tagtypeprefix: ansistring;
         function use_tag_prefix(def : tdef) : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
         { tsym writing }
         function  sym_var_value(const s:string;arg:pointer):string;
         function  sym_stabstr_evaluate(sym:tsym;const s:string;const vars:array of string):ansistring;
@@ -94,10 +102,13 @@ interface
         procedure field_write_defs(p:TObject;arg:pointer);
         function  get_enum_defstr(def: tenumdef; lowerbound: longint): ansistring;
         function  get_appendsym_paravar_reg(sym:tparavarsym;const typ,stabstr:string;reg: tregister): ansistring;
+<<<<<<< HEAD
         function  base_stabs_str(typ: longint; const other, desc, value: ansistring): ansistring;overload;
         function  base_stabs_str(const typ, other, desc, value: ansistring): ansistring;overload;virtual;
         function  gen_procdef_startsym_stabs(def: tprocdef): TAsmList;virtual;
         function  gen_procdef_endsym_stabs(def: tprocdef): TAsmList;virtual;
+=======
+>>>>>>> graemeg/cpstrnew
       protected
         procedure appendsym_staticvar(list:TAsmList;sym:tstaticvarsym);override;
         procedure appendsym_paravar(list:TAsmList;sym:tparavarsym);override;
@@ -149,9 +160,15 @@ implementation
 
     uses
       SysUtils,cutils,cfileutl,
+<<<<<<< HEAD
       globals,globtype,verbose,constexp,
       defutil, cgutils, parabase,
       cpuinfo,cpubase,cpupi,paramgr,
+=======
+      systems,globals,globtype,verbose,constexp,
+      symconst,defutil,
+      cpuinfo,cpubase,paramgr,
+>>>>>>> graemeg/cpstrnew
       aasmbase,procinfo,
       finput,fmodule,ppu;
 
@@ -207,6 +224,18 @@ implementation
     const
       memsizeinc = 512;
 
+<<<<<<< HEAD
+=======
+      tagtypes = [
+        recorddef,
+        variantdef,
+        enumdef,
+        stringdef,
+        filedef,
+        objectdef
+      ];
+
+>>>>>>> graemeg/cpstrnew
     type
        get_var_value_proc=function(const s:string;arg:pointer):string of object;
 
@@ -872,7 +901,15 @@ implementation
         else
           do_write_object(list,def);
         { VMT symbol }
+<<<<<<< HEAD
         maybe_add_vmt_sym(list,def);
+=======
+        if (oo_has_vmt in def.objectoptions) and
+           assigned(def.owner) and
+           assigned(def.owner.name) then
+          list.concat(Tai_stab.create(stab_stabs,strpnew('"vmt_'+GetSymTableName(def.owner)+tobjectdef(def).objname^+':S'+
+                 def_stab_number(vmttype)+'",'+tostr(N_STSYM)+',0,0,'+tobjectdef(def).vmt_mangledname)));
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -1154,6 +1191,86 @@ implementation
                      base_stabs_str(localvarsymref_stab,'0','0',getoffsetstr(tabstractnormalvarsym(def.funcretsym).localloc.reference)))));
               end;
           end;
+<<<<<<< HEAD
+=======
+        // LBRAC
+        ss:=tostr(N_LBRAC)+',0,0,';
+        if target_info.cpu=cpu_powerpc64 then
+          ss:=ss+'.';
+        ss:=ss+def.mangledname;
+        if not(af_stabs_use_function_absolute_addresses in target_asm.flags) then
+          begin
+            ss:=ss+'-';
+            if target_info.cpu=cpu_powerpc64 then
+              ss:=ss+'.';
+            ss:=ss+def.mangledname;
+          end;
+        getmem(p,length(ss)+1);
+        move(pchar(ss)^,p^,length(ss)+1);
+        templist.concat(Tai_stab.Create(stab_stabn,p));
+        // RBRAC
+        ss:=tostr(N_RBRAC)+',0,0,'+stabsendlabel.name;
+        if not(af_stabs_use_function_absolute_addresses in target_asm.flags) then
+          begin
+            ss:=ss+'-';
+            if target_info.cpu=cpu_powerpc64 then
+              ss:=ss+'.';
+            ss:=ss+def.mangledname;
+          end;
+        getmem(p,length(ss)+1);
+        move(pchar(ss)^,p^,length(ss)+1);
+        templist.concat(Tai_stab.Create(stab_stabn,p));
+
+        { the stabsendlabel must come after all other stabs for this }
+        { function                                                   }
+        templist.concat(tai_label.create(stabsendlabel));
+
+        { Add a "size" stab as described in the last paragraph of 2.5 at  }
+        { http://sourceware.org/gdb/current/onlinedocs/stabs_2.html#SEC12 }
+        { This works at least on Darwin (and is needed on Darwin to get   }
+        { correct smartlinking of stabs), but I don't know which binutils }
+        { version is required on other platforms                          }
+        { This stab must come after all other stabs for the procedure,    }
+        { including the LBRAC/RBRAC ones                                  }
+        if (target_info.system in systems_darwin) then
+          templist.concat(Tai_stab.create(stab_stabs,
+            strpnew('"",'+tostr(N_FUNCTION)+',0,0,'+stabsendlabel.name+'-'+def.mangledname)));
+
+        current_asmdata.asmlists[al_procedures].insertlistafter(def.procendtai,templist);
+
+        { "The stab representing a procedure is located immediately
+          following the code of the procedure. This stab is in turn
+          directly followed by a group of other stabs describing
+          elements of the procedure. These other stabs describe the
+          procedure's parameters, its block local variables, and its
+          block structure." (stab docs)                               }
+        { this is however incorrect in case "include source" statements }
+        { appear in the block, in that case the procedure stab must     }
+        { appear before this include stabs (and we generate such an     }
+        { stabs for all functions) (JM)                                 }
+
+        { FUNC stabs }
+        obj := GetSymName(def.procsym);
+        info := '';
+        if (po_global in def.procoptions) then
+          RType := 'F'
+        else
+          RType := 'f';
+        if assigned(def.owner) then
+          begin
+            if (def.owner.symtabletype in [ObjectSymtable,recordsymtable]) then
+              obj := GetSymTableName(def.owner)+'__'+GetSymName(def.procsym);
+            if not(cs_gdb_valgrind in current_settings.globalswitches) and
+               (def.owner.symtabletype=localsymtable) and
+               assigned(def.owner.defowner) and
+               assigned(tprocdef(def.owner.defowner).procsym) then
+              info := ','+GetSymName(def.procsym)+','+GetSymName(tprocdef(def.owner.defowner).procsym);
+          end;
+        ss:='"'+ansistring(obj)+':'+RType+def_stab_number(def.returndef)+info+'",'+tostr(n_function)+',0,'+tostr(def.fileinfo.line)+','+ansistring(def.mangledname);
+        getmem(p,length(ss)+1);
+        move(pchar(ss)^,p^,length(ss)+1);
+        templist.concat(Tai_stab.Create(stab_stabs,p));
+>>>>>>> graemeg/cpstrnew
 
 
         current_asmdata.asmlists[al_procedures].insertlistbefore(def.procstarttai,templist);
@@ -1336,6 +1453,7 @@ implementation
         { "eax", "ecx", "edx", "ebx", "esp", "ebp", "esi", "edi", "eip", "ps", "cs", "ss", "ds", "es", "fs", "gs", }
         { this is the register order for GDB}
         if regidx<>0 then
+<<<<<<< HEAD
           result:=sym_stabstr_evaluate(sym,'"${name}:$1",'+base_stabs_str(regvar_stab,'0','${line}','$2'),[ltyp+stabstr,tostr(longint(regstabs_table[regidx]))]);
       end;
 
@@ -1437,6 +1555,9 @@ implementation
               result.concat(Tai_stab.create(stabsdir,
                 strpnew('"",'+base_stabs_str(procdef_stab,'0','0',stabsendlabel.name+'-'+mangledname))));
           end;
+=======
+          result:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_RSYM},0,${line},$2',[ltyp+stabstr,tostr(longint(regstabs_table[regidx]))]);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -1480,8 +1601,13 @@ implementation
                 else
                   c:='p';
                 if (sym.localloc.loc=LOC_REFERENCE) then
+<<<<<<< HEAD
                   ss:=sym_stabstr_evaluate(sym,'"$$t:$1",'+base_stabs_str(localvarsymref_stab,'0','0','$2'),
                         [c+def_stab_number(tprocdef(sym.owner.defowner).struct),getoffsetstr(sym.localloc.reference)])
+=======
+                  ss:=sym_stabstr_evaluate(sym,'"$$t:$1",${N_TSYM},0,0,$2',
+                        [c+def_stab_number(tprocdef(sym.owner.defowner).struct),tostr(sym.localloc.reference.offset)])
+>>>>>>> graemeg/cpstrnew
                 else
                   begin
                     if (c='p') then
@@ -1489,7 +1615,11 @@ implementation
                     else
                       c:='a';
                     regidx:=findreg_by_number(sym.localloc.register);
+<<<<<<< HEAD
                     ss:=sym_stabstr_evaluate(sym,'"$$t:$1",'+base_stabs_str(regvar_stab,'0','0','$2'),
+=======
+                    ss:=sym_stabstr_evaluate(sym,'"$$t:$1",${N_RSYM},0,0,$2',
+>>>>>>> graemeg/cpstrnew
                         [c+def_stab_number(tprocdef(sym.owner.defowner).struct),tostr(regstabs_table[regidx])]);
                   end
               end;
@@ -1522,8 +1652,12 @@ implementation
                     Not doing this breaks debugging under e.g. SPARC. Doc:
                     http://sourceware.org/gdb/current/onlinedocs/stabs_4.html#SEC26
                   }
+<<<<<<< HEAD
                   if (target_dbg.id<>dbg_stabx) and
                      (c='p') and
+=======
+                  if (c='p') and
+>>>>>>> graemeg/cpstrnew
                      not is_open_string(sym.vardef) and
                      ((sym.paraloc[calleeside].location^.loc<>sym.localloc.loc) or
                       ((sym.localloc.loc in [LOC_REFERENCE,LOC_CREFERENCE]) and
@@ -1535,15 +1669,23 @@ implementation
                       if not(sym.paraloc[calleeside].location^.loc in [LOC_REFERENCE,LOC_CREFERENCE]) then
                         ss:=get_appendsym_paravar_reg(sym,c,st,sym.paraloc[calleeside].location^.register)
                       else
+<<<<<<< HEAD
                         ss:=sym_stabstr_evaluate(sym,'"${name}:$1",'+base_stabs_str(localvarsymref_stab,'0','${line}','$2'),
                               [c+st,getparaoffsetstr(sym.paraloc[calleeside].location^.reference)]);
+=======
+                        ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.paraloc[calleeside].location^.reference.offset)]);
+>>>>>>> graemeg/cpstrnew
                       write_sym_stabstr(list,sym,ss);
                       { second stab has no parameter specifier }
                       c:='';
                     end;
                   { offset to ebp => will not work if the framepointer is esp
                     so some optimizing will make things harder to debug }
+<<<<<<< HEAD
                   ss:=sym_stabstr_evaluate(sym,'"${name}:$1",'+base_stabs_str(paravarsymref_stab,'0','${line}','$2'),[c+st,getoffsetstr(sym.localloc.reference)])
+=======
+                  ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.localloc.reference.offset)])
+>>>>>>> graemeg/cpstrnew
                 end;
               else
                 internalerror(2003091814);
@@ -1867,6 +2009,7 @@ implementation
     constructor TDebugInfoStabs.Create;
       begin
         inherited Create;
+<<<<<<< HEAD
         dbgtype:=dbg_stabs;
         stabsdir:=stab_stabs;
 
@@ -1883,6 +2026,8 @@ implementation
         paravarsymref_stab:=STABS_N_TSYM;
         tagtypeprefix:='Tt';
 
+=======
+>>>>>>> graemeg/cpstrnew
         vardatadef:=nil;
       end;
 

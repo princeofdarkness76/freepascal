@@ -210,6 +210,7 @@ type
    ESafecallException = class(Exception);
    ENoThreadSupport = Class(Exception);
    ENoWideStringSupport = Class(Exception);
+<<<<<<< HEAD
    ENoDynLibsSupport = class(Exception);
    ENotImplemented = class(Exception);
 
@@ -217,6 +218,9 @@ type
    EArgumentOutOfRangeException = class(EArgumentException);
 
    ENoConstructException = class(Exception);
+=======
+   ENotImplemented = class(Exception);
+>>>>>>> graemeg/cpstrnew
 
    { Exception handling routines }
    function ExceptObject: TObject;
@@ -287,9 +291,12 @@ Type
   {$i sysencodingh.inc}
 {$endif FPC_HAS_UNICODESTRING}
 
+<<<<<<< HEAD
 {$macro on}
 {$define PathStr:=UnicodeString}
 {$define PathPChar:=PWideChar}
+=======
+>>>>>>> graemeg/cpstrnew
   { Read filename handling functions declaration }
   {$i finah.inc}
 {$define PathStr:=RawByteString}

@@ -29,9 +29,14 @@ type
       Fh,Fp:SizeUInt;
       FData:TTable;
       function Next:boolean;
+<<<<<<< HEAD
       function GetData:T;
       property Data:T read GetData;
  end;
+=======
+      function GetValue:T;
+  end;
+>>>>>>> graemeg/cpstrnew
 
   generic THashSet<T, Thash>=class
     private 
@@ -66,7 +71,11 @@ end;
 destructor THashSet.Destroy;
 var i:SizeUInt;
 begin
+<<<<<<< HEAD
   for i:=0 to FData.size-1 do
+=======
+  for i:=0 to FData.size do
+>>>>>>> graemeg/cpstrnew
     (FData[i]).Destroy;
   FData.Destroy;
 end;
@@ -163,9 +172,15 @@ begin
   Next := true;
 end;
 
+<<<<<<< HEAD
 function THashSetIterator.GetData:T;
 begin
   GetData:=(FData[Fh])[Fp];
+=======
+function THashSetIterator.GetValue:T;
+begin
+  GetValue:=(FData[Fh])[Fp];
+>>>>>>> graemeg/cpstrnew
 end;
 
 function THashSet.Iterator:TIterator;

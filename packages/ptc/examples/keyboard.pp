@@ -16,17 +16,32 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
   color: IPTCColor;
   key: IPTCKeyEvent;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+  color: TPTCColor = nil;
+  key: TPTCKeyEvent = nil;
+  area: TPTCArea;
+>>>>>>> graemeg/cpstrnew
   x, y: Integer;
   size: Integer;
   delta: Integer;
 begin
   try
     try
+<<<<<<< HEAD
+=======
+      { create key }
+      key := TPTCKeyEvent.Create;
+
+>>>>>>> graemeg/cpstrnew
       { create console }
       console := TPTCConsoleFactory.CreateNew;
 
@@ -43,7 +58,11 @@ begin
       x := surface.width div 2;
       y := surface.height div 2;
       size := surface.width div 10;
+<<<<<<< HEAD
       color := TPTCColorFactory.CreateNew(1, 1, 1);
+=======
+      color := TPTCColor.Create(1, 1, 1);
+>>>>>>> graemeg/cpstrnew
 
       { main loop }
       repeat
@@ -75,8 +94,19 @@ begin
         { clear surface }
         surface.clear;
 
+<<<<<<< HEAD
         { draw cursor as a quad }
         surface.clear(color, TPTCAreaFactory.CreateNew(x - size, y - size, x + size, y + size));
+=======
+        { setup cursor area }
+        area := TPTCArea.Create(x - size, y - size, x + size, y + size);
+        try
+          { draw cursor as a quad }
+          surface.clear(color, area);
+        finally
+          area.Free;
+        end;
+>>>>>>> graemeg/cpstrnew
 
         { copy to console }
         surface.copy(console);
@@ -85,8 +115,17 @@ begin
         console.update;
       until False;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      color.Free;
+      console.close;
+      console.Free;
+      surface.Free;
+      key.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

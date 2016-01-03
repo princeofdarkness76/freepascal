@@ -63,6 +63,7 @@ type
     procedure ConnectFB;
 
     procedure AllocSQLDA(var aSQLDA : PXSQLDA;Count : integer);
+<<<<<<< HEAD
 
     // Metadata:
     procedure GetDatabaseInfo; //Queries for various information from server once connected
@@ -71,6 +72,10 @@ type
     function GetODSMajorVersion: integer;
     function ParseServerVersion(const CompleteVersion: string): string; //Extract version info from complete version identification string
 
+=======
+    procedure TranslateFldType(SQLType, SQLSubType, SQLLen, SQLScale : integer;
+      var TrType : TFieldType; var TrLen : word);
+>>>>>>> graemeg/cpstrnew
     // conversion methods
     procedure TranslateFldType(SQLType, SQLSubType, SQLLen, SQLScale : integer;
       var TrType : TFieldType; var TrLen : word);
@@ -143,12 +148,16 @@ type
 implementation
 
 uses
+<<<<<<< HEAD
   StrUtils, FmtBCD;
 
 const
   SQL_BOOLEAN_INTERBASE = 590;
   SQL_BOOLEAN_FIREBIRD = 32764;
   INVALID_DATA = -1;
+=======
+  strutils;
+>>>>>>> graemeg/cpstrnew
 
 
 procedure TIBConnection.CheckError(ProcName : string; Status : PISC_STATUS);
@@ -180,10 +189,18 @@ constructor TIBConnection.Create(AOwner : TComponent);
 
 begin
   inherited;
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqSupportParams, sqEscapeRepeat, sqSupportReturning];
   FBlobSegmentSize := 65535; //Shows we're using the maximum segment size
   FDialect := INVALID_DATA;
   ResetDatabaseInfo;
+=======
+  FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat];
+  FieldNameQuoteChars:=DoubleQuotes;
+  FBLobSegmentSize := 80;
+  FDialect := -1;
+  FDBDialect := -1;
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -608,7 +625,11 @@ begin
         TrLen := SQLLen;
       end;
     SQL_TYPE_DATE :
+<<<<<<< HEAD
         TrType := ftDate;
+=======
+      TrType := ftDate;
+>>>>>>> graemeg/cpstrnew
     SQL_TYPE_TIME :
         TrType := ftTime;
     SQL_TIMESTAMP :
@@ -620,10 +641,17 @@ begin
       end;
     SQL_BLOB :
       begin
+<<<<<<< HEAD
         if SQLSubType = isc_blob_text then
           TrType := ftMemo
         else
           TrType := ftBlob;
+=======
+        if SQLSubType = 1 then
+           TrType := ftMemo
+        else
+           TrType := ftBlob;
+>>>>>>> graemeg/cpstrnew
         TrLen := SQLLen;
       end;
     SQL_SHORT :
@@ -715,9 +743,15 @@ begin
         else
           SQLData := AllocMem(in_SQLDA^.SQLVar[x].SQLLen);
         // Always force the creation of slqind for parameters. It could be
+<<<<<<< HEAD
         // that a database trigger takes care of inserting null values, so
         // it should always be possible to pass null parameters. If that fails,
         // the database server will generate the appropriate error.
+=======
+        // that a database-trigger takes care of inserting null-values, so
+        // it should always be possible to pass null-parameters. If that fails,
+        // the database-server will generate the appropiate error.
+>>>>>>> graemeg/cpstrnew
         sqltype := sqltype or 1;
         new(sqlind);
         end;
@@ -1138,6 +1172,7 @@ begin
       case FieldDef.DataType of
         ftBCD :
           begin
+<<<<<<< HEAD
             case VSQLVar^.SQLLen of
               2 : c := PSmallint(CurrBuff)^ / IntPower10(-VSQLVar^.SQLScale);
               4 : c := PLongint(CurrBuff)^  / IntPower10(-VSQLVar^.SQLScale);
@@ -1145,6 +1180,21 @@ begin
                     c := PDouble(CurrBuff)^
                   else
                     c := PLargeint(CurrBuff)^ / IntPower10(-VSQLVar^.SQLScale);
+=======
+            case SQLDA^.SQLVar[x].SQLLen of
+              2 : begin
+                  Move(CurrBuff^, smalli, 2);
+                  c := smalli*intpower(10,SQLDA^.SQLVar[x].SQLScale);
+                  end;
+              4 : begin
+                  Move(CurrBuff^, longi, 4);
+                  c := longi*intpower(10,SQLDA^.SQLVar[x].SQLScale);
+                  end;
+              8 : begin
+                  Move(CurrBuff^, largei, 8);
+                  c := largei*intpower(10,SQLDA^.SQLVar[x].SQLScale);
+                  end;
+>>>>>>> graemeg/cpstrnew
               else
                 Result := False; // Just to be sure, in principle this will never happen
             end; {case}
@@ -1187,11 +1237,16 @@ begin
             PChar(Buffer + VarCharLen)^ := #0;
           end;
         ftFloat   :
+<<<<<<< HEAD
           GetFloat(CurrBuff, Buffer, VSQLVar^.SQLLen);
+=======
+          GetFloat(CurrBuff, Buffer, SQLDA^.SQLVar[x].SQLLen);
+>>>>>>> graemeg/cpstrnew
         ftBlob,
         ftMemo :
           begin  // load the BlobIb in field's buffer
             FillByte(buffer^,sizeof(TBufBlobField),0);
+<<<<<<< HEAD
             Move(CurrBuff^, Buffer^, VSQLVar^.SQLLen);
           end;
         ftBoolean :
@@ -1235,6 +1290,21 @@ end;
     end;
   {$PACKRECORDS DEFAULT}
 {$ENDIF}
+=======
+            Move(CurrBuff^, Buffer^, SQLDA^.SQLVar[x].SQLLen);
+          end;
+
+        else
+          begin
+            result := false;
+            databaseerrorfmt(SUnsupportedFieldType, [Fieldtypenames[FieldDef.DataType], Self]);
+          end
+      end;  { case }
+      end; { if/else }
+{$R+}
+    end; { with cursor }
+end;
+>>>>>>> graemeg/cpstrnew
 
 procedure TIBConnection.GetDateTime(CurrBuff, Buffer : pointer; AType : integer);
 var

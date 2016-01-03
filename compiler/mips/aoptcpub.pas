@@ -24,11 +24,25 @@ Unit aoptcpub; { Assembler OPTimizer CPU specific Base }
 
 {$i fpcdefs.inc}
 
+<<<<<<< HEAD
 { enable the following define if memory references can have a scaled index }
+=======
+{ enable the following define if memory references can have both a base and }
+{ index register in 1 operand                                               }
+
+{$define RefsHaveIndexReg}
+
+{ enable the following define if memory references can have a scaled index }
+
+>>>>>>> graemeg/cpstrnew
 { define RefsHaveScale}
 
 { enable the following define if memory references can have a segment }
 { override                                                            }
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 { define RefsHaveSegment}
 
 Interface
@@ -93,8 +107,13 @@ Const
 
   StoreDst = 1;
 
+<<<<<<< HEAD
   aopt_uncondjmp = A_BA;
   aopt_condjmp = A_BC;
+=======
+  aopt_uncondjmp = A_J;
+  aopt_condjmp = A_BEQ;
+>>>>>>> graemeg/cpstrnew
 
 Implementation
 

@@ -4,6 +4,10 @@
 
 unit mysql51conn;
 
+<<<<<<< HEAD
+=======
+{$DEFINE MYSQL50_UP}
+>>>>>>> graemeg/cpstrnew
 {$DEFINE MYSQL51_UP}
 {$DEFINE MYSQL51}
 

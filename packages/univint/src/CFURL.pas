@@ -1,6 +1,13 @@
 {	CFURL.h
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
+=======
+	Copyright (c) 1998-2009, Apple Inc. All rights reserved.
+}
+{	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+{	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -55,11 +62,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -75,6 +85,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -94,17 +105,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -154,6 +186,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -195,14 +255,22 @@ interface
 {$setc TYPE_BOOL := FALSE}
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFArray,CFData,CFDictionary,CFError,CFString,Files;
+=======
+uses MacTypes,CFBase,CFData,CFError,CFString,Files;
+>>>>>>> graemeg/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
 
 
 type
+<<<<<<< HEAD
 	CFURLPathStyle = CFIndex;
+=======
+	CFURLPathStyle = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFURLPOSIXPathStyle = 0;
 	kCFURLHFSPathStyle = 1; { The use of kCFURLHFSPathStyle is deprecated. The Carbon File Manager, which uses HFS style paths, is deprecated. HFS style paths are unreliable because they can arbitrarily refer to multiple volumes if those volumes have identical volume names. You should instead use kCFURLPOSIXPathStyle wherever possible. }
@@ -444,7 +512,11 @@ function CFURLGetBytes( url: CFURLRef; buffer: CStringPtr; bufferLength: CFIndex
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
 type
+<<<<<<< HEAD
 	CFURLComponentType = CFIndex;
+=======
+	CFURLComponentType = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 	kCFURLComponentScheme = 1;
 	kCFURLComponentNetLocation = 2;
@@ -556,6 +628,7 @@ function CFURLCreateStringByReplacingPercentEscapesUsingEncoding( allocator: CFA
 { newString = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, origString, NULL, NULL, kCFStringEncodingUTF8); }
 function CFURLCreateStringByAddingPercentEscapes( allocator: CFAllocatorRef; originalString: CFStringRef; charactersToLeaveUnescaped: CFStringRef; legalURLCharactersToBeEscaped: CFStringRef; encoding: CFStringEncoding ): CFStringRef; external name '_CFURLCreateStringByAddingPercentEscapes';
 
+<<<<<<< HEAD
 
 { #if (TARGET_OS_MAC || TARGET_OS_EMBEDDED || TARGET_OS_IPHONE) || CF_BUILDING_CF || NSBUILDINGFOUNDATION }
 { CF_IMPLICIT_BRIDGING_DISABLED }
@@ -623,6 +696,27 @@ function CFURLCreateFilePathURL( allocator: CFAllocatorRef; url: CFURLRef; var e
 {#ifndef CF_OPEN_SOURCE}
 
 // Note: CFURLCreateFromFSRef and CFURLGetFSRef have never been functional on iOS because the Carbon File Manager is not on iOS.
+=======
+{ Returns a file reference URL, a path-idependent form of file URL. }
+{ Converts a file path URL if necessary. For non-file URLs, returns NULL. }
+{ Also returns NULL when the conversion fails because the target resource doesn't exist. }
+{ Optional output error: The error is set to a valid CFErrorRef when the function }
+{ result is NULL. A valid output error must be released by the caller. }
+function CFURLCreateFileReferenceURL( allocator: CFAllocatorRef; url: CFURLRef; var error: CFErrorRef ): CFURLRef; external name '_CFURLCreateFileReferenceURL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+
+{ Returns a file path URL, converting a file reference URL if necessary. }
+{ For non-file URLs, returns NULL. Also returns NULL when the conversion fails }
+{ because the target resource doesn't exist. }
+{ Optional output error: The error is set to a valid CFErrorRef when the function }
+{ result is NULL. A valid output error must be released by the caller. }
+function CFURLCreateFilePathURL( allocator: CFAllocatorRef; url: CFURLRef; var error: CFErrorRef ): CFURLRef; external name '_CFURLCreateFilePathURL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+{#ifndef CF_OPEN_SOURCE}
+
+>>>>>>> graemeg/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 function CFURLCreateFromFSRef( allocator: CFAllocatorRef; const (*var*) fsRef_: FSRef ): CFURLRef; external name '_CFURLCreateFromFSRef';
@@ -633,8 +727,11 @@ function CFURLGetFSRef( url: CFURLRef; var fsRef_: FSRef ): Boolean; external na
 
 {$endc} {TARGET_OS_MAC}
 
+{$endc} {TARGET_OS_MAC}
+
 {#endif} // !CF_OPEN_SOURCE
 
+<<<<<<< HEAD
 { Resource access
 
     The behavior of resource value caching is slightly different between the NSURL and CFURL API.
@@ -1360,6 +1457,8 @@ function CFURLStartAccessingSecurityScopedResource( url: CFURLRef ): Boolean; ex
 procedure CFURLStopAccessingSecurityScopedResource( url: CFURLRef ); external name '_CFURLStopAccessingSecurityScopedResource';
 (* CF_AVAILABLE_STARTING(10_7, NA) *)
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

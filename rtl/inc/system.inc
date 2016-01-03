@@ -12,6 +12,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 { ObjpasInt is the integer type, equivalent to Objpas.Integer (the Integer
   type in ObjFpc and Delphi modes). It is defined here for use in the
   implementation part of the System unit. }
@@ -22,12 +23,15 @@ type
 type
   ObjpasInt = LongInt;
 {$endif CPU16}
+=======
+>>>>>>> graemeg/cpstrnew
 
 { The RTTI is implemented through a series of constants : }
 
 Const
    // please update tkManagedTypes below if you add new
    // values
+<<<<<<< HEAD
    tkUnknown        = 0;
    tkInteger        = 1;
    tkChar           = 2;
@@ -58,6 +62,34 @@ Const
    tkFile           = 27;
    tkClassRef       = 28;
    tkPointer        = 29;
+=======
+   tkUnknown       = 0;
+   tkInteger       = 1;
+   tkChar          = 2;
+   tkEnumeration   = 3;
+   tkFloat         = 4;
+   tkSet           = 5;
+   tkMethod        = 6;
+   tkSString       = 7;
+   tkString        = tkSString;
+   tkLString       = 8;
+   tkAString       = 9;
+   tkWString       = 10;
+   tkVariant       = 11;
+   tkArray         = 12;
+   tkRecord        = 13;
+   tkInterface     = 14;
+   tkClass         = 15;
+   tkObject        = 16;
+   tkWChar         = 17;
+   tkBool          = 18;
+   tkInt64         = 19;
+   tkQWord         = 20;
+   tkDynArray      = 21;
+   tkInterfaceCorba = 22;
+   tkProcVar       = 23;
+   tkUString       = 24;
+>>>>>>> graemeg/cpstrnew
 
   // all potentially managed types
   tkManagedTypes   = [tkAstring,tkWstring,tkUstring,tkArray,
@@ -222,6 +254,7 @@ function do_isdevice(handle:thandle):boolean;forward;
   {$ifdef SYSPROCDEFINED}
     {$Error Can't determine processor type !}
   {$endif}
+<<<<<<< HEAD
   {$i armdefines.inc}
   {$if defined(CPUTHUMB2)}
     {$i thumb2.inc}  { Case dependent, don't change }
@@ -231,6 +264,12 @@ function do_isdevice(handle:thandle):boolean;forward;
     {$else}
       {$i arm.inc}  { Case dependent, don't change }
     {$endif}
+=======
+  {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
+    {$i thumb2.inc}  { Case dependent, don't change }
+  {$else}
+    {$i arm.inc}  { Case dependent, don't change }
+>>>>>>> graemeg/cpstrnew
   {$endif}
   {$define SYSPROCDEFINED}
 {$endif cpuarm}
@@ -879,6 +918,7 @@ begin
   { call cpu/fpu initialisation routine }
   fpc_cpuinit;
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
+<<<<<<< HEAD
 {$ifdef DEBUG}
   pt := PInitFinalTable(EntryInformation.InitFinalTable);
 {$endif}
@@ -887,6 +927,10 @@ begin
 {$ifdef DEBUG}
   pt := @InitFinalTable;
 {$endif}
+=======
+  with PInitFinalTable(EntryInformation.InitFinalTable)^ do
+{$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
+>>>>>>> graemeg/cpstrnew
   with InitFinalTable do
 {$endif FPC_HAS_INDIRECT_MAIN_INFORMATION}
    begin
@@ -1739,6 +1783,55 @@ function min(v1,v2 : SizeInt) : SizeInt;
 {$ifdef FPC_HAS_FEATURE_FILEIO}
 { OS dependent dir functions }
 {$i sysdir.inc}
+{$endif FPC_HAS_FEATURE_FILEIO}
+
+{$if defined(FPC_HAS_FEATURE_FILEIO) and defined(FPC_HAS_FEATURE_ANSISTRINGS)}
+Procedure getdir(drivenr:byte;Var dir:ansistring);
+{ this is needed to also allow ansistrings, the shortstring version is
+  OS dependent }
+var
+  s : shortstring;
+begin
+  getdir(drivenr,s);
+  dir:=s;
+end;
+{$endif}
+
+{$if defined(FPC_HAS_FEATURE_FILEIO)}
+
+Procedure MkDir(Const s: String);
+Var
+  Buffer: Array[0..255] of Char;
+Begin
+  If (s='') or (InOutRes <> 0) then
+   exit;
+  Move(s[1], Buffer, Length(s));
+  Buffer[Length(s)] := #0;
+  MkDir(@buffer[0],length(s));
+End;
+
+Procedure RmDir(Const s: String);
+Var
+  Buffer: Array[0..255] of Char;
+Begin
+  If (s='') or (InOutRes <> 0) then
+   exit;
+  Move(s[1], Buffer, Length(s));
+  Buffer[Length(s)] := #0;
+  RmDir(@buffer[0],length(s));
+End;
+
+Procedure ChDir(Const s: String);
+Var
+  Buffer: Array[0..255] of Char;
+Begin
+  If (s='') or (InOutRes <> 0) then
+   exit;
+  Move(s[1], Buffer, Length(s));
+  Buffer[Length(s)] := #0;
+  ChDir(@buffer[0],length(s));
+End;
+{$endif}
 
 
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}

@@ -4,8 +4,22 @@
      Contains:   Script Manager interfaces
                  The contents of this header file are deprecated.
  
+<<<<<<< HEAD
      Copyright:  © 1986-2011 by Apple Inc. All rights reserved.
 }
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1986-2008 by Apple Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -60,11 +74,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -83,29 +100,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -115,13 +147,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -164,6 +200,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -308,6 +366,61 @@ const
 	langHindi = 21;   { smDevanagari script}
 	langThai = 22;   { smThai script}
 	langKorean = 23;    { smKorean script}
+<<<<<<< HEAD
+
+const
+	langLithuanian = 24;   { smCentralEuroRoman script}
+	langPolish = 25;   { smCentralEuroRoman script}
+	langHungarian = 26;   { smCentralEuroRoman script}
+	langEstonian = 27;   { smCentralEuroRoman script}
+	langLatvian = 28;   { smCentralEuroRoman script}
+	langSami = 29;   { language of the Sami people of N. Scandinavia             }
+	langFaroese = 30;   { modified smRoman/Icelandic script                      }
+	langFarsi = 31;   { modified smArabic/Farsi script}
+	langPersian = 31;   { Synonym for langFarsi}
+	langRussian = 32;   { smCyrillic script}
+	langSimpChinese = 33;   { Chinese (Mandarin) in simplified characters}
+	langFlemish = 34;   { smRoman script}
+	langIrishGaelic = 35;   { smRoman or modified smRoman/Celtic script (without dot above)   }
+	langAlbanian = 36;   { smRoman script}
+	langRomanian = 37;   { modified smRoman/Romanian script}
+	langCzech = 38;   { smCentralEuroRoman script}
+	langSlovak = 39;   { smCentralEuroRoman script}
+	langSlovenian = 40;   { modified smRoman/Croatian script}
+	langYiddish = 41;   { smHebrew script}
+	langSerbian = 42;   { smCyrillic script}
+	langMacedonian = 43;   { smCyrillic script}
+	langBulgarian = 44;   { smCyrillic script}
+	langUkrainian = 45;   { modified smCyrillic/Ukrainian script}
+	langByelorussian = 46;   { smCyrillic script}
+	langBelorussian = 46;    { Synonym for langByelorussian                          }
+
+const
+	langUzbek = 47;   { Cyrillic script}
+	langKazakh = 48;   { Cyrillic script}
+	langAzerbaijani = 49;   { Azerbaijani in Cyrillic script}
+	langAzerbaijanAr = 50;   { Azerbaijani in Arabic script}
+	langArmenian = 51;   { smArmenian script}
+	langGeorgian = 52;   { smGeorgian script}
+	langMoldavian = 53;   { smCyrillic script}
+	langKirghiz = 54;   { Cyrillic script}
+	langTajiki = 55;   { Cyrillic script}
+	langTurkmen = 56;   { Cyrillic script}
+	langMongolian = 57;   { Mongolian in smMongolian script}
+	langMongolianCyr = 58;   { Mongolian in Cyrillic script}
+	langPashto = 59;   { Arabic script}
+	langKurdish = 60;   { smArabic script}
+	langKashmiri = 61;   { Arabic script}
+	langSindhi = 62;   { Arabic script}
+	langTibetan = 63;   { smTibetan script}
+	langNepali = 64;   { smDevanagari script}
+	langSanskrit = 65;   { smDevanagari script}
+	langMarathi = 66;   { smDevanagari script}
+	langBengali = 67;   { smBengali script}
+	langAssamese = 68;   { smBengali script}
+	langGujarati = 69;   { smGujarati script}
+	langPunjabi = 70;    { smGurmukhi script}
+=======
 
 const
 	langLithuanian = 24;   { smCentralEuroRoman script}
@@ -962,12 +1075,621 @@ const
 	badDelim = 3;    { TokenResults }
 	badEnding = 4;    { TokenResults }
 	crash = 5;     { TokenResults }
+>>>>>>> graemeg/cpstrnew
+
+const
+	langOriya = 71;   { smOriya script}
+	langMalayalam = 72;   { smMalayalam script}
+	langKannada = 73;   { smKannada script}
+	langTamil = 74;   { smTamil script}
+	langTelugu = 75;   { smTelugu script}
+	langSinhalese = 76;   { smSinhalese script}
+	langBurmese = 77;   { smBurmese script}
+	langKhmer = 78;   { smKhmer script}
+	langLao = 79;   { smLao script}
+	langVietnamese = 80;   { smVietnamese script}
+	langIndonesian = 81;   { smRoman script}
+	langTagalog = 82;   { Roman script}
+	langMalayRoman = 83;   { Malay in smRoman script}
+	langMalayArabic = 84;   { Malay in Arabic script}
+	langAmharic = 85;   { smEthiopic script}
+	langTigrinya = 86;   { smEthiopic script}
+	langOromo = 87;   { smEthiopic script}
+	langSomali = 88;   { smRoman script}
+	langSwahili = 89;   { smRoman script}
+	langKinyarwanda = 90;   { smRoman script}
+	langRuanda = 90;   { synonym for langKinyarwanda}
+	langRundi = 91;   { smRoman script}
+	langNyanja = 92;   { smRoman script}
+	langChewa = 92;   { synonym for langNyanja}
+	langMalagasy = 93;   { smRoman script}
+	langEsperanto = 94;    { Roman script}
+
+const
+	langWelsh = 128;  { modified smRoman/Celtic script}
+	langBasque = 129;  { smRoman script}
+	langCatalan = 130;  { smRoman script}
+	langLatin = 131;  { smRoman script}
+	langQuechua = 132;  { smRoman script}
+	langGuarani = 133;  { smRoman script}
+	langAymara = 134;  { smRoman script}
+	langTatar = 135;  { Cyrillic script}
+	langUighur = 136;  { Arabic script}
+	langDzongkha = 137;  { (lang of Bhutan) smTibetan script}
+	langJavaneseRom = 138;  { Javanese in smRoman script}
+	langSundaneseRom = 139;  { Sundanese in smRoman script}
+	langGalician = 140;  { smRoman script}
+	langAfrikaans = 141;   { smRoman script                                   }
+
+const
+	langBreton = 142;  { smRoman or modified smRoman/Celtic script                 }
+	langInuktitut = 143;  { Inuit script using smEthiopic script code                 }
+	langScottishGaelic = 144;  { smRoman or modified smRoman/Celtic script                 }
+	langManxGaelic = 145;  { smRoman or modified smRoman/Celtic script                 }
+	langIrishGaelicScript = 146;  { modified smRoman/Gaelic script (using dot above)               }
+	langTongan = 147;  { smRoman script                                   }
+	langGreekAncient = 148;  { Classical Greek, polytonic orthography                    }
+	langGreenlandic = 149;  { smRoman script                                   }
+	langAzerbaijanRoman = 150;  { Azerbaijani in Roman script                             }
+	langNynorsk = 151;   { Norwegian Nyorsk in smRoman}
+
+const
+	langUnspecified = 32767; { Special code for use in resources (such as 'itlm')           }
+
+{
+   Obsolete language code names (kept for backward compatibility):
+   Misspelled, ambiguous, misleading, considered pejorative, archaic, etc.
+}
+const
+	langPortugese = 8;    { Use langPortuguese}
+	langMalta = 16;   { Use langMaltese}
+	langYugoslavian = 18;   { (use langCroatian, langSerbian, etc.)}
+	langChinese = 19;   { (use langTradChinese or langSimpChinese)}
+	langLettish = 28;   { Use langLatvian                                     }
+	langLapponian = 29;   { Use langSami}
+	langLappish = 29;   { Use langSami}
+	langSaamisk = 29;   { Use langSami                                    }
+	langFaeroese = 30;   { Use langFaroese                                     }
+	langIrish = 35;   { Use langIrishGaelic                                  }
+	langGalla = 87;   { Use langOromo                                 }
+	langAfricaans = 141;  { Use langAfrikaans                                }
+	langGreekPoly = 148;   { Use langGreekAncient}
+
+{
+   Region codes:
+   These typically specify a combination of a language code and a particular region.
+   Some of these numeric values are reserved just for extra resource IDs associated
+   with certain regions; these are not actual region codes, and are noted in the comments.
+   Not all of the region codes are currently supported by Apple software.
+   When relevant, the following list also provides:
+   - The Apple part number (P/N) code for software localized for the specified region.
+   - The two-letter ISO language and country codes (from ISO 639 and ISO 3166). The
+     language code (lowercase) is first, then '_', then the country code (uppercase).
+}
+
+const
+{ P/N    ISO    codes  comments}
+	verUS = 0;    {       en_US}
+	verFrance = 1;    { F  fr_FR}
+	verBritain = 2;    { B  en_GB}
+	verGermany = 3;    { D  de_DE}
+	verItaly = 4;    { T  it_IT}
+	verNetherlands = 5;    { N  nl_NL}
+	verFlemish = 6;    { FN nl_BE     Flemish (Dutch) for Belgium                 }
+	verSweden = 7;    { S  sv_SE}
+	verSpain = 8;    { E  es_ES       Spanish for Spain}
+	verDenmark = 9;    { DK da_DK}
+	verPortugal = 10;   { PO pt_PT     Portuguese for Portugal}
+	verFrCanada = 11;   { C  fr_CA       French for Canada}
+	verNorway = 12;   { H  nb_NO       Bokmål}
+	verIsrael = 13;   { HB he_IL     Hebrew}
+	verJapan = 14;   { J  ja_JP}
+	verAustralia = 15;   { X  en_AU       English for Australia}
+	verArabic = 16;   { AB ar       Arabic for N Africa, Arabian peninsula, Levant}
+	verFinland = 17;   { K  fi_FI}
+	verFrSwiss = 18;   { SF fr_CH     French Swiss}
+	verGrSwiss = 19;   { SD de_CH     German Swiss}
+	verGreece = 20;   { GR el_GR     Monotonic Greek (modern)}
+	verIceland = 21;   { IS is_IS}
+	verMalta = 22;   { MA mt_MT}
+	verCyprus = 23;   { CY el_CY}
+	verTurkey = 24;   { TU tr_TR}
+	verYugoCroatian = 25;    { YU hr_HR     Croatian for Yugoslavia; now use verCroatia (68)}
+
+const
+	verNetherlandsComma = 26;   {              ID for KCHR resource - Dutch}
+	verFlemishPoint = 27;   {              ID for KCHR resource - Belgium}
+	verCanadaComma = 28;   {              ID for KCHR resource - Canadian ISO}
+	verCanadaPoint = 29;   {              ID for KCHR resource - Canadian; now unused}
+	vervariantPortugal = 30;   {              ID for resource; now unused}
+	vervariantNorway = 31;   {              ID for resource; now unused}
+	vervariantDenmark = 32;    {              ID for KCHR resource - Danish Mac Plus}
+
+const
+	verIndiaHindi = 33;   {       hi_IN     Hindi for India}
+	verPakistanUrdu = 34;   { UR ur_PK     Urdu for Pakistan                        }
+	verTurkishModified = 35;   {       tr_TR}
+	verItalianSwiss = 36;   { ST it_CH     Italian Swiss}
+	verInternational = 37;   { Z  en-ascii English for international use; ASCII chars only     }
+                                        {              38 is unassigned}
+	verRomania = 39;   { RO ro_RO}
+	verGreekAncient = 40;   {       grc      Ancient Greek, polytonic orthography          }
+	verLithuania = 41;   { LT lt_LT}
+	verPoland = 42;   { PL pl_PL}
+	verHungary = 43;   { MG hu_HU}
+	verEstonia = 44;   { EE et_EE}
+	verLatvia = 45;   { LV lv_LV}
+	verSami = 46;   {       se                                        }
+	verFaroeIsl = 47;   { FA fo_FO                                    }
+	verIran = 48;   { PS fa_IR     Persian/Farsi}
+	verRussia = 49;   { RS ru_RU     Russian}
+	verIreland = 50;   { GA ga_IE     Irish Gaelic for Ireland (without dot above)     }
+	verKorea = 51;   { KH ko_KR}
+	verChina = 52;   { CH zh_CN     Simplified Chinese}
+	verTaiwan = 53;   { TA zh_TW     Traditional Chinese}
+	verThailand = 54;   { TH th_TH}
+	verScriptGeneric = 55;   { SS          Generic script system (no language or script)       }
+	verCzech = 56;   { CZ cs_CZ}
+	verSlovak = 57;   { SL sk_SK}
+	verEastAsiaGeneric = 58;   { FE          Generic East Asia system (no language or script) }
+	verMagyar = 59;   {       hu_HU     Unused; see verHungary}
+	verBengali = 60;   {       bn         Bangladesh or India}
+	verBelarus = 61;    { BY be_BY}
+
+const
+	verUkraine = 62;   { UA uk_UA}
+                                        {              63 is unassigned}
+	verGreeceAlt = 64;   {       el_GR     unused                              }
+	verSerbian = 65;   { SR sr_CS                                    }
+	verSlovenian = 66;   { SV sl_SI                                    }
+	verMacedonian = 67;   { MD mk_MK                                    }
+	verCroatia = 68;   { CR hr_HR}
+                                        {              69 is unassigned}
+	verGermanReformed = 70;   {       de-1996     Reformed orthography (used formerly unassigned 70)   }
+	verBrazil = 71;   { BR pt_BR     Portuguese for Brazil}
+	verBulgaria = 72;   { BG bg_BG}
+	verCatalonia = 73;   { CA ca_ES     Catalan for Spain}
+	verMultilingual = 74;   { ZM mul        (no language or script)}
+	verScottishGaelic = 75;   { GD gd}
+	verManxGaelic = 76;   { GV gv       Isle of Man}
+	verBreton = 77;   { BZ br}
+	verNunavut = 78;   { IU iu_CA     Inuktitut for Canada}
+	verWelsh = 79;   { CU cy}
+                                        {              80 is ID for KCHR resource - Canadian CSA}
+	verIrishGaelicScript = 81;   { GS ga-Latg_IE  Irish Gaelic for Ireland (using dot above)}
+	verEngCanada = 82;   { V  en_CA       English for Canada}
+	verBhutan = 83;   { BH dz_BT     Dzongkha for Bhutan}
+	verArmenian = 84;   { HY hy_AM}
+	verGeorgian = 85;   { KR ka_GE}
+	verSpLatinAmerica = 86;   { LA es_XL     Spanish for Latin America (private ISO 3166 code)}
+                                        {              87 is ID for KCHR resource - Spanish ISO}
+	verTonga = 88;   { TS to_TO}
+                                        {              89 is ID for KCHR resource - Polish Modified}
+                                        {              90 is ID for KCHR resource - Catalan ISO}
+	verFrenchUniversal = 91;   {       fr         French generic}
+	verAustria = 92;   { AU de_AT     German for Austria}
+                                        { Y          93 is unused alternate for verSpLatinAmerica}
+	verGujarati = 94;   {       gu_IN}
+	verPunjabi = 95;   {       pa         Pakistan or India}
+	verIndiaUrdu = 96;   {       ur_IN     Urdu for India}
+	verVietnam = 97;    {       vi_VN}
+
+const
+	verFrBelgium = 98;   { BF fr_BE     French for Belgium                       }
+	verUzbek = 99;   { BD uz_UZ                                    }
+	verSingapore = 100;  { SG en_SG     (Assume English, not Chinese or Malay)                                 }
+	verNynorsk = 101;  { NY nn_NO     Norwegian Nynorsk                        }
+	verAfrikaans = 102;  { AK af_ZA                                    }
+	verEsperanto = 103;  {       eo                                        }
+	verMarathi = 104;  {       mr_IN                                      }
+	verTibetan = 105;  {       bo                                        }
+	verNepal = 106;  {       ne_NP                                      }
+	verGreenland = 107;  {       kl                                        }
+	verIrelandEnglish = 108;   {       en_IE     English for Ireland, with Euro for currency}
+
+{
+   Other extra resource IDs assigned in the same number space:
+    179 is ID for KCHR & itl_ resources - Cornish
+    581 is ID for KCHR resource - Irish Gaelic script alternate
+    582 is ID for KCHR resource - Ogham
+    779 is ID for KCHR resource - Welsh alternate
+   1111 is ID for KCHR resource - French numeric
+}
+
+{
+   Obsolete region code names (kept for backward compatibility):
+   Misspelled or alternate form, ambiguous, misleading, considered pejorative, archaic, etc.
+}
+const
+	verFrBelgiumLux = 6;    { Incorrect; 6 is Flemish, not French, for Belgium; use verFlemish     }
+	verBelgiumLux = 6;    { Use verFlemish}
+	verArabia = 16;   { Use verArabic}
+	verYugoslavia = 25;   { Use verYugoCroatian (same number, now unused), or newer verCroatia}
+	verBelgiumLuxPoint = 27;   { Use verFlemishPoint}
+	verIndia = 33;   { Use verIndiaHindi}
+	verPakistan = 34;   { Use verPakistanUrdu                                  }
+	verRumania = 39;   { Alternate for verRomania                              }
+	verGreecePoly = 40;   { Use verGreekAncient                                  }
+	verLapland = 46;   { Use verSami                                       }
+	verFaeroeIsl = 47;   { Use verFaroeIsl                                     }
+	verGenericFE = 58;   { Use verEastAsiaGeneric                              }
+	verFarEastGeneric = 58;   { Use verEastAsiaGeneric}
+	verByeloRussian = 61;   { Alternate for verBelarus                              }
+	verUkrania = 62;   { Use verUkraine}
+	verAlternateGr = 64;   { Use verGreeceAlt                                   }
+	verSerbia = 65;   { Alternate for verSerbian                              }
+	verSlovenia = 66;   { Alternate for verSlovenian                            }
+	verMacedonia = 67;   { Alternate for verMacedonian                             }
+	verBrittany = 77;   { Alternate for verBreton                              }
+	verWales = 79;   { Alternate for verWelsh                              }
+	verArmenia = 84;   { Alternate for verArmenian                           }
+	verGeorgia = 85;   { Alternate for verGeorgian                           }
+	verAustriaGerman = 92;   { Use verAustria                                   }
+	verTibet = 105;   { Use verTibetan                                   }
+
+const
+	minCountry = verUS;
+	maxCountry = verIrelandEnglish;
+
+const
+{ Calendar Codes }
+	calGregorian = 0;
+	calArabicCivil = 1;
+	calArabicLunar = 2;
+	calJapanese = 3;
+	calJewish = 4;
+	calCoptic = 5;
+	calPersian = 6;
+
+const
+{ Integer Format Codes }
+	intWestern = 0;
+	intArabic = 1;
+	intRoman = 2;
+	intJapanese = 3;
+	intEuropean = 4;
+	intOutputMask = $8000;
+
+const
+{ CharByte byte types }
+	smSingleByte = 0;
+	smFirstByte = -1;
+	smLastByte = 1;
+	smMiddleByte = 2;
+
+const
+{ CharType field masks }
+	smcTypeMask = $000F;
+	smcReserved = $00F0;
+	smcClassMask = $0F00;
+	smcOrientationMask = $1000; {two-byte script glyph orientation}
+	smcRightMask = $2000;
+	smcUpperMask = $4000;
+	smcDoubleMask = $8000;
+
+const
+{ Basic CharType character types }
+	smCharPunct = $0000;
+	smCharAscii = $0001;
+	smCharEuro = $0007;
+	smCharExtAscii = $0007; { More correct synonym for smCharEuro }
+                                        { Additional CharType character types for script systems }
+	smCharKatakana = $0002; {Japanese Katakana}
+	smCharHiragana = $0003; {Japanese Hiragana}
+	smCharIdeographic = $0004; {Hanzi, Kanji, Hanja}
+	smCharTwoByteGreek = $0005; {2-byte Greek in Far East systems}
+	smCharTwoByteRussian = $0006; {2-byte Cyrillic in Far East systems}
+	smCharBidirect = $0008; {Arabic/Hebrew}
+	smCharContextualLR = $0009; {Contextual left-right: Thai, Indic scripts}
+	smCharNonContextualLR = $000A; {Non-contextual left-right: Cyrillic, Greek}
+	smCharHangul = $000C; {Korean Hangul}
+	smCharJamo = $000D; {Korean Jamo}
+	smCharBopomofo = $000E; {Chinese Bopomofo}
+	smCharGanaKana = $000F; {Shared for Japanese Hiragana & Katakana}
+                                        { old names for some of above, for backward compatibility }
+	smCharFISKana = $0002; {Katakana}
+	smCharFISGana = $0003; {Hiragana}
+	smCharFISIdeo = $0004; {Hanzi, Kanji, Hanja}
+
+const
+	smCharFISGreek = $0005; {2-byte Greek in Far East systems}
+	smCharFISRussian = $0006; {2-byte Cyrillic in Far East systems}
+                                        { CharType classes for punctuation (smCharPunct) }
+	smPunctNormal = $0000;
+	smPunctNumber = $0100;
+	smPunctSymbol = $0200;
+	smPunctBlank = $0300; { Additional CharType classes for punctuation in two-byte systems }
+	smPunctRepeat = $0400; { repeat marker }
+	smPunctGraphic = $0500; { line graphics }
+                                        { CharType Katakana and Hiragana classes for two-byte systems }
+	smKanaSmall = $0100; {small kana character}
+	smKanaHardOK = $0200; {can have dakuten}
+	smKanaSoftOK = $0300; {can have dakuten or han-dakuten}
+                                        { CharType Ideographic classes for two-byte systems }
+	smIdeographicLevel1 = $0000; {level 1 char}
+	smIdeographicLevel2 = $0100; {level 2 char}
+	smIdeographicUser = $0200; {user char}
+                                        { old names for above, for backward compatibility }
+	smFISClassLvl1 = $0000; {level 1 char}
+	smFISClassLvl2 = $0100; {level 2 char}
+	smFISClassUser = $0200; {user char}
+                                        { CharType Jamo classes for Korean systems }
+	smJamoJaeum = $0000; {simple consonant char}
+	smJamoBogJaeum = $0100; {complex consonant char}
+	smJamoMoeum = $0200; {simple vowel char}
+	smJamoBogMoeum = $0300; {complex vowel char}
+
+const
+{ CharType glyph orientation for two-byte systems }
+	smCharHorizontal = $0000; { horizontal character form, or for both }
+	smCharVertical = $1000; { vertical character form }
+                                        { CharType directions }
+	smCharLeft = $0000;
+	smCharRight = $2000; { CharType case modifers }
+	smCharLower = $0000;
+	smCharUpper = $4000; { CharType character size modifiers (1 or multiple bytes). }
+	smChar1byte = $0000;
+	smChar2byte = $8000;
+
+const
+{ TransliterateText target types for Roman }
+	smTransAscii = 0;    {convert to ASCII}
+	smTransNative = 1;    {convert to font script}
+	smTransCase = $FE; {convert case for all text}
+	smTransSystem = $FF; {convert to system script}
+                                        { TransliterateText target types for two-byte scripts }
+	smTransAscii1 = 2;    {1-byte Roman}
+	smTransAscii2 = 3;    {2-byte Roman}
+	smTransKana1 = 4;    {1-byte Japanese Katakana}
+	smTransKana2 = 5;     {2-byte Japanese Katakana}
+
+const
+	smTransGana2 = 7;    {2-byte Japanese Hiragana (no 1-byte Hiragana)}
+	smTransHangul2 = 8;    {2-byte Korean Hangul}
+	smTransJamo2 = 9;    {2-byte Korean Jamo}
+	smTransBopomofo2 = 10;   {2-byte Chinese Bopomofo}
+                                        { TransliterateText target modifiers }
+	smTransLower = $4000; {target becomes lowercase}
+	smTransUpper = $8000; {target becomes uppercase}
+                                        { TransliterateText resource format numbers }
+	smTransRuleBaseFormat = 1;    {Rule based trsl resource format }
+	smTransHangulFormat = 2;    {Table based Hangul trsl resource format}
+                                        { TransliterateText property flags }
+	smTransPreDoubleByting = 1;    {Convert all text to double byte before transliteration}
+	smTransPreLowerCasing = 2;     {Convert all text to lower case before transliteration}
+
+const
+{ TransliterateText source mask - general }
+	smMaskAll = -1; {Convert all text}
+                                        { TransliterateText source masks }
+	smMaskAscii = $00000001; {2^smTransAscii}
+	smMaskNative = $00000002; {2^smTransNative}
+                                        { TransliterateText source masks for two-byte scripts }
+	smMaskAscii1 = $00000004; {2^smTransAscii1}
+	smMaskAscii2 = $00000008; {2^smTransAscii2}
+	smMaskKana1 = $00000010; {2^smTransKana1}
+	smMaskKana2 = $00000020; {2^smTransKana2}
+	smMaskGana2 = $00000080; {2^smTransGana2}
+	smMaskHangul2 = $00000100; {2^smTransHangul2}
+	smMaskJamo2 = $00000200; {2^smTransJamo2}
+	smMaskBopomofo2 = $00000400; {2^smTransBopomofo2}
+
+const
+{ Special script code values for International Utilities }
+	iuSystemScript = -1;   { <obsolete>  system script }
+	iuCurrentScript = -2;    { <obsolete>  current script (for font of grafPort) }
+
+const
+{ Negative verbs for KeyScript }
+	smKeyNextScript = -1;   { Switch to next available script }
+	smKeySysScript = -2;   { Switch to the system script }
+	smKeySwapScript = -3;   { Switch to previously-used script }
+                                        { New for System 7.0: }
+	smKeyNextKybd = -4;   { Switch to next keyboard in current keyscript }
+	smKeySwapKybd = -5;   { Switch to previously-used keyboard in current keyscript }
+	smKeyDisableKybds = -6;   { Disable keyboards not in system or Roman script }
+	smKeyEnableKybds = -7;   { Re-enable keyboards for all enabled scripts }
+	smKeyToggleInline = -8;   { Toggle inline input for current keyscript }
+	smKeyToggleDirection = -9;   { Toggle default line direction (TESysJust) }
+	smKeyNextInputMethod = -10;  { Switch to next input method in current keyscript }
+	smKeySwapInputMethod = -11;  { Switch to last-used input method in current keyscript }
+	smKeyDisableKybdSwitch = -12;  { Disable switching from the current keyboard }
+	smKeySetDirLeftRight = -15;  { Set default line dir to left-right, align left }
+	smKeySetDirRightLeft = -16;  { Set default line dir to right-left, align right }
+	smKeyRoman = -17;   { Set keyscript to Roman. Does nothing if Roman-only system, unlike KeyScript(smRoman) which forces an update to current default Roman keyboard }
+
+const
+{ Force keyboard script switching flag and mask for zero and positive KeyScript verbs }
+	smKeyForceKeyScriptBit = 7;    { Force keyboard script switching flag }
+	smKeyForceKeyScriptMask = 1 shl smKeyForceKeyScriptBit; { its mask }
+
+const
+{ Roman script constants }
+                                        { The following are here for backward compatibility, but should not be used. }
+                                        { This information should be obtained using GetScript. }
+	romanSysFond = $3FFF; {system font id number}
+	romanAppFond = 3;    {application font id number}
+	romanFlags = $0007; {roman settings}
+                                        { Script Manager font equates. }
+	smFondStart = $4000; {start from 16K}
+	smFondEnd = $C000; {past end of range at 48K}
+                                        { Miscellaneous font equates. }
+	smUprHalfCharSet = $80;  {first char code in top half of std char set}
+
+const
+{ Character Set Extensions }
+	diaeresisUprY = $D9;
+	fraction = $DA;
+	intlCurrency = $DB;
+	leftSingGuillemet = $DC;
+	rightSingGuillemet = $DD;
+	fiLigature = $DE;
+	flLigature = $DF;
+	dblDagger = $E0;
+	centeredDot = $E1;
+	baseSingQuote = $E2;
+	baseDblQuote = $E3;
+	perThousand = $E4;
+	circumflexUprA = $E5;
+	circumflexUprE = $E6;
+	acuteUprA = $E7;
+	diaeresisUprE = $E8;
+	graveUprE = $E9;
+	acuteUprI = $EA;
+	circumflexUprI = $EB;
+	diaeresisUprI = $EC;
+	graveUprI = $ED;
+	acuteUprO = $EE;
+	circumflexUprO = $EF;
+	appleLogo = $F0;
+	graveUprO = $F1;
+	acuteUprU = $F2;
+	circumflexUprU = $F3;
+	graveUprU = $F4;
+	dotlessLwrI = $F5;
+	circumflex = $F6;
+	tilde = $F7;
+	macron = $F8;
+	breveMark = $F9;
+	overDot = $FA;
+	ringMark = $FB;
+	cedilla = $FC;
+	doubleAcute = $FD;
+	ogonek = $FE;
+	hachek = $FF;
+
+const
+{ ScriptTokenType values }
+	tokenIntl = 4;    {the itl resource number of the tokenizer}
+	tokenEmpty = -1;    {used internally as an empty flag}
+
+const
+	tokenUnknown = 0;    {chars that do not match a defined token type}
+	tokenWhite = 1;    {white space}
+	tokenLeftLit = 2;    {literal begin}
+	tokenRightLit = 3;    {literal end}
+	tokenAlpha = 4;    {alphabetic}
+	tokenNumeric = 5;    {numeric}
+	tokenNewLine = 6;    {new line}
+	tokenLeftComment = 7;    {open comment}
+	tokenRightComment = 8;    {close comment}
+	tokenLiteral = 9;    {literal}
+	tokenEscape = 10;   {character escape (e.g. '\' in "\n", "\t")}
+	tokenAltNum = 11;   {alternate number (e.g. $B0-B9 in Arabic,Hebrew)}
+	tokenRealNum = 12;   {real number}
+	tokenAltReal = 13;   {alternate real number}
+	tokenReserve1 = 14;   {reserved}
+	tokenReserve2 = 15;   {reserved}
+	tokenLeftParen = 16;   {open parenthesis}
+	tokenRightParen = 17;   {close parenthesis}
+	tokenLeftBracket = 18;   {open square bracket}
+	tokenRightBracket = 19;    {close square bracket}
+
+const
+	tokenLeftCurly = 20;   {open curly bracket}
+	tokenRightCurly = 21;   {close curly bracket}
+	tokenLeftEnclose = 22;   {open guillemet}
+	tokenRightEnclose = 23;   {close guillemet}
+	tokenPlus = 24;
+	tokenMinus = 25;
+	tokenAsterisk = 26;   {times/multiply}
+	tokenDivide = 27;
+	tokenPlusMinus = 28;   {plus or minus symbol}
+	tokenSlash = 29;
+	tokenBackSlash = 30;
+	tokenLess = 31;   {less than symbol}
+	tokenGreat = 32;   {greater than symbol}
+	tokenEqual = 33;
+	tokenLessEqual2 = 34;   {less than or equal, 2 characters (e.g. <=)}
+	tokenLessEqual1 = 35;   {less than or equal, 1 character}
+	tokenGreatEqual2 = 36;   {greater than or equal, 2 characters (e.g. >=)}
+	tokenGreatEqual1 = 37;   {greater than or equal, 1 character}
+	token2Equal = 38;   {double equal (e.g. ==)}
+	tokenColonEqual = 39;    {colon equal}
+
+const
+	tokenNotEqual = 40;   {not equal, 1 character}
+	tokenLessGreat = 41;   {less/greater, Pascal not equal (e.g. <>)}
+	tokenExclamEqual = 42;   {exclamation equal, C not equal (e.g. !=)}
+	tokenExclam = 43;   {exclamation point}
+	tokenTilde = 44;   {centered tilde}
+	tokenComma = 45;
+	tokenPeriod = 46;
+	tokenLeft2Quote = 47;   {open double quote}
+	tokenRight2Quote = 48;   {close double quote}
+	tokenLeft1Quote = 49;   {open single quote}
+	tokenRight1Quote = 50;   {close single quote}
+	token2Quote = 51;   {double quote}
+	token1Quote = 52;   {single quote}
+	tokenSemicolon = 53;
+	tokenPercent = 54;
+	tokenCaret = 55;
+	tokenUnderline = 56;
+	tokenAmpersand = 57;
+	tokenAtSign = 58;
+	tokenBar = 59;    {vertical bar}
+
+const
+	tokenQuestion = 60;
+	tokenPi = 61;   {lower-case pi}
+	tokenRoot = 62;   {square root symbol}
+	tokenSigma = 63;   {capital sigma}
+	tokenIntegral = 64;   {integral sign}
+	tokenMicro = 65;
+	tokenCapPi = 66;   {capital pi}
+	tokenInfinity = 67;
+	tokenColon = 68;
+	tokenHash = 69;   {e.g. #}
+	tokenDollar = 70;
+	tokenNoBreakSpace = 71;   {non-breaking space}
+	tokenFraction = 72;
+	tokenIntlCurrency = 73;
+	tokenLeftSingGuillemet = 74;
+	tokenRightSingGuillemet = 75;
+	tokenPerThousand = 76;
+	tokenEllipsis = 77;
+	tokenCenterDot = 78;
+	tokenNil = 127;
+
+const
+	delimPad = -2;   { obsolete, misspelled token names kept for backward compatibility }
+	tokenTilda = 44;
+	tokenCarat = 55;
+
+const
+{ Table selectors for GetItlTable }
+	smWordSelectTable = 0;    { get word select break table from 'itl2' }
+	smWordWrapTable = 1;    { get word wrap break table from 'itl2' }
+	smNumberPartsTable = 2;    { get default number parts table from 'itl4' }
+	smUnTokenTable = 3;    { get unToken table from 'itl4' }
+	smWhiteSpaceList = 4;    { get white space list from 'itl4' }
+	iuWordSelectTable = 0;    { <obsolete>  get word select break table from 'itl2' }
+	iuWordWrapTable = 1;    { <obsolete>  get word wrap break table from 'itl2' }
+	iuNumberPartsTable = 2;    { <obsolete>  get default number parts table from 'itl4' }
+	iuUnTokenTable = 3;    { <obsolete>  get unToken table from 'itl4' }
+	iuWhiteSpaceList = 4;     { <obsolete>  get white space list from 'itl4' }
+
+{ end of stuff moved from Packages.h }
+const
+	tokenOK = 0;    { TokenResults }
+	tokenOverflow = 1;    { TokenResults }
+	stringOverflow = 2;    { TokenResults }
+	badDelim = 3;    { TokenResults }
+	badEnding = 4;    { TokenResults }
+	crash = 5;     { TokenResults }
 
 type
 	TokenResults = SInt8;
 	CharByteTable = packed array [0..255] of char;
 { "TokenType" was renamed to "ScriptTokenType" because of a name collisions}
 type
+<<<<<<< HEAD
+=======
+	TokenResults = SInt8;
+	CharByteTable = packed array [0..255] of char;
+{ "TokenType" was renamed to "ScriptTokenType" because of a name collisions}
+type
+>>>>>>> graemeg/cpstrnew
 	ScriptTokenType = SInt16;
 {$ifc TARGET_OS_MAC}
 	TokenType							= ScriptTokenType;
@@ -1119,7 +1841,11 @@ const
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetScriptManagerVariable( selector: SInt16 ): SIGNEDLONG; external name '_GetScriptManagerVariable';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1141,7 +1867,11 @@ function GetScriptManagerVariable( selector: SInt16 ): SIGNEDLONG; external name
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function SetScriptManagerVariable( selector: SInt16; param: SIGNEDLONG ): OSErr; external name '_SetScriptManagerVariable';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$ifc not TARGET_CPU_64}
@@ -1292,7 +2022,11 @@ const
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetScriptVariable( script: SInt16; selector: SInt16 ): SIGNEDLONG; external name '_GetScriptVariable';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -1322,7 +2056,11 @@ function GetScriptVariable( script: SInt16; selector: SInt16 ): SIGNEDLONG; exte
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function SetScriptVariable( script: SInt16; selector: SInt16; param: SIGNEDLONG ): OSErr; external name '_SetScriptVariable';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -1360,7 +2098,11 @@ function SetScriptVariable( script: SInt16; selector: SInt16; param: SIGNEDLONG 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetSysDirection: SInt16; external name '_GetSysDirection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1378,7 +2120,11 @@ function GetSysDirection: SInt16; external name '_GetSysDirection';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetSysDirection( value: SInt16 ); external name '_SetSysDirection';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1403,7 +2149,11 @@ procedure SetSysDirection( value: SInt16 ); external name '_SetSysDirection';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function FontScript: SInt16; external name '_FontScript';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1428,7 +2178,11 @@ function FontScript: SInt16; external name '_FontScript';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function IntlScript: SInt16; external name '_IntlScript';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1452,7 +2206,11 @@ function IntlScript: SInt16; external name '_IntlScript';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function FontToScript( fontNumber: SInt16 ): SInt16; external name '_FontToScript';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1473,7 +2231,11 @@ function FontToScript( fontNumber: SInt16 ): SInt16; external name '_FontToScrip
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function CharacterByteType( textBuf: Ptr; textOffset: SInt16; script: ScriptCode ): SInt16; external name '_CharacterByteType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1494,7 +2256,11 @@ function CharacterByteType( textBuf: Ptr; textOffset: SInt16; script: ScriptCode
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function CharacterType( textBuf: Ptr; textOffset: SInt16; script: ScriptCode ): SInt16; external name '_CharacterType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1513,7 +2279,11 @@ function CharacterType( textBuf: Ptr; textOffset: SInt16; script: ScriptCode ): 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function TransliterateText( srcHandle: Handle; dstHandle: Handle; target: SInt16; srcMask: SIGNEDLONG; script: ScriptCode ): OSErr; external name '_TransliterateText';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1534,7 +2304,11 @@ function TransliterateText( srcHandle: Handle; dstHandle: Handle; target: SInt16
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function FillParseTable( var table: CharByteTable; script: ScriptCode ): Boolean; external name '_FillParseTable';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1575,7 +2349,11 @@ function FillParseTable( var table: CharByteTable; script: ScriptCode ): Boolean
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetIntlResource( theID: SInt16 ): Handle; external name '_GetIntlResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1593,7 +2371,11 @@ function GetIntlResource( theID: SInt16 ): Handle; external name '_GetIntlResour
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure ClearIntlResourceCache; external name '_ClearIntlResourceCache';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1611,7 +2393,11 @@ procedure ClearIntlResourceCache; external name '_ClearIntlResourceCache';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GetIntlResourceTable( script: ScriptCode; tableCode: SInt16; var itlHandle: Handle; var offset: SIGNEDLONG; var length: SIGNEDLONG ); external name '_GetIntlResourceTable';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -1722,7 +2508,11 @@ procedure GetIntlResourceTable( script: ScriptCode; tableCode: SInt16; var itlHa
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function IntlTokenize( tokenParam: TokenBlockPtr ): TokenResults; external name '_IntlTokenize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}

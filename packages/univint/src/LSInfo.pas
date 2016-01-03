@@ -1,15 +1,32 @@
 {
+<<<<<<< HEAD
      File:       LSInfo.h
  
      Contains:   Public interfaces for LaunchServices.framework
  
      Copyright:  (c) 2001-2012 by Apple Inc. All rights reserved.
+=======
+     File:       LaunchServices/LSInfo.h
+ 
+     Contains:   Public interfaces for LaunchServices.framework
+ 
+     Version:    LaunchServices-360.3~1
+ 
+     Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 }
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{	 Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -65,11 +82,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,29 +108,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -120,13 +155,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -138,12 +177,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -157,13 +202,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -339,12 +391,20 @@ const
  *    LSInit is deprecated. Do not use.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSInit( inFlags: LSInitializeFlags ): OSStatus; external name '_LSInit';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -354,12 +414,20 @@ function LSInit( inFlags: LSInitializeFlags ): OSStatus; external name '_LSInit'
  *    LSTerm is deprecated. It does nothing.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.3
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSTerm: OSStatus; external name '_LSTerm';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -387,12 +455,20 @@ function LSTerm: OSStatus; external name '_LSTerm';
  *      Information is returned in this structure. Must not be NULL
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemInfoForRef( const (*var*) inItemRef: FSRef; inWhichInfo: LSRequestedInfo; var outItemInfo: LSItemInfoRecord ): OSStatus; external name '_LSCopyItemInfoForRef';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -419,12 +495,20 @@ function LSCopyItemInfoForRef( const (*var*) inItemRef: FSRef; inWhichInfo: LSRe
  *      Information is returned in this structure. Must not be NULL
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemInfoForURL( inURL: CFURLRef; inWhichInfo: LSRequestedInfo; var outItemInfo: LSItemInfoRecord ): OSStatus; external name '_LSCopyItemInfoForURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -455,12 +539,20 @@ function LSCopyItemInfoForURL( inURL: CFURLRef; inWhichInfo: LSRequestedInfo; va
  *      inNameBuffer does not contain a valid extension.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetExtensionInfo( inNameLen: UniCharCount; {const} inNameBuffer: {variable-size-array} UniCharPtr; var outExtStartIndex: UniCharCount ): OSStatus; external name '_LSGetExtensionInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -486,12 +578,20 @@ function LSGetExtensionInfo( inNameLen: UniCharCount; {const} inNameBuffer: {var
  *      copied. Callers must dispose of the resulting CFString.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDisplayNameForRef( const (*var*) inRef: FSRef; var outDisplayName: CFStringRef ): OSStatus; external name '_LSCopyDisplayNameForRef';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -517,12 +617,20 @@ function LSCopyDisplayNameForRef( const (*var*) inRef: FSRef; var outDisplayName
  *      copied. Callers must dispose of the resulting CFString.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDisplayNameForURL( inURL: CFURLRef; var outDisplayName: CFStringRef ): OSStatus; external name '_LSCopyDisplayNameForURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -549,12 +657,20 @@ function LSCopyDisplayNameForURL( inURL: CFURLRef; var outDisplayName: CFStringR
  *      True to hide inRef's extension, false to show it.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSSetExtensionHiddenForRef( const (*var*) inRef: FSRef; inHide: Boolean ): OSStatus; external name '_LSSetExtensionHiddenForRef';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -581,12 +697,20 @@ function LSSetExtensionHiddenForRef( const (*var*) inRef: FSRef; inHide: Boolean
  *      True to hide inURL's extension, false to show it.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSSetExtensionHiddenForURL( inURL: CFURLRef; inHide: Boolean ): OSStatus; external name '_LSSetExtensionHiddenForURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -612,12 +736,20 @@ function LSSetExtensionHiddenForURL( inURL: CFURLRef; inHide: Boolean ): OSStatu
  *      CFStringRef must be released eventually.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForRef( const (*var*) inFSRef: FSRef; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForRef';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -643,12 +775,20 @@ function LSCopyKindStringForRef( const (*var*) inFSRef: FSRef; var outKindString
  *      CFStringRef must be released eventually.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForURL( inURL: CFURLRef; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -691,12 +831,20 @@ function LSCopyKindStringForURL( inURL: CFURLRef; var outKindString: CFStringRef
  *      CFStringRef must be released eventually.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForTypeInfo( inType: OSType; inCreator: OSType; inExtension: CFStringRef { can be NULL }; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForTypeInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -722,12 +870,20 @@ function LSCopyKindStringForTypeInfo( inType: OSType; inCreator: OSType; inExten
  *      CFStringRef must be released eventually.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyKindStringForMIMEType( inMIMEType: CFStringRef; var outKindString: CFStringRef ): OSStatus; external name '_LSCopyKindStringForMIMEType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -766,12 +922,20 @@ function LSCopyKindStringForMIMEType( inMIMEType: CFStringRef; var outKindString
  *      RETURNED URL REFERENCE.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetApplicationForItem( const (*var*) inItemRef: FSRef; inRoleMask: LSRolesMask; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSGetApplicationForItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -818,12 +982,20 @@ function LSGetApplicationForItem( const (*var*) inItemRef: FSRef; inRoleMask: LS
  *      RETURNED URL REFERENCE.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetApplicationForInfo( inType: OSType; inCreator: OSType; inExtension: CFStringRef { can be NULL }; inRoleMask: LSRolesMask; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSGetApplicationForInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -857,12 +1029,20 @@ function LSGetApplicationForInfo( inType: OSType; inCreator: OSType; inExtension
  *      caller.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.2 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyApplicationForMIMEType( inMIMEType: CFStringRef; inRoleMask: LSRolesMask; var outAppURL: CFURLRef ): OSStatus; external name '_LSCopyApplicationForMIMEType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -901,12 +1081,20 @@ function LSCopyApplicationForMIMEType( inMIMEType: CFStringRef; inRoleMask: LSRo
  *      RETURNED URL REFERENCE.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSGetApplicationForURL( inURL: CFURLRef; inRoleMask: LSRolesMask; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSGetApplicationForURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -947,12 +1135,20 @@ function LSGetApplicationForURL( inURL: CFURLRef; inRoleMask: LSRolesMask; outAp
  *      RETURNED URL REFERENCE.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSFindApplicationForInfo( inCreator: OSType; inBundleID: CFStringRef { can be NULL }; inName: CFStringRef { can be NULL }; outAppRef: FSRefPtr { can be NULL }; outAppURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSFindApplicationForInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -989,12 +1185,20 @@ function LSFindApplicationForInfo( inCreator: OSType; inBundleID: CFStringRef { 
  *      Filled in with result. Must not be NULL.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCanRefAcceptItem( const (*var*) inItemFSRef: FSRef; const (*var*) inTargetRef: FSRef; inRoleMask: LSRolesMask; inFlags: LSAcceptanceFlags; var outAcceptsItem: Boolean ): OSStatus; external name '_LSCanRefAcceptItem';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1031,12 +1235,20 @@ function LSCanRefAcceptItem( const (*var*) inItemFSRef: FSRef; const (*var*) inT
  *      Filled in with result. Must not be NULL.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCanURLAcceptURL( inItemURL: CFURLRef; inTargetURL: CFURLRef; inRoleMask: LSRolesMask; inFlags: LSAcceptanceFlags; var outAcceptsItem: Boolean ): OSStatus; external name '_LSCanURLAcceptURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1068,12 +1280,20 @@ function LSCanURLAcceptURL( inItemURL: CFURLRef; inTargetURL: CFURLRef; inRoleMa
  *    The item's property list info is malformed.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSRegisterURL( inURL: CFURLRef; inUpdate: Boolean ): OSStatus; external name '_LSRegisterURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1105,12 +1325,20 @@ function LSRegisterURL( inURL: CFURLRef; inUpdate: Boolean ): OSStatus; external
  *    The item's property list info is malformed.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSRegisterFSRef( const (*var*) inRef: FSRef; inUpdate: Boolean ): OSStatus; external name '_LSRegisterFSRef';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1145,12 +1373,20 @@ function LSRegisterFSRef( const (*var*) inRef: FSRef; inUpdate: Boolean ): OSSta
  *    must eventually release it.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available in CarbonLib 1.x
  *    Non-Carbon CFM:   not available
  }
 function LSCopyApplicationURLsForURL( inURL: CFURLRef; inRoleMask: LSRolesMask ): CFArrayRef; external name '_LSCopyApplicationURLsForURL';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { ================================================================================== }
@@ -1227,102 +1463,182 @@ function LSCopyApplicationURLsForURL( inURL: CFURLRef; inRoleMask: LSRolesMask )
  *  kLSItemContentType
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemContentType: CFStringRef; external name '_kLSItemContentType'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemFileType
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemFileType: CFStringRef; external name '_kLSItemFileType'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemFileCreator
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemFileCreator: CFStringRef; external name '_kLSItemFileCreator'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemExtension
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemExtension: CFStringRef; external name '_kLSItemExtension'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemDisplayName
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemDisplayName: CFStringRef; external name '_kLSItemDisplayName'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemDisplayKind
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemDisplayKind: CFStringRef; external name '_kLSItemDisplayKind'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemRoleHandlerDisplayName
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemRoleHandlerDisplayName: CFStringRef; external name '_kLSItemRoleHandlerDisplayName'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemIsInvisible
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemIsInvisible: CFStringRef; external name '_kLSItemIsInvisible'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemExtensionIsHidden
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemExtensionIsHidden: CFStringRef; external name '_kLSItemExtensionIsHidden'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  kLSItemQuarantineProperties
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 var kLSItemQuarantineProperties: CFStringRef; external name '_kLSItemQuarantineProperties'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 {
  *  LSCopyItemAttribute()
  *  
@@ -1355,12 +1671,20 @@ var kLSItemQuarantineProperties: CFStringRef; external name '_kLSItemQuarantineP
  *    does not have the requested attribute.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; inAttributeName: CFStringRef; var outValue: CFTypeRef ): OSStatus; external name '_LSCopyItemAttribute';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1398,12 +1722,20 @@ function LSCopyItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask;
  *    an OSStatus value.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyItemAttributes( const (*var*) inItem: FSRef; inRoles: LSRolesMask; inAttributeNames: CFArrayRef; var outValues: CFDictionaryRef ): OSStatus; external name '_LSCopyItemAttributes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1437,12 +1769,20 @@ function LSCopyItemAttributes( const (*var*) inItem: FSRef; inRoles: LSRolesMask
  *    attribute is read-only.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; inAttributeName: CFStringRef; inValue: CFTypeRef { can be NULL } ): OSStatus; external name '_LSSetItemAttribute';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { ================================================================================== }
@@ -1464,12 +1804,20 @@ function LSSetItemAttribute( const (*var*) inItem: FSRef; inRoles: LSRolesMask; 
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDefaultRoleHandlerForContentType( inContentType: CFStringRef; inRole: LSRolesMask ): CFStringRef; external name '_LSCopyDefaultRoleHandlerForContentType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1489,12 +1837,20 @@ function LSCopyDefaultRoleHandlerForContentType( inContentType: CFStringRef; inR
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyAllRoleHandlersForContentType( inContentType: CFStringRef; inRole: LSRolesMask ): CFArrayRef; external name '_LSCopyAllRoleHandlersForContentType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1512,12 +1868,20 @@ function LSCopyAllRoleHandlersForContentType( inContentType: CFStringRef; inRole
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetDefaultRoleHandlerForContentType( inContentType: CFStringRef; inRole: LSRolesMask; inHandlerBundleID: CFStringRef ): OSStatus; external name '_LSSetDefaultRoleHandlerForContentType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1550,12 +1914,20 @@ const
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSGetHandlerOptionsForContentType( inContentType: CFStringRef ): LSHandlerOptions; external name '_LSGetHandlerOptionsForContentType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1570,12 +1942,20 @@ function LSGetHandlerOptionsForContentType( inContentType: CFStringRef ): LSHand
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetHandlerOptionsForContentType( inContentType: CFStringRef; inOptions: LSHandlerOptions ): OSStatus; external name '_LSSetHandlerOptionsForContentType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1592,12 +1972,20 @@ function LSSetHandlerOptionsForContentType( inContentType: CFStringRef; inOption
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyDefaultHandlerForURLScheme( inURLScheme: CFStringRef ): CFStringRef; external name '_LSCopyDefaultHandlerForURLScheme';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1616,12 +2004,20 @@ function LSCopyDefaultHandlerForURLScheme( inURLScheme: CFStringRef ): CFStringR
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSCopyAllHandlersForURLScheme( inURLScheme: CFStringRef ): CFArrayRef; external name '_LSCopyAllHandlersForURLScheme';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1638,12 +2034,20 @@ function LSCopyAllHandlersForURLScheme( inURLScheme: CFStringRef ): CFArrayRef; 
  *    Thread safe since version 10.4
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function LSSetDefaultHandlerForURLScheme( inURLScheme: CFStringRef; inHandlerBundleID: CFStringRef ): OSStatus; external name '_LSSetDefaultHandlerForURLScheme';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}

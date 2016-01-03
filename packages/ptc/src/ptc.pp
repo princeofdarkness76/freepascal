@@ -60,7 +60,11 @@ uses
 {$ENDIF FPDOC}
 
 const
+<<<<<<< HEAD
   PTCPAS_VERSION = 'PTCPas 0.99.14';
+=======
+  PTCPAS_VERSION = 'PTCPas 0.99.11';
+>>>>>>> graemeg/cpstrnew
 
 type
   PUint8  = ^Uint8;
@@ -113,7 +117,11 @@ uses
 
 {$IF defined(WIN32) OR defined(WIN64)}
 uses
+<<<<<<< HEAD
   Windows, p_ddraw, glext;
+=======
+  Windows, p_ddraw;
+>>>>>>> graemeg/cpstrnew
 {$ENDIF defined(WIN32) OR defined(WIN64)}
 
 {$IFDEF WinCE}
@@ -123,7 +131,11 @@ uses
 
 {$IFDEF UNIX}
 uses
+<<<<<<< HEAD
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym, xkblib
+=======
+  BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym
+>>>>>>> graemeg/cpstrnew
   {$IFDEF ENABLE_X11_EXTENSION_XRANDR}
   , xrandr
   {$ENDIF ENABLE_X11_EXTENSION_XRANDR}
@@ -177,9 +189,15 @@ function IntToStr(Value: QWord): string;
 begin
   System.Str(Value, Result);
 end;
+<<<<<<< HEAD
 
 {$INCLUDE core/log.inc}
 
+=======
+
+{$INCLUDE core/log.inc}
+
+>>>>>>> graemeg/cpstrnew
 {$INCLUDE core/coreimplementation.inc}
 
 {$IFDEF GO32V2}
@@ -187,6 +205,7 @@ end;
 {$ENDIF GO32V2}
 
 {$IF defined(Win32) OR defined(Win64)}
+<<<<<<< HEAD
 {$INCLUDE win32/base/win32cursord.inc}
 {$INCLUDE win32/base/win32cursormoded.inc}
 {$INCLUDE win32/base/win32monitord.inc}
@@ -227,6 +246,40 @@ end;
 {$INCLUDE win32/gdi/win32openglwindowi.inc}
 {$INCLUDE win32/gdi/win32gdihooki.inc}
 {$INCLUDE win32/gdi/win32gdiconsolei.inc}
+=======
+{$INCLUDE win32/base/cursord.inc}
+{$INCLUDE win32/base/cursormoded.inc}
+{$INCLUDE win32/base/monitord.inc}
+{$INCLUDE win32/base/eventd.inc}
+{$INCLUDE win32/base/windowd.inc}
+{$INCLUDE win32/base/hookd.inc}
+{$INCLUDE win32/base/kbdd.inc}
+{$INCLUDE win32/base/moused.inc}
+{$INCLUDE win32/directx/hookd.inc}
+{$INCLUDE win32/directx/libraryd.inc}
+{$INCLUDE win32/directx/displayd.inc}
+{$INCLUDE win32/directx/primaryd.inc}
+{$INCLUDE win32/directx/directxconsoled.inc}
+{$INCLUDE win32/gdi/win32dibd.inc}
+{$INCLUDE win32/gdi/gdiconsoled.inc}
+
+{$INCLUDE win32/base/cursor.inc}
+{$INCLUDE win32/base/monitor.inc}
+{$INCLUDE win32/base/event.inc}
+{$INCLUDE win32/base/window.inc}
+{$INCLUDE win32/base/hook.inc}
+{$INCLUDE win32/base/kbd.inc}
+{$INCLUDE win32/base/mousei.inc}
+{$INCLUDE win32/directx/check.inc}
+{$INCLUDE win32/directx/translate.inc}
+{$INCLUDE win32/directx/hook.inc}
+{$INCLUDE win32/directx/library.inc}
+{$INCLUDE win32/directx/display.inc}
+{$INCLUDE win32/directx/primary.inc}
+{$INCLUDE win32/directx/directxconsolei.inc}
+{$INCLUDE win32/gdi/win32dibi.inc}
+{$INCLUDE win32/gdi/gdiconsolei.inc}
+>>>>>>> graemeg/cpstrnew
 {$ENDIF defined(Win32) OR defined(Win64)}
 
 {$IFDEF WinCE}

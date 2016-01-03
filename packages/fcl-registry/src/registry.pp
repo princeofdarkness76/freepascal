@@ -132,8 +132,11 @@ type
     fFileName          : String;
     fPath              : String;
     fPreferStringValues: Boolean;
+<<<<<<< HEAD
     function OpenSection(const Section: string; CreateSection : Boolean = false): boolean;
     procedure CloseSection;
+=======
+>>>>>>> graemeg/cpstrnew
   public
     constructor Create(const FN: string); overload;
     constructor Create(const FN: string;aaccess:longword); overload;

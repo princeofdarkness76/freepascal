@@ -33,6 +33,10 @@ begin
         end;
     T:=P.Targets.AddProgram('fd2pascal.pp');
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> graemeg/cpstrnew
     P.Sources.AddSrc('README.txt');
 
     P.ExamplePath.Add('examples/');

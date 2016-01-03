@@ -8,7 +8,11 @@ type
   TTest = class(TCustomVariantType)
     procedure Clear(var V: TVarData); override;
     procedure Copy(var Dest: TVarData; const Source: TVarData; const Indirect: Boolean); override;
+<<<<<<< HEAD
     procedure DispInvoke(Dest: PVarData; var Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
+=======
+    procedure DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer); override;
+>>>>>>> graemeg/cpstrnew
   end;
 
 procedure TTest.Clear(var V: TVarData);
@@ -19,7 +23,11 @@ procedure TTest.Copy(var Dest: TVarData; const Source: TVarData; const Indirect:
 begin
 end;
 
+<<<<<<< HEAD
 procedure TTest.DispInvoke(Dest: PVarData; var Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
+=======
+procedure TTest.DispInvoke(Dest: PVarData; const Source: TVarData; CallDesc: PCallDesc; Params: Pointer);
+>>>>>>> graemeg/cpstrnew
 var
   tmp: Word;
 begin

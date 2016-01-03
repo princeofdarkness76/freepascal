@@ -911,6 +911,7 @@ begin
       for i := 0 to Fields.Count-1 do with fields[i] do
         if not (FieldKind in [fkCalculated,fkLookup]) then // Do not add fielddefs for calculated/lookup fields.
           begin
+<<<<<<< HEAD
           FFieldDef:=FieldDefs.FieldDefClass.Create(FieldDefs,FieldName,DataType,Size,Required,FieldDefs.Count+1);
           with FFieldDef do
             begin
@@ -919,6 +920,12 @@ begin
             if DataType = ftBCD then precision := (fields[i] as TBCDField).Precision
             else if DataType = ftFMTBcd then precision := (fields[i] as TFMTBCDField).Precision;
             end;
+=======
+          if Required then Attributes := attributes + [faRequired];
+          if ReadOnly then Attributes := attributes + [faReadOnly];
+          if DataType = ftBCD then precision := (fields[i] as TBCDField).Precision
+          else if DataType = ftFMTBcd then precision := (fields[i] as TFMTBCDField).Precision;
+>>>>>>> graemeg/cpstrnew
           end;
     finally
       FieldDefs.EndUpdate;

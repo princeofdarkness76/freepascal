@@ -1,6 +1,10 @@
 {
     Free Pascal port of the OpenPTC C++ library.
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -30,6 +34,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 type
   TPTCMouseEvent = class(TPTCEvent, IPTCMouseEvent)
   private
@@ -76,6 +81,9 @@ begin
 end;
 
 function TPTCMouseEvent.GetEventType: TPTCEventType;
+=======
+function TPTCMouseEvent.GetType: TPTCEventType;
+>>>>>>> graemeg/cpstrnew
 begin
   Result := PTCMouseEvent;
 end;
@@ -89,6 +97,7 @@ begin
   FButtonState := AButtonState;
 end;
 
+<<<<<<< HEAD
 function TPTCMouseEvent.GetX: Integer;
 begin
   Result := FX;
@@ -114,6 +123,8 @@ begin
   Result := FButtonState;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TPTCMouseButtonEvent.Create(AX, AY, ADeltaX, ADeltaY: Integer; AButtonState: TPTCMouseButtonState; APress: Boolean; AButton: TPTCMouseButton);
 begin
   if APress xor (AButton In AButtonState) then
@@ -125,17 +136,23 @@ begin
   FButton := AButton;
 end;
 
+<<<<<<< HEAD
 function TPTCMouseButtonEvent.GetPress: Boolean;
 begin
   Result := FPress;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 function TPTCMouseButtonEvent.GetRelease: Boolean;
 begin
   Result := not FPress;
 end;
+<<<<<<< HEAD
 
 function TPTCMouseButtonEvent.GetButton: TPTCMouseButton;
 begin
   Result := FButton;
 end;
+=======
+>>>>>>> graemeg/cpstrnew

@@ -2,6 +2,7 @@
 
 {$mode delphi}
 {$r+}
+<<<<<<< HEAD
 var
   Count: Word;
 
@@ -10,6 +11,16 @@ var
   I: Integer;
 
 begin
+=======
+procedure Test;
+var
+  Count: Word;
+  I: Integer;
+
+begin
+  Count := 0;
+
+>>>>>>> graemeg/cpstrnew
   for I := 0 to Pred(Count) do
     begin
       WriteLn(I);
@@ -18,8 +29,11 @@ begin
 end;
 
 begin
+<<<<<<< HEAD
   Count := 0;
 
+=======
+>>>>>>> graemeg/cpstrnew
   test;
 end.
 

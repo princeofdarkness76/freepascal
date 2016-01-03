@@ -30,3 +30,11 @@ function IsARM9(): boolean;
 begin
   IsARM9 := integer(@irq_vector) = $0B003FFC;
 end;
+<<<<<<< HEAD
+=======
+
+procedure AssignDevice(const FIOD: TFileIODevice);
+begin
+  FileIODevice := FIOD;
+end;
+>>>>>>> graemeg/cpstrnew

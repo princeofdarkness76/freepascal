@@ -4,7 +4,10 @@ type
   generic TNode<T> = class
   public
     type
+<<<<<<< HEAD
       TAlias = T;
+=======
+>>>>>>> graemeg/cpstrnew
       PT = ^T;
   private
     var
@@ -26,7 +29,11 @@ type
     destructor Destroy; override;
 
     function GetAddr: TTNode.PT;
+<<<<<<< HEAD
     procedure SetV(v: TTNode.TAlias);
+=======
+    procedure SetV(v: TTNode.T);
+>>>>>>> graemeg/cpstrnew
   end;
 
 constructor TNode.Create;

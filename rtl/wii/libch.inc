@@ -31,12 +31,16 @@ type
     tm_isdst: longint;
   end;
 
+<<<<<<< HEAD
   Ptimeval = ^Ttimeval;
   Ttimeval = record
     tv_sec  : longint;
     tv_usec : longint;
   end;
   Timeval = TTimeval;
+=======
+
+>>>>>>> graemeg/cpstrnew
 (* Some libc functions *)
 //function printf(format: Pchar; args: array of const): longint; cdecl; external;
 function printf(format: Pchar): longint; cdecl; varargs; external;

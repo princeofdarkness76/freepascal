@@ -3,9 +3,15 @@
  
      Contains:   QuickTime Image Compression Interfaces.
  
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -13,8 +19,12 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +79,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -89,6 +102,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -108,17 +122,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -168,6 +203,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -258,6 +321,7 @@ const
 	kDVCProPALCodecType = FourCharCode('dvpp'); { available in QuickTime 6.0 or later}
 	kDVCPro50NTSCCodecType = FourCharCode('dv5n');
 	kDVCPro50PALCodecType = FourCharCode('dv5p');
+<<<<<<< HEAD
 	kDVCPROHD720p60CodecType = FourCharCode('dvhp');
 	kDVCPROHD720p50CodecType = FourCharCode('dvhq');
 	kDVCPROHD720pCodecType = kDVCPROHD720p60CodecType;
@@ -267,6 +331,13 @@ const
 	kDVCPROHD1080i50CodecType = FourCharCode('dvh5');
 	kDVCPROHD1080p30CodecType = FourCharCode('dvh3');
 	kDVCPROHD1080p25CodecType = FourCharCode('dvh2');
+=======
+	kDVCPro100NTSCCodecType = FourCharCode('dv1n');
+	kDVCPro100PALCodecType = FourCharCode('dv1p');
+	kDVCPROHD720pCodecType = FourCharCode('dvhp');
+	kDVCPROHD1080i60CodecType = FourCharCode('dvh6');
+	kDVCPROHD1080i50CodecType = FourCharCode('dvh5');
+>>>>>>> graemeg/cpstrnew
 	kBaseCodecType = FourCharCode('base');
 	kFLCCodecType = FourCharCode('flic');
 	kTargaCodecType = FourCharCode('tga ');
@@ -355,6 +426,7 @@ const
 const
 	k4444YpCbCrA8PixelFormat = FourCharCode('v408'); { Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A }
 	k4444YpCbCrA8RPixelFormat = FourCharCode('r408'); { Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased yuv, ordered A Y' Cb Cr }
+<<<<<<< HEAD
 
 { Supported by QTNewGWorld in QuickTime 6.0 and later }
 const
@@ -439,6 +511,92 @@ const
 	codecFlagUsedImageBuffer = 1 shl 15;
 
 
+=======
+
+{ Supported by QTNewGWorld in QuickTime 6.0 and later }
+const
+	kYUV420PixelFormat = FourCharCode('y420'); { Planar Component Y'CbCr 8-bit 4:2:0.  PixMap baseAddr points to a big-endian PlanarPixmapInfoYUV420 struct; see ImageCodec.i. }
+
+
+{ These are the bits that are set in the Component flags, and also in the codecInfo struct. }
+const
+	codecInfoDoes1 = 1 shl 0; { codec can work with 1-bit pixels }
+	codecInfoDoes2 = 1 shl 1; { codec can work with 2-bit pixels }
+	codecInfoDoes4 = 1 shl 2; { codec can work with 4-bit pixels }
+	codecInfoDoes8 = 1 shl 3; { codec can work with 8-bit pixels }
+	codecInfoDoes16 = 1 shl 4; { codec can work with 16-bit pixels }
+	codecInfoDoes32 = 1 shl 5; { codec can work with 32-bit pixels }
+	codecInfoDoesDither = 1 shl 6; { codec can do ditherMode }
+	codecInfoDoesStretch = 1 shl 7; { codec can stretch to arbitrary sizes }
+	codecInfoDoesShrink = 1 shl 8; { codec can shrink to arbitrary sizes }
+	codecInfoDoesMask = 1 shl 9; { codec can mask to clipping regions }
+	codecInfoDoesTemporal = 1 shl 10; { codec can handle temporal redundancy }
+	codecInfoDoesDouble = 1 shl 11; { codec can stretch to double size exactly }
+	codecInfoDoesQuad = 1 shl 12; { codec can stretch to quadruple size exactly }
+	codecInfoDoesHalf = 1 shl 13; { codec can shrink to half size }
+	codecInfoDoesQuarter = 1 shl 14; { codec can shrink to quarter size }
+	codecInfoDoesRotate = 1 shl 15; { codec can rotate on decompress }
+	codecInfoDoesHorizFlip = 1 shl 16; { codec can flip horizontally on decompress }
+	codecInfoDoesVertFlip = 1 shl 17; { codec can flip vertically on decompress }
+	codecInfoHasEffectParameterList = 1 shl 18; { codec implements get effects parameter list call, once was codecInfoDoesSkew }
+	codecInfoDoesBlend = 1 shl 19; { codec can blend on decompress }
+	codecInfoDoesReorder = 1 shl 19; { codec can rearrange frames during compression }
+	codecInfoDoesWarp = 1 shl 20; { codec can warp arbitrarily on decompress }
+	codecInfoDoesMultiPass = 1 shl 20; { codec can perform multi-pass compression }
+	codecInfoDoesRecompress = 1 shl 21; { codec can recompress image without accumulating errors }
+	codecInfoDoesSpool = 1 shl 22; { codec can spool image data }
+	codecInfoDoesRateConstrain = 1 shl 23; { codec can data rate constrain }
+
+
+const
+	codecInfoDepth1 = 1 shl 0; { compressed data at 1 bpp depth available }
+	codecInfoDepth2 = 1 shl 1; { compressed data at 2 bpp depth available }
+	codecInfoDepth4 = 1 shl 2; { compressed data at 4 bpp depth available }
+	codecInfoDepth8 = 1 shl 3; { compressed data at 8 bpp depth available }
+	codecInfoDepth16 = 1 shl 4; { compressed data at 16 bpp depth available }
+	codecInfoDepth32 = 1 shl 5; { compressed data at 32 bpp depth available }
+	codecInfoDepth24 = 1 shl 6; { compressed data at 24 bpp depth available }
+	codecInfoDepth33 = 1 shl 7; { compressed data at 1 bpp monochrome depth  available }
+	codecInfoDepth34 = 1 shl 8; { compressed data at 2 bpp grayscale depth available }
+	codecInfoDepth36 = 1 shl 9; { compressed data at 4 bpp grayscale depth available }
+	codecInfoDepth40 = 1 shl 10; { compressed data at 8 bpp grayscale depth available }
+	codecInfoStoresClut = 1 shl 11; { compressed data can have custom cluts }
+	codecInfoDoesLossless = 1 shl 12; { compressed data can be stored in lossless format }
+	codecInfoSequenceSensitive = 1 shl 13; { compressed data is sensitive to out of sequence decoding }
+
+
+{ input sequence flags}
+const
+	codecFlagUseImageBuffer = 1 shl 0; { decompress}
+	codecFlagUseScreenBuffer = 1 shl 1; { decompress}
+	codecFlagUpdatePrevious = 1 shl 2; { compress}
+	codecFlagNoScreenUpdate = 1 shl 3; { decompress}
+	codecFlagWasCompressed = 1 shl 4; { compress}
+	codecFlagDontOffscreen = 1 shl 5; { decompress}
+	codecFlagUpdatePreviousComp = 1 shl 6; { compress}
+	codecFlagForceKeyFrame = 1 shl 7; { compress}
+	codecFlagOnlyScreenUpdate = 1 shl 8; { decompress}
+	codecFlagLiveGrab = 1 shl 9; { compress}
+	codecFlagDiffFrame = 1 shl 9; { decompress}
+	codecFlagDontUseNewImageBuffer = 1 shl 10; { decompress}
+	codecFlagInterlaceUpdate = 1 shl 11; { decompress}
+	codecFlagCatchUpDiff = 1 shl 12; { decompress}
+	codecFlagSupportDisable = 1 shl 13; { decompress}
+	codecFlagReenable = 1 shl 14; { decompress}
+
+
+{ output sequence flags}
+const
+	codecFlagOutUpdateOnNextIdle = 1 shl 9;
+	codecFlagOutUpdateOnDataSourceChange = 1 shl 10;
+	codecFlagSequenceSensitive = 1 shl 11;
+	codecFlagOutUpdateOnTimeChange = 1 shl 12;
+	codecFlagImageBufferNotSourceImage = 1 shl 13;
+	codecFlagUsedNewImageBuffer = 1 shl 14;
+	codecFlagUsedImageBuffer = 1 shl 15;
+
+
+>>>>>>> graemeg/cpstrnew
 const
 { The minimum data size for spooling in or out data }
 	codecMinimumDataSize = 32768;
@@ -592,10 +750,17 @@ type
 	ImageDescriptionPtr = ^ImageDescription;
 type
 	ImageDescriptionHandle = ^ImageDescriptionPtr;
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
 
 
+=======
+
+{$ifc not TARGET_CPU_64}
+
+
+>>>>>>> graemeg/cpstrnew
 type
 	CodecInfoPtr = ^CodecInfo;
 	CodecInfo = record
@@ -680,11 +845,19 @@ type
 
 		duration: SIGNEDLONG;               { duration frame is to be displayed (0 if unknown)}
 		rate: Fixed;                   { rate of timebase relative to wall-time}
+<<<<<<< HEAD
 
 		recordSize: SIGNEDLONG;             { total number of bytes in ICMFrameTimeRecord}
 
 		frameNumber: SIGNEDLONG;            { number of frame, zero if not known}
 
+=======
+
+		recordSize: SIGNEDLONG;             { total number of bytes in ICMFrameTimeRecord}
+
+		frameNumber: SIGNEDLONG;            { number of frame, zero if not known}
+
+>>>>>>> graemeg/cpstrnew
 		flags: SIGNEDLONG;
 
 		virtualStartTime: wide;       { conceptual start time}
@@ -2346,8 +2519,13 @@ type
                                               { new field for QuickTime 4.1}
 		defaultGammaLevel: Fixed;
                                               { new fields for QuickTime 6.0}
+<<<<<<< HEAD
 		horizontalSubsampling: array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
 		verticalSubsampling: array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
+=======
+		horizontalSubsampling:	array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
+		verticalSubsampling:	array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
+>>>>>>> graemeg/cpstrnew
                                               { new fields for QuickTime 6.5}
 		cmpCount: SInt16;               { for use in PixMap.cmpCount}
 		cmpSize: SInt16;                { for use in PixMap.cmpSize}
@@ -2639,6 +2817,7 @@ function GetGraphicsImporterForFileWithFlags( const (*var*) theFile: FSSpec; var
 
 {
  *  GetGraphicsImporterForDataRefWithFlags()
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
@@ -2699,10 +2878,75 @@ function ImageTranscodeSequenceEnd( its: ImageTranscodeSequence ): OSErr; extern
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeFrame';
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForDataRefWithFlags';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
+=======
+ *  QTGetFileNameExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function QTGetFileNameExtension(const (*var*) fileName: StrFileName; fileType: OSType; var extension: OSType ): OSErr; external name '_QTGetFileNameExtension';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ImageTranscodeSequenceBegin()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeSequenceBegin( var its: ImageTranscodeSequence; srcDesc: ImageDescriptionHandle; destType: OSType; var dstDesc: ImageDescriptionHandle; data: UnivPtr; dataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeSequenceBegin';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ImageTranscodeSequenceEnd()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeSequenceEnd( its: ImageTranscodeSequence ): OSErr; external name '_ImageTranscodeSequenceEnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ImageTranscodeFrame()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeFrame';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+>>>>>>> graemeg/cpstrnew
  *  ImageTranscodeDisposeFrameData()
  *  
  *  Availability:
@@ -3760,9 +4004,12 @@ function GraphicsImportGetImageDescription( ci: GraphicsImportComponent; var des
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function GraphicsImportGetDataOffsetAndSize( ci: GraphicsImportComponent; var offset: UNSIGNEDLONG; var size: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsImportGetDataOffsetAndSize';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 {
  *  GraphicsImportReadData()
  *  
@@ -4033,9 +4280,12 @@ function GraphicsImportSetDataReferenceOffsetAndLimit( ci: GraphicsImportCompone
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function GraphicsImportGetDataReferenceOffsetAndLimit( ci: GraphicsImportComponent; var offset: UNSIGNEDLONG; var limit: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsImportGetDataReferenceOffsetAndLimit';
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 {
  *  GraphicsImportGetAliasedDataReference()
  *  
@@ -4559,6 +4809,7 @@ function GraphicsImportGetDestinationColorSyncProfileRef( ci: GraphicsImportComp
 
 
 {$endc} {TARGET_API_MAC_OSX}
+<<<<<<< HEAD
 
 {
  *  GraphicsImportWillUseColorMatching()
@@ -4625,6 +4876,74 @@ function GraphicsImportSetReturnGenericColorSyncProfile( ci: GraphicsImportCompo
 function GraphicsImportGetReturnGenericColorSyncProfile( ci: GraphicsImportComponent; var returnGenericProfilesUnlessDontMatchFlagSet: Boolean ): ComponentResult; external name '_GraphicsImportGetReturnGenericColorSyncProfile';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 
+=======
+
+{
+ *  GraphicsImportWillUseColorMatching()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportWillUseColorMatching( ci: GraphicsImportComponent; var outWillMatch: Boolean ): ComponentResult; external name '_GraphicsImportWillUseColorMatching';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$ifc TARGET_API_MAC_OSX}
+{ This convenience API is implemented by the base graphics importer for format-specific importers. }
+{
+ *  GraphicsImportGetGenericColorSyncProfile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportGetGenericColorSyncProfile( ci: GraphicsImportComponent; pixelFormat: OSType; reservedSetToNULL: UnivPtr; flags: UInt32; var genericColorSyncProfileOut: Handle ): ComponentResult; external name '_GraphicsImportGetGenericColorSyncProfile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$endc} {TARGET_API_MAC_OSX}
+
+{ Format-specific importers that implement GetColorSyncProfile and that want the base graphics 
+   importer to automatically support ColorSync matching should:
+   (a) implement GraphicsImportSetReturnGenericColorSyncProfile; when it is called, set an internal flag
+   (b) change GraphicsImportGetColorSyncProfile so that, if this internal flag is set,
+       when the source image file contains a profile 
+       and the kGraphicsImporterDontUseColorMatching flag is NOT set,
+       it returns a generic profile of the appropriate colorspace instead.
+   Other importers should *not* implement GraphicsImportSetReturnGenericColorSyncProfile. }
+{ WARNING: Applications should not call this API; it is internal graphics importer plumbing.
+   Set kGraphicsImporterDontUseColorMatching instead. }
+{
+ *  GraphicsImportSetReturnGenericColorSyncProfile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportSetReturnGenericColorSyncProfile( ci: GraphicsImportComponent; returnGenericProfilesUnlessDontMatchFlagSet: Boolean ): ComponentResult; external name '_GraphicsImportSetReturnGenericColorSyncProfile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{ WARNING: Applications should not call this API; it is internal graphics importer plumbing. }
+{
+ *  GraphicsImportGetReturnGenericColorSyncProfile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportGetReturnGenericColorSyncProfile( ci: GraphicsImportComponent; var returnGenericProfilesUnlessDontMatchFlagSet: Boolean ): ComponentResult; external name '_GraphicsImportGetReturnGenericColorSyncProfile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 type
 	GraphicsExportComponent = ComponentInstance;
@@ -6884,8 +7203,12 @@ const
  *    in.
  }
 type
+<<<<<<< HEAD
 	ICMDecompressionSessionRef = ^OpaqueICMDecompressionSession; { an opaque type }
 	OpaqueICMDecompressionSession = record end;
+=======
+	ICMDecompressionSessionRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  QTVisualContextRef
@@ -6899,8 +7222,12 @@ type
  *    not be associated with more than one movie at a time.
  }
 type
+<<<<<<< HEAD
 	QTVisualContextRef = ^OpaqueQTVisualContext; { an opaque type }
 	OpaqueQTVisualContext = record end;
+=======
+	QTVisualContextRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMDecompressionSessionOptionsRef
@@ -6909,8 +7236,12 @@ type
  *    Holds options for a decompression session.
  }
 type
+<<<<<<< HEAD
 	ICMDecompressionSessionOptionsRef = ^OpaqueICMDecompressionSessionOptions; { an opaque type }
 	OpaqueICMDecompressionSessionOptions = record end;
+=======
+	ICMDecompressionSessionOptionsRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMDecompressionFrameOptionsRef
@@ -6919,8 +7250,12 @@ type
  *    Holds options for decompressing an individual frame.
  }
 type
+<<<<<<< HEAD
 	ICMDecompressionFrameOptionsRef = ^OpaqueICMDecompressionFrameOptions; { an opaque type }
 	OpaqueICMDecompressionFrameOptions = record end;
+=======
+	ICMDecompressionFrameOptionsRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMDecompressionTrackingFlags
@@ -7811,8 +8146,12 @@ const
  *    B-frame capable.
  }
 type
+<<<<<<< HEAD
 	ICMCompressionSessionRef = ^OpaqueICMCompressionSession; { an opaque type }
 	OpaqueICMCompressionSession = record end;
+=======
+	ICMCompressionSessionRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMEncodedFrameRef
@@ -7828,11 +8167,17 @@ type
  *    (ICMMutableEncodedFrameRef).
  }
 type
+<<<<<<< HEAD
 	ICMEncodedFrameRef = ^OpaqueICMEncodedFrame; { an opaque type }
 	OpaqueICMEncodedFrame = record end;
 	ICMEncodedFrameRefPtr = ^ICMEncodedFrameRef;
 	ICMMutableEncodedFrameRef = ^OpaqueICMMutableEncodedFrameRef; { an opaque type }
 	OpaqueICMMutableEncodedFrameRef = record end;
+=======
+	ICMEncodedFrameRef = ^SInt32; { an opaque type }
+	ICMEncodedFrameRefPtr = ^ICMEncodedFrameRef;
+	ICMMutableEncodedFrameRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	ICMMutableEncodedFrameRefPtr = ^ICMMutableEncodedFrameRef;
 
 {
@@ -7843,8 +8188,12 @@ type
  *    session.
  }
 type
+<<<<<<< HEAD
 	ICMCompressionSessionOptionsRef = ^OpaqueICMCompressionSessionOptions; { an opaque type }
 	OpaqueICMCompressionSessionOptions = record end;
+=======
+	ICMCompressionSessionOptionsRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMCompressionFrameOptionsRef
@@ -7854,8 +8203,12 @@ type
  *    during a compression session.
  }
 type
+<<<<<<< HEAD
 	ICMCompressionFrameOptionsRef = ^OpaqueICMCompressionFrameOptions; { an opaque type }
 	OpaqueICMCompressionFrameOptions = record end;
+=======
+	ICMCompressionFrameOptionsRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMMultiPassStorageRef
@@ -7869,8 +8222,12 @@ type
  *    files, but clients may override this with custom mechanisms.
  }
 type
+<<<<<<< HEAD
 	ICMMultiPassStorageRef = ^OpaqueICMMultiPassStorage; { an opaque type }
 	OpaqueICMMultiPassStorage = record end;
+=======
+	ICMMultiPassStorageRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMEncodedFrameOutputCallback
@@ -10412,8 +10769,12 @@ function ICMEncodedFrameGetSourceFrameRefCon( frame: ICMEncodedFrameRef ): UnivP
  *    need to make any retain or release calls on this token.
  }
 type
+<<<<<<< HEAD
 	ICMCompressorSessionRef = ^OpaqueICMCompressorSession; { an opaque type }
 	OpaqueICMCompressorSession = record end;
+=======
+	ICMCompressorSessionRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 
 {
  *  ICMCompressorSourceFrameRef
@@ -10427,8 +10788,12 @@ type
  *    retain a window of them in order to perform out-of-order encoding.
  }
 type
+<<<<<<< HEAD
 	ICMCompressorSourceFrameRef = ^OpaqueICMCompressorSourceFrame; { an opaque type }
 	OpaqueICMCompressorSourceFrame = record end;
+=======
+	ICMCompressorSourceFrameRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 	ICMCompressorSourceFrameRefPtr = ^ICMCompressorSourceFrameRef;
 {
  *  ICMCompressorSourceFrameRetain()

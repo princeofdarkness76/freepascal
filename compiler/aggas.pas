@@ -157,6 +157,15 @@ implementation
         );
 
 
+<<<<<<< HEAD
+=======
+    const
+      ait_const2str : array[aitconst_128bit..aitconst_darwin_dwarf_delta32] of string[20]=(
+        #9'.fixme128'#9,#9'.quad'#9,#9'.long'#9,#9'.short'#9,#9'.byte'#9,
+        #9'.sleb128'#9,#9'.uleb128'#9,
+        #9'.rva'#9,#9'.secrel32'#9,#9'.quad'#9,#9'.long'#9
+      );
+>>>>>>> graemeg/cpstrnew
 
 {****************************************************************************}
 {                          GNU Assembler writer                              }
@@ -270,9 +279,13 @@ implementation
           '.objc_nlclasslist',
           '.objc_catlist',
           '.obcj_nlcatlist',
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
         );
         secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
           '.text',
@@ -329,9 +342,13 @@ implementation
           '.objc_nlclasslist',
           '.objc_catlist',
           '.obcj_nlcatlist',
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
         );
       var
         sep     : string[3];
@@ -368,7 +385,20 @@ implementation
         if atype=sec_user then
           secname:=aname;
 
+<<<<<<< HEAD
         if is_smart_section(atype) and (aname<>'') then
+=======
+        { For bss we need to set some flags that are target dependent,
+          it is easier to disable it for smartlinking. It doesn't take up
+          filespace }
+        if not(target_info.system in systems_darwin) and
+           create_smartlink_sections and
+           (aname<>'') and
+           (atype<>sec_toc) and
+           (atype<>sec_user) and
+           { on embedded systems every byte counts, so smartlink bss too }
+           ((atype<>sec_bss) or (target_info.system in systems_embedded)) then
+>>>>>>> graemeg/cpstrnew
           begin
             case aorder of
               secorder_begin :
@@ -461,7 +491,11 @@ implementation
          system_powerpc64_aix:
            begin
              if (atype in [sec_stub,sec_objc_data,sec_objc_const,sec_data_coalesced]) then
+<<<<<<< HEAD
                writer.AsmWrite('.section ');
+=======
+               AsmWrite('.section ');
+>>>>>>> graemeg/cpstrnew
            end
          else
           writer.AsmWrite('.section ');
@@ -483,10 +517,17 @@ implementation
                   if (cs_create_pic in current_settings.moduleswitches) then
                     writer.AsmWriteln('__TEXT,__picsymbolstub1,symbol_stubs,pure_instructions,32')
                   else
+<<<<<<< HEAD
                     writer.AsmWriteln('__TEXT,__symbol_stub1,symbol_stubs,pure_instructions,16');
                 system_i386_darwin,
                 system_i386_iphonesim:
                   writer.AsmWriteln('__IMPORT,__jump_table,symbol_stubs,self_modifying_code+pure_instructions,5');
+=======
+                    AsmWriteln('__TEXT,__symbol_stub1,symbol_stubs,pure_instructions,16');
+                system_i386_darwin,
+                system_i386_iphonesim:
+                  AsmWriteln('__IMPORT,__jump_table,symbol_stubs,self_modifying_code+pure_instructions,5');
+>>>>>>> graemeg/cpstrnew
                 system_arm_darwin:
                   if (cs_create_pic in current_settings.moduleswitches) then
                     writer.AsmWriteln('__TEXT,__picsymbolstub4,symbol_stubs,none,16')
@@ -561,6 +602,7 @@ implementation
           needsObject :=
               (
                 assigned(hp.next) and
+<<<<<<< HEAD
                  (tai(hp.next).typ in [ait_const,ait_datablock,ait_realconst])
               ) or
               (hp.sym.typ=AT_DATA);
@@ -574,10 +616,24 @@ implementation
 {$ifdef m68k}
           instr : string;
 {$endif}
+=======
+                 (tai(hp.next).typ in [ait_const,ait_datablock,
+                  ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_comp_64bit])
+              ) or
+              (hp.sym.typ=AT_DATA);
+  
+        end;
+  
+  
+      procedure doalign(alignment: byte; use_op: boolean; fillop: byte; out last_align: longint);
+        var
+          i: longint;
+>>>>>>> graemeg/cpstrnew
         begin
           last_align:=alignment;
           if alignment>1 then
             begin
+<<<<<<< HEAD
               if not(target_info.system in (systems_darwin+systems_aix)) then
                 begin
 {$ifdef m68k}
@@ -618,6 +674,28 @@ implementation
                   last_align:=i;
                 end;
               writer.AsmLn;
+=======
+              if not(target_info.system in systems_darwin) then
+                begin
+                  AsmWrite(#9'.balign '+tostr(alignment));
+                  if use_op then
+                    AsmWrite(','+tostr(fillop))
+{$ifdef x86}
+                  { force NOP as alignment op code }
+                  else if LastSecType=sec_code then
+                    AsmWrite(',0x90');
+{$endif x86}
+                end
+              else
+                begin
+                  { darwin as only supports .align }
+                  if not ispowerof2(alignment,i) then
+                    internalerror(2003010305);
+                  AsmWrite(#9'.align '+tostr(i));
+                  last_align:=i;
+                end;
+              AsmLn;
+>>>>>>> graemeg/cpstrnew
             end;
         end;
 
@@ -694,7 +772,11 @@ implementation
 
            ait_align :
              begin
+<<<<<<< HEAD
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align,lasthp);
+=======
+               doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
+>>>>>>> graemeg/cpstrnew
              end;
 
            ait_section :
@@ -991,12 +1073,16 @@ implementation
                              { 64 bit constants are already handled above in this case }
                              s:=tostr(longint(tai_const(hp).value));
 {$endif cpu64bitaddr}
+<<<<<<< HEAD
                            if constdef = aitconst_half16bit then
                              s:='('+s+')/2';
                            if constdef = aitconst_gs then
                              s:='gs('+s+')';
 
                            writer.AsmWrite(s);
+=======
+                           AsmWrite(s);
+>>>>>>> graemeg/cpstrnew
                            inc(l,length(s));
                            { Values with symbols are written on a single line to improve
                              reading of the .s file (PFV) }
@@ -1026,7 +1112,25 @@ implementation
 
            ait_realconst :
              begin
+<<<<<<< HEAD
                WriteRealConstAsBytes(tai_realconst(hp),#9'.byte'#9,do_line);
+=======
+               if do_line then
+                AsmWriteLn(target_asm.comment+'value: '+extended2str(tai_real_80bit(hp).value));
+             { Make sure e is a extended type, bestreal could be
+               a different type (bestreal) !! (PFV) }
+               e:=tai_real_80bit(hp).value;
+               AsmWrite(#9'.byte'#9);
+               for i:=0 to 9 do
+                begin
+                  if i<>0 then
+                   AsmWrite(',');
+                  AsmWrite(tostr(t80bitarray(e)[i]));
+                end;
+               for i:=11 to tai_real_80bit(hp).savesize do
+                 AsmWrite(',0');
+               AsmLn;
+>>>>>>> graemeg/cpstrnew
              end;
 
            ait_string :
@@ -1070,8 +1174,13 @@ implementation
                 begin
                   if (tai_label(hp).labsym.bind=AB_PRIVATE_EXTERN) then
                     begin
+<<<<<<< HEAD
                       writer.AsmWrite(#9'.private_extern ');
                       writer.AsmWriteln(tai_label(hp).labsym.name);
+=======
+                      AsmWrite(#9'.private_extern ');
+                      AsmWriteln(tai_label(hp).labsym.name);
+>>>>>>> graemeg/cpstrnew
                     end;
                   if tai_label(hp).labsym.bind in [AB_GLOBAL,AB_PRIVATE_EXTERN] then
                    begin
@@ -1097,6 +1206,15 @@ implementation
            ait_symbol :
              begin
                if (tai_symbol(hp).sym.bind=AB_PRIVATE_EXTERN) then
+<<<<<<< HEAD
+=======
+                 begin
+                   AsmWrite(#9'.private_extern ');
+                   AsmWriteln(tai_symbol(hp).sym.name);
+                 end;
+               if (target_info.system = system_powerpc64_linux) and
+                 (tai_symbol(hp).sym.typ = AT_FUNCTION) and (cs_profile in current_settings.moduleswitches) then
+>>>>>>> graemeg/cpstrnew
                  begin
                    writer.AsmWrite(#9'.private_extern ');
                    if replaceforbidden then
@@ -1172,6 +1290,7 @@ implementation
                          writer.AsmWriteLn(',' + sepChar + 'function');
                      end;
                  end;
+<<<<<<< HEAD
                if replaceforbidden then
                  if not(tai_symbol(hp).has_value) then
                    writer.AsmWriteLn(ReplaceForbiddenAsmSymbolChars(tai_symbol(hp).sym.name + ':'))
@@ -1213,6 +1332,20 @@ implementation
                else
                  writer.AsmWriteLn(#9'.weak '+tai_weak(hp).sym^);
              end;
+=======
+               if not(tai_symbol(hp).has_value) then
+                 AsmWriteLn(tai_symbol(hp).sym.name + ':')
+               else
+                 AsmWriteLn(tai_symbol(hp).sym.name + '=' + tostr(tai_symbol(hp).value));
+             end;
+{$ifdef arm}
+           ait_thumb_func:
+             begin
+               AsmWriteLn(#9'.thumb_func');
+             end;
+{$endif arm}
+
+>>>>>>> graemeg/cpstrnew
            ait_symbol_end :
              begin
                if tf_needs_symbol_size in target_info.flags then
@@ -1293,6 +1426,7 @@ implementation
              end;
 
            ait_marker :
+<<<<<<< HEAD
              begin
 {$ifdef DEBUG_AGGAS}
                WriteStr(s,tai_marker(hp).Kind);
@@ -1303,6 +1437,12 @@ implementation
                else if tai_marker(hp).kind=mark_NoLineInfoEnd then
                  dec(InlineLevel);
              end;
+=======
+             if tai_marker(hp).kind=mark_NoLineInfoStart then
+               inc(InlineLevel)
+             else if tai_marker(hp).kind=mark_NoLineInfoEnd then
+               dec(InlineLevel);
+>>>>>>> graemeg/cpstrnew
 
            ait_directive :
              begin
@@ -1578,9 +1718,14 @@ implementation
          (target_info.system in systems_darwin) then
         writer.AsmWriteLn(#9'.subsections_via_symbols');
 
+<<<<<<< HEAD
       { "no executable stack" marker }
       { TODO: used by OpenBSD/NetBSD as well? }
       if (target_info.system in (systems_linux + systems_android + systems_freebsd + systems_dragonfly)) and
+=======
+      { "no executable stack" marker for Linux }
+      if (target_info.system in systems_linux) and
+>>>>>>> graemeg/cpstrnew
          not(cs_executable_stack in current_settings.moduleswitches) then
         begin
           writer.AsmWriteLn('.section .note.GNU-stack,"",%progbits');
@@ -1727,6 +1872,7 @@ implementation
                     exit;
                   end;
               end;
+<<<<<<< HEAD
             sec_objc_meth_var_types:
               begin
                 if (target_info.system in systems_objc_nfabi) then
@@ -1743,11 +1889,18 @@ implementation
                     exit
                   end;
               end;
+=======
+            sec_objc_meth_var_names,
+>>>>>>> graemeg/cpstrnew
             sec_objc_class_names:
               begin
                 if (target_info.system in systems_objc_nfabi) then
                   begin
+<<<<<<< HEAD
                     result:='.section __TEXT,__objc_classname,cstring_literals';
+=======
+                    result:='.cstring';
+>>>>>>> graemeg/cpstrnew
                     exit
                   end;
               end;
@@ -1891,9 +2044,13 @@ implementation
          sec_none (* sec_objc_nlclasslist *),
          sec_none (* sec_objc_catlist *),
          sec_none (* sec_objc_nlcatlist *),
+<<<<<<< HEAD
          sec_none (* sec_objc_protlist *),
          sec_none (* sec_stack *),
          sec_none (* sec_heap *)
+=======
+         sec_none (* sec_objc_protlist *)
+>>>>>>> graemeg/cpstrnew
         );
       begin
         Result := inherited SectionName (SecXTable [AType], AName, AOrder);

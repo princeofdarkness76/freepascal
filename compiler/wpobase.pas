@@ -388,8 +388,13 @@ implementation
 
       inherited destroy;
     end;
+<<<<<<< HEAD
 
 
+=======
+    
+    
+>>>>>>> graemeg/cpstrnew
   procedure tunitwpoinfobase.resetdefs;
     var
       i: ptrint;

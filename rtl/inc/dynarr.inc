@@ -60,6 +60,32 @@ function fpc_dynarray_high(p : pointer) : tdynarrayindex;[Public,Alias:'FPC_DYNA
   end;
 
 
+<<<<<<< HEAD
+=======
+{ releases and finalizes the data of a dyn. array and sets p to nil }
+procedure fpc_dynarray_clear_internal(p : pointer;ti : pointer);
+  var
+    eletype : pdynarraytypeinfo;
+  begin
+     if p=nil then
+       exit;
+
+     { skip kind and name }
+     inc(pointer(ti),ord(pdynarraytypeinfo(ti)^.namelen)+2);
+
+     ti:=aligntoptr(ti);
+
+     eletype:=pdynarraytypeinfo(pointer(pdynarraytypeinfo(pointer(ti)+sizeof(sizeint)))^);
+
+     { finalize all data }
+     int_finalizearray(p+sizeof(tdynarray),eletype,pdynarray(p)^.high+1);
+
+     { release the data }
+     freemem(p);
+  end;
+
+
+>>>>>>> graemeg/cpstrnew
 procedure fpc_dynarray_clear(var p : pointer;ti : pointer); [Public,Alias:'FPC_DYNARRAY_CLEAR']; compilerproc;
   var
      realp : pdynarray;
@@ -214,8 +240,13 @@ procedure fpc_dynarray_setlength(var p : pointer;pti : pointer;
                     if dims[0]<realp^.high+1 then
                       begin
                           int_finalizearray(pointer(realp)+sizeof(tdynarray)+
+<<<<<<< HEAD
                             elesize*dims[0],
                             eletype,realp^.high-dims[0]+1);
+=======
+                            elesize*dims[dimcount-1],
+                            eletype,realp^.high-dims[dimcount-1]+1);
+>>>>>>> graemeg/cpstrnew
                          reallocmem(realp,size);
                       end
                     else if dims[0]>realp^.high+1 then
@@ -295,12 +326,26 @@ function fpc_dynarray_copy(psrc : pointer;ti : pointer;
      pdynarray(result)^.high:=count-1;
      inc(pointer(result),sizeof(tdynarray));
      { copy data }
+<<<<<<< HEAD
      move(pointer(psrc+elesize*lowidx)^,pointer(result)^,size);
 
      { increment ref. count of members? }
      if PByte(eletype)^ in tkManagedTypes then
        for i:=0 to count-1 do
          int_addref(pointer(pointer(result)+elesize*i),eletype);
+=======
+     move(pointer(psrc+elesize*lowidx)^,pdest^,size);
+     { fill new refcount }
+     realpdest^.refcount:=1;
+     realpdest^.high:=cnt-1;
+
+     { increment ref. count of members? }
+     if PByte(eletype)^ in tkManagedTypes then
+       for i:= 0 to cnt-1 do
+         int_addref(pointer(pdest+elesize*i),eletype);
+
+     result:=pdest;
+>>>>>>> graemeg/cpstrnew
   end;
 
 

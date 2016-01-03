@@ -526,7 +526,11 @@ implementation
 
         procedure AddPackage(const pack,prefix:string);
         var
+<<<<<<< HEAD
           packdirvar,unitdirvar,unitfpmakedirvar : string;
+=======
+          packdirvar,unitdirvar : string;
+>>>>>>> graemeg/cpstrnew
           fpcmadedirvar : string;
         begin
           FOutput.Add('ifdef '+Prefix+VarName(pack));

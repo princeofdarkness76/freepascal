@@ -59,7 +59,10 @@ begin
 end;
 
 begin
+<<<<<<< HEAD
   HaltOnNotReleased:=true;
+=======
+>>>>>>> graemeg/cpstrnew
   s1 := 'string1';
   s2 := 'string2';
   s3 := 'string3';

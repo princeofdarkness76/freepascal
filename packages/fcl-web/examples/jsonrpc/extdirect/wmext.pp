@@ -5,7 +5,11 @@ unit wmext;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, 
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
+>>>>>>> graemeg/cpstrnew
     fpjsonrpc, webjsonrpc, fpextdirect, fpjson;
 
 type
@@ -27,8 +31,11 @@ var
 
 implementation
 
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 { TDemoClass }
 
 procedure TDemoClass.AddExecute(Sender: TObject;
@@ -47,6 +54,11 @@ begin
 end;
 
 initialization
+<<<<<<< HEAD
+=======
+  {$I wmext.lrs}
+
+>>>>>>> graemeg/cpstrnew
   RegisterHTTPModule('demo', TDemoClass);
 end.
 

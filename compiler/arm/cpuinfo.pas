@@ -37,6 +37,7 @@ Type
       (cpu_none,
        cpu_armv3,
        cpu_armv4,
+<<<<<<< HEAD
        cpu_armv4t,
        cpu_armv5,
        cpu_armv5t,
@@ -55,6 +56,18 @@ Type
       );
 
    tinstructionset = (is_thumb,is_arm);
+=======
+       cpu_armv5,
+       cpu_armv6,
+       cpu_armv7m,
+       cpu_cortexm3
+      );
+
+Const
+   cpu_arm = [cpu_none,cpu_armv3,cpu_armv4,cpu_armv5];
+   cpu_thumb = [];
+   cpu_thumb2 = [cpu_armv7m,cpu_cortexm3];
+>>>>>>> graemeg/cpstrnew
 
 Type
    tfputype =
@@ -65,10 +78,14 @@ Type
       fpu_fpa10,
       fpu_fpa11,
       fpu_vfpv2,
+<<<<<<< HEAD
       fpu_vfpv3,
       fpu_vfpv3_d16,
       fpu_fpv4_s16,
       fpu_vfpv4
+=======
+      fpu_vfpv3
+>>>>>>> graemeg/cpstrnew
      );
 
    tcontrollertype =
@@ -184,6 +201,7 @@ Type
       ct_at91sam7se256,
       ct_at91sam7x256,
       ct_at91sam7xc256,
+<<<<<<< HEAD
 
       { STMicroelectronics }
       ct_stm32f030c6,
@@ -465,6 +483,14 @@ Type
 
       // generic Thumb2 target
       ct_thumb2bare
+=======
+		
+      { STMicroelectronics }
+      ct_stm32f103re,
+
+      { TI }
+      stellaris
+>>>>>>> graemeg/cpstrnew
      );
 
    tcontrollerdatatype = record
@@ -505,6 +531,7 @@ Const
    cputypestr : array[tcputype] of string[8] = ('',
      'ARMV3',
      'ARMV4',
+<<<<<<< HEAD
      'ARMV4T',
      'ARMV5',
      'ARMV5T',
@@ -520,6 +547,12 @@ Const
      'ARMV7R',
      'ARMV7M',
      'ARMV7EM'
+=======
+     'ARMV5',
+     'ARMV6',
+     'ARMV7M',
+     'CORTEXM3'
+>>>>>>> graemeg/cpstrnew
    );
 
    fputypestr : array[tfputype] of string[9] = ('',
@@ -529,6 +562,7 @@ Const
      'FPA10',
      'FPA11',
      'VFPV2',
+<<<<<<< HEAD
      'VFPV3',
      'VFPV3_D16',
      'FPV4_S16',
@@ -966,6 +1000,51 @@ Const
     );
 
    vfp_scalar = [fpu_vfpv2,fpu_vfpv3,fpu_vfpv3_d16,fpu_fpv4_s16];
+=======
+     'VFPV3'
+   );
+
+   controllertypestr : array[tcontrollertype] of string[20] =
+     ('',
+      'LPC2114',
+      'LPC2124',
+      'LPC2194',
+      'AT91SAM7S256',
+      'AT91SAM7SE256',
+      'AT91SAM7X256',
+      'AT91SAM7XC256',
+      'STM32F103RE',
+      'STELLARIS'
+     );
+
+   controllerunitstr : array[tcontrollertype] of string[20] =
+     ('',
+      'LPC21x4',
+      'LPC21x4',
+      'LPC21x4',
+      'AT91SAM7x256',
+      'AT91SAM7x256',
+      'AT91SAM7x256',
+      'AT91SAM7x256',
+      'STM32F103',
+      'STELLARIS'
+     );
+
+   interruptvectors : array[tcontrollertype] of longint =
+     (0,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      12+59, { XL-density }
+      12 { No model specified }
+     );
+>>>>>>> graemeg/cpstrnew
+
+   vfp_scalar = [fpu_vfpv2,fpu_vfpv3];
 
    { Supported optimizations, only used for information }
    supported_optimizerswitches = genericlevel1optimizerswitches+
@@ -974,11 +1053,16 @@ Const
                                  { no need to write info about those }
                                  [cs_opt_level1,cs_opt_level2,cs_opt_level3]+
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_tailrecursion,
+<<<<<<< HEAD
                                   cs_opt_stackframe,cs_opt_nodecse,cs_opt_reorder_fields,cs_opt_fastmath,cs_opt_forcenostackframe];
+=======
+								  cs_opt_stackframe,cs_opt_nodecse];
+>>>>>>> graemeg/cpstrnew
 
    level1optimizerswitches = genericlevel1optimizerswitches;
    level2optimizerswitches = genericlevel2optimizerswitches + level1optimizerswitches +
      [cs_opt_regvar,cs_opt_stackframe,cs_opt_tailrecursion,cs_opt_nodecse];
+<<<<<<< HEAD
    level3optimizerswitches = genericlevel3optimizerswitches + level2optimizerswitches + [cs_opt_scheduler{,cs_opt_loopunroll}];
    level4optimizerswitches = genericlevel4optimizerswitches + level3optimizerswitches + [];
 
@@ -1025,6 +1109,9 @@ Const
 
    { contains all CPU supporting any kind of thumb instruction set }
    cpu_has_thumb = [cpu_armv4t,cpu_armv5t,cpu_armv5te,cpu_armv5tej,cpu_armv6t2,cpu_armv6z,cpu_armv6m,cpu_armv7a,cpu_armv7r,cpu_armv7m,cpu_armv7em];
+=======
+   level3optimizerswitches = genericlevel3optimizerswitches + level2optimizerswitches + [{,cs_opt_loopunroll}];
+>>>>>>> graemeg/cpstrnew
 
 Implementation
 

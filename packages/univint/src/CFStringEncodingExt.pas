@@ -1,6 +1,13 @@
 {	CFStringEncodingExt.h
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
+=======
+	Copyright (c) 1998-2009, Apple Inc. All rights reserved.
+}
+{	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
+{	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -55,11 +62,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -75,6 +85,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -94,12 +105,30 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -118,6 +147,8 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -127,6 +158,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -141,19 +173,40 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
+=======
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+	{$setc TARGET_CPU_ARM := TRUE}
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -202,7 +255,11 @@ uses MacTypes,CFBase;
 
 
 type
+<<<<<<< HEAD
 	CFStringEncodings = CFIndex;
+=======
+	CFStringEncodings = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 const
 {  kCFStringEncodingMacRoman = 0L, defined in CoreFoundation/CFString.h }
     kCFStringEncodingMacJapanese = 1;
@@ -314,6 +371,7 @@ const
 {#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4}
     kCFStringEncodingANSEL = $0601;	{ ANSEL (ANSI Z39.47) }
 {#endif} { MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4 }
+<<<<<<< HEAD
     kCFStringEncodingJIS_X0201_76 = $0620;
     kCFStringEncodingJIS_X0208_83 = $0621;
     kCFStringEncodingJIS_X0208_90 = $0622;
@@ -328,6 +386,24 @@ const
     kCFStringEncodingCNS_11643_92_P1 = $0651;	{ CNS 11643-1992 plane 1 }
     kCFStringEncodingCNS_11643_92_P2 = $0652;	{ CNS 11643-1992 plane 2 }
     kCFStringEncodingCNS_11643_92_P3 = $0653;	{ CNS 11643-1992 plane 3 (was plane 14 in 1986 version) }
+=======
+	kCFStringEncodingJIS_X0201_76 = $0620;
+	kCFStringEncodingJIS_X0208_83 = $0621;
+	kCFStringEncodingJIS_X0208_90 = $0622;
+	kCFStringEncodingJIS_X0212_90 = $0623;
+	kCFStringEncodingJIS_C6226_78 = $0624;
+{#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4}
+    kCFStringEncodingShiftJIS_X0213_MenKuTen = $0629;	{ JIS X0213 in plane-row-column notation }
+{#endif} { MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4 }
+	kCFStringEncodingGB_2312_80 = $0630;
+	kCFStringEncodingGBK_95 = $0631;						{  annex to GB 13000-93; for Windows 95  }
+	kCFStringEncodingGB_18030_2000 = $0632;
+	kCFStringEncodingKSC_5601_87 = $0640;						{  same as KSC 5601-92 without Johab annex  }
+	kCFStringEncodingKSC_5601_92_Johab = $0641;					{  KSC 5601-92 Johab annex  }
+	kCFStringEncodingCNS_11643_92_P1 = $0651;					{  CNS 11643-1992 plane 1  }
+	kCFStringEncodingCNS_11643_92_P2 = $0652;					{  CNS 11643-1992 plane 2  }
+	kCFStringEncodingCNS_11643_92_P3 = $0653;					{  CNS 11643-1992 plane 3 (was plane 14 in 1986 version)  }
+>>>>>>> graemeg/cpstrnew
 
     { ISO 2022 collections begin at $800 }
     kCFStringEncodingISO_2022_JP = $0820;
@@ -344,6 +420,7 @@ const
     kCFStringEncodingEUC_TW = $0931;		{ ISO 646, CNS 11643-1992 Planes 1-16 }
     kCFStringEncodingEUC_KR = $0940;		{ ISO 646, KS C 5601-1987 }
 
+<<<<<<< HEAD
     { Misc standards begin at $A00 }
     kCFStringEncodingShiftJIS = $0A01;		{ plain Shift-JIS }
     kCFStringEncodingKOI8_R = $0A02;		{ Russian internet standard }
@@ -368,6 +445,23 @@ const
 
     { Deprecated constants }
     kCFStringEncodingShiftJIS_X0213_00 = $0628; { Shift-JIS format encoding of JIS X0213 planes 1 and 2 (DEPRECATED) }
+=======
+	{  Other platform encodings }
+{  kCFStringEncodingNextStepLatin = 0x0B01, defined in CoreFoundation/CFString.h }
+{#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4}
+	kCFStringEncodingNextStepJapanese = $0B02;	{ NextStep Japanese encoding }
+{#endif} { MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4 }
+																{  EBCDIC & IBM host encodings begin at 0xC00  }
+	kCFStringEncodingEBCDIC_US = $0C01;						{  basic EBCDIC-US  }
+	kCFStringEncodingEBCDIC_CP037 = $0C02;						{  code page 037, extended EBCDIC (Latin-1 set) for US,Canada...  }
+{#if MAC_OS_X_VERSION_10_6 <= MAC_OS_X_VERSION_MAX_ALLOWED}
+	kCFStringEncodingUTF7 = $04000100; { kTextEncodingUnicodeDefault + kUnicodeUTF7Format RFC2152 }
+	kCFStringEncodingUTF7_IMAP = $0A10; { UTF-7 (IMAP folder variant) RFC3501 }
+{#endif} { MAC_OS_X_VERSION_10_6 <= MAC_OS_X_VERSION_MAX_ALLOWED }
+
+    { Deprecated constants }
+	kCFStringEncodingShiftJIS_X0213_00 = $0628; { Shift-JIS format encoding of JIS X0213 planes 1 and 2 (DEPRECATED) }
+>>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

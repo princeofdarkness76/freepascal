@@ -349,7 +349,11 @@ begin
    fOnQueryComplete := nil;
    fChangeCount := 0;
    OnData:=@SQLOnData;
+<<<<<<< HEAD
    sqlite3_open(PAnsiChar(DBFileName), @fSQLite);
+=======
+   sqlite3_open(name,@fSQLite);
+>>>>>>> graemeg/cpstrnew
    sqlite3_free(fPMsg);
    if fSQLite <> nil then
    begin

@@ -86,9 +86,12 @@ implementation
     {$ifndef NOTARGETEMBEDDED}
       ,t_embed
     {$endif}
+<<<<<<< HEAD
     {$ifndef NOTARGETAROS}
       ,t_aros
     {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {**************************************
              Assemblers
@@ -107,7 +110,10 @@ implementation
       ,ogcoff
       ,ogelf
       ,ogmacho
+<<<<<<< HEAD
       ,cpuelf
+=======
+>>>>>>> graemeg/cpstrnew
 
 {**************************************
         Assembler Readers

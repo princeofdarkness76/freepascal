@@ -47,6 +47,7 @@
     _rootHeaderTrees: NSArray;
     _predicateTarget: id;
     _predicateAction: SEL;
+<<<<<<< HEAD
     __peFlags: record
       case byte of
        0: (_anonbitfield_NSPredicateEditor0: cuint);
@@ -57,6 +58,17 @@
       );
       end;
     _predicateEditorReserved: array[0..(3)-1] of id;
+=======
+    __peFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSPredicateEditor0: cuint);
+       1: (
+        suppressAction: 0..((1 shl 4)-1);
+        reserved: 0..((1 shl 28)-1);
+      );
+      end;
+        _predicateEditorReserved: array[0..2] of id;
+>>>>>>> graemeg/cpstrnew
     
   public
     procedure setRowTemplates(rowTemplates_: NSArray); message 'setRowTemplates:';

@@ -90,7 +90,11 @@ var
         state: Pointer;
         previous_state: Pointer;
         animations: Pointer;
+<<<<<<< HEAD
         slots: array[0..(3)-1] of culong;
+=======
+            slots: array[0..2] of culong;
+>>>>>>> graemeg/cpstrnew
         {$ifdef cpu64}
         reserved: cuint32;
         {$endif}

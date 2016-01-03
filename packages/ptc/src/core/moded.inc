@@ -1,6 +1,10 @@
 {
     Free Pascal port of the OpenPTC C++ library.
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -31,6 +35,7 @@
 }
 
 type
+<<<<<<< HEAD
   IPTCMode = interface
     function GetValid: Boolean;
     function GetWidth: Integer;
@@ -54,3 +59,24 @@ type
     class function CreateNew(AMode: IPTCMode): IPTCMode;
   end;
 
+=======
+  PPTCMode=^TPTCMode;
+  TPTCMode = class
+  private
+    FValid: Boolean;
+    FWidth: Integer;
+    FHeight: Integer;
+    FFormat: TPTCFormat;
+  public
+    constructor Create;
+    constructor Create(AWidth, AHeight: Integer; const AFormat: TPTCFormat);
+    constructor Create(const mode: TPTCMode);
+    destructor Destroy; override;
+    procedure Assign(const mode: TPTCMode);
+    function Equals(const mode: TPTCMode): Boolean;
+    property Valid: Boolean read FValid;
+    property Width: Integer read FWidth;
+    property Height: Integer read FHeight;
+    property Format: TPTCFormat read FFormat;
+  end;
+>>>>>>> graemeg/cpstrnew

@@ -15,6 +15,7 @@
 { Run-Time type information routines }
 
 { the tk* constants are now declared in system.inc }
+<<<<<<< HEAD
 
 {$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}
   {$define USE_PACKED}
@@ -22,6 +23,8 @@
 {$ifdef VER2_6}
   {$define USE_PACKED}
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
   PRecordElement=^TRecordElement;
@@ -97,6 +100,58 @@ begin
   end;
 end;
 
+  PRecordElement=^TRecordElement;
+  TRecordElement=packed record
+    TypeInfo: Pointer;
+    Offset: Longint;
+  end;
+
+  PRecordInfo=^TRecordInfo;
+  TRecordInfo=packed record
+    Size: Longint;
+    Count: Longint;
+    { Elements: array[count] of TRecordElement }
+  end;
+
+  PArrayInfo=^TArrayInfo;
+  TArrayInfo=packed record
+    ElSize: SizeInt;
+    ElCount: SizeInt;
+    ElInfo: Pointer;
+  end;
+
+
+function RTTIArraySize(typeInfo: Pointer): SizeInt;
+begin
+  typeInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
+  result:=PArrayInfo(typeInfo)^.ElSize * PArrayInfo(typeInfo)^.ElCount;
+end;
+
+function RTTIRecordSize(typeInfo: Pointer): SizeInt;
+begin
+  typeInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
+  result:=PRecordInfo(typeInfo)^.Size;
+end;
+
+function RTTISize(typeInfo: Pointer): SizeInt;
+begin
+  case PByte(typeinfo)^ of
+    tkAString,tkWString,tkUString,
+    tkInterface,tkDynarray:
+      result:=sizeof(Pointer);
+{$ifdef FPC_HAS_FEATURE_VARIANTS}
+    tkVariant:
+      result:=sizeof(TVarData);
+{$endif FPC_HAS_FEATURE_VARIANTS}
+    tkArray:
+      result:=RTTIArraySize(typeinfo);
+    tkObject,tkRecord:
+      result:=RTTIRecordSize(typeinfo);
+  else
+    result:=-1;
+  end;
+end;
+
 { if you modify this procedure, fpc_copy must be probably modified as well }
 procedure RecordRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
@@ -109,7 +164,11 @@ begin
   { Process elements }
   for i:=1 to count Do
     begin
+<<<<<<< HEAD
       rttiproc(Data+PRecordElement(typeInfo)^.Offset,PRecordElement(typeInfo)^.TypeInfo);
+=======
+      rttiproc (Data+PRecordElement(typeInfo)^.Offset,PRecordElement(typeInfo)^.TypeInfo);
+>>>>>>> graemeg/cpstrnew
       Inc(PRecordElement(typeInfo));
     end;
 end;
@@ -119,6 +178,7 @@ end;
 {$ifdef VER2_6}
 procedure ArrayRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
+<<<<<<< HEAD
   i: SizeInt;
 begin
   typeInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
@@ -142,6 +202,14 @@ begin
   { Process elements }
   for I:=0 to Count-1 do
     rttiproc(Data+(I*ElSize),Info);
+=======
+  i : SizeInt;
+begin
+  typeInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
+  { Process elements }
+  for I:=0 to PArrayInfo(typeInfo)^.ElCount-1 do
+    rttiproc(Data+(I*PArrayInfo(typeInfo)^.ElSize),PArrayInfo(typeInfo)^.ElInfo);
+>>>>>>> graemeg/cpstrnew
 end;
 {$endif}
 
@@ -179,6 +247,7 @@ begin
   case PByte(TypeInfo)^ of
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
     tkAstring :
+<<<<<<< HEAD
       fpc_AnsiStr_Decr_Ref(PPointer(Data)^);
 {$endif FPC_HAS_FEATURE_ANSISTRINGS}
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
@@ -187,6 +256,27 @@ begin
   {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
     tkWstring :
       fpc_WideStr_Decr_Ref(PPointer(Data)^);
+=======
+      begin
+        fpc_AnsiStr_Decr_Ref(PPointer(Data)^);
+        PPointer(Data)^:=nil;
+      end;
+{$endif FPC_HAS_FEATURE_ANSISTRINGS}
+{$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
+  {$ifndef VER2_2}
+    tkUstring :
+      begin
+        fpc_UnicodeStr_Decr_Ref(PPointer(Data)^);
+        PPointer(Data)^:=nil;
+      end;
+  {$endif VER2_2}
+  {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+    tkWstring :
+      begin
+        fpc_WideStr_Decr_Ref(PPointer(Data)^);
+        PPointer(Data)^:=nil;
+      end;
+>>>>>>> graemeg/cpstrnew
   {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
     tkArray :
@@ -197,10 +287,23 @@ begin
     tkRecord:
       recordrtti(data,typeinfo,@int_finalize);
     tkInterface:
+<<<<<<< HEAD
       Intf_Decr_Ref(PPointer(Data)^);
 {$ifdef FPC_HAS_FEATURE_DYNARRAYS}
     tkDynArray:
       fpc_dynarray_clear(PPointer(Data)^,TypeInfo);
+=======
+      begin
+        Intf_Decr_Ref(PPointer(Data)^);
+        PPointer(Data)^:=nil;
+      end;
+{$ifdef FPC_HAS_FEATURE_DYNARRAYS}
+    tkDynArray:
+      begin
+        fpc_dynarray_decr_ref(PPointer(Data)^,TypeInfo);
+        PPointer(Data)^:=nil;
+      end;
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_HAS_FEATURE_DYNARRAYS}
 {$ifdef FPC_HAS_FEATURE_VARIANTS}
     tkVariant:
@@ -222,8 +325,15 @@ begin
     tkWstring :
       fpc_WideStr_Incr_Ref(PPointer(Data)^);
   {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+<<<<<<< HEAD
     tkUstring :
       fpc_UnicodeStr_Incr_Ref(PPointer(Data)^);
+=======
+  {$ifndef VER2_2}
+    tkUstring :
+      fpc_UnicodeStr_Incr_Ref(PPointer(Data)^);
+  {$endif VER2_2}
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
     tkArray :
       arrayrtti(data,typeinfo,@int_addref);
@@ -246,30 +356,94 @@ begin
 end;
 
 
+<<<<<<< HEAD
+=======
+{ alias for internal use }
+{ we use another name else the compiler gets puzzled because of the wrong forward def }
+procedure fpc_systemDecRef (Data, TypeInfo : Pointer);[external name 'FPC_DECREF'];
+
+Procedure fpc_DecRef (Data, TypeInfo : Pointer);[Public,alias : 'FPC_DECREF'];  compilerproc;
+begin
+  case PByte(TypeInfo)^ of
+    { see AddRef for comment about below construct (JM) }
+{$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
+    tkAstring:
+      fpc_AnsiStr_Decr_Ref(PPointer(Data)^);
+{$endif FPC_HAS_FEATURE_ANSISTRINGS}
+{$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
+  {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+    tkWstring:
+      fpc_WideStr_Decr_Ref(PPointer(Data)^);
+  {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+  {$ifndef VER2_2}
+    tkUString:
+      fpc_UnicodeStr_Decr_Ref(PPointer(Data)^);
+  {$endif VER2_2}
+{$endif FPC_HAS_FEATURE_WIDESTRINGS}
+    tkArray:
+      arrayrtti(data,typeinfo,@fpc_systemDecRef);
+{$ifdef FPC_HAS_FEATURE_OBJECTS}
+    tkobject,
+{$endif FPC_HAS_FEATURE_OBJECTS}
+    tkrecord:
+      recordrtti(data,typeinfo,@fpc_systemDecRef);
+{$ifdef FPC_HAS_FEATURE_DYNARRAYS}
+    tkDynArray:
+      fpc_dynarray_decr_ref(PPointer(Data)^,TypeInfo);
+{$endif FPC_HAS_FEATURE_DYNARRAYS}
+    tkInterface:
+      Intf_Decr_Ref(PPointer(Data)^);
+{$ifdef FPC_HAS_FEATURE_VARIANTS}
+    tkVariant:
+      variant_clear(pvardata(data)^);
+{$endif FPC_HAS_FEATURE_VARIANTS}
+  end;
+end;
+
+>>>>>>> graemeg/cpstrnew
 { define alias for internal use in the system unit }
 Function fpc_Copy_internal (Src, Dest, TypeInfo : Pointer) : SizeInt;[external name 'FPC_COPY'];
 
 Function fpc_Copy (Src, Dest, TypeInfo : Pointer) : SizeInt;[Public,alias : 'FPC_COPY']; compilerproc;
 var
+<<<<<<< HEAD
   Temp: pbyte;
+=======
+  ArrayInfo: PArrayInfo;
+  Temp : pbyte;
+>>>>>>> graemeg/cpstrnew
   copiedsize,
   expectedoffset,
   count,
   offset,
+<<<<<<< HEAD
   i: SizeInt;
   info: pointer;
+=======
+  i : SizeInt;
+  info : pointer;
+>>>>>>> graemeg/cpstrnew
 begin
   result:=sizeof(pointer);
   case PByte(TypeInfo)^ of
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
     tkAstring:
+<<<<<<< HEAD
       fpc_AnsiStr_Assign(PPointer(Dest)^,PPointer(Src)^);
+=======
+      begin
+        fpc_AnsiStr_Incr_Ref(PPointer(Src)^);
+        fpc_AnsiStr_Decr_Ref(PPointer(Dest)^);
+        PPointer(Dest)^:=PPointer(Src)^;
+      end;
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_HAS_FEATURE_ANSISTRINGS}
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
   {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
     tkWstring:
       fpc_WideStr_Assign(PPointer(Dest)^,PPointer(Src)^);
   {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+<<<<<<< HEAD
     tkUstring:
       fpc_UnicodeStr_Assign(PPointer(Dest)^,PPointer(Src)^);
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
@@ -297,6 +471,20 @@ begin
             inc(Offset,copiedsize);
           end;
       {$endif}
+=======
+  {$ifndef VER2_2}
+    tkUstring:
+      fpc_UnicodeStr_Assign(PPointer(Dest)^,PPointer(Src)^);
+  {$endif VER2_2}
+{$endif FPC_HAS_FEATURE_WIDESTRINGS}
+    tkArray:
+      begin
+        ArrayInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
+        { Process elements }
+        for I:=0 to ArrayInfo^.ElCount-1 do
+          fpc_Copy_internal(Src+(I*ArrayInfo^.ElSize),Dest+(I*ArrayInfo^.ElSize),ArrayInfo^.ElInfo);
+        Result:=ArrayInfo^.ElSize*ArrayInfo^.ElCount;
+>>>>>>> graemeg/cpstrnew
       end;
 {$ifdef FPC_HAS_FEATURE_OBJECTS}
     tkobject,
@@ -326,10 +514,25 @@ begin
       end;
 {$ifdef FPC_HAS_FEATURE_DYNARRAYS}
     tkDynArray:
+<<<<<<< HEAD
       fpc_dynarray_assign(PPointer(Dest)^,PPointer(Src)^,typeinfo);
 {$endif FPC_HAS_FEATURE_DYNARRAYS}
     tkInterface:
       fpc_intf_assign(PPointer(Dest)^,PPointer(Src)^);
+=======
+      begin
+        fpc_dynarray_Incr_Ref(PPointer(Src)^);
+        fpc_dynarray_Decr_Ref(PPointer(Dest)^,typeinfo);
+        PPointer(Dest)^:=PPointer(Src)^;
+      end;
+{$endif FPC_HAS_FEATURE_DYNARRAYS}
+    tkInterface:
+      begin
+        Intf_Incr_Ref(PPointer(Src)^);
+        Intf_Decr_Ref(PPointer(Dest)^);
+        PPointer(Dest)^:=PPointer(Src)^;
+      end;
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_VARIANTS}
     tkVariant:
       begin
@@ -381,6 +584,7 @@ procedure fpc_addref_array(data,typeinfo: pointer; count: SizeInt); [public,alia
         int_addref(data+size*i,typeinfo);
   end;
 
+<<<<<<< HEAD
 { The following two procedures are now obsolete, needed only for bootstrapping }
 procedure fpc_decref (Data, TypeInfo : Pointer);[Public,alias : 'FPC_DECREF'];  compilerproc;
   begin
@@ -406,5 +610,15 @@ procedure CopyArray(dest, source, typeInfo: Pointer; count: SizeInt);
     if size>0 then
       for i:=0 to count-1 do
         fpc_Copy_internal(source+size*i, dest+size*i, typeInfo);
+=======
+procedure fpc_decref_array(data,typeinfo: pointer; count: SizeInt); [public,alias:'FPC_DECREF_ARRAY']; compilerproc;
+  var
+    i, size: SizeInt;
+  begin
+    size:=RTTISize(typeinfo);
+    if size>0 then
+      for i:=0 to count-1 do
+        int_decref(data+size*i,typeinfo);
+>>>>>>> graemeg/cpstrnew
   end;
 

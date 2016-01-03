@@ -3,9 +3,15 @@
  
      Contains:   QuickTime VR interfaces
  
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1997-2012 by Apple Inc., all rights reserved.
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -13,8 +19,12 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -69,11 +79,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -89,6 +102,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -108,13 +122,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -124,13 +158,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -168,6 +206,23 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -222,6 +277,7 @@ uses MacTypes,Movies,QuickTimeVR;
 
 {$ifc not TARGET_CPU_64}
 
+<<<<<<< HEAD
 
 { File Format Version numbers }
 const
@@ -292,6 +348,78 @@ const
 	kQTVRValidFOV = 1 shl 2;
 	kQTVRValidViewCenter = 1 shl 3;
 
+=======
+
+{ File Format Version numbers }
+const
+	kQTVRMajorVersion = 2;
+const
+	kQTVRMinorVersion = 0;
+
+{ User data type for the Movie Controller type specifier}
+const
+	kQTControllerType = kQTVRControllerSubType; { Atom & ID of where our}
+	kQTControllerID = 1;     { ...controller name is stored}
+
+{ VRWorld atom types}
+const
+	kQTVRWorldHeaderAtomType = FourCharCode('vrsc');
+	kQTVRImagingParentAtomType = FourCharCode('imgp');
+	kQTVRPanoImagingAtomType = FourCharCode('impn');
+	kQTVRObjectImagingAtomType = FourCharCode('imob');
+	kQTVRNodeParentAtomType = FourCharCode('vrnp');
+	kQTVRNodeIDAtomType = FourCharCode('vrni');
+	kQTVRNodeLocationAtomType = FourCharCode('nloc');
+	kQTVRCursorParentAtomType = FourCharCode('vrcp'); { New with 2.1}
+	kQTVRCursorAtomType = FourCharCode('CURS'); { New with 2.1}
+	kQTVRColorCursorAtomType = FourCharCode('crsr'); { New with 2.1}
+
+{ NodeInfo atom types}
+const
+	kQTVRNodeHeaderAtomType = FourCharCode('ndhd');
+	kQTVRHotSpotParentAtomType = FourCharCode('hspa');
+	kQTVRHotSpotAtomType = FourCharCode('hots');
+	kQTVRHotSpotInfoAtomType = FourCharCode('hsin');
+	kQTVRLinkInfoAtomType = FourCharCode('link');
+
+{ Miscellaneous atom types}
+const
+	kQTVRStringAtomType = FourCharCode('vrsg');
+	kQTVRStringEncodingAtomType = FourCharCode('vrse'); { New with 2.1}
+	kQTVRPanoSampleDataAtomType = FourCharCode('pdat');
+	kQTVRObjectInfoAtomType = FourCharCode('obji');
+	kQTVRImageTrackRefAtomType = FourCharCode('imtr'); { Parent is kQTVRObjectInfoAtomType. Required if track ref is not 1 as required by 2.0 format.}
+	kQTVRHotSpotTrackRefAtomType = FourCharCode('hstr'); { Parent is kQTVRObjectInfoAtomType. Required if track ref is not 1 as required by 2.0 format.}
+	kQTVRAngleRangeAtomType = FourCharCode('arng');
+	kQTVRTrackRefArrayAtomType = FourCharCode('tref');
+	kQTVRPanConstraintAtomType = FourCharCode('pcon');
+	kQTVRTiltConstraintAtomType = FourCharCode('tcon');
+	kQTVRFOVConstraintAtomType = FourCharCode('fcon');
+	kQTVRCubicViewAtomType = FourCharCode('cuvw'); { New with 5.0}
+	kQTVRCubicFaceDataAtomType = FourCharCode('cufa'); { New with 5.0}
+
+const
+	kQTVRObjectInfoAtomID = 1;
+	kQTVRObjectImageTrackRefAtomID = 1;   { New with 2.1, it adds a track reference to select between multiple image tracks}
+	kQTVRObjectHotSpotTrackRefAtomID = 1;  { New with 2.1, it adds a track reference to select between multiple hotspot tracks}
+
+{ Track reference types}
+const
+	kQTVRImageTrackRefType = FourCharCode('imgt');
+	kQTVRHotSpotTrackRefType = FourCharCode('hott');
+
+{ Old hot spot types}
+const
+	kQTVRHotSpotNavigableType = FourCharCode('navg');
+
+{ Valid bits used in QTVRLinkHotSpotAtom}
+const
+	kQTVRValidPan = 1 shl 0;
+	kQTVRValidTilt = 1 shl 1;
+	kQTVRValidFOV = 1 shl 2;
+	kQTVRValidViewCenter = 1 shl 3;
+
+>>>>>>> graemeg/cpstrnew
 
 { Values for flags field in QTVRPanoSampleAtom}
 const
@@ -334,7 +462,11 @@ type
 	QTVRStringAtom = record
 		stringUsage: UInt16;
 		stringLength: UInt16;
+<<<<<<< HEAD
 		theString: packed array [0..3] of UInt8;           { field previously named "string" }
+=======
+		theString: packed array [0..3] of UInt8;			{  field previously named "string" }
+>>>>>>> graemeg/cpstrnew
 	end;
 	QTVRStringAtomPtr = ^QTVRStringAtom;
 
@@ -528,8 +660,13 @@ type
 	QTVRCubicViewAtomPtr = ^QTVRCubicViewAtom;
 type
 	QTVRCubicFaceData = record
+<<<<<<< HEAD
 		orientation: array [0..4-1] of Float32;         { WXYZ quaternion of absolute orientation}
 		center: array [0..2-1] of Float32;              { Center of image relative to center of projection (default = (0,0)) in normalized units}
+=======
+		orientation: array [0..3] of Float32;         {  WXYZ quaternion of absolute orientation }
+		center: array [0..1] of Float32;              {  Center of image relative to center of projection (default = (0,0)) in normalized units }
+>>>>>>> graemeg/cpstrnew
 		aspect: Float32;                 { aspect>1 => tall pixels; aspect <1 => squat pixels (default = 1)}
 		skew: Float32;                   { skew x by y (default = 0)}
 	end;

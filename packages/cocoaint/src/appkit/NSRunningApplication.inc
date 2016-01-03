@@ -76,10 +76,17 @@ type
     _activeSeed: cuint;
     _staleSeed: cuint;
     _obsMask: culonglong;
+<<<<<<< HEAD
     __aflags: record
       case byte of
        0: (_anonbitfield_NSRunningApplication0: cuint);
        1: (data: bitpacked record
+=======
+    __aflags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSRunningApplication0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         fetchedDynamic: 0..1;
         deadToUs: 0..1;
         terminated: 0..1;
@@ -89,7 +96,10 @@ type
         arch: 0..((1 shl 3)-1);
         activationPolicy: 0..((1 shl 3)-1);
         reserved1: 0..((1 shl 20)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _appReserved: id;

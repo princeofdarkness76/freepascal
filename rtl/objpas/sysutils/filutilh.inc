@@ -110,6 +110,7 @@ Const
   { File errors }
   feInvalidHandle : THandle = THandle(-1);  //return value on FileOpen error
 
+<<<<<<< HEAD
 Type
   TFileSearchOption = (sfoImplicitCurrentDir,sfoStripQuotes);
   TFileSearchOptions = set of TFileSearchOption;
@@ -158,6 +159,11 @@ function FileAge(const FileName: RawByteString; out FileDateTime: TDateTime; Fol
 Function FileAge (Const FileName : RawByteString): Longint;
 {$endif}
 
+=======
+Function FileOpen (Const FileName : string; Mode : Integer) : THandle;
+Function FileCreate (Const FileName : String) : THandle;
+Function FileCreate (Const FileName : String; Mode : Integer) : THandle;
+>>>>>>> graemeg/cpstrnew
 Function FileRead (Handle : THandle; out Buffer; Count : longint) : Longint;
 Function FileWrite (Handle : THandle; const Buffer; Count : Longint) : Longint;
 Function FileSeek (Handle : THandle; FOffset, Origin: Longint) : Longint;
@@ -168,5 +174,20 @@ Function FindNext (Var Rslt : TRawByteSearchRec) : Longint;
 Procedure FindClose (Var F : TRawByteSearchrec);
 Function FileGetDate (Handle : THandle) : Longint;
 Function FileSetDate (Handle : THandle;Age : Longint) : Longint;
+<<<<<<< HEAD
 Function GetFileHandle(var f : File):THandle;
 Function GetFileHandle(var f : Text):THandle;
+=======
+Function FileSetDate (Const FileName : String;Age : Longint) : Longint;
+Function FileGetAttr (Const FileName : String) : Longint;
+Function FileSetAttr (Const Filename : String; Attr: longint) : Longint;
+Function DeleteFile (Const FileName : String) : Boolean;
+Function RenameFile (Const OldName, NewName : String) : Boolean;
+Function FileSearch (Const Name, DirList : String; ImplicitCurrentDir : Boolean = True) : String;
+Function ExeSearch  (Const Name, DirList : String) : String;
+Function FileIsReadOnly(const FileName: String): Boolean;
+
+Function GetFileHandle(var f : File):THandle;
+Function GetFileHandle(var f : Text):THandle;
+
+>>>>>>> graemeg/cpstrnew

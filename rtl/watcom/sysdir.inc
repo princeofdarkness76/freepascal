@@ -2,16 +2,23 @@
                            Directory Handling
 *****************************************************************************}
 
+<<<<<<< HEAD
 procedure DosDir(func:byte;const s:rawbytestring);
+=======
+procedure DosDir(func:byte;const s:string);
+>>>>>>> graemeg/cpstrnew
 var
   buffer : array[0..255] of char;
   regs   : trealregs;
 begin
+<<<<<<< HEAD
   if length(s)>255 then
     begin
       inoutres:=3;
       exit;
     end;
+=======
+>>>>>>> graemeg/cpstrnew
   move(s[1],buffer,length(s));
   buffer[length(s)]:=#0;
   DoDirSeparators(pchar(@buffer));
@@ -34,12 +41,20 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure do_mkdir(const s : rawbytestring);
 begin
+=======
+procedure mkdir(const s : string);[IOCheck];
+begin
+  If (s='') or (InOutRes <> 0) then
+   exit;
+>>>>>>> graemeg/cpstrnew
   DosDir($39,s);
 end;
 
 
+<<<<<<< HEAD
 procedure do_rmdir(const s : rawbytestring);
 begin
   if s = '.' then
@@ -47,14 +62,31 @@ begin
       InOutRes := 16;
       exit;
     end;
+=======
+procedure rmdir(const s : string);[IOCheck];
+begin
+  if (s = '.' ) then
+    InOutRes := 16;
+  If (s='') or (InOutRes <> 0) then
+   exit;
+>>>>>>> graemeg/cpstrnew
   DosDir($3a,s);
 end;
 
 
+<<<<<<< HEAD
 procedure do_chdir(const s : rawbytestring);
 var
   regs : trealregs;
 begin
+=======
+procedure chdir(const s : string);[IOCheck];
+var
+  regs : trealregs;
+begin
+  If (s='') or (InOutRes <> 0) then
+   exit;
+>>>>>>> graemeg/cpstrnew
 { First handle Drive changes }
   if (length(s)>=2) and (s[2]=':') then
    begin
@@ -78,7 +110,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure do_getdir(drivenr : byte;var dir : RawByteString);
+=======
+procedure getdir(drivenr : byte;var dir : shortstring);
+>>>>>>> graemeg/cpstrnew
 var
   temp : array[0..255] of char;
   i    : longint;
@@ -96,14 +132,20 @@ begin
    Begin
      GetInOutRes(lo(regs.realeax));
      Dir := char (DriveNr + 64) + ':\';
+<<<<<<< HEAD
      SetCodePage(dir,DefaultFileSystemCodePage,false);
+=======
+>>>>>>> graemeg/cpstrnew
      exit;
    end
   else
    syscopyfromdos(longint(@temp),251);
 { conversion to Pascal string including slash conversion }
   i:=0;
+<<<<<<< HEAD
   SetLength(Dir,255);
+=======
+>>>>>>> graemeg/cpstrnew
   while (temp[i]<>#0) do
    begin
      if temp[i] in AllowDirectorySeparators then
@@ -113,10 +155,16 @@ begin
    end;
   dir[2]:=':';
   dir[3]:='\';
+<<<<<<< HEAD
   SetLength(Dir,i+3);
   SetCodePage(dir,DefaultFileSystemCodePage,false);
 { upcase the string }
   if not FileNameCasePreserving then
+=======
+  dir[0]:=char(i+3);
+{ upcase the string }
+  if not FileNameCaseSensitive then
+>>>>>>> graemeg/cpstrnew
    dir:=upcase(dir);
   if drivenr<>0 then   { Drive was supplied. We know it }
    dir[1]:=char(65+drivenr-1)

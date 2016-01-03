@@ -278,10 +278,15 @@ function Is_Prefetch (P: pointer): boolean;
     Is_Prefetch := false;
 
     MemSize := SizeOf (A);
+<<<<<<< HEAD
     RC := DosQueryMem (P, MemSize, MemAttrs);
     if RC <> 0 then
      OSErrorWatch (RC)
     else if (MemAttrs and (mfPag_Free or mfPag_Commit) <> 0)
+=======
+    if (DosQueryMem (P, MemSize, MemAttrs) = 0) and
+            (MemAttrs and (mfPag_Free or mfPag_Commit) <> 0)
+>>>>>>> graemeg/cpstrnew
                                                and (MemSize >= SizeOf (A)) then
      Move (P^, A [0], SizeOf (A))
     else

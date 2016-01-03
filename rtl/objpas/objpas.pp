@@ -56,6 +56,7 @@ interface
        PPointerArray = ^PointerArray;
        TBoundArray = array of integer;
 
+<<<<<<< HEAD
 
 
 {$if FPC_FULLVERSION >= 20701}
@@ -88,10 +89,19 @@ interface
 {$endif}
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_CLASSES}
 Var
    ExceptionClass: TClass; { Exception base class (must actually be Exception, defined in sysutils ) }
 {$endif FPC_HAS_FEATURE_CLASSES}
+<<<<<<< HEAD
+=======
+{$ifdef FPC_HAS_FEATURE_EXCEPTIONS}
+Var
+   ExceptObjProc: Pointer; { Used to convert OS exceptions to exceptions in Delphi. Unused in FPC}
+{$endif FPC_HAS_FEATURE_EXCEPTIONS}
+>>>>>>> graemeg/cpstrnew
 
 {****************************************************************************
                              Compatibility routines.
@@ -127,18 +137,30 @@ Var
      { Typed file supoort }
      Procedure AssignFile(out f:TypedFile;p:pchar);
      Procedure AssignFile(out f:TypedFile;c:char);
+<<<<<<< HEAD
   {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
      Procedure AssignFile(out f:TypedFile;const Name:UnicodeString);
   {$endif FPC_HAS_FEATURE_WIDESTRINGS}
   {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
      Procedure AssignFile(out f:TypedFile;const Name:RawByteString);
   {$endif FPC_HAS_FEATURE_ANSISTRINGS}
+=======
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_HAS_FEATURE_FILEIO}
 
 {$ifdef FPC_HAS_FEATURE_COMMANDARGS}
      { ParamStr should return also an ansistring }
      Function ParamStr(Param : Integer) : Ansistring;
 {$endif FPC_HAS_FEATURE_COMMANDARGS}
+<<<<<<< HEAD
+=======
+
+{$ifdef FPC_HAS_FEATURE_FILEIO}
+     Procedure MkDir(const s:ansistring);overload;
+     Procedure RmDir(const s:ansistring);overload;
+     Procedure ChDir(const s:ansistring);overload;
+{$endif FPC_HAS_FEATURE_FILEIO}
+>>>>>>> graemeg/cpstrnew
 
 {****************************************************************************
                              Resource strings.
@@ -168,6 +190,14 @@ Var
 ****************************************************************************}
 
 {$ifdef FPC_HAS_FEATURE_FILEIO}
+<<<<<<< HEAD
+=======
+Procedure MkDirpchar(s: pchar;len:sizeuint);[IOCheck]; external name 'FPC_SYS_MKDIR';
+Procedure ChDirpchar(s: pchar;len:sizeuint);[IOCheck]; external name 'FPC_SYS_CHDIR';
+Procedure RmDirpchar(s: pchar;len:sizeuint);[IOCheck]; external name 'FPC_SYS_RMDIR';
+
+{ Untyped file support }
+>>>>>>> graemeg/cpstrnew
 
 { Untyped file support }
 
@@ -250,12 +280,22 @@ Procedure AssignFile(out f:TypedFile;c:char);
 begin
   System.Assign (F,c);
 end;
+{$endif FPC_HAS_FEATURE_FILEIO}
 
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
 Procedure AssignFile(out f:TypedFile;const Name:RawBytestring);
+=======
+{$ifdef FPC_HAS_FEATURE_COMMANDARGS}
+Function ParamStr(Param : Integer) : Ansistring;
+
+Var Len : longint;
+
+>>>>>>> graemeg/cpstrnew
 begin
   System.Assign (F,Name);
 end;
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_ANSISTRINGS}
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
@@ -285,6 +325,27 @@ Function ParamStr(Param : Integer) : ansistring;
       Result:='';
   end;
 {$endif FPC_HAS_FEATURE_COMMANDARGS}
+=======
+{$endif FPC_HAS_FEATURE_COMMANDARGS}
+
+
+{$ifdef FPC_HAS_FEATURE_FILEIO}
+Procedure MkDir(const s:ansistring);
+begin
+  mkdirpchar(pchar(s),length(s));
+end;
+
+Procedure RmDir(const s:ansistring);
+begin
+  RmDirpchar(pchar(s),length(s));
+end;
+
+Procedure ChDir(const s:ansistring);
+begin
+  ChDirpchar(pchar(s),length(s));
+end;
+{$endif FPC_HAS_FEATURE_FILEIO}
+>>>>>>> graemeg/cpstrnew
 
 {$ifdef FPC_HAS_FEATURE_RESOURCES}
 { ---------------------------------------------------------------------

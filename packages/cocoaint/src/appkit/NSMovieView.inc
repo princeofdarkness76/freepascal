@@ -25,17 +25,27 @@ type
 
 { Records }
 type
+<<<<<<< HEAD
   __MVFlags = record
     case byte of
     0: (_anonbitfield_NSMovieView0: cuint);
     1: (data: bitpacked record
+=======
+  __MVFlags = bitpacked record
+    case byte of
+    0: (_anonbitfield_NSMovieView0: cuint);
+    1: (
+>>>>>>> graemeg/cpstrnew
           editable: 0..1;
           loopMode: 0..((1 shl 3)-1);
           playsEveryFrame: 0..1;
           playsSelectionOnly: 0..1;
           controllerVisible: 0..1;
           reserved: 0..((1 shl 25)-1);
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
        );
   end;
 _MVFlags = __MVFlags;

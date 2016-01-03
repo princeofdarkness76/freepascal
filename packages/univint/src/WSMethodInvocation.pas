@@ -1,16 +1,31 @@
 {
      File:       OSServices/WSMethodInvocation.h
  
+<<<<<<< HEAD
      Contains:   *** DEPRECATED *** WebServicesCore Method Invocation API
  
      Copyright:  (c) 2002-2011 Apple Inc. All rights reserved
+=======
+     Contains:   WebServicesCore Method Invocation API
+ 
+     Version:    OSServices-352~2
+ 
+     Copyright:  © 2002-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -65,11 +80,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,29 +106,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -120,13 +153,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -138,12 +175,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -157,13 +200,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -235,6 +285,7 @@ uses MacTypes,CFBase,CFArray,CFData,CFDictionary,CFRunLoop,CFXMLNode,WSTypes;
     parameter.  (This won't work for multi-value returns, however.)
 }
 var kWSMethodInvocationResult: CFStringRef; external name '_kWSMethodInvocationResult'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 {
     Dictionary entries if the result is a fault
@@ -249,6 +300,14 @@ var kWSFaultCode: CFStringRef; external name '_kWSFaultCode'; (* attribute const
 { a CFString or CFDictionary, or NULL }
 var kWSFaultExtra: CFStringRef; external name '_kWSFaultExtra'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+{
+    Dictionary entries if the result is a fault
+}
+var kWSFaultString: CFStringRef; external name '_kWSFaultString'; (* attribute const *)  { a CFString }
+var kWSFaultCode: CFStringRef; external name '_kWSFaultCode'; (* attribute const *)    { a CFNumber }
+var kWSFaultExtra: CFStringRef; external name '_kWSFaultExtra'; (* attribute const *)   { a CFString or CFDictionary, or NULL }
+>>>>>>> graemeg/cpstrnew
 
 {
     If the result is a fault, and if the value of kWSFaultString in
@@ -259,6 +318,7 @@ var kWSFaultExtra: CFStringRef; external name '_kWSFaultExtra'; (* attribute con
     error numbers mean.
 }
 var kWSNetworkStreamFaultString: CFStringRef; external name '_kWSNetworkStreamFaultString'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 { A CFString (for debug purposes only) }
 var kWSStreamErrorMessage: CFStringRef; external name '_kWSStreamErrorMessage'; (* attribute const *)
@@ -269,6 +329,11 @@ var kWSStreamErrorDomain: CFStringRef; external name '_kWSStreamErrorDomain'; (*
 { A CFNumberRef }
 var kWSStreamErrorError: CFStringRef; external name '_kWSStreamErrorError'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSStreamErrorMessage: CFStringRef; external name '_kWSStreamErrorMessage'; (* attribute const *)           { A CFString (for debug purposes only) }
+var kWSStreamErrorDomain: CFStringRef; external name '_kWSStreamErrorDomain'; (* attribute const *)            { A CFNumberRef }
+var kWSStreamErrorError: CFStringRef; external name '_kWSStreamErrorError'; (* attribute const *)             { A CFNumberRef }
+>>>>>>> graemeg/cpstrnew
 
 { 
     For HTTP[S] based invocations, you can specify a CFHTTPMessageRef
@@ -285,17 +350,23 @@ var kWSStreamErrorError: CFStringRef; external name '_kWSStreamErrorError'; (* a
    
     See: <CFNetwork/CFHTTPMessage.h> for more information.
 }
+<<<<<<< HEAD
 { CFHTTPMessageRef }
 var kWSHTTPMessage: CFStringRef; external name '_kWSHTTPMessage'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 { CFHTTPMessageRef }
 var kWSHTTPResponseMessage: CFStringRef; external name '_kWSHTTPResponseMessage'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSHTTPMessage: CFStringRef; external name '_kWSHTTPMessage'; (* attribute const *)                  { CFHTTPMessageRef }
+var kWSHTTPResponseMessage: CFStringRef; external name '_kWSHTTPResponseMessage'; (* attribute const *)          { CFHTTPMessageRef }
+>>>>>>> graemeg/cpstrnew
 {
     To avoid having to create an entire CFHTTPMessageRef, these properties are
     individually settable.  If they are set, they will override any CFHTTPMessageRef
     previously specified.
 }
+<<<<<<< HEAD
 { a CFDictionary of ( key (CFString), val (CFString) ) pairs }
 var kWSHTTPExtraHeaders: CFStringRef; external name '_kWSHTTPExtraHeaders'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -308,6 +379,12 @@ var kWSHTTPProxy: CFStringRef; external name '_kWSHTTPProxy'; (* attribute const
 { kCFBooleanFalse }
 var kWSHTTPFollowsRedirects: CFStringRef; external name '_kWSHTTPFollowsRedirects'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSHTTPVersion: CFStringRef; external name '_kWSHTTPVersion'; (* attribute const *)                  { "http/1.1" }
+var kWSHTTPExtraHeaders: CFStringRef; external name '_kWSHTTPExtraHeaders'; (* attribute const *)             { a CFDictionary of ( key (CFString), val (CFString) ) pairs }
+var kWSHTTPProxy: CFStringRef; external name '_kWSHTTPProxy'; (* attribute const *)                    { CFURLRef }
+var kWSHTTPFollowsRedirects: CFStringRef; external name '_kWSHTTPFollowsRedirects'; (* attribute const *)         { kCFBooleanFalse }
+>>>>>>> graemeg/cpstrnew
 { 
     SOCKS proxy support.  WSMethodInvocation uses the same flags as
     CFSocketStream.h in configuring SOCKS proxy support.  You can set
@@ -321,6 +398,7 @@ var kWSHTTPFollowsRedirects: CFStringRef; external name '_kWSHTTPFollowsRedirect
     name of the flag is the same as the the field in the result
     dictionary.
 }
+<<<<<<< HEAD
 { kCFBooleanFalse }
 var kWSDebugOutgoingHeaders: CFStringRef; external name '_kWSDebugOutgoingHeaders'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -333,11 +411,18 @@ var kWSDebugIncomingHeaders: CFStringRef; external name '_kWSDebugIncomingHeader
 { kCFBooleanFalse }
 var kWSDebugIncomingBody: CFStringRef; external name '_kWSDebugIncomingBody'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSDebugOutgoingHeaders: CFStringRef; external name '_kWSDebugOutgoingHeaders'; (* attribute const *)             { kCFBooleanFalse }
+var kWSDebugOutgoingBody: CFStringRef; external name '_kWSDebugOutgoingBody'; (* attribute const *)                { kCFBooleanFalse }
+var kWSDebugIncomingHeaders: CFStringRef; external name '_kWSDebugIncomingHeaders'; (* attribute const *)             { kCFBooleanFalse }
+var kWSDebugIncomingBody: CFStringRef; external name '_kWSDebugIncomingBody'; (* attribute const *)                { kCFBooleanFalse }
+>>>>>>> graemeg/cpstrnew
 {
     Extra properties for SOAP messages.  These apply to the message
     namespace and format itself.  Individual message elements can
     be modified using the kWSRecord constants below.
 }
+<<<<<<< HEAD
 { CFStringRef }
 var kWSSOAPMethodNamespaceURI: CFStringRef; external name '_kWSSOAPMethodNamespaceURI'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -348,6 +433,12 @@ var kWSSOAPStyleDoc: CFStringRef; external name '_kWSSOAPStyleDoc'; (* attribute
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 var kWSSOAPStyleRPC: CFStringRef; external name '_kWSSOAPStyleRPC'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSSOAPMethodNamespaceURI: CFStringRef; external name '_kWSSOAPMethodNamespaceURI'; (* attribute const *)   { CFStringRef }
+var kWSSOAPBodyEncodingStyle: CFStringRef; external name '_kWSSOAPBodyEncodingStyle'; (* attribute const *)    { CFStringRef ( kWSSOAPStyleDoc, kWSSOAPStyleRPC ) }
+var kWSSOAPStyleDoc: CFStringRef; external name '_kWSSOAPStyleDoc'; (* attribute const *)
+var kWSSOAPStyleRPC: CFStringRef; external name '_kWSSOAPStyleRPC'; (* attribute const *)
+>>>>>>> graemeg/cpstrnew
 
 {
     For SOAP messages, this is an array of CFStringRefs which
@@ -355,14 +446,19 @@ var kWSSOAPStyleRPC: CFStringRef; external name '_kWSSOAPStyleRPC'; (* attribute
     message.  These are only applicable to the Header of a SOAP
     message.
 }
+<<<<<<< HEAD
 { CFArrayRef }
 var kWSSOAPMessageHeaders: CFStringRef; external name '_kWSSOAPMessageHeaders'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSSOAPMessageHeaders: CFStringRef; external name '_kWSSOAPMessageHeaders'; (* attribute const *)               { CFArrayRef }
+>>>>>>> graemeg/cpstrnew
 
 { 
     When serializing a record (dictionary) these keys present in
     the dictionary can modify the behavior of the serialization.
 }
+<<<<<<< HEAD
 { CFArrayRef of CFStringRef }
 var kWSRecordParameterOrder: CFStringRef; external name '_kWSRecordParameterOrder'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -372,13 +468,21 @@ var kWSRecordNamespaceURI: CFStringRef; external name '_kWSRecordNamespaceURI'; 
 { CFStringRef }
 var kWSRecordType: CFStringRef; external name '_kWSRecordType'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSRecordParameterOrder: CFStringRef; external name '_kWSRecordParameterOrder'; (* attribute const *)     { CFArrayRef of CFStringRef }
+var kWSRecordNamespaceURI: CFStringRef; external name '_kWSRecordNamespaceURI'; (* attribute const *)       { CFStringRef }
+var kWSRecordType: CFStringRef; external name '_kWSRecordType'; (* attribute const *)               { CFStringRef }
+>>>>>>> graemeg/cpstrnew
 
 {
     Specifies that the result parameter will be found as this name.  This
     forces the deserializer to alias the named output parameter to kWSMethodInvocationResult
 }
 var kWSMethodInvocationResultParameterName: CFStringRef; external name '_kWSMethodInvocationResultParameterName'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 { 
     Specifies a timeout (as CFNumber) which specifies in seconds the
     amount of time to wait for the invocation to complete.  If the
@@ -386,7 +490,10 @@ var kWSMethodInvocationResultParameterName: CFStringRef; external name '_kWSMeth
     a fault will be returned with the error code errWSTimeoutError.  
 }
 var kWSMethodInvocationTimeoutValue: CFStringRef; external name '_kWSMethodInvocationTimeoutValue'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -401,25 +508,41 @@ var kWSMethodInvocationTimeoutValue: CFStringRef; external name '_kWSMethodInvoc
 type
 	WSMethodInvocationRef = ^OpaqueWSMethodInvocationRef; { an opaque type }
 	OpaqueWSMethodInvocationRef = record end;
+<<<<<<< HEAD
 
 
 {
  *  WSMethodInvocationGetTypeID()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationGetTypeID()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSMethodInvocationGetTypeID: CFTypeID; external name '_WSMethodInvocationGetTypeID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSMethodInvocationCreate()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSMethodInvocationCreate()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Creates a web services method invocation object.  This object may
@@ -446,16 +569,27 @@ function WSMethodInvocationGetTypeID: CFTypeID; external name '_WSMethodInvocati
  *    WSMethodInvocationInvoke or scheduled with a run loop.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSMethodInvocationCreate( url: CFURLRef; methodName: CFStringRef; protocol: CFStringRef ): WSMethodInvocationRef; external name '_WSMethodInvocationCreate';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSMethodInvocationCreateFromSerialization()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSMethodInvocationCreateFromSerialization()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Creates a web services method invocation object from a previously
@@ -474,16 +608,27 @@ function WSMethodInvocationCreate( url: CFURLRef; methodName: CFStringRef; proto
  *    WSMethodInvocationInvoke or scheduled with a run loop.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSMethodInvocationCreateFromSerialization( contract: CFDataRef ): WSMethodInvocationRef; external name '_WSMethodInvocationCreateFromSerialization';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSMethodInvocationCopySerialization()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSMethodInvocationCopySerialization()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Create a serialized version of the Method Invocation which can be
@@ -501,16 +646,27 @@ function WSMethodInvocationCreateFromSerialization( contract: CFDataRef ): WSMet
  *    a CFDataRef
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSMethodInvocationCopySerialization( invocation: WSMethodInvocationRef ): CFDataRef; external name '_WSMethodInvocationCopySerialization';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSMethodInvocationSetParameters()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSMethodInvocationSetParameters()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Set the parameters for a method invocation.  The parameterOrder
@@ -536,6 +692,7 @@ function WSMethodInvocationCopySerialization( invocation: WSMethodInvocationRef 
  *      a CFArrayRef of CFString parameter names.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -546,6 +703,17 @@ procedure WSMethodInvocationSetParameters( invocation: WSMethodInvocationRef; pa
 
 {
  *  WSMethodInvocationCopyParameters()   *** DEPRECATED ***
+=======
+ *    Mac OS X:         in version 10.2 and later
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure WSMethodInvocationSetParameters( invocation: WSMethodInvocationRef; parameters: CFDictionaryRef; parameterOrder: CFArrayRef ); external name '_WSMethodInvocationSetParameters';      { can be NULL }
+
+
+{
+ *  WSMethodInvocationCopyParameters()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Copies the parameters from the invocation.  The resulting
@@ -570,6 +738,7 @@ procedure WSMethodInvocationSetParameters( invocation: WSMethodInvocationRef; pa
  *    a CFDictionaryRef
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -580,6 +749,17 @@ function WSMethodInvocationCopyParameters( invocation: WSMethodInvocationRef; pa
 
 {
  *  WSMethodInvocationSetProperty()   *** DEPRECATED ***
+=======
+ *    Mac OS X:         in version 10.2 and later
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function WSMethodInvocationCopyParameters( invocation: WSMethodInvocationRef; var parameterOrder: CFArrayRef ): CFDictionaryRef; external name '_WSMethodInvocationCopyParameters';      { can be NULL }
+
+
+{
+ *  WSMethodInvocationSetProperty()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Add "properties" to a method invocation.  These properties can be
@@ -608,16 +788,27 @@ function WSMethodInvocationCopyParameters( invocation: WSMethodInvocationRef; pa
  *    none
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationSetProperty( invocation: WSMethodInvocationRef; propertyName: CFStringRef; propertyValue: CFTypeRef ); external name '_WSMethodInvocationSetProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSMethodInvocationCopyProperty()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSMethodInvocationCopyProperty()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Return a property from a invocation.  If the result is NULL, the
@@ -640,16 +831,27 @@ procedure WSMethodInvocationSetProperty( invocation: WSMethodInvocationRef; prop
  *    not specified.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSMethodInvocationCopyProperty( invocation: WSMethodInvocationRef; propertyName: CFStringRef ): CFTypeRef; external name '_WSMethodInvocationCopyProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSMethodInvocationInvoke()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSMethodInvocationInvoke()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Execute the invocation.  If the call was successful, the result
@@ -671,6 +873,7 @@ function WSMethodInvocationCopyProperty( invocation: WSMethodInvocationRef; prop
  *    fault, and optional debug information.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -678,6 +881,14 @@ function WSMethodInvocationCopyProperty( invocation: WSMethodInvocationRef; prop
 { CF_RETURNS_RETAINED }
 function WSMethodInvocationInvoke( invocation: WSMethodInvocationRef ): CFDictionaryRef; external name '_WSMethodInvocationInvoke';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+ *    Mac OS X:         in version 10.2 and later
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function WSMethodInvocationInvoke( invocation: WSMethodInvocationRef ): CFDictionaryRef; external name '_WSMethodInvocationInvoke';
+
+>>>>>>> graemeg/cpstrnew
 
 {
     These calls implemented the asynchronous variant of the WSMethodInvocationInvoke.
@@ -726,11 +937,16 @@ function WSMethodInvocationInvoke( invocation: WSMethodInvocationRef ): CFDictio
  }
 type
 	WSMethodInvocationCallBackProcPtr = procedure( invocation: WSMethodInvocationRef; info: UnivPtr; outRef: CFDictionaryRef );
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSMethodInvocationSetCallBack()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationSetCallBack()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    sets the callback for an asynchronous method invocation.  Call
@@ -752,11 +968,16 @@ type
  *      a pointer to a WSClientContext.  The structure will be copied.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationSetCallBack( invocation: WSMethodInvocationRef; clientCB: WSMethodInvocationCallBackProcPtr; var context: WSClientContext ); external name '_WSMethodInvocationSetCallBack';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -782,10 +1003,37 @@ procedure WSMethodInvocationSetCallBack( invocation: WSMethodInvocationRef; clie
  *  
  *  Availability:
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+
+
+{
+    @function       WSMethodInvocationScheduleWithRunLoop
+
+    @discussion     Schedules the invocation to execute on the run loop.
+
+    @param          invocation
+                        the invocation
+
+    @param          runLoop
+                        the run loop upon which to scheduile the invocation
+
+    @param          runLoopMode
+                        the run loop mode
+}
+{
+ *  WSMethodInvocationScheduleWithRunLoop()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationScheduleWithRunLoop( invocation: WSMethodInvocationRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_WSMethodInvocationScheduleWithRunLoop';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -813,11 +1061,43 @@ procedure WSMethodInvocationScheduleWithRunLoop( invocation: WSMethodInvocationR
  *  
  *  Availability:
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+
+
+{
+    @function       WSMethodInvocationUnscheduleFromRunLoop
+
+    @discussion     Unschedules the invocation from a given run loop and
+                    mode.  If the invocation has not yet completed,
+                    its callback will not be called.
+
+
+    @param          invocation
+                        the invocation
+
+    @param          runLoop
+                        the run loop upon which to scheduile the invocation
+
+    @param          runLoopMode
+                        the run loop mode
+}
+{
+ *  WSMethodInvocationUnscheduleFromRunLoop()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationUnscheduleFromRunLoop( invocation: WSMethodInvocationRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_WSMethodInvocationUnscheduleFromRunLoop';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -830,7 +1110,11 @@ procedure WSMethodInvocationUnscheduleFromRunLoop( invocation: WSMethodInvocatio
     available in the dictionary as well.
 }
 {
+<<<<<<< HEAD
  *  WSMethodResultIsFault()   *** DEPRECATED ***
+=======
+ *  WSMethodResultIsFault()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    returns TRUE if the method invocation result contains a fault.
@@ -847,12 +1131,19 @@ procedure WSMethodInvocationUnscheduleFromRunLoop( invocation: WSMethodInvocatio
  *    TRUE if the result contains a fault condition
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSMethodResultIsFault( methodResult: CFDictionaryRef ): Boolean; external name '_WSMethodResultIsFault';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -891,11 +1182,16 @@ function WSMethodResultIsFault( methodResult: CFDictionaryRef ): Boolean; extern
  }
 type
 	WSMethodInvocationSerializationProcPtr = function( invocation: WSMethodInvocationRef; obj: CFTypeRef; info: UnivPtr ): CFStringRef;
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSMethodInvocationAddSerializationOverride()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationAddSerializationOverride()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Specifies a callback which will be called to produce the XML that
@@ -922,12 +1218,19 @@ type
  *      a pointer to a WSClientContext.  The structure will be copied.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationAddSerializationOverride( invocation: WSMethodInvocationRef; objType: CFTypeID; serializationProc: WSMethodInvocationSerializationProcPtr; var context: WSClientContext ); external name '_WSMethodInvocationAddSerializationOverride';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -961,11 +1264,16 @@ procedure WSMethodInvocationAddSerializationOverride( invocation: WSMethodInvoca
  }
 type
 	WSMethodInvocationDeserializationProcPtr = function( invocation: WSMethodInvocationRef; msgRoot: CFXMLTreeRef; deserializeRoot: CFXMLTreeRef; info: UnivPtr ): CFTypeRef;
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSMethodInvocationAddDeserializationOverride()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationAddDeserializationOverride()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Specifies a callback to be made when parsing an XML method
@@ -996,12 +1304,19 @@ type
  *      a pointer to a WSClientContext.  The structure will be copied.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationAddDeserializationOverride( invocation: WSMethodInvocationRef; typeNamespace: CFStringRef; typeName: CFStringRef; deserializationProc: WSMethodInvocationDeserializationProcPtr; var context: WSClientContext ); external name '_WSMethodInvocationAddDeserializationOverride';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}

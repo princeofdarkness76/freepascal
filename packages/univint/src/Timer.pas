@@ -4,8 +4,22 @@
      Contains:   Time Manager interfaces.
                  The contents of this header file are deprecated.
  
+<<<<<<< HEAD
      Copyright:  © 1985-2011 by Apple Inc. All rights reserved.
 }
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -60,11 +74,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -80,6 +97,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -99,17 +117,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -164,6 +203,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -202,7 +274,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,ConditionalMacros,OSUtils;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -237,6 +314,7 @@ uses MacTypes,ConditionalMacros,OSUtils;
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure Microseconds( var microTickCount: UnsignedWide ); external name '_Microseconds';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
 
@@ -251,6 +329,22 @@ procedure Microseconds( var microTickCount: UnsignedWide ); external name '_Micr
     Instead of using the Time Manager functions, you should consider
     the following:
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{***************************************************************************
+
+    The remaining functions in this file have all been deprecated on Mac
+    OS X 10.4.  There are other solutions which perform better, and consume
+    fewer system resources which are recommended.  The Time Manager on
+    Mac OS X does not have exactly the same behavior as it did on Mac OS 9
+    and earlier, especially in a multithreaded process.
+    
+    Instead of using the Time Manager functions, you should consider
+    the following:
+
+>>>>>>> graemeg/cpstrnew
     1.  If you want a function to be called periodically from an
         application, then look at using a CFRunLoopTimer ( in CFRunLoop.h ).
 
@@ -303,7 +397,11 @@ type
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure InsTime( tmTaskPtr: QElemPtr ); external name '_InsTime';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -318,7 +416,11 @@ procedure InsTime( tmTaskPtr: QElemPtr ); external name '_InsTime';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure InsXTime( tmTaskPtr: QElemPtr ); external name '_InsXTime';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -333,7 +435,11 @@ procedure InsXTime( tmTaskPtr: QElemPtr ); external name '_InsXTime';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure PrimeTime( tmTaskPtr: QElemPtr; count: SIGNEDLONG ); external name '_PrimeTime';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -348,7 +454,11 @@ procedure PrimeTime( tmTaskPtr: QElemPtr; count: SIGNEDLONG ); external name '_P
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure RmvTime( tmTaskPtr: QElemPtr ); external name '_RmvTime';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -387,7 +497,11 @@ procedure RmvTime( tmTaskPtr: QElemPtr ); external name '_RmvTime';
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function InstallTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_InstallTimeTask';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -437,7 +551,11 @@ function InstallTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_InstallT
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function InstallXTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_InstallXTimeTask';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -500,7 +618,11 @@ function InstallXTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_Install
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function PrimeTimeTask( tmTaskPtr: QElemPtr; count: SIGNEDLONG ): OSErr; external name '_PrimeTimeTask';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -548,7 +670,11 @@ function PrimeTimeTask( tmTaskPtr: QElemPtr; count: SIGNEDLONG ): OSErr; externa
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function RemoveTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_RemoveTimeTask';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -560,7 +686,11 @@ function RemoveTimeTask( tmTaskPtr: QElemPtr ): OSErr; external name '_RemoveTim
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewTimerUPP( userRoutine: TimerProcPtr ): TimerUPP; external name '_NewTimerUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeTimerUPP()
@@ -571,7 +701,11 @@ function NewTimerUPP( userRoutine: TimerProcPtr ): TimerUPP; external name '_New
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeTimerUPP( userUPP: TimerUPP ); external name '_DisposeTimerUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeTimerUPP()
@@ -582,7 +716,11 @@ procedure DisposeTimerUPP( userUPP: TimerUPP ); external name '_DisposeTimerUPP'
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure InvokeTimerUPP( tmTaskPtr_: TMTaskPtr; userUPP: TimerUPP ); external name '_InvokeTimerUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}

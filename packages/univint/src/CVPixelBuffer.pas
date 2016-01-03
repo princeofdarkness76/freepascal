@@ -5,10 +5,16 @@
  *  Copyright (c) 2004 Apple Computer, Inc. All rights reserved.
  *
  }
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
+=======
+ {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+ {	 Pascal Translation Update:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, 2009 }
+
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -63,11 +69,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -86,29 +95,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -118,13 +142,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -136,12 +164,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -155,13 +189,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -207,6 +248,11 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 {$endc} {not MACOSALLINCLUDE}
 
 
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
  
@@ -218,6 +264,17 @@ uses MacTypes, CFArray, CFBase, CFDictionary, CVBase, CVImageBuffer, CVReturns;
 }
 
 {
+<<<<<<< HEAD
+=======
+#if COREVIDEO_SUPPORTS_IOSURFACE
+#endif // COREVIDEO_SUPPORTS_IOSURFACE
+}
+
+{ Right now we don't support IOSurface }
+{$setc COREVIDEO_SUPPORTS_IOSURFACE := FALSE}
+
+{
+>>>>>>> graemeg/cpstrnew
 CoreVideo pixel format type constants.
 CoreVideo does not provide support for all of these formats; this list just defines their names.
 }
@@ -245,17 +302,24 @@ const
 	kCVPixelFormatType_48RGB = FourCharCode('b48r');     { 48 bit RGB, 16-bit big-endian samples }
 	kCVPixelFormatType_32AlphaGray = FourCharCode('b32a');     { 32 bit AlphaGray, 16-bit big-endian samples, black is zero }
 	kCVPixelFormatType_16Gray = FourCharCode('b16g');     { 16 bit Grayscale, 16-bit big-endian samples, black is zero }
+<<<<<<< HEAD
 	kCVPixelFormatType_30RGB = FourCharCode('R10k');     { 30 bit RGB, 10-bit big-endian samples, 2 unused padding bits (at least significant end). }
 	kCVPixelFormatType_422YpCbCr8 = FourCharCode('2vuy');     { Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1 }
 	kCVPixelFormatType_4444YpCbCrA8 = FourCharCode('v408');     { Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A }
 	kCVPixelFormatType_4444YpCbCrA8R = FourCharCode('r408');     { Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased YUV, ordered A Y' Cb Cr }
 	kCVPixelFormatType_4444AYpCbCr8 = FourCharCode('y408');     { Component Y'CbCrA 8-bit 4:4:4:4, ordered A Y' Cb Cr, full range alpha, video range Y'CbCr. }
 	kCVPixelFormatType_4444AYpCbCr16 = FourCharCode('y416');     { Component Y'CbCrA 16-bit 4:4:4:4, ordered A Y' Cb Cr, full range alpha, video range Y'CbCr, 16-bit little-endian samples. }
+=======
+	kCVPixelFormatType_422YpCbCr8 = FourCharCode('2vuy');     { Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1 }
+	kCVPixelFormatType_4444YpCbCrA8 = FourCharCode('v408');     { Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A }
+	kCVPixelFormatType_4444YpCbCrA8R = FourCharCode('r408');     { Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased YUV, ordered A Y' Cb Cr }
+>>>>>>> graemeg/cpstrnew
 	kCVPixelFormatType_444YpCbCr8 = FourCharCode('v308');     { Component Y'CbCr 8-bit 4:4:4 }
 	kCVPixelFormatType_422YpCbCr16 = FourCharCode('v216');     { Component Y'CbCr 10,12,14,16-bit 4:2:2 }
 	kCVPixelFormatType_422YpCbCr10 = FourCharCode('v210');     { Component Y'CbCr 10-bit 4:2:2 }
 	kCVPixelFormatType_444YpCbCr10 = FourCharCode('v410');     { Component Y'CbCr 10-bit 4:4:4 }
 	kCVPixelFormatType_420YpCbCr8Planar = FourCharCode('y420');   { Planar Component Y'CbCr 8-bit 4:2:0.  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrPlanar struct }
+<<<<<<< HEAD
 	kCVPixelFormatType_420YpCbCr8PlanarFullRange = FourCharCode('f420');   { Planar Component Y'CbCr 8-bit 4:2:0, full range.  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrPlanar struct }
 	kCVPixelFormatType_422YpCbCr_4A_8BiPlanar = FourCharCode('a2vy'); { First plane: Video-range Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1; second plane: alpha 8-bit 0-255 }
 	kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange = FourCharCode('420v'); { Bi-Planar Component Y'CbCr 8-bit 4:2:0, video-range (luma=[16,235] chroma=[16,240]).  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrBiPlanar struct }
@@ -270,6 +334,9 @@ const
 	kCVPixelFormatType_TwoComponent32Float = FourCharCode('2C0f');     { 32 bit two component IEEE float, 32-bit little-endian samples }
 	kCVPixelFormatType_64RGBAHalf = FourCharCode('RGhA');     { 64 bit RGBA IEEE half-precision float, 16-bit little-endian samples }
 	kCVPixelFormatType_128RGBAFloat = FourCharCode('RGfA');     { 128 bit RGBA IEEE float, 32-bit little-endian samples }
+=======
+	kCVPixelFormatType_422YpCbCr_4A_8BiPlanar = FourCharCode('a2vy'); { First plane: Video-range Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1; second plane: alpha 8-bit 0-255 }
+>>>>>>> graemeg/cpstrnew
 
 	
 {!
@@ -300,7 +367,11 @@ type
 type
 	CVPlanarPixelBufferInfoPtr = ^CVPlanarPixelBufferInfo;
 	CVPlanarPixelBufferInfo = record
+<<<<<<< HEAD
 		componentInfo: array [0..1-1] of CVPlanarComponentInfo;
+=======
+	  componentInfo	: array[0..0] of CVPlanarComponentInfo;
+>>>>>>> graemeg/cpstrnew
 	end;
 type
 	CVPlanarPixelBufferInfo_YCbCrPlanarPtr = ^CVPlanarPixelBufferInfo_YCbCrPlanar;
@@ -309,12 +380,15 @@ type
 		componentInfoCb: CVPlanarComponentInfo;
 		componentInfoCr: CVPlanarComponentInfo;
 	end;
+<<<<<<< HEAD
 type
     CVPlanarPixelBufferInfo_YCbCrBiPlanarPtr = ^CVPlanarPixelBufferInfo_YCbCrBiPlanar;
 	CVPlanarPixelBufferInfo_YCbCrBiPlanar = record
 		componentInfoY: CVPlanarComponentInfo;
 		componentInfoCbCr: CVPlanarComponentInfo;
 	end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 //#pragma mark BufferAttributeKeys
 var kCVPixelBufferPixelFormatTypeKey: CFStringRef; external name '_kCVPixelBufferPixelFormatTypeKey'; (* attribute const *)
@@ -340,6 +414,7 @@ var kCVPixelBufferCGBitmapContextCompatibilityKey: CFStringRef; external name '_
 var kCVPixelBufferCGImageCompatibilityKey: CFStringRef; external name '_kCVPixelBufferCGImageCompatibilityKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)	    // CFBoolean
 var kCVPixelBufferOpenGLCompatibilityKey: CFStringRef; external name '_kCVPixelBufferOpenGLCompatibilityKey'; (* attribute const *)
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)	    // CFBoolean
 var kCVPixelBufferPlaneAlignmentKey: CFStringRef; external name '_kCVPixelBufferPlaneAlignmentKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_4_0) *)		    // CFNumber
@@ -349,6 +424,23 @@ var kCVPixelBufferIOSurfacePropertiesKey: CFStringRef; external name '_kCVPixelB
 var kCVPixelBufferOpenGLESCompatibilityKey: CFStringRef; external name '_kCVPixelBufferOpenGLESCompatibilityKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0) *)	    // CFBoolean
 {$endc}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	    // CFBoolean
+var kCVPixelBufferPlaneAlignmentKey: CFStringRef; external name '_kCVPixelBufferPlaneAlignmentKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)		    // CFNumber
+var kCVPixelBufferIOSurfacePropertiesKey: CFStringRef; external name '_kCVPixelBufferIOSurfacePropertiesKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)     // CFDictionary; presence requests buffer allocation via IOSurface
+// Ensures that CGLTexImageIOSurface2D() will succeed in creating a valid texture object from the CVPixelBuffer's IOSurface.
+var kCVPixelBufferIOSurfaceOpenGLTextureCompatibilityKey: CFStringRef; external name '_kCVPixelBufferIOSurfaceOpenGLTextureCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)	// CFBoolean
+// Ensures that CGLTexImageIOSurface2D() will succeed in creating a valid texture object from the CVPixelBuffer's IOSurface AND that the resulting texture may be used as a color buffer attachment to a OpenGL frame buffer object.
+var kCVPixelBufferIOSurfaceOpenGLFBOCompatibilityKey: CFStringRef; external name '_kCVPixelBufferIOSurfaceOpenGLFBOCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)	// CFBoolean
+// Ensures that the CVPixelBuffer's IOSurfaceRef can be displayed in an CoreAnimation CALayer.
+var kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey: CFStringRef; external name '_kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)	// CFBoolean
+
+>>>>>>> graemeg/cpstrnew
 
 {!
     @typedef	CVPixelBufferRef
@@ -614,6 +706,40 @@ procedure CVPixelBufferGetExtendedPixels( pixelBuffer: CVPixelBufferRef; var ext
 function CVPixelBufferFillExtendedPixels( pixelBuffer: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferFillExtendedPixels';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)
 
+<<<<<<< HEAD
+=======
+{$ifc COREVIDEO_SUPPORTS_IOSURFACE}
+
+{!
+	@function   CVPixelBufferGetIOSurface
+	@abstract   Returns the IOSurface backing the pixel buffer, or NULL if it is not backed by an IOSurface.
+	@param      pixelBuffer Target PixelBuffer.
+}
+function CVPixelBufferGetIOSurface( pixelBuffer: CVPixelBufferRef ): IOSurfaceRef; external name '_CVPixelBufferGetIOSurface';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+{!
+    @function   CVPixelBufferCreateWithIOSurface
+    @abstract   Call to create a single CVPixelBuffer for a passed-in IOSurface.
+    @discussion The CVPixelBuffer will retain the IOSurface.
+    	IMPORTANT NOTE: If you are using IOSurface to share CVPixelBuffers between processes
+    	and those CVPixelBuffers are allocated via a CVPixelBufferPool, it is important
+    	that the CVPixelBufferPool does not reuse CVPixelBuffers whose IOSurfaces are still
+    	in use in other processes.  
+    	CoreVideo and IOSurface will take care of this for if you use IOSurfaceCreateMachPort 
+    	and IOSurfaceLookupFromMachPort, but NOT if you pass IOSurfaceIDs.
+    @param      surface		            The IOSurface to wrap.
+    @param      pixelBufferAttributes   A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+    @param      pixelBufferOut          The new pixel buffer will be returned here
+    @result     returns kCVReturnSuccess on success.
+}
+function CVPixelBufferCreateWithIOSurface( allocator: CFAllocatorRef; surface: IOSurfaceRef; pixelBufferAttributes: CFDictionaryRef; var pixelBufferOut: CVPixelBufferRef ): CVReturn; external name '_CVPixelBufferCreateWithIOSurface';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+{$endc} // COREVIDEO_SUPPORTS_IOSURFACE
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

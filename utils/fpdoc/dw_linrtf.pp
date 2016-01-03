@@ -110,7 +110,11 @@ type
     procedure StartSubSection(SubSectionName : String);override;
     procedure StartSubSubSection(SubSubSectionName : String);override;
     procedure StartChapter(ChapterName : String); override;
+<<<<<<< HEAD
     procedure StartOverview(Const What : String; WithAccess : Boolean); override;
+=======
+    procedure StartOverview(WithAccess : Boolean); override;
+>>>>>>> graemeg/cpstrnew
     procedure WriteOverviewMember(const ALabel,AName,Access,ADescr : String); override;
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
     procedure EndOverview; override;

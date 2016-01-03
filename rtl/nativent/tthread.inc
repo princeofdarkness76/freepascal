@@ -1,5 +1,6 @@
 { Thread management routines }
 
+<<<<<<< HEAD
 procedure TThread.SysCreate(CreateSuspended: Boolean;
                             const StackSize: SizeUInt);
 begin
@@ -10,6 +11,18 @@ end;
 procedure TThread.SysDestroy;
 begin
 
+=======
+constructor TThread.Create(CreateSuspended: Boolean;
+                           const StackSize: SizeUInt = DefaultStackSize);
+begin
+  inherited Create;
+end;
+
+
+destructor TThread.Destroy;
+begin
+  inherited Destroy;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TThread.CallOnTerminate;

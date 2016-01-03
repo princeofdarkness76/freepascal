@@ -174,7 +174,14 @@ var
 begin
   bit := 28; //((sizeof(dWord)*8)div 7)*7; // = 28
   buf := @Value;
+<<<<<<< HEAD
   {$push}
+=======
+  {$undef rangeon}
+  {$ifopt R+}
+     {$define rangeon}
+  {$endif}
+>>>>>>> graemeg/cpstrnew
   {$R-}
   while True do begin
     mask := $7f shl bit;
@@ -190,7 +197,13 @@ begin
     Inc(TheEnd);
   end;
 
+<<<<<<< HEAD
   {$pop}
+=======
+  {$ifdef rangeon}
+    {$R+}
+  {$endif}
+>>>>>>> graemeg/cpstrnew
   
   buf := @Value;
   Result := TheEnd+1;

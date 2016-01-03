@@ -6,7 +6,11 @@
   {$error The KernelDefs unit is a legacy Kylix-compatibility unit that is only supported on Linux/i386. It is known not to work in various ways on other OSes and architectures (including Linux/x86_64). }
 {$endif}
 
+<<<<<<< HEAD
 unit libc deprecated 'Unportable Kylix legacy unit that only exists on Linux/x86. see http://wiki.freepascal.org/libc_unit ';
+=======
+unit libc;
+>>>>>>> graemeg/cpstrnew
 
 Interface
 

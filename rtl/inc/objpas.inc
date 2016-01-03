@@ -83,7 +83,10 @@
          D:=S;
       end;
 
+<<<<<<< HEAD
     procedure fpc_intf_assign(var D: pointer; const s: pointer); [external name 'FPC_INTF_ASSIGN'];
+=======
+>>>>>>> graemeg/cpstrnew
 
     {procedure fpc_intf_assign_by_iid(var D: pointer; const S: pointer; const iid: TGUID);[public,alias: 'FPC_INTF_ASSIGN2']; compilerproc;
       var
@@ -178,11 +181,15 @@
         tmpi2:=nil;
         if Assigned(S) and ((TObject(S).GetInterfaceWeak(IUnknown,tmpi2) and (IUnknown(tmpi2).QueryInterface(IID,tmpi)=S_OK)) or
             TObject(S).GetInterface(IID,tmpi)) then
+<<<<<<< HEAD
           begin
             // decrease reference count
             fpc_class_cast_intf:=nil;
             pointer(fpc_class_cast_intf):=tmpi
           end
+=======
+          pointer(fpc_class_cast_intf):=tmpi
+>>>>>>> graemeg/cpstrnew
         else
           fpc_class_cast_intf:=nil;
       end;
@@ -501,7 +508,11 @@
         end;
 
       function TObject.SafeCallException(exceptobject : tobject;
+<<<<<<< HEAD
         exceptaddr : codepointer) : HResult;
+=======
+        exceptaddr : pointer) : HResult;
+>>>>>>> graemeg/cpstrnew
 
         begin
           safecallexception:=E_UNEXPECTED;
@@ -716,23 +727,39 @@
               etVirtualMethodResult:
                 begin
                   // IOffset is relative to the VMT, not to instance.
+<<<<<<< HEAD
                   Getter.code := PCodePointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+=======
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+>>>>>>> graemeg/cpstrnew
                   TInterfaceGetter(Getter)(obj);
                 end;
               etVirtualMethodClass:
                 begin
                   // IOffset is relative to the VMT, not to instance.
+<<<<<<< HEAD
                   Getter.code := PCodePointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+=======
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+>>>>>>> graemeg/cpstrnew
                   TObject(obj) := TClassGetter(Getter)();
                 end;
               etStaticMethodResult:
                 begin
+<<<<<<< HEAD
                   Getter.code := CodePointer(IEntry^.IOffset);
+=======
+                  Getter.code := Pointer(IEntry^.IOffset);
+>>>>>>> graemeg/cpstrnew
                   TInterfaceGetter(Getter)(obj);
                 end;
               etStaticMethodClass:
                 begin
+<<<<<<< HEAD
                   Getter.code := CodePointer(IEntry^.IOffset);
+=======
+                  Getter.code := Pointer(IEntry^.IOffset);
+>>>>>>> graemeg/cpstrnew
                   TObject(obj) := TClassGetter(Getter)();
                 end;
             end;

@@ -15,13 +15,22 @@ program StretchExample;
 uses
   ptc;
 
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: string);
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> graemeg/cpstrnew
 var
   F: File;
   width, height: Integer;
   pixels: PByte = nil;
   y: Integer;
+<<<<<<< HEAD
   format: IPTCFormat;
+=======
+  tmp: TPTCFormat;
+  tmp2: TPTCPalette;
+>>>>>>> graemeg/cpstrnew
 begin
   { open image file }
   AssignFile(F, filename);
@@ -44,11 +53,28 @@ begin
 
     { load pixels to surface }
     {$IFDEF FPC_LITTLE_ENDIAN}
+<<<<<<< HEAD
     format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
     {$ENDIF FPC_LITTLE_ENDIAN}
     surface.Load(pixels, width, height, width * 3, format, TPTCPaletteFactory.CreateNew);
+=======
+    tmp := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
+    {$ELSE FPC_LITTLE_ENDIAN}
+    tmp := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
+    {$ENDIF FPC_LITTLE_ENDIAN}
+    try
+      tmp2 := TPTCPalette.Create;
+      try
+        surface.load(pixels, width, height, width * 3, tmp, tmp2);
+      finally
+        tmp2.Free;
+      end;
+    finally
+      tmp.Free;
+    end;
+>>>>>>> graemeg/cpstrnew
   finally
     { free image pixels }
     FreeMem(pixels);
@@ -59,12 +85,22 @@ begin
 end;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   image: IPTCSurface;
   format: IPTCFormat;
   timer: IPTCTimer;
   area: IPTCArea;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  image: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+  timer: TPTCTimer = nil;
+  area: TPTCArea = nil;
+  color: TPTCColor = nil;
+>>>>>>> graemeg/cpstrnew
   time: Double;
   zoom: Single;
   x, y, x1, y1, x2, y2, dx, dy: Integer;
@@ -120,6 +156,7 @@ begin
         y2 := Trunc(y + zoom * dy);
 
         { setup image copy area }
+<<<<<<< HEAD
         area := TPTCAreaFactory.CreateNew(x1, y1, x2, y2);
 
         { copy and stretch image to surface }
@@ -134,6 +171,30 @@ begin
     finally
       if Assigned(console) then
         console.close;
+=======
+        area := TPTCArea.Create(x1, y1, x2, y2);
+        try
+          { copy and stretch image to surface }
+          image.copy(surface, image.area, area);
+
+          { copy surface to console }
+          surface.copy(console);
+
+          { update console }
+          console.update;
+        finally
+          area.Free;
+        end;
+      end;
+    finally
+      console.close;
+      console.Free;
+      surface.Free;
+      format.Free;
+      image.Free;
+      color.Free;
+      timer.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

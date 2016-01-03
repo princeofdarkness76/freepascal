@@ -2,8 +2,12 @@ uses garrayutils, gutil, gvector;
 
 type vectorlli = specialize TVector<longint>;
      lesslli = specialize TLess<longint>;
+<<<<<<< HEAD
      sortlli = specialize 
          TOrderingArrayUtils<vectorlli, longint, lesslli>;
+=======
+     sortlli = specialize TOrderingArrayUtils<vectorlli, longint, lesslli>;
+>>>>>>> graemeg/cpstrnew
 
 var data:vectorlli; n,i:longint;
 

@@ -27,10 +27,15 @@ interface
 
     const
        { version string }
+<<<<<<< HEAD
        version_nr = '3';
        release_nr = '1';
+=======
+       version_nr = '2';
+       release_nr = '5';
+>>>>>>> graemeg/cpstrnew
        patch_nr   = '1';
-       minorpatch = '';
+       minorpatch = '-cps';
 
        { word version for ppu file }
        wordversion = ((ord(version_nr)-ord('0')) shl 14)+

@@ -30,6 +30,7 @@ function cpuid_support : boolean;assembler;nostackframe;
     Tested under go32v1 and Linux on c6x86 with CpuID enabled and disabled (PFV)
   }
   asm
+<<<<<<< HEAD
     pushfl
     movl    (%esp),%eax
     xorl    $0x200000,%eax
@@ -45,6 +46,74 @@ function cpuid_support : boolean;assembler;nostackframe;
 
 {$ifndef FPC_PIC}
 {$ifndef FPC_SYSTEM_HAS_MOVE}
+=======
+    push   ebx
+    pushfd
+    pushfd
+    pop     eax
+    mov     ebx,eax
+    xor     eax,200000h
+    push    eax
+    popfd
+    pushfd
+    pop     eax
+    popfd
+    and     eax,200000h
+    and     ebx,200000h
+    cmp     eax,ebx
+    setnz   al
+    pop     ebx
+  end;
+
+{$asmmode ATT}
+
+function sse_support : boolean;
+  var
+     _edx : longint;
+  begin
+    if cpuid_support then
+     begin
+        asm
+          pushl %ebx
+          movl $1,%eax
+          cpuid
+          movl %edx,_edx
+          popl %ebx
+        end;
+        sse_support:=((_edx and $2000000)<>0) and os_supports_sse;
+     end
+    else
+     { a cpu with without cpuid instruction supports never sse }
+     sse_support:=false;
+  end;
+
+
+{ returns true, if the processor supports the mmx instructions }
+function mmx_support : boolean;
+
+  var
+     _edx : longint;
+
+  begin
+     if cpuid_support then
+       begin
+          asm
+             pushl %ebx
+             movl $1,%eax
+             cpuid
+             movl %edx,_edx
+             popl %ebx
+          end;
+          mmx_support:=(_edx and $800000)<>0;
+       end
+     else
+       { a cpu with without cpuid instruction supports never mmx }
+       mmx_support:=false;
+  end;
+
+{$ifndef FPC_PIC}
+{$if not defined(FPC_SYSTEM_HAS_MOVE) and defined(REGCALL) }
+>>>>>>> graemeg/cpstrnew
 {$define USE_FASTMOVE}
 {$i fastmove.inc}
 {$endif FPC_SYSTEM_HAS_MOVE}
@@ -58,6 +127,13 @@ procedure fpc_cpuinit;
     has_mmx_support:=mmx_support;
     setup_fastmove;
     }
+<<<<<<< HEAD
+=======
+    os_supports_sse:=false;
+    { don't let libraries influence the FPU cw set by the host program }
+    if IsLibrary then
+      Default8087CW:=Get8087CW;
+>>>>>>> graemeg/cpstrnew
   end;
 
 {$ifndef darwin}
@@ -718,6 +794,55 @@ end;
 {$ifndef FPC_SYSTEM_HAS_FPC_SHORTSTR_ASSIGN}
 {$define FPC_SYSTEM_HAS_FPC_SHORTSTR_ASSIGN}
 
+<<<<<<< HEAD
+=======
+{$ifndef FPC_STRTOSHORTSTRINGPROC}
+function fpc_shortstr_to_shortstr(len:longint; const sstr: shortstring): shortstring; [public,alias: 'FPC_SHORTSTR_TO_SHORTSTR']; compilerproc;
+begin
+  asm
+  {$ifdef FPC_PROFILE}
+        push  %eax
+        push  %edx
+        push  %ecx
+        call  mcount
+        pop   %ecx
+        pop   %edx
+        pop   %eax
+  {$endif FPC_PROFILE}
+        cld
+        movl    __RESULT,%edi
+        movl    sstr,%esi
+        xorl    %eax,%eax
+        movl    len,%ecx
+        lodsb
+        cmpl    %ecx,%eax
+        jbe     .LStrCopy1
+        movl    %ecx,%eax
+.LStrCopy1:
+        stosb
+        cmpl    $7,%eax
+        jl      .LStrCopy2
+        movl    %edi,%ecx       { Align on 32bits }
+        negl    %ecx
+        andl    $3,%ecx
+        subl    %ecx,%eax
+        rep
+        movsb
+        movl    %eax,%ecx
+        andl    $3,%eax
+        shrl    $2,%ecx
+        rep
+        movsl
+.LStrCopy2:
+        movl    %eax,%ecx
+        rep
+        movsb
+  end ['ESI','EDI','EAX','ECX'];
+end;
+
+
+{$else FPC_STRTOSHORTSTRINGPROC}
+>>>>>>> graemeg/cpstrnew
 procedure fpc_shortstr_to_shortstr(out res:shortstring; const sstr: shortstring);assembler;[public,alias:'FPC_SHORTSTR_TO_SHORTSTR']; compilerproc;
   var
    saveesi,saveedi : longint;
@@ -819,6 +944,134 @@ end;
 {$endif FPC_SYSTEM_HAS_FPC_SHORTSTR_ASSIGN}
 
 
+<<<<<<< HEAD
+=======
+{$ifndef STR_CONCAT_PROCS}
+
+{$ifndef FPC_SYSTEM_HAS_FPC_SHORTSTR_CONCAT}
+{$define FPC_SYSTEM_HAS_FPC_SHORTSTR_CONCAT}
+
+function fpc_shortstr_concat(const s1,s2:shortstring):shortstring;compilerproc;
+begin
+  asm
+  {$ifdef FPC_PROFILE}
+        push  %eax
+        push  %edx
+        push  %ecx
+        call  mcount
+        pop   %ecx
+        pop   %edx
+        pop   %eax
+  {$endif FPC_PROFILE}
+        movl    __RESULT,%edi
+        movl    %edi,%ebx
+        movl    s1,%esi         { first string }
+        lodsb
+        andl    $0x0ff,%eax
+        stosb
+        cmpl    $7,%eax
+        jl      .LStrConcat1
+        movl    %edi,%ecx       { Align on 32bits }
+        negl    %ecx
+        andl    $3,%ecx
+        subl    %ecx,%eax
+        rep
+        movsb
+        movl    %eax,%ecx
+        andl    $3,%eax
+        shrl    $2,%ecx
+        rep
+        movsl
+.LStrConcat1:
+        movl    %eax,%ecx
+        rep
+        movsb
+        movl    s2,%esi       { second string }
+        movzbl  (%ebx),%ecx
+        negl    %ecx
+        addl    $0x0ff,%ecx
+        lodsb
+        cmpl    %ecx,%eax
+        jbe     .LStrConcat2
+        movl    %ecx,%eax
+.LStrConcat2:
+        addb    %al,(%ebx)
+        cmpl    $7,%eax
+        jl      .LStrConcat3
+        movl    %edi,%ecx       { Align on 32bits }
+        negl    %ecx
+        andl    $3,%ecx
+        subl    %ecx,%eax
+        rep
+        movsb
+        movl    %eax,%ecx
+        andl    $3,%eax
+        shrl    $2,%ecx
+        rep
+        movsl
+.LStrConcat3:
+        movl    %eax,%ecx
+        rep
+        movsb
+  end ['EBX','ECX','EAX','ESI','EDI'];
+end;
+{$endif FPC_SYSTEM_HAS_FPC_SHORTSTR_CONCAT}
+
+
+{$ifndef FPC_SYSTEM_HAS_FPC_SHORTSTR_APPEND_SHORTSTR}
+{$define FPC_SYSTEM_HAS_FPC_SHORTSTR_APPEND_SHORTSTR}
+
+procedure fpc_shortstr_append_shortstr(var s1:shortstring;const s2:shortstring);compilerproc;
+    [public,alias:'FPC_SHORTSTR_APPEND_SHORTSTR'];
+begin
+  asm
+  {$ifdef FPC_PROFILE}
+        push  %eax
+        push  %edx
+        push  %ecx
+        call  mcount
+        pop   %ecx
+        pop   %edx
+        pop   %eax
+  {$endif FPC_PROFILE}
+        movl    s1,%edi
+        movl    s2,%esi
+        movl    %edi,%ebx
+        movzbl  (%edi),%ecx
+        movl    __HIGH(s1),%eax
+        lea     1(%edi,%ecx),%edi
+        negl    %ecx
+        addl    %eax,%ecx
+        // no need to zero eax, high(s1) <= 255
+        lodsb
+        cmpl    %ecx,%eax
+        jbe     .LStrConcat1
+        movl    %ecx,%eax
+.LStrConcat1:
+        addb    %al,(%ebx)
+        cmpl    $7,%eax
+        jl      .LStrConcat2
+        movl    %edi,%ecx       { Align on 32bits }
+        negl    %ecx
+        andl    $3,%ecx
+        subl    %ecx,%eax
+        rep
+        movsb
+        movl    %eax,%ecx
+        andl    $3,%eax
+        shrl    $2,%ecx
+        rep
+        movsl
+.LStrConcat2:
+        movl    %eax,%ecx
+        rep
+        movsb
+  end ['EBX','ECX','EAX','ESI','EDI'];
+end;
+{$endif FPC_SYSTEM_HAS_FPC_SHORTSTR_APPEND_SHORTSTR}
+
+{$endif STR_CONCAT_PROCS}
+>>>>>>> graemeg/cpstrnew
 
 {$ifndef FPC_SYSTEM_HAS_FPC_SHORTSTR_COMPARE}
 {$define FPC_SYSTEM_HAS_FPC_SHORTSTR_COMPARE}
@@ -1005,8 +1258,11 @@ asm
         pop   %edx
         pop   %eax
 {$endif FPC_PROFILE}
+<<<<<<< HEAD
         test    %eax,%eax
         jz      .LStrLenDone
+=======
+>>>>>>> graemeg/cpstrnew
         movl    %edi,saveedi
         movl    %eax,%edi
         movl    $0xffffffff,%ecx
@@ -1398,6 +1654,7 @@ procedure fpc_cpucodeinit;
             has_sse3_support:=((_ecx and $200)<>0);
           end;
       end;
+<<<<<<< HEAD
 
     { don't let libraries influence the FPU cw set by the host program }
     if IsLibrary then
@@ -1407,6 +1664,15 @@ procedure fpc_cpucodeinit;
           DefaultMXCSR:=GetMXCSR;
       end;
 
+=======
+    has_sse_support:=os_supports_sse;
+    { don't let libraries influence the FPU cw set by the host program }
+    if has_sse_support and
+       IsLibrary then
+      mxcsr:=GetSSECSR;
+
+    has_mmx_support:=mmx_support;
+>>>>>>> graemeg/cpstrnew
     SysResetFPU;
 {$ifdef USE_FASTMOVE}
     setup_fastmove;
@@ -1430,6 +1696,11 @@ asm
         movl    $0,(%eax)          // s:=nil
         cmpl    $0,4(%esi)         // exit if refcount<0
         jl      .Lj3596
+<<<<<<< HEAD
+=======
+.Lj3603:
+// [104] If declocked(l^) then
+>>>>>>> graemeg/cpstrnew
   {$ifdef FPC_PIC}
 	pushl	%ebx
         call	fpc_geteipasebx
@@ -1451,8 +1722,19 @@ asm
         testb   %al,%al
         je      .Lj3596
 .Lj3620:
+<<<<<<< HEAD
         movl    %esi,%eax
         call    FPC_FREEMEM
+=======
+        movl    (%esp),%eax
+        movl    (%eax),%eax
+        subl    $12,%eax
+        call    FPC_FREEMEM_X
+        movl    (%esp),%eax
+        movl    $0,(%eax)
+.Lj3618:
+.Lj3605:
+>>>>>>> graemeg/cpstrnew
 .Lj3596:
         popl    %esi
 .Lquit:
@@ -1517,13 +1799,19 @@ end;
 
 {$endif}
 
+<<<<<<< HEAD
 {$ifndef FPC_SYSTEM_HAS_BSF_QWORD}
 {$define FPC_SYSTEM_HAS_BSF_QWORD}
+=======
+{$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
+{$define FPC_SYSTEM_HAS_BSX_QWORD}
+>>>>>>> graemeg/cpstrnew
 
 function BsfQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
 asm
      bsfl    4(%esp),%eax
      jnz     .L2
+<<<<<<< HEAD
 .L1:
      bsfl    8(%esp),%eax
      jnz     .L3
@@ -1537,12 +1825,20 @@ end;
 
 {$ifndef FPC_SYSTEM_HAS_BSR_QWORD}
 {$define FPC_SYSTEM_HAS_BSR_QWORD}
+=======
+.L1: bsfl    8(%esp),%eax
+     add     $32,%eax
+.L2:
+end;
+
+>>>>>>> graemeg/cpstrnew
 function BsrQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
 asm
      bsrl    8(%esp),%eax
      jz     .L1
      add     $32,%eax
      jmp     .L2
+<<<<<<< HEAD
 .L1:
      bsrl    4(%esp),%eax
      jnz     .L2
@@ -1572,3 +1868,10 @@ asm
 .Lexit:
 end;
 {$endif FPC_SYSTEM_HAS_SAR_QWORD}
+=======
+.L1: bsrl    4(%esp),%eax
+.L2:
+end;
+
+{$endif}
+>>>>>>> graemeg/cpstrnew

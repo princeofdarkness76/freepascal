@@ -1,6 +1,10 @@
 {
     This file is part of the Free Pascal run time library.
+<<<<<<< HEAD
     Copyright (c) 2010, 2011 by Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (c) 2010 by Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Copyright (c) 2007 by Daniel Mantione
       member of the Free Pascal development team
 
@@ -16,7 +20,11 @@
  **********************************************************************}
 unit ptcgraph;
 
+<<<<<<< HEAD
 {//$define logging}
+=======
+{$define logging}
+>>>>>>> graemeg/cpstrnew
 
 {******************************************************************************}
                                     interface
@@ -25,11 +33,14 @@ unit ptcgraph;
 uses
   ptc, ptcwrapper;
 
+<<<<<<< HEAD
 {$ifdef VER2_6}
 type
   CodePointer = Pointer;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$i graphh.inc}
 
 {Driver number for PTC.}
@@ -126,6 +137,12 @@ var
                                  implementation
 {******************************************************************************}
 
+<<<<<<< HEAD
+=======
+//uses
+//  termio{,x86};
+
+>>>>>>> graemeg/cpstrnew
 const
   InternalDriverName = 'PTCPas';
 
@@ -287,11 +304,25 @@ const
                      end;
 
 var
+<<<<<<< HEAD
   PTCWidth: Integer;
   PTCHeight: Integer;
   PTCFormat8: IPTCFormat;
   PTCFormat15: IPTCFormat;
   PTCFormat16: IPTCFormat;
+=======
+//  OldIO: TermIos;
+
+{  ptcconsole: TPTCConsole = nil;
+  ptcsurface: TPTCSurface = nil;
+  ptcpalette: TPTCPalette = nil;
+  ptcformat: TPTCFormat = nil;}
+  PTCWidth: Integer;
+  PTCHeight: Integer;
+  PTCFormat8: TPTCFormat;
+  PTCFormat15: TPTCFormat;
+  PTCFormat16: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 
   EGAPaletteEnabled: Boolean;
   EGAPalette: TEGAPalette;
@@ -347,12 +378,44 @@ end;
 
 procedure ptc_update;
 begin
+<<<<<<< HEAD
 end;
 
+=======
+  { copy to console }
+//  ptcsurface.copy(ptcconsole);
+  { update console }
+//  ptcconsole.update;
+end;
+
+{Procedure SetRawMode(b:boolean);
+Var
+  Tio : Termios;
+Begin
+  if b then
+   begin
+     TCGetAttr(1,Tio);
+     OldIO:=Tio;
+     CFMakeRaw(Tio);
+   end
+  else
+   Tio:=OldIO;
+  TCSetAttr(1,TCSANOW,Tio);
+End;}
+
+
+>>>>>>> graemeg/cpstrnew
 { ---------------------------------------------------------------------
     Required procedures
   ---------------------------------------------------------------------}
 
+<<<<<<< HEAD
+=======
+var
+  LastColor: smallint;   {Cache the last set color to improve speed}
+
+
+>>>>>>> graemeg/cpstrnew
 procedure ptc_savevideostate;
 begin
 end;
@@ -363,6 +426,42 @@ begin
     PTCWrapperObject.Close;
 end;
 
+<<<<<<< HEAD
+=======
+{
+const
+  BgiColors: array[0..15] of LongInt
+    = ($000000, $000020, $002000, $002020,
+       $200000, $200020, $202000, $303030,
+       $202020, $00003F, $003F00, $003F3F,
+       $3F0000, $3F003F, $3F3F00, $3F3F3F);
+}
+
+procedure InitColors(nrColors: longint);
+
+var
+  i: smallint;
+begin
+{  for i:=0 to nrColors do
+    vga_setpalette(I,DefaultColors[i].red shr 2,
+      DefaultColors[i].green shr 2,DefaultColors[i].blue shr 2)}
+end;
+
+procedure ptc_initmodeproc;
+
+begin
+//  writeln('Initializing mode');
+  { create format }
+{  FreeAndNil(PTCFormat);
+  PTCFormat:=TPTCFormat.Create(16,$f800,$07e0,$001f);}
+  { open the console }
+{  ptcconsole.open(paramstr(0),ptcformat);}
+  { create surface matching console dimensions }
+{  FreeAndNil(PTCSurface);
+  PTCSurface:=TPTCSurface.Create(ptcconsole.width,ptcconsole.height,ptcformat);}
+end;
+
+>>>>>>> graemeg/cpstrnew
 function VGA6to8(dac6: Uint32): Uint32;
 begin
   VGA6to8 := dac6 shl 2;
@@ -448,6 +547,10 @@ end;
 procedure ptc_SetVGAPalette(ColorNum, ARed, AGreen, ABlue: Integer);
 var
   PaletteData: PUint32;
+<<<<<<< HEAD
+=======
+  r, g, b: Uint32;
+>>>>>>> graemeg/cpstrnew
   I: Integer;
 begin
   if (VGAPalette[ColorNum, 0] <> ARed) or
@@ -578,7 +681,11 @@ begin
   CurrentCGABkColor := 0;
 end;
 
+<<<<<<< HEAD
 procedure ptc_InternalOpen(const ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; AVirtualPages: Integer);
+=======
+procedure ptc_InternalOpen(const ATitle: string; AWidth, AHeight: Integer; AFormat: TPTCFormat; AVirtualPages: Integer);
+>>>>>>> graemeg/cpstrnew
 var
   ConsoleWidth, ConsoleHeight: Integer;
 begin
@@ -725,7 +832,11 @@ end;
 
 procedure ptc_Init640x200x16;
 begin
+<<<<<<< HEAD
   ptc_InitMode16_CGAEmu(640, 200, 4);
+=======
+  ptc_InitMode16_CGAEmu(640, 200, 3);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure ptc_Init640x350x16;
@@ -963,8 +1074,15 @@ begin
 end;
 
 procedure ptc_DirectPixelProc_16bpp(X,Y: smallint);
+<<<<<<< HEAD
 var
   pixels:Pword;
+=======
+
+var color:word;
+    pixels:Pword;
+
+>>>>>>> graemeg/cpstrnew
 begin
 //  Writeln('ptc_DirectPixelProc_16bpp(', X, ', ', Y, ')');
   pixels := ptc_surface_lock;
@@ -993,8 +1111,15 @@ begin
 end;
 
 procedure ptc_DirectPixelProc_8bpp(X,Y: smallint);
+<<<<<<< HEAD
 var
   pixels:PByte;
+=======
+
+var color:word;
+    pixels:PByte;
+
+>>>>>>> graemeg/cpstrnew
 begin
 //  Writeln('ptc_DirectPixelProc_8bpp(', X, ', ', Y, ')');
   pixels := ptc_surface_lock;
@@ -1083,6 +1208,31 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
+=======
+
+{ Bitmap utilities }
+{type
+  PBitmap = ^TBitmap;
+  TBitmap = record
+            Width, Height: smallint;
+            Data: record end;
+            end;
+}
+
+procedure ptc_putimageproc (X,Y: smallint; var Bitmap; BitBlt: Word);
+begin
+end;
+
+procedure ptc_getimageproc (X1,Y1,X2,Y2: smallint; Var Bitmap);
+begin
+end;
+
+function  ptc_imagesizeproc (X1,Y1,X2,Y2: smallint): longint;
+begin
+end;
+
+>>>>>>> graemeg/cpstrnew
 procedure ptc_HLineProc_16bpp(x, x2,y : smallint);
 
 var pixels:Pword;
@@ -1311,6 +1461,63 @@ begin
   ptc_update;
 end;
 
+<<<<<<< HEAD
+=======
+
+
+
+procedure ptc_vlineproc (x,y,y2: smallint);
+begin
+end;
+
+procedure ptc_clrviewproc_16bpp;
+
+Var I,Xmax : longint;
+
+begin
+  Xmax:=StartXViewPort+ViewWidth-1;
+  For i:=StartYViewPort to StartYViewPort+ViewHeight-1 do
+    ptc_HLineProc_16bpp(0,viewwidth,i);
+  { reset coordinates }
+  CurrentX := 0;
+  CurrentY := 0;
+end;
+
+procedure ptc_patternlineproc (x1,x2,y: smallint);
+begin
+end;
+
+procedure ptc_ellipseproc  (X,Y: smallint;XRadius: word;
+  YRadius:word; stAngle,EndAngle: word; fp: PatternLineProc);
+begin
+end;
+
+procedure ptc_lineproc (X1, Y1, X2, Y2 : smallint);
+begin
+end;
+
+procedure ptc_getscanlineproc (X1,X2,Y : smallint; var data);
+begin
+end;
+
+procedure ptc_setactivepageproc (page: word);
+begin
+end;
+
+procedure ptc_setvisualpageproc (page: word);
+begin
+end;
+
+
+procedure ptc_savestateproc;
+begin
+end;
+
+procedure ptc_restorestateproc;
+begin
+end;
+
+>>>>>>> graemeg/cpstrnew
 procedure ptc_SetRGBAllPaletteProc(const Palette: PaletteType);
 begin
   {...}
@@ -1350,6 +1557,10 @@ end;
         _graphresult := grnoinitgraph;
         exit
       end;
+<<<<<<< HEAD
+=======
+//    SetRawMode(False);
+>>>>>>> graemeg/cpstrnew
     RestoreVideoState;
     isgraphmode := false;
  end;
@@ -1360,11 +1571,19 @@ end;
   { Returns nil if no graphics mode supported.        }
   { This list is READ ONLY!                           }
   var
+<<<<<<< HEAD
     PTCModeList: TPTCModeList;
 
     function ModeListEmpty: Boolean;
     begin
       ModeListEmpty := Length(PTCModeList) = 0;
+=======
+    PTCModeList: PPTCMode;
+
+    function ModeListEmpty: Boolean;
+    begin
+      ModeListEmpty := (PTCModeList = nil) or (not PTCModeList[0].Valid);
+>>>>>>> graemeg/cpstrnew
     end;
 
     function ContainsExactResolution(AWidth, AHeight: Integer): Boolean;
@@ -1377,7 +1596,13 @@ end;
         exit;
       end;
 
+<<<<<<< HEAD
       for I := Low(PTCModeList) to High(PTCModeList) do
+=======
+      I := 0;
+      while (PTCModeList[I].Valid) do
+      begin
+>>>>>>> graemeg/cpstrnew
         with PTCModeList[I] do
           if (Width = AWidth) and
              (Height = AHeight) then
@@ -1385,6 +1610,11 @@ end;
             ContainsExactResolution := True;
             exit;
           end;
+<<<<<<< HEAD
+=======
+        Inc(I);
+      end;
+>>>>>>> graemeg/cpstrnew
       ContainsExactResolution := False;
     end;
 
@@ -1398,7 +1628,13 @@ end;
         exit;
       end;
 
+<<<<<<< HEAD
       for I := Low(PTCModeList) to High(PTCModeList) do
+=======
+      I := 0;
+      while (PTCModeList[I].Valid) do
+      begin
+>>>>>>> graemeg/cpstrnew
         with PTCModeList[I] do
           if (Width >= AWidth) and
              (Height >= AHeight) then
@@ -1406,11 +1642,26 @@ end;
             ContainsAtLeast := True;
             exit;
           end;
+<<<<<<< HEAD
+=======
+        Inc(I);
+      end;
+>>>>>>> graemeg/cpstrnew
       ContainsAtLeast := False;
     end;
 
    var
     graphmode:Tmodeinfo;
+<<<<<<< HEAD
+=======
+    d{,i} : longint;
+    ws,hs:string[5];
+
+   const depths:array[0..3] of byte=(8,16,24,32);
+         colours:array[0..3] of longint=(256,65536,16777216,16777216);
+         depth_names:array[0..3] of string[5]=('256','64K','16M','16M32');
+
+>>>>>>> graemeg/cpstrnew
    begin
      QueryAdapterInfo := ModeList;
      { If the mode listing already exists... }
@@ -1426,6 +1677,34 @@ end;
 
      SaveVideoState:=@ptc_savevideostate;
      RestoreVideoState:=@ptc_restorevideostate;
+<<<<<<< HEAD
+=======
+{     if PTCConsole = nil then
+       PTCConsole := TPTCConsole.Create;}
+//     ptcmode:=ptcconsole.modes;
+//     i:=0;
+{     initmode(graphmode);
+     with graphmode do
+       begin
+         modenumber:=0;
+         drivernumber:=ptcgraph._ptc;
+         maxx:=639;
+         maxy:=479;
+         modename:='PTC_640x480x64K';
+         maxcolor:=65536;
+         palettesize:=65536;
+         hardwarepages:=0;
+         InitMode       := @ptc_InitModeProc;
+         DirectPutPixel := @ptc_DirectPixelProc_16bpp;
+         GetPixel       := @ptc_GetPixelProc_16bpp;
+         PutPixel       := @ptc_PutPixelProc_16bpp;
+         SetRGBPalette  := @ptc_SetRGBPaletteProc;
+         GetRGBPalette  := @ptc_GetRGBPaletteProc;
+
+         HLine          := @ptc_HLineProc_16bpp;
+       end;
+     addmode(graphmode);}
+>>>>>>> graemeg/cpstrnew
 
      InitMode(graphmode);
      with graphmode do
@@ -1827,7 +2106,11 @@ end;
      begin
        ModeNumber:=EGALo;
        DriverNumber := EGA;
+<<<<<<< HEAD
        HardwarePages := 3;
+=======
+       HardwarePages := 2;
+>>>>>>> graemeg/cpstrnew
        ModeName:='640 x 200 EGA';
        MaxColor := 16;
        DirectColor := FALSE;
@@ -1887,7 +2170,11 @@ end;
      begin
        ModeNumber:=VGALo;
        DriverNumber := VGA;
+<<<<<<< HEAD
        HardwarePages := 3;
+=======
+       HardwarePages := 2;
+>>>>>>> graemeg/cpstrnew
        ModeName:='640 x 200 EGA';
        MaxColor := 16;
        DirectColor := FALSE;
@@ -2541,7 +2828,11 @@ end;
 
        InitMode(graphmode);
        with graphmode do
+<<<<<<< HEAD
        begin
+=======
+       begin  
+>>>>>>> graemeg/cpstrnew
          ModeNumber := m1280x1024x64k;
          DriverNumber := VESA;
          HardwarePages := 1;
@@ -2567,16 +2858,106 @@ end;
        end;
        AddMode(graphmode);
      end;
+<<<<<<< HEAD
   end;
 
 initialization
   PTCFormat8 := TPTCFormatFactory.CreateNew(8);
   PTCFormat15 := TPTCFormatFactory.CreateNew(16, $7C00, $03E0, $001F);
   PTCFormat16 := TPTCFormatFactory.CreateNew(16, $F800, $07E0, $001F);
+=======
+
+
+
+(*
+     writeln('processing modes');
+     while ptcmode^.valid do
+       begin
+         for d:=low(depths) to high(depths) do
+           begin
+             InitMode(graphmode);
+             with graphmode do
+               begin
+                 ModeNumber:=I;
+                 DriverNumber:=ptcgraph.PTC;
+                 { MaxX is number of pixels in X direction - 1}
+                 MaxX:=ptcmode^.width-1;
+                 { same for MaxY}
+                 MaxY:=ptcmode^.height-1;
+                 str(ptcmode^.width,ws);
+                 str(ptcmode^.height,hs);
+                 modename:='PTC_'+ws+'x'+hs+'x'+depth_names[d];
+                 MaxColor := 1 shl ptcmode^.format.r * 1 shl ptcmode^.format.g *1 shl ptcmode^.format.b;
+                 writeln('mode ',modename,' ',maxcolor,'kleuren');
+                 PaletteSize := MaxColor;
+                 HardwarePages := 0;
+*)
+                 { necessary hooks ...}
+(*
+                 if (MaxColor = 16) and
+                   (LongInt(ModeInfo.Width) * LongInt(ModeInfo.Height) < 65536*4*2) then
+                  begin
+                   {Use optimized graphics routines for 4 bit EGA/VGA modes.}
+                   ScrWidth := ModeInfo.Width div 8;
+                   DirectPutPixel := @DirectPutPixel16;
+                   PutPixel := @PutPixel16;
+                   GetPixel := @GetPixel16;
+                   HLine := @HLine16;
+                   VLine := @VLine16;
+                   GetScanLine := @GetScanLine16;
+                 end
+               else
+*)
+(*
+                 begin
+                   DirectPutPixel := @ptc_DirectPixelProc;
+                   GetPixel       := @ptc_GetPixelProc;
+                   PutPixel       := @ptc_PutPixelProc;
+                   { May be implemented later:
+                   HLine          := @libvga_HLineProc;
+                   VLine          := @libvga_VLineProc;
+                   GetScanLine    := @libvga_GetScanLineProc;}
+                   ClearViewPort  := @ptc_ClrViewProc;
+                 end;
+                 SetRGBPalette  := @ptc_SetRGBPaletteProc;
+                 GetRGBPalette  := @ptc_GetRGBPaletteProc;
+                 { These are not really implemented yet:
+                 PutImage       := @libvga_PutImageProc;
+                 GetImage       := @libvga_GetImageProc;}
+{                If you use the default getimage/putimage, you also need the default
+                 imagesize! (JM)
+                 ImageSize      := @libvga_ImageSizeProc; }
+                 { Add later maybe ?
+                 SetVisualPage  := SetVisualPageProc;
+                 SetActivePage  := SetActivePageProc;
+                 Line           := @libvga_LineProc;
+                 InternalEllipse:= @libvga_EllipseProc;
+                 PatternLine    := @libvga_PatternLineProc;
+                 }
+                 InitMode       := @ptc_InitModeProc;
+               end;
+           AddMode(graphmode);
+           inc(i);
+         end;
+     end;
+*)
+  end;
+
+initialization
+  PTCFormat8 := TPTCFormat.Create(8);
+  PTCFormat15 := TPTCFormat.Create(16, $7C00, $03E0, $001F);
+  PTCFormat16 := TPTCFormat.Create(16, $F800, $07E0, $001F);
+>>>>>>> graemeg/cpstrnew
   PTCWrapperObject := TPTCWrapperThread.Create;
   InitializeGraph;
 finalization
   PTCWrapperObject.Terminate;
   PTCWrapperObject.WaitFor;
   PTCWrapperObject.Free;
+<<<<<<< HEAD
+=======
+  PTCFormat16.Free;
+  PTCFormat15.Free;
+  PTCFormat8.Free;
+>>>>>>> graemeg/cpstrnew
 end.

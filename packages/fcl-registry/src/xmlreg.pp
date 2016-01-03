@@ -363,6 +363,7 @@ begin
     begin
     Node[SType]:=IntToStr(Ord(DataType));
     DataNode:=Node.FirstChild;
+<<<<<<< HEAD
 
     Case DataType of
       dtDWORD : S:=IntToStr(PCardinal(@Data)^);
@@ -370,6 +371,27 @@ begin
       dtBinary : S:=BufToHex(Data,DataSize);
     else
       s:='';
+=======
+    // Reading <value></value> results in <value/>, i.e. no subkey exists any more. Create textnode.
+    if (DataNode=nil) then
+      begin
+      DataNode:=FDocument.CreateTextNode('');
+      Node.AppendChild(DataNode);
+      end;
+    Case DataType of
+      dtDWORD : DataNode.NodeValue:=IntToStr(PCardinal(@Data)^);
+      dtString : begin
+                 SetLength(S,DataSize);
+                 If (DataSize>0) then
+                   Move(Data,S[1],DataSize);
+                 DataNode.NodeValue:=S;
+                 end;
+      dtBinary : begin
+                 S:=BufToHex(Data,DataSize);
+                 DataNode.NodeValue:=S;
+                 end;
+      end;
+>>>>>>> graemeg/cpstrnew
     end;
     if s <> '' then
       begin

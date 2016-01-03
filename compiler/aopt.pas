@@ -53,6 +53,7 @@ Unit aopt;
         procedure pass_1;
       End;
       TAsmOptimizerClass = class of TAsmOptimizer;
+<<<<<<< HEAD
 
       TAsmScheduler = class(TAoptObj)
         { _AsmL is the PAasmOutpout list that has to be re-scheduled }
@@ -66,6 +67,11 @@ Unit aopt;
     var
       casmoptimizer : TAsmOptimizerClass;
       cpreregallocscheduler : TAsmSchedulerClass;
+=======
+
+    var
+      casmoptimizer : TAsmOptimizerClass;
+>>>>>>> graemeg/cpstrnew
 
     procedure Optimize(AsmL:TAsmList);
     procedure PreRegallocSchedule(AsmL:TAsmList);

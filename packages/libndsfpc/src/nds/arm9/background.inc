@@ -281,11 +281,14 @@ procedure bgHide(id: cint); inline;
 procedure bgSetCenterf(id: cint; x, y: cint32); inline;
 procedure bgSetCenter(id, x, y: cint); inline;
 procedure bgSetAffineMatrixScroll(id, hdx, vdx, hdy, vdy, scrollx, scrolly: cint); inline;
+<<<<<<< HEAD
 
 procedure bgExtPaletteEnable(); inline; 
 procedure bgExtPaletteEnableSub(); inline; 
 procedure bgExtPaletteDisable(); inline; 
 procedure bgExtPaletteDisableSub(); inline; 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$endif NDS_INTERFACE}
 
@@ -606,6 +609,7 @@ begin
   bgState[id].dirty := false;
 end;
 
+<<<<<<< HEAD
 procedure bgExtPaletteEnable(); inline; 
 begin 
   REG_DISPCNT^ := REG_DISPCNT^ or DISPLAY_BG_EXT_PALETTE; 
@@ -625,5 +629,8 @@ procedure bgExtPaletteDisableSub(); inline;
 begin 
   REG_DISPCNT_SUB^ := REG_DISPCNT_SUB^ and not DISPLAY_BG_EXT_PALETTE; 
 end;
+=======
+
+>>>>>>> graemeg/cpstrnew
 
 {$endif NDS_IMPLEMENTATION}

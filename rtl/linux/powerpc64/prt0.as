@@ -398,6 +398,7 @@ FUNCTION_PROLOG _start
     trap
 
 FUNCTION_PROLOG _haltproc
+<<<<<<< HEAD
     mflr  0
     std   0,16(1)
     stdu  1,-144(1)
@@ -422,6 +423,17 @@ FUNCTION_PROLOG _haltproc
     lwz     3,0(3)
     /* exit call */
     li      0,1
+=======
+    /* exit group call */
+    LOAD_64BIT_VAL 3, operatingsystem_result
+    lwz     3, 0(3)
+    li      0, 234
+    sc
+    /* exit call */
+    LOAD_64BIT_VAL 3, operatingsystem_result
+    lwz     3, 0(3)
+    li      0, 1
+>>>>>>> graemeg/cpstrnew
     sc
     /* we should not reach here. Crash horribly */
     trap
@@ -442,12 +454,15 @@ data_start:
     .global __stkptr
 __stkptr:
     .skip 8
+<<<<<<< HEAD
 
     .type __dl_fini, @object
     .size __dl_fini, 8
     .global __dl_fini
 __dl_fini:
     .skip 8
+=======
+>>>>>>> graemeg/cpstrnew
 
     .type operatingsystem_parameters, @object
     .size operatingsystem_parameters, 24

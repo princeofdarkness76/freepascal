@@ -16,13 +16,22 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   palette: IPTCPalette;
+=======
+  console: TPTCConsole = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
   data: array [0..255] of DWord;
   i: Integer;
   pixels: PByte;
   width, height, pitch: Integer;
+<<<<<<< HEAD
   format: IPTCFormat;
+=======
+  format: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
   bits, bytes: Integer;
   x, y: Integer;
   color: DWord;
@@ -32,29 +41,48 @@ begin
   try
     try
       { create console }
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
+=======
+      console := TPTCConsole.Create;
+>>>>>>> graemeg/cpstrnew
 
       { open the console with one page }
       console.open('Console example', 1);
 
       { create palette }
+<<<<<<< HEAD
       palette := TPTCPaletteFactory.CreateNew;
+=======
+      palette := TPTCPalette.Create;
+>>>>>>> graemeg/cpstrnew
 
       { generate palette }
       for i := 0 to 255 do
         data[i] := i;
 
       { load palette data }
+<<<<<<< HEAD
       palette.Load(data);
 
       { set console palette }
       console.Palette(palette);
+=======
+      palette.load(data);
+
+      { set console palette }
+      console.palette(palette);
+>>>>>>> graemeg/cpstrnew
 
       { loop until a key is pressed }
       while not console.KeyPressed do
       begin
         { lock console }
+<<<<<<< HEAD
         pixels := console.Lock;
+=======
+        pixels := console.lock;
+>>>>>>> graemeg/cpstrnew
 
         try
           { get console dimensions }
@@ -104,6 +132,7 @@ begin
           end;
         finally
           { unlock console }
+<<<<<<< HEAD
           console.Unlock;
         end;
 
@@ -113,6 +142,18 @@ begin
     finally
       if Assigned(console) then
         console.Close;
+=======
+          console.unlock;
+        end;
+
+        { update console }
+        console.update;
+      end;
+    finally
+      palette.Free;
+      console.close;
+      console.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

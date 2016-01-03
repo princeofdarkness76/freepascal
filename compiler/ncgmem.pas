@@ -87,6 +87,7 @@ implementation
     uses
       systems,
       cutils,cclasses,verbose,globals,constexp,
+<<<<<<< HEAD
       symconst,symbase,symdef,symsym,symcpu,symtable,defutil,paramgr,
       aasmbase,aasmtai,aasmdata,
       procinfo,pass_2,parabase,
@@ -94,6 +95,14 @@ implementation
       cgobj,hlcgobj,
       tgobj,ncgutil,objcgutl,
       defcmp
+=======
+      symconst,symdef,symsym,symtable,defutil,paramgr,
+      aasmbase,aasmtai,aasmdata,
+      procinfo,pass_2,parabase,
+      pass_1,nld,ncon,nadd,nutils,
+      cgutils,cgobj,
+      tgobj,ncgutil,objcgutl
+>>>>>>> graemeg/cpstrnew
       ;
 
 
@@ -111,6 +120,7 @@ implementation
          location_reset(location,LOC_REGISTER,def_cgsize(voidpointertype));
          if (left.nodetype=typen) then
            begin
+<<<<<<< HEAD
              location.register:=hlcg.getaddressregister(current_asmdata.CurrAsmList,voidpointertype);
              if not is_objcclass(left.resultdef) then
                begin
@@ -121,6 +131,20 @@ implementation
                end
              else
                begin
+=======
+             location.register:=cg.getaddressregister(current_asmdata.CurrAsmList);
+             if not is_objcclass(left.resultdef) then
+               begin
+                 reference_reset_symbol(href,
+                   current_asmdata.RefAsmSymbol(tobjectdef(tclassrefdef(resultdef).pointeddef).vmt_mangledname),0,
+                   sizeof(pint));
+                 cg.a_loadaddr_ref_reg(current_asmdata.CurrAsmList,href,location.register);
+               end
+             else
+               begin
+                 if current_asmdata.ConstPools[sp_objcclassnamerefs]=nil then
+                   current_asmdata.ConstPools[sp_objcclassnamerefs]:=THashSet.Create(64, True, False);
+>>>>>>> graemeg/cpstrnew
                  pool:=current_asmdata.ConstPools[sp_objcclassnamerefs];
                  entry:=pool.FindOrAdd(@tobjectdef(left.resultdef).objextname^[1],length(tobjectdef(left.resultdef).objextname^));
                  if (target_info.system in systems_objc_nfabi) then
@@ -133,8 +157,13 @@ implementation
                      { find/add necessary classref/classname pool entries }
                      objcfinishstringrefpoolentry(entry,sp_objcclassnames,sec_objc_cls_refs,sec_objc_class_names);
                    end;
+<<<<<<< HEAD
                  reference_reset_symbol(href,tasmlabel(entry^.Data),0,voidpointertype.size);
                  hlcg.a_load_ref_reg(current_asmdata.CurrAsmList,voidpointertype,voidpointertype,href,location.register);
+=======
+                 reference_reset_symbol(href,tasmlabel(entry^.Data),0,sizeof(pint));
+                 cg.a_load_ref_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,href,location.register);
+>>>>>>> graemeg/cpstrnew
                end;
            end
          else
@@ -205,10 +234,17 @@ implementation
              we have to force the data into memory, see also tw14388.pp
            }
            if nf_internal in flags then
+<<<<<<< HEAD
              hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef)
            else
              internalerror(2006111510);
          hlcg.a_loadaddr_ref_reg(current_asmdata.CurrAsmList,left.resultdef,resultdef,left.location.reference,location.register);
+=======
+             location_force_mem(current_asmdata.CurrAsmList,left.location)
+           else
+             internalerror(2006111510);
+         cg.a_loadaddr_ref_reg(current_asmdata.CurrAsmList,left.location.reference,location.register);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -232,6 +268,7 @@ implementation
            location_reset_ref(location,LOC_REFERENCE,def_cgsize(resultdef),resultdef.alignment)
          else
            location_reset_ref(location,LOC_REFERENCE,def_cgsize(resultdef),1);
+<<<<<<< HEAD
 
          { can we fold an add/sub node into the offset of the deref node? }
          extraoffset:=0;
@@ -256,6 +293,10 @@ implementation
 
          if not(left.location.loc in [LOC_CREGISTER,LOC_REGISTER,LOC_CREFERENCE,LOC_REFERENCE,LOC_CONSTANT]) then
            hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,true);
+=======
+         if not(left.location.loc in [LOC_CREGISTER,LOC_REGISTER,LOC_CREFERENCE,LOC_REFERENCE,LOC_CONSTANT]) then
+           location_force_reg(current_asmdata.CurrAsmList,left.location,OS_ADDR,true);
+>>>>>>> graemeg/cpstrnew
          case left.location.loc of
             LOC_CREGISTER,
             LOC_REGISTER:
@@ -299,8 +340,13 @@ implementation
               internalerror(2012010601);
             pd:=tprocdef(tprocsym(sym).ProcdefList[0]);
             paraloc1.init;
+<<<<<<< HEAD
             paramanager.getintparaloc(current_asmdata.CurrAsmList,pd,1,paraloc1);
             hlcg.a_load_reg_cgpara(current_asmdata.CurrAsmList,left.resultdef,location.reference.base,paraloc1);
+=======
+            paramanager.getintparaloc(pocall_default,1,paraloc1);
+            cg.a_load_reg_cgpara(current_asmdata.CurrAsmList, OS_ADDR,location.reference.base,paraloc1);
+>>>>>>> graemeg/cpstrnew
             paramanager.freecgpara(current_asmdata.CurrAsmList,paraloc1);
             paraloc1.done;
             hlcg.allocallcpuregisters(current_asmdata.CurrAsmList);
@@ -321,8 +367,14 @@ implementation
 
     procedure tcgsubscriptnode.pass_generate_code;
       var
+<<<<<<< HEAD
         asmsym: tasmsymbol;
         paraloc1 : tcgpara;
+=======
+        sym: tasmsymbol;
+        paraloc1 : tcgpara;
+        hreg  : tregister;
+>>>>>>> graemeg/cpstrnew
         tmpref: treference;
         sref: tsubsetreference;
         offsetcorrection : aint;
@@ -338,6 +390,7 @@ implementation
          { several object types must be dereferenced implicitly }
          if is_implicit_pointer_object_type(left.resultdef) then
            begin
+<<<<<<< HEAD
              if (not is_managed_type(left.resultdef)) or
                 (target_info.system in systems_garbage_collected_managed_types) then
                begin
@@ -372,6 +425,35 @@ implementation
                       end;
                     LOC_CONSTANT:
                       begin
+=======
+             if not is_managed_type(left.resultdef) then
+               begin
+                 { the contents of a class are aligned to a sizeof(pointer) }
+                 location_reset_ref(location,LOC_REFERENCE,def_cgsize(resultdef),sizeof(pint));
+                 case left.location.loc of
+                    LOC_CREGISTER,
+                    LOC_REGISTER:
+                      begin
+                      {$ifdef cpu_uses_separate_address_registers}
+                        if getregtype(left.location.register)<>R_ADDRESSREGISTER then
+                          begin
+                            location.reference.base:=rg.getaddressregister(current_asmdata.CurrAsmList);
+                            cg.a_load_reg_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,
+                              left.location.register,location.reference.base);
+                          end
+                        else
+                      {$endif}
+                          location.reference.base := left.location.register;
+                      end;
+                    LOC_CREFERENCE,
+                    LOC_REFERENCE:
+                      begin
+                         location.reference.base:=cg.getaddressregister(current_asmdata.CurrAsmList);
+                         cg.a_load_loc_reg(current_asmdata.CurrAsmList,OS_ADDR,left.location,location.reference.base);
+                      end;
+                    LOC_CONSTANT:
+                      begin
+>>>>>>> graemeg/cpstrnew
                         { can happen with @classtype(pointerconst).field }
                         location.reference.offset:=left.location.value;
                       end;
@@ -383,6 +465,7 @@ implementation
                     (cs_checkpointer in current_settings.localswitches) and
                     not(cs_compilesystem in current_settings.moduleswitches) then
                   begin
+<<<<<<< HEAD
                     if not searchsym_in_named_module('HEAPTRC','CHECKPOINTER',sym,st) or
                        (sym.typ<>procsym) then
                       internalerror(2012010602);
@@ -393,6 +476,14 @@ implementation
                     hlcg.allocallcpuregisters(current_asmdata.CurrAsmList);
                     hlcg.a_call_name(current_asmdata.CurrAsmList,pd,'FPC_CHECKPOINTER',[@paraloc1],nil,false);
                     hlcg.deallocallcpuregisters(current_asmdata.CurrAsmList);
+=======
+                    paramanager.getintparaloc(pocall_default,1,paraloc1);
+                    cg.a_load_reg_cgpara(current_asmdata.CurrAsmList, OS_ADDR,location.reference.base,paraloc1);
+                    paramanager.freecgpara(current_asmdata.CurrAsmList,paraloc1);
+                    cg.allocallcpuregisters(current_asmdata.CurrAsmList);
+                    cg.a_call_name(current_asmdata.CurrAsmList,'FPC_CHECKPOINTER',false);
+                    cg.deallocallcpuregisters(current_asmdata.CurrAsmList);
+>>>>>>> graemeg/cpstrnew
                   end;
                end
              else
@@ -413,6 +504,7 @@ implementation
                LOC_CONSTANT,
                LOC_REGISTER,
                LOC_CREGISTER,
+<<<<<<< HEAD
                { if a floating point value is casted into a record, it
                  can happen that we get here an fpu or mm register }
                LOC_MMREGISTER,
@@ -440,6 +532,20 @@ implementation
                         }
                         LOC_CONSTANT]) then
                      hlcg.location_force_mem(current_asmdata.CurrAsmList,location,left.resultdef)
+=======
+               LOC_MMREGISTER,
+               LOC_FPUREGISTER:
+                 begin
+                   // in case the result is not something that can be put
+                   // into an integer register (e.g.
+                   // function_returning_record().non_regable_field, or
+                   // a function returning a value > sizeof(intreg))
+                   // -> force to memory
+                   if not tstoreddef(left.resultdef).is_intregable or
+                      not tstoreddef(resultdef).is_intregable or
+                      (location.loc in [LOC_MMREGISTER,LOC_FPUREGISTER]) then
+                     location_force_mem(current_asmdata.CurrAsmList,location)
+>>>>>>> graemeg/cpstrnew
                    else
                      begin
                        if (left.location.loc = LOC_REGISTER) then
@@ -522,6 +628,7 @@ implementation
                classes can be changed without breaking programs compiled against
                earlier versions)
              }
+<<<<<<< HEAD
              asmsym:=current_asmdata.RefAsmSymbol(vs.mangledname);
              reference_reset_symbol(tmpref,asmsym,0,sizeof(pint));
              location.reference.index:=hlcg.getintregister(current_asmdata.CurrAsmList,ptruinttype);
@@ -533,6 +640,28 @@ implementation
            begin
              { done }
            end
+=======
+             hreg:=cg.g_indirect_sym_load(current_asmdata.CurrAsmList,vs.mangledname,false);
+             { TODO: clean up. g_indirect_sym_load cannot perform
+                 a plain load for targets that don't need an indirect load
+                 because it's also used in ncgld, but this is not very nice...
+             }
+             if (hreg=NR_NO) then
+               begin
+                 sym:=current_asmdata.RefAsmSymbol(vs.mangledname);
+                 reference_reset_symbol(tmpref,sym,0,sizeof(pint));
+                 location.reference.index:=cg.getaddressregister(current_asmdata.CurrAsmList);
+               end
+             else
+               begin
+                 reference_reset_base(tmpref,hreg,0,sizeof(pint));
+                 location.reference.index:=hreg;
+               end;
+             cg.a_load_ref_reg(current_asmdata.CurrAsmList,OS_ADDR,OS_ADDR,tmpref,location.reference.index);
+             { always packrecords C -> natural alignment }
+             location.reference.alignment:=vs.vardef.alignment;
+           end
+>>>>>>> graemeg/cpstrnew
          else if (location.loc in [LOC_REFERENCE,LOC_CREFERENCE]) then
            begin
              if not is_packed_record_or_object(left.resultdef) then
@@ -754,7 +883,11 @@ implementation
           begin
             { cdecl functions don't have high() so we can not check the range }
             { (can't use current_procdef, since it may be a nested procedure) }
+<<<<<<< HEAD
             if not(tprocdef(tparasymtable(tparavarsym(tloadnode(get_open_const_array(left)).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
+=======
+            if not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
+>>>>>>> graemeg/cpstrnew
              begin
                { Get high value }
                hightree:=load_high_value_node(tparavarsym(tloadnode(get_open_const_array(left)).symtableentry));
@@ -787,6 +920,7 @@ implementation
          else
           if is_dynamic_array(left.resultdef) then
             begin
+<<<<<<< HEAD
                pd:=search_system_proc('fpc_dynarray_rangecheck');
                paramanager.getintparaloc(current_asmdata.CurrAsmList,pd,1,paraloc1);
                paramanager.getintparaloc(current_asmdata.CurrAsmList,pd,2,paraloc2);
@@ -800,6 +934,12 @@ implementation
                    cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,right.location,paraloc2);
                    cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,left.location,paraloc1);
                  end;
+=======
+               paramanager.getintparaloc(pocall_default,1,paraloc1);
+               paramanager.getintparaloc(pocall_default,2,paraloc2);
+               cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,right.location,paraloc2);
+               cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,left.location,paraloc1);
+>>>>>>> graemeg/cpstrnew
                paramanager.freecgpara(current_asmdata.CurrAsmList,paraloc1);
                paramanager.freecgpara(current_asmdata.CurrAsmList,paraloc2);
                cg.allocallcpuregisters(current_asmdata.CurrAsmList);
@@ -817,8 +957,11 @@ implementation
       var
         paraloc1,
         paraloc2: tcgpara;
+<<<<<<< HEAD
         helpername: TIDString;
         pd: tprocdef;
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         paraloc1.init;
         paraloc2.init;
@@ -828,6 +971,7 @@ implementation
           st_widestring,
           st_ansistring:
             begin
+<<<<<<< HEAD
               helpername:='fpc_'+tstringdef(left.resultdef).stringtypname+'_rangecheck';
               pd:=search_system_proc(helpername);
               paramanager.getintparaloc(current_asmdata.CurrAsmList,pd,1,paraloc1);
@@ -842,11 +986,21 @@ implementation
                   cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,right.location,paraloc2);
                   cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,left.location,paraloc1);
                 end;
+=======
+              paramanager.getintparaloc(pocall_default,1,paraloc1);
+              paramanager.getintparaloc(pocall_default,2,paraloc2);
+              cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,left.location,paraloc1);
+              cg.a_load_loc_cgpara(current_asmdata.CurrAsmList,right.location,paraloc2);
+>>>>>>> graemeg/cpstrnew
 
               paramanager.freecgpara(current_asmdata.CurrAsmList,paraloc1);
               paramanager.freecgpara(current_asmdata.CurrAsmList,paraloc2);
               cg.allocallcpuregisters(current_asmdata.CurrAsmList);
+<<<<<<< HEAD
               cg.a_call_name(current_asmdata.CurrAsmList,helpername,false);
+=======
+              cg.a_call_name(current_asmdata.CurrAsmList,'FPC_'+upper(tstringdef(left.resultdef).stringtypname)+'_RANGECHECK',false);
+>>>>>>> graemeg/cpstrnew
               cg.deallocallcpuregisters(current_asmdata.CurrAsmList);
             end;
 
@@ -870,7 +1024,12 @@ implementation
       var
          offsetdec,
          extraoffset : aint;
+<<<<<<< HEAD
          rightp      : pnode;
+=======
+         t        : tnode;
+         otl,ofl  : tasmlabel;
+>>>>>>> graemeg/cpstrnew
          newsize  : tcgsize;
          mulsize,
          bytemulsize,
@@ -929,6 +1088,10 @@ implementation
                   internalerror(2002032218);
               end;
 
+<<<<<<< HEAD
+=======
+              { in ansistrings/widestrings S[1] is p<w>char(S)[0] !! }
+>>>>>>> graemeg/cpstrnew
               if is_ansistring(left.resultdef) then
                 offsetdec:=1
               else
@@ -965,6 +1128,7 @@ implementation
            begin
               { may happen in case of function results }
               case left.location.loc of
+<<<<<<< HEAD
                 LOC_CSUBSETREG,
                 LOC_CREGISTER,
                 LOC_CMMREGISTER,
@@ -972,6 +1136,11 @@ implementation
                 LOC_REGISTER,
                 LOC_MMREGISTER:
                   hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef);
+=======
+                LOC_REGISTER,
+                LOC_MMREGISTER:
+                  location_force_mem(current_asmdata.CurrAsmList,left.location);
+>>>>>>> graemeg/cpstrnew
               end;
              location_copy(location,left.location);
            end;
@@ -992,7 +1161,11 @@ implementation
               or is_64bitint(resultdef)
 {$endif not cpu64bitalu}
               ) then
+<<<<<<< HEAD
            update_reference_offset(location.reference,-tarraydef(left.resultdef).lowrange,bytemulsize);
+=======
+           dec(location.reference.offset,bytemulsize*tarraydef(left.resultdef).lowrange);
+>>>>>>> graemeg/cpstrnew
 
          if right.nodetype=ordconstn then
            begin
@@ -1087,6 +1260,7 @@ implementation
                  (right.location.loc=LOC_JUMP) then
                 internalerror(2006010801);
 
+<<<<<<< HEAD
               { if mulsize = 1, we won't have to modify the index }
               if not(right.location.loc in [LOC_CREGISTER,LOC_REGISTER]) or
                  not valid_index_size(right.location.size) then
@@ -1097,6 +1271,8 @@ implementation
               else
                 indexdef:=right.resultdef;
 
+=======
+>>>>>>> graemeg/cpstrnew
             { produce possible range check code: }
               if cs_check_range in current_settings.localswitches then
                begin

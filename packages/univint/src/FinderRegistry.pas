@@ -3,7 +3,11 @@
  
      Contains:   Data types for Finder AppleEvents
  
+<<<<<<< HEAD
      Version:    OSA-148~28
+=======
+     Version:    OSA-136~14
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
  
@@ -14,8 +18,13 @@
  
 }
 
+<<<<<<< HEAD
 {  Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{ Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -70,11 +79,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -93,33 +105,49 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -174,6 +202,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -212,10 +273,18 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,AERegistry,AEDataModel,OSA;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+{$ifc TARGET_OS_MAC}
+
+=======
+>>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
 
@@ -260,8 +329,277 @@ const
    can reference classes.
   ////////////////////////////////////////////////////////////////////////
 }
+<<<<<<< HEAD
 
 const
+	cInternalFinderObject = FourCharCode('obj '); { cReference - used to distinguish objects used inside the Finder only}
+
+{
+   Main Finder class definitions
+   Indentation implies object model hierarchy
+}
+const
+{ We do not use class cItem from AERegistry.r. Instead our class Item is a cObject}
+                                        {         cItem                        = 'citm',   // defined in AERegistry.r}
+                                        {          cFile                    = 'file',  // defined in AERegistry.r}
+	cAliasFile = FourCharCode('alia');
+	cApplicationFile = FourCharCode('appf');
+	cControlPanelFile = FourCharCode('ccdv');
+	cDeskAccessoryFile = FourCharCode('dafi');
+	cDocumentFile = FourCharCode('docf');
+	cFontFile = FourCharCode('fntf');
+	cSoundFile = FourCharCode('sndf');
+	cClippingFile = FourCharCode('clpf');
+	cContainer = FourCharCode('ctnr');
+	cDesktop = FourCharCode('cdsk');
+	cSharableContainer = FourCharCode('sctr');
+	cDisk = FourCharCode('cdis');
+	cFolder = FourCharCode('cfol');
+	cSuitcase = FourCharCode('stcs');
+	cAccessorySuitcase = FourCharCode('dsut');
+	cFontSuitcase = FourCharCode('fsut');
+	cTrash = FourCharCode('ctrs');
+	cDesktopPrinter = FourCharCode('dskp');
+	cPackage = FourCharCode('pack');
+	cContentSpace = FourCharCode('dwnd'); {          cWindow                    = 'cwin',       // defined in AERegistry.r}
+	cContainerWindow = FourCharCode('cwnd');
+	cInfoWindow = FourCharCode('iwnd');
+	cSharingWindow = FourCharCode('swnd');
+	cStatusWindow = FourCharCode('qwnd');
+	cClippingWindow = FourCharCode('lwnd');
+	cPreferencesWindow = FourCharCode('pwnd');
+	cDTPWindow = FourCharCode('dtpw');
+	cProcess = FourCharCode('prcs');
+	cAccessoryProcess = FourCharCode('pcda');
+	cApplicationProcess = FourCharCode('pcap');
+	cGroup = FourCharCode('sgrp');
+	cUser = FourCharCode('cuse'); {         cApplication                  = 'capp',     // defined in AERegistry.r}
+	cSharingPrivileges = FourCharCode('priv');
+	cPreferences = FourCharCode('cprf');
+	cLabel = FourCharCode('clbl');
+	cSound = FourCharCode('snd ');
+	cAliasList = FourCharCode('alst');
+	cSpecialFolders = FourCharCode('spfl'); { For use by viewer search engines:}
+	cOnlineDisk = FourCharCode('cods');
+	cOnlineLocalDisk = FourCharCode('clds');
+	cOnlineRemoteDisk = FourCharCode('crds'); { Miscellaneous class definitions}
+	cEntireContents = FourCharCode('ects');
+	cIconFamily = FourCharCode('ifam');
+
+
+{
+  //////////////////////////////////////
+   Properties
+  //////////////////////////////////////
+}
+
+{ Properties of class cItem (really cObject)}
+const
+{    pBounds                        = 'pbnd',       // defined in AERegistry.r}
+	pComment = FourCharCode('comt');
+	pContainer = cContainer;
+	pContentSpace = cContentSpace;
+	pCreationDateOld = FourCharCode('crtd'); { to support pre-Finder 8 scripts}
+	pCreationDate = FourCharCode('ascd'); { from File Commands OSAX}
+	pDescription = FourCharCode('dscr');
+	pDisk = cDisk;
+	pFolderOld = cFolder; { to support pre-Finder 8 scripts}
+	pFolder = FourCharCode('asdr'); { from File Commands OSAX}
+	pIconBitmap = FourCharCode('iimg'); {    pID                           = 'ID  ',        // defined in AERegistry.r}
+	pInfoWindow = cInfoWindow;
+	pKind = FourCharCode('kind');
+	pLabelIndex = FourCharCode('labi');
+	pModificationDateOld = FourCharCode('modd'); { to support pre-Finder 8 scripts}
+	pModificationDate = FourCharCode('asmo'); { from File Commands OSAX}
+                                        {    pName                      = 'pnam',         // defined in AERegistry.r}
+	pPhysicalSize = FourCharCode('phys');
+	pPosition = FourCharCode('posn');
+	pIsSelected = FourCharCode('issl');
+	pSize = pPointSize; { pPointSize defined in AERegistry.r}
+	pWindow = cWindow;
+	pPreferencesWindow = cPreferencesWindow;
+
+
+{ Properties of class cFile (subclass of cItem)}
+const
+	pFileCreator = FourCharCode('fcrt');
+	pFileType = FourCharCode('asty'); { from File Commands OSAX}
+	pFileTypeOld = FourCharCode('fitp'); { to support pre-Finder 8 scripts}
+	pIsLocked = FourCharCode('aslk'); { from File Commands OSAX}
+	pIsLockedOld = FourCharCode('islk'); { to support pre-Finder 8 scripts}
+                                        {    pIsStationeryPad               = 'pspd',         // defined in AERegistry.r                }
+                                        {    pVersion                    = 'vers',       // defined in AERegistry.r}
+	pProductVersion = FourCharCode('ver2');
+
+
+{ Properties of class cAliasFile (subclass of cFile)}
+const
+	pOriginalItem = FourCharCode('orig');
+
+{ Properties of class cApplicationFile (subclass of cFile)}
+const
+	pMinAppPartition = FourCharCode('mprt');
+	pAppPartition = FourCharCode('appt');
+	pSuggestedAppPartition = FourCharCode('sprt');
+	pIsScriptable = FourCharCode('isab');
+
+{ Properties of class cURLFile (subclass of cFile)}
+const
+	pInternetLocation = FourCharCode('iloc');
+
+{ Properties of class cSoundFile (subclass of cFile)}
+const
+	pSound = FourCharCode('snd ');
+
+
+{
+   Properties of class cControlPanel (Views CP only) (subclass of cFile)
+   Note: the other view-like preference settings are not available in the Views
+   control panel. These properties are only offered here for backward compatability.
+   To set the full range of Finder Preferences, use the Preferences object.
+}
+const
+	pShowFolderSize = FourCharCode('sfsz'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pShowComment = FourCharCode('scom'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pShowDate = FourCharCode('sdat'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pShowCreationDate = FourCharCode('scda'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pShowKind = FourCharCode('sknd'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pShowLabel = FourCharCode('slbl'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pShowSize = FourCharCode('ssiz'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pShowVersion = FourCharCode('svrs'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pSortDirection = FourCharCode('sord');
+	pShowDiskInfo = FourCharCode('sdin'); { Always on in Finder 8.0 HIS}
+	pListViewIconSize = FourCharCode('lvis'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pGridIcons = FourCharCode('fgrd'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pStaggerIcons = FourCharCode('fstg'); { No longer part of the Finder 8.0 HIS}
+	pViewFont = FourCharCode('vfnt');
+	pViewFontSize = FourCharCode('vfsz');
+
+{ Properties of class cContainer (subclass of cItem)}
+const
+	pCompletelyExpanded = FourCharCode('pexc');
+	pContainerWindow = cContainerWindow;
+	pEntireContents = cEntireContents;
+	pExpandable = FourCharCode('pexa');
+	pExpanded = FourCharCode('pexp');
+	pPreviousView = FourCharCode('svew'); {    pSelection                    = 'sele',       // defined in AERegistry.r}
+	pView = FourCharCode('pvew');
+	pIconSize = pListViewIconSize; { defined above}
+	pKeepArranged = FourCharCode('arrg'); { OBSOLETE in Finder 9 or later}
+	pKeepArrangedBy = FourCharCode('arby'); { OBSOLETE in Finder 9 or later}
+
+{ Properties of class cDesktop (subclass of cContainer)}
+const
+	pStartupDisk = FourCharCode('sdsk');
+	pTrash = FourCharCode('trsh');
+
+{ Properties of class cSharableContainer (subclass of cContainer)}
+const
+	pOwner = FourCharCode('sown');
+	pOwnerPrivileges = FourCharCode('ownr');
+	pGroup = cGroup;
+	pGroupPrivileges = FourCharCode('gppr');
+	pGuestPrivileges = FourCharCode('gstp');
+	pArePrivilegesInherited = FourCharCode('iprv');
+	pExported = FourCharCode('sexp');
+	pMounted = FourCharCode('smou');
+	pSharingProtection = FourCharCode('spro');
+	pSharing = FourCharCode('shar');
+	pSharingWindow = cSharingWindow;
+
+{ Properties of class cDisk (subclass of cSharableContainer)}
+const
+	pCapacity = FourCharCode('capa');
+	pEjectable = FourCharCode('isej');
+	pFreeSpace = FourCharCode('frsp');
+	pLocal = FourCharCode('isrv');
+	pIsStartup = FourCharCode('istd');
+
+{ Properties of class cTrash (subclass of cSharableContainer)}
+const
+	pWarnOnEmpty = FourCharCode('warn');
+
+{ Properties of class cWindow (subclass of cContentSpace)}
+const
+{    pBounds                        = 'pbnd',   // defined in AERegistry.r}
+                                        {    pHasCloseBox                = 'hclb',     // defined in AERegistry.r}
+                                        {    pIsFloating                    = 'isfl',     // defined in AERegistry.r}
+                                        {    pIndex                     = 'pidx',     // defined in AERegistry.r}
+                                        {    pIsModal                    = 'pmod',   // defined in AERegistry.r}
+                                        {    pPosition                    = 'posn',     // defined above}
+                                        {    pIsResizable                = 'prsz',     // defined in AERegistry.r}
+                                        {    pHasTitleBar                = 'ptit',     // defined in AERegistry.r}
+                                        {    pVisible                    = 'pvis',   // defined in AERegistry.r}
+                                        {    pIsZoomable                    = 'iszm',     // defined in AERegistry.r}
+                                        {    pIsZoomed                    = 'pzum',     // defined in AERegistry.r}
+	pIsZoomedFull = FourCharCode('zumf');
+	pIsPopup = FourCharCode('drwr');
+	pIsPulledOpen = FourCharCode('pull'); { only applies to popup windows}
+	pIsCollapsed = FourCharCode('wshd'); { only applies to normal windows}
+
+{ Properties of class cContainerWindow (subclass of cWindow)}
+const
+	pObject = cObject;
+
+{ Properties of class cSharingWindow (subclass of cWindow)}
+const
+	pSharableContainer = cSharableContainer;
+
+{ Properties of class cInfoWindow (subclass of cWindow)}
+const
+	pInfoPanel = FourCharCode('panl');
+
+
+{ Properties of networking support}
+const
+	pFileShareOn = FourCharCode('fshr');
+	pFileShareStartingUp = FourCharCode('fsup');
+	pProgramLinkingOn = FourCharCode('iac ');
+
+{ Properties of class cPreferencesWindow (subclass of cWindow)}
+const
+{    pShowFolderSize                   = 'sfsz',         // defined above for Views CP}
+                                        {    pShowComment                = 'scom',      // defined above for Views CP}
+	pShowModificationDate = pShowDate; { pShowDate defined above for Views CP}
+                                        {    pShowKind                    = 'sknd',        // defined above for Views CP}
+                                        {    pShowLabel                    = 'slbl',         // defined above for Views CP}
+                                        {    pShowSize                    = 'ssiz',        // defined above for Views CP}
+                                        {    pShowVersion                = 'svrs',      // defined above for Views CP}
+                                        {    pShowCreationDate             = 'scda',      // Removed from Finder 8.0 HIS}
+                                        {    pShowFileType                 = 'sfty',       // Removed from Finder 8.0 HIS}
+                                        {    pShowFileCreator               = 'sfcr',         // Removed from Finder 8.0 HIS}
+                                        {    pListViewIconSize             = 'lvis',      // defined above for Views CP}
+                                        {    pGridIcons                    = 'fgrd',         // defined above for Views CP}
+                                        {    pStaggerIcons                 = 'fstg',       // defined above for Views CP}
+                                        {    pViewFont                    = 'vfnt',        // defined above for Views CP}
+                                        {    pViewFontSize                 = 'vfsz',       // defined above for Views CP}
+	pUseRelativeDate = FourCharCode('urdt'); { Moved to a per-folder basis in Finder 8.0 HIS}
+	pDelayBeforeSpringing = FourCharCode('dela');
+	pSpringOpenFolders = FourCharCode('sprg');
+	pUseShortMenus = FourCharCode('usme');
+	pUseWideGrid = FourCharCode('uswg');
+	pLabel1 = FourCharCode('lbl1');
+	pLabel2 = FourCharCode('lbl2');
+	pLabel3 = FourCharCode('lbl3');
+	pLabel4 = FourCharCode('lbl4');
+	pLabel5 = FourCharCode('lbl5');
+	pLabel6 = FourCharCode('lbl6');
+	pLabel7 = FourCharCode('lbl7');
+	pDefaultIconViewIconSize = FourCharCode('iisz');
+	pDefaultButtonViewIconSize = FourCharCode('bisz');
+	pDefaultListViewIconSize = FourCharCode('lisz'); { old use of this name is now pIconSize}
+	pIconViewArrangement = FourCharCode('iarr');
+	pButtonViewArrangement = FourCharCode('barr');
+=======
+>>>>>>> graemeg/cpstrnew
+
+{
+   The next bunch are the various arrangements that make up
+   enumArrangement
+}
+const
+<<<<<<< HEAD
+=======
 	cInternalFinderObject = FourCharCode('obj '); { cReference - used to distinguish objects used inside the Finder only}
 
 {
@@ -526,6 +864,7 @@ const
    enumArrangement
 }
 const
+>>>>>>> graemeg/cpstrnew
 	pNoArrangement = FourCharCode('narr');
 	pSnapToGridArrangement = FourCharCode('grda');
 	pByNameArrangement = FourCharCode('nama');

@@ -116,7 +116,11 @@ begin
     nodeType := node.nodeType;
     assertEquals('PIisFifthChild', 7, nodeType);
     nodeValue := TDOMProcessingInstruction(node).data;
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> graemeg/cpstrnew
     node := node.nextSibling;
     nodeType := node.nodeType;
     assertEquals('TextisSixthChild', 3, nodeType);
@@ -178,7 +182,11 @@ begin
     nodeType := node.nodeType;
     assertEquals('PIisFifthChild', 7, nodeType);
     nodeValue := TDOMProcessingInstruction(node).data;
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> graemeg/cpstrnew
     node := node.nextSibling;
     assertNull('SixthIsNull', node);
   end;
@@ -223,7 +231,11 @@ begin
   attrSpecified := attr.specified;
   assertTrue('titleSpecified', attrSpecified);
   attrValue := attr.nodeValue;
+<<<<<<< HEAD
   assertEqualsW('titleValue', 'default', attrValue);
+=======
+  assertEquals('titleValue', 'default', attrValue);
+>>>>>>> graemeg/cpstrnew
 end;
 
 { tests that namespace fixup is done while serializing }
@@ -256,11 +268,19 @@ begin
 
   docElem := parsedDoc.documentElement;
   docElemLocalName := docElem.localName;
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEqualsW('docElemNS', namespaceURI, docElemNS);
   attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
   assertEqualsW('properNSAttrValue', 'test value', attrValue);
+=======
+  assertEquals('docElemLocalName', 'test', docElemLocalName);
+  docElemNS := TDOMNode(docElem).namespaceURI;
+  assertEquals('docElemNS', namespaceURI, docElemNS);
+  attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
+  assertEquals('properNSAttrValue', 'test value', attrValue);
+>>>>>>> graemeg/cpstrnew
 end;
 
 { tests that namespace fixup is done while serializing }
@@ -293,11 +313,19 @@ begin
 
   docElem := parsedDoc.documentElement;
   docElemLocalName := docElem.localName;
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEqualsW('docElemNS', namespaceURI, docElemNS);
   attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
   assertEqualsW('properNSAttrValue', 'test value', attrValue);
+=======
+  assertEquals('docElemLocalName', 'test', docElemLocalName);
+  docElemNS := TDOMNode(docElem).namespaceURI;
+  assertEquals('docElemNS', namespaceURI, docElemNS);
+  attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
+  assertEquals('properNSAttrValue', 'test value', attrValue);
+>>>>>>> graemeg/cpstrnew
 end;
 
 initialization

@@ -32,6 +32,7 @@ Function LoadLibrary(const Name : RawByteString) : TLibHandle; inline;
 Function SafeLoadLibrary(const Name : UnicodeString) : TLibHandle; inline;
 Function LoadLibrary(const Name : UnicodeString) : TLibHandle; inline;
 
+<<<<<<< HEAD
 Function GetProcedureAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
 Function GetProcedureAddress(Lib : TLibHandle; Ordinal: TOrdinalEntry) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
 Function UnloadLibrary(Lib : TLibHandle) : Boolean; inline;
@@ -41,6 +42,17 @@ Function GetLoadErrorStr: string; inline;
 
 Function FreeLibrary(Lib : TLibHandle) : Boolean; inline;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
+=======
+Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
+Function LoadLibrary(const Name : AnsiString) : TLibHandle;
+Function GetProcedureAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+Function UnloadLibrary(Lib : TLibHandle) : Boolean;
+
+// Kylix/Delphi compability
+
+Function FreeLibrary(Lib : TLibHandle) : Boolean;
+Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> graemeg/cpstrnew
 
 Type
   HModule = TLibHandle; 
@@ -62,16 +74,24 @@ begin
   Result:=System.LoadLibrary(Name);
 end;
 
+<<<<<<< HEAD
 Function SafeLoadLibrary(const Name : UnicodeString) : TLibHandle;
 begin
   Result:=System.SafeLoadLibrary(Name);
 end;
+=======
+Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> graemeg/cpstrnew
 
 Function LoadLibrary(const Name : UnicodeString) : TLibHandle;
 begin
   Result:=System.LoadLibrary(Name);
 end;
 
+<<<<<<< HEAD
+=======
+Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
+>>>>>>> graemeg/cpstrnew
 
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName: AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif};
 begin

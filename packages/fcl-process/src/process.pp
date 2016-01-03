@@ -42,11 +42,17 @@ Type
 
 Type
   {$ifdef UNIX}
+<<<<<<< HEAD
   TProcessForkEvent = procedure(Sender : TObject) of object;
   {$endif UNIX}
 
   { TProcess }
 
+=======
+  TProcessForkEvent = procedure;
+  {$endif UNIX}
+
+>>>>>>> graemeg/cpstrnew
   TProcess = Class (TComponent)
   Private
     FProcessOptions : TProcessOptions;
@@ -252,7 +258,10 @@ begin
   {$ifdef UNIX}
   FForkEvent:=nil;
   {$endif UNIX}
+<<<<<<< HEAD
   FPipeBufferSize := 1024;
+=======
+>>>>>>> graemeg/cpstrnew
   FEnvironment:=TStringList.Create;
   FParameters:=TStringList.Create;
 end;

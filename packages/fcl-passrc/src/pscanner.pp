@@ -158,6 +158,7 @@ type
     tkLineEnding,
     tkTab
     );
+<<<<<<< HEAD
   TTokens = set of TToken;
 
   { TMacroDef }
@@ -173,6 +174,8 @@ type
   end;
 
   { TLineReader }
+=======
+>>>>>>> graemeg/cpstrnew
 
   TLineReader = class
   Private
@@ -188,6 +191,7 @@ type
 
   TFileLineReader = class(TLineReader)
   private
+    FFilename: string;
     FTextFile: Text;
     FileOpened: Boolean;
     FBuffer : Array[0..4096-1] of byte;
@@ -196,8 +200,10 @@ type
     destructor Destroy; override;
     function IsEOF: Boolean; override;
     function ReadLine: string; override;
+    property Filename: string read FFilename;
   end;
 
+<<<<<<< HEAD
   { TStreamLineReader }
 
   TStreamLineReader = class(TLineReader)
@@ -239,6 +245,12 @@ type
 
   TBaseFileResolver = class
   private
+=======
+  { TFileResolver }
+
+  TFileResolver = class
+  private
+>>>>>>> graemeg/cpstrnew
     FBaseDirectory: string;
     FIncludePaths: TStringList;
     FStrictFileCase : Boolean;
@@ -250,6 +262,7 @@ type
   public
     constructor Create; virtual;
     destructor Destroy; override;
+<<<<<<< HEAD
     procedure AddIncludePath(const APath: string); virtual;
     function FindSourceFile(const AName: string): TLineReader; virtual; abstract;
     function FindIncludeFile(const AName: string): TLineReader; virtual; abstract;
@@ -287,6 +300,13 @@ type
     function FindSourceFile(const AName: string): TLineReader; override;
     function FindIncludeFile(const AName: string): TLineReader; override;
     Property OwnsStreams : Boolean Read FOwnsStreams write SetOwnsStreams;
+=======
+    procedure AddIncludePath(const APath: string);
+    function FindSourceFile(const AName: string): TLineReader;
+    function FindIncludeFile(const AName: string): TLineReader;
+    Property StrictFileCase : Boolean Read FStrictFileCase Write FStrictFileCase;
+    property BaseDirectory: string read FBaseDirectory write FBaseDirectory;
+>>>>>>> graemeg/cpstrnew
   end;
 
   EScannerError       = class(Exception);
@@ -302,6 +322,8 @@ type
   TPScannerLogHandler = Procedure (Sender : TObject; Const Msg : String) of object;
   TPScannerLogEvent = (sleFile,sleLineNumber,sleConditionals);
   TPScannerLogEvents = Set of TPScannerLogEvent;
+
+  { TPascalScanner }
 
   TPascalScanner = class
   private
@@ -336,11 +358,14 @@ type
     Procedure DoLog(Const Fmt : String; Args : Array of const;SkipSourceInfo : Boolean = False);overload;
     procedure Error(const Msg: string);overload;
     procedure Error(const Msg: string; Args: array of Const);overload;
+<<<<<<< HEAD
     procedure HandleDefine(Param: String); virtual;
     procedure HandleIncludeFile(Param: String); virtual;
     procedure HandleUnDefine(Param: String);virtual;
     function HandleMacro(AIndex: integer): TToken;virtual;
     procedure PushStackItem; virtual;
+=======
+>>>>>>> graemeg/cpstrnew
     function DoFetchTextToken: TToken;
     function DoFetchToken: TToken;
     procedure ClearFiles;
@@ -494,7 +519,10 @@ const
 function FilenameIsAbsolute(const TheFilename: string):boolean;
 function FilenameIsWinAbsolute(const TheFilename: string): boolean;
 function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
+<<<<<<< HEAD
 function IsNamedToken(Const AToken : String; Out T : TToken) : Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 
 implementation
 
@@ -610,6 +638,7 @@ function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
 begin
   Result:=(TheFilename<>'') and (TheFilename[1]='/');
 end;
+<<<<<<< HEAD
 
 { TMacroDef }
 
@@ -796,11 +825,18 @@ end;
 { ---------------------------------------------------------------------
   TFileLineReader
   ---------------------------------------------------------------------}
+=======
+>>>>>>> graemeg/cpstrnew
 
 constructor TFileLineReader.Create(const AFilename: string);
 
 begin
+<<<<<<< HEAD
   inherited Create(AFileName);
+=======
+  inherited Create;
+  FFilename:=AFilename;
+>>>>>>> graemeg/cpstrnew
   Assign(FTextFile, AFilename);
   Reset(FTextFile);
   SetTextBuf(FTextFile,FBuffer,SizeOf(FBuffer));
@@ -940,6 +976,7 @@ end;
 
 function TFileResolver.FindIncludeFile(const AName: string): TLineReader;
 
+<<<<<<< HEAD
 Var
   FN : String;
 
@@ -951,6 +988,70 @@ begin
       Result := TFileLineReader.Create(FN);
     except
       Result:=Nil;
+=======
+  function SearchLowUpCase(FN: string): string;
+  var
+    Dir: String;
+  begin
+    If FileExists(FN) then
+      Result:=FN
+    else if StrictFileCase then
+      Result:=''
+    else
+      begin
+      Dir:=ExtractFilePath(FN);
+      FN:=ExtractFileName(FN);
+      Result:=Dir+LowerCase(FN);
+      If FileExists(Result) then exit;
+      Result:=Dir+uppercase(Fn);
+      If FileExists(Result) then exit;
+      Result:='';
+      end;
+  end;
+
+var
+  i: Integer;
+  FN : string;
+
+begin
+  Result := nil;
+  // convert pathdelims to system
+  FN:=SetDirSeparators(AName);
+
+  If FilenameIsAbsolute(FN) then
+    begin
+      if FileExists(FN) then
+        Result := TFileLineReader.Create(FN);
+    end
+  else
+    begin
+    // file name is relative
+
+    // search in include path
+    I:=0;
+    While (Result=Nil) and (I<FIncludePaths.Count) do
+      begin
+      Try
+        FN:=SearchLowUpCase(FIncludePaths[i]+AName);
+        If (FN<>'') then
+          Result := TFileLineReader.Create(FN);
+      except
+        Result:=Nil;
+      end;
+      Inc(I);
+      end;
+    // search in BaseDirectory
+    if BaseDirectory<>'' then
+      begin
+      FN:=SearchLowUpCase(BaseDirectory+AName);
+	  try
+      If (FN<>'') then   
+        Result := TFileLineReader.Create(FN);
+      except 
+        Result:=nil;
+        end;		
+      end;
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 
@@ -1141,6 +1242,7 @@ begin
 
 end;
 
+<<<<<<< HEAD
 Procedure TPascalScanner.PushStackItem;
 
 Var
@@ -1241,6 +1343,8 @@ begin
     end;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 function TPascalScanner.DoFetchToken: TToken;
 
   function FetchLine: Boolean;
@@ -1638,6 +1742,7 @@ begin
                 Move(TokenStart^, Param[1], SectionLength);
             end else
               Param := '';
+<<<<<<< HEAD
             if Not PPIsSkipping then
               begin
               if (Directive = 'I') or (Directive = 'INCLUDE') then
@@ -1656,6 +1761,51 @@ begin
                 HandleDefine(Param)
               else if (Directive = 'UNDEF') then
                 HandleUnDefine(Param)
+=======
+            // WriteLn('Direktive: "', Directive, '", Param: "', Param, '"');
+            if (Directive = 'I') or (Directive = 'INCLUDE') then
+            begin
+              if (not PPIsSkipping) and ((Param='') or (Param[1]<>'%')) then
+              begin
+                IncludeStackItem := TIncludeStackItem.Create;
+                IncludeStackItem.SourceFile := CurSourceFile;
+                IncludeStackItem.Filename := CurFilename;
+                IncludeStackItem.Token := CurToken;
+                IncludeStackItem.TokenString := CurTokenString;
+                IncludeStackItem.Line := CurLine;
+                IncludeStackItem.Row := CurRow;
+                IncludeStackItem.TokenStr := TokenStr;
+                FIncludeStack.Add(IncludeStackItem);
+                if Length(Param)>1 then
+                  begin
+                    if (Param[1]=#39) and (Param[length(Param)]=#39) then
+                     param:=copy(param,2,length(param)-2);
+                  end;
+               
+                FCurSourceFile := FileResolver.FindIncludeFile(Param);
+                if not Assigned(CurSourceFile) then
+                  Error(SErrIncludeFileNotFound, [Param]);
+                FCurFilename := Param;
+                if FCurSourceFile is TFileLineReader then
+                  FCurFilename := TFileLineReader(FCurSourceFile).Filename; // nicer error messages
+                FCurRow := 0;
+              end
+             else
+              if Param[1]='%' then
+                begin
+                  fcurtokenstring:='{$i '+param+'}';
+                  fcurtoken:=tkstring;  
+                  result:=fcurtoken;
+                  exit; 
+                end;
+            end else if Directive = 'DEFINE' then
+            begin
+              if not PPIsSkipping then
+              begin
+                Param := UpperCase(Param);
+                if Defines.IndexOf(Param) < 0 then
+                  Defines.Add(Param);
+>>>>>>> graemeg/cpstrnew
               end;
             if (Directive = 'IFDEF') then
               begin

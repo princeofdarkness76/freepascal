@@ -136,13 +136,21 @@ implementation
                      end;
                     if try_to_consume(_INDEX) then
                      begin
+<<<<<<< HEAD
                        pt:=comp_expr([ef_accept_equal]);
+=======
+                       pt:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
                        if pt.nodetype=ordconstn then
                         if (Tordconstnode(pt).value<int64(low(index))) or
                            (Tordconstnode(pt).value>int64(high(index))) then
                           begin
                             index:=0;
+<<<<<<< HEAD
                             message3(type_e_range_check_error_bounds,tostr(Tordconstnode(pt).value),tostr(low(index)),tostr(high(index)))
+=======
+                            message(parser_e_range_check_error)
+>>>>>>> graemeg/cpstrnew
                           end
                         else
                           index:=Tordconstnode(pt).value.svalue
@@ -160,11 +168,17 @@ implementation
                      end;
                     if try_to_consume(_NAME) then
                      begin
+<<<<<<< HEAD
                        pt:=comp_expr([ef_accept_equal]);
                        if pt.nodetype=stringconstn then
                          hpname:=strpas(tstringconstnode(pt).value_str)
                        else if is_constcharnode(pt) then
                          hpname:=chr(tordconstnode(pt).value.svalue and $ff)
+=======
+                       pt:=comp_expr(true,false);
+                       if pt.nodetype=stringconstn then
+                         hpname:=strpas(tstringconstnode(pt).value_str)
+>>>>>>> graemeg/cpstrnew
                        else
                          consume(_CSTRING);
                        options:=options or eo_name;

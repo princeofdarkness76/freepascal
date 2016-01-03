@@ -64,6 +64,62 @@ begin
   ArrayStringToPPchar:=p;
 end;
 
+<<<<<<< HEAD
+=======
+
+Procedure FSplit(const Path:PathStr;Var Dir:DirStr;Var Name:NameStr;Var Ext:ExtStr);
+Var
+  DotPos,SlashPos,i : longint;
+Begin
+  SlashPos:=0;
+  DotPos:=256;
+  i:=Length(Path);
+  While (i>0) and (SlashPos=0) Do
+   Begin
+     If (DotPos=256) and (Path[i]='.') Then
+      begin
+        DotPos:=i;
+      end;
+     If (Path[i]='/') Then
+      SlashPos:=i;
+     Dec(i);
+   End;
+  Ext:=Copy(Path,DotPos,255);
+  Dir:=Copy(Path,1,SlashPos);
+  Name:=Copy(Path,SlashPos + 1,DotPos - SlashPos - 1);
+End;
+
+
+Function Dirname(Const path:pathstr):pathstr;
+{
+  This function returns the directory part of a complete path.
+  Unless the directory is root '/', The last character is not
+  a slash.
+}
+var
+  Dir  : PathStr;
+  Name : NameStr;
+  Ext  : ExtStr;
+begin
+  FSplit(Path,Dir,Name,Ext);
+  if length(Dir)>1 then
+   Delete(Dir,length(Dir),1);
+  DirName:=Dir;
+end;
+
+Function StringToPPChar(Var S:String;ReserveEntries:integer):ppchar;
+{
+  Create a PPChar to structure of pchars which are the arguments specified
+  in the string S. Especially useful for creating an ArgV for Exec-calls
+  Note that the string S is destroyed by this call.
+}
+
+begin
+  S:=S+#0;
+  StringToPPChar:=StringToPPChar(pchar(@S[1]),ReserveEntries);
+end;
+
+>>>>>>> graemeg/cpstrnew
 Function StringToPPChar(Var S:AnsiString;ReserveEntries:integer):ppchar;
 {
   Create a PPChar to structure of pchars which are the arguments specified

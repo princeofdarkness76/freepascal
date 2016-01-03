@@ -48,14 +48,23 @@ type
     FLastChange    : integer;
   public
     destructor destroy; override;
+<<<<<<< HEAD
     procedure StoreFieldDefs(AnAutoIncValue : integer); override;
     procedure StoreRecord(ARowState : TRowState; AUpdOrder : integer = 0); override;
+=======
+    procedure StoreFieldDefs(AFieldDefs : TFieldDefs); override;
+    procedure StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0); override;
+>>>>>>> graemeg/cpstrnew
     procedure FinalizeStoreRecords; override;
     procedure LoadFieldDefs(var AnAutoIncValue : integer); override;
     procedure InitLoadRecords; override;
     function GetCurrentRecord : boolean; override;
     function GetRecordRowState(out AUpdOrder : Integer) : TRowState; override;
+<<<<<<< HEAD
     procedure RestoreRecord; override;
+=======
+    procedure RestoreRecord(ADataset : TCustomBufDataset); override;
+>>>>>>> graemeg/cpstrnew
     procedure GotoNextRecord; override;
     class function RecognizeStream(AStream : TStream) : boolean; override;
   end;
@@ -335,6 +344,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.RestoreRecord;
 var FieldNr      : integer;
     AFieldNode   : TDomNode;
@@ -342,6 +352,11 @@ var FieldNr      : integer;
     AField: TField;
     s: string;
     ws: widestring;
+=======
+procedure TXMLDatapacketReader.RestoreRecord(ADataset : TCustomBufDataset);
+var FieldNr    : integer;
+    AFieldNode : TDomNode;
+>>>>>>> graemeg/cpstrnew
 begin
   with DataSet do for FieldNr:=0 to FieldDefs.Count-1 do
     begin
@@ -369,7 +384,11 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.StoreRecord(ARowState : TRowState; AUpdOrder : integer = 0);
+=======
+procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
+>>>>>>> graemeg/cpstrnew
 var FieldNr : Integer;
     AFieldDef: TFieldDef;
     AField: TField;

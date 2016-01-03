@@ -1,7 +1,10 @@
 {$mode delphi}
 {$modeswitch cvar}
 {$modeswitch objectivec1}
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 unit CoreData;
 interface
 uses

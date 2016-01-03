@@ -22,9 +22,18 @@ A_STF,
 A_LDF,
 A_LFM,
 A_CLZ,
+<<<<<<< HEAD
 A_CPS,
 A_CPSID,
 A_CPSIE,
+=======
+A_CNF,
+A_COS,
+A_CPS,
+A_CPSID,
+A_CPSIE,
+A_DVF,
+>>>>>>> graemeg/cpstrnew
 A_EOR,
 A_LDC,
 A_LDM,
@@ -259,6 +268,12 @@ A_FSITOD,
 A_FSITOS,
 A_FSQRTD,
 A_FSQRTS,
+<<<<<<< HEAD
+=======
+A_FSTD,
+A_FSTM,
+A_FSTS,
+>>>>>>> graemeg/cpstrnew
 A_FSUBD,
 A_FSUBS,
 A_FTOSID,
@@ -269,11 +284,23 @@ A_FUITOD,
 A_FUITOS,
 A_FMDRR,
 A_FMRRD,
+<<<<<<< HEAD
 A_POP,
 A_PUSH,
 A_SDIV,
 A_UDIV,
 A_MOVT,
+=======
+A_ASR,
+A_LSR,
+A_LSL,
+A_ROR,
+A_SDIV,
+A_UDIV,
+A_MOVT,
+A_LDREX,
+A_STREX,
+>>>>>>> graemeg/cpstrnew
 A_IT,
 A_ITE,
 A_ITT,
@@ -288,6 +315,7 @@ A_ITTTE,
 A_ITEET,
 A_ITTET,
 A_ITETT,
+<<<<<<< HEAD
 A_ITTTT,
 A_TBB,
 A_TBH,
@@ -354,4 +382,7 @@ A_FML,
 A_FRD,
 A_LGN,
 A_LOG
+=======
+A_ITTTT
+>>>>>>> graemeg/cpstrnew
 );

@@ -68,11 +68,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,6 +91,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -107,17 +111,38 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -167,6 +192,34 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -249,6 +302,7 @@ const
 	fourBitMode = 130;  {Id of FourBitMode Parameter list.}
 	eightBitMode = 131;   {Id of EightBitMode Parameter list.}
 
+<<<<<<< HEAD
 const
 	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
 	thirtyTwoBitMode = 133;  {Id of ThirtyTwoBitMode Parameter list.}
@@ -274,6 +328,33 @@ const
 
 { ddcBlockType constants}
 const
+=======
+const
+	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
+	thirtyTwoBitMode = 133;  {Id of ThirtyTwoBitMode Parameter list.}
+	firstVidMode = 128;  {The new, better way to do the above. }
+	secondVidMode = 129;  { QuickDraw only supports six video }
+	thirdVidMode = 130;  { at this time.      }
+	fourthVidMode = 131;
+	fifthVidMode = 132;
+	sixthVidMode = 133;
+	spGammaDir = 64;
+	spVidNamesDir = 65;
+
+
+{ csTimingFormat values in VDTimingInfo }
+{ look in the declaration rom for timing info }
+const
+	kDeclROMtables = FourCharCode('decl');
+	kDetailedTimingFormat = FourCharCode('arba'); { Timing is a detailed timing}
+
+{ Size of a block of EDID (Extended Display Identification Data) }
+const
+	kDDCBlockSize = 128;
+
+{ ddcBlockType constants}
+const
+>>>>>>> graemeg/cpstrnew
 	kDDCBlockTypeEDID = 0;     { EDID block type. }
 
 { ddcFlags constants}
@@ -718,6 +799,7 @@ const
 }
 type
 	ExtendedSenseCode = UInt8;
+<<<<<<< HEAD
 const
 	kESCZero21Inch = $00; { 21" RGB                     }
 	kESCOnePortraitMono = $14; { Portrait Monochrome              }
@@ -755,6 +837,45 @@ const
 type
 	DepthMode = UInt16;
 const
+=======
+const
+	kESCZero21Inch = $00; { 21" RGB                     }
+	kESCOnePortraitMono = $14; { Portrait Monochrome              }
+	kESCTwo12Inch = $21; { 12" RGB                    }
+	kESCThree21InchRadius = $31; { 21" RGB (Radius)               }
+	kESCThree21InchMonoRadius = $34; { 21" Monochrome (Radius)           }
+	kESCThree21InchMono = $35; { 21" Monochrome               }
+	kESCFourNTSC = $0A; { NTSC                     }
+	kESCFivePortrait = $1E; { Portrait RGB              }
+	kESCSixMSB1 = $03; { MultiScan Band-1 (12" thru 1Six")  }
+	kESCSixMSB2 = $0B; { MultiScan Band-2 (13" thru 19")       }
+	kESCSixMSB3 = $23; { MultiScan Band-3 (13" thru 21")       }
+	kESCSixStandard = $2B; { 13"/14" RGB or 12" Monochrome   }
+	kESCSevenPAL = $00; { PAL                        }
+	kESCSevenNTSC = $14; { NTSC                     }
+	kESCSevenVGA = $17; { VGA                        }
+	kESCSeven16Inch = $2D; { 16" RGB (GoldFish)               }
+	kESCSevenPALAlternate = $30; { PAL (Alternate)                }
+	kESCSeven19Inch = $3A; { Third-Party 19Ó                 }
+	kESCSevenDDC = $3E; { DDC display                   }
+	kESCSevenNoDisplay = $3F;  { No display connected           }
+
+{ DepthMode
+    This abstract data type is used to to reference RELATIVE pixel depths.
+    Its definition is largely derived from its past usage, analogous to 'xxxVidMode'
+
+    Bits per pixel DOES NOT directly map to 'DepthMode'  For example, on some
+    graphics hardware, 'kDepthMode1' may represent 1 BPP, whereas on other
+    hardware, 'kDepthMode1' may represent 8BPP.
+
+    DepthMode IS considered to be ordinal, i.e., operations such as <, >, ==, etc.
+    behave as expected.  The values of the constants which comprise the set are such
+    that 'kDepthMode4 < kDepthMode6' behaves as expected.
+}
+type
+	DepthMode = UInt16;
+const
+>>>>>>> graemeg/cpstrnew
 	kDepthMode1 = 128;
 	kDepthMode2 = 129;
 	kDepthMode3 = 130;
@@ -1199,8 +1320,13 @@ const
 	kRangeSupportsSyncOnGreenMask = 1 shl kRangeSupportsSyncOnGreenBit;
 	kRangeSupportsCompositeSyncMask = 1 shl kRangeSupportsCompositeSyncBit;
 	kRangeSupportsVSyncSerrationMask = 1 shl kRangeSupportsVSyncSerrationBit;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 const
 { csHorizontalSyncConfig and csVerticalSyncConfig}
 	kSyncPositivePolarityBit = 0;    { Digital separate sync polarity for analog interfaces (0 => negative polarity)}

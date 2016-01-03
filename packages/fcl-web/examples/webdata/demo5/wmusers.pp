@@ -5,7 +5,11 @@ unit wmusers;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, 
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
+>>>>>>> graemeg/cpstrnew
   db, dbf, fpwebdata, extjsjson, extjsxml;
 
 type
@@ -32,8 +36,11 @@ var
 
 implementation
 
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 Type
 
     { TDBFWebDataProvider }
@@ -79,6 +86,11 @@ begin
 end;
 
 initialization
+<<<<<<< HEAD
+=======
+  {$I wmusers.lrs}
+
+>>>>>>> graemeg/cpstrnew
   RegisterHTTPModule('Provider', TFPWebProviderDataModule2);
   WebDataProviderManager.RegisterProvider('AName',TDBFWebDataProvider);
 end.

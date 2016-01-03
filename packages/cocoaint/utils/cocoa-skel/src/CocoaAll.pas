@@ -3,7 +3,10 @@ unit CocoaAll;
 {$mode delphi}
 {$modeswitch objectivec1}
 {$modeswitch cvar} { for "external" after the semi-colon with external vars }
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 
 interface
 

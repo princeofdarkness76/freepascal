@@ -7,6 +7,7 @@ main=rtl
 
 [target]
 loaders=nwplibc nwl_main nwl_dlle
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       lineinfo lnfodwrf  heaptrc \
       nwsnut libc dos sysconst \
@@ -15,6 +16,17 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       charset cpall \
       rtlconsts math \
       dynlibs cmem ctypes
+=======
+units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
+      lineinfo lnfodwrf winsock heaptrc matrix \
+      nwsnut libc dos crt objects sysconst \
+      initc sysutils types typinfo fgl classes fmtbcd \
+      cpu mmx getopts \
+      dateutils strutils convutils \
+      charset ucomplex variants \
+      rtlconsts math varutils freebidi utf8bidi \
+      mouse video keyboard dynlibs cmem sockets ctypes
+>>>>>>> graemeg/cpstrnew
 
 rsts=math typinfo classes sysconst rtlconsts system
 implicitunits=exeinfo \

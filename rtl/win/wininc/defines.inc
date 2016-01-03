@@ -1724,6 +1724,9 @@
 
 
 
+
+
+
      INVALID_HANDLE_VALUE = HANDLE(-1);
      INVALID_FILE_SIZE    = DWORD(-1);
 
@@ -5915,6 +5918,7 @@ const
     IMAGE_FILE_MACHINE_AMD64             = $8664;  // AMD64 (K8)
     IMAGE_FILE_MACHINE_M32R              = $9041;  // M32R little-endian
     IMAGE_FILE_MACHINE_CEE               = $C0EE;
+<<<<<<< HEAD
     IMAGE_FILE_LARGE_ADDRESS_AWARE       = $20;    // for peflags.
 
   //
@@ -5977,6 +5981,8 @@ const
   // TLS Characteristic Flags
   //
      IMAGE_SCN_SCALE_INDEX                = $00000001;  // Tls index is scaled
+=======
+>>>>>>> graemeg/cpstrnew
 
 
     GWLP_WNDPROC        		 = -4; 
@@ -5993,6 +5999,7 @@ const
     GCLP_WNDPROC                         = -24;
     GCLP_HICONSM                         = -34;
 
+<<<<<<< HEAD
     IMAGE_ORDINAL_FLAG64 = uint64($8000000000000000);
     IMAGE_ORDINAL_FLAG32 = uint32($80000000);
     bm__IMAGE_TLS_DIRECTORY64_Reserved0 = $FFFFF;
@@ -6013,6 +6020,8 @@ const
 {$else}
     IMAGE_ORDINAL_FLAG = IMAGE_ORDINAL_FLAG32;
 {$endif}                                                          
+=======
+>>>>>>> graemeg/cpstrnew
 
 // #if(WINVER >= 0x0500)
 {/*

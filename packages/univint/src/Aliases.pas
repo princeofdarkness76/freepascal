@@ -5,8 +5,22 @@
                  The contents of this header file are deprecated.
                  Use Foundation or CoreFoundation URL Bookmarks instead.
  
+<<<<<<< HEAD
      Copyright:  © 1989-2011 by Apple Inc. All rights reserved.
 }
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -61,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -81,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -100,12 +118,30 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -124,6 +160,8 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -133,6 +171,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -147,19 +186,40 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
+=======
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+	{$setc TARGET_CPU_ARM := TRUE}
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -236,6 +296,7 @@ const
 	kARMSearchRelFirst = $00000400; { search target on a relative path first }
 	kARMTryFileIDFirst = $00000800; { search by file id before path }
 
+<<<<<<< HEAD
 const
 { define alias record information types }
 	asiZoneName = -3;   { get zone name }
@@ -246,6 +307,18 @@ const
 
 { ResolveAliasFileWithMountFlags options }
 const
+=======
+const
+{ define alias record information types }
+	asiZoneName = -3;   { get zone name }
+	asiServerName = -2;   { get server name }
+	asiVolumeName = -1;   { get volume name }
+	asiAliasName = 0;    { get aliased file/folder/volume name }
+	asiParentName = 1;     { get parent folder name }
+
+{ ResolveAliasFileWithMountFlags options }
+const
+>>>>>>> graemeg/cpstrnew
 	kResolveAliasFileNoUI = $00000001; { no user interaction during resolution }
 	kResolveAliasTryFileIDFirst = $00000002; { search by file id before path }
 
@@ -297,7 +370,12 @@ type
  }
 { old name was NewAliasFilterProc }
 function NewAliasFilterUPP( userRoutine: AliasFilterProcPtr ): AliasFilterUPP; external name '_NewAliasFilterUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 {
  *  DisposeAliasFilterUPP()
  *  
@@ -305,6 +383,7 @@ function NewAliasFilterUPP( userRoutine: AliasFilterProcPtr ): AliasFilterUPP; e
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
+<<<<<<< HEAD
  }
 procedure DisposeAliasFilterUPP( userUPP: AliasFilterUPP ); external name '_DisposeAliasFilterUPP';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
@@ -468,6 +547,171 @@ function FSUpdateAlias( {const} fromFile: FSRefPtr { can be NULL }; const (*var*
 
 
 {
+=======
+ }
+procedure DisposeAliasFilterUPP( userUPP: AliasFilterUPP ); external name '_DisposeAliasFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeAliasFilterUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeAliasFilterUPP( cpbPtr: CInfoPBPtr; var quitFlag: Boolean; myDataPtr: Ptr; userUPP: AliasFilterUPP ): Boolean; external name '_InvokeAliasFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{#if __MACH__
+    #define NewAliasFilterUPP(userRoutine)                      ((AliasFilterUPP)userRoutine)
+    #define DisposeAliasFilterUPP(userUPP)
+    #define InvokeAliasFilterUPP(cpbPtr, quitFlag, myDataPtr, userUPP) (*userUPP)(cpbPtr, quitFlag, myDataPtr)
+#endif}
+
+{$endc} {not TARGET_CPU_64}
+
+type
+	FSAliasFilterProcPtr = function( const (*var*) ref: FSRef; var quitFlag: Boolean; myDataPtr: Ptr ): Boolean;
+	FSAliasFilterUPP = FSAliasFilterProcPtr;
+
+{
+ *  FSNewAlias()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSNewAlias( {const} fromFile: FSRefPtr { can be NULL }; const (*var*) target: FSRef; var inAlias: AliasHandle ): OSErr; external name '_FSNewAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSNewAliasMinimal()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSNewAliasMinimal( const (*var*) target: FSRef; var inAlias: AliasHandle ): OSErr; external name '_FSNewAliasMinimal';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSIsAliasFile()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSIsAliasFile( const (*var*) fileRef: FSRef; var aliasFileFlag: Boolean; var folderFlag: Boolean ): OSErr; external name '_FSIsAliasFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAliasWithMountFlags()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAliasWithMountFlags( {const} fromFile: FSRefPtr { can be NULL }; inAlias: AliasHandle; var target: FSRef; var wasChanged: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_FSResolveAliasWithMountFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAlias()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAlias( {const} fromFile: FSRefPtr { can be NULL }; alias: AliasHandle; var target: FSRef; var wasChanged: Boolean ): OSErr; external name '_FSResolveAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAliasFileWithMountFlags()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAliasFileWithMountFlags( var theRef: FSRef; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_FSResolveAliasFileWithMountFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSResolveAliasFile()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSResolveAliasFile( var theRef: FSRef; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean ): OSErr; external name '_FSResolveAliasFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSFollowFinderAlias()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSFollowFinderAlias( fromFile: FSRefPtr { can be NULL }; alias: AliasHandle; logon: Boolean; var target: FSRef; var wasChanged: Boolean ): OSErr; external name '_FSFollowFinderAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSUpdateAlias()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
+ }
+function FSUpdateAlias( {const} fromFile: FSRefPtr { can be NULL }; const (*var*) target: FSRef; alias: AliasHandle; var wasChanged: Boolean ): OSErr; external name '_FSUpdateAlias';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+>>>>>>> graemeg/cpstrnew
  *  FSNewAliasUnicode()
  *  
  *  Summary:
@@ -508,7 +752,11 @@ function FSUpdateAlias( {const} fromFile: FSRefPtr { can be NULL }; const (*var*
  *    Non-Carbon CFM:   not available
  }
 function FSNewAliasUnicode( {const} fromFile: FSRefPtr { can be NULL }; const (*var*) targetParentRef: FSRef; targetNameLength: UniCharCount; targetName: ConstUniCharPtr; var inAlias: AliasHandle; isDirectory: BooleanPtr { can be NULL } ): OSErr; external name '_FSNewAliasUnicode';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -548,7 +796,11 @@ function FSNewAliasUnicode( {const} fromFile: FSRefPtr { can be NULL }; const (*
  *    Non-Carbon CFM:   not available
  }
 function FSNewAliasMinimalUnicode( const (*var*) targetParentRef: FSRef; targetNameLength: UniCharCount; targetName: ConstUniCharPtr; var inAlias: AliasHandle; isDirectory: BooleanPtr { can be NULL } ): OSErr; external name '_FSNewAliasMinimalUnicode';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -589,7 +841,11 @@ function FSNewAliasMinimalUnicode( const (*var*) targetParentRef: FSRef; targetN
  *    Non-Carbon CFM:   not available
  }
 function FSNewAliasFromPath( fromFilePath: ConstCStringPtr { can be NULL }; targetPath: ConstCStringPtr; flags: OptionBits; var inAlias: AliasHandle; isDirectory: BooleanPtr { can be NULL } ): OSStatus; external name '_FSNewAliasFromPath';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_5, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -608,7 +864,11 @@ function FSNewAliasFromPath( fromFilePath: ConstCStringPtr { can be NULL }; targ
  *    Non-Carbon CFM:   not available
  }
 function FSMatchAliasBulk( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UNSIGNEDLONG; inAlias: AliasHandle; var aliasCount: SInt16; var aliasList: FSRef; var needsUpdate: Boolean; aliasFilter: FSAliasFilterProcPtr { can be NULL }; yourDataPtr: UnivPtr { can be NULL } ): OSStatus; external name '_FSMatchAliasBulk';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_5, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -651,7 +911,11 @@ function FSMatchAliasBulk( {const} fromFile: FSRefPtr { can be NULL }; rulesMask
  *    Non-Carbon CFM:   not available
  }
 function FSCopyAliasInfo( inAlias: AliasHandle; targetName: HFSUniStr255Ptr { can be NULL }; volumeName: HFSUniStr255Ptr { can be NULL }; pathString: CFStringRefPtr { can be NULL }; whichInfo: FSAliasInfoBitmapPtr { can be NULL }; info: FSAliasInfoPtr { can be NULL } ): OSStatus; external name '_FSCopyAliasInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -680,7 +944,11 @@ function FSCopyAliasInfo( inAlias: AliasHandle; targetName: HFSUniStr255Ptr { ca
  *    Non-Carbon CFM:   not available
  }
 function GetAliasSize( alias: AliasHandle ): Size; external name '_GetAliasSize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -707,7 +975,11 @@ function GetAliasSize( alias: AliasHandle ): Size; external name '_GetAliasSize'
  *    Non-Carbon CFM:   not available
  }
 function GetAliasUserType( alias: AliasHandle ): OSType; external name '_GetAliasUserType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -734,6 +1006,7 @@ function GetAliasUserType( alias: AliasHandle ): OSType; external name '_GetAlia
  *    Non-Carbon CFM:   not available
  }
 procedure SetAliasUserType( alias: AliasHandle; userType: OSType ); external name '_SetAliasUserType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
 
@@ -822,6 +1095,96 @@ procedure SetAliasUserTypeWithPtr( alias: AliasPtr; userType: OSType ); external
 
 {$ifc not TARGET_CPU_64}
 {
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  GetAliasSizeFromPtr()
+ *  
+ *  Discussion:
+ *    This routine will return the size of the alias record referenced
+ *    by a pointer to the AliasRecord.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A pointer to the alias record to get the information from.
+ *  
+ *  Result:
+ *    The size of the private section of the alias record.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GetAliasSizeFromPtr( const (*var*) alias: AliasRecord ): Size; external name '_GetAliasSizeFromPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  GetAliasUserTypeFromPtr()
+ *  
+ *  Discussion:
+ *    This routine will return the usertype associated withthe alias
+ *    record pointed to by alias.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A pointer to the alias record to get the userType from.
+ *  
+ *  Result:
+ *    The userType associated with the alias as an OSType
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GetAliasUserTypeFromPtr( const (*var*) alias: AliasRecord ): OSType; external name '_GetAliasUserTypeFromPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  SetAliasUserTypeWithPtr()
+ *  
+ *  Discussion:
+ *    This routine will set the userType associated with an alias
+ *    record.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.4
+ *  
+ *  Parameters:
+ *    
+ *    alias:
+ *      A pointer to the alias record to set the userType for.
+ *    
+ *    userType:
+ *      The OSType to set the userType to.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure SetAliasUserTypeWithPtr( alias: AliasPtr; userType: OSType ); external name '_SetAliasUserTypeWithPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{ Functions beyond this point are deprecated}
+
+{$ifc not TARGET_CPU_64}
+{
+>>>>>>> graemeg/cpstrnew
  *  FSMatchAlias()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -840,7 +1203,11 @@ procedure SetAliasUserTypeWithPtr( alias: AliasPtr; userType: OSType ); external
  *    Non-Carbon CFM:   not available
  }
 function FSMatchAlias( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UNSIGNEDLONG; inAlias: AliasHandle; var aliasCount: SInt16; var aliasList: FSRef; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_FSMatchAlias';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -861,7 +1228,11 @@ function FSMatchAlias( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UN
  *    Non-Carbon CFM:   not available
  }
 function FSMatchAliasNoUI( {const} fromFile: FSRefPtr { can be NULL }; rulesMask: UNSIGNEDLONG; inAlias: AliasHandle; var aliasCount: SInt16; var aliasList: FSRef; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_FSMatchAliasNoUI';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -890,7 +1261,11 @@ function FSMatchAliasNoUI( {const} fromFile: FSRefPtr { can be NULL }; rulesMask
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function NewAlias( {const} fromFile: FSSpecPtr { can be NULL }; const (*var*) target: FSSpec; var alias: AliasHandle ): OSErr; external name '_NewAlias';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -920,7 +1295,11 @@ function NewAlias( {const} fromFile: FSSpecPtr { can be NULL }; const (*var*) ta
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function NewAliasMinimal( const (*var*) target: FSSpec; var alias: AliasHandle ): OSErr; external name '_NewAliasMinimal';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -950,7 +1329,11 @@ function NewAliasMinimal( const (*var*) target: FSSpec; var alias: AliasHandle )
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function NewAliasMinimalFromFullPath( fullPathLength: SInt16; fullPath: {const} UnivPtr; const (*var*) zoneName: Str32; const (*var*) serverName: Str31; var alias: AliasHandle ): OSErr; external name '_NewAliasMinimalFromFullPath';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -972,7 +1355,11 @@ function NewAliasMinimalFromFullPath( fullPathLength: SInt16; fullPath: {const} 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function ResolveAlias( {const} fromFile: FSSpecPtr { can be NULL }; alias: AliasHandle; var target: FSSpec; var wasChanged: Boolean ): OSErr; external name '_ResolveAlias';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -997,7 +1384,11 @@ function ResolveAlias( {const} fromFile: FSSpecPtr { can be NULL }; alias: Alias
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetAliasInfo( alias: AliasHandle; itemIndex: AliasInfoType; var theString: Str63 ): OSErr; external name '_GetAliasInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1018,7 +1409,11 @@ function GetAliasInfo( alias: AliasHandle; itemIndex: AliasInfoType; var theStri
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function IsAliasFile( const (*var*) fileFSSpec: FSSpec; var aliasFileFlag: Boolean; var folderFlag: Boolean ): OSErr; external name '_IsAliasFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1042,7 +1437,11 @@ function IsAliasFile( const (*var*) fileFSSpec: FSSpec; var aliasFileFlag: Boole
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function ResolveAliasWithMountFlags( {const} fromFile: FSSpecPtr { can be NULL }; alias: AliasHandle; var target: FSSpec; var wasChanged: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_ResolveAliasWithMountFlags';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1066,7 +1465,11 @@ function ResolveAliasWithMountFlags( {const} fromFile: FSSpecPtr { can be NULL }
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function ResolveAliasFile( var theSpec: FSSpec; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean ): OSErr; external name '_ResolveAliasFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Deprecated: Use FSResolveAliasFileWithMountFlags instead}
@@ -1082,7 +1485,11 @@ function ResolveAliasFile( var theSpec: FSSpec; resolveAliasChains: Boolean; var
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function ResolveAliasFileWithMountFlags( var theSpec: FSSpec; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_ResolveAliasFileWithMountFlags';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Deprecated:  Use FSFollowFinderAlias instead}
@@ -1098,7 +1505,11 @@ function ResolveAliasFileWithMountFlags( var theSpec: FSSpec; resolveAliasChains
  *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
  }
 function FollowFinderAlias( {const} fromFile: FSSpecPtr { can be NULL }; alias: AliasHandle; logon: Boolean; var target: FSSpec; var wasChanged: Boolean ): OSErr; external name '_FollowFinderAlias';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 { 
@@ -1124,7 +1535,11 @@ function FollowFinderAlias( {const} fromFile: FSSpecPtr { can be NULL }; alias: 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function UpdateAlias( {const} fromFile: FSSpecPtr { can be NULL }; const (*var*) target: FSSpec; alias: AliasHandle; var wasChanged: Boolean ): OSErr; external name '_UpdateAlias';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1146,7 +1561,11 @@ function UpdateAlias( {const} fromFile: FSSpecPtr { can be NULL }; const (*var*)
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function MatchAlias( {const} fromFile: FSSpecPtr { can be NULL }; rulesMask: UNSIGNEDLONG; alias: AliasHandle; var aliasCount: SInt16; aliasList: FSSpecArrayPtr; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_MatchAlias';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1169,7 +1588,11 @@ function MatchAlias( {const} fromFile: FSSpecPtr { can be NULL }; rulesMask: UNS
  *    Non-Carbon CFM:   not available
  }
 function ResolveAliasFileWithMountFlagsNoUI( var theSpec: FSSpec; resolveAliasChains: Boolean; var targetIsFolder: Boolean; var wasAliased: Boolean; mountFlags: UNSIGNEDLONG ): OSErr; external name '_ResolveAliasFileWithMountFlagsNoUI';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1190,8 +1613,12 @@ function ResolveAliasFileWithMountFlagsNoUI( var theSpec: FSSpec; resolveAliasCh
  *    Non-Carbon CFM:   not available
  }
 function MatchAliasNoUI( {const} fromFile: FSSpecPtr { can be NULL }; rulesMask: UNSIGNEDLONG; alias: AliasHandle; var aliasCount: SInt16; aliasList: FSSpecArrayPtr; var needsUpdate: Boolean; aliasFilter: AliasFilterUPP; yourDataPtr: UnivPtr ): OSErr; external name '_MatchAliasNoUI';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}

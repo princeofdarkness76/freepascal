@@ -53,7 +53,11 @@ type
     function InternalGetHandle: Pointer; override;
     procedure InternalCloseHandle; override;
     procedure RetrieveFieldDefs; override;
+<<<<<<< HEAD
     function SqliteExec(ASQL: PAnsiChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+=======
+    function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+>>>>>>> graemeg/cpstrnew
   public
     procedure ExecuteDirect(const ASQL: String); override;
     function QuickQuery(const ASQL: String; const AStrList: TStrings; FillObjects: Boolean): String; override;
@@ -119,7 +123,11 @@ var
 begin
   FieldDefs.Clear;
   FAutoIncFieldNo := -1;
+<<<<<<< HEAD
   FReturnCode := sqlite_compile(FSqliteHandle, PAnsiChar(FEffectiveSQL), nil, @vm, nil);
+=======
+  FReturnCode := sqlite_compile(FSqliteHandle, PChar(FEffectiveSQL), nil, @vm, nil);
+>>>>>>> graemeg/cpstrnew
   if FReturnCode <> SQLITE_OK then
     DatabaseError(ReturnString, Self);
   sqlite_step(vm, @ColumnCount, @ColumnValues, @ColumnNames);
@@ -235,7 +243,11 @@ begin
     sqlite_exec(FSqliteHandle, PAnsiChar('Select Max(' + FieldDefs[FAutoIncFieldNo].Name + ') from ' + FTableName),
       @GetAutoIncValue, @FNextAutoInc, nil);
 
+<<<<<<< HEAD
   FReturnCode := sqlite_compile(FSqliteHandle, PAnsiChar(FEffectiveSQL), nil, @vm, nil);
+=======
+  FReturnCode := sqlite_compile(FSqliteHandle, PChar(FEffectiveSQL), nil, @vm, nil);
+>>>>>>> graemeg/cpstrnew
   if FReturnCode <> SQLITE_OK then
     DatabaseError(ReturnString, Self);
 

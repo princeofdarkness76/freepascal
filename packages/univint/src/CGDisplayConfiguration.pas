@@ -1,10 +1,17 @@
 { CoreGraphics - CGDisplayConfiguration.h
+<<<<<<< HEAD
    Copyright (c) 2002-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+   Copyright (c) 2002-2009 Apple Inc.
+   All rights reserved. }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -59,11 +66,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -79,6 +89,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -98,12 +109,30 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -122,6 +151,8 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -131,6 +162,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -145,19 +177,40 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
+=======
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+	{$setc TARGET_CPU_ARM := TRUE}
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -215,6 +268,7 @@ uses MacTypes,CGBase,CGDirectDisplay,CGColorSpace,CGErrors,CFDictionary,CGGeomet
    requested layout, if needed. }
 
 type
+<<<<<<< HEAD
 	CGDisplayConfigRef = ^_CGDisplayConfigRef; { an opaque type }
 	_CGDisplayConfigRef = record end;
 
@@ -233,6 +287,26 @@ function CGBeginDisplayConfiguration( var config: CGDisplayConfigRef ): CGError;
    requested location, without overlapping or leaving a gap between
    displays.
 
+=======
+	CGDisplayConfigRef = ^SInt32; { an opaque type }
+
+{$ifc TARGET_OS_MAC}
+
+{ Begin a new set of display configuration changes. This function creates a
+   display configuration which provides a context for a set of display
+   configuration changes. Use `CGCompleteDisplayConfiguration' to apply the
+   changes in a single transaction. }
+
+function CGBeginDisplayConfiguration( var config: CGDisplayConfigRef ): CGError; external name '_CGBeginDisplayConfiguration';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+
+{ Configure the origin of a display in global display coordinates.
+
+   The new origin of the display is placed as close as possible to the
+   requested location, without overlapping or leaving a gap between
+   displays.
+
+>>>>>>> graemeg/cpstrnew
    Any display whose origin is not explicitly set in a reconfiguration will
    be repositioned to a location as close as possible to its current
    location without overlapping or leaving a gap between displays.
@@ -403,7 +477,11 @@ const
 type
 	CGDisplayChangeSummaryFlags = UInt32;
 
+<<<<<<< HEAD
 { A client-supplied callback function that’s invoked whenever the
+=======
+{ A client-supplied callback function thatÕs invoked whenever the
+>>>>>>> graemeg/cpstrnew
    configuration of a local display is changed. }
 
 type
@@ -573,6 +651,39 @@ function CGDisplayScreenSize( display: CGDirectDisplayID ): CGSize; external nam
 function CGDisplayRotation( display: CGDirectDisplayID ): Float64; external name '_CGDisplayRotation';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 
+<<<<<<< HEAD
+=======
+{ Returns the IOKit service port for a display device }
+// uncomment when IOKit translated:
+// function CGDisplayIOServicePort( display: CGDirectDisplayID ): io_service_t;
+// CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA);
+
+{ Return the width and height of a display in millimeters.
+
+   If 'display' is not a valid display ID, the size returned has a width and
+   height of 0.
+
+   If Extended Display Identification Data (EDID) for the display device is
+   not available, the size is estimated based on the device width and height
+   in pixels from `CGDisplayBounds', with an assumed resolution of 2.835
+   pixels/mm, or 72 DPI, a reasonable guess for displays predating EDID
+   support. }
+
+function CGDisplayScreenSize( display: CGDirectDisplayID ): CGSize; external name '_CGDisplayScreenSize';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+
+{ Return the rotation angle of a display in degrees clockwise.
+
+   A display rotation of 90¡ implies the display is rotated clockwise 90¡,
+   such that what was the physical bottom of the display is now the left
+   side, and what was the physical top is now the right side.
+
+   If `display' is not a valid display ID, the rotation returned is 0. }
+
+function CGDisplayRotation( display: CGDirectDisplayID ): Float64; external name '_CGDisplayRotation';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+
+>>>>>>> graemeg/cpstrnew
 { Return the color space of a display. }
 
 function CGDisplayCopyColorSpace( display: CGDirectDisplayID ): CGColorSpaceRef; external name '_CGDisplayCopyColorSpace';

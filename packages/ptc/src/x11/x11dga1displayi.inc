@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -61,7 +65,11 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 procedure TX11DGA1Display.Open(ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; const AOpenGLAttributes: IPTCOpenGLAttributes);
+=======
+procedure TX11DGA1Display.Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 var
   vml: PXF86VidModeModeLine;
   dotclock: Integer;
@@ -69,6 +77,10 @@ var
   root: TWindow;
   e: TXEvent;
   found: Boolean;
+<<<<<<< HEAD
+=======
+  tmpArea: TPTCArea;
+>>>>>>> graemeg/cpstrnew
   r, g, b: Single;
   found_mode: Integer;
   min_diff: Integer;
@@ -245,6 +257,7 @@ begin
   end;
 
   { Set clipping area }
+<<<<<<< HEAD
   FClip := TPTCArea.Create(0, 0, FWidth, FHeight);
 
   FOpen := True;
@@ -252,12 +265,28 @@ end;
 
 { not in DGA mode }
 procedure TX11DGA1Display.Open(AWindow: TWindow; AFormat: IPTCFormat);
+=======
+  tmpArea := TPTCArea.Create(0, 0, FWidth, FHeight);
+  try
+    FClip.Assign(tmpArea);
+  finally
+    tmpArea.Free;
+  end;
+end;
+
+{ not in DGA mode }
+procedure TX11DGA1Display.Open(AWindow: TWindow; const AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 begin
   if AWindow = 0 Then; { Prevent warnings }
   if AFormat = nil Then;
 end;
 
+<<<<<<< HEAD
 procedure TX11DGA1Display.Open(AWindow: TWindow; AFormat: IPTCFormat; AX, AY, AWidth, AHeight: Integer);
+=======
+procedure TX11DGA1Display.Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer);
+>>>>>>> graemeg/cpstrnew
 begin
   if (AWindow = 0) or
      (AFormat = Nil) or
@@ -269,8 +298,11 @@ end;
 
 procedure TX11DGA1Display.Close;
 begin
+<<<<<<< HEAD
   FOpen := False;
 
+=======
+>>>>>>> graemeg/cpstrnew
   if FInDirect then
   begin
     FInDirect := False;
@@ -303,9 +335,16 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TX11DGA1Display.GetModes(var AModes: TPTCModeList);
 begin
   SetLength(AModes, 0);
+=======
+procedure TX11DGA1Display.GetModes(var AModes: TPTCModeDynArray);
+begin
+  SetLength(AModes, 1);
+  AModes[0] := TPTCMode.Create;
+>>>>>>> graemeg/cpstrnew
   {todo...}
 end;
 
@@ -313,7 +352,11 @@ procedure TX11DGA1Display.Update;
 begin
 end;
 
+<<<<<<< HEAD
 procedure TX11DGA1Display.Update(AArea: IPTCArea);
+=======
+procedure TX11DGA1Display.Update(const AArea: TPTCArea);
+>>>>>>> graemeg/cpstrnew
 begin
 end;
 
@@ -347,6 +390,40 @@ var
     Result := False;
   end;
 
+<<<<<<< HEAD
+=======
+  procedure HandleKeyEvent;
+  var
+    sym: TKeySym;
+    sym_modded: TKeySym; { modifiers like shift are taken into account here }
+    press: Boolean;
+    alt, shift, ctrl: Boolean;
+    uni: Integer;
+    key: TPTCKeyEvent;
+    buf: array [1..16] of Char;
+  begin
+    sym := XLookupKeySym(@e.xkey, 0);
+    XLookupString(@e.xkey, @buf, SizeOf(buf), @sym_modded, Nil);
+    uni := X11ConvertKeySymToUnicode(sym_modded);
+    alt := (e.xkey.state and Mod1Mask) <> 0;
+    shift := (e.xkey.state and ShiftMask) <> 0;
+    ctrl := (e.xkey.state and ControlMask) <> 0;
+    if e._type = KeyPress then
+      press := True
+    else
+      press := False;
+
+    key := nil;
+    case sym shr 8 of
+      0: key := TPTCKeyEvent.Create(FNormalKeys[sym and $FF], uni, alt, shift, ctrl, press);
+      $FF: key := TPTCKeyEvent.Create(FFunctionKeys[sym and $FF], uni, alt, shift, ctrl, press);
+      else
+        key := TPTCKeyEvent.Create;
+    end;
+    FEventQueue.AddEvent(key);
+  end;
+
+>>>>>>> graemeg/cpstrnew
 begin
   NewFocusSpecified := False;
   while UsefulEventsPending do
@@ -368,7 +445,11 @@ begin
       Expose: begin
         {...}
       end;
+<<<<<<< HEAD
       KeyPress, KeyRelease: HandleKeyEvent(e.xkey);
+=======
+      KeyPress, KeyRelease: HandleKeyEvent;
+>>>>>>> graemeg/cpstrnew
       ButtonPress, ButtonRelease: begin
         {...}
       end;
@@ -380,10 +461,18 @@ begin
 //  HandleChangeFocus(NewFocus);
 end;
 
+<<<<<<< HEAD
 function TX11DGA1Display.NextEvent(out AEvent: IPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 var
   tmpEvent: TXEvent;
 begin
+=======
+function TX11DGA1Display.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
+var
+  tmpEvent: TXEvent;
+begin
+  FreeAndNil(AEvent);
+>>>>>>> graemeg/cpstrnew
   repeat
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
@@ -400,7 +489,11 @@ begin
   Result := AEvent <> nil;
 end;
 
+<<<<<<< HEAD
 function TX11DGA1Display.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): IPTCEvent;
+=======
+function TX11DGA1Display.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 var
   tmpEvent: TXEvent;
 begin
@@ -430,7 +523,11 @@ procedure TX11DGA1Display.Unlock;
 begin
 end;
 
+<<<<<<< HEAD
 procedure TX11DGA1Display.Palette(APalette: IPTCPalette);
+=======
+procedure TX11DGA1Display.Palette(const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 var
   pal: PUint32;
   i: Integer;
@@ -468,11 +565,14 @@ begin
   Result := True;
 end;
 
+<<<<<<< HEAD
 function TX11DGA1Display.IsOpen: Boolean;
 begin
   Result := FOpen;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TX11DGA1Display.SetCursor(AVisible: Boolean);
 begin
   {nothing... raise exception if visible=true?}

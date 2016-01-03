@@ -61,6 +61,7 @@ unit charset;
           reverseMapLength : UInt32;
        end;
 
+<<<<<<< HEAD
     const
       BINARY_MAPPING_FILE_EXT = '.bcm';
 
@@ -84,6 +85,15 @@ unit charset;
       AMap     : punicodemap;
       ADest    : tunicodestring
     ) : LongInt;
+=======
+    function loadunicodemapping(const cpname,f : string; cp :word) : punicodemap;
+    procedure registermapping(p : punicodemap);
+    function getmap(const s : string) : punicodemap; 
+    function getmap(cp : word) : punicodemap;   
+    function mappingavailable(const s : string) : boolean;
+    function mappingavailable(cp :word) : boolean;
+    function getunicode(c : char;p : punicodemap) : tunicodechar;
+>>>>>>> graemeg/cpstrnew
     function getascii(c : tunicodechar;p : punicodemap) : string;
     function getascii(c : tunicodechar;p : punicodemap; ABuffer : PAnsiChar; ABufferLen : LongInt) : LongInt;
 
@@ -95,6 +105,7 @@ unit charset;
     var
        mappings : punicodemap;
 
+<<<<<<< HEAD
 
     procedure QuickSort(AList: preversecharmapping; L, R : Longint);
     var
@@ -277,6 +288,8 @@ unit charset;
         end;
     end;
 
+=======
+>>>>>>> graemeg/cpstrnew
     function loadunicodemapping(const cpname,f : string; cp :word) : punicodemap;
 
       var
@@ -595,6 +608,36 @@ unit charset;
               hp:=hp^.next;
            end;
          getmap:=nil;
+      end;////////
+
+    function getmap(cp : word) : punicodemap;
+
+      var
+         hp : punicodemap;
+
+      const
+         mapcache : word = 0;
+         mapcachep : punicodemap = nil;
+
+      begin
+         if (mapcache=cp) and assigned(mapcachep) and (mapcachep^.cp=cp) then
+           begin
+              getmap:=mapcachep;
+              exit;
+           end;
+         hp:=mappings;
+         while assigned(hp) do
+           begin
+              if hp^.cp=cp then
+                begin
+                   getmap:=hp;
+                   mapcache:=cp;
+                   mapcachep:=hp;
+                   exit;
+                end;
+              hp:=hp^.next;
+           end;
+         getmap:=nil;
       end;
 
     function mappingavailable(const s : string) : boolean;
@@ -631,6 +674,7 @@ unit charset;
          pd : ^tunicodechar;
 
       begin
+<<<<<<< HEAD
         if (AAnsiStr=nil) or (AAnsiLen<=0) then
           exit(0);
         ps:=AAnsiStr;
@@ -679,6 +723,15 @@ unit charset;
                     else
                       pd^:=UNKNOW_CHAR_W;
                   end
+=======
+         { at least map to '?' }
+         getascii:=#63;
+         for i:=0 to p^.lastchar do
+           if p^.map[i].unicode=c then
+             begin
+                if i<256 then
+                  getascii:=chr(i)
+>>>>>>> graemeg/cpstrnew
                 else
                   pd^:=AMap^.map[ord(ps^)].unicode
               end

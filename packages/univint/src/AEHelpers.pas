@@ -3,7 +3,11 @@
  
      Contains:   AEPrint, AEBuild and AEStream for Carbon
  
+<<<<<<< HEAD
     
+=======
+     Version:    AppleEvents-496~1
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  
@@ -13,6 +17,10 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
+=======
+{  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -67,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -87,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -106,13 +118,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -122,13 +154,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -171,6 +207,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -282,7 +340,11 @@ type
  *    Non-Carbon CFM:   not available
  }
 function AEBuildDesc( var dst: AEDesc; error: AEBuildErrorPtr { can be NULL }; src: ConstCStringPtr; ... ): OSStatus; external name '_AEBuildDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { varargs version of AEBuildDesc}
@@ -298,7 +360,11 @@ function AEBuildDesc( var dst: AEDesc; error: AEBuildErrorPtr { can be NULL }; s
  *    Non-Carbon CFM:   not available
  }
 // function vAEBuildDesc( var dst: AEDesc; error: AEBuildErrorPtr { can be NULL }; src: ConstCStringPtr; args: va_list ): OSStatus;
+<<<<<<< HEAD
 // __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA );
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+>>>>>>> graemeg/cpstrnew
 
 
 { Append parameters to an existing AppleEvent}
@@ -314,7 +380,11 @@ function AEBuildDesc( var dst: AEDesc; error: AEBuildErrorPtr { can be NULL }; s
  *    Non-Carbon CFM:   not available
  }
 function AEBuildParameters( var event: AppleEvent; error: AEBuildErrorPtr { can be NULL }; format: ConstCStringPtr; ... ): OSStatus; external name '_AEBuildParameters';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { varargs version of AEBuildParameters}
@@ -330,7 +400,11 @@ function AEBuildParameters( var event: AppleEvent; error: AEBuildErrorPtr { can 
  *    Non-Carbon CFM:   not available
  }
 // function vAEBuildParameters( var event: AppleEvent; error: AEBuildErrorPtr { can be NULL }; format: ConstCStringPtr; args: va_list ): OSStatus;
+<<<<<<< HEAD
 // __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA );
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+>>>>>>> graemeg/cpstrnew
 
 
 { Building an entire Apple event:}
@@ -344,6 +418,7 @@ function AEBuildParameters( var event: AppleEvent; error: AEBuildErrorPtr { can 
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressType: DescType; addressData: {const} UnivPtr; addressLength: Size; returnID: SInt16; transactionID: SInt32; var result: AppleEvent; error: AEBuildErrorPtr { can be NULL }; paramsFmt: ConstCStringPtr; ... ): OSStatus; external name '_AEBuildAppleEvent';
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
@@ -363,6 +438,27 @@ function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressTyp
  }
 // function vAEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressType: DescType; addressData: {const} UnivPtr; addressLength: Size; returnID: SInt16; transactionID: SInt32; var resultEvt: AppleEvent; error: AEBuildErrorPtr { can be NULL }; paramsFmt: ConstCStringPtr; args: va_list ): OSStatus;
 // __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA );
+=======
+ }
+function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressType: DescType; addressData: {const} UnivPtr; addressLength: Size; returnID: SInt16; transactionID: SInt32; var result: AppleEvent; error: AEBuildErrorPtr { can be NULL }; paramsFmt: ConstCStringPtr; ... ): OSStatus; external name '_AEBuildAppleEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ varargs version of AEBuildAppleEvent}
+{
+ *  vAEBuildAppleEvent()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.2
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+// function vAEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressType: DescType; addressData: {const} UnivPtr; addressLength: Size; returnID: SInt16; transactionID: SInt32; var resultEvt: AppleEvent; error: AEBuildErrorPtr { can be NULL }; paramsFmt: ConstCStringPtr; args: va_list ): OSStatus;
+// AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -386,7 +482,11 @@ function AEBuildAppleEvent( theClass: AEEventClass; theID: AEEventID; addressTyp
  *    Non-Carbon CFM:   not available
  }
 function AEPrintDescToHandle( const (*var*) desc: AEDesc; var result: Handle ): OSStatus; external name '_AEPrintDescToHandle';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -400,8 +500,12 @@ function AEPrintDescToHandle( const (*var*) desc: AEDesc; var result: Handle ): 
  * AppleEvent.
  }
 type
+<<<<<<< HEAD
 	AEStreamRef = ^OpaqueAEStreamRef; { an opaque type }
 	OpaqueAEStreamRef = record end;
+=======
+	AEStreamRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 {
    Create and return an AEStreamRef
    Returns NULL on memory allocation failure
@@ -418,7 +522,11 @@ type
  *    Non-Carbon CFM:   not available
  }
 function AEStreamOpen: AEStreamRef; external name '_AEStreamOpen';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -438,7 +546,11 @@ function AEStreamOpen: AEStreamRef; external name '_AEStreamOpen';
  *    Non-Carbon CFM:   not available
  }
 function AEStreamClose( ref: AEStreamRef; var desc: AEDesc ): OSStatus; external name '_AEStreamClose';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -457,9 +569,15 @@ function AEStreamClose( ref: AEStreamRef; var desc: AEDesc ): OSStatus; external
  *    Non-Carbon CFM:   not available
  }
 function AEStreamOpenDesc( ref: AEStreamRef; newType: DescType ): OSStatus; external name '_AEStreamOpenDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Append data to the previously opened desc.}
 {
  *  AEStreamWriteData()
@@ -473,7 +591,11 @@ function AEStreamOpenDesc( ref: AEStreamRef; newType: DescType ): OSStatus; exte
  *    Non-Carbon CFM:   not available
  }
 function AEStreamWriteData( ref: AEStreamRef; data: {const} UnivPtr; length: Size ): OSStatus; external name '_AEStreamWriteData';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -492,7 +614,11 @@ function AEStreamWriteData( ref: AEStreamRef; data: {const} UnivPtr; length: Siz
  *    Non-Carbon CFM:   not available
  }
 function AEStreamCloseDesc( ref: AEStreamRef ): OSStatus; external name '_AEStreamCloseDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Write data as a desc to the stream}
@@ -508,9 +634,15 @@ function AEStreamCloseDesc( ref: AEStreamRef ): OSStatus; external name '_AEStre
  *    Non-Carbon CFM:   not available
  }
 function AEStreamWriteDesc( ref: AEStreamRef; newType: DescType; data: {const} UnivPtr; length: Size ): OSStatus; external name '_AEStreamWriteDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Write an entire desc to the stream}
 {
  *  AEStreamWriteAEDesc()
@@ -524,7 +656,11 @@ function AEStreamWriteDesc( ref: AEStreamRef; newType: DescType; data: {const} U
  *    Non-Carbon CFM:   not available
  }
 function AEStreamWriteAEDesc( ref: AEStreamRef; const (*var*) desc: AEDesc ): OSStatus; external name '_AEStreamWriteAEDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -543,9 +679,15 @@ function AEStreamWriteAEDesc( ref: AEStreamRef; const (*var*) desc: AEDesc ): OS
  *    Non-Carbon CFM:   not available
  }
 function AEStreamOpenList( ref: AEStreamRef ): OSStatus; external name '_AEStreamOpenList';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Finish a list.}
 {
  *  AEStreamCloseList()
@@ -559,7 +701,11 @@ function AEStreamOpenList( ref: AEStreamRef ): OSStatus; external name '_AEStrea
  *    Non-Carbon CFM:   not available
  }
 function AEStreamCloseList( ref: AEStreamRef ): OSStatus; external name '_AEStreamCloseList';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -578,7 +724,11 @@ function AEStreamCloseList( ref: AEStreamRef ): OSStatus; external name '_AEStre
  *    Non-Carbon CFM:   not available
  }
 function AEStreamOpenRecord( ref: AEStreamRef; newType: DescType ): OSStatus; external name '_AEStreamOpenRecord';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Change the type of a record.}
@@ -594,7 +744,11 @@ function AEStreamOpenRecord( ref: AEStreamRef; newType: DescType ): OSStatus; ex
  *    Non-Carbon CFM:   not available
  }
 function AEStreamSetRecordType( ref: AEStreamRef; newType: DescType ): OSStatus; external name '_AEStreamSetRecordType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Finish a record}
@@ -610,7 +764,11 @@ function AEStreamSetRecordType( ref: AEStreamRef; newType: DescType ): OSStatus;
  *    Non-Carbon CFM:   not available
  }
 function AEStreamCloseRecord( ref: AEStreamRef ): OSStatus; external name '_AEStreamCloseRecord';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -629,7 +787,11 @@ function AEStreamCloseRecord( ref: AEStreamRef ): OSStatus; external name '_AESt
  *    Non-Carbon CFM:   not available
  }
 function AEStreamWriteKeyDesc( ref: AEStreamRef; key: AEKeyword; newType: DescType; data: {const} UnivPtr; length: Size ): OSStatus; external name '_AEStreamWriteKeyDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -648,7 +810,11 @@ function AEStreamWriteKeyDesc( ref: AEStreamRef; key: AEKeyword; newType: DescTy
  *    Non-Carbon CFM:   not available
  }
 function AEStreamOpenKeyDesc( ref: AEStreamRef; key: AEKeyword; newType: DescType ): OSStatus; external name '_AEStreamOpenKeyDesc';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { Write a key to the stream - you can follow this with an AEWriteDesc.}
@@ -664,7 +830,11 @@ function AEStreamOpenKeyDesc( ref: AEStreamRef; key: AEKeyword; newType: DescTyp
  *    Non-Carbon CFM:   not available
  }
 function AEStreamWriteKey( ref: AEStreamRef; key: AEKeyword ): OSStatus; external name '_AEStreamWriteKey';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -684,7 +854,11 @@ function AEStreamWriteKey( ref: AEStreamRef; key: AEKeyword ): OSStatus; externa
  *    Non-Carbon CFM:   not available
  }
 function AEStreamCreateEvent( clazz: AEEventClass; id: AEEventID; targetType: DescType; targetData: {const} UnivPtr; targetLength: Size; returnID: SInt16; transactionID: SInt32 ): AEStreamRef; external name '_AEStreamCreateEvent';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -707,9 +881,15 @@ function AEStreamCreateEvent( clazz: AEEventClass; id: AEEventID; targetType: De
  *    Non-Carbon CFM:   not available
  }
 function AEStreamOpenEvent( var event: AppleEvent ): AEStreamRef; external name '_AEStreamOpenEvent';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Mark a keyword as being an optional parameter.}
 {
  *  AEStreamOptionalParam()
@@ -723,8 +903,12 @@ function AEStreamOpenEvent( var event: AppleEvent ): AEStreamRef; external name 
  *    Non-Carbon CFM:   not available
  }
 function AEStreamOptionalParam( ref: AEStreamRef; key: AEKeyword ): OSStatus; external name '_AEStreamOptionalParam';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING( __MAC_10_0, __IPHONE_NA ) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {TARGET_OS_MAC}

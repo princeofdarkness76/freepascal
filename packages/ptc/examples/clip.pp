@@ -16,9 +16,16 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+  area: TPTCArea;
+>>>>>>> graemeg/cpstrnew
   x1, y1, x2, y2: Integer;
   pixels: PUint32;
   width, height: Integer;
@@ -45,8 +52,19 @@ begin
       x2 := console.width - x1;
       y2 := console.height - y1;
 
+<<<<<<< HEAD
       { set clip area }
       console.clip(TPTCAreaFactory.CreateNew(x1, y1, x2, y2));
+=======
+      { setup clip area }
+      area := TPTCArea.Create(x1, y1, x2, y2);
+      try
+        { set clip area }
+        console.clip(area);
+      finally
+        area.Free;
+      end;
+>>>>>>> graemeg/cpstrnew
 
       { loop until a key is pressed }
       while not console.KeyPressed do
@@ -85,8 +103,15 @@ begin
         console.update;
       end;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+      surface.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

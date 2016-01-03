@@ -84,15 +84,25 @@ const
     _actionOrigin: id;
     _target: id;
     _selFont: NSFont;
+<<<<<<< HEAD
     __fmFlags: record
       case byte of
        0: (_anonbitfield_NSFontManager0: cuint);
        1: (data: bitpacked record
+=======
+    __fmFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSFontManager0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         multipleFont: 0..1;
         disabled: 0..1;
         senderTagMode: 0..((1 shl 2)-1);
         _RESERVED: 0..((1 shl 12)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _fmReserved3: cushort;

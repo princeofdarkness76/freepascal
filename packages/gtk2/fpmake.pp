@@ -63,7 +63,10 @@ begin
           Add('src/gtkext');
           Add('src/gtk2x11');
         end;
+<<<<<<< HEAD
     T.Install:=False;
+=======
+>>>>>>> graemeg/cpstrnew
 
     T:=P.Targets.AddImplicitUnit('src/atk/atk.pas');
      T.IncludePath.Add('src/atk');
@@ -1135,6 +1138,7 @@ begin
           AddInclude('gtkentrycompletion.inc');
           AddInclude('gtkuimanager.inc');
           AddInclude('gtktreemodelfilter.inc');
+<<<<<<< HEAD
 
           AddInclude('gtkseparatortoolitem.inc');
           AddInclude('gtkaboutdialog.inc');
@@ -1143,6 +1147,8 @@ begin
           AddInclude('gtkcellview.inc');
           AddInclude('gtkiconview.inc');
           AddInclude('gtkmenutoolbutton.inc');
+=======
+>>>>>>> graemeg/cpstrnew
         end;
     T:=P.Targets.AddImplicitUnit('src/gtkglext/gtkglext.pas');
       T.IncludePath.Add('src/gtkglext');
@@ -1231,8 +1237,11 @@ begin
           AddInclude('pango-item.inc');
           AddInclude('pango-layout.inc');
           AddInclude('pango-tabs.inc');
+<<<<<<< HEAD
           AddInclude('pango-matrix.inc');
           AddInclude('pango-renderer.inc');
+=======
+>>>>>>> graemeg/cpstrnew
         end;
     
     T:=P.Targets.AddImplicitUnit('src/pangocairo/pangocairo.pas');
@@ -1279,6 +1288,7 @@ begin
            AddInclude('htmldocument.inc');
            AddInclude('htmlview.inc');
          end;}
+<<<<<<< HEAD
     P.Sources.AddExampleFiles('examples/*',P.Directory,false,'.');
     P.Sources.AddExampleFiles('examples/filechooser/*',P.Directory,false,'filechooser');
     P.Sources.AddExampleFiles('examples/gettingstarted/*',P.Directory,false,'gettingstarted');
@@ -1290,6 +1300,8 @@ begin
     P.Sources.AddExampleFiles('examples/scribble_simple/*',P.Directory,false,'scribble_simple');
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifndef ALLPACKAGES}
     Run;
     end;

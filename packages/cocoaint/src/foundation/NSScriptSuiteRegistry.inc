@@ -43,7 +43,11 @@
   NSScriptSuiteRegistry = objcclass external (NSObject)
   private
     _isLoadingSDEFFiles: Boolean;
+<<<<<<< HEAD
     _reserved1: array[0..(3)-1] of char;
+=======
+        _reserved1: array[0..2] of char;
+>>>>>>> graemeg/cpstrnew
     _seenBundles: NSMutableSet;
     _suiteDescriptionsBeingCollected: NSMutableArray;
     _classDescriptionNeedingRegistration: NSScriptClassDescription;
@@ -55,7 +59,11 @@
     _complexTypeDescriptionsByName: NSMutableDictionary;
     _listTypeDescriptionsByName: NSMutableDictionary;
     _nextComplexTypeAppleEventCode: cuint;
+<<<<<<< HEAD
     _reserved2: array[0..(4)-1] of Pointer;
+=======
+        _reserved2: array[0..3] of Pointer;
+>>>>>>> graemeg/cpstrnew
     
   public
     class function sharedScriptSuiteRegistry: NSScriptSuiteRegistry; message 'sharedScriptSuiteRegistry';

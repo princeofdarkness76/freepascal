@@ -21,7 +21,11 @@ begin
   pack := (r shl 16) or (g shl 8) or b;
 end;
 
+<<<<<<< HEAD
 procedure generate(palette: IPTCPalette);
+=======
+procedure generate(palette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 var
   data: PUint32;
   i, c: Integer;
@@ -67,15 +71,26 @@ begin
 
   finally
     { unlock palette }
+<<<<<<< HEAD
     palette.Unlock;
+=======
+    palette.unlock;
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
 var
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
   palette: IPTCPalette;
+=======
+  format: TPTCFormat = nil;
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
   state: Integer;
   intensity: Single;
   pixels, pixel, p: PUint8;
@@ -84,7 +99,11 @@ var
   top, bottom, c1, c2: Uint32;
   generator: PUint8;
   color: Integer;
+<<<<<<< HEAD
   area: IPTCArea;
+=======
+  area: TPTCArea = nil;
+>>>>>>> graemeg/cpstrnew
 begin
   try
     try
@@ -242,8 +261,16 @@ begin
       until False;
 
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.Close;
+=======
+      console.Free;
+      surface.Free;
+      format.Free;
+      palette.Free;
+      area.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

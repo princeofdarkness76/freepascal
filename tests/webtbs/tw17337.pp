@@ -4,7 +4,11 @@
 
 {$asmmode att}
 
+<<<<<<< HEAD
 procedure test_gas;
+=======
+procedure test_gas;   
+>>>>>>> graemeg/cpstrnew
 var
   test : qword;
 begin
@@ -14,13 +18,21 @@ begin
   if (test < qword($ffffffff)) then
     runerror(2);
 asm
+<<<<<<< HEAD
   movq $0xffffffff,%rax
   movq %rax,test
+=======
+  movq $0xffffffff,test
+>>>>>>> graemeg/cpstrnew
 end;
   if test <> $ffffffff then
     runerror(5);
 end ;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 var
   test : qword;
 begin

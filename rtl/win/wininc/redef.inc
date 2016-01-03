@@ -571,7 +571,11 @@ function GetProcessPriorityBoost(hThread: THandle; var DisablePriorityBoost: Boo
 {$endif NO_SMART_LINK}
 function GetProcessShutdownParameters(var lpdwLevel, lpdwFlags: DWORD): BOOL; external 'kernel32' name 'GetProcessShutdownParameters';
 function GetProcessTimes(hProcess: THandle; var lpCreationTime, lpExitTime, lpKernelTime, lpUserTime: TFileTime): BOOL; external 'kernel32' name 'GetProcessTimes';
+<<<<<<< HEAD
 function GetProcessWorkingSetSize(hProcess: THandle; var lpMinimumWorkingSetSize, lpMaximumWorkingSetSize: PTRUINT): BOOL; external 'kernel32' name 'GetProcessWorkingSetSize';
+=======
+function GetProcessWorkingSetSize(hProcess: THandle; var lpMinimumWorkingSetSize, lpMaximumWorkingSetSize: DWORD): BOOL; external 'kernel32' name 'GetProcessWorkingSetSize';
+>>>>>>> graemeg/cpstrnew
 function GetQueuedCompletionStatus(CompletionPort: THandle; var lpNumberOfBytesTransferred: DWORD; var lpCompletionKey: ULONG_PTR; var lpOverlapped: POverlapped; dwMilliseconds: DWORD): BOOL; external 'kernel32' name 'GetQueuedCompletionStatus';
 function PostQueuedCompletionStatus(CompletionPort: THandle; NumberOfBytesTransferred:dword; dwCompletionKey: ULONG_PTR; lpOverlapped: POverlapped): BOOL; external 'kernel32' name 'PostQueuedCompletionStatus';
 function GetRasterizerCaps(var p1: TRasterizerStatus; p2: UINT): BOOL; external 'gdi32' name 'GetRasterizerCaps';

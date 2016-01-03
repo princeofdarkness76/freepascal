@@ -17,10 +17,15 @@ begin
 {$ifdef ALLPACKAGES}
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
+<<<<<<< HEAD
     P.Version:='3.1.1';
     P.Dependencies.Add('univint',[Darwin,iPhoneSim]);
     P.Dependencies.Add('fcl-res');
     p.Dependencies.Add('rtl-objpas');
+=======
+    P.Version:='2.2.2-0';
+    P.Dependencies.Add('univint',[Darwin]);
+>>>>>>> graemeg/cpstrnew
 
     P.Author := '<various>';
     P.License := 'LGPL with modification, ';
@@ -36,7 +41,11 @@ begin
     P.IncludePath.Add('src');
     P.IncludePath.Add('src/$(OS)');
     P.IncludePath.Add('src/unix',AllUnixOSes);
+<<<<<<< HEAD
     P.IncludePath.Add('src/win',AllWindowsOSes-[WinCE]);
+=======
+    P.IncludePath.Add('src/win',AllWindowsOSes);
+>>>>>>> graemeg/cpstrnew
     P.IncludePath.Add('src/dummy',AllOSes);
 
     T:=P.Targets.AddUnit('ascii85.pp');
@@ -52,11 +61,16 @@ begin
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('contnrs.pp');
       T.ResourceStrings:=true;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('singleinstance.pp');
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
     with T.Dependencies do
       AddUnit('singleinstance');
+=======
+    T:=P.Targets.AddUnit('custapp.pp');
+      T.ResourceStrings:=true;
+>>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('eventlog.pp');
       T.ResourceStrings:=true;
       with T.Dependencies do
@@ -97,7 +111,11 @@ begin
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('fptemplate.pp');
       T.ResourceStrings:=true;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,EMX,nativent]);
+=======
+    T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
+>>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('uriparser.pp');
     T:=P.Targets.AddUnit('wformat.pp');
     T:=P.Targets.AddUnit('whtml.pp');
@@ -113,6 +131,7 @@ begin
     T:=P.Targets.AddUnit('fpexprpars.pp');
       T.ResourceStrings:=true;
 
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('fileinfo.pp');
     T:=P.Targets.addUnit('fpmimetypes.pp');
     T:=P.Targets.AddUnit('csvreadwrite.pp');
@@ -124,6 +143,11 @@ begin
       end;
     T:=P.Targets.addUnit('advancedipc.pp');
       T.ResourceStrings:=true;
+=======
+    // Windows units
+    T:=P.Targets.AddUnit('fileinfo.pp',AllWindowsOSes);
+
+>>>>>>> graemeg/cpstrnew
     // Additional sources
     P.Sources.AddSrcFiles('src/win/fclel.*', P.Directory);
     // Install windows resources

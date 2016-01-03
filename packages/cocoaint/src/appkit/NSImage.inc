@@ -131,10 +131,17 @@ var
   private
     _name: NSString;
     _size: NSSize;
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSImage0: cuint);
        1: (data: bitpacked record
+=======
+    __flags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSImage0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         scalable: 0..1;
         dataRetained: 0..1;
         uniqueWindow: 0..1;
@@ -156,7 +163,10 @@ var
         _isTemplate: 0..1;
         failedToExpand: 0..1;
         reserved1: 0..((1 shl 9)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _reps: id; {garbage collector: volatile }

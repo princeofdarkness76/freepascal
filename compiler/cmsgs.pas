@@ -53,8 +53,11 @@ type
     msgidx      : array[1..maxmsgidxparts] of PArrayOfPChar;
     msgidxmax   : array[1..maxmsgidxparts] of longint;
     msgstates   : array[1..maxmsgidxparts] of PArrayOfState;
+<<<<<<< HEAD
     { set if changes with $WARN need to be cleared at next module change }
     has_local_changes : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
     constructor Init(n:longint;const idxmax:array of longint);
     destructor  Done;
     function  LoadIntern(p:pointer;n:longint):boolean;
@@ -127,9 +130,13 @@ begin
      fillchar(msgidx[i]^,msgidxmax[i]*sizeof(pointer),0);
      { create array of states }
      getmem(msgstates[i],msgidxmax[i]*sizeof(tmsgstate));
+<<<<<<< HEAD
      { default value for msgstate is ms_on_global }
      for j:=0 to msgidxmax[i]-1 do
        msgstates[i]^[j]:=ms_on_global;
+=======
+     fillchar(msgstates[i]^,msgidxmax[i]*sizeof(tmsgstate),0);
+>>>>>>> graemeg/cpstrnew
    end;
 end;
 
@@ -410,14 +417,18 @@ end;
 function TMessage.SetVerbosity(nr:longint;newstate:tmsgstate):boolean;
 var
   i: longint;
+<<<<<<< HEAD
   oldstate : tmsgstate;
   is_global : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   result:=false;
   i:=nr div 1000;
   if (i < low(msgstates)) or
      (i > msgparts) then
     exit;
+<<<<<<< HEAD
   if (nr mod 1000 < msgidxmax[i]) then
     begin
       is_global:=(ord(newstate) and ms_global_mask) <> 0;
@@ -429,6 +440,10 @@ begin
       msgstates[i]^[nr mod 1000]:=newstate;
       result:=true;
     end;
+=======
+  msgstates[i]^[nr mod 1000]:=ms_off;
+  result:=true;
+>>>>>>> graemeg/cpstrnew
 end;
 
 {

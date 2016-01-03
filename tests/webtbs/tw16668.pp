@@ -4,12 +4,18 @@ program Project1;
 
 {$mode objfpc}{$H+}
 
+<<<<<<< HEAD
 procedure Foo1;
 var
   a: TObject;
   r: record
     b : array[0..10] of byte
   end;
+=======
+procedure Foo;
+var
+  a: TObject;
+>>>>>>> graemeg/cpstrnew
 begin
 {$ifdef cpu32}
   if ptruint(a)<>$55555555 then
@@ -20,6 +26,7 @@ begin
 {$endif}
 end;
 
+<<<<<<< HEAD
 procedure Foo2;inline;
 var
   a: TObject;
@@ -52,4 +59,8 @@ begin
   Foo2;
   Foo3;
   writeln('ok');
+=======
+begin
+  Foo;
+>>>>>>> graemeg/cpstrnew
 end.

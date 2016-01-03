@@ -5,8 +5,22 @@
                  The contents of this header file are deprecated.
                  Use Foundation or CoreFoundation bundles instead. 
  
+<<<<<<< HEAD
      Copyright:  © 1985-2011 by Apple Inc. All rights reserved.
 }
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+ 
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+ 
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -61,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -81,6 +98,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -100,13 +118,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -116,13 +154,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -134,17 +176,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -165,6 +216,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -269,7 +329,11 @@ type
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewResErrUPP( userRoutine: ResErrProcPtr ): ResErrUPP; external name '_NewResErrUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeResErrUPP()
@@ -280,7 +344,11 @@ function NewResErrUPP( userRoutine: ResErrProcPtr ): ResErrUPP; external name '_
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeResErrUPP( userUPP: ResErrUPP ); external name '_DisposeResErrUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeResErrUPP()
@@ -291,7 +359,11 @@ procedure DisposeResErrUPP( userUPP: ResErrUPP ); external name '_DisposeResErrU
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure InvokeResErrUPP( thErr: OSErr; userUPP: ResErrUPP ); external name '_InvokeResErrUPP';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 { QuickTime 3.0}
 type
@@ -308,7 +380,11 @@ type
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure CloseResFile( refNum: ResFileRefNum ); external name '_CloseResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -323,7 +399,11 @@ procedure CloseResFile( refNum: ResFileRefNum ); external name '_CloseResFile';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function ResError: OSErr; external name '_ResError';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -338,7 +418,11 @@ function ResError: OSErr; external name '_ResError';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function CurResFile: ResFileRefNum; external name '_CurResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -353,7 +437,11 @@ function CurResFile: ResFileRefNum; external name '_CurResFile';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function HomeResFile( theResource: Handle ): ResFileRefNum; external name '_HomeResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -368,7 +456,11 @@ function HomeResFile( theResource: Handle ): ResFileRefNum; external name '_Home
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure UseResFile( refNum: ResFileRefNum ); external name '_UseResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -383,7 +475,11 @@ procedure UseResFile( refNum: ResFileRefNum ); external name '_UseResFile';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function CountTypes: ResourceCount; external name '_CountTypes';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -398,7 +494,11 @@ function CountTypes: ResourceCount; external name '_CountTypes';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Count1Types: ResourceCount; external name '_Count1Types';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -413,7 +513,11 @@ function Count1Types: ResourceCount; external name '_Count1Types';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GetIndType( var theType: ResType; itemIndex: ResourceIndex ); external name '_GetIndType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -428,7 +532,11 @@ procedure GetIndType( var theType: ResType; itemIndex: ResourceIndex ); external
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure Get1IndType( var theType: ResType; itemIndex: ResourceIndex ); external name '_Get1IndType';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -443,7 +551,11 @@ procedure Get1IndType( var theType: ResType; itemIndex: ResourceIndex ); externa
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetResLoad( load: Boolean ); external name '_SetResLoad';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -458,7 +570,11 @@ procedure SetResLoad( load: Boolean ); external name '_SetResLoad';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function CountResources( theType: ResType ): ResourceCount; external name '_CountResources';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -473,7 +589,11 @@ function CountResources( theType: ResType ): ResourceCount; external name '_Coun
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Count1Resources( theType: ResType ): ResourceCount; external name '_Count1Resources';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -488,7 +608,11 @@ function Count1Resources( theType: ResType ): ResourceCount; external name '_Cou
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetIndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; external name '_GetIndResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -503,7 +627,11 @@ function GetIndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; e
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Get1IndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; external name '_Get1IndResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -518,7 +646,11 @@ function Get1IndResource( theType: ResType; itemIndex: ResourceIndex ): Handle; 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetResource( theType: ResType; theID: ResID ): Handle; external name '_GetResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -533,7 +665,11 @@ function GetResource( theType: ResType; theID: ResID ): Handle; external name '_
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Get1Resource( theType: ResType; theID: ResID ): Handle; external name '_Get1Resource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -548,7 +684,11 @@ function Get1Resource( theType: ResType; theID: ResID ): Handle; external name '
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetNamedResource( theType: ResType; const (*var*) name: Str255 ): Handle; external name '_GetNamedResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -563,7 +703,11 @@ function GetNamedResource( theType: ResType; const (*var*) name: Str255 ): Handl
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Get1NamedResource( theType: ResType; const (*var*) name: Str255 ): Handle; external name '_Get1NamedResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -578,7 +722,11 @@ function Get1NamedResource( theType: ResType; const (*var*) name: Str255 ): Hand
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure MacLoadResource( theResource: Handle ); external name '_MacLoadResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -593,7 +741,11 @@ procedure MacLoadResource( theResource: Handle ); external name '_MacLoadResourc
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure ReleaseResource( theResource: Handle ); external name '_ReleaseResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -608,7 +760,11 @@ procedure ReleaseResource( theResource: Handle ); external name '_ReleaseResourc
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure DetachResource( theResource: Handle ); external name '_DetachResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -623,7 +779,11 @@ procedure DetachResource( theResource: Handle ); external name '_DetachResource'
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function UniqueID( theType: ResType ): ResID; external name '_UniqueID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -638,7 +798,11 @@ function UniqueID( theType: ResType ): ResID; external name '_UniqueID';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function Unique1ID( theType: ResType ): ResID; external name '_Unique1ID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -653,7 +817,11 @@ function Unique1ID( theType: ResType ): ResID; external name '_Unique1ID';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetResAttrs( theResource: Handle ): ResAttributes; external name '_GetResAttrs';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -668,7 +836,11 @@ function GetResAttrs( theResource: Handle ): ResAttributes; external name '_GetR
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure GetResInfo( theResource: Handle; var theID: ResID; var theType: ResType; var name: Str255 ); external name '_GetResInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -683,7 +855,11 @@ procedure GetResInfo( theResource: Handle; var theID: ResID; var theType: ResTyp
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetResInfo( theResource: Handle; theID: ResID; const (*var*) name: Str255 ); external name '_SetResInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -698,7 +874,11 @@ procedure SetResInfo( theResource: Handle; theID: ResID; const (*var*) name: Str
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure AddResource( theData: Handle; theType: ResType; theID: ResID; const (*var*) name: Str255 ); external name '_AddResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -713,7 +893,11 @@ procedure AddResource( theData: Handle; theType: ResType; theID: ResID; const (*
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetResourceSizeOnDisk( theResource: Handle ): SIGNEDLONG; external name '_GetResourceSizeOnDisk';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -728,7 +912,11 @@ function GetResourceSizeOnDisk( theResource: Handle ): SIGNEDLONG; external name
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetMaxResourceSize( theResource: Handle ): SIGNEDLONG; external name '_GetMaxResourceSize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -743,7 +931,11 @@ function GetMaxResourceSize( theResource: Handle ): SIGNEDLONG; external name '_
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetResAttrs( theResource: Handle; attrs: ResAttributes ); external name '_SetResAttrs';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -758,7 +950,11 @@ procedure SetResAttrs( theResource: Handle; attrs: ResAttributes ); external nam
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure ChangedResource( theResource: Handle ); external name '_ChangedResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -773,7 +969,11 @@ procedure ChangedResource( theResource: Handle ); external name '_ChangedResourc
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure RemoveResource( theResource: Handle ); external name '_RemoveResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -788,7 +988,11 @@ procedure RemoveResource( theResource: Handle ); external name '_RemoveResource'
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure UpdateResFile( refNum: ResFileRefNum ); external name '_UpdateResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -803,7 +1007,11 @@ procedure UpdateResFile( refNum: ResFileRefNum ); external name '_UpdateResFile'
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure WriteResource( theResource: Handle ); external name '_WriteResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -818,7 +1026,11 @@ procedure WriteResource( theResource: Handle ); external name '_WriteResource';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetResPurge( install: Boolean ); external name '_SetResPurge';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -833,7 +1045,11 @@ procedure SetResPurge( install: Boolean ); external name '_SetResPurge';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetResFileAttrs( refNum: ResFileRefNum ): ResFileAttributes; external name '_GetResFileAttrs';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -848,7 +1064,11 @@ function GetResFileAttrs( refNum: ResFileRefNum ): ResFileAttributes; external n
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetResFileAttrs( refNum: ResFileRefNum; attrs: ResFileAttributes ); external name '_SetResFileAttrs';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -863,7 +1083,11 @@ procedure SetResFileAttrs( refNum: ResFileRefNum; attrs: ResFileAttributes ); ex
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure ReadPartialResource( theResource: Handle; offset: SIGNEDLONG; buffer: UnivPtr; count: SIGNEDLONG ); external name '_ReadPartialResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -878,7 +1102,11 @@ procedure ReadPartialResource( theResource: Handle; offset: SIGNEDLONG; buffer: 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure WritePartialResource( theResource: Handle; offset: SIGNEDLONG; buffer: {const} UnivPtr; count: SIGNEDLONG ); external name '_WritePartialResource';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -893,7 +1121,11 @@ procedure WritePartialResource( theResource: Handle; offset: SIGNEDLONG; buffer:
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure SetResourceSize( theResource: Handle; newSize: SIGNEDLONG ); external name '_SetResourceSize';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -908,7 +1140,11 @@ procedure SetResourceSize( theResource: Handle; newSize: SIGNEDLONG ); external 
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function GetNextFOND( fondHandle: Handle ): Handle; external name '_GetNextFOND';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 { QuickTime 3.0}
@@ -954,7 +1190,11 @@ const
  *    Non-Carbon CFM:   not available
  }
 function InsertResourceFile( refNum: ResFileRefNum; where: RsrcChainLocation ): OSErr; external name '_InsertResourceFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -973,7 +1213,11 @@ function InsertResourceFile( refNum: ResFileRefNum; where: RsrcChainLocation ): 
  *    Non-Carbon CFM:   not available
  }
 function DetachResourceFile( refNum: ResFileRefNum ): OSErr; external name '_DetachResourceFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -992,7 +1236,11 @@ function DetachResourceFile( refNum: ResFileRefNum ): OSErr; external name '_Det
  *    Non-Carbon CFM:   not available
  }
 function GetTopResourceFile( var refNum: ResFileRefNum ): OSErr; external name '_GetTopResourceFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1013,7 +1261,11 @@ function GetTopResourceFile( var refNum: ResFileRefNum ): OSErr; external name '
  *    Non-Carbon CFM:   not available
  }
 function GetNextResourceFile( curRefNum: ResFileRefNum; var nextRefNum: ResFileRefNum ): OSErr; external name '_GetNextResourceFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1028,7 +1280,11 @@ function GetNextResourceFile( curRefNum: ResFileRefNum; var nextRefNum: ResFileR
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function FSOpenResFile( const (*var*) ref: FSRef; permission: SInt8 ): ResFileRefNum; external name '_FSOpenResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1043,7 +1299,11 @@ function FSOpenResFile( const (*var*) ref: FSRef; permission: SInt8 ): ResFileRe
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 procedure FSCreateResFile( const (*var*) parentRef: FSRef; nameLength: UniCharCount; name: UniCharPtr; whichInfo: FSCatalogInfoBitmap; {const} catalogInfo: FSCatalogInfoPtr { can be NULL }; newRef: FSRefPtr { can be NULL }; newSpec: FSSpecPtr { can be NULL } ); external name '_FSCreateResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1065,7 +1325,11 @@ procedure FSCreateResFile( const (*var*) parentRef: FSRef; nameLength: UniCharCo
  *    Non-Carbon CFM:   in InterfaceLib 9.1 and later
  }
 function FSResourceFileAlreadyOpen( const (*var*) resourceFileRef: FSRef; var inChain: Boolean; var refNum: ResFileRefNum ): Boolean; external name '_FSResourceFileAlreadyOpen';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1089,7 +1353,11 @@ function FSResourceFileAlreadyOpen( const (*var*) resourceFileRef: FSRef; var in
  *    Non-Carbon CFM:   not available
  }
 function FSOpenOrphanResFile( const (*var*) ref: FSRef; permission: SignedByte; var refNum: ResFileRefNum ): OSErr; external name '_FSOpenOrphanResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_5, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1142,6 +1410,7 @@ function FSOpenOrphanResFile( const (*var*) ref: FSRef; permission: SignedByte; 
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 function FSCreateResourceFile( const (*var*) parentRef: FSRef; nameLength: UniCharCount; name: UniCharPtr; whichInfo: FSCatalogInfoBitmap; {const} catalogInfo: FSCatalogInfoPtr { can be NULL }; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; newRef: FSRefPtr { can be NULL }; newSpec: FSSpecPtr { can be NULL } ): OSErr; external name '_FSCreateResourceFile';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
@@ -1184,6 +1453,50 @@ function FSCreateResourceFile( const (*var*) parentRef: FSRef; nameLength: UniCh
  }
 function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; flags: UInt32 ): OSErr; external name '_FSCreateResourceFork';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+ }
+function FSCreateResourceFile( const (*var*) parentRef: FSRef; nameLength: UniCharCount; name: UniCharPtr; whichInfo: FSCatalogInfoBitmap; {const} catalogInfo: FSCatalogInfoPtr { can be NULL }; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; newRef: FSRefPtr { can be NULL }; newSpec: FSSpecPtr { can be NULL } ): OSErr; external name '_FSCreateResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  FSCreateResourceFork()
+ *  
+ *  Summary:
+ *    Creates the named forked and initializes it as an empty resource
+ *    fork.
+ *  
+ *  Discussion:
+ *    This function allows a resource fork to be added to an existing
+ *    file.  Passing in a null forkname will result in the data fork
+ *    being used.  If the named fork already exists this function does
+ *    nothing and returns errFSForkExists.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    ref:
+ *      The file to add the fork to
+ *    
+ *    forkNameLength:
+ *      The length of the fork name (in Unicode characters)
+ *    
+ *    forkName:
+ *      The name of the fork to open (in Unicode); may be NULL
+ *    
+ *    flags:
+ *      Pass in zero
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; flags: UInt32 ): OSErr; external name '_FSCreateResourceFork';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1221,9 +1534,22 @@ function FSCreateResourceFork( const (*var*) ref: FSRef; forkNameLength: UniChar
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 function FSOpenResourceFile( const (*var*) ref: FSRef; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; permissions: SInt8; var refNum: ResFileRefNum ): OSErr; external name '_FSOpenResourceFile';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+
+
+{ Deprecated Functions -------------------------------------------------------}
+
+{ use FSOpenResourceFile instead}
+{$ifc not TARGET_CPU_64}
+{
+ *  OpenRFPerm()   *** DEPRECATED ***
+=======
+ }
+function FSOpenResourceFile( const (*var*) ref: FSRef; forkNameLength: UniCharCount; {const} forkName: UniCharPtr { can be NULL }; permissions: SInt8; var refNum: ResFileRefNum ): OSErr; external name '_FSOpenResourceFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 { Deprecated Functions -------------------------------------------------------}
@@ -1241,6 +1567,24 @@ function FSOpenResourceFile( const (*var*) ref: FSRef; forkNameLength: UniCharCo
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function OpenRFPerm( const (*var*) fileName: Str255; vRefNum: FSVolumeRefNum; permission: SInt8 ): ResFileRefNum; external name '_OpenRFPerm';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{ use FSOpenResourceFile instead}
+{
+ *  HOpenResFile()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function OpenRFPerm( const (*var*) fileName: Str255; vRefNum: FSVolumeRefNum; permission: SInt8 ): ResFileRefNum; external name '_OpenRFPerm';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -1261,6 +1605,12 @@ function HOpenResFile( vRefNum: FSVolumeRefNum; dirID: SIGNEDLONG; const (*var*)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 
 
+=======
+function HOpenResFile( vRefNum: FSVolumeRefNum; dirID: SIGNEDLONG; const (*var*) fileName: Str255; permission: SInt8 ): ResFileRefNum; external name '_HOpenResFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+>>>>>>> graemeg/cpstrnew
 { use FSCreateResourceFile instead}
 {
  *  HCreateResFile()   *** DEPRECATED ***
@@ -1274,7 +1624,11 @@ function HOpenResFile( vRefNum: FSVolumeRefNum; dirID: SIGNEDLONG; const (*var*)
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure HCreateResFile( vRefNum: FSVolumeRefNum; dirID: SIGNEDLONG; const (*var*) fileName: Str255 ); external name '_HCreateResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 { use FSOpenResourceFile instead}
@@ -1290,7 +1644,11 @@ procedure HCreateResFile( vRefNum: FSVolumeRefNum; dirID: SIGNEDLONG; const (*va
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function FSpOpenResFile( const (*var*) spec: FSSpec; permission: SignedByte ): ResFileRefNum; external name '_FSpOpenResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 { use FSCreateResourceFile instead}
@@ -1306,7 +1664,11 @@ function FSpOpenResFile( const (*var*) spec: FSSpec; permission: SignedByte ): R
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure FSpCreateResFile( const (*var*) spec: FSSpec; creator: OSType; fileType: OSType; scriptTag: ScriptCode ); external name '_FSpCreateResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 { use FSResourceFileAlreadyOpen instead}
@@ -1322,7 +1684,11 @@ procedure FSpCreateResFile( const (*var*) spec: FSSpec; creator: OSType; fileTyp
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
 function FSpResourceFileAlreadyOpen( const (*var*) resourceFile: FSSpec; var inChain: Boolean; var refNum: ResFileRefNum ): Boolean; external name '_FSpResourceFileAlreadyOpen';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 { use FSOpenOrphanResFile instead}
@@ -1338,7 +1704,11 @@ function FSpResourceFileAlreadyOpen( const (*var*) resourceFile: FSSpec; var inC
  *    Non-Carbon CFM:   not available
  }
 function FSpOpenOrphanResFile( const (*var*) spec: FSSpec; permission: SignedByte; var refNum: ResFileRefNum ): OSErr; external name '_FSpOpenOrphanResFile';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}

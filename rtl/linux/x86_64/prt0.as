@@ -48,6 +48,11 @@ _dynamic_start:
 	.globl _start
 	.type _start,@function
 _start:
+<<<<<<< HEAD
+=======
+#       movq    %rdx,%r9                 /* Address of the shared library termination
+#               	                 function.  */
+>>>>>>> graemeg/cpstrnew
 	popq    %rsi		      /* Pop the argument count.  */
         movq 	operatingsystem_parameter_argc@GOTPCREL(%rip),%rax
         movq    %rsi,(%rax)
@@ -70,6 +75,7 @@ _start:
         .globl  _haltproc
         .type   _haltproc,@function
 _haltproc:
+<<<<<<< HEAD
         movq    __dl_fini@GOTPCREL(%rip),%rax
         movq    (%rax),%rax
         testq   %rax,%rax
@@ -77,6 +83,8 @@ _haltproc:
         call    *%rax
 .LNoDlFiniCall:
 
+=======
+>>>>>>> graemeg/cpstrnew
         movq 	operatingsystem_result@GOTPCREL(%rip),%rax
         movzwl  (%rax),%edi
         movl    $231,%eax                 /* exit_group call */

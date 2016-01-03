@@ -67,16 +67,29 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure TThread.SysCreate(CreateSuspended: Boolean;
                             const StackSize: SizeUInt);
 var
   Flags: cardinal;
 begin
+=======
+constructor TThread.Create(CreateSuspended: Boolean;
+                           const StackSize: SizeUInt = DefaultStackSize);
+var
+  Flags: cardinal;
+begin
+  inherited Create;
+>>>>>>> graemeg/cpstrnew
   AddThread (Self);
 end;
 
 
+<<<<<<< HEAD
 procedure TThread.SysDestroy;
+=======
+destructor TThread.Destroy;
+>>>>>>> graemeg/cpstrnew
 begin
  if not FFinished and not Suspended then
  begin

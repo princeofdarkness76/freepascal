@@ -8,7 +8,10 @@ type
     button : cuint8;
     rx : cint;
     ry : cint;
+<<<<<<< HEAD
     rz : cint;
+=======
+>>>>>>> graemeg/cpstrnew
   end;
   Pmouse_event = ^mouse_event;
 

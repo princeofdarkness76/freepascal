@@ -47,17 +47,27 @@
     _resizedWidth: CGFloat;
     _currentWidth: CGFloat;
     _url: NSURL;
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSPathComponentCell0: cuint);
        1: (data: bitpacked record
+=======
+    __flags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSPathComponentCell0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         shouldDrawArrow: 0..1;
         drawsAsNavigationBar: 0..1;
         isFirstItem: 0..1;
         isLastItem: 0..1;
         isDropTarget: 0..1;
         reserved: 0..((1 shl 27)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _aux: id;

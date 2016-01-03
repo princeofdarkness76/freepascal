@@ -43,7 +43,11 @@
   NSMethodSignature = objcclass external (NSObject)
   private
     _private: Pointer;
+<<<<<<< HEAD
     _reserved: array[0..(6)-1] of Pointer;
+=======
+        _reserved: array[0..5] of Pointer;
+>>>>>>> graemeg/cpstrnew
     
   public
     class function signatureWithObjCTypes(types: PChar): NSMethodSignature; message 'signatureWithObjCTypes:';

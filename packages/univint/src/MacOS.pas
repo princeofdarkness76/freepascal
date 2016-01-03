@@ -56,8 +56,11 @@ uses
   AudioCodecs,
   AudioComponents,
   AudioHardware,
+<<<<<<< HEAD
   AudioHardwareBase,
   AudioHardwareDeprecated,
+=======
+>>>>>>> graemeg/cpstrnew
   AudioOutputUnit,
   AudioUnitCarbonViews,
   AudioUnitParameters,
@@ -84,8 +87,11 @@ uses
   CFDictionary,
   CFError,
   CFFTPStream,
+<<<<<<< HEAD
   CFFileDescriptor,
   CFFileSecurity,
+=======
+>>>>>>> graemeg/cpstrnew
   CFHTTPAuthentication,
   CFHTTPMessage,
   CFHTTPStream,
@@ -176,7 +182,10 @@ uses
   CMCalibrator,
   CSIdentity,
   CSIdentityAuthority,
+<<<<<<< HEAD
   CSIdentityBase,
+=======
+>>>>>>> graemeg/cpstrnew
   CSIdentityQuery,
   CTFont,
   CTFontCollection,
@@ -233,7 +242,10 @@ uses
   Debugging,
   Dialogs,
   Dictionary,
+<<<<<<< HEAD
   DictionaryServices,
+=======
+>>>>>>> graemeg/cpstrnew
   DigitalHubRegistry,
   Displays,
   Drag,
@@ -305,6 +317,10 @@ uses
   Keyboards,
   KeychainCore,
   KeychainHI,
+<<<<<<< HEAD
+=======
+  KeyEvents,
+>>>>>>> graemeg/cpstrnew
   LSInfo,
   LSOpen,
   LSQuarantine,
@@ -377,7 +393,10 @@ uses
   QDPictToCGContext,
   QLBase,
   QLGenerator,
+<<<<<<< HEAD
   QLThumbnail,
+=======
+>>>>>>> graemeg/cpstrnew
   QLThumbnailImage,
   QTML,
   QTSMovie,
@@ -407,11 +426,14 @@ uses
   SCSchemaDefinitions,
   SFNTLayoutTypes,
   SFNTTypes,
+<<<<<<< HEAD
   SKAnalysis,
   SKDocument,
   SKIndex,
   SKSearch,
   SKSummary,
+=======
+>>>>>>> graemeg/cpstrnew
   ScalerStreamTypes,
   Scrap,
   Script,
@@ -449,7 +471,10 @@ uses
   WSMethodInvocation,
   WSProtocolHandler,
   WSTypes,
+<<<<<<< HEAD
   acl,
+=======
+>>>>>>> graemeg/cpstrnew
   cblas,
   certextensions,
   cssmapple,

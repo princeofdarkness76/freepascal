@@ -160,6 +160,72 @@ begin
     IsAbsolute:=true;
 end;
 
+{ Constants used in IsAbsolute function }
+  TargetHasDosStyleDirectories : boolean = false;
+  TargetAmigaLike : boolean = false;
+  TargetIsMacOS : boolean = false;
+
+{ Set the three constants above according to
+  the current target }
+
+procedure SetTargetDirectoriesStyle;
+var
+  LTarget : string;
+begin
+  LTarget := lowercase(CompilerTarget);
+  TargetHasDosStyleDirectories :=
+    (LTarget='go32v2') or
+    (LTarget='win32') or
+    (LTarget='win64') or
+    (LTarget='watcom') or
+    (LTarget='os2');
+  TargetAmigaLike:=
+    (LTarget='amiga') or
+    (LTarget='morphos');
+  TargetIsMacOS:=
+    (LTarget='macos');
+end;
+
+{ extracted from rtl/macos/macutils.inc }
+
+function IsMacFullPath (const path: string): Boolean;
+  begin
+    if Pos(':', path) = 0 then    {its partial}
+      IsMacFullPath := false
+    else if path[1] = ':' then
+      IsMacFullPath := false
+    else
+      IsMacFullPath := true
+  end;
+
+
+Function IsAbsolute (Const F : String) : boolean;
+{
+  Returns True if the name F is a absolute file name
+}
+begin
+  IsAbsolute:=false;
+  if TargetHasDosStyleDirectories then
+    begin
+      if (F[1]='/') or (F[1]='\') then
+        IsAbsolute:=true;
+      if (Length(F)>2) and (F[2]=':') and ((F[3]='\') or (F[3]='/')) then
+        IsAbsolute:=true;
+    end
+  else if TargetAmigaLike then
+    begin
+      if (length(F)>0) and (Pos(':',F) <> 0) then
+        IsAbsolute:=true;
+    end
+  else if TargetIsMacOS then
+    begin
+      IsAbsolute:=IsMacFullPath(F);
+    end
+  { generic case }
+  else if (F[1]='/') then
+    IsAbsolute:=true;
+end;
+
 Function FileExists (Const F : String) : Boolean;
 {
   Returns True if the file exists, False if not.
@@ -409,8 +475,11 @@ const
   bufsize = 16384;
 var
   f,g : file;
+<<<<<<< HEAD
   oldfilemode : byte;
   st : string;
+=======
+>>>>>>> graemeg/cpstrnew
   addsize,
   i   : longint;
   buf : pointer;
@@ -420,6 +489,15 @@ begin
   else
    Verbose(V_Debug,'Copying '+fn1+' to '+fn2);
   assign(g,fn2);
+<<<<<<< HEAD
+=======
+  {$I-}
+   reset(f,1);
+  {$I+}
+  addsize:=0;
+  if ioresult<>0 then
+   Verbose(V_Error,'Can''t open '+fn1);
+>>>>>>> graemeg/cpstrnew
   if append then
    begin
      {$I-}
@@ -1002,9 +1080,15 @@ begin
     begin
       if (passes>1) then
         begin
+<<<<<<< HEAD
           wpoargs:=' -OW'+config.wpoparas+' -FW'+TestOutputFileName('',PPFile[current],'wp'+tostr(passnr));
           if (passnr>1) then
             wpoargs:=wpoargs+' -Ow'+config.wpoparas+' -Fw'+TestOutputFileName('',PPFile[current],'wp'+tostr(passnr-1));
+=======
+          wpoargs:=' -OW'+config.wpoparas+' -FW'+TestOutputFileName(PPFile[current],'wp'+tostr(passnr));
+          if (passnr>1) then
+            wpoargs:=wpoargs+' -Ow'+config.wpoparas+' -Fw'+TestOutputFileName(PPFile[current],'wp'+tostr(passnr-1));
+>>>>>>> graemeg/cpstrnew
         end;
       Verbose(V_Debug,'Executing '+compilerbin+' '+args+wpoargs);
       { also get the output from as and ld that writes to stderr sometimes }
@@ -1053,7 +1137,11 @@ begin
          if CopyFile(CompilerLogFile,LongLogFile,true)=0 then
            AddLog(LongLogFile,'Internal error in compiler');
          { avoid to try again }
+<<<<<<< HEAD
          AddLog(ExeLogFile,failed_to_compile+PPFileInfo[current]);
+=======
+         AddLog(ExeLogFile,'Failed to compile '+PPFileInfo[current]);
+>>>>>>> graemeg/cpstrnew
          Verbose(V_Warning,'Internal error in compiler');
          exit;
        end;
@@ -1091,7 +1179,11 @@ begin
          ((Config.KnownCompileError<>0) and (ExecuteResult=Config.KnownCompileError))) then
       begin
         AddLog(FailLogFile,TestName+known_problem+Config.KnownCompileNote);
+<<<<<<< HEAD
         AddLog(ResLogFile,failed_to_compile+PPFileInfo[current]+known_problem+Config.KnownCompileNote);
+=======
+        AddLog(ResLogFile,failed_to_run+PPFileInfo[current]+known_problem+Config.KnownCompileNote);
+>>>>>>> graemeg/cpstrnew
         AddLog(LongLogFile,line_separation);
         AddLog(LongLogFile,known_problem+Config.KnownCompileNote);
         AddLog(LongLogFile,failed_to_compile+PPFileInfo[current]+' ('+ToStr(ExecuteResult)+')');
@@ -1354,6 +1446,7 @@ end;
 
 function RunExecutable:boolean;
 const
+  MaxTrials = 5;
 {$ifdef unix}
   CurrDir = './';
 {$else}
@@ -1365,9 +1458,17 @@ var
   FullExeLogFile,
   TestRemoteExe,
   TestExe  : string;
+<<<<<<< HEAD
+=======
+  LocalFile, RemoteFile: string;
+  LocalPath, LTarget : string;
+  execcmd,
+  pref     : string;
+>>>>>>> graemeg/cpstrnew
   execres  : boolean;
   EndTicks,
   StartTicks : int64;
+<<<<<<< HEAD
 begin
   RunExecutable:=false;
   execres:=true;
@@ -1375,6 +1476,53 @@ begin
   TestExe:=TestOutputFilename('',PPFile[current],ExeExt);
 
   execres:=MaybeCopyFiles(TestExe);
+=======
+  function ExecuteRemote(const prog,args:string):boolean;
+    var
+      Trials : longint;
+    begin
+      Verbose(V_Debug,'RemoteExecuting '+Prog+' '+args);
+      StartTicks:=GetMicroSTicks;
+      ExecuteRemote:=false;
+      Trials:=0;
+      While (Trials<MaxTrials) and not ExecuteRemote do
+        begin
+          inc(Trials);
+          ExecuteRemote:=ExecuteRedir(prog,args,'',EXELogFile,'stdout');
+        end;
+
+      if Trials>1 then
+        Verbose(V_Debug,'Done in '+tostr(trials)+' trials');
+      EndTicks:=GetMicroSTicks;
+    end;
+
+  function ExecuteEmulated(const prog,args:string):boolean;
+    begin
+      Verbose(V_Debug,'EmulatorExecuting '+Prog+' '+args);
+      StartTicks:=GetMicroSTicks;
+      ExecuteEmulated:=ExecuteRedir(prog,args,'',FullExeLogFile,'stdout');
+      EndTicks:=GetMicroSTicks;
+   end;
+
+label
+  done;
+begin
+  RunExecutable:=false;
+  execres:=true;
+  { when remote testing, leave extension away,
+    but not for go32v2, win32 or win64 as cygwin ssh
+    will remove the .exe in that case }
+  LTarget := lowercase(CompilerTarget);
+
+  if (RemoteAddr='') or
+     (rcpprog='pscp') or
+     (LTarget='go32v2') or
+     (LTarget='win32') or
+     (LTarget='win64') then
+    TestExe:=OutputFileName(PPFile[current],ExeExt)
+  else
+    TestExe:=OutputFileName(PPFile[current],'');
+>>>>>>> graemeg/cpstrnew
   if EmulatorName<>'' then
     begin
       { Get full name out log file, because we change the directory during
@@ -1394,6 +1542,7 @@ begin
   else if RemoteAddr<>'' then
     begin
       TestRemoteExe:=RemotePath+'/'+SplitFileName(TestExe);
+<<<<<<< HEAD
       { rsh doesn't pass the exitcode, use a second command to print the exitcode
         on the remoteshell to stdout }
       if DoVerbose and (rshprog='plink') then
@@ -1422,6 +1571,54 @@ begin
         end;
 
 
+=======
+      if deBefore in DelExecutable then
+        ExecuteRemote(rshprog,RemotePara+' '+RemoteAddr+' rm -f '+TestRemoteExe);
+      execres:=ExecuteRemote(rcpprog,RemotePara+' '+TestExe+' '+RemoteAddr+':'+TestRemoteExe);
+      if not execres then
+      begin
+        Verbose(V_normal, 'Could not copy executable '+TestExe);
+        goto done;
+      end;
+      s:=Config.Files;
+      if length(s) > 0 then
+      begin
+        LocalPath:=SplitPath(PPFile[current]);
+        if Length(LocalPath) > 0 then
+          LocalPath:=LocalPath+'/';
+        repeat
+          index:=pos(' ',s);
+          if index=0 then
+            LocalFile:=s
+          else
+            LocalFile:=copy(s,1,index-1);
+          RemoteFile:=RemotePath+'/'+SplitFileName(LocalFile);
+          LocalFile:=LocalPath+LocalFile;
+          if DoVerbose and (rcpprog='pscp') then
+            pref:='-v '
+          else
+            pref:='';
+          execres:=ExecuteRemote(rcpprog,pref+RemotePara+' '+LocalFile+' '+RemoteAddr+':'+RemoteFile);
+          if not execres then
+          begin
+            Verbose(V_normal, 'Could not copy required file '+LocalFile);
+            goto done;
+          end;
+          if index=0 then
+            break;
+          s:=copy(s,index+1,length(s)-index);
+        until false;
+      end;
+      { rsh doesn't pass the exitcode, use a second command to print the exitcode
+        on the remoteshell to stdout }
+      if DoVerbose and (rshprog='plink') then
+        execcmd:='-v '
+      else
+        execcmd:='';
+      execcmd:=execcmd+RemotePara+' '+RemoteAddr+' '+rquote+
+         'chmod 755 '+TestRemoteExe+
+          ' ; cd '+RemotePath+' ; ';
+>>>>>>> graemeg/cpstrnew
       if UseTimeout then
       begin
         if Config.Timeout=0 then
@@ -1438,6 +1635,7 @@ begin
         execcmd:=execcmd+' ./'+SplitFileName(TestRemoteExe)
       else
         execcmd:=execcmd+' '+TestRemoteExe;
+<<<<<<< HEAD
       execcmd:=execcmd+' ; echo TestExitCode: $?';
       if (deAfter in DelExecutable) and
          not Config.NeededAfter then
@@ -1449,6 +1647,14 @@ begin
         end;
       execcmd:=execcmd+'; }'+rquote;
       execres:=ExecuteRemote(rshprog,execcmd,StartTicks,EndTicks);
+=======
+      execcmd:=execcmd+' ; echo "TestExitCode: $?"';
+      if (deAfter in DelExecutable) and
+         not Config.NeededAfter then
+        execcmd:=execcmd+' ; rm -f '+TestRemoteExe;
+      execcmd:=execcmd+rquote;
+      execres:=ExecuteRemote(rshprog,execcmd);
+>>>>>>> graemeg/cpstrnew
       { Check for TestExitCode error in output, sets ExecuteResult }
       if not CheckTestExitCode(EXELogFile) then
         Verbose(V_Debug,'Failed to check exit code for '+execcmd);
@@ -1605,9 +1811,13 @@ procedure getargs;
     writeln('dotest [Options] <File>');
     writeln;
     writeln('Options can be:');
+<<<<<<< HEAD
     writeln('  !ENV_NAME     parse environment variable ENV_NAME for options');
     writeln('  -A            include ALL tests');
     writeln('  -ADB          use ADB to run tests');
+=======
+    writeln('  -A            include ALL tests');
+>>>>>>> graemeg/cpstrnew
     writeln('  -B            delete executable before remote upload');
     writeln('  -C<compiler>  set compiler to use');
     writeln('  -D            display execution time');
@@ -1615,7 +1825,10 @@ procedure getargs;
     writeln('  -G            include graph tests');
     writeln('  -I            include interactive tests');
     writeln('  -K            include known bug tests');
+<<<<<<< HEAD
     writeln('  -L<ext>       set extension of temporary files (prevent conflicts with parallel invocations)');
+=======
+>>>>>>> graemeg/cpstrnew
     writeln('  -M<emulator>  run the tests using the given emulator');
     writeln('  -O            use timeout wrapper for (remote) execution');
     writeln('  -P<path>      path to the tests tree on the remote machine');
@@ -1632,6 +1845,7 @@ procedure getargs;
     halt(1);
   end;
 
+<<<<<<< HEAD
   procedure interpret_option (para : string);
   var
     ch : char;
@@ -1657,12 +1871,40 @@ procedure getargs;
            DoKnown:=true;
            DoAll:=true;
          end;
+=======
+begin
+  if exeext<>'' then
+    CompilerBin:='ppc386.'+exeext
+  else
+    CompilerBin:='ppc386';
+  for i:=1 to paramcount do
+   begin
+     para:=Paramstr(i);
+     if (para[1]='-') then
+      begin
+        ch:=Upcase(para[2]);
+        delete(para,1,2);
+        case ch of
+         'A' :
+           begin
+             DoGraph:=true;
+             DoInteractive:=true;
+             DoKnown:=true;
+             DoAll:=true;
+           end;
+>>>>>>> graemeg/cpstrnew
 
      'B' : Include(DelExecutable,deBefore);
 
      'C' : CompilerBin:=Para;
 
+<<<<<<< HEAD
      'D' : BenchMarkInfo:=true;
+=======
+         'D' : BenchMarkInfo:=true;
+
+         'E' : DoExecute:=true;
+>>>>>>> graemeg/cpstrnew
 
      'E' : DoExecute:=true;
 
@@ -1707,24 +1949,45 @@ procedure getargs;
          j:=Pos('-',Para);
          if j>0 then
            begin
+<<<<<<< HEAD
              CompilerCPU:=Copy(Para,1,j-1);
              CompilerTarget:=Copy(Para,j+1,length(para));
            end
          else
            CompilerTarget:=Para
        end;
+=======
+             j:=Pos('-',Para);
+             if j>0 then
+               begin
+                 CompilerCPU:=Copy(Para,1,j-1);
+                 CompilerTarget:=Copy(Para,j+1,length(para));
+               end
+             else
+               CompilerTarget:=Para
+           end;
+>>>>>>> graemeg/cpstrnew
 
      'U' :
        RemotePara:=RemotePara+' '+Para;
 
      'V' : DoVerbose:=true;
 
+<<<<<<< HEAD
      'W' :
        begin
          rshprog:='plink';
          rcpprog:='pscp';
          rquote:='"';
        end;
+=======
+         'W' :
+           begin
+             rshprog:='plink';
+             rcpprog:='pscp';
+             rquote:='"';
+           end;
+>>>>>>> graemeg/cpstrnew
 
      'X' : UseComSpec:=false;
 
@@ -1746,6 +2009,7 @@ procedure getargs;
    Verbose(V_Debug,'Environment value is "'+arg+'"');
    while (length(arg)>0) do
      begin
+<<<<<<< HEAD
        while (length(arg)>0) and (arg[1]=' ') do
          delete(arg,1,1);
        pspace:=pos(' ',arg);
@@ -1782,6 +2046,12 @@ begin
          inc(current);
        end;
    end;
+=======
+       PPFile.Insert(current,ForceExtension(Para,'pp'));
+       inc(current);
+     end;
+    end;
+>>>>>>> graemeg/cpstrnew
   if current=0 then
     HelpScreen;
   { disable graph,interactive when running remote }
@@ -1790,6 +2060,7 @@ begin
       DoGraph:=false;
       DoInteractive:=false;
     end;
+<<<<<<< HEAD
   { If we use PuTTY plink program with -load option,
     the IP address or name should not be added to
     the command line }
@@ -1811,6 +2082,8 @@ begin
     end
   else
     RemotePathPrefix:=RemoteAddr + ':';
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -1869,8 +2142,13 @@ begin
       ForceLog(LongLogFile);
       ForceLog(FailLogFile);
       { Per test logfiles }
+<<<<<<< HEAD
       CompilerLogFile:=TestLogFileName('',SplitFileName(PPFile[current]),'log');
       ExeLogFile:=TestLogFileName('',SplitFileName(PPFile[current]),'elg');
+=======
+      CompilerLogFile:=TestOutputFileName(SplitFileName(PPFile[current]),'log');
+      ExeLogFile:=TestOutputFileName(SplitFileName(PPFile[current]),'elg');
+>>>>>>> graemeg/cpstrnew
       Verbose(V_Debug,'Using Compiler logfile: '+CompilerLogFile);
       Verbose(V_Debug,'Using Execution logfile: '+ExeLogFile);
     end;
@@ -2071,9 +2349,15 @@ begin
       begin
         if DoExecute then
          begin
+<<<<<<< HEAD
            if FileExists(TestOutputFilename('',PPFile[current],'ppu')) or
               FileExists(TestOutputFilename('',PPFile[current],'ppo')) or
               FileExists(TestOutputFilename('',PPFile[current],'ppw')) then
+=======
+           if FileExists(TestOutputFilename(PPFile[current],'ppu')) or
+              FileExists(TestOutputFilename(PPFile[current],'ppo')) or
+              FileExists(TestOutputFilename(PPFile[current],'ppw')) then
+>>>>>>> graemeg/cpstrnew
              begin
                AddLog(ExeLogFile,skipping_run_unit+PPFileInfo[current]);
                AddLog(ResLogFile,skipping_run_unit+PPFileInfo[current]);
@@ -2100,6 +2384,7 @@ begin
   PPFileInfo.Capacity:=10;
   GetArgs;
   SetTargetDirectoriesStyle;
+<<<<<<< HEAD
   SetTargetCanCompileLibraries;
   SetRemoteConfiguration;
 {$ifdef LIMIT83fs}
@@ -2107,6 +2392,8 @@ begin
 {$else not LIMIT83fs}
   SetUseOSOnly;
 {$endif not LIMIT83fs}
+=======
+>>>>>>> graemeg/cpstrnew
   Verbose(V_Debug,'Found '+ToStr(PPFile.Count)+' tests to run');
   if current>0 then
     for current:=0 to PPFile.Count-1 do

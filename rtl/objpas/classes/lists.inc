@@ -543,6 +543,7 @@ end;
 {****************************************************************************}
 {*                TListEnumerator                                           *}
 {****************************************************************************}
+<<<<<<< HEAD
 
 constructor TListEnumerator.Create(AList: TList);
 begin
@@ -556,6 +557,21 @@ begin
   Result := FList[FPosition];
 end;
 
+=======
+
+constructor TListEnumerator.Create(AList: TList);
+begin
+  inherited Create;
+  FList := AList;
+  FPosition := -1;
+end;
+
+function TListEnumerator.GetCurrent: Pointer;
+begin
+  Result := FList[FPosition];
+end;
+
+>>>>>>> graemeg/cpstrnew
 function TListEnumerator.MoveNext: Boolean;
 begin
   Inc(FPosition);
@@ -716,7 +732,11 @@ begin
   for I := 0 to AList.Count - 1 do
     if AList[I] <> nil then
       Notify(AList[I], lnAdded);
+<<<<<<< HEAD
 end;
+=======
+end;            
+>>>>>>> graemeg/cpstrnew
 
 procedure TList.Clear;
 

@@ -45,10 +45,17 @@
   private
     _delegate: id;
     _dataSource: id;
+<<<<<<< HEAD
     __cbcFlags: record
       case byte of
        0: (_anonbitfield_NSComboBoxCell0: cuint);
        1: (data: bitpacked record
+=======
+    __cbcFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSComboBoxCell0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _usesDataSource: 0..1;
         _completes: 0..1;
         buttonBordered: 0..1;
@@ -58,7 +65,10 @@
         synchronizingSelection: 0..1;
         reserved: 0..((1 shl 9)-1);
         visibleItems: 0..((1 shl 16)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _buttonCell: NSButtonCell;
@@ -70,6 +80,7 @@
     _reserved: Pointer;
     
   public
+<<<<<<< HEAD
     function hasVerticalScroller: Boolean; message 'hasVerticalScroller';
     procedure setHasVerticalScroller(flag: Boolean); message 'setHasVerticalScroller:';
     function intercellSpacing: NSSize; message 'intercellSpacing';
@@ -106,6 +117,8 @@
     function objectValueOfSelectedItem: id; message 'objectValueOfSelectedItem';
     function indexOfItemWithObjectValue(object_: id): NSInteger; message 'indexOfItemWithObjectValue:';
     function objectValues: NSArray; message 'objectValues';
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 
 {$endif}

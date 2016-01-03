@@ -701,6 +701,7 @@ Unit raarmgas;
           var icond: tasmcond;
           begin
             is_ConditionCode := false;
+<<<<<<< HEAD
 
             case actopcode of
               A_IT,A_ITE,A_ITT,
@@ -723,6 +724,28 @@ Unit raarmgas;
                     end;
                 end;
             end;
+=======
+            
+            if actopcode in [A_IT,A_ITE,A_ITT,
+                             A_ITEE,A_ITTE,A_ITET,A_ITTT,
+                             A_ITEEE,A_ITTEE,A_ITETE,A_ITTTE,A_ITEET,A_ITTET,A_ITETT,A_ITTTT] then
+              begin
+                { search for condition, conditions are always 2 chars }
+                if length(hs)>1 then
+                  begin
+                    for icond:=low(tasmcond) to high(tasmcond) do
+                      begin
+                        if copy(hs,1,2)=uppercond2str[icond] then
+                          begin
+                            //actcondition:=icond;
+                            oper.opr.typ := OPR_COND;
+                            oper.opr.cc := icond;
+                            exit(true);
+                          end;
+                      end;
+                  end;
+              end;
+>>>>>>> graemeg/cpstrnew
           end;
 
 
@@ -757,6 +780,7 @@ Unit raarmgas;
               end;
           end;
 
+<<<<<<< HEAD
 
         procedure BuildDirectRef;
 
@@ -831,6 +855,8 @@ Unit raarmgas;
             result:=getsupreg(reg);
         end;
 
+=======
+>>>>>>> graemeg/cpstrnew
       var
         tempreg : tregister;
         ireg : tsuperregister;
@@ -1004,7 +1030,11 @@ Unit raarmgas;
                   oper.opr.typ:=OPR_REGISTER;
                   oper.opr.reg:=tempreg;
                 end
+<<<<<<< HEAD
               else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM,A_VLDM,A_VSTM,A_SRS,A_RFE]) then
+=======
+              else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM]) then
+>>>>>>> graemeg/cpstrnew
                 begin
                   consume(AS_NOT);
                   oper.opr.typ:=OPR_REFERENCE;
@@ -1022,11 +1052,19 @@ Unit raarmgas;
               registerset:=[];
               regtype:=R_INVALIDREGISTER;
               subreg:=R_SUBNONE;
+<<<<<<< HEAD
               while actasmtoken<>AS_RSBRACKET do
                 begin
                   if actasmtoken=AS_REGISTER then
                     begin
                       include(registerset,getregsetindex(actasmregister));
+=======
+              while true do
+                begin
+                  if actasmtoken=AS_REGISTER then
+                    begin
+                      include(registerset,getsupreg(actasmregister));
+>>>>>>> graemeg/cpstrnew
                       if regtype<>R_INVALIDREGISTER then
                         begin
                           if (getregtype(actasmregister)<>regtype) or
@@ -1060,6 +1098,7 @@ Unit raarmgas;
               oper.opr.regtype:=regtype;
               oper.opr.subreg:=subreg;
               oper.opr.regset:=registerset;
+<<<<<<< HEAD
               if actasmtoken=AS_XOR then
                 begin
                   consume(AS_XOR);
@@ -1067,6 +1106,8 @@ Unit raarmgas;
                 end
               else
                 oper.opr.usermode:=false;
+=======
+>>>>>>> graemeg/cpstrnew
               if (registerset=[]) then
                 Message(asmr_e_empty_regset);
             end;
@@ -1232,6 +1273,7 @@ Unit raarmgas;
 
       const
         { sorted by length so longer postfixes will match first }
+<<<<<<< HEAD
         postfix2strsorted : array[1..70] of string[9] = (
           '.F32.S32','.F32.U32','.S32.F32','.U32.F32','.F64.S32','.F64.U32','.S32.F64','.U32.F64',
           '.F32.S16','.F32.U16','.S16.F32','.U16.F32','.F64.S16','.F64.U16','.S16.F64','.U16.F64',
@@ -1256,6 +1298,23 @@ Unit raarmgas;
           PF_IB,PF_DA,PF_DB,PF_FD,PF_FA,
           PF_ED,PF_EA,PF_8,PF_S,PF_D,PF_E,
           PF_P,PF_X,PF_R,PF_B,PF_H,PF_T);
+=======
+        postfix2strsorted : array[1..31] of string[3] = (
+          'IAD','DBD','FDD','EAD',
+          'IAS','DBS','FDS','EAS',
+          'IAX','DBX','FDX','EAX',
+          'EP','SB','BT','SH',
+          'IA','IB','DA','DB','FD','FA','ED','EA',
+          'B','D','E','P','T','H','S');
+
+        postfixsorted : array[1..31] of TOpPostfix = (
+          PF_IAD,PF_DBD,PF_FDD,PF_EAD,
+          PF_IAS,PF_DBS,PF_FDS,PF_EAS,
+          PF_IAX,PF_DBX,PF_FDX,PF_EAX,
+          PF_EP,PF_SB,PF_BT,PF_SH,
+          PF_IA,PF_IB,PF_DA,PF_DB,PF_FD,PF_FA,PF_ED,PF_EA,
+          PF_B,PF_D,PF_E,PF_P,PF_T,PF_H,PF_S);
+>>>>>>> graemeg/cpstrnew
 
       var
         j, j2 : longint;
@@ -1307,11 +1366,22 @@ Unit raarmgas;
                   end;
                 dec(j2);
               end;
+<<<<<<< HEAD
 
             if actopcode=A_NONE then
               exit;
 
             if is_unified then
+=======
+          end;
+        if actopcode=A_NONE then
+          exit;
+			 
+        { search for condition, conditions are always 2 chars }
+        if length(hs)>1 then
+          begin
+            for icond:=low(tasmcond) to high(tasmcond) do
+>>>>>>> graemeg/cpstrnew
               begin
                 { check for postfix }
                 if (length(hs)>0) and (actoppostfix=PF_None) then
@@ -1407,6 +1477,20 @@ Unit raarmgas;
             if is_asmopcode = true then
               break;
           end;
+<<<<<<< HEAD
+=======
+        { check for format postfix }
+        if length(hs)>0 then
+          begin
+            if upcase(copy(hs,1,2)) = '.W' then
+              begin
+                actwideformat:=true;
+                delete(hs,1,2);
+              end;
+          end;
+        { if we stripped all postfixes, it's a valid opcode }
+        is_asmopcode:=length(hs)=0;
+>>>>>>> graemeg/cpstrnew
       end;
 
 

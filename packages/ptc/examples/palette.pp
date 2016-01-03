@@ -16,10 +16,17 @@ uses
   ptc;
 
 var
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
   palette: IPTCPalette;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
   data: array [0..255] of Uint32;
   pixels: PUint8;
   width, height: Integer;
@@ -29,25 +36,40 @@ begin
   try
     try
       { create console }
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 
       { create format }
       format := TPTCFormatFactory.CreateNew(8);
+=======
+      console := TPTCConsole.Create;
+
+      { create format }
+      format := TPTCFormat.Create(8);
+>>>>>>> graemeg/cpstrnew
 
       { open console }
       console.open('Palette example', format);
 
       { create surface }
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(console.width, console.height, format);
 
       { create palette }
       palette := TPTCPaletteFactory.CreateNew;
+=======
+      surface := TPTCSurface.Create(console.width, console.height, format);
+
+      { create palette }
+      palette := TPTCPalette.Create;
+>>>>>>> graemeg/cpstrnew
 
       { generate palette }
       for i := 0 to 255 do
         data[i] := i;
 
       { load palette data }
+<<<<<<< HEAD
       palette.Load(data);
 
       { set console palette }
@@ -55,6 +77,15 @@ begin
 
       { set surface palette }
       surface.Palette(palette);
+=======
+      palette.load(data);
+
+      { set console palette }
+      console.palette(palette);
+
+      { set surface palette }
+      surface.palette(palette);
+>>>>>>> graemeg/cpstrnew
 
       { loop until a key is pressed }
       while not console.KeyPressed do
@@ -92,8 +123,16 @@ begin
         console.update;
       end;
     finally
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+      surface.Free;
+      palette.Free;
+      format.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do

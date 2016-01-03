@@ -292,6 +292,7 @@ implementation
         opsize: tdef;
       begin
         secondpass(left);
+<<<<<<< HEAD
 
 {$ifdef cpunodefaultint}
         opsize:=left.resultdef;
@@ -307,6 +308,12 @@ implementation
         location_reset(location,LOC_REGISTER,def_cgsize(opsize));
         location.register:=cg.getintregister(current_asmdata.CurrAsmList,location.size);
         hlcg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_NEG,opsize,left.location.register,location.register);
+=======
+        { load left operator in a register }
+        location_copy(location,left.location);
+        location_force_reg(current_asmdata.CurrAsmList,location,OS_SINT,false);
+        cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_NEG,OS_SINT,location.register,location.register);
+>>>>>>> graemeg/cpstrnew
 
         if (cs_check_overflow in current_settings.localswitches) then
           begin
@@ -446,6 +453,7 @@ implementation
                     except if we have a const node, where we don't need this, because
                     then zero check was done earlier.
                   }
+<<<<<<< HEAD
                   if (right.nodetype <> ordconstn) then
                     begin
                       current_asmdata.getjumplabel(hl);
@@ -459,6 +467,17 @@ implementation
                       paraloc1.done;
                       cg.a_label(current_asmdata.CurrAsmList,hl);
                     end;
+=======
+                  current_asmdata.getjumplabel(hl);
+                  cg.a_cmp_const_reg_label(current_asmdata.CurrAsmList,OS_INT,OC_NE,0,hdenom,hl);
+                  paraloc1.init;
+                  paramanager.getintparaloc(pocall_default,1,paraloc1);
+                  cg.a_load_const_cgpara(current_asmdata.CurrAsmList,OS_S32,aint(200),paraloc1);
+                  paramanager.freecgpara(current_asmdata.CurrAsmList,paraloc1);
+                  cg.a_call_name(current_asmdata.CurrAsmList,'FPC_HANDLEERROR',false);
+                  paraloc1.done;
+                  cg.a_label(current_asmdata.CurrAsmList,hl);
+>>>>>>> graemeg/cpstrnew
                   if nodetype = modn then
                     emit_mod_reg_reg(is_signed(left.resultdef),hdenom,hreg1)
                   else
@@ -500,6 +519,7 @@ implementation
            else
              internalerror(2013120102);
          end;
+<<<<<<< HEAD
 {$ifdef cpunodefaultint}
         opsize:=left.location.size;
         opdef:=left.resultdef;
@@ -556,15 +576,34 @@ implementation
            hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,true);
          location_reset(location,LOC_REGISTER,opsize);
          location.register:=hlcg.getintregister(current_asmdata.CurrAsmList,resultdef);
+=======
+         { load left operators in a register }
+         if is_signed(left.resultdef) then
+           opsize:=OS_SINT
+         else
+           opsize:=OS_INT;
+         location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
+         location_reset(location,LOC_REGISTER,opsize);
+         location.register:=cg.getintregister(current_asmdata.CurrAsmList,opsize);
+>>>>>>> graemeg/cpstrnew
 
          { shifting by a constant directly coded: }
          if (right.nodetype=ordconstn) then
            begin
+<<<<<<< HEAD
               { shl/shr must "wrap around", so use ... and 31 }
               { In TP, "byte/word shl 16 = 0", so no "and 15" in case of
                 a 16 bit ALU }
               if tcgsize2size[opsize]<=4 then
                 shiftval:=tordconstnode(right).value.uvalue and 31
+=======
+              { l shl 32 should 0 imho, but neither TP nor Delphi do it in this way (FK)
+              if right.value<=31 then
+              }
+              cg.a_op_const_reg_reg(current_asmdata.CurrAsmList,op,location.size,
+                tordconstnode(right).value.uvalue and 31,left.location.register,location.register);
+              {
+>>>>>>> graemeg/cpstrnew
               else
                 shiftval:=tordconstnode(right).value.uvalue and 63;
               hlcg.a_op_const_reg_reg(current_asmdata.CurrAsmList,op,opdef,
@@ -576,6 +615,7 @@ implementation
                 is done since most target cpu which will use this
                 node do not support a shift count in a mem. location (cec)
               }
+<<<<<<< HEAD
               hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,opdef,true);
               hlcg.a_op_reg_reg_reg(current_asmdata.CurrAsmList,op,opdef,right.location.register,left.location.register,location.register);
            end;
@@ -586,6 +626,16 @@ implementation
              hcountreg:=hlcg.getintregister(current_asmdata.CurrAsmList,resultdef);
              hlcg.a_load_reg_reg(current_asmdata.CurrAsmList,opdef,resultdef,location.register,hcountreg);
              location.register:=hcountreg;
+=======
+              if right.location.loc<>LOC_REGISTER then
+                begin
+                  hcountreg:=cg.getintregister(current_asmdata.CurrAsmList,opsize);
+                  cg.a_load_loc_reg(current_asmdata.CurrAsmList,right.location.size,right.location,hcountreg);
+                end
+              else
+                hcountreg:=right.location.register;
+              cg.a_op_reg_reg_reg(current_asmdata.CurrAsmList,op,opsize,hcountreg,left.location.register,location.register);
+>>>>>>> graemeg/cpstrnew
            end;
       end;
 

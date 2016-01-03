@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -34,9 +38,13 @@ type
   TX11WindowDisplay = class(TX11Display)
   private
     {eventHandler}
+<<<<<<< HEAD
     FOpen: Boolean;
     FWindow: TWindow;
     FVisual: PVisual;
+=======
+    FWindow: TWindow;
+>>>>>>> graemeg/cpstrnew
     FPrimary: TX11Image;
     FDestX, FDestY: Integer;
     FGC: TGC;
@@ -47,7 +55,10 @@ type
     FX11InvisibleCursor: TCursor; { Blank cursor }
     FFullScreen: Boolean; { Keeps a snapshot of the PTC_X11_FULLSCREEN option
                              taken at the time 'open' was called }
+<<<<<<< HEAD
     FResizable: Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
     FFocus: Boolean;
     FModeSwitcher: TX11Modes;
 
@@ -56,11 +67,16 @@ type
     FPreviousMousePositionSaved: Boolean; { true, if FPreviousMouseX,
            FPreviousMouseY and FPreviousMouseButtonState contain valid values }
 
+<<<<<<< HEAD
     FPreviousWidth, FPreviousHeight: Integer;
 
 {$IFDEF ENABLE_X11_EXTENSION_GLX}
     FGLXFBConfig: TX11GLXFBConfig;
 {$ENDIF ENABLE_X11_EXTENSION_GLX}
+=======
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+>>>>>>> graemeg/cpstrnew
 
     procedure EnterFullScreen;
     procedure LeaveFullScreen;
@@ -70,6 +86,7 @@ type
     procedure HandleEvents;
     procedure Draw;
     function CreateImage(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer;
+<<<<<<< HEAD
                          AFormat: IPTCFormat): TX11Image; { Factory method }
     function CreateModeSwitcher: TX11Modes; { Factory method }
     procedure CreateColormap; { Register colour maps }
@@ -77,10 +94,16 @@ type
   protected
     function NextEvent(out AEvent: IPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): IPTCEvent; override;
+=======
+                         AFormat: TPTCFormat): TX11Image; { Factory method }
+    function CreateModeSwitcher: TX11Modes; { Factory method }
+    procedure CreateColormap; { Register colour maps }
+>>>>>>> graemeg/cpstrnew
   public
     constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); override;
     destructor Destroy; override;
 
+<<<<<<< HEAD
     procedure Open(ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; const AOpenGLAttributes: IPTCOpenGLAttributes); override;
     procedure Open(AWindow: TWindow; AFormat: IPTCFormat); override;
     procedure Open(AWindow: TWindow; AFormat: IPTCFormat; AX, AY, AWidth, AHeight: Integer); override;
@@ -92,10 +115,23 @@ type
     procedure Unlock; override;
     procedure GetModes(var AModes: TPTCModeList); override;
     procedure Palette(APalette: IPTCPalette); override;
+=======
+    procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); override;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat); override;
+    procedure Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer); override;
+    procedure Close; override;
+    procedure Update; override;
+    procedure Update(const AArea: TPTCArea); override;
+    function Lock: Pointer; override;
+    procedure Unlock; override;
+    procedure GetModes(var AModes: TPTCModeDynArray); override;
+    procedure Palette(const APalette: TPTCPalette); override;
+>>>>>>> graemeg/cpstrnew
     function GetPitch: Integer; override;
     function GetX11Window: TWindow; override;
     function GetX11GC: TGC; virtual;
     function IsFullScreen: Boolean; override;
+<<<<<<< HEAD
     function IsOpen: Boolean; override;
     procedure SetCursor(AVisible: Boolean); override;
     procedure SetMouseGrab(AGrabMouse: Boolean); override;
@@ -104,4 +140,8 @@ type
     procedure OpenGL_SetSwapInterval(AInterval: Integer); override;
     function OpenGL_GetSwapInterval: Integer; override;
 {$ENDIF ENABLE_X11_EXTENSION_GLX}
+=======
+    procedure SetCursor(AVisible: Boolean); override;
+    procedure SetMouseGrab(AGrabMouse: Boolean); override;
+>>>>>>> graemeg/cpstrnew
   end;

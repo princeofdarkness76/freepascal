@@ -5,7 +5,12 @@ unit dmusers;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, db, dbf, fpwebdata;
+=======
+  Classes, SysUtils, FileUtil, LResources, db, dbf,
+  fpwebdata;
+>>>>>>> graemeg/cpstrnew
 
 type
 
@@ -27,12 +32,20 @@ var
 
 implementation
 
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+uses dbugintf;
+>>>>>>> graemeg/cpstrnew
 { TDataModule1 }
 
 procedure TDataModule1.DataModuleCreate(Sender: TObject);
 begin
+<<<<<<< HEAD
+=======
+  senddebug('Creating datamodule 1 '+InTToStr(Ord(WebDataProviderManager.Registering)));
+>>>>>>> graemeg/cpstrnew
   If not WebDataProviderManager.Registering then
     begin
     DBF1.TableName:=ExtractFilePath(ParamStr(0))+'users.dbf';
@@ -44,6 +57,10 @@ begin
 end;
 
 initialization
+<<<<<<< HEAD
+=======
+  {$I dmusers.lrs}
+>>>>>>> graemeg/cpstrnew
   WebDataProviderManager.RegisterDatamodule(TDataModule1)
 
 end.

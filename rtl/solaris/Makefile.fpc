@@ -7,10 +7,15 @@ main=rtl
 
 [target]
 loaders=
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar unixtype ctypes strings objpas iso7185 extpas macpas \
+=======
+units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
+>>>>>>> graemeg/cpstrnew
       heaptrc lineinfo lnfodwrf \
       baseunix unixutil unixcp \
       termio unix initc cmem \
+<<<<<<< HEAD
       sysutils typinfo math fgl classes \
       charset cpall getopts \
       errors \
@@ -26,6 +31,24 @@ implicitunits=exeinfo \
       unicodedata unicodenumtable
 
 rsts=math typinfo classes sysconst rtlconst
+=======
+      crt printer \
+      sysutils typinfo math fgl classes matrix varutils \
+      charset ucomplex getopts \
+      errors sockets \
+      # ipc serial
+      terminfo dl dynlibs \
+      video mouse \
+      keyboard variants types dateutils sysconst \
+      strutils fmtbcd rtlconsts cthreads \
+      convutils stdconvs \
+      dos objects \
+      cwstring fpintres clocale $(CPU_UNITS)
+
+implicitunits=exeinfo
+
+rsts=math varutils typinfo classes variants dateutils sysconst rtlconst stdconvs
+>>>>>>> graemeg/cpstrnew
 
 [require]
 nortl=y
@@ -50,7 +73,11 @@ libunits=$(SYSTEMUNIT) objpas strings \
       dos \
       sysutils typinfo math \
       $(CPU_UNITS) getopts heaptrc \
+<<<<<<< HEAD
       errors
+=======
+      errors sockets ipc
+>>>>>>> graemeg/cpstrnew
 
 [prerules]
 RTL=..
@@ -206,6 +233,15 @@ rtlconsts$(PPUEXT) : $(OBJPASDIR)/rtlconsts.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PP
 character$(PPUEXT): sysutils$(PPUEXT) $(OBJPASDIR)/character.pas objpas$(PPUEXT) rtlconsts$(PPUEXT)
 	$(COMPILER) $(OBJPASDIR)/character.pas
 
+convutils$(PPUEXT) : $(OBJPASDIR)/convutils.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/convutils.pp
+
+stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/stdconvs.pp
+
+
 #
 # Mac Pascal Model
 #
@@ -217,6 +253,19 @@ macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 # Other system-independent RTL Units
 #
 
+<<<<<<< HEAD
+=======
+video$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/video.inc $(INC)/videoh.inc $(UNIXINC)/video.pp \
+	baseunix$(PPUEXT) strings$(PPUEXT) terminfo$(PPUEXT) termio$(PPUEXT)
+
+keyboard$(PPUEXT) : $(SYSTEMUNIT)$(PPUEXT) $(INC)/keyboard.inc $(INC)/keybrdh.inc $(UNIXINC)/keyboard.pp \
+	strings$(PPUEXT) terminfo$(PPUEXT) termio$(PPUEXT) baseunix$(PPUEXT) mouse$(PPUEXT)
+
+mouse$(PPUEXT) : $(UNIXINC)/mouse.pp $(SYSTEMUNIT)$(PPUEXT) baseunix$(PPUEXT) video$(PPUEXT)
+
+matrix$(PPUEXT) : $(INC)/matrix.pp $(SYSTEMUNIT)$(PPUEXT)
+
+>>>>>>> graemeg/cpstrnew
 ifeq ($(ARCH),x86_64)
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT)
 else

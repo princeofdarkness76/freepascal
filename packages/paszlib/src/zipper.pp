@@ -495,8 +495,12 @@ Type
     FEntries    : TFullZipFileEntries;
     FFiles      : TStrings;
     FZipStream  : TStream;     { I/O file variables                         }
+<<<<<<< HEAD
     LocalHdr    : Local_File_Header_Type; //Local header, before compressed file data
     LocalZip64Fld   : Zip64_Extended_Info_Field_Type; //header is in LocalZip64ExtHdr
+=======
+    LocalHdr    : Local_File_Header_Type;
+>>>>>>> graemeg/cpstrnew
     CentralHdr  : Central_File_Header_Type;
 
     FOnPercent  : LongInt;
@@ -814,6 +818,7 @@ Var
   Buf : PByte;
   I,Count,NewCount : integer;
   C : TCompressionStream;
+<<<<<<< HEAD
   BytesNow : Int64;
   NextMark : Int64;
   OnBytes : Int64;
@@ -826,6 +831,19 @@ begin
   OnBytes:=Round((FInFile.Size * FOnPercent) / 100);
   BytesNow:=0;
   NextMark := OnBytes;
+=======
+  BytesNow : Integer;
+  NextMark : Integer;
+  OnBytes : Integer;
+  FSize    : Integer;
+begin
+  CRC32Val:=$FFFFFFFF;
+  Buf:=GetMem(FBufferSize);
+  if FOnPercent = 0 then 
+    FOnPercent := 1; 
+  OnBytes:=Round((FInFile.Size * FOnPercent) / 100);
+  BytesNow:=0; NextMark := OnBytes;
+>>>>>>> graemeg/cpstrnew
   FSize:=FInfile.Size;
   Try
     C:=TCompressionStream.Create(FCompressionLevel,FOutFile,True);
@@ -845,7 +863,11 @@ begin
             if (FSize>0) and assigned(FOnProgress) Then
               FOnProgress(self,100 * ( BytesNow / FSize));
             inc(NextMark,OnBytes);
+<<<<<<< HEAD
           end;
+=======
+          end;   
+>>>>>>> graemeg/cpstrnew
       Until (Count=0);
     Finally
       C.Free;
@@ -1955,7 +1977,11 @@ Begin
   if Assigned(FOnOpenInputStream) then
     FOnOpenInputStream(Self, FZipStream);
   if FZipStream = nil then
+<<<<<<< HEAD
     FZipStream:=TFileStream.Create(FFileName,fmOpenRead or fmShareDenyWrite);
+=======
+    FZipStream:=TFileStream.Create(FFileName,fmOpenRead);
+>>>>>>> graemeg/cpstrnew
 End;
 
 
@@ -1969,6 +1995,7 @@ Begin
     as directory separator. We don't want that behavior
     here, since 'abc\' is a valid file name under Unix.
 	
+<<<<<<< HEAD
     The zip standard appnote.txt says zip files must have '/' as path
     separator, even on Windows: 4.4.17.1:
     "The path stored MUST not contain a drive or device letter, or a leading
@@ -1985,6 +2012,15 @@ Begin
   {$else}
   // Follow the standard: only allow / regardless of actual separator on OS
   AllowDirectorySeparators:=['/'];
+=======
+	(mantis 15836) On the other hand, many archives on 
+	 windows have '/' as pathseparator, even Windows 
+	 generated .odt files. So we disable this for windows.
+  }
+  OldDirectorySeparators:=AllowDirectorySeparators;
+  {$ifndef Windows}
+  AllowDirectorySeparators:=[DirectorySeparator];
+>>>>>>> graemeg/cpstrnew
   {$endif}
   Path:=ExtractFilePath(OutFileName);
   OutStream:=Nil;
@@ -2003,6 +2039,7 @@ Begin
   Result:=True;
   If Assigned(FOnStartFile) then
     FOnStartFile(Self,OutFileName);
+	
 End;
 
 
@@ -2036,7 +2073,11 @@ Var
   ExtraFieldHdr: Extensible_Data_Field_Header_Type;
   SavePos: int64; //could be qword but limited by stream
 Begin
+<<<<<<< HEAD
   FZipStream.Seek(Item.HdrPos,soBeginning);
+=======
+  FZipStream.Seek(Item.HdrPos,soFromBeginning);
+>>>>>>> graemeg/cpstrnew
   FZipStream.ReadBuffer(LocalHdr,SizeOf(LocalHdr));
 {$IFDEF FPC_BIG_ENDIAN}
   LocalHdr := SwapLFH(LocalHdr);
@@ -2046,6 +2087,12 @@ Begin
     begin
       SetLength(S,Filename_Length);
       FZipStream.ReadBuffer(S[1],Filename_Length);
+<<<<<<< HEAD
+=======
+      //SetLength(E,Extra_Field_Length);
+      //FZipStream.ReadBuffer(E[1],Extra_Field_Length);
+      FZipStream.Seek(Extra_Field_Length,soCurrent);
+>>>>>>> graemeg/cpstrnew
       Item.ArchiveFileName:=S;
       Item.DiskFileName:=S;
       SavePos:=FZipStream.Position; //after filename, before extra fields
@@ -2234,6 +2281,7 @@ Var
   D : TDateTime;
   S : String;
 Begin
+<<<<<<< HEAD
   FindEndHeaders(EndHdr, EndHdrPos,
     EndZip64Hdr, EndZip64HdrPos);
   if EndHdrPos=0 then
@@ -2247,6 +2295,23 @@ Begin
   else
     CenDirPos := EndHdr.Start_Disk_Offset;
   FZipStream.Seek(CenDirPos,soBeginning);
+=======
+  EndHdrPos:=FZipStream.Size-SizeOf(EndHdr);
+  if EndHdrPos < 0 then
+    raise EZipError.CreateFmt(SErrCorruptZIP,[FileName]);
+  FZipStream.Seek(EndHdrPos,soFromBeginning);
+  FZipStream.ReadBuffer(EndHdr, SizeOf(EndHdr));
+{$IFDEF FPC_BIG_ENDIAN}
+  EndHdr := SwapECD(EndHdr);
+{$ENDIF}
+  With EndHdr do
+    begin
+    if Signature <> END_OF_CENTRAL_DIR_SIGNATURE then
+      raise EZipError.CreateFmt(SErrCorruptZIP,[FileName]);
+    CenDirPos:=Start_Disk_Offset;
+    end;
+  FZipStream.Seek(CenDirPos,soFrombeginning);
+>>>>>>> graemeg/cpstrnew
   FEntries.Clear;
   if (EndZip64HdrPos>0) and (EndZip64Hdr.Entries_This_Disk>0) then
   begin
@@ -2282,8 +2347,11 @@ Begin
       NewNode.HdrPos := Local_Header_Offset;
       SetLength(S,Filename_Length);
       FZipStream.ReadBuffer(S[1],Filename_Length);
+<<<<<<< HEAD
       SavePos:=FZipStream.Position; //After fixed part of central directory...
       // and the filename; before any extra field(s)
+=======
+>>>>>>> graemeg/cpstrnew
       NewNode.ArchiveFileName:=S;
       // Size/compressed size will be adjusted by zip64 entries if needed...
       NewNode.Size:=Uncompressed_Size;
@@ -2296,6 +2364,7 @@ Begin
         NewNode.Attributes := External_Attributes;
       ZipDateTimeToDateTime(Last_Mod_Date,Last_Mod_Time,D);
       NewNode.DateTime:=D;
+<<<<<<< HEAD
 
       // Go through any extra fields and extract any zip64 info
       if Extra_Field_Length>0 then
@@ -2332,6 +2401,9 @@ Begin
         end;
       // Move past extra fields and file comment to next header
       FZipStream.Seek(SavePos+Extra_Field_Length+File_Comment_Length,soFromBeginning);
+=======
+      FZipStream.Seek(Extra_Field_Length+File_Comment_Length,soCurrent);
+>>>>>>> graemeg/cpstrnew
       end;
     end;
 end;
@@ -2364,10 +2436,14 @@ Var
     begin
       if (LocalHdr.Compressed_Size<>0) then
         begin
+<<<<<<< HEAD
           if LocalZip64Fld.Compressed_Size>0 then
             Count:=Dest.CopyFrom(FZipStream,LocalZip64Fld.Compressed_Size)
           else
             Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size);
+=======
+          Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size)
+>>>>>>> graemeg/cpstrnew
          {$warning TODO: Implement CRC Check}
         end
       else
@@ -2635,11 +2711,14 @@ begin
 {$ELSE}
   FOS := OS_FAT;
 {$ENDIF}
+<<<<<<< HEAD
   FCompressionLevel:=cldefault;
   FDateTime:=now;
   FNeedsZip64:=false;
   FAttributes:=0;
 
+=======
+>>>>>>> graemeg/cpstrnew
   inherited create(ACollection);
 end;
 

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 { %skiptarget=win32,win64,wince,os2,emx }
 { This test is only useful if the local codepage is utf-8 which
   usually not the case on windows (and never can be the case on OS/2)
+=======
+{ %skiptarget=win32,win64,wince }
+{ This test is only useful if the local codepage is utf-8 which
+  usually not the case on windows
+>>>>>>> graemeg/cpstrnew
 }
 {$codepage utf-8}
 

@@ -1,16 +1,31 @@
 {
      File:       OSServices/WSProtocolHandler.h
  
+<<<<<<< HEAD
      Contains:   *** DEPRECATED *** WebServicesCore Method implementation API
  
      Copyright:  (c) 2002-2011 Apple Inc. All rights reserved.
+=======
+     Contains:   WebServicesCore Method implementation API
+ 
+     Version:    OSServices-352~2
+ 
+     Copyright:  © 2002-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
+=======
+                     http://www.freepascal.org/bugs.html
+ 
+}
+{       Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -65,11 +80,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,29 +106,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -120,13 +153,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -138,17 +175,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -164,6 +210,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -213,7 +263,10 @@ uses MacTypes,CFBase,CFArray,CFData,CFDictionary,CFRunLoop,CFXMLNode,WSTypes;
 
 {$ALIGN POWER}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 {
     WSProtocolHandler
 }
@@ -235,25 +288,41 @@ uses MacTypes,CFBase,CFArray,CFData,CFDictionary,CFRunLoop,CFXMLNode,WSTypes;
 type
 	WSProtocolHandlerRef = ^OpaqueWSProtocolHandlerRef; { an opaque type }
 	OpaqueWSProtocolHandlerRef = record end;
+<<<<<<< HEAD
 
 
 {
  *  WSProtocolHandlerGetTypeID()   *** DEPRECATED ***
+=======
+{
+ *  WSProtocolHandlerGetTypeID()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerGetTypeID: CFTypeID; external name '_WSProtocolHandlerGetTypeID';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerCreate()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerCreate()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Creates a WSProtocolHandlerRef for use in translating an XML
@@ -276,16 +345,27 @@ function WSProtocolHandlerGetTypeID: CFTypeID; external name '_WSProtocolHandler
  *    a WSProtocolHandlerRef, NULL if a parse error occured.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerCreate( allocator: CFAllocatorRef; protocol: CFStringRef ): WSProtocolHandlerRef; external name '_WSProtocolHandlerCreate';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerCopyRequestDictionary()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerCopyRequestDictionary()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Parse an incoming XML document for the method name and
@@ -314,16 +394,27 @@ function WSProtocolHandlerCreate( allocator: CFAllocatorRef; protocol: CFStringR
  *    a CFDictionary
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerCopyRequestDictionary( ref: WSProtocolHandlerRef; data: CFDataRef ): CFDictionaryRef; external name '_WSProtocolHandlerCopyRequestDictionary';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerCopyReplyDictionary()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerCopyReplyDictionary()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Parse an incoming XML document as if it were the reply of a
@@ -351,16 +442,27 @@ function WSProtocolHandlerCopyRequestDictionary( ref: WSProtocolHandlerRef; data
  *    a CFDictionary
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerCopyReplyDictionary( ref: WSProtocolHandlerRef; methodName: CFStringRef; data: CFDataRef ): CFDictionaryRef; external name '_WSProtocolHandlerCopyReplyDictionary';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerCopyReplyDocument()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerCopyReplyDocument()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Creates a Reply XML document for a given WSProtocolHandler and
@@ -386,16 +488,27 @@ function WSProtocolHandlerCopyReplyDictionary( ref: WSProtocolHandlerRef; method
  *    a CFDataRef containing the XML response
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerCopyReplyDocument( ref: WSProtocolHandlerRef; methodContext: CFDictionaryRef; resultValue: CFTypeRef ): CFDataRef; external name '_WSProtocolHandlerCopyReplyDocument';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerCopyFaultDocument()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerCopyFaultDocument()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Creates a Fault XML response for a given WSProtocolHandler and
@@ -421,16 +534,27 @@ function WSProtocolHandlerCopyReplyDocument( ref: WSProtocolHandlerRef; methodCo
  *    a CFDataRef containing the XML fault
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerCopyFaultDocument( ref: WSProtocolHandlerRef; methodContext: CFDictionaryRef; faultDict: CFDictionaryRef ): CFDataRef; external name '_WSProtocolHandlerCopyFaultDocument';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerCopyRequestDocument()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerCopyRequestDocument()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Creates an XML request for a given WSProtocolHandler and
@@ -462,16 +586,27 @@ function WSProtocolHandlerCopyFaultDocument( ref: WSProtocolHandlerRef; methodCo
  *    a CFDataRef
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerCopyRequestDocument( ref: WSProtocolHandlerRef; methodName: CFStringRef; methodParams: CFDictionaryRef; methodParamOrder: CFArrayRef; methodExtras: CFDictionaryRef ): CFDataRef; external name '_WSProtocolHandlerCopyRequestDocument';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerCopyProperty()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerCopyProperty()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    returns a property from a protocol handler.  If the result is
@@ -494,16 +629,27 @@ function WSProtocolHandlerCopyRequestDocument( ref: WSProtocolHandlerRef; method
  *    not specified.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function WSProtocolHandlerCopyProperty( ref: WSProtocolHandlerRef; propertyName: CFStringRef ): CFTypeRef; external name '_WSProtocolHandlerCopyProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSProtocolHandlerSetProperty()   *** DEPRECATED ***
+=======
+
+
+{
+ *  WSProtocolHandlerSetProperty()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Sets a property to a method implementation.
@@ -523,12 +669,19 @@ function WSProtocolHandlerCopyProperty( ref: WSProtocolHandlerRef; propertyName:
  *      the value to set in the method implementation
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSProtocolHandlerSetProperty( ref: WSProtocolHandlerRef; propertyName: CFStringRef; propertyValue: CFTypeRef ); external name '_WSProtocolHandlerSetProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -569,11 +722,16 @@ procedure WSProtocolHandlerSetProperty( ref: WSProtocolHandlerRef; propertyName:
  }
 type
 	WSProtocolHandlerSerializationProcPtr = function( protocol: WSProtocolHandlerRef; obj: CFTypeRef; info: UnivPtr ): CFStringRef;
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSProtocolHandlerSetSerializationOverride()   *** DEPRECATED ***
+=======
+{
+ *  WSProtocolHandlerSetSerializationOverride()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Specifies a callback which will be called to produce the XML that
@@ -600,12 +758,19 @@ type
  *      a pointer to a WSClientContext.  The structure will be copied.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSProtocolHandlerSetSerializationOverride( protocol: WSProtocolHandlerRef; objType: CFTypeID; serializationProc: WSProtocolHandlerSerializationProcPtr; var context: WSClientContext ); external name '_WSProtocolHandlerSetSerializationOverride';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -640,11 +805,16 @@ procedure WSProtocolHandlerSetSerializationOverride( protocol: WSProtocolHandler
  }
 type
 	WSProtocolHandlerDeserializationProcPtr = function( protocol: WSProtocolHandlerRef; msgRoot: CFXMLTreeRef; deserializeRoot: CFXMLTreeRef; info: UnivPtr ): CFTypeRef;
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSProtocolHandlerSetDeserializationOverride()   *** DEPRECATED ***
+=======
+{
+ *  WSProtocolHandlerSetDeserializationOverride()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
  *    Specifies a callback to be made when parsing an XML method
@@ -675,12 +845,19 @@ type
  *      a pointer to a WSClientContext.  The structure will be copied.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.3 and later
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 procedure WSProtocolHandlerSetDeserializationOverride( protocol: WSProtocolHandlerRef; typeNamespace: CFStringRef; typeName: CFStringRef; deserializationProc: WSProtocolHandlerDeserializationProcPtr; var context: WSClientContext ); external name '_WSProtocolHandlerSetDeserializationOverride';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {

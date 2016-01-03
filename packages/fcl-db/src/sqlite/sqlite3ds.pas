@@ -51,7 +51,11 @@ type
     procedure InternalCloseHandle; override;
     function InternalGetHandle: Pointer; override;
     procedure RetrieveFieldDefs; override;
+<<<<<<< HEAD
     function SqliteExec(ASQL: PAnsiChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+=======
+    function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+>>>>>>> graemeg/cpstrnew
   public
     procedure ExecuteDirect(const ASQL: String); override;
     function QuickQuery(const ASQL: String; const AStrList: TStrings; FillObjects: Boolean): String; override;
@@ -163,7 +167,11 @@ begin
   {$endif}
   FAutoIncFieldNo := -1;
   FieldDefs.Clear;
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> graemeg/cpstrnew
   if FReturnCode <> SQLITE_OK then
     DatabaseError(ReturnString, Self);
   sqlite3_step(vm);
@@ -227,15 +235,26 @@ begin
         SQLITE_FLOAT:
           AType := ftFloat;
       else
+<<<<<<< HEAD
         begin
           AType := ftString;
           DataSize := DefaultStringSize;
         end;
+=======
+	    begin
+          AType := ftString;
+		  DataSize := DefaultStringSize;
+		end;  		
+>>>>>>> graemeg/cpstrnew
       end;
     end else
     begin
       AType := ftString;
+<<<<<<< HEAD
       DataSize := DefaultStringSize;
+=======
+	  DataSize := DefaultStringSize;
+>>>>>>> graemeg/cpstrnew
     end;
     FieldDefs.Add(FieldDefs.MakeNameUnique(String(sqlite3_column_name(vm, i))), AType, DataSize);
     //Set the pchar2sql function
@@ -285,7 +304,11 @@ begin
     sqlite3_exec(FSqliteHandle, PAnsiChar('Select Max(' + FieldDefs[FAutoIncFieldNo].Name +
       ') from ' + FTableName), @GetAutoIncValue, @FNextAutoInc, nil);
 
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> graemeg/cpstrnew
   if FReturnCode <> SQLITE_OK then
     DatabaseError(ReturnString, Self);
 

@@ -20,8 +20,12 @@ interface
 
 uses
   gvectortest, gstacktest, gqueuetest, gdequetest, garrayutilstest,
+<<<<<<< HEAD
   gsettest, gmaptest, ghashsettest, ghashmaptest, gpriorityqueuetest,
   gcompositetest;
+=======
+  gsettest, gmaptest, ghashsettest, ghashmaptest;
+>>>>>>> graemeg/cpstrnew
 
 implementation
 

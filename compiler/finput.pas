@@ -26,7 +26,11 @@ unit finput;
 interface
 
     uses
+<<<<<<< HEAD
       cutils,globtype,cclasses,cstreams;
+=======
+      cutils,cclasses,cstreams;
+>>>>>>> graemeg/cpstrnew
 
     const
        InputFileBufSize=32*1024+1;
@@ -455,7 +459,11 @@ uses
         fileopen:=false;
         try
           f:=CFileStreamClass.Create(filename,fmOpenRead);
+<<<<<<< HEAD
           fileopen:=CStreamError=0;
+=======
+          fileopen:=true;
+>>>>>>> graemeg/cpstrnew
         except
         end;
       end;

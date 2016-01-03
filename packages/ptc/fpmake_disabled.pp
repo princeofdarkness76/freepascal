@@ -50,6 +50,7 @@ begin
     P.IncludePath.Add('src/x11',AllUnixOSes);
 
   P.Dependencies.Add('hermes');
+<<<<<<< HEAD:packages/ptc/fpmake.pp
   P.Dependencies.Add('x11',AllUnixOSes);
   P.Dependencies.Add('opengl',AllUnixOSes + [win32, win64]);
   P.Dependencies.Add('fcl-base');
@@ -64,6 +65,9 @@ begin
   T:=P.Targets.AddUnit('timeunit.pp',[go32v2]);
   T:=P.Targets.AddUnit('vesa.pp',[go32v2]);
   T:=P.Targets.AddUnit('vga.pp',[go32v2]);
+=======
+  P.Dependencies.Add('x');
+>>>>>>> graemeg/cpstrnew:packages/ptc/fpmake_disabled.pp
 
   T:=P.Targets.AddUnit('ptc.pp');
   with T.Dependencies do
@@ -132,6 +136,7 @@ begin
       AddInclude('x11unikey.inc',allunixoses);
       AddInclude('x11windowdisplayd.inc',allunixoses);
       AddInclude('x11windowdisplayi.inc',allunixoses);
+<<<<<<< HEAD:packages/ptc/fpmake.pp
       AddInclude('win32cursor.inc', [win32, win64]);
       AddInclude('win32cursord.inc', [win32, win64]);
       AddInclude('win32cursormoded.inc', [win32, win64]);
@@ -185,6 +190,13 @@ begin
       AddInclude('vesaconsolei.inc', [go32v2]);
       AddInclude('vgaconsoled.inc', [go32v2]);
       AddInclude('vgaconsolei.inc', [go32v2]);
+=======
+      AddInclude('x11dga1displayi.inc',allunixoses);
+      AddInclude('x11dga2displayi.inc',allunixoses);
+      AddInclude('x11consolei.inc',allunixoses);
+      AddInclude('consolei.inc');
+      AddUnit('directdr',[Win32,win64]);
+>>>>>>> graemeg/cpstrnew:packages/ptc/fpmake_disabled.pp
       AddUnit('p_gx',[Wince]);
       AddUnit('go32fix',[go32v2]);
       AddUnit('mouse33h',[go32v2]);

@@ -59,6 +59,12 @@ Type
     function LookForPreindexedPattern(p: taicpu): boolean;
     function LookForPostindexedPattern(p: taicpu): boolean;
   End;
+  
+  
+  TCpuThumb2AsmOptimizer = class(TCpuAsmOptimizer)
+    { uses the same constructor as TAopObj }
+    procedure PeepHoleOptPass2;override;
+  End;
 
   TCpuPreRegallocScheduler = class(TAsmScheduler)
     function SchedulerPass1Cpu(var p: tai): boolean;override;
@@ -2341,6 +2347,7 @@ Implementation
         end;
     end;
 
+<<<<<<< HEAD
   function TCpuAsmOptimizer.RegInInstruction(Reg: TRegister; p1: tai): Boolean;
     begin
       If (p1.typ = ait_instruction) and (taicpu(p1).opcode=A_BL) then
@@ -3012,6 +3019,14 @@ Implementation
     end;
 
 
+=======
+
+  procedure TCpuThumb2AsmOptimizer.PeepHoleOptPass2;
+    begin
+      { TODO: Add optimizer code }
+    end;
+
+>>>>>>> graemeg/cpstrnew
 begin
   casmoptimizer:=TCpuAsmOptimizer;
   cpreregallocscheduler:=TCpuPreRegallocScheduler;

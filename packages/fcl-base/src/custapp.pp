@@ -80,8 +80,12 @@ Type
     Procedure GetNonOptions(Const ShortOptions : String; Const Longopts : Array of string; NonOptions : TStrings);
     Procedure GetEnvironmentList(List : TStrings;NamesOnly : Boolean);
     Procedure GetEnvironmentList(List : TStrings);
+<<<<<<< HEAD
     Procedure Log(EventType : TEventType; const Msg : String);
     Procedure Log(EventType : TEventType; const Fmt : String; const Args : array of const);
+=======
+    Procedure Log(EventType : TEventType; const Msg : String); virtual;
+>>>>>>> graemeg/cpstrnew
     // Delphi properties
     property ExeName: string read GetExeName;
     property HelpFile: string read FHelpFile write FHelpFile;
@@ -283,6 +287,12 @@ begin
     On E : Exception do
       Log(etError,Format('Error formatting message "%s" with %d arguments: %s',[Fmt,Length(Args),E.Message]));
   end  
+end;
+
+Procedure TCustomApplication.Log(EventType : TEventType; const Msg : String);
+
+begin
+  // Do nothing. Override in descendent classes.
 end;
 
 constructor TCustomApplication.Create(AOwner: TComponent);
@@ -631,7 +641,10 @@ begin
         else // Short Option.
           begin
           HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[1]<>FOptionChar);
+<<<<<<< HEAD
           UsedArg:=False;
+=======
+>>>>>>> graemeg/cpstrnew
           If HaveArg then
             OV:=Paramstr(I+1);
           If Not CaseSensitiveOptions then

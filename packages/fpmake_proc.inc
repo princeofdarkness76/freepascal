@@ -78,13 +78,21 @@ begin
 {$include dts/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_fastcgi(const ADirectory: string);
+=======
+procedure add_fastcgi;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include fastcgi/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_fcl_async(const ADirectory: string);
+=======
+procedure add_fcl_async;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include fcl-async/fpmake.pp}
@@ -104,7 +112,17 @@ begin
 {$include fcl-extra/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_fcl_fpcunit(const ADirectory: string);
+=======
+procedure add_fcl_extra;
+begin
+  with Installer do
+{$include fcl-extra/fpmake.pp}
+end;
+
+procedure add_fcl_fpcunit;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include fcl-fpcunit/fpmake.pp}
@@ -208,9 +226,19 @@ begin
 {$include fpmkunit/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 {$include fppkg/fpmake.pp}
 
 procedure add_fv(const ADirectory: string);
+=======
+procedure add_fpvectorial;
+begin
+  with Installer do
+{$include fpvectorial/fpmake.pp}
+end;
+
+procedure add_fv;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include fv/fpmake.pp}
@@ -266,6 +294,7 @@ begin
 {$include hash/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_hermes(const ADirectory: string);
 begin
   with Installer do
@@ -273,6 +302,9 @@ begin
 end;
 
 procedure add_httpd13(const ADirectory: string);
+=======
+procedure add_httpd13;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include httpd13/fpmake.pp}
@@ -380,18 +412,27 @@ begin
 {$include libpng/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_librsvg(const ADirectory: string);
+=======
+procedure add_librsvg;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include librsvg/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_libsee(const ADirectory: string);
+=======
+procedure add_libsee;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include libsee/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_libtar(const ADirectory: string);
 begin
   with Installer do
@@ -410,6 +451,9 @@ begin
 end;
 
 procedure add_libxml(const ADirectory: string);
+=======
+procedure add_libxml;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include libxml/fpmake.pp}
@@ -463,19 +507,31 @@ begin
 {$include numlib/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_nvapi(const ADirectory: string);
+=======
+procedure add_nvapi;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include nvapi/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_objcrtl(const ADirectory: string);
+=======
+procedure add_objcrtl;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include objcrtl/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_odbc(const ADirectory: string);
+=======
+procedure add_odbc;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include odbc/fpmake.pp}
@@ -493,12 +549,17 @@ begin
 {$include openal/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_opencl(const ADirectory: string);
+=======
+procedure add_opencl;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include opencl/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_opengles(const ADirectory: string);
 begin
   with Installer do
@@ -506,6 +567,9 @@ begin
 end;
 
 procedure add_opengl(const ADirectory: string);
+=======
+procedure add_opengl;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include opengl/fpmake.pp}
@@ -559,6 +623,7 @@ begin
 {$include postgres/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_proj4(const ADirectory: string);
 begin
   with Installer do
@@ -566,9 +631,12 @@ begin
 end;
 
 procedure add_ptc(const ADirectory: string);
+=======
+procedure add_proj4;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
-{$include ptc/fpmake.pp}
+{$include proj4/fpmake.pp}
 end;
 
 procedure add_pthreads(const ADirectory: string);
@@ -601,6 +669,7 @@ end;
 
 {$include rtl-objpas/fpmake.pp}
 
+<<<<<<< HEAD
 {$include rtl-unicode/fpmake.pp}
 
 procedure add_sdl(const ADirectory: string);
@@ -610,6 +679,9 @@ begin
 end;
 
 procedure add_sqlite(const ADirectory: string);
+=======
+procedure add_sqlite;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include sqlite/fpmake.pp}
@@ -711,6 +783,7 @@ begin
 {$include zlib/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 procedure add_libenet(const ADirectory: string);
 begin
   with Installer do
@@ -718,10 +791,16 @@ begin
 end;
 
 procedure add_zorba(const ADirectory: string);
+=======
+procedure add_zorba;
+>>>>>>> graemeg/cpstrnew
 begin
   with Installer do
 {$include zorba/fpmake.pp}
 end;
 
+<<<<<<< HEAD
 {$include googleapi/fpmake.pp}
 
+=======
+>>>>>>> graemeg/cpstrnew

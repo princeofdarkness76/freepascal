@@ -90,10 +90,17 @@ const
     _fixedListButton: id;
     _sliderButton: id;
     _accessoryView: id;
+<<<<<<< HEAD
     __fpFlags: record
       case byte of
        0: (_anonbitfield_NSFontPanel0: cuint);
        1: (data: bitpacked record
+=======
+    __fpFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSFontPanel0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         setFontChange: 0..1;
         setFontAttributeChange: 0..1;
         _delRespFamily: 0..1;
@@ -106,7 +113,10 @@ const
         showEffects: 0..1;
         _uiMode: 0..((1 shl 8)-1);
         _reserved: 0..((1 shl 14)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _regularModeBox: id;
@@ -133,7 +143,11 @@ const
     _fontEffectsBox: id;
     _sizeStyle: cint;
     {$ifndef cpu64}
+<<<<<<< HEAD
     _fpUnused: array[0..(72)-1] of id;
+=======
+        _fpUnused: array[0..71] of id;
+>>>>>>> graemeg/cpstrnew
     {$endif}
     
   public

@@ -9,6 +9,7 @@ main=rtl
 fpcpackage=y
 
 [target]
+<<<<<<< HEAD
 loaders=prt0 cprt0 dllprt0
 units=$(SYSTEMUNIT) uuchar unixtype ctypes objpas macpas iso7185 extpas \
       strings syscall sysctl  baseunix unixutil character \
@@ -25,6 +26,21 @@ implicitunits=exeinfo \
       unicodedata unicodenumtable 
 
 rsts=math typinfo classes sysconst
+=======
+loaders=prt0 cprt0
+units=$(SYSTEMUNIT) objpas macpas iso7185 strings syscall baseunix \
+      $(LINUXUNIT) unix rtlconsts ctypes initc \
+      dos crt objects printer matrix \
+      sysutils types fgl classes typinfo math varutils fmtbcd \
+      charset ucomplex getopts heaptrc lineinfo lnfodwrf \
+      errors sockets terminfo \
+      video mouse keyboard  serial variants types sysctl sysconst $(CPU_UNITS) \
+      fpintres
+      # ipc
+
+rsts=math varutils typinfo variants classes sysconst fpmkunit
+implicitunits=exeinfo
+>>>>>>> graemeg/cpstrnew
 
 [require]
 nortl=y

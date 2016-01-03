@@ -5,7 +5,11 @@ unit wmusers;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb,
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb,
+>>>>>>> graemeg/cpstrnew
   dbf, db, fpwebdata, extjsjson, extjsxml;
 
 type
@@ -36,8 +40,11 @@ var
 
 implementation
 
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 { TFPWebProviderDataModule1 }
 
 procedure TFPWebProviderDataModule1.DataModuleGetInputAdaptor(Sender: TObject;
@@ -63,6 +70,11 @@ begin
 end;
 
 initialization
+<<<<<<< HEAD
+=======
+  {$I wmusers.lrs}
+
+>>>>>>> graemeg/cpstrnew
   RegisterHTTPModule('Provider', TFPWebProviderDataModule1);
 end.
 

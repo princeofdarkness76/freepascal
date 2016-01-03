@@ -51,6 +51,7 @@ interface
          [m_delphi,m_class,m_objpas,m_result,m_string_pchar,
           m_pointer_2_procedure,m_autoderef,m_tp_procvar,m_initfinal,m_default_ansistring,
           m_out,m_default_para,m_duplicate_names,m_hintdirective,
+<<<<<<< HEAD
           m_property,m_default_inline,m_except,m_advanced_records,m_type_helpers];
        delphiunicodemodeswitches = delphimodeswitches + [m_systemcodepage,m_default_unicodestring];
        fpcmodeswitches =
@@ -59,6 +60,15 @@ interface
           m_property,m_default_inline];
        objfpcmodeswitches =
          [m_objfpc,m_fpc,m_class,m_objpas,m_result,m_string_pchar,m_nested_comment,
+=======
+          m_property,m_default_inline,m_except,m_advanced_records];
+       fpcmodeswitches =
+         [m_fpc,m_all,m_string_pchar,m_nested_comment,m_repeat_forward,
+          m_cvar_support,m_initfinal,m_hintdirective,
+          m_property,m_default_inline];
+       objfpcmodeswitches =
+         [m_objfpc,m_fpc,m_all,m_class,m_objpas,m_result,m_string_pchar,m_nested_comment,
+>>>>>>> graemeg/cpstrnew
           m_repeat_forward,m_cvar_support,m_initfinal,m_out,m_default_para,m_hintdirective,
           m_property,m_default_inline,m_except];
        tpmodeswitches =
@@ -68,6 +78,7 @@ interface
          [m_gpc,m_tp_procvar];
 {$endif}
        macmodeswitches =
+<<<<<<< HEAD
          [m_mac,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_default_inline];
        isomodeswitches =
          [m_iso,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_isolike_io,
@@ -77,6 +88,11 @@ interface
          [m_extpas,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_isolike_io,
           m_isolike_program_para,
           m_isolike_mod];
+=======
+         [m_mac,m_all,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto];
+       isomodeswitches =
+         [m_iso,m_all,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto];
+>>>>>>> graemeg/cpstrnew
 
        { maximum nesting of routines }
        maxnesting = 32;
@@ -108,6 +124,10 @@ interface
        MathPiExtended : tcompextendedrec = (bytes : (64,0,201,15,218,162,33,104,194,53));
 {$endif FPC_LITTLE_ENDIAN}
 {$endif}
+       CP_UTF8 = 65001;
+       CP_UTF16 = 1200;
+       CP_NONE  = 65535;
+
 
        CP_UTF8 = 65001;
        CP_UTF16LE = 1200;
@@ -387,7 +407,11 @@ interface
         globalswitches : [cs_check_unit_name,cs_link_static];
         targetswitches : [];
         moduleswitches : [cs_extsyntax,cs_implicit_exceptions];
+<<<<<<< HEAD
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath{$ifdef i8086},cs_force_far_calls{$endif}];
+=======
+        localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
+>>>>>>> graemeg/cpstrnew
         modeswitches : fpcmodeswitches;
         optimizerswitches : [];
         genwpoptimizerswitches : [];
@@ -451,6 +475,7 @@ interface
         cputype : cpuinfo.cpu_avr5;
         optimizecputype : cpuinfo.cpu_avr5;
         fputype : fpu_none;
+<<<<<<< HEAD
   {$endif avr}
   {$ifdef mips}
         cputype : cpu_mips2;
@@ -473,6 +498,14 @@ interface
         fputype : fpu_x87;
   {$endif i8086}
 {$endif not GENERIC_CPU}
+=======
+{$endif avr}
+{$ifdef mips}
+        cputype : cpu_mips32;
+        optimizecputype : cpu_mips32;
+        fputype : fpu_mips2;
+{$endif mips}
+>>>>>>> graemeg/cpstrnew
         asmmode : asmmode_standard;
 {$ifndef jvm}
         interfacetype : it_interfacecom;
@@ -552,7 +585,15 @@ implementation
       macutils,
 {$endif}
 {$ifdef mswindows}
+<<<<<<< HEAD
       windirs,
+=======
+{$ifdef VER2_4}
+      cwindirs,
+{$else VER2_4}
+      windirs,
+{$endif VER2_4}
+>>>>>>> graemeg/cpstrnew
 {$endif}
       comphook;
 
@@ -823,6 +864,7 @@ implementation
            Replace(s,'$FPCTARGET',target_os_string)
          else
            Replace(s,'$FPCTARGET',target_full_string);
+<<<<<<< HEAD
          Replace(s,'$FPCSUBARCH',lower(cputypestr[init_settings.cputype]));
          Replace(s,'$FPCABI',lower(abiinfo[target_info.abi].name));
 {$ifdef i8086}
@@ -830,6 +872,8 @@ implementation
 {$else i8086}
          Replace(s,'$FPCMEMORYMODEL','flat');
 {$endif i8086}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef mswindows}
          ReplaceSpecialFolder('$LOCAL_APPDATA',CSIDL_LOCAL_APPDATA);
          ReplaceSpecialFolder('$APPDATA',CSIDL_APPDATA);
@@ -1167,6 +1211,114 @@ implementation
               break;
             end;
       end;
+<<<<<<< HEAD
+=======
+{$endif defined(arm) or defined(avr)}
+
+
+    function UpdateAlignmentStr(s:string;var a:talignmentinfo):boolean;
+      var
+        tok  : string;
+        vstr : string;
+        l    : longint;
+        code : integer;
+        b    : talignmentinfo;
+      begin
+        UpdateAlignmentStr:=true;
+        uppervar(s);
+        fillchar(b,sizeof(b),0);
+        repeat
+          tok:=GetToken(s,'=');
+          if tok='' then
+           break;
+          vstr:=GetToken(s,',');
+          val(vstr,l,code);
+          if tok='PROC' then
+           b.procalign:=l
+          else if tok='JUMP' then
+           b.jumpalign:=l
+          else if tok='LOOP' then
+           b.loopalign:=l
+          else if tok='CONSTMIN' then
+           begin
+             b.constalignmin:=l;
+             if l>b.constalignmax then
+               b.constalignmax:=l;
+           end
+          else if tok='CONSTMAX' then
+           b.constalignmax:=l
+          else if tok='VARMIN' then
+           begin
+             b.varalignmin:=l;
+             if l>b.varalignmax then
+               b.varalignmax:=l;
+           end
+          else if tok='VARMAX' then
+           b.varalignmax:=l
+          else if tok='LOCALMIN' then
+           begin
+             b.localalignmin:=l;
+             if l>b.localalignmax then
+               b.localalignmax:=l;
+           end
+          else if tok='LOCALMAX' then
+           b.localalignmax:=l
+          else if tok='RECORDMIN' then
+           begin
+             b.recordalignmin:=l;
+             if l>b.recordalignmax then
+               b.recordalignmax:=l;
+           end
+          else if tok='RECORDMAX' then
+           b.recordalignmax:=l
+          else { Error }
+           UpdateAlignmentStr:=false;
+        until false;
+        UpdateAlignment(a,b);
+      end;
+
+
+    function UpdateOptimizerStr(s:string;var a:toptimizerswitches):boolean;
+      var
+        tok   : string;
+        doset,
+        found : boolean;
+        opt   : toptimizerswitch;
+      begin
+        result:=true;
+        uppervar(s);
+        repeat
+          tok:=GetToken(s,',');
+          if tok='' then
+           break;
+          if Copy(tok,1,2)='NO' then
+            begin
+              delete(tok,1,2);
+              doset:=false;
+            end
+          else
+            doset:=true;
+          found:=false;
+          for opt:=low(toptimizerswitch) to high(toptimizerswitch) do
+            begin
+              if OptimizerSwitchStr[opt]=tok then
+                begin
+                  found:=true;
+                  break;
+                end;
+            end;
+          if found then
+            begin
+              if doset then
+                include(a,opt)
+              else
+                exclude(a,opt);
+            end
+          else
+            result:=false;
+        until false;
+      end;
+>>>>>>> graemeg/cpstrnew
 
 
     function SetControllerType(const s:string;var a:tcontrollertype):boolean;
@@ -1282,6 +1434,7 @@ implementation
     function floating_point_range_check_error : boolean;
       begin
         result:=cs_ieee_errors in current_settings.localswitches;
+<<<<<<< HEAD
       end;
 
 
@@ -1290,6 +1443,8 @@ implementation
         result:=
           (target_info.system in systems_dotted_function_names) and
           (target_info.abi<>abi_powerpc_elfv2);
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 {****************************************************************************
@@ -1360,6 +1515,13 @@ implementation
         do_make:=true;
         compile_level:=0;
         codegenerror:=false;
+<<<<<<< HEAD
+=======
+        DLLsource:=false;
+        paratarget:=system_none;
+        paratargetasm:=as_none;
+        paratargetdbg:=dbg_none;
+>>>>>>> graemeg/cpstrnew
 
         { Output }
         OutputFileName:='';
@@ -1406,8 +1568,12 @@ implementation
         GenerateImportSection:=false;
         RelocSection:=false;
         RelocSectionSetExplicitly:=false;
+<<<<<<< HEAD
         MacOSXVersionMin:='';
         iPhoneOSVersionMin:='';
+=======
+        LinkTypeSetExplicitly:=false;
+>>>>>>> graemeg/cpstrnew
         { memory sizes, will be overridden by parameter or default for target
           in options or init_parser }
         stacksize:=0;

@@ -102,6 +102,7 @@ interface
 
        ttempcreatenode = class;
 
+<<<<<<< HEAD
        ttempinfoflag = (
          { temp can be kept in a register as far as the original creator is
           concerned }
@@ -156,6 +157,10 @@ interface
            managed types like ansistrings where temp. refs are pointers to the actual value }
          ti_const
          );
+=======
+       ttempinfoflag = (ti_may_be_in_reg,ti_valid,ti_nextref_set_hookoncopy_nil,
+                        ti_addr_taken,ti_executeinitialisation);
+>>>>>>> graemeg/cpstrnew
        ttempinfoflags = set of ttempinfoflag;
 
      const
@@ -193,10 +198,16 @@ interface
           { where the node that receives the temp becomes responsible for       }
           { freeing it. In this last case, you must use only one reference      }
           { to it and *not* generate a ttempdeletenode                          }
+<<<<<<< HEAD
           constructor create(_typedef: tdef; _size: tcgint; _temptype: ttemptype;allowreg:boolean); virtual;
           constructor create_withnode(_typedef: tdef; _size: tcgint; _temptype: ttemptype; allowreg:boolean; withnode: tnode); virtual;
           constructor create_value(_typedef:tdef; _size: tcgint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
           constructor create_reference(_typedef:tdef; _size: tcgint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode; readonly: boolean);
+=======
+          constructor create(_typedef: tdef; _size: aint; _temptype: ttemptype;allowreg:boolean); virtual;
+          constructor create_withnode(_typedef: tdef; _size: aint; _temptype: ttemptype; allowreg:boolean; withnode: tnode); virtual;
+          constructor create_value(_typedef:tdef; _size: aint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
+>>>>>>> graemeg/cpstrnew
           constructor ppuload(t:tnodetype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
           procedure buildderefimpl;override;
@@ -257,7 +268,10 @@ interface
     var
        cnothingnode : tnothingnodeclass = tnothingnode;
        cerrornode : terrornodeclass = terrornode;
+<<<<<<< HEAD
        cspecializenode : tspecializenodeclass = tspecializenode;
+=======
+>>>>>>> graemeg/cpstrnew
        casmnode : tasmnodeclass = tasmnode;
        cstatementnode : tstatementnodeclass = tstatementnode;
        cblocknode : tblocknodeclass = tblocknode;
@@ -843,14 +857,22 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     constructor ttempcreatenode.create_withnode(_typedef: tdef; _size: tcgint; _temptype: ttemptype; allowreg:boolean; withnode: tnode);
+=======
+    constructor ttempcreatenode.create_withnode(_typedef: tdef; _size: aint; _temptype: ttemptype; allowreg:boolean; withnode: tnode);
+>>>>>>> graemeg/cpstrnew
       begin
         self.create(_typedef,_size,_temptype,allowreg);
         tempinfo^.withnode:=withnode.getcopy;
       end;
 
 
+<<<<<<< HEAD
     constructor ttempcreatenode.create_value(_typedef:tdef; _size: tcgint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
+=======
+    constructor ttempcreatenode.create_value(_typedef:tdef; _size: aint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
+>>>>>>> graemeg/cpstrnew
       begin
         self.create(_typedef,_size,_temptype,allowreg);
         // store in ppuwrite
@@ -860,6 +882,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
      constructor ttempcreatenode.create_reference(_typedef: tdef; _size: tcgint; _temptype: ttemptype; allowreg: boolean; templvalue: tnode; readonly: boolean);
       begin
         // store in ppuwrite
@@ -873,6 +896,8 @@ implementation
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
     function ttempcreatenode.dogetcopy: tnode;
       var
         n: ttempcreatenode;
@@ -886,6 +911,11 @@ implementation
         n.tempinfo^.typedef := tempinfo^.typedef;
         n.tempinfo^.temptype := tempinfo^.temptype;
         n.tempinfo^.flags := tempinfo^.flags * tempinfostoreflags;
+
+        if assigned(tempinfo^.tempinitcode) then
+          n.tempinfo^.tempinitcode := tempinfo^.tempinitcode.getcopy
+        else
+          n.tempinfo^.tempinitcode := nil;
 
         { when the tempinfo has already a hookoncopy then it is not
           reset by a tempdeletenode }
@@ -979,7 +1009,10 @@ implementation
           firstpass(tempinfo^.withnode);
         if assigned(tempinfo^.tempinitcode) then
           firstpass(tempinfo^.tempinitcode);
+<<<<<<< HEAD
         inc(current_procinfo.estimatedtempsize,size);;
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -1012,8 +1045,11 @@ implementation
         inherited printnodedata(t);
         writeln(t,printnodeindention,'size = ',size,', temptypedef = ',tempinfo^.typedef.typesymbolprettyname,' = "',
           tempinfo^.typedef.GetTypeName,'", tempinfo = $',hexstr(ptrint(tempinfo),sizeof(ptrint)*2));
+<<<<<<< HEAD
         writeln(t,printnodeindention,'tempinit =');
         printnode(t,tempinfo^.tempinitcode);
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 {*****************************************************************************
@@ -1269,7 +1305,11 @@ implementation
       begin
         inherited printnodedata(t);
         writeln(t,printnodeindention,'release_to_normal: ',release_to_normal,', temptypedef = ',tempinfo^.typedef.typesymbolprettyname,' = "',
+<<<<<<< HEAD
           tempinfo^.typedef.GetTypeName,'", temptype = ',tempinfo^.temptype,', tempinfo = $',hexstr(ptrint(tempinfo),sizeof(ptrint)*2));
+=======
+          tempinfo^.typedef.GetTypeName,'", tempinfo = $',hexstr(ptrint(tempinfo),sizeof(ptrint)*2));
+>>>>>>> graemeg/cpstrnew
       end;
 
 end.

@@ -3,7 +3,13 @@
  
      Contains:   TextEncoding-related types and constants, and prototypes for related functions
  
+<<<<<<< HEAD
      Copyright:  © 1995-2012 Apple Inc. All rights reserved.
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1995-2008 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -11,6 +17,10 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -65,11 +75,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -88,29 +101,44 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -120,13 +148,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -138,17 +170,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -169,6 +210,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -341,9 +391,13 @@ const
 	kTextEncodingUnicodeV3_2 = $0106;
 	kTextEncodingUnicodeV4_0 = $0108;
 	kTextEncodingUnicodeV5_0 = $010A;
+<<<<<<< HEAD
 	kTextEncodingUnicodeV5_1 = $010B; { No constant for Unicode 5.2, but leave an opening.}
 	kTextEncodingUnicodeV6_0 = $010D; { Adds many symbols, including emoji support.}
 	kTextEncodingUnicodeV6_1 = $010E;  { Adds emoji variation sequences, properties changes.}
+=======
+	kTextEncodingUnicodeV5_1 = $010B;
+>>>>>>> graemeg/cpstrnew
 
 { ISO 8-bit and 7-bit encodings begin at 0x200}
 const
@@ -410,8 +464,12 @@ const
 	kTextEncodingJIS_X0213_MenKuTen = $0629; { JIS X0213 in plane-row-column notation (3 bytes)}
 	kTextEncodingGB_2312_80 = $0630;
 	kTextEncodingGBK_95 = $0631; { annex to GB 13000-93; for Windows 95; EUC-CN extended}
+<<<<<<< HEAD
 	kTextEncodingGB_18030_2000 = $0632; { This is actually implemented as GB_18030_2005}
 	kTextEncodingGB_18030_2005 = $0632;
+=======
+	kTextEncodingGB_18030_2000 = $0632;
+>>>>>>> graemeg/cpstrnew
 	kTextEncodingKSC_5601_87 = $0640; { same as KSC 5601-92 without Johab annex}
 	kTextEncodingKSC_5601_92_Johab = $0641; { KSC 5601-92 Johab annex}
 	kTextEncodingCNS_11643_92_P1 = $0651; { CNS 11643-1992 plane 1}
@@ -448,6 +506,7 @@ const
 	kTextEncodingBig5_E = $0A09; { Taiwan Big-5E standard}
 
 { Other platform encodings}
+<<<<<<< HEAD
 const
 	kTextEncodingNextStepLatin = $0B01; { NextStep Latin encoding}
 	kTextEncodingNextStepJapanese = $0B02; { NextStep Japanese encoding (variant of EUC-JP)}
@@ -480,6 +539,40 @@ const
 	kMacRomanCurrencySignVariant = 1;    { Mac OS version < 8.5, 0xDB is CURRENCY SIGN}
 	kMacRomanEuroSignVariant = 2;     { Mac OS version >= 8.5, 0xDB is EURO SIGN      }
 
+=======
+const
+	kTextEncodingNextStepLatin = $0B01; { NextStep Latin encoding}
+	kTextEncodingNextStepJapanese = $0B02; { NextStep Japanese encoding (variant of EUC-JP)}
+
+{ EBCDIC & IBM host encodings begin at 0xC00}
+const
+	kTextEncodingEBCDIC_LatinCore = $0C01; { Common base subset of EBCDIC Latin encodings}
+	kTextEncodingEBCDIC_CP037 = $0C02; { code page 037, extended EBCDIC (Latin-1 set) for US,Canada...}
+
+{ Special values}
+const
+	kTextEncodingMultiRun = $0FFF; { Multi-encoding text with external run info}
+	kTextEncodingUnknown = $FFFF; { Unknown or unspecified                  }
+
+{ The following are older names for backward compatibility}
+const
+	kTextEncodingEBCDIC_US = $0C01;
+
+
+{ TextEncodingVariant type & values }
+type
+	TextEncodingVariant = UInt32;
+{ Default TextEncodingVariant, for any TextEncodingBase}
+const
+	kTextEncodingDefaultVariant = 0;
+
+{ Variants of kTextEncodingMacRoman                                                        }
+const
+	kMacRomanDefaultVariant = 0;    { meta value, maps to 1 or 2 depending on System }
+	kMacRomanCurrencySignVariant = 1;    { Mac OS version < 8.5, 0xDB is CURRENCY SIGN}
+	kMacRomanEuroSignVariant = 2;     { Mac OS version >= 8.5, 0xDB is EURO SIGN      }
+
+>>>>>>> graemeg/cpstrnew
 { Variants of kTextEncodingMacCyrillic (for TEC 1.5 and later)                             }
 const
 	kMacCyrillicDefaultVariant = 0;    { meta value, maps to 1, 2, or 3 depending on System}
@@ -860,6 +953,7 @@ const
 	kUnicodeReplacementChar = $FFFD; { Unicode replacement for unconvertable input char}
 	kUnicodeSwappedByteOrderMark = $FFFE; { not a Unicode char; byte-swapped version of FEFF}
 	kUnicodeNotAChar = $FFFF; { not a Unicode char; may be used as a terminator}
+<<<<<<< HEAD
 
 
 {
@@ -867,6 +961,8 @@ const
    CONSTANTS & DATA STRUCTURES for Unicode Properties
    -------------------------------------------------------------------------------------------------
 }
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
 	UCCharPropertyType = SInt32;
@@ -876,7 +972,24 @@ const
 	kUCCharPropTypeBidiCategory = 3;    { requests enumeration value}
 	kUCCharPropTypeDecimalDigitValue = 4;  { requests numeric value 0..9 for decimal digit chars (get err for others)}
 
+{
+   -------------------------------------------------------------------------------------------------
+   CONSTANTS & DATA STRUCTURES for Unicode Properties
+   -------------------------------------------------------------------------------------------------
+}
+
 type
+<<<<<<< HEAD
+=======
+	UCCharPropertyType = SInt32;
+const
+	kUCCharPropTypeGenlCategory = 1;    { requests enumeration value}
+	kUCCharPropTypeCombiningClass = 2;    { requests numeric value 0..255}
+	kUCCharPropTypeBidiCategory = 3;    { requests enumeration value}
+	kUCCharPropTypeDecimalDigitValue = 4;  { requests numeric value 0..9 for decimal digit chars (get err for others)}
+
+type
+>>>>>>> graemeg/cpstrnew
 	UCCharPropertyValue = UInt32;
 { General Category enumeration values (requested by kUCCharPropTypeGenlCategory)}
 const
@@ -958,7 +1071,11 @@ const
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function CreateTextEncoding( encodingBase: TextEncodingBase; encodingVariant: TextEncodingVariant; encodingFormat: TextEncodingFormat ): TextEncoding; external name '_CreateTextEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -970,7 +1087,11 @@ function CreateTextEncoding( encodingBase: TextEncodingBase; encodingVariant: Te
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function GetTextEncodingBase( encoding: TextEncoding ): TextEncodingBase; external name '_GetTextEncodingBase';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -982,7 +1103,11 @@ function GetTextEncodingBase( encoding: TextEncoding ): TextEncodingBase; extern
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function GetTextEncodingVariant( encoding: TextEncoding ): TextEncodingVariant; external name '_GetTextEncodingVariant';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -994,7 +1119,11 @@ function GetTextEncodingVariant( encoding: TextEncoding ): TextEncodingVariant; 
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function GetTextEncodingFormat( encoding: TextEncoding ): TextEncodingFormat; external name '_GetTextEncodingFormat';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1006,7 +1135,11 @@ function GetTextEncodingFormat( encoding: TextEncoding ): TextEncodingFormat; ex
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function ResolveDefaultTextEncoding( encoding: TextEncoding ): TextEncoding; external name '_ResolveDefaultTextEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1018,7 +1151,11 @@ function ResolveDefaultTextEncoding( encoding: TextEncoding ): TextEncoding; ext
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function GetTextEncodingName( iEncoding: TextEncoding; iNamePartSelector: TextEncodingNameSelector; iPreferredRegion: RegionCode; iPreferredEncoding: TextEncoding; iOutputBufLen: ByteCount; var oNameLength: ByteCount; oActualRegion: RegionCodePtr { can be NULL }; oActualEncoding: TextEncodingPtr { can be NULL }; oEncodingName: TextPtr ): OSStatus; external name '_GetTextEncodingName';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1030,7 +1167,11 @@ function GetTextEncodingName( iEncoding: TextEncoding; iNamePartSelector: TextEn
  *    Non-Carbon CFM:   in TextCommon 1.2.1 and later
  }
 function TECGetInfo( var tecInfo: TECInfoHandle ): OSStatus; external name '_TECGetInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1042,7 +1183,11 @@ function TECGetInfo( var tecInfo: TECInfoHandle ): OSStatus; external name '_TEC
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function UpgradeScriptInfoToTextEncoding( iTextScriptID: ScriptCode; iTextLanguageID: LangCode; iRegionID: RegionCode; iTextFontname: StringPtr; var oEncoding: TextEncoding ): OSStatus; external name '_UpgradeScriptInfoToTextEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1054,7 +1199,11 @@ function UpgradeScriptInfoToTextEncoding( iTextScriptID: ScriptCode; iTextLangua
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
  }
 function RevertTextEncodingToScriptInfo( iEncoding: TextEncoding; var oTextScriptID: ScriptCode; oTextLanguageID: LangCodePtr { can be NULL }; oTextFontname: StringPtr { can be NULL } ): OSStatus; external name '_RevertTextEncodingToScriptInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1103,7 +1252,11 @@ function RevertTextEncodingToScriptInfo( iEncoding: TextEncoding; var oTextScrip
  *    Non-Carbon CFM:   not available
  }
 function GetTextEncodingFromScriptInfo( iTextScriptID: ScriptCode; iTextLanguageID: LangCode; iTextRegionID: RegionCode; var oEncoding: TextEncoding ): OSStatus; external name '_GetTextEncodingFromScriptInfo';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1148,7 +1301,11 @@ function GetTextEncodingFromScriptInfo( iTextScriptID: ScriptCode; iTextLanguage
  *    Non-Carbon CFM:   not available
  }
 function GetScriptInfoFromTextEncoding( iEncoding: TextEncoding; var oTextScriptID: ScriptCode; oTextLanguageID: LangCodePtr { can be NULL } ): OSStatus; external name '_GetScriptInfoFromTextEncoding';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1160,7 +1317,11 @@ function GetScriptInfoFromTextEncoding( iEncoding: TextEncoding; var oTextScript
  *    Non-Carbon CFM:   in TextCommon 1.5 and later
  }
 function NearestMacTextEncodings( generalEncoding: TextEncoding; var bestMacEncoding: TextEncoding; var alternateMacEncoding: TextEncoding ): OSStatus; external name '_NearestMacTextEncodings';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1172,7 +1333,11 @@ function NearestMacTextEncodings( generalEncoding: TextEncoding; var bestMacEnco
  *    Non-Carbon CFM:   in TextCommon 1.5 and later
  }
 function UCGetCharProperty( charPtr: ConstUniCharPtr; textLength: UniCharCount; propType: UCCharPropertyType; var propValue: UCCharPropertyValue ): OSStatus; external name '_UCGetCharProperty';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {

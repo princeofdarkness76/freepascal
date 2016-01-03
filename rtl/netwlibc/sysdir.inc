@@ -17,20 +17,34 @@
 {*****************************************************************************
                            Directory Handling
 *****************************************************************************}
+<<<<<<< HEAD
 Procedure do_MkDir(const s: rawbytestring);
 var Res: LONGINT;
 BEGIN
   Res := FpMkdir (pchar(s),S_IRWXU);
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+var Res: LONGINT;
+BEGIN
+  Res := FpMkdir (s,S_IRWXU);
+>>>>>>> graemeg/cpstrnew
   if Res = 0 then
     InOutRes:=0
   else
     SetFileError (Res);
 end;
 
+<<<<<<< HEAD
 procedure do_RmDir(const s: rawbytestring);
 var Res: longint;
 begin
   Res := FpRmdir (pchar(s));
+=======
+procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+var Res: longint;
+begin
+  Res := FpRmdir (s);
+>>>>>>> graemeg/cpstrnew
   if Res = 0 then
     InOutRes:=0
   else
@@ -38,7 +52,11 @@ begin
 end;
 
 
+<<<<<<< HEAD
 procedure do_ChDir(const s: rawbytestring);
+=======
+procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+>>>>>>> graemeg/cpstrnew
 var Res: longint;
 begin
   Res := FpChdir (s);

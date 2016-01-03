@@ -184,6 +184,7 @@ interface
         moduleoptions: tmoduleoptions;
         deprecatedmsg: pshortstring;
 
+<<<<<<< HEAD
         { contains a list of types that are extended by helper types; the key is
           the full name of the type and the data is a TFPObjectList of
           tobjectdef instances (the helper defs) }
@@ -214,6 +215,8 @@ interface
            -- actual type: tnode (but fmodule should not depend on node) }
          tcinitcode     : tobject;
 
+=======
+>>>>>>> graemeg/cpstrnew
         {create creates a new module which name is stored in 's'. LoadedFrom
         points to the module calling it. It is nil for the first compiled
         module. This allow inheritence of all path lists. MUST pay attention
@@ -225,6 +228,7 @@ interface
         procedure flagdependent(callermodule:tmodule);
         function  addusedunit(hp:tmodule;inuses:boolean;usym:tunitsym):tused_unit;
         procedure updatemaps;
+        procedure check_hints;
         function  derefidx_unit(id:longint):longint;
         function  resolve_unit(id:longint):tmodule;
         procedure allunitsused;
@@ -605,8 +609,11 @@ implementation
         mode_switch_allowed:= true;
         moduleoptions:=[];
         deprecatedmsg:=nil;
+<<<<<<< HEAD
         namespace:=nil;
         tcinitcode:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
         _exports:=TLinkedList.Create;
         dllscannerinputlist:=TFPHashList.Create;
         asmdata:=casmdata.create(modulename);
@@ -617,7 +624,10 @@ implementation
     destructor tmodule.Destroy;
       var
         i : longint;
+<<<<<<< HEAD
         current_debuginfo_reset : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         if assigned(unitmap) then
           freemem(unitmap);
@@ -676,8 +686,11 @@ implementation
         waitingunits.free;
         stringdispose(asmprefix);
         stringdispose(deprecatedmsg);
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
+=======
+>>>>>>> graemeg/cpstrnew
         localunitsearchpath.Free;
         localobjectsearchpath.free;
         localincludesearchpath.free;
@@ -825,9 +838,12 @@ implementation
         in_global:=true;
         mode_switch_allowed:=true;
         stringdispose(deprecatedmsg);
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
         tcinitcode:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
         moduleoptions:=[];
         is_dbginfo_written:=false;
         crc:=0;
@@ -936,6 +952,23 @@ implementation
             inc(i);
             hp:=tmodule(hp.next);
           end;
+      end;
+
+    procedure tmodule.check_hints;
+      begin
+        if mo_hint_deprecated in moduleoptions then
+          if (mo_has_deprecated_msg in moduleoptions) and (deprecatedmsg <> nil) then
+            Message2(sym_w_deprecated_unit_with_msg,realmodulename^,deprecatedmsg^)
+          else
+            Message1(sym_w_deprecated_unit,realmodulename^);
+        if mo_hint_experimental in moduleoptions then
+          Message1(sym_w_experimental_unit,realmodulename^);
+        if mo_hint_platform in moduleoptions then
+          Message1(sym_w_non_portable_unit,realmodulename^);
+        if mo_hint_library in moduleoptions then
+          Message1(sym_w_library_unit,realmodulename^);
+        if mo_hint_unimplemented in moduleoptions then
+          Message1(sym_w_non_implemented_unit,realmodulename^);
       end;
 
 

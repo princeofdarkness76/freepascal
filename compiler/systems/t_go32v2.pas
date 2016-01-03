@@ -205,7 +205,11 @@ begin
   WriteResponseFile:=False;
 
   { Open link.res file }
+<<<<<<< HEAD
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName,true);
+=======
+  LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
+>>>>>>> graemeg/cpstrnew
 
   { Add all options to link.res instead of passing them via command line:
     DOS command line is limited to 126 characters! }
@@ -295,7 +299,10 @@ begin
        end;
    end;
   ScriptRes.Add('    *(.text)');
+<<<<<<< HEAD
   ScriptRes.Add('    *(.text.*)');
+=======
+>>>>>>> graemeg/cpstrnew
   ScriptRes.Add('    etext  =  . ;');
   ScriptRes.Add('    PROVIDE(_etext  =  .);');
   ScriptRes.Add('    . = ALIGN(0x200);');
@@ -312,9 +319,14 @@ begin
   ScriptRes.Add('      *(.dtors)');
   ScriptRes.Add('      djgpp_last_dtor = . ;');
   ScriptRes.Add('      __environ = . ;');
+<<<<<<< HEAD
   ScriptRes.Add('      _environ = .;');
   ScriptRes.Add('      LONG(0)');
   ScriptRes.Add('      . = ALIGN(0x20);');
+=======
+  ScriptRes.Add('      PROVIDE(_environ = .);');
+  ScriptRes.Add('      LONG(0)');
+>>>>>>> graemeg/cpstrnew
   ScriptRes.Add('      *(.data)');
   ScriptRes.Add('      *(.data.*)');
   ScriptRes.Add('      . = ALIGN(0x20);');

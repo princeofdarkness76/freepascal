@@ -59,7 +59,11 @@ uses
   aasmdata,aasmtai,aasmcpu,
   fmodule,
   cgbase,cgutils,cpubase,cgobj,
+<<<<<<< HEAD
   cgcpu,hlcgobj,hlcgcpu,
+=======
+  cgcpu,
+>>>>>>> graemeg/cpstrnew
   ncgutil,
   verbose;
 
@@ -136,7 +140,11 @@ var
   r : treference;
 {$endif x86}
 begin
+<<<<<<< HEAD
   create_hlcodegen;
+=======
+  create_codegen;
+>>>>>>> graemeg/cpstrnew
   new_section(current_asmdata.asmlists[al_procedures],sec_code,'',0);
   hp2:=texported_item(current_module._exports.first);
   while assigned(hp2) do
@@ -154,7 +162,11 @@ begin
            current_asmdata.asmlists[al_procedures].concat(Tai_symbol.Createname_global(hp2.name^,AT_FUNCTION,0));
            if (cs_create_pic in current_settings.moduleswitches) and
              { other targets need to be checked how it works }
+<<<<<<< HEAD
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris,system_i386_android,system_x86_64_dragonfly]) then
+=======
+             (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
+>>>>>>> graemeg/cpstrnew
              begin
 {$ifdef x86}
                sym:=current_asmdata.RefAsmSymbol(pd.mangledname);
@@ -182,7 +194,11 @@ begin
        end;
      hp2:=texported_item(hp2.next);
    end;
+<<<<<<< HEAD
    destroy_hlcodegen;
+=======
+   destroy_codegen;
+>>>>>>> graemeg/cpstrnew
 end;
 
 

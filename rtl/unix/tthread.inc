@@ -103,8 +103,12 @@ begin
        begin
          LThread.FSuspendedInternal := true;
          WRITE_DEBUG('waiting for SuspendedInternal - ', LThread.ClassName);
+<<<<<<< HEAD
          RtlEventWaitFor(LThread.FSuspendEvent);
          CurrentThreadVar := LThread;
+=======
+        CurrentTM.SemaphoreWait(LThread.FSem);
+>>>>>>> graemeg/cpstrnew
          WRITE_DEBUG('going into LThread.Execute - ', LThread.ClassName);
          LThread.Execute;
        end;
@@ -155,7 +159,11 @@ begin
   FInitialSuspended := CreateSuspended;
   FFatalException := nil;
   FSuspendedInternal := not CreateSuspended;
+<<<<<<< HEAD
   WRITE_DEBUG('creating thread, self = ',ptruint(self));
+=======
+  WRITE_DEBUG('creating thread, self = ',longint(self));
+>>>>>>> graemeg/cpstrnew
   FHandle:= BeginThread(@ThreadFunc, Pointer(Self), FThreadID, StackSize);
   if FHandle = TThreadID(0) then
     raise EThread.create('Failed to create new thread');
@@ -234,9 +242,15 @@ begin
   if FSuspendedInternal and (InterLockedExchange(longint(FSuspendedInternal),ord(false)) = longint(longbool(true))) then
     begin
       WRITE_DEBUG('resuming thread after TThread construction',ptruint(self));
+<<<<<<< HEAD
       RtlEventSetEvent(FSuspendEvent);
     end
   else
+=======
+      CurrentTM.SemaphorePost(FSem);
+    end
+  else if (not FSuspendedExternal) then
+>>>>>>> graemeg/cpstrnew
     begin
       if FSuspended and
          { don't compare with ord(true) or ord(longbool(true)), }

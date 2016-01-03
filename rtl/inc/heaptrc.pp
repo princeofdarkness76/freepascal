@@ -1388,7 +1388,11 @@ begin
     must be initialized already here
   }
   if IsMultithread then
+<<<<<<< HEAD
     TraceRelocateHeap;
+=======
+    initcriticalsection(todo_lock);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TraceExit;

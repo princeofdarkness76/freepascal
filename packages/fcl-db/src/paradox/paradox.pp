@@ -736,9 +736,16 @@ begin
         Result:=(PX_get_data_double(FDoc,pansichar(buf),flen,@R)>0);
         if Result then
           begin
+<<<<<<< HEAD
           longv:=trunc(R /86400000);
           D:=Longv+1721425-2415019;
           longv:=(Trunc(r) mod 86400000);
+=======
+          R:=R/1000.0;
+          longv:=trunc(R /86400);
+          D:=Longv+1721425-2415019;
+          longv:=(Trunc(r) mod 86400);
+>>>>>>> graemeg/cpstrnew
           PDateTime(Buffer)^:=D+(Longv/MSecsPerday);
           end;
         end;

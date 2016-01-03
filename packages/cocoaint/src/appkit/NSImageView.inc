@@ -42,10 +42,17 @@
 { NSImageView }
   NSImageView = objcclass external (NSControl)
   private
+<<<<<<< HEAD
     __ivFlags: record
       case byte of
        0: (_anonbitfield_NSImageView0: cuint);
        1: (data: bitpacked record
+=======
+    __ivFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSImageView0: cuint);
+       1: (
+>>>>>>> graemeg/cpstrnew
         _unused: 0..((1 shl 26)-1);
         _rejectsMultiFileDrops: 0..1;
         _compatibleScalingAndAlignment: 0..1;
@@ -53,7 +60,10 @@
         _overridesDrawing: 0..1;
         _allowsCutCopyPaste: 0..1;
         _editable: 0..1;
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _target: id;

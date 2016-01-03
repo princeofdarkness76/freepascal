@@ -49,31 +49,46 @@ type
     Attr: TDOMNode;
     Prefix: PHashItem;
   end;
+<<<<<<< HEAD
 
   TNodeInfo = record
     Name: XMLString;
   end;
 
   TNodeInfoArray = array of TNodeInfo;
+=======
+>>>>>>> graemeg/cpstrnew
 
   TXMLWriter = class(TObject)
   private
     FStream: TStream;
     FInsideTextNode: Boolean;
     FCanonical: Boolean;
+<<<<<<< HEAD
     FIndent: XMLString;
     FNesting: Integer;
     FBuffer: PChar;
     FBufPos: PChar;
     FCapacity: Integer;
     FLineBreak: XMLString;
+=======
+    FIndent: WideString;
+    FIndentCount: Integer;
+    FBuffer: PChar;
+    FBufPos: PChar;
+    FCapacity: Integer;
+    FLineBreak: WideString;
+>>>>>>> graemeg/cpstrnew
     FNSHelper: TNSSupport;
     FAttrFixups: TFPList;
     FScratch: TFPList;
     FNSDefs: TFPList;
+<<<<<<< HEAD
     FNodes: TNodeInfoArray;
     procedure WriteXMLDecl(const aVersion, aEncoding: XMLString;
       aStandalone: Integer);
+=======
+>>>>>>> graemeg/cpstrnew
     procedure wrtChars(Src: PWideChar; Length: Integer);
     procedure IncNesting;
     procedure DecNesting; {$IFDEF HAS_INLINE} inline; {$ENDIF}
@@ -106,7 +121,11 @@ type
     procedure WriteAttributeString(const Name, Value: XMLString);
     procedure WriteDocType(const Name, PubId, SysId, Subset: XMLString);
   public
+<<<<<<< HEAD
     constructor Create(AStream: TStream; ANameTable: THashTable);
+=======
+    constructor Create(AStream: TStream);
+>>>>>>> graemeg/cpstrnew
     destructor Destroy; override;
   end;
 
@@ -146,16 +165,26 @@ end;
   ---------------------------------------------------------------------}
 
 const
+<<<<<<< HEAD
   AttrSpecialChars = ['<', '>', '"', '&', #0..#$1F];
   TextSpecialChars = ['<', '>', '&', #0..#8, #10..#$1F];
   CDSectSpecialChars = [#0..#8, #11, #12, #14..#$1F, ']'];
+=======
+  AttrSpecialChars = ['<', '"', '&', #9, #10, #13];
+  TextSpecialChars = ['<', '>', '&', #10, #13];
+  CDSectSpecialChars = [']'];
+>>>>>>> graemeg/cpstrnew
   LineEndingChars = [#13, #10];
   QuotStr = '&quot;';
   AmpStr = '&amp;';
   ltStr = '&lt;';
   gtStr = '&gt;';
 
+<<<<<<< HEAD
 constructor TXMLWriter.Create(AStream: TStream; ANameTable: THashTable);
+=======
+constructor TXMLWriter.Create(AStream: TStream);
+>>>>>>> graemeg/cpstrnew
 var
   I: Integer;
 begin
@@ -180,9 +209,14 @@ begin
   else
     FIndent[2] := ' ';
   for I := 3 to 100 do FIndent[I] := ' ';
+<<<<<<< HEAD
   FNesting := 0;
   SetLength(FNodes, 16);
   FNSHelper := TNSSupport.Create(ANameTable);
+=======
+  FIndentCount := 0;
+  FNSHelper := TNSSupport.Create;
+>>>>>>> graemeg/cpstrnew
   FScratch := TFPList.Create;
   FNSDefs := TFPList.Create;
   FAttrFixups := TFPList.Create;
@@ -278,7 +312,11 @@ end;
 
 procedure TXMLWriter.wrtIndent(EndElement: Boolean);
 begin
+<<<<<<< HEAD
   wrtChars(PWideChar(FIndent), (FNesting-ord(EndElement))*2+Length(FLineBreak));
+=======
+  wrtChars(PWideChar(FIndent), FIndentCount*2+Length(FLineBreak));
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TXMLWriter.IncNesting;
@@ -303,7 +341,11 @@ begin
   if FNesting>0 then dec(FNesting);
 end;
 
+<<<<<<< HEAD
 procedure TXMLWriter.ConvWrite(const s: XMLString; const SpecialChars: TSetOfChar;
+=======
+procedure TXMLWriter.ConvWrite(const s: WideString; const SpecialChars: TSetOfChar;
+>>>>>>> graemeg/cpstrnew
   const SpecialCharCallback: TSpecialCharCallback);
 var
   StartPos, EndPos: Integer;
@@ -331,18 +373,29 @@ begin
     '"': Sender.wrtStr(QuotStr);
     '&': Sender.wrtStr(AmpStr);
     '<': Sender.wrtStr(ltStr);
+<<<<<<< HEAD
     // This is *only* to interoperate with broken parsers out there,
     // Delphi ClientDataset parser being one of them.
     '>': if not Sender.FCanonical then
            Sender.wrtStr(gtStr)
          else
            Sender.wrtChr('>');
+=======
+>>>>>>> graemeg/cpstrnew
     // Escape whitespace using CharRefs to be consistent with W3 spec § 3.3.3
     #9: Sender.wrtStr('&#x9;');
     #10: Sender.wrtStr('&#xA;');
     #13: Sender.wrtStr('&#xD;');
+<<<<<<< HEAD
   else
     raise EConvertError.Create('Illegal character');
+  end;
+end;
+
+procedure TextnodeNormalCallback(Sender: TXMLWriter; const s: DOMString;
+=======
+  else
+    Sender.wrtChr(s[idx]);
   end;
 end;
 
@@ -351,6 +404,29 @@ procedure TextnodeNormalCallback(Sender: TXMLWriter; const s: DOMString;
 begin
   case s[idx] of
     '<': Sender.wrtStr(ltStr);
+    '>': Sender.wrtStr(gtStr); // Required only in ']]>' literal, otherwise optional
+    '&': Sender.wrtStr(AmpStr);
+    #13:
+      begin
+        // We normalize #13#10 and #13 to FLineBreak, going somewhat
+        // beyond the specs here, see issue #13879.
+        Sender.wrtStr(Sender.FLineBreak);
+        if (idx < Length(s)) and (s[idx+1] = #10) then
+          Inc(idx);
+      end;
+    #10: Sender.wrtStr(Sender.FLineBreak);
+  else
+    Sender.wrtChr(s[idx]);
+  end;
+end;
+
+procedure TextnodeCanonicalCallback(Sender: TXMLWriter; const s: DOMString;
+>>>>>>> graemeg/cpstrnew
+  var idx: Integer);
+begin
+  case s[idx] of
+    '<': Sender.wrtStr(ltStr);
+<<<<<<< HEAD
     '>': Sender.wrtStr(gtStr); // Required only in ']]>' literal, otherwise optional
     '&': Sender.wrtStr(AmpStr);
     #13:
@@ -397,6 +473,27 @@ begin
   end  
   else
     raise EConvertError.Create('Illegal character');
+=======
+    '>': Sender.wrtStr(gtStr);
+    '&': Sender.wrtStr(AmpStr);
+    #13: Sender.wrtStr('&#xD;')
+  else
+    Sender.wrtChr(s[idx]);
+  end;
+end;
+
+procedure CDSectSpecialCharCallback(Sender: TXMLWriter; const s: DOMString;
+  var idx: Integer);
+begin
+  if (idx <= Length(s)-2) and (s[idx+1] = ']') and (s[idx+2] = '>') then
+  begin
+    Sender.wrtStr(']]]]><![CDATA[>');
+    Inc(idx, 2);
+    // TODO: emit warning 'cdata-section-splitted'
+  end
+  else
+    Sender.wrtChr(s[idx]);
+>>>>>>> graemeg/cpstrnew
 end;
 
 const
@@ -405,7 +502,11 @@ const
     @TextnodeCanonicalCallback
   );
 
+<<<<<<< HEAD
 procedure TXMLWriter.wrtQuotedLiteral(const ws: XMLString);
+=======
+procedure TXMLWriter.wrtQuotedLiteral(const ws: WideString);
+>>>>>>> graemeg/cpstrnew
 var
   Quote: WideChar;
 begin
@@ -429,7 +530,11 @@ begin
     CDATA_SECTION_NODE:          WriteCDATA(TDOMCharacterData(node).Data);
     ENTITY_REFERENCE_NODE:       VisitEntityRef(node);
     PROCESSING_INSTRUCTION_NODE: VisitPI(node);
+<<<<<<< HEAD
     COMMENT_NODE:                WriteComment(TDOMCharacterData(node).Data);
+=======
+    COMMENT_NODE:                VisitComment(node);
+>>>>>>> graemeg/cpstrnew
     DOCUMENT_NODE:
       if FCanonical then
         VisitDocument_Canonical(node)
@@ -450,8 +555,12 @@ begin
     wrtStr(B.Prefix^.Key);
   end;
   wrtChars('="', 2);
+<<<<<<< HEAD
   if Assigned(B.uri) then
     ConvWrite(B.uri^.Key, AttrSpecialChars, @AttrSpecialCharCallback);
+=======
+  ConvWrite(B.uri, AttrSpecialChars, @AttrSpecialCharCallback);
+>>>>>>> graemeg/cpstrnew
   wrtChr('"');
 end;
 
@@ -481,10 +590,29 @@ function SortAtts(Item1, Item2: Pointer): Integer;
 var
   p1: PAttrFixup absolute Item1;
   p2: PAttrFixup absolute Item2;
+<<<<<<< HEAD
 begin
   Result := Compare(p1^.Attr.namespaceURI, p2^.Attr.namespaceURI);
   if Result = 0 then
     Result := Compare(p1^.Attr.localName, p2^.Attr.localName);
+=======
+  s1, s2: DOMString;
+begin
+  Result := Compare(p1^.Attr.namespaceURI, p2^.Attr.namespaceURI);
+  if Result = 0 then
+  begin
+    // TODO: Must fix the parser so it doesn't produce Level 1 attributes
+    if nfLevel2 in p1^.Attr.Flags then
+      s1 := p1^.Attr.localName
+    else
+      s1 := p1^.Attr.nodeName;
+    if nfLevel2 in p2^.Attr.Flags then
+      s2 := p2^.Attr.localName
+    else
+      s2 := p2^.Attr.nodeName;
+    Result := Compare(s1, s2);
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TXMLWriter.NamespaceFixup(Element: TDOMElement);
@@ -586,7 +714,15 @@ var
   child: TDOMNode;
   SavedInsideTextNode: Boolean;
 begin
+<<<<<<< HEAD
   WriteStartElement(TDOMElement(node).TagName);
+=======
+  if not FInsideTextNode then
+    wrtIndent;
+  FNSHelper.StartElement;
+  wrtChr('<');
+  wrtStr(TDOMElement(node).TagName);
+>>>>>>> graemeg/cpstrnew
 
   if nfLevel2 in node.Flags then
     NamespaceFixup(TDOMElement(node))
@@ -607,6 +743,10 @@ begin
     SavedInsideTextNode := FInsideTextNode;
     wrtChr('>');
     FInsideTextNode := FCanonical or (Child.NodeType in [TEXT_NODE, CDATA_SECTION_NODE]);
+<<<<<<< HEAD
+=======
+    IncIndent;
+>>>>>>> graemeg/cpstrnew
     repeat
       WriteNode(Child);
       Child := Child.NextSibling;
@@ -640,13 +780,21 @@ begin
     wrtStr(FNodes[FNesting].Name);
     wrtChr('>');
   end;
+<<<<<<< HEAD
   DecNesting;
   FNSHelper.PopScope;
+=======
+  FNSHelper.EndElement;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TXMLWriter.WriteString(const Text: XMLString);
 begin
+<<<<<<< HEAD
   ConvWrite(Text, TextSpecialChars, TextnodeCallbacks[FCanonical]);
+=======
+  ConvWrite(TDOMCharacterData(node).Data, TextSpecialChars, TextnodeCallbacks[FCanonical]);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TXMLWriter.WriteCDATA(const Text: XMLString);
@@ -654,11 +802,19 @@ begin
   if not FInsideTextNode then
     wrtIndent;
   if FCanonical then
+<<<<<<< HEAD
     ConvWrite(Text, TextSpecialChars, @TextnodeCanonicalCallback)
   else
   begin
     wrtChars('<![CDATA[', 9);
     ConvWrite(Text, CDSectSpecialChars, @CDSectSpecialCharCallback);
+=======
+    ConvWrite(TDOMCharacterData(node).Data, TextSpecialChars, @TextnodeCanonicalCallback)
+  else
+  begin
+    wrtChars('<![CDATA[', 9);
+    ConvWrite(TDOMCharacterData(node).Data, CDSectSpecialChars, @CDSectSpecialCharCallback);
+>>>>>>> graemeg/cpstrnew
     wrtChars(']]>', 3);
   end;
 end;
@@ -679,12 +835,21 @@ procedure TXMLWriter.WriteProcessingInstruction(const Target, Data: XMLString);
 begin
   if not FInsideTextNode then wrtIndent;
   wrtStr('<?');
+<<<<<<< HEAD
   wrtStr(Target);
   if Data <> '' then
   begin
     wrtChr(' ');
     // TODO: How does this comply with c14n??
     ConvWrite(Data, LineEndingChars, @TextnodeNormalCallback);
+=======
+  wrtStr(TDOMProcessingInstruction(node).Target);
+  if TDOMProcessingInstruction(node).Data <> '' then
+  begin
+    wrtChr(' ');
+    // TODO: How does this comply with c14n??
+    ConvWrite(TDOMProcessingInstruction(node).Data, LineEndingChars, @TextnodeNormalCallback);
+>>>>>>> graemeg/cpstrnew
   end;
   wrtStr('?>');
 end;
@@ -699,7 +864,11 @@ begin
   if not FInsideTextNode then wrtIndent;
   wrtChars('<!--', 4);
   // TODO: How does this comply with c14n??
+<<<<<<< HEAD
   ConvWrite(Text, LineEndingChars, @TextnodeNormalCallback);
+=======
+  ConvWrite(TDOMCharacterData(node).Data, LineEndingChars, @TextnodeNormalCallback);
+>>>>>>> graemeg/cpstrnew
   wrtChars('-->', 3);
 end;
 
@@ -788,6 +957,7 @@ begin
     end;
     child := child.nextSibling;
   end;
+<<<<<<< HEAD
 end;
 
 procedure TXMLWriter.WriteAttributeString(const Name, Value: XMLString);
@@ -797,6 +967,8 @@ begin
   wrtChars('="', 2);
   ConvWrite(Value, AttrSpecialChars, {$IFDEF FPC}@{$ENDIF}AttrSpecialCharCallback);
   wrtChr('"');
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TXMLWriter.VisitAttribute(Node: TDOMNode);
@@ -822,6 +994,7 @@ end;
 
 procedure TXMLWriter.VisitDocumentType(Node: TDOMNode);
 begin
+<<<<<<< HEAD
   WriteDocType(Node.NodeName, TDOMDocumentType(Node).PublicID, TDOMDocumentType(Node).SystemID,
                TDOMDocumentType(Node).InternalSubset);
 end;
@@ -831,9 +1004,15 @@ begin
   wrtStr(FLineBreak);
   wrtStr('<!DOCTYPE ');
   wrtStr(Name);
+=======
+  wrtStr(FLineBreak);
+  wrtStr('<!DOCTYPE ');
+  wrtStr(Node.NodeName);
+>>>>>>> graemeg/cpstrnew
   wrtChr(' ');
   if PubId <> '' then
   begin
+<<<<<<< HEAD
     wrtStr('PUBLIC ');
     wrtQuotedLiteral(PubId);
     wrtChr(' ');
@@ -849,6 +1028,26 @@ begin
     wrtChr('[');
     ConvWrite(Subset, LineEndingChars, @TextnodeNormalCallback);
     wrtChr(']');
+=======
+    if PublicID <> '' then
+    begin
+      wrtStr('PUBLIC ');
+      wrtQuotedLiteral(PublicID);
+      wrtChr(' ');
+      wrtQuotedLiteral(SystemID);
+    end
+    else if SystemID <> '' then
+    begin
+      wrtStr('SYSTEM ');
+      wrtQuotedLiteral(SystemID);
+    end;
+    if InternalSubset <> '' then
+    begin
+      wrtChr('[');
+      ConvWrite(InternalSubset, LineEndingChars, @TextnodeNormalCallback);
+      wrtChr(']');
+    end;
+>>>>>>> graemeg/cpstrnew
   end;
   wrtChr('>');
 end;
@@ -878,13 +1077,38 @@ begin
 end;
 
 procedure WriteXMLFile(doc: TXMLDocument; var AFile: Text);
+var
+  s: TStream;
 begin
+<<<<<<< HEAD
   WriteXML(doc, AFile);
+=======
+  s := TTextStream.Create(AFile);
+  try
+    with TXMLWriter.Create(s) do
+    try
+      WriteNode(doc);
+    finally
+      Free;
+    end;
+  finally
+    s.Free;
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure WriteXMLFile(doc: TXMLDocument; AStream: TStream);
 begin
+<<<<<<< HEAD
   WriteXML(doc, AStream);
+=======
+  with TXMLWriter.Create(AStream) do
+  try
+    WriteNode(doc);
+  finally
+    Free;
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure WriteXML(Element: TDOMNode; const AFileName: String);

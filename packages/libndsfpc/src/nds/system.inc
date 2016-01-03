@@ -41,17 +41,26 @@ const
 	POWER_ALL_2D   : PM_Bits = (1 shl 16) or (1 shl 0) or (1 shl 1) or (1 shl 9);
 //	POWER_ALL      : PM_Bits = PM_ARM9_DIRECT or POWER_ALL_2D or POWER_3D_CORE or POWER_MATRIX;
 	POWER_ALL      : PM_Bits = (1 shl 16) or (1 shl 0) or (1 shl 1) or (1 shl 9) or (1 shl 3) or (1 shl 2);
+<<<<<<< HEAD
 
 //procedure SystemSleep(); cdecl; external;
 procedure ledBlink(bm: cint); cdecl; external;
+=======
+>>>>>>> graemeg/cpstrnew
 
 var
   __dsimode: cbool; cvar; external;
 
 {$ifdef ARM9}
+<<<<<<< HEAD
 procedure SystemSleep(); cdecl; external;
 procedure powerOn(bits: cint); cdecl; external;
 procedure powerOff(bits: cint); cdecl; external;
+=======
+procedure powerOn(bits: cint); cdecl; external;
+procedure powerOff(bits: cint); cdecl; external;
+procedure ledBlink(bm: cint); cdecl; external;
+>>>>>>> graemeg/cpstrnew
 
 procedure systemMsgHandler(bytes: cint; user_data: pointer); cdecl; external;
 procedure systemValueHandler(value: cuint32; data: pointer); cdecl; external;
@@ -62,10 +71,13 @@ procedure lcdMainOnBottom(); inline;
 
 procedure systemShutDown(); inline;
 
+<<<<<<< HEAD
 procedure readFirmware(address: cuint32; buffer: pointer; length: cuint32); cdecl; external;
 function writeFirmware(address: cuint32; buffer: pointer; length: cuint32): cint; cdecl; external;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 function getBatteryLevel(): cuint32; cdecl; external;
 
 procedure setVectorBase(highVector: cint); cdecl; external;
@@ -226,7 +238,11 @@ const
   __system_argv: Pargv = pointer($02FFFE70);
 
 const
+<<<<<<< HEAD
   BOOTSIG: cardinal = $62757473746F6F62; // ULL?
+=======
+  BOOTSIG = $62757473746F6F62; // ULL?
+>>>>>>> graemeg/cpstrnew
 
 
 type

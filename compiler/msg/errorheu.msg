@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 %%% Reordering of errorheu.msg respective to errore.msg
 %%% Contains all comments from errorheu.msg
+=======
+>>>>>>> graemeg/cpstrnew
 #
 #   This file is part of the Free Pascal Compiler
 #   Copyright (c) 1999-2008 by the Free Pascal Development team
@@ -3493,7 +3496,11 @@ wpo_cant_create_feedback_file=12019_E_Cannot create specified whole program opti
 #
 option_logo=11023_[
 Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] for $FPCCPU
+<<<<<<< HEAD
 Copyright (c) 1993-2015 by Florian Klaempfl and others
+=======
+Copyright (c) 1993-2011 by Florian Klaempfl
+>>>>>>> graemeg/cpstrnew
 ]
 
 #

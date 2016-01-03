@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -46,22 +50,36 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 procedure TX11WindowDisplay.Open(ATitle: AnsiString; AWidth, AHeight: Integer; AFormat: IPTCFormat; const AOpenGLAttributes: IPTCOpenGLAttributes);
 var
+=======
+procedure TX11WindowDisplay.Open(ATitle: AnsiString; AWidth, AHeight: Integer; const AFormat: TPTCFormat);
+var
+  tmpFormat: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
   xgcv: TXGCValues;
   textprop: TXTextProperty;
   e: TXEvent;
   found: Boolean;
   attr: TXSetWindowAttributes;
+<<<<<<< HEAD
   AttrMask: culong;
   size_hints: PXSizeHints;
+=======
+  size_hints: PXSizeHints;
+  tmpArea: TPTCArea;
+>>>>>>> graemeg/cpstrnew
   tmppchar: PChar;
   tmpArrayOfCLong: array [1..1] of clong;
   tmpPixmap: TPixmap;
   BlackColor: TXColor;
   BlankCursorData: array [1..8] of Byte = (0, 0, 0, 0, 0, 0, 0, 0);
+<<<<<<< HEAD
   CreateWindow_Depth: cint;
   CreateWindow_Visual: PVisual;
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   FHeight := AHeight;
   FWidth := AWidth;
@@ -97,6 +115,7 @@ begin
 
   { Check if we have that colour depth available.. Easy as there is no
     format conversion yet }
+<<<<<<< HEAD
   FFormat := GetX11Format(AFormat);
 
   attr.border_pixel := BlackPixel(FDisplay, FScreen);
@@ -121,6 +140,16 @@ begin
     raise TPTCError.Create('Console does not support OpenGL');
 {$ENDIF ENABLE_X11_EXTENSION_GLX}
   end;
+=======
+  tmpFormat := nil;
+  try
+    tmpFormat := GetX11Format(AFormat);
+    FFormat.Assign(tmpFormat);
+  finally
+    tmpFormat.Free;
+  end;
+  tmpFormat := nil;
+>>>>>>> graemeg/cpstrnew
 
   { Create a window }
   FWindow := XCreateWindow(FDisplay, RootWindow(FDisplay, FScreen), 0, 0,
@@ -129,6 +158,7 @@ begin
   { Register the delete atom }
   FAtomClose := XInternAtom(FDisplay, 'WM_DELETE_WINDOW', False);
   X11Check(XSetWMProtocols(FDisplay, FWindow, @FAtomClose, 1), 'XSetWMProtocols');
+<<<<<<< HEAD
 
   if not (PTC_X11_USE_OPENGL in FFlags) then
   begin
@@ -139,6 +169,13 @@ begin
       raise TPTCError.Create('can''t create graphics context');
   end;
 
+=======
+  { Get graphics context }
+  xgcv.graphics_exposures := Ord(False);
+  FGC := XCreateGC(FDisplay, FWindow, GCGraphicsExposures, @xgcv);
+  if FGC = nil then
+    raise TPTCError.Create('can''t create graphics context');
+>>>>>>> graemeg/cpstrnew
   { Set window title }
   tmppchar := PChar(ATitle);
   X11Check(XStringListToTextProperty(@tmppchar, 1, @textprop), 'XStringListToTextProperty');
@@ -152,18 +189,29 @@ begin
   { Set normal hints }
   size_hints := XAllocSizeHints;
   try
+<<<<<<< HEAD
     size_hints^.flags := PBaseSize;
+=======
+    size_hints^.flags := PMinSize or PBaseSize;
+    size_hints^.min_width := AWidth;
+    size_hints^.min_height := AHeight;
+>>>>>>> graemeg/cpstrnew
     size_hints^.base_width := AWidth;
     size_hints^.base_height := AHeight;
     if FFullScreen then
     begin
+<<<<<<< HEAD
       size_hints^.flags := size_hints^.flags or PMinSize or PWinGravity;
       size_hints^.min_width := AWidth;
       size_hints^.min_height := AHeight;
+=======
+      size_hints^.flags := size_hints^.flags or PWinGravity;
+>>>>>>> graemeg/cpstrnew
       size_hints^.win_gravity := StaticGravity;
     end
     else
     begin
+<<<<<<< HEAD
       if FResizable then
       begin
         size_hints^.flags := size_hints^.flags or PMinSize;
@@ -179,6 +227,12 @@ begin
         size_hints^.max_width := AWidth;
         size_hints^.max_height := AHeight;
       end;
+=======
+      { not fullscreen - add maxsize limit=minsize, i.e. make window not resizable }
+      size_hints^.flags := size_hints^.flags or PMaxSize;
+      size_hints^.max_width := AWidth;
+      size_hints^.max_height := AHeight;
+>>>>>>> graemeg/cpstrnew
     end;
     XSetWMNormalHints(FDisplay, FWindow, size_hints);
     XFlush(FDisplay);
@@ -230,11 +284,21 @@ begin
   XChangeWindowAttributes(FDisplay, FWindow, CWBackingStore, @attr);
 
   { Set clipping area }
+<<<<<<< HEAD
   FClip := TPTCArea.Create(0, 0, FWidth, FHeight);
+=======
+  tmpArea := TPTCArea.Create(0, 0, FWidth, FHeight);
+  try
+    FClip.Assign(tmpArea);
+  finally
+    tmpArea.Free;
+  end;
+>>>>>>> graemeg/cpstrnew
 
   { Installs the right colour map for 8 bit modes }
   CreateColormap;
 
+<<<<<<< HEAD
 {$IFDEF ENABLE_X11_EXTENSION_GLX}
   if PTC_X11_USE_OPENGL in FFlags then
   begin
@@ -254,13 +318,27 @@ begin
 end;
 
 procedure TX11WindowDisplay.Open(AWindow: TWindow; AFormat: IPTCFormat; AX, AY, AWidth, AHeight: Integer);
+=======
+  if FFullScreen then
+    EnterFullScreen;
+end;
+
+procedure TX11WindowDisplay.Open(AWindow: TWindow; const AFormat: TPTCFormat);
+begin
+end;
+
+procedure TX11WindowDisplay.Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer);
+>>>>>>> graemeg/cpstrnew
 begin
 end;
 
 procedure TX11WindowDisplay.Close;
 begin
+<<<<<<< HEAD
   FOpen := False;
 
+=======
+>>>>>>> graemeg/cpstrnew
   FreeAndNil(FModeSwitcher);
 
 {$IFDEF ENABLE_X11_EXTENSION_GLX}
@@ -301,6 +379,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TX11WindowDisplay.InternalResize(AWidth, AHeight: Integer);
 begin
   if FFullScreen then
@@ -327,6 +406,8 @@ begin
   FClip := TPTCArea.Create(0, 0, FWidth, FHeight);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TX11WindowDisplay.internal_ShowCursor(AVisible: Boolean);
 var
   attr: TXSetWindowAttributes;
@@ -470,6 +551,40 @@ var
     Result := False;
   end;
 
+<<<<<<< HEAD
+=======
+  procedure HandleKeyEvent;
+  var
+    sym: TKeySym;
+    sym_modded: TKeySym; { modifiers like shift are taken into account here }
+    press: Boolean;
+    alt, shift, ctrl: Boolean;
+    uni: Integer;
+    key: TPTCKeyEvent;
+    buf: array [1..16] of Char;
+  begin
+    sym := XLookupKeySym(@e.xkey, 0);
+    XLookupString(@e.xkey, @buf, SizeOf(buf), @sym_modded, nil);
+    uni := X11ConvertKeySymToUnicode(sym_modded);
+    alt := (e.xkey.state and Mod1Mask) <> 0;
+    shift := (e.xkey.state and ShiftMask) <> 0;
+    ctrl := (e.xkey.state and ControlMask) <> 0;
+    if e._type = KeyPress then
+      press := True
+    else
+      press := False;
+
+    key := nil;
+    case sym shr 8 of
+      0: key := TPTCKeyEvent.Create(FNormalKeys[sym and $FF], uni, alt, shift, ctrl, press);
+      $FF: key := TPTCKeyEvent.Create(FFunctionKeys[sym and $FF], uni, alt, shift, ctrl, press);
+      else
+        key := TPTCKeyEvent.Create;
+    end;
+    FEventQueue.AddEvent(key);
+  end;
+
+>>>>>>> graemeg/cpstrnew
   procedure HandleMouseEvent;
   var
     x, y: cint;
@@ -568,6 +683,7 @@ var
       FPreviousMousePositionSaved := True;
     end;
   end;
+<<<<<<< HEAD
 
   procedure HandleConfigureNotifyEvent;
   begin
@@ -581,6 +697,9 @@ var
     FPreviousHeight := e.xconfigure.height;
   end;
 
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   NewFocusSpecified := False;
   while UsefulEventsPending do
@@ -597,17 +716,25 @@ begin
       end;
       ClientMessage: begin
         if (e.xclient.format = 32) and (TAtom(e.xclient.data.l[0]) = FAtomClose) then
+<<<<<<< HEAD
           if InterceptClose then
             FEventQueue.AddEvent(TPTCCloseEvent.Create)
           else
             Halt(0);
+=======
+          Halt(0);
+>>>>>>> graemeg/cpstrnew
       end;
       Expose: begin
         if e.xexpose.count = 0 then
           Draw;
       end;
+<<<<<<< HEAD
       ConfigureNotify: HandleConfigureNotifyEvent;
       KeyPress, KeyRelease: HandleKeyEvent(e.xkey);
+=======
+      KeyPress, KeyRelease: HandleKeyEvent;
+>>>>>>> graemeg/cpstrnew
       ButtonPress, ButtonRelease, MotionNotify: HandleMouseEvent;
     end;
   end;
@@ -620,15 +747,20 @@ end;
 
 procedure TX11WindowDisplay.Draw;
 begin
+<<<<<<< HEAD
   if not (PTC_X11_USE_OPENGL in FFlags) then
   begin
     FPrimary.Put(FWindow, FGC, FDestX, FDestY);
   end;
+=======
+  FPrimary.Put(FWindow, FGC, FDestX, FDestY);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TX11WindowDisplay.Update;
 begin
   Draw;
+<<<<<<< HEAD
 
   HandleEvents;
 end;
@@ -649,6 +781,39 @@ function TX11WindowDisplay.NextEvent(out AEvent: IPTCEvent; AWait: Boolean; cons
 var
   tmpEvent: TXEvent;
 begin
+=======
+
+  HandleEvents;
+end;
+
+procedure TX11WindowDisplay.Update(const AArea: TPTCArea);
+var
+  updatearea: TPTCArea;
+  tmparea: TPTCArea;
+begin
+  tmparea := TPTCArea.Create(0, 0, FWidth, FHeight);
+  try
+    updatearea := TPTCClipper.Clip(tmparea, AArea);
+    try
+      FPrimary.Put(FWindow, FGC, updatearea.Left, updatearea.Top,
+                   FDestX + updatearea.Left, FDestY + updatearea.Top,
+                   updatearea.Width, updatearea.Height);
+    finally
+      updatearea.Free;
+    end;
+  finally
+    tmparea.Free;
+  end;
+
+  HandleEvents;
+end;
+
+function TX11WindowDisplay.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
+var
+  tmpEvent: TXEvent;
+begin
+  FreeAndNil(AEvent);
+>>>>>>> graemeg/cpstrnew
   repeat
     { process all events from the X queue and put them on our FEventQueue }
     HandleEvents;
@@ -665,7 +830,11 @@ begin
   Result := AEvent <> nil;
 end;
 
+<<<<<<< HEAD
 function TX11WindowDisplay.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): IPTCEvent;
+=======
+function TX11WindowDisplay.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 var
   tmpEvent: TXEvent;
 begin
@@ -689,6 +858,7 @@ begin
   Result := FPrimary.Lock;
 end;
 
+<<<<<<< HEAD
 procedure TX11WindowDisplay.Unlock;
 begin
 end;
@@ -696,16 +866,41 @@ end;
 procedure TX11WindowDisplay.GetModes(var AModes: TPTCModeList);
 var
   current_desktop_format: IPTCFormat;
+=======
+procedure TX11WindowDisplay.unlock;
+begin
+end;
+
+procedure TX11WindowDisplay.GetModes(var AModes: TPTCModeDynArray);
+var
+  current_desktop_format, tmpfmt: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 begin
   if FModeSwitcher = nil then
     FModeSwitcher := CreateModeSwitcher;
 
+<<<<<<< HEAD
   current_desktop_format := GetX11Format(TPTCFormat.Create(8));
 
   FModeSwitcher.GetModes(AModes, current_desktop_format);
 end;
 
 procedure TX11WindowDisplay.Palette(APalette: IPTCPalette);
+=======
+  current_desktop_format := nil;
+  tmpfmt := TPTCFormat.Create(8);
+  try
+    current_desktop_format := GetX11Format(tmpfmt);
+
+    FModeSwitcher.GetModes(AModes, current_desktop_format);
+  finally
+    tmpfmt.Free;
+    current_desktop_format.Free;
+  end;
+end;
+
+procedure TX11WindowDisplay.Palette(const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 var
   pal: PUint32;
   i: Integer;
@@ -728,11 +923,19 @@ end;
 
 function TX11WindowDisplay.GetPitch: Integer;
 begin
+<<<<<<< HEAD
   Result := FPrimary.Pitch;
 end;
 
 function TX11WindowDisplay.CreateImage(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer;
                                        AFormat: IPTCFormat): TX11Image;
+=======
+  Result := FPrimary.pitch;
+end;
+
+function TX11WindowDisplay.CreateImage(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer;
+                                       AFormat: TPTCFormat): TX11Image;
+>>>>>>> graemeg/cpstrnew
 begin
   {$IFDEF ENABLE_X11_EXTENSION_XSHM}
   if (PTC_X11_TRY_XSHM In FFlags) and XShmQueryExtension(ADisplay) then
@@ -754,7 +957,11 @@ end;
 function TX11WindowDisplay.CreateModeSwitcher: TX11Modes;
 begin
 {$IFDEF ENABLE_X11_EXTENSION_XRANDR}
+<<<<<<< HEAD
   if PTC_X11_TRY_XRANDR in FFlags then
+=======
+  if PTC_X11_TRY_XRANDR In FFlags then
+>>>>>>> graemeg/cpstrnew
     try
       LOG('trying to initialize the Xrandr mode switcher');
       Result := TX11ModesXrandr.Create(FDisplay, FScreen);
@@ -765,7 +972,11 @@ begin
 {$ENDIF ENABLE_X11_EXTENSION_XRANDR}
 
 {$IFDEF ENABLE_X11_EXTENSION_XF86VIDMODE}
+<<<<<<< HEAD
   if PTC_X11_TRY_XF86VIDMODE in FFlags then
+=======
+  if PTC_X11_TRY_XF86VIDMODE In FFlags then
+>>>>>>> graemeg/cpstrnew
     try
       LOG('trying to initialize the XF86VidMode mode switcher');
       Result := TX11ModesXF86VidMode.Create(FDisplay, FScreen);
@@ -794,11 +1005,14 @@ begin
   Result := FFullScreen;
 end;
 
+<<<<<<< HEAD
 function TX11WindowDisplay.IsOpen: Boolean;
 begin
   Result := FOpen;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TX11WindowDisplay.CreateColormap; { Register colour maps }
 var
   i: Integer;
@@ -840,6 +1054,7 @@ begin
     XStoreColors(FDisplay, FCMap, FColours, 256);
   end;
 end;
+<<<<<<< HEAD
 
 {$IFDEF ENABLE_X11_EXTENSION_GLX}
 procedure TX11WindowDisplay.OpenGL_SwapBuffers;
@@ -857,3 +1072,5 @@ begin
   Result := FGLXFBConfig.GetSwapInterval;
 end;
 {$ENDIF ENABLE_X11_EXTENSION_GLX}
+=======
+>>>>>>> graemeg/cpstrnew

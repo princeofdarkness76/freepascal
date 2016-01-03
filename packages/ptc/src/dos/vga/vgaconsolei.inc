@@ -1,6 +1,10 @@
 {
     This file is part of the PTCPas framebuffer library
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -38,6 +42,13 @@
 {$ASMMODE intel}
 
 constructor TVGAConsole.Create;
+<<<<<<< HEAD
+=======
+
+var
+  fmt1, fmt2, fmt3: TPTCFormat;
+
+>>>>>>> graemeg/cpstrnew
 begin
   inherited Create;
 
@@ -57,17 +68,40 @@ begin
   m_clear := TPTCClear.Create;
   m_palette := TPTCPalette.Create;
 
+<<<<<<< HEAD
   SetLength(m_modes, 3);
   m_modes[0] := TPTCMode.Create(320, 200, TPTCFormat.Create(8));
   m_modes[1] := TPTCMode.Create(320, 200, TPTCFormat.Create(8, $E0, $1C, $03));
   m_modes[2] := TPTCMode.Create(320, 200, TPTCFormat.Create(16, $F800, $7E0, $1F));
 
+=======
+  fmt1 := nil;
+  fmt2 := nil;
+  fmt3 := nil;
+  try
+    fmt1 := TPTCFormat.Create(8);
+    fmt2 := TPTCFormat.Create(8, $E0, $1C, $03);
+    fmt3 := TPTCFormat.Create(16, $F800, $7E0, $1F);
+    m_modes[0] := TPTCMode.Create(320, 200, fmt1);
+    m_modes[1] := TPTCMode.Create(320, 200, fmt2);
+    m_modes[2] := TPTCMode.Create(320, 200, fmt3);
+    m_modes[3] := TPTCMode.Create;
+  finally
+    fmt1.Free;
+    fmt2.Free;
+    fmt3.Free;
+  end;
+>>>>>>> graemeg/cpstrnew
   m_faketype := FAKEMODE2A;
 
   configure('ptcpas.cfg');
 end;
 
 destructor TVGAConsole.Destroy;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   close;
   internal_clear_mode_list;
@@ -76,6 +110,7 @@ begin
   FEventQueue.Free;
   m_copy.Free;
   m_clear.Free;
+<<<<<<< HEAD
   inherited Destroy;
 end;
 
@@ -88,13 +123,39 @@ begin
   {$push}{$I-}
   Reset(F);
   {$pop}
+=======
+  m_default_format.Free;
+  m_palette.Free;
+  m_clip.Free;
+  m_area.Free;
+  inherited Destroy;
+end;
+
+procedure TVGAConsole.Configure(const AFileName: String);
+
+var
+  F: Text;
+  S: string;
+
+begin
+  AssignFile(F, AFileName);
+  {$I-}
+  Reset(F);
+  {$I+}
+>>>>>>> graemeg/cpstrnew
   if IOResult <> 0 then
     exit;
   while not EoF(F) do
   begin
+<<<<<<< HEAD
     {$push}{$I-}
     Readln(F, S);
     {$pop}
+=======
+    {$I-}
+    Readln(F, S);
+    {$I+}
+>>>>>>> graemeg/cpstrnew
     if IOResult <> 0 then
       Break;
     Option(S);
@@ -102,7 +163,12 @@ begin
   CloseFile(F);
 end;
 
+<<<<<<< HEAD
 function TVGAConsole.option(const _option: string): Boolean;
+=======
+function TVGAConsole.option(const _option: String): Boolean;
+
+>>>>>>> graemeg/cpstrnew
 begin
   {...}
   if (System.Copy(_option, 1, 8) = 'FAKEMODE') and (Length(_option) = 10) and
@@ -146,27 +212,58 @@ begin
 end;
 
 procedure TVGAConsole.internal_clear_mode_list;
+<<<<<<< HEAD
 begin
   SetLength(m_modes, 0);
 end;
 
 function TVGAConsole.modes: TPTCModeList;
+=======
+
+var
+  I: Integer;
+  Done: Boolean;
+
+begin
+  I := 0;
+  Done := False;
+  repeat
+    Done := not m_modes[I].valid;
+    m_modes[I].Free;
+    Inc(I);
+  until Done;
+end;
+
+function TVGAConsole.modes: PPTCMode;
+
+>>>>>>> graemeg/cpstrnew
 begin
   Result := m_modes;
 end;
 
 procedure TVGAConsole.open(const _title: string; _pages: Integer); overload;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   open(_title, m_default_format, _pages);
 end;
 
+<<<<<<< HEAD
 procedure TVGAConsole.open(const _title: string; _format: IPTCFormat;
                            _pages: Integer); overload;
+=======
+procedure TVGAConsole.open(const _title: string; const _format: TPTCFormat;
+                           _pages: Integer); overload;
+
+>>>>>>> graemeg/cpstrnew
 begin
   open(_title, m_default_width, m_default_height, _format, _pages);
 end;
 
 procedure TVGAConsole.open(const _title: string; _width, _height: Integer;
+<<<<<<< HEAD
                            _format: IPTCFormat; _pages: Integer); overload;
 begin
   open(_title, TPTCMode.Create(_width, _height, _format), _pages);
@@ -177,6 +274,29 @@ procedure TVGAConsole.open(const _title: string; _mode: IPTCMode;
 var
   I: Integer;
   modetype: Integer;
+=======
+                           const _format: TPTCFormat; _pages: Integer); overload;
+
+var
+  m: TPTCMode;
+
+begin
+  m := TPTCMode.Create(_width, _height, _format);
+  try
+    open(_title, m, _pages);
+  finally
+    m.Free;
+  end;
+end;
+
+procedure TVGAConsole.open(const _title: string; const _mode: TPTCMode;
+                           _pages: Integer); overload;
+
+var
+  I: Integer;
+  modetype: Integer;
+
+>>>>>>> graemeg/cpstrnew
 begin
   if not _mode.valid then
     raise TPTCError.Create('invalid mode');
@@ -195,6 +315,10 @@ begin
 end;
 
 procedure TVGAConsole.close;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   if m_open then
   begin
@@ -208,19 +332,33 @@ begin
 end;
 
 procedure TVGAConsole.flush;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
 end;
 
 procedure TVGAConsole.finish;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
 end;
 
+<<<<<<< HEAD
 procedure TVGAConsole.vga_load(data: Pointer); ASSembler; register;
 asm
+=======
+procedure TVGAConsole.vga_load(data: Pointer); ASSembler; Register;
+
+Asm
+>>>>>>> graemeg/cpstrnew
   push es
   mov esi, data
   mov ax, fs
@@ -233,6 +371,10 @@ asm
 end;
 
 procedure TVGAConsole.update;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
@@ -246,14 +388,27 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TVGAConsole.update(_area: IPTCArea);
+=======
+procedure TVGAConsole.update(const _area: TPTCArea);
+
+>>>>>>> graemeg/cpstrnew
 begin
   update;
 end;
 
+<<<<<<< HEAD
 procedure TVGAConsole.copy(surface: IPTCSurface);
 var
   pixels: Pointer;
+=======
+procedure TVGAConsole.copy(surface: TPTCBaseSurface);
+
+var
+  pixels: Pointer;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
@@ -267,6 +422,7 @@ begin
   except
     on error: TPTCError do
       raise TPTCError.Create('failed to copy console to surface', error);
+<<<<<<< HEAD
   end;
 end;
 
@@ -274,6 +430,18 @@ procedure TVGAConsole.copy(surface: IPTCSurface;
                            source, destination: IPTCArea);
 var
   pixels: Pointer;
+=======
+
+  end;
+end;
+
+procedure TVGAConsole.copy(surface: TPTCBaseSurface;
+                           const source, destination: TPTCArea);
+
+var
+  pixels: Pointer;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
@@ -287,10 +455,18 @@ begin
   except
     on error: TPTCError do
       raise TPTCError.Create('failed to copy console to surface', error);
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
 function TVGAConsole.lock: Pointer;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   if m_locked then
@@ -301,6 +477,10 @@ begin
 end;
 
 procedure TVGAConsole.unlock;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   if not m_locked then
@@ -309,12 +489,23 @@ begin
   m_locked := False;
 end;
 
+<<<<<<< HEAD
 procedure TVGAConsole.Load(const pixels: Pointer;
                            _width, _height, _pitch: Integer;
                            _format: IPTCFormat;
                            _palette: IPTCPalette);
 var
   console_pixels: Pointer;
+=======
+procedure TVGAConsole.load(const pixels: Pointer;
+                           _width, _height, _pitch: Integer;
+                           const _format: TPTCFormat;
+                           const _palette: TPTCPalette);
+var
+  Area_: TPTCArea;
+  console_pixels: Pointer;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
@@ -333,6 +524,7 @@ begin
     except
       on error: TPTCError do
         raise TPTCError.Create('failed to load pixels to console', error);
+<<<<<<< HEAD
     end;
   end
   else
@@ -354,25 +546,85 @@ begin
     console_pixels := lock;
     try
       TPTCClipper.clip(source, TPTCArea.Create(0, 0, _width, _height), clipped_source, destination, clip, clipped_destination);
+=======
+
+    end;
+  end
+  else
+  begin
+    Area_ := TPTCArea.Create(0, 0, width, height);
+    try
+      load(pixels, _width, _height, _pitch, _format, _palette, Area_, area);
+    finally
+      Area_.Free;
+    end;
+  end;
+end;
+
+procedure TVGAConsole.load(const pixels: Pointer;
+                           _width, _height, _pitch: Integer;
+                           const _format: TPTCFormat;
+                           const _palette: TPTCPalette;
+                           const source, destination: TPTCArea);
+var
+  console_pixels: Pointer;
+  clipped_source, clipped_destination: TPTCArea;
+  tmp: TPTCArea;
+
+begin
+  check_open;
+  check_unlocked;
+  clipped_source := nil;
+  clipped_destination := nil;
+  try
+    console_pixels := lock;
+    try
+      clipped_source := TPTCArea.Create;
+      clipped_destination := TPTCArea.Create;
+      tmp := TPTCArea.Create(0, 0, _width, _height);
+      try
+        TPTCClipper.clip(source, tmp, clipped_source, destination, clip, clipped_destination);
+      finally
+        tmp.Free;
+      end;
+>>>>>>> graemeg/cpstrnew
       m_copy.request(_format, format);
       m_copy.palette(_palette, palette);
       m_copy.copy(pixels, clipped_source.left, clipped_source.top, clipped_source.width, clipped_source.height, _pitch,
                   console_pixels, clipped_destination.left, clipped_destination.top, clipped_destination.width, clipped_destination.height, pitch);
     finally
       unlock;
+<<<<<<< HEAD
+=======
+      clipped_source.Free;
+      clipped_destination.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error:TPTCError do
       raise TPTCError.Create('failed to load pixels to console area', error);
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
 procedure TVGAConsole.save(pixels: Pointer;
                            _width, _height, _pitch: Integer;
+<<<<<<< HEAD
                            _format: IPTCFormat;
                            _palette: IPTCPalette);
 var
   console_pixels: Pointer;
+=======
+                           const _format: TPTCFormat;
+                           const _palette: TPTCPalette);
+var
+  Area_: TPTCArea;
+  console_pixels: Pointer;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
@@ -391,6 +643,7 @@ begin
     except
       on error: TPTCError do
         raise TPTCError.Create('failed to save console pixels', error);
+<<<<<<< HEAD
     end;
   end
   else
@@ -412,26 +665,85 @@ begin
     console_pixels := lock;
     try
       TPTCClipper.clip(source, clip, clipped_source, destination, TPTCArea.Create(0, 0, _width, _height), clipped_destination);
+=======
+
+    end;
+  end
+  else
+  begin
+    Area_ := TPTCArea.Create(0, 0, width, height);
+    try
+      save(pixels, _width, _height, _pitch, _format, _palette, area, Area_);
+    finally
+      Area_.Free;
+    end;
+  end;
+end;
+
+procedure TVGAConsole.save(pixels: Pointer;
+                           _width, _height, _pitch: Integer;
+                           const _format: TPTCFormat;
+                           const _palette: TPTCPalette;
+                           const source, destination: TPTCArea);
+var
+  console_pixels: Pointer;
+  clipped_source, clipped_destination: TPTCArea;
+  tmp: TPTCArea;
+
+begin
+  check_open;
+  check_unlocked;
+  clipped_source := nil;
+  clipped_destination := nil;
+  try
+    console_pixels := lock;
+    try
+      clipped_source := TPTCArea.Create;
+      clipped_destination := TPTCArea.Create;
+      tmp := TPTCArea.Create(0, 0, _width, _height);
+      try
+        TPTCClipper.clip(source, clip, clipped_source, destination, tmp, clipped_destination);
+      finally
+        tmp.Free;
+      end;
+>>>>>>> graemeg/cpstrnew
       m_copy.request(format, _format);
       m_copy.palette(palette, _palette);
       m_copy.copy(console_pixels, clipped_source.left, clipped_source.top, clipped_source.width, clipped_source.height, pitch,
                   pixels, clipped_destination.left, clipped_destination.top, clipped_destination.width, clipped_destination.height, _pitch);
     finally
       unlock;
+<<<<<<< HEAD
+=======
+      clipped_source.Free;
+      clipped_destination.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error:TPTCError do
       raise TPTCError.Create('failed to save console area pixels', error);
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
   end;
 end;
 
 procedure TVGAConsole.clear;
+<<<<<<< HEAD
 var
   Color: IPTCColor;
+=======
+
+var
+  tmp: TPTCColor;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
   if format.direct then
+<<<<<<< HEAD
     Color := TPTCColor.Create(0, 0, 0, 0)
   else
     Color := TPTCColor.Create(0);
@@ -450,10 +762,49 @@ procedure TVGAConsole.clear(color: IPTCColor;
 var
   pixels: Pointer;
   clipped_area: IPTCArea;
+=======
+    tmp := TPTCColor.Create(0, 0, 0, 0)
+  else
+    tmp := TPTCColor.Create(0);
+  try
+    clear(tmp);
+  finally
+    tmp.Free;
+  end;
+end;
+
+procedure TVGAConsole.clear(const color: TPTCColor);
+
+var
+  tmp: TPTCArea;
+
+begin
+  check_open;
+  check_unlocked;
+  tmp := TPTCArea.Create;
+  try
+    clear(color, tmp);
+  finally
+    tmp.Free;
+  end;
+end;
+
+procedure TVGAConsole.clear(const color: TPTCColor;
+                            const _area: TPTCArea);
+
+var
+  pixels: Pointer;
+  clipped_area: TPTCArea;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   check_unlocked;
   try
+<<<<<<< HEAD
+=======
+    clipped_area := nil;
+>>>>>>> graemeg/cpstrnew
     pixels := lock;
     try
       clipped_area := TPTCClipper.clip(_area, clip);
@@ -461,14 +812,27 @@ begin
       m_clear.clear(pixels, clipped_area.left, clipped_area.right, clipped_area.width, clipped_area.height, pitch, color);
     finally
       unlock;
+<<<<<<< HEAD
+=======
+      clipped_area.Free;
+>>>>>>> graemeg/cpstrnew
     end;
   except
     on error: TPTCError do
       raise TPTCError.Create('failed to clear console area', error);
+<<<<<<< HEAD
   end;
 end;
 
 procedure TVGAConsole.Palette(_palette: IPTCPalette);
+=======
+
+  end;
+end;
+
+procedure TVGAConsole.Palette(const _palette: TPTCPalette);
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   if format.indexed then
@@ -478,12 +842,18 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 function TVGAConsole.Palette: IPTCPalette;
+=======
+function TVGAConsole.Palette: TPTCPalette;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := m_palette;
 end;
 
+<<<<<<< HEAD
 procedure TVGAConsole.Clip(_area: IPTCArea);
 begin
   check_open;
@@ -491,72 +861,146 @@ begin
 end;
 
 function TVGAConsole.GetWidth: Integer;
+=======
+procedure TVGAConsole.Clip(const _area: TPTCArea);
+
+var
+  tmp: TPTCArea;
+
+begin
+  check_open;
+  tmp := TPTCClipper.clip(_area, m_area);
+  try
+    m_clip.Assign(tmp);
+  finally
+    tmp.Free;
+  end;
+end;
+
+function TVGAConsole.GetWidth: Integer;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := m_width;
 end;
 
 function TVGAConsole.GetHeight: Integer;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := m_height;
 end;
 
 function TVGAConsole.GetPitch: Integer;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := m_pitch;
 end;
 
 function TVGAConsole.GetPages: Integer;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := 2;
 end;
 
+<<<<<<< HEAD
 function TVGAConsole.GetArea: IPTCArea;
+=======
+function TVGAConsole.GetArea: TPTCArea;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := m_area;
 end;
 
+<<<<<<< HEAD
 function TVGAConsole.Clip: IPTCArea;
+=======
+function TVGAConsole.Clip: TPTCArea;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := m_clip;
 end;
 
+<<<<<<< HEAD
 function TVGAConsole.GetFormat: IPTCFormat;
+=======
+function TVGAConsole.GetFormat: TPTCFormat;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
   Result := m_modes[m_CurrentMode].format;
 end;
 
 function TVGAConsole.GetName: string;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   Result := 'VGA';
 end;
 
 function TVGAConsole.GetTitle: string;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   Result := m_title;
 end;
 
 function TVGAConsole.GetInformation: string;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   Result := m_information;
 end;
 
+<<<<<<< HEAD
 procedure TVGAConsole.internal_pre_open_setup(const _title: string);
+=======
+procedure TVGAConsole.internal_pre_open_setup(const _title: String);
+
+>>>>>>> graemeg/cpstrnew
 begin
   m_title := _title;
 end;
 
 procedure TVGAConsole.internal_open_fullscreen_start;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
 end;
 
 procedure TVGAConsole.internal_open_fullscreen(ModeType: Integer);
+<<<<<<< HEAD
+=======
+
+var
+  tmp: TPTCArea;
+
+>>>>>>> graemeg/cpstrnew
 begin
   VGASetMode(320, 200, ModeType, m_faketype);
   case ModeType of
@@ -576,11 +1020,25 @@ begin
   m_width := 320;
   m_height := 200;
 
+<<<<<<< HEAD
   m_area := TPTCArea.Create(0, 0, m_width, m_height);
   m_clip := m_area;
 end;
 
 procedure TVGAConsole.internal_open_fullscreen_finish(_pages: Integer);
+=======
+  tmp := TPTCArea.Create(0, 0, m_width, m_height);
+  try
+    m_area.Assign(tmp);
+    m_clip.Assign(tmp);
+  finally
+    tmp.Free;
+  end;
+end;
+
+procedure TVGAConsole.internal_open_fullscreen_finish(_pages: Integer);
+
+>>>>>>> graemeg/cpstrnew
 begin
   FreeMemAndNil(m_primary);
   m_primary := GetMem(m_height * m_pitch);
@@ -588,6 +1046,10 @@ begin
 end;
 
 procedure TVGAConsole.internal_post_open_setup;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   FreeAndNil(m_keyboard);
   FreeAndNil(FMouse);
@@ -604,6 +1066,10 @@ begin
 end;
 
 procedure TVGAConsole.internal_reset;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   FreeMemAndNil(m_primary);
   FreeAndNil(m_keyboard);
@@ -612,6 +1078,10 @@ begin
 end;
 
 procedure TVGAConsole.internal_close;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   FreeMemAndNil(m_primary);
   FreeAndNil(m_keyboard);
@@ -622,9 +1092,17 @@ begin
 end;
 
 procedure TVGAConsole.internal_SetPalette(data: PUint32);
+<<<<<<< HEAD
 var
   i: Integer;
   c: DWord;
+=======
+
+var
+  i: Integer;
+  c: DWord;
+
+>>>>>>> graemeg/cpstrnew
 begin
   outportb($3C8, 0);
   for i := 0 to 255 do
@@ -638,15 +1116,28 @@ begin
 end;
 
 procedure TVGAConsole.HandleEvents;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   m_keyboard.GetPendingEvents(FEventQueue);
   FMouse.GetPendingEvents(FEventQueue);
 end;
 
+<<<<<<< HEAD
 function TVGAConsole.NextEvent(out event: IPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean;
 begin
   check_open;
 
+=======
+function TVGAConsole.NextEvent(var event: TPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean;
+
+begin
+  check_open;
+
+  FreeAndNil(event);
+>>>>>>> graemeg/cpstrnew
   repeat
     { get events }
     HandleEvents;
@@ -657,7 +1148,12 @@ begin
   Result := event <> nil;
 end;
 
+<<<<<<< HEAD
 function TVGAConsole.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): IPTCEvent;
+=======
+function TVGAConsole.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent;
+
+>>>>>>> graemeg/cpstrnew
 begin
   check_open;
 
@@ -671,12 +1167,20 @@ begin
 end;
 
 procedure TVGAConsole.check_open;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   if not m_open then
     raise TPTCError.Create('console is not open');
 end;
 
 procedure TVGAConsole.check_unlocked;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   if m_locked then
     raise TPTCError.Create('console is not unlocked');

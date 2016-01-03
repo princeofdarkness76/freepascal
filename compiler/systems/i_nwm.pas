@@ -34,7 +34,11 @@ unit i_nwm;
             system       : system_i386_netware;
             name         : 'Netware for i386(clib)';
             shortname    : 'Netware';
+<<<<<<< HEAD
             flags        : [tf_smartlink_sections,tf_dwarf_only_local_labels];
+=======
+            flags        : [tf_smartlink_library,tf_smartlink_sections,tf_dwarf_only_local_labels];
+>>>>>>> graemeg/cpstrnew
             cpu          : cpu_i386;
             unit_env     : 'NETWAREUNITS';
             extradefines : 'NETWARE_CLIB';

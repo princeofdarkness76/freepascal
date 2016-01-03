@@ -1,6 +1,10 @@
 {
     Free Pascal port of the OpenPTC C++ library.
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -30,6 +34,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 type
   TPTCSurface = class(TInterfacedObject, IPTCSurface)
   private
@@ -99,6 +104,9 @@ begin
 end;
 
 constructor TPTCSurface.Create(AWidth, AHeight: Integer; AFormat: IPTCFormat);
+=======
+constructor TPTCSurface.Create(AWidth, AHeight: Integer; const AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 var
   size: Integer;
 begin
@@ -109,7 +117,11 @@ begin
   LOG('format', AFormat);
   FWidth := AWidth;
   FHeight := AHeight;
+<<<<<<< HEAD
   FFormat := AFormat;
+=======
+  FFormat := TPTCFormat.Create(AFormat);
+>>>>>>> graemeg/cpstrnew
   FArea := TPTCArea.Create(0, 0, AWidth, AHeight);
   FClip := TPTCArea.Create(FArea);
   FPitch := AWidth * AFormat.Bytes;
@@ -131,17 +143,33 @@ begin
   end;
   FCopy.Free;
   FClear.Free;
+<<<<<<< HEAD
+=======
+  FPalette.Free;
+  FClip.Free;
+  FArea.Free;
+  FFormat.Free;
+>>>>>>> graemeg/cpstrnew
   FreeMem(FPixels);
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 procedure TPTCSurface.Copy(ASurface: IPTCSurface);
+=======
+procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface);
+>>>>>>> graemeg/cpstrnew
 begin
   ASurface.Load(FPixels, FWidth, FHeight, FPitch, FFormat, FPalette);
 end;
 
+<<<<<<< HEAD
 procedure TPTCSurface.Copy(ASurface: IPTCSurface;
                            ASource, ADestination: IPTCArea);
+=======
+procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> graemeg/cpstrnew
 begin
   ASurface.Load(FPixels, FWidth, FHeight, FPitch, FFormat, FPalette,
                 ASource, ADestination);
@@ -164,8 +192,15 @@ end;
 
 procedure TPTCSurface.Load(const APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette);
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette);
+var
+  Area_: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 begin
   if FClip.Equals(FArea) then
   begin
@@ -175,12 +210,24 @@ begin
                FWidth, FHeight, FPitch);
   end
   else
+<<<<<<< HEAD
     Load(APixels, AWidth, AHeight, APitch, AFormat, APalette,
          TPTCArea.Create(0, 0, AWidth, AHeight), FArea);
+=======
+  begin
+    Area_ := TPTCArea.Create(0, 0, AWidth, AHeight);
+    try
+      Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, Area_, FArea);
+    finally
+      Area_.Free;
+    end;
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TPTCSurface.Load(const APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette;
                            ASource, ADestination: IPTCArea);
@@ -198,12 +245,46 @@ begin
              clipped_source.width, clipped_source.height, APitch,
              FPixels, clipped_destination.left, clipped_destination.top,
              clipped_destination.width, clipped_destination.height, FPitch);
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette;
+                           const ASource, ADestination: TPTCArea);
+var
+  clipped_source: TPTCArea = nil;
+  clipped_destination: TPTCArea = nil;
+  area_: TPTCArea = nil;
+begin
+  try
+    clipped_source := TPTCArea.Create;
+    clipped_destination := TPTCArea.Create;
+    area_ := TPTCArea.Create(0, 0, AWidth, AHeight);
+    TPTCClipper.Clip(ASource, area_, clipped_source, ADestination, FClip,
+                     clipped_destination);
+    FCopy.Request(AFormat, FFormat);
+    FCopy.Palette(APalette, FPalette);
+    FCopy.Copy(APixels, clipped_source.left, clipped_source.top,
+               clipped_source.width, clipped_source.height, APitch,
+               FPixels, clipped_destination.left, clipped_destination.top,
+               clipped_destination.width, clipped_destination.height, FPitch);
+  finally
+    clipped_source.Free;
+    clipped_destination.Free;
+    area_.Free;
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TPTCSurface.Save(APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette);
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette);
+var
+  area_: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 begin
   if FClip.Equals(FArea) then
   begin
@@ -213,12 +294,24 @@ begin
                AWidth, AHeight, APitch);
   end
   else
+<<<<<<< HEAD
     Save(APixels, AWidth, AHeight, APitch, AFormat, APalette,
          FArea, TPTCArea.Create(0, 0, width, height));
+=======
+  begin
+    area_ := TPTCArea.Create(0, 0, width, height);
+    try
+      Save(APixels, AWidth, AHeight, APitch, AFormat, APalette, FArea, area_);
+    finally
+      area_.Free;
+    end;
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TPTCSurface.Save(APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette;
                            ASource, ADestination: IPTCArea);
@@ -236,25 +329,68 @@ begin
              clipped_source.width, clipped_source.height, FPitch,
              APixels, clipped_destination.left, clipped_destination.top,
              clipped_destination.width, clipped_destination.height, APitch);
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette;
+                           const ASource, ADestination: TPTCArea);
+var
+  clipped_source: TPTCArea = nil;
+  clipped_destination: TPTCArea = nil;
+  area_: TPTCArea = nil;
+begin
+  try
+    clipped_source := TPTCArea.Create;
+    clipped_destination := TPTCArea.Create;
+    area_ := TPTCArea.Create(0, 0, AWidth, AHeight);
+    TPTCClipper.Clip(ASource, FClip, clipped_source, ADestination, area_,
+                     clipped_destination);
+    FCopy.Request(FFormat, AFormat);
+    FCopy.Palette(FPalette, APalette);
+    FCopy.Copy(FPixels, clipped_source.left, clipped_source.top,
+               clipped_source.width, clipped_source.height, FPitch,
+               APixels, clipped_destination.left, clipped_destination.top,
+               clipped_destination.width, clipped_destination.height, APitch);
+  finally
+    clipped_source.Free;
+    clipped_destination.Free;
+    area_.Free;
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TPTCSurface.Clear;
 var
+<<<<<<< HEAD
   Color: IPTCColor;
+=======
+  Color: TPTCColor;
+>>>>>>> graemeg/cpstrnew
 begin
   if Format.Direct then
     Color := TPTCColor.Create(0, 0, 0, 0)
   else
     Color := TPTCColor.Create(0);
+<<<<<<< HEAD
 
   Clear(Color);
 end;
 
 procedure TPTCSurface.Clear(AColor: IPTCColor);
+=======
+  try
+    Clear(Color);
+  finally
+    Color.Free;
+  end;
+end;
+
+procedure TPTCSurface.Clear(const AColor: TPTCColor);
+>>>>>>> graemeg/cpstrnew
 begin
   Clear(AColor, FArea);
 end;
 
+<<<<<<< HEAD
 procedure TPTCSurface.Clear(AColor: IPTCColor; AArea: IPTCArea);
 var
   clipped_area: IPTCArea;
@@ -271,13 +407,48 @@ begin
 end;
 
 function TPTCSurface.Palette: IPTCPalette;
+=======
+procedure TPTCSurface.Clear(const AColor: TPTCColor; const AArea: TPTCArea);
+var
+  clipped_area: TPTCArea;
+begin
+  clipped_area := TPTCClipper.clip(AArea, FClip);
+  try
+    FClear.Request(FFormat);
+    FClear.Clear(FPixels, clipped_area.left, clipped_area.top,
+                 clipped_area.width, clipped_area.height, FPitch, AColor);
+  finally
+    clipped_area.Free;
+  end;
+end;
+
+procedure TPTCSurface.Palette(const APalette: TPTCPalette);
+begin
+  FPalette.Load(APalette.data^);
+end;
+
+function TPTCSurface.Palette: TPTCPalette;
+>>>>>>> graemeg/cpstrnew
 begin
   Result := FPalette;
 end;
 
+<<<<<<< HEAD
 procedure TPTCSurface.Clip(AArea: IPTCArea);
 begin
   FClip := TPTCClipper.Clip(AArea, FArea);
+=======
+procedure TPTCSurface.Clip(const AArea: TPTCArea);
+var
+  tmp: TPTCArea;
+begin
+  tmp := TPTCClipper.Clip(AArea, FArea);
+  try
+    FClip.Assign(tmp);
+  finally
+    tmp.Free;
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TPTCSurface.GetWidth: Integer;
@@ -295,17 +466,29 @@ begin
   Result := FPitch;
 end;
 
+<<<<<<< HEAD
 function TPTCSurface.GetArea: IPTCArea;
+=======
+function TPTCSurface.GetArea: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 begin
   Result := FArea;
 end;
 
+<<<<<<< HEAD
 function TPTCSurface.Clip: IPTCArea;
+=======
+function TPTCSurface.Clip: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 begin
   Result := FClip;
 end;
 
+<<<<<<< HEAD
 function TPTCSurface.GetFormat: IPTCFormat;
+=======
+function TPTCSurface.GetFormat: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 begin
   Result := FFormat;
 end;

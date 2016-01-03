@@ -2,9 +2,17 @@
 #   Makefile.fpc for running fpmake
 #
 
+<<<<<<< HEAD
 [package]
 name=fpcres
 version=3.1.1
+=======
+[target]
+programs=fpcres
+
+[clean]
+units=closablefilestream msghandler paramparser sourcehandler target
+>>>>>>> graemeg/cpstrnew
 
 [require]
 packages=rtl fpmkunit
@@ -42,6 +50,7 @@ FPMAKE_OPT+=$(addprefix -o ,$(FPCOPT))
 FPMAKE_OPT+=--compiler=$(FPC)
 FPMAKE_OPT+=-bu
 .NOTPARALLEL:
+<<<<<<< HEAD
 
 fpmake$(SRCEXEEXT): fpmake.pp
 	$(FPCFPMAKE) fpmake.pp $(FPMAKE_SKIP_CONFIG) $(addprefix -Fu,$(COMPILER_FPMAKE_UNITDIR)) $(FPCMAKEOPT) $(OPT)
@@ -100,3 +109,6 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+fpcres$(EXEEXT): target.pas msghandler.pas closablefilestream.pas paramparser.pas sourcehandler.pas fpcres.pas
+>>>>>>> graemeg/cpstrnew

@@ -5,7 +5,11 @@ unit wmlogin;
 interface
 
 uses
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, fpjsonrpc, 
+=======
+  Classes, SysUtils, FileUtil, HTTPDefs, websession, fpHTTP, fpWeb, fpjsonrpc, 
+>>>>>>> graemeg/cpstrnew
   fpjson, IBConnection, sqldb, webjsonrpc, fpextdirect, sqldbwebdata;
 
 type

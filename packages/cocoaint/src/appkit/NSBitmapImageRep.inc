@@ -103,11 +103,19 @@ var
 { NSBitmapImageRep }
   NSBitmapImageRep = objcclass external (NSImageRep)
   private
+<<<<<<< HEAD
     __moreRepFlags: record
       case byte of
        0: (_anonbitfield_NSBitmapImageRep0: cuint);
        1: (data: bitpacked record
         _bitsPerPixel: 0..((1 shl 8)-1);
+=======
+    __moreRepFlags: bitpacked record
+      case byte of
+       0: (_anonbitfield_NSBitmapImageRep0: cuint);
+       1: (
+        _bitsPerPixel: cuint;
+>>>>>>> graemeg/cpstrnew
         _isPlanar: 0..1;
         explicitPlanes: 0..1;
         imageSourceIsIndexed: 0..1;
@@ -120,7 +128,10 @@ var
         _bitmapFormat: 0..((1 shl 3)-1);
         cgImageIsPrimary: 0..1;
         compression: 0..((1 shl 20)-1);
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     _bytesPerRow: cuint;

@@ -47,6 +47,7 @@
        { methods }
        vmtMethodStart          = vmtParent+sizeof(pointer)*10;
        vmtDestroy              = vmtMethodStart;
+<<<<<<< HEAD
        vmtNewInstance          = vmtMethodStart+sizeof(codepointer);
        vmtFreeInstance         = vmtMethodStart+sizeof(codepointer)*2;
        vmtSafeCallException    = vmtMethodStart+sizeof(codepointer)*3;
@@ -59,6 +60,20 @@
        vmtEquals               = vmtMethodStart+sizeof(codepointer)*10;
        vmtGetHashCode          = vmtMethodStart+sizeof(codepointer)*11;
        vmtToString             = vmtMethodStart+sizeof(codepointer)*12;
+=======
+       vmtNewInstance          = vmtMethodStart+sizeof(pointer);
+       vmtFreeInstance         = vmtMethodStart+sizeof(pointer)*2;
+       vmtSafeCallException    = vmtMethodStart+sizeof(pointer)*3;
+       vmtDefaultHandler       = vmtMethodStart+sizeof(pointer)*4;
+       vmtAfterConstruction    = vmtMethodStart+sizeof(pointer)*5;
+       vmtBeforeDestruction    = vmtMethodStart+sizeof(pointer)*6;
+       vmtDefaultHandlerStr    = vmtMethodStart+sizeof(pointer)*7;
+       vmtDispatch             = vmtMethodStart+sizeof(pointer)*8;
+       vmtDispatchStr          = vmtMethodStart+sizeof(pointer)*9;
+       vmtEquals               = vmtMethodStart+sizeof(pointer)*10;
+       vmtGetHashCode          = vmtMethodStart+sizeof(pointer)*11;
+       vmtToString             = vmtMethodStart+sizeof(pointer)*12;
+>>>>>>> graemeg/cpstrnew
 
        { IInterface }
        S_OK          = 0;
@@ -110,6 +125,7 @@
          vAutoTable: Pointer;
          vIntfTable: PInterfaceTable;
          vMsgStrPtr: pstringmessagetable;
+<<<<<<< HEAD
          vDestroy: CodePointer;
          vNewInstance: CodePointer;
          vFreeInstance: CodePointer;
@@ -123,6 +139,21 @@
          vEquals: CodePointer;
          vGetHashCode: CodePointer;
          vToString: CodePointer;
+=======
+         vDestroy: Pointer;
+         vNewInstance: Pointer;
+         vFreeInstance: Pointer;
+         vSafeCallException: Pointer;
+         vDefaultHandler: Pointer;
+         vAfterConstruction: Pointer;
+         vBeforeDestruction: Pointer;
+         vDefaultHandlerStr: Pointer;
+         vDispatch: Pointer;
+         vDispatchStr: Pointer;
+         vEquals: Pointer;
+         vGetHashCode: Pointer;
+         vToString: Pointer;
+>>>>>>> graemeg/cpstrnew
        end;
 
        PGuid = ^TGuid;
@@ -154,10 +185,17 @@
        tinterfaceentrytype = (etStandard,
          etVirtualMethodResult,
          etStaticMethodResult,
+<<<<<<< HEAD
          etFieldValue,
          etVirtualMethodClass,
          etStaticMethodClass,
          etFieldValueClass
+=======
+         etFieldValue, 
+         etVirtualMethodClass,
+         etStaticMethodClass,
+         etFieldValueClass           
+>>>>>>> graemeg/cpstrnew
        );
 
        pinterfaceentry = ^tinterfaceentry;
@@ -200,7 +238,11 @@
           class function newinstance : tobject;virtual;
           procedure FreeInstance;virtual;
           function SafeCallException(exceptobject : tobject;
+<<<<<<< HEAD
             exceptaddr : codepointer) : HResult;virtual;
+=======
+            exceptaddr : pointer) : HResult;virtual;
+>>>>>>> graemeg/cpstrnew
           procedure DefaultHandler(var message);virtual;
 
           procedure Free;
@@ -380,9 +422,15 @@
       vtInteger       = 0;
       vtBoolean       = 1;
       vtChar          = 2;
+<<<<<<< HEAD
 {$ifndef FPUNONE}
       vtExtended      = 3;
 {$endif}
+=======
+{$ifndef FPUNONE}     
+      vtExtended      = 3;
+{$endif}              
+>>>>>>> graemeg/cpstrnew
       vtString        = 4;
       vtPointer       = 5;
       vtPChar         = 6;
@@ -403,16 +451,25 @@
       PVarRec = ^TVarRec;
       TVarRec = record
          case VType : sizeint of
+<<<<<<< HEAD
 {$ifdef ENDIAN_BIG}
+=======
+{$ifdef ENDIAN_BIG}        
+>>>>>>> graemeg/cpstrnew
            vtInteger       : ({$IFDEF CPU64}integerdummy1 : Longint;{$ENDIF CPU64}VInteger: Longint);
            vtBoolean       : ({$IFDEF CPU64}booldummy : Longint;{$ENDIF CPU64}booldummy1,booldummy2,booldummy3: byte; VBoolean: Boolean);
            vtChar          : ({$IFDEF CPU64}chardummy : Longint;{$ENDIF CPU64}chardummy1,chardummy2,chardummy3: byte; VChar: Char);
            vtWideChar      : ({$IFDEF CPU64}widechardummy : Longint;{$ENDIF CPU64}wchardummy1,VWideChar: WideChar);
+<<<<<<< HEAD
 {$else ENDIAN_BIG}
+=======
+{$else ENDIAN_BIG}         
+>>>>>>> graemeg/cpstrnew
            vtInteger       : (VInteger: Longint);
            vtBoolean       : (VBoolean: Boolean);
            vtChar          : (VChar: Char);
            vtWideChar      : (VWideChar: WideChar);
+<<<<<<< HEAD
 {$endif ENDIAN_BIG}
 {$ifndef FPUNONE}
            vtExtended      : (VExtended: PExtended);
@@ -420,6 +477,15 @@
            vtString        : (VString: PShortString);
            vtPointer       : (VPointer: Pointer);
            vtPChar         : (VPChar: PAnsiChar);
+=======
+{$endif ENDIAN_BIG}        
+{$ifndef FPUNONE}          
+           vtExtended      : (VExtended: PExtended);
+{$endif}                   
+           vtString        : (VString: PShortString);
+           vtPointer       : (VPointer: Pointer);
+           vtPChar         : (VPChar: PChar);
+>>>>>>> graemeg/cpstrnew
            vtObject        : (VObject: TObject);
            vtClass         : (VClass: TClass);
            vtPWideChar     : (VPWideChar: PWideChar);
@@ -434,11 +500,16 @@
        end;
 
   var
+<<<<<<< HEAD
     DispCallByIDProc : codepointer;
+=======
+    DispCallByIDProc : pointer;
+>>>>>>> graemeg/cpstrnew
 
   const
     { for safe as operator support }
     IObjectInstance: TGuid = '{D91C9AF4-3C93-420F-A303-BF5BA82BFD23}';
+<<<<<<< HEAD
 
 
 {*****************************************************************************
@@ -453,3 +524,5 @@
        DefaultValue : AnsiString;
        HashValue    : LongWord;
      end;
+=======
+>>>>>>> graemeg/cpstrnew

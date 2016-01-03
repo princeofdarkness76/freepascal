@@ -13,9 +13,16 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 Function  FpLink (const existing : RawByteString; const newone : RawByteString): cInt; {$ifdef VER2_0}inline;{$endif}
 var
   SystemExistingFileName, SystemNewOneFileName: RawByteString;
+=======
+{$I textrec.inc}
+{$I filerec.inc}
+
+Function  FpLink (existing : AnsiString; newone : AnsiString): cInt; {$ifdef VER2_0}inline;{$endif}
+>>>>>>> graemeg/cpstrnew
 Begin
   SystemExistingFileName:=ToSingleByteFileSystemEncodedFileName(existing);
   SystemNewOneFileName:=ToSingleByteFileSystemEncodedFileName(newone);

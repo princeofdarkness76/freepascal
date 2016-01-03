@@ -3,7 +3,11 @@
  
      Contains:   HIView routines
  
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
+=======
+     Version:    HIToolbox-437~1
+>>>>>>> graemeg/cpstrnew
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
  
@@ -49,7 +53,10 @@
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -104,11 +111,14 @@ interface
 {$elsec}
 	{$setc __arm__ := 0}
 {$endc}
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -124,6 +134,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -143,13 +154,33 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -159,13 +190,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -177,17 +212,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -208,6 +252,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -2637,6 +2690,7 @@ function HIViewGetSubviewHit( inView: HIViewRef; const (*var*) inPoint: HIPoint;
 
 {
  *  HIViewTrackMouseLocation()
+<<<<<<< HEAD
  *  
  *  Summary:
  *    An HIView-based version of TrackMouseLocationWithOptions.
@@ -2823,6 +2877,202 @@ const
 
 {
  *  kEventClassControl / kEventControlTrackingAreaEntered
+=======
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Summary:
+ *    An HIView-based version of TrackMouseLocationWithOptions.
+ *  
+ *  Discussion:
+<<<<<<< HEAD
+ *    If you have installed a mouse tracking area in your view, you
+ *    will receive this event when the mouse enters that area. The
+ *    tracking area reference is sent with the event. This event is
+ *    sent only to the view, and is not propagated past it.
+=======
+ *    This routine is similar to TrackMouseLocationWithOptions
+ *    described in CarbonEvents.i. Please read the notes on that
+ *    function as well. HIViewTrackMouseLocation optionally returns the
+ *    EventRef that ended the tracking loop, and the caller may extend
+ *    the list of events that end the loop.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+<<<<<<< HEAD
+=======
+ *    inView:
+ *      The HIViewRef in whose coordinate space to return the mouse
+ *      position.
+ *    
+ *    inOptions:
+ *      Pass kTrackMouseLocationOptionDontConsumeMouseUp to indicate
+ *      that the toolbox should leave mouse-up events in the queue.
+ *      Pass kTrackMouseLocationOptionIncludeScrollWheel to indicate
+ *      that the tracking loop should terminate when a
+ *      kEventMouseWheelMoved or kEventMouseScroll event is received.
+ *    
+ *    inTimeout:
+ *      The amount of time to wait for an event. If no events arrive
+ *      within this time, kMouseTrackingTimedOut is returned in
+ *      outResult. Pass kEventDurationForever to wait indefinitely for
+ *      the next event.
+ *    
+ *    inClientEventCount:
+ *      Number of caller-supplied EventTypeSpecs in the
+ *      inClientEventList parameter. Pass 0 if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    inClientEventList:
+ *      Array of caller-supplied EventTypeSpecs that the caller wants
+ *      to end the tracking loop. Pass NULL if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    outWhere:
+ *      On exit, this parameter receives the mouse location from the
+ *      last mouse event that caused this function to exit. If a
+ *      timeout or key modifiers changed event caused this function to
+ *      exit, the current mouse position at the time is returned. The
+ *      mouse position will be returned in the coordinate space of the
+ *      specifed HIView.
+ *    
+ *    outModifiers:
+ *      On exit, this parameter receives the most recent state of the
+ *      keyboard modifiers. If a timeout caused this function to exit,
+ *      the current keyboard modifiers at the time are returned. You
+ *      may pass NULL if you don't need this information.
+ *    
+ *    outEvent:
+ *      On exit, this parameter receives the EventRef that caused the
+ *      function to exit. You may pass NULL if you don't need this
+ *      information. The event will be NULL for mouse-tracking results
+ *      that don't involve events, such as the timeout expiring. If the
+ *      event is not NULL, you must release the event when you're done
+ *      with it.
+ *    
+ *    outResult:
+ *      On exit, this parameter receives a value representing what kind
+ *      of event was received that cause the function to exit, such as
+ *      kMouseTrackingMouseUp. If a caller-supplied EventTypeSpec ended
+ *      the loop, kMouseTrackingClientEvent is returned.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewTrackMouseLocation( inView: HIViewRef; inOptions: OptionBits; inTimeout: EventTimeout; inClientEventCount: ItemCount; inClientEventList: EventTypeSpecPtr { can be NULL }; var outWhere: HIPoint; outModifiers: UInt32Ptr { can be NULL }; outEvent: EventRefPtr { can be NULL }; var outResult: MouseTrackingResult ): OSStatus; external name '_HIViewTrackMouseLocation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewTrackMouseShape()
+ *  
+ *  Summary:
+ *    An HIView-based version of TrackMouseRegion.
+ *  
+ *  Discussion:
+ *    This routine is similar to TrackMouseRegion described in
+ *    CarbonEvents.i. Please read the notes on that function as well.
+ *    HIViewTrackMouseShape optionally returns the EventRef that ended
+ *    the tracking loop, and the caller may extend the list of events
+ *    that end the loop.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The HIViewRef in whose coordinate space to return the mouse
+ *      position.
+ *    
+ *    inShape:
+ *      The shape to observe. This shape should be in the coordinates
+ *      of the view specified in the inView parameter.
+ *    
+ *    ioWasInShape:
+ *      On entry, this parameter should be set to true if the mouse is
+ *      currently inside the shape passed in inShape, or false if the
+ *      mouse is currently outside the shape. On exit, this parameter
+ *      is updated to reflect the current reality; e.g., if the
+ *      outResult parameter returns kMouseTrackingMouseExited,
+ *      ioWasInShape will be set to false when this function exits.
+ *      Because it is updated from within, you should only need to set
+ *      this yourself before the first call to this function in your
+ *      tracking loop. Typically, you should set this value to false
+ *      initially, and HIViewTrackMouseShape will return immediately
+ *      with kMouseTrackingMouseEntered if your guess was wrong.
+ *    
+ *    inOptions:
+ *      Pass kTrackMouseLocationOptionDontConsumeMouseUp to indicate
+ *      that the toolbox should leave mouse-up events in the queue.
+ *      Pass kTrackMouseLocationOptionIncludeScrollWheel to indicate
+ *      that the tracking loop should terminate when a
+ *      kEventMouseWheelMoved or kEventMouseScroll event is received.
+ *    
+ *    inTimeout:
+ *      The amount of time to wait for an event. If no events arrive
+ *      within this time, kMouseTrackingTimedOut is returned in
+ *      outResult. Pass kEventDurationForever to wait indefinitely for
+ *      the next event.
+ *    
+ *    inClientEventCount:
+ *      Number of caller-supplied EventTypeSpecs in the
+ *      inClientEventList parameter. Pass 0 if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    inClientEventList:
+ *      Array of caller-supplied EventTypeSpecs that the caller wants
+ *      to end the tracking loop. Pass NULL if you do not want any
+ *      custom event types to end the tracking loop.
+ *    
+ *    outModifiers:
+ *      On exit, this parameter receives the most recent state of the
+ *      keyboard modifiers. If a timeout caused this function to exit,
+ *      the current keyboard modifiers at the time are returned. You
+ *      may pass NULL if you don't need this information.
+ *    
+ *    outEvent:
+ *      On exit, this parameter receives the EventRef that caused the
+ *      function to exit. You may pass NULL if you don't need this
+ *      information. The event will be NULL for mouse-tracking results
+ *      that don't involve events, such as the timeout expiring. If the
+ *      event is not NULL, you must release the event when you're done
+ *      with it.
+ *    
+ *    outResult:
+ *      On exit, this parameter receives a value representing what kind
+ *      of event was received that cause the function to exit, such as
+ *      kMouseTrackingMouseUp. If a caller-supplied EventTypeSpec ended
+ *      the loop, kMouseTrackingClientEvent is returned.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewTrackMouseShape( inView: HIViewRef; inShape: HIShapeRef; var ioWasInShape: Boolean; inOptions: OptionBits; inTimeout: EventTimeout; inClientEventCount: ItemCount; inClientEventList: EventTypeSpecPtr { can be NULL }; outModifiers: UInt32Ptr { can be NULL }; outEvent: EventRefPtr { can be NULL }; var outResult: MouseTrackingResult ): OSStatus; external name '_HIViewTrackMouseShape';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{==============================================================================}
+{  HIView-based tracking areas                                                 }
+{==============================================================================}
+{$endc} {not TARGET_CPU_64}
+
+type
+	HIViewTrackingAreaRef = ^SInt32; { an opaque type }
+	HIViewTrackingAreaRefPtr = ^HIViewTrackingAreaRef;
+const
+	kEventParamHIViewTrackingArea = FourCharCode('ctra'); { typeHIViewTrackingAreaRef}
+	typeHIViewTrackingAreaRef = FourCharCode('ctra');
+
+{
+ *  kEventClassControl / kEventControlTrackingAreaEntered
  *  
  *  Summary:
  *    The mouse has entered a tracking area owned by your control.
@@ -2838,6 +3088,7 @@ const
  *  
  *  Parameters:
  *    
+>>>>>>> graemeg/cpstrnew
  *    --> kEventParamDirectObject (in, typeControlRef)
  *          The control that owns the tracking area and is receiving
  *          the event. This parameter is available on Mac OS X 10.5 and
@@ -4533,6 +4784,156 @@ function HIViewApplyLayout( inView: HIViewRef ): OSStatus; external name '_HIVie
  *  Discussion:
  *    This API attempts to set the view's image content using
  *    SetControlData and the kControlContentTag constant.
+<<<<<<< HEAD
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose image content to set.
+ *    
+ *    inPart:
+ *      The view part whose image content to set. For most views, you
+ *      should pass kHIViewEntireView. Some views, such as the
+ *      segmented view, allow you to pass a specific partcode here to
+ *      indicate a particular part of the view.
+ *    
+ *    inContent:
+ *      The image content to set. You may pass NULL to remove content
+ *      from the view.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewSetImageContent( inView: HIViewRef; inPart: HIViewPartCode; {const} inContent: HIViewContentInfoPtr { can be NULL } ): OSStatus; external name '_HIViewSetImageContent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewCopyImageContentWithSize()
+ *  
+ *  Summary:
+ *    Retrieves the image content of a view.
+ *  
+ *  Discussion:
+ *    This API attempts to get the view's image content using
+ *    GetControlData and the kControlContentTag constant. If
+ *    successful, it calls HIViewRetainImageContent.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inView:
+ *      The view whose image content to retrieve.
+ *    
+ *    inPart:
+ *      The view part whose image content to retrieve. For most views,
+ *      you should pass kHIViewEntireView. Some views, such as the
+ *      segmented view, allow you to pass a specific partcode here to
+ *      indicate a particular part of the view.
+ *    
+ *    inContentSize:
+ *      The size in bytes of the HIViewContentInfo structure that you
+ *      are passing to the API. At most this many bytes will be written
+ *      to your HIViewContentInfo structure.
+ *    
+ *    outContent:
+ *      On exit, contains the view's image content. For image content
+ *      types that support a refcount, the content has been retained
+ *      before being returned; such content should be released by the
+ *      caller. For image content that does not support a refcount, the
+ *      actual content reference used by the view is returned; this
+ *      content should not be released. You may use
+ *      HIViewReleaseImageContent to release the content returned by
+ *      this API.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function HIViewCopyImageContentWithSize( inView: HIViewRef; inPart: HIViewPartCode; inContentSize: ByteCount; var outContent: HIViewContentInfo ): OSStatus; external name '_HIViewCopyImageContentWithSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewRetainImageContent()
+ *  
+ *  Summary:
+ *    Retains refcountable content contained in an HIViewContentInfo
+ *    structure.
+ *  
+ *  Discussion:
+ *    For image content data types that are refcountable, the image
+ *    content retain count is incremented. Non-refcountable image
+ *    content is ignored.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inContent:
+ *      The image content to retain.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure HIViewRetainImageContent( const (*var*) inContent: HIViewContentInfo ); external name '_HIViewRetainImageContent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{
+ *  HIViewReleaseImageContent()
+ *  
+ *  Summary:
+ *    Releases refcountable content contained in an HIViewContentInfo
+ *    structure.
+ *  
+ *  Discussion:
+ *    For image content data types that are refcountable, the image
+ *    content retain count is decremented. Non-refcountable image
+ *    content is ignored; it is _not_ freed. You must explicitly free
+ *    non-refcountable image content yourself.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    ioContent:
+ *      The image content to release. On exit, ioContent->contentType
+ *      is set to kHIViewContentNone.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+procedure HIViewReleaseImageContent( var ioContent: HIViewContentInfo ); external name '_HIViewReleaseImageContent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+{==============================================================================}
+{  MISCELLANEOUS                                                               }
+{==============================================================================}
+{
+ *  HIViewGetWindow()
+ *  
+ *  Discussion:
+ *    Returns a reference to the window a given view is bound to. If
+ *    the view reference passed is invalid, or the view is not embedded
+ *    into any window, NULL is returned.
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe

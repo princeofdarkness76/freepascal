@@ -129,9 +129,12 @@ uses
 {$ifdef nativent}
   ,i_nativent
 {$endif nativent}
+<<<<<<< HEAD
 {$ifdef aix}
   ,i_aix
 {$endif aix}
+=======
+>>>>>>> graemeg/cpstrnew
   ,globtype;
 
 function Compile(const cmd:TCmdStr):longint;
