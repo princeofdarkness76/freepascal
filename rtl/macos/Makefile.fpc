@@ -8,9 +8,12 @@ main=rtl
 [target]
 loaders=
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar strings objpas macpas iso7185 extpas heaptrc getopts macostp macutils \
       unixutil dos cmem charset cpall ctypes
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 units=system strings objpas macpas iso7185 heaptrc getopts macostp macutils \
       unixutil dos objects matrix cmem charset ctypes
 >>>>>>> graemeg/cpstrnew

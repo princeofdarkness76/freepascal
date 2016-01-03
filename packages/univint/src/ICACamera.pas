@@ -6,16 +6,22 @@
  *
  *  For bug reports, consult the following page onthe World Wide Web:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  http://bugs.freepascal.org
  *
  *----------------------------------------------------------------------------------------------------------------------------}
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *  http://www.freepascal.org/bugs.html
  *
  *----------------------------------------------------------------------------------------------------------------------------}
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -72,11 +78,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -94,6 +103,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -114,6 +124,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -138,7 +165,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -151,7 +181,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -161,6 +194,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -172,6 +206,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -183,6 +222,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -200,10 +240,13 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
@@ -213,6 +256,8 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -220,6 +265,9 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -299,6 +347,7 @@ uses MacTypes;
         Volume label. <BR>Data type: null terminated string.
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kICAPropertyCameraStorageType = FourCharCode('stor');
 	kICAPropertyCameraFilesystemType = FourCharCode('fsys');
@@ -372,6 +421,34 @@ const
         Removable RAM.
   }
 const
+=======
+const
+	kICAPropertyCameraStorageType = FourCharCode('stor');
+	kICAPropertyCameraFilesystemType = FourCharCode('fsys');
+	kICAPropertyCameraAccessCapability = FourCharCode('acap');
+	kICAPropertyCameraMaxCapacity = FourCharCode('maxc');
+	kICAPropertyCameraFreeSpaceInBytes = FourCharCode('fres');
+	kICAPropertyCameraFreeSpaceInImages = FourCharCode('frei');
+	kICAPropertyCameraStorageDescription = FourCharCode('stod');
+	kICAPropertyCameraVolumeLabel = FourCharCode('voll');
+
+{!
+    @enum Values for kICAPropertyCameraStorageType 
+    @discussion
+        Values for kICAPropertyCameraStorageType.
+    @constant kICAStorageUndefined
+        Undefined.
+    @constant kICAStorageFixedROM
+        Fixed ROM.
+    @constant kICAStorageRemovableROM
+        Removable ROM.
+    @constant kICAStorageFixedRAM
+        Fixed RAM.
+    @constant kICAStorageRemovableRAM
+        Removable RAM.
+  }
+const
+>>>>>>> graemeg/cpstrnew
 	kICAStorageUndefined = $0000;
 	kICAStorageFixedROM = $0001;
 	kICAStorageRemovableROM = $0002;
@@ -392,6 +469,9 @@ const
         DCF-conformant.
   }
 const
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	kICAFileystemUndefined = $0000;
 	kICAFileystemGenericFlat = $0001;

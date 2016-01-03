@@ -37,4 +37,7 @@ procedure AssignDevice(const FIOD: TFileIODevice);
 begin
   FileIODevice := FIOD;
 end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

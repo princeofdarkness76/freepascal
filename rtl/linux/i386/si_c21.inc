@@ -62,7 +62,11 @@ asm
   movl    %esp,%ebx               { Esp now points to the arguments }
   leal    4(%esp,%ecx,4),%eax     { The start of the environment is: esp+4*eax+4 }
 <<<<<<< HEAD
+<<<<<<< HEAD
   andl    $0xfffffff0,%esp        { Align stack to 16 bytes }
+=======
+  andl    $0xfffffff8,%esp        { Align stack }
+>>>>>>> graemeg/cpstrnew
 =======
   andl    $0xfffffff8,%esp        { Align stack }
 >>>>>>> graemeg/cpstrnew
@@ -76,7 +80,11 @@ asm
 .Lpiclab:
         popl  %ebx
 <<<<<<< HEAD
+<<<<<<< HEAD
         addl  $_GLOBAL_OFFSET_TABLE_+1,%ebx
+=======
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+>>>>>>> graemeg/cpstrnew
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 >>>>>>> graemeg/cpstrnew
@@ -109,7 +117,11 @@ asm
 .Lpiclab2:
         popl  %ebx
 <<<<<<< HEAD
+<<<<<<< HEAD
         addl  $_GLOBAL_OFFSET_TABLE_+1,%ebx
+=======
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+>>>>>>> graemeg/cpstrnew
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 >>>>>>> graemeg/cpstrnew
@@ -147,6 +159,10 @@ end;
 procedure _FPC_libc21_haltproc(e: longint); cdecl; assembler; public name '_haltproc';
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+.Lhaltproc:
+>>>>>>> graemeg/cpstrnew
 =======
 .Lhaltproc:
 >>>>>>> graemeg/cpstrnew
@@ -155,7 +171,11 @@ asm
 .Lpiclab:
         popl  %ebx
 <<<<<<< HEAD
+<<<<<<< HEAD
         addl  $_GLOBAL_OFFSET_TABLE_+1,%ebx
+=======
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+>>>>>>> graemeg/cpstrnew
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 >>>>>>> graemeg/cpstrnew
@@ -170,6 +190,7 @@ asm
 .Lnodlexitproc:
   movl    syscall_nr_exit_group,%eax
 <<<<<<< HEAD
+<<<<<<< HEAD
   movl    e,%ebx
   int     $0x80
 
@@ -179,6 +200,8 @@ asm
   int     $0x80
   jmp     .Lnodlexitproc
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifdef FPC_PIC}
   call    .Lpiclab2
@@ -224,5 +247,8 @@ asm
 
   int     $0x80
   jmp     .Lhaltproc
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;

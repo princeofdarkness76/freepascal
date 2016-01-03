@@ -12,6 +12,9 @@ units=system uuchar baseunix unixtype ctypes objpas macpas iso7185 extpas string
 =======
 loaders=prt0 cprt0 func dllprt
 units=system baseunix unixtype ctypes objpas macpas iso7185 strings \
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 #      beos \
       errors dos dl \
@@ -218,6 +221,9 @@ stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUE
                     sysutils$(PPUEXT)
         $(COMPILER) $(OBJPASDIR)/stdconvs.pp
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 #
 # Mac Pascal Model

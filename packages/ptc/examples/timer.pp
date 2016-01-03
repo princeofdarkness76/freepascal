@@ -17,15 +17,21 @@ uses
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
   timer: IPTCTimer;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
   surface: TPTCSurface = nil;
   timer: TPTCTimer = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   time, t: Double;
   pixels: PDWord;
@@ -105,14 +111,20 @@ begin
       end;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       timer.Free;
       surface.Free;
       console.close;
       console.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

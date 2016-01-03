@@ -61,7 +61,11 @@ uses
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   PTCPAS_VERSION = 'PTCPas 0.99.14';
+=======
+  PTCPAS_VERSION = 'PTCPas 0.99.11';
+>>>>>>> graemeg/cpstrnew
 =======
   PTCPAS_VERSION = 'PTCPas 0.99.11';
 >>>>>>> graemeg/cpstrnew
@@ -118,7 +122,11 @@ uses
 {$IF defined(WIN32) OR defined(WIN64)}
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Windows, p_ddraw, glext;
+=======
+  Windows, p_ddraw;
+>>>>>>> graemeg/cpstrnew
 =======
   Windows, p_ddraw;
 >>>>>>> graemeg/cpstrnew
@@ -132,8 +140,11 @@ uses
 {$IFDEF UNIX}
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym, xkblib
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym
 >>>>>>> graemeg/cpstrnew
   {$IFDEF ENABLE_X11_EXTENSION_XRANDR}
@@ -190,9 +201,15 @@ begin
   System.Str(Value, Result);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$INCLUDE core/log.inc}
 
+=======
+
+{$INCLUDE core/log.inc}
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 {$INCLUDE core/log.inc}
@@ -205,6 +222,7 @@ end;
 {$ENDIF GO32V2}
 
 {$IF defined(Win32) OR defined(Win64)}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$INCLUDE win32/base/win32cursord.inc}
 {$INCLUDE win32/base/win32cursormoded.inc}
@@ -247,6 +265,8 @@ end;
 {$INCLUDE win32/gdi/win32gdihooki.inc}
 {$INCLUDE win32/gdi/win32gdiconsolei.inc}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$INCLUDE win32/base/cursord.inc}
 {$INCLUDE win32/base/cursormoded.inc}
 {$INCLUDE win32/base/monitord.inc}
@@ -279,6 +299,9 @@ end;
 {$INCLUDE win32/directx/directxconsolei.inc}
 {$INCLUDE win32/gdi/win32dibi.inc}
 {$INCLUDE win32/gdi/gdiconsolei.inc}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ENDIF defined(Win32) OR defined(Win64)}
 

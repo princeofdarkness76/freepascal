@@ -33,6 +33,9 @@ interface
 =======
        version_nr = '2';
        release_nr = '5';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        patch_nr   = '1';
        minorpatch = '-cps';

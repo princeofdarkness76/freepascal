@@ -5,12 +5,15 @@
 [package]
 name=univint
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [target]
@@ -121,6 +124,7 @@ fpcdir=../..
 
 [prerules]
 <<<<<<< HEAD
+<<<<<<< HEAD
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
 FPC_TARGETOPT+=--os=$(OS_TARGET)
@@ -206,6 +210,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 override FPCOPT+=-Mmacpas
 
 [rules]

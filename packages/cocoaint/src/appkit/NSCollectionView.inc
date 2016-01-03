@@ -59,22 +59,31 @@ const
   private
     _collectionView: NSCollectionView;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __cviFlags: record
       case byte of
        0: (_anonbitfield_NSCollectionView0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __cviFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSCollectionView0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _isSelected: 0..1;
         suppressSelectionChangedNotification: 0..1;
         connectionsCopied: 0..1;
         reserved: 0..((1 shl 29)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );
@@ -105,15 +114,21 @@ const
     _displayedItems: NSMutableArray;
     _animationDuration: NSTimeInterval;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __cvFlags: record
       case byte of
        0: (_anonbitfield_NSCollectionView1: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __cvFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSCollectionView1: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _isFirstResponder: 0..1;
         invalidateItemViews: 0..1;
@@ -130,7 +145,10 @@ const
         unarchiving: 0..1;
         reserved: 0..((1 shl 19)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );
@@ -153,7 +171,11 @@ const
     _dragTimer: NSTimer;
     _private: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(16)-1] of Pointer;
+=======
+        _reserved: array[0..15] of Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..15] of Pointer;
 >>>>>>> graemeg/cpstrnew

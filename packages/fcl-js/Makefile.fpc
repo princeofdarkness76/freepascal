@@ -1,6 +1,10 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Javascript Parser
+>>>>>>> graemeg/cpstrnew
 =======
 #   Makefile.fpc for Javascript Parser
 >>>>>>> graemeg/cpstrnew
@@ -9,15 +13,21 @@
 [package]
 name=fcl-js
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [target]
 units=jsbase jstree jsscanner jsparser
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [install]
@@ -26,6 +36,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -113,6 +124,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 [compiler]
 includedir=src
 sourcedir=src
@@ -122,4 +135,7 @@ build=n
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

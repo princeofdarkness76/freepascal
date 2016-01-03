@@ -156,6 +156,9 @@ procedure fpc_RaiseException (Obj : TObject; AnAddr : CodePointer; AFrame : Poin
 =======
 
 Function fpc_RaiseException (Obj : TObject; AnAddr,AFrame : Pointer) : TObject;[Public, Alias : 'FPC_RAISEEXCEPTION']; compilerproc;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var
   _ExceptObjectStack : PExceptObject;
@@ -325,8 +328,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { TODO: no longer used, clean up }
 function fpc_GetExceptionAddr : CodePointer;[Public, Alias : 'FPC_GETEXCEPTIONADDR']; compilerproc;
+=======
+function fpc_GetExceptionAddr : Pointer;[Public, Alias : 'FPC_GETEXCEPTIONADDR']; compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 function fpc_GetExceptionAddr : Pointer;[Public, Alias : 'FPC_GETEXCEPTIONADDR']; compilerproc;
 >>>>>>> graemeg/cpstrnew
@@ -340,7 +347,10 @@ begin
     fpc_GetExceptionAddr:=_ExceptObjectStack^.Addr;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif VER2_6}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

@@ -128,8 +128,11 @@ var
 {$IFDEF WINDOWS}{$R createusers.rc}{$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.res}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin

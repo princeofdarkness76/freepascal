@@ -24,11 +24,15 @@ unit dGlobals;
 interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes, DOM, PasTree, PParser, StrUtils,uriparser;
 
 Const
   CacheSize = 20;
   ContentBufSize = 4096 * 8;
+=======
+uses Classes, DOM, PasTree, PParser, StrUtils;
+>>>>>>> graemeg/cpstrnew
 =======
 uses Classes, DOM, PasTree, PParser, StrUtils;
 >>>>>>> graemeg/cpstrnew
@@ -75,7 +79,10 @@ resourcestring
   SDocPropertyOverview       = 'Property overview';
   SDocInterfacesOverview     = 'Interfaces overview';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SDocInterface              = 'Interfaces';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   SDocPage                   = 'Page';
@@ -140,8 +147,11 @@ resourcestring
   SCHMUsageChmTitle= 'Title of the chm. Defaults to the value from --package';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   SXMLUsageSource  = 'Include source file and line info in generated XML';
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   // Linear usage
@@ -207,6 +217,9 @@ resourcestring
   SUsageOption170  = '--warn-no-node    Warn if no documentation node was found.';
   SUsageOption180  = '--mo-dir=dir      Set directory where language files reside to dir';
   SUsageOption190  = '--parse-impl      (Experimental) try to parse implementation too';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   SUsageFormats        = 'The following output formats are supported by this fpdoc:';
   SUsageBackendHelp    = 'Specify an output format, combined with --help to get more help for this backend.';
@@ -223,7 +236,10 @@ resourcestring
   SErrCouldNotCreateFile      = 'Could not create file "%s": %s';
   SSeeURL                     = '(See %s)';      // For linear text writers.
 <<<<<<< HEAD
+<<<<<<< HEAD
   SParsingUsedUnit            = 'Parsing used unit "%s" with commandLine "%s"';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -653,8 +669,11 @@ begin
   HidePrivate := True;
   InterfaceOnly:=True;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FPackages := TFPList.Create;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   FPackages := TList.Create;
 >>>>>>> graemeg/cpstrnew
 end;
@@ -749,7 +768,11 @@ var
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   function ResolvePackageModule(AName:String;out pkg:TPasPackage;out module:TPasModule;createnew:boolean):String;
+=======
+  function ResolvePackageModule(AName:String;var pkg:TPasPackage;var module:TPasModule;createnew:boolean):String;
+>>>>>>> graemeg/cpstrnew
 =======
   function ResolvePackageModule(AName:String;var pkg:TPasPackage;var module:TPasModule;createnew:boolean):String;
 >>>>>>> graemeg/cpstrnew
@@ -798,7 +821,11 @@ var
         if not CreateNew then
           exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
         Module := TPasExternalModule.Create(s, HPackage);
+=======
+        Module := TPasModule.Create(s, HPackage);
+>>>>>>> graemeg/cpstrnew
 =======
         Module := TPasModule.Create(s, HPackage);
 >>>>>>> graemeg/cpstrnew
@@ -810,7 +837,11 @@ var
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   function SearchInList(clslist:TFPList;s:string):TPasElement;
+=======
+  function SearchInList(clslist:TList;s:string):TPasElement;
+>>>>>>> graemeg/cpstrnew
 =======
   function SearchInList(clslist:TList;s:string):TPasElement;
 >>>>>>> graemeg/cpstrnew
@@ -825,6 +856,7 @@ var
           exit(Classel); 
       end;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   function ResolveClassType(AName:String):TPasClassType;
@@ -899,6 +931,39 @@ var
 
   procedure ReadClasses;
 
+=======
+
+  function ResolveClassType(AName:String):TPasClassType;
+  var 
+     pkg     : TPasPackage;
+     module  : TPasModule;
+     s       : string; 
+  begin
+    Result:=nil;
+    s:=ResolvePackageModule(AName,pkg,module,False);
+    if not assigned(module) then
+      exit;
+    result:=TPasClassType(SearchInList(Module.InterfaceSection.Classes,s));
+  end;
+
+  function ResolveAliasType(AName:String):TPasAliasType;
+  var 
+     pkg     : TPasPackage;
+     module  : TPasModule;
+     s       : string; 
+  begin
+    Result:=nil;
+    s:=ResolvePackageModule(AName,pkg,module,False);
+    if not assigned(module) then
+      exit;
+    result:=TPasAliasType(SearchInList(Module.InterfaceSection.Types,s));
+    if not (result is TPasAliasType) then
+      result:=nil;
+  end;
+
+  procedure ReadClasses;
+
+>>>>>>> graemeg/cpstrnew
     function CreateClass(const AName: String;InheritanceStr:String): TPasClassType;
     var
       DotPos, DotPos2, i,j: Integer;
@@ -910,6 +975,9 @@ var
       s:= ResolvePackageModule(AName,HPackage,Module,True);
       // Create node for class
       Result := TPasClassType.Create(s, Module.InterfaceSection);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       Result.ObjKind := okClass;
       Module.InterfaceSection.Declarations.Add(Result);
@@ -955,7 +1023,11 @@ var
      else
        if cls<>result then
 <<<<<<< HEAD
+<<<<<<< HEAD
          DoLog('Warning : ancestor class %s of class %s could not be resolved',[clname,cls.name]);
+=======
+         writeln(cls.name,'''s dependency '  ,clname,' could not be resolved');
+>>>>>>> graemeg/cpstrnew
 =======
          writeln(cls.name,'''s dependency '  ,clname,' could not be resolved');
 >>>>>>> graemeg/cpstrnew
@@ -979,17 +1051,23 @@ begin
         if assigned(result) then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 //            writeln('found alias ',clname,' (',s,') ',result.classname);  
           end
         else
           begin
 //            writeln('new alias ',clname,' (',s,') ');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             writeln('found alias ',clname,' (',s,') ',result.classname);  
           end
         else
           begin
             writeln('new alias ',clname,' (',s,') ');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             cl2.addref;
             Result := TPasAliasType(CreateElement(TPasAliasType,s,module.interfacesection,vispublic,'',0));
@@ -1027,7 +1105,11 @@ end;
                    // writeln('Found alias pair ',clname,' = ',alname);   
                    if not assigned(CreateAliasType(alname,clname,cls,cls2)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                       DoLog('Warning: creating alias %s for %s failed!',[alname,clname]);
+=======
+                      writeln('creating alias failed!');
+>>>>>>> graemeg/cpstrnew
 =======
                       writeln('creating alias failed!');
 >>>>>>> graemeg/cpstrnew
@@ -1445,6 +1527,9 @@ begin
       if CanWeExit(Result) then
         Exit;
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 var
@@ -1469,6 +1554,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 function TFPDocEngine.ResolveLink(AModule: TPasModule; const ALinkDest: String; Strict : Boolean = False): String;
 var
   i: Integer;
@@ -1488,6 +1574,9 @@ begin
   else if (AModule=Nil) then
     Result:= FindAbsoluteLink(RootLinkNode.FirstChild.Name+'.'+ALinkDest)
   else
+=======
+    if not CanWeExit(Result) then
+>>>>>>> graemeg/cpstrnew
 =======
     if not CanWeExit(Result) then
 >>>>>>> graemeg/cpstrnew

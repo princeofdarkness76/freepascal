@@ -36,7 +36,10 @@ const
 {$include rtltypes.inc}
 {$include ketypes.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include obtypes.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$include pstypes.inc}

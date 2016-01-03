@@ -674,7 +674,10 @@ begin
         ait_instruction:
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             current_filepos:=taicpu(p).fileinfo;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
             if InsContainsSegRef(taicpu(p)) then

@@ -223,13 +223,20 @@ begin
 =======
   for n := 0 to MaxDataSet do
     DeleteFile(ExtractFilePath(dbname)+'fpdev_'+inttostr(n)+'.db');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
 procedure TDBFDBConnector.DropFieldDataset;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Nothing to be done here; the dataset is cleaned up in TDBFAutoClean.Destroy
+=======
+  DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
+>>>>>>> graemeg/cpstrnew
 =======
   DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
 >>>>>>> graemeg/cpstrnew

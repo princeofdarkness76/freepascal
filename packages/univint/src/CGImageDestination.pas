@@ -11,6 +11,9 @@
 =======
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {	 Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {
@@ -68,11 +71,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -94,11 +100,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -111,11 +123,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -128,11 +146,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -206,6 +228,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -259,14 +309,21 @@ uses MacTypes, CFArray, CFBase, CFData, CFDictionary, CFURL, CGDataConsumer, CGI
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGImageDestinationRef = ^OpaqueCGImageDestinationRef; { an opaque type }
 	OpaqueCGImageDestinationRef = record end;
+=======
+	CGImageDestinationRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CGImageDestinationRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -286,7 +343,11 @@ type
 
 var kCGImageDestinationLossyCompressionQuality: CFStringRef; external name '_kCGImageDestinationLossyCompressionQuality'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -300,7 +361,11 @@ var kCGImageDestinationLossyCompressionQuality: CFStringRef; external name '_kCG
 
 var kCGImageDestinationBackgroundColor: CFStringRef; external name '_kCGImageDestinationBackgroundColor'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -310,7 +375,11 @@ var kCGImageDestinationBackgroundColor: CFStringRef; external name '_kCGImageDes
 
 function CGImageDestinationGetTypeID: CFTypeID; external name '_CGImageDestinationGetTypeID';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -319,7 +388,11 @@ function CGImageDestinationGetTypeID: CFTypeID; external name '_CGImageDestinati
 
 function CGImageDestinationCopyTypeIdentifiers: CFArrayRef; external name '_CGImageDestinationCopyTypeIdentifiers';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -333,7 +406,11 @@ function CGImageDestinationCopyTypeIdentifiers: CFArrayRef; external name '_CGIm
 
 function CGImageDestinationCreateWithDataConsumer( consumer: CGDataConsumerRef; typ: CFStringRef; count: size_t; options: CFDictionaryRef ): CGImageDestinationRef; external name '_CGImageDestinationCreateWithDataConsumer';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -346,7 +423,11 @@ function CGImageDestinationCreateWithDataConsumer( consumer: CGDataConsumerRef; 
 
 function CGImageDestinationCreateWithData( data: CFMutableDataRef; typ: CFStringRef; count: size_t; options: CFDictionaryRef ): CGImageDestinationRef; external name '_CGImageDestinationCreateWithData';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -360,7 +441,11 @@ function CGImageDestinationCreateWithData( data: CFMutableDataRef; typ: CFString
 
 function CGImageDestinationCreateWithURL( url: CFURLRef; typ: CFStringRef; count: size_t; options: CFDictionaryRef ): CGImageDestinationRef; external name '_CGImageDestinationCreateWithURL';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -370,7 +455,11 @@ function CGImageDestinationCreateWithURL( url: CFURLRef; typ: CFStringRef; count
 
 procedure CGImageDestinationSetProperties( idst: CGImageDestinationRef; properties: CFDictionaryRef ); external name '_CGImageDestinationSetProperties';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -382,7 +471,11 @@ procedure CGImageDestinationSetProperties( idst: CGImageDestinationRef; properti
 
 procedure CGImageDestinationAddImage( idst: CGImageDestinationRef; image: CGImageRef; properties: CFDictionaryRef ); external name '_CGImageDestinationAddImage';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -396,7 +489,11 @@ procedure CGImageDestinationAddImage( idst: CGImageDestinationRef; image: CGImag
 
 procedure CGImageDestinationAddImageFromSource( idst: CGImageDestinationRef; isrc: CGImageSourceRef; index: size_t; properties: CFDictionaryRef ); external name '_CGImageDestinationAddImageFromSource';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -408,6 +505,7 @@ procedure CGImageDestinationAddImageFromSource( idst: CGImageDestinationRef; isr
  * if the image was successfully written; false otherwise. }
 
 function CGImageDestinationFinalize( idst: CGImageDestinationRef ): CBool; external name '_CGImageDestinationFinalize';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 
@@ -479,6 +577,10 @@ var kCGImageDestinationOrientation: CFStringRef; external name '_kCGImageDestina
 function CGImageDestinationCopyImageSource( idst: CGImageDestinationRef; isrc: CGImageSourceRef; options: CFDictionaryRef; var err: CFErrorRef ): CBool; external name '_CGImageDestinationCopyImageSource';
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_NA) *)
 
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 

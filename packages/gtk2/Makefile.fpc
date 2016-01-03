@@ -5,11 +5,14 @@
 [package]
 name=gtk2
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [require]
@@ -43,10 +46,13 @@ fpcdir=../..
 
 [prerules]
 <<<<<<< HEAD
+<<<<<<< HEAD
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
 FPC_TARGETOPT+=--os=$(OS_TARGET)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 ifneq ($(findstring $(OS_TARGET),linux freebsd netbsd openbsd solaris darwin iphonesim beos haiku ),)
 GDK2X=gdk2x
 GTK2X11=gtk2x11

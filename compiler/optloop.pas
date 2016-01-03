@@ -159,6 +159,7 @@ unit optloop;
                     if getridoffor then
                       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                         foreachnodestatic(tnode(unrollstatement),@replaceloadnodes,@replaceinfo);
                         if lnf_backward in tfornode(node).loopflags then
                           replaceinfo.value:=replaceinfo.value-1
@@ -180,6 +181,8 @@ unit optloop;
                           end;
                        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                         { insert incr/decrementation of counter var }
                         if lnf_backward in tfornode(node).loopflags then
                           addstatement(unrollstatement,

@@ -13,6 +13,7 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { ObjpasInt is the integer type, equivalent to Objpas.Integer (the Integer
   type in ObjFpc and Delphi modes). It is defined here for use in the
   implementation part of the System unit. }
@@ -25,12 +26,15 @@ type
 {$endif CPU16}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 { The RTTI is implemented through a series of constants : }
 
 Const
    // please update tkManagedTypes below if you add new
    // values
+<<<<<<< HEAD
 <<<<<<< HEAD
    tkUnknown        = 0;
    tkInteger        = 1;
@@ -63,6 +67,8 @@ Const
    tkClassRef       = 28;
    tkPointer        = 29;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
    tkUnknown       = 0;
    tkInteger       = 1;
    tkChar          = 2;
@@ -89,6 +95,9 @@ Const
    tkInterfaceCorba = 22;
    tkProcVar       = 23;
    tkUString       = 24;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   // all potentially managed types
@@ -255,6 +264,7 @@ function do_isdevice(handle:thandle):boolean;forward;
     {$Error Can't determine processor type !}
   {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$i armdefines.inc}
   {$if defined(CPUTHUMB2)}
     {$i thumb2.inc}  { Case dependent, don't change }
@@ -265,10 +275,15 @@ function do_isdevice(handle:thandle):boolean;forward;
       {$i arm.inc}  { Case dependent, don't change }
     {$endif}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
     {$i thumb2.inc}  { Case dependent, don't change }
   {$else}
     {$i arm.inc}  { Case dependent, don't change }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$endif}
   {$define SYSPROCDEFINED}
@@ -919,6 +934,7 @@ begin
   fpc_cpuinit;
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef DEBUG}
   pt := PInitFinalTable(EntryInformation.InitFinalTable);
 {$endif}
@@ -927,6 +943,10 @@ begin
 {$ifdef DEBUG}
   pt := @InitFinalTable;
 {$endif}
+=======
+  with PInitFinalTable(EntryInformation.InitFinalTable)^ do
+{$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
+>>>>>>> graemeg/cpstrnew
 =======
   with PInitFinalTable(EntryInformation.InitFinalTable)^ do
 {$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
@@ -1832,6 +1852,7 @@ Begin
   ChDir(@buffer[0],length(s));
 End;
 {$endif}
+<<<<<<< HEAD
 
 
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
@@ -2008,6 +2029,8 @@ end;
 
 {$endif FPC_HAS_FEATURE_FILEIO}
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {*****************************************************************************
                             Resources support

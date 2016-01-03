@@ -23,9 +23,13 @@
  * cssmtype.h -- Common Security Services Manager Common Data Types
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 >>>>>>> graemeg/cpstrnew
@@ -84,11 +88,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -110,11 +117,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -127,11 +140,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -144,7 +163,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -157,7 +179,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -167,6 +192,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -178,6 +204,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -190,11 +221,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -213,6 +248,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -340,7 +379,10 @@ type
 		Data: UInt8Ptr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -354,7 +396,10 @@ type
 		Data4: array [0..8-1] of UInt8;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -388,7 +433,10 @@ type
 		Minor: UInt32;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -416,7 +464,10 @@ type
 		SubserviceType: CSSM_SERVICE_TYPE;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -473,7 +524,10 @@ type
 		Address: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -505,7 +559,10 @@ type
 		CallerCtx: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -677,7 +734,10 @@ type
 		Tail: CSSM_LIST_ELEMENT_PTR;	{ tail of the list }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -707,7 +767,10 @@ type
 		ValidityPeriod: CSSM_LIST;	{ validity information (dates) }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -719,7 +782,10 @@ type
 		Tuples: CSSM_TUPLE_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -745,7 +811,10 @@ type
 		Verifier: {const} CSSM_SUBSERVICE_UIDPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -757,7 +826,10 @@ type
 		Samples: {const} CSSM_SAMPLEPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -784,7 +856,10 @@ type
 		AllocRef: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -848,7 +923,10 @@ type
 		CertBlob: CSSM_DATA;					{ packed cert }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -883,7 +961,10 @@ type
 		ParsedCert: UnivPtr; { parsed cert (to be typecast) }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -895,7 +976,10 @@ type
 		ParsedCert: CSSM_PARSED_CERT; { equivalent parsed certificate }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -940,7 +1024,10 @@ type
 		Certs: CSSM_CERTGROUP;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -955,7 +1042,10 @@ type
 		CallerCtx: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1015,7 +1105,10 @@ type
 		AuthTags: CSSM_ACL_AUTHORIZATION_TAGPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1027,7 +1120,10 @@ type
 		EndDate: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1042,7 +1138,10 @@ type
 		EntryTag: CSSM_STRING;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1054,7 +1153,10 @@ type
 		Delegate: CSSM_BOOL;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1070,7 +1172,10 @@ type
 		CallerContext: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1082,7 +1187,10 @@ type
 		InitialAclEntry: CSSM_ACL_ENTRY_INPUT;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1097,7 +1205,10 @@ type
 		EntryHandle: CSSM_ACL_HANDLE;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1117,7 +1228,10 @@ type
 		NewEntry: {const} CSSM_ACL_ENTRY_INPUTPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1140,7 +1254,10 @@ type
 		Address: CSSM_PROC_ADDR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1156,7 +1273,10 @@ type
 		Day: array [0..2-1] of UInt8;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1168,7 +1288,10 @@ type
 		Max: UInt32; { inclusive maximum value }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1180,7 +1303,10 @@ type
 		SizeOutputBlock: UInt32; { size of resulting output data block }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1197,7 +1323,10 @@ type
 		EffectiveKeySizeInBits: UInt32; { Effective key size in bits }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1471,7 +1600,10 @@ type
 		Reserved: UInt32;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1483,7 +1615,10 @@ type
 		KeyData: CSSM_DATA; { Variable length key data }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1508,7 +1643,10 @@ type
 		DBHandle: CSSM_DB_HANDLE;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1650,7 +1788,10 @@ type
 		Reserved: UInt32;	{ reserved for future use }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1712,7 +1853,10 @@ type
 		PSourceParams: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1733,7 +1877,10 @@ type
 		TokenFreePrivateMem: UInt32;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1750,7 +1897,10 @@ type
 		InitVector: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1767,7 +1917,10 @@ type
 		PseudoRandomFunction: CSSM_PKCS5_PBKDF2_PRF;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1779,7 +1932,10 @@ type
 		Yb: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1794,7 +1950,10 @@ type
 		AuthorityLocation: CSSM_NET_ADDRESS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1829,7 +1988,10 @@ type
 		FieldValue: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1843,7 +2005,10 @@ type
 		PolicyControl: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1882,7 +2047,10 @@ type
 		DLDBHandle: CSSM_DL_DB_HANDLE_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1901,7 +2069,10 @@ type
 		CallerCredentials: CSSM_ACCESS_CREDENTIALS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1957,7 +2128,10 @@ type
 		CrlBlob: CSSM_DATA; { packed CRL }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1972,7 +2146,10 @@ type
 		ParsedCrl: UnivPtr; { parsed CRL (to be typecast) }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1984,7 +2161,10 @@ type
 		ParsedCrl: CSSM_PARSED_CRL; { equivalent parsed CRL }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2024,7 +2204,10 @@ type
 		Fields: CSSM_FIELD_PTR;	{ array of fields }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2050,7 +2233,10 @@ type
 		Evidence: UnivPtr; { Evidence content }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2064,7 +2250,10 @@ type
 		Cred: CSSM_TP_CALLERAUTH_CONTEXT_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2076,7 +2265,10 @@ type
 		Evidence: CSSM_EVIDENCE_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2088,7 +2280,10 @@ type
 		Requests: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2100,7 +2295,10 @@ type
 		Results: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2126,7 +2324,10 @@ type
 		Responses: CSSM_TP_CONFIRM_STATUS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2151,7 +2352,10 @@ type
 		UserCredentials: CSSM_ACCESS_CREDENTIALS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2188,7 +2392,10 @@ type
 		PerformedServiceRequests: CSSM_TP_SERVICES;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2256,7 +2463,10 @@ type
 		CallerCredentials: CSSM_ACCESS_CREDENTIALS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2291,7 +2501,10 @@ type
 		RevokeInfo: CSSM_FIELD;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2304,7 +2517,10 @@ type
 		VerifyContext: CSSM_TP_VERIFY_CONTEXT_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2338,7 +2554,10 @@ type
 		Evidence: CSSM_EVIDENCE_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2357,7 +2576,10 @@ type
 		UserCredentials: CSSM_ACCESS_CREDENTIALS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2394,7 +2616,10 @@ type
 		PerformedServiceRequests: CSSM_TP_SERVICES;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2408,7 +2633,10 @@ type
 		UserCredentials: CSSM_ACCESS_CREDENTIALS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2442,7 +2670,10 @@ type
 		KeyCacheHandle: CSSM_LONG_HANDLE;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2457,7 +2688,10 @@ type
 		CallerCredentials: CSSM_ACCESS_CREDENTIALS_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2504,7 +2738,10 @@ type
 		CrlNextTime: CSSM_TIMESTRING;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2560,7 +2797,10 @@ type
 		BundleEncoding: CSSM_CERT_BUNDLE_ENCODING;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2572,7 +2812,10 @@ type
 		Bundle: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2629,7 +2872,10 @@ type
 		Value: CSSM_DATA_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2678,7 +2924,10 @@ type
 		AttributeInfo: CSSM_DB_ATTRIBUTE_INFO_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2692,7 +2941,10 @@ type
 		AttributeData: CSSM_DB_ATTRIBUTE_DATA_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2704,7 +2956,10 @@ type
 		ModuleSubserviceUid: CSSM_SUBSERVICE_UID;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2730,7 +2985,10 @@ type
 		Info: CSSM_DB_ATTRIBUTE_INFO;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2742,7 +3000,10 @@ type
 		RecordIdentifier: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2755,7 +3016,10 @@ type
 		IndexInfo: CSSM_DB_INDEX_INFO_PTR;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2793,7 +3057,10 @@ type
 		Reserved: UnivPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2827,7 +3094,10 @@ type
 		Attribute: CSSM_DB_ATTRIBUTE_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2845,7 +3115,10 @@ type
 		SizeLimit: UInt32; { max. number of records to return }
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2866,7 +3139,10 @@ type
 		QueryFlags: CSSM_QUERY_FLAGS;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2897,7 +3173,10 @@ type
 		DeviceAccessFlags: UInt32;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2912,7 +3191,10 @@ type
 		String_: CStringPtrPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2932,7 +3214,10 @@ type
 		DataType: CSSM_DB_ATTRIBUTE_FORMAT;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2946,7 +3231,10 @@ type
 		IndexedDataLocation: CSSM_DB_INDEXED_DATA_LOCATION;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

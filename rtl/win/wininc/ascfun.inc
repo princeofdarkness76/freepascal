@@ -78,9 +78,15 @@ procedure OutputDebugStringA(lpOutputString:LPCSTR); external 'kernel32' name 'O
 function FindResourceA(hModule:HINST; lpName:LPCSTR; lpType:LPCSTR):HRSRC; external 'kernel32' name 'FindResourceA';
 function FindResourceExA(hModule:HINST; lpType:LPCSTR; lpName:LPCSTR; wLanguage:WORD):HRSRC; external 'kernel32' name 'FindResourceExA';
 <<<<<<< HEAD
+<<<<<<< HEAD
 function EnumResourceTypesA(hModule:HMODULE; lpEnumFunc:ENUMRESTYPEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceTypesA';
 function EnumResourceNamesA(hModule:HMODULE; lpType:LPCSTR; lpEnumFunc:ENUMRESNAMEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceNamesA';
 function EnumResourceLanguagesA(hModule:HMODULE; lpType:LPCSTR; lpName:LPCSTR; lpEnumFunc:ENUMRESLANGPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceLanguagesA';
+=======
+function EnumResourceTypesA(hModule:HINST; lpEnumFunc:ENUMRESTYPEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceTypesA';
+function EnumResourceNamesA(hModule:HINST; lpType:LPCSTR; lpEnumFunc:ENUMRESNAMEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceNamesA';
+function EnumResourceLanguagesA(hModule:HINST; lpType:LPCSTR; lpName:LPCSTR; lpEnumFunc:ENUMRESLANGPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceLanguagesA';
+>>>>>>> graemeg/cpstrnew
 =======
 function EnumResourceTypesA(hModule:HINST; lpEnumFunc:ENUMRESTYPEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceTypesA';
 function EnumResourceNamesA(hModule:HINST; lpType:LPCSTR; lpEnumFunc:ENUMRESNAMEPROC; lParam:LONG_PTR):WINBOOL; external 'kernel32' name 'EnumResourceNamesA';
@@ -171,7 +177,11 @@ function GetComputerNameA(lpBuffer:LPSTR; nSize:LPDWORD):WINBOOL; external 'kern
 function SetComputerNameA(lpComputerName:LPCSTR):WINBOOL; external 'kernel32' name 'SetComputerNameA';
 function GetUserNameA(lpBuffer:LPSTR; nSize:LPDWORD):WINBOOL; external 'advapi32' name 'GetUserNameA';
 <<<<<<< HEAD
+<<<<<<< HEAD
 function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; stdcall; external 'user32' name 'wvsprintfA';
+=======
+function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; cdecl; external 'user32' name 'wvsprintfA';
+>>>>>>> graemeg/cpstrnew
 =======
 function wvsprintfA(_para1:LPSTR; _para2:LPCSTR; arglist:va_list):longint; cdecl; external 'user32' name 'wvsprintfA';
 >>>>>>> graemeg/cpstrnew
@@ -489,9 +499,15 @@ function CreateProcessAsUserA(_para1:HANDLE; _para2:LPCTSTR; _para3:LPTSTR; _par
 function CreateWaitableTimerA(lpTimerAttributes :LPSECURITY_ATTRIBUTES; bManualReset:BOOl;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'CreateWaitableTimerA'; 
 function OpenWaitableTimerA(dwDesiredAccess:DWORD;bInheritHandle:BOOL;lpTimerName:LPCTSTR):THandle;external 'kernel32' name 'OpenWaitableTimerA'; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FindFirstFileExA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword):Handle; stdcall; external 'kernel32' name 'FindFirstFileExA';
 // winver>$0600
 function FindFirstFileTransactedA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword;htransaction : HANDLE):Handle; stdcall; external 'kernel32' name 'FindFirstFileTransactedA';
+=======
+function FindFirstFileExA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword):Handle; stdcall; external name 'FindFirstFileExA';
+// winver>$0600
+function FindFirstFileTransactedA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword;htransaction : HANDLE):Handle; stdcall; external name 'FindFirstFileTransactedA';
+>>>>>>> graemeg/cpstrnew
 =======
 function FindFirstFileExA(lpfilename : LPCStr;fInfoLevelId:FINDEX_INFO_LEVELS ;lpFindFileData:pointer;fSearchOp : FINDEX_SEARCH_OPS;lpSearchFilter:pointer;dwAdditionalFlags:dword):Handle; stdcall; external name 'FindFirstFileExA';
 // winver>$0600

@@ -68,25 +68,35 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TThread.SysCreate(CreateSuspended: Boolean;
                             const StackSize: SizeUInt);
 var
   Flags: cardinal;
 begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TThread.Create(CreateSuspended: Boolean;
                            const StackSize: SizeUInt = DefaultStackSize);
 var
   Flags: cardinal;
 begin
   inherited Create;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   AddThread (Self);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TThread.SysDestroy;
+=======
+destructor TThread.Destroy;
+>>>>>>> graemeg/cpstrnew
 =======
 destructor TThread.Destroy;
 >>>>>>> graemeg/cpstrnew

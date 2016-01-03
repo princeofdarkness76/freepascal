@@ -24,8 +24,11 @@
 }
 function Fpfork : pid_t;  [public, alias : 'FPC_SYSC_FORK'];assembler;
 <<<<<<< HEAD
+<<<<<<< HEAD
 asm
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -42,6 +45,9 @@ asm
   sw  $14,-40($23)
   addiu  $23,$23,-44
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   li  $2,4002
   syscall
@@ -49,12 +55,15 @@ asm
   beq $7,$0,.LDone
   nop
 <<<<<<< HEAD
+<<<<<<< HEAD
   move  $a0,$2
   jal   SetErrno
   nop
   li    $2,-1
 .LDone:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   lui   $8,%hi(fpc_threadvar_relocate_proc)
   addiu   $8,%lo(fpc_threadvar_relocate_proc)
   lw   $8,0($8)
@@ -90,6 +99,9 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -104,9 +116,12 @@ function FpSysCall(sysnr:TSysParam):TSysResult; assembler;[public,alias:'FPC_SYS
   copies back the registers as they are after the SysCall.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 asm
   move  $v0,$a0
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -124,11 +139,15 @@ asm
   addiu  $23,$23,-44
 
   move  $2,$4
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   syscall
   nop
   beq $7,$0,.LDone
   nop
+<<<<<<< HEAD
 <<<<<<< HEAD
   move  $a0,$2
   jal   SetErrno
@@ -136,6 +155,8 @@ asm
   li    $2,-1
 .LDone:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   lui   $8,%hi(fpc_threadvar_relocate_proc)
   addiu   $8,%lo(fpc_threadvar_relocate_proc)
   lw   $8,0($8)
@@ -171,6 +192,9 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -181,10 +205,13 @@ function FpSysCall(sysnr,param1:TSysParam):TSysResult; assembler;[public,alias:'
   copies back the registers as they are after the SysCall.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 asm
   move  $v0,$a0
   move  $a0,$a1
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -204,11 +231,15 @@ asm
 
   move  $2,$4
   move  $4,$5
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   syscall
   nop
   beq $7,$0,.LDone
   nop
+<<<<<<< HEAD
 <<<<<<< HEAD
   move  $a0,$2
   jal   SetErrno
@@ -216,6 +247,8 @@ asm
   li    $2,-1
 .LDone:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   lui   $8,%hi(fpc_threadvar_relocate_proc)
   addiu   $8,%lo(fpc_threadvar_relocate_proc)
   lw   $8,0($8)
@@ -251,6 +284,9 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -261,11 +297,14 @@ function FpSysCall(sysnr,param1,param2:TSysParam):TSysResult; assembler;[public,
   copies back the registers as they are after the SysCall.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 asm
   move  $v0,$a0
   move  $a0,$a1
   move  $a1,$a2
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -286,11 +325,15 @@ asm
   move  $2,$4
   move  $4,$5
   move  $5,$6
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   syscall
   nop
   beq $7,$0,.LDone
   nop
+<<<<<<< HEAD
 <<<<<<< HEAD
   move  $a0,$2
   jal   SetErrno
@@ -298,6 +341,8 @@ asm
   li    $2,-1
 .LDone:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   lui   $8,%hi(fpc_threadvar_relocate_proc)
   addiu   $8,%lo(fpc_threadvar_relocate_proc)
   lw   $8,0($8)
@@ -333,6 +378,9 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -343,12 +391,15 @@ function FpSysCall(sysnr,param1,param2,param3:TSysParam):TSysResult; assembler;[
   copies back the registers as they are after the SysCall.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 asm
   move  $v0,$a0
   move  $a0,$a1
   move  $a1,$a2
   move  $a2,$a3
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -370,11 +421,15 @@ asm
   move  $4,$5
   move  $5,$6
   move  $6,$7
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   syscall
   nop
   beq $7,$0,.LDone
   nop
+<<<<<<< HEAD
 <<<<<<< HEAD
   move  $a0,$2
   jal   SetErrno
@@ -382,6 +437,8 @@ asm
   li    $2,-1
 .LDone:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   lui   $8,%hi(fpc_threadvar_relocate_proc)
   addiu   $8,%lo(fpc_threadvar_relocate_proc)
   lw   $8,0($8)
@@ -417,6 +474,9 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -427,6 +487,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4:TSysParam):TSysResult; asse
   copies back the registers as they are after the SysCall.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 asm
   move  $v0,$a0
   move  $a0,$a1
@@ -434,6 +495,8 @@ asm
   move  $a2,$a3
   lw    $a3,param4
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -456,11 +519,15 @@ asm
   move  $5,$6
   move  $6,$7
   move  $7,$8
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   syscall
   nop
   beq $7,$0,.LDone
   nop
+<<<<<<< HEAD
 <<<<<<< HEAD
   move  $a0,$2
   jal   SetErrno
@@ -468,6 +535,8 @@ asm
   li    $2,-1
 .LDone:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   lui   $8,%hi(fpc_threadvar_relocate_proc)
   addiu   $8,%lo(fpc_threadvar_relocate_proc)
   lw   $8,0($8)
@@ -503,6 +572,9 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -512,6 +584,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4,param5:TSysParam):TSysResul
   This function puts the registers in place, does the call, and then
   copies back the registers as they are after the SysCall.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 asm
   move  $v0,$a0
@@ -533,6 +606,8 @@ asm
 .LDone:
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -600,6 +675,9 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -609,6 +687,7 @@ function FpSysCall(sysnr,param1,param2,param3,param4,param5,param6:TSysParam):TS
   This function puts the registers in place, does the call, and then
   copies back the registers as they are after the SysCall.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 asm
   move  $v0,$a0
@@ -630,6 +709,8 @@ asm
   li    $2,-1
 .LDone:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   temp: longint;
 asm
@@ -700,5 +781,8 @@ asm
   lw  $13,-36($23)
   lw  $14,-40($23)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;

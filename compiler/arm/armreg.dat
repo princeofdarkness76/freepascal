@@ -35,6 +35,7 @@ F7,$02,$00,$07,f7,32,23
 
 ; MM registers
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; odd numbered single registers must not be made available to the register
 ; allocator because it cannot deal with D0 conflicting with both S0 and S1. 
 ; This unfortunately means that we can only use 16 single precision registers 
@@ -90,6 +91,8 @@ D14,$04,$07,$0E,d14,0,0
 S30,$04,$06,$0F,s30,0,0
 S31,$04,$06,$2F,s31,0,0
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 ; S0/S1/D0 etc have the same register number because the register allocated
 ; cannot deal with D0 conflicting with both S0 and S1. This unfortunately
 ; means that we can only use 16 single precision registers instead of 32,
@@ -141,6 +144,9 @@ S29,$04,$06,$0E,s29,0,0
 D14,$04,$07,$0E,d14,0,0
 S30,$04,$06,$0F,s20,0,0
 S31,$04,$06,$0F,s21,0,0
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 D15,$04,$07,$0F,d15,0,0
 D16,$04,$07,$10,d16,0,0
@@ -161,6 +167,7 @@ D30,$04,$07,$1E,d30,0,0
 D31,$04,$07,$1F,d31,0,0
 
 ; special registers
+<<<<<<< HEAD
 <<<<<<< HEAD
 CPSR,$05,$00,$00,cpsr,0,0
 FPSCR,$05,$00,$01,fpscr,0,0
@@ -208,6 +215,10 @@ FPEXC,$05,$00,$26,fpexc,0,0
 APSR_nzcvq,$05,$00,$27,apsr_nzcvq,0,0
 APSR_g,$05,$00,$28,apsr_g,0,0
 APSR_nzcvqg,$05,$00,$29,apsr_nzcvqg,0,0
+=======
+CPSR_C,$05,$00,$00,cpsr_c,0,0
+FPSCR,$05,$00,$01,fpscr,0,0
+>>>>>>> graemeg/cpstrnew
 =======
 CPSR_C,$05,$00,$00,cpsr_c,0,0
 FPSCR,$05,$00,$01,fpscr,0,0

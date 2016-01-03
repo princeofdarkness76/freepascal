@@ -108,7 +108,11 @@
     TPasPackage = class(TPasElement)
       |
 <<<<<<< HEAD
+<<<<<<< HEAD
     Modules: TFPList;
+=======
+    Modules: TList;
+>>>>>>> graemeg/cpstrnew
 =======
     Modules: TList;
 >>>>>>> graemeg/cpstrnew
@@ -120,7 +124,11 @@
       |-ImplementationSection: TImplementationSection;
       |  |-Declarations -> full declaration, unit and program
 <<<<<<< HEAD
+<<<<<<< HEAD
       |     |-Functions: TFPList;
+=======
+      |     |-Functions: TList;
+>>>>>>> graemeg/cpstrnew
 =======
       |     |-Functions: TList;
 >>>>>>> graemeg/cpstrnew
@@ -130,6 +138,7 @@
       |              |-Body: TPasImplBlock; -> procedure block
       |
       |-InitializationSection: TInitializationSection;
+<<<<<<< HEAD
 <<<<<<< HEAD
       |  |-TPasImplBlock.Elements: TFPList; -> main block
       |
@@ -146,6 +155,8 @@
       |-Variables: TFPList;
       |-Properties: TFPList;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       |  |-TPasImplBlock.Elements: TList; -> main block
       |
       |-FinalizationSection: TFinalizationSection;
@@ -160,6 +171,9 @@
       |-Functions: TList;
       |-Variables: TList;
       |-Properties: TList;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     }
 
@@ -514,8 +528,13 @@ begin
        write(s);
        for l:=0 to lics.Expressions.Count-2 do
 <<<<<<< HEAD
+<<<<<<< HEAD
           write(DelQuot(TPasExpr(lics.Expressions[l]).GetDeclaration(True)),',');
        write(DelQuot(TPasExpr(lics.Expressions[lics.Expressions.Count-1]).GetDeclaration(True)),': '); // !!bug too much ' in expression
+=======
+          write(DelQuot(lics.Expressions[l]),',');
+       write(DelQuot(lics.Expressions[lics.Expressions.Count-1]),': '); // !!bug too much ' in expression
+>>>>>>> graemeg/cpstrnew
 =======
           write(DelQuot(lics.Expressions[l]),',');
        write(DelQuot(lics.Expressions[lics.Expressions.Count-1]),': '); // !!bug too much ' in expression
@@ -540,8 +559,13 @@ begin
       begin
        for l:=0 to liwd.Expressions.Count-2 do
 <<<<<<< HEAD
+<<<<<<< HEAD
          write(TPasExpr(liwd.Expressions[l]).GetDeclaration(true),',');
        write(TPasExpr(liwd.Expressions[liwd.Expressions.Count-1]).GetDeclaration(true));
+=======
+         write(liwd.Expressions[l],',');
+       write(liwd.Expressions[liwd.Expressions.Count-1]);
+>>>>>>> graemeg/cpstrnew
 =======
          write(liwd.Expressions[l],',');
        write(liwd.Expressions[liwd.Expressions.Count-1]);
@@ -895,7 +919,11 @@ procedure GetTPasVar(lpv:TPasVariable; lindent:integer; NoLF:boolean);//BUG stri
 //write out a list of variables only
 //more compact than the output of seperate calls of GetTPasVar
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure GetPasVariables(vl:TFPList; lindent:integer; NoLF,NoSEM:boolean);
+=======
+procedure GetPasVariables(vl:TList; lindent:integer; NoLF,NoSEM:boolean);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure GetPasVariables(vl:TList; lindent:integer; NoLF,NoSEM:boolean);
 >>>>>>> graemeg/cpstrnew
@@ -1061,6 +1089,7 @@ procedure GetPasVariables(vl:TList; lindent:integer; NoLF,NoSEM:boolean);
   end;  
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GetTPasArgumentAccess(acc:TArgumentAccess):String;
 
 begin
@@ -1153,6 +1182,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 procedure GetTypes(pe:TPasElement; lindent:integer);
   var i,j,k:integer;
@@ -1200,7 +1231,11 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
            pv:=TPasVariant(prct.Variants[i]);
            write(s1,pv.Name);
 <<<<<<< HEAD
+<<<<<<< HEAD
            for k:=0 to pv.Values.Count-1 do write(TPasElement(pv.Values[k]).GetDeclaration(true));
+=======
+           for k:=0 to pv.Values.Count-1 do write(pv.Values[k]);
+>>>>>>> graemeg/cpstrnew
 =======
            for k:=0 to pv.Values.Count-1 do write(pv.Values[k]);
 >>>>>>> graemeg/cpstrnew
@@ -1247,12 +1282,16 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
   else if pe is TPasProcedureType then
    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
    if pe is TPasFunctionType then
      Write('function ')
    else
      Write('procedure ');
    GetTPasProcedureType(TPasProcedureType(pe), lindent);
    Writeln(';');
+=======
+    writeln('procedure');
+>>>>>>> graemeg/cpstrnew
 =======
     writeln('procedure');
 >>>>>>> graemeg/cpstrnew
@@ -1296,7 +1335,11 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
            pv:=TPasVariant(prct.Variants[i]);
            write(s2,pv.Name);
 <<<<<<< HEAD
+<<<<<<< HEAD
            for k:=0 to pv.Values.Count-1 do write(TPasElement(pv.Values[k]).GetDeclaration(true));
+=======
+           for k:=0 to pv.Values.Count-1 do write(pv.Values[k]);
+>>>>>>> graemeg/cpstrnew
 =======
            for k:=0 to pv.Values.Count-1 do write(pv.Values[k]);
 >>>>>>> graemeg/cpstrnew
@@ -1316,6 +1359,7 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
    end
   else if pe is TPasClassOfType then writeln('Class of ',TPasClassOfType(pe).DestType.Name,';')
 <<<<<<< HEAD
+<<<<<<< HEAD
   else if pe is tPasAliasType then
     begin
     pe:=tPasAliasType(PE).DestType;
@@ -1330,12 +1374,18 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
   else if pe is tPasUnresolvedTypeRef then writeln(TPasUnresolvedTypeRef(PE).name,';')
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   else
    begin
     
     writeln('{ Unknown TYPE(s): ');
 <<<<<<< HEAD
+<<<<<<< HEAD
     writeln(s,pe.Name,' ',pe.classname);
+=======
+    writeln(s,pe.Name);
+>>>>>>> graemeg/cpstrnew
 =======
     writeln(s,pe.Name);
 >>>>>>> graemeg/cpstrnew
@@ -1346,7 +1396,10 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  function GetTPasArgumentAccess(acc:TArgumentAccess):String;
   begin
    Result:='';
@@ -1357,6 +1410,9 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
      argOut:Result:='out';
    end;
   end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
  procedure GetTCallingConvention(cc:TCallingConvention);  //TODO: test it
@@ -1379,6 +1435,10 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
    if pmVarargs in Mfs then WriteFmt(true,'varargs;',false);
    if pmCompilerProc in Mfs then WriteFmt(true,'compilerproc;',false);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+   if pmExtdecl in Mfs then WriteFmt(true,'extdecl;',false);
+>>>>>>> graemeg/cpstrnew
 =======
    if pmExtdecl in Mfs then WriteFmt(true,'extdecl;',false);
 >>>>>>> graemeg/cpstrnew
@@ -1388,9 +1448,12 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
    var l:integer;
        lppt:TPasProcedureType;
 <<<<<<< HEAD
+<<<<<<< HEAD
        s:String;
        
 =======
+=======
+>>>>>>> graemeg/cpstrnew
        lpa:TPasArgument;
        s:String;
        
@@ -1399,6 +1462,9 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
        aktaa:TArgumentAccess;
        aktname,tmpname:String;
        svi:integer;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   begin
@@ -1417,8 +1483,11 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
     begin
      lppt:=lpp.ProcType;
 <<<<<<< HEAD
+<<<<<<< HEAD
      GetTPasProcedureType(lppt,Indent);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      if assigned(lppt.Args) and (lppt.Args.Count > 0) then
       begin
        write('(');
@@ -1506,6 +1575,9 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
      if lppt.IsOfObject then write(' of Object'); 
      if (TPasElement(lpp) is TPasFunction)or(TPasElement(lpp) is TPasClassFunction) then 
          write(': ',TPasFunctionType(lpp.ProcType).ResultEl.ResultType.Name);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
    //writeln(';');
@@ -1609,7 +1681,11 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
        lpa:TPasArgument;
        vis:TPasMemberVisibility;
 <<<<<<< HEAD
+<<<<<<< HEAD
        vars:TFPList;
+=======
+       vars:TList;
+>>>>>>> graemeg/cpstrnew
 =======
        vars:TList;
 >>>>>>> graemeg/cpstrnew
@@ -1626,6 +1702,7 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
    if assigned(pc) then
     begin
      s:=GetIndent(indent);
+<<<<<<< HEAD
 <<<<<<< HEAD
      if (pc.ObjKind=okGeneric) then
        begin
@@ -1645,11 +1722,15 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
 =======
      write(s,pc.Name,'=');
 >>>>>>> graemeg/cpstrnew
+=======
+     write(s,pc.Name,'=');
+>>>>>>> graemeg/cpstrnew
      if pc.IsPacked then write('packed ');
      case pc.ObjKind of
       okObject:write('Object');
       okClass:write('Class');
       okInterface:write('Interface');
+<<<<<<< HEAD
 <<<<<<< HEAD
       okGeneric:write('class');
       okspecialize : write('specialize');
@@ -1673,10 +1754,15 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
           end;
         end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      end;
      if assigned(pc.AncestorType) and (pc.AncestorType.ElementTypeName <> '') then
         write('(',pc.AncestorType.Name,')');
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
      if pc.IsForward or pc.IsShortDefinition then //pparser.pp: 3417 :class(anchestor); is allowed !
       begin
@@ -1684,17 +1770,23 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
        exit;
       end;  
 <<<<<<< HEAD
+<<<<<<< HEAD
     //Members: TFPList;
     //InterfaceGUID: String;
     //ClassVars: TFPList; //is this always empty ?
     //Modifiers: TStringList;
     //Interfaces: TFPList;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     //Members: TList;
     //InterfaceGUID: String;
     //ClassVars: TList; //is this always empty ?
     //Modifiers: TStringList;
     //Interfaces: TList;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       s1:=GetIndent(indent+1);
       s2:=GetIndent(indent+2);
@@ -1702,7 +1794,11 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
        begin
         writeln;
 <<<<<<< HEAD
+<<<<<<< HEAD
         vars:=TFPList.Create;
+=======
+        vars:=TList.Create;
+>>>>>>> graemeg/cpstrnew
 =======
         vars:=TList.Create;
 >>>>>>> graemeg/cpstrnew
@@ -1804,7 +1900,10 @@ procedure GetTypes(pe:TPasElement; lindent:integer);
        end
         else  writeln;//(';'); //x=class(y);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
      writeln(s,'end;');
@@ -1820,7 +1919,11 @@ procedure GetDecls(Decl:TPasDeclarations; indent:integer);
      s:string;
      x:(None,ResStrings,Types,Consts,Classes,Functions,Variables,Properties);
 <<<<<<< HEAD
+<<<<<<< HEAD
      l:TFPList;
+=======
+     l:TList;
+>>>>>>> graemeg/cpstrnew
 =======
      l:TList;
 >>>>>>> graemeg/cpstrnew
@@ -1836,7 +1939,11 @@ begin
  if assigned(Decl)then
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
    l:=TFPList.Create;
+=======
+   l:=TList.Create;
+>>>>>>> graemeg/cpstrnew
 =======
    l:=TList.Create;
 >>>>>>> graemeg/cpstrnew
@@ -1872,7 +1979,11 @@ begin
           x:=ResStrings;
          end;
 <<<<<<< HEAD
+<<<<<<< HEAD
         writeln(s,pe.Name,'=',DelQuot(TPasResString(pe).Expr.GetDeclaration(false)),';'); //too much '''
+=======
+        writeln(s,pe.Name,'=',DelQuot(TPasResString(pe).Value),';'); //too much '''
+>>>>>>> graemeg/cpstrnew
 =======
         writeln(s,pe.Name,'=',DelQuot(TPasResString(pe).Value),';'); //too much '''
 >>>>>>> graemeg/cpstrnew
@@ -2132,7 +2243,11 @@ begin
   try
     try
 <<<<<<< HEAD
+<<<<<<< HEAD
       M := ParseSource(E, cmdl ,TargetOS ,TargetCPU,False);
+=======
+      M := ParseSource(E, cmdl ,TargetOS ,TargetCPU);
+>>>>>>> graemeg/cpstrnew
 =======
       M := ParseSource(E, cmdl ,TargetOS ,TargetCPU);
 >>>>>>> graemeg/cpstrnew
@@ -2144,6 +2259,10 @@ begin
        end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -2195,8 +2314,11 @@ begin
         if not Unformated then writeln;
         GetTPasImplBlock(M.InitializationSection as TPasImplBlock,1,0,false,false);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
       
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if assigned(M.FinalizationSection) then
@@ -2208,6 +2330,10 @@ begin
           GetTPasImplBlock(M.FinalizationSection as TPasImplBlock,1,0,false,false);
          end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+       end;
+>>>>>>> graemeg/cpstrnew
 =======
        end;
 >>>>>>> graemeg/cpstrnew

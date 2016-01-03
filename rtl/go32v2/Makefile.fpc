@@ -6,6 +6,7 @@ main=rtl
 [target]
 loaders=prt0 exceptn fpu
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 extpas strings \
       go32 dpmiexcp initc ports profile dxetype dxeload emu387 \
       dos cmem \
@@ -21,6 +22,10 @@ implicitunits=exeinfo \
 =======
 units=system objpas macpas iso7185 strings \
       go32 dpmiexcp initc ports profile dxetype dxeload emu387 \
+=======
+units=system objpas macpas iso7185 strings \
+      go32 dpmiexcp initc ports profile dxetype dxeload emu387 \
+>>>>>>> graemeg/cpstrnew
       dos crt objects printer cmem \
       sysutils classes math typinfo matrix \
       cpu mmx ucomplex getopts heaptrc lineinfo lnfodwrf ctypes fgl \

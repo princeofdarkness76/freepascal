@@ -44,7 +44,11 @@ Function SearchLabel(const s: string; var hl: tasmlabel;emit:boolean): boolean;
 type
   TOprType=(OPR_NONE,OPR_CONSTANT,OPR_SYMBOL,OPR_LOCAL,
 <<<<<<< HEAD
+<<<<<<< HEAD
             OPR_REFERENCE,OPR_REGISTER,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS,OPR_SPECIALREG);
+=======
+            OPR_REFERENCE,OPR_REGISTER,OPR_REGLIST,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS);
+>>>>>>> graemeg/cpstrnew
 =======
             OPR_REFERENCE,OPR_REGISTER,OPR_REGLIST,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS);
 >>>>>>> graemeg/cpstrnew
@@ -68,11 +72,18 @@ type
 {$endif POWERPC64}
 {$ifdef arm}
 <<<<<<< HEAD
+<<<<<<< HEAD
       OPR_REGSET    : (regset : tcpuregisterset; regtype: tregistertype; subreg: tsubregister; usermode: boolean);
       OPR_SHIFTEROP : (shifterop : tshifterop);
       OPR_COND      : (cc : tasmcond);
       OPR_MODEFLAGS : (flags : tcpumodeflags);
       OPR_SPECIALREG: (specialreg : tregister; specialregflags : tspecialregflags);
+=======
+      OPR_REGSET    : (regset : tcpuregisterset; regtype: tregistertype; subreg: tsubregister);
+      OPR_SHIFTEROP : (shifterop : tshifterop);
+      OPR_COND      : (cc : tasmcond);
+      OPR_MODEFLAGS : (flags : tcpumodeflags);
+>>>>>>> graemeg/cpstrnew
 =======
       OPR_REGSET    : (regset : tcpuregisterset; regtype: tregistertype; subreg: tsubregister);
       OPR_SHIFTEROP : (shifterop : tshifterop);
@@ -1123,12 +1134,15 @@ end;
 {$ifdef ARM}
               OPR_REGSET:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ai.loadregset(i-1,regtype,subreg,regset,usermode);
               OPR_MODEFLAGS:
                 ai.loadmodeflags(i-1,flags);
               OPR_SPECIALREG:
                 ai.loadspecialreg(i-1,specialreg,specialregflags);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                 ai.loadregset(i-1,regtype,subreg,regset);
               OPR_SHIFTEROP:
                 ai.loadshifterop(i-1,shifterop);
@@ -1136,6 +1150,9 @@ end;
                 ai.loadconditioncode(i-1,cc);
               OPR_MODEFLAGS:
                 ai.loadmodeflags(i-1,flags);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endif ARM}
 {$if defined(arm) or defined(aarch64)}

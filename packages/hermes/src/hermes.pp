@@ -35,6 +35,7 @@ unit Hermes;
 {$MODE objfpc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(darwin) and defined(cpui386)}
 { darwin/i386 requires a 16 byte aligned stack, and inserts code for that on
   entry in assembler routines (unless they are declared with "nostackframe").
@@ -57,6 +58,10 @@ unit Hermes;
 
 interface
 
+=======
+interface
+
+>>>>>>> graemeg/cpstrnew
 =======
 interface
 

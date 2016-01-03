@@ -23,8 +23,11 @@ begin
     P.Dependencies.Add('fcl-xml');
     P.Dependencies.Add('fcl-passrc');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Dependencies.Add('fcl-async',[linux,freebsd,netbsd,openbsd,dragonfly]);
     P.Dependencies.Add('rtl-extra');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -78,10 +81,13 @@ begin
           AddUnit('resolve');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
 
     T:=P.Targets.AddUnit('cnetdb.pp',[linux,freebsd,solaris]);
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     P.ExamplePath.Add('examples');

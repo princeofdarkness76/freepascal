@@ -2,7 +2,10 @@
 { %TARGET=go32v2,win32,linux }
 { %NOTE=This test requires an installed Nasm }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %OPT=-Cg- }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

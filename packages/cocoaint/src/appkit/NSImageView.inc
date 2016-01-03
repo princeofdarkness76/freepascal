@@ -43,15 +43,21 @@
   NSImageView = objcclass external (NSControl)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     __ivFlags: record
       case byte of
        0: (_anonbitfield_NSImageView0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __ivFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSImageView0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _unused: 0..((1 shl 26)-1);
         _rejectsMultiFileDrops: 0..1;
@@ -61,7 +67,10 @@
         _allowsCutCopyPaste: 0..1;
         _editable: 0..1;
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

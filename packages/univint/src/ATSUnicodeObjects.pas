@@ -4,7 +4,11 @@
      Contains:   ATSUI object manipulation functions.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
+=======
+     Version:    Quickdraw-262~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    Quickdraw-262~1
 >>>>>>> graemeg/cpstrnew
@@ -24,6 +28,9 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -80,11 +87,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -102,6 +112,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -122,6 +133,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -146,13 +174,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -205,6 +237,9 @@ interface
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
 {$elsec}
+=======
+{$elsec}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -230,6 +265,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endc}
 
@@ -378,7 +416,12 @@ function ATSUCreateStyle( var oStyle: ATSUStyle ): OSStatus; external name '_ATS
  }
 function ATSUCreateAndCopyStyle( iStyle: ATSUStyle; var oStyle: ATSUStyle ): OSStatus; external name '_ATSUCreateAndCopyStyle';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+<<<<<<< HEAD
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -843,9 +886,14 @@ function ATSUStyleIsEmpty( iStyle: ATSUStyle; var oIsClear: Boolean ): OSStatus;
 function ATSUCalculateBaselineDeltas( iStyle: ATSUStyle; iBaselineClass: BslnBaselineClass; oBaselineDeltas: BslnBaselineRecord ): OSStatus; external name '_ATSUCalculateBaselineDeltas';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -1746,12 +1794,17 @@ function ATSUTextDeleted( iTextLayout: ATSUTextLayout; iDeletedRangeStart: UniCh
 function ATSUTextInserted( iTextLayout: ATSUTextLayout; iInsertionLocation: UniCharArrayOffset; iInsertionLength: UniCharCount ): OSStatus; external name '_ATSUTextInserted';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 {$endc} {not TARGET_CPU_64}
 
 {
@@ -1836,7 +1889,12 @@ function ATSUTextMoved( iTextLayout: ATSUTextLayout; iNewLocation: ConstUniCharA
  }
 function ATSUCopyLayoutControls( iSourceTextLayout: ATSUTextLayout; iDestTextLayout: ATSUTextLayout ): OSStatus; external name '_ATSUCopyLayoutControls';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 

@@ -30,7 +30,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_erase(p: pchar; pchangeable: boolean);
+=======
+procedure do_erase(p: pchar);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure do_erase(p: pchar);
 >>>>>>> graemeg/cpstrnew
@@ -41,7 +45,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_rename(p1, p2: pchar; p1changeable, p2changeable: boolean);
+=======
+procedure do_rename(p1, p2: pchar);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure do_rename(p1, p2: pchar);
 >>>>>>> graemeg/cpstrnew
@@ -102,7 +110,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_open(var f; p: pchar; flags: longint; pchangeable: boolean);
+=======
+procedure do_open(var f; p: pchar; flags: longint);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure do_open(var f; p: pchar; flags: longint);
 >>>>>>> graemeg/cpstrnew

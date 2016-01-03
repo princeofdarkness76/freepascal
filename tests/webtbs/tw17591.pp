@@ -5,7 +5,11 @@ uses
  sysutils
 {$ifdef unix}
 <<<<<<< HEAD
+<<<<<<< HEAD
  ,{$ifdef darwin}iosxwstr{$else}cwstring{$endif}
+=======
+ ,cwstring
+>>>>>>> graemeg/cpstrnew
 =======
  ,cwstring
 >>>>>>> graemeg/cpstrnew

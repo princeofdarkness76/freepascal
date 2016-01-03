@@ -2,10 +2,16 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
         <SaveOnlyProjectUnits Value="True"/>
+=======
+    <Version Value="7"/>
+    <General>
+      <Flags>
+>>>>>>> graemeg/cpstrnew
 =======
     <Version Value="7"/>
     <General>
@@ -17,26 +23,37 @@
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Title Value="FPC JSON-RPC demo "/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       <TargetFileExt Value=""/>
       <Title Value="FPC JSON-RPC demo "/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     </General>
     <VersionInfo>
       <Language Value=""/>
       <CharSet Value=""/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
+=======
+      <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
+    </VersionInfo>
+>>>>>>> graemeg/cpstrnew
 =======
       <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
     </VersionInfo>
@@ -81,11 +98,14 @@
   </ProjectOptions>
   <CompilerOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="10"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
     </SearchPaths>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     <Version Value="8"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)/"/>
@@ -95,6 +115,9 @@
         <UseAnsiStrings Value="True"/>
       </SyntaxOptions>
     </Parsing>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <Linking>
       <Debugging>
@@ -103,9 +126,12 @@
     </Linking>
     <Other>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       <CompilerPath Value="$(CompPath)"/>

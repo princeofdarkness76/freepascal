@@ -2,8 +2,13 @@
 // file encoding is cp1251
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   Cp866String = type AnsiString(866);
   Cp1251String = type AnsiString(1251);
+=======
+  Cp866String = string<866>;
+  Cp1251String = string<1251>;
+>>>>>>> graemeg/cpstrnew
 =======
   Cp866String = string<866>;
   Cp1251String = string<1251>;

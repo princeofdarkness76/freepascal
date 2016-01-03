@@ -53,15 +53,21 @@ var
     _printerType: NSString;
     _fileName: NSString;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSColorList2: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSColorList2: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         colorsLoaded: 0..1;
         editable: 0..1;
@@ -76,7 +82,10 @@ var
         _anonbitfield_NSColorList1: 0..((1 shl 32)-1);
         {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

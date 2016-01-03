@@ -3,6 +3,7 @@ uses
   math;
 { tests:
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure DivMod(Dividend: LongInt; Divisor: Word;  var Result, Remainder: Word);
   procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: SmallInt);
   procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
@@ -10,12 +11,17 @@ uses
 }
 procedure doerror(i : LongInt);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   procedure DivMod(Dividend: Integer; Divisor: Word;  var Result, Remainder: Word);
   procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
   procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
   procedure DivMod(Dividend: Integer; Divisor: Integer; var Result, Remainder: Integer);
 }
 procedure doerror(i : integer);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   begin
     writeln('Error: ',i);
@@ -28,7 +34,11 @@ var
   QuotientSmallInt,RemainderSmallInt : SmallInt;
   QuotientDWord,RemainderDWord : DWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
   QuotientLongInt,RemainderLongInt : LongInt;
+=======
+  QuotientInteger,RemainderInteger : Integer;
+>>>>>>> graemeg/cpstrnew
 =======
   QuotientInteger,RemainderInteger : Integer;
 >>>>>>> graemeg/cpstrnew
@@ -59,6 +69,7 @@ begin
     doerror(2004);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   DivMod($ffff,65,QuotientLongInt,RemainderLongInt);
   if QuotientLongInt<>1008 then
     doerror(3001);
@@ -82,6 +93,8 @@ begin
     doerror(3007);
   if RemainderLongInt<>-4 then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   DivMod($ffff,65,QuotientInteger,RemainderInteger);
   if QuotientInteger<>1008 then
     doerror(3001);
@@ -104,6 +117,9 @@ begin
   if QuotientInteger<>1 then
     doerror(3007);
   if RemainderInteger<>-4 then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     doerror(3008);
 	

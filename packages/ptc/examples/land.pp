@@ -271,17 +271,23 @@ end;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
   timer: IPTCTimer;
   key: IPTCKeyEvent;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   format: TPTCFormat = nil;
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   timer: TPTCTimer = nil;
   key: TPTCKeyEvent = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   pixels: PUint32;
   Done: Boolean;
@@ -295,9 +301,12 @@ begin
   try
     try
 <<<<<<< HEAD
+<<<<<<< HEAD
       format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
       console := TPTCConsoleFactory.CreateNew;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       key := TPTCKeyEvent.Create;
       format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
       console := TPTCConsole.Create;
@@ -386,15 +395,21 @@ begin
       until Done;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       console.Free;
       surface.Free;
       timer.Free;
       format.Free;
       key.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

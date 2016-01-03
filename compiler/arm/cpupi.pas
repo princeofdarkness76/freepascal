@@ -91,6 +91,7 @@ unit cpupi;
                 always adjust the frame pointer to point to the first stored
                 register (= last register in list above) -> + 4 }
 <<<<<<< HEAD
+<<<<<<< HEAD
               tg.setfirsttemp(-28-16)
             else
               { on Darwin first r4-r7,r14 are saved, then r7 is adjusted to
@@ -98,10 +99,15 @@ unit cpupi;
                 (r4-r6 and r8,r10,r11) }
               tg.setfirsttemp(-24)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
               tg.setfirsttemp(-28-16+4)
             else
               { on Darwin r9 is not usable -> one less register to save }
               tg.setfirsttemp(-24-16+4)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           end
         else
@@ -153,6 +159,7 @@ unit cpupi;
          r : byte;
          floatsavesize : aword;
          regs: tcpuregisterset;
+<<<<<<< HEAD
       begin
 <<<<<<< HEAD
         if GenerateThumbCode or (pi_estimatestacksize in flags) then
@@ -248,6 +255,8 @@ unit cpupi;
 
 
     procedure tarmprocinfo.init_framepointer;
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         if (target_info.system in systems_darwin) or GenerateThumbCode then
           begin

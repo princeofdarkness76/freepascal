@@ -1,7 +1,11 @@
 {$mode objfpc}
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   ctypes, cl;
+=======
+  cl;
+>>>>>>> graemeg/cpstrnew
 =======
   cl;
 >>>>>>> graemeg/cpstrnew
@@ -25,7 +29,11 @@ var
   i,j,k : Integer;
   buf : array[0..99999] of char;
 <<<<<<< HEAD
+<<<<<<< HEAD
   bufwritten : csize_t;
+=======
+  bufwritten : LongWord;
+>>>>>>> graemeg/cpstrnew
 =======
   bufwritten : LongWord;
 >>>>>>> graemeg/cpstrnew

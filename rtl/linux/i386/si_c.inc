@@ -64,8 +64,13 @@ asm
 
   {$ifdef FPC_PIC}
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl    %esp,%ebp               { Points to the arguments }
         movl    %ecx,%esi               
+=======
+        movl    %esp,_ebx               { Points to the arguments }
+        movl    %ecx,_ecx               
+>>>>>>> graemeg/cpstrnew
 =======
         movl    %esp,_ebx               { Points to the arguments }
         movl    %ecx,_ecx               
@@ -89,22 +94,32 @@ asm
         pushl %eax
         movl  operatingsystem_parameter_argc@GOT(%ebx),%ecx
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl  %esi,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
         movl  %ebp,%eax
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         movl  _ecx,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
         movl  _ebx,%eax
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         movl  %eax,(%ecx)
 	popl  %eax
 
         popl  %ecx
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl  %ebp,%ebx
+=======
+        movl  _ebx,%ebx
+>>>>>>> graemeg/cpstrnew
 =======
         movl  _ebx,%ebx
 >>>>>>> graemeg/cpstrnew
@@ -129,7 +144,12 @@ asm
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
         movl  libc_init_proc@GOT(%ebx),%ecx
 <<<<<<< HEAD
+<<<<<<< HEAD
 	movl  (%ecx),%edi
+=======
+	movl  (%ecx),%ecx
+	movl  %ecx,_libc_init_proc
+>>>>>>> graemeg/cpstrnew
 =======
 	movl  (%ecx),%ecx
 	movl  %ecx,_libc_init_proc
@@ -150,7 +170,11 @@ asm
 
   {$ifdef FPC_PIC}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	call    *%edi
+=======
+	call    _libc_init_proc
+>>>>>>> graemeg/cpstrnew
 =======
 	call    _libc_init_proc
 >>>>>>> graemeg/cpstrnew
@@ -183,8 +207,11 @@ procedure _FPC_libc_haltproc(e: longint); cdecl; assembler; public name '_haltpr
 asm
 .Lhaltproc:
 <<<<<<< HEAD
+<<<<<<< HEAD
   pushl   e
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
  {$ifdef FPC_PIC}
   call    fpc_geteipasebx
@@ -205,6 +232,9 @@ asm
 
   pushl   %ebx
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   call    libc_exit
   xorl    %eax,%eax

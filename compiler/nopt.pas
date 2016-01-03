@@ -350,8 +350,11 @@ begin
         para:=ccallparanode.create(
                 cordconstnode.create(
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { don't use getparaencoding(), we have to know
                     when the result is rawbytestring }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                   tstringdef(p.resultdef).encoding,
@@ -372,6 +375,7 @@ begin
       tempnode:=ctempcreatenode.create(p.resultdef,p.resultdef.size,tt_persistent ,true);
       addstatement(newstatement,tempnode);
 <<<<<<< HEAD
+<<<<<<< HEAD
       { initialize the temp, since it will be passed to a
         var-parameter (and finalization, which is performed by the
         ttempcreate node and which takes care of the initialization
@@ -384,6 +388,8 @@ begin
             ccallparanode.create(ctemprefnode.create(tempnode),nil))));
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       para:=ccallparanode.create(
               arrp,
               ccallparanode.create(ctemprefnode.create(tempnode),nil)
@@ -392,8 +398,11 @@ begin
         para:=ccallparanode.create(
                 cordconstnode.create(
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { don't use getparaencoding(), we have to know
                     when the result is rawbytestring }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                   tstringdef(p.resultdef).encoding,

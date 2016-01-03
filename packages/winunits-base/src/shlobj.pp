@@ -27,7 +27,11 @@ uses
 
 Const 
 <<<<<<< HEAD
+<<<<<<< HEAD
    IID_IShellExtInit   : TGUID ='{000214E8-0000-0000-C000-000000000046}';
+=======
+   IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
+>>>>>>> graemeg/cpstrnew
 =======
    IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
 >>>>>>> graemeg/cpstrnew
@@ -922,6 +926,7 @@ Const
   FOS_DEFAULTNOMINIMODE	  = $20000000;
   FOS_FORCEPREVIEWPANEON  = $40000000;
 <<<<<<< HEAD
+<<<<<<< HEAD
   SHGFP_TYPE_CURRENT      =  0;   // shgetfolderpath, current value for user, verify it exists
   SHGFP_TYPE_DEFAULT  	  =  1;   // shgetfolderpath, default value, may not exist
    
@@ -979,6 +984,9 @@ Const
   SFGAO_CONTENTSMASK      = $80000000;
   SFGAO_PKEYSFGAOMASK     = $81044000;
 
+=======
+   
+>>>>>>> graemeg/cpstrnew
 =======
    
 >>>>>>> graemeg/cpstrnew
@@ -2543,6 +2551,7 @@ type
 
     IShellExtInit = Interface(IUnknown)
 <<<<<<< HEAD
+<<<<<<< HEAD
          ['{000214E8-0000-0000-C000-000000000046}']
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
@@ -2553,10 +2562,15 @@ type
          end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           [IID_IShellExtInit]
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function SHGetMalloc(out ppmalloc: IMalloc):HResult;StdCall; external 'shell32' name 'SHGetMalloc';
 function SHGetDesktopFolder(out ppshf:IShellFolder):HResult;StdCall; external 'shell32' name 'SHGetDesktopFolder';

@@ -18,8 +18,13 @@ const
   HIDP_STATE_CONNECTING = $02;
   HIDP_STATE_CONNECTED = $04;
 <<<<<<< HEAD
+<<<<<<< HEAD
   HIDP_CONTROL_CHANNEL = $11;
   HIDP_DATA_CHANNEL = $13;
+=======
+  HIDP_OUTPUT_CHANNEL = $11;
+  HIDP_INPUT_CHANNEL = $13;
+>>>>>>> graemeg/cpstrnew
 =======
   HIDP_OUTPUT_CHANNEL = $11;
   HIDP_INPUT_CHANNEL = $13;
@@ -103,8 +108,13 @@ type
     cmdq : lwpq_t;
     bdaddr : _bd_addr;
 <<<<<<< HEAD
+<<<<<<< HEAD
     ctl_pcb : Pl2cap_pcb;
     data_pcb : Pl2cap_pcb;
+=======
+    out_pcb : Pl2cap_pcb;
+    in_pcb : Pl2cap_pcb;
+>>>>>>> graemeg/cpstrnew
 =======
     out_pcb : Pl2cap_pcb;
     in_pcb : Pl2cap_pcb;
@@ -132,8 +142,11 @@ function BTE_ReadStoredLinkKey(keys: Plinkkey_info; max_cnt: cuint8;
   cb: btecallback): cint32; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function BTE_ReadBdAddr(bdaddr: P_bd_addr; cb: btecallback): cint32; cdecl; external;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 type

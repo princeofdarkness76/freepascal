@@ -31,6 +31,7 @@ program tcalvar6;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { On linux/i386 and linux/x86-64 afecall is the same as cdecl, so it does not       }
 { support all parameter types.                                      }
 {$if ((defined(linux) or defined(android)) and (defined(cpui386) or defined(cpux86_64)))}
@@ -44,11 +45,16 @@ program tcalvar6;
   {$define cpusmall}
 {$endif}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { On linux/i386 safecall is the same as cdecl, so it does not       }
 { support all parameter types.                                      }
 {$if (defined(linux) and defined(cpui386))}
   {$define safecall_is_cdecl}
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
  { REAL should map to single or double }

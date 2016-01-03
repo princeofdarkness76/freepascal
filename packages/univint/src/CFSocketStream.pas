@@ -9,6 +9,7 @@
 				 the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 					 http://bugs.freepascal.org
  
 }
@@ -18,12 +19,17 @@
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated: Jonas Maebe <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 					 http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -80,11 +86,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -106,11 +115,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -123,11 +138,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -140,7 +161,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -153,7 +177,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -163,6 +190,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -174,6 +202,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -185,6 +218,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -201,14 +235,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -262,6 +303,7 @@ uses MacTypes,CFStream,CFBase,CFHost,CFNetServices;
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  kCFStreamPropertySSLContext 
  *
  * The SSLContextRef used for both read and write operations on a
@@ -295,12 +337,15 @@ var kCFStreamPropertySSLContext: CFStringRef; external name '_kCFStreamPropertyS
 (* __OSX_AVAILABLE_STARTING(__MAC_10_9, __IPHONE_5_0) *)
 
 {
+=======
+>>>>>>> graemeg/cpstrnew
  *  kCFStreamPropertySSLPeerTrust
  *  
  *  Discussion:
  *	Stream property value for copy operations.  Returns a SecTrustRef
  *	which was a result of the SSL handshake.  This property is not valid before
  *  a stream is opened.  See Security/SecTrust.h for more information.
+<<<<<<< HEAD
  *  
  }
 var kCFStreamPropertySSLPeerTrust: CFStringRef; external name '_kCFStreamPropertySSLPeerTrust'; (* attribute const *)
@@ -377,6 +422,14 @@ var kCFStreamPropertySSLPeerTrust: CFStringRef; external name '_kCFStreamPropert
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0) *)
 
 {
+=======
+ *  
+ }
+var kCFStreamPropertySSLPeerTrust: CFStringRef; external name '_kCFStreamPropertySSLPeerTrust'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0) *)
+
+{
+>>>>>>> graemeg/cpstrnew
  *  kCFStreamSSLValidatesCertificateChain
  *  
  *  Discussion:
@@ -384,6 +437,9 @@ var kCFStreamPropertySSLPeerTrust: CFStringRef; external name '_kCFStreamPropert
  *	CFBooleanRef indicating whether the certificate chain should be
  *	validated or not.  The value is kCFBooleanTrue by default (not
  *	set).
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
@@ -391,6 +447,7 @@ var kCFStreamPropertySSLPeerTrust: CFStringRef; external name '_kCFStreamPropert
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var kCFStreamSSLPeerName: CFStringRef; external name '_kCFStreamSSLPeerName'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
@@ -403,6 +460,17 @@ var kCFStreamSSLPeerName: CFStringRef; external name '_kCFStreamSSLPeerName'; (*
  *	CFArrayRef of SecCertificateRefs, except for index [0], which is
  *	a SecIdentityRef.  See SSLSetCertificate in
  *	Security/SecureTransport.h for more information.
+=======
+var kCFStreamSSLValidatesCertificateChain: CFStringRef; external name '_kCFStreamSSLValidatesCertificateChain'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
+	
+{
+ *  kCFStreamPropertySSLSettings
+ *  
+ *  Discussion:
+ *	Stream property key for set operations.  CFDictionaryRef filled
+ *	with different security settings.  By default, there are no
+ *	security settings.
 =======
 var kCFStreamSSLValidatesCertificateChain: CFStringRef; external name '_kCFStreamSSLValidatesCertificateChain'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
@@ -437,6 +505,39 @@ var kCFStreamPropertySSLSettings: CFStringRef; external name '_kCFStreamProperty
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
+var kCFStreamPropertySSLSettings: CFStringRef; external name '_kCFStreamPropertySSLSettings'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
+
+{
+ *  kCFStreamSSLLevel
+ *  
+ *  Discussion:
+ *	Security property key for kCFStreamPropertySSLSettings. 
+ *	CFStringRef being one of the security levels.  The value is
+ *	kCFStreamSocketSecurityLevelNegotiatedSSL by default (not set).
+>>>>>>> graemeg/cpstrnew
+=======
+var kCFStreamSSLLevel: CFStringRef; external name '_kCFStreamSSLLevel'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
+
+{
+ *  kCFStreamSSLPeerName
+ *  
+ *  Discussion:
+ *	Security property key for kCFStreamPropertySSLSettings. 
+ *	CFStringRef overriding the name used for certificate
+ *	verification.  Set to kCFNull to prevent name verification. 
+ *	Default is the host name with which the streams were created.  If
+ *	no host name was used, no peer name will be used.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *	Mac OS X:		 in version 10.4 and later in CoreServices.framework
+ *	CarbonLib:		not available
+ *	Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var kCFStreamSSLCertificates: CFStringRef; external name '_kCFStreamSSLCertificates'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
@@ -464,30 +565,6 @@ var kCFStreamSSLLevel: CFStringRef; external name '_kCFStreamSSLLevel'; (* attri
  *	Default is the host name with which the streams were created.  If
  *	no host name was used, no peer name will be used.
 >>>>>>> graemeg/cpstrnew
- *  
- *  Availability:
- *	Mac OS X:		 in version 10.4 and later in CoreServices.framework
- *	CarbonLib:		not available
- *	Non-Carbon CFM:   not available
- }
-<<<<<<< HEAD
-var kCFStreamSSLIsServer: CFStringRef; external name '_kCFStreamSSLIsServer'; (* attribute const *)
-(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
-
-	
-{
- * The following properties are considered deprecated in Mac OS 10.6 and later.
- *
- * kCFStreamPropertySSLPeerCertificates: 
- *			The peer certificates are available as part of the SecTrustRef object.  See <Security/SecTrust.h>
- *
- * kCFStreamSSLAllowsExpiredCertificates:
- * kCFStreamSSLAllowsExpiredRoots:
- * kCFStreamSSLAllowsAnyRoot: 
- *			The SSL handshake flags which affect untrusted certificate chain evaluation are deprecated.
- *			Instead, use the single property kCFStreamSSLValidatesCertificateChain to disable certificate
- *			chain checking if the user has decided that it is appropriate to do so.
- }
 =======
 var kCFStreamSSLPeerName: CFStringRef; external name '_kCFStreamSSLPeerName'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
@@ -506,6 +583,77 @@ var kCFStreamSSLPeerName: CFStringRef; external name '_kCFStreamSSLPeerName'; (*
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
  }
+var kCFStreamSSLCertificates: CFStringRef; external name '_kCFStreamSSLCertificates'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
+
+{
+ *  kCFStreamSSLIsServer
+ *  
+ *  Discussion:
+ *	Security property key for kCFStreamPropertySSLSettings. 
+ *	CFBooleanRef indicating whether the connection is to act as a
+ *	server in the SSL process or not.  The value is kCFBooleanFalse
+ *	by default (not set).  If set to kCFBooleanTrue, there must be a
+ *	valid value for the kCFStreamSSLCertificates key too.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *	Mac OS X:		 in version 10.4 and later in CoreServices.framework
+ *	CarbonLib:		not available
+ *	Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+var kCFStreamSSLIsServer: CFStringRef; external name '_kCFStreamSSLIsServer'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
+
+	
+{
+ * The following properties are considered deprecated in Mac OS 10.6 and later.
+ *
+ * kCFStreamPropertySSLPeerCertificates: 
+ *			The peer certificates are available as part of the SecTrustRef object.  See <Security/SecTrust.h>
+ *
+ * kCFStreamSSLAllowsExpiredCertificates:
+ * kCFStreamSSLAllowsExpiredRoots:
+ * kCFStreamSSLAllowsAnyRoot: 
+ *			The SSL handshake flags which affect untrusted certificate chain evaluation are deprecated.
+ *			Instead, use the single property kCFStreamSSLValidatesCertificateChain to disable certificate
+ *			chain checking if the user has decided that it is appropriate to do so.
+ }
+<<<<<<< HEAD
+=======
+var kCFStreamSSLPeerName: CFStringRef; external name '_kCFStreamSSLPeerName'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
+{
+<<<<<<< HEAD
+ *  kCFStreamSSLCertificates
+ *  
+ *  Discussion:
+ *	Security property key for kCFStreamPropertySSLSettings. 
+ *	CFArrayRef of SecCertificateRefs, except for index [0], which is
+ *	a SecIdentityRef.  See SSLSetCertificate in
+=======
+ *  kCFStreamPropertySSLPeerCertificates
+ *  
+ *  Discussion:
+ *	Stream property key for copy operations.  CFArrayRef containing
+ *	SecCertificateRefs. See SSLGetPeerCertificates in
+>>>>>>> graemeg/cpstrnew
+ *	Security/SecureTransport.h for more information.
+ *  
+ *  Availability:
+ *	Mac OS X:		 in version 10.4 and later in CoreServices.framework
+ *	CarbonLib:		not available
+ *	Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
 var kCFStreamSSLCertificates: CFStringRef; external name '_kCFStreamSSLCertificates'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0) *)
 >>>>>>> graemeg/cpstrnew
@@ -557,10 +705,17 @@ var kCFStreamSSLIsServer: CFStringRef; external name '_kCFStreamSSLIsServer'; (*
  *			chain checking if the user has decided that it is appropriate to do so.
  }
 >>>>>>> graemeg/cpstrnew
+=======
+var kCFStreamPropertySSLPeerCertificates: CFStringRef; external name '_kCFStreamPropertySSLPeerCertificates'; (* attribute const *)
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
  *  kCFStreamSSLAllowsExpiredCertificates
  *  
  *  Discussion:
@@ -568,6 +723,7 @@ var kCFStreamSSLIsServer: CFStringRef; external name '_kCFStreamSSLIsServer'; (*
  *	CFBooleanRef indicating whether expired certificates should be
  *	allowed or not.  The value is kCFBooleanFalse by default (not
  *	set).
+<<<<<<< HEAD
 =======
  *  kCFStreamPropertySSLPeerCertificates
  *  
@@ -576,12 +732,15 @@ var kCFStreamSSLIsServer: CFStringRef; external name '_kCFStreamSSLIsServer'; (*
  *	SecCertificateRefs. See SSLGetPeerCertificates in
  *	Security/SecureTransport.h for more information.
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *	Mac OS X:		 in version 10.4 and later in CoreServices.framework
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var kCFStreamSSLAllowsExpiredCertificates: CFStringRef; external name '_kCFStreamSSLAllowsExpiredCertificates'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
@@ -620,6 +779,34 @@ var kCFStreamPropertySSLPeerCertificates: CFStringRef; external name '_kCFStream
  *	Security property key for kCFStreamPropertySSLSettings. 
  *	CFBooleanRef indicating whether expired certificates should be
 >>>>>>> graemeg/cpstrnew
+=======
+var kCFStreamSSLAllowsExpiredCertificates: CFStringRef; external name '_kCFStreamSSLAllowsExpiredCertificates'; (* attribute const *)
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+
+{
+ *  kCFStreamSSLAllowsExpiredRoots
+ *  
+ *  Discussion:
+ *	Security property key for kCFStreamPropertySSLSettings. 
+ *	CFBooleanRef indicating whether expired root certificates should
+ *	be allowed or not.  The value is kCFBooleanFalse by default (not
+ *	set).
+ *  
+ *  Availability:
+ *	Mac OS X:		 in version 10.4 and later in CoreServices.framework
+ *	CarbonLib:		not available
+ *	Non-Carbon CFM:   not available
+ }
+var kCFStreamSSLAllowsExpiredRoots: CFStringRef; external name '_kCFStreamSSLAllowsExpiredRoots'; (* attribute const *)
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+
+{
+ *  kCFStreamSSLAllowsAnyRoot
+ *  
+ *  Discussion:
+ *	Security property key for kCFStreamPropertySSLSettings. 
+ *	CFBooleanRef indicating whether any root certificates should be
+>>>>>>> graemeg/cpstrnew
  *	allowed or not.  The value is kCFBooleanFalse by default (not
  *	set).
  *  
@@ -628,6 +815,7 @@ var kCFStreamPropertySSLPeerCertificates: CFStringRef; external name '_kCFStream
  *	CarbonLib:		not available
  *	Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 var kCFStreamSSLAllowsAnyRoot: CFStringRef; external name '_kCFStreamSSLAllowsAnyRoot'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
@@ -720,6 +908,12 @@ var kCFStreamSSLAllowsAnyRoot: CFStringRef; external name '_kCFStreamSSLAllowsAn
 {$endc} {TARGET_OS_MAC}
 >>>>>>> graemeg/cpstrnew
 
+=======
+var kCFStreamSSLAllowsAnyRoot: CFStringRef; external name '_kCFStreamSSLAllowsAnyRoot'; (* attribute const *)
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+{$endc} {TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 {
  *  kCFStreamErrorDomainWinSock
  *  
@@ -951,6 +1145,7 @@ var kCFStreamErrorDomainSSL: SInt32; external name '_kCFStreamErrorDomainSSL'; (
  }
 var kCFStreamPropertySocketSecurityLevel: CFStringRef; external name '_kCFStreamPropertySocketSecurityLevel'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {
  *  kCFStreamSocketSecurityLevelNone
@@ -1010,6 +1205,8 @@ var kCFStreamSocketSecurityLevelTLSv1: CFStringRef; external name '_kCFStreamSoc
 
 {
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  *  kCFStreamSocketSecurityLevelNone
@@ -1068,6 +1265,9 @@ var kCFStreamSocketSecurityLevelSSLv3: CFStringRef; external name '_kCFStreamSoc
 var kCFStreamSocketSecurityLevelTLSv1: CFStringRef; external name '_kCFStreamSocketSecurityLevelTLSv1'; (* attribute const *)
 
 {
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *  kCFStreamSocketSecurityLevelNegotiatedSSL
  *  

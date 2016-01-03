@@ -70,15 +70,21 @@ var
     _menuItemRep: NSMenuItem;
     _tag: NSInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tbiFlags: record
       case byte of
        0: (_anonbitfield_NSToolbarItem0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __tbiFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSToolbarItem0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         viewRespondsToIsEnabled: 0..1;
         viewRespondsToSetEnabled: 0..1;
@@ -106,7 +112,10 @@ var
         stateWasDisabledBeforeSheet: 0..1;
         RESERVED: 0..((1 shl 8)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

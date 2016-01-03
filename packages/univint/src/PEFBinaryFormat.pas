@@ -5,9 +5,12 @@
                  The contents of this header file are deprecated.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1993-2011 by Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved.
@@ -19,6 +22,9 @@
  
 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -75,11 +81,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -98,6 +107,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -106,12 +116,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -130,6 +149,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -141,13 +165,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -199,6 +227,8 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -225,6 +255,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endc}
 
@@ -270,6 +303,7 @@ interface
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -277,6 +311,11 @@ uses MacTypes;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -355,8 +394,13 @@ const
 	kPEFTag1 = FourCharCode('Joy!'); { For non-Apple compilers: 0x4A6F7921.}
 	kPEFTag2 = FourCharCode('peff'); { For non-Apple compilers: 0x70656666.}
 	kPEFVersion = $00000001;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 const
 	kPEFFirstSectionHeaderOffset = SizeOf(PEFContainerHeader);
 (*
@@ -570,6 +614,7 @@ const
 	kPEFWeakImportLibMask = $40; { The imported library is allowed to be missing.}
 	kPEFInitLibBeforeMask = $80;  { The imported library must be initialized first.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -579,10 +624,17 @@ const
 { ---------------- }
 
 <<<<<<< HEAD
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 { =========================================================================================== }
 { Imported Symbols }
 { ---------------- }
 
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -753,6 +805,7 @@ type
 {      | symbol class  | offset of symbol name in loader string table  |                       }
 {      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                       }
 {      |<-- 8 bits --->|<-- 24 bits ---------------------------------->|                       }
+<<<<<<< HEAD
 
 
 const
@@ -779,6 +832,33 @@ const
 (*
 #define PEFExportedSymbolClass(classAndName)        ((UInt8) ((classAndName) >> kPEFExpSymClassShift))
 #define PEFExportedSymbolNameOffset(classAndName)   ((classAndName) & kPEFExpSymNameOffsetMask)
+=======
+>>>>>>> graemeg/cpstrnew
+
+#define PEFComposeExportedSymbol(class,nameOffset)      \
+            ( ( ((UInt32)(class)) << kPEFExpSymClassShift ) | ( (UInt32)(nameOffset) ) )
+*)
+
+const
+<<<<<<< HEAD
+{ Negative section indices indicate pseudo-sections.}
+	kPEFAbsoluteExport = -2;   { The symbol value is an absolute address.}
+	kPEFReexportedImport = -3;    { The symbol value is the index of a reexported import.}
+>>>>>>> graemeg/cpstrnew
+
+{ =========================================================================================== }
+{ Loader Relocations }
+{ ================== }
+
+<<<<<<< HEAD
+=======
+	kPEFExpSymClassShift = 24;
+	kPEFExpSymNameOffsetMask = $00FFFFFF;
+	kPEFExpSymMaxNameOffset = $00FFFFFF; { 16,777,215}
+
+(*
+#define PEFExportedSymbolClass(classAndName)        ((UInt8) ((classAndName) >> kPEFExpSymClassShift))
+#define PEFExportedSymbolNameOffset(classAndName)   ((classAndName) & kPEFExpSymNameOffsetMask)
 
 #define PEFComposeExportedSymbol(class,nameOffset)      \
             ( ( ((UInt32)(class)) << kPEFExpSymClassShift ) | ( (UInt32)(nameOffset) ) )
@@ -790,12 +870,14 @@ const
 	kPEFReexportedImport = -3;    { The symbol value is the index of a reexported import.}
 >>>>>>> graemeg/cpstrnew
 
+=======
 { =========================================================================================== }
 { Loader Relocations }
 { ================== }
 
 <<<<<<< HEAD
 
+>>>>>>> graemeg/cpstrnew
 =======
 { =========================================================================================== }
 { Loader Relocations }
@@ -983,11 +1065,15 @@ const
             ( 0x0000 | (((UInt16)(skipCount)) << 6) | ((UInt16)(relocCount)) )
 *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 { =========================================================================================== }
 { RelocRun Group (CODE, DATA, DESC, DSC2, VTBL, SYMR) }
 { --------------------------------------------------- }
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 { =========================================================================================== }
@@ -1087,6 +1173,8 @@ const
 
 #define PEFRelocComposeSmIndex(subopcode,index) \
             ( 0x6000 | (((UInt16)(subopcode)) << 9) | ((UInt16)(index)) )
+=======
+>>>>>>> graemeg/cpstrnew
 
 #define PEFRelocComposeSmByImport(index)    PEFRelocComposeSmIndex ( 0, (index) )
 #define PEFRelocComposeSmSetSectC(index)    PEFRelocComposeSmIndex ( 1, (index) )
@@ -1094,6 +1182,71 @@ const
 #define PEFRelocComposeSmBySection(index)   PEFRelocComposeSmIndex ( 3, (index) )
 *)
 
+<<<<<<< HEAD
+=======
+{ -------------------------------------------------------------------------------------------- }
+{ The "RelocRun" group includes the "RelocBySectC" (CODE), "RelocBySectD" (DATA),              }
+{ "RelocTVector12" (DESC), "RelocTVector8" (DSC2), "RelocVTable8" (VTBL), and                  }
+{ "RelocImportRun" (SYMR) instructions.  This group has the following bit field layout.        }
+{                                     1                                                        }
+{       0   2 3     6 7               5                                                        }
+{      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                                                       }
+{      |0 1 0| subop.| run length      |                                                       }
+{      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                                                       }
+{      |  3  |<- 4 ->|<-- 9 bits ----->|                                                       }
+{ ! Note that the stored run length is the actual value minus 1, but the macros deal with the  }
+{ ! actual value!                                                                              }
+
+const
+	kPEFRelocRunMaxRunLength = 512;
+(*
+#define PEFRelocRunSubopcode(chunk) PEFRelocField ( (chunk), 3, 4 )
+#define PEFRelocRunRunLength(chunk) (PEFRelocField ( (chunk), 7, 9 ) + 1)
+
+#define PEFRelocComposeRun(subopcode,runLength) \
+            ( 0x4000 | (((UInt16)(subopcode)) << 9) | ((UInt16)((runLength)-1)) )
+
+#define PEFRelocComposeBySectC(runLength)       PEFRelocComposeRun ( 0, (runLength) )
+#define PEFRelocComposeBySectD(runLength)       PEFRelocComposeRun ( 1, (runLength) )
+#define PEFRelocComposeTVector12(runLength)     PEFRelocComposeRun ( 2, (runLength) )
+#define PEFRelocComposeTVector8(runLength)      PEFRelocComposeRun ( 3, (runLength) )
+#define PEFRelocComposeVTable8(runLength)       PEFRelocComposeRun ( 4, (runLength) )
+#define PEFRelocComposeImportRun(runLength)     PEFRelocComposeRun ( 5, (runLength) )
+*)
+
+{ =========================================================================================== }
+{ RelocSmIndex Group (SYMB, CDIS, DTIS, SECN) }
+{ ------------------------------------------- }
+
+
+{ -------------------------------------------------------------------------------------------- }
+{ The "RelocSmIndex" group includes the "RelocSmByImport" (SYMB), "RelocSmSetSectC" (CDIS),    }
+{ "RelocSmSetSectD" (DTIS) and "RelocSmBySection" (SECN) instructions.  This group has the     }
+{ following bit field layout.                                                                  }
+{                                     1                                                        }
+{       0   2 3     6 7               5                                                        }
+{      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                                                       }
+{      |0 1 1| subop.| index           |                                                       }
+{      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                                                       }
+{      |  3  |<- 4 ->|<-- 9 bits ----->|                                                       }
+{ ! Note that the stored index is the actual value!                                            }
+
+const
+	kPEFRelocSmIndexMaxIndex = 511;
+(*
+#define PEFRelocSmIndexSubopcode(chunk) PEFRelocField ( (chunk), 3, 4 )
+#define PEFRelocSmIndexIndex(chunk)     PEFRelocField ( (chunk), 7, 9 )
+
+#define PEFRelocComposeSmIndex(subopcode,index) \
+            ( 0x6000 | (((UInt16)(subopcode)) << 9) | ((UInt16)(index)) )
+
+#define PEFRelocComposeSmByImport(index)    PEFRelocComposeSmIndex ( 0, (index) )
+#define PEFRelocComposeSmSetSectC(index)    PEFRelocComposeSmIndex ( 1, (index) )
+#define PEFRelocComposeSmSetSectD(index)    PEFRelocComposeSmIndex ( 2, (index) )
+#define PEFRelocComposeSmBySection(index)   PEFRelocComposeSmIndex ( 3, (index) )
+*)
+
+>>>>>>> graemeg/cpstrnew
 { =========================================================================================== }
 { RelocIncrPosition Instruction (DELT) }
 { ------------------------------------ }
@@ -1115,6 +1268,7 @@ const
 
 (*
 #define PEFRelocIncrPositionOffset(chunk)   (PEFRelocField ( (chunk), 4, 12 ) + 1)
+<<<<<<< HEAD
 
 #define PEFRelocComposeIncrPosition(offset) \
             ( 0x8000 | ((UInt16)((offset)-1)) )
@@ -1139,6 +1293,17 @@ const
 
 =======
 
+=======
+
+#define PEFRelocComposeIncrPosition(offset) \
+            ( 0x8000 | ((UInt16)((offset)-1)) )
+*)
+
+{ =========================================================================================== }
+{ RelocSmRepeat Instruction (RPT) }
+{ ------------------------------- }
+
+>>>>>>> graemeg/cpstrnew
 
 { -------------------------------------------------------------------------------------------- }
 { The "RelocSmRepeat" (RPT) instruction has the following bit field layout.                    }
@@ -1151,6 +1316,9 @@ const
 { ! Note that the stored chunk count and repeat count are the actual values minus 1, but the   }
 { ! macros deal with the actual values!                                                        }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 const
 	kPEFRelocSmRepeatMaxChunkCount = 16;
@@ -1179,6 +1347,7 @@ const
 {      |<-- 6 ---->|<-- 10 bits ------>|   |<-- 16 bits ------------------>|                   }
 { ! Note that the stored offset is the actual value!                                           }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const
 	kPEFRelocSetPosMaxOffset = $03FFFFFF; { 67,108,863}
@@ -1197,6 +1366,9 @@ const
 
 =======
 
+=======
+
+>>>>>>> graemeg/cpstrnew
 const
 	kPEFRelocSetPosMaxOffset = $03FFFFFF; { 67,108,863}
 
@@ -1212,6 +1384,9 @@ const
             ( (UInt16) ((UInt32)(fullOffset) & 0xFFFF) )
 *)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 { =========================================================================================== }
 { RelocLgByImport Instruction (LSYM) }
@@ -1262,6 +1437,7 @@ const
 const
 	kPEFRelocLgRepeatMaxChunkCount = 16;
 	kPEFRelocLgRepeatMaxRepeatCount = $003FFFFF; { 4,194,303}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 (*
@@ -1790,6 +1966,515 @@ type
 {$endc}  {IncludePEF2Declarations}
 
 =======
+
+{ -------------------------------------------------------------------------------------------- }
+{ The "RelocLgSetOrBySection" (LSEC) instruction is a group including the "RelocLgBySection",  }
+{ "RelocLgSetSectC" and "RelocLgSetSectD" instructions.  This group has the following bit      }
+{ field layout.                                                                                }
+{                           1         1                                   1                    }
+{       0         5 6     9 0         5     0                             5                    }
+{      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                   }
+{      |1 0 1 1 0 1| subop | idx (high)|   | index (low)                   |                   }
+{      +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+                   }
+{      |<--  6 --->|<- 4 ->|<--  6 --->|   |<-- 16 bits ------------------>|                   }
+{ ! Note that the stored index is the actual value!                                            }
+
+const
+	kPEFRelocLgSetOrBySectionMaxIndex = $003FFFFF; { 4,194,303}
+
+(*
+#define PEFRelocLgSetOrBySectionSubopcode(chunk)    PEFRelocField ( (chunk), 6, 4 )
+#define PEFRelocLgSetOrBySectionIndexHigh(chunk)    PEFRelocField ( (chunk), 10, 6 )
+
+#define PEFRelocLgSetOrBySectionFullIndex(firstChunk,secondChunk)   \
+            ( ((((UInt32)(firstChunk)) & 0x003F) << 16) | ((UInt32)(secondChunk)) )
+
+#define PEFRelocComposeLgSetOrBySection_1st(subopcode,fullIndex)    \
+            ( 0xB400 | (((UInt16)(subopcode)) << 6) | ((UInt16) (((UInt32)(fullIndex)) >> 16) ) )
+#define PEFRelocComposeLgSetOrBySection_2nd(subopcode,fullIndex)    \
+            ( (UInt16) ((UInt32)(fullIndex) & 0xFFFF) )
+
+#define PEFRelocComposeLgBySection(fullIndex)   PEFRelocComposeLgSetOrBySection ( 0x00, (fullIndex) )
+#define PEFRelocComposeLgSetSectC(fullIndex)    PEFRelocComposeLgSetOrBySection ( 0x01, (fullIndex) )
+#define PEFRelocComposeLgSetSectD(fullIndex)    PEFRelocComposeLgSetOrBySection ( 0x02, (fullIndex) )
+*)
+
+{ ======================================================================================== }
+{ ======================================================================================== }
+
+
+{ ======================================================================================== }
+{ Vector Library Declarations }
+{ =========================== }
+
+
+{ -------------------------------------------------------------------------------------------- }
+{ Mac OS X has special "vector" and "bridge" libraries to allow CFM managed clients to import  }
+{ from the dyld managed implementation libraries.  The vector libraries are typically embedded }
+{ within their respective implementation libraries.  Even if standalone, the vector libraries  }
+{ are themselves normal dyld managed libraries.  The vector libraries contain an export symbol }
+{ table and pointers to the actual implementations.  For functions, these pointers serve as    }
+{ the PMacCG TVectors.  Because the dyld libraries are not part of the CFM search, we need a   }
+{ separate library for CFM to find that then indicates where the vector library is.  These are }
+{ the bridge libraries.  They are tiny, just the container header and container strings parts. }
+{ Since the vector library is embedded in a Mach-O dylib, we use dyld services to obtain the   }
+{ base address for the main portion and the exported symbol portion.  The binding pointers are }
+{ found through offsets in the exported symbol records.                                        }
+{      +-----------------------------------+           <-- containerOrigin ------------+       }
+{      |       Container Header            |   76 bytes                                |       }
+{      |-----------------------------------|           <-- + containerStringsOffset ---|       }
+{      |       Container Strings           |                                           |       }
+{      |-----------------------------------|           <-- + exportHashOffset ---------+       }
+{      |       Export Hash Slot 0          |   4 bytes each                            |       }
+{      |...................................|                                           |       }
+{      |           - - -                   |                                           |       }
+{      |...................................|                                           |       }
+{      |       Export Hash Slot h-1        |                                           |       }
+{      |-----------------------------------|           <-- + exportKeyOffset ----------+       }
+{      |       Export Symbol Key 0         |   4 bytes each                            |       }
+{      |...................................|   Order must match the exported symbols   |       }
+{      |           - - -                   |                                           |       }
+{      |...................................|                                           |       }
+{      |       Export Symbol Key e-1       |                                           |       }
+{      |-----------------------------------|           <-- + exportNamesOffset --------+       }
+{      |       Export Names                |                                           |       }
+{      |-----------------------------------|                                           |       }
+{                                              (Disjoint parts)                        |       }
+{      |-----------------------------------|           <-- + exportSymbolOffset -------+       }
+{      |       Export Symbol 0             |   8 bytes each                                    }
+{      |...................................|   Order must match the export keys                }
+{      |           - - -                   |                                                   }
+{      |...................................|                                                   }
+{      |       Export Symbol e-1           |                                                   }
+{      +-----------------------------------+                                                   }
+{                                              (Disjoint parts)                                }
+{      |-----------------------------------|                                                   }
+{      |       Binding Pointer 0           |   4 bytes each                                    }
+{      |-----------------------------------|   Possibly disjoint, order does not matter        }
+{      |           - - -                   |                                                   }
+{      |-----------------------------------|                                                   }
+{      |       Binding Pointer e-1         |                                                   }
+{      +-----------------------------------+                                                   }
+
+type
+	XLibContainerHeaderPtr = ^XLibContainerHeader;
+	XLibContainerHeader = record
+{ Structural description fields:}
+
+		tag1: OSType;                   { Must contain 'ðMac'.}
+		tag2: OSType;                   { Must contain 'vLib' or 'bLib'.}
+		currentFormat: UInt32;          { The version of XLib types used to create this container.}
+		containerStringsOffset: UInt32; { Container offset of the container string table.}
+		exportHashOffset: UInt32;       { Offset of the export hash table.}
+		exportKeyOffset: UInt32;        { Offset of the export key table.}
+		exportSymbolOffset: UInt32;     { Offset of the export symbol table.}
+		exportNamesOffset: UInt32;      { Offset of the export names.}
+		exportHashTablePower: UInt32;   { Export hash table size as log 2.  (Log2('h'))}
+		exportedSymbolCount: UInt32;    { Number of exported symbols.  ('e')}
+
+                                              { Fragment description fields:}
+
+		fragNameOffset: UInt32;         { The offset of the fragment name in the container string table.}
+		fragNameLength: UInt32;         { The length of the fragment name in the container string table.}
+		dylibPathOffset: UInt32;        { The offset of the dyld "install name" in the container string table.}
+		dylibPathLength: UInt32;        { The length of the dyld "install name" in the container string table.}
+		cpuFamily: OSType;              { The ISA for code sections.  Constants in CodeFragments.h.}
+		cpuModel: OSType;               { Specific CPU model if applicable.}
+		dateTimeStamp: UInt32;          { Mac format creation stamp.}
+		currentVersion: UInt32;         { Current version number for the code fragment.}
+		oldDefVersion: UInt32;          { Old definition version number for the code fragment.}
+		oldImpVersion: UInt32;          { Old implementation version number for the code fragment.}
+	end;
+const
+	kXLibTag1 = FourCharCode('ðMac'); { For non-Apple compilers: 0xF04D6163.}
+	kVLibTag2 = FourCharCode('VLib'); { For non-Apple compilers: 0x564C6962.}
+	kBLibTag2 = FourCharCode('BLib'); { For non-Apple compilers: 0x424C6962.}
+	kXLibVersion = $00000001;
+
+
+type
+	XLibExportedSymbolHashSlot = PEFExportedSymbolHashSlot;
+	XLibExportedSymbolKey = PEFExportedSymbolKey;
+	XLibExportedSymbolPtr = ^XLibExportedSymbol;
+	XLibExportedSymbol = record
+		classAndName: UInt32;           { A combination of class and name offset.}
+		bpOffset: UInt32;               { Container offset of the export's dyld binding pointer.}
+	end;
+
+
+{ =========================================================================================== }
+
+
+{$ifc not undefined IncludePEF2Declarations and IncludePEF2Declarations}
+
+
+{ ======================================================================================== }
+{ ======================================================================================== }
+
+
+{ ======================================================================================== }
+{ PEF2 Declarations }
+{ ================= }
+
+
+{ -------------------------------------------------------------------------------------------- }
+{ PEF2 is a follow-on to the original PEF, incorporating changes that would break backward     }
+{ compatibility.  The primary motivations for PEF2 are to incorporate new features cleanly, to }
+{ relax some physical limitations, and to provide a more explicit path for future growth.      }
+{ PEF2 is very similar to PEF, it is possible for any PEF container to be mechanically         }
+{ converted to PEF2.  The converse is not necessarily true, containers that use new features   }
+{ of PEF2 might not be convertable to PEF.                                                     }
+{ One difference from PEF is that PEF2 has no implicit ordering, e.g. the section headers do   }
+{ not necessarily immediately follow the container header.  Explicit offsets and lengths are   }
+{ provided for all portions of the container so that tools can continue to parse PEF2 as new   }
+{ versions of it are produced in the future.  The following overall layout is suggested for    }
+{ locality of reference in typical usage with a packed data image:                             }
+{          +-----------------------------------+                                               }
+{          |       Container Header            |                                               }
+{          +-----------------------------------+                                               }
+{          |       Section 0 header            |                                               }
+{          |...................................|                                               }
+{          |           - - - -                 |                                               }
+{          |...................................|                                               }
+{          |       Section n-1 header          |                                               }
+{          +-----------------------------------+                                               }
+{          |       Container String Table      |                                               }
+{          +-----------------------------------+                                               }
+{          |       Loader section contents     |                                               }
+{          +-----------------------------------+                                               }
+{          |       Packed data contents        |                                               }
+{          +-----------------------------------+                                               }
+{          |       Code section contents       |                                               }
+{          +-----------------------------------+                                               }
+{ If unpacked data is used for prebinding with copy-on-write mapping, the unpacked data should }
+{ follow the code section.                                                                     }
+{ Note that the rule regarding instantiated sections preceeding noninstantiated sections only  }
+{ applies to the section headers, not the section contents.  Thus it is perfectly fine for the }
+{ loader section contents to be first.                                                         }
+{ The container string table holds the name of the fragment and the names of the sections.     }
+{ The first 4 bytes of the container string table must be zero and always present.  An offset  }
+{ of zero into the container string table is considered a null name.  Actual names are stored  }
+{ as a PEF-style 32 bit hashword followed by the text of the name.  The encoding of the text   }
+{ is given by the stringEncoding field of the container header.  The hashword is computed from }
+{ the encoded name as a string of bytes.  The length in the hashword is the number of bytes in }
+{ the encoded name, not the number of logical characters.                                      }
+
+
+{ =========================================================================================== }
+{ Container Header }
+{ ================ }
+
+
+type
+	PEF2ContainerHeaderPtr = ^PEF2ContainerHeader;
+	PEF2ContainerHeader = record
+{ Structural fields:}
+		tag1: OSType;                   { Must contain 'Joy!'.}
+		tag2: OSType;                   { Must contain 'PEF '.}
+		currentFormat: UInt32;          { The version of PEF2 used to create this container.}
+		oldestFormat: UInt32;           { Oldest compatible container handler.}
+		containerHeaderSize: UInt32;    { The size of this header in bytes.}
+		containerLength: UInt32;        { The total length of the container in bytes.}
+		checksum: UInt32;               { A checksum for the entire container.}
+		sectionHeadersOffset: UInt32;   { Container offset of the first section header.}
+		sectionHeaderSize: UInt32;      { The size in bytes of each section header.}
+		totalSectionCount: UInt32;      { Total number of section headers.}
+		instSectionCount: UInt32;       { Number of instantiated sections.}
+		loaderSectionIndex: UInt32;     { Index of the section containing runtime loader tables.}
+		containerStringsOffset: UInt32; { Container offset of the container string table.}
+		containerStringsLength: UInt32; { Length in bytes of the container string table.}
+		options: UInt32;                { Array of 32 option bits.}
+		preferredAddress: UInt32;       { Preferred container address, 0xFFFFFFFF indicates no preference.}
+		alignment: UInt8;              { Required container alignment as LOG 2.}
+		stringEncoding: UInt8;         { The encoding for all strings in the container.}
+		reservedA: UInt16;              { Reserved, must be written as zero.}
+		reservedB: UInt32;              { Reserved, must be written as zero.}
+		reservedC: UInt32;              { Reserved, must be written as zero.}
+                                              { Fragment description fields:}
+		nameOffset: UInt32;             { The offset of the name in the container string table.}
+		architecture: OSType;           { The ISA for code sections.  Constants in CodeFragments.h.}
+		dateTimeStamp: UInt32;          { Macintosh format creation/modification stamp.}
+		currentVersion: UInt32;         { Current version number for the code fragment.}
+		oldDefVersion: UInt32;          { Old definition version number for the code fragment.}
+		oldImpVersion: UInt32;          { Old implementation version number for the code fragment.}
+		reservedD: UInt32;              { Reserved, must be written as zero.}
+		reservedE: UInt32;              { Reserved, must be written as zero.}
+	end;
+const
+	kPEF2Tag1 = kPEFTag1;
+	kPEF2Tag2 = FourCharCode('PEF '); { For non-Apple compilers: 0x50656620.}
+	kPEF2CurrentFormat = $00000002; { ! There is no version 0 or 1.}
+	kPEF2OldestHandler = $00000002;
+
+const
+{ Values for the options field.}
+	kPEF2IsReexportLibraryMask = $00000001; { This fragment does nothing but reexport imports.}
+	kPEF2IsGlueLibraryMask = $00000002; { A special form of import library that provides a glue layer.}
+
+const
+{ Values for the stringEncoding field.}
+	kPEF2StringsAreASCII = 0;
+	kPEF2StringsAreUnicode = 1;
+
+
+{ =========================================================================================== }
+{ Section Headers }
+{ =============== }
+
+
+type
+	PEF2SectionHeaderPtr = ^PEF2SectionHeader;
+	PEF2SectionHeader = record
+		nameOffset: UInt32;             { Offset of the name within the container string table.}
+		presumedAddress: UInt32;        { Presumed address, affects relocations.}
+		totalLength: UInt32;            { Fully expanded size in bytes of the section contents.}
+		unpackedLength: UInt32;         { Size in bytes of the "initialized" part of the contents.}
+		containerLength: UInt32;        { Size in bytes of the raw data in the container.}
+		containerOffset: UInt32;        { Offset of section's raw data within the container.}
+		options: UInt32;                { Array of 32 option bits.}
+		shareKind: UInt8;              { Sharing level, if a writeable section.}
+		alignment: UInt8;              { Required alignment, expressed as log 2.}
+		reservedA: UInt16;              { Reserved, must be written as zero.}
+		reservedB: UInt32;              { Reserved, must be written as zero.}
+		reservedC: UInt32;              { Reserved, must be written as zero.}
+	end;
+const
+{ Masks for instantiated section options.}
+                                        { Bits that define the preparation and usage of the section's contents.}
+	kPEF2SectionHasCodeMask = $00000001; { Affects cache flushing operations.}
+	kPEF2SectionIsWriteableMask = $00000002; { Affects MMU access.}
+	kPEF2SectionHasRelocationsMask = $00000004; { The section has runtime relocations.}
+	kPEF2SectionContentsArePackedMask = $00000100; { The raw data is compressed.}
+	kPEF2SectionNoZeroFillMask = $00000200; { "Uninit" part is not zero filled.}
+	kPEF2SectionResidentMask = $00000400; { The section should be RAM resident.}
+                                        { Bits that describe higher level semantics.}
+	kPEF2SectionFollowsPriorMask = $00010000; { Raw data is related to prior section.}
+	kPEF2SectionPrecedesNextMask = $00020000; { Raw data is related to next section.}
+	kPEF2SectionHasLoaderTablesMask = $01000000;
+	kPEF2SectionHasDebugTablesMask = $02000000;
+	kPEF2SectionHasExceptionTablesMask = $04000000;
+	kPEF2SectionHasTracebackTablesMask = $08000000;
+
+const
+{ Values for the shareKind field.}
+	kPEF2PrivateShare = 0;    { Shared only within a "private" closure.}
+	kPEF2ProcessShare = 1;    { Shared within a single process.}
+	kPEF2GlobalShare = 4;    { Shared across the entire system.}
+	kPEF2ProtectedShare = 5;     { Readable across the entire system, writeable only to privileged code.}
+
+
+{ =========================================================================================== }
+{ Loader Section }
+{ ============== }
+
+
+{ -------------------------------------------------------------------------------------------- }
+{ The PEF2 loader section is very similar to that of PEF.  The following overall layout is     }
+{ not required, but suggested for typical locality of reference.  The loader header contains   }
+{ explicit offsets and sizes for each of the subsections.                                      }
+{          +-----------------------------------+                                               }
+{          |       Loader Info Header          |                                               }
+{          |-----------------------------------|                                               }
+{          |       Imported Library 0          |                                               }
+{          |...................................|                                               }
+{          |           - - -                   |                                               }
+{          |...................................|                                               }
+{          |       Imported Library l-1        |                                               }
+{          |-----------------------------------|                                               }
+{          |       Imported Symbol 0           |                                               }
+{          |...................................|                                               }
+{          |           - - -                   |                                               }
+{          |...................................|                                               }
+{          |       Imported Symbol i-1         |                                               }
+{          |-----------------------------------|                                               }
+{          |       Loader Name Table           |                                               }
+{          |-----------------------------------|                                               }
+{          |       Export Hash Slot 0          |                                               }
+{          |...................................|                                               }
+{          |           - - -                   |                                               }
+{          |...................................|                                               }
+{          |       Export Hash Slot h-1        |                                               }
+{          |-----------------------------------|                                               }
+{          |       Exported Symbol Key 0       |                                               }
+{          |...................................|                                               }
+{          |           - - -                   |                                               }
+{          |...................................|                                               }
+{          |       Exported Symbol Key e-1     |                                               }
+{          |-----------------------------------|                                               }
+{          |       Exported Symbol 0           |                                               }
+{          |...................................|                                               }
+{          |           - - -                   |                                               }
+{          |...................................|                                               }
+{          |       Exported Symbol e-1         |                                               }
+{          |-----------------------------------|                                               }
+{          |       Relocation Header 0         |                                               }
+{          |...................................|                                               }
+{          |           - - -                   |                                               }
+{          |...................................|                                               }
+{          |       Relocation Header r-1       |                                               }
+{          |-----------------------------------|                                               }
+{          |       Relocation Instructions     |                                               }
+{          +-----------------------------------+                                               }
+
+
+type
+	PEF2LoaderInfoHeaderPtr = ^PEF2LoaderInfoHeader;
+	PEF2LoaderInfoHeader = record
+		headerSize: UInt32;             { Size in bytes of the loader info header.}
+		options: UInt32;                { An array of 32 option bits.}
+		mainSection: SInt32;            { Section containing the main symbol, -1 => none.}
+		mainOffset: UInt32;             { Offset of main symbol.}
+		initSection: SInt32;            { Section containing the init routine's TVector, -1 => none.}
+		initOffset: UInt32;             { Offset of the init routine's TVector.}
+		termSection: SInt32;            { Section containing the term routine's TVector, -1 => none.}
+		termOffset: UInt32;             { Offset of the term routine's TVector.}
+		notifySection: SInt32;          { Section containing the notification routine's TVector, -1 => none.}
+		notifyOffset: UInt32;           { Offset of the notification routine's TVector.}
+		importedLibrariesOffset: UInt32; { Offset of the imported library table.}
+		importedLibrarySize: UInt32;    { The size in bytes of an imported library entry.}
+		importedLibraryCount: UInt32;   { Number of imported libraries. ('l')}
+		importedSymbolsOffset: UInt32;  { Offset of the imported symbol table.}
+		importedSymbolSize: UInt32;     { The size in bytes of an imported symbol entry.}
+		totalImportedSymbolCount: UInt32; { Total number of imported symbols.  ('s')}
+		loaderNamesOffset: UInt32;      { Offset of the loader name table.}
+		loaderNamesLength: UInt32;      { Total number of bytes in the loader name table.}
+		exportHashTableOffset: UInt32;  { Offset of the export hash slot table.}
+		exportHashTablePower: UInt8;   { Hash slot count as log 2.}
+		reservedA: UInt8;              { Reserved, must be zero.}
+		reservedB: UInt16;              { Reserved, must be zero.}
+		exportedKeysOffset: UInt32;     { Offset of the exported symbol key table.}
+		exportedSymbolsOffset: UInt32;  { Offset of the exported symbol table.}
+		exportedSymbolSize: UInt32;     { The size in bytes of an exported symbol entry.}
+		exportedSymbolCount: UInt32;    { Number of exported symbols. ('e')}
+		relocHeadersOffset: UInt32;     { Offset of the relocation headers.}
+		relocHeaderCount: UInt32;       { Number of sections with relocations.}
+		relocInstrOffset: UInt32;       { Offset of the relocation instructions.}
+		relocInstrLength: UInt32;       { Total number of bytes of relocation instructions.}
+		reservedC: UInt32;              { Reserved, must be zero.}
+		reservedD: UInt32;              { Reserved, must be zero.}
+	end;
+const
+{ Masks for the option bits.}
+	kPEF2LdrInfoLargeImpSymMask = $00000001; { Selects large imported symbol entries.}
+	kPEF2LdrInfoLargeExpSymMask = $00000002; { Selects large exported symbol entries.}
+	kPEF2LdrInfoLargeExpHashMask = $00000004; { Selects large export hash table entries.}
+
+
+{ =========================================================================================== }
+{ Imports and Exports }
+{ ------------------- }
+
+
+{ -------------------------------------------------------------------------------------------- }
+{ Imports and exports in PEF2 have both small and large representations.  The small form is    }
+{ identical to original PEF.  The large form removes count limitations by having full 32 bit   }
+{ offsets.  The import and export name tables have the same representation as the container    }
+{ string table, four bytes of zero at the start followed by pairs of 32 bit hashwords and      }
+{ the names in the appropriate encoding.                                                       }
+
+
+type
+	PEF2ImportedLibraryPtr = ^PEF2ImportedLibrary;
+	PEF2ImportedLibrary = record
+		nameOffset: UInt32;             { Imported name table offset of library's name.}
+		oldImpVersion: UInt32;          { Oldest compatible implementation version.}
+		currentVersion: UInt32;         { Current version at build time.}
+		importedSymbolCount: UInt32;    { Imported symbol count for this library.}
+		firstImportedSymbol: UInt32;    { Index of first imported symbol from this library.}
+		options: UInt32;                { Option bits for this library.}
+		reservedA: UInt32;              { Reserved, must be zero.}
+	end;
+const
+{ Bits for the PEF2ImportedLibrary options field.}
+	kPEF2WeakImportLibMask = kPEFWeakImportLibMask; { The imported library is allowed to be missing.}
+	kPEF2InitLibBeforeMask = kPEFInitLibBeforeMask; { The imported library must be initialized first.}
+
+
+type
+	PEF2SmImportedSymbol = PEFImportedSymbol;
+//	PEF2ComposeSmImportedSymbol = PEFComposeImportedSymbol;
+
+type
+	PEF2LgImportedSymbolPtr = ^PEF2LgImportedSymbol;
+	PEF2LgImportedSymbol = record
+		symClass: UInt8;
+		flags: UInt8;
+		reservedA: UInt16;
+		nameOffset: UInt32;
+		versionPair: UInt32;
+		reservedB: UInt32;
+	end;
+
+	PEF2SmExportedSymbolHashSlot = PEFExportedSymbolHashSlot;
+	PEF2ExportedSymbolKey = PEFExportedSymbolKey;
+	PEF2SmExportedSymbol = PEFExportedSymbol;
+//	PEF2ComposeSmExportedSymbol = PEFComposeExportedSymbol;
+
+type
+	PEF2LgExportedSymbolHashSlotPtr = ^PEF2LgExportedSymbolHashSlot;
+	PEF2LgExportedSymbolHashSlot = record
+		chainCount: UInt32;
+		chainOffset: UInt32;
+	end;
+
+type
+	PEF2LgExportedSymbolPtr = ^PEF2LgExportedSymbol;
+	PEF2LgExportedSymbol = record
+		symClass: UInt8;
+		flags: UInt8;
+		reservedA: UInt16;
+		nameOffset: UInt32;
+		versionPair: UInt32;
+		sectionIndex: SInt32;
+		sectionOffset: UInt32;
+		reservedB: UInt32;
+	end;
+
+
+{ =========================================================================================== }
+{ Loader Relocations }
+{ ================== }
+
+
+{ -------------------------------------------------------------------------------------------- }
+{ The relocation header differs slightly in PEF2.  The relocation instructions identical.      }
+
+
+type
+	PEF2LoaderRelocationHeaderPtr = ^PEF2LoaderRelocationHeader;
+	PEF2LoaderRelocationHeader = record
+		sectionIndex: UInt32;           { Index of the section to be fixed up.}
+		relocLength: UInt32;            { Number of bytes of relocation items.}
+		firstRelocOffset: UInt32;       { Byte offset of first relocation instruction.}
+		reservedA: UInt32;              { Reserved, must be zero.}
+	end;
+
+
+{ =========================================================================================== }
+
+
+{$endc}  {IncludePEF2Declarations}
+
+>>>>>>> graemeg/cpstrnew
+=======
+
+(*
+#define PEFRelocLgRepeatChunkCount(chunk)       (PEFRelocField ( (chunk), 6, 4 ) + 1)
+#define PEFRelocLgRepeatRepeatCountHigh(chunk)  PEFRelocField ( (chunk), 10, 6 )
+
+#define PEFRelocLgRepeatFullRepeatCount(firstChunk,secondChunk) \
+            ( ((((UInt32)(firstChunk)) & 0x003F) << 16) | ((UInt32)(secondChunk)) )
+
+#define PEFRelocComposeLgRepeat_1st(chunkCount,fullRepeatCount) \
+            ( 0xB000 | ((((UInt16)(chunkCount))-1) << 6) | ((UInt16) (((UInt32)(fullRepeatCount)) >>16 ) ) )
+#define PEFRelocComposeLgRepeat_2nd(chunkCount,fullRepeatCount) \
+            ( (UInt16) ((UInt32)(fullRepeatCount) & 0xFFFF) )
+*)
+
+{ =========================================================================================== }
+{ RelocLgSetOrBySection Group (LSEC) }
+{ ---------------------------------- }
+
 
 { -------------------------------------------------------------------------------------------- }
 { The "RelocLgSetOrBySection" (LSEC) instruction is a group including the "RelocLgBySection",  }

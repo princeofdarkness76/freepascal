@@ -57,15 +57,21 @@
     _propertyMapping: id;
     _propertyRanges: NSRangePtr; {garbage collector: __strong }
 <<<<<<< HEAD
+<<<<<<< HEAD
     __entityDescriptionFlags: record
       case byte of
        0: (_anonbitfield_NSEntityDescription0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __entityDescriptionFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSEntityDescription0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _isAbstract: 0..1;
         _shouldValidateOnSave: 0..1;
@@ -76,7 +82,10 @@
         _hasPropertiesStoredInTruthFile: 0..1;
         _reservedEntityDescription: 0..((1 shl 25)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

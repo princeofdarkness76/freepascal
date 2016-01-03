@@ -4,7 +4,11 @@
  * member of the Free Pascal development team.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Startup code for shared libraries, PowerPC64 version.
+=======
+ * Startup code for normal programs, PowerPC64 version.
+>>>>>>> graemeg/cpstrnew
 =======
  * Startup code for normal programs, PowerPC64 version.
 >>>>>>> graemeg/cpstrnew
@@ -61,7 +65,11 @@
     mtctr   0
     ld      2, 8(11)
 <<<<<<< HEAD
+<<<<<<< HEAD
     ld      11, 16(11)
+=======
+    ld      11, 8(11)
+>>>>>>> graemeg/cpstrnew
 =======
     ld      11, 8(11)
 >>>>>>> graemeg/cpstrnew
@@ -295,6 +303,7 @@ _savevr_31: addi r12,r0,-16
     stvx v31,r12,r0
     blr
 <<<<<<< HEAD
+<<<<<<< HEAD
 */
 /* The _restvr_M routines restore the vector registers from vM to v31. When the
  * routine is called, r0 must point to the word just beyound the end of the
@@ -327,6 +336,8 @@ _restvr_30: addi r12,r0,-32
 _restvr_31: addi r12,r0,-16
     lvx v31,r12,r0
     blr
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 */
@@ -439,6 +450,7 @@ operatingsystem_parameters:
     .set operatingsystem_parameter_argc, operatingsystem_parameters+0
     .set operatingsystem_parameter_argv, operatingsystem_parameters+8
     .set operatingsystem_parameter_envp, operatingsystem_parameters+16
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 /*
@@ -521,5 +533,8 @@ operatingsystem_parameters:
     .set operatingsystem_parameter_envp, operatingsystem_parameters+16
 
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
 >>>>>>> graemeg/cpstrnew
 .section .note.GNU-stack,"",%progbits

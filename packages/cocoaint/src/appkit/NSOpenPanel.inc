@@ -43,7 +43,11 @@
   NSOpenPanel = objcclass external (NSSavePanel)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reservedOpenPanel: array[0..(4)-1] of char;
+=======
+        _reservedOpenPanel: array[0..3] of char;
+>>>>>>> graemeg/cpstrnew
 =======
         _reservedOpenPanel: array[0..3] of char;
 >>>>>>> graemeg/cpstrnew

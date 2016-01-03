@@ -45,15 +45,21 @@
     _reserved3: Pointer;
     _managedProxy: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __objectControllerFlags: record
       case byte of
        0: (_anonbitfield_NSObjectController0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __objectControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSObjectController0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _editable: 0..1;
         _automaticallyPreparesContent: 0..1;
@@ -65,7 +71,10 @@
         _batches: 0..1;
         _reservedObjectController: 0..((1 shl 24)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

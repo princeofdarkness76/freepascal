@@ -12,6 +12,9 @@ programs=fpcres
 
 [clean]
 units=closablefilestream msghandler paramparser sourcehandler target
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [require]
@@ -50,6 +53,7 @@ FPMAKE_OPT+=$(addprefix -o ,$(FPCOPT))
 FPMAKE_OPT+=--compiler=$(FPC)
 FPMAKE_OPT+=-bu
 .NOTPARALLEL:
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 fpmake$(SRCEXEEXT): fpmake.pp
@@ -109,6 +113,9 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+fpcres$(EXEEXT): target.pas msghandler.pas closablefilestream.pas paramparser.pas sourcehandler.pas fpcres.pas
+>>>>>>> graemeg/cpstrnew
 =======
 fpcres$(EXEEXT): target.pas msghandler.pas closablefilestream.pas paramparser.pas sourcehandler.pas fpcres.pas
 >>>>>>> graemeg/cpstrnew

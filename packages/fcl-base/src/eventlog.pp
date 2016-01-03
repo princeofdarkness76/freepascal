@@ -74,8 +74,11 @@ Type
     Function RegisterMessageFile(AFileName : String) : Boolean; virtual;
     Function UnRegisterMessageFile : Boolean; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Pause;
     Procedure Resume;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure Log (EventType : TEventType; const Msg : String); {$ifndef fpc }Overload;{$endif}
@@ -152,6 +155,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Procedure TEventLog.Pause;
 
@@ -166,6 +170,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TEventLog.Error(const Fmt: String; Args: array of const);
@@ -282,8 +288,11 @@ begin
   fFileFlags := fFileFlags or fmShareDenyWrite;
   FStream:=TFileStream.Create(FFileName,fFileFlags);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if fAppendContent then
     FStream.Seek(0,soFromEnd);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;

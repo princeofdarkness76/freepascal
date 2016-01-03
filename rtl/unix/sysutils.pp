@@ -489,6 +489,7 @@ end;
 
 Function FileCreate (Const FileName : RawByteString; ShareMode : Longint; Rights:LongInt ) : Longint;
 
+<<<<<<< HEAD
 Var
   fd: Longint;
 begin
@@ -512,6 +513,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 Function FileRead (Handle : Longint; out Buffer; Count : longint) : Longint;
 
 begin
@@ -574,6 +577,7 @@ Var
   SystemFileName: RawByteString;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   SystemFileName:=ToSingleByteFileSystemEncodedFileName(FileName);
   If  (fpstat(pchar(SystemFileName),Info)<0) or fpS_ISDIR(info.st_mode) then
     exit(-1)
@@ -583,6 +587,21 @@ begin
   If  (fpstat (pointer(FileName),Info)<0) or fpS_ISDIR(info.st_mode) then
     exit(-1)
   else 
+=======
+  EpochToLocal(UnixAge,y,m,d,hh,mm,ss);
+  Result:=DateTimeToFileDate(EncodeDate(y,m,d)+EncodeTime(hh,mm,ss,0));
+end;
+
+
+Function FileAge (Const FileName : String): Longint;
+
+Var Info : Stat;
+
+begin
+  If  (fpstat (pointer(FileName),Info)<0) or fpS_ISDIR(info.st_mode) then
+    exit(-1)
+  else 
+>>>>>>> graemeg/cpstrnew
     Result:=UnixToWinAge(info.st_mtime);
 >>>>>>> graemeg/cpstrnew
 end;
@@ -1533,12 +1552,15 @@ begin
   Flush(Output);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function GetLocalTimeOffset: Integer;
 
 begin
  Result := -Tzseconds div 60; 
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

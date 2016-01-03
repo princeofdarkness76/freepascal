@@ -45,7 +45,11 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
             (Fmt[ChPos]<='9') and (Fmt[ChPos]>='0') do inc(ChPos);
       If ChPos>len then
 <<<<<<< HEAD
+<<<<<<< HEAD
         DoFormatError(feInvalidFormat,ansistring(Fmt));
+=======
+        DoFormatError(feInvalidFormat,Fmt);
+>>>>>>> graemeg/cpstrnew
 =======
         DoFormatError(feInvalidFormat,Fmt);
 >>>>>>> graemeg/cpstrnew
@@ -55,6 +59,9 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
         if Index=-1 then
           ArgN:=Argpos
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
         else
         begin
           ArgN:=Index;
@@ -62,6 +69,7 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
         end;
 
         If (ChPos>OldPos) or (ArgN>High(Args)) then
+<<<<<<< HEAD
           DoFormatError(feInvalidFormat,ansistring(Fmt));
 
         ArgPos:=ArgN+1;
@@ -80,6 +88,8 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
         end;
 
         If (ChPos>OldPos) or (ArgN>High(Args)) then
+=======
+>>>>>>> graemeg/cpstrnew
           DoFormatError(feInvalidFormat,Fmt);
 
         ArgPos:=ArgN+1;
@@ -90,6 +100,9 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
           vtQWord: Value := Args[ArgN].VQWord^;
         else
           DoFormatError(feInvalidFormat,Fmt);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         end;
         Inc(ChPos);
@@ -101,7 +114,11 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
           Val (Copy(Fmt,OldPos,ChPos-OldPos),value,code);
           // This should never happen !!
 <<<<<<< HEAD
+<<<<<<< HEAD
           If Code>0 then DoFormatError (feInvalidFormat,ansistring(Fmt));
+=======
+          If Code>0 then DoFormatError (feInvalidFormat,Fmt);
+>>>>>>> graemeg/cpstrnew
 =======
           If Code>0 then DoFormatError (feInvalidFormat,Fmt);
 >>>>>>> graemeg/cpstrnew
@@ -121,7 +138,11 @@ Var ChPos,OldPos,ArgPos,DoArg,Len : SizeInt;
       If Fmt[ChPos]=':' then
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         If Value=-1 then DoFormatError(feMissingArgument,ansistring(Fmt));
+=======
+        If Value=-1 then DoFormatError(feMissingArgument,fmt);
+>>>>>>> graemeg/cpstrnew
 =======
         If Value=-1 then DoFormatError(feMissingArgument,fmt);
 >>>>>>> graemeg/cpstrnew
@@ -247,7 +268,11 @@ begin
    begin
      if err then
 <<<<<<< HEAD
+<<<<<<< HEAD
       DoFormatError(feInvalidArgindex,ansistring(Fmt));
+=======
+      DoFormatError(feInvalidArgindex,Fmt);
+>>>>>>> graemeg/cpstrnew
 =======
       DoFormatError(feInvalidArgindex,Fmt);
 >>>>>>> graemeg/cpstrnew
@@ -363,6 +388,15 @@ begin
                     hs:=TFormatString(UnicodeString(Args[doarg].VUnicodeString))
                 else
 <<<<<<< HEAD
+=======
+                  if CheckArg(vtAnsiString,false) then
+                    hs:=ansistring(Args[doarg].VAnsiString)
+                else
+                  if CheckArg(vtUnicodeString,false) then
+                    hs:=UnicodeString(Args[doarg].VUnicodeString)
+                else
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
 =======
                   if CheckArg(vtAnsiString,false) then
                     hs:=ansistring(Args[doarg].VAnsiString)

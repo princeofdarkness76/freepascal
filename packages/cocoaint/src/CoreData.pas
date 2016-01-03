@@ -2,7 +2,10 @@
 {$modeswitch cvar}
 {$modeswitch objectivec1}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 unit CoreData;

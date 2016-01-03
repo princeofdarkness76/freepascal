@@ -34,9 +34,14 @@ unit cgppc;
     type
       tcgppcgen = class(tcg)
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
 
         procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: tcgsize; src, dst: TRegister); override;
+=======
+        procedure a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const paraloc : tcgpara); override;
+        procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
+>>>>>>> graemeg/cpstrnew
 =======
         procedure a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const paraloc : tcgpara); override;
         procedure a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara); override;
@@ -196,7 +201,10 @@ unit cgppc;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure tcgppcgen.a_load_const_cgpara(list: TAsmList; size: tcgsize; a: aint; const
       paraloc: tcgpara);
     var
@@ -220,6 +228,9 @@ unit cgppc;
     end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure tcgppcgen.a_loadaddr_ref_cgpara(list : TAsmList;const r : treference;const paraloc : tcgpara);
       var
@@ -374,8 +385,11 @@ unit cgppc;
           stubalign:=16;
         new_section(current_asmdata.asmlists[al_imports],sec_stub,'',stubalign);
 <<<<<<< HEAD
+<<<<<<< HEAD
         result := current_asmdata.DefineAsmSymbol(stubname,AB_LOCAL,AT_FUNCTION);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         result := current_asmdata.RefAsmSymbol(stubname);
 >>>>>>> graemeg/cpstrnew
         current_asmdata.asmlists[al_imports].concat(Tai_symbol.Create(result,0));
@@ -731,6 +745,9 @@ unit cgppc;
           paramanager.getintparaloc(list,pd,1,paraloc1);
 =======
           paramanager.getintparaloc(pocall_cdecl,1,paraloc1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           a_load_reg_cgpara(list,OS_ADDR,NR_R0,paraloc1);
           paramanager.freecgpara(list,paraloc1);
@@ -1078,6 +1095,9 @@ unit cgppc;
             if (ref.symbol.bind in [AB_EXTERNAL,AB_WEAK_EXTERNAL]) or
                ((cs_create_pic in current_settings.moduleswitches) and
                 (ref.symbol.bind in [AB_COMMON,AB_GLOBAL,AB_PRIVATE_EXTERN])) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
               begin
                 tmpreg := g_indirect_sym_load(list,ref.symbol.name,asmsym2indsymflags(ref.symbol));

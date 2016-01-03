@@ -48,6 +48,9 @@ _dynamic_start:
    Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
    02111-1307 USA.  */
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     .section ".text"
     .globl  _start
@@ -60,7 +63,10 @@ _start:
     mtlr     0
     stw      0,0(1)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     lwz      3,0(26)       /* get argc */
@@ -83,8 +89,12 @@ _start:
     bl         PASCALMAIN
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /* we should not reach here. Crash horribly */
     trap
+=======
+    b          _haltproc
+>>>>>>> graemeg/cpstrnew
 =======
     b          _haltproc
 >>>>>>> graemeg/cpstrnew
@@ -92,6 +102,7 @@ _start:
     .globl  _haltproc
     .type   _haltproc,@function
 _haltproc:
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     lis     11,__dl_fini@ha
@@ -124,6 +135,12 @@ _haltproc:
     b          _haltproc
 
 >>>>>>> graemeg/cpstrnew
+=======
+    li       0,1          /* exit call */
+    sc
+    b          _haltproc
+
+>>>>>>> graemeg/cpstrnew
 /* Define a symbol for the first piece of initialized data.  */
     .section ".data"
     .globl __data_start
@@ -131,6 +148,7 @@ __data_start:
 data_start:
 
     .section ".bss"
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     .type __dl_fini, @object
@@ -145,6 +163,15 @@ __dl_fini:
 __stkptr:
     .skip 4
 
+=======
+
+    .type __stkptr, @object
+    .size __stkptr, 4
+    .global __stkptr
+__stkptr:
+    .skip 4
+
+>>>>>>> graemeg/cpstrnew
 =======
 
     .type __stkptr, @object

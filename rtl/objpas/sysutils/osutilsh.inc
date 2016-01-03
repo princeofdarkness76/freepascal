@@ -58,7 +58,10 @@ Type
 Type
   TEventType = (etCustom,etInfo,etWarning,etError,etDebug);
 <<<<<<< HEAD
+<<<<<<< HEAD
   TEventTypes = Set of TEventType;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

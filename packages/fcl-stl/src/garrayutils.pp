@@ -217,7 +217,11 @@ class function TOrderingArrayUtils.NextPermutation(var Arr: TArr; size: SizeUInt
 var i,f:SizeUInt; temp:TValue;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   f := size;
+=======
+  f := -1;
+>>>>>>> graemeg/cpstrnew
 =======
   f := -1;
 >>>>>>> graemeg/cpstrnew
@@ -228,7 +232,11 @@ begin
     end;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if f = size then exit(false);
+=======
+  if f = -1 then exit(false);
+>>>>>>> graemeg/cpstrnew
 =======
   if f = -1 then exit(false);
 >>>>>>> graemeg/cpstrnew

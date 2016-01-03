@@ -7,7 +7,11 @@ main=rtl
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 extpas buildrtl
+=======
+units=system objpas macpas iso7185 buildrtl
+>>>>>>> graemeg/cpstrnew
 =======
 units=system objpas macpas iso7185 buildrtl
 >>>>>>> graemeg/cpstrnew

@@ -52,7 +52,10 @@ interface
           fprocdef : tprocdef;
           fprocdefderef : tderef;
 <<<<<<< HEAD
+<<<<<<< HEAD
           function handle_threadvar_access: tnode; virtual;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
        public
@@ -225,7 +228,10 @@ implementation
         symtable:=nil;
         ppufile.getderef(fprocdefderef);
 <<<<<<< HEAD
+<<<<<<< HEAD
         ppufile.getsmallset(loadnodeflags);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;
@@ -237,7 +243,10 @@ implementation
         ppufile.putderef(symtableentryderef);
         ppufile.putderef(fprocdefderef);
 <<<<<<< HEAD
+<<<<<<< HEAD
         ppufile.putsmallset(loadnodeflags);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;
@@ -505,7 +514,11 @@ implementation
                 { parent frame pointer pointer as "self" }
                 left.free;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner),lpf_forpara);
+=======
+                left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
+>>>>>>> graemeg/cpstrnew
 =======
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
 >>>>>>> graemeg/cpstrnew
@@ -841,9 +854,12 @@ implementation
             (left.resultdef.typ in [arraydef,objectdef,recorddef]) and
             not is_interfacecom_or_dispinterface(left.resultdef) and
 <<<<<<< HEAD
+<<<<<<< HEAD
             not is_dynamic_array(left.resultdef) and
             not(target_info.system in systems_garbage_collected_managed_types) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             not is_dynamic_array(left.resultdef) then
 >>>>>>> graemeg/cpstrnew
          begin

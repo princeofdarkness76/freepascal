@@ -81,15 +81,21 @@ var
     _toolbarView: id;
     _syncPostEnabledCount: NSInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tbFlags: record
       case byte of
        0: (_anonbitfield_NSToolbar0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __tbFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSToolbar0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _allowsUserCustomization: 0..1;
         autosavesUsingIdentifier: 0..1;
@@ -119,7 +125,10 @@ var
         inAutovalidation: 0..1;
         loadedMetrics: 0..1;
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

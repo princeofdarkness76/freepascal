@@ -344,7 +344,11 @@ begin
         { Calculate texture index at intersection point (cylindrical mapping) }
         { try and adjust the 0.2 to stretch/shrink the texture }
 <<<<<<< HEAD
+<<<<<<< HEAD
         u_array[(j shl 6) + i] := Integer(Trunc(intsc[2] * 0.2) shl 16);
+=======
+        u_array[(j shl 6) + i] := Trunc(intsc[2] * 0.2) shl 16;
+>>>>>>> graemeg/cpstrnew
 =======
         u_array[(j shl 6) + i] := Trunc(intsc[2] * 0.2) shl 16;
 >>>>>>> graemeg/cpstrnew
@@ -397,6 +401,7 @@ begin
     for i := 0 to 39 do
     begin
       iadr := (j shl 6) + i;
+<<<<<<< HEAD
 
       { Set up gradients }
       lu := u_array[iadr]; ru := u_array[iadr + 1];
@@ -419,6 +424,11 @@ begin
         l := ll;
         il := (rl - ll) div 8;
 =======
+=======
+
+      { Set up gradients }
+      lu := u_array[iadr]; ru := u_array[iadr + 1];
+>>>>>>> graemeg/cpstrnew
       liu := (u_array[iadr + 64] - lu) shr 3;
       riu := (u_array[iadr + 65] - ru) shr 3;
 
@@ -436,6 +446,9 @@ begin
         iv := (rv - lv) shr 3;
         l := ll;
         il := (rl - ll) shr 3;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
         { Mess up everything for the sake of cache optimised mapping :) }
@@ -451,8 +464,13 @@ begin
         begin
           { Interpolate texture u,v and light }
 <<<<<<< HEAD
+<<<<<<< HEAD
           til_u := DWord(til_u + til_iu);
           til_v := DWord(til_v + til_iv);
+=======
+          Inc(til_u, til_iu);
+          Inc(til_v, til_iv);
+>>>>>>> graemeg/cpstrnew
 =======
           Inc(til_u, til_iu);
           Inc(til_v, til_iv);
@@ -532,9 +550,15 @@ end;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
@@ -548,10 +572,13 @@ begin
   try
     try
 <<<<<<< HEAD
+<<<<<<< HEAD
       format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
 
       console := TPTCConsoleFactory.CreateNew;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 
       console := TPTCConsole.create;
@@ -596,15 +623,21 @@ begin
       end;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
       tunnel.Free;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       console.Free;
       surface.Free;
       tunnel.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

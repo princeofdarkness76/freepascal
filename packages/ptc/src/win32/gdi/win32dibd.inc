@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -39,7 +43,11 @@ type
     FBitmapInfo: PBITMAPINFO;
     FPixels: Pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFormat: IPTCFormat;
+=======
+    FFormat: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 =======
     FFormat: TPTCFormat;
 >>>>>>> graemeg/cpstrnew
@@ -52,7 +60,11 @@ type
     property Height: Integer read FHeight;
     property Pitch: Integer read FPitch;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Format: IPTCFormat read FFormat;
+=======
+    property Format: TPTCFormat read FFormat;
+>>>>>>> graemeg/cpstrnew
 =======
     property Format: TPTCFormat read FFormat;
 >>>>>>> graemeg/cpstrnew

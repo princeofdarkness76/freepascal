@@ -21,7 +21,11 @@
 type
    { extra types to compile with FPC }
 <<<<<<< HEAD
+<<<<<<< HEAD
    HRSRC =  TFPResourceHandle deprecated;
+=======
+   HRSRC =  TFPResourceHandle {$ifndef ver2_2} deprecated {$endif};
+>>>>>>> graemeg/cpstrnew
 =======
    HRSRC =  TFPResourceHandle {$ifndef ver2_2} deprecated {$endif};
 >>>>>>> graemeg/cpstrnew
@@ -460,8 +464,13 @@ type
   protected
     { IInterface }
 <<<<<<< HEAD
+<<<<<<< HEAD
     function _AddRef: Longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _Release: Longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+    function _AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+    function _Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
     function _AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
@@ -747,10 +756,13 @@ type
     FCaseSensitive : Boolean;
     FSorted: Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FForceSort : Boolean;
     FOwnsObjects : Boolean;
     procedure ExchangeItemsInt(Index1, Index2: Integer); inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     FOwnsObjects : Boolean;
     procedure ExchangeItems(Index1, Index2: Integer);
 >>>>>>> graemeg/cpstrnew
@@ -852,7 +864,10 @@ type
 
 {$endif}
   
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 { TStream abstract class }
 
@@ -913,7 +928,11 @@ type
     function Write(const Buffer; Count: Longint): Longint; override;
     function Seek(const Offset: int64; Origin: TSeekOrigin): int64; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Check(err:integer); virtual;
+=======
+    procedure Check(err:longint); virtual;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure Check(err:longint); virtual;
 >>>>>>> graemeg/cpstrnew
@@ -973,10 +992,16 @@ type
     FSize, FPosition: PtrInt;
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function GetSize : Int64; Override;
     function GetPosition: Int64; Override;
     procedure SetPointer(Ptr: Pointer; ASize: PtrInt);
   public
+=======
+    procedure SetPointer(Ptr: Pointer; ASize: PtrInt);
+  public
+    Function GetSize : Int64; Override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetPointer(Ptr: Pointer; ASize: PtrInt);
   public
@@ -1004,6 +1029,7 @@ type
     procedure LoadFromStream(Stream: TStream);
     procedure LoadFromFile(const FileName: string);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetSize({$ifdef CPU64}const NewSize: Int64{$else}NewSize: LongInt{$endif}); override;
     function Write(const Buffer; Count: LongInt): LongInt; override;
   end;
@@ -1018,6 +1044,10 @@ type
   public
     constructor Create(const ABytes: TBytes); overload;
     property Bytes: TBytes read FBytes;
+=======
+    procedure SetSize({$ifdef CPU64}const{$endif CPU64} NewSize: PtrInt); override;
+    function Write(const Buffer; Count: LongInt): LongInt; override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetSize({$ifdef CPU64}const{$endif CPU64} NewSize: PtrInt); override;
     function Write(const Buffer; Count: LongInt): LongInt; override;
@@ -1051,8 +1081,13 @@ type
   private
     Res: TFPResourceHandle;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Handle: TFPResourceHGLOBAL;
     procedure Initialize(Instance: TFPResourceHMODULE; Name, ResType: PWideChar; NameIsID: Boolean);
+=======
+    Handle: THandle;
+    procedure Initialize(Instance: THandle; Name, ResType: PWideChar; NameIsID: Boolean);
+>>>>>>> graemeg/cpstrnew
 =======
     Handle: THandle;
     procedure Initialize(Instance: THandle; Name, ResType: PWideChar; NameIsID: Boolean);
@@ -1067,8 +1102,13 @@ type
   private
     Res: TFPResourceHandle;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Handle: TFPResourceHGLOBAL;
     procedure Initialize(Instance: TFPResourceHMODULE; Name, ResType: PChar; NameIsID: Boolean);
+=======
+    Handle: THandle;
+    procedure Initialize(Instance: THandle; Name, ResType: PChar; NameIsID: Boolean);
+>>>>>>> graemeg/cpstrnew
 =======
     Handle: THandle;
     procedure Initialize(Instance: THandle; Name, ResType: PChar; NameIsID: Boolean);
@@ -1334,7 +1374,11 @@ type
     function ReadInteger: Longint;
     function ReadInt64: Int64;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function ReadSet(EnumType: Pointer): Integer;
+=======
+    function ReadSet(EnumType: Pointer): Integer; 
+>>>>>>> graemeg/cpstrnew
 =======
     function ReadSet(EnumType: Pointer): Integer; 
 >>>>>>> graemeg/cpstrnew
@@ -1518,7 +1562,11 @@ type
     procedure WriteInteger(Value: Longint); overload;
     procedure WriteInteger(Value: Int64); overload;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure WriteSet(Value: LongInt; SetType: Pointer);
+=======
+    procedure WriteSet(Value: LongInt; SetType: Pointer); 
+>>>>>>> graemeg/cpstrnew
 =======
     procedure WriteSet(Value: LongInt; SetType: Pointer); 
 >>>>>>> graemeg/cpstrnew
@@ -1668,7 +1716,11 @@ type
     property ReturnValue: Integer read FReturnValue write FReturnValue;
     property Terminated: Boolean read FTerminated;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(windows) or defined(OS2)}
+=======
+{$ifdef windows}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef windows}
 >>>>>>> graemeg/cpstrnew
@@ -1683,6 +1735,9 @@ type
 <<<<<<< HEAD
 =======
     FSuspendedExternal: boolean;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     FSuspendedInternal: longbool;
     FThreadReaped: boolean;
@@ -1768,7 +1823,11 @@ type
     function Invoke(DispID: Integer; const IID: TGUID; LocaleID: Integer;
       Flags: Word; var Params; VarResult, ExcepInfo, ArgErr: Pointer): HResult; stdcall;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SafeCallException(ExceptObject: TObject; ExceptAddr: CodePointer): HResult;
+=======
+    function SafeCallException(ExceptObject: TObject; ExceptAddr: Pointer): HResult;
+>>>>>>> graemeg/cpstrnew
 =======
     function SafeCallException(ExceptObject: TObject; ExceptAddr: Pointer): HResult;
 >>>>>>> graemeg/cpstrnew
@@ -1855,8 +1914,13 @@ type
     { IUnknown }
     function QueryInterface({$IFDEF FPC_HAS_CONSTREF}constref{$ELSE}const{$ENDIF} IID: TGUID; out Obj): Hresult; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 <<<<<<< HEAD
+<<<<<<< HEAD
     function _AddRef: Longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _Release: Longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+    function _AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+    function _Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
     function _AddRef: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
     function _Release: Integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
@@ -1894,7 +1958,11 @@ type
     procedure RemoveComponent(AComponent: TComponent);
     function SafeCallException(ExceptObject: TObject;
 <<<<<<< HEAD
+<<<<<<< HEAD
       ExceptAddr: CodePointer): HResult; override;
+=======
+      ExceptAddr: Pointer): HResult; override;
+>>>>>>> graemeg/cpstrnew
 =======
       ExceptAddr: Pointer): HResult; override;
 >>>>>>> graemeg/cpstrnew

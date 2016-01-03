@@ -17,9 +17,15 @@ uses
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
@@ -30,7 +36,11 @@ var
   i: Integer;
   x, y, r, g, b: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   area: IPTCArea;
+=======
+  area: TPTCArea = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   area: TPTCArea = nil;
 >>>>>>> graemeg/cpstrnew
@@ -48,7 +58,11 @@ begin
 
       { create surface half the size of the console }
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(console.width div 2, console.height div 2, format);
+=======
+      surface := TPTCSurface.Create(console.width div 2, console.height div 2, format);
+>>>>>>> graemeg/cpstrnew
 =======
       surface := TPTCSurface.Create(console.width div 2, console.height div 2, format);
 >>>>>>> graemeg/cpstrnew
@@ -57,8 +71,11 @@ begin
       x := console.width div 4;
       y := console.height div 4;
 <<<<<<< HEAD
+<<<<<<< HEAD
       area := TPTCAreaFactory.CreateNew(x, y, x + surface.width, y + surface.height);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       area := TPTCArea.Create(x, y, x + surface.width, y + surface.height);
 >>>>>>> graemeg/cpstrnew
 
@@ -100,14 +117,20 @@ begin
       end;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       console.Free;
       surface.Free;
       format.Free;
       area.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

@@ -91,15 +91,21 @@ var
     _predicate: NSPredicate;
     _nestingMode: NSInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __ruleEditorFlags: record
       case byte of
        0: (_anonbitfield_NSRuleEditor0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __ruleEditorFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSRuleEditor0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         elideUpdating: 0..1;
         lastAlternateKeyValue: 0..1;
@@ -115,7 +121,10 @@ var
         dropChangedRowCount: 0..1;
         reserved: 0..((1 shl 20)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

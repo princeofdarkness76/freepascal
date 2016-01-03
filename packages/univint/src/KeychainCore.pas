@@ -1,6 +1,10 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       OSServices/KeychainCore.h
+=======
+     File:       SecurityCore/KeychainCore.h
+>>>>>>> graemeg/cpstrnew
 =======
      File:       SecurityCore/KeychainCore.h
 >>>>>>> graemeg/cpstrnew
@@ -8,7 +12,13 @@
      Contains:   *** DEPRECATED *** Keychain low-level Interfaces
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 2000-2011 Apple Inc. All rights reserved.
+=======
+     Version:    SecurityCore-36064~226
+ 
+     Copyright:  © 2000-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    SecurityCore-36064~226
  
@@ -22,6 +32,10 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -80,11 +94,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -102,6 +119,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -133,6 +151,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -140,13 +175,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -218,6 +257,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -458,6 +530,7 @@ const
 	kCertUsageSSLAdd = 1 shl (kCertUsageShift + 12);
 	kCertUsageSSLAskAndAdd = 1 shl (kCertUsageShift + 13);
 	kCertUsageAllAdd = $7FFFFF00;
+<<<<<<< HEAD
 
 type
 	KCVerifyStopOn = UInt16;
@@ -540,6 +613,53 @@ const
 
 const
 >>>>>>> graemeg/cpstrnew
+=======
+
+type
+	KCVerifyStopOn = UInt16;
+const
+	kPolicyKCStopOn = 0;
+	kNoneKCStopOn = 1;
+	kFirstPassKCStopOn = 2;
+	kFirstFailKCStopOn = 3;
+
+type
+	KCCertSearchOptions = UInt32;
+const
+	kCertSearchShift = 0;    { start at bit 0 }
+	kCertSearchSigningIgnored = 0;
+	kCertSearchSigningAllowed = 1 shl (kCertSearchShift + 0);
+	kCertSearchSigningDisallowed = 1 shl (kCertSearchShift + 1);
+	kCertSearchSigningMask = ((kCertSearchSigningAllowed) or (kCertSearchSigningDisallowed));
+	kCertSearchVerifyIgnored = 0;
+	kCertSearchVerifyAllowed = 1 shl (kCertSearchShift + 2);
+	kCertSearchVerifyDisallowed = 1 shl (kCertSearchShift + 3);
+	kCertSearchVerifyMask = ((kCertSearchVerifyAllowed) or (kCertSearchVerifyDisallowed));
+	kCertSearchEncryptIgnored = 0;
+	kCertSearchEncryptAllowed = 1 shl (kCertSearchShift + 4);
+	kCertSearchEncryptDisallowed = 1 shl (kCertSearchShift + 5);
+	kCertSearchEncryptMask = ((kCertSearchEncryptAllowed) or (kCertSearchEncryptDisallowed));
+	kCertSearchDecryptIgnored = 0;
+	kCertSearchDecryptAllowed = 1 shl (kCertSearchShift + 6);
+	kCertSearchDecryptDisallowed = 1 shl (kCertSearchShift + 7);
+	kCertSearchDecryptMask = ((kCertSearchDecryptAllowed) or (kCertSearchDecryptDisallowed));
+	kCertSearchWrapIgnored = 0;
+	kCertSearchWrapAllowed = 1 shl (kCertSearchShift + 8);
+	kCertSearchWrapDisallowed = 1 shl (kCertSearchShift + 9);
+	kCertSearchWrapMask = ((kCertSearchWrapAllowed) or (kCertSearchWrapDisallowed));
+	kCertSearchUnwrapIgnored = 0;
+	kCertSearchUnwrapAllowed = 1 shl (kCertSearchShift + 10);
+	kCertSearchUnwrapDisallowed = 1 shl (kCertSearchShift + 11);
+	kCertSearchUnwrapMask = ((kCertSearchUnwrapAllowed) or (kCertSearchUnwrapDisallowed));
+	kCertSearchPrivKeyRequired = 1 shl (kCertSearchShift + 12);
+	kCertSearchAny = 0;
+
+{ Other constants }
+const
+	kAnyPort = 0;
+
+const
+>>>>>>> graemeg/cpstrnew
 	kAnyProtocol = 0;
 	kAnyAuthType = 0;
 
@@ -557,7 +677,10 @@ const
  }
 function KCGetKeychainManagerVersion( var returnVers: UInt32 ): OSStatus; external name '_KCGetKeychainManagerVersion';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -595,7 +718,11 @@ function KCGetKeychainManagerVersion( var returnVers: UInt32 ): OSStatus; extern
  }
 function KCSetInteractionAllowed( state: Boolean ): OSStatus; external name '_KCSetInteractionAllowed';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -614,7 +741,11 @@ function KCSetInteractionAllowed( state: Boolean ): OSStatus; external name '_KC
  }
 function KCIsInteractionAllowed: Boolean; external name '_KCIsInteractionAllowed';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -635,7 +766,11 @@ function KCIsInteractionAllowed: Boolean; external name '_KCIsInteractionAllowed
  }
 function KCMakeKCRefFromFSSpec( var keychainFSSpec: FSSpec; var keychain: KCRef ): OSStatus; external name '_KCMakeKCRefFromFSSpec';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_5,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -656,7 +791,11 @@ function KCMakeKCRefFromFSSpec( var keychainFSSpec: FSSpec; var keychain: KCRef 
  }
 function KCMakeKCRefFromFSRef( var keychainFSRef: FSRef; var keychain: KCRef ): OSStatus; external name '_KCMakeKCRefFromFSRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -675,7 +814,11 @@ function KCMakeKCRefFromFSRef( var keychainFSRef: FSRef; var keychain: KCRef ): 
  }
 function KCMakeKCRefFromAlias( keychainAlias: AliasHandle; var keychain: KCRef ): OSStatus; external name '_KCMakeKCRefFromAlias';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -694,7 +837,11 @@ function KCMakeKCRefFromAlias( keychainAlias: AliasHandle; var keychain: KCRef )
  }
 function KCMakeAliasFromKCRef( keychain: KCRef; var keychainAlias: AliasHandle ): OSStatus; external name '_KCMakeAliasFromKCRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -713,7 +860,11 @@ function KCMakeAliasFromKCRef( keychain: KCRef; var keychainAlias: AliasHandle )
  }
 function KCReleaseKeychain( var keychain: KCRef ): OSStatus; external name '_KCReleaseKeychain';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -733,7 +884,11 @@ function KCReleaseKeychain( var keychain: KCRef ): OSStatus; external name '_KCR
  }
 function KCGetDefaultKeychain( var keychain: KCRef ): OSStatus; external name '_KCGetDefaultKeychain';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -752,7 +907,11 @@ function KCGetDefaultKeychain( var keychain: KCRef ): OSStatus; external name '_
  }
 function KCSetDefaultKeychain( keychain: KCRef ): OSStatus; external name '_KCSetDefaultKeychain';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -772,7 +931,11 @@ function KCSetDefaultKeychain( keychain: KCRef ): OSStatus; external name '_KCSe
  }
 function KCGetStatus( keychain: KCRef { can be NULL }; var keychainStatus: UInt32 ): OSStatus; external name '_KCGetStatus';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -791,7 +954,11 @@ function KCGetStatus( keychain: KCRef { can be NULL }; var keychainStatus: UInt3
  }
 function KCGetKeychain( item: KCItemRef; var keychain: KCRef ): OSStatus; external name '_KCGetKeychain';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -810,7 +977,11 @@ function KCGetKeychain( item: KCItemRef; var keychain: KCRef ): OSStatus; extern
  }
 function KCGetKeychainName( keychain: KCRef; keychainName: StringPtr ): OSStatus; external name '_KCGetKeychainName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -830,7 +1001,11 @@ function KCGetKeychainName( keychain: KCRef; keychainName: StringPtr ): OSStatus
  }
 function KCCountKeychains: UInt16; external name '_KCCountKeychains';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -849,7 +1024,11 @@ function KCCountKeychains: UInt16; external name '_KCCountKeychains';
  }
 function KCGetIndKeychain( index: UInt16; var keychain: KCRef ): OSStatus; external name '_KCGetIndKeychain';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -860,7 +1039,11 @@ type
 	KCCallbackUPP = KCCallbackProcPtr;
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  NewKCCallbackUPP()   *** DEPRECATED ***
+=======
+ *  NewKCCallbackUPP()
+>>>>>>> graemeg/cpstrnew
 =======
  *  NewKCCallbackUPP()
 >>>>>>> graemeg/cpstrnew
@@ -872,6 +1055,7 @@ type
  }
 function NewKCCallbackUPP( userRoutine: KCCallbackProcPtr ): KCCallbackUPP; external name '_NewKCCallbackUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
 
 {
@@ -882,12 +1066,30 @@ function NewKCCallbackUPP( userRoutine: KCCallbackProcPtr ): KCCallbackUPP; exte
 {
  *  DisposeKCCallbackUPP()
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+{
+ *  DisposeKCCallbackUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   available as macro/inline
  }
+procedure DisposeKCCallbackUPP( userUPP: KCCallbackUPP ); external name '_DisposeKCCallbackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+{
+ *  InvokeKCCallbackUPP()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+<<<<<<< HEAD
 procedure DisposeKCCallbackUPP( userUPP: KCCallbackUPP ); external name '_DisposeKCCallbackUPP';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
@@ -916,6 +1118,13 @@ function InvokeKCCallbackUPP( keychainEvent: KCEvent; var info: KCCallbackInfo; 
 { High-level interface for retrieving passwords }
 {
  *  KCFindAppleSharePassword()   *** DEPRECATED ***
+=======
+function InvokeKCCallbackUPP( keychainEvent: KCEvent; var info: KCCallbackInfo; userContext: UnivPtr; userUPP: KCCallbackUPP ): OSStatus; external name '_InvokeKCCallbackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+{ High-level interface for retrieving passwords }
+{
+ *  KCFindAppleSharePassword()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use SecKeychainFindInternetPassword
@@ -923,6 +1132,38 @@ function InvokeKCCallbackUPP( keychainEvent: KCEvent; var info: KCCallbackInfo; 
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in KeychainLib 1.0 and later
+ }
+function KCFindAppleSharePassword( serverSignature: AFPServerSignaturePtr { can be NULL }; serverAddress: ConstStringPtr { can be NULL }; serverName: ConstStringPtr { can be NULL }; volumeName: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindAppleSharePassword';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{
+ *  KCFindInternetPassword()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use SecKeychainFindInternetPassword
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in KeychainLib 1.0 and later
+ }
+function KCFindInternetPassword( serverName: ConstStringPtr { can be NULL }; securityDomain: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; port: UInt16; protocol: OSType; authType: OSType; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindInternetPassword';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{
+ *  KCFindInternetPasswordWithPath()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Deprecated:
+ *    Use SecKeychainFindInternetPassword
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
+ *    CarbonLib:        in CarbonLib 1.1 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
  }
 function KCFindAppleSharePassword( serverSignature: AFPServerSignaturePtr { can be NULL }; serverAddress: ConstStringPtr { can be NULL }; serverName: ConstStringPtr { can be NULL }; volumeName: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindAppleSharePassword';
@@ -938,12 +1179,26 @@ function KCFindAppleSharePassword( serverSignature: AFPServerSignaturePtr { can 
  *  
  *  Deprecated:
  *    Use SecKeychainFindInternetPassword
+=======
+ *    Non-Carbon CFM:   in KeychainLib 2.0 and later
+ }
+function KCFindInternetPasswordWithPath( serverName: ConstStringPtr { can be NULL }; securityDomain: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; path: ConstStringPtr { can be NULL }; port: UInt16; protocol: OSType; authType: OSType; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindInternetPasswordWithPath';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{
+ *  KCFindGenericPassword()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use SecKeychainFindGenericPassword
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
  }
+<<<<<<< HEAD
 function KCFindInternetPassword( serverName: ConstStringPtr { can be NULL }; securityDomain: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; port: UInt16; protocol: OSType; authType: OSType; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindInternetPassword';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
@@ -957,10 +1212,23 @@ function KCFindInternetPassword( serverName: ConstStringPtr { can be NULL }; sec
  *  
  *  Deprecated:
  *    Use SecKeychainFindInternetPassword
+=======
+function KCFindGenericPassword( serviceName: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindGenericPassword';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{ Keychain Manager callbacks }
+{
+ *  KCAddCallback()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use SecKeychainAddCallback
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in KeychainLib 2.0 and later
  }
 function KCFindInternetPasswordWithPath( serverName: ConstStringPtr { can be NULL }; securityDomain: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; path: ConstStringPtr { can be NULL }; port: UInt16; protocol: OSType; authType: OSType; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindInternetPasswordWithPath';
@@ -976,12 +1244,26 @@ function KCFindInternetPasswordWithPath( serverName: ConstStringPtr { can be NUL
  *  
  *  Deprecated:
  *    Use SecKeychainFindGenericPassword
+=======
+ *    Non-Carbon CFM:   in KeychainLib 1.0 and later
+ }
+function KCAddCallback( callbackProc: KCCallbackUPP; eventMask: KCEventMask; userContext: UnivPtr ): OSStatus; external name '_KCAddCallback';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{
+ *  KCRemoveCallback()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use SecKeychainRemoveCallback
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
  }
+<<<<<<< HEAD
 function KCFindGenericPassword( serviceName: ConstStringPtr { can be NULL }; accountName: ConstStringPtr { can be NULL }; maxLength: UInt32; passwordData: UnivPtr; var actualLength: UInt32; item: KCItemRefPtr { can be NULL } ): OSStatus; external name '_KCFindGenericPassword';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
@@ -996,12 +1278,25 @@ function KCFindGenericPassword( serviceName: ConstStringPtr { can be NULL }; acc
  *  
  *  Deprecated:
  *    Use SecKeychainAddCallback
+=======
+function KCRemoveCallback( callbackProc: KCCallbackUPP ): OSStatus; external name '_KCRemoveCallback';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{ Creating and editing a keychain item }
+{
+ *  KCNewItem()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use SecKeychainItemCreateFromContent
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
  }
+<<<<<<< HEAD
 function KCAddCallback( callbackProc: KCCallbackUPP; eventMask: KCEventMask; userContext: UnivPtr ): OSStatus; external name '_KCAddCallback';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
@@ -1015,15 +1310,31 @@ function KCAddCallback( callbackProc: KCCallbackUPP; eventMask: KCEventMask; use
  *  
  *  Deprecated:
  *    Use SecKeychainRemoveCallback
+=======
+function KCNewItem( itemClass: KCItemClass; itemCreator: OSType; length: UInt32; data: {const} UnivPtr; var item: KCItemRef ): OSStatus; external name '_KCNewItem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{
+ *  KCSetAttribute()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use SecKeychainItemModifyAttributesAndData
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
  }
+<<<<<<< HEAD
 function KCRemoveCallback( callbackProc: KCCallbackUPP ): OSStatus; external name '_KCRemoveCallback';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+function KCSetAttribute( item: KCItemRef; var attr: KCAttribute ): OSStatus; external name '_KCSetAttribute';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 
 
 =======
@@ -1033,16 +1344,24 @@ function KCRemoveCallback( callbackProc: KCCallbackUPP ): OSStatus; external nam
 >>>>>>> graemeg/cpstrnew
 { Creating and editing a keychain item }
 {
+<<<<<<< HEAD
  *  KCNewItem()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    Use SecKeychainItemCreateFromContent
+=======
+ *  KCGetAttribute()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use SecKeychainItemCopyAttributesAndData
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
  }
+<<<<<<< HEAD
 function KCNewItem( itemClass: KCItemClass; itemCreator: OSType; length: UInt32; data: {const} UnivPtr; var item: KCItemRef ): OSStatus; external name '_KCNewItem';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
@@ -1053,6 +1372,14 @@ function KCNewItem( itemClass: KCItemClass; itemCreator: OSType; length: UInt32;
 
 {
  *  KCSetAttribute()   *** DEPRECATED ***
+=======
+function KCGetAttribute( item: KCItemRef; var attr: KCAttribute; var actualLength: UInt32 ): OSStatus; external name '_KCGetAttribute';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+{
+ *  KCSetData()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Deprecated:
  *    Use SecKeychainItemModifyAttributesAndData
@@ -1062,15 +1389,21 @@ function KCNewItem( itemClass: KCItemClass; itemCreator: OSType; length: UInt32;
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
  }
+<<<<<<< HEAD
 function KCSetAttribute( item: KCItemRef; var attr: KCAttribute ): OSStatus; external name '_KCSetAttribute';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
+=======
+function KCSetData( item: KCItemRef; length: UInt32; data: {const} UnivPtr ): OSStatus; external name '_KCSetData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
+<<<<<<< HEAD
  *  KCGetAttribute()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -1092,6 +1425,10 @@ function KCGetAttribute( item: KCItemRef; var attr: KCAttribute; var actualLengt
 {
  *  KCSetData()   *** DEPRECATED ***
  *  
+=======
+ *  KCUpdateItem()   *** DEPRECATED ***
+ *  
+>>>>>>> graemeg/cpstrnew
  *  Deprecated:
  *    Use SecKeychainItemModifyAttributesAndData
  *  
@@ -1099,6 +1436,7 @@ function KCGetAttribute( item: KCItemRef; var attr: KCAttribute; var actualLengt
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.6
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   in KeychainLib 1.0 and later
+<<<<<<< HEAD
  }
 function KCSetData( item: KCItemRef; length: UInt32; data: {const} UnivPtr ): OSStatus; external name '_KCSetData';
 <<<<<<< HEAD
@@ -1126,6 +1464,11 @@ function KCUpdateItem( item: KCItemRef ): OSStatus; external name '_KCUpdateItem
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
+=======
+ }
+function KCUpdateItem( item: KCItemRef ): OSStatus; external name '_KCUpdateItem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1141,7 +1484,11 @@ function KCUpdateItem( item: KCItemRef ): OSStatus; external name '_KCUpdateItem
  }
 function KCReleaseItem( var item: KCItemRef ): OSStatus; external name '_KCReleaseItem';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -1160,9 +1507,15 @@ function KCReleaseItem( var item: KCItemRef ): OSStatus; external name '_KCRelea
  }
 function KCCopyItem( item: KCItemRef; destKeychain: KCRef; var copy: KCItemRef ): OSStatus; external name '_KCCopyItem';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
@@ -1183,7 +1536,11 @@ function KCCopyItem( item: KCItemRef; destKeychain: KCRef; var copy: KCItemRef )
  }
 function KCFindFirstItem( keychain: KCRef { can be NULL }; {const} attrList: KCAttributeListPtr { can be NULL }; var search: KCSearchRef; var item: KCItemRef ): OSStatus; external name '_KCFindFirstItem';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -1202,7 +1559,11 @@ function KCFindFirstItem( keychain: KCRef { can be NULL }; {const} attrList: KCA
  }
 function KCFindNextItem( search: KCSearchRef; var item: KCItemRef ): OSStatus; external name '_KCFindNextItem';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -1221,12 +1582,18 @@ function KCFindNextItem( search: KCSearchRef; var item: KCItemRef ): OSStatus; e
  }
 function KCReleaseSearch( var search: KCSearchRef ): OSStatus; external name '_KCReleaseSearch';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Managing keychain items }
 {
  *  KCDeleteItem()   *** DEPRECATED ***
@@ -1241,7 +1608,11 @@ function KCReleaseSearch( var search: KCSearchRef ): OSStatus; external name '_K
  }
 function KCDeleteItem( item: KCItemRef ): OSStatus; external name '_KCDeleteItem';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -1260,9 +1631,15 @@ function KCDeleteItem( item: KCItemRef ): OSStatus; external name '_KCDeleteItem
  }
 function KCGetData( item: KCItemRef; maxLength: UInt32; data: UnivPtr; var actualLength: UInt32 ): OSStatus; external name '_KCGetData';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 
@@ -1282,8 +1659,12 @@ function KCGetData( item: KCItemRef; maxLength: UInt32; data: UnivPtr; var actua
  }
 function KCLock( keychain: KCRef ): OSStatus; external name '_KCLock';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_6,__IPHONE_NA,__IPHONE_NA) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew

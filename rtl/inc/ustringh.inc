@@ -20,10 +20,13 @@ Function Pos (Const Substr : UnicodeString; Const Source : UnicodeString) : Size
 Function Pos (c : Char; Const s : UnicodeString) : SizeInt;
 Function Pos (c : UnicodeChar; Const s : UnicodeString) : SizeInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Pos (const c : RawByteString; Const s : UnicodeString) : SizeInt;
 Function Pos (const c : UnicodeString; Const s : RawByteString) : SizeInt;
 Function Pos (const c : ShortString; Const s : UnicodeString) : SizeInt;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Function Pos (c : RawByteString; Const s : UnicodeString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 Function Pos (c : UnicodeString; Const s : RawByteString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 Function Pos (c : ShortString; Const s : UnicodeString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -98,6 +101,9 @@ Type
 =======
     CompareWideStringProc : function(const s1, s2 : WideString) : PtrInt;
     CompareTextWideStringProc : function(const s1, s2 : WideString): PtrInt;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     { return value: number of code points in the string. Whenever an invalid
       code point is encountered, all characters part of this invalid code point
@@ -145,6 +151,7 @@ function UnicodeToUtf8(Dest: PChar; MaxDestBytes: SizeUInt; Source: PUnicodeChar
 function Utf8ToUnicode(Dest: PUnicodeChar; Source: PChar; MaxChars: SizeInt): SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 function Utf8ToUnicode(Dest: PUnicodeChar; MaxDestChars: SizeUInt; Source: PChar; SourceBytes: SizeUInt): SizeUInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
 function UTF8Encode(const s : RawByteString) : RawByteString; inline;
 function UTF8Encode(const s : UnicodeString) : RawByteString;
 function UTF8Decode(const s : RawByteString): UnicodeString;
@@ -157,11 +164,16 @@ function UTF8ToString(const S: array of Byte): unicodestring;
 function AnsiToUtf8(const s : RawByteString): RawByteString;{$ifdef SYSTEMINLINE}inline;{$endif}
 function Utf8ToAnsi(const s : RawByteString) : RawByteString;{$ifdef SYSTEMINLINE}inline;{$endif}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function UTF8Encode(const s : RawByteString) : UTF8String; inline;
 function UTF8Encode(const s : UnicodeString) : UTF8String;
 function UTF8Decode(const s : UTF8String): UnicodeString;
 function AnsiToUtf8(const s : RawByteString): UTF8String;{$ifdef SYSTEMINLINE}inline;{$endif}
 function Utf8ToAnsi(const s : UTF8String) : RawByteString;{$ifdef SYSTEMINLINE}inline;{$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function UnicodeStringToUCS4String(const s : UnicodeString) : UCS4String;
 function UCS4StringToUnicodeString(const s : UCS4String) : UnicodeString;
@@ -180,9 +192,12 @@ function StringElementSize(const S : UnicodeString): Word; overload;
 function StringRefCount(const S : UnicodeString): SizeInt; overload;
 function StringCodePage(const S : UnicodeString): TSystemCodePage; overload;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Function ToSingleByteFileSystemEncodedFileName(const Str: UnicodeString): RawByteString;
 Function ToSingleByteFileSystemEncodedFileName(const arr: array of widechar): RawByteString;
 Function ToSingleByteFileSystemEncodedFileName(const Str: RawByteString): RawByteString;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

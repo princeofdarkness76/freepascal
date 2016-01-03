@@ -7,8 +7,13 @@ interface
 uses fpcunit, testregistry, gpriorityqueue, gutil;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 type lesslli=specialize TLess<longint>;
      queuelli=specialize TPriorityQueue<longint,lesslli>;
+=======
+{type lesslli=specialize TLess<longint>;
+     queuelli=specialize TPriorityQueue<longint,lesslli>;}
+>>>>>>> graemeg/cpstrnew
 =======
 {type lesslli=specialize TLess<longint>;
      queuelli=specialize TPriorityQueue<longint,lesslli>;}
@@ -21,7 +26,11 @@ type TGPQueueTest = class(TTestCase)
     procedure Setup;override;
   private 
 <<<<<<< HEAD
+<<<<<<< HEAD
     data:queuelli;
+=======
+   { data:queuelli;}
+>>>>>>> graemeg/cpstrnew
 =======
    { data:queuelli;}
 >>>>>>> graemeg/cpstrnew
@@ -33,7 +42,11 @@ procedure TGPQueueTest.QueueTest;
 var i,last:longint;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Not IsEmpty', true, data.IsEmpty);
+=======
+{  AssertEquals('Not IsEmpty', true, data.IsEmpty);
+>>>>>>> graemeg/cpstrnew
 =======
 {  AssertEquals('Not IsEmpty', true, data.IsEmpty);
 >>>>>>> graemeg/cpstrnew
@@ -48,7 +61,11 @@ begin
     data.pop;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Not IsEmpty', true, data.IsEmpty);
+=======
+  AssertEquals('Not IsEmpty', true, data.IsEmpty);}
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Not IsEmpty', true, data.IsEmpty);}
 >>>>>>> graemeg/cpstrnew
@@ -57,7 +74,11 @@ end;
 procedure TGPQueueTest.Setup;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   data:=queuelli.create;
+=======
+{  data:=queuelli.create;}
+>>>>>>> graemeg/cpstrnew
 =======
 {  data:=queuelli.create;}
 >>>>>>> graemeg/cpstrnew

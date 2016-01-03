@@ -28,6 +28,7 @@ interface
     uses
       symdef,
 <<<<<<< HEAD
+<<<<<<< HEAD
       ncal,nx86cal;
 
     type
@@ -39,6 +40,8 @@ interface
        public
          procedure do_syscall;override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       ncal,ncgcal;
 
     type
@@ -46,6 +49,9 @@ interface
         protected
          procedure extra_call_code;override;
          procedure set_result_location(realresdef: tstoreddef);override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        end;
 
@@ -61,6 +67,9 @@ implementation
 =======
       systems,
       cpubase,cgbase,cgutils,cgobj,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       aasmtai,aasmdata,aasmcpu;
 

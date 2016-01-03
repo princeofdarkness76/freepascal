@@ -313,6 +313,9 @@ implementation
         location_copy(location,left.location);
         location_force_reg(current_asmdata.CurrAsmList,location,OS_SINT,false);
         cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_NEG,OS_SINT,location.register,location.register);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
         if (cs_check_overflow in current_settings.localswitches) then
@@ -585,6 +588,9 @@ implementation
          location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,true);
          location_reset(location,LOC_REGISTER,opsize);
          location.register:=cg.getintregister(current_asmdata.CurrAsmList,opsize);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
          { shifting by a constant directly coded: }
@@ -635,6 +641,9 @@ implementation
               else
                 hcountreg:=right.location.register;
               cg.a_op_reg_reg_reg(current_asmdata.CurrAsmList,op,opsize,hcountreg,left.location.register,location.register);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
            end;
       end;

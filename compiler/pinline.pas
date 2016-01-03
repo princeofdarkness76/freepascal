@@ -84,7 +84,11 @@ implementation
           message(parser_e_feature_unsupported_for_vm);
         consume(_LKLAMMER);
 <<<<<<< HEAD
+<<<<<<< HEAD
         p:=comp_expr([ef_accept_equal]);
+=======
+        p:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
         p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -183,7 +187,11 @@ implementation
                  Message1(type_e_pointer_type_expected,p.resultdef.typename);
                  p.free;
 <<<<<<< HEAD
+<<<<<<< HEAD
                  p:=factor(false,[]);
+=======
+                 p:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
                  p:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -198,7 +206,11 @@ implementation
                  Message(parser_e_pointer_to_class_expected);
                  p.free;
 <<<<<<< HEAD
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -212,7 +224,11 @@ implementation
               begin
                  Message(parser_e_no_new_or_dispose_for_classes);
 <<<<<<< HEAD
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -357,9 +373,12 @@ implementation
                      { create call to fpc_initialize }
                      if is_managed_type(tpointerdef(p.resultdef).pointeddef) or
 <<<<<<< HEAD
+<<<<<<< HEAD
                        ((m_isolike_io in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
                        addstatement(newstatement,cnodeutils.initialize_data_node(cderefnode.create(ctemprefnode.create(temp)),false));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                        ((m_iso in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
                        addstatement(newstatement,initialize_data_node(cderefnode.create(ctemprefnode.create(temp))));
 >>>>>>> graemeg/cpstrnew
@@ -420,8 +439,11 @@ implementation
                      { create call to fpc_finalize }
                      if is_managed_type(tpointerdef(p.resultdef).pointeddef) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                        addstatement(newstatement,cnodeutils.finalize_data_node(cderefnode.create(p.getcopy)));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                        addstatement(newstatement,finalize_data_node(cderefnode.create(p.getcopy)));
 >>>>>>> graemeg/cpstrnew
 
@@ -447,7 +469,11 @@ implementation
           message(parser_e_feature_unsupported_for_vm);
         consume(_LKLAMMER);
 <<<<<<< HEAD
+<<<<<<< HEAD
         p1:=factor(false,[]);
+=======
+        p1:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
         p1:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -731,6 +757,9 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function inline_initfinal(isinit: boolean): tnode;
       var
@@ -780,9 +809,15 @@ implementation
          begin
            if isinit then
 <<<<<<< HEAD
+<<<<<<< HEAD
              newblock:=cnodeutils.initialize_data_node(ppn.left,true)
            else
              newblock:=cnodeutils.finalize_data_node(ppn.left);
+=======
+             newblock:=initialize_data_node(ppn.left)
+           else
+             newblock:=finalize_data_node(ppn.left);
+>>>>>>> graemeg/cpstrnew
 =======
              newblock:=initialize_data_node(ppn.left)
            else

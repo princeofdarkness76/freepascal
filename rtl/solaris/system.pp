@@ -278,7 +278,10 @@ Begin
 {$endif cpui386}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   initunicodestringmanager;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

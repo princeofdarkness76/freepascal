@@ -22,6 +22,9 @@ uses
 =======
   Classes, consoletestrunner, testjsondata, testjsonparser,
   fpcunitconsolerunner, testjsonrtti, fpjsonrtti;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 type
   { TLazTestRunner }

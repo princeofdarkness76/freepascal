@@ -51,14 +51,20 @@ end;
 
 Function TRefItem.GetCopy : TLinkedListItem;
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=TRefItem.Create(RefInfo);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   NR : TRefItem;
 begin
   NR.Create(RefInfo);
   GetCopy:=NR;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

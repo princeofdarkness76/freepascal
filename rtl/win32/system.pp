@@ -95,8 +95,11 @@ const
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TDLL_Entry_Hook = procedure (dllparam : longint);
 >>>>>>> graemeg/cpstrnew
 
@@ -701,6 +704,7 @@ end;
 {$endif Set_i386_Exception_handler}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_SECTION_THREADVARS}
 function fpc_tls_add(addr: pointer): pointer; assembler; nostackframe;
   [public,alias: 'FPC_TLS_ADD']; compilerproc;
@@ -804,6 +808,8 @@ function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;
     result:=tpeheader((pointer(getmodulehandle(nil))+(tdosheader(pointer(getmodulehandle(nil))^).e_lfanew))^).SizeOfStackReserve;
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {******************************************************************************}
 { include code common with win64 }
 

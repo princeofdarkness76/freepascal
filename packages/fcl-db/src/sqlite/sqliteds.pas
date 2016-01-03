@@ -54,7 +54,11 @@ type
     procedure InternalCloseHandle; override;
     procedure RetrieveFieldDefs; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SqliteExec(ASQL: PAnsiChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+=======
+    function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
 >>>>>>> graemeg/cpstrnew
@@ -124,7 +128,11 @@ begin
   FieldDefs.Clear;
   FAutoIncFieldNo := -1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite_compile(FSqliteHandle, PAnsiChar(FEffectiveSQL), nil, @vm, nil);
+=======
+  FReturnCode := sqlite_compile(FSqliteHandle, PChar(FEffectiveSQL), nil, @vm, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   FReturnCode := sqlite_compile(FSqliteHandle, PChar(FEffectiveSQL), nil, @vm, nil);
 >>>>>>> graemeg/cpstrnew
@@ -244,7 +252,11 @@ begin
       @GetAutoIncValue, @FNextAutoInc, nil);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite_compile(FSqliteHandle, PAnsiChar(FEffectiveSQL), nil, @vm, nil);
+=======
+  FReturnCode := sqlite_compile(FSqliteHandle, PChar(FEffectiveSQL), nil, @vm, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   FReturnCode := sqlite_compile(FSqliteHandle, PChar(FEffectiveSQL), nil, @vm, nil);
 >>>>>>> graemeg/cpstrnew

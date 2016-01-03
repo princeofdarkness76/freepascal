@@ -211,6 +211,7 @@ type
    ENoThreadSupport = Class(Exception);
    ENoWideStringSupport = Class(Exception);
 <<<<<<< HEAD
+<<<<<<< HEAD
    ENoDynLibsSupport = class(Exception);
    ENotImplemented = class(Exception);
 
@@ -218,6 +219,9 @@ type
    EArgumentOutOfRangeException = class(EArgumentException);
 
    ENoConstructException = class(Exception);
+=======
+   ENotImplemented = class(Exception);
+>>>>>>> graemeg/cpstrnew
 =======
    ENotImplemented = class(Exception);
 >>>>>>> graemeg/cpstrnew
@@ -292,9 +296,12 @@ Type
 {$endif FPC_HAS_UNICODESTRING}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$macro on}
 {$define PathStr:=UnicodeString}
 {$define PathPChar:=PWideChar}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   { Read filename handling functions declaration }

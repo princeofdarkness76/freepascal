@@ -17,14 +17,20 @@ uses
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
   area: TPTCArea;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   x1, y1, x2, y2: Integer;
   pixels: PUint32;
@@ -64,6 +70,9 @@ begin
       finally
         area.Free;
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
       { loop until a key is pressed }
@@ -104,13 +113,19 @@ begin
       end;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       console.Free;
       surface.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

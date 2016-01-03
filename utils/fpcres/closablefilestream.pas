@@ -38,6 +38,10 @@ type
     procedure EnsureHandleOpen;
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    procedure SetSize(NewSize: Longint); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetSize(NewSize: Longint); override;
 >>>>>>> graemeg/cpstrnew
@@ -49,6 +53,10 @@ type
     function Read(var Buffer; Count: Longint): Longint; override;
     function Write(const Buffer; Count: Longint): Longint; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    function Seek(Offset: Longint; Origin: Word): Longint; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function Seek(Offset: Longint; Origin: Word): Longint; override;
 >>>>>>> graemeg/cpstrnew
@@ -232,12 +240,18 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TClosableFileStream.SetSize(NewSize: Longint);
 begin
   SetSize(int64(NewSize));
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure TClosableFileStream.SetSize(const NewSize: Int64);
 begin
@@ -289,13 +303,19 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TClosableFileStream.Seek(Offset: Longint; Origin: Word): Longint;
 begin
   EnsureHandleOpen;
   Result:=fStream.Seek(Offset,Origin);
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function TClosableFileStream.Seek(const Offset: Int64; Origin: TSeekOrigin
   ): Int64;

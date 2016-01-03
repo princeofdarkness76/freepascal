@@ -29,11 +29,17 @@ Type
   Private
     FScanner : TJSONScanner;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetO(AIndex: TJSONOption): Boolean;
     function GetOptions: TJSONOptions;
     function ParseNumber: TJSONNumber;
     procedure SetO(AIndex: TJSONOption; AValue: Boolean);
     procedure SetOptions(AValue: TJSONOptions);
+=======
+    FStrict: Boolean;
+    function ParseNumber: TJSONNumber;
+    procedure SetStrict(const AValue: Boolean);
+>>>>>>> graemeg/cpstrnew
 =======
     FStrict: Boolean;
     function ParseNumber: TJSONNumber;
@@ -57,11 +63,15 @@ Type
     destructor Destroy();override;
     // Use strict JSON: " for strings, object members are strings, not identifiers
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property Strict : Boolean Index joStrict Read GetO Write SetO ; deprecated 'use options instead';
     // if set to TRUE, then strings will be converted to UTF8 ansistrings, not system codepage ansistrings.
     Property UseUTF8 : Boolean index joUTF8 Read GetO Write SetO; deprecated 'Use options instead';
     // Parsing options
     Property Options : TJSONOptions Read GetOptions Write SetOptions;
+=======
+    Property Strict : Boolean Read FStrict Write SetStrict;
+>>>>>>> graemeg/cpstrnew
 =======
     Property Strict : Boolean Read FStrict Write SetStrict;
 >>>>>>> graemeg/cpstrnew
@@ -125,7 +135,11 @@ function TJSONParser.CurrentTokenString: String;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   If CurrentToken in [tkString,tkIdentifier,tkNumber,tkComment] then
+=======
+  If CurrentToken in [tkString,tkIdentifier,tkNumber] then
+>>>>>>> graemeg/cpstrnew
 =======
   If CurrentToken in [tkString,tkIdentifier,tkNumber] then
 >>>>>>> graemeg/cpstrnew
@@ -231,6 +245,7 @@ begin
   Result:=FScanner.Options
 end;
 
+<<<<<<< HEAD
 procedure TJSONParser.SetO(AIndex: TJSONOption; AValue: Boolean);
 begin
   if aValue then
@@ -246,6 +261,8 @@ end;
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TJSONParser.SetStrict(const AValue: Boolean);
 begin
   if (FStrict=AValue) then
@@ -254,6 +271,9 @@ begin
   If Assigned(FScanner) then
     FScanner.Strict:=Fstrict;
 end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 // Current token is {, on exit current token is }
@@ -335,7 +355,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONParser.DoError(const Msg: String);
+=======
+Procedure TJSONParser.DoError(const Msg : String);
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure TJSONParser.DoError(const Msg : String);
 >>>>>>> graemeg/cpstrnew

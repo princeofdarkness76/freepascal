@@ -8,7 +8,11 @@ main=rtl
 [target]
 loaders=
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar unixtype ctypes strings objpas iso7185 extpas macpas \
+=======
+units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
+>>>>>>> graemeg/cpstrnew
 =======
 units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
 >>>>>>> graemeg/cpstrnew
@@ -48,6 +52,9 @@ rsts=math typinfo classes sysconst rtlconst
 implicitunits=exeinfo
 
 rsts=math varutils typinfo classes variants dateutils sysconst rtlconst stdconvs
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [require]
@@ -74,8 +81,11 @@ libunits=$(SYSTEMUNIT) objpas strings \
       sysutils typinfo math \
       $(CPU_UNITS) getopts heaptrc \
 <<<<<<< HEAD
+<<<<<<< HEAD
       errors
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       errors sockets ipc
 >>>>>>> graemeg/cpstrnew
 
@@ -242,6 +252,15 @@ stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUE
         $(COMPILER) $(OBJPASDIR)/stdconvs.pp
 
 
+convutils$(PPUEXT) : $(OBJPASDIR)/convutils.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/convutils.pp
+
+stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/stdconvs.pp
+
+
 #
 # Mac Pascal Model
 #
@@ -265,6 +284,9 @@ mouse$(PPUEXT) : $(UNIXINC)/mouse.pp $(SYSTEMUNIT)$(PPUEXT) baseunix$(PPUEXT) vi
 
 matrix$(PPUEXT) : $(INC)/matrix.pp $(SYSTEMUNIT)$(PPUEXT)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 ifeq ($(ARCH),x86_64)
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT)

@@ -5,8 +5,11 @@
 [package]
 name=fcl-db
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [target]
@@ -34,6 +37,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -121,6 +125,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 [rules]
 distclean: $(addsuffix _distclean,$(TARGET_DIRS)) fpc_distclean 
 clean: $(addsuffix _clean,$(TARGET_DIRS)) fpc_clean
@@ -146,4 +152,7 @@ src/dbase_smart: src/base_smart
 src/dbase_release: src/base_release
 src/dbase_shared: src/base_shared
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

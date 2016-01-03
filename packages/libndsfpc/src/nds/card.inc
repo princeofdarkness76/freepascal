@@ -18,6 +18,7 @@ const
 
   // SPI EEPROM COMMANDS
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   SPI_EEPROM_WRSR   = $01;
   SPI_EEPROM_PP     = $02;	// Page Program
@@ -34,6 +35,8 @@ const
 
 // REG_ROMCTRL:
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   EEPROM_WRSR = $01;
   EEPROM_WRDI = $04;
   EEPROM_RDSR = $05;
@@ -41,6 +44,9 @@ const
   EEPROM_RDID = $9f;
 
 // ROMCTRL register:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   CARD_ACTIVATE   = (1 shl 31);  // when writing, get the ball rolling
   CARD_WR         = (1 shl 30);
@@ -103,7 +109,10 @@ function cardReadID(flags: cuint32): cuint32; cdecl; external;
 procedure cardReset(); cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure eepromWaitBusy(); inline;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

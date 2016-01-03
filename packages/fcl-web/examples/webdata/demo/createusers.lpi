@@ -2,6 +2,7 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
@@ -22,6 +23,8 @@
       <Item1 Name="default" Default="True"/>
     </BuildModes>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     <Version Value="7"/>
     <General>
       <Flags>
@@ -38,6 +41,9 @@
       <Language Value=""/>
       <CharSet Value=""/>
     </VersionInfo>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <PublishOptions>
       <Version Value="2"/>
@@ -52,7 +58,11 @@
       </local>
     </RunParams>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="1">
+=======
+    <Units Count="2">
+>>>>>>> graemeg/cpstrnew
 =======
     <Units Count="2">
 >>>>>>> graemeg/cpstrnew
@@ -61,12 +71,15 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="createusers"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Unit0>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="10"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CursorPos X="16" Y="35"/>
         <TopLine Value="15"/>
         <UsageCount Value="20"/>
@@ -83,11 +96,15 @@
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="8"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <Target>
       <Filename Value="createusers"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
@@ -102,10 +119,15 @@
         <UseMsgFile Value="True"/>
       </CompilerMessages>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       <IncludeFiles Value="$(ProjOutDir)/"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Other>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       <CompilerPath Value="$(CompPath)"/>
     </Other>

@@ -4,7 +4,11 @@
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 dirs=libfat nitrofs
+=======
+dirs=embedded_gbfs libfat nitrofs
+>>>>>>> graemeg/cpstrnew
 =======
 dirs=embedded_gbfs libfat nitrofs
 >>>>>>> graemeg/cpstrnew

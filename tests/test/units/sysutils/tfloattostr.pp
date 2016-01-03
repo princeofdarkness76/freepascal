@@ -10,6 +10,7 @@ var
   ErrCount: longint;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure CheckVal(f: Extended);
 var
   s: string;
@@ -55,6 +56,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure CheckResult(const s, ref: string);
 begin
   if s <> ref then
@@ -71,8 +74,11 @@ var
   s: single;
   c: currency;
 <<<<<<< HEAD
+<<<<<<< HEAD
   i: Integer;
   tests: array [0..4] of Double = (123456789123456789., 1e20, 1.6e20, 5e20, 9e20);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin
@@ -98,6 +104,7 @@ begin
   CheckResult(FloatToStrF(-12345.1234,ffCurrency,19,4), '-12' + ThousandSeparator + '345'+DecimalSeparator+'1234 ' + CurrencyString);
   CheckResult(FloatToStrF(MinCurrency,ffCurrency,19,4), '-922' + ThousandSeparator + '337' + ThousandSeparator + '203' + ThousandSeparator + '685' + ThousandSeparator + '477'+DecimalSeparator+'5807 ' + CurrencyString);
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to High(tests) do begin
     e := tests[i];
     CycleInc(e,1e20);
@@ -106,6 +113,8 @@ begin
     CycleInc(e,e/2);
     CycleInc(e,e/3);
   end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if ErrCount > 0 then

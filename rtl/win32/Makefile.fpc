@@ -8,7 +8,11 @@ main=rtl
 [target]
 loaders=$(LOADERS)
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 buildrtl cpall lineinfo lnfodwrf
+=======
+units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
+>>>>>>> graemeg/cpstrnew
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 >>>>>>> graemeg/cpstrnew
@@ -33,6 +37,9 @@ implicitunits=sysinitpas sysinitcyg sysinitgprof \
       winevent sockets printer \
       video mouse keyboard fmtbcd \
       winsysut sharemem exeinfo fpintres windirs
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 # shared=$(DLLS)

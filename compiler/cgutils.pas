@@ -78,6 +78,7 @@ unit cgutils;
          direction : tdirection;
 {$endif m68k}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef jvm}
          arrayreftype: tarrayreftype;
          indexbase: tregister;
@@ -85,6 +86,8 @@ unit cgutils;
          indexoffset: aint;
          checkcast: boolean;
 {$endif jvm}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          alignment : byte;
@@ -186,7 +189,10 @@ unit cgutils;
     procedure location_copy(var destloc:tlocation; const sourceloc : tlocation);
     procedure location_swap(var destloc,sourceloc : tlocation);
 <<<<<<< HEAD
+<<<<<<< HEAD
     function location_reg2string(const locreg: tlocation): string;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -302,6 +308,7 @@ uses
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     function location_reg2string(const locreg: tlocation): string;
       begin
@@ -470,6 +477,8 @@ uses
       end;
 {$pop}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end.

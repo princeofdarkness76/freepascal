@@ -17,8 +17,14 @@ uses
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
@@ -48,7 +54,10 @@ begin
       pixels := GetMem(width * height * SizeOf(Uint32));
       FillChar(pixels^, width * height * SizeOf(Uint32), 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       palette := TPTCPalette.Create;
 >>>>>>> graemeg/cpstrnew
 
@@ -79,19 +88,28 @@ begin
         console.Update;
 =======
         console.update;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
     finally
       { free pixels buffer }
       FreeMem(pixels);
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       palette.Free;
       format.Free;
       console.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

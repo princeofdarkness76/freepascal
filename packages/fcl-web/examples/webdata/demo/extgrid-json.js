@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Ext.require(['Ext.data.*', 'Ext.grid.*']);
 
 Ext.define('Person', {
@@ -145,6 +146,8 @@ Ext.onReady(function(){
     });
 });
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Ext.ns('FPC');
 
 FPC.ShowPage = function () {
@@ -240,4 +243,7 @@ FPC.ShowPage = function () {
   grid.show();
 }
 Ext.onReady(FPC.ShowPage);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

@@ -1,7 +1,11 @@
 {
     This file is part of the Free Pascal packages.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2009-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2009 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2009 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -18,6 +22,7 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Normally, if an optimized version is available for OS/CPU, that will be used
 // Define to use existing unoptimized implementation
 { the assembler implementation does not work on darwin }
@@ -25,6 +30,8 @@
 {$DEFINE SHA1PASCAL}
 {$endif darwin}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 unit sha1;
@@ -35,7 +42,11 @@ interface
 type
   TSHA1Digest = array[0..19] of Byte;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -47,7 +58,11 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { core }
+=======
+{ core }  
+>>>>>>> graemeg/cpstrnew
 =======
 { core }  
 >>>>>>> graemeg/cpstrnew
@@ -99,6 +114,7 @@ const
   K60 = $8F1BBCDC;
   K80 = $CA62C1D6;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$IF (NOT(DEFINED(SHA1PASCAL))) and (DEFINED(CPU386)) }
 // Use assembler version if we have a suitable CPU as well
@@ -106,6 +122,9 @@ const
 {$i sha1i386.inc}
 {$ELSE}
 // Use original version if asked for, or when we have no optimized assembler version
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -135,7 +154,11 @@ begin
     Inc(i);
   until i > 19;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -150,7 +173,11 @@ begin
     Inc(i);
   until i > 39;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -164,8 +191,13 @@ begin
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
 <<<<<<< HEAD
+<<<<<<< HEAD
   until i > 59;
 
+=======
+  until i > 59;  
+  
+>>>>>>> graemeg/cpstrnew
 =======
   until i > 59;  
   
@@ -180,7 +212,11 @@ begin
     Data[i and 15] := roldword(Data[i and 15] xor Data[(i+2) and 15] xor Data[(i+8) and 15] xor Data[(i+13) and 15], 1);
     Inc(i);
 <<<<<<< HEAD
+<<<<<<< HEAD
   until i > 79;
+=======
+  until i > 79;  
+>>>>>>> graemeg/cpstrnew
 =======
   until i > 79;  
 >>>>>>> graemeg/cpstrnew
@@ -194,7 +230,10 @@ begin
   Inc(ctx.Length,64);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -248,7 +287,11 @@ end;
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
   PADDING: array[0..63] of Byte =
+=======
+  PADDING: array[0..63] of Byte = 
+>>>>>>> graemeg/cpstrnew
 =======
   PADDING: array[0..63] of Byte = 
 >>>>>>> graemeg/cpstrnew
@@ -280,7 +323,11 @@ begin
   // 4. Invert state to digest
   Invert(@ctx.State, @Digest, 20);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FillChar(ctx, sizeof(TSHA1Context), 0);
+=======
+  FillChar(ctx, sizeof(TSHA1Context), 0);  
+>>>>>>> graemeg/cpstrnew
 =======
   FillChar(ctx, sizeof(TSHA1Context), 0);  
 >>>>>>> graemeg/cpstrnew
@@ -316,17 +363,23 @@ begin
 
   Assign(F, Filename);
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}{$i-}
   ofm := FileMode;
   FileMode := 0;
   Reset(F, 1);
   {$pop}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   {$i-}
   ofm := FileMode;
   FileMode := 0;
   Reset(F, 1);
   {$i+}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   if IOResult = 0 then
@@ -369,6 +422,7 @@ var
   B: array[0..4] of Cardinal absolute Digest2;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$B+}
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
@@ -378,8 +432,13 @@ end;
 end.
 k
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
 end;
 
 end.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

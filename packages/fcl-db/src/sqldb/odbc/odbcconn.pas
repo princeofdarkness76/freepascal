@@ -95,7 +95,10 @@ type
     procedure Execute(cursor:TSQLCursor; ATransaction:TSQLTransaction; AParams:TParams); override;
     function RowsAffected(cursor: TSQLCursor): TRowsCount; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function RefreshLastInsertID(Query : TCustomSQLQuery; Field : TField): boolean; override;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     // - Result retrieving
@@ -399,10 +402,13 @@ var
   TimeStampVal: SQL_TIMESTAMP_STRUCT;
   BoolVal: byte;
 <<<<<<< HEAD
+<<<<<<< HEAD
   NumericVal: SQL_NUMERIC_STRUCT;
   ColumnSize: SQLULEN;
   BufferLength, StrLenOrInd: SQLLEN;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   ColumnSize, BufferLength, StrLenOrInd: SQLINTEGER;
 >>>>>>> graemeg/cpstrnew
   CType, SqlType, DecimalDigits:SQLSMALLINT;
@@ -448,8 +454,12 @@ begin
           ColumnSize:=19;
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       ftString, ftFixedChar, ftBlob, ftMemo, ftGuid,
       ftBytes, ftVarBytes:
+=======
+      ftString, ftFixedChar, ftBlob, ftMemo:
+>>>>>>> graemeg/cpstrnew
 =======
       ftString, ftFixedChar, ftBlob, ftMemo:
 >>>>>>> graemeg/cpstrnew
@@ -467,11 +477,14 @@ begin
           BufferLength:=Size;
           case AParams[ParamIndex].DataType of
 <<<<<<< HEAD
+<<<<<<< HEAD
             ftBytes, ftVarBytes:
               begin
               CType:=SQL_C_BINARY;
               SqlType:=SQL_VARBINARY;
               end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
             ftBlob:
@@ -490,6 +503,7 @@ begin
               SqlType:=SQL_VARCHAR;
               end;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
         end;
       ftWideString, ftFixedWideChar, ftWideMemo:
@@ -510,6 +524,8 @@ begin
             ftWideMemo: SqlType:=SQL_WLONGVARCHAR;
             else        SqlType:=SQL_WVARCHAR;
           end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         end;
@@ -1169,6 +1185,19 @@ begin
     Result:=-1;
 end;
 
+function TODBCConnection.RowsAffected(cursor: TSQLCursor): TRowsCount;
+var
+  RowCount: SQLINTEGER;
+begin
+  if assigned(cursor) then
+    if ODBCSucces( SQLRowCount((cursor as TODBCCursor).FSTMTHandle, RowCount) ) then
+       Result:=RowCount
+    else
+       Result:=-1
+  else
+    Result:=-1;
+end;
+
 function TODBCConnection.Fetch(cursor: TSQLCursor): boolean;
 var
   ODBCCursor:TODBCCursor;
@@ -1214,7 +1243,11 @@ begin
     ftSmallint:           // mapped to TSmallintField
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_SSHORT, buffer, SizeOf(Smallint), @StrLenOrInd);
 <<<<<<< HEAD
+<<<<<<< HEAD
     ftInteger,ftAutoInc:  // mapped to TLongintField
+=======
+    ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
+>>>>>>> graemeg/cpstrnew
 =======
     ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
 >>>>>>> graemeg/cpstrnew

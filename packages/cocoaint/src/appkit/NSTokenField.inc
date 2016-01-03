@@ -43,6 +43,7 @@
 { NSTokenField }
   NSTokenField = objcclass external (NSTextField)
 <<<<<<< HEAD
+<<<<<<< HEAD
   private
     _reserved1: Boolean;
     _reserved2: Boolean;
@@ -52,6 +53,8 @@
     _reserved5: id;
     _reserved6: id;
     _reserved7: id;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     

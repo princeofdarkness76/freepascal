@@ -38,6 +38,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_erase(p : pchar; pchangeable: boolean);
 var
   regs : trealregs;
@@ -46,11 +47,16 @@ begin
   oldp:=p;
   DoDirSeparators(p,pchangeable);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure do_erase(p : pchar);
 var
   regs : trealregs;
 begin
   DoDirSeparators(p);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   syscopytodos(longint(p),strlen(p)+1);
   regs.realedx:=tb_offset;
@@ -64,6 +70,7 @@ begin
   sysrealintr($21,regs);
   if (regs.realflags and carryflag) <> 0 then
    GetInOutRes(lo(regs.realeax));
+<<<<<<< HEAD
 <<<<<<< HEAD
   if p<>oldp then
     freemem(p);
@@ -79,6 +86,8 @@ begin
   DoDirSeparators(p1,p1changeable);
   DoDirSeparators(p2,p2changeable);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure do_rename(p1,p2 : pchar);
@@ -87,6 +96,9 @@ var
 begin
   DoDirSeparators(p1);
   DoDirSeparators(p2);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if strlen(p1)+strlen(p2)+3>tb_size then
    HandleError(217);
@@ -105,10 +117,13 @@ begin
   if (regs.realflags and carryflag) <> 0 then
    GetInOutRes(lo(regs.realeax));
 <<<<<<< HEAD
+<<<<<<< HEAD
   if p1<>oldp1 then
     freemem(p1);
   if p2<>oldp2 then
     freemem(p2);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -294,7 +309,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_open(var f;p:pchar;flags:longint; pchangeable: boolean);
+=======
+procedure do_open(var f;p:pchar;flags:longint);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure do_open(var f;p:pchar;flags:longint);
 >>>>>>> graemeg/cpstrnew
@@ -310,8 +329,13 @@ var
   action : longint;
   Avoid6c00 : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp : pchar;
 begin
+=======
+begin
+  DoDirSeparators(p);
+>>>>>>> graemeg/cpstrnew
 =======
 begin
   DoDirSeparators(p);
@@ -360,8 +384,11 @@ begin
      exit;
    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp:=p;
   DoDirSeparators(p,pchangeable);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { real dos call }
@@ -427,9 +454,12 @@ begin
     begin
       GetInOutRes(lo(regs.realeax));
 <<<<<<< HEAD
+<<<<<<< HEAD
       FileRec(f).mode:=fmclosed;
       if oldp<>p then
         freemem(p);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       exit;
@@ -467,8 +497,11 @@ begin
      filerec(f).mode:=fmoutput; {fool fmappend}
    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if oldp<>p then
     freemem(p);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;

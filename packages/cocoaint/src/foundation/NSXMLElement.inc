@@ -48,7 +48,11 @@
     _children: NSArray;
     _childrenHaveMutated: Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _padding3: array[0..(3)-1] of cuint8;
+=======
+        _padding3: array[0..2] of cuint8;
+>>>>>>> graemeg/cpstrnew
 =======
         _padding3: array[0..2] of cuint8;
 >>>>>>> graemeg/cpstrnew

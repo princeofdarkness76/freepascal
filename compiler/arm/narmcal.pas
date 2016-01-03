@@ -39,6 +39,7 @@ implementation
     verbose,globtype,globals,aasmdata,
     symconst,
 <<<<<<< HEAD
+<<<<<<< HEAD
     cgbase,cgutils,cpuinfo,
     ncgutil,tgobj,
     systems;
@@ -50,6 +51,8 @@ implementation
          ((cs_fp_emulation in current_settings.moduleswitches) or
           (current_settings.fputype in [fpu_vfpv2,fpu_vfpv3,fpu_vfpv3_d16,fpu_fpv4_s16])) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     cgbase,
     cpubase,cpuinfo,
     ncgutil,
@@ -60,6 +63,9 @@ implementation
       if (realresdef.typ=floatdef) and
          ((cs_fp_emulation in current_settings.moduleswitches) or
           (current_settings.fputype in [fpu_vfpv2,fpu_vfpv3])) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         begin
           { keep the fpu values in integer registers for now, the code
@@ -78,6 +84,7 @@ implementation
           end
         end
 <<<<<<< HEAD
+<<<<<<< HEAD
       else if (resultdef.typ=floatdef) and
          (location.loc=LOC_REGISTER) and
          (current_settings.fputype in [fpu_fpa,fpu_fpa10,fpu_fpa11]) then
@@ -85,6 +92,8 @@ implementation
           location_reset_ref(location,LOC_REFERENCE,location.size,resultdef.alignment);
           tg.gethltemp(current_asmdata.CurrAsmList,resultdef,resultdef.size,tt_normal,location.reference);
         end
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       else

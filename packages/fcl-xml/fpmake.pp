@@ -171,6 +171,9 @@ begin
 <<<<<<< HEAD
 =======
  
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     P.Sources.AddSrc('src/README.txt');
 

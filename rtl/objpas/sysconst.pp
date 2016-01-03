@@ -52,8 +52,11 @@ const
   SErrIllegalDateFormatString   = '"%s" is not a valid date format string';
   SErrInvalidTimeFormat  = '"%s" is not a valid time';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SExceptionErrorMessage = 'Exception at %p: %s';
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   SExceptionErrorMessage = 'exception at %p';
 >>>>>>> graemeg/cpstrnew
   SExceptionStack        = 'Exception stack error';

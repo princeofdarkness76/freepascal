@@ -107,10 +107,13 @@ uses
     function setcondition(i : taicpu;c : tasmcond) : taicpu;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     { replaces cond. branches by rjmp/jmp and the inverse cond. branch if needed
       and transforms special instructions to valid instruction encodings }
     procedure finalizeavrcode(list : TAsmList);
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 implementation
@@ -362,6 +365,9 @@ implementation
             result:=taicpu.op_ref_reg(A_LD,ref,r);
           R_ADDRESSREGISTER :
             result:=taicpu.op_ref_reg(A_LD,ref,r);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           else
             internalerror(200401041);
@@ -385,6 +391,11 @@ implementation
               result:=taicpu.op_ref_reg(A_ST,ref,r);
 =======
             result:=taicpu.op_reg_ref(A_ST,r,ref);
+          R_ADDRESSREGISTER :
+            result:=taicpu.op_reg_ref(A_ST,r,ref);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
           R_ADDRESSREGISTER :
             result:=taicpu.op_reg_ref(A_ST,r,ref);
 >>>>>>> graemeg/cpstrnew
@@ -411,6 +422,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure finalizeavrcode(list : TAsmList);
       var
@@ -494,6 +506,8 @@ implementation
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin

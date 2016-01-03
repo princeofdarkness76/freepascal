@@ -24,7 +24,10 @@ type
     Procedure CheckClass(E : TJSElement; C : TJSElementClass);
     Procedure AssertEquals(Const AMessage : String; Expected, Actual : TJSType); overload;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure AssertIdentifier(Msg : String; El : TJSElement; Const AName : TJSString);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Function  GetSourceElements : TJSSourceElements;
@@ -128,6 +131,7 @@ type
     procedure TestThrow;
     procedure TestReturn;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestAssignment;
     procedure TestNew;
     procedure TestLabeledStatement;
@@ -141,6 +145,8 @@ type
     procedure TestSwitchTwoDefault;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 
 implementation
@@ -148,7 +154,11 @@ implementation
 uses typinfo;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TTestJSParser.AssertEquals(Const AMessage: String; Expected,
+=======
+procedure TTestJSParser.AssertEquals(const AMessage: String; Expected,
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TTestJSParser.AssertEquals(const AMessage: String; Expected,
 >>>>>>> graemeg/cpstrnew
@@ -163,6 +173,7 @@ begin
   AssertEquals(AMessage,NE,NA);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TTestJSParser.AssertIdentifier(Msg: String; El: TJSElement;
   Const AName: TJSString);
@@ -183,6 +194,9 @@ Function TTestJSParser.GetFirstStatement: TJSElement;
 =======
 function TTestJSParser.GetFirstStatement: TJSElement;
 >>>>>>> graemeg/cpstrnew
+=======
+function TTestJSParser.GetFirstStatement: TJSElement;
+>>>>>>> graemeg/cpstrnew
 
 Var
   E : TJSElementNodes;
@@ -198,7 +212,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TTestJSParser.GetFirstVar: TJSElement;
+=======
+function TTestJSParser.GetFirstVar: TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 function TTestJSParser.GetFirstVar: TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -217,7 +235,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TTestJSParser.GetExpressionStatement: TJSExpressionStatement;
+=======
+function TTestJSParser.GetExpressionStatement: TJSExpressionStatement;
+>>>>>>> graemeg/cpstrnew
 =======
 function TTestJSParser.GetExpressionStatement: TJSExpressionStatement;
 >>>>>>> graemeg/cpstrnew
@@ -309,7 +331,11 @@ begin
   AssertNotNull('Expression statement assigned',X.A);
   CheckClass(X.A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression value assigned','Something',TJSPrimaryExpressionIdent(X.A).Name);
+=======
+  AssertEquals('Expression value assigned','Something',TJSPrimaryExpressionIdent(X.A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression value assigned','Something',TJSPrimaryExpressionIdent(X.A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -343,7 +369,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -367,7 +397,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -391,7 +425,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -414,7 +452,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -438,7 +480,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -461,15 +507,21 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
   AssertNotNull('Assignment Expression assigned',SA.Expr);
   CheckClass(SA.EXPR,TJSPrimaryExpressionIdent);
   AssertEquals('Expression value type correct', 'b',TJSPrimaryExpressionIdent(SA.Expr).Name);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
   AssertNotNull('Assignment Expression assigned',SA.Expr);
   CheckClass(SA.EXPR,TJSPrimaryExpressionIdent);
   AssertEquals('Expression value type correct', 'b',TJSPrimaryExpressionIdent(SA.Expr).AString);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -488,7 +540,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -513,7 +569,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -538,7 +598,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -563,7 +627,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -588,7 +656,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -613,7 +685,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -638,7 +714,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -663,7 +743,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -688,7 +772,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -713,7 +801,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -738,7 +830,11 @@ begin
   AssertNotNull('Assignment LHS assigned',SA.LHS);
   CheckClass(SA.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).Name);
+=======
+  AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Expression LHS name correct', 'a',TJSPrimaryExpressionIdent(SA.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1113,7 +1209,11 @@ begin
   AssertNotNull('Have left operand',A.LHS);
   CheckClass(A.LHS,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Correct name for assignment LHS ','a',TJSPrimaryExpressionIdent(A.LHS).Name);
+=======
+  AssertEquals('Correct name for assignment LHS ','a',TJSPrimaryExpressionIdent(A.LHS).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Correct name for assignment LHS ','a',TJSPrimaryExpressionIdent(A.LHS).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1561,7 +1661,11 @@ begin
   AssertNotNull('Call function expression',C.Expr);
   CheckClass(C.Expr,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).Name);
+=======
+  AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1582,7 +1686,11 @@ begin
   AssertNotNull('Call function expression',C.Expr);
   CheckClass(C.Expr,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).Name);
+=======
+  AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1591,7 +1699,11 @@ begin
   AssertNotNull('First argument expression',E);
   CheckClass(E,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('First argument name correct','d',TJSPrimaryExpressionIdent(E).Name);
+=======
+  AssertEquals('First argument name correct','d',TJSPrimaryExpressionIdent(E).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('First argument name correct','d',TJSPrimaryExpressionIdent(E).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1612,7 +1724,11 @@ begin
   AssertNotNull('Call function expression',C.Expr);
   CheckClass(C.Expr,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).Name);
+=======
+  AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Function name correct','abc',TJSPrimaryExpressionIdent(C.Expr).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1621,17 +1737,23 @@ begin
   AssertNotNull('First argument expression',E);
   CheckClass(E,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('First argument name correct','d',TJSPrimaryExpressionIdent(E).Name);
   E:=C.Args.Elements[1].Expr;
   AssertNotNull('Second argument expression',E);
   CheckClass(E,TJSPrimaryExpressionIdent);
   AssertEquals('Second argument name correct','e',TJSPrimaryExpressionIdent(E).Name);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('First argument name correct','d',TJSPrimaryExpressionIdent(E).AString);
   E:=C.Args.Elements[1].Expr;
   AssertNotNull('Second argument expression',E);
   CheckClass(E,TJSPrimaryExpressionIdent);
   AssertEquals('Second argument name correct','e',TJSPrimaryExpressionIdent(E).AString);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -1650,7 +1772,11 @@ begin
   AssertEquals('Member name operand value correct', 1.0, TJSLiteral(B.Name).Value.AsNumber);
   CheckClass(B.Mexpr,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).Name);
+=======
+  AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1671,7 +1797,11 @@ begin
   AssertEquals('Member name operand value correct', 'propname', TJSLiteral(B.Name).Value.AsString);
   CheckClass(B.Mexpr,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).Name);
+=======
+  AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1690,6 +1820,7 @@ begin
   B:=TJSBracketMemberExpression(X.A);
   CheckClass(B.Name,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Member name identifier correct', 'B', TJSPrimaryExpressionIdent(B.Name).Name);
   CheckClass(B.Mexpr,TJSPrimaryExpressionIdent);
   AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).Name);
@@ -1697,12 +1828,17 @@ end;
 
 Procedure TTestJSParser.TestVarDeclarationSimple;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Member name identifier correct', 'B', TJSPrimaryExpressionIdent(B.Name).AString);
   CheckClass(B.Mexpr,TJSPrimaryExpressionIdent);
   AssertEquals('Array name correct','A',TJSPrimaryExpressionIdent(B.Mexpr).AString);
 end;
 
 procedure TTestJSParser.TestVarDeclarationSimple;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 Var
@@ -1754,7 +1890,11 @@ begin
   AssertNotNull('Initialization expression present', V.Init);
   CheckClass(V.Init,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Member name identifier correct', 'b', TJSPrimaryExpressionIdent(V.init).Name);
+=======
+  AssertEquals('Member name identifier correct', 'b', TJSPrimaryExpressionIdent(V.init).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Member name identifier correct', 'b', TJSPrimaryExpressionIdent(V.init).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1781,7 +1921,11 @@ begin
   AssertNotNull('No initialization expression', V.Init);
   CheckClass(V.Init,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Member name identifier correct', 'b', TJSPrimaryExpressionIdent(V.init).Name);
+=======
+  AssertEquals('Member name identifier correct', 'b', TJSPrimaryExpressionIdent(V.init).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Member name identifier correct', 'b', TJSPrimaryExpressionIdent(V.init).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1830,7 +1974,11 @@ begin
   CheckNotNull(TJSExpressionStatement(X).A);
   CheckClass(TJSExpressionStatement(X).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(X).A).Name)
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(X).A).AString)
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(X).A).AString)
 >>>>>>> graemeg/cpstrnew
@@ -1924,7 +2072,11 @@ begin
   CheckNotNull(TJSExpressionStatement(N).A);
   CheckClass(TJSExpressionStatement(N).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(N).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(N).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(N).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1945,7 +2097,11 @@ begin
   AssertNotNull('Statement condition assigned',I.Cond);
   CheckClass(I.Cond,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1955,7 +2111,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(I.BTrue).A);
   CheckClass(TJSExpressionStatement(I.BTrue).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.Btrue).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.Btrue).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.Btrue).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1975,7 +2135,11 @@ begin
   AssertNotNull('Statement condition assigned',I.Cond);
   CheckClass(I.Cond,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
 >>>>>>> graemeg/cpstrnew
@@ -1998,7 +2162,11 @@ begin
   AssertNotNull('Statement condition assigned',I.Cond);
   CheckClass(I.Cond,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2020,7 +2188,11 @@ begin
   AssertNotNull('Statement condition assigned',W.Cond);
   CheckClass(W.Cond,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2029,7 +2201,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(W.Body).A);
   CheckClass(TJSExpressionStatement(W.Body).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2050,7 +2226,11 @@ begin
   AssertNotNull('Statement condition assigned',W.Cond);
   CheckClass(W.Cond,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2059,7 +2239,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(W.Body).A);
   CheckClass(TJSExpressionStatement(W.Body).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2070,7 +2254,11 @@ procedure TTestJSParser.TestDoWhileSimple;
 Var
   E : TJSElement;
 <<<<<<< HEAD
+<<<<<<< HEAD
   W : TJSDoWhileStatement;
+=======
+  W : TJSWhileStatement;
+>>>>>>> graemeg/cpstrnew
 =======
   W : TJSWhileStatement;
 >>>>>>> graemeg/cpstrnew
@@ -2080,24 +2268,34 @@ begin
   CreateParser('do b; while (a);');
   E:=GetFirstStatement;
 <<<<<<< HEAD
+<<<<<<< HEAD
   CheckClass(E,TJSDoWhileStatement);
   W:=TJSDoWhileStatement(E);
   AssertNotNull('Statement condition assigned',W.Cond);
   CheckClass(W.Cond,TJSPrimaryExpressionIdent);
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).Name);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   CheckClass(E,TJSWhileStatement);
   W:=TJSWhileStatement(E);
   AssertNotNull('Statement condition assigned',W.Cond);
   CheckClass(W.Cond,TJSPrimaryExpressionIdent);
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).AString);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   AssertNotNull('Statement condition assigned',W.body);
   CheckClass(W.Body,TJSExpressionStatement);
   AssertNotNull('Expression statement expression',TJSExpressionStatement(W.Body).A);
   CheckClass(TJSExpressionStatement(W.Body).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2108,7 +2306,11 @@ procedure TTestJSParser.TestDoWhileBlock;
 Var
   E : TJSElement;
 <<<<<<< HEAD
+<<<<<<< HEAD
   W : TJSDoWhileStatement;
+=======
+  W : TJSWhileStatement;
+>>>>>>> graemeg/cpstrnew
 =======
   W : TJSWhileStatement;
 >>>>>>> graemeg/cpstrnew
@@ -2118,24 +2320,34 @@ begin
   CreateParser('do {b;} while (a);');
   E:=GetFirstStatement;
 <<<<<<< HEAD
+<<<<<<< HEAD
   CheckClass(E,TJSDoWhileStatement);
   W:=TJSDoWhileStatement(E);
   AssertNotNull('Statement condition assigned',W.Cond);
   CheckClass(W.Cond,TJSPrimaryExpressionIdent);
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).Name);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   CheckClass(E,TJSWhileStatement);
   W:=TJSWhileStatement(E);
   AssertNotNull('Statement condition assigned',W.Cond);
   CheckClass(W.Cond,TJSPrimaryExpressionIdent);
   AssertEquals('a',TJSPrimaryExpressionIdent(W.Cond).AString);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   AssertNotNull('Statement condition assigned',W.body);
   CheckClass(W.Body,TJSExpressionStatement);
   AssertNotNull('Expression statement expression',TJSExpressionStatement(W.Body).A);
   CheckClass(TJSExpressionStatement(W.Body).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(W.Body).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2159,7 +2371,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(F.Body).A);
   CheckClass(TJSExpressionStatement(F.Body).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2183,7 +2399,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(F.Body).A);
   CheckClass(TJSExpressionStatement(F.Body).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2206,6 +2426,7 @@ begin
   CheckClass(F.Init,TJSPrimaryExpressionIdent);
   AssertNotNull('Expression statement expression',TJSPrimaryExpressionIdent(F.Init));
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(F.Init).Name);
   CheckClass(F.Incr,TJSPrimaryExpressionIdent);
   AssertNotNull('Expression statement expression',TJSPrimaryExpressionIdent(F.Incr));
@@ -2218,6 +2439,8 @@ begin
   CheckClass(TJSExpressionStatement(F.Body).A,TJSPrimaryExpressionIdent);
   AssertEquals('d',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).Name);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('a',TJSPrimaryExpressionIdent(F.Init).AString);
   CheckClass(F.Incr,TJSPrimaryExpressionIdent);
   AssertNotNull('Expression statement expression',TJSPrimaryExpressionIdent(F.Incr));
@@ -2229,6 +2452,9 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(F.Body).A);
   CheckClass(TJSExpressionStatement(F.Body).A,TJSPrimaryExpressionIdent);
   AssertEquals('d',TJSPrimaryExpressionIdent(TJSExpressionStatement(F.Body).A).AString);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -2247,7 +2473,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(T.Block).A);
   CheckClass(TJSExpressionStatement(T.Block).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2256,7 +2486,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(T.BCatch).A);
   CheckClass(TJSExpressionStatement(T.BCatch).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BCatch).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BCatch).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BCatch).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2278,7 +2512,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(T.Block).A);
   CheckClass(TJSExpressionStatement(T.Block).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2287,7 +2525,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(T.BCatch).A);
   CheckClass(TJSExpressionStatement(T.BCatch).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BCatch).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BCatch).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BCatch).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2296,7 +2538,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(T.BFinally).A);
   CheckClass(TJSExpressionStatement(T.BFinally).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BFinally).A).Name);
+=======
+  AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BFinally).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BFinally).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2317,7 +2563,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(T.Block).A);
   CheckClass(TJSExpressionStatement(T.Block).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.Block).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2326,7 +2576,11 @@ begin
   AssertNotNull('Finally expression',TJSExpressionStatement(T.BFinally).A);
   CheckClass(TJSExpressionStatement(T.BFinally).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BFinally).A).Name);
+=======
+  AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BFinally).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(T.BFinally).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2345,7 +2599,11 @@ begin
   AssertNotNull('Have throw object',T.A);
   CheckClass(T.A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Correct identifier','a',TJSPrimaryExpressionIdent(T.A).Name);
+=======
+  AssertEquals('Correct identifier','a',TJSPrimaryExpressionIdent(T.A).AsTring);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Correct identifier','a',TJSPrimaryExpressionIdent(T.A).AsTring);
 >>>>>>> graemeg/cpstrnew
@@ -2378,6 +2636,7 @@ begin
   AssertEquals('1 statement in functionbody elements',1,E.Statements.Count);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TTestJSParser.TestAssignment;
 Var
@@ -2627,6 +2886,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TTestJSParser.TestIfElseSimple;
 
 Var
@@ -2641,7 +2902,11 @@ begin
   AssertNotNull('Statement condition assigned',I.Cond);
   CheckClass(I.Cond,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).Name);
+=======
+  AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('a',TJSPrimaryExpressionIdent(I.Cond).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2650,7 +2915,11 @@ begin
   AssertNotNull('Expression statement expression',TJSExpressionStatement(I.BTrue).A);
   CheckClass(TJSExpressionStatement(I.BTrue).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.Btrue).A).Name);
+=======
+  AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.Btrue).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('b',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.Btrue).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2659,7 +2928,11 @@ begin
   AssertNotNull('Else statement expression',TJSExpressionStatement(I.BFalse).A);
   CheckClass(TJSExpressionStatement(I.BFalse).A,TJSPrimaryExpressionIdent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.BFalse).A).Name);
+=======
+  AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.BFalse).A).AString);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('c',TJSPrimaryExpressionIdent(TJSExpressionStatement(I.BFalse).A).AString);
 >>>>>>> graemeg/cpstrnew
@@ -2799,6 +3072,7 @@ begin
   CreateParser('var a;');
   E:=FParser.Parse;
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     CheckClass(E,TJSFunctionBody);
     FB:=TJSFunctionBody(E);
@@ -2811,6 +3085,8 @@ begin
     E.Free;
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   CheckClass(E,TJSFunctionBody);
   FB:=TJSFunctionBody(E);
   AssertNotNull(FB.A);
@@ -2818,6 +3094,9 @@ begin
   SE:=TJSSourceElements(FB.A);
   AssertEquals('1 variable declaration ',1,SE.Vars.Count);
   CheckClass(FB.A,TJSSourceElements);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -2830,7 +3109,11 @@ end;
 procedure TTestJSParser.TearDown; 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FToFree);
+=======
+//  FreeAndNil(FToFree);
+>>>>>>> graemeg/cpstrnew
 =======
 //  FreeAndNil(FToFree);
 >>>>>>> graemeg/cpstrnew
@@ -2839,7 +3122,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TTestJSParser.CreateParser(Const ASource: string);
+=======
+procedure TTestJSParser.CreateParser(const ASource: string);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TTestJSParser.CreateParser(const ASource: string);
 >>>>>>> graemeg/cpstrnew
@@ -2849,7 +3136,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TTestJSParser.CheckClass(E: TJSElement; C: TJSElementClass);
+=======
+procedure TTestJSParser.CheckClass(E: TJSElement; C: TJSElementClass);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TTestJSParser.CheckClass(E: TJSElement; C: TJSElementClass);
 >>>>>>> graemeg/cpstrnew
@@ -2858,7 +3149,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TTestJSParser.GetSourceElements: TJSSourceElements;
+=======
+function TTestJSParser.GetSourceElements: TJSSourceElements;
+>>>>>>> graemeg/cpstrnew
 =======
 function TTestJSParser.GetSourceElements: TJSSourceElements;
 >>>>>>> graemeg/cpstrnew
@@ -2878,6 +3173,7 @@ begin
     CheckClass(FB.A,TJSSourceElements);
     FSE:=TJSSourceElements(FB.A);
 <<<<<<< HEAD
+<<<<<<< HEAD
     FToFree:=E;
     end;
   Result:=FSE;
@@ -2885,19 +3181,28 @@ end;
 
 Function TTestJSParser.GetVars: TJSElementNodes;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     end;
   Result:=FSE;
   FToFree:=E;
 end;
 
 function TTestJSParser.GetVars: TJSElementNodes;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   Result:=GetSourceElements.Vars;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TTestJSParser.GetStatements: TJSElementNodes;
+=======
+function TTestJSParser.GetStatements: TJSElementNodes;
+>>>>>>> graemeg/cpstrnew
 =======
 function TTestJSParser.GetStatements: TJSElementNodes;
 >>>>>>> graemeg/cpstrnew
@@ -2906,7 +3211,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TTestJSParser.GetFunctions: TJSElementNodes;
+=======
+function TTestJSParser.GetFunctions: TJSElementNodes;
+>>>>>>> graemeg/cpstrnew
 =======
 function TTestJSParser.GetFunctions: TJSElementNodes;
 >>>>>>> graemeg/cpstrnew

@@ -6,6 +6,11 @@ uses
   Classes, SysUtils, fpjson, fpjsonrtti, variants;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$R *.res}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$R *.res}
 

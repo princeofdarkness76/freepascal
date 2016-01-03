@@ -37,9 +37,12 @@ interface
       tcgprocinfo = class(tprocinfo)
       private
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure CreateInlineInfo;
         { returns the node which is the start of the user code, this is needed by the dfa }
         function GetUserCode: tnode;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         procedure maybe_add_constructor_wrapper(var tocode: tnode; withexceptblock: boolean);
@@ -56,6 +59,7 @@ interface
         init_asmnode,
         final_asmnode : tasmnode;
 <<<<<<< HEAD
+<<<<<<< HEAD
         final_used : boolean;
         dfabuilder : TDFABuilder;
 
@@ -63,6 +67,10 @@ interface
 
         function calc_stackframe_size : longint;override;
 
+=======
+        dfabuilder : TDFABuilder;
+        destructor  destroy;override;
+>>>>>>> graemeg/cpstrnew
 =======
         dfabuilder : TDFABuilder;
         destructor  destroy;override;
@@ -110,6 +118,9 @@ implementation
        systems,
        { aasm }
        cpuinfo,cpubase,aasmbase,aasmtai,aasmdata,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        { symtable }
        symconst,symbase,symsym,symtype,symtable,defutil,symcreat,
@@ -130,11 +141,15 @@ implementation
        pbase,pstatmnt,pdecl,pdecsub,pexports,pgenutil,pparautl,pgentype,
        { codegen }
 <<<<<<< HEAD
+<<<<<<< HEAD
        tgobj,cgbase,cgobj,cgutils,hlcgobj,hlcgcpu,dbgbase,
 {$ifdef llvm}
       { override create_hlcodegen from hlcgcpu }
       hlcgllvm,
 {$endif}
+=======
+       tgobj,cgbase,cgobj,cgcpu,dbgbase,
+>>>>>>> graemeg/cpstrnew
 =======
        tgobj,cgbase,cgobj,cgcpu,dbgbase,
 >>>>>>> graemeg/cpstrnew
@@ -327,6 +342,7 @@ implementation
            (tlocalvarsym(p).refs>0) and
            is_managed_type(tlocalvarsym(p).vardef) then
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             include(current_procinfo.flags,pi_needs_implicit_finally);
             include(current_procinfo.flags,pi_do_call);
@@ -336,6 +352,8 @@ implementation
               include(current_procinfo.flags,pi_needs_got);
           end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           include(current_procinfo.flags,pi_needs_implicit_finally);
 >>>>>>> graemeg/cpstrnew
       end;
@@ -398,10 +416,13 @@ implementation
                          so we've to check if we are really try to parse the finalization }
                        if current_procinfo.procdef.proctypeoption=potype_unitfinalize then
 <<<<<<< HEAD
+<<<<<<< HEAD
                          block:=statement_block(_FINALIZATION)
                        else
                          block:=nil;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                          begin
                            block:=statement_block(_FINALIZATION);
                            { optimize empty finalization block away }
@@ -412,6 +433,9 @@ implementation
                          end
                          else
                            block:=nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                      end
                    else
@@ -507,6 +531,7 @@ implementation
             if (current_procinfo.procdef.proctypeoption=potype_constructor) then
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if is_class(current_structdef) or
                     (
                       is_objectpascal_helper(current_structdef) and
@@ -519,10 +544,15 @@ implementation
                       def:=current_structdef;
                     srsym:=search_struct_member(def,'NEWINSTANCE');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                 if is_class(current_structdef) then
                   begin
                     include(current_procinfo.flags,pi_needs_implicit_finally);
                     srsym:=search_struct_member(current_structdef,'NEWINSTANCE');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                     if assigned(srsym) and
                        (srsym.typ=procsym) then
@@ -573,6 +603,7 @@ implementation
                     end
                 else
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if is_javaclass(current_structdef) or
                      ((target_info.system in systems_jvm) and
                       is_record(current_structdef)) then
@@ -604,6 +635,8 @@ implementation
                          ) then
                     internalerror(200305103);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                   if not is_record(current_structdef) then
                   internalerror(200305103);
 >>>>>>> graemeg/cpstrnew
@@ -612,8 +645,11 @@ implementation
                   there is nothing to dispose (PFV) }
                 if is_class_or_object(current_structdef) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                   addstatement(newstatement,cifnode.create(
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                 addstatement(newstatement,cifnode.create(
 >>>>>>> graemeg/cpstrnew
                     caddnode.create(equaln,
@@ -706,7 +742,11 @@ implementation
                               ctypeconvnode.create_internal(load_vmt_pointer_node,voidpointertype),
                               cnilnode.create),
 <<<<<<< HEAD
+<<<<<<< HEAD
                             cnodeutils.finalize_data_node(load_self_node),
+=======
+                            finalize_data_node(load_self_node),
+>>>>>>> graemeg/cpstrnew
 =======
                             finalize_data_node(load_self_node),
 >>>>>>> graemeg/cpstrnew
@@ -841,12 +881,15 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tcgprocinfo.calc_stackframe_size:longint;
       begin
         result:=Align(tg.direction*tg.lasttemp,current_settings.alignment.localalignmin);
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure tcgprocinfo.printproc(pass:string);
@@ -883,12 +926,18 @@ implementation
         pd: tprocdef;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         if assigned(procdef.struct) and
            (procdef.proctypeoption=potype_constructor) then
           begin
             withexceptblock:=
               withexceptblock and
               not(target_info.system in systems_garbage_collected_managed_types);
+=======
+        if assigned(current_structdef) and
+           (current_procinfo.procdef.proctypeoption=potype_constructor) then
+          begin
+>>>>>>> graemeg/cpstrnew
 =======
         if assigned(current_structdef) and
            (current_procinfo.procdef.proctypeoption=potype_constructor) then
@@ -901,9 +950,15 @@ implementation
 
             { call AfterConstruction for classes }
 <<<<<<< HEAD
+<<<<<<< HEAD
             if is_class(procdef.struct) then
               begin
                 srsym:=search_struct_member(procdef.struct,'AFTERCONSTRUCTION');
+=======
+            if is_class(current_structdef) then
+              begin
+                srsym:=search_struct_member(current_structdef,'AFTERCONSTRUCTION');
+>>>>>>> graemeg/cpstrnew
 =======
             if is_class(current_structdef) then
               begin
@@ -919,6 +974,7 @@ implementation
                       otherwise we won't (the exception will jump over us) }
                     addstatement(newstatement,tocode);
 <<<<<<< HEAD
+<<<<<<< HEAD
                     { if implicit finally node wasn't created, then exit label and
                       finalization code must be handled here and placed before
                       afterconstruction }
@@ -932,6 +988,8 @@ implementation
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                     { Self can be nil when fail is called }
                     { if self<>nil and vmt<>nil then afterconstruction }
                     addstatement(newstatement,cifnode.create(
@@ -943,7 +1001,11 @@ implementation
                           load_vmt_pointer_node,
                           cnilnode.create)),
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ccallnode.create(nil,tprocsym(srsym),srsym.owner,load_self_node,[],nil),
+=======
+                        ccallnode.create(nil,tprocsym(srsym),srsym.owner,load_self_node,[]),
+>>>>>>> graemeg/cpstrnew
 =======
                         ccallnode.create(nil,tprocsym(srsym),srsym.owner,load_self_node,[]),
 >>>>>>> graemeg/cpstrnew
@@ -955,6 +1017,7 @@ implementation
               end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             if withexceptblock and (procdef.struct.typ=objectdef) then
               begin
                 { Generate the implicit "fail" code for a constructor (destroy
@@ -964,6 +1027,8 @@ implementation
                   a destructor }
                 if assigned(pd) or is_object(procdef.struct) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             if withexceptblock and (current_structdef.typ=objectdef) then
               begin
                 { Generate the implicit "fail" code for a constructor (destroy
@@ -972,11 +1037,15 @@ implementation
                 { this will always be the case for classes, since tobject has
                   a destructor }
                 if assigned(pd) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                   begin
                     current_filepos:=exitpos;
                     exceptblock:=internalstatements(newstatement);
                     { first free the instance if non-nil }
+<<<<<<< HEAD
 <<<<<<< HEAD
                     if assigned(pd) then
                       { if vmt<>0 then call destructor }
@@ -1005,6 +1074,8 @@ implementation
                           nil))))
                       );
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                     { if vmt<>0 then call destructor }
                     addstatement(newstatement,cifnode.create(
                       caddnode.create(unequaln,
@@ -1013,6 +1084,9 @@ implementation
                       { cnf_create_failed -> don't call BeforeDestruction }
                       ccallnode.create(nil,tprocsym(pd.procsym),pd.procsym.owner,load_self_node,[cnf_create_failed]),
                       nil));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                     { then re-raise the exception }
                     addstatement(newstatement,craisenode.create(nil,nil,nil));
@@ -1042,9 +1116,12 @@ implementation
         bodyentrycode,
         bodyexitcode,
 <<<<<<< HEAD
+<<<<<<< HEAD
         wrappedbody,
         newblock     : tnode;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         exceptcode,
         wrappedbody: tnode;
         newblock     : tblocknode;
@@ -1108,7 +1185,11 @@ implementation
                code,
                finalcode,
 <<<<<<< HEAD
+<<<<<<< HEAD
                cnothingnode.create);
+=======
+               exceptcode);
+>>>>>>> graemeg/cpstrnew
 =======
                exceptcode);
 >>>>>>> graemeg/cpstrnew
@@ -1127,11 +1208,14 @@ implementation
         else
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             { constructors need destroy-on-exception code even if they don't
               have managed variables/temps }
             maybe_add_constructor_wrapper(code,
               cs_implicit_exceptions in current_settings.moduleswitches);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             maybe_add_constructor_wrapper(code,false);
             addstatement(newstatement,loadpara_asmnode);
             addstatement(newstatement,stackcheck_asmnode);
@@ -1185,6 +1269,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$if defined(i386) or defined(x86_64) or defined(arm)}
     const
@@ -1301,6 +1386,8 @@ implementation
         set_first_temp_offset;
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function tcgprocinfo.has_assembler_child : boolean;
@@ -1485,6 +1572,7 @@ implementation
         current_filepos:=entrypos;
         current_structdef:=procdef.struct;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { store start of user code, it must be a block node, it will be used later one to
           check variable lifeness }
@@ -1519,6 +1607,8 @@ implementation
                 CreateInlineInfo;
               end;
           end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1562,6 +1652,10 @@ implementation
         if node_resources_fpu(code)>0 then
           include(flags,pi_uses_fpu);
 {$endif i386 or i8086}
+
+        { Print the node to tree.log }
+        if paraprintnodetree=1 then
+          printproc( 'after the firstpass');
 
         { Print the node to tree.log }
         if paraprintnodetree=1 then
@@ -1655,7 +1749,11 @@ implementation
           { our induction variable strength reduction doesn't like
             for loops with more than one entry }
 <<<<<<< HEAD
+<<<<<<< HEAD
           and not(pi_has_label in flags) then
+=======
+          and not(pi_has_label in current_procinfo.flags) then
+>>>>>>> graemeg/cpstrnew
 =======
           and not(pi_has_label in current_procinfo.flags) then
 >>>>>>> graemeg/cpstrnew
@@ -1678,11 +1776,14 @@ implementation
         if (ErrorCount=0) then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             create_hlcodegen;
 
             if (procdef.proctypeoption<>potype_exceptfilter) then
               setup_tempgen;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             create_codegen;
 
             { set the start offset to the start of the temp area in the stack }
@@ -1770,6 +1871,9 @@ implementation
             hlcg.gen_load_para_value(templist);
 =======
             gen_load_para_value(templist);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
             { caller paraloc info is also necessary in the stackframe_entry
@@ -1901,6 +2005,7 @@ implementation
             cg.set_regalloc_live_range_direction(rad_forward);
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {$ifndef NoOpt}
@@ -1911,6 +2016,8 @@ implementation
               preregallocschedule(aktproccode);
 {$endif i386}
 {$endif NoOpt}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2179,8 +2286,11 @@ implementation
          old_current_genericdef,
          old_current_specializedef: tstoreddef;
 <<<<<<< HEAD
+<<<<<<< HEAD
          old_parse_generic: boolean;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       begin
@@ -2190,7 +2300,10 @@ implementation
          old_current_genericdef:=current_genericdef;
          old_current_specializedef:=current_specializedef;
 <<<<<<< HEAD
+<<<<<<< HEAD
          old_parse_generic:=parse_generic;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2198,10 +2311,14 @@ implementation
          current_structdef:=procdef.struct;
          if assigned(current_structdef) and (df_generic in current_structdef.defoptions) then
 <<<<<<< HEAD
+<<<<<<< HEAD
            begin
              current_genericdef:=current_structdef;
              parse_generic:=true;
            end;
+=======
+           current_genericdef:=current_structdef;
+>>>>>>> graemeg/cpstrnew
 =======
            current_genericdef:=current_structdef;
 >>>>>>> graemeg/cpstrnew
@@ -2343,10 +2460,15 @@ implementation
          exit;
         with tparavarsym(p) do
 <<<<<<< HEAD
+<<<<<<< HEAD
           if (is_managed_type(vardef) and
              (varspez in [vs_value,vs_out])) or
              (is_shortstring(vardef) and
              (varspez=vs_value)) then
+=======
+          if is_managed_type(vardef) and
+             (varspez in [vs_value,vs_out]) then
+>>>>>>> graemeg/cpstrnew
 =======
           if is_managed_type(vardef) and
              (varspez in [vs_value,vs_out]) then
@@ -2470,7 +2592,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure read_proc(isclassmethod:boolean; usefwpd: tprocdef;isgeneric:boolean);
+=======
+    procedure read_proc(isclassmethod:boolean);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure read_proc(isclassmethod:boolean);
 >>>>>>> graemeg/cpstrnew
@@ -2501,11 +2627,16 @@ implementation
          current_specializedef:=nil;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
          if not assigned(usefwpd) then
            { parse procedure declaration }
            pd:=parse_proc_dec(isclassmethod,old_current_structdef,isgeneric)
          else
            pd:=usefwpd;
+=======
+         { parse procedure declaration }
+         pd:=parse_proc_dec(isclassmethod,old_current_structdef);
+>>>>>>> graemeg/cpstrnew
 =======
          { parse procedure declaration }
          pd:=parse_proc_dec(isclassmethod,old_current_structdef);
@@ -2700,6 +2831,7 @@ implementation
     procedure read_declarations(islibrary : boolean);
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
         hadgeneric : boolean;
 
         procedure handle_unexpected_had_generic;
@@ -2716,6 +2848,11 @@ implementation
       begin
         is_classdef:=false;
         hadgeneric:=false;
+=======
+        is_classdef:boolean;
+      begin
+        is_classdef:=false;
+>>>>>>> graemeg/cpstrnew
 =======
         is_classdef:boolean;
       begin
@@ -2753,6 +2890,9 @@ implementation
                 end;
 =======
                 threadvar_dec;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
               _CLASS:
                 begin
@@ -2761,8 +2901,13 @@ implementation
                    begin
                      { class modifier is only allowed for procedures, functions, }
 <<<<<<< HEAD
+<<<<<<< HEAD
                      { constructors, destructors                                 }
                      if not(token in [_FUNCTION,_PROCEDURE,_CONSTRUCTOR,_DESTRUCTOR,_OPERATOR]) and
+=======
+                     { constructors, destructors, fields and properties          }
+                     if not(token in [_FUNCTION,_PROCEDURE,_PROPERTY,_VAR,_CONSTRUCTOR,_DESTRUCTOR,_OPERATOR]) and
+>>>>>>> graemeg/cpstrnew
 =======
                      { constructors, destructors, fields and properties          }
                      if not(token in [_FUNCTION,_PROCEDURE,_PROPERTY,_VAR,_CONSTRUCTOR,_DESTRUCTOR,_OPERATOR]) and
@@ -2784,6 +2929,7 @@ implementation
               _OPERATOR:
                 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if hadgeneric and not (token in [_PROCEDURE,_FUNCTION]) then
                     begin
                       Message(parser_e_procedure_or_function_expected);
@@ -2792,6 +2938,10 @@ implementation
                   read_proc(is_classdef,nil,hadgeneric);
                   is_classdef:=false;
                   hadgeneric:=false;
+=======
+                  read_proc(is_classdef);
+                  is_classdef:=false;
+>>>>>>> graemeg/cpstrnew
 =======
                   read_proc(is_classdef);
                   is_classdef:=false;
@@ -2837,6 +2987,7 @@ implementation
                       end;
                     _OPERATOR:
 <<<<<<< HEAD
+<<<<<<< HEAD
                       begin
                         handle_unexpected_had_generic;
                         if is_classdef then
@@ -2845,6 +2996,8 @@ implementation
                             is_classdef:=false;
                           end
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                       begin
                         if is_classdef then
                           begin
@@ -2861,6 +3014,9 @@ implementation
                           property_dec(is_classdef);
                           is_classdef:=false;
                         end
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                         else
                           break;
@@ -2937,6 +3093,7 @@ implementation
              _PROCEDURE,
              _OPERATOR :
 <<<<<<< HEAD
+<<<<<<< HEAD
                begin
                  if hadgeneric and not (token in [_FUNCTION, _PROCEDURE]) then
                    begin
@@ -2946,6 +3103,9 @@ implementation
                  read_proc(false,nil,hadgeneric);
                  hadgeneric:=false;
                end;
+=======
+               read_proc(false);
+>>>>>>> graemeg/cpstrnew
 =======
                read_proc(false);
 >>>>>>> graemeg/cpstrnew

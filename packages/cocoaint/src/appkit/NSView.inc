@@ -70,6 +70,7 @@ type
 type
   __VFlags = record
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSView0: cuint);
     1: (data: bitpacked record
@@ -123,6 +124,8 @@ type
          end;
        );
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     rotatedFromBase: 0..1;
     rotatedOrScaledFromBase: 0..1;
@@ -170,6 +173,9 @@ type
     rotatedOrScaledFromBase: 0..1;
     rotatedFromBase: 0..1;
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 _VFlags = __VFlags;
@@ -234,15 +240,21 @@ var
     _viewAuxiliary: _NSViewAuxiliary;
     _vFlags: _VFlags;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __vFlags2: record
       case byte of
        0: (_anonbitfield_NSView1: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __vFlags2: bitpacked record
       case byte of
        0: (_anonbitfield_NSView0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         nextKeyViewRefCount: 0..((1 shl 14)-1);
         previousKeyViewRefCount: 0..((1 shl 14)-1);
@@ -251,7 +263,10 @@ var
         needsRealLockFocus: 0..1;
         menuWasSet: 0..1;
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

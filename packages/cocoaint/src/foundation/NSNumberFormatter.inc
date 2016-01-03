@@ -87,7 +87,11 @@ type
     _formatter: CFNumberFormatterRef; {garbage collector: __strong }
     _counter: NSUInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(12)-1] of Pointer;
+=======
+        _reserved: array[0..11] of Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..11] of Pointer;
 >>>>>>> graemeg/cpstrnew

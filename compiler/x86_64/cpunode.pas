@@ -44,10 +44,13 @@ unit cpunode;
        ncgopt,
        ncgobjc,
 <<<<<<< HEAD
+<<<<<<< HEAD
        { symtable }
        symcpu,
 {$ifndef llvm}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
        // n386con,n386flw,n386mat,n386mem,
        // n386set,n386inl,n386opt,
 >>>>>>> graemeg/cpstrnew

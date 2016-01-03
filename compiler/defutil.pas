@@ -27,9 +27,12 @@ interface
 
     uses
 <<<<<<< HEAD
+<<<<<<< HEAD
        globtype,globals,constexp,
        symconst,symtype,symdef,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
        cclasses,
        globtype,globals,constexp,node,
        symconst,symbase,symtype,symdef,
@@ -52,6 +55,7 @@ interface
     function is_string(def : tdef): boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     {# Returns True, if definition defines a type that behaves like a string,
        namely that can be joined and compared with another string-like type }
     function is_stringlike(def : tdef) : boolean;
@@ -62,6 +66,8 @@ interface
     {# Returns True, if definition defines a set type }
     function is_set(def : tdef) : boolean;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     {# Returns the minimal integer value of the type }
@@ -335,6 +341,7 @@ interface
     function is_nested_pd(def: tabstractprocdef): boolean;{$ifdef USEINLINE}inline;{$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     { # returns whether def is a type parameter of a generic }
     function is_typeparam(def : tdef) : boolean;{$ifdef USEINLINE}inline;{$endif}
 
@@ -344,6 +351,8 @@ interface
     { returns true if def is a C "block" }
     function is_block(def: tdef): boolean;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 implementation
@@ -491,6 +500,7 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_stringlike(def : tdef) : boolean;
       begin
         result := is_string(def) or
@@ -513,6 +523,8 @@ implementation
       begin
         result:=def.typ=setdef;
       end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -652,6 +664,7 @@ implementation
       begin
         result:=def.needs_inittable;
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
 
@@ -665,6 +678,8 @@ implementation
             (tstringdef(def).stringtype in [st_ansistring,st_widestring,st_unicodestring])
           )
         );
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;
@@ -1016,8 +1031,11 @@ implementation
                     (cs_check_range in current_settings.localswitches) or
                     forcerangecheck then
 <<<<<<< HEAD
+<<<<<<< HEAD
                    Message3(type_e_range_check_error_bounds,tostr(l),tostr(lv),tostr(hv))
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                    Message(parser_e_range_check_error)
 >>>>>>> graemeg/cpstrnew
                  else
@@ -1231,11 +1249,14 @@ implementation
           pointerdef:
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               result:=int_cgsize(def.size);
               { can happen for far/huge pointers on non-i8086 }
               if result=OS_NO then
                 internalerror(2013052201);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
               if not tprocvardef(def).is_addressonly then
                 {$if sizeof(pint) = 4}
                   result:=OS_64
@@ -1295,6 +1316,7 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function cgsize_orddef(size: tcgsize): torddef;
       begin
         case size of
@@ -1351,6 +1373,8 @@ implementation
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     { In Windows 95 era, ordinals were restricted to [u8bit,s32bit,s16bit,bool16bit]
       As of today, both signed and unsigned types from 8 to 64 bits are supported. }
     function is_automatable(p : tdef) : boolean;
@@ -1360,7 +1384,11 @@ implementation
           orddef:
             result:=torddef(p).ordtype in [u8bit,s8bit,u16bit,s16bit,u32bit,s32bit,
 <<<<<<< HEAD
+<<<<<<< HEAD
               u64bit,s64bit,bool16bit,scurrency];
+=======
+              u64bit,s64bit,bool16bit];
+>>>>>>> graemeg/cpstrnew
 =======
               u64bit,s64bit,bool16bit];
 >>>>>>> graemeg/cpstrnew
@@ -1402,15 +1430,21 @@ implementation
         llow, lhigh: tconstexprint;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         llow:=min(ld.low,rd.low);
         lhigh:=max(ld.high,rd.high);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         llow:=rd.low;
         if llow<ld.low then
           llow:=ld.low;
         lhigh:=rd.high;
         if lhigh<ld.high then
           lhigh:=ld.high;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         case range_to_basetype(llow,lhigh) of
           s8bit:
@@ -1474,6 +1508,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_typeparam(def : tdef) : boolean;{$ifdef USEINLINE}inline;{$endif}
       begin
         result:=(def.typ=undefineddef);
@@ -1491,6 +1526,8 @@ implementation
         result:=(def.typ=procvardef) and (po_is_block in tprocvardef(def).procoptions)
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end.

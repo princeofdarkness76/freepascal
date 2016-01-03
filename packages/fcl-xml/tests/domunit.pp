@@ -43,8 +43,11 @@ type
     procedure Load(out doc; const uri: string);
     procedure LoadStringData(out Doc; const data: string);
 <<<<<<< HEAD
+<<<<<<< HEAD
     function getResourceURI(const res: XMLString): XMLString;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function getResourceURI(const res: WideString): WideString;
 >>>>>>> graemeg/cpstrnew
     function ContentTypeIs(const t: string): Boolean;

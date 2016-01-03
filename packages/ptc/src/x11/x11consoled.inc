@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -41,7 +45,11 @@ type
     FTitle: string;
     FFlags: TX11Flags;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FModes: array of IPTCMode;
+=======
+    FModes: array of TPTCMode;
+>>>>>>> graemeg/cpstrnew
 =======
     FModes: array of TPTCMode;
 >>>>>>> graemeg/cpstrnew
@@ -55,8 +63,13 @@ type
     function GetHeight: Integer; override;
     function GetPitch: Integer; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetArea: IPTCArea; override;
     function GetFormat: IPTCFormat; override;
+=======
+    function GetArea: TPTCArea; override;
+    function GetFormat: TPTCFormat; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function GetArea: TPTCArea; override;
     function GetFormat: TPTCFormat; override;
@@ -66,8 +79,11 @@ type
     function GetTitle: string; override;
     function GetInformation: string; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetOpenGL_Enabled: Boolean; override;
     procedure SetOpenGL_Enabled(AValue: Boolean); override;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   public
@@ -75,6 +91,7 @@ type
     destructor Destroy; override;
 
     procedure Open(const ATitle: string; APages: Integer = 0); overload; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure Open(const ATitle: string; AFormat: IPTCFormat;
                    APages: Integer = 0); overload; override;
@@ -109,6 +126,8 @@ type
                    APalette: IPTCPalette;
                    ASource, ADestination: IPTCArea); override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Open(const ATitle: string; const AFormat: TPTCFormat;
                    APages: Integer = 0); overload; override;
     procedure Open(const ATitle: string; AWidth, AHeight: Integer;
@@ -139,6 +158,9 @@ type
                    const AFormat: TPTCFormat;
                    const APalette: TPTCPalette;
                    const ASource, ADestination: TPTCArea); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     function Lock: Pointer; override;
@@ -146,9 +168,15 @@ type
 
     procedure Clear; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Clear(AColor: IPTCColor); override;
     procedure Clear(AColor: IPTCColor;
                     AArea: IPTCArea); override;
+=======
+    procedure Clear(const AColor: TPTCColor); override;
+    procedure Clear(const AColor: TPTCColor;
+                    const AArea: TPTCArea); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure Clear(const AColor: TPTCColor); override;
     procedure Clear(const AColor: TPTCColor;
@@ -159,22 +187,29 @@ type
     function Option(const AOption: String): Boolean; override;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Palette(APalette: IPTCPalette); override;
     procedure Clip(AArea: IPTCArea); override;
     function Clip: IPTCArea; override;
     function Palette: IPTCPalette; override;
     function Modes: TPTCModeList; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Palette(const APalette: TPTCPalette); override;
     procedure Clip(const AArea: TPTCArea); override;
     function Clip: TPTCArea; override;
     function Palette: TPTCPalette; override;
     function Modes: PPTCMode; override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     procedure Flush; override;
     procedure Finish; override;
     procedure Update; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure Update(AArea: IPTCArea); override;
 
@@ -185,9 +220,14 @@ type
     procedure OpenGL_SetSwapInterval(AInterval: Integer); override;
     function OpenGL_GetSwapInterval: Integer; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Update(const AArea: TPTCArea); override;
 
     function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;

@@ -2,29 +2,41 @@
      File:       OSServices/WSTypes.h
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Contains:   *** DEPRECATED *** WebServicesCore Method Invocation API
  
      Copyright:  (c) 2002-2011 Apple Inc. All rights reserved.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      Contains:   WebServicesCore Method Invocation API
  
      Version:    OSServices-352~2
  
      Copyright:  © 2002-2008 by Apple Computer, Inc., all rights reserved
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {       Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -81,11 +93,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -107,11 +122,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -124,11 +145,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -141,7 +168,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -154,7 +184,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -164,6 +197,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -175,6 +209,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -187,13 +226,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -210,6 +253,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -398,6 +445,7 @@ type
 }
 var kWSXMLRPCProtocol: CFStringRef; external name '_kWSXMLRPCProtocol'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 var kWSSOAP1999Protocol: CFStringRef; external name '_kWSSOAP1999Protocol'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -408,12 +456,17 @@ var kWSSOAP2001Protocol: CFStringRef; external name '_kWSSOAP2001Protocol'; (* a
 {
  *  WSGetWSTypeIDFromCFType()   *** DEPRECATED ***
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var kWSSOAP1999Protocol: CFStringRef; external name '_kWSSOAP1999Protocol'; (* attribute const *)
 var kWSSOAP2001Protocol: CFStringRef; external name '_kWSSOAP2001Protocol'; (* attribute const *)
 
 
 {
  *  WSGetWSTypeIDFromCFType()
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
@@ -435,7 +488,11 @@ var kWSSOAP2001Protocol: CFStringRef; external name '_kWSSOAP2001Protocol'; (* a
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -444,16 +501,22 @@ var kWSSOAP2001Protocol: CFStringRef; external name '_kWSSOAP2001Protocol'; (* a
  }
 function WSGetWSTypeIDFromCFType( ref: CFTypeRef ): WSTypeID; external name '_WSGetWSTypeIDFromCFType';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
 {
  *  WSGetCFTypeIDFromWSTypeID()   *** DEPRECATED ***
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  WSGetCFTypeIDFromWSTypeID()
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *  
  *  Discussion:
@@ -474,7 +537,11 @@ function WSGetWSTypeIDFromCFType( ref: CFTypeRef ): WSTypeID; external name '_WS
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -483,8 +550,11 @@ function WSGetWSTypeIDFromCFType( ref: CFTypeRef ): WSTypeID; external name '_WS
  }
 function WSGetCFTypeIDFromWSTypeID( typeID: WSTypeID ): CFTypeID; external name '_WSGetCFTypeIDFromWSTypeID';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

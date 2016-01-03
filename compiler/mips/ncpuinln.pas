@@ -37,7 +37,10 @@ type
     procedure second_sqr_real; override;
     procedure second_sqrt_real; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure second_get_frame; override;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   private
@@ -57,7 +60,11 @@ uses
   cpubase, paramgr,
   nbas, ncon, ncal, ncnv, nld,
 <<<<<<< HEAD
+<<<<<<< HEAD
   hlcgobj, ncgutil, cgobj, cgutils;
+=======
+  ncgutil, cgobj, cgutils;
+>>>>>>> graemeg/cpstrnew
 =======
   ncgutil, cgobj, cgutils;
 >>>>>>> graemeg/cpstrnew
@@ -70,7 +77,11 @@ procedure tMIPSELinlinenode.load_fpu_location;
 begin
   secondpass(left);
 <<<<<<< HEAD
+<<<<<<< HEAD
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, left.location, left.resultdef, True);
+=======
+  location_force_fpureg(current_asmdata.CurrAsmList, left.location, True);
+>>>>>>> graemeg/cpstrnew
 =======
   location_force_fpureg(current_asmdata.CurrAsmList, left.location, True);
 >>>>>>> graemeg/cpstrnew
@@ -146,6 +157,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure tMIPSELinlinenode.second_get_frame;
 begin
@@ -154,6 +166,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin

@@ -483,7 +483,10 @@ begin
 {$IFDEF CGIGDEBUG}SendMethodEnter('ProcessUnknownRecord');{$ENDIF}
 {$IFDEF CGIGDEBUG}SendDebugFMT('Unknown record encountered : %d',[Rec^.ReqType]);{$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
   EOR:=False;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   // Do nothing.

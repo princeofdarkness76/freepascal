@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -36,7 +40,11 @@
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TX11Modes = class(TObject)
+=======
+  TX11Modes = Class(TObject)
+>>>>>>> graemeg/cpstrnew
 =======
   TX11Modes = Class(TObject)
 >>>>>>> graemeg/cpstrnew
@@ -49,7 +57,11 @@ type
   public
     constructor Create(ADisplay: PDisplay; AScreen: cint); virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat); virtual; abstract;
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); virtual; abstract;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
@@ -68,7 +80,11 @@ type
   public
     constructor Create(ADisplay: PDisplay; AScreen: cint); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat); override;
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
@@ -105,7 +121,11 @@ type
     constructor Create(ADisplay: PDisplay; AScreen: cint); override;
     destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat); override;
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
@@ -132,7 +152,11 @@ type
     constructor Create(ADisplay: PDisplay; AScreen: cint); override;
     destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat); override;
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew

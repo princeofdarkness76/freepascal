@@ -1,11 +1,14 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       IconsCore.h
  
      Contains:   Icon Utilities and Icon Services Interfaces.
  
      Copyright:  (c) 2003-2012 by Apple Inc. All rights reserved.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      File:       LaunchServices/IconsCore.h
  
      Contains:   Icon Utilities and Icon Services Interfaces.
@@ -13,19 +16,28 @@
      Version:    LaunchServices-360.3~1
  
      Copyright:  © 1990-2008 by Apple Computer, Inc. All rights reserved
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {       Initial Pascal Translation:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -82,11 +94,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -108,11 +123,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -125,11 +146,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -142,7 +169,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -155,7 +185,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -165,6 +198,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -176,6 +210,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -187,6 +226,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -203,14 +243,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -354,10 +401,16 @@ const
 	fullTrashIconResource = kFullTrashIconResource;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { IconRefs identify cached icon data. IconRef 0 is invalid.}
 type
 	IconRef = ^OpaqueIconRef; { an opaque type }
 	OpaqueIconRef = record end;
+=======
+{ IconRefs are 32-bit values identifying cached icon data. IconRef 0 is invalid.}
+type
+	IconRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 { IconRefs are 32-bit values identifying cached icon data. IconRef 0 is invalid.}
 type
@@ -649,7 +702,11 @@ const
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -658,7 +715,11 @@ const
  }
 function GetIconRefOwners( theIconRef: IconRef; var owners: UInt16 ): OSErr; external name '_GetIconRefOwners';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -677,7 +738,11 @@ function GetIconRefOwners( theIconRef: IconRef; var owners: UInt16 ): OSErr; ext
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -686,7 +751,11 @@ function GetIconRefOwners( theIconRef: IconRef; var owners: UInt16 ): OSErr; ext
  }
 function AcquireIconRef( theIconRef: IconRef ): OSErr; external name '_AcquireIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -709,7 +778,11 @@ function AcquireIconRef( theIconRef: IconRef ): OSErr; external name '_AcquireIc
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -718,7 +791,11 @@ function AcquireIconRef( theIconRef: IconRef ): OSErr; external name '_AcquireIc
  }
 function ReleaseIconRef( theIconRef: IconRef ): OSErr; external name '_ReleaseIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -757,7 +834,11 @@ function ReleaseIconRef( theIconRef: IconRef ): OSErr; external name '_ReleaseIc
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> graemeg/cpstrnew
@@ -766,7 +847,11 @@ function ReleaseIconRef( theIconRef: IconRef ): OSErr; external name '_ReleaseIc
  }
 function GetIconRefFromFile( const (*var*) theFile: FSSpec; var theIconRef: IconRef; var theLabel: SInt16 ): OSErr; external name '_GetIconRefFromFile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -794,7 +879,11 @@ function GetIconRefFromFile( const (*var*) theFile: FSSpec; var theIconRef: Icon
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -803,7 +892,11 @@ function GetIconRefFromFile( const (*var*) theFile: FSSpec; var theIconRef: Icon
  }
 function GetIconRef( vRefNum: SInt16; creator: OSType; iconType: OSType; var theIconRef: IconRef ): OSErr; external name '_GetIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -829,7 +922,11 @@ function GetIconRef( vRefNum: SInt16; creator: OSType; iconType: OSType; var the
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -838,7 +935,11 @@ function GetIconRef( vRefNum: SInt16; creator: OSType; iconType: OSType; var the
  }
 function GetIconRefFromFolder( vRefNum: SInt16; parentFolderID: SInt32; folderID: SInt32; attributes: SInt8; accessPrivileges: SInt8; var theIconRef: IconRef ): OSErr; external name '_GetIconRefFromFolder';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -891,7 +992,11 @@ function GetIconRefFromFolder( vRefNum: SInt16; parentFolderID: SInt32; folderID
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -900,7 +1005,11 @@ function GetIconRefFromFolder( vRefNum: SInt16; parentFolderID: SInt32; folderID
  }
 function GetIconRefFromFileInfo( const (*var*) inRef: FSRef; inFileNameLength: UniCharCount; {const} inFileName: UniCharPtr { can be NULL }; inWhichInfo: FSCatalogInfoBitmap; {const} inCatalogInfo: FSCatalogInfoPtr { can be NULL }; inUsageFlags: IconServicesUsageFlags; var outIconRef: IconRef; outLabel: SInt16Ptr { can be NULL } ): OSStatus; external name '_GetIconRefFromFileInfo';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -947,7 +1056,11 @@ function GetIconRefFromFileInfo( const (*var*) inRef: FSRef; inFileNameLength: U
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -956,7 +1069,11 @@ function GetIconRefFromFileInfo( const (*var*) inRef: FSRef; inFileNameLength: U
  }
 function GetIconRefFromTypeInfo( inCreator: OSType; inType: OSType; inExtension: CFStringRef; inMIMEType: CFStringRef; inUsageFlags: IconServicesUsageFlags; var outIconRef: IconRef ): OSErr; external name '_GetIconRefFromTypeInfo';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -988,7 +1105,11 @@ function GetIconRefFromTypeInfo( inCreator: OSType; inType: OSType; inExtension:
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -997,7 +1118,11 @@ function GetIconRefFromTypeInfo( inCreator: OSType; inType: OSType; inExtension:
  }
 function GetIconRefFromIconFamilyPtr( const (*var*) inIconFamilyPtr: IconFamilyResource; inSize: Size; var outIconRef: IconRef ): OSStatus; external name '_GetIconRefFromIconFamilyPtr';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1028,7 +1153,11 @@ function GetIconRefFromIconFamilyPtr( const (*var*) inIconFamilyPtr: IconFamilyR
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1037,7 +1166,11 @@ function GetIconRefFromIconFamilyPtr( const (*var*) inIconFamilyPtr: IconFamilyR
  }
 function GetIconRefFromComponent( inComponent: Component; var outIconRef: IconRef ): OSStatus; external name '_GetIconRefFromComponent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1070,7 +1203,11 @@ function GetIconRefFromComponent( inComponent: Component; var outIconRef: IconRe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1079,7 +1216,11 @@ function GetIconRefFromComponent( inComponent: Component; var outIconRef: IconRe
  }
 function RegisterIconRefFromIconFamily( creator: OSType; iconType: OSType; iconFamily: IconFamilyHandle; var theIconRef: IconRef ): OSErr; external name '_RegisterIconRefFromIconFamily';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1105,7 +1246,11 @@ function RegisterIconRefFromIconFamily( creator: OSType; iconType: OSType; iconF
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> graemeg/cpstrnew
@@ -1114,7 +1259,11 @@ function RegisterIconRefFromIconFamily( creator: OSType; iconType: OSType; iconF
  }
 function RegisterIconRefFromResource( creator: OSType; iconType: OSType; const (*var*) resourceFile: FSSpec; resourceID: SInt16; var theIconRef: IconRef ): OSErr; external name '_RegisterIconRefFromResource';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -1149,7 +1298,11 @@ function RegisterIconRefFromResource( creator: OSType; iconType: OSType; const (
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1158,7 +1311,11 @@ function RegisterIconRefFromResource( creator: OSType; iconType: OSType; const (
  }
 function RegisterIconRefFromFSRef( creator: OSType; iconType: OSType; const (*var*) iconFile: FSRef; var theIconRef: IconRef ): OSStatus; external name '_RegisterIconRefFromFSRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1180,7 +1337,11 @@ function RegisterIconRefFromFSRef( creator: OSType; iconType: OSType; const (*va
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1189,7 +1350,11 @@ function RegisterIconRefFromFSRef( creator: OSType; iconType: OSType; const (*va
  }
 function UnregisterIconRef( creator: OSType; iconType: OSType ): OSErr; external name '_UnregisterIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1215,7 +1380,11 @@ function UnregisterIconRef( creator: OSType; iconType: OSType ): OSErr; external
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1224,7 +1393,11 @@ function UnregisterIconRef( creator: OSType; iconType: OSType ): OSErr; external
  }
 function UpdateIconRef( theIconRef: IconRef ): OSErr; external name '_UpdateIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1246,7 +1419,11 @@ function UpdateIconRef( theIconRef: IconRef ): OSErr; external name '_UpdateIcon
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> graemeg/cpstrnew
@@ -1255,7 +1432,11 @@ function UpdateIconRef( theIconRef: IconRef ): OSErr; external name '_UpdateIcon
  }
 function OverrideIconRefFromResource( theIconRef: IconRef; const (*var*) resourceFile: FSSpec; resourceID: SInt16 ): OSErr; external name '_OverrideIconRefFromResource';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -1277,7 +1458,11 @@ function OverrideIconRefFromResource( theIconRef: IconRef; const (*var*) resourc
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1286,7 +1471,11 @@ function OverrideIconRefFromResource( theIconRef: IconRef; const (*var*) resourc
  }
 function OverrideIconRef( oldIconRef: IconRef; newIconRef: IconRef ): OSErr; external name '_OverrideIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1306,7 +1495,11 @@ function OverrideIconRef( oldIconRef: IconRef; newIconRef: IconRef ): OSErr; ext
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1315,7 +1508,11 @@ function OverrideIconRef( oldIconRef: IconRef; newIconRef: IconRef ): OSErr; ext
  }
 function RemoveIconRefOverride( theIconRef: IconRef ): OSErr; external name '_RemoveIconRefOverride';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1342,7 +1539,11 @@ function RemoveIconRefOverride( theIconRef: IconRef ): OSErr; external name '_Re
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1351,7 +1552,11 @@ function RemoveIconRefOverride( theIconRef: IconRef ): OSErr; external name '_Re
  }
 function CompositeIconRef( backgroundIconRef: IconRef; foregroundIconRef: IconRef; var compositeIconRef: IconRef ): OSErr; external name '_CompositeIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1371,7 +1576,11 @@ function CompositeIconRef( backgroundIconRef: IconRef; foregroundIconRef: IconRe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1380,7 +1589,11 @@ function CompositeIconRef( backgroundIconRef: IconRef; foregroundIconRef: IconRe
  }
 function IsIconRefComposite( compositeIconRef: IconRef; var backgroundIconRef: IconRef; var foregroundIconRef: IconRef ): OSErr; external name '_IsIconRefComposite';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1405,7 +1618,11 @@ function IsIconRefComposite( compositeIconRef: IconRef; var backgroundIconRef: I
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1414,7 +1631,11 @@ function IsIconRefComposite( compositeIconRef: IconRef; var backgroundIconRef: I
  }
 function IsValidIconRef( theIconRef: IconRef ): Boolean; external name '_IsValidIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1444,7 +1665,11 @@ function IsValidIconRef( theIconRef: IconRef ): Boolean; external name '_IsValid
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1453,7 +1678,11 @@ function IsValidIconRef( theIconRef: IconRef ): Boolean; external name '_IsValid
  }
 function IsDataAvailableInIconRef( inIconKind: OSType; inIconRef: IconRef ): Boolean; external name '_IsDataAvailableInIconRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1483,7 +1712,11 @@ function IsDataAvailableInIconRef( inIconKind: OSType; inIconRef: IconRef ): Boo
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
 >>>>>>> graemeg/cpstrnew
@@ -1492,7 +1725,11 @@ function IsDataAvailableInIconRef( inIconKind: OSType; inIconRef: IconRef ): Boo
  }
 function FlushIconRefs( creator: OSType; iconType: OSType ): OSErr; external name '_FlushIconRefs';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1514,7 +1751,11 @@ function FlushIconRefs( creator: OSType; iconType: OSType ): OSErr; external nam
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.3
 >>>>>>> graemeg/cpstrnew
@@ -1523,7 +1764,11 @@ function FlushIconRefs( creator: OSType; iconType: OSType ): OSErr; external nam
  }
 function FlushIconRefsByVolume( vRefNum: SInt16 ): OSErr; external name '_FlushIconRefsByVolume';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1552,7 +1797,11 @@ function FlushIconRefsByVolume( vRefNum: SInt16 ): OSErr; external name '_FlushI
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1561,7 +1810,11 @@ function FlushIconRefsByVolume( vRefNum: SInt16 ): OSErr; external name '_FlushI
  }
 function SetCustomIconsEnabled( vRefNum: SInt16; enableCustomIcons: Boolean ): OSErr; external name '_SetCustomIconsEnabled';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1581,7 +1834,11 @@ function SetCustomIconsEnabled( vRefNum: SInt16; enableCustomIcons: Boolean ): O
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1590,7 +1847,11 @@ function SetCustomIconsEnabled( vRefNum: SInt16; enableCustomIcons: Boolean ): O
  }
 function GetCustomIconsEnabled( vRefNum: SInt16; var customIconsEnabled: Boolean ): OSErr; external name '_GetCustomIconsEnabled';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1624,7 +1885,11 @@ function GetCustomIconsEnabled( vRefNum: SInt16; var customIconsEnabled: Boolean
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> graemeg/cpstrnew
@@ -1633,7 +1898,11 @@ function GetCustomIconsEnabled( vRefNum: SInt16; var customIconsEnabled: Boolean
  }
 function RegisterIconRefFromIconFile( creator: OSType; iconType: OSType; const (*var*) iconFile: FSSpec; var theIconRef: IconRef ): OSErr; external name '_RegisterIconRefFromIconFile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -1653,7 +1922,11 @@ function RegisterIconRefFromIconFile( creator: OSType; iconType: OSType; const (
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> graemeg/cpstrnew
@@ -1662,7 +1935,11 @@ function RegisterIconRefFromIconFile( creator: OSType; iconType: OSType; const (
  }
 function ReadIconFile( const (*var*) iconFile: FSSpec; var iconFamily: IconFamilyHandle ): OSErr; external name '_ReadIconFile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -1681,7 +1958,11 @@ function ReadIconFile( const (*var*) iconFile: FSSpec; var iconFamily: IconFamil
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework [32-bit only] but deprecated in 10.5
 >>>>>>> graemeg/cpstrnew
@@ -1690,7 +1971,11 @@ function ReadIconFile( const (*var*) iconFile: FSSpec; var iconFamily: IconFamil
  }
 function WriteIconFile( iconFamily: IconFamilyHandle; const (*var*) iconFile: FSSpec ): OSErr; external name '_WriteIconFile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -1718,7 +2003,11 @@ function WriteIconFile( iconFamily: IconFamilyHandle; const (*var*) iconFile: FS
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -1727,7 +2016,11 @@ function WriteIconFile( iconFamily: IconFamilyHandle; const (*var*) iconFile: FS
  }
 function ReadIconFromFSRef( const (*var*) ref: FSRef; var iconFamily: IconFamilyHandle ): OSStatus; external name '_ReadIconFromFSRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

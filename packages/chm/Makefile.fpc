@@ -5,8 +5,11 @@
 [package]
 name=chm
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [target]
@@ -118,4 +121,7 @@ cdmcmd$(EXEEXT): chmcmd.lpr
 chmls$(EXEEXT): chmls.lpr
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

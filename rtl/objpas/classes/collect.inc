@@ -425,8 +425,11 @@ procedure TCollection.Exchange(Const Index1, index2: integer);
 begin
   FItems.Exchange(Index1,Index2);
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FUpdateCount = 0 then
     FPONotifyObservers(Self,ooChange,Nil);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;

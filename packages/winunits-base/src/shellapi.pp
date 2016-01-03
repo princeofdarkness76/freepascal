@@ -1786,6 +1786,7 @@ Function Shell_NotifyIcon( dwMessage: Dword;lpData: PNOTIFYICONDATAW):Bool;exter
        SHGFI_OVERLAYINDEX       = $000000040;    { Get the index of the overlay }
                                                  { in the upper 8 bits of the iIcon  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SHGetFileInfoA(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoA';
 Function SHGetFileInfoW(pszPath: LPCWSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOW; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoW';
 Function SHGetFileInfo(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoA';
@@ -1795,6 +1796,8 @@ Function SHGetFileInfoW(pszPath: LPCWSTR; dwFileAttributes : DWORD; var psfi: TS
 Function SHGetFileInfo(pszPath: LPCSTR; dwFileAttributes : DWORD; var psfi: TSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoA';
 Function SHGetFileInfo(pszPath: LPCWSTR; dwFileAttributes : DWORD; var psfi: TSHFILEINFOW; cbFileInfo,UFlags: UINT):DWORD_PTR;external shell32 name 'SHGetFileInfoW';
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Function SHGetFileInfoA(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD;external shell32 name 'SHGetFileInfoA';
 Function SHGetFileInfoW(pszPath: LPCWSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOW; cbFileInfo,UFlags: UINT):DWORD;external shell32 name 'SHGetFileInfoW';
 Function SHGetFileInfo(pszPath: LPCSTR; dwFileAttributes : DWORD; psfi: pSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD;external shell32 name 'SHGetFileInfoA';
@@ -1803,6 +1806,9 @@ Function SHGetFileInfoA(pszPath: LPCSTR; dwFileAttributes : DWORD; var psfi: TSH
 Function SHGetFileInfoW(pszPath: LPCWSTR; dwFileAttributes : DWORD; var psfi: TSHFILEINFOW; cbFileInfo,UFlags: UINT):DWORD;external shell32 name 'SHGetFileInfoW';
 Function SHGetFileInfo(pszPath: LPCSTR; dwFileAttributes : DWORD; var psfi: TSHFILEINFOA; cbFileInfo,UFlags: UINT):DWORD;external shell32 name 'SHGetFileInfoA';
 Function SHGetFileInfo(pszPath: LPCWSTR; dwFileAttributes : DWORD; var psfi: TSHFILEINFOW; cbFileInfo,UFlags: UINT):DWORD;external shell32 name 'SHGetFileInfoW';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 Function SHGetDiskFreeSpaceExA( pszDirectoryName : LPCSTR; pulFreeBytesAvailableToCaller : pULARGE_INTEGER; pulTotalNumberOfBytes : pULARGE_INTEGER;pulTotalNumberOfFreeBytes: pULARGE_INTEGER):Bool;external shell32 name 'SHGetDiskFreeSpaceExA';
@@ -1863,7 +1869,11 @@ Function SHInvokePrinterCommand(HWND: hwnd; uAction:UINT; lpBuf1: LPCWSTR; lpBuf
     //
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SHLoadNonloadedIconOverlayIdentifiers:HResult; external shell32 name 'SHLoadNonloadedIconOverlayIdentifiers';
+=======
+function SHLoadNonloadedIconOverlayIdentifiers:HResult; external shell32 name 'SHInvokePrinterCommandW';
+>>>>>>> graemeg/cpstrnew
 =======
 function SHLoadNonloadedIconOverlayIdentifiers:HResult; external shell32 name 'SHInvokePrinterCommandW';
 >>>>>>> graemeg/cpstrnew

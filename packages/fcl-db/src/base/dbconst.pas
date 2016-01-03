@@ -107,6 +107,7 @@ Resourcestring
   SNoReaderClassRegistered = 'There is no TDatapacketReaderClass registered for this kind of data-stream';
   SErrCircularDataSourceReferenceNotAllowed = 'Circular datasource references are not allowed.';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SCommitting               = 'Committing transaction';
   SRollingBack              = 'Rolling back transaction';
   SCommitRetaining          = 'Commit and retaining transaction';
@@ -126,10 +127,15 @@ Resourcestring
   SErrFailedToFetchReturningResult = 'Failed to fetch returning result';
   SLogParamValue              = 'Parameter "%s" value : "%s"';
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   SCommitting              = 'Committing transaction';
   SRollingBack             = 'Rolling back transaction';
   SCommitRetaining         = 'Commit and retaining transaction';
   SRollBackRetaining       = 'Rollback and retaining transaction';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 Implementation

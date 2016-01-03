@@ -59,6 +59,9 @@ interface
 =======
         floattype2ait:array[tfloattype] of taitype=
           (ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_real_80bit,ait_comp_64bit,ait_comp_64bit,ait_real_128bit);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       var
          lastlabel : tasmlabel;
@@ -103,7 +106,11 @@ interface
               aitrealconst_s80bit :
                 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                   current_procinfo.aktlocaldata.concat(tai_realconst.create_s80real(value_real,tfloatdef(resultdef).size));
+=======
+                  current_procinfo.aktlocaldata.concat(Tai_real_80bit.Create(value_real,tfloatdef(resultdef).size));
+>>>>>>> graemeg/cpstrnew
 =======
                   current_procinfo.aktlocaldata.concat(Tai_real_80bit.Create(value_real,tfloatdef(resultdef).size));
 >>>>>>> graemeg/cpstrnew

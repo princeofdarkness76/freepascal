@@ -431,7 +431,11 @@ begin
       exit;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   dst:=CFileStreamClass.Create(current_module.outputpath+outf,fmCreate);
+=======
+  dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
+>>>>>>> graemeg/cpstrnew
 =======
   dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
 >>>>>>> graemeg/cpstrnew

@@ -209,6 +209,9 @@ begin
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName,true);
 =======
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   { Add all options to link.res instead of passing them via command line:
@@ -300,7 +303,10 @@ begin
    end;
   ScriptRes.Add('    *(.text)');
 <<<<<<< HEAD
+<<<<<<< HEAD
   ScriptRes.Add('    *(.text.*)');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   ScriptRes.Add('    etext  =  . ;');
@@ -320,9 +326,14 @@ begin
   ScriptRes.Add('      djgpp_last_dtor = . ;');
   ScriptRes.Add('      __environ = . ;');
 <<<<<<< HEAD
+<<<<<<< HEAD
   ScriptRes.Add('      _environ = .;');
   ScriptRes.Add('      LONG(0)');
   ScriptRes.Add('      . = ALIGN(0x20);');
+=======
+  ScriptRes.Add('      PROVIDE(_environ = .);');
+  ScriptRes.Add('      LONG(0)');
+>>>>>>> graemeg/cpstrnew
 =======
   ScriptRes.Add('      PROVIDE(_environ = .);');
   ScriptRes.Add('      LONG(0)');

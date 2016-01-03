@@ -9,7 +9,10 @@ type
     rx : cint;
     ry : cint;
 <<<<<<< HEAD
+<<<<<<< HEAD
     rz : cint;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;

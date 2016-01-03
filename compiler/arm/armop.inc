@@ -285,12 +285,15 @@ A_FUITOS,
 A_FMDRR,
 A_FMRRD,
 <<<<<<< HEAD
+<<<<<<< HEAD
 A_POP,
 A_PUSH,
 A_SDIV,
 A_UDIV,
 A_MOVT,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 A_ASR,
 A_LSR,
 A_LSL,
@@ -300,6 +303,9 @@ A_UDIV,
 A_MOVT,
 A_LDREX,
 A_STREX,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 A_IT,
 A_ITE,
@@ -315,6 +321,7 @@ A_ITTTE,
 A_ITEET,
 A_ITTET,
 A_ITETT,
+<<<<<<< HEAD
 <<<<<<< HEAD
 A_ITTTT,
 A_TBB,
@@ -382,6 +389,9 @@ A_FML,
 A_FRD,
 A_LGN,
 A_LOG
+=======
+A_ITTTT
+>>>>>>> graemeg/cpstrnew
 =======
 A_ITTTT
 >>>>>>> graemeg/cpstrnew

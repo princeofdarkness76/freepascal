@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -44,6 +48,7 @@ type
                      PTCMouseButton4,
                      PTCMouseButton5);
 <<<<<<< HEAD
+<<<<<<< HEAD
   TPTCMouseButtonState = set of TPTCMouseButton;
   IPTCMouseEvent = interface(IPTCEvent)
     ['{4D093608-6F27-4578-B41E-3492A4C7FEED}']
@@ -78,6 +83,8 @@ type
   public
     class function CreateNew(AX, AY, ADeltaX, ADeltaY: Integer; AButtonState: TPTCMouseButtonState; APress: Boolean; AButton: TPTCMouseButton): IPTCMouseButtonEvent;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TPTCMouseButtonState = Set of TPTCMouseButton;
   TPTCMouseEvent = Class(TPTCEvent)
   private
@@ -104,5 +111,8 @@ type
     property Press: Boolean read FPress;
     property Release: Boolean read GetRelease;
     property Button: TPTCMouseButton read FButton;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;

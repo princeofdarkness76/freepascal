@@ -8,7 +8,11 @@ main=rtl
 [target]
 loaders= prt0
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar ctypes objpas macpas iso7185 extpas strings \
+=======
+units=$(SYSTEMUNIT) ctypes objpas macpas iso7185 strings \
+>>>>>>> graemeg/cpstrnew
 =======
 units=$(SYSTEMUNIT) ctypes objpas macpas iso7185 strings \
 >>>>>>> graemeg/cpstrnew
@@ -175,8 +179,12 @@ libinstall: staticlibinstall sharedlibinstall
 libsclean : clean
 	-$(DEL) *$(SMARTLIBEXT) *$(SHAREDLIBEXT) *$(PPLEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew

@@ -12,7 +12,11 @@ unit MacOSAll;
 interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc (defined CPUPOWERPC32 or defined CPUI386) and not defined(iphonesim)}
+=======
+{$ifc defined CPUPOWERPC32 or defined CPUI386}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifc defined CPUPOWERPC32 or defined CPUI386}
 >>>>>>> graemeg/cpstrnew
@@ -61,11 +65,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -84,6 +91,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -107,6 +115,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -119,6 +132,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -127,7 +143,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -140,7 +159,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -150,6 +172,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -161,6 +184,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -173,11 +201,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -196,6 +228,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -260,8 +296,13 @@ interface
 {$i Multiprocessing.pas}
 (* conflicts with FPC ObjC support
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit ObjC}
 {$i ObjC.pas}
+=======
+{unit ObjCRuntime}
+{$i ObjCRuntime.pas}
+>>>>>>> graemeg/cpstrnew
 =======
 {unit ObjCRuntime}
 {$i ObjCRuntime.pas}
@@ -446,8 +487,11 @@ interface
 {unit Debugging}
 {$i Debugging.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit DictionaryServices}
 {$i DictionaryServices.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit DigitalHubRegistry}
@@ -553,8 +597,11 @@ interface
 {unit WSTypes}
 {$i WSTypes.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit acl}
 {$i acl.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit certextensions}
@@ -576,8 +623,11 @@ interface
 {unit AXValue}
 {$i AXValue.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit AudioHardwareBase}
 {$i AudioHardwareBase.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit AuthSession}
@@ -605,8 +655,11 @@ interface
 {unit CGAffineTransforms}
 {$i CGAffineTransforms.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CGImageMetadata}
 {$i CGImageMetadata.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit CGLCurrent}
@@ -622,15 +675,21 @@ interface
 {unit CGPath}
 {$i CGPath.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CSIdentityBase}
 {$i CSIdentityBase.pas}
 {unit CTFontDescriptor}
 {$i CTFontDescriptor.pas}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {unit CTFontDescriptor}
 {$i CTFontDescriptor.pas}
 {unit CTFontManager}
 {$i CTFontManager.pas}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {unit CTParagraphStyle}
 {$i CTParagraphStyle.pas}
@@ -639,8 +698,11 @@ interface
 {unit CVBuffer}
 {$i CVBuffer.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CaptiveNetwork}
 {$i CaptiveNetwork.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit ColorSyncProfile}
@@ -676,10 +738,13 @@ interface
 {unit QDOffscreen}
 {$i QDOffscreen.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit SKAnalysis}
 {$i SKAnalysis.pas}
 {unit SKSummary}
 {$i SKSummary.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit Scrap}
@@ -697,8 +762,11 @@ interface
 {unit CFDateFormatter}
 {$i CFDateFormatter.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CFFileSecurity}
 {$i CFFileSecurity.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit CFRunLoop}
@@ -726,10 +794,13 @@ interface
 {unit AudioHardware}
 {$i AudioHardware.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit AudioHardwareDeprecated}
 {$i AudioHardwareDeprecated.pas}
 {unit CFFileDescriptor}
 {$i CFFileDescriptor.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit CFMachPort}
@@ -771,8 +842,11 @@ interface
 {unit CFURLAccess}
 {$i CFURLAccess.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CFURLEnumerator}
 {$i CFURLEnumerator.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit CFUserNotification}
@@ -796,13 +870,19 @@ interface
 {unit CGPSConverter}
 {$i CGPSConverter.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CTFontManager}
 {$i CTFontManager.pas}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {unit CTFont}
 {$i CTFont.pas}
 {unit CTGlyphInfo}
 {$i CTGlyphInfo.pas}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {unit CarbonEventsCore}
 {$i CarbonEventsCore.pas}
@@ -829,12 +909,15 @@ interface
 {unit Pasteboard}
 {$i Pasteboard.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit SKDocument}
 {$i SKDocument.pas}
 {unit SKIndex}
 {$i SKIndex.pas}
 {unit SKSearch}
 {$i SKSearch.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit SpeechSynthesis}
@@ -902,8 +985,11 @@ interface
 {unit CVPixelBuffer}
 {$i CVPixelBuffer.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CVPixelBufferIOSurface}
 {$i CVPixelBufferIOSurface.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit CVPixelBufferPool}
@@ -1007,12 +1093,17 @@ interface
 {unit CGPattern}
 {$i CGPattern.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit CTFont}
 {$i CTFont.pas}
 {unit CTFrame}
 {$i CTFrame.pas}
 {unit CTGlyphInfo}
 {$i CTGlyphInfo.pas}
+=======
+{unit CTFrame}
+{$i CTFrame.pas}
+>>>>>>> graemeg/cpstrnew
 =======
 {unit CTFrame}
 {$i CTFrame.pas}
@@ -1054,8 +1145,11 @@ interface
 {unit QLGenerator}
 {$i QLGenerator.pas}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {unit QLThumbnail}
 {$i QLThumbnail.pas}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {unit Quickdraw}
@@ -1230,6 +1324,53 @@ interface
 {$i IBCarbonRuntime.pas}
 {unit HIToolbox}
 {$i HIToolbox.pas}
+<<<<<<< HEAD
+
+implementation
+
+{implementation of unit MixedMode}
+
+
+{$R-}
+
+function NewRoutineDescriptor( theProc: ProcPtr; theProcInfo: ProcInfoType; theISA: ISAType ): UniversalProcPtr; inline;
+begin
+	NewRoutineDescriptor := UniversalProcPtr(theProc);
+end;
+
+procedure DisposeRoutineDescriptor( theUPP: UniversalProcPtr ); inline;
+begin
+end;
+
+{implementation of unit cssmerr}
+
+{$ifc TARGET_OS_MAC}
+
+
+function CSSM_ERRCODE(arg: UInt32): UInt32; inline;
+begin
+  CSSM_ERRCODE:=(arg - CSSM_BASE_ERROR) and (CSSM_ERRORCODE_MODULE_EXTENT - 1)
+end;
+
+function CSSM_ERRBASE(arg: UInt32): UInt32; inline;
+begin
+  CSSM_ERRBASE:=((arg - CSSM_BASE_ERROR) and not(CSSM_ERRORCODE_MODULE_EXTENT - 1)) + CSSM_BASE_ERROR
+end;
+
+function CSSM_ERR_IS_CONVERTIBLE(arg: UInt32): Boolean; inline;
+begin
+  CSSM_ERR_IS_CONVERTIBLE:=CSSM_ERRCODE(arg) < CSSM_ERRORCODE_COMMON_EXTENT
+end;
+
+function CSSM_ERR_TAG(code, base: UInt32): UInt32; inline;
+begin
+  CSSM_ERR_TAG:=CSSM_ERRCODE(code) + base
+end;
+
+{$endc} {TARGET_OS_MAC}
+
+{implementation of unit mach_error}
+=======
 
 implementation
 
@@ -1290,6 +1431,27 @@ begin
   err_sub:=(((x) shr 14) and $fff)
 end;
 
+>>>>>>> graemeg/cpstrnew
+
+function err_get_system(err: mach_error_t): mach_error_t; inline;
+begin
+  err_get_system:=(((err) shr 26) and $3f)
+end;
+
+<<<<<<< HEAD
+{$push}
+{$R-,Q-}
+
+function err_system(x: mach_error_t): mach_error_t; inline;
+begin
+  err_system:=(((x) and $3f) shl 26)
+end;
+
+function err_sub(x: mach_error_t): mach_error_t; inline;
+begin
+  err_sub:=(((x) shr 14) and $fff)
+end;
+
 
 function err_get_system(err: mach_error_t): mach_error_t; inline;
 begin
@@ -1312,6 +1474,24 @@ begin
   unix_err:=err_kern or (((3) and $fff) shl 14) or errno;
 end;
 
+=======
+function err_get_sub(err: mach_error_t): mach_error_t; inline;
+begin
+  err_get_sub:=(((err) shr 14) and $fff)
+end;
+
+function err_get_code(err: mach_error_t): mach_error_t; inline;
+begin
+  err_get_code:=((err) and $3fff)
+end;
+
+
+function unix_err(errno: SInt32): mach_error_t; inline;
+begin
+  unix_err:=err_kern or (((3) and $fff) shl 14) or errno;
+end;
+
+>>>>>>> graemeg/cpstrnew
 {$pop}
 
 {implementation of unit CFByteOrders}
@@ -1544,6 +1724,47 @@ begin
   CFConvertDoubleSwappedToHost := Float64(CFSwappedFloat64(CFSwapInt64(arg.v)));
 end;
 {$endc}
+
+
+{implementation of unit CGGeometry}
+
+function CGPointMake(x: CGFloat; y: CGFloat): CGPoint; inline;
+begin
+  CGPointMake.x := x;
+  CGPointMake.y := y;
+end;
+
+
+function CGSizeMake(width: CGFloat; height: CGFloat): CGSize; inline;
+begin
+  CGSizeMake.width := width;
+  CGSizeMake.height := height;
+end;
+
+
+function CGRectMake(x: CGFloat; y: CGFloat; width: CGFloat; height: CGFloat): CGRect;
+begin
+  CGRectMake.origin.x := x;
+  CGRectMake.origin.y := y;
+  CGRectMake.size.width := width;
+  CGRectMake.size.height := height;
+end;
+
+
+function CGPointEqualToPoint(const point1: CGPoint; const point2: CGPoint): boolean; inline;
+begin
+  CGPointEqualToPoint:=
+    (point1.x = point2.x) and
+    (point1.y = point2.y);
+end;
+
+
+function CGSizeEqualToSize(size1: CGSize; size2: CGSize): boolean; inline;
+begin
+  CGSizeEqualToSize:=
+    (size1.width = size2.width) and
+    (size1.height = size2.height);
+end;
 
 
 {implementation of unit CGGeometry}
@@ -2152,6 +2373,176 @@ begin
     (auth < CSSM_ACL_AUTHORIZATION_PREAUTH_END)
 end;
 
+<<<<<<< HEAD
+{$endc} {TARGET_OS_MAC}
+=======
+{$endc}
+
+function EndianS16_LtoB( arg: SInt16 ): SInt16; inline;
+begin
+  EndianS16_LtoB:=EndianS16_Swap(arg);
+end;
+
+function EndianS16_BtoL( arg: SInt16 ): SInt16; inline;
+begin
+  EndianS16_BtoL:=EndianS16_Swap(arg);
+end;
+
+function EndianU16_LtoB( arg: UInt16 ): UInt16; inline;
+begin
+  EndianU16_LtoB:=Endian16_Swap(arg);
+end;
+
+function EndianU16_BtoL( arg: UInt16 ): UInt16; inline;
+begin
+  EndianU16_BtoL:=Endian16_Swap(arg);
+end;
+
+function EndianS32_LtoB( arg: SInt32 ): SInt32; inline;
+begin
+  EndianS32_LtoB:=EndianS32_Swap(arg);
+end;
+
+function EndianS32_BtoL( arg: SInt32 ): SInt32; inline;
+begin
+  EndianS32_BtoL:=EndianS32_Swap(arg);
+end;
+
+function EndianU32_LtoB( arg: UInt32 ): UInt32; inline;
+begin
+  EndianU32_LtoB:=Endian32_Swap(arg);
+end;
+
+function EndianU32_BtoL( arg: UInt32 ): UInt32; inline;
+begin
+  EndianU32_BtoL:=Endian32_Swap(arg);
+end;
+
+function EndianS64_LtoB( arg: SInt64 ): SInt64; inline;
+begin
+  EndianS64_LtoB:=EndianS64_Swap(arg);
+end;
+
+function EndianS64_BtoL( arg: SInt64 ): SInt64; inline;
+begin
+  EndianS64_BtoL:=EndianS64_Swap(arg);
+end;
+
+function EndianU64_LtoB( arg: UInt64 ): UInt64; inline;
+begin
+  EndianU64_LtoB:=Endian64_Swap_Pascal(arg);
+end;
+
+function EndianU64_BtoL( arg: UInt64 ): UInt64; inline;
+begin
+  EndianU64_BtoL:=Endian64_Swap_Pascal(arg);
+end;
+
+
+
+{implementation of unit IOKitReturn}
+>>>>>>> graemeg/cpstrnew
+
+
+{$push}
+{$R-,Q-}
+
+<<<<<<< HEAD
+{implementation of unit Events}
+
+{$ifc TARGET_OS_MAC and not TARGET_CPU_64}
+=======
+function iokit_common_err(ret: IOReturn): IOReturn; inline;
+begin
+  iokit_common_err:=(sys_iokit or sub_iokit_common or (ret))
+end;
+
+function iokit_family_err(sub, ret: IOReturn): IOReturn; inline;
+begin
+  iokit_family_err:=(sys_iokit or (sub) or (ret))
+end;
+
+function iokit_vendor_specific_err(ret: IOReturn): IOReturn; inline;
+begin
+  iokit_vendor_specific_err:=(sys_iokit or sub_iokit_vendor_specific or (ret))
+end;
+
+{$pop}
+
+{implementation of unit MIDIServices}
+{$ifc TARGET_OS_MAC}
+
+
+{$R-}
+function MIDIPacketNext(pkt : MIDIPacketPtr) : MIDIPacketPtr; inline;
+begin
+	MIDIPacketNext := MIDIPacketPtr(@pkt^.data[pkt^.length])
+end;
+{$endc} { TARGET_OS_MAC }
+{implementation of unit MIDIThruConnection}
+{$ifc TARGET_OS_MAC}
+
+
+function MIDIThruConnectionParamsSize(ptr : MIDIThruConnectionParamsPtr) : size_t; inline;
+begin
+	MIDIThruConnectionParamsSize := sizeof(MIDIThruConnectionParams) +
+									(ptr^.numControlTransforms * sizeof(MIDIControlTransform)) +
+									(ptr^.numMaps * sizeof(MIDIValueMap))
+end;
+{$endc} { TARGET_OS_MAC }
+{implementation of unit OSUtils}
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
+
+
+{$ifc TARGET_RT_BIG_ENDIAN}
+
+procedure GetKeys( var theKeys: KeyMap );
+var
+	theReverseKeys: KeyMap;
+	theKey: 0..127;
+begin
+	__GetKeys( theReverseKeys);
+	for theKey:= 0 to 127 do
+		theKeys[ theKey]:= theReverseKeys[ ((theKey div 8) * 8) + (7 - (theKey mod 8))]
+end;
+
+{$elsec}
+
+procedure GetKeys( var theKeys: KeyMap );
+begin
+	__GetKeys( theKeys)
+end;
+
+<<<<<<< HEAD
+=======
+
+{$endc} {TARGET_OS_MAC}
+
+{implementation of unit cssmapple}
+
+{$ifc TARGET_OS_MAC}
+
+
+
+function CSSM_ACL_AUTHORIZATION_PREAUTH(slot: UInt32): UInt32; inline;
+begin
+  CSSM_ACL_AUTHORIZATION_PREAUTH:=CSSM_ACL_AUTHORIZATION_PREAUTH_BASE + slot
+end;
+
+function CSSM_ACL_AUTHORIZATION_PREAUTH_SLOT(auth: UInt32): UInt32; inline;
+begin
+  CSSM_ACL_AUTHORIZATION_PREAUTH_SLOT:=auth - CSSM_ACL_AUTHORIZATION_PREAUTH_BASE
+end;
+
+function CSSM_ACL_AUTHORIZATION_IS_PREAUTH(auth: UInt32): Boolean; inline;
+begin
+  CSSM_ACL_AUTHORIZATION_IS_PREAUTH:=
+    (auth >= CSSM_ACL_AUTHORIZATION_PREAUTH_BASE) and
+    (auth < CSSM_ACL_AUTHORIZATION_PREAUTH_END)
+end;
+
 {$endc} {TARGET_OS_MAC}
 
 {implementation of unit CFString}
@@ -2181,6 +2572,7 @@ begin
 	__GetKeys( theKeys)
 end;
 
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 
@@ -2311,15 +2703,20 @@ end;
 
 
 {implementation of unit MDExternalDatastore}
+<<<<<<< HEAD
 
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/cpstrnew
 
+{$ifc TARGET_OS_MAC}
 
 function kMDExternalDatastoreTypeID : CFUUIDRef; inline;
 begin
 	kMDExternalDatastoreTypeID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$49,$68,$94,$B1,$00,$30,$47,$E0,$96,$11,$F2,$48,$FB,$E0,$B8,$CA)
 end;
 
+<<<<<<< HEAD
 function kMDExternalDatastoreStoreInterfaceID : CFUUIDRef; inline;
 begin
 	kMDExternalDatastoreStoreInterfaceID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$DA,$62,$12,$99,$ED,$BE,$4A,$63,$92,$39,$CB,$24,$13,$73,$E2,$07)
@@ -2368,6 +2765,46 @@ end;
 {$ifc TARGET_OS_MAC}
 
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+function kMDExternalDatastoreTypeID : CFUUIDRef; inline;
+begin
+	kMDExternalDatastoreTypeID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$49,$68,$94,$B1,$00,$30,$47,$E0,$96,$11,$F2,$48,$FB,$E0,$B8,$CA)
+end;
+
+function kMDExternalDatastoreStoreInterfaceID : CFUUIDRef; inline;
+begin
+	kMDExternalDatastoreStoreInterfaceID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$DA,$62,$12,$99,$ED,$BE,$4A,$63,$92,$39,$CB,$24,$13,$73,$E2,$07)
+end;
+
+{$endc} {TARGET_OS_MAC}
+
+{implementation of unit MDImporter}
+
+{$ifc TARGET_OS_MAC}
+
+
+function kMDImporterTypeID: CFUUIDRef; inline;
+begin
+	kMDImporterTypeID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$8B,$08,$C4,$BF,$41,$5B,$11,$D8,$B3,$F9,$00,$03,$93,$67,$26,$FC)
+end;
+
+function kMDImporterInterfaceID: CFUUIDRef; inline;
+begin
+	kMDImporterInterfaceID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$6E,$BC,$27,$C4,$89,$9C,$11,$D8,$84,$AE,$00,$03,$93,$67,$26,$FC)
+end;
+
+function kMDExporterInterfaceID: CFUUIDRef; inline;
+begin
+	kMDExporterInterfaceID := CFUUIDGetConstantUUIDWithBytes(kCFAllocatorDefault,$B4,$1C,$60,$74,$7D,$FB,$40,$57,$96,$9D,$31,$C8,$E8,$61,$A8,$D4)
+end;
+
+{$endc} {TARGET_OS_MAC}
+
+{implementation of unit MIDIDriver}
+
+{$ifc TARGET_OS_MAC}
+
 >>>>>>> graemeg/cpstrnew
 
 function kMIDIDriverTypeID : CFUUIDRef; inline;

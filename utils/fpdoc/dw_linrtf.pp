@@ -114,6 +114,9 @@ type
     procedure StartOverview(Const What : String; WithAccess : Boolean); override;
 =======
     procedure StartOverview(WithAccess : Boolean); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure WriteOverviewMember(const ALabel,AName,Access,ADescr : String); override;
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;

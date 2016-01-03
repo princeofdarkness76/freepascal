@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %NORUN }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 program tgeneric29;

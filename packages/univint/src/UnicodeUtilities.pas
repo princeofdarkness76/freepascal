@@ -4,7 +4,13 @@
      Contains:   Types, constants, prototypes for Unicode Utilities (Unicode input and text utils)
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1997-2011 by Apple Inc. All rights reserved.
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1997-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    CarbonCore-859.2~1
  
@@ -18,6 +24,10 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -76,11 +86,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -102,11 +115,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -119,11 +138,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -136,13 +161,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -209,6 +238,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -253,7 +310,12 @@ interface
 uses MacTypes,MacLocales,TextCommon,CFBase;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -510,6 +572,7 @@ type
 	CollatorRefPtr = ^CollatorRef;  { when a var xx:CollatorRef parameter can be nil, it is changed to xx: CollatorRefPtr }
 	UCCollateOptions = UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 { Sensitivity options}
 	kUCCollateComposeInsensitiveMask = 1 shl 1;
@@ -596,6 +659,38 @@ type
 }
 type
 <<<<<<< HEAD
+=======
+const
+{ Sensitivity options}
+	kUCCollateComposeInsensitiveMask = 1 shl 1;
+	kUCCollateWidthInsensitiveMask = 1 shl 2;
+	kUCCollateCaseInsensitiveMask = 1 shl 3;
+	kUCCollateDiacritInsensitiveMask = 1 shl 4; { Other general options }
+	kUCCollatePunctuationSignificantMask = 1 shl 15; { Number-handling options }
+	kUCCollateDigitsOverrideMask = 1 shl 16;
+	kUCCollateDigitsAsNumberMask = 1 shl 17;
+
+const
+	kUCCollateStandardOptions = kUCCollateComposeInsensitiveMask or kUCCollateWidthInsensitiveMask;
+
+{
+   Special values to specify various invariant orders for UCCompareTextNoLocale.
+   These values use the high 8 bits of UCCollateOptions.
+}
+const
+	kUCCollateTypeHFSExtended = 1;
+
+{ These constants are used for masking and shifting the invariant order type.}
+const
+	kUCCollateTypeSourceMask = $000000FF;
+	kUCCollateTypeShiftBits = 24;
+
+const
+	kUCCollateTypeMask = kUCCollateTypeSourceMask shl kUCCollateTypeShiftBits;
+
+
+type
+>>>>>>> graemeg/cpstrnew
 	UCCollationValue = UInt32;
 	UCCollationValuePtr = ^UCCollationValue;
 {
@@ -609,6 +704,7 @@ type
    This is the single opaque object needed to implement the Unicode TypeSelect
    utilities. It is created and initialized via a call to UCTypeSelectCreateSelector
 }
+<<<<<<< HEAD
 type
 	UCTypeSelectRef = ^OpaqueUCTypeSelectRef; { an opaque type }
 	OpaqueUCTypeSelectRef = record end;
@@ -624,6 +720,21 @@ type
 }
 type
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+type
+	UCTypeSelectRef = ^SInt32; { an opaque type }
+{
+   UCTypeSelectCompareResult
+   Used as the return value for UCTypeSelectCompare()
+}
+type
+	UCTypeSelectCompareResult = SInt32;
+{
+   UCTSWalkDirection
+   Used for UCTypeSelectWalkList to determine the direction of the walk
+}
+type
 >>>>>>> graemeg/cpstrnew
 	UCTSWalkDirection = UInt16;
 	UCTSWalkDirectionPtr = ^UCTSWalkDirection;
@@ -655,6 +766,9 @@ const
 	kUCTSOptionsReleaseStringMask = 1;
 	kUCTSOptionsDataIsOrderedMask = 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -666,6 +780,7 @@ const
 type
 	IndexToUCStringProcPtr = function( index: UInt32; listDataPtr: UnivPtr; refcon: UnivPtr; var outString: CFStringRef; var tsOptions: UCTypeSelectOptions ): Boolean;
 
+<<<<<<< HEAD
 {
    IndexToUCStringProcPtr
    This is the type used to define the user's IndexToUCString callback
@@ -675,6 +790,9 @@ type
 =======
 	IndexToUCStringProcPtr = function( index: UInt32; listDataPtr: UnivPtr; refcon: UnivPtr; var outString: CFStringRef; var tsOptions: UCTypeSelectOptions ): Boolean;
 
+type
+>>>>>>> graemeg/cpstrnew
+=======
 type
 >>>>>>> graemeg/cpstrnew
 	IndexToUCStringUPP = IndexToUCStringProcPtr;
@@ -688,7 +806,11 @@ type
  }
 function NewIndexToUCStringUPP( userRoutine: IndexToUCStringProcPtr ): IndexToUCStringUPP; external name '_NewIndexToUCStringUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -703,7 +825,11 @@ function NewIndexToUCStringUPP( userRoutine: IndexToUCStringProcPtr ): IndexToUC
  }
 procedure DisposeIndexToUCStringUPP( userUPP: IndexToUCStringUPP ); external name '_DisposeIndexToUCStringUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -718,7 +844,11 @@ procedure DisposeIndexToUCStringUPP( userUPP: IndexToUCStringUPP ); external nam
  }
 function InvokeIndexToUCStringUPP( index: UInt32; listDataPtr: UnivPtr; refcon: UnivPtr; var outString: CFStringRef; var tsOptions: UCTypeSelectOptions; userUPP: IndexToUCStringUPP ): Boolean; external name '_InvokeIndexToUCStringUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -727,6 +857,7 @@ function InvokeIndexToUCStringUPP( index: UInt32; listDataPtr: UnivPtr; refcon: 
    kUCTypeSelectMaxListSize can be used for any listSize arguement
    when the length of the list is unknown.
 }
+<<<<<<< HEAD
 const
 	kUCTypeSelectMaxListSize = $FFFFFFFF;
 <<<<<<< HEAD
@@ -807,6 +938,21 @@ const
 =======
 	TextBreakLocatorRef = ^SInt32; { an opaque type }
 	TextBreakLocatorRefPtr = ^TextBreakLocatorRef;  { when a var xx:TextBreakLocatorRef parameter can be nil, it is changed to xx: TextBreakLocatorRefPtr }
+=======
+const
+	kUCTypeSelectMaxListSize = $FFFFFFFF;
+
+
+{
+   -------------------------------------------------------------------------------------------------
+   CONSTANTS & DATA STRUCTURES for Unicode TextBreak
+   -------------------------------------------------------------------------------------------------
+}
+
+{ constant for LocaleOperationClass}
+const
+	kUnicodeTextBreakClass = FourCharCode('ubrk');
+>>>>>>> graemeg/cpstrnew
 
 {
  *  UCTextBreakType
@@ -815,6 +961,19 @@ const
  *    Specifies kinds of text boundaries.
  }
 type
+<<<<<<< HEAD
+=======
+	TextBreakLocatorRef = ^SInt32; { an opaque type }
+	TextBreakLocatorRefPtr = ^TextBreakLocatorRef;  { when a var xx:TextBreakLocatorRef parameter can be nil, it is changed to xx: TextBreakLocatorRefPtr }
+
+{
+ *  UCTextBreakType
+ *  
+ *  Discussion:
+ *    Specifies kinds of text boundaries.
+ }
+type
+>>>>>>> graemeg/cpstrnew
 	UCTextBreakType = UInt32;
 const
 {
@@ -853,6 +1012,9 @@ const
 type
 	UCTextBreakOptions = UInt32;
 const
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	kUCTextBreakLeadingEdgeMask = 1 shl 0;
 	kUCTextBreakGoBackwardsMask = 1 shl 1;
@@ -875,7 +1037,11 @@ const
  }
 function UCKeyTranslate( const (*var*) keyLayoutPtr: UCKeyboardLayout; virtualKeyCode: UInt16; keyAction: UInt16; modifierKeyState: UInt32; keyboardType: UInt32; keyTranslateOptions: OptionBits; var deadKeyState: UInt32; maxStringLength: UniCharCount; var actualStringLength: UniCharCount; unicodeString: {variable-size-array} UniCharPtr ): OSStatus; external name '_UCKeyTranslate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -893,7 +1059,11 @@ function UCKeyTranslate( const (*var*) keyLayoutPtr: UCKeyboardLayout; virtualKe
  }
 function UCCreateCollator( locale: LocaleRef; opVariant: LocaleOperationVariant; options: UCCollateOptions; var collatorRef_: CollatorRef ): OSStatus; external name '_UCCreateCollator';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -909,7 +1079,11 @@ function UCCreateCollator( locale: LocaleRef; opVariant: LocaleOperationVariant;
  }
 function UCGetCollationKey( collatorRef_: CollatorRef; textPtr: ConstUniCharPtr; textLength: UniCharCount; maxKeySize: ItemCount; var actualKeySize: ItemCount; collationKey: {variable-size-array} UCCollationValuePtr ): OSStatus; external name '_UCGetCollationKey';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -925,7 +1099,11 @@ function UCGetCollationKey( collatorRef_: CollatorRef; textPtr: ConstUniCharPtr;
  }
 function UCCompareCollationKeys( key1Ptr: UCCollationValuePtr; key1Length: ItemCount; key2Ptr: UCCollationValuePtr; key2Length: ItemCount; var equivalent: Boolean; var order: SInt32 ): OSStatus; external name '_UCCompareCollationKeys';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -941,7 +1119,11 @@ function UCCompareCollationKeys( key1Ptr: UCCollationValuePtr; key1Length: ItemC
  }
 function UCCompareText( collatorRef_: CollatorRef; text1Ptr: ConstUniCharPtr; text1Length: UniCharCount; text2Ptr: ConstUniCharPtr; text2Length: UniCharCount; var equivalent: Boolean; var order: SInt32 ): OSStatus; external name '_UCCompareText';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -957,9 +1139,15 @@ function UCCompareText( collatorRef_: CollatorRef; text1Ptr: ConstUniCharPtr; te
  }
 function UCDisposeCollator( var collatorRef_: CollatorRef ): OSStatus; external name '_UCDisposeCollator';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -977,7 +1165,11 @@ function UCDisposeCollator( var collatorRef_: CollatorRef ): OSStatus; external 
  }
 function UCCompareTextDefault( options: UCCollateOptions; text1Ptr: ConstUniCharPtr; text1Length: UniCharCount; text2Ptr: ConstUniCharPtr; text2Length: UniCharCount; var equivalent: Boolean; var order: SInt32 ): OSStatus; external name '_UCCompareTextDefault';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -995,7 +1187,11 @@ function UCCompareTextDefault( options: UCCollateOptions; text1Ptr: ConstUniChar
  }
 function UCCompareTextNoLocale( options: UCCollateOptions; text1Ptr: ConstUniCharPtr; text1Length: UniCharCount; text2Ptr: ConstUniCharPtr; text2Length: UniCharCount; var equivalent: Boolean; var order: SInt32 ): OSStatus; external name '_UCCompareTextNoLocale';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1038,7 +1234,11 @@ function UCCompareTextNoLocale( options: UCCollateOptions; text1Ptr: ConstUniCha
  }
 function UCCreateTextBreakLocator( locale: LocaleRef; opVariant: LocaleOperationVariant; breakTypes: UCTextBreakType; var breakRef: TextBreakLocatorRef ): OSStatus; external name '_UCCreateTextBreakLocator';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -1059,7 +1259,11 @@ function UCCreateTextBreakLocator( locale: LocaleRef; opVariant: LocaleOperation
  }
 function UCFindTextBreak( breakRef: TextBreakLocatorRef; breakType: UCTextBreakType; options: UCTextBreakOptions; textPtr: ConstUniCharPtr; textLength: UniCharCount; startOffset: UniCharArrayOffset; var breakOffset: UniCharArrayOffset ): OSStatus; external name '_UCFindTextBreak';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -1080,7 +1284,11 @@ function UCFindTextBreak( breakRef: TextBreakLocatorRef; breakType: UCTextBreakT
  }
 function UCDisposeTextBreakLocator( var breakRef: TextBreakLocatorRef ): OSStatus; external name '_UCDisposeTextBreakLocator';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_6 *)
 >>>>>>> graemeg/cpstrnew
@@ -1127,7 +1335,11 @@ function UCDisposeTextBreakLocator( var breakRef: TextBreakLocatorRef ): OSStatu
  }
 function UCTypeSelectCreateSelector( locale: LocaleRef { can be NULL }; opVariant: LocaleOperationVariant; options: UCCollateOptions; var newSelector: UCTypeSelectRef ): OSStatus; external name '_UCTypeSelectCreateSelector';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1155,7 +1367,11 @@ function UCTypeSelectCreateSelector( locale: LocaleRef { can be NULL }; opVarian
  }
 function UCTypeSelectFlushSelectorData( ref: UCTypeSelectRef ): OSStatus; external name '_UCTypeSelectFlushSelectorData';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1185,7 +1401,11 @@ function UCTypeSelectFlushSelectorData( ref: UCTypeSelectRef ): OSStatus; extern
  }
 function UCTypeSelectReleaseSelector( var ref: UCTypeSelectRef ): OSStatus; external name '_UCTypeSelectReleaseSelector';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1226,7 +1446,11 @@ function UCTypeSelectReleaseSelector( var ref: UCTypeSelectRef ): OSStatus; exte
  }
 function UCTypeSelectWouldResetBuffer( inRef: UCTypeSelectRef; inText: CFStringRef { can be NULL }; inEventTime: Float64 ): Boolean; external name '_UCTypeSelectWouldResetBuffer';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1278,7 +1502,11 @@ function UCTypeSelectWouldResetBuffer( inRef: UCTypeSelectRef; inText: CFStringR
  }
 function UCTypeSelectAddKeyToSelector( inRef: UCTypeSelectRef; inText: CFStringRef; inEventTime: Float64; var updateFlag: Boolean ): OSStatus; external name '_UCTypeSelectAddKeyToSelector';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1325,7 +1553,11 @@ function UCTypeSelectAddKeyToSelector( inRef: UCTypeSelectRef; inText: CFStringR
  }
 function UCTypeSelectCompare( ref: UCTypeSelectRef; inText: CFStringRef; var result: UCTypeSelectCompareResult ): OSStatus; external name '_UCTypeSelectCompare';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1391,7 +1623,11 @@ function UCTypeSelectCompare( ref: UCTypeSelectRef; inText: CFStringRef; var res
  }
 function UCTypeSelectFindItem( ref: UCTypeSelectRef; listSize: UInt32; listDataPtr: UnivPtr { can be NULL }; refcon: UnivPtr { can be NULL }; userUPP: IndexToUCStringUPP; var closestItem: UInt32 ): OSStatus; external name '_UCTypeSelectFindItem';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1483,8 +1719,12 @@ function UCTypeSelectFindItem( ref: UCTypeSelectRef; listSize: UInt32; listDataP
  }
 function UCTypeSelectWalkList( ref: UCTypeSelectRef; currSelect: CFStringRef; direction: UCTSWalkDirection; listSize: UInt32; listDataPtr: UnivPtr { can be NULL }; refcon: UnivPtr { can be NULL }; userUPP: IndexToUCStringUPP; var closestItem: UInt32 ): OSStatus; external name '_UCTypeSelectWalkList';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

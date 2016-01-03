@@ -69,11 +69,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -92,6 +95,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -100,12 +104,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -124,6 +137,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -135,13 +153,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -201,6 +223,39 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -461,6 +516,7 @@ procedure InvokeSCSICallbackUPP( scsiPB: UnivPtr; userUPP: SCSICallbackUPP ); ex
 { 
    SCSI Manager 4.3 function codes 
  }
+<<<<<<< HEAD
 const
 	SCSINop = $00; { Execute nothing                          }
 	SCSIExecIO = $01; { Execute the specified IO                  }
@@ -532,6 +588,64 @@ type
 
 { Command Descriptor Block structure }
 type
+=======
+const
+	SCSINop = $00; { Execute nothing                          }
+	SCSIExecIO = $01; { Execute the specified IO                  }
+	SCSIBusInquiry = $03; { Get parameters for entire path of HBAs           }
+	SCSIReleaseQ = $04; { Release the frozen SIM queue for particular LUN      }
+	SCSIAbortCommand = $10; { Abort the selected Control Block             }
+	SCSIResetBus = $11; { Reset the SCSI bus                         }
+	SCSIResetDevice = $12; { Reset the SCSI device                      }
+	SCSITerminateIO = $13;  { Terminate any pending IO                    }
+
+const
+	vendorUnique = $C0;  { 0xC0 thru 0xFF }
+
+
+{ Allocation length defines for some of the fields }
+const
+	handshakeDataLength = 8;    { Handshake data length }
+	maxCDBLength = 16;   { Space for the CDB bytes/pointer }
+	vendorIDLength = 16;    { ASCII string len for Vendor ID  }
+
+{ Define DeviceIdent structure }
+type
+	DeviceIdentPtr = ^DeviceIdent;
+	DeviceIdent = record
+		diReserved: UInt8;             { reserved           }
+		bus: UInt8;                    { SCSI - Bus Number   }
+		targetID: UInt8;               { SCSI - Target SCSI ID  }
+		LUN: UInt8;                    { SCSI - LUN            }
+	end;
+{ Constants for the diReserved field of DeviceIdent }
+{ used to distinguish whether the DeviceIdent holds }
+{ information about a SCSI device (kBusTypeSCSI)    }
+{ or an ATA device (kBusTypeATA).  The other        }
+{ constants are pretty much deprecated.  Let me     }
+{ know if you see any.                              }
+const
+	kBusTypeSCSI = 0;
+	kBusTypeATA = 1;
+	kBusTypePCMCIA = 2;
+	kBusTypeMediaBay = 3;
+
+{ If diReserved indicates that a DeviceIdent is     }
+{ really for ATA, you can cast it to DeviceIdentATA }
+{ to get at the important fields.                   }
+type
+	DeviceIdentATAPtr = ^DeviceIdentATA;
+	DeviceIdentATA = record
+		diReserved: UInt8;
+		busNum: UInt8;
+		devNum: UInt8;
+		diReserved2: UInt8;
+	end;
+
+
+{ Command Descriptor Block structure }
+type
+>>>>>>> graemeg/cpstrnew
 	CDBPtr = ^CDB;
 	CDB = record
 		case SInt16 of
@@ -860,6 +974,9 @@ const
 	scsiTransferBlind = 0;
 	scsiTransferPolled = 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	scsiErrorBase = -7936;
@@ -957,6 +1074,7 @@ const
 	scsiExecutionErrors = scsiErrorBase;
 	scsiNotExecutedErrors = scsiTooManyBuses;
 	scsiParameterErrors = scsiPBLengthError;
+<<<<<<< HEAD
 =======
 
 const
@@ -1095,6 +1213,140 @@ const
 
 { scsiWeirdStuff field bits }
 const
+=======
+
+{ Defines for the scsiResultFlags field }
+const
+	scsiSIMQFrozen = $0001; { The SIM queue is frozen w/this err        }
+	scsiAutosenseValid = $0002; { Autosense data valid for target         }
+	scsiBusNotFree = $0004; { At time of callback, SCSI bus is not free  }
+
+{ Defines for the bit numbers of the scsiFlags field in the PB header for the SCSIExecIO function }
+const
+	kbSCSIDisableAutosense = 29;   { Disable auto sense feature               }
+	kbSCSIFlagReservedA = 28;   {                             }
+	kbSCSIFlagReserved0 = 27;   {                             }
+	kbSCSICDBLinked = 26;   { The PB contains a linked CDB             }
+	kbSCSIQEnable = 25;   { Target queue actions are enabled          }
+	kbSCSICDBIsPointer = 24;   { The CDB field contains a pointer          }
+	kbSCSIFlagReserved1 = 23;   {                               }
+	kbSCSIInitiateSyncData = 22;   { Attempt Sync data xfer and SDTR          }
+	kbSCSIDisableSyncData = 21;   { Disable sync, go to async            }
+	kbSCSISIMQHead = 20;   { Place PB at the head of SIM Q          }
+	kbSCSISIMQFreeze = 19;   { Return the SIM Q to frozen state          }
+	kbSCSISIMQNoFreeze = 18;   { Disallow SIM Q freezing                 }
+	kbSCSIDoDisconnect = 17;   { Definitely do disconnect               }
+	kbSCSIDontDisconnect = 16;   { Definitely don't disconnect              }
+	kbSCSIDataReadyForDMA = 15;   { Data buffer(s) are ready for DMA          }
+	kbSCSIFlagReserved3 = 14;   {                               }
+	kbSCSIDataPhysical = 13;   { SG/Buffer data ptrs are physical          }
+	kbSCSISensePhysical = 12;   { Autosense buffer ptr is physical          }
+	kbSCSIFlagReserved5 = 11;   {                               }
+	kbSCSIFlagReserved6 = 10;   {                               }
+	kbSCSIFlagReserved7 = 9;    {                               }
+	kbSCSIFlagReserved8 = 8;    {                               }
+	kbSCSIDataBufferValid = 7;    { Data buffer valid                 }
+	kbSCSIStatusBufferValid = 6;    { Status buffer valid                 }
+	kbSCSIMessageBufferValid = 5;    { Message buffer valid                }
+	kbSCSIFlagReserved9 = 4;     {                             }
+
+{ Defines for the bit masks of the scsiFlags field }
+const
+	scsiDirectionMask = $C0000000; { Data direction mask                 }
+	scsiDirectionNone = $C0000000; { Data direction (11: no data)          }
+	scsiDirectionReserved = $00000000; { Data direction (00: reserved)       }
+	scsiDirectionOut = $80000000; { Data direction (10: DATA OUT)       }
+	scsiDirectionIn = $40000000; { Data direction (01: DATA IN)          }
+	scsiDisableAutosense = $20000000; { Disable auto sense feature          }
+	scsiFlagReservedA = $10000000; {                           }
+	scsiFlagReserved0 = $08000000; {                           }
+	scsiCDBLinked = $04000000; { The PB contains a linked CDB          }
+	scsiQEnable = $02000000; { Target queue actions are enabled      }
+	scsiCDBIsPointer = $01000000; { The CDB field contains a pointer      }
+	scsiFlagReserved1 = $00800000; {                           }
+	scsiInitiateSyncData = $00400000; { Attempt Sync data xfer and SDTR         }
+	scsiDisableSyncData = $00200000; { Disable sync, go to async          }
+	scsiSIMQHead = $00100000; { Place PB at the head of SIM Q       }
+	scsiSIMQFreeze = $00080000; { Return the SIM Q to frozen state      }
+	scsiSIMQNoFreeze = $00040000; { Disallow SIM Q freezing              }
+	scsiDoDisconnect = $00020000; { Definitely do disconnect             }
+	scsiDontDisconnect = $00010000; { Definitely don't disconnect          }
+	scsiDataReadyForDMA = $00008000; { Data buffer(s) are ready for DMA      }
+	scsiFlagReserved3 = $00004000; {  }
+	scsiDataPhysical = $00002000; { SG/Buffer data ptrs are physical      }
+	scsiSensePhysical = $00001000; { Autosense buffer ptr is physical      }
+	scsiFlagReserved5 = $00000800; {                         }
+	scsiFlagReserved6 = $00000400; {                           }
+	scsiFlagReserved7 = $00000200; {                           }
+	scsiFlagReserved8 = $00000100; {                           }
+
+{ bit masks for the scsiIOFlags field in SCSIExecIOPB }
+const
+	scsiNoParityCheck = $0002; { disable parity checking                 }
+	scsiDisableSelectWAtn = $0004; { disable select w/Atn                    }
+	scsiSavePtrOnDisconnect = $0008; { do SaveDataPointer upon Disconnect msg          }
+	scsiNoBucketIn = $0010; { donÕt bit bucket in during this I/O           }
+	scsiNoBucketOut = $0020; { donÕt bit bucket out during this I/O        }
+	scsiDisableWide = $0040; { disable wide transfer negotiation           }
+	scsiInitiateWide = $0080; { initiate wide transfer negotiation           }
+	scsiRenegotiateSense = $0100; { renegotiate sync/wide before issuing autosense     }
+	scsiDisableDiscipline = $0200; { disable parameter checking on SCSIExecIO calls }
+	scsiIOFlagReserved0080 = $0080; {                                }
+	scsiIOFlagReserved8000 = $8000; {                                  }
+
+{ Defines for the Bus Inquiry PB fields. }
+{ scsiHBAInquiry field bits }
+const
+	scsiBusMDP = $80; { Supports Modify Data Pointer message               }
+	scsiBusWide32 = $40; { Supports 32 bit wide SCSI                    }
+	scsiBusWide16 = $20; { Supports 16 bit wide SCSI                    }
+	scsiBusSDTR = $10; { Supports Sync Data Transfer Req message              }
+	scsiBusLinkedCDB = $08; { Supports linked CDBs                         }
+	scsiBusTagQ = $02; { Supports tag queue message                    }
+	scsiBusSoftReset = $01;  { Supports soft reset                           }
+
+{ Defines for the scsiDataType field }
+const
+	scsiDataBuffer = 0;    { single contiguous buffer supplied            }
+	scsiDataTIB = 1;    { TIB supplied (ptr in scsiDataPtr)           }
+	scsiDataSG = 2;    { scatter/gather list supplied             }
+	scsiDataIOTable = 3;     {#(7/11/95) Prepared by Block Storage         }
+
+{ scsiDataTypes field bits  }
+{  bits 0->15 Apple-defined, 16->30 3rd-party unique, 31 = reserved }
+const
+	scsiBusDataTIB = 1 shl scsiDataTIB; { TIB supplied (ptr in scsiDataPtr)   }
+	scsiBusDataBuffer = 1 shl scsiDataBuffer; { single contiguous buffer supplied      }
+	scsiBusDataSG = 1 shl scsiDataSG; { scatter/gather list supplied        }
+	scsiBusDataIOTable = 1 shl scsiDataIOTable; { (2/6/95) Prepare Memory for IO}
+	scsiBusDataReserved = $80000000; {                            }
+
+{ scsiScanFlags field bits }
+const
+	scsiBusScansDevices = $80; { Bus scans for and maintains device list         }
+	scsiBusScansOnInit = $40; { Bus scans performed at power-up/reboot        }
+	scsiBusLoadsROMDrivers = $20;  { may load ROM drivers to support targets       }
+
+{ scsiFeatureFlags field bits }
+const
+	scsiBusLVD = $00000400; { HBA is Low Voltage Differential Bus         }
+	scsiBusUltra3SCSI = $00000200; { HBA supports Ultra3 SCSI               }
+	scsiBusUltra2SCSI = $00000100; { HBA supports Ultra2 SCSI               }
+	scsiBusInternalExternalMask = $000000C0; { bus internal/external mask           }
+	scsiBusInternalExternalUnknown = $00000000; { not known whether bus is inside or outside     }
+	scsiBusInternalExternal = $000000C0; { bus goes inside and outside the box       }
+	scsiBusInternal = $00000080; { bus goes inside the box                }
+	scsiBusExternal = $00000040; { bus goes outside the box             }
+	scsiBusCacheCoherentDMA = $00000020; { DMA is cache coherent                }
+	scsiBusOldCallCapable = $00000010; { SIM is old call capable                }
+	scsiBusUltraSCSI = $00000008; { HBA supports Ultra SCSI                 }
+	scsiBusDifferential = $00000004; { Single Ended (0) or Differential (1)    }
+	scsiBusFastSCSI = $00000002; { HBA supports fast SCSI                  }
+	scsiBusDMAavailable = $00000001; { DMA is available                  }
+
+{ scsiWeirdStuff field bits }
+const
+>>>>>>> graemeg/cpstrnew
 	scsiOddDisconnectUnsafeRead1 = $0001; { Disconnects on odd byte boundries are unsafe with DMA and/or blind reads }
 	scsiOddDisconnectUnsafeWrite1 = $0002; { Disconnects on odd byte boundries are unsafe with DMA and/or blind writes }
 	scsiBusErrorsUnsafe = $0004; { Non-handshaked delays or disconnects during blind transfers may cause a crash }
@@ -1106,6 +1358,7 @@ const
 
 { scsiHBAslotType values }
 const
+<<<<<<< HEAD
 =======
 	scsiRequestInProgress = 1;    { 1   = PB request is in progress          }
                                         { Execution failed  00-2F }
@@ -1357,6 +1610,22 @@ const
 	scsiDeviceNoOldCallAccess = $0002; { no old call access to this device            }
 
 {
+=======
+	scsiMotherboardBus = $00; { A built in Apple supplied bus            }
+	scsiNuBus = $01; { A SIM on a NuBus card                   }
+	scsiPDSBus = $03; {    "  on a PDS card                    }
+	scsiPCIBus = $04; {    "  on a PCI bus card                   }
+	scsiPCMCIABus = $05; {    "  on a PCMCIA card                  }
+	scsiFireWireBridgeBus = $06; {    "  connected through a FireWire bridge   }
+	scsiUSBBus = $07;  {    "  connected on a USB bus               }
+
+{ Defines for the scsiDriverFlags field (in SCSIDriverPB) }
+const
+	scsiDeviceSensitive = $0001; { Only driver should access this device          }
+	scsiDeviceNoOldCallAccess = $0002; { no old call access to this device            }
+
+{
+>>>>>>> graemeg/cpstrnew
  * SCSI bus status. These values are returned by the SCSI target in the status phase.
  * They are not related to Macintosh status values (except that values other than
  * scsiStatusGood will result in scsiResult set to scsiNonZeroStatus).

@@ -105,6 +105,7 @@ interface
          ,addr_seg         // used for getting the segment of an object, e.g. 'mov ax, SEG symbol'
          {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
          {$IFDEF AARCH64}
          ,addr_page
          ,addr_pageoffset
@@ -112,10 +113,15 @@ interface
          ,addr_gotpageoffset
          {$ENDIF AARCH64}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
          {$IFDEF AVR}
          ,addr_lo8
          ,addr_hi8
          {$ENDIF}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
          );
 
@@ -399,8 +405,11 @@ interface
     function int_cgsize(const a: tcgint): tcgsize;{$ifdef USEINLINE}inline;{$endif}
     function int_float_cgsize(const a: tcgint): tcgsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function tcgsize2str(cgsize: tcgsize):string;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

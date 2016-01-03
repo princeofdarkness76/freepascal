@@ -203,6 +203,7 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 <<<<<<< HEAD
+<<<<<<< HEAD
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -354,6 +355,8 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 attsufNONE

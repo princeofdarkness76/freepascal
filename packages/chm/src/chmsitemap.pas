@@ -247,6 +247,7 @@ begin
        end
        else begin // we are the properties of the object tag
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (smbtOBJECT in FSiteMapBodyTags) then
            begin
             if (FLevel > 0 ) then 
@@ -317,6 +318,8 @@ begin
                  end;
                  end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
          if (FLevel > 0 ) and (smbtOBJECT in FSiteMapBodyTags) then begin
 
            if LowerCase(GetTagName(AActualTag)) = 'param' then begin
@@ -430,7 +433,11 @@ begin
     end;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> graemeg/cpstrnew
 =======
                     
 >>>>>>> graemeg/cpstrnew

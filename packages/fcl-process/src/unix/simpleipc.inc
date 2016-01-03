@@ -127,6 +127,9 @@ begin
     DoError(SErrServerNotActive,[Owner.ServerID]);
 =======
     Owner.DoError(SErrServerNotActive,[Owner.ServerID]);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   // Use the sharedenynone line to allow more then one client 
   // communicating with one server at the same time

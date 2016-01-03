@@ -62,9 +62,15 @@ type
     _ppdPriv: Pointer;
     {$ifdef cpu64}
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(3)-1] of id;
     {$else}
     _compatibilityPadding: array[0..(20)-1] of char;
+=======
+        _reserved: array[0..2] of id;
+    {$else}
+        _compatibilityPadding: array[0..19] of char;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..2] of id;
     {$else}

@@ -37,7 +37,11 @@ unit i_haiku;
             shortname    : 'Haiku';
             flags        : [tf_under_development,tf_needs_symbol_size,tf_files_case_sensitive,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections, tf_has_winlike_resources];
+=======
+                            tf_smartlink_sections, tf_smartlink_library, tf_has_winlike_resources];
+>>>>>>> graemeg/cpstrnew
 =======
                             tf_smartlink_sections, tf_smartlink_library, tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew

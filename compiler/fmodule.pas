@@ -185,6 +185,7 @@ interface
         deprecatedmsg: pshortstring;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         { contains a list of types that are extended by helper types; the key is
           the full name of the type and the data is a TFPObjectList of
           tobjectdef instances (the helper defs) }
@@ -215,6 +216,8 @@ interface
            -- actual type: tnode (but fmodule should not depend on node) }
          tcinitcode     : tobject;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         {create creates a new module which name is stored in 's'. LoadedFrom
@@ -610,8 +613,11 @@ implementation
         moduleoptions:=[];
         deprecatedmsg:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
         namespace:=nil;
         tcinitcode:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         _exports:=TLinkedList.Create;
@@ -625,7 +631,10 @@ implementation
       var
         i : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
         current_debuginfo_reset : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       begin
@@ -687,8 +696,11 @@ implementation
         stringdispose(asmprefix);
         stringdispose(deprecatedmsg);
 <<<<<<< HEAD
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         localunitsearchpath.Free;
@@ -839,9 +851,12 @@ implementation
         mode_switch_allowed:=true;
         stringdispose(deprecatedmsg);
 <<<<<<< HEAD
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
         tcinitcode:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         moduleoptions:=[];
@@ -971,7 +986,10 @@ implementation
           Message1(sym_w_non_implemented_unit,realmodulename^);
       end;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
     function tmodule.derefidx_unit(id:longint):longint;
       begin

@@ -1,6 +1,10 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000, 2001, 2004, 2005, 2007-2010 Apple Inc. All rights reserved.
+=======
+ * Copyright (c) 2000, 2001, 2004, 2005, 2007-2009 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
  * Copyright (c) 2000, 2001, 2004, 2005, 2007-2009 Apple Inc. All rights reserved.
 >>>>>>> graemeg/cpstrnew
@@ -31,6 +35,9 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -87,11 +94,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -110,6 +120,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -130,6 +141,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -145,6 +158,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -153,13 +169,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -211,6 +231,8 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -237,6 +259,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endc}
 
@@ -323,8 +348,12 @@ type
  }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SCPreferencesRef = ^__SCPreferences; { an opaque type }
 	__SCPreferences = record end;
+=======
+	SCPreferencesRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SCPreferencesRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -340,14 +369,20 @@ type
 		preferences to the active system configuration.
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kSCPreferencesNotificationCommit = 1 shl 0;	// __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA)
 	kSCPreferencesNotificationApply = 1 shl 1;	// __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 //AVAILABLE_MAC_OS_X_10_4_OR_LATER
 const
 	kSCPreferencesNotificationCommit = 1 shl 0;
 	kSCPreferencesNotificationApply = 1 shl 1;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 type
@@ -595,6 +630,7 @@ function SCPreferencesSetValue( prefs: SCPreferencesRef; key: CFStringRef; value
 	@result Returns TRUE if the value was removed;
 		FALSE if the key did not exist or if an error occurred.
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 function SCPreferencesRemoveValue( prefs: SCPreferencesRef; key: CFStringRef ): Boolean; external name '_SCPreferencesRemoveValue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
@@ -737,6 +773,85 @@ function SCPreferencesSetDispatchQueue( prefs: SCPreferencesRef; queue: dispatch
 		be discarded.
 	@param prefs The preferences session.
  }
+=======
+ }
+function SCPreferencesRemoveValue( prefs: SCPreferencesRef; key: CFStringRef ): Boolean; external name '_SCPreferencesRemoveValue';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
+
+{!
+	@function SCPreferencesSetCallback
+	@discussion Assigns a callback to a preferences session.  The function
+		is called when the changes to the preferences have been
+		committed or applied.
+	@param prefs The preferences session.
+	@param callout The function to be called when the preferences have
+		been changed or applied.
+		If NULL, the current callback is removed.
+	@param context The SCPreferencesContext associated with
+		the callout.
+	@result Returns TRUE if the notification client was successfully set.
+ }
+function SCPreferencesSetCallback( prefs: SCPreferencesRef; callout: SCPreferencesCallBack; var context: SCPreferencesContext ): Boolean; external name '_SCPreferencesSetCallback';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
+
+{!
+	@function SCPreferencesScheduleWithRunLoop
+	@discussion Schedule commit and apply notifications for the specified
+		preferences session using the specified run loop and mode.
+	@param prefs The preferences session.
+	@param runLoop A reference to a run loop on which the notification
+		should be scheduled.
+		Must be non-NULL.
+	@param runLoopMode The mode on which to schedule the notification.
+		Must be non-NULL.
+	@result Returns TRUE if the notifications are successfully scheduled;
+		FALSE otherwise.
+ }
+function SCPreferencesScheduleWithRunLoop( prefs: SCPreferencesRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCPreferencesScheduleWithRunLoop';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
+
+{!
+	@function SCPreferencesUnscheduleFromRunLoop
+	@discussion Unschedule commit and apply notifications for the specified
+		preferences session from the specified run loop and mode.
+	@param prefs The preferences session.
+	@param runLoop A reference to a run loop from which the notification
+		should be unscheduled.
+		Must be non-NULL.
+	@param runLoopMode The mode on which to unschedule the notification.
+		Must be non-NULL.
+	@result Returns TRUE if the notifications are successfully unscheduled;
+		FALSE otherwise.
+ }
+function SCPreferencesUnscheduleFromRunLoop( prefs: SCPreferencesRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ): Boolean; external name '_SCPreferencesUnscheduleFromRunLoop';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
+
+{$ifc not TARGET_OS_IPHONE}
+{!
+	@function SCPreferencesSetDispatchQueue
+	@discussion Schedule commit and apply notifications for the specified
+		preferences session.
+	@param prefs The preferences session.
+	@param queue The dispatch queue to run the callback function on.
+	@result Returns TRUE if the notifications are successfully scheduled;
+		FALSE otherwise.
+ }
+function SCPreferencesSetDispatchQueue( prefs: SCPreferencesRef; queue: dispatch_queue_t ): Boolean; external name '_SCPreferencesSetDispatchQueue';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_NA) *)
+{$endc} {not TARGET_OS_IPHONE}
+
+{!
+	@function SCPreferencesSynchronize
+	@discussion Synchronizes accessed preferences with committed changes.
+
+		Any references to preference values returned by calls to the
+		SCPreferencesGetValue function are no longer valid unless they
+		were explicitly retained or copied.  Any preference values
+		that were updated (add, set, remove) but not committed will
+		be discarded.
+	@param prefs The preferences session.
+ }
+>>>>>>> graemeg/cpstrnew
 procedure SCPreferencesSynchronize( prefs: SCPreferencesRef ); external name '_SCPreferencesSynchronize';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
 

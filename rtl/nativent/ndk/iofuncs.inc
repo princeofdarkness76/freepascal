@@ -39,6 +39,7 @@ function NtOpenFile(
 ): NTSTATUS; external ntdll;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function NtQueryDirectoryFile(
   FileHandle: HANDLE;
   Event: HANDLE; {OPTIONAL}
@@ -53,6 +54,8 @@ function NtQueryDirectoryFile(
   RestartScan: NT_BOOLEAN
 ): NTSTATUS; external ntdll;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function NtQueryFullAttributesFile(

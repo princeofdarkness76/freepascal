@@ -22,7 +22,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate(palette: IPTCPalette);
+=======
+procedure generate(palette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure generate(palette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -75,21 +79,30 @@ begin
     palette.Unlock;
 =======
     palette.unlock;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 end;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
   palette: IPTCPalette;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   format: TPTCFormat = nil;
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   palette: TPTCPalette = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   state: Integer;
   intensity: Single;
@@ -100,7 +113,11 @@ var
   generator: PUint8;
   color: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   area: IPTCArea;
+=======
+  area: TPTCArea = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   area: TPTCArea = nil;
 >>>>>>> graemeg/cpstrnew
@@ -262,14 +279,20 @@ begin
 
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.Close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.Free;
       surface.Free;
       format.Free;
       palette.Free;
       area.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

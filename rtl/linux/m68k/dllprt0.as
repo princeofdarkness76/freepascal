@@ -22,6 +22,7 @@ _startlib:
         .globl  FPC_SHARED_LIB_START
         .type   FPC_SHARED_LIB_START,@function
 <<<<<<< HEAD
+<<<<<<< HEAD
 # This is a normal C function with args (argc,argv,envp)
 FPC_SHARED_LIB_START:
         link.w   %a6,#0
@@ -32,6 +33,8 @@ FPC_SHARED_LIB_START:
         move.l   16(%fp),%d0
         move.l   %d0,operatingsystem_parameter_envp
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 FPC_SHARED_LIB_START:
 |
 |       The args and envs are not tested yet
@@ -56,6 +59,9 @@ haltproc:
         .globl  FPC_SHARED_LIB_EXIT
         .type   FPC_SHARED_LIB_EXIT,@function
 FPC_SHARED_LIB_EXIT:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         moveq.l   #1,%d0
         move.w    operatingsystem_result,%d1

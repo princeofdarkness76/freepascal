@@ -440,7 +440,11 @@ interface
          { ARM VFP values are in integer registers when they are function results }
          if (left.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
 <<<<<<< HEAD
+<<<<<<< HEAD
            hlcg.location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,left.resultdef,false);
+=======
+           location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
+>>>>>>> graemeg/cpstrnew
 =======
            location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
 >>>>>>> graemeg/cpstrnew
@@ -520,10 +524,14 @@ interface
     procedure tcgtypeconvnode.second_proc_to_procvar;
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
         href: treference;
         tmpreg: tregister;
         procvarrectype: trecorddef;
         procvarselfname: TIDString;
+=======
+        tmpreg: tregister;
+>>>>>>> graemeg/cpstrnew
 =======
         tmpreg: tregister;
 >>>>>>> graemeg/cpstrnew
@@ -580,6 +588,7 @@ interface
                 { assigning a global function to a nested procvar -> create
                   tmethodpointer record and set the "frame pointer" to nil }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if not(left.location.loc in [LOC_REFERENCE,LOC_CREFERENCE]) then
                   internalerror(2013031503);
                 location_reset_ref(location,LOC_REFERENCE,int_cgsize(resultdef.size),sizeof(pint));
@@ -604,6 +613,8 @@ interface
                   debugging }
                 hlcg.g_load_const_field_by_name(current_asmdata.CurrAsmList,trecorddef(procvarrectype),0,procvarselfname,href);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                 location_reset_ref(location,LOC_REFERENCE,int_cgsize(sizeof(pint)*2),sizeof(pint));
                 tg.gettemp(current_asmdata.CurrAsmList,resultdef.size,sizeof(pint),tt_normal,location.reference);
                 tmpreg:=cg.getaddressregister(current_asmdata.CurrAsmList);
@@ -615,6 +626,9 @@ interface
                 inc(location.reference.offset,sizeof(pint));
                 cg.a_load_const_ref(current_asmdata.CurrAsmList,OS_ADDR,0,location.reference);
                 dec(location.reference.offset,sizeof(pint));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
               end;
           end;

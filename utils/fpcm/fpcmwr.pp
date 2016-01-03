@@ -530,6 +530,9 @@ implementation
           packdirvar,unitdirvar,unitfpmakedirvar : string;
 =======
           packdirvar,unitdirvar : string;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           fpcmadedirvar : string;
         begin

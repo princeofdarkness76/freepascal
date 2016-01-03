@@ -18,6 +18,9 @@ unit buildrtl;
       convutils, stdconvs, charset, ucomplex, getopts,
       winevent, sockets, printer,
       video, mouse, keyboard, fmtbcd,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       sharemem, fpintres, windirs,
       cpu, signals;

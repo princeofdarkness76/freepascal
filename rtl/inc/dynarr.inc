@@ -246,6 +246,9 @@ procedure fpc_dynarray_setlength(var p : pointer;pti : pointer;
 =======
                             elesize*dims[dimcount-1],
                             eletype,realp^.high-dims[dimcount-1]+1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                          reallocmem(realp,size);
                       end

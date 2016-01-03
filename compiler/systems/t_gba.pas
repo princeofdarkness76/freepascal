@@ -572,7 +572,10 @@ begin
   DynLinkStr:='';
   MapStr:='';
 <<<<<<< HEAD
+<<<<<<< HEAD
   GCSectionsStr:='';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -581,7 +584,11 @@ begin
    StripStr:='-s';
   if (cs_link_map in current_settings.globalswitches) then
 <<<<<<< HEAD
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
+=======
+   StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
+>>>>>>> graemeg/cpstrnew
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
 >>>>>>> graemeg/cpstrnew
@@ -599,7 +606,11 @@ begin
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename,'.elf')))));
+=======
+  Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
+>>>>>>> graemeg/cpstrnew
 =======
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
 >>>>>>> graemeg/cpstrnew

@@ -3,6 +3,7 @@
  *  CoreText
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  Copyright (c) 2006-2012 Apple Inc. All rights reserved.
  *
  }
@@ -10,10 +11,15 @@
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *  Copyright (c) 2006-2008 Apple Inc. All rights reserved.
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -70,11 +76,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -96,11 +105,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -113,11 +128,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -130,7 +151,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -143,7 +167,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -153,6 +180,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -164,6 +192,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -176,13 +209,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -199,6 +236,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -245,17 +286,23 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CTFontDescriptor,CTFontTraits,ATSTypes,CFBase,CFArray,CFCharacterSet,CFData,CFDictionary,CFString,CGBase,CGAffineTransforms,CGContext,CGFont,CGGeometry,CGPath;
 {$endc} {not MACOSALLINCLUDE}
 
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 uses MacTypes,CTFontDescriptor,CTFontTraits,ATSTypes,CFBase,CFArray,CFCharacterSet,CFData,CFDictionary,CFString,CGBase,CGAffineTransforms,CGFont,CGGeometry,CGPath;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
@@ -280,8 +327,12 @@ uses MacTypes,CTFontDescriptor,CTFontTraits,ATSTypes,CFBase,CFArray,CFCharacterS
 }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CTFontRef = ^__CTFont; { an opaque type }
 	__CTFont = record end;
+=======
+	CTFontRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CTFontRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -293,7 +344,11 @@ type
 }
 function CTFontGetTypeID: CFTypeID; external name '_CTFontGetTypeID';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -309,7 +364,11 @@ function CTFontGetTypeID: CFTypeID; external name '_CTFontGetTypeID';
 }
 var kCTFontCopyrightNameKey: CFStringRef; external name '_kCTFontCopyrightNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -319,7 +378,11 @@ var kCTFontCopyrightNameKey: CFStringRef; external name '_kCTFontCopyrightNameKe
 }
 var kCTFontFamilyNameKey: CFStringRef; external name '_kCTFontFamilyNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -329,7 +392,11 @@ var kCTFontFamilyNameKey: CFStringRef; external name '_kCTFontFamilyNameKey'; (*
 }
 var kCTFontSubFamilyNameKey: CFStringRef; external name '_kCTFontSubFamilyNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -339,7 +406,11 @@ var kCTFontSubFamilyNameKey: CFStringRef; external name '_kCTFontSubFamilyNameKe
 }
 var kCTFontStyleNameKey: CFStringRef; external name '_kCTFontStyleNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -351,7 +422,11 @@ var kCTFontStyleNameKey: CFStringRef; external name '_kCTFontStyleNameKey'; (* a
 }
 var kCTFontUniqueNameKey: CFStringRef; external name '_kCTFontUniqueNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -361,7 +436,11 @@ var kCTFontUniqueNameKey: CFStringRef; external name '_kCTFontUniqueNameKey'; (*
 }
 var kCTFontFullNameKey: CFStringRef; external name '_kCTFontFullNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -371,7 +450,11 @@ var kCTFontFullNameKey: CFStringRef; external name '_kCTFontFullNameKey'; (* att
 }
 var kCTFontVersionNameKey: CFStringRef; external name '_kCTFontVersionNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -381,7 +464,11 @@ var kCTFontVersionNameKey: CFStringRef; external name '_kCTFontVersionNameKey'; 
 }
 var kCTFontPostScriptNameKey: CFStringRef; external name '_kCTFontPostScriptNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -391,7 +478,11 @@ var kCTFontPostScriptNameKey: CFStringRef; external name '_kCTFontPostScriptName
 }
 var kCTFontTrademarkNameKey: CFStringRef; external name '_kCTFontTrademarkNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -401,7 +492,11 @@ var kCTFontTrademarkNameKey: CFStringRef; external name '_kCTFontTrademarkNameKe
 }
 var kCTFontManufacturerNameKey: CFStringRef; external name '_kCTFontManufacturerNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -411,7 +506,11 @@ var kCTFontManufacturerNameKey: CFStringRef; external name '_kCTFontManufacturer
 }
 var kCTFontDesignerNameKey: CFStringRef; external name '_kCTFontDesignerNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -421,7 +520,11 @@ var kCTFontDesignerNameKey: CFStringRef; external name '_kCTFontDesignerNameKey'
 }
 var kCTFontDescriptionNameKey: CFStringRef; external name '_kCTFontDescriptionNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -431,7 +534,11 @@ var kCTFontDescriptionNameKey: CFStringRef; external name '_kCTFontDescriptionNa
 }
 var kCTFontVendorURLNameKey: CFStringRef; external name '_kCTFontVendorURLNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -441,7 +548,11 @@ var kCTFontVendorURLNameKey: CFStringRef; external name '_kCTFontVendorURLNameKe
 }
 var kCTFontDesignerURLNameKey: CFStringRef; external name '_kCTFontDesignerURLNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -451,7 +562,11 @@ var kCTFontDesignerURLNameKey: CFStringRef; external name '_kCTFontDesignerURLNa
 }
 var kCTFontLicenseNameKey: CFStringRef; external name '_kCTFontLicenseNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -461,7 +576,11 @@ var kCTFontLicenseNameKey: CFStringRef; external name '_kCTFontLicenseNameKey'; 
 }
 var kCTFontLicenseURLNameKey: CFStringRef; external name '_kCTFontLicenseURLNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -471,7 +590,11 @@ var kCTFontLicenseURLNameKey: CFStringRef; external name '_kCTFontLicenseURLName
 }
 var kCTFontSampleTextNameKey: CFStringRef; external name '_kCTFontSampleTextNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -481,7 +604,11 @@ var kCTFontSampleTextNameKey: CFStringRef; external name '_kCTFontSampleTextName
 }
 var kCTFontPostScriptCIDNameKey: CFStringRef; external name '_kCTFontPostScriptCIDNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -507,7 +634,11 @@ var kCTFontPostScriptCIDNameKey: CFStringRef; external name '_kCTFontPostScriptC
 }
 function CTFontCreateWithName( name: CFStringRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null} ): CTFontRef; external name '_CTFontCreateWithName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -529,7 +660,11 @@ function CTFontCreateWithName( name: CFStringRef; size: CGFloat; matrix: {const}
 }
 function CTFontCreateWithFontDescriptor( descriptor: CTFontDescriptorRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null} ): CTFontRef; external name '_CTFontCreateWithFontDescriptor';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -570,7 +705,11 @@ type
 }
 function CTFontCreateWithNameAndOptions( name: CFStringRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null}; options: CTFontOptions ): CTFontRef; external name '_CTFontCreateWithNameAndOptions';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -595,7 +734,11 @@ function CTFontCreateWithNameAndOptions( name: CFStringRef; size: CGFloat; matri
 }
 function CTFontCreateWithFontDescriptorAndOptions( descriptor: CTFontDescriptorRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null}; options: CTFontOptions ): CTFontRef; external name '_CTFontCreateWithFontDescriptorAndOptions';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -606,6 +749,7 @@ function CTFontCreateWithFontDescriptorAndOptions( descriptor: CTFontDescriptorR
     @discussion Use these constants with CTFontCreateUIFontForLanguage to indicate the intended user interface usage of the font reference to be created.
 }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
     kCTFontUIFontNone                           = $ffffffff;
     kCTFontUIFontUser                           =  0;
@@ -665,6 +809,8 @@ const
     kCTFontToolTipFontType = kCTFontUIFontToolTip;
     kCTFontControlContentFontType = kCTFontUIFontControlContent;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	kCTFontNoFontType = $ffffffff;
 	kCTFontUserFontType = 0;
 	kCTFontUserFixedPitchFontType = 1;
@@ -693,6 +839,9 @@ const
 	kCTFontPaletteFontType = 24;
 	kCTFontToolTipFontType = 25;
 	kCTFontControlContentFontType = 26;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 type
 	CTFontUIFontType = UInt32;
@@ -714,7 +863,11 @@ type
 }
 function CTFontCreateUIFontForLanguage( uiType: CTFontUIFontType; size: CGFloat; language: CFStringRef ): CTFontRef; external name '_CTFontCreateUIFontForLanguage';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -741,7 +894,11 @@ function CTFontCreateUIFontForLanguage( uiType: CTFontUIFontType; size: CGFloat;
 }
 function CTFontCreateCopyWithAttributes( font: CTFontRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null}; attributes: CTFontDescriptorRef ): CTFontRef; external name '_CTFontCreateCopyWithAttributes';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -769,7 +926,11 @@ function CTFontCreateCopyWithAttributes( font: CTFontRef; size: CGFloat; matrix:
 }
 function CTFontCreateCopyWithSymbolicTraits( font: CTFontRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null}; symTraitValue: CTFontSymbolicTraits; symTraitMask: CTFontSymbolicTraits ): CTFontRef; external name '_CTFontCreateCopyWithSymbolicTraits';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -794,7 +955,11 @@ function CTFontCreateCopyWithSymbolicTraits( font: CTFontRef; size: CGFloat; mat
 }
 function CTFontCreateCopyWithFamily( font: CTFontRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null}; family: CFStringRef ): CTFontRef; external name '_CTFontCreateCopyWithFamily';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -808,8 +973,11 @@ function CTFontCreateCopyWithFamily( font: CTFontRef; size: CGFloat; matrix: {co
     @abstract   Returns a new font reference that can best map the given string range based on the current font.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @discussion This function is to be used when the current font does not cover the given range of the string. The current font itself will not be returned, but preference is given to fonts in its cascade list.
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     @param      currentFont
@@ -822,6 +990,7 @@ function CTFontCreateCopyWithFamily( font: CTFontRef; size: CGFloat; matrix: {co
                 A CFRange specifying the range of the string that needs to be mapped.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @result     This function returns the best substitute font that can encode the specified string range.
 
     @seealso    CTFontCopyCharacterSet
@@ -831,10 +1000,15 @@ function CTFontCreateCopyWithFamily( font: CTFontRef; size: CGFloat; matrix: {co
 function CTFontCreateForString( currentFont: CTFontRef; strng: CFStringRef; range: CFRange ): CTFontRef; external name '_CTFontCreateForString';
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @result     This function returns the best substitute font from the cascade list of the current font that can encode the specified string range. If the current font is capable of encoding the string range then it will be retained and returned.
 }
 function CTFontCreateForString( currentFont: CTFontRef; strng: CFStringRef; range: CFRange ): CTFontRef; external name '_CTFontCreateForString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {! --------------------------------------------------------------------------
@@ -852,7 +1026,11 @@ function CTFontCreateForString( currentFont: CTFontRef; strng: CFStringRef; rang
 }
 function CTFontCopyFontDescriptor( font: CTFontRef ): CTFontDescriptorRef; external name '_CTFontCopyFontDescriptor';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -871,7 +1049,11 @@ function CTFontCopyFontDescriptor( font: CTFontRef ): CTFontDescriptorRef; exter
 }
 function CTFontCopyAttribute( font: CTFontRef; attribute: CFStringRef ): CFTypeRef; external name '_CTFontCopyAttribute';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -887,7 +1069,11 @@ function CTFontCopyAttribute( font: CTFontRef; attribute: CFStringRef ): CFTypeR
 }
 function CTFontGetSize( font: CTFontRef ): CGFloat; external name '_CTFontGetSize';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -903,7 +1089,11 @@ function CTFontGetSize( font: CTFontRef ): CGFloat; external name '_CTFontGetSiz
 }
 function CTFontGetMatrix( font: CTFontRef ): CGAffineTransform; external name '_CTFontGetMatrix';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -919,7 +1109,11 @@ function CTFontGetMatrix( font: CTFontRef ): CGAffineTransform; external name '_
 }
 function CTFontGetSymbolicTraits( font: CTFontRef ): CTFontSymbolicTraits; external name '_CTFontGetSymbolicTraits';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -935,7 +1129,11 @@ function CTFontGetSymbolicTraits( font: CTFontRef ): CTFontSymbolicTraits; exter
 }
 function CTFontCopyTraits( font: CTFontRef ): CFDictionaryRef; external name '_CTFontCopyTraits';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -955,7 +1153,11 @@ function CTFontCopyTraits( font: CTFontRef ): CFDictionaryRef; external name '_C
 }
 function CTFontCopyPostScriptName( font: CTFontRef ): CFStringRef; external name '_CTFontCopyPostScriptName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -971,7 +1173,11 @@ function CTFontCopyPostScriptName( font: CTFontRef ): CFStringRef; external name
 }
 function CTFontCopyFamilyName( font: CTFontRef ): CFStringRef; external name '_CTFontCopyFamilyName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -987,7 +1193,11 @@ function CTFontCopyFamilyName( font: CTFontRef ): CFStringRef; external name '_C
 }
 function CTFontCopyFullName( font: CTFontRef ): CFStringRef; external name '_CTFontCopyFullName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1003,7 +1213,11 @@ function CTFontCopyFullName( font: CTFontRef ): CFStringRef; external name '_CTF
 }
 function CTFontCopyDisplayName( font: CTFontRef ): CFStringRef; external name '_CTFontCopyDisplayName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1022,7 +1236,11 @@ function CTFontCopyDisplayName( font: CTFontRef ): CFStringRef; external name '_
 }
 function CTFontCopyName( font: CTFontRef; nameKey: CFStringRef ): CFStringRef; external name '_CTFontCopyName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1044,7 +1262,11 @@ function CTFontCopyName( font: CTFontRef; nameKey: CFStringRef ): CFStringRef; e
 }
 function CTFontCopyLocalizedName( font: CTFontRef; nameKey: CFStringRef; var language: CFStringRef ): CFStringRef; external name '_CTFontCopyLocalizedName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1064,7 +1286,11 @@ function CTFontCopyLocalizedName( font: CTFontRef; nameKey: CFStringRef; var lan
 }
 function CTFontCopyCharacterSet( font: CTFontRef ): CFCharacterSetRef; external name '_CTFontCopyCharacterSet';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1080,7 +1306,11 @@ function CTFontCopyCharacterSet( font: CTFontRef ): CFCharacterSetRef; external 
 }
 function CTFontGetStringEncoding( font: CTFontRef ): CFStringEncoding; external name '_CTFontGetStringEncoding';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1096,7 +1326,11 @@ function CTFontGetStringEncoding( font: CTFontRef ): CFStringEncoding; external 
 }
 function CTFontCopySupportedLanguages( font: CTFontRef ): CFArrayRef; external name '_CTFontCopySupportedLanguages';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1125,7 +1359,11 @@ function CTFontCopySupportedLanguages( font: CTFontRef ): CFArrayRef; external n
 }
 function CTFontGetGlyphsForCharacters( font: CTFontRef; {const} characters: {variable-size-array} UniCharPtr; glyphs: {variable-size-array} CGGlyphPtr; count: CFIndex ): CBool; external name '_CTFontGetGlyphsForCharacters';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1145,7 +1383,11 @@ function CTFontGetGlyphsForCharacters( font: CTFontRef; {const} characters: {var
 }
 function CTFontGetAscent( font: CTFontRef ): CGFloat; external name '_CTFontGetAscent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1161,7 +1403,11 @@ function CTFontGetAscent( font: CTFontRef ): CGFloat; external name '_CTFontGetA
 }
 function CTFontGetDescent( font: CTFontRef ): CGFloat; external name '_CTFontGetDescent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1177,7 +1423,11 @@ function CTFontGetDescent( font: CTFontRef ): CGFloat; external name '_CTFontGet
 }
 function CTFontGetLeading( font: CTFontRef ): CGFloat; external name '_CTFontGetLeading';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1193,7 +1443,11 @@ function CTFontGetLeading( font: CTFontRef ): CGFloat; external name '_CTFontGet
 }
 function CTFontGetUnitsPerEm( font: CTFontRef ): UInt32; external name '_CTFontGetUnitsPerEm';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1209,7 +1463,11 @@ function CTFontGetUnitsPerEm( font: CTFontRef ): UInt32; external name '_CTFontG
 }
 function CTFontGetGlyphCount( font: CTFontRef ): CFIndex; external name '_CTFontGetGlyphCount';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1225,7 +1483,11 @@ function CTFontGetGlyphCount( font: CTFontRef ): CFIndex; external name '_CTFont
 }
 function CTFontGetBoundingBox( font: CTFontRef ): CGRect; external name '_CTFontGetBoundingBox';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1241,7 +1503,11 @@ function CTFontGetBoundingBox( font: CTFontRef ): CGRect; external name '_CTFont
 }
 function CTFontGetUnderlinePosition( font: CTFontRef ): CGFloat; external name '_CTFontGetUnderlinePosition';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1257,7 +1523,11 @@ function CTFontGetUnderlinePosition( font: CTFontRef ): CGFloat; external name '
 }
 function CTFontGetUnderlineThickness( font: CTFontRef ): CGFloat; external name '_CTFontGetUnderlineThickness';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1273,7 +1543,11 @@ function CTFontGetUnderlineThickness( font: CTFontRef ): CGFloat; external name 
 }
 function CTFontGetSlantAngle( font: CTFontRef ): CGFloat; external name '_CTFontGetSlantAngle';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1289,7 +1563,11 @@ function CTFontGetSlantAngle( font: CTFontRef ): CGFloat; external name '_CTFont
 }
 function CTFontGetCapHeight( font: CTFontRef ): CGFloat; external name '_CTFontGetCapHeight';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1305,7 +1583,11 @@ function CTFontGetCapHeight( font: CTFontRef ): CGFloat; external name '_CTFontG
 }
 function CTFontGetXHeight( font: CTFontRef ): CGFloat; external name '_CTFontGetXHeight';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1328,7 +1610,12 @@ function CTFontGetXHeight( font: CTFontRef ): CGFloat; external name '_CTFontGet
 }
 function CTFontGetGlyphWithName( font: CTFontRef; glyphName: CFStringRef ): CGGlyph; external name '_CTFontGetGlyphWithName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
@@ -1348,7 +1635,11 @@ function CTFontGetGlyphWithName( font: CTFontRef; glyphName: CFStringRef ): CGGl
                 An array of count number of glyphs.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @param      boundingRects
+=======
+    @param      boundingRect
+>>>>>>> graemeg/cpstrnew
 =======
     @param      boundingRect
 >>>>>>> graemeg/cpstrnew
@@ -1360,6 +1651,7 @@ function CTFontGetGlyphWithName( font: CTFontRef; glyphName: CFStringRef ): CGGl
     @result     This function returns the overall bounding rectangle for an array or run of glyphs. The bounding rects of the individual glyphs are returned through the boundingRects parameter. These are the design metrics from the font transformed in font space.
 }
 function CTFontGetBoundingRectsForGlyphs( font: CTFontRef; orientation: CTFontOrientation; {const} glyphs: {variable-size-array} CGGlyphPtr; boundingRects: {variable-size-array} CGRectPtr; count: CFIndex ): CGRect; external name '_CTFontGetBoundingRectsForGlyphs';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
@@ -1391,6 +1683,9 @@ function CTFontGetOpticalBoundsForGlyphs( font: CTFontRef; {const} glyphs: {vari
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {!
     @function   CTFontGetAdvancesForGlyphs
@@ -1415,7 +1710,11 @@ function CTFontGetOpticalBoundsForGlyphs( font: CTFontRef; {const} glyphs: {vari
 }
 function CTFontGetAdvancesForGlyphs( font: CTFontRef; orientation: CTFontOrientation; {const} glyphs: {variable-size-array} CGGlyphPtr; advances: {variable-size-array} CGSizePtr; count: CFIndex ): Float64; external name '_CTFontGetAdvancesForGlyphs';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1438,7 +1737,11 @@ function CTFontGetAdvancesForGlyphs( font: CTFontRef; orientation: CTFontOrienta
 }
 procedure CTFontGetVerticalTranslationsForGlyphs( font: CTFontRef; {const} glyphs: {variable-size-array} CGGlyphPtr; translations: {variable-size-array} CGSizePtr; count: CFIndex ); external name '_CTFontGetVerticalTranslationsForGlyphs';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1462,15 +1765,21 @@ procedure CTFontGetVerticalTranslationsForGlyphs( font: CTFontRef; {const} glyph
 }
 function CTFontCreatePathForGlyph( font: CTFontRef; glyph: CGGlyph; transform: {const} CGAffineTransformPtr {can be null} ): CGPathRef; external name '_CTFontCreatePathForGlyph';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
 {! --------------------------------------------------------------------------
     @group Font Variations        (this functionality is not supported on iOS)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 {! --------------------------------------------------------------------------
     @group Font Variations
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }//--------------------------------------------------------------------------
 
@@ -1481,7 +1790,11 @@ function CTFontCreatePathForGlyph( font: CTFontRef; glyph: CGGlyph; transform: {
 }
 var kCTFontVariationAxisIdentifierKey: CFStringRef; external name '_kCTFontVariationAxisIdentifierKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1492,7 +1805,11 @@ var kCTFontVariationAxisIdentifierKey: CFStringRef; external name '_kCTFontVaria
 }
 var kCTFontVariationAxisMinimumValueKey: CFStringRef; external name '_kCTFontVariationAxisMinimumValueKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1503,7 +1820,11 @@ var kCTFontVariationAxisMinimumValueKey: CFStringRef; external name '_kCTFontVar
 }
 var kCTFontVariationAxisMaximumValueKey: CFStringRef; external name '_kCTFontVariationAxisMaximumValueKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1514,7 +1835,11 @@ var kCTFontVariationAxisMaximumValueKey: CFStringRef; external name '_kCTFontVar
 }
 var kCTFontVariationAxisDefaultValueKey: CFStringRef; external name '_kCTFontVariationAxisDefaultValueKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1525,7 +1850,11 @@ var kCTFontVariationAxisDefaultValueKey: CFStringRef; external name '_kCTFontVar
 }
 var kCTFontVariationAxisNameKey: CFStringRef; external name '_kCTFontVariationAxisNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1541,7 +1870,11 @@ var kCTFontVariationAxisNameKey: CFStringRef; external name '_kCTFontVariationAx
 }
 function CTFontCopyVariationAxes( font: CTFontRef ): CFArrayRef; external name '_CTFontCopyVariationAxes';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1557,15 +1890,21 @@ function CTFontCopyVariationAxes( font: CTFontRef ): CFArrayRef; external name '
 }
 function CTFontCopyVariation( font: CTFontRef ): CFDictionaryRef; external name '_CTFontCopyVariation';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
 {! --------------------------------------------------------------------------
     @group Font Features              (only AAT features are supported on iOS)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 {! --------------------------------------------------------------------------
     @group Font Features
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }//--------------------------------------------------------------------------
 
@@ -1576,7 +1915,11 @@ function CTFontCopyVariation( font: CTFontRef ): CFDictionaryRef; external name 
 }
 var kCTFontFeatureTypeIdentifierKey: CFStringRef; external name '_kCTFontFeatureTypeIdentifierKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1587,7 +1930,11 @@ var kCTFontFeatureTypeIdentifierKey: CFStringRef; external name '_kCTFontFeature
 }
 var kCTFontFeatureTypeNameKey: CFStringRef; external name '_kCTFontFeatureTypeNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1598,7 +1945,11 @@ var kCTFontFeatureTypeNameKey: CFStringRef; external name '_kCTFontFeatureTypeNa
 }
 var kCTFontFeatureTypeExclusiveKey: CFStringRef; external name '_kCTFontFeatureTypeExclusiveKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1609,7 +1960,11 @@ var kCTFontFeatureTypeExclusiveKey: CFStringRef; external name '_kCTFontFeatureT
 }
 var kCTFontFeatureTypeSelectorsKey: CFStringRef; external name '_kCTFontFeatureTypeSelectorsKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1620,7 +1975,11 @@ var kCTFontFeatureTypeSelectorsKey: CFStringRef; external name '_kCTFontFeatureT
 }
 var kCTFontFeatureSelectorIdentifierKey: CFStringRef; external name '_kCTFontFeatureSelectorIdentifierKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1631,7 +1990,11 @@ var kCTFontFeatureSelectorIdentifierKey: CFStringRef; external name '_kCTFontFea
 }
 var kCTFontFeatureSelectorNameKey: CFStringRef; external name '_kCTFontFeatureSelectorNameKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1642,7 +2005,11 @@ var kCTFontFeatureSelectorNameKey: CFStringRef; external name '_kCTFontFeatureSe
 }
 var kCTFontFeatureSelectorDefaultKey: CFStringRef; external name '_kCTFontFeatureSelectorDefaultKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1653,7 +2020,11 @@ var kCTFontFeatureSelectorDefaultKey: CFStringRef; external name '_kCTFontFeatur
 }
 var kCTFontFeatureSelectorSettingKey: CFStringRef; external name '_kCTFontFeatureSelectorSettingKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1669,7 +2040,11 @@ var kCTFontFeatureSelectorSettingKey: CFStringRef; external name '_kCTFontFeatur
 }
 function CTFontCopyFeatures( font: CTFontRef ): CFArrayRef; external name '_CTFontCopyFeatures';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1687,7 +2062,11 @@ function CTFontCopyFeatures( font: CTFontRef ): CFArrayRef; external name '_CTFo
 }
 function CTFontCopyFeatureSettings( font: CTFontRef ): CFArrayRef; external name '_CTFontCopyFeatureSettings';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1710,7 +2089,11 @@ function CTFontCopyFeatureSettings( font: CTFontRef ): CFArrayRef; external name
 }
 function CTFontCopyGraphicsFont( font: CTFontRef; attributes: CTFontDescriptorRefPtr { can be NULL } ): CGFontRef; external name '_CTFontCopyGraphicsFont';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1735,9 +2118,14 @@ function CTFontCopyGraphicsFont( font: CTFontRef; attributes: CTFontDescriptorRe
 }
 function CTFontCreateWithGraphicsFont( graphicsFont: CGFontRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null}; attributes: CTFontDescriptorRef ): CTFontRef; external name '_CTFontCreateWithGraphicsFont';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
 {$ifc TARGET_OS_MAC}
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
@@ -1756,7 +2144,11 @@ function CTFontCreateWithGraphicsFont( graphicsFont: CGFontRef; size: CGFloat; m
 }
 function CTFontGetPlatformFont( font: CTFontRef; attributes: CTFontDescriptorRefPtr {can be null} ): ATSFontRef; external name '_CTFontGetPlatformFont';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1781,7 +2173,11 @@ function CTFontGetPlatformFont( font: CTFontRef; attributes: CTFontDescriptorRef
 }
 function CTFontCreateWithPlatformFont( platformFont: ATSFontRef; size: CGFloat; matrix: {const} CGAffineTransformPtr {can be null}; attributes: CTFontDescriptorRef ): CTFontRef; external name '_CTFontCreateWithPlatformFont';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1808,8 +2204,12 @@ function CTFontCreateWithPlatformFont( platformFont: ATSFontRef; size: CGFloat; 
 }
 function CTFontCreateWithQuickdrawInstance( name: StringPtr {can be null}; identifier: SInt16; style: UInt8; size: CGFloat ): CTFontRef; external name '_CTFontCreateWithQuickdrawInstance';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_NA) *)
 {$endc} { TARGET_OS_MAC }
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1837,7 +2237,10 @@ const
 	kCTFontTableZapf = FourCharCode('Zapf');   // Glyph reference
 	kCTFontTableAcnt = FourCharCode('acnt');   // Accent attachment
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCTFontTableAnkr = FourCharCode('ankr');   // Anchor points
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	kCTFontTableAvar = FourCharCode('avar');   // Axis variation
@@ -1864,9 +2267,13 @@ const
 	kCTFontTableJust = FourCharCode('just');   // Justification
 	kCTFontTableKern = FourCharCode('kern');   // Kerning
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCTFontTableKerx = FourCharCode('kerx');   // Extended kerning
 	kCTFontTableLcar = FourCharCode('lcar');   // Ligature caret
 	kCTFontTableLtag = FourCharCode('ltag');   // Language tags
+=======
+	kCTFontTableLcar = FourCharCode('lcar');   // Ligature caret
+>>>>>>> graemeg/cpstrnew
 =======
 	kCTFontTableLcar = FourCharCode('lcar');   // Ligature caret
 >>>>>>> graemeg/cpstrnew
@@ -1880,8 +2287,11 @@ const
 	kCTFontTablePrep = FourCharCode('prep');   // CVT program
 	kCTFontTableProp = FourCharCode('prop');   // Properties
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCTFontTableSbit = FourCharCode('sbit');   // Bitmap data
 	kCTFontTableSbix = FourCharCode('sbix');   // Extended bitmap data
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	kCTFontTableTrak = FourCharCode('trak');   // Tracking
@@ -1910,7 +2320,11 @@ type
 }
 function CTFontCopyAvailableTables( font: CTFontRef; options: CTFontTableOptions ): CFArrayRef; external name '_CTFontCopyAvailableTables';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1930,6 +2344,7 @@ function CTFontCopyAvailableTables( font: CTFontRef; options: CTFontTableOptions
     @result     This function returns a retained reference to the font table data as CFDataRef. The table data is not actually copied, however the data reference must be released.
 }
 function CTFontCopyTable( font: CTFontRef; table: CTFontTableTag; options: CTFontTableOptions ): CFDataRef; external name '_CTFontCopyTable';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
@@ -2087,6 +2502,11 @@ var kCTBaselineOriginalFont: CFStringRef; external name '_kCTBaselineOriginalFon
 function CTFontCopyDefaultCascadeListForLanguages( font: CTFontRef; languagePrefList: CFArrayRef ): CFArrayRef; external name '_CTFontCopyDefaultCascadeListForLanguages';
 (* CT_AVAILABLE_STARTING( __MAC_10_8, __IPHONE_6_0) *)
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 

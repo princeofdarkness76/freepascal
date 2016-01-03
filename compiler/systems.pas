@@ -335,6 +335,7 @@ interface
             tf_has_winlike_resources,
             tf_safecall_clearstack,             // With this flag set, after safecall calls the caller cleans up the stack
 <<<<<<< HEAD
+<<<<<<< HEAD
             tf_safecall_exceptions,             // Exceptions in safecall calls are not raised, but passed to the caller as an ordinal (hresult) in the function result.
                                                 // The original result (if it exists) is passed as an extra parameter
             tf_no_backquote_support,
@@ -345,6 +346,10 @@ interface
             tf_cld,
             { indicates that the default value of the ts_x86_far_procs_push_odd_bp target switch is 'on' for this target }
             tf_x86_far_procs_push_odd_bp
+=======
+            tf_safecall_exceptions              // Exceptions in safecall calls are not raised, but passed to the caller as an ordinal (hresult) in the function result.
+                                                // The original result (if it exists) is passed as an extra parameter
+>>>>>>> graemeg/cpstrnew
 =======
             tf_safecall_exceptions              // Exceptions in safecall calls are not raised, but passed to the caller as an ordinal (hresult) in the function result.
                                                 // The original result (if it exists) is passed as an extra parameter
@@ -424,6 +429,7 @@ interface
 
        systems_wince = [system_arm_wince,system_i386_wince];
 <<<<<<< HEAD
+<<<<<<< HEAD
        systems_android = [system_arm_android, system_i386_android, system_mipsel_android];
        systems_linux = [system_i386_linux,system_x86_64_linux,system_powerpc_linux,system_powerpc64_linux,
                        system_arm_linux,system_sparc_linux,system_m68k_linux,
@@ -451,6 +457,8 @@ interface
                              system_arm_wince,system_i386_wince,
                              system_i8086_win16];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
        systems_linux = [system_i386_linux,system_x86_64_linux,system_powerpc_linux,system_powerpc64_linux,
                        system_arm_linux,system_sparc_linux,system_alpha_linux,system_m68k_linux,
                        system_x86_6432_linux,system_mips_linux,system_mipsel_linux];
@@ -466,8 +474,12 @@ interface
        systems_darwin = [system_powerpc_darwin,system_i386_darwin,
                          system_powerpc64_darwin,system_x86_64_darwin,
 <<<<<<< HEAD
+<<<<<<< HEAD
                          system_arm_darwin,system_i386_iphonesim,
                          system_aarch64_darwin,system_x86_64_iphonesim];
+=======
+                         system_arm_darwin,system_i386_iphonesim];
+>>>>>>> graemeg/cpstrnew
 =======
                          system_arm_darwin,system_i386_iphonesim];
 >>>>>>> graemeg/cpstrnew
@@ -476,13 +488,19 @@ interface
        systems_solaris = [system_sparc_solaris, system_i386_solaris,
 			  system_x86_64_solaris];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
        { systems supporting Objective-C }
        systems_objc_supported = systems_darwin;
 
        { systems using the non-fragile Objective-C ABI }
        systems_objc_nfabi = [system_powerpc64_darwin,system_x86_64_darwin,system_arm_darwin,system_i386_iphonesim];
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
        { all embedded systems }
@@ -534,6 +552,7 @@ interface
                                          system_i386_netwlibc,
                                          system_arm_wince,
                                          system_x86_64_win64,
+<<<<<<< HEAD
 <<<<<<< HEAD
                                          system_i8086_win16]+systems_linux+systems_android;
 
@@ -596,6 +615,8 @@ interface
                              + [system_i386_beos,system_i386_haiku]
                              + [system_powerpc_morphos];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                                          system_ia64_win64]+systems_linux;
 
        { all systems for which weak linking has been tested/is supported }
@@ -623,8 +644,23 @@ interface
         system_x86_64_freebsd,
         system_x86_64_solaris];
 
+       { all native nt systems }
+       systems_nativent = [system_i386_nativent];
+
+       { all systems for which istack must be at a 16 byte boundary
+         when calling a function }
+       systems_need_16_byte_stack_alignment = [
+      	system_i386_darwin,
+      	system_i386_iphonesim,
+        system_x86_64_darwin,
+        system_x86_64_win64,
+        system_x86_64_linux,
+        system_x86_64_freebsd,
+        system_x86_64_solaris];
+
        cpu2str : array[TSystemCpu] of string[10] =
             ('','i386','m68k','alpha','powerpc','sparc','vm','ia64','x86_64',
+<<<<<<< HEAD
 <<<<<<< HEAD
              'mips','arm', 'powerpc64', 'avr', 'mipsel','jvm', 'i8086',
              'aarch64');
@@ -642,6 +678,8 @@ interface
          (name: 'AARCH64IOS'; supported:{$ifdef aarch64}true{$else}false{$endif})
        );
 =======
+=======
+>>>>>>> graemeg/cpstrnew
              'mips','arm', 'powerpc64', 'avr', 'mipsel');
 
        abi2str : array[tabi] of string[10] =
@@ -1068,6 +1106,7 @@ begin
     {$define default_target_set}
    {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$ifdef openbsd}
     default_target(system_x86_64_openbsd);
     {$define default_target_set}
@@ -1076,6 +1115,8 @@ begin
     default_target(system_x86_64_netbsd);
     {$define default_target_set}
    {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    {$ifdef solaris}
@@ -1190,6 +1231,7 @@ begin
 {$ifdef mips}
 {$ifdef mipsel}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef cpumipsel}
     default_target(source_info.system);
   {$else cpumipsel}
@@ -1223,11 +1265,16 @@ begin
   {$endif cpuaarch64}
 {$endif aarch64}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   default_target(system_mipsel_linux);
 {$else mipsel}
   default_target(system_mips_linux);
 {$endif mipsel}
 {$endif mips}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

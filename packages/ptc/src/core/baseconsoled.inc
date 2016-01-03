@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2013  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -35,6 +39,7 @@
 }
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
   IPTCConsole = interface(IPTCSurface)
     function GetPages: Integer;
@@ -75,6 +80,8 @@ type
     function GetKeyReleaseEnabled: Boolean;
     property KeyReleaseEnabled: Boolean read GetKeyReleaseEnabled write SetKeyReleaseEnabled;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TPTCBaseConsole = class(TPTCBaseSurface)
   private
     FReleaseEnabled: Boolean;
@@ -109,12 +116,16 @@ type
     procedure ReadKey(var AKey: TPTCKeyEvent);
     procedure ReadKey;
     property KeyReleaseEnabled: Boolean read FReleaseEnabled write FReleaseEnabled;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     property Pages: Integer read GetPages;
     property Name: string read GetName;
     property Title: string read GetTitle;
     property Information: string read GetInformation;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     { OpenGL support }
@@ -125,6 +136,9 @@ type
     function OpenGL_GetSwapInterval: Integer;
   end;
 
+=======
+  end;
+>>>>>>> graemeg/cpstrnew
 =======
   end;
 >>>>>>> graemeg/cpstrnew

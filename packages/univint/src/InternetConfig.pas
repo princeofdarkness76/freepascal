@@ -4,7 +4,11 @@
      Contains:   Internet Config interfaces
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
+=======
+     Version:    HIServices-308~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    HIServices-308~1
 >>>>>>> graemeg/cpstrnew
@@ -18,8 +22,12 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -78,11 +86,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -104,11 +115,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -121,11 +138,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -138,7 +161,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -151,7 +177,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -161,6 +190,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -172,6 +202,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -184,11 +219,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -216,6 +255,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -255,12 +303,38 @@ interface
 uses MacTypes,Files,Aliases,Components,AEDataModel;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 
 
 {$ifc TARGET_OS_MAC}
 
 
+{
+    IMPORTANT NOTES ABOUT THE C HEADERS
+    -----------------------------------
+
+    o   When you see the parameter 'y *x', you should be aware that
+        you *cannot pass in nil*.  In future this restriction may be eased,
+        especially for the attr parameter to ICGetPref.  Parameters where nil
+        is legal are declared using the explicit pointer type, ie 'yPtr x'.
+
+    o   Strings are *Pascal* strings.  This means that they must be word aligned.
+        MPW and Think C do this automatically.  The last time I checked, Metrowerks
+        C does not.  If it still doesn't, then IMHO it's a bug in their compiler
+        and you should report it to them.  [IC 1.4 and later no longer require
+        word aligned strings.  You can ignore this warning if you require IC 1.4
+        or greater.]
+}
+{*********************************************************************************************}
+>>>>>>> graemeg/cpstrnew
+
+
+{$ifc TARGET_OS_MAC}
+
+
+<<<<<<< HEAD
 {
     IMPORTANT NOTES ABOUT THE C HEADERS
     -----------------------------------
@@ -380,6 +454,36 @@ const
 {***********************************************************************************************
   opaque type for preference reference
  ***********************************************************************************************}
+=======
+const
+	icPrefNotFoundErr = -666; { preference not found (duh!)  }
+	icPermErr = -667; { cannot set preference  }
+	icPrefDataErr = -668; { problem with preference data  }
+	icInternalErr = -669; { hmm, this is not good  }
+	icTruncatedErr = -670; { more data was present than was returned  }
+	icNoMoreWritersErr = -671; { you cannot begin a write session because someone else is already doing it  }
+	icNothingToOverrideErr = -672; { no component for the override component to capture  }
+	icNoURLErr = -673; { no URL found  }
+	icConfigNotFoundErr = -674; { no configuration was found  }
+	icConfigInappropriateErr = -675; { incorrect manufacturer code  }
+	icProfileNotFoundErr = -676; { profile not found  }
+	icTooManyProfilesErr = -677;  { too many profiles in database  }
+
+{***********************************************************************************************
+  IC versions (not necessarily, but historically, from a component)
+ ***********************************************************************************************}
+
+const
+	kICComponentInterfaceVersion0 = $00000000; { IC >= 1.0  }
+	kICComponentInterfaceVersion1 = $00010000; { IC >= 1.1  }
+	kICComponentInterfaceVersion2 = $00020000; { IC >= 1.2  }
+	kICComponentInterfaceVersion3 = $00030000; { IC >= 2.0  }
+	kICComponentInterfaceVersion4 = $00040000; { IC >= 2.5  }
+	kICComponentInterfaceVersion = kICComponentInterfaceVersion4; { current version number is 4  }
+
+{***********************************************************************************************
+  opaque type for preference reference
+ ***********************************************************************************************}
 
 type
 	ICInstance = ^SInt32; { an opaque type }
@@ -398,6 +502,51 @@ type
 	ICDirSpecArray = array [0..3] of ICDirSpec;
 	ICDirSpecArrayPtr = ^ICDirSpecArray;
 {$endc} {not TARGET_CPU_64}
+
+{***********************************************************************************************
+  preference attributes type, bit number constants, and mask constants
+ ***********************************************************************************************}
+type
+	ICAttr = UInt32;
+const
+	kICAttrLockedBit = 0;
+	kICAttrVolatileBit = 1;
+
+const
+	kICAttrNoChange = $FFFFFFFF; { pass this to ICSetPref to tell it not to change the attributes  }
+	kICAttrLockedMask = $00000001;
+	kICAttrVolatileMask = $00000002;
+>>>>>>> graemeg/cpstrnew
+
+{***********************************************************************************************
+  permissions for use with ICBegin
+ ***********************************************************************************************}
+type
+<<<<<<< HEAD
+	ICInstance = ^SInt32; { an opaque type }
+	ICInstancePtr = ^ICInstance;  { when a var xx:ICInstance parameter can be nil, it is changed to xx: ICInstancePtr }
+{$ifc not TARGET_CPU_64}
+{***********************************************************************************************
+  a record that specifies a folder, an array of such records, and a pointer to such an array
+ ***********************************************************************************************}
+type
+	ICDirSpec = record
+		vRefNum: SInt16;
+		dirID: SIGNEDLONG;
+	end;
+	ICDirSpecPtr = ^ICDirSpec;
+
+	ICDirSpecArray = array [0..3] of ICDirSpec;
+	ICDirSpecArrayPtr = ^ICDirSpecArray;
+{$endc} {not TARGET_CPU_64}
+>>>>>>> graemeg/cpstrnew
+=======
+	ICPerm = UInt8;
+const
+	icNoPerm = 0;
+	icReadOnlyPerm = 1;
+	icReadWritePerm = 2;
+
 >>>>>>> graemeg/cpstrnew
 
 {***********************************************************************************************
@@ -413,6 +562,7 @@ type
   a record that specifies a folder, an array of such records, and a pointer to such an array
  ***********************************************************************************************}
 type
+<<<<<<< HEAD
 	ICDirSpec = record
 		vRefNum: SInt16;
 		dirID: SIGNEDLONG;
@@ -488,6 +638,42 @@ const
 	keyICEditPreferenceDestination = FourCharCode('dest');
 
 {***********************************************************************************************
+=======
+	ICProfileID = SInt32;
+	ICProfileIDPtr = ^ICProfileID;
+const
+	kICNilProfileID = 0;
+
+{***********************************************************************************************
+  other constants
+ ***********************************************************************************************}
+const
+	kICNoUserInteractionBit = 0;
+
+const
+	kICNoUserInteractionMask = $00000001;
+
+const
+	kICFileType = FourCharCode('ICAp');
+	kICCreator = FourCharCode('ICAp');
+
+{***********************************************************************************************
+  Apple event constants
+ ***********************************************************************************************}
+const
+	kInternetEventClass = FourCharCode('GURL');
+	kAEGetURL = FourCharCode('GURL');
+	kAEFetchURL = FourCharCode('FURL');
+	keyAEAttaching = FourCharCode('Atch');
+
+{ AERegistry.i defines a compatible keyAEDestination }
+const
+	kICEditPreferenceEventClass = FourCharCode('ICAp');
+	kICEditPreferenceEvent = FourCharCode('ICAp');
+	keyICEditPreferenceDestination = FourCharCode('dest');
+
+{***********************************************************************************************
+>>>>>>> graemeg/cpstrnew
   constants for use with ICGetVersion
  ***********************************************************************************************}
 const
@@ -639,6 +825,9 @@ type
 const
 	kICReservedKey = 'kICReservedKey';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 {
     STR# -- formatted, list of Archie servers  
 }
@@ -789,6 +978,7 @@ const
 }
 const
 	kICNNTPHost = 'NNTPHost';
+<<<<<<< HEAD
 {
     PString -- host.domain, Network Time Protocol (NTP)   
 }
@@ -1348,6 +1538,49 @@ const
 const
 	kICNewsHeaders = 'NewsHeaders';
 {
+=======
+{
+    PString -- host.domain, Network Time Protocol (NTP)   
+}
+const
+	kICNTPHost = 'NTPHost';
+{
+    Boolean   
+}
+const
+	kICNewMailDialog = 'NewMailDialog';
+{
+    Boolean -- how to announce new mail   
+}
+const
+	kICNewMailFlashIcon = 'NewMailFlashIcon';
+{
+    Boolean   
+}
+const
+	kICNewMailPlaySound = 'NewMailPlaySound';
+{
+    PString   
+}
+const
+	kICNewMailSoundName = 'NewMailSoundName';
+{
+    PString -- scrambled, password for NewsAuthUsername   
+}
+const
+	kICNewsAuthPassword = 'NewsAuthPassword';
+{
+    PString -- user name for authorised news servers   
+}
+const
+	kICNewsAuthUsername = 'NewsAuthUsername';
+{
+    TEXT -- extra headers for news messages   
+}
+const
+	kICNewsHeaders = 'NewsHeaders';
+{
+>>>>>>> graemeg/cpstrnew
     STR# -- list of domains not to be proxied   
 }
 const
@@ -1382,6 +1615,7 @@ const
 }
 const
 	kICRealName = 'RealName';
+<<<<<<< HEAD
 {
     PString -- RTSP Proxy Host
 }
@@ -2027,10 +2261,202 @@ function ICCountPref( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; exter
  *  ICGetIndPref()
  *  
 >>>>>>> graemeg/cpstrnew
+=======
+{
+    PString -- RTSP Proxy Host
+}
+const
+	kICRTSPProxyHost = 'RTSPProxyHost';
+{
+    PString -- host.domain, SMTP server   
+}
+const
+	kICSMTPHost = 'SMTPHost';
+{
+    ICFontRecord -- font used for monospaced text (eg news articles)   
+}
+const
+	kICScreenFont = 'ScreenFont';
+{
+    ICServices -- TCP and IP port-to-name mapping   
+}
+const
+	kICServices = 'Services';
+{
+    TEXT -- append to news and mail messages   
+}
+const
+	kICSignature = 'Signature';
+{
+    TEXT -- preferred mailing address   
+}
+const
+	kICSnailMailAddress = 'SnailMailAddress';
+{
+    PString -- host.domain, remember that host.domain format allows ":port" and " port"  
+}
+const
+	kICSocksHost = 'SocksHost';
+{
+    PString -- host.domain, default Telnet address   
+}
+const
+	kICTelnetHost = 'TelnetHost';
+{
+    STR# -- formatted, list of UMich servers   
+}
+const
+	kICUMichAll = 'UMichAll';
+{
+    PString -- formatted, preferred UMich server   
+}
+const
+	kICUMichPreferred = 'UMichPreferred';
+{
+    Boolean   
+}
+const
+	kICUseFTPProxy = 'UseFTPProxy';
+{
+    Boolean   
+}
+const
+	kICUseGopherProxy = 'UseGopherProxy';
+{
+    Boolean   
+}
+const
+	kICUseHTTPProxy = 'UseHTTPProxy';
+{
+    Boolean -- use PASV command for FTP transfers   
+}
+const
+	kICUsePassiveFTP = 'UsePassiveFTP';
+{
+    Boolean
+}
+const
+	kICUseRTSPProxy = 'UseRTSPProxy';
+{
+    Boolean   
+}
+const
+	kICUseSocks = 'UseSocks';
+{
+    PString -- no idea   
+}
+const
+	kICWAISGateway = 'WAISGateway';
+{
+    PString -- URL, users default WWW page   
+}
+const
+	kICWWWHomePage = 'WWWHomePage';
+{
+    RGBColor -- background colour for web pages   
+}
+const
+	kICWebBackgroundColour = 'WebBackgroundColour';
+{
+    RGBColor -- colour for read links   
+}
+const
+	kICWebReadColor = '646F6777쩦ebReadColor';
+{
+    PString -- URL, users default search page   
+}
+const
+	kICWebSearchPagePrefs = 'WebSearchPagePrefs';
+{
+    RGBColor -- colour for normal text   
+}
+const
+	kICWebTextColor = 'WebTextColor';
+{
+    Boolean -- whether to underline links   
+}
+const
+	kICWebUnderlineLinks = '646F6777쩦ebUnderlineLinks';
+{
+    RGBColor -- colour for unread links   
+}
+const
+	kICWebUnreadColor = '646F6777쩦ebUnreadColor';
+{
+    PString -- host.domain, default whois server   
+}
+const
+	kICWhoisHost = 'WhoisHost';
+
+{***********************************************************************************************
+
+      FUNCTIONS
+
+      What do the annotations after each API mean?
+      --------------------------------------------
+
+      [r1] Requires IC 1.1 or higher.
+      [r2] Requires IC 1.2 or higher.
+      [r3] Requires IC 2.0 or higher.
+      [r4] Requires IC 2.5 or higher.
+      
+      IMPORTANT:
+
+      In IC 2.5, instances automatically use the default configuration.
+      You no longer need to configure an instance explicitly, except
+      if your code might run with an older version of IC.  So the following
+      notes only apply to IC 2.0 and earlier.
+
+      [c1]  You must have specified a configuration before calling this routine.
+      
+      [c2]  You must have specified the default configuration before calling this
+            routine.
+      
+      [c3]  You do not need to specify a configuration before calling this routine.
+      
+      [b1]  You must be inside a Begin/End pair when calling this routine.
+      
+      [b2]  You must be inside a Begin/End read/write pair when calling this routine.
+      
+      [b3]  You do not need to be inside a Begin/End pair when calling this routine.
+      
+      [b4]  If you are getting or setting multiple preferences, you should make this
+            call inside a Begin/End pair. If you do not make this call inside a Begin/End
+            pair, the call will automatically do it for you.
+      
+      [b5]  It is illegal to call this routine inside a Begin/End pair.
+
+ ***********************************************************************************************}
+
+{ ***** Starting Up and Shutting Down *****  }
+{
+ *  ICStart()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICStart( var inst: ICInstance; signature: OSType ): OSStatus; external name '_ICStart';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Call this at application initialisation. Set signature to a value
+   * which has been regsitered with DTS to allow for future expansion
+   * of the IC system. Returns inst as a connection to the IC system.
+   }
+{
+ *  ICStop()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
 =======
@@ -2060,10 +2486,48 @@ function ICGetIndPref( inst: ICInstance; index: SIGNEDLONG; var key: Str255 ): O
  *  ICDeletePref()
 >>>>>>> graemeg/cpstrnew
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICStop( inst: ICInstance ): OSStatus; external name '_ICStop';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [b5] 
+   * Call this at application initialisation, after which inst
+   * is no longer valid connection to IC.
+   }
+{
+ *  ICGetVersion()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetVersion( inst: ICInstance; whichVersion: SIGNEDLONG; var version: UInt32 ): OSStatus; external name '_ICGetVersion';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r4] [c3] [b3] 
+   * Returns the version of Internet Config.  Pass kICComponentVersion
+   * to get the version as previously returned by GetComponenVerson.
+   * Pass kICNumVersion to get a NumVersion structure.
+   }
+{
+ *  ICGetConfigName()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
 =======
@@ -2092,10 +2556,54 @@ function ICDeletePref( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; 
  *  ICEnd()
 >>>>>>> graemeg/cpstrnew
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetConfigName( inst: ICInstance; longname: Boolean; var name: Str255 ): OSStatus; external name '_ICGetConfigName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r2] [c1] [b3] 
+   * Returns a string that describes the current configuration at a user
+   * level. Set longname to true if you want a long name, up to 255
+   * characters, or false if you want a short name, typically about 32
+   * characters.
+   * The returned string is for user display only. If you rely on the
+   * exact format of it, you will conflict with any future IC
+   * implementation that doesn't use explicit preference files.
+   }
+{ ***** Getting Information *****  }
+{
+ *  ICGetSeed()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetSeed( inst: ICInstance; var seed: SIGNEDLONG ): OSStatus; external name '_ICGetSeed';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c3] [b3] 
+   * Returns the current seed for the IC prefs database.
+   * This seed changes each time a non-volatile preference is changed.
+   * You can poll this to determine if any cached preferences change.
+   }
+{
+ *  ICGetPerm()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
 =======
@@ -2123,10 +2631,54 @@ function ICEnd( inst: ICInstance ): OSStatus; external name '_ICEnd';
  *  ICGetDefaultPref()
 >>>>>>> graemeg/cpstrnew
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetPerm( inst: ICInstance; var perm: ICPerm ): OSStatus; external name '_ICGetPerm';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c3] [b3] 
+   * Returns the access permissions currently associated with this instance.
+   * While applications normally know what permissions they have,
+   * this routine is designed for use by override components.
+   }
+{ ***** Reading and Writing Preferences *****  }
+{
+ *  ICBegin()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICBegin( inst: ICInstance; perm: ICPerm ): OSStatus; external name '_ICBegin';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b5] 
+   * Starting reading or writing multiple preferences.
+   * A call to this must be balanced by a call to ICEnd.
+   * Do not call WaitNextEvent between these calls.
+   * The perm specifies whether you intend to read or read/write.
+   * Only one writer is allowed per instance.
+   * Note that this may open resource files that are not closed
+   * until you call ICEnd.
+   }
+{
+ *  ICGetPref()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
 =======
@@ -2155,10 +2707,91 @@ function ICGetDefaultPref( inst: ICInstance; const (*var*) key: Str255; prefH: H
  *  ICEditPreferences()
 >>>>>>> graemeg/cpstrnew
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetPref( inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; buf: UnivPtr; var size: SIGNEDLONG ): OSStatus; external name '_ICGetPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b4] 
+   * Reads the preference specified by key from the IC database to the
+   * buffer pointed to by buf and size.
+   * key must not be the empty string.
+   * If buf is nil then no data is returned.
+   * size must be non-negative.
+   * attr and size are always set on return. On errors (except icTruncatedErr)
+   * attr is set to ICattr_no_change and size is set to 0.
+   * size is the actual size of the data.
+   * attr is set to the attributes associated with the preference.
+   * If this routine returns icTruncatedErr then the other returned
+   * values are valid except that only the first size bytes have been
+   * return. size is adjusted to reflect the true size of the preference.
+   * Returns icPrefNotFound if there is no preference for the key.
+   }
+{
+ *  ICSetPref()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICSetPref( inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; buf: {const} UnivPtr; size: SIGNEDLONG ): OSStatus; external name '_ICSetPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b4] 
+   * Sets the preference specified by key from the IC database to the
+   * value pointed to by buf and size.
+   * key must not be the empty string.
+   * size must be non-negative. 
+   * If buf is nil then the preference value is not set and size is ignored.
+   * If buf is not nil then the preference value is set to the size
+   * bytes pointed to by buf.
+   * If attr is ICattr_no_change then the preference attributes are not set.
+   * Otherwise the preference attributes are set to attr.
+   * Returns icPermErr if the previous ICBegin was passed icReadOnlyPerm.
+   * Returns icPermErr if current attr is locked, new attr is locked and buf <> nil.
+   }
+{
+ *  ICFindPrefHandle()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICFindPrefHandle( inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; prefh: Handle ): OSStatus; external name '_ICFindPrefHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r2] [c1] [b4] 
+   * This routine effectively replaces ICGetPrefHandle.
+   * Reads the preference specified by key from the IC database into
+   * a handle, prefh.
+   * key must not be the empty string.
+   * attr is set to the attributes associated with the preference.
+   * You must set prefh to a non-nil handle before calling this routine.
+   * If the preference does not exist, icPrefNotFoundErr is returned.
+   }
+{
+ *  ICGetPrefHandle()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
 =======
@@ -2195,10 +2828,63 @@ function ICEditPreferences( inst: ICInstance; const (*var*) key: Str255 ): OSSta
  *  ICLaunchURL()
 >>>>>>> graemeg/cpstrnew
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetPrefHandle( inst: ICInstance; const (*var*) key: Str255; var attr: ICAttr; var prefh: Handle ): OSStatus; external name '_ICGetPrefHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r1] [c1] [b4] 
+   * This routine is now obsolete. Use ICFindPrefHandle instead.
+   * Reads the preference specified by key from the IC database into
+   * a newly created handle, prefh.
+   * key must not be the empty string.
+   * attr is set to the attributes associated with the preference.
+   * The incoming value of prefh is ignored.
+   * A new handle is created in the current heap and returned in prefh.
+   * If the routine returns an error, prefh is set to nil.
+   * If the preference does not exist, no error is returned and prefh is set
+   * to an empty handle.
+   }
+{
+ *  ICSetPrefHandle()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICSetPrefHandle( inst: ICInstance; const (*var*) key: Str255; attr: ICAttr; prefh: Handle ): OSStatus; external name '_ICSetPrefHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r1] [c1] [b4] 
+   * Sets the preference specified by key from the IC database to the
+   * value contained in prefh.
+   * key must not be the empty string.
+   * If prefh is nil then the preference value is not set.
+   * If prefh is not nil then the preference value is set to the data
+   * contained in it.
+   * If attr is ICattr_no_change then the preference attributes are not set.
+   * Otherwise the preference attributes are set to attr.
+   * Returns icPermErr if the previous ICBegin was passed icReadOnlyPerm.
+   * Returns icPermErr if current attr is locked, new attr is locked and prefh <> nil.
+   }
+{
+ *  ICCountPref()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
 =======
@@ -2236,10 +2922,49 @@ function ICLaunchURL( inst: ICInstance; const (*var*) hint: Str255; data: {const
 <<<<<<< HEAD
  *  ICParseURL()   *** DEPRECATED ***
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICCountPref( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; external name '_ICCountPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b1] 
+   * Counts the total number of preferences.
+   * If the routine returns an error, count is set to 0.
+   }
+{
+ *  ICGetIndPref()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetIndPref( inst: ICInstance; index: SIGNEDLONG; var key: Str255 ): OSStatus; external name '_ICGetIndPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b1] 
+   * Returns the key of the index'th preference.
+   * index must be positive.
+   * Returns icPrefNotFoundErr if index is greater than the total number of preferences.
+   * If the routine returns an error, key is undefined.
+   }
+{
+ *  ICDeletePref()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
@@ -2268,10 +2993,48 @@ function ICParseURL( inst: ICInstance; const (*var*) hint: Str255; data: {const}
 {
  *  ICCreateGURLEvent()   *** DEPRECATED ***
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICDeletePref( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; external name '_ICDeletePref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b2] 
+   * Deletes the preference specified by key.
+   * key must not be the empty string.
+   * Returns icPrefNotFound if the preference specified by key is not present.
+   }
+{
+ *  ICEnd()
+ *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICEnd( inst: ICInstance ): OSStatus; external name '_ICEnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [c1] [b1] 
+   * Terminates a preference session, as started by ICBegin.
+   * You must have called ICBegin before calling this routine.
+   }
+{
+ *  ICGetDefaultPref()
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in InternetConfig 2.5 and later
@@ -2290,6 +3053,84 @@ function ICCreateGURLEvent( inst: ICInstance; helperCreator: OSType; urlH: Handl
 =======
  *  ICParseURL()
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICGetDefaultPref( inst: ICInstance; const (*var*) key: Str255; prefH: Handle ): OSStatus; external name '_ICGetDefaultPref';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r4] [c3] [b5] 
+   * Returns a default preference value for the specified key.  You
+   * must pass in a valid prefH, which is resized to fit the data.
+   }
+{ ***** User Interface Stuff *****  }
+{
+ *  ICEditPreferences()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICEditPreferences( inst: ICInstance; const (*var*) key: Str255 ): OSStatus; external name '_ICEditPreferences';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r1] [c1] [b3] 
+   * Instructs IC to display the user interface associated with editing
+   * preferences and focusing on the preference specified by key.
+   * If key is the empty string then no preference should be focused upon.
+   * You must have specified a configuration before calling this routine.
+   * You do not need to call ICBegin before calling this routine.
+   * In the current implementation this launches the IC application
+   * (or brings it to the front) and displays the window containing
+   * the preference specified by key.
+   * It may have a radically different implementation in future
+   * IC systems.
+   }
+{ ***** URL Handling *****  }
+{
+ *  ICLaunchURL()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in InternetConfig 2.5 and later
+ }
+function ICLaunchURL( inst: ICInstance; const (*var*) hint: Str255; data: {const} UnivPtr; len: SIGNEDLONG; var selStart: SIGNEDLONG; var selEnd: SIGNEDLONG ): OSStatus; external name '_ICLaunchURL';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ [r1] [c1] [b3] 
+   * Parses a URL out of the specified text and feeds it off to the
+   * appropriate helper.
+   * hint indicates the default scheme for URLs of the form "name@address".
+   * If hint is the empty string then URLs of that form are not allowed.
+   * data points to the start of the text. It must not be nil.
+   * len indicates the length of the text. It must be non-negative.
+   * selStart and selEnd should be passed in as the current selection of
+   * the text. This selection is given in the same manner as TextEdit,
+   * ie if selStart = selEnd then there is no selection only an insertion
+   * point. Also selStart � selEnd and 0 � selStart � len and 0 � selEnd � len.
+   * selStart and selEnd are returned as the bounds of the URL. If the
+   * routine returns an error then these new boundaries may be
+   * invalid but they will be close.
+   * The URL is parsed out of the text and passed off to the appropriate
+   * helper using the GURL AppleEvent.
+   }
+{
+ *  ICParseURL()
+ *  
+>>>>>>> graemeg/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -2341,13 +3182,20 @@ function ICCreateGURLEvent( inst: ICInstance; helperCreator: OSType; urlH: Handl
 {
  *  ICSendGURLEvent()
  *  
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2356,7 +3204,11 @@ function ICCreateGURLEvent( inst: ICInstance; helperCreator: OSType; urlH: Handl
  }
 function ICSendGURLEvent( inst: ICInstance; var theEvent: AppleEvent ): OSStatus; external name '_ICSendGURLEvent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2373,7 +3225,11 @@ function ICSendGURLEvent( inst: ICInstance; var theEvent: AppleEvent ): OSStatus
   }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICMapFilename()   *** DEPRECATED ***
+=======
+ *  ICMapFilename()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICMapFilename()
 >>>>>>> graemeg/cpstrnew
@@ -2383,7 +3239,11 @@ function ICSendGURLEvent( inst: ICInstance; var theEvent: AppleEvent ): OSStatus
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2392,7 +3252,11 @@ function ICSendGURLEvent( inst: ICInstance; var theEvent: AppleEvent ): OSStatus
  }
 function ICMapFilename( inst: ICInstance; const (*var*) filename: Str255; var entry: ICMapEntry ): OSStatus; external name '_ICMapFilename';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2406,7 +3270,11 @@ function ICMapFilename( inst: ICInstance; const (*var*) filename: Str255; var en
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICMapTypeCreator()   *** DEPRECATED ***
+=======
+ *  ICMapTypeCreator()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICMapTypeCreator()
 >>>>>>> graemeg/cpstrnew
@@ -2416,7 +3284,11 @@ function ICMapFilename( inst: ICInstance; const (*var*) filename: Str255; var en
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2425,7 +3297,11 @@ function ICMapFilename( inst: ICInstance; const (*var*) filename: Str255; var en
  }
 function ICMapTypeCreator( inst: ICInstance; fType: OSType; fCreator: OSType; const (*var*) filename: Str255; var entry: ICMapEntry ): OSStatus; external name '_ICMapTypeCreator';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2441,7 +3317,11 @@ function ICMapTypeCreator( inst: ICInstance; fType: OSType; fCreator: OSType; co
 { ----- Mid Level Routines -----  }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICMapEntriesFilename()   *** DEPRECATED ***
+=======
+ *  ICMapEntriesFilename()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICMapEntriesFilename()
 >>>>>>> graemeg/cpstrnew
@@ -2451,7 +3331,11 @@ function ICMapTypeCreator( inst: ICInstance; fType: OSType; fCreator: OSType; co
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2460,7 +3344,11 @@ function ICMapTypeCreator( inst: ICInstance; fType: OSType; fCreator: OSType; co
  }
 function ICMapEntriesFilename( inst: ICInstance; entries: Handle; const (*var*) filename: Str255; var entry: ICMapEntry ): OSStatus; external name '_ICMapEntriesFilename';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2475,7 +3363,11 @@ function ICMapEntriesFilename( inst: ICInstance; entries: Handle; const (*var*) 
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICMapEntriesTypeCreator()   *** DEPRECATED ***
+=======
+ *  ICMapEntriesTypeCreator()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICMapEntriesTypeCreator()
 >>>>>>> graemeg/cpstrnew
@@ -2485,7 +3377,11 @@ function ICMapEntriesFilename( inst: ICInstance; entries: Handle; const (*var*) 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2494,7 +3390,11 @@ function ICMapEntriesFilename( inst: ICInstance; entries: Handle; const (*var*) 
  }
 function ICMapEntriesTypeCreator( inst: ICInstance; entries: Handle; fType: OSType; fCreator: OSType; const (*var*) filename: Str255; var entry: ICMapEntry ): OSStatus; external name '_ICMapEntriesTypeCreator';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2511,7 +3411,11 @@ function ICMapEntriesTypeCreator( inst: ICInstance; entries: Handle; fType: OSTy
 { ----- Low Level Routines -----  }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICCountMapEntries()   *** DEPRECATED ***
+=======
+ *  ICCountMapEntries()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICCountMapEntries()
 >>>>>>> graemeg/cpstrnew
@@ -2521,7 +3425,11 @@ function ICMapEntriesTypeCreator( inst: ICInstance; entries: Handle; fType: OSTy
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2530,7 +3438,11 @@ function ICMapEntriesTypeCreator( inst: ICInstance; entries: Handle; fType: OSTy
  }
 function ICCountMapEntries( inst: ICInstance; entries: Handle; var count: SIGNEDLONG ): OSStatus; external name '_ICCountMapEntries';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2543,7 +3455,11 @@ function ICCountMapEntries( inst: ICInstance; entries: Handle; var count: SIGNED
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICGetIndMapEntry()   *** DEPRECATED ***
+=======
+ *  ICGetIndMapEntry()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICGetIndMapEntry()
 >>>>>>> graemeg/cpstrnew
@@ -2553,7 +3469,11 @@ function ICCountMapEntries( inst: ICInstance; entries: Handle; var count: SIGNED
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2562,7 +3482,11 @@ function ICCountMapEntries( inst: ICInstance; entries: Handle; var count: SIGNED
  }
 function ICGetIndMapEntry( inst: ICInstance; entries: Handle; index: SIGNEDLONG; var pos: SIGNEDLONG; var entry: ICMapEntry ): OSStatus; external name '_ICGetIndMapEntry';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2579,7 +3503,11 @@ function ICGetIndMapEntry( inst: ICInstance; entries: Handle; index: SIGNEDLONG;
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICGetMapEntry()   *** DEPRECATED ***
+=======
+ *  ICGetMapEntry()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICGetMapEntry()
 >>>>>>> graemeg/cpstrnew
@@ -2589,7 +3517,11 @@ function ICGetIndMapEntry( inst: ICInstance; entries: Handle; index: SIGNEDLONG;
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2598,7 +3530,11 @@ function ICGetIndMapEntry( inst: ICInstance; entries: Handle; index: SIGNEDLONG;
  }
 function ICGetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; var entry: ICMapEntry ): OSStatus; external name '_ICGetMapEntry';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2613,7 +3549,11 @@ function ICGetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; var 
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICSetMapEntry()   *** DEPRECATED ***
+=======
+ *  ICSetMapEntry()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICSetMapEntry()
 >>>>>>> graemeg/cpstrnew
@@ -2623,7 +3563,11 @@ function ICGetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; var 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2632,7 +3576,11 @@ function ICGetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; var 
  }
 function ICSetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; const (*var*) entry: ICMapEntry ): OSStatus; external name '_ICSetMapEntry';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2649,7 +3597,11 @@ function ICSetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; cons
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICDeleteMapEntry()   *** DEPRECATED ***
+=======
+ *  ICDeleteMapEntry()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICDeleteMapEntry()
 >>>>>>> graemeg/cpstrnew
@@ -2659,7 +3611,11 @@ function ICSetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; cons
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2668,7 +3624,11 @@ function ICSetMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG; cons
  }
 function ICDeleteMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG ): OSStatus; external name '_ICDeleteMapEntry';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2683,7 +3643,11 @@ function ICDeleteMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG ):
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICAddMapEntry()   *** DEPRECATED ***
+=======
+ *  ICAddMapEntry()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICAddMapEntry()
 >>>>>>> graemeg/cpstrnew
@@ -2693,7 +3657,11 @@ function ICDeleteMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG ):
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2702,7 +3670,11 @@ function ICDeleteMapEntry( inst: ICInstance; entries: Handle; pos: SIGNEDLONG ):
  }
 function ICAddMapEntry( inst: ICInstance; entries: Handle; const (*var*) entry: ICMapEntry ): OSStatus; external name '_ICAddMapEntry';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2717,7 +3689,11 @@ function ICAddMapEntry( inst: ICInstance; entries: Handle; const (*var*) entry: 
 { ***** Profile Management Routines *****  }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICGetCurrentProfile()   *** DEPRECATED ***
+=======
+ *  ICGetCurrentProfile()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICGetCurrentProfile()
 >>>>>>> graemeg/cpstrnew
@@ -2727,7 +3703,11 @@ function ICAddMapEntry( inst: ICInstance; entries: Handle; const (*var*) entry: 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2736,7 +3716,11 @@ function ICAddMapEntry( inst: ICInstance; entries: Handle; const (*var*) entry: 
  }
 function ICGetCurrentProfile( inst: ICInstance; var currentID: ICProfileID ): OSStatus; external name '_ICGetCurrentProfile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2747,7 +3731,11 @@ function ICGetCurrentProfile( inst: ICInstance; var currentID: ICProfileID ): OS
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICSetCurrentProfile()   *** DEPRECATED ***
+=======
+ *  ICSetCurrentProfile()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICSetCurrentProfile()
 >>>>>>> graemeg/cpstrnew
@@ -2757,7 +3745,11 @@ function ICGetCurrentProfile( inst: ICInstance; var currentID: ICProfileID ): OS
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2766,7 +3758,11 @@ function ICGetCurrentProfile( inst: ICInstance; var currentID: ICProfileID ): OS
  }
 function ICSetCurrentProfile( inst: ICInstance; newID: ICProfileID ): OSStatus; external name '_ICSetCurrentProfile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2777,7 +3773,11 @@ function ICSetCurrentProfile( inst: ICInstance; newID: ICProfileID ): OSStatus; 
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICCountProfiles()   *** DEPRECATED ***
+=======
+ *  ICCountProfiles()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICCountProfiles()
 >>>>>>> graemeg/cpstrnew
@@ -2787,7 +3787,11 @@ function ICSetCurrentProfile( inst: ICInstance; newID: ICProfileID ): OSStatus; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2796,7 +3800,11 @@ function ICSetCurrentProfile( inst: ICInstance; newID: ICProfileID ): OSStatus; 
  }
 function ICCountProfiles( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; external name '_ICCountProfiles';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2807,7 +3815,11 @@ function ICCountProfiles( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; e
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICGetIndProfile()   *** DEPRECATED ***
+=======
+ *  ICGetIndProfile()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICGetIndProfile()
 >>>>>>> graemeg/cpstrnew
@@ -2817,7 +3829,11 @@ function ICCountProfiles( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; e
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2826,7 +3842,11 @@ function ICCountProfiles( inst: ICInstance; var count: SIGNEDLONG ): OSStatus; e
  }
 function ICGetIndProfile( inst: ICInstance; index: SIGNEDLONG; var thisID: ICProfileID ): OSStatus; external name '_ICGetIndProfile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2839,7 +3859,11 @@ function ICGetIndProfile( inst: ICInstance; index: SIGNEDLONG; var thisID: ICPro
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICGetProfileName()   *** DEPRECATED ***
+=======
+ *  ICGetProfileName()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICGetProfileName()
 >>>>>>> graemeg/cpstrnew
@@ -2849,7 +3873,11 @@ function ICGetIndProfile( inst: ICInstance; index: SIGNEDLONG; var thisID: ICPro
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2858,7 +3886,11 @@ function ICGetIndProfile( inst: ICInstance; index: SIGNEDLONG; var thisID: ICPro
  }
 function ICGetProfileName( inst: ICInstance; thisID: ICProfileID; var name: Str255 ): OSStatus; external name '_ICGetProfileName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2871,7 +3903,11 @@ function ICGetProfileName( inst: ICInstance; thisID: ICProfileID; var name: Str2
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICSetProfileName()   *** DEPRECATED ***
+=======
+ *  ICSetProfileName()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICSetProfileName()
 >>>>>>> graemeg/cpstrnew
@@ -2881,7 +3917,11 @@ function ICGetProfileName( inst: ICInstance; thisID: ICProfileID; var name: Str2
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2890,7 +3930,11 @@ function ICGetProfileName( inst: ICInstance; thisID: ICProfileID; var name: Str2
  }
 function ICSetProfileName( inst: ICInstance; thisID: ICProfileID; const (*var*) name: Str255 ): OSStatus; external name '_ICSetProfileName';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2902,7 +3946,11 @@ function ICSetProfileName( inst: ICInstance; thisID: ICProfileID; const (*var*) 
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICAddProfile()   *** DEPRECATED ***
+=======
+ *  ICAddProfile()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICAddProfile()
 >>>>>>> graemeg/cpstrnew
@@ -2912,7 +3960,11 @@ function ICSetProfileName( inst: ICInstance; thisID: ICProfileID; const (*var*) 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2921,7 +3973,11 @@ function ICSetProfileName( inst: ICInstance; thisID: ICProfileID; const (*var*) 
  }
 function ICAddProfile( inst: ICInstance; prototypeID: ICProfileID; var newID: ICProfileID ): OSStatus; external name '_ICAddProfile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2937,7 +3993,11 @@ function ICAddProfile( inst: ICInstance; prototypeID: ICProfileID; var newID: IC
    }
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  ICDeleteProfile()   *** DEPRECATED ***
+=======
+ *  ICDeleteProfile()
+>>>>>>> graemeg/cpstrnew
 =======
  *  ICDeleteProfile()
 >>>>>>> graemeg/cpstrnew
@@ -2947,7 +4007,11 @@ function ICAddProfile( inst: ICInstance; prototypeID: ICProfileID; var newID: IC
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework but deprecated in 10.7
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -2956,7 +4020,11 @@ function ICAddProfile( inst: ICInstance; prototypeID: ICProfileID; var newID: IC
  }
 function ICDeleteProfile( inst: ICInstance; thisID: ICProfileID ): OSStatus; external name '_ICDeleteProfile';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

@@ -1,12 +1,18 @@
 {	CFBundle.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1999-2013, Apple Inc.  All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	Copyright (c) 1999-2009, Apple Inc. All rights reserved.
 }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -63,11 +69,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -86,6 +95,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -106,6 +116,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -121,6 +133,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -129,7 +144,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -139,6 +157,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -174,6 +193,8 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -184,14 +205,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elifc defined __arm__ and __arm__}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+	{$setc TARGET_CPU_ARM := TRUE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_CPU_ARM := TRUE}
 >>>>>>> graemeg/cpstrnew
@@ -200,9 +228,14 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -256,10 +289,16 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFError,CFString,CFURL;
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFBundleRef = ^__CFBundle; { an opaque type }
 	__CFBundle = record end;
 	CFBundleRefPtr = ^CFBundleRef;
 	CFPlugInRef = ^__CFBundle; { an opaque type }
+=======
+	CFBundleRef = ^SInt32; { an opaque type }
+	CFBundleRefPtr = ^CFBundleRef;
+	CFPlugInRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CFBundleRef = ^SInt32; { an opaque type }
 	CFBundleRefPtr = ^CFBundleRef;
@@ -426,6 +465,9 @@ function CFBundleCopyInfoDictionaryForURL( url: CFURLRef ): CFDictionaryRef; ext
     { For a directory URL, this is equivalent to CFBundleCopyInfoDictionaryInDirectory(). }
 =======
     { For a directory URL, this is equivalent to CFBundleCopyInfoDictionaryInDirectory. }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     { For a plain file URL representing an unbundled executable, this will attempt to read }
     { an info dictionary from the (__TEXT, __info_plist) section, if it is a Mach-o file, }
@@ -436,6 +478,9 @@ function CFBundleCopyLocalizationsForURL( url: CFURLRef ): CFArrayRef; external 
     { For a directory URL, this is equivalent to calling CFBundleCopyBundleLocalizations() }
 =======
     { For a directory URL, this is equivalent to calling CFBundleCopyBundleLocalizations }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     { on the corresponding bundle.  For a plain file URL representing an unbundled executable, }
     { this will attempt to determine its localizations using the CFBundleLocalizations and }
@@ -445,7 +490,11 @@ function CFBundleCopyLocalizationsForURL( url: CFURLRef ): CFArrayRef; external 
 
 function CFBundleCopyExecutableArchitecturesForURL( url: CFURLRef ): CFArrayRef; external name '_CFBundleCopyExecutableArchitecturesForURL';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -473,7 +522,11 @@ const
 
 function CFBundleCopyExecutableArchitectures( bundle: CFBundleRef ): CFArrayRef; external name '_CFBundleCopyExecutableArchitectures';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -484,7 +537,11 @@ function CFBundleCopyExecutableArchitectures( bundle: CFBundleRef ): CFArrayRef;
 
 function CFBundlePreflightExecutable( bundle: CFBundleRef; var error: CFErrorRef ): Boolean; external name '_CFBundlePreflightExecutable';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -496,7 +553,11 @@ function CFBundlePreflightExecutable( bundle: CFBundleRef; var error: CFErrorRef
 
 function CFBundleLoadExecutableAndReturnError( bundle: CFBundleRef; var error: CFErrorRef ): Boolean; external name '_CFBundleLoadExecutableAndReturnError';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

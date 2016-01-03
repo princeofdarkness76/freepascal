@@ -4,8 +4,11 @@
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2015 }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {
@@ -63,11 +66,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -85,6 +91,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -109,6 +116,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -121,6 +133,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -128,6 +143,7 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -153,6 +169,8 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -162,8 +180,20 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -174,6 +204,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -190,14 +221,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -246,13 +284,19 @@ interface
 uses MacTypes,CFBase,CGGeometry,CGBase,CFDictionary,CGAffineTransforms,CGColorSpace,CGFont,CGGradient,CGImage,CGPDFDocument,CGPath,CGColor,CGShading,CGPDFPage;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ALIGN POWER}
 
 
 type
 	CGContextRef = ^SInt32; { an opaque type }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {$ALIGN POWER}
@@ -307,6 +351,7 @@ const
 	kCGInterpolationMedium = 4;		{ Medium quality, slower than kCGInterpolationLow. Available in Mac OS X 10.6 & later. }
 	kCGInterpolationHigh = 3;		{ Highest quality, slower than kCGInterpolationMedium. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { Blend modes.
 
@@ -316,6 +361,8 @@ const
    10.5 and later. The names of the Porter-Duff blend modes are historical.
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Blend modes.
 
@@ -324,6 +371,9 @@ const
    kCGBlendModeClear to kCGBlendModePlusLighter) are supported in Mac OS X
    10.5 and later. The names of the Porter-Duff blend modes are historical.
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
    Note that the Porter-Duff blend modes are not necessarily supported in
    every context. In particular, they are only guaranteed to work in
@@ -573,6 +623,7 @@ procedure CGContextReplacePathWithStrokedPath( c: CGContextRef ); external name 
 { Return true if the path of `context' contains no elements, false
    otherwise. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function CGContextIsPathEmpty( context: CGContextRef ): CBool; external name '_CGContextIsPathEmpty';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
@@ -625,11 +676,39 @@ function CGContextGetPathBoundingBox( context: CGContextRef ): CGRect; external 
 function CGContextCopyPath( context: CGContextRef ): CGPathRef; external name '_CGContextCopyPath';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
+=======
+
+function CGContextIsPathEmpty( context: CGContextRef ): CBool; external name '_CGContextIsPathEmpty';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Return the current point of the current subpath of the path of
+   `context'. }
+
+function CGContextGetPathCurrentPoint( context: CGContextRef ): CGPoint; external name '_CGContextGetPathCurrentPoint';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Return the bounding box of the path of `context'. The bounding box is the
+   smallest rectangle completely enclosing all points in the path, including
+   control points for Bezier and quadratic curves. }
+
+function CGContextGetPathBoundingBox( context: CGContextRef ): CGRect; external name '_CGContextGetPathBoundingBox';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Return a copy of the path of `context'. The returned path is specified in
+   the current user space of `context'. }
+
+function CGContextCopyPath( context: CGContextRef ): CGPathRef; external name '_CGContextCopyPath';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+
+>>>>>>> graemeg/cpstrnew
 { Return true if `point' is contained in the current path of `context'. A
    point is contained within a context's path if it is inside the painted
    region when the path is stroked or filled with opaque colors using the
    path drawing mode `mode'. `point' is specified is user space. }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function CGContextPathContainsPoint( context: CGContextRef; point: CGPoint; mode: CGPathDrawingMode ): CBool; external name '_CGContextPathContainsPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
@@ -701,6 +780,7 @@ procedure CGContextStrokeEllipseInRect( context: CGContextRef; rect: CGRect ); e
    line segments are specified by `points', an array of `count' CGPoints.
    This function is equivalent to
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      CGContextBeginPath(context);
      for (k = 0; k < count; k += 2) begin
@@ -710,6 +790,8 @@ procedure CGContextStrokeEllipseInRect( context: CGContextRef; rect: CGRect ); e
      CGContextStrokePath(context); }
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      CGContextBeginPath(context);
      for (k = 0; k < count; k += 2) begin
          CGContextMoveToPoint(context, s[k].x, s[k].y);
@@ -717,6 +799,9 @@ procedure CGContextStrokeEllipseInRect( context: CGContextRef; rect: CGRect ); e
      end;
      CGContextStrokePath(context); }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure CGContextStrokeLineSegments( c: CGContextRef; {const} points: {variable-size-array} CGPointPtr; count: size_t ); external name '_CGContextStrokeLineSegments';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
@@ -922,6 +1007,26 @@ procedure CGContextSetRenderingIntent( context: CGContextRef; intent: CGColorRen
 procedure CGContextDrawImage( c: CGContextRef; rect: CGRect; image: CGImageRef ); external name '_CGContextDrawImage';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+
+{ Draw `image' tiled in the context `c'. The image is scaled to the size
+   specified by `rect' in user space, positioned at the origin of `rect' in
+   user space, then replicated, stepping the width of `rect' horizontally
+   and the height of `rect' vertically, to fill the current clip region.
+   Unlike patterns, the image is tiled in user space, so transformations
+   applied to the CTM affect the final result. }
+
+procedure CGContextDrawTiledImage( c: CGContextRef; rect: CGRect; image: CGImageRef ); external name '_CGContextDrawTiledImage';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+{ Return the interpolation quality for image rendering of `context'. The
+   interpolation quality is a gstate parameter which controls the level of
+   interpolation performed when an image is interpolated (for example, when
+   scaling the image). Note that it is merely a hint to the context: not all
+   contexts support all interpolation quality levels. }
+
+function CGContextGetInterpolationQuality( context: CGContextRef ): CGInterpolationQuality; external name '_CGContextGetInterpolationQuality';
+=======
 
 { Draw `image' tiled in the context `c'. The image is scaled to the size
    specified by `rect' in user space, positioned at the origin of `rect' in
@@ -942,8 +1047,15 @@ procedure CGContextDrawTiledImage( c: CGContextRef; rect: CGRect; image: CGImage
 function CGContextGetInterpolationQuality( context: CGContextRef ): CGInterpolationQuality; external name '_CGContextGetInterpolationQuality';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
+{ Set the interpolation quality of `context' to `quality'. }
+
+procedure CGContextSetInterpolationQuality( context: CGContextRef; quality: CGInterpolationQuality ); external name '_CGContextSetInterpolationQuality';
+>>>>>>> graemeg/cpstrnew
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
 =======
 
+<<<<<<< HEAD
 { Draw `image' tiled in the context `c'. The image is scaled to the size
    specified by `rect' in user space, positioned at the origin of `rect' in
    user space, then replicated, stepping the width of `rect' horizontally
@@ -1039,11 +1151,57 @@ procedure CGContextDrawLinearGradient( context: CGContextRef; gradient: CGGradie
    values of the gradient's locations. The option flags control whether the
    gradient is drawn before the start circle or after the end circle. }
 
+=======
+{ Set the shadow parameters in `context'. `offset' specifies a translation
+   in base-space; `blur' is a non-negative number specifying the amount of
+   blur; `color' specifies the color of the shadow, which may contain a
+   non-opaque alpha value. If `color' is NULL, it's equivalent to specifying
+   a fully transparent color. The shadow is a gstate parameter. After a
+   shadow is specified, all objects drawn subsequently will be shadowed. To
+   turn off shadowing, set the shadow color to a fully transparent color (or
+   pass NULL as the color), or use the standard gsave/grestore mechanism. }
+
+procedure CGContextSetShadowWithColor( context: CGContextRef; offset: CGSize; blur: CGFloat; color: CGColorRef ); external name '_CGContextSetShadowWithColor';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
+
+{ Equivalent to calling
+     CGContextSetShadowWithColor(context, offset, blur, color)
+   where color is black with 1/3 alpha (i.e., RGBA = (0, 0, 0, 1.0/3.0)) in
+   the DeviceRGB color space. }
+
+procedure CGContextSetShadow( context: CGContextRef; offset: CGSize; blur: CGFloat ); external name '_CGContextSetShadow';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
+
+{* Gradient and shading functions. *}
+
+{ Fill the current clipping region of `context' with a linear gradient from
+   `startPoint' to `endPoint'. The location 0 of `gradient' corresponds to
+   `startPoint'; the location 1 of `gradient' corresponds to `endPoint';
+   colors are linearly interpolated between these two points based on the
+   values of the gradient's locations. The option flags control whether the
+   gradient is drawn before the start point or after the end point. }
+
+procedure CGContextDrawLinearGradient( context: CGContextRef; gradient: CGGradientRef; startPoint: CGPoint; endPoint: CGPoint; options: CGGradientDrawingOptions ); external name '_CGContextDrawLinearGradient';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+{ Fill the current clipping region of `context' with a radial gradient
+   between two circles defined by the center point and radius of each
+   circle. The location 0 of `gradient' corresponds to a circle centered at
+   `startCenter' with radius `startRadius'; the location 1 of `gradient'
+   corresponds to a circle centered at `endCenter' with radius `endRadius';
+   colors are linearly interpolated between these two circles based on the
+   values of the gradient's locations. The option flags control whether the
+   gradient is drawn before the start circle or after the end circle. }
+
+>>>>>>> graemeg/cpstrnew
 procedure CGContextDrawRadialGradient( context: CGContextRef; gradient: CGGradientRef; startCenter: CGPoint; startRadius: CGFloat; endCenter: CGPoint; endRadius: CGFloat; options: CGGradientDrawingOptions ); external name '_CGContextDrawRadialGradient';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
 { Fill the current clipping region of `context' with `shading'. }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure CGContextDrawShading( context: CGContextRef; shading: CGShadingRef ); external name '_CGContextDrawShading';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
@@ -1093,13 +1251,27 @@ procedure CGContextSetFont( c: CGContextRef; font: CGFontRef ); external name '_
 { Set the font size in the current graphics state of the context `c' to
    `size'. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure CGContextSetFontSize( c: CGContextRef; size: CGFloat ); external name '_CGContextSetFontSize';
+=======
+
+procedure CGContextSetFontSize( c: CGContextRef; size: CGFloat ); external name '_CGContextSetFontSize';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Attempts to find the font named `name' and, if successful, sets it as the
+   font in the current graphics state of `c' and sets the font size in the
+   current graphics state to `size'. `textEncoding' specifies how to
+   translate from bytes to glyphs when displaying text. }
+
+procedure CGContextSelectFont( c: CGContextRef; name: ConstCStringPtr; size: CGFloat; textEncoding: CGTextEncoding ); external name '_CGContextSelectFont';
+>>>>>>> graemeg/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
 { Draw `glyphs', an array of `count' CGGlyphs, at the points specified by
    `positions'. Each element of `positions' specifies the position from the
    associated glyph; the positions are specified in user space. }
+<<<<<<< HEAD
 
 procedure CGContextShowGlyphsAtPositions( context: CGContextRef; {const} glyphs: {variable-size-array} CGGlyphPtr; {const} positions: {variable-size-array} CGPointPtr; count: size_t ); external name '_CGContextShowGlyphsAtPositions';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
@@ -1122,9 +1294,37 @@ procedure CGContextSelectFont( c: CGContextRef; name: ConstCStringPtr; size: CGF
 
 procedure CGContextShowGlyphsAtPositions( context: CGContextRef; {const} glyphs: {variable-size-array} CGGlyphPtr; {const} positions: {variable-size-array} CGPointPtr; count: size_t ); external name '_CGContextShowGlyphsAtPositions';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+=======
+
+procedure CGContextShowGlyphsAtPositions( context: CGContextRef; {const} glyphs: {variable-size-array} CGGlyphPtr; {const} positions: {variable-size-array} CGPointPtr; count: size_t ); external name '_CGContextShowGlyphsAtPositions';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 
 {* Text convenience functions. *}
 
+{ Draw `string', a string of `length' bytes, at the point specified by the
+   text matrix in the context `c'. Each byte of the string is mapped through
+   the encoding vector of the current font to obtain the glyph to
+   display. }
+
+procedure CGContextShowText( c: CGContextRef; strng: ConstCStringPtr; length: size_t ); external name '_CGContextShowText';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Draw `string', a string of `length' bytes, at the point `(x, y)',
+   specified in user space, in the context `c'. Each byte of the string is
+   mapped through the encoding vector of the current font to obtain the
+   glyph to display. }
+
+procedure CGContextShowTextAtPoint( c: CGContextRef; x: CGFloat; y: CGFloat; strng: ConstCStringPtr; length: size_t ); external name '_CGContextShowTextAtPoint';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Draw the glyphs pointed to by `g', an array of `count' glyphs, at the
+   point specified by the text matrix in the context `c'. }
+>>>>>>> graemeg/cpstrnew
+
+procedure CGContextShowGlyphs( c: CGContextRef; {const} g: {variable-size-array} CGGlyphPtr; count: size_t ); external name '_CGContextShowGlyphs';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+<<<<<<< HEAD
 { Draw `string', a string of `length' bytes, at the point specified by the
    text matrix in the context `c'. Each byte of the string is mapped through
    the encoding vector of the current font to obtain the glyph to
@@ -1161,6 +1361,21 @@ procedure CGContextShowGlyphsAtPoint( context: CGContextRef; x: CGFloat; y: CGFl
 procedure CGContextShowGlyphsWithAdvances( c: CGContextRef; {const} glyphs: {variable-size-array} CGGlyphPtr; {const} advances: {variable-size-array} CGSizePtr; count: size_t ); external name '_CGContextShowGlyphsWithAdvances';
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 >>>>>>> graemeg/cpstrnew
+=======
+{ Display the glyphs pointed to by `glyphs', an array of `count' glyphs, at
+   the point `(x, y)', specified in user space, in `context'. }
+
+procedure CGContextShowGlyphsAtPoint( context: CGContextRef; x: CGFloat; y: CGFloat; {const} glyphs: {variable-size-array} CGGlyphPtr; count: size_t ); external name '_CGContextShowGlyphsAtPoint';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Draw `glyphs', an array of `count' CGGlyphs, at the current point
+   specified by the text matrix. Each element of `advances' specifies the
+   offset from the previous glyph's origin to the origin of the associated
+   glyph; the advances are specified in user space. }
+
+procedure CGContextShowGlyphsWithAdvances( c: CGContextRef; {const} glyphs: {variable-size-array} CGGlyphPtr; {const} advances: {variable-size-array} CGSizePtr; count: size_t ); external name '_CGContextShowGlyphsWithAdvances';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
+>>>>>>> graemeg/cpstrnew
 
 {* PDF functions. *}
 
@@ -1169,7 +1384,10 @@ procedure CGContextShowGlyphsWithAdvances( c: CGContextRef; {const} glyphs: {var
 procedure CGContextDrawPDFPage( c: CGContextRef; page: CGPDFPageRef ); external name '_CGContextDrawPDFPage';
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 { DEPRECATED; use the CGPDFPage API instead.
@@ -1179,6 +1397,9 @@ procedure CGContextDrawPDFPage( c: CGContextRef; page: CGPDFPageRef ); external 
 
 procedure CGContextDrawPDFDocument( c: CGContextRef; rect: CGRect; document: CGPDFDocumentRef; page: SInt32 ); external name '_CGContextDrawPDFDocument';
 {$endc}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {* Output page functions. *}
@@ -1360,6 +1581,7 @@ function CGContextConvertRectToDeviceSpace( context: CGContextRef; rect: CGRect 
    returns the smallest rectangle which contains the transformed corner
    points of `rect'. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function CGContextConvertRectToUserSpace( context: CGContextRef; rect: CGRect ): CGRect; external name '_CGContextConvertRectToUserSpace';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
@@ -1405,10 +1627,15 @@ procedure CGContextDrawPDFDocument( c: CGContextRef; rect: CGRect; document: CGP
 
 {$endc}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 function CGContextConvertRectToUserSpace( context: CGContextRef; rect: CGRect ): CGRect; external name '_CGContextConvertRectToUserSpace';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

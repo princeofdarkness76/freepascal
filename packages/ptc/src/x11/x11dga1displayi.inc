@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -66,7 +70,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA1Display.Open(ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; const AOpenGLAttributes: IPTCOpenGLAttributes);
+=======
+procedure TX11DGA1Display.Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11DGA1Display.Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
@@ -78,6 +86,10 @@ var
   e: TXEvent;
   found: Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  tmpArea: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 =======
   tmpArea: TPTCArea;
 >>>>>>> graemeg/cpstrnew
@@ -276,6 +288,9 @@ end;
 
 { not in DGA mode }
 procedure TX11DGA1Display.Open(AWindow: TWindow; const AFormat: TPTCFormat);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   if AWindow = 0 Then; { Prevent warnings }
@@ -283,7 +298,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA1Display.Open(AWindow: TWindow; AFormat: IPTCFormat; AX, AY, AWidth, AHeight: Integer);
+=======
+procedure TX11DGA1Display.Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11DGA1Display.Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer);
 >>>>>>> graemeg/cpstrnew
@@ -299,8 +318,11 @@ end;
 procedure TX11DGA1Display.Close;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FOpen := False;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if FInDirect then
@@ -336,10 +358,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA1Display.GetModes(var AModes: TPTCModeList);
 begin
   SetLength(AModes, 0);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TX11DGA1Display.GetModes(var AModes: TPTCModeDynArray);
 begin
   SetLength(AModes, 1);
@@ -353,7 +378,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA1Display.Update(AArea: IPTCArea);
+=======
+procedure TX11DGA1Display.Update(const AArea: TPTCArea);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11DGA1Display.Update(const AArea: TPTCArea);
 >>>>>>> graemeg/cpstrnew
@@ -391,7 +420,10 @@ var
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   procedure HandleKeyEvent;
   var
     sym: TKeySym;
@@ -423,6 +455,9 @@ var
     FEventQueue.AddEvent(key);
   end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   NewFocusSpecified := False;
@@ -446,7 +481,11 @@ begin
         {...}
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       KeyPress, KeyRelease: HandleKeyEvent(e.xkey);
+=======
+      KeyPress, KeyRelease: HandleKeyEvent;
+>>>>>>> graemeg/cpstrnew
 =======
       KeyPress, KeyRelease: HandleKeyEvent;
 >>>>>>> graemeg/cpstrnew
@@ -462,16 +501,22 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11DGA1Display.NextEvent(out AEvent: IPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 var
   tmpEvent: TXEvent;
 begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TX11DGA1Display.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 var
   tmpEvent: TXEvent;
 begin
   FreeAndNil(AEvent);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   repeat
     { process all events from the X queue and put them on our FEventQueue }
@@ -490,7 +535,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11DGA1Display.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): IPTCEvent;
+=======
+function TX11DGA1Display.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 =======
 function TX11DGA1Display.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
@@ -524,7 +573,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA1Display.Palette(APalette: IPTCPalette);
+=======
+procedure TX11DGA1Display.Palette(const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11DGA1Display.Palette(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -548,12 +601,21 @@ begin
   XStoreColors(FDisplay, FCMap, FColours, 256);
   XF86DGAInstallColormap(FDisplay, FScreen, FCMap);
 end;
+<<<<<<< HEAD
 
 function TX11DGA1Display.GetPitch: Integer;
 begin
   Result := FDGALineWidth * (FFormat.Bits div 8);
 end;
 
+=======
+
+function TX11DGA1Display.GetPitch: Integer;
+begin
+  Result := FDGALineWidth * (FFormat.Bits div 8);
+end;
+
+>>>>>>> graemeg/cpstrnew
 function TX11DGA1Display.GetX11Window: TWindow;
 begin
   Result := DefaultRootWindow(FDisplay);
@@ -566,11 +628,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11DGA1Display.IsOpen: Boolean;
 begin
   Result := FOpen;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TX11DGA1Display.SetCursor(AVisible: Boolean);

@@ -105,8 +105,13 @@ type
   // I/O Status Block
   //
 <<<<<<< HEAD
+<<<<<<< HEAD
   _IO_STATUS_BLOCK = record
     union1: record
+=======
+  _IO_STATUS_BLOCK = packed record
+    union1: packed record
+>>>>>>> graemeg/cpstrnew
 =======
   _IO_STATUS_BLOCK = packed record
     union1: packed record
@@ -124,7 +129,11 @@ type
   // File Information structures for NtQueryInformationFile
   //
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_BASIC_INFORMATION = record
+=======
+  _FILE_BASIC_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   _FILE_BASIC_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
@@ -136,9 +145,15 @@ type
   end;
   FILE_BASIC_INFORMATION = _FILE_BASIC_INFORMATION;
 <<<<<<< HEAD
+<<<<<<< HEAD
   PFILE_BASIC_INFORMATION = ^FILE_BASIC_INFORMATION;
 
   _FILE_STANDARD_INFORMATION = record
+=======
+  PFILE_BASIC_INFORMATION = FILE_BASIC_INFORMATION;
+
+  _FILE_STANDARD_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   PFILE_BASIC_INFORMATION = FILE_BASIC_INFORMATION;
 
@@ -154,7 +169,11 @@ type
   PFILE_STANDARD_INFORMATION = ^FILE_STANDARD_INFORMATION;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_NETWORK_OPEN_INFORMATION = record
+=======
+  _FILE_NETWORK_OPEN_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   _FILE_NETWORK_OPEN_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
@@ -170,7 +189,11 @@ type
   PFILE_NETWORK_OPEN_INFORMATION = ^FILE_NETWORK_OPEN_INFORMATION;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_POSITION_INFORMATION = record
+=======
+  _FILE_POSITION_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   _FILE_POSITION_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
@@ -180,7 +203,11 @@ type
   PFILE_POSITION_INFORMATION = ^FILE_POSITION_INFORMATION;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_DISPOSITION_INFORMATION = record
+=======
+  _FILE_DISPOSITION_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   _FILE_DISPOSITION_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
@@ -190,7 +217,11 @@ type
   PFILE_DISPOSITION_INFORMATION = ^FILE_DISPOSITION_INFORMATION;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_RENAME_INFORMATION = record
+=======
+  _FILE_RENAME_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   _FILE_RENAME_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
@@ -202,6 +233,7 @@ type
   FILE_RENAME_INFORMATION = _FILE_RENAME_INFORMATION;
   PFILE_RENAME_INFORMATION = ^FILE_RENAME_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   _FILE_BOTH_DIR_INFORMATION = record
     NextEntryOffset: ULONG;
@@ -233,13 +265,20 @@ type
 =======
   _FILE_ALLOCATION_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
+=======
+  _FILE_ALLOCATION_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
     AllocationSize: LARGE_INTEGER;
   end;
   FILE_ALLOCATION_INFORMATION = _FILE_ALLOCATION_INFORMATION;
   PFILE_ALLOCATION_INFORMATION = ^FILE_ALLOCATION_INFORMATION;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   _FILE_END_OF_FILE_INFORMATION = record
+=======
+  _FILE_END_OF_FILE_INFORMATION = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   _FILE_END_OF_FILE_INFORMATION = packed record
 >>>>>>> graemeg/cpstrnew
@@ -248,6 +287,7 @@ type
   FILE_END_OF_FILE_INFORMATION = _FILE_END_OF_FILE_INFORMATION;
   PFILE_END_OF_FILE_INFORMATION = ^FILE_END_OF_FILE_INFORMATION;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   _FILE_DIRECTORY_INFORMATION = record
     NextEntryOffset: ULONG;
@@ -272,6 +312,8 @@ type
     ApcContext: PVOID;
     IoStatusBlock: PIO_STATUS_BLOCK;
     Reserved: ULONG); stdcall;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

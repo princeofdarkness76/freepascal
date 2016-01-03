@@ -49,7 +49,10 @@ const
 {$ifdef Unix}
   GDBExeName : String = 'gdbpas';
 <<<<<<< HEAD
+<<<<<<< HEAD
   GDBAltExeName = 'gdb';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   GDBIniName = '.gdbinit';
@@ -59,7 +62,10 @@ const
 {$else}
   GDBExeName : String = 'gdbpas.exe';
 <<<<<<< HEAD
+<<<<<<< HEAD
   GDBAltExeName = 'gdb.exe';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   GDBIniName = 'gdb.ini';
@@ -74,6 +80,7 @@ const
   FpcGDBIniName = 'gdb.fpc';
   GDBIniTempName : string = 'gdb4fpc.ini';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 { Dos/Windows GDB still need forward slashes }
@@ -85,6 +92,8 @@ begin
     if filename[i]='\' then
       filename[i]:='/';
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -103,7 +112,11 @@ begin
     CompilerName:=DefaultCompilerName;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   CompilerName:=filesearch(CompilerName,Dir+PathSep+GetEnvironmentVariable('PATH'));
+=======
+  CompilerName:=fsearch(CompilerName,Dir+PathSep+GetEnv('PATH'));
+>>>>>>> graemeg/cpstrnew
 =======
   CompilerName:=fsearch(CompilerName,Dir+PathSep+GetEnv('PATH'));
 >>>>>>> graemeg/cpstrnew
@@ -155,7 +168,10 @@ begin
   Writeln(fpcgdbini,'info fun INTERNALERROR');
   Writeln(fpcgdbini,'b INTERNALERROR');
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(fpcgdbini,'b GENERATEERROR');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Writeln(fpcgdbini,'b HANDLEERRORADDRFRAME');
@@ -179,12 +195,16 @@ begin
   {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   GDBExeName:=filesearch(GDBExeName,Dir+PathSep+GetEnvironmentVariable('PATH'));
   if GDBExeName='' then
     GDBExeName:=filesearch(GDBAltExeName,Dir+PathSep+GetEnvironmentVariable('PATH'));
 
   AdaptToGDB(CompilerName);
   AdaptToGDB(GDBIniTempName);
+=======
+  GDBExeName:=fsearch(GDBExeName,Dir+PathSep+GetEnv('PATH'));
+>>>>>>> graemeg/cpstrnew
 =======
   GDBExeName:=fsearch(GDBExeName,Dir+PathSep+GetEnv('PATH'));
 >>>>>>> graemeg/cpstrnew

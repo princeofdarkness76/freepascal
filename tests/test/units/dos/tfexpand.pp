@@ -109,8 +109,11 @@ const
  DirectorySeparator = '/';
  DriveSeparator = '/';
 <<<<<<< HEAD
+<<<<<<< HEAD
  FileNameCasePreserving = true;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  FileNameCaseSensitive = true;
 >>>>>>> graemeg/cpstrnew
    {$ELSE UNIX}

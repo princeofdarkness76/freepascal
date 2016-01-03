@@ -369,6 +369,7 @@ begin
   aNtStr.MaximumLength := aNtStr.Length;
   aNtStr.Buffer := GetMem(aNtStr.Length);
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to aLen-1 do
     aNtStr.Buffer[i] := aText[i];
 end;
@@ -398,10 +399,15 @@ begin
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   for i := 0 to aLen do
     aNtStr.Buffer[i] := aText[i];
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure SysFreeNtStr(var aNtStr: TNtUnicodeString);
 begin

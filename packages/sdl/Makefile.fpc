@@ -5,11 +5,14 @@
 [package]
 name=sdl
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [require]
@@ -25,6 +28,9 @@ units_win32=sdlutils
 units_powerpc_darwin=sdlutils
 units_i386_darwin=sdlutils
 units_i386_iphonesim=sdlutils
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [install]

@@ -49,6 +49,7 @@ begin
     T:=P.Targets.AddUnit('jsonscanner.pp');
       T.ResourceStrings:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('fpjsonrtti.pp');
       T.ResourceStrings:=true;
       with T.Dependencies do
@@ -57,6 +58,8 @@ begin
           AddUnit('jsonparser');
         end;
       T.ResourceStrings:=true;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

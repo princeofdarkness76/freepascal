@@ -20,6 +20,7 @@
                            Directory Handling
 *****************************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_mkdir(const s: rawbytestring);
 begin
 
@@ -36,6 +37,10 @@ begin
 =======
 procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 begin
+=======
+procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+begin
+>>>>>>> graemeg/cpstrnew
   if not assigned(s) or (len=0) or (InOutRes<>0) then exit;
   if FileIODevice.DirIO.DoMkdir <> nil then
     FileIODevice.DirIO.DoMkdir(strpas(s));
@@ -53,6 +58,9 @@ begin
   if not assigned(s) or (len=0) then exit;
   if FileIODevice.DirIO.DoChdir <> nil then
     FileIODevice.DirIO.DoChdir(strpas(s));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

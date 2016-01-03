@@ -280,6 +280,9 @@
        end;
      LPRECT = ^RECT;
      LPCRECT = ^RECT;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
      _RECT = RECT;
      LPRCECT = PRECT;

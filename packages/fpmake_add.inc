@@ -229,4 +229,7 @@
   add_xforms;
   add_zlib;
   add_zorba;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

@@ -1,6 +1,10 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000, 2001, 2003-2005, 2008-2010 Apple Inc. All rights reserved.
+=======
+ * Copyright (c) 2000, 2001, 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
  * Copyright (c) 2000, 2001, 2003-2005, 2008, 2009 Apple Inc. All rights reserved.
 >>>>>>> graemeg/cpstrnew
@@ -31,6 +35,9 @@
 =======
 {	  Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, 2004 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -87,11 +94,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -110,6 +120,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -130,6 +141,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -145,6 +158,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -153,7 +169,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -166,7 +185,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -176,6 +198,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -187,12 +210,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -206,17 +235,25 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 {$elsec}
 =======
 	{$setc TARGET_OS_MAC := TRUE}
@@ -238,6 +275,9 @@ interface
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
@@ -309,8 +349,12 @@ uses MacTypes,MacOSXPosix,CFBase,CFArray,CFRunLoop,CFPropertyList,CFDictionary;
  }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SCDynamicStoreRef = ^__SCDynamicStore; { an opaque type }
 	__SCDynamicStore = record end;
+=======
+	SCDynamicStoreRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SCDynamicStoreRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -350,6 +394,7 @@ type
 	@param store The dynamic store session.
 	@param changedKeys The list of changed keys.
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		The list includes any specific SCDynamicStore keys that
 		changed (add, update, remove, notify) since the last call
@@ -361,6 +406,8 @@ type
 		restarted and that any assumptions based on prior content
 		of the SCDynamicStore should be disgarded.
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@param info A C pointer to a user-specified block of data.
@@ -407,6 +454,7 @@ function SCDynamicStoreCreate( allocator: CFAllocatorRef; name: CFStringRef; cal
 		store maintained by the System Configuration server.
 	@param allocator The CFAllocator that should be used to allocate
 		memory for the local dynamic store object.
+<<<<<<< HEAD
 		This parameter may be NULL in which case the current
 		default CFAllocator is used. If this reference is not
 		a valid CFAllocator, the behavior is undefined.
@@ -454,6 +502,55 @@ var kSCDynamicStoreUseSessionKeys: CFStringRef; external name '_kSCDynamicStoreU
 		This parameter may be NULL in which case the current
 		default CFAllocator is used. If this reference is not
 		a valid CFAllocator, the behavior is undefined.
+=======
+		This parameter may be NULL in which case the current
+		default CFAllocator is used. If this reference is not
+		a valid CFAllocator, the behavior is undefined.
+	@param name A string that describes the name of the calling
+		process or plug-in of the caller.
+	@param storeOptions A CFDictionary containing options for the
+		dynamic store session (such as whether all keys added or set
+		into the dynamic store should be per-session keys).
+
+		Currently available options include:
+
+		<TABLE BORDER>
+		<TR>
+			<TH>key</TD>
+			<TH>value</TD>
+		</TR>
+		<TR>
+			<TD>kSCDynamicStoreUseSessionKeys</TD>
+			<TD>CFBooleanRef</TD>
+		</TR>
+		</TABLE>
+
+		A NULL value can be specified if no options are desired.
+	@param callout The function to be called when a watched value
+		in the dynamic store is changed.
+		A NULL value can be specified if no callouts are
+		desired.
+	@param context The SCDynamicStoreContext associated with the callout.
+	@result Returns a reference to the new SCDynamicStore session.
+		You must release the returned value.
+ }
+function SCDynamicStoreCreateWithOptions( allocator: CFAllocatorRef; name: CFStringRef; storeOptions: CFDictionaryRef; callout: SCDynamicStoreCallBack; var context: SCDynamicStoreContext ): SCDynamicStoreRef; external name '_SCDynamicStoreCreateWithOptions';
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)
+
+var kSCDynamicStoreUseSessionKeys: CFStringRef; external name '_kSCDynamicStoreUseSessionKeys'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_NA) *)	{ CFBoolean }
+
+{!
+	@function SCDynamicStoreCreateRunLoopSource
+	@discussion Creates a CFRunLoopSource object that can be added to the
+		application's run loop.  All dynamic store notifications are
+		delivered using this run loop source.
+	@param allocator The CFAllocator that should be used to allocate
+		memory for this run loop source.
+		This parameter may be NULL in which case the current
+		default CFAllocator is used. If this reference is not
+		a valid CFAllocator, the behavior is undefined.
+>>>>>>> graemeg/cpstrnew
 	@param store A reference to the dynamic store session.
 	@param order On platforms which support it, for source versions
 		which support it, this parameter determines the order in
@@ -471,6 +568,10 @@ function SCDynamicStoreCreateRunLoopSource( allocator: CFAllocatorRef; store: SC
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_NA) *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$ifc not TARGET_OS_IPHONE}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifc not TARGET_OS_IPHONE}
 >>>>>>> graemeg/cpstrnew
@@ -487,6 +588,10 @@ function SCDynamicStoreCreateRunLoopSource( allocator: CFAllocatorRef; store: SC
 function SCDynamicStoreSetDispatchQueue( store: SCDynamicStoreRef; queue: dispatch_queue_t ): Boolean; external name '_SCDynamicStoreSetDispatchQueue';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_NA) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$endc} {not TARGET_OS_IPHONE}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endc} {not TARGET_OS_IPHONE}
 >>>>>>> graemeg/cpstrnew

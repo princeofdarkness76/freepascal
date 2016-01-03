@@ -73,15 +73,21 @@ var
     _itemArray: id;
     _extra: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __mFlags: record
       case byte of
        0: (_anonbitfield_NSMenu0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __mFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMenu0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         noAutoenable: 0..1;
         inMain: 0..1;
@@ -100,7 +106,10 @@ var
         allowsDifferentSelection: 0..1;
         RESERVED: 0..((1 shl 15)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

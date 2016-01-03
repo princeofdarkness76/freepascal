@@ -44,6 +44,9 @@ Type
   TAnsiRec = Record
 =======
   TAnsiRec = Packed Record
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     CodePage    : TSystemCodePage;
     ElementSize : Word;
@@ -53,6 +56,7 @@ Type
 {$endif CPU64}
     Ref         : SizeInt;
     Len         : SizeInt;
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 
@@ -67,11 +71,20 @@ Const
   AnsiRecLen = SizeOf(TAnsiRec);
   AnsiFirstOff = SizeOf(TAnsiRec)-1;
 >>>>>>> graemeg/cpstrnew
+=======
+    First       : Char;
+  end;
+
+Const
+  AnsiRecLen = SizeOf(TAnsiRec);
+  AnsiFirstOff = SizeOf(TAnsiRec)-1;
+>>>>>>> graemeg/cpstrnew
 
 {****************************************************************************
                     Internal functions, not in interface.
 ****************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef FPC_HAS_TRANSLATEPLACEHOLDERCP}
 {$define FPC_HAS_TRANSLATEPLACEHOLDERCP}
@@ -119,6 +132,8 @@ end;
 {$define FPC_HAS_NEWANSISTR}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 Function NewAnsiString(Len : SizeInt) : Pointer;
 {
   Allocate a new AnsiString on the heap.
@@ -136,8 +151,13 @@ begin
      PAnsiRec(P)^.CodePage:=DefaultSystemCodePage;
      PAnsiRec(P)^.ElementSize:=SizeOf(AnsiChar);
 <<<<<<< HEAD
+<<<<<<< HEAD
      inc(p,AnsiFirstOff);         { Points to string now }
      PAnsiChar(P)^:=#0;           { Terminating #0 }
+=======
+     PAnsiRec(P)^.First:=#0;      { Terminating #0 }
+     inc(p,AnsiFirstOff);         { Points to string now }
+>>>>>>> graemeg/cpstrnew
 =======
      PAnsiRec(P)^.First:=#0;      { Terminating #0 }
      inc(p,AnsiFirstOff);         { Points to string now }
@@ -178,9 +198,15 @@ Begin
     exit;
   { check for constant strings ...}
 <<<<<<< HEAD
+<<<<<<< HEAD
   p:=PAnsiRec(S-AnsiFirstOff);
   s:=nil;
   If p^.ref<0 then exit;
+=======
+  l:=@PAnsiRec(S-AnsiFirstOff)^.Ref;
+  If l^<0 then 
+    exit;
+>>>>>>> graemeg/cpstrnew
 =======
   l:=@PAnsiRec(S-AnsiFirstOff)^.Ref;
   If l^<0 then 
@@ -318,6 +344,9 @@ begin
       widestringmanager.Unicode2AnsiMoveProc(PUnicodeChar(Pointer(U)),DestS,DestCP,Length(U));
       exit;
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   { only assign if s1 or s2 is empty }
   if (S1='') then
@@ -360,8 +389,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_ANSISTR_CONCAT_MULTI}
 {$define FPC_HAS_ANSISTR_CONCAT_MULTI}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure fpc_AnsiStr_Concat_multi (var DestS:RawByteString;const sarr:array of RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); compilerproc;
@@ -373,17 +405,23 @@ Var
   Size,NewLen,
   OldDestLen  : SizeInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
   destcopy    : pointer;
   U           : UnicodeString;
   DestCP,
   tmpCP       : TSystemCodePage;
   sameCP      : Boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   destcopy    : pointer;  
   DestCP      : TSystemCodePage;
   U           : UnicodeString;
   sameCP      : Boolean;
   tmpStr      : RawByteString;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   if high(sarr)=0 then
@@ -393,6 +431,7 @@ begin
     end;
 {$ifdef FPC_HAS_CPSTRING}
 <<<<<<< HEAD
+<<<<<<< HEAD
   DestCP:=cp;
   if DestCp=CP_NONE then
     DestCP:=DefaultSystemCodePage;
@@ -400,6 +439,8 @@ begin
   DestCP:=StringCodePage(DestS);
 {$endif FPC_HAS_CPSTRING}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if (Pointer(DestS)=nil) then
     DestCP:=cp
   else
@@ -534,7 +575,12 @@ begin
   fpc_AnsiStr_Decr_Ref(destcopy);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_ANSISTR_CONCAT_MULTI}
+=======
+{$endif STR_CONCAT_PROCS}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif STR_CONCAT_PROCS}
 
@@ -563,10 +609,13 @@ end;
 
 {$ifdef FPC_HAS_CPSTRING}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_ANSISTR_TO_ANSISTR}
 {$define FPC_HAS_ANSISTR_TO_ANSISTR}
 Function fpc_AnsiStr_To_AnsiStr (const S : RawByteString;cp : TSystemCodePage): RawByteString; [Public, alias: 'FPC_ANSISTR_TO_ANSISTR']; compilerproc;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Function fpc_AnsiStr_To_AnsiStr (const S : RawByteString;cp : TSystemCodePage): RawByteString; [Public, alias: 'FPC_ANSISTR_TO_ANSISTR']; compilerproc;
 {
   Converts an AnsiString to an AnsiString taking code pages into care
@@ -592,6 +641,9 @@ Function fpc_AnsiStr_To_AnsiStr (const S : RawByteString{$ifdef FPC_HAS_CPSTRING
 { which is what the old helper was, so we don't need an extra implementation }
 { of the old helper (JM)                                                     }
 function fpc_AnsiStr_To_ShortStr (high_of_res: SizeInt;const S2 : Ansistring): shortstring; [Public, alias: 'FPC_ANSISTR_TO_SHORTSTR']; compilerproc;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
   Converts an AnsiString to an AnsiString taking code pages into care
@@ -731,10 +783,13 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_CHARARRAY_TO_ANSISTR}
 {$define FPC_HAS_CHARARRAY_TO_ANSISTR}
 Function fpc_CharArray_To_AnsiStr(const arr: array of ansichar; {$ifdef FPC_HAS_CPSTRING}cp : TSystemCodePage;{$endif FPC_HAS_CPSTRING}zerobased: boolean = true): RawByteString; compilerproc;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Function fpc_CharArray_To_AnsiStr(const arr: array of char; zerobased: boolean = true): ansistring; compilerproc;
 >>>>>>> graemeg/cpstrnew
 var
@@ -791,8 +846,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_ANSISTR_COMPARE}
 {$define FPC_HAS_ANSISTR_COMPARE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Function fpc_AnsiStr_Compare(const S1,S2 : RawByteString): SizeInt;[Public,Alias : 'FPC_ANSISTR_COMPARE'];  compilerproc;
@@ -808,6 +866,10 @@ Var
   cp1,cp2 : TSystemCodePage;
   r1,r2 : RawByteString;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  u1,u2 : UTF8String;
+>>>>>>> graemeg/cpstrnew
 =======
   u1,u2 : UTF8String;
 >>>>>>> graemeg/cpstrnew
@@ -818,6 +880,7 @@ begin
       exit;
     end;
   if (pointer(S1)=nil) then
+<<<<<<< HEAD
     begin
       result:=-Length(S2);
       exit;
@@ -832,6 +895,20 @@ begin
   cp2:=TranslatePlaceholderCP(StringCodePage(S2));
   if cp1=cp2 then
 =======
+  cp1:=StringCodePage(S1);
+  cp2:=StringCodePage(S2);
+  if (cp1=cp2) then
+>>>>>>> graemeg/cpstrnew
+=======
+    begin
+      result:=-Length(S2);
+      exit;
+    end;
+  if (pointer(S2)=nil) then
+    begin
+      result:=Length(S1);
+      exit;
+    end;
   cp1:=StringCodePage(S1);
   cp2:=StringCodePage(S2);
   if (cp1=cp2) then
@@ -854,12 +931,15 @@ begin
     begin
       r1:=S1;
 <<<<<<< HEAD
+<<<<<<< HEAD
       r2:=S2;
       //convert them to utf8 then compare
       SetCodePage(r1,65001);
       SetCodePage(r2,65001);
       Result:=fpc_AnsiStr_Compare(r1,r2);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       if (cp1=$ffff) then
         SetCodePage(r1,DefaultSystemCodePage,false);
       r2:=S2;
@@ -869,15 +949,21 @@ begin
       SetCodePage(r1,65001);
       SetCodePage(r2,65001);
       Result := fpc_AnsiStr_Compare(r1,r2);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
 end;
 {$endif FPC_HAS_ANSISTR_COMPARE}
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 {$ifndef FPC_HAS_ANSISTR_COMPARE_EQUAL}
 {$define FPC_HAS_ANSISTR_COMPARE_EQUAL}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Function fpc_AnsiStr_Compare_equal(const S1,S2 : RawByteString): SizeInt;[Public,Alias : 'FPC_ANSISTR_COMPARE_EQUAL'];  compilerproc;
@@ -898,6 +984,7 @@ begin
       exit;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   { don't compare strings if one of them is empty }
   if (pointer(S1)=nil) then
     begin
@@ -917,6 +1004,11 @@ begin
   cp2:=StringCodePage(S2);
   if (cp1=cp2) then
 >>>>>>> graemeg/cpstrnew
+=======
+  cp1:=StringCodePage(S1);
+  cp2:=StringCodePage(S2);
+  if (cp1=cp2) then
+>>>>>>> graemeg/cpstrnew
     begin
       Maxi:=Length(S1);
       temp:=Length(S2);
@@ -929,6 +1021,7 @@ begin
     begin
       r1:=S1;
 <<<<<<< HEAD
+<<<<<<< HEAD
       r2:=S2;
       //convert them to utf8 then compare
       SetCodePage(r1,65001);
@@ -939,10 +1032,19 @@ begin
       if Result = 0 then
         if MaxI>0 then
           result:=CompareByte(r1[1],r2[1],MaxI);
+=======
+      if (cp1=$ffff) then
+        SetCodePage(r1,DefaultSystemCodePage,false);
+      r2:=S2;
+      if (cp2=$ffff) then
+        SetCodePage(r2,DefaultSystemCodePage,false);
+      Result:=widestringmanager.CompareTextUnicodeStringProc(UnicodeString(r1),UnicodeString(r2));
+>>>>>>> graemeg/cpstrnew
     end;
 end;
 {$endif FPC_HAS_ANSISTR_COMPARE_EQUAL}
 
+<<<<<<< HEAD
 {$ifndef FPC_HAS_ANSISTR_RANGECHECK}
 {$define FPC_HAS_ANSISTR_RANGECHECK}
 Procedure fpc_AnsiStr_RangeCheck(p: Pointer; index: SizeInt);[Public,Alias : 'FPC_ANSISTR_RANGECHECK'];  compilerproc;
@@ -961,18 +1063,26 @@ end;
 
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 Procedure fpc_AnsiStr_CheckRange(p: Pointer; index: SizeInt);[Public,Alias : 'FPC_ANSISTR_RANGECHECK'];  compilerproc;
 begin
   if (p=nil) or (index>PAnsiRec(p-AnsiFirstOff)^.Len) or (Index<1) then
     HandleErrorFrame(201,get_frame);
 >>>>>>> graemeg/cpstrnew
 end;
+<<<<<<< HEAD
 {$endif FPC_HAS_ANSISTR_RANGECHECK}
 
 <<<<<<< HEAD
 {$ifndef FPC_HAS_ANSISTR_SETLENGTH}
 {$define FPC_HAS_ANSISTR_SETLENGTH}
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
 >>>>>>> graemeg/cpstrnew
 Procedure fpc_AnsiStr_SetLength (Var S : RawByteString; l : SizeInt{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING});[Public,Alias : 'FPC_ANSISTR_SETLENGTH'];  compilerproc;
 {
@@ -1029,6 +1139,9 @@ begin
           if (lena>lens) or ((lens>32) and (lena<=(lens div 2))) then
             reallocmem(pointer(S),AnsiRecLen+L);
           Inc(Pointer(S),AnsiFirstOff);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         end
       else
@@ -1058,6 +1171,9 @@ begin
           If (PAnsiRec(Pointer(S)-AnsiFirstOff)^.Ref>0) and
             declocked(PAnsiRec(Pointer(S)-AnsiFirstOff)^.Ref) then
             freemem(PAnsiRec(Pointer(s)-AnsiFirstOff));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           Pointer(S):=Temp;
         end;
@@ -1197,6 +1313,9 @@ begin
 end;
 
 Function Fpc_Ansistr_Copy (Const S : RawByteString; Index,Size : SizeInt) : AnsiString;compilerproc;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var
   ResultAddress : Pointer;
@@ -1219,6 +1338,9 @@ begin
         Move(Pointer(Pointer(S)+index)^,ResultAddress^,Size);
 =======
         Move (Pointer(Pointer(S)+index)^,ResultAddress^,Size);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         PByte(ResultAddress+Size)^:=0;
         PAnsiRec(ResultAddress-AnsiFirstOff)^.Len:=Size;
@@ -1231,10 +1353,14 @@ end;
 {$endif FPC_HAS_ANSISTR_COPY}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifndef FPC_HAS_POS_SHORTSTR_ANSISTR}
 {$define FPC_HAS_POS_SHORTSTR_ANSISTR}
 Function Pos(Const Substr : ShortString; Const Source : RawByteString; Offset : Sizeint = 1) : SizeInt;
+=======
+Function Pos (Const Substr : ShortString; Const Source : RawByteString) : SizeInt;
+>>>>>>> graemeg/cpstrnew
 =======
 Function Pos (Const Substr : ShortString; Const Source : RawByteString) : SizeInt;
 >>>>>>> graemeg/cpstrnew
@@ -1266,9 +1392,13 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_POS_ANSISTR_ANSISTR}
 {$define FPC_HAS_POS_ANSISTR_ANSISTR}
 Function Pos(Const Substr : RawByteString; Const Source : RawByteString; Offset : Sizeint = 1) : SizeInt;
+=======
+Function Pos (Const Substr : RawByteString; Const Source : RawByteString) : SizeInt;
+>>>>>>> graemeg/cpstrnew
 =======
 Function Pos (Const Substr : RawByteString; Const Source : RawByteString) : SizeInt;
 >>>>>>> graemeg/cpstrnew
@@ -1305,7 +1435,11 @@ end;
 { using pos(char,pchar) will always call the shortstring version }
 { (exact match for first argument), also with $h+ (JM)           }
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Pos(c : AnsiChar; Const s : RawByteString; Offset : Sizeint = 1) : SizeInt;
+=======
+Function Pos (c : Char; Const s : RawByteString) : SizeInt;
+>>>>>>> graemeg/cpstrnew
 =======
 Function Pos (c : Char; Const s : RawByteString) : SizeInt;
 >>>>>>> graemeg/cpstrnew
@@ -1537,8 +1671,12 @@ end;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_STR_ENUM_INTERN}
 procedure fpc_ansistr_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out s:RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING});[public,alias:'FPC_ANSISTR_ENUM'];compilerproc; inline;
+=======
+procedure fpc_ansistr_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out s:ansistring);[public,alias:'FPC_ANSISTR_ENUM'];compilerproc; {$IFNDEF VER2_0} Inline; {$ENDIF}
+>>>>>>> graemeg/cpstrnew
 =======
 procedure fpc_ansistr_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out s:ansistring);[public,alias:'FPC_ANSISTR_ENUM'];compilerproc; {$IFNDEF VER2_0} Inline; {$ENDIF}
 >>>>>>> graemeg/cpstrnew
@@ -1578,6 +1716,18 @@ function fpc_val_enum_ansistr(str2ordindex:pointer;const s:RawByteString;out cod
 end;
 
 
+<<<<<<< HEAD
+=======
+procedure fpc_ansistr_bool(b : boolean;len:sizeint;out s:ansistring);[public,alias:'FPC_ANSISTR_BOOL'];compilerproc; {$IFNDEF VER2_0} Inline; {$ENDIF}
+var
+  ss:shortstring;
+begin
+  fpc_shortstr_bool(b,len,ss);
+  s:=ss;
+end;
+
+
+>>>>>>> graemeg/cpstrnew
 function fpc_val_enum_ansistr(str2ordindex:pointer;const s:ansistring;out code:valsint):longint; [public, alias:'FPC_VAL_ENUM_ANSISTR']; compilerproc;
 >>>>>>> graemeg/cpstrnew
 
@@ -1792,6 +1942,13 @@ begin
     end;
 end;
 
+Procedure SetString (Out S : AnsiString; Buf : PWideChar; Len : SizeInt);
+begin
+  if (Buf<>nil) and (Len>0) then
+    widestringmanager.Wide2AnsiMoveProc(Buf,S,DefaultSystemCodePage,Len)
+  else
+    SetLength(S, Len);
+end;
 
 {$ifndef FPC_HAS_UPCASE_ANSISTR}
 {$define FPC_HAS_UPCASE_ANSISTR}
@@ -1817,11 +1974,16 @@ begin
     result[i] := lowercase(s[i]);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_LOWERCASE_ANSISTR}
 
 
 {$ifndef FPC_HAS_ANSISTR_STRINGCODEPAGE}
 {$define FPC_HAS_ANSISTR_STRINGCODEPAGE}
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -1836,11 +1998,16 @@ function StringCodePage(const S: RawByteString): TSystemCodePage; overload;
       Result:=DefaultSystemCodePage;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_ANSISTR_STRINGCODEPAGE}
 
 
 {$ifndef FPC_HAS_ANSISTR_STRINGELEMENTSIZE}
 {$define FPC_HAS_ANSISTR_STRINGELEMENTSIZE}
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -1853,11 +2020,16 @@ function StringElementSize(const S: RawByteString): Word; overload;
       Result:=SizeOf(AnsiChar);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_ANSISTR_STRINGELEMENTSIZE}
 
 
 {$ifndef FPC_HAS_ANSISTR_STRINGREFCOUNT}
 {$define FPC_HAS_ANSISTR_STRINGREFCOUNT}
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -1870,6 +2042,7 @@ function StringRefCount(const S: RawByteString): SizeInt; overload;
       Result:=0;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_ANSISTR_STRINGREFCOUNT}
 
 
@@ -1879,6 +2052,8 @@ procedure InternalSetCodePage(var s : RawByteString; CodePage : TSystemCodePage;
   begin
     if Convert then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 procedure SetCodePage(var s : RawByteString; CodePage : TSystemCodePage; Convert : Boolean = True);
@@ -1886,6 +2061,9 @@ procedure SetCodePage(var s : RawByteString; CodePage : TSystemCodePage; Convert
     if (S='') or (StringCodePage(S)=CodePage) then
       exit
     else if Convert then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       begin
 {$ifdef FPC_HAS_CPSTRING}
@@ -1902,6 +2080,7 @@ procedure SetCodePage(var s : RawByteString; CodePage : TSystemCodePage; Convert
       end;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { use this wrapper for the simple case to avoid the generation of a temp. ansistring which causes
@@ -1935,10 +2114,13 @@ procedure SetCodePage(var s : RawByteString; CodePage : TSystemCodePage; Convert
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure SetMultiByteConversionCodePage(CodePage: TSystemCodePage);
   begin
     DefaultSystemCodePage:=CodePage;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -1953,5 +2135,7 @@ procedure SetMultiByteRTLFileSystemCodePage(CodePage: TSystemCodePage);
     DefaultRTLFileSystemCodePage:=CodePage;
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

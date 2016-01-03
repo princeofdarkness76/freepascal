@@ -64,17 +64,23 @@ type
     _lastCell: id;
     _lastCellFrame: NSRect;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(7)-1] of id;
     __tfcFlags: record
       case byte of
        0: (_anonbitfield_NSTokenFieldCell0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         _reserved: array[0..6] of id;
     __tfcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTokenFieldCell0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _style: 0..((1 shl 4)-1);
         
@@ -88,7 +94,10 @@ type
         
         __reserved: 0..((1 shl 20)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

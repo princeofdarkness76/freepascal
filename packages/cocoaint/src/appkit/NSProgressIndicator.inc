@@ -78,15 +78,21 @@ const
     _reserved: id;
      {garbage collector: volatile }
 <<<<<<< HEAD
+<<<<<<< HEAD
     __progressIndicatorFlags: record
       case byte of
        0: (_anonbitfield_NSProgressIndicator0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __progressIndicatorFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSProgressIndicator0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         isSpinning: 0..1;
         isVector: 0..1;
@@ -104,7 +110,10 @@ const
         _lastFrame: 0..((1 shl 8)-1);
         RESERVED: 0..((1 shl 8)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

@@ -1,6 +1,9 @@
 { %target=linux }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %needlibrary }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { %norun }

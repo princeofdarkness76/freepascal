@@ -414,6 +414,9 @@ begin
 =======
   Flags:=0;
   Result:=fprecv(handle,@Buffer,count,flags);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -425,6 +428,9 @@ begin
 =======
   Flags:=0;
   Result:=fpsend(handle,@Buffer,count,flags);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -561,9 +567,12 @@ begin
           begin
           Inc (NoConnections);
 <<<<<<< HEAD
+<<<<<<< HEAD
           DoConnect(Stream);
           end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           If FAccepting and DoConnectQuery(NewSocket) Then
             begin
             Stream:=SockToStream(NewSocket);
@@ -750,6 +759,9 @@ begin
   Faddr.family := AF_INET;
   Faddr.port := ShortHostToNet(FPort);
   Faddr.addr := LongWord(StrToNetAddr(FHost));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if  Sockets.fpBind(FSocket, @FAddr, Sizeof(FAddr))<>0 then
     raise ESocketError.Create(seBindFailed, [IntToStr(FPort)]);
@@ -772,6 +784,7 @@ Var
 begin
   L:=SizeOf(FAddr);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF UNIX}
   R:=ESysEINTR;
   While (R=ESysEINTR) do
@@ -781,6 +794,8 @@ begin
    R:=SocketError;
    end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   Result:=Sockets.fpAccept(Socket,@Faddr,@L);
   If Result<0 then
 >>>>>>> graemeg/cpstrnew
@@ -868,10 +883,13 @@ begin
   FPort:=APort;
   S:=fpSocket(AF_INET,SOCK_STREAM,0);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited Create(S,AHandler);
   if (AHandler=Nil) then // Backwards compatible behaviour.
     Connect;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   DoConnect(S);
   Inherited Create(S);
 >>>>>>> graemeg/cpstrnew

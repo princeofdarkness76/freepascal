@@ -1,8 +1,14 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 1998-2012 by Florian Klaempfl and David Zhang
 
     This unit implements the code generator for MIPS
+=======
+    Copyright (c) 1998-2009 by Florian Klaempfl and David Zhang
+
+    This unit implements the code generator for the MIPSEL
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 1998-2009 by Florian Klaempfl and David Zhang
 
@@ -34,7 +40,11 @@ interface
 uses
   globtype, parabase,
 <<<<<<< HEAD
+<<<<<<< HEAD
   cgbase, cgutils, cgobj, cg64f32, cpupara,
+=======
+  cgbase, cgutils, cgobj, cg64f32,
+>>>>>>> graemeg/cpstrnew
 =======
   cgbase, cgutils, cgobj, cg64f32,
 >>>>>>> graemeg/cpstrnew
@@ -44,6 +54,7 @@ uses
   rgcpu;
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
   TCGMIPS = class(tcg)
   public
@@ -58,6 +69,8 @@ type
 
     { parameter }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TCgMPSel = class(tcg)
   public
     procedure init_register_allocators; override;
@@ -74,11 +87,15 @@ type
     procedure a_load_const_cgpara(list: tasmlist; size: tcgsize; a: aint; const paraloc: TCGPara); override;
     procedure a_load_ref_cgpara(list: tasmlist; sz: tcgsize; const r: TReference; const paraloc: TCGPara); override;
     procedure a_loadaddr_ref_cgpara(list: tasmlist; const r: TReference; const paraloc: TCGPara); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure a_loadfpu_reg_cgpara(list: tasmlist; size: tcgsize; const r: tregister; const paraloc: TCGPara); override;
     procedure a_loadfpu_ref_cgpara(list: tasmlist; size: tcgsize; const ref: treference; const paraloc: TCGPara); override;
     procedure a_call_name(list: tasmlist; const s: string; weak : boolean); override;
     procedure a_call_reg(list: tasmlist; Reg: TRegister); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure a_call_sym_pic(list: tasmlist; sym: tasmsymbol);
     { General purpose instructions }
@@ -92,6 +109,8 @@ type
     procedure a_load_const_reg(list: tasmlist; size: tcgsize; a: tcgint; reg: tregister); override;
     procedure a_load_const_ref(list: tasmlist; size: tcgsize; a: tcgint; const ref: TReference); override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     { General purpose instructions }
     procedure a_op_const_reg(list: tasmlist; Op: TOpCG; size: tcgsize; a: aint; reg: TRegister); override;
     procedure a_op_reg_reg(list: tasmlist; Op: TOpCG; size: TCGSize; src, dst: TRegister); override;
@@ -102,6 +121,9 @@ type
     { move instructions }
     procedure a_load_const_reg(list: tasmlist; size: tcgsize; a: aint; reg: tregister); override;
     procedure a_load_const_ref(list: tasmlist; size: tcgsize; a: aint; const ref: TReference); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure a_load_reg_ref(list: tasmlist; FromSize, ToSize: TCgSize; reg: TRegister; const ref: TReference); override;
     procedure a_load_ref_reg(list: tasmlist; FromSize, ToSize: TCgSize; const ref: TReference; reg: tregister); override;
@@ -113,6 +135,7 @@ type
     procedure a_loadfpu_reg_ref(list: tasmlist; fromsize, tosize: tcgsize; reg: tregister; const ref: TReference); override;
     { comparison operations }
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure a_cmp_const_reg_label(list: tasmlist; size: tcgsize; cmp_op: topcmp; a: tcgint; reg: tregister; l: tasmlabel); override;
     procedure a_cmp_reg_reg_label(list: tasmlist; size: tcgsize; cmp_op: topcmp; reg1, reg2: tregister; l: tasmlabel); override;
     procedure a_jmp_flags(list: tasmlist; const f: TResFlags; l: tasmlabel); override;
@@ -121,16 +144,22 @@ type
     procedure a_jmp_name(list: tasmlist; const s: string); override;
     procedure a_mul_reg_reg_pair(list: tasmlist; size: tcgsize; src1,src2,dstlo,dsthi: tregister); override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure a_cmp_const_reg_label(list: tasmlist; size: tcgsize; cmp_op: topcmp; a: aint; reg: tregister; l: tasmlabel); override;
     procedure a_cmp_reg_reg_label(list: tasmlist; size: tcgsize; cmp_op: topcmp; reg1, reg2: tregister; l: tasmlabel); override;
     procedure a_jmp_always(List: tasmlist; l: TAsmLabel); override;
     procedure a_jmp_name(list: tasmlist; const s: string); override;
     procedure a_jmp_cond(list: tasmlist; cond: TOpCmp; l: tasmlabel); { override;}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure g_overflowCheck(List: tasmlist; const Loc: TLocation; def: TDef); override;
     procedure g_overflowCheck_loc(List: tasmlist; const Loc: TLocation; def: TDef; ovloc: tlocation); override;
     procedure g_proc_entry(list: tasmlist; localsize: longint; nostackframe: boolean); override;
     procedure g_proc_exit(list: tasmlist; parasize: longint; nostackframe: boolean); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure g_concatcopy(list: tasmlist; const Source, dest: treference; len: tcgint); override;
     procedure g_concatcopy_unaligned(list: tasmlist; const Source, dest: treference; len: tcgint); override;
@@ -138,10 +167,15 @@ type
     procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: tcgint); override;
     procedure g_profilecode(list: TAsmList);override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure g_concatcopy(list: tasmlist; const Source, dest: treference; len: aint); override;
     procedure g_concatcopy_unaligned(list: tasmlist; const Source, dest: treference; len: aint); override;
     procedure g_concatcopy_move(list: tasmlist; const Source, dest: treference; len: aint);
     procedure g_intf_wrapper(list: tasmlist; procdef: tprocdef; const labelname: string; ioffset: longint); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 
@@ -161,6 +195,7 @@ type
   procedure create_codegen;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   const
       TOpCmp2AsmCond : array[topcmp] of TAsmCond=(C_NONE,
         C_EQ,C_GT,C_LT,C_GE,C_LE,C_NE,C_LEU,C_LTU,C_GEU,C_GTU
@@ -168,11 +203,14 @@ type
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 implementation
 
 uses
   globals, verbose, systems, cutils,
   paramgr, fmodule,
+<<<<<<< HEAD
 <<<<<<< HEAD
   symtable, symsym,
   tgobj,
@@ -296,6 +334,8 @@ begin
   if (a < simm16lo+ord(negate)) or
     (a > simm16hi+ord(negate)) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   tgobj,
   procinfo, cpupi;
 
@@ -668,6 +708,9 @@ var
 begin
   if (a < simm16lo) or
     (a > simm16hi) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   begin
     tmpreg := GetIntRegister(list, OS_INT);
@@ -676,11 +719,15 @@ begin
   end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
   begin
     if negate then
       a:=-a;
     list.concat(taicpu.op_reg_reg_const(op2, dst, src, a));
   end;
+=======
+    list.concat(taicpu.op_reg_reg_const(op, dst, src, a));
+>>>>>>> graemeg/cpstrnew
 =======
     list.concat(taicpu.op_reg_reg_const(op, dst, src, a));
 >>>>>>> graemeg/cpstrnew
@@ -691,6 +738,7 @@ end;
                               Assembler code
 ****************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.init_register_allocators;
 begin
@@ -726,6 +774,8 @@ begin
     [RS_F0,RS_F2,RS_F4,RS_F6, RS_F8,RS_F10,RS_F12,RS_F14,
      RS_F16,RS_F18,RS_F20,RS_F22, RS_F24,RS_F26,RS_F28,RS_F30],
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.init_register_allocators;
 begin
   inherited init_register_allocators;
@@ -750,6 +800,9 @@ begin
     RS_F8, RS_F10, RS_F12, RS_F14,
     RS_F16, RS_F18, RS_F20, RS_F22,
     RS_F24, RS_F26, RS_F28, RS_F30],
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     first_fpu_imreg, []);
 end;
@@ -757,7 +810,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.done_register_allocators;
+=======
+procedure TCgMPSel.done_register_allocators;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TCgMPSel.done_register_allocators;
 >>>>>>> graemeg/cpstrnew
@@ -769,8 +826,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.a_loadfpu_ref_cgpara(list: tasmlist; size: tcgsize; const ref: treference; const paraloc: TCGPara);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TCgMPSel.getfpuregister(list: tasmlist; size: Tcgsize): Tregister;
 begin
   if size = OS_F64 then
@@ -865,15 +925,21 @@ end;
 
 
 procedure TCgMPSel.a_loadfpu_ref_cgpara(list: tasmlist; size: tcgsize; const ref: treference; const paraloc: TCGPara);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var
   href, href2: treference;
   hloc: pcgparalocation;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TODO: inherited cannot deal with individual locations for each of OS_32 registers.
     Must change parameter management to allocate a single 64-bit register pair,
     then this method can be removed.  }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   href := ref;
@@ -885,6 +951,7 @@ begin
       LOC_REGISTER:
         a_load_ref_reg(list, hloc^.size, hloc^.size, href, hloc^.Register);
 <<<<<<< HEAD
+<<<<<<< HEAD
       LOC_FPUREGISTER,LOC_CFPUREGISTER :
         a_loadfpu_ref_reg(list,hloc^.size,hloc^.size,href,hloc^.register);
       LOC_REFERENCE:
@@ -895,11 +962,16 @@ begin
           g_concatcopy(list,ref,href2,tcgsize2size[size]);
         end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       LOC_REFERENCE:
       begin
         reference_reset_base(href2, hloc^.reference.index, hloc^.reference.offset, sizeof(aint));
         a_load_ref_ref(list, hloc^.size, hloc^.size, href, href2);
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       else
         internalerror(200408241);
@@ -910,6 +982,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_loadfpu_reg_cgpara(list: tasmlist; size: tcgsize; const r: tregister; const paraloc: TCGPara);
 var
@@ -922,11 +995,16 @@ begin
     end;
   tg.GetTemp(list, TCGSize2Size[size], TCGSize2Size[size], tt_normal, href);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_loadfpu_reg_cgpara(list: tasmlist; size: tcgsize; const r: tregister; const paraloc: TCGPara);
 var
   href: treference;
 begin
   tg.GetTemp(list, TCGSize2Size[size], sizeof(aint), tt_normal, href);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   a_loadfpu_reg_ref(list, size, size, r, href);
   a_loadfpu_ref_cgpara(list, size, href, paraloc);
@@ -934,6 +1012,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_call_sym_pic(list: tasmlist; sym: tasmsymbol);
 var
@@ -1007,6 +1086,8 @@ begin
       list.concat(taicpu.op_reg_ref(A_LW,NR_GP,TMIPSProcinfo(current_procinfo).save_gp_ref));
     end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_call_name(list: tasmlist; const s: string; weak: boolean);
 begin
   list.concat(taicpu.op_sym(A_JAL,current_asmdata.RefAsmSymbol(s)));
@@ -1020,6 +1101,9 @@ begin
   list.concat(taicpu.op_reg(A_JALR, reg));
   { Delay slot }
   list.concat(taicpu.op_none(A_NOP));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -1027,11 +1111,14 @@ end;
 {********************** load instructions ********************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.a_load_const_reg(list: tasmlist; size: TCGSize; a: tcgint; reg: TRegister);
 begin
   if (a = 0) then
     a_load_reg_reg(list, OS_INT, OS_INT, NR_R0, reg)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_load_const_reg(list: tasmlist; size: TCGSize; a: aint; reg: TRegister);
 begin
   if (a = 0) then
@@ -1039,12 +1126,16 @@ begin
   { LUI allows to set the upper 16 bits, so we'll take full advantage of it }
   else if (a and aint($ffff)) = 0 then
     list.concat(taicpu.op_reg_const(A_LUI, reg, a shr 16))
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   else if (a >= simm16lo) and (a <= simm16hi) then
     list.concat(taicpu.op_reg_reg_const(A_ADDIU, reg, NR_R0, a))
   else if (a>=0) and (a <= 65535) then
     list.concat(taicpu.op_reg_reg_const(A_ORI, reg, NR_R0, a))
   else
+<<<<<<< HEAD
 <<<<<<< HEAD
     begin
       list.concat(taicpu.op_reg_const(A_LUI, reg, aint(a) shr 16));
@@ -1056,6 +1147,8 @@ end;
 
 procedure TCGMIPS.a_load_const_ref(list: tasmlist; size: tcgsize; a: tcgint; const ref: TReference);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   begin
     list.concat(taicpu.op_reg_const(A_LI, reg, a ));
   end;
@@ -1063,6 +1156,9 @@ end;
 
 
 procedure TCgMPSel.a_load_const_ref(list: tasmlist; size: tcgsize; a: aint; const ref: TReference);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   if a = 0 then
@@ -1073,6 +1169,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.a_load_reg_ref(list: tasmlist; FromSize, ToSize: TCGSize; reg: tregister; const Ref: TReference);
 var
   op: tasmop;
@@ -1082,6 +1179,8 @@ begin
     a_load_reg_reg(list,fromsize,tosize,reg,reg);
   case tosize of
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_load_reg_ref(list: tasmlist; FromSize, ToSize: TCGSize; reg: tregister; const Ref: TReference);
 var
   op: tasmop;
@@ -1091,6 +1190,9 @@ begin
     fromsize := tosize;
   case fromsize of
     { signed integer registers }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     OS_8,
     OS_S8:
@@ -1105,6 +1207,7 @@ begin
       InternalError(2002122100);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   href:=ref;
   make_simple_ref(list,href);
   list.concat(taicpu.op_reg_ref(op,reg,href));
@@ -1116,6 +1219,8 @@ var
   op: tasmop;
   href: treference;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   handle_load_store(list, True, op, reg, ref);
 end;
 
@@ -1123,6 +1228,9 @@ end;
 procedure TCgMPSel.a_load_ref_reg(list: tasmlist; FromSize, ToSize: TCgSize; const ref: TReference; reg: tregister);
 var
   op: tasmop;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   if (TCGSize2Size[fromsize] >= TCGSize2Size[tosize]) then
@@ -1146,6 +1254,7 @@ begin
     else
       InternalError(2002122101);
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   href:=ref;
   make_simple_ref(list,href);
@@ -1195,6 +1304,8 @@ begin
             list.concat(taicpu.op_reg_reg_const(A_SRA, reg2, reg2, 16));
           end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   handle_load_store(list, False, op, reg, ref);
 end;
 
@@ -1232,6 +1343,9 @@ begin
       begin
         list.concat(taicpu.op_reg_reg_const(A_SLL, reg2, reg1, 16));
         list.concat(taicpu.op_reg_reg_const(A_SRA, reg2, reg2, 16));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
       else
@@ -1239,6 +1353,7 @@ begin
     end;
   end
   else
+<<<<<<< HEAD
 <<<<<<< HEAD
     done:=false;
 
@@ -1251,6 +1366,8 @@ begin
       it can try to eliminate it. }
     add_move_instruction(instr);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   begin
     if reg1 <> reg2 then
     begin
@@ -1262,11 +1379,15 @@ begin
 
       add_move_instruction(instr);
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_loadaddr_ref_reg(list: tasmlist; const ref: TReference; r: tregister);
 var
@@ -1367,6 +1488,8 @@ begin
     if (fromsize=tosize) then
       add_move_instruction(instr);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_loadaddr_ref_reg(list: tasmlist; const ref: TReference; r: tregister);
 var
   tmpref, href: treference;
@@ -1480,11 +1603,15 @@ begin
     { Notify the register allocator that we have written a move instruction so
       it can try to eliminate it. }
     add_move_instruction(instr);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_loadfpu_ref_reg(list: tasmlist; fromsize, tosize: tcgsize; const ref: TReference; reg: tregister);
 var
@@ -1518,6 +1645,8 @@ begin
     OS_F64:
       list.concat(taicpu.op_reg_ref(A_SDC1,reg,href));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_loadfpu_ref_reg(list: tasmlist; fromsize, tosize: tcgsize; const ref: TReference; reg: tregister);
 var
   tmpref: treference;
@@ -1543,12 +1672,16 @@ begin
       handle_load_store_fpu(list, True, A_SWC1, reg, ref);
     OS_F64:
       handle_load_store_fpu(list, True, A_SDC1, reg, ref);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     else
       InternalError(2007042702);
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.maybeadjustresult(list: TAsmList; op: TOpCg; size: tcgsize; dst: tregister);
 const
@@ -1599,6 +1732,8 @@ begin
   else
     a_op_const_reg_reg(list,op,size,a,reg,reg);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_op_const_reg(list: tasmlist; Op: TOpCG; size: tcgsize; a: aint; reg: TRegister);
 var
   power: longint;
@@ -1649,11 +1784,15 @@ begin
     end
     else
       handle_reg_const_reg(list, f_TOpCG2AsmOp(op, size), reg, a, reg);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_op_reg_reg(list: tasmlist; Op: TOpCG; size: TCGSize; src, dst: TRegister);
 begin
@@ -1894,6 +2033,44 @@ procedure TCgMPSel.a_op_const_reg_reg(list: tasmlist; op: TOpCg; size: tcgsize; 
 var
   power: longint;
   tmpreg1: tregister;
+=======
+procedure TCgMPSel.a_op_reg_reg(list: tasmlist; Op: TOpCG; size: TCGSize; src, dst: TRegister);
+var
+  a: aint;
+begin
+  case Op of
+    OP_NEG:
+      list.concat(taicpu.op_reg_reg(A_NEG, dst, src));
+    OP_NOT:
+    begin
+      list.concat(taicpu.op_reg_reg(A_NOT, dst, src));
+    end;
+    else
+    begin
+      if op = OP_IMUL then
+      begin
+        list.concat(taicpu.op_reg_reg(A_MULT, dst, src));
+        list.concat(taicpu.op_reg(A_MFLO, dst));
+      end
+      else if op = OP_MUL then
+      begin
+        list.concat(taicpu.op_reg_reg(A_MULTU, dst, src));
+        list.concat(taicpu.op_reg(A_MFLO, dst));
+      end
+      else
+      begin
+        list.concat(taicpu.op_reg_reg_reg(f_TOpCG2AsmOp(op, size), dst, dst, src));
+      end;
+    end;
+  end;
+end;
+
+
+procedure TCgMPSel.a_op_const_reg_reg(list: tasmlist; op: TOpCg; size: tcgsize; a: aint; src, dst: tregister);
+var
+  power: longint;
+  tmpreg1: tregister;
+>>>>>>> graemeg/cpstrnew
 begin
   case op of
     OP_MUL,
@@ -2052,13 +2229,19 @@ begin
     OP_XOR, OP_OR, OP_AND:
       begin
         list.concat(taicpu.op_reg_reg_reg(f_TOpCG2AsmOp_ovf(op, size), dst, src2, src1));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
     else
       internalerror(2007012602);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   maybeadjustresult(list,op,size,dst);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -2067,6 +2250,7 @@ end;
 
 {*************** compare instructructions ****************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_cmp_const_reg_label(list: tasmlist; size: tcgsize; cmp_op: topcmp; a: tcgint; reg: tregister; l: tasmlabel);
 var
@@ -2148,6 +2332,8 @@ begin
   list.concat(ai);
   { Delay slot }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_cmp_const_reg_label(list: tasmlist; size: tcgsize; cmp_op: topcmp; a: aint; reg: tregister; l: tasmlabel);
 var
   tmpreg: tregister;
@@ -2213,11 +2399,15 @@ begin
     else
       internalerror(200701072);
     end;{ case }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   list.Concat(TAiCpu.Op_none(A_NOP));
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_jmp_always(List: tasmlist; l: TAsmLabel);
 var
@@ -2230,15 +2420,26 @@ procedure TCgMPSel.a_jmp_always(List: tasmlist; l: TAsmLabel);
 begin
   List.Concat(TAiCpu.op_sym(A_J,l));
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCgMPSel.a_jmp_always(List: tasmlist; l: TAsmLabel);
+begin
+  List.Concat(TAiCpu.op_sym(A_J,l));
+>>>>>>> graemeg/cpstrnew
   { Delay slot }
   list.Concat(TAiCpu.Op_none(A_NOP));
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.a_jmp_name(list: tasmlist; const s: string);
 begin
   List.Concat(TAiCpu.op_sym(A_BA, current_asmdata.RefAsmSymbol(s)));
+=======
+procedure TCgMPSel.a_jmp_name(list: tasmlist; const s: string);
+begin
+  List.Concat(TAiCpu.op_sym(A_J, current_asmdata.RefAsmSymbol(s)));
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TCgMPSel.a_jmp_name(list: tasmlist; const s: string);
 begin
@@ -2249,6 +2450,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.a_jmp_flags(list: tasmlist; const f: TResFlags; l: tasmlabel);
   var
@@ -2399,6 +2601,8 @@ end;
 
 procedure TCGMIPS.g_overflowCheck(List: tasmlist; const Loc: TLocation; def: TDef);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.a_jmp_cond(list: tasmlist; cond: TOpCmp; l: TAsmLabel);
 begin
   internalerror(200701181);
@@ -2406,13 +2610,20 @@ end;
 
 
 procedure TCgMPSel.g_overflowCheck(List: tasmlist; const Loc: TLocation; def: TDef);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
 // this is an empty procedure
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.g_overflowCheck_loc(List: tasmlist; const Loc: TLocation; def: TDef; ovloc: tlocation);
+=======
+procedure TCgMPSel.g_overflowCheck_loc(List: tasmlist; const Loc: TLocation; def: TDef; ovloc: tlocation);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TCgMPSel.g_overflowCheck_loc(List: tasmlist; const Loc: TLocation; def: TDef; ovloc: tlocation);
 >>>>>>> graemeg/cpstrnew
@@ -2424,6 +2635,7 @@ end;
 
 { *********** entry/exit code and address loading ************ }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure FixupOffsets(p:TObject;arg:pointer);
 var
@@ -2656,6 +2868,8 @@ begin
     end;
   list.concat(tai_directive.create(asd_ent_end,current_procinfo.procdef.mangledname));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.g_proc_entry(list: tasmlist; localsize: longint; nostackframe: boolean);
 var
   regcounter, firstregfpu, firstreggpr: TSuperRegister;
@@ -2786,6 +3000,9 @@ begin
       list.concat(Taicpu.op_none(A_P_SET_REORDER));
     end;
   end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -2793,6 +3010,7 @@ end;
 
 { ************* concatcopy ************ }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.g_concatcopy_move(list: tasmlist; const Source, dest: treference; len: tcgint);
 var
@@ -2808,6 +3026,8 @@ begin
   paramanager.getintparaloc(list, pd, 3, paraloc3);
   a_load_const_cgpara(list, OS_SINT, len, paraloc3);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.g_concatcopy_move(list: tasmlist; const Source, dest: treference; len: aint);
 var
   paraloc1, paraloc2, paraloc3: TCGPara;
@@ -2819,6 +3039,9 @@ begin
   paramanager.getintparaloc(pocall_default, 2, paraloc2);
   paramanager.getintparaloc(pocall_default, 3, paraloc3);
   a_load_const_cgpara(list, OS_INT, len, paraloc3);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   a_loadaddr_ref_cgpara(list, dest, paraloc2);
   a_loadaddr_ref_cgpara(list, Source, paraloc1);
@@ -2837,7 +3060,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.g_concatcopy(list: tasmlist; const Source, dest: treference; len: tcgint);
+=======
+procedure TCgMPSel.g_concatcopy(list: tasmlist; const Source, dest: treference; len: aint);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TCgMPSel.g_concatcopy(list: tasmlist; const Source, dest: treference; len: aint);
 >>>>>>> graemeg/cpstrnew
@@ -2846,6 +3073,7 @@ var
   src, dst: TReference;
   lab:      tasmlabel;
   Count, count2: aint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   function reference_is_reusable(const ref: treference): boolean;
@@ -2897,6 +3125,8 @@ begin
       tmpreg1  := GetIntRegister(list, OS_INT);
       a_load_const_reg(list, OS_INT, Count, countreg);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   if len > high(longint) then
     internalerror(2002072704);
@@ -2926,6 +3156,9 @@ begin
       a_load_const_reg(list, OS_INT, Count, countreg);
       { explicitely allocate R_O0 since it can be used safely here }
       { (for holding date that's being copied)                    }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       current_asmdata.getjumplabel(lab);
       a_label(list, lab);
@@ -2935,7 +3168,12 @@ begin
       list.concat(taicpu.op_reg_reg_const(A_ADDIU, dst.base, dst.base, 4));
       list.concat(taicpu.op_reg_reg_const(A_ADDIU, countreg, countreg, -1));
 <<<<<<< HEAD
+<<<<<<< HEAD
       a_cmp_reg_reg_label(list,OS_INT,OC_GT,NR_R0,countreg,lab);
+=======
+      list.concat(taicpu.op_reg_sym(A_BGTZ, countreg, lab));
+      list.concat(taicpu.op_none(A_NOP));
+>>>>>>> graemeg/cpstrnew
 =======
       list.concat(taicpu.op_reg_sym(A_BGTZ, countreg, lab));
       list.concat(taicpu.op_none(A_NOP));
@@ -2984,7 +3222,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCGMIPS.g_concatcopy_unaligned(list: tasmlist; const Source, dest: treference; len: tcgint);
+=======
+procedure TCgMPSel.g_concatcopy_unaligned(list: tasmlist; const Source, dest: treference; len: aint);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TCgMPSel.g_concatcopy_unaligned(list: tasmlist; const Source, dest: treference; len: aint);
 >>>>>>> graemeg/cpstrnew
@@ -2995,10 +3237,14 @@ var
   lab: tasmlabel;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (len > 31) and
     { see comment in g_concatcopy }
      assigned(current_procinfo) and
      (pi_do_call in current_procinfo.flags) then
+=======
+  if len > 31 then
+>>>>>>> graemeg/cpstrnew
 =======
   if len > 31 then
 >>>>>>> graemeg/cpstrnew
@@ -3017,10 +3263,13 @@ begin
     if len > 4 then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       countreg := GetIntRegister(list, OS_INT);
       tmpreg1  := GetIntRegister(list, OS_INT);
       a_load_const_reg(list, OS_INT, len, countreg);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       { the offsets are zero after the a_loadaddress_ref_reg and just }
       { have to be set to 8. I put an Inc there so debugging may be   }
       { easier (should offset be different from zero here, it will be }
@@ -3030,6 +3279,9 @@ begin
       a_load_const_reg(list, OS_INT, len, countreg);
       { explicitely allocate R_O0 since it can be used safely here }
       { (for holding date that's being copied)                    }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       current_asmdata.getjumplabel(lab);
       a_label(list, lab);
@@ -3039,7 +3291,12 @@ begin
       list.concat(taicpu.op_reg_reg_const(A_ADDIU, dst.base, dst.base, 1));
       list.concat(taicpu.op_reg_reg_const(A_ADDIU, countreg, countreg, -1));
 <<<<<<< HEAD
+<<<<<<< HEAD
       a_cmp_reg_reg_label(list,OS_INT,OC_GT,NR_R0,countreg,lab);
+=======
+      list.concat(taicpu.op_reg_sym(A_BGTZ, countreg, lab));
+      list.concat(taicpu.op_none(A_NOP));
+>>>>>>> graemeg/cpstrnew
 =======
       list.concat(taicpu.op_reg_sym(A_BGTZ, countreg, lab));
       list.concat(taicpu.op_none(A_NOP));
@@ -3061,6 +3318,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCGMIPS.g_profilecode(list:TAsmList);
   var
@@ -3084,6 +3342,8 @@ procedure TCGMIPS.g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: t
   end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCgMPSel.g_intf_wrapper(list: tasmlist; procdef: tprocdef; const labelname: string; ioffset: longint);
       procedure loadvmttor24;
         var
@@ -3143,6 +3403,9 @@ begin
 
   List.concat(Tai_symbol_end.Createname(labelname));
 end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {****************************************************************************
@@ -3153,6 +3416,7 @@ end;
 procedure TCg64MPSel.a_load64_reg_ref(list: tasmlist; reg: tregister64; const ref: treference);
 var
   tmpref: treference;
+<<<<<<< HEAD
 <<<<<<< HEAD
   tmpreg: tregister;
 begin
@@ -3168,12 +3432,17 @@ begin
   Inc(tmpref.offset, 4);
   list.concat(taicpu.op_reg_ref(A_SW,reg.reghi,tmpref));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   { Override this function to prevent loading the reference twice }
   tmpref := ref;
   cg.a_load_reg_ref(list, OS_S32, OS_S32, reg.reglo, tmpref);
   Inc(tmpref.offset, 4);
   cg.a_load_reg_ref(list, OS_S32, OS_S32, reg.reghi, tmpref);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -3181,6 +3450,7 @@ end;
 procedure TCg64MPSel.a_load64_ref_reg(list: tasmlist; const ref: treference; reg: tregister64);
 var
   tmpref: treference;
+<<<<<<< HEAD
 <<<<<<< HEAD
   tmpreg: tregister;
 begin
@@ -3196,12 +3466,17 @@ begin
   Inc(tmpref.offset, 4);
   list.concat(taicpu.op_reg_ref(A_LW,reg.reghi,tmpref));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   { Override this function to prevent loading the reference twice }
   tmpref := ref;
   cg.a_load_ref_reg(list, OS_S32, OS_S32, tmpref, reg.reglo);
   Inc(tmpref.offset, 4);
   cg.a_load_ref_reg(list, OS_S32, OS_S32, tmpref, reg.reghi);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -3218,6 +3493,7 @@ begin
   a_load64_reg_cgpara(list, hreg64, paraloc);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TCg64MPSel.a_op64_reg_reg(list: tasmlist; op: TOpCG; size: tcgsize; regsrc, regdst: TRegister64);
 var
@@ -3242,6 +3518,8 @@ begin
     a_op64_reg_reg_reg(list,op,size,regsrc,regdst,regdst);
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 
@@ -3315,17 +3593,23 @@ begin
 
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
 
 procedure TCg64MPSel.a_op64_const_reg(list: tasmlist; op: TOpCG; size: tcgsize; Value: int64; regdst: TRegister64);
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   a_op64_const_reg_reg(list, op, size, value, regdst, regdst);
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   op1, op2: TAsmOp;
 begin
@@ -3339,6 +3623,9 @@ begin
 end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure TCg64MPSel.a_op64_const_reg_reg(list: tasmlist; op: TOpCG; size: tcgsize; Value: int64; regsrc, regdst: tregister64);
 var
@@ -3358,6 +3645,7 @@ end;
 
 procedure TCg64MPSel.a_op64_const_reg_reg_checkoverflow(list: tasmlist; op: TOpCG; size: tcgsize; Value: int64; regsrc, regdst: tregister64; setflags: boolean; var ovloc: tlocation);
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   tmplo,carry: TRegister;
   hisize: tcgsize;
@@ -3418,6 +3706,8 @@ begin
     InternalError(2013050301);
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   op1, op2: TAsmOp;
   tmpreg1: TRegister;
 begin
@@ -3472,12 +3762,16 @@ begin
       internalerror(200306017);
   end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
 
 procedure TCg64MPSel.a_op64_reg_reg_reg_checkoverflow(list: tasmlist; op: TOpCG; size: tcgsize; regsrc1, regsrc2, regdst: tregister64; setflags: boolean; var ovloc: tlocation);
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   tmplo,tmphi,carry,hreg: TRegister;
   signed: boolean;
@@ -3550,6 +3844,8 @@ begin
     internalerror(200306017);
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   op1, op2: TAsmOp;
   tmpreg1, tmpreg2: TRegister;
 
@@ -3604,6 +3900,9 @@ begin
 
   end; {case}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -3611,7 +3910,11 @@ end;
     procedure create_codegen;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         cg:=TCGMIPS.Create;
+=======
+        cg:=TCgMPSel.Create;
+>>>>>>> graemeg/cpstrnew
 =======
         cg:=TCgMPSel.Create;
 >>>>>>> graemeg/cpstrnew

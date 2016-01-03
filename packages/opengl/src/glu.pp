@@ -94,6 +94,9 @@ Abstract:
 {                                                                              }
 {******************************************************************************}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$MACRO ON}
 {$MODE OBJFPC}

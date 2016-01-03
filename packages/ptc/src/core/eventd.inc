@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2013  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -36,6 +40,7 @@
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TPTCEventType =
     (PTCKeyEvent, PTCMouseEvent, PTCCloseEvent, PTCResizeEvent);
   TPTCEventMask = set of TPTCEventType;
@@ -49,6 +54,8 @@ const
   PTCAnyEvent: TPTCEventMask =
     [PTCKeyEvent, PTCMouseEvent, PTCCloseEvent, PTCResizeEvent];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TPTCEventType = (PTCKeyEvent, PTCMouseEvent{, PTCExposeEvent});
   TPTCEventMask = set of TPTCEventType;
   TPTCEvent = class
@@ -66,4 +73,7 @@ const
   protected
     function GetType: TPTCEventType; override;
   End;}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

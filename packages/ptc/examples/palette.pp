@@ -17,15 +17,21 @@ uses
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
   palette: IPTCPalette;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
   palette: TPTCPalette = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   data: array [0..255] of Uint32;
   pixels: PUint8;
@@ -37,15 +43,21 @@ begin
     try
       { create console }
 <<<<<<< HEAD
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 
       { create format }
       format := TPTCFormatFactory.CreateNew(8);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console := TPTCConsole.Create;
 
       { create format }
       format := TPTCFormat.Create(8);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
       { open console }
@@ -53,15 +65,21 @@ begin
 
       { create surface }
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(console.width, console.height, format);
 
       { create palette }
       palette := TPTCPaletteFactory.CreateNew;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       surface := TPTCSurface.Create(console.width, console.height, format);
 
       { create palette }
       palette := TPTCPalette.Create;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
       { generate palette }
@@ -69,6 +87,7 @@ begin
         data[i] := i;
 
       { load palette data }
+<<<<<<< HEAD
 <<<<<<< HEAD
       palette.Load(data);
 
@@ -78,6 +97,8 @@ begin
       { set surface palette }
       surface.Palette(palette);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       palette.load(data);
 
       { set console palette }
@@ -85,6 +106,9 @@ begin
 
       { set surface palette }
       surface.palette(palette);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
       { loop until a key is pressed }
@@ -124,14 +148,20 @@ begin
       end;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       console.Free;
       surface.Free;
       palette.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

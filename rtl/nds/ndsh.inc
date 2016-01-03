@@ -15,8 +15,11 @@
  *****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsARM9(): boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 type
   TDoOpen     = procedure (var f; p: pchar; flags: longint);
   TDoClose    = procedure (handle: THandle);
@@ -95,4 +98,7 @@ var
               DoGetdir: nil;
             );
   );
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

@@ -61,15 +61,21 @@ type
   private
     _profile: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSColorSpace2: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSColorSpace2: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         colorSpaceID: 0..((1 shl 8)-1);
         storageType: 0..((1 shl 3)-1);
@@ -79,16 +85,22 @@ type
         _anonbitfield_NSColorSpace1: 0..((1 shl 32)-1);
         {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
       );
       end;
     __cgColorSpace: Pointer;
     _reserved: array[0..(5)-1] of Pointer;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     __cgColorSpace: Pointer;
         _reserved: array[0..4] of Pointer;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     
   public

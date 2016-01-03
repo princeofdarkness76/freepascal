@@ -55,15 +55,21 @@ const
     _headerCell: NSCell;
     _dataCell: NSCell;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __cFlags: record
       case byte of
        0: (_anonbitfield_NSTableColumn0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __cFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTableColumn0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         oldIsResizable: 0..1;
         _isEditable: 0..1;
@@ -74,7 +80,10 @@ const
         hidden: 0..1;
         RESERVED: 0..((1 shl 18)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

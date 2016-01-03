@@ -1175,8 +1175,11 @@ begin
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   { insert the block in its freelist }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   { insert the block in it's freelist }
 >>>>>>> graemeg/cpstrnew
   pmcv^.size := pmcv^.size and (not usedflag);

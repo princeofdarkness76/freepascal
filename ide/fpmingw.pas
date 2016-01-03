@@ -48,11 +48,15 @@ var
  hMsvcrt : HModule = 0;
  free_Msvcrt : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef win32}
  fctMsvcrtLongJmp : pointer;cvar;external;
 {$else not win32}
  fctMsvcrtLongJmp : pointer;cvar;
 {$endif not win32}
+=======
+ fctMsvcrtLongJmp : pointer;cvar;external;
+>>>>>>> graemeg/cpstrnew
 =======
  fctMsvcrtLongJmp : pointer;cvar;external;
 >>>>>>> graemeg/cpstrnew
@@ -79,11 +83,17 @@ begin
  // not (yet) done: set mingw exception handlers:
  // SetUnhandledExceptionFilter (_gnu_exception_handler);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef DISABLE_CPU_FEATURES_INIT}
 {$ifdef win32}
   __cpu_features_init;        // load CPU features. Might be useful for debugger :-)
 {$endif win32}
 {$endif ndef DISABLE_CPU_FEATURES_INIT}
+=======
+{$ifdef win32}
+  __cpu_features_init;        // load CPU features. Might be useful for debugger :-)
+{$endif win32}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef win32}
   __cpu_features_init;        // load CPU features. Might be useful for debugger :-)

@@ -279,10 +279,15 @@ function Is_Prefetch (P: pointer): boolean;
 
     MemSize := SizeOf (A);
 <<<<<<< HEAD
+<<<<<<< HEAD
     RC := DosQueryMem (P, MemSize, MemAttrs);
     if RC <> 0 then
      OSErrorWatch (RC)
     else if (MemAttrs and (mfPag_Free or mfPag_Commit) <> 0)
+=======
+    if (DosQueryMem (P, MemSize, MemAttrs) = 0) and
+            (MemAttrs and (mfPag_Free or mfPag_Commit) <> 0)
+>>>>>>> graemeg/cpstrnew
 =======
     if (DosQueryMem (P, MemSize, MemAttrs) = 0) and
             (MemAttrs and (mfPag_Free or mfPag_Commit) <> 0)

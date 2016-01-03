@@ -1183,7 +1183,11 @@ const
       if not Assigned(fCnv) then
         IntReadStruct;
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:={(index>=0) and }(index<fHdr.ncmds);
+=======
+      Result:=(index>=0) and (index<fHdr.ncmds);
+>>>>>>> graemeg/cpstrnew
 =======
       Result:=(index>=0) and (index<fHdr.ncmds);
 >>>>>>> graemeg/cpstrnew
@@ -1203,7 +1207,11 @@ const
         IntReadStruct;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:={(cmdindex>=0) and }
+=======
+      Result:=(cmdindex>=0) and
+>>>>>>> graemeg/cpstrnew
 =======
       Result:=(cmdindex>=0) and
 >>>>>>> graemeg/cpstrnew
@@ -1235,7 +1243,11 @@ const
         IntReadStruct;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       if {(index<0) or}
+=======
+      if (index<0) or
+>>>>>>> graemeg/cpstrnew
 =======
       if (index<0) or
 >>>>>>> graemeg/cpstrnew
@@ -1258,7 +1270,11 @@ const
       if not Assigned(fCnv) then
         IntReadStruct;
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:={(secindex>=0) and (segindex>=0) and }(segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
+=======
+      Result:=(secindex>=0) and (segindex>=0) and (segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
+>>>>>>> graemeg/cpstrnew
 =======
       Result:=(secindex>=0) and (segindex>=0) and (segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
 >>>>>>> graemeg/cpstrnew

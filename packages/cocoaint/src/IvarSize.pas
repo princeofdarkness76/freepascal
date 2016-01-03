@@ -6,6 +6,7 @@ uses
 type
  TDerivedNSAffineTransform = objcclass (NSAffineTransform)
 <<<<<<< HEAD
+<<<<<<< HEAD
  extraptr: pointer
 ;end;
 type
@@ -1951,6 +1952,8 @@ begin
  writeln('size of NSWorkspace is wrong: ',class_getInstanceSize(TDerivedNSWorkspace),' <> ',class_getInstanceSize(NSWorkspace)+sizeof(pointer));
  pool.release;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  extrabyte: byte;
 end;
 type
@@ -3878,6 +3881,9 @@ begin
  writeln('size of NSWindowController is wrong: ',class_getInstanceSize(TDerivedNSWindowController),' <> ',class_getInstanceSize(NSWindowController)+1);
  if class_getInstanceSize(TDerivedNSWorkspace) <> (class_getInstanceSize(NSWorkspace)+1) then
  writeln('size of NSWorkspace is wrong: ',class_getInstanceSize(TDerivedNSWorkspace),' <> ',class_getInstanceSize(NSWorkspace)+1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 begin

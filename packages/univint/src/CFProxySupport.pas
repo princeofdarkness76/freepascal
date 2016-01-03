@@ -9,6 +9,7 @@
 				 the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
 					 http://bugs.freepascal.org
  
 }
@@ -17,11 +18,16 @@
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated: Jonas Maebe <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 					 http://www.freepascal.org/bugs.html
  
 }
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -78,11 +84,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -104,11 +113,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -121,11 +136,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -138,7 +159,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -151,7 +175,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -161,6 +188,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -172,6 +200,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -183,6 +216,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -199,14 +233,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -510,6 +551,7 @@ var kCFProxyAutoConfigurationURLKey: CFStringRef; external name '_kCFProxyAutoCo
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  kCFProxyAutoConfigurationJavaScriptKey
  *  
  *  Discussion:
@@ -526,6 +568,8 @@ var kCFProxyAutoConfigurationJavaScriptKey: CFStringRef; external name '_kCFProx
 
 
 {
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  *  kCFProxyUsernameKey
@@ -631,6 +675,7 @@ var kCFProxyTypeFTP: CFStringRef; external name '_kCFProxyTypeFTP'; (* attribute
 var kCFProxyTypeAutoConfigurationURL: CFStringRef; external name '_kCFProxyTypeAutoConfigurationURL'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  *
  *
@@ -638,6 +683,9 @@ var kCFProxyTypeAutoConfigurationURL: CFStringRef; external name '_kCFProxyTypeA
 var kCFProxyTypeAutoConfigurationJavaScript: CFStringRef; external name '_kCFProxyTypeAutoConfigurationJavaScript'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_3_0) *)
 	
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -856,7 +904,11 @@ var kCFNetworkProxiesProxyAutoConfigEnable: CFStringRef; external name '_kCFNetw
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_2_0) *)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  kCFNetworkProxiesProxyAutoConfigURLString
+=======
+ *  kCFNetworkProxiesSOCKSProxy
+>>>>>>> graemeg/cpstrnew
 =======
  *  kCFNetworkProxiesSOCKSProxy
 >>>>>>> graemeg/cpstrnew
@@ -869,6 +921,7 @@ var kCFNetworkProxiesProxyAutoConfigURLString: CFStringRef; external name '_kCFN
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_2_0) *)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * kCFNetworkProxiesProxyAutoConfigJavaScript
  *
  * Discussion:
@@ -879,6 +932,8 @@ var kCFNetworkProxiesProxyAutoConfigJavaScript: CFStringRef; external name '_kCF
 (* __OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_3_0) *)
 	
 {
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  *  kCFNetworkProxiesProxyAutoDiscoveryEnable

@@ -56,7 +56,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_SYS_SIGTIMEDWAIT_UNAVAILABLE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function fpsigtimedwait(const sigset:TSigSet;info:Psiginfo;timeout:Ptimespec):cint;
@@ -68,7 +71,10 @@ begin
                              Tsysparam(timeout));
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif ndef FPC_SYS_SIGTIMEDWAIT_UNAVAILABLE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

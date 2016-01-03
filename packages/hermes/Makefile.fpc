@@ -5,6 +5,7 @@
 [package]
 name=hermes
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -13,6 +14,8 @@ packages=rtl fpmkunit
 [install]
 fpcpackage=y
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [target]
@@ -31,6 +34,9 @@ targetdir=.
 includedir=src
 sourcedir=src tests
 >>>>>>> graemeg/cpstrnew
+
+[install]
+fpcpackage=y
 
 [install]
 fpcpackage=y
@@ -65,6 +71,7 @@ FPMAKE_OPT+=$(addprefix -o ,$(FPCOPT))
 FPMAKE_OPT+=--compiler=$(FPC)
 FPMAKE_OPT+=-bu
 .NOTPARALLEL:
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 fpmake$(SRCEXEEXT): fpmake.pp
@@ -124,5 +131,7 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

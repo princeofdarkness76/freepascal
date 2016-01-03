@@ -12,10 +12,16 @@
                  the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+                     http://www.freepascal.org/bugs.html
+}
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
                      http://www.freepascal.org/bugs.html
 }
@@ -76,11 +82,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -102,11 +111,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -119,11 +134,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -136,7 +157,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -149,7 +173,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -159,6 +186,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -170,6 +198,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -181,6 +214,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -198,13 +232,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -305,9 +346,12 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$definec kPMFaxAddressesPDEKindID CFSTRP('com.apple.print.pde.FaxAddressesKind')}
 {$endc}
 {$ifc USE_CFSTR_CONSTANT_MACROS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$definec kPMPaperHandlingPDEKindID CFSTRP('com.apple.print.pde.PaperHandlingKind')}
@@ -319,9 +363,12 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$definec kPMSummaryPanelKindID CFSTRP('com.apple.print.pde.SummaryKind')}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMUniPrinterPDEKindID CFSTRP('com.apple.print.pde.UniPrinterKind')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { Unimplemented Universal }
@@ -335,9 +382,12 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$definec kPMRotationScalingPDEKindID CFSTRP('com.apple.print.pde.RotationScalingKind')}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMUnsupportedPDEKindID CFSTRP('com.apple.print.pde.UnsupportedPDEKind')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { Implemented Standard }
@@ -361,9 +411,12 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$definec kPMQualityMediaPDEKindID CFSTRP('com.apple.print.pde.QualityMediaPDEKind')}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMMediaQualityPDEKindID CFSTRP('com.apple.print.pde.MediaQualityPDEKind')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -373,10 +426,13 @@ Define the Kind IDs for Universal and Standard Printing Dialog Extensions.
 {$endc}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Boolean key in the Bundle's Info.plist file that sepecifies whether the PDEPanels created by the Bundle are Sandbox compatible }
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPMSandboxCompatiblePDEs CFSTRP('PMSandboxCompatiblePDEs')}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

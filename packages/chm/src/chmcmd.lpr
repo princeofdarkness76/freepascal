@@ -24,10 +24,14 @@ program chmcmd;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef Unix}cthreads,{$endif} Classes, Sysutils, chmfilewriter, GetOpts;
 
 Const
   CHMCMDVersion = '3.1.1';
+=======
+  Classes, Sysutils, chmfilewriter, GetOpts;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, Sysutils, chmfilewriter, GetOpts;
 >>>>>>> graemeg/cpstrnew
@@ -188,6 +192,72 @@ end;
 procedure Processfile(name:string);
 
 var
+  theopts : array[1..6] of TOption;
+
+procedure InitOptions;
+
+begin
+  with theopts[1] do
+   begin
+    name:='html-scan';
+    has_arg:=0;
+    flag:=nil;
+    value:=#0;
+  end;
+  with theopts[2] do
+   begin
+    name:='no-html-scan';
+    has_arg:=0;
+    flag:=nil;
+    value:=#0;
+  end;
+  with theopts[3] do
+   begin
+    name:='verbosity';
+    has_arg:=1;
+    flag:=nil;
+    value:=#0;
+  end;
+  with theopts[4] do
+   begin
+    name:='generate-xml';
+    has_arg:=0;
+    flag:=nil;
+    value:=#0;
+  end;
+  with theopts[5] do
+   begin
+    name:='help';
+    has_arg:=0;
+    flag:=nil;
+  end;
+  with theopts[6] do
+   begin
+    name:='';
+    has_arg:=0;
+    flag:=nil;
+  end;
+end;
+
+Type THtmlScanenum = (scandefault,scanforce,scanforcedno);
+
+var
+  GenerateXMLForHHP  : boolean = false;
+  alloweddetaillevel : integer = 0;     // show if msg.detaillevel<=allowdetaillevel
+  htmlscan           : THtmlScanEnum = Scandefault;
+
+procedure OnError (Project: TChmProject;errorkind:TChmProjectErrorKind;msg:String;detailevel:integer=0);
+begin
+  if detailevel<=alloweddetaillevel then
+    if errorkind<>chmnone then
+      writeln(ChmErrorKindText[errorkind],': ',msg)
+    else
+      writeln(msg);
+end;
+
+procedure Processfile(name:string);
+
+var
   OutStream: TFileStream;
   Project: TChmProject;
   xmlname: string;
@@ -197,7 +267,10 @@ begin
   ishhp:=uppercase(extractfileext(name))='.HHP';
   Project := TChmProject.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Project.ReadMeMessage:='Compiled by CHMCmd '+CHMCMDVersion;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if ishhp then
@@ -210,7 +283,11 @@ begin
          on e:exception do
            begin
 <<<<<<< HEAD
+<<<<<<< HEAD
              Writeln('This HHP CHM project seems corrupt, please check it ',name,' (', e.message,')');
+=======
+             Writeln('This HHP CHM project seems corrupt, please check it ',name);
+>>>>>>> graemeg/cpstrnew
 =======
              Writeln('This HHP CHM project seems corrupt, please check it ',name);
 >>>>>>> graemeg/cpstrnew
@@ -233,10 +310,15 @@ begin
        end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   OutStream := TFileStream.Create(Project.OutputFileName, fmCreate);
   Project.WriteChm(OutStream);
   if Project.ScanHtmlContents then
     Project.ShowUndefinedAnchors;
+=======
+  OutStream := TFileStream.Create(Project.OutputFileName, fmCreate, fmOpenWrite);
+  Project.WriteChm(OutStream);
+>>>>>>> graemeg/cpstrnew
 =======
   OutStream := TFileStream.Create(Project.OutputFileName, fmCreate, fmOpenWrite);
   Project.WriteChm(OutStream);
@@ -288,6 +370,7 @@ begin
                     Halt;
                    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                5 : begin
                      if not trystrtoint(optarg,cores) then
                        begin
@@ -297,6 +380,8 @@ begin
                        end;
 
 		   end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                 end;

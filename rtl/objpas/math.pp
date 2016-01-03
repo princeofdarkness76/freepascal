@@ -197,6 +197,9 @@ procedure DivMod(Dividend: Integer; Divisor: Word;  var Result, Remainder: Word)
 procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
 procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
 procedure DivMod(Dividend: Integer; Divisor: Integer; var Result, Remainder: Integer);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 // Sign functions
@@ -230,6 +233,7 @@ function IsZero(const A: Extended): Boolean;inline; overload;
 {$endif FPC_HAS_TYPE_EXTENDED}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsNan(const d : Single): Boolean; overload;
 {$ifdef FPC_HAS_TYPE_DOUBLE}
 function IsNan(const d : Double): Boolean; overload;
@@ -237,6 +241,9 @@ function IsNan(const d : Double): Boolean; overload;
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 function IsNan(const d : Extended): Boolean; overload;
 {$endif FPC_HAS_TYPE_EXTENDED}
+=======
+function IsNan(const d : Double): Boolean; overload;
+>>>>>>> graemeg/cpstrnew
 =======
 function IsNan(const d : Double): Boolean; overload;
 >>>>>>> graemeg/cpstrnew
@@ -610,6 +617,7 @@ function RandomFrom(const AValues: array of Integer): Integer; overload;
 function RandomFrom(const AValues: array of Int64): Int64; overload;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { cpu specific stuff }
 type
   TFPURoundingMode = system.TFPURoundingMode;
@@ -626,6 +634,8 @@ function SetExceptionMask(const Mask: TFPUExceptionMask): TFPUExceptionMask;
 procedure ClearExceptions(RaisePending: Boolean =true);
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { include cpu specific stuff }
 {$i mathuh.inc}
 >>>>>>> graemeg/cpstrnew
@@ -2315,7 +2325,11 @@ end;
 // There weshould define  FPC_MATH_HAS_CPUDIVMOD in the header mathuh.inc and implement it using asm.
 {$ifndef FPC_MATH_HAS_DIVMOD}
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: Word);
+=======
+procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: Word);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: Word);
 >>>>>>> graemeg/cpstrnew
@@ -2331,7 +2345,11 @@ begin
       Result:=-(Dividend Div Divisor);
       Remainder:=-(Dividend+(Result*Divisor));
 <<<<<<< HEAD
+<<<<<<< HEAD
     end
+=======
+    end 
+>>>>>>> graemeg/cpstrnew
 =======
     end 
 >>>>>>> graemeg/cpstrnew
@@ -2341,6 +2359,7 @@ begin
       Remainder:=Dividend-(Result*Divisor);
 	end;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -2369,6 +2388,10 @@ end;
 
 
 procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
+=======
+
+
+procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
 begin
   if Dividend < 0 then
     begin
@@ -2387,6 +2410,36 @@ begin
       Remainder:=Dividend-(Result*Divisor);
 	end;
 end;
+
+
+procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
+begin
+  Result:=Dividend Div Divisor;
+  Remainder:=Dividend-(Result*Divisor);
+end;
+
+
+procedure DivMod(Dividend: Integer; Divisor: Integer; var Result, Remainder: Integer);
+>>>>>>> graemeg/cpstrnew
+begin
+  if Dividend < 0 then
+    begin
+      { Use DivMod with >=0 dividend }
+	  Dividend:=-Dividend;
+      { The documented behavior of Pascal's div/mod operators and DivMod
+        on negative dividends is to return Result closer to zero and
+        a negative Remainder. Which means that we can just negate both
+        Result and Remainder, and all it's Ok. }
+      Result:=-(Dividend Div Divisor);
+      Remainder:=-(Dividend+(Result*Divisor));
+    end 
+  else
+    begin
+	  Result:=Dividend Div Divisor;
+      Remainder:=Dividend-(Result*Divisor);
+	end;
+end;
+{$endif FPC_MATH_HAS_DIVMOD}
 
 
 >>>>>>> graemeg/cpstrnew
@@ -2610,6 +2663,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FutureValue(ARate: Float; NPeriods: Integer;
   APayment, APresentValue: Float; APaymentTime: TPaymentTime): Float;
 var
@@ -2714,6 +2768,8 @@ begin
     Result := -(AFutureValue + APayment*factor) / qn;
   end;
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

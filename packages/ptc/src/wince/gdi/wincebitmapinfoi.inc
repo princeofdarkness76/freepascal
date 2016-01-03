@@ -1,8 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 
     This library is free software; you can redistribute it and/or
@@ -32,6 +35,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
     This library is free software; you can redistribute it and/or
@@ -62,12 +66,18 @@
 }
 
 <<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 {TODO: create DIBs with the same color depth as the desktop}
 
 constructor TWinCEBitmapInfo.Create(AWidth, AHeight: Integer);
+<<<<<<< HEAD
 =======
 constructor TWinCEBitmapInfo.Create(AWidth, AHeight: Integer);
+
+>>>>>>> graemeg/cpstrnew
+=======
 
 >>>>>>> graemeg/cpstrnew
 begin
@@ -102,12 +112,15 @@ begin
 //  FillChar(FPixels^, AWidth * AHeight * 4, 0);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 destructor TWinCEBitmapInfo.Destroy;
 begin
 //  FreeMem(FPixels);
   FreeMem(FBitmapInfo);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 destructor TWinCEBitmapInfo.Destroy;
 
@@ -115,6 +128,9 @@ begin
 //  FreeMem(FPixels);
   FreeMem(FBitmapInfo);
   FFormat.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   inherited Destroy;
 end;

@@ -53,7 +53,11 @@ var
     _info: id;
     _ports: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(6)-1] of Pointer;
+=======
+        _reserved: array[0..5] of Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..5] of Pointer;
 >>>>>>> graemeg/cpstrnew

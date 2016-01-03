@@ -147,7 +147,11 @@ type
     TMachoAssembler=class(TInternalAssembler)
       public
 <<<<<<< HEAD
+<<<<<<< HEAD
         constructor create(info: pasminfo; smart:boolean);override;
+=======
+        constructor create(smart:boolean);override;
+>>>>>>> graemeg/cpstrnew
 =======
         constructor create(smart:boolean);override;
 >>>>>>> graemeg/cpstrnew
@@ -157,9 +161,12 @@ type
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses
   owar;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   { TmachoObjData }
@@ -362,16 +369,22 @@ uses
   { TMachoAssembler }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   constructor TMachoAssembler.create(info: pasminfo; smart: boolean);
     begin
       inherited;
       CObjOutput:=TMachoObjectOutput;
       CInternalAr:=tarobjectwriter;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   constructor TMachoAssembler.create(smart: boolean);
     begin
       inherited create(smart);
       CObjOutput:=TMachoObjectOutput;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
 
@@ -1233,7 +1246,10 @@ uses
         labelprefix : '.L';
         comment : '#';
 <<<<<<< HEAD
+<<<<<<< HEAD
         dollarsign: '$';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

@@ -22,6 +22,9 @@ begin
     P.Version:='3.1.1';
 =======
     P.Version:='2.2.2-0';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     P.Dependencies.Add('zlib');
     P.SourcePath.Add('src');

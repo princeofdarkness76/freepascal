@@ -6,7 +6,11 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb,
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb,
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb,
 >>>>>>> graemeg/cpstrnew
@@ -48,8 +52,11 @@ var
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 uses inifiles;
@@ -148,6 +155,11 @@ end;
 
 initialization
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  {$I wmusers.lrs}
+
+>>>>>>> graemeg/cpstrnew
 =======
   {$I wmusers.lrs}
 

@@ -22,6 +22,9 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       classes math typinfo varutils fmtbcd ctypes \
       charset ucomplex getopts matrix \
       variants types rtlconsts sysconst dateutil lineinfo fgl \
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 #      exec timer doslib utility hardware inputevent graphics layers \
 # these can be moved to packages later
@@ -55,8 +58,11 @@ PROCINC=$(RTL)/$(CPU_TARGET)
 UNITPREFIX=rtl
 SYSTEMUNIT=system
 <<<<<<< HEAD
+<<<<<<< HEAD
 LOADERS=prt0 cprt0
 override FPCOPT+=@rtl.cfg
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -194,8 +200,11 @@ heaptrc$(PPUEXT) : $(INC)/heaptrc.pp $(SYSTEMUNIT)$(PPUEXT)
 
 lineinfo$(PPUEXT) : $(INC)/lineinfo.pp $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(COMPILER) $(INC)/lineinfo.pp
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 #lnfodwrf$(PPUEXT) : $(INC)/lnfodwrf.pp $(SYSTEMUNIT)$(PPUEXT)

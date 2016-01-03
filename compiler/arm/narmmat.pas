@@ -400,7 +400,11 @@ implementation
     procedure tarmunaryminusnode.second_float;
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+        op: tasmop;
+>>>>>>> graemeg/cpstrnew
 =======
         op: tasmop;
 >>>>>>> graemeg/cpstrnew
@@ -412,7 +416,11 @@ implementation
           fpu_fpa11:
             begin
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,false);
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,false);
+>>>>>>> graemeg/cpstrnew
 =======
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,false);
 >>>>>>> graemeg/cpstrnew
@@ -422,6 +430,7 @@ implementation
                 cgsize2fpuoppostfix[def_cgsize(resultdef)]));
             end;
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
           fpu_vfpv3,
           fpu_vfpv3_d16:
@@ -628,6 +637,8 @@ implementation
               shift_by_variable(lreg.reghi, lreg.reglo, resreg.reghi, resreg.reglo, right.location.register, SM_LSR);
           end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           fpu_vfpv3:
             begin
               location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
@@ -644,6 +655,9 @@ implementation
           else
             internalerror(2009112602);
         end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 

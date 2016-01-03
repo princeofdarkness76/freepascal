@@ -17,9 +17,13 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$warning Fix register handling in case of nostackframe }
 
 Function fpc_SetJmp (Var S : Jmp_buf) : longint;assembler;nostackframe;[Public, alias : 'FPC_SETJMP'];compilerproc;
+=======
+Function fpc_SetJmp (Var S : Jmp_buf) : longint;assembler;[Public, alias : 'FPC_SETJMP'];compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 Function fpc_SetJmp (Var S : Jmp_buf) : longint;assembler;[Public, alias : 'FPC_SETJMP'];compilerproc;
 >>>>>>> graemeg/cpstrnew
@@ -29,6 +33,7 @@ asm
   // load S to a0
   move.l 4(sp),a0
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   // Save data registers d1..d7
   movem.l d1/d2/d3/d4/d5/d6/d7,12(a0)
@@ -87,6 +92,11 @@ asm
 
   // new return pc is at (sp)
 end;
+=======
+Procedure fpc_longJmp (Var S : Jmp_buf; value : longint); assembler;[Public, alias : 'FPC_LONGJMP'];compilerproc;
+asm
+end;
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure fpc_longJmp (Var S : Jmp_buf; value : longint); assembler;[Public, alias : 'FPC_LONGJMP'];compilerproc;
 asm

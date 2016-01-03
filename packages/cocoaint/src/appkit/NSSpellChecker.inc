@@ -68,15 +68,21 @@ var
     _replacementsBrowser: id;
     _defineButton: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __scFlags: record
       case byte of
        0: (_anonbitfield_NSSpellChecker0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __scFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSSpellChecker0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         autoShowGuesses: 0..1;
         needDelayedGuess: 0..1;
@@ -91,7 +97,10 @@ var
         quotesByLanguage: 0..1;
         _reserved: 0..((1 shl 21)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

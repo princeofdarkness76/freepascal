@@ -38,6 +38,7 @@ Type
        cpu_armv3,
        cpu_armv4,
 <<<<<<< HEAD
+<<<<<<< HEAD
        cpu_armv4t,
        cpu_armv5,
        cpu_armv5t,
@@ -63,10 +64,21 @@ Type
        cpu_cortexm3
       );
 
+=======
+       cpu_armv5,
+       cpu_armv6,
+       cpu_armv7m,
+       cpu_cortexm3
+      );
+
+>>>>>>> graemeg/cpstrnew
 Const
    cpu_arm = [cpu_none,cpu_armv3,cpu_armv4,cpu_armv5];
    cpu_thumb = [];
    cpu_thumb2 = [cpu_armv7m,cpu_cortexm3];
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 Type
@@ -79,10 +91,14 @@ Type
       fpu_fpa11,
       fpu_vfpv2,
 <<<<<<< HEAD
+<<<<<<< HEAD
       fpu_vfpv3,
       fpu_vfpv3_d16,
       fpu_fpv4_s16,
       fpu_vfpv4
+=======
+      fpu_vfpv3
+>>>>>>> graemeg/cpstrnew
 =======
       fpu_vfpv3
 >>>>>>> graemeg/cpstrnew
@@ -201,6 +217,7 @@ Type
       ct_at91sam7se256,
       ct_at91sam7x256,
       ct_at91sam7xc256,
+<<<<<<< HEAD
 <<<<<<< HEAD
 
       { STMicroelectronics }
@@ -484,12 +501,17 @@ Type
       // generic Thumb2 target
       ct_thumb2bare
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 		
       { STMicroelectronics }
       ct_stm32f103re,
 
       { TI }
       stellaris
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
      );
 
@@ -532,6 +554,7 @@ Const
      'ARMV3',
      'ARMV4',
 <<<<<<< HEAD
+<<<<<<< HEAD
      'ARMV4T',
      'ARMV5',
      'ARMV5T',
@@ -548,10 +571,15 @@ Const
      'ARMV7M',
      'ARMV7EM'
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      'ARMV5',
      'ARMV6',
      'ARMV7M',
      'CORTEXM3'
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
    );
 
@@ -562,6 +590,7 @@ Const
      'FPA10',
      'FPA11',
      'VFPV2',
+<<<<<<< HEAD
 <<<<<<< HEAD
      'VFPV3',
      'VFPV3_D16',
@@ -1001,6 +1030,8 @@ Const
 
    vfp_scalar = [fpu_vfpv2,fpu_vfpv3,fpu_vfpv3_d16,fpu_fpv4_s16];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      'VFPV3'
    );
 
@@ -1046,6 +1077,8 @@ Const
 
    vfp_scalar = [fpu_vfpv2,fpu_vfpv3];
 
+   vfp_scalar = [fpu_vfpv2,fpu_vfpv3];
+
    { Supported optimizations, only used for information }
    supported_optimizerswitches = genericlevel1optimizerswitches+
                                  genericlevel2optimizerswitches+
@@ -1054,7 +1087,11 @@ Const
                                  [cs_opt_level1,cs_opt_level2,cs_opt_level3]+
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_tailrecursion,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   cs_opt_stackframe,cs_opt_nodecse,cs_opt_reorder_fields,cs_opt_fastmath,cs_opt_forcenostackframe];
+=======
+								  cs_opt_stackframe,cs_opt_nodecse];
+>>>>>>> graemeg/cpstrnew
 =======
 								  cs_opt_stackframe,cs_opt_nodecse];
 >>>>>>> graemeg/cpstrnew
@@ -1062,6 +1099,7 @@ Const
    level1optimizerswitches = genericlevel1optimizerswitches;
    level2optimizerswitches = genericlevel2optimizerswitches + level1optimizerswitches +
      [cs_opt_regvar,cs_opt_stackframe,cs_opt_tailrecursion,cs_opt_nodecse];
+<<<<<<< HEAD
 <<<<<<< HEAD
    level3optimizerswitches = genericlevel3optimizerswitches + level2optimizerswitches + [cs_opt_scheduler{,cs_opt_loopunroll}];
    level4optimizerswitches = genericlevel4optimizerswitches + level3optimizerswitches + [];
@@ -1110,6 +1148,8 @@ Const
    { contains all CPU supporting any kind of thumb instruction set }
    cpu_has_thumb = [cpu_armv4t,cpu_armv5t,cpu_armv5te,cpu_armv5tej,cpu_armv6t2,cpu_armv6z,cpu_armv6m,cpu_armv7a,cpu_armv7r,cpu_armv7m,cpu_armv7em];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
    level3optimizerswitches = genericlevel3optimizerswitches + level2optimizerswitches + [{,cs_opt_loopunroll}];
 >>>>>>> graemeg/cpstrnew
 

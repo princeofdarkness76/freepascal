@@ -4,7 +4,11 @@
      Contains:   Sound Manager Interfaces.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    CarbonSound-115~164
+=======
+     Version:    CarbonSound-109.2~4
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    CarbonSound-109.2~4
 >>>>>>> graemeg/cpstrnew
@@ -18,8 +22,12 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -78,11 +86,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -104,11 +115,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -121,11 +138,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -138,7 +161,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -151,7 +177,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -161,6 +190,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -172,6 +202,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -184,11 +219,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -207,6 +246,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -254,7 +297,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Components,MixedMode,Dialogs;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -1239,8 +1287,12 @@ type
 {private thing to use as a reference to a Sound Converter}
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SoundConverter = ^OpaqueSoundConverter; { an opaque type }
 	OpaqueSoundConverter = record end;
+=======
+	SoundConverter = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SoundConverter = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -1252,8 +1304,12 @@ type
 {private thing to use as a reference to a Sound Source}
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SoundSource = ^OpaqueSoundSource; { an opaque type }
 	OpaqueSoundSource = record end;
+=======
+	SoundSource = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SoundSource = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -1306,6 +1362,23 @@ type
 		count: SInt16;
 		frequency: UnsignedFixedPtr;              { pointer to array of frequencies}
 <<<<<<< HEAD
+<<<<<<< HEAD
+	end;
+	EQSpectrumBandsRecordPtr = ^EQSpectrumBandsRecord;
+const
+	kSoundAudioCodecPropertyWritableFlag = 1 shl 0;
+
+type
+	SoundAudioCodecPropertyRequestParams = record
+		propertyClass: UInt32;
+		propertyID: UInt32;
+		propertyDataSize: UInt32;       { out -- GetPropertyInfo, in/out -- GetProperty, in -- SetProperty}
+		propertyData: UnivPtr;           { in -- GetPropertyInfo, GetProperty, SetProperty}
+		propertyRequestFlags: UInt32;   { out -- GetPropertyInfo}
+		propertyDataType: UInt32;       { out -- GetPropertyInfo, often 0}
+		propertyRequestResult: ComponentResult;  { out -- GetPropertyInfo, GetProperty, SetProperty}
+=======
+>>>>>>> graemeg/cpstrnew
 	end;
 	EQSpectrumBandsRecordPtr = ^EQSpectrumBandsRecord;
 const
@@ -1341,6 +1414,10 @@ type
 
 <<<<<<< HEAD
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { Sound Input Structures}

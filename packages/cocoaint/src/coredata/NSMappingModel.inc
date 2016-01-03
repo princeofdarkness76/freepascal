@@ -48,6 +48,7 @@
     _entityMappings: NSMutableArray;
     _entityMappingsByName: NSMutableDictionary;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __modelMappingFlags: record
       case byte of
        0: (_anonbitfield_NSMappingModel0: cuint);
@@ -56,12 +57,17 @@
         _reservedModelMapping: 0..((1 shl 31)-1);
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __modelMappingFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMappingModel0: cuint);
        1: (
         _isInUse: 0..1;
         _reservedModelMapping: 0..((1 shl 31)-1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       );
       end;

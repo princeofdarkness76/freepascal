@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -36,10 +40,13 @@
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TPTCSurfaceFactory = class
   public
     class function CreateNew(AWidth, AHeight: Integer; AFormat: IPTCFormat): IPTCSurface;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TPTCSurface = class(TPTCBaseSurface)
   private
     {data}
@@ -94,5 +101,8 @@ type
     function Clip: TPTCArea; override;
     function GetFormat: TPTCFormat; override;
     function Option(const AOption: string): Boolean; override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;

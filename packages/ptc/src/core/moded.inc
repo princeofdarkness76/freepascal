@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -36,6 +40,7 @@
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   IPTCMode = interface
     function GetValid: Boolean;
     function GetWidth: Integer;
@@ -60,6 +65,8 @@ type
   end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   PPTCMode=^TPTCMode;
   TPTCMode = class
   private
@@ -79,4 +86,7 @@ type
     property Height: Integer read FHeight;
     property Format: TPTCFormat read FFormat;
   end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

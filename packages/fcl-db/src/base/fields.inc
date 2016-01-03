@@ -862,13 +862,19 @@ begin
   If Not Assigned(FDataset) then
     DatabaseErrorFmt(SNoDataset,[FieldName]);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if (FieldNo>0) and not (FDataSet.State in [dsSetKey, dsFilter]) then
     begin
     if ReadOnly then 
       DatabaseErrorFmt(SReadOnlyField, [DisplayName], Self); 
     Validate(Buffer);
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   FDataSet.SetFieldData(Self,Buffer, NativeFormat);
 end;
@@ -1281,12 +1287,15 @@ end;
 procedure TWideStringField.SetFieldType(AValue: TFieldType);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if AValue in [ftWideString, ftFixedWideChar] then
     SetDataType(AValue);
 end;
 
 function TWideStringField.GetValue(var AValue: WideString): Boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if avalue in [ftWideString, ftFixedWideChar] then
     SetDataType(AValue);
 end;
@@ -1796,6 +1805,9 @@ begin
 =======
   FReadOnly:=True;
   FProviderFlags:=FProviderFlags-[pfInUpdate];
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -2040,6 +2052,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TBooleanField.GetAsInteger: Longint;
 begin
   Result := ord(GetAsBoolean);
@@ -2049,6 +2062,8 @@ procedure TBooleanField.SetAsInteger(AValue: Longint);
 begin
   SetAsBoolean(AValue<>0);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TBooleanField.GetAsInteger: integer;
 begin
    if GetAsBoolean then
@@ -2060,6 +2075,9 @@ end;
 procedure TBooleanField.SetAsInteger(AValue: Integer);
 begin
   SetAsBoolean(avalue<>0);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -2624,6 +2642,9 @@ begin
 =======
   FMaxvalue := 0;
   FMinvalue := 0;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   FValidChars := [DecimalSeparator, '+', '-', '0'..'9'];
   SetDataType(ftBCD);
@@ -2812,6 +2833,175 @@ begin
     Clear    // set to NULL
   else
     SetAsBCD(StrToBCD(AValue));
+end;
+
+
+{ TFMTBCDField }
+
+class procedure TFMTBCDField.CheckTypeSize(AValue: Longint);
+begin
+  If AValue > MAXFMTBcdFractionSize then
+    DatabaseErrorfmt(SInvalidFieldSize,[AValue]);
+end;
+
+constructor TFMTBCDField.Create(AOwner: TComponent);
+begin
+  Inherited Create(AOwner);
+  FMaxValue := 0;
+  FMinValue := 0;
+  FValidChars := [DecimalSeparator, '+', '-', '0'..'9'];
+  SetDataType(ftFMTBCD);
+// Max.precision for NUMERIC,DECIMAL datatypes supported by some databases:
+//  Firebird-18; Oracle,SqlServer-38; MySQL-65; PostgreSQL-1000
+  Precision := 15; //default number of digits
+  Size:=4; //default number of digits after decimal place
+end;
+
+function TFMTBCDField.GetDataSize: Integer;
+begin
+  Result := sizeof(TBCD);
+end;
+
+function TFMTBCDField.GetDefaultWidth: Longint;
+begin
+  if Precision > 0 then Result := Precision+1
+  else Result := inherited GetDefaultWidth;
+end;
+
+function TFMTBCDField.GetAsBCD: TBCD;
+begin
+  if not GetData(@Result) then
+    Result := NullBCD;
+end;
+
+function TFMTBCDField.GetAsCurrency: Currency;
+var bcd: TBCD;
+begin
+  if GetData(@bcd) then
+    BCDToCurr(bcd, Result)
+  else
+    Result := 0;
+end;
+
+function TFMTBCDField.GetAsVariant: Variant;
+var bcd: TBCD;
+begin
+  If GetData(@bcd) then
+    Result := VarFMTBcdCreate(bcd)
+  else
+    Result := Null;
+end;
+
+function TFMTBCDField.GetAsFloat: Double;
+var bcd: TBCD;
+begin
+  If GetData(@bcd) then
+    Result := BCDToDouble(bcd)
+  else
+    Result := 0;
+end;
+
+function TFMTBCDField.GetAsLongint: Longint;
+begin
+  Result := round(GetAsFloat);
+end;
+
+function TFMTBCDField.GetAsString: string;
+var bcd: TBCD;
+begin
+  If GetData(@bcd) then
+    Result:=BCDToStr(bcd)
+  else
+    Result:='';
+end;
+
+procedure TFMTBCDField.GetText(var TheText: string; ADisplayText: Boolean);
+var
+  bcd: TBCD;
+  fmt: String;
+begin
+  if GetData(@bcd) then begin
+    if aDisplayText or (FEditFormat='') then
+      fmt := FDisplayFormat
+    else
+      fmt := FEditFormat;
+    if fmt<>'' then
+      TheText := BCDToStr(bcd)
+      //TheText := FormatBCD(fmt,bcd) //uncomment when formatBCD in fmtbcd.pp will be implemented
+    else if fCurrency then begin
+      if aDisplayText then
+        TheText := BcdToStrF(bcd, ffCurrency, FPrecision, 2)
+      else
+        TheText := BcdToStrF(bcd, ffFixed, FPrecision, 2);
+    end else
+      TheText := BcdToStrF(bcd, ffGeneral, FPrecision, FSize);
+  end else
+    TheText := '';
+end;
+
+function TFMTBCDField.GetMaxValue: string;
+begin
+  Result:=BCDToStr(FMaxValue);
+end;
+
+function TFMTBCDField.GetMinValue: string;
+begin
+  Result:=BCDToStr(FMinValue);
+end;
+
+procedure TFMTBCDField.SetMaxValue(const AValue: string);
+begin
+  FMaxValue:=StrToBCD(AValue);
+end;
+
+procedure TFMTBCDField.SetMinValue(const AValue: string);
+begin
+  FMinValue:=StrToBCD(AValue);
+end;
+
+Function TFMTBCDField.CheckRange(AValue: TBCD) : Boolean;
+begin
+  If (FMinValue<>0) or (FMaxValue<>0) then
+    Result:=(AValue>=FMinValue) and (AValue<=FMaxValue)
+  else
+    Result:=True;
+end;
+
+procedure TFMTBCDField.SetAsBCD(const AValue: TBCD);
+begin
+  if CheckRange(AValue) then
+    SetData(@AValue)
+  else
+    RangeError(AValue, BCDToDouble(FMinValue), BCDToDouble(FMaxValue));
+end;
+
+procedure TFMTBCDField.SetAsCurrency(AValue: Currency);
+var bcd: TBCD;
+begin
+  if CurrToBCD(AValue, bcd, 32, Size) then
+    SetAsBCD(bcd);
+end;
+
+procedure TFMTBCDField.SetVarValue(const AValue: Variant);
+begin
+  SetAsBCD(VarToBCD(AValue));
+end;
+
+procedure TFMTBCDField.SetAsFloat(AValue: Double);
+begin
+  SetAsBCD(DoubleToBCD(AValue));
+end;
+
+
+procedure TFMTBCDField.SetAsLongint(AValue: Longint);
+begin
+  SetAsBCD(IntegerToBCD(AValue));
+end;
+
+
+procedure TFMTBCDField.SetAsString(const AValue: string);
+begin
+  SetAsBCD(StrToBCD(AValue));
 end;
 
 
@@ -3652,6 +3842,12 @@ end;
 <<<<<<< HEAD
 function TFields.GetEnumerator: TFieldsEnumerator;
 =======
+Function TFields.GetEnumerator: TFieldsEnumerator;
+
+begin
+  Result:=TFieldsEnumerator.Create(Self);
+end;
+
 Function TFields.GetEnumerator: TFieldsEnumerator;
 
 begin

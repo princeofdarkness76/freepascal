@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
@@ -9,6 +10,8 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
@@ -19,11 +22,15 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
       <ActiveWindowIndexAtStart Value="0"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     </General>
     <VersionInfo>
       <Language Value=""/>
       <CharSet Value=""/>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <StringTable ProductVersion=""/>
     </VersionInfo>
@@ -64,6 +71,10 @@
       <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
     </VersionInfo>
 >>>>>>> graemeg/cpstrnew
+=======
+      <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
+    </VersionInfo>
+>>>>>>> graemeg/cpstrnew
     <PublishOptions>
       <Version Value="2"/>
       <IgnoreBinaries Value="False"/>
@@ -73,6 +84,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <CommandLineParams Value="--skiptiming --format=plain --all"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
@@ -85,6 +97,8 @@
     </RequiredPackages>
     <Units Count="7">
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
@@ -97,19 +111,28 @@
       </Item2>
     </RequiredPackages>
     <Units Count="9">
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       <Unit0>
         <Filename Value="testsqlscanner.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="testsqlscanner"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="3" Y="12"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit0>
       <Unit1>
@@ -117,13 +140,19 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcsqlscanner"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="873"/>
         <CursorPos X="3" Y="875"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit1>
       <Unit2>
@@ -131,7 +160,10 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpsqltree"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
@@ -139,6 +171,9 @@
         <CursorPos X="49" Y="4767"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit2>
       <Unit3>
@@ -146,13 +181,19 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpsqlscanner"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="43"/>
         <CursorPos X="126" Y="62"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit3>
       <Unit4>
@@ -160,13 +201,19 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="fpsqlparser"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3562"/>
         <CursorPos X="12" Y="3588"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit4>
       <Unit5>
@@ -174,19 +221,26 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcparser"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="7911"/>
         <CursorPos X="30" Y="7924"/>
         <UsageCount Value="220"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit5>
       <Unit6>
         <Filename Value="tcgensql.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcgensql"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
       </Unit6>
     </Units>
@@ -220,6 +274,8 @@
     </CodeGeneration>
     <Other>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="2449"/>
@@ -383,6 +439,9 @@
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       <CompilerPath Value="$(CompPath)"/>
     </Other>

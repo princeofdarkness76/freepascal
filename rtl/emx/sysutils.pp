@@ -541,6 +541,9 @@ end;
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function FileRead (Handle: longint; Out Buffer; Count: longint): longint;
                                                                      assembler;

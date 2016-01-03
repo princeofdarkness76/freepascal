@@ -77,6 +77,12 @@ Type
     procedure PeepHoleOptPass2;override;
     function PostPeepHoleOptsCpu(var p: tai): boolean; override;
   End;
+  
+  
+  TCpuThumb2AsmOptimizer = class(TCpuAsmOptimizer)
+    { uses the same constructor as TAopObj }
+    procedure PeepHoleOptPass2;override;
+  End;
 
   function MustBeLast(p : tai) : boolean;
 
@@ -2348,6 +2354,7 @@ Implementation
     end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   function TCpuAsmOptimizer.RegInInstruction(Reg: TRegister; p1: tai): Boolean;
     begin
       If (p1.typ = ait_instruction) and (taicpu(p1).opcode=A_BL) then
@@ -3020,12 +3027,17 @@ Implementation
 
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
   procedure TCpuThumb2AsmOptimizer.PeepHoleOptPass2;
     begin
       { TODO: Add optimizer code }
     end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   casmoptimizer:=TCpuAsmOptimizer;

@@ -97,7 +97,11 @@ begin
   WriteResponseFile:=False;
   linklibc:=(SharedLibFiles.Find('c')<>nil);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(ARM) or defined(i386) or defined(AVR) or defined(MIPSEL)}
+=======
+{$if defined(ARM) or defined(i386)}
+>>>>>>> graemeg/cpstrnew
 =======
 {$if defined(ARM) or defined(i386)}
 >>>>>>> graemeg/cpstrnew
@@ -650,6 +654,20 @@ begin
           Add('}');
           Add('_stack_top = 0x2000FFFC;');
         end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+      ct_stm32f103re:
+      with linkres do
+        begin
+          Add('ENTRY(_START)');
+          Add('MEMORY');
+          Add('{');
+          Add('    flash : ORIGIN = 0x08000000, LENGTH = 512K');
+          Add('    ram : ORIGIN = 0x20000000, LENGTH = 64K');
+          Add('}');
+          Add('_stack_top = 0x2000FFFC;');
+        end;
 >>>>>>> graemeg/cpstrnew
 
               Add('}');
@@ -675,6 +693,7 @@ begin
       Add('     .text :');
       Add('    {');
 <<<<<<< HEAD
+<<<<<<< HEAD
       Add('    _text_start = .;');
       Add('    KEEP(*(.init, .init.*))');
       if (embedded_controllers[current_settings.controllertype].controllerunitstr='MK20D5')
@@ -685,6 +704,9 @@ begin
           Add('    . = 0x400;');
           Add('    KEEP(*(.flash_config, *.flash_config.*))');
         end;
+=======
+      Add('    KEEP(*(.init, .init.*))');
+>>>>>>> graemeg/cpstrnew
 =======
       Add('    KEEP(*(.init, .init.*))');
 >>>>>>> graemeg/cpstrnew
@@ -765,6 +787,7 @@ begin
       Add('_end = .;');
     end;
 {$endif I386}
+<<<<<<< HEAD
 
 {$ifdef i386}
   with linkres do
@@ -1254,6 +1277,8 @@ begin
     end;
 {$endif MIPSEL}
 
+=======
+>>>>>>> graemeg/cpstrnew
 
   { Write and Close response }
   linkres.writetodisk;
@@ -1316,10 +1341,14 @@ begin
 
 { Post process }
 <<<<<<< HEAD
+<<<<<<< HEAD
   if success and not(cs_link_nolink in current_settings.globalswitches) then
     success:=PostProcessExecutable(current_module.exefilename+'.elf',false);
 
   if success and (target_info.system in [system_arm_embedded,system_avr_embedded,system_mipsel_embedded]) then
+=======
+  if success and (target_info.system=system_arm_embedded) then
+>>>>>>> graemeg/cpstrnew
 =======
   if success and (target_info.system=system_arm_embedded) then
 >>>>>>> graemeg/cpstrnew
@@ -1511,6 +1540,7 @@ initialization
 
 {$ifdef i386}
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterLinker(ld_embedded,TLinkerEmbedded);
   RegisterTarget(system_i386_embedded_info);
 {$endif i386}
@@ -1520,6 +1550,11 @@ initialization
   RegisterTarget(system_mipsel_embedded_info);
 {$endif mipsel}
 
+=======
+  RegisterExternalLinker(system_i386_embedded_info,TlinkerEmbedded);
+  RegisterTarget(system_i386_embedded_info);
+{$endif i386}
+>>>>>>> graemeg/cpstrnew
 =======
   RegisterExternalLinker(system_i386_embedded_info,TlinkerEmbedded);
   RegisterTarget(system_i386_embedded_info);

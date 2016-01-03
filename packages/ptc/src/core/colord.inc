@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -36,6 +40,7 @@
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   IPTCColor = interface
     function GetIndex: Integer;
     function GetR: Single;
@@ -63,6 +68,8 @@ type
     class function CreateNew(ARed, AGreen, ABlue: Single; AAlpha: Single = 1): IPTCColor;
     class function CreateNew(AColor: IPTCColor): IPTCColor;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TPTCColor = class
   private
     FIndex: Integer;
@@ -83,5 +90,8 @@ type
     property A: Single read FAlpha;
     property Direct: Boolean read FDirect;
     property Indexed: Boolean read FIndexed;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;

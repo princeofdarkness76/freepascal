@@ -4,7 +4,11 @@
      Contains:   Public interface to the Font Manager.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    Quickdraw-285~150
+=======
+     Version:    Quickdraw-262~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    Quickdraw-262~1
 >>>>>>> graemeg/cpstrnew
@@ -18,8 +22,12 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -78,11 +86,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -104,11 +115,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -121,11 +138,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -138,13 +161,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -202,6 +229,9 @@ interface
 {$elsec}
 =======
 {$elsec}
+=======
+{$elsec}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -232,6 +262,9 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -272,12 +305,17 @@ interface
 uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,QuickdrawTypes,TextCommon,CGFont;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
@@ -306,6 +344,7 @@ uses MacTypes,QuickdrawText,ATSTypes,Files,MacErrors,QuickdrawTypes,TextCommon,C
  }
 function FMGetATSFontRefFromFont( iFont: FMFont ): ATSFontRef; external name '_FMGetATSFontRefFromFont';
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+<<<<<<< HEAD
 
 
 {
@@ -423,6 +462,99 @@ const
 
 const
 =======
+=======
+
+
+{
+ *  FMGetFontFromATSFontRef()
+ *  
+ *  Summary:
+ *    Obtains the QuickDraw font reference associated with an ATS font
+ *    reference.
+ *  
+ *  Parameters:
+ *    
+ *    iFont:
+ *      An ATS font reference.
+ *    
+ *    Result:
+ *      The QuickDraw font reference associated with the specified ATS
+ *      font reference.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in ApplicationServices.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function FMGetFontFromATSFontRef( iFont: ATSFontRef ): FMFont; external name '_FMGetFontFromATSFontRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+{
+ *  FMFontGetCGFontRefFromFontFamilyInstance()
+ *  
+ *  Summary:
+ *    Obtains the Quartz font reference associated with a typeface from
+ *    a QuickDraw font family reference.
+ *  
+ *  Parameters:
+ *    
+ *    iFontFamily:
+ *      A QuickDraw font family reference.
+ *    
+ *    iStyle:
+ *      A QuickDraw font style.
+ *    
+ *    oFont:
+ *      A pointer to a Quartz font reference. On output, points to the
+ *      font reference for the specified font family and style. You are
+ *      responsible for allocating the memory for the font reference.
+ *    
+ *    oStyle:
+ *      On output, a pointer to an intrinsic font style. If a font
+ *      reference isnÕt found that matches the font family reference
+ *      and font style you specify, the function returns the QuickDraw
+ *      style that matches most closely.
+ *    
+ *    Result:
+ *      A result code. If a font reference and intrinsic style are not
+ *      found, the function returns a value of kFMInvalidFontErr.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function FMFontGetCGFontRefFromFontFamilyInstance( iFontFamily: FMFontFamily; iStyle: FMFontStyle; var oFont: CGFontRef; var oStyle: FMFontStyle ): OSStatus; external name '_FMFontGetCGFontRefFromFontFamilyInstance';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  The remaining functions in this file have all been deprecated on Mac OS X 10.4. There are other
+ *  solutions that are recommended that provide better compatibility with the rest of the operating
+ *  system.
+ *  
+ *  Instead of using the QuickDraw functions, you should consider the following:
+ *
+ *  1.  For drawing and measuring text, you can use the Appearance Manager API in HITheme.h or the
+ *      ATSUI API in ATSUnicode.h to render text directly through a Quartz graphics context. Alternatively
+ *      use CoreText on Mac OS X 10.5 or later.
+ *
+ *  2.  For accessing information on fonts tracked by the operating system, please refer to the
+ *      functions described in ATSFont.h. Alternatively use CoreText on Mac OS X 10.5 or later.
+ *  
+ *  3.  For accessing and modifying information on fonts in a Quartz graphics context, please refer
+ *      to the functions described in CoreGraphics.h.
+ }
+{$endc} {not TARGET_CPU_64}
+
+const
+	systemFont = 0;
+	applFont = 1;
+
+const
+	kFMDefaultOptions = kNilOptions;
+>>>>>>> graemeg/cpstrnew
 
 { Activation contexts }
 const
@@ -445,6 +577,20 @@ const
 	checkMark = 18;
 	diamondMark = 19;
 	appleMark = 20;
+<<<<<<< HEAD
+=======
+
+const
+	propFont = 36864;
+	prpFntH = 36865;
+	prpFntW = 36866;
+	prpFntHW = 36867;
+	fixedFont = 45056;
+	fxdFntH = 45057;
+	fxdFntW = 45058;
+	fxdFntHW = 45059;
+	fontWid = 44208;
+>>>>>>> graemeg/cpstrnew
 
 const
 >>>>>>> graemeg/cpstrnew
@@ -487,6 +633,7 @@ type
 		denom: Point;
 	end;
 	FMInputPtr = ^FMInput;
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	FamRecPtr = ^FamRec;
@@ -568,6 +715,36 @@ type
 		numer: Point;
 		denom: Point;
 	end;
+=======
+	FMInput = record
+		family: SInt16;
+		size: SInt16;
+		face: Style;
+		needBits: Boolean;
+		device: SInt16;
+		numer: Point;
+		denom: Point;
+	end;
+type
+	FMOutput = record
+		errNum: SInt16;
+		fontHandle: Handle;
+		boldPixels: UInt8;
+		italicPixels: UInt8;
+		ulOffset: UInt8;
+		ulShadow: UInt8;
+		ulThick: UInt8;
+		shadowPixels: UInt8;
+		extra: SInt8;
+		ascent: UInt8;
+		descent: UInt8;
+		widMax: UInt8;
+		leading: SInt8;
+		curStyle: SInt8;
+		numer: Point;
+		denom: Point;
+	end;
+>>>>>>> graemeg/cpstrnew
 =======
 	FMInput = record
 		family: SInt16;
@@ -1460,7 +1637,10 @@ type
 	end;
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	AsscEntryPtr = ^AsscEntry;
 	AsscEntry = record
 		fontSize: SInt16;
@@ -1505,6 +1685,9 @@ type
 		numKerns: SInt16;               {number of kerning entries}
 	end;
 type
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	WidthTable = packed record
 		tabData: array [0..255] of Fixed;           {character widths}
@@ -1528,15 +1711,21 @@ type
 		aSize: SInt16;                  {actual size of actual font used}
 		tabSize: SInt16;                {total size of table}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 	end;
 	WidthTablePtr = ^WidthTable;
 type
 	WidthTableHdl = ^WidthTablePtr;
+<<<<<<< HEAD
 =======
 	end;
 	WidthTablePtr = ^WidthTable;
 type
 	WidthTableHdl = ^WidthTablePtr;
+=======
+>>>>>>> graemeg/cpstrnew
 	FamRecPtr = ^FamRec;
 	FamRec = record
 		ffFlags: SInt16;                {flags for family}
@@ -1573,6 +1762,9 @@ type
 	FontRecPtr = ^FontRec;
 type
 	FontRecHdl = ^FontRecPtr;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc OLDROUTINENAMES}
 const

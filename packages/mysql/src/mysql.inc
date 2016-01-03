@@ -32,11 +32,15 @@ uses
   const
     mysqllib = 'libmysqlclient.'+sharedsuffix;
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IF DEFINED(mysql57)}
     mysqlvlib = mysqllib+'.20';
   {$ELSEIF DEFINED(mysql55) or DEFINED(mysql56)}
     mysqlvlib = mysqllib+'.18';
   {$ELSEIF DEFINED(mysql51)}
+=======
+  {$IF DEFINED(mysql51)}
+>>>>>>> graemeg/cpstrnew
 =======
   {$IF DEFINED(mysql51)}
 >>>>>>> graemeg/cpstrnew
@@ -57,6 +61,7 @@ uses
 {$ENDIF}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$IFDEF mysql57}
   {$DEFINE mysql56}
@@ -70,6 +75,8 @@ uses
   {$DEFINE mysql51}
 {$ENDIF mysql55}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$IFDEF mysql51}
@@ -102,8 +109,13 @@ uses
        my_bool = cchar;
        Pmy_bool  = ^my_bool;
 <<<<<<< HEAD
+<<<<<<< HEAD
        ppcchar = ^pcchar;
        psize_t = pointer;
+=======
+//       pppchar = ^ppchar;
+//       ppbyte = ^pbyte;
+>>>>>>> graemeg/cpstrnew
 =======
 //       pppchar = ^ppchar;
 //       ppbyte = ^pbyte;
@@ -174,6 +186,7 @@ uses
        COM_STMT_PREPARE, COM_STMT_EXECUTE, COM_STMT_SEND_LONG_DATA, COM_STMT_CLOSE,
        COM_STMT_RESET, COM_SET_OPTION, COM_STMT_FETCH,
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$IFDEF mysql51}
        COM_DAEMON,
   {$IFDEF mysql56}
@@ -183,6 +196,9 @@ uses
    {$ENDIF}
   {$ENDIF}
  {$ENDIF}
+=======
+       {$IFDEF mysql51}COM_DAEMON,{$ENDIF}
+>>>>>>> graemeg/cpstrnew
 =======
        {$IFDEF mysql51}COM_DAEMON,{$ENDIF}
 >>>>>>> graemeg/cpstrnew
@@ -351,6 +367,14 @@ uses
    {$ENDIF}
   {$ENDIF}
  {$ENDIF}
+{$ENDIF}
+{$IFDEF mysql51}
+    {
+      Sent to the client if after a prepared statement reprepare
+      we discovered that the new statement returns a different
+      number of result set columns.
+    }
+       SERVER_STATUS_METADATA_CHANGED = 1024;
 {$ENDIF}
 {$IFDEF mysql51}
     {
@@ -1378,8 +1402,34 @@ uses
        Pst_mysql_bind = ^st_mysql_bind;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$IFDEF mysql51}
+=======
+{$IFDEF mysql51}
+       st_mysql_bind = record
+            length : pculong;               // output length pointer
+            is_null : Pmy_bool;             // Pointer to null indicator
+            buffer : pointer;               // buffer to get/put data
+            error: pmy_bool;                // set this if you want to track data truncations happened during fetch
+            row_ptr : PByte;                // for the current data position
+            store_param_func : procedure (net:PNET; param:Pst_mysql_bind);cdecl;
+            fetch_result : procedure (_para1:Pst_mysql_bind; _para2:PMYSQL_FIELD; row:PPbyte);
+            skip_result : procedure (_para1:Pst_mysql_bind; _para2:PMYSQL_FIELD; row:PPbyte);
+            buffer_length : culong;         // output buffer length, must be set when fetching str/binary
+            offset : culong;                // offset position for char/binary fetch
+            length_value : culong;          //  Used if length is 0
+            param_number : cuint;           // For null count and error messages
+            pack_length : cuint;            // Internal length for packed data
+            buffer_type : enum_field_types; // buffer type
+            error_value : my_bool;          // used if error is 0
+            is_unsigned : my_bool;          // set if integer type is unsigned
+            long_data_used : my_bool;       // If used with mysql_send_long_data
+            is_null_value : my_bool;        // Used if is_null is 0
+            extension : Pointer;
+       end;
+{$ELSE}
+>>>>>>> graemeg/cpstrnew
        st_mysql_bind = record
             length : pculong;               // output length pointer
             is_null : Pmy_bool;             // Pointer to null indicator
@@ -2107,9 +2157,13 @@ end;
     function IS_NUM(t : enum_field_types) : boolean;
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IF DEFINED(mysql55)}
       IS_NUM := ((t <= FIELD_TYPE_INT24) and (t<>FIELD_TYPE_TIMESTAMP)) or (t=FIELD_TYPE_YEAR) or (t=FIELD_TYPE_NEWDECIMAL);
 {$ELSEIF DEFINED(mysql50) or DEFINED(mysql51)}
+=======
+{$IF DEFINED(mysql50) or DEFINED(mysql51)}
+>>>>>>> graemeg/cpstrnew
 =======
 {$IF DEFINED(mysql50) or DEFINED(mysql51)}
 >>>>>>> graemeg/cpstrnew

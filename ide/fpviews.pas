@@ -4279,7 +4279,11 @@ begin
 {$endif NODEBUG}
     R2.Move(0,2);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2014 by')));
+=======
+  Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2009 by')));
+>>>>>>> graemeg/cpstrnew
 =======
   Insert(New(PStaticText, Init(R2, ^C'Copyright (C) 1998-2009 by')));
 >>>>>>> graemeg/cpstrnew

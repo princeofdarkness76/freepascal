@@ -1,6 +1,10 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for sqlite implementation
+>>>>>>> graemeg/cpstrnew
 =======
 #   Makefile.fpc for sqlite implementation
 >>>>>>> graemeg/cpstrnew
@@ -9,17 +13,23 @@
 [package]
 name=zorba
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=0.9.9
 
 [target]
 units=xqc zorba zorbadyn
 
 [require]
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [install]
@@ -28,6 +38,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -115,6 +126,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 [compiler]
 includedir=src
 sourcedir=src tests examples
@@ -125,4 +138,7 @@ build=n
 [rules]
 .NOTPARALLEL:
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

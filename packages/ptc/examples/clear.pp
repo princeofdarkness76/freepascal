@@ -17,6 +17,7 @@ uses
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
@@ -26,6 +27,8 @@ var
   area: IPTCArea;
   color: IPTCColor;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
   surface: TPTCSurface = nil;
@@ -34,6 +37,9 @@ var
   size: Integer;
   area: TPTCArea = nil;
   color: TPTCColor = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   try
@@ -64,6 +70,7 @@ begin
       size := Random(width div 8);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       { setup clear area }
       area := TPTCAreaFactory.CreateNew(x-size, y-size, x+size, y+size);
 
@@ -91,6 +98,21 @@ begin
     if Assigned(console) then
       console.close;
 =======
+=======
+      try
+        { setup clear area }
+        area := TPTCArea.Create(x-size, y-size, x+size, y+size);
+
+        { create random color }
+        color := TPTCColor.Create(Random, Random, Random);
+
+        { clear surface area with color }
+        surface.clear(color, area);
+
+        { copy to console }
+        surface.copy(console);
+
+>>>>>>> graemeg/cpstrnew
         { update console }
         console.update;
       finally
@@ -102,6 +124,9 @@ begin
     console.Free;
     surface.Free;
     format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   except
     on error: TPTCError do

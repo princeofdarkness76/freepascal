@@ -385,6 +385,9 @@ type
     function GetMaxChainLength: Longword;
   protected
     function Chain(const index: Longword):TFPObjectList;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Function CreateNewNode(const aKey : string) : THTCustomNode; virtual; abstract;
     Procedure AddNode(ANode : THTCustomNode); virtual; abstract;

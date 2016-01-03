@@ -4,7 +4,11 @@
      Contains:   AppleScript Registry constants.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    OSA-148~28
+=======
+     Version:    OSA-136~14
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    OSA-136~14
 >>>>>>> graemeg/cpstrnew
@@ -19,9 +23,12 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 
 >>>>>>> graemeg/cpstrnew
@@ -80,11 +87,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -102,6 +112,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -132,6 +143,20 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -145,6 +170,7 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -170,6 +196,8 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -179,8 +207,20 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -191,6 +231,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -207,14 +248,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -263,7 +311,10 @@ interface
 uses MacTypes,AERegistry,AEDataModel,AEObjects;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {$ifc TARGET_OS_MAC}
@@ -293,6 +344,7 @@ const
 	keyASSubroutineName = FourCharCode('snam');
 	kASPrepositionalSubroutine = FourCharCode('psbr');
 	keyASPositionalArgs = FourCharCode('parg');
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 const
@@ -365,6 +417,9 @@ const
 	kASPrepositionalSubroutine = FourCharCode('psbr');
 	keyASPositionalArgs = FourCharCode('parg');
 
+=======
+
+>>>>>>> graemeg/cpstrnew
 const
 { Add this parameter to a Get Data result if your app handled the 'as' parameter }
 	keyAppHandledCoercion = FourCharCode('idas');
@@ -405,6 +460,7 @@ const
 	kASNot = kAENOT;
 	kASNegate = FourCharCode('neg ');
 	keyASArg = FourCharCode('arg ');
+<<<<<<< HEAD
 
 const
 { event code for the 'error' statement }
@@ -556,6 +612,108 @@ const
 	formUserPropertyID = FourCharCode('usrp');
 
 const
+=======
+
+const
+{ event code for the 'error' statement }
+	kASErrorEventCode = FourCharCode('err ');
+	kOSAErrorArgs = FourCharCode('erra');
+	keyAEErrorObject = FourCharCode('erob'); { Properties: }
+	pLength = FourCharCode('leng');
+	pReverse = FourCharCode('rvse');
+	pRest = FourCharCode('rest');
+	pInherits = FourCharCode('c@#^');
+	pProperties = FourCharCode('pALL'); { User-Defined Record Fields: }
+	keyASUserRecordFields = FourCharCode('usrf');
+	typeUserRecordFields = typeAEList;
+
+{ Prepositions: }
+const
+	keyASPrepositionAt = FourCharCode('at  ');
+	keyASPrepositionIn = FourCharCode('in  ');
+	keyASPrepositionFrom = FourCharCode('from');
+	keyASPrepositionFor = FourCharCode('for ');
+	keyASPrepositionTo = FourCharCode('to  ');
+	keyASPrepositionThru = FourCharCode('thru');
+	keyASPrepositionThrough = FourCharCode('thgh');
+	keyASPrepositionBy = FourCharCode('by  ');
+	keyASPrepositionOn = FourCharCode('on  ');
+	keyASPrepositionInto = FourCharCode('into');
+	keyASPrepositionOnto = FourCharCode('onto');
+	keyASPrepositionBetween = FourCharCode('btwn');
+	keyASPrepositionAgainst = FourCharCode('agst');
+	keyASPrepositionOutOf = FourCharCode('outo');
+	keyASPrepositionInsteadOf = FourCharCode('isto');
+	keyASPrepositionAsideFrom = FourCharCode('asdf');
+	keyASPrepositionAround = FourCharCode('arnd');
+	keyASPrepositionBeside = FourCharCode('bsid');
+	keyASPrepositionBeneath = FourCharCode('bnth');
+	keyASPrepositionUnder = FourCharCode('undr');
+
+const
+	keyASPrepositionOver = FourCharCode('over');
+	keyASPrepositionAbove = FourCharCode('abve');
+	keyASPrepositionBelow = FourCharCode('belw');
+	keyASPrepositionApartFrom = FourCharCode('aprt');
+	keyASPrepositionGiven = FourCharCode('givn');
+	keyASPrepositionWith = FourCharCode('with');
+	keyASPrepositionWithout = FourCharCode('wout');
+	keyASPrepositionAbout = FourCharCode('abou');
+	keyASPrepositionSince = FourCharCode('snce');
+	keyASPrepositionUntil = FourCharCode('till');
+
+const
+{ Terminology & Dialect things: }
+	kDialectBundleResType = FourCharCode('Dbdl'); { AppleScript Classes and Enums: }
+	cConstant = typeEnumerated;
+	cClassIdentifier = pClass;
+	cObjectBeingExamined = typeObjectBeingExamined;
+	cList = typeAEList;
+	cSmallReal = typeIEEE32BitFloatingPoint;
+	cReal = typeIEEE64BitFloatingPoint;
+	cRecord = typeAERecord;
+	cReference = cObjectSpecifier;
+	cUndefined = FourCharCode('undf');
+	cMissingValue = FourCharCode('msng');
+	cSymbol = FourCharCode('symb');
+	cLinkedList = FourCharCode('llst');
+	cVector = FourCharCode('vect');
+	cEventIdentifier = FourCharCode('evnt');
+	cKeyIdentifier = FourCharCode('kyid');
+	cUserIdentifier = FourCharCode('uid ');
+	cPreposition = FourCharCode('prep');
+	cKeyForm = enumKeyForm;
+	cScript = FourCharCode('scpt');
+	cHandler = FourCharCode('hand');
+	cProcedure = FourCharCode('proc');
+
+const
+	cHandleBreakpoint = FourCharCode('brak');
+
+const
+	cClosure = FourCharCode('clsr');
+	cRawData = FourCharCode('rdat');
+	cStringClass = typeChar;
+	cNumber = FourCharCode('nmbr');
+	cListElement = FourCharCode('celm');
+	cListOrRecord = FourCharCode('lr  ');
+	cListOrString = FourCharCode('ls  ');
+	cListRecordOrString = FourCharCode('lrs ');
+	cNumberOrString = FourCharCode('ns  ');
+	cNumberOrDateTime = FourCharCode('nd  ');
+	cNumberDateTimeOrString = FourCharCode('nds ');
+	cAliasOrString = FourCharCode('sf  ');
+	cSeconds = FourCharCode('scnd');
+	typeSound = FourCharCode('snd ');
+	enumBooleanValues = FourCharCode('boov'); {  Use this instead of typeBoolean to avoid with/without conversion  }
+	kAETrue = typeTrue;
+	kAEFalse = typeFalse;
+	enumMiscValues = FourCharCode('misc');
+	kASCurrentApplication = FourCharCode('cura'); { User-defined property ospecs: }
+	formUserPropertyID = FourCharCode('usrp');
+
+const
+>>>>>>> graemeg/cpstrnew
 	cString = cStringClass; { old name for cStringClass - can't be used in .r files}
 
 const
@@ -607,6 +765,7 @@ const
 	kASConsiderRepliesIgnoreMask = $00400000;
 	kASNumericStringsIgnoreMask = $00800000;
 	enumConsidsAndIgnores = FourCharCode('csig');
+<<<<<<< HEAD
 
 const
 	cCoercion = FourCharCode('coec');
@@ -627,6 +786,28 @@ const
 	cStorage = FourCharCode('stor');
 
 const
+=======
+
+const
+	cCoercion = FourCharCode('coec');
+	cCoerceUpperCase = FourCharCode('txup');
+	cCoerceLowerCase = FourCharCode('txlo');
+	cCoerceRemoveDiacriticals = FourCharCode('txdc');
+	cCoerceRemovePunctuation = FourCharCode('txpc');
+	cCoerceRemoveHyphens = FourCharCode('txhy');
+	cCoerceOneByteToTwoByte = FourCharCode('txex');
+	cCoerceRemoveWhiteSpace = FourCharCode('txws');
+	cCoerceSmallKana = FourCharCode('txsk');
+	cCoerceZenkakuhankaku = FourCharCode('txze');
+	cCoerceKataHiragana = FourCharCode('txkh'); { Lorax things: }
+	cZone = FourCharCode('zone');
+	cMachine = FourCharCode('mach');
+	cAddress = FourCharCode('addr');
+	cRunningAddress = FourCharCode('radd');
+	cStorage = FourCharCode('stor');
+
+const
+>>>>>>> graemeg/cpstrnew
 { DateTime things: }
 	pASWeekday = FourCharCode('wkdy');
 	pASMonth = FourCharCode('mnth');

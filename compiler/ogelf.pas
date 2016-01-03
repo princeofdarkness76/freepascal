@@ -782,8 +782,11 @@ implementation
       const
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
 <<<<<<< HEAD
+<<<<<<< HEAD
           { TODO: sec_rodata is still writable }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef userodata}
 >>>>>>> graemeg/cpstrnew
           '.text','.data','.data','.rodata','.bss','.threadvar',
@@ -835,10 +838,13 @@ implementation
           '.objc_catlist',
           '.obcj_nlcatlist',
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           '.objc_protolist'
         );
         secnames_pic : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
@@ -897,6 +903,9 @@ implementation
           '.objc_catlist',
           '.obcj_nlcatlist',
           '.objc_protolist'
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         );
       var
@@ -909,13 +918,19 @@ implementation
         else
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             secname:=secnames[atype];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             if (cs_create_pic in current_settings.moduleswitches) and
                not(target_info.system in systems_darwin) then
               secname:=secnames_pic[atype]
             else
               secname:=secnames[atype];
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             if (atype=sec_fpc) and (Copy(aname,1,3)='res') then
               begin
@@ -954,7 +969,10 @@ implementation
       var
         symaddr : aint;
 <<<<<<< HEAD
+<<<<<<< HEAD
         objreloc: TObjRelocation;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       begin
@@ -1479,6 +1497,9 @@ implementation
            shstrtabsect:=TElfObjSection.create_ext(ObjSectionList,'.shstrtab',SHT_STRTAB,0,0,0,1,0);
            { "no executable stack" marker for Linux }
            if (target_info.system in systems_linux) and
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
               not(cs_executable_stack in current_settings.moduleswitches) then
              TElfObjSection.create_ext(data,'.note.GNU-stack',SHT_PROGBITS,0,1,0);

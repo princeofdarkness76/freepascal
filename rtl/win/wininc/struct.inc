@@ -1561,6 +1561,7 @@ Const
 {$ifndef UNICODE}
      CPINFOEX   = CPINFOEXA;
 <<<<<<< HEAD
+<<<<<<< HEAD
      LPCPINFOEX = PCPINFOEXA;
      _cpinfoex  = CPINFOEXA;
      Tcpinfoex  = CPINFOEXA;
@@ -1572,6 +1573,8 @@ Const
      Tcpinfoex  = CPINFOEXW;
      Pcpinfoex  = PCPINFOEXW;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      LPCPINFOEX = ^CPINFOEXA;
      _cpinfoex  = CPINFOEXA;
      Tcpinfoex  = CPINFOEXA;
@@ -1582,6 +1585,9 @@ Const
      _cpinfoex  = CPINFOEXW;
      Tcpinfoex  = CPINFOEXW;
      Pcpinfoex  = ^CPINFOEXW;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ENDIF}
 
@@ -4056,8 +4062,11 @@ Const
           hItemHandle : HANDLE;
           dwContextId : DWORD_PTR;
 <<<<<<< HEAD
+<<<<<<< HEAD
  // NOTE:  this is defined as DWORD in http://msdn.microsoft.com/en-us/library/windows/desktop/bb773313%28v=vs.85%29.asp
 // but mingw has it as DWORD_PTR, so we will use that
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           MousePos : POINT;
@@ -4912,6 +4921,9 @@ Const
           lpszIcon : LPCTSTR;
 =======
           lpszIcon : LPCSTR;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           dwContextHelpId : DWORD_PTR;
           lpfnMsgBoxCallback : MSGBOXCALLBACK;
@@ -5461,8 +5473,11 @@ Const
      {$packrecords 4}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      TEXTMETRICA = record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      TEXTMETRIC = record
 >>>>>>> graemeg/cpstrnew
           tmHeight : LONG;
@@ -5502,6 +5517,9 @@ Const
      tagTEXTMETRICA = TEXTMETRICA;
      TTEXTMETRICA = TEXTMETRICA;
      PTEXTMETRICA = ^TEXTMETRICA;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
      TEXTMETRICW = record
@@ -5534,6 +5552,7 @@ Const
      {$PACKRECORDS C}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      {$IFNDEF UNICODE}
        LPTEXTMETRIC       = ^TEXTMETRICA;
@@ -5552,6 +5571,8 @@ Const
      {$ENDIF}
      {$PACKRECORDS C}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
      OUTLINETEXTMETRICA = record
@@ -5631,6 +5652,7 @@ Const
      _OUTLINETEXTMETRICW = OUTLINETEXTMETRICW;
      TOUTLINETEXTMETRICW = OUTLINETEXTMETRICW;
 <<<<<<< HEAD
+<<<<<<< HEAD
      POUTLINETEXTMETRICW = LPOUTLINETEXTMETRICW;
 
      {$ifdef Unicode}
@@ -5648,6 +5670,8 @@ Const
      {$endif}
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      POUTLINETEXTMETRICW = ^OUTLINETEXTMETRICW;
 
      {$ifdef Unicode}
@@ -5663,6 +5687,9 @@ Const
      POUTLINETEXTMETRIC  = ^OUTLINETEXTMETRICA;
      OUTLINETEXTMETRIC   = OUTLINETEXTMETRICA;
      {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
      {$POP}
      OVERLAPPED = record

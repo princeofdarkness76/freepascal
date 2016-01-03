@@ -62,15 +62,21 @@ var
     _runLoopModes: NSArray;
     _disabled: NSInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSUndoManager0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSUndoManager0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         undoing: 0..1;
         redoing: 0..1;
@@ -79,7 +85,10 @@ var
         _groupsByEvent: 0..1;
         reserved: 0..((1 shl 27)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

@@ -157,6 +157,9 @@ implementation
         systemunit.insert(tsyssym.create('Unaligned',in_unaligned_x));
         systemunit.insert(tsyssym.create('ObjCSelector',in_objc_selector_x)); { objc only }
         systemunit.insert(tsyssym.create('ObjCEncode',in_objc_encode_x)); { objc only }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -261,6 +264,9 @@ implementation
               s64floattype:=tfloatdef.create(s64real);
               s80floattype:=tfloatdef.create(s80real);
               sc80floattype:=tfloatdef.create(sc80real);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             end else begin
               s32floattype:=nil;
@@ -407,6 +413,9 @@ implementation
         uinttype:=u8inttype;
         sinttype:=s8inttype;
 {$endif cpu8bitalu}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         { some other definitions }
         openchararraytype:=carraydef.create(0,-1,ptrsinttype);
@@ -467,6 +476,7 @@ implementation
             { CExtended corresponds to the C version of the Extended type
               (either "long double" or "double") }
 <<<<<<< HEAD
+<<<<<<< HEAD
             if target_info.system in systems_android then
               { Android has "long double"="double" even for x86 }
               addtype('CExtended',s64floattype)
@@ -476,10 +486,15 @@ implementation
               else
                 addtype('CExtended',pbestrealtype^);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             if tfloatdef(pbestrealtype^).floattype=s80real then
               addtype('CExtended',sc80floattype)
             else
               addtype('CExtended',pbestrealtype^);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           end;
 {$ifdef x86}
@@ -663,6 +678,9 @@ implementation
         addfield(hrecst,tfieldvarsym.create('$proc',vs_value,voidpointertype,[]));
         addfield(hrecst,tfieldvarsym.create('$self',vs_value,voidpointertype,[]));
         methodpointertype:=trecorddef.create('',hrecst);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         addtype('$methodpointer',methodpointertype);
         { Add a type for nested proc pointers }
@@ -890,8 +908,14 @@ implementation
 //        aiclass[ait_labeled_instruction]:=tai_labeled_instruction;
 {$endif SPARC}
 <<<<<<< HEAD
+<<<<<<< HEAD
         aiclass[ait_symbolpair]:=tai_symbolpair;
         aiclass[ait_weak]:=tai_weak;
+=======
+{$ifdef arm}
+        aiclass[ait_thumb_func]:=tai_thumb_func;
+{$endif arm}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef arm}
         aiclass[ait_thumb_func]:=tai_thumb_func;

@@ -240,8 +240,11 @@ type
 
 function PageBookInfoRecordSize(ARecord: PTOCEntryPageBookInfo): Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Const defvalidflags = [valid_Navigation_pane_style,valid_Window_style_flags,valid_Initial_window_position,valid_Navigation_pane_width,valid_Buttons,valid_Tab_position];
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -452,6 +455,9 @@ function getnext(const s:string;var i: integer;len:integer):string;
 var
     ind : integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 begin
  if i>len then exit('');
@@ -471,6 +477,7 @@ begin
  i:=ind+1; // skip ,
 end;
 
+<<<<<<< HEAD
 =======
 
 begin
@@ -491,6 +498,8 @@ begin
  i:=ind+1; // skip ,
 end;
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function getnextint(const txt:string;var ind: integer;len:integer;var flags : TValidWindowFields;x:TValidWindowFieldsEnum):integer;
 
@@ -512,8 +521,13 @@ var ind,len,
     arr     : array[0..3] of integer;
     s2      : string;
 <<<<<<< HEAD
+<<<<<<< HEAD
     bArr    : Boolean;
 begin
+=======
+begin
+  flags:=[];
+>>>>>>> graemeg/cpstrnew
 =======
 begin
   flags:=[];
@@ -525,8 +539,13 @@ begin
   window_type       :=getnext(txt,ind,len);
   Title_bar_text    :=getnext(txt,ind,len);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Toc_file          :=getnext(txt,ind,len);
   index_file        :=getnext(txt,ind,len);
+=======
+  index_file        :=getnext(txt,ind,len);
+  Toc_file          :=getnext(txt,ind,len);
+>>>>>>> graemeg/cpstrnew
 =======
   index_file        :=getnext(txt,ind,len);
   Toc_file          :=getnext(txt,ind,len);
@@ -537,6 +556,7 @@ begin
   Jumpbutton_1_Text :=getnext(txt,ind,len);
   Jumpbutton_2_File :=getnext(txt,ind,len);
   Jumpbutton_2_Text :=getnext(txt,ind,len);
+<<<<<<< HEAD
 <<<<<<< HEAD
   nav_style         :=getnextint(txt,ind,len,flags,valid_navigation_pane_style);
   navpanewidth      :=getnextint(txt,ind,len,flags,valid_navigation_pane_width);
@@ -571,6 +591,8 @@ begin
   end;
    
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
   nav_style         :=getnextint(txt,ind,len,flags,valid_navigation_pane_style);
   navpanewidth      :=getnextint(txt,ind,len,flags,valid_navigation_pane_width);
@@ -586,6 +608,9 @@ begin
    arr[k]:=strtointdef(s2,0);
    inc(k);
   until (j<>0) or (ind>len);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   left  :=arr[0];
   top   :=arr[1];
@@ -661,7 +686,10 @@ Constructor TCHMWindow.create(s:string='');
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
  flags:=defvalidflags;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  if s<>'' then

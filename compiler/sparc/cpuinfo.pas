@@ -104,8 +104,12 @@ Const
                                  [cs_opt_level1,cs_opt_level2,cs_opt_level3]+
                                  [cs_opt_regvar,cs_opt_loopunroll,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                   cs_opt_tailrecursion,cs_opt_nodecse,
                                   cs_opt_reorder_fields,cs_opt_fastmath];
+=======
+								  cs_opt_tailrecursion,cs_opt_nodecse];
+>>>>>>> graemeg/cpstrnew
 =======
 								  cs_opt_tailrecursion,cs_opt_nodecse];
 >>>>>>> graemeg/cpstrnew

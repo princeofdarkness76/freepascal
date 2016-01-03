@@ -16,7 +16,11 @@ uses
   ptc;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure print(format: IPTCFormat);
+=======
+procedure print(const format: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure print(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
@@ -36,7 +40,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure print(mode: IPTCMode);
+=======
+procedure print(const mode: TPTCMode);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure print(const mode: TPTCMode);
 >>>>>>> graemeg/cpstrnew
@@ -59,6 +67,7 @@ begin
 end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   console: IPTCConsole;
   modes: TPTCModeList;
@@ -87,6 +96,8 @@ begin
         print(modes[index]);
       end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   modes: PPTCMode;
   index: Integer;
@@ -123,6 +134,9 @@ begin
       end;
     finally
       console.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

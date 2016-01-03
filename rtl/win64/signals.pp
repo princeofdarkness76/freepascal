@@ -346,7 +346,10 @@ interface
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$asmmode att}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

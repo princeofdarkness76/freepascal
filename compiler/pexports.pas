@@ -135,6 +135,7 @@ implementation
                        DefString:=srsym.realname+'='+InternalProcName;
                      end;
                     if try_to_consume(_INDEX) then
+<<<<<<< HEAD
                      begin
 <<<<<<< HEAD
                        pt:=comp_expr([ef_accept_equal]);
@@ -190,6 +191,47 @@ implementation
                        options:=options or eo_resident;
                        DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}
                      end;
+=======
+                     begin
+                       pt:=comp_expr(true,false);
+                       if pt.nodetype=ordconstn then
+                        if (Tordconstnode(pt).value<int64(low(index))) or
+                           (Tordconstnode(pt).value>int64(high(index))) then
+                          begin
+                            index:=0;
+                            message(parser_e_range_check_error)
+                          end
+                        else
+                          index:=Tordconstnode(pt).value.svalue
+                       else
+                        begin
+                          index:=0;
+                          consume(_INTCONST);
+                        end;
+                       options:=options or eo_index;
+                       pt.free;
+                       if target_info.system in [system_i386_win32,system_i386_wdosx,system_arm_wince,system_i386_wince] then
+                        DefString:=srsym.realname+'='+InternalProcName+' @ '+tostr(index)
+                       else
+                        DefString:=srsym.realname+'='+InternalProcName; {Index ignored!}
+                     end;
+                    if try_to_consume(_NAME) then
+                     begin
+                       pt:=comp_expr(true,false);
+                       if pt.nodetype=stringconstn then
+                         hpname:=strpas(tstringconstnode(pt).value_str)
+                       else
+                         consume(_CSTRING);
+                       options:=options or eo_name;
+                       pt.free;
+                       DefString:=hpname+'='+InternalProcName;
+                     end;
+                    if try_to_consume(_RESIDENT) then
+                     begin
+                       options:=options or eo_resident;
+                       DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}
+                     end;
+>>>>>>> graemeg/cpstrnew
                     if (DefString<>'') and UseDeffileForExports then
                      DefFile.AddExport(DefString);
                   end;

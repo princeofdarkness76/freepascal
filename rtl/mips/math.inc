@@ -15,6 +15,11 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$ifdef INTERNCONSTINTF}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef INTERNCONSTINTF}
 
@@ -50,7 +55,10 @@
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$else}
 
     {$define FPC_SYSTEM_HAS_ABS}
@@ -63,4 +71,7 @@
     function sqrt(d : extended) : extended;[internproc:fpc_in_sqrt_real];
 
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

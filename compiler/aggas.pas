@@ -280,9 +280,13 @@ implementation
           '.objc_catlist',
           '.obcj_nlcatlist',
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
 =======
           '.objc_protolist'
 >>>>>>> graemeg/cpstrnew
@@ -343,9 +347,13 @@ implementation
           '.objc_catlist',
           '.obcj_nlcatlist',
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
 =======
           '.objc_protolist'
 >>>>>>> graemeg/cpstrnew
@@ -386,8 +394,11 @@ implementation
           secname:=aname;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         if is_smart_section(atype) and (aname<>'') then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         { For bss we need to set some flags that are target dependent,
           it is easier to disable it for smartlinking. It doesn't take up
           filespace }
@@ -398,6 +409,9 @@ implementation
            (atype<>sec_user) and
            { on embedded systems every byte counts, so smartlink bss too }
            ((atype<>sec_bss) or (target_info.system in systems_embedded)) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           begin
             case aorder of
@@ -492,8 +506,11 @@ implementation
            begin
              if (atype in [sec_stub,sec_objc_data,sec_objc_const,sec_data_coalesced]) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                writer.AsmWrite('.section ');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                AsmWrite('.section ');
 >>>>>>> graemeg/cpstrnew
            end
@@ -603,6 +620,7 @@ implementation
               (
                 assigned(hp.next) and
 <<<<<<< HEAD
+<<<<<<< HEAD
                  (tai(hp.next).typ in [ait_const,ait_datablock,ait_realconst])
               ) or
               (hp.sym.typ=AT_DATA);
@@ -617,6 +635,8 @@ implementation
           instr : string;
 {$endif}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                  (tai(hp.next).typ in [ait_const,ait_datablock,
                   ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_comp_64bit])
               ) or
@@ -628,11 +648,15 @@ implementation
       procedure doalign(alignment: byte; use_op: boolean; fillop: byte; out last_align: longint);
         var
           i: longint;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         begin
           last_align:=alignment;
           if alignment>1 then
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
               if not(target_info.system in (systems_darwin+systems_aix)) then
                 begin
@@ -675,6 +699,8 @@ implementation
                 end;
               writer.AsmLn;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
               if not(target_info.system in systems_darwin) then
                 begin
                   AsmWrite(#9'.balign '+tostr(alignment));
@@ -695,6 +721,9 @@ implementation
                   last_align:=i;
                 end;
               AsmLn;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             end;
         end;
@@ -773,7 +802,11 @@ implementation
            ait_align :
              begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align,lasthp);
+=======
+               doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
+>>>>>>> graemeg/cpstrnew
 =======
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
 >>>>>>> graemeg/cpstrnew
@@ -1074,6 +1107,7 @@ implementation
                              s:=tostr(longint(tai_const(hp).value));
 {$endif cpu64bitaddr}
 <<<<<<< HEAD
+<<<<<<< HEAD
                            if constdef = aitconst_half16bit then
                              s:='('+s+')/2';
                            if constdef = aitconst_gs then
@@ -1081,6 +1115,8 @@ implementation
 
                            writer.AsmWrite(s);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                            AsmWrite(s);
 >>>>>>> graemeg/cpstrnew
                            inc(l,length(s));
@@ -1175,8 +1211,13 @@ implementation
                   if (tai_label(hp).labsym.bind=AB_PRIVATE_EXTERN) then
                     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                       writer.AsmWrite(#9'.private_extern ');
                       writer.AsmWriteln(tai_label(hp).labsym.name);
+=======
+                      AsmWrite(#9'.private_extern ');
+                      AsmWriteln(tai_label(hp).labsym.name);
+>>>>>>> graemeg/cpstrnew
 =======
                       AsmWrite(#9'.private_extern ');
                       AsmWriteln(tai_label(hp).labsym.name);
@@ -1207,7 +1248,10 @@ implementation
              begin
                if (tai_symbol(hp).sym.bind=AB_PRIVATE_EXTERN) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                  begin
                    AsmWrite(#9'.private_extern ');
                    AsmWriteln(tai_symbol(hp).sym.name);
@@ -1291,6 +1335,7 @@ implementation
                      end;
                  end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                if replaceforbidden then
                  if not(tai_symbol(hp).has_value) then
                    writer.AsmWriteLn(ReplaceForbiddenAsmSymbolChars(tai_symbol(hp).sym.name + ':'))
@@ -1343,6 +1388,18 @@ implementation
              begin
                AsmWriteLn(#9'.thumb_func');
              end;
+=======
+               if not(tai_symbol(hp).has_value) then
+                 AsmWriteLn(tai_symbol(hp).sym.name + ':')
+               else
+                 AsmWriteLn(tai_symbol(hp).sym.name + '=' + tostr(tai_symbol(hp).value));
+             end;
+{$ifdef arm}
+           ait_thumb_func:
+             begin
+               AsmWriteLn(#9'.thumb_func');
+             end;
+>>>>>>> graemeg/cpstrnew
 {$endif arm}
 
 >>>>>>> graemeg/cpstrnew
@@ -1427,6 +1484,7 @@ implementation
 
            ait_marker :
 <<<<<<< HEAD
+<<<<<<< HEAD
              begin
 {$ifdef DEBUG_AGGAS}
                WriteStr(s,tai_marker(hp).Kind);
@@ -1438,6 +1496,8 @@ implementation
                  dec(InlineLevel);
              end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
              if tai_marker(hp).kind=mark_NoLineInfoStart then
                inc(InlineLevel)
              else if tai_marker(hp).kind=mark_NoLineInfoEnd then
@@ -1725,6 +1785,9 @@ implementation
 =======
       { "no executable stack" marker for Linux }
       if (target_info.system in systems_linux) and
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
          not(cs_executable_stack in current_settings.moduleswitches) then
         begin
@@ -1873,6 +1936,7 @@ implementation
                   end;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             sec_objc_meth_var_types:
               begin
                 if (target_info.system in systems_objc_nfabi) then
@@ -1892,12 +1956,19 @@ implementation
 =======
             sec_objc_meth_var_names,
 >>>>>>> graemeg/cpstrnew
+=======
+            sec_objc_meth_var_names,
+>>>>>>> graemeg/cpstrnew
             sec_objc_class_names:
               begin
                 if (target_info.system in systems_objc_nfabi) then
                   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                     result:='.section __TEXT,__objc_classname,cstring_literals';
+=======
+                    result:='.cstring';
+>>>>>>> graemeg/cpstrnew
 =======
                     result:='.cstring';
 >>>>>>> graemeg/cpstrnew
@@ -2045,9 +2116,13 @@ implementation
          sec_none (* sec_objc_catlist *),
          sec_none (* sec_objc_nlcatlist *),
 <<<<<<< HEAD
+<<<<<<< HEAD
          sec_none (* sec_objc_protlist *),
          sec_none (* sec_stack *),
          sec_none (* sec_heap *)
+=======
+         sec_none (* sec_objc_protlist *)
+>>>>>>> graemeg/cpstrnew
 =======
          sec_none (* sec_objc_protlist *)
 >>>>>>> graemeg/cpstrnew

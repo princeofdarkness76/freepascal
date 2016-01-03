@@ -66,8 +66,11 @@ interface
 
     uses
 <<<<<<< HEAD
+<<<<<<< HEAD
       cutils,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       globtype,
       cutils,systems,
 >>>>>>> graemeg/cpstrnew
@@ -175,10 +178,13 @@ interface
                  InternalError(2015011801);
 {$ifdef x86_64}
 <<<<<<< HEAD
+<<<<<<< HEAD
                if (base<>NR_RIP) then
                  InternalError(2015011802);
                owner.writer.AsmWrite('@GOTPCREL');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
              begin
                { local symbols don't have to (and in case of Mac OS X: cannot)
                  be accessed via the GOT
@@ -187,6 +193,9 @@ interface
                   (ref.symbol.bind<>AB_LOCAL) then
                  owner.AsmWrite('@GOTPCREL');
              end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$else x86_64}
                owner.writer.AsmWrite('@GOT');
@@ -310,7 +319,11 @@ interface
        need_second_mov : boolean;
        i        : integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
        sreg     : string;
+=======
+       comment  : tai_comment;
+>>>>>>> graemeg/cpstrnew
 =======
        comment  : tai_comment;
 >>>>>>> graemeg/cpstrnew
@@ -320,6 +333,7 @@ interface
         taicpu(hp).SetOperandOrder(op_att);
         op:=taicpu(hp).opcode;
         calljmp:=is_calljmp(op);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         // BUGFIX GAS-assembler
@@ -362,6 +376,8 @@ interface
           end;
         owner.writer.AsmWrite(#9);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         { constant values in the 32 bit range are sign-extended to
           64 bits, but this is not what we want.  PM 2010-09-02
           the fix consists of simply setting only the 4-byte register
@@ -481,6 +497,9 @@ interface
             inc(taicpu(hp).oper[1]^.ref^.offset,4);
             WriteInstruction(hp);
           end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -545,6 +564,19 @@ interface
             comment : '# ';
           );
 
+       as_x86_64_gas_info : tasminfo =
+          (
+            id     : as_ggas;
+            idtxt  : 'GAS';
+            asmbin : 'gas';
+            asmcmd : '--64 -o $OBJ $ASM';
+            supported_targets : [system_x86_64_solaris];
+            flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf];
+            labelprefix : '.L';
+            comment : '# ';
+          );
+
+
 
 
        as_x86_64_solaris_info : tasminfo =
@@ -599,9 +631,12 @@ interface
                                 system_i386_netbsd,system_i386_Netware,system_i386_qnx,system_i386_wdosx,system_i386_openbsd,
                                 system_i386_netwlibc,system_i386_wince,system_i386_embedded,system_i386_symbian,system_i386_haiku,system_x86_6432_linux,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 system_i386_nativent,system_i386_android,system_i386_aros];
             flags : [af_needar,af_smartlink_sections,af_supports_dwarf];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                                 system_i386_nativent];
             flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf];
 >>>>>>> graemeg/cpstrnew
@@ -635,7 +670,11 @@ interface
             asmcmd : '-o $OBJ $EXTRAOPT $ASM';
             supported_targets : [system_i386_linux,system_i386_OS2,system_i386_freebsd,system_i386_netbsd,system_i386_openbsd,system_i386_EMX,system_i386_embedded];
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags : [af_needar,af_stabs_use_function_absolute_addresses];
+=======
+            flags : [af_allowdirect,af_needar,af_stabs_use_function_absolute_addresses];
+>>>>>>> graemeg/cpstrnew
 =======
             flags : [af_allowdirect,af_needar,af_stabs_use_function_absolute_addresses];
 >>>>>>> graemeg/cpstrnew
@@ -658,6 +697,9 @@ interface
             asmcmd : '-o $OBJ $ASM -arch i386';
             supported_targets : [system_i386_darwin,system_i386_iphonesim];
             flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             labelprefix : 'L';
             comment : '# ';
@@ -713,7 +755,10 @@ initialization
 {$ifdef x86_64}
   RegisterAssembler(as_x86_64_as_info,Tx86ATTAssembler);
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterAssembler(as_x86_64_yasm_info,Tx86ATTAssembler);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   RegisterAssembler(as_x86_64_gas_info,Tx86ATTAssembler);

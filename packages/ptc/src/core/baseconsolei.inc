@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2013  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -34,6 +38,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
   TPTCBaseConsole = class(TInterfacedObject, IPTCConsole, IPTCSurface)
@@ -168,10 +173,16 @@ constructor TPTCBaseConsole.Create;
 begin
   FReleaseEnabled := False;
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TPTCBaseConsole.Create;
+begin
+  FReleaseEnabled := False;
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TPTCBaseConsole.KeyPressed: Boolean;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   k, kpeek: IPTCEvent;
 begin
@@ -197,6 +208,8 @@ end;
 
 function TPTCBaseConsole.PeekKey(out AKey: IPTCKeyEvent): Boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   k, kpeek: TPTCEvent;
 begin
   k := nil;
@@ -229,6 +242,9 @@ begin
 end;
 
 function TPTCBaseConsole.PeekKey(var AKey: TPTCKeyEvent): Boolean;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   if KeyPressed then
@@ -242,6 +258,7 @@ end;
 
 procedure TPTCBaseConsole.ReadKey;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   k: IPTCKeyEvent;
 begin
@@ -284,6 +301,8 @@ begin
   Result := -1;
   raise TPTCError.Create('Console does not support OpenGL');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   k: TPTCKeyEvent;
 begin
   k := TPTCKeyEvent.Create;
@@ -292,5 +311,8 @@ begin
   finally
     k.Free;
   end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;

@@ -21,6 +21,7 @@ const BLACK=false;
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   generic TSetIterator<T, TNode>=class
     public
     type PNode=^TNode;
@@ -31,6 +32,8 @@ type
     property Data:T read GetData;
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   generic TSet<T, TCompare>=class
@@ -44,7 +47,10 @@ type
       Color:boolean;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     TIterator=specialize TSetIterator<T, Node>;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   var
@@ -66,6 +72,7 @@ type
     function DeleteMin(nod:PNode):PNode;
     function Delete(value:T; nod:PNode):PNode;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Min(nod:PNode):PNode;inline; 
   public
     function Find(value:T):TIterator;inline;
@@ -78,6 +85,8 @@ type
     function Min:TIterator;inline;
     function Max:TIterator;inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function Min(nod:PNode):PNode;inline;
     
   public
@@ -91,12 +100,16 @@ type
     function Max:PNode;inline;
     function Next(x:PNode):PNode;inline;
     function Prev(x:PNode):PNode;inline;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure Delete(value:T);inline;
     public constructor Create;
     public destructor Destroy;override;
     function Size:SizeUInt;
     function IsEmpty:boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     function NFind(value:T):PNode;inline;
@@ -107,6 +120,8 @@ type
     function NInsert(value:T):PNode;inline;
     function NMin:PNode;inline;
     function NMax:PNode;inline;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -286,6 +301,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSet.Find(value:T):TIterator;inline;
 var ret:TIterator; x:PNode;
 begin
@@ -300,6 +316,9 @@ function TSet.NFind(value:T):PNode;inline;
 =======
 function TSet.Find(value:T):PNode;inline;
 >>>>>>> graemeg/cpstrnew
+=======
+function TSet.Find(value:T):PNode;inline;
+>>>>>>> graemeg/cpstrnew
 var x:PNode;
 begin
   x:=FBase;
@@ -307,9 +326,13 @@ begin
     if(TCompare.c(value,x^.Data)) then x:=x^.Left
     else if(TCompare.c(x^.Data,value)) then x:=x^.Right
 <<<<<<< HEAD
+<<<<<<< HEAD
     else begin
       exit(x);
     end;
+=======
+    else exit(x);
+>>>>>>> graemeg/cpstrnew
 =======
     else exit(x);
 >>>>>>> graemeg/cpstrnew
@@ -317,6 +340,7 @@ begin
   exit(nil);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TSet.FindLess(value:T):TIterator;inline;
 var ret:TIterator; x:PNode;
@@ -329,6 +353,9 @@ begin
 end;
 
 function TSet.NFindLess(value:T):PNode;inline;
+=======
+function TSet.FindLess(value:T):PNode;inline;
+>>>>>>> graemeg/cpstrnew
 =======
 function TSet.FindLess(value:T):PNode;inline;
 >>>>>>> graemeg/cpstrnew
@@ -345,6 +372,7 @@ begin
       cur:=cur^.left;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   NFindLess := x;
 end;
 
@@ -360,10 +388,15 @@ end;
 
 function TSet.NFindLessEqual(value:T):PNode;inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   FindLess:=x;
 end;
 
 function TSet.FindLessEqual(value:T):PNode;inline;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var x,cur:PNode;
 begin
@@ -377,6 +410,7 @@ begin
     end else
       cur:=cur^.left;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   NFindLessEqual := x
 end;
@@ -393,10 +427,15 @@ end;
 
 function TSet.NFindGreater(value:T):PNode;inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   FindLessEqual:=x;
 end;
 
 function TSet.FindGreater(value:T):PNode;inline;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var x,cur:PNode;
 begin
@@ -410,6 +449,7 @@ begin
     end else
       cur:=cur^.right;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   NFindGreater := x;
 end;
@@ -426,10 +466,15 @@ end;
 
 function TSet.NFindGreaterEqual(value:T):PNode;inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   FindGreater:=x;
 end;
 
 function TSet.FindGreaterEqual(value:T):PNode;inline;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var x,cur:PNode;
 begin
@@ -444,20 +489,27 @@ begin
       cur:=cur^.right;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   NFindGreaterEqual := x;
 end;
 
 procedure TSet.Insert(value:T);inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   FindGreaterEqual:=x;
 end;
 
 function TSet.Insert(value:T):PNode;inline;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var position:PNode;
 begin
   FBase:=Insert(value, FBase, position);
   FBase^.Color:=BLACK;
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -477,6 +529,9 @@ begin
   ret := TIterator.create;
   ret.FNode := position;
   InsertAndGetIterator := ret;
+=======
+  Insert:=position;
+>>>>>>> graemeg/cpstrnew
 =======
   Insert:=position;
 >>>>>>> graemeg/cpstrnew
@@ -524,6 +579,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSet.NMin:PNode;inline;
 var nod:PNode;
 begin
@@ -557,6 +613,8 @@ end;
 function TSet.Max:TIterator;inline;
 var temp:PNode; ret:TIterator;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TSet.Min:PNode;inline;
 begin
   if FBase=nil then exit(nil);
@@ -565,11 +623,15 @@ end;
 
 function TSet.Max:PNode;inline;
 var temp:PNode;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   if FBase=nil then exit(nil);
   temp:=FBase;
   while(temp^.Right<>nil) do temp:=temp^.Right;
+<<<<<<< HEAD
 <<<<<<< HEAD
   
   ret := TIterator.create;
@@ -593,6 +655,8 @@ begin
   else begin
     temp:=FNode;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   exit(temp);
 end;
 
@@ -606,6 +670,9 @@ begin
   end
   else begin
     temp:=x;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     while(true) do begin
       if(temp^.Parent=nil) then begin temp:=temp^.Parent; break; end;
@@ -613,6 +680,7 @@ begin
       temp:=temp^.Parent;
     end;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   if (temp = nil) then exit(false);
   FNode:=temp;
@@ -630,6 +698,8 @@ begin
   else begin
     temp:=FNode;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   exit(temp);
 end;
 
@@ -643,6 +713,9 @@ begin
   end
   else begin
     temp:=x;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     while(true) do begin
       if(temp^.Parent=nil) then begin temp:=temp^.Parent; break; end;
@@ -651,9 +724,13 @@ begin
     end;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (temp = nil) then exit(false);
   FNode:=temp;
   Prev:=true;
+=======
+  exit(temp);
+>>>>>>> graemeg/cpstrnew
 =======
   exit(temp);
 >>>>>>> graemeg/cpstrnew

@@ -47,7 +47,11 @@
     _shadowBlurRadius: CGFloat;
     _shadowColor: NSColor;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reservedFloat: array[0..(3)-1] of CGFloat;
+=======
+        _reservedFloat: array[0..2] of CGFloat;
+>>>>>>> graemeg/cpstrnew
 =======
         _reservedFloat: array[0..2] of CGFloat;
 >>>>>>> graemeg/cpstrnew

@@ -33,6 +33,7 @@ type
 type
   __MFlags = record
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSMatrix0: cuint);
     1: (data: bitpacked record
@@ -100,6 +101,8 @@ type
          end;
        );
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     highlightMode: 0..1;
     radioMode: 0..1;
@@ -161,6 +164,9 @@ type
     radioMode: 0..1;
     highlightMode: 0..1;
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 _MFlags = __MFlags;

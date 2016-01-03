@@ -16,7 +16,11 @@ uses
   ptc;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure putpixel(surface: IPTCSurface; x, y: Integer; r, g, b: Uint8);
+=======
+procedure putpixel(surface: TPTCSurface; x, y: Integer; r, g, b: Uint8);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure putpixel(surface: TPTCSurface; x, y: Integer; r, g, b: Uint8);
 >>>>>>> graemeg/cpstrnew
@@ -40,9 +44,15 @@ end;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
@@ -76,13 +86,19 @@ begin
       console.ReadKey;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       console.Free;
       surface.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

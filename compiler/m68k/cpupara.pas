@@ -44,10 +44,13 @@ unit cpupara;
           function create_paraloc_info(p : tabstractprocdef; side: tcallercallee):longint;override;
           function push_addr_param(varspez:tvarspez;def : tdef;calloption : tproccalloption) : boolean;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
           procedure createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);override;
           function create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
           procedure createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
           procedure create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
@@ -167,6 +170,7 @@ unit cpupara;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function tcpuparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;
       var
@@ -191,6 +195,13 @@ unit cpupara;
         p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
       end;
 
+=======
+    procedure tm68kparamanager.create_funcretloc_info(p: tabstractprocdef; side: tcallercallee);
+      begin
+        p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
+      end;
+
+>>>>>>> graemeg/cpstrnew
 
     function tm68kparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
       var
@@ -240,7 +251,10 @@ unit cpupara;
             paraloc^.register:=NR_FPU_RESULT_REG;
             paraloc^.size:=retcgsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
             paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           end
@@ -253,7 +267,10 @@ unit cpupara;
                paraloc^.loc:=LOC_REGISTER;
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                if side=callerside then
@@ -265,7 +282,10 @@ unit cpupara;
                paraloc^.loc:=LOC_REGISTER;
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                if side=calleeside then
@@ -278,7 +298,10 @@ unit cpupara;
                paraloc^.loc:=LOC_REGISTER;
                paraloc^.size:=retcgsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                if side=callerside then
@@ -453,6 +476,7 @@ unit cpupara;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcpuparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
       begin
         { Never a need for temps when value is pushed (calls inside parameters
@@ -466,9 +490,13 @@ unit cpupara;
 =======
     procedure tm68kparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure tm68kparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
+>>>>>>> graemeg/cpstrnew
       var
         cur_stack_offset: aword;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         cur_stack_offset:=0;
 
@@ -479,12 +507,17 @@ unit cpupara;
         else
           internalerror(200410231);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         paraloc:=parasym.paraloc[callerside].location;
         { Never a need for temps when value is pushed (calls inside parameters
           will simply allocate even more stack space for their parameters) }
         if not(use_fixed_stack) then
           can_use_final_stack_loc:=true;
         inherited createtempparaloc(list,calloption,parasym,can_use_final_stack_loc,cgpara);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 

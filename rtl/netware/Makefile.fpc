@@ -8,6 +8,7 @@ main=rtl
 [target]
 loaders=nwpre prelude
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       lineinfo lnfodwrf heaptrc \
       dos sysconst \
@@ -22,6 +23,8 @@ implicitunits=exeinfo \
       cp1250 cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
       cp437 cp646 cp850 cp856 cp866 cp874 cp8859_1 cp8859_5 cp8859_2 cp852
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       lineinfo lnfodwrf winsock heaptrc matrix \
       dos crt objects sysconst \
@@ -152,7 +155,10 @@ strings$(PPUEXT) : $(INC)/strings.pp $(INC)/stringsi.inc\
 
 nwpre$(PPUEXT) : nwpre.pp $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 netware$(PPUEXT) : netware.pp $(SYSTEMUNIT)$(PPUEXT)
 

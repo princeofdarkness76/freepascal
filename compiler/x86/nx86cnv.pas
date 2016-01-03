@@ -262,6 +262,9 @@ implementation
           hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,false);
 =======
           location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,false);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         if use_vectorfpu(resultdef) and
 {$ifdef cpu64bitalu}
@@ -356,6 +359,9 @@ implementation
             hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef);
 =======
             location_force_mem(current_asmdata.CurrAsmList,left.location);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             { don't change left.location.reference, because if it's a temp we
               need the original location at the end so we can free it }
@@ -398,6 +404,7 @@ implementation
                    if not(signtested) then
                      begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if use_bt then
                          begin
            {$if defined(cpu64bitalu) or defined(cpu32bitalu)}
@@ -431,6 +438,8 @@ implementation
                      cg.a_jmp_flags(current_asmdata.CurrAsmList,F_E,l2);
                    new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,l1.name,const_align(sizeof(pint)));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                        inc(leftref.offset,4);
                        emit_const_ref(A_BT,S_L,31,leftref);
                        dec(leftref.offset,4);

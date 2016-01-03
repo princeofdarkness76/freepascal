@@ -134,13 +134,19 @@ type
   P_fd_set = ^_fd_set;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   timeval = record
     tv_sec: cint32;
     tv_usec: cint32;
   end;
   Ptimeval = ^timeval;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure FD_SET(n: longint; var p: _fd_set); inline;
 procedure FD_CLR(n: longint; var p: _fd_set); inline;

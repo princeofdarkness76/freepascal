@@ -17,18 +17,24 @@ uses
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
   color: IPTCColor;
   key: IPTCKeyEvent;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
   color: TPTCColor = nil;
   key: TPTCKeyEvent = nil;
   area: TPTCArea;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   x, y: Integer;
   size: Integer;
@@ -37,6 +43,12 @@ begin
   try
     try
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      { create key }
+      key := TPTCKeyEvent.Create;
+
+>>>>>>> graemeg/cpstrnew
 =======
       { create key }
       key := TPTCKeyEvent.Create;
@@ -59,8 +71,11 @@ begin
       y := surface.height div 2;
       size := surface.width div 10;
 <<<<<<< HEAD
+<<<<<<< HEAD
       color := TPTCColorFactory.CreateNew(1, 1, 1);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       color := TPTCColor.Create(1, 1, 1);
 >>>>>>> graemeg/cpstrnew
 
@@ -106,6 +121,9 @@ begin
         finally
           area.Free;
         end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
         { copy to console }
@@ -116,15 +134,21 @@ begin
       until False;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       color.Free;
       console.close;
       console.Free;
       surface.Free;
       key.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

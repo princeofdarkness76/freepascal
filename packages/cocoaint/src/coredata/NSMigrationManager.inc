@@ -52,6 +52,7 @@
     _migrationContext: NSMigrationContext;
     _userInfo: NSDictionary;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __migrationManagerFlags: record
       case byte of
        0: (_anonbitfield_NSMigrationManager0: cuint);
@@ -60,12 +61,17 @@
         _reservedMigrationManager: 0..((1 shl 31)-1);
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __migrationManagerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMigrationManager0: cuint);
        1: (
         _migrationWasCancelled: 0..1;
         _reservedMigrationManager: 0..((1 shl 31)-1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       );
       end;

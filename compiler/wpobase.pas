@@ -394,6 +394,9 @@ implementation
 =======
     
     
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   procedure tunitwpoinfobase.resetdefs;
     var

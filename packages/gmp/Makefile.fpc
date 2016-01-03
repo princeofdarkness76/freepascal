@@ -1,5 +1,6 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -13,6 +14,8 @@ packages=rtl fpmkunit
 [install]
 fpcpackage=y
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 #   Makefile.fpc for Free Pascal ImLib 1.x Packages
 #
 
@@ -35,11 +38,15 @@ sourcedir=src
 [install]
 fpcpackage=y
 fpcsubdir=packages
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -127,9 +134,14 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 [shared]
 build=n
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

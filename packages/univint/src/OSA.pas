@@ -4,7 +4,11 @@
      Contains:   Open Scripting Architecture Client Interfaces.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    OSA-148~28
+=======
+     Version:    OSA-136~14
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    OSA-136~14
 >>>>>>> graemeg/cpstrnew
@@ -19,9 +23,12 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 
 >>>>>>> graemeg/cpstrnew
@@ -80,11 +87,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -103,6 +113,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -123,6 +134,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -132,12 +144,25 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -146,7 +171,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -154,18 +182,25 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -177,12 +212,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -196,17 +237,25 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 {$elsec}
 =======
 {$elsec}
@@ -239,6 +288,9 @@ interface
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
@@ -280,9 +332,15 @@ interface
 uses MacTypes,AEDataModel,MacErrors,AppleEvents,AEObjects,AEInteraction,Components,Files,CFBase,CFURL,CFAttributedString;
 {$endc} {not MACOSALLINCLUDE}
 
+<<<<<<< HEAD
 
 {$ifc TARGET_OS_MAC}
 
+=======
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
 
@@ -867,6 +925,7 @@ function OSAScriptError( scriptingComponent: ComponentInstance; selector: OSType
         Required desiredTypes:  
             typeSInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 const
 	kOSAErrorNumber = keyErrorNumber;
@@ -983,6 +1042,95 @@ const
     }
 {  0x65726e67   }
 const
+=======
+    }
+const
+	kOSAErrorNumber = keyErrorNumber;
+
+{
+        This selector is used to determine the full error message associated
+        with the error number.  It should include the name of the application
+        which caused the error, as well as the specific error that occurred.
+        This selector is sufficient for simple error reporting (but see
+        kOSAErrorBriefMessage, below).
+        Required desiredTypes:
+            typeChar                    error message string
+    }
+const
+	kOSAErrorMessage = keyErrorString;
+
+{
+        This selector is used to determine a brief error message associated with
+        the error number.  This message and should not mention the name of the
+        application which caused the error, any partial results or offending
+        object (see kOSAErrorApp, kOSAErrorPartialResult and
+        kOSAErrorOffendingObject, below).
+        Required desiredTypes:
+            typeChar                    brief error message string
+    }
+{  0x65727262  }
+const
+	kOSAErrorBriefMessage = FourCharCode('errb');
+
+{
+        This selector is used to determine which application actually got the
+        error (if it was the result of an AESend), or the current application
+        if ....
+        Required desiredTypes:
+            typeProcessSerialNumber     PSN of the errant application
+            typeChar                    name of the errant application
+    }
+{  0x65726170  }
+const
+	kOSAErrorApp = FourCharCode('erap');
+
+{
+        This selector is used to determine any partial result returned by an 
+        operation. If an AESend call failed, but a partial result was returned,
+        then the partial result may be returned as an AEDesc.
+        Required desiredTypes:
+            typeBest                    AEDesc of any partial result
+    }
+{  0x70746c72   }
+const
+	kOSAErrorPartialResult = FourCharCode('ptlr');
+
+{
+        This selector is used to determine any object which caused the error
+        that may have been indicated by an application.  The result is an 
+        AEDesc.
+        Required desiredTypes:
+            typeBest                    AEDesc of any offending object
+    }
+{  0x65726f62   }
+const
+	kOSAErrorOffendingObject = FourCharCode('erob');
+
+{
+        This selector is used to determine the type expected by a coercion 
+        operation if a type error occurred.
+    }
+{  0x65727274   }
+const
+	kOSAErrorExpectedType = FourCharCode('errt');
+
+{
+        This selector is used to determine the source text range (start and 
+        end positions) of where the error occurred.
+        Required desiredTypes:
+            typeOSAErrorRange
+    }
+{  0x65726e67  }
+const
+	kOSAErrorRange = FourCharCode('erng');
+
+{
+        An AERecord type containing keyOSASourceStart and keyOSASourceEnd fields
+        of type short.
+    }
+{  0x65726e67   }
+const
+>>>>>>> graemeg/cpstrnew
 	typeOSAErrorRange = FourCharCode('erng');
 
 { Field of a typeOSAErrorRange record of typeSInt16 }
@@ -1820,6 +1968,7 @@ function OSASetResumeDispatchProc( scriptingComponent: ComponentInstance; resume
 const
 	kOSAUseStandardDispatch = kAEUseStandardDispatch;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {
         Special ResumeDispatchProc constant which may be passed to 
@@ -1852,6 +2001,28 @@ const
     }
 const
 <<<<<<< HEAD
+=======
+	kOSANoDispatch = kAENoDispatch;
+
+{
+        Special ResumeDispatchProc constant which may be passed to 
+        OSASetResumeDispatchProc indicating that no dispatch should occur.
+=======
+
+{
+        Special ResumeDispatchProc constant which may be passed to 
+        OSASetResumeDispatchProc indicating that the handler registered
+        in the application with AEInstallEventHandler should be used.
+>>>>>>> graemeg/cpstrnew
+        
+        NOTE:   Had to remove the cast (AEEventHandlerUPP).  The C compiler
+                doesn't allow pointer types to be assigned to an enum.  All
+                constants must be assigned as enums to translate properly to
+                Pascal.
+    }
+const
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
 =======
 	kOSANoDispatch = kAENoDispatch;
 

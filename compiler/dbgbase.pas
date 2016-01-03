@@ -312,6 +312,7 @@ implementation
                   dbg_state_used:
                     appenddef(list,def);
 <<<<<<< HEAD
+<<<<<<< HEAD
                   dbg_state_queued:
                     begin
                       { can happen in case an objectdef was used from another
@@ -338,6 +339,10 @@ implementation
                     end;
                   else
                     internalerror(200610054);
+=======
+                else
+                  internalerror(200610054);
+>>>>>>> graemeg/cpstrnew
 =======
                 else
                   internalerror(200610054);

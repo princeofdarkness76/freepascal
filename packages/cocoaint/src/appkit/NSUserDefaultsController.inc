@@ -48,6 +48,7 @@
     _valueBuffer: NSMutableDictionary;
     _initialValues: NSDictionary;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __userDefaultsControllerFlags: record
       case byte of
        0: (_anonbitfield_NSUserDefaultsController0: cuint);
@@ -57,6 +58,8 @@
         _reservedUserDefaultsController: 0..((1 shl 30)-1);
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __userDefaultsControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSUserDefaultsController0: cuint);
@@ -64,6 +67,9 @@
         _sharedInstance: 0..1;
         _appliesImmediately: 0..1;
         _reservedUserDefaultsController: 0..((1 shl 30)-1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       );
       end;

@@ -125,6 +125,9 @@ type
     function ResolveLinkID(const Name: String; Level : Integer = 0): DOMString;
 =======
     function ResolveLinkID(const Name: String): DOMString;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function ResolveLinkIDInUnit(const Name,AUnitName: String): DOMString;
     function ResolveLinkWithinPackage(AElement: TPasElement;
@@ -803,6 +806,10 @@ var
   PageDoc: TXMLDocument;
   Filename: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  TempStream: TMemoryStream;
+>>>>>>> graemeg/cpstrnew
 =======
   TempStream: TMemoryStream;
 >>>>>>> graemeg/cpstrnew
@@ -827,6 +834,7 @@ begin
         PageDoc.Free;
       end;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   CreateCSSFile;
   CreatePlusImage;
@@ -902,6 +910,8 @@ begin
    TempStream.SaveToFile(Engine.output+'fpdoc.css');
   finally
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   
   if FCSSFile <> '' then
   begin
@@ -914,6 +924,9 @@ begin
     TempStream.LoadFromFile(FCSSFile);
     TempStream.Position := 0;
     TempStream.SaveToFile(Engine.output+ExtractFileName(FCSSFile));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     TempStream.Free;
   end;
@@ -977,8 +990,13 @@ function THTMLWriter.ResolveLinkIDInUnit(const Name,AUnitName: String): DOMStrin
 begin
   Result:=ResolveLinkID(Name);
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (Result='') and (AUnitName<>'') and (length(Name)>0) and (Name[1]<>'#') then
      Result:=ResolveLinkID(AUnitName+'.'+Name);
+=======
+  If (Result='') and (AUnitName<>'')  then
+    Result:=ResolveLinkID(AUnitName+'.'+Name);
+>>>>>>> graemeg/cpstrnew
 =======
   If (Result='') and (AUnitName<>'')  then
     Result:=ResolveLinkID(AUnitName+'.'+Name);
@@ -2428,7 +2446,11 @@ procedure THTMLWriter.CreateClassHierarchyPage(AList : TStringList; AddUnit : Bo
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Procedure AppendClass(E : TDomElement);
+=======
+	procedure THTMLWriter.CreateIndexPage(L : TStringList);
+>>>>>>> graemeg/cpstrnew
 =======
 	procedure THTMLWriter.CreateIndexPage(L : TStringList);
 >>>>>>> graemeg/cpstrnew
@@ -3375,6 +3397,9 @@ var
 <<<<<<< HEAD
 =======
     s: String;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     ThisInterface,
     ThisClass: TPasClassType;
@@ -3526,6 +3551,9 @@ var
 =======
       AppendHyperlink(CodeEl, ThisClass);
       if ThisClass.Interfaces.count>0 then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         begin
           for i:=0 to ThisClass.interfaces.count-1 do

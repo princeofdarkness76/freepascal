@@ -14,9 +14,15 @@
  **********************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Checked using ../unix/scipts/check_errnostr.sh  }
 const
   sys_errn=97;
+=======
+{$warning FIX ME, I'am from FreeBSD }
+const
+  sys_errn=93;
+>>>>>>> graemeg/cpstrnew
 =======
 {$warning FIX ME, I'am from FreeBSD }
 const
@@ -28,6 +34,7 @@ const
         'No such file or directory',            { ENOENT }
         'No such process',                      { ESRCH }
         'Interrupted system call',              { EINTR }
+<<<<<<< HEAD
 <<<<<<< HEAD
         'Input/output error',                   { EIO }
         'Device not configured',                { ENXIO }
@@ -52,6 +59,8 @@ const
         'Inappropriate ioctl for device',       { ENOTTY }
         'Text file busy',                       { ETXTBSY  Text file busy.  The new process was
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         'I/O error',                            { EIO }
         'No such device or address',            { ENXIO }
         'Arg list too long',                    { E2BIG }
@@ -74,6 +83,9 @@ const
         'Too many open files',                  { EMFILE }
         'Not a typewriter',                     { ENOTTY }
         'Text (code segment) file busy',        { ETXTBSY  Text file busy.  The new process was
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                                                     a pure procedure (shared text) file which was
                                                     open for writing by another process, or file
@@ -87,6 +99,7 @@ const
         'Read-only file system',                { EROFS }
         'Too many links',                       { EMLINK }
         'Broken pipe',                          { EPIPE }
+<<<<<<< HEAD
 <<<<<<< HEAD
         'Numerical argument out of domain',     { EDOM }
         'Result too large',                     { ERANGE }
@@ -156,6 +169,8 @@ const
         'Link has been severed',                { ENOLINK }
         'Protocol error'                        { EPROTO }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         'Math argument out of domain of func',  { EDOM }
         'Math result not representable',        { ERANGE }
         'Resource temporarily unavailable',        { EAGAIN }
@@ -219,6 +234,9 @@ const
         'Multihop attempted',                                   { EMULTIHOP }
         'Link has been severed',                              { ENOLINK }
         'Protocol error'                                             { EPROTO }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 );
 

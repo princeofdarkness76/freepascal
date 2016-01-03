@@ -20,7 +20,11 @@
                            Directory Handling
 *****************************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_mkdir(const s: rawbytestring);
+=======
+procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+>>>>>>> graemeg/cpstrnew
 =======
 procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -29,7 +33,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_rmdir(const s: rawbytestring);
+=======
+procedure rmdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+>>>>>>> graemeg/cpstrnew
 =======
 procedure rmdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -38,7 +46,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_chdir(const s: rawbytestring);
+=======
+procedure chdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+>>>>>>> graemeg/cpstrnew
 =======
 procedure chdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -47,7 +59,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_GetDir(DriveNr: byte; var Dir: RawByteString);
+=======
+procedure GetDir(DriveNr: byte; var Dir: ShortString);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure GetDir(DriveNr: byte; var Dir: ShortString);
 >>>>>>> graemeg/cpstrnew

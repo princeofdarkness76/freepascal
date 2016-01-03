@@ -38,6 +38,7 @@ type
 type
   __Brflags = record
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSBrowser0: cuint);
     1: (data: bitpacked record
@@ -101,6 +102,8 @@ type
          end;
        );
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     allowsMultipleSelection: 0..1;
     allowsBranchSelection: 0..1;
@@ -158,6 +161,9 @@ type
     allowsBranchSelection: 0..1;
     allowsMultipleSelection: 0..1;
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 _Brflags = __Brflags;

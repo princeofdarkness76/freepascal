@@ -48,6 +48,7 @@
     _predicateTarget: id;
     _predicateAction: SEL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __peFlags: record
       case byte of
        0: (_anonbitfield_NSPredicateEditor0: cuint);
@@ -59,6 +60,8 @@
       end;
     _predicateEditorReserved: array[0..(3)-1] of id;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __peFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPredicateEditor0: cuint);
@@ -68,6 +71,9 @@
       );
       end;
         _predicateEditorReserved: array[0..2] of id;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     
   public

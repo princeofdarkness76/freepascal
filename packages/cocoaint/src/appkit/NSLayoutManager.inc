@@ -89,15 +89,21 @@ type
     _glyphHoles: NSSortedArray;
     _layoutHoles: NSSortedArray;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __lmFlags: record
       case byte of
        0: (_anonbitfield_NSLayoutManager0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __lmFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSLayoutManager0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         containersAreFull: 0..1;
         glyphsMightDrawOutsideLines: 0..1;
@@ -130,7 +136,10 @@ type
         allowNonContig: 0..1;
         useNonContig: 0..1;
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

@@ -62,7 +62,11 @@ type
   NSSliderCell = objcclass external (NSActionCell)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(3)-1] of cint;
+=======
+        _reserved: array[0..2] of cint;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..2] of cint;
 >>>>>>> graemeg/cpstrnew
@@ -73,15 +77,21 @@ type
     _minValue: double;
     _trackRect: NSRect;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __scFlags: record
       case byte of
        0: (_anonbitfield_NSSliderCell0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __scFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSSliderCell0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         weAreVertical: 0..1;
         weAreVerticalSet: 0..1;
@@ -93,7 +103,10 @@ type
         drawing: 0..1;
         reserved2: 0..((1 shl 23)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

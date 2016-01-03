@@ -4,7 +4,11 @@
      Contains:   Language Analysis Manager Interfaces
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    LanguageAnalysis-242~23
+=======
+     Version:    LanguageAnalysis-214~9
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    LanguageAnalysis-214~9
 >>>>>>> graemeg/cpstrnew
@@ -18,8 +22,12 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -78,11 +86,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -101,6 +112,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -121,6 +133,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -136,6 +150,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -144,13 +161,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -207,6 +228,8 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -238,6 +261,9 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -332,8 +358,22 @@ const
 	keyAELAMorphemePath = FourCharCode('lmfp');
 	keyAELAMorpheme = FourCharCode('lmfn');
 	keyAELAHomograph = FourCharCode('lmfh');
+<<<<<<< HEAD
 
 const
+	typeLAMorphemeBundle = typeAERecord;
+	typeLAMorphemePath = typeAERecord;
+	typeLAMorpheme = typeAEList;
+	typeLAHomograph = typeAEList;
+=======
+>>>>>>> graemeg/cpstrnew
+
+{
+    Definitions for morpheme/homograph information
+}
+const
+<<<<<<< HEAD
+=======
 	typeLAMorphemeBundle = typeAERecord;
 	typeLAMorphemePath = typeAERecord;
 	typeLAMorpheme = typeAEList;
@@ -343,6 +383,7 @@ const
     Definitions for morpheme/homograph information
 }
 const
+>>>>>>> graemeg/cpstrnew
 	keyAEMorphemePartOfSpeechCode = FourCharCode('lamc');
 	keyAEMorphemeTextRange = FourCharCode('lamt');
 
@@ -515,8 +556,12 @@ function LAGetEnvironmentRef( const (*var*) targetEnvironmentName: Str63; var en
  *    Non-Carbon CFM:   in LanguageAnalysisLib 1.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function LACreateCustomEnvironment( baseEnvironment: LAEnvironmentRef; const (*var*) newEnvironmentName: Str63; persistent: Boolean; var newEnvironment: LAEnvironmentRef ): OSStatus; external name '_LACreateCustomEnvironment';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+=======
+function LACreateCustomEnvironment(baseEnvironment: LAEnvironmentRef; const (*var*) newEnvironmentName: Str63; persistent: Boolean; var newEnvironment: LAEnvironmentRef): OSStatus; external name '_LACreateCustomEnvironment';
+>>>>>>> graemeg/cpstrnew
 =======
 function LACreateCustomEnvironment(baseEnvironment: LAEnvironmentRef; const (*var*) newEnvironmentName: Str63; persistent: Boolean; var newEnvironment: LAEnvironmentRef): OSStatus; external name '_LACreateCustomEnvironment';
 >>>>>>> graemeg/cpstrnew
@@ -785,6 +830,7 @@ const
 	kLASpeechStrictClassMask = $0000FFF0;
 	kLASpeechKatsuyouMask = $0000000F;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {
@@ -846,6 +892,69 @@ const
     Conjugations
  }
 const
+=======
+
+
+{
+    Part of speeches
+}
+const
+	kLASpeechMeishi = $00000000; { noun }
+	kLASpeechFutsuuMeishi = $00000000; { general noun }
+	kLASpeechJinmei = $00000100; { person name }
+	kLASpeechJinmeiSei = $00000110; { family name }
+	kLASpeechJinmeiMei = $00000120; { first name }
+	kLASpeechChimei = $00000200; { place name }
+	kLASpeechSetsubiChimei = $00000210; { place name with suffix }
+	kLASpeechSoshikimei = $00000300; { organization name }
+	kLASpeechKoyuuMeishi = $00000400; { proper noun }
+	kLASpeechSahenMeishi = $00000500; { special noun }
+	kLASpeechKeidouMeishi = $00000600; { special noun }
+	kLASpeechRentaishi = $00001000;
+	kLASpeechFukushi = $00002000; { adverb }
+	kLASpeechSetsuzokushi = $00003000; { conjunction }
+	kLASpeechKandoushi = $00004000;
+	kLASpeechDoushi = $00005000; { verb }
+	kLASpeechGodanDoushi = $00005000;
+	kLASpeechKagyouGodan = $00005000;
+	kLASpeechSagyouGodan = $00005010;
+	kLASpeechTagyouGodan = $00005020;
+	kLASpeechNagyouGodan = $00005030;
+	kLASpeechMagyouGodan = $00005040;
+	kLASpeechRagyouGodan = $00005050;
+	kLASpeechWagyouGodan = $00005060;
+	kLASpeechGagyouGodan = $00005070;
+	kLASpeechBagyouGodan = $00005080;
+	kLASpeechIchidanDoushi = $00005100;
+	kLASpeechKahenDoushi = $00005200;
+	kLASpeechSahenDoushi = $00005300;
+	kLASpeechZahenDoushi = $00005400;
+	kLASpeechKeiyoushi = $00006000; { adjective }
+	kLASpeechKeiyoudoushi = $00007000;
+	kLASpeechSettougo = $00008000; { prefix}
+	kLASpeechSuujiSettougo = $00008100; { prefix for numbers }
+	kLASpeechSetsubigo = $00009000; { suffix }
+	kLASpeechJinmeiSetsubigo = $00009100; { suffix for person name }
+	kLASpeechChimeiSetsubigo = $00009200; { suffix for place name }
+	kLASpeechSoshikimeiSetsubigo = $00009300; { suffix for organization name }
+	kLASpeechSuujiSetsubigo = $00009400; { suffix for numbers }
+	kLASpeechMuhinshi = $0000A000; { no category }
+	kLASpeechTankanji = $0000A000; { character }
+	kLASpeechKigou = $0000A100; { symbol }
+	kLASpeechKuten = $0000A110;
+	kLASpeechTouten = $0000A120;
+	kLASpeechSuushi = $0000A200; { numbers }
+	kLASpeechDokuritsugo = $0000A300;
+	kLASpeechSeiku = $0000A400;
+	kLASpeechJodoushi = $0000B000; { auxiliary verb }
+	kLASpeechJoshi = $0000C000; { postpositional particle }
+
+
+{
+    Conjugations
+ }
+const
+>>>>>>> graemeg/cpstrnew
 =======
 
 

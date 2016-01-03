@@ -4,6 +4,7 @@
      Contains:   Apple Type Services layout public structures and constants.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    ATS
  
      Copyright:  © 1994-2012 by Apple Inc., all rights reserved.
@@ -29,12 +30,33 @@
      Bugs:       Report bugs to Radar component "System Interfaces", "Latest"
                  List the version information (from above) in the Problem Description.
 >>>>>>> graemeg/cpstrnew
+=======
+     Copyright:  © 1994-2008 by Apple Inc., all rights reserved.
+ 
+     Warning:    *** APPLE INTERNAL USE ONLY ***
+                 This file may contain unreleased API's
+ 
+     BuildInfo:  Built by:            root
+                 On:                  Fri Jul 24 22:21:51 2009
+                 With Interfacer:     3.0d46   (Mac OS X for PowerPC)
+                 From:                ATSLayoutTypes.i
+                     Revision:        1.5
+                     Dated:           2007/01/15 23:28:25
+                     Last change by:  kurita
+                     Last comment:    <rdar://problem/4916090> updated copyright.
+ 
+     Bugs:       Report bugs to Radar component "System Interfaces", "Latest"
+                 List the version information (from above) in the Problem Description.
+>>>>>>> graemeg/cpstrnew
  
 }
 
 { Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -93,11 +115,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -115,6 +140,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -146,6 +172,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -153,13 +196,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -231,6 +278,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -270,6 +350,7 @@ interface
 uses MacTypes,SFNTLayoutTypes,ATSTypes;
 {$endc} {not MACOSALLINCLUDE}
 
+<<<<<<< HEAD
 
 {$ifc TARGET_OS_MAC}
 <<<<<<< HEAD
@@ -277,7 +358,12 @@ uses MacTypes,SFNTLayoutTypes,ATSTypes;
 
 {$ALIGN POWER}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN POWER}
 
 
 { --------------------------------------------------------------------------- }
@@ -754,6 +840,9 @@ type
    }
 		beforeShrinkLimit: Fixed;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
   {
    * ems AW can grow by at most on RB
@@ -764,6 +853,7 @@ type
    * ems AW can shrink by at most on RB
    }
 		afterShrinkLimit: Fixed;
+<<<<<<< HEAD
 
   {
    * flags controlling grow case
@@ -782,6 +872,15 @@ type
    * ems AW can shrink by at most on RB
    }
 		afterShrinkLimit: Fixed;
+
+  {
+   * flags controlling grow case
+   }
+		growFlags: JustificationFlags;
+
+  {
+>>>>>>> graemeg/cpstrnew
+=======
 
   {
    * flags controlling grow case
@@ -866,7 +965,11 @@ type
  }
 function NewATSUDirectLayoutOperationOverrideUPP( userRoutine: ATSUDirectLayoutOperationOverrideProcPtr ): ATSUDirectLayoutOperationOverrideUPP; external name '_NewATSUDirectLayoutOperationOverrideUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -881,7 +984,11 @@ function NewATSUDirectLayoutOperationOverrideUPP( userRoutine: ATSUDirectLayoutO
  }
 procedure DisposeATSUDirectLayoutOperationOverrideUPP( userUPP: ATSUDirectLayoutOperationOverrideUPP ); external name '_DisposeATSUDirectLayoutOperationOverrideUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -896,7 +1003,11 @@ procedure DisposeATSUDirectLayoutOperationOverrideUPP( userUPP: ATSUDirectLayout
  }
 function InvokeATSUDirectLayoutOperationOverrideUPP( iCurrentOperation: ATSULayoutOperationSelector; iLineRef: ATSULineRef; iRefCon: URefCon; iOperationCallbackParameterPtr: UnivPtr; var oCallbackStatus: ATSULayoutOperationCallbackStatus; userUPP: ATSUDirectLayoutOperationOverrideUPP ): OSStatus; external name '_InvokeATSUDirectLayoutOperationOverrideUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

@@ -57,15 +57,21 @@ var
     _editedRange: NSRange;
     _editedDelta: NSInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSTextStorage2: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTextStorage2: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _editedMask: 0..((1 shl 8)-1);
         _anonbitfield_NSTextStorage0: 0..((1 shl 8)-1);
@@ -74,7 +80,10 @@ var
         _anonbitfield_NSTextStorage1: 0..((1 shl 32)-1);
         {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

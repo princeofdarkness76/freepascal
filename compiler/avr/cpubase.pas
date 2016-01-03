@@ -52,9 +52,13 @@ unit cpubase;
         A_STS,A_ST,A_STD,A_LPM,A_ELPM,A_SPM,A_IN,A_OUT,A_PUSH,A_POP,
         A_LSL,A_LSR,A_ROL,A_ROR,A_ASR,A_SWAP,A_BSET,A_BCLR,A_SBI,A_CBI,
 <<<<<<< HEAD
+<<<<<<< HEAD
         A_SEC,A_SEH,A_SEI,A_SEN,A_SER,A_SES,A_SET,A_SEV,A_SEZ,
         A_CLC,A_CLH,A_CLI,A_CLN,A_CLR,A_CLS,A_CLT,A_CLV,A_CLZ,
         A_BST,A_BLD,A_BREAK,A_NOP,A_SLEEP,A_WDR);
+=======
+        A_BST,A_BLD,A_Sxx,A_CLI,A_BRAK,A_NOP,A_SLEEP,A_WDR);
+>>>>>>> graemeg/cpstrnew
 =======
         A_BST,A_BLD,A_Sxx,A_CLI,A_BRAK,A_NOP,A_SLEEP,A_WDR);
 >>>>>>> graemeg/cpstrnew
@@ -70,10 +74,15 @@ unit cpubase;
       lastop  = high(tasmop);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       { call/reg instructions (A_RCALL,A_ICALL,A_CALL,A_RET,A_RETI) are not considered as jmp instructions for the usage cases of
         this set }
       jmp_instructions = [A_BRxx,A_SBIC,A_SBIS,A_JMP,A_EIJMP,A_RJMP,A_CPSE,A_IJMP];
       call_jmp_instructions = [A_ICALL,A_RCALL,A_CALL,A_RET,A_RETI]+jmp_instructions;
+=======
+      jmp_instructions = [A_BRxx,A_SBIC,A_SBIS,A_JMP,A_RCALL,A_ICALL,A_EIJMP,
+                          A_RJMP,A_CALL,A_RET,A_RETI,A_CPSE,A_IJMP];
+>>>>>>> graemeg/cpstrnew
 =======
       jmp_instructions = [A_BRxx,A_SBIC,A_SBIS,A_JMP,A_RCALL,A_ICALL,A_EIJMP,
                           A_RJMP,A_CALL,A_RET,A_RETI,A_CPSE,A_IJMP];
@@ -333,6 +342,7 @@ unit cpubase;
     function GetNextReg(const r : TRegister) : TRegister;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     { returns the last virtual register }
     function GetLastReg(const r : TRegister) : TRegister;
 
@@ -343,6 +353,8 @@ unit cpubase;
 
     function is_calljmp(o:tasmop):boolean;{$ifdef USEINLINE}inline;{$endif USEINLINE}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   implementation
@@ -477,6 +489,7 @@ unit cpubase;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function GetLastReg(const r: TRegister): TRegister;
       begin
@@ -505,6 +518,8 @@ unit cpubase;
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end.

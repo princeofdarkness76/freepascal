@@ -62,8 +62,11 @@ type
     procedure ShowRegisteredScript(ScriptID: integer); override;
     procedure FreeScript(var AScript: TStringList); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
   published
     property OnGetURL;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -95,6 +98,10 @@ type
     procedure DoBeforeRequest(ARequest: TRequest); virtual;
     procedure DoBeforeShowPage(ARequest: TRequest); virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    property WebModule: TFPWebModule read FWebModule;
+>>>>>>> graemeg/cpstrnew
 =======
     property WebModule: TFPWebModule read FWebModule;
 >>>>>>> graemeg/cpstrnew
@@ -123,7 +130,10 @@ type
     property HasWebController: boolean read GetHasWebController;
     property WebController: TWebController read GetWebController write FWebController;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property WebModule: TFPWebModule read FWebModule;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   published
@@ -139,7 +149,11 @@ type
 implementation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses typinfo, strutils;
+=======
+uses rtlconsts, typinfo, XMLWrite, strutils;
+>>>>>>> graemeg/cpstrnew
 =======
 uses rtlconsts, typinfo, XMLWrite, strutils;
 >>>>>>> graemeg/cpstrnew
@@ -280,7 +294,11 @@ begin
               while (i > 0) and (assigned(AComponent)) do
                 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AComponent := AComponent.FindComponent(copy(CompName,1,i-1));
+=======
+                AComponent := FindComponent(copy(CompName,1,i-1));
+>>>>>>> graemeg/cpstrnew
 =======
                 AComponent := FindComponent(copy(CompName,1,i-1));
 >>>>>>> graemeg/cpstrnew
@@ -298,7 +316,10 @@ begin
                   begin
                   SetIdSuffixes(THTMLContentProducer(AComponent));
 <<<<<<< HEAD
+<<<<<<< HEAD
                   webcontroller.ResetIterationLevel;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                   end;
@@ -397,7 +418,11 @@ function TWebPage.GetWebController: TWebController;
 begin
   if not assigned(FWebController) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     raise EHTTP.create('No webcontroller available');
+=======
+    raise exception.create('No webcontroller available');
+>>>>>>> graemeg/cpstrnew
 =======
     raise exception.create('No webcontroller available');
 >>>>>>> graemeg/cpstrnew
@@ -640,9 +665,13 @@ begin
   p := copy(qs,1,length(qs)-1);
   if p <> '' then
 <<<<<<< HEAD
+<<<<<<< HEAD
     result := result + ConnectChar + p;
   if assigned(OnGetURL) then
     OnGetURL(ParamNames, ParamValues, KeepParams, Action, Result);
+=======
+    result := result + ConnectChar + p
+>>>>>>> graemeg/cpstrnew
 =======
     result := result + ConnectChar + p
 >>>>>>> graemeg/cpstrnew

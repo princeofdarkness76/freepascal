@@ -194,10 +194,15 @@ function ThreadProc(ThreadObjPtr: Pointer): PtrInt;
         suspended, or if it wasn't ever scheduled for execution for whatever reason.
         So bypass user code if terminated. }
 <<<<<<< HEAD
+<<<<<<< HEAD
       if not Thread.Terminated then begin
         CurrentThreadVar := Thread;
         Thread.Execute;
       end;
+=======
+      if not Thread.Terminated then
+        Thread.Execute;
+>>>>>>> graemeg/cpstrnew
 =======
       if not Thread.Terminated then
         Thread.Execute;
@@ -225,6 +230,7 @@ begin
     what this method is for. }
   Resume;
 end;
+<<<<<<< HEAD
 
 constructor TThread.Create(CreateSuspended: Boolean;
                            const StackSize: SizeUInt);
@@ -259,6 +265,8 @@ begin
     what this method is for. }
   Resume;
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 
 function TThread.GetSuspended: Boolean;
 begin
@@ -273,8 +281,13 @@ begin
 // is fixed for all platforms (in case the fix for non-unix platforms also
 // requires this field at least)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(unix) or defined(windows) or defined(os2) or defined(hasamiga)}
   if not FExternalThread and not FInitialSuspended then
+=======
+{$if defined(unix) or defined(windows)}
+  if not FInitialSuspended then
+>>>>>>> graemeg/cpstrnew
 =======
 {$if defined(unix) or defined(windows)}
   if not FInitialSuspended then
@@ -1369,6 +1382,9 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
         end
 =======
         end 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       else if (Ord(w) >= 32) and ((Ord(w) < 127) or (UseBytes and (Ord(w)<256))) then
         begin //printable ascii or bytes

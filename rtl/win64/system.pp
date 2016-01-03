@@ -74,7 +74,10 @@ const
   DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 type
   TStartupInfo = record
     cb : longint;
@@ -119,8 +122,11 @@ const
   hprevinst: qword=0;
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TDLL_Entry_Hook = procedure (dllparam : longint);
 >>>>>>> graemeg/cpstrnew
 
@@ -136,7 +142,10 @@ Const
   }
   fmShareDenyNoneFlags : DWord = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 implementation
 
@@ -443,7 +452,10 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
      ExitCode:=0;
      asm
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         { allocate space for an exception frame }
         pushq $0
         pushq %gs:(0)
@@ -465,6 +477,9 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
      end;
      StackTop:=st;
      asm
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         xorq %rax,%rax
         movw %ss,%ax
@@ -482,6 +497,9 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
         movl %eax,_SS
 {$endif}
         xorq %rbp,%rbp
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         call PASCALMAIN
 {$endif FPC_USE_WIN64_SEH}

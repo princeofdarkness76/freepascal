@@ -236,9 +236,12 @@ type
     _window: NSWindow;
     _context: NSGraphicsContext;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _data: record
       case byte of
         1: (
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     _mouse: record
@@ -252,11 +255,17 @@ type
         _buttonNumber: cshort;
         reserved1: cshort;
 <<<<<<< HEAD
+<<<<<<< HEAD
         reserved2: array[0..(3)-1] of cint;
         {$endif}
       end;
            );
         2: (
+=======
+            reserved2: array[0..2] of cint;
+        {$endif}
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
             reserved2: array[0..2] of cint;
         {$endif}
@@ -270,11 +279,17 @@ type
         {$ifdef cpu64}
         eventFlags: cint;
 <<<<<<< HEAD
+<<<<<<< HEAD
         reserved: array[0..(5)-1] of cint;
         {$endif}
       end;
            );
         3: (
+=======
+            reserved: array[0..4] of cint;
+        {$endif}
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
             reserved: array[0..4] of cint;
         {$endif}
@@ -286,11 +301,17 @@ type
         _userData: Pointer;
         {$ifdef cpu64}
 <<<<<<< HEAD
+<<<<<<< HEAD
         reserved: array[0..(6)-1] of cint;
         {$endif}
       end;
            );
         4: (
+=======
+            reserved: array[0..5] of cint;
+        {$endif}
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
             reserved: array[0..5] of cint;
         {$endif}
@@ -304,11 +325,17 @@ type
         _subtype: cshort;
         reserved1: cshort;
 <<<<<<< HEAD
+<<<<<<< HEAD
         reserved2: array[0..(6)-1] of cint;
         {$endif}
       end;
            );
         5: (
+=======
+            reserved2: array[0..5] of cint;
+        {$endif}
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
             reserved2: array[0..5] of cint;
         {$endif}
@@ -320,11 +347,17 @@ type
         _deltaZ: CGFloat;
         {$ifdef cpu64}
 <<<<<<< HEAD
+<<<<<<< HEAD
         reserved: array[0..(7)-1] of cint;
         {$endif}
       end;
            );
         6: (
+=======
+            reserved: array[0..6] of cint;
+        {$endif}
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
             reserved: array[0..6] of cint;
         {$endif}
@@ -338,6 +371,7 @@ type
         percentage: single;
         {$ifdef cpu64}
 <<<<<<< HEAD
+<<<<<<< HEAD
         reserved2: array[0..(7)-1] of cint;
         {$endif}
       end;
@@ -348,11 +382,17 @@ type
         {$endif}
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+            reserved2: array[0..6] of cint;
+        {$endif}
+      end;
+>>>>>>> graemeg/cpstrnew
     _misc: record
         _subtype: cint;
         _data1: NSInteger;
         _data2: NSInteger;
         {$ifdef cpu64}
+<<<<<<< HEAD
 <<<<<<< HEAD
         reserved: array[0..(6)-1] of cint;
         {$endif}
@@ -368,6 +408,8 @@ type
     {$endif}
     end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             reserved: array[0..5] of cint;
         {$endif}
       end;
@@ -377,6 +419,9 @@ type
     {$endif}
     __data: record
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     _eventRef: Pointer;
     {$ifdef cpu64}

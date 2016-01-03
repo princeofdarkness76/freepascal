@@ -48,15 +48,21 @@
     _topLevelObjects: NSArray;
     _owner: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __wcFlags: record
       case byte of
        0: (_anonbitfield_NSWindowController0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __wcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSWindowController0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _shouldCloseDocument: 0..1;
         shouldCascade: 0..1;
@@ -64,7 +70,10 @@
         nibNameIsPath: 0..1;
         RESERVED: 0..((1 shl 28)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

@@ -108,15 +108,21 @@ var
     _size: CGFloat;
     _retainCount: NSInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __fFlags: record
       case byte of
        0: (_anonbitfield_NSFont0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __fFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSFont0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _isScreenFont: 0..1;
         _systemFontType: 0..((1 shl 8)-1);
@@ -125,7 +131,10 @@ var
         _renderingMode: 0..((1 shl 3)-1);
         _reserved2: 0..((1 shl 15)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

@@ -48,15 +48,21 @@
     _fView: NSView;
     _fPriority: cint;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __fFlags: record
       case byte of
        0: (_anonbitfield_NSStatusItem0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __fFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSStatusItem0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         customView: 0..1;
         _highlightMode: 0..1;
@@ -66,7 +72,10 @@
         inAdjustLength: 0..1;
         reserved: 0..((1 shl 23)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

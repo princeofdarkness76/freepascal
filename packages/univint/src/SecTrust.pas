@@ -1,14 +1,20 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2002-2010,2012-2013 Apple Inc. All Rights Reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  *
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  * Copyright (c) 2002-2009 Apple Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
  * 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
@@ -17,7 +23,11 @@
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> graemeg/cpstrnew
 =======
  * 
 >>>>>>> graemeg/cpstrnew
@@ -29,6 +39,7 @@
  * Please see the License for the specific language governing rights and
  * limitations under the License.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
  * @APPLE_LICENSE_HEADER_END@
  }
@@ -36,10 +47,15 @@
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -96,11 +112,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -122,11 +141,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -139,11 +164,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -156,7 +187,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -169,7 +203,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -179,6 +216,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -190,6 +228,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -202,11 +245,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -225,6 +272,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -271,7 +322,11 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,SecBase,cssmtype,cssmapple,CFBase,CFArray,CFData,CFDate,CFDictionary;
+=======
+uses MacTypes,SecBase,cssmtype,cssmapple,CFBase,CFArray,CFData,CFDate;
+>>>>>>> graemeg/cpstrnew
 =======
 uses MacTypes,SecBase,cssmtype,cssmapple,CFBase,CFArray,CFData,CFDate;
 >>>>>>> graemeg/cpstrnew
@@ -279,6 +334,7 @@ uses MacTypes,SecBase,cssmtype,cssmapple,CFBase,CFArray,CFData,CFDate;
 
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
     @header SecTrust
     The functions and data types in SecTrust implement trust computation
@@ -331,6 +387,8 @@ uses MacTypes,SecBase,cssmtype,cssmapple,CFBase,CFArray,CFData,CFDate;
 type
 	SecTrustResultType = UInt32;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@header SecTrust
 	The functions and data types in SecTrust implement trust computation and allow the user to apply trust decisions to the trust configuration.
 }
@@ -351,6 +409,9 @@ type
 type
 	SecTrustResultType = UInt32;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 const
 	kSecTrustResultInvalid = 0;
@@ -360,6 +421,7 @@ const
 	kSecTrustResultUnspecified = 4;
 	kSecTrustResultRecoverableTrustFailure = 5;
 	kSecTrustResultFatalTrustFailure = 6;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kSecTrustResultOtherError = 7; (* CF_ENUM_DEPRECATED(10_0, 10_9, NA, NA) *)
 
@@ -917,6 +979,8 @@ function SecTrustCopyAnchorCertificates( var anchors: CFArrayRef ): OSStatus; ex
 {$endc} {TARGET_OS_MAC}
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	kSecTrustResultOtherError = 7;
 
 {!
@@ -1135,6 +1199,9 @@ function SecTrustGetUserTrust( certificate: SecCertificateRef; policy: SecPolicy
 function SecTrustSetUserTrust( certificate: SecCertificateRef; policy: SecPolicyRef; trustSetting: SecTrustUserSetting ): OSStatus; external name '_SecTrustSetUserTrust';
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_5_AND_LATER *)
 {$endc} {TARGET_OS_MAC}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

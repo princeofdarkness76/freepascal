@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -34,6 +38,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
   TPTCPalette = class(TInterfacedObject, IPTCPalette)
@@ -74,6 +79,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TPTCPalette.Create;
 var
   zero: array [0..255] of Uint32;
@@ -100,7 +107,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TPTCPalette.Create(APalette: IPTCPalette);
+=======
+constructor TPTCPalette.Create(const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TPTCPalette.Create(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -112,7 +123,11 @@ begin
   if FHandle = nil then
     raise TPTCError.Create('could not create hermes palette instance');
 <<<<<<< HEAD
+<<<<<<< HEAD
   Hermes_PaletteSet(FHandle, Hermes_PaletteGet(APalette.GetHermesPaletteHandle));
+=======
+  Assign(APalette);
+>>>>>>> graemeg/cpstrnew
 =======
   Assign(APalette);
 >>>>>>> graemeg/cpstrnew
@@ -128,7 +143,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {procedure TPTCPalette.Assign(const APalette: TPTCPalette);
+=======
+procedure TPTCPalette.Assign(const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -144,7 +163,11 @@ begin
   Equals := CompareDWord(Hermes_PaletteGet(FHandle)^, Hermes_PaletteGet(APalette.FHandle)^, 1024 div 4) = 0;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -188,10 +211,13 @@ begin
   Result := Hermes_PaletteGet(FHandle);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TPTCPalette.GetHermesPaletteHandle: THermesPaletteHandle;
 begin
   Result := FHandle;
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

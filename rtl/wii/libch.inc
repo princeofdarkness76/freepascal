@@ -32,12 +32,16 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Ptimeval = ^Ttimeval;
   Ttimeval = record
     tv_sec  : longint;
     tv_usec : longint;
   end;
   Timeval = TTimeval;
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew

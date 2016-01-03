@@ -46,15 +46,21 @@
     _rearrangementExtensions: id;
     _temporaryWorkObjects: NSMutableArray;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __arrayControllerFlags: record
       case byte of
        0: (_anonbitfield_NSArrayController0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __arrayControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSArrayController0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _avoidsEmptySelection: 0..1;
         _preservesSelection: 0..1;
@@ -73,7 +79,10 @@
         _automaticallyRearrangesObjects: 0..1;
         _reservedArrayController: 0..((1 shl 17)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

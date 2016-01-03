@@ -61,8 +61,11 @@ implementation
 
       secnames : array[TAsmSectiontype] of string[4] = ('','',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'CODE','DATA','DATA','DATA','BSS','TLS',
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         'CODE','DATA','DATA','DATA','BSS','',
 >>>>>>> graemeg/cpstrnew
         '','','','','','',
@@ -111,8 +114,11 @@ implementation
         '',
         '',
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         ''
@@ -120,8 +126,11 @@ implementation
 
       secnamesml64 : array[TAsmSectiontype] of string[7] = ('','',
 <<<<<<< HEAD
+<<<<<<< HEAD
         '_TEXT','_DATA','_DATA','_DATA','_BSS','_TLS',
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         '_TEXT','_DATE','_DATA','_DATA','_BSS','',
 >>>>>>> graemeg/cpstrnew
         '','','','',
@@ -170,8 +179,11 @@ implementation
         '',
         '',
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         ''
@@ -323,7 +335,11 @@ implementation
             writer.AsmWrite(masm_regname(o.reg));
           top_const :
 <<<<<<< HEAD
+<<<<<<< HEAD
             writer.AsmWrite(tostr(o.val));
+=======
+            AsmWrite(tostr(o.val));
+>>>>>>> graemeg/cpstrnew
 =======
             AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
@@ -411,7 +427,11 @@ implementation
           writer.AsmWrite(masm_regname(o.reg));
         top_const :
 <<<<<<< HEAD
+<<<<<<< HEAD
           writer.AsmWrite(tostr(o.val));
+=======
+          AsmWrite(tostr(o.val));
+>>>>>>> graemeg/cpstrnew
 =======
           AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
@@ -1026,7 +1046,10 @@ implementation
         al_const which does not have leading ait_section and thus goes out of segment }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       { TODO: probably ml64 needs 'closing' last section, too }
 >>>>>>> graemeg/cpstrnew
       if LastSecType <> sec_none then

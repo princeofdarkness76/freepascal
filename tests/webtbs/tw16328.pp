@@ -11,7 +11,11 @@ type
   TmydbID = type Longword;
   TmydbCLSID = type Word;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TmydbDBID   = 0..(qword(1) shl 48)-1;  // Unique ID of the database
+=======
+  TmydbDBID   = 0..(1 shl 48)-1;  // Unique ID of the database
+>>>>>>> graemeg/cpstrnew
 =======
   TmydbDBID   = 0..(1 shl 48)-1;  // Unique ID of the database
 >>>>>>> graemeg/cpstrnew

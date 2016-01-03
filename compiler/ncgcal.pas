@@ -61,7 +61,10 @@ interface
        protected
           retloc: tcgpara;
 <<<<<<< HEAD
+<<<<<<< HEAD
           paralocs: array of pcgpara;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -87,6 +90,7 @@ interface
             can work with it. This routine decides what the most appropriate
             tlocation is and sets self.location based on that. }
           procedure set_result_location(realresdef: tstoreddef);virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
           { if an unused return value is in another location than a
@@ -117,6 +121,8 @@ interface
 
           function get_call_reg(list: TAsmList): tregister; virtual;
           procedure unget_call_reg(list: TAsmList; reg: tregister); virtual;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
        public
@@ -164,6 +170,7 @@ implementation
         if not(left.location.loc in [LOC_CREFERENCE,LOC_REFERENCE]) then
           internalerror(200304235);
 <<<<<<< HEAD
+<<<<<<< HEAD
         hlcg.a_loadaddr_ref_cgpara(current_asmdata.CurrAsmList,left.resultdef,left.location.reference,tempcgpara);
       end;
 
@@ -171,6 +178,13 @@ implementation
     procedure tcgcallnode.reorder_parameters;
       var
         hpcurr,hpprev,hpnext,hpreversestart : tcgcallparanode;
+=======
+        cg.a_loadaddr_ref_cgpara(current_asmdata.CurrAsmList,left.location.reference,tempcgpara);
+      end;
+
+
+    procedure tcgcallparanode.push_value_para;
+>>>>>>> graemeg/cpstrnew
       begin
         { All parameters are now in temporary locations. If we move them to
           their regular locations in the same order, then we get the
@@ -259,6 +273,7 @@ implementation
 
         { load the parameter's tlocation into its cgpara }
 <<<<<<< HEAD
+<<<<<<< HEAD
         hlcg.gen_load_loc_cgpara(current_asmdata.CurrAsmList,left.resultdef,left.location,tempcgpara)
       end;
 
@@ -270,6 +285,9 @@ implementation
            (left.location.loc in [LOC_CONSTANT,LOC_REGISTER]) then
           hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef);
         push_addr_para;
+=======
+        gen_load_loc_cgpara(current_asmdata.CurrAsmList,left.resultdef,left.location,tempcgpara)
+>>>>>>> graemeg/cpstrnew
 =======
         gen_load_loc_cgpara(current_asmdata.CurrAsmList,left.resultdef,left.location,tempcgpara)
 >>>>>>> graemeg/cpstrnew
@@ -392,7 +410,11 @@ implementation
                              (left.location.reference.offset<>0) then
                             internalerror(200410107);
 <<<<<<< HEAD
+<<<<<<< HEAD
                           hlcg.a_load_reg_cgpara(current_asmdata.CurrAsmList,cpointerdef.getreusable(left.resultdef),left.location.reference.base,tempcgpara)
+=======
+                          cg.a_load_reg_cgpara(current_asmdata.CurrAsmList,OS_ADDR,left.location.reference.base,tempcgpara)
+>>>>>>> graemeg/cpstrnew
 =======
                           cg.a_load_reg_cgpara(current_asmdata.CurrAsmList,OS_ADDR,left.location.reference.base,tempcgpara)
 >>>>>>> graemeg/cpstrnew
@@ -459,6 +481,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tcgcallnode.can_call_ref(var ref: treference): boolean;
       begin
         result:=false;
@@ -507,6 +530,8 @@ implementation
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure tcgcallnode.set_result_location(realresdef: tstoreddef);
       begin
         if realresdef.is_intregable or
@@ -524,7 +549,11 @@ implementation
           begin
             location_reset_ref(location,LOC_REFERENCE,def_cgsize(realresdef),0);
 <<<<<<< HEAD
+<<<<<<< HEAD
             tg.gethltemp(current_asmdata.CurrAsmList,realresdef,retloc.intsize,tt_normal,location.reference);
+=======
+            tg.GetTemp(current_asmdata.CurrAsmList,retloc.intsize,retloc.Alignment,tt_normal,location.reference);
+>>>>>>> graemeg/cpstrnew
 =======
             tg.GetTemp(current_asmdata.CurrAsmList,retloc.intsize,retloc.Alignment,tt_normal,location.reference);
 >>>>>>> graemeg/cpstrnew
@@ -532,6 +561,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure tcgcallnode.do_release_unused_return_value;
       begin
@@ -546,6 +576,8 @@ implementation
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure tcgcallnode.pop_parasize(pop_size:longint);
@@ -574,6 +606,7 @@ implementation
           realresdef:=tstoreddef(typedef);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           { get a tlocation that can hold the return value that's currently in
             the return value's tcgpara }
           set_result_location(realresdef);
@@ -590,6 +623,8 @@ implementation
              assigned(funcretnode) then
             hlcg.gen_load_cgpara_loc(current_asmdata.CurrAsmList,realresdef,retloc,location,false);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef x86}
         if (retloc.location^.loc=LOC_FPUREGISTER) then
           begin
@@ -626,6 +661,9 @@ implementation
 {$endif arm}
               end;
           end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
         { copy value to the final location if this was already provided to the
@@ -651,7 +689,11 @@ implementation
                   else
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
                     hlcg.a_load_reg_loc(current_asmdata.CurrAsmList,resultdef,resultdef,location.register,funcretnode.location);
+=======
+                    cg.a_load_reg_loc(current_asmdata.CurrAsmList,location.size,location.register,funcretnode.location);
+>>>>>>> graemeg/cpstrnew
 =======
                     cg.a_load_reg_loc(current_asmdata.CurrAsmList,location.size,location.register,funcretnode.location);
 >>>>>>> graemeg/cpstrnew
@@ -662,7 +704,11 @@ implementation
                   case funcretnode.location.loc of
                     LOC_REGISTER:
 <<<<<<< HEAD
+<<<<<<< HEAD
                       hlcg.a_load_ref_reg(current_asmdata.CurrAsmList,resultdef,resultdef,location.reference,funcretnode.location.register);
+=======
+                      cg.a_load_ref_reg(current_asmdata.CurrAsmList,location.size,location.size,location.reference,funcretnode.location.register);
+>>>>>>> graemeg/cpstrnew
 =======
                       cg.a_load_ref_reg(current_asmdata.CurrAsmList,location.size,location.size,location.reference,funcretnode.location.register);
 >>>>>>> graemeg/cpstrnew
@@ -689,8 +735,11 @@ implementation
         if not(cnf_return_value_used in callnodeflags) then
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
             do_release_unused_return_value;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             case location.loc of
               LOC_REFERENCE :
                 begin
@@ -707,6 +756,9 @@ implementation
                  end;
 {$endif x86}
             end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             if (retloc.intsize<>0) then
               paramanager.freecgpara(current_asmdata.CurrAsmList,retloc);
@@ -786,6 +838,9 @@ implementation
          tmpalignment, i: longint;
 =======
          tmpalignment: longint;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
          skipiffinalloc: boolean;
        begin
@@ -978,9 +1033,12 @@ implementation
         oldaktcallnode : tcallnode;
         retlocitem: pcgparalocation;
 <<<<<<< HEAD
+<<<<<<< HEAD
         callpvdef: tabstractprocdef;
         pd : tprocdef;
         callref: boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef vtentry}
@@ -1011,18 +1069,25 @@ implementation
             { The forced returntype may have a different size than the one
               declared for the procdef }
 <<<<<<< HEAD
+<<<<<<< HEAD
             retloc:=hlcg.get_call_result_cgpara(procdefinition,typedef);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             if not assigned(typedef) then
               retloc:=procdefinition.funcretloc[callerside]
             else
               retloc:=paramanager.get_funcretloc(procdefinition,callerside,typedef);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             retlocitem:=retloc.location;
             while assigned(retlocitem) do
               begin
                 case retlocitem^.loc of
                   LOC_REGISTER:
+<<<<<<< HEAD
 <<<<<<< HEAD
                     case getregtype(retlocitem^.register) of
                       R_INTREGISTER:
@@ -1034,6 +1099,9 @@ implementation
                       else
                         internalerror(2014020102);
                       end;
+=======
+                    include(regs_to_save_int,getsupreg(retlocitem^.register));
+>>>>>>> graemeg/cpstrnew
 =======
                     include(regs_to_save_int,getsupreg(retlocitem^.register));
 >>>>>>> graemeg/cpstrnew
@@ -1087,13 +1155,19 @@ implementation
              name_to_call:='';
              if assigned(fobjcforcedprocname) then
                name_to_call:=fobjcforcedprocname^;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
              { When methodpointer is typen we don't need (and can't) load
                a pointer. We can directly call the correct procdef (PFV) }
              if (name_to_call='') and
                 (po_virtualmethod in procdefinition.procoptions) and
 <<<<<<< HEAD
+<<<<<<< HEAD
                 not is_objectpascal_helper(tprocdef(procdefinition).struct) and
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                 assigned(methodpointer) and
@@ -1128,11 +1202,15 @@ implementation
 
                  { Call through VMT, generate a VTREF symbol to notify the linker }
                  vmtoffset:=tobjectdef(tprocdef(procdefinition).struct).vmtmethodoffset(tprocdef(procdefinition).extnumber);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                  { register call for WPO }
                  if (not assigned(current_procinfo) or
                      wpoinfomanager.symbol_live(current_procinfo.procdef.mangledname)) then
                    tobjectdef(tprocdef(procdefinition).struct).register_vmt_call(tprocdef(procdefinition).extnumber);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                  if not(vmt_entry.location.loc in [LOC_REFERENCE,LOC_CREFERENCE]) then
@@ -1149,6 +1227,8 @@ implementation
                        href,pvreg);
                    end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifndef x86}
                  pvreg:=cg.getintregister(current_asmdata.CurrAsmList,OS_ADDR);
 {$endif not x86}
@@ -1303,7 +1383,11 @@ implementation
             if not ((procdefinition.proccalloption=pocall_safecall) and
                     (tf_safecall_exceptions in target_info.flags)) and
 <<<<<<< HEAD
+<<<<<<< HEAD
                paramanager.ret_in_param(procdefinition.returndef,procdefinition) then
+=======
+               paramanager.ret_in_param(procdefinition.returndef,procdefinition.proccalloption) then
+>>>>>>> graemeg/cpstrnew
 =======
                paramanager.ret_in_param(procdefinition.returndef,procdefinition.proccalloption) then
 >>>>>>> graemeg/cpstrnew
@@ -1326,6 +1410,7 @@ implementation
                  case retlocitem^.loc of
                    LOC_REGISTER:
 <<<<<<< HEAD
+<<<<<<< HEAD
                      case getregtype(retlocitem^.register) of
                        R_INTREGISTER:
                          exclude(regs_to_save_int,getsupreg(retlocitem^.register));
@@ -1336,6 +1421,9 @@ implementation
                        else
                          internalerror(2014020103);
                      end;
+=======
+                     exclude(regs_to_save_int,getsupreg(retlocitem^.register));
+>>>>>>> graemeg/cpstrnew
 =======
                      exclude(regs_to_save_int,getsupreg(retlocitem^.register));
 >>>>>>> graemeg/cpstrnew
@@ -1375,6 +1463,9 @@ implementation
 =======
              paramanager.getintparaloc(pocall_default,1,cgpara);
              cg.a_load_reg_cgpara(current_asmdata.CurrAsmList,OS_ADDR,NR_RAX,cgpara);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
              cgpara.done;
            end;
@@ -1390,9 +1481,12 @@ implementation
          if assigned(callcleanupblock) then
            secondpass(tnode(callcleanupblock));
 <<<<<<< HEAD
+<<<<<<< HEAD
 
          { copy back copy-out parameters if any }
          copy_back_paras;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1420,7 +1514,12 @@ implementation
     destructor tcgcallnode.destroy;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         retloc.resetiftemp;
+=======
+        if assigned(typedef) then
+          retloc.done;
+>>>>>>> graemeg/cpstrnew
 =======
         if assigned(typedef) then
           retloc.done;

@@ -1082,6 +1082,9 @@ end;
 {$ifdef hasamiga}
 =======
 {$if defined(amiga) and defined(morphos)}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                currPath:= CurrentDir+Copy(currPath,length(CurrentDir)+1,length(currPath));
 {$else}

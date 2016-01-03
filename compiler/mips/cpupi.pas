@@ -28,6 +28,7 @@ interface
   uses
     cutils,
 <<<<<<< HEAD
+<<<<<<< HEAD
     globtype,symdef,
     procinfo,cpuinfo,cpupara,
     psub,aasmdata,cgutils;
@@ -132,6 +133,8 @@ implementation
               tg.gettemp(list,sizeof(aint),sizeof(aint),tt_noreuse,save_gp_ref);
           end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procinfo,cpuinfo,
     psub;
 
@@ -152,12 +155,16 @@ implementation
       begin
         inherited create(aparent);
         maxpushedparasize:=0;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
 
     function TMIPSProcInfo.calc_stackframe_size:longint;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         result:=maxpushedparasize;
         floatregstart:=result;
@@ -190,6 +197,8 @@ implementation
       end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         {
           Stackframe layout:
           %fp
@@ -209,6 +218,9 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   cprocinfo:=TMIPSProcInfo;

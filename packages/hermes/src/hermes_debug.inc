@@ -53,6 +53,7 @@ var
 begin
   AssignFile(F, 'debug.txt');
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}{$I-}
   Append(F);
   {$pop}
@@ -62,6 +63,8 @@ begin
     Rewrite(F);
     {$pop}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   {$I-}
   Append(F);
   {$I+}
@@ -70,6 +73,9 @@ begin
     {$I-}
     Rewrite(F);
     {$I+}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     if IOResult <> 0 then
       exit;

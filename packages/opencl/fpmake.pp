@@ -15,9 +15,15 @@ begin
     P:=AddPackage('opencl');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
+=======
+    P.Directory:='opencl';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.2-0';
+>>>>>>> graemeg/cpstrnew
 =======
     P.Directory:='opencl';
 {$endif ALLPACKAGES}
@@ -33,8 +39,11 @@ begin
     P.CPUs:=[i386,x86_64];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Dependencies.Add('opengl');
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     P.SourcePath.Add('src');

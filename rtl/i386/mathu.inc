@@ -75,6 +75,7 @@ function cotan(x : float) : float;assembler;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$define FPC_MATH_HAS_LOG2}
 function log2(x : float) : float;assembler;
   asm
@@ -85,6 +86,8 @@ function log2(x : float) : float;assembler;
   end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$define FPC_MATH_HAS_DIVMOD}

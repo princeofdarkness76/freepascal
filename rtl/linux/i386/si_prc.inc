@@ -61,11 +61,16 @@ asm
 
   movl    %esp,%ebx               { Esp now points to the arguments }
   leal    4(%esp,%ecx,4),%eax     { The start of the environment is: esp+4*eax+4 }
+<<<<<<< HEAD
   andl    $0xfffffff0,%esp        { Align stack to 16 bytes }
+=======
+  andl    $0xfffffff8,%esp        { Align stack }
+>>>>>>> graemeg/cpstrnew
 
   {$ifdef FPC_PIC}
         pushl %ebx
         pushl %ecx
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         call fpc_geteipasebxlocal
@@ -88,6 +93,8 @@ asm
   {$endif FPC_PIC}
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	
 	call fpc_geteipasebx
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
@@ -112,6 +119,9 @@ asm
   	movl  %ebx,operatingsystem_parameter_argv
   {$endif FPC_PIC}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   { Initialize FPU }
   call SysResetFPU
@@ -120,7 +130,11 @@ asm
   {$ifdef FPC_PIC}
         pushl %ebx
 <<<<<<< HEAD
+<<<<<<< HEAD
         call  fpc_geteipasebxlocal
+=======
+        call  fpc_geteipasebx
+>>>>>>> graemeg/cpstrnew
 =======
         call  fpc_geteipasebx
 >>>>>>> graemeg/cpstrnew
@@ -156,14 +170,20 @@ end;
 procedure _FPC_proc_haltproc(e:longint); cdecl; assembler; public name '_haltproc';
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
   //addl  $12, %esp  { align stack back to 16 bytes }
   {$ifdef FPC_PIC}
         call  fpc_geteipasebxlocal
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 .Lhaltproc:
   {$ifdef FPC_PIC}
         call  fpc_geteipasebx
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 	movl  dlexitproc@GOT(%ebx),%eax
@@ -178,12 +198,15 @@ asm
   movl    syscall_nr_exit_group,%eax
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   movl    e,%ebx
   int     $0x80
   movl    syscall_nr_exit,%eax
 
   movl    e,%ebx
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_PIC}
   call    fpc_geteipasebx
   addl    $_GLOBAL_OFFSET_TABLE_,%ebx
@@ -221,6 +244,9 @@ asm
  {$endif}
 {$endif FPC_PIC}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   int     $0x80
   jmp     .Lnodlexitproc

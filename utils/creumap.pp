@@ -96,7 +96,10 @@ const
      t : text;
      e : word;
 <<<<<<< HEAD
+<<<<<<< HEAD
      c : longint;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

@@ -173,6 +173,7 @@
   {$define cpunofpu}
   {$define cpunodefaultint}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$define cpuneedsdivhelper}
   {$define cpuneedsmulhelper}
   {$define cpurefshaveindexreg}
@@ -180,10 +181,14 @@
 =======
   {$define cpuneedsdiv32helper}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$define cpuneedsdiv32helper}
+>>>>>>> graemeg/cpstrnew
 {$endif avr}
 
 {$ifdef mipsel}
   {$define mips}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$else not mipsel}
   { Define both mips and mipseb if mipsel is not defined
@@ -235,6 +240,8 @@
 {$endif aarch64}
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$endif mipsel}
 
 {$ifdef mips}
@@ -246,11 +253,15 @@
   {$define cpumm}
 {$endif mips}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$IFDEF MACOS}
 {$DEFINE USE_FAKE_SYSUTILS}
 {$ENDIF MACOS}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 { Stabs is not officially supported on 64 bit targets by gdb, except on Mac OS X
   (but there we don't support it)
@@ -261,6 +272,8 @@
 {$endif}
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$if not defined(FPC_HAS_TYPE_EXTENDED) and defined(i386)}

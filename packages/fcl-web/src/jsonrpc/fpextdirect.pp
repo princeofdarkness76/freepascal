@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the Free Component Library
 
@@ -15,6 +16,8 @@
  **********************************************************************}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 unit fpextdirect;
 
 {$mode objfpc}{$H+}
@@ -23,6 +26,7 @@ unit fpextdirect;
 interface
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
   Classes, SysUtils, fpjson, fpjsonrpc, fpdispextdirect, webjsonrpc, httpdefs;
 
@@ -41,6 +45,8 @@ Type
 
   { TExtDirectDispatcher }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   Classes, SysUtils, fpjson, fpjsonrpc, webjsonrpc, httpdefs,websession;
 
 Const
@@ -90,6 +96,9 @@ Type
 
   { TExtDirectDispatcher }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   TExtDirectDispatcher = Class(TCustomExtDirectDispatcher)
   Published
@@ -169,8 +178,11 @@ Type
     Property CreateSession;
     Property NameSpace;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property OnNewSession;
     Property OnSessionExpired;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -186,6 +198,7 @@ Resourcestring
 
 { TCustomExtDirectDispatcher }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Procedure TCustomExtDirectDispatcher.InitContainer(H: TCustomJSONRPCHandler;
   AContext: TJSONRPCCallContext; AContainer: TComponent);
@@ -196,6 +209,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Const
   DefaultNameSpace = 'FPWeb';
 
@@ -357,6 +372,9 @@ begin
 end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 { TCustomExtDirectContentProducer }
 
@@ -501,6 +519,10 @@ begin
       Res.Free;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    AResponse.SendResponse;
+>>>>>>> graemeg/cpstrnew
 =======
     AResponse.SendResponse;
 >>>>>>> graemeg/cpstrnew

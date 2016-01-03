@@ -21,7 +21,11 @@ begin
      mov [test.l-@@LPIC+ecx],5
 {$else darwin}
 <<<<<<< HEAD
+<<<<<<< HEAD
      add ecx, _GLOBAL_OFFSET_TABLE_+1
+=======
+     add ecx, _GLOBAL_OFFSET_TABLE_
+>>>>>>> graemeg/cpstrnew
 =======
      add ecx, _GLOBAL_OFFSET_TABLE_
 >>>>>>> graemeg/cpstrnew

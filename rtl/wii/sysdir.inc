@@ -19,6 +19,7 @@
                            Directory Handling
 *****************************************************************************}
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_mkdir(const s: rawbytestring);
 begin
   { TODO: convert callback to use rawbytestring to avoid conversion }
@@ -52,6 +53,8 @@ begin
       SetCodePage(Dir,DefaultFileSystemCodePage,false);
     end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure mkdir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 begin
   if not assigned(s) or (len=0) or (InOutRes<>0) then exit;
@@ -77,6 +80,9 @@ procedure GetDir(DriveNr: byte; var Dir: ShortString);
 begin
   if FileIODevice.DirIO.DoGetdir <> nil then
     FileIODevice.DirIO.DoGetdir(DriveNr, Dir);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

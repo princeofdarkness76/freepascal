@@ -1,11 +1,14 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
      File:       LSOpen.h
  
      Contains:   Public interfaces for LaunchServices.framework
  
      Copyright:  (c) 2003-2012 by Apple Inc. All rights reserved.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      File:       LaunchServices/LSOpen.h
  
      Contains:   Public interfaces for LaunchServices.framework
@@ -13,19 +16,28 @@
      Version:    LaunchServices-360.3~1
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {	 Pascal Translation: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -84,11 +96,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -110,11 +125,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -127,11 +148,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -144,7 +171,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -157,7 +187,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -167,6 +200,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -178,6 +212,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -190,11 +229,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -213,6 +256,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -292,7 +339,11 @@ const
 	kLSLaunchAndHide = $00100000; { Send child a "hide" request as soon as it checks in.}
 	kLSLaunchAndHideOthers = $00200000; { Hide all other apps when the app checks in.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kLSLaunchHasUntrustedContents = $00400000;  { Mark items to be opened as untrusted}
+=======
+	kLSLaunchHasUntrustedContents = $00400000; { Mark items to be opened as untrusted}
+>>>>>>> graemeg/cpstrnew
 =======
 	kLSLaunchHasUntrustedContents = $00400000; { Mark items to be opened as untrusted}
 >>>>>>> graemeg/cpstrnew
@@ -349,7 +400,11 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -358,7 +413,11 @@ type
  }
 function LSOpenFSRef( const (*var*) inRef: FSRef; outLaunchedRef: FSRefPtr { can be NULL } ): OSStatus; external name '_LSOpenFSRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -394,7 +453,11 @@ function LSOpenFSRef( const (*var*) inRef: FSRef; outLaunchedRef: FSRefPtr { can
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -403,7 +466,11 @@ function LSOpenFSRef( const (*var*) inRef: FSRef; outLaunchedRef: FSRefPtr { can
  }
 function LSOpenCFURLRef( inURL: CFURLRef; outLaunchedURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSOpenCFURLRef';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -433,7 +500,11 @@ function LSOpenCFURLRef( inURL: CFURLRef; outLaunchedURL: CFURLRefPtr { can be N
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -442,7 +513,11 @@ function LSOpenCFURLRef( inURL: CFURLRef; outLaunchedURL: CFURLRefPtr { can be N
  }
 function LSOpenFromRefSpec( const (*var*) inLaunchSpec: LSLaunchFSRefSpec; outLaunchedRef: FSRefPtr { can be NULL } ): OSStatus; external name '_LSOpenFromRefSpec';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -474,7 +549,11 @@ function LSOpenFromRefSpec( const (*var*) inLaunchSpec: LSLaunchFSRefSpec; outLa
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -483,7 +562,11 @@ function LSOpenFromRefSpec( const (*var*) inLaunchSpec: LSLaunchFSRefSpec; outLa
  }
 function LSOpenFromURLSpec( const (*var*) inLaunchSpec: LSLaunchURLSpec; outLaunchedURL: CFURLRefPtr { can be NULL } ): OSStatus; external name '_LSOpenFromURLSpec';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -542,7 +625,11 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -551,7 +638,11 @@ type
  }
 function LSOpenApplication( const (*var*) appParams: LSApplicationParameters; outPSN: ProcessSerialNumberPtr { can be NULL } ): OSStatus; external name '_LSOpenApplication';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -592,7 +683,11 @@ function LSOpenApplication( const (*var*) appParams: LSApplicationParameters; ou
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -601,7 +696,11 @@ function LSOpenApplication( const (*var*) appParams: LSApplicationParameters; ou
  }
 function LSOpenItemsWithRole( const (*var*) inItems: FSRef; inItemCount: CFIndex; inRole: LSRolesMask; {const} inAEParam: AEKeyDescPtr { can be NULL }; {const} inAppParams: LSApplicationParametersPtr { can be NULL }; outPSNs: ProcessSerialNumberPtr { can be NULL }; inMaxPSNCount: CFIndex ): OSStatus; external name '_LSOpenItemsWithRole';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -645,7 +744,11 @@ function LSOpenItemsWithRole( const (*var*) inItems: FSRef; inItemCount: CFIndex
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+=======
+ *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.4 and later in ApplicationServices.framework
 >>>>>>> graemeg/cpstrnew
@@ -654,7 +757,11 @@ function LSOpenItemsWithRole( const (*var*) inItems: FSRef; inItemCount: CFIndex
  }
 function LSOpenURLsWithRole( inURLs: CFArrayRef; inRole: LSRolesMask; {const} inAEParam: AEKeyDescPtr { can be NULL }; {const} inAppParams: LSApplicationParametersPtr { can be NULL }; outPSNs: ProcessSerialNumberPtr { can be NULL }; inMaxPSNCount: CFIndex ): OSStatus; external name '_LSOpenURLsWithRole';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

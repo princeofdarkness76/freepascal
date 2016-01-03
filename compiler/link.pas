@@ -768,7 +768,11 @@ Implementation
     Function TExternalLinker.MakeStaticLibrary:boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem; const addfilecmd : string) : TCmdStr;
+=======
+        function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
+>>>>>>> graemeg/cpstrnew
 =======
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
 >>>>>>> graemeg/cpstrnew

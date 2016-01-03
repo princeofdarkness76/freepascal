@@ -66,6 +66,9 @@ interface
           procedure second_rox; virtual;
           procedure second_sar; virtual;
           procedure second_bsfbsr; virtual;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        end;
 
@@ -153,6 +156,7 @@ implementation
                   location.reference.alignment:=1;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
             in_aligned_x:
               begin
                 secondpass(tcallparanode(left).left);
@@ -160,6 +164,8 @@ implementation
                 if location.loc in [LOC_CREFERENCE,LOC_REFERENCE] then
                   location.reference.alignment:=0;
               end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef SUPPORT_MMX}
@@ -215,6 +221,9 @@ implementation
             in_bsf_x,
             in_bsr_x:
                second_BsfBsr;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             else internalerror(9);
          end;
@@ -403,6 +412,9 @@ implementation
           end;
 =======
           cg.a_op_const_reg(current_asmdata.CurrAsmList,cgop,location.size,1,location.register);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -624,7 +636,12 @@ implementation
     procedure tcginlinenode.second_abs_long;
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
         tempreg1, tempreg2: tregister;
+=======
+        opsize : tcgsize;
+        tempreg1, tempreg2 : tregister;
+>>>>>>> graemeg/cpstrnew
 =======
         opsize : tcgsize;
         tempreg1, tempreg2 : tregister;
@@ -653,6 +670,9 @@ implementation
         cg.a_op_const_reg_reg(current_asmdata.CurrAsmList, OP_SAR, OS_INT, tcgsize2size[opsize]*8-1, left.location.register, tempreg1);
         cg.a_op_reg_reg_reg(current_asmdata.CurrAsmList, OP_XOR, OS_INT, left.location.register, tempreg1, tempreg2);
         cg.a_op_reg_reg_reg(current_asmdata.CurrAsmlist, OP_SUB, OS_INT, tempreg1, tempreg2, location.register);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -889,6 +909,49 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+=======
+    procedure tcginlinenode.second_sar;
+      var
+        {hcountreg : tregister;}
+        op1,op2 : tnode;
+      begin
+        if (left.nodetype=callparan) and
+           assigned(tcallparanode(left).right) then
+          begin
+            op1:=tcallparanode(tcallparanode(left).right).left;
+            op2:=tcallparanode(left).left;
+          end
+        else
+          begin
+            op1:=left;
+            op2:=nil;
+          end;
+        secondpass(op1);
+        { load left operator in a register }
+        location_copy(location,op1.location);
+
+        location_force_reg(current_asmdata.CurrAsmList,location,location.size,false);
+
+        if not(assigned(op2)) then
+          cg.a_op_const_reg(current_asmdata.CurrAsmList,OP_SAR,location.size,1,location.register)
+        else
+          begin
+            secondpass(op2);
+            { shifting by a constant directly coded: }
+            if op2.nodetype=ordconstn then
+              cg.a_op_const_reg(current_asmdata.CurrAsmList,OP_SAR,location.size,
+                                  tordconstnode(op2).value.uvalue and (resultdef.size*8-1),location.register)
+            else
+              begin
+                location_force_reg(current_asmdata.CurrAsmList,op2.location,location.size,false);
+                cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_SAR,location.size,op2.location.register,location.register);
+             end;
+          end;
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     procedure tcginlinenode.second_BsfBsr;
     var
       reverse: boolean;
@@ -911,6 +974,9 @@ implementation
     end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
    cinlinenode:=tcginlinenode;

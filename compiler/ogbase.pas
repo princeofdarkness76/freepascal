@@ -67,6 +67,7 @@ interface
          RELOC_PLT32,
 {$endif i386}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef i8086}
          RELOC_ABSOLUTE32,
          RELOC_RELATIVE32,
@@ -79,6 +80,8 @@ interface
          RELOC_FARDATASEG,
          RELOC_FARDATASEGREL,
 {$endif i8086}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef arm}
@@ -102,11 +105,15 @@ interface
          RELOC_NONE,
          { Darwin relocation, using PAIR }
 <<<<<<< HEAD
+<<<<<<< HEAD
          RELOC_PIC_PAIR,
          { Relative to GOT/gp }
          RELOC_GOTOFF,
          { Untranslated target-specific value }
          RELOC_RAW
+=======
+         RELOC_PIC_PAIR
+>>>>>>> graemeg/cpstrnew
 =======
          RELOC_PIC_PAIR
 >>>>>>> graemeg/cpstrnew
@@ -197,12 +204,15 @@ interface
        indsymbol  : TObjSymbol;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        { Used by the OMF object format and its complicated relocation records }
        group: TObjSectionGroup;
 {$ifdef ARM}
        ThumbFunc : boolean;
 {$endif ARM}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
        constructor create(AList:TFPHashObjectList;const AName:string);
@@ -741,10 +751,14 @@ implementation
         if not assigned(aobjsec) then
           internalerror(200603017);
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (bind in [AB_EXTERNAL,AB_LAZY]) or
           { Put all COMMON to GLOBAL in step 3 of
             TExeOutput.ResolveSymbols }
            ((abind=AB_GLOBAL) and (bind=AB_COMMON)) then
+=======
+        if (bind in [AB_EXTERNAL,AB_LAZY]) then
+>>>>>>> graemeg/cpstrnew
 =======
         if (bind in [AB_EXTERNAL,AB_LAZY]) then
 >>>>>>> graemeg/cpstrnew
@@ -1237,15 +1251,21 @@ implementation
           {threadvar} [oso_load,oso_write],
           {pdata} [oso_load,oso_readonly,oso_keep],
           {stub} [oso_Data,oso_load,oso_readonly,oso_executable],
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           {data_nonlazy}  [oso_Data,oso_load,oso_write],
           {data_lazy} [oso_Data,oso_load,oso_write],
           {init_func} [oso_Data,oso_load],
           {term_func} [oso_Data,oso_load],
 <<<<<<< HEAD
+<<<<<<< HEAD
           {stab} [oso_Data,oso_debug],
           {stabstr} [oso_Data,oso_strings,oso_debug],
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           {stab} [oso_Data,oso_noload,oso_debug],
           {stabstr} [oso_Data,oso_noload,oso_strings,oso_debug],
 >>>>>>> graemeg/cpstrnew
@@ -1298,9 +1318,13 @@ implementation
           {sec_objc_catlist} [oso_data,oso_load],
           {sec_objc_nlcatlist} [oso_data,oso_load],
 <<<<<<< HEAD
+<<<<<<< HEAD
           {sec_objc_protolist'} [oso_data,oso_load],
           {stack} [oso_load,oso_write],
           {heap} [oso_load,oso_write]
+=======
+          {sec_objc_protolist'} [oso_data,oso_load]
+>>>>>>> graemeg/cpstrnew
 =======
           {sec_objc_protolist'} [oso_data,oso_load]
 >>>>>>> graemeg/cpstrnew
@@ -1944,7 +1968,10 @@ implementation
         SectionDataAlign:=$200;
 {$endif cpu16bitaddr}
 <<<<<<< HEAD
+<<<<<<< HEAD
         FixedSectionAlign:=True;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         FCExeSection:=TExeSection;

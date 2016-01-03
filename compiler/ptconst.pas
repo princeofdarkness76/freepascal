@@ -924,6 +924,7 @@ implementation
                     len:=255;
                  end
                else if is_constcharnode(n) then
+<<<<<<< HEAD
                   begin
                     case char_size of
                       1:
@@ -945,6 +946,29 @@ implementation
                   begin
                     case char_size of
                       1:
+=======
+                  begin
+                    case char_size of
+                      1:
+                        ch[0]:=chr(tordconstnode(n).value.uvalue and $ff);
+                      2:
+                        begin
+                          inserttypeconv(n,cwidechartype);
+                          if not is_constwidecharnode(n) then
+                            internalerror(2010033001);
+                          widechar(ch):=widechar(tordconstnode(n).value.uvalue and $ffff);
+                        end;
+                      else
+                        internalerror(2010033002);
+                    end;
+                    ca:=@ch;
+                    len:=1;
+                  end
+               else if is_constwidecharnode(n) and (current_settings.sourcecodepage<>'utf8') then
+                  begin
+                    case char_size of
+                      1:
+>>>>>>> graemeg/cpstrnew
                         begin
                           inserttypeconv(n,cchartype);
                           if not is_constcharnode(n) then
@@ -1480,6 +1504,9 @@ implementation
         storefilepos : tfileposinfo;
         cursectype   : TAsmSectionType;
         hrec         : threc;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       begin
         { mark the staticvarsym as typedconst }
@@ -1520,6 +1547,9 @@ implementation
         hrec.origsym:=sym;
         hrec.offset:=0;
         read_typed_const_data(hrec,sym.vardef);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
         { Parse hints }

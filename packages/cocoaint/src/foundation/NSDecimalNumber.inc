@@ -54,15 +54,21 @@ var
   NSDecimalNumber = objcclass external (NSNumber)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_NSDecimalNumber0: record
       case byte of
        0: (_anonbitfield_NSDecimalNumber0: cint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     _anoninternstruct_NSDecimalNumber0: bitpacked record
       case byte of
        0: (_anonbitfield_NSDecimalNumber0: cint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _exponent: 0..((1 shl 8)-1);
         _length: 0..((1 shl 4)-1);
@@ -72,10 +78,16 @@ var
         _hasExternalRefCount: 0..1;
         _refs: 0..((1 shl 16)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
       );
       end;
     _mantissa: record end; { array of 0 elements in C, does not allocate space }
+=======
+      );
+      end;
+    _mantissa: cushort;
+>>>>>>> graemeg/cpstrnew
 =======
       );
       end;
@@ -122,15 +134,21 @@ var
   NSDecimalNumberHandler = objcclass external (NSObject, NSDecimalNumberBehaviorsProtocol, NSCodingProtocol)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_NSDecimalNumber1: record
       case byte of
        0: (_anonbitfield_NSDecimalNumber1: cint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     _anoninternstruct_NSDecimalNumber1: bitpacked record
       case byte of
        0: (_anonbitfield_NSDecimalNumber1: cint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _scale: 0..((1 shl 16)-1);
         _roundingMode: 0..((1 shl 3)-1);
@@ -140,7 +158,10 @@ var
         _raiseOnDivideByZero: 0..1;
         _unused: 0..((1 shl 9)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

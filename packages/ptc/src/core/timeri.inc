@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -34,6 +38,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
   TPTCTimer = class(TInterfacedObject, IPTCTimer)
@@ -75,6 +80,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {Function timeGetTime: DWord; StdCall; external 'WINMM' name 'timeGetTime';}
 
 constructor TPTCTimer.Create;
@@ -99,6 +106,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {constructor TPTCTimer.Create(ATimer: IPTCTimer);
 begin
   internal_init_timer;
@@ -111,12 +119,17 @@ begin
 end;
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TPTCTimer.Create(const ATimer: TPTCTimer);
 begin
   internal_init_timer;
   Assign(ATimer);
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 destructor TPTCTimer.Destroy;
 begin
@@ -125,7 +138,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {procedure TPTCTimer.Assign(const ATimer: TPTCTimer);
+=======
+procedure TPTCTimer.Assign(const ATimer: TPTCTimer);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TPTCTimer.Assign(const ATimer: TPTCTimer);
 >>>>>>> graemeg/cpstrnew
@@ -147,7 +164,11 @@ begin
             (FRunning = ATimer.FRunning);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew

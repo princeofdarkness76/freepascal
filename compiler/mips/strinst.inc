@@ -1,6 +1,11 @@
 'none',
 <<<<<<< HEAD
+<<<<<<< HEAD
 'p_set_nomips16',
+=======
+'p_stk2',
+'p_lw',
+>>>>>>> graemeg/cpstrnew
 =======
 'p_stk2',
 'p_lw',
@@ -9,6 +14,7 @@
 'p_set_nomacro',
 'p_set_macro',
 'p_set_reorder',
+<<<<<<< HEAD
 <<<<<<< HEAD
 'p_set_noat',
 'p_set_at',
@@ -19,18 +25,26 @@
 '.cprestore',
 '.cpadd',
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 'p_frame',
 'p_mask',
 'p_fmask',
 'p_sw',
 'sparc8unimp',
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 'nop',
 'not',
 'neg',
 'negu',
 <<<<<<< HEAD
+<<<<<<< HEAD
 'b ',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 'b',
@@ -111,7 +125,10 @@
 'mflo',
 'mtlo',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 'multg',
 'dmultg',
 'multug',
@@ -124,13 +141,19 @@
 'dmodg',
 'modug',
 'dmodug',
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 'j',
 'jal',
 'jr',
 'jalr',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 'beq',
 'bne',
 'blez',
@@ -147,6 +170,9 @@
 'bgezl',
 'bltzall',
 'bgezall',
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 'sll',
 'srl',
@@ -216,11 +242,17 @@
 'floor.l.s',
 'floor.l.d',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 'bc1t',
 'bc1f',
 'bc1tl',
 'bc1fl',
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 'c.eq.d',
 'c.eq.s',
@@ -229,7 +261,10 @@
 'c.lt.d',
 'c.lt.s',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 'beqi',
 'bnei',
 'blti',
@@ -248,6 +283,9 @@
 'bleu',
 'bgtu',
 'bgeu',
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 'seq',
 'sge',
@@ -258,6 +296,7 @@
 'sleu',
 'sne',
 'syscall',
+<<<<<<< HEAD
 <<<<<<< HEAD
 'break',
 'ehb',
@@ -285,6 +324,8 @@
 'movn.d',
 'movz.d',
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 'add64sub',
 'sub64sub',
 'mul64sub',
@@ -296,5 +337,8 @@
 'shl64sub',
 'shr64sub',
 'xor64sub',
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 'end_def'

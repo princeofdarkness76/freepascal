@@ -13,7 +13,11 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/cpstrnew
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/cpstrnew
@@ -299,7 +303,11 @@ begin
   end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result := Getmem(FCompressor.BlockSize*2); // it's unlikely but possible for the block to be bigger than the orig size
+=======
+    Result := Getmem(FCompressor.BlockSize);
+>>>>>>> graemeg/cpstrnew
 =======
     Result := Getmem(FCompressor.BlockSize);
 >>>>>>> graemeg/cpstrnew
@@ -523,9 +531,13 @@ begin
 
   Data  := GetMem(ABlockSize);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   //it's possible to have a chunk be slightly bigger than the data it's compressing
   CompressedData:=GetMem(ABlockSize*2);
+=======
+  CompressedData:=GetMem(ABlockSize);
+>>>>>>> graemeg/cpstrnew
 =======
   CompressedData:=GetMem(ABlockSize);
 >>>>>>> graemeg/cpstrnew

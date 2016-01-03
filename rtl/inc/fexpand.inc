@@ -219,6 +219,9 @@ begin
     if (Length (Pa) > 1) and CharInSet(Pa [1], ['A'..'Z', 'a'..'z']) and
 =======
     if (Length (Pa) > 1) and (Pa [1] in ['A'..'Z', 'a'..'z']) and
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       (Pa [2] = DriveSeparator) and (DriveSeparator <> DirectorySeparator) then
 {$ENDIF FPC_FEXPAND_VOLUMES}
@@ -655,7 +658,11 @@ end;
    to support both '..' and DirectorySeparator as references to the parent
    directory at the same time for compatibility reasons - however this
 <<<<<<< HEAD
+<<<<<<< HEAD
    support makes it impossible to use otherwise possibly valid name
+=======
+   support makes it impossible to use anotherwise possibly valid name
+>>>>>>> graemeg/cpstrnew
 =======
    support makes it impossible to use anotherwise possibly valid name
 >>>>>>> graemeg/cpstrnew

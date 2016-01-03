@@ -23,9 +23,13 @@
  * CertExtensions.h -- X.509 Cert Extensions as C structs
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 >>>>>>> graemeg/cpstrnew
@@ -84,11 +88,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -110,11 +117,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -127,11 +140,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -144,7 +163,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -157,7 +179,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -167,6 +192,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -178,6 +204,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -189,6 +220,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -205,14 +237,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -335,7 +374,10 @@ type
 		value: CSSM_DATA;		// unparsed, BER-encoded
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -347,7 +389,10 @@ type
 		name: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -357,8 +402,12 @@ type
 		numNames: UInt32;
 		generalName: CE_GeneralNamePtr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	end;
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+	end;	
+>>>>>>> graemeg/cpstrnew
 =======
 	end;	
 >>>>>>> graemeg/cpstrnew
@@ -386,7 +435,10 @@ type
 		serialNumber: CSSM_DATA;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -399,7 +451,10 @@ type
 type
 	CE_SubjectKeyID = CSSM_DATA;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -423,7 +478,10 @@ type
 type
 	CE_KeyUsage = UInt16;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -467,7 +525,10 @@ const
 type
 	CE_CrlReason = UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -530,8 +591,12 @@ type
 		pathLenConstraintPresent: CSSM_BOOL;
 		pathLenConstraint: UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	end;
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+	end;	
+>>>>>>> graemeg/cpstrnew
 =======
 	end;	
 >>>>>>> graemeg/cpstrnew
@@ -595,7 +660,10 @@ type
 											// CSSMOID_QT_UNOTICE : Sequence contents
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -607,7 +675,10 @@ type
 		policyQualifiers: CE_PolicyQualifierInfoPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -618,7 +689,10 @@ type
 		policies: CE_PolicyInformationPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -632,7 +706,10 @@ type
 type
 	CE_NetscapeCertType = UInt16;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -679,7 +756,10 @@ type
 type
 	CE_CrlDistReasonFlags = UInt8;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -711,7 +791,10 @@ type
       1: (rdn: CSSM_X509_RDN_PTR);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -721,7 +804,10 @@ type
 		dpn: __embedded_dpn;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -738,7 +824,10 @@ type
 		crlIssuer: CE_GeneralNamesPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -749,7 +838,10 @@ type
 		distPoints: CE_CRLDistributionPointPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -773,7 +865,10 @@ type
 		accessLocation: CE_GeneralName;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -784,7 +879,10 @@ type
 		accessDescriptions: CE_AccessDescriptionPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -799,7 +897,10 @@ type
   CE_NameRegistrationAuthoritiesPtr = ^CE_NameRegistrationAuthorities;
 	CE_NameRegistrationAuthorities = CE_GeneralNames;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -815,7 +916,10 @@ type
 		nameRegistrationAuthorities: CE_NameRegistrationAuthoritiesPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -836,7 +940,10 @@ type
 		otherInfo: CSSM_DATAPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -850,7 +957,10 @@ type
 		qcStatements: CE_QC_StatementPtr;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -899,6 +1009,7 @@ type
 		indirectCrlPresent: CSSM_BOOL;
 		indirectCrl: CSSM_BOOL;
 	end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
@@ -1005,6 +1116,8 @@ type
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  * An enumerated list identifying one of the above per-extension
@@ -1031,10 +1144,13 @@ const
 	DT_Other = 15;					// unknown, raw data as a CSSM_DATA
 	DT_QC_Statements = 16;			// CE_QC_Statements
 <<<<<<< HEAD
+<<<<<<< HEAD
 	DT_NameConstraints = 17;			// CE_NameConstraints
 	DT_PolicyMappings = 18;			// CE_PolicyMappings
 	DT_PolicyConstraints = 19;		// CE_PolicyConstraints
 	DT_InhibitAnyPolicy = 20;			// CE_InhibitAnyPolicy
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1063,6 +1179,7 @@ type
       DT_AuthorityInfoAccess: (authorityInfoAccess: CE_AuthorityInfoAccess);
       DT_QC_Statements: (qualifiedCertStatements: CE_QC_Statements);
 <<<<<<< HEAD
+<<<<<<< HEAD
       DT_NameConstraints: (nameConstraints: CE_NameConstraints);
       DT_PolicyMappings: (policyMappings: CE_PolicyMappings);
       DT_PolicyConstraints: (policyConstraints: CE_PolicyConstraints);
@@ -1070,6 +1187,10 @@ type
       65535: (rawData: CSSM_DATA); // unknown, not decoded
   end;
   (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+      65535: (rawData: CSSM_DATA); // unknown, not decoded
+  end;
+>>>>>>> graemeg/cpstrnew
 =======
       65535: (rawData: CSSM_DATA); // unknown, not decoded
   end;
@@ -1084,7 +1205,10 @@ type
 		critical: CSSM_BOOL;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

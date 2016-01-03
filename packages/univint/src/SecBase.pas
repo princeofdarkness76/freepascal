@@ -1,14 +1,20 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000-2013 Apple Inc. All Rights Reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  *
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  * Copyright (c) 2000-2008 Apple Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
  * 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
@@ -17,7 +23,11 @@
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> graemeg/cpstrnew
 =======
  * 
 >>>>>>> graemeg/cpstrnew
@@ -29,6 +39,7 @@
  * Please see the License for the specific language governing rights and
  * limitations under the License.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
  * @APPLE_LICENSE_HEADER_END@
  }
@@ -36,10 +47,15 @@
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
 {      Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -96,11 +112,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -122,11 +141,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -139,11 +164,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -156,7 +187,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -169,7 +203,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -179,6 +216,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -190,6 +228,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -201,6 +244,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -217,14 +261,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -283,7 +334,11 @@ uses MacTypes,CFBase;
 {!
 	@header SecBase
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SecBase contains common declarations for the Security functions.
+=======
+	SecBase contains common declarations for the Security functions. 
+>>>>>>> graemeg/cpstrnew
 =======
 	SecBase contains common declarations for the Security functions. 
 >>>>>>> graemeg/cpstrnew
@@ -327,7 +382,11 @@ type
 {!
     @struct SecKeychainAttribute
 <<<<<<< HEAD
+<<<<<<< HEAD
     @abstract Contains keychain attributes.
+=======
+    @abstract Contains keychain attributes. 
+>>>>>>> graemeg/cpstrnew
 =======
     @abstract Contains keychain attributes. 
 >>>>>>> graemeg/cpstrnew
@@ -435,17 +494,23 @@ type
 {!
     @typedef SecKeychainAttributeInfo
 <<<<<<< HEAD
+<<<<<<< HEAD
     @abstract Represents an attribute.
     @field count The number of tag-format pairs in the respective arrays.
     @field tag A pointer to the first attribute tag in the array.
     @field format A pointer to the first CSSM_DB_ATTRIBUTE_FORMAT in the array.
     @discussion Each tag and format item form a pair.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @abstract Represents an attribute. 
     @field count The number of tag-format pairs in the respective arrays. 
     @field tag A pointer to the first attribute tag in the array.
     @field format A pointer to the first CSSM_DB_ATTRIBUTE_FORMAT in the array.
     @discussion Each tag and format item form a pair.  
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 type
@@ -467,6 +532,7 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 
 {!
 <<<<<<< HEAD
+<<<<<<< HEAD
 @enum Security Error Codes
 @abstract Result codes returned from Security framework functions.
 @constant errSecSuccess No error.
@@ -481,12 +547,17 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 @constant errSecInternalComponent
 @constant errSecCoreFoundationUnknown
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 @enum Security Error Codes 
 @abstract Result codes returned from Security framework functions.
 @constant errSecSuccess No error.
 @constant errSecUnimplemented Function or operation not implemented.
 @constant errSecParam One or more parameters passed to a function were not valid.
 @constant errSecAllocate Failed to allocate memory.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 @constant errSecNotAvailable No keychain is available.
 @constant errSecReadOnly Read only error.
@@ -530,17 +601,23 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 @constant errSecInvalidPasswordRef The password reference was invalid.
 @constant errSecInvalidTrustSettings The Trust Settings Record was corrupted.
 <<<<<<< HEAD
+<<<<<<< HEAD
 @constant errSecNoTrustSettings No Trust Settings were found.
 @constant errSecPkcs12VerifyFailure MAC verification failed during PKCS12 Import.
 @constant errSecDecode Unable to decode the provided data.
 
 @discussion The assigned error space is discontinuous: e.g. -25240..-25279, -25290..-25329, -68608..-67585, and so on.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 @constant errSecNoTrustSettings No Trust Settings were found. 
 @constant errSecPkcs12VerifyFailure MAC verification failed during PKCS12 Import.
 @constant errSecDecode Unable to decode the provided data.
 
 @discussion The assigned error space is discontinuous: e.g. -25240..-25279, -25290..25329, and so on.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 
@@ -555,6 +632,7 @@ const
 	errSecSuccess = 0;       { No error. }
 	errSecUnimplemented = -4;      { Function or operation not implemented. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	errSecDskFull = -34;
 	errSecIO = -36;     {I/O error (bummers)}
 
@@ -566,6 +644,11 @@ const
 
 	errSecInternalComponent = -2070;
 	errSecCoreFoundationUnknown = -4960;
+=======
+	errSecParam = -50;     { One or more parameters passed to a function were not valid. }
+	errSecAllocate = -108;    { Failed to allocate memory. }
+
+>>>>>>> graemeg/cpstrnew
 =======
 	errSecParam = -50;     { One or more parameters passed to a function were not valid. }
 	errSecAllocate = -108;    { Failed to allocate memory. }
@@ -600,9 +683,14 @@ const
 	errSecDataNotModifiable = -25317;	{ The contents of this item cannot be modified. }
 	errSecCreateChainFailed = -25318;	{ One or more certificates required to validate this certificate cannot be found. }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	errSecInvalidPrefsDomain = -25319;	{ The specified preferences domain is not valid. }
 	errSecInDarkWake = -25320;	{ In dark wake, no UI possible }
 
+=======
+	errSecInvalidPrefsDomain = -25319;  { The specified preferences domain is not valid. }
+	
+>>>>>>> graemeg/cpstrnew
 =======
 	errSecInvalidPrefsDomain = -25319;  { The specified preferences domain is not valid. }
 	
@@ -611,6 +699,7 @@ const
 	errSecPolicyNotFound = -25241;	{ The specified policy cannot be found. }
 	errSecInvalidTrustSetting = -25242;	{ The specified trust setting is invalid. }
 	errSecNoAccessForItem = -25243;	{ The specified item has no access control. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 	errSecInvalidOwnerEdit = -25244;	{ Invalid attempt to change the owner of this item. }
 	errSecTrustNotAvailable = -25245;	{ No trust results are available. }
@@ -944,6 +1033,8 @@ const
 	errSecTimestampRevocationNotification = -67898;	{ A timestamp authority revocation notification was issued. }
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	errSecInvalidOwnerEdit = -25244;  { Invalid attempt to change the owner of this item. }
 	errSecTrustNotAvailable = -25245;	{ No trust results are available. }
 	errSecUnsupportedFormat = -25256;  { Import/Export format unsupported. }
@@ -957,6 +1048,9 @@ const
 	errSecPkcs12VerifyFailure = -25264;	{ MAC verification failed during PKCS12 Import. }
 	
 	errSecDecode = -26275;  { Unable to decode the provided data. }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

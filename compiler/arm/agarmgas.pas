@@ -43,8 +43,11 @@ unit agarmgas;
 
       TArmInstrWriter=class(TCPUInstrWriter)
 <<<<<<< HEAD
+<<<<<<< HEAD
         unified_syntax: boolean;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         procedure WriteInstruction(hp : tai);override;
@@ -52,8 +55,12 @@ unit agarmgas;
 
       TArmAppleGNUAssembler=class(TAppleGNUassembler)
 <<<<<<< HEAD
+<<<<<<< HEAD
         constructor create(info: pasminfo; smart: boolean); override;
         procedure WriteExtraHeader; override;
+=======
+        constructor create(smart: boolean); override;
+>>>>>>> graemeg/cpstrnew
 =======
         constructor create(smart: boolean); override;
 >>>>>>> graemeg/cpstrnew
@@ -113,6 +120,7 @@ unit agarmgas;
         if (current_settings.fputype = fpu_soft) then
           result:='-mfpu=softvfp '+result;
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (current_settings.fputype = fpu_vfpv2) then
           result:='-mfpu=vfpv2 '+result;
         if (current_settings.fputype = fpu_vfpv3) then
@@ -135,11 +143,16 @@ unit agarmgas;
           { options based on what gcc uses on debian armhf }
           result:='-mfloat-abi=hard -meabi=5 '+result;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
         if current_settings.cputype = cpu_cortexm3 then
           result:='-mcpu=cortex-m3 -mthumb -mthumb-interwork '+result;
         if current_settings.cputype = cpu_armv7m then
           result:='-march=armv7m -mthumb -mthumb-interwork '+result;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -147,8 +160,13 @@ unit agarmgas;
       begin
         inherited WriteExtraHeader;
 <<<<<<< HEAD
+<<<<<<< HEAD
         if TArmInstrWriter(InstrWriter).unified_syntax then
           writer.AsmWriteLn(#9'.syntax unified');
+=======
+        if current_settings.cputype in cpu_thumb2 then
+          AsmWriteLn(#9'.syntax unified');
+>>>>>>> graemeg/cpstrnew
 =======
         if current_settings.cputype in cpu_thumb2 then
           AsmWriteLn(#9'.syntax unified');
@@ -335,6 +353,15 @@ unit agarmgas;
               if mfI in o.modeflags then getopstr:=getopstr+'i';
               if mfF in o.modeflags then getopstr:=getopstr+'f';
             end;
+          top_conditioncode:
+            getopstr:=cond2str[o.cc];
+          top_modeflags:
+            begin
+              getopstr:='';
+              if mfA in o.modeflags then getopstr:=getopstr+'a';
+              if mfI in o.modeflags then getopstr:=getopstr+'i';
+              if mfF in o.modeflags then getopstr:=getopstr+'f';
+            end;
           top_ref:
             if o.ref^.refaddr=addr_full then
               begin
@@ -374,6 +401,7 @@ unit agarmgas;
     begin
       op:=taicpu(hp).opcode;
 <<<<<<< HEAD
+<<<<<<< HEAD
       postfix:='';
       if GenerateThumb2Code then
         begin
@@ -389,6 +417,8 @@ unit agarmgas;
           else
             s:=#9+gas_op2str[op]+oppostfix2str[taicpu(hp).oppostfix]+cond2str[taicpu(hp).condition]+postfix; // Conditional infixes are deprecated in unified syntax
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       if current_settings.cputype in cpu_thumb2 then
         begin
           postfix:='';
@@ -399,6 +429,9 @@ unit agarmgas;
             s:=#9+gas_op2str[op]+' '+cond2str[taicpu(hp).condition]+oppostfix2str[taicpu(hp).oppostfix]
           else
             s:=#9+gas_op2str[op]+oppostfix2str[taicpu(hp).oppostfix]+postfix+cond2str[taicpu(hp).condition]; // Conditional infixes are deprecated in unified syntax
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         end
       else
@@ -414,7 +447,11 @@ unit agarmgas;
 
                { LDM and STM use references as first operand but they are written like a register }
 <<<<<<< HEAD
+<<<<<<< HEAD
                if (i=0) and (op in [A_LDM,A_STM,A_FSTM,A_FLDM,A_VSTM,A_VLDM,A_SRS,A_RFE]) then
+=======
+               if (i=0) and (op in [A_LDM,A_STM,A_FSTM,A_FLDM]) then
+>>>>>>> graemeg/cpstrnew
 =======
                if (i=0) and (op in [A_LDM,A_STM,A_FSTM,A_FLDM]) then
 >>>>>>> graemeg/cpstrnew
@@ -474,6 +511,7 @@ unit agarmgas;
             idtxt  : 'AS-DARWIN';
             asmbin : 'as';
 <<<<<<< HEAD
+<<<<<<< HEAD
             asmcmd : '-o $OBJ $EXTRAOPT $ASM -arch $ARCH';
             supported_targets : [system_arm_darwin];
             flags : [af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
@@ -491,6 +529,11 @@ unit agarmgas;
             asmcmd : '-c -o $OBJ $EXTRAOPT -arch $ARCH $DARWINVERSION -x assembler $ASM';
             supported_targets : [system_arm_darwin];
             flags : [af_needar,af_smartlink_sections,af_supports_dwarf];
+=======
+            asmcmd : '-o $OBJ $ASM -arch $ARCH';
+            supported_targets : [system_arm_darwin];
+            flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
+>>>>>>> graemeg/cpstrnew
 =======
             asmcmd : '-o $OBJ $ASM -arch $ARCH';
             supported_targets : [system_arm_darwin];

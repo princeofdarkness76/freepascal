@@ -1914,12 +1914,15 @@ end;
     HLength:=x2 div 8-x div 8;
     LMask:=$ff shr (x and 7);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$r-}
 {$q-}
     RMask:=$ff shl (7-(x2 and 7));
 {$pop}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifopt r+}
 {$define rangeOn}
 {$r-}
@@ -1937,6 +1940,9 @@ end;
 {$undef overflowOn}
 {$q+}
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     if HLength=0 then
       LMask:=LMask and RMask;
@@ -1959,12 +1965,15 @@ end;
 
     PortW[$3ce]:=(LMask shl 8) or 8;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$r-}
 {$q-}
     Mem[WinWriteSeg:word(ScrOfs)]:=Mem[WinReadSeg:word(ScrOfs)]+1;
 {$pop}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifopt r+}
 {$define rangeOn}
 {$r-}
@@ -1982,6 +1991,9 @@ end;
 {$undef overflowOn}
 {$q+}
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     {Port[$3ce]:=8;}{not needed, the register is already selected}
     if HLength>0 then
@@ -2009,12 +2021,15 @@ end;
          SetWriteBank(smallint(ScrOfs shr 16));
          Port[$3cf]:=RMask;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$r-}
 {$q-}
          Mem[WinWriteSeg:word(ScrOfs)]:=Mem[WinReadSeg:word(ScrOfs)]+1;
 {$pop}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifopt r+}
 {$define rangeOn}
 {$r-}
@@ -2032,6 +2047,9 @@ end;
 {$undef overflowOn}
 {$q+}
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
     { clean up }

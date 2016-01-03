@@ -88,7 +88,11 @@ type
 
 function EncodeStringBase64(const s:string):String;
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DecodeStringBase64(const s:string;strict:boolean=false):String;
+=======
+function DecodeStringBase64(const s:string):String;
+>>>>>>> graemeg/cpstrnew
 =======
 function DecodeStringBase64(const s:string):String;
 >>>>>>> graemeg/cpstrnew
@@ -133,6 +137,11 @@ const
 function TBase64EncodingStream.Flush : Boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+function TBase64EncodingStream.Flush : Boolean;
+
+>>>>>>> graemeg/cpstrnew
 =======
 function TBase64EncodingStream.Flush : Boolean;
 
@@ -427,7 +436,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DecodeStringBase64(const s:string;strict:boolean=false):String;
+=======
+function DecodeStringBase64(const s:string):String;
+>>>>>>> graemeg/cpstrnew
 =======
 function DecodeStringBase64(const s:string):String;
 >>>>>>> graemeg/cpstrnew
@@ -442,6 +455,7 @@ begin
     Outstream:=TStringStream.Create('');
     try 
 <<<<<<< HEAD
+<<<<<<< HEAD
       if strict then
         Decoder:=TBase64DecodingStream.Create(Instream,bdmStrict)
       else
@@ -450,11 +464,16 @@ begin
          Outstream.CopyFrom(Decoder,Decoder.Size);
          Result:=Outstream.DataString;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       Decoder:=TBase64DecodingStream.Create(Instream,bdmMIME);
       try
          Outstream.CopyFrom(Decoder,Decoder.Size);
          Outstream.Position:=0;
          Result:=Outstream.ReadString(Outstream.Size);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       finally
         Decoder.Free;
@@ -482,7 +501,12 @@ begin
       Encoder.Free;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=Outstream.DataString;
+=======
+    Outstream.Position:=0;
+    Result:=Outstream.ReadString(Outstream.Size);
+>>>>>>> graemeg/cpstrnew
 =======
     Outstream.Position:=0;
     Result:=Outstream.ReadString(Outstream.Size);

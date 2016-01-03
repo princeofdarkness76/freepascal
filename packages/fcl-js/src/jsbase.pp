@@ -43,11 +43,14 @@ Type
     procedure SetIsUndefined(const AValue: Boolean);
   Public
 <<<<<<< HEAD
+<<<<<<< HEAD
     Constructor Create;
     Constructor CreateNull;
     Constructor Create(ANumber : TJSNumber);
     Constructor Create(ABoolean : Boolean);
     Constructor Create(AString: TJSString);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Destructor Destroy; override;
@@ -173,6 +176,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Constructor TJSValue.CreateNull;
 begin
   IsNull:=True;
@@ -199,6 +203,9 @@ begin
 end;
 
 Destructor TJSValue.Destroy;
+=======
+destructor TJSValue.Destroy;
+>>>>>>> graemeg/cpstrnew
 =======
 destructor TJSValue.Destroy;
 >>>>>>> graemeg/cpstrnew

@@ -86,9 +86,12 @@ type
   culong                 = cardinal;           pculong                = ^culong;
 {$ifend}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   csigned                = cint;               pcsigned               = ^csigned;
   cunsigned              = cuint;              pcunsigned             = ^cunsigned;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -113,10 +116,13 @@ type
   {$define longdouble_is_double}
 {$ifend}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$if defined(darwin) and defined(cpuaarch64)}
   {$define longdouble_is_double}
 {$ifend}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -125,7 +131,11 @@ type
   clongdouble=double;
 {$else}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$if defined(cpui8086) or defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
+=======
+  {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
+>>>>>>> graemeg/cpstrnew
 =======
   {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
 >>>>>>> graemeg/cpstrnew

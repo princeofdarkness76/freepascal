@@ -60,7 +60,11 @@ const
       cmDelToEndOfWord       = 51268;
       cmInputLineLen         = 51269;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> graemeg/cpstrnew
 =======
       
 >>>>>>> graemeg/cpstrnew
@@ -720,6 +724,7 @@ type
              OkButton: PButton;
              Procedure   HandleEvent(var Event : TEvent);virtual;
     end;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     TSearchHelperDialog = object(TDialog)
@@ -728,6 +733,9 @@ type
     end;
 
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
 >>>>>>> graemeg/cpstrnew
     PSearchHelperDialog = ^TSearchHelperDialog;
 
@@ -6963,8 +6971,13 @@ begin
            case Event.Command of
                    cminputlinelen : begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       if PtrInt(Event.InfoPtr)=0 then
                                         okbutton^.DisableCommands([cmok])
+=======
+                                      if Event.InfoLong=0 then
+                                        okbutton^.DisableCommands([cmok]) 
+>>>>>>> graemeg/cpstrnew
 =======
                                       if Event.InfoLong=0 then
                                         okbutton^.DisableCommands([cmok]) 
@@ -6974,7 +6987,11 @@ begin
                                       clearevent(event);
                                     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
              end;
+=======
+             end;      
+>>>>>>> graemeg/cpstrnew
 =======
              end;      
 >>>>>>> graemeg/cpstrnew

@@ -64,6 +64,7 @@ const
   SYS_REQ_TIME       : FifoSystemCommands = 2;
   SYS_SET_TIME       : FifoSystemCommands = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
   SDMMC_INSERT       : FifoSystemCommands = 4;
   SDMMC_REMOVE       : FifoSystemCommands = 5;  
   
@@ -81,10 +82,15 @@ const
 	FW_READ  = 0;
 	FW_WRITE = 1;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   SYS_HAVE_SD        : FifoSystemCommands = 4;
 	SYS_SD_START       : FifoSystemCommands = 5;
 	SYS_SD_IS_INSERTED : FifoSystemCommands = 6;
 	SYS_SD_STOP        : FifoSystemCommands = 7;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 type

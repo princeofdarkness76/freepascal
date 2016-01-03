@@ -80,7 +80,10 @@ Type
     procedure WriteOverviewMember(const ALabel,AName,Access,ADescr : String); override;
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     Class Function FileNameExtension : String; override;
 >>>>>>> graemeg/cpstrnew
     // Description node conversion
@@ -611,8 +614,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLaTeXWriter.StartAccess;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Procedure TLatexWriter.StartAccess;
 >>>>>>> graemeg/cpstrnew
 
@@ -670,8 +676,12 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLaTeXWriter.WriteOverviewMember(const ALabel, AName, Access,
   ADescr: String);
+=======
+procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
 >>>>>>> graemeg/cpstrnew
@@ -681,7 +691,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLaTeXWriter.WriteOverviewMember(const ALabel, AName, ADescr: String);
+=======
+procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TLatexWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 >>>>>>> graemeg/cpstrnew

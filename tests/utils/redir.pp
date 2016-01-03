@@ -51,9 +51,12 @@ Interface
 {$define implemented}
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
 {$define implemented}
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -212,6 +215,7 @@ Type
   TExecuteFlags= set of (ExecInheritsHandles);
 {$ifdef redirexecuteprocess}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
 // win specific  function
@@ -310,6 +314,73 @@ end;
 {$endif}
 
 
+=======
+
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
+// win specific  function
+var
+  SI: TStartupInfo;
+  PI: TProcessInformation;
+  Proc : THandle;
+  l    : DWord;
+  CommandLine : ansistring;
+  e : EOSError;
+  ExecInherits : longbool;
+begin
+  FillChar(SI, SizeOf(SI), 0);
+  SI.cb:=SizeOf(SI);
+  SI.wShowWindow:=1;
+  { always surround the name of the application by quotes
+    so that long filenames will always be accepted. But don't
+    do it if there are already double quotes, since Win32 does not
+    like double quotes which are duplicated!
+  }
+  if pos('"',path)=0 then
+    CommandLine:='"'+path+'"'
+  else
+    CommandLine:=path;
+  if ComLine <> '' then
+    CommandLine:=Commandline+' '+ComLine+#0
+  else
+    CommandLine := CommandLine + #0;
+
+  ExecInherits:=ExecInheritsHandles in Flags;
+
+  if not CreateProcess(nil, pchar(CommandLine),
+    Nil, Nil, ExecInherits,$20, Nil, Nil, SI, PI) then
+    begin
+      e:=EOSError.CreateFmt(SExecuteProcessFailed,[CommandLine,GetLastError]);
+      e.ErrorCode:=GetLastError;
+      raise e;
+    end;
+  Proc:=PI.hProcess;
+  if WaitForSingleObject(Proc, dword($ffffffff)) <> $ffffffff then
+    begin
+      GetExitCodeProcess(Proc,l);
+      CloseHandle(Proc);
+      CloseHandle(PI.hThread);
+      result:=l;
+    end
+  else
+    begin
+      e:=EOSError.CreateFmt(SExecuteProcessFailed,[CommandLine,GetLastError]);
+      e.ErrorCode:=GetLastError;
+      CloseHandle(Proc);
+      CloseHandle(PI.hThread);
+      raise e;
+    end;
+end;
+{$else}
+function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
+begin
+    result:=ExecuteProcess(path,comline);
+end;
+{$endif}
+{$ifend}
+{$endif}
+
+
+>>>>>>> graemeg/cpstrnew
 {$ifndef windows}
 var
   TempHOut, TempHIn,TempHError : longint;
@@ -441,9 +512,13 @@ Function fpclose (Handle : Longint) : boolean;
 begin
   { Do we need this ?? }
   fpclose:=true;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function fpClose (Handle: longint): boolean;
 begin
@@ -452,6 +527,8 @@ end;
  {$ENDIF EMX}
 {$ENDIF OS2}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1125,6 +1202,9 @@ end;
     ExecuteResult:=Transformfpsystemtoshell(fpsystem((FixPath(Progname)+' '+Comline)));
 =======
     ExecuteResult:=Shell(FixPath(Progname)+' '+Comline);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     if ExecuteResult<0 then
       begin

@@ -47,6 +47,12 @@ interface
         procedure handle_reg_const_reg(list:TAsmList;op:Tasmop;src:tregister;a:tcgint;dst:tregister);
         { parameter }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
+        procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
+        procedure a_loadaddr_ref_cgpara(list:TAsmList;const r:TReference;const paraloc:TCGPara);override;
+>>>>>>> graemeg/cpstrnew
 =======
         procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
         procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
@@ -104,6 +110,9 @@ interface
         procedure g_intf_wrapper(list: TAsmList; procdef: tprocdef; const labelname: string; ioffset: longint);override;
        private
         g1_used : boolean;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -123,8 +132,11 @@ interface
       end;
       
     procedure create_codegen;
+<<<<<<< HEAD
 
     procedure create_codegen;
+=======
+>>>>>>> graemeg/cpstrnew
 
     const
       TOpCG2AsmOp : array[topcg] of TAsmOp=(
@@ -351,7 +363,10 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure TCgSparc.a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);
       var
         Ref:TReference;
@@ -446,6 +461,9 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure tcgsparc.a_loadfpu_ref_cgpara(list : TAsmList;size : tcgsize;const ref : treference;const paraloc : TCGPara);
       var
@@ -1236,6 +1254,9 @@ implementation
         paramanager.getintparaloc(pocall_default,2,paraloc2);
         paramanager.getintparaloc(pocall_default,3,paraloc3);
         a_load_const_cgpara(list,OS_INT,len,paraloc3);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         a_loadaddr_ref_cgpara(list,dest,paraloc2);
         a_loadaddr_ref_cgpara(list,source,paraloc1);
@@ -1625,6 +1646,7 @@ implementation
       begin
         cg:=TCgSparc.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
         if target_info.system=system_sparc_linux then
           TCgSparc(cg).use_unlimited_pic_mode:=true
         else
@@ -1632,6 +1654,11 @@ implementation
         cg64:=TCg64Sparc.Create;
       end;
 
+=======
+        cg64:=TCg64Sparc.Create;
+      end;
+      
+>>>>>>> graemeg/cpstrnew
 =======
         cg64:=TCg64Sparc.Create;
       end;

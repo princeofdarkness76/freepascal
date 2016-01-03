@@ -63,6 +63,7 @@ interface
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       TExternalAssembler = class;
 
       IExternalAssemblerOutputFileDecorator=interface
@@ -73,6 +74,8 @@ interface
 
       TExternalAssemblerOutputFile=class
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       {# This is the base class which should be overridden for each each
          assembler writer. It is used to actually assembler a file,
          and write the output to the assembler file.
@@ -189,6 +192,9 @@ interface
         procedure AsmCreate(Aplace:tcutplace);
         procedure AsmClose;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         {# This routine should be overridden for each assembler, it is used
            to actually write the abstract assembler stream to file.}
@@ -210,6 +216,8 @@ interface
         property writer: TExternalAssemblerOutputFile read fwriter;
       end;
       TExternalAssemblerClass = class of TExternalAssembler;
+
+      { TInternalAssembler }
 
       { TInternalAssembler }
 
@@ -928,6 +936,9 @@ Implementation
 =======
           result:='-m68000 '+result;
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifdef arm}
         if (target_info.system=system_arm_darwin) then
@@ -1486,7 +1497,11 @@ Implementation
             { it's possible that indirect symbol is not present in the list,
               so we must create it as undefined }
 <<<<<<< HEAD
+<<<<<<< HEAD
             indsym:=ObjData.CObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+=======
+            indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+>>>>>>> graemeg/cpstrnew
 =======
             indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
 >>>>>>> graemeg/cpstrnew
@@ -1586,9 +1601,15 @@ Implementation
                    asd_lazy_reference:
                      begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if tai_directive(hp).name='' then
                          Internalerror(2009112101);
                        objsym:=ObjData.symbolref(tai_directive(hp).name);
+=======
+                       if tai_directive(hp).name = nil then
+                         Internalerror(2009112101);
+                       objsym:=ObjData.symbolref(tai_directive(hp).name^);
+>>>>>>> graemeg/cpstrnew
 =======
                        if tai_directive(hp).name = nil then
                          Internalerror(2009112101);
@@ -1600,10 +1621,13 @@ Implementation
                      { ignore for now, but should be added}
                      ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef ARM}
                    asd_thumb_func:
                      ObjData.ThumbFunc:=true;
 {$endif ARM}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                    else
@@ -1747,9 +1771,15 @@ Implementation
                  case tai_directive(hp).directive of
                    asd_indirect_symbol:
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if tai_directive(hp).name='' then
                        Internalerror(2009101103)
                      else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name) then
+=======
+                     if tai_directive(hp).name = nil then
+                       Internalerror(2009101103)
+                     else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name^) then
+>>>>>>> graemeg/cpstrnew
 =======
                      if tai_directive(hp).name = nil then
                        Internalerror(2009101103)
@@ -1763,9 +1793,12 @@ Implementation
                      { ignore for now, but should be added}
                      ;
 <<<<<<< HEAD
+<<<<<<< HEAD
                    asd_thumb_func:
                      { ignore for now, but should be added}
                      ;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                    else
@@ -1789,6 +1822,7 @@ Implementation
         objsymend : TObjSymbol;
         zerobuf : array[0..63] of byte;
 <<<<<<< HEAD
+<<<<<<< HEAD
         relative_reloc: boolean;
         pdata : pointer;
         ssingle : single;
@@ -1806,6 +1840,10 @@ Implementation
       begin
         fillchar(zerobuf,sizeof(zerobuf),0);
 >>>>>>> graemeg/cpstrnew
+=======
+      begin
+        fillchar(zerobuf,sizeof(zerobuf),0);
+>>>>>>> graemeg/cpstrnew
         { main loop }
         while assigned(hp) do
          begin
@@ -1813,8 +1851,11 @@ Implementation
              ait_align :
                begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                  if tai_align_abstract(hp).aligntype>ObjData.CurrObjSec.secalign then
                    InternalError(2012072301);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                  if oso_data in ObjData.CurrObjSec.secoptions then
@@ -1981,12 +2022,15 @@ Implementation
                    aitconst_darwin_dwarf_delta64:
                      ObjData.writebytes(Tai_const(hp).value,tai_const(hp).size);
 <<<<<<< HEAD
+<<<<<<< HEAD
                    aitconst_half16bit,
                    aitconst_gs:
                      begin
                        tmp:=Tai_const(hp).value div 2;
                        ObjData.writebytes(tmp,2);
                      end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                    else

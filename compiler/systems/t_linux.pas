@@ -503,6 +503,7 @@ begin
          { crti.o must come first }
          if librarysearchpath.FindFile('crti.o',false,s) then
 <<<<<<< HEAD
+<<<<<<< HEAD
            AddFileName(s)
          else
            Message1(exec_w_init_file_not_found,'crti.o');
@@ -510,6 +511,8 @@ begin
          { then the crtbegin* }
          if cs_create_pic in current_settings.moduleswitches then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
            AddFileName(s);
          { then the crtbegin* }
          { x86_64 requires this to use entry/exit code with pic,
@@ -545,6 +548,9 @@ begin
              AddFileName(s)
            else if librarysearchpath.FindFile('crtbegin.o',false,s) then
              AddFileName(s);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        end;
       { main objectfiles }
@@ -604,8 +610,13 @@ begin
                 else
                  begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                   linklibc:=true;
               end;
+=======
+                   linklibc:=true;
+                 end;
+>>>>>>> graemeg/cpstrnew
 =======
                    linklibc:=true;
                  end;
@@ -1889,6 +1900,7 @@ initialization
   RegisterTarget(system_arm_linux_info);
 {$endif ARM}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aarch64}
   RegisterImport(system_aarch64_linux,timportliblinux);
   RegisterExport(system_aarch64_linux,texportliblinux);
@@ -1901,19 +1913,30 @@ initialization
 {$ifdef MIPSEL}
   RegisterExternalLinker(system_mipsel_linux_info,TLinkerLinux);
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef MIPS}
+{$ifdef MIPSEL}
+  RegisterExternalLinker(system_mipsel_linux_info,TLinkerLinux);
+>>>>>>> graemeg/cpstrnew
   RegisterImport(system_mipsel_linux,timportliblinux);
   RegisterExport(system_mipsel_linux,texportliblinux);
   RegisterTarget(system_mipsel_linux_info);
 {$else MIPS}
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterImport(system_mipseb_linux,timportliblinux);
   RegisterExport(system_mipseb_linux,texportliblinux);
   RegisterTarget(system_mipseb_linux_info);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   RegisterExternalLinker(system_mips_linux_info,TLinkerLinux);
   RegisterImport(system_mips_linux,timportliblinux);
   RegisterExport(system_mips_linux,texportliblinux);
   RegisterTarget(system_mips_linux_info);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endif MIPSEL}
 {$endif MIPS}

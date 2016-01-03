@@ -81,8 +81,12 @@ Type
     Procedure GetEnvironmentList(List : TStrings;NamesOnly : Boolean);
     Procedure GetEnvironmentList(List : TStrings);
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Log(EventType : TEventType; const Msg : String);
     Procedure Log(EventType : TEventType; const Fmt : String; const Args : array of const);
+=======
+    Procedure Log(EventType : TEventType; const Msg : String); virtual;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure Log(EventType : TEventType; const Msg : String); virtual;
 >>>>>>> graemeg/cpstrnew
@@ -287,6 +291,12 @@ begin
     On E : Exception do
       Log(etError,Format('Error formatting message "%s" with %d arguments: %s',[Fmt,Length(Args),E.Message]));
   end  
+end;
+
+Procedure TCustomApplication.Log(EventType : TEventType; const Msg : String);
+
+begin
+  // Do nothing. Override in descendent classes.
 end;
 
 Procedure TCustomApplication.Log(EventType : TEventType; const Msg : String);
@@ -642,7 +652,10 @@ begin
           begin
           HaveArg:=(I<ParamCount) and (Length(ParamStr(I+1))>0) and (ParamStr(I+1)[1]<>FOptionChar);
 <<<<<<< HEAD
+<<<<<<< HEAD
           UsedArg:=False;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           If HaveArg then

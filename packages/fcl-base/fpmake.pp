@@ -25,6 +25,9 @@ begin
 =======
     P.Version:='2.2.2-0';
     P.Dependencies.Add('univint',[Darwin]);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     P.Author := '<various>';
@@ -45,6 +48,9 @@ begin
     P.IncludePath.Add('src/win',AllWindowsOSes-[WinCE]);
 =======
     P.IncludePath.Add('src/win',AllWindowsOSes);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     P.IncludePath.Add('src/dummy',AllOSes);
 
@@ -62,11 +68,16 @@ begin
     T:=P.Targets.AddUnit('contnrs.pp');
       T.ResourceStrings:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('singleinstance.pp');
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
     with T.Dependencies do
       AddUnit('singleinstance');
+=======
+    T:=P.Targets.AddUnit('custapp.pp');
+      T.ResourceStrings:=true;
+>>>>>>> graemeg/cpstrnew
 =======
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
@@ -112,8 +123,11 @@ begin
     T:=P.Targets.AddUnit('fptemplate.pp');
       T.ResourceStrings:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,EMX,nativent]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('uriparser.pp');

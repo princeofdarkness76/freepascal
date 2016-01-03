@@ -28,7 +28,11 @@ const
 
   VI_MAX_WIDTH_PAL   = 720;
 <<<<<<< HEAD
+<<<<<<< HEAD
   VI_MAX_HEIGHT_PAL  = 576;
+=======
+  VI_MAX_HEIGHT_PAL  = 574;
+>>>>>>> graemeg/cpstrnew
 =======
   VI_MAX_HEIGHT_PAL  = 574;
 >>>>>>> graemeg/cpstrnew
@@ -48,30 +52,42 @@ function VI_TVMODE(fmt, mode: cint): cint; inline;
 {$define VI_TVMODE_NTSC_DS      := VI_TVMODE(VI_NTSC, VI_NON_INTERLACE)}
 {$define VI_TVMODE_NTSC_PROG    := VI_TVMODE(VI_NTSC, VI_PROGRESSIVE)}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$define VI_TVMODE_PAL_INT := VI_TVMODE(VI_PAL, VI_INTERLACE)}
 {$define VI_TVMODE_PAL_DS  := VI_TVMODE(VI_PAL, VI_NON_INTERLACE)}
 {$define VI_TVMODE_PAL_PROG := VI_TVMODE(VI_PAL, VI_PROGRESSIVE)}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$define VI_TVMODE_NTSC_PROG_DS := VI_TVMODE(VI_NTSC, (VI_PROGRESSIVE or VI_NON_INTERLACE))}
 
 {$define VI_TVMODE_PAL_INT := VI_TVMODE(VI_PAL, VI_INTERLACE)}
 {$define VI_TVMODE_PAL_DS  := VI_TVMODE(VI_PAL, VI_NON_INTERLACE)}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {$define VI_TVMODE_EURGB60_INT     := VI_TVMODE(VI_EURGB60, VI_INTERLACE)}
 {$define VI_TVMODE_EURGB60_DS      := VI_TVMODE(VI_EURGB60, VI_NON_INTERLACE)}
 {$define VI_TVMODE_EURGB60_PROG    := VI_TVMODE(VI_EURGB60, VI_PROGRESSIVE)}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$define VI_TVMODE_MPAL_INT := VI_TVMODE(VI_MPAL, VI_INTERLACE)}
 {$define VI_TVMODE_MPAL_DS  := VI_TVMODE(VI_MPAL, VI_NON_INTERLACE)}
 {$define VI_TVMODE_MPAL_PROG := VI_TVMODE(VI_MPAL, VI_PROGRESSIVE)}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$define VI_TVMODE_EURGB60_PROG_DS := VI_TVMODE(VI_EURGB60, (VI_PROGRESSIVE or VI_NON_INTERLACE))}
 
 {$define VI_TVMODE_MPAL_INT := VI_TVMODE(VI_MPAL, VI_INTERLACE)}
 {$define VI_TVMODE_MPAL_DS  := VI_TVMODE(VI_MPAL, VI_NON_INTERLACE)}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {$define VI_TVMODE_DEBUG_INT := VI_TVMODE(VI_DEBUG, VI_INTERLACE)}
@@ -92,16 +108,22 @@ var
   TVNtsc480ProgSoft: GXRModeObj; cvar; external;
   TVNtsc480ProgAa: GXRModeObj; cvar; external;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TVMpal240Ds: GXRModeObj; cvar; external;
   TVMpal240DsAa: GXRModeObj; cvar; external;
   TVMpal480IntDf: GXRModeObj; cvar; external;	
   TVMpal480IntAa: GXRModeObj; cvar; external;
   TVMpal480Prog: GXRModeObj; cvar; external;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TVMpal480IntDf: GXRModeObj; cvar; external;	
   TVMpal480IntAa: GXRModeObj; cvar; external;
   TVMpal240Ds: GXRModeObj; cvar; external;
   TVMpal240DsAa: GXRModeObj; cvar; external;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   TVPal264Ds: GXRModeObj; cvar; external;				
   TVPal264DsAa: GXRModeObj; cvar; external;			
@@ -111,8 +133,12 @@ var
   TVPal528Int: GXRModeObj; cvar; external;				
   TVPal528IntDf: GXRModeObj; cvar; external;		
 <<<<<<< HEAD
+<<<<<<< HEAD
   TVPal576IntDfScale: GXRModeObj; cvar; external;
   TVPal576ProgScale: GXRModeObj; cvar; external;
+=======
+  TVPal574IntDfScale: GXRModeObj; cvar; external;
+>>>>>>> graemeg/cpstrnew
 =======
   TVPal574IntDfScale: GXRModeObj; cvar; external;
 >>>>>>> graemeg/cpstrnew

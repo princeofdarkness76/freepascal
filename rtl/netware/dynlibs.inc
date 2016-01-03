@@ -15,6 +15,7 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Uses nwserv;
 
 Function SysLoadLibraryA(const Name : RawByteString) : TlibHandle;
@@ -22,6 +23,8 @@ var args : array[0..1] of PAnsiChar;
 begin
   args[0] := PAnsiChar(Name);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef readinterface}
 
 { ---------------------------------------------------------------------
@@ -48,11 +51,15 @@ Function LoadLibrary(const Name : AnsiString) : TlibHandle;
 var args : array[0..1] of pchar;
 begin
   args[0] := pchar(Name);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   args[1] := nil;
   Result:=spawnvp(P_NOWAIT,@args,nil);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function SysLoadLibraryU(const Name: UnicodeString) : TLibHandle;
 begin
@@ -63,13 +70,20 @@ Function SysGetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) :
 =======
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> graemeg/cpstrnew
 
 begin
   Result:=ImportSymbol(GetNlmHandle, pchar(ProcName));
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SysUnloadLibrary(Lib : TLibHandle) : Boolean;
+=======
+Function UnloadLibrary(Lib : TLibHandle) : Boolean;
+>>>>>>> graemeg/cpstrnew
 =======
 Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 >>>>>>> graemeg/cpstrnew
@@ -78,6 +92,7 @@ begin
   Result:=false;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 Function SysGetLoadErrorStr: string;
@@ -101,6 +116,9 @@ procedure InitDynLibs;
 begin
   SetDynLibsManager(SysDynLibsManager);
 end;
+=======
+{$endif}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif}
 >>>>>>> graemeg/cpstrnew

@@ -32,6 +32,7 @@ program chmls;
 uses
   Classes, GetOpts, SysUtils, Types,
 <<<<<<< HEAD
+<<<<<<< HEAD
   StreamEx,
   chmreader, chmbase, chmsitemap;
 
@@ -66,11 +67,37 @@ Type
 Const
   CmdNames : array [TCmdEnum] of String = ('LIST','EXTRACT','EXTRACTALL','UNBLOCK','EXTRACTALIAS','EXTRACTTOC','EXTRACTINDEX','PRINTIDXHDR','PRINTSYSTEM','PRINTWINDOWS','PRINTTOPICS','');
 =======
+=======
+  chmreader, chmbase, chmsitemap;
+
+type
+
+  { TListObject }
+
+  TListObject = class
+    Section  : Integer;
+    count    : integer;
+    donotpage: boolean;
+    nameonly : boolean;
+    procedure OnFileEntry(Name: String; Offset, UncompressedSize, ASection: Integer);
+  end;
+
+   TExtractAllObject = class
+    basedir : string;
+    r       : TChmReader;
+    lastone_was_point : boolean;
+    procedure OnFileEntry(Name: String; Offset, UncompressedSize, ASection: Integer);
+  end;
+
+>>>>>>> graemeg/cpstrnew
 
   TCmdEnum = (cmdList,cmdExtract,cmdExtractall,cmdUnblock,cmdextractalias,cmdextracttoc,cmdextractindex,cmdNone);        // One dummy element at the end avoids rangecheck errors.
 
 Const
   CmdNames : array [TCmdEnum] of String = ('LIST','EXTRACT','EXTRACTALL','UNBLOCK','EXTRACTALIAS','EXTRACTTOC','EXTRACTINDEX','');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 var
@@ -108,6 +135,7 @@ begin
   writeln(stderr,' extractindex <chmfilename> [filename]');
   writeln(stderr,'            Extracts the index (mainly to check binary index)');
 <<<<<<< HEAD
+<<<<<<< HEAD
   writeln(stderr,' printidxhdr <chmfilename>');
   writeln(stderr,'            prints #IDXHDR in readable format ');
   writeln(stderr,' printsystem <chmfilename>');
@@ -117,6 +145,8 @@ begin
   writeln(stderr,' printtopics <chmfilename>');
   writeln(stderr,'            prints #TOPICS in readable format ');
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Halt(1);
@@ -185,6 +215,7 @@ begin
   pthends:=false;  filenameends:=false;
   if (lenpth>0) and (pth[lenpth] in ['/','\']) then
     pthends:=true;
+<<<<<<< HEAD
 
   if (lenfn>0) and (filename[1] in ['/','\']) then
     filenameends:=true;
@@ -201,6 +232,22 @@ end;
 
 
 =======
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+
+  if (lenfn>0) and (filename[1] in ['/','\']) then
+    filenameends:=true;
+
+  if pthends and filenameends then
+      result:=copy(pth,1,lenpth-1)+filename
+  else
+    if pthends or filenameends then
+        result:=pth+filename
+    else
+       result:=pth+pathsep+filename;
+end;
 
 
 >>>>>>> graemeg/cpstrnew
@@ -322,7 +369,11 @@ begin
     readfrom:='/'+readfrom;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   fs:=TFileStream.create(chm,fmOpenRead or fmShareDenyNone);
+=======
+  fs:=TFileStream.create(chm,fmOpenRead);
+>>>>>>> graemeg/cpstrnew
 =======
   fs:=TFileStream.create(chm,fmOpenRead);
 >>>>>>> graemeg/cpstrnew
@@ -492,6 +543,7 @@ begin
  Files.Free;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 procedure readchunk13(m:TMemoryStream;r:TChmReader);
@@ -942,6 +994,9 @@ const
 =======
 const 
 >>>>>>> graemeg/cpstrnew
+=======
+const 
+>>>>>>> graemeg/cpstrnew
    siteext : array[TSiteMapType] of string = ('.hhc','.hhk');
 
 procedure extracttocindex(filespec:TStringDynArray;sttype:TSiteMapType);
@@ -1075,9 +1130,13 @@ begin
                    end;
       cmdextractall: begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                       if length(localparams)=1 then //extract into current directory
                         ExtractFileAll(localparams[0],GetCurrentDir)
                       else if length(localparams)=2 then //extract into specified dir
+=======
+                      if length(localparams)=2 then
+>>>>>>> graemeg/cpstrnew
 =======
                       if length(localparams)=2 then
 >>>>>>> graemeg/cpstrnew
@@ -1099,7 +1158,11 @@ begin
                           WrongNrParam(cmdnames[cmd],length(localparams));
                        end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       cmdextracttoc : begin
+=======
+       cmdextracttoc : begin
+>>>>>>> graemeg/cpstrnew
 =======
        cmdextracttoc : begin
 >>>>>>> graemeg/cpstrnew
@@ -1109,7 +1172,11 @@ begin
                           WrongNrParam(cmdnames[cmd],length(localparams));
                        end;
 <<<<<<< HEAD
+<<<<<<< HEAD
       cmdextractindex: begin
+=======
+       cmdextractindex: begin
+>>>>>>> graemeg/cpstrnew
 =======
        cmdextractindex: begin
 >>>>>>> graemeg/cpstrnew
@@ -1118,6 +1185,7 @@ begin
 	                        else
                           WrongNrParam(cmdnames[cmd],length(localparams));
                        end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
       cmdprintidxhdr: begin
@@ -1144,6 +1212,8 @@ begin
                           else
                             WrongNrParam(cmdnames[cmd],length(localparams));
                          end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end; {case cmd of}

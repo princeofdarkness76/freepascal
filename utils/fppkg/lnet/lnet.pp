@@ -90,7 +90,10 @@ type
     FSession: TLSession;
     FConnection: TLConnection;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FMSGBufferSize: integer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    protected
@@ -161,7 +164,10 @@ type
     property Creator: TLComponent read FCreator;
     property Session: TLSession read FSession;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property MsgBufferSize : Integer Read FMsgBufferSize Write FMsgBufferSize;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -581,6 +587,9 @@ begin
       FSocketState := FSocketState - [ssReuseAddress];
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TLSocket.HardDisconnect(const NoShutdown: Boolean = False);
@@ -610,6 +619,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 =======
 end;
 
@@ -640,6 +650,8 @@ begin
   end;
 end;
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure TLSocket.SoftDisconnect;
 begin
@@ -717,6 +729,7 @@ begin
   case FSocketNet of
     LAF_INET  : Result := psockaddr(@FAddress.IPv4);
     LAF_INET6 : Result := psockaddr(@FAddress.IPv6);
+<<<<<<< HEAD
   else
     raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
   end;
@@ -730,6 +743,21 @@ begin
   else
     raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
   end;
+=======
+  else
+    raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
+  end;
+end;
+
+function TLSocket.GetIPAddressLength: TSocklen;
+begin
+  case FSocketNet of
+    LAF_INET  : Result := SizeOf(FAddress.IPv4);
+    LAF_INET6 : Result := SizeOf(FAddress.IPv6);
+  else
+    raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
+  end;
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TLSocket.SetupSocket(const APort: Word; const Address: string): Boolean;
@@ -768,6 +796,7 @@ begin
     FillAddressInfo(FAddress, FSocketNet, Address, aPort);
     FillAddressInfo(FPeerAddress, FSocketNet, LADDR_BR, aPort);
 <<<<<<< HEAD
+<<<<<<< HEAD
     if FMSGBufferSize>0 then
       begin
       if fpsetsockopt(Handle, SOL_SOCKET, SO_RCVBUF, @FMSGBufferSize, Sizeof(integer))
@@ -778,6 +807,8 @@ begin
         Exit(Bail('SetSockOpt error setting snd buffer size', LSocketError));
       end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 >>>>>>> graemeg/cpstrnew
     Result  :=  Done;
@@ -791,7 +822,11 @@ begin
   if FSocketType = SOCK_STREAM then
     Result := Sockets.fpSend(FHandle, @aData, aSize, LMSG)
 <<<<<<< HEAD
+<<<<<<< HEAD
   else 
+=======
+  else
+>>>>>>> graemeg/cpstrnew
 =======
   else
 >>>>>>> graemeg/cpstrnew
@@ -863,7 +898,10 @@ begin
   else
     Result := true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if (FSocketType = SOCK_STREAM) and Result then
@@ -898,7 +936,11 @@ begin
   if FConnectionStatus <> scNone then
     Disconnect(True);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> graemeg/cpstrnew
 =======
     
 >>>>>>> graemeg/cpstrnew
@@ -1675,6 +1717,7 @@ begin
 end;
 
 //*******************************TLSession*********************************
+<<<<<<< HEAD
 
 procedure TLSession.RegisterWithComponent(aConnection: TLConnection);
 begin
@@ -1696,6 +1739,28 @@ end;
 
 procedure TLSession.SendEvent(aHandle: TLHandle);
 begin
+=======
+
+procedure TLSession.RegisterWithComponent(aConnection: TLConnection);
+begin
+  if not Assigned(aConnection) then
+    raise Exception.Create('Cannot register session with nil connection');
+end;
+
+procedure TLSession.InitHandle(aHandle: TLHandle);
+begin
+  TLSocket(aHandle).FSession := Self;
+end;
+
+procedure TLSession.ReceiveEvent(aHandle: TLHandle);
+begin
+  FActive := True;
+  CallReceiveEvent(aHandle);
+end;
+
+procedure TLSession.SendEvent(aHandle: TLHandle);
+begin
+>>>>>>> graemeg/cpstrnew
   FActive := True;
   CallSendEvent(aHandle);
 end;
@@ -1748,6 +1813,7 @@ end;
 procedure TLSession.CallAcceptEvent(aHandle: TLHandle); inline;
 begin
   TLSocket(aHandle).FConnection.AcceptEvent(TLSocket(aHandle));
+<<<<<<< HEAD
 end;
 
 =======
@@ -1813,6 +1879,10 @@ end;
 procedure TLSession.CallAcceptEvent(aHandle: TLHandle); inline;
 begin
   TLSocket(aHandle).FConnection.AcceptEvent(TLSocket(aHandle));
+end;
+
+>>>>>>> graemeg/cpstrnew
+=======
 end;
 
 >>>>>>> graemeg/cpstrnew

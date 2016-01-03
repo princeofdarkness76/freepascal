@@ -705,20 +705,25 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 <<<<<<< HEAD
+<<<<<<< HEAD
+attsufMM,
+attsufMM,
+=======
+>>>>>>> graemeg/cpstrnew
+attsufNONE,
+attsufNONE,
+attsufNONE,
+attsufNONE,
+<<<<<<< HEAD
 attsufMM,
 attsufMM,
 attsufNONE,
 attsufNONE,
-attsufNONE,
-attsufNONE,
 attsufMM,
-attsufMM,
+=======
 attsufNONE,
 attsufNONE,
-attsufMM,
-attsufNONE,
-attsufNONE,
-attsufNONE,
+>>>>>>> graemeg/cpstrnew
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -740,6 +745,10 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+attsufNONE,
+attsufNONE,
+attsufNONE,
+<<<<<<< HEAD
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -1023,6 +1032,9 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 <<<<<<< HEAD
+=======
+attsufINT,
+>>>>>>> graemeg/cpstrnew
 =======
 attsufINT,
 >>>>>>> graemeg/cpstrnew

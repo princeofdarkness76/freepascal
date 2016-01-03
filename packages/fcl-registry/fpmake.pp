@@ -21,6 +21,9 @@ begin
     P.Version:='3.1.1';
 =======
     P.Version:='2.2.2-0';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     P.Dependencies.Add('fcl-base');
     P.Dependencies.Add('fcl-xml');

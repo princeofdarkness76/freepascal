@@ -300,7 +300,10 @@ type
 
     vramBlocks: array [0..1] of ps_vramBlock;		// Two classe instances, one for textures, and one for palettes
 <<<<<<< HEAD
+<<<<<<< HEAD
     vramLock: array [0..1] of cint;				// Holds the current lock state of the VRAM banks
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     
@@ -365,7 +368,10 @@ function glTexImage2D(target, empty1: cint; _type: GL_TEXTURE_TYPE_ENUM; sizeX, 
 
 procedure glColorTableEXT(target, empty1: cint; width: cuint16; empty2, empty3: cint; const table: pcuint16); cdecl; external;
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure glColorSubTableEXT(target, start, count, empty1, empty2: cint; const data: pcuint16); cdecl; external;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure glAssignColorTable(target, name: cint); cdecl; external;
@@ -470,7 +476,10 @@ procedure glTexCoord2f(s, t: cfloat); inline;
 {$ifdef NDS_IMPLEMENTATION}
 function intto12d3(n: cint): fixed12d3; inline;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   intto12d3 := fixed12d3(n shl 3);
 end;

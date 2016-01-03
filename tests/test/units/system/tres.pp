@@ -1,6 +1,7 @@
 { Test for resources support. }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%TARGET=win32,win64,wince,linux,freebsd,darwin,netbsd,openbsd,solaris,haiku,aix,android}
 
 {$mode objfpc}
@@ -8,10 +9,15 @@
 uses sysutils;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {%TARGET=win32,win64,wince,linux,freebsd,darwin,netbsd,openbsd,solaris,haiku}
 
 {$mode objfpc}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$R tres1.res}
 

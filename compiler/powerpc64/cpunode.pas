@@ -32,8 +32,11 @@ uses
   ncgbas, ncgld, ncgflw, ncgcnv, ncgmem, ncgcon, ncgcal, ncgset, ncginl, ncgopt,
   ncgobjc,
 <<<<<<< HEAD
+<<<<<<< HEAD
   { symtable }
   symcpu,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   { to be able to only parts of the generic code,

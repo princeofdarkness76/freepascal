@@ -1,5 +1,6 @@
 { CoreGraphics - CGFunction.h
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1999-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -7,10 +8,15 @@
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  * Copyright (c) 1999-2008 Apple Inc.
  * All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -67,11 +73,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -93,11 +102,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -110,11 +125,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -127,7 +148,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -140,7 +164,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -150,6 +177,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -161,12 +189,18 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
@@ -180,10 +214,13 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
@@ -209,6 +246,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -257,8 +303,12 @@ uses MacTypes,CGBase,CFBase;
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGFunctionRef = ^OpaqueCGFunctionRef; { an opaque type }
 	OpaqueCGFunctionRef = record end;
+=======
+	CGFunctionRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CGFunctionRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -270,7 +320,11 @@ type
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGFunctionEvaluateCallback = procedure( info: UnivPtr; inp: {const} CGFloatPtr; out: CGFloatPtr );
+=======
+	CGFunctionEvaluateCallback = procedure( info: UnivPtr; inp: {const} CGFloatPtr; out: Float32Ptr );
+>>>>>>> graemeg/cpstrnew
 =======
 	CGFunctionEvaluateCallback = procedure( info: UnivPtr; inp: {const} CGFloatPtr; out: Float32Ptr );
 >>>>>>> graemeg/cpstrnew
@@ -287,9 +341,12 @@ type
      `evaluate' is the callback used to evaluate the function.
      `releaseInfo', if non-NULL, is the callback used to release the info
 <<<<<<< HEAD
+<<<<<<< HEAD
        parameter passed to the CGFunction creation functions when the
        function is deallocated. }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
        parameter passed to the CGFunction creation functions when the function
        is deallocated.
  }
@@ -306,6 +363,7 @@ type
 	end;
 
 { Return the CFTypeID for CGFunctionRefs. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function CGFunctionGetTypeID: CFTypeID; external name '_CGFunctionGetTypeID';
@@ -377,6 +435,35 @@ function CGFunctionGetTypeID: CFTypeID; external name '_CGFunctionGetTypeID';
    should specify reasonable values for the minimum and maximum in that
    dimension.
 
+=======
+
+function CGFunctionGetTypeID: CFTypeID; external name '_CGFunctionGetTypeID';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+ 
+{ Create a CGFunction using `callbacks' to evaluate the function. `info' is
+   passed to each of the callback functions. `domainDimension' is the number
+   of input values to the function; `rangeDimension' is the number of output
+   values from the function.
+
+   `domain' is an array of 2M values, where M is the number of input values.
+   For each k from 0 to M-1, domain[2*k] must be less than or equal to
+   domain[2*k+1]. The k'th input value (in[k]) will be clipped to lie in
+   this interval, so that domain[2*k] <= in[k] <= domain[2*k+1]. If `domain'
+   is NULL, then the input values will not be clipped. However, it's
+   strongly recommended that `domain' be specified; each domain interval
+   should specify reasonable values for the minimum and maximum in that
+   dimension.
+
+   `range' is an array of 2N values, where N is the number of output values.
+   For each k from 0 to N-1, range[2*k] must be less than or equal to
+   range[2*k+1]. The k'th output value (out[k]) will be clipped to lie in
+   this interval, so that range[2*k] <= out[k] <= range[2*k+1]. If `range'
+   is NULL, then the output values will not be clipped. However, it's
+   strongly recommended that `range' be specified; each range interval
+   should specify reasonable values for the minimum and maximum in that
+   dimension.
+
+>>>>>>> graemeg/cpstrnew
    The contents of the callbacks structure is copied, so, for example, a
    pointer to a structure on the stack can be passed to this function. }
 
@@ -392,6 +479,9 @@ function CGFunctionRetain( func: CGFunctionRef ): CGFunctionRef; external name '
 { Equivalent to `CFRelease(function)', except it doesn't crash (as
    CFRelease does) if `function' is NULL. }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure CGFunctionRelease( func: CGFunctionRef ); external name '_CGFunctionRelease';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)

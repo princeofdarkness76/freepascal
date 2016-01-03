@@ -47,22 +47,31 @@
     _maxValue: double;
     _increment: double;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __stFlags: record
       case byte of
        0: (_anonbitfield_NSStepperCell0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __stFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSStepperCell0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _valueWraps: 0..1;
         _autorepeat: 0..1;
         drawing: 0..1;
         reserved: 0..((1 shl 29)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

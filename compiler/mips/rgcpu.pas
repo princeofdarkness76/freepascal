@@ -2,7 +2,11 @@
     Copyright (c) 1998-2009 by Florian Klaempfl and David Zhang
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     This unit implements the register allocator for MIPS(EL)
+=======
+    This unit implements the register allocator for MIPLEL
+>>>>>>> graemeg/cpstrnew
 =======
     This unit implements the register allocator for MIPLEL
 >>>>>>> graemeg/cpstrnew
@@ -32,7 +36,11 @@ unit rgcpu;
 
     uses
 <<<<<<< HEAD
+<<<<<<< HEAD
       aasmbase,aasmsym,aasmcpu,aasmtai,aasmdata,
+=======
+      aasmbase,aasmcpu,aasmtai,aasmdata,
+>>>>>>> graemeg/cpstrnew
 =======
       aasmbase,aasmcpu,aasmtai,aasmdata,
 >>>>>>> graemeg/cpstrnew
@@ -42,6 +50,7 @@ unit rgcpu;
 
     type
       trgcpu=class(trgobj)
+<<<<<<< HEAD
 <<<<<<< HEAD
         function get_spill_subreg(r : tregister) : tsubregister;override;
         procedure do_spill_read(list: TAsmList; pos: tai; const spilltemp: treference; tempreg: tregister; orgsupreg: tsuperregister); override;
@@ -53,12 +62,17 @@ unit rgcpu;
         procedure add_cpu_interferences(p:tai);override;
       end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         procedure add_constraints(reg:tregister);override;
         function get_spill_subreg(r : tregister) : tsubregister;override;
         procedure do_spill_read(list:tasmlist;pos:tai;const spilltemp:treference;tempreg:tregister);override;
         procedure do_spill_written(list:tasmlist;pos:tai;const spilltemp:treference;tempreg:tregister);override;
       end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 implementation
@@ -69,7 +83,10 @@ implementation
       cgobj;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure trgcpu.add_constraints(reg:tregister);
       var
         supreg,i : Tsuperregister;
@@ -100,6 +117,9 @@ implementation
         end;
       end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     function trgcpu.get_spill_subreg(r : tregister) : tsubregister;
@@ -112,7 +132,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure trgcpu.do_spill_read(list: TAsmList; pos: tai; const spilltemp: treference; tempreg: tregister; orgsupreg: tsuperregister);
+=======
+    procedure trgcpu.do_spill_read(list:tasmlist;pos:tai;const spilltemp:treference;tempreg:tregister);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure trgcpu.do_spill_read(list:tasmlist;pos:tai;const spilltemp:treference;tempreg:tregister);
 >>>>>>> graemeg/cpstrnew
@@ -123,7 +147,11 @@ implementation
         hreg     : tregister;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         if abs(spilltemp.offset)>32767 then
+=======
+        if abs(spilltemp.offset)>4095 then
+>>>>>>> graemeg/cpstrnew
 =======
         if abs(spilltemp.offset)>4095 then
 >>>>>>> graemeg/cpstrnew
@@ -136,9 +164,12 @@ implementation
               hreg:=cg.getintregister(helplist,OS_ADDR);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             helplist.concat(taicpu.op_reg_const(A_LUI,hreg,spilltemp.offset shr 16));
             helplist.concat(taicpu.op_reg_reg_const(A_ORI,hreg,hreg,spilltemp.offset and $FFFF));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             reference_reset(tmpref,sizeof(aint));
             tmpref.offset:=spilltemp.offset;
             tmpref.refaddr:=addr_high;
@@ -146,6 +177,9 @@ implementation
 
             tmpref.refaddr:=addr_low;
             helplist.concat(taicpu.op_reg_reg_ref(A_ADDIU,hreg,hreg,tmpref));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             helplist.concat(taicpu.op_reg_reg_reg(A_ADDU,hreg,hreg,spilltemp.base));
 
@@ -153,6 +187,7 @@ implementation
 
             helpins:=spilling_create_load(tmpref,tempreg);
             helplist.concat(helpins);
+<<<<<<< HEAD
 <<<<<<< HEAD
             list.insertlistafter(pos,helplist);
             helplist.free;
@@ -165,6 +200,8 @@ implementation
     procedure trgcpu.do_spill_written(list: TAsmList; pos: tai; const spilltemp: treference; tempreg: tregister; orgsupreg: tsuperregister);
       var
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             list.insertlistafter(pos,helplist)
           end
         else
@@ -175,13 +212,20 @@ implementation
     procedure trgcpu.do_spill_written(list:tasmlist;pos:tai;const spilltemp:treference;tempreg:tregister);
       var
         helpins  : tai;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         tmpref   : treference;
         helplist : tasmlist;
         hreg     : tregister;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         if abs(spilltemp.offset)>32767 then
+=======
+        if abs(spilltemp.offset)>4095 then
+>>>>>>> graemeg/cpstrnew
 =======
         if abs(spilltemp.offset)>4095 then
 >>>>>>> graemeg/cpstrnew
@@ -194,9 +238,12 @@ implementation
               hreg:=cg.getintregister(helplist,OS_ADDR);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             helplist.concat(taicpu.op_reg_const(A_LUI,hreg,spilltemp.offset shr 16));
             helplist.concat(taicpu.op_reg_reg_const(A_ORI,hreg,hreg,spilltemp.offset and $FFFF));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             reference_reset(tmpref,sizeof(aint));
             tmpref.offset:=spilltemp.offset;
             tmpref.refaddr:=addr_high;
@@ -204,11 +251,15 @@ implementation
 
             tmpref.refaddr:=addr_low;
             helplist.concat(taicpu.op_reg_reg_ref(A_ADDIU,hreg,hreg,tmpref));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             helplist.concat(taicpu.op_reg_reg_reg(A_ADDU,hreg,hreg,spilltemp.base));
 
             reference_reset_base(tmpref,hreg,0,sizeof(aint));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
             helplist.concat(spilling_create_store(tempreg,tmpref));
             if getregtype(tempreg)=R_INTREGISTER then
@@ -304,6 +355,8 @@ implementation
 
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             helpins:=spilling_create_store(tempreg,tmpref);
             helplist.concat(helpins);
             if getregtype(tempreg)=R_INTREGISTER then
@@ -315,5 +368,8 @@ implementation
           inherited do_spill_written(list,pos,spilltemp,tempreg);
     end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end.

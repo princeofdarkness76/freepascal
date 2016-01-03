@@ -4,7 +4,10 @@ unit iPhoneAll;
 {$modeswitch objectivec1}
 {$modeswitch cvar}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -110,7 +113,11 @@ implementation
 
 {$undef IMPLEMENTATION}
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
+=======
+end.
+>>>>>>> graemeg/cpstrnew
 =======
 end.
 >>>>>>> graemeg/cpstrnew

@@ -46,8 +46,11 @@ type
     function create_varargs_paraloc_info(p: tabstractprocdef; varargspara:
       tvarargsparalist): longint; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
     procedure create_funcretloc_info(p: tabstractprocdef; side: tcallercallee);
 >>>>>>> graemeg/cpstrnew
@@ -71,6 +74,9 @@ uses
   defutil,symtable,symcpu,
 =======
   defutil,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   procinfo, cpupi;
 
@@ -192,8 +198,12 @@ begin
     recorddef:
       result :=
 <<<<<<< HEAD
+<<<<<<< HEAD
         (varspez = vs_const) and
         (
+=======
+        ((varspez = vs_const) and
+>>>>>>> graemeg/cpstrnew
 =======
         ((varspez = vs_const) and
 >>>>>>> graemeg/cpstrnew
@@ -296,6 +306,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function tcpuparamanager.get_funcretloc(p : tabstractprocdef; side:
   tcallercallee; forcetempdef: tdef): tcgpara;
 var
@@ -371,6 +382,40 @@ begin
     end
   else
     begin
+=======
+procedure tppcparamanager.create_funcretloc_info(p: tabstractprocdef; side:
+  tcallercallee);
+begin
+  p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
+end;
+
+function tppcparamanager.get_funcretloc(p : tabstractprocdef; side:
+  tcallercallee; def: tdef): tcgpara;
+var
+  paraloc : pcgparalocation;
+  retcgsize  : tcgsize;
+begin
+  result.init;
+  result.alignment:=get_para_align(p.proccalloption);
+  { void has no location }
+  if is_void(def) then
+    begin
+      paraloc:=result.add_location;
+      result.size:=OS_NO;
+      result.intsize:=0;
+      paraloc^.size:=OS_NO;
+      paraloc^.loc:=LOC_VOID;
+      exit;
+    end;
+  { Constructors return self instead of a boolean }
+  if (p.proctypeoption=potype_constructor) then
+    begin
+      retcgsize:=OS_ADDR;
+      result.intsize:=sizeof(pint);
+    end
+  else
+    begin
+>>>>>>> graemeg/cpstrnew
       retcgsize:=def_cgsize(def);
       result.intsize:=def.size;
     end;
@@ -402,6 +447,9 @@ begin
          paraloc^.register:=newreg(R_INTREGISTER,RS_FUNCTION_RETURN_REG,cgsize2subreg(R_INTREGISTER,retcgsize));
        paraloc^.size:=retcgsize;
      end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

@@ -11,7 +11,11 @@ var
   dll1, dll2: HModule;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function T1(Parameter: Pointer): PtrInt;
+=======
+function T1(Parameter: Pointer): LongInt;
+>>>>>>> graemeg/cpstrnew
 =======
 function T1(Parameter: Pointer): LongInt;
 >>>>>>> graemeg/cpstrnew
@@ -20,7 +24,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function T2(Parameter: Pointer): PtrInt;
+=======
+function T2(Parameter: Pointer): LongInt;
+>>>>>>> graemeg/cpstrnew
 =======
 function T2(Parameter: Pointer): LongInt;
 >>>>>>> graemeg/cpstrnew
@@ -31,7 +39,11 @@ end;
 var
   h: array[0..1] of THandle;
 <<<<<<< HEAD
+<<<<<<< HEAD
   id1, id2: TThreadID;
+=======
+  id1, id2: DWORD;
+>>>>>>> graemeg/cpstrnew
 =======
   id1, id2: DWORD;
 >>>>>>> graemeg/cpstrnew

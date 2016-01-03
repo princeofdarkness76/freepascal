@@ -15,10 +15,16 @@ begin
     P:=AddPackage('zorba');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
     P.OSes := [linux,win32];
+=======
+    P.Directory:='zorba';
+{$endif ALLPACKAGES}
+    P.Version:='0.9.9';
+>>>>>>> graemeg/cpstrnew
 =======
     P.Directory:='zorba';
 {$endif ALLPACKAGES}
@@ -41,7 +47,10 @@ begin
           AddInclude('zorba_options.inc');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('zorba.pas');

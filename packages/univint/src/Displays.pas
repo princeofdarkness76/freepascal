@@ -69,11 +69,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -92,6 +95,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -115,6 +119,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -127,6 +136,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -135,11 +147,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -210,6 +226,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -346,6 +390,7 @@ const
 	kMirrorDisplayBit = 10;
 	kUnMirrorDisplayBit = 11;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 const
@@ -474,10 +519,65 @@ const
 	kDMSupressNumbersMask = 1 shl 0; { Supress the numbers and return only names}
 	kDMForceNumbersMask = 1 shl 1; { Force numbers to always be shown (even on single display configs)}
 	kDMSupressNameMask = 1 shl 2; { Supress the names and return only numbers.}
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 { Constants for fidelity checks }
 const
+<<<<<<< HEAD
+=======
+{ Notification Messages for extended call back routines }
+	kDMNotifyRequestConnectionProbe = 0;  { Like kDMNotifyRequestDisplayProbe only not for smart displays (used in wake before all busses are awake) }
+	kDMNotifyInstalled = 1;    { At install time }
+	kDMNotifyEvent = 2;    { Post change time }
+	kDMNotifyRemoved = 3;    { At remove time }
+	kDMNotifyPrep = 4;    { Pre change time }
+	kDMNotifyExtendEvent = 5;    { Allow registrees to extend apple event before it is sent }
+	kDMNotifyDependents = 6;    { Minor notification check without full update }
+	kDMNotifySuspendConfigure = 7;    { Temporary end of configuration }
+	kDMNotifyResumeConfigure = 8;    { Resume configuration }
+	kDMNotifyRequestDisplayProbe = 9;    { Request smart displays re-probe (used in sleep and hot plugging) }
+	kDMNotifyDisplayWillSleep = 10;   { Mac OS X only }
+	kDMNotifyDisplayDidWake = 11;   { Mac OS X only }
+                                        { Notification Flags }
+	kExtendedNotificationProc = 1 shl 16;
+
+
+{ types for notifyType }
+const
+	kFullNotify = 0;    { This is the appleevent whole nine yards notify }
+	kFullDependencyNotify = 1;     { Only sends to those who want to know about interrelated functionality (used for updating UI) }
+
+{ DisplayID/DeviceID constants }
+const
+	kDummyDeviceID = $00FF; { This is the ID of the dummy display, used when the last ÒrealÓ display is disabled.}
+	kInvalidDisplayID = $0000; { This is the invalid ID}
+	kFirstDisplayID = $0100;
+
+const
+{ bits for panelListFlags }
+	kAllowDuplicatesBit = 0;
+
+const
+{ bits for nameFlags }
+	kSuppressNumberBit = 0;
+	kSuppressNumberMask = 1;
+	kForceNumberBit = 1;
+	kForceNumberMask = 2;
+	kSuppressNameBit = 2;
+	kSuppressNameMask = 4;
+
+{ DMGetNameByAVID masks}
+const
+	kDMSupressNumbersMask = 1 shl 0; { Supress the numbers and return only names}
+	kDMForceNumbersMask = 1 shl 1; { Force numbers to always be shown (even on single display configs)}
+	kDMSupressNameMask = 1 shl 2; { Supress the names and return only numbers.}
+
+
+{ Constants for fidelity checks }
+const
+>>>>>>> graemeg/cpstrnew
 	kNoFidelity = 0;
 	kMinimumFidelity = 1;
 	kDefaultFidelity = 500;  { I'm just picking a number for Apple default panels and engines}
@@ -503,6 +603,9 @@ const
 
 { Flags for displayModeFlags }
 const
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	kDisplayModeListNotPreferredBit = 0;
 	kDisplayModeListNotPreferredMask = 1 shl kDisplayModeListNotPreferredBit;
@@ -533,6 +636,7 @@ const
 	kDisplayGestaltBrightnessAffectsGammaMask = 1 shl 0; { Used by default calibrator (should we show brightness panel) }
 	kDisplayGestaltViewAngleAffectsGammaMask = 1 shl 1; { Currently not used by color sync}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 type
@@ -544,6 +648,19 @@ type
 
 
 type
+=======
+
+
+type
+	DMFidelityType = UInt32;
+{
+   AVID is an ID for ports and devices the old DisplayID type
+    is carried on for compatibility
+}
+
+
+type
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -673,8 +790,13 @@ const
 	kIncludeOfflineDummyDisplaysMask = 1 shl 3;
 	kIncludeHardwareMirroredDisplaysMask = 1 shl 4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 

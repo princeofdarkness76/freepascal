@@ -83,15 +83,21 @@ type
     _percent: CGFloat;
     _knobSize: CGFloat;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __sFlags2: record
       case byte of
        0: (_anonbitfield_NSScroller0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __sFlags2: bitpacked record
       case byte of
        0: (_anonbitfield_NSScroller0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _hitPart: 0..((1 shl 4)-1);
         _controlSize: 0..((1 shl 2)-1);
@@ -100,7 +106,10 @@ type
         setFloatValueKnobProportionOverridden: 0..1;
         reserved: 0..((1 shl 23)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );
@@ -108,15 +117,21 @@ type
     _target: id;
     _action: SEL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _sFlags: record
       case byte of
        0: (_anonbitfield_NSScroller1: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     _sFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSScroller1: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         isHoriz: 0..1;
         arrowsLoc: 0..((1 shl 2)-1);
@@ -132,7 +147,10 @@ type
         _controlTint: 0..((1 shl 3)-1);
         repeatCount: 0..((1 shl 16)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

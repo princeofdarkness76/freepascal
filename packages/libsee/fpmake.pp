@@ -15,9 +15,15 @@ begin
     P:=AddPackage('libsee');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
+=======
+    P.Directory:='libsee';
+{$endif ALLPACKAGES}
+    P.Version:='2.5.1';
+>>>>>>> graemeg/cpstrnew
 =======
     P.Directory:='libsee';
 {$endif ALLPACKAGES}
@@ -30,7 +36,10 @@ begin
     P.Description := 'Headers for the libSEE library (javascript engine)';
     P.NeedLibC:= true;  // true for headers that indirectly link to libc?
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.OSes := [linux,win32];
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

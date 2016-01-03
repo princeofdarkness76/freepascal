@@ -4,6 +4,7 @@
      Contains:   Public interfaces for Apple Type Services components.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    ATS
  
      Copyright:  Copyright 1997-2012 by Apple Inc., all rights reserved.
@@ -31,6 +32,28 @@
 {  Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
+     Bugs:       Report bugs to Radar component "System Interfaces", "Latest"
+                 List the version information (from above) in the Problem Description.
+ 
+}
+
+{ Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> graemeg/cpstrnew
+=======
+     Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
+ 
+     Warning:    *** APPLE INTERNAL USE ONLY ***
+                 This file may contain unreleased API's
+ 
+     BuildInfo:  Built by:            root
+                 On:                  Fri Jul 24 22:21:51 2009
+                 With Interfacer:     3.0d46   (Mac OS X for PowerPC)
+                 From:                ATSTypes.i
+                     Revision:        1.14
+                     Dated:           2007/04/24 03:44:18
+                     Last change by:  juliog
+                     Last comment:    <rdar://problem/5152407> File based filter for 64bit causes binary
+ 
      Bugs:       Report bugs to Radar component "System Interfaces", "Latest"
                  List the version information (from above) in the Problem Description.
  
@@ -94,11 +117,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -117,6 +143,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -125,12 +152,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -149,6 +185,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -160,13 +201,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -223,6 +268,8 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -254,6 +301,9 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -294,11 +344,15 @@ interface
 uses MacTypes,Files,CGBase,CGGeometry;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
@@ -309,6 +363,7 @@ uses MacTypes,Files,CGBase,CGGeometry;
 
 
 {$ifc TARGET_CPU_64}
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
 	ATSPoint = CGPoint;
@@ -323,6 +378,21 @@ type
    A 64-bit replacement for FSSpec based APIs will be introduced.  
 }
 type
+=======
+type
+	ATSPoint = CGPoint;
+{$elsec}
+type
+	ATSPoint = Float32Point;
+{$endc}  { TARGET_CPU_64 }
+
+{$ifc TARGET_CPU_64}
+{
+   ATSFSSpec serves as a temporary place holder for the FSSpec data type which is deprecated for 64-bit. 
+   A 64-bit replacement for FSSpec based APIs will be introduced.  
+}
+type
+>>>>>>> graemeg/cpstrnew
 =======
 type
 	ATSPoint = CGPoint;
@@ -443,7 +513,11 @@ type
  }
 function NewFMFontFamilyCallbackFilterUPP( userRoutine: FMFontFamilyCallbackFilterProcPtr ): FMFontFamilyCallbackFilterUPP; external name '_NewFMFontFamilyCallbackFilterUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -458,7 +532,11 @@ function NewFMFontFamilyCallbackFilterUPP( userRoutine: FMFontFamilyCallbackFilt
  }
 function NewFMFontCallbackFilterUPP( userRoutine: FMFontCallbackFilterProcPtr ): FMFontCallbackFilterUPP; external name '_NewFMFontCallbackFilterUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -473,7 +551,11 @@ function NewFMFontCallbackFilterUPP( userRoutine: FMFontCallbackFilterProcPtr ):
  }
 procedure DisposeFMFontFamilyCallbackFilterUPP( userUPP: FMFontFamilyCallbackFilterUPP ); external name '_DisposeFMFontFamilyCallbackFilterUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -488,7 +570,11 @@ procedure DisposeFMFontFamilyCallbackFilterUPP( userUPP: FMFontFamilyCallbackFil
  }
 procedure DisposeFMFontCallbackFilterUPP( userUPP: FMFontCallbackFilterUPP ); external name '_DisposeFMFontCallbackFilterUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -503,7 +589,11 @@ procedure DisposeFMFontCallbackFilterUPP( userUPP: FMFontCallbackFilterUPP ); ex
  }
 function InvokeFMFontFamilyCallbackFilterUPP( iFontFamily: FMFontFamily; iRefCon: UnivPtr; userUPP: FMFontFamilyCallbackFilterUPP ): OSStatus; external name '_InvokeFMFontFamilyCallbackFilterUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -518,7 +608,11 @@ function InvokeFMFontFamilyCallbackFilterUPP( iFontFamily: FMFontFamily; iRefCon
  }
 function InvokeFMFontCallbackFilterUPP( iFont: FMFont; iRefCon: UnivPtr; userUPP: FMFontCallbackFilterUPP ): OSStatus; external name '_InvokeFMFontCallbackFilterUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

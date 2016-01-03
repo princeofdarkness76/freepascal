@@ -204,6 +204,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function taddnode.cmp_of_disjunct_ranges(var res : boolean) : boolean;
       var
         hp          : tnode;
@@ -367,6 +368,8 @@ implementation
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function taddnode.simplify(forinline : boolean) : tnode;
@@ -1011,6 +1014,7 @@ implementation
           end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         { slow simplifications }
         if (cs_opt_level2 in current_settings.optimizerswitches) then
           begin
@@ -1133,6 +1137,8 @@ implementation
 {$endif cpurox}
           end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         { the comparison is might be expensive and the nodes are usually only
           equal if some previous optimizations were done so don't check
           this simplification always
@@ -1162,6 +1168,9 @@ implementation
                   end;
                 end;
             end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -1304,6 +1313,7 @@ implementation
 {$ifdef x86}
         { use extended as default real type only when the x87 fpu is used }
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$if defined(i386) or defined(i8086)}
         if not(current_settings.fputype=fpu_x87) then
           resultrealdef:=s64floattype
@@ -1318,6 +1328,8 @@ implementation
         resultrealdef:=pbestrealtype^;
 {$endif not x86}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef i386}
         if not(current_settings.fputype=fpu_x87) then
 {$endif i386}
@@ -1329,6 +1341,9 @@ implementation
         else
 {$endif x86}
           resultrealdef:=pbestrealtype^;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
         if (right.resultdef.typ=floatdef) or (left.resultdef.typ=floatdef) then
@@ -1612,8 +1627,13 @@ implementation
              { "xor" and "or" also don't care about the sign if the values }
              { occupy an entire register                                   }
 <<<<<<< HEAD
+<<<<<<< HEAD
              { don't do it if either type is 64 bit (except for "and"),    }
              { since in that case we can't safely find a "common" type     }
+=======
+             { don't do it if either type is 64 bit, since in that case we }
+             { can't safely find a "common" type                           }
+>>>>>>> graemeg/cpstrnew
 =======
              { don't do it if either type is 64 bit, since in that case we }
              { can't safely find a "common" type                           }

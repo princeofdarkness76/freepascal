@@ -520,6 +520,9 @@ begin
   SockAddr.Family := AF_INET;
   SockAddr.Port := ShortHostToNet(Port);
   SockAddr.Addr := Cardinal(HostAddr);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if Sockets.FpConnect(Stream.Handle, @SockAddr, SizeOf(SockAddr))<>0 Then
     if (SocketError <> sys_EINPROGRESS) and (SocketError <> 0) then
@@ -572,6 +575,9 @@ begin
       Addr.Family := AF_INET;
       Addr.Port := ShortHostToNet(Port);
       Addr.Addr := 0;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       if  fpBind(Socket, @Addr, SizeOf(Addr))<>0 then
         raise ESocketError.CreateFmt(SSocketBindingError,

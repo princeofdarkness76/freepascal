@@ -70,7 +70,10 @@ type
     procedure TestNull;
     Procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure TestFormat;
@@ -84,7 +87,10 @@ type
     procedure TestFalse;
     Procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure TestFormat;
@@ -101,7 +107,10 @@ type
     procedure TestZero;
     Procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure TestFormat;
@@ -118,7 +127,10 @@ type
     procedure TestZero;
     Procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure TestFormat;
@@ -148,7 +160,10 @@ type
     procedure TestZero;
     Procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure TestFormat;
@@ -169,7 +184,10 @@ type
     Procedure TestBooleanFalse;
     Procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure TestFormat;
@@ -220,7 +238,10 @@ type
     procedure TestRemove;
     Procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure TestFormat;
@@ -269,13 +290,17 @@ type
     procedure TestRemove;
     procedure TestClone;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestMyClone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure TestExtract;
     Procedure TestNonExistingAccessError;
     Procedure TestFormat;
     Procedure TestFind;
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 
@@ -389,6 +414,8 @@ type
     Procedure TestString;
     Procedure TestArray;
     Procedure TestObject;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -617,6 +644,8 @@ end;
 end;
 
 procedure TTestBoolean.TestClone;
+<<<<<<< HEAD
+=======
 
 Var
   B : TJSONBoolean;
@@ -638,6 +667,100 @@ begin
 end;
 
 procedure TTestBoolean.TestFormat;
+
+Var
+  B : TJSONBoolean;
+
+begin
+  B:=TJSONBoolean.Create(true);
+  try
+    AssertEquals('FormatJSON same as asJSON',B.asJSON,B.FormatJSON);
+  finally
+    B.Free;
+  end;
+end;
+
+
+
+{ TTestNull }
+
+procedure TTestNull.TestNull;
+>>>>>>> graemeg/cpstrnew
+
+Var
+  B : TJSONBoolean;
+  D : TJSONData;
+
+begin
+  B:=TJSONBoolean.Create(true);
+  try
+<<<<<<< HEAD
+    D:=B.Clone;
+    try
+     TestJSONType(D,jtBoolean);
+     TestAsBoolean(D,true);
+    finally
+      D.Free;
+    end;
+=======
+    TestJSONType(J,jtNull);
+    TestItemCount(J,0);
+    TestJSON(J,'null');
+    TestIsNull(J,True);
+    TestAsBoolean(J,False,True);
+    TestAsInteger(J,0,true);
+    TestAsInt64(J,0,true);
+    TestAsString(J,BoolToStr(False),true);
+    TestAsFloat(J,0.0,true);
+>>>>>>> graemeg/cpstrnew
+  finally
+    FreeAndNil(B);
+  end;
+end;
+
+<<<<<<< HEAD
+procedure TTestBoolean.TestFormat;
+=======
+procedure TTestNull.TestClone;
+
+Var
+  J : TJSONNull;
+  D : TJSONData;
+
+begin
+  J:=TJSONNull.Create;
+  try
+    D:=J.Clone;
+    try
+      TestIsNull(D,True);
+    finally
+      D.Free;
+    end;
+  finally
+    FreeAndNil(J);
+  end;
+end;
+
+procedure TTestNull.TestFormat;
+Var
+  J : TJSONNull;
+begin
+  J:=TJSONNull.Create;
+  try
+    AssertEquals('FormatJSON same as asJSON',J.asJSON,J.FormatJSON);
+  finally
+    J.Free;
+  end;
+end;
+
+
+{ TTestString }
+
+procedure TTestString.TestString;
+
+Const
+  S = 'A string';
+>>>>>>> graemeg/cpstrnew
 
 Var
   B : TJSONBoolean;
@@ -2708,9 +2831,14 @@ end;
 
 procedure TTestArray.TestAddBooleanFalse;
 
+<<<<<<< HEAD
 begin
   TestAddBoolean(False);
 end;
+=======
+Const
+  S = 'true';
+>>>>>>> graemeg/cpstrnew
 
 procedure TTestArray.TestAddString;
 
@@ -2735,7 +2863,14 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TTestArray.TestAddNull;
+=======
+procedure TTestString.TestBooleanFalse;
+
+Const
+  S = 'false';
+>>>>>>> graemeg/cpstrnew
 
 Var
   J : TJSONArray;
@@ -2757,7 +2892,45 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TTestArray.TestAddArray;
+=======
+procedure TTestString.TestClone;
+
+Var
+  S : TJSONString;
+  D : TJSONData;
+
+begin
+  S:=TJSONString.Create('aloha');
+  try
+    D:=S.Clone;
+    try
+     TestJSONType(D,jtString);
+     TestAsString(D,'aloha');
+    finally
+      D.Free;
+    end;
+  finally
+    FreeAndNil(S);
+  end;
+end;
+
+procedure TTestString.TestFormat;
+Var
+  S : TJSONString;
+
+begin
+  S:=TJSONString.Create('aloha');
+  try
+    AssertEquals('FormatJSON equals JSON',S.AsJSON,S.FormatJSOn);
+  finally
+    FreeAndNil(S);
+  end;
+end;
+
+procedure TTestString.DoTestFloat(F : TJSOnFloat;S : String; OK : Boolean);
+>>>>>>> graemeg/cpstrnew
 
 Var
   J,J2 : TJSONArray;
@@ -2831,7 +3004,50 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TTestArray.TestInsertFloat;
+=======
+procedure TTestInteger.TestClone;
+
+Var
+  I : TJSONIntegerNumber;
+  D : TJSONData;
+
+begin
+  I:=TJSONIntegerNumber.Create(99);
+  try
+    D:=I.Clone;
+    try
+     TestJSONType(D,jtNumber);
+     TestAsInteger(D,99);
+    finally
+      D.Free;
+    end;
+  finally
+    FreeAndNil(I);
+  end;
+
+end;
+
+procedure TTestInteger.TestFormat;
+
+Var
+  I : TJSONIntegerNumber;
+
+begin
+  I:=TJSONIntegerNumber.Create(99);
+  try
+    AssertEquals('FormatJSON equal to JSON',I.AsJSON,I.FormatJSON);
+  finally
+    FreeAndNil(I);
+  end;
+end;
+
+{ TTestInt64 }
+
+procedure TTestInt64.DoTest(I: Int64);
+
+>>>>>>> graemeg/cpstrnew
 Var
   J : TJSONArray;
   S,S2 : String;
@@ -2897,7 +3113,49 @@ begin
   TestInsertBoolean(False);
 end;
 
+<<<<<<< HEAD
 procedure TTestArray.TestInsertString;
+=======
+procedure TTestInt64.TestClone;
+
+Var
+  I : TJSONInt64Number;
+  D : TJSONData;
+
+begin
+  I:=TJSONInt64Number.Create(99);
+  try
+    D:=I.Clone;
+    try
+     TestJSONType(D,jtNumber);
+     AssertEquals('Numbertype is ntInt64',ord(ntInt64),Ord(TJSONInt64Number(D).NumberType));
+     TestAsInteger(D,99);
+    finally
+      D.Free;
+    end;
+  finally
+    FreeAndNil(I);
+  end;
+
+end;
+
+procedure TTestInt64.TestFormat;
+Var
+  I : TJSONInt64Number;
+
+begin
+  I:=TJSONInt64Number.Create(99);
+  try
+    AssertEquals('FormatJSON equal to JSON',I.AsJSON,I.FormatJSON);
+  finally
+    FreeAndNil(I);
+  end;
+end;
+
+{ TTestFloat }
+
+procedure TTestFloat.DoTest(F: TJSONFloat);
+>>>>>>> graemeg/cpstrnew
 
 Var
   J : TJSONArray;
@@ -2921,7 +3179,77 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TTestArray.TestInsertNull;
+=======
+procedure TTestFloat.TestPositive;
+begin
+  DoTest(1.0);
+  DoTest(1.2);
+  DoTest(1.2e1);
+  DoTest(1.2e-1);
+  DoTest(1.2e10);
+  DoTest(1.2e-10);
+end;
+
+procedure TTestFloat.TestNegative;
+begin
+  DoTest(-1.0);
+  DoTest(-1.2);
+  DoTest(-1.2e1);
+  DoTest(-1.2e-1);
+  DoTest(-1.2e10);
+  DoTest(-1.2e-10);
+end;
+
+procedure TTestFloat.TestZero;
+begin
+  DoTest(0.0);
+end;
+
+procedure TTestFloat.TestClone;
+
+Var
+  F : TJSONFloatNumber;
+  D : TJSONData;
+
+begin
+  F:=TJSONFloatNumber.Create(1.23);
+  try
+    D:=F.Clone;
+    try
+     TestJSONType(D,jtNumber);
+     AssertEquals('Numbertype is ntFloat',ord(ntFloat),Ord(TJSONFloatNumber(D).NumberType));
+     TestAsFloat(D,1.23);
+    finally
+      D.Free;
+    end;
+  finally
+    FreeAndNil(F);
+  end;
+
+end;
+
+procedure TTestFloat.TestFormat;
+
+Var
+  F : TJSONFloatNumber;
+
+
+begin
+  F:=TJSONFloatNumber.Create(1.23);
+  try
+    AssertEquals('FormatJSON equals asJSON',F.AsJSON,F.FormatJSON);
+  finally
+    FreeAndNil(F);
+  end;
+end;
+
+{ TTestArray }
+
+procedure TTestArray.TestCreate;
+
+>>>>>>> graemeg/cpstrnew
 Var
   J : TJSONArray;
   S : String;
@@ -3089,7 +3417,14 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TTestArray.TestDelete;
+=======
+procedure TTestArray.TestCreateFloat;
+
+Const
+  S : double = 1.2;
+>>>>>>> graemeg/cpstrnew
 
 Var
   J : TJSONArray;
@@ -3152,6 +3487,7 @@ Var
 begin
   J:=TJSonArray.Create;
   try
+<<<<<<< HEAD
     J.Add(1);
     J.Add('aloha');
     D:=J.Clone;
@@ -3166,6 +3502,12 @@ begin
     finally
       D.Free;
     end;
+=======
+    TestJSONType(J,jtArray);
+    TestItemCount(J,1);
+    TestJSONType(J[0],jtBoolean);
+    TestJSON(J,'[true]');
+>>>>>>> graemeg/cpstrnew
   finally
     FreeAndNil(J);
   end;
@@ -3396,9 +3738,15 @@ begin
     TestAsBoolean(J[a],B);
     AssertEquals('J.Booleans[''a'']='+BoolToStr(B)+'"',B,J.Booleans[a]);
     If B then
+<<<<<<< HEAD
       TestJSON(J,'{ "'+a+'" : true }')
     else
       TestJSON(J,'{ "'+a+'" : false }');
+=======
+      TestJSON(J,'[true]')
+    else
+      TestJSON(J,'[false]');
+>>>>>>> graemeg/cpstrnew
   finally
     FreeAndNil(J);
   end;
@@ -3500,6 +3848,7 @@ begin
     J2.Add(C,1);
     J.Add(A,J2);
     TestItemCount(J,1);
+<<<<<<< HEAD
     TestJSONType(J[A],jtObject);
     AssertEquals('J[''a''] is TJSONObject',TJSONObject,J[A].ClassType);
     AssertEquals('J.Objects[''a''] is TJSONObject',TJSONObject,J.Objects[A].ClassType);
@@ -3510,6 +3859,13 @@ begin
     TestAsQword(J.Objects[A][B],0);
     TestAsQword(J.Objects[A][C],1);
     TestJSON(J,'{ "a" : { "b" : 0, "c" : 1 } }');
+=======
+    TestJSONType(J[0],jtNull);
+    AssertEquals('J[0] is TJSONNull',TJSONNull,J[0].ClassType);
+    AssertEquals('J.Nulls[0]=True',True,J.Nulls[0]);
+    TestIsNull(J[0],true);
+    TestJSON(J,'[null]');
+>>>>>>> graemeg/cpstrnew
   finally
     FreeAndNil(J);
   end;
@@ -3638,7 +3994,68 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 procedure TTestObject.TestMyClone;
+=======
+procedure TTestArray.TestClone;
+
+Var
+  J,J2 : TJSONArray;
+  D : TJSONData;
+
+begin
+  J:=TJSonArray.Create;
+  try
+    J.Add(1);
+    J.Add('aloha');
+    D:=J.Clone;
+    try
+      TestJSONType(D,jtArray);
+      J2:=TJSonArray(D);
+      TestItemCount(J2,2);
+      TestJSONType(J2[0],jtNumber);
+      TestJSONType(J2[1],jtString);
+      TestAsInteger(J2[0],1);
+      TestAsString(J2[1],'aloha');
+    finally
+      D.Free;
+    end;
+  finally
+    FreeAndNil(J);
+  end;
+end;
+
+procedure TTestArray.TestFormat;
+Var
+  J : TJSONArray;
+  I : TJSONData;
+
+begin
+  J:=TJSonArray.Create;
+  try
+    J.Add(0);
+    J.Add(1);
+    J.Add(2);
+    TestItemCount(J,3);
+    TestJSONType(J[0],jtNumber);
+    TestJSONType(J[1],jtNumber);
+    TestJSONType(J[2],jtNumber);
+    TestJSON(J,'[0, 1, 2]');
+    AssertEquals('FormatJSON, single line',J.AsJSON,J.FormatJSON([foSingleLineArray],1));
+    AssertEquals('FormatJSON, single line','['+sLinebreak+'  0,'+sLinebreak+'  1,'+sLinebreak+'  2'+sLinebreak+']',J.FormatJSON());
+    AssertEquals('FormatJSON, single line','['+sLinebreak+#9'0,'+sLinebreak+#9'1,'+sLinebreak+#9'2'+sLinebreak+']',J.FormatJSON([foUseTabChar],1));
+    J.Add(TJSONObject.Create(['x',1,'y',2]));
+    AssertEquals('FormatJSON, single line','['+sLinebreak+#9'0,'+sLinebreak+#9'1,'+sLinebreak+#9'2,'+sLinebreak+#9'{'+sLineBreak+#9#9'"x" : 1,'+sLineBreak+#9#9'"y" : 2'+sLinebreak+#9'}'+sLineBreak+']',J.FormatJSON([foUseTabChar],1));
+  finally
+    J.Free
+  end;
+end;
+
+{ TTestObject }
+
+procedure TTestObject.TestCreate;
+
+>>>>>>> graemeg/cpstrnew
 Var
   J : TMyObject;
   D : TJSONData;
@@ -3782,12 +4199,53 @@ begin
   try
     TestJSONType(J,jtObject);
     TestItemCount(J,1);
+<<<<<<< HEAD
     TestJSONType(J[A],jtString);
     TestJSON(J,'{ "A" : "'+S+'" }');
     TestIsNull(J,False);
   finally
     FreeAndNil(J);
   end;
+=======
+    TestJSONType(J[A],jtBoolean);
+    AssertEquals('J[''a''] is TJSONBoolean',TJSONBoolean,J[a].ClassType);
+    TestAsBoolean(J[a],B);
+    AssertEquals('J.Booleans[''a'']='+BoolToStr(B)+'"',B,J.Booleans[a]);
+    If B then
+      TestJSON(J,'{ "'+a+'" : true }')
+    else
+      TestJSON(J,'{ "'+a+'" : false }');
+  finally
+    FreeAndNil(J);
+  end;
+
+end;
+
+procedure TTestObject.TestAccessError;
+
+Var
+   J : TJSONObject;
+
+begin
+  J:=TJSonObject.Create;
+  try
+    J.Strings['NonExist'];
+  finally
+    FreeAndNil(J);
+  end;
+end;
+
+procedure TTestObject.TestAddBooleanTrue;
+
+begin
+  TestAddBoolean(True);
+end;
+
+procedure TTestObject.TestAddBooleanFalse;
+
+begin
+  TestAddBoolean(False);
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TTestObject.TestCreateStringUnquoted;
@@ -3826,9 +4284,17 @@ begin
   try
     TestJSONType(J,jtObject);
     TestItemCount(J,1);
+<<<<<<< HEAD
     TestJSONType(J[A],jtString);
     TestJSON(J,'{ "A" : "'+S+'" }');
     TestIsNull(J,False);
+=======
+    TestJSONType(J[a],jtNull);
+    AssertEquals('J[''a''] is TJSONNull',TJSONNull,J[A].ClassType);
+    AssertEquals('J.Nulls[''a'']=True',True,J.Nulls[A]);
+    TestIsNull(J[a],true);
+    TestJSON(J,'{ "'+a+'" : null }');
+>>>>>>> graemeg/cpstrnew
   finally
     FreeAndNil(J);
   end;
@@ -3860,6 +4326,129 @@ end;
 <<<<<<< HEAD
 procedure TTestObject.TestCreateStrings;
 =======
+procedure TTestObject.TestClone;
+
+Var
+  J,J2 : TJSONObject;
+  D : TJSONData;
+
+begin
+  J:=TJSonObject.Create;
+  try
+    J.Add('p1',1);
+    J.Add('p2','aloha');
+    D:=J.Clone;
+    try
+      TestJSONType(D,jtObject);
+      J2:=TJSonObject(D);
+      TestItemCount(J2,2);
+      TestJSONType(J2['p1'],jtNumber);
+      TestJSONType(J2['p2'],jtString);
+      TestAsInteger(J2['p1'],1);
+      TestAsString(J2['p2'],'aloha');
+    finally
+      D.Free;
+    end;
+  finally
+    FreeAndNil(J);
+  end;
+end;
+
+procedure TTestObject.TestExtract;
+
+Const
+  A = 'a';
+  B = 'b';
+
+Var
+  J : TJSONObject;
+  JA,JB : TJSONData;
+  E : TJSONData;
+begin
+  J:=TJSonObject.Create;
+  try
+    J.Add(A,0);
+    J.Add(B,1);
+    TestItemCount(J,2);
+    JA:=J[A];
+    JB:=J[B];
+    TestJSONType(JA,jtNumber);
+    TestJSONType(JB,jtNumber);
+    TestJSON(J,'{ "a" : 0, "b" : 1 }');
+    E:=J.Extract(1);
+    AssertSame('Extracted JA',JB,E);
+    E.Free;
+    TestItemCount(J,1);
+    E:=J.Extract(0);
+    AssertSame('Extracted JB',JA,E);
+    E.Free;
+    TestItemCount(J,0);
+  finally
+    FreeAndNil(J);
+  end;
+
+end;
+
+procedure TTestObject.TestNonExistingAccessError;
+begin
+  AssertException(EJSON,@TestAccessError);
+end;
+
+procedure TTestObject.TestFormat;
+
+Var
+  O : TJSONObject;
+
+begin
+  O:=TJSONObject.Create(['x',1,'y',2]);
+  try
+    TestJSON(O,'{ "x" : 1, "y" : 2 }');
+    AssertEquals('Format equals JSON',O.AsJSON,O.FormatJSON([foSingleLineObject]));
+    AssertEquals('Format 1','{'+sLineBreak+'  "x" : 1,'+sLineBreak+'  "y" : 2'+sLineBreak+'}',O.FormatJSON([]));
+    AssertEquals('Format 1','{'+sLineBreak+'  x : 1,'+sLineBreak+'  y : 2'+sLineBreak+'}',O.FormatJSON([foDoNotQuoteMembers]));
+    AssertEquals('Format 1','{'+sLineBreak+#9'x : 1,'+sLineBreak+#9'y : 2'+sLineBreak+'}',O.FormatJSON([foUseTabChar,foDoNotQuoteMembers],1));
+    O.Add('s',TJSONObject.Create(['w',10,'h',20]));
+    AssertEquals('Format 1','{'+sLineBreak+#9'x : 1,'+sLineBreak+#9'y : 2,'+sLineBreak+#9's : {'+sLineBreak+#9#9'w : 10,'+sLineBreak+#9#9'h : 20'+sLineBreak+#9'}'+sLineBreak+'}',O.FormatJSON([foUseTabChar,foDoNotQuoteMembers],1));
+  finally
+    O.Free;
+  end;
+end;
+
+procedure TTestObject.TestFind;
+
+Const
+  A = 'A';
+  S = 'A string';
+  B = 'a';
+  S2 = 'Another string';
+  C = 'c';
+  S3 = 'Yet Another string';
+
+Var
+  J : TJSONObject;
+
+begin
+  J:=TJSONObject.Create([A,S,B,S2,C,S3]);
+  try
+    TestJSONType(J,jtObject);
+    TestIsNull(J,False);
+    TestItemCount(J,3);
+    TestJSONType(J[A],jtString);
+    TestJSONType(J[B],jtString);
+    TestJSON(J,'{ "A" : "'+S+'", "a" : "'+S2+'", "c" : "'+S3+'" }');
+    AssertEquals('Nonexisting, case sensitive',-1,J.IndexOfName('D'));
+    AssertEquals('Nonexisting, case insensitive',-1,J.IndexOfName('D',True));
+    AssertEquals('1 Existing , case sensitive',0,J.IndexOfName(A));
+    AssertEquals('2 Existing exact match, case insensitive',0,J.IndexOfName(A,true));
+    AssertEquals('3 Existing , case sensitive',1,J.IndexOfName(B));
+    AssertEquals('4 Existing exact match, case insensitive',1,J.IndexOfName(B,true));
+    AssertEquals('5 Existing , case sensitive again',2,J.IndexOfName(C));
+    AssertEquals('6 Existing case-insensitive match, case insensitive',2,J.IndexOfName(Uppercase(C),true));
+  finally
+    FreeAndNil(J);
+  end;
+end;
+
 procedure TTestObject.TestClone;
 
 Var
@@ -4111,6 +4700,7 @@ Const
   A = 'A';
   S : double = 1.2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Var
   J : TJSONObject;
@@ -4133,6 +4723,8 @@ procedure TTestObject.TestCreateFloatUnquoted;
 Const
   A = 'A';
   S : double = 1.2;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -4213,6 +4805,7 @@ begin
     TestJSONType(J[A],jtBoolean);
     TestJSON(J,'{ "A" : true }');
 <<<<<<< HEAD
+<<<<<<< HEAD
   finally
     FreeAndNil(J);
   end;
@@ -4234,6 +4827,8 @@ begin
     TestItemCount(J,1);
     TestJSONType(J[A],jtBoolean);
     TestJSON(J,'{ A : true }');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   finally

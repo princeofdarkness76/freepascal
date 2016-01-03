@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -40,7 +44,10 @@ type
   TX11DGA2Display = class(TX11Display)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOpen: Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FXDGAEventBase: cint;
@@ -61,21 +68,28 @@ type
     FFramebufferIsOpen: Boolean;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure HandleEvents;
 
   protected
     function NextEvent(out event: IPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): IPTCEvent; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function NextEvent(var event: TPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent; override;
 
     procedure HandleEvents;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   public
     constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); override;
     destructor Destroy; override;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure Open(ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; const AOpenGLAttributes: IPTCOpenGLAttributes); override;
     procedure Open(w: TWindow; _format: IPTCFormat); override;
@@ -92,6 +106,8 @@ type
     function isFullScreen: Boolean; override;
     function IsOpen: Boolean; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); override;
     procedure open(w: TWindow; const _format: TPTCFormat); override;
     procedure open(_window: TWindow; const _format: TPTCFormat; x, y, w, h: Integer); override;
@@ -105,6 +121,9 @@ type
     function GetPitch: Integer; override;
     function getX11Window: TWindow; override;
     function isFullScreen: Boolean; override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure SetCursor(visible: Boolean); override;
     procedure SetMouseGrab(AGrabMouse: Boolean); override;

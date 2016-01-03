@@ -165,6 +165,10 @@ function GetFileVersion(const AFileName:string):Cardinal;
 {$DEFINE FPC_FEXPAND_DRIVES} (* Full paths begin with drive specification *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -241,7 +245,10 @@ end;
 ****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Function FileOpen (Const FileName : string; Mode : Integer) : THandle;
 >>>>>>> graemeg/cpstrnew
 const
@@ -256,6 +263,7 @@ const
                FILE_SHARE_WRITE,
                FILE_SHARE_READ or FILE_SHARE_WRITE);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 Function FileOpen (Const FileName : unicodestring; Mode : Integer) : THandle;
@@ -264,6 +272,9 @@ begin
                        dword(ShareModes[(Mode and $F0) shr 4]), nil, OPEN_EXISTING,
 =======
 begin
+=======
+begin
+>>>>>>> graemeg/cpstrnew
   result := CreateFile(PChar(FileName), dword(AccessMode[Mode and 3]),
                        dword(ShareMode[(Mode and $F0) shr 4]), nil, OPEN_EXISTING,
 >>>>>>> graemeg/cpstrnew
@@ -681,6 +692,9 @@ begin
 Procedure GetLocalTime(var SystemTime: TSystemTime);
 begin
   windows.Getlocaltime(SystemTime);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
                                                                     
@@ -717,7 +731,11 @@ var
   Buf: array[0..3] of Char; // sdate allows 4 chars.
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetLocaleInfoA(LID, LT, Buf, sizeof(buf)) > 0 then
+=======
+  if GetLocaleInfo(LID, LT, Buf, sizeof(buf)) > 0 then
+>>>>>>> graemeg/cpstrnew
 =======
   if GetLocaleInfo(LID, LT, Buf, sizeof(buf)) > 0 then
 >>>>>>> graemeg/cpstrnew
@@ -740,7 +758,11 @@ begin
   ALCID := GetThreadLocale;
 //  ALCID := SysLocale.DefaultLCID;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetDateFormatA(ALCID , DATE_USE_ALT_CALENDAR
+=======
+  if GetDateFormat(ALCID , DATE_USE_ALT_CALENDAR
+>>>>>>> graemeg/cpstrnew
 =======
   if GetDateFormat(ALCID , DATE_USE_ALT_CALENDAR
 >>>>>>> graemeg/cpstrnew
@@ -787,7 +809,11 @@ begin
 //  ALCID := SysLocale.DefaultLCID;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetDateFormatA(ALCID, DATE_USE_ALT_CALENDAR
+=======
+  if GetDateFormat(ALCID, DATE_USE_ALT_CALENDAR
+>>>>>>> graemeg/cpstrnew
 =======
   if GetDateFormat(ALCID, DATE_USE_ALT_CALENDAR
 >>>>>>> graemeg/cpstrnew
@@ -853,7 +879,11 @@ begin
    end;
   ALCID := GetThreadLocale;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if GetLocaleInfoA(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
+=======
+  if GetLocaleInfo(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
+>>>>>>> graemeg/cpstrnew
 =======
   if GetLocaleInfo(ALCID , LOCALE_IOPTIONALCALENDAR, buf, sizeof(buf)) <= 0 then exit;
 >>>>>>> graemeg/cpstrnew
@@ -882,7 +912,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings);
+=======
+procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); 
+>>>>>>> graemeg/cpstrnew
 =======
 procedure GetLocaleFormatSettings(LCID: Integer; var FormatSettings: TFormatSettings); 
 >>>>>>> graemeg/cpstrnew
@@ -929,7 +963,10 @@ begin
       DecimalSeparator:=GetLocaleChar(LID, LOCALE_SDECIMAL, '.');
       CurrencyDecimals:=StrToIntDef(GetLocaleStr(LID, LOCALE_ICURRDIGITS, '0'), 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
       ListSeparator := GetLocaleChar(LID, LOCALE_SLIST, ',');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     end;
@@ -1158,7 +1195,11 @@ begin
   ExecInherits:=ExecInheritsHandles in Flags;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not CreateProcessA(nil, pchar(CommandLine),
+=======
+  if not CreateProcess(nil, pchar(CommandLine),
+>>>>>>> graemeg/cpstrnew
 =======
   if not CreateProcess(nil, pchar(CommandLine),
 >>>>>>> graemeg/cpstrnew
@@ -1418,6 +1459,7 @@ function Win32AnsiStrUpper(Str: PChar): PChar;
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function Win32CompareUnicodeString(const s1, s2 : UnicodeString; Options : TCompareOptions) : PtrInt;
 
 Var
@@ -1432,10 +1474,15 @@ begin
     Result:=DoCompareStringW(PWideChar(s1), PWideChar(s2), Length(s1), Length(s2), O);
 end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function Win32CompareUnicodeString(const s1, s2 : UnicodeString) : PtrInt;
   begin
     Result:=DoCompareStringW(PWideChar(s1), PWideChar(s2), Length(s1), Length(s2), 0);
   end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -1472,6 +1519,7 @@ procedure InitWin32Widestrings;
     widestringmanager.StrUpperAnsiStringProc:=@Win32AnsiStrUpper;
     widestringmanager.CompareUnicodeStringProc:=@Win32CompareUnicodeString;
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 
 { Platform-specific exception support }
@@ -1501,6 +1549,8 @@ begin
     result:=EExternalException;
 end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     widestringmanager.CompareTextUnicodeStringProc:=@Win32CompareTextUnicodeString;
   end;
 >>>>>>> graemeg/cpstrnew

@@ -77,6 +77,7 @@ const
     _fileWrapper: NSFileWrapper;
     _cell: NSTextAttachmentCellProtocol;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSTextAttachment1: cuint);
@@ -86,6 +87,8 @@ const
         _anonbitfield_NSTextAttachment0: 0..((1 shl 30)-1);
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTextAttachment1: cuint);
@@ -93,6 +96,9 @@ const
         cellWasExplicitlySet: 0..1;
         ignoresOrientation: 0..1;
         _anonbitfield_NSTextAttachment0: 0..((1 shl 30)-1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       );
       end;

@@ -4,8 +4,11 @@
 procedure test; assembler;
   asm
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* not sure which CPUs really support it (FK) *)
 {$ifdef CPU_ARMV7M}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     cps #0
@@ -14,7 +17,10 @@ procedure test; assembler;
     cpsie aif
     cpsid aif
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif CPU_ARMV7M}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;

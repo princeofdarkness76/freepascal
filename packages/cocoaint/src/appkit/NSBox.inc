@@ -73,15 +73,21 @@ type
     _borderRect: NSRect;
     _titleRect: NSRect;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __bFlags: record
       case byte of
        0: (_anonbitfield_NSBox0: NSBorderType);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __bFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSBox0: NSBorderType);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _borderType: 0..((1 shl 2)-1);
         _titlePosition: 0..((1 shl 3)-1);
@@ -93,7 +99,10 @@ type
         _boxType: 0..((1 shl 3)-1);
         _RESERVED: 0..((1 shl 18)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

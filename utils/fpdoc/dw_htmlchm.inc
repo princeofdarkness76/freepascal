@@ -53,12 +53,18 @@ begin
   begin
     if not FileExists(FCSSFile) Then
 <<<<<<< HEAD
+<<<<<<< HEAD
       Raise Exception.CreateFmt('Can''t find CSS file "%S"',[FCSSFILE]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         Writeln(stderr,'Can''t find CSS file "',FCSSFILE,'"');
         halt(1);
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     TempStream := TMemoryStream.Create;
     TempStream.LoadFromFile(FCSSFile);

@@ -35,7 +35,11 @@
      Contains:   Pasteboard Manager Interfaces.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
+=======
+     Version:    HIServices-308~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    HIServices-308~1
 >>>>>>> graemeg/cpstrnew
@@ -49,8 +53,12 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -109,11 +117,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -132,6 +143,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -140,12 +152,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -164,6 +185,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -175,7 +201,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -188,7 +217,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -198,6 +230,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -209,6 +242,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -220,6 +258,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -237,10 +276,13 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
@@ -250,6 +292,8 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -257,6 +301,9 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -365,8 +412,12 @@ uses MacTypes,CFBase,CFArray,CFData,CFURL;
  }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	PasteboardRef = ^OpaquePasteboardRef; { an opaque type }
 	OpaquePasteboardRef = record end;
+=======
+	PasteboardRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	PasteboardRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -411,6 +462,7 @@ const
    * resource.
    }
 	kPasteboardClientIsOwner = 1 shl 1;
+<<<<<<< HEAD
 
 {
  *  Pasteboard File Promising
@@ -456,6 +508,53 @@ const
 {$endc}
 
 {
+=======
+
+{
+ *  Pasteboard File Promising
+ *  
+ *  Summary:
+ *    With the FSSpec type being deprecated and removed for 64 bit it is necessary
+ *    to introduce a replacement for kDragFlavorTypePromiseHFS. The replacement comes
+ *    in the form of two new Uniform Type Identifiers specifically for use with the
+ *    pasteboard and promised files. Like the old HFS promise mechanism, the new UTI
+ *    based method still requires a multistage handshake between sender and receiver
+ *    but the process is somewhat simplified.
+ *    
+ *    Order of operations on copy or drag
+ *    
+ *    1) The sender promises kPasteboardTypeFileURLPromise for a file yet to be created.
+ *    2) The sender adds kPasteboardTypeFilePromiseContent containing the UTI describing
+ *          the file's content.
+ *    
+ *    Order of operations on paste or drop
+ *    
+ *    3) The receiver asks for kPasteboardTypeFilePromiseContent to decide if it wants the file.
+ *    4) The receiver sets the paste location with PasteboardSetPasteLocation.
+ *    5) The receiver asks for kPasteboardTypeFileURLPromise.
+ *    6) The sender's promise callback for kPasteboardTypeFileURLPromise is called.
+ *    7) The sender uses PasteboardCopyPasteLocation to retrieve the paste location, creates the file
+ *          and keeps its kPasteboardTypeFileURLPromise promise.
+ *
+ *    Automatic translation support has been added so clients operating in the modern
+ *    kPasteboardTypeFileURLPromise and kPasteboardTypeFilePromiseContent world can continue
+ *    to communicate properly with clients using the traditional kDragFlavorTypePromiseHFS and
+ *    kDragPromisedFlavor model.
+ }
+
+{
+ *  kPasteboardTypeFileURLPromise
+ *  
+ *  Discussion:
+ *    A UTF-8 encoded promised file url on the pasteboard to a file
+ *    which does not yet exist.
+ }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kPasteboardTypeFileURLPromise CFSTRP('com.apple.pasteboard.promised-file-url')}
+{$endc}
+
+{
+>>>>>>> graemeg/cpstrnew
  *  kPasteboardTypeFilePromiseContent
  *  
  *  Discussion:

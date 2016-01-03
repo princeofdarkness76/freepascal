@@ -46,15 +46,21 @@
     _delegate: id;
     _dataSource: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __cbcFlags: record
       case byte of
        0: (_anonbitfield_NSComboBoxCell0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __cbcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSComboBoxCell0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _usesDataSource: 0..1;
         _completes: 0..1;
@@ -66,7 +72,10 @@
         reserved: 0..((1 shl 9)-1);
         visibleItems: 0..((1 shl 16)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );
@@ -80,6 +89,7 @@
     _reserved: Pointer;
     
   public
+<<<<<<< HEAD
 <<<<<<< HEAD
     function hasVerticalScroller: Boolean; message 'hasVerticalScroller';
     procedure setHasVerticalScroller(flag: Boolean); message 'setHasVerticalScroller:';
@@ -117,6 +127,8 @@
     function objectValueOfSelectedItem: id; message 'objectValueOfSelectedItem';
     function indexOfItemWithObjectValue(object_: id): NSInteger; message 'indexOfItemWithObjectValue:';
     function objectValues: NSArray; message 'objectValues';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;

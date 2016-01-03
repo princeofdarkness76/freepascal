@@ -5,8 +5,11 @@
 [package]
 name=gdbint
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [target]
@@ -54,6 +57,14 @@ GDBLIBINCCOND=
 else
 GDBLIBINCFOUND=1
 GDBLIBINCCOND=-dUSE_GDBLIBINC
+<<<<<<< HEAD
+=======
+endif
+ifdef NO_GDBLIBINC
+GDBLIBINCFOUND=0
+GDBLIBINCCOND=
+endif
+>>>>>>> graemeg/cpstrnew
 endif
 ifdef NO_GDBLIBINC
 GDBLIBINCFOUND=0
@@ -137,6 +148,9 @@ gdbint$(PPUEXT): gdbint.pp gdbver.inc
 	@$(ECHO) libgdb.a not found, using default GDB $(GDBVER)
 	$(COMPILER) -d$(GDBVER) $(GDBLIBINCCOND)  -Fisrc -Fusrc src/gdbint.pp
         $(DEL) src/gdbver.inc
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 endif
 	-$(DEL) $(LOCALFPMAKE)

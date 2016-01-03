@@ -132,7 +132,10 @@ begin
     bom[i]:=fBuf[fPos];
     inc(fPos);
 <<<<<<< HEAD
+<<<<<<< HEAD
     CheckLoadBuffer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     inc(i);
@@ -297,7 +300,11 @@ begin
           // See bug http://bugs.freepascal.org/view.php?id=15841
           s:=HandleQuotedString;
 <<<<<<< HEAD
+<<<<<<< HEAD
           fLastTokenWStr:=fLastTokenWStr+UnicodeString(s);
+=======
+          fLastTokenWStr:=fLastTokenWStr+s;
+>>>>>>> graemeg/cpstrnew
 =======
           fLastTokenWStr:=fLastTokenWStr+s;
 >>>>>>> graemeg/cpstrnew

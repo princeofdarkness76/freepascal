@@ -35,7 +35,11 @@ unit i_win;
             name         : 'Win32 for i386';
             shortname    : 'Win32';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_has_dllscanner
+=======
+            flags        : [tf_files_case_aware,tf_has_dllscanner,tf_smartlink_library
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_files_case_aware,tf_has_dllscanner,tf_smartlink_library
 >>>>>>> graemeg/cpstrnew
@@ -44,7 +48,11 @@ unit i_win;
                             tf_no_generic_stackcheck,tf_has_winlike_resources,
                             tf_dwarf_only_local_labels,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_safecall_exceptions,tf_no_backquote_support];
+=======
+                            tf_safecall_exceptions];
+>>>>>>> graemeg/cpstrnew
 =======
                             tf_safecall_exceptions];
 >>>>>>> graemeg/cpstrnew
@@ -112,12 +120,15 @@ unit i_win;
             shortname    : 'Win64';
             flags        : [tf_files_case_aware,tf_has_dllscanner,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,
                             tf_winlikewidestring,tf_no_pic_supported,
                             tf_dwarf_only_local_labels,
                             tf_no_generic_stackcheck,tf_has_winlike_resources,
                             tf_safecall_exceptions,tf_no_backquote_support];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,
                             tf_winlikewidestring,tf_no_pic_supported,
                             tf_dwarf_only_local_labels,

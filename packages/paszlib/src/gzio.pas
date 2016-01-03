@@ -137,7 +137,10 @@ var
   exists,
   writing : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
   old_file_mode: byte;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin
@@ -232,6 +235,7 @@ begin
     exists:=(DosError= 0);
   {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   doseek:=false;
   if ((s^.mode='a') and not exists) or (s^.mode='w') then
@@ -250,6 +254,8 @@ begin
 
   {$POP}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   
   doseek:=false;
   if ((s^.mode='a') and not exists) or (s^.mode='w') then

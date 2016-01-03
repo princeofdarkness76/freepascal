@@ -4,9 +4,15 @@
      Contains:   QuickTime VR interfaces
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1997-2012 by Apple Inc., all rights reserved.
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1997-2008 by Apple Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    QuickTime 7.6.3
  
@@ -20,8 +26,12 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -80,11 +90,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -103,6 +116,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -123,6 +137,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -138,6 +154,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -146,7 +165,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -159,7 +181,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -168,6 +193,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
@@ -207,6 +233,8 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -222,6 +250,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endc}
 
@@ -267,13 +298,19 @@ interface
 uses MacTypes,Movies,QuickTimeVR;
 {$endc} {not MACOSALLINCLUDE}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
 
 { QuickTime is not available to 64-bit clients }
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
 
@@ -356,6 +393,18 @@ const
 const
 	kQTVRMinorVersion = 0;
 
+=======
+
+{$ifc not TARGET_CPU_64}
+
+
+{ File Format Version numbers }
+const
+	kQTVRMajorVersion = 2;
+const
+	kQTVRMinorVersion = 0;
+
+>>>>>>> graemeg/cpstrnew
 { User data type for the Movie Controller type specifier}
 const
 	kQTControllerType = kQTVRControllerSubType; { Atom & ID of where our}
@@ -419,6 +468,9 @@ const
 	kQTVRValidFOV = 1 shl 2;
 	kQTVRValidViewCenter = 1 shl 3;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 { Values for flags field in QTVRPanoSampleAtom}
@@ -463,7 +515,11 @@ type
 		stringUsage: UInt16;
 		stringLength: UInt16;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		theString: packed array [0..3] of UInt8;           { field previously named "string" }
+=======
+		theString: packed array [0..3] of UInt8;			{  field previously named "string" }
+>>>>>>> graemeg/cpstrnew
 =======
 		theString: packed array [0..3] of UInt8;			{  field previously named "string" }
 >>>>>>> graemeg/cpstrnew
@@ -661,8 +717,13 @@ type
 type
 	QTVRCubicFaceData = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		orientation: array [0..4-1] of Float32;         { WXYZ quaternion of absolute orientation}
 		center: array [0..2-1] of Float32;              { Center of image relative to center of projection (default = (0,0)) in normalized units}
+=======
+		orientation: array [0..3] of Float32;         {  WXYZ quaternion of absolute orientation }
+		center: array [0..1] of Float32;              {  Center of image relative to center of projection (default = (0,0)) in normalized units }
+>>>>>>> graemeg/cpstrnew
 =======
 		orientation: array [0..3] of Float32;         {  WXYZ quaternion of absolute orientation }
 		center: array [0..1] of Float32;              {  Center of image relative to center of projection (default = (0,0)) in normalized units }

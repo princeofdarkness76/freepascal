@@ -29,8 +29,12 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   symtype,
   node, nmat, ncgmat, cgbase;
+=======
+  node, nmat, ncgmat;
+>>>>>>> graemeg/cpstrnew
 =======
   node, nmat, ncgmat;
 >>>>>>> graemeg/cpstrnew
@@ -41,8 +45,13 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   tMIPSELshlshrnode = class(tcgshlshrnode)
     procedure second_64bit;override;
+=======
+  tMIPSELshlshrnode = class(tshlshrnode)
+    procedure pass_generate_code;override;
+>>>>>>> graemeg/cpstrnew
 =======
   tMIPSELshlshrnode = class(tshlshrnode)
     procedure pass_generate_code;override;
@@ -56,10 +65,13 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMIPSunaryminusnode = class(tcgunaryminusnode)
     procedure second_float; override;
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 implementation
@@ -68,17 +80,23 @@ uses
   globtype, systems,
   cutils, verbose, globals,
 <<<<<<< HEAD
+<<<<<<< HEAD
   symconst, symdef,
   aasmbase, aasmcpu, aasmtai, aasmdata,
   defutil,
   procinfo,
   cgobj, hlcgobj, pass_2,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   symconst,
   aasmbase, aasmcpu, aasmtai, aasmdata,
   defutil,
   procinfo,
   cgbase, cgobj, pass_2,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   ncon,
   cpubase,
@@ -88,6 +106,7 @@ uses
                              TMipselMODDIVNODE
 *****************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
   ops_div: array[boolean] of tasmop = (A_DIVU, A_DIV);
@@ -124,6 +143,8 @@ begin
       cg.g_div_const_reg_reg(current_asmdata.CurrAsmList,def_cgsize(resultdef),
         tordconstnode(right).value.svalue,numerator,location.register);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure tMIPSELmoddivnode.pass_generate_code;
 var
   power: longint;
@@ -161,11 +182,15 @@ begin
     { add to the left value }
     cg.a_op_reg_reg(current_asmdata.CurrAsmList, OP_ADD, OS_INT, tmpreg, numerator);
     cg.a_op_const_reg_reg(current_asmdata.CurrAsmList, OP_SAR, OS_INT, aword(power), numerator, resultreg);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end
   else
   begin
     { load divider in a register if necessary }
+<<<<<<< HEAD
 <<<<<<< HEAD
     hlcg.location_force_reg(current_asmdata.CurrAsmList, right.location,
       right.resultdef, right.resultdef, True);
@@ -211,6 +236,8 @@ begin
      current_asmdata.CurrAsmList.concat(taicpu.op_reg(A_MFLO,location.register));
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     location_force_reg(current_asmdata.CurrAsmList, right.location,
       def_cgsize(right.resultdef), True);
     divider := right.location.Register;
@@ -238,6 +265,9 @@ begin
   { set result location }
   location.loc      := LOC_REGISTER;
   location.Register := resultreg;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -260,6 +290,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure tMIPSELshlshrnode.second_64bit;
 var
@@ -298,6 +329,8 @@ begin
       location.register64.reglo:=cg.GetIntRegister(current_asmdata.CurrAsmList,OS_32);
       cg.a_op_const_reg_reg(current_asmdata.CurrAsmList, OP_SHR, OS_32, shiftval and 31, hreg64hi, location.register64.reglo);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure tMIPSELshlshrnode.pass_generate_code;
 var
   hregister, resultreg, hregister1, hreg64hi, hreg64lo: tregister;
@@ -360,11 +393,15 @@ begin
       end;
       location.register64.reghi := hreg64hi;
       location.register64.reglo := hreg64lo;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   end
   else
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     location.register64.reglo:=cg.GetIntRegister(current_asmdata.CurrAsmList,OS_32);
     location.register64.reghi:=cg.GetIntRegister(current_asmdata.CurrAsmList,OS_32);
@@ -386,6 +423,8 @@ begin
           end;
       end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     { load left operators in a register }
     location_force_reg(current_asmdata.CurrAsmList, left.location, def_cgsize(left.resultdef), True);
     location_copy(location, left.location);
@@ -414,6 +453,9 @@ begin
       location_force_reg(current_asmdata.CurrAsmList, right.location, def_cgsize(right.resultdef), True);
       cg.a_op_reg_reg_reg(current_asmdata.CurrAsmList, op, OS_32, right.location.Register, hregister1, resultreg);
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 end;
@@ -425,6 +467,7 @@ end;
 
 procedure tMIPSELnotnode.second_boolean;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   tmpreg : TRegister;
 begin
@@ -449,6 +492,8 @@ begin
         else
           location.resflags.reg1:=left.location.register;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   hl: tasmlabel;
 begin
   { if the location is LOC_JUMP, we do the secondpass after the
@@ -480,6 +525,9 @@ begin
         current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg_reg(A_SEQ, NR_TCR0, left.location.Register, NR_R0));
         location_reset(location, LOC_REGISTER, OS_INT);
         location.Register := NR_TCR0;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
       else
@@ -489,6 +537,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {*****************************************************************************
                                TMIPSunaryminusnode
@@ -513,12 +562,17 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   cmoddivnode := tMIPSELmoddivnode;
   cshlshrnode := tMIPSELshlshrnode;
   cnotnode    := tMIPSELnotnode;
 <<<<<<< HEAD
+<<<<<<< HEAD
   cunaryminusnode := TMIPSunaryminusnode;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end.

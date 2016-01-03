@@ -106,7 +106,10 @@
   {$include arm9/sound.inc}
   {$include arm9/sprite.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm9/window.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   {$include arm9/trig_lut.inc}

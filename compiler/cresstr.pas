@@ -40,8 +40,13 @@ uses
    symbase,symconst,symtype,symdef,symsym,symtable,
    verbose,fmodule,ppu,
 <<<<<<< HEAD
+<<<<<<< HEAD
    aasmbase,aasmtai,aasmdata,aasmcnst,
    aasmcpu;
+=======
+   aasmbase,aasmtai,aasmdata,
+   aasmcpu,asmutils;
+>>>>>>> graemeg/cpstrnew
 =======
    aasmbase,aasmtai,aasmdata,
    aasmcpu,asmutils;
@@ -143,6 +148,9 @@ uses
         valuelab : tasmlabel;
         resstrlab : tasmsymbol;
         endsymlab : tasmsymbol;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         R : TResourceStringItem;
         resstrdef: tdef;
@@ -169,6 +177,7 @@ uses
         tcb:=ctai_typedconstbuilder.create([tcalo_make_dead_strippable,tcalo_new_section,tcalo_vectorized_dead_strip_start]);
         { Write unitname entry }
 <<<<<<< HEAD
+<<<<<<< HEAD
         tcb.maybe_begin_aggregate(resstrdef);
         namelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],@current_module.localsymtable.name^[1],length(current_module.localsymtable.name^),getansistringcodepage);
         tcb.emit_string_offset(namelab,length(current_module.localsymtable.name^),st_ansistring,false,charpointertype);
@@ -183,6 +192,8 @@ uses
         );
         tcb.free;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         namelab:=emit_ansistring_const(current_asmdata.asmlists[al_const],@current_module.localsymtable.name^[1],length(current_module.localsymtable.name^),DefaultSystemCodePage,False);
         current_asmdata.asmlists[al_resourcestrings].concat(tai_const.create_sym(namelab));
         current_asmdata.asmlists[al_resourcestrings].concat(tai_const.create_sym(nil));
@@ -200,6 +211,7 @@ uses
             tcb:=ctai_typedconstbuilder.create([tcalo_new_section,tcalo_vectorized_dead_strip_item]);
             if assigned(R.value) and (R.len<>0) then
 <<<<<<< HEAD
+<<<<<<< HEAD
               valuelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],R.Value,R.Len,getansistringcodepage)
             else
               begin
@@ -209,6 +221,8 @@ uses
             current_asmdata.asmlists[al_const].concat(cai_align.Create(const_align(sizeof(pint))));
             namelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],@R.Name[1],length(R.name),getansistringcodepage);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
               valuelab:=emit_ansistring_const(current_asmdata.asmlists[al_const],R.Value,R.Len,DefaultSystemCodePage,False)
             else
               valuelab:=nil;
@@ -266,6 +280,9 @@ uses
         { otherwise the end label won't be moved with the rest             }
         if (target_info.system in systems_darwin) then   
           current_asmdata.asmlists[al_resourcestrings].concat(Tai_const.create_sym(endsymlab));
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 

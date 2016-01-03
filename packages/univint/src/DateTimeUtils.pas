@@ -4,7 +4,13 @@
      Contains:   International Date and Time Interfaces (previously in TextUtils)
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1994-2011 by Apple Inc. All rights reserved.
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1994-2008 by Apple Computer, Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    CarbonCore-859.2~1
  
@@ -18,6 +24,10 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -76,11 +86,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -102,11 +115,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -119,11 +138,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -136,7 +161,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -144,18 +172,25 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -205,6 +240,23 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -302,6 +354,7 @@ uses MacTypes,UTCUtils,CFDate;
 
 type
 	ToggleResults = SInt16;
+<<<<<<< HEAD
 const
 { Toggle results }
 	toggleUndefined = 0;
@@ -343,6 +396,49 @@ const
 type
 	LongDateField = SInt8;
 const
+=======
+const
+{ Toggle results }
+	toggleUndefined = 0;
+	toggleOK = 1;
+	toggleBadField = 2;
+	toggleBadDelta = 3;
+	toggleBadChar = 4;
+	toggleUnknown = 5;
+	toggleBadNum = 6;
+	toggleOutOfRange = 7;    {synonym for toggleErr3}
+	toggleErr3 = 7;
+	toggleErr4 = 8;
+	toggleErr5 = 9;
+
+const
+{ Date equates }
+	smallDateBit = 31;   {Restrict valid date/time to range of Time global}
+	togChar12HourBit = 30;   {If toggling hour by char, accept hours 1..12 only}
+	togCharZCycleBit = 29;   {Modifier for togChar12HourBit: accept hours 0..11 only}
+	togDelta12HourBit = 28;   {If toggling hour up/down, restrict to 12-hour range (am/pm)}
+	genCdevRangeBit = 27;   {Restrict date/time to range used by genl CDEV}
+	validDateFields = -1;
+	maxDateField = 10;
+
+const
+	eraMask = $0001;
+	yearMask = $0002;
+	monthMask = $0004;
+	dayMask = $0008;
+	hourMask = $0010;
+	minuteMask = $0020;
+	secondMask = $0040;
+	dayOfWeekMask = $0080;
+	dayOfYearMask = $0100;
+	weekOfYearMask = $0200;
+	pmMask = $0400;
+	dateStdMask = $007F; {default for ValidDate flags and ToggleDate TogglePB.togFlags}
+
+type
+	LongDateField = SInt8;
+const
+>>>>>>> graemeg/cpstrnew
 	eraField = 0;
 	yearField = 1;
 	monthField = 2;
@@ -497,7 +593,11 @@ type
  }
 function UCConvertUTCDateTimeToCFAbsoluteTime( const (*var*) iUTCDate: UTCDateTime; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertUTCDateTimeToCFAbsoluteTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -532,7 +632,11 @@ function UCConvertUTCDateTimeToCFAbsoluteTime( const (*var*) iUTCDate: UTCDateTi
  }
 function UCConvertSecondsToCFAbsoluteTime( iSeconds: UInt32; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertSecondsToCFAbsoluteTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -567,7 +671,11 @@ function UCConvertSecondsToCFAbsoluteTime( iSeconds: UInt32; var oCFTime: CFAbso
  }
 function UCConvertLongDateTimeToCFAbsoluteTime( iLongTime: LongDateTime; var oCFTime: CFAbsoluteTime ): OSStatus; external name '_UCConvertLongDateTimeToCFAbsoluteTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -599,10 +707,17 @@ function UCConvertLongDateTimeToCFAbsoluteTime( iLongTime: LongDateTime; var oCF
  *    Mac OS X:         in version 10.2 and later in CoreServices.framework
  *    CarbonLib:        not available in CarbonLib 1.x
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 function UCConvertCFAbsoluteTimeToUTCDateTime( iCFTime: CFAbsoluteTime; var oUTCDate: UTCDateTime ): OSStatus; external name '_UCConvertCFAbsoluteTimeToUTCDateTime';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+ *    Non-Carbon CFM:   not available
+ }
+function UCConvertCFAbsoluteTimeToUTCDateTime( iCFTime: CFAbsoluteTime; var oUTCDate: UTCDateTime ): OSStatus; external name '_UCConvertCFAbsoluteTimeToUTCDateTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -633,6 +748,7 @@ function UCConvertCFAbsoluteTimeToUTCDateTime( iCFTime: CFAbsoluteTime; var oUTC
  *    Non-Carbon CFM:   not available
  }
 function UCConvertCFAbsoluteTimeToSeconds( iCFTime: CFAbsoluteTime; var oSeconds: UInt32 ): OSStatus; external name '_UCConvertCFAbsoluteTimeToSeconds';
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 
 
@@ -672,10 +788,15 @@ function UCConvertCFAbsoluteTimeToUTCDateTime( iCFTime: CFAbsoluteTime; var oUTC
  *    Non-Carbon CFM:   not available
  }
 function UCConvertCFAbsoluteTimeToSeconds( iCFTime: CFAbsoluteTime; var oSeconds: UInt32 ): OSStatus; external name '_UCConvertCFAbsoluteTimeToSeconds';
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *  UCConvertCFAbsoluteTimeToLongDateTime()
  *  
@@ -705,7 +826,11 @@ function UCConvertCFAbsoluteTimeToSeconds( iCFTime: CFAbsoluteTime; var oSeconds
  }
 function UCConvertCFAbsoluteTimeToLongDateTime( iCFTime: CFAbsoluteTime; var oLongDate: LongDateTime ): OSStatus; external name '_UCConvertCFAbsoluteTimeToLongDateTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -733,7 +858,11 @@ function UCConvertCFAbsoluteTimeToLongDateTime( iCFTime: CFAbsoluteTime; var oLo
  }
 procedure DateString( dateTime: SInt32; longFlag: DateForm; var result: Str255; intlHandle: Handle ); external name '_DateString';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -756,7 +885,11 @@ procedure DateString( dateTime: SInt32; longFlag: DateForm; var result: Str255; 
  }
 procedure TimeString( dateTime: SInt32; wantSeconds: Boolean; var result: Str255; intlHandle: Handle ); external name '_TimeString';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -779,7 +912,11 @@ procedure TimeString( dateTime: SInt32; wantSeconds: Boolean; var result: Str255
  }
 procedure LongDateString( (*const*) var dateTime: LongDateTime; longFlag: DateForm; var result: Str255; intlHandle: Handle ); external name '_LongDateString';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -802,6 +939,7 @@ procedure LongDateString( (*const*) var dateTime: LongDateTime; longFlag: DateFo
  }
 procedure LongTimeString( (*const*) var dateTime: LongDateTime; wantSeconds: Boolean; var result: Str255; intlHandle: Handle ); external name '_LongTimeString';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 
 
@@ -809,6 +947,15 @@ procedure LongTimeString( (*const*) var dateTime: LongDateTime; wantSeconds: Boo
     These routine are available in Carbon and InterfaceLib with their new name
 }
 {
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+    These routine are available in Carbon and InterfaceLib with their new name
+}
+{
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
@@ -833,7 +980,11 @@ procedure LongTimeString( (*const*) var dateTime: LongDateTime; wantSeconds: Boo
  }
 function InitDateCache( theCache: DateCachePtr ): OSErr; external name '_InitDateCache';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -856,7 +1007,11 @@ function InitDateCache( theCache: DateCachePtr ): OSErr; external name '_InitDat
  }
 function StringToDate( textPtr: Ptr; textLen: SInt32; theCache: DateCachePtr; var lengthUsed: SInt32; var dateTime: LongDateRec ): StringToDateStatus; external name '_StringToDate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -879,7 +1034,11 @@ function StringToDate( textPtr: Ptr; textLen: SInt32; theCache: DateCachePtr; va
  }
 function StringToTime( textPtr: Ptr; textLen: SInt32; theCache: DateCachePtr; var lengthUsed: SInt32; var dateTime: LongDateRec ): StringToDateStatus; external name '_StringToTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -902,7 +1061,11 @@ function StringToTime( textPtr: Ptr; textLen: SInt32; theCache: DateCachePtr; va
  }
 procedure LongDateToSeconds( const (*var*) lDate: LongDateRec; var lSecs: LongDateTime ); external name '_LongDateToSeconds';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -925,7 +1088,11 @@ procedure LongDateToSeconds( const (*var*) lDate: LongDateRec; var lSecs: LongDa
  }
 procedure LongSecondsToDate( (*const*) var lSecs: LongDateTime; var lDate: LongDateRec ); external name '_LongSecondsToDate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -948,7 +1115,11 @@ procedure LongSecondsToDate( (*const*) var lSecs: LongDateTime; var lDate: LongD
  }
 function ToggleDate( var lSecs: LongDateTime; field: LongDateField; delta: DateDelta; ch: SInt16; const (*var*) params: TogglePB ): ToggleResults; external name '_ToggleDate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -971,7 +1142,11 @@ function ToggleDate( var lSecs: LongDateTime; field: LongDateField; delta: DateD
  }
 function ValidDate( const (*var*) vDate: LongDateRec; flags: SIGNEDLONG; var newSecs: LongDateTime ): SInt16; external name '_ValidDate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -994,7 +1169,11 @@ function ValidDate( const (*var*) vDate: LongDateRec; flags: SIGNEDLONG; var new
  }
 function ReadDateTime( var datetime: UNSIGNEDLONG ): OSErr; external name '_ReadDateTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1017,7 +1196,11 @@ function ReadDateTime( var datetime: UNSIGNEDLONG ): OSErr; external name '_Read
  }
 procedure GetDateTime( var secs: UNSIGNEDLONG ); external name '_GetDateTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1040,7 +1223,11 @@ procedure GetDateTime( var secs: UNSIGNEDLONG ); external name '_GetDateTime';
  }
 function SetDateTime( datetime: UNSIGNEDLONG ): OSErr; external name '_SetDateTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1063,7 +1250,11 @@ function SetDateTime( datetime: UNSIGNEDLONG ): OSErr; external name '_SetDateTi
  }
 procedure SetTime( const (*var*) d: DateTimeRec ); external name '_SetTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1086,11 +1277,19 @@ procedure SetTime( const (*var*) d: DateTimeRec ); external name '_SetTime';
  }
 procedure GetTime( var d: DateTimeRec ); external name '_GetTime';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
@@ -1116,7 +1315,11 @@ procedure GetTime( var d: DateTimeRec ); external name '_GetTime';
  }
 procedure DateToSeconds( const (*var*) d: DateTimeRec; var secs: UNSIGNEDLONG ); external name '_DateToSeconds';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1142,7 +1345,11 @@ procedure DateToSeconds( const (*var*) d: DateTimeRec; var secs: UNSIGNEDLONG );
  }
 procedure SecondsToDate( secs: UNSIGNEDLONG; var d: DateTimeRec ); external name '_SecondsToDate';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew

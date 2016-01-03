@@ -24,7 +24,11 @@ unit chmwriter;
 
 interface
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contnrs, StreamEx, Avl_Tree, lzxcompressthread;
+=======
+uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contnrs, Avl_Tree{$IFDEF LZX_USETHREADS}, lzxcompressthread{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
 uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contnrs, Avl_Tree{$IFDEF LZX_USETHREADS}, lzxcompressthread{$ENDIF};
 >>>>>>> graemeg/cpstrnew
@@ -111,6 +115,10 @@ Type
     procedure MarkFrame(UnCompressedTotal, CompressedTotal: LongWord);
     // end callbacks
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    {$IFDEF LZX_USETHREADS}
+>>>>>>> graemeg/cpstrnew
 =======
     {$IFDEF LZX_USETHREADS}
 >>>>>>> graemeg/cpstrnew
@@ -120,6 +128,10 @@ Type
     procedure LTChunkDone(Sender: TLZXCompressor; CompressedSize: Integer; UncompressedSize: Integer; Buffer: Pointer);
     procedure LTMarkFrame(Sender: TLZXCompressor; CompressedTotal: Integer; UncompressedTotal: Integer);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    {$ENDIF}
+>>>>>>> graemeg/cpstrnew
 =======
     {$ENDIF}
 >>>>>>> graemeg/cpstrnew
@@ -138,8 +150,11 @@ Type
     property OutStream: TStream read FOutStream;
     property TempRawStream: TStream read FTempStream write SetTempRawStream;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property ReadmeMessage : String read fReadmeMessage write fReadmeMessage;
     property Cores : integer read fcores write fcores;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     //property LocaleID: dword read ITSFHeader.LanguageID write ITSFHeader.LanguageID;
@@ -163,7 +178,10 @@ Type
     FFiftiMainStream: TMemoryStream;
     FContextStream: TMemoryStream; // the #IVB file
 <<<<<<< HEAD
+<<<<<<< HEAD
     FIDXHdrStream : TMemoryStream; // the #IDXHDR and chunk 13 in #SYSTEM
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FTitle: String;
@@ -172,7 +190,10 @@ Type
     FIndexedFiles: TIndexedWordList;
     FAvlStrings   : TAVLTree;    // dedupe strings
 <<<<<<< HEAD
+<<<<<<< HEAD
     FAVLTopicdedupe : TAVlTree;  // Topic deduping, if we load it both from hhp and TOC
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FAvlURLStr    : TAVLTree;    // dedupe urltbl + binindex must resolve URL to topicid
@@ -183,10 +204,13 @@ Type
     FTocName      : String;
     FIndexName    : String;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FMergeFiles   : TStringList;
     FTocSM        : TCHMSitemap;
     FHasKLinks    : Boolean;
     FNrTopics     : Integer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   protected
@@ -201,8 +225,11 @@ Type
     procedure WriteTOPICS;
     procedure WriteIVB; // context ids
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure CreateIDXHDRStream;
     procedure WriteIDXHDR;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure WriteURL_STR_TBL;
@@ -214,16 +241,22 @@ Type
     function AddURL(AURL: String; TopicsIndex: DWord): LongWord;
     procedure CheckFileMakeSearchable(AStream: TStream; AFileEntry: TFileEntryRec);
 <<<<<<< HEAD
+<<<<<<< HEAD
     function AddTopic(ATitle,AnUrl:AnsiString;code:integer=-1):integer;
     procedure ScanSitemap(asitemap:TCHMSiteMap);
     function NextTopicIndex: Integer;
     procedure Setwindows (AWindowList:TObjectList);
     procedure SetMergefiles(src:TStringList);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function AddTopic(ATitle,AnUrl:AnsiString):integer;
     function NextTopicIndex: Integer;
     procedure Setwindows (AWindowList:TObjectList);
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   public
     constructor Create(AOutStream: TStream; FreeStreamOnDestroy: Boolean); override;
@@ -237,7 +270,10 @@ Type
     procedure AppendSearchDB(AName: String; AStream: TStream);
     procedure AddContext(AContext: DWord; ATopic: String);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure AddDummyALink;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -253,8 +289,11 @@ Type
     property IndexName : String read FIndexName write FIndexName;
     property DefaultWindow : string read fdefaultwindow write fdefaultwindow;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property MergeFiles :TStringList read FMergeFiles write setmergefiles;
     property Tocsitemap :TChmSitemap read ftocsm write ftocsm;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -580,7 +619,11 @@ end;
 
 procedure TITSFWriter.WriteREADMEFile;
 <<<<<<< HEAD
+<<<<<<< HEAD
 const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r)(tm) program, but by Free Pascal''s chm package '+chmpackageversion+'.'#13#10;
+=======
+const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r)(tm) program.';
+>>>>>>> graemeg/cpstrnew
 =======
 const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r)(tm) program.';
 >>>>>>> graemeg/cpstrnew
@@ -592,8 +635,11 @@ begin
   Entry.DecompressedOffset := FSection0.Position;
   FSection0.Write(DISCLAIMER_STR, SizeOf(DISCLAIMER_STR));
 <<<<<<< HEAD
+<<<<<<< HEAD
   if length(FReadmeMessage)>0 then
     FSection0.Write(FReadmeMessage[1], length(FReadmeMessage));
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Entry.DecompressedSize := FSection0.Position - Entry.DecompressedOffset;
@@ -805,6 +851,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$IFDEF LZX_USETHREADS}
+>>>>>>> graemeg/cpstrnew
 =======
 {$IFDEF LZX_USETHREADS}
 >>>>>>> graemeg/cpstrnew
@@ -833,6 +883,11 @@ begin
   //WriteLn('Mark Frame C = ', CompressedTotal, ' U = ', UncompressedTotal);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$ENDIF}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$ENDIF}
 
@@ -959,6 +1014,7 @@ begin
   AStream.Position := 0;
   TargetStream.CopyFrom(AStream, AStream.Size);
   FileAdded(AStream, Entry);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -1192,6 +1248,8 @@ begin
  //   FIndexedFiles.ForEach(@IterateWord,FHits);
 end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TITSFWriter.StartCompressingStream;
@@ -1220,6 +1278,211 @@ procedure TChmWriter.WriteIVB;
 begin
   if FContextStream = nil then exit;
 
+<<<<<<< HEAD
+=======
+  lzx_finish(LZXdata, nil);
+  {$ELSE}
+  Compressor := TLZXCompressor.Create(4);
+  Compressor.OnChunkDone  :=@LTChunkDone;
+  Compressor.OnGetData    :=@LTGetData;
+  Compressor.OnIsEndOfFile:=@LTIsEndOfFile;
+  Compressor.OnMarkFrame  :=@LTMarkFrame;
+  Compressor.Execute(True);
+  //Sleep(20000);
+  Compressor.Free;
+  {$ENDIF}
+end;
+
+
+procedure TChmWriter.WriteSystem;
+var
+  Entry: TFileEntryRec;
+  TmpStr: String;
+  TmpTitle: String;
+const
+  VersionStr = 'HHA Version 4.74.8702'; // does this matter?
+begin
+
+
+  // this creates the /#SYSTEM file
+  Entry.Name := '#SYSTEM';
+  Entry.Path := '/';
+  Entry.Compressed := False;
+  Entry.DecompressedOffset := FSection0.Position;
+
+ { if FileExists('#SYSTEM') then
+  begin
+    TmpStream := TMemoryStream.Create;
+    TmpStream.LoadFromFile('#SYSTEM');
+    TmpStream.Position := 0;
+    FSection0.CopyFrom(TmpStream, TmpStream.Size);
+  end;                                    }
+  // EntryCodeOrder: 10 9 4 2 3 16 6 0 1 5
+  FSection0.WriteDWord(NToLE(Word(3))); // Version
+  if Title <> '' then
+    TmpTitle := Title
+  else
+    TmpTitle := 'default';
+
+  // Code -> Length -> Data
+  // 10
+  FSection0.WriteWord(NToLE(Word(10)));
+  FSection0.WriteWord(NToLE(Word(SizeOf(DWord))));
+  FSection0.WriteDWord(NToLE(MilliSecondOfTheDay(Now)));
+  // 9
+  FSection0.WriteWord(NToLE(Word(9)));
+  FSection0.WriteWord(NToLE(Word(SizeOf(VersionStr)+1)));
+  FSection0.Write(VersionStr, SizeOf(VersionStr));
+  FSection0.WriteByte(0);
+  // 4 A struct that is only needed to set if full text search is on.
+  FSection0.WriteWord(NToLE(Word(4)));
+  FSection0.WriteWord(NToLE(Word(36))); // size
+
+  FSection0.WriteDWord(NToLE(DWord($0409)));
+  FSection0.WriteDWord(1);
+  FSection0.WriteDWord(NToLE(DWord(Ord(FFullTextSearch and FFullTextSearchAvailable))));
+  FSection0.WriteDWord(0);
+  FSection0.WriteDWord(0);
+
+  // two for a QWord
+  FSection0.WriteDWord(0);
+  FSection0.WriteDWord(0);
+
+  FSection0.WriteDWord(0);
+  FSection0.WriteDWord(0);
+
+
+
+
+  ////////////////////////<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  // 2  default page to load
+  if FDefaultPage <> '' then begin
+    FSection0.WriteWord(NToLE(Word(2)));
+    FSection0.WriteWord(NToLE(Word(Length(FDefaultPage)+1)));
+    FSection0.Write(FDefaultPage[1], Length(FDefaultPage));
+    FSection0.WriteByte(0);
+  end;
+  // 3  Title
+  if FTitle <> '' then begin
+    FSection0.WriteWord(NToLE(Word(3)));
+    FSection0.WriteWord(NToLE(Word(Length(FTitle)+1)));
+    FSection0.Write(FTitle[1], Length(FTitle));
+    FSection0.WriteByte(0);
+  end;
+
+  // 16 Default Font
+  if FDefaultFont <> '' then begin
+    FSection0.WriteWord(NToLE(Word(16)));
+    FSection0.WriteWord(NToLE(Word(Length(FDefaultFont)+1)));
+    FSection0.Write(FDefaultFont[1], Length(FDefaultFont));
+    FSection0.WriteByte(0);
+  end;
+
+  // 6
+  // unneeded. if output file is :  /somepath/OutFile.chm the value here is outfile(lowercase)
+  {FSection0.WriteWord(6);
+  FSection0.WriteWord(Length('test1')+1);
+  Fsection0.Write('test1', 5);
+  FSection0.WriteByte(0);}
+
+  // 0 Table of contents filename
+  if FHasTOC then begin
+    if fTocName ='' then
+      TmpStr := DefaultHHC
+    else
+      TmpStr := fTocName;
+    FSection0.WriteWord(0);
+    FSection0.WriteWord(NToLE(Word(Length(TmpStr)+1)));
+    FSection0.Write(TmpStr[1], Length(TmpStr));
+    FSection0.WriteByte(0);
+  end;
+  // 1
+  // hhk Index
+  if FHasIndex then begin
+    if fIndexName='' then
+      TmpStr := DefaultHHK
+    else
+      TmpStr := fIndexName;
+    FSection0.WriteWord(NToLE(Word(1)));
+    FSection0.WriteWord(NToLE(Word(Length(TmpStr)+1)));
+    FSection0.Write(TmpStr[1], Length(TmpStr));
+    FSection0.WriteByte(0);
+  end;
+  // 5 Default Window
+
+  if FDefaultWindow<>'' then
+    begin
+      FSection0.WriteWord(NTOLE(Word(5)));
+      tmpstr:=FDefaultWindow;
+      FSection0.WriteWord(NToLE(Word(Length(TmpStr)+1)));
+      FSection0.Write(TmpStr[1], Length(TmpStr));
+      FSection0.WriteByte(0);
+    end;
+
+  // 7 Binary Index
+  if FHasBinaryIndex then
+  begin
+    {$ifdef binindex}
+      logentry('binary index!');
+    {$endif}
+    FSection0.WriteWord(NToLE(Word(7)));
+    FSection0.WriteWord(NToLE(Word(4)));
+    FSection0.WriteDWord(DWord(0)); // what is this number to be?
+  end;
+
+  // 11 Binary TOC
+  if FHasBinaryTOC then
+  begin
+    FSection0.WriteWord(NToLE(Word(11)));
+    FSection0.WriteWord(NToLE(Word(4)));
+    FSection0.WriteDWord(DWord(0)); // what is this number to be?
+  end;
+
+
+  Entry.DecompressedSize := FSection0.Position - Entry.DecompressedOffset;
+  FInternalFiles.AddEntry(Entry);
+end;
+
+procedure TChmWriter.WriteITBITS;
+var
+  Entry: TFileEntryRec;
+begin
+  // This is an empty and useless file
+  Entry.Name := '#ITBITS';
+  Entry.Path := '/';
+  Entry.Compressed := False;
+  Entry.DecompressedOffset :=0;// FSection0.Position;
+  Entry.DecompressedSize := 0;
+
+  FInternalFiles.AddEntry(Entry);
+end;
+
+procedure TChmWriter.WriteSTRINGS;
+begin
+  if FStringsStream.Size = 0 then;
+    FStringsStream.WriteByte(0);
+  FStringsStream.Position := 0;
+  PostAddStreamToArchive('#STRINGS', '/', FStringsStream);
+end;
+
+procedure TChmWriter.WriteTOPICS;
+//var
+  //FHits: Integer;
+begin
+  if FTopicsStream.Size = 0 then
+    Exit;
+  FTopicsStream.Position := 0;
+  PostAddStreamToArchive('#TOPICS', '/', FTopicsStream);
+ // I commented the code below since the result seemed unused
+ // FHits:=0;
+ //   FIndexedFiles.ForEach(@IterateWord,FHits);
+end;
+
+procedure TChmWriter.WriteIVB;
+begin
+  if FContextStream = nil then exit;
+
+>>>>>>> graemeg/cpstrnew
   FContextStream.Position := 0;
   // the size of all the entries
   FContextStream.WriteDWord(NToLE(DWord(FContextStream.Size-SizeOf(dword))));
@@ -1228,6 +1491,7 @@ begin
   AddStreamToArchive('#IVB', '/', FContextStream);
 end;
 
+<<<<<<< HEAD
 const idxhdrmagic ='T#SM';
 
 procedure TChmWriter.CreateIDXHDRStream;
@@ -1320,6 +1584,8 @@ begin
     FIDXHdrStream.WriteDword(0);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TChmWriter.WriteURL_STR_TBL;
 begin
   if FURLSTRStream.Size <> 0 then begin
@@ -1353,6 +1619,7 @@ begin
   // write guid 4662DAAF-D393-11D0-9A56-00C04FB68BF7
   ObjStream.WriteDWord(NtoLE($4662DAAF));
   ObjStream.WriteWord(NtoLE($D393));
+<<<<<<< HEAD
   ObjStream.WriteWord(NtoLE(word($11D0)));
   ObjStream.WriteWord(NtoLE(word($569A)));
   ObjStream.WriteByte($00);
@@ -2787,6 +3054,8 @@ begin
   // write guid 4662DAAF-D393-11D0-9A56-00C04FB68BF7
   ObjStream.WriteDWord(NtoLE($4662DAAF));
   ObjStream.WriteWord(NtoLE($D393));
+=======
+>>>>>>> graemeg/cpstrnew
   ObjStream.WriteWord(NtoLE($11D0));
   ObjStream.WriteWord(NtoLE($569A));
   ObjStream.WriteByte($00);

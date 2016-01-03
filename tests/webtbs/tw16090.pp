@@ -15,7 +15,11 @@ type
 
   // Fatal: Internal error 200705152
 <<<<<<< HEAD
+<<<<<<< HEAD
   TSpecialization1 = TClass1.specialize TNestedClass<Integer>;
+=======
+  TSpecialization1 = specialize TClass1.TNestedClass<Integer>;
+>>>>>>> graemeg/cpstrnew
 =======
   TSpecialization1 = specialize TClass1.TNestedClass<Integer>;
 >>>>>>> graemeg/cpstrnew

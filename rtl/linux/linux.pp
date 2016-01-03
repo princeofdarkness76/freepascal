@@ -111,6 +111,7 @@ function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec;addr2:Pcint;val3:cint):
 function futex(var uaddr;op,val:cint;timeout:Ptimespec;var addr2;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;var timeout:Ttimespec;var addr2;val3:cint):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 // general aliases:
 function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -122,6 +123,8 @@ function futex(var uaddr;op,val:cint;var timeout:Ttimespec):cint;{$ifdef SYSTEMI
 //function futex(var uaddr;op,val:cint;var timeout:Ttimespec;var addr2;val3:cint):cint; cdecl; external name 'futex';
 {$endif}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$else}
 function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec;addr2:Pcint;val3:cint):cint; cdecl; external name 'futex';
 function futex(var uaddr;op,val:cint;timeout:Ptimespec;var addr2;val3:cint):cint; cdecl; external name 'futex';
@@ -130,6 +133,9 @@ function futex(var uaddr;op,val:cint;var timeout:Ttimespec;var addr2;val3:cint):
 function futex(uaddr:Pcint;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;timeout:Ptimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
 function futex(var uaddr;op,val:cint;var timeout:Ttimespec):cint;{$ifdef SYSTEMINLINE}inline;{$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {$ifndef FPC_USE_LIBC}
@@ -231,7 +237,10 @@ function clone(func:TCloneFunc;sp:pointer;flags:longint;args:pointer):longint; {
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_USE_LIBC}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$if defined(cpui386) or defined(cpux86_64)}
@@ -265,7 +274,10 @@ type
 function modify_ldt(func:cint;p:pointer;bytecount:culong):cint;
 {$endif cpui386 or cpux86_64}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -674,7 +686,11 @@ end;
 
 {Libc case.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -696,10 +712,16 @@ begin
   futex:=futex(@uaddr,op,val,@timeout,nil,0);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 *)
 {$endif} // non-libc
 
 {$ifndef FPC_USE_LIBC}
+=======
+
+{$endif} // non-libc
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 {$endif} // non-libc
@@ -716,7 +738,10 @@ begin
 end;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

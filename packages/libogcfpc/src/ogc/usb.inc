@@ -15,7 +15,12 @@ const
   USB_REPTYPE_OUTPUT = $02;
   USB_REPTYPE_FEATURE = $03;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  USB_REQTYPE_GET = $A1;
+  USB_REQTYPE_SET = $21;
+>>>>>>> graemeg/cpstrnew
 =======
   USB_REQTYPE_GET = $A1;
   USB_REQTYPE_SET = $21;
@@ -25,6 +30,7 @@ const
   USB_DT_STRING = $03;
   USB_DT_INTERFACE = $04;
   USB_DT_ENDPOINT = $05;
+<<<<<<< HEAD
 <<<<<<< HEAD
   USB_DT_DEVICE_QUALIFIER      = $06;
   USB_DT_OTHER_SPEED_CONFIG    = $07;
@@ -42,6 +48,10 @@ const
   USB_DT_HID = $21;
   USB_DT_REPORT = $22;
 >>>>>>> graemeg/cpstrnew
+=======
+  USB_DT_HID = $21;
+  USB_DT_REPORT = $22;
+>>>>>>> graemeg/cpstrnew
 
   USB_REQ_GETSTATUS = $00;
   USB_REQ_CLEARFEATURE = $01;
@@ -51,6 +61,7 @@ const
   USB_REQ_SETDESCRIPTOR = $07;
   USB_REQ_GETCONFIG = $08;
   USB_REQ_SETCONFIG = $09;
+<<<<<<< HEAD
 <<<<<<< HEAD
   USB_REQ_GETINTERFACE = $0A;
   USB_REQ_SETINTERFACE = $0B;
@@ -63,6 +74,8 @@ const
   USB_REQ_SETPROTOCOL = $0B;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   USB_REQ_GETINTERFACE = $0a;
   USB_REQ_SETINTERFACE = $0b;
   USB_REQ_SYNCFRAME = $0c;
@@ -70,6 +83,9 @@ const
   USB_REQ_SETPROTOCOL = $0B;
   USB_REQ_GETREPORT = $01;
   USB_REQ_SETREPORT = $09;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   USB_DT_DEVICE_SIZE = 18;
@@ -91,6 +107,7 @@ const
   USB_CTRLTYPE_REC_ENDPOINT = 2;
   USB_CTRLTYPE_REC_OTHER = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   USB_REQTYPE_INTERFACE_GET		= (USB_CTRLTYPE_DIR_DEVICE2HOST or USB_CTRLTYPE_TYPE_CLASS or USB_CTRLTYPE_REC_INTERFACE);
   USB_REQTYPE_INTERFACE_SET		= (USB_CTRLTYPE_DIR_HOST2DEVICE or USB_CTRLTYPE_TYPE_CLASS or USB_CTRLTYPE_REC_INTERFACE);
@@ -99,6 +116,8 @@ const
   
   
   
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   USB_FEATURE_ENDPOINT_HALT = 0;
@@ -132,7 +151,11 @@ type
     iInterface : cuint8;
     extra : pcuint8;
 <<<<<<< HEAD
+<<<<<<< HEAD
     extra_size : cuint16;
+=======
+    extra_size : cuint8;
+>>>>>>> graemeg/cpstrnew
 =======
     extra_size : cuint8;
 >>>>>>> graemeg/cpstrnew
@@ -187,7 +210,11 @@ type
     //		u16 wDescriptorLength;
     //	} descr[1];
 <<<<<<< HEAD
+<<<<<<< HEAD
     descr: packed record
+=======
+    descr: record
+>>>>>>> graemeg/cpstrnew
 =======
     descr: record
 >>>>>>> graemeg/cpstrnew
@@ -231,8 +258,13 @@ function USB_GetDescriptors(fd: cint32; udd: Pusb_devdesc): cint32; cdecl; exter
 procedure USB_FreeDescriptors(udd: Pusb_devdesc); cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function USB_GetGenericDescriptor(fd: cint32; _type, _index, _interface: cuint8; data: pointer; size: cuint32): cint32; cdecl; external;
 function USB_GetHIDDescriptor(fd: cint32; _interface: cuint8; uhd: pusb_hiddesc; size: cuint32): cint32; cdecl; external;
+=======
+function USB_GetHIDDescriptor(fd: cint32; uhd: Pusb_hiddesc): cint32; cdecl; external;
+
+>>>>>>> graemeg/cpstrnew
 =======
 function USB_GetHIDDescriptor(fd: cint32; uhd: Pusb_hiddesc): cint32; cdecl; external;
 
@@ -250,9 +282,12 @@ function USB_SuspendDevice(fd: cint32): cint32; cdecl; external;
 function USB_ResumeDevice(fd: cint32): cint32; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function USB_ReadIsoMsg(fd: cint32; bEndpoint, bPackets: cuint8; rpPacketSizes: pcuint16; rpData: pointer): cint32; cdecl; external;
 function USB_ReadIsoMsgAsync(fd: cint32; bEndpoint, bPackets: cuint8; rpPacketSizes: pcuint16; rpData: pointer; cb: usbcallback; userdata: pointer): cint32; cdecl; external;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -278,10 +313,13 @@ function USB_ReadCtrlMsgAsync(fd: cint32; bmRequestType, bmRequest: cuint8;
   usrdata: pointer): cint32; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function USB_WriteIsoMsg(fd: cint32; bEndpoint, bPackets: cuint8; rpPacketSizes: pcuint16; rpData: pointer): cint32; cdecl; external;
 function USB_WriteIsoMsgAsync(fd: cint32; bEndpoint, bPackets: cuint8; rpPacketSizes: pcuint16; rpData: pointer; cb: usbcallback; userdata: pointer): cint32; cdecl; external;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -320,7 +358,11 @@ function USB_GetDeviceList(descr_buffer: Pusb_device_entry;
   num_descr, interface_class: cuint8; cnt_descr: pcuint8): cint32; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function USB_GetAsciiString(fd: cint32; bIndex: cuint8; wLangID, wLength: cuint16; rpData: pointer): cint32; cdecl; external;
+=======
+function USB_GetAsciiString(fd: cint32; wIndex, wLangID, wLength: cuint16; rpData: pointer): cint32; cdecl; external;
+>>>>>>> graemeg/cpstrnew
 =======
 function USB_GetAsciiString(fd: cint32; wIndex, wLangID, wLength: cuint16; rpData: pointer): cint32; cdecl; external;
 >>>>>>> graemeg/cpstrnew

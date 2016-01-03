@@ -49,6 +49,9 @@ function AddTestHistoryEntry(TestRunID,TestPreviousID : Integer) : boolean;
 Type
   TQueryResult = PMYSQL_RES;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 Function  ConnectToDatabase(DatabaseName,Host,User,Password,Port : String) : Boolean;
 Procedure DisconnectDatabase;
@@ -112,12 +115,15 @@ end;
 
 Function CreateQuery(Const ASQL : String) : TSQLQuery;
 
+<<<<<<< HEAD
 begin
   Result:=TSQLQuery.Create(Connection);
   Result.Database:=Connection;
   Result.Transaction:=Connection.Transaction;
   Result.SQL.Text:=ASQL;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Function ConnectToDatabase(DatabaseName,Host,User,Password,Port : String) : Boolean;
 
 Var
@@ -220,6 +226,21 @@ begin
     Res:=Mysql_store_result(@connection);
 end;
 
+<<<<<<< HEAD
+=======
+{ No warning if it fails }
+Function RunSilentQuery (Qry : String; Var res : TQueryResult) : Boolean ;
+
+begin
+  Verbose(V_DEBUG,'Running silent query:'+Qry);
+  Result:=mysql_query(@Connection,PChar(qry))=0;
+  If Not Result then
+    Verbose(V_DEBUG,'Silent query : '+Qry+'Failed : '+Strpas(mysql_error(@connection)))
+  else
+    Res:=Mysql_store_result(@connection);
+end;
+
+>>>>>>> graemeg/cpstrnew
 
 Function GetResultField (Res : TQueryResult; Id : Integer) : String;
 >>>>>>> graemeg/cpstrnew
@@ -259,6 +280,7 @@ end;
 Function StringQuery(Qry : String) : String;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   Res : TSQLQuery;
 
@@ -280,6 +302,9 @@ begin
   Verbose(V_SQL,'EscapeSQL : "'+S+'" -> "'+Result+'"');
 =======
 begin
+=======
+begin
+>>>>>>> graemeg/cpstrnew
   Result:=StringReplace(S,'\','\\',[rfReplaceAll]);
   Result:=StringReplace(Result,'"','\"',[rfReplaceAll]);
   Verbose(V_DEBUG,'EscapeSQL : "'+S+'" -> "'+Result+'"');
@@ -423,8 +448,11 @@ begin
   else exit;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Verbose(V_Debug,'Reading: '+FileName);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   Verbose(V_Debug,'Reading '+FileName);
 >>>>>>> graemeg/cpstrnew
   assign(t,FileName);
@@ -539,6 +567,7 @@ Const
              '(TR_TEST_FK,TR_TESTRUN_FK,TR_OK,TR_SKIP,TR_RESULT) '+
              ' VALUES '+
 <<<<<<< HEAD
+<<<<<<< HEAD
              '(%d,%d,''%s'',''%s'',%d) RETURNING TR_ID';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -549,6 +578,8 @@ Var
   updateValues : boolean;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
              '(%d,%d,"%s","%s",%d) ';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -558,12 +589,16 @@ Var
   Qry : String;
   Res : TQueryResult;
   updateValues : boolean;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   updateValues:=false;
   Result:=-1;
   Qry:=Format(SInsertRes,
               [TestID,RunID,B[OK],B[Skipped],TestRes,EscapeSQL(Log)]);
+<<<<<<< HEAD
 <<<<<<< HEAD
   Result:=IDQuery(Qry);
   if (Result=-1) then
@@ -579,6 +614,8 @@ begin
     if Not ExecuteQuery(Qry,False) then
        Verbose(V_Warning,'Insert Log failed');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   If RunSilentQuery(Qry,Res) then
     Result:=mysql_insert_id(@connection)
   else
@@ -595,6 +632,9 @@ begin
         begin
           Verbose(V_Warning,'Insert Log failed');
         end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   { If test already existed, return false for is_new to avoid double counting }

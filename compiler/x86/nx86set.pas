@@ -134,6 +134,9 @@ implementation
         emit_ref(A_JMP,S_NO,href);
         { generate jump table }
         if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           begin
             labeltyp:=aitconst_gotoff_symbol;
@@ -811,6 +814,9 @@ implementation
                   register_maybe_adjust_setbase(current_asmdata.CurrAsmList,left.location,setbase);
                   if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
                     location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                   pleftreg:=left.location.register;
 

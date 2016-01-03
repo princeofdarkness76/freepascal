@@ -103,6 +103,7 @@ interface
        ttempcreatenode = class;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        ttempinfoflag = (
          { temp can be kept in a register as far as the original creator is
           concerned }
@@ -161,6 +162,10 @@ interface
        ttempinfoflag = (ti_may_be_in_reg,ti_valid,ti_nextref_set_hookoncopy_nil,
                         ti_addr_taken,ti_executeinitialisation);
 >>>>>>> graemeg/cpstrnew
+=======
+       ttempinfoflag = (ti_may_be_in_reg,ti_valid,ti_nextref_set_hookoncopy_nil,
+                        ti_addr_taken,ti_executeinitialisation);
+>>>>>>> graemeg/cpstrnew
        ttempinfoflags = set of ttempinfoflag;
 
      const
@@ -207,6 +212,9 @@ interface
           constructor create(_typedef: tdef; _size: aint; _temptype: ttemptype;allowreg:boolean); virtual;
           constructor create_withnode(_typedef: tdef; _size: aint; _temptype: ttemptype; allowreg:boolean; withnode: tnode); virtual;
           constructor create_value(_typedef:tdef; _size: aint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           constructor ppuload(t:tnodetype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
@@ -269,7 +277,10 @@ interface
        cnothingnode : tnothingnodeclass = tnothingnode;
        cerrornode : terrornodeclass = terrornode;
 <<<<<<< HEAD
+<<<<<<< HEAD
        cspecializenode : tspecializenodeclass = tspecializenode;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
        casmnode : tasmnodeclass = tasmnode;
@@ -858,8 +869,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor ttempcreatenode.create_withnode(_typedef: tdef; _size: tcgint; _temptype: ttemptype; allowreg:boolean; withnode: tnode);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     constructor ttempcreatenode.create_withnode(_typedef: tdef; _size: aint; _temptype: ttemptype; allowreg:boolean; withnode: tnode);
 >>>>>>> graemeg/cpstrnew
       begin
@@ -869,7 +883,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor ttempcreatenode.create_value(_typedef:tdef; _size: tcgint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
+=======
+    constructor ttempcreatenode.create_value(_typedef:tdef; _size: aint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
+>>>>>>> graemeg/cpstrnew
 =======
     constructor ttempcreatenode.create_value(_typedef:tdef; _size: aint; _temptype: ttemptype;allowreg:boolean; templvalue: tnode);
 >>>>>>> graemeg/cpstrnew
@@ -882,6 +900,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
      constructor ttempcreatenode.create_reference(_typedef: tdef; _size: tcgint; _temptype: ttemptype; allowreg: boolean; templvalue: tnode; readonly: boolean);
       begin
@@ -898,6 +917,8 @@ implementation
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function ttempcreatenode.dogetcopy: tnode;
       var
         n: ttempcreatenode;
@@ -911,6 +932,11 @@ implementation
         n.tempinfo^.typedef := tempinfo^.typedef;
         n.tempinfo^.temptype := tempinfo^.temptype;
         n.tempinfo^.flags := tempinfo^.flags * tempinfostoreflags;
+
+        if assigned(tempinfo^.tempinitcode) then
+          n.tempinfo^.tempinitcode := tempinfo^.tempinitcode.getcopy
+        else
+          n.tempinfo^.tempinitcode := nil;
 
         if assigned(tempinfo^.tempinitcode) then
           n.tempinfo^.tempinitcode := tempinfo^.tempinitcode.getcopy
@@ -1010,7 +1036,10 @@ implementation
         if assigned(tempinfo^.tempinitcode) then
           firstpass(tempinfo^.tempinitcode);
 <<<<<<< HEAD
+<<<<<<< HEAD
         inc(current_procinfo.estimatedtempsize,size);;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;
@@ -1046,8 +1075,11 @@ implementation
         writeln(t,printnodeindention,'size = ',size,', temptypedef = ',tempinfo^.typedef.typesymbolprettyname,' = "',
           tempinfo^.typedef.GetTypeName,'", tempinfo = $',hexstr(ptrint(tempinfo),sizeof(ptrint)*2));
 <<<<<<< HEAD
+<<<<<<< HEAD
         writeln(t,printnodeindention,'tempinit =');
         printnode(t,tempinfo^.tempinitcode);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;
@@ -1306,7 +1338,11 @@ implementation
         inherited printnodedata(t);
         writeln(t,printnodeindention,'release_to_normal: ',release_to_normal,', temptypedef = ',tempinfo^.typedef.typesymbolprettyname,' = "',
 <<<<<<< HEAD
+<<<<<<< HEAD
           tempinfo^.typedef.GetTypeName,'", temptype = ',tempinfo^.temptype,', tempinfo = $',hexstr(ptrint(tempinfo),sizeof(ptrint)*2));
+=======
+          tempinfo^.typedef.GetTypeName,'", tempinfo = $',hexstr(ptrint(tempinfo),sizeof(ptrint)*2));
+>>>>>>> graemeg/cpstrnew
 =======
           tempinfo^.typedef.GetTypeName,'", tempinfo = $',hexstr(ptrint(tempinfo),sizeof(ptrint)*2));
 >>>>>>> graemeg/cpstrnew

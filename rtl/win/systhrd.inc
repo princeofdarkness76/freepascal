@@ -157,15 +157,21 @@ var
     procedure SysFiniMultithreading;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         if TLSKey<>$ffffffff then
           TlsFree(TLSKey);
         TLSKey:=$ffffffff;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         if IsMultiThread then
           begin
             TlsFree(TLSKey);
             TLSKey:=$ffffffff;
           end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 
@@ -174,8 +180,11 @@ var
         dataindex : pointer;
         errorsave : dword;
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       begin	
 {$ifdef dummy}
         { it least in the on windows 7 x64, this still doesn't not work, fs:(0x2c) is
@@ -531,6 +540,9 @@ Var
 Procedure InitSystemThreads;public name '_FPC_InitSystemThreads';
 =======
 Procedure InitSystemThreads;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$IFDEF SUPPORT_WIN95}
 var
@@ -576,6 +588,7 @@ begin
   SetThreadManager(WinThreadManager);
   ThreadID := GetCurrentThreadID;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_USE_TLS_DIRECTORY}
   if IsLibrary then
 {$endif}
@@ -586,6 +599,8 @@ begin
   if KernelHandle<>0 then
     WinTryEnterCriticalSection:=TTryEnterCriticalSection(GetProcAddress(KernelHandle,'TryEnterCriticalSection'));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if IsLibrary then
     SysInitMultithreading;
 {$IFDEF SUPPORT_WIN95}
@@ -596,6 +611,9 @@ begin
       WinTryEnterCriticalSection:=TTryEnterCriticalSection(GetProcAddress(KernelHandle,'TryEnterCriticalSection'));
       FreeLibrary(KernelHandle);
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if not assigned(WinTryEnterCriticalSection) then
     WinTryEnterCriticalSection:=@Win95TryEnterCriticalSection;

@@ -178,15 +178,21 @@ var
     _unusedApp: cshort;
     _running: cshort;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __appFlags: record
       case byte of
        0: (_anonbitfield_NSApplication0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __appFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSApplication0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _hidden: 0..1;
         _RESERVED1: 0..1;
@@ -217,7 +223,10 @@ var
         _windowMoveDisabled: 0..1;
         _reserved: 0..((1 shl 4)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

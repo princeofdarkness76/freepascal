@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
@@ -18,6 +19,8 @@
       <Item1 Name="default" Default="True"/>
     </BuildModes>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
@@ -34,6 +37,9 @@
       <Language Value=""/>
       <CharSet Value=""/>
     </VersionInfo>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <PublishOptions>
       <Version Value="2"/>
@@ -44,6 +50,7 @@
     <RunParams>
       <local>
         <FormatVersion Value="1"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <CommandLineParams Value="--suite=TTestStatementWriter"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
@@ -56,6 +63,8 @@
     </RequiredPackages>
     <Units Count="16">
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CommandLineParams Value="-a --format=plain"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
@@ -69,22 +78,31 @@
       </Item2>
     </RequiredPackages>
     <Units Count="7">
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       <Unit0>
         <Filename Value="testjs.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="testjs"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <WindowIndex Value="1"/>
         <TopLine Value="1"/>
         <CursorPos X="48" Y="3"/>
         <UsageCount Value="201"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CursorPos X="11" Y="7"/>
         <TopLine Value="1"/>
         <EditorIndex Value="0"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit0>
       <Unit1>
@@ -92,16 +110,22 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcscanner"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <WindowIndex Value="1"/>
         <TopLine Value="1"/>
         <CursorPos X="17" Y="22"/>
         <UsageCount Value="201"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CursorPos X="27" Y="427"/>
         <TopLine Value="416"/>
         <EditorIndex Value="2"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit1>
       <Unit2>
@@ -109,22 +133,29 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="jsbase"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <WindowIndex Value="1"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="12"/>
         <UsageCount Value="200"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CursorPos X="1" Y="153"/>
         <TopLine Value="132"/>
         <EditorIndex Value="1"/>
         <UsageCount Value="196"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit2>
       <Unit3>
         <Filename Value="../src/jsparser.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="jsparser"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="3"/>
         <WindowIndex Value="1"/>
@@ -137,11 +168,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="201"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="201"/>
+>>>>>>> graemeg/cpstrnew
       </Unit3>
       <Unit4>
         <Filename Value="../src/jsscanner.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="JSScanner"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="6"/>
         <WindowIndex Value="1"/>
@@ -154,11 +191,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="201"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="201"/>
+>>>>>>> graemeg/cpstrnew
       </Unit4>
       <Unit5>
         <Filename Value="../src/jstree.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="jstree"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="5"/>
         <WindowIndex Value="1"/>
@@ -171,11 +214,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="200"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="200"/>
+>>>>>>> graemeg/cpstrnew
       </Unit5>
       <Unit6>
         <Filename Value="tcparser.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcparser"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="4"/>
         <WindowIndex Value="1"/>
@@ -300,6 +349,8 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <OtherUnitFiles Value="/home/michael/source/fcl-js/;..;../src"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CursorPos X="3" Y="2059"/>
         <TopLine Value="2051"/>
         <EditorIndex Value="4"/>
@@ -435,6 +486,9 @@
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)/"/>
       <OtherUnitFiles Value="/home/michael/source/fcl-js/;../"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     </SearchPaths>
     <CodeGeneration>
@@ -443,6 +497,7 @@
       </Optimizations>
     </CodeGeneration>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Linking>
       <Debugging>
         <UseHeaptrc Value="True"/>
@@ -450,11 +505,14 @@
     </Linking>
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     <Other>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
   <Debugging>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <BreakPoints Count="7">
       <Item1>
@@ -507,11 +565,16 @@
         <Line Value="2253"/>
       </Item7>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     <BreakPoints Count="1">
       <Item1>
         <Source Value="../jsscanner.pp"/>
         <Line Value="717"/>
       </Item1>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     </BreakPoints>
     <Exceptions Count="3">
@@ -527,7 +590,10 @@
     </Exceptions>
   </Debugging>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <EditorMacros Count="0"/>
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 </CONFIG>

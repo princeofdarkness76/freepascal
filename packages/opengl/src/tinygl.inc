@@ -336,6 +336,7 @@ syscall sysvbase TinyGLBase 1270;
 procedure _GLColorMask(gcl: pointer; red, green, blue, alpha: GLboolean);
 syscall sysvbase TinyGLBase 1282;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
 
 {$IFDEF GLU_UNIT}
@@ -344,6 +345,9 @@ syscall sysvbase TinyGLBase 1348;
 {$ENDIF}
 
 {$IFDEF GL_UNIT}
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew

@@ -106,6 +106,9 @@ type
     property StrikeThrough : boolean index 8 read GetFlags write SetFlags;
 =======
     property StrikeTrough : boolean index 8 read GetFlags write SetFlags;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     property Orientation: Integer read GetOrientation write SetOrientation default 0;
         
@@ -256,7 +259,11 @@ type
     FDefaultPen, FPen : TFPCustomPen;
     FPenPos : TPoint;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FClipRegion : TFPCustomRegion;
+=======
+    FClipRect : TRect;
+>>>>>>> graemeg/cpstrnew
 =======
     FClipRect : TRect;
 >>>>>>> graemeg/cpstrnew
@@ -359,6 +366,9 @@ type
     procedure Rectangle (left,top,right,bottom:integer);
     procedure FillRect(const ARect: TRect); 
     procedure FillRect(X1,Y1,X2,Y2: Integer);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     // using brush
     procedure FloodFill (x,y:integer); virtual;

@@ -135,7 +135,13 @@ begin
   GetTimezoneFile:='';
   assign(ft,SolarisTimeZoneFile);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
+=======
+{$ifopt I+}
+  {$define OPT_I}
+{$endif}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifopt I+}
   {$define OPT_I}
@@ -152,6 +158,7 @@ begin
           if p>0 then
             s[0]:=chr(p-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
           p:=pos('TZ=',s);
           if p>0 then
             begin
@@ -164,6 +171,8 @@ begin
     end;
 {$pop}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	  p:=pos('TZ=',s);
           if p>0 then
             begin
@@ -177,6 +186,9 @@ begin
 {$ifdef OPT_I}    
   {$I+}
 {$endif}  
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

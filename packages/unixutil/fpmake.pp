@@ -25,6 +25,9 @@ begin
     P.Version:='2.2.2-0';
     P.OSes:=[Linux];
     P.CPUs:=[i386];
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     P.SourcePath.Add('src');
     T:=P.Targets.AddUnit('unixutils.pp');

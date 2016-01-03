@@ -71,15 +71,21 @@ type
   private
     _controlView: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __icFlags: record
       case byte of
        0: (_anonbitfield_NSImageCell0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __icFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSImageCell0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _unused: 0..((1 shl 22)-1);
         _animates: 0..1;
@@ -87,7 +93,10 @@ type
         _scale: 0..((1 shl 2)-1);
         _style: 0..((1 shl 3)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

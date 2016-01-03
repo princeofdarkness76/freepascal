@@ -15,9 +15,15 @@ begin
     P:=AddPackage('nvapi');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
+=======
+    P.Directory:='nvapi';
+{$endif ALLPACKAGES}
+    P.Version:='2.4.0';
+>>>>>>> graemeg/cpstrnew
 =======
     P.Directory:='nvapi';
 {$endif ALLPACKAGES}

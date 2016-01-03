@@ -42,6 +42,9 @@ Type
 <<<<<<< HEAD
 =======
     Procedure LoadCompilerDefaults;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Procedure ProcessCommandLine(FirstPass: boolean);
     Procedure DoRun; Override;
@@ -57,6 +60,11 @@ var
   i : integer;
   cfgfile : String;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  GeneratedConfig,
+  UseGlobalConfig : boolean;
+>>>>>>> graemeg/cpstrnew
 =======
   GeneratedConfig,
   UseGlobalConfig : boolean;
@@ -71,6 +79,7 @@ begin
         break;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   // First try config file from command line
   if HasOption('C','config-file') then
     cfgfile:=GetOptionValue('C','config-file')
@@ -78,6 +87,8 @@ begin
     cfgfile:='';
   pkgoptions.LoadGlobalDefaults(cfgfile);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   GeneratedConfig:=false;
   UseGlobalConfig:=false;
   // First try config file from command line
@@ -123,6 +134,9 @@ begin
     pkgglobals.Log(vlDebug,SLogLoadingGlobalConfig,[cfgfile]);
   // Log configuration
   GlobalOptions.LogValues(vlDebug);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -211,7 +225,10 @@ begin
   Writeln('  compile           Compile package');
   Writeln('  install           Install package');
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln('  uninstall         Uninstall package');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Writeln('  clean             Clean package');
@@ -219,7 +236,10 @@ begin
   Writeln('  download          Download package');
   Writeln('  convertmk         Convert Makefile.fpc to fpmake.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln('  info              Show more information about a package');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Writeln('  fixbroken         Recompile all (broken) packages with changed dependencies');
@@ -434,7 +454,11 @@ begin
         except
           on E: Exception do
 <<<<<<< HEAD
+<<<<<<< HEAD
             pkgglobals.Log(llWarning,E.Message);
+=======
+            pkgglobals.Log(vlWarning,E.Message);
+>>>>>>> graemeg/cpstrnew
 =======
             pkgglobals.Log(vlWarning,E.Message);
 >>>>>>> graemeg/cpstrnew
@@ -461,7 +485,11 @@ begin
         (ParaAction='archive')) then
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         pkgglobals.Log(llDebug,SLogCheckBrokenDependenvies);
+=======
+        pkgglobals.Log(vlDebug,SLogCheckBrokenDependenvies);
+>>>>>>> graemeg/cpstrnew
 =======
         pkgglobals.Log(vlDebug,SLogCheckBrokenDependenvies);
 >>>>>>> graemeg/cpstrnew
@@ -490,7 +518,11 @@ begin
             else
               begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pkgglobals.Log(llDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
+=======
+                pkgglobals.Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
+>>>>>>> graemeg/cpstrnew
 =======
                 pkgglobals.Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
 >>>>>>> graemeg/cpstrnew

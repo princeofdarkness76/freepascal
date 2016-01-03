@@ -60,7 +60,11 @@ uses
   fmodule,
   cgbase,cgutils,cpubase,cgobj,
 <<<<<<< HEAD
+<<<<<<< HEAD
   cgcpu,hlcgobj,hlcgcpu,
+=======
+  cgcpu,
+>>>>>>> graemeg/cpstrnew
 =======
   cgcpu,
 >>>>>>> graemeg/cpstrnew
@@ -141,7 +145,11 @@ var
 {$endif x86}
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_hlcodegen;
+=======
+  create_codegen;
+>>>>>>> graemeg/cpstrnew
 =======
   create_codegen;
 >>>>>>> graemeg/cpstrnew
@@ -163,7 +171,11 @@ begin
            if (cs_create_pic in current_settings.moduleswitches) and
              { other targets need to be checked how it works }
 <<<<<<< HEAD
+<<<<<<< HEAD
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris,system_i386_android,system_x86_64_dragonfly]) then
+=======
+             (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
+>>>>>>> graemeg/cpstrnew
 =======
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
 >>>>>>> graemeg/cpstrnew
@@ -195,7 +207,11 @@ begin
      hp2:=texported_item(hp2.next);
    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
    destroy_hlcodegen;
+=======
+   destroy_codegen;
+>>>>>>> graemeg/cpstrnew
 =======
    destroy_codegen;
 >>>>>>> graemeg/cpstrnew

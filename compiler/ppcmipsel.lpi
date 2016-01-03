@@ -2,8 +2,13 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <PathDelim Value="\"/>
+=======
+    <PathDelim Value="\"/>
+    <Version Value="7"/>
+>>>>>>> graemeg/cpstrnew
 =======
     <PathDelim Value="\"/>
     <Version Value="7"/>
@@ -14,6 +19,10 @@
         <MainUnitHasCreateFormStatements Value="False"/>
         <MainUnitHasTitleStatement Value="False"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <AlwaysBuild Value="False"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <AlwaysBuild Value="False"/>
 >>>>>>> graemeg/cpstrnew
@@ -22,11 +31,17 @@
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Title Value="ppcmipsel"/>
     </General>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
+=======
+      <TargetFileExt Value=".exe"/>
+      <Title Value="pp"/>
+    </General>
+>>>>>>> graemeg/cpstrnew
 =======
       <TargetFileExt Value=".exe"/>
       <Title Value="pp"/>
@@ -74,6 +89,7 @@
   </ProjectOptions>
   <CompilerOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
@@ -84,6 +100,8 @@
       <OtherUnitFiles Value="mips;systems"/>
       <UnitOutputDirectory Value="mipsel\lazbuild"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     <Version Value="8"/>
     <PathDelim Value="\"/>
     <Target>
@@ -93,6 +111,9 @@
       <IncludeFiles Value="mips\"/>
       <OtherUnitFiles Value="mips\;systems\"/>
       <UnitOutputDirectory Value="mips\lazbuild"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     </SearchPaths>
     <Parsing>
@@ -101,10 +122,13 @@
         <AllowLabel Value="False"/>
         <CPPInline Value="False"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UseAnsiStrings Value="False"/>
       </SyntaxOptions>
     </Parsing>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       </SyntaxOptions>
     </Parsing>
     <Linking>
@@ -112,6 +136,9 @@
         <GenerateDebugInfo Value="True"/>
       </Debugging>
     </Linking>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <Other>
       <Verbosity>

@@ -90,6 +90,9 @@ begin
 =======
       errno:=GetLastError;
       Errno2InoutRes;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifndef WINCE}
     end
@@ -151,7 +154,12 @@ begin
   if (rslt.low = $FFFFFFFF) and (GetLastError <> 0) then
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;
@@ -171,7 +179,12 @@ begin
     (GetLastError <> 0) then
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;
@@ -189,7 +202,12 @@ begin
   if (rslt.low = $FFFFFFFF) and (GetLastError <> 0) then
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;

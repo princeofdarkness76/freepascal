@@ -45,7 +45,11 @@
   private
     _delegate: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _private: array[0..(5)-1] of Pointer;
+=======
+        _private: array[0..4] of Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
         _private: array[0..4] of Pointer;
 >>>>>>> graemeg/cpstrnew

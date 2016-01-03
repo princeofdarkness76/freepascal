@@ -133,8 +133,11 @@ type
     fPath              : String;
     fPreferStringValues: Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function OpenSection(const Section: string; CreateSection : Boolean = false): boolean;
     procedure CloseSection;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   public

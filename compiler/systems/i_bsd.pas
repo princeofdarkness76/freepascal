@@ -131,10 +131,13 @@ unit i_bsd;
             shortname    : 'FreeBSD';
             flags        : [tf_needs_symbol_size,tf_needs_dwarf_cfi,tf_library_needs_pic,tf_needs_symbol_type,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_files_case_sensitive,
                             tf_dwarf_only_local_labels,
                             {tf_pic_uses_got,}tf_smartlink_sections,tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_files_case_sensitive,tf_smartlink_library,
                             tf_dwarf_only_local_labels
                             { tf_pic_uses_got,tf_smartlink_sections},tf_has_winlike_resources];
@@ -188,6 +191,7 @@ unit i_bsd;
                 recordalignmin  : 0;
                 recordalignmax  : 16;
                 maxCrecordalign : 16
+<<<<<<< HEAD
 <<<<<<< HEAD
               );
             first_parm_offset : 16;
@@ -258,6 +262,8 @@ unit i_bsd;
                 maxCrecordalign : 16
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               );
             first_parm_offset : 16;
             stacksize    : 256*1024;
@@ -273,7 +279,11 @@ unit i_bsd;
             name         : 'NetBSD for i386';
             shortname    : 'NetBSD';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_pic_uses_got,tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
+=======
+            flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
@@ -340,7 +350,11 @@ unit i_bsd;
             name         : 'OpenBSD for i386';
             shortname    : 'OpenBSD';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_pic_uses_got,tf_under_development,tf_files_case_sensitive,tf_smartlink_sections,tf_has_winlike_resources];
+=======
+            flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_under_development,tf_files_case_sensitive,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
@@ -919,6 +933,69 @@ unit i_bsd;
 
 
 
+       system_i386_iphonesim_info  : tsysteminfo =
+          (
+            system       : system_i386_iphonesim;
+            name         : 'Darwin/iPhoneSim for i386';
+            shortname    : 'iPhoneSim';
+            flags        : [tf_p_ext_support,tf_files_case_sensitive,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_pic_uses_got,tf_pic_default,tf_has_winlike_resources];
+            cpu          : cpu_i386;
+            unit_env     : 'BSDUNITS';
+            extradefines : 'UNIX;BSD;HASUNIX;DARWIN'; // also define darwin for code compatibility
+            exeext       : '';
+            defext       : '.def';
+            scriptext    : '.sh';
+            smartext     : '.sl';
+            unitext      : '.ppu';
+            unitlibext   : '.ppl';
+            asmext       : '.s';
+            objext       : '.o';
+            resext       : '.res';
+            resobjext    : '.or';
+            sharedlibext : '.dylib';
+            staticlibext : '.a';
+            staticlibprefix : 'libp';
+            sharedlibprefix : 'lib';
+            sharedClibext : '.dylib';
+            staticClibext : '.a';
+            staticClibprefix : 'lib';
+            sharedClibprefix : 'lib';
+            importlibprefix : 'libimp';
+            importlibext : '.a';
+            Cprefix      : '_';
+            newline      : #10;
+            dirsep       : '/';
+            assem        : as_darwin;
+            assemextern  : as_darwin;
+            link         : nil;
+            linkextern   : nil;
+            ar           : ar_gnu_ar;
+            res          : res_macho;
+            dbg          : dbg_dwarf2;
+            script       : script_unix;
+            endian       : endian_little;
+            alignment    :
+              (
+                procalign       : 16;
+                loopalign       : 4;
+                jumpalign       : 0;
+                constalignmin   : 0;
+                constalignmax   : 8;
+                varalignmin     : 0;
+                varalignmax     : 16;
+                localalignmin   : 0;
+                localalignmax   : 8;
+                recordalignmin  : 0;
+                recordalignmax  : 16;
+                maxCrecordalign : 16
+              );
+            first_parm_offset : 8;
+            stacksize   : 262144;
+            abi         : abi_default;
+          );
+
+
+
        system_powerpc64_darwin_info  : tsysteminfo =
           (
             system       : system_powerpc64_darwin;
@@ -1040,6 +1117,7 @@ unit i_bsd;
                 recordalignmax  : 16;
                 maxCrecordalign : 16
 <<<<<<< HEAD
+<<<<<<< HEAD
               );
             first_parm_offset : 16;
             stacksize   : 262144;
@@ -1106,6 +1184,8 @@ unit i_bsd;
                 maxCrecordalign : 16
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               );
             first_parm_offset : 16;
             stacksize   : 262144;
@@ -1121,7 +1201,11 @@ unit i_bsd;
             name         : 'Darwin for ARM';
             shortname    : 'Darwin';
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_p_ext_support,tf_requires_proper_alignment,tf_files_case_sensitive,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_has_winlike_resources,tf_pic_default];
+=======
+            flags        : [tf_p_ext_support,tf_requires_proper_alignment,tf_files_case_sensitive,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_has_winlike_resources];
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_p_ext_support,tf_requires_proper_alignment,tf_files_case_sensitive,tf_smartlink_sections,tf_dwarf_relative_addresses,tf_dwarf_only_local_labels,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew

@@ -1,5 +1,6 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -10,17 +11,23 @@ version=3.1.1
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 #   Makefile.fpc for fpcmkcfg
 #
 
 [target]
 programs=fpcmkcfg
 rst=fpcmkcfg
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [default]
 fpcdir=../..
@@ -111,6 +118,8 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 [require]
 tools=data2inc
 packages=fcl-base fcl-process
@@ -151,4 +160,7 @@ default.inc : default.cft
 
 endif
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

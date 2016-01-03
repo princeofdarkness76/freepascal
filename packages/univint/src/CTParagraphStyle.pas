@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  CTParagraphStyle.h
  *  CoreText
  *
@@ -10,6 +11,8 @@
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *	CTParagraphStyle.h
  *	CoreText
  *
@@ -17,6 +20,9 @@
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -73,11 +79,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -99,11 +108,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -116,11 +131,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -133,7 +154,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -146,7 +170,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -156,6 +183,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -167,6 +195,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -179,13 +212,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -202,6 +239,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -252,6 +293,11 @@ uses MacTypes,CFArray,CGBase,CFBase;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -274,6 +320,7 @@ uses MacTypes,CFArray,CGBase,CFBase;
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CTParagraphStyleRef = ^__CTParagraphStyle; { an opaque type }
 	__CTParagraphStyle = record end;
 
@@ -286,6 +333,8 @@ type
 function CTParagraphStyleGetTypeID: CFTypeID; external name '_CTParagraphStyleGetTypeID';
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	CTParagraphStyleRef = ^SInt32; { an opaque type }
 
 
@@ -296,6 +345,9 @@ function CTParagraphStyleGetTypeID: CFTypeID; external name '_CTParagraphStyleGe
 
 function CTParagraphStyleGetTypeID: CFTypeID; external name '_CTParagraphStyleGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -304,6 +356,7 @@ function CTParagraphStyleGetTypeID: CFTypeID; external name '_CTParagraphStyleGe
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
     @enum       CTTextAlignment
     @abstract   These constants specify text alignment.
@@ -338,6 +391,8 @@ const
     kCTJustifiedTextAlignment = kCTTextAlignmentJustified;
     kCTNaturalTextAlignment = kCTTextAlignmentNatural;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@enum		CTTextAlignment
 	@abstract	These constants specify text alignment.
 
@@ -364,12 +419,16 @@ const
 	kCTCenterTextAlignment = 2;
 	kCTJustifiedTextAlignment = 3;
 	kCTNaturalTextAlignment = 4;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 type
 	CTTextAlignment = UInt8;
 
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
     @enum       CTLineBreakMode
     @abstract   These constants specify what happens when a line is too long for
@@ -399,6 +458,8 @@ type
                 container and the missing text is indicated by some kind of
                 ellipsis glyph in the middle.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@enum		CTLineBreakMode
 	@abstract	These constants specify what happens when a line is too long for
 				its frame.
@@ -426,6 +487,9 @@ type
 				Each line is displayed so that the beginning and end fit in the
 				container and the missing text is indicated by some kind of
 				ellipsis glyph in the middle.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 
@@ -442,6 +506,7 @@ type
 
 {!
 <<<<<<< HEAD
+<<<<<<< HEAD
     @enum       CTWritingDirection
     @abstract   These constants specify the writing direction
 
@@ -455,6 +520,8 @@ type
     @constant   kCTWritingDirectionRightToLeft
                 The writing direction is right to left.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@enum		CTWritingDirection
 	@abstract	These constants specify the writing direction
 
@@ -467,6 +534,9 @@ type
 
 	@constant	kCTWritingDirectionRightToLeft
 				The writing direction is right to left.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 const
@@ -478,6 +548,7 @@ type
 
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
     @enum       CTParagraphStyleSpecifier
     @abstract   These constants are used to query and modify the CTParagraphStyle
@@ -665,6 +736,8 @@ type
                 Default: 0 (no options)
                 Application: CTTypesetter
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@enum		CTParagraphStyleSpecifier
 	@abstract	These constants are used to query and modify the CTParagraphStyle
 				object.
@@ -815,6 +888,9 @@ type
 				Type: CTWritingDirection
 				Default: kCTWritingDirectionNatural
 				Application: CTFramesetter, CTTypesetter
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 
@@ -835,9 +911,12 @@ const
 	kCTParagraphStyleSpecifierBaseWritingDirection = 13;
 	kCTParagraphStyleSpecifierCount = 14;
 <<<<<<< HEAD
+<<<<<<< HEAD
     kCTParagraphStyleSpecifierMinimumLineSpacing = 15;
     kCTParagraphStyleSpecifierLineSpacingAdjustment = 16;
     kCTParagraphStyleSpecifierLineBoundsOptions = 17;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 type
@@ -845,6 +924,7 @@ type
 
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
     @struct     CTParagraphStyleSetting
     @abstract   This structure is used to alter the paragraph style.
@@ -862,6 +942,8 @@ type
                 "spec" field. The value must be in the proper range for the
                 spec value. The value must also be at least valueSize.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@struct		CTParagraphStyleSetting
 	@abstract	This structure is used to alter the paragraph style.
 
@@ -877,6 +959,9 @@ type
 				A reference to the value of the setting specified by the
 				"spec" field. The value must be in the proper range for the
 				spec value. The value must also be at least valueSize.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 type
@@ -896,6 +981,7 @@ type
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
     @function   CTParagraphStyleCreate
     @abstract   Creates an immutable paragraph style.
@@ -946,6 +1032,8 @@ function CTParagraphStyleCreate( settings: {const} CTParagraphStyleSettingPtr {c
 function CTParagraphStyleCreateCopy( paragraphStyle: CTParagraphStyleRef ): CTParagraphStyleRef; external name '_CTParagraphStyleCreateCopy';
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@function	CTParagraphStyleCreate
 	@abstract	Creates an immutable paragraph style.
 
@@ -994,6 +1082,9 @@ function CTParagraphStyleCreate( settings: {const} CTParagraphStyleSettingPtr {c
 
 function CTParagraphStyleCreateCopy( paragraphStyle: CTParagraphStyleRef ): CTParagraphStyleRef; external name '_CTParagraphStyleCreateCopy';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -1002,6 +1093,7 @@ function CTParagraphStyleCreateCopy( paragraphStyle: CTParagraphStyleRef ): CTPa
 { --------------------------------------------------------------------------- }
 
 {!
+<<<<<<< HEAD
 <<<<<<< HEAD
     @function   CTParagraphStyleGetValueForSpecifier
     @abstract   Obtains the current value for a single setting specifier.
@@ -1043,6 +1135,8 @@ function CTParagraphStyleGetValueForSpecifier( paragraphStyle: CTParagraphStyleR
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@function	CTParagraphStyleGetValueForSpecifier
 	@abstract	Obtains the current value for a single setting specifier.
 
@@ -1083,6 +1177,9 @@ function CTParagraphStyleGetValueForSpecifier( paragraphStyle: CTParagraphStyleR
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 {$endc} {TARGET_OS_MAC}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

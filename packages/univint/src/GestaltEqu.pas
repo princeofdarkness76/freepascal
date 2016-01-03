@@ -69,11 +69,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -92,6 +95,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -115,6 +119,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -127,6 +136,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -135,13 +147,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -213,6 +229,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -641,6 +690,9 @@ const
 	gestalt32BitSysZone = 1;    { 32-bit compatible system zone }
 	gestalt32BitCapable = 2;     { Machine is 32-bit capable }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	gestaltAFPClient = FourCharCode('afps');
@@ -666,6 +718,7 @@ const
 
 
 const
+<<<<<<< HEAD
 =======
 
 const
@@ -692,6 +745,8 @@ const
 
 
 const
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	gestaltAliasMgrAttr = FourCharCode('alis'); { Alias Mgr Attributes }
 	gestaltAliasMgrPresent = 0;    { True if the Alias Mgr is present }
@@ -925,6 +980,7 @@ const
 const
 	gestaltCTBVersion = FourCharCode('ctbv'); { CommToolbox version }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const
 	gestaltDBAccessMgrAttr = FourCharCode('dbac'); { Database Access Mgr attributes }
@@ -1036,6 +1092,96 @@ const
 	gestaltEasyAccessLocked = 3;     { if Easy Access "Locked" }
 
 const
+=======
+
+const
+	gestaltDBAccessMgrAttr = FourCharCode('dbac'); { Database Access Mgr attributes }
+	gestaltDBAccessMgrPresent = 0;     { True if Database Access Mgr present }
+
+const
+	gestaltDiskCacheSize = FourCharCode('dcsz'); { Size of disk cache's buffers, in bytes }
+
+const
+	gestaltSDPFindVersion = FourCharCode('dfnd'); { OCE Standard Directory Panel}
+
+const
+	gestaltDictionaryMgrAttr = FourCharCode('dict'); { Dictionary Manager attributes }
+	gestaltDictionaryMgrPresent = 0;     { Dictionary Manager attributes }
+
+const
+	gestaltDITLExtAttr = FourCharCode('ditl'); { AppenDITL, etc. calls from CTB }
+	gestaltDITLExtPresent = 0;    { True if calls are present }
+	gestaltDITLExtSupportsIctb = 1;     { True if AppendDITL, ShortenDITL support 'ictb's }
+
+const
+	gestaltDialogMgrAttr = FourCharCode('dlog'); { Dialog Mgr}
+	gestaltDialogMgrPresent = 1 shl 0; { NOTE: this is a bit mask, whereas all other Gestalt constants of}
+                                        { this type are bit index values.   Universal Interfaces 3.2 slipped}
+                                        { out the door with this mistake.}
+	gestaltDialogMgrPresentBit = 0;    { bit number}
+	gestaltDialogMgrHasAquaAlertBit = 2;  { bit number}
+	gestaltDialogMgrPresentMask = 1 shl gestaltDialogMgrPresentBit;
+	gestaltDialogMgrHasAquaAlertMask = 1 shl gestaltDialogMgrHasAquaAlertBit;
+	gestaltDialogMsgPresentMask = gestaltDialogMgrPresentMask; { compatibility mask}
+
+const
+	gestaltDesktopPicturesAttr = FourCharCode('dkpx'); { Desktop Pictures attributes }
+	gestaltDesktopPicturesInstalled = 0;  { True if control panel is installed }
+	gestaltDesktopPicturesDisplayed = 1;   { True if a picture is currently displayed }
+
+const
+	gestaltDisplayMgrVers = FourCharCode('dplv'); { Display Manager version }
+
+const
+	gestaltDisplayMgrAttr = FourCharCode('dply'); { Display Manager attributes }
+	gestaltDisplayMgrPresent = 0;    { True if Display Mgr is present }
+	gestaltDisplayMgrCanSwitchMirrored = 2; { True if Display Mgr can switch modes on mirrored displays }
+	gestaltDisplayMgrSetDepthNotifies = 3; { True SetDepth generates displays mgr notification }
+	gestaltDisplayMgrCanConfirm = 4;    { True Display Manager supports DMConfirmConfiguration }
+	gestaltDisplayMgrColorSyncAware = 5;  { True if Display Manager supports profiles for displays }
+	gestaltDisplayMgrGeneratesProfiles = 6; { True if Display Manager will automatically generate profiles for displays }
+	gestaltDisplayMgrSleepNotifies = 7;    { True if Display Mgr generates "displayWillSleep", "displayDidWake" notifications }
+
+const
+	gestaltDragMgrAttr = FourCharCode('drag'); { Drag Manager attributes }
+	gestaltDragMgrPresent = 0;    { Drag Manager is present }
+	gestaltDragMgrFloatingWind = 1;    { Drag Manager supports floating windows }
+	gestaltPPCDragLibPresent = 2;    { Drag Manager PPC DragLib is present }
+	gestaltDragMgrHasImageSupport = 3;    { Drag Manager allows SetDragImage call }
+	gestaltCanStartDragInFloatWindow = 4; { Drag Manager supports starting a drag in a floating window }
+	gestaltSetDragImageUpdates = 5;     { Drag Manager supports drag image updating via SetDragImage }
+
+const
+	gestaltDrawSprocketVersion = FourCharCode('dspv'); { Draw Sprocket version (as a NumVersion) }
+
+const
+	gestaltDigitalSignatureVersion = FourCharCode('dsig'); { returns Digital Signature Toolbox version in low-order word}
+
+{
+   Desktop Printing Feature Gestalt
+   Use this gestalt to check if third-party printer driver support is available
+}
+const
+	gestaltDTPFeatures = FourCharCode('dtpf');
+	kDTPThirdPartySupported = $00000004; { mask for checking if third-party drivers are supported}
+
+
+{
+   Desktop Printer Info Gestalt
+   Use this gestalt to get a hold of information for all of the active desktop printers
+}
+const
+	gestaltDTPInfo = FourCharCode('dtpx'); { returns GestaltDTPInfoHdle}
+
+const
+	gestaltEasyAccessAttr = FourCharCode('easy'); { Easy Access attributes }
+	gestaltEasyAccessOff = 0;    { if Easy Access present, but off (no icon) }
+	gestaltEasyAccessOn = 1;    { if Easy Access "On" }
+	gestaltEasyAccessSticky = 2;    { if Easy Access "Sticky" }
+	gestaltEasyAccessLocked = 3;     { if Easy Access "Locked" }
+
+const
+>>>>>>> graemeg/cpstrnew
 	gestaltEditionMgrAttr = FourCharCode('edtn'); { Edition Mgr attributes }
 	gestaltEditionMgrPresent = 0;    { True if Edition Mgr present }
 	gestaltEditionMgrTranslationAware = 1; { True if edition manager is translation manager aware }

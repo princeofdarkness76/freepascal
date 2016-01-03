@@ -26,15 +26,21 @@ type
 { Records }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   __MVFlags = record
     case byte of
     0: (_anonbitfield_NSMovieView0: cuint);
     1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   __MVFlags = bitpacked record
     case byte of
     0: (_anonbitfield_NSMovieView0: cuint);
     1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           editable: 0..1;
           loopMode: 0..((1 shl 3)-1);
@@ -43,7 +49,10 @@ type
           controllerVisible: 0..1;
           reserved: 0..((1 shl 25)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
        );

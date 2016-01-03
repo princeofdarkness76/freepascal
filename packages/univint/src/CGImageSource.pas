@@ -4,9 +4,14 @@
  *
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+{	 Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {	 Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -66,11 +71,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -92,11 +100,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -109,11 +123,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -125,6 +145,7 @@ interface
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -150,6 +171,8 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -159,8 +182,20 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -171,6 +206,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -187,14 +223,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -252,14 +295,21 @@ uses MacTypes, CFArray, CFBase, CFData, CFDictionary, CFURL, CGDataProvider, CGI
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGImageSourceRef = ^OpaqueCGImageSourceRef; { an opaque type }
 	OpaqueCGImageSourceRef = record end;
+=======
+	CGImageSourceRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CGImageSourceRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -284,7 +334,11 @@ const
 
 var kCGImageSourceTypeIdentifierHint: CFStringRef; external name '_kCGImageSourceTypeIdentifierHint'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -298,7 +352,11 @@ var kCGImageSourceTypeIdentifierHint: CFStringRef; external name '_kCGImageSourc
 
 var kCGImageSourceShouldCache: CFStringRef; external name '_kCGImageSourceShouldCache'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -311,7 +369,11 @@ var kCGImageSourceShouldCache: CFStringRef; external name '_kCGImageSourceShould
 
 var kCGImageSourceShouldAllowFloat: CFStringRef; external name '_kCGImageSourceShouldAllowFloat'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -330,7 +392,11 @@ var kCGImageSourceShouldAllowFloat: CFStringRef; external name '_kCGImageSourceS
 
 var kCGImageSourceCreateThumbnailFromImageIfAbsent: CFStringRef; external name '_kCGImageSourceCreateThumbnailFromImageIfAbsent'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -345,7 +411,11 @@ var kCGImageSourceCreateThumbnailFromImageIfAbsent: CFStringRef; external name '
 
 var kCGImageSourceCreateThumbnailFromImageAlways: CFStringRef; external name '_kCGImageSourceCreateThumbnailFromImageAlways'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -357,7 +427,11 @@ var kCGImageSourceCreateThumbnailFromImageAlways: CFStringRef; external name '_k
 
 var kCGImageSourceThumbnailMaxPixelSize: CFStringRef; external name '_kCGImageSourceThumbnailMaxPixelSize'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -369,7 +443,11 @@ var kCGImageSourceThumbnailMaxPixelSize: CFStringRef; external name '_kCGImageSo
 
 var kCGImageSourceCreateThumbnailWithTransform: CFStringRef; external name '_kCGImageSourceCreateThumbnailWithTransform'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -379,7 +457,11 @@ var kCGImageSourceCreateThumbnailWithTransform: CFStringRef; external name '_kCG
 
 function CGImageSourceGetTypeID: CFTypeID; external name '_CGImageSourceGetTypeID';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -388,7 +470,11 @@ function CGImageSourceGetTypeID: CFTypeID; external name '_CGImageSourceGetTypeI
 
 function CGImageSourceCopyTypeIdentifiers: CFArrayRef; external name '_CGImageSourceCopyTypeIdentifiers';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -399,7 +485,11 @@ function CGImageSourceCopyTypeIdentifiers: CFArrayRef; external name '_CGImageSo
 
 function CGImageSourceCreateWithDataProvider( provider: CGDataProviderRef; options: CFDictionaryRef ): CGImageSourceRef; external name '_CGImageSourceCreateWithDataProvider';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -410,7 +500,11 @@ function CGImageSourceCreateWithDataProvider( provider: CGDataProviderRef; optio
 
 function CGImageSourceCreateWithData( data: CFDataRef; options: CFDictionaryRef ): CGImageSourceRef; external name '_CGImageSourceCreateWithData';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -421,7 +515,11 @@ function CGImageSourceCreateWithData( data: CFDataRef; options: CFDictionaryRef 
 
 function CGImageSourceCreateWithURL( url: CFURLRef; options: CFDictionaryRef ): CGImageSourceRef; external name '_CGImageSourceCreateWithURL';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -433,7 +531,11 @@ function CGImageSourceCreateWithURL( url: CFURLRef; options: CFDictionaryRef ): 
 
 function CGImageSourceGetType( isrc: CGImageSourceRef ): CFStringRef; external name '_CGImageSourceGetType';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -443,7 +545,11 @@ function CGImageSourceGetType( isrc: CGImageSourceRef ): CFStringRef; external n
 
 function CGImageSourceGetCount( isrc: CGImageSourceRef ): size_t; external name '_CGImageSourceGetCount';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -454,7 +560,11 @@ function CGImageSourceGetCount( isrc: CGImageSourceRef ): size_t; external name 
 
 function CGImageSourceCopyProperties( isrc: CGImageSourceRef; options: CFDictionaryRef ): CFDictionaryRef; external name '_CGImageSourceCopyProperties';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -465,6 +575,7 @@ function CGImageSourceCopyProperties( isrc: CGImageSourceRef; options: CFDiction
  * information. }
 
 function CGImageSourceCopyPropertiesAtIndex( isrc: CGImageSourceRef; index: size_t; options: CFDictionaryRef ): CFDictionaryRef; external name '_CGImageSourceCopyPropertiesAtIndex';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 
@@ -479,6 +590,9 @@ function CGImageSourceCopyMetadataAtIndex( isrc: CGImageSourceRef; index: size_t
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 
 { Return the image at `index' in the image source `isrc'.  The index is
  * zero-based. The `options' dictionary may be used to request additional
@@ -486,7 +600,11 @@ function CGImageSourceCopyMetadataAtIndex( isrc: CGImageSourceRef; index: size_t
 
 function CGImageSourceCreateImageAtIndex( isrc: CGImageSourceRef; index: size_t; options: CFDictionaryRef ): CGImageRef; external name '_CGImageSourceCreateImageAtIndex';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -498,7 +616,11 @@ function CGImageSourceCreateImageAtIndex( isrc: CGImageSourceRef; index: size_t;
 
 function CGImageSourceCreateThumbnailAtIndex( isrc: CGImageSourceRef; index: size_t; options: CFDictionaryRef ): CGImageRef; external name '_CGImageSourceCreateThumbnailAtIndex';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -511,7 +633,11 @@ function CGImageSourceCreateThumbnailAtIndex( isrc: CGImageSourceRef; index: siz
 
 function CGImageSourceCreateIncremental( options: CFDictionaryRef ): CGImageSourceRef; external name '_CGImageSourceCreateIncremental';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -523,7 +649,11 @@ function CGImageSourceCreateIncremental( options: CFDictionaryRef ): CGImageSour
 
 procedure CGImageSourceUpdateData( isrc: CGImageSourceRef; data: CFDataRef; final: CBool ); external name '_CGImageSourceUpdateData';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -535,7 +665,11 @@ procedure CGImageSourceUpdateData( isrc: CGImageSourceRef; data: CFDataRef; fina
 
 procedure CGImageSourceUpdateDataProvider( isrc: CGImageSourceRef; provider: CGDataProviderRef; final: CBool ); external name '_CGImageSourceUpdateDataProvider';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -546,7 +680,11 @@ procedure CGImageSourceUpdateDataProvider( isrc: CGImageSourceRef; provider: CGD
 
 function CGImageSourceGetStatus( isrc: CGImageSourceRef ): CGImageSourceStatus; external name '_CGImageSourceGetStatus';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -558,13 +696,19 @@ function CGImageSourceGetStatus( isrc: CGImageSourceRef ): CGImageSourceStatus; 
 
 function CGImageSourceGetStatusAtIndex( isrc: CGImageSourceRef; index: size_t ): CGImageSourceStatus; external name '_CGImageSourceGetStatusAtIndex';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 
 {$endc} {TARGET_OS_MAC}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

@@ -3,12 +3,18 @@ program project1;
 {$mode objfpc}{$H+}
 {$modeswitch nestedprocvars}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 uses
 {$ifdef unix}
   cwstring,
 {$endif unix}
   SysUtils;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 type

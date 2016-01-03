@@ -1,7 +1,11 @@
 uses
 {$ifdef unix}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
+=======
+  cwstring,
+>>>>>>> graemeg/cpstrnew
 =======
   cwstring,
 >>>>>>> graemeg/cpstrnew
@@ -9,6 +13,7 @@ uses
   SysUtils;
   
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
   ts1253 = type AnsiString(1253);
   ts1251 = type AnsiString(1251);
@@ -32,6 +37,8 @@ begin
     halt(3);
   if (s2>=s1) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   ts850 = type string<850>;
   ts1251 = type string<1251>;  
 var
@@ -51,6 +58,9 @@ begin
   if (a850<=a1251) then
     halt(3);
   if (a1251>=a850) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     halt(4);
   

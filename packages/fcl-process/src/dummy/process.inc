@@ -3,6 +3,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Resourcestring
   SNoCommandLine        = 'Cannot execute empty command-line';
@@ -10,6 +11,8 @@ Resourcestring
   SErrNoSuchProgram     = 'Executable not found: "%s"';
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {
   prevent compilation error for the versions mentioned below
 } 

@@ -118,9 +118,15 @@ end;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
+=======
+  format: TPTCFormat = nil;
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   format: TPTCFormat = nil;
   console: TPTCConsole = nil;
@@ -146,6 +152,9 @@ begin
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
 =======
       surface := TPTCSurface.Create(320, 200, format);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
       { create tunnel }
@@ -187,6 +196,9 @@ begin
       console.close;
       console.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

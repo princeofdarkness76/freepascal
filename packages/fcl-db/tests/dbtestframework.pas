@@ -60,6 +60,7 @@ begin
     FDigestResultsWriter.Free;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
   
 Var
@@ -86,6 +87,9 @@ begin
   Finally    
     FreeDBConnector;
   end;  
+=======
+  FreeDBConnector;
+>>>>>>> graemeg/cpstrnew
 =======
   FreeDBConnector;
 >>>>>>> graemeg/cpstrnew

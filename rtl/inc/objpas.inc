@@ -84,7 +84,10 @@
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure fpc_intf_assign(var D: pointer; const s: pointer); [external name 'FPC_INTF_ASSIGN'];
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -182,11 +185,15 @@
         if Assigned(S) and ((TObject(S).GetInterfaceWeak(IUnknown,tmpi2) and (IUnknown(tmpi2).QueryInterface(IID,tmpi)=S_OK)) or
             TObject(S).GetInterface(IID,tmpi)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             // decrease reference count
             fpc_class_cast_intf:=nil;
             pointer(fpc_class_cast_intf):=tmpi
           end
+=======
+          pointer(fpc_class_cast_intf):=tmpi
+>>>>>>> graemeg/cpstrnew
 =======
           pointer(fpc_class_cast_intf):=tmpi
 >>>>>>> graemeg/cpstrnew
@@ -509,7 +516,11 @@
 
       function TObject.SafeCallException(exceptobject : tobject;
 <<<<<<< HEAD
+<<<<<<< HEAD
         exceptaddr : codepointer) : HResult;
+=======
+        exceptaddr : pointer) : HResult;
+>>>>>>> graemeg/cpstrnew
 =======
         exceptaddr : pointer) : HResult;
 >>>>>>> graemeg/cpstrnew
@@ -728,7 +739,11 @@
                 begin
                   // IOffset is relative to the VMT, not to instance.
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := PCodePointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+=======
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+>>>>>>> graemeg/cpstrnew
 =======
                   Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
 >>>>>>> graemeg/cpstrnew
@@ -738,7 +753,11 @@
                 begin
                   // IOffset is relative to the VMT, not to instance.
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := PCodePointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+=======
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+>>>>>>> graemeg/cpstrnew
 =======
                   Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
 >>>>>>> graemeg/cpstrnew
@@ -747,7 +766,11 @@
               etStaticMethodResult:
                 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := CodePointer(IEntry^.IOffset);
+=======
+                  Getter.code := Pointer(IEntry^.IOffset);
+>>>>>>> graemeg/cpstrnew
 =======
                   Getter.code := Pointer(IEntry^.IOffset);
 >>>>>>> graemeg/cpstrnew
@@ -756,7 +779,11 @@
               etStaticMethodClass:
                 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := CodePointer(IEntry^.IOffset);
+=======
+                  Getter.code := Pointer(IEntry^.IOffset);
+>>>>>>> graemeg/cpstrnew
 =======
                   Getter.code := Pointer(IEntry^.IOffset);
 >>>>>>> graemeg/cpstrnew

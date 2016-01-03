@@ -25,11 +25,14 @@ type
       ADataSize: integer; AGetSQLTextProc: TGetSQLTextProc;
       ACheckFieldValueProc: TCheckFieldValueProc);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestXXParamQuery(ADataType : TFieldType; ASQLTypeDecl : string;
       ParamValuesCount : integer); overload;
     procedure TestXXParamQuery(ADataType : TFieldType; ASQLTypeDecl : string;
       ParamValuesCount : integer; const ParamValues: array of string; Cross : boolean = False); overload;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure TestXXParamQuery(ADatatype : TFieldType; ASQLTypeDecl : string; testValuescount : integer; Cross : boolean = false);
 >>>>>>> graemeg/cpstrnew
     procedure TestSetBlobAsParam(asWhat : integer);
@@ -171,12 +174,16 @@ type
 =======
     procedure TestStringLargerThen8192;
     procedure TestQueryAfterReconnect; // bug 16438
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     // SchemaType tests:
     procedure TestTableNames;
     procedure TestGetTables;
     procedure TestFieldNames;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure TestGetFieldNames;
     procedure TestUpdateIndexDefs;
@@ -190,6 +197,8 @@ type
 
     procedure TestStringsReplace;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure TestClearUpdateableStatus;
     procedure TestReadOnlyParseSQL; // bug 9254
     procedure TestGetTables;
@@ -197,6 +206,9 @@ type
     // Test SQL-field type recognition
     procedure TestSQLClob;
     procedure TestSQLLargeint;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 
@@ -1371,6 +1383,237 @@ var DS: TCustomBufDataset;
 begin
   with TSQLDBConnector(DBConnector) do
     begin
+<<<<<<< HEAD
+    ds := GetNDataset(true,30) as TCustomBufDataset;
+    with query do
+=======
+    PacketRecords := -1;
+    sql.clear;
+    sql.append('insert into FPDEV2 (ID,FIELD1) values (:id,:field1)');
+
+    ShortDateFormat := 'yyyy-mm-dd';
+
+    // There is no Param.AsFixedChar, so the datatype has to be set manually
+    if ADatatype=ftFixedChar then
+      Params.ParamByName('field1').DataType := ftFixedChar;
+
+    for i := 0 to testValuesCount -1 do
+>>>>>>> graemeg/cpstrnew
+      begin
+      SQL.Text:='update FPDEV set NAME = null where ID<11;';
+      ExecSQL;
+      SQL.Text:='update FPDEV set NAME = null where (ID>11) and (ID<23);';
+      ExecSQL;
+    end;
+    with ds do
+      begin
+<<<<<<< HEAD
+      Open;
+      // Must be exactly 11 to trigger bug/test
+      AssertTrue(Locate('name',VarArrayOf(['TestName11']),[]));
+      AssertEquals(11,fieldbyname('ID').AsInteger);
+
+      // Must be exactly 23 to trigger bug/test
+      AssertTrue(Locate('name',VarArrayOf(['TestName23']),[]));
+      AssertEquals(23,fieldbyname('ID').AsInteger);
+=======
+      AssertEquals(i,FieldByName('ID').AsInteger);
+      case ADataType of
+        ftInteger: AssertEquals(testIntValues[i],FieldByName('FIELD1').AsInteger);
+        ftFloat  : AssertEquals(testFloatValues[i],FieldByName('FIELD1').AsFloat);
+        ftBCD    : AssertEquals(testBCDValues[i],FieldByName('FIELD1').AsCurrency);
+        ftFixedChar : AssertEquals(PadRight(testStringValues[i],10),FieldByName('FIELD1').AsString);
+        ftString : AssertEquals(testStringValues[i],FieldByName('FIELD1').AsString);
+        ftdate   : AssertEquals(testDateValues[i],FormatDateTime('yyyy/mm/dd',FieldByName('FIELD1').AsDateTime));
+      else
+        AssertTrue('no test for paramtype available',False);
+      end;
+      Next;
+>>>>>>> graemeg/cpstrnew
+      end;
+    end;
+
+end;
+
+procedure TTestFieldTypes.TestRefresh;
+var ADataset: TDataset;
+    i: integer;
+    AFldID, AFldName: TField;
+begin
+  ADataset := TSQLDBConnector(DBConnector).GetNDataset(true,5);
+
+  Adataset.Open;
+  AFldId:=Adataset.Fields[0];
+  AFldName:=Adataset.Fields[1];
+  for i := 1 to 5 do
+    begin
+    AssertEquals(i,AFldID.asinteger);
+    AssertEquals('TestName'+inttostr(i),AFldName.asstring);
+    ADataset.Next;
+    end;
+
+  ADataset.Next;
+  AssertTrue(ADataset.EOF);
+  TSQLDBConnector(DBConnector).Connection.ExecuteDirect('update FPDEV set NAME=''test'' where ID=2');
+
+  ADataset.Refresh;
+
+  ADataset.First;
+  for i := 1 to 5 do
+    begin
+    AssertEquals(i,AFldID.AsInteger);
+    if i = 2 then
+      AssertEquals('test',AFldName.AsString)
+    else
+      AssertEquals('TestName'+inttostr(i),AFldName.AsString);
+    ADataset.Next;
+    end;
+  ADataset.Next;
+  AssertTrue(ADataset.EOF);
+end;
+
+procedure TTestFieldTypes.TestEmptyUpdateQuery;
+begin
+  TSQLDBConnector(DBConnector).Connection.ExecuteDirect('update FPDEV set name=''nothing'' where (1=0)');
+end;
+
+procedure TTestFieldTypes.TestNonNullableParams;
+var ASQLQuery : TSQLQuery;
+    Passed: Boolean;
+begin
+  // Check for an exception when a null value is stored into a non-nullable
+  // field using a parameter
+  // There was a bug in IBConnection so that in this case the last used value
+  // for the parameter was used.
+
+  // To make sure that any changes are cancelled in the case the test fails
+  TSQLDBConnector(DBConnector).GetNDataset(true,5);
+
+  ASQLQuery := TSQLDBConnector(DBConnector).Query;
+  ASQLQuery.SQL.text := 'update fpdev set ID=:ID1 where id = :ID2';
+  ASQLQuery.Params[0].Clear;
+  ASQLQuery.Params[1].AsInteger := 1;
+  AssertTrue(ASQLQuery.Params[0].IsNull);
+  Passed:=False;
+  try
+    @ASQLQuery.ExecSQL;
+  except
+    on E: Exception do
+      if E.ClassType.InheritsFrom(EDatabaseError) then
+        Passed := true;
+  end;
+  AssertTrue(Passed);
+end;
+
+<<<<<<< HEAD
+=======
+  TSQLDBConnector(DBConnector).Transaction.CommitRetaining;
+
+  with TSQLDBConnector(DBConnector).Query do
+    begin
+    sql.clear;
+    sql.append('select count(*) from FPDEV2');
+    open;
+    AssertEquals(4,Fields[0].AsInteger);
+    close;
+
+    sql.clear;
+    sql.append('select sum(FIELD1) from FPDEV2');
+    open;
+    AssertEquals(10,Fields[0].AsInteger);
+    close;
+
+    sql.clear;
+    sql.append('select avg(FIELD2) from FPDEV2');
+    open;
+    AssertEquals(3,Fields[0].AsInteger);
+    close;
+
+    end;
+
+end;
+
+procedure TTestFieldTypes.CreateTableWithFieldType(ADatatype: TFieldType;
+  ASQLTypeDecl: string);
+begin
+  TSQLDBConnector(DBConnector).Connection.ExecuteDirect('create table FPDEV2 (FT ' +ASQLTypeDecl+ ')');
+
+// Firebird/Interbase need a commit after a DDL statement. Not necessary for the other connections
+  TSQLDBConnector(DBConnector).Transaction.CommitRetaining;
+end;
+
+procedure TTestFieldTypes.TestFieldDeclaration(ADatatype: TFieldType;
+  ADataSize: integer);
+begin
+  with TSQLDBConnector(DBConnector).Query do
+    begin
+    SQL.Clear;
+    SQL.Add('select * from FPDEV2');
+
+    Open;
+    AssertEquals(1,FieldCount);
+    AssertTrue(CompareText('FT',fields[0].FieldName)=0);
+    AssertEquals(ADataSize,fields[0].DataSize);
+    AssertTrue(ADatatype=fields[0].DataType);
+    Close;
+    end;
+end;
+
+procedure TTestFieldTypes.SetUp;
+begin
+  InitialiseDBConnector;
+end;
+
+procedure TTestFieldTypes.TearDown;
+begin
+  if assigned(DBConnector) then
+    TSQLDBConnector(DBConnector).Transaction.Rollback;
+  FreeDBConnector;
+end;
+
+procedure TTestFieldTypes.RunTest;
+begin
+//  if (SQLDbType in TSQLDBTypes) then
+    inherited RunTest;
+end;
+
+procedure TTestFieldTypes.TestQueryAfterReconnect;
+var DS: TDataset;
+begin
+  ds := DBConnector.GetNDataset(true,5);
+  with ds do
+    begin
+    open;
+    close;
+    TSQLDBConnector(DBConnector).Connection.Close;
+    TSQLDBConnector(DBConnector).Connection.Open;
+    open;
+    close;
+    end;
+end;
+
+procedure TTestFieldTypes.TestLocateNull;
+var DS: TCustomBufDataset;
+begin
+  ds := TSQLDBConnector(DBConnector).GetNDataset(true,5) as TCustomBufDataset;
+  with ds do
+    begin
+    open;
+    edit;
+    fieldbyname('name').Clear;
+    post;
+    next;
+    AssertFalse(Locate('name',VarArrayOf(['TestName1']),[]));
+    AssertTrue(Locate('name',VarArrayOf([Null]),[]));
+    AssertEquals(1,fieldbyname('ID').AsInteger);
+    end;
+end;
+
+procedure TTestFieldTypes.TestLocateOnMoreRecords;
+var DS: TCustomBufDataset;
+begin
+  with TSQLDBConnector(DBConnector) do
+    begin
     ds := GetNDataset(true,30) as TCustomBufDataset;
     with query do
       begin
@@ -1464,6 +1707,7 @@ begin
   AssertTrue(Passed);
 end;
 
+>>>>>>> graemeg/cpstrnew
 procedure TTestFieldTypes.TestStringLargerThen8192;
 
 var
@@ -2343,6 +2587,7 @@ var passed : boolean;
 begin
   with TSQLDBConnector(DBConnector).Query do
     begin
+<<<<<<< HEAD
     SQL.Clear;
     SQL.Add('select * from FPDEV');
 
@@ -2353,6 +2598,31 @@ begin
     SQL.Add('select blaise from FPDEV');
     passed := false;
     try
+=======
+    Connection.ExecuteDirect('create table FPDEV2 (         ' +
+                              '  '+connection.FieldNameQuoteChars[0]+'2ID'+connection.FieldNameQuoteChars[1]+' INT NOT NULL, ' +
+                              '  '+connection.FieldNameQuoteChars[0]+'3TEST'+connection.FieldNameQuoteChars[1]+' VARCHAR(10), ' +
+                              '  PRIMARY KEY ('+connection.FieldNameQuoteChars[0]+'2ID'+connection.FieldNameQuoteChars[0]+') ' +
+                              ')                            ');
+// Firebird/Interbase need a commit after a DDL statement. Not necessary for the other connections
+    TSQLDBConnector(DBConnector).Transaction.CommitRetaining;
+    with query do
+      begin
+      SQL.Text:='select * from FPDEV2';
+      Open;
+      Edit;
+      fieldbyname('2ID').AsInteger:=1;
+      fieldbyname('3TEST').AsString:='3test';
+      Post;
+      ApplyUpdates(0);
+      close;
+      open;
+      AssertEquals('3test',FieldByName('3TEST').AsString);
+      Edit;
+      fieldbyname('3TEST').AsString:='test3';
+      Post;
+      ApplyUpdates(0);
+>>>>>>> graemeg/cpstrnew
       open;
     except
       on E: Exception do
@@ -2369,6 +2639,7 @@ end;
 
 procedure TTestFieldTypes.TestServerFilter;
 begin
+<<<<<<< HEAD
   // Tests SQLParser and ServerFilter
   with TSQLDBConnector(DBConnector).Query do
   begin
@@ -2410,6 +2681,32 @@ begin
         SQL.Text:='select top 1 NAME from FPDEV where NAME=''TestName21''';
       else
         SQL.Text:='select NAME from FPDEV where NAME=''TestName21'' limit 1';
+=======
+  with TSQLDBConnector(DBConnector) do
+    begin
+    AssertEquals(-1,query.RowsAffected);
+    Connection.ExecuteDirect('create table FPDEV2 (         ' +
+                              '  ID INT NOT NULL            , ' +
+                              '  '+Connection.FieldNameQuoteChars[0]+'NAME-TEST'+Connection.FieldNameQuoteChars[1]+' VARCHAR(250),  ' +
+                              '  PRIMARY KEY (ID)           ' +
+                              ')                            ');
+// Firebird/Interbase need a commit after a DDL statement. Not necessary for the other connections
+    TSQLDBConnector(DBConnector).Transaction.CommitRetaining;
+    Connection.ExecuteDirect('insert into FPDEV2(ID,'+Connection.FieldNameQuoteChars[0]+'NAME-TEST'+Connection.FieldNameQuoteChars[1]+') values (1,''test1'')');
+    Query.SQL.Text := 'select * from FPDEV2';
+    Query.Open;
+    AssertEquals(1,Query.FieldByName('ID').AsInteger);
+    AssertEquals('test1',Query.FieldByName('NAME-TEST').AsString);
+    Query.Edit;
+    Query.FieldByName('NAME-TEST').AsString:='Edited';
+    Query.Post;
+    Query.ApplyUpdates;
+    Query.Close;
+    Query.Open;
+    AssertEquals(1,Query.FieldByName('ID').AsInteger);
+    AssertEquals('Edited',Query.FieldByName('NAME-TEST').AsString);
+    Query.Close;
+>>>>>>> graemeg/cpstrnew
     end;
     Open;
     CheckTrue(CanModify, SQL.Text);
@@ -2429,6 +2726,26 @@ begin
     CheckTrue(CanModify, SQL.Text);
     Close;
   end;
+end;
+
+procedure TTestFieldTypes.TestLimitQuery;
+begin
+  with TSQLDBConnector(DBConnector) do
+    begin
+    with query do
+      begin
+      if (sqlDBtype=interbase) then
+        SQL.Text:='select first 1 NAME from FPDEV where NAME=''TestName21'''
+      else
+        SQL.Text:='select NAME from FPDEV where NAME=''TestName21'' limit 1';
+      Open;
+      close;
+      ServerFilter:='ID=21';
+      ServerFiltered:=true;
+      open;
+      close;
+      end;
+    end;
 end;
 
 procedure TTestFieldTypes.TestRowsAffected;
@@ -2652,6 +2969,35 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
+=======
+procedure TTestFieldTypes.TestSQLFieldType(ADatatype : TFieldType; ASQLTypeDecl : string; ADataSize: integer; AGetSQLTextProc: TGetSQLTextProc; ACheckFieldValueProc: TCheckFieldValueProc);
+var
+  i          : byte;
+  s: string;
+begin
+  CreateTableWithFieldType(ADatatype,ASQLTypeDecl);
+  TestFieldDeclaration(ADatatype,ADataSize);
+
+  for i := 0 to testValuesCount-1 do
+    begin
+    s := AGetSQLTextProc(i);
+    TSQLDBConnector(DBConnector).Connection.ExecuteDirect('insert into FPDEV2 (FT) values (' + s + ')');
+    end;
+
+  with TSQLDBConnector(DBConnector).Query do
+    begin
+    Open;
+    for i := 0 to testValuesCount-1 do
+      begin
+      ACheckFieldValueProc(fields[0],i);
+      Next;
+      end;
+    close;
+    end;
+end;
+
+>>>>>>> graemeg/cpstrnew
 // Placed here, as long as bug 18702 is not solved
 function TestSQLClob_GetSQLText(const a: integer) : string;
 begin
@@ -2711,7 +3057,10 @@ end;
 procedure TTestFieldTypes.TestMultipleFieldPKIndexDefs;
 var ds : TSQLQuery;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   TSQLDBConnector(DBConnector).Connection.ExecuteDirect('create table FPDEV2 (' +
                               '  ID1 INT NOT NULL,           ' +

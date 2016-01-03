@@ -19,6 +19,10 @@
 *****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -29,6 +33,7 @@ const
                S_IWOTH OR S_IROTH OR
                S_IXUSR OR S_IXGRP OR S_IXOTH;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure Do_MkDir(s: rawbytestring);
 
@@ -44,9 +49,20 @@ Begin
     exit;
   If Fpmkdir(s, MODE_MKDIR)<0 Then
 >>>>>>> graemeg/cpstrnew
+=======
+// len is not passed to the *nix functions because the unix API doesn't 
+// use length safeguards for these functions. (probably because there
+// already is a length limit due to PATH_MAX)
+
+Begin
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+    exit;
+  If Fpmkdir(s, MODE_MKDIR)<0 Then
+>>>>>>> graemeg/cpstrnew
    Errno2Inoutres
 End;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 Procedure Do_RmDir(s: rawbytestring);
@@ -59,6 +75,8 @@ begin
     end;
   If Fprmdir(pchar(S))<0 Then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 Begin
   if (len=1) and (s^ = '.') then
@@ -66,10 +84,14 @@ Begin
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
   If Fprmdir(s)<0 Then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
    Errno2Inoutres
 End;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 Procedure do_ChDir(s: rawbytestring);
@@ -80,6 +102,10 @@ Begin
 =======
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 Begin
+=======
+Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+Begin
+>>>>>>> graemeg/cpstrnew
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
    exit;
   If Fpchdir(s)<0 Then

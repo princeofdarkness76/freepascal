@@ -3502,7 +3502,11 @@ wpo_cant_create_feedback_file=12019_E_Cannot create specified whole program opti
 option_logo=11023_[
 Free Pascal Compiler versi $FPCFULLVERSION [$FPCDATE] untuk $FPCCPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 Hak Cipta (c) 1993-2015 oleh Florian Klaempfl and others
+=======
+Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
+>>>>>>> graemeg/cpstrnew
 =======
 Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
 >>>>>>> graemeg/cpstrnew

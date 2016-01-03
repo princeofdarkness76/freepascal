@@ -247,9 +247,12 @@ type
      stdcall;external KernelDLL name 'GetStdHandle';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$ifdef FPC_UNICODE_RTLx}
    { command line/environment functions }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
    { command line/environment functions }
    function GetCommandLine : pchar;
      stdcall;external KernelDLL name 'GetCommandLineA';
@@ -361,12 +364,16 @@ type
      stdcall;external KernelDLL name 'SetCurrentDirectoryA';
    function GetCurrentDirectory(bufsize : longint;name : pchar) : longbool;
      stdcall;external KernelDLL name 'GetCurrentDirectoryA';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
    { Console functions needed for WriteFile fix for bug 17550 }
    function GetConsoleMode(hConsoleHandle:thandle; lpMode:LPDWORD):BOOL;
      stdcall;external KernelDLL name 'GetConsoleMode';
    function GetConsoleOutputCP : UINT;
      stdcall; external KernelDLL name 'GetConsoleOutputCP';
+<<<<<<< HEAD
 <<<<<<< HEAD
    function GetOEMCP: UINT;
      stdcall; external KernelDLL name 'GetOEMCP';
@@ -377,6 +384,9 @@ type
      stdcall; external 'oleaut32.dll' name 'SysFreeString';
    function SysReAllocStringLen(var bstr:pointer;psz: pointer;
      len:dword): Integer; stdcall;external 'oleaut32.dll' name 'SysReAllocStringLen';
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -436,7 +446,25 @@ type
       result:=nil;
       widestringmanager.Ansi2WideMoveProc(pchar(pointer(source)),StringCodePage(source),widestring(pointer(result)),length(source));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+    end;
+
+
+  Function NewWideString(Len : SizeInt) : Pointer;forward;
+
+
+  function StringToOleStr(const source : UnicodeString) : PWideChar;inline;
+    begin
+      if source<>'' then
+        begin
+          result:=NewWideString(Length(source));
+          move(source[1],result^,Length(source));
+        end
+      else
+        result:=nil;
+>>>>>>> graemeg/cpstrnew
     end;
 
 

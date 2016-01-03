@@ -52,6 +52,7 @@ interface
           m_pointer_2_procedure,m_autoderef,m_tp_procvar,m_initfinal,m_default_ansistring,
           m_out,m_default_para,m_duplicate_names,m_hintdirective,
 <<<<<<< HEAD
+<<<<<<< HEAD
           m_property,m_default_inline,m_except,m_advanced_records,m_type_helpers];
        delphiunicodemodeswitches = delphimodeswitches + [m_systemcodepage,m_default_unicodestring];
        fpcmodeswitches =
@@ -61,6 +62,8 @@ interface
        objfpcmodeswitches =
          [m_objfpc,m_fpc,m_class,m_objpas,m_result,m_string_pchar,m_nested_comment,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           m_property,m_default_inline,m_except,m_advanced_records];
        fpcmodeswitches =
          [m_fpc,m_all,m_string_pchar,m_nested_comment,m_repeat_forward,
@@ -68,6 +71,9 @@ interface
           m_property,m_default_inline];
        objfpcmodeswitches =
          [m_objfpc,m_fpc,m_all,m_class,m_objpas,m_result,m_string_pchar,m_nested_comment,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           m_repeat_forward,m_cvar_support,m_initfinal,m_out,m_default_para,m_hintdirective,
           m_property,m_default_inline,m_except];
@@ -79,6 +85,7 @@ interface
 {$endif}
        macmodeswitches =
 <<<<<<< HEAD
+<<<<<<< HEAD
          [m_mac,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_default_inline];
        isomodeswitches =
          [m_iso,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_isolike_io,
@@ -88,6 +95,11 @@ interface
          [m_extpas,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_isolike_io,
           m_isolike_program_para,
           m_isolike_mod];
+=======
+         [m_mac,m_all,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto];
+       isomodeswitches =
+         [m_iso,m_all,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto];
+>>>>>>> graemeg/cpstrnew
 =======
          [m_mac,m_all,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto];
        isomodeswitches =
@@ -127,6 +139,10 @@ interface
        CP_UTF8 = 65001;
        CP_UTF16 = 1200;
        CP_NONE  = 65535;
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 
 
        CP_UTF8 = 65001;
@@ -408,7 +424,11 @@ interface
         targetswitches : [];
         moduleswitches : [cs_extsyntax,cs_implicit_exceptions];
 <<<<<<< HEAD
+<<<<<<< HEAD
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath{$ifdef i8086},cs_force_far_calls{$endif}];
+=======
+        localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
+>>>>>>> graemeg/cpstrnew
 =======
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
 >>>>>>> graemeg/cpstrnew
@@ -505,6 +525,9 @@ interface
         optimizecputype : cpu_mips32;
         fputype : fpu_mips2;
 {$endif mips}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         asmmode : asmmode_standard;
 {$ifndef jvm}
@@ -586,13 +609,19 @@ implementation
 {$endif}
 {$ifdef mswindows}
 <<<<<<< HEAD
+<<<<<<< HEAD
       windirs,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef VER2_4}
       cwindirs,
 {$else VER2_4}
       windirs,
 {$endif VER2_4}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endif}
       comphook;
@@ -865,6 +894,7 @@ implementation
          else
            Replace(s,'$FPCTARGET',target_full_string);
 <<<<<<< HEAD
+<<<<<<< HEAD
          Replace(s,'$FPCSUBARCH',lower(cputypestr[init_settings.cputype]));
          Replace(s,'$FPCABI',lower(abiinfo[target_info.abi].name));
 {$ifdef i8086}
@@ -872,6 +902,8 @@ implementation
 {$else i8086}
          Replace(s,'$FPCMEMORYMODEL','flat');
 {$endif i8086}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef mswindows}
@@ -1435,6 +1467,7 @@ implementation
       begin
         result:=cs_ieee_errors in current_settings.localswitches;
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
 
@@ -1443,6 +1476,8 @@ implementation
         result:=
           (target_info.system in systems_dotted_function_names) and
           (target_info.abi<>abi_powerpc_elfv2);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;
@@ -1516,7 +1551,10 @@ implementation
         compile_level:=0;
         codegenerror:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         DLLsource:=false;
         paratarget:=system_none;
         paratargetasm:=as_none;
@@ -1573,6 +1611,9 @@ implementation
         iPhoneOSVersionMin:='';
 =======
         LinkTypeSetExplicitly:=false;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         { memory sizes, will be overridden by parameter or default for target
           in options or init_parser }

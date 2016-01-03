@@ -115,8 +115,13 @@ const
         'Identifier removed',                  { EIDRM }
         'No message of desired type',          { ENOMSG }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	'Not supported'                        { ENOTSUP }
 //      'Must be equal to largest errno'       { ELAST }
+=======
+	'Not supported',                       { ENOTSUP }
+//	'Must be equal to largest errno'       { ELAST }
+>>>>>>> graemeg/cpstrnew
 =======
 	'Not supported',                       { ENOTSUP }
 //	'Must be equal to largest errno'       { ELAST }

@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 PTCPas 0.99.14
+=======
+PTCPas 0.99.11
+>>>>>>> graemeg/cpstrnew
 =======
 PTCPas 0.99.11
 >>>>>>> graemeg/cpstrnew
@@ -26,7 +30,12 @@ PTCPas initially started out as a complete Object Pascal translation of the
 OpenPTC C++ library. Since then, OpenPTC development has stalled and PTCPas
 lives on as a fully independent Object Pascal project.
 
+PTCPas initially started out as a complete Object Pascal translation of the
+OpenPTC C++ library. Since then, OpenPTC development has stalled and PTCPas
+lives on as a fully independent Object Pascal project.
+
 Supported consoles:
+<<<<<<< HEAD
 <<<<<<< HEAD
   DirectX 3+ (should work on all x86 and x64 Windows versions since Windows 95,
               except Windows CE. This currently means 95/98/ME/NT4/2000/XP/2003/
@@ -36,6 +45,8 @@ Supported consoles:
               without any DirectX version by default, so you may have to install
               it.)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   DirectX 3+ (should work on all x86 Windows versions since Windows 95, except
               Windows CE. This currently means 95/98/ME/NT4/2000/XP/2003/Vista.
               It is compatible with the x64 editions of XP and 2003 (although
@@ -43,13 +54,21 @@ Supported consoles:
               need SP3 or later. Also some very ancient versions of Windows 95
               do not have any DirectX preinstalled, so it has to be installed
               separately.)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   Win32 GDI (no fullscreen support. Slower than DirectX, but maybe more
              compatible.)
   X11 (on linux and other unix-like OSes, supports XRandR, XF86VidMode, XShm
        and xf86dga extensions)
 <<<<<<< HEAD
+<<<<<<< HEAD
   Vesa 1.0+ (DOS. Supports LFB and banked video memory access)
+=======
+  Vesa 1.0+ (DOS. Supports LFB and banked video memory access. Video pages not
+             yet supported)
+>>>>>>> graemeg/cpstrnew
 =======
   Vesa 1.0+ (DOS. Supports LFB and banked video memory access. Video pages not
              yet supported)

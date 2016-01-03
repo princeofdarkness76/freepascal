@@ -63,15 +63,21 @@ type
     _tabState: NSTabState;
     _lastKeyView: NSView;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tviFlags: record
       case byte of
        0: (_anonbitfield_NSTabViewItem0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __tviFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTabViewItem0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         hasCustomColor: 0..1;
         labelSizeIsValid: 0..1;
@@ -79,7 +85,10 @@ type
         isTabDisabled: 0..1;
         RESERVED: 0..((1 shl 28)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

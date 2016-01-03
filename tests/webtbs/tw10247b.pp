@@ -4,7 +4,10 @@ type
   public
     type
 <<<<<<< HEAD
+<<<<<<< HEAD
       TAlias = T;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       PT = T;

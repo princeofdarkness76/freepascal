@@ -4,7 +4,11 @@
      Contains:   Property constants for AudioUnits
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 2001-2008 by Apple, Inc., all rights reserved.
+=======
+     Copyright:  (c) 2001-2008 by Apple Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
      Copyright:  (c) 2001-2008 by Apple Inc., all rights reserved.
 >>>>>>> graemeg/cpstrnew
@@ -13,16 +17,22 @@
                  the World Wide Web:
  
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
 {  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {
@@ -80,11 +90,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -106,11 +119,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -123,11 +142,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -140,7 +165,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -153,7 +181,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -163,6 +194,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -174,6 +206,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -186,11 +223,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -209,6 +250,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -329,6 +374,7 @@ uses MacTypes,AUComponent,CoreAudioTypes,MIDIServices,CFBase,CFURL;
 											elementID used with this scope is the unique note ID returned from
 											a started note (see MusicDeviceStartNote)
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@constant		kAudioUnitScope_Layer	A context which functions as a layer within a part and allows
 											grouped control of LayerItem-scope parameters.
 											An example is the percussive attack layer for an electric organ instrument
@@ -337,11 +383,14 @@ uses MacTypes,AUComponent,CoreAudioTypes,MIDIServices,CFBase,CFURL;
 											examples of this.
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 }
 const
 	kAudioUnitScope_Global = 0;
 	kAudioUnitScope_Input = 1;
 	kAudioUnitScope_Output = 2;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	kAudioUnitScope_Group = 3;
 	kAudioUnitScope_Part = 4;
@@ -349,6 +398,8 @@ const
 	kAudioUnitScope_Layer = 6;
 	kAudioUnitScope_LayerItem = 7;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 //#if !TARGET_OS_IPHONE;
 {$ifc not TARGET_OS_IPHONE}
 	kAudioUnitScope_Group = 3;
@@ -356,6 +407,9 @@ const
 	kAudioUnitScope_Note = 5;
 //#endif;
 {$endc}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -369,6 +423,7 @@ const
 	@constant		kAudioUnitProperty_ClassInfo
 						Scope:			Global (or Part for a part scope preset)
 						Value Type:		CFDictionaryRef
+<<<<<<< HEAD
 <<<<<<< HEAD
 						Access:			read/write
 						
@@ -387,10 +442,15 @@ const
 						</code>
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 						Access:			Read / Write
 						
 						The complete state of an audio unit if on global scope. An audio unit that supports part scope, may also support presets on the part scope
 						that apply to individual parts
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 						
 	@constant		kAudioUnitProperty_MakeConnection
@@ -402,7 +462,11 @@ const
 						Scope:			Input / Output
 						Value Type:		Float64
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -413,7 +477,11 @@ const
 						Access:			Read
 						
 <<<<<<< HEAD
+<<<<<<< HEAD
 						The list of parameter IDs on the specified scope
+=======
+						The list of parameter IDs on the specifed scope
+>>>>>>> graemeg/cpstrnew
 =======
 						The list of parameter IDs on the specifed scope
 >>>>>>> graemeg/cpstrnew
@@ -433,7 +501,11 @@ const
 						The caller provides the selector for a given audio unit API, and retrieves a function pointer for that selector. For instance,
 						this enables the caller to retrieve the function pointer for the AudioUnitRender call, so that call can be made directly
 <<<<<<< HEAD
+<<<<<<< HEAD
 						through to the audio unit to avoid the overhead of the ComponentMgr's dispatch.
+=======
+						through to the audio unit to avoid the overhead of the Component Mgr's dispatch.
+>>>>>>> graemeg/cpstrnew
 =======
 						through to the audio unit to avoid the overhead of the Component Mgr's dispatch.
 >>>>>>> graemeg/cpstrnew
@@ -449,7 +521,11 @@ const
 						Scope:			Input / Output
 						Value Type:		AudioStreamBasicDescription
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -461,7 +537,11 @@ const
 						Scope:			Any (though Global scope will always have and element count of 1)
 						Value Type:		UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -497,7 +577,11 @@ const
 						Scope:			Global
 						Value Type:		UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -575,7 +659,11 @@ const
 						Scope:			Global
 						Value Type:		UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -610,7 +698,11 @@ const
 						Scope:			Global
 						Value Type:		CFString
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -622,7 +714,11 @@ const
 						Scope:			Global
 						Value Type:		UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -648,7 +744,11 @@ const
 						Scope:			Global
 						Value Type:		UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -671,7 +771,11 @@ const
 
 						Publishes the audio unit's custom Cocoa NSViews. The Host can determine how big this structure is by 
 <<<<<<< HEAD
+<<<<<<< HEAD
 						querying the size of the property (i.e., How many alternate UI classes there are for the unit)
+=======
+						querying the size of the property (ie. How many alternate UI classes there are for the unit)
+>>>>>>> graemeg/cpstrnew
 =======
 						querying the size of the property (ie. How many alternate UI classes there are for the unit)
 >>>>>>> graemeg/cpstrnew
@@ -715,7 +819,11 @@ const
 						the host suggesting a length (number of characters). If the unit returns a longer
 						name than the host requests, that name maybe truncated to the requested characters in display.
 <<<<<<< HEAD
+<<<<<<< HEAD
 						The unit could return a shorter name than requested as well. The unit returns a CFString
+=======
+						The unit could return a shorter name than requeseted as well. The unit returns a CFString
+>>>>>>> graemeg/cpstrnew
 =======
 						The unit could return a shorter name than requeseted as well. The unit returns a CFString
 >>>>>>> graemeg/cpstrnew
@@ -746,7 +854,11 @@ const
 						Scope:				Global
 						Value Type:			UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:				read/write
+=======
+						Access:				Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:				Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -852,7 +964,11 @@ const
 							and the device's safety offset and latency
 							
 <<<<<<< HEAD
+<<<<<<< HEAD
 							The previous audio unit's (connected to this last unit) output presentation latency will be that 
+=======
+							The previous audio unit's (connected to this last unit) output presenation latency will be that 
+>>>>>>> graemeg/cpstrnew
 =======
 							The previous audio unit's (connected to this last unit) output presenation latency will be that 
 >>>>>>> graemeg/cpstrnew
@@ -969,7 +1085,11 @@ const
 						This property allows a host application to determine which input samples correspond to a sample 
 						in the output buffer. It is useful only for audio units that do time-stretching, such as the 
 <<<<<<< HEAD
+<<<<<<< HEAD
 						AUVarispeed and AUTimePitch units, where the relationship between input and output samples is 
+=======
+						AUVaripseed and AUTimePitch units, where the relationship between input and output samples is 
+>>>>>>> graemeg/cpstrnew
 =======
 						AUVaripseed and AUTimePitch units, where the relationship between input and output samples is 
 >>>>>>> graemeg/cpstrnew
@@ -1027,6 +1147,7 @@ const
 						If fewer than kNumberOfResponseFrequencies are needed, then the first unused bin should be marked with 
 						a negative frequency.
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	@constant		kAudioUnitProperty_ParameterHistoryInfo
 						Scope:			Global
@@ -1035,6 +1156,8 @@ const
 						
 						For parameters which have kAudioUnitParameterFlag_PlotHistory set, getting this property fills out the 
 						AudioUnitParameterHistoryInfo struct containing the recommended update rate and history duration.
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  }	
@@ -1046,7 +1169,10 @@ const
 	kAudioUnitProperty_ParameterList = 3;
 	kAudioUnitProperty_ParameterInfo = 4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitProperty_CPULoad = 6;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	kAudioUnitProperty_StreamFormat = 8;
@@ -1055,7 +1181,10 @@ const
 	kAudioUnitProperty_SupportedNumChannels = 13;
 	kAudioUnitProperty_MaximumFramesPerSlice = 14;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitProperty_ParameterValueStrings = 16;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	kAudioUnitProperty_AudioChannelLayout = 19;
@@ -1071,7 +1200,10 @@ const
 	kAudioUnitProperty_PresentPreset = 36;
 	kAudioUnitProperty_ShouldAllocateBuffer = 51;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitProperty_ParameterHistoryInfo = 53;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1079,7 +1211,13 @@ const
 {$ifc not TARGET_OS_IPHONE}
 	kAudioUnitProperty_FastDispatch = 5;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitProperty_SetExternalBuffer = 15;
+=======
+	kAudioUnitProperty_CPULoad = 6;
+	kAudioUnitProperty_SetExternalBuffer = 15;
+	kAudioUnitProperty_ParameterValueStrings = 16;
+>>>>>>> graemeg/cpstrnew
 =======
 	kAudioUnitProperty_CPULoad = 6;
 	kAudioUnitProperty_SetExternalBuffer = 15;
@@ -1269,6 +1407,7 @@ type
 	@typedef		HostCallback_GetBeatAndTempo
 	@abstract		Retrieve information about the current beat and/or tempo
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		If the host app has set this callback, then the audio unit can use this to get the current beat and tempo as they relate to the first sample in the render buffer. The audio unit can call this callback only from within the audio unit render call (otherwise the host is unable to provide information accurately to the audio unit as the information obtained is relate to the current AudioUnitRender call). If the host cannot provide the requested information, it will return kAudioUnitErr_CannotDoInCurrentContext.
 	
 			The AudioUnit can provide NULL for any of the requested parameters (except for inHostUserData) if it is not interested in that particular piece of information
@@ -1278,12 +1417,15 @@ type
 	@param			outCurrentTempo			The current tempo
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 }
 type
 	HostCallback_GetBeatAndTempo = function( inHostUserData: UnivPtr; var outCurrentBeat: Float64; var outCurrentTempo: Float64 ): OSStatus;
 
 {!
 	@typedef		HostCallback_GetMusicalTimeLocation
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@abstract		Retrieve information about the musical time state of the host
 	@discussion		If the host app has set this callback, then the audio unit can use this to obtain information about the state of musical time in the host. The audio unit can call this callback only from within the audio unit render call (otherwise the host is unable to provide information accurately to the audio unit as the information obtained is relate to the current AudioUnitRender call). If the host cannot provide the requested information, it will return kAudioUnitErr_CannotDoInCurrentContext.
@@ -1299,12 +1441,16 @@ type
 =======
 	@abstract		Retrieve information about the general musical time state of the host
 >>>>>>> graemeg/cpstrnew
+=======
+	@abstract		Retrieve information about the general musical time state of the host
+>>>>>>> graemeg/cpstrnew
 }
 type
 	HostCallback_GetMusicalTimeLocation = function( inHostUserData: UnivPtr; var outDeltaSampleOffsetToNextBeat: UInt32; var outTimeSig_Numerator: Float32; var outTimeSig_Denominator: UInt32; var outCurrentMeasureDownBeat: Float64 ): OSStatus;
 
 {!
 	@typedef		HostCallback_GetTransportState
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@abstract		Retrieve information about the time line's (or transport) state of the host. 
 	@discussion		If the host app has set this callback, then the audio unit can use this to obtain information about the transport state of the host's time line. The audio unit can call this callback only from within the audio unit render call (otherwise the host is unable to provide information accurately to the audio unit as the information obtained is relate to the current AudioUnitRender call. If the host cannot provide the requested information, it will return kAudioUnitErr_CannotDoInCurrentContext.
@@ -1319,6 +1465,9 @@ type
 	@param			outCycleStartBeat				If cycling is true, the start beat of the cycle or loop point in the host's transport
 	@param			outCycleEndBeat					If cycling is true, the end beat of the cycle or loop point in the host's transport
 	
+=======
+	@abstract		Retrieve information about the time line's (or transport) state of the host
+>>>>>>> graemeg/cpstrnew
 =======
 	@abstract		Retrieve information about the time line's (or transport) state of the host
 >>>>>>> graemeg/cpstrnew
@@ -1412,6 +1561,7 @@ type
 {$endc} { not TARGET_OS_IPHONE }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {!
 	@struct			AudioUnitParameterHistoryInfo
 	@abstract		This structure contains the suggested update rate and history duration for parameters which have the kAudioUnitParameterFlag_PlotHistory flag set.
@@ -1428,6 +1578,8 @@ type
 	end;
 	AudioUnitParameterHistoryInfoPtr = ^AudioUnitParameterHistoryInfo;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 //=====================================================================================================================
@@ -1485,7 +1637,11 @@ type
 						beats per minute, ie tempo
     @constant		kAudioUnitParameterUnit_Beats
 <<<<<<< HEAD
+<<<<<<< HEAD
 						time relative to tempo, i.e., 1.0 at 120 BPM would equal 1/2 a second
+=======
+						time relative to tempo, ie. 1.0 at 120 BPM would equal 1/2 a second
+>>>>>>> graemeg/cpstrnew
 =======
 						time relative to tempo, ie. 1.0 at 120 BPM would equal 1/2 a second
 >>>>>>> graemeg/cpstrnew
@@ -1556,7 +1712,11 @@ type
 						to communicate this distinction in behavior.
 						Thus, if an audio unit will (or could) generate a name dynamically, it should set this flag in 
 <<<<<<< HEAD
+<<<<<<< HEAD
 						the parameter's info. The host should check for this flag, and if present, release the parameter
+=======
+						the paramter's info.. The host should check for this flag, and if present, release the parameter
+>>>>>>> graemeg/cpstrnew
 =======
 						the paramter's info.. The host should check for this flag, and if present, release the parameter
 >>>>>>> graemeg/cpstrnew
@@ -1581,7 +1741,10 @@ type
 	@discussion		Bit positions 18, 17, and 16 are set aside for display scales. Bit 19 is reserved.
 	@constant		kAudioUnitParameterFlag_CFNameRelease
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@constant		kAudioUnitParameterFlag_PlotHistory
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@constant		kAudioUnitParameterFlag_MeterReadOnly
@@ -1607,7 +1770,10 @@ type
 const
 	kAudioUnitParameterFlag_CFNameRelease = 1 shl 4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitParameterFlag_PlotHistory = 1 shl 14;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	kAudioUnitParameterFlag_MeterReadOnly = 1 shl 15;
@@ -1702,6 +1868,7 @@ type
 {$endc} { not TARGET_OS_IPHONE}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //	These strings are used as keys to the dictionary of configuration info returned by
 //	AudioComponentGetConfiguationInfo(). Informaton about them is presented inline with the
 //	declaration.
@@ -1743,6 +1910,8 @@ const
 const
 	kAudioUnitConfigurationInfo_InitialOutputs = 'InitialOutputs';
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 //=====================================================================================================================
@@ -1823,7 +1992,11 @@ const
 						Access:				read/write
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 						This property allows setting and retrieving the current mapping state between 
+=======
+						This property allows setting and retreiving the current mapping state between 
+>>>>>>> graemeg/cpstrnew
 =======
 						This property allows setting and retreiving the current mapping state between 
 >>>>>>> graemeg/cpstrnew
@@ -2349,7 +2522,11 @@ const
 	@discussion			Scope:			Input/Output
 						Value Type:		Array of UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -2385,9 +2562,12 @@ const
 							obtained by calling the AudioUnitRender function.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 							Note that the inputProc will always receive a NULL AudioBufferList in ioData.
 							You must call AudioUnitRender in order to obtain the audio.
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@constant		kAudioOutputUnitProperty_HasIO
@@ -2432,6 +2612,7 @@ type
 	AudioOutputUnitStartAtTimeParamsPtr = ^AudioOutputUnitStartAtTimeParams;
 
 //=====================================================================================================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 //#pragma mark - AUVoiceProcessing unit
 {!
@@ -2495,6 +2676,8 @@ const
 //=====================================================================================================================
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 //#pragma mark - Mixers
 {!
     @enum           Apple Mixer Property IDs
@@ -2509,12 +2692,18 @@ const
 
 	@constant		kAudioUnitProperty_MatrixLevels
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion			This property can be used for both the AUMatrixMixer and AUMultiChannelMixer.
 	
 						AUMatrixMixer
 						Scope:			Global
 						Value Type:		Float32 array
 						Access:			read/write
+=======
+	@discussion			Scope:			Global
+						Value Type:		Float32 array
+						Access:			Read
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion			Scope:			Global
 						Value Type:		Float32 array
@@ -2532,6 +2721,7 @@ const
 						Cross point volumes are stored at their expected locations ([0][1], etc)
 						
 <<<<<<< HEAD
+<<<<<<< HEAD
 						AUMultiChannelMixer
 						Scope:			Input
 						Value Type:		Float32 array
@@ -2542,6 +2732,8 @@ const
 						The size required is the number of (input channels) * (output channels).
 						The matrix stores only the crosspoint gains, there are no overall input or output channel gains.
 						
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@constant		kAudioUnitProperty_MatrixDimensions
@@ -2603,7 +2795,11 @@ type
 	@discussion			Scope:			Input
 						Value Type:		UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -2621,7 +2817,11 @@ type
 	@discussion			Scope:			Input
 						Value Type:		UInt32
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Access:			read/write
+=======
+						Access:			Read / Write
+>>>>>>> graemeg/cpstrnew
 =======
 						Access:			Read / Write
 >>>>>>> graemeg/cpstrnew
@@ -2719,7 +2919,10 @@ const
 
 //=====================================================================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 //#pragma mark -
 //#pragma mark Desktop Apple Specific Properties
 
@@ -2815,6 +3018,9 @@ const
 	kReverbRoomType_LargeHall2 = 12;
 
 //=====================================================================================================================
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 //#pragma mark - AUScheduledSoundPlayer
 {!
@@ -3011,7 +3217,11 @@ type
 					using the AudioFile API's (see AudioToolbox/AudioFile.h), and pass their
 					AudioFileIDs to the unit by setting the kAudioUnitProperty_ScheduledFileIDs
 <<<<<<< HEAD
+<<<<<<< HEAD
 					property. This property must not be set during playback. The audio files must
+=======
+					propery. This property must not be set during playback. The audio files must
+>>>>>>> graemeg/cpstrnew
 =======
 					propery. This property must not be set during playback. The audio files must
 >>>>>>> graemeg/cpstrnew
@@ -3036,7 +3246,11 @@ type
 					initial file regions to be played and before starting playback. This SetProperty call
 					will begin reading the audio files and not return until the number of frames
 <<<<<<< HEAD
+<<<<<<< HEAD
 					specified by the property value have been read.
+=======
+					specifed by the property value have been read.
+>>>>>>> graemeg/cpstrnew
 =======
 					specifed by the property value have been read.
 >>>>>>> graemeg/cpstrnew
@@ -3153,6 +3367,7 @@ type
 	end;
 
 //=====================================================================================================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 //#pragma mark -
 //#pragma mark Desktop Apple Specific Properties
@@ -3353,6 +3568,8 @@ const
 //=====================================================================================================================
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 //#pragma mark - AUDeferredRenderer
 {!
 	@enum			AUDeferredRenderer
@@ -3412,6 +3629,7 @@ const
 	@enum			AUNetReceive
 	@constant		kAUNetReceiveProperty_Hostname
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion			Scope: Global
 						Value Type: CFStringRef
 						Access:
@@ -3428,6 +3646,8 @@ const
 						The password to send to the sender. Leave unset or set to the empty string for no password.
 						For GetProperty, the returned CFStringRef is a copy and therefore must be released by the caller.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@discussion			Scope:
 						Value Type:
 						Access:
@@ -3436,6 +3656,9 @@ const
 	@discussion			Scope:
 						Value Type:
 						Access:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 const
@@ -3447,6 +3670,7 @@ const
 {!
 	@enum			AUNetSend
 	@constant		kAUNetSendProperty_PortNum
+<<<<<<< HEAD
 <<<<<<< HEAD
 	@discussion			Scope: Global
 						Value Type: UInt32
@@ -3492,6 +3716,8 @@ const
 						For GetProperty, the returned CFStringRef is a copy and therefore must be released by the caller.
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	@discussion			Scope:
 						Value Type:
 						Access:
@@ -3520,6 +3746,9 @@ const
 	@discussion			Scope:
 						Value Type:
 						Access:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 const
@@ -3560,7 +3789,11 @@ const
 	@discussion			40 kilobits per second per channel
 	@constant		kAUNetSendPresetFormat_AAC_32kbpspc
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion			32 kilobits per second per channel
+=======
+	@discussion			kilobits per second per channel
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion			kilobits per second per channel
 >>>>>>> graemeg/cpstrnew
@@ -3612,7 +3845,11 @@ type
 
 	AUNumVersion = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Numeric version part of 'vers' resource accessible in little endian format }
+=======
+{ Numeric version part of 'vers' resource accessable in little endian format }
+>>>>>>> graemeg/cpstrnew
 =======
 { Numeric version part of 'vers' resource accessable in little endian format }
 >>>>>>> graemeg/cpstrnew
@@ -3706,6 +3943,7 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 	AUSamplerBankPresetData = record
 		bankURL: CFURLRef;
@@ -3716,6 +3954,8 @@ type
 	end;
 	AUSamplerBankPresetDataPtr = ^AUSamplerBankPresetData;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 //#endif !TARGET_OS_IPHONE

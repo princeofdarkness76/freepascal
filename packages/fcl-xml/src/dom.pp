@@ -111,6 +111,9 @@ type
   TNodePool = class;
   PNodePoolArray = ^TNodePoolArray;
   TNodePoolArray = array[0..MaxInt div sizeof(Pointer)-1] of TNodePool;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {$ifndef fpc}
@@ -231,7 +234,10 @@ type
     function GetOwnerDocument: TDOMDocument; virtual;
     function GetBaseURI: DOMString;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure SetReadOnly(Value: Boolean);
 >>>>>>> graemeg/cpstrnew
     procedure Changing;
@@ -281,7 +287,10 @@ type
     function FindNode(const ANodeName: DOMString): TDOMNode; virtual;
     function CompareName(const name: DOMString): Integer; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetReadOnly(Value: Boolean);    
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     property Flags: TNodeFlags read FFlags;
@@ -300,6 +309,9 @@ type
     FFirstChild: TDOMNode;
 =======
     FFirstChild, FLastChild: TDOMNode;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     FChildNodes: TDOMNodeList;
     function GetFirstChild: TDOMNode; override;
@@ -331,8 +343,11 @@ type
     property InputEncoding: DOMString read FInputEncoding;
     property XMLEncoding: DOMString read FXMLEncoding;
 <<<<<<< HEAD
+<<<<<<< HEAD
     // extension
     procedure SetHeaderData(aXmlVersion: TXMLVersion; const aXmlEncoding: DOMString);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -479,9 +494,12 @@ type
     FMaxPoolSize: Integer;
     FPools: PNodePoolArray;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FXmlStandalone: Boolean;
     FStdUri_xml: PHashItem;
     FStdUri_xmlns: PHashItem;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function GetDocumentElement: TDOMElement;
@@ -498,8 +516,11 @@ type
     function Alloc(AClass: TDOMNodeClass): TDOMNode;
     procedure SetXMLVersion(const aValue: DOMString); virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetXMLStandalone(aValue: Boolean); virtual;
     function ValidateQName(const nsUri, qName: DOMString; out nsidx: PHashItem): Integer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   public
@@ -524,6 +545,10 @@ type
     function CreateAttribute(const name: DOMString): TDOMAttr;
     function CreateAttributeBuf(Buf: DOMPChar; Length: Integer): TDOMAttr;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    function CreateAttributeDef(Buf: DOMPChar; Length: Integer): TDOMAttrDef; deprecated;
+>>>>>>> graemeg/cpstrnew
 =======
     function CreateAttributeDef(Buf: DOMPChar; Length: Integer): TDOMAttrDef; deprecated;
 >>>>>>> graemeg/cpstrnew
@@ -543,15 +568,21 @@ type
     property documentURI: DOMString read FURI write FURI;
     property XMLVersion: DOMString read GetXMLVersion write SetXMLVersion;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property XMLStandalone: Boolean read FXmlStandalone write SetXmlStandalone;
     // Extensions to DOM interface:
     constructor Create; virtual;
     destructor Destroy; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     // Extensions to DOM interface:
     constructor Create; virtual;
     destructor Destroy; override;
     function AddID(Attr: TDOMAttr): Boolean; deprecated;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function CloneNode(deep: Boolean): TDOMNode; overload; override;
     property Names: THashTable read FNames;
@@ -562,7 +593,10 @@ type
   protected
     procedure SetXMLVersion(const aValue: DOMString); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetXMLStandalone(aValue: Boolean); override;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   public
@@ -575,6 +609,11 @@ type
       TDOMProcessingInstruction; override;
     function CreateEntityReference(const name: DOMString): TDOMEntityReference; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    // non-compliant symbol, superseded by XMLEncoding, to be phased out
+    property Encoding: DOMString read FXMLEncoding write FXMLEncoding; deprecated;
+>>>>>>> graemeg/cpstrnew
 =======
     // non-compliant symbol, superseded by XMLEncoding, to be phased out
     property Encoding: DOMString read FXMLEncoding write FXMLEncoding; deprecated;
@@ -744,8 +783,11 @@ type
     property SystemID: DOMString read GetSystemID;
     property InternalSubset: DOMString read GetInternalSubset;
 <<<<<<< HEAD
+<<<<<<< HEAD
   // extension
     property Model: TDTDModel read FModel;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -759,7 +801,10 @@ type
   protected
     FDecl: TNotationDecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FBaseURI: DOMString;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function GetNodeType: Integer; override;
@@ -781,7 +826,10 @@ type
   protected
     FDecl: TEntityDecl;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FBaseURI: DOMString;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function GetNodeType: Integer; override;
@@ -890,6 +938,9 @@ const
 
 // temporary until things are settled
 function LoadAttribute(doc: TDOMDocument; src: PNodeData): TDOMAttr;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 // =======================================================
@@ -1265,7 +1316,11 @@ begin
       parent := parent.ParentNode;
     Result := TDOMElement(parent);
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
+=======
+  end;  
+>>>>>>> graemeg/cpstrnew
 =======
   end;  
 >>>>>>> graemeg/cpstrnew
@@ -1306,7 +1361,11 @@ begin
       end
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
+=======
+  end;  
+>>>>>>> graemeg/cpstrnew
 =======
   end;  
 >>>>>>> graemeg/cpstrnew
@@ -1322,6 +1381,7 @@ begin
     result := TDOMElement(Self).InternalLookupPrefix(nsURI, TDOMElement(Self))
   else
     result := GetAncestorElement(Self).LookupPrefix(nsURI);
+<<<<<<< HEAD
 end;
 
 function TDOMNode.IsDefaultNamespace(const nsURI: DOMString): Boolean;
@@ -1424,6 +1484,15 @@ begin
         end;
       end
 =======
+=======
+end;
+
+function TDOMNode.IsDefaultNamespace(const nsURI: DOMString): Boolean;
+var
+  Attr: TDOMAttr;
+  Map: TDOMNamedNodeMap;
+  I: Integer;
+>>>>>>> graemeg/cpstrnew
 begin
   Result := False;
   if Self = nil then
@@ -1463,6 +1532,9 @@ begin
         result := ParentNode.GetBaseURI
       else
         result := OwnerDocument.DocumentURI;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   else
     result := '';
@@ -1651,6 +1723,9 @@ begin
 =======
     OldChild.FNextSibling.FPreviousSibling := OldChild.FPreviousSibling;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   // Make sure removed child does not contain references to nowhere
   OldChild.FPreviousSibling := nil;
@@ -1660,6 +1735,7 @@ begin
 end;
 
 procedure TDOMNode_WithChildren.InternalAppend(NewChild: TDOMNode);
+<<<<<<< HEAD
 <<<<<<< HEAD
 var
   Tmp: TDOMNode;
@@ -1677,6 +1753,8 @@ begin
   end;
   FFirstChild.FPreviousSibling := NewChild;   { becomes our last child }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   if Assigned(FFirstChild) then
   begin
@@ -1685,6 +1763,9 @@ begin
   end else
     FFirstChild := NewChild;
   FLastChild := NewChild;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   NewChild.FParentNode := Self;
 end;
@@ -2274,6 +2355,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDOMNode_TopLevel.SetHeaderData(aXmlVersion: TXMLVersion; const aXmlEncoding: DOMString);
 begin
   if aXmlVersion <> xmlVersionUnknown then
@@ -2281,6 +2363,8 @@ begin
   FXMLEncoding := aXmlEncoding;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 // -------------------------------------------------------
@@ -2388,8 +2472,11 @@ begin
   FNamespaces[2] := stduri_xmlns;
   FEmptyNode := TDOMElement.Create(Self);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FStdUri_xml := FNames.FindOrAdd(stduri_xml);
   FStdUri_xmlns := FNames.FindOrAdd(stduri_xmlns);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -2422,7 +2509,10 @@ begin
   Clone.FXMLEncoding := FXMLEncoding;
   Clone.FXMLVersion := FXMLVersion;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Clone.FXMLStandalone := FXMLStandalone;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Clone.FURI := FURI;
@@ -2569,7 +2659,11 @@ end;
 function TDOMDocument.CreateElement(const tagName: DOMString): TDOMElement;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not IsXmlName(tagName) then
+=======
+  if not IsXmlName(tagName, FXMLVersion = xmlVersion11) then
+>>>>>>> graemeg/cpstrnew
 =======
   if not IsXmlName(tagName, FXMLVersion = xmlVersion11) then
 >>>>>>> graemeg/cpstrnew
@@ -2641,7 +2735,11 @@ end;
 function TDOMDocument.CreateAttribute(const name: DOMString): TDOMAttr;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not IsXmlName(name) then
+=======
+  if not IsXmlName(name, FXMLVersion = xmlVersion11) then
+>>>>>>> graemeg/cpstrnew
 =======
   if not IsXmlName(name, FXMLVersion = xmlVersion11) then
 >>>>>>> graemeg/cpstrnew
@@ -2661,7 +2759,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {deprecated}
 function TDOMDocument.CreateAttributeDef(Buf: DOMPChar; Length: Integer): TDOMAttrDef;
 begin
@@ -2779,6 +2880,9 @@ begin
 =======
   idx := IndexOfNS(nsURI, True);
   PrefIdx := CheckQName(QualifiedName, idx, FXMLVersion = xmlVersion11);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if PrefIdx < 0 then
     raise EDOMError.Create(-PrefIdx, 'Document.CreateAttributeNS');
@@ -2808,6 +2912,9 @@ begin
 =======
   idx := IndexOfNS(nsURI, True);
   PrefIdx := CheckQName(QualifiedName, idx, FXMLVersion = xmlVersion11);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if PrefIdx < 0 then
     raise EDOMError.Create(-PrefIdx, 'Document.CreateElementNS');
@@ -2860,11 +2967,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TDOMDocument.SetXMLStandalone(aValue: Boolean);
 begin
   raise EDOMNotSupported.Create('DOMDocument.SetXMLStandalone');
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 constructor TXMLDocument.Create;
@@ -2885,7 +2995,11 @@ function TXMLDocument.CreateProcessingInstruction(const target,
   data: DOMString): TDOMProcessingInstruction;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not IsXmlName(target) then
+=======
+  if not IsXmlName(target, FXMLVersion = xmlVersion11) then
+>>>>>>> graemeg/cpstrnew
 =======
   if not IsXmlName(target, FXMLVersion = xmlVersion11) then
 >>>>>>> graemeg/cpstrnew
@@ -2903,7 +3017,11 @@ var
   ent: TDOMEntity;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not IsXmlName(name) then
+=======
+  if not IsXmlName(name, FXMLVersion = xmlVersion11) then
+>>>>>>> graemeg/cpstrnew
 =======
   if not IsXmlName(name, FXMLVersion = xmlVersion11) then
 >>>>>>> graemeg/cpstrnew
@@ -2930,11 +3048,14 @@ begin
   else
     raise EDOMNotSupported.Create('XMLDocument.SetXMLVersion');
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 procedure TXMLDocument.SetXMLStandalone(aValue: Boolean);
 begin
   FXmlStandalone := aValue;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -2979,7 +3100,11 @@ var
 begin
   Changing;
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not IsXmlName(Value) then
+=======
+  if not IsXmlName(Value, FOwnerDocument.FXMLVersion = xmlVersion11) then
+>>>>>>> graemeg/cpstrnew
 =======
   if not IsXmlName(Value, FOwnerDocument.FXMLVersion = xmlVersion11) then
 >>>>>>> graemeg/cpstrnew
@@ -3159,7 +3284,10 @@ end;
 
 function TDOMElement.InternalLookupPrefix(const nsURI: DOMString; Original: TDOMElement): DOMString;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   I: Integer;
   Attr: TDOMAttr;
@@ -3190,6 +3318,38 @@ begin
 end;
 
 function LoadAttribute(doc: TDOMDocument; src: PNodeData): TDOMAttr;
+<<<<<<< HEAD
+=======
+var
+  curr: PNodeData;
+begin
+  TDOMNode(result) := doc.Alloc(TDOMAttr);
+  result.Create(doc);
+  result.FNSI.QName := src^.FQName;
+  if not src^.FIsDefault then
+    Include(result.FFlags, nfSpecified);
+  if Assigned(src^.FTypeInfo) then
+    result.FDataType := TAttributeDef(src^.FTypeInfo).DataType;
+  if Assigned(src^.FNsUri) then
+    result.SetNSI(src^.FNsUri^.Key, src^.FColonPos+1);
+  if Assigned(src^.FNext) then
+  begin
+    curr := src^.FNext;
+    while Assigned(curr) do
+    begin
+      case curr^.FNodeType of
+        ntText: result.InternalAppend(doc.CreateTextNode(curr^.FValueStr));
+        ntEntityReference: result.InternalAppend(doc.CreateEntityReference(curr^.FValueStr));
+      end;
+      curr := curr^.FNext;
+    end;
+  end
+  else if src^.FValueStr <> '' then
+    result.InternalAppend(doc.CreateTextNode(src^.FValueStr));
+end;
+
+procedure TDOMElement.RestoreDefaultAttr(AttrDef: TAttributeDef);
+>>>>>>> graemeg/cpstrnew
 var
   curr: PNodeData;
 begin
@@ -3224,6 +3384,7 @@ var
   I: Integer;
   Attr: TDOMAttr;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   result := '';
   if Self = nil then
@@ -3265,6 +3426,8 @@ begin
     result.SetNSI(src^.FNsUri^.Key, src^.FColonPos+1);
   if Assigned(src^.FNext) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if nfDestroying in FOwnerDocument.FFlags then
     Exit;
   Attr := LoadAttribute(FOwnerDocument, AttrDef.Data);
@@ -3427,7 +3590,11 @@ begin
   Changing;
   idx := FOwnerDocument.IndexOfNS(nsURI, True);
 <<<<<<< HEAD
+<<<<<<< HEAD
   prefIdx := FOwnerDocument.ValidateQName(nsURI, qualifiedName, nsidx);
+=======
+  prefIdx := CheckQName(qualifiedName, idx, FOwnerDocument.FXMLVersion = xmlVersion11);
+>>>>>>> graemeg/cpstrnew
 =======
   prefIdx := CheckQName(qualifiedName, idx, FOwnerDocument.FXMLVersion = xmlVersion11);
 >>>>>>> graemeg/cpstrnew
@@ -3653,7 +3820,10 @@ begin
   node := TDOMEntity.Create(this.ownerDocument);
   node.FDecl := TEntityDecl(Entry^.Data);
 <<<<<<< HEAD
+<<<<<<< HEAD
   node.FBaseURI := node.FDecl.FURI;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   node.SetReadOnly(True);
@@ -3669,7 +3839,10 @@ begin
   node := TDOMNotation.Create(this.ownerDocument);
   node.FDecl := TNotationDecl(Entry^.Data);
 <<<<<<< HEAD
+<<<<<<< HEAD
   node.FBaseURI := node.FDecl.FURI;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   node.SetReadOnly(True);
@@ -3831,7 +4004,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { TDOMAttrDef (DEPRECATED) }
 
 function TDOMAttrDef.CloneNode(deep: Boolean; ACloneOwner: TDOMDocument): TDOMNode;

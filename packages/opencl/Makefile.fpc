@@ -1,6 +1,10 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Pascal opencl Packages
+>>>>>>> graemeg/cpstrnew
 =======
 #   Makefile.fpc for Free Pascal opencl Packages
 >>>>>>> graemeg/cpstrnew
@@ -8,6 +12,7 @@
 
 [package]
 name=opencl
+<<<<<<< HEAD
 <<<<<<< HEAD
 version=3.1.1
 
@@ -17,6 +22,8 @@ packages=rtl fpmkunit
 [install]
 fpcpackage=y
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.2.2
 
 [target]
@@ -33,11 +40,15 @@ sourcedir=src
 [install]
 fpcpackage=y
 fpcsubdir=packages
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -125,9 +136,14 @@ else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 [shared]
 build=n
 
 [rules]
 .NOTPARALLEL:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

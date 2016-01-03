@@ -17,7 +17,10 @@
 
 {$ASMMODE GAS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ifndef FPC_UNIT_HAS_STRCOPY}
 {$define FPC_UNIT_HAS_STRCOPY}

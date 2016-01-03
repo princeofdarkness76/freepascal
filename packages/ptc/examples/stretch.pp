@@ -16,7 +16,11 @@ uses
   ptc;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: string);
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
@@ -26,7 +30,12 @@ var
   pixels: PByte = nil;
   y: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
+=======
+  tmp: TPTCFormat;
+  tmp2: TPTCPalette;
+>>>>>>> graemeg/cpstrnew
 =======
   tmp: TPTCFormat;
   tmp2: TPTCPalette;
@@ -54,12 +63,15 @@ begin
     { load pixels to surface }
     {$IFDEF FPC_LITTLE_ENDIAN}
 <<<<<<< HEAD
+<<<<<<< HEAD
     format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
     {$ENDIF FPC_LITTLE_ENDIAN}
     surface.Load(pixels, width, height, width * 3, format, TPTCPaletteFactory.CreateNew);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     tmp := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     tmp := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
@@ -74,6 +86,9 @@ begin
     finally
       tmp.Free;
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   finally
     { free image pixels }
@@ -86,6 +101,7 @@ end;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   image: IPTCSurface;
@@ -93,6 +109,8 @@ var
   timer: IPTCTimer;
   area: IPTCArea;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   image: TPTCSurface = nil;
@@ -100,6 +118,9 @@ var
   timer: TPTCTimer = nil;
   area: TPTCArea = nil;
   color: TPTCColor = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   time: Double;
   zoom: Single;
@@ -194,6 +215,9 @@ begin
       image.Free;
       color.Free;
       timer.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

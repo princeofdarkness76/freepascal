@@ -60,15 +60,21 @@
     trackingState: Pointer;
     _scrollingView: id;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __mvFlags: record
       case byte of
        0: (_anonbitfield_NSMenuView0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __mvFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMenuView0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _needsSizing: 0..1;
         releasingWindow: 0..1;
@@ -84,7 +90,10 @@
         drawCenter: 0..1;
         RESERVED: 0..((1 shl 5)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

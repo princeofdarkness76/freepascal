@@ -24,7 +24,11 @@ unit dw_XML;
 interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses DOM, PasTree, dGlobals, dwriter, xmlWrite, SysUtils, Classes;
+=======
+uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
+>>>>>>> graemeg/cpstrnew
 =======
 uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
 >>>>>>> graemeg/cpstrnew
@@ -599,6 +603,9 @@ var
   doc: TXMLDocument;
   i: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   if Engine.Output <> '' then
     Engine.Output := IncludeTrailingBackSlash(Engine.Output);
@@ -609,6 +616,7 @@ begin
     WriteXMLFile(doc, Engine.Output + TPasModule(Package.Modules[i]).Name + '.xml' );
     doc.Free;
   end;
+<<<<<<< HEAD
 end;
 
 class procedure TXMLWriter.Usage(List: TStrings);
@@ -634,6 +642,8 @@ begin
     WriteXMLFile(doc, Engine.Output + TPasModule(Package.Modules[i]).Name + '.xml' );
     doc.Free;
   end;
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

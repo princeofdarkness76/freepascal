@@ -39,6 +39,9 @@ units_openbsd=cairoxlib
 units_solaris=cairoxlib
 units_darwin=cairoxlib
 units_iphonesim=cairoxlib
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [install]

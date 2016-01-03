@@ -5,9 +5,12 @@
                  The contents of this header file are deprecated.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1989-2011 by Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved.
@@ -19,6 +22,9 @@
  
 }
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -75,11 +81,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -98,6 +107,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -124,6 +134,20 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -141,13 +165,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -236,6 +264,39 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -275,11 +336,18 @@ interface
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+
+{$ALIGN POWER}
+
+{$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$ALIGN POWER}
 
@@ -354,12 +422,16 @@ const
  * define DEBUGLEVEL
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
  *  The options parameter to DebugAssert and DEBUGASSERTMSG is currently reserved (must be zero).
  }
 const
 	DEBUG_NO_OPTIONS = 0;
+<<<<<<< HEAD
 
 {
 =======
@@ -474,6 +546,80 @@ const
 
 {
 >>>>>>> graemeg/cpstrnew
+=======
+
+{
+ *  DEBUGASSERTMSG()
+ *
+ *  Summary:
+ *    All error reporting is routed through this macro, which calls the system
+ *    routine DebugAssert(). If you wish to use your own assertion break
+ *    routine, you can override DEBUGASSERTMSG by defining it before including
+ *    this file.
+ *
+ *  Parameters:
+ *
+ *    componentSignature:
+ *      The unique signature of component causing the assertion.
+ *    
+ *    options:
+ *      reserved.
+ *    
+ *    assertionString:
+ *      A pointer to a string constant containing the assertion.
+ *      This must be a string constant (and not a string variable or
+ *      NULL) because the Proeprocessor concatenates it with other
+ *      string constants
+ *    
+ *    exceptionLabelString:
+ *      A pointer to a string containing the exceptionLabel, or NULL.
+ *    
+ *    errorString:
+ *      A pointer to the error string, or NULL. DEBUGASSERTMSG macros
+ *      must not attempt to concatenate this string with constant
+ *      character strings.
+ *    
+ *    fileName:
+ *      A pointer to the fileName or pathname (generated by the
+ *      preprocessor __FILE__ identifier), or NULL.
+ *    
+ *    lineNumber:
+ *      The line number in the file (generated by the preprocessor
+ *      __LINE__ identifier), or 0 (zero).
+ *    
+ *    value:
+ *      A value associated with the assertion, or NULL.
+ }
+
+{
+ *  Define the three inputs to AssertMacros.h
+ }
+
+{
+ *  Include AssertMacros.h where all of the check, verify, and require macros are defined
+ }
+{
+ *  The following check, verify, and require macros assert that TaskLevel is 0.
+ }
+
+{
+ *  You can use DPRINTF as a dprintf which goes away in production builds.
+ *  DPRINTF is not supported by Carbon because dprintf
+ *  is not supported by Carbon.
+ *
+ *  To use it, double-parenthesize the argument - i.e., use:
+ *
+ *      DPRINTF(("formatString %d", 5 ));
+ *
+ *  This is sadly necessary because a macro can not have a variable number
+ *  of arguments.
+ *
+ *  DPRINTF is defined only if it is not already defined to
+ *  prevent conflicts with developer code.
+ }
+
+{
+>>>>>>> graemeg/cpstrnew
  *  kBlessedBusErrorBait is an address that will never be mapped by
  *  Mac OS 8 or 9. It is close to the middle of the 64K range from 0x68F10000
  *  to 0x68F1FFFF that is unmapped and cannot be accessed without causing an
@@ -537,7 +683,11 @@ const
  }
 procedure DebugAssert( componentSignature: OSType; options: UInt32; assertionString: ConstCStringPtr; exceptionLabelString: ConstCStringPtr; errorString: ConstCStringPtr; fileName: ConstCStringPtr; lineNumber: SIGNEDLONG; value: UnivPtr ); external name '_DebugAssert';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -576,7 +726,11 @@ const
  }
 function TaskLevel: UInt32; external name '_TaskLevel';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -652,7 +806,11 @@ type
  }
 function NewDebugComponent( componentSignature: OSType; const (*var*) componentName: Str255; componentCallback: DebugComponentCallbackUPP ): OSStatus; external name '_NewDebugComponent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -691,7 +849,11 @@ function NewDebugComponent( componentSignature: OSType; const (*var*) componentN
  }
 function NewDebugOption( componentSignature: OSType; optionSelectorNum: SInt32; const (*var*) optionName: Str255 ): OSStatus; external name '_NewDebugOption';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -723,7 +885,11 @@ function NewDebugOption( componentSignature: OSType; optionSelectorNum: SInt32; 
  }
 function DisposeDebugComponent( componentSignature: OSType ): OSStatus; external name '_DisposeDebugComponent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -762,7 +928,11 @@ function DisposeDebugComponent( componentSignature: OSType ): OSStatus; external
  }
 function GetDebugComponentInfo( itemIndex: UInt32; var componentSignature: OSType; var componentName: Str255 ): OSStatus; external name '_GetDebugComponentInfo';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -810,7 +980,11 @@ function GetDebugComponentInfo( itemIndex: UInt32; var componentSignature: OSTyp
  }
 function GetDebugOptionInfo( itemIndex: UInt32; componentSignature: OSType; var optionSelectorNum: SInt32; var optionName: Str255; var optionSetting: Boolean ): OSStatus; external name '_GetDebugOptionInfo';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -847,9 +1021,15 @@ function GetDebugOptionInfo( itemIndex: UInt32; componentSignature: OSType; var 
  }
 function SetDebugOptionValue( componentSignature: OSType; optionSelectorNum: SInt32; newOptionSetting: Boolean ): OSStatus; external name '_SetDebugOptionValue';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -920,7 +1100,11 @@ type
  }
 procedure InstallDebugAssertOutputHandler( handler: DebugAssertOutputHandlerUPP ); external name '_InstallDebugAssertOutputHandler';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1008,7 +1192,11 @@ procedure InstallDebugAssertOutputHandler( handler: DebugAssertOutputHandlerUPP 
  }
 function GetMacOSStatusErrorString( err: OSStatus ): CStringPtr; external name '_GetMacOSStatusErrorString';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1046,6 +1234,7 @@ function GetMacOSStatusErrorString( err: OSStatus ): CStringPtr; external name '
  *  Result:
  *    A const char* string corresponding to the given OSStatus
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
@@ -1067,6 +1256,10 @@ function GetMacOSStatusCommentString( err: OSStatus ): CStringPtr; external name
 =======
  *  
  *  Availability:
+=======
+ *  
+ *  Availability:
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -1083,6 +1276,9 @@ function GetMacOSStatusCommentString( err: OSStatus ): CStringPtr; external name
  *  NewDebugComponentCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1090,7 +1286,11 @@ function GetMacOSStatusCommentString( err: OSStatus ): CStringPtr; external name
  }
 function NewDebugComponentCallbackUPP( userRoutine: DebugComponentCallbackProcPtr ): DebugComponentCallbackUPP; external name '_NewDebugComponentCallbackUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1105,7 +1305,11 @@ function NewDebugComponentCallbackUPP( userRoutine: DebugComponentCallbackProcPt
  }
 function NewDebugAssertOutputHandlerUPP( userRoutine: DebugAssertOutputHandlerProcPtr ): DebugAssertOutputHandlerUPP; external name '_NewDebugAssertOutputHandlerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1120,7 +1324,11 @@ function NewDebugAssertOutputHandlerUPP( userRoutine: DebugAssertOutputHandlerPr
  }
 procedure DisposeDebugComponentCallbackUPP( userUPP: DebugComponentCallbackUPP ); external name '_DisposeDebugComponentCallbackUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1135,7 +1343,11 @@ procedure DisposeDebugComponentCallbackUPP( userUPP: DebugComponentCallbackUPP )
  }
 procedure DisposeDebugAssertOutputHandlerUPP( userUPP: DebugAssertOutputHandlerUPP ); external name '_DisposeDebugAssertOutputHandlerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1150,7 +1362,11 @@ procedure DisposeDebugAssertOutputHandlerUPP( userUPP: DebugAssertOutputHandlerU
  }
 procedure InvokeDebugComponentCallbackUPP( optionSelectorNum: SInt32; command: UInt32; var optionSetting: Boolean; userUPP: DebugComponentCallbackUPP ); external name '_InvokeDebugComponentCallbackUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1165,7 +1381,11 @@ procedure InvokeDebugComponentCallbackUPP( optionSelectorNum: SInt32; command: U
  }
 procedure InvokeDebugAssertOutputHandlerUPP( componentSignature: OSType; options: UInt32; assertionString: ConstCStringPtr; exceptionLabelString: ConstCStringPtr; errorString: ConstCStringPtr; fileName: ConstCStringPtr; lineNumber: SIGNEDLONG; value: UnivPtr; const (*var*) outputMsg: Str255; userUPP: DebugAssertOutputHandlerUPP ); external name '_InvokeDebugAssertOutputHandlerUPP';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

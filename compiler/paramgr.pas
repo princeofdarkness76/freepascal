@@ -97,6 +97,13 @@ unit paramgr;
           }
           procedure allocparaloc(list: TAsmList; const paraloc: pcgparalocation);
 
+          {# allocate an individual pcgparalocation that's part of a tcgpara
+
+            @param(list Current assembler list)
+            @param(loc Parameter location element)
+          }
+          procedure allocparaloc(list: TAsmList; const paraloc: pcgparalocation);
+
           {# allocate a parameter location created with create_paraloc_info
 
             @param(list Current assembler list)
@@ -122,8 +129,12 @@ unit paramgr;
             forces the function result to something different than the real
             result.  }
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;virtual;abstract;
           procedure create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
+=======
+          function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;virtual;abstract;
+>>>>>>> graemeg/cpstrnew
 =======
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;virtual;abstract;
 >>>>>>> graemeg/cpstrnew
@@ -141,7 +152,11 @@ unit paramgr;
           function  create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;virtual;abstract;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
           function is_stack_paraloc(paraloc: pcgparalocation): boolean;virtual;
+=======
+          function is_stack_paraloc(paraloc: pcgparalocation): boolean;
+>>>>>>> graemeg/cpstrnew
 =======
           function is_stack_paraloc(paraloc: pcgparalocation): boolean;
 >>>>>>> graemeg/cpstrnew
@@ -154,6 +169,7 @@ unit paramgr;
 
           { allocate room for parameters on the stack in the entry code? }
           function use_fixed_stack: boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
           { whether stack pointer can be changed in the middle of procedure }
           function use_stackalloc: boolean;
@@ -171,6 +187,8 @@ unit paramgr;
             for which the def is paradef and the integer length is restlen.
             fullsize is true if restlen equals the full paradef size }
           function get_paraloc_def(paradef: tdef; restlen: aint; fullsize: boolean): tdef;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
        end;
@@ -205,8 +223,11 @@ implementation
            (def.typ=stringdef) or
            ((def.typ=procvardef) and not tprocvardef(def).is_addressonly) or
 <<<<<<< HEAD
+<<<<<<< HEAD
            ((def.typ=objectdef) and (is_object(def))) or
 =======
+=======
+>>>>>>> graemeg/cpstrnew
            { interfaces are also passed by reference to be compatible with delphi and COM }
            ((def.typ=objectdef) and (is_object(def) or is_interface(def) or is_dispinterface(def))) or
            (def.typ=variantdef) or
@@ -423,6 +444,9 @@ implementation
 {$ifdef powerpc}
         cgpara.composite:=parasym.paraloc[callerside].composite;
 {$endif powerpc}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         while assigned(paraloc) do
           begin
@@ -472,10 +496,14 @@ implementation
                   else
                     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                       if assigned(cgpara.def) then
                         tg.gethltemp(list,cgpara.def,len,tt_persistent,href)
                       else
                         tg.gettemp(list,len,cgpara.alignment,tt_persistent,href);
+=======
+                      tg.gettemp(list,len,cgpara.alignment,tt_persistent,href);
+>>>>>>> graemeg/cpstrnew
 =======
                       tg.gettemp(list,len,cgpara.alignment,tt_persistent,href);
 >>>>>>> graemeg/cpstrnew
@@ -548,7 +576,11 @@ implementation
       begin
 {$ifdef i386}
 <<<<<<< HEAD
+<<<<<<< HEAD
         result := target_info.stackalign > 4;
+=======
+        result := (target_info.system in [system_i386_darwin,system_i386_iphonesim]);
+>>>>>>> graemeg/cpstrnew
 =======
         result := (target_info.system in [system_i386_darwin,system_i386_iphonesim]);
 >>>>>>> graemeg/cpstrnew
@@ -561,6 +593,7 @@ implementation
 {$endif i386}
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     { This is a separate function because at least win64 allows stack allocations
       despite of fixed stack semantics (actually supporting it requires generating
@@ -676,6 +709,8 @@ implementation
         cgpara:=tparavarsym(pd.paras[nr-1]).paraloc[callerside].getcopy;
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

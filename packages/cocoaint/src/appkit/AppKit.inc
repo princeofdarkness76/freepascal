@@ -113,10 +113,15 @@
 {$include NSProgressIndicator.inc} 
 {$include NSTabView.inc} 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include NSTabViewItem.inc}
 {$ifndef cpu64}
 {$include NSMenuView.inc}
 {$endif}
+=======
+{$include NSTabViewItem.inc} 
+{$include NSMenuView.inc} 
+>>>>>>> graemeg/cpstrnew
 =======
 {$include NSTabViewItem.inc} 
 {$include NSMenuView.inc} 
@@ -131,6 +136,7 @@
 {$include NSSound.inc} 
 {$include NSMovie.inc} 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef cpu64}
 {$include NSMovieView.inc}
 {$endif}
@@ -138,6 +144,11 @@
 {$ifndef cpu64}
 {$include NSQuickDrawView.inc}
 {$endif}
+=======
+{$include NSMovieView.inc} 
+{$include NSPDFImageRep.inc} 
+{$include NSQuickDrawView.inc} 
+>>>>>>> graemeg/cpstrnew
 =======
 {$include NSMovieView.inc} 
 {$include NSPDFImageRep.inc} 

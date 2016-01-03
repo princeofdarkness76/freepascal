@@ -8,7 +8,11 @@ main=rtl
 [target]
 loaders=$(LOADERS)
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 buildrtl cpall lineinfo lnfodwrf
+=======
+units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
+>>>>>>> graemeg/cpstrnew
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 >>>>>>> graemeg/cpstrnew
@@ -34,6 +38,9 @@ implicitunits=ctypes strings \
       winevent video mouse keyboard \
       sharemem exeinfo fpintres windirs \
       cpu signals
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 # mmx
 #      fpcmemdll

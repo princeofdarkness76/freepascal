@@ -9,6 +9,9 @@ version=3.1.1
 =======
 name=obcjrtl
 version=2.5.1
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [require]

@@ -54,6 +54,9 @@ type
 =======
     procedure StoreFieldDefs(AFieldDefs : TFieldDefs); override;
     procedure StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure FinalizeStoreRecords; override;
     procedure LoadFieldDefs(var AnAutoIncValue : integer); override;
@@ -61,7 +64,11 @@ type
     function GetCurrentRecord : boolean; override;
     function GetRecordRowState(out AUpdOrder : Integer) : TRowState; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure RestoreRecord; override;
+=======
+    procedure RestoreRecord(ADataset : TCustomBufDataset); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure RestoreRecord(ADataset : TCustomBufDataset); override;
 >>>>>>> graemeg/cpstrnew
@@ -345,6 +352,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.RestoreRecord;
 var FieldNr      : integer;
     AFieldNode   : TDomNode;
@@ -353,6 +361,8 @@ var FieldNr      : integer;
     s: string;
     ws: widestring;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TXMLDatapacketReader.RestoreRecord(ADataset : TCustomBufDataset);
 var FieldNr    : integer;
     AFieldNode : TDomNode;
@@ -385,7 +395,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.StoreRecord(ARowState : TRowState; AUpdOrder : integer = 0);
+=======
+procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
 >>>>>>> graemeg/cpstrnew

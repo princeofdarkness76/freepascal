@@ -66,15 +66,21 @@ type
     _affectedStores: NSArray;
     _relationshipKeyPathsForPrefetching: NSArray;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSFetchRequest0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSFetchRequest0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         distinctValuesOnly: 0..1;
         _includesSubentities: 0..1;
@@ -85,7 +91,10 @@ type
         isInUse: 0..1;
         __RESERVED: 0..((1 shl 23)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

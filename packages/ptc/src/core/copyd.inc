@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -45,8 +49,13 @@ type
     constructor Create;
     destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Request(ASource, ADestination: IPTCFormat);
     procedure Palette(ASource, ADestination: IPTCPalette);
+=======
+    procedure Request(const ASource, ADestination: TPTCFormat);
+    procedure Palette(const ASource, ADestination: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure Request(const ASource, ADestination: TPTCFormat);
     procedure Palette(const ASource, ADestination: TPTCPalette);

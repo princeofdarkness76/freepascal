@@ -93,15 +93,21 @@ var
     _stopAnimation: NSAnimation;
     _nextProgressMark: cint;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __aFlags: record
       case byte of
        0: (_anonbitfield_NSAnimation0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __aFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSAnimation0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         delegateAnimationShouldStart: 0..1;
         delegateAnimationDidStop: 0..1;
@@ -111,6 +117,7 @@ var
         animating: 0..1;
         blocking: 0..1;
         reserved: 0..((1 shl 25)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
        end;
       );
@@ -124,6 +131,8 @@ var
         reserved: 0..((1 shl 22)-1);
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     __aSettings: bitpacked record
@@ -133,6 +142,9 @@ var
         _animationCurve: 0..((1 shl 8)-1);
         _animationBlockingMode: 0..((1 shl 2)-1);
         reserved: 0..((1 shl 22)-1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       );
       end;
@@ -185,6 +197,7 @@ var
     _reserved4b: NSUInteger;
     _reserved4c: NSUInteger;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __vaFlags: record
       case byte of
        0: (_anonbitfield_NSAnimation2: cuint);
@@ -192,11 +205,16 @@ var
         reserved: 0..((1 shl 32)-1);
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __vaFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSAnimation2: cuint);
        1: (
         reserved: 0..((1 shl 32)-1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       );
       end;

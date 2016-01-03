@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -35,15 +39,21 @@
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   TVESAConsole = class(TPTCOpenGLLessConsole)
   private
     { data }
     FModes: array of IPTCMode;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TVESAConsole = class(TPTCBaseConsole)
   private
     { data }
     FModes: array of TPTCMode;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     FModesLast: Integer;
     FModesN: array of record
@@ -78,6 +88,7 @@ type
     FDefaultHeight: Integer;
 //    FDefaultPages: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FDefaultFormat: IPTCFormat;
 
     { objects }
@@ -89,6 +100,8 @@ type
 //    FClear: TPTCClear;
     FPalette: IPTCPalette;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     FDefaultFormat: TPTCFormat;
 
     { objects }
@@ -99,6 +112,9 @@ type
 
 //    FClear: TPTCClear;
     FPalette: TPTCPalette;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     FEventQueue: TEventQueue;
@@ -110,7 +126,11 @@ type
     { internal console management routines }
     procedure internal_close;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function FindBestMode(const AMode: IPTCMode): Integer;
+=======
+    function FindBestMode(const AMode: TPTCMode): Integer;
+>>>>>>> graemeg/cpstrnew
 =======
     function FindBestMode(const AMode: TPTCMode): Integer;
 >>>>>>> graemeg/cpstrnew
@@ -130,6 +150,7 @@ type
     constructor Create; override;
     destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Configure(const AFileName: string); override;
     function Option(const AOption: string): Boolean; override;
     function Modes: TPTCModeList; override;
@@ -140,6 +161,8 @@ type
                    AFormat: IPTCFormat; APages: Integer); overload; override;
     procedure Open(const ATitle: string; AMode: IPTCMode;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Configure(const AFileName: String); override;
     function Option(const AOption: String): Boolean; override;
     function Modes: PPTCMode; override;
@@ -149,6 +172,9 @@ type
     procedure Open(const ATitle: string; AWidth, AHeight: Integer;
                    const AFormat: TPTCFormat; APages: Integer); overload; override;
     procedure Open(const ATitle: string; const AMode: TPTCMode;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                    APages: Integer); overload; override;
     procedure Close; override;
@@ -156,20 +182,27 @@ type
     procedure Finish; override;
     procedure Update; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Update(AArea: IPTCArea); override;
     procedure Copy(ASurface: IPTCSurface); override;
     procedure Copy(ASurface: IPTCSurface;
                    ASource, ADestination: IPTCArea); override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Update(const AArea: TPTCArea); override;
     procedure Copy(ASurface: TPTCBaseSurface); override;
     procedure Copy(ASurface: TPTCBaseSurface;
                    const ASource, ADestination: TPTCArea); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function Lock: Pointer; override;
     procedure Unlock; override;
     procedure Load(const APixels: Pointer;
                    AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
                    AFormat: IPTCFormat;
                    APalette: IPTCPalette); override;
@@ -195,6 +228,8 @@ type
     function Palette: IPTCPalette; override;
     procedure Clip(AArea: IPTCArea); override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                    const AFormat: TPTCFormat;
                    const APalette: TPTCPalette); override;
     procedure Load(const APixels: Pointer;
@@ -218,11 +253,15 @@ type
     procedure Palette(const APalette: TPTCPalette); override;
     function Palette: TPTCPalette; override;
     procedure Clip(const AArea: TPTCArea); override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function GetWidth: Integer; override;
     function GetHeight: Integer; override;
     function GetPitch: Integer; override;
     function GetPages: Integer; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     function GetArea: IPTCArea; override;
     function Clip: IPTCArea; override;
@@ -233,6 +272,8 @@ type
     function NextEvent(out AEvent: IPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): IPTCEvent; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function GetArea: TPTCArea; override;
     function Clip: TPTCArea; override;
     function GetFormat: TPTCFormat; override;
@@ -241,5 +282,8 @@ type
     function GetInformation: string; override;
     function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;

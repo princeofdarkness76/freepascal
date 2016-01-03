@@ -124,7 +124,11 @@ implementation
 
     uses
 <<<<<<< HEAD
+<<<<<<< HEAD
       comphook,fmodule,constexp,globals,cfileutl,switches;
+=======
+      comphook,fmodule,constexp,globals,cfileutl;
+>>>>>>> graemeg/cpstrnew
 =======
       comphook,fmodule,constexp,globals,cfileutl;
 >>>>>>> graemeg/cpstrnew
@@ -211,8 +215,11 @@ implementation
       var
         tok  : string;
 <<<<<<< HEAD
+<<<<<<< HEAD
         msgnr, code : longint;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         code : longint;
         msgnr: longint;
 >>>>>>> graemeg/cpstrnew
@@ -293,6 +300,9 @@ implementation
 =======
                  'M' : if inverse or
                          not ClearMessageVerbosity(s, i) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                          begin
                            result:=false;
@@ -470,7 +480,10 @@ implementation
               status.currentsource:=module.sourcefiles.get_file_name(current_filepos.fileindex);
               status.currentsourcepath:=module.sourcefiles.get_file_path(current_filepos.fileindex);
 <<<<<<< HEAD
+<<<<<<< HEAD
               status.sources_avail:=module.sources_avail;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               { if currentsourcepath is relative, make it absolute }
@@ -681,6 +694,7 @@ implementation
                     else
                       st:=GetMessageState(w);
 <<<<<<< HEAD
+<<<<<<< HEAD
                     { We only want to know about local value }
                     st:= tmsgstate(ord(st) and ms_local_mask);
                     if st=ms_error then
@@ -688,10 +702,15 @@ implementation
                         v:=v or V_Error;
                         GenerateError;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                     if st=ms_error then
                       begin
                         v:=v or V_Error;
                         inc(status.errorcount);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                       end
                     else if st<>ms_off then
@@ -702,7 +721,11 @@ implementation
                            if CheckVerbosity(V_Warning) then
                              if status.errorwarning then
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
@@ -715,7 +738,11 @@ implementation
                            if CheckVerbosity(V_Note) then
                              if status.errornote then
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
@@ -728,7 +755,11 @@ implementation
                            if CheckVerbosity(V_Hint) then
                              if status.errorhint then
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew

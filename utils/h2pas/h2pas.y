@@ -1,7 +1,11 @@
 %{
 program h2pas;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$H+}
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1077,9 +1081,14 @@ program h2pas;
                            while assigned(hp3) do
                              begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 if assigned(hp3^.p1) and
                                    (not assigned(hp3^.p1^.p3) or
                                    (hp3^.p1^.p3^.typ <> t_size_specifier)) then
+=======
+                                if not assigned(hp3^.p1^.p3) or
+                                   (hp3^.p1^.p3^.typ <> t_size_specifier) then
+>>>>>>> graemeg/cpstrnew
 =======
                                 if not assigned(hp3^.p1^.p3) or
                                    (hp3^.p1^.p3^.typ <> t_size_specifier) then
@@ -1104,8 +1113,12 @@ program h2pas;
                                   end;
                                 { size specifier  or default value ? }
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 if assigned(hp3^.p1) and
                                    assigned(hp3^.p1^.p3) then
+=======
+                                if assigned(hp3^.p1^.p3) then
+>>>>>>> graemeg/cpstrnew
 =======
                                 if assigned(hp3^.p1^.p3) then
 >>>>>>> graemeg/cpstrnew
@@ -2447,7 +2460,11 @@ special_type_name :
      {
      if UseCTypesUnit then
 <<<<<<< HEAD
+<<<<<<< HEAD
        $$:=new(presobject,init_id(cshort_STR))
+=======
+       $$:=new(presobject,init_id(csint_STR))
+>>>>>>> graemeg/cpstrnew
 =======
        $$:=new(presobject,init_id(csint_STR))
 >>>>>>> graemeg/cpstrnew

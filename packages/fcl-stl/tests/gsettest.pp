@@ -13,7 +13,10 @@ type TGSetTest = class(TTestCase)
   Published
     procedure SetTest;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure IteratorTest;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   public
@@ -24,6 +27,7 @@ type TGSetTest = class(TTestCase)
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TGSetTest.IteratorTest;
 var it:setlli.TIterator;
@@ -49,10 +53,15 @@ var it:setlli.TIterator;
 procedure TGSetTest.SetTest;
 var it:setlli.pnode;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TGSetTest.SetTest;
+var it:setlli.pnode;
+>>>>>>> graemeg/cpstrnew
 begin
   data.insert(3);
   data.insert(5);
   data.insert(7);
+<<<<<<< HEAD
 <<<<<<< HEAD
   AssertEquals('Wrong min', 3, data.min().Data);
   AssertEquals('Wrong max', 7, data.max().Data);
@@ -60,18 +69,27 @@ begin
   AssertEquals('Wrong size', 2, data.size);
   AssertEquals('Wrong min', 5, data.min().Data);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Wrong min', 3, data.min()^.data);
   AssertEquals('Wrong max', 7, data.max()^.data);
   data.delete(3);
   AssertEquals('Wrong size', 2, data.size);
   AssertEquals('Wrong min', 5, data.min()^.data);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   data.insert(3);
   data.insert(3);
   data.insert(3);
   AssertEquals('Wrong size', 3, data.size);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Wrong min', 3, data.min().Data);
+=======
+  AssertEquals('Wrong min', 3, data.min()^.data);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Wrong min', 3, data.min()^.data);
 >>>>>>> graemeg/cpstrnew
@@ -81,9 +99,15 @@ begin
     Fail('Not found key which was there');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindLess(8).Data<>7) then
     Fail('Wrong less than 8');
   if(data.FindLess(7).Data<>5) then
+=======
+  if(data.FindLess(8)^.data<>7) then
+    Fail('Wrong less than 8');
+  if(data.FindLess(7)^.data<>5) then
+>>>>>>> graemeg/cpstrnew
 =======
   if(data.FindLess(8)^.data<>7) then
     Fail('Wrong less than 8');
@@ -94,26 +118,38 @@ begin
     Fail('Wrong less than 3');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindLessEqual(8).Data<>7) then
     Fail('Wrong less equal than 8');
   if(data.FindLessEqual(7).Data<>7) then
     Fail('Wrong less equal than 7');
   if(data.FindLessEqual(6).Data<>5) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if(data.FindLessEqual(8)^.data<>7) then
     Fail('Wrong less equal than 8');
   if(data.FindLessEqual(7)^.data<>7) then
     Fail('Wrong less equal than 7');
   if(data.FindLessEqual(6)^.data<>5) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Fail('Wrong less equal than 6');
   if(data.FindLessEqual(2)<>nil) then
     Fail('Wrong less equal than 2');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindGreater(2).Data<>3) then
     Fail('Wrong greater than 2');
   if(data.Findgreater(3).Data<>5) then
+=======
+  if(data.FindGreater(2)^.data<>3) then
+    Fail('Wrong greater than 2');
+  if(data.Findgreater(3)^.data<>5) then
+>>>>>>> graemeg/cpstrnew
 =======
   if(data.FindGreater(2)^.data<>3) then
     Fail('Wrong greater than 2');
@@ -124,17 +160,23 @@ begin
     Fail('Wrong greater than 7');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindGreaterEqual(2).Data<>3) then
     Fail('Wrong greater equal than 2');
   if(data.FindGreaterEqual(3).Data<>3) then
     Fail('Wrong greater equal than 3');
   if(data.FindGreaterEqual(4).Data<>5) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if(data.FindGreaterEqual(2)^.data<>3) then
     Fail('Wrong greater equal than 2');
   if(data.FindGreaterEqual(3)^.data<>3) then
     Fail('Wrong greater equal than 3');
   if(data.FindGreaterEqual(4)^.data<>5) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Fail('Wrong greater equal than 4');
   if(data.FindGreaterEqual(8)<>nil) then
@@ -143,6 +185,7 @@ begin
   data.insert(17);
 
   it:=data.min;
+<<<<<<< HEAD
 <<<<<<< HEAD
   AssertEquals('Wrong min', 3, it.Data);
   AssertEquals('Next not true', true, it.next);
@@ -163,6 +206,8 @@ begin
   AssertEquals('Wrong prev', 3, it.Data);
   AssertEquals('First prev not fail', false, it.prev);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Wrong min', 3, it^.data);
   it:=data.next(it);
   AssertEquals('Wrong next', 5, it^.data);
@@ -185,6 +230,9 @@ begin
   it:=data.prev(it);
   if(it<>nil) then
     AssertEquals('First not nil', 0, 1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

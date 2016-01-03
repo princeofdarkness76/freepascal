@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the Free Component Library
 
@@ -15,6 +16,8 @@
  **********************************************************************}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 unit webjsonrpc;
 
 {$mode objfpc}{$H+}
@@ -24,7 +27,11 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, fpjson, fpjsonrpc, httpdefs, fphttp, jsonparser;
+=======
+  Classes, SysUtils, fpjson, fpjsonrpc, httpdefs, fphttp, jsonparser, websession;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, fpjson, fpjsonrpc, httpdefs, fphttp, jsonparser, websession;
 >>>>>>> graemeg/cpstrnew

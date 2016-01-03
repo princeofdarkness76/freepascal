@@ -1,6 +1,11 @@
 A_NONE,
 <<<<<<< HEAD
+<<<<<<< HEAD
 A_P_SET_NOMIPS16,
+=======
+A_P_STK2,
+A_P_LW,
+>>>>>>> graemeg/cpstrnew
 =======
 A_P_STK2,
 A_P_LW,
@@ -9,6 +14,7 @@ A_P_SET_NOREORDER,
 A_P_SET_NOMACRO,
 A_P_SET_MACRO,
 A_P_SET_REORDER,
+<<<<<<< HEAD
 <<<<<<< HEAD
 A_P_SET_NOAT,
 A_P_SET_AT,
@@ -19,19 +25,28 @@ A_P_CPLOAD,
 A_P_CPRESTORE,
 A_P_CPADD,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 A_P_FRAME,
 A_P_MASK,
 A_P_FMASK,
 A_P_SW,
 A_SPARC8UNIMP,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 A_NOP,
 A_NOT,
 A_NEG,
 A_NEGU,
 <<<<<<< HEAD
+<<<<<<< HEAD
 A_BA,
 A_BC,
+=======
+A_B,
+>>>>>>> graemeg/cpstrnew
 =======
 A_B,
 >>>>>>> graemeg/cpstrnew
@@ -112,7 +127,10 @@ A_MTHI,
 A_MFLO,
 A_MTLO,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 A_MULTG,
 A_DMULTG,
 A_MULTUG,
@@ -125,13 +143,19 @@ A_MODG,
 A_DMODG,
 A_MODUG,
 A_DMODUG,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 A_J,
 A_JAL,
 A_JR,
 A_JALR,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 A_BEQ,
 A_BNE,
 A_BLEZ,
@@ -148,6 +172,9 @@ A_BLTZL,
 A_BGEZL,
 A_BLTZALL,
 A_BGEZALL,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 A_SLL,
 A_SRL,
@@ -217,11 +244,17 @@ A_FLOOR_W_D,
 A_FLOOR_L_S,
 A_FLOOR_L_D,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 A_BC1T,
 A_BC1F,
 A_BC1TL,
 A_BC1FL,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 A_C_EQ_D,
 A_C_EQ_S,
@@ -230,7 +263,10 @@ A_C_LE_S,
 A_C_LT_D,
 A_C_LT_S,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 A_BEQI,
 A_BNEI,
 A_BLTI,
@@ -249,6 +285,9 @@ A_BLTU,
 A_BLEU,
 A_BGTU,
 A_BGEU,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 A_SEQ,
 A_SGE,
@@ -259,6 +298,7 @@ A_SLE,
 A_SLEU,
 A_SNE,
 A_SYSCALL,
+<<<<<<< HEAD
 <<<<<<< HEAD
 A_BREAK,
 A_EHB,
@@ -286,6 +326,8 @@ A_MOVZ_S,
 A_MOVN_D,
 A_MOVZ_D,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 A_ADD64SUB,
 A_SUB64SUB,
 A_MUL64SUB,
@@ -297,5 +339,8 @@ A_SAR64SUB,
 A_SHL64SUB,
 A_SHR64SUB,
 A_XOR64SUB,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 A_END_DEF

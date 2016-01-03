@@ -55,6 +55,7 @@
     _includedKeys: NSArray;
     _excludedKeys: NSArray;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __dictionaryControllerFlags: record
       case byte of
        0: (_anonbitfield_NSDictionaryController0: cuint);
@@ -64,6 +65,8 @@
         _reservedDictionaryController: 0..((1 shl 30)-1);
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __dictionaryControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSDictionaryController0: cuint);
@@ -71,6 +74,9 @@
         _deepCopiesValues: 0..1;
         _suppressBuildingDictionary: 0..1;
         _reservedDictionaryController: 0..((1 shl 30)-1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       );
       end;

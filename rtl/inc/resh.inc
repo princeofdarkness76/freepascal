@@ -3,6 +3,7 @@ type
   //Obsolete types, kept for backwards compatibility
   TResourceHandle = PtrUint;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef Win16}
   HMODULE = THandle; {HINST}
   HGLOBAL = THandle;
@@ -10,6 +11,10 @@ type
   HMODULE = PtrUint;
   HGLOBAL = PtrUint;
 {$endif Win16}
+=======
+  HMODULE = PtrUint;
+  HGLOBAL = PtrUint;
+>>>>>>> graemeg/cpstrnew
 =======
   HMODULE = PtrUint;
   HGLOBAL = PtrUint;

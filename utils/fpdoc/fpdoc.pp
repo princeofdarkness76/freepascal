@@ -19,6 +19,7 @@ program FPDoc;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
  {$ifdef Unix}
   CThreads,
   cwstring,
@@ -27,6 +28,8 @@ uses
   dGlobals,  // Global definitions, constants.
   fpdocclasstree, // Class tree builder
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   SysUtils, Classes, Gettext, DOM, XMLWrite, PasTree, PParser, custapp,
   dGlobals,  // GLobal definitions, constants.
 >>>>>>> graemeg/cpstrnew
@@ -39,6 +42,7 @@ uses
   dw_ipflin, // IPF writer (new linear output)
   dw_man,    // Man page writer
   dw_linrtf, // linear RTF writer
+<<<<<<< HEAD
 <<<<<<< HEAD
   dw_txt,    // TXT writer
   fpdocproj, mkfpdoc;
@@ -61,6 +65,8 @@ Type
     procedure ParseOption(const S: String);
     Procedure Usage(AnExitCode : Byte);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   dw_txt, fpdocproj, fpdocxmlopts;    // TXT writer
 
 const
@@ -83,6 +89,9 @@ Type
     procedure Parseoption(const S: String);
     Procedure Usage(AnExitCode : Byte);
     procedure CreateDocumentation(APackage : TFPDocPackage; Options : TEngineOptions);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Procedure DoRun; override;
   Public
@@ -91,9 +100,15 @@ Type
     Function SelectedPackage : TFPDocPackage;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 Procedure TFPDocApplication.Usage(AnExitCode : Byte);
+=======
+
+
+Procedure TFPDocAplication.Usage(AnExitCode : Byte);
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -132,6 +147,7 @@ begin
   Writeln(SUsageOption180);
   Writeln(SUsageOption190);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln(SUsageOption200);
   Writeln(SUsageOption210);
   Writeln(SUsageOption220);
@@ -148,6 +164,11 @@ begin
   L:=TStringList.Create;
   Try
     Backend:=FCreator.OPtions.Backend;
+=======
+  L:=TStringList.Create;
+  Try
+    Backend:=FProject.OPtions.Backend;
+>>>>>>> graemeg/cpstrnew
 =======
   L:=TStringList.Create;
   Try
@@ -186,6 +207,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 destructor TFPDocApplication.Destroy;
 
 begin
@@ -221,6 +243,8 @@ end;
 
 procedure TFPDocApplication.ParseCommandLine;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 destructor TFPDocAplication.Destroy;
 
 begin
@@ -240,6 +264,9 @@ end;
 
 
 procedure TFPDocAplication.ParseCommandLine;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   Function ProjectOpt(Const s : string) : boolean;
@@ -266,6 +293,7 @@ begin
     If ProjectOpt(S) then
       ParseOption(s);
 <<<<<<< HEAD
+<<<<<<< HEAD
     If (FCreator.Packages.Count=1) then
       FPackage:=FCreator.Packages[0]
     else if (FCreator.Options.DefaultPackageName<>'') then
@@ -275,6 +303,8 @@ begin
     begin // Add default package if none defined
     FPackage:=FCreator.Packages.Add as TFPDocPackage;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     If (FProject.Packages.Count=1) then
       FPackage:=FProject.Packages[0]
     else if (FProject.Options.DefaultPackageName<>'') then
@@ -283,6 +313,9 @@ begin
   If FProject.Packages.Count=0 then
     begin
     FPackage:=FProject.Packages.Add as  TFPDocPackage;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   // Check package
@@ -298,6 +331,7 @@ begin
     If Not (ProjectOpt(s) or PackageOpt(S)) then
       ParseOption(s);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
   SelectedPackage; // Will print error if none available.
 end;
@@ -342,6 +376,17 @@ end;
 procedure TFPDocAplication.Parseoption(Const S : String);
 
 >>>>>>> graemeg/cpstrnew
+=======
+  if (FPackage=Nil) or (FPackage.Name='') then
+    begin
+    Writeln(SNeedPackageName);
+    Usage(1);
+    end;
+end;
+
+procedure TFPDocAplication.Parseoption(Const S : String);
+
+>>>>>>> graemeg/cpstrnew
   procedure AddToFileList(List: TStrings; const FileName: String);
   var
     f: Text;
@@ -370,6 +415,7 @@ begin
     Usage(0)
   else if s = '--hide-protected' then
 <<<<<<< HEAD
+<<<<<<< HEAD
     FCreator.Options.HideProtected := True
   else if s = '--warn-no-node' then
     FCreator.Options.WarnNoNode := True
@@ -379,6 +425,15 @@ begin
     FCreator.Options.StopOnParseError := True
   else if s = '--dont-trim' then
     FCreator.Options.DontTrim := True
+=======
+    FProject.Options.HideProtected := True
+  else if s = '--warn-no-node' then
+    FProject.Options.WarnNoNode := True
+  else if s = '--show-private' then
+    FProject.Options.ShowPrivate := False
+  else if s = '--stop-on-parser-error' then
+    FProject.Options.StopOnParseError := True
+>>>>>>> graemeg/cpstrnew
 =======
     FProject.Options.HideProtected := True
   else if s = '--warn-no-node' then
@@ -405,6 +460,7 @@ begin
       begin
       FProjectFile:=True;
 <<<<<<< HEAD
+<<<<<<< HEAD
       FCreator.LoadProjectFile(Arg);
       end
     else if (Cmd = '--descr') then
@@ -414,6 +470,8 @@ begin
     else if (Cmd = '--base-descr-dir') then
       FCreator.BaseDescrDir:=Arg
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       With TXMLFPDocOptions.Create(self) do
         try
           LoadOptionsFromFile(FProject,Arg);
@@ -423,6 +481,9 @@ begin
       end
     else if (Cmd = '--descr') then
       AddToFileList(SelectedPackage.Descriptions, Arg)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     else if (Cmd = '-f') or (Cmd = '--format') then
       begin
@@ -430,6 +491,7 @@ begin
       If FindWriterClass(Arg)=-1 then
         WriteLn(StdErr, Format(SCmdLineInvalidFormat, [Arg]))
       else
+<<<<<<< HEAD
 <<<<<<< HEAD
         FCreator.Options.BackEnd:=Arg;
       end
@@ -462,6 +524,16 @@ begin
     else if (Cmd = '-o') or (Cmd = '--output') then
       SelectedPackage.Output := Arg
 >>>>>>> graemeg/cpstrnew
+=======
+        FProject.Options.BackEnd:=Arg;
+      end
+    else if (Cmd = '-l') or (Cmd = '--lang') then
+      FProject.Options.Language := Arg
+    else if (Cmd = '-i') or (Cmd = '--input') then
+      AddToFileList(SelectedPackage.Inputs, Arg)
+    else if (Cmd = '-o') or (Cmd = '--output') then
+      SelectedPackage.Output := Arg
+>>>>>>> graemeg/cpstrnew
     else if Cmd = '--content' then
       SelectedPackage.ContentFile := Arg
     else if Cmd = '--import' then
@@ -470,7 +542,11 @@ begin
       begin
       If FProjectFile then
 <<<<<<< HEAD
+<<<<<<< HEAD
         FPackage:=FCreator.Packages.FindPackage(Arg)
+=======
+        FPackage:=FProject.Packages.FindPackage(Arg)
+>>>>>>> graemeg/cpstrnew
 =======
         FPackage:=FProject.Packages.FindPackage(Arg)
 >>>>>>> graemeg/cpstrnew
@@ -478,6 +554,7 @@ begin
         FPackage.Name:=Arg;
       end
     else if Cmd = '--ostarget' then
+<<<<<<< HEAD
 <<<<<<< HEAD
       FCreator.Options.OSTarget := Arg
     else if Cmd = '--cputarget' then
@@ -505,6 +582,19 @@ begin
       FProject.Options.BackendOptions.Add(Cmd);
       FProject.Options.BackendOptions.Add(Arg);
 >>>>>>> graemeg/cpstrnew
+=======
+      FProject.Options.OSTarget := Arg
+    else if Cmd = '--cputarget' then
+      FProject.Options.CPUTarget := Arg
+    else if Cmd = '--mo-dir' then
+      FProject.Options.modir := Arg
+    else if Cmd = '--parse-impl' then
+      FProject.Options.InterfaceOnly:=false
+    else
+      begin
+      FProject.Options.BackendOptions.Add(Cmd);
+      FProject.Options.BackendOptions.Add(Arg);
+>>>>>>> graemeg/cpstrnew
       end;
     end;
   // Set defaults
@@ -515,8 +605,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TFPDocApplication.DoRun;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 procedure TFPDocAplication.CreateDocumentation(APackage : TFPDocPackage; Options : TEngineOptions);
 
@@ -580,6 +673,9 @@ end;
 
 
 Procedure TFPDocAplication.DoRun;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 begin
@@ -591,6 +687,7 @@ begin
   WriteLn(STitle);
   WriteLn(Format(SVersion, [DefFPCVersion, DefFPCDate]));
 <<<<<<< HEAD
+<<<<<<< HEAD
   WriteLn(SCopyright1);
   WriteLn(SCopyright2);
   WriteLn;
@@ -600,15 +697,21 @@ begin
   else
     FCreator.CreateDocumentation(FPackage,FDryRun);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   WriteLn(SCopyright);
   WriteLn;
   ParseCommandLine;
   CreateDocumentation(FPackage,FProject.Options);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   WriteLn(SDone);
   Terminate;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 constructor TFPDocApplication.Create(AOwner: TComponent);
 begin
@@ -621,6 +724,8 @@ end;
 begin
   With TFPDocApplication.Create(Nil) do
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TFPDocAplication.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
@@ -633,6 +738,9 @@ end;
 
 begin
   With TFPDocAplication.Create(Nil) do
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     try
       Run;

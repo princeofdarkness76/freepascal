@@ -16,6 +16,10 @@ type
     FRows : TJSONArray;
     FCurrentRow : TJSONObject;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    FIDValue : TJSONData;
+>>>>>>> graemeg/cpstrnew
 =======
     FIDValue : TJSONData;
 >>>>>>> graemeg/cpstrnew
@@ -296,9 +300,15 @@ begin
           Case Fi.DataType of
             ftDate : O.Add('dateFormat','Y-m-d');
 <<<<<<< HEAD
+<<<<<<< HEAD
             ftTime : O.Add('dateFormat','H:i:s');
             ftDateTime,
             ftTimeStamp : O.Add('dateFormat','Y-m-d H:i:s');
+=======
+            ftTime : O.Add('dateFormat','h:i:s');
+            ftDateTime,
+            ftTimeStamp : O.Add('dateFormat','Y-m-d h:i:s');
+>>>>>>> graemeg/cpstrnew
 =======
             ftTime : O.Add('dateFormat','h:i:s');
             ftDateTime,
@@ -535,10 +545,14 @@ begin
         end
       else if D is TJSONInt64Number then
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
         FRows:=nil;
         FCurrentRow:=TJSONObject.Create(['ID',D]);
         end
+=======
+        FIDValue:=D
+>>>>>>> graemeg/cpstrnew
 =======
         FIDValue:=D
 >>>>>>> graemeg/cpstrnew
@@ -562,6 +576,10 @@ begin
     FreeAndNil(FRows);
   FRowIndex:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  FreeAndNil(FIDValue);
+>>>>>>> graemeg/cpstrnew
 =======
   FreeAndNil(FIDValue);
 >>>>>>> graemeg/cpstrnew
@@ -594,11 +612,14 @@ begin
   if CheckData then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     I:=FCurrentRow.IndexOfName(AFieldName);
     Result:=I<>-1;
     if result and (FCurrentRow.Items[I].JSONType<>jtNull) then
       AValue:=FCurrentRow.Items[I].AsString;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     If Assigned(FIDValue) and (0=CompareText(AFieldName,'ID')) then
       begin
       AValue:=FIDValue.AsString;
@@ -611,6 +632,9 @@ begin
       if result then
         AValue:=FCurrentRow.Items[I].AsString;
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
 end;
@@ -621,7 +645,13 @@ begin
     FreeAndNil(FRows)
   else if assigned(FCurrentRow) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     FreeAndNil(FCurrentRow);
+=======
+    FreeAndNil(FCurrentRow)
+  else if Assigned(FIDValue) then
+    FreeAndNil(FIDValue);
+>>>>>>> graemeg/cpstrnew
 =======
     FreeAndNil(FCurrentRow)
   else if Assigned(FIDValue) then

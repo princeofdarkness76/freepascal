@@ -130,9 +130,12 @@ uses
   ,i_nativent
 {$endif nativent}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
   ,i_aix
 {$endif aix}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   ,globtype;

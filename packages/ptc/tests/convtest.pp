@@ -13,9 +13,15 @@ const
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: IPTCSurface;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  image: TPTCSurface = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   image: TPTCSurface = nil;
   surface: TPTCSurface = nil;
@@ -44,7 +50,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generic(src, dest: IPTCSurface);
+=======
+procedure generic(src, dest: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure generic(src, dest: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
@@ -185,8 +195,13 @@ procedure test(sbits: Integer; sr, sg, sb: Uint32;
                dithering: Boolean = False);
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   srcformat, destformat: IPTCFormat;
   src, dest: IPTCSurface;
+=======
+  srcformat, destformat: TPTCFormat;
+  src, dest: TPTCSurface;
+>>>>>>> graemeg/cpstrnew
 =======
   srcformat, destformat: TPTCFormat;
   src, dest: TPTCSurface;
@@ -195,6 +210,7 @@ var
   F: File;
 begin
   Writeln(sbits, ' ', sr, ' ', sg, ' ', sb, ' ', dbits, ' ', dr, ' ', dg, ' ', db, ' ', da);
+<<<<<<< HEAD
 <<<<<<< HEAD
   srcformat := TPTCFormatFactory.CreateNew(sbits, sr, sg, sb);
   destformat := TPTCFormatFactory.CreateNew(dbits, dr, dg, db, da);
@@ -209,6 +225,8 @@ begin
 {    generic(src, dest);}
   generic(dest, surface);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   try
     srcformat := TPTCFormat.Create(sbits, sr, sg, sb);
     destformat := TPTCFormat.Create(dbits, dr, dg, db, da);
@@ -228,6 +246,9 @@ begin
     srcformat.Free;
     destformat.Free;
   end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   Inc(TestNum);
@@ -246,7 +267,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: String);
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
@@ -277,6 +302,7 @@ end;
 begin
   TestNum := 0;
   try
+<<<<<<< HEAD
 <<<<<<< HEAD
     {$IFDEF FPC_LITTLE_ENDIAN}
     format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
@@ -366,6 +392,8 @@ begin
     test(32,$ff0000,$ff00,$ff,16,$f800,$7e0,$1f, 0, True);       { 16RGB565  }      { 58 }
     test(32,$ff0000,$ff00,$ff, 8,$e0,$1c,$3, 0 , True);          { 8RGB332   }      { 59 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     try
       {$IFDEF FPC_LITTLE_ENDIAN}
       format := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
@@ -459,6 +487,9 @@ begin
       image.Free;
       format.Free;
     end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   except
     on error: TPTCError do

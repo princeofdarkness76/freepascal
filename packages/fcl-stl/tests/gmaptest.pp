@@ -22,7 +22,11 @@ implementation
 
 procedure TGMapTest.MapTest;
 <<<<<<< HEAD
+<<<<<<< HEAD
 var it:maplli.TIterator;
+=======
+var it:maplli.TMSet.pnode;
+>>>>>>> graemeg/cpstrnew
 =======
 var it:maplli.TMSet.pnode;
 >>>>>>> graemeg/cpstrnew
@@ -31,30 +35,42 @@ begin
   data[5]:=5;
   data[7]:=7;
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Wrong min key', 3, data.min().GetData.key);
   AssertEquals('Wrong max key', 7, data.max().GetData.key);
   AssertEquals('Wrong min val', 3, data.min().GetData.value);
   AssertEquals('Wrong max val', 7, data.max().GetData.value);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Wrong min key', 3, data.min()^.data.key);
   AssertEquals('Wrong max key', 7, data.max()^.data.key);
   AssertEquals('Wrong min val', 3, data.min()^.data.value);
   AssertEquals('Wrong max val', 7, data.max()^.data.value);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   AssertEquals('Wrong val', 5, data[5]);
 
   data.delete(3);
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Wrong min key', 5, data.min().GetData.key);
   AssertEquals('Wrong max key', 7, data.max().GetData.key);
   AssertEquals('Wrong min val', 5, data.min().GetData.value);
   AssertEquals('Wrong max val', 7, data.max().GetData.value);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Wrong min key', 5, data.min()^.data.key);
   AssertEquals('Wrong max key', 7, data.max()^.data.key);
   AssertEquals('Wrong min val', 5, data.min()^.data.value);
   AssertEquals('Wrong max val', 7, data.max()^.data.value);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -68,6 +84,7 @@ begin
   data[17]:=42;
 
   it:=data.min;
+<<<<<<< HEAD
 <<<<<<< HEAD
   AssertEquals('Wrong min', 3, it.Key);
   AssertEquals('Next not true', true, it.Next);
@@ -93,6 +110,8 @@ begin
   AssertEquals('Wrong prev', 3, it.GetData.key);
   AssertEquals('Prev not false', false, it.Prev);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Wrong min', 3, it^.Data.key);
   it:=data.next(it);
   AssertEquals('Wrong next', 5, it^.Data.key);
@@ -115,6 +134,9 @@ begin
   it:=data.prev(it);
   if(it<>nil) then
     AssertEquals('First not nil', 0, 1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

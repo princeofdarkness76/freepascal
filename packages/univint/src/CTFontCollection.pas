@@ -3,6 +3,7 @@
  *  CoreText
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  Copyright (c) 2006-2012 Apple Inc. All rights reserved.
  *
  }
@@ -10,10 +11,15 @@
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *  Copyright (c) 2006-2008 Apple Inc. All rights reserved.
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -70,11 +76,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -96,11 +105,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -113,11 +128,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -130,7 +151,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -143,7 +167,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -153,6 +180,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -164,6 +192,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -175,6 +208,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -191,14 +225,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -245,17 +286,23 @@ interface
 {$setc TYPE_EXTENDED := FALSE}
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CTFontDescriptor,CFBase,CFArray,CFDictionary,CFSet;
 {$endc} {not MACOSALLINCLUDE}
 
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 uses MacTypes,CTFontDescriptor,CFBase,CFArray,CFDictionary;
 {$endc} {not MACOSALLINCLUDE}
 
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
@@ -275,6 +322,7 @@ uses MacTypes,CTFontDescriptor,CFBase,CFArray,CFDictionary;
 
 {!
     @typedef    CTFontCollectionRef
+<<<<<<< HEAD
 <<<<<<< HEAD
     @abstract   The Core Text font collection reference.
     @discussion An opaque reference to an immutable font collection.
@@ -300,6 +348,8 @@ type
 function CTFontCollectionGetTypeID: CFTypeID; external name '_CTFontCollectionGetTypeID';
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @abstract   The Core Text Font Collection reference.
     @discussion An opaque reference to a font collection.
 }
@@ -314,6 +364,9 @@ type
 }
 function CTFontCollectionGetTypeID: CFTypeID; external name '_CTFontCollectionGetTypeID';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {!
@@ -326,7 +379,11 @@ type
 
 {! --------------------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
     @group Collection Matching Options
+=======
+    @group Collection Constants
+>>>>>>> graemeg/cpstrnew
 =======
     @group Collection Constants
 >>>>>>> graemeg/cpstrnew
@@ -338,6 +395,7 @@ type
     @discussion Specify this option key in the options dictionary with a non- zero value to enable automatic filtering of duplicate font descriptors.
 }
 var kCTFontCollectionRemoveDuplicatesOption: CFStringRef; external name '_kCTFontCollectionRemoveDuplicatesOption'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
@@ -361,6 +419,9 @@ var kCTFontCollectionDisallowAutoActivationOption: CFStringRef; external name '_
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {! --------------------------------------------------------------------------
     @group Collection Creation
@@ -369,7 +430,11 @@ var kCTFontCollectionDisallowAutoActivationOption: CFStringRef; external name '_
 {!
     @function   CTFontCollectionCreateFromAvailableFonts
 <<<<<<< HEAD
+<<<<<<< HEAD
     @abstract   Returns a new font collection matching all available fonts.
+=======
+    @abstract   Returns a new font collection containing all available fonts.
+>>>>>>> graemeg/cpstrnew
 =======
     @abstract   Returns a new font collection containing all available fonts.
 >>>>>>> graemeg/cpstrnew
@@ -381,7 +446,11 @@ var kCTFontCollectionDisallowAutoActivationOption: CFStringRef; external name '_
 }
 function CTFontCollectionCreateFromAvailableFonts( options: CFDictionaryRef ): CTFontCollectionRef; external name '_CTFontCollectionCreateFromAvailableFonts';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -391,8 +460,13 @@ function CTFontCollectionCreateFromAvailableFonts( options: CFDictionaryRef ): C
     @abstract   Returns a new collection based on the array of font descriptors.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @param      queryDescriptors
                 An array of font descriptors to use for matching. May be NULL, in which case the matching descriptors will be NULL.
+=======
+    @param      descriptors
+                An array of font descriptors.
+>>>>>>> graemeg/cpstrnew
 =======
     @param      descriptors
                 An array of font descriptors.
@@ -404,8 +478,13 @@ function CTFontCollectionCreateFromAvailableFonts( options: CFDictionaryRef ): C
     @result     This function creates a new collection based on the provided font descriptors. The contents of this collection is defined by matching the provided descriptors against all available font descriptors.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CTFontCollectionCreateWithFontDescriptors( queryDescriptors: CFArrayRef; options: CFDictionaryRef ): CTFontCollectionRef; external name '_CTFontCollectionCreateWithFontDescriptors';
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+function CTFontCollectionCreateWithFontDescriptors( descriptors: CFArrayRef; options: CFDictionaryRef ): CTFontCollectionRef; external name '_CTFontCollectionCreateWithFontDescriptors';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 function CTFontCollectionCreateWithFontDescriptors( descriptors: CFArrayRef; options: CFDictionaryRef ): CTFontCollectionRef; external name '_CTFontCollectionCreateWithFontDescriptors';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -419,7 +498,11 @@ function CTFontCollectionCreateWithFontDescriptors( descriptors: CFArrayRef; opt
                 The original font collection reference.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     @param      queryDescriptors
+=======
+    @param      descriptor
+>>>>>>> graemeg/cpstrnew
 =======
     @param      descriptor
 >>>>>>> graemeg/cpstrnew
@@ -430,6 +513,7 @@ function CTFontCollectionCreateWithFontDescriptors( descriptors: CFArrayRef; opt
 
     @result     This function creates a copy of the original font collection augmented by the new font descriptors and options. The new font descriptors are merged with the existing descriptors to create a single set.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function CTFontCollectionCreateCopyWithFontDescriptors( original: CTFontCollectionRef; queryDescriptors: CFArrayRef; options: CFDictionaryRef ): CTFontCollectionRef; external name '_CTFontCollectionCreateCopyWithFontDescriptors';
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
@@ -504,11 +588,16 @@ procedure CTFontCollectionSetExclusionDescriptors( collection: CTMutableFontColl
 {! --------------------------------------------------------------------------
     @group Retrieving Matching Descriptors
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function CTFontCollectionCreateCopyWithFontDescriptors( original: CTFontCollectionRef; descriptors: CFArrayRef; options: CFDictionaryRef ): CTFontCollectionRef; external name '_CTFontCollectionCreateCopyWithFontDescriptors';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 {! --------------------------------------------------------------------------
     @group Collection Access
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }//--------------------------------------------------------------------------
 
@@ -523,7 +612,11 @@ function CTFontCollectionCreateCopyWithFontDescriptors( original: CTFontCollecti
 }
 function CTFontCollectionCreateMatchingFontDescriptors( collection: CTFontCollectionRef ): CFArrayRef; external name '_CTFontCollectionCreateMatchingFontDescriptors';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -544,6 +637,7 @@ function CTFontCollectionCreateMatchingFontDescriptors( collection: CTFontCollec
     @result     This function returns an array of font descriptors matching the criteria of the collection and sorted by the results of the sorting callback function.
 }
 function CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback( collection: CTFontCollectionRef; sortCallback: CTFontCollectionSortDescriptorsCallback; refCon: UnivPtr ): CFArrayRef; external name '_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_5, __IPHONE_3_2) *)
 
@@ -634,6 +728,11 @@ function CTFontCollectionCopyFontAttribute( collection: CTFontCollectionRef; att
 function CTFontCollectionCopyFontAttributes( collection: CTFontCollectionRef; attributeNames: CFSetRef; options: CTFontCollectionCopyOptions ): CFArrayRef; external name '_CTFontCollectionCopyFontAttributes';
 (* CT_AVAILABLE_STARTING( __MAC_10_7, __IPHONE_NA) *)
 {$endc} { TARGET_OS_MAC }
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 

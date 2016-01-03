@@ -6,7 +6,11 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jstoken, jsscanner;
+=======
+  Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
 >>>>>>> graemeg/cpstrnew
@@ -163,7 +167,10 @@ begin
   FLineReader:=TStreamLineReader.Create(Fstream);
   FScanner:=TJSScanner.Create(FLineReader);
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=FScanner;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -792,7 +799,10 @@ procedure TTestJSScanner.TearDown;
 begin
   FreeScanner;
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -818,6 +828,7 @@ Var
 begin
   CreateScanner(S);
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     J:=FScanner.FetchToken;
     AssertEquals(S+' is a number',tjsNumber,J);
@@ -839,6 +850,8 @@ begin
     FreeScanner;
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a number',tjsNumber,J);
   V:=FScanner.CurTokenString;
@@ -855,6 +868,9 @@ begin
       Fail(FScanner.CurTokenString+' does not contain a float value');
     end;
   AssertEquals('Parsed float equals original float',F,C);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -890,6 +906,7 @@ Var
 begin
   CreateScanner(S);
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     J:=FScanner.FetchToken;
     AssertEquals(S+' is a string',tjsString,J);
@@ -900,11 +917,16 @@ begin
     FreeScanner;
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a string',tjsString,J);
   If (Length(S)>0) and (S[1] in ['"','''']) then
     S:=Copy(S,2,Length(S)-2);
   AssertEquals('Correct string is returned',S,FScanner.CurTokenString);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -922,11 +944,15 @@ procedure TTestJSScanner.TestErrorSource;
 begin
   CreateScanner(FErrorSource);
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     While (FScanner.FetchToken<>tjsEOF) do ;
   finally
     FreeScanner;
   end;
+=======
+  While (FScanner.FetchToken<>tjsEOF) do ;
+>>>>>>> graemeg/cpstrnew
 =======
   While (FScanner.FetchToken<>tjsEOF) do ;
 >>>>>>> graemeg/cpstrnew

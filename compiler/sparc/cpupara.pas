@@ -38,7 +38,11 @@ interface
         function  create_paraloc_info(p : TAbstractProcDef; side: tcallercallee):longint;override;
         function  create_varargs_paraloc_info(p : TAbstractProcDef; varargspara:tvarargsparalist):longint;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
         function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
+=======
+        function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
+>>>>>>> graemeg/cpstrnew
 =======
         function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
 >>>>>>> graemeg/cpstrnew
@@ -116,11 +120,15 @@ implementation
 
 
     function tsparcparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       var
         paraloc : pcgparalocation;
         retcgsize  : tcgsize;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
         if set_common_funcretloc_info(p,forcetempdef,retcgsize,result) then
           exit;
@@ -129,10 +137,13 @@ implementation
         { Return in FPU register? }
         if result.def.typ=floatdef then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         result.init;
         result.alignment:=get_para_align(p.proccalloption);
         { void has no location }
         if is_void(def) then
+<<<<<<< HEAD
           begin
             paraloc:=result.add_location;
             result.size:=OS_NO;
@@ -152,6 +163,27 @@ implementation
             retcgsize:=def_cgsize(def);
             result.intsize:=def.size;
           end;
+=======
+          begin
+            paraloc:=result.add_location;
+            result.size:=OS_NO;
+            result.intsize:=0;
+            paraloc^.size:=OS_NO;
+            paraloc^.loc:=LOC_VOID;
+            exit;
+          end;
+        { Constructors return self instead of a boolean }
+        if (p.proctypeoption=potype_constructor) then
+          begin
+            retcgsize:=OS_ADDR;
+            result.intsize:=sizeof(pint);
+          end
+        else
+          begin
+            retcgsize:=def_cgsize(def);
+            result.intsize:=def.size;
+          end;
+>>>>>>> graemeg/cpstrnew
         result.size:=retcgsize;
         { Return is passed as var parameter }
         if ret_in_param(def,p.proccalloption) then
@@ -165,6 +197,9 @@ implementation
         paraloc:=result.add_location;
         { Return in FPU register? }
         if def.typ=floatdef then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           begin
             paraloc^.loc:=LOC_FPUREGISTER;
@@ -173,7 +208,10 @@ implementation
               setsubreg(paraloc^.register,R_SUBFD);
             paraloc^.size:=retcgsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
             paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           end
@@ -189,11 +227,15 @@ implementation
                if side=callerside then
 =======
                if (side=callerside) or (po_inline in p.procoptions) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                  paraloc^.register:=NR_FUNCTION_RESULT64_HIGH_REG
                else
                  paraloc^.register:=NR_FUNCTION_RETURN64_HIGH_REG;
                paraloc^.size:=OS_32;
+<<<<<<< HEAD
 <<<<<<< HEAD
                paraloc^.def:=u32inttype;
                { low }
@@ -201,17 +243,25 @@ implementation
                paraloc^.loc:=LOC_REGISTER;
                if side=callerside then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                { low }
                paraloc:=result.add_location;
                paraloc^.loc:=LOC_REGISTER;
                if (side=callerside) or (po_inline in p.procoptions) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                  paraloc^.register:=NR_FUNCTION_RESULT64_LOW_REG
                else
                  paraloc^.register:=NR_FUNCTION_RETURN64_LOW_REG;
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
              end
@@ -221,7 +271,10 @@ implementation
                paraloc^.loc:=LOC_REGISTER;
                paraloc^.size:=retcgsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                if (side=callerside) then

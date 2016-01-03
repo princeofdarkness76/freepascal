@@ -90,10 +90,14 @@ interface
          sp_objcvarnames,
          sp_objcvartypes,
 <<<<<<< HEAD
+<<<<<<< HEAD
          sp_objcprotocolrefs,
          sp_varsets,
          sp_floats,
          sp_guids
+=======
+         sp_objcprotocolrefs
+>>>>>>> graemeg/cpstrnew
 =======
          sp_objcprotocolrefs
 >>>>>>> graemeg/cpstrnew
@@ -167,9 +171,12 @@ interface
         CurrAsmList   : TAsmList;
         WideInits     : TLinkedList;
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits   : TLinkedList;
         constructor create(n: pshortstring);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         { hash tables for reusing constant storage }
         ConstPools    : array[TConstPoolType] of THashSet;
         constructor create(const n:string);
@@ -215,16 +222,22 @@ interface
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const
       casmdata: TAsmDataClass = TAsmData;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       TTCInitItem = class(TLinkedListItem)
         sym: tsym;
         offset: aint;
         datalabel: TAsmLabel;
         constructor Create(asym: tsym; aoffset: aint; alabel: TAsmLabel);
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     var
@@ -295,7 +308,10 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {*****************************************************************************
                                  TTCInitItem
 *****************************************************************************}
@@ -394,7 +410,10 @@ implementation
           AsmLists[hal]:=TAsmList.create;
         WideInits :=TLinkedList.create;
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits:=TLinkedList.create;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         { CFI }
@@ -429,7 +448,10 @@ implementation
          memasmlists.start;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits.free;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WideInits.free;
@@ -540,6 +562,7 @@ implementation
     procedure TAsmData.getlabel(out l : TAsmLabel;alt:TAsmLabeltype);
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (target_info.system in (systems_linux + systems_bsd + systems_android)) and
            { the next condition was
              (cs_create_smart in current_settings.moduleswitches) and
@@ -548,10 +571,15 @@ implementation
            (alt = alt_dbgline) then
           l:=TAsmLabel.createglobal(AsmSymbolDict,name^,FNextLabelNr[alt],alt)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         if (target_info.system in systems_linux) and
            (cs_link_smart in current_settings.globalswitches) and
            (alt = alt_dbgline) then
           l:=TAsmLabel.createglobal(AsmSymbolDict,name,FNextLabelNr[alt],alt)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         else
           l:=TAsmLabel.createlocal(AsmSymbolDict,FNextLabelNr[alt],alt);

@@ -52,15 +52,21 @@
     _modelKeyToDependentKeyTable: NSMutableDictionary;
     _modelKeysToRefreshEachTime: NSMutableArray;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __bindingsControllerFlags: record
       case byte of
        0: (_anonbitfield_NSController0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __bindingsControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSController0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _alwaysPresentsApplicationModalAlerts: 0..1;
         _refreshesAllModelKeys: 0..1;
@@ -68,7 +74,10 @@
         _isEditing: 0..1;
         _reservedController: 0..((1 shl 28)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

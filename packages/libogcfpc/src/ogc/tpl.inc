@@ -15,6 +15,7 @@ type
 function TPL_OpenTPLFromFile(tdf: PTPLFile; file_name: pcchar): cint32; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TPL_OpenTPLFromMemory(tdf: PTPLFile; memory: pointer; len: cuint32): cint32; cdecl; external;
 
 function TPL_GetTexture(tdf: PTPLFile; id: cint32; texObj: PGXTexObj): cint32; cdecl; external;
@@ -23,6 +24,8 @@ function TPL_GetTextureCI(tdf: PTPLFile; id: cint32; texObj: PGXTexObj; tlutObj:
 
 function TPL_GetTextureInfo(tdf: PTPLFile; id: cint32; fmt: pcuint32; width, height: pcuint16): cint32; cdecl; external;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TPL_OpenTPLFromMemory(tdf: PTPLFile; const memory: pointer; len: cuint32)
   : cint32; cdecl; external;
 
@@ -33,6 +36,9 @@ function TPL_GetTextureCI(tdf: PTPLFile; id: cint32; texObj: PGXTexObj;
 
 function TPL_GetTextureInfo(tdf: PTPLFile; id: cint32; fmt: pcuint32;
   width, height: pcuint16): cint32; cdecl; external;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 procedure TPL_CloseTPLFile(tdf: PTPLFile); cdecl; external;

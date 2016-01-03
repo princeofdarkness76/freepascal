@@ -152,7 +152,10 @@ type
     procedure Move(CurIndex, NewIndex: Integer); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure Assign(Obj:TFPObjectList);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure ConcatListCopy(Obj:TFPObjectList);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure Pack; {$ifdef CCLASSESINLINE}inline;{$endif}
@@ -224,7 +227,11 @@ type
     function Add(const AName:TSymStr;Item: Pointer): Integer;
     procedure Clear;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function NameOfIndex(Index: Integer): TSymStr;
+=======
+    function NameOfIndex(Index: Integer): ShortString;
+>>>>>>> graemeg/cpstrnew
 =======
     function NameOfIndex(Index: Integer): ShortString;
 >>>>>>> graemeg/cpstrnew
@@ -1576,6 +1583,9 @@ var
   HashIndex : Integer;
 begin
   prefetch(AName);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   Result:=FHashTable^[AHash and FCapacityMask];
   PrevIndex:=-1;
@@ -1586,8 +1596,11 @@ begin
           if assigned(Data) and
              (HashValue=AHash) and
 <<<<<<< HEAD
+<<<<<<< HEAD
              (AName=PSymStr(@FStrs[StrIndex])^) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
              (AName=PShortString(@FStrs[StrIndex])^) then
 >>>>>>> graemeg/cpstrnew
             exit;

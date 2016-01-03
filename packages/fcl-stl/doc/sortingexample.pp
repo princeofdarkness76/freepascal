@@ -3,8 +3,12 @@ uses garrayutils, gutil, gvector;
 type vectorlli = specialize TVector<longint>;
      lesslli = specialize TLess<longint>;
 <<<<<<< HEAD
+<<<<<<< HEAD
      sortlli = specialize 
          TOrderingArrayUtils<vectorlli, longint, lesslli>;
+=======
+     sortlli = specialize TOrderingArrayUtils<vectorlli, longint, lesslli>;
+>>>>>>> graemeg/cpstrnew
 =======
      sortlli = specialize TOrderingArrayUtils<vectorlli, longint, lesslli>;
 >>>>>>> graemeg/cpstrnew

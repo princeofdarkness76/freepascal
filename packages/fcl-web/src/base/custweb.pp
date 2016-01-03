@@ -24,8 +24,11 @@ uses
   CustApp,Classes,SysUtils, httpdefs, fphttp, eventlog;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Type
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Const
   CGIVarCount = 36;
 
@@ -75,6 +78,9 @@ Const
 
 Type
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   { TCustomWebApplication }
 
@@ -82,8 +88,11 @@ Type
                                Var ModuleClass : TCustomHTTPModuleClass) of object;
   TOnShowRequestException = procedure(AResponse: TResponse; AnException: Exception; var handled: boolean);
 <<<<<<< HEAD
+<<<<<<< HEAD
   TLogEvent = Procedure (EventType: TEventType; const Msg: String) of object;
   TInitModuleEvent = Procedure (Sender : TObject; Module: TCustomHTTPModule) of object;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -92,10 +101,14 @@ Type
   TWebHandler = class(TComponent)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     FDefaultModuleName: String;
     FOnIdle: TNotifyEvent;
     FOnInitModule: TInitModuleEvent;
     FOnUnknownRequestEncoding: TOnUnknownEncodingEvent;
+=======
+    FOnIdle: TNotifyEvent;
+>>>>>>> graemeg/cpstrnew
 =======
     FOnIdle: TNotifyEvent;
 >>>>>>> graemeg/cpstrnew
@@ -108,6 +121,10 @@ Type
     FOnGetModule: TGetModuleEvent;
     FOnShowRequestException: TOnShowRequestException;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    FRequest : TRequest;
+>>>>>>> graemeg/cpstrnew
 =======
     FRequest : TRequest;
 >>>>>>> graemeg/cpstrnew
@@ -117,12 +134,17 @@ Type
     FTitle: string;
     FOnTerminate : TNotifyEvent;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOnLog : TLogEvent;
     FPreferModuleName : Boolean;
   protected
     Class Procedure DoError(Msg : String; AStatusCode : Integer = 0; AStatusText : String = '');
     Class Procedure DoError(Fmt : String; Const Args : Array of const;AStatusCode : Integer = 0; AStatusText : String = '');
     procedure Terminate; virtual;
+=======
+  protected
+    procedure Terminate;
+>>>>>>> graemeg/cpstrnew
 =======
   protected
     procedure Terminate;
@@ -135,8 +157,11 @@ Type
     function GetApplicationURL(ARequest : TRequest): String; virtual;
     procedure ShowRequestException(R: TResponse; E: Exception); virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure InitRequest(ARequest : TRequest); virtual;
     Procedure InitResponse(AResponse : TResponse); virtual;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Function GetEmail : String; virtual;
@@ -146,7 +171,10 @@ Type
     constructor Create(AOwner: TComponent); override;
     Procedure Run; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Log(EventType : TEventType; Const Msg : String);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Procedure DoHandleRequest(ARequest : TRequest; AResponse : TResponse);
@@ -156,8 +184,13 @@ Type
     Property RedirectOnErrorURL : string Read FRedirectOnErrorURL Write FRedirectOnErrorURL;
     Property ApplicationURL : String Read FApplicationURL Write FApplicationURL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property AllowDefaultModule : Boolean Read FAllowDefaultModule Write FAllowDefaultModule;
     Property DefaultModuleName : String Read FDefaultModuleName Write FDefaultModuleName;
+=======
+    Property Request : TRequest read FRequest;
+    Property AllowDefaultModule : Boolean Read FAllowDefaultModule Write FAllowDefaultModule;
+>>>>>>> graemeg/cpstrnew
 =======
     Property Request : TRequest read FRequest;
     Property AllowDefaultModule : Boolean Read FAllowDefaultModule Write FAllowDefaultModule;
@@ -170,10 +203,13 @@ Type
     property OnShowRequestException: TOnShowRequestException read FOnShowRequestException write FOnShowRequestException;
     property OnIdle: TNotifyEvent read FOnIdle write FOnIdle;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property OnLog : TLogEvent Read FOnLog Write FOnLog;
     Property OnUnknownRequestEncoding : TOnUnknownEncodingEvent Read FOnUnknownRequestEncoding Write FOnUnknownRequestEncoding;
     Property OnInitModule: TInitModuleEvent Read FOnInitModule write FOnInitModule;
     Property PreferModuleName : Boolean Read FPreferModuleName Write FPreferModuleName;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -186,7 +222,10 @@ Type
     function GetAllowDefaultModule: Boolean;
     function GetApplicationURL: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetDefaultModuleName: String;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function GetEmail: String;
@@ -195,6 +234,7 @@ Type
     function GetModuleVar: String;
     function GetOnGetModule: TGetModuleEvent;
     function GetOnShowRequestException: TOnShowRequestException;
+<<<<<<< HEAD
 <<<<<<< HEAD
     function GetOnUnknownRequestEncoding: TOnUnknownEncodingEvent;
     function GetRedirectOnError: boolean;
@@ -205,17 +245,23 @@ Type
     procedure SetApplicationURL(const AValue: String);
     procedure SetDefaultModuleName(AValue: String);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function GetRedirectOnError: boolean;
     function GetRedirectOnErrorURL: string;
     procedure SetAdministrator(const AValue: String);
     procedure SetAllowDefaultModule(const AValue: Boolean);
     procedure SetApplicationURL(const AValue: String);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure SetEmail(const AValue: String);
     procedure SetHandleGetOnPost(const AValue: Boolean);
     procedure SetModuleVar(const AValue: String);
     procedure SetOnGetModule(const AValue: TGetModuleEvent);
     procedure SetOnShowRequestException(const AValue: TOnShowRequestException);
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure SetOnUnknownRequestEncoding(AValue: TOnUnknownEncodingEvent);
     procedure SetRedirectOnError(const AValue: boolean);
@@ -228,12 +274,17 @@ Type
     function InitializeWebHandler: TWebHandler; virtual; abstract;
     Procedure DoLog(EventType: TEventType; const Msg: String); override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure SetRedirectOnError(const AValue: boolean);
     procedure SetRedirectOnErrorURL(const AValue: string);
     procedure DoOnTerminate(Sender : TObject);
   protected
     Procedure DoRun; override;
     function InitializeWebHandler: TWebHandler; virtual; abstract;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure SetTitle(const AValue: string); override;
     property WebHandler: TWebHandler read FWebHandler write FWebHandler;
@@ -243,6 +294,10 @@ Type
     Procedure CreateForm(AClass : TComponentClass; out Reference);
     Procedure Initialize; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    Procedure Log(EventType: TEventType; const Msg: String); override;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure Log(EventType: TEventType; const Msg: String); override;
 >>>>>>> graemeg/cpstrnew
@@ -253,7 +308,10 @@ Type
     Property ApplicationURL : String Read GetApplicationURL Write SetApplicationURL;
     Property AllowDefaultModule : Boolean Read GetAllowDefaultModule Write SetAllowDefaultModule;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property DefaultModuleName : String Read GetDefaultModuleName Write SetDefaultModuleName;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Property ModuleVariable : String Read GetModuleVar Write SetModuleVar;
@@ -262,6 +320,7 @@ Type
     Property Administrator : String Read GetAdministrator Write SetAdministrator;
     property OnShowRequestException: TOnShowRequestException read GetOnShowRequestException write SetOnShowRequestException;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property OnUnknownRequestEncoding : TOnUnknownEncodingEvent Read GetOnUnknownRequestEncoding Write SetOnUnknownRequestEncoding;
     Property EventLog: TEventLog read GetEventLog;
     Property PreferModuleName : Boolean Read GetPreferModuleName Write SetPreferModuleName;
@@ -269,10 +328,15 @@ Type
 
   EFPWebError = Class(EFPHTTPError);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     Property EventLog: TEventLog read GetEventLog;
   end;
 
   EFPWebError = Class(Exception);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 procedure ExceptionToHTML(S: TStrings; const E: Exception; const Title, Email, Administrator: string);
@@ -288,7 +352,10 @@ resourcestring
   SErrNoModuleNameForRequest = 'Could not determine HTTP module name for request';
   SErrNoModuleForRequest = 'Could not determine HTTP module for request "%s"';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrSendingContent = 'An error (%s) happened while sending response content: %s';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   SModuleError = 'Module Error';
@@ -326,7 +393,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TWebHandler.Run;
+=======
+procedure TWebHandler.Run;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TWebHandler.Run;
 >>>>>>> graemeg/cpstrnew
@@ -342,6 +413,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Procedure TWebHandler.Log(EventType: TEventType; Const Msg: String);
 begin
@@ -367,10 +439,15 @@ Var
   handled: boolean;
   CT : String;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TWebHandler.ShowRequestException(R: TResponse; E: Exception);
 Var
  S : TStrings;
  handled: boolean;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 begin
@@ -388,6 +465,7 @@ begin
     Exit;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (not R.HeadersSent) then
     begin
     R.Code:=GetStatusCode;
@@ -400,10 +478,15 @@ begin
     R.CodeText:=CT;
     R.ContentType:='text/html';
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   If not R.HeadersSent then
     begin
     R.ContentType:='text/html';
     R.SendHeaders;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   If (R.ContentType='text/html') then
@@ -420,6 +503,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TWebHandler.InitRequest(ARequest: TRequest);
 begin
   ARequest.OnUnknownEncoding:=Self.OnUnknownRequestEncoding;
@@ -434,12 +518,19 @@ Function TWebHandler.GetEmail: String;
 =======
 function TWebHandler.GetEmail: String;
 >>>>>>> graemeg/cpstrnew
+=======
+function TWebHandler.GetEmail: String;
+>>>>>>> graemeg/cpstrnew
 begin
   Result := FEmail;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TWebHandler.GetAdministrator: String;
+=======
+function TWebHandler.GetAdministrator: String;
+>>>>>>> graemeg/cpstrnew
 =======
 function TWebHandler.GetAdministrator: String;
 >>>>>>> graemeg/cpstrnew
@@ -448,7 +539,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TWebHandler.HandleRequest(ARequest: TRequest; AResponse: TResponse);
+=======
+procedure TWebHandler.HandleRequest(ARequest: TRequest; AResponse: TResponse);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TWebHandler.HandleRequest(ARequest: TRequest; AResponse: TResponse);
 >>>>>>> graemeg/cpstrnew
@@ -463,7 +558,10 @@ begin
     MC:=Nil;
     M:=NIL;
 <<<<<<< HEAD
+<<<<<<< HEAD
     MI:=Nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     If (OnGetModule<>Nil) then
@@ -474,7 +572,11 @@ begin
       MI:=ModuleFactory.FindModule(MN);
       if (MI=Nil) then
 <<<<<<< HEAD
+<<<<<<< HEAD
         DoError(SErrNoModuleForRequest,[MN],400,'Not found');
+=======
+        Raise EFPWebError.CreateFmt(SErrNoModuleForRequest,[MN]);
+>>>>>>> graemeg/cpstrnew
 =======
         Raise EFPWebError.CreateFmt(SErrNoModuleForRequest,[MN]);
 >>>>>>> graemeg/cpstrnew
@@ -483,7 +585,11 @@ begin
     M:=FindModule(MC); // Check if a module exists already
     If (M=Nil) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       if assigned(MI) and Mi.SkipStreaming then
+=======
+      if Mi.SkipStreaming then
+>>>>>>> graemeg/cpstrnew
 =======
       if Mi.SkipStreaming then
 >>>>>>> graemeg/cpstrnew
@@ -492,9 +598,12 @@ begin
         M:=MC.Create(Self);
     SetBaseURL(M,MN,ARequest);
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (OnInitModule<>Nil) then
       OnInitModule(Self,M);
     M.DoAfterInitModule(ARequest);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     if M.Kind=wkOneShot then
@@ -521,6 +630,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Class Procedure TWebHandler.DoError(Msg : String;AStatusCode : Integer = 0; AStatusText : String = '');
 
 Var
@@ -541,6 +651,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TWebHandler.Terminate;
 begin
   FTerminated := true;
@@ -549,7 +661,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TWebHandler.GetModuleName(Arequest: TRequest): string;
+=======
+function TWebHandler.GetModuleName(Arequest: TRequest): string;
+>>>>>>> graemeg/cpstrnew
 =======
 function TWebHandler.GetModuleName(Arequest: TRequest): string;
 >>>>>>> graemeg/cpstrnew
@@ -558,9 +674,13 @@ function TWebHandler.GetModuleName(Arequest: TRequest): string;
 
    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
       if (DefaultModuleName<>'') then
         Result:=DefaultModuleName
       else if (ModuleFactory.Count=1) then
+=======
+      If (ModuleFactory.Count=1) then
+>>>>>>> graemeg/cpstrnew
 =======
       If (ModuleFactory.Count=1) then
 >>>>>>> graemeg/cpstrnew
@@ -578,6 +698,7 @@ begin
     begin
     S:=ARequest.PathInfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
     If (Length(S)>0) and (S[1]='/') then  
       Delete(S,1,1);                      //Delete the leading '/' if exists
     I:=Length(S);
@@ -586,10 +707,15 @@ begin
     I:=Pos('/',S);
     if (I>0) or PreferModuleName then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     If (Length(S)>0) and (S[1]='/') then
       Delete(S,1,1);
     I:=Pos('/',S);
     if (I>0) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       Result:=ARequest.GetNextPathInfo;
     end;
@@ -597,7 +723,11 @@ begin
     begin
     if Not AllowDefaultModule then
 <<<<<<< HEAD
+<<<<<<< HEAD
       DoError(SErrNoModuleNameForRequest,400,'Not found');
+=======
+      Raise EFPWebError.Create(SErrNoModuleNameForRequest);
+>>>>>>> graemeg/cpstrnew
 =======
       Raise EFPWebError.Create(SErrNoModuleNameForRequest);
 >>>>>>> graemeg/cpstrnew
@@ -625,8 +755,13 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TWebHandler.SetBaseURL(AModule: TCustomHTTPModule;
   Const AModuleName: String; ARequest: TRequest);
+=======
+procedure TWebHandler.SetBaseURL(AModule: TCustomHTTPModule;
+  Const AModuleName : String; ARequest: TRequest);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TWebHandler.SetBaseURL(AModule: TCustomHTTPModule;
   Const AModuleName : String; ARequest: TRequest);
@@ -649,6 +784,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TWebHandler.DoHandleRequest(ARequest: TRequest; AResponse: TResponse);
 begin
   Try
@@ -664,12 +800,17 @@ begin
     EndRequest(ARequest,AResponse);
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TWebHandler.DoHandleRequest(ARequest: TRequest; AResponse: TResponse);
 begin
   HandleRequest(ARequest,AResponse);
   If Not AResponse.ContentSent then
     AResponse.SendContent;
   EndRequest(ARequest,AResponse);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -701,6 +842,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomWebApplication.GetDefaultModuleName: String;
 begin
   Result:=FWebHandler.DefaultModuleName;
@@ -708,11 +850,14 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 function TCustomWebApplication.GetEmail: String;
 begin
   result := FWebHandler.Email;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TCustomWebApplication.CreateEventLog: TEventLog;
 begin
@@ -733,10 +878,15 @@ begin
   if not assigned(FEventLog) then
     FEventLog := CreateEventLog;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TCustomWebApplication.GetEventLog: TEventLog;
 begin
   if not assigned(FEventLog) then
     FEventLog := TEventLog.Create(self);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   Result := FEventLog;
 end;
@@ -762,11 +912,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomWebApplication.GetOnUnknownRequestEncoding: TOnUnknownEncodingEvent;
 begin
   Result := FWebHandler.OnUnknownRequestEncoding
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function TCustomWebApplication.GetRedirectOnError: boolean;
@@ -775,11 +928,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomWebApplication.GetPreferModuleName: boolean;
 begin
   result := FWebHandler.PreferModuleName;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function TCustomWebApplication.GetRedirectOnErrorURL: string;
@@ -803,11 +959,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomWebApplication.SetDefaultModuleName(AValue: String);
 begin
   FWebHandler.DefaultModuleName:=AValue;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TCustomWebApplication.SetEmail(const AValue: String);
@@ -836,6 +995,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomWebApplication.SetOnUnknownRequestEncoding(
   AValue: TOnUnknownEncodingEvent);
 begin
@@ -844,17 +1004,22 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TCustomWebApplication.SetRedirectOnError(const AValue: boolean);
 begin
   FWebHandler.RedirectOnError := AValue;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomWebApplication.SetPreferModuleName(const AValue: boolean);
 begin
   FWebHandler.PreferModuleName := AValue;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TCustomWebApplication.SetRedirectOnErrorURL(const AValue: string);
@@ -879,7 +1044,10 @@ begin
   FWebHandler := InitializeWebHandler;
   FWebHandler.FOnTerminate:=@DoOnTerminate;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FWebHandler.FOnLog:=@Log;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -909,7 +1077,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomWebApplication.DoLog(EventType: TEventType; const Msg: String);
+=======
+procedure TCustomWebApplication.Log(EventType: TEventType; const Msg: String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TCustomWebApplication.Log(EventType: TEventType; const Msg: String);
 >>>>>>> graemeg/cpstrnew

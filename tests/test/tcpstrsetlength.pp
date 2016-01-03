@@ -1,7 +1,11 @@
 uses
 {$ifdef unix}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
+=======
+  cwstring,
+>>>>>>> graemeg/cpstrnew
 =======
   cwstring,
 >>>>>>> graemeg/cpstrnew
@@ -10,7 +14,11 @@ uses
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   ts866 = type AnsiString(866);
+=======
+  ts866 = type string<866>;
+>>>>>>> graemeg/cpstrnew
 =======
   ts866 = type string<866>;
 >>>>>>> graemeg/cpstrnew

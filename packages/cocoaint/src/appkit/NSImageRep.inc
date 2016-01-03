@@ -52,15 +52,21 @@ var
   NSImageRep = objcclass external (NSObject, NSCopyingProtocol, NSCodingProtocol)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     __repFlags: record
       case byte of
        0: (_anonbitfield_NSImageRep0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __repFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSImageRep0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _hasAlpha: 0..1;
         _isOpaque: 0..1;
@@ -72,7 +78,10 @@ var
         _bitsPerSample: 0..((1 shl 8)-1);
         gsaved: 0..((1 shl 16)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

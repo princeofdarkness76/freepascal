@@ -530,6 +530,7 @@ type
       basetype:pointer; { required for alignment }
     end;
     { more data here, but not needed }
+<<<<<<< HEAD
   end;
 
   { Pascal data types for the ordinal enum value to string table. It consists of a header
@@ -543,6 +544,21 @@ type
     name:Pstring;
   end;
 
+=======
+  end;
+
+  { Pascal data types for the ordinal enum value to string table. It consists of a header
+    that indicates what type of data the table stores, either a direct lookup table (when
+    o = lookup) or a set of ordered (ordinal value, string) tuples (when o = search). }
+
+  { A single entry in the set of ordered tuples }
+  Psearch_data=^Tsearch_data;
+  Tsearch_data={$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}packed{$endif}record
+    value:longint;
+    name:Pstring;
+  end;
+
+>>>>>>> graemeg/cpstrnew
   Penum_ord_to_string=^Tenum_ord_to_string;
   Tenum_ord_to_string={$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}packed{$endif}record
     o:(lookup,search);
@@ -588,9 +604,15 @@ begin
       { temporarily disable range checking because of the access to the array[0..0]
         member of Tenum_ord_to_string_lookup }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$R-}
         res:=enum_o2s^.lookup_data[ordinal];
 {$pop}
+=======
+{$PUSH}{$R-}
+        res:=enum_o2s^.lookup_data[ordinal];
+{$POP}
+>>>>>>> graemeg/cpstrnew
 =======
 {$PUSH}{$R-}
         res:=enum_o2s^.lookup_data[ordinal];
@@ -609,7 +631,11 @@ begin
       { temporarily disable range checking because of the access to the array[0..0]
         member of Tenum_ord_to_string_search }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$R-}
+=======
+{$PUSH}{$R-}
+>>>>>>> graemeg/cpstrnew
 =======
 {$PUSH}{$R-}
 >>>>>>> graemeg/cpstrnew
@@ -626,7 +652,11 @@ begin
           exit; { Ordinal value not found? Exit }
       until false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$pop}
+=======
+{$POP}
+>>>>>>> graemeg/cpstrnew
 =======
 {$POP}
 >>>>>>> graemeg/cpstrnew
@@ -675,6 +705,20 @@ procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external 
 
 procedure fpc_shortstr_currency({$ifdef cpujvm}constref{$endif} c : currency; len,f : SizeInt; out s : shortstring);[public,alias:'FPC_SHORTSTR_CURRENCY']; compilerproc;
 =======
+procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external name 'FPC_SHORTSTR_BOOL';
+
+
+procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);[public,alias:'FPC_SHORTSTR_BOOL'];compilerproc;
+begin
+  if b then
+    s:='TRUE'
+  else
+    s:='FALSE';
+  if length(s)<len then
+    s:=space(len-length(s))+s;
+end;
+
+{ also define alias for internal use in the system unit }
 procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external name 'FPC_SHORTSTR_BOOL';
 
 
@@ -808,7 +852,11 @@ begin
 			100.00
 		  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  if i>tlen then
+=======
+		  if i>reslen then
+>>>>>>> graemeg/cpstrnew
 =======
 		  if i>reslen then
 >>>>>>> graemeg/cpstrnew
@@ -1051,11 +1099,15 @@ end;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_STR_ENUM_INTERN}
 { currently, the avr code generator fails on this procedure, so we disable it,
   this is not a good solution but fixing compilation of this procedure for
   avr is hard, requires significant changes to the register allocator to take
   care of different register classes }
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1065,9 +1117,12 @@ var
   maxlen : SizeInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef EXCLUDE_COMPLEX_PROCS}
   runerror(219);
 {$else EXCLUDE_COMPLEX_PROCS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   fpc_shortstr_enum(ordinal,len,typinfo,ord2strindex,ss);
@@ -1076,10 +1131,16 @@ begin
   else
     maxlen:=high(a)+1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
 {$endif EXCLUDE_COMPLEX_PROCS}
 end;
 {$endif not FPC_STR_ENUM_INTERN}
+=======
+  move(ss[1],pchar(@a)^,maxlen);
+end;
+
+>>>>>>> graemeg/cpstrnew
 =======
   move(ss[1],pchar(@a)^,maxlen);
 end;
@@ -1097,6 +1158,7 @@ begin
   else
     maxlen:=high(a)+1;
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
 end;
 
@@ -1104,6 +1166,8 @@ end;
 {$ifndef FPC_HAS_CHARARRAY_CURRENCY}
 {$define FPC_HAS_CHARARRAY_CURRENCY}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   move(ss[1],pchar(@a)^,maxlen);
 end;
 
@@ -1856,7 +1920,14 @@ begin
         break;
       end;
       inc(code);
+<<<<<<< HEAD
 =======
+=======
+    end;
+{ Decimal ? }
+  if (length(s)>=code) and (s[code]='.') then
+    begin
+>>>>>>> graemeg/cpstrnew
       inc(code);
       while (length(s)>=code) and (s[code] in ['0'..'9']) do
         begin
@@ -1936,8 +2007,11 @@ begin
       exponent:=-exponent;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { adjust exponent based on decimal point }
   if esign>0 then
     begin
@@ -1950,6 +2024,9 @@ begin
     end
   else
     inc(exponent,decpoint);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 { evaluate sign }
 { (before exponent, because the exponent may turn it into a denormal) }

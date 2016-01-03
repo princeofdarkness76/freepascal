@@ -13,6 +13,9 @@
      Version:    LaunchServices-360.3~1
  
      Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
@@ -22,7 +25,10 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {	 Pascal Translation Update: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 
 >>>>>>> graemeg/cpstrnew
@@ -81,11 +87,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -104,6 +113,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -124,6 +134,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -139,6 +151,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -147,11 +162,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -230,6 +249,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -270,6 +322,12 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
 {$endc} {not MACOSALLINCLUDE}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+{ header available as of iPhoneOS 3.0, but can't add iPhoneOS markers yet
+  because they're not yet present in the Mac OS X version of the header }
+>>>>>>> graemeg/cpstrnew
 =======
 
 { header available as of iPhoneOS 3.0, but can't add iPhoneOS markers yet
@@ -301,7 +359,10 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
         public.utf16-plain-text
         com.apple.xml-property-list
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         com.apple.appleworks.doc
 >>>>>>> graemeg/cpstrnew
 
@@ -458,6 +519,7 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFURL;
  }
 var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedTypeDeclarationsKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
 {
  *  kUTImportedTypeDeclarationsKey
@@ -465,6 +527,8 @@ var kUTExportedTypeDeclarationsKey: CFStringRef; external name '_kUTExportedType
 var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedTypeDeclarationsKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 {
  *  kUTImportedTypeDeclarationsKey
@@ -476,13 +540,20 @@ var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedType
  }
 var kUTImportedTypeDeclarationsKey: CFStringRef; external name '_kUTImportedTypeDeclarationsKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
  *  kUTTypeIdentifierKey
  }
 var kUTTypeIdentifierKey: CFStringRef; external name '_kUTTypeIdentifierKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -491,6 +562,7 @@ var kUTTypeIdentifierKey: CFStringRef; external name '_kUTTypeIdentifierKey'; (*
  }
 var kUTTypeTagSpecificationKey: CFStringRef; external name '_kUTTypeTagSpecificationKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
 {
  *  kUTTypeConformsToKey
@@ -498,6 +570,8 @@ var kUTTypeTagSpecificationKey: CFStringRef; external name '_kUTTypeTagSpecifica
 var kUTTypeConformsToKey: CFStringRef; external name '_kUTTypeConformsToKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 {
  *  kUTTypeConformsToKey
@@ -509,13 +583,20 @@ var kUTTypeConformsToKey: CFStringRef; external name '_kUTTypeConformsToKey'; (*
  }
 var kUTTypeConformsToKey: CFStringRef; external name '_kUTTypeConformsToKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
  *  kUTTypeDescriptionKey
  }
 var kUTTypeDescriptionKey: CFStringRef; external name '_kUTTypeDescriptionKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -524,7 +605,11 @@ var kUTTypeDescriptionKey: CFStringRef; external name '_kUTTypeDescriptionKey'; 
  }
 var kUTTypeIconFileKey: CFStringRef; external name '_kUTTypeIconFileKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -533,7 +618,11 @@ var kUTTypeIconFileKey: CFStringRef; external name '_kUTTypeIconFileKey'; (* att
  }
 var kUTTypeReferenceURLKey: CFStringRef; external name '_kUTTypeReferenceURLKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -542,7 +631,11 @@ var kUTTypeReferenceURLKey: CFStringRef; external name '_kUTTypeReferenceURLKey'
  }
 var kUTTypeVersionKey: CFStringRef; external name '_kUTTypeVersionKey'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -560,7 +653,11 @@ var kUTTypeVersionKey: CFStringRef; external name '_kUTTypeVersionKey'; (* attri
  }
 var kUTTagClassFilenameExtension: CFStringRef; external name '_kUTTagClassFilenameExtension'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -569,7 +666,11 @@ var kUTTagClassFilenameExtension: CFStringRef; external name '_kUTTagClassFilena
  }
 var kUTTagClassMIMEType: CFStringRef; external name '_kUTTagClassMIMEType'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -578,7 +679,11 @@ var kUTTagClassMIMEType: CFStringRef; external name '_kUTTagClassMIMEType'; (* a
  }
 var kUTTagClassNSPboardType: CFStringRef; external name '_kUTTagClassNSPboardType'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -587,7 +692,11 @@ var kUTTagClassNSPboardType: CFStringRef; external name '_kUTTagClassNSPboardTyp
  }
 var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -638,7 +747,11 @@ var kUTTagClassOSType: CFStringRef; external name '_kUTTagClassOSType'; (* attri
  }
 function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFStringRef; external name '_UTTypeCreatePreferredIdentifierForTag';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -684,7 +797,11 @@ function UTTypeCreatePreferredIdentifierForTag( inTagClass: CFStringRef; inTag: 
  }
 function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStringRef; inConformingToUTI: CFStringRef { can be NULL } ): CFArrayRef; external name '_UTTypeCreateAllIdentifiersForTag';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -714,10 +831,13 @@ function UTTypeCreateAllIdentifiersForTag( inTagClass: CFStringRef; inTag: CFStr
  *  Result:
  *    the tag string, or NULL if there is no tag of the specified class.
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
 function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStringRef ): CFStringRef; external name '_UTTypeCopyPreferredTagWithClass';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 and later in ApplicationServices.framework
@@ -726,6 +846,9 @@ function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStri
  }
 function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStringRef ): CFStringRef; external name '_UTTypeCopyPreferredTagWithClass';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -753,7 +876,11 @@ function UTTypeCopyPreferredTagWithClass( inUTI: CFStringRef; inTagClass: CFStri
  }
 function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; external name '_UTTypeEqual';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -780,7 +907,11 @@ function UTTypeEqual( inUTI1: CFStringRef; inUTI2: CFStringRef ): Boolean; exter
  }
 function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): Boolean; external name '_UTTypeConformsTo';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -805,7 +936,11 @@ function UTTypeConformsTo( inUTI: CFStringRef; inConformsToUTI: CFStringRef ): B
  }
 function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name '_UTTypeCopyDescription';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -833,7 +968,11 @@ function UTTypeCopyDescription( inUTI: CFStringRef ): CFStringRef; external name
  }
 function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external name '_UTTypeCopyDeclaration';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -859,7 +998,11 @@ function UTTypeCopyDeclaration( inUTI: CFStringRef ): CFDictionaryRef; external 
  }
 function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external name '_UTTypeCopyDeclaringBundleURL';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_3_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -882,11 +1025,14 @@ function UTTypeCopyDeclaringBundleURL( inUTI: CFStringRef ): CFURLRef; external 
  *  
  *  Result:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    a new CFString representing the OSType
  }
 function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name '_UTCreateStringForOSType';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *    a new CFString representing the OSType. Returns the empty string
  *    when the argument is 0
  *  
@@ -897,6 +1043,9 @@ function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name
  }
 function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name '_UTCreateStringForOSType';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -921,7 +1070,11 @@ function UTCreateStringForOSType( inOSType: OSType ): CFStringRef; external name
  }
 function UTGetOSTypeFromString( inString: CFStringRef ): OSType; external name '_UTGetOSTypeFromString';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

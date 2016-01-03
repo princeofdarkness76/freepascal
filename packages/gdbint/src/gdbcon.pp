@@ -43,7 +43,10 @@ type
     progdir,
     progargs   : pchar;
 <<<<<<< HEAD
+<<<<<<< HEAD
     TBreakNumber,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     start_break_number,

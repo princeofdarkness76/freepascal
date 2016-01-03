@@ -73,7 +73,11 @@ valuePtr = ^value;
     _container: id;
     _retainedArgs: cuint8;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(15)-1] of cuint8;
+=======
+        _reserved: array[0..14] of cuint8;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..14] of cuint8;
 >>>>>>> graemeg/cpstrnew

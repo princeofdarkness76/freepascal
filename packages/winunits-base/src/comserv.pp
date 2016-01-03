@@ -114,7 +114,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
+=======
+{
+>>>>>>> graemeg/cpstrnew
 =======
 {
 >>>>>>> graemeg/cpstrnew
@@ -130,7 +134,11 @@ end;
     }
     return hRes;
 <<<<<<< HEAD
+<<<<<<< HEAD
 *)
+=======
+}
+>>>>>>> graemeg/cpstrnew
 =======
 }
 >>>>>>> graemeg/cpstrnew
@@ -216,7 +224,11 @@ begin
   OleCheck(TypeLib.GetLibAttr(ptla));
   try
 <<<<<<< HEAD
+<<<<<<< HEAD
     ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind);
+=======
+    OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
+>>>>>>> graemeg/cpstrnew
 =======
     OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
 >>>>>>> graemeg/cpstrnew

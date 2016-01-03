@@ -29,15 +29,21 @@ end;
 
 var
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
   palette: IPTCPalette;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
   palette: TPTCPalette = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   dx, dy: Integer;
   divisor: Single;
@@ -89,13 +95,20 @@ begin
       data := palette.Lock;
 =======
       data := palette.lock;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       try
         for i := 0 to 255 do
           data[i] := (i shl 16) or (i shl 8) or i;
       finally
 <<<<<<< HEAD
+<<<<<<< HEAD
         palette.Unlock;
+=======
+        palette.unlock;
+>>>>>>> graemeg/cpstrnew
 =======
         palette.unlock;
 >>>>>>> graemeg/cpstrnew
@@ -287,14 +300,20 @@ begin
       end;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       surface.Free;
       console.Free;
       palette.Free;
       format.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

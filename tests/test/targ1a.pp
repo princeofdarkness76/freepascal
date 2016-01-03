@@ -24,17 +24,23 @@ begin
       GetMem(MemArray[i],Size(i));
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i:=0 to MAX_SIZE div SIZE_INC do
     begin
       FreeMem(MemArray[i],Size(i));
     end;
   Writeln(stderr,'Everything is fine');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   for i:=1 to MAX_SIZE div SIZE_INC do
     begin
       FreeMem(MemArray[i],Size(i));
     end;
   Writeln(stderr,'Everthing is fine');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 end.

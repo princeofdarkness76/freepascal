@@ -37,7 +37,10 @@ unit i_sunos;
             flags        : [tf_under_development,tf_needs_symbol_size,
                             tf_files_case_sensitive,tf_requires_proper_alignment,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,tf_library_needs_pic,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_smartlink_library,tf_has_winlike_resources];
@@ -184,6 +187,75 @@ unit i_sunos;
           );
 
 
+<<<<<<< HEAD
+=======
+       system_x86_64_solaris_info : tsysteminfo =
+          (
+            system       : system_x86_64_solaris;
+            name         : 'Solaris for x86-64';
+            shortname    : 'solaris';
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,
+			    tf_under_development,
+                            tf_files_case_sensitive,
+                            tf_requires_proper_alignment,tf_smartlink_library,tf_library_needs_pic,
+                            tf_has_winlike_resources];
+            cpu          : cpu_x86_64;
+            unit_env     : 'SOLARISUNITS';
+            extradefines : 'UNIX;LIBC;SUNOS;HASUNIX';
+            exeext       : '';
+            defext       : '.def';
+            scriptext    : '.sh';
+            smartext     : '.sl';
+            unitext      : '.ppu';
+            unitlibext   : '.ppl';
+            asmext       : '.s';
+            objext       : '.o';
+            resext       : '.res';
+            resobjext    : '.or';
+            sharedlibext : '.so';
+            staticlibext : '.a';
+            staticlibprefix : 'libp';
+            sharedlibprefix : 'lib';
+            sharedClibext : '.so';
+            staticClibext : '.a';
+            staticClibprefix : 'lib';
+            sharedClibprefix : 'lib';
+            importlibprefix : 'libimp';
+            importlibext : '.a';
+            Cprefix      : '';
+            newline      : #10;
+            dirsep       : '/';
+            assem        : as_ggas{as_x86_64_elf64};
+            assemextern  : as_ggas;
+            link         : nil;
+            linkextern   : nil;
+            ar           : ar_gnu_ar;
+            res          : res_elf;
+            dbg          : dbg_dwarf2;
+            script       : script_unix;
+            endian       : endian_little;
+            alignment    :
+              (
+                procalign       : 8;
+                loopalign       : 4;
+                jumpalign       : 0;
+                constalignmin   : 0;
+                constalignmax   : 8;
+                varalignmin     : 0;
+                varalignmax     : 16;
+                localalignmin   : 4;
+                localalignmax   : 16;
+                recordalignmin  : 0;
+                recordalignmax  : 16;
+                maxCrecordalign : 16
+              );
+            first_parm_offset : 16;
+            stacksize    : 8*1024*1024;
+            abi : abi_default
+          );
+
+
+>>>>>>> graemeg/cpstrnew
        system_sparc_solaris_info : tsysteminfo =
           (
             system       : system_sparc_solaris;
@@ -192,7 +264,10 @@ unit i_sunos;
             flags        : [tf_needs_symbol_size,tf_under_development,
                             tf_files_case_sensitive,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_requires_proper_alignment,tf_smartlink_library,
@@ -265,6 +340,9 @@ initialization
 {$endif CPUI386}
 =======
 {$endif CPU86}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifdef CPUX86_64}
   {$ifdef solaris}

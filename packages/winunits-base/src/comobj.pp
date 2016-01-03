@@ -20,7 +20,10 @@ unit comobj;
 
 { $define DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $define DEBUG_COMDISPATCH}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -247,6 +250,7 @@ unit comobj;
       { TAutoObjectFactory }
       TAutoObjectFactory = class(TTypedComObjectFactory)
 <<<<<<< HEAD
+<<<<<<< HEAD
       private
         FDispIntfEntry: PInterfaceEntry;
         FDispTypeInfo: ITypeInfo;
@@ -256,6 +260,11 @@ unit comobj;
         function GetIntfEntry(Guid: TGUID): PInterfaceEntry; virtual;
         property DispIntfEntry: PInterfaceEntry read FDispIntfEntry;
         property DispTypeInfo: ITypeInfo read FDispTypeInfo;
+=======
+      public
+        constructor Create(AComServer: TComServerObject; AutoClass: TAutoClass; const AClassID: TGUID;
+          AInstancing: TClassInstancing; AThreadingModel: TThreadingModel = tmSingle);
+>>>>>>> graemeg/cpstrnew
 =======
       public
         constructor Create(AComServer: TComServerObject; AutoClass: TAutoClass; const AClassID: TGUID;
@@ -312,9 +321,15 @@ unit comobj;
     function ComClassManager : TComClassManager;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure CreateRegKey(const Key, ValueName, Value: string; RootKey: HKey= HKEY_CLASSES_ROOT);
     procedure DeleteRegKey(const Key: string; RootKey: HKey = HKEY_CLASSES_ROOT);
     function GetRegStringValue(const Key, ValueName: string; RootKey: HKey = HKEY_CLASSES_ROOT): string;
+=======
+    procedure CreateRegKey(const Key, ValueName, Value: string; RootKey: DWord = HKEY_CLASSES_ROOT);
+    procedure DeleteRegKey(const Key: string; RootKey: DWord = HKEY_CLASSES_ROOT);
+    function GetRegStringValue(const Key, ValueName: string; RootKey: DWord = HKEY_CLASSES_ROOT): string;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure CreateRegKey(const Key, ValueName, Value: string; RootKey: DWord = HKEY_CLASSES_ROOT);
     procedure DeleteRegKey(const Key: string; RootKey: DWord = HKEY_CLASSES_ROOT);
@@ -481,7 +496,11 @@ implementation
 {$endif wince}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure CreateRegKey(const Key, ValueName, Value: string; RootKey: HKEY = HKEY_CLASSES_ROOT);
+=======
+    procedure CreateRegKey(const Key, ValueName, Value: string; RootKey: DWord = HKEY_CLASSES_ROOT);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure CreateRegKey(const Key, ValueName, Value: string; RootKey: DWord = HKEY_CLASSES_ROOT);
 >>>>>>> graemeg/cpstrnew
@@ -492,7 +511,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('CreateRegKey: ', Key, ': ', ValueName, ': ', Value );
@@ -517,7 +539,10 @@ implementation
 {$endif}
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('CreateRegKey exit: ', Key, ': ', ValueName, ': ', Value );
@@ -526,7 +551,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure DeleteRegKey(const Key: string; RootKey: HKEY = HKEY_CLASSES_ROOT);
+=======
+    procedure DeleteRegKey(const Key: string; RootKey: DWord = HKEY_CLASSES_ROOT);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure DeleteRegKey(const Key: string; RootKey: DWord = HKEY_CLASSES_ROOT);
 >>>>>>> graemeg/cpstrnew
@@ -537,7 +566,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('DeleteRegKey: ', Key);
@@ -555,7 +587,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetRegStringValue(const Key, ValueName: string; RootKey: HKEY = HKEY_CLASSES_ROOT): string;
+=======
+    function GetRegStringValue(const Key, ValueName: string; RootKey: DWord = HKEY_CLASSES_ROOT): string;
+>>>>>>> graemeg/cpstrnew
 =======
     function GetRegStringValue(const Key, ValueName: string; RootKey: DWord = HKEY_CLASSES_ROOT): string;
 >>>>>>> graemeg/cpstrnew
@@ -718,7 +754,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('AddObjectFactory: ', GUIDToString(factory.FClassID), ' ', factory.FClassName);
@@ -740,7 +779,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('ForEachFactory');
@@ -761,7 +803,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('GetFactoryFromClass: ', ComClass.ClassName);
@@ -783,7 +828,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('GetFactoryFromClassID: ', GUIDToString(ClassId));
@@ -796,7 +844,10 @@ implementation
         end;
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('GetFactoryFromClassID not found: ', GUIDToString(ClassId));
@@ -972,7 +1023,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('CreateInstance: ', GUIDToString(IID));
@@ -989,7 +1043,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('LockServer: ', fLock);
@@ -1003,7 +1060,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('GetLicInfo');
@@ -1017,7 +1077,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('RequestLicKey');
@@ -1033,7 +1096,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('CreateInstanceLic');
@@ -1057,7 +1123,10 @@ implementation
     begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('TComObjectFactory.Create');
@@ -1087,7 +1156,10 @@ implementation
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('TComObjectFactory.CreateComObject');
@@ -1100,7 +1172,10 @@ implementation
       begin
       {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('TComObjectFactory.RegisterClassObject');
@@ -1141,6 +1216,12 @@ HKCR
     procedure TComObjectFactory.UpdateRegistry(Register: Boolean);
       var
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        {$ifndef DUMMY_REG}
+        reg: TRegistry;
+        {$endif}
+>>>>>>> graemeg/cpstrnew
 =======
         {$ifndef DUMMY_REG}
         reg: TRegistry;
@@ -1163,7 +1244,10 @@ HKCR
 {$ifndef DUMMY_REG}
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('UpdateRegistry begin');
@@ -1173,6 +1257,7 @@ HKCR
         if Register then
         begin
           classidguid := GUIDToString(ClassID);
+<<<<<<< HEAD
 <<<<<<< HEAD
           CreateRegKey('CLSID\' + classidguid + '\InprocServer32', '', FComServer.ServerFileName);
           //tmSingle, tmApartment, tmFree, tmBoth, tmNeutral
@@ -1198,6 +1283,8 @@ HKCR
             end;
           end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           CreateRegKey('CLSID\' + classidguid, '', Description);
           if ClassVersion <> '' then
           begin
@@ -1221,12 +1308,16 @@ HKCR
             CreateRegKey(ProgID + '.' + ClassVersion + '\CLSID', '', GUIDToString(ClassID));
           end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         end else
         begin
           classidguid := GUIDToString(ClassID);
           DeleteRegKey('CLSID\' + classidguid + '\InprocServer32');
           DeleteRegKey('CLSID\' + classidguid + '\VersionIndependentProgID');
+<<<<<<< HEAD
 <<<<<<< HEAD
           if ClassName <> '' then
           begin
@@ -1245,6 +1336,8 @@ HKCR
 {$ifdef DEBUG_COM}
          if printcom then 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           DeleteRegKey('CLSID\' + classidguid + '\ProgID');
           DeleteRegKey('CLSID\' + classidguid);
           DeleteRegKey(ProgID + '\CLSID');
@@ -1256,6 +1349,9 @@ HKCR
           end;
         end;
 {$ifdef DEBUG_COM}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         WriteLn('UpdateRegistry end');
 {$endif}
@@ -1294,7 +1390,10 @@ HKCR
             begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               writeln('DispatchInvoke: Params = ',hexstr(Params));
@@ -1382,7 +1481,10 @@ HKCR
                     begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		   if printcom then 	
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                       writeln('By-value Variant, making a copy');
@@ -1400,7 +1502,10 @@ HKCR
                     begin
 {$ifdef DEBUG_COMDISPATCH}
 <<<<<<< HEAD
+<<<<<<< HEAD
                       if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                       writeln('Got 8 byte argument');
@@ -1587,7 +1692,11 @@ HKCR
         Arguments : PVarData;
         CurrType, i : byte;
 <<<<<<< HEAD
+<<<<<<< HEAD
         dispidNamed: TDispID;
+=======
+        dispidNamed: dispid;
+>>>>>>> graemeg/cpstrnew
 =======
         dispidNamed: dispid;
 >>>>>>> graemeg/cpstrnew
@@ -1673,9 +1782,13 @@ HKCR
             end;
           DISPATCH_METHOD:
 <<<<<<< HEAD
+<<<<<<< HEAD
             { It appears that certain COM servers expect both DISPATCH_METHOD and DISPATCH_PROPERTYGET
               flags for anything returning a result, see bug #24352 }
             if assigned(res) then
+=======
+            if assigned(res) and (desc^.calldesc.argcount=0) then
+>>>>>>> graemeg/cpstrnew
 =======
             if assigned(res) and (desc^.calldesc.argcount=0) then
 >>>>>>> graemeg/cpstrnew
@@ -1721,7 +1834,10 @@ HKCR
         FClassInfo.GetTypeAttr(ppTypeAttr);
         try
 <<<<<<< HEAD
+<<<<<<< HEAD
           FTypeInfoCount := ppTypeAttr^.cImplTypes;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           TypedVersion := '';
@@ -1786,6 +1902,7 @@ HKCR
           DeleteRegKey('CLSID\' + GUIDToString(ClassID) + '\TypeLib');
           inherited UpdateRegistry(Register);
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
       end;
 
@@ -1896,6 +2013,8 @@ HKCR
       end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
    { TAutoIntfObject }
@@ -1997,6 +2116,9 @@ HKCR
         OleCheck(QueryInterface(Guid, fInterfacePointer));
       end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     { TAutoObject }
 
@@ -2004,7 +2126,10 @@ HKCR
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('TAutoObject.GetTypeInfoCount');
@@ -2018,7 +2143,10 @@ HKCR
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('TAutoIntfObject.GetTypeInfo: ', Index);
@@ -2037,7 +2165,10 @@ HKCR
       begin
 {$ifdef DEBUG_COM}
 <<<<<<< HEAD
+<<<<<<< HEAD
          if printcom then 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         WriteLn('TAutoIntfObject.GetIDsOfNames: ', GUIDToString(iid));
@@ -2050,14 +2181,20 @@ HKCR
       LocaleID: longint; Flags: Word; var params; VarResult, ExcepInfo,
       ArgErr: pointer): HResult; stdcall;
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
 {$ifdef DEBUG_COM}
          if printcom then 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       var
         fInterfacePointer: Pointer;
       begin
 {$ifdef DEBUG_COM}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         WriteLn('TAutoIntfObject.Invoke: ', DispID, ': ', Flags, ': ', TDispParams(params).cArgs, ': ', GUIDToString(iid));
         //WriteLn('TAutoIntfObject.Invoke: ', DispID, ': ', Flags, ': ', TDispParams(params).cArgs, ': ', TDispParams(params).rgvarg^, ': ', GUIDToString(iid));
@@ -2067,14 +2204,20 @@ HKCR
         else
         begin
 <<<<<<< HEAD
+<<<<<<< HEAD
           Result := TAutoObjectFactory(Factory).DispTypeInfo.Invoke(Pointer(
             PtrUint(Self) + TAutoObjectFactory(Factory).DispIntfEntry^.IOffset),
             DispID, Flags, TDispParams(Params), VarResult, ExcepInfo, ArgErr);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       //  Function  Invoke(pvInstance: Pointer; memid: MEMBERID; wFlags: WORD; VAR pDispParams: DISPPARAMS; OUT pVarResult: VARIANT; OUT pExcepInfo: EXCEPINFO; OUT puArgErr: UINT):HResult;StdCall;
       //  Result := fTypeInfo.Invoke(IDispatch(Self), DispID, Flags, TDispParams(params), PVariant(VarResult)^, PExcepInfo(ExcepInfo)^, PUINT(ArgErr)^);
           OleCheck(QueryInterface(TAutoObjectFactory(Factory).ClassID, fInterfacePointer));
           Result := TAutoObjectFactory(Factory).ClassInfo.Invoke(fInterfacePointer, DispID, Flags, TDispParams(params), PVariant(VarResult)^, PExcepInfo(ExcepInfo)^, PUINT(ArgErr)^);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         end;
       end;
@@ -2084,6 +2227,7 @@ HKCR
     constructor TAutoObjectFactory.Create(AComServer: TComServerObject;
       AutoClass: TAutoClass; const AClassID: TGUID; AInstancing: TClassInstancing;
       AThreadingModel: TThreadingModel);
+<<<<<<< HEAD
 <<<<<<< HEAD
          var
            ppTypeAttr: lpTYPEATTR;
@@ -2104,10 +2248,15 @@ HKCR
     end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         inherited Create(AComServer, AutoClass, AClassID, AInstancing, AThreadingModel);
       end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     procedure TOleStream.Check(err:integer);

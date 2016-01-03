@@ -5,12 +5,18 @@ program Project1;
 {$mode objfpc}{$H+}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure Foo1;
 var
   a: TObject;
   r: record
     b : array[0..10] of byte
   end;
+=======
+procedure Foo;
+var
+  a: TObject;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure Foo;
 var
@@ -26,6 +32,7 @@ begin
 {$endif}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure Foo2;inline;
 var
@@ -59,6 +66,10 @@ begin
   Foo2;
   Foo3;
   writeln('ok');
+=======
+begin
+  Foo;
+>>>>>>> graemeg/cpstrnew
 =======
 begin
   Foo;

@@ -1,7 +1,10 @@
 { %opt=-Mdelphi -Sa }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { don't run this test when no hardware fpu is available, it would take a lot of time }
 {$ifndef FPUSOFT}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 program t_testconvunit;
@@ -23,10 +26,13 @@ begin
     Halt(0);
 end.
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$else FPUSOFT}
 begin
 end.
 {$endif FPUSOFT}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

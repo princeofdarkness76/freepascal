@@ -133,6 +133,9 @@ procedure fpc_cpuinit;
     { don't let libraries influence the FPU cw set by the host program }
     if IsLibrary then
       Default8087CW:=Get8087CW;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 
@@ -1259,8 +1262,11 @@ asm
         pop   %eax
 {$endif FPC_PROFILE}
 <<<<<<< HEAD
+<<<<<<< HEAD
         test    %eax,%eax
         jz      .LStrLenDone
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         movl    %edi,saveedi
@@ -1700,6 +1706,9 @@ asm
 =======
 .Lj3603:
 // [104] If declocked(l^) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$ifdef FPC_PIC}
 	pushl	%ebx
@@ -1800,8 +1809,13 @@ end;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_SYSTEM_HAS_BSF_QWORD}
 {$define FPC_SYSTEM_HAS_BSF_QWORD}
+=======
+{$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
+{$define FPC_SYSTEM_HAS_BSX_QWORD}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
 {$define FPC_SYSTEM_HAS_BSX_QWORD}
@@ -1811,6 +1825,7 @@ function BsfQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
 asm
      bsfl    4(%esp),%eax
      jnz     .L2
+<<<<<<< HEAD
 <<<<<<< HEAD
 .L1:
      bsfl    8(%esp),%eax
@@ -1826,11 +1841,16 @@ end;
 {$ifndef FPC_SYSTEM_HAS_BSR_QWORD}
 {$define FPC_SYSTEM_HAS_BSR_QWORD}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 .L1: bsfl    8(%esp),%eax
      add     $32,%eax
 .L2:
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function BsrQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
 asm
@@ -1838,6 +1858,7 @@ asm
      jz     .L1
      add     $32,%eax
      jmp     .L2
+<<<<<<< HEAD
 <<<<<<< HEAD
 .L1:
      bsrl    4(%esp),%eax
@@ -1869,9 +1890,14 @@ asm
 end;
 {$endif FPC_SYSTEM_HAS_SAR_QWORD}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 .L1: bsrl    4(%esp),%eax
 .L2:
 end;
 
 {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

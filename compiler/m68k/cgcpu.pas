@@ -40,7 +40,11 @@ unit cgcpu;
 
         procedure a_load_reg_cgpara(list : TAsmList;size : tcgsize;r : tregister;const cgpara : tcgpara);override;
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);override;
+=======
+        procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
+>>>>>>> graemeg/cpstrnew
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
 >>>>>>> graemeg/cpstrnew
@@ -144,6 +148,9 @@ unit cgcpu;
          S_FS,S_FD,S_FX,S_NO,S_NO,
          S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO,S_NO);
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure create_codegen;
 
@@ -333,7 +340,11 @@ unit cgcpu;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);
+=======
+    procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure tcg68k.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
 >>>>>>> graemeg/cpstrnew
@@ -1149,6 +1160,9 @@ unit cgcpu;
 =======
 
     procedure tcg68k.a_loadmm_reg_cgpara(list: TAsmList; size: tcgsize; reg: tregister;const locpara : TCGPara;shuffle : pmmshuffle);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       begin
         if current_settings.fputype = fpu_soft then
@@ -2464,6 +2478,13 @@ unit cgcpu;
       end;
 
 
+procedure create_codegen;
+  begin
+    cg := tcg68k.create;
+    cg64 :=tcg64f68k.create;
+  end;
+  
+  
 procedure create_codegen;
   begin
     cg := tcg68k.create;

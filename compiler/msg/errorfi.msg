@@ -1771,8 +1771,11 @@ type_w_instance_with_abstract=04046_W_Construction d´une classe "$1" avec des mé
 % methods. This will probably lead to a runtime error 211 in the code if that
 % routine is ever called. All abstract methods should be overridden.
 <<<<<<< HEAD
+<<<<<<< HEAD
 type_h_in_range_check=04047_H_L´opérande à gauche de l´opérateur IN doit avoir la longueur d´un octet (8 bits)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 type_h_in_range_check=L´opérande à gauche de l´opérateur IN doit avoir la longueur d´un octet (8 bits)
 >>>>>>> graemeg/cpstrnew
 % The left operand of the \var{in} operator is not an ordinal or enumeration which fits
@@ -3501,7 +3504,11 @@ wpo_cant_create_feedback_file=12019_E_Cannot create specified whole program opti
 #
 option_logo=11023_[ Compilateur Free Pascal version $FPCFULLVERSION [$FPCDATE] for $FPCCPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015, Florian Klaempfl and others]
+=======
+Copyright (c) 1993-2011, Florian Klaempfl ]
+>>>>>>> graemeg/cpstrnew
 =======
 Copyright (c) 1993-2011, Florian Klaempfl ]
 >>>>>>> graemeg/cpstrnew

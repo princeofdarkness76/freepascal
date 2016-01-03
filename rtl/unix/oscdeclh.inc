@@ -64,6 +64,9 @@ const
 {$endif}
     function  FpTime       (tloc:ptime_t): time_t; cdecl; external clib name 'time';
     Function  FpTime       (var tloc : Time_t): Time_t; cdecl; external clib name 'time';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function  FpTimes	(var buffer : tms): TClock; cdecl; external clib name 'times';
 
@@ -179,7 +182,10 @@ const
 
     function FpGetRLimit(resource : cInt; rlim : PRLimit) : cInt; cdecl; external clib name 'getrlimit';
 <<<<<<< HEAD
+<<<<<<< HEAD
     function FpSetRLimit(resource : cInt; rlim : PRLimit) : cInt; cdecl; external clib name 'setrlimit';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

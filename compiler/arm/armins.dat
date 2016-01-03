@@ -248,6 +248,10 @@ fpureg,immshifter        \xA2\xE\x90                    ARM32,FPA
 [CPSID]
 [CPSIE]
 
+[CPS]
+[CPSID]
+[CPSIE]
+
 [DVFcc]
 >>>>>>> graemeg/cpstrnew
 
@@ -1341,6 +1345,7 @@ vreg,vreg,vreg          \x92\xEE\x80\xA\x0\1          THUMB32,VFPv2
 vreg,vreg,vreg          \x42\xE\x80\xA\x0\1           ARM32,VFPv2
 
 [FLDDcc]
+<<<<<<< HEAD
 vreg,memam2             \x95\xED\x10\xA               THUMB32,VFPv2
 vreg,memam2             \x45\xD\x10\xA                ARM32,VFPv2
 
@@ -1351,6 +1356,10 @@ reg32,reglist		      \x94\xEC\x10\xA		         THUMB32,VFPv2
 memam4,reglist		      \x44\xC\x10\xA		            ARM32,VFPv2
 reg32,reglist		      \x44\xC\x10\xA		            ARM32,VFPv2
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
+[FLDMcc]
 >>>>>>> graemeg/cpstrnew
 
 [FLDScc]
@@ -1498,8 +1507,11 @@ vreg,vreg               \x43\xE\xB8\xB\x40           ARM32,VFPv2
 
 [FUITOScc]
 <<<<<<< HEAD
+<<<<<<< HEAD
 vreg,vreg               \x43\xEE\xB8\xA\x40          THUMB32,VFPv2
 vreg,vreg               \x43\xE\xB8\xA\x40           ARM32,VFPv2
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1509,6 +1521,7 @@ vreg,vreg               \x43\xE\xB8\xA\x40           ARM32,VFPv2
 
 ; Thumb-2
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [POP]
 reglist                       \x69\xBC                   THUMB,ARMv4T
@@ -1864,6 +1877,8 @@ fpureg,immshifter           \xA1\1\xD                     ARM32,FPA
 fpureg,fpureg               \xA1\1\xB                     ARM32,FPA
 fpureg,immshifter           \xA1\1\xB                     ARM32,FPA
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 [ASRcc]
 
 [LSRcc]
@@ -1911,4 +1926,7 @@ fpureg,immshifter           \xA1\1\xB                     ARM32,FPA
 [ITETT]
 
 [ITTTT]
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

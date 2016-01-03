@@ -124,9 +124,12 @@ asm
   syscall                 { Do the system call. }
   jnb .LSyscOK            { branch to exit if ok, errorhandler otherwise}
 <<<<<<< HEAD
+<<<<<<< HEAD
   movq  %rax,%rdi
   call  SetErrno
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   movq  %rax,%rdx
 {$ifdef FPC_PIC}
   movq  fpc_threadvar_relocate_proc@GOTPCREL(%rip),%rax

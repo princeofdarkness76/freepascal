@@ -91,7 +91,11 @@ var
         previous_state: Pointer;
         animations: Pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
         slots: array[0..(3)-1] of culong;
+=======
+            slots: array[0..2] of culong;
+>>>>>>> graemeg/cpstrnew
 =======
             slots: array[0..2] of culong;
 >>>>>>> graemeg/cpstrnew

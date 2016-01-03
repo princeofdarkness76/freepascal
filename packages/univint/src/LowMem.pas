@@ -5,9 +5,12 @@
                  The contents of this header file are deprecated.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1993-2011 by Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1993-2008 by Apple Computer, Inc., all rights reserved
@@ -19,6 +22,9 @@
  
 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -75,11 +81,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -98,6 +107,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -124,6 +134,20 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -141,7 +165,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -154,7 +181,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -164,6 +194,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -175,6 +206,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -187,13 +223,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -215,6 +255,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -340,7 +389,11 @@ uses MacTypes,Files;
  }
 function LMGetMemTop: Ptr; external name '_LMGetMemTop';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -356,7 +409,11 @@ function LMGetMemTop: Ptr; external name '_LMGetMemTop';
  }
 procedure LMSetMemTop( value: Ptr ); external name '_LMSetMemTop';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -372,7 +429,11 @@ procedure LMSetMemTop( value: Ptr ); external name '_LMSetMemTop';
  }
 function LMGetBufPtr: Ptr; external name '_LMGetBufPtr';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -388,7 +449,11 @@ function LMGetBufPtr: Ptr; external name '_LMGetBufPtr';
  }
 procedure LMSetBufPtr( value: Ptr ); external name '_LMSetBufPtr';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -404,7 +469,11 @@ procedure LMSetBufPtr( value: Ptr ); external name '_LMSetBufPtr';
  }
 function LMGetHeapEnd: Ptr; external name '_LMGetHeapEnd';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -416,6 +485,7 @@ function LMGetHeapEnd: Ptr; external name '_LMGetHeapEnd';
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetHeapEnd( value: Ptr ); external name '_LMSetHeapEnd';
@@ -428,12 +498,35 @@ procedure LMSetHeapEnd( value: Ptr ); external name '_LMSetHeapEnd';
 
 {
  *  LMGetCPUFlag()   *** DEPRECATED ***
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetHeapEnd( value: Ptr ); external name '_LMSetHeapEnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetCPUFlag()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function LMGetCPUFlag: UInt8; external name '_LMGetCPUFlag';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetCPUFlag()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function LMGetCPUFlag: UInt8; external name '_LMGetCPUFlag';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
@@ -460,12 +553,33 @@ procedure LMSetCPUFlag( value: ByteParameter ); external name '_LMSetCPUFlag';
 
 {
  *  LMGetRndSeed()   *** DEPRECATED ***
+=======
+procedure LMSetCPUFlag( value: ByteParameter ); external name '_LMSetCPUFlag';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetRndSeed()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function LMGetRndSeed: SInt32; external name '_LMGetRndSeed';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetRndSeed()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function LMGetRndSeed: SInt32; external name '_LMGetRndSeed';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -554,6 +668,59 @@ procedure LMSetBootDrive( value: SInt16 ); external name '_LMSetBootDrive';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+procedure LMSetRndSeed( value: SInt32 ); external name '_LMSetRndSeed';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetSEvtEnb()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetSEvtEnb: UInt8; external name '_LMGetSEvtEnb';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetSEvtEnb()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetSEvtEnb( value: ByteParameter ); external name '_LMSetSEvtEnb';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  LMGetBootDrive()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetBootDrive: SInt16; external name '_LMGetBootDrive';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMSetBootDrive()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetBootDrive( value: SInt16 ); external name '_LMSetBootDrive';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {$ifc not TARGET_CPU_64}
@@ -564,6 +731,37 @@ procedure LMSetBootDrive( value: SInt16 ); external name '_LMSetBootDrive';
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetSdVolume: UInt8; external name '_LMGetSdVolume';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetSdVolume()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetSdVolume( value: ByteParameter ); external name '_LMSetSdVolume';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{$ifc not TARGET_CPU_64}
+{
+<<<<<<< HEAD
+ *  LMGetSdVolume()   *** DEPRECATED ***
+=======
+ *  LMGetSoundPtr()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  }
 function LMGetSdVolume: UInt8; external name '_LMGetSdVolume';
 <<<<<<< HEAD
@@ -623,6 +821,26 @@ procedure LMSetSoundPtr( value: Ptr ); external name '_LMSetSoundPtr';
 
 {
  *  LMGetSoundBase()   *** DEPRECATED ***
+=======
+ }
+function LMGetSoundPtr: Ptr; external name '_LMGetSoundPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetSoundPtr()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetSoundPtr( value: Ptr ); external name '_LMSetSoundPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetSoundBase()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
@@ -630,11 +848,7 @@ procedure LMSetSoundPtr( value: Ptr ); external name '_LMSetSoundPtr';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetSoundBase: Ptr; external name '_LMGetSoundBase';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -646,11 +860,7 @@ function LMGetSoundBase: Ptr; external name '_LMGetSoundBase';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetSoundBase( value: Ptr ); external name '_LMSetSoundBase';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -661,6 +871,70 @@ procedure LMSetSoundBase( value: Ptr ); external name '_LMSetSoundBase';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function LMGetSoundLevel: UInt8; external name '_LMGetSoundLevel';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetSoundLevel()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LMGetSoundBase: Ptr; external name '_LMGetSoundBase';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMSetSoundBase()   *** DEPRECATED ***
+=======
+procedure LMSetSoundLevel( value: ByteParameter ); external name '_LMSetSoundLevel';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetCurPitch()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+procedure LMSetSoundBase( value: Ptr ); external name '_LMSetSoundBase';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMGetSoundLevel()   *** DEPRECATED ***
+=======
+function LMGetCurPitch: SInt16; external name '_LMGetCurPitch';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetCurPitch()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function LMGetSoundLevel: UInt8; external name '_LMGetSoundLevel';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -721,6 +995,15 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
 
 {
  *  LMGetROM85()
+=======
+procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  LMGetROM85()
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -751,6 +1034,7 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
 
 {
  *  LMSetPortBUse()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -760,7 +1044,11 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
 
 
 {
+<<<<<<< HEAD
+ *  LMSetROM85()
+=======
  *  LMGetGNEFilter()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -770,7 +1058,11 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
 
 
 {
+<<<<<<< HEAD
+ *  LMGetPortBUse()
+=======
  *  LMSetGNEFilter()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -780,7 +1072,11 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
 
 
 {
+<<<<<<< HEAD
+ *  LMSetPortBUse()
+=======
  *  LMGetROMBase()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -790,7 +1086,11 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
 
 
 {
+<<<<<<< HEAD
+ *  LMGetGNEFilter()
+=======
  *  LMSetROMBase()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -800,7 +1100,11 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
 
 
 {
+<<<<<<< HEAD
+ *  LMSetGNEFilter()
+=======
  *  LMGetRAMBase()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
@@ -809,37 +1113,119 @@ procedure LMSetCurPitch( value: SInt16 ); external name '_LMSetCurPitch';
  }
 
 
+{
+<<<<<<< HEAD
+ *  LMGetROMBase()
+=======
+ *  LMSetRAMBase()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+<<<<<<< HEAD
+ *  LMSetROMBase()
+=======
+ *  LMGetDSAlertTab()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+{
+<<<<<<< HEAD
+ *  LMGetRAMBase()
+=======
+ *  LMSetDSAlertTab()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+
+
+<<<<<<< HEAD
 {
  *  LMSetRAMBase()
+=======
+{
+    NOTE:   LMGetABusVars and LMSetABusVars have been removed.
+            Their implememtation in InterfaceLib was inconsistent
+            with their prototypes here.  In InterfaceLib LMSetABusVars 
+            would copy eight bytes and LMGetABusVars would return the
+            value 0x02D8 instead of the long at that location.
+            
+            Use LMGetABusGlobals/LMSetABusGlobals to get/set the
+            long at location 0x02D8 which is a pointer to the AppleTalk
+            globals.  Use LMGetABusDCE/LMSetABusDCE to get/set the
+            long at location 0x02DC which is the .MPP driver
+            Device Control Entry. 
+            
+}
+{
+ *  LMGetABusGlobals()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+>>>>>>> graemeg/cpstrnew
  }
 
 
 {
+<<<<<<< HEAD
  *  LMGetDSAlertTab()
+=======
+ *  LMGetABusDCE()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+>>>>>>> graemeg/cpstrnew
  }
 
 
 {
+<<<<<<< HEAD
  *  LMSetDSAlertTab()
+=======
+ *  LMSetABusGlobals()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         not available
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+>>>>>>> graemeg/cpstrnew
  }
 
 
 {
+<<<<<<< HEAD
     NOTE:   LMGetABusVars and LMSetABusVars have been removed.
             Their implememtation in InterfaceLib was inconsistent
             with their prototypes here.  In InterfaceLib LMSetABusVars 
@@ -928,6 +1314,43 @@ procedure LMSetScrDmpEnb( value: ByteParameter ); external name '_LMSetScrDmpEnb
 
 {
  *  LMGetBufTgFNum()   *** DEPRECATED ***
+=======
+ *  LMSetABusDCE()
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+
+
+{$ifc not TARGET_CPU_64}
+{
+ *  LMGetScrDmpEnb()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetScrDmpEnb: UInt8; external name '_LMGetScrDmpEnb';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetScrDmpEnb()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetScrDmpEnb( value: ByteParameter ); external name '_LMSetScrDmpEnb';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetBufTgFNum()   *** DEPRECATED ***
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
@@ -935,11 +1358,7 @@ procedure LMSetScrDmpEnb( value: ByteParameter ); external name '_LMSetScrDmpEnb
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetBufTgFNum: SInt32; external name '_LMGetBufTgFNum';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -951,11 +1370,7 @@ function LMGetBufTgFNum: SInt32; external name '_LMGetBufTgFNum';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetBufTgFNum( value: SInt32 ); external name '_LMSetBufTgFNum';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -967,11 +1382,7 @@ procedure LMSetBufTgFNum( value: SInt32 ); external name '_LMSetBufTgFNum';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetBufTgFFlg: SInt16; external name '_LMGetBufTgFFlg';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -983,6 +1394,95 @@ function LMGetBufTgFFlg: SInt16; external name '_LMGetBufTgFFlg';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetBufTgFFlg( value: SInt16 ); external name '_LMSetBufTgFFlg';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetBufTgFBkNum()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LMGetBufTgFNum: SInt32; external name '_LMGetBufTgFNum';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMSetBufTgFNum()   *** DEPRECATED ***
+=======
+function LMGetBufTgFBkNum: SInt16; external name '_LMGetBufTgFBkNum';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetBufTgFBkNum()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+procedure LMSetBufTgFNum( value: SInt32 ); external name '_LMSetBufTgFNum';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMGetBufTgFFlg()   *** DEPRECATED ***
+=======
+procedure LMSetBufTgFBkNum( value: SInt16 ); external name '_LMSetBufTgFBkNum';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetBufTgDate()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LMGetBufTgFFlg: SInt16; external name '_LMGetBufTgFFlg';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMSetBufTgFFlg()   *** DEPRECATED ***
+=======
+function LMGetBufTgDate: SInt32; external name '_LMGetBufTgDate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetBufTgDate()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+procedure LMSetBufTgFFlg( value: SInt16 ); external name '_LMSetBufTgFFlg';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 =======
@@ -992,12 +1492,21 @@ procedure LMSetBufTgFFlg( value: SInt16 ); external name '_LMSetBufTgFFlg';
 
 {
  *  LMGetBufTgFBkNum()   *** DEPRECATED ***
+=======
+procedure LMSetBufTgDate( value: SInt32 ); external name '_LMSetBufTgDate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetMinStack()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function LMGetBufTgFBkNum: SInt16; external name '_LMGetBufTgFBkNum';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -1008,12 +1517,21 @@ function LMGetBufTgFBkNum: SInt16; external name '_LMGetBufTgFBkNum';
 
 {
  *  LMSetBufTgFBkNum()   *** DEPRECATED ***
+=======
+function LMGetMinStack: SInt32; external name '_LMGetMinStack';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetMinStack()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure LMSetBufTgFBkNum( value: SInt16 ); external name '_LMSetBufTgFBkNum';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -1024,12 +1542,21 @@ procedure LMSetBufTgFBkNum( value: SInt16 ); external name '_LMSetBufTgFBkNum';
 
 {
  *  LMGetBufTgDate()   *** DEPRECATED ***
+=======
+procedure LMSetMinStack( value: SInt32 ); external name '_LMSetMinStack';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetDefltStack()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function LMGetBufTgDate: SInt32; external name '_LMGetBufTgDate';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -1040,12 +1567,21 @@ function LMGetBufTgDate: SInt32; external name '_LMGetBufTgDate';
 
 {
  *  LMSetBufTgDate()   *** DEPRECATED ***
+=======
+function LMGetDefltStack: SInt32; external name '_LMGetDefltStack';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetDefltStack()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure LMSetBufTgDate( value: SInt32 ); external name '_LMSetBufTgDate';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -1088,12 +1624,45 @@ procedure LMSetMinStack( value: SInt32 ); external name '_LMSetMinStack';
 
 {
  *  LMGetDefltStack()   *** DEPRECATED ***
+=======
+procedure LMSetDefltStack( value: SInt32 ); external name '_LMSetDefltStack';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetGZRootHnd()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetGZRootHnd: Handle; external name '_LMGetGZRootHnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetGZRootHnd()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetGZRootHnd( value: Handle ); external name '_LMSetGZRootHnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetGZMoveHnd()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 function LMGetDefltStack: SInt32; external name '_LMGetDefltStack';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -1104,12 +1673,21 @@ function LMGetDefltStack: SInt32; external name '_LMGetDefltStack';
 
 {
  *  LMSetDefltStack()   *** DEPRECATED ***
+=======
+function LMGetGZMoveHnd: Handle; external name '_LMGetGZMoveHnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetGZMoveHnd()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 procedure LMSetDefltStack( value: SInt32 ); external name '_LMSetDefltStack';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -1152,34 +1730,9 @@ procedure LMSetGZRootHnd( value: Handle ); external name '_LMSetGZRootHnd';
 
 {
  *  LMGetGZMoveHnd()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
-function LMGetGZMoveHnd: Handle; external name '_LMGetGZMoveHnd';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 =======
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
-
-
-{
- *  LMSetGZMoveHnd()   *** DEPRECATED ***
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
- }
 procedure LMSetGZMoveHnd( value: Handle ); external name '_LMSetGZMoveHnd';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1191,11 +1744,7 @@ procedure LMSetGZMoveHnd( value: Handle ); external name '_LMSetGZMoveHnd';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetToExtFS: UniversalProcPtr; external name '_LMGetToExtFS';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1206,6 +1755,95 @@ function LMGetToExtFS: UniversalProcPtr; external name '_LMGetToExtFS';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+procedure LMSetToExtFS( value: UniversalProcPtr ); external name '_LMSetToExtFS';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetJStash()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LMGetGZMoveHnd: Handle; external name '_LMGetGZMoveHnd';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMSetGZMoveHnd()   *** DEPRECATED ***
+=======
+function LMGetJStash: UniversalProcPtr; external name '_LMGetJStash';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetJStash()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+procedure LMSetGZMoveHnd( value: Handle ); external name '_LMSetGZMoveHnd';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMGetToExtFS()   *** DEPRECATED ***
+=======
+procedure LMSetJStash( value: UniversalProcPtr ); external name '_LMSetJStash';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetCurApRefNum()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LMGetToExtFS: UniversalProcPtr; external name '_LMGetToExtFS';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMSetToExtFS()   *** DEPRECATED ***
+=======
+function LMGetCurApRefNum: FSIORefNum; external name '_LMGetCurApRefNum';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetCurApRefNum()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 procedure LMSetToExtFS( value: UniversalProcPtr ); external name '_LMSetToExtFS';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -1285,6 +1923,18 @@ procedure LMSetCurApRefNum( value: FSIORefNum ); external name '_LMSetCurApRefNu
  *    If using the Thread Manager APIs, use ThreadCurrentStackSpace(). 
  *    If using pthreads(), get the stack with
  *    pthread_get_stackaddr_np().
+=======
+procedure LMSetCurApRefNum( value: FSIORefNum ); external name '_LMSetCurApRefNum';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetCurStackBase()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    If using the Thread Manager APIs, use ThreadCurrentStackSpace(). 
+ *    If using pthreads(), get the stack with
+ *    pthread_get_stackaddr_np().
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
@@ -1292,11 +1942,7 @@ procedure LMSetCurApRefNum( value: FSIORefNum ); external name '_LMSetCurApRefNu
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetCurStackBase: Ptr; external name '_LMGetCurStackBase';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1310,6 +1956,72 @@ function LMGetCurStackBase: Ptr; external name '_LMGetCurStackBase';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+procedure LMSetCurStackBase( value: Ptr ); external name '_LMSetCurStackBase';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetCurPageOption()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetCurPageOption: SInt16; external name '_LMGetCurPageOption';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetCurPageOption()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetCurPageOption( value: SInt16 ); external name '_LMSetCurPageOption';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetPrintErr()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LMGetCurStackBase: Ptr; external name '_LMGetCurStackBase';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMSetCurStackBase()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Mac OS X does not support setting the stack base.
+=======
+function LMGetPrintErr: SInt16; external name '_LMGetPrintErr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetPrintErr()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 procedure LMSetCurStackBase( value: Ptr ); external name '_LMSetCurStackBase';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
@@ -1493,6 +2205,98 @@ procedure LMSetMinusOne( value: SInt32 ); external name '_LMSetMinusOne';
 
 {
  *  LMGetSysMap()
+=======
+procedure LMSetPrintErr( value: SInt16 ); external name '_LMSetPrintErr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  LMGetApFontID()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Get the id of the application font.  Use GetAppFont() in the
+ *    Quickdraw framework instead of this.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetApFontID: SInt16; external name '_LMGetApFontID';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetApFontID()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Set the id of the application font.  Don't use this call anymore;
+ *    this functionality is not supported on Mac OS X.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetApFontID( value: SInt16 ); external name '_LMSetApFontID';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$ifc not TARGET_CPU_64}
+{
+ *  LMGetOneOne()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetOneOne: SInt32; external name '_LMGetOneOne';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetOneOne()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetOneOne( value: SInt32 ); external name '_LMSetOneOne';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetMinusOne()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetMinusOne: SInt32; external name '_LMGetMinusOne';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetMinusOne()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetMinusOne( value: SInt32 ); external name '_LMSetMinusOne';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  LMGetSysMap()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1500,11 +2304,7 @@ procedure LMSetMinusOne( value: SInt32 ); external name '_LMSetMinusOne';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetSysMap: SInt16; external name '_LMGetSysMap';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1516,11 +2316,7 @@ function LMGetSysMap: SInt16; external name '_LMGetSysMap';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetSysMap( value: SInt16 ); external name '_LMSetSysMap';
-<<<<<<< HEAD
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
-=======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1531,6 +2327,82 @@ procedure LMSetSysMap( value: SInt16 ); external name '_LMSetSysMap';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function LMGetResLoad: UInt8; external name '_LMGetResLoad';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMSetResLoad()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetResLoad( value: ByteParameter ); external name '_LMSetResLoad';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMGetResErr()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+function LMGetSysMap: SInt16; external name '_LMGetSysMap';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMSetSysMap()
+=======
+function LMGetResErr: SInt16; external name '_LMGetResErr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMSetResErr()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+procedure LMSetSysMap( value: SInt16 ); external name '_LMSetSysMap';
+<<<<<<< HEAD
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  LMGetResLoad()
+=======
+procedure LMSetResErr( value: SInt16 ); external name '_LMSetResErr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMGetTmpResLoad()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function LMGetResLoad: UInt8; external name '_LMGetResLoad';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
@@ -1659,12 +2531,227 @@ procedure LMSetIntlSpec( value: Ptr ); external name '_LMSetIntlSpec';
  *  Summary:
  *    Get the id of the system font family.  Use GetSysFont() in the
  *    Quickdraw framework instead of this.
+=======
+function LMGetTmpResLoad: UInt8; external name '_LMGetTmpResLoad';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMSetTmpResLoad()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetTmpResLoad( value: ByteParameter ); external name '_LMSetTmpResLoad';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMGetIntlSpec()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetIntlSpec: Ptr; external name '_LMGetIntlSpec';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMSetIntlSpec()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetIntlSpec( value: Ptr ); external name '_LMSetIntlSpec';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ LMGetWordRedraw and LMSetWordRedraw moved to TextEdit.h }
+{$ifc not TARGET_CPU_64}
+{
+ *  LMGetSysFontFam()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Get the id of the system font family.  Use GetSysFont() in the
+ *    Quickdraw framework instead of this.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function LMGetSysFontFam: SInt16; external name '_LMGetSysFontFam';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  LMSetSysFontFam()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Set the id of the system font family.  This is not supported on
+ *    Mac OS X.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetSysFontFam( value: SInt16 ); external name '_LMSetSysFontFam';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetSysFontSize()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Get the size of the system font.  Use DefFontSize() in the
+ *    Quickdraw framework instead of this.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetSysFontSize: SInt16; external name '_LMGetSysFontSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetSysFontSize()
+ *  
+ *  Summary:
+ *    Set the size for the system font.  This is not supported on Mac
+ *    OS X.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetSysFontSize( value: SInt16 ); external name '_LMSetSysFontSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{*************************************************************************************
+    "BLOCKMOVE ACCESSORS"
+    
+        These lowmem accessors use the BlockMove to set
+*************************************************************************************}
+{$ifc not TARGET_CPU_64}
+{
+ *  LMGetCurApName()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetCurApName: StringPtr; external name '_LMGetCurApName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMSetCurApName()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetCurApName( curApNameValue: ConstStr31Param ); external name '_LMSetCurApName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  LMGetSysResName()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Mac OS X does not have the concept of a "System" file name. 
+ *    Remove usage of this lowmem value.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetSysResName: StringPtr; external name '_LMGetSysResName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetSysResName()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Mac OS X does not have the concept of a "System" file name. 
+ *    Remove usage of this lowmem value.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetSysResName( sysResNameValue: ConstStr15Param ); external name '_LMSetSysResName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetFinderName()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Getting the name of the Finder isn't terribly useful.  If you
+ *    need to find the Finder process, look it up with the CFBundle
+ *    calls by bundle id ( "com.apple.finder" ).  Remove usage of this
+ *    lowmem value.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetFinderName: StringPtr; external name '_LMGetFinderName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetFinderName()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Setting the name of the Finder application is not supported on
+ *    Mac OS X.  Remove usage of this lowmem accessor.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetFinderName( finderNameValue: ConstStr15Param ); external name '_LMSetFinderName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMGetToolScratch()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Mac OS X gives each process its own tool scratch area, so this
+ *    accessor is fairly useless. If you really need to share 8 bytes
+ *    of memory among various libraries, just make it a global and
+ *    export it from one library and import it into the others.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function LMGetSysFontFam: SInt16; external name '_LMGetSysFontFam';
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
@@ -1733,6 +2820,58 @@ procedure LMSetSysFontSize( value: SInt16 ); external name '_LMSetSysFontSize';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+function LMGetToolScratch: Ptr; external name '_LMGetToolScratch';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetToolScratch()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Mac OS X gives each process its own tool scratch area, so this
+ *    accessor is fairly useless. If you really need to share 8 bytes
+ *    of memory among various libraries, just make it a global and
+ *    export it from one library and import it into the others.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetToolScratch( toolScratchValue: {const} UnivPtr ); external name '_LMSetToolScratch';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{*************************************************************************************
+    "INDEXED ACCESSORS"
+    
+        These lowmem accessors take an index parameter to get/set an indexed
+        lowmem global.
+*************************************************************************************}
+{
+ *  LMGetLvl2DT()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function LMGetLvl2DT( vectorNumber: SInt16 ): UniversalProcPtr; external name '_LMGetLvl2DT';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetLvl2DT()   *** DEPRECATED ***
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure LMSetLvl2DT( Lvl2DTValue: UniversalProcPtr; vectorNumber: SInt16 ); external name '_LMSetLvl2DT';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 
 
 {*************************************************************************************
@@ -1740,6 +2879,7 @@ procedure LMSetSysFontSize( value: SInt16 ); external name '_LMSetSysFontSize';
     
         These lowmem accessors use the BlockMove to set
 *************************************************************************************}
+<<<<<<< HEAD
 {$ifc not TARGET_CPU_64}
 {
  *  LMGetCurApName()   *** DEPRECATED ***
@@ -1779,10 +2919,18 @@ procedure LMSetCurApName( curApNameValue: ConstStr31Param ); external name '_LMS
  *  Deprecated:
  *    Mac OS X does not have the concept of a "System" file name. 
  *    Remove usage of this lowmem value.
+=======
+
+
+{ accesses "HiHeapMark"}
+{
+ *  LMGetHighHeapMark()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetSysResName: StringPtr; external name '_LMGetSysResName';
@@ -1799,10 +2947,21 @@ function LMGetSysResName: StringPtr; external name '_LMGetSysResName';
  *  Deprecated:
  *    Mac OS X does not have the concept of a "System" file name. 
  *    Remove usage of this lowmem value.
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function LMGetHighHeapMark: Ptr; external name '_LMGetHighHeapMark';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetHighHeapMark()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetSysResName( sysResNameValue: ConstStr15Param ); external name '_LMSetSysResName';
@@ -1821,10 +2980,22 @@ procedure LMSetSysResName( sysResNameValue: ConstStr15Param ); external name '_L
  *    need to find the Finder process, look it up with the CFBundle
  *    calls by bundle id ( "com.apple.finder" ).  Remove usage of this
  *    lowmem value.
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+procedure LMSetHighHeapMark( value: Ptr ); external name '_LMSetHighHeapMark';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{ accesses "StkLowPt"}
+{
+ *  LMGetStackLowPoint()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetFinderName: StringPtr; external name '_LMGetFinderName';
@@ -1841,10 +3012,21 @@ function LMGetFinderName: StringPtr; external name '_LMGetFinderName';
  *  Deprecated:
  *    Setting the name of the Finder application is not supported on
  *    Mac OS X.  Remove usage of this lowmem accessor.
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function LMGetStackLowPoint: Ptr; external name '_LMGetStackLowPoint';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetStackLowPoint()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetFinderName( finderNameValue: ConstStr15Param ); external name '_LMSetFinderName';
@@ -1907,10 +3089,22 @@ procedure LMSetToolScratch( toolScratchValue: {const} UnivPtr ); external name '
 *************************************************************************************}
 {
  *  LMGetLvl2DT()   *** DEPRECATED ***
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+procedure LMSetStackLowPoint( value: Ptr ); external name '_LMSetStackLowPoint';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{ accesses "FmtDefaults"}
+{
+ *  LMGetDiskFormatingHFSDefaults()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function LMGetLvl2DT( vectorNumber: SInt16 ): UniversalProcPtr; external name '_LMGetLvl2DT';
@@ -1923,10 +3117,21 @@ function LMGetLvl2DT( vectorNumber: SInt16 ): UniversalProcPtr; external name '_
 
 {
  *  LMSetLvl2DT()   *** DEPRECATED ***
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+function LMGetDiskFormatingHFSDefaults: Ptr; external name '_LMGetDiskFormatingHFSDefaults';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  LMSetDiskFormatingHFSDefaults()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 procedure LMSetLvl2DT( Lvl2DTValue: UniversalProcPtr; vectorNumber: SInt16 ); external name '_LMSetLvl2DT';
@@ -2044,6 +3249,12 @@ procedure LMSetDiskFormatingHFSDefaults( value: Ptr ); external name '_LMSetDisk
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 8.5 and later
+ }
+procedure LMSetDiskFormatingHFSDefaults( value: Ptr ); external name '_LMSetDiskFormatingHFSDefaults';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
 

@@ -25,7 +25,10 @@ type
 
    TSimpleRWSync = class(TInterfacedObject,IReadWriteSync)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_THREADING}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    private
@@ -42,7 +45,10 @@ type
 
    TMultiReadExclusiveWriteSynchronizer = class(TInterfacedObject,IReadWriteSync)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_THREADING}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    private
@@ -59,7 +65,10 @@ type
       procedure Beginread;
       procedure Endread;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_THREADING}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    end;

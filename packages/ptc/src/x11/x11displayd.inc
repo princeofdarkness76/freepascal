@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -46,6 +50,7 @@ type
                    PTC_X11_DITHER,
                    PTC_X11_FULLSCREEN_CURSOR_VISIBLE,
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE,
+<<<<<<< HEAD
 <<<<<<< HEAD
                    PTC_X11_GRAB_MOUSE,
                    PTC_X11_INTERCEPT_WINDOW_CLOSE,
@@ -136,6 +141,37 @@ type
     procedure Update(AArea: IPTCArea); virtual; abstract;
 
 =======
+=======
+                   PTC_X11_GRAB_MOUSE);
+  TX11Flags = set of TX11FlagsEnum;
+
+type
+  TX11Display = class
+  protected
+    { Conversion object }
+    FCopy: TPTCCopy;
+    FClear: TPTCClear;
+    FPalette: TPTCPalette;
+
+    FArea: TPTCArea;
+    FClip: TPTCArea;
+
+    FEventQueue: TEventQueue;
+
+    FFlags: TX11Flags;
+    FWidth, FHeight: Integer;
+    FFormat: TPTCFormat;
+
+    FDisplay: PDisplay;
+    FScreen: Integer;
+
+    FCMap: TColormap;
+    FColours: PXColor;
+
+    FFunctionKeys: PInteger;
+    FNormalKeys: PInteger;
+
+>>>>>>> graemeg/cpstrnew
     function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; virtual; abstract;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; virtual; abstract;
 
@@ -169,12 +205,16 @@ type
     procedure Update; virtual; abstract;
     procedure Update(const AArea: TPTCArea); virtual; abstract;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function Lock: Pointer; virtual; abstract;
     procedure Unlock; virtual; abstract;
 
     { load pixels to console }
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
                    AFormat: IPTCFormat; APalette: IPTCPalette); virtual;
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
@@ -199,6 +239,8 @@ type
     { console clip area }
     procedure Clip(AArea: IPTCArea);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                    const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
                    const AFormat: TPTCFormat; const APalette: TPTCPalette;
@@ -221,6 +263,9 @@ type
 
     { console clip area }
     procedure Clip(const AArea: TPTCArea);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     { cursor control }
@@ -231,10 +276,16 @@ type
 
     { Data access }
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Clip: IPTCArea;
 
     function IsFullScreen: Boolean; virtual; abstract;
     function IsOpen: Boolean; virtual; abstract;
+=======
+    function Clip: TPTCArea;
+
+    function IsFullScreen: Boolean; virtual; abstract;
+>>>>>>> graemeg/cpstrnew
 =======
     function Clip: TPTCArea;
 
@@ -245,7 +296,11 @@ type
     procedure SetFlags(AFlags: TX11Flags);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList); virtual; abstract;
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
@@ -265,12 +320,17 @@ type
     property Height: Integer read GetHeight;
     property Pitch: Integer read GetPitch;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Area: IPTCArea read GetArea;
     property Format: IPTCFormat read GetFormat;
 
     procedure OpenGL_SwapBuffers; virtual;
     procedure OpenGL_SetSwapInterval(AInterval: Integer); virtual;
     function OpenGL_GetSwapInterval: Integer; virtual;
+=======
+    property Area: TPTCArea read GetArea;
+    property Format: TPTCFormat read GetFormat;
+>>>>>>> graemeg/cpstrnew
 =======
     property Area: TPTCArea read GetArea;
     property Format: TPTCFormat read GetFormat;

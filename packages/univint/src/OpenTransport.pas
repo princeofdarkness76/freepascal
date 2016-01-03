@@ -4,7 +4,13 @@
      Contains:   *** DEPRECATED *** Open Transport client interface file.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 1985-2011 Apple Inc. All rights reserved.
+=======
+     Version:    OpenTransport-110~114
+ 
+     Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    OpenTransport-110~114
  
@@ -74,11 +80,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -97,6 +106,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -105,12 +115,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -129,6 +148,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -140,13 +164,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -210,6 +238,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -1933,6 +1989,8 @@ procedure CloseOpenTransportInContext( clientContext: OTClientContextPtr ); exte
 
 {$endc} {not TARGET_CPU_64}
 
+{$endc} {not TARGET_CPU_64}
+
 {
  *  InitOpenTransport()
  *  
@@ -2015,8 +2073,11 @@ function OTUnregisterAsClientInContext( clientContext: OTClientContextPtr ): OSS
 
 {$endc} {not TARGET_CPU_64}
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 
+=======
+>>>>>>> graemeg/cpstrnew
 {$endc}  { !OTKERNEL }
 
 { ***** Tasking Model *****}
@@ -2125,11 +2186,16 @@ procedure InvokeOTProcessUPP( arg: UnivPtr; userUPP: OTProcessUPP ); external na
  }
 function OTCreateDeferredTaskInContext( upp: OTProcessUPP; arg: UnivPtr; clientContext: OTClientContextPtr { can be NULL } ): SIGNEDLONG; external name '_OTCreateDeferredTaskInContext';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -2192,6 +2258,8 @@ function OTScheduleDeferredTask( dtCookie: OTDeferredTaskRef ): Boolean; externa
 function OTDestroyDeferredTask( dtCookie: OTDeferredTaskRef ): OSStatus; external name '_OTDestroyDeferredTask';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -2262,6 +2330,8 @@ function OTCanMakeSyncCall: Boolean; external name '_OTCanMakeSyncCall';
 
 {$endc} {not TARGET_CPU_64}
 
+{$endc} {not TARGET_CPU_64}
+
 {$endc}  { !OTKERNEL }
 
 { ***** Interface to Providers *****}
@@ -2298,6 +2368,8 @@ function OTCanMakeSyncCall: Boolean; external name '_OTCanMakeSyncCall';
 function OTCloseProvider( ref: ProviderRef ): OSStatus; external name '_OTCloseProvider';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -2345,6 +2417,8 @@ function OTCloseProvider( ref: ProviderRef ): OSStatus; external name '_OTCloseP
 function OTIoctl( ref: ProviderRef; cmd: UInt32; data: UnivPtr ): SInt32; external name '_OTIoctl';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -2570,9 +2644,14 @@ function OTCancelSynchronousCalls( ref: ProviderRef; err: OSStatus ): OSStatus; 
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$endc} {not TARGET_CPU_64}
 
@@ -2611,6 +2690,8 @@ function OTOpenEndpointInContext( config: OTConfigurationRef; oflag: OTOpenFlags
 function OTAsyncOpenEndpointInContext( config: OTConfigurationRef; oflag: OTOpenFlags; info: TEndpointInfoPtr { can be NULL }; upp: OTNotifyUPP; contextPtr: UnivPtr; clientContext: OTClientContextPtr { can be NULL } ): OSStatus; external name '_OTAsyncOpenEndpointInContext';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -2676,6 +2757,8 @@ function OTGetEndpointState( ref: EndpointRef ): OTResult; external name '_OTGet
 function OTLook( ref: EndpointRef ): OTResult; external name '_OTLook';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -2753,6 +2836,8 @@ function OTResolveAddress( ref: EndpointRef; var reqAddr: TBind; var retAddr: TB
 function OTAllocInContext( ref: EndpointRef; structType: OTStructType; fields: UInt32; var err: OSStatus; clientContext: OTClientContextPtr { can be NULL } ): UnivPtr; external name '_OTAllocInContext';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -3201,6 +3286,8 @@ function OTOpenMapperInContext( config: OTConfigurationRef; oflag: OTOpenFlags; 
 
 {$endc} {not TARGET_CPU_64}
 
+{$endc} {not TARGET_CPU_64}
+
 {
  *  OTAsyncOpenMapper()
  *  
@@ -3342,6 +3429,8 @@ function OTAllocMemInContext( size: OTByteCount; clientContext: OTClientContextP
 
 {$endc} {not TARGET_CPU_64}
 
+{$endc} {not TARGET_CPU_64}
+
 {
  *  OTAllocMem()
  *  
@@ -3364,6 +3453,8 @@ function OTAllocMemInContext( size: OTByteCount; clientContext: OTClientContextP
 procedure OTFreeMem( mem: UnivPtr ); external name '_OTFreeMem';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 
@@ -3401,6 +3492,8 @@ procedure OTDelay( seconds: UInt32 ); external name '_OTDelay';
 procedure OTIdle; external name '_OTIdle';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_4,__IPHONE_NA,__IPHONE_NA) *)
 
+
+{$endc} {not TARGET_CPU_64}
 
 {$endc} {not TARGET_CPU_64}
 

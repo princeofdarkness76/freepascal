@@ -19,8 +19,11 @@ type
   WCHAR = WideChar;
   PWSTR = PWideChar;
 <<<<<<< HEAD
+<<<<<<< HEAD
   CCHAR = Byte;
   PCCHAR = ^CCHAR;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

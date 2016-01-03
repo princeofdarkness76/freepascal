@@ -41,6 +41,14 @@
 {$endif} 
 {$endif}
 
+{$ifndef DYNLOADINGODBC}
+{$IFDEF WINDOWS}
+  {$linklib odbc32}
+{$ELSE}
+  {$linklib odbc}
+{$endif} 
+{$endif}
+
 interface
 
 uses
@@ -1595,7 +1603,11 @@ begin
   if RefCount = 1 then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     if OverrideName='' then
+=======
+    if OverrideName='' then 
+>>>>>>> graemeg/cpstrnew
 =======
     if OverrideName='' then 
 >>>>>>> graemeg/cpstrnew

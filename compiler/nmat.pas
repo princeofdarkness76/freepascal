@@ -160,6 +160,7 @@ implementation
             case nodetype of
               modn:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if nf_isomod in flags then
                   begin
                     if lv>=0 then
@@ -174,6 +175,11 @@ implementation
                   result:=create_simplified_ord_const(lv mod rv,resultdef,forinline);
               divn:
                 result:=create_simplified_ord_const(lv div rv,resultdef,forinline);
+=======
+                t:=create_simplified_ord_const(lv mod rv,resultdef,forinline);
+              divn:
+                t:=create_simplified_ord_const(lv div rv,resultdef,forinline);
+>>>>>>> graemeg/cpstrnew
 =======
                 t:=create_simplified_ord_const(lv mod rv,resultdef,forinline);
               divn:
@@ -231,7 +237,10 @@ implementation
          maybe_call_procvar(right,true);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
          result:=simplify(false);
          if assigned(result) then
            exit;
@@ -754,7 +763,10 @@ implementation
          maybe_call_procvar(right,true);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
          result:=simplify(false);
          if assigned(result) then
            exit;
@@ -1043,6 +1055,7 @@ implementation
         result:=nil;
         typecheckpass(left);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { avoid any problems with type parameters later on }
         if is_typeparam(left.resultdef) then
@@ -1051,6 +1064,8 @@ implementation
             exit;
           end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         set_varstate(left,vs_read,[vsf_must_be_valid]);
@@ -1071,6 +1086,7 @@ implementation
             left:=nil;
           end
 <<<<<<< HEAD
+<<<<<<< HEAD
         else if is_oversizedord(left.resultdef) then
           begin
             if is_64bit(left.resultdef) then
@@ -1085,6 +1101,8 @@ implementation
             left:=nil;
           end
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifndef cpu64bitaddr}
         else if is_64bit(left.resultdef) then
           begin
@@ -1093,6 +1111,9 @@ implementation
             left:=nil;
           end
 {$endif not cpu64bitaddr}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         else if (left.resultdef.typ=orddef) then
           begin
@@ -1212,6 +1233,7 @@ implementation
                  CGMessage(type_e_mismatch);
              end;
 <<<<<<< HEAD
+<<<<<<< HEAD
              { not-nodes are not range checked by the code generator -> also
                don't range check while inlining; the resultdef is a bit tricky
                though: the node's resultdef gets changed in most cases compared
@@ -1228,10 +1250,15 @@ implementation
                  inserttypeconv_explicit(t,def);
                end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
              if not forinline then
                t:=cordconstnode.create(v,def,false)
              else
                t:=create_simplified_ord_const(v,resultdef,true);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
              result:=t;
              exit;

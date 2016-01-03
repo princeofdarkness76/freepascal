@@ -1,6 +1,10 @@
 { %target=darwin }
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %cpu=powerpc,i386,powerpc64,x86_64 }
+=======
+{ %cpu=powerpc,i386 }
+>>>>>>> graemeg/cpstrnew
 =======
 { %cpu=powerpc,i386 }
 >>>>>>> graemeg/cpstrnew

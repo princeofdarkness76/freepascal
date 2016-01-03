@@ -1,5 +1,6 @@
 #
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -10,6 +11,8 @@ version=3.1.1
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 #   Makefile.fpc for Free Pascal Symbian Build Tool
 #
 
@@ -23,6 +26,9 @@ units=cfgfile cmdline compiler constants projectparser sdkutil
 packages=
 
 [compiler]
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 [install]
@@ -31,6 +37,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
@@ -117,6 +124,11 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[rules]
+.NOTPARALLEL:
+mksymbian$(EXEEXT): mksymbian.pas
+>>>>>>> graemeg/cpstrnew
 =======
 [rules]
 .NOTPARALLEL:

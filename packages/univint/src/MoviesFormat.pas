@@ -4,9 +4,15 @@
      Contains:   QuickTime Interfaces.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    QuickTime 7.6.3
  
@@ -21,7 +27,10 @@
 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {
@@ -79,11 +88,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -102,6 +114,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -122,6 +135,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -137,6 +152,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -145,13 +163,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -240,6 +262,39 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -279,17 +334,28 @@ interface
 uses MacTypes,ImageCompression,Components,Movies;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 =======
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+<<<<<<< HEAD
+=======
+
+{$ALIGN MAC68K}
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 {$ALIGN MAC68K}
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 const
 	kMovieVersion = 0;     { version number of the format here described }
 
@@ -350,8 +416,11 @@ type
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 		numEntries: SInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		timeToSampleNumTable: array [0..0] of TimeToSampleNum;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 		timeToSampleNumTable:	array [0..0] of TimeToSampleNum;
 >>>>>>> graemeg/cpstrnew
 	end;
@@ -432,6 +501,7 @@ type
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 		numEntries: SInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		compositionOffsetTable: array [0..0] of CompositionOffsetEntry;
 =======
     compositionOffsetTable: array [0..0] of CompositionOffsetEntry;
@@ -445,6 +515,18 @@ type
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 		sampleDependencyTable: array [0..0] of UInt8;
 	end;
+=======
+    compositionOffsetTable: array [0..0] of CompositionOffsetEntry;
+	end;
+type
+	SampleDependencyAtomPtr = ^SampleDependencyAtom;
+	SampleDependencyAtom = record
+		size: SInt32;
+		atomType: SInt32;               { = 'sdtp' }
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+		sampleDependencyTable: array [0..0] of UInt8;
+	end;
+>>>>>>> graemeg/cpstrnew
 {
 NOTE: The values for these flags that shipped with QuickTime 7.0 were incorrect. 
 They matched neither the specification nor the implementation -- the "Yes" and "No" bits
@@ -550,9 +632,15 @@ type
 	MatteCompressedAtom = record
 		size: SInt32;
 		atomType: SInt32;
+<<<<<<< HEAD
 
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 
+=======
+
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+
+>>>>>>> graemeg/cpstrnew
 		matteImageDescription: ImageDescription;
 		matteData: array [0..0] of SInt8;
 	end;
@@ -600,9 +688,15 @@ type
 		atomType: SInt32;               { = 'minf' }
 
 		header: VideoMediaInfoHeaderAtom;
+<<<<<<< HEAD
 
 		dataHandler: HandlerAtom;
 
+=======
+
+		dataHandler: HandlerAtom;
+
+>>>>>>> graemeg/cpstrnew
 		dataInfo: DataInfoAtom;
 
 		sampleTable: SampleTableAtom;
@@ -630,9 +724,15 @@ type
 		atomType: SInt32;               { = 'minf' }
 
 		header: SoundMediaInfoHeaderAtom;
+<<<<<<< HEAD
 
 		dataHandler: HandlerAtom;
 
+=======
+
+		dataHandler: HandlerAtom;
+
+>>>>>>> graemeg/cpstrnew
 		dataReference: DataRefAtom;
 
 		sampleTable: SampleTableAtom;
@@ -653,15 +753,21 @@ type
 	MediaHeader = record
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		creationTime: SInt32;           { seconds since Jan 1904 when directory was created }
 		modificationTime: SInt32;       { seconds since Jan 1904 when directory was appended }
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 		creationTime: SInt32;           { seconds since Jan 1904 when directory was created }
 		modificationTime: SInt32;       { seconds since Jan 1904 when directory was appended }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 		timeScale: TimeValue;              { start time for Media (Media time) }
 		duration: TimeValue;               { length of Media (Media time) }
@@ -703,6 +809,9 @@ type
 	TrackHeader = record
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 		creationTime: SInt32;           { seconds since Jan 1904 when directory was created }
 		modificationTime: SInt32;       { seconds since Jan 1904 when directory was appended }
@@ -710,6 +819,7 @@ type
 		trackID: SInt32;
 
 		reserved1: SInt32;
+<<<<<<< HEAD
 
 =======
 
@@ -729,6 +839,17 @@ type
 		layer: SInt16;
 		alternateGroup: SInt16;
 
+=======
+
+		duration: TimeValue;               { length of track (track time) }
+
+		reserved2: SInt32;
+		reserved3: SInt32;
+
+		layer: SInt16;
+		alternateGroup: SInt16;
+
+>>>>>>> graemeg/cpstrnew
 		volume: SInt16;
 		reserved4: SInt16;
 
@@ -756,9 +877,15 @@ type
 	EditListAtom = record
 		size: SInt32;
 		atomType: SInt32;               { = elst }
+<<<<<<< HEAD
 
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 
+=======
+
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+
+>>>>>>> graemeg/cpstrnew
 		numEntries: SInt32;
 editListTable: array [0..0] of EditListType;
 	end;
@@ -785,6 +912,7 @@ type
 		atomType: SInt32;               { = load }
 
 		settings: TrackLoadSettings;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	end;
 type
@@ -835,11 +963,38 @@ type
 		productionApertureDimensions: FixedPoint;
 	end;
 type
+=======
+	end;
+type
+	TrackCleanApertureDimensionsPtr = ^TrackCleanApertureDimensions;
+	TrackCleanApertureDimensions = record
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+		cleanApertureDimensions: FixedPoint;
+	end;
+type
+	TrackCleanApertureDimensionsAtomPtr = ^TrackCleanApertureDimensionsAtom;
+	TrackCleanApertureDimensionsAtom = record
+		size: SInt32;
+		atomType: SInt32;               { = 'tapt' }
+
+		cleanApertureDimensions: TrackCleanApertureDimensions;
+	end;
+type
+	TrackProductionApertureDimensionsPtr = ^TrackProductionApertureDimensions;
+	TrackProductionApertureDimensions = record
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+		productionApertureDimensions: FixedPoint;
+	end;
+type
+>>>>>>> graemeg/cpstrnew
 	TrackProductionApertureDimensionsAtomPtr = ^TrackProductionApertureDimensionsAtom;
 	TrackProductionApertureDimensionsAtom = record
 		size: SInt32;
 		atomType: SInt32;               { = 'prof' }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 		productionApertureDimensions: TrackProductionApertureDimensions;
 	end;
@@ -889,6 +1044,7 @@ type
 
 		creationTime: SInt32;           { seconds since Jan 1904 when directory was created }
 		modificationTime: SInt32;       { seconds since Jan 1904 when directory was appended }
+<<<<<<< HEAD
 
 		timeScale: TimeValue;              { Time specifications }
 		duration: TimeValue;
@@ -909,6 +1065,26 @@ type
 		posterTime: TimeValue;             { time in track the proxy begins (track time) }
 
 =======
+
+		posterTime: TimeValue;             { time in track the proxy begins (track time) }
+
+>>>>>>> graemeg/cpstrnew
+=======
+
+		timeScale: TimeValue;              { Time specifications }
+		duration: TimeValue;
+		preferredRate: Fixed;          { rate at which to play this movie }
+
+		preferredVolume: SInt16;        { volume to play movie at }
+		reserved1: SInt16;
+
+		preferredLong1: SInt32;
+		preferredLong2: SInt32;
+
+		matrix: MatrixRecord;
+
+		previewTime: TimeValue;            { time in track the proxy begins (track time) }
+		previewDuration: TimeValue;        { how long the proxy lasts (track time) }
 
 		posterTime: TimeValue;             { time in track the proxy begins (track time) }
 
@@ -944,7 +1120,11 @@ type
 
                                               { Track Directories }
 <<<<<<< HEAD
+<<<<<<< HEAD
 		track: array [0..0] of TrackDirectoryEntry;              { Track directory information }
+=======
+    track: array [0..0] of TrackDirectoryEntry;              { Track directory information }
+>>>>>>> graemeg/cpstrnew
 =======
     track: array [0..0] of TrackDirectoryEntry;              { Track directory information }
 >>>>>>> graemeg/cpstrnew
@@ -954,6 +1134,7 @@ type
 	end;
 {***************************************
 ***************************************}
+<<<<<<< HEAD
 
 { Movie formats and tags }
 const
@@ -972,6 +1153,24 @@ const
 	SOUND_TYPE = FourCharCode('soun');
 
 =======
+
+const
+	MOVIE_TYPE = FourCharCode('moov');
+	TRACK_TYPE = FourCharCode('trak');
+	VIDEO_TYPE = FourCharCode('vide');
+	SOUND_TYPE = FourCharCode('soun');
+
+>>>>>>> graemeg/cpstrnew
+=======
+
+{ Movie formats and tags }
+const
+{ some system defined format IDs }
+	QT_MOVIE_TYPE = FourCharCode('moov');
+	QT_TRACK_TYPE = FourCharCode('trak');
+	QT_MEDIA_TYPE = FourCharCode('mdia');
+	QT_VIDEO_TYPE = FourCharCode('vide');
+	QT_SOUND_TYPE = FourCharCode('soun');
 
 const
 	MOVIE_TYPE = FourCharCode('moov');
@@ -1208,9 +1407,15 @@ type
 	SecureContentSchemeTypeAtom = record
 		size: SInt32;
 		atomType: SInt32;               { = 'schm' }
+<<<<<<< HEAD
 
 		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
 
+=======
+
+		flags: SInt32;                  { 1 byte of version / 3 bytes of flags }
+
+>>>>>>> graemeg/cpstrnew
 		schemeType: SInt32;
 		schemeVersion: UInt32;
                                               { if flags & 1, C string holding URL for security component server}

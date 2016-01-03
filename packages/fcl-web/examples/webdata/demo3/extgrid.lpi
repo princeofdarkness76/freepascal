@@ -2,6 +2,7 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
@@ -20,6 +21,8 @@
       <Item1 Name="default" Default="True"/>
     </BuildModes>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     <Version Value="7"/>
     <General>
       <Flags>
@@ -35,6 +38,9 @@
     <VersionInfo>
       <ProjectVersion Value=""/>
     </VersionInfo>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <PublishOptions>
       <Version Value="2"/>
@@ -68,7 +74,11 @@
       </Item5>
     </RequiredPackages>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="2">
+=======
+    <Units Count="16">
+>>>>>>> graemeg/cpstrnew
 =======
     <Units Count="16">
 >>>>>>> graemeg/cpstrnew
@@ -77,12 +87,18 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="extgrid"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CursorPos X="24" Y="6"/>
         <TopLine Value="1"/>
         <EditorIndex Value="3"/>
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       </Unit0>
       <Unit1>
@@ -92,12 +108,15 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="wmusers"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Unit1>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="10"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <CursorPos X="33" Y="60"/>
         <TopLine Value="27"/>
         <EditorIndex Value="2"/>
@@ -342,11 +361,15 @@
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="8"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <Target>
       <Filename Value="extgrid.cgi"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <IncludeFiles Value="$(ProjOutDir)"/>
     </SearchPaths>
@@ -359,6 +382,11 @@
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+=======
+      <IncludeFiles Value="$(ProjOutDir)/"/>
+    </SearchPaths>
+    <Other>
+>>>>>>> graemeg/cpstrnew
 =======
       <IncludeFiles Value="$(ProjOutDir)/"/>
     </SearchPaths>

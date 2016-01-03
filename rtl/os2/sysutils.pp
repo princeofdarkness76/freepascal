@@ -852,11 +852,17 @@ procedure sysbeep;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   DosBeep (800, 250);
 end;
 
 =======
   // Maybe implement later on ?
+=======
+  // Maybe implement later on ?
+
+end;
+>>>>>>> graemeg/cpstrnew
 
 end;
 
@@ -1282,8 +1288,11 @@ Initialization
   InitInternational;    { Initialize internationalization settings }
   OnBeep:=@SysBeep;
 <<<<<<< HEAD
+<<<<<<< HEAD
   LastOSError := 0;
   OrigOSErrorWatch := TOSErrorWatch (SetOSErrorTracking (@TrackLastOSError));
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Finalization

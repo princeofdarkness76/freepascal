@@ -1,11 +1,18 @@
 { CoreGraphics - CGGeometry.h
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1998-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2015 }
+=======
+   Copyright (c) 1998-2009 Apple Inc.
+   All rights reserved. }
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
    Copyright (c) 1998-2009 Apple Inc.
    All rights reserved. }
@@ -67,11 +74,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -89,6 +99,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -109,6 +120,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -133,11 +161,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -216,6 +248,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -275,6 +340,7 @@ type
 		width: CGFloat;
 		height: CGFloat;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	end;
 
 { Vectors. }
@@ -287,6 +353,8 @@ type
 	CGVector = record
 		dx: CGFloat;
 		dy: CGFloat;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	end;
@@ -377,11 +445,19 @@ function CGRectGetWidth( rect: CGRect ): CGFloat; external name '_CGRectGetWidth
 function CGRectGetHeight( rect: CGRect ): CGFloat; external name '_CGRectGetHeight';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
 { Return true if `rect1' and `rect2' are the same, false otherwise. }
 
+=======
+
+
+
+{ Return true if `rect1' and `rect2' are the same, false otherwise. }
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -441,6 +517,9 @@ function CGRectIntersection( r1: CGRect; r2: CGRect ): CGRect; external name '_C
 function CGRectOffset( rect: CGRect; dx: CGFloat; dy: CGFloat ): CGRect; external name '_CGRectOffset';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Make two new rectangles, `slice' and `remainder', by dividing `rect' with
    a line that's parallel to one of its sides, specified by `edge' -- either
@@ -455,6 +534,7 @@ procedure CGRectDivide( rect: CGRect; var slice: CGRect; var remainder: CGRect; 
 
 function CGRectContainsPoint( rect: CGRect; point: CGPoint ): CBool; external name '_CGRectContainsPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+<<<<<<< HEAD
 
 { Return true if `rect2' is contained in `rect1', false otherwise. `rect2'
    is contained in `rect1' if the union of `rect1' and `rect2' is equal to
@@ -489,6 +569,27 @@ procedure CGRectDivide( rect: CGRect; var slice: CGRect; var remainder: CGRect; 
 
 function CGRectContainsPoint( rect: CGRect; point: CGPoint ): CBool; external name '_CGRectContainsPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Return true if `rect2' is contained in `rect1', false otherwise. `rect2'
+   is contained in `rect1' if the union of `rect1' and `rect2' is equal to
+   `rect1'. }
+
+function CGRectContainsRect( rect1: CGRect; rect2: CGRect ): CBool; external name '_CGRectContainsRect';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{ Return true if `rect1' intersects `rect2', false otherwise. `rect1'
+   intersects `rect2' if the intersection of `rect1' and `rect2' is not the
+   null rect. }
+
+function CGRectIntersectsRect( rect1: CGRect; rect2: CGRect ): CBool; external name '_CGRectIntersectsRect';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+{** Persistent representations. **}
+
+{ Return a dictionary representation of `point'. }
+
+>>>>>>> graemeg/cpstrnew
+=======
 
 { Return true if `rect2' is contained in `rect1', false otherwise. `rect2'
    is contained in `rect1' if the union of `rect1' and `rect2' is equal to
@@ -548,6 +649,7 @@ function CGRectMakeWithDictionaryRepresentation( dict: CFDictionaryRef; var rect
 // CG_INLINE CGPoint
 function CGPointMake(x: CGFloat; y: CGFloat): CGPoint; inline;
 
+<<<<<<< HEAD
 {
   CGPoint p; p.x = x; p.y = y; return p;
 }
@@ -609,12 +711,45 @@ function CGPointEqualToPoint(const point1: CGPoint; const point2: CGPoint): bool
   return point1.x == point2.x && point1.y == point2.y;
 }
 
+=======
+{
+  CGPoint p; p.x = x; p.y = y; return p;
+}
+
+// CG_INLINE CGSize
+function CGSizeMake(width: CGFloat; height: CGFloat): CGSize; inline;
+{
+  CGSize size; size.width = width; size.height = height; return size;
+}
+
+// CG_INLINE CGRect
+// seems not useful to inline to me, is fairly big (unless you can reschedule
+// all the stores among the rest of the code, but still will probably increase
+// code size in all cases)
+function CGRectMake(x: CGFloat; y: CGFloat; width: CGFloat; height: CGFloat): CGRect;
+{
+  CGRect rect;
+  rect.origin.x = x; rect.origin.y = y;
+  rect.size.width = width; rect.size.height = height;
+  return rect;
+}
+
+// CG_INLINE bool
+function CGPointEqualToPoint(const point1: CGPoint; const point2: CGPoint): boolean; inline;
+{
+  return point1.x == point2.x && point1.y == point2.y;
+}
+
+>>>>>>> graemeg/cpstrnew
 // CG_INLINE bool
 function CGSizeEqualToSize(size1: CGSize; size2: CGSize): boolean; inline;
 {
   return size1.width == size2.width && size1.height == size2.height;
 }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 implementation
@@ -634,6 +769,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGVectorMake(dx: CGFloat; dy: CGFloat): CGVector; inline;
 begin
   CGVectorMake.dx := dx;
@@ -641,6 +777,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function CGRectMake(x: CGFloat; y: CGFloat; width: CGFloat; height: CGFloat): CGRect;

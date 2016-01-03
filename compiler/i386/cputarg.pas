@@ -87,9 +87,12 @@ implementation
       ,t_embed
     {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$ifndef NOTARGETAROS}
       ,t_aros
     {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -111,7 +114,10 @@ implementation
       ,ogelf
       ,ogmacho
 <<<<<<< HEAD
+<<<<<<< HEAD
       ,cpuelf
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

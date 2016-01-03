@@ -9,6 +9,7 @@ program MouseExample;
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   ptc, SysUtils;
 
 var
@@ -17,6 +18,8 @@ var
   format: IPTCFormat;
   event: IPTCEvent;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   ptc;
 
 var
@@ -24,6 +27,9 @@ var
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
   event: TPTCEvent = nil;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   pixels: PUint32;
   color: Uint32;
@@ -37,15 +43,21 @@ begin
     try
       { create console }
 <<<<<<< HEAD
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 
       { create format }
       format := TPTCFormatFactory.CreateNew(32, $FF0000, $FF00, $FF);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console := TPTCConsole.Create;
 
       { create format }
       format := TPTCFormat.Create(32, $FF0000, $FF00, $FF);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
       { open the console }
@@ -56,7 +68,11 @@ begin
 
       { create surface matching console dimensions }
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(console.width, console.height, format);
+=======
+      surface := TPTCSurface.Create(console.width, console.height, format);
+>>>>>>> graemeg/cpstrnew
 =======
       surface := TPTCSurface.Create(console.width, console.height, format);
 >>>>>>> graemeg/cpstrnew
@@ -71,6 +87,7 @@ begin
 
         { handle mouse events }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if Supports(event, IPTCMouseEvent) then
         begin
           { if there's more than one mouse event, process them all... }
@@ -79,6 +96,8 @@ begin
             Y := (event as IPTCMouseEvent).Y;
             button := PTCMouseButton1 in (event as IPTCMouseEvent).ButtonState;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         if event is TPTCMouseEvent then
         begin
           { if there's more than one mouse event, process them all... }
@@ -86,15 +105,24 @@ begin
             X := (event as TPTCMouseEvent).X;
             Y := (event as TPTCMouseEvent).Y;
             button := PTCMouseButton1 in (event as TPTCMouseEvent).ButtonState;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           until not console.NextEvent(event, False, [PTCMouseEvent]);
         end;
 
         { handle keyboard events }
 <<<<<<< HEAD
+<<<<<<< HEAD
         if Supports(event, IPTCKeyEvent) and (event as IPTCKeyEvent).Press then
         begin
           case (event as IPTCKeyEvent).Code of
+=======
+        if (event is TPTCKeyEvent) and (event as TPTCKeyEvent).Press then
+        begin
+          case (event as TPTCKeyEvent).Code of
+>>>>>>> graemeg/cpstrnew
 =======
         if (event is TPTCKeyEvent) and (event as TPTCKeyEvent).Press then
         begin
@@ -152,14 +180,20 @@ begin
       until Done;
     finally
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console.close;
       console.Free;
       surface.Free;
       format.Free;
       event.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except

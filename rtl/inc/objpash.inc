@@ -73,6 +73,9 @@
        vmtEquals               = vmtMethodStart+sizeof(pointer)*10;
        vmtGetHashCode          = vmtMethodStart+sizeof(pointer)*11;
        vmtToString             = vmtMethodStart+sizeof(pointer)*12;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
        { IInterface }
@@ -153,6 +156,9 @@
          vEquals: Pointer;
          vGetHashCode: Pointer;
          vToString: Pointer;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        end;
 
@@ -186,15 +192,21 @@
          etVirtualMethodResult,
          etStaticMethodResult,
 <<<<<<< HEAD
+<<<<<<< HEAD
          etFieldValue,
          etVirtualMethodClass,
          etStaticMethodClass,
          etFieldValueClass
 =======
+=======
+>>>>>>> graemeg/cpstrnew
          etFieldValue, 
          etVirtualMethodClass,
          etStaticMethodClass,
          etFieldValueClass           
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        );
 
@@ -239,7 +251,11 @@
           procedure FreeInstance;virtual;
           function SafeCallException(exceptobject : tobject;
 <<<<<<< HEAD
+<<<<<<< HEAD
             exceptaddr : codepointer) : HResult;virtual;
+=======
+            exceptaddr : pointer) : HResult;virtual;
+>>>>>>> graemeg/cpstrnew
 =======
             exceptaddr : pointer) : HResult;virtual;
 >>>>>>> graemeg/cpstrnew
@@ -423,9 +439,15 @@
       vtBoolean       = 1;
       vtChar          = 2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
       vtExtended      = 3;
 {$endif}
+=======
+{$ifndef FPUNONE}     
+      vtExtended      = 3;
+{$endif}              
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifndef FPUNONE}     
       vtExtended      = 3;
@@ -452,7 +474,11 @@
       TVarRec = record
          case VType : sizeint of
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef ENDIAN_BIG}
+=======
+{$ifdef ENDIAN_BIG}        
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef ENDIAN_BIG}        
 >>>>>>> graemeg/cpstrnew
@@ -461,7 +487,11 @@
            vtChar          : ({$IFDEF CPU64}chardummy : Longint;{$ENDIF CPU64}chardummy1,chardummy2,chardummy3: byte; VChar: Char);
            vtWideChar      : ({$IFDEF CPU64}widechardummy : Longint;{$ENDIF CPU64}wchardummy1,VWideChar: WideChar);
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$else ENDIAN_BIG}
+=======
+{$else ENDIAN_BIG}         
+>>>>>>> graemeg/cpstrnew
 =======
 {$else ENDIAN_BIG}         
 >>>>>>> graemeg/cpstrnew
@@ -469,6 +499,7 @@
            vtBoolean       : (VBoolean: Boolean);
            vtChar          : (VChar: Char);
            vtWideChar      : (VWideChar: WideChar);
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endif ENDIAN_BIG}
 {$ifndef FPUNONE}
@@ -478,6 +509,8 @@
            vtPointer       : (VPointer: Pointer);
            vtPChar         : (VPChar: PAnsiChar);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$endif ENDIAN_BIG}        
 {$ifndef FPUNONE}          
            vtExtended      : (VExtended: PExtended);
@@ -485,6 +518,9 @@
            vtString        : (VString: PShortString);
            vtPointer       : (VPointer: Pointer);
            vtPChar         : (VPChar: PChar);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
            vtObject        : (VObject: TObject);
            vtClass         : (VClass: TClass);
@@ -504,11 +540,15 @@
     DispCallByIDProc : codepointer;
 =======
     DispCallByIDProc : pointer;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   const
     { for safe as operator support }
     IObjectInstance: TGuid = '{D91C9AF4-3C93-420F-A303-BF5BA82BFD23}';
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -524,5 +564,7 @@
        DefaultValue : AnsiString;
        HashValue    : LongWord;
      end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

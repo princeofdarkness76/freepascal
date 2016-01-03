@@ -82,6 +82,9 @@ interface
          function  getmangledparaname:string;virtual;
          function  rtti_mangledname(rt:trttitype):string;virtual;abstract;
          function  OwnerHierarchyName: string; virtual; abstract;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
          function  size:asizeint;virtual;abstract;
          function  packedbitsize:asizeint;virtual;
@@ -119,6 +122,7 @@ interface
       public
          fileinfo   : tfileposinfo;
 <<<<<<< HEAD
+<<<<<<< HEAD
          { size of fileinfo is 10 bytes, so if a >word aligned type would follow,
            two bytes of memory would be wasted, so we put two one byte fields over here }
          visibility : tvisibility;
@@ -135,6 +139,11 @@ interface
          symoptions : tsymoptions;
          refs       : longint;
          reflist    : TLinkedList;
+=======
+         symoptions : tsymoptions;
+         refs       : longint;
+         reflist    : TLinkedList;
+>>>>>>> graemeg/cpstrnew
          visibility : tvisibility;
          { deprecated optionally can have a message }
          deprecatedmsg: pshortstring;
@@ -142,6 +151,9 @@ interface
          constructor create(st:tsymtyp;const aname:string);
          destructor  destroy;override;
          function  mangledname:string; virtual;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
          function  prettyname:string; virtual;
          procedure buildderef;virtual;
@@ -305,6 +317,7 @@ implementation
     function tdef.typename:string;
       begin
         result:=OwnerHierarchyName;
+<<<<<<< HEAD
         if assigned(typesym) and
            not(typ in [procvardef,procdef]) and
            (typesym.realname[1]<>'$') then
@@ -317,12 +330,17 @@ implementation
     function tdef.fulltypename:string;
       begin
         result:=fullownerhierarchyname;
+=======
+>>>>>>> graemeg/cpstrnew
         if assigned(typesym) and
            not(typ in [procvardef,procdef]) and
            (typesym.realname[1]<>'$') then
           result:=result+typesym.realname
         else
           result:=result+GetTypeName;
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;
@@ -344,7 +362,10 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function tdef.mangledparaname:string;
@@ -402,7 +423,11 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tdef.structalignment: shortint;
+=======
+    function tdef.packedbitsize:asizeint;
+>>>>>>> graemeg/cpstrnew
 =======
     function tdef.packedbitsize:asizeint;
 >>>>>>> graemeg/cpstrnew
@@ -491,7 +516,10 @@ implementation
          visibility:=vis_public;
          deprecatedmsg:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
          symid:=symid_not_registered;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       end;

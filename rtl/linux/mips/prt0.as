@@ -3,7 +3,11 @@
     Copyright (c) 1999-2009 by Michael Van Canneyt and David Zhang
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     Startup code for elf32-mipsel/elf32-mips
+=======
+    Startup code for elf32-mipsel
+>>>>>>> graemeg/cpstrnew
 =======
     Startup code for elf32-mipsel
 >>>>>>> graemeg/cpstrnew
@@ -15,6 +19,7 @@
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
+<<<<<<< HEAD
 <<<<<<< HEAD
         .set noat
         .set noreorder
@@ -118,6 +123,8 @@ _haltproc:
         .comm __stkptr,4
         .comm __dl_fini,4
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 	.section ".text"
 	.align 4
@@ -194,13 +201,19 @@ _haltproc:
 	.size _start, .-_start
 
         .comm __stkptr,4
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
         .comm operatingsystem_parameter_envp,4
         .comm operatingsystem_parameter_argc,4
         .comm operatingsystem_parameter_argv,4
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 .section .note.GNU-stack,"",@progbits
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -3,7 +3,11 @@
     Copyright (c) 1999-2002 by the Free Pascal development team
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     libc unit for Nintendo DS
+=======
+    BIOS functions unit for Nintendo DS
+>>>>>>> graemeg/cpstrnew
 =======
     BIOS functions unit for Nintendo DS
 >>>>>>> graemeg/cpstrnew
@@ -62,11 +66,17 @@ type
 procedure qsort(__base: pointer; __nmemb: integer; __size: integer; __compar: TSort); cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   errno: plongint; external name '__errno'; 
 
 type
 {
+=======
+function __errno: plongint; cdecl; export;
+
+type
+>>>>>>> graemeg/cpstrnew
 =======
 function __errno: plongint; cdecl; export;
 
@@ -92,6 +102,7 @@ type
   end;
   P_FILE = ^_FILE;
 <<<<<<< HEAD
+<<<<<<< HEAD
  }
  
    P_iobuf = ^_iobuf;
@@ -105,10 +116,14 @@ type
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> graemeg/cpstrnew
 const
   SEEK_SET = 0;
   SEEK_CUR = 1;
   SEEK_END = 2;
+<<<<<<< HEAD
 <<<<<<< HEAD
    R_OK = 1;
    W_OK = 2;
@@ -121,6 +136,8 @@ const
    STDIN_FILENO = 0;
    STDOUT_FILENO = 1;
    STDERR_FILENO = 2;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -137,7 +154,11 @@ type
   PDIR_ITER = ^DIR_ITER;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   stat = record
+=======
+  stat = packed record
+>>>>>>> graemeg/cpstrnew
 =======
   stat = packed record
 >>>>>>> graemeg/cpstrnew
@@ -214,6 +235,10 @@ procedure seekdir(dirp: PDIR; loc: longint); cdecl; external;
 function telldir(dirp: PDIR): longint; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -239,6 +264,7 @@ function fileno(para1: P_FILE): longint; cdecl; external;
 function fileno(var para1: _FILE): longint; cdecl; external;
 function fstat(fildes: longint; buf: PStat): longint; cdecl; external;
 function fstat(fildes: longint; var buf: TStat): longint; cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 function _stat(__file: Pchar; var __buf: Tstat): longint; cdecl; external name 'stat';
 function _stat(path: Pchar; buf: Pstat): longint; cdecl; external name 'stat';
@@ -452,8 +478,13 @@ Sys_EDQUOT      = 122;  { Quota exceeded }
 Sys_ERROR_MAX = $fff;
  
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function _stat(__file:Pchar; var __buf:Tstat):longint; cdecl; external name 'stat';
 function ftruncate(fildes: longint; len: longint): longint; cdecl; external;
 function unlink(path: Pchar): longint; cdecl; external;
 function rename(para1: Pchar; para2: Pchar): longint; cdecl; external;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

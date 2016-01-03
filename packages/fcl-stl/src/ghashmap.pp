@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
   {
      This file is part of the Free Pascal FCL library.
      BSD parts (c) 2011 Vlado Boza
@@ -72,6 +73,8 @@
 
         property Items[i : TKey]: TValue read GetData write Insert; default;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {
    This file is part of the Free Pascal FCL library.
    BSD parts (c) 2011 Vlado Boza
@@ -135,6 +138,9 @@ type
       function GetValue(key:TKey):TValue;inline;
 
       property Items[i : TKey]: TValue read GetValue write Insert; default;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
       function Iterator:TIterator;
@@ -151,7 +157,11 @@ destructor THashmap.Destroy;
 var i:SizeUInt;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i:=0 to FData.size-1 do
+=======
+  for i:=0 to FData.size do
+>>>>>>> graemeg/cpstrnew
 =======
   for i:=0 to FData.size do
 >>>>>>> graemeg/cpstrnew
@@ -212,7 +222,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THashmap.GetData(key:TKey):TValue;inline;
+=======
+function THashmap.GetValue(key:TKey):TValue;inline;
+>>>>>>> graemeg/cpstrnew
 =======
 function THashmap.GetValue(key:TKey):TValue;inline;
 >>>>>>> graemeg/cpstrnew
@@ -242,7 +256,11 @@ begin
   (FData[h]).pushback(pair);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FDataSize > 5*FData.size) then
+=======
+  if (FDataSize > 2*FData.size) then
+>>>>>>> graemeg/cpstrnew
 =======
   if (FDataSize > 2*FData.size) then
 >>>>>>> graemeg/cpstrnew
@@ -280,9 +298,15 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THashmapIterator.GetData:T;
 begin
   GetData:=(FData[Fh])[Fp];
+=======
+function THashmapIterator.GetValue:T;
+begin
+  GetValue:=(FData[Fh])[Fp];
+>>>>>>> graemeg/cpstrnew
 =======
 function THashmapIterator.GetValue:T;
 begin
@@ -307,6 +331,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THashmapIterator.GetKey:TKey;inline;
 begin
   GetKey:=((FData[Fh])[Fp]).Key;
@@ -327,6 +352,8 @@ begin
   ((FData[Fh]).mutable[Fp])^.Value := value;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end.

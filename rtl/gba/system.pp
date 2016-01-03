@@ -49,8 +49,11 @@ const
  AllFilesMask = '*';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
  sLineBreak = LineEnding;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  sLineBreak : string[1] = LineEnding;
 >>>>>>> graemeg/cpstrnew
  DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
@@ -65,12 +68,19 @@ const
 
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 var
   argc: LongInt = 0;
   argv: PPChar;
   envp: PPChar;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//  errno: integer;
+>>>>>>> graemeg/cpstrnew
 =======
 //  errno: integer;
 >>>>>>> graemeg/cpstrnew

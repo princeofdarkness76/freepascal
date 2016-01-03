@@ -5,7 +5,11 @@
 {$asmmode att}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure test_gas;
+=======
+procedure test_gas;   
+>>>>>>> graemeg/cpstrnew
 =======
 procedure test_gas;   
 >>>>>>> graemeg/cpstrnew
@@ -19,8 +23,12 @@ begin
     runerror(2);
 asm
 <<<<<<< HEAD
+<<<<<<< HEAD
   movq $0xffffffff,%rax
   movq %rax,test
+=======
+  movq $0xffffffff,test
+>>>>>>> graemeg/cpstrnew
 =======
   movq $0xffffffff,test
 >>>>>>> graemeg/cpstrnew
@@ -29,7 +37,11 @@ end;
     runerror(5);
 end ;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew

@@ -110,7 +110,11 @@ unit cpubase;
       VOLATILE_INTREGISTERS = [RS_R0..RS_R3,RS_R12..RS_R14];
       VOLATILE_FPUREGISTERS = [RS_F0..RS_F3];
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31,RS_S1..RS_S15];
+=======
+      VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
+>>>>>>> graemeg/cpstrnew
 =======
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
 >>>>>>> graemeg/cpstrnew
@@ -146,6 +150,7 @@ unit cpubase;
         PF_IAD,PF_DBD,PF_FDD,PF_EAD,
         PF_IAS,PF_DBS,PF_FDS,PF_EAS,
 <<<<<<< HEAD
+<<<<<<< HEAD
         PF_IAX,PF_DBX,PF_FDX,PF_EAX,
         { VFP postfixes }
         PF_8,PF_16,PF_32,PF_64,
@@ -162,6 +167,9 @@ unit cpubase;
 =======
         PF_IAX,PF_DBX,PF_FDX,PF_EAX
 >>>>>>> graemeg/cpstrnew
+=======
+        PF_IAX,PF_DBX,PF_FDX,PF_EAX
+>>>>>>> graemeg/cpstrnew
       );
 
       TOpPostfixes = set of TOpPostfix;
@@ -175,7 +183,11 @@ unit cpubase;
         PF_S,PF_D,PF_E,PF_None,PF_None);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       oppostfix2str : array[TOpPostfix] of string[8] = ('',
+=======
+      oppostfix2str : array[TOpPostfix] of string[3] = ('',
+>>>>>>> graemeg/cpstrnew
 =======
       oppostfix2str : array[TOpPostfix] of string[3] = ('',
 >>>>>>> graemeg/cpstrnew
@@ -187,6 +199,7 @@ unit cpubase;
         'ia','ib','da','db','fd','fa','ed','ea',
         'iad','dbd','fdd','ead',
         'ias','dbs','fds','eas',
+<<<<<<< HEAD
 <<<<<<< HEAD
         'iax','dbx','fdx','eax',
         '.8','.16','.32','.64',
@@ -200,6 +213,9 @@ unit cpubase;
         '.f64.s16','.f64.u16','.s16.f64','.u16.f64',
         '.f32.s32','.f32.u32','.s32.f32','.u32.f32',
         '.f64.s32','.f64.u32','.s32.f64','.u32.f64');
+=======
+        'iax','dbx','fdx','eax');
+>>>>>>> graemeg/cpstrnew
 =======
         'iax','dbx','fdx','eax');
 >>>>>>> graemeg/cpstrnew
@@ -259,9 +275,12 @@ unit cpubase;
       tcpumodeflags = set of tcpumodeflag;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       tspecialregflag = (srC, srX, srS, srF);
       tspecialregflags = set of tspecialregflag;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {*****************************************************************************
@@ -645,6 +664,7 @@ unit cpubase;
         msb : byte;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         lsb:=BsfDword(d);
         msb:=BsrDword(d);
         
@@ -652,6 +672,8 @@ unit cpubase;
         
         result:=(lsb<>255) and (msb<>255) and ((((1 shl (msb-lsb+1))-1) shl lsb) = d);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         if current_settings.cputype in cpu_thumb2 then
           begin
             for i:=0 to 24 do
@@ -677,6 +699,9 @@ unit cpubase;
               end;
           end;
         result:=false;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
 

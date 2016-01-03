@@ -22,6 +22,7 @@ Type TGrpArr = Array [0..0] of TGid;            { C style array workarounds}
 
     Function  FpSigProcMask  (how : cInt; nset : pSigSet; oset : pSigSet): cInt; external name 'FPC_SYSC_SIGPROCMASK';
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function  FpSigProcMask  (how : cInt; constref nset : TSigSet; var oset : TSigSet): cInt; external name 'FPC_SYSC_SIGPROCMASK';
     Function  FpSigPending   (var nset : TSigSet): cInt;
     Function  FpSigSuspend   (Const sigmask : TSigSet): cInt;
@@ -29,10 +30,15 @@ Type TGrpArr = Array [0..0] of TGid;            { C style array workarounds}
     Function  FpSigTimedWait (Const sigset : TSigSet; info : Psiginfo; timeout:Ptimespec): cInt;
 {$endif ndef FPC_SYS_SIGTIMEDWAIT_UNAVAILABLE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     Function  FpSigProcMask  (how : cInt; Const nset : TSigSet; var oset : TSigSet): cInt; external name 'FPC_SYSC_SIGPROCMASK';
     Function  FpSigPending   (var nset : TSigSet): cInt;
     Function  FpSigSuspend   (Const sigmask : TSigSet): cInt;
     Function  FpSigTimedWait (Const sigset : TSigSet; info : Psiginfo; timeout:Ptimespec): cInt;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     Function  FpUmask      (cmask : TMode): TMode;

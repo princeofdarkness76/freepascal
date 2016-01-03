@@ -8,7 +8,11 @@ programs=playmp3
 
 [require]
 <<<<<<< HEAD
+<<<<<<< HEAD
 packages=libogcfpc mad
+=======
+packages=libogcfpc
+>>>>>>> graemeg/cpstrnew
 =======
 packages=libogcfpc
 >>>>>>> graemeg/cpstrnew

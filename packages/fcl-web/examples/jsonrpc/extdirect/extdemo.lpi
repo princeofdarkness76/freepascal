@@ -2,6 +2,7 @@
 <CONFIG>
   <ProjectOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
@@ -15,6 +16,8 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     <Version Value="7"/>
     <General>
       <Flags>
@@ -28,17 +31,25 @@
       <UseXPManifest Value="True"/>
       <Icon Value="0"/>
       <ActiveWindowIndexAtStart Value="0"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     </General>
     <VersionInfo>
       <Language Value=""/>
       <CharSet Value=""/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
+=======
+      <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
+    </VersionInfo>
+>>>>>>> graemeg/cpstrnew
 =======
       <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
     </VersionInfo>
@@ -71,7 +82,11 @@
       </Item4>
     </RequiredPackages>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="2">
+=======
+    <Units Count="12">
+>>>>>>> graemeg/cpstrnew
 =======
     <Units Count="12">
 >>>>>>> graemeg/cpstrnew
@@ -80,9 +95,12 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="extdemo"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Unit0>
       <Unit1>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -103,6 +121,9 @@
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         <Filename Value="wmext.pp"/>
         <IsPartOfProject Value="True"/>
@@ -110,12 +131,15 @@
         <ResourceBaseClass Value="DataModule"/>
         <UnitName Value="wmext"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Unit1>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="10"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="3"/>
@@ -269,11 +293,15 @@
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="8"/>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     <Target>
       <Filename Value="extdemo.cgi"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
       <IncludeFiles Value="$(ProjOutDir)"/>
     </SearchPaths>
@@ -282,6 +310,8 @@
         <UseMsgFile Value="True"/>
       </CompilerMessages>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       <IncludeFiles Value="$(ProjOutDir)/"/>
     </SearchPaths>
     <Parsing>
@@ -290,6 +320,9 @@
       </SyntaxOptions>
     </Parsing>
     <Other>
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       <CompilerPath Value="$(CompPath)"/>
     </Other>

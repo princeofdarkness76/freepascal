@@ -56,15 +56,21 @@ type
     _backgroundColor: NSColor;
     _textColor: NSColor;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tfFlags: record
       case byte of
        0: (_anonbitfield_NSTextFieldCell0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __tfFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTextFieldCell0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _drawsBackground: 0..1;
         _bezelStyle: 0..((1 shl 3)-1);
@@ -78,7 +84,10 @@ type
         notificationForMarkedText: 0..1;
         reservedTextFieldCell: 0..((1 shl 16)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );

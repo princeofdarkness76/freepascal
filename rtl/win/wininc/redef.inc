@@ -575,6 +575,9 @@ function GetProcessTimes(hProcess: THandle; var lpCreationTime, lpExitTime, lpKe
 function GetProcessWorkingSetSize(hProcess: THandle; var lpMinimumWorkingSetSize, lpMaximumWorkingSetSize: PTRUINT): BOOL; external 'kernel32' name 'GetProcessWorkingSetSize';
 =======
 function GetProcessWorkingSetSize(hProcess: THandle; var lpMinimumWorkingSetSize, lpMaximumWorkingSetSize: DWORD): BOOL; external 'kernel32' name 'GetProcessWorkingSetSize';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function GetQueuedCompletionStatus(CompletionPort: THandle; var lpNumberOfBytesTransferred: DWORD; var lpCompletionKey: ULONG_PTR; var lpOverlapped: POverlapped; dwMilliseconds: DWORD): BOOL; external 'kernel32' name 'GetQueuedCompletionStatus';
 function PostQueuedCompletionStatus(CompletionPort: THandle; NumberOfBytesTransferred:dword; dwCompletionKey: ULONG_PTR; lpOverlapped: POverlapped): BOOL; external 'kernel32' name 'PostQueuedCompletionStatus';

@@ -15,13 +15,19 @@
  *****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function __errno: plongint;  cdecl; export;
 begin
 
 end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function S_ISBLK(m: longint): boolean; inline;
 begin

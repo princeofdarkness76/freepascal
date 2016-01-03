@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -35,7 +39,11 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TX11Image.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat);
+=======
+constructor TX11Image.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TX11Image.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
@@ -46,7 +54,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TX11NormalImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat);
+=======
+constructor TX11NormalImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TX11NormalImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
@@ -133,7 +145,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TX11ShmImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat);
+=======
+constructor TX11ShmImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TX11ShmImage.Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat);
 >>>>>>> graemeg/cpstrnew

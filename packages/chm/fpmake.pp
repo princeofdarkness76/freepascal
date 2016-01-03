@@ -88,6 +88,11 @@ begin
         begin
           AddUnit('paslzxcomp');
         end;
+    T:=P.Targets.AddUnit('lzxcompressthread.pas');
+      with T.Dependencies do
+        begin
+          AddUnit('paslzxcomp');
+        end;
     T:=P.Targets.AddUnit('fasthtmlparser.pas');
     T:=P.Targets.AddUnit('htmlutil.pas');
     T:=P.Targets.AddUnit('paslznonslide.pas');
@@ -112,7 +117,11 @@ begin
    T:=P.Targets.AddUnit('itolitlsreader.pas');
       with T.Dependencies do
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin  //chmreader, itolitlstypes, Sysutils, chmbase, itsftransform;
+=======
+        begin  //chmreader, itolitlstypes, Sysutils, chmbase, itsftransform; 
+>>>>>>> graemeg/cpstrnew
 =======
         begin  //chmreader, itolitlstypes, Sysutils, chmbase, itsftransform; 
 >>>>>>> graemeg/cpstrnew

@@ -55,6 +55,9 @@ implementation
     {$ifndef NOTARGETSUNOS}
       ,t_sunos
     {$endif}
+    {$ifndef NOTARGETSUNOS}
+      ,t_sunos
+    {$endif}
 
 
 {**************************************

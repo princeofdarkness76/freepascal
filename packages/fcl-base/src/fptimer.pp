@@ -261,8 +261,11 @@ begin
   FThread:=TFPTimerThread.CreateTimerThread(Self);
   FThread.OnTerminate:=@DoNilTimer;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FThread.Start;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   FThread.Resume;
 >>>>>>> graemeg/cpstrnew
 end;

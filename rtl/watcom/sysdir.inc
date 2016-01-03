@@ -3,7 +3,11 @@
 *****************************************************************************}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DosDir(func:byte;const s:rawbytestring);
+=======
+procedure DosDir(func:byte;const s:string);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure DosDir(func:byte;const s:string);
 >>>>>>> graemeg/cpstrnew
@@ -12,11 +16,14 @@ var
   regs   : trealregs;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   if length(s)>255 then
     begin
       inoutres:=3;
       exit;
     end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   move(s[1],buffer,length(s));
@@ -42,18 +49,25 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_mkdir(const s : rawbytestring);
 begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure mkdir(const s : string);[IOCheck];
 begin
   If (s='') or (InOutRes <> 0) then
    exit;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   DosDir($39,s);
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure do_rmdir(const s : rawbytestring);
 begin
@@ -63,29 +77,40 @@ begin
       exit;
     end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure rmdir(const s : string);[IOCheck];
 begin
   if (s = '.' ) then
     InOutRes := 16;
   If (s='') or (InOutRes <> 0) then
    exit;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   DosDir($3a,s);
 end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_chdir(const s : rawbytestring);
 var
   regs : trealregs;
 begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure chdir(const s : string);[IOCheck];
 var
   regs : trealregs;
 begin
   If (s='') or (InOutRes <> 0) then
    exit;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 { First handle Drive changes }
   if (length(s)>=2) and (s[2]=':') then
@@ -111,7 +136,11 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_getdir(drivenr : byte;var dir : RawByteString);
+=======
+procedure getdir(drivenr : byte;var dir : shortstring);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure getdir(drivenr : byte;var dir : shortstring);
 >>>>>>> graemeg/cpstrnew
@@ -133,7 +162,10 @@ begin
      GetInOutRes(lo(regs.realeax));
      Dir := char (DriveNr + 64) + ':\';
 <<<<<<< HEAD
+<<<<<<< HEAD
      SetCodePage(dir,DefaultFileSystemCodePage,false);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
      exit;
@@ -143,7 +175,10 @@ begin
 { conversion to Pascal string including slash conversion }
   i:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   SetLength(Dir,255);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   while (temp[i]<>#0) do
@@ -156,10 +191,16 @@ begin
   dir[2]:=':';
   dir[3]:='\';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SetLength(Dir,i+3);
   SetCodePage(dir,DefaultFileSystemCodePage,false);
 { upcase the string }
   if not FileNameCasePreserving then
+=======
+  dir[0]:=char(i+3);
+{ upcase the string }
+  if not FileNameCaseSensitive then
+>>>>>>> graemeg/cpstrnew
 =======
   dir[0]:=char(i+3);
 { upcase the string }

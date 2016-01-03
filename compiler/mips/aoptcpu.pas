@@ -29,6 +29,7 @@ unit aoptcpu;
 
     uses
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgbase, cpubase, aoptobj, aoptcpub, aopt, aasmtai, aasmcpu;
 
     Type
@@ -44,15 +45,21 @@ unit aoptcpu;
         function PeepHoleOptPass1Cpu(var p: tai): boolean; override;
         procedure PeepHoleOptPass2; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       cpubase, aoptobj, aoptcpub, aopt;
 
     Type
       TCpuAsmOptimizer = class(TAsmOptimizer)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       End;
 
   Implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
      uses
        cutils,globtype,globals,aasmbase,cpuinfo,verbose;
@@ -798,6 +805,8 @@ unit aoptcpu;
         end;
     end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin

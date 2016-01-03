@@ -6,7 +6,11 @@ interface
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, httpdefs, fphttp, db;
+=======
+  Classes, SysUtils, httpdefs, fphttp, db, websession;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, httpdefs, fphttp, db, websession;
 >>>>>>> graemeg/cpstrnew
@@ -22,7 +26,10 @@ type
 
   { TCustomWebdataInputAdaptor }
 <<<<<<< HEAD
+<<<<<<< HEAD
   TTransCodeEvent = Procedure (Sender : TObject; Var S : String);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -30,7 +37,10 @@ type
   private
     FAction: TWebDataAction;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOntransCode: TTransCodeEvent;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FRequest: TRequest;
@@ -52,7 +62,10 @@ type
     Property Request : TRequest Read FRequest Write SetRequest;
     Property Action : TWebDataAction Read GetAction Write FAction;
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property OnTransCode : TTransCodeEvent Read FOntransCode Write FOnTransCode;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -622,8 +635,11 @@ begin
   If Result then
     L.GetNameValue(I,N,AValue);
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (AValue<>'') and Assigned(FOnTranscode) then
     FOnTransCode(Self,Avalue);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;

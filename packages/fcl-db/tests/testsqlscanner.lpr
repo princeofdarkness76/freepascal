@@ -21,8 +21,11 @@ var
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.res}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin

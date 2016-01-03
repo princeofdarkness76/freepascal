@@ -24,6 +24,7 @@ type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   generic TMapIterator<TKey, TValue, TPair, TNode>=class
     public
     type PNode=^TNode;
@@ -44,6 +45,8 @@ type
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   generic TMap<TKey, TValue, TCompare>=class
   public
   type
@@ -54,7 +57,10 @@ type
     TMCompare = specialize TMapCompare<TPair, TCompare>;
     TMSet = specialize TSet<TPair, TMCompare>;
 <<<<<<< HEAD
+<<<<<<< HEAD
     TIterator = specialize TMapIterator<TKey, TValue, TPair, TMSet.Node>;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     PTValue = ^TValue;
@@ -63,6 +69,7 @@ type
   private
     FSet:TMSet;
   public
+<<<<<<< HEAD
 <<<<<<< HEAD
     function Find(key:TKey):TIterator;inline;
     function FindLess(key:TKey):TIterator;inline;
@@ -76,6 +83,8 @@ type
     function Min:TIterator;inline;
     function Max:TIterator;inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     function Find(key:TKey):TMSet.PNode;inline;
     function FindLess(key:TKey):TMSet.PNode;inline;
     function FindLessEqual(key:TKey):TMSet.PNode;inline;
@@ -87,6 +96,9 @@ type
     function Max:TMSet.PNode;inline;
     function Next(x:TMSet.PNode):TMSet.PNode;inline;
     function Prev(x:TMSet.PNode):TMSet.PNode;inline;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure Delete(key:TKey);inline;
     function Size:SizeUInt;inline;
@@ -120,6 +132,7 @@ begin
   FSet.Delete(Pair);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TMap.Find(key:TKey):TIterator;inline;
 var Pair:TPair; ret:TIterator;
@@ -180,6 +193,8 @@ begin
   end;
   FindGreaterEqual := ret;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TMap.Find(key:TKey):TMSet.PNode;inline;
 var Pair:TPair;
 begin
@@ -213,6 +228,9 @@ var Pair:TPair;
 begin
   Pair.Key:=key;
   FindGreaterEqual:=FSet.FindGreaterEqual(Pair);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -220,6 +238,7 @@ function TMap.GetValue(key:TKey):TValue;inline;
 var Pair:TPair;
 begin
   Pair.Key:=key;
+<<<<<<< HEAD
 <<<<<<< HEAD
   GetValue:=FSet.NFind(Pair)^.Data.Value;
 end;
@@ -273,6 +292,8 @@ begin
   end;
   Max := ret;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   GetValue:=FSet.Find(Pair)^.Data.Value;
 end;
 
@@ -301,6 +322,9 @@ end;
 function TMap.Prev(x:TMSet.PNode):TMSet.PNode;inline;
 begin
   Prev:=FSet.Prev(x);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -314,6 +338,7 @@ begin
   IsEmpty:=FSet.IsEmpty;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TMapIterator.GetData:TPair;inline;
 begin
@@ -382,6 +407,8 @@ begin
   Prev:=true;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end.

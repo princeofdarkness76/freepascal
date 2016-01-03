@@ -70,7 +70,11 @@ const
   { Character set to use. Can be changed run-time. }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   colmap: PWord = nil;
+=======
+  colmap: PSmallInt = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   colmap: PSmallInt = nil;
 >>>>>>> graemeg/cpstrnew
@@ -455,6 +459,9 @@ begin
   colmap := GetMem(SizeOf(Word) * COLMAPDIM * COLMAPDIM * COLMAPDIM);
 =======
   colmap := GetMem(SizeOf(SmallInt) * COLMAPDIM * COLMAPDIM * COLMAPDIM);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   for r := 0 to COLMAPDIM - 1 do
   begin

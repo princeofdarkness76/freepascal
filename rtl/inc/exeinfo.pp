@@ -185,7 +185,11 @@ function getByte(var f:file):byte;
     for i := 1 to bytes do getbyte(f);
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -201,7 +205,11 @@ function getByte(var f:file):byte;
     end;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -222,7 +230,11 @@ var valid : boolean;
     dataOffset,
     dataLength : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -252,7 +264,11 @@ var valid : boolean;
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -261,7 +277,11 @@ begin
   e.sechdrofs := 0;
   openNetwareNLM:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew

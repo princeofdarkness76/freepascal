@@ -25,9 +25,13 @@ uses
     ole2, activex, shellapi, shlobj, oleserver,  shfolder, richedit,
     imagehlp, wininet, uxtheme, dwmapi, multimon, htmlhelp, winutils,
 <<<<<<< HEAD
+<<<<<<< HEAD
     comserv, winspool, imm, imm_dyn, nb30, win9xwsmanager, stdole2, 
     eventsink, typelib, libkinect10, urlmon,
     shlwapi;
+=======
+    comserv, winspool, imm, imm_dyn, nb30;
+>>>>>>> graemeg/cpstrnew
 =======
     comserv, winspool, imm, imm_dyn, nb30;
 >>>>>>> graemeg/cpstrnew

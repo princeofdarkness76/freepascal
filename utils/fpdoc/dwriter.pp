@@ -79,7 +79,10 @@ type
     FTopics  : TList;
     FImgExt : String;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FBeforeEmitNote : TWriterNoteEvent;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure ConvertURL(AContext: TPasElement; El: TDOMElement);
@@ -724,6 +727,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TFPDocWriter.DoLog(const Msg: String);
 begin
   If Assigned(FEngine.OnLog) then
@@ -735,6 +739,8 @@ begin
   DoLog(Format(Fmt,Args));
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function TFPDocWriter.ConvertExtShort(AContext: TPasElement;

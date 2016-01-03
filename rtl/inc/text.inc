@@ -1115,8 +1115,8 @@ Begin
   Str_real_iso(Len,fixkomma,r,treal_type(rt),s);
   Write_Str(Len,t,s);
 End;
-{$endif}
 
+<<<<<<< HEAD
 procedure fpc_write_text_enum(typinfo,ord2strindex:pointer;len:sizeint;var t:text;ordinal:longint); iocheck; compilerproc;
 >>>>>>> graemeg/cpstrnew
 
@@ -1137,6 +1137,23 @@ begin
 end;
 
 =======
+=======
+
+Procedure fpc_Write_Text_Float_iso(rt,fixkomma,Len : Longint;var t : Text;r : ValReal); iocheck; compilerproc;
+var
+  s : String;
+Begin
+  If (InOutRes<>0) then
+   exit;
+  Str_real_iso(Len,fixkomma,r,treal_type(rt),s);
+  Write_Str(Len,t,s);
+End;
+{$endif}
+
+procedure fpc_write_text_enum(typinfo,ord2strindex:pointer;len:sizeint;var t:text;ordinal:longint); iocheck; compilerproc;
+
+var
+>>>>>>> graemeg/cpstrnew
     s:string;
 >>>>>>> graemeg/cpstrnew
 
@@ -1258,7 +1275,10 @@ begin
     exit;
   fpc_writeBuffer(t,s[1],length(s));
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif EXCLUDE_COMPLEX_PROCS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -1792,7 +1812,11 @@ End;
 
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_Read_Text_AnsiStr(var f : Text;out s : RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); [public, alias: 'FPC_READ_TEXT_ANSISTR']; iocheck; compilerproc;
+=======
+Procedure fpc_Read_Text_AnsiStr(var f : Text;out s : AnsiString); [public, alias: 'FPC_READ_TEXT_ANSISTR']; iocheck; compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure fpc_Read_Text_AnsiStr(var f : Text;out s : AnsiString); [public, alias: 'FPC_READ_TEXT_ANSISTR']; iocheck; compilerproc;
 >>>>>>> graemeg/cpstrnew
@@ -1816,7 +1840,11 @@ Begin
 End;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_Read_Text_AnsiStr_Intern(var f : Text;out s : RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); [external name 'FPC_READ_TEXT_ANSISTR'];
+=======
+Procedure fpc_Read_Text_AnsiStr_Intern(var f : Text;out s : AnsiString); [external name 'FPC_READ_TEXT_ANSISTR'];
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure fpc_Read_Text_AnsiStr_Intern(var f : Text;out s : AnsiString); [external name 'FPC_READ_TEXT_ANSISTR'];
 >>>>>>> graemeg/cpstrnew
@@ -1826,6 +1854,7 @@ Procedure fpc_Read_Text_AnsiStr_Intern(var f : Text;out s : AnsiString); [extern
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 Procedure fpc_Read_Text_UnicodeStr(var f : Text;out us : UnicodeString); iocheck; compilerproc;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   s: RawByteString;
 Begin
@@ -1838,12 +1867,17 @@ Begin
   us:=s;
   {$endif}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   s: AnsiString;
 Begin
   // all standard input is assumed to be ansi-encoded
   fpc_Read_Text_AnsiStr_Intern(f,s);
   // Convert to unicodestring
   us:=s;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 End;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
@@ -1851,6 +1885,7 @@ End;
 {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
 Procedure fpc_Read_Text_WideStr(var f : Text;out ws : WideString); iocheck; compilerproc;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   s: RawByteString;
 Begin
@@ -1867,6 +1902,8 @@ End;
 
 procedure fpc_Read_Text_Char(var f : Text; out c: char); [public, alias: 'FPC_READ_TEXT_CHAR']; iocheck; compilerproc;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   s: AnsiString;
 Begin
   // all standard input is assumed to be ansi-encoded
@@ -1877,6 +1914,9 @@ End;
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 
 procedure fpc_Read_Text_Char(var f : Text; out c: char); [public, alias: 'FPC_READ_TEXT_CHAR']; iocheck;compilerproc;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 Begin
   c:=#0;
@@ -1895,6 +1935,7 @@ procedure fpc_Read_Text_Char_intern(var f : Text; out c: char); iocheck; [extern
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fpc_GetBuf_Text(var f : Text) : pchar; iocheck; compilerproc;
 Begin
   Result:=@TextRec(f).Bufptr^[TextRec(f).BufEnd];
@@ -1906,6 +1947,8 @@ Begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
@@ -1932,11 +1975,15 @@ Begin
           begin
             { valid code point -> convert to widestring}
 <<<<<<< HEAD
+<<<<<<< HEAD
             {$ifdef FPC_HAS_CPSTRING}
             widestringmanager.Ansi2WideMoveProc(@str[0],TextRec(f).CodePage,ws,i+1);
             {$else}
             widestringmanager.Ansi2WideMoveProc(@str[0],DefaultSystemCodePage,ws,i+1);
             {$endif}
+=======
+            widestringmanager.Ansi2WideMoveProc(@str[0],DefaultSystemCodePage,ws,i+1);
+>>>>>>> graemeg/cpstrnew
 =======
             widestringmanager.Ansi2WideMoveProc(@str[0],DefaultSystemCodePage,ws,i+1);
 >>>>>>> graemeg/cpstrnew
@@ -2387,7 +2434,10 @@ end;
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 function EndOfLastCompleteUTF8CodePoint(var t: textrec): SizeInt;
+=======
+procedure WriteStrUnicode(var t: textrec);
 =======
 procedure WriteStrUnicode(var t: textrec);
 var
@@ -2402,6 +2452,24 @@ begin
   str^:=str^+temp;
   t.bufpos:=0;
 end;
+{$endif FPC_HAS_FEATURE_WIDESTRINGS}
+
+{$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+procedure WriteStrWide(var t: textrec);
+>>>>>>> graemeg/cpstrnew
+var
+  temp: ansistring;
+  str: punicodestring;
+begin
+  if (t.bufpos=0) then
+    exit;
+  str:=punicodestring(ppointer(@t.userdata[StrPtrIndex])^);
+  setlength(temp,t.bufpos);
+  move(t.bufptr^,temp[1],t.bufpos);
+  str^:=str^+temp;
+  t.bufpos:=0;
+end;
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 
 {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
@@ -2498,6 +2566,9 @@ begin
   WriteStrUnicodeIntern(t,false);
 end;
 
+=======
+{$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+>>>>>>> graemeg/cpstrnew
 
 procedure WriteStrWideFlush(var t: textrec);
 begin
@@ -2560,7 +2631,10 @@ end;
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_SetupWriteStr_Unicodestr(var ReadWriteStrText: text; var s: unicodestring); compilerproc;
+=======
+function fpc_SetupWriteStr_Unicodestr(out s: unicodestring): PText; compilerproc;
 =======
 function fpc_SetupWriteStr_Unicodestr(out s: unicodestring): PText; compilerproc;
 begin
@@ -2573,6 +2647,21 @@ begin
   result:=@ReadWriteStrText;
 end;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
+
+
+{$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+function fpc_SetupWriteStr_Widestr(out s: widestring): PText; compilerproc;
+>>>>>>> graemeg/cpstrnew
+begin
+  setupwritestrcommon(ReadWriteStrText);
+  PPointer(@ReadWriteStrText.userdata[StrPtrIndex])^:=@s;
+// automatically done by out-semantics
+//  setlength(s,0);
+  ReadWriteStrText.InOutFunc:=@WriteStrUnicode;
+  ReadWriteStrText.FlushFunc:=@WriteStrUnicode;
+  result:=@ReadWriteStrText;
+end;
+{$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 
 
 {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
@@ -2706,6 +2795,7 @@ end;
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_SetupReadStr_Unicodestr(var ReadWriteStrText: text; const s: unicodestring); compilerproc;
 =======
 function fpc_SetupReadStr_Unicodestr(const s: unicodestring): PText; compilerproc;
@@ -2725,11 +2815,24 @@ begin
   fpc_SetupReadStr_Ansistr_Intern(ReadWriteStrText,utf8string(s));
 =======
 function fpc_SetupReadStr_Widestr(const s: widestring): PText; compilerproc;
+=======
+function fpc_SetupReadStr_Unicodestr(const s: unicodestring): PText; compilerproc;
+>>>>>>> graemeg/cpstrnew
 begin
   { we use an ansistring to avoid code duplication, and let the    }
   { assignment convert the widestring to an equivalent ansistring  }
   result:=fpc_SetupReadStr_Ansistr_Intern(s);
 >>>>>>> graemeg/cpstrnew
+end;
+{$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+
+
+{$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+function fpc_SetupReadStr_Widestr(const s: widestring): PText; compilerproc;
+begin
+  { we use an ansistring to avoid code duplication, and let the    }
+  { assignment convert the widestring to an equivalent ansistring  }
+  result:=fpc_SetupReadStr_Ansistr_Intern(s);
 end;
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 

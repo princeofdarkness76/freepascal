@@ -1,5 +1,6 @@
 { CoreGraphics - CGRemoteOperation.h
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2000-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -7,10 +8,15 @@
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
    Copyright (c) 2000-2008 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -67,11 +73,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -90,6 +99,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -110,6 +120,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -125,6 +137,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -133,13 +148,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -211,6 +230,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -278,11 +330,18 @@ type
 
 { A type representing the virtual key codes used in keyboard events. }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
 	CGKeyCode = UInt16;
 
+<<<<<<< HEAD
 { A client-supplied callback function that’s invoked when an area of the
+=======
+{ A client-supplied callback function thatÕs invoked when an area of the
+>>>>>>> graemeg/cpstrnew
    display is modified or refreshed.
 
    When an area of the display is modified or refreshed, your callback
@@ -303,6 +362,7 @@ type
    determine the displays a rectangle occupies. }
 
 type
+<<<<<<< HEAD
 =======
 
 type
@@ -330,6 +390,8 @@ type
 
 type
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	CGScreenRefreshCallback = procedure( count: UInt32; {const} rectArray: {variable-size-array} CGRectPtr; userParameter: UnivPtr);
 
 {$ifc TARGET_OS_MAC}
@@ -343,8 +405,12 @@ type
 
 function CGRegisterScreenRefreshCallback( callback: CGScreenRefreshCallback; userInfo: UnivPtr ): CGError; external name '_CGRegisterScreenRefreshCallback';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_8,
     __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -357,8 +423,12 @@ function CGRegisterScreenRefreshCallback( callback: CGScreenRefreshCallback; use
 
 procedure CGUnregisterScreenRefreshCallback( callback: CGScreenRefreshCallback; userInfo: UnivPtr ); external name '_CGUnregisterScreenRefreshCallback';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_8,
     __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -378,7 +448,11 @@ procedure CGUnregisterScreenRefreshCallback( callback: CGScreenRefreshCallback; 
 
 function CGWaitForScreenRefreshRects( var pRectArray: {variable-size-array} CGRectPtr; var count: UInt32 ): CGError; external name '_CGWaitForScreenRefreshRects';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -389,6 +463,11 @@ function CGWaitForScreenRefreshRects( var pRectArray: {variable-size-array} CGRe
    screen update operations. }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+type
+	CGScreenUpdateOperation = UInt32;
+>>>>>>> graemeg/cpstrnew
 =======
 type
 	CGScreenUpdateOperation = UInt32;
@@ -409,6 +488,7 @@ type
    negative values indicate movement upward. }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 { A type representing the distance a region on the screen moves in pixel
    units.
@@ -419,13 +499,19 @@ type
    negative values indicate movement upward. }
 
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 type
 	CGScreenUpdateMoveDelta = record
 		dX, dY: SInt32;
 	end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { A type specifying a client-supplied callback function that’s invoked when
+=======
+{ A type specifying a client-supplied callback function thatÕs invoked when
+>>>>>>> graemeg/cpstrnew
 =======
 { A type specifying a client-supplied callback function thatÕs invoked when
 >>>>>>> graemeg/cpstrnew
@@ -455,8 +541,12 @@ type
 
 function CGScreenRegisterMoveCallback( callback: CGScreenUpdateMoveCallback; userInfo: UnivPtr ): CGError; external name '_CGScreenRegisterMoveCallback';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,
     __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -465,8 +555,12 @@ function CGScreenRegisterMoveCallback( callback: CGScreenUpdateMoveCallback; use
 
 procedure CGScreenUnregisterMoveCallback( callback: CGScreenUpdateMoveCallback; userInfo: UnivPtr ); external name '_CGScreenUnregisterMoveCallback';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8,
     __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -500,7 +594,11 @@ procedure CGScreenUnregisterMoveCallback( callback: CGScreenUpdateMoveCallback; 
 
 function CGWaitForScreenUpdateRects( requestedOperations: CGScreenUpdateOperation; var currentOperation: CGScreenUpdateOperation; var pRectArray: {variable-size-array} CGRectPtr; var pCount: size_t; var pDelta: CGScreenUpdateMoveDelta ): CGError; external name '_CGWaitForScreenUpdateRects';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_3,__MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
@@ -509,6 +607,7 @@ function CGWaitForScreenUpdateRects( requestedOperations: CGScreenUpdateOperatio
    `CGWaitForScreenRefreshRects' or `CGWaitForScreenUpdateRects'. }
 
 procedure CGReleaseScreenRefreshRects( pRectArray: {variable-size-array} CGRectPtr); external name '_CGReleaseScreenRefreshRects';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0,__MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
@@ -548,6 +647,35 @@ function CGCursorIsDrawnInFramebuffer: boolean_t; external name '_CGCursorIsDraw
 function CGWarpMouseCursorPosition( newCursorPosition: CGPoint ): CGError; external name '_CGWarpMouseCursorPosition';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+
+
+{ Return true if the mouse cursor is visible, false otherwise. }
+
+function CGCursorIsVisible: boolean_t; external name '_CGCursorIsVisible';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+
+{ Return true if the mouse cursor is drawn in frame buffer memory, false
+   otherwise. (The cursor could exist in an overlay plane or a similar
+   mechanism that puts pixels on-screen without altering frame buffer
+   content.) If the cursor is drawn in the frame buffer, it is read back
+   along with window data.
+
+   The return value is based on the union of the state of the cursor on all
+   displays. If the cursor is drawn in the frame buffer on any display, this
+   function returns true. }
+
+function CGCursorIsDrawnInFramebuffer: boolean_t; external name '_CGCursorIsDrawnInFramebuffer';
+(* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
+
+{ Move the mouse cursor to the desired position in global display
+   coordinates without generating events. }
+
+function CGWarpMouseCursorPosition( newCursorPosition: CGPoint ): CGError; external name '_CGWarpMouseCursorPosition';
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+
+>>>>>>> graemeg/cpstrnew
 { After posting a left mouse down with remote mouse drag suppressing
    hardware mouse move events, after some time with no remote mouse drag
    events a warning is logged to aid in diagnosing "my hardware mouse is
@@ -577,8 +705,13 @@ function CGAssociateMouseAndMouseCursorPosition( connected: boolean_t ): CGError
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Return a CFMachPort that corresponds to the Mac OS X Window Server's
    server port.
+=======
+{ Return a Core Foundation mach port (CFMachPort) that corresponds to the
+   Mac OS X window server.
+>>>>>>> graemeg/cpstrnew
 =======
 { Return a Core Foundation mach port (CFMachPort) that corresponds to the
    Mac OS X window server.
@@ -595,13 +728,19 @@ function CGAssociateMouseAndMouseCursorPosition( connected: boolean_t ): CGError
        exit(1);
      )
 <<<<<<< HEAD
+<<<<<<< HEAD
      static void watchForServerDeath() (
        CFMachPortRef port = CGWindowServerCreateServerPort();
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
      static void watchForServerDeath() (
        CFMachPortRef port;
        port = CGWindowServerCFMachPort();
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        CFMachPortSetInvalidationCallBack(port, handleWindowServerDeath);
      )
@@ -611,6 +750,7 @@ function CGAssociateMouseAndMouseCursorPosition( connected: boolean_t ): CGError
    new window server is running.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
    Your program must run a CFRunLoop for the port death callback to occur. A
    program which does not use a CFRunLoop may periodically call
    `CFMachPortIsValid' to check whether the port is valid. }
@@ -618,12 +758,17 @@ function CGAssociateMouseAndMouseCursorPosition( connected: boolean_t ): CGError
 function CGWindowServerCreateServerPort: CFMachPortRef; external name '_CGWindowServerCreateServerPort';
 (* CG_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
    Your program will need to run a CFRunLoop for the port death callback to
    function. A program which does not use a CFRunLoop may periodically call
    `CFMachPortIsValid' to check whether the port is valid. }
 
 function CGWindowServerCFMachPort: CFMachPortRef; external name '_CGWindowServerCFMachPort';
 (* CG_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {
@@ -718,7 +863,12 @@ function CGPostMouseEvent( mouseCursorPosition: CGPoint; updateMouseCursorPositi
 
 function CGPostScrollWheelEvent( wheelCount: CGWheelCount; wheel1: SInt32; ... ): CGError; external name '_CGPostScrollWheelEvent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6,
+    __IPHONE_NA, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6,
     __IPHONE_NA, __IPHONE_NA) *)
@@ -744,7 +894,12 @@ function CGPostScrollWheelEvent( wheelCount: CGWheelCount; wheel1: SInt32; ... )
 
 function CGPostKeyboardEvent( keyChar: CGCharCode; virtualKey: CGKeyCode; keyDown: boolean_t ): CGError; external name '_CGPostKeyboardEvent';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6,
+    __IPHONE_NA, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6,
     __IPHONE_NA, __IPHONE_NA) *)
@@ -797,7 +952,12 @@ type
 
 function CGSetLocalEventsFilterDuringSuppressionState( filter: CGEventFilterMask; state: CGEventSuppressionState ): CGError; external name '_CGSetLocalEventsFilterDuringSuppressionState';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6,
+    __IPHONE_NA, __IPHONE_NA) *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6,
     __IPHONE_NA, __IPHONE_NA) *)
@@ -816,6 +976,7 @@ function CGSetLocalEventsSuppressionInterval( seconds: CFTimeInterval ): CGError
     __IPHONE_NA, __IPHONE_NA) *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { This function is obsolete. Use `CGWindowServerCreateServerPort'
    instead. }
 function CGWindowServerCFMachPort: CFMachPortRef; external name '_CGWindowServerCFMachPort';
@@ -824,6 +985,10 @@ function CGWindowServerCFMachPort: CFMachPortRef; external name '_CGWindowServer
 {$endc}
 
 
+=======
+{$endc}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$endc}
 

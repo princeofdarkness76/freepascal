@@ -7,7 +7,11 @@ main=rtl
 
 [target]
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar fpintres ctypes objpas macpas iso7185 extpas strings \
+=======
+units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
+>>>>>>> graemeg/cpstrnew
 =======
 units=$(SYSTEMUNIT) fpintres ctypes objpas macpas iso7185 strings \
 >>>>>>> graemeg/cpstrnew
@@ -148,8 +152,12 @@ messages$(PPUEXT): messages.pp $(WININC)/messages.inc windows$(PPUEXT) $(SYSTEMU
 #winmouse$(PPUEXT) : winmouse.pp $(SYSTEMUNIT)$(PPUEXT) windows$(PPUEXT) graph$(PPUEXT)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 	$(COMPILER) $(INC)/dynlibs.pas
+=======
+dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT)
+>>>>>>> graemeg/cpstrnew
 =======
 dynlibs$(PPUEXT) : $(INC)/dynlibs.pas windows$(PPUEXT) rtlconsts$(PPUEXT) sysconst$(PPUEXT) sysutils$(PPUEXT)
 >>>>>>> graemeg/cpstrnew

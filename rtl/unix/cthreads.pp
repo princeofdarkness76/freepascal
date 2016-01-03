@@ -177,6 +177,7 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
         fpwrite(0,s[1],length(s));
 {$endif DEBUG_MT}
 <<<<<<< HEAD
+<<<<<<< HEAD
         { Restore tlskey value as it may already have been set to null,
           in which case
             a) DoneThread can't release the memory
@@ -186,11 +187,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
         pthread_setspecific(tlskey,p);
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { clean up }
         DoneThread;
         { the pthread routine that calls us is supposed to do this, but doesn't
           at least on Mac OS X 10.6 }
         pthread_setspecific(CleanupKey,nil);
+<<<<<<< HEAD
 <<<<<<< HEAD
         pthread_setspecific(tlskey,nil);
       end;
@@ -212,6 +216,23 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
         pthread_setspecific(CleanupKey,pthread_getspecific(tlskey));
       end;
 
+=======
+      end;
+
+
+    procedure HookThread;
+      begin
+        { Allocate local thread vars, this must be the first thing,
+          because the exception management and io depends on threadvars }
+        CAllocateThreadVars;
+        { we cannot know the stack size of the current thread, so pretend it
+          is really large to prevent spurious stack overflow errors }
+        InitThread(1000000000);
+        { instruct the pthreads system to clean up this thread when it exits }
+        pthread_setspecific(CleanupKey,pointer(1));
+      end;
+
+>>>>>>> graemeg/cpstrnew
 =======
       end;
 
@@ -399,14 +420,20 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 =======
       {$ifndef HAIKU}
       {$ifdef solaris}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       pthread_attr_setinheritsched(@thread_attr, PTHREAD_INHERIT_SCHED);
       {$else not solaris}
       pthread_attr_setinheritsched(@thread_attr, PTHREAD_EXPLICIT_SCHED);
       {$endif not solaris}
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$ifend}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       {$endif}
 >>>>>>> graemeg/cpstrnew
 
@@ -463,6 +490,9 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 <<<<<<< HEAD
 =======
 //      result := pthread_kill(threadHandle,SIGCONT);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       result:=dword(-1);
     end;

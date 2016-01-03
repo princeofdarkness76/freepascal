@@ -13,10 +13,13 @@
  **********************************************************************}
 {$asmmode att}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure PASCALMAIN; external name 'PASCALMAIN';
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$goto on}
 {
  Linux ELF startup code for Free Pascal
@@ -46,6 +49,9 @@ asm
   movl (%esp),%ebx  
   ret  
 end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {******************************************************************************
@@ -74,6 +80,21 @@ begin
     {$endif FPC_PIC}
   end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+  asm
+    { Save initial stackpointer }
+    {$ifdef FPC_PIC}
+        call  get1eipasebx
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+        movl  initialstkptr@GOT(%ebx),%ecx
+	movl  %esp,(%ecx)
+    {$else FPC_PIC}
+	movl    %esp,initialstkptr
+    {$endif FPC_PIC}
+  end;
+
 >>>>>>> graemeg/cpstrnew
   PASCALMAIN;
 end;
@@ -81,11 +102,14 @@ end;
 { this routine is only called when the halt() routine of the RTL embedded in
   the shared library is called }
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure _FPC_shared_lib_haltproc(e:longint); cdecl; assembler; nostackframe; public name '_haltproc';
 asm
 .Lhaltproc:
   movl    e,%ebx
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name 'FPC_SHARED_LIB_EXIT'; public name '_haltproc';
 asm
 .Lhaltproc:
@@ -105,6 +129,9 @@ asm
   mov     ExitCode,%ebx
  {$endif}
 {$endif FPC_PIC}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   xorl    %eax,%eax
   incl    %eax                    { eax=1, exit call }

@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2012  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -34,6 +38,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 type
   TPTCFormat = class(TInterfacedObject, IPTCFormat)
@@ -92,6 +97,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TPTCFormat.Create;
 begin
   { defaults }
@@ -148,7 +155,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TPTCFormat.Create(AFormat: IPTCFormat);
+=======
+constructor TPTCFormat.Create(const format: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TPTCFormat.Create(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
@@ -158,7 +169,11 @@ begin
     raise TPTCError.Create('could not initialize hermes');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   Hermes_FormatCopy(AFormat.GetHermesFormat, @FFormat)
+=======
+  Hermes_FormatCopy(@format.FFormat, @FFormat)
+>>>>>>> graemeg/cpstrnew
 =======
   Hermes_FormatCopy(@format.FFormat, @FFormat)
 >>>>>>> graemeg/cpstrnew
@@ -173,6 +188,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TPTCFormat.GetHermesFormat: PHermesFormat;
 begin
   Result := @Fformat;
@@ -182,10 +198,14 @@ end;
 =======
 procedure TPTCFormat.Assign(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCFormat.Assign(const format: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 begin
   if Self = format then
     exit;
   Hermes_FormatCopy(@format.Fformat, @Fformat);
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;}
 
@@ -223,11 +243,16 @@ function TPTCFormat.GetIndexed: Boolean;
 begin
   Result := FFormat.indexed;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 function TPTCFormat.Equals(const format: TPTCFormat): Boolean;
 begin
   Result := Hermes_FormatEquals(@format.FFormat, @FFormat);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 

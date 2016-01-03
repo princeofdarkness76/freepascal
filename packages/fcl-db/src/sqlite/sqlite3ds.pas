@@ -52,7 +52,11 @@ type
     function InternalGetHandle: Pointer; override;
     procedure RetrieveFieldDefs; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SqliteExec(ASQL: PAnsiChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+=======
+    function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
 >>>>>>> graemeg/cpstrnew
@@ -168,7 +172,11 @@ begin
   FAutoIncFieldNo := -1;
   FieldDefs.Clear;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
 >>>>>>> graemeg/cpstrnew
@@ -236,22 +244,32 @@ begin
           AType := ftFloat;
       else
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
           AType := ftString;
           DataSize := DefaultStringSize;
         end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	    begin
           AType := ftString;
 		  DataSize := DefaultStringSize;
 		end;  		
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
     end else
     begin
       AType := ftString;
 <<<<<<< HEAD
+<<<<<<< HEAD
       DataSize := DefaultStringSize;
+=======
+	  DataSize := DefaultStringSize;
+>>>>>>> graemeg/cpstrnew
 =======
 	  DataSize := DefaultStringSize;
 >>>>>>> graemeg/cpstrnew
@@ -305,7 +323,11 @@ begin
       ') from ' + FTableName), @GetAutoIncValue, @FNextAutoInc, nil);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
 >>>>>>> graemeg/cpstrnew

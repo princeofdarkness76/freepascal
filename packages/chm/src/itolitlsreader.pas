@@ -13,7 +13,11 @@
   You should have received a copy of the GNU Library General Public License
   along with this library; if not, write to the Free Software Foundation,
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> graemeg/cpstrnew
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/cpstrnew
@@ -377,7 +381,10 @@ begin
   fStream.Read(IFCM, SizeOf(IFCM));
   StartOfChunks := fstream.Position;
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   {$R-}
@@ -432,7 +439,11 @@ begin
 
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$pop}
+=======
+  {$R+}
+>>>>>>> graemeg/cpstrnew
 =======
   {$R+}
 >>>>>>> graemeg/cpstrnew

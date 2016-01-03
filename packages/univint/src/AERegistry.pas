@@ -4,7 +4,11 @@
      Contains:   AppleEvents Registry Interface.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+     Version:    AppleEvents-496~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    AppleEvents-496~1
 >>>>>>> graemeg/cpstrnew
@@ -18,6 +22,10 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -76,11 +84,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -99,6 +110,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -119,12 +131,24 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -135,6 +159,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -142,7 +168,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -155,7 +184,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -165,6 +197,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -176,6 +209,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -187,6 +225,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
@@ -203,14 +242,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -259,7 +305,12 @@ interface
 uses MacTypes,ATSTypes,MacErrors,AppleEvents,AEDataModel;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -520,6 +571,7 @@ const
 	kAEWakeUpEvent = FourCharCode('wake');
 	kAEScrapEvent = FourCharCode('scrp');
 	kAEHighLevel = FourCharCode('high');
+<<<<<<< HEAD
 
 const
 	keyAEAngle = FourCharCode('kang'); {  0x6b616e67  }
@@ -823,14 +875,310 @@ const
 
 const
 >>>>>>> graemeg/cpstrnew
+=======
+
+const
+	keyAEAngle = FourCharCode('kang'); {  0x6b616e67  }
+	keyAEArcAngle = FourCharCode('parc'); {  0x70617263  }
+
+const
+	keyAEBaseAddr = FourCharCode('badd'); {  0x62616464  }
+	keyAEBestType = FourCharCode('pbst'); {  0x70627374  }
+	keyAEBgndColor = FourCharCode('kbcl'); {  0x6b62636c  }
+	keyAEBgndPattern = FourCharCode('kbpt'); {  0x6b627074  }
+	keyAEBounds = FourCharCode('pbnd'); {  0x70626e64  }
+	keyAECellList = FourCharCode('kclt'); {  0x6b636c74  }
+	keyAEClassID = FourCharCode('clID'); {  0x636c4944  }
+	keyAEColor = FourCharCode('colr'); {  0x636f6c72  }
+	keyAEColorTable = FourCharCode('cltb'); {  0x636c7462  }
+	keyAECurveHeight = FourCharCode('kchd'); {  0x6b636864  }
+	keyAECurveWidth = FourCharCode('kcwd'); {  0x6b637764  }
+	keyAEDashStyle = FourCharCode('pdst'); {  0x70647374  }
+	keyAEData = FourCharCode('data'); {  0x64617461  }
+	keyAEDefaultType = FourCharCode('deft'); {  0x64656674  }
+	keyAEDefinitionRect = FourCharCode('pdrt'); {  0x70647274  }
+	keyAEDescType = FourCharCode('dstp'); {  0x64737470  }
+	keyAEDestination = FourCharCode('dest'); {  0x64657374  }
+	keyAEDoAntiAlias = FourCharCode('anta'); {  0x616e7461  }
+	keyAEDoDithered = FourCharCode('gdit'); {  0x67646974  }
+	keyAEDoRotate = FourCharCode('kdrt'); {  0x6b647274  }
+
+const
+	keyAEDoScale = FourCharCode('ksca'); {  0x6b736361  }
+	keyAEDoTranslate = FourCharCode('ktra'); {  0x6b747261  }
+	keyAEEditionFileLoc = FourCharCode('eloc'); {  0x656c6f63  }
+	keyAEElements = FourCharCode('elms'); {  0x656c6d73  }
+	keyAEEndPoint = FourCharCode('pend'); {  0x70656e64  }
+	keyAEEventClass = FourCharCode('evcl'); {  0x6576636c  }
+	keyAEEventID = FourCharCode('evti'); {  0x65767469  }
+	keyAEFile = FourCharCode('kfil'); {  0x6b66696c  }
+	keyAEFileType = FourCharCode('fltp'); {  0x666c7470  }
+	keyAEFillColor = FourCharCode('flcl'); {  0x666c636c  }
+	keyAEFillPattern = FourCharCode('flpt'); {  0x666c7074  }
+	keyAEFlipHorizontal = FourCharCode('kfho'); {  0x6b66686f  }
+	keyAEFlipVertical = FourCharCode('kfvt'); {  0x6b667674  }
+	keyAEFont = FourCharCode('font'); {  0x666f6e74  }
+	keyAEFormula = FourCharCode('pfor'); {  0x70666f72  }
+	keyAEGraphicObjects = FourCharCode('gobs'); {  0x676f6273  }
+	keyAEID = FourCharCode('ID  '); {  0x49442020  }
+	keyAEImageQuality = FourCharCode('gqua'); {  0x67717561  }
+	keyAEInsertHere = FourCharCode('insh'); {  0x696e7368  }
+	keyAEKeyForms = FourCharCode('keyf'); {  0x6b657966  }
+
+const
+	keyAEKeyword = FourCharCode('kywd'); {  0x6b797764  }
+	keyAELevel = FourCharCode('levl'); {  0x6c65766c  }
+	keyAELineArrow = FourCharCode('arro'); {  0x6172726f  }
+	keyAEName = FourCharCode('pnam'); {  0x706e616d  }
+	keyAENewElementLoc = FourCharCode('pnel'); {  0x706e656c  }
+	keyAEObject = FourCharCode('kobj'); {  0x6b6f626a  }
+	keyAEObjectClass = FourCharCode('kocl'); {  0x6b6f636c  }
+	keyAEOffStyles = FourCharCode('ofst'); {  0x6f667374  }
+	keyAEOnStyles = FourCharCode('onst'); {  0x6f6e7374  }
+	keyAEParameters = FourCharCode('prms'); {  0x70726d73  }
+	keyAEParamFlags = FourCharCode('pmfg'); {  0x706d6667  }
+	keyAEPenColor = FourCharCode('ppcl'); {  0x7070636c  }
+	keyAEPenPattern = FourCharCode('pppa'); {  0x70707061  }
+	keyAEPenWidth = FourCharCode('ppwd'); {  0x70707764  }
+	keyAEPixelDepth = FourCharCode('pdpt'); {  0x70647074  }
+	keyAEPixMapMinus = FourCharCode('kpmm'); {  0x6b706d6d  }
+	keyAEPMTable = FourCharCode('kpmt'); {  0x6b706d74  }
+	keyAEPointList = FourCharCode('ptlt'); {  0x70746c74  }
+	keyAEPointSize = FourCharCode('ptsz'); {  0x7074737a  }
+	keyAEPosition = FourCharCode('kpos'); {  0x6b706f73  }
+
+const
+	keyAEPropData = FourCharCode('prdt'); {  0x70726474  }
+	keyAEProperties = FourCharCode('qpro'); {  0x7170726f  }
+	keyAEProperty = FourCharCode('kprp'); {  0x6b707270  }
+	keyAEPropFlags = FourCharCode('prfg'); {  0x70726667  }
+	keyAEPropID = FourCharCode('prop'); {  0x70726f70  }
+	keyAEProtection = FourCharCode('ppro'); {  0x7070726f  }
+	keyAERenderAs = FourCharCode('kren'); {  0x6b72656e  }
+	keyAERequestedType = FourCharCode('rtyp'); {  0x72747970  }
+	keyAEResult = FourCharCode('----'); {  0x2d2d2d2d  }
+	keyAEResultInfo = FourCharCode('rsin'); {  0x7273696e  }
+	keyAERotation = FourCharCode('prot'); {  0x70726f74  }
+	keyAERotPoint = FourCharCode('krtp'); {  0x6b727470  }
+	keyAERowList = FourCharCode('krls'); {  0x6b726c73  }
+	keyAESaveOptions = FourCharCode('savo'); {  0x7361766f  }
+	keyAEScale = FourCharCode('pscl'); {  0x7073636c  }
+	keyAEScriptTag = FourCharCode('psct'); {  0x70736374  }
+	keyAESearchText = FourCharCode('stxt'); {  0x73747874  }
+	keyAEShowWhere = FourCharCode('show'); {  0x73686f77  }
+	keyAEStartAngle = FourCharCode('pang'); {  0x70616e67  }
+	keyAEStartPoint = FourCharCode('pstp'); {  0x70737470  }
+	keyAEStyles = FourCharCode('ksty'); {  0x6b737479  }
+
+const
+	keyAESuiteID = FourCharCode('suit'); {  0x73756974  }
+	keyAEText = FourCharCode('ktxt'); {  0x6b747874  }
+	keyAETextColor = FourCharCode('ptxc'); {  0x70747863  }
+	keyAETextFont = FourCharCode('ptxf'); {  0x70747866  }
+	keyAETextPointSize = FourCharCode('ptps'); {  0x70747073  }
+	keyAETextStyles = FourCharCode('txst'); {  0x74787374  }
+	keyAETextLineHeight = FourCharCode('ktlh'); { type ShortInteger }
+	keyAETextLineAscent = FourCharCode('ktas'); { type ShortInteger }
+	keyAETheText = FourCharCode('thtx'); {  0x74687478  }
+	keyAETransferMode = FourCharCode('pptm'); {  0x7070746d  }
+	keyAETranslation = FourCharCode('ptrs'); {  0x70747273  }
+	keyAETryAsStructGraf = FourCharCode('toog'); {  0x746f6f67  }
+	keyAEUniformStyles = FourCharCode('ustl'); {  0x7573746c  }
+	keyAEUpdateOn = FourCharCode('pupd'); {  0x70757064  }
+	keyAEUserTerm = FourCharCode('utrm'); {  0x7574726d  }
+	keyAEWindow = FourCharCode('wndw'); {  0x776e6477  }
+	keyAEWritingCode = FourCharCode('wrcd'); {  0x77726364  }
+
+const
+	keyMiscellaneous = FourCharCode('fmsc'); {  0x666d7363  }
+	keySelection = FourCharCode('fsel'); {  0x6673656c  }
+	keyWindow = FourCharCode('kwnd'); {  0x6b776e64  }
+                                        { EventRecord keys }
+	keyWhen = FourCharCode('when');
+	keyWhere = FourCharCode('wher');
+	keyModifiers = FourCharCode('mods');
+	keyKey = FourCharCode('key ');
+	keyKeyCode = FourCharCode('code');
+	keyKeyboard = FourCharCode('keyb');
+	keyDriveNumber = FourCharCode('drv#');
+	keyErrorCode = FourCharCode('err#');
+	keyHighLevelClass = FourCharCode('hcls');
+	keyHighLevelID = FourCharCode('hid ');
+
+const
+	pArcAngle = FourCharCode('parc'); {  0x70617263  }
+	pBackgroundColor = FourCharCode('pbcl'); {  0x7062636c  }
+	pBackgroundPattern = FourCharCode('pbpt'); {  0x70627074  }
+	pBestType = FourCharCode('pbst'); {  0x70627374  }
+	pBounds = FourCharCode('pbnd'); {  0x70626e64  }
+	pClass = FourCharCode('pcls'); {  0x70636c73  }
+	pClipboard = FourCharCode('pcli'); {  0x70636c69  }
+	pColor = FourCharCode('colr'); {  0x636f6c72  }
+	pColorTable = FourCharCode('cltb'); {  0x636c7462  }
+	pContents = FourCharCode('pcnt'); {  0x70636e74  }
+	pCornerCurveHeight = FourCharCode('pchd'); {  0x70636864  }
+	pCornerCurveWidth = FourCharCode('pcwd'); {  0x70637764  }
+	pDashStyle = FourCharCode('pdst'); {  0x70647374  }
+	pDefaultType = FourCharCode('deft'); {  0x64656674  }
+	pDefinitionRect = FourCharCode('pdrt'); {  0x70647274  }
+	pEnabled = FourCharCode('enbl'); {  0x656e626c  }
+	pEndPoint = FourCharCode('pend'); {  0x70656e64  }
+	pFillColor = FourCharCode('flcl'); {  0x666c636c  }
+	pFillPattern = FourCharCode('flpt'); {  0x666c7074  }
+	pFont = FourCharCode('font'); {  0x666f6e74  }
+
+const
+	pFormula = FourCharCode('pfor'); {  0x70666f72  }
+	pGraphicObjects = FourCharCode('gobs'); {  0x676f6273  }
+	pHasCloseBox = FourCharCode('hclb'); {  0x68636c62  }
+	pHasTitleBar = FourCharCode('ptit'); {  0x70746974  }
+	pID = FourCharCode('ID  '); {  0x49442020  }
+	pIndex = FourCharCode('pidx'); {  0x70696478  }
+	pInsertionLoc = FourCharCode('pins'); {  0x70696e73  }
+	pIsFloating = FourCharCode('isfl'); {  0x6973666c  }
+	pIsFrontProcess = FourCharCode('pisf'); {  0x70697366  }
+	pIsModal = FourCharCode('pmod'); {  0x706d6f64  }
+	pIsModified = FourCharCode('imod'); {  0x696d6f64  }
+	pIsResizable = FourCharCode('prsz'); {  0x7072737a  }
+	pIsStationeryPad = FourCharCode('pspd'); {  0x70737064  }
+	pIsZoomable = FourCharCode('iszm'); {  0x69737a6d  }
+	pIsZoomed = FourCharCode('pzum'); {  0x707a756d  }
+	pItemNumber = FourCharCode('itmn'); {  0x69746d6e  }
+	pJustification = FourCharCode('pjst'); {  0x706a7374  }
+	pLineArrow = FourCharCode('arro'); {  0x6172726f  }
+	pMenuID = FourCharCode('mnid'); {  0x6d6e6964  }
+	pName = FourCharCode('pnam'); {  0x706e616d  }
+
+const
+	pNewElementLoc = FourCharCode('pnel'); {  0x706e656c  }
+	pPenColor = FourCharCode('ppcl'); {  0x7070636c  }
+	pPenPattern = FourCharCode('pppa'); {  0x70707061  }
+	pPenWidth = FourCharCode('ppwd'); {  0x70707764  }
+	pPixelDepth = FourCharCode('pdpt'); {  0x70647074  }
+	pPointList = FourCharCode('ptlt'); {  0x70746c74  }
+	pPointSize = FourCharCode('ptsz'); {  0x7074737a  }
+	pProtection = FourCharCode('ppro'); {  0x7070726f  }
+	pRotation = FourCharCode('prot'); {  0x70726f74  }
+	pScale = FourCharCode('pscl'); {  0x7073636c  }
+	pScript = FourCharCode('scpt'); {  0x73637074  }
+	pScriptTag = FourCharCode('psct'); {  0x70736374  }
+	pSelected = FourCharCode('selc'); {  0x73656c63  }
+	pSelection = FourCharCode('sele'); {  0x73656c65  }
+	pStartAngle = FourCharCode('pang'); {  0x70616e67  }
+	pStartPoint = FourCharCode('pstp'); {  0x70737470  }
+	pTextColor = FourCharCode('ptxc'); {  0x70747863  }
+	pTextFont = FourCharCode('ptxf'); {  0x70747866  }
+	pTextItemDelimiters = FourCharCode('txdl'); {  0x7478646c  }
+	pTextPointSize = FourCharCode('ptps'); {  0x70747073  }
+
+const
+	pTextStyles = FourCharCode('txst'); {  0x74787374  }
+	pTransferMode = FourCharCode('pptm'); {  0x7070746d  }
+	pTranslation = FourCharCode('ptrs'); {  0x70747273  }
+	pUniformStyles = FourCharCode('ustl'); {  0x7573746c  }
+	pUpdateOn = FourCharCode('pupd'); {  0x70757064  }
+	pUserSelection = FourCharCode('pusl'); {  0x7075736c  }
+	pVersion = FourCharCode('vers'); {  0x76657273  }
+	pVisible = FourCharCode('pvis'); {  0x70766973  }
+
+const
+	typeAEText = FourCharCode('tTXT'); {  0x74545854  }
+	typeArc = FourCharCode('carc'); {  0x63617263  }
+	typeBest = FourCharCode('best'); {  0x62657374  }
+	typeCell = FourCharCode('ccel'); {  0x6363656c  }
+	typeClassInfo = FourCharCode('gcli'); {  0x67636c69  }
+	typeColorTable = FourCharCode('clrt'); {  0x636c7274  }
+	typeColumn = FourCharCode('ccol'); {  0x63636f6c  }
+	typeDashStyle = FourCharCode('tdas'); {  0x74646173  }
+	typeData = FourCharCode('tdta'); {  0x74647461  }
+	typeDrawingArea = FourCharCode('cdrw'); {  0x63647277  }
+	typeElemInfo = FourCharCode('elin'); {  0x656c696e  }
+	typeEnumeration = FourCharCode('enum'); {  0x656e756d  }
+	typeEPS = FourCharCode('EPS '); {  0x45505320  }
+	typeEventInfo = FourCharCode('evin'); {  0x6576696e  }
+
+const
+	typeFinderWindow = FourCharCode('fwin'); {  0x6677696e  }
+	typeFixedPoint = FourCharCode('fpnt'); {  0x66706e74  }
+	typeFixedRectangle = FourCharCode('frct'); {  0x66726374  }
+	typeGraphicLine = FourCharCode('glin'); {  0x676c696e  }
+	typeGraphicText = FourCharCode('cgtx'); {  0x63677478  }
+	typeGroupedGraphic = FourCharCode('cpic'); {  0x63706963  }
+	typeInsertionLoc = FourCharCode('insl'); {  0x696e736c  }
+	typeIntlText = FourCharCode('itxt'); {  0x69747874  }
+	typeIntlWritingCode = FourCharCode('intl'); {  0x696e746c  }
+	typeLongDateTime = FourCharCode('ldt '); {  0x6c647420  }
+	typeCFAbsoluteTime = FourCharCode('cfat');
+	typeISO8601DateTime = FourCharCode('isot'); {  0x69736f74  data is ascii text of an ISO8601 date }
+	typeLongFixed = FourCharCode('lfxd'); {  0x6c667864  }
+	typeLongFixedPoint = FourCharCode('lfpt'); {  0x6c667074  }
+	typeLongFixedRectangle = FourCharCode('lfrc'); {  0x6c667263  }
+	typeLongPoint = FourCharCode('lpnt'); {  0x6c706e74  }
+	typeLongRectangle = FourCharCode('lrct'); {  0x6c726374  }
+	typeMachineLoc = FourCharCode('mLoc'); {  0x6d4c6f63  }
+	typeOval = FourCharCode('covl'); {  0x636f766c  }
+	typeParamInfo = FourCharCode('pmin'); {  0x706d696e  }
+	typePict = FourCharCode('PICT'); {  0x50494354  }
+
+const
+	typePixelMap = FourCharCode('cpix'); {  0x63706978  }
+	typePixMapMinus = FourCharCode('tpmm'); {  0x74706d6d  }
+	typePolygon = FourCharCode('cpgn'); {  0x6370676e  }
+	typePropInfo = FourCharCode('pinf'); {  0x70696e66  }
+	typePtr = FourCharCode('ptr '); {  0x70747220  }
+	typeQDPoint = FourCharCode('QDpt'); {  0x51447074  }
+	typeQDRegion = FourCharCode('Qrgn'); {  0x51447074  (data is actual region data, including rectangle and size, _not_ region handle or ptr)}
+	typeRectangle = FourCharCode('crec'); {  0x63726563  }
+	typeRGB16 = FourCharCode('tr16'); {  0x74723136  }
+	typeRGB96 = FourCharCode('tr96'); {  0x74723936  }
+	typeRGBColor = FourCharCode('cRGB'); {  0x63524742  }
+	typeRotation = FourCharCode('trot'); {  0x74726f74  }
+	typeRoundedRectangle = FourCharCode('crrc'); {  0x63727263  }
+	typeRow = FourCharCode('crow'); {  0x63726f77  }
+	typeScrapStyles = FourCharCode('styl'); {  0x7374796c  }
+	typeScript = FourCharCode('scpt'); {  0x73637074  }
+	typeStyledText = FourCharCode('STXT'); {  0x53545854  }
+	typeSuiteInfo = FourCharCode('suin'); {  0x7375696e  }
+	typeTable = FourCharCode('ctbl'); {  0x6374626c  }
+	typeTextStyles = FourCharCode('tsty'); {  0x74737479  }
+
+const
+	typeTIFF = FourCharCode('TIFF'); {  0x54494646  }
+	typeJPEG = FourCharCode('JPEG');
+	typeGIF = FourCharCode('GIFf');
+	typeVersion = FourCharCode('vers'); {  0x76657273  }
+
+const
+	kAEMenuClass = FourCharCode('menu');
+	kAEMenuSelect = FourCharCode('mhit');
+	kAEMouseDown = FourCharCode('mdwn');
+	kAEMouseDownInBack = FourCharCode('mdbk');
+	kAEKeyDown = FourCharCode('kdwn');
+	kAEResized = FourCharCode('rsiz');
+	kAEPromise = FourCharCode('prom');
+
+const
+	keyMenuID = FourCharCode('mid ');
+	keyMenuItem = FourCharCode('mitm');
+	keyCloseAllWindows = FourCharCode('caw ');
+	keyOriginalBounds = FourCharCode('obnd');
+	keyNewBounds = FourCharCode('nbnd');
+	keyLocalWhere = FourCharCode('lwhr');
+
+const
+>>>>>>> graemeg/cpstrnew
 	typeHIMenu = FourCharCode('mobj');
 	typeHIWindow = FourCharCode('wobj');
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAEQuitPreserveState = FourCharCode('stat'); { in a kAEQuitApplication event, this optional parameter hints the application as to whether it should write out }
                                         { persistent state which may be restored on the next launch. The possible values are kAENo ( the default ), or kAEYes }
 	kAEQuitReason = FourCharCode('why?'); { in a kAEQuitApplication event, this parameter if present is the reason the quit is being sent.  The possible values are kAEQuitAll, kAEShutDown, kAERestart, kAEReallyLogOut }
+=======
+	kAEQuitReason = FourCharCode('why?'); { in a kAEQuitApplication event, this property if present is the reason the quit is being sent.  The possible values are kAEQuitAll, kAEShutDown, kAERestart, kAEReallyLogOut }
+>>>>>>> graemeg/cpstrnew
 =======
 	kAEQuitReason = FourCharCode('why?'); { in a kAEQuitApplication event, this property if present is the reason the quit is being sent.  The possible values are kAEQuitAll, kAEShutDown, kAERestart, kAEReallyLogOut }
 >>>>>>> graemeg/cpstrnew

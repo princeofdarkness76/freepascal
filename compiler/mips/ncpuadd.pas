@@ -30,6 +30,7 @@ uses
 
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   { tmipsaddnode }
 
@@ -40,6 +41,8 @@ type
     procedure second_generic_cmp32(unsigned: boolean);
     procedure second_mul64bit;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   tmipsaddnode = class(tcgaddnode)
   private
     function cmp64_lt(left_reg, right_reg: TRegister64): TRegister;
@@ -51,12 +54,16 @@ type
 
     function GetRes_register(unsigned: boolean; this_reg, left_reg, right_reg: TRegister): TRegister;
     function GetRes64_register(unsigned: boolean; {this_reg,} left_reg, right_reg: TRegister64): TRegister;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   protected
     procedure second_addfloat; override;
     procedure second_cmpfloat; override;
     procedure second_cmpboolean; override;
     procedure second_cmpsmallset; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure second_add64bit; override;
     procedure second_cmp64bit; override;
@@ -69,13 +76,21 @@ type
     procedure second_cmp64bit; override;
     procedure second_cmpordinal; override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure second_cmp64bit; override;
+    procedure second_cmpordinal; override;
+>>>>>>> graemeg/cpstrnew
   end;
 
 implementation
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   systems, globtype, globals,
+=======
+  systems,
+>>>>>>> graemeg/cpstrnew
 =======
   systems,
 >>>>>>> graemeg/cpstrnew
@@ -83,6 +98,7 @@ uses
   paramgr,
   aasmtai, aasmcpu, aasmdata,
   defutil,
+<<<<<<< HEAD
 <<<<<<< HEAD
   cpuinfo,
   {cgbase,} cgcpu, cgutils,
@@ -92,15 +108,21 @@ uses
   ncon, nset, nadd,
   ncgutil, hlcgobj, cgobj;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   {cgbase,} cgcpu, cgutils,
   cpupara,
   ncon, nset, nadd,
   ncgutil, cgobj;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {*****************************************************************************
                                tmipsaddnode
 *****************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 procedure tmipsaddnode.second_generic_cmp32(unsigned: boolean);
@@ -229,6 +251,8 @@ begin
         gten:
           cmp64_le(right_reg, left_reg,unsigned);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function tmipsaddnode.GetRes_register(unsigned: boolean; this_reg, left_reg, right_reg: TRegister): TRegister;
 var
   tmp_asm_op: tasmop;
@@ -501,13 +525,19 @@ begin
             gten:
               GetRes64_register := cmp64_leu(right_reg, left_reg);
           end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
   end;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure tmipsaddnode.second_addfloat;
@@ -521,12 +551,15 @@ begin
         { force fpureg as location, left right doesn't matter
           as both will be in a fpureg }
 <<<<<<< HEAD
+<<<<<<< HEAD
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, left.location, left.resultdef, True);
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, right.location, right.resultdef, True);
 
   location_reset(location, LOC_FPUREGISTER, def_cgsize(resultdef));
   location.register:=cg.getfpuregister(current_asmdata.CurrAsmList,location.size);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   location_force_fpureg(current_asmdata.CurrAsmList, left.location, True);
   location_force_fpureg(current_asmdata.CurrAsmList, right.location, (left.location.loc <> LOC_CFPUREGISTER));
 
@@ -535,6 +568,9 @@ begin
     location.Register := left.location.Register
   else
     location.Register := right.location.Register;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   case nodetype of
@@ -576,6 +612,7 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
   ops_cmpfloat: array[boolean,ltn..unequaln] of TAsmOp = (
   // ltn       lten      gtn       gten      equaln    unequaln
@@ -588,16 +625,22 @@ var
   op: tasmop;
   lreg,rreg: tregister;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure tmipsaddnode.second_cmpfloat;
 var
   op: tasmop;
   lfcmptrue, lfcmpfalse: tasmlabel;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   pass_left_right;
   if nf_swapped in flags then
     swapleftright;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, left.location, left.resultdef, True);
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, right.location, right.resultdef, True);
@@ -623,6 +666,8 @@ begin
   else
     location.resflags.cond:=OC_NE;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   { force fpureg as location, left right doesn't matter
     as both will be in a fpureg }
   location_force_fpureg(current_asmdata.CurrAsmList, left.location, True);
@@ -718,11 +763,15 @@ begin
       cg.a_label(current_asmdata.CurrAsmList, lfcmptrue);
     end;
   end; {case}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
 
 procedure tmipsaddnode.second_cmpboolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   second_generic_cmp32(true);
@@ -853,6 +902,8 @@ end;
 
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 var
   tmp_right_reg: TRegister;
 begin
@@ -940,6 +991,9 @@ begin
   location.Register := getres_register(unsigned, NR_TCR0, left.location.Register, tmp_right_reg);
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   caddnode := tmipsaddnode;

@@ -12,8 +12,13 @@ type
  timpclass = class(tobject,itest)
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
    function _addref: longint; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
    function _release: longint; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+   function _addref: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+   function _release: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
    function _addref: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
    function _release: integer; virtual; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
@@ -41,7 +46,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function timpclass._addref: longint; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function timpclass._addref: integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
 function timpclass._addref: integer; {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> graemeg/cpstrnew
@@ -50,7 +59,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function timpclass._release: longint;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function timpclass._release: integer;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
 function timpclass._release: integer;  {$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> graemeg/cpstrnew
@@ -65,7 +78,11 @@ begin
  end
  else begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   result:= HResult(e_nointerface);
+=======
+  result:= integer(e_nointerface);
+>>>>>>> graemeg/cpstrnew
 =======
   result:= integer(e_nointerface);
 >>>>>>> graemeg/cpstrnew

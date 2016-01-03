@@ -4,7 +4,11 @@
      Contains:   Icon Utilities and Icon Services Interfaces.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
+=======
+     Version:    HIServices-308~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    HIServices-308~1
 >>>>>>> graemeg/cpstrnew
@@ -27,6 +31,9 @@
 {    Pascal Translation Updated:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {
@@ -84,11 +91,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -107,6 +117,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -127,6 +138,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -142,6 +155,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -150,7 +166,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -163,7 +182,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -173,6 +195,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -184,6 +207,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -195,6 +223,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -212,10 +241,13 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
@@ -225,6 +257,8 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -232,6 +266,9 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -1336,6 +1373,7 @@ function IconRefToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: I
  *    testPt:
  *      A pointer to the location that IconServices tests to see
  *      whether is falls within the mask of indicated icon.
+<<<<<<< HEAD
  *    
  *    iconRect:
  *      A pointer to the rectangle defining the area that Icon Services
@@ -1351,6 +1389,23 @@ function IconRefToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: I
  *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
  *      constant in this parameter.
  *    
+=======
+ *    
+ *    iconRect:
+ *      A pointer to the rectangle defining the area that Icon Services
+ *      uses to determine which icon is hit-tested. Use the same CGRect
+ *      value as when the icon was last drawn.
+ *    
+ *    align:
+ *      A value that specifies how the indicated icon is aligned within
+ *      the rectangle specified in the iconRect parameter. Use the same
+ *      IconAlignmentType value as when the icon was last drawn.
+ *    
+ *    iconServicesUsageFlags:
+ *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
+ *      constant in this parameter.
+ *    
+>>>>>>> graemeg/cpstrnew
  *    theIconRef:
  *      The icon to be tested.
  *  
@@ -1377,6 +1432,7 @@ function IconRefContainsCGPoint( const (*var*) testPt: CGPoint; const (*var*) ic
  *    testRect:
  *      A pointer to the rectangle that IconServices tests to see
  *      whether is falls within the mask of indicated icon.
+<<<<<<< HEAD
  *    
  *    iconRect:
  *      A pointer to the rectangle defining the area that Icon Services
@@ -1392,6 +1448,23 @@ function IconRefContainsCGPoint( const (*var*) testPt: CGPoint; const (*var*) ic
  *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
  *      constant in this parameter.
  *    
+=======
+ *    
+ *    iconRect:
+ *      A pointer to the rectangle defining the area that Icon Services
+ *      uses to determine which icon is hit-tested. Use the same CGRect
+ *      value as when the icon was last drawn.
+ *    
+ *    align:
+ *      A value that specifies how the indicated icon is aligned within
+ *      the rectangle specified in the iconRect parameter. Use the same
+ *      IconAlignmentType value as when the icon was last drawn.
+ *    
+ *    iconServicesUsageFlags:
+ *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
+ *      constant in this parameter.
+ *    
+>>>>>>> graemeg/cpstrnew
  *    theIconRef:
  *      The icon to be tested.
  *  
@@ -1417,6 +1490,7 @@ function IconRefIntersectsCGRect( const (*var*) testRect: CGRect; const (*var*) 
  *    iconRect:
  *      A pointer to the rectangle defining the area that Icon Services
  *      uses as the bounding box of the region.
+<<<<<<< HEAD
  *    
  *    align:
  *      The value which determines how Icon Services aligns the region
@@ -1426,6 +1500,17 @@ function IconRefIntersectsCGRect( const (*var*) testRect: CGRect; const (*var*) 
  *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
  *      constant in this parameter.
  *    
+=======
+ *    
+ *    align:
+ *      The value which determines how Icon Services aligns the region
+ *      within the rectangle.
+ *    
+ *    iconServicesUsageFlags:
+ *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
+ *      constant in this parameter.
+ *    
+>>>>>>> graemeg/cpstrnew
  *    theIconRef:
  *      The icon to be tested.
  *  
@@ -1472,6 +1557,7 @@ function IconRefToHIShape( const (*var*) iconRect: CGRect; align: IconAlignmentT
 function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var iconSelectorOutputPtr: IconSelectorValue; iconServicesUsageFlags_: IconServicesUsageFlags; theIconRef: IconRef ): OSErr; external name '_GetIconSizesFromIconRef';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
+<<<<<<< HEAD
 
 {
    IsIconRefMaskEmpty
@@ -1496,6 +1582,32 @@ function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIco
 
 
 {
+=======
+
+{
+   IsIconRefMaskEmpty
+   Returns true if the mask for this icon is blank
+}
+
+{$endc} {TARGET_CPU_64}
+
+{
+ *  IsIconRefMaskEmpty()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
+ }
+function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIconRefMaskEmpty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+>>>>>>> graemeg/cpstrnew
    GetIconRefVariant
    Icon variants allows different images to be used with different icon state.
    For example, the 'open' variant for a folder could be represented with

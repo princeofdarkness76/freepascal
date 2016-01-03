@@ -15,6 +15,7 @@ begin
     P:=AddPackage('fcl-extra');
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -24,6 +25,8 @@ begin
     P.Dependencies.Add('winunits-base',[Win32,Win64]);
     P.Dependencies.Add('univint',[darwin,iPhoneSim]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     P.Directory:='fcl-extra';
 {$endif ALLPACKAGES}
     P.Version:='2.2.2-0';
@@ -31,6 +34,9 @@ begin
     P.Dependencies.Add('winunits-jedi',[Win32,Win64]);
     P.Dependencies.Add('winunits-base',[Win32,Win64]);
     P.Dependencies.Add('univint',[darwin]);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     P.Author := '<various>';
@@ -41,7 +47,10 @@ begin
 
     P.SourcePath.Add('src');
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.SourcePath.Add('src/win',AllWindowsOSes);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     P.IncludePath.Add('src/$(OS)',AllOSes-AllWindowsOSes-AllUnixOSes);

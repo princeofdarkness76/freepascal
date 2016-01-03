@@ -34,12 +34,15 @@ type
     procedure DeleteAllChange(ADataset: TCustomBufDataset);
     procedure DeleteAllInsertChange(ADataset: TCustomBufDataset);
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure NullInsertChange(ADataset: TCustomBufDataset);
     procedure NullEditChange(ADataset: TCustomBufDataset);
     procedure AppendDeleteChange(ADataset: TCustomBufDataset);
 
     procedure TestStreamingDataFields(AFormat: TDataPacketFormat);
     procedure TestStreamingNullFields(AFormat: TDataPacketFormat);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   protected
@@ -85,11 +88,14 @@ type
     procedure TestAppendDeleteBIN;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestFileNameProperty;
     procedure TestXmlFileRecognition;
     procedure TestCloseDatasetNoConnection; // bug 17623
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 implementation
@@ -201,7 +207,10 @@ begin
   TestChanges(AUpdDatasetProc, dfXML);
 end;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TTestBufDatasetStreams.SimpleEditChange(ADataset: TCustomBufDataset);
@@ -441,8 +450,11 @@ begin
 
   LoadDs := TCustomBufDataset.Create(nil);
 <<<<<<< HEAD
+<<<<<<< HEAD
   LoadDs.LoadFromFile(TestXMLFileName);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   LoadDs.LoadFromFile('Basics.xml');
 >>>>>>> graemeg/cpstrnew
   CompareDatasets(SaveDs,LoadDs);
@@ -684,17 +696,23 @@ begin
 
   ds.open;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TCustomBufDataset(ds).FileName:=TestBINFileName;
   ds.close;
 
   LoadDs := DBConnector.GetNDataset(True,2);
   TCustomBufDataset(LoadDs).FileName:=TestBINFileName;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TCustomBufDataset(ds).FileName:='test.dat';
   ds.close;
 
   LoadDs := DBConnector.GetNDataset(True,2);
   TCustomBufDataset(LoadDs).FileName:='test.dat';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   LoadDs.Open;
 
@@ -787,6 +805,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.NullInsertUpdateApplUpd;
 begin
   TestChangesApplyUpdates(@NullInsertChange, True);
@@ -805,6 +824,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 initialization

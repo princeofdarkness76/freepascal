@@ -175,12 +175,18 @@ begin
   bit := 28; //((sizeof(dWord)*8)div 7)*7; // = 28
   buf := @Value;
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   {$undef rangeon}
   {$ifopt R+}
      {$define rangeon}
   {$endif}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$R-}
   while True do begin
@@ -198,7 +204,13 @@ begin
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$pop}
+=======
+  {$ifdef rangeon}
+    {$R+}
+  {$endif}
+>>>>>>> graemeg/cpstrnew
 =======
   {$ifdef rangeon}
     {$R+}

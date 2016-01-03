@@ -5,7 +5,10 @@
     <General>
       <Flags>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <SaveOnlyProjectUnits Value="True"/>
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <LRSInOutputDirectory Value="False"/>
@@ -29,7 +32,11 @@
       <local>
         <FormatVersion Value="1"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <CommandLineParams Value="--suite=TTestParser.TestComment"/>
+=======
+        <CommandLineParams Value="--format=plain --suite=TCJSONStreamer"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <CommandLineParams Value="--format=plain --suite=TCJSONStreamer"/>
 >>>>>>> graemeg/cpstrnew
@@ -58,6 +65,10 @@
         <Filename Value="testjsonrtti.pp"/>
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <UnitName Value="testjsonrtti"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="testjsonrtti"/>
 >>>>>>> graemeg/cpstrnew
@@ -66,6 +77,10 @@
         <Filename Value="../src/fpjsonrtti.pp"/>
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <UnitName Value="fpjsonrtti"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="fpjsonrtti"/>
 >>>>>>> graemeg/cpstrnew
@@ -74,7 +89,11 @@
   </ProjectOptions>
   <CompilerOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="11"/>
+=======
+    <Version Value="9"/>
+>>>>>>> graemeg/cpstrnew
 =======
     <Version Value="9"/>
 >>>>>>> graemeg/cpstrnew
@@ -87,7 +106,10 @@
       </SyntaxOptions>
     </Parsing>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="True"/>

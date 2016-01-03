@@ -1,14 +1,20 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000-2013 Apple Inc. All Rights Reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  *
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  * Copyright (c) 2000-2004 Apple Computer, Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
  * 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
@@ -17,7 +23,11 @@
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> graemeg/cpstrnew
 =======
  * 
 >>>>>>> graemeg/cpstrnew
@@ -29,7 +39,11 @@
  * Please see the License for the specific language governing rights and
  * limitations under the License.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
+=======
+ * 
+>>>>>>> graemeg/cpstrnew
 =======
  * 
 >>>>>>> graemeg/cpstrnew
@@ -38,10 +52,14 @@
  * cssmapple.h -- CSSM features specific to Apple's Implementation
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
 
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 >>>>>>> graemeg/cpstrnew
@@ -100,11 +118,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -126,11 +147,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -143,11 +170,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -160,7 +193,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -173,7 +209,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -183,6 +222,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -194,6 +234,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -206,13 +251,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -229,6 +278,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -361,7 +414,11 @@ const
 	CSSM_ACL_AUTHORIZATION_CHANGE_ACL = CSSM_ACL_AUTHORIZATION_TAG_VENDOR_DEFINED_START;
 	CSSM_ACL_AUTHORIZATION_CHANGE_OWNER = CSSM_ACL_AUTHORIZATION_TAG_VENDOR_DEFINED_START + 1;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> graemeg/cpstrnew
 =======
 	
 >>>>>>> graemeg/cpstrnew
@@ -448,7 +505,11 @@ const
 	CSSM_ACL_PREAUTH_TRACKING_BLOCKED = 0;		{ retries exhausted; the slot is blocked }
 	{ 0 .. 255 is a count of (re)tries remaining }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> graemeg/cpstrnew
 =======
 	
 >>>>>>> graemeg/cpstrnew
@@ -467,7 +528,11 @@ const
 	CSSM_ALGID_APPLE_YARROW = CSSM_ALGID_VENDOR_DEFINED;
 	CSSM_ALGID_AES = CSSM_ALGID_VENDOR_DEFINED + 1;				{ RijnDael }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_ALGID_FEE = CSSM_ALGID_VENDOR_DEFINED + 2;				{ FEE Key Generation }
+=======
+	CSSM_ALGID_FEE = CSSM_ALGID_VENDOR_DEFINED + 2;				{ FEE Key Generation } 
+>>>>>>> graemeg/cpstrnew
 =======
 	CSSM_ALGID_FEE = CSSM_ALGID_VENDOR_DEFINED + 2;				{ FEE Key Generation } 
 >>>>>>> graemeg/cpstrnew
@@ -514,7 +579,11 @@ const
 	CSSM_KEYBLOB_RAW_FORMAT_X509 = CSSM_KEYBLOB_RAW_FORMAT_VENDOR_DEFINED;
 	{ OpenSSH v1 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_KEYBLOB_RAW_FORMAT_OPENSSH = CSSM_KEYBLOB_RAW_FORMAT_VENDOR_DEFINED + 1;
+=======
+	CSSM_KEYBLOB_RAW_FORMAT_OPENSSH = CSSM_KEYBLOB_RAW_FORMAT_VENDOR_DEFINED + 1;		
+>>>>>>> graemeg/cpstrnew
 =======
 	CSSM_KEYBLOB_RAW_FORMAT_OPENSSH = CSSM_KEYBLOB_RAW_FORMAT_VENDOR_DEFINED + 1;		
 >>>>>>> graemeg/cpstrnew
@@ -533,7 +602,10 @@ const
 	CSSM_ERRCODE_DEVICE_RESET = $00e4;
 	CSSM_ERRCODE_DEVICE_FAILED = $00e5;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_ERRCODE_IN_DARK_WAKE = $00e6;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -575,6 +647,7 @@ const
 	CSSMERR_DL_DEVICE_FAILED = CSSM_DL_BASE_ERROR + CSSM_ERRCODE_DEVICE_FAILED;
 	CSSMERR_TP_DEVICE_FAILED = CSSM_TP_BASE_ERROR + CSSM_ERRCODE_DEVICE_FAILED;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSMERR_CSSM_IN_DARK_WAKE = CSSM_CSSM_BASE_ERROR + CSSM_ERRCODE_IN_DARK_WAKE;
 	CSSMERR_AC_IN_DARK_WAKE = CSSM_AC_BASE_ERROR + CSSM_ERRCODE_IN_DARK_WAKE;
 	CSSMERR_CSP_IN_DARK_WAKE = CSSM_CSP_BASE_ERROR + CSSM_ERRCODE_IN_DARK_WAKE;
@@ -583,11 +656,14 @@ const
 	CSSMERR_TP_IN_DARK_WAKE = CSSM_TP_BASE_ERROR + CSSM_ERRCODE_IN_DARK_WAKE;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 { AppleCSPDL, AppleCSP private error codes. }
 const
 	CSSMERR_CSP_APPLE_ADD_APPLICATION_ACL_SUBJECT = CSSM_CSP_PRIVATE_ERROR + 0;
 	{
+<<<<<<< HEAD
 <<<<<<< HEAD
 	 * An attempt was made to use a public key which is incomplete due to
 	 * the lack of algorithm-specific parameters.
@@ -602,6 +678,8 @@ const
 	CSSMERR_CSP_APPLE_INVALID_KEY_END_DATE = CSSM_CSP_PRIVATE_ERROR + 4;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	 * An attempt was made to use a public key which is incomplete due to 
 	 * the lack of algorithm-specific parameters.
 	 }
@@ -614,6 +692,9 @@ const
 	CSSMERR_CSP_APPLE_INVALID_KEY_START_DATE = CSSM_CSP_PRIVATE_ERROR + 3;
 	CSSMERR_CSP_APPLE_INVALID_KEY_END_DATE = CSSM_CSP_PRIVATE_ERROR + 4;
 	
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	{ Keychain Syncing error codes }
 	CSSMERR_CSPDL_APPLE_DL_CONVERSION_ERROR = CSSM_CSP_PRIVATE_ERROR + 5;
@@ -641,15 +722,21 @@ const
 	// and FALSE turns it off.
 	CSSM_APPLEFILEDL_TOGGLE_AUTOCOMMIT = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	// Commit any pending changes to the database.
 	CSSM_APPLEFILEDL_COMMIT = 1;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	
 	// Commit any pending changes to the database.
 	CSSM_APPLEFILEDL_COMMIT = 1;
 	
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	// Rollback and discard any pending changes to the database.
 	CSSM_APPLEFILEDL_ROLLBACK = 2;
@@ -666,6 +753,7 @@ const
 	   structure. }
 	CSSMERR_APPLEDL_INVALID_OPEN_PARAMETERS = CSSM_DL_PRIVATE_ERROR + 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{ an operation failed because the disk was full }
 	CSSMERR_APPLEDL_DISK_FULL = CSSM_DL_PRIVATE_ERROR + 1;
@@ -681,6 +769,8 @@ const
 	CSSMERR_APPLEDL_INVALID_KEY_BLOB = CSSM_DL_PRIVATE_ERROR + 5;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	
 	{ an operation failed because the disk was full }
 	CSSMERR_APPLEDL_DISK_FULL = CSSM_DL_PRIVATE_ERROR + 1;
@@ -695,6 +785,9 @@ const
 	CSSMERR_APPLEDL_INVALID_DATABASE_BLOB = CSSM_DL_PRIVATE_ERROR + 4;
 	CSSMERR_APPLEDL_INVALID_KEY_BLOB = CSSM_DL_PRIVATE_ERROR + 5;
     
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     { the internal data format version for a database's internal information ("blob") is invalid }
 	CSSMERR_APPLEDL_INCOMPATIBLE_DATABASE_BLOB = CSSM_DL_PRIVATE_ERROR + 6;
@@ -753,7 +846,11 @@ const
 	{ Appropriate S/MIME ExtendedKeyUsage not found }
 	CSSMERR_APPLETP_SMIME_BAD_EXT_KEY_USE = CSSM_TP_PRIVATE_ERROR + 25;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{ S/MIME KeyUsage incompatibility }
+=======
+	{ S/MIME KeyUsage incompatiblity }
+>>>>>>> graemeg/cpstrnew
 =======
 	{ S/MIME KeyUsage incompatiblity }
 >>>>>>> graemeg/cpstrnew
@@ -764,7 +861,11 @@ const
 	 * in SubjectAltName }
 	CSSMERR_APPLETP_SMIME_NO_EMAIL_ADDRS = CSSM_TP_PRIVATE_ERROR + 28;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{ S/MIME, leaf with empty subject name, SubjectAltName
+=======
+	{ S/MIME, leaf with empty subject name, SubjectAltName 
+>>>>>>> graemeg/cpstrnew
 =======
 	{ S/MIME, leaf with empty subject name, SubjectAltName 
 >>>>>>> graemeg/cpstrnew
@@ -817,6 +918,7 @@ const
 	{ Illegal cert chain length for Resource Signing  }
 	CSSMERR_APPLETP_RS_BAD_CERT_CHAIN_LENGTH = CSSM_TP_PRIVATE_ERROR + 52;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{ Bad extended key usage for Resource Signing }
 	CSSMERR_APPLETP_RS_BAD_EXTENDED_KEY_USAGE = CSSM_TP_PRIVATE_ERROR + 53;
 	{ Trust Setting: deny }
@@ -832,6 +934,8 @@ const
 	{ Required name or identifier not present }
 	CSSMERR_APPLETP_IDENTIFIER_MISSING = CSSM_TP_PRIVATE_ERROR + 59;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{ bad extended key usage for Resource Signing }
 	CSSMERR_APPLETP_RS_BAD_EXTENDED_KEY_USAGE = CSSM_TP_PRIVATE_ERROR + 53;
 	{ Trust Setting: deny }
@@ -840,6 +944,9 @@ const
 	CSSMERR_APPLETP_INVALID_EMPTY_SUBJECT = CSSM_TP_PRIVATE_ERROR + 55;
 	{ unknown critical Qualified Cert Statement ID }
 	CSSMERR_APPLETP_UNKNOWN_QUAL_CERT_STATEMENT = CSSM_TP_PRIVATE_ERROR + 56;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 { Apple .mac TP private error codes. }
@@ -968,15 +1075,21 @@ const
 	   The SecurityServer might put up UI (though the SecurityAgent) when this function is called.  }
 	CSSM_APPLECSPDL_DB_CHANGE_PASSWORD = 5;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{ Return the SecurityServer database handle for the database specified by the DLDBHandle }
 	CSSM_APPLECSPDL_DB_GET_HANDLE = 6;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	
 	{ Return the SecurityServer database handle for the database specified by the DLDBHandle }
 	CSSM_APPLECSPDL_DB_GET_HANDLE = 6;
 	
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	{ Given a CSSM_KEY for the CSPDL, return the SecurityServer key handle }
 	CSSM_APPLESCPDL_CSP_GET_KEYHANDLE = 7;
@@ -990,11 +1103,17 @@ const
 	CSSM_APPLE_PRIVATE_CSPDL_CODE_15 = 15;
 	CSSM_APPLE_PRIVATE_CSPDL_CODE_16 = 16;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_APPLE_PRIVATE_CSPDL_CODE_17 = 17;
 	CSSM_APPLE_PRIVATE_CSPDL_CODE_18 = 18;
 
 	{ Given a CSSM_KEY_PTR in any format, obtain the SHA-1 hash of the
 	 * associated key blob.
+=======
+	
+	{ Given a CSSM_KEY_PTR in any format, obtain the SHA-1 hash of the 
+	 * associated key blob. 
+>>>>>>> graemeg/cpstrnew
 =======
 	
 	{ Given a CSSM_KEY_PTR in any format, obtain the SHA-1 hash of the 
@@ -1035,7 +1154,11 @@ type
 const
 	CSSM_KEYBLOB_WRAPPED_FORMAT_APPLE_CUSTOM = 100;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_KEYBLOB_WRAPPED_FORMAT_OPENSSL = 101;			// traditional openssl
+=======
+	CSSM_KEYBLOB_WRAPPED_FORMAT_OPENSSL = 101;			// traditional openssl 
+>>>>>>> graemeg/cpstrnew
 =======
 	CSSM_KEYBLOB_WRAPPED_FORMAT_OPENSSL = 101;			// traditional openssl 
 >>>>>>> graemeg/cpstrnew
@@ -1049,17 +1172,23 @@ const
 
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
 	 * Public Key attribute for use with CSSM_ALGID_FEED.
 	 }
 	CSSM_ATTRIBUTE_PUBLIC_KEY = (CSSM_ATTRIBUTE_DATA_KEY or (CSSM_ATTRIBUTE_VENDOR_DEFINED + 0));
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { 
 	 * Public Key attribute for use with CSSM_ALGID_FEED.
 	 }
 	CSSM_ATTRIBUTE_PUBLIC_KEY = (CSSM_ATTRIBUTE_DATA_KEY or (CSSM_ATTRIBUTE_VENDOR_DEFINED + 0));
 			
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	{
 	 * FEE key attributes.
@@ -1068,7 +1197,11 @@ const
 	CSSM_ATTRIBUTE_FEE_PRIME_TYPE = (CSSM_ATTRIBUTE_DATA_UINT32 or (CSSM_ATTRIBUTE_VENDOR_DEFINED + 1));
 	CSSM_ATTRIBUTE_FEE_CURVE_TYPE = (CSSM_ATTRIBUTE_DATA_UINT32 or (CSSM_ATTRIBUTE_VENDOR_DEFINED + 2));
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> graemeg/cpstrnew
 =======
 			
 >>>>>>> graemeg/cpstrnew
@@ -1078,7 +1211,11 @@ const
 	 }
 	CSSM_ATTRIBUTE_ASC_OPTIMIZATION = (CSSM_ATTRIBUTE_DATA_UINT32 or (CSSM_ATTRIBUTE_VENDOR_DEFINED + 3));
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> graemeg/cpstrnew
 =======
 			
 >>>>>>> graemeg/cpstrnew
@@ -1087,7 +1224,11 @@ const
 	 }
 	CSSM_ATTRIBUTE_RSA_BLINDING = (CSSM_ATTRIBUTE_DATA_UINT32 or (CSSM_ATTRIBUTE_VENDOR_DEFINED + 4));
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> graemeg/cpstrnew
 =======
 			
 >>>>>>> graemeg/cpstrnew
@@ -1097,7 +1238,11 @@ const
 	 }
 	CSSM_ATTRIBUTE_PARAM_KEY = (CSSM_ATTRIBUTE_DATA_KEY or (CSSM_ATTRIBUTE_VENDOR_DEFINED + 5));
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> graemeg/cpstrnew
 =======
 			
 >>>>>>> graemeg/cpstrnew
@@ -1126,7 +1271,11 @@ const
 const
 	CSSM_FEE_PRIME_TYPE_DEFAULT = 0;	{ default per key size }
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_FEE_PRIME_TYPE_MERSENNE = 1;		{ (2 ** q) - 1 }
+=======
+	CSSM_FEE_PRIME_TYPE_MERSENNE = 1;		{ (2 ** q) - 1Ê}
+>>>>>>> graemeg/cpstrnew
 =======
 	CSSM_FEE_PRIME_TYPE_MERSENNE = 1;		{ (2 ** q) - 1Ê}
 >>>>>>> graemeg/cpstrnew
@@ -1165,7 +1314,11 @@ const
 	 }
 	CSSM_KEYATTR_PARTIAL = $00010000;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> graemeg/cpstrnew
 =======
 	
 >>>>>>> graemeg/cpstrnew
@@ -1186,17 +1339,23 @@ type
 	end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  * Certificate request passed to CSSM_TP_SubmitCredRequest() in the
  * CSSM_TP_AUTHORITY_REQUEST_TYPE.Requests field. Used for requesting
  * both locally-generated certs (CSSMOID_APPLE_TP_LOCAL_CERT_GEN) and
  * cert signing requests (CSSMOID_APPLE_TP_CSR_GEN).
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { 
  * Certificate request passed to CSSM_TP_SubmitCredRequest() in the
  * CSSM_TP_AUTHORITY_REQUEST_TYPE.Requests field. Used for requesting
  * both locally-generated certs (CSSMOID_APPLE_TP_LOCAL_CERT_GEN) and
  * cert signing requests (CSSMOID_APPLE_TP_CSR_GEN). 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  }
 type
@@ -1206,6 +1365,7 @@ type
 		clHand: CSSM_CL_HANDLE;			// and this CL
 		serialNumber: UInt32;
 		numSubjectNames: UInt32;// size subjectNames[]
+<<<<<<< HEAD
 <<<<<<< HEAD
 		subjectNames: CSSM_APPLE_TP_NAME_OIDPtr;
 
@@ -1223,6 +1383,8 @@ type
 		issuerPrivateKey: {const} CSSM_KEYPtr;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 		subjectNames: CSSM_APPLE_TP_NAME_OIDPtr;	
 	
 	{
@@ -1238,6 +1400,9 @@ type
 		certPublicKey: {const} CSSM_KEYPtr;
 		issuerPrivateKey: {const} CSSM_KEYPtr;
 	
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	{ Unfortunately there is no practical way to map any algorithm
 	 * to its appropriate OID, and we need both.... }
@@ -1248,8 +1413,13 @@ type
 		numExtensions: UInt32;
 		extensions: CE_DataAndTypePtr;	// optional
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{
+=======
+	
+	{ 
+>>>>>>> graemeg/cpstrnew
 =======
 	
 	{ 
@@ -1260,9 +1430,15 @@ type
 	end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  * Options for X509TP's CSSM_TP_CertGroupVerify for policy CSSMOID_APPLE_TP_SSL.
  * A pointer to, and length of, one of these is optionally placed in
+=======
+{ 
+ * Options for X509TP's CSSM_TP_CertGroupVerify for policy CSSMOID_APPLE_TP_SSL. 
+ * A pointer to, and length of, one of these is optionally placed in 
+>>>>>>> graemeg/cpstrnew
 =======
 { 
  * Options for X509TP's CSSM_TP_CertGroupVerify for policy CSSMOID_APPLE_TP_SSL. 
@@ -1287,9 +1463,15 @@ type
 		Version: UInt32;        // CSSM_APPLE_TP_SSL_OPTS_VERSION
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{
 	 * The domain name of the server (e.g., "store.apple.com".) In the
 	 * SSL and TLS protocols, this must match the common name of the
+=======
+	{ 
+	 * The domain name of the server (e.g., "store.apple.com".) In the 
+	 * SSL and TLS protocols, this must match the common name of the 
+>>>>>>> graemeg/cpstrnew
 =======
 	{ 
 	 * The domain name of the server (e.g., "store.apple.com".) In the 
@@ -1301,7 +1483,11 @@ type
 		ServerNameLen: UInt32;
 		ServerName: {const} CStringPtr;    // optional
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> graemeg/cpstrnew
 =======
 	
 >>>>>>> graemeg/cpstrnew
@@ -1310,15 +1496,21 @@ type
 	end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  * Options for X509TP's CSSM_TP_CertGroupVerify for policy
  * CSSMOID_APPLE_TP_REVOCATION_CRL. A pointer to, and length of, one
  * of these is optionally placed in
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { 
  * Options for X509TP's CSSM_TP_CertGroupVerify for policy 
  * CSSMOID_APPLE_TP_REVOCATION_CRL. A pointer to, and length of, one 
  * of these is optionally placed in 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  * CSSM_TP_VERIFY_CONTEXT.Cred->Policy.PolicyIds[n].FieldValue.
  }
@@ -1330,7 +1522,11 @@ type
 const
 // require CRL verification for each cert; default is "try"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_TP_ACTION_REQUIRE_CRL_PER_CERT = $00000001;
+=======
+	CSSM_TP_ACTION_REQUIRE_CRL_PER_CERT = $00000001;	
+>>>>>>> graemeg/cpstrnew
 =======
 	CSSM_TP_ACTION_REQUIRE_CRL_PER_CERT = $00000001;	
 >>>>>>> graemeg/cpstrnew
@@ -1348,15 +1544,21 @@ type
 		Version: UInt32;        // CSSM_APPLE_TP_CRL_OPTS_VERSION
 		CrlFlags: CSSM_APPLE_TP_CRL_OPT_FLAGS;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{
 	 * When non-NULL, store CRLs fetched from net here.
 	 * This is most likely a pointer to one of the
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	
 	{
 	 * When non-NULL, store CRLs fetched from net here.
 	 * This is most likely a pointer to one of the  
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	 * CSSM_TP_CALLERAUTH_CONTEXT.DBList entries but that
 	 * is not a strict requirement.
@@ -1365,15 +1567,21 @@ type
 	end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  * Options for X509TP's CSSM_TP_CertGroupVerify for policy
  * CSSMOID_APPLE_TP_SMIME. A pointer to, and length of, one
  * of these is optionally placed in
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { 
  * Options for X509TP's CSSM_TP_CertGroupVerify for policy 
  * CSSMOID_APPLE_TP_SMIME. A pointer to, and length of, one 
  * of these is optionally placed in 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  * CSSM_TP_VERIFY_CONTEXT.Cred->Policy.PolicyIds[n].FieldValue.
  }
@@ -1385,7 +1593,11 @@ type
 		Version: UInt32;        // CSSM_APPLE_TP_SMIME_OPTS_VERSION
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{
+=======
+	{ 
+>>>>>>> graemeg/cpstrnew
 =======
 	{ 
 >>>>>>> graemeg/cpstrnew
@@ -1394,8 +1606,13 @@ type
 	 }
 		IntendedUsage: CE_KeyUsage;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{
+=======
+	
+	{ 
+>>>>>>> graemeg/cpstrnew
 =======
 	
 	{ 
@@ -1414,7 +1631,11 @@ type
 {
  * Optional ActionData for all X509TP CertGroupVerify policies.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * A pointer to, and length of, one of these is optionally placed in
+=======
+ * A pointer to, and length of, one of these is optionally placed in 
+>>>>>>> graemeg/cpstrnew
 =======
  * A pointer to, and length of, one of these is optionally placed in 
 >>>>>>> graemeg/cpstrnew
@@ -1425,7 +1646,11 @@ type
 const
 	CSSM_TP_ACTION_ALLOW_EXPIRED = $00000001;	// allow expired certs
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_TP_ACTION_LEAF_IS_CA = $00000002;	// first cert is a CA
+=======
+	CSSM_TP_ACTION_LEAF_IS_CA = $00000002;	// first cert is a CA 
+>>>>>>> graemeg/cpstrnew
 =======
 	CSSM_TP_ACTION_LEAF_IS_CA = $00000002;	// first cert is a CA 
 >>>>>>> graemeg/cpstrnew
@@ -1434,7 +1659,11 @@ const
 	CSSM_TP_ACTION_REQUIRE_REV_PER_CERT = $00000010; 	// require positive revocation
 														//   check per cert
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CSSM_TP_ACTION_TRUST_SETTINGS = $00000020;	// use TrustSettings instead of
+=======
+	CSSM_TP_ACTION_TRUST_SETTINGS = $00000020;	// use TrustSettings instead of 
+>>>>>>> graemeg/cpstrnew
 =======
 	CSSM_TP_ACTION_TRUST_SETTINGS = $00000020;	// use TrustSettings instead of 
 >>>>>>> graemeg/cpstrnew
@@ -1454,15 +1683,21 @@ type
 {
  * Per-cert evidence returned from CSSM_TP_CertGroupVerify.
 <<<<<<< HEAD
+<<<<<<< HEAD
  * An array of these is presented in CSSM_TP_VERIFY_CONTEXT_RESULT.Evidence[2].
  * Same number of these as in the cert group in Evidence[1].
  }
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  * An array of these is presented in CSSM_TP_VERIFY_CONTEXT_RESULT.Evidence[2]. 
  * Same number of these as in the cert group in Evidence[1].
  }
  
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 { First, an array of bits indicating various status of the cert. }
 type
@@ -1495,15 +1730,21 @@ type
 		NumStatusCodes: UInt32;
 		StatusCodes: CSSM_RETURNPtr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{ index into raw cert group or AnchorCerts depending on IS_IN_ANCHORS }
 		Index: UInt32;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	
 	{ index into raw cert group or AnchorCerts depending on IS_IN_ANCHORS }
 		Index: UInt32;   
 	
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	{ nonzero if cert came from a DLDB }
 		DlDbHandle: CSSM_DL_DB_HANDLE;
@@ -1512,7 +1753,11 @@ type
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * CSSM_TP_VERIFY_CONTEXT_RESULT.Evidence[0], basically defines which version/flavor
+=======
+ * CSSM_TP_VERIFY_CONTEXT_RESULT.Evidence[0], basically defines which version/flavor 
+>>>>>>> graemeg/cpstrnew
 =======
  * CSSM_TP_VERIFY_CONTEXT_RESULT.Evidence[0], basically defines which version/flavor 
 >>>>>>> graemeg/cpstrnew
@@ -1550,7 +1795,11 @@ const
 { AppleX509CL extensions: passthrough ids }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
+=======
+{ 
+>>>>>>> graemeg/cpstrnew
 =======
 { 
 >>>>>>> graemeg/cpstrnew
@@ -1560,7 +1809,11 @@ const
 	 }
 	CSSM_APPLEX509CL_OBTAIN_CSR = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> graemeg/cpstrnew
 =======
 	
 >>>>>>> graemeg/cpstrnew
@@ -1574,8 +1827,13 @@ const
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Used in CL's CSSM_APPLEX509_OBTAIN_CSR Passthrough. This is the
  * input; the output is a CSSM_DATA * containing the signed and
+=======
+ * Used in CL's CSSM_APPLEX509_OBTAIN_CSR Passthrough. This is the 
+ * input; the output is a CSSM_DATA * containing the signed and 
+>>>>>>> graemeg/cpstrnew
 =======
  * Used in CL's CSSM_APPLEX509_OBTAIN_CSR Passthrough. This is the 
  * input; the output is a CSSM_DATA * containing the signed and 
@@ -1586,8 +1844,13 @@ type
 	CSSM_APPLE_CL_CSR_REQUESTPtr = ^CSSM_APPLE_CL_CSR_REQUEST;
 	CSSM_APPLE_CL_CSR_REQUEST = record
 <<<<<<< HEAD
+<<<<<<< HEAD
 		subjectNameX509: CSSM_X509_NAME_PTR;
 
+=======
+		subjectNameX509: CSSM_X509_NAME_PTR;		
+	
+>>>>>>> graemeg/cpstrnew
 =======
 		subjectNameX509: CSSM_X509_NAME_PTR;		
 	
@@ -1601,8 +1864,13 @@ type
 		subjectPublicKey: {const} CSSM_KEYPtr;
 		subjectPrivateKey: {const} CSSM_KEYPtr;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	{
+=======
+	
+	{ 
+>>>>>>> graemeg/cpstrnew
 =======
 	
 	{ 
@@ -1614,7 +1882,11 @@ type
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  * When a CRL with no NextUpdate field is encountered, we use this time
+=======
+ * When a CRL with no NextUpdate field is encountered, we use this time 
+>>>>>>> graemeg/cpstrnew
 =======
  * When a CRL with no NextUpdate field is encountered, we use this time 
 >>>>>>> graemeg/cpstrnew

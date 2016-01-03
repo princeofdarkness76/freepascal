@@ -46,20 +46,27 @@
   NSIndexSet = objcclass external (NSObject, NSCopyingProtocol, NSMutableCopyingProtocol, NSCodingProtocol)
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
     __indexSetFlags: record
       case byte of
        0: (_anonbitfield_NSIndexSet0: NSUInteger);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __indexSetFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSIndexSet0: NSUInteger);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         _isEmpty: 0..1;
         _hasSingleRange: 0..1;
         _cacheValid: 0..1;
         _reservedArrayBinderController: 0..((1 shl 29)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
        end;
       );
@@ -73,19 +80,29 @@
            );
 	1: (
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     __singleRange: record
         _range: NSRange;
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     __multipleRanges: record
         _data: Pointer; {garbage collector: __strong }
         _reserved: Pointer;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
            );
     end;
+=======
+    __internal: record
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
     __internal: record
       end;

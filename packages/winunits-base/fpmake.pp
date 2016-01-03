@@ -59,6 +59,7 @@ begin
           AddUnit('multimon');
           AddUnit('htmlhelp');
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddUnit('winutils');
           AddUnit('comserv');
           AddUnit('winspool');
@@ -71,6 +72,9 @@ begin
 		  AddUnit('typelib');
 		  AddUnit('libkinect10');
           AddUnit('urlmon');
+=======
+          AddUnit('winspool');
+>>>>>>> graemeg/cpstrnew
 =======
           AddUnit('winspool');
 >>>>>>> graemeg/cpstrnew
@@ -100,6 +104,7 @@ begin
     T:=P.Targets.AddImplicitUnit('dwmapi.pp');
     T:=P.Targets.AddImplicitUnit('htmlhelp.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddImplicitUnit('winutils.pp');
     T:=P.Targets.AddImplicitUnit('comserv.pp');
     T:=P.Targets.AddImplicitUnit('winspool.pp');
@@ -111,6 +116,9 @@ begin
 	T:=P.Targets.AddImplicitUnit('eventsink.pp');
 	T:=P.Targets.AddImplicitUnit('typelib.pas');
 	T:=P.Targets.AddImplicitUnit('libkinect10.pp');
+=======
+    T:=P.Targets.AddImplicitUnit('winspool.pp');
+>>>>>>> graemeg/cpstrnew
 =======
     T:=P.Targets.AddImplicitUnit('winspool.pp');
 >>>>>>> graemeg/cpstrnew

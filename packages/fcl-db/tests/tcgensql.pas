@@ -1,7 +1,11 @@
 {
     This file is part of the Free Component Library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -36,17 +40,23 @@ type
     FToFree:TSQLElement;
   protected
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure SetUp; override;
     Procedure TearDown; override;
     Procedure DoTestDropStatement(AClass: TSQLDropStatementClass; const AObjectName: String);
     Procedure DoTestAlterCreateProcedure(S: TSQLAlterCreateProcedureStatement; PHEAD: String);
     Procedure DoTestAlterCreateTrigger(S: TSQLAlterCreateTriggerStatement; PHEAD: String);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure SetUp; override; 
     procedure TearDown; override;
     procedure DoTestDropStatement(AClass: TSQLDropStatementClass; const AObjectName: String);
     procedure DoTestAlterCreateProcedure(S: TSQLAlterCreateProcedureStatement; PHEAD: String);
     procedure DoTestAlterCreateTrigger(S: TSQLAlterCreateTriggerStatement; PHEAD: String);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Function CreateIdentifier(Const AName : TSQLStringType) : TSQLIdentifierName;
     Function CreateGrantee(Const AName : TSQLStringType; AClass : TSQLGranteeClass = Nil) : TSQLGrantee;
@@ -975,15 +985,21 @@ begin
   J.JoinType:=jtRight;
   AssertSQL(J,'A RIGHT JOIN B ON (C = D)');
 <<<<<<< HEAD
+<<<<<<< HEAD
   J.JoinType:=jtFullOuter;
   AssertSQL(J,'A FULL OUTER JOIN B ON (C = D)');
   AssertSQL(J,'A'+sLinebreak+'FULL OUTER JOIN B ON (C = D)',[sfoOneTablePerLine]);
   AssertSQL(J,'A'+sLinebreak+'  FULL OUTER JOIN B ON (C = D)',[sfoOneTablePerLine,sfoIndentTables]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   J.JoinType:=jtOuter;
   AssertSQL(J,'A OUTER JOIN B ON (C = D)');
   AssertSQL(J,'A'+sLinebreak+'OUTER JOIN B ON (C = D)',[sfoOneTablePerLine]);
   AssertSQL(J,'A'+sLinebreak+'  OUTER JOIN B ON (C = D)',[sfoOneTablePerLine,sfoIndentTables]);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   J2:=CreateJoinTableReference(CreateSimpleTableReference('E',''),CreateSimpleTableReference('F',''));
   J2.JoinClause:=CreateBinaryExpression(CreateIdentifierExpression('G'),CreateIdentifierExpression('H'));
@@ -992,18 +1008,24 @@ begin
   J.Right:=J2;
   FTofree:=J;
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertSQL(J,'A FULL OUTER JOIN (E JOIN F ON (G = H)) ON (C = D)');
   AssertSQL(J,'A FULL OUTER JOIN E JOIN F ON (G = H) ON (C = D)',[sfoNoBracketRightJoin]);
   J.Right:=J.Left;
   J.Left:=J2;
   AssertSQL(J,'(E JOIN F ON (G = H)) FULL OUTER JOIN A ON (C = D)',[sfoBracketLeftJoin]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   AssertSQL(J,'A OUTER JOIN (E JOIN F ON (G = H)) ON (C = D)');
   AssertSQL(J,'A OUTER JOIN E JOIN F ON (G = H) ON (C = D)',[sfoNoBracketRightJoin]);
   J.Right:=J.Left;
   J.Left:=J2;
   AssertSQL(J,'(E JOIN F ON (G = H)) OUTER JOIN A ON (C = D)',[sfoBracketLeftJoin]);
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -2043,7 +2065,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('A');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2054,7 +2080,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('B');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2083,7 +2113,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('I');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2095,7 +2129,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('J');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2107,7 +2145,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('R');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2119,7 +2161,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('S');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2131,7 +2177,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('A');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2142,7 +2192,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('B');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2202,7 +2256,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('A');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2213,7 +2271,11 @@ begin
   P:=TSQLProcedureParamDef.Create(Nil);
   P.ParamName:=CreateIdentifier('B');
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew

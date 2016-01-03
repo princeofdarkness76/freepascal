@@ -64,6 +64,11 @@ interface
     procedure location_allocate_register(list:TAsmList;out l: tlocation;def: tdef;constant: boolean);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    { load a tlocation into a cgpara }
+    procedure gen_load_loc_cgpara(list: TAsmList; vardef: tdef; const l: tlocation; const cgpara: tcgpara);
+>>>>>>> graemeg/cpstrnew
 =======
     { load a tlocation into a cgpara }
     procedure gen_load_loc_cgpara(list: TAsmList; vardef: tdef; const l: tlocation; const cgpara: tcgpara);
@@ -77,8 +82,11 @@ interface
     procedure gen_alloc_regloc(list:TAsmList;var loc: tlocation);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure register_maybe_adjust_setbase(list: TAsmList; opdef: tdef; var l: tlocation; setbase: aint);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure register_maybe_adjust_setbase(list: TAsmList; var l: tlocation; setbase: aint);
 >>>>>>> graemeg/cpstrnew
 
@@ -150,6 +158,10 @@ interface
 
     procedure InsertInterruptTable;
 
+    procedure gen_fpc_dummy(list : TAsmList);
+
+    procedure InsertInterruptTable;
+
 implementation
 
   uses
@@ -170,6 +182,9 @@ implementation
 =======
     nbas,ncon,nld,nmem,nutils,
     tgobj,cgobj,cgcpu
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifdef powerpc}
     , cpupi
@@ -1085,7 +1100,10 @@ implementation
 
     procedure location_allocate_register(list: TAsmList;out l: tlocation;def: tdef;constant: boolean);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       begin
         l.size:=def_cgsize(def);
         if (def.typ=floatdef) and
@@ -1873,6 +1891,7 @@ implementation
 {$endif not cpu64bitalu}
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         paraloc:=para.location;
         if not assigned(paraloc) then
           internalerror(200408203);
@@ -2322,6 +2341,14 @@ implementation
            if assigned(hp^.def) and
               is_managed_type(hp^.def) then
             begin
+=======
+        hp:=tg.templist;
+        while assigned(hp) do
+         begin
+           if assigned(hp^.def) and
+              is_managed_type(hp^.def) then
+            begin
+>>>>>>> graemeg/cpstrnew
               include(current_procinfo.flags,pi_needs_implicit_finally);
               reference_reset_base(href,current_procinfo.framepointer,hp^.pos,sizeof(pint));
               cg.g_finalize(list,hp^.def,href);
@@ -2393,13 +2420,19 @@ implementation
           LOC_CMMREGISTER:
             begin
              loc.register:=cg.getmmregister(list,loc.size);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
             end;
           else
             internalerror(2010052903);
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -2549,6 +2582,7 @@ implementation
                 end
               else
 {$endif not cpu64bitalu}
+<<<<<<< HEAD
                 begin
                   if assigned(paraloc^.next) then
                     internalerror(200410105);
@@ -2597,6 +2631,110 @@ implementation
                  (paraloc^.size in [OS_32,OS_S32]) and
                  use_vectorfpu(vardef) then
                 begin
+                  { we need 2x32bit reg }
+                  if not assigned(paraloc^.next) or
+                     assigned(paraloc^.next^.next) then
+                    internalerror(2009112421);
+                  unget_para(paraloc^);
+                  unget_para(paraloc^.next^);
+                  gen_alloc_regloc(list,destloc);
+                  if (target_info.endian=endian_big) then
+                    { paraloc^ -> high
+                      paraloc^.next -> low }
+                    reg64:=joinreg64(paraloc^.next^.register,paraloc^.register)
+                  else
+                    reg64:=joinreg64(paraloc^.register,paraloc^.next^.register);
+                  cg64.a_loadmm_intreg64_reg(list,OS_F64,reg64,destloc.register);
+                end
+              else
+{$endif not cpu64bitalu}
+                begin
+                  unget_para(paraloc^);
+                  gen_alloc_regloc(list,destloc);
+                  { from register to register -> alignment is irrelevant }
+                  cg.a_load_cgparaloc_anyreg(list,destloc.size,paraloc^,destloc.register,0);
+                  { data could come in two memory locations, for now
+                    we simply ignore the sanity check (FK)
+                  if assigned(paraloc^.next) then
+                    internalerror(200410108);
+                  }
+                end;
+            end;
+          else
+            internalerror(2010052903);
+        end;
+      end;
+
+
+    procedure gen_load_para_value(list:TAsmList);
+
+       procedure get_para(const paraloc:TCGParaLocation);
+         begin
+            case paraloc.loc of
+              LOC_REGISTER :
+                begin
+                  if getsupreg(paraloc.register)<first_int_imreg then
+                    cg.getcpuregister(list,paraloc.register);
+=======
+                begin
+                  if assigned(paraloc^.next) then
+                    internalerror(200410105);
+                  unget_para(paraloc^);
+                  gen_alloc_regloc(list,destloc);
+                  cg.a_load_cgparaloc_anyreg(list,destloc.size,paraloc^,destloc.register,sizeof(aint));
+                end;
+            end;
+          LOC_FPUREGISTER,
+          LOC_CFPUREGISTER :
+            begin
+{$if defined(sparc) or defined(arm)}
+              { Arm and Sparc passes floats in int registers, when loading to fpu register
+                we need a temp }
+              sizeleft := TCGSize2Size[destloc.size];
+              tg.GetTemp(list,sizeleft,sizeleft,tt_normal,tempref);
+              href:=tempref;
+              while assigned(paraloc) do
+                begin
+                  unget_para(paraloc^);
+                  cg.a_load_cgparaloc_ref(list,paraloc^,href,sizeleft,destloc.reference.alignment);
+                  inc(href.offset,TCGSize2Size[paraloc^.size]);
+                  dec(sizeleft,TCGSize2Size[paraloc^.size]);
+                  paraloc:=paraloc^.next;
+>>>>>>> graemeg/cpstrnew
+                end;
+              gen_alloc_regloc(list,destloc);
+              cg.a_loadfpu_ref_reg(list,destloc.size,destloc.size,tempref,destloc.register);
+              tg.UnGetTemp(list,tempref);
+{$else sparc}
+              unget_para(paraloc^);
+              gen_alloc_regloc(list,destloc);
+              { from register to register -> alignment is irrelevant }
+              cg.a_load_cgparaloc_anyreg(list,destloc.size,paraloc^,destloc.register,0);
+              if assigned(paraloc^.next) then
+                internalerror(200410109);
+{$endif sparc}
+            end;
+          LOC_MMREGISTER,
+          LOC_CMMREGISTER :
+            begin
+{$ifndef cpu64bitalu}
+              { ARM vfp floats are passed in integer registers }
+              if (para.size=OS_F64) and
+                 (paraloc^.size in [OS_32,OS_S32]) and
+                 use_vectorfpu(vardef) then
+                begin
+<<<<<<< HEAD
+                  if getsupreg(paraloc.register)<first_mm_imreg then
+                    cg.getcpuregister(list,paraloc.register);
+                end;
+              LOC_FPUREGISTER :
+                begin
+                  if getsupreg(paraloc.register)<first_fpu_imreg then
+                    cg.getcpuregister(list,paraloc.register);
+                end;
+            end;
+>>>>>>> graemeg/cpstrnew
+=======
                   { we need 2x32bit reg }
                   if not assigned(paraloc^.next) or
                      assigned(paraloc^.next^.next) then
@@ -3060,6 +3198,9 @@ implementation
         paramanager.getintparaloc(current_asmdata.CurrAsmList,pd,1,paraloc1);
 =======
         paramanager.getintparaloc(pocall_default,1,paraloc1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         cg.a_load_const_cgpara(list,OS_INT,current_procinfo.calc_stackframe_size,paraloc1);
         paramanager.freecgpara(list,paraloc1);
@@ -3079,6 +3220,9 @@ implementation
         paramanager.getintparaloc(current_asmdata.CurrAsmList,pd,1,paraloc1);
 =======
         paramanager.getintparaloc(pocall_default,1,paraloc1);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         paramanager.freecgpara(list,paraloc1);
         { Call the helper }
@@ -3248,8 +3392,11 @@ implementation
                       vs.initialloc.size:=def_cgsize(vs.vardef);
                       gen_alloc_regvar(list,vs,true);
 <<<<<<< HEAD
+<<<<<<< HEAD
                       hlcg.varsym_set_localloc(list,vs);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                       setlocalloc(vs);
 >>>>>>> graemeg/cpstrnew
                     end;
@@ -3704,6 +3851,7 @@ implementation
                       LOC_CREGISTER :
                         if (pi_has_label in current_procinfo.flags) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(cpu64bitalu)}
                           if def_cgsize(vardef) in [OS_128,OS_S128] then
                             begin
@@ -3713,6 +3861,8 @@ implementation
                           else
 {$elseif defined(cpu32bitalu)}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifndef cpu64bitalu}
 >>>>>>> graemeg/cpstrnew
                           if def_cgsize(vardef) in [OS_64,OS_S64] then
@@ -3928,6 +4078,102 @@ implementation
           NR_FRAME_POINTER_REG);
       end;
 
+=======
+    procedure gen_fpc_dummy(list : TAsmList);
+      begin
+{$ifdef i386}
+        { fix me! }
+        list.concat(Taicpu.Op_const_reg(A_MOV,S_L,1,NR_EAX));
+        list.concat(Taicpu.Op_const(A_RET,S_W,12));
+{$endif i386}
+      end;
+
+
+    procedure InsertInterruptTable;
+
+      procedure WriteVector(const name: string);
+        var
+          ai: taicpu;
+        begin
+{$IFDEF arm}
+          if current_settings.cputype in [cpu_armv7m, cpu_cortexm3] then
+            current_asmdata.asmlists[al_globals].concat(tai_const.Createname(name,0))
+          else
+            begin
+              ai:=taicpu.op_sym(A_B,current_asmdata.RefAsmSymbol(name));
+              ai.is_jmp:=true;
+              current_asmdata.asmlists[al_globals].concat(ai);
+            end;
+{$ENDIF arm}
+        end;
+
+      function GetInterruptTableLength: longint;
+        begin
+{$if defined(ARM)}
+          result:=interruptvectors[current_settings.controllertype];
+{$else}
+          result:=0;
+{$endif}
+        end;
+
+      var
+        hp: tused_unit;
+        sym: tsym;
+        i, i2: longint;
+        interruptTable: array of tprocdef;
+        pd: tprocdef;
+      begin
+        SetLength(interruptTable, GetInterruptTableLength);
+        FillChar(interruptTable[0], length(interruptTable)*sizeof(pointer), 0);
+
+        hp:=tused_unit(usedunits.first);
+        while assigned(hp) do
+          begin
+            for i := 0 to hp.u.symlist.Count-1 do
+              begin
+                sym:=tsym(hp.u.symlist[i]);
+                if not assigned(sym) then
+                  continue;
+                if sym.typ = procsym then
+                  begin
+                    for i2 := 0 to tprocsym(sym).ProcdefList.Count-1 do
+                      begin
+                        pd:=tprocdef(tprocsym(sym).ProcdefList[i2]);
+                        if pd.interruptvector >= 0 then
+                          begin
+                            if pd.interruptvector > high(interruptTable) then
+                              Internalerror(2011030602);
+                            if interruptTable[pd.interruptvector] <> nil then
+                              internalerror(2011030601);
+
+                            interruptTable[pd.interruptvector]:=pd;
+                            break;
+                          end;
+                      end;
+                  end;
+              end;
+            hp:=tused_unit(hp.next);
+          end;
+
+        new_section(current_asmdata.asmlists[al_globals],sec_init,'VECTORS',sizeof(pint));
+        current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global('VECTORS',AT_DATA,0));
+{$IFDEF arm}
+        if current_settings.cputype in [cpu_armv7m, cpu_cortexm3] then
+          current_asmdata.asmlists[al_globals].concat(tai_const.Createname('_stack_top',0)); { ARMv7-M processors have the initial stack value at address 0 }
+{$ENDIF arm}
+
+        for i:=0 to high(interruptTable) do
+          begin
+            if interruptTable[i]<>nil then
+              writeVector(interruptTable[i].mangledname)
+            else
+              writeVector('DefaultHandler'); { Default handler name }
+          end;
+      end;
+
+
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
 =======
     procedure gen_fpc_dummy(list : TAsmList);
       begin

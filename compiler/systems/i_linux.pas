@@ -40,7 +40,11 @@ unit i_linux;
 {$endif segment_threadvars}
                             tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_needs_dwarf_cfi,tf_has_winlike_resources,
+=======
+                            tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
+>>>>>>> graemeg/cpstrnew
 =======
                             tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
 >>>>>>> graemeg/cpstrnew
@@ -110,9 +114,12 @@ unit i_linux;
             shortname    : 'Linux6432';
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,tf_smartlink_sections,
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_pic_uses_got{,tf_smartlink_sections},
                             tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
@@ -180,10 +187,13 @@ unit i_linux;
             shortname    : 'Linux';
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,
                             tf_requires_proper_alignment, { Coldfire seems to need this at least (KB) }
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_m68k;
@@ -320,8 +330,11 @@ unit i_linux;
             shortname    : 'Linux';
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_requires_proper_alignment,tf_smartlink_sections,tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_requires_proper_alignment,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_powerpc64;
@@ -517,8 +530,13 @@ unit i_linux;
                 localalignmax   : 8;
                 recordalignmin  : 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 recordalignmax  : 8;
                 maxCrecordalign : 8
+=======
+                recordalignmax  : 16;
+                maxCrecordalign : 16
+>>>>>>> graemeg/cpstrnew
 =======
                 recordalignmax  : 16;
                 maxCrecordalign : 16
@@ -545,6 +563,9 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_library_needs_pic,tf_smartlink_sections,
                             tf_needs_symbol_type,tf_files_case_sensitive,tf_smartlink_library,
                             tf_requires_proper_alignment,
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                             tf_has_winlike_resources];
             cpu          : cpu_arm;
@@ -613,9 +634,12 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_arm;
@@ -684,9 +708,12 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_arm;
@@ -754,8 +781,11 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_arm;
@@ -1148,6 +1178,134 @@ unit i_linux;
             abi : abi_default
           );
 
+       system_mips_linux_info : tsysteminfo =
+          (
+            system       : system_mips_LINUX;
+            name         : 'Linux for MIPS';
+            shortname    : 'Linux';
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
+                            tf_requires_proper_alignment,
+                            tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
+            cpu          : cpu_mips;
+            unit_env     : 'LINUXUNITS';
+            extradefines : 'UNIX;HASUNIX';
+            exeext       : '';
+            defext       : '.def';
+            scriptext    : '.sh';
+            smartext     : '.sl';
+            unitext      : '.ppu';
+            unitlibext   : '.ppl';
+            asmext       : '.s';
+            objext       : '.o';
+            resext       : '.res';
+            resobjext    : '.or';
+            sharedlibext : '.so';
+            staticlibext : '.a';
+            staticlibprefix : 'libp';
+            sharedlibprefix : 'lib';
+            sharedClibext : '.so';
+            staticClibext : '.a';
+            staticClibprefix : 'lib';
+            sharedClibprefix : 'lib';
+            importlibprefix : 'libimp';
+            importlibext : '.a';
+//            p_ext_support : false;
+            Cprefix      : '';
+            newline      : #10;
+            dirsep       : '/';
+            assem        : as_gas;
+            assemextern  : as_gas;
+            link         : nil;
+            linkextern   : nil;
+            ar           : ar_gnu_ar;
+            res          : res_none;
+            dbg          : dbg_stabs;
+            script       : script_unix;
+            endian       : endian_big;
+            alignment    :
+              (
+                procalign       : 4;
+                loopalign       : 4;
+                jumpalign       : 0;
+                constalignmin   : 0;
+                constalignmax   : 8;
+                varalignmin     : 0;
+                varalignmax     : 8;
+                localalignmin   : 4;
+                localalignmax   : 8;
+                recordalignmin  : 0;
+                recordalignmax  : 2;
+                maxCrecordalign : 4
+              );
+            first_parm_offset : 8;
+            stacksize    : 32*1024*1024;
+            abi : abi_default
+          );
+
+       system_mipsel_linux_info : tsysteminfo =
+          (
+            system       : system_mipsel_LINUX;
+            name         : 'Linux for MIPSEL';
+            shortname    : 'Linux';
+            flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
+                            tf_requires_proper_alignment,
+                            tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
+            cpu          : cpu_mipsel;
+            unit_env     : 'LINUXUNITS';
+            extradefines : 'UNIX;HASUNIX;MIPSEL';
+            exeext       : '';
+            defext       : '.def';
+            scriptext    : '.sh';
+            smartext     : '.sl';
+            unitext      : '.ppu';
+            unitlibext   : '.ppl';
+            asmext       : '.s';
+            objext       : '.o';
+            resext       : '.res';
+            resobjext    : '.or';
+            sharedlibext : '.so';
+            staticlibext : '.a';
+            staticlibprefix : 'libp';
+            sharedlibprefix : 'lib';
+            sharedClibext : '.so';
+            staticClibext : '.a';
+            staticClibprefix : 'lib';
+            sharedClibprefix : 'lib';
+            importlibprefix : 'libimp';
+            importlibext : '.a';
+//            p_ext_support : false;
+            Cprefix      : '';
+            newline      : #10;
+            dirsep       : '/';
+            assem        : as_gas;
+            assemextern  : as_gas;
+            link         : nil;
+            linkextern   : nil;
+            ar           : ar_gnu_ar;
+            res          : res_none;
+            dbg          : dbg_stabs;
+            script       : script_unix;
+            endian       : endian_little;
+            alignment    :
+              (
+                procalign       : 4;
+                loopalign       : 4;
+                jumpalign       : 0;
+                constalignmin   : 0;
+                constalignmax   : 8;
+                varalignmin     : 0;
+                varalignmax     : 8;
+                localalignmin   : 4;
+                localalignmax   : 8;
+                recordalignmin  : 0;
+                recordalignmax  : 2;
+                maxCrecordalign : 4
+              );
+            first_parm_offset : 8;
+            stacksize    : 32*1024*1024;
+            abi : abi_default
+          );
+
   implementation
 
 initialization
@@ -1195,6 +1353,7 @@ initialization
   {$endif linux}
 {$endif CPUARM}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef cpuaarch64}
   {$ifdef linux}
     set_source_info(system_aarch64_linux_info);
@@ -1211,10 +1370,15 @@ initialization
   {$endif linux}
 {$endif CPUMIPSEL}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef CPUMIPS}
   {$ifdef linux}
     set_source_info(system_mipsel_linux_info);
   {$endif linux}
 {$endif CPUMIPS}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end.

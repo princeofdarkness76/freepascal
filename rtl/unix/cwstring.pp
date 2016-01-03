@@ -190,7 +190,11 @@ type
 
 {$ifdef haiku}
 <<<<<<< HEAD
+<<<<<<< HEAD
   function nl_langinfo(__item:nl_item):pchar;cdecl;external 'root' name 'nl_langinfo';
+=======
+  function nl_langinfo(__item:nl_item):pchar;cdecl;external 'locale' name 'nl_langinfo';
+>>>>>>> graemeg/cpstrnew
 =======
   function nl_langinfo(__item:nl_item):pchar;cdecl;external 'locale' name 'nl_langinfo';
 >>>>>>> graemeg/cpstrnew
@@ -230,6 +234,7 @@ threadvar
     threads }
   current_DefaultSystemCodePage: TSystemCodePage;
 
+<<<<<<< HEAD
 
 procedure InitThread;
 var
@@ -275,6 +280,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$if defined(beos) and not defined(haiku)}
 function nl_langinfo(__item:nl_item):pchar;
 begin
@@ -291,6 +298,7 @@ begin
 end;
 {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 function open_iconv_for_cps(cp: TSystemCodePage; const otherencoding: pchar; cp_is_from: boolean): iconv_t;
@@ -325,6 +333,8 @@ function open_iconv_for_cps(cp: TSystemCodePage; const otherencoding: pchar; cp_
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCodePage; len:SizeInt);
   var
     outlength,
@@ -343,6 +353,7 @@ procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCode
     intermediate: rawbytestring;
 {$endif aix}
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef aix}
     { AIX libiconv does not support converting cp866 to anything else except
@@ -383,11 +394,19 @@ procedure Wide2AnsiMove(source:pwidechar; var dest:RawByteString; cp:TSystemCode
 {$ifndef VER2_2}
     if PtrInt(iconv_wide2ansi)=-1 then
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef VER2_2}
+    if PtrInt(iconv_wide2ansi)=-1 then
+>>>>>>> graemeg/cpstrnew
       begin
         DefaultUnicode2AnsiMove(source,dest,DefaultSystemCodePage,len);
         exit;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$endif VER2_2}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif VER2_2}
 >>>>>>> graemeg/cpstrnew
@@ -460,6 +479,7 @@ procedure Ansi2WideMove(source:pchar; cp:TSystemCodePage; var dest:widestring; l
 {$endif aix}
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
     { AIX libiconv does not support converting cp866 to anything else except
       for iso-8859-5 -> always first convert to iso-8859-5, then to UTF-16 }
@@ -498,11 +518,19 @@ procedure Ansi2WideMove(source:pchar; cp:TSystemCodePage; var dest:widestring; l
 {$ifndef VER2_2}
     if PtrInt(iconv_ansi2wide)=-1 then
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef VER2_2}
+    if PtrInt(iconv_ansi2wide)=-1 then
+>>>>>>> graemeg/cpstrnew
       begin
         DefaultAnsi2UnicodeMove(source,DefaultSystemCodePage,dest,len);
         exit;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$endif VER2_2}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif VER2_2}
 >>>>>>> graemeg/cpstrnew
@@ -872,7 +900,11 @@ function CharLengthPChar(const Str: PChar): PtrInt;
     result:=0;
     s:=str;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
+=======
+{$ifndef beos}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifndef beos}
 >>>>>>> graemeg/cpstrnew
@@ -895,6 +927,7 @@ function CharLengthPChar(const Str: PChar): PtrInt;
 
 function CodePointLength(const Str: PChar; maxlookahead: ptrint): PtrInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if not(defined(beos) and not defined(haiku))}
   var
     mbstate: mbstate_t;
@@ -902,6 +935,8 @@ function CodePointLength(const Str: PChar; maxlookahead: ptrint): PtrInt;
   begin
 {$if defined(beos) and not defined(haiku)}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   var
     nextlen: ptrint;
 {$ifndef beos}
@@ -909,6 +944,9 @@ function CodePointLength(const Str: PChar; maxlookahead: ptrint): PtrInt;
 {$endif not beos}
   begin
 {$ifdef beos}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     result:=ptrint(mblen(str,maxlookahead));
 {$else beos}
@@ -1165,8 +1203,12 @@ begin
       LowerUnicodeStringProc:=@LowerWideString;
       CompareUnicodeStringProc:=@CompareWideString;
 <<<<<<< HEAD
+<<<<<<< HEAD
       { CodePage }
       GetStandardCodePageProc:=@GetStandardCodePage;
+=======
+      CompareTextUnicodeStringProc:=@CompareTextWideString;
+>>>>>>> graemeg/cpstrnew
 =======
       CompareTextUnicodeStringProc:=@CompareTextWideString;
 >>>>>>> graemeg/cpstrnew

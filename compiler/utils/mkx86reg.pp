@@ -365,6 +365,9 @@ begin
         begin
           write(nasmfile,'''',nasmnames[i],'''');
         end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       { stabs uses the same register numbering as dwarf
         for x86_64 CPU }

@@ -23,7 +23,11 @@ unit db;
 interface
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes,SysUtils,Variants,FmtBCD,MaskUtils;
+=======
+uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
+>>>>>>> graemeg/cpstrnew
 =======
 uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
 >>>>>>> graemeg/cpstrnew
@@ -278,7 +282,10 @@ type
     FDisplayWidth : Longint;
     FEditMask: TEditMask;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFieldDef: TFieldDef;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FFieldKind : TFieldKind;
@@ -699,7 +706,11 @@ type
     procedure SetAsBoolean(AValue: Boolean); override;
     procedure SetAsString(const AValue: string); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetAsInteger(AValue: Longint); override;
+=======
+    procedure SetAsInteger(AValue: Integer); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetAsInteger(AValue: Integer); override;
 >>>>>>> graemeg/cpstrnew
@@ -846,8 +857,12 @@ type
     function GetAsCurrency: Currency; override;
     function GetAsFloat: Double; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetAsLargeInt: LargeInt; override;
     function GetAsInteger: Longint; override;
+=======
+    function GetAsLongint: Longint; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function GetAsLongint: Longint; override;
 >>>>>>> graemeg/cpstrnew
@@ -859,8 +874,12 @@ type
     procedure SetAsBCD(const AValue: TBCD); override;
     procedure SetAsFloat(AValue: Double); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetAsLargeInt(AValue: LargeInt); override;
     procedure SetAsInteger(AValue: Longint); override;
+=======
+    procedure SetAsLongint(AValue: Longint); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetAsLongint(AValue: Longint); override;
 >>>>>>> graemeg/cpstrnew
@@ -873,7 +892,11 @@ type
     property Value: TBCD read GetAsBCD write SetAsBCD;
   published
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Precision: Longint read FPrecision write FPrecision default 18;
+=======
+    property Precision: Longint read FPrecision write FPrecision default 15;
+>>>>>>> graemeg/cpstrnew
 =======
     property Precision: Longint read FPrecision write FPrecision default 15;
 >>>>>>> graemeg/cpstrnew
@@ -2115,6 +2138,9 @@ const
     varOleStr, varOleStr, varError, varError, varError, varError, varError,
     varOleStr, varOleStr, varVariant, varUnknown, varDispatch, varOleStr,
     varOleStr, varDouble, varOleStr,varOleStr);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 

@@ -1,15 +1,21 @@
 {	CFURLAccess.h
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 
         CFURLAccess is deprecated as of Mac OS X 10.9 and iOS 7.0. The suggested replacement for URLs with network schemes (http, https, ftp, data) is the NSURLConnection class. The suggested replacement for URLs with the file scheme are the foundation classes NSFileManager, NSFileHandle and NSURL, or the CoreFoundation classes CFStream and CFURL.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	Copyright (c) 1998-2009, Apple Inc. All rights reserved.
 }
 {	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
 {   Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -66,11 +72,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -89,6 +98,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -109,6 +119,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -124,6 +136,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -132,13 +147,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -202,6 +221,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -277,7 +324,11 @@ large files.
 { Deprecated -- see top of this file for suggested replacement classes }
 function CFURLCreateDataAndPropertiesFromResource( alloc: CFAllocatorRef; url: CFURLRef; resourceData: CFDataRefPtr; properties: CFDictionaryRefPtr; desiredProperties: CFArrayRef; var errorCode: SInt32 ): Boolean; external name '_CFURLCreateDataAndPropertiesFromResource';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_9, 2_0, 7_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -293,7 +344,11 @@ CFURLCreateDataAndPropertiesFromResource(), above.
 { Deprecated -- see top of this file for suggested replacement classes }
 function CFURLWriteDataAndPropertiesToResource( url: CFURLRef; dataToWrite: CFDataRef; propertiesToWrite: CFDictionaryRef; var errorCode: SInt32 ): Boolean; external name '_CFURLWriteDataAndPropertiesToResource';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_9, 2_0, 7_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -304,7 +359,11 @@ Returns success or failure; errorCode set as above.
 { Deprecated -- see top of this file for suggested replacement classes }
 function CFURLDestroyResource( url: CFURLRef; var errorCode: SInt32 ): Boolean; external name '_CFURLDestroyResource';
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_9, 2_0, 7_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -314,6 +373,7 @@ Returns NULL on error and sets errorCode accordingly.
 }
 { Deprecated -- see top of this file for suggested replacement classes }
 function CFURLCreatePropertyFromResource( alloc: CFAllocatorRef; url: CFURLRef; proprty: CFStringRef; var errorCode: SInt32 ): CFTypeRef; external name '_CFURLCreatePropertyFromResource';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_9, 2_0, 7_0) *)
 
@@ -335,6 +395,11 @@ const
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Common error codes (returned only by the older APIs that predate CFError) }
 type
 	CFURLError = SIGNEDLONG;
@@ -354,6 +419,7 @@ const
 
 var kCFURLFileExists: CFStringRef; external name '_kCFURLFileExists'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_DEPRECATED(10_0, 10_9, 2_0, 7_0) *)
 var kCFURLFileDirectoryContents: CFStringRef; external name '_kCFURLFileDirectoryContents'; (* attribute const *)
 (* CF_DEPRECATED(10_0, 10_9, 2_0, 7_0) *)
@@ -370,6 +436,8 @@ var kCFURLHTTPStatusCode: CFStringRef; external name '_kCFURLHTTPStatusCode'; (*
 var kCFURLHTTPStatusLine: CFStringRef; external name '_kCFURLHTTPStatusLine'; (* attribute const *)
 (* CF_DEPRECATED(10_0, 10_9, 2_0, 7_0) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 var kCFURLFileDirectoryContents: CFStringRef; external name '_kCFURLFileDirectoryContents'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -385,6 +453,9 @@ var kCFURLHTTPStatusCode: CFStringRef; external name '_kCFURLHTTPStatusCode'; (*
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 var kCFURLHTTPStatusLine: CFStringRef; external name '_kCFURLHTTPStatusLine'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 { The value of kCFURLFileExists is a CFBoolean }

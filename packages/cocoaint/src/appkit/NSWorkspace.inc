@@ -121,10 +121,15 @@ var
   private
     _notificationCenter: NSNotificationCenter;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef cpu64}
     deviceStatusCount: cint;
     applicationStatusCount: cint;
 {$endif cpu64}
+=======
+    deviceStatusCount: cint;
+    applicationStatusCount: cint;
+>>>>>>> graemeg/cpstrnew
 =======
     deviceStatusCount: cint;
     applicationStatusCount: cint;

@@ -15,11 +15,15 @@ const
   MAX_VOICES = 32;
   SND_BUFFERSIZE = 384;  // output 2ms sound data at 48KHz
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef HW_DOL}
   DSP_DEFAULT_FREQ = 48044;
 {$else}
 	DSP_DEFAULT_FREQ = 48000;
 {$endif}
+=======
+  DSP_DEFAULT_FREQ = 48000;
+>>>>>>> graemeg/cpstrnew
 =======
   DSP_DEFAULT_FREQ = 48000;
 >>>>>>> graemeg/cpstrnew

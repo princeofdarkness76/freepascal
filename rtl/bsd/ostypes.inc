@@ -145,6 +145,7 @@ TYPE
 
   { directory services }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef darwin_new_iostructs}
 {$ifdef dragonfly}
    dirent  = record
@@ -159,6 +160,9 @@ TYPE
 =======
 {$ifndef darwinarm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef darwinarm}
+>>>>>>> graemeg/cpstrnew
    dirent  = record
         d_fileno      : cuint32;                        // file number of entry
         d_reclen      : cuint16;                        // length of this record
@@ -167,8 +171,12 @@ TYPE
         d_name        : array[0..(255 + 1)-1] of char;  // name must be no longer than this
    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 {$else not darwin_new_iostructs}
+=======
+{$else not darwinarm}
+>>>>>>> graemeg/cpstrnew
 =======
 {$else not darwinarm}
 >>>>>>> graemeg/cpstrnew
@@ -184,7 +192,11 @@ TYPE
    end;
    {$packrecords c}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif darwin_new_iostructs}
+=======
+{$endif darwinarm}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif darwinarm}
 >>>>>>> graemeg/cpstrnew

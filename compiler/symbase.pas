@@ -98,7 +98,10 @@ interface
           currentvisibility : tvisibility;
           currentlyoptional : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
           tableoptions : tsymtableoptions;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           { level of symtable, used for nested procedures }

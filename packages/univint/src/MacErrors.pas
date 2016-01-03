@@ -5,9 +5,12 @@
                  The contents of this header file are deprecated.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1985-2011 by Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
@@ -19,6 +22,9 @@
  
 }
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -75,11 +81,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -97,6 +106,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -128,6 +138,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -135,7 +162,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -148,7 +178,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -158,6 +191,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -169,17 +203,26 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -214,6 +257,15 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -2263,6 +2315,7 @@ const
 	codecOffscreenFailedPleaseRetryErr = -8992;
 	badCodecCharacterizationErr = -8993;
 	noThumbnailFoundErr = -8994;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -2398,6 +2451,75 @@ const
 
 <<<<<<< HEAD
 =======
+
+>>>>>>> graemeg/cpstrnew
+=======
+
+
+{ PCCard error codes }
+const
+	kBadAdapterErr = -9050; { invalid adapter number}
+	kBadAttributeErr = -9051; { specified attributes field value is invalid}
+	kBadBaseErr = -9052; { specified base system memory address is invalid}
+	kBadEDCErr = -9053; { specified EDC generator specified is invalid}
+	kBadIRQErr = -9054; { specified IRQ level is invalid}
+	kBadOffsetErr = -9055; { specified PC card memory array offset is invalid}
+	kBadPageErr = -9056; { specified page is invalid}
+	kBadSizeErr = -9057; { specified size is invalid}
+	kBadSocketErr = -9058; { specified logical or physical socket number is invalid}
+	kBadTypeErr = -9059; { specified window or interface type is invalid}
+	kBadVccErr = -9060; { specified Vcc power level index is invalid}
+	kBadVppErr = -9061; { specified Vpp1 or Vpp2 power level index is invalid}
+	kBadWindowErr = -9062; { specified window is invalid}
+	kBadArgLengthErr = -9063; { ArgLength argument is invalid}
+	kBadArgsErr = -9064; { values in argument packet are invalid}
+	kBadHandleErr = -9065; { clientHandle is invalid}
+	kBadCISErr = -9066; { CIS on card is invalid}
+	kBadSpeedErr = -9067; { specified speed is unavailable}
+	kReadFailureErr = -9068; { unable to complete read request}
+	kWriteFailureErr = -9069; { unable to complete write request}
+	kGeneralFailureErr = -9070; { an undefined error has occurred}
+	kNoCardErr = -9071; { no PC card in the socket}
+	kUnsupportedFunctionErr = -9072; { function is not supported by this implementation}
+	kUnsupportedModeErr = -9073; { mode is not supported}
+	kBusyErr = -9074; { unable to process request at this time - try later}
+	kWriteProtectedErr = -9075; { media is write-protected}
+	kConfigurationLockedErr = -9076; { a configuration has already been locked}
+	kInUseErr = -9077; { requested resource is being used by a client}
+	kNoMoreItemsErr = -9078; { there are no more of the requested item}
+	kOutOfResourceErr = -9079; { Card Services has exhausted the resource}
+	kNoCardSevicesSocketsErr = -9080;
+	kInvalidRegEntryErr = -9081;
+	kBadLinkErr = -9082;
+	kBadDeviceErr = -9083;
+	k16BitCardErr = -9084;
+	kCardBusCardErr = -9085;
+	kPassCallToChainErr = -9086;
+	kCantConfigureCardErr = -9087;
+	kPostCardEventErr = -9088; { _PCCSLPostCardEvent failed and dropped an event }
+	kInvalidDeviceNumber = -9089;
+	kUnsupportedVsErr = -9090; { Unsupported Voltage Sense }
+	kInvalidCSClientErr = -9091; { Card Services ClientID is not registered }
+	kBadTupleDataErr = -9092; { Data in tuple is invalid }
+	kBadCustomIFIDErr = -9093; { Custom interface ID is invalid }
+	kNoIOWindowRequestedErr = -9094; { Request I/O window before calling configuration }
+	kNoMoreTimerClientsErr = -9095; { All timer callbacks are in use }
+	kNoMoreInterruptSlotsErr = -9096; { All internal Interrupt slots are in use }
+	kNoClientTableErr = -9097; { The client table has not be initialized yet }
+	kUnsupportedCardErr = -9098; { Card not supported by generic enabler}
+	kNoCardEnablersFoundErr = -9099; { No Enablers were found}
+	kNoEnablerForCardErr = -9100; { No Enablers were found that can support the card}
+	kNoCompatibleNameErr = -9101; { There is no compatible driver name for this device}
+	kClientRequestDenied = -9102; { CS Clients should return this code inorder to }
+                                        {   deny a request-type CS Event                }
+	kNotReadyErr = -9103; { PC Card failed to go ready }
+	kTooManyIOWindowsErr = -9104; { device requested more than one I/O window }
+	kAlreadySavedStateErr = -9105; { The state has been saved on previous call }
+	kAttemptDupCardEntryErr = -9106; { The Enabler was asked to create a duplicate card entry }
+	kCardPowerOffErr = -9107; { Power to the card has been turned off }
+	kNotZVCapableErr = -9108; { This socket does not support Zoomed Video }
+	kNoCardBusCISErr = -9109; { No valid CIS exists for this CardBus card }
+
 
 >>>>>>> graemeg/cpstrnew
 const
@@ -2923,6 +3045,7 @@ const
    * receive errCouldntSetFocus or eventNotHandledErr.
    }
 	errControlDoesntSupportFocus = -30582;
+<<<<<<< HEAD
 
   {
    * This is a variant of and serves the same purpose as
@@ -3047,6 +3170,113 @@ const
 =======
 
   {
+=======
+
+  {
+   * This is a variant of and serves the same purpose as
+   * controlHandleInvalidErr. Various Control Manager APIs will return
+   * this error if one of the passed-in controls is NULL or otherwise
+   * invalid.
+   }
+	errUnknownControl = -30584;
+
+  {
+   * The focus couldn't be set to a given control or advanced through a
+   * hierarchy of controls. This could be because the control doesn't
+   * support focusing, the control isn't currently embedded in a
+   * window, or there are no focusable controls in the window when you
+   * try to advance the focus.
+   }
+	errCouldntSetFocus = -30585;
+
+  {
+   * This is returned by GetRootControl before a root control was
+   * created for a given non-compositing window. Alternatively, you
+   * called a Control Manager API such as ClearKeyboardFocus or
+   * AutoEmbedControl that requires a root control, but there is no
+   * root control on the window.
+   }
+	errNoRootControl = -30586;
+
+  {
+   * This is returned by CreateRootControl on the second and successive
+   * calls for a given window.
+   }
+	errRootAlreadyExists = -30587;
+
+  {
+   * The ControlPartCode you passed to a Control Manager API is out of
+   * range, invalid, or otherwise unsupported.
+   }
+	errInvalidPartCode = -30588;
+
+  {
+   * You called CreateRootControl after creating one or more non-root
+   * controls in a window, which is illega; if you want an embedding
+   * hierarchy on a given window, you must call CreateRootControl
+   * before creating any other controls for a given window. This will
+   * never be returned on Mac OS X, because a root control is created
+   * automatically if it doesn't already exist the first time any
+   * non-root control is created in a window.
+   }
+	errControlsAlreadyExist = -30589;
+
+  {
+   * You passed a control that doesn't support embedding to a Control
+   * Manager API which requires the control to support embedding.
+   }
+	errControlIsNotEmbedder = -30590;
+
+  {
+   * You called GetControlData or SetControlData with a buffer whose
+   * size does not match the size of the data you are attempting to get
+   * or set.
+   }
+	errDataSizeMismatch = -30591;
+
+  {
+   * You called TrackControl, HandleControlClick or a similar mouse
+   * tracking API on a control that is invisible or disabled. You
+   * cannot track controls that are invisible or disabled.
+   }
+	errControlHiddenOrDisabled = -30592;
+
+  {
+   * You called EmbedControl or a similar API with the same control in
+   * the parent and child parameters. You cannot embed a control into
+   * itself.
+   }
+	errCantEmbedIntoSelf = -30594;
+
+  {
+   * You called EmbedControl or a similiar API to embed the root
+   * control in another control. You cannot embed the root control in
+   * any other control.
+   }
+	errCantEmbedRoot = -30595;
+
+  {
+   * You called GetDialogItemAsControl on a dialog item such as a
+   * kHelpDialogItem that is not represented by a control.
+   }
+	errItemNotControl = -30596;
+
+  {
+   * You called GetControlData or SetControlData with a buffer that
+   * represents a versioned structure, but the version is unsupported
+   * by the control definition. This can happen with the Tabs control
+   * and the kControlTabInfoTag.
+   }
+	controlInvalidDataVersionErr = -30597;
+
+  {
+   * You called SetControlProperty, GetControlProperty, or a similar
+   * API with an illegal property creator OSType.
+   }
+	controlPropertyInvalid = -5603;
+
+  {
+>>>>>>> graemeg/cpstrnew
    * You called GetControlProperty or a similar API with a property
    * creator and property tag that does not currently exist on the
    * given control.
@@ -3058,6 +3288,9 @@ const
    }
 	controlHandleInvalidErr = -30599;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 { URLAccess Error Codes }
@@ -3079,6 +3312,7 @@ const
 	kURLInvalidConfigurationError = -30786;
 	kURLAccessNotAvailableError = -30787;
 	kURL68kNotSupportedError = -30788;
+<<<<<<< HEAD
 
 {
     Error Codes for C++ Exceptions
@@ -3117,6 +3351,43 @@ const
 
 >>>>>>> graemeg/cpstrnew
 
+=======
+
+{
+    Error Codes for C++ Exceptions
+
+        C++ exceptions cannot be thrown across certain boundaries, for example,
+        from an event handler back to the main application.  You may use these
+        error codes to communicate an exception through an API that only supports
+        OSStatus error codes.  Mac OS APIs will never generate these error codes;
+        they are reserved for developer convenience only.
+}
+const
+	errCppGeneral = -32000;
+	errCppbad_alloc = -32001; { thrown by new }
+	errCppbad_cast = -32002; { thrown by dynamic_cast when fails with a referenced type }
+	errCppbad_exception = -32003; { thrown when an exception doesn't match any catch }
+	errCppbad_typeid = -32004; { thrown by typeid }
+	errCpplogic_error = -32005;
+	errCppdomain_error = -32006;
+	errCppinvalid_argument = -32007;
+	errCpplength_error = -32008;
+	errCppout_of_range = -32009;
+	errCppruntime_error = -32010;
+	errCppoverflow_error = -32011;
+	errCpprange_error = -32012;
+	errCppunderflow_error = -32013;
+	errCppios_base_failure = -32014;
+	errCppLastSystemDefinedError = -32020;
+	errCppLastUserDefinedError = -32049; { -32021 through -32049 are free for developer-defined exceptions}
+
+{ ComponentError codes}
+const
+	badComponentInstance = $80008001; { when cast to an OSErr this is -32767}
+	badComponentSelector = $80008002; { when cast to an OSErr this is -32766}
+
+
+>>>>>>> graemeg/cpstrnew
 const
 	dsBusError = 1;    {bus error}
 	dsAddressErr = 2;    {address error}
@@ -3358,6 +3629,7 @@ procedure SysError( errorCode: SInt16 ); external name '_SysError';
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
 const
 	dsBusError = 1;    {bus error}
@@ -3600,6 +3872,8 @@ procedure SysError( errorCode: SInt16 ); external name '_SysError';
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
+=======
+>>>>>>> graemeg/cpstrnew
 
 end.
 {$endc} {not MACOSALLINCLUDE}

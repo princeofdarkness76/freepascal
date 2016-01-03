@@ -4,6 +4,7 @@
      Contains:   API for communicating with audio hardware.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 1985-2011 by Apple, Inc., all rights reserved.
 =======
      Copyright:  (c) 1985-2008 by Apple Inc., all rights reserved.
@@ -20,11 +21,21 @@
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
+=======
+     Copyright:  (c) 1985-2008 by Apple Inc., all rights reserved.
+
+     Bugs?:      For bug reports, consult the following page on
+                 the World Wide Web:
+
+>>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
 
 ==================================================================================================}
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {
     Modified for use with Free Pascal
@@ -81,11 +92,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -104,6 +118,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -124,6 +139,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -139,6 +156,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -147,13 +167,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -235,12 +259,42 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -290,6 +344,9 @@ uses MacTypes, CFRunLoop, CoreAudioTypes;
 
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
@@ -354,6 +411,63 @@ uses MacTypes, CFRunLoop, CoreAudioTypes;
     also available as properties on the AudioDevice or AudioStream.
 }
 
+<<<<<<< HEAD
+=======
+//==================================================================================================
+//#pragma mark    Error Constants
+
+{!
+    @enum           Error Constants
+    @abstract       The error constants unique to the HAL.
+    @discussion     These are the error constants that are unique to the HAL. Note that the HAL's
+                    functions can and will return other codes that are not listed here. While these
+                    constants give a general idea of what might have gone wrong during the execution
+                    of an API call, if an API call returns anything other than kAudioHardwareNoError
+                    it is to be viewed as the same failure regardless of what constant is actually
+                    returned.
+    @constant       kAudioHardwareNoError
+                        The function call completed successfully.
+    @constant       kAudioHardwareNotRunningError
+                        The function call requires that the hardware be running but it isn't.
+    @constant       kAudioHardwareUnspecifiedError
+                        The function call failed while doing something that doesn't provide any
+                        error messages.
+    @constant       kAudioHardwareUnknownPropertyError
+                        The AudioObject doesn't know about the property at the given address.
+    @constant       kAudioHardwareBadPropertySizeError
+                        An improperly sized buffer was provided when accessing the data of a
+                        property.
+    @constant       kAudioHardwareIllegalOperationError
+                        The requested operation couldn't be completed.
+    @constant       kAudioHardwareBadObjectError
+                        The AudioObjectID passed to the function doesn't map to a valid AudioObject.
+    @constant       kAudioHardwareBadDeviceError
+                        The AudioDeviceID passed to the function doesn't map to a valid AudioDevice.
+    @constant       kAudioHardwareBadStreamError
+                        The AudioStreamID passed to the function doesn't map to a valid AudioStream.
+    @constant       kAudioHardwareUnsupportedOperationError
+                        The AudioObject doesn't support the requested operation.
+    @constant       kAudioDeviceUnsupportedFormatError
+                        The AudioStream doesn't support the requested format.
+    @constant       kAudioDevicePermissionsError
+                        The requested operation can't be completed because the process doesn't have
+                        permission.
+}
+const
+	kAudioHardwareNoError = 0;
+	kAudioHardwareNotRunningError = FourCharCode('stop');
+	kAudioHardwareUnspecifiedError = FourCharCode('what');
+	kAudioHardwareUnknownPropertyError = FourCharCode('who?');
+	kAudioHardwareBadPropertySizeError = FourCharCode('!siz');
+	kAudioHardwareIllegalOperationError = FourCharCode('nope');
+	kAudioHardwareBadObjectError = FourCharCode('!obj');
+	kAudioHardwareBadDeviceError = FourCharCode('!dev');
+	kAudioHardwareBadStreamError = FourCharCode('!str');
+	kAudioHardwareUnsupportedOperationError = FourCharCode('unop');
+	kAudioDeviceUnsupportedFormatError = FourCharCode('!dat');
+	kAudioDevicePermissionsError = FourCharCode('!hog');
+
+>>>>>>> graemeg/cpstrnew
 //==================================================================================================
 //  Includes
 
@@ -394,6 +508,9 @@ uses MacTypes, CFRunLoop, CoreAudioTypes;
                         AudioDeviceGetProperty(), and AudioDeviceSetProperty().
     @constant       kAudioPropertyWildcardChannel
                         A synonym for kAudioObjectPropertyElementWildcard.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 }
 const
@@ -441,7 +558,10 @@ type
                         A CFString that contains the bundle ID of the plug-in that instantiated the
                         object. The caller is responsible for releasing the returned CFObject.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @constant       kAudioObjectPropertyName
                         A CFString that contains the human readable name of the object. The caller
                         is responsible for releasing the returned CFObject.
@@ -641,8 +761,11 @@ function AudioObjectAddPropertyListener( inObjectID: AudioObjectID; const (*var*
 function AudioObjectRemovePropertyListener( inObjectID: AudioObjectID; const (*var*) inAddress: AudioObjectPropertyAddress; inListener: AudioObjectPropertyListenerProc; inClientData: UnivPtr ): OSStatus; external name '_AudioObjectRemovePropertyListener';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 //==================================================================================================
 //#pragma mark    AudioControl Constants
@@ -952,6 +1075,15 @@ const
 const
 	kAudioHardwareRunLoopMode = 'com.apple.audio.CoreAudio';
 
+{!
+    @defined        kAudioHardwareRunLoopMode
+    @discussion     The name of the run loop mode to which only HAL run loop sources and sources
+                    added via AudioHardwareAddRunLoopSource() belong. This is the mode in which to
+                    task a run loop in order to ensure that just HAL related events are handled.
+}
+const
+	kAudioHardwareRunLoopMode = 'com.apple.audio.CoreAudio';
+
 //==================================================================================================
 //#pragma mark    AudioSystemObject Properties
 
@@ -1007,7 +1139,10 @@ const
                         a UInt32, but it's value has no currently defined meaning and clients may
                         pass any value when setting it to trigger the cache flush.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @constant       kAudioHardwarePropertyDevices
                         An array of the AudioDeviceIDs that represent all the devices currently
                         available to the system.
@@ -1023,6 +1158,9 @@ const
                         CFStringRef containing a UID into the AudioDeviceID that refers to the
                         AudioDevice with that UID. This property will return kAudioDeviceUnknown if
                         the given UID does not match any currently available AudioDevice.
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     @constant       kAudioHardwarePropertyProcessIsAudible
                         A UInt32 where a non-zero value indicates that the audio of the process will
@@ -1052,6 +1190,7 @@ const
                         user of the process is either an active console session or a headless
                         session.
 <<<<<<< HEAD
+<<<<<<< HEAD
     @constant       kAudioHardwarePropertyServiceRestarted
                         A UInt32 whose value has no meaning. Rather, this property exists so that
                         clients can be informed when the service has been reset for some reason.
@@ -1060,6 +1199,8 @@ const
 }
 const
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @constant       kAudioHardwarePropertyMixStereoToMono
                         A UInt32 where a value other than 0 indicates that AudioDevices should mix
                         stereo signals down to mono. Note that the two channels on the device that
@@ -1070,6 +1211,9 @@ const
 	kAudioHardwarePropertyProcessIsMaster = FourCharCode('mast');
 	kAudioHardwarePropertyIsInitingOrExiting = FourCharCode('inot');
 	kAudioHardwarePropertyUserIDChanged = FourCharCode('euid');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	kAudioHardwarePropertyDevices = FourCharCode('dev#');
 	kAudioHardwarePropertyDefaultInputDevice = FourCharCode('dIn ');
@@ -1085,6 +1229,9 @@ const
 	kAudioHardwarePropertyUserIDChanged = FourCharCode('euid');
 =======
 	kAudioHardwarePropertyDeviceForUID = FourCharCode('duid');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	kAudioHardwarePropertyProcessIsAudible = FourCharCode('pmut');
 	kAudioHardwarePropertySleepingIsAllowed = FourCharCode('slep');
@@ -1093,8 +1240,11 @@ const
 	kAudioHardwarePropertyPlugInForBundleID = FourCharCode('pibi');
 	kAudioHardwarePropertyUserSessionIsActiveOrHeadless = FourCharCode('user');
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioHardwarePropertyServiceRestarted = FourCharCode('srst');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	kAudioHardwarePropertyMixStereoToMono = FourCharCode('stmo');
 
 {!
@@ -1136,6 +1286,9 @@ const
 	kAudioHardwarePropertyBootChimeVolumeScalarToDecibels = FourCharCode('bv2d');
 	kAudioHardwarePropertyBootChimeVolumeDecibelsToScalar = FourCharCode('bd2v');
 	kAudioHardwarePropertyBootChimeVolumeDecibelsToScalarTransferFunction = FourCharCode('bvtf');
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 //==================================================================================================
@@ -1184,7 +1337,10 @@ function AudioHardwareRemoveRunLoopSource( inRunLoopSource: CFRunLoopSourceRef )
 function AudioHardwareUnload: OSStatus; external name '_AudioHardwareUnload';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 {!
     @function       AudioHardwareGetPropertyInfo
@@ -1342,10 +1498,13 @@ const
 	kAudioTransportManagerDestroyEndPointDevice = FourCharCode('ddev');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //==================================================================================================
 //#pragma mark -
 //#pragma mark AudioDevice Types
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {!
@@ -1403,6 +1562,37 @@ type
                     times provided
 <<<<<<< HEAD
 =======
+}
+type
+	AudioDeviceIOProcID = AudioDeviceIOProc;
+
+{!
+    @struct         AudioHardwareIOProcStreamUsage
+    @abstract       This structure describes which streams a given AudioDeviceIOProc will use. It is
+                    used in conjunction with kAudioDevicePropertyIOProcStreamUsage.
+    @field          mIOProc
+                        The IOProc whose stream usage is being specified.
+    @field          mNumberStreams
+                        The number of streams being specified.
+    @field          mStreamIsOn
+                        An array of UInt32's whose length is specified by mNumberStreams. Each
+                        element of the array corresponds to a stream. A value of 0 means the stream
+                        is not to be enabled. Any other value means the stream is to be used.
+}
+type
+	AudioHardwareIOProcStreamUsage = record
+		mIOProc: UnivPtr;
+		mNumberStreams: UInt32;
+		mStreamIsOn: array[0..0] of UInt32;
+	end;
+
+{!
+    @typedef        AudioDeviceIOProcID
+    @abstract       An AudioDeviceIOProcID represents both an IOProc and the client data that goes
+                    with it. Once created, an AudioDeviceIOProcID can be used everywhere one would
+                    use a regular IOProc. The purpose for an AudioDeviceIOProcID is to allow a
+                    client to register the same function pointer as an IOProc with a device multiple
+                    times provided
 }
 type
 	AudioDeviceIOProcID = AudioDeviceIOProc;
@@ -1613,7 +1803,10 @@ const
                         the pid_t pointed to by inPropertyData will contain the new value of the
                         property.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @constant       kAudioDevicePropertyLatency
                         A UInt32 containing the number of frames of latency in the AudioDevice. Note
                         that input and output latency may differ. Further, the AudioDevice's
@@ -2204,7 +2397,10 @@ const
     @discussion     AudioDeviceIOProcIDs allow for the client to register the same function pointer
                     with a device multiple times
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @param          inDevice
                         The AudioDevice to register the IOProc with.
     @param          inProc
@@ -2242,6 +2438,9 @@ function AudioDeviceDestroyIOProcID( inDevice: AudioDeviceID; inIOProcID: AudioD
                     wasteful of system resources. Rather, it is recommended that the client do any
                     necessary mixing itself so that only one IOProc is necessary.
                     This routine has been deprecated in favor of AudioDeviceCreateIOProcID().
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     @param          inDevice
                         The AudioDevice to register the IOProc with.
@@ -2272,6 +2471,9 @@ function AudioDeviceAddIOProc( inDevice: AudioDeviceID; inProc: AudioDeviceIOPro
     @function       AudioDeviceRemoveIOProc
     @abstract       Unregisters the given AudioDeviceIOProc from the AudioDevice.
                     This routine has been deprecated in favor of AudioDeviceDestroyIOProcID().
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     @param          inDevice
                         The AudioDevice from which the ID came.
@@ -2285,6 +2487,9 @@ function AudioDeviceDestroyIOProcID( inDevice: AudioObjectID; inIOProcID: AudioD
 =======
 function AudioDeviceRemoveIOProc( inDevice: AudioDeviceID; inProc: AudioDeviceIOProc ): OSStatus; external name '_AudioDeviceRemoveIOProc';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0) *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {!
@@ -2301,7 +2506,11 @@ function AudioDeviceRemoveIOProc( inDevice: AudioDeviceID; inProc: AudioDeviceIO
     @result         An OSStatus indicating success or failure.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AudioDeviceStart( inDevice: AudioObjectID; inProcID: AudioDeviceIOProcID ): OSStatus; external name '_AudioDeviceStart';
+=======
+function AudioDeviceStart( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID ): OSStatus; external name '_AudioDeviceStart';
+>>>>>>> graemeg/cpstrnew
 =======
 function AudioDeviceStart( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID ): OSStatus; external name '_AudioDeviceStart';
 >>>>>>> graemeg/cpstrnew
@@ -2327,7 +2536,11 @@ function AudioDeviceStart( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcI
                     not NULL.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AudioDeviceStartAtTime( inDevice: AudioObjectID; inProcID: AudioDeviceIOProcID; ioRequestedStartTime: AudioTimeStampPtr; inFlags: UInt32 ): OSStatus; external name '_AudioDeviceStartAtTime';
+=======
+function AudioDeviceStartAtTime( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID; ioRequestedStartTime: AudioTimeStampPtr; inFlags: UInt32 ): OSStatus; external name '_AudioDeviceStartAtTime';
+>>>>>>> graemeg/cpstrnew
 =======
 function AudioDeviceStartAtTime( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID; ioRequestedStartTime: AudioTimeStampPtr; inFlags: UInt32 ): OSStatus; external name '_AudioDeviceStartAtTime';
 >>>>>>> graemeg/cpstrnew
@@ -2341,7 +2554,10 @@ function AudioDeviceStartAtTime( inDevice: AudioDeviceID; inProcID: AudioDeviceI
     @param          inProcID
                         The AudioDeviceIOProcID to stop.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     @result         An OSStatus indicating success or failure.
 }
 function AudioDeviceStop( inDevice: AudioDeviceID; inProcID: AudioDeviceIOProcID ): OSStatus; external name '_AudioDeviceStop';
@@ -2373,6 +2589,9 @@ function AudioDeviceStop( inDevice: AudioObjectID; inProcID: AudioDeviceIOProcID
 =======
 function AudioDeviceRead( inDevice: AudioDeviceID; const (*var*) inStartTime: AudioTimeStamp; var outData: AudioBufferList ): OSStatus; external name '_AudioDeviceRead';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0) *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {!
@@ -2390,6 +2609,9 @@ function AudioDeviceRead( inDevice: AudioDeviceID; const (*var*) inStartTime: Au
 function AudioDeviceGetCurrentTime( inDevice: AudioObjectID; var outTime: AudioTimeStamp ): OSStatus; external name '_AudioDeviceGetCurrentTime';
 =======
 function AudioDeviceGetCurrentTime( inDevice: AudioDeviceID; var outTime: AudioTimeStamp ): OSStatus; external name '_AudioDeviceGetCurrentTime';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -2413,6 +2635,9 @@ function AudioDeviceGetCurrentTime( inDevice: AudioDeviceID; var outTime: AudioT
 function AudioDeviceTranslateTime( inDevice: AudioObjectID; const (*var*) inTime: AudioTimeStamp; var outTime: AudioTimeStamp ): OSStatus; external name '_AudioDeviceTranslateTime';
 =======
 function AudioDeviceTranslateTime( inDevice: AudioDeviceID; const (*var*) inTime: AudioTimeStamp; var outTime: AudioTimeStamp ): OSStatus; external name '_AudioDeviceTranslateTime';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 
@@ -2904,6 +3129,9 @@ function AudioStreamAddPropertyListener( inStream: AudioStreamID; inChannel: UIn
 }
 function AudioStreamRemovePropertyListener( inStream: AudioStreamID; inChannel: UInt32; inPropertyID: AudioDevicePropertyID; inProc: AudioStreamPropertyListenerProc ): OSStatus; external name '_AudioStreamRemovePropertyListener';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_2_0, __IPHONE_2_0) *)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 //==================================================================================================
@@ -3002,10 +3230,13 @@ const
                         Constants section. The caller is responsible for releasing the returned
                         CFObject.
 <<<<<<< HEAD
+<<<<<<< HEAD
     @constant       kAudioAggregateDevicePropertyMasterSubDevice
                         A CFString that contains the UID for the AudioDevice that is currently
                         serving as the master time base of the aggregate device. The caller is
                         responsible for releasing the returned CFObject.
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 }
@@ -3167,6 +3398,9 @@ const
 =======
 
 {$endc} {TARGET_OS_MAC}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

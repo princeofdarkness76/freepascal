@@ -40,7 +40,10 @@ type
 
   TMessageBoxHandler = function(Sender: TObject; AText: String; Buttons: TWebButtons; Loaded: string = ''): string of object;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TOnGetUrlProc = procedure(ParamNames, ParamValues, KeepParams: array of string; Action: string; var URL: string) of object;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   TWebController = class;
@@ -130,7 +133,10 @@ type
     FBaseURL: string;
     FMessageBoxHandler: TMessageBoxHandler;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOnGetURL: TOnGetUrlProc;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FScriptName: string;
@@ -148,7 +154,10 @@ type
     function GetScripts: TFPObjectList; virtual; abstract;
     function GetRequest: TRequest;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property OnGetURL: TOnGetUrlProc read FOnGetURL write FOnGetURL;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   public
@@ -177,7 +186,10 @@ type
 
     function IncrementIterationLevel: integer; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function ResetIterationLevel: integer; virtual;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure SetIterationIDSuffix(AIterationLevel: integer; IDSuffix: string); virtual;
@@ -264,7 +276,10 @@ type
   Protected
     function CreateWriter (Doc : THTMLDocument) : THTMLWriter; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetIdentification: string; virtual;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function GetIDSuffix: string; virtual;
@@ -305,7 +320,10 @@ type
     procedure HandleAjaxRequest(ARequest: TRequest; AnAjaxResponse: TAjaxResponse); virtual;
     procedure ForeachContentProducer(AForeachChildsProc: TForeachContentProducerProc; Recursive: boolean);
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Identification: string read GetIdentification;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     property Childs[Index: integer]: THTMLContentProducer read GetContentProducers;
@@ -535,7 +553,11 @@ type
   end;
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   EHTMLError = Class(EHTTP);
+=======
+  EHTMLError = Class(Exception);
+>>>>>>> graemeg/cpstrnew
 =======
   EHTMLError = Class(Exception);
 >>>>>>> graemeg/cpstrnew
@@ -626,7 +648,11 @@ end;
 procedure TJavaScriptStack.RedrawContentProducer(AContentProducer: THTMLContentProducer);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   raise EHTMLError.Create('RedrawContentProducer not supported by current WebController');
+=======
+  raise exception.Create('RedrawContentProducer not supported by current WebController');
+>>>>>>> graemeg/cpstrnew
 =======
   raise exception.Create('RedrawContentProducer not supported by current WebController');
 >>>>>>> graemeg/cpstrnew
@@ -635,7 +661,11 @@ end;
 procedure TJavaScriptStack.CallServerEvent(AHTMLContentProducer: THTMLContentProducer; AEvent: Integer; APostVariable: string = '');
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   raise EHTMLError.Create('SendServerEvent not supported by current WebController');
+=======
+  raise exception.Create('SendServerEvent not supported by current WebController');
+>>>>>>> graemeg/cpstrnew
 =======
   raise exception.Create('SendServerEvent not supported by current WebController');
 >>>>>>> graemeg/cpstrnew
@@ -713,11 +743,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THTMLContentProducer.GetIdentification: string;
 begin
   result := '';
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function THTMLContentProducer.ProduceContent: String;
@@ -820,7 +853,11 @@ begin
       begin
       for i := 0 to high(Events) do if assigned(events[i].csCallback) or assigned(events[i].ServerEvent) then
 <<<<<<< HEAD
+<<<<<<< HEAD
         raise EHTMLError.Create('There is no webcontroller available, which is necessary to use events.');
+=======
+        raise exception.Create('There is no webcontroller available, which is necessary to use events.');
+>>>>>>> graemeg/cpstrnew
 =======
         raise exception.Create('There is no webcontroller available, which is necessary to use events.');
 >>>>>>> graemeg/cpstrnew
@@ -870,7 +907,11 @@ begin
     end;
   if ExceptIfNotAvailable then
 <<<<<<< HEAD
+<<<<<<< HEAD
     raise EHTMLError.Create('No webcontroller available');
+=======
+    raise Exception.Create('No webcontroller available');
+>>>>>>> graemeg/cpstrnew
 =======
     raise Exception.Create('No webcontroller available');
 >>>>>>> graemeg/cpstrnew
@@ -1160,7 +1201,10 @@ Function TCustomHTMLModule.CreateDocument : THTMLDocument;
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=Nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   If Assigned(FOnCreateDocument) then
@@ -1178,7 +1222,11 @@ end;
 procedure TCustomHTMLModule.SetActions(const AValue: THTMLContentActions);
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FActions.Assign(AValue);
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1188,7 +1236,10 @@ Function TCustomHTMLModule.CreateWriter(ADocument : THTMLDocument) : THTMLWriter
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=Nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   If Assigned(FOnCreateWriter) then
@@ -1505,11 +1556,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TWebController.ResetIterationLevel: integer;
 begin
   SetLength(FIterationIDs,0);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TWebController.SetIterationIDSuffix(AIterationLevel: integer; IDSuffix: string);
@@ -1533,7 +1587,11 @@ begin
   i := length(FIterationIDs);
   if i=0 then
 <<<<<<< HEAD
+<<<<<<< HEAD
     raise EHTMLError.Create('DecrementIterationLevel can not be called more times then IncrementIterationLevel');
+=======
+    raise Exception.Create('DecrementIterationLevel can not be called more times then IncrementIterationLevel');
+>>>>>>> graemeg/cpstrnew
 =======
     raise Exception.Create('DecrementIterationLevel can not be called more times then IncrementIterationLevel');
 >>>>>>> graemeg/cpstrnew

@@ -1,7 +1,11 @@
 {
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -33,6 +37,7 @@
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 {$INCLUDE x11unikey.inc}
@@ -40,6 +45,11 @@
 {$INCLUDE xunikey.inc}
 >>>>>>> graemeg/cpstrnew
 
+=======
+
+{$INCLUDE xunikey.inc}
+
+>>>>>>> graemeg/cpstrnew
 constructor TX11Display.Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags);
 begin
   FFlags := AFlags;
@@ -79,8 +89,14 @@ end;
 
 procedure TX11Display.Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat; APalette: IPTCPalette);
 var
+=======
+                           const AFormat: TPTCFormat; const APalette: TPTCPalette);
+var
+  Area_: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 =======
                            const AFormat: TPTCFormat; const APalette: TPTCPalette);
 var
@@ -107,6 +123,7 @@ begin
   end
   else
 <<<<<<< HEAD
+<<<<<<< HEAD
     Load(APixels, AWidth, AHeight, APitch, AFormat, APalette,
          TPTCArea.Create(0, 0, width, height), Area);
 end;
@@ -126,6 +143,8 @@ begin
                        ADestination, Clip,
                        clipped_destination);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   begin
     Area_ := TPTCArea.Create(0, 0, width, height);
     try
@@ -157,6 +176,9 @@ begin
       finally
         tmp.Free;
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       FCopy.request(AFormat, Format);
       FCopy.palette(APalette, Palette);
@@ -168,6 +190,9 @@ begin
 =======
       clipped_source.Free;
       clipped_destination.Free;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     end;
   except
@@ -178,7 +203,11 @@ end;
 
 procedure TX11Display.Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat; APalette: IPTCPalette);
+=======
+                           const AFormat: TPTCFormat; const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
                            const AFormat: TPTCFormat; const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -186,6 +215,7 @@ begin
 end;
 
 procedure TX11Display.Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
                            AFormat: IPTCFormat; APalette: IPTCPalette;
                            ASource, ADestination: IPTCArea);
@@ -202,6 +232,8 @@ end;
 
 function TX11Display.Palette: IPTCPalette;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                            const AFormat: TPTCFormat; const APalette: TPTCPalette;
                            const ASource, ADestination: TPTCArea);
 begin
@@ -216,15 +248,24 @@ begin
 end;
 
 function TX11Display.Palette: TPTCPalette;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   Result := FPalette;
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11Display.Clip(AArea: IPTCArea);
 begin
   FClip := AArea;
+=======
+procedure TX11Display.Clip(const AArea: TPTCArea);
+begin
+  FClip.Assign(AArea);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11Display.Clip(const AArea: TPTCArea);
 begin
@@ -243,7 +284,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11Display.Clip: IPTCArea;
+=======
+function TX11Display.Clip: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 =======
 function TX11Display.Clip: TPTCArea;
 >>>>>>> graemeg/cpstrnew
@@ -251,6 +296,7 @@ begin
   Result := FClip;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TX11Display.GetArea: IPTCArea;
 begin
@@ -260,6 +306,8 @@ end;
 
 function TX11Display.GetFormat: IPTCFormat;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TX11Display.GetArea: TPTCArea;
 var
   tmp: TPTCArea;
@@ -274,6 +322,9 @@ begin
 end;
 
 function TX11Display.GetFormat: TPTCFormat;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   Result := FFormat;
@@ -297,7 +348,11 @@ end;
 function TX11Display.GetX11DirectFormat(ABitsPerPixel: Integer;
                                         AR, AG, AB: DWord;
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         AByteOrder: cint): IPTCFormat;
+=======
+                                        AByteOrder: cint): TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 =======
                                         AByteOrder: cint): TPTCFormat;
 >>>>>>> graemeg/cpstrnew
@@ -362,7 +417,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11Display.GetX11Format(AFormat: IPTCFormat): IPTCFormat;
+=======
+function TX11Display.GetX11Format(const AFormat: TPTCFormat): TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 =======
 function TX11Display.GetX11Format(const AFormat: TPTCFormat): TPTCFormat;
 >>>>>>> graemeg/cpstrnew
@@ -460,6 +519,7 @@ begin
   FFunctionKeys[$FF and XK_KP_8] := Integer(PTCKEY_NUMPAD8);
   FFunctionKeys[$FF and XK_KP_9] := Integer(PTCKEY_NUMPAD9);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FFunctionKeys[$FF and XK_KP_Home] := Integer(PTCKEY_HOME);
   FFunctionKeys[$FF and XK_KP_Left] := Integer(PTCKEY_LEFT);
   FFunctionKeys[$FF and XK_KP_Up] := Integer(PTCKEY_UP);
@@ -477,6 +537,8 @@ begin
   FFunctionKeys[$FF and XK_KP_Subtract] := Integer(PTCKEY_SUBTRACT);
   FFunctionKeys[$FF and XK_KP_Decimal] := Integer(PTCKEY_DECIMAL);
   FFunctionKeys[$FF and XK_KP_Enter] := Integer(PTCKEY_ENTER);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -507,7 +569,11 @@ begin
   FNormalKeys[$FF and XK_space] := Integer(PTCKEY_SPACE);
   FNormalKeys[$FF and XK_comma] := Integer(PTCKEY_COMMA);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FNormalKeys[$FF and XK_minus] := Integer(PTCKEY_MINUS);
+=======
+  FNormalKeys[$FF and XK_minus] := Integer(PTCKEY_SUBTRACT);
+>>>>>>> graemeg/cpstrnew
 =======
   FNormalKeys[$FF and XK_minus] := Integer(PTCKEY_SUBTRACT);
 >>>>>>> graemeg/cpstrnew
@@ -526,7 +592,10 @@ begin
   FNormalKeys[$FF and XK_semicolon] := Integer(PTCKEY_SEMICOLON);
   FNormalKeys[$FF and XK_equal] := Integer(PTCKEY_EQUALS);
 <<<<<<< HEAD
+<<<<<<< HEAD
   FNormalKeys[$FF and XK_grave] := Integer(PTCKEY_BACKQUOTE);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -561,6 +630,7 @@ begin
   FNormalKeys[$FF and XK_y] := Integer(PTCKEY_Y);
   FNormalKeys[$FF and XK_z] := Integer(PTCKEY_Z);
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 procedure TX11Display.HandleKeyEvent(const e: TXKeyEvent);
@@ -650,5 +720,7 @@ begin
   Result := -1;
   raise TPTCError.Create('Not in OpenGL mode');
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

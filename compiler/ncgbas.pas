@@ -72,8 +72,11 @@ interface
       symsym,symconst,symdef,defutil,
       nflw,pass_2,ncgutil,
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgbase,cgobj,hlcgobj,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       cgbase,cgobj,
 >>>>>>> graemeg/cpstrnew
       procinfo,
@@ -211,6 +214,7 @@ interface
                       end;
                   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
                 LOC_FPUREGISTER,
                 LOC_MMXREGISTER,
                 LOC_MMREGISTER :
@@ -239,6 +243,8 @@ interface
                     op.typ:=top_reg;
                     op.reg:=NR_FUNCTION_RETURN_REG;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                 LOC_MMREGISTER :
                   begin
                     if getoffset then
@@ -251,6 +257,9 @@ interface
                         op.typ:=top_reg;
                         op.reg:=sym.localloc.register;
                       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                   end;
                 else
@@ -495,6 +504,7 @@ interface
             exclude(tempinfo^.flags, ti_executeinitialisation);
             secondpass(tempinfo^.tempinitcode);
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (ti_reference in tempinfo^.flags) then
               begin
                 case tempinfo^.tempinitcode.location.loc of
@@ -516,6 +526,8 @@ interface
                 end;
                 hlcg.g_reference_loc(current_asmdata.CurrAsmList,tempinfo^.typedef,tempinfo^.tempinitcode.location,tempinfo^.location);
               end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           end;

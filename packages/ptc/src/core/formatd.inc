@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -35,6 +39,7 @@
 }
 
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
   IPTCFormat = interface
     function GetHermesFormat: PHermesFormat;
@@ -70,6 +75,8 @@ type
     class function CreateNew(AFormat: IPTCFormat): IPTCFormat;
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   TPTCFormat = class
   private
     FFormat: THermesFormat;
@@ -94,4 +101,7 @@ type
     property Direct: Boolean read GetDirect;
     property Bytes: Integer read GetBytes;
   end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew

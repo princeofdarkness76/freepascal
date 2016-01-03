@@ -925,6 +925,9 @@ begin
           if ReadOnly then Attributes := attributes + [faReadOnly];
           if DataType = ftBCD then precision := (fields[i] as TBCDField).Precision
           else if DataType = ftFMTBcd then precision := (fields[i] as TFMTBCDField).Precision;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           end;
     finally

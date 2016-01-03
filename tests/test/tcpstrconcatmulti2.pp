@@ -3,6 +3,7 @@
 uses
 {$ifdef unix}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
 {$endif unix}
   SysUtils;
@@ -27,6 +28,8 @@ var
   b : ts2;
   c, d : ts1;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   cwstring,
 {$endif unix}
   SysUtils;
@@ -39,6 +42,9 @@ var
   a : ts1251;
   b : ts850; 
   c, d : ts866;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 begin
   a := 'al';
@@ -48,7 +54,11 @@ begin
   //without "DestS" in the array
   d := a + b + c; 
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (StringCodePage(d) <> cp1) then
+=======
+  if (StringCodePage(d) <> 866) then
+>>>>>>> graemeg/cpstrnew
 =======
   if (StringCodePage(d) <> 866) then
 >>>>>>> graemeg/cpstrnew
@@ -56,6 +66,7 @@ begin
   //with empty "DestS" in the array
   d := '';
   d := d + a + b + c; 
+<<<<<<< HEAD
 <<<<<<< HEAD
   if (StringCodePage(d) <> cp1) then
     halt(2);
@@ -67,6 +78,8 @@ begin
   d := a + b + d + c; 
   if (StringCodePage(d) <> cp1) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   if (StringCodePage(d) <> 866) then
     halt(2);
   //with "DestS" in the array at the start
@@ -76,6 +89,9 @@ begin
   //with "DestS" in the array, not at the start 
   d := a + b + d + c; 
   if (StringCodePage(d) <> 866) then
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     halt(4);
     

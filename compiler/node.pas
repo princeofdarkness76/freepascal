@@ -111,8 +111,12 @@ interface
           dataconstn,       { node storing some binary data }
           objcselectorn,    { node for an Objective-C message selector }
 <<<<<<< HEAD
+<<<<<<< HEAD
           objcprotocoln,    { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
           specializen       { parser-only node to handle Delphi-mode inline specializations }
+=======
+          objcprotocoln     { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
+>>>>>>> graemeg/cpstrnew
 =======
           objcprotocoln     { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
 >>>>>>> graemeg/cpstrnew
@@ -200,6 +204,7 @@ interface
           'dataconstn',
           'objcselectorn',
 <<<<<<< HEAD
+<<<<<<< HEAD
           'objcprotocoln',
           'specializen');
 
@@ -210,6 +215,9 @@ interface
                         dataconstn,
                         guidconstn,
                         realconstn];
+=======
+          'objcprotocoln');
+>>>>>>> graemeg/cpstrnew
 =======
           'objcprotocoln');
 >>>>>>> graemeg/cpstrnew

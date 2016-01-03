@@ -146,7 +146,11 @@ implementation
                  don't have a compile-time size such as open arrays }
                is_special_array(tunarynode(n).left.resultdef) or
 <<<<<<< HEAD
+<<<<<<< HEAD
                (tunarynode(n).left.resultdef.size<>tunarynode(n).resultdef.size) then
+=======
+               (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
+>>>>>>> graemeg/cpstrnew
 =======
                (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
 >>>>>>> graemeg/cpstrnew
@@ -764,10 +768,13 @@ implementation
         }
         if not(right.expectloc in [LOC_FLAGS,LOC_JUMP]) and
 <<<<<<< HEAD
+<<<<<<< HEAD
             (node_complexity(right)>node_complexity(left)) then
          begin
            secondpass(right);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
            (is_managed_type(right.resultdef) or
             (node_complexity(right)>node_complexity(left))) then
          begin
@@ -1010,6 +1017,9 @@ implementation
 {$if defined(x86) and not defined(llvm)}
 =======
 {$ifdef x86}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                         if (right.resultdef.typ=floatdef) and
                            not use_vectorfpu(right.resultdef) then
@@ -1072,15 +1082,21 @@ implementation
                         LOC_CMMREGISTER,
                         LOC_MMREGISTER:
 <<<<<<< HEAD
+<<<<<<< HEAD
                           hlcg.a_loadmm_reg_reg(current_asmdata.CurrAsmList,right.resultdef,left.resultdef,right.location.register,left.location.register,mms_movescalar);
                         LOC_REFERENCE,
                         LOC_CREFERENCE:
                           hlcg.a_loadmm_reg_ref(current_asmdata.CurrAsmList,right.resultdef,left.resultdef,right.location.register,left.location.reference,mms_movescalar);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                           cg.a_loadmm_reg_reg(current_asmdata.CurrAsmList,right.location.size,left.location.size,right.location.register,left.location.register,mms_movescalar);
                         LOC_REFERENCE,
                         LOC_CREFERENCE:
                           cg.a_loadmm_reg_ref(current_asmdata.CurrAsmList,right.location.size,left.location.size,right.location.register,left.location.reference,mms_movescalar);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                         else
                           internalerror(2009112601);
@@ -1100,6 +1116,9 @@ implementation
 {$else cpu64bitalu}
 =======
 {$ifndef cpu64bitalu}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                   { also OS_F64 in case of mmreg -> intreg }
                   if left.location.size in [OS_64,OS_S64,OS_F64] then
@@ -1128,6 +1147,9 @@ implementation
 {$if defined(x86) and not defined(llvm)}
 =======
 {$ifdef x86}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                       if not use_vectorfpu(right.resultdef) then
                         begin
@@ -1311,6 +1333,7 @@ implementation
         vtAnsiString16  = 19;
         vtAnsiString64  = 20;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     procedure tcgarrayconstructornode.makearrayref(var ref: treference; eledef: tdef);
@@ -1324,6 +1347,8 @@ implementation
         inc(ref.offset,elesize);
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1533,6 +1558,12 @@ implementation
                          begin
                            vtype:=vtUnicodeString;
                            varfield:=tfieldvarsym(search_struct_member_no_helper(trecorddef(eledef),'VUNICODESTRING'));
+                           freetemp:=false;
+                         end
+                       else
+                        if is_unicodestring(lt) then
+                         begin
+                           vtype:=vtUnicodeString;
                            freetemp:=false;
                          end
                        else

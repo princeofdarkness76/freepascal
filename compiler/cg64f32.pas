@@ -100,7 +100,11 @@ unit cg64f32;
        verbose,cutils,
        symbase,symconst,symdef,symtable,defutil,paramgr,
 <<<<<<< HEAD
+<<<<<<< HEAD
        tgobj,hlcgobj;
+=======
+       tgobj;
+>>>>>>> graemeg/cpstrnew
 =======
        tgobj;
 >>>>>>> graemeg/cpstrnew
@@ -787,6 +791,9 @@ unit cg64f32;
           the correct push order for i386 }
         cg.a_load_reg_cgpara(list,OS_32,reg.reghi,tmplochi);
         cg.a_load_reg_cgpara(list,OS_32,reg.reglo,tmploclo);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         tmploclo.done;
         tmplochi.done;
@@ -820,6 +827,9 @@ unit cg64f32;
           the correct push order for i386 }
         cg.a_load_const_cgpara(list,OS_32,aint(hi(value)),tmplochi);
         cg.a_load_const_cgpara(list,OS_32,aint(lo(value)),tmploclo);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         tmploclo.done;
         tmplochi.done;
@@ -859,6 +869,9 @@ unit cg64f32;
           the correct push order for i386 }
         cg.a_load_ref_cgpara(list,OS_32,tmprefhi,tmplochi);
         cg.a_load_ref_cgpara(list,OS_32,tmpreflo,tmploclo);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         tmploclo.done;
         tmplochi.done;

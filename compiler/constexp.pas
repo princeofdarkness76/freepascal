@@ -402,9 +402,15 @@ begin
   sa:=a.signed and (a.svalue<0);
   if sa then
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$push} {$Q-}
     aa:=qword(-a.svalue)
     {$pop}
+=======
+    {$Q-}
+    aa:=qword(-a.svalue)
+    {$ifdef ena_q}{$Q+}{$endif}
+>>>>>>> graemeg/cpstrnew
 =======
     {$Q-}
     aa:=qword(-a.svalue)
@@ -415,9 +421,15 @@ begin
   sb:=b.signed and (b.svalue<0);
   if sb then
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$push} {$Q-}
     bb:=qword(-b.svalue)
     {$pop}
+=======
+    {$Q-}
+    bb:=qword(-b.svalue)
+    {$ifdef ena_q}{$Q+}{$endif}
+>>>>>>> graemeg/cpstrnew
 =======
     {$Q-}
     bb:=qword(-b.svalue)

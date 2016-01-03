@@ -64,6 +64,7 @@ type
 
     procedure AllocSQLDA(var aSQLDA : PXSQLDA;Count : integer);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // Metadata:
     procedure GetDatabaseInfo; //Queries for various information from server once connected
@@ -73,6 +74,8 @@ type
     function ParseServerVersion(const CompleteVersion: string): string; //Extract version info from complete version identification string
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure TranslateFldType(SQLType, SQLSubType, SQLLen, SQLScale : integer;
       var TrType : TFieldType; var TrLen : word);
 >>>>>>> graemeg/cpstrnew
@@ -149,12 +152,16 @@ implementation
 
 uses
 <<<<<<< HEAD
+<<<<<<< HEAD
   StrUtils, FmtBCD;
 
 const
   SQL_BOOLEAN_INTERBASE = 590;
   SQL_BOOLEAN_FIREBIRD = 32764;
   INVALID_DATA = -1;
+=======
+  strutils;
+>>>>>>> graemeg/cpstrnew
 =======
   strutils;
 >>>>>>> graemeg/cpstrnew
@@ -190,11 +197,14 @@ constructor TIBConnection.Create(AOwner : TComponent);
 begin
   inherited;
 <<<<<<< HEAD
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqSupportParams, sqEscapeRepeat, sqSupportReturning];
   FBlobSegmentSize := 65535; //Shows we're using the maximum segment size
   FDialect := INVALID_DATA;
   ResetDatabaseInfo;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat];
   FieldNameQuoteChars:=DoubleQuotes;
   FBLobSegmentSize := 80;
@@ -626,7 +636,11 @@ begin
       end;
     SQL_TYPE_DATE :
 <<<<<<< HEAD
+<<<<<<< HEAD
         TrType := ftDate;
+=======
+      TrType := ftDate;
+>>>>>>> graemeg/cpstrnew
 =======
       TrType := ftDate;
 >>>>>>> graemeg/cpstrnew
@@ -642,15 +656,21 @@ begin
     SQL_BLOB :
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         if SQLSubType = isc_blob_text then
           TrType := ftMemo
         else
           TrType := ftBlob;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         if SQLSubType = 1 then
            TrType := ftMemo
         else
            TrType := ftBlob;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         TrLen := SQLLen;
       end;
@@ -744,9 +764,15 @@ begin
           SQLData := AllocMem(in_SQLDA^.SQLVar[x].SQLLen);
         // Always force the creation of slqind for parameters. It could be
 <<<<<<< HEAD
+<<<<<<< HEAD
         // that a database trigger takes care of inserting null values, so
         // it should always be possible to pass null parameters. If that fails,
         // the database server will generate the appropriate error.
+=======
+        // that a database-trigger takes care of inserting null-values, so
+        // it should always be possible to pass null-parameters. If that fails,
+        // the database-server will generate the appropiate error.
+>>>>>>> graemeg/cpstrnew
 =======
         // that a database-trigger takes care of inserting null-values, so
         // it should always be possible to pass null-parameters. If that fails,
@@ -1241,6 +1267,9 @@ begin
           GetFloat(CurrBuff, Buffer, VSQLVar^.SQLLen);
 =======
           GetFloat(CurrBuff, Buffer, SQLDA^.SQLVar[x].SQLLen);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         ftBlob,
         ftMemo :

@@ -14,6 +14,11 @@ function fatInit(cacheSize: cuint32; setAsDefaultDevice: cbool): cbool; cdecl; e
 function fatInitDefault: cbool; cdecl; external;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+type
+  PDISC_INTERFACE = ^DISC_INTERFACE;
+>>>>>>> graemeg/cpstrnew
 =======
 type
   PDISC_INTERFACE = ^DISC_INTERFACE;
@@ -24,6 +29,7 @@ function fatMount(name_: pcchar; interface_: PDISC_INTERFACE; startSector: sec_t
 procedure fatUnmount(name_: pcchar); cdecl; external;
 procedure fatGetVolumeLabel(name_, label_: pcchar); cdecl; external;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // File attributes
 const
@@ -42,6 +48,8 @@ function FAT_setAttr(const _file: pcchar; attr: cint): cint; cdecl; external;
 
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 implementation

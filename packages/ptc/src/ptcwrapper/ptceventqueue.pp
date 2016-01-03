@@ -1,7 +1,11 @@
 {
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2010, 2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -47,7 +51,11 @@ type
   PEventLinkedList = ^TEventLinkedList;
   TEventLinkedList = record
 <<<<<<< HEAD
+<<<<<<< HEAD
     Event: IPTCEvent;
+=======
+    Event: TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 =======
     Event: TPTCEvent;
 >>>>>>> graemeg/cpstrnew
@@ -60,9 +68,15 @@ type
     constructor Create;
     destructor Destroy; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure AddEvent(const event: IPTCEvent);
     function PeekEvent(const EventMask: TPTCEventMask): IPTCEvent;
     function NextEvent(const EventMask: TPTCEventMask): IPTCEvent;
+=======
+    procedure AddEvent(event: TPTCEvent);
+    function PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
+    function NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure AddEvent(event: TPTCEvent);
     function PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
@@ -86,7 +100,11 @@ begin
   while p <> nil do
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     p^.Event := nil;
+=======
+    FreeAndNil(p^.Event);
+>>>>>>> graemeg/cpstrnew
 =======
     FreeAndNil(p^.Event);
 >>>>>>> graemeg/cpstrnew
@@ -98,7 +116,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TEventQueue.AddEvent(const event: IPTCEvent);
+=======
+procedure TEventQueue.AddEvent(event: TPTCEvent);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TEventQueue.AddEvent(event: TPTCEvent);
 >>>>>>> graemeg/cpstrnew
@@ -123,7 +145,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): IPTCEvent;
+=======
+function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 =======
 function TEventQueue.PeekEvent(const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
@@ -145,7 +171,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TEventQueue.NextEvent(const EventMask: TPTCEventMask): IPTCEvent;
+=======
+function TEventQueue.NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 =======
 function TEventQueue.NextEvent(const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
@@ -160,7 +190,10 @@ begin
     begin
       Result := p^.Event;
 <<<<<<< HEAD
+<<<<<<< HEAD
       p^.Event := nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

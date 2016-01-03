@@ -17,6 +17,7 @@
 {$H+}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Disable rangechecks. 
   Buffers of unknown size are received and handled with a dummy array type }
 
@@ -24,10 +25,13 @@
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 unit custfcgi;
 
 Interface
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$if defined(win32) or defined(win64)}
 {$define windowspipe}
@@ -42,6 +46,8 @@ uses
 {$endif}
   Sockets, custweb, cgiprotocol, httpprotocol, custcgi, fastcgi;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 uses
   Classes,SysUtils, httpdefs, 
 {$ifdef unix}
@@ -50,6 +56,9 @@ uses
   winsock2,
 {$endif}
   Sockets, custweb, custcgi, fastcgi;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 Type
@@ -64,8 +73,11 @@ Type
 
   TUnknownRecordEvent = Procedure (ARequest : TFCGIRequest; AFCGIRecord: PFCGI_Header) Of Object;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TFastCGIReadEvent = Function (AHandle : THandle; Var ABuf; ACount : Integer) : Integer of Object;
   TFastCGIWriteEvent = Function (AHandle : THandle; Const ABuf; ACount : Integer; Out ExtendedErrorCode : Integer) : Integer of Object;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -78,6 +90,7 @@ Type
     FCGIParams : TSTrings;
     FUR: TUnknownRecordEvent;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FLog : TLogEvent;
     FSTDin : String;
   Protected
@@ -85,10 +98,15 @@ Type
     procedure GetNameValuePairsFromContentRecord(const ARecord : PFCGI_ContentRecord; NameValueList : TStrings); virtual;
     Procedure Log(EventType : TEventType; Const Msg : String);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure GetNameValuePairsFromContentRecord(const ARecord : PFCGI_ContentRecord; NameValueList : TStrings);
   Protected
     Function GetFieldValue(Index : Integer) : String; override;
     procedure ReadContent; override;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   Public
     destructor Destroy; override;
@@ -100,7 +118,10 @@ Type
     Property OnUnknownRecord : TUnknownRecordEvent Read FUR Write FUR;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TFCGIRequestClass = Class of TFCGIRequest;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -110,9 +131,14 @@ Type
   private
     FPO: TProtoColOptions;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOnWrite : TFastCGIWriteEvent;
   Protected
     procedure Write_FCGIRecord(ARecord : PFCGI_Header); virtual;
+=======
+    procedure Write_FCGIRecord(ARecord : PFCGI_Header);
+  Protected
+>>>>>>> graemeg/cpstrnew
 =======
     procedure Write_FCGIRecord(ARecord : PFCGI_Header);
   Protected
@@ -122,7 +148,10 @@ Type
     Property ProtocolOptions : TProtoColOptions Read FPO Write FPO;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TFCGIResponseClass = Class of TFCGIResponse;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -136,7 +165,10 @@ Type
   TFCgiHandler = class(TWebHandler)
   Private
 <<<<<<< HEAD
+<<<<<<< HEAD
     FLingerTimeOut: integer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FOnUnknownRecord: TUnknownRecordEvent;
@@ -145,6 +177,7 @@ Type
     FRequestsAvail : integer;
     FHandle : THandle;
     Socket: longint;
+<<<<<<< HEAD
 <<<<<<< HEAD
     FIAddress      : TInetSockAddr;
     FAddressLength : tsocklen;
@@ -169,12 +202,17 @@ Type
     Function DoFastCGIRead(AHandle : THandle; Var ABuf; ACount : Integer) : Integer; virtual;
     Function DoFastCGIWrite(AHandle : THandle; Const ABuf; ACount : Integer; Out ExtendedErrorCode : Integer) : Integer; virtual;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     FAddress: string;
     FTimeOut,
     FPort: integer;
     function Read_FCGIRecord : PFCGI_Header;
     function DataAvailable : Boolean;
   protected
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function  ProcessRecord(AFCGI_Record: PFCGI_Header; out ARequest: TRequest;  out AResponse: TResponse): boolean; virtual;
     procedure SetupSocket(var IAddress: TInetSockAddr;  var AddressLength: tsocklen); virtual;
@@ -185,7 +223,10 @@ Type
     destructor Destroy; override;
     property Port: integer read FPort write FPort;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property LingerTimeOut : integer read FLingerTimeOut write FLingerTimeOut;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     property Address: string read FAddress write FAddress;
@@ -194,7 +235,10 @@ Type
     Property TimeOut : Integer Read FTimeOut Write FTimeOut;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
   TFCgiHandlerClass = Class of TFCgiHandler;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -205,11 +249,17 @@ Type
     function GetAddress: string;
     function GetFPO: TProtoColOptions;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetLingerTimeOut: integer;
     function GetOnUnknownRecord: TUnknownRecordEvent;
     function GetPort: integer;
     procedure SetAddress(const AValue: string);
     procedure SetLingerTimeOut(const AValue: integer);
+=======
+    function GetOnUnknownRecord: TUnknownRecordEvent;
+    function GetPort: integer;
+    procedure SetAddress(const AValue: string);
+>>>>>>> graemeg/cpstrnew
 =======
     function GetOnUnknownRecord: TUnknownRecordEvent;
     function GetPort: integer;
@@ -223,7 +273,10 @@ Type
   Public
     property Port: integer read GetPort write SetPort;
 <<<<<<< HEAD
+<<<<<<< HEAD
     property LingerTimeOut : integer read GetLingerTimeOut write SetLingerTimeOut;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     property Address: string read GetAddress write SetAddress;
@@ -232,11 +285,14 @@ Type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   FCGIRequestClass : TFCGIRequestClass = TFCGIRequest;
   FCGIResponseClass : TFCGIResponseClass = TFCGIResponse;
   FCGIWebHandlerClass : TFCgiHandlerClass = TFCgiHandler;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 ResourceString
@@ -248,8 +304,12 @@ ResourceString
   SErrReadingHeader = 'Failed to read FastCGI header. Read only %d bytes';
   SErrWritingSocket = 'Failed to write data to socket. Error: %d';
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrNoRequest     = 'Internal error: No request available when writing data';
   
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -260,6 +320,12 @@ uses
   dbugintf;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ 
+
+
+>>>>>>> graemeg/cpstrnew
 =======
  
 
@@ -271,6 +337,7 @@ uses
   {$define nosignal}
 {$ifend}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF WINDOWS}
 Type
@@ -315,6 +382,8 @@ end;
 
 { TFCGIHTTPRequest }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Const 
    NoSignalAttr =  {$ifdef nosignal} MSG_NOSIGNAL{$else}0{$endif};
 
@@ -324,6 +393,9 @@ procedure TFCGIRequest.ReadContent;
 begin
   // Nothing has to be done. This should never be called
 end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 destructor TFCGIRequest.Destroy;
@@ -338,12 +410,16 @@ begin
   Result := False;
   case AFCGIRecord^.reqtype of
 <<<<<<< HEAD
+<<<<<<< HEAD
     FCGI_BEGIN_REQUEST :
          begin
          FKeepConnectionAfterRequest := (PFCGI_BeginRequestRecord(AFCGIRecord)^.body.flags and FCGI_KEEP_CONN) = FCGI_KEEP_CONN;
 //         With PFCGI_BeginRequestRecord(AFCGIRecord)^.body do
 //           log(etDebug,Format('Begin request body role & flags: %d %d',[Beton(Role),Flags]));
          end;
+=======
+    FCGI_BEGIN_REQUEST : FKeepConnectionAfterRequest := (PFCGI_BeginRequestRecord(AFCGIRecord)^.body.flags and FCGI_KEEP_CONN) = FCGI_KEEP_CONN;
+>>>>>>> graemeg/cpstrnew
 =======
     FCGI_BEGIN_REQUEST : FKeepConnectionAfterRequest := (PFCGI_BeginRequestRecord(AFCGIRecord)^.body.flags and FCGI_KEEP_CONN) = FCGI_KEEP_CONN;
 >>>>>>> graemeg/cpstrnew
@@ -359,6 +435,7 @@ begin
                         end;
     FCGI_STDIN :        begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                         Result:=AFCGIRecord^.contentLength=0;
                         if not Result then
                           begin
@@ -368,6 +445,8 @@ begin
                           move(PFCGI_ContentRecord(AFCGIRecord)^.ContentData[0],FSTDin[cl+1],rcl);
                           InitContent(FSTDin);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                         if AFCGIRecord^.contentLength=0 then
                           begin
                           Result := True;
@@ -381,6 +460,9 @@ begin
                           SetLength(FContent, rcl+cl);
                           move(PFCGI_ContentRecord(AFCGIRecord)^.ContentData[0],FContent[cl+1],rcl);
                           FContentRead:=True;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                           end;
                         end;
@@ -389,6 +471,7 @@ begin
       FUR(Self,AFCGIRecord)
     else
       if poFailonUnknownRecord in FPO then
+<<<<<<< HEAD
 <<<<<<< HEAD
         TFCgiHandler.DoError('Unknown FASTCGI record type: %s',[AFCGIRecord^.reqtype]);
   end;
@@ -399,6 +482,10 @@ end;
 function TFCGIRequest.DoGetCGIVar(AVarName: String): String;
 begin
   Result:=FCGIParams.Values[AVarName];
+=======
+        Raise EFPWebError.CreateFmt('Unknown FASTCGI record type: %s',[AFCGIRecord^.reqtype]);
+  end;
+>>>>>>> graemeg/cpstrnew
 =======
         Raise EFPWebError.CreateFmt('Unknown FASTCGI record type: %s',[AFCGIRecord^.reqtype]);
   end;
@@ -418,7 +505,11 @@ var
       begin
 //      Result:=BEtoN(PLongint(@(ARecord^.ContentData[i]))^);
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:=Int64(((ARecord^.ContentData[i] and $7f) shl 24)) + (ARecord^.ContentData[i+1] shl 16)
+=======
+      Result:=((ARecord^.ContentData[i] and $7f) shl 24) + (ARecord^.ContentData[i+1] shl 16)
+>>>>>>> graemeg/cpstrnew
 =======
       Result:=((ARecord^.ContentData[i] and $7f) shl 24) + (ARecord^.ContentData[i+1] shl 16)
 >>>>>>> graemeg/cpstrnew
@@ -431,6 +522,7 @@ var
   function GetString(ALength : integer) : string;
   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (ALength<0) then
       ALength:=0;
     SetLength(Result,ALength);
@@ -440,16 +532,26 @@ var
     SetLength(Result,ALength);
     move(ARecord^.ContentData[i],Result[1],ALength);
 >>>>>>> graemeg/cpstrnew
+=======
+    SetLength(Result,ALength);
+    move(ARecord^.ContentData[i],Result[1],ALength);
+>>>>>>> graemeg/cpstrnew
     inc(i,ALength);
   end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
   VarNo,NameLength, ValueLength : Integer;
   RecordLength : Integer;
   Name,Value : String;
   h : THeader;
   v : THTTPVariableType;
+=======
+  NameLength, ValueLength : Integer;
+  RecordLength : Integer;
+  Name,Value : String;
+>>>>>>> graemeg/cpstrnew
 =======
   NameLength, ValueLength : Integer;
   RecordLength : Integer;
@@ -463,6 +565,7 @@ begin
     begin
     NameLength:=GetVarLength;
     ValueLength:=GetVarLength;
+<<<<<<< HEAD
 <<<<<<< HEAD
     Name:=GetString(NameLength);
     Value:=GetString(ValueLength);
@@ -521,6 +624,8 @@ begin
 
       TFCgiHandler.DoError(SErrWritingSocket,[ErrorCode]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
     Name:=GetString(NameLength);
     Value:=GetString(ValueLength);
@@ -604,6 +709,9 @@ begin
       begin
       // TODO : Better checking for closed connection, EINTR
       Raise HTTPError.CreateFmt(SErrWritingSocket,[BytesWritten]);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       end;
     Inc(P,BytesWritten);
@@ -699,7 +807,10 @@ begin
     Inc(BS,cl);
   Until (BS=L);
 <<<<<<< HEAD
+<<<<<<< HEAD
   EndRequest := Default(FCGI_EndRequestRecord);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   FillChar(EndRequest,SizeOf(FCGI_EndRequestRecord),0);
@@ -716,7 +827,10 @@ end;
 
 constructor TFCgiHandler.Create(AOwner: TComponent);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin
@@ -726,15 +840,19 @@ begin
   FHandle := THandle(-1);
   FTimeOut:=50;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF WINDOWS}
   CheckShutdownEvent;
 {$ENDIF}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
 
 destructor TFCgiHandler.Destroy;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF WINDOWS}
   IF (FShutDownThread<>Nil) then
@@ -743,6 +861,8 @@ begin
     TShutDownThread(FShutDownThread).OnTerminate:=Nil;
     end;
 {$ENDIF}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   SetLength(FRequestsArray,0);
@@ -754,6 +874,7 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF WINDOWS}
 Procedure TFCgiHandler.CheckShutdownEvent;
@@ -814,6 +935,9 @@ procedure TFCgiHandler.EndRequest(ARequest: TRequest; AResponse: TResponse);
 =======
 procedure TFCgiHandler.EndRequest(ARequest: TRequest; AResponse: TResponse);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TFCgiHandler.EndRequest(ARequest: TRequest; AResponse: TResponse);
+>>>>>>> graemeg/cpstrnew
 begin
   with FRequestsArray[TFCGIRequest(ARequest).RequestID] do
     begin
@@ -821,13 +945,19 @@ begin
     Assert(AResponse=Response);
     if (not TFCGIRequest(ARequest).KeepConnectionAfterRequest) then
 <<<<<<< HEAD
+<<<<<<< HEAD
       CloseConnection;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       begin
       fpshutdown(FHandle,SHUT_RDWR);
       CloseSocket(FHandle);
       FHandle := THandle(-1);
       end;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Request := Nil;
     Response := Nil;
@@ -841,6 +971,7 @@ function TFCgiHandler.Read_FCGIRecord : PFCGI_Header;
   Procedure DumpFCGIRecord (Var Header :FCGI_Header; ContentLength : word; PaddingLength : byte; ResRecord : Pointer);
 
   Var
+<<<<<<< HEAD
 <<<<<<< HEAD
     S, s1, s2 : string;
     I : Integer;
@@ -867,6 +998,8 @@ function TFCgiHandler.Read_FCGIRecord : PFCGI_Header;
         repeat s1 := s1 + ' ' until length(s1)>=48;
       Writeln(s1 + '  '+S)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     s : string;
     I : Integer;
 
@@ -884,6 +1017,9 @@ function TFCgiHandler.Read_FCGIRecord : PFCGI_Header;
            end;
         end;
       Writeln('  ',S)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   end;
 {$ENDIF DUMPRECORD}
@@ -900,7 +1036,11 @@ function TFCgiHandler.Read_FCGIRecord : PFCGI_Header;
     if (ByteAmount=0) then exit;
     Repeat
 <<<<<<< HEAD
+<<<<<<< HEAD
       Count:=DoFastCGIRead(FHandle,P^,ByteAmount);
+=======
+      Count:=sockets.fpRecv(FHandle, P, ByteAmount, NoSignalAttr);
+>>>>>>> graemeg/cpstrnew
 =======
       Count:=sockets.fpRecv(FHandle, P, ByteAmount, NoSignalAttr);
 >>>>>>> graemeg/cpstrnew
@@ -912,7 +1052,11 @@ function TFCgiHandler.Read_FCGIRecord : PFCGI_Header;
         end
       else if (Count<0) then
 <<<<<<< HEAD
+<<<<<<< HEAD
         DoError(SErrReadingSocket,[Count]);
+=======
+        Raise HTTPError.CreateFmt(SErrReadingSocket,[Count]);
+>>>>>>> graemeg/cpstrnew
 =======
         Raise HTTPError.CreateFmt(SErrReadingSocket,[Count]);
 >>>>>>> graemeg/cpstrnew
@@ -938,7 +1082,11 @@ begin
     // Need to discard request/response
   else If (BytesRead<>Sizeof(Header)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
     DoError(SErrReadingHeader,[BytesRead]);
+=======
+    Raise HTTPError.CreateFmt(SErrReadingHeader,[BytesRead]);
+>>>>>>> graemeg/cpstrnew
 =======
     Raise HTTPError.CreateFmt(SErrReadingHeader,[BytesRead]);
 >>>>>>> graemeg/cpstrnew
@@ -973,10 +1121,13 @@ end;
 procedure TFCgiHandler.SetupSocket(var IAddress : TInetSockAddr; Var AddressLength : tsocklen);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   L : Linger;
   ll,lr : integer;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 begin
@@ -984,7 +1135,11 @@ begin
   Socket := fpsocket(AF_INET,SOCK_STREAM,0);
   if Socket=-1 then
 <<<<<<< HEAD
+<<<<<<< HEAD
     DoError(SNoSocket,[socketerror]);
+=======
+    raise EFPWebError.CreateFmt(SNoSocket,[socketerror]);
+>>>>>>> graemeg/cpstrnew
 =======
     raise EFPWebError.CreateFmt(SNoSocket,[socketerror]);
 >>>>>>> graemeg/cpstrnew
@@ -1004,6 +1159,7 @@ begin
     CloseSocket(socket);
     Socket:=0;
     Terminate;
+<<<<<<< HEAD
 <<<<<<< HEAD
     DoError(SBindFailed,[port,socketerror]);
     end;
@@ -1029,12 +1185,21 @@ begin
     end;
   if fplisten(Socket,1)=-1 then
 >>>>>>> graemeg/cpstrnew
+=======
+    raise Exception.CreateFmt(SBindFailed,[port,socketerror]);
+    end;
+  if fplisten(Socket,1)=-1 then
+>>>>>>> graemeg/cpstrnew
     begin
     CloseSocket(socket);
     Socket:=0;
     Terminate;
 <<<<<<< HEAD
+<<<<<<< HEAD
     DoError(SListenFailed,[port,socketerror]);
+=======
+    raise Exception.CreateFmt(SListenFailed,[port,socketerror]);
+>>>>>>> graemeg/cpstrnew
 =======
     raise Exception.CreateFmt(SListenFailed,[port,socketerror]);
 >>>>>>> graemeg/cpstrnew
@@ -1050,7 +1215,10 @@ var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FDS := Default(TFDSet);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   fpFD_Zero(FDS);
@@ -1068,7 +1236,10 @@ var
 
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   FDS := Default(TFDSet);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   FD_Zero(FDS);
@@ -1079,6 +1250,7 @@ begin
 end;
 {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TFCgiHandler.CreateRequest: TFCGIRequest;
 
@@ -1138,6 +1310,8 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 function TFCgiHandler.ProcessRecord(AFCGI_Record  : PFCGI_Header; out ARequest: TRequest; out AResponse: TResponse): boolean;
 
 var
@@ -1156,8 +1330,12 @@ begin
     assert(not assigned(FRequestsArray[ARequestID].Request));
     assert(not assigned(FRequestsArray[ARequestID].Response));
 <<<<<<< HEAD
+<<<<<<< HEAD
     ATempRequest:=CreateRequest;
     InitRequest(ATempRequest);
+=======
+    ATempRequest:=TFCGIRequest.Create;
+>>>>>>> graemeg/cpstrnew
 =======
     ATempRequest:=TFCGIRequest.Create;
 >>>>>>> graemeg/cpstrnew
@@ -1166,7 +1344,10 @@ begin
     ATempRequest.ProtocolOptions:=Self.Protocoloptions;
     ATempRequest.OnUnknownRecord:=Self.OnUnknownRecord;
 <<<<<<< HEAD
+<<<<<<< HEAD
     ATempRequest.FLog:=@Log;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FRequestsArray[ARequestID].Request := ATempRequest;
@@ -1180,10 +1361,15 @@ begin
     begin
     ARequest:=FRequestsArray[ARequestID].Request;
 <<<<<<< HEAD
+<<<<<<< HEAD
     FRequestsArray[ARequestID].Response := CreateResponse(TFCGIRequest(ARequest));
     InitResponse(FRequestsArray[ARequestID].Response);
     FRequestsArray[ARequestID].Response.ProtocolOptions:=Self.ProtocolOptions;
     FRequestsArray[ARequestID].Response.FOnWrite:=@DoFastCGIWrite;
+=======
+    FRequestsArray[ARequestID].Response := TFCGIResponse.Create(ARequest);
+    FRequestsArray[ARequestID].Response.ProtocolOptions:=Self.ProtocolOptions;
+>>>>>>> graemeg/cpstrnew
 =======
     FRequestsArray[ARequestID].Response := TFCGIResponse.Create(ARequest);
     FRequestsArray[ARequestID].Response.ProtocolOptions:=Self.ProtocolOptions;
@@ -1193,6 +1379,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TFCgiHandler.AcceptConnection : Integer;
 
@@ -1281,6 +1468,8 @@ begin
     until Result or (FHandle=THandle(-1));
   Until Result;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TFCgiHandler.WaitForRequest(out ARequest: TRequest; out AResponse: TResponse): boolean;
 
 var
@@ -1321,6 +1510,9 @@ begin
       AFCGI_Record:=Nil;
     end;
   until Result;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -1337,11 +1529,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomFCgiApplication.GetLingerTimeOut: integer;
 begin
   Result:=TFCgiHandler(WebHandler).LingerTimeOut;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function TCustomFCgiApplication.GetOnUnknownRecord: TUnknownRecordEvent;
@@ -1360,11 +1555,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomFCgiApplication.SetLingerTimeOut(const AValue: integer);
 begin
   TFCgiHandler(WebHandler).LingerTimeOut:=AValue;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TCustomFCgiApplication.SetOnUnknownRecord(const AValue: TUnknownRecordEvent);
@@ -1384,6 +1582,7 @@ end;
 
 function TCustomFCgiApplication.InitializeWebHandler: TWebHandler;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Var
   C : TFCGIHandlerClass;
@@ -1393,6 +1592,10 @@ begin
   If C=Nil then
     C:=TFCgiHandler;
   Result:=C.Create(self);
+=======
+begin
+  Result:=TFCgiHandler.Create(self);
+>>>>>>> graemeg/cpstrnew
 =======
 begin
   Result:=TFCgiHandler.Create(self);

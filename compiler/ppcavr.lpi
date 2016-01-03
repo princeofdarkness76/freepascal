@@ -13,8 +13,11 @@
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Title Value="ppcavr"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       <Title Value="pp"/>
 >>>>>>> graemeg/cpstrnew
     </General>
@@ -47,7 +50,11 @@
   </ProjectOptions>
   <CompilerOptions>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="11"/>
+=======
+    <Version Value="9"/>
+>>>>>>> graemeg/cpstrnew
 =======
     <Version Value="9"/>
 >>>>>>> graemeg/cpstrnew
@@ -78,9 +85,12 @@
         <StopAfterErrCount Value="50"/>
       </ConfigFile>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       <CustomOptions Value="-davr"/>

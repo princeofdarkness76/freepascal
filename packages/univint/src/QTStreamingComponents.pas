@@ -4,9 +4,15 @@
      Contains:   QuickTime Interfaces.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    QuickTime 7.6.3
  
@@ -20,8 +26,12 @@
  
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -80,11 +90,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -103,6 +116,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -123,6 +137,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -138,6 +154,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -146,7 +165,10 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
@@ -159,7 +181,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -168,6 +193,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
@@ -224,6 +250,28 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -262,7 +310,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,Components,Dialogs,Movies,QuickTimeStreaming;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -662,6 +715,7 @@ type
 const
 	kRTPInvalidSSRC = 0;
 
+<<<<<<< HEAD
 
 { RTP standard content encodings for audio }
 const
@@ -718,6 +772,64 @@ const
     RTP Statistics
 -----------------------------------------}
 const
+=======
+
+{ RTP standard content encodings for audio }
+const
+	kRTPPayload_PCMU = 0;    { 8kHz PCM mu-law mono }
+	kRTPPayload_1016 = 1;    { 8kHz CELP (Fed Std 1016) mono }
+	kRTPPayload_G721 = 2;    { 8kHz G.721 ADPCM mono }
+	kRTPPayload_GSM = 3;    { 8kHz GSM mono }
+	kRTPPayload_G723 = 4;    { 8kHz G.723 ADPCM mono }
+	kRTPPayload_DVI_8 = 5;    { 8kHz Intel DVI ADPCM mono }
+	kRTPPayload_DVI_16 = 6;    { 16kHz Intel DVI ADPCM mono }
+	kRTPPayload_LPC = 7;    { 8kHz LPC }
+	kRTPPayload_PCMA = 8;    { 8kHz PCM a-law mono }
+	kRTPPayload_L16_44_2 = 10;   { 44.1kHz 16-bit linear stereo }
+	kRTPPayload_L16_44_1 = 11;   { 44.1kHz 16-bit linear mono }
+	kRTPPayload_PureVoice = 12;   { 8kHz PureVoice mono (QCELP) }
+	kRTPPayload_MPEGAUDIO = 14;   { MPEG I and II audio }
+	kRTPPayload_DVI_11 = 16;   { 11kHz Intel DVI ADPCM mono }
+	kRTPPayload_DVI_22 = 17;    { 22kHz Intel DVI ADPCM mono }
+
+{ RTP standard content encodings for video }
+const
+	kRTPPayload_CELLB = 25;   { Sun CellB }
+	kRTPPayload_JPEG = 26;   { JPEG }
+	kRTPPayload_CUSEEME = 27;   { Cornell CU-SeeMe }
+	kRTPPayload_NV = 28;   { Xerox PARC nv }
+	kRTPPayload_PICWIN = 29;   { BBN Picture Window }
+	kRTPPayload_CPV = 30;   { Bolter CPV }
+	kRTPPayload_H261 = 31;   { CCITT H.261 }
+	kRTPPayload_MPEGVIDEO = 32;   { MPEG I and II video }
+	kRTPPayload_H263 = 34;    { CCITT H.263 }
+
+{ Other RTP standard content encodings }
+const
+	kRTPPayload_MPEG2T = 33;    { MPEG 2 Transport }
+
+{ Dynamic encodings }
+const
+	kRTPPayload_FirstDynamic = 96;
+	kRTPPayload_LastDynamic = 127;
+	kRTPPayload_Unknown = $FF;
+
+
+{
+-----------------------------------------
+    RTP Info selectors
+-----------------------------------------
+}
+{ ----- these are get and set ----- }
+const
+	kRTPInfo_SSRC = FourCharCode('ssrc'); { UInt32* }
+	kRTPInfo_NextSeqNum = FourCharCode('rnsn'); { UInt16* }
+
+{-----------------------------------------
+    RTP Statistics
+-----------------------------------------}
+const
+>>>>>>> graemeg/cpstrnew
 	kRTPTotalReceivedPktsStat = FourCharCode('trcp');
 	kRTPTotalLostPktsStat = FourCharCode('tlsp');
 	kRTPTotalProcessedPktsStat = FourCharCode('tprp');
@@ -744,8 +856,13 @@ const
 	kRTPTotalOutOfOrderPktsStat = FourCharCode('rtoo');
 	kRTPRetransmissionStat = FourCharCode('rrtx');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -2029,12 +2146,18 @@ const
 type
 	RTPPacketBuilder = ComponentInstance;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	RTPPacketGroupRef = ^OpaqueRTPPacketGroupRef; { an opaque type }
 	OpaqueRTPPacketGroupRef = record end;
 	RTPPacketRef = ^OpaqueRTPPacketRef; { an opaque type }
 	OpaqueRTPPacketRef = record end;
 	RTPPacketRepeatedDataRef = ^OpaqueRTPPacketRepeatedDataRef; { an opaque type }
 	OpaqueRTPPacketRepeatedDataRef = record end;
+=======
+	RTPPacketGroupRef = ^SInt32; { an opaque type }
+	RTPPacketRef = ^SInt32; { an opaque type }
+	RTPPacketRepeatedDataRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	RTPPacketGroupRef = ^SInt32; { an opaque type }
 	RTPPacketRef = ^SInt32; { an opaque type }

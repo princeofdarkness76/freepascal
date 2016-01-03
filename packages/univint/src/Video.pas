@@ -69,11 +69,14 @@ interface
 	{$setc __arm__ := 0}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -92,6 +95,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -112,6 +116,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -127,6 +133,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -135,13 +144,17 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -193,6 +206,8 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -219,6 +234,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endc}
 
@@ -302,6 +320,7 @@ const
 	fourBitMode = 130;  {Id of FourBitMode Parameter list.}
 	eightBitMode = 131;   {Id of EightBitMode Parameter list.}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const
 	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
@@ -517,6 +536,195 @@ const
 
 { csResolutionFlags bit flags for VDResolutionInfoRec }
 const
+=======
+const
+	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
+	thirtyTwoBitMode = 133;  {Id of ThirtyTwoBitMode Parameter list.}
+	firstVidMode = 128;  {The new, better way to do the above. }
+	secondVidMode = 129;  { QuickDraw only supports six video }
+	thirdVidMode = 130;  { at this time.      }
+	fourthVidMode = 131;
+	fifthVidMode = 132;
+	sixthVidMode = 133;
+	spGammaDir = 64;
+	spVidNamesDir = 65;
+
+
+{ csTimingFormat values in VDTimingInfo }
+{ look in the declaration rom for timing info }
+const
+	kDeclROMtables = FourCharCode('decl');
+	kDetailedTimingFormat = FourCharCode('arba'); { Timing is a detailed timing}
+
+{ Size of a block of EDID (Extended Display Identification Data) }
+const
+	kDDCBlockSize = 128;
+
+{ ddcBlockType constants}
+const
+	kDDCBlockTypeEDID = 0;     { EDID block type. }
+
+{ ddcFlags constants}
+const
+	kDDCForceReadBit = 0;    { Force a new read of the EDID. }
+	kDDCForceReadMask = 1 shl kDDCForceReadBit; { Mask for kddcForceReadBit. }
+
+
+{ Timing mode constants for Display Manager MultiMode support
+    Corresponding   .h equates are in Video.h
+                    .a equates are in Video.a
+                    .r equates are in DepVideoEqu.r
+    
+    The second enum is the old names (for compatibility).
+    The first enum is the new names.
+}
+const
+	timingInvalid = 0;    {    Unknown timingÉ force user to confirm. }
+	timingInvalid_SM_T24 = 8;    {    Work around bug in SM Thunder24 card.}
+	timingApple_FixedRateLCD = 42;   {    Lump all fixed-rate LCDs into one category.}
+	timingApple_512x384_60hz = 130;  {  512x384  (60 Hz) Rubik timing. }
+	timingApple_560x384_60hz = 135;  {  560x384  (60 Hz) Rubik-560 timing. }
+	timingApple_640x480_67hz = 140;  {  640x480  (67 Hz) HR timing. }
+	timingApple_640x400_67hz = 145;  {  640x400  (67 Hz) HR-400 timing. }
+	timingVESA_640x480_60hz = 150;  {  640x480  (60 Hz) VGA timing. }
+	timingVESA_640x480_72hz = 152;  {  640x480  (72 Hz) VGA timing. }
+	timingVESA_640x480_75hz = 154;  {  640x480  (75 Hz) VGA timing. }
+	timingVESA_640x480_85hz = 158;  {  640x480  (85 Hz) VGA timing. }
+	timingGTF_640x480_120hz = 159;  {  640x480  (120 Hz) VESA Generalized Timing Formula }
+	timingApple_640x870_75hz = 160;  {  640x870  (75 Hz) FPD timing.}
+	timingApple_640x818_75hz = 165;  {  640x818  (75 Hz) FPD-818 timing.}
+	timingApple_832x624_75hz = 170;  {  832x624  (75 Hz) GoldFish timing.}
+	timingVESA_800x600_56hz = 180;  {  800x600  (56 Hz) SVGA timing. }
+	timingVESA_800x600_60hz = 182;  {  800x600  (60 Hz) SVGA timing. }
+	timingVESA_800x600_72hz = 184;  {  800x600  (72 Hz) SVGA timing. }
+	timingVESA_800x600_75hz = 186;  {  800x600  (75 Hz) SVGA timing. }
+	timingVESA_800x600_85hz = 188;  {  800x600  (85 Hz) SVGA timing. }
+	timingVESA_1024x768_60hz = 190;  { 1024x768  (60 Hz) VESA 1K-60Hz timing. }
+	timingVESA_1024x768_70hz = 200;  { 1024x768  (70 Hz) VESA 1K-70Hz timing. }
+	timingVESA_1024x768_75hz = 204;  { 1024x768  (75 Hz) VESA 1K-75Hz timing (very similar to timingApple_1024x768_75hz). }
+	timingVESA_1024x768_85hz = 208;  { 1024x768  (85 Hz) VESA timing. }
+	timingApple_1024x768_75hz = 210;  { 1024x768  (75 Hz) Apple 19" RGB. }
+	timingApple_1152x870_75hz = 220;  { 1152x870  (75 Hz) Apple 21" RGB. }
+	timingAppleNTSC_ST = 230;  {  512x384  (60 Hz, interlaced, non-convolved). }
+	timingAppleNTSC_FF = 232;  {  640x480  (60 Hz, interlaced, non-convolved). }
+	timingAppleNTSC_STconv = 234;  {  512x384  (60 Hz, interlaced, convolved). }
+	timingAppleNTSC_FFconv = 236;  {  640x480  (60 Hz, interlaced, convolved). }
+	timingApplePAL_ST = 238;  {  640x480  (50 Hz, interlaced, non-convolved). }
+	timingApplePAL_FF = 240;  {  768x576  (50 Hz, interlaced, non-convolved). }
+	timingApplePAL_STconv = 242;  {  640x480  (50 Hz, interlaced, convolved). }
+	timingApplePAL_FFconv = 244;  {  768x576  (50 Hz, interlaced, convolved). }
+	timingVESA_1280x960_75hz = 250;  { 1280x960  (75 Hz) }
+	timingVESA_1280x960_60hz = 252;  { 1280x960  (60 Hz) }
+	timingVESA_1280x960_85hz = 254;  { 1280x960  (85 Hz) }
+	timingVESA_1280x1024_60hz = 260;  { 1280x1024 (60 Hz) }
+	timingVESA_1280x1024_75hz = 262;  { 1280x1024 (75 Hz) }
+	timingVESA_1280x1024_85hz = 268;  { 1280x1024 (85 Hz) }
+	timingVESA_1600x1200_60hz = 280;  { 1600x1200 (60 Hz) VESA timing. }
+	timingVESA_1600x1200_65hz = 282;  { 1600x1200 (65 Hz) VESA timing. }
+	timingVESA_1600x1200_70hz = 284;  { 1600x1200 (70 Hz) VESA timing. }
+	timingVESA_1600x1200_75hz = 286;  { 1600x1200 (75 Hz) VESA timing (pixel clock is 189.2 Mhz dot clock). }
+	timingVESA_1600x1200_80hz = 288;  { 1600x1200 (80 Hz) VESA timing (pixel clock is 216>? Mhz dot clock) - proposed only. }
+	timingVESA_1600x1200_85hz = 289;  { 1600x1200 (85 Hz) VESA timing (pixel clock is 229.5 Mhz dot clock). }
+	timingVESA_1792x1344_60hz = 296;  { 1792x1344 (60 Hz) VESA timing (204.75 Mhz dot clock). }
+	timingVESA_1792x1344_75hz = 298;  { 1792x1344 (75 Hz) VESA timing (261.75 Mhz dot clock). }
+	timingVESA_1856x1392_60hz = 300;  { 1856x1392 (60 Hz) VESA timing (218.25 Mhz dot clock). }
+	timingVESA_1856x1392_75hz = 302;  { 1856x1392 (75 Hz) VESA timing (288 Mhz dot clock). }
+	timingVESA_1920x1440_60hz = 304;  { 1920x1440 (60 Hz) VESA timing (234 Mhz dot clock). }
+	timingVESA_1920x1440_75hz = 306;  { 1920x1440 (75 Hz) VESA timing (297 Mhz dot clock). }
+	timingSMPTE240M_60hz = 400;  { 60Hz V, 33.75KHz H, interlaced timing, 16:9 aspect, typical resolution of 1920x1035. }
+	timingFilmRate_48hz = 410;  { 48Hz V, 25.20KHz H, non-interlaced timing, typical resolution of 640x480. }
+	timingSony_1600x1024_76hz = 500;  { 1600x1024 (76 Hz) Sony timing (pixel clock is 170.447 Mhz dot clock). }
+	timingSony_1920x1080_60hz = 510;  { 1920x1080 (60 Hz) Sony timing (pixel clock is 159.84 Mhz dot clock). }
+	timingSony_1920x1080_72hz = 520;  { 1920x1080 (72 Hz) Sony timing (pixel clock is 216.023 Mhz dot clock). }
+	timingSony_1920x1200_76hz = 540;  { 1900x1200 (76 Hz) Sony timing (pixel clock is 243.20 Mhz dot clock). }
+	timingApple_0x0_0hz_Offline = 550;   { Indicates that this timing will take the display off-line and remove it from the system. }
+
+
+{ Deprecated timing names.}
+const
+	timingApple12 = timingApple_512x384_60hz;
+	timingApple12x = timingApple_560x384_60hz;
+	timingApple13 = timingApple_640x480_67hz;
+	timingApple13x = timingApple_640x400_67hz;
+	timingAppleVGA = timingVESA_640x480_60hz;
+	timingApple15 = timingApple_640x870_75hz;
+	timingApple15x = timingApple_640x818_75hz;
+	timingApple16 = timingApple_832x624_75hz;
+	timingAppleSVGA = timingVESA_800x600_56hz;
+	timingApple1Ka = timingVESA_1024x768_60hz;
+	timingApple1Kb = timingVESA_1024x768_70hz;
+	timingApple19 = timingApple_1024x768_75hz;
+	timingApple21 = timingApple_1152x870_75hz;
+	timingSony_1900x1200_74hz = 530;  { 1900x1200 (74 Hz) Sony timing (pixel clock is 236.25 Mhz dot clock). }
+	timingSony_1900x1200_76hz = timingSony_1920x1200_76hz; { 1900x1200 (76 Hz) Sony timing (pixel clock is 245.48 Mhz dot clock). }
+
+{ csConnectFlags values in VDDisplayConnectInfo }
+const
+	kAllModesValid = 0;    { All modes not trimmed by primary init are good close enough to try }
+	kAllModesSafe = 1;    { All modes not trimmed by primary init are know to be safe }
+	kReportsTagging = 2;    { Can detect tagged displays (to identify smart monitors) }
+	kHasDirectConnection = 3;    { True implies that driver can talk directly to device (e.g. serial data link via sense lines) }
+	kIsMonoDev = 4;    { Says whether thereÕs an RGB (0) or Monochrome (1) connection. }
+	kUncertainConnection = 5;    { There may not be a display (no sense lines?). }
+	kTaggingInfoNonStandard = 6;    { Set when csConnectTaggedType/csConnectTaggedData are non-standard (i.e., not the Apple CRT sense codes). }
+	kReportsDDCConnection = 7;    { Card can do ddc (set kHasDirectConnect && kHasDDCConnect if you actually found a ddc display). }
+	kHasDDCConnection = 8;    { Card has ddc connect now. }
+	kConnectionInactive = 9;    { Set when the connection is NOT currently active (generally used in a multiconnection environment). }
+	kDependentConnection = 10;   { Set when some ascpect of THIS connection depends on another (will generally be set in a kModeSimulscan environment). }
+	kBuiltInConnection = 11;   { Set when connection is KNOWN to be built-in (this is not the same as kHasDirectConnection). }
+	kOverrideConnection = 12;   { Set when the reported connection is not the true one, but is one that has been forced through a SetConnection call }
+	kFastCheckForDDC = 13;   { Set when all 3 are true: 1) sense codes indicate DDC display could be attached 2) attempted fast check 3) DDC failed }
+	kReportsHotPlugging = 14;    { Detects and reports hot pluggging on connector (via VSL also implies DDC will be up to date w/o force read) }
+
+
+{ csDisplayType values in VDDisplayConnectInfo }
+const
+	kUnknownConnect = 1;    { Not sure how weÕll use this, but seems like a good idea. }
+	kPanelConnect = 2;    { For use with fixed-in-place LCD panels. }
+	kPanelTFTConnect = 2;    { Alias for kPanelConnect }
+	kFixedModeCRTConnect = 3;    {  For use with fixed-mode (i.e., very limited range) displays. }
+	kMultiModeCRT1Connect = 4;    { 320x200 maybe, 12" maybe, 13" (default), 16" certain, 19" maybe, 21" maybe }
+	kMultiModeCRT2Connect = 5;    { 320x200 maybe, 12" maybe, 13" certain, 16" (default), 19" certain, 21" maybe }
+	kMultiModeCRT3Connect = 6;    { 320x200 maybe, 12" maybe, 13" certain, 16" certain, 19" default, 21" certain }
+	kMultiModeCRT4Connect = 7;    { Expansion to large multi mode (not yet used) }
+	kModelessConnect = 8;    { Expansion to modeless model (not yet used) }
+	kFullPageConnect = 9;    { 640x818 (to get 8bpp in 512K case) and 640x870 (these two only) }
+	kVGAConnect = 10;   { 640x480 VGA default -- question everything else }
+	kNTSCConnect = 11;   { NTSC ST (default), FF, STconv, FFconv }
+	kPALConnect = 12;   { PAL ST (default), FF, STconv, FFconv }
+	kHRConnect = 13;   { Straight-6 connect -- 640x480 and 640x400 (to get 8bpp in 256K case) (these two only) }
+	kPanelFSTNConnect = 14;   { For use with fixed-in-place LCD FSTN (aka ÒSupertwistÓ) panels }
+	kMonoTwoPageConnect = 15;   { 1152x870 Apple color two-page display }
+	kColorTwoPageConnect = 16;   { 1152x870 Apple B&W two-page display }
+	kColor16Connect = 17;   { 832x624 Apple B&W two-page display }
+	kColor19Connect = 18;   { 1024x768 Apple B&W two-page display }
+	kGenericCRT = 19;   { Indicates nothing except that connection is CRT in nature. }
+	kGenericLCD = 20;   { Indicates nothing except that connection is LCD in nature. }
+	kDDCConnect = 21;   { DDC connection, always set kHasDDCConnection }
+	kNoConnect = 22;    { No display is connected - load sensing or similar level of hardware detection is assumed (used by resident drivers that support hot plugging when nothing is currently connected) }
+
+{ csTimingFlags values in VDTimingInfoRec }
+const
+	kModeValid = 0;    { Says that this mode should NOT be trimmed. }
+	kModeSafe = 1;    { This mode does not need confirmation }
+	kModeDefault = 2;    { This is the default mode for this type of connection }
+	kModeShowNow = 3;    { This mode should always be shown (even though it may require a confirm) }
+	kModeNotResize = 4;    { This mode should not be used to resize the display (eg. mode selects a different connector on card) }
+	kModeRequiresPan = 5;    { This mode has more pixels than are actually displayed }
+	kModeInterlaced = 6;    { This mode is interlaced (single pixel lines look bad). }
+	kModeShowNever = 7;    { This mode should not be shown in the user interface. }
+	kModeSimulscan = 8;    { Indicates that more than one display connection can be driven from a single framebuffer controller. }
+	kModeNotPreset = 9;    { Indicates that the timing is not a factory preset for the current display (geometry may need correction) }
+	kModeBuiltIn = 10;   { Indicates that the display mode is for the built-in connect only (on multiconnect devices like the PB 3400) Only the driver is quieried }
+	kModeStretched = 11;    { Indicates that the display mode will be stretched/distorted to match the display aspect ratio }
+
+{ csDepthFlags in VDVideoParametersInfoRec }
+const
+	kDepthDependent = 0;     { Says that this depth mode may cause dependent changes in other framebuffers (and . }
+
+{ csResolutionFlags bit flags for VDResolutionInfoRec }
+const
+>>>>>>> graemeg/cpstrnew
 	kResolutionHasMultipleDepthSizes = 0;  { Says that this mode has different csHorizontalPixels, csVerticalLines at different depths (usually slightly larger at lower depths) }
 
 
@@ -800,6 +1008,7 @@ const
 type
 	ExtendedSenseCode = UInt8;
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kESCZero21Inch = $00; { 21" RGB                     }
 	kESCOnePortraitMono = $14; { Portrait Monochrome              }
@@ -837,6 +1046,45 @@ const
 type
 	DepthMode = UInt16;
 const
+=======
+const
+	kESCZero21Inch = $00; { 21" RGB                     }
+	kESCOnePortraitMono = $14; { Portrait Monochrome              }
+	kESCTwo12Inch = $21; { 12" RGB                    }
+	kESCThree21InchRadius = $31; { 21" RGB (Radius)               }
+	kESCThree21InchMonoRadius = $34; { 21" Monochrome (Radius)           }
+	kESCThree21InchMono = $35; { 21" Monochrome               }
+	kESCFourNTSC = $0A; { NTSC                     }
+	kESCFivePortrait = $1E; { Portrait RGB              }
+	kESCSixMSB1 = $03; { MultiScan Band-1 (12" thru 1Six")  }
+	kESCSixMSB2 = $0B; { MultiScan Band-2 (13" thru 19")       }
+	kESCSixMSB3 = $23; { MultiScan Band-3 (13" thru 21")       }
+	kESCSixStandard = $2B; { 13"/14" RGB or 12" Monochrome   }
+	kESCSevenPAL = $00; { PAL                        }
+	kESCSevenNTSC = $14; { NTSC                     }
+	kESCSevenVGA = $17; { VGA                        }
+	kESCSeven16Inch = $2D; { 16" RGB (GoldFish)               }
+	kESCSevenPALAlternate = $30; { PAL (Alternate)                }
+	kESCSeven19Inch = $3A; { Third-Party 19Ó                 }
+	kESCSevenDDC = $3E; { DDC display                   }
+	kESCSevenNoDisplay = $3F;  { No display connected           }
+
+{ DepthMode
+    This abstract data type is used to to reference RELATIVE pixel depths.
+    Its definition is largely derived from its past usage, analogous to 'xxxVidMode'
+
+    Bits per pixel DOES NOT directly map to 'DepthMode'  For example, on some
+    graphics hardware, 'kDepthMode1' may represent 1 BPP, whereas on other
+    hardware, 'kDepthMode1' may represent 8BPP.
+
+    DepthMode IS considered to be ordinal, i.e., operations such as <, >, ==, etc.
+    behave as expected.  The values of the constants which comprise the set are such
+    that 'kDepthMode4 < kDepthMode6' behaves as expected.
+}
+type
+	DepthMode = UInt16;
+const
+>>>>>>> graemeg/cpstrnew
 =======
 const
 	kESCZero21Inch = $00; { 21" RGB                     }
@@ -1321,11 +1569,17 @@ const
 	kRangeSupportsCompositeSyncMask = 1 shl kRangeSupportsCompositeSyncBit;
 	kRangeSupportsVSyncSerrationMask = 1 shl kRangeSupportsVSyncSerrationBit;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 =======
 
+<<<<<<< HEAD
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 const
 { csHorizontalSyncConfig and csVerticalSyncConfig}

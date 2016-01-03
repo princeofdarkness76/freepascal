@@ -10,11 +10,14 @@ program Hello;
 type
   ptr = pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef fpc}
   codeptr = codepointer;
 {$else}
   codeptr = pointer;
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Int = ptrint;
@@ -118,7 +121,11 @@ var
   s0, s1, s2: UInt;
   v0, v1, v2: ptr;
 <<<<<<< HEAD
+<<<<<<< HEAD
   cn0, cn1, cn2: codeptr;
+=======
+  cn0, cn1, cn2: ptr;
+>>>>>>> graemeg/cpstrnew
 =======
   cn0, cn1, cn2: ptr;
 >>>>>>> graemeg/cpstrnew

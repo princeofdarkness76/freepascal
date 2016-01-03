@@ -959,7 +959,11 @@ implementation
                   else
 {$ifdef cpu64bitaddr}
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if (target_dbg.id = dbg_stabs) then
+=======
+                    if (paratargetdbg = dbg_stabs) then
+>>>>>>> graemeg/cpstrnew
 =======
                     if (paratargetdbg = dbg_stabs) then
 >>>>>>> graemeg/cpstrnew
@@ -1283,8 +1287,11 @@ implementation
             Add('    *(SORT(.data$*))');
             Add('    *(.jcr)');
 <<<<<<< HEAD
+<<<<<<< HEAD
             Add('    PROVIDE ('+target_info.Cprefix+'_tls_index = .);');
             Add('    LONG (0);');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
             Add('    __data_end__ = . ;');
@@ -1842,7 +1849,10 @@ initialization
 {$endif i386}
 {$ifdef x86_64}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   RegisterExternalLinker(system_x64_win64_info,TExternalLinkerWin);
   RegisterInternalLinker(system_x64_win64_info,TInternalLinkerWin);
 >>>>>>> graemeg/cpstrnew

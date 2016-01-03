@@ -20,15 +20,21 @@ const
 { Records }
 type
 <<<<<<< HEAD
+<<<<<<< HEAD
   __SPFlags = record
     case byte of
     0: (_anonbitfield_NSSavePanel0: cuint);
     1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   __SPFlags = bitpacked record
     case byte of
     0: (_anonbitfield_NSSavePanel0: cuint);
     1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
           saveMode: 0..1;
           isExpanded: 0..1;
@@ -46,7 +52,10 @@ type
           userAccessoryViewFrameChange: 0..1;
           reserved: 0..((1 shl 18)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
        );
@@ -114,7 +123,11 @@ __SPFlagsPtr = ^__SPFlags;
     _spFlags: _SPFlags;
     _spAuxiliaryStorage: NSSavePanelAuxiliary;
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(5)-1] of char;
+=======
+        _reserved: array[0..4] of char;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..4] of char;
 >>>>>>> graemeg/cpstrnew

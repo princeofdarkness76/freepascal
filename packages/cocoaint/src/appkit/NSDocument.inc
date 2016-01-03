@@ -76,15 +76,21 @@ type
     _privateData: id;
     _undoManager: NSUndoManager;
 <<<<<<< HEAD
+<<<<<<< HEAD
     __docFlags: record
       case byte of
        0: (_anonbitfield_NSDocument0: cuint);
        1: (data: bitpacked record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     __docFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSDocument0: cuint);
        1: (
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
         inClose: 0..1;
         _hasUndoManager: 0..1;
@@ -97,7 +103,10 @@ type
         definitelyHasUnautosavedChanges: 0..1;
         RESERVED: 0..((1 shl 23)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       );
