@@ -53,8 +53,11 @@ const
   SErrInvalidTimeFormat  = '"%s" is not a valid time';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SExceptionErrorMessage = 'Exception at %p: %s';
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   SExceptionErrorMessage = 'exception at %p';

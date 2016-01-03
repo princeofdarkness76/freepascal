@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %OPT=-vh -Seh -CO  -Cr- }
+=======
+{ %OPT=-vh -Seh -CO }
+>>>>>>> graemeg/cpstrnew
 =======
 { %OPT=-vh -Seh -CO }
 >>>>>>> graemeg/cpstrnew

@@ -71,7 +71,11 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   colmap: PWord = nil;
+=======
+  colmap: PSmallInt = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   colmap: PSmallInt = nil;
 >>>>>>> graemeg/cpstrnew
@@ -460,6 +464,9 @@ begin
 =======
   colmap := GetMem(SizeOf(SmallInt) * COLMAPDIM * COLMAPDIM * COLMAPDIM);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

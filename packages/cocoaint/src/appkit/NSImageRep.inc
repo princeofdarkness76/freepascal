@@ -53,6 +53,7 @@ var
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __repFlags: record
       case byte of
        0: (_anonbitfield_NSImageRep0: cuint);
@@ -60,11 +61,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __repFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSImageRep0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -79,7 +85,10 @@ var
         gsaved: 0..((1 shl 16)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

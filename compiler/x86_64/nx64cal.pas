@@ -29,6 +29,7 @@ interface
       symdef,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ncal,nx86cal;
 
     type
@@ -42,6 +43,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       ncal,ncgcal;
 
     type
@@ -50,6 +53,9 @@ interface
          procedure extra_call_code;override;
          procedure set_result_location(realresdef: tstoreddef);override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -68,6 +74,9 @@ implementation
       systems,
       cpubase,cgbase,cgutils,cgobj,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -15,6 +15,10 @@
       <UseXPManifest Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      <Icon Value="0"/>
+>>>>>>> graemeg/cpstrnew
 =======
       <Icon Value="0"/>
 >>>>>>> graemeg/cpstrnew
@@ -41,7 +45,12 @@
         <FormatVersion Value="1"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <CommandLineParams Value="--package=fpdoc --input=testunit.pp --output=testunit --format=html --descr=testunit.xml"/>
+=======
+        <CommandLineParams Value="--project=fpdoc.xml"/>
+        <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <CommandLineParams Value="--project=fpdoc.xml"/>
         <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
@@ -59,7 +68,11 @@
     </RequiredPackages>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="16">
+=======
+    <Units Count="14">
+>>>>>>> graemeg/cpstrnew
 =======
     <Units Count="14">
 >>>>>>> graemeg/cpstrnew
@@ -81,7 +94,11 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UnitName Value="dw_dXML"/>
+=======
+        <UnitName Value="dw_dxml"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_dxml"/>
 >>>>>>> graemeg/cpstrnew
@@ -94,7 +111,11 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UnitName Value="dw_HTML"/>
+=======
+        <UnitName Value="dw_html"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_html"/>
 >>>>>>> graemeg/cpstrnew
@@ -107,6 +128,10 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <UnitName Value="dw_ipflin"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_ipflin"/>
 >>>>>>> graemeg/cpstrnew
@@ -119,7 +144,11 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UnitName Value="dw_LaTeX"/>
+=======
+        <UnitName Value="dw_latex"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_latex"/>
 >>>>>>> graemeg/cpstrnew
@@ -132,6 +161,10 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <UnitName Value="dwlinear"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dwlinear"/>
 >>>>>>> graemeg/cpstrnew
@@ -144,7 +177,11 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UnitName Value="dw_LinRTF"/>
+=======
+        <UnitName Value="dw_linrtf"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_linrtf"/>
 >>>>>>> graemeg/cpstrnew
@@ -157,6 +194,10 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <UnitName Value="dw_man"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_man"/>
 >>>>>>> graemeg/cpstrnew
@@ -169,7 +210,11 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UnitName Value="dWriter"/>
+=======
+        <UnitName Value="dwriter"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dwriter"/>
 >>>>>>> graemeg/cpstrnew
@@ -182,6 +227,10 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <UnitName Value="dw_txt"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_txt"/>
 >>>>>>> graemeg/cpstrnew
@@ -194,7 +243,11 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <UnitName Value="dw_XML"/>
+=======
+        <UnitName Value="dw_xml"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="dw_xml"/>
 >>>>>>> graemeg/cpstrnew
@@ -207,6 +260,10 @@
         <IsPartOfProject Value="True"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <UnitName Value="fpdocproj"/>
+>>>>>>> graemeg/cpstrnew
 =======
         <UnitName Value="fpdocproj"/>
 >>>>>>> graemeg/cpstrnew
@@ -217,6 +274,7 @@
       <Unit13>
         <Filename Value="fpdocxmlopts.pas"/>
         <IsPartOfProject Value="True"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       </Unit13>
@@ -235,6 +293,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         <UnitName Value="fpdocxmlopts"/>
       </Unit13>
     </Units>
@@ -242,6 +302,9 @@
   <CompilerOptions>
     <Version Value="9"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -254,7 +317,10 @@
     </SearchPaths>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     <Other>

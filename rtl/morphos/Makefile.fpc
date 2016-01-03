@@ -9,6 +9,7 @@ main=rtl
 loaders=prt0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       fpintres dos heaptrc ctypes \
       sysutils classes fgl math typinfo \
@@ -24,6 +25,8 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       dos heaptrc ctypes \
       sysutils classes fgl strutils math typinfo varutils \
@@ -34,6 +37,9 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
 # these units are here, because they depend on system interface units above
       kvm video mouse keyboard sockets \
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -147,8 +153,11 @@ classes$(PPUEXT) : classes.pp $(wildcard $(OBJPASDIR)/classes/*.inc) \
                    sysutils$(PPUEXT) rtlconsts$(PPUEXT) typinfo$(PPUEXT) types$(PPUEXT) fgl$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(COMPILER) -Fi$(OBJPASDIR)/classes $(AMIINC)/classes.pp
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         $(COMPILER) -Fi$(OBJPASDIR)/classes classes.pp

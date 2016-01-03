@@ -84,6 +84,7 @@ type
     _knobSize: CGFloat;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __sFlags2: record
       case byte of
        0: (_anonbitfield_NSScroller0: cuint);
@@ -91,11 +92,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __sFlags2: bitpacked record
       case byte of
        0: (_anonbitfield_NSScroller0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -107,7 +113,10 @@ type
         reserved: 0..((1 shl 23)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -118,6 +127,7 @@ type
     _action: SEL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _sFlags: record
       case byte of
        0: (_anonbitfield_NSScroller1: cuint);
@@ -125,11 +135,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     _sFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSScroller1: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -148,7 +163,10 @@ type
         repeatCount: 0..((1 shl 16)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

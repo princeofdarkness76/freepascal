@@ -1,6 +1,7 @@
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -13,6 +14,8 @@ packages=rtl fpmkunit
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 #   Makefile.fpc for fpcmkcfg
 #
 
@@ -20,6 +23,9 @@ packages=rtl fpmkunit
 programs=fpcmkcfg
 rst=fpcmkcfg
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -27,6 +33,7 @@ rst=fpcmkcfg
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [default]
@@ -120,6 +127,8 @@ endif
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 [require]
 tools=data2inc
 packages=fcl-base fcl-process
@@ -161,6 +170,9 @@ default.inc : default.cft
 endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

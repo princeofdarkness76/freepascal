@@ -1,7 +1,11 @@
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for InterBase bindings
+>>>>>>> graemeg/cpstrnew
 =======
 #   Makefile.fpc for InterBase bindings
 >>>>>>> graemeg/cpstrnew
@@ -14,11 +18,14 @@
 name=libsee
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 version=2.5.1
@@ -30,6 +37,9 @@ exampledirs=examples
 [require]
 libc=y
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -40,6 +50,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
@@ -130,6 +141,8 @@ endif
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 [compiler]
 includedir=src
 sourcedir=src
@@ -140,6 +153,9 @@ build=n
 [rules]
 .NOTPARALLEL:
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

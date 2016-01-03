@@ -46,6 +46,7 @@
     _url: NSURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __movieFlags: record
       case byte of
        0: (_anonbitfield_NSMovie0: cint);
@@ -56,6 +57,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __movieFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMovie0: cint);
@@ -63,6 +66,9 @@
         _dispose: 0..1;
         reserved: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

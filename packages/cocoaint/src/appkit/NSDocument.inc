@@ -77,6 +77,7 @@ type
     _undoManager: NSUndoManager;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __docFlags: record
       case byte of
        0: (_anonbitfield_NSDocument0: cuint);
@@ -84,11 +85,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __docFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSDocument0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -104,7 +110,10 @@ type
         RESERVED: 0..((1 shl 23)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

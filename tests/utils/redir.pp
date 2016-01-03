@@ -52,9 +52,12 @@ Interface
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
 {$define implemented}
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -216,6 +219,9 @@ Type
 {$ifdef redirexecuteprocess}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
 // win specific  function
@@ -247,6 +253,7 @@ begin
 
   ExecInherits:=ExecInheritsHandles in Flags;
 
+<<<<<<< HEAD
 =======
 
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
@@ -279,6 +286,8 @@ begin
 
   ExecInherits:=ExecInheritsHandles in Flags;
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if not CreateProcess(nil, pchar(CommandLine),
     Nil, Nil, ExecInherits,$20, Nil, Nil, SI, PI) then
@@ -314,6 +323,7 @@ end;
 {$endif}
 
 
+<<<<<<< HEAD
 =======
 
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
@@ -380,6 +390,8 @@ end;
 {$endif}
 
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$ifndef windows}
 var
@@ -513,11 +525,15 @@ begin
   { Do we need this ?? }
   fpclose:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function fpClose (Handle: longint): boolean;
@@ -527,6 +543,8 @@ end;
  {$ENDIF EMX}
 {$ENDIF OS2}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1203,6 +1221,9 @@ end;
 =======
     ExecuteResult:=Shell(FixPath(Progname)+' '+Comline);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

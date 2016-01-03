@@ -4,6 +4,7 @@ uses
 {$ifdef unix}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
 {$endif unix}
   SysUtils;
@@ -20,6 +21,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   cwstring,
 {$endif unix}
   SysUtils;
@@ -27,6 +30,9 @@ type
 type
   ts866 = type string<866>;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -41,7 +47,11 @@ begin
   d := a + b + c; 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (StringCodePage(d) <> cp) then
+=======
+  if (StringCodePage(d) <> 866) then
+>>>>>>> graemeg/cpstrnew
 =======
   if (StringCodePage(d) <> 866) then
 >>>>>>> graemeg/cpstrnew
@@ -54,6 +64,7 @@ begin
   d := d + a + b + c; 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (StringCodePage(d) <> cp) then
     halt(2);
   //with "DestS" in the array at the start
@@ -66,6 +77,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if (StringCodePage(d) <> 866) then
     halt(2);
   //with "DestS" in the array at the start
@@ -76,6 +89,9 @@ begin
   d := a + b + d + c; 
   if (StringCodePage(d) <> 866) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

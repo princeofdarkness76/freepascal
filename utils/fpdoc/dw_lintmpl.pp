@@ -93,7 +93,10 @@ Type
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Class Function FileNameExtension : String; override;

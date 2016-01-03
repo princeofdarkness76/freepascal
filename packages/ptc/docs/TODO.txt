@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  - Mac OS X support
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -12,6 +15,10 @@
  - multiple video pages support for the x11 w/dga console
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ - cross-platform opengl initialization support (like sdl or glut)
+>>>>>>> graemeg/cpstrnew
 =======
  - cross-platform opengl initialization support (like sdl or glut)
 >>>>>>> graemeg/cpstrnew

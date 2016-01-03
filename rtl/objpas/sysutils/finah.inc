@@ -66,6 +66,9 @@ Function GetDirs (Var DirName : String; Var Dirs : Array of pchar) : Longint;
 Function SameFileName(const S1, S2: string): Boolean;
 function ConcatPaths(const Paths: array of String): String;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

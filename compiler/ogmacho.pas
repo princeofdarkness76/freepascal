@@ -148,7 +148,11 @@ type
       public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         constructor create(info: pasminfo; smart:boolean);override;
+=======
+        constructor create(smart:boolean);override;
+>>>>>>> graemeg/cpstrnew
 =======
         constructor create(smart:boolean);override;
 >>>>>>> graemeg/cpstrnew
@@ -162,9 +166,12 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses
   owar;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -370,6 +377,7 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   constructor TMachoAssembler.create(info: pasminfo; smart: boolean);
     begin
       inherited;
@@ -378,11 +386,16 @@ uses
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   constructor TMachoAssembler.create(smart: boolean);
     begin
       inherited create(smart);
       CObjOutput:=TMachoObjectOutput;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1247,7 +1260,10 @@ uses
         comment : '#';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         dollarsign: '$';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

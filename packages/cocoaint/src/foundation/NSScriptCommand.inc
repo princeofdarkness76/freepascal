@@ -65,6 +65,7 @@ const
     _evaluatedArguments: NSMutableDictionary;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSScriptCommand0: cuint);
@@ -76,6 +77,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSScriptCommand0: cuint);
@@ -84,6 +87,9 @@ const
         hasEvaluatedArguments: 0..1;
         RESERVED: 0..((1 shl 30)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

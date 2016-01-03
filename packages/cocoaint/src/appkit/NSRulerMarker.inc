@@ -48,6 +48,7 @@
     _imageOrigin: NSPoint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __rFlags: record
       case byte of
        0: (_anonbitfield_NSRulerMarker0: cuint);
@@ -55,11 +56,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __rFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSRulerMarker0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -70,7 +76,10 @@
         _reserved: 0..((1 shl 28)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

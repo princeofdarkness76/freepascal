@@ -100,7 +100,10 @@ type
     FBufferEnd: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FSubcommandCallbacks: TLSubcommandArray;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -127,7 +130,11 @@ type
     function TelnetParse(const msg: string): Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function React(const Operation, Command: Char): boolean; virtual; abstract;
+=======
+    procedure React(const Operation, Command: Char); virtual; abstract;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure React(const Operation, Command: Char); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
@@ -159,6 +166,9 @@ type
 =======
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -216,9 +226,13 @@ implementation
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Math;
 
 const   subcommandEndLength= 2;
+=======
+  SysUtils, Math;
+>>>>>>> graemeg/cpstrnew
 =======
   SysUtils, Math;
 >>>>>>> graemeg/cpstrnew
@@ -430,6 +444,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* If already set, the callback can be reverted to nil but it can't be changed  *)
 (* in a single step. The default response, if specified, is used by the         *)
 (* LTelnetSubcommandCallback() function and is available to others; the         *)
@@ -453,6 +468,10 @@ end { TLTelnet.RegisterSubcommand } ;
 
 procedure TLTelnet.Disconnect(const Forced: Boolean = True);
 begin
+=======
+procedure TLTelnet.Disconnect(const Forced: Boolean = True);
+begin
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TLTelnet.Disconnect(const Forced: Boolean = True);
 begin
@@ -606,6 +625,7 @@ begin
     TS_WONT : if Command in FPossible then FActiveOpts := FActiveOpts - [Command];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TS_SB   : if not Assigned(FSubcommandCallbacks[command].callback) then
                 refuse(TS_WONT, command)
               else
@@ -615,6 +635,8 @@ begin
 (* parameters to keep the subcommand happy have not yet been parsed out of the  *)
 (* message.                                                                     *)
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

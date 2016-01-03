@@ -220,6 +220,7 @@ begin
     end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else if gas_needsuffix[opcode]=AttSufMM then
   begin
     if (opr.typ=OPR_Reference) then
@@ -230,6 +231,8 @@ begin
       end;
     end;
   end
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -302,6 +305,9 @@ begin
           else
             opr.ref.refaddr:=addr_pic;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1258,7 +1264,10 @@ begin
                          this applies only to i386, see tw16622}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

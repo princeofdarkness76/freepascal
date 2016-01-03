@@ -37,7 +37,10 @@ const
 {$include ketypes.inc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include obtypes.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

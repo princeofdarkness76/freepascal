@@ -5,7 +5,11 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    CarbonSound-115~164
+=======
+     Version:    CarbonSound-109.2~4
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    CarbonSound-109.2~4
 >>>>>>> graemeg/cpstrnew
@@ -23,8 +27,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -87,11 +95,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -111,6 +122,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -154,6 +166,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -162,7 +191,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -171,6 +203,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -254,6 +287,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -298,11 +359,15 @@ interface
 uses MacTypes,Components,MixedMode,Dialogs;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
@@ -825,6 +890,7 @@ const
 	kAVDisplayHeadphoneInsert = 1;    { monitor has a headphone attached}
 	kAVDisplayPlainTalkRemove = 2;    { monitor either sending no input through CPU input port or unable to tell if input is coming in}
 	kAVDisplayPlainTalkInsert = 3;     { monitor sending PlainTalk level microphone source input through sound input port}
+<<<<<<< HEAD
 
 {Audio Component constants}
 const
@@ -874,6 +940,57 @@ const
 	kExtendedSoundBufferIsDiscontinuous = 1 shl 0; { buffer is discontinuous with previous buffer}
 	kExtendedSoundBufferIsFirstBuffer = 1 shl 1; { buffer is first buffer}
 
+=======
+
+{Audio Component constants}
+const
+{Values for whichChannel parameter}
+	audioAllChannels = 0;    {All channels (usually interpreted as both left and right)}
+	audioLeftChannel = 1;    {Left channel}
+	audioRightChannel = 2;    {Right channel}
+                                        {Values for mute parameter}
+	audioUnmuted = 0;    {Device is unmuted}
+	audioMuted = 1;    {Device is muted}
+                                        {Capabilities flags definitions}
+	audioDoesMono = 1 shl 0; {Device supports mono output}
+	audioDoesStereo = 1 shl 1; {Device supports stereo output}
+	audioDoesIndependentChannels = 1 shl 2; {Device supports independent software control of each channel}
+
+{Sound Input Qualities}
+const
+	siCDQuality = FourCharCode('cd  '); {44.1kHz, stereo, 16 bit}
+	siBestQuality = FourCharCode('best'); {22kHz, mono, 8 bit}
+	siBetterQuality = FourCharCode('betr'); {22kHz, mono, MACE 3:1}
+	siGoodQuality = FourCharCode('good'); {22kHz, mono, MACE 6:1}
+	siNoneQuality = FourCharCode('none'); {settings don't match any quality for a get call}
+
+const
+	siDeviceIsConnected = 1;    {input device is connected and ready for input}
+	siDeviceNotConnected = 0;    {input device is not connected}
+	siDontKnowIfConnected = -1;   {can't tell if input device is connected}
+	siReadPermission = 0;    {permission passed to SPBOpenDevice}
+	siWritePermission = 1;     {permission passed to SPBOpenDevice}
+
+{flags that SoundConverterFillBuffer will return}
+const
+	kSoundConverterDidntFillBuffer = 1 shl 0; {set if the converter couldn't completely satisfy a SoundConverterFillBuffer request}
+	kSoundConverterHasLeftOverData = 1 shl 1; {set if the converter had left over data after completely satisfying a SoundConverterFillBuffer call}
+
+{ flags for extendedFlags fields of ExtendedSoundComponentData, ExtendedSoundParamBlock, and ExtendedScheduledSoundHeader}
+const
+	kExtendedSoundSampleCountNotValid = 1 shl 0; { set if sampleCount of SoundComponentData isn't meaningful; use buffer size instead}
+	kExtendedSoundBufferSizeValid = 1 shl 1; { set if bufferSize field is valid}
+	kExtendedSoundFrameSizesValid = 1 shl 2; { set if frameSizesArray is valid (will be nil if all sizes are common and kExtendedSoundCommonFrameSizeValid is set}
+	kExtendedSoundCommonFrameSizeValid = 1 shl 3; { set if all audio frames have the same size and the commonFrameSize field is valid}
+	kExtendedSoundExtensionsValid = 1 shl 4; { set if pointer to extensions array is valid}
+	kExtendedSoundBufferFlagsValid = 1 shl 5; { set if buffer flags field is valid}
+
+{ flags passed in bufferFlags/bufferFlagsMask extended fields if kExtendedSoundBufferFlagsValid extended flag is set}
+const
+	kExtendedSoundBufferIsDiscontinuous = 1 shl 0; { buffer is discontinuous with previous buffer}
+	kExtendedSoundBufferIsFirstBuffer = 1 shl 1; { buffer is first buffer}
+
+>>>>>>> graemeg/cpstrnew
 {
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    typedefs
@@ -1288,8 +1405,12 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SoundConverter = ^OpaqueSoundConverter; { an opaque type }
 	OpaqueSoundConverter = record end;
+=======
+	SoundConverter = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SoundConverter = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -1305,8 +1426,12 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SoundSource = ^OpaqueSoundSource; { an opaque type }
 	OpaqueSoundSource = record end;
+=======
+	SoundSource = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SoundSource = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -1355,6 +1480,7 @@ type
 		numChannels: SInt16;            { mono or stereo source}
 		leftMeter: UInt8;              { 0-255 range}
 		rightMeter: UInt8;             { 0-255 range}
+<<<<<<< HEAD
 	end;
 	LevelMeterInfoPtr = ^LevelMeterInfo;
 type
@@ -1395,10 +1521,19 @@ type
 		propertyRequestResult: ComponentResult;  { out -- GetPropertyInfo, GetProperty, SetProperty}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	end;
+	LevelMeterInfoPtr = ^LevelMeterInfo;
+type
+	EQSpectrumBandsRecord = record
+		count: SInt16;
+		frequency: UnsignedFixedPtr;              { pointer to array of frequencies}
+>>>>>>> graemeg/cpstrnew
 	end;
 	EQSpectrumBandsRecordPtr = ^EQSpectrumBandsRecord;
 const
 	kSoundAudioCodecPropertyWritableFlag = 1 shl 0;
+<<<<<<< HEAD
 
 type
 	SoundAudioCodecPropertyRequestParams = record
@@ -1419,6 +1554,21 @@ type
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
+type
+	SoundAudioCodecPropertyRequestParams = record
+		propertyClass: UInt32;
+		propertyID: UInt32;
+		propertyDataSize: UInt32;       { out -- GetPropertyInfo, in/out -- GetProperty, in -- SetProperty}
+		propertyData: UnivPtr;           { in -- GetPropertyInfo, GetProperty, SetProperty}
+		propertyRequestFlags: UInt32;   { out -- GetPropertyInfo}
+		propertyDataType: UInt32;       { out -- GetPropertyInfo, often 0}
+		propertyRequestResult: ComponentResult;  { out -- GetPropertyInfo, GetProperty, SetProperty}
+	end;
+
+
 >>>>>>> graemeg/cpstrnew
 { Sound Input Structures}
 type

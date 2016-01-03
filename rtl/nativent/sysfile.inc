@@ -29,6 +29,7 @@ end;
 procedure do_close(h : thandle);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   res: LongInt;
 begin
@@ -47,6 +48,8 @@ procedure do_erase(p : pwidechar; pchangeable: boolean);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   if do_isdevice(h) then
     Exit;
@@ -56,6 +59,9 @@ end;
 
 procedure do_erase(p : pchar);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -68,6 +74,7 @@ var
   res: LongInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp: pwidechar;
 begin
   InoutRes := 4;
@@ -78,12 +85,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   InoutRes := 4;
   DoDirSeparators(p);
 
   SysPCharToNtStr(ntstr, p, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -113,6 +125,7 @@ begin
   Errno2InoutRes;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if p<>oldp then
     freemem(p);
 end;
@@ -122,11 +135,16 @@ procedure do_rename(p1,p2 : pwidechar; p1changeable, p2changeable: boolean);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 
 procedure do_rename(p1,p2 : pchar);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -137,6 +155,7 @@ var
   dest, src: TNtUnicodeString;
   renameinfo: PFileRenameInformation;
   res: LongInt;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   oldp1, oldp2 : pwidechar;
@@ -150,6 +169,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   DoDirSeparators(p1);
   DoDirSeparators(p2);
@@ -157,6 +178,9 @@ begin
   { check whether the destination exists first }
   SysPCharToNtStr(dest, p2, 0);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -173,8 +197,12 @@ begin
   end else begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     DoDirSeparators(p1,p1changeable);
     SysPWideCharToNtStr(src, p1, 0);
+=======
+    SysPCharToNtStr(src, p1, 0);
+>>>>>>> graemeg/cpstrnew
 =======
     SysPCharToNtStr(src, p1, 0);
 >>>>>>> graemeg/cpstrnew
@@ -221,10 +249,13 @@ begin
   SysFreeNtStr(dest);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if p1<>oldp1 then
     freemem(p1);
   if p2<>oldp2 then
     freemem(p2);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -385,7 +416,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_open(var f;p:pwidechar;flags:longint; pchangeable: boolean);
+=======
+procedure do_open(var f;p:pchar;flags:longint);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure do_open(var f;p:pchar;flags:longint);
 >>>>>>> graemeg/cpstrnew
@@ -407,8 +442,13 @@ var
   res: LongInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp : pwidechar;
 begin
+=======
+begin
+  DoDirSeparators(p);
+>>>>>>> graemeg/cpstrnew
 =======
 begin
   DoDirSeparators(p);
@@ -440,7 +480,11 @@ begin
   else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ((filemode and $F0) = fmShareCompat) or ((filemode and fmshareDenyWrite) = fmshareDenyWrite) then
+=======
+    if (filemode = fmShareCompat) or ((filemode and fmshareDenyWrite) = fmshareDenyWrite) then
+>>>>>>> graemeg/cpstrnew
 =======
     if (filemode = fmShareCompat) or ((filemode and fmshareDenyWrite) = fmshareDenyWrite) then
 >>>>>>> graemeg/cpstrnew
@@ -497,9 +541,13 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp:=p;
   DoDirSeparators(p,pchangeable);
   SysPWideCharToNtStr(ntstr, p, 0);
+=======
+  SysPCharToNtStr(ntstr, p, 0);
+>>>>>>> graemeg/cpstrnew
 =======
   SysPCharToNtStr(ntstr, p, 0);
 >>>>>>> graemeg/cpstrnew
@@ -527,10 +575,14 @@ begin
     Errno2InoutRes;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FileRec(f).mode:=fmclosed;
   end;
   if oldp<>p then
     freemem(p);
+=======
+  end;
+>>>>>>> graemeg/cpstrnew
 =======
   end;
 >>>>>>> graemeg/cpstrnew

@@ -27,6 +27,7 @@
 25,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 28,
 31,
 34,
@@ -65,6 +66,10 @@
 26,
 29,
 >>>>>>> graemeg/cpstrnew
+=======
+26,
+29,
+>>>>>>> graemeg/cpstrnew
 28,
 31,
 32,
@@ -95,6 +100,9 @@
 71,
 70,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -131,6 +139,7 @@
 87,
 88,
 89,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 90,
@@ -174,6 +183,9 @@
 128,
 129,
 130
+=======
+90
+>>>>>>> graemeg/cpstrnew
 =======
 90
 >>>>>>> graemeg/cpstrnew

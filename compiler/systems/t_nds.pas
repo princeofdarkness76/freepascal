@@ -542,7 +542,10 @@ begin
         add('__iwram_top	=	ORIGIN(iwram)+ LENGTH(iwram);');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         add('');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -752,7 +755,11 @@ begin
   if (cs_link_map in current_settings.globalswitches) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
+=======
+   StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
+>>>>>>> graemeg/cpstrnew
 =======
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
 >>>>>>> graemeg/cpstrnew

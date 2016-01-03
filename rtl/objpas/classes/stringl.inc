@@ -1340,8 +1340,11 @@ begin
   Changing;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   InternalClear;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if FOwnsObjects then
@@ -1420,12 +1423,15 @@ Function TStringList.DoCompareText(const s1,s2 : string) : PtrInt;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TStringList.CompareStrings(const s1,s2 : string) : Integer;
 begin
   Result := DoCompareText(s1, s2);
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1530,7 +1536,10 @@ begin
   FOnCompareText := @DefaultCompareText;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   NameValueSeparator:='=';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

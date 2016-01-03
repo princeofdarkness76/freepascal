@@ -54,6 +54,7 @@ var
     _commandCharacters: NSString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(3)-1] of id;
     _auxiliary: id;
     __ticFlags: record
@@ -63,6 +64,8 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         _reserved: array[0..2] of id;
     _auxiliary: id;
     __ticFlags: bitpacked record
@@ -70,6 +73,9 @@ var
        0: (_anonbitfield_NSTextInputContext0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -94,7 +100,10 @@ var
         __reserved: 0..((1 shl 3)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

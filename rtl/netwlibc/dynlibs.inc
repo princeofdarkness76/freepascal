@@ -41,7 +41,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SysLoadLibraryU(const Name: UnicodeString) : TLibHandle;
+=======
+Function LoadLibrary(const Name : AnsiString) : TLibHandle;
+>>>>>>> graemeg/cpstrnew
 =======
 Function LoadLibrary(const Name : AnsiString) : TLibHandle;
 >>>>>>> graemeg/cpstrnew
@@ -55,7 +59,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function SysGetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+=======
+Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
 >>>>>>> graemeg/cpstrnew

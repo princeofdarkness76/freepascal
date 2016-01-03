@@ -22,6 +22,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CreateDirectoryTrunc(name:pointer):longbool;stdcall;
 begin
   CreateDirectoryTrunc:=CreateDirectoryW(name,nil);
@@ -30,6 +31,10 @@ begin
 >>>>>>> graemeg/cpstrnew
 procedure dirfn(afunc : TDirFnType;s:pchar;len:integer);
 begin
+=======
+procedure dirfn(afunc : TDirFnType;s:pchar;len:integer);
+begin
+>>>>>>> graemeg/cpstrnew
   DoDirSeparators(s);
   if not aFunc(s) then
     begin
@@ -48,6 +53,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Procedure do_MkDir(const s: UnicodeString);
@@ -93,6 +99,18 @@ Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'
 
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+begin
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+   exit;
+  dirfn(TDirFnType(@CreateDirectoryTrunc),s,len);
+end;
+
+Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+
+begin
+>>>>>>> graemeg/cpstrnew
   if (len=1) and (s^ ='.') then
     InOutRes := 16;
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
@@ -103,6 +121,9 @@ begin
 {$endif WINCE}
   dirfn(TDirFnType(@RemoveDirectory),s,len);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -112,6 +133,7 @@ begin
 {$endif WINCE}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Procedure do_ChDir(const s: UnicodeString);
@@ -159,6 +181,8 @@ begin
   dirfn(TDirFnType(@SetCurrentDirectory),s,len);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 
 begin
@@ -166,6 +190,9 @@ begin
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
    exit;
   dirfn(TDirFnType(@SetCurrentDirectory),s,len);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   if Inoutres=2 then
    Inoutres:=3;

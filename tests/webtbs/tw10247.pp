@@ -6,7 +6,10 @@ type
     type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       TAlias = T;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -34,7 +37,11 @@ type
     function GetAddr: TTNode.PT;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetV(v: TTNode.TAlias);
+=======
+    procedure SetV(v: TTNode.T);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetV(v: TTNode.T);
 >>>>>>> graemeg/cpstrnew

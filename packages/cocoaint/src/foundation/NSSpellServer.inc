@@ -56,6 +56,7 @@ var
     _learnedDictionaries: NSArray;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __ssFlags: record
       case byte of
        0: (_anonbitfield_NSSpellServer0: cuint);
@@ -63,11 +64,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __ssFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSSpellServer0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -77,7 +83,10 @@ var
         _reserved: 0..((1 shl 29)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

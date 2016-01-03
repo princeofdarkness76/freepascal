@@ -1,7 +1,10 @@
 {$mode objfpc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ASSERTIONS ON}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -44,8 +47,11 @@ begin
     AssertEquals('Wrong data', i, data[i]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   writeln(data[11]);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

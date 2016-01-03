@@ -558,7 +558,11 @@ implementation
         { create the correct call }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if m_isolike_io in current_settings.modeswitches then
+=======
+        if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
 =======
         if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
@@ -688,7 +692,10 @@ implementation
         name:string[63];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         func_suffix:string[8];
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -783,10 +790,13 @@ implementation
                       { iso pascal needs a different handler }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       if (m_isolike_io in current_settings.modeswitches) and do_read then
                         name:=name+'_iso';
                       readfunctype:=cansichartype;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                       if (m_iso in current_settings.modeswitches) and do_read then
@@ -859,7 +869,11 @@ implementation
           { iso pascal needs a different handler }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if (m_isolike_io in current_settings.modeswitches) and not(do_read) then
+=======
+          if (m_iso in current_settings.modeswitches) and not(do_read) then
+>>>>>>> graemeg/cpstrnew
 =======
           if (m_iso in current_settings.modeswitches) and not(do_read) then
 >>>>>>> graemeg/cpstrnew
@@ -918,7 +932,11 @@ implementation
                         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           if m_isolike_io in current_settings.modeswitches then
+=======
+                          if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
 =======
                           if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
@@ -1109,7 +1127,11 @@ implementation
                 name:='fpc_readln_end';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if m_isolike_io in current_settings.modeswitches then
+=======
+                if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
 =======
                 if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
@@ -1526,8 +1548,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          suffix:='';
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2008,7 +2033,10 @@ implementation
                 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2044,6 +2072,7 @@ implementation
         hp        : tnode;
         vl,vl2    : TConstExprInt;
         vr        : bestreal;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
@@ -2147,6 +2176,8 @@ implementation
         hp        : tnode;
         vl,vl2    : TConstExprInt;
         vr        : bestreal;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2409,7 +2440,11 @@ implementation
                         { check the range for enums, chars, booleans }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         result:=cordconstnode.create(vl,left.resultdef,not(nf_internal in flags))
+=======
+                        result:=cordconstnode.create(vl,left.resultdef,true)
+>>>>>>> graemeg/cpstrnew
 =======
                         result:=cordconstnode.create(vl,left.resultdef,true)
 >>>>>>> graemeg/cpstrnew
@@ -2575,11 +2610,14 @@ implementation
                 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               in_rol_x,
               in_rol_x_y,
               in_ror_x,
               in_ror_x_y :
                 result:=handle_const_rox;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2618,6 +2656,9 @@ implementation
 =======
           if (left.resultdef.typ=floatdef) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2718,7 +2759,11 @@ implementation
             Message1(type_e_objc_type_unsupported,errordef.typename);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           result:=cstringconstnode.createpchar(ansistring2pchar(encodedtype),length(encodedtype),nil);
+=======
+          result:=cstringconstnode.createpchar(ansistring2pchar(encodedtype),length(encodedtype));
+>>>>>>> graemeg/cpstrnew
 =======
           result:=cstringconstnode.createpchar(ansistring2pchar(encodedtype),length(encodedtype));
 >>>>>>> graemeg/cpstrnew
@@ -2981,8 +3026,14 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { Postpone conversion into addnode until firstpass, so targets
                     may override first_assigned and insert specific code. }
+=======
+                  { converting to an add node is tricky because of differences
+                    in procvar handling between FPC and Delphi handling, so
+                    handle specially }
+>>>>>>> graemeg/cpstrnew
 =======
                   { converting to an add node is tricky because of differences
                     in procvar handling between FPC and Delphi handling, so
@@ -3342,6 +3393,9 @@ implementation
                   if not((left.resultdef.typ=floatdef) and
                          (tfloatdef(left.resultdef).floattype in [s32real,s64real,s80real,sc80real,s128real])) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3378,7 +3432,10 @@ implementation
 {$endif SUPPORT_MMX}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               in_aligned_x,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3435,6 +3492,9 @@ implementation
               in_rol_x_x,
               in_ror_x_x,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3458,6 +3518,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               in_popcnt_x:
                  begin
                    set_varstate(left,vs_read,[vsf_must_be_valid]);
@@ -3466,6 +3527,8 @@ implementation
                    resultdef:=left.resultdef;
                  end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3486,6 +3549,7 @@ implementation
                 begin
                   result:=handle_objc_encode;
                 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               in_default_x:
@@ -3510,6 +3574,8 @@ implementation
                   set_varstate(tcallparanode(tcallparanode(tcallparanode(left).right).right).left,vs_read,[vsf_must_be_valid]);
                   resultdef:=tcallparanode(left).left.resultdef;
                 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3630,10 +3696,14 @@ implementation
                 because it's too complex to handle correctly otherwise }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef jvm}
               { enums are class instances in the JVM -> always need conversion }
               if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
 {$endif}
+=======
+              if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
+>>>>>>> graemeg/cpstrnew
 =======
               if ([cs_check_overflow,cs_check_range]*current_settings.localswitches)<>[] then
 >>>>>>> graemeg/cpstrnew
@@ -3660,7 +3730,11 @@ implementation
                   if not(is_integer(resultdef)) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     inserttypeconv(hp,corddef.create(
+=======
+                    inserttypeconv(hp,torddef.create(
+>>>>>>> graemeg/cpstrnew
 =======
                     inserttypeconv(hp,torddef.create(
 >>>>>>> graemeg/cpstrnew
@@ -3675,8 +3749,12 @@ implementation
                       get_min_value(resultdef),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       get_max_value(resultdef),
                       true))
+=======
+                      get_max_value(resultdef)))
+>>>>>>> graemeg/cpstrnew
 =======
                       get_max_value(resultdef)))
 >>>>>>> graemeg/cpstrnew
@@ -3947,7 +4025,10 @@ implementation
            end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          in_aligned_x,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3961,7 +4042,13 @@ implementation
          in_ror_x,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          in_ror_x_y,
+=======
+         in_ror_x_x,
+         in_sar_x,
+         in_sar_x_y,
+>>>>>>> graemeg/cpstrnew
 =======
          in_ror_x_x,
          in_sar_x,
@@ -4700,6 +4787,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      function tinlinenode.first_fma: tnode;
        begin
@@ -4707,6 +4795,8 @@ implementation
          result:=nil;
        end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

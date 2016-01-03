@@ -2,7 +2,11 @@
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -38,6 +42,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 type
@@ -81,6 +86,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TPTCPalette.Create;
 var
   zero: array [0..255] of Uint32;
@@ -108,7 +115,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TPTCPalette.Create(APalette: IPTCPalette);
+=======
+constructor TPTCPalette.Create(const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TPTCPalette.Create(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -124,7 +135,11 @@ begin
     raise TPTCError.Create('could not create hermes palette instance');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Hermes_PaletteSet(FHandle, Hermes_PaletteGet(APalette.GetHermesPaletteHandle));
+=======
+  Assign(APalette);
+>>>>>>> graemeg/cpstrnew
 =======
   Assign(APalette);
 >>>>>>> graemeg/cpstrnew
@@ -144,7 +159,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {procedure TPTCPalette.Assign(const APalette: TPTCPalette);
+=======
+procedure TPTCPalette.Assign(const APalette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -164,7 +183,11 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -212,11 +235,14 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TPTCPalette.GetHermesPaletteHandle: THermesPaletteHandle;
 begin
   Result := FHandle;
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

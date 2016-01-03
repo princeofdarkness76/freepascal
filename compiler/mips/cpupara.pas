@@ -30,6 +30,7 @@ interface
       cpubase,cpuinfo,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       symconst,symbase,symsym,symtype,symdef,paramgr,parabase,cgbase,cgutils;
 
     const
@@ -86,6 +87,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       symconst,symbase,symsym,symtype,symdef,paramgr,parabase,cgbase;
 
     type
@@ -105,6 +108,9 @@ interface
         procedure create_paraloc_info_intern(p : tabstractprocdef; side: tcallercallee; paras: tparalist;
                                              var intparareg,parasize:longint);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -114,6 +120,7 @@ implementation
 
     uses
       cutils,verbose,systems,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       defutil, cpupi, procinfo,
@@ -158,6 +165,8 @@ implementation
     { true if a parameter is too large to copy and only the address is pushed }
     function tcpuparamanager.push_addr_param(varspez:tvarspez;def : tdef;calloption : tproccalloption) : boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       defutil,
@@ -217,6 +226,9 @@ implementation
     { true if a parameter is too large to copy and only the address is pushed }
     function tMIPSELparamanager.push_addr_param(varspez:tvarspez;def : tdef;calloption : tproccalloption) : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -229,6 +241,7 @@ implementation
             exit;
           end;
         case def.typ of
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           recorddef:
@@ -245,12 +258,17 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           recorddef,
           arraydef,
           variantdef,
           formaldef :
             push_addr_param:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -261,8 +279,12 @@ implementation
           procvardef :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             { If we always push records by value, we have to handle methodpointers that way too. }
             result:=false; {not tprocvardef(def).is_addressonly;}
+=======
+            result:=not tprocvardef(def).is_addressonly;
+>>>>>>> graemeg/cpstrnew
 =======
             result:=not tprocvardef(def).is_addressonly;
 >>>>>>> graemeg/cpstrnew
@@ -275,6 +297,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function tcpuparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;
@@ -298,6 +321,8 @@ implementation
                   inc(intparareg);
               end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure tMIPSELparamanager.create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
@@ -342,6 +367,9 @@ implementation
             paraloc^.loc:=LOC_REFERENCE;
             paraloc^.size:=retcgsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -352,7 +380,11 @@ implementation
         { Return in FPU register? }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if result.def.typ=floatdef then
+=======
+        if p.returndef.typ=floatdef then
+>>>>>>> graemeg/cpstrnew
 =======
         if p.returndef.typ=floatdef then
 >>>>>>> graemeg/cpstrnew
@@ -367,7 +399,10 @@ implementation
             paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -376,6 +411,7 @@ implementation
         else
          { Return in register }
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifndef cpu64bitalu}
@@ -408,6 +444,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifndef cpu64bit}
             if retcgsize in [OS_64,OS_S64] then
              begin
@@ -433,6 +471,9 @@ implementation
                paraloc^.loc:=LOC_REGISTER;
                paraloc^.size:=retcgsize;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -444,6 +485,7 @@ implementation
           end
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -475,6 +517,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     var
       param_offset:array[0..20] of ^Aint;
 
@@ -502,6 +546,9 @@ implementation
             if (p.proccalloption in [pocall_cdecl,pocall_cppdecl]) and
                is_array_of_const(hp.vardef) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -511,6 +558,7 @@ implementation
                 paraloc^.loc:=LOC_REGISTER;
                 paraloc^.register:=NR_R0;
                 paraloc^.size:=OS_ADDR;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 paraloc^.def:=voidpointertype;
@@ -748,6 +796,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                 break;
               end;
 
@@ -841,6 +891,9 @@ implementation
         create_paraloc_info_intern(p,callerside,varargspara,intparareg,parasize);
         result:=parasize;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -848,6 +901,7 @@ implementation
 
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function tcpuparamanager.create_paraloc_info(p : tabstractprocdef; side: tcallercallee):longint;
@@ -863,6 +917,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function tMIPSELparamanager.create_paraloc_info(p : tabstractprocdef; side: tcallercallee):longint;
       var
         intparareg,
@@ -876,6 +932,9 @@ implementation
         { We need to return the size allocated on the stack }
         result:=parasize;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -885,7 +944,11 @@ implementation
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ParaManager:=tcpuparamanager.create;
+=======
+   ParaManager:=TMIPSELParaManager.create;
+>>>>>>> graemeg/cpstrnew
 =======
    ParaManager:=TMIPSELParaManager.create;
 >>>>>>> graemeg/cpstrnew

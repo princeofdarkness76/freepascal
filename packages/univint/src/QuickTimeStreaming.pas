@@ -5,9 +5,15 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    QuickTime 7.6.3
  
@@ -27,8 +33,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -91,11 +101,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -120,11 +133,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -143,11 +162,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -166,7 +191,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -176,13 +204,19 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -192,6 +226,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -203,6 +238,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -215,11 +255,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -270,6 +314,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -314,11 +362,15 @@ interface
 uses MacTypes,Components,Events,Files,QuickdrawTypes,Movies,ImageCompression,QuickTimeComponents;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+
+>>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
@@ -339,7 +391,11 @@ type
 	QTSPresentationRecord = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		data: array [0..1-1] of SIGNEDLONG;
+=======
+		data: array [0..0] of SInt32;
+>>>>>>> graemeg/cpstrnew
 =======
 		data: array [0..0] of SInt32;
 >>>>>>> graemeg/cpstrnew
@@ -353,7 +409,11 @@ type
 	QTSStreamRecord = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		data: array [0..1-1] of SIGNEDLONG;
+=======
+		data: array [0..0] of SInt32;
+>>>>>>> graemeg/cpstrnew
 =======
 		data: array [0..0] of SInt32;
 >>>>>>> graemeg/cpstrnew
@@ -1480,6 +1540,12 @@ function QTSPresGetGraphicsMode( inPresentation: QTSPresentation; inStream: QTSS
  *    CarbonLib:        in CarbonLib 1.1 and later
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
+ *    Windows:          in QTSClient.lib 4.0 and later
+ }
+function QTSPresGetPicture( inPresentation: QTSPresentation; inStream: QTSStream; var outPicture: PicHandle ): OSErr; external name '_QTSPresGetPicture';
+=======
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
@@ -1501,6 +1567,25 @@ function QTSPresGetPicture( inPresentation: QTSPresentation; inStream: QTSStream
  *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
  *    Windows:          in QTSClient.lib 4.0 and later
  }
+function QTSPresSetVisualContext( inPresentation: QTSPresentation; inStream: QTSStream; inVisualContext: QTVisualContextRef ): OSErr; external name '_QTSPresSetVisualContext';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
+ *  QTSPresSetVisualContext()
+=======
+ *  QTSPresGetVisualContext()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QTStreamLib 4.0 and later
+ *    Windows:          in QTSClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
 function QTSPresSetVisualContext( inPresentation: QTSPresentation; inStream: QTSStream; inVisualContext: QTVisualContextRef ): OSErr; external name '_QTSPresSetVisualContext';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1554,6 +1639,8 @@ function QTSPresSetVisualContext( inPresentation: QTSPresentation; inStream: QTS
 =======
  *    Windows:          in QTSClient.lib 4.0 and later
  }
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function QTSPresGetVisualContext( inPresentation: QTSPresentation; inStream: QTSStream; var outVisualContext: QTVisualContextRef ): OSErr; external name '_QTSPresGetVisualContext';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2348,8 +2435,12 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	QTSMemPtr = ^OpaqueQTSMemPtr; { an opaque type }
 	OpaqueQTSMemPtr = record end;
+=======
+	QTSMemPtr = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	QTSMemPtr = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -2403,6 +2494,7 @@ type
 		reserved2: QTSStreamBufferPtr;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		next: QTSStreamBufferPtr;              { next message block in a message }
 		rptr: UInt8Ptr;                   { first byte with real data in the DataBuffer }
 		wptr: UInt8Ptr;                   { last+1 byte with real data in the DataBuffer }
@@ -2412,6 +2504,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 		next: QTSStreamBufferPtr;              {  next message block in a message  }
 		rptr: UInt8Ptr;                   {  first byte with real data in the DataBuffer  }
 		wptr: UInt8Ptr;                   {  last+1 byte with real data in the DataBuffer  }
@@ -2419,6 +2513,9 @@ type
 		metadata: array [0..3] of UInt32;            {  usage defined by message sender  }
 		flags: SInt32;                  {  reserved  }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

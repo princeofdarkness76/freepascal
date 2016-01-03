@@ -2,7 +2,11 @@
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -50,6 +54,7 @@ type
                    PTC_X11_DITHER,
                    PTC_X11_FULLSCREEN_CURSOR_VISIBLE,
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                    PTC_X11_GRAB_MOUSE,
@@ -158,6 +163,24 @@ type
 
     FEventQueue: TEventQueue;
 
+=======
+                   PTC_X11_GRAB_MOUSE);
+  TX11Flags = set of TX11FlagsEnum;
+
+type
+  TX11Display = class
+  protected
+    { Conversion object }
+    FCopy: TPTCCopy;
+    FClear: TPTCClear;
+    FPalette: TPTCPalette;
+
+    FArea: TPTCArea;
+    FClip: TPTCArea;
+
+    FEventQueue: TEventQueue;
+
+>>>>>>> graemeg/cpstrnew
     FFlags: TX11Flags;
     FWidth, FHeight: Integer;
     FFormat: TPTCFormat;
@@ -171,6 +194,9 @@ type
     FFunctionKeys: PInteger;
     FNormalKeys: PInteger;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; virtual; abstract;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; virtual; abstract;
@@ -206,6 +232,9 @@ type
     procedure Update(const AArea: TPTCArea); virtual; abstract;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -214,6 +243,7 @@ type
 
     { load pixels to console }
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                    AFormat: IPTCFormat; APalette: IPTCPalette); virtual;
@@ -304,6 +334,46 @@ type
 =======
     procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
+=======
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
+    procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); virtual;
+
+    { save console pixels }
+    procedure Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
+    procedure Save(APixels: Pointer; AWidth, AHeight, APitch: Integer;
+                   const AFormat: TPTCFormat; const APalette: TPTCPalette;
+                   const ASource, ADestination: TPTCArea); virtual;
+
+    { clear surface }
+    procedure Clear(const AColor: TPTCColor); virtual;
+    procedure Clear(const AColor: TPTCColor; const AArea: TPTCArea); virtual;
+
+    { Console palette }
+    procedure Palette(const APalette: TPTCPalette); virtual; abstract;
+    function Palette: TPTCPalette; virtual;
+
+    { console clip area }
+    procedure Clip(const AArea: TPTCArea);
+
+    { cursor control }
+    procedure SetCursor(AVisible: Boolean); virtual; abstract;
+
+    { mouse grab control }
+    procedure SetMouseGrab(AGrabMouse: Boolean); virtual; abstract;
+
+    { Data access }
+    function Clip: TPTCArea;
+
+    function IsFullScreen: Boolean; virtual; abstract;
+
+    { set flags (only used internally now!) }
+    procedure SetFlags(AFlags: TX11Flags);
+
+    procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
+>>>>>>> graemeg/cpstrnew
 
     { X11 helper functions for your enjoyment }
 
@@ -321,12 +391,17 @@ type
     property Pitch: Integer read GetPitch;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Area: IPTCArea read GetArea;
     property Format: IPTCFormat read GetFormat;
 
     procedure OpenGL_SwapBuffers; virtual;
     procedure OpenGL_SetSwapInterval(AInterval: Integer); virtual;
     function OpenGL_GetSwapInterval: Integer; virtual;
+=======
+    property Area: TPTCArea read GetArea;
+    property Format: TPTCFormat read GetFormat;
+>>>>>>> graemeg/cpstrnew
 =======
     property Area: TPTCArea read GetArea;
     property Format: TPTCFormat read GetFormat;

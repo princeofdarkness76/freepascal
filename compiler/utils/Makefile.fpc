@@ -5,7 +5,11 @@
 [target]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=fpc ppufiles ppudump ppumove mka64ins mkarmins mkx86ins
+=======
+programs=fpc ppufiles ppudump ppumove fpcsubst mkarmins mkx86ins
+>>>>>>> graemeg/cpstrnew
 =======
 programs=fpc ppufiles ppudump ppumove fpcsubst mkarmins mkx86ins
 >>>>>>> graemeg/cpstrnew
@@ -71,6 +75,7 @@ ppufiles$(EXEEXT): ppufiles.pp ppu$(PPUEXT)
 =======
 
 
+
 ppudump$(EXEEXT): ppudump.pp ppu$(PPUEXT)
         $(COMPILER) ppudump.pp -Fu../$(CPU_TARGET) -Fi..
 >>>>>>> graemeg/cpstrnew
@@ -83,6 +88,8 @@ endif
 msg2inc$(EXEEXT): $(COMPILER_UNITTARGETDIR) msg2inc.pp
 
 gppc386$(EXEEXT): $(COMPILER_UNITTARGETDIR) gppc386.pp
+
+msg2inc$(EXEEXT): $(COMPILER_UNITTARGETDIR) msg2inc.pp
 
 msg2inc$(EXEEXT): $(COMPILER_UNITTARGETDIR) msg2inc.pp
 

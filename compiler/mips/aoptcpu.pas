@@ -30,6 +30,7 @@ unit aoptcpu;
     uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgbase, cpubase, aoptobj, aoptcpub, aopt, aasmtai, aasmcpu;
 
     Type
@@ -47,11 +48,16 @@ unit aoptcpu;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       cpubase, aoptobj, aoptcpub, aopt;
 
     Type
       TCpuAsmOptimizer = class(TAsmOptimizer)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -59,6 +65,7 @@ unit aoptcpu;
 
   Implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      uses
@@ -805,6 +812,8 @@ unit aoptcpu;
         end;
     end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

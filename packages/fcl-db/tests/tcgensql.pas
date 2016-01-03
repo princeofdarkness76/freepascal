@@ -2,7 +2,11 @@
     This file is part of the Free Component Library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -41,6 +45,7 @@ type
   protected
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure SetUp; override;
     Procedure TearDown; override;
     Procedure DoTestDropStatement(AClass: TSQLDropStatementClass; const AObjectName: String);
@@ -49,12 +54,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure SetUp; override; 
     procedure TearDown; override;
     procedure DoTestDropStatement(AClass: TSQLDropStatementClass; const AObjectName: String);
     procedure DoTestAlterCreateProcedure(S: TSQLAlterCreateProcedureStatement; PHEAD: String);
     procedure DoTestAlterCreateTrigger(S: TSQLAlterCreateTriggerStatement; PHEAD: String);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -986,6 +996,7 @@ begin
   AssertSQL(J,'A RIGHT JOIN B ON (C = D)');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   J.JoinType:=jtFullOuter;
   AssertSQL(J,'A FULL OUTER JOIN B ON (C = D)');
   AssertSQL(J,'A'+sLinebreak+'FULL OUTER JOIN B ON (C = D)',[sfoOneTablePerLine]);
@@ -993,11 +1004,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   J.JoinType:=jtOuter;
   AssertSQL(J,'A OUTER JOIN B ON (C = D)');
   AssertSQL(J,'A'+sLinebreak+'OUTER JOIN B ON (C = D)',[sfoOneTablePerLine]);
   AssertSQL(J,'A'+sLinebreak+'  OUTER JOIN B ON (C = D)',[sfoOneTablePerLine,sfoIndentTables]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1009,12 +1025,15 @@ begin
   FTofree:=J;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertSQL(J,'A FULL OUTER JOIN (E JOIN F ON (G = H)) ON (C = D)');
   AssertSQL(J,'A FULL OUTER JOIN E JOIN F ON (G = H) ON (C = D)',[sfoNoBracketRightJoin]);
   J.Right:=J.Left;
   J.Left:=J2;
   AssertSQL(J,'(E JOIN F ON (G = H)) FULL OUTER JOIN A ON (C = D)',[sfoBracketLeftJoin]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   AssertSQL(J,'A OUTER JOIN (E JOIN F ON (G = H)) ON (C = D)');
@@ -1024,6 +1043,9 @@ begin
   AssertSQL(J,'(E JOIN F ON (G = H)) OUTER JOIN A ON (C = D)',[sfoBracketLeftJoin]);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2066,7 +2088,11 @@ begin
   P.ParamName:=CreateIdentifier('A');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2081,7 +2107,11 @@ begin
   P.ParamName:=CreateIdentifier('B');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2114,7 +2144,11 @@ begin
   P.ParamName:=CreateIdentifier('I');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2130,7 +2164,11 @@ begin
   P.ParamName:=CreateIdentifier('J');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2146,7 +2184,11 @@ begin
   P.ParamName:=CreateIdentifier('R');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2162,7 +2204,11 @@ begin
   P.ParamName:=CreateIdentifier('S');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2178,7 +2224,11 @@ begin
   P.ParamName:=CreateIdentifier('A');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2193,7 +2243,11 @@ begin
   P.ParamName:=CreateIdentifier('B');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew
@@ -2257,7 +2311,11 @@ begin
   P.ParamName:=CreateIdentifier('A');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtInteger,0);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtInteger,0);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtInteger,0);
 >>>>>>> graemeg/cpstrnew
@@ -2272,7 +2330,11 @@ begin
   P.ParamName:=CreateIdentifier('B');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   P.ParamType:=CreateTypeDefinition(sdtChar,5);
+=======
+  P.ParamType:=CreatetypeDefinition(sdtChar,5);
+>>>>>>> graemeg/cpstrnew
 =======
   P.ParamType:=CreatetypeDefinition(sdtChar,5);
 >>>>>>> graemeg/cpstrnew

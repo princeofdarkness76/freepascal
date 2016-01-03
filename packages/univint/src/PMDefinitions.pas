@@ -13,8 +13,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -77,11 +81,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -106,11 +113,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -129,11 +142,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -152,7 +171,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -162,11 +184,15 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
@@ -234,6 +260,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -255,6 +283,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endc}
 
@@ -301,7 +332,10 @@ uses MacTypes,MacErrors,CFString;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -311,6 +345,11 @@ uses MacTypes,MacErrors,CFString;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -328,6 +367,7 @@ uses MacTypes,MacErrors,CFString;
 { Printing objects }
 type
 	PMObject = UnivPtr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	PMPrintSettings = ^OpaquePMPrintSettings; { an opaque type }
@@ -353,6 +393,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	PMPrintSettings = ^SInt32; { an opaque type }
 	PMPrintSettingsPtr = ^PMPrintSettings; { when a var xx:PMPrintSettings parameter can be nil, it is changed to xx: PMPrintSettingsPtr }
 	PMPageFormat = ^SInt32; { an opaque type }
@@ -366,6 +408,7 @@ type
 	PMPreset = ^SInt32; { an opaque type }
 	PMPresetPtr = ^PMPreset; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPresetPtr }
 	PMPaper = ^SInt32; { an opaque type }
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 	PMPaperPtr = ^PMPaper; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPaperPtr }
@@ -386,6 +429,11 @@ const
 	PMPaperPtr = ^PMPaper; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPaperPtr }
 const
 	kPMCancel = $0080; { user hit cancel button in dialog }
+=======
+	PMPaperPtr = ^PMPaper; { when a var xx:PMPrinter parameter can be nil, it is changed to xx: PMPaperPtr }
+const
+	kPMCancel = $0080; { user hit cancel button in dialog }
+>>>>>>> graemeg/cpstrnew
 
 	kPMNoData = nil; { for general use }
 	kPMDontWantSize = nil; { for parameters which return size information }
@@ -397,6 +445,9 @@ const
 { for parameters which take a PrintSettings reference }
 	kPMNoPrintSettings = nil;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 { for parameters which take a PageFormat reference }
 	kPMNoPageFormat = nil;
@@ -422,6 +473,7 @@ const
 	kPMLandscape = 2;
 	kPMReversePortrait = 3;    { will revert to kPortrait for current drivers }
 	kPMReverseLandscape = 4;     { will revert to kLandscape for current drivers }
+<<<<<<< HEAD
 
 { Printer states }
 type
@@ -430,8 +482,11 @@ const
 	kPMPrinterIdle = 3;
 	kPMPrinterProcessing = 4;
 	kPMPrinterStopped = 5;
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
+<<<<<<< HEAD
 	PMColorSpaceModel = UInt32;
 const
 	kPMUnknownColorSpaceModel = 0;
@@ -458,13 +513,34 @@ const
 	kPMQualityBest = $000D; { Get best quality output for all objects and photos. }
 	kPMQualityHighest = $000F; { Absolute highest quality attained from a printers }
 
+=======
+	PMPrinterState = UInt16;
+const
+	kPMPrinterIdle = 3;
+	kPMPrinterProcessing = 4;
+	kPMPrinterStopped = 5;
+>>>>>>> graemeg/cpstrnew
 
 { Constants for our "standard" paper types }
 type
+<<<<<<< HEAD
 	PMPaperType = UInt32;
 const
 <<<<<<< HEAD
 =======
+=======
+	PMColorSpaceModel = UInt32;
+const
+	kPMUnknownColorSpaceModel = 0;
+	kPMGrayColorSpaceModel = 1;
+	kPMRGBColorSpaceModel = 2;
+	kPMCMYKColorSpaceModel = 3;
+	kPMDevNColorSpaceModel = 4;
+	
+	kPMColorSpaceModelCount = 4; { total number of color space models supported }
+	
+{ Print quality modes "standard options" }
+>>>>>>> graemeg/cpstrnew
 type
 	PMQualityMode = UInt32;
 const
@@ -481,6 +557,9 @@ const
 type
 	PMPaperType = UInt32;
 const
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	kPMPaperTypeUnknown = $0000; { Not sure yet what paper type we have. }
 	kPMPaperTypePlain = $0001; { Plain paper }
@@ -491,6 +570,7 @@ const
 	kPMPaperTypeTShirt = $0006; { Used to iron on t-shirts }
 
 { Scaling alignment: }
+<<<<<<< HEAD
 type
 	PMScalingAlignment = UInt16;
 const
@@ -572,6 +652,79 @@ const
 	kPMPaperTypeTShirt = $0006; { Used to iron on t-shirts }
 
 { Scaling alignment: }
+type
+	PMScalingAlignment = UInt16;
+const
+	kPMScalingPinTopLeft = 1;
+	kPMScalingPinTopRight = 2;
+	kPMScalingPinBottomLeft = 3;
+	kPMScalingPinBottomRight = 4;
+	kPMScalingCenterOnPaper = 5;
+	kPMScalingCenterOnImgArea = 6;
+
+{ Duplex Mode: }
+type
+	PMDuplexMode = UInt32;
+const
+	kPMDuplexNone = $0001; { Print only on one side of sheet of paper }
+	kPMDuplexNoTumble = $0002; { Print on both sides of the paper, with no tumbling. }
+	kPMDuplexTumble = $0003; { Print on both sides of the paper, tumbling on. }
+	kPMSimplexTumble = $0004; { Print on only one side of the paper, but tumble the images while printing. }
+	kPMDuplexDefault = kPMDuplexNone;
+
+{ Layout directions: }
+type
+	PMLayoutDirection = UInt16;
+const
+{ Horizontal-major directions: }
+	kPMLayoutLeftRightTopBottom = 1;    { English reading direction. }
+	kPMLayoutLeftRightBottomTop = 2;
+	kPMLayoutRightLeftTopBottom = 3;
+	kPMLayoutRightLeftBottomTop = 4;    { Vertical-major directions: }
+	kPMLayoutTopBottomLeftRight = 5;
+	kPMLayoutTopBottomRightLeft = 6;
+	kPMLayoutBottomTopLeftRight = 7;
+	kPMLayoutBottomTopRightLeft = 8;
+
+{ Page borders: }
+type
+	PMBorderType = UInt16;
+const
+	kPMBorderSingleHairline = 1;
+	kPMBorderDoubleHairline = 2;
+	kPMBorderSingleThickline = 3;
+	kPMBorderDoubleThickline = 4;
+
+{ 
+ Options for which items to show inline in the print dialog
+ This is only meant to be used in Carbon environment
+ }
+type
+	PMPrintDialogOptionFlags = OptionBits;
+const
+	kPMHideInlineItems = 0 shl 0; { show nothing in the inline portion of print dialog }
+	kPMShowDefaultInlineItems = 1 shl 15; { show the default set of items (copies & pages) in the inline portion of print dialog }
+	kPMShowInlineCopies = 1 shl 0; { show Copies edit text, Collate check box and Two Sided check box (if printer supports it) in top portion of print dialog }
+	kPMShowInlinePageRange = 1 shl 1; { show Paper Range buttons and From & To Page edit text items in top portion of print dialog }
+	kPMShowInlinePageRangeWithSelection = 1 shl 6; { show Paper Range buttons with the addition of a Selection button and the From & To Page edit text items in top portion of print dialog }
+	kPMShowInlinePaperSize = 1 shl 2; { show Paper Size popup menu in top portion of print dialog }
+	kPMShowInlineOrientation = 1 shl 3; { show Orientation buttons in top portion of print dialog }
+	kPMShowInlineScale = 1 shl 7; { show Scaling edit text in top portion of print dialog }
+	kPMShowPageAttributesPDE = 1 shl 8; { add a PDE to the print dialog that contains the Page Setup information (paper size, orientation and scale) }
+
+type
+	PMPPDDomain = UInt16;
+const
+	kAllPPDDomains = 1;
+	kSystemPPDDomain = 2;
+	kLocalPPDDomain = 3;
+	kNetworkPPDDomain = 4;
+	kUserPPDDomain = 5;
+	kCUPSPPDDomain = 6;
+
+
+>>>>>>> graemeg/cpstrnew
+=======
 type
 	PMScalingAlignment = UInt16;
 const
@@ -667,6 +820,7 @@ const
 {$endc}
 { PDF Workflow Keys }
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc USE_CFSTR_CONSTANT_MACROS}
 {$definec kPDFWorkFlowItemURLKey CFSTRP('itemURL')}
 {$endc}
@@ -713,7 +867,47 @@ const
 	kPMInvalidPrinter = -30880; { the printer reference is invalid }
 	kPMObjectInUse = -30881; { the object is in use }
 	kPMInvalidPreset = -30899;{ the preset is invalid }
+=======
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kPDFWorkFlowItemURLKey CFSTRP('itemURL')}
+{$endc}
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kPDFWorkflowFolderURLKey CFSTRP('folderURL')}
+{$endc}
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kPDFWorkflowDisplayNameKey CFSTRP('displayName')}
+{$endc}
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kPDFWorkflowItemsKey CFSTRP('items')}
+{$endc}
+>>>>>>> graemeg/cpstrnew
 
+{ OSStatus return codes }
+const
+	kPMNoError = noErr;
+	kPMGeneralError = -30870;
+	kPMOutOfScope = -30871; { an API call is out of scope }
+	kPMInvalidParameter = paramErr; { a required parameter is missing or invalid }
+	kPMNoDefaultPrinter = -30872; { no default printer selected }
+	kPMNotImplemented = -30873; { this API call is not supported }
+	kPMNoSuchEntry = -30874; { no such entry }
+	kPMInvalidPrintSettings = -30875; { the printsettings reference is invalid }
+	kPMInvalidPageFormat = -30876; { the pageformat reference is invalid }
+	kPMValueOutOfRange = -30877; { a value passed in is out of range }
+	kPMLockIgnored = -30878; { the lock value was ignored }
+
+const
+	kPMInvalidPrintSession = -30879; { the print session is invalid }
+	kPMInvalidPrinter = -30880; { the printer reference is invalid }
+	kPMObjectInUse = -30881; { the object is in use }
+	kPMInvalidPreset = -30899;{ the preset is invalid }
+
+
+const
+	kPMPrintAllPages = -1;
+
+const
+	kPMUnlocked = false;
 
 const
 	kPMPrintAllPages = -1;

@@ -75,7 +75,11 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('sdlutils.pas',[i386,powerpc],[linux,freebsd,win32,darwin,iphonesim]);
+=======
+    T:=P.Targets.AddUnit('sdlutils.pas',[i386,powerpc],[linux,freebsd,win32,darwin]);
+>>>>>>> graemeg/cpstrnew
 =======
     T:=P.Targets.AddUnit('sdlutils.pas',[i386,powerpc],[linux,freebsd,win32,darwin]);
 >>>>>>> graemeg/cpstrnew
@@ -109,7 +113,11 @@ end.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> graemeg/cpstrnew
 =======
  
 >>>>>>> graemeg/cpstrnew

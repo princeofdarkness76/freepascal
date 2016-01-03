@@ -31,6 +31,7 @@ uses
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   { tmipsaddnode }
 
@@ -41,6 +42,8 @@ type
     procedure second_generic_cmp32(unsigned: boolean);
     procedure second_mul64bit;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   tmipsaddnode = class(tcgaddnode)
@@ -55,6 +58,9 @@ type
     function GetRes_register(unsigned: boolean; this_reg, left_reg, right_reg: TRegister): TRegister;
     function GetRes64_register(unsigned: boolean; {this_reg,} left_reg, right_reg: TRegister64): TRegister;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -63,6 +69,7 @@ type
     procedure second_cmpfloat; override;
     procedure second_cmpboolean; override;
     procedure second_cmpsmallset; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     procedure second_add64bit; override;
@@ -80,6 +87,10 @@ type
     procedure second_cmp64bit; override;
     procedure second_cmpordinal; override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure second_cmp64bit; override;
+    procedure second_cmpordinal; override;
+>>>>>>> graemeg/cpstrnew
   end;
 
 implementation
@@ -87,7 +98,11 @@ implementation
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   systems, globtype, globals,
+=======
+  systems,
+>>>>>>> graemeg/cpstrnew
 =======
   systems,
 >>>>>>> graemeg/cpstrnew
@@ -100,6 +115,7 @@ uses
   defutil,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cpuinfo,
   {cgbase,} cgcpu, cgutils,
   cpupara,
@@ -110,11 +126,16 @@ uses
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   {cgbase,} cgcpu, cgutils,
   cpupara,
   ncon, nset, nadd,
   ncgutil, cgobj;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -122,6 +143,7 @@ uses
 {*****************************************************************************
                                tmipsaddnode
 *****************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -251,6 +273,8 @@ begin
         gten:
           cmp64_le(right_reg, left_reg,unsigned);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function tmipsaddnode.GetRes_register(unsigned: boolean; this_reg, left_reg, right_reg: TRegister): TRegister;
@@ -526,6 +550,9 @@ begin
               GetRes64_register := cmp64_leu(right_reg, left_reg);
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -535,7 +562,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -552,12 +582,15 @@ begin
           as both will be in a fpureg }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, left.location, left.resultdef, True);
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, right.location, right.resultdef, True);
 
   location_reset(location, LOC_FPUREGISTER, def_cgsize(resultdef));
   location.register:=cg.getfpuregister(current_asmdata.CurrAsmList,location.size);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   location_force_fpureg(current_asmdata.CurrAsmList, left.location, True);
@@ -569,6 +602,9 @@ begin
   else
     location.Register := right.location.Register;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -613,6 +649,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
   ops_cmpfloat: array[boolean,ltn..unequaln] of TAsmOp = (
   // ltn       lten      gtn       gten      equaln    unequaln
@@ -627,11 +664,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure tmipsaddnode.second_cmpfloat;
 var
   op: tasmop;
   lfcmptrue, lfcmpfalse: tasmlabel;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -640,6 +682,7 @@ begin
   if nf_swapped in flags then
     swapleftright;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   hlcg.location_force_fpureg(current_asmdata.CurrAsmList, left.location, left.resultdef, True);
@@ -666,6 +709,8 @@ begin
   else
     location.resflags.cond:=OC_NE;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   { force fpureg as location, left right doesn't matter
@@ -764,6 +809,9 @@ begin
     end;
   end; {case}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -771,6 +819,7 @@ end;
 
 
 procedure tmipsaddnode.second_cmpboolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 begin
@@ -904,6 +953,8 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 var
   tmp_right_reg: TRegister;
 begin
@@ -992,6 +1043,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -49,6 +49,7 @@ implementation
     {$ifndef NOTARGETSUNOS}
       ,t_sunos
     {$endif}
+<<<<<<< HEAD
     {$ifndef NOTARGETAROS}
       ,t_aros
     {$endif}
@@ -59,6 +60,8 @@ implementation
       ,t_sunos
     {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {**************************************
              Assemblers

@@ -2118,7 +2118,11 @@ option_logo=11023_[
 Free Pascal Compiler wersja $FPCFULLVERSION [$FPCDATE] dla $FPCCPU
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 by Florian Klaempfl and others
+=======
+Copyright (c) 1993-2011 by Florian Klaempfl
+>>>>>>> graemeg/cpstrnew
 =======
 Copyright (c) 1993-2011 by Florian Klaempfl
 >>>>>>> graemeg/cpstrnew

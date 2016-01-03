@@ -147,7 +147,11 @@ implementation
                is_special_array(tunarynode(n).left.resultdef) or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                (tunarynode(n).left.resultdef.size<>tunarynode(n).resultdef.size) then
+=======
+               (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
+>>>>>>> graemeg/cpstrnew
 =======
                (tsubscriptnode(n).left.resultdef.size <> tunarynode(n).resultdef.size) then
 >>>>>>> graemeg/cpstrnew
@@ -769,10 +773,13 @@ implementation
         if not(right.expectloc in [LOC_FLAGS,LOC_JUMP]) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             (node_complexity(right)>node_complexity(left)) then
          begin
            secondpass(right);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
            (is_managed_type(right.resultdef) or
@@ -1018,6 +1025,9 @@ implementation
 =======
 {$ifdef x86}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1083,6 +1093,7 @@ implementation
                         LOC_MMREGISTER:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           hlcg.a_loadmm_reg_reg(current_asmdata.CurrAsmList,right.resultdef,left.resultdef,right.location.register,left.location.register,mms_movescalar);
                         LOC_REFERENCE,
                         LOC_CREFERENCE:
@@ -1090,11 +1101,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                           cg.a_loadmm_reg_reg(current_asmdata.CurrAsmList,right.location.size,left.location.size,right.location.register,left.location.register,mms_movescalar);
                         LOC_REFERENCE,
                         LOC_CREFERENCE:
                           cg.a_loadmm_reg_ref(current_asmdata.CurrAsmList,right.location.size,left.location.size,right.location.register,left.location.reference,mms_movescalar);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1117,6 +1133,9 @@ implementation
 =======
 {$ifndef cpu64bitalu}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1148,6 +1167,9 @@ implementation
 =======
 {$ifdef x86}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1334,6 +1356,7 @@ implementation
         vtAnsiString64  = 20;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     procedure tcgarrayconstructornode.makearrayref(var ref: treference; eledef: tdef);
@@ -1347,6 +1370,8 @@ implementation
         inc(ref.offset,elesize);
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1558,6 +1583,12 @@ implementation
                          begin
                            vtype:=vtUnicodeString;
                            varfield:=tfieldvarsym(search_struct_member_no_helper(trecorddef(eledef),'VUNICODESTRING'));
+                           freetemp:=false;
+                         end
+                       else
+                        if is_unicodestring(lt) then
+                         begin
+                           vtype:=vtUnicodeString;
                            freetemp:=false;
                          end
                        else

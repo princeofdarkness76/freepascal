@@ -160,6 +160,7 @@ type
     );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TTokens = set of TToken;
 
   { TMacroDef }
@@ -175,6 +176,8 @@ type
   end;
 
   { TLineReader }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -204,6 +207,7 @@ type
     function IsEOF: Boolean; override;
     function ReadLine: string; override;
     property Filename: string read FFilename;
+<<<<<<< HEAD
 <<<<<<< HEAD
   end;
 
@@ -254,11 +258,18 @@ type
   end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+
+>>>>>>> graemeg/cpstrnew
   { TFileResolver }
 
   TFileResolver = class
   private
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -318,6 +329,9 @@ type
     Property StrictFileCase : Boolean Read FStrictFileCase Write FStrictFileCase;
     property BaseDirectory: string read FBaseDirectory write FBaseDirectory;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -336,6 +350,8 @@ type
   TPScannerLogHandler = Procedure (Sender : TObject; Const Msg : String) of object;
   TPScannerLogEvent = (sleFile,sleLineNumber,sleConditionals);
   TPScannerLogEvents = Set of TPScannerLogEvent;
+
+  { TPascalScanner }
 
   { TPascalScanner }
 
@@ -376,11 +392,14 @@ type
     procedure Error(const Msg: string; Args: array of Const);overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure HandleDefine(Param: String); virtual;
     procedure HandleIncludeFile(Param: String); virtual;
     procedure HandleUnDefine(Param: String);virtual;
     function HandleMacro(AIndex: integer): TToken;virtual;
     procedure PushStackItem; virtual;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -540,7 +559,10 @@ function FilenameIsWinAbsolute(const TheFilename: string): boolean;
 function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsNamedToken(Const AToken : String; Out T : TToken) : Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -660,6 +682,7 @@ function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
 begin
   Result:=(TheFilename<>'') and (TheFilename[1]='/');
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -852,6 +875,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 constructor TFileLineReader.Create(const AFilename: string);
 
@@ -862,6 +887,9 @@ begin
   inherited Create;
   FFilename:=AFilename;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1006,6 +1034,7 @@ function TFileResolver.FindIncludeFile(const AName: string): TLineReader;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   FN : String;
 
@@ -1018,6 +1047,8 @@ begin
     except
       Result:=Nil;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   function SearchLowUpCase(FN: string): string;
@@ -1083,6 +1114,9 @@ begin
         end;		
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1278,6 +1312,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TPascalScanner.PushStackItem;
 
 Var
@@ -1378,6 +1413,8 @@ begin
     end;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -132,7 +132,10 @@ const
  syscall_nr_setrlimit                   = 195;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  syscall_nr_getsid			= 310;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

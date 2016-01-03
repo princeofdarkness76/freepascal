@@ -292,6 +292,72 @@ begin
     IsAbsolute:=true;
 end;
 
+{ Constants used in IsAbsolute function }
+  TargetHasDosStyleDirectories : boolean = false;
+  TargetAmigaLike : boolean = false;
+  TargetIsMacOS : boolean = false;
+
+{ Set the three constants above according to
+  the current target }
+
+procedure SetTargetDirectoriesStyle;
+var
+  LTarget : string;
+begin
+  LTarget := lowercase(CompilerTarget);
+  TargetHasDosStyleDirectories :=
+    (LTarget='go32v2') or
+    (LTarget='win32') or
+    (LTarget='win64') or
+    (LTarget='watcom') or
+    (LTarget='os2');
+  TargetAmigaLike:=
+    (LTarget='amiga') or
+    (LTarget='morphos');
+  TargetIsMacOS:=
+    (LTarget='macos');
+end;
+
+{ extracted from rtl/macos/macutils.inc }
+
+function IsMacFullPath (const path: string): Boolean;
+  begin
+    if Pos(':', path) = 0 then    {its partial}
+      IsMacFullPath := false
+    else if path[1] = ':' then
+      IsMacFullPath := false
+    else
+      IsMacFullPath := true
+  end;
+
+
+Function IsAbsolute (Const F : String) : boolean;
+{
+  Returns True if the name F is a absolute file name
+}
+begin
+  IsAbsolute:=false;
+  if TargetHasDosStyleDirectories then
+    begin
+      if (F[1]='/') or (F[1]='\') then
+        IsAbsolute:=true;
+      if (Length(F)>2) and (F[2]=':') and ((F[3]='\') or (F[3]='/')) then
+        IsAbsolute:=true;
+    end
+  else if TargetAmigaLike then
+    begin
+      if (length(F)>0) and (Pos(':',F) <> 0) then
+        IsAbsolute:=true;
+    end
+  else if TargetIsMacOS then
+    begin
+      IsAbsolute:=IsMacFullPath(F);
+    end
+  { generic case }
+  else if (F[1]='/') then
+    IsAbsolute:=true;
+end;
+
 Function FileExists (Const F : String) : Boolean;
 {
   Returns True if the file exists, False if not.
@@ -543,8 +609,11 @@ var
   f,g : file;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldfilemode : byte;
   st : string;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1151,9 +1220,15 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           wpoargs:=' -OW'+config.wpoparas+' -FW'+TestOutputFileName('',PPFile[current],'wp'+tostr(passnr));
           if (passnr>1) then
             wpoargs:=wpoargs+' -Ow'+config.wpoparas+' -Fw'+TestOutputFileName('',PPFile[current],'wp'+tostr(passnr-1));
+=======
+          wpoargs:=' -OW'+config.wpoparas+' -FW'+TestOutputFileName(PPFile[current],'wp'+tostr(passnr));
+          if (passnr>1) then
+            wpoargs:=wpoargs+' -Ow'+config.wpoparas+' -Fw'+TestOutputFileName(PPFile[current],'wp'+tostr(passnr-1));
+>>>>>>> graemeg/cpstrnew
 =======
           wpoargs:=' -OW'+config.wpoparas+' -FW'+TestOutputFileName(PPFile[current],'wp'+tostr(passnr));
           if (passnr>1) then
@@ -1214,7 +1289,11 @@ begin
          { avoid to try again }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          AddLog(ExeLogFile,failed_to_compile+PPFileInfo[current]);
+=======
+         AddLog(ExeLogFile,'Failed to compile '+PPFileInfo[current]);
+>>>>>>> graemeg/cpstrnew
 =======
          AddLog(ExeLogFile,'Failed to compile '+PPFileInfo[current]);
 >>>>>>> graemeg/cpstrnew
@@ -1260,7 +1339,11 @@ begin
         AddLog(FailLogFile,TestName+known_problem+Config.KnownCompileNote);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         AddLog(ResLogFile,failed_to_compile+PPFileInfo[current]+known_problem+Config.KnownCompileNote);
+=======
+        AddLog(ResLogFile,failed_to_run+PPFileInfo[current]+known_problem+Config.KnownCompileNote);
+>>>>>>> graemeg/cpstrnew
 =======
         AddLog(ResLogFile,failed_to_run+PPFileInfo[current]+known_problem+Config.KnownCompileNote);
 >>>>>>> graemeg/cpstrnew
@@ -1548,6 +1631,9 @@ var
   execcmd,
   pref     : string;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1609,6 +1695,9 @@ begin
   else
     TestExe:=OutputFileName(PPFile[current],'');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1708,6 +1797,9 @@ begin
          'chmod 755 '+TestRemoteExe+
           ' ; cd '+RemotePath+' ; ';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1729,6 +1821,7 @@ begin
         execcmd:=execcmd+' '+TestRemoteExe;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       execcmd:=execcmd+' ; echo TestExitCode: $?';
       if (deAfter in DelExecutable) and
          not Config.NeededAfter then
@@ -1741,6 +1834,8 @@ begin
       execcmd:=execcmd+'; }'+rquote;
       execres:=ExecuteRemote(rshprog,execcmd,StartTicks,EndTicks);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       execcmd:=execcmd+' ; echo "TestExitCode: $?"';
@@ -1908,9 +2003,13 @@ procedure getargs;
     writeln('Options can be:');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     writeln('  !ENV_NAME     parse environment variable ENV_NAME for options');
     writeln('  -A            include ALL tests');
     writeln('  -ADB          use ADB to run tests');
+=======
+    writeln('  -A            include ALL tests');
+>>>>>>> graemeg/cpstrnew
 =======
     writeln('  -A            include ALL tests');
 >>>>>>> graemeg/cpstrnew
@@ -1926,7 +2025,10 @@ procedure getargs;
     writeln('  -K            include known bug tests');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     writeln('  -L<ext>       set extension of temporary files (prevent conflicts with parallel invocations)');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2003,6 +2105,8 @@ begin
 <<<<<<< HEAD
      'D' : BenchMarkInfo:=true;
 =======
+         'D' : BenchMarkInfo:=true;
+
          'D' : BenchMarkInfo:=true;
 
          'D' : BenchMarkInfo:=true;
@@ -2115,6 +2219,7 @@ begin
      begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        while (length(arg)>0) and (arg[1]=' ') do
          delete(arg,1,1);
        pspace:=pos(' ',arg);
@@ -2154,11 +2259,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
        PPFile.Insert(current,ForceExtension(Para,'pp'));
        inc(current);
      end;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2170,6 +2280,7 @@ begin
       DoGraph:=false;
       DoInteractive:=false;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   { If we use PuTTY plink program with -load option,
@@ -2193,6 +2304,8 @@ begin
     end
   else
     RemotePathPrefix:=RemoteAddr + ':';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2257,8 +2370,13 @@ begin
       { Per test logfiles }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       CompilerLogFile:=TestLogFileName('',SplitFileName(PPFile[current]),'log');
       ExeLogFile:=TestLogFileName('',SplitFileName(PPFile[current]),'elg');
+=======
+      CompilerLogFile:=TestOutputFileName(SplitFileName(PPFile[current]),'log');
+      ExeLogFile:=TestOutputFileName(SplitFileName(PPFile[current]),'elg');
+>>>>>>> graemeg/cpstrnew
 =======
       CompilerLogFile:=TestOutputFileName(SplitFileName(PPFile[current]),'log');
       ExeLogFile:=TestOutputFileName(SplitFileName(PPFile[current]),'elg');
@@ -2469,9 +2587,15 @@ begin
          begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            if FileExists(TestOutputFilename('',PPFile[current],'ppu')) or
               FileExists(TestOutputFilename('',PPFile[current],'ppo')) or
               FileExists(TestOutputFilename('',PPFile[current],'ppw')) then
+=======
+           if FileExists(TestOutputFilename(PPFile[current],'ppu')) or
+              FileExists(TestOutputFilename(PPFile[current],'ppo')) or
+              FileExists(TestOutputFilename(PPFile[current],'ppw')) then
+>>>>>>> graemeg/cpstrnew
 =======
            if FileExists(TestOutputFilename(PPFile[current],'ppu')) or
               FileExists(TestOutputFilename(PPFile[current],'ppo')) or
@@ -2510,6 +2634,7 @@ begin
   SetTargetDirectoriesStyle;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SetTargetCanCompileLibraries;
   SetRemoteConfiguration;
 {$ifdef LIMIT83fs}
@@ -2517,6 +2642,8 @@ begin
 {$else not LIMIT83fs}
   SetUseOSOnly;
 {$endif not LIMIT83fs}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

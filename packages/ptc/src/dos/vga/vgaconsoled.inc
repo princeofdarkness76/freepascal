@@ -2,7 +2,11 @@
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -40,6 +44,7 @@
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TVGAConsole = class(TPTCOpenGLLessConsole)
   private
     { data }
@@ -47,11 +52,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   TVGAConsole = Class(TPTCBaseConsole)
   private
     { data }
     m_modes: array [0..31{255}] of TPTCMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -71,6 +81,7 @@ type
     m_default_height: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_default_format: IPTCFormat;
 
     { objects }
@@ -83,6 +94,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     m_default_format: TPTCFormat;
 
     { objects }
@@ -93,6 +106,9 @@ type
     m_clear: TPTCClear;
     m_palette: TPTCPalette;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -106,7 +122,11 @@ type
     { internal console management routines }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure internal_pre_open_setup(const _title: string);
+=======
+    procedure internal_pre_open_setup(const _title: String);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure internal_pre_open_setup(const _title: String);
 >>>>>>> graemeg/cpstrnew
@@ -134,6 +154,7 @@ type
     destructor Destroy; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Configure(const AFileName: string); override;
     function Option(const _option: string): Boolean; override;
     function modes: TPTCModeList; override;
@@ -146,6 +167,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Configure(const AFileName: String); override;
     function option(const _option: String): Boolean; override;
     function modes: PPTCMode; override;
@@ -156,6 +179,9 @@ type
                    const _format: TPTCFormat; _pages: Integer); overload; override;
     procedure open(const _title: string; const _mode: TPTCMode;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -166,6 +192,7 @@ type
     procedure update; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure update(_area: IPTCArea); override;
     procedure copy(surface: IPTCSurface); override;
     procedure copy(surface: IPTCSurface;
@@ -173,11 +200,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure update(const _area: TPTCArea); override;
     procedure copy(surface: TPTCBaseSurface); override;
     procedure copy(surface: TPTCBaseSurface;
                    const source, destination: TPTCArea); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -185,6 +217,7 @@ type
     procedure unlock; override;
     procedure load(const pixels: Pointer;
                    _width, _height, _pitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                    _format: IPTCFormat;
@@ -213,6 +246,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                    const _format: TPTCFormat;
                    const _palette: TPTCPalette); override;
     procedure load(const pixels: Pointer;
@@ -237,6 +272,9 @@ type
     function Palette: TPTCPalette; override;
     procedure Clip(const _area: TPTCArea); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -244,6 +282,7 @@ type
     function GetHeight: Integer; override;
     function GetPitch: Integer; override;
     function GetPages: Integer; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function GetArea: IPTCArea; override;
@@ -257,6 +296,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function GetArea: TPTCArea; override;
     function Clip: TPTCArea; override;
     function GetFormat: TPTCFormat; override;
@@ -266,6 +307,9 @@ type
     function NextEvent(var event: TPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

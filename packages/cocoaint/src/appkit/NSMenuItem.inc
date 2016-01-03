@@ -58,6 +58,7 @@
     _extraData: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __miFlags: record
       case byte of
        0: (_anonbitfield_NSMenuItem0: cuint);
@@ -65,11 +66,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __miFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMenuItem0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -90,7 +96,10 @@
         RESERVED: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

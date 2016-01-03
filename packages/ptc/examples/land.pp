@@ -272,6 +272,7 @@ end;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
@@ -280,12 +281,17 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   format: TPTCFormat = nil;
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   timer: TPTCTimer = nil;
   key: TPTCKeyEvent = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -302,9 +308,12 @@ begin
     try
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       format := TPTCFormatFactory.CreateNew(32, $00FF0000, $0000FF00, $000000FF);
       console := TPTCConsoleFactory.CreateNew;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       key := TPTCKeyEvent.Create;
@@ -396,9 +405,12 @@ begin
     finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       console.close;
@@ -408,6 +420,9 @@ begin
       format.Free;
       key.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

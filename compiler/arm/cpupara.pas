@@ -50,7 +50,11 @@ unit cpupara;
           function create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
+=======
+          function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
+>>>>>>> graemeg/cpstrnew
 =======
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
 >>>>>>> graemeg/cpstrnew
@@ -68,6 +72,9 @@ unit cpupara;
             var curintreg, curfloatreg, curmmreg: tsuperregister; var cur_stack_offset: aword):longint;
           procedure create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -79,9 +86,14 @@ unit cpupara;
        verbose,systems,cutils,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        defutil,symsym,symcpu,symtable,
        { PowerPC uses procinfo as well in cpupara, so this should not hurt }
        procinfo;
+=======
+       rgobj,
+       defutil,symsym;
+>>>>>>> graemeg/cpstrnew
 =======
        rgobj,
        defutil,symsym;
@@ -109,7 +121,11 @@ unit cpupara;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tcpuparamanager.get_volatile_registers_mm(calloption: tproccalloption): tcpuregisterset;
+=======
+    function tarmparamanager.get_volatile_registers_mm(calloption: tproccalloption): tcpuregisterset;
+>>>>>>> graemeg/cpstrnew
 =======
     function tarmparamanager.get_volatile_registers_mm(calloption: tproccalloption): tcpuregisterset;
 >>>>>>> graemeg/cpstrnew
@@ -123,8 +139,11 @@ unit cpupara;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcpuparamanager.getintparaloc(list: TAsmList; pd : tabstractprocdef; nr : longint; var cgpara : tcgpara);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure tarmparamanager.getintparaloc(calloption : tproccalloption; nr : longint;var cgpara:TCGPara);
@@ -178,6 +197,7 @@ unit cpupara;
             floatdef:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if (target_info.abi = abi_eabihf) and
                  (not isvariadic) then
                 getparaloc:=LOC_MMREGISTER
@@ -190,12 +210,17 @@ unit cpupara;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               if (calloption in [pocall_cdecl,pocall_cppdecl,pocall_softfloat]) or
                  (cs_fp_emulation in current_settings.moduleswitches) or
                  (current_settings.fputype in [fpu_vfpv2,fpu_vfpv3]) then
                 { the ARM eabi also allows passing VFP values via VFP registers,
                   but at least neither Mac OS X nor Linux seems to do that }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -286,6 +311,7 @@ unit cpupara;
           recorddef:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             begin
               result:=def.size>4;
               if not result and
@@ -348,6 +374,9 @@ unit cpupara;
                     end;
                 end;
             end;
+=======
+            result:=def.size>4;
+>>>>>>> graemeg/cpstrnew
 =======
             result:=def.size>4;
 >>>>>>> graemeg/cpstrnew
@@ -481,7 +510,10 @@ unit cpupara;
              hp.paraloc[side].intsize:=paralen;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              hp.paraloc[side].def:=paradef;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -530,6 +562,9 @@ unit cpupara;
 =======
                         if (target_info.abi=abi_eabi) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -643,7 +678,10 @@ unit cpupara;
                             paraloc^.size:=OS_ADDR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             paraloc^.def:=cpointerdef.getreusable_no_free(paradef);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -655,7 +693,11 @@ unit cpupara;
                             { align stack for eabi }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             if (target_info.abi in [abi_eabi,abi_eabihf]) and
+=======
+                            if (target_info.abi=abi_eabi) and
+>>>>>>> graemeg/cpstrnew
 =======
                             if (target_info.abi=abi_eabi) and
 >>>>>>> graemeg/cpstrnew
@@ -669,7 +711,10 @@ unit cpupara;
                              paraloc^.size:=paracgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                              paraloc^.def:=paradef;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -718,6 +763,7 @@ unit cpupara;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  tcpuparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;
       var
         paraloc : pcgparalocation;
@@ -745,6 +791,14 @@ unit cpupara;
 
 >>>>>>> graemeg/cpstrnew
 
+=======
+    procedure tarmparamanager.create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
+      begin
+        p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     function  tarmparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
       var
         paraloc : pcgparalocation;
@@ -754,6 +808,7 @@ unit cpupara;
         result.alignment:=get_para_align(p.proccalloption);
         { void has no location }
         if is_void(def) then
+<<<<<<< HEAD
 <<<<<<< HEAD
           begin
             paraloc:=result.add_location;
@@ -774,6 +829,27 @@ unit cpupara;
             retcgsize:=def_cgsize(def);
             result.intsize:=def.size;
           end;
+=======
+          begin
+            paraloc:=result.add_location;
+            result.size:=OS_NO;
+            result.intsize:=0;
+            paraloc^.size:=OS_NO;
+            paraloc^.loc:=LOC_VOID;
+            exit;
+          end;
+        { Constructors return self instead of a boolean }
+        if (p.proctypeoption=potype_constructor) then
+          begin
+            retcgsize:=OS_ADDR;
+            result.intsize:=sizeof(pint);
+          end
+        else
+          begin
+            retcgsize:=def_cgsize(def);
+            result.intsize:=def.size;
+          end;
+>>>>>>> graemeg/cpstrnew
 =======
           begin
             paraloc:=result.add_location;
@@ -813,6 +889,9 @@ unit cpupara;
                (cs_fp_emulation in current_settings.moduleswitches) or
                (current_settings.fputype in [fpu_vfpv2,fpu_vfpv3]) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -824,8 +903,11 @@ unit cpupara;
                     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.register:=NR_MM_RESULT_REG;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                       paraloc^.loc:=LOC_REGISTER;
@@ -836,6 +918,9 @@ unit cpupara;
                       paraloc^.register:=NR_FUNCTION_RESULT64_HIGH_REG;
                       paraloc^.size:=OS_32;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -843,6 +928,7 @@ unit cpupara;
                   OS_32,
                   OS_F32:
                     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                       paraloc^.register:=NR_S0;
@@ -894,6 +980,11 @@ unit cpupara;
                       paraloc^.register:=NR_FUNCTION_RETURN_REG;
                       paraloc^.size:=OS_32;
 >>>>>>> graemeg/cpstrnew
+=======
+                      paraloc^.loc:=LOC_REGISTER;
+                      paraloc^.register:=NR_FUNCTION_RETURN_REG;
+                      paraloc^.size:=OS_32;
+>>>>>>> graemeg/cpstrnew
                     end;
                   else
                     internalerror(2005082603);
@@ -906,7 +997,10 @@ unit cpupara;
                 paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -919,6 +1013,7 @@ unit cpupara;
             if retcgsize in [OS_64,OS_S64] then
               begin
                 paraloc^.loc:=LOC_REGISTER;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 if target_info.endian = endian_big then
@@ -938,6 +1033,8 @@ unit cpupara;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                 paraloc^.register:=NR_FUNCTION_RESULT64_LOW_REG;
                 paraloc^.size:=OS_32;
                 paraloc:=result.add_location;
@@ -945,6 +1042,9 @@ unit cpupara;
                 paraloc^.register:=NR_FUNCTION_RESULT64_HIGH_REG;
                 paraloc^.size:=OS_32;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -953,6 +1053,7 @@ unit cpupara;
               begin
                 paraloc^.loc:=LOC_REGISTER;
                 paraloc^.register:=NR_FUNCTION_RETURN_REG;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 case result.IntSize of
@@ -977,11 +1078,16 @@ unit cpupara;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                 if (result.intsize<>3) then
                   paraloc^.size:=retcgsize
                 else
                   paraloc^.size:=OS_32;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -990,7 +1096,10 @@ unit cpupara;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
     function tarmparamanager.create_paraloc_info(p : tabstractprocdef; side: tcallercallee):longint;
       var

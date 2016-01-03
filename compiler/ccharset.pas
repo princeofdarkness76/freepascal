@@ -40,8 +40,13 @@ unit ccharset;
        tunicodemap = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           cpname : string[20];
           cp : word;
+=======
+          cpname : string[20];   
+          cp : word;           
+>>>>>>> graemeg/cpstrnew
 =======
           cpname : string[20];   
           cp : word;           
@@ -61,6 +66,7 @@ unit ccharset;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     const
        DefaultSystemCodePage = 437;
 
@@ -68,6 +74,12 @@ unit ccharset;
     procedure registermapping(p : punicodemap);
     function getmap(const s : string) : punicodemap;
     function getmap(cp : word) : punicodemap;
+=======
+    function loadunicodemapping(const cpname,f : string; cp :word) : punicodemap;
+    procedure registermapping(p : punicodemap);
+    function getmap(const s : string) : punicodemap; 
+    function getmap(cp : word) : punicodemap;     
+>>>>>>> graemeg/cpstrnew
 =======
     function loadunicodemapping(const cpname,f : string; cp :word) : punicodemap;
     procedure registermapping(p : punicodemap);
@@ -229,7 +241,11 @@ unit ccharset;
          getmap:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;////////
+=======
+      end;    
+>>>>>>> graemeg/cpstrnew
 =======
       end;    
 >>>>>>> graemeg/cpstrnew
@@ -267,7 +283,11 @@ unit ccharset;
          getmap:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
+=======
+      end;   
+>>>>>>> graemeg/cpstrnew
 =======
       end;   
 >>>>>>> graemeg/cpstrnew

@@ -44,11 +44,14 @@ Type
   Public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Constructor Create;
     Constructor CreateNull;
     Constructor Create(ANumber : TJSNumber);
     Constructor Create(ABoolean : Boolean);
     Constructor Create(AString: TJSString);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -177,6 +180,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Constructor TJSValue.CreateNull;
 begin
   IsNull:=True;
@@ -203,6 +207,9 @@ begin
 end;
 
 Destructor TJSValue.Destroy;
+=======
+destructor TJSValue.Destroy;
+>>>>>>> graemeg/cpstrnew
 =======
 destructor TJSValue.Destroy;
 >>>>>>> graemeg/cpstrnew

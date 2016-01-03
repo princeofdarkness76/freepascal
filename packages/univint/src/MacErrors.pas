@@ -6,9 +6,12 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1985-2011 by Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
      Version:    CarbonCore-859.2~1
@@ -23,6 +26,9 @@
 }
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -82,11 +88,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -107,6 +116,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -145,6 +155,20 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -163,7 +187,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -179,7 +206,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -190,6 +220,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -244,6 +275,8 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -264,6 +297,7 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
@@ -273,6 +307,8 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -2316,6 +2352,7 @@ const
 	badCodecCharacterizationErr = -8993;
 	noThumbnailFoundErr = -8994;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 
@@ -2451,6 +2488,75 @@ const
 
 <<<<<<< HEAD
 =======
+
+>>>>>>> graemeg/cpstrnew
+=======
+
+
+{ PCCard error codes }
+const
+	kBadAdapterErr = -9050; { invalid adapter number}
+	kBadAttributeErr = -9051; { specified attributes field value is invalid}
+	kBadBaseErr = -9052; { specified base system memory address is invalid}
+	kBadEDCErr = -9053; { specified EDC generator specified is invalid}
+	kBadIRQErr = -9054; { specified IRQ level is invalid}
+	kBadOffsetErr = -9055; { specified PC card memory array offset is invalid}
+	kBadPageErr = -9056; { specified page is invalid}
+	kBadSizeErr = -9057; { specified size is invalid}
+	kBadSocketErr = -9058; { specified logical or physical socket number is invalid}
+	kBadTypeErr = -9059; { specified window or interface type is invalid}
+	kBadVccErr = -9060; { specified Vcc power level index is invalid}
+	kBadVppErr = -9061; { specified Vpp1 or Vpp2 power level index is invalid}
+	kBadWindowErr = -9062; { specified window is invalid}
+	kBadArgLengthErr = -9063; { ArgLength argument is invalid}
+	kBadArgsErr = -9064; { values in argument packet are invalid}
+	kBadHandleErr = -9065; { clientHandle is invalid}
+	kBadCISErr = -9066; { CIS on card is invalid}
+	kBadSpeedErr = -9067; { specified speed is unavailable}
+	kReadFailureErr = -9068; { unable to complete read request}
+	kWriteFailureErr = -9069; { unable to complete write request}
+	kGeneralFailureErr = -9070; { an undefined error has occurred}
+	kNoCardErr = -9071; { no PC card in the socket}
+	kUnsupportedFunctionErr = -9072; { function is not supported by this implementation}
+	kUnsupportedModeErr = -9073; { mode is not supported}
+	kBusyErr = -9074; { unable to process request at this time - try later}
+	kWriteProtectedErr = -9075; { media is write-protected}
+	kConfigurationLockedErr = -9076; { a configuration has already been locked}
+	kInUseErr = -9077; { requested resource is being used by a client}
+	kNoMoreItemsErr = -9078; { there are no more of the requested item}
+	kOutOfResourceErr = -9079; { Card Services has exhausted the resource}
+	kNoCardSevicesSocketsErr = -9080;
+	kInvalidRegEntryErr = -9081;
+	kBadLinkErr = -9082;
+	kBadDeviceErr = -9083;
+	k16BitCardErr = -9084;
+	kCardBusCardErr = -9085;
+	kPassCallToChainErr = -9086;
+	kCantConfigureCardErr = -9087;
+	kPostCardEventErr = -9088; { _PCCSLPostCardEvent failed and dropped an event }
+	kInvalidDeviceNumber = -9089;
+	kUnsupportedVsErr = -9090; { Unsupported Voltage Sense }
+	kInvalidCSClientErr = -9091; { Card Services ClientID is not registered }
+	kBadTupleDataErr = -9092; { Data in tuple is invalid }
+	kBadCustomIFIDErr = -9093; { Custom interface ID is invalid }
+	kNoIOWindowRequestedErr = -9094; { Request I/O window before calling configuration }
+	kNoMoreTimerClientsErr = -9095; { All timer callbacks are in use }
+	kNoMoreInterruptSlotsErr = -9096; { All internal Interrupt slots are in use }
+	kNoClientTableErr = -9097; { The client table has not be initialized yet }
+	kUnsupportedCardErr = -9098; { Card not supported by generic enabler}
+	kNoCardEnablersFoundErr = -9099; { No Enablers were found}
+	kNoEnablerForCardErr = -9100; { No Enablers were found that can support the card}
+	kNoCompatibleNameErr = -9101; { There is no compatible driver name for this device}
+	kClientRequestDenied = -9102; { CS Clients should return this code inorder to }
+                                        {   deny a request-type CS Event                }
+	kNotReadyErr = -9103; { PC Card failed to go ready }
+	kTooManyIOWindowsErr = -9104; { device requested more than one I/O window }
+	kAlreadySavedStateErr = -9105; { The state has been saved on previous call }
+	kAttemptDupCardEntryErr = -9106; { The Enabler was asked to create a duplicate card entry }
+	kCardPowerOffErr = -9107; { Power to the card has been turned off }
+	kNotZVCapableErr = -9108; { This socket does not support Zoomed Video }
+	kNoCardBusCISErr = -9109; { No valid CIS exists for this CardBus card }
+
 
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3046,6 +3152,9 @@ const
    }
 	errControlDoesntSupportFocus = -30582;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
   {
    * This is a variant of and serves the same purpose as
@@ -3087,11 +3196,15 @@ const
 
   {
    * You called CreateRootControl after creating one or more non-root
+<<<<<<< HEAD
 <<<<<<< HEAD
    * controls in a window, which is illegal; if you want an embedding
 =======
    * controls in a window, which is illega; if you want an embedding
 >>>>>>> graemeg/cpstrnew
+=======
+   * controls in a window, which is illega; if you want an embedding
+>>>>>>> graemeg/cpstrnew
    * hierarchy on a given window, you must call CreateRootControl
    * before creating any other controls for a given window. This will
    * never be returned on Mac OS X, because a root control is created
@@ -3153,6 +3266,7 @@ const
    * API with an illegal property creator OSType.
    }
 	controlPropertyInvalid = -5603;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   {
@@ -3277,6 +3391,10 @@ const
 
   {
 >>>>>>> graemeg/cpstrnew
+=======
+
+  {
+>>>>>>> graemeg/cpstrnew
    * You called GetControlProperty or a similar API with a property
    * creator and property tag that does not currently exist on the
    * given control.
@@ -3289,6 +3407,9 @@ const
 	controlHandleInvalidErr = -30599;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3313,6 +3434,9 @@ const
 	kURLAccessNotAvailableError = -30787;
 	kURL68kNotSupportedError = -30788;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
     Error Codes for C++ Exceptions
@@ -3346,6 +3470,7 @@ const
 const
 	badComponentInstance = $80008001; { when cast to an OSErr this is -32767}
 	badComponentSelector = $80008002; { when cast to an OSErr this is -32766}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -3614,7 +3739,251 @@ const
 	kPOSIXErrorEPROTO = 100100; { Protocol error }
 	kPOSIXErrorETIME = 100101; { STREAM ioctl timeout }
 	kPOSIXErrorEOPNOTSUPP = 100102; { Operation not supported on socket }
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+const
+	dsBusError = 1;    {bus error}
+	dsAddressErr = 2;    {address error}
+	dsIllInstErr = 3;    {illegal instruction error}
+	dsZeroDivErr = 4;    {zero divide error}
+	dsChkErr = 5;    {check trap error}
+	dsOvflowErr = 6;    {overflow trap error}
+	dsPrivErr = 7;    {privilege violation error}
+	dsTraceErr = 8;    {trace mode error}
+	dsLineAErr = 9;    {line 1010 trap error}
+	dsLineFErr = 10;   {line 1111 trap error}
+	dsMiscErr = 11;   {miscellaneous hardware exception error}
+	dsCoreErr = 12;   {unimplemented core routine error}
+	dsIrqErr = 13;   {uninstalled interrupt error}
+	dsIOCoreErr = 14;   {IO Core Error}
+	dsLoadErr = 15;   {Segment Loader Error}
+	dsFPErr = 16;   {Floating point error}
+	dsNoPackErr = 17;   {package 0 not present}
+	dsNoPk1 = 18;   {package 1 not present}
+	dsNoPk2 = 19;    {package 2 not present}
+
+const
+	dsNoPk3 = 20;   {package 3 not present}
+	dsNoPk4 = 21;   {package 4 not present}
+	dsNoPk5 = 22;   {package 5 not present}
+	dsNoPk6 = 23;   {package 6 not present}
+	dsNoPk7 = 24;   {package 7 not present}
+	dsMemFullErr = 25;   {out of memory!}
+	dsBadLaunch = 26;   {can't launch file}
+	dsFSErr = 27;   {file system map has been trashed}
+	dsStknHeap = 28;   {stack has moved into application heap}
+	negZcbFreeErr = 33;   {ZcbFree has gone negative}
+	dsFinderErr = 41;   {can't load the Finder error}
+	dsBadSlotInt = 51;   {unserviceable slot interrupt}
+	dsBadSANEOpcode = 81;   {bad opcode given to SANE Pack4}
+	dsBadPatchHeader = 83;   {SetTrapAddress saw the “come-from” header}
+	menuPrgErr = 84;   {happens when a menu is purged}
+	dsMBarNFnd = 85;   {Menu Manager Errors}
+	dsHMenuFindErr = 86;   {Menu Manager Errors}
+	dsWDEFNotFound = 87;   {could not load WDEF}
+	dsCDEFNotFound = 88;   {could not load CDEF}
+	dsMDEFNotFound = 89;    {could not load MDEF}
+
+const
+	dsNoFPU = 90;   {an FPU instruction was executed and the machine doesn’t have one}
+	dsNoPatch = 98;   {Can't patch for particular Model Mac}
+	dsBadPatch = 99;   {Can't load patch resource}
+	dsParityErr = 101;  {memory parity error}
+	dsOldSystem = 102;  {System is too old for this ROM}
+	ds32BitMode = 103;  {booting in 32-bit on a 24-bit sys}
+	dsNeedToWriteBootBlocks = 104;  {need to write new boot blocks}
+	dsNotEnoughRAMToBoot = 105;  {must have at least 1.5MB of RAM to boot 7.0}
+	dsBufPtrTooLow = 106;  {bufPtr moved too far during boot}
+	dsVMDeferredFuncTableFull = 112;  {VM's DeferUserFn table is full}
+	dsVMBadBackingStore = 113;  {Error occurred while reading or writing the VM backing-store file}
+	dsCantHoldSystemHeap = 114;  {Unable to hold the system heap during boot}
+	dsSystemRequiresPowerPC = 116;  {Startup disk requires PowerPC}
+	dsGibblyMovedToDisabledFolder = 117;  { For debug builds only, signals that active gibbly was disabled during boot. }
+	dsUnBootableSystem = 118;  { Active system file will not boot on this system because it was designed only to boot from a CD. }
+	dsMustUseFCBAccessors = 119;  { FCBSPtr and FSFCBLen are invalid - must use FSM FCB accessor functions }
+	dsMacOSROMVersionTooOld = 120;  { The version of the "Mac OS ROM" file is too old to be used with the installed version of system software }
+	dsLostConnectionToNetworkDisk = 121;  { Lost communication with Netboot server }
+	dsRAMDiskTooBig = 122;  { The RAM disk is too big to boot safely; will be turned off }
+	dsWriteToSupervisorStackGuardPage = 128; {the supervisor stack overflowed into its guard page }
+	dsReinsert = 30;   {request user to reinsert off-line volume}
+	shutDownAlert = 42;   {handled like a shutdown error}
+	dsShutDownOrRestart = 20000; {user choice between ShutDown and Restart}
+	dsSwitchOffOrRestart = 20001; {user choice between switching off and Restart}
+	dsForcedQuit = 20002; {allow the user to ExitToShell, return if Cancel}
+	dsRemoveDisk = 20003; {request user to remove disk from manual eject drive}
+	dsDirtyDisk = 20004; {request user to return a manually-ejected dirty disk}
+	dsShutDownOrResume = 20109; {allow user to return to Finder or ShutDown}
+	dsSCSIWarn = 20010; {Portable SCSI adapter warning.}
+	dsMBSysError = 29200; {Media Bay replace warning.}
+	dsMBFlpySysError = 29201; {Media Bay, floppy replace warning.}
+	dsMBATASysError = 29202; {Media Bay, ATA replace warning.}
+	dsMBATAPISysError = 29203; {Media Bay, ATAPI replace warning...}
+	dsMBExternFlpySysError = 29204; {Media Bay, external floppy drive reconnect warning}
+	dsPCCardATASysError = 29205; {PCCard has been ejected while still in use. }
+
+{
+    System Errors that are used after MacsBug is loaded to put up dialogs since these should not 
+    cause MacsBug to stop, they must be in the range (30, 42, 16384-32767) negative numbers add 
+    to an existing dialog without putting up a whole new dialog 
+}
+const
+	dsNoExtsMacsBug = -1;   {not a SysErr, just a placeholder }
+	dsNoExtsDisassembler = -2;   {not a SysErr, just a placeholder }
+	dsMacsBugInstalled = -10;  {say “MacsBug Installed”}
+	dsDisassemblerInstalled = -11;  {say “Disassembler Installed”}
+	dsExtensionsDisabled = -13;  {say “Extensions Disabled”}
+	dsGreeting = 40;   {welcome to Macintosh greeting}
+	dsSysErr = 32767; {general system error}
+                                        {old names here for compatibility’s sake}
+	WDEFNFnd = dsWDEFNotFound;
+
+const
+	CDEFNFnd = dsCDEFNotFound;
+	dsNotThe1 = 31;   {not the disk I wanted}
+	dsBadStartupDisk = 42;   {unable to mount boot volume (sad Mac only)}
+	dsSystemFileErr = 43;   {can’t find System file to open (sad Mac only)}
+	dsHD20Installed = -12;  {say “HD20 Startup”}
+	mBarNFnd = -126; {system error code for MBDF not found}
+	fsDSIntErr = -127; {non-hardware Internal file system error}
+	hMenuFindErr = -127; {could not find HMenu's parent in MenuKey (wrong error code - obsolete)}
+	userBreak = -490; {user debugger break}
+	strUserBreak = -491; {user debugger break; display string on stack}
+	exUserBreak = -492;  {user debugger break; execute debugger commands on stack}
+
+
+const
+{ DS Errors which are specific to the new runtime model introduced with PowerPC }
+	dsBadLibrary = 1010; { Bad shared library }
+	dsMixedModeFailure = 1011;  { Internal Mixed Mode Failure }
+
+
+{
+    On Mac OS X, the range from 100,000 to 100,999 has been reserved for returning POSIX errno error values.
+    Every POSIX errno value can be converted into a Mac OS X OSStatus value by adding kPOSIXErrorBase to the
+    value of errno.  They can't be returned by anything which just returns OSErr since kPOSIXErrorBase is
+    larger than the highest OSErr value.
+}
+const
+	kPOSIXErrorBase = 100000;
+	kPOSIXErrorEPERM = 100001; { Operation not permitted }
+	kPOSIXErrorENOENT = 100002; { No such file or directory }
+	kPOSIXErrorESRCH = 100003; { No such process }
+	kPOSIXErrorEINTR = 100004; { Interrupted system call }
+	kPOSIXErrorEIO = 100005; { Input/output error }
+	kPOSIXErrorENXIO = 100006; { Device not configured }
+	kPOSIXErrorE2BIG = 100007; { Argument list too long }
+	kPOSIXErrorENOEXEC = 100008; { Exec format error }
+	kPOSIXErrorEBADF = 100009; { Bad file descriptor }
+	kPOSIXErrorECHILD = 100010; { No child processes }
+	kPOSIXErrorEDEADLK = 100011; { Resource deadlock avoided }
+	kPOSIXErrorENOMEM = 100012; { Cannot allocate memory }
+	kPOSIXErrorEACCES = 100013; { Permission denied }
+	kPOSIXErrorEFAULT = 100014; { Bad address }
+	kPOSIXErrorENOTBLK = 100015; { Block device required }
+	kPOSIXErrorEBUSY = 100016; { Device busy }
+	kPOSIXErrorEEXIST = 100017; { File exists }
+	kPOSIXErrorEXDEV = 100018; { Cross-device link }
+	kPOSIXErrorENODEV = 100019; { Operation not supported by device }
+	kPOSIXErrorENOTDIR = 100020; { Not a directory }
+	kPOSIXErrorEISDIR = 100021; { Is a directory }
+	kPOSIXErrorEINVAL = 100022; { Invalid argument }
+	kPOSIXErrorENFILE = 100023; { Too many open files in system }
+	kPOSIXErrorEMFILE = 100024; { Too many open files }
+	kPOSIXErrorENOTTY = 100025; { Inappropriate ioctl for device }
+	kPOSIXErrorETXTBSY = 100026; { Text file busy }
+	kPOSIXErrorEFBIG = 100027; { File too large }
+	kPOSIXErrorENOSPC = 100028; { No space left on device }
+	kPOSIXErrorESPIPE = 100029; { Illegal seek }
+	kPOSIXErrorEROFS = 100030; { Read-only file system }
+	kPOSIXErrorEMLINK = 100031; { Too many links }
+	kPOSIXErrorEPIPE = 100032; { Broken pipe }
+	kPOSIXErrorEDOM = 100033; { Numerical argument out of domain }
+	kPOSIXErrorERANGE = 100034; { Result too large }
+	kPOSIXErrorEAGAIN = 100035; { Resource temporarily unavailable }
+	kPOSIXErrorEINPROGRESS = 100036; { Operation now in progress }
+	kPOSIXErrorEALREADY = 100037; { Operation already in progress }
+	kPOSIXErrorENOTSOCK = 100038; { Socket operation on non-socket }
+	kPOSIXErrorEDESTADDRREQ = 100039; { Destination address required }
+	kPOSIXErrorEMSGSIZE = 100040; { Message too long }
+	kPOSIXErrorEPROTOTYPE = 100041; { Protocol wrong type for socket }
+	kPOSIXErrorENOPROTOOPT = 100042; { Protocol not available }
+	kPOSIXErrorEPROTONOSUPPORT = 100043; { Protocol not supported }
+	kPOSIXErrorESOCKTNOSUPPORT = 100044; { Socket type not supported }
+	kPOSIXErrorENOTSUP = 100045; { Operation not supported }
+	kPOSIXErrorEPFNOSUPPORT = 100046; { Protocol family not supported }
+	kPOSIXErrorEAFNOSUPPORT = 100047; { Address family not supported by protocol family }
+	kPOSIXErrorEADDRINUSE = 100048; { Address already in use }
+	kPOSIXErrorEADDRNOTAVAIL = 100049; { Can't assign requested address }
+	kPOSIXErrorENETDOWN = 100050; { Network is down }
+	kPOSIXErrorENETUNREACH = 100051; { Network is unreachable }
+	kPOSIXErrorENETRESET = 100052; { Network dropped connection on reset }
+	kPOSIXErrorECONNABORTED = 100053; { Software caused connection abort }
+	kPOSIXErrorECONNRESET = 100054; { Connection reset by peer }
+	kPOSIXErrorENOBUFS = 100055; { No buffer space available }
+	kPOSIXErrorEISCONN = 100056; { Socket is already connected }
+	kPOSIXErrorENOTCONN = 100057; { Socket is not connected }
+	kPOSIXErrorESHUTDOWN = 100058; { Can't send after socket shutdown }
+	kPOSIXErrorETOOMANYREFS = 100059; { Too many references: can't splice }
+	kPOSIXErrorETIMEDOUT = 100060; { Operation timed out }
+	kPOSIXErrorECONNREFUSED = 100061; { Connection refused }
+	kPOSIXErrorELOOP = 100062; { Too many levels of symbolic links }
+	kPOSIXErrorENAMETOOLONG = 100063; { File name too long }
+	kPOSIXErrorEHOSTDOWN = 100064; { Host is down }
+	kPOSIXErrorEHOSTUNREACH = 100065; { No route to host }
+	kPOSIXErrorENOTEMPTY = 100066; { Directory not empty }
+	kPOSIXErrorEPROCLIM = 100067; { Too many processes }
+	kPOSIXErrorEUSERS = 100068; { Too many users }
+	kPOSIXErrorEDQUOT = 100069; { Disc quota exceeded }
+	kPOSIXErrorESTALE = 100070; { Stale NFS file handle }
+	kPOSIXErrorEREMOTE = 100071; { Too many levels of remote in path }
+	kPOSIXErrorEBADRPC = 100072; { RPC struct is bad }
+	kPOSIXErrorERPCMISMATCH = 100073; { RPC version wrong }
+	kPOSIXErrorEPROGUNAVAIL = 100074; { RPC prog. not avail }
+	kPOSIXErrorEPROGMISMATCH = 100075; { Program version wrong }
+	kPOSIXErrorEPROCUNAVAIL = 100076; { Bad procedure for program }
+	kPOSIXErrorENOLCK = 100077; { No locks available }
+	kPOSIXErrorENOSYS = 100078; { Function not implemented }
+	kPOSIXErrorEFTYPE = 100079; { Inappropriate file type or format }
+	kPOSIXErrorEAUTH = 100080; { Authentication error }
+	kPOSIXErrorENEEDAUTH = 100081; { Need authenticator }
+	kPOSIXErrorEPWROFF = 100082; { Device power is off }
+	kPOSIXErrorEDEVERR = 100083; { Device error, e.g. paper out }
+	kPOSIXErrorEOVERFLOW = 100084; { Value too large to be stored in data type }
+	kPOSIXErrorEBADEXEC = 100085; { Bad executable }
+	kPOSIXErrorEBADARCH = 100086; { Bad CPU type in executable }
+	kPOSIXErrorESHLIBVERS = 100087; { Shared library version mismatch }
+	kPOSIXErrorEBADMACHO = 100088; { Malformed Macho file }
+	kPOSIXErrorECANCELED = 100089; { Operation canceled }
+	kPOSIXErrorEIDRM = 100090; { Identifier removed }
+	kPOSIXErrorENOMSG = 100091; { No message of desired type }
+	kPOSIXErrorEILSEQ = 100092; { Illegal byte sequence }
+	kPOSIXErrorENOATTR = 100093; { Attribute not found }
+	kPOSIXErrorEBADMSG = 100094; { Bad message }
+	kPOSIXErrorEMULTIHOP = 100095; { Reserved }
+	kPOSIXErrorENODATA = 100096; { No message available on STREAM }
+	kPOSIXErrorENOLINK = 100097; { Reserved }
+	kPOSIXErrorENOSR = 100098; { No STREAM resources }
+	kPOSIXErrorENOSTR = 100099; { Not a STREAM }
+	kPOSIXErrorEPROTO = 100100; { Protocol error }
+	kPOSIXErrorETIME = 100101; { STREAM ioctl timeout }
+	kPOSIXErrorEOPNOTSUPP = 100102; { Operation not supported on socket }
+
+
+{
+ *  SysError()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SysError( errorCode: SInt16 ); external name '_SysError';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{$endc} {TARGET_OS_MAC}
+{$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 {
  *  SysError()

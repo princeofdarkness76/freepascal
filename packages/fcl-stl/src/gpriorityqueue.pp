@@ -30,7 +30,11 @@ type
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure PushUp();
+=======
+    procedure PushUp(position:SizeUInt);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure PushUp(position:SizeUInt);
 >>>>>>> graemeg/cpstrnew
@@ -89,10 +93,16 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TPriorityQueue.PushUp();
 var position,np:SizeUInt; temp:T;
 begin
   position:=FData.Size-1;
+=======
+procedure TPriorityQueue.PushUp(position:SizeUInt);
+var np:SizeUInt; temp:T;
+begin
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TPriorityQueue.PushUp(position:SizeUInt);
 var np:SizeUInt; temp:T;
@@ -122,7 +132,11 @@ begin
   FData.PushBack(value);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PushUp();
+=======
+  PushUp(FData.Size-1);
+>>>>>>> graemeg/cpstrnew
 =======
   PushUp(FData.Size-1);
 >>>>>>> graemeg/cpstrnew

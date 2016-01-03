@@ -139,6 +139,7 @@ type
    pthread_rwlockattr_t = ^pthread_rwlockattr_t_rec;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
    psem_t = ^sem_t;
    ppsem_t= ^psem_t;
@@ -157,6 +158,11 @@ type
 
     end;
 
+=======
+
+   sem_t_rec		= record end;
+   sem_t                = ^sem_t_rec;
+>>>>>>> graemeg/cpstrnew
 =======
 
    sem_t_rec		= record end;

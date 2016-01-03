@@ -41,6 +41,7 @@ unit cgcpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure g_proc_entry(list : TAsmList;localsize:longint; nostackframe:boolean);override;
         procedure g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);override;
         procedure g_local_unwind(list: TAsmList; l: TAsmLabel);override;
@@ -52,6 +53,10 @@ unit cgcpu;
       private
         function use_push: boolean;
         function saved_xmm_reg_size: longint;
+=======
+        procedure a_loadmm_intreg_reg(list: TAsmList; fromsize, tosize : tcgsize;intreg, mmreg: tregister; shuffle: pmmshuffle); override;
+        procedure a_loadmm_reg_intreg(list: TAsmList; fromsize, tosize : tcgsize;mmreg, intreg: tregister;shuffle : pmmshuffle); override;
+>>>>>>> graemeg/cpstrnew
 =======
         procedure a_loadmm_intreg_reg(list: TAsmList; fromsize, tosize : tcgsize;intreg, mmreg: tregister; shuffle: pmmshuffle); override;
         procedure a_loadmm_reg_intreg(list: TAsmList; fromsize, tosize : tcgsize;mmreg, intreg: tregister;shuffle : pmmshuffle); override;
@@ -132,6 +137,9 @@ unit cgcpu;
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_RAX,RS_RDX,RS_RCX,RS_RSI,RS_RDI,RS_R8,
             RS_R9,RS_R10,RS_R11,RS_RBX,RS_R12,RS_R13,RS_R14,RS_R15],first_int_imreg,[framepointer]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -156,6 +164,7 @@ unit cgcpu;
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     procedure tcgx86_64.a_loadfpu_reg_ref(list: TAsmList; fromsize, tosize: tcgsize; reg: tregister; const ref: treference);
       begin
@@ -377,6 +386,8 @@ unit cgcpu;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure tcgx86_64.g_proc_exit(list : TAsmList;parasize:longint;nostackframe:boolean);
 
       procedure increase_sp(a : tcgint);
@@ -578,7 +589,10 @@ unit cgcpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure tcgx86_64.a_loadmm_intreg_reg(list: TAsmList; fromsize, tosize : tcgsize; intreg, mmreg: tregister; shuffle: pmmshuffle);
@@ -606,6 +620,9 @@ unit cgcpu;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -638,7 +655,10 @@ unit cgcpu;
         cg:=tcgx86_64.create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         cg128:=tcg128.create;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

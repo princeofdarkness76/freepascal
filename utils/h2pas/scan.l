@@ -22,7 +22,10 @@
 unit scan;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$H+}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

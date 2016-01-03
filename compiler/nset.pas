@@ -773,6 +773,9 @@ implementation
             result := makeifblock(labtree^.greater, result);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -784,7 +787,10 @@ implementation
          init_block:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          temp_cleanup:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -809,7 +815,10 @@ implementation
                  left.resultdef, left.resultdef.size, tt_persistent, true);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              temp_cleanup := ctempdeletenode.create(tempcaseexpr);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -853,8 +862,11 @@ implementation
            begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if_node:=makeifblock(labels, elseblock);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
              endlabel:=clabelnode.create(cnothingnode.create,tlabelsym.create('$casestrofend'));
@@ -872,6 +884,9 @@ implementation
 
              if_node := makeifblock(labels, elseblock);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -879,6 +894,7 @@ implementation
              if assigned(init_block) then
                firstpass(tnode(init_block));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
              if_block:=internalstatements(stmt);
@@ -893,6 +909,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
              if_block := internalstatements(stmt);
 
              if assigned(init_block) then
@@ -905,6 +923,9 @@ implementation
              result := if_block;
              elseblock := nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1172,7 +1193,10 @@ implementation
                  Message(parser_e_double_caselabel);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  result:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1216,7 +1240,10 @@ implementation
               Message(parser_e_double_caselabel);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               result:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

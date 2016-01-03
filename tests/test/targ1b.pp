@@ -1,7 +1,10 @@
 {%skiptarget=wince}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%delfiles=targ1a}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

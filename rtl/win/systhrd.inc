@@ -158,10 +158,13 @@ var
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if TLSKey<>$ffffffff then
           TlsFree(TLSKey);
         TLSKey:=$ffffffff;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if IsMultiThread then
@@ -170,6 +173,9 @@ var
             TLSKey:=$ffffffff;
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -181,8 +187,11 @@ var
         errorsave : dword;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       begin	
@@ -541,6 +550,9 @@ Procedure InitSystemThreads;public name '_FPC_InitSystemThreads';
 =======
 Procedure InitSystemThreads;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -589,6 +601,7 @@ begin
   ThreadID := GetCurrentThreadID;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_USE_TLS_DIRECTORY}
   if IsLibrary then
 {$endif}
@@ -599,6 +612,8 @@ begin
   if KernelHandle<>0 then
     WinTryEnterCriticalSection:=TTryEnterCriticalSection(GetProcAddress(KernelHandle,'TryEnterCriticalSection'));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if IsLibrary then
@@ -612,6 +627,9 @@ begin
       FreeLibrary(KernelHandle);
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

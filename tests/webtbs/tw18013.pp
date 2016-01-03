@@ -9,6 +9,7 @@ begin
   if (wa <= ws) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (wa <> ws) then writeln('True') else begin writeln('False'); halt(2); end
   else halt(3);
   if (wa <= ws) then writeln('True') else begin writeln('False'); halt(4); end;
@@ -16,11 +17,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     if (wa <> ws) then writeln('True') else begin writeln('False'); halt(1); end
   else halt(1);
   if (wa <= ws) then writeln('True') else begin writeln('False'); halt(1); end;
   if (wa <> ws) then writeln('True') else begin writeln('False'); halt(1); end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

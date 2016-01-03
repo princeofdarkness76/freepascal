@@ -7,6 +7,11 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$R *.res}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$R *.res}
 

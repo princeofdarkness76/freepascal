@@ -27,6 +27,7 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   __MVFlags = record
     case byte of
     0: (_anonbitfield_NSMovieView0: cuint);
@@ -34,11 +35,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   __MVFlags = bitpacked record
     case byte of
     0: (_anonbitfield_NSMovieView0: cuint);
     1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -50,7 +56,10 @@ type
           reserved: 0..((1 shl 25)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

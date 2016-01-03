@@ -6,7 +6,11 @@
 main=fcl-db
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+>>>>>>> graemeg/cpstrnew
 =======
 version=2.5.1
 >>>>>>> graemeg/cpstrnew

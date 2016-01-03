@@ -30,9 +30,13 @@ begin
     T:=P.Targets.AddUnit('src/md5.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.Dependencies.AddInclude('src/md5i386.inc', [i386], AllOSes-[darwin]);
     T:=P.Targets.AddUnit('src/sha1.pp');
     T.Dependencies.AddInclude('src/sha1i386.inc', [i386], AllOSes-[darwin]);
+=======
+    T:=P.Targets.AddUnit('src/sha1.pp');
+>>>>>>> graemeg/cpstrnew
 =======
     T:=P.Targets.AddUnit('src/sha1.pp');
 >>>>>>> graemeg/cpstrnew
@@ -50,10 +54,13 @@ begin
     T:=P.Targets.AddExampleunit('examples/sha1test.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddExampleunit('examples/hmd5.pp');
     T:=P.Targets.AddExampleunit('examples/hsha1.pp');
     T:=P.Targets.AddExampleunit('examples/md5performancetest.pas');
     T:=P.Targets.AddExampleunit('examples/sha1performancetest.pas');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

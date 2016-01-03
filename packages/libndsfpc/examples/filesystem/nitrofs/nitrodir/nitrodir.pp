@@ -65,7 +65,11 @@ begin
    
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if nitroFSInit(nil) then
+=======
+  if (nitroFSInit()) then
+>>>>>>> graemeg/cpstrnew
 =======
   if (nitroFSInit()) then
 >>>>>>> graemeg/cpstrnew

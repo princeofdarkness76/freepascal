@@ -135,8 +135,13 @@ function TimeToStr(Time: TDateTime): string;
 function TimeToStr(Time: TDateTime; const FormatSettings: TFormatSettings): string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DateTimeToStr(DateTime: TDateTime; ForceTimeIfZero : Boolean = False): string;
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings; ForceTimeIfZero : Boolean = False): string;
+=======
+function DateTimeToStr(DateTime: TDateTime): string;
+function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
+>>>>>>> graemeg/cpstrnew
 =======
 function DateTimeToStr(DateTime: TDateTime): string;
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
@@ -151,7 +156,10 @@ function StrToDate(const S: ShortString; separator : char): TDateTime;{$ifdef SY
 function StrToDate(const S: AnsiString; separator : char): TDateTime; {$ifdef SYSUTILSINLINE}inline;{$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function StrToDate(const S: string; FormatSettings : TFormatSettings): TDateTime;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -160,6 +168,7 @@ function StrToTime(const S: Shortstring): TDateTime;                  {$ifdef SY
 function StrToTime(const S: Ansistring): TDateTime;                   {$ifdef SYSUTILSINLINE}inline;{$endif}
 function StrToTime(const S: ShortString; separator : char): TDateTime;{$ifdef SYSUTILSINLINE}inline;{$endif}
 function StrToTime(const S: AnsiString; separator : char): TDateTime; {$ifdef SYSUTILSINLINE}inline;{$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function StrToTime(const S: string; FormatSettings : TFormatSettings): TDateTime;
@@ -177,6 +186,8 @@ procedure DateTimeToString(out Result: string; const FormatStr: string; const Da
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 function StrToDate(const S: ShortString; const useformat : string; separator : char): TDateTime;{$ifdef SYSUTILSINLINE}inline;{$endif}
 function StrToDate(const S: AnsiString; const useformat : string; separator : char): TDateTime;{$ifdef SYSUTILSINLINE}inline;{$endif}
 function StrToTime(const S: PChar; Len : integer; separator : char = #0): TDateTime;
@@ -189,6 +200,9 @@ function FormatDateTime(const FormatStr: string; DateTime: TDateTime; const Form
 procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime);
 procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime; const FormatSettings: TFormatSettings);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

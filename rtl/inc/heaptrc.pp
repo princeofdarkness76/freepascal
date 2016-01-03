@@ -1390,7 +1390,11 @@ begin
   if IsMultithread then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TraceRelocateHeap;
+=======
+    initcriticalsection(todo_lock);
+>>>>>>> graemeg/cpstrnew
 =======
     initcriticalsection(todo_lock);
 >>>>>>> graemeg/cpstrnew

@@ -20,6 +20,9 @@ unit buildrtl;
       winevent, sockets, printer,
       video, mouse, keyboard, fmtbcd,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

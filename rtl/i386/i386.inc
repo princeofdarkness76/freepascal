@@ -134,6 +134,9 @@ procedure fpc_cpuinit;
     if IsLibrary then
       Default8087CW:=Get8087CW;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1263,8 +1266,11 @@ asm
 {$endif FPC_PROFILE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         test    %eax,%eax
         jz      .LStrLenDone
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1707,6 +1713,9 @@ asm
 .Lj3603:
 // [104] If declocked(l^) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1810,8 +1819,13 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_SYSTEM_HAS_BSF_QWORD}
 {$define FPC_SYSTEM_HAS_BSF_QWORD}
+=======
+{$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
+{$define FPC_SYSTEM_HAS_BSX_QWORD}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
 {$define FPC_SYSTEM_HAS_BSX_QWORD}
@@ -1825,6 +1839,7 @@ function BsfQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
 asm
      bsfl    4(%esp),%eax
      jnz     .L2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .L1:
@@ -1843,12 +1858,17 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 .L1: bsfl    8(%esp),%eax
      add     $32,%eax
 .L2:
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1858,6 +1878,7 @@ asm
      jz     .L1
      add     $32,%eax
      jmp     .L2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .L1:
@@ -1892,12 +1913,17 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 .L1: bsrl    4(%esp),%eax
 .L2:
 end;
 
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

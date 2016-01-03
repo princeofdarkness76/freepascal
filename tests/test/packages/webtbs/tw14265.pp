@@ -31,7 +31,11 @@ begin
   Writeln('Testing simple thread creation');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pthread_attr_init(@attr);
+=======
+  pthread_attr_init(attr);
+>>>>>>> graemeg/cpstrnew
 =======
   pthread_attr_init(attr);
 >>>>>>> graemeg/cpstrnew
@@ -44,7 +48,11 @@ begin
     arg[i] := i;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if pthread_create(@threads[i], @attr, @Hello, @arg[i]) <> 0 then
+=======
+    if pthread_create(threads[i], attr, @Hello, @arg[i]) <> 0 then
+>>>>>>> graemeg/cpstrnew
 =======
     if pthread_create(threads[i], attr, @Hello, @arg[i]) <> 0 then
 >>>>>>> graemeg/cpstrnew

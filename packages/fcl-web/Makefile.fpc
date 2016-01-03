@@ -1,7 +1,11 @@
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for TDataSet for FCL
+>>>>>>> graemeg/cpstrnew
 =======
 #   Makefile.fpc for TDataSet for FCL
 >>>>>>> graemeg/cpstrnew
@@ -12,6 +16,7 @@
 
 [package]
 name=fcl-web
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 version=3.1.1
@@ -33,6 +38,12 @@ version=2.5.1
 [require]
 packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
+=======
+version=2.5.1
+
+[require]
+packages=rtl fpmkunit
+>>>>>>> graemeg/cpstrnew
 
 [default]
 fpcdir=../..
@@ -40,8 +51,11 @@ fpcdir=../..
 [prerules]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 # If no fpmake exists and clean is called, do not try to build fpmake, it will
@@ -52,6 +66,9 @@ ifeq ($(FPMAKE_BIN_CLEAN),)
 FPMAKE_BIN_CLEAN=$(ECHO)
 endif
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -61,6 +78,7 @@ endif
 ifdef CPU_TARGET
 FPC_TARGETOPT+=--cpu=$(CPU_TARGET)
 endif
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 LOCALFPMAKE=./fpmake$(SRCEXEEXT)
@@ -149,6 +167,11 @@ LOCALFPMAKE=.$(PATHSEP)fpmake$(EXEEXT)
 
 [rules]
 >>>>>>> graemeg/cpstrnew
+=======
+LOCALFPMAKE=.$(PATHSEP)fpmake$(EXEEXT)
+
+[rules]
+>>>>>>> graemeg/cpstrnew
 $(COMPILER_UNITTARGETDIR):
         $(MKDIRTREE) $(COMPILER_UNITTARGETDIR)
 fpmake: $(COMPILER_UNITTARGETDIR) fpmake.pp
@@ -167,6 +190,9 @@ install:	fpmake
 	$(LOCALFPMAKE) install --localunitdir=../.. --globalunitdir=.. $(FPC_TARGETOPT) $(addprefix -o ,$(FPCOPT)) --compiler=$(FPC) --prefix=$(INSTALL_PREFIX)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

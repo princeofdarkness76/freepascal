@@ -2703,10 +2703,13 @@ function RolQWord(Const AValue : QWord;const Dist : Byte): QWord;{$ifdef SYSTEMI
 {$ifndef FPC_SYSTEM_HAS_SAR_BYTE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SarShortint(Const AValue : Shortint;const Shift : Byte): Shortint;
   begin
     Result:=shortint(byte(byte(byte(AValue) shr (Shift and 7)) or (byte(shortint(byte(0-byte(byte(AValue) shr 7)) and byte(shortint(0-(ord((Shift and 7)<>0){ and 1}))))) shl (8-(Shift and 7)))));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function SarShortint(Const AValue : Shortint;Shift : Byte): Shortint;
@@ -2714,6 +2717,9 @@ function SarShortint(Const AValue : Shortint;Shift : Byte): Shortint;
     Shift:=Shift and 7;
     Result:=shortint(byte(byte(byte(AValue) shr Shift) or (byte(shortint(byte(0-byte(byte(AValue) shr 7)) and byte(shortint(0-(ord(Shift<>0){ and 1}))))) shl (8-Shift))));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2725,10 +2731,13 @@ function SarShortint(Const AValue : Shortint;Shift : Byte): Shortint;
 {$ifndef FPC_SYSTEM_HAS_SAR_WORD}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SarSmallint(Const AValue : Smallint;const Shift : Byte): Smallint;
   begin
     Result:=smallint(word(word(word(AValue) shr (Shift and 15)) or (word(smallint(word(0-word(word(AValue) shr 15)) and word(smallint(0-(ord((Shift and 15)<>0){ and 1}))))) shl (16-(Shift and 15)))));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function SarSmallint(Const AValue : Smallint;Shift : Byte): Smallint;
@@ -2736,6 +2745,9 @@ function SarSmallint(Const AValue : Smallint;Shift : Byte): Smallint;
     Shift:=Shift and 15;
     Result:=smallint(word(word(word(AValue) shr Shift) or (word(smallint(word(0-word(word(AValue) shr 15)) and word(smallint(0-(ord(Shift<>0){ and 1}))))) shl (16-Shift))));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2747,10 +2759,13 @@ function SarSmallint(Const AValue : Smallint;Shift : Byte): Smallint;
 {$ifndef FPC_SYSTEM_HAS_SAR_DWORD}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SarLongint(Const AValue : Longint;const Shift : Byte): Longint;
   begin
     Result:=longint(dword(dword(dword(AValue) shr (Shift and 31)) or (dword(longint(dword(0-dword(dword(AValue) shr 31)) and dword(longint(0-(ord((Shift and 31)<>0){ and 1}))))) shl (32-(Shift and 31)))));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function SarLongint(Const AValue : Longint;Shift : Byte): Longint;
@@ -2758,6 +2773,9 @@ function SarLongint(Const AValue : Longint;Shift : Byte): Longint;
     Shift:=Shift and 31;
     Result:=longint(dword(dword(dword(AValue) shr Shift) or (dword(longint(dword(0-dword(dword(AValue) shr 31)) and dword(longint(0-(ord(Shift<>0){ and 1}))))) shl (32-Shift))));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2769,10 +2787,13 @@ function SarLongint(Const AValue : Longint;Shift : Byte): Longint;
 {$ifndef FPC_SYSTEM_HAS_SAR_QWORD}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fpc_SarInt64(Const AValue : Int64;const Shift : Byte): Int64; [Public,Alias:'FPC_SARINT64']; compilerproc;
   begin
     Result:=int64(qword(qword(qword(AValue) shr (Shift and 63)) or (qword(int64(qword(0-qword(qword(AValue) shr 63)) and qword(int64(0-(ord((Shift and 63)<>0){ and 1}))))) shl (64-(Shift and 63)))));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function SarInt64(Const AValue : Int64;Shift : Byte): Int64;
@@ -2780,6 +2801,9 @@ function SarInt64(Const AValue : Int64;Shift : Byte): Int64;
     Shift:=Shift and 63;
     Result:=int64(qword(qword(qword(AValue) shr Shift) or (qword(int64(qword(0-qword(qword(AValue) shr 63)) and qword(int64(0-(ord(Shift<>0){ and 1}))))) shl (64-Shift))));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2789,8 +2813,13 @@ function SarInt64(Const AValue : Int64;Shift : Byte): Int64;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_INTERNAL_BSF_BYTE}
 {$ifndef FPC_SYSTEM_HAS_BSF_BYTE}
+=======
+{$ifndef FPC_HAS_INTERNAL_BSX_BYTE}
+{$ifndef FPC_SYSTEM_HAS_BSX_BYTE}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifndef FPC_HAS_INTERNAL_BSX_BYTE}
 {$ifndef FPC_SYSTEM_HAS_BSX_BYTE}
@@ -2815,11 +2844,15 @@ function BsfByte(Const AValue: Byte): Byte;
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 {$endif}
 
 {$ifndef FPC_HAS_INTERNAL_BSR_BYTE}
 {$ifndef FPC_SYSTEM_HAS_BSR_BYTE}
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -2845,6 +2878,7 @@ function BsrByte(Const AValue: Byte): Byte;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_SYSTEM_HAS_BSF_WORD}
 {$ifndef FPC_HAS_INTERNAL_BSF_WORD}
 function BsfWord(Const AValue: Word): {$ifdef CPU16}byte{$else}cardinal{$endif};
@@ -2864,6 +2898,8 @@ function BsrWord(Const AValue: Word): {$ifdef CPU16}byte{$else}cardinal{$endif};
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifndef FPC_SYSTEM_HAS_BSX_WORD}
 {$ifndef FPC_HAS_INTERNAL_BSX_WORD}
 function BsfWord(Const AValue: Word): cardinal;
@@ -2880,6 +2916,7 @@ function BsrWord(Const AValue: Word): cardinal;
       result:=BsrByte(hi(AValue))+8
     else
       result:=BsrByte(lo(AValue))
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2952,10 +2989,13 @@ function BsrQWord(Const AValue : QWord): {$ifdef CPU16}byte{$else}cardinal{$endi
         result:=0;
       end;
     result:=result or BsrDword(tmp);
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 {$endif}
 {$endif}
 
+<<<<<<< HEAD
 const
   PopCntData : array[0..15] of byte = (0,1,1,2,1,2,2,3,1,2,2,3,2,3,3,4);
 
@@ -3013,6 +3053,8 @@ function fpc_PopCnt_qword(AValue : QWord): QWord;[Public,Alias:'FPC_POPCNT_QWORD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifndef FPC_HAS_INTERNAL_BSX_DWORD}
 {$ifndef FPC_SYSTEM_HAS_BSX_DWORD}
 function BsfDWord(Const AValue : DWord): cardinal;
@@ -3053,6 +3095,9 @@ function BsrQWord(Const AValue : QWord): cardinal;
 {$endif}
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

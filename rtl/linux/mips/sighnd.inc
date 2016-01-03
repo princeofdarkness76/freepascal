@@ -17,12 +17,15 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SignalToRunerror(sig : longint; SigInfo: PSigInfo; UContext: PUContext);cdecl;public name '_FPC_DEFAULTSIGHANDLER';
 var
   res : word;
   addr : pointer;
   frame : pointer;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 const
@@ -41,6 +44,9 @@ var
   res : word;
   addr : pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -50,6 +56,7 @@ begin
   case sig of
     SIGFPE :
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           addr := siginfo^._sifields._sigfault._addr;
@@ -65,6 +72,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           addr := siginfo^._sifields._sigfault.si_addr;
           res := 207;
           case  siginfo^.si_code of
@@ -75,6 +84,9 @@ begin
             FPE_FLTDIV:
               res:=200;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -84,7 +96,10 @@ begin
               res:=206;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
             FPE_FLTRES,
@@ -92,6 +107,9 @@ begin
             FPE_FLTSUB:
               res:=216;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -105,7 +123,11 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           addr := siginfo^._sifields._sigfault._addr;
+=======
+          addr := siginfo^._sifields._sigfault.si_addr;
+>>>>>>> graemeg/cpstrnew
 =======
           addr := siginfo^._sifields._sigfault.si_addr;
 >>>>>>> graemeg/cpstrnew
@@ -118,6 +140,7 @@ begin
   reenable_signal(sig);
   { give runtime error at the position where the signal was raised }
   if res<>0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     begin
@@ -152,6 +175,9 @@ begin
         set_fsr(get_fsr and not (fpu_cause_mask or fpu_flags_mask));
       HandleErrorAddrFrame(res,addr,frame);
     end;
+=======
+    HandleErrorAddrFrame(res,addr,nil);
+>>>>>>> graemeg/cpstrnew
 =======
     HandleErrorAddrFrame(res,addr,nil);
 >>>>>>> graemeg/cpstrnew

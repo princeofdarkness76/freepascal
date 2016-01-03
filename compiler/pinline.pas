@@ -85,7 +85,11 @@ implementation
         consume(_LKLAMMER);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         p:=comp_expr([ef_accept_equal]);
+=======
+        p:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
         p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -188,7 +192,11 @@ implementation
                  p.free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  p:=factor(false,[]);
+=======
+                 p:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
                  p:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -207,7 +215,11 @@ implementation
                  p.free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -225,7 +237,11 @@ implementation
                  Message(parser_e_no_new_or_dispose_for_classes);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  new_dispose_statement:=factor(false,[]);
+=======
+                 new_dispose_statement:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
                  new_dispose_statement:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -374,9 +390,12 @@ implementation
                      if is_managed_type(tpointerdef(p.resultdef).pointeddef) or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        ((m_isolike_io in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
                        addstatement(newstatement,cnodeutils.initialize_data_node(cderefnode.create(ctemprefnode.create(temp)),false));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                        ((m_iso in current_settings.modeswitches) and (tpointerdef(p.resultdef).pointeddef.typ=filedef)) then
@@ -440,8 +459,11 @@ implementation
                      if is_managed_type(tpointerdef(p.resultdef).pointeddef) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        addstatement(newstatement,cnodeutils.finalize_data_node(cderefnode.create(p.getcopy)));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                        addstatement(newstatement,finalize_data_node(cderefnode.create(p.getcopy)));
@@ -470,7 +492,11 @@ implementation
         consume(_LKLAMMER);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         p1:=factor(false,[]);
+=======
+        p1:=factor(false,false);
+>>>>>>> graemeg/cpstrnew
 =======
         p1:=factor(false,false);
 >>>>>>> graemeg/cpstrnew
@@ -758,6 +784,9 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -810,9 +839,15 @@ implementation
            if isinit then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              newblock:=cnodeutils.initialize_data_node(ppn.left,true)
            else
              newblock:=cnodeutils.finalize_data_node(ppn.left);
+=======
+             newblock:=initialize_data_node(ppn.left)
+           else
+             newblock:=finalize_data_node(ppn.left);
+>>>>>>> graemeg/cpstrnew
 =======
              newblock:=initialize_data_node(ppn.left)
            else

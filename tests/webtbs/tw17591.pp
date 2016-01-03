@@ -6,7 +6,11 @@ uses
 {$ifdef unix}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  ,{$ifdef darwin}iosxwstr{$else}cwstring{$endif}
+=======
+ ,cwstring
+>>>>>>> graemeg/cpstrnew
 =======
  ,cwstring
 >>>>>>> graemeg/cpstrnew

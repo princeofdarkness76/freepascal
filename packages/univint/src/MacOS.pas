@@ -58,8 +58,11 @@ uses
   AudioHardware,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AudioHardwareBase,
   AudioHardwareDeprecated,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -92,8 +95,11 @@ uses
   CFFTPStream,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CFFileDescriptor,
   CFFileSecurity,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -190,7 +196,10 @@ uses
   CSIdentityAuthority,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CSIdentityBase,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -253,7 +262,10 @@ uses
   Dictionary,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DictionaryServices,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -331,6 +343,10 @@ uses
   KeychainHI,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  KeyEvents,
+>>>>>>> graemeg/cpstrnew
 =======
   KeyEvents,
 >>>>>>> graemeg/cpstrnew
@@ -411,7 +427,10 @@ uses
   QLGenerator,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   QLThumbnail,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -447,11 +466,14 @@ uses
   SFNTTypes,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SKAnalysis,
   SKDocument,
   SKIndex,
   SKSearch,
   SKSummary,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -495,7 +517,10 @@ uses
   WSTypes,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   acl,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

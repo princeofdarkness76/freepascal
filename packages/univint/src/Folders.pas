@@ -7,9 +7,12 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1995-2011 by Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
      Version:    CarbonCore-859.2~1
@@ -24,6 +27,9 @@
 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -83,11 +89,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -108,6 +117,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -140,6 +150,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -149,12 +160,25 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -164,7 +188,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -173,6 +200,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -267,6 +295,39 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -307,6 +368,7 @@ uses MacTypes,Files;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -317,6 +379,11 @@ uses MacTypes,Files;
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -355,6 +422,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
    The ID of the last domain in the above list, used by the Folder Manager to determine if a given 
    parameter should be treated as a domain or a volume...
@@ -370,6 +438,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {
    The ID of the last domain in the above list, used by the Folder Manager to determine if a given 
    parameter should be treated as a domain or a volume...
@@ -383,6 +453,9 @@ const
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -470,7 +543,11 @@ const
 function FindFolder( vRefNum: FSVolumeRefNum; folderType: OSType; createFolder: Boolean; var foundVRefNum: FSVolumeRefNum; var foundDirID: SInt32 ): OSErr; external name '_FindFolder';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -515,7 +592,11 @@ function FindFolder( vRefNum: FSVolumeRefNum; folderType: OSType; createFolder: 
 function ReleaseFolder( vRefNum: FSVolumeRefNum; folderType: OSType ): OSErr; external name '_ReleaseFolder';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -592,7 +673,11 @@ function ReleaseFolder( vRefNum: FSVolumeRefNum; folderType: OSType ): OSErr; ex
 function FSFindFolder( vRefNum: FSVolumeRefNum; folderType: OSType; createFolder: Boolean; var foundRef: FSRef ): OSErr; external name '_FSFindFolder';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -640,6 +725,7 @@ const
 	kUsersFolderType = FourCharCode('usrs'); { "Users" folder, usually contains one folder for each user. }
 	kCurrentUserFolderType = FourCharCode('cusr'); { The folder for the currently logged on user; domain passed in is ignored. }
 	kSharedUserDataFolderType = FourCharCode('sdat'); { A Shared folder, readable & writeable by all users }
+<<<<<<< HEAD
 
 {
     The following selectors refer specifically to subfolders inside the user's home folder, and should
@@ -750,6 +836,108 @@ const
 	kQuickLookFolderType = FourCharCode('qlck'); { The QuickLook folder, supported in Mac OS X SnowLeopard and later. }
 
 const
+=======
+
+{
+    The following selectors refer specifically to subfolders inside the user's home folder, and should
+    be used only with  kUserDomain as the domain in the various FindFolder calls.
+}
+const
+	kDocumentsFolderType = FourCharCode('docs'); {    User documents are typically put in this folder ( or a subfolder ).}
+	kPictureDocumentsFolderType = FourCharCode('pdoc'); { Refers to the "Pictures" folder in a users home directory}
+	kMovieDocumentsFolderType = FourCharCode('mdoc'); { Refers to the "Movies" folder in a users home directory}
+	kMusicDocumentsFolderType = FourCharCode('µdoc'); { Refers to the "Music" folder in a users home directory}
+	kInternetSitesFolderType = FourCharCode('site'); { Refers to the "Sites" folder in a users home directory}
+	kPublicFolderType = FourCharCode('pubb'); { Refers to the "Public" folder in a users home directory}
+
+const
+	kSharedLibrariesFolderType = FourCharCode('Älib'); { for general shared libs. }
+	kVoicesFolderType = FourCharCode('fvoc'); { macintalk can live here }
+	kUtilitiesFolderType = FourCharCode('utiÄ'); { for Utilities folder }
+	kThemesFolderType = FourCharCode('thme'); { for Theme data files }
+	kFavoritesFolderType = FourCharCode('favs'); { Favorties folder for Navigation Services }
+	kInternetSearchSitesFolderType = FourCharCode('issf'); { Internet Search Sites folder }
+	kInstallerLogsFolderType = FourCharCode('ilgf'); { Installer Logs folder }
+	kScriptsFolderType = FourCharCode('scrÄ'); { Scripts folder }
+	kFolderActionsFolderType = FourCharCode('fasf'); { Folder Actions Scripts folder }
+	kSpeakableItemsFolderType = FourCharCode('spki'); { Speakable Items folder }
+	kKeychainFolderType = FourCharCode('kchn'); { Keychain folder }
+
+{ New Folder Types to accommodate the Mac OS X Folder Manager }
+{ These folder types are not applicable on Mac OS 9.          }
+const
+	kColorSyncFolderType = FourCharCode('sync'); { Contains ColorSync-related folders}
+	kColorSyncCMMFolderType = FourCharCode('ccmm'); { ColorSync CMMs}
+	kColorSyncScriptingFolderType = FourCharCode('cscr'); { ColorSync Scripting support}
+	kPrintersFolderType = FourCharCode('impr'); { Contains Printing-related folders}
+	kSpeechFolderType = FourCharCode('spch'); { Contains Speech-related folders}
+	kCarbonLibraryFolderType = FourCharCode('carb'); { Contains Carbon-specific file}
+	kDocumentationFolderType = FourCharCode('info'); { Contains Documentation files (not user documents)}
+	kISSDownloadsFolderType = FourCharCode('issd'); { Contains Internet Search Sites downloaded from the Internet}
+	kUserSpecificTmpFolderType = FourCharCode('utmp'); { Contains temporary items created on behalf of the current user}
+	kCachedDataFolderType = FourCharCode('cach'); { Contains various cache files for different clients}
+	kFrameworksFolderType = FourCharCode('fram'); { Contains MacOS X Framework folders}
+	kPrivateFrameworksFolderType = FourCharCode('pfrm'); { Contains MacOS X Private Framework folders     }
+	kClassicDesktopFolderType = FourCharCode('sdsk'); { MacOS 9 compatible desktop folder - same as kSystemDesktopFolderType but with a more appropriate name for Mac OS X code.}
+	kSystemSoundsFolderType = FourCharCode('ssnd'); { Contains Mac OS X System Sound Files ( valid in kSystemDomain, kLocalDomain, and kUserDomain )}
+	kComponentsFolderType = FourCharCode('cmpd'); { Contains Mac OS X components   ( valid in kSystemDomain, kLocalDomain, and kUserDomain )}
+	kQuickTimeComponentsFolderType = FourCharCode('wcmp'); { Contains QuickTime components for Mac OS X ( valid in kSystemDomain, kLocalDomain, and kUserDomain )}
+	kCoreServicesFolderType = FourCharCode('csrv'); { Refers to the "/System/Library/CoreServices" folder on Mac OS X}
+	kAudioSupportFolderType = FourCharCode('adio'); { Refers to the Audio support folder for Mac OS X}
+	kAudioPresetsFolderType = FourCharCode('apst'); { "Presets" folder of "Audio" folder, Mac OS X 10.4 and later}
+	kAudioSoundsFolderType = FourCharCode('asnd'); { Refers to the Sounds subfolder of Audio Support}
+	kAudioSoundBanksFolderType = FourCharCode('bank'); { Refers to the Banks subfolder of the Sounds Folder}
+	kAudioAlertSoundsFolderType = FourCharCode('alrt'); { Refers to the Alert Sounds subfolder of the Sound Folder}
+	kAudioPlugInsFolderType = FourCharCode('aplg'); { Refers to the Plug-ins subfolder of the Audio Folder   }
+	kAudioComponentsFolderType = FourCharCode('acmp'); { Refers to the Components subfolder of the Audio Plug-ins Folder    }
+	kKernelExtensionsFolderType = FourCharCode('kext'); { Refers to the Kernel Extensions Folder on Mac OS X}
+	kDirectoryServicesFolderType = FourCharCode('dsrv'); { Refers to the Directory Services folder on Mac OS X}
+	kDirectoryServicesPlugInsFolderType = FourCharCode('dplg'); { Refers to the Directory Services Plug-Ins folder on Mac OS X }
+	kInstallerReceiptsFolderType = FourCharCode('rcpt'); { Refers to the "Receipts" folder in Mac OS X}
+	kFileSystemSupportFolderType = FourCharCode('fsys'); { Refers to the [domain]/Library/Filesystems folder in Mac OS X}
+	kAppleShareSupportFolderType = FourCharCode('shar'); { Refers to the [domain]/Library/Filesystems/AppleShare folder in Mac OS X}
+	kAppleShareAuthenticationFolderType = FourCharCode('auth'); { Refers to the [domain]/Library/Filesystems/AppleShare/Authentication folder in Mac OS X}
+	kMIDIDriversFolderType = FourCharCode('midi'); { Refers to the MIDI Drivers folder on Mac OS X}
+	kKeyboardLayoutsFolderType = FourCharCode('klay'); { Refers to the [domain]/Library/KeyboardLayouts folder in Mac OS X}
+	kIndexFilesFolderType = FourCharCode('indx'); { Refers to the [domain]/Library/Indexes folder in Mac OS X}
+	kFindByContentIndexesFolderType = FourCharCode('fbcx'); { Refers to the [domain]/Library/Indexes/FindByContent folder in Mac OS X}
+	kManagedItemsFolderType = FourCharCode('mang'); { Refers to the Managed Items folder for Mac OS X }
+	kBootTimeStartupItemsFolderType = FourCharCode('empz'); { Refers to the "StartupItems" folder of Mac OS X }
+	kAutomatorWorkflowsFolderType = FourCharCode('flow'); { Automator Workflows folder }
+	kAutosaveInformationFolderType = FourCharCode('asav'); { ~/Library/Autosaved Information/ folder, can be used to store autosave information for user's applications.  Available in Mac OS X 10.4 and later.  }
+	kSpotlightSavedSearchesFolderType = FourCharCode('spot'); { Usually ~/Library/Saved Searches/; used by Finder and Nav/Cocoa panels to find saved Spotlight searches }
+                                        { The following folder types are available in Mac OS X 10.5 and later }
+	kSpotlightImportersFolderType = FourCharCode('simp'); { Folder for Spotlight importers, usually /Library/Spotlight/ or ~/Library/Spotlight, etc. }
+	kSpotlightMetadataCacheFolderType = FourCharCode('scch'); { Folder for Spotlight metadata caches, for example: ~/Library/Caches/Metadata/ }
+	kInputManagersFolderType = FourCharCode('inpt'); { InputManagers }
+	kInputMethodsFolderType = FourCharCode('inpf'); { ../Library/Input Methods/ }
+	kLibraryAssistantsFolderType = FourCharCode('astl'); { Refers to the [domain]/Library/Assistants folder}
+	kAudioDigidesignFolderType = FourCharCode('adig'); { Refers to the Digidesign subfolder of the Audio Plug-ins folder}
+	kAudioVSTFolderType = FourCharCode('avst'); { Refers to the VST subfolder of the Audio Plug-ins folder}
+	kColorPickersFolderType = FourCharCode('cpkr'); { Refers to the ColorPickers folder}
+	kCompositionsFolderType = FourCharCode('cmps'); { Refers to the Compositions folder}
+	kFontCollectionsFolderType = FourCharCode('fncl'); { Refers to the FontCollections folder}
+	kiMovieFolderType = FourCharCode('imov'); { Refers to the iMovie folder}
+	kiMoviePlugInsFolderType = FourCharCode('impi'); { Refers to the Plug-ins subfolder of the iMovie Folder}
+	kiMovieSoundEffectsFolderType = FourCharCode('imse'); { Refers to the Sound Effects subfolder of the iMovie Folder}
+	kDownloadsFolderType = FourCharCode('down'); { Refers to the ~/Downloads folder}
+
+const
+	kColorSyncProfilesFolderType = FourCharCode('prof'); { for ColorSyncª Profiles }
+	kApplicationSupportFolderType = FourCharCode('asup'); { third-party items and folders }
+	kTextEncodingsFolderType = FourCharCode('Ätex'); { encoding tables }
+	kPrinterDescriptionFolderType = FourCharCode('ppdf'); { new folder at root of System folder for printer descs. }
+	kPrinterDriverFolderType = FourCharCode('Äprd'); { new folder at root of System folder for printer drivers }
+	kScriptingAdditionsFolderType = FourCharCode('Äscr'); { at root of system folder }
+
+const
+	kClassicPreferencesFolderType = FourCharCode('cprf'); { "Classic" folder in ~/Library/ for redirected preference files. }
+
+const
+	kQuickLookFolderType = FourCharCode('qlck'); { The QuickLook folder, supported in Mac OS X SnowLeopard and later. }
+
+const
+>>>>>>> graemeg/cpstrnew
 {    The following selectors really only make sense when used within the Classic environment on Mac OS X.}
 	kSystemFolderType = FourCharCode('macs'); { the system folder }
 	kSystemDesktopFolderType = FourCharCode('sdsk'); { the desktop folder at the root of the hard drive, never the redirected user desktop folder }
@@ -860,6 +1048,9 @@ const
 	kFolderManagerNewlyCreatedFolderShouldHaveDotLocalizedCreatedWithinMask = 1 shl kFolderManagerNewlyCreatedFolderIsLocalizedBit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
 	FolderDescFlags = UInt32;
@@ -868,6 +1059,7 @@ const
 	kRelativeFolder = FourCharCode('relf');
 	kRedirectedRelativeFolder = FourCharCode('rrel');
 	kSpecialFolder = FourCharCode('spcf');
+<<<<<<< HEAD
 =======
 =======
 
@@ -878,6 +1070,7 @@ const
 	kRelativeFolder = FourCharCode('relf');
 	kRedirectedRelativeFolder = FourCharCode('rrel');
 	kSpecialFolder = FourCharCode('spcf');
+=======
 
 type
 	FolderClass = OSType;
@@ -885,6 +1078,18 @@ type
 const
 	kBlessedFolder = FourCharCode('blsf');
 	kRootFolder = FourCharCode('rotf');
+>>>>>>> graemeg/cpstrnew
+
+type
+	FolderClass = OSType;
+{ special folder locations }
+const
+<<<<<<< HEAD
+	kBlessedFolder = FourCharCode('blsf');
+	kRootFolder = FourCharCode('rotf');
+>>>>>>> graemeg/cpstrnew
+=======
+	kCurrentUserFolderLocation = FourCharCode('cusf'); {    the magic 'Current User' folder location}
 >>>>>>> graemeg/cpstrnew
 
 type
@@ -899,6 +1104,7 @@ const
 	kCurrentUserFolderLocation = FourCharCode('cusf'); {    the magic 'Current User' folder location}
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
 type
 	FolderClass = OSType;
 { special folder locations }
@@ -924,6 +1130,8 @@ const
 
 <<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1040,7 +1248,11 @@ type
 function AddFolderDescriptor( foldType: FolderType; flags: FolderDescFlags; foldClass: FolderClass; foldLocation: FolderLocation; badgeSignature: OSType; badgeType: OSType; const (*var*) name: StrFileName; replaceFlag: Boolean ): OSErr; external name '_AddFolderDescriptor';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1092,7 +1304,11 @@ function AddFolderDescriptor( foldType: FolderType; flags: FolderDescFlags; fold
 function GetFolderTypes( requestedTypeCount: UInt32; var totalTypeCount: UInt32; var theTypes: FolderType ): OSErr; external name '_GetFolderTypes';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1123,6 +1339,7 @@ function GetFolderTypes( requestedTypeCount: UInt32; var totalTypeCount: UInt32;
  *    Non-Carbon CFM:   in FoldersLib 1.0 and later
  }
 function RemoveFolderDescriptor( foldType: FolderType ): OSErr; external name '_RemoveFolderDescriptor';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
@@ -1185,8 +1402,56 @@ function GetFolderNameUnicode( vRefNum: FSVolumeRefNum; foldType: OSType; var fo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+>>>>>>> graemeg/cpstrnew
 
+{
+ *  GetFolderNameUnicode()
+ *  
+ *  Summary:
+ *    Obtains the name of the specified folder.
+ *  
+ *  Discussion:
+ *    The GetFolderName function obtains the name of the folder in the
+ *    folder descriptor, not the name of the folder on the disk. The
+ *    names may differ for a few special folders such as the System
+ *    Folder. For relative folders, however, the actual name is always
+ *    returned. You typically do not need to call this function.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.5
+ *  
+ *  Parameters:
+ *    
+ *    vRefNum:
+ *      Pass the volume reference number (or the constant kOnSystemDisk
+ *      for the startup disk) of the volume containing the folder for
+ *      which you wish the name to be identified.
+ *    
+ *    foldType:
+ *      Pass a constant identifying the type of the folder for which
+ *      you wish the name to be identified. See "Folder Type Constants".
+ *    
+ *    foundVRefNum:
+ *      On return, a pointer to the volume reference number for the
+ *      volume containing the folder specified in the foldType
+ *      parameter.
+ *    
+ *    name:
+ *      A pointer to an HFSUniStr255 which will contain the unicode
+ *      name on return.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GetFolderNameUnicode( vRefNum: FSVolumeRefNum; foldType: OSType; var foundVRefNum: FSVolumeRefNum; var name: HFSUniStr255 ): OSStatus; external name '_GetFolderNameUnicode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+<<<<<<< HEAD
 {
  *  InvalidateFolderDescriptorCache()
  *  
@@ -1237,6 +1502,51 @@ function InvalidateFolderDescriptorCache( vRefNum: FSVolumeRefNum; dirID: SInt32
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 
+=======
+
+{
+ *  InvalidateFolderDescriptorCache()
+ *  
+ *  Summary:
+ *    Invalidates any prior FindFolder results for the specified folder.
+ *  
+ *  Discussion:
+ *    The InvalidateFolderDescriptorCache function searches to see if
+ *    there is currently a cache of results from FindFolder calls on
+ *    the specified folder. If so, it invalidates the cache from the
+ *    previous calls to the FindFolder function in order to force the
+ *    Folder Manager to reexamine the disk when FindFolder is called
+ *    again on the specified directory ID or volume reference number.
+ *    
+ *    
+ *    You should not normally need to call
+ *    InvalidateFolderDescriptorCache.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    vRefNum:
+ *      Pass the volume reference number (or the constant kOnSystemDisk
+ *      for the startup disk) of the volume containing the folder for
+ *      which you wish the descriptor cache to be invalidated. Pass 0
+ *      to completely invalidate all folder cache information.
+ *    
+ *    dirID:
+ *      Pass the directory ID number for the folder for which you wish
+ *      the descriptor cache to be invalidated. Pass 0 to invalidate
+ *      the cache for all folders on the specified disk.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in FoldersLib 1.0 and later
+ }
+function InvalidateFolderDescriptorCache( vRefNum: FSVolumeRefNum; dirID: SInt32 ): OSErr; external name '_InvalidateFolderDescriptorCache';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 {
  *  IdentifyFolder()
@@ -1280,7 +1590,11 @@ function InvalidateFolderDescriptorCache( vRefNum: FSVolumeRefNum; dirID: SInt32
 function IdentifyFolder( vRefNum: FSVolumeRefNum; dirID: SInt32; var foldType: FolderType ): OSErr; external name '_IdentifyFolder';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1340,7 +1654,11 @@ function IdentifyFolder( vRefNum: FSVolumeRefNum; dirID: SInt32; var foldType: F
 function FSDetermineIfRefIsEnclosedByFolder( domainOrVRefNum: FSVolumeRefNum; folderType: OSType; const (*var*) inRef: FSRef; var outResult: Boolean ): OSErr; external name '_FSDetermineIfRefIsEnclosedByFolder';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1406,7 +1724,11 @@ function FSDetermineIfRefIsEnclosedByFolder( domainOrVRefNum: FSVolumeRefNum; fo
 function DetermineIfPathIsEnclosedByFolder( domainOrVRefNum: FSVolumeRefNum; folderType: OSType; utf8Path: ConstCStringPtr; pathIsRealPath: Boolean; var outResult: Boolean ): OSErr; external name '_DetermineIfPathIsEnclosedByFolder';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1501,7 +1823,11 @@ function DetermineIfPathIsEnclosedByFolder( domainOrVRefNum: FSVolumeRefNum; fol
 function FindFolderExtended( vRefNum: FSVolumeRefNum; folderType: OSType; createFolder: Boolean; flags: UInt32; data: UnivPtr; var foundVRefNum: FSVolumeRefNum; var foundDirID: SInt32 ): OSErr; external name '_FindFolderExtended';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1585,7 +1911,11 @@ function FindFolderExtended( vRefNum: FSVolumeRefNum; folderType: OSType; create
 function FSFindFolderExtended( vRefNum: FSVolumeRefNum; folderType: OSType; createFolder: Boolean; flags: UInt32; data: UnivPtr; var foundRef: FSRef ): OSErr; external name '_FSFindFolderExtended';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1633,7 +1963,11 @@ function FSFindFolderExtended( vRefNum: FSVolumeRefNum; folderType: OSType; crea
 function GetFolderDescriptor( foldType: FolderType; descSize: Size; var foldDesc: FolderDesc ): OSErr; external name '_GetFolderDescriptor';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 >>>>>>> graemeg/cpstrnew
@@ -1689,7 +2023,11 @@ function GetFolderDescriptor( foldType: FolderType; descSize: Size; var foldDesc
 function GetFolderName( vRefNum: FSVolumeRefNum; foldType: OSType; var foundVRefNum: FSVolumeRefNum; var name: StrFileName ): OSErr; external name '_GetFolderName';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -1749,7 +2087,11 @@ function GetFolderName( vRefNum: FSVolumeRefNum; foldType: OSType; var foundVRef
 function AddFolderRouting( fileType: OSType; routeFromFolder: FolderType; routeToFolder: FolderType; flags: RoutingFlags; replaceFlag: Boolean ): OSErr; external name '_AddFolderRouting';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -1795,7 +2137,11 @@ function AddFolderRouting( fileType: OSType; routeFromFolder: FolderType; routeT
 function RemoveFolderRouting( fileType: OSType; routeFromFolder: FolderType ): OSErr; external name '_RemoveFolderRouting';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -1853,7 +2199,11 @@ function RemoveFolderRouting( fileType: OSType; routeFromFolder: FolderType ): O
 function FindFolderRouting( fileType: OSType; routeFromFolder: FolderType; var routeToFolder: FolderType; var flags: RoutingFlags ): OSErr; external name '_FindFolderRouting';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -1911,7 +2261,11 @@ function FindFolderRouting( fileType: OSType; routeFromFolder: FolderType; var r
 function GetFolderRoutings( requestedRoutingCount: UInt32; var totalRoutingCount: UInt32; routingSize: Size; var theRoutings: FolderRouting ): OSErr; external name '_GetFolderRoutings';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
@@ -1974,7 +2328,11 @@ function GetFolderRoutings( requestedRoutingCount: UInt32; var totalRoutingCount
 function FSpDetermineIfSpecIsEnclosedByFolder( domainOrVRefNum: FSVolumeRefNum; folderType: OSType; const (*var*) inSpec: FSSpec; var outResult: Boolean ): OSErr; external name '_FSpDetermineIfSpecIsEnclosedByFolder';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_4, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
@@ -1995,6 +2353,7 @@ type
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   available as macro/inline
+<<<<<<< HEAD
  }
 function NewFolderManagerNotificationUPP( userRoutine: FolderManagerNotificationProcPtr ): FolderManagerNotificationUPP; external name '_NewFolderManagerNotificationUPP';
 <<<<<<< HEAD
@@ -2158,21 +2517,62 @@ function FolderManagerUnregisterNotificationProc( notificationProc: FolderManage
 <<<<<<< HEAD
 {
  *  FolderManagerRegisterCallNotificationProcs()   *** DEPRECATED ***
+=======
+ }
+function NewFolderManagerNotificationUPP( userRoutine: FolderManagerNotificationProcPtr ): FolderManagerNotificationUPP; external name '_NewFolderManagerNotificationUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeFolderManagerNotificationUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeFolderManagerNotificationUPP( userUPP: FolderManagerNotificationUPP ); external name '_DisposeFolderManagerNotificationUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeFolderManagerNotificationUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeFolderManagerNotificationUPP( message: OSType; arg: UnivPtr; userRefCon: UnivPtr; userUPP: FolderManagerNotificationUPP ): OSStatus; external name '_InvokeFolderManagerNotificationUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{$ifc not TARGET_CPU_64}
+{
+ *  FolderManagerRegisterNotificationProc()   *** DEPRECATED ***
+>>>>>>> graemeg/cpstrnew
  *  
  *  Deprecated:
  *    This function is deprecated on Mac OS X.
  *  
  *  Summary:
+<<<<<<< HEAD
  *    Call the registered Folder Manager notification procs.
+=======
+ *    Register a function to be called at certain times
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
  *    message:
  *    
  *    arg:
+=======
+ *    notificationProc:
+ *    
+ *    refCon:
+>>>>>>> graemeg/cpstrnew
  *    
  *    options:
  *  
@@ -2181,6 +2581,7 @@ function FolderManagerUnregisterNotificationProc( notificationProc: FolderManage
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
  }
+<<<<<<< HEAD
 function FolderManagerRegisterCallNotificationProcs( message: OSType; arg: UnivPtr; options: UInt32 ): OSStatus; external name '_FolderManagerRegisterCallNotificationProcs';
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_3, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -2218,8 +2619,39 @@ function FolderManagerRegisterCallNotificationProcs( message: OSType; arg: UnivP
 =======
 function FolderManagerRegisterNotificationProc( notificationProc: FolderManagerNotificationUPP; refCon: UnivPtr; options: UInt32 ): OSErr; external name '_FolderManagerRegisterNotificationProc';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+=======
+function FolderManagerRegisterNotificationProc( notificationProc: FolderManagerNotificationUPP; refCon: UnivPtr; options: UInt32 ): OSErr; external name '_FolderManagerRegisterNotificationProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
+>>>>>>> graemeg/cpstrnew
 
+{
+ *  FolderManagerUnregisterNotificationProc()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    This function is deprecated on Mac OS X.
+ *  
+ *  Summary:
+ *    Unregister a function to be called at certain times
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    notificationProc:
+ *    
+ *    refCon:
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
+ }
+function FolderManagerUnregisterNotificationProc( notificationProc: FolderManagerNotificationUPP; refCon: UnivPtr ): OSErr; external name '_FolderManagerUnregisterNotificationProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+<<<<<<< HEAD
 {
  *  FolderManagerUnregisterNotificationProc()   *** DEPRECATED ***
  *  
@@ -2279,6 +2711,40 @@ function FolderManagerRegisterCallNotificationProcs( message: OSType; arg: UnivP
 
 {$endc} {not TARGET_CPU_64}
 
+=======
+
+{
+ *  FolderManagerRegisterCallNotificationProcs()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    This function is deprecated on Mac OS X.
+ *  
+ *  Summary:
+ *    Call the registered Folder Manager notification procs.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    message:
+ *    
+ *    arg:
+ *    
+ *    options:
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 9.0 and later
+ }
+function FolderManagerRegisterCallNotificationProcs( message: OSType; arg: UnivPtr; options: UInt32 ): OSStatus; external name '_FolderManagerRegisterCallNotificationProcs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> graemeg/cpstrnew
 {$endc} {TARGET_OS_MAC}
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

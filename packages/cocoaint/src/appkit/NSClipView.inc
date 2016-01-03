@@ -50,6 +50,7 @@
     _scrollAnimationHelper: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __cvFlags: record
       case byte of
        0: (_anonbitfield_NSClipView0: cuint);
@@ -57,11 +58,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __cvFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSClipView0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -84,7 +90,10 @@
         RESERVED: 0..((1 shl 13)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

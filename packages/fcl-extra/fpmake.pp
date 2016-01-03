@@ -16,6 +16,7 @@ begin
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -27,6 +28,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     P.Directory:='fcl-extra';
 {$endif ALLPACKAGES}
     P.Version:='2.2.2-0';
@@ -35,6 +38,9 @@ begin
     P.Dependencies.Add('winunits-base',[Win32,Win64]);
     P.Dependencies.Add('univint',[darwin]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -48,7 +54,10 @@ begin
     P.SourcePath.Add('src');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.SourcePath.Add('src/win',AllWindowsOSes);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

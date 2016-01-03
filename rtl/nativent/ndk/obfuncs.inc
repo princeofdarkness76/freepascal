@@ -23,6 +23,7 @@ function NtOpenDirectoryObject(
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function NtQueryDirectoryObject(
   DirectoryHandle: HANDLE;
   Buffer: PVOID;
@@ -41,6 +42,8 @@ function NtQueryObject(
   ResultLength: PULONG {OPTIONAL}
 ): NTSTATUS; external ntdll;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

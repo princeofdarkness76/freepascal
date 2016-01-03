@@ -73,7 +73,11 @@ implementation
          consume(_IF);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ex:=comp_expr([ef_accept_equal]);
+=======
+         ex:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
          ex:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -136,7 +140,11 @@ implementation
          consume(_CASE);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          caseexpr:=comp_expr([ef_accept_equal]);
+=======
+         caseexpr:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
          caseexpr:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -202,7 +210,11 @@ implementation
                         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            p:=ctypeconvnode.create(p,cansichartype);
+=======
+                           p:=ctypeconvnode.create(p,cchartype);
+>>>>>>> graemeg/cpstrnew
 =======
                            p:=ctypeconvnode.create(p,cchartype);
 >>>>>>> graemeg/cpstrnew
@@ -215,8 +227,13 @@ implementation
                         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            trangenode(p).left:=ctypeconvnode.create(trangenode(p).left,cansichartype);
                            trangenode(p).right:=ctypeconvnode.create(trangenode(p).right,cansichartype);
+=======
+                           trangenode(p).left:=ctypeconvnode.create(trangenode(p).left,cchartype);
+                           trangenode(p).right:=ctypeconvnode.create(trangenode(p).right,cchartype);
+>>>>>>> graemeg/cpstrnew
 =======
                            trangenode(p).left:=ctypeconvnode.create(trangenode(p).left,cchartype);
                            trangenode(p).right:=ctypeconvnode.create(trangenode(p).right,cchartype);
@@ -356,7 +373,11 @@ implementation
          first:=cblocknode.create(first);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          p_e:=comp_expr([ef_accept_equal]);
+=======
+         p_e:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
          p_e:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -376,7 +397,11 @@ implementation
          consume(_WHILE);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          p_e:=comp_expr([ef_accept_equal]);
+=======
+         p_e:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
          p_e:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -415,6 +440,7 @@ implementation
                (fordef.typ<>errordef) then
               testrange(fordef,tordconstnode(hp).value,false,true);
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -599,6 +625,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
         function for_loop_create(hloopvar: tnode): tnode;
           var
@@ -673,6 +701,9 @@ implementation
                           (tabstractvarsym(tloadnode(hp).symtableentry).varspez=vs_value) and
                           ([vo_is_thread_var,vo_is_typed_const] * tabstractvarsym(tloadnode(hp).symtableentry).varoptions=[]) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
                          begin
                            { Assigning for-loop variable is only allowed in tp7 and macpas }
                            if ([m_tp7,m_mac] * current_settings.modeswitches = []) then
@@ -683,6 +714,7 @@ implementation
                              end;
                          end
                        else
+<<<<<<< HEAD
                          begin
 =======
                          begin
@@ -695,6 +727,9 @@ implementation
                              end;
                          end
                        else
+                         begin
+>>>>>>> graemeg/cpstrnew
+=======
                          begin
 >>>>>>> graemeg/cpstrnew
                            { Typed const is allowed in tp7 }
@@ -710,6 +745,9 @@ implementation
              else
                MessagePos(hloopvar.fileinfo,type_e_illegal_count_var);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
              hfrom:=comp_expr(true,false);
 
@@ -720,6 +758,7 @@ implementation
                  consume(_TO);
                  backward:=false;
                end;
+<<<<<<< HEAD
 
              hto:=comp_expr(true,false);
              consume(_DO);
@@ -793,6 +832,9 @@ implementation
                  backward:=false;
                end;
 
+=======
+
+>>>>>>> graemeg/cpstrnew
              hto:=comp_expr(true,false);
              consume(_DO);
 
@@ -852,6 +894,9 @@ implementation
          hloopvar:=factor(false,false);
          valid_for_loopvar(hloopvar,true);
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
          if try_to_consume(_ASSIGNMENT) then
            result:=for_loop_create(hloopvar)
@@ -860,10 +905,14 @@ implementation
          else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            begin
              consume(_ASSIGNMENT); // fail
              result:=cerrornode.create;
            end;
+=======
+           consume(_ASSIGNMENT); // fail
+>>>>>>> graemeg/cpstrnew
 =======
            consume(_ASSIGNMENT); // fail
 >>>>>>> graemeg/cpstrnew
@@ -922,8 +971,12 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          calltempnode:=nil;
          p:=comp_expr([ef_accept_equal]);
+=======
+         p:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
          p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -942,9 +995,12 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (p.resultdef.typ in [objectdef,recorddef,classrefdef]) or
            ((p.resultdef.typ=undefineddef) and (df_generic in current_procinfo.procdef.defoptions)) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          if (p.resultdef.typ in [objectdef,recorddef,classrefdef]) then
@@ -991,6 +1047,7 @@ implementation
                 { several object types have implicit dereferencing }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 { is_implicit_pointer_object_type() returns true for records
                   on the JVM target because they are implemented as classes
                   there, but we definitely have to take their address here
@@ -1003,6 +1060,8 @@ implementation
                       ((p.resultdef.typ=recorddef) or
                        is_object(p.resultdef)));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                 hasimplicitderef:=is_implicit_pointer_object_type(p.resultdef) or
@@ -1172,6 +1231,7 @@ implementation
               { object }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               pobj:=comp_expr([ef_accept_equal]);
               if try_to_consume(_AT) then
                 begin
@@ -1187,12 +1247,17 @@ implementation
                      pframe:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
               pobj:=comp_expr(true,false);
               if try_to_consume(_AT) then
                 begin
                    paddr:=comp_expr(true,false);
                    if try_to_consume(_COMMA) then
                      pframe:=comp_expr(true,false);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                 end;
            end
@@ -1487,8 +1552,11 @@ implementation
                 if not(cs_support_goto in current_settings.moduleswitches) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Message(sym_e_goto_and_label_not_supported);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                  Message(sym_e_goto_and_label_not_supported);
@@ -1511,7 +1579,11 @@ implementation
                         { strip leading 0's in iso mode }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if (([m_iso,m_extpas]*current_settings.modeswitches)<>[]) then
+=======
+                        if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
 =======
                         if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
@@ -1546,7 +1618,10 @@ implementation
                                Message(parser_e_goto_outside_proc);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                              include(current_procinfo.flags,pi_has_global_goto);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1619,7 +1694,11 @@ implementation
                 { in iso mode, 0003: is equal to 3: }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if (([m_iso,m_extpas]*current_settings.modeswitches)<>[]) then
+=======
+                if m_iso in current_settings.modeswitches then
+>>>>>>> graemeg/cpstrnew
 =======
                 if m_iso in current_settings.modeswitches then
 >>>>>>> graemeg/cpstrnew
@@ -1755,6 +1834,9 @@ implementation
                         is_object(tprocdef(tcallnode(p).procdefinition).struct)) then
                    Message(parser_e_illegal_expression);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

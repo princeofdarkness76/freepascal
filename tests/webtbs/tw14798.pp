@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%delfiles=dump.bin}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -137,7 +140,11 @@ begin
   os.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not ok then
+=======
+  if not ok then 
+>>>>>>> graemeg/cpstrnew
 =======
   if not ok then 
 >>>>>>> graemeg/cpstrnew

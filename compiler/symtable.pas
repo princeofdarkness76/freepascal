@@ -116,6 +116,7 @@ interface
           function is_packed: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function has_single_field(out def:tdef): boolean;
           function get_unit_symtable: tsymtable;
         protected
@@ -138,6 +139,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           function has_single_field(out sym:tfieldvarsym): boolean;
           function get_unit_symtable: tsymtable;
         protected
@@ -150,6 +153,9 @@ interface
           function iscurrentunit: boolean; override;
           property datasize : asizeint read _datasize write setdatasize;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -159,7 +165,11 @@ interface
        public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           constructor create(const n:string;usealign,recordminalign,recordmaxCalign:shortint);
+=======
+          constructor create(const n:string;usealign:shortint);
+>>>>>>> graemeg/cpstrnew
 =======
           constructor create(const n:string;usealign:shortint);
 >>>>>>> graemeg/cpstrnew
@@ -295,7 +305,11 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        tenumsymtable = class(tabstractsubsymtable)
+=======
+       tenumsymtable = class(tstoredsymtable)
+>>>>>>> graemeg/cpstrnew
 =======
        tenumsymtable = class(tstoredsymtable)
 >>>>>>> graemeg/cpstrnew
@@ -311,7 +325,11 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        tarraysymtable = class(tabstractsubsymtable)
+=======
+       tarraysymtable = class(tstoredsymtable)
+>>>>>>> graemeg/cpstrnew
 =======
        tarraysymtable = class(tstoredsymtable)
 >>>>>>> graemeg/cpstrnew
@@ -345,8 +363,11 @@ interface
     function generate_nested_name(symtable:tsymtable;delimiter:string):string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { def is the extended type of a helper }
     function generate_objectpascal_helper_key(def:tdef):string;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -360,11 +381,15 @@ interface
     procedure addsymref(sym:tsym);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  is_owned_by(nesteddef,ownerdef:tdef):boolean;
     function  sym_is_owned_by(childsym:tsym;symtable:tsymtable):boolean;
     function  defs_belong_to_same_generic(def1,def2:tdef):boolean;
     function  get_generic_in_hierarchy_by_name(srsym:tsym;def:tdef):tdef;
     function  return_specialization_of_generic(nesteddef,genericdef:tdef;out resultdef:tdef):boolean;
+=======
+    function  is_owned_by(childdef,ownerdef:tabstractrecorddef):boolean;
+>>>>>>> graemeg/cpstrnew
 =======
     function  is_owned_by(childdef,ownerdef:tabstractrecorddef):boolean;
 >>>>>>> graemeg/cpstrnew
@@ -385,7 +410,11 @@ interface
     function  searchsym_in_named_module(const unitname, symname: TIDString; out srsym: tsym; out srsymtable: tsymtable): boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  searchsym_in_class(classh: tobjectdef; contextclassh:tabstractrecorddef;const s : TIDString;out srsym:tsym;out srsymtable:TSymtable;flags:tsymbol_search_flags):boolean;
+=======
+    function  searchsym_in_class(classh,contextclassh:tobjectdef;const s : TIDString;out srsym:tsym;out srsymtable:TSymtable):boolean;
+>>>>>>> graemeg/cpstrnew
 =======
     function  searchsym_in_class(classh,contextclassh:tobjectdef;const s : TIDString;out srsym:tsym;out srsymtable:TSymtable):boolean;
 >>>>>>> graemeg/cpstrnew
@@ -399,6 +428,7 @@ interface
     function  searchsym_in_helper(classh,contextclassh:tobjectdef;const s: TIDString;out srsym:tsym;out srsymtable:TSymtable;flags:tsymbol_search_flags):boolean;
     function  search_system_type(const s: TIDString): ttypesym;
     function  try_search_system_type(const s: TIDString): ttypesym;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function  try_search_current_module_type(const s: TIDString): ttypesym;
@@ -417,12 +447,17 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function  search_named_unit_globaltype(const unitname, typename: TIDString; throwerror: boolean): ttypesym;
     function  search_struct_member(pd : tabstractrecorddef;const s : string):tsym;
     function  search_assignment_operator(from_def,to_def:Tdef;explicit:boolean):Tprocdef;
     function  search_enumerator_operator(from_def,to_def:Tdef):Tprocdef;
     function  search_class_helper(pd : tobjectdef;const s : string; out srsym: tsym; out srsymtable: tsymtable):boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -444,6 +479,9 @@ interface
     function search_default_property(pd : tobjectdef) : tpropertysym;
     function find_real_objcclass_definition(pd: tobjectdef; erroronfailure: boolean): tobjectdef;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -907,6 +945,7 @@ implementation
            tabstractrecorddef(ttypesym(sym).typedef).check_forwards;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
 
@@ -922,6 +961,8 @@ implementation
             MessagePos1(tdef(def).typesym.fileinfo,type_e_objc_type_unsupported,founderrordef.typename)
           else
             Message1(type_e_objc_type_unsupported,tprocvardef(def).typename)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -950,6 +991,7 @@ implementation
            begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             { unused symbol should be reported only if no                    }
             { error is reported                                              }
             { if the symbol is in a register it is used                      }
@@ -966,6 +1008,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             { unused symbol should be reported only if no }
             { error is reported                     }
             { if the symbol is in a register it is used   }
@@ -975,6 +1019,9 @@ implementation
                ([vo_is_hidden_para,vo_is_funcret] * tabstractvarsym(sym).varoptions = [vo_is_hidden_para]) or
                (sp_internal in tsym(sym).symoptions) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -988,7 +1035,10 @@ implementation
                         (tprocdef(tsym(sym).owner.defowner).proctypeoption<>potype_constructor)) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         not (po_noreturn in tprocdef(tsym(sym).owner.defowner).procoptions) and
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1001,7 +1051,11 @@ implementation
                  else if (tsym(sym).owner.symtabletype in [ObjectSymtable,recordsymtable]) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_not_used,tabstractrecorddef(tsym(sym).owner.defowner).GetTypeName,tsym(sym).prettyname)
+=======
+                   MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_not_used,tabstractrecorddef(tsym(sym).owner.defowner).RttiName,tsym(sym).prettyname)
+>>>>>>> graemeg/cpstrnew
 =======
                    MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_not_used,tabstractrecorddef(tsym(sym).owner.defowner).RttiName,tsym(sym).prettyname)
 >>>>>>> graemeg/cpstrnew
@@ -1022,7 +1076,11 @@ implementation
                  else if (tsym(sym).owner.symtabletype in [ObjectSymtable,recordsymtable]) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_only_set,tabstractrecorddef(tsym(sym).owner.defowner).GetTypeName,tsym(sym).prettyname)
+=======
+                   MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_only_set,tabstractrecorddef(tsym(sym).owner.defowner).RttiName,tsym(sym).prettyname)
+>>>>>>> graemeg/cpstrnew
 =======
                    MessagePos2(tsym(sym).fileinfo,sym_n_private_identifier_only_set,tabstractrecorddef(tsym(sym).owner.defowner).RttiName,tsym(sym).prettyname)
 >>>>>>> graemeg/cpstrnew
@@ -1048,6 +1106,7 @@ implementation
                typesym:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  MessagePos2(tsym(sym).fileinfo,sym_n_private_type_not_used,tabstractrecorddef(tsym(sym).owner.defowner).GetTypeName,tsym(sym).prettyname);
                constsym:
                  MessagePos2(tsym(sym).fileinfo,sym_n_private_const_not_used,tabstractrecorddef(tsym(sym).owner.defowner).GetTypeName,tsym(sym).prettyname);
@@ -1058,6 +1117,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                  MessagePos2(tsym(sym).fileinfo,sym_n_private_type_not_used,tabstractrecorddef(tsym(sym).owner.defowner).RttiName,tsym(sym).prettyname);
                constsym:
                  MessagePos2(tsym(sym).fileinfo,sym_n_private_const_not_used,tabstractrecorddef(tsym(sym).owner.defowner).RttiName,tsym(sym).prettyname);
@@ -1066,6 +1127,9 @@ implementation
              else
                MessagePos2(tsym(sym).fileinfo,sym_n_private_method_not_used,tabstractrecorddef(tsym(sym).owner.defowner).RttiName,tsym(sym).prettyname);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1076,8 +1140,11 @@ implementation
               if (tsym(sym).refs=0) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  not(tsym(sym).typ in [enumsym,unitsym,namespacesym]) and
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                  not(tsym(sym).typ in [enumsym,unitsym]) and
@@ -1167,6 +1234,9 @@ implementation
 =======
          if b_needs_init_final then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1183,10 +1253,13 @@ implementation
              begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                if assigned(tabstractvarsym(sym).vardef) and
                   is_managed_type(tabstractvarsym(sym).vardef) then
                  include(tableoptions,sto_needs_init_final);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                if is_managed_type(tabstractvarsym(sym).vardef) then
@@ -1325,7 +1398,11 @@ implementation
           C_alignment:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             varalignrecord:=used_align(varalign,recordalignmin,maxCrecordalign);
+=======
+            varalignrecord:=used_align(varalign,current_settings.alignment.recordalignmin,current_settings.alignment.maxCrecordalign);
+>>>>>>> graemeg/cpstrnew
 =======
             varalignrecord:=used_align(varalign,current_settings.alignment.recordalignmin,current_settings.alignment.maxCrecordalign);
 >>>>>>> graemeg/cpstrnew
@@ -1345,7 +1422,10 @@ implementation
         l      : asizeint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         varalignfield,
@@ -1419,6 +1499,7 @@ implementation
         end;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -1594,6 +1675,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         case usefieldalignment of
           bit_alignment:
             begin
@@ -1741,12 +1824,18 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tabstractrecordsymtable.has_single_field(out def:tdef): boolean;
       var
         i: longint;
         currentsymlist: TFPHashObjectList;
         currentdef: tdef;
         sym: tfieldvarsym;
+=======
+    function tabstractrecordsymtable.has_single_field(out sym: tfieldvarsym): boolean;
+      var
+        i: longint;
+>>>>>>> graemeg/cpstrnew
 =======
     function tabstractrecordsymtable.has_single_field(out sym: tfieldvarsym): boolean;
       var
@@ -1766,6 +1855,7 @@ implementation
            trecorddef(defowner).isunion then
           exit;
         { a record/object can contain other things than fields }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         currentsymlist:=symlist;
@@ -1817,6 +1907,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         for i:=0 to SymList.Count-1 do
           begin
             if tsym(symlist[i]).typ=fieldvarsym then
@@ -1831,6 +1923,9 @@ implementation
               end;
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1851,6 +1946,7 @@ implementation
           databitsize:=val*8;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function tabstractrecordsymtable.getfieldoffset(sym: tfieldvarsym; base: asizeint; var globalfieldalignment: shortint): asizeint;
@@ -1950,6 +2046,20 @@ implementation
       begin
         inherited create(n,usealign);
 >>>>>>> graemeg/cpstrnew
+=======
+    function tabstractrecordsymtable.iscurrentunit: boolean;
+      begin
+        Result := Assigned(current_module) and (current_module.moduleid=moduleid);
+      end;
+
+{****************************************************************************
+                              TRecordSymtable
+****************************************************************************}
+
+    constructor trecordsymtable.create(const n:string;usealign:shortint);
+      begin
+        inherited create(n,usealign);
+>>>>>>> graemeg/cpstrnew
         symtabletype:=recordsymtable;
       end;
 
@@ -1991,8 +2101,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             { add to this record symtable, checking for duplicate names }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
             { add to this record symtable }
@@ -2608,6 +2721,9 @@ implementation
            (defowner.typ=procdef) and
            assigned(tprocdef(defowner).struct) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2980,6 +3096,22 @@ implementation
       end;
 
     function generate_nested_name(symtable:tsymtable;delimiter:string):string;
+<<<<<<< HEAD
+=======
+      begin
+        result:='';
+        while assigned(symtable) and (symtable.symtabletype in [ObjectSymtable,recordsymtable]) do
+          begin
+            if (result='') then
+              result:=symtable.name^
+            else
+              result:=symtable.name^+delimiter+result;
+            symtable:=symtable.defowner.owner;
+          end;
+      end;
+
+    procedure incompatibletypes(def1,def2:tdef);
+>>>>>>> graemeg/cpstrnew
       begin
         result:='';
         while assigned(symtable) and (symtable.symtabletype in [ObjectSymtable,recordsymtable]) do
@@ -3126,8 +3258,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_owned_by(nesteddef,ownerdef:tdef):boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function is_owned_by(childdef,ownerdef:tabstractrecorddef):boolean;
@@ -3138,6 +3273,7 @@ implementation
       end;
 
     function is_visible_for_object(symst:tsymtable;symvisibility:tvisibility;contextobjdef:tabstractrecorddef):boolean;
+<<<<<<< HEAD
       var
         symownerdef : tabstractrecorddef;
 <<<<<<< HEAD
@@ -3233,6 +3369,10 @@ implementation
         isspezproc : boolean;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+      var
+        symownerdef : tabstractrecorddef;
+>>>>>>> graemeg/cpstrnew
       begin
         result:=false;
 
@@ -3241,6 +3381,7 @@ implementation
            not (symst.symtabletype in [objectsymtable,recordsymtable]) then
           internalerror(200810285);
         symownerdef:=tabstractrecorddef(symst.defowner);
+<<<<<<< HEAD
 <<<<<<< HEAD
         { specializations might belong to a localsymtable or parasymtable }
         nonlocalst:=symownerdef.owner;
@@ -3256,12 +3397,15 @@ implementation
           end;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         case symvisibility of
           vis_private :
             begin
               { private symbols are allowed when we are in the same
                 module as they are defined }
               result:=(
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                        (nonlocalst.symtabletype in [globalsymtable,staticsymtable]) and
@@ -3272,12 +3416,17 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                        (symownerdef.owner.symtabletype in [globalsymtable,staticsymtable]) and
                        (symownerdef.owner.iscurrentunit)
                       ) or
                       ( // the case of specialize inside the generic declaration
                        (symownerdef.owner.symtabletype = objectsymtable) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3293,12 +3442,15 @@ implementation
                          (symownerdef.owner.iscurrentunit)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        ) or
                        { access from a generic method that belongs to the class
                          but that is specialized elsewere }
                        (
                          isspezproc and
                          (current_procinfo.procdef.struct=current_structdef)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3313,6 +3465,7 @@ implementation
             end;
           vis_strictprotected :
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                result:=(
@@ -3338,6 +3491,11 @@ implementation
                          is_objectpascal_helper(current_structdef) and
                          def_is_related(tobjectdef(current_structdef).extendeddef,symownerdef)
                        );
+=======
+               result:=assigned(current_structdef) and
+                       (current_structdef.is_related(symownerdef) or
+                        is_owned_by(current_structdef,symownerdef));
+>>>>>>> graemeg/cpstrnew
 =======
                result:=assigned(current_structdef) and
                        (current_structdef.is_related(symownerdef) or
@@ -3374,6 +3532,9 @@ implementation
                        ( // the case of specialize inside the generic declaration
                         (symownerdef.owner.symtabletype = objectsymtable) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3389,6 +3550,7 @@ implementation
                           (symownerdef.owner.iscurrentunit)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ) or
                         (
                           { helpers can access protected symbols }
@@ -3401,6 +3563,9 @@ implementation
                        (
                          isspezproc and
                          (current_procinfo.procdef.struct=current_structdef)
+=======
+                         )
+>>>>>>> graemeg/cpstrnew
 =======
                          )
 >>>>>>> graemeg/cpstrnew
@@ -3482,6 +3647,7 @@ implementation
               begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 { TODO : implement the search for an option in classes as well }
                 if ssf_search_option in flags then
                   begin
@@ -3495,11 +3661,15 @@ implementation
 =======
                 if searchsym_in_class(tobjectdef(srsymtable.defowner),tobjectdef(srsymtable.defowner),s,srsym,srsymtable) then
 >>>>>>> graemeg/cpstrnew
+=======
+                if searchsym_in_class(tobjectdef(srsymtable.defowner),tobjectdef(srsymtable.defowner),s,srsym,srsymtable) then
+>>>>>>> graemeg/cpstrnew
                   begin
                     result:=true;
                     exit;
                   end;
               end
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             else if not((srsymtable.symtabletype=withsymtable) and assigned(srsymtable.defowner) and
@@ -3519,11 +3689,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             else
               begin
                 srsym:=tsym(srsymtable.FindWithHash(hashedid));
                 if assigned(srsym) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3535,7 +3710,11 @@ implementation
                        (srsymtable.defowner.typ in [recorddef,objectdef]) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        (srsymtable.defowner.owner.symtabletype in [globalsymtable,staticsymtable,objectsymtable,recordsymtable]) and
+=======
+                       (srsymtable.defowner.owner.symtabletype in [globalsymtable,staticsymtable]) and
+>>>>>>> graemeg/cpstrnew
 =======
                        (srsymtable.defowner.owner.symtabletype in [globalsymtable,staticsymtable]) and
 >>>>>>> graemeg/cpstrnew
@@ -3548,7 +3727,11 @@ implementation
                       contextstructdef:=current_structdef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if not(srsym.owner.symtabletype in [objectsymtable,recordsymtable]) or
+=======
+                    if not (srsym.owner.symtabletype in [objectsymtable,recordsymtable]) or
+>>>>>>> graemeg/cpstrnew
 =======
                     if not (srsym.owner.symtabletype in [objectsymtable,recordsymtable]) or
 >>>>>>> graemeg/cpstrnew
@@ -3565,8 +3748,12 @@ implementation
                           include(current_procinfo.flags,pi_uses_static_symtable);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if not (ssf_no_addsymref in flags) then
                           addsymref(srsym);
+=======
+                        addsymref(srsym);
+>>>>>>> graemeg/cpstrnew
 =======
                         addsymref(srsym);
 >>>>>>> graemeg/cpstrnew
@@ -3632,11 +3819,14 @@ implementation
                 if assigned(srsym) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    (
                      not(srsym.typ in [unitsym,namespacesym]) or
                      srsymtable.iscurrentunit or
                      (assigned(current_specializedef)and(current_specializedef.genericdef.owner.moduleid=srsymtable.moduleid))
                    ) and
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3724,8 +3914,13 @@ implementation
           to search the local symtable }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if assigned(current_module.localsymtable) and
            (current_module.localsymtable.name^=unitname) then
+=======
+        if (current_module.globalsymtable=srsymtable) and
+           assigned(current_module.localsymtable) then
+>>>>>>> graemeg/cpstrnew
 =======
         if (current_module.globalsymtable=srsymtable) and
            assigned(current_module.localsymtable) then
@@ -3748,6 +3943,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function maybe_find_real_class_definition(pd: tdef; erroronfailure: boolean): tdef;
       begin
         result:=pd;
@@ -3764,6 +3960,9 @@ implementation
 =======
     function find_real_objcclass_definition(pd: tobjectdef; erroronfailure: boolean): tobjectdef;
 >>>>>>> graemeg/cpstrnew
+=======
+    function find_real_objcclass_definition(pd: tobjectdef; erroronfailure: boolean): tobjectdef;
+>>>>>>> graemeg/cpstrnew
       var
         hashedid   : THashedIDString;
         stackitem  : psymtablestackitem;
@@ -3771,10 +3970,13 @@ implementation
         srsym      : tsym;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         formalname,
         foundname : shortstring;
         formalnameptr,
         foundnameptr: pshortstring;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3794,6 +3996,7 @@ implementation
             { ObjC classes can't appear in generics or as nested class
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               definitions. Java classes can. }
             if not(srsymtable.symtabletype in [recordsymtable,parasymtable]) or
                (is_java_class_or_interface(pd) and
@@ -3806,10 +4009,15 @@ implementation
               definitions }
             if not(srsymtable.symtabletype in [recordsymtable,ObjectSymtable,parasymtable]) then
 >>>>>>> graemeg/cpstrnew
+=======
+              definitions }
+            if not(srsymtable.symtabletype in [recordsymtable,ObjectSymtable,parasymtable]) then
+>>>>>>> graemeg/cpstrnew
               begin
                 srsym:=tsym(srsymtable.FindWithHash(hashedid));
                 if assigned(srsym) and
                    (srsym.typ=typesym) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                    (ttypesym(srsym).typedef.typ=objectdef) and
@@ -3850,6 +4058,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                    is_objcclass(ttypesym(srsym).typedef) and
                    not(oo_is_formal in tobjectdef(ttypesym(srsym).typedef).objectoptions) then
                   begin
@@ -3859,6 +4069,9 @@ implementation
                         Message2(sym_e_external_class_name_mismatch1,pd.objextname^,pd.typename);
                         MessagePos1(srsym.fileinfo,sym_e_external_class_name_mismatch2,tobjectdef(ttypesym(srsym).typedef).objextname^);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3878,7 +4091,11 @@ implementation
         if erroronfailure then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           Message1(sym_e_formal_class_not_resolved,pd.objrealname^);
+=======
+          Message1(sym_e_objc_formal_class_not_resolved,pd.objrealname^);
+>>>>>>> graemeg/cpstrnew
 =======
           Message1(sym_e_objc_formal_class_not_resolved,pd.objrealname^);
 >>>>>>> graemeg/cpstrnew
@@ -3891,8 +4108,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function searchsym_in_class(classh: tobjectdef;contextclassh:tabstractrecorddef;const s : TIDString;out srsym:tsym;out srsymtable:TSymtable;flags:tsymbol_search_flags):boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function searchsym_in_class(classh,contextclassh:tobjectdef;const s : TIDString;out srsym:tsym;out srsymtable:TSymtable):boolean;
@@ -3901,6 +4121,7 @@ implementation
         hashedid : THashedIDString;
         orgclass : tobjectdef;
         i        : longint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         hlpsrsym : tsym;
@@ -3927,6 +4148,10 @@ implementation
       begin
         orgclass:=classh;
 >>>>>>> graemeg/cpstrnew
+=======
+      begin
+        orgclass:=classh;
+>>>>>>> graemeg/cpstrnew
         { in case this is a formal objcclass, first find the real definition }
         if assigned(classh) then
           begin
@@ -3937,6 +4162,9 @@ implementation
               parent. }
             if not contextclassh.is_related(classh) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3946,10 +4174,16 @@ implementation
         hashedid.id:=s;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { an Objective-C  protocol or Java interface can inherit from multiple
           other protocols/interfaces -> use ImplementedInterfaces instead }
         if is_objcprotocol(classh) or
            is_javainterface(classh) then
+=======
+        { an Objective-C protocol can inherit from multiple other protocols
+          -> uses ImplementedInterfaces instead }
+        if is_objcprotocol(classh) then
+>>>>>>> graemeg/cpstrnew
 =======
         { an Objective-C protocol can inherit from multiple other protocols
           -> uses ImplementedInterfaces instead }
@@ -3973,6 +4207,7 @@ implementation
               end;
             for i:=0 to classh.ImplementedInterfaces.count-1 do
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                 if searchsym_in_class(TImplementedInterface(classh.ImplementedInterfaces[i]).intfdef,contextclassh,s,srsym,srsymtable,flags-[ssf_search_helper]) then
                   begin
@@ -4044,6 +4279,8 @@ implementation
               begin
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                 if searchsym_in_class(TImplementedInterface(classh.ImplementedInterfaces[i]).intfdef,contextclassh,s,srsym,srsymtable) then
                   begin
                     result:=true;
@@ -4074,7 +4311,10 @@ implementation
             srsym:=nil;
             srsymtable:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           end;
       end;
 
@@ -4091,6 +4331,7 @@ implementation
             addsymref(srsym);
             result:=true;
             exit;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
           end;
       end;
@@ -4117,9 +4358,12 @@ implementation
           begin
             srsym:=nil;
             srsymtable:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
           end;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     function  searchsym_in_record(recordh:tabstractrecorddef;const s : TIDString;out srsym:tsym;out srsymtable:TSymtable):boolean;
       var
@@ -4164,11 +4408,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function searchsym_in_class_by_msgint(classh:tobjectdef;msgid:longint;out srdef : tdef;out srsym:tsym;out srsymtable:TSymtable):boolean;
       var
         def : tdef;
         i   : longint;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         { in case this is a formal class, first find the real definition }
@@ -4178,11 +4425,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { in case this is a formal objcclass, first find the real definition }
         if assigned(classh) and
            (oo_is_formal in classh.objectoptions) then
           classh:=find_real_objcclass_definition(classh,true);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4222,6 +4474,7 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { in case this is a formal class, first find the real definition }
         if assigned(classh) and
            (oo_is_formal in classh.objectoptions) then
@@ -4229,11 +4482,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { in case this is a formal objcclass, first find the real definition }
         if assigned(classh) and
            (oo_is_formal in classh.objectoptions) then
           classh:=find_real_objcclass_definition(classh,true);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4455,7 +4713,11 @@ implementation
             if sym.typ<>typesym then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               message1(cg_f_unknown_system_type,s);
+=======
+              cgmessage1(cg_f_unknown_system_type,s);
+>>>>>>> graemeg/cpstrnew
 =======
               cgmessage1(cg_f_unknown_system_type,s);
 >>>>>>> graemeg/cpstrnew
@@ -4467,6 +4729,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function try_search_current_module_type(const s: TIDString): ttypesym;
@@ -4509,6 +4772,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function search_named_unit_globaltype(const unitname, typename: TIDString; throwerror: boolean): ttypesym;
       var
         srsymtable: tsymtable;
@@ -4516,7 +4781,10 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         sym:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4532,7 +4800,11 @@ implementation
             if throwerror then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               message2(cg_f_unknown_type_in_unit,typename,unitname);
+=======
+              cgmessage2(cg_f_unknown_type_in_unit,typename,unitname);
+>>>>>>> graemeg/cpstrnew
 =======
               cgmessage2(cg_f_unknown_type_in_unit,typename,unitname);
 >>>>>>> graemeg/cpstrnew
@@ -4543,6 +4815,7 @@ implementation
           end;
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function search_last_objectpascal_helper(pd : tdef;contextclassh : tabstractrecorddef;out odef : tobjectdef):boolean;
@@ -4670,6 +4943,10 @@ implementation
 
     function search_class_helper(pd : tobjectdef;const s : string; out srsym: tsym; out srsymtable: tsymtable):boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+
+    function search_class_helper(pd : tobjectdef;const s : string; out srsym: tsym; out srsymtable: tsymtable):boolean;
+>>>>>>> graemeg/cpstrnew
       var
         hashedid   : THashedIDString;
         stackitem  : psymtablestackitem;
@@ -4701,7 +4978,11 @@ implementation
                     if (oo_is_classhelper in defowner.objectoptions) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        def_is_related(pd,defowner.childof) then
+=======
+                       pd.is_related(defowner.childof) then
+>>>>>>> graemeg/cpstrnew
 =======
                        pd.is_related(defowner.childof) then
 >>>>>>> graemeg/cpstrnew
@@ -4797,6 +5078,7 @@ implementation
       var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         srsymtable : tsymtable;
       begin
         { in case this is a formal class, first find the real definition }
@@ -4818,6 +5100,8 @@ implementation
 
     function search_struct_member_no_helper(pd: tabstractrecorddef; const s: string): tsym;
       var
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4866,6 +5150,9 @@ implementation
         else
           result:=nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

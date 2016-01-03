@@ -21,6 +21,7 @@ type
   __OvFlags = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSOutlineView0: cuint);
     1: (data: bitpacked record
@@ -92,6 +93,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     delegateWillDisplayCell: 0..1;
     delegateShouldEditTableColumn: 0..1;
@@ -156,6 +159,9 @@ type
     delegateWillDisplayCell: 0..1;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

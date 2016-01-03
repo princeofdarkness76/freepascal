@@ -3,7 +3,10 @@
 { %NOTE=This test requires an installed Nasm }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %OPT=-Cg- }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

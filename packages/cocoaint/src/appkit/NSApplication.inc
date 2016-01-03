@@ -179,6 +179,7 @@ var
     _running: cshort;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __appFlags: record
       case byte of
        0: (_anonbitfield_NSApplication0: cuint);
@@ -186,11 +187,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __appFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSApplication0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -224,7 +230,10 @@ var
         _reserved: 0..((1 shl 4)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

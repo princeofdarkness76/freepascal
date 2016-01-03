@@ -675,7 +675,10 @@ begin
           begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             current_filepos:=taicpu(p).fileinfo;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

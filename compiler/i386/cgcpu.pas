@@ -41,7 +41,11 @@ unit cgcpu;
         procedure a_load_reg_cgpara(list : TAsmList;size : tcgsize;r : tregister;const cgpara : tcgpara);override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);override;
+=======
+        procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
+>>>>>>> graemeg/cpstrnew
 =======
         procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);override;
 >>>>>>> graemeg/cpstrnew
@@ -69,8 +73,11 @@ unit cgcpu;
       
     procedure create_codegen;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure create_codegen;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -95,9 +102,12 @@ unit cgcpu;
         inherited init_register_allocators;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_useebp in current_settings.optimizerswitches) and assigned(current_procinfo) and (current_procinfo.framepointer<>NR_EBP) then
           rg[R_INTREGISTER]:=trgcpu.create(R_INTREGISTER,R_SUBWHOLE,[RS_EAX,RS_EDX,RS_ECX,RS_EBX,RS_ESI,RS_EDI,RS_EBP],first_int_imreg,[])
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
@@ -126,6 +136,9 @@ unit cgcpu;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -150,7 +163,11 @@ unit cgcpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : tcgpara);
+=======
+    procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure tcg386.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : tcgpara);
 >>>>>>> graemeg/cpstrnew
@@ -387,7 +404,11 @@ unit cgcpu;
            { this messes up stack alignment }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            (target_info.stackalign=4) then
+=======
+           not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> graemeg/cpstrnew
 =======
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 >>>>>>> graemeg/cpstrnew
@@ -441,8 +462,12 @@ unit cgcpu;
            { wich contains the exception is passed in EAX }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            if ((target_info.system <> system_i386_win32) or
                (target_info.abi=abi_old_win32_gnu)) and
+=======
+           if (target_info.system <> system_i386_win32) and
+>>>>>>> graemeg/cpstrnew
 =======
            if (target_info.system <> system_i386_win32) and
 >>>>>>> graemeg/cpstrnew
@@ -480,7 +505,10 @@ unit cgcpu;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if paramanager.use_fixed_stack then
@@ -494,6 +522,7 @@ unit cgcpu;
         getcpuregister(list,NR_EDI);
         a_load_loc_reg(list,OS_INT,lenloc,NR_EDI);
         list.concat(Taicpu.op_reg(A_INC,S_L,NR_EDI));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         { Now EDI contains (high+1). }
@@ -511,6 +540,11 @@ unit cgcpu;
             list.concat(Taicpu.op_reg_reg(A_MOV,S_L,NR_EDI,NR_ECX));
           end;
         { EDI := EDI * elesize }
+=======
+        { Now EDI contains (high+1). Copy it to ECX for later use. }
+        getcpuregister(list,NR_ECX);
+        list.concat(Taicpu.op_reg_reg(A_MOV,S_L,NR_EDI,NR_ECX));
+>>>>>>> graemeg/cpstrnew
 =======
         { Now EDI contains (high+1). Copy it to ECX for later use. }
         getcpuregister(list,NR_ECX);
@@ -601,9 +635,12 @@ unit cgcpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ts_cld in current_settings.targetswitches then
           list.concat(Taicpu.op_none(A_CLD,S_NO));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if len>1 then
@@ -635,7 +672,10 @@ unit cgcpu;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if paramanager.use_fixed_stack then
@@ -688,6 +728,9 @@ unit cgcpu;
       var
         notdarwin: boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -697,6 +740,7 @@ unit cgcpu;
            (tf_pic_uses_got in target_info.flags) and
            (pi_needs_got in current_procinfo.flags) then
           begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             if not (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
@@ -737,6 +781,8 @@ unit cgcpu;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             notdarwin:=not(target_info.system in [system_i386_darwin,system_i386_iphonesim]);
             { on darwin, the got register is virtual (and allocated earlier
               already) }
@@ -751,6 +797,9 @@ unit cgcpu;
                 current_module.requires_ebx_pic_helper:=true;
                 cg.a_call_name_static(list,'fpc_geteipasebx');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -766,7 +815,10 @@ unit cgcpu;
                 list.concat(taicpu.op_reg(A_POP,S_L,current_procinfo.got))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               end;
@@ -775,6 +827,9 @@ unit cgcpu;
                 list.concat(taicpu.op_sym_ofs_reg(A_ADD,S_L,current_asmdata.RefAsmSymbol('_GLOBAL_OFFSET_TABLE_'),0,NR_PIC_OFFSET_REG));
                 list.concat(tai_regalloc.alloc(NR_PIC_OFFSET_REG,nil));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1082,7 +1137,11 @@ unit cgcpu;
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> graemeg/cpstrnew
 =======
       
 >>>>>>> graemeg/cpstrnew

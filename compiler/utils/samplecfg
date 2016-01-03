@@ -26,6 +26,7 @@ FPBIN=`dirname "$1"`/../../bin/fp
 FPPKGBIN=`dirname "$1"`/../../bin/fppkg
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 FPCMKCFGBIN=`dirname "$1"`/../../bin/fpcmkcfg
 SHAREPATH=`dirname "$1"`/../../share/fpc/\$fpcversion
 # Look for one in the PATH, if no new one was installed.
@@ -33,6 +34,8 @@ if [ ! -f $FPCMKCFGBIN ]; then
   FPCMKCFGBIN=fpcmkcfg
 fi
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -82,12 +85,16 @@ FPCGLOBALPREFIX=`dirname "$1"`/../../
 echo Writing sample configuration file to $fpccfgfile
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ${FPCMKCFGBIN} -d "basepath=$FPCPATH" -d "sharepath=$SHAREPATH" -o $fpccfgfile
 
 if [ -f "$FPBIN" ] ; then
   # Write fp.cfg
   echo Writing sample configuration file to $fpcfgfile
   ${FPCMKCFGBIN} -p -1 -d "basepath=$FPCPATH" -d "sharepath=$SHAREPATH" -o $fpcfgfile
+=======
+fpcmkcfg -d "basepath=$FPCPATH" -o $fpccfgfile
+>>>>>>> graemeg/cpstrnew
 
   # Write fp.ini
   echo Writing sample configuration file to $fpinifile
@@ -126,6 +133,7 @@ fpcmkcfg -p -2 -o $fpinifile
 if ! [ -f "$FPPKGBIN" ] ; then
   exit
 fi
+<<<<<<< HEAD
 
 # Write fppkg.cfg
 echo Writing sample configuration file to $fppkgfile
@@ -137,4 +145,14 @@ fpcmkcfg -p -4 -d "GlobalPrefix=$FPCGLOBALPREFIX" -o $defaultfile
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
+# Write fppkg.cfg
+echo Writing sample configuration file to $fppkgfile
+fpcmkcfg -p -3 $compilerconfigdir -o $fppkgfile
+
+# Write default
+echo Writing sample configuration file to $defaultfile
+fpcmkcfg -p -4 -d "GlobalPrefix=$FPCGLOBALPREFIX" -o $defaultfile
 >>>>>>> graemeg/cpstrnew

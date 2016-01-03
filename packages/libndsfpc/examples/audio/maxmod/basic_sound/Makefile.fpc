@@ -22,9 +22,13 @@ fpcdir=../../../../../..
 [compiler]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 options=-Xm
 targetdir=$(BIN)  
 unittargetdir=$(BUILD)
+=======
+options=-g -O2
+>>>>>>> graemeg/cpstrnew
 =======
 options=-g -O2
 >>>>>>> graemeg/cpstrnew

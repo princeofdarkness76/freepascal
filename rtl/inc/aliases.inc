@@ -29,7 +29,11 @@ Procedure int_Addref (Data,TypeInfo : Pointer); [external name 'FPC_ADDREF'];
 Procedure int_Initialize (Data,TypeInfo: Pointer); [external name 'FPC_INITIALIZE'];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure int_FinalizeArray(data,typeinfo : pointer;count : SizeInt); [external name 'FPC_FINALIZE_ARRAY'];
+=======
+procedure int_FinalizeArray(data,typeinfo : pointer;count : longint); [external name 'FPC_FINALIZE_ARRAY'];
+>>>>>>> graemeg/cpstrnew
 =======
 procedure int_FinalizeArray(data,typeinfo : pointer;count : longint); [external name 'FPC_FINALIZE_ARRAY'];
 >>>>>>> graemeg/cpstrnew

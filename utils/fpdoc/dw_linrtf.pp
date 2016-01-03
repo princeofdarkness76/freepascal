@@ -115,6 +115,9 @@ type
 =======
     procedure StartOverview(WithAccess : Boolean); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

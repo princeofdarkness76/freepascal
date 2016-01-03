@@ -28,7 +28,11 @@ interface
     uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cutils,globtype,cclasses,cstreams;
+=======
+      cutils,cclasses,cstreams;
+>>>>>>> graemeg/cpstrnew
 =======
       cutils,cclasses,cstreams;
 >>>>>>> graemeg/cpstrnew
@@ -465,7 +469,11 @@ uses
           f:=CFileStreamClass.Create(filename,fmOpenRead);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fileopen:=CStreamError=0;
+=======
+          fileopen:=true;
+>>>>>>> graemeg/cpstrnew
 =======
           fileopen:=true;
 >>>>>>> graemeg/cpstrnew

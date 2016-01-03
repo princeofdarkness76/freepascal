@@ -30,6 +30,7 @@ RS_D0 = $00;
 RS_S2 = $01;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 RS_S3 = $21;
 RS_D1 = $01;
 RS_S4 = $02;
@@ -76,6 +77,8 @@ RS_S31 = $2F;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 RS_S3 = $01;
 RS_D1 = $01;
 RS_S4 = $02;
@@ -120,6 +123,9 @@ RS_D14 = $0E;
 RS_S30 = $0F;
 RS_S31 = $0F;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -140,6 +146,7 @@ RS_D28 = $1C;
 RS_D29 = $1D;
 RS_D30 = $1E;
 RS_D31 = $1F;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 RS_CPSR = $00;
@@ -184,6 +191,10 @@ RS_FPEXC = $26;
 RS_APSR_nzcvq = $27;
 RS_APSR_g = $28;
 RS_APSR_nzcvqg = $29;
+=======
+RS_CPSR_C = $00;
+RS_FPSCR = $01;
+>>>>>>> graemeg/cpstrnew
 =======
 RS_CPSR_C = $00;
 RS_FPSCR = $01;

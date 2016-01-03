@@ -6,7 +6,10 @@
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -68,11 +71,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -94,6 +100,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -116,12 +123,24 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -132,6 +151,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -143,7 +164,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -154,6 +178,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elsec}
@@ -162,7 +189,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -172,6 +202,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -183,6 +214,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -195,11 +231,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -243,6 +283,10 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
+=======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -300,8 +344,12 @@ uses MacTypes,CFBase,CFData,CFString,CGBase,CGDataProvider;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGColorSpaceRef = ^OpaqueCGColorSpaceRef; { an opaque type }
 	OpaqueCGColorSpaceRef = record end;
+=======
+	CGColorSpaceRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CGColorSpaceRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -327,6 +375,7 @@ const
 	kCGRenderingIntentSaturation = 4;
 
 { The model of a color space. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -374,6 +423,8 @@ var kCGColorSpaceAdobeRGB1998: CFStringRef; external name '_kCGColorSpaceAdobeRG
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 type
 	CGColorSpaceModel = SInt32;
@@ -417,6 +468,9 @@ var kCGColorSpaceAdobeRGB1998: CFStringRef; external name '_kCGColorSpaceAdobeRG
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -463,7 +517,10 @@ function CGColorSpaceCreateDeviceCMYK: CGColorSpaceRef; external name '_CGColorS
 function CGColorSpaceCreateCalibratedGray( const (*var*) whitePoint: TristimulusValue; const (*var*) blackPoint: TristimulusValue; gamma: CGFloat ): CGColorSpaceRef; external name '_CGColorSpaceCreateCalibratedGray';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -481,8 +538,12 @@ function CGColorSpaceCreateCalibratedGray( const (*var*) whitePoint: Tristimulus
 function CGColorSpaceCreateCalibratedRGB( const (*var*) whitePoint: TristimulusValue; const (*var*) blackPoint: TristimulusValue; const (*var*) gamma: RedGreenBlueValue; const (*var*) matrix: Single9 ): CGColorSpaceRef; external name '_CGColorSpaceCreateCalibratedRGB';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
     
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -515,6 +576,9 @@ function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const
  * DeviceCMYK, depending on whether `nComponents' is 1, 3, or 4,
  * respectively. }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -541,7 +605,10 @@ function CGColorSpaceCreateWithICCProfile( data: CFDataRef ): CGColorSpaceRef; e
 function CGColorSpaceCreateICCBased( nComponents: size_t; {const} range: {variable-size-array} CGFloatPtr; profile: CGDataProviderRef; alternate: CGColorSpaceRef ): CGColorSpaceRef; external name '_CGColorSpaceCreateICCBased';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -618,13 +685,22 @@ function CGColorSpaceCopyName( space: CGColorSpaceRef ): CFStringRef; external n
 (* CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
 {$endc}
 
+<<<<<<< HEAD
 {* Colorspace information. *}
+=======
+{$ifc TARGET_OS_MAC}
+{ Create a color space using `ref', a platform-specific color space
+   reference. For MacOS X, `ref' should be a CMProfileRef. }
+>>>>>>> graemeg/cpstrnew
 
 { Return the CFTypeID for CGColorSpaces. }
 
+<<<<<<< HEAD
 function CGColorSpaceGetTypeID: CFTypeID; external name '_CGColorSpaceGetTypeID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { Create a color space using `name' as the identifier for the color
@@ -632,6 +708,7 @@ function CGColorSpaceGetTypeID: CFTypeID; external name '_CGColorSpaceGetTypeID'
 
 function CGColorSpaceCreateWithName( name: CFStringRef ): CGColorSpaceRef; external name '_CGColorSpaceCreateWithName'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
@@ -708,6 +785,8 @@ function CGColorSpaceGetNumberOfComponents( space: CGColorSpaceRef ): size_t; ex
 
 function CGColorSpaceGetModel( space: CGColorSpaceRef ): CGColorSpaceModel; external name '_CGColorSpaceGetModel';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Return the base color space of `space' if `space' is a pattern or indexed
    color space; otherwise, return NULL. To determine whether a color space
@@ -731,6 +810,53 @@ function CGColorSpaceGetColorTableCount( space: CGColorSpaceRef ): size_t; exter
    `CGColorSpaceCreateIndexed'. To determine whether a color space is an
    indexed color space, use `CGColorSpaceGetModel'. }
 
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+{ Return the name used to create the color space `space', or NULL if the
+   color space was not created using `CGColorSpaceCreateWithName'. }
+
+function CGColorSpaceCopyName( space: CGColorSpaceRef ): CFStringRef; external name '_CGColorSpaceCopyName';
+(* CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
+{$endc}
+
+{* Colorspace information. *}
+
+{ Return the CFTypeID for CGColorSpaces. }
+
+function CGColorSpaceGetTypeID: CFTypeID; external name '_CGColorSpaceGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+{ Return the number of color components in the color space `space'. }
+
+function CGColorSpaceGetNumberOfComponents( space: CGColorSpaceRef ): size_t; external name '_CGColorSpaceGetNumberOfComponents';
+
+{ Return the color space model of `space'. }
+
+function CGColorSpaceGetModel( space: CGColorSpaceRef ): CGColorSpaceModel; external name '_CGColorSpaceGetModel';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+{ Return the base color space of `space' if `space' is a pattern or indexed
+   color space; otherwise, return NULL. To determine whether a color space
+   is an indexed or pattern color space, use `CGColorSpaceGetModel'. }
+
+function CGColorSpaceGetBaseColorSpace( space: CGColorSpaceRef ): CGColorSpaceRef; external name '_CGColorSpaceGetBaseColorSpace';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+{ Return the number of entries in the color table of `space' if `space' is
+   an indexed color space; otherwise, return 0. To determine whether a color
+   space is an indexed color space, use `CGColorSpaceGetModel'. }
+
+function CGColorSpaceGetColorTableCount( space: CGColorSpaceRef ): size_t; external name '_CGColorSpaceGetColorTableCount';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
+
+{ Copy the entries in the color table of `space' to `table' if `space' is
+   an indexed color space; otherwise, do nothing. The array pointed to by
+   `table' should be at least as large as the number of entries in the color
+   table; the returned data is in the same format as that passed to
+   `CGColorSpaceCreateIndexed'. To determine whether a color space is an
+   indexed color space, use `CGColorSpaceGetModel'. }
+
+>>>>>>> graemeg/cpstrnew
 procedure CGColorSpaceGetColorTable( space: CGColorSpaceRef; table: UInt8Ptr ); external name '_CGColorSpaceGetColorTable';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 

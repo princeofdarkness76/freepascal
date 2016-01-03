@@ -42,7 +42,11 @@ interface
       run time (for generating protocol and class rtti).  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function objcencodemethod(pd: tabstractprocdef): ansistring;
+=======
+    function objcencodemethod(pd: tprocdef): ansistring;
+>>>>>>> graemeg/cpstrnew
 =======
     function objcencodemethod(pd: tprocdef): ansistring;
 >>>>>>> graemeg/cpstrnew
@@ -55,10 +59,13 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { loads a field of an Objective-C root class (such as ISA) }
     function objcloadbasefield(n: tnode; const fieldname: string): tnode;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -132,6 +139,10 @@ end;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        result:=cderefnode.create(ctypeconvnode.create_internal(n,objc_idtype));
+>>>>>>> graemeg/cpstrnew
 =======
         result:=cderefnode.create(ctypeconvnode.create_internal(n,objc_idtype));
 >>>>>>> graemeg/cpstrnew
@@ -142,6 +153,7 @@ end;
         if not assigned(vs) or
            (vs.typ<>fieldvarsym) then
           internalerror(200911301);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if fieldname='ISA' then
@@ -157,6 +169,9 @@ end;
             result:=cderefnode.create(ctypeconvnode.create_internal(n,objc_idtype));
             result:=csubscriptnode.create(vs,result);
           end;
+=======
+        result:=csubscriptnode.create(vs,result);
+>>>>>>> graemeg/cpstrnew
 =======
         result:=csubscriptnode.create(vs,result);
 >>>>>>> graemeg/cpstrnew
@@ -185,7 +200,11 @@ end;
                   for the fragile abi, and the metaclass of the superclass for the non-fragile ABI }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(onlymacosx10_6) or defined(arm) or defined(aarch64)}
+=======
+{$if defined(onlymacosx10_6) or defined(arm) }
+>>>>>>> graemeg/cpstrnew
 =======
 {$if defined(onlymacosx10_6) or defined(arm) }
 >>>>>>> graemeg/cpstrnew
@@ -199,10 +218,16 @@ end;
                 else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif onlymacosx10_6 or arm aarch64}
                   result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(tclassrefdef(def).pointeddef).childof.childof));
                 tloadvmtaddrnode(result).forcall:=true;
                 result:=cloadvmtaddrnode.create(result);
+=======
+{$endif onlymacosx10_6 or arm}
+                  result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(tclassrefdef(def).pointeddef).childof.childof));
+                result:=objcloadbasefield(result,'ISA');
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif onlymacosx10_6 or arm}
                   result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(tclassrefdef(def).pointeddef).childof.childof));
@@ -231,6 +256,7 @@ end;
             else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(def).childof));
             tloadvmtaddrnode(result).forcall:=true;
           end;
@@ -239,11 +265,16 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               result:=cloadvmtaddrnode.create(ctypenode.create(tobjectdef(def).childof))
           end;
 
 {$if defined(onlymacosx10_6) or defined(arm) }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -255,7 +286,11 @@ end;
         if not(target_info.system in systems_objc_nfabi) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif onlymacosx10_6 or arm or aarch64}
+=======
+{$endif onlymacosx10_6 or arm}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif onlymacosx10_6 or arm}
 >>>>>>> graemeg/cpstrnew
@@ -284,7 +319,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function objcencodemethod(pd: tabstractprocdef): ansistring;
+=======
+    function objcencodemethod(pd: tprocdef): ansistring;
+>>>>>>> graemeg/cpstrnew
 =======
     function objcencodemethod(pd: tprocdef): ansistring;
 >>>>>>> graemeg/cpstrnew
@@ -326,11 +365,15 @@ end;
             { Add the parameter type.  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (vo_is_parentfp in vs.varoptions) and
                (po_is_block in pd.procoptions) then
               { special case: self parameter of block procvars has to be @? }
               result:=result+'@?'
             else if not objcaddencodedtype(vs.vardef,ris_initial,false,result,founderror) then
+=======
+            if not objcaddencodedtype(vs.vardef,ris_initial,false,result,founderror) then
+>>>>>>> graemeg/cpstrnew
 =======
             if not objcaddencodedtype(vs.vardef,ris_initial,false,result,founderror) then
 >>>>>>> graemeg/cpstrnew

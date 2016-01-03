@@ -158,7 +158,11 @@ begin
                that addresses below 64kb do not exist.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+               
+>>>>>>> graemeg/cpstrnew
 =======
                
 >>>>>>> graemeg/cpstrnew
@@ -176,6 +180,7 @@ begin
              }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ExeCmd[1]:='ld $PRTOBJ $TARGET $EMUL $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE $CATRES';
              if not(cs_gdb_valgrind in current_settings.globalswitches) then
                ExeCmd[1]:=ExeCmd[1]+' -pagezero_size 0x10000';
@@ -186,6 +191,18 @@ begin
                DllCmd[1]:='ld $PRTOBJ $TARGET $EMUL $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE $CATRES'
              else
                DllCmd[1]:='ld $PRTOBJ $TARGET $EMUL $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE $CATRES'
+=======
+               ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
+             if not(cs_gdb_valgrind in current_settings.globalswitches) then
+               ExeCmd[1]:=ExeCmd[1]+' -pagezero_size 0x10000';
+{$else ndef cpu64bitaddr}
+             ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
+{$endif ndef cpu64bitaddr}
+             if (apptype<>app_bundle) then
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE `cat $RES`'
+             else
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
+>>>>>>> graemeg/cpstrnew
 =======
                ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
              if not(cs_gdb_valgrind in current_settings.globalswitches) then
@@ -358,6 +375,7 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           case target_info.system of
             system_powerpc_darwin,
             system_powerpc64_darwin,
@@ -390,6 +408,10 @@ begin
               end;
           end;
           result:='dylib1.o';
+=======
+          if not librarysearchpath.FindFile('dylib1.o',false,result) then
+            result:='/usr/lib/dylib1.o'
+>>>>>>> graemeg/cpstrnew
 =======
           if not librarysearchpath.FindFile('dylib1.o',false,result) then
             result:='/usr/lib/dylib1.o'
@@ -764,9 +786,12 @@ var
   StripStr   : string[63];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   success,
   useshell : boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   success : boolean;
@@ -922,7 +947,10 @@ begin
   GCSectionsStr:='';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   linkscript:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -943,6 +971,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { i386_freebsd needs -b elf32-i386-freebsd and -m elf_i386_fbsd
     to avoid creation of a i386:x86_64 arch binary }
 
@@ -957,6 +986,8 @@ begin
       emulstr:='';
     end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1099,6 +1130,10 @@ initialization
   RegisterTarget(system_i386_darwin_info);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
+>>>>>>> graemeg/cpstrnew
 =======
   RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
 >>>>>>> graemeg/cpstrnew

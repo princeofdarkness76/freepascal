@@ -230,6 +230,9 @@ begin
 =======
       S.Insert(0,'xterm');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -360,6 +363,7 @@ begin
           deadlock depending on how quickly the SIGSTOP
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           signal is delivered
 
           We also can't use vfork in case we have to change the working
@@ -370,6 +374,10 @@ begin
         if (([poRunSuspended,PoUsePipes,poNoConsole] * Options) = []) and
            (FCurrentDirectory='') and
            not assigned(FForkEvent) then
+=======
+          signal is delivered }
+        if not(poRunSuspended in Options) then
+>>>>>>> graemeg/cpstrnew
 =======
           signal is delivered }
         if not(poRunSuspended in Options) then
@@ -433,7 +441,11 @@ begin
             if Assigned(FForkEvent) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               FForkEvent(Self);
+=======
+              FForkEvent;
+>>>>>>> graemeg/cpstrnew
 =======
               FForkEvent;
 >>>>>>> graemeg/cpstrnew

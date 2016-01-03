@@ -50,10 +50,14 @@ interface
         pd_objcclass,    { directive can be used with objcclass }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pd_objcprot,     { directive can be used with objcprotocol }
         pd_nothelper,    { directive can not be used with record/class helper declaration }
         pd_javaclass,    { directive can be used with Java class }
         pd_intfjava      { directive can be used with Java interface }
+=======
+        pd_objcprot      { directive can be used with objcprotocol }
+>>>>>>> graemeg/cpstrnew
 =======
         pd_objcprot      { directive can be used with objcprotocol }
 >>>>>>> graemeg/cpstrnew
@@ -87,6 +91,7 @@ interface
     procedure parse_record_proc_directives(pd:tabstractprocdef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  parse_proc_head(astruct:tabstractrecorddef;potype:tproctypeoption;isgeneric:boolean;genericdef:tdef;generictypelist:tfphashobjectlist;out pd:tprocdef):boolean;
     function  parse_proc_dec(isclassmethod:boolean;astruct:tabstractrecorddef;isgeneric:boolean):tprocdef;
     procedure parse_proc_dec_finish(pd:tprocdef;isclassmethod:boolean);
@@ -103,6 +108,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function  parse_proc_head(astruct:tabstractrecorddef;potype:tproctypeoption;out pd:tprocdef):boolean;
     function  parse_proc_dec(isclassmethod:boolean;astruct:tabstractrecorddef):tprocdef;
 
@@ -111,6 +118,9 @@ interface
     }
     function push_child_hierarcy(obj:tabstractrecorddef):integer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -139,6 +149,9 @@ implementation
        fmodule,node,htypechk,
        nmat,nadd,ncal,nset,ncnv,ninl,ncon,nld,nflw,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -159,10 +172,13 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function push_child_hierarchy(obj:tabstractrecorddef):integer;
       var
         _class,hp : tobjectdef;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function push_child_hierarcy(obj:tabstractrecorddef):integer;
@@ -272,6 +288,9 @@ implementation
         vs       : tparavarsym;
         paranr   : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -350,7 +369,10 @@ implementation
            is_objc_class_or_protocol(tprocdef(pd).struct) and
            (pd.parast.symtablelevel=normal_function_level) then
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
           begin
             { insert Objective-C self and selector parameters }
             vs:=tparavarsym.create('$_cmd',paranr_objc_cmd,vs_value,objc_seltype,[vo_is_msgsel,vo_is_hidden_para]);
@@ -613,7 +635,11 @@ implementation
          begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            if (not needs_finalization) and
+=======
+           if not is_managed_type(vardef) and
+>>>>>>> graemeg/cpstrnew
 =======
            if not is_managed_type(vardef) and
 >>>>>>> graemeg/cpstrnew
@@ -652,6 +678,7 @@ implementation
         explicit_paraloc,
         need_array,
         is_univ: boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         stoptions : TSingleTypeOptions;
@@ -701,6 +728,8 @@ implementation
           end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -780,7 +809,11 @@ implementation
              { inline procvar definitions are always nested procvars }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              pv:=cprocvardef.create(normal_function_level+1);
+=======
+             pv:=tprocvardef.create(normal_function_level+1);
+>>>>>>> graemeg/cpstrnew
 =======
              pv:=tprocvardef.create(normal_function_level+1);
 >>>>>>> graemeg/cpstrnew
@@ -847,11 +880,15 @@ implementation
                    { define field type }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    if m_delphi in current_settings.modeswitches then
                      stoptions:=[stoAllowSpecialization]
                    else
                      stoptions:=[];
                    single_type(arrayelementdef,stoptions);
+=======
+                   single_type(arrayelementdef,[]);
+>>>>>>> graemeg/cpstrnew
 =======
                    single_type(arrayelementdef,[]);
 >>>>>>> graemeg/cpstrnew
@@ -881,7 +918,11 @@ implementation
                     case varspez of
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       vs_var,vs_out:
+=======
+                      vs_var,vs_out,vs_constref:
+>>>>>>> graemeg/cpstrnew
 =======
                       vs_var,vs_out,vs_constref:
 >>>>>>> graemeg/cpstrnew
@@ -1016,6 +1057,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function parse_proc_head(astruct:tabstractrecorddef;potype:tproctypeoption;isgeneric:boolean;genericdef:tdef;generictypelist:tfphashobjectlist;out pd:tprocdef):boolean;
       var
         hs       : string;
@@ -1027,6 +1069,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function parse_proc_head(astruct:tabstractrecorddef;potype:tproctypeoption;out pd:tprocdef):boolean;
       var
         hs       : string;
@@ -1034,6 +1078,9 @@ implementation
         srsym : tsym;
         checkstack : psymtablestackitem;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1057,7 +1104,10 @@ implementation
         lasttoken,lastidtoken: ttoken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         genericparams : tfphashobjectlist;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1122,6 +1172,7 @@ implementation
            orgsp:=sp;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            spnongen:=sp;
            orgspnongen:=orgsp;
          end;
@@ -1151,6 +1202,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
          end;
 
         procedure consume_proc_name;
@@ -1158,6 +1211,9 @@ implementation
             lasttoken:=token;
             lastidtoken:=idtoken;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1172,6 +1228,7 @@ implementation
               begin
                 sp:=pattern;
                 orgsp:=orgpattern;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 spnongen:=sp;
@@ -1214,6 +1271,10 @@ implementation
                 consume(_ID);
               end;
 >>>>>>> graemeg/cpstrnew
+=======
+                consume(_ID);
+              end;
+>>>>>>> graemeg/cpstrnew
           end;
 
         function search_object_name(sp:TIDString;gen_error:boolean):tsym;
@@ -1233,6 +1294,7 @@ implementation
             current_tokenpos:=storepos;
           end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         procedure consume_generic_interface;
@@ -1344,6 +1406,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         function consume_generic_type_parameter:boolean;
           var
             i:integer;
@@ -1419,6 +1483,9 @@ implementation
           end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1436,6 +1503,7 @@ implementation
         result:=false;
         pd:=nil;
         aprocsym:=nil;
+<<<<<<< HEAD
         srsym:=nil;
         genericparams:=nil;
         freegenericparams:=true;
@@ -1558,6 +1626,9 @@ implementation
                   end
 =======
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
 >>>>>>> graemeg/cpstrnew
         consume_proc_name;
 
@@ -1790,6 +1861,15 @@ implementation
                   aprocsym:=tprocsym.create('$'+sp);
               end
 <<<<<<< HEAD
+<<<<<<< HEAD
+            else
+            if (potype in [potype_class_constructor,potype_class_destructor]) then
+              aprocsym:=tprocsym.create('$'+lower(sp))
+            else
+              aprocsym:=tprocsym.create(orgsp);
+            symtablestack.top.insert(aprocsym);
+>>>>>>> graemeg/cpstrnew
+=======
             else
             if (potype in [potype_class_constructor,potype_class_destructor]) then
               aprocsym:=tprocsym.create('$'+lower(sp))
@@ -1822,6 +1902,9 @@ implementation
 =======
         pd:=tprocdef.create(st.symtablelevel+1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1967,6 +2050,7 @@ implementation
           begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             old_current_structdef:=nil;
             old_current_genericdef:=current_genericdef;
             old_current_specializedef:=nil;
@@ -1977,11 +2061,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             { Add ObjectSymtable to be able to find nested type definitions }
             popclass:=0;
             if assigned(pd.struct) and
                (pd.parast.symtablelevel=normal_function_level) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1991,6 +2080,10 @@ implementation
                 old_current_structdef:=current_structdef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                old_current_genericdef:=current_genericdef;
+>>>>>>> graemeg/cpstrnew
 =======
                 old_current_genericdef:=current_genericdef;
 >>>>>>> graemeg/cpstrnew
@@ -2014,6 +2107,7 @@ implementation
               symtablestack.pop(pd.parast);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             current_genericdef:=old_current_genericdef;
             if popclass>0 then
               begin
@@ -2021,11 +2115,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             if popclass>0 then
               begin
                 current_structdef:=old_current_structdef;
                 current_genericdef:=old_current_genericdef;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2043,8 +2142,14 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure parse_proc_dec_finish(pd:tprocdef;isclassmethod:boolean);
       var
+=======
+    function parse_proc_dec(isclassmethod:boolean;astruct:tabstractrecorddef):tprocdef;
+      var
+        pd: tprocdef;
+>>>>>>> graemeg/cpstrnew
 =======
     function parse_proc_dec(isclassmethod:boolean;astruct:tabstractrecorddef):tprocdef;
       var
@@ -2072,11 +2177,16 @@ implementation
             popclass:=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             old_current_structdef:=nil;
             old_current_genericdef:=nil;
             old_current_specializedef:=nil;
             if assigned(pd.struct) and
                (pd.parast.symtablelevel>=normal_function_level) and
+=======
+            if assigned(pd.struct) and
+               (pd.parast.symtablelevel=normal_function_level) and
+>>>>>>> graemeg/cpstrnew
 =======
             if assigned(pd.struct) and
                (pd.parast.symtablelevel=normal_function_level) and
@@ -2100,6 +2210,7 @@ implementation
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if pd.is_generic or pd.is_specialization then
               symtablestack.push(pd.parast);
             single_type(pd.returndef,[stoAllowSpecialization]);
@@ -2119,12 +2230,17 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             single_type(pd.returndef,[stoAllowSpecialization]);
 
             if is_dispinterface(pd.struct) and not is_automatable(pd.returndef) then
               Message1(type_e_not_automatable,pd.returndef.typename);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2142,6 +2258,7 @@ implementation
 
       begin
         locationstr:='';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         case pd.proctypeoption of
@@ -2334,10 +2451,14 @@ implementation
 =======
         pd:=nil;
 >>>>>>> graemeg/cpstrnew
+=======
+        pd:=nil;
+>>>>>>> graemeg/cpstrnew
         case token of
           _FUNCTION :
             begin
               consume(_FUNCTION);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               if parse_proc_head(astruct,potype_function,isgeneric,nil,nil,pd) then
@@ -2348,6 +2469,8 @@ implementation
                   else
                     finish_intf_mapping;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               if parse_proc_head(astruct,potype_function,pd) then
@@ -2413,7 +2536,11 @@ implementation
               consume(_PROCEDURE);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if parse_proc_head(astruct,potype_procedure,isgeneric,nil,nil,pd) then
+=======
+              if parse_proc_head(astruct,potype_procedure,pd) then
+>>>>>>> graemeg/cpstrnew
 =======
               if parse_proc_head(astruct,potype_procedure,pd) then
 >>>>>>> graemeg/cpstrnew
@@ -2437,12 +2564,15 @@ implementation
               if isclassmethod then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 recover:=not parse_proc_head(astruct,potype_class_constructor,false,nil,nil,pd)
               else
                 recover:=not parse_proc_head(astruct,potype_constructor,false,nil,nil,pd);
               if not recover then
                 parse_proc_dec_finish(pd,isclassmethod);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                 parse_proc_head(astruct,potype_class_constructor,pd)
@@ -2466,6 +2596,9 @@ implementation
               else
                 pd.returndef:=voidtype;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2477,12 +2610,15 @@ implementation
               if isclassmethod then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 recover:=not parse_proc_head(astruct,potype_class_destructor,false,nil,nil,pd)
               else
                 recover:=not parse_proc_head(astruct,potype_destructor,false,nil,nil,pd);
               if not recover then
                 parse_proc_dec_finish(pd,isclassmethod);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                 parse_proc_head(astruct,potype_class_destructor,pd)
@@ -2504,11 +2640,14 @@ implementation
               consume(_OPERATOR);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               parse_proc_head(astruct,potype_operator,false,nil,nil,pd);
               block_type:=old_block_type;
               if assigned(pd) then
                 parse_proc_dec_finish(pd,isclassmethod)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               parse_proc_head(astruct,potype_operator,pd);
@@ -2793,6 +2932,7 @@ begin
     internalerror(200304269);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if is_objectpascal_helper(tprocdef(pd).struct) then
     Message1(parser_e_not_allowed_in_helper, arraytokeninfo[_ABSTRACT].str);
   if assigned(tprocdef(pd).struct) and
@@ -2805,6 +2945,8 @@ begin
       inc(tobjectdef(pd.owner.defowner).abstractcnt);
     end
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if assigned(tprocdef(pd).struct) and
@@ -2826,12 +2968,16 @@ begin
     internalerror(200910170);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if is_objectpascal_helper(tprocdef(pd).struct) and
       (m_objfpc in current_settings.modeswitches) then
     Message1(parser_e_not_allowed_in_helper, arraytokeninfo[_FINAL].str);
   if (po_virtualmethod in pd.procoptions) or
      (is_javaclass(tprocdef(pd).struct) and
       (po_classmethod in pd.procoptions)) then
+=======
+  if (po_virtualmethod in pd.procoptions) then
+>>>>>>> graemeg/cpstrnew
 =======
   if (po_virtualmethod in pd.procoptions) then
 >>>>>>> graemeg/cpstrnew
@@ -2920,7 +3066,11 @@ begin
     internalerror(200604301);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pt:=comp_expr([ef_accept_equal]);
+=======
+  pt:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
 =======
   pt:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
@@ -2940,6 +3090,7 @@ end;
 
 procedure pd_static(pd:tabstractprocdef);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if pd.typ<>procdef then
@@ -2963,6 +3114,10 @@ begin
   if pd.typ=procdef then
     include(tprocdef(pd).procsym.symoptions,sp_static);
 >>>>>>> graemeg/cpstrnew
+=======
+  if pd.typ=procdef then
+    include(tprocdef(pd).procsym.symoptions,sp_static);
+>>>>>>> graemeg/cpstrnew
   include(pd.procoptions,po_staticmethod);
 end;
 
@@ -2970,6 +3125,7 @@ procedure pd_override(pd:tabstractprocdef);
 begin
   if pd.typ<>procdef then
     internalerror(2003042611);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if is_objectpascal_helper(tprocdef(pd).struct) then
@@ -2988,6 +3144,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if not(is_class_or_interface_or_objc(tprocdef(pd).struct)) then
     Message(parser_e_no_object_override)
   else if is_objccategory(tprocdef(pd).struct) then
@@ -2996,6 +3154,9 @@ begin
           not is_cppclass(tprocdef(pd).struct) and
           (po_external in pd.procoptions) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3018,6 +3179,7 @@ begin
     internalerror(2003042613);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if is_objectpascal_helper(tprocdef(pd).struct) then
     begin
       if m_objfpc in current_settings.modeswitches then
@@ -3027,6 +3189,11 @@ begin
     if not is_class(tprocdef(pd).struct) and
        not is_objc_class_or_protocol(tprocdef(pd).struct) then
       Message(parser_e_msg_only_for_classes);
+=======
+  if not is_class(tprocdef(pd).struct) and
+     not is_objc_class_or_protocol(tprocdef(pd).struct) then
+    Message(parser_e_msg_only_for_classes);
+>>>>>>> graemeg/cpstrnew
 =======
   if not is_class(tprocdef(pd).struct) and
      not is_objc_class_or_protocol(tprocdef(pd).struct) then
@@ -3051,6 +3218,7 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pt:=comp_expr([ef_accept_equal]);
   { message is 1-character long }
   if is_constcharnode(pt) then
@@ -3061,6 +3229,18 @@ begin
   else if pt.nodetype=stringconstn then
     begin
       include(pd.procoptions,po_msgstr);
+=======
+  pt:=comp_expr(true,false);
+  { message is 1-character long }
+  if is_constcharnode(pt) then
+    begin
+      include(pd.procoptions,po_msgstr);
+      tprocdef(pd).messageinf.str:=stringdup(chr(byte(tordconstnode(pt).value.uvalue and $FF)));
+    end
+  else if pt.nodetype=stringconstn then
+    begin
+      include(pd.procoptions,po_msgstr);
+>>>>>>> graemeg/cpstrnew
 =======
   pt:=comp_expr(true,false);
   { message is 1-character long }
@@ -3093,8 +3273,12 @@ begin
    if is_constintnode(pt) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       (is_class(tprocdef(pd).struct) or
       is_objectpascal_helper(tprocdef(pd).struct)) then
+=======
+      is_class(tprocdef(pd).struct) then
+>>>>>>> graemeg/cpstrnew
 =======
       is_class(tprocdef(pd).struct) then
 >>>>>>> graemeg/cpstrnew
@@ -3126,6 +3310,7 @@ begin
     internalerror(200401211);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if is_objectpascal_helper(tprocdef(pd).struct) then
     begin
       if m_objfpc in current_settings.modeswitches then
@@ -3137,6 +3322,8 @@ begin
        not(is_javaclass(tprocdef(pd).struct)) then
       Message(parser_e_no_object_reintroduce);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if not(is_class_or_interface_or_object(tprocdef(pd).struct)) and
@@ -3475,7 +3662,11 @@ const
   {Should contain the number of procedure directives we support.}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   num_proc_directives=45;
+=======
+  num_proc_directives=42;
+>>>>>>> graemeg/cpstrnew
 =======
   num_proc_directives=42;
 >>>>>>> graemeg/cpstrnew
@@ -3488,7 +3679,11 @@ const
       idtok:_ABSTRACT;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord,pd_javaclass];
+=======
+      pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3568,7 +3763,11 @@ const
       idtok:_EXPORT;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_body,pd_interface,pd_implemen,pd_notobjintf,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_body,pd_interface,pd_implemen,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_body,pd_interface,pd_implemen,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3585,7 +3784,11 @@ const
       idtok:_EXTERNAL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord,pd_nothelper,pd_javaclass,pd_intfjava];
+=======
+      pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3603,7 +3806,11 @@ const
       idtok:_FAR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_implemen,pd_body,pd_interface,pd_procvar,pd_notobject,pd_notobjintf,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_implemen,pd_body,pd_interface,pd_procvar,pd_notobject,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_implemen,pd_body,pd_interface,pd_procvar,pd_notobject,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3620,7 +3827,11 @@ const
       idtok:_FAR16;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_procvar,pd_notobject,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_interface,pd_implemen,pd_body,pd_procvar,pd_notobject,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_procvar,pd_notobject,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3637,7 +3848,11 @@ const
       idtok:_FINAL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord,pd_javaclass];
+=======
+      pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3651,6 +3866,7 @@ const
       mutexclpotype : [];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       mutexclpo     : [po_exports,po_interrupt,po_inline]
     ),(
       idtok:_FORWARD;
@@ -3658,11 +3874,16 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       mutexclpo     : [po_exports,po_interrupt,po_external,po_inline]
     ),(
       idtok:_FORWARD;
       pd_flags : [pd_implemen,pd_notobject,pd_notobjintf,pd_notrecord];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3702,6 +3923,9 @@ const
       idtok:_INTERNCONST;
       pd_flags : [pd_interface,pd_body,pd_notobject,pd_notobjintf,pd_notrecord];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3715,7 +3939,11 @@ const
       idtok:_INTERNPROC;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_notobject,pd_notobjintf,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_interface,pd_notobject,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_notobject,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3732,7 +3960,11 @@ const
       idtok:_INTERRUPT;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_implemen,pd_body,pd_notobject,pd_notobjintf,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_implemen,pd_body,pd_notobject,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_implemen,pd_body,pd_notobject,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3747,8 +3979,11 @@ const
       mutexclpotype : [potype_constructor,potype_destructor,potype_operator,potype_class_constructor,potype_class_destructor];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       mutexclpo     : [po_external,po_inline,po_exports]
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       mutexclpo     : [po_external,po_inline]
@@ -3793,7 +4028,11 @@ const
       idtok:_NEAR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_implemen,pd_body,pd_procvar,pd_notobjintf,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_implemen,pd_body,pd_procvar,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_implemen,pd_body,pd_procvar,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3837,7 +4076,11 @@ const
       idtok:_OVERRIDE;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_objcclass,pd_javaclass,pd_intfjava,pd_notrecord];
+=======
+      pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_objcclass,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_objcclass,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3863,7 +4106,11 @@ const
       idtok:_PUBLIC;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_notobject,pd_notobjintf,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_interface,pd_implemen,pd_body,pd_notobject,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_notobject,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3889,7 +4136,11 @@ const
       idtok:_REINTRODUCE;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_objcclass,pd_notrecord,pd_javaclass];
+=======
+      pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_objcclass,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_objcclass,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3926,7 +4177,11 @@ const
       idtok:_STATIC;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_javaclass,pd_notobjintf];
+=======
+      pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_notobjintf];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_object,pd_record,pd_notobjintf];
 >>>>>>> graemeg/cpstrnew
@@ -3940,7 +4195,11 @@ const
       mutexclpotype : [potype_constructor,potype_destructor,potype_class_constructor,potype_class_destructor];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       mutexclpo     : [po_interrupt,po_exports]
+=======
+      mutexclpo     : [po_external,po_interrupt,po_exports]
+>>>>>>> graemeg/cpstrnew
 =======
       mutexclpo     : [po_external,po_interrupt,po_exports]
 >>>>>>> graemeg/cpstrnew
@@ -3972,7 +4231,11 @@ const
       idtok:_VIRTUAL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord,pd_javaclass];
+=======
+      pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_interface,pd_object,pd_notobjintf,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -3986,8 +4249,11 @@ const
       mutexclpotype : [potype_class_constructor,potype_class_destructor];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       mutexclpo     : [po_interrupt,po_exports,po_overridingmethod,po_inline]
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       mutexclpo     : [po_external,po_interrupt,po_exports,po_overridingmethod,po_inline]
@@ -4024,7 +4290,11 @@ const
       idtok:_WEAKEXTERNAL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord,pd_nothelper];
+=======
+      pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord];
+>>>>>>> graemeg/cpstrnew
 =======
       pd_flags : [pd_implemen,pd_interface,pd_notobject,pd_notobjintf,pd_cppobject,pd_notrecord];
 >>>>>>> graemeg/cpstrnew
@@ -4044,6 +4314,7 @@ const
     ),(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       idtok:_WINAPI;
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_procvar];
       handler  : @pd_winapi;
@@ -4053,6 +4324,8 @@ const
       mutexclpotype : [potype_constructor,potype_destructor,potype_class_constructor,potype_class_destructor];
       mutexclpo     : [po_external]
     ),(
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4067,6 +4340,7 @@ const
       mutexclpo     : [po_exports,po_interrupt,po_external,po_inline]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ),(
       idtok:_RTLPROC;
       pd_flags : [pd_interface,pd_implemen,pd_body,pd_notobjintf];
@@ -4076,6 +4350,8 @@ const
       mutexclpocall : [];
       mutexclpotype : [potype_constructor,potype_destructor,potype_class_constructor,potype_class_destructor];
       mutexclpo     : [po_interrupt]
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4198,6 +4474,10 @@ const
            exit;
 >>>>>>> graemeg/cpstrnew
 
+        if (pd_notrecord in proc_direcdata[p].pd_flags) and
+           (symtablestack.top.symtabletype=recordsymtable) then
+           exit;
+
         { Conflicts between directives ? }
         if (pd.proctypeoption in proc_direcdata[p].mutexclpotype) or
            (pd.proccalloption in proc_direcdata[p].mutexclpocall) or
@@ -4261,9 +4541,12 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            { check if method and directive not for record/class helper }
            if is_objectpascal_helper(tprocdef(pd).struct) and
              (pd_nothelper in proc_direcdata[p].pd_flags) then
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4384,9 +4667,13 @@ const
                   if (m_mac in current_settings.modeswitches) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     result:=target_info.Cprefix+tprocdef(pd).procsym.realname
                   else
                     result:=pd.procsym.realname;
+=======
+                    result:=target_info.Cprefix+tprocdef(pd).procsym.realname;
+>>>>>>> graemeg/cpstrnew
 =======
                     result:=target_info.Cprefix+tprocdef(pd).procsym.realname;
 >>>>>>> graemeg/cpstrnew
@@ -4885,7 +5172,11 @@ const
               (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                (compare_paras(fwpd.paras,currpd.paras,cp_none,[cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
+=======
+               (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
+>>>>>>> graemeg/cpstrnew
 =======
                (compare_paras(currpd.paras,fwpd.paras,cp_none,[cpo_comparedefaultvalue,cpo_ignorehidden,cpo_openequalisexact,cpo_ignoreuniv])=te_exact) and
 >>>>>>> graemeg/cpstrnew
@@ -4987,6 +5278,9 @@ const
                       ((compare_paras(currpd.paras,fwpd.paras,cp_all,paracompopt)<>te_exact) or
                        (compare_defs(fwpd.returndef,currpd.returndef,nothingn)<>te_exact)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

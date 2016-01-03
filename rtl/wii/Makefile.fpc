@@ -9,6 +9,7 @@ main=rtl
 loaders=
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       dos \
       sysutils \
@@ -19,6 +20,8 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 units=$(SYSTEMUNIT) objpas macpas strings \
 #      dos \
       sysutils \
@@ -26,6 +29,9 @@ units=$(SYSTEMUNIT) objpas macpas strings \
       charset ucomplex getopts matrix \
       variants types rtlconsts sysconst dateutil lineinfo fgl varutils cmem \
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -35,9 +41,13 @@ units=$(SYSTEMUNIT) objpas macpas strings \
 #rsts=math rtlconsts varutils typinfo variants classes sysconst dateutil fpmkunit
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #implicitunits=exeinfo \
 implicitunits=cp1250 cp1251 cp1252 cp1253 cp1254 cp1255 cp1256 cp1257 cp1258 \
       cp437 cp646 cp850 cp856 cp866 cp874 cp8859_1 cp8859_5 cp8859_2 cp852
+=======
+#implicitunits=exeinfo
+>>>>>>> graemeg/cpstrnew
 =======
 #implicitunits=exeinfo
 >>>>>>> graemeg/cpstrnew
@@ -70,9 +80,12 @@ UNITPREFIX=rtl
 SYSTEMUNIT=system
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 override FPCOPT+=@rtl.cfg
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -80,6 +93,9 @@ override FPCOPT+=@rtl.cfg
 # that generates release PPU files
 # which will not be recompiled
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -118,9 +134,12 @@ $(SYSTEMUNIT)$(PPUEXT) : $(SYSTEMUNIT).pp $(SYSDEPS) $(INC)/softfpu.pp
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uuchar$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(INC)/uuchar.pp
 	$(COMPILER) $(INC)/uuchar.pp
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -133,6 +152,7 @@ strings$(PPUEXT) : $(INC)/strings.pp $(INC)/stringsi.inc \
                    $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(COMPILER) $(INC)/strings.pp
 
 iso7185$(PPUEXT) : $(INC)/iso7185.pp $(SYSTEMUNIT)$(PPUEXT)
@@ -140,6 +160,8 @@ iso7185$(PPUEXT) : $(INC)/iso7185.pp $(SYSTEMUNIT)$(PPUEXT)
 
 extpas$(PPUEXT) : $(INC)/extpas.pp dos$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) $(INC)/extpas.pp
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -161,6 +183,7 @@ dos$(PPUEXT) : dos.pp $(INC)/filerec.inc $(INC)/textrec.inc strings$(PPUEXT) \
                $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(COMPILER) dos.pp
 
 #crt$(PPUEXT) : crt.pas $(INC)/textrec.inc $(SYSTEMUNIT)$(PPUEXT)
@@ -169,11 +192,16 @@ dos$(PPUEXT) : dos.pp $(INC)/filerec.inc $(INC)/textrec.inc strings$(PPUEXT) \
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 #crt$(PPUEXT) : crt.pas $(INC)/textrec.inc $(SYSTEMUNIT)$(PPUEXT)
 
 objects$(PPUEXT) : $(INC)/objects.pp dos$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -237,10 +265,15 @@ macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT)
 ucomplex$(PPUEXT): $(INC)/ucomplex.pp math$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(COMPILER) $(INC)/ucomplex.pp
 
 getopts$(PPUEXT) : $(INC)/getopts.pp $(SYSTEMUNIT)$(PPUEXT)
 	$(COMPILER) $(INC)/getopts.pp
+=======
+
+getopts$(PPUEXT) : $(INC)/getopts.pp $(SYSTEMUNIT)$(PPUEXT)
+>>>>>>> graemeg/cpstrnew
 =======
 
 getopts$(PPUEXT) : $(INC)/getopts.pp $(SYSTEMUNIT)$(PPUEXT)
@@ -254,6 +287,7 @@ heaptrc$(PPUEXT) : $(INC)/heaptrc.pp $(SYSTEMUNIT)$(PPUEXT)
         $(COMPILER) -Sg $(INC)/heaptrc.pp $(REDIR)
 
 lineinfo$(PPUEXT) : $(INC)/lineinfo.pp $(SYSTEMUNIT)$(PPUEXT)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         $(COMPILER) $(INC)/lineinfo.pp
@@ -275,12 +309,18 @@ charset$(PPUEXT) : $(INC)/charset.pp $(SYSTEMUNIT)$(PPUEXT)
 
 charset$(PPUEXT) : $(INC)/charset.pp $(SYSTEMUNIT)$(PPUEXT)
 >>>>>>> graemeg/cpstrnew
+=======
+#lnfodwrf$(PPUEXT) : $(INC)/lnfodwrf.pp $(SYSTEMUNIT)$(PPUEXT)
+
+charset$(PPUEXT) : $(INC)/charset.pp $(SYSTEMUNIT)$(PPUEXT)
+>>>>>>> graemeg/cpstrnew
 
 #
 # Other system-dependent RTL Units
 #
 
 exec$(PPUEXT)    : exec.pp execf.inc execd.inc
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	$(COMPILER) exec.pp
@@ -346,6 +386,8 @@ cmem$(PPUEXT) : $(INC)/cmem.pp $(SYSTEMUNIT)$(PPUEXT)
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 timer$(PPUEXT)   : timer.pp timerd.inc timerf.inc
 
@@ -387,6 +429,9 @@ ctypes$(PPUEXT) :  $(INC)/ctypes.pp $(SYSTEMUNIT)$(PPUEXT)
 
 cmem$(PPUEXT) : $(INC)/cmem.pp $(SYSTEMUNIT)$(PPUEXT)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

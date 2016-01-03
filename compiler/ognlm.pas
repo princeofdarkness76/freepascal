@@ -256,9 +256,15 @@ const NLM_MAX_DESCRIPTION_LENGTH = 127;
          nlmCustHeader      : nlm32_i386_external_custom_header;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          //nlmHelpFileName    : TCmdStr;
          //nlmMessagesFileName: TCmdStr;
          //nlmXdcFileName     : TCmdStr;
+=======
+         nlmHelpFileName    : TCmdStr;
+         nlmMessagesFileName: TCmdStr;
+         nlmXdcFileName     : TCmdStr;
+>>>>>>> graemeg/cpstrnew
 =======
          nlmHelpFileName    : TCmdStr;
          nlmMessagesFileName: TCmdStr;
@@ -295,8 +301,14 @@ const NLM_MAX_DESCRIPTION_LENGTH = 127;
          procedure GenerateLibraryImports(ImportLibraryList:TFPHashObjectList);override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          procedure MemPos_Start;override;
          procedure MemPos_ExeSection(const aname:string);override;
+=======
+         procedure Order_End;override;
+         procedure MemPos_ExeSection(const aname:string);override;
+         procedure DataPos_ExeSection(const aname:string);override;
+>>>>>>> graemeg/cpstrnew
 =======
          procedure Order_End;override;
          procedure MemPos_ExeSection(const aname:string);override;
@@ -328,7 +340,11 @@ const NLM_MAX_DESCRIPTION_LENGTH = 127;
        TNLMCoffassembler = class(tinternalassembler)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          constructor create(info: pasminfo; smart:boolean);override;
+=======
+         constructor create(smart:boolean);override;
+>>>>>>> graemeg/cpstrnew
 =======
          constructor create(smart:boolean);override;
 >>>>>>> graemeg/cpstrnew
@@ -360,7 +376,11 @@ implementation
        fmodule,aasmdata,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        ogmap,export,owar
+=======
+       ogmap,export
+>>>>>>> graemeg/cpstrnew
 =======
        ogmap,export
 >>>>>>> graemeg/cpstrnew
@@ -431,6 +451,10 @@ end;
         SectionDataAlign:=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        RelocSection := true;  // always needed for NLM's
+>>>>>>> graemeg/cpstrnew
 =======
         RelocSection := true;  // always needed for NLM's
 >>>>>>> graemeg/cpstrnew
@@ -447,11 +471,14 @@ end;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         nlmImports.Free;
         nlmImpNames.Free;
         nlmSymbols.Free;
         FexportFunctionOffsets.Free;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if assigned(nlmImports) then
@@ -463,6 +490,9 @@ end;
         if assigned(FexportFunctionOffsets) then
           FexportFunctionOffsets.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -591,7 +621,10 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
         b      : byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         dpos,pad: aword;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -609,11 +642,17 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
               begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if DataPos<FWriter.Size then
                   InternalError(2012103001);
                 //if Align(FWriter.Size,SectionDataAlign)-FWriter.Size>0 then
                 //  writeln (name,' align ',Align(FWriter.Size,SectionDataAlign)-FWriter.Size,' SectionDataAlign:',SectionDataAlign);
                 FWriter.Writezeros(DataPos-FWriter.Size);
+=======
+                //if Align(FWriter.Size,SectionDataAlign)-FWriter.Size>0 then
+                //  writeln (name,' align ',Align(FWriter.Size,SectionDataAlign)-FWriter.Size,' SectionDataAlign:',SectionDataAlign);
+                FWriter.Writezeros(Align(FWriter.Size,SectionDataAlign)-FWriter.Size);
+>>>>>>> graemeg/cpstrnew
 =======
                 //if Align(FWriter.Size,SectionDataAlign)-FWriter.Size>0 then
                 //  writeln (name,' align ',Align(FWriter.Size,SectionDataAlign)-FWriter.Size,' SectionDataAlign:',SectionDataAlign);
@@ -631,6 +670,7 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
                       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         { objsection must be within SecAlign bytes from the previous one }
                         dpos:=objsec.MemPos-MemPos+DataPos;
                         pad:=dpos-FWriter.Size;
@@ -640,6 +680,11 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
                         if assigned(exemap) then
                           if objsec.data.size > 0 then
                             exemap.Add('  0x'+hexstr(dpos,8)+': '+objsec.name);
+=======
+                        if assigned(exemap) then
+                          if objsec.data.size > 0 then
+                            exemap.Add('  0x'+hexstr(objsec.DataPos,8)+': '+objsec.name);
+>>>>>>> graemeg/cpstrnew
 =======
                         if assigned(exemap) then
                           if objsec.data.size > 0 then
@@ -669,11 +714,14 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
                             b := $90;  // NOP
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             for j := 1 to pad do
                                 FWriter.write(b,1);
                           end else
                             FWriter.writezeros(pad);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             if objsec.DataAlignBytes > 0 then
@@ -686,6 +734,9 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
                         if objsec.DataPos<>FWriter.Size then
                             internalerror(200602251);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -883,7 +934,11 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
         nlmHeader.version := NLM_HEADER_VERSION;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         moduleName := upperCase(current_module.exefilename);
+=======
+        moduleName := upperCase(current_module.exefilename^);
+>>>>>>> graemeg/cpstrnew
 =======
         moduleName := upperCase(current_module.exefilename^);
 >>>>>>> graemeg/cpstrnew
@@ -1125,7 +1180,10 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
               objsec:=TObjSection(exesec.ObjSectionList[j]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               if j=0 then
@@ -1134,6 +1192,9 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
                   exesec.MemPos:=objSec.MemPos;
                 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1297,7 +1358,11 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if FRelocsGenerated then
+=======
+        if not RelocSection or FRelocsGenerated then
+>>>>>>> graemeg/cpstrnew
 =======
         if not RelocSection or FRelocsGenerated then
 >>>>>>> graemeg/cpstrnew
@@ -1310,7 +1375,11 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
           exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         objsec:=internalObjData.createsection('.reloc',0,[oso_data,oso_load,oso_keep]);
+=======
+        objsec:=internalObjData.createsection('.reloc',0,exesec.SecOptions+[oso_data]);
+>>>>>>> graemeg/cpstrnew
 =======
         objsec:=internalObjData.createsection('.reloc',0,exesec.SecOptions+[oso_data]);
 >>>>>>> graemeg/cpstrnew
@@ -1344,12 +1413,16 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
                     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       // writeln ('  MemPos',objsec.MemPos,
                       // ' dataOfs:',objreloc.dataoffset,' ',objsec.name,
                       // '   objreloc.symbol: ',objreloc.symbol.name,
                       // '  objreloc.symbol.objsection.name: ',objreloc.symbol.objsection.name,
                       // ' ',objreloc.symbol.Typ,' ',objrel
                       // oc.symbol.bind,' ',objreloc.Typ);
+=======
+                      // writeln ('  MemPos',objsec.MemPos,' dataOfs:',objreloc.dataoffset,' ',objsec.name,'   objreloc.symbol: ',objreloc.symbol.name,'  objreloc.symbol.objsection.name: ',objreloc.symbol.objsection.name,' ',objreloc.symbol.Typ,' ',objreloc.symbol.bind,' ',objreloc.Typ);
+>>>>>>> graemeg/cpstrnew
 =======
                       // writeln ('  MemPos',objsec.MemPos,' dataOfs:',objreloc.dataoffset,' ',objsec.name,'   objreloc.symbol: ',objreloc.symbol.name,'  objreloc.symbol.objsection.name: ',objreloc.symbol.objsection.name,' ',objreloc.symbol.Typ,' ',objreloc.symbol.bind,' ',objreloc.Typ);
 >>>>>>> graemeg/cpstrnew
@@ -1381,6 +1454,7 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TNLMexeoutput.MemPos_Start;
       var
         exesec : TExeSection;
@@ -1393,6 +1467,8 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure TNLMexeoutput.Order_End;
       var
         exesec : TExeSection;
@@ -1403,6 +1479,9 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
           exit;
         exesec.SecOptions:=exesec.SecOptions + [oso_Data,oso_keep,oso_load];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1423,7 +1502,10 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       procedure TNLMexeoutput.DataPos_ExeSection(const aname:string);
@@ -1433,6 +1515,9 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1499,7 +1584,11 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
                fileH := fileOpen (fn,fmOpenRead);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                if fileH = THandle(-1) then
+=======
+               if fileH = -1 then
+>>>>>>> graemeg/cpstrnew
 =======
                if fileH = -1 then
 >>>>>>> graemeg/cpstrnew
@@ -1673,6 +1762,7 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor TNLMCoffAssembler.Create(info: pasminfo; smart:boolean);
       begin
         inherited;
@@ -1681,11 +1771,16 @@ function SecOpts(SecOptions:TObjSectionOptions):string;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     constructor TNLMCoffAssembler.Create(smart:boolean);
       begin
         inherited Create(smart);
         CObjOutput:=TNLMCoffObjOutput;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1713,7 +1808,10 @@ const
             comment : '';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             dollarsign: '$';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

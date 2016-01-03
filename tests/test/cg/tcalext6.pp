@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Tests passing of different records by value to C methods.
  One type of these records has one field which is a simple array of bytes,
  the other consists of a few fields of atomic size.
@@ -7,11 +8,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 { Tests passing of different records by value to C methods. 
  One type of these records has one field which is a simple array of bytes,
  the other consists of a few fields of atomic size.
  
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -29,7 +35,11 @@ program calext6;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(CPUARMEL) and defined(FPUSOFT)}
+=======
+{$ifdef CPUARMEL}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef CPUARMEL}
 >>>>>>> graemeg/cpstrnew
@@ -40,6 +50,7 @@ program calext6;
 {$linklib gcc}
 {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef VER2_4}
@@ -54,6 +65,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 type
   int8_t = shortint;
   pint8_t = ^int8_t;
@@ -63,6 +76,7 @@ type
 
 var
   success : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   {$ifdef CPUx86_64}
@@ -126,6 +140,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 {$packrecords c}
 
@@ -160,7 +176,11 @@ type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -213,8 +233,13 @@ type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   struct15 = record
+=======
+  
+  struct15 = record 
+>>>>>>> graemeg/cpstrnew
 =======
   
   struct15 = record 
@@ -279,7 +304,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FPC_HAS_TYPE_EXTENDED) and (sizeof(double)<>sizeof(cextended))}
+=======
+{$ifdef FPC_HAS_TYPE_EXTENDED}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
@@ -438,9 +467,12 @@ procedure dotest;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef TestFPUStack }
   i : longint;
   {$endif TestFPUStack }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -465,7 +497,11 @@ var
   s31, s31a: struct31;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -483,6 +519,7 @@ begin
   s2.v:=3.0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   s3.v1:=4.5;
   s3.v2:=5.125;
@@ -529,6 +566,8 @@ begin
   s15.v3:=25.0;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   
@@ -577,6 +616,9 @@ begin
   s15.v3:=25.0;
   
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -587,6 +629,7 @@ begin
 
   s17.v1:=31.25;
   s17.v2:=32.125;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -1079,6 +1122,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   
   s31.v1:=32.625;
   s31.v2:=33.5;
@@ -1195,6 +1240,9 @@ begin
   verify(check31(s31a), check31(s31), 131);
   verify(s31.v2,s31a.v2,132);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

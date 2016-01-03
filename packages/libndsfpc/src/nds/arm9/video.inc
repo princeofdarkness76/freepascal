@@ -416,8 +416,13 @@ const
   DCAP_BANK_VRAM_B      = 1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DCAP_BANK_VRAM_C      = 2;
   DCAP_BANK_VRAM_D      = 3;
+=======
+  DCAP_BANK_VRAM_C      = 1;
+  DCAP_BANK_VRAM_D      = 2;
+>>>>>>> graemeg/cpstrnew
 =======
   DCAP_BANK_VRAM_C      = 1;
   DCAP_BANK_VRAM_D      = 2;

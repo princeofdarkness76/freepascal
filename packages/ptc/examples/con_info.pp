@@ -17,7 +17,11 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure print(format: IPTCFormat);
+=======
+procedure print(const format: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure print(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
@@ -42,7 +46,11 @@ end;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
+=======
+  console: TPTCConsole = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
 >>>>>>> graemeg/cpstrnew
@@ -82,8 +90,13 @@ begin
     finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
+=======
+      console.close;
+      console.Free;
+>>>>>>> graemeg/cpstrnew
 =======
       console.close;
       console.Free;

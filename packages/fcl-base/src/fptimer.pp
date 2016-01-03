@@ -262,8 +262,11 @@ begin
   FThread.OnTerminate:=@DoNilTimer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FThread.Start;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   FThread.Resume;

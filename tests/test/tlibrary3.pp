@@ -2,7 +2,10 @@
 { %SKIPTARGET=macos, go32v2, win64 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %delfiles=tlibrary3 }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

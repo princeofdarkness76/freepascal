@@ -65,11 +65,15 @@ asm
   andl    $0xfffffff0,%esp        { Align stack to 16 bytes }
 =======
   andl    $0xfffffff8,%esp        { Align stack }
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
   {$ifdef FPC_PIC}
         pushl %ebx
         pushl %ecx
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -93,6 +97,8 @@ asm
   {$endif FPC_PIC}
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	
@@ -120,6 +126,9 @@ asm
   {$endif FPC_PIC}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -131,7 +140,11 @@ asm
         pushl %ebx
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         call  fpc_geteipasebxlocal
+=======
+        call  fpc_geteipasebx
+>>>>>>> graemeg/cpstrnew
 =======
         call  fpc_geteipasebx
 >>>>>>> graemeg/cpstrnew
@@ -171,10 +184,13 @@ procedure _FPC_proc_haltproc(e:longint); cdecl; assembler; public name '_haltpro
 asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   //addl  $12, %esp  { align stack back to 16 bytes }
   {$ifdef FPC_PIC}
         call  fpc_geteipasebxlocal
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -182,6 +198,9 @@ asm
   {$ifdef FPC_PIC}
         call  fpc_geteipasebx
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -199,12 +218,15 @@ asm
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   movl    e,%ebx
   int     $0x80
   movl    syscall_nr_exit,%eax
 
   movl    e,%ebx
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef FPC_PIC}
@@ -245,6 +267,9 @@ asm
 {$endif FPC_PIC}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

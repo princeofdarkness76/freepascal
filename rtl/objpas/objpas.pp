@@ -58,6 +58,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {$if FPC_FULLVERSION >= 20701}
@@ -94,13 +95,18 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_CLASSES}
 Var
    ExceptionClass: TClass; { Exception base class (must actually be Exception, defined in sysutils ) }
 {$endif FPC_HAS_FEATURE_CLASSES}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_EXCEPTIONS}
@@ -108,6 +114,9 @@ Var
    ExceptObjProc: Pointer; { Used to convert OS exceptions to exceptions in Delphi. Unused in FPC}
 {$endif FPC_HAS_FEATURE_EXCEPTIONS}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -148,12 +157,15 @@ Var
      Procedure AssignFile(out f:TypedFile;c:char);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
      Procedure AssignFile(out f:TypedFile;const Name:UnicodeString);
   {$endif FPC_HAS_FEATURE_WIDESTRINGS}
   {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
      Procedure AssignFile(out f:TypedFile;const Name:RawByteString);
   {$endif FPC_HAS_FEATURE_ANSISTRINGS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -166,7 +178,10 @@ Var
 {$endif FPC_HAS_FEATURE_COMMANDARGS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -176,6 +191,9 @@ Var
      Procedure ChDir(const s:ansistring);overload;
 {$endif FPC_HAS_FEATURE_FILEIO}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -210,7 +228,10 @@ Var
 {$ifdef FPC_HAS_FEATURE_FILEIO}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Procedure MkDirpchar(s: pchar;len:sizeuint);[IOCheck]; external name 'FPC_SYS_MKDIR';
@@ -317,6 +338,7 @@ begin
   System.Assign (F,Name);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_ANSISTRINGS}
 
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
@@ -352,6 +374,10 @@ Function ParamStr(Param : Integer) : ansistring;
 =======
 {$endif FPC_HAS_FEATURE_FILEIO}
 
+=======
+{$endif FPC_HAS_FEATURE_FILEIO}
+
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_COMMANDARGS}
 Function ParamStr(Param : Integer) : Ansistring;
 >>>>>>> graemeg/cpstrnew
@@ -370,12 +396,16 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_FILEIO}
 Procedure MkDir(const s:ansistring);
 begin
   mkdirpchar(pchar(s),length(s));
 end;
+<<<<<<< HEAD
 
 Procedure RmDir(const s:ansistring);
 begin
@@ -393,6 +423,20 @@ end;
 =======
 >>>>>>> graemeg/cpstrnew
 
+=======
+
+Procedure RmDir(const s:ansistring);
+begin
+  RmDirpchar(pchar(s),length(s));
+end;
+
+Procedure ChDir(const s:ansistring);
+begin
+  ChDirpchar(pchar(s),length(s));
+end;
+{$endif FPC_HAS_FEATURE_FILEIO}
+
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_RESOURCES}
 { ---------------------------------------------------------------------
     ResourceString support

@@ -38,7 +38,10 @@ unit i_sunos;
                             tf_files_case_sensitive,tf_requires_proper_alignment,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,tf_library_needs_pic,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -188,7 +191,10 @@ unit i_sunos;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
        system_x86_64_solaris_info : tsysteminfo =
           (
             system       : system_x86_64_solaris;
@@ -255,6 +261,9 @@ unit i_sunos;
           );
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
        system_sparc_solaris_info : tsysteminfo =
           (
@@ -265,7 +274,10 @@ unit i_sunos;
                             tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -341,6 +353,9 @@ initialization
 =======
 {$endif CPU86}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

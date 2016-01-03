@@ -36,9 +36,13 @@ Type
     NoPressEnter,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FPCHelpLines,
     LogoWritten,
     ABISetExplicitly,
+=======
+    LogoWritten,
+>>>>>>> graemeg/cpstrnew
 =======
     LogoWritten,
 >>>>>>> graemeg/cpstrnew
@@ -124,6 +128,9 @@ uses
   wpobase,
   symconst,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -160,8 +167,12 @@ const
                              + [system_i386_haiku]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                              + [system_i386_beos]
                              + [system_m68k_amiga];
+=======
+                             + [system_i386_beos];
+>>>>>>> graemeg/cpstrnew
 =======
                              + [system_i386_beos];
 >>>>>>> graemeg/cpstrnew
@@ -816,7 +827,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure toption.IgnoredPara(const opt: TCmdStr);
+=======
+procedure toption.IgnoredPara(const opt: string);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure toption.IgnoredPara(const opt: string);
 >>>>>>> graemeg/cpstrnew
@@ -1156,7 +1171,11 @@ begin
                     '3' :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       If UnsetBool(More, j, opt, false) then
+=======
+                      If UnsetBool(More, j) then
+>>>>>>> graemeg/cpstrnew
 =======
                       If UnsetBool(More, j) then
 >>>>>>> graemeg/cpstrnew
@@ -1551,7 +1570,11 @@ begin
                      s:=ExtractFileDir(more);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if TryStrToInt(ExtractFileName(more),j) then
+=======
+                     if TryStrToInt(ExtractFileName(more),j) then 
+>>>>>>> graemeg/cpstrnew
 =======
                      if TryStrToInt(ExtractFileName(more),j) then 
 >>>>>>> graemeg/cpstrnew
@@ -2063,7 +2086,11 @@ begin
                            init_settings.moduleswitches:=init_settings.moduleswitches - [cs_support_c_operators, cs_support_goto,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                                                          cs_support_macro];
+=======
+                                                                     cs_support_macro];
+>>>>>>> graemeg/cpstrnew
 =======
                                                                      cs_support_macro];
 >>>>>>> graemeg/cpstrnew
@@ -2456,7 +2483,10 @@ begin
                       end;
                     'n' :
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                       begin
                         If UnsetBool(More, j) then
                           exclude(init_settings.globalswitches,cs_link_native)
@@ -3114,11 +3144,14 @@ begin
       target_unsup_features:=[f_stackcheck];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     system_jvm_java32,
     system_jvm_android32:
       target_unsup_features:=[f_heap,f_textio,f_consoleio,f_fileio,
          f_variants,f_objects,f_commandargs,
          f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources];
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3172,6 +3205,7 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { Also create a smartlinked version, on an assembler that
     does not support smartlink sections like nasm?
     This is not compatible with using internal linker. }
@@ -3190,6 +3224,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 
@@ -3200,7 +3236,10 @@ begin
   FirstPass:=false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ABISetExplicitly:=false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3351,10 +3390,13 @@ begin
   if target_info.system in systems_wince then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     SetApptype(app_gui)
   else
     SetApptype(apptype);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     apptype:=app_gui;
@@ -3406,7 +3448,10 @@ begin
   def_system_macro('FPC_HAS_CEXTENDED');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   def_system_macro('FPC_HAS_RESSTRINITS');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3421,11 +3466,14 @@ begin
 { currently, all supported CPUs have an internal sar implementation }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $if defined(x86) or defined(arm) or defined(powerpc) or defined(powerpc64) or defined(sparc) or defined(mips)}
   def_system_macro('FPC_HAS_INTERNAL_SAR');
 { $endif}
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { $if defined(x86) or defined(arm) or defined(powerpc) or defined(powerpc64) or defined(sparc)}
@@ -3438,6 +3486,9 @@ begin
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3862,6 +3913,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { set Mac OS X version default macros if not specified explicitly }
   option.MaybeSetDefaultMacVersionMacro;
 
@@ -3873,6 +3925,22 @@ begin
          system_arm_nds,system_arm_embedded])
 {$ifdef arm}
       or (target_info.abi=abi_eabi)
+=======
+=======
+>>>>>>> graemeg/cpstrnew
+  { force fpu emulation on arm/wince, arm/gba, arm/embedded, arm/nds and
+    arm/darwin if fpu type not explicitly set }
+  if not(option.FPUSetExplicitly) and
+     ((target_info.system in [system_arm_wince,system_arm_gba,system_m68k_amiga,
+         system_m68k_linux,system_arm_nds,system_arm_embedded,system_arm_darwin])
+{$ifdef arm}
+      or (target_info.abi=abi_eabi)
+{$endif arm}
+     )
+{$ifdef arm}
+     or (init_settings.fputype=fpu_soft)
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
 =======
   { force fpu emulation on arm/wince, arm/gba, arm/embedded, arm/nds and
     arm/darwin if fpu type not explicitly set }
@@ -3887,17 +3955,6 @@ begin
      or (init_settings.fputype=fpu_soft)
 >>>>>>> graemeg/cpstrnew
 =======
-  { force fpu emulation on arm/wince, arm/gba, arm/embedded, arm/nds and
-    arm/darwin if fpu type not explicitly set }
-  if not(option.FPUSetExplicitly) and
-     ((target_info.system in [system_arm_wince,system_arm_gba,system_m68k_amiga,
-         system_m68k_linux,system_arm_nds,system_arm_embedded,system_arm_darwin])
-{$ifdef arm}
-      or (target_info.abi=abi_eabi)
-{$endif arm}
-     )
-{$ifdef arm}
-     or (init_settings.fputype=fpu_soft)
 >>>>>>> graemeg/cpstrnew
 {$endif arm}
      )
@@ -3914,6 +3971,7 @@ begin
     end;
 
 {$ifdef arm}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if target_info.abi = abi_eabihf then
@@ -3975,10 +4033,16 @@ if (target_info.system=system_arm_darwin) then
 if (target_info.system=system_arm_darwin) then
   begin
 >>>>>>> graemeg/cpstrnew
+=======
+{ set default cpu type to ARMv6 for Darwin unless specified otherwise }
+if (target_info.system=system_arm_darwin) then
+  begin
+>>>>>>> graemeg/cpstrnew
     if not option.CPUSetExplicitly then
       init_settings.cputype:=cpu_armv6;
     if not option.OptCPUSetExplicitly then
       init_settings.optimizecputype:=cpu_armv6;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$else CPUARMV6}
@@ -4046,6 +4110,11 @@ if (target_info.system=system_arm_darwin) then
   end;
 {$endif mipsel}
 
+=======
+  end;
+{$endif arm}
+
+>>>>>>> graemeg/cpstrnew
 =======
   end;
 {$endif arm}
@@ -4222,7 +4291,11 @@ if (target_info.system=system_arm_darwin) then
   clearstack_pocalls := [pocall_cdecl,pocall_cppdecl,pocall_syscall,pocall_mwpascal];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cdecl_pocalls := [pocall_cdecl, pocall_cppdecl, pocall_mwpascal];
+=======
+  cdecl_pocalls := [pocall_cdecl, pocall_cppdecl];
+>>>>>>> graemeg/cpstrnew
 =======
   cdecl_pocalls := [pocall_cdecl, pocall_cppdecl];
 >>>>>>> graemeg/cpstrnew

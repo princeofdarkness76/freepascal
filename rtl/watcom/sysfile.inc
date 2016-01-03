@@ -39,6 +39,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_erase(p : pchar; pchangeable: boolean);
 var
   regs : trealregs;
@@ -49,12 +50,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure do_erase(p : pchar);
 var
   regs : trealregs;
 begin
   DoDirSeparators(p);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -70,6 +76,7 @@ begin
   sysrealintr($21,regs);
   if (regs.realflags and carryflag) <> 0 then
    GetInOutRes(lo(regs.realeax));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if p<>oldp then
@@ -88,6 +95,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure do_rename(p1,p2 : pchar);
@@ -97,6 +106,9 @@ begin
   DoDirSeparators(p1);
   DoDirSeparators(p2);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -118,10 +130,13 @@ begin
    GetInOutRes(lo(regs.realeax));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if p1<>oldp1 then
     freemem(p1);
   if p2<>oldp2 then
     freemem(p2);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -310,7 +325,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_open(var f;p:pchar;flags:longint; pchangeable: boolean);
+=======
+procedure do_open(var f;p:pchar;flags:longint);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure do_open(var f;p:pchar;flags:longint);
 >>>>>>> graemeg/cpstrnew
@@ -330,8 +349,13 @@ var
   Avoid6c00 : boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp : pchar;
 begin
+=======
+begin
+  DoDirSeparators(p);
+>>>>>>> graemeg/cpstrnew
 =======
 begin
   DoDirSeparators(p);
@@ -385,8 +409,11 @@ begin
    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp:=p;
   DoDirSeparators(p,pchangeable);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -455,9 +482,12 @@ begin
       GetInOutRes(lo(regs.realeax));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       FileRec(f).mode:=fmclosed;
       if oldp<>p then
         freemem(p);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -498,8 +528,11 @@ begin
    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if oldp<>p then
     freemem(p);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

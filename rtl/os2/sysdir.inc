@@ -21,6 +21,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure do_MkDir(s: rawbytestring);
 var 
     Rc : word;
@@ -38,11 +39,20 @@ var
     Rc : word;
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+var 
+    Rc : word;
+begin
+>>>>>>> graemeg/cpstrnew
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
   DoDirSeparators(s);
   Rc := DosCreateDir(s,nil);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -50,6 +60,7 @@ begin
     begin
       InOutRes := Rc;
       Errno2Inoutres;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       OSErrorWatch (RC);
@@ -76,6 +87,11 @@ end;
 end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+    end;
+end;
+
+>>>>>>> graemeg/cpstrnew
 Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 var 
     Rc : word;
@@ -87,6 +103,9 @@ begin
   DoDirSeparators(s);
   Rc := DosDeleteDir(s);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -96,7 +115,10 @@ begin
       Errno2Inoutres;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       OSErrorWatch (RC);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -106,6 +128,7 @@ end;
 
 {$ASMMODE INTEL}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Procedure do_ChDir(s: rawbytestring);
@@ -131,6 +154,16 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+
+var RC: cardinal;
+
+begin
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+    exit;
+  if (Len >= 2) and (S[1] = ':') then
+>>>>>>> graemeg/cpstrnew
   begin
     RC := DosSetDefaultDisk ((Ord (S [0]) and not ($20)) - $40);
     if RC <> 0 then
@@ -144,9 +177,13 @@ begin
         DoDirSeparators (s);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (S [Len] = DirectorySeparator) and (Len <> 3) then
          S [Len] := #0;
         RC := DosSetCurrentDir (pchar (s));
+=======
+        RC := DosSetCurrentDir (s);
+>>>>>>> graemeg/cpstrnew
 =======
         RC := DosSetCurrentDir (s);
 >>>>>>> graemeg/cpstrnew
@@ -164,9 +201,13 @@ begin
     DoDirSeparators (s);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (Len > 1) and (S [Len] = DirectorySeparator) then
      S [Len] := #0;
     RC := DosSetCurrentDir (pchar (s));
+=======
+    RC := DosSetCurrentDir (s);
+>>>>>>> graemeg/cpstrnew
 =======
     RC := DosSetCurrentDir (s);
 >>>>>>> graemeg/cpstrnew

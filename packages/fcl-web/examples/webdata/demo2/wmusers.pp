@@ -7,7 +7,11 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, fpwebdata, extjsjson, extjsxml,
+=======
+  Classes, SysUtils, FileUtil, LResources, fpwebdata, extjsjson, extjsxml,
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, FileUtil, LResources, fpwebdata, extjsjson, extjsxml,
 >>>>>>> graemeg/cpstrnew
@@ -44,8 +48,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -98,6 +105,10 @@ end;
 initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  {$I wmusers.lrs}
+>>>>>>> graemeg/cpstrnew
 =======
   {$I wmusers.lrs}
 >>>>>>> graemeg/cpstrnew

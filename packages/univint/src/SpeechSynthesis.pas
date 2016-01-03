@@ -5,7 +5,11 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    SpeechSynthesis-4.1.10~14
+=======
+     Version:    SpeechSynthesis-3.10.35~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    SpeechSynthesis-3.10.35~1
 >>>>>>> graemeg/cpstrnew
@@ -23,8 +27,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -87,11 +95,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -113,6 +124,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -141,6 +153,11 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -154,6 +171,9 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -165,7 +185,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -174,6 +197,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -228,6 +252,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -252,6 +278,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 <<<<<<< HEAD
@@ -263,6 +290,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -375,6 +411,7 @@ const
 	modePhonemes = FourCharCode('PHON');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	modeTune = FourCharCode('TUNE');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -397,6 +434,25 @@ const
 	kSpeechRelativeDuration = 4;    { Duration relative to speech rate             }
 	kSpeechShowSyllables = 8;     { Show all syllable marks                              }
 
+=======
+	modeNormal = FourCharCode('NORM'); { character mode and number mode constants }
+	modeLiteral = FourCharCode('LTRL');
+
+
+const
+	soVoiceDescription = FourCharCode('info');
+	soVoiceFile = FourCharCode('fref');
+
+{------------------------------------------}
+{ Flags for phoneme generation.            }
+{------------------------------------------}
+const
+	kSpeechGenerateTune = 1;    { Generate detailed "tune" instead of just phonemes  }
+	kSpeechRelativePitch = 2;    { Pitch relative to voice baseline             }
+	kSpeechRelativeDuration = 4;    { Duration relative to speech rate             }
+	kSpeechShowSyllables = 8;     { Show all syllable marks                              }
+
+>>>>>>> graemeg/cpstrnew
 {------------------------------------------}
 { AudioUnit constants - new in 10.5        }
 {------------------------------------------}
@@ -411,6 +467,7 @@ const
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 type
@@ -421,12 +478,17 @@ type
 type
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 type
 	SpeechChannelRecordPtr = ^SpeechChannelRecord;
 	SpeechChannelRecord = record
 		data: array [0..1-1] of SIGNEDLONG;
 	end;
 type
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -436,7 +498,10 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	VoiceSpecPtr = ^VoiceSpec;
@@ -447,7 +512,10 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	VoiceSpecPtr = ^VoiceSpec;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -806,6 +874,7 @@ var kSpeechPhonemeOptionsProperty: CFStringRef; external name '_kSpeechPhonemeOp
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
  *  kSpeechAudioUnitProperty
  *  
@@ -837,6 +906,10 @@ var kSpeechAudioGraphProperty: CFStringRef; external name '_kSpeechAudioGraphPro
 { Speaking Modes}
 {
  *  kSpeechModeText
+=======
+{ Speaking Modes}
+{
+ *  kSpeechModeText
  *  
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
@@ -924,6 +997,65 @@ var kSpeechNoEndingProsody: CFStringRef; external name '_kSpeechNoEndingProsody'
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+var kSpeechModePhoneme: CFStringRef; external name '_kSpeechModePhoneme'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechModeNormal
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechModeLiteral: CFStringRef; external name '_kSpeechModeLiteral'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys for options parameter in SpeakCFString}
+{
+ *  kSpeechNoEndingProsody
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechNoSpeechInterrupt: CFStringRef; external name '_kSpeechNoSpeechInterrupt'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechPreflightThenPause
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+var kSpeechModeText: CFStringRef; external name '_kSpeechModeText'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechModePhoneme
+=======
+var kSpeechModeNormal: CFStringRef; external name '_kSpeechModeNormal'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechModeLiteral
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechNoEndingProsody: CFStringRef; external name '_kSpeechNoEndingProsody'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechNoSpeechInterrupt
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechPreflightThenPause: CFStringRef; external name '_kSpeechPreflightThenPause'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys returned by kSpeechStatusProperty}
+{
+ *  kSpeechStatusOutputBusy
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 var kSpeechModePhoneme: CFStringRef; external name '_kSpeechModePhoneme'; (* attribute const *)
@@ -951,55 +1083,17 @@ var kSpeechNoSpeechInterrupt: CFStringRef; external name '_kSpeechNoSpeechInterr
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 {
  *  kSpeechPreflightThenPause
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-var kSpeechPreflightThenPause: CFStringRef; external name '_kSpeechPreflightThenPause'; (* attribute const *)
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-{ Dictionary keys returned by kSpeechStatusProperty}
-{
- *  kSpeechStatusOutputBusy
->>>>>>> graemeg/cpstrnew
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-<<<<<<< HEAD
-var kSpeechNoEndingProsody: CFStringRef; external name '_kSpeechNoEndingProsody'; (* attribute const *)
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-{
- *  kSpeechNoSpeechInterrupt
->>>>>>> graemeg/cpstrnew
 =======
 var kSpeechStatusOutputBusy: CFStringRef; external name '_kSpeechStatusOutputBusy'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 {
  *  kSpeechStatusOutputPaused
->>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
-<<<<<<< HEAD
-<<<<<<< HEAD
-var kSpeechModeNormal: CFStringRef; external name '_kSpeechModeNormal'; (* attribute const *)
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-{
- *  kSpeechModeLiteral
-=======
-var kSpeechNoSpeechInterrupt: CFStringRef; external name '_kSpeechNoSpeechInterrupt'; (* attribute const *)
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-{
- *  kSpeechPreflightThenPause
->>>>>>> graemeg/cpstrnew
-=======
 var kSpeechStatusOutputPaused: CFStringRef; external name '_kSpeechStatusOutputPaused'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 {
@@ -1012,13 +1106,6 @@ var kSpeechStatusOutputPaused: CFStringRef; external name '_kSpeechStatusOutputP
  *    Non-Carbon CFM:   not available
  }
 <<<<<<< HEAD
-<<<<<<< HEAD
-var kSpeechModeLiteral: CFStringRef; external name '_kSpeechModeLiteral'; (* attribute const *)
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-{ Dictionary keys for options parameter in SpeakCFString}
-{
- *  kSpeechNoEndingProsody
-=======
 var kSpeechPreflightThenPause: CFStringRef; external name '_kSpeechPreflightThenPause'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 { Dictionary keys returned by kSpeechStatusProperty}
@@ -1043,6 +1130,7 @@ var kSpeechNoEndingProsody: CFStringRef; external name '_kSpeechNoEndingProsody'
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 {
  *  kSpeechNoSpeechInterrupt
+>>>>>>> graemeg/cpstrnew
 =======
 var kSpeechStatusOutputBusy: CFStringRef; external name '_kSpeechStatusOutputBusy'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1064,10 +1152,17 @@ var kSpeechStatusPhonemeCode: CFStringRef; external name '_kSpeechStatusPhonemeC
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+var kSpeechModeNormal: CFStringRef; external name '_kSpeechModeNormal'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechModeLiteral
+=======
 var kSpeechNoSpeechInterrupt: CFStringRef; external name '_kSpeechNoSpeechInterrupt'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 {
  *  kSpeechPreflightThenPause
+>>>>>>> graemeg/cpstrnew
 =======
 var kSpeechStatusOutputPaused: CFStringRef; external name '_kSpeechStatusOutputPaused'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -1085,6 +1180,103 @@ var kSpeechErrorCount: CFStringRef; external name '_kSpeechErrorCount'; (* attri
  *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+var kSpeechModeLiteral: CFStringRef; external name '_kSpeechModeLiteral'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys for options parameter in SpeakCFString}
+{
+ *  kSpeechNoEndingProsody
+=======
+var kSpeechPreflightThenPause: CFStringRef; external name '_kSpeechPreflightThenPause'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys returned by kSpeechStatusProperty}
+{
+ *  kSpeechStatusOutputBusy
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechStatusNumberOfCharactersLeft: CFStringRef; external name '_kSpeechStatusNumberOfCharactersLeft'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechStatusPhonemeCode
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechErrorOldest: CFStringRef; external name '_kSpeechErrorOldest'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechErrorOldestCharacterOffset
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+var kSpeechNoEndingProsody: CFStringRef; external name '_kSpeechNoEndingProsody'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechNoSpeechInterrupt
+=======
+var kSpeechStatusOutputBusy: CFStringRef; external name '_kSpeechStatusOutputBusy'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechStatusOutputPaused
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechStatusPhonemeCode: CFStringRef; external name '_kSpeechStatusPhonemeCode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys returned by kSpeechErrorProperty}
+{
+ *  kSpeechErrorCount
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechErrorOldestCharacterOffset: CFStringRef; external name '_kSpeechErrorOldestCharacterOffset'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechErrorNewest
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+var kSpeechNoSpeechInterrupt: CFStringRef; external name '_kSpeechNoSpeechInterrupt'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechPreflightThenPause
+=======
+var kSpeechStatusOutputPaused: CFStringRef; external name '_kSpeechStatusOutputPaused'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechStatusNumberOfCharactersLeft
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechErrorCount: CFStringRef; external name '_kSpeechErrorCount'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechErrorOldest
+>>>>>>> graemeg/cpstrnew
+=======
+var kSpeechErrorNewest: CFStringRef; external name '_kSpeechErrorNewest'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechErrorNewestCharacterOffset
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+<<<<<<< HEAD
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1890,29 +2082,471 @@ function GetVoiceInfo( const (*var*) voice: VoiceSpec; selector: OSType; voiceIn
 
 {
  *  NewSpeechChannel()
+=======
+ }
+var kSpeechErrorNewestCharacterOffset: CFStringRef; external name '_kSpeechErrorNewestCharacterOffset'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys returned by kSpeechSynthesizerInfoProperty}
+{
+ *  kSpeechSynthesizerInfoIdentifier
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechSynthesizerInfoIdentifier: CFStringRef; external name '_kSpeechSynthesizerInfoIdentifier'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechSynthesizerInfoManufacturer
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechSynthesizerInfoManufacturer: CFStringRef; external name '_kSpeechSynthesizerInfoManufacturer'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechSynthesizerInfoVersion
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechSynthesizerInfoVersion: CFStringRef; external name '_kSpeechSynthesizerInfoVersion'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys returned by kSpeechPhonemeSymbolsProperty}
+{
+ *  kSpeechPhonemeInfoOpcode
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechPhonemeInfoOpcode: CFStringRef; external name '_kSpeechPhonemeInfoOpcode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechPhonemeInfoSymbol
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechPhonemeInfoSymbol: CFStringRef; external name '_kSpeechPhonemeInfoSymbol'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechPhonemeInfoExample
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechPhonemeInfoExample: CFStringRef; external name '_kSpeechPhonemeInfoExample'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechPhonemeInfoHiliteStart
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechPhonemeInfoHiliteStart: CFStringRef; external name '_kSpeechPhonemeInfoHiliteStart'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechPhonemeInfoHiliteEnd
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechPhonemeInfoHiliteEnd: CFStringRef; external name '_kSpeechPhonemeInfoHiliteEnd'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys returned by kSpeechCurrentVoiceProperty}
+{
+ *  kSpeechVoiceCreator
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechVoiceCreator: CFStringRef; external name '_kSpeechVoiceCreator'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechVoiceID
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechVoiceID: CFStringRef; external name '_kSpeechVoiceID'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Dictionary keys returned by kSpeechCommandDelimiterProperty}
+{
+ *  kSpeechCommandPrefix
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechCommandPrefix: CFStringRef; external name '_kSpeechCommandPrefix'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechCommandSuffix
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechCommandSuffix: CFStringRef; external name '_kSpeechCommandSuffix'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Use with useSpeechDictionary:}
+{
+ *  kSpeechDictionaryLocaleIdentifier
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechDictionaryLocaleIdentifier: CFStringRef; external name '_kSpeechDictionaryLocaleIdentifier'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechDictionaryModificationDate
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechDictionaryModificationDate: CFStringRef; external name '_kSpeechDictionaryModificationDate'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechDictionaryPronunciations
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechDictionaryPronunciations: CFStringRef; external name '_kSpeechDictionaryPronunciations'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechDictionaryAbbreviations
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechDictionaryAbbreviations: CFStringRef; external name '_kSpeechDictionaryAbbreviations'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechDictionaryEntrySpelling
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechDictionaryEntrySpelling: CFStringRef; external name '_kSpeechDictionaryEntrySpelling'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechDictionaryEntryPhonemes
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechDictionaryEntryPhonemes: CFStringRef; external name '_kSpeechDictionaryEntryPhonemes'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{ Error callback user info keys}
+{
+ *  kSpeechErrorCallbackSpokenString
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechErrorCallbackSpokenString: CFStringRef; external name '_kSpeechErrorCallbackSpokenString'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+{
+ *  kSpeechErrorCallbackCharacterOffset
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in ApplicationServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+var kSpeechErrorCallbackCharacterOffset: CFStringRef; external name '_kSpeechErrorCallbackCharacterOffset'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+type
+	SpeechTextDoneProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon; {const} nextBuf: UnivPtrPtr; var byteLen: UNSIGNEDLONG; var controlFlags: SInt32 );
+	SpeechDoneProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon );
+	SpeechSyncProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon; syncMessage: OSType );
+	SpeechErrorProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon; theError: OSErr; bytePos: SIGNEDLONG );
+	SpeechPhonemeProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon; phonemeOpcode: SInt16 );
+	SpeechWordProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon; wordPos: UNSIGNEDLONG; wordLen: UInt16 );
+	SpeechTextDoneUPP = SpeechTextDoneProcPtr;
+	SpeechDoneUPP = SpeechDoneProcPtr;
+	SpeechSyncUPP = SpeechSyncProcPtr;
+	SpeechErrorUPP = SpeechErrorProcPtr;
+	SpeechPhonemeUPP = SpeechPhonemeProcPtr;
+	SpeechWordUPP = SpeechWordProcPtr;
+{
+ *  NewSpeechTextDoneUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSpeechTextDoneUPP( userRoutine: SpeechTextDoneProcPtr ): SpeechTextDoneUPP; external name '_NewSpeechTextDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  NewSpeechDoneUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSpeechDoneUPP( userRoutine: SpeechDoneProcPtr ): SpeechDoneUPP; external name '_NewSpeechDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  NewSpeechSyncUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSpeechSyncUPP( userRoutine: SpeechSyncProcPtr ): SpeechSyncUPP; external name '_NewSpeechSyncUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  NewSpeechErrorUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSpeechErrorUPP( userRoutine: SpeechErrorProcPtr ): SpeechErrorUPP; external name '_NewSpeechErrorUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  NewSpeechPhonemeUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSpeechPhonemeUPP( userRoutine: SpeechPhonemeProcPtr ): SpeechPhonemeUPP; external name '_NewSpeechPhonemeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  NewSpeechWordUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSpeechWordUPP( userRoutine: SpeechWordProcPtr ): SpeechWordUPP; external name '_NewSpeechWordUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeSpeechTextDoneUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSpeechTextDoneUPP( userUPP: SpeechTextDoneUPP ); external name '_DisposeSpeechTextDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeSpeechDoneUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSpeechDoneUPP( userUPP: SpeechDoneUPP ); external name '_DisposeSpeechDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeSpeechSyncUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSpeechSyncUPP( userUPP: SpeechSyncUPP ); external name '_DisposeSpeechSyncUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeSpeechErrorUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSpeechErrorUPP( userUPP: SpeechErrorUPP ); external name '_DisposeSpeechErrorUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeSpeechPhonemeUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSpeechPhonemeUPP( userUPP: SpeechPhonemeUPP ); external name '_DisposeSpeechPhonemeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeSpeechWordUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSpeechWordUPP( userUPP: SpeechWordUPP ); external name '_DisposeSpeechWordUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSpeechTextDoneUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeSpeechTextDoneUPP( chan: SpeechChannel; refCon: SRefCon; {const} var nextBuf: UnivPtr; var byteLen: UNSIGNEDLONG; var controlFlags: SInt32; userUPP: SpeechTextDoneUPP ); external name '_InvokeSpeechTextDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSpeechDoneUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeSpeechDoneUPP( chan: SpeechChannel; refCon: SRefCon; userUPP: SpeechDoneUPP ); external name '_InvokeSpeechDoneUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSpeechSyncUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeSpeechSyncUPP( chan: SpeechChannel; refCon: SRefCon; syncMessage: OSType; userUPP: SpeechSyncUPP ); external name '_InvokeSpeechSyncUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSpeechErrorUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeSpeechErrorUPP( chan: SpeechChannel; refCon: SRefCon; theError: OSErr; bytePos: SIGNEDLONG; userUPP: SpeechErrorUPP ); external name '_InvokeSpeechErrorUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSpeechPhonemeUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeSpeechPhonemeUPP( chan: SpeechChannel; refCon: SRefCon; phonemeOpcode: SInt16; userUPP: SpeechPhonemeUPP ); external name '_InvokeSpeechPhonemeUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeSpeechWordUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeSpeechWordUPP( chan: SpeechChannel; refCon: SRefCon; wordPos: UNSIGNEDLONG; wordLen: UInt16; userUPP: SpeechWordUPP ); external name '_InvokeSpeechWordUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+type
+	SpeechErrorCFProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon; theError: CFErrorRef );
+	SpeechWordCFProcPtr = procedure( chan: SpeechChannel; refCon: SRefCon; aString: CFStringRef; wordRange: CFRange );
+
+{
+ *  SpeechManagerVersion()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  }
+<<<<<<< HEAD
 function NewSpeechChannel( voice: VoiceSpecPtr { can be NULL }; var chan: SpeechChannel ): OSErr; external name '_NewSpeechChannel';
+=======
+function SpeechManagerVersion: NumVersion; external name '_SpeechManagerVersion';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
  *  DisposeSpeechChannel()
+=======
+ *  MakeVoiceSpec()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  }
+<<<<<<< HEAD
 function DisposeSpeechChannel( chan: SpeechChannel ): OSErr; external name '_DisposeSpeechChannel';
+=======
+function MakeVoiceSpec( creator: OSType; id: OSType; var voice: VoiceSpec ): OSErr; external name '_MakeVoiceSpec';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  SpeakString()   *** DEPRECATED ***
@@ -1953,10 +2587,69 @@ function SpeakString( const (*var*) textToBeSpoken: Str255 ): OSErr; external na
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+ *  CountVoices()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function CountVoices( var numVoices: SInt16 ): OSErr; external name '_CountVoices';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+ *  GetIndVoice()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function GetIndVoice( index: SInt16; var voice: VoiceSpec ): OSErr; external name '_GetIndVoice';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetVoiceDescription()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function GetVoiceDescription( const (*var*) voice: VoiceSpec; var info: VoiceDescription; infoLength: SIGNEDLONG ): OSErr; external name '_GetVoiceDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetVoiceInfo()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function GetVoiceInfo( const (*var*) voice: VoiceSpec; selector: OSType; voiceInfo: UnivPtr ): OSErr; external name '_GetVoiceInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  NewSpeechChannel()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function NewSpeechChannel( voice: VoiceSpecPtr { can be NULL }; var chan: SpeechChannel ): OSErr; external name '_NewSpeechChannel';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
  *  SpeakText()
  *  
  *  Availability:
@@ -1985,6 +2678,40 @@ function SpeakText( chan: SpeechChannel; textBuf: {const} UnivPtr; textBytes: UN
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+ *  DisposeSpeechChannel()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function DisposeSpeechChannel( chan: SpeechChannel ): OSErr; external name '_DisposeSpeechChannel';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SpeakString()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function SpeakString( const (*var*) textToBeSpoken: Str255 ): OSErr; external name '_SpeakString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SpeakText()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in SpeechLib 1.0 and later
+ }
+function SpeakText( chan: SpeechChannel; textBuf: {const} UnivPtr; textBytes: UNSIGNEDLONG ): OSErr; external name '_SpeakText';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -1994,6 +2721,9 @@ function SpeakText( chan: SpeechChannel; textBuf: {const} UnivPtr; textBytes: UN
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2003,7 +2733,11 @@ function SpeakText( chan: SpeechChannel; textBuf: {const} UnivPtr; textBytes: UN
 function SpeakBuffer( chan: SpeechChannel; textBuf: {const} UnivPtr; textBytes: UNSIGNEDLONG; controlFlags: SInt32 ): OSErr; external name '_SpeakBuffer';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2135,6 +2869,7 @@ function GetSpeechPitch( chan: SpeechChannel; var pitch: Fixed ): OSErr; externa
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  SetSpeechInfo()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -2145,11 +2880,16 @@ function GetSpeechPitch( chan: SpeechChannel; var pitch: Fixed ): OSErr; externa
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *  SetSpeechInfo()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2157,6 +2897,7 @@ function GetSpeechPitch( chan: SpeechChannel; var pitch: Fixed ): OSErr; externa
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  }
 function SetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: {const} UnivPtr ): OSErr; external name '_SetSpeechInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
@@ -2173,6 +2914,8 @@ function SetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: {cons
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2182,6 +2925,9 @@ function SetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: {cons
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2189,6 +2935,7 @@ function SetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: {cons
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  }
 function GetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: UnivPtr ): OSErr; external name '_GetSpeechInfo';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
@@ -2205,6 +2952,8 @@ function GetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: UnivP
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2214,6 +2963,9 @@ function GetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: UnivP
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2221,6 +2973,7 @@ function GetSpeechInfo( chan: SpeechChannel; selector: OSType; speechInfo: UnivP
  *    Non-Carbon CFM:   in SpeechLib 1.0 and later
  }
 function TextToPhonemes( chan: SpeechChannel; textBuf: {const} UnivPtr; textBytes: UNSIGNEDLONG; phonemeBuf: Handle; var phonemeBytes: SIGNEDLONG ): OSErr; external name '_TextToPhonemes';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
@@ -2237,6 +2990,8 @@ function TextToPhonemes( chan: SpeechChannel; textBuf: {const} UnivPtr; textByte
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2246,6 +3001,9 @@ function TextToPhonemes( chan: SpeechChannel; textBuf: {const} UnivPtr; textByte
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2255,7 +3013,11 @@ function TextToPhonemes( chan: SpeechChannel; textBuf: {const} UnivPtr; textByte
 function UseDictionary( chan: SpeechChannel; dictionary: Handle ): OSErr; external name '_UseDictionary';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_8 *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

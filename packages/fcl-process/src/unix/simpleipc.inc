@@ -128,6 +128,9 @@ begin
 =======
     Owner.DoError(SErrServerNotActive,[Owner.ServerID]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

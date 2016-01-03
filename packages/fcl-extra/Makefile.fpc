@@ -1,7 +1,11 @@
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for Free Component Library
+>>>>>>> graemeg/cpstrnew
 =======
 #   Makefile.fpc for Free Component Library
 >>>>>>> graemeg/cpstrnew
@@ -14,11 +18,14 @@
 name=fcl-extra
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 version=2.5.1
@@ -62,6 +69,9 @@ includedir_win64=src/win
 includedir_wince=src/win
 sourcedir=src/$(OS_TARGET) src
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -72,6 +82,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
@@ -159,6 +170,10 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+[rules]
+.NOTPARALLEL:
+>>>>>>> graemeg/cpstrnew
 =======
 [rules]
 .NOTPARALLEL:

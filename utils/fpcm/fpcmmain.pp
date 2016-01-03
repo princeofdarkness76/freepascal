@@ -69,7 +69,11 @@ interface
       TCpu=(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         c_i386,c_m68k,c_powerpc,c_sparc,c_x86_64,c_arm,c_powerpc64,c_avr,c_armeb,c_armel,c_mips,c_mipsel,c_mips64,c_mips64el,c_jvm,c_i8086,c_aarch64
+=======
+        c_i386,c_m68k,c_powerpc,c_sparc,c_x86_64,c_arm,c_powerpc64,c_avr,c_armeb,c_armel,c_mips,c_mipsel,c_mips64,c_mips64el
+>>>>>>> graemeg/cpstrnew
 =======
         c_i386,c_m68k,c_powerpc,c_sparc,c_x86_64,c_arm,c_powerpc64,c_avr,c_armeb,c_armel,c_mips,c_mipsel,c_mips64,c_mips64el
 >>>>>>> graemeg/cpstrnew
@@ -85,7 +89,11 @@ interface
         o_win64,o_wince,o_gba,o_nds,o_embedded,o_symbian,o_nativent,o_iphonesim,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         o_wii,o_aix,o_java,o_android,o_msdos,o_aros,o_dragonfly,o_win16
+=======
+        o_wii
+>>>>>>> graemeg/cpstrnew
 =======
         o_wii
 >>>>>>> graemeg/cpstrnew
@@ -100,6 +108,7 @@ interface
       CpuStr : array[TCpu] of string=(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'i386','m68k','powerpc','sparc','x86_64','arm','powerpc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el', 'jvm','i8086','aarch64'
       );
 
@@ -110,6 +119,8 @@ interface
       ppcSuffix : array[TCpu] of string=(
         '386','m68k','ppc','sparc','x86_64','arm','ppc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el', 'jvm','8086','aarch64'
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         'i386','m68k','powerpc','sparc','x86_64','arm','powerpc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el'
       );
 
@@ -119,6 +130,7 @@ interface
 
       ppcSuffix : array[TCpu] of string=(
         '386','m68k','ppc','sparc','x86_64','arm','ppc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el'
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
         'i386','m68k','powerpc','sparc','x86_64','arm','powerpc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el'
@@ -131,6 +143,8 @@ interface
       ppcSuffix : array[TCpu] of string=(
         '386','m68k','ppc','sparc','x86_64','arm','ppc64','avr','armeb', 'armel', 'mips', 'mipsel', 'mips64', 'mips64el'
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       );
 
       OSStr : array[TOS] of string=(
@@ -140,8 +154,12 @@ interface
         'win64','wince','gba','nds','embedded','symbian','nativent',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'iphonesim', 'wii', 'aix', 'java', 'android', 'msdos', 'aros',
         'dragonfly', 'win16'
+=======
+        'iphonesim', 'wii'
+>>>>>>> graemeg/cpstrnew
 =======
         'iphonesim', 'wii'
 >>>>>>> graemeg/cpstrnew
@@ -157,8 +175,12 @@ interface
         '_win64','_wince','_gba','_nds','_embedded','_symbian','_nativent',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '_iphonesim','_wii','_aix','_java','_android','_msdos','_aros',
         '_dragonfly','_win16'
+=======
+        '_iphonesim','_wii'
+>>>>>>> graemeg/cpstrnew
 =======
         '_iphonesim','_wii'
 >>>>>>> graemeg/cpstrnew
@@ -169,6 +191,7 @@ interface
 
       { This table is kept OS,Cpu because it is easier to maintain (PFV) }
       OSCpuPossible : array[TOS,TCpu] of boolean = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         { os          i386    m68k  ppc    sparc  x86_64 arm    ppc64  avr    armeb  armel  mips   mipsel mips64 misp64el jvm    i8086  aarch64}
@@ -213,6 +236,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { os          i386    m68k  ppc    sparc  x86_64 arm    ppc64  avr    armeb  armel  mips   mipsel mips64 misp64el}
         { linux }   ( true,  true,  true,  true,  true,  true,  true,  false, true,  false, false, true,  false, false),
         { go32v2 }  ( true,  false, false, false, false, false, false, false, false, false, false, false, false, false),
@@ -246,6 +271,9 @@ interface
         { iphonesim }( true,  false, false, false, false, false, false, false, false, false, false, false, false, false),        
         { wii }     ( false, false, true,  false, false, false, false, false, false, false, false, false, false, false)        
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

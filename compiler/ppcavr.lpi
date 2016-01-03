@@ -14,8 +14,11 @@
       <MainUnit Value="0"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Title Value="ppcavr"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       <Title Value="pp"/>
@@ -51,7 +54,11 @@
   <CompilerOptions>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="11"/>
+=======
+    <Version Value="9"/>
+>>>>>>> graemeg/cpstrnew
 =======
     <Version Value="9"/>
 >>>>>>> graemeg/cpstrnew
@@ -86,9 +93,12 @@
       </ConfigFile>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

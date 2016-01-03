@@ -147,6 +147,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure _FPC_libc21_haltproc(e: longint); assembler; public name '_haltproc';
 asm
 .Lhaltproc:
@@ -155,6 +156,11 @@ asm
 procedure _FPC_libc21_haltproc; assembler; nostackframe; public name '_haltproc';
 asm
 .Lhaltproc:
+=======
+procedure _FPC_libc21_haltproc; assembler; nostackframe; public name '_haltproc';
+asm
+.Lhaltproc:
+>>>>>>> graemeg/cpstrnew
 =======
 procedure _FPC_libc21_haltproc; assembler; nostackframe; public name '_haltproc';
 asm
@@ -179,6 +185,9 @@ asm
   {$endif FPC_PIC}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

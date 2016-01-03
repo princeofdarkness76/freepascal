@@ -210,6 +210,9 @@ begin
 =======
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -304,7 +307,10 @@ begin
   ScriptRes.Add('    *(.text)');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ScriptRes.Add('    *(.text.*)');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -327,9 +333,14 @@ begin
   ScriptRes.Add('      __environ = . ;');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ScriptRes.Add('      _environ = .;');
   ScriptRes.Add('      LONG(0)');
   ScriptRes.Add('      . = ALIGN(0x20);');
+=======
+  ScriptRes.Add('      PROVIDE(_environ = .);');
+  ScriptRes.Add('      LONG(0)');
+>>>>>>> graemeg/cpstrnew
 =======
   ScriptRes.Add('      PROVIDE(_environ = .);');
   ScriptRes.Add('      LONG(0)');

@@ -925,6 +925,9 @@ implementation
                  end
                else if is_constcharnode(n) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
                   begin
                     case char_size of
                       1:
@@ -946,6 +949,7 @@ implementation
                   begin
                     case char_size of
                       1:
+<<<<<<< HEAD
 =======
                   begin
                     case char_size of
@@ -968,6 +972,8 @@ implementation
                   begin
                     case char_size of
                       1:
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                         begin
                           inserttypeconv(n,cchartype);
@@ -1505,6 +1511,9 @@ implementation
         cursectype   : TAsmSectionType;
         hrec         : threc;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1548,6 +1557,9 @@ implementation
         hrec.offset:=0;
         read_typed_const_data(hrec,sym.vardef);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

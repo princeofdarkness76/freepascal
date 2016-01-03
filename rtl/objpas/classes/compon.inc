@@ -634,7 +634,11 @@ end;
 Function  TComponent.SafeCallException(ExceptObject: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ExceptAddr: CodePointer): HResult;
+=======
+  ExceptAddr: Pointer): HResult;
+>>>>>>> graemeg/cpstrnew
 =======
   ExceptAddr: Pointer): HResult;
 >>>>>>> graemeg/cpstrnew
@@ -681,7 +685,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TComponent._AddRef: Longint;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function TComponent._AddRef: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
 function TComponent._AddRef: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> graemeg/cpstrnew
@@ -697,7 +705,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TComponent._Release: Longint;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+=======
+function TComponent._Release: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
+>>>>>>> graemeg/cpstrnew
 =======
 function TComponent._Release: Integer;{$IFNDEF WINDOWS}cdecl{$ELSE}stdcall{$ENDIF};
 >>>>>>> graemeg/cpstrnew

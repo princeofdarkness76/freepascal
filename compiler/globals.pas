@@ -53,6 +53,7 @@ interface
           m_out,m_default_para,m_duplicate_names,m_hintdirective,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           m_property,m_default_inline,m_except,m_advanced_records,m_type_helpers];
        delphiunicodemodeswitches = delphimodeswitches + [m_systemcodepage,m_default_unicodestring];
        fpcmodeswitches =
@@ -64,6 +65,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           m_property,m_default_inline,m_except,m_advanced_records];
        fpcmodeswitches =
          [m_fpc,m_all,m_string_pchar,m_nested_comment,m_repeat_forward,
@@ -72,6 +75,9 @@ interface
        objfpcmodeswitches =
          [m_objfpc,m_fpc,m_all,m_class,m_objpas,m_result,m_string_pchar,m_nested_comment,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -86,6 +92,7 @@ interface
        macmodeswitches =
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          [m_mac,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_default_inline];
        isomodeswitches =
          [m_iso,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_isolike_io,
@@ -95,6 +102,11 @@ interface
          [m_extpas,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto,m_isolike_unary_minus,m_isolike_io,
           m_isolike_program_para,
           m_isolike_mod];
+=======
+         [m_mac,m_all,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto];
+       isomodeswitches =
+         [m_iso,m_all,m_tp_procvar,m_duplicate_names,m_nested_procvars,m_non_local_goto];
+>>>>>>> graemeg/cpstrnew
 =======
          [m_mac,m_all,m_cvar_support,m_mac_procvar,m_nested_procvars,m_non_local_goto];
        isomodeswitches =
@@ -140,7 +152,11 @@ interface
        CP_UTF16 = 1200;
        CP_NONE  = 65535;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> graemeg/cpstrnew
 
 >>>>>>> graemeg/cpstrnew
 
@@ -425,7 +441,11 @@ interface
         moduleswitches : [cs_extsyntax,cs_implicit_exceptions];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath{$ifdef i8086},cs_force_far_calls{$endif}];
+=======
+        localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
+>>>>>>> graemeg/cpstrnew
 =======
         localswitches : [cs_check_io,cs_typed_const_writable,cs_pointermath];
 >>>>>>> graemeg/cpstrnew
@@ -526,6 +546,9 @@ interface
         fputype : fpu_mips2;
 {$endif mips}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -610,8 +633,11 @@ implementation
 {$ifdef mswindows}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       windirs,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef VER2_4}
@@ -620,6 +646,9 @@ implementation
       windirs,
 {$endif VER2_4}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -895,6 +924,7 @@ implementation
            Replace(s,'$FPCTARGET',target_full_string);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          Replace(s,'$FPCSUBARCH',lower(cputypestr[init_settings.cputype]));
          Replace(s,'$FPCABI',lower(abiinfo[target_info.abi].name));
 {$ifdef i8086}
@@ -902,6 +932,8 @@ implementation
 {$else i8086}
          Replace(s,'$FPCMEMORYMODEL','flat');
 {$endif i8086}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1468,6 +1500,7 @@ implementation
         result:=cs_ieee_errors in current_settings.localswitches;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
 
@@ -1476,6 +1509,8 @@ implementation
         result:=
           (target_info.system in systems_dotted_function_names) and
           (target_info.abi<>abi_powerpc_elfv2);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1552,7 +1587,10 @@ implementation
         codegenerror:=false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         DLLsource:=false;
@@ -1612,6 +1650,9 @@ implementation
 =======
         LinkTypeSetExplicitly:=false;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

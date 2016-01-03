@@ -33,6 +33,7 @@ begin
    unsigned values above $80000000, so that they give range check errors
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    on 32-bit systems 
    Solved by using TIoCtlRequest type for FpIOCtl second parameter }
    TCSANOW   : nr:=TIOCSETA;
@@ -41,11 +42,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    on 32-bit systems }
    TCSANOW   : nr:=cint(TIOCSETA);
    TCSADRAIN : nr:=cint(TIOCSETAW);
    TCSAFLUSH : nr:=cint(TIOCSETAF);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

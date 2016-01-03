@@ -7,10 +7,15 @@
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
+=======
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
+{  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2008 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
@@ -75,11 +80,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -100,6 +108,7 @@ interface
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -135,6 +144,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -147,6 +161,9 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -156,7 +173,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -172,7 +192,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -185,6 +208,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -196,6 +220,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -214,11 +243,15 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -253,6 +286,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -291,11 +333,14 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses CFBase, CFDictionary, CGColorSpace, CGGeometry,CVBuffer;
 {$endc} {not MACOSALLINCLUDE}
 
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 uses CFBase, CGColorSpace, CGGeometry,CVBuffer;
@@ -305,6 +350,9 @@ uses CFBase, CGColorSpace, CGGeometry,CVBuffer;
 {$ifc TARGET_OS_MAC}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -367,6 +415,7 @@ var kCVImageBufferDisplayHeightKey: CFStringRef; external name '_kCVImageBufferD
 var kCVImageBufferGammaLevelKey: CFStringRef; external name '_kCVImageBufferGammaLevelKey'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_4_0) *)				// CFNumber describing the gamma level, used in absence of (or ignorance of) kCVImageBufferTransferFunctionKey
 
 var kCVImageBufferICCProfileKey: CFStringRef; external name '_kCVImageBufferICCProfileKey'; (* attribute const *)
@@ -374,11 +423,16 @@ var kCVImageBufferICCProfileKey: CFStringRef; external name '_kCVImageBufferICCP
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)				// CFNumber describing the gamma level, used in absence of (or ignorance of) kCVImageBufferTransferFunctionKey
 
 var kCVImageBufferICCProfileKey: CFStringRef; external name '_kCVImageBufferICCProfileKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)				// CFData representation of the ICC profile
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -404,6 +458,7 @@ var kCVImageBufferColorPrimaries_SMPTE_C: CFStringRef; external name '_kCVImageB
 var kCVImageBufferColorPrimaries_P22: CFStringRef; external name '_kCVImageBufferColorPrimaries_P22'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_6_0) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 var kCVImageBufferTransferFunctionKey: CFStringRef; external name '_kCVImageBufferTransferFunctionKey'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_4_0) *)				// CFString describing the transfer function. This key can be one of the following values
@@ -438,6 +493,9 @@ var kCVImageBufferChromaLocation_Bottom: CFStringRef; external name '_kCVImageBu
 var kCVImageBufferChromaLocation_DV420: CFStringRef; external name '_kCVImageBufferChromaLocation_DV420'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_4_0) *)			    // Cr and Cb samples are alternately co-sited with the left luma samples of the same field.
 =======
+=======
+var kCVImageBufferColorPrimariesKey: CFStringRef; external name '_kCVImageBufferColorPrimariesKey'; (* attribute const *)
+>>>>>>> graemeg/cpstrnew
 =======
 var kCVImageBufferColorPrimariesKey: CFStringRef; external name '_kCVImageBufferColorPrimariesKey'; (* attribute const *)
 >>>>>>> graemeg/cpstrnew
@@ -482,6 +540,9 @@ var kCVImageBufferChromaLocation_Bottom: CFStringRef; external name '_kCVImageBu
 var kCVImageBufferChromaLocation_DV420: CFStringRef; external name '_kCVImageBufferChromaLocation_DV420'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)			    // Cr and Cb samples are alternately co-sited with the left luma samples of the same field.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -489,6 +550,7 @@ var kCVImageBufferChromaLocation_DV420: CFStringRef; external name '_kCVImageBuf
 // These describe the format of the original subsampled data before conversion to 422/2vuy.   In order to use
 // these tags, the data must have been converted to 4:2:2 via simple pixel replication.
 var kCVImageBufferChromaSubsamplingKey: CFStringRef; external name '_kCVImageBufferChromaSubsamplingKey'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_4_0) *)		// CFString/CFNumber with one of the following values
@@ -501,6 +563,8 @@ var kCVImageBufferChromaSubsampling_411: CFStringRef; external name '_kCVImageBu
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)		// CFString/CFNumber with one of the following values
 var kCVImageBufferChromaSubsampling_420: CFStringRef; external name '_kCVImageBufferChromaSubsampling_420'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -509,6 +573,9 @@ var kCVImageBufferChromaSubsampling_422: CFStringRef; external name '_kCVImageBu
 var kCVImageBufferChromaSubsampling_411: CFStringRef; external name '_kCVImageBufferChromaSubsampling_411'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -599,6 +666,11 @@ function CVImageBufferCreateColorSpaceFromAttachments( attachments: CFDictionary
 {$endc} {TARGET_OS_MAC}
 
 <<<<<<< HEAD
+=======
+{$endc} {TARGET_OS_MAC}
+
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
 =======
 {$endc} {TARGET_OS_MAC}
 

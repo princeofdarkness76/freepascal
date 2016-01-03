@@ -126,6 +126,9 @@ type
 =======
     function ResolveLinkID(const Name: String): DOMString;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -807,6 +810,10 @@ var
   Filename: String;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  TempStream: TMemoryStream;
+>>>>>>> graemeg/cpstrnew
 =======
   TempStream: TMemoryStream;
 >>>>>>> graemeg/cpstrnew
@@ -834,6 +841,7 @@ begin
         PageDoc.Free;
       end;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   CreateCSSFile;
@@ -912,6 +920,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   
   if FCSSFile <> '' then
   begin
@@ -925,6 +935,9 @@ begin
     TempStream.Position := 0;
     TempStream.SaveToFile(Engine.output+ExtractFileName(FCSSFile));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -991,6 +1004,7 @@ begin
   Result:=ResolveLinkID(Name);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (Result='') and (AUnitName<>'') and (length(Name)>0) and (Name[1]<>'#') then
      Result:=ResolveLinkID(AUnitName+'.'+Name);
 =======
@@ -1004,6 +1018,11 @@ begin
 end;
 
 function THTMLWriter.ResolveLinkID(const Name: String; Level : Integer = 0): DOMString;
+=======
+  If (Result='') and (AUnitName<>'')  then
+    Result:=ResolveLinkID(AUnitName+'.'+Name);
+end;
+>>>>>>> graemeg/cpstrnew
 
 var
   i: Integer;
@@ -2447,7 +2466,11 @@ procedure THTMLWriter.CreateClassHierarchyPage(AList : TStringList; AddUnit : Bo
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Procedure AppendClass(E : TDomElement);
+=======
+	procedure THTMLWriter.CreateIndexPage(L : TStringList);
+>>>>>>> graemeg/cpstrnew
 =======
 	procedure THTMLWriter.CreateIndexPage(L : TStringList);
 >>>>>>> graemeg/cpstrnew
@@ -3398,6 +3421,9 @@ var
 =======
     s: String;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3552,6 +3578,9 @@ var
       AppendHyperlink(CodeEl, ThisClass);
       if ThisClass.Interfaces.count>0 then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

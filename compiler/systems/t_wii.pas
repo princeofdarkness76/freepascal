@@ -84,7 +84,11 @@ begin
   linklibgcc:=(SharedLibFiles.Find('gcc')<>nil);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName,true);
+=======
+  LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
+>>>>>>> graemeg/cpstrnew
 =======
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
 >>>>>>> graemeg/cpstrnew
@@ -109,7 +113,11 @@ begin
     if s<>'' then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      LinkRes.Add('SEARCH_DIR("'+s+'")');
+=======
+     LinkRes.Add('SEARCH_DIR('+(maybequoted(s))+')');
+>>>>>>> graemeg/cpstrnew
 =======
      LinkRes.Add('SEARCH_DIR('+(maybequoted(s))+')');
 >>>>>>> graemeg/cpstrnew
@@ -256,9 +264,12 @@ begin
     Add('  data PT_LOAD FLAGS(6);');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Add('  bss1 PT_LOAD;');
     Add('  bss2 PT_LOAD;');
     Add('');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -458,7 +469,11 @@ begin
     Add('		__sbss_end = .;');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Add('	} :bss1');
+=======
+    Add('	}');
+>>>>>>> graemeg/cpstrnew
 =======
     Add('	}');
 >>>>>>> graemeg/cpstrnew
@@ -485,7 +500,11 @@ begin
     Add('		__bss_end = .;');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Add('	} :bss2');
+=======
+    Add('	}');
+>>>>>>> graemeg/cpstrnew
 =======
     Add('	}');
 >>>>>>> graemeg/cpstrnew
@@ -593,6 +612,7 @@ begin
   if (cs_link_map in current_settings.globalswitches) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
@@ -601,12 +621,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
   if not(cs_link_nolink in current_settings.globalswitches) then
    Message1(exec_i_linking,current_module.exefilename^);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -619,7 +644,11 @@ begin
   SplitBinCmd(Info.ExeCmd[1],binstr,cmdstr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename,'.elf')))));
+=======
+  Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
+>>>>>>> graemeg/cpstrnew
 =======
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
 >>>>>>> graemeg/cpstrnew
@@ -645,8 +674,13 @@ begin
    begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     success:=DoExec(FindUtil('elf2dol'),ChangeFileExt(current_module.exefilename,'.elf')+' '+ 
      current_module.exefilename,true,false);
+=======
+    success:=DoExec(FindUtil('elf2dol'),ChangeFileExt(current_module.exefilename^,'.elf')+' '+ 
+     current_module.exefilename^,true,false);
+>>>>>>> graemeg/cpstrnew
 =======
     success:=DoExec(FindUtil('elf2dol'),ChangeFileExt(current_module.exefilename^,'.elf')+' '+ 
      current_module.exefilename^,true,false);
@@ -667,7 +701,11 @@ end;
 initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterLinker(ld_wii,TLinkerWii);
+=======
+  RegisterExternalLinker(system_powerpc_wii_info,TLinkerWii);
+>>>>>>> graemeg/cpstrnew
 =======
   RegisterExternalLinker(system_powerpc_wii_info,TLinkerWii);
 >>>>>>> graemeg/cpstrnew

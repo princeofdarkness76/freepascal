@@ -70,6 +70,7 @@ type
     _lineFragmentPadding: CGFloat;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tcFlags: record
       case byte of
        0: (_anonbitfield_NSTextContainer0: cushort);
@@ -77,11 +78,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __tcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTextContainer0: cushort);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -91,7 +97,10 @@ type
         _reserved: 0..((1 shl 13)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

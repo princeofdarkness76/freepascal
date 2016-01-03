@@ -6,7 +6,11 @@
 name=fpc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+>>>>>>> graemeg/cpstrnew
 =======
 version=2.5.1
 >>>>>>> graemeg/cpstrnew
@@ -209,7 +213,11 @@ ifndef CROSSCOMPILE
 ifneq ($(wildcard ide),)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku
+=======
+IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku 
+>>>>>>> graemeg/cpstrnew
 =======
 IDETARGETS=go32v2 win32 win64 linux freebsd os2 emx beos haiku 
 >>>>>>> graemeg/cpstrnew

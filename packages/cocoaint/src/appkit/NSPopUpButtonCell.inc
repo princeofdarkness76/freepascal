@@ -62,6 +62,7 @@ var
     _selectedIndex: cint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __pbcFlags: record
       case byte of
        0: (_anonbitfield_NSPopUpButtonCell0: cuint);
@@ -69,11 +70,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __pbcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPopUpButtonCell0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -90,7 +96,10 @@ var
         RESERVED: 0..((1 shl 19)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

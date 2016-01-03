@@ -2,7 +2,11 @@
     This file is part of the Free Component Library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -35,7 +39,11 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TTestParser = Class(TSQLParser)
+=======
+  TTestParser = Class(TSQLparser)
+>>>>>>> graemeg/cpstrnew
 =======
   TTestParser = Class(TSQLparser)
 >>>>>>> graemeg/cpstrnew
@@ -57,6 +65,7 @@ type
     FParser : TTestParser;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FToFree : TSQLElement; //will be freed by test teardown
     FErrSource : string;
   protected
@@ -71,6 +80,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     FToFree: TSQLElement;
     FErrSource : string;
   protected
@@ -83,6 +94,9 @@ type
     procedure TestDropStatement(Const ASource : string;C : TSQLElementClass);
     Function TestCreateStatement(Const ASource,AName : string;C: TSQLElementClass) : TSQLCreateOrAlterStatement;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -101,6 +115,7 @@ type
     procedure AssertEquals(const AMessage: String; Expected, Actual: TTriggerState); overload;
     procedure AssertEquals(const AMessage: String; Expected, Actual: TTriggerOperations); overload;
     function AssertLiteralExpr(Const AMessage : String; Element : TSQLExpression; ALiteralClass : TSQLElementClass) : TSQLLiteral;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     procedure AssertIdentifierName(Const AMessage : String; Const AExpected : String; Element : TSQLElement);
@@ -123,6 +138,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Procedure AssertIdentifierName(Const AMessage : String; Const AExpected : String; Element : TSQLElement);
     Procedure AssertField(AField : TSQLElement; Const AName : String; Const AAlias : String = '');
     Procedure AssertAggregate(AField : TSQLElement; AAgregate : TSQLAggregateFunction; Const AFieldName : String; AOption : TSQLAggregateOption; Const AAlias : String = '');
@@ -141,6 +158,9 @@ type
     Property Parser : TTestParser Read FParser;
     Property ToFree : TSQLElement Read FToFree Write FTofree;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -170,8 +190,13 @@ type
   Published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestCreateGenerator;
     procedure TestSetGenerator;
+=======
+    Procedure TestCreateGenerator;
+    Procedure TestSetGenerator;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestCreateGenerator;
     Procedure TestSetGenerator;
@@ -188,8 +213,13 @@ type
   Published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestCreateRole;
     procedure TestAlterRole;
+=======
+    Procedure TestCreateRole;
+    Procedure TestAlterRole;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestCreateRole;
     Procedure TestAlterRole;
@@ -207,7 +237,11 @@ type
   Published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestStringType1;
+=======
+    Procedure TestStringType1;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestStringType1;
 >>>>>>> graemeg/cpstrnew
@@ -229,7 +263,11 @@ type
     procedure TestStringType14;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestStringType15;
+=======
+    Procedure TestStringType15;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestStringType15;
 >>>>>>> graemeg/cpstrnew
@@ -242,7 +280,11 @@ type
     procedure TestStringType19;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestStringTypeErrors1;
+=======
+    Procedure TestStringTypeErrors1;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestStringTypeErrors1;
 >>>>>>> graemeg/cpstrnew
@@ -274,8 +316,11 @@ type
     procedure TestBlob6;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestBlob7;
     procedure TestBlob8;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -291,8 +336,11 @@ type
     procedure TestFloat;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestDoublePrecision;
     procedure TestDoublePrecisionDefault;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -310,7 +358,11 @@ type
     procedure TestCheckBracesError;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestCheckParamError;
+=======
+    Procedure TestCheckParamError;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestCheckParamError;
 >>>>>>> graemeg/cpstrnew
@@ -335,8 +387,11 @@ type
     procedure TestNotStarting;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestStartingWith;
     procedure TestNotStartingWith;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -347,7 +402,11 @@ type
     procedure TestNotLikeEscape;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestAnd;
+=======
+    Procedure TestAnd;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestAnd;
 >>>>>>> graemeg/cpstrnew
@@ -366,6 +425,7 @@ type
   Published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestSimpleDomain;
     procedure TestSimpleDomainAs;
     procedure TestNotNullDomain;
@@ -375,11 +435,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Procedure TestSimpleDomain;
     Procedure TestSimpleDomainAs;
     Procedure TestNotNullDomain;
     procedure TestDefaultNotNullDomain;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -402,9 +467,15 @@ type
   Published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestException;
     procedure TestAlterException;
     procedure TestExceptionError1;
+=======
+    Procedure TestException;
+    procedure TestAlterException;
+    Procedure TestExceptionError1;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestException;
     procedure TestAlterException;
@@ -448,7 +519,11 @@ type
   Published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestCreateOneSimpleField;
+=======
+    Procedure TestCreateOneSimpleField;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestCreateOneSimpleField;
 >>>>>>> graemeg/cpstrnew
@@ -486,6 +561,7 @@ type
     procedure TestCreateNamedCheckConstraint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestAlterDropField;
     procedure TestAlterDropFields;
     procedure TestAlterDropConstraint;
@@ -505,6 +581,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Procedure TestAlterDropField;
     Procedure TestAlterDropFields;
     Procedure TestAlterDropConstraint;
@@ -522,6 +600,9 @@ type
     Procedure TestAlterAddForeignkey;
     Procedure TestAlterAddNamedForeignkey;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -533,6 +614,7 @@ type
   Private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestDelete(Const ASource , ATable: String) : TSQLDeleteStatement;
   Published
     procedure TestSimpleDelete;
@@ -541,12 +623,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestDelete(Const ASource , ATable: String) : TSQLDeleteStatement;
   Published
     Procedure TestSimpleDelete;
     Procedure TestSimpleDeleteAlias;
     Procedure TestDeleteWhereNull;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -558,6 +645,7 @@ type
   Private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestUpdate(Const ASource , ATable: String) : TSQLUpdateStatement;
   Published
     procedure TestUpdateOneField;
@@ -567,6 +655,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestUpdate(Const ASource , ATable: String) : TSQLUpdateStatement;
   Published
     Procedure TestUpdateOneField;
@@ -574,6 +664,9 @@ type
     Procedure TestUpdateTwoFields;
     Procedure TestUpdateOneFieldWhereIsNull;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -585,6 +678,7 @@ type
   Private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestInsert(Const ASource , ATable: String) : TSQLInsertStatement;
   Published
     procedure TestInsertOneField;
@@ -593,12 +687,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestInsert(Const ASource , ATable: String) : TSQLInsertStatement;
   Published
     Procedure TestInsertOneField;
     procedure TestInsertTwoFields;
     Procedure TestInsertOneValue;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -610,6 +709,7 @@ type
   TTestSelectParser = Class(TTestSQLParser)
   Private
     FSelect : TSQLSelectStatement;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function TestSelect(Const ASource : String) : TSQLSelectStatement;
@@ -628,6 +728,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestSelect(Const ASource : String) : TSQLSelectStatement;
     Procedure TestSelectError(Const ASource : String);
     Procedure DoExtractSimple(Expected : TSQLExtractElement);
@@ -641,6 +743,9 @@ type
     procedure TestSelectTwoFieldAliasesOneTable;
     Procedure TestSelectOneDistinctFieldOneTable;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -650,7 +755,10 @@ type
     procedure TestSelectOneFieldOneTableAlias;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestSelectOneFieldOneTableAsAlias;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -661,8 +769,12 @@ type
     procedure TestSelectTwoFieldsTwoLeftTablesJoin;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestSelectTwoFieldsTwoFullOuterTablesJoin;
     procedure TestSelectTwoFieldsTwoFullTablesJoin;
+=======
+    procedure TestSelectTwoFieldsTwoOuterTablesJoin;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure TestSelectTwoFieldsTwoOuterTablesJoin;
 >>>>>>> graemeg/cpstrnew
@@ -675,7 +787,11 @@ type
     procedure TestSelectTwoFieldsThreeBracketTablesJoin;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestAggregateCount;
+=======
+    Procedure TestAggregateCount;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestAggregateCount;
 >>>>>>> graemeg/cpstrnew
@@ -703,6 +819,7 @@ type
     procedure TestAggregateAvgDistinct;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestUpperConst;
     procedure TestUpperError;
     procedure TestGenID;
@@ -713,6 +830,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Procedure TestUpperConst;
     procedure TestUpperError;
     Procedure TestGenID;
@@ -721,6 +840,9 @@ type
     Procedure TestCastSimple;
     Procedure TestExtractSimple;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -732,7 +854,10 @@ type
     procedure TestOrderByThreeDescFields;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestOrderByOneTableField;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -748,6 +873,7 @@ type
     procedure TestHavingOne;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestUnionSimple;
     procedure TestUnionSimpleAll;
     procedure TestUnionSimpleOrderBy;
@@ -755,11 +881,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Procedure TestUnionSimple;
     procedure TestUnionSimpleAll;
     procedure TestUnionSimpleOrderBy;
     Procedure TestUnionDouble;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -781,7 +912,11 @@ type
     procedure TestWhereSome;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestParam;
+=======
+    Procedure TestParam;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestParam;
 >>>>>>> graemeg/cpstrnew
@@ -796,6 +931,7 @@ type
   TTestRollBackParser = Class(TTestSQLParser)
   Private
     FRollback : TSQLRollbackStatement;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function TestRollback(Const ASource : String) : TSQLRollbackStatement;
@@ -813,6 +949,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestRollback(Const ASource : String) : TSQLRollbackStatement;
     Procedure TestRollbackError(Const ASource : String);
     Property Rollback : TSQLRollbackStatement Read FRollback;
@@ -826,6 +964,9 @@ type
     Procedure TestRollbackTransactionRelease;
     Procedure TestRollbackTransactionWorkRelease;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -836,6 +977,7 @@ type
   TTestCommitParser = Class(TTestSQLParser)
   Private
     FCommit : TSQLCommitStatement;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function TestCommit(Const ASource : String) : TSQLCommitStatement;
@@ -861,6 +1003,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestCommit(Const ASource : String) : TSQLCommitStatement;
     Procedure TestCommitError(Const ASource : String);
     Property Commit : TSQLCommitStatement Read FCommit;
@@ -882,6 +1026,9 @@ type
     Procedure TestCommitTransactionReleaseRetain;
     Procedure TestCommitTransactionWorkReleaseRetain;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -895,6 +1042,7 @@ type
     FExecute : TSQLExecuteProcedureStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestExecute(Const ASource : String) : TSQLExecuteProcedureStatement;
     procedure TestExecuteError(Const ASource : String);
     property Execute: TSQLExecuteProcedureStatement Read FExecute;
@@ -905,6 +1053,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestExecute(Const ASource : String) : TSQLExecuteProcedureStatement;
     Procedure TestExecuteError(Const ASource : String);
     Property Execute: TSQLExecuteProcedureStatement Read FExecute;
@@ -913,6 +1063,9 @@ type
     Procedure TestExecuteSimpleTransaction;
     Procedure TestExecuteSimpleReturningValues;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -938,6 +1091,7 @@ type
     FConnect : TSQLConnectStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestConnect(Const ASource : String) : TSQLConnectStatement;
     procedure TestConnectError(Const ASource : String);
     property Connect: TSQLConnectStatement Read FConnect;
@@ -947,6 +1101,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestConnect(Const ASource : String) : TSQLConnectStatement;
     Procedure TestConnectError(Const ASource : String);
     Property Connect: TSQLConnectStatement Read FConnect;
@@ -954,6 +1110,9 @@ type
     Procedure TestConnectSimple;
     Procedure TestConnectUser;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -971,6 +1130,7 @@ type
     FCreateDB : TSQLCreateDatabaseStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestCreate(Const ASource : String) : TSQLCreateDatabaseStatement;
     procedure TestCreateError(Const ASource : String);
     property CreateDB : TSQLCreateDatabaseStatement Read FCreateDB;
@@ -979,12 +1139,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestCreate(Const ASource : String) : TSQLCreateDatabaseStatement;
     Procedure TestCreateError(Const ASource : String);
     Property CreateDB : TSQLCreateDatabaseStatement Read FCreateDB;
   published
     Procedure TestSimple;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1022,6 +1187,7 @@ type
     FAlterDB : TSQLAlterDatabaseStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestAlter(Const ASource : String) : TSQLAlterDatabaseStatement;
     procedure TestAlterError(Const ASource : String);
     property AlterDB : TSQLAlterDatabaseStatement Read FAlterDB;
@@ -1030,12 +1196,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestAlter(Const ASource : String) : TSQLAlterDatabaseStatement;
     Procedure TestAlterError(Const ASource : String);
     Property AlterDB : TSQLAlterDatabaseStatement Read FAlterDB;
   published
     Procedure TestSimple;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1055,6 +1226,7 @@ type
     FView : TSQLCreateViewStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestCreate(Const ASource : String) : TSQLCreateViewStatement;
     procedure TestCreateError(Const ASource : String);
     property View : TSQLCreateViewStatement Read FView;
@@ -1063,12 +1235,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestCreate(Const ASource : String) : TSQLCreateViewStatement;
     Procedure TestCreateError(Const ASource : String);
     Property View : TSQLCreateViewStatement Read FView;
   Published
     Procedure TestSimple;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1084,6 +1261,7 @@ type
     FShadow : TSQLCreateShadowStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestCreate(Const ASource : String) : TSQLCreateShadowStatement;
     procedure TestCreateError(Const ASource : String);
     property Shadow : TSQLCreateShadowStatement Read FShadow;
@@ -1092,12 +1270,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestCreate(Const ASource : String) : TSQLCreateShadowStatement;
     Procedure TestCreateError(Const ASource : String);
     Property Shadow : TSQLCreateShadowStatement Read FShadow;
   published
     Procedure TestSimple;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1124,6 +1307,7 @@ type
     procedure TestParseStatementError;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestStatement(Const ASource : String) : TSQLStatement;
     procedure TestStatementError(Const ASource : String);
     property Statement : TSQLStatement Read FStatement;
@@ -1134,6 +1318,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestStatement(Const ASource : String) : TSQLStatement;
     Procedure TestStatementError(Const ASource : String);
     Property Statement : TSQLStatement Read FStatement;
@@ -1142,6 +1328,9 @@ type
     Procedure TestExceptionError;
     Procedure TestExit;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1200,6 +1389,7 @@ type
     FStatement : TSQLCreateProcedureStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestCreate(Const ASource : String) : TSQLCreateProcedureStatement;
     procedure TestCreateError(Const ASource : String);
     property Statement : TSQLCreateProcedureStatement Read FStatement;
@@ -1208,12 +1398,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestCreate(Const ASource : String) : TSQLCreateProcedureStatement;
     Procedure TestCreateError(Const ASource : String);
     Property Statement : TSQLCreateProcedureStatement Read FStatement;
   Published
     Procedure TestEmptyProcedure;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1234,6 +1429,7 @@ type
     FStatement : TSQLAlterCreateTriggerStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestCreate(Const ASource : String) : TSQLCreateTriggerStatement;
     function TestAlter(Const ASource : String) : TSQLAlterTriggerStatement;
     procedure TestCreateError(Const ASource : String);
@@ -1244,6 +1440,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestCreate(Const ASource : String) : TSQLCreateTriggerStatement;
     Function TestAlter(Const ASource : String) : TSQLAlterTriggerStatement;
     Procedure TestCreateError(Const ASource : String);
@@ -1252,6 +1450,9 @@ type
     Procedure TestEmptyTrigger;
     Procedure TestExitTrigger;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1273,6 +1474,7 @@ type
     FStatement : TSQLDeclareExternalFunctionStatement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function TestCreate(Const ASource : String) : TSQLDeclareExternalFunctionStatement;
     procedure TestCreateError(Const ASource : String);
     property Statement : TSQLDeclareExternalFunctionStatement Read FStatement;
@@ -1282,6 +1484,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestCreate(Const ASource : String) : TSQLDeclareExternalFunctionStatement;
     Procedure TestCreateError(Const ASource : String);
     Property Statement : TSQLDeclareExternalFunctionStatement Read FStatement;
@@ -1289,6 +1493,9 @@ type
     Procedure TestEmptyfunction;
     Procedure TestEmptyfunctionByValue;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1303,6 +1510,7 @@ type
   TTestGrantParser = Class(TTestSQLParser)
   Private
     FStatement : TSQLGrantStatement;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function TestGrant(Const ASource : String) : TSQLGrantStatement;
@@ -1326,6 +1534,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestGrant(Const ASource : String) : TSQLGrantStatement;
     Procedure TestGrantError(Const ASource : String);
     Property Statement : TSQLGrantStatement Read FStatement;
@@ -1345,6 +1555,9 @@ type
     Procedure TestUserPrivilege;
     Procedure TestUserPrivilegeWithGrant;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1355,7 +1568,11 @@ type
     procedure TestPublicPrivilege;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestExecuteToUser;
+=======
+    Procedure TestExecuteToUser;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestExecuteToUser;
 >>>>>>> graemeg/cpstrnew
@@ -1370,8 +1587,12 @@ type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   { TTestRevokeParser }
+=======
+  { TTestGrantParser }
+>>>>>>> graemeg/cpstrnew
 =======
   { TTestGrantParser }
 >>>>>>> graemeg/cpstrnew
@@ -1382,6 +1603,7 @@ type
   TTestRevokeParser = Class(TTestSQLParser)
   Private
     FStatement : TSQLRevokeStatement;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function TestRevoke(Const ASource : String) : TSQLRevokeStatement;
@@ -1405,6 +1627,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     Function TestRevoke(Const ASource : String) : TSQLRevokeStatement;
     Procedure TestRevokeError(Const ASource : String);
     Property Statement : TSQLRevokeStatement Read FStatement;
@@ -1424,6 +1648,9 @@ type
     Procedure TestUserPrivilege;
     Procedure TestUserPrivilegeWithRevoke;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1434,7 +1661,11 @@ type
     procedure TestPublicPrivilege;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestExecuteToUser;
+=======
+    Procedure TestExecuteToUser;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestExecuteToUser;
 >>>>>>> graemeg/cpstrnew
@@ -1449,6 +1680,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TTestGlobalParser }
 
   TTestGlobalParser = Class(TTestSQLParser)
@@ -1460,10 +1692,13 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 implementation
 
 uses typinfo;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { TTestGlobalParser }
@@ -1474,6 +1709,8 @@ begin
   AssertNull('Empty statement returns nil',Parser.Parse);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1511,7 +1748,11 @@ procedure TTestSQLParser.SetUp;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // nothing yet
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1856,7 +2097,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSQLParser.TestStringDef(ASource : String; ExpectDT : TSQLDataType; ExpectLen : Integer; ExpectCharset : TSQLStringType='');
+=======
+Procedure TTestSQLParser.TestStringDef(ASource : String; ExpectDT : TSQLDataType; ExpectLen : Integer; ExpectCharset : TSQLStringType='');
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure TTestSQLParser.TestStringDef(ASource : String; ExpectDT : TSQLDataType; ExpectLen : Integer; ExpectCharset : TSQLStringType='');
 >>>>>>> graemeg/cpstrnew
@@ -2389,6 +2634,7 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TTestTypeParser.TestBlob7;
 var
@@ -2416,6 +2662,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TTestTypeParser.TestSmallInt;
 
 Var
@@ -2433,6 +2681,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestTypeParser.TestDoublePrecision;
 var
   TD : TSQLTypeDefinition;
@@ -2447,6 +2696,8 @@ begin
   TD:=TestType('DOUBLE PRECISION DEFAULT 0',[],sdtDoublePrecision);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2722,7 +2973,11 @@ begin
   B:=TSQLBinaryExpression(TestCheck('VALUE STARTING ''3''',TSQLBinaryExpression));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Starting operator',boStarting,B.Operation);
+=======
+  AssertEquals('Like operator',boStarting,B.Operation);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Like operator',boStarting,B.Operation);
 >>>>>>> graemeg/cpstrnew
@@ -2740,6 +2995,7 @@ Var
   U : TSQLUnaryExpression;
 begin
   U:=TSQLUnaryExpression(TestCheck('VALUE NOT STARTING ''3''',TSQLUnaryExpression));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   AssertEquals('Not operator',uoNot,U.Operation);
@@ -2776,11 +3032,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Like operator',uoNot,U.Operation);
   CheckClass(U.Operand,TSQLBinaryExpression);
   B:=TSQLBinaryExpression(U.Operand);
   AssertEquals('Like operator',boStarting,B.Operation);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2790,7 +3051,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2985,6 +3249,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestDomainParser.TestCheckDomain;
 var
   P : TSQLCreateOrAlterStatement;
@@ -3020,6 +3285,8 @@ begin
   AssertEquals('Not null',True,T.NotNull);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4423,6 +4690,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSelectParser.TestSelectOneTableFieldOneTable;
 
 begin
@@ -4435,6 +4703,8 @@ begin
   AssertTable(Select.Tables[0],'A');
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4489,6 +4759,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSelectParser.TestSelectOneFieldOneTableAsAlias;
 begin
   TestSelect('SELECT C.B FROM A AS C');
@@ -4498,6 +4769,8 @@ begin
   AssertTable(Select.Tables[0],'A');
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4544,6 +4817,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSelectParser.TestSelectTwoFieldsTwoFullOuterTablesJoin;
 Var
   J : TSQLJoinTableReference;
@@ -4565,13 +4839,20 @@ procedure TTestSelectParser.TestSelectTwoFieldsTwoOuterTablesJoin;
 =======
 procedure TTestSelectParser.TestSelectTwoFieldsTwoOuterTablesJoin;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TTestSelectParser.TestSelectTwoFieldsTwoOuterTablesJoin;
+>>>>>>> graemeg/cpstrnew
 Var
   J : TSQLJoinTableReference;
 
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TestSelect('SELECT B,C FROM A FULL JOIN D ON E=F');
+=======
+  TestSelect('SELECT B,C FROM A OUTER JOIN D ON E=F');
+>>>>>>> graemeg/cpstrnew
 =======
   TestSelect('SELECT B,C FROM A OUTER JOIN D ON E=F');
 >>>>>>> graemeg/cpstrnew
@@ -4584,7 +4865,11 @@ begin
   AssertEquals('One table',1,Select.Tables.Count);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   J:=AssertJoin(Select.Tables[0],'A','D',jtFullOuter);
+=======
+  J:=AssertJoin(Select.Tables[0],'A','D',jtOuter);
+>>>>>>> graemeg/cpstrnew
 =======
   J:=AssertJoin(Select.Tables[0],'A','D',jtOuter);
 >>>>>>> graemeg/cpstrnew
@@ -4990,7 +5275,10 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -5035,6 +5323,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSelectParser.TestOrderByOneTableField;
 
 begin
@@ -5050,6 +5339,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -7499,7 +7790,11 @@ begin
   TestCreate('CREATE PROCEDURE A AS BEGIN END');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertIdentifierName('Correct procedure name','A',Statement.ObjectName);
+=======
+  AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
 >>>>>>> graemeg/cpstrnew
@@ -7518,7 +7813,11 @@ begin
   TestCreate('CREATE PROCEDURE A AS BEGIN EXIT; END');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertIdentifierName('Correct procedure name','A',Statement.ObjectName);
+=======
+  AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
 >>>>>>> graemeg/cpstrnew
@@ -7541,7 +7840,11 @@ begin
   TestCreate('CREATE PROCEDURE A (P INT) AS BEGIN END');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertIdentifierName('Correct procedure name','A',Statement.ObjectName);
+=======
+  AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
 >>>>>>> graemeg/cpstrnew
@@ -7566,7 +7869,11 @@ begin
   TestCreate('CREATE PROCEDURE A (P INT,Q CHAR(4)) AS BEGIN END');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertIdentifierName('Correct procedure name','A',Statement.ObjectName);
+=======
+  AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
 >>>>>>> graemeg/cpstrnew
@@ -7597,7 +7904,11 @@ begin
   TestCreate('CREATE PROCEDURE A RETURNS (P INT) AS BEGIN END');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertIdentifierName('Correct procedure name','A',Statement.ObjectName);
+=======
+  AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
 >>>>>>> graemeg/cpstrnew
@@ -7622,7 +7933,11 @@ begin
   TestCreate('CREATE PROCEDURE A RETURNS (P INT, Q CHAR(5)) AS BEGIN END');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertIdentifierName('Correct procedure name','A',Statement.ObjectName);
+=======
+  AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertIdentifierName('Correcte procedure naam','A',Statement.ObjectName);
 >>>>>>> graemeg/cpstrnew
@@ -8944,8 +9259,12 @@ initialization
                  TTestGrantParser,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  TTestRevokeParser,
                  TTestGlobalParser]);
+=======
+                 TTestRevokeParser]);
+>>>>>>> graemeg/cpstrnew
 =======
                  TTestRevokeParser]);
 >>>>>>> graemeg/cpstrnew

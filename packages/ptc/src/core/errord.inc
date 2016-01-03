@@ -2,7 +2,11 @@
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009, 2010, 2012  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -51,7 +55,11 @@ type
     procedure Assign(const AError: TPTCError);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function Equals(Obj: TObject): Boolean; override;
+=======
+    function Equals(const AError: TPTCError): Boolean;
+>>>>>>> graemeg/cpstrnew
 =======
     function Equals(const AError: TPTCError): Boolean;
 >>>>>>> graemeg/cpstrnew

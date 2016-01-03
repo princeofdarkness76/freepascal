@@ -74,8 +74,14 @@ interface
 {$endif m68k}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           ait_symbolpair,
           ait_weak,
+=======
+{$ifdef arm}
+          ait_thumb_func,
+{$endif arm}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef arm}
           ait_thumb_func,
@@ -217,8 +223,14 @@ interface
 {$endif m68k}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           'symbolpair',
           'weak',
+=======
+{$ifdef arm}
+          'thumb_func',
+{$endif arm}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef arm}
           'thumb_func',
@@ -260,6 +272,9 @@ interface
        ,top_conditioncode
        ,top_modeflags
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -411,6 +426,7 @@ interface
         asd_reference,asd_no_dead_strip,asd_weak_reference,asd_lazy_reference,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         asd_weak_definition,
         { for Jasmin }
         asd_jclass,asd_jinterface,asd_jsuper,asd_jfield,asd_jlimit,asd_jline,
@@ -420,6 +436,9 @@ interface
         asd_data_region, asd_end_data_region,
         { .thumb_func for ARM }
         asd_thumb_func
+=======
+        asd_weak_definition
+>>>>>>> graemeg/cpstrnew
 =======
         asd_weak_definition
 >>>>>>> graemeg/cpstrnew
@@ -454,6 +473,7 @@ interface
         'extern','nasm_import', 'tc', 'reference',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'no_dead_strip','weak_reference','lazy_reference','weak_definition',
         { for Jasmin }
         'class','interface','super','field','limit','line',
@@ -473,6 +493,9 @@ interface
       );
       symbolpairkindstr: array[TSymbolPairKind] of string[11]=(
         '.set', '.thumb_set', '.localentry'
+=======
+        'no_dead_strip','weak_reference','lazy_reference','weak_definition'
+>>>>>>> graemeg/cpstrnew
 =======
         'no_dead_strip','weak_reference','lazy_reference','weak_definition'
 >>>>>>> graemeg/cpstrnew
@@ -646,6 +669,7 @@ interface
           procedure ppuwrite(ppufile:tcompilerppufile);override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$warnings off}
          private
           { this constructor is made private on purpose }
@@ -655,11 +679,16 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
          private
           { this constructor is made private on purpose }
           { because sections should be created via new_section() }
           constructor Create(Asectype:TAsmSectiontype;Aname:string;Aalign:byte;Asecorder:TasmSectionorder=secorder_default);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -673,7 +702,11 @@ interface
           size      : asizeint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           constructor Create(const _name : string;_size : asizeint);
+=======
+          constructor Create(const _name : string;_size : aint);
+>>>>>>> graemeg/cpstrnew
 =======
           constructor Create(const _name : string;_size : aint);
 >>>>>>> graemeg/cpstrnew
@@ -729,6 +762,7 @@ interface
           constructor Create_rva_sym(_sym:tasmsymbol);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           constructor Createname(const name:string;ofs:asizeint);
           constructor Createname(const name:string;_symtyp:Tasmsymtype;ofs:asizeint);
           constructor Create_type_name(_typ:taiconst_type;const name:string;ofs:asizeint);
@@ -743,6 +777,8 @@ interface
           constructor Create_fardataseg;
 {$endif i8086}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           constructor Createname(const name:string;ofs:aint);
@@ -1053,7 +1089,10 @@ interface
       cai_cpu   : tai_cpu_class = tai_cpu_abstract;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cai_seh_directive: tai_seh_directive_class = tai_seh_directive;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1895,6 +1934,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor tai_const.Createname(const name:string;ofs:asizeint);
       begin
          self.Createname(name,AT_NONE,ofs);
@@ -1903,6 +1943,8 @@ implementation
 
     constructor tai_const.Createname(const name:string;_symtyp:Tasmsymtype;ofs:asizeint);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     constructor tai_const.Createname(const name:string;ofs:aint);
@@ -2043,11 +2085,17 @@ implementation
             result:=2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           aitconst_32bit,aitconst_darwin_dwarf_delta32,
 	  aitconst_32bit_unaligned:
             result:=4;
           aitconst_64bit,aitconst_darwin_dwarf_delta64,
 	  aitconst_64bit_unaligned:
+=======
+          aitconst_32bit,aitconst_darwin_dwarf_delta32:
+            result:=4;
+          aitconst_64bit,aitconst_darwin_dwarf_delta64:
+>>>>>>> graemeg/cpstrnew
 =======
           aitconst_32bit,aitconst_darwin_dwarf_delta32:
             result:=4;
@@ -2156,6 +2204,9 @@ implementation
         value:=ppufile.getreal;
         savesize:=ppufile.getbyte;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2175,6 +2226,9 @@ implementation
         ppufile.putreal(value);
         ppufile.putbyte(savesize);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2347,6 +2401,10 @@ implementation
         labsym.is_set:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        is_global:=(labsym.bind in [AB_GLOBAL,AB_PRIVATE_EXTERN]);
+>>>>>>> graemeg/cpstrnew
 =======
         is_global:=(labsym.bind in [AB_GLOBAL,AB_PRIVATE_EXTERN]);
 >>>>>>> graemeg/cpstrnew
@@ -3256,6 +3314,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {****************************************************************************
                               tai_seh_directive
@@ -3466,6 +3525,8 @@ begin
   if ord(high(taitype))>31 then
     internalerror(201108181);
 {$pop}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

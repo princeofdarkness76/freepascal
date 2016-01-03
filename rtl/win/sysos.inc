@@ -248,9 +248,12 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    {$ifdef FPC_UNICODE_RTLx}
    { command line/environment functions }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    { command line/environment functions }
@@ -365,6 +368,9 @@ type
    function GetCurrentDirectory(bufsize : longint;name : pchar) : longbool;
      stdcall;external KernelDLL name 'GetCurrentDirectoryA';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -373,6 +379,7 @@ type
      stdcall;external KernelDLL name 'GetConsoleMode';
    function GetConsoleOutputCP : UINT;
      stdcall; external KernelDLL name 'GetConsoleOutputCP';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    function GetOEMCP: UINT;
@@ -384,6 +391,9 @@ type
      stdcall; external 'oleaut32.dll' name 'SysFreeString';
    function SysReAllocStringLen(var bstr:pointer;psz: pointer;
      len:dword): Integer; stdcall;external 'oleaut32.dll' name 'SysReAllocStringLen';
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -447,8 +457,11 @@ type
       widestringmanager.Ansi2WideMoveProc(pchar(pointer(source)),StringCodePage(source),widestring(pointer(result)),length(source));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     end;
 
 
@@ -464,6 +477,7 @@ type
         end
       else
         result:=nil;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
     end;
 
@@ -489,6 +503,8 @@ type
       result:=nil;
       { will call UnicodeString overload if FPC_WIDESTRING_EQUAL_UNICODESTRING is set }
       SetString(widestring(pointer(result)),PWideChar(source),length(source));
+=======
+>>>>>>> graemeg/cpstrnew
     end;
 
 

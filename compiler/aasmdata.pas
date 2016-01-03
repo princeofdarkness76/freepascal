@@ -91,10 +91,14 @@ interface
          sp_objcvartypes,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          sp_objcprotocolrefs,
          sp_varsets,
          sp_floats,
          sp_guids
+=======
+         sp_objcprotocolrefs
+>>>>>>> graemeg/cpstrnew
 =======
          sp_objcprotocolrefs
 >>>>>>> graemeg/cpstrnew
@@ -172,9 +176,12 @@ interface
         WideInits     : TLinkedList;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits   : TLinkedList;
         constructor create(n: pshortstring);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         { hash tables for reusing constant storage }
@@ -223,10 +230,13 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     const
       casmdata: TAsmDataClass = TAsmData;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       TTCInitItem = class(TLinkedListItem)
@@ -236,6 +246,9 @@ interface
         constructor Create(asym: tsym; aoffset: aint; alabel: TAsmLabel);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -309,7 +322,10 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {*****************************************************************************
@@ -411,7 +427,10 @@ implementation
         WideInits :=TLinkedList.create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits:=TLinkedList.create;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -449,7 +468,10 @@ implementation
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ResStrInits.free;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -563,6 +585,7 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (target_info.system in (systems_linux + systems_bsd + systems_android)) and
            { the next condition was
              (cs_create_smart in current_settings.moduleswitches) and
@@ -573,11 +596,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         if (target_info.system in systems_linux) and
            (cs_link_smart in current_settings.globalswitches) and
            (alt = alt_dbgline) then
           l:=TAsmLabel.createglobal(AsmSymbolDict,name,FNextLabelNr[alt],alt)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

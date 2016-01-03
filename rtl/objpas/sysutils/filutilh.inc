@@ -164,6 +164,9 @@ Function FileOpen (Const FileName : string; Mode : Integer) : THandle;
 Function FileCreate (Const FileName : String) : THandle;
 Function FileCreate (Const FileName : String; Mode : Integer) : THandle;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

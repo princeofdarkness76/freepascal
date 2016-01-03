@@ -42,6 +42,7 @@ type
   NSDecimal = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSDecimal0: cint);
     1: (data: bitpacked record
@@ -56,6 +57,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     _exponent: 0..((1 shl 8)-1);
     _length: 0..((1 shl 4)-1);
     _isNegative: 0..1;
@@ -63,6 +66,9 @@ type
     _reserved: 0..((1 shl 18)-1);
     _mantissa: cushort;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -35,6 +35,9 @@ type
   fpc_big_widechararray = array[0..0] of widechar;
 {$endif ndef FPC_STRTOCHARARRAYPROC}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -108,10 +111,13 @@ procedure fpc_AnsiStr_Float(d : ValReal;len,fr,rt : SizeInt;out s : RawByteStrin
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_ansistr_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out s:RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); compilerproc;
 procedure fpc_ansistr_bool(b : boolean;len:sizeint;out s:RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); compilerproc;
 procedure fpc_AnsiStr_Currency(c : currency;len,fr : SizeInt;out s : RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); compilerproc;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure fpc_ansistr_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out s:ansistring); compilerproc;
@@ -196,7 +202,10 @@ procedure fpc_AnsiStr_Currency(c : currency;len,fr : SizeInt;out s : ansistring)
     procedure fpc_widestr_bool(b : boolean;len:sizeint;out s:widestring);compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     {$ifdef FPC_HAS_STR_CURRENCY}
@@ -210,7 +219,10 @@ procedure fpc_AnsiStr_Currency(c : currency;len,fr : SizeInt;out s : ansistring)
     procedure fpc_unicodestr_bool(b : boolean;len:sizeint;out s:unicodestring);compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     {$ifdef FPC_HAS_STR_CURRENCY}
@@ -223,6 +235,7 @@ procedure fpc_chararray_Float(d : ValReal;len,fr,rt : SizeInt;out a : array of c
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef CPUAVR}
 { currently, the avr code generator fails on this procedure, so we disable it, 
   this is not a good solution but fixing compilation of this procedure for
@@ -233,6 +246,8 @@ procedure fpc_chararray_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;ou
 
 procedure fpc_chararray_bool(b : boolean;len:sizeint;out a : array of char);compilerproc;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure fpc_chararray_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out a : array of char);compilerproc;
@@ -395,6 +410,9 @@ Procedure fpc_AnsiStr_CheckRange(p : Pointer; index : SizeInt); compilerproc;
 Procedure fpc_AnsiStr_SetLength (Var S : RawByteString; l : SizeInt{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); compilerproc;
 Function  fpc_ansistr_Copy (Const S : RawByteString; Index,Size : SizeInt) : AnsiString;compilerproc;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -431,8 +449,12 @@ Function fpc_WideStr_Compare(const S1,S2 : WideString): SizeInt; compilerproc;
 Function fpc_WideStr_Compare_equal(const S1,S2 : WideString): SizeInt; compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_WideStr_RangeCheck(p: Pointer; index : SizeInt); compilerproc;
 
+=======
+Procedure fpc_WideStr_CheckRange(p: Pointer; index : SizeInt); compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure fpc_WideStr_CheckRange(p: Pointer; index : SizeInt); compilerproc;
 >>>>>>> graemeg/cpstrnew
@@ -446,7 +468,10 @@ function fpc_widestr_Unique(Var S : Pointer): Pointer; compilerproc;
 {$endif FPC_WINLIKEWIDESTRING}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Function fpc_WChar_To_AnsiStr(const c : WideChar{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}): AnsiString; compilerproc;
@@ -503,6 +528,9 @@ procedure fpc_WideCharArray_To_ShortStr(out res : shortstring;const arr: array o
 {$endif FPC_STRTOSHORTSTRINGPROC}
 Function fpc_WideCharArray_To_AnsiStr(const arr: array of widechar; {$ifdef FPC_HAS_CPSTRING}cp : TSystemCodePage;{$endif FPC_HAS_CPSTRING} zerobased: boolean = true): AnsiString; compilerproc;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -516,8 +544,12 @@ Function fpc_UnicodeStr_Compare(const S1,S2 : UnicodeString): SizeInt; compilerp
 Function fpc_UnicodeStr_Compare_equal(const S1,S2 : UnicodeString): SizeInt; compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_UnicodeStr_RangeCheck(p: Pointer; index : SizeInt); compilerproc;
 
+=======
+Procedure fpc_UnicodeStr_CheckRange(p: Pointer; index : SizeInt); compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure fpc_UnicodeStr_CheckRange(p: Pointer; index : SizeInt); compilerproc;
 >>>>>>> graemeg/cpstrnew
@@ -626,6 +658,7 @@ procedure fpc_SetupWriteStr_Ansistr(var ReadWriteStrText: text; var s: ansistrin
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_SetupWriteStr_Unicodestr(var ReadWriteStrText: text; var s: unicodestring); compilerproc;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
@@ -641,6 +674,12 @@ function fpc_SetupWriteStr_Widestr(out s: widestring): PText; compilerproc;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+function fpc_SetupWriteStr_Unicodestr(out s: unicodestring): PText; compilerproc;
+{$endif FPC_HAS_FEATURE_WIDESTRINGS}
+{$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+function fpc_SetupWriteStr_Widestr(out s: widestring): PText; compilerproc;
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 
 procedure fpc_SetupReadStr_Shortstr(var ReadWriteStrText: text; const s: shortstring); compilerproc;
@@ -650,6 +689,7 @@ procedure fpc_SetupReadStr_Ansistr(var ReadWriteStrText: text; const s: ansistri
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_SetupReadStr_Unicodestr(var ReadWriteStrText: text; const s: unicodestring); compilerproc;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
@@ -657,6 +697,8 @@ procedure fpc_SetupReadStr_Widestr(var ReadWriteStrText: text; const s: widestri
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 { $endif FPC_HAS_FEATURE_TEXTIO}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function fpc_SetupReadStr_Unicodestr(const s: unicodestring): PText; compilerproc;
@@ -831,6 +873,7 @@ Procedure fpc_ReRaise; compilerproc;
 Function fpc_Catches(Objtype : TClass) : TObject; compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef VER2_6}
 Procedure fpc_DestroyException(o : TObject); compilerproc;
 function fpc_GetExceptionAddr : CodePointer; compilerproc;
@@ -839,6 +882,10 @@ function fpc_safecallhandler(obj: TObject): HResult; compilerproc;
 function fpc_safecallcheck(res : hresult) : hresult; compilerproc; {$ifdef CPU86} register; {$endif}
 procedure fpc_doneexception; compilerproc;
 procedure fpc_raise_nested; compilerproc;
+=======
+Procedure fpc_DestroyException(o : TObject); compilerproc;
+function fpc_GetExceptionAddr : Pointer; compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure fpc_DestroyException(o : TObject); compilerproc;
 function fpc_GetExceptionAddr : Pointer; compilerproc;
@@ -948,6 +995,7 @@ function fpc_qword_to_double(q: qword): double; compilerproc;
 {$endif FPC_INCLUDE_SOFTWARE_INT64_TO_DOUBLE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_INCLUDE_SOFTWARE_LONGWORD_TO_DOUBLE}
 function fpc_longword_to_double(i: longword): double; compilerproc;
 {$endif FPC_INCLUDE_SOFTWARE_LONGWORD_TO_DOUBLE}
@@ -978,6 +1026,11 @@ function fpc_hugeptr_cmp_normalized_ae(p1, p2: HugePointer): Boolean; compilerpr
 {$ifdef cpullvm}
 {$i llvmintr.inc}
 {$endif cpullvm}
+=======
+
+function fpc_setjmp(var s : jmp_buf) : longint; compilerproc;
+procedure fpc_longjmp(var s : jmp_buf; value : longint); compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 
 function fpc_setjmp(var s : jmp_buf) : longint; compilerproc;

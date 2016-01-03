@@ -285,6 +285,7 @@ begin
                 // tag name is followed by legal attributes.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if CheckForName(FRawTokenText) then   { <-- ansi to wide conversion here }
                   EnterNewScannerContext(scUnknown)   // assume unclosed tag
                 else if (FRawTokenText <> '') and (FRawTokenText[1] <> '!') then
@@ -293,12 +294,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                 if CheckForName(FTokenText) then
                   EnterNewScannerContext(scUnknown)   // assume unclosed tag
                 else if (FTokenText <> '') and (FTokenText[1] <> '!') then
                 begin
                   Insert('<', FTokenText, 1);         // assume plaintext
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -309,7 +315,11 @@ begin
                 begin  // in comment, ignore
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   FRawTokenText := FRawTokenText + Buffer[BufferPos];
+=======
+                  FTokenText := FTokenText + Buffer[BufferPos];
+>>>>>>> graemeg/cpstrnew
 =======
                   FTokenText := FTokenText + Buffer[BufferPos];
 >>>>>>> graemeg/cpstrnew
@@ -322,7 +332,11 @@ begin
           else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             FRawTokenText := FRawTokenText + Buffer[BufferPos];
+=======
+            FTokenText := FTokenText + Buffer[BufferPos];
+>>>>>>> graemeg/cpstrnew
 =======
             FTokenText := FTokenText + Buffer[BufferPos];
 >>>>>>> graemeg/cpstrnew

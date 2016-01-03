@@ -1,7 +1,11 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2004-2011 Apple Inc. All rights reserved.
+=======
+ * Copyright (c) 2004-2008 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
  * Copyright (c) 2004-2008 Apple Inc. All rights reserved.
 >>>>>>> graemeg/cpstrnew
@@ -30,8 +34,12 @@
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{   Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {   Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -94,11 +102,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -123,11 +134,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -146,11 +163,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -169,7 +192,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -185,7 +211,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -198,6 +227,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -209,6 +239,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -225,6 +260,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -245,14 +281,21 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -338,8 +381,12 @@ uses MacTypes,CFBase,CFArray,CFDictionary,CFNumber,SCPreferences;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SCNetworkInterfaceRef = ^__SCNetworkInterface; { an opaque type }
 	__SCNetworkInterface = record end;
+=======
+	SCNetworkInterfaceRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SCNetworkInterfaceRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -389,7 +436,11 @@ var kSCNetworkInterfaceTypeIEEE80211: CFStringRef; external name '_kSCNetworkInt
 {!
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@const kSCNetworkInterfaceTypeIPSec
+=======
+ @const kSCNetworkInterfaceTypeIPSec
+>>>>>>> graemeg/cpstrnew
 =======
  @const kSCNetworkInterfaceTypeIPSec
 >>>>>>> graemeg/cpstrnew
@@ -487,9 +538,15 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SCBondStatusRef = ^__SCBondStatus; { an opaque type }
 	__SCBondStatus = record end;
 
+=======
+	SCBondStatusRef = ^SInt32; { an opaque type }
+
+{$ifc not TARGET_OS_IPHONE}
+>>>>>>> graemeg/cpstrnew
 =======
 	SCBondStatusRef = ^SInt32; { an opaque type }
 
@@ -517,10 +574,13 @@ const
 	kSCBondStatusUnknown = 999;	{ Non-specific failure }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {!
 	@const kSCBondStatusDeviceAggregationStatus
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$endc} {not TARGET_OS_IPHONE}
@@ -528,6 +588,9 @@ const
 {!
   @const kSCBondStatusDeviceAggregationStatus
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -538,7 +601,11 @@ var kSCBondStatusDeviceAggregationStatus	{ CFNumber }: CFStringRef; external nam
 {!
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@const kSCBondStatusDeviceCollecting
+=======
+  @const kSCBondStatusDeviceCollecting
+>>>>>>> graemeg/cpstrnew
 =======
   @const kSCBondStatusDeviceCollecting
 >>>>>>> graemeg/cpstrnew
@@ -552,7 +619,11 @@ var kSCBondStatusDeviceCollecting		{ CFNumber (0 or 1) }: CFStringRef; external 
 {!
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@const kSCBondStatusDeviceDistributing
+=======
+  @const kSCBondStatusDeviceDistributing
+>>>>>>> graemeg/cpstrnew
 =======
   @const kSCBondStatusDeviceDistributing
 >>>>>>> graemeg/cpstrnew
@@ -593,8 +664,12 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SCNetworkProtocolRef = ^__SCNetworkProtocol; { an opaque type }
 	__SCNetworkProtocol = record end;
+=======
+	SCNetworkProtocolRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SCNetworkProtocolRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -655,8 +730,12 @@ var kSCNetworkProtocolTypeSMB: CFStringRef; external name '_kSCNetworkProtocolTy
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SCNetworkServiceRef = ^__SCNetworkService; { an opaque type }
 	__SCNetworkService = record end;
+=======
+	SCNetworkServiceRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	SCNetworkServiceRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -883,7 +962,11 @@ function SCNetworkInterfaceCopyMediaSubTypes( available: CFArrayRef ): CFArrayRe
 	@param available The available options as returned by the
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		SCNetworkInterfaceCopyMediaOptions function.
+=======
+		NetworkInterfaceCopyMediaOptions function.
+>>>>>>> graemeg/cpstrnew
 =======
 		NetworkInterfaceCopyMediaOptions function.
 >>>>>>> graemeg/cpstrnew

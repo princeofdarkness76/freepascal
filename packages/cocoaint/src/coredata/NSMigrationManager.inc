@@ -53,6 +53,7 @@
     _userInfo: NSDictionary;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __migrationManagerFlags: record
       case byte of
        0: (_anonbitfield_NSMigrationManager0: cuint);
@@ -63,6 +64,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __migrationManagerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMigrationManager0: cuint);
@@ -70,6 +73,9 @@
         _migrationWasCancelled: 0..1;
         _reservedMigrationManager: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

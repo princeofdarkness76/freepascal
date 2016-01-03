@@ -23,6 +23,7 @@ const
   SND_WAITING = 2;  (*!< This voice is currently in progress and waiting to one SND_AddVoice() function (the voice handler is called continuously)  *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   VOICE_MONO_8BIT       = 0;
   VOICE_MONO_16BIT      = 1;
@@ -38,11 +39,16 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   VOICE_MONO_8BIT = 0;
   VOICE_MONO_16BIT = 1;
   VOICE_STEREO_8BIT = 2;
   VOICE_STEREO_16BIT = 3;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

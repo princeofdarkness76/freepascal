@@ -7,7 +7,11 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jstoken, jsscanner;
+=======
+  Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
 >>>>>>> graemeg/cpstrnew
@@ -168,7 +172,10 @@ begin
   FScanner:=TJSScanner.Create(FLineReader);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=FScanner;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -800,7 +807,10 @@ begin
   FreeScanner;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -829,6 +839,7 @@ begin
   CreateScanner(S);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     J:=FScanner.FetchToken;
     AssertEquals(S+' is a number',tjsNumber,J);
@@ -852,6 +863,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a number',tjsNumber,J);
   V:=FScanner.CurTokenString;
@@ -869,6 +882,9 @@ begin
     end;
   AssertEquals('Parsed float equals original float',F,C);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -907,6 +923,7 @@ begin
   CreateScanner(S);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     J:=FScanner.FetchToken;
     AssertEquals(S+' is a string',tjsString,J);
@@ -919,12 +936,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a string',tjsString,J);
   If (Length(S)>0) and (S[1] in ['"','''']) then
     S:=Copy(S,2,Length(S)-2);
   AssertEquals('Correct string is returned',S,FScanner.CurTokenString);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -945,11 +967,15 @@ begin
   CreateScanner(FErrorSource);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     While (FScanner.FetchToken<>tjsEOF) do ;
   finally
     FreeScanner;
   end;
+=======
+  While (FScanner.FetchToken<>tjsEOF) do ;
+>>>>>>> graemeg/cpstrnew
 =======
   While (FScanner.FetchToken<>tjsEOF) do ;
 >>>>>>> graemeg/cpstrnew

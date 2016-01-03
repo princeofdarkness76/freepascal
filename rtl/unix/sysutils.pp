@@ -513,6 +513,9 @@ begin
 end;
 
 
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Function FileRead (Handle : Longint; out Buffer; Count : longint) : Longint;
@@ -601,6 +604,9 @@ begin
   If  (fpstat (pointer(FileName),Info)<0) or fpS_ISDIR(info.st_mode) then
     exit(-1)
   else 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     Result:=UnixToWinAge(info.st_mtime);
 >>>>>>> graemeg/cpstrnew
@@ -1553,12 +1559,15 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function GetLocalTimeOffset: Integer;
 
 begin
  Result := -Tzseconds div 60; 
 end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -17,6 +17,7 @@
 { the tk* constants are now declared in system.inc }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}
   {$define USE_PACKED}
@@ -24,6 +25,8 @@
 {$ifdef VER2_6}
   {$define USE_PACKED}
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -207,6 +210,58 @@ begin
   end;
 end;
 
+  PRecordElement=^TRecordElement;
+  TRecordElement=packed record
+    TypeInfo: Pointer;
+    Offset: Longint;
+  end;
+
+  PRecordInfo=^TRecordInfo;
+  TRecordInfo=packed record
+    Size: Longint;
+    Count: Longint;
+    { Elements: array[count] of TRecordElement }
+  end;
+
+  PArrayInfo=^TArrayInfo;
+  TArrayInfo=packed record
+    ElSize: SizeInt;
+    ElCount: SizeInt;
+    ElInfo: Pointer;
+  end;
+
+
+function RTTIArraySize(typeInfo: Pointer): SizeInt;
+begin
+  typeInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
+  result:=PArrayInfo(typeInfo)^.ElSize * PArrayInfo(typeInfo)^.ElCount;
+end;
+
+function RTTIRecordSize(typeInfo: Pointer): SizeInt;
+begin
+  typeInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
+  result:=PRecordInfo(typeInfo)^.Size;
+end;
+
+function RTTISize(typeInfo: Pointer): SizeInt;
+begin
+  case PByte(typeinfo)^ of
+    tkAString,tkWString,tkUString,
+    tkInterface,tkDynarray:
+      result:=sizeof(Pointer);
+{$ifdef FPC_HAS_FEATURE_VARIANTS}
+    tkVariant:
+      result:=sizeof(TVarData);
+{$endif FPC_HAS_FEATURE_VARIANTS}
+    tkArray:
+      result:=RTTIArraySize(typeinfo);
+    tkObject,tkRecord:
+      result:=RTTIRecordSize(typeinfo);
+  else
+    result:=-1;
+  end;
+end;
+
 { if you modify this procedure, fpc_copy must be probably modified as well }
 procedure RecordRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
@@ -221,7 +276,11 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       rttiproc(Data+PRecordElement(typeInfo)^.Offset,PRecordElement(typeInfo)^.TypeInfo);
+=======
+      rttiproc (Data+PRecordElement(typeInfo)^.Offset,PRecordElement(typeInfo)^.TypeInfo);
+>>>>>>> graemeg/cpstrnew
 =======
       rttiproc (Data+PRecordElement(typeInfo)^.Offset,PRecordElement(typeInfo)^.TypeInfo);
 >>>>>>> graemeg/cpstrnew
@@ -237,6 +296,7 @@ end;
 {$ifdef VER2_6}
 procedure ArrayRTTI(Data,TypeInfo:Pointer;rttiproc:TRTTIProc);
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   i: SizeInt;
@@ -262,6 +322,14 @@ begin
   { Process elements }
   for I:=0 to Count-1 do
     rttiproc(Data+(I*ElSize),Info);
+=======
+  i : SizeInt;
+begin
+  typeInfo:=aligntoptr(typeInfo+2+PByte(typeInfo)[1]);
+  { Process elements }
+  for I:=0 to PArrayInfo(typeInfo)^.ElCount-1 do
+    rttiproc(Data+(I*PArrayInfo(typeInfo)^.ElSize),PArrayInfo(typeInfo)^.ElInfo);
+>>>>>>> graemeg/cpstrnew
 =======
   i : SizeInt;
 begin
@@ -345,6 +413,9 @@ begin
         PPointer(Data)^:=nil;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -375,6 +446,9 @@ begin
         PPointer(Data)^:=nil;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -401,6 +475,7 @@ begin
   {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tkUstring :
       fpc_UnicodeStr_Incr_Ref(PPointer(Data)^);
 =======
@@ -410,10 +485,15 @@ begin
   {$endif VER2_2}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   {$ifndef VER2_2}
     tkUstring :
       fpc_UnicodeStr_Incr_Ref(PPointer(Data)^);
   {$endif VER2_2}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
     tkArray :
@@ -489,7 +569,12 @@ Function fpc_Copy (Src, Dest, TypeInfo : Pointer) : SizeInt;[Public,alias : 'FPC
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Temp: pbyte;
+=======
+  ArrayInfo: PArrayInfo;
+  Temp : pbyte;
+>>>>>>> graemeg/cpstrnew
 =======
   ArrayInfo: PArrayInfo;
   Temp : pbyte;
@@ -504,9 +589,12 @@ var
   offset,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   i: SizeInt;
   info: pointer;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   i : SizeInt;
@@ -526,6 +614,9 @@ begin
         PPointer(Dest)^:=PPointer(Src)^;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -535,6 +626,7 @@ begin
     tkWstring:
       fpc_WideStr_Assign(PPointer(Dest)^,PPointer(Src)^);
   {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     tkUstring:
@@ -567,6 +659,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   {$ifndef VER2_2}
     tkUstring:
       fpc_UnicodeStr_Assign(PPointer(Dest)^,PPointer(Src)^);
@@ -580,6 +674,9 @@ begin
           fpc_Copy_internal(Src+(I*ArrayInfo^.ElSize),Dest+(I*ArrayInfo^.ElSize),ArrayInfo^.ElInfo);
         Result:=ArrayInfo^.ElSize*ArrayInfo^.ElCount;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -631,6 +728,9 @@ begin
         PPointer(Dest)^:=PPointer(Src)^;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -656,6 +756,9 @@ end;
 
 procedure fpc_initialize_array(data,typeinfo : pointer;count : SizeInt); [public,alias:'FPC_INITIALIZE_ARRAY'] compilerproc;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
   var
      i, size : SizeInt;
   begin
@@ -667,6 +770,7 @@ procedure fpc_initialize_array(data,typeinfo : pointer;count : SizeInt); [public
 
 
 procedure fpc_finalize_array(data,typeinfo : pointer;count : SizeInt); [Public,Alias:'FPC_FINALIZE_ARRAY'];  compilerproc;
+<<<<<<< HEAD
   var
      i, size: SizeInt;
   begin
@@ -690,6 +794,13 @@ procedure fpc_finalize_array(data,typeinfo : pointer;count : SizeInt); [Public,A
      size:=RTTISize(typeinfo);
      if size>0 then
 >>>>>>> graemeg/cpstrnew
+=======
+  var
+     i, size: SizeInt;
+  begin
+     size:=RTTISize(typeinfo);
+     if size>0 then
+>>>>>>> graemeg/cpstrnew
        for i:=0 to count-1 do
          int_finalize(data+size*i,typeinfo);
   end;
@@ -704,6 +815,7 @@ procedure fpc_addref_array(data,typeinfo: pointer; count: SizeInt); [public,alia
         int_addref(data+size*i,typeinfo);
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { The following two procedures are now obsolete, needed only for bootstrapping }
@@ -734,6 +846,8 @@ procedure CopyArray(dest, source, typeInfo: Pointer; count: SizeInt);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure fpc_decref_array(data,typeinfo: pointer; count: SizeInt); [public,alias:'FPC_DECREF_ARRAY']; compilerproc;
   var
     i, size: SizeInt;
@@ -743,6 +857,9 @@ procedure fpc_decref_array(data,typeinfo: pointer; count: SizeInt); [public,alia
       for i:=0 to count-1 do
         int_decref(data+size*i,typeinfo);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

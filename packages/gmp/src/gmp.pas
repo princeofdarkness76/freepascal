@@ -2,7 +2,11 @@
     This file is part of the Free Pascal packages
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2009 by Jan Mercl
+=======
+    Copyright (c) 2009 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2009 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -135,7 +139,10 @@ type
   IMPBase = interface
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ['{390336B5-6B78-47E0-BB0B-48F3AF9D5CCC}']
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -146,7 +153,10 @@ type
   MPInteger = interface(IMPBase)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ['{F6A977E7-B5E6-42BB-981F-E1A7C7EE0D30}']
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -157,7 +167,10 @@ type
   MPFloat = interface(IMPBase)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ['{73F21043-CC71-425E-9825-1EF0FF4B9B85}']
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -168,7 +181,10 @@ type
   MPRational = interface(IMPBase)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ['{0ACDDB76-5C1A-48E5-96EF-EA8647680FC1}']
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -179,7 +195,10 @@ type
   MPRandState = interface(IMPBase)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ['{0E7EDBB9-E009-4A29-8BAC-8B967404B7B7}']
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

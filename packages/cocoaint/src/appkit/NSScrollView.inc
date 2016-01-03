@@ -16,6 +16,7 @@ type
   __SFlags = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSScrollView0: cuint);
     1: (data: bitpacked record
@@ -63,6 +64,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     vScrollerRequired: 0..1;
     hScrollerRequired: 0..1;
@@ -103,6 +106,9 @@ type
     vScrollerRequired: 0..1;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

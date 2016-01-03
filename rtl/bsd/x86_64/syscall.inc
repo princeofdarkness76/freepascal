@@ -125,9 +125,12 @@ asm
   jnb .LSyscOK            { branch to exit if ok, errorhandler otherwise}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   movq  %rax,%rdi
   call  SetErrno
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   movq  %rax,%rdx

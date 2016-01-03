@@ -77,6 +77,7 @@ F31,$02,$06,$1f,%f31,63,63
 ; Float registers, double use
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; Re-enabled 2012-03-30 Pierre
 D0,$02,$07,$00,%d0,72,72
 D2,$02,$07,$02,%d2,73,73
@@ -97,6 +98,8 @@ D30,$02,$07,$1e,%d30,87,87
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 ; Not enabled for now Pierre
 ; D0,$02,$07,$00,%d0,72,72
 ; D2,$02,$07,$02,%d2,73,73
@@ -115,6 +118,9 @@ D30,$02,$07,$1e,%d30,87,87
 ; D28,$02,$07,$1c,%d28,86,86
 ; D30,$02,$07,$1e,%d30,87,87
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

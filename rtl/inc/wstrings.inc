@@ -52,7 +52,10 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure DefaultWide2AnsiMove(source:pwidechar;var dest:ansistring;cp : TSystemCodePage;len:SizeInt);
@@ -75,6 +78,9 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -156,7 +162,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Procedure fpc_WideStr_Decr_Ref (Var S : Pointer);[Public,Alias:'FPC_WIDESTR_DECR_REF']; compilerproc;
@@ -241,7 +250,11 @@ begin
 {$ifndef FPC_HAS_CPSTRING}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cp:=DefaultSystemCodePage;
+=======
+  cp:=$ffff;
+>>>>>>> graemeg/cpstrnew
 =======
   cp:=$ffff;
 >>>>>>> graemeg/cpstrnew
@@ -255,7 +268,12 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     cp:=TranslatePlaceholderCP(cp);
+=======
+    if cp=$ffff then
+      cp:=DefaultSystemCodePage;
+>>>>>>> graemeg/cpstrnew
 =======
     if cp=$ffff then
       cp:=DefaultSystemCodePage;
@@ -271,7 +289,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function fpc_AnsiStr_To_WideStr(Const S2 : RawByteString): WideString; compilerproc;
+=======
+Function fpc_AnsiStr_To_WideStr (Const S2 : RawByteString): WideString; compilerproc;
+>>>>>>> graemeg/cpstrnew
 =======
 Function fpc_AnsiStr_To_WideStr (Const S2 : RawByteString): WideString; compilerproc;
 >>>>>>> graemeg/cpstrnew
@@ -291,7 +313,13 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     cp:=TranslatePlaceholderCP(StringCodePage(S2));
+=======
+    cp:=StringCodePage(S2);
+    if cp=$ffff then
+      cp:=DefaultSystemCodePage;
+>>>>>>> graemeg/cpstrnew
 =======
     cp:=StringCodePage(S2);
     if cp=$ffff then
@@ -462,6 +490,9 @@ Function fpc_WChar_To_AnsiStr(const c : WideChar{$ifdef FPC_HAS_CPSTRING};cp : T
 begin
   widestringmanager.Wide2AnsiMoveProc(@c, fpc_WChar_To_AnsiStr,{$ifdef FPC_HAS_CPSTRING}cp{$else}TSystemCodePage(0){$endif FPC_HAS_CPSTRING}, 1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -692,11 +723,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_WideStr_RangeCheck(p: Pointer; index: SizeInt);[Public,Alias : 'FPC_WIDESTR_RANGECHECK']; compilerproc;
 begin
   if (p=nil) or (index>PWideRec(p-WideFirstOff)^.len div 2) or (Index<1) then
     HandleErrorAddrFrameInd(201,get_pc_addr,get_frame);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -848,6 +882,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 { DO NOT inline these! Inlining a managed typecast creates an implicit try..finally
   block, which is significant bloat without any sensible speed improvement. }
 Function Pos (c : WideChar; Const s : RawByteString; Offset : SizeInt = 1) : SizeInt;
@@ -858,6 +893,10 @@ Function Pos (c : WideChar; Const s : RawByteString) : SizeInt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+Function Pos (c : WideChar; Const s : RawByteString) : SizeInt;
+>>>>>>> graemeg/cpstrnew
   begin
     result:=Pos(c,WideString(s),Offset);
   end;
@@ -865,7 +904,11 @@ Function Pos (c : WideChar; Const s : RawByteString) : SizeInt;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Pos (const c : RawByteString; Const s : WideString;Offset : SizeInt = 1) : SizeInt;
+=======
+Function Pos (c : RawByteString; Const s : WideString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> graemeg/cpstrnew
 =======
 Function Pos (c : RawByteString; Const s : WideString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/cpstrnew
@@ -885,7 +928,11 @@ Function Pos (const c : ShortString; Const s : WideString;Offset : SizeInt = 1) 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Pos (const c : WideString; Const s : RawByteString;Offset : SizeInt = 1) : SizeInt;
+=======
+Function Pos (c : WideString; Const s : RawByteString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> graemeg/cpstrnew
 =======
 Function Pos (c : WideString; Const s : RawByteString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/cpstrnew
@@ -936,6 +983,10 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  UniqueString (S);
+>>>>>>> graemeg/cpstrnew
 =======
   UniqueString (S);
 >>>>>>> graemeg/cpstrnew
@@ -988,6 +1039,9 @@ Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_widestr_pwidechar{$else}SetStri
 =======
 Procedure SetString (Out S : WideString; Buf : PWideChar; Len : SizeInt);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1003,6 +1057,9 @@ Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_widestr_pansichar{$else}SetStri
 =======
 Procedure SetString (Out S : WideString; Buf : PChar; Len : SizeInt);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1010,9 +1067,13 @@ begin
   If (Buf<>Nil) and (Len>0) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     widestringmanager.Ansi2WideMoveProc(Buf,DefaultSystemCodePage,S,Len)
   else
     SetLength(s,len);
+=======
+    widestringmanager.Ansi2WideMoveProc(Buf,DefaultSystemCodePage,S,Len);
+>>>>>>> graemeg/cpstrnew
 =======
     widestringmanager.Ansi2WideMoveProc(Buf,DefaultSystemCodePage,S,Len);
 >>>>>>> graemeg/cpstrnew
@@ -1160,6 +1221,15 @@ end;
 
 <<<<<<< HEAD
 =======
+procedure fpc_widestr_bool(b : boolean;len:sizeint;out s:widestring);compilerproc;
+
+var ss:shortstring;
+
+begin
+  fpc_shortstr_bool(b,len,ss);
+  s:=ss;
+end;
+
 procedure fpc_widestr_bool(b : boolean;len:sizeint;out s:widestring);compilerproc;
 
 var ss:shortstring;

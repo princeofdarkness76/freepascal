@@ -2,7 +2,11 @@
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -46,7 +50,11 @@ type
     FFlags: TX11Flags;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FModes: array of IPTCMode;
+=======
+    FModes: array of TPTCMode;
+>>>>>>> graemeg/cpstrnew
 =======
     FModes: array of TPTCMode;
 >>>>>>> graemeg/cpstrnew
@@ -64,8 +72,13 @@ type
     function GetPitch: Integer; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetArea: IPTCArea; override;
     function GetFormat: IPTCFormat; override;
+=======
+    function GetArea: TPTCArea; override;
+    function GetFormat: TPTCFormat; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function GetArea: TPTCArea; override;
     function GetFormat: TPTCFormat; override;
@@ -80,8 +93,11 @@ type
     function GetInformation: string; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetOpenGL_Enabled: Boolean; override;
     procedure SetOpenGL_Enabled(AValue: Boolean); override;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -91,6 +107,7 @@ type
     destructor Destroy; override;
 
     procedure Open(const ATitle: string; APages: Integer = 0); overload; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     procedure Open(const ATitle: string; AFormat: IPTCFormat;
@@ -128,6 +145,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Open(const ATitle: string; const AFormat: TPTCFormat;
                    APages: Integer = 0); overload; override;
     procedure Open(const ATitle: string; AWidth, AHeight: Integer;
@@ -159,6 +178,9 @@ type
                    const APalette: TPTCPalette;
                    const ASource, ADestination: TPTCArea); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -169,9 +191,15 @@ type
     procedure Clear; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Clear(AColor: IPTCColor); override;
     procedure Clear(AColor: IPTCColor;
                     AArea: IPTCArea); override;
+=======
+    procedure Clear(const AColor: TPTCColor); override;
+    procedure Clear(const AColor: TPTCColor;
+                    const AArea: TPTCArea); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure Clear(const AColor: TPTCColor); override;
     procedure Clear(const AColor: TPTCColor;
@@ -188,6 +216,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure Palette(APalette: IPTCPalette); override;
     procedure Clip(AArea: IPTCArea); override;
     function Clip: IPTCArea; override;
@@ -196,12 +225,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Palette(const APalette: TPTCPalette); override;
     procedure Clip(const AArea: TPTCArea); override;
     function Clip: TPTCArea; override;
     function Palette: TPTCPalette; override;
     function Modes: PPTCMode; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -209,6 +243,7 @@ type
     procedure Flush; override;
     procedure Finish; override;
     procedure Update; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     procedure Update(AArea: IPTCArea); override;
@@ -222,11 +257,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Update(const AArea: TPTCArea); override;
 
     function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

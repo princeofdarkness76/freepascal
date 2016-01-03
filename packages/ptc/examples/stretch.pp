@@ -17,7 +17,11 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: string);
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
@@ -31,7 +35,12 @@ var
   y: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
+=======
+  tmp: TPTCFormat;
+  tmp2: TPTCPalette;
+>>>>>>> graemeg/cpstrnew
 =======
   tmp: TPTCFormat;
   tmp2: TPTCPalette;
@@ -64,12 +73,15 @@ begin
     {$IFDEF FPC_LITTLE_ENDIAN}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
     {$ENDIF FPC_LITTLE_ENDIAN}
     surface.Load(pixels, width, height, width * 3, format, TPTCPaletteFactory.CreateNew);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     tmp := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
@@ -87,6 +99,9 @@ begin
       tmp.Free;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -102,6 +117,7 @@ end;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   image: IPTCSurface;
@@ -109,6 +125,8 @@ var
   timer: IPTCTimer;
   area: IPTCArea;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
@@ -119,6 +137,9 @@ var
   area: TPTCArea = nil;
   color: TPTCColor = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -216,6 +237,9 @@ begin
       color.Free;
       timer.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

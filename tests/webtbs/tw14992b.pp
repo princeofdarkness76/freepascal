@@ -2,7 +2,10 @@
 { %opt=-gh }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %needlibrary }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

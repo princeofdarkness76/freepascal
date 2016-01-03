@@ -77,6 +77,9 @@ type
     FPosition: LongInt;
     FWriteMode: Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -129,7 +132,10 @@ type
     FStoreDefs: Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure CopyCacheToItem(AItem: PDataRecord);
@@ -195,6 +201,9 @@ type
     function AllocRecordBuffer: PChar; override;
     procedure ClearCalcFields(Buffer: PChar); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -418,6 +427,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TDSStream.GetPosition: Int64;
 begin
   Result:=FPosition;
@@ -428,6 +438,8 @@ begin
   Result:=FRowSize;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -489,6 +501,7 @@ begin
     WriteLn('  FPosition(After): ', FPosition+Count);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     WriteLn('  FRowSize(After): ', StrBufSize(NewRow) -1);
     //WriteLn('  Stream Value: ',NewRow);
     {$endif}
@@ -497,12 +510,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     WriteLn('  FRowSize(After): ', StrLen(NewRow));
     //WriteLn('  Stream Value: ',NewRow);
     {$endif}
     FFieldRow := NewRow;
     FRowSize := StrLen(NewRow);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -585,8 +603,11 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     EditItem := PPDataRecord(ActiveBuffer)^;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     if Mode = bmWrite then
@@ -594,6 +615,9 @@ begin
     else
       EditItem := PPDataRecord(ActiveBuffer)^;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -738,6 +762,13 @@ begin
   Result := FSQLList;
 end;
 
+function TCustomSqliteDataset.GetSQLList: TStrings;
+begin
+  if FSQLList = nil then
+    FSQLList := TStringList.Create;
+  Result := FSQLList;
+end;
+
 procedure TCustomSqliteDataset.SetMasterIndexValue;
 var
   i: Integer;
@@ -828,6 +859,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   case State of
     dsCalcFields, dsInternalCalc:
       FieldRow := PPDataRecord(CalcBuffer)^^.Row[FieldOffset];
@@ -837,6 +869,8 @@ begin
       FieldRow := PPDataRecord(ActiveBuffer)^^.Row[FieldOffset];
   end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if not (State in [dsCalcFields, dsInternalCalc]) then
@@ -1448,8 +1482,13 @@ begin
     try
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       CalculateFields(TRecordBuffer(@TempItem));
       Result := FieldValues[ResultFields];
+=======
+      CalculateFields(PChar(@TempItem));
+      Result := FieldByName(ResultFields).Value;
+>>>>>>> graemeg/cpstrnew
 =======
       CalculateFields(PChar(@TempItem));
       Result := FieldByName(ResultFields).Value;
@@ -1615,6 +1654,9 @@ begin
 =======
   if (FMasterLink.Dataset.RecordCount = 0) or not FMasterLink.Active then //Retrieve all data
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1712,7 +1754,11 @@ begin
     GetSqliteHandle;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := SqliteExec(PAnsiChar(ASQLList.Text), nil, nil);
+=======
+  FReturnCode := SqliteExec(PChar(ASQLList.Text), nil, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   FReturnCode := SqliteExec(PChar(ASQLList.Text), nil, nil);
 >>>>>>> graemeg/cpstrnew
@@ -1730,7 +1776,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomSqliteDataset.GetSQLValue(Values: PPAnsiChar; FieldIndex: Integer): String;
+=======
+function TCustomSqliteDataset.GetSQLValue(Values: PPChar; FieldIndex: Integer): String;
+>>>>>>> graemeg/cpstrnew
 =======
 function TCustomSqliteDataset.GetSQLValue(Values: PPChar; FieldIndex: Integer): String;
 >>>>>>> graemeg/cpstrnew

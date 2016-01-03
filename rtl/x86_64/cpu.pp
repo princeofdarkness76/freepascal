@@ -24,7 +24,11 @@ unit cpu;
        {$define oldbinutils}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      {$endif}
+=======
+     {$endif} 
+>>>>>>> graemeg/cpstrnew
 =======
      {$endif} 
 >>>>>>> graemeg/cpstrnew
@@ -40,12 +44,15 @@ unit cpu;
     function AESSupport : boolean;inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function AVXSupport : boolean;inline;
     function AVX2Support: boolean;inline;
     function FMASupport: boolean;inline;
 
     var
       is_sse3_cpu : boolean = false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -57,6 +64,7 @@ unit cpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$asmmode att}
 
     var
@@ -66,6 +74,8 @@ unit cpu;
       _AVX2Support,
       _FMASupport : boolean;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     var
@@ -83,6 +93,9 @@ unit cpu;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -116,7 +129,11 @@ unit cpu;
         {$ifdef oldbinutils}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            .byte 0xF0,0x49,0x0F,0xC7,0x08
+=======
+           .byte 0xF0,0x49,0x0F,0xC7,0x08 
+>>>>>>> graemeg/cpstrnew
 =======
            .byte 0xF0,0x49,0x0F,0xC7,0x08 
 >>>>>>> graemeg/cpstrnew
@@ -162,6 +179,7 @@ unit cpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function XGETBV(i : dword) : int64;assembler;
       asm
@@ -190,6 +208,11 @@ unit cpu;
       var
         _ecx : longint;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetupSupport;
+      var
+        _ecx : longint;
+>>>>>>> graemeg/cpstrnew
       begin
         asm
            pushq %rbx
@@ -199,6 +222,7 @@ unit cpu;
            popq %rbx
         end;
         _InterlockedCompareExchange128Support:=(_ecx and $2000)<>0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         _AESSupport:=(_ecx and $2000000)<>0;
@@ -254,6 +278,9 @@ unit cpu;
     function FMASupport: boolean;inline;
       begin
         result:=_FMASupport;
+=======
+        _AESSupport:=(_ecx and $2000000)<>0;        
+>>>>>>> graemeg/cpstrnew
 =======
         _AESSupport:=(_ecx and $2000000)<>0;        
 >>>>>>> graemeg/cpstrnew

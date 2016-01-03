@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %skiptarget=go32v2,os2 }
+=======
+{ %skiptarget=go32v2 }
+>>>>>>> graemeg/cpstrnew
 =======
 { %skiptarget=go32v2 }
 >>>>>>> graemeg/cpstrnew
@@ -39,10 +43,14 @@ w:
   { GetLineInfo of dwarf doesn't return the function name }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { gdb reports line number 12 instead of 10 for the label
     (the real one is 11; lineinfo matches it with the previous
      line, gdb with the next one) }
   if { (s1<>'P') or } (s2<>'tlib1a.pp') or ((l<>10) and (l<>12)) then
+=======
+  if { (s1<>'P') or } (s2<>'tlib1a.pp') or (l<>10) then
+>>>>>>> graemeg/cpstrnew
 =======
   if { (s1<>'P') or } (s2<>'tlib1a.pp') or (l<>10) then
 >>>>>>> graemeg/cpstrnew
@@ -58,7 +66,11 @@ w:
   { GetLineInfo of dwarf doesn't return the function name }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if { (s1<>'P') or } (s2<>'tlib1b.pp') or ((l<>24) and (l<>27)) then
+=======
+  if { (s1<>'P') or } (s2<>'tlib1b.pp') or (l<>24) then
+>>>>>>> graemeg/cpstrnew
 =======
   if { (s1<>'P') or } (s2<>'tlib1b.pp') or (l<>24) then
 >>>>>>> graemeg/cpstrnew

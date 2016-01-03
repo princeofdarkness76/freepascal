@@ -263,6 +263,9 @@ implementation
 =======
           location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,false);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -360,6 +363,9 @@ implementation
 =======
             location_force_mem(current_asmdata.CurrAsmList,left.location);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -405,6 +411,7 @@ implementation
                      begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if use_bt then
                          begin
            {$if defined(cpu64bitalu) or defined(cpu32bitalu)}
@@ -438,6 +445,8 @@ implementation
                      cg.a_jmp_flags(current_asmdata.CurrAsmList,F_E,l2);
                    new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,l1.name,const_align(sizeof(pint)));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                        inc(leftref.offset,4);

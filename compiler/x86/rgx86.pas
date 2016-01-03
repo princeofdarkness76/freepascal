@@ -363,7 +363,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef x86_64}
+=======
+            {$ifdef x86_64}
+>>>>>>> graemeg/cpstrnew
 =======
             {$ifdef x86_64}
 >>>>>>> graemeg/cpstrnew
@@ -376,9 +380,15 @@ implementation
               in registers.  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (opsize=S_L) then
               replaceoper:=-1;
 {$endif x86_64}
+=======
+            if (instr.opsize=S_L) then
+              replaceoper:=-1;
+            {$endif x86_64}
+>>>>>>> graemeg/cpstrnew
 =======
             if (instr.opsize=S_L) then
               replaceoper:=-1;

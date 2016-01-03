@@ -10,6 +10,7 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  					http://bugs.freepascal.org
  
 }
@@ -18,11 +19,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  					http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -83,11 +89,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -112,11 +121,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -135,11 +150,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -158,7 +179,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -174,7 +198,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -187,6 +214,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -198,6 +226,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -216,13 +249,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -242,6 +279,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -496,6 +537,7 @@ type
 	MIDIObjectRef = UnivPtr;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	MIDIClientRef = ^OpaqueMIDIClient; { an opaque type }
 	OpaqueMIDIClient = record end;
 	MIDIPortRef = ^OpaqueMIDIPort; { an opaque type }
@@ -509,12 +551,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	MIDIClientRef = ^SInt32; { an opaque type }
 	MIDIPortRef = ^SInt32; { an opaque type }
 	MIDIDeviceRef = ^SInt32; { an opaque type }
 	MIDIEntityRef = ^SInt32; { an opaque type }
 	MIDIEndpointRef = ^SInt32; { an opaque type }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -692,10 +739,13 @@ type
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					The MIDIPacketNext macro is especially important when considering that
 					the alignment requirements of MIDIPacket may differ between CPU architectures.
 					On Intel and PowerPC, MIDIPacket is unaligned. 
 					
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -752,9 +802,12 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { moved here to make type available in MIDINotification }
 	MIDINotificationMessageID = SInt32;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -774,6 +827,12 @@ type
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+	MIDINotificationMessageID = SInt32;
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 	MIDINotificationMessageID = SInt32;
@@ -792,7 +851,10 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -808,6 +870,7 @@ type
 										Structure is MIDIObjectAddRemoveNotification.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 										New in Mac OS X 10.2.
 	@constant	kMIDIMsgObjectRemoved	A device, entity or endpoint was removed.
 										Structure is MIDIObjectAddRemoveNotification.
@@ -822,6 +885,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 										New for CoreMIDI 1.3.
 	@constant	kMIDIMsgObjectRemoved	A device, entity or endpoint was removed.
 										Structure is MIDIObjectAddRemoveNotification.
@@ -834,6 +899,9 @@ type
 	@constant	kMIDIMsgSerialPortOwnerChanged	A persistent MIDI Thru connection was created
 										or destroyed.  No data.  New for CoreMIDI 1.3.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -852,6 +920,10 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -936,7 +1008,10 @@ type
 var kMIDIPropertyName: CFStringRef; external name '_kMIDIPropertyName'; (* attribute const *)		
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -956,7 +1031,10 @@ var kMIDIPropertyName: CFStringRef; external name '_kMIDIPropertyName'; (* attri
 var kMIDIPropertyManufacturer: CFStringRef; external name '_kMIDIPropertyManufacturer'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -976,7 +1054,10 @@ var kMIDIPropertyManufacturer: CFStringRef; external name '_kMIDIPropertyManufac
 var kMIDIPropertyModel: CFStringRef; external name '_kMIDIPropertyModel'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -994,7 +1075,10 @@ var kMIDIPropertyModel: CFStringRef; external name '_kMIDIPropertyModel'; (* att
 var kMIDIPropertyUniqueID: CFStringRef; external name '_kMIDIPropertyUniqueID'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1014,7 +1098,10 @@ var kMIDIPropertyUniqueID: CFStringRef; external name '_kMIDIPropertyUniqueID'; 
 var kMIDIPropertyDeviceID: CFStringRef; external name '_kMIDIPropertyDeviceID'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1037,7 +1124,10 @@ var kMIDIPropertyDeviceID: CFStringRef; external name '_kMIDIPropertyDeviceID'; 
 var kMIDIPropertyReceiveChannels: CFStringRef; external name '_kMIDIPropertyReceiveChannels'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1052,10 +1142,13 @@ var kMIDIPropertyReceiveChannels: CFStringRef; external name '_kMIDIPropertyRece
 		... 0x8000=ch 16.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyTransmitChannels: CFStringRef; external name '_kMIDIPropertyTransmitChannels'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1063,6 +1156,9 @@ var kMIDIPropertyTransmitChannels: CFStringRef; external name '_kMIDIPropertyTra
 }
 var kMIDIPropertyTransmitChannels: CFStringRef; external name '_kMIDIPropertyTransmitChannels'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1079,7 +1175,10 @@ var kMIDIPropertyTransmitChannels: CFStringRef; external name '_kMIDIPropertyTra
 var kMIDIPropertyMaxSysExSpeed: CFStringRef; external name '_kMIDIPropertyMaxSysExSpeed'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1108,7 +1207,10 @@ var kMIDIPropertyMaxSysExSpeed: CFStringRef; external name '_kMIDIPropertyMaxSys
 var kMIDIPropertyAdvanceScheduleTimeMuSec: CFStringRef; external name '_kMIDIPropertyAdvanceScheduleTimeMuSec'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1122,10 +1224,13 @@ var kMIDIPropertyAdvanceScheduleTimeMuSec: CFStringRef; external name '_kMIDIPro
 		0 if there are external MIDI connectors, 1 if not.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyIsEmbeddedEntity: CFStringRef; external name '_kMIDIPropertyIsEmbeddedEntity'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1133,6 +1238,9 @@ var kMIDIPropertyIsEmbeddedEntity: CFStringRef; external name '_kMIDIPropertyIsE
 }
 var kMIDIPropertyIsEmbeddedEntity: CFStringRef; external name '_kMIDIPropertyIsEmbeddedEntity'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1147,10 +1255,13 @@ var kMIDIPropertyIsEmbeddedEntity: CFStringRef; external name '_kMIDIPropertyIsE
 		not.  Set by the owning driver; should not be touched by other clients.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyIsBroadcast: CFStringRef; external name '_kMIDIPropertyIsBroadcast'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1158,6 +1269,9 @@ var kMIDIPropertyIsBroadcast: CFStringRef; external name '_kMIDIPropertyIsBroadc
 }
 var kMIDIPropertyIsBroadcast: CFStringRef; external name '_kMIDIPropertyIsBroadcast'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1176,10 +1290,13 @@ var kMIDIPropertyIsBroadcast: CFStringRef; external name '_kMIDIPropertyIsBroadc
 		originated from.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertySingleRealtimeEntity: CFStringRef; external name '_kMIDIPropertySingleRealtimeEntity'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1187,6 +1304,9 @@ var kMIDIPropertySingleRealtimeEntity: CFStringRef; external name '_kMIDIPropert
 }
 var kMIDIPropertySingleRealtimeEntity: CFStringRef; external name '_kMIDIPropertySingleRealtimeEntity'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1204,7 +1324,13 @@ var kMIDIPropertySingleRealtimeEntity: CFStringRef; external name '_kMIDIPropert
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		Beginning with CoreMIDI 1.3 (Mac OS X 10.2), this property may also be a CFDataRef containing an array of
+=======
+		New for CoreMIDI 1.1 (Mac OS X 10.1)
+		
+		Beginning with CoreMIDI 1.3, this property may also be a CFDataRef containing an array of
+>>>>>>> graemeg/cpstrnew
 =======
 		New for CoreMIDI 1.1 (Mac OS X 10.1)
 		
@@ -1225,7 +1351,10 @@ var kMIDIPropertySingleRealtimeEntity: CFStringRef; external name '_kMIDIPropert
 var kMIDIPropertyConnectionUniqueID: CFStringRef; external name '_kMIDIPropertyConnectionUniqueID'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1242,10 +1371,13 @@ var kMIDIPropertyConnectionUniqueID: CFStringRef; external name '_kMIDIPropertyC
 		device by its entities and endpoints.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyOffline: CFStringRef; external name '_kMIDIPropertyOffline'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1253,6 +1385,9 @@ var kMIDIPropertyOffline: CFStringRef; external name '_kMIDIPropertyOffline'; (*
 }
 var kMIDIPropertyOffline: CFStringRef; external name '_kMIDIPropertyOffline'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1267,10 +1402,13 @@ var kMIDIPropertyOffline: CFStringRef; external name '_kMIDIPropertyOffline'; (*
 		hidden.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyPrivate: CFStringRef; external name '_kMIDIPropertyPrivate'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1278,6 +1416,9 @@ var kMIDIPropertyPrivate: CFStringRef; external name '_kMIDIPropertyPrivate'; (*
 }
 var kMIDIPropertyPrivate: CFStringRef; external name '_kMIDIPropertyPrivate'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1292,10 +1433,13 @@ var kMIDIPropertyPrivate: CFStringRef; external name '_kMIDIPropertyPrivate'; (*
 		and endpoints.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyDriverOwner: CFStringRef; external name '_kMIDIPropertyDriverOwner'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_1, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1303,6 +1447,9 @@ var kMIDIPropertyDriverOwner: CFStringRef; external name '_kMIDIPropertyDriverOw
 }
 var kMIDIPropertyDriverOwner: CFStringRef; external name '_kMIDIPropertyDriverOwner'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1320,7 +1467,10 @@ var kMIDIPropertyDriverOwner: CFStringRef; external name '_kMIDIPropertyDriverOw
 var kMIDIPropertyFactoryPatchNameFile: CFStringRef; external name '_kMIDIPropertyFactoryPatchNameFile'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_2, __IPHONE_NA, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1340,7 +1490,10 @@ var kMIDIPropertyFactoryPatchNameFile: CFStringRef; external name '_kMIDIPropert
 var kMIDIPropertyUserPatchNameFile: CFStringRef; external name '_kMIDIPropertyUserPatchNameFile'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_2, __IPHONE_NA, __IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1377,10 +1530,13 @@ var kMIDIPropertyUserPatchNameFile: CFStringRef; external name '_kMIDIPropertyUs
 		dictionary.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyNameConfiguration: CFStringRef; external name '_kMIDIPropertyNameConfiguration'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1388,6 +1544,9 @@ var kMIDIPropertyNameConfiguration: CFStringRef; external name '_kMIDIPropertyNa
 }
 var kMIDIPropertyNameConfiguration: CFStringRef; external name '_kMIDIPropertyNameConfiguration'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1405,10 +1564,13 @@ var kMIDIPropertyNameConfiguration: CFStringRef; external name '_kMIDIPropertyNa
 		A studio setup editor should allow the user to choose icons for external devices.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyImage: CFStringRef; external name '_kMIDIPropertyImage'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1416,6 +1578,9 @@ var kMIDIPropertyImage: CFStringRef; external name '_kMIDIPropertyImage'; (* att
 }
 var kMIDIPropertyImage: CFStringRef; external name '_kMIDIPropertyImage'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1428,10 +1593,13 @@ var kMIDIPropertyImage: CFStringRef; external name '_kMIDIPropertyImage'; (* att
 		applications should not write to it.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyDriverVersion: CFStringRef; external name '_kMIDIPropertyDriverVersion'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1439,6 +1607,9 @@ var kMIDIPropertyDriverVersion: CFStringRef; external name '_kMIDIPropertyDriver
 }
 var kMIDIPropertyDriverVersion: CFStringRef; external name '_kMIDIPropertyDriverVersion'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1450,10 +1621,13 @@ var kMIDIPropertyDriverVersion: CFStringRef; external name '_kMIDIPropertyDriver
 		the General MIDI specification.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertySupportsGeneralMIDI: CFStringRef; external name '_kMIDIPropertySupportsGeneralMIDI'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1461,6 +1635,9 @@ var kMIDIPropertySupportsGeneralMIDI: CFStringRef; external name '_kMIDIProperty
 }
 var kMIDIPropertySupportsGeneralMIDI: CFStringRef; external name '_kMIDIPropertySupportsGeneralMIDI'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1472,10 +1649,13 @@ var kMIDIPropertySupportsGeneralMIDI: CFStringRef; external name '_kMIDIProperty
 		the MIDI Machine Control portion of the MIDI specification.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertySupportsMMC: CFStringRef; external name '_kMIDIPropertySupportsMMC'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1483,6 +1663,9 @@ var kMIDIPropertySupportsMMC: CFStringRef; external name '_kMIDIPropertySupports
 }
 var kMIDIPropertySupportsMMC: CFStringRef; external name '_kMIDIPropertySupportsMMC'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1495,10 +1678,13 @@ var kMIDIPropertySupportsMMC: CFStringRef; external name '_kMIDIPropertySupports
 		should NOT be set on devices which are controlled by drivers.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyCanRoute: CFStringRef; external name '_kMIDIPropertyCanRoute'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1506,6 +1692,9 @@ var kMIDIPropertyCanRoute: CFStringRef; external name '_kMIDIPropertyCanRoute'; 
 }
 var kMIDIPropertyCanRoute: CFStringRef; external name '_kMIDIPropertyCanRoute'; (* attribute const *)		// e.g. is patch bay
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1517,10 +1706,13 @@ var kMIDIPropertyCanRoute: CFStringRef; external name '_kMIDIPropertyCanRoute'; 
 		to MIDI beat clock messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyReceivesClock: CFStringRef; external name '_kMIDIPropertyReceivesClock'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1528,6 +1720,9 @@ var kMIDIPropertyReceivesClock: CFStringRef; external name '_kMIDIPropertyReceiv
 }
 var kMIDIPropertyReceivesClock: CFStringRef; external name '_kMIDIPropertyReceivesClock'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1539,10 +1734,13 @@ var kMIDIPropertyReceivesClock: CFStringRef; external name '_kMIDIPropertyReceiv
 		to MIDI Time Code messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyReceivesMTC: CFStringRef; external name '_kMIDIPropertyReceivesMTC'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1550,6 +1748,9 @@ var kMIDIPropertyReceivesMTC: CFStringRef; external name '_kMIDIPropertyReceives
 }
 var kMIDIPropertyReceivesMTC: CFStringRef; external name '_kMIDIPropertyReceivesMTC'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1561,10 +1762,13 @@ var kMIDIPropertyReceivesMTC: CFStringRef; external name '_kMIDIPropertyReceives
 		to MIDI Note On messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyReceivesNotes: CFStringRef; external name '_kMIDIPropertyReceivesNotes'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1572,6 +1776,9 @@ var kMIDIPropertyReceivesNotes: CFStringRef; external name '_kMIDIPropertyReceiv
 }
 var kMIDIPropertyReceivesNotes: CFStringRef; external name '_kMIDIPropertyReceivesNotes'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1583,10 +1790,13 @@ var kMIDIPropertyReceivesNotes: CFStringRef; external name '_kMIDIPropertyReceiv
 		to MIDI program change messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyReceivesProgramChanges: CFStringRef; external name '_kMIDIPropertyReceivesProgramChanges'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1594,6 +1804,9 @@ var kMIDIPropertyReceivesProgramChanges: CFStringRef; external name '_kMIDIPrope
 }
 var kMIDIPropertyReceivesProgramChanges: CFStringRef; external name '_kMIDIPropertyReceivesProgramChanges'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1605,10 +1818,13 @@ var kMIDIPropertyReceivesProgramChanges: CFStringRef; external name '_kMIDIPrope
 		to MIDI bank select MSB messages (control 0).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyReceivesBankSelectMSB: CFStringRef; external name '_kMIDIPropertyReceivesBankSelectMSB'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1616,6 +1832,9 @@ var kMIDIPropertyReceivesBankSelectMSB: CFStringRef; external name '_kMIDIProper
 }
 var kMIDIPropertyReceivesBankSelectMSB: CFStringRef; external name '_kMIDIPropertyReceivesBankSelectMSB'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1627,10 +1846,13 @@ var kMIDIPropertyReceivesBankSelectMSB: CFStringRef; external name '_kMIDIProper
 		to MIDI bank select LSB messages (control 32).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyReceivesBankSelectLSB: CFStringRef; external name '_kMIDIPropertyReceivesBankSelectLSB'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1638,6 +1860,9 @@ var kMIDIPropertyReceivesBankSelectLSB: CFStringRef; external name '_kMIDIProper
 }
 var kMIDIPropertyReceivesBankSelectLSB: CFStringRef; external name '_kMIDIPropertyReceivesBankSelectLSB'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1649,10 +1874,13 @@ var kMIDIPropertyReceivesBankSelectLSB: CFStringRef; external name '_kMIDIProper
 		MIDI beat clock messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyTransmitsClock: CFStringRef; external name '_kMIDIPropertyTransmitsClock'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1660,6 +1888,9 @@ var kMIDIPropertyTransmitsClock: CFStringRef; external name '_kMIDIPropertyTrans
 }
 var kMIDIPropertyTransmitsClock: CFStringRef; external name '_kMIDIPropertyTransmitsClock'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1671,6 +1902,11 @@ var kMIDIPropertyTransmitsClock: CFStringRef; external name '_kMIDIPropertyTrans
 		MIDI Time Code messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1689,6 +1925,11 @@ var kMIDIPropertyTransmitsMTC: CFStringRef; external name '_kMIDIPropertyTransmi
 		MIDI note messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1707,6 +1948,11 @@ var kMIDIPropertyTransmitsNotes: CFStringRef; external name '_kMIDIPropertyTrans
 		MIDI program change messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1725,6 +1971,11 @@ var kMIDIPropertyTransmitsProgramChanges: CFStringRef; external name '_kMIDIProp
 		MIDI bank select MSB messages (control 0).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1743,6 +1994,11 @@ var kMIDIPropertyTransmitsBankSelectMSB: CFStringRef; external name '_kMIDIPrope
 		MIDI bank select LSB messages (control 32).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1762,6 +2018,11 @@ var kMIDIPropertyTransmitsBankSelectLSB: CFStringRef; external name '_kMIDIPrope
 		sounds (e.g. converting the signal to mono).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1780,6 +2041,11 @@ var kMIDIPropertyPanDisruptsStereo: CFStringRef; external name '_kMIDIPropertyPa
 		audio samples in response to MIDI note messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1798,6 +2064,11 @@ var kMIDIPropertyIsSampler: CFStringRef; external name '_kMIDIPropertyIsSampler'
 		presets tend to be collections of non-transposable samples (e.g. drum kits).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1816,6 +2087,11 @@ var kMIDIPropertyIsDrumMachine: CFStringRef; external name '_kMIDIPropertyIsDrum
 		external audio signals, controlled by MIDI messages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1834,6 +2110,11 @@ var kMIDIPropertyIsMixer: CFStringRef; external name '_kMIDIPropertyIsMixer'; (*
 		primarily a MIDI-controlled audio effect unit (i.e. does not generate sound on its own).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1855,6 +2136,11 @@ var kMIDIPropertyIsEffectUnit: CFStringRef; external name '_kMIDIPropertyIsEffec
 		multi-timbral but have fewer than 16 "parts".
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1874,6 +2160,11 @@ var kMIDIPropertyMaxReceiveChannels: CFStringRef; external name '_kMIDIPropertyM
 		and 16.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+		New for CoreMIDI 1.3.
+>>>>>>> graemeg/cpstrnew
 =======
 
 		New for CoreMIDI 1.3.
@@ -1893,10 +2184,13 @@ var kMIDIPropertyMaxTransmitChannels: CFStringRef; external name '_kMIDIProperty
 		devices. Applications must not write to it.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyDriverDeviceEditorApp: CFStringRef; external name '_kMIDIPropertyDriverDeviceEditorApp'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1904,6 +2198,9 @@ var kMIDIPropertyDriverDeviceEditorApp: CFStringRef; external name '_kMIDIProper
 }
 var kMIDIPropertyDriverDeviceEditorApp: CFStringRef; external name '_kMIDIPropertyDriverDeviceEditorApp'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1915,10 +2212,13 @@ var kMIDIPropertyDriverDeviceEditorApp: CFStringRef; external name '_kMIDIProper
 		Show Control specification.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertySupportsShowControl: CFStringRef; external name '_kMIDIPropertySupportsShowControl'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1926,6 +2226,9 @@ var kMIDIPropertySupportsShowControl: CFStringRef; external name '_kMIDIProperty
 }
 var kMIDIPropertySupportsShowControl: CFStringRef; external name '_kMIDIPropertySupportsShowControl'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1941,10 +2244,13 @@ var kMIDIPropertySupportsShowControl: CFStringRef; external name '_kMIDIProperty
 		For objects other than endpoints, the display name is the same as the name.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 var kMIDIPropertyDisplayName: CFStringRef; external name '_kMIDIPropertyDisplayName'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1952,6 +2258,9 @@ var kMIDIPropertyDisplayName: CFStringRef; external name '_kMIDIPropertyDisplayN
 }
 var kMIDIPropertyDisplayName: CFStringRef; external name '_kMIDIPropertyDisplayName'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

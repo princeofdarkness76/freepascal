@@ -1,6 +1,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include ogc/libversion.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -95,7 +98,11 @@
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include wiikeyboard/wsksymdef.inc}
+=======
+  { $include wiikeyboard/wsksymdef.inc}
+>>>>>>> graemeg/cpstrnew
 =======
   { $include wiikeyboard/wsksymdef.inc}
 >>>>>>> graemeg/cpstrnew

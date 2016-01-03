@@ -26,8 +26,11 @@ Unit aoptcpub; { Assembler OPTimizer CPU specific Base }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { enable the following define if memory references can have a scaled index }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { enable the following define if memory references can have both a base and }
@@ -38,6 +41,9 @@ Unit aoptcpub; { Assembler OPTimizer CPU specific Base }
 { enable the following define if memory references can have a scaled index }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -47,6 +53,10 @@ Unit aoptcpub; { Assembler OPTimizer CPU specific Base }
 { override                                                            }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -119,8 +129,13 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   aopt_uncondjmp = A_BA;
   aopt_condjmp = A_BC;
+=======
+  aopt_uncondjmp = A_J;
+  aopt_condjmp = A_BEQ;
+>>>>>>> graemeg/cpstrnew
 =======
   aopt_uncondjmp = A_J;
   aopt_condjmp = A_BEQ;

@@ -76,6 +76,7 @@ type
     _maxDate: NSDate;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __dcFlags: record
       case byte of
        0: (_anonbitfield_NSDatePickerCell0: cuint);
@@ -83,11 +84,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __dcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSDatePickerCell0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -102,7 +108,10 @@ type
         wrapsDateComponentArithmetic: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

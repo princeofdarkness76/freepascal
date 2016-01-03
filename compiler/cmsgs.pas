@@ -55,8 +55,11 @@ type
     msgstates   : array[1..maxmsgidxparts] of PArrayOfState;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { set if changes with $WARN need to be cleared at next module change }
     has_local_changes : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -135,9 +138,13 @@ begin
      getmem(msgstates[i],msgidxmax[i]*sizeof(tmsgstate));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      { default value for msgstate is ms_on_global }
      for j:=0 to msgidxmax[i]-1 do
        msgstates[i]^[j]:=ms_on_global;
+=======
+     fillchar(msgstates[i]^,msgidxmax[i]*sizeof(tmsgstate),0);
+>>>>>>> graemeg/cpstrnew
 =======
      fillchar(msgstates[i]^,msgidxmax[i]*sizeof(tmsgstate),0);
 >>>>>>> graemeg/cpstrnew
@@ -426,8 +433,11 @@ var
   i: longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldstate : tmsgstate;
   is_global : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -438,6 +448,7 @@ begin
   if (i < low(msgstates)) or
      (i > msgparts) then
     exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if (nr mod 1000 < msgidxmax[i]) then
@@ -452,6 +463,8 @@ begin
       result:=true;
     end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   msgstates[i]^[nr mod 1000]:=ms_off;

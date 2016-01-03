@@ -45,7 +45,11 @@ unit cpupara;
           procedure createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): TCGPara;override;
+=======
+          function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): TCGPara;override;
+>>>>>>> graemeg/cpstrnew
 =======
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): TCGPara;override;
 >>>>>>> graemeg/cpstrnew
@@ -100,9 +104,12 @@ unit cpupara;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if handle_common_ret_in_param(def,pd,result) then
           exit;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if (tf_safecall_exceptions in target_info.flags) and
@@ -112,6 +119,9 @@ unit cpupara;
             exit;
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -121,6 +131,7 @@ unit cpupara;
               case def.typ of
                 recorddef :
                   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     { Win32 GCC returns small records in the FUNCTION_RETURN_REG up to 8 bytes in registers.
@@ -135,12 +146,17 @@ unit cpupara;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                     { Win32 GCC returns small records in the FUNCTION_RETURN_REG.
                       For stdcall we follow delphi instead of GCC }
                     if (calloption in [pocall_cdecl,pocall_cppdecl]) and
                        (def.size>0) and
                        (def.size<=8) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -153,8 +169,13 @@ unit cpupara;
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           system_i386_os2,
           system_i386_emx:
+=======
+          system_i386_darwin,
+          system_i386_iphonesim :
+>>>>>>> graemeg/cpstrnew
 =======
           system_i386_darwin,
           system_i386_iphonesim :
@@ -251,7 +272,11 @@ unit cpupara;
                 result:=
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   (not(calloption in (cdecl_pocalls)) and
+=======
+                  (not(calloption in (cdecl_pocalls+[pocall_mwpascal])) and
+>>>>>>> graemeg/cpstrnew
 =======
                   (not(calloption in (cdecl_pocalls+[pocall_mwpascal])) and
 >>>>>>> graemeg/cpstrnew
@@ -483,7 +508,11 @@ unit cpupara;
         { Return in FPU register? }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if result.def.typ=floatdef then
+=======
+        if def.typ=floatdef then
+>>>>>>> graemeg/cpstrnew
 =======
         if def.typ=floatdef then
 >>>>>>> graemeg/cpstrnew
@@ -497,7 +526,10 @@ unit cpupara;
             paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -518,7 +550,10 @@ unit cpupara;
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -534,7 +569,10 @@ unit cpupara;
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -545,7 +583,10 @@ unit cpupara;
                paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -783,8 +824,12 @@ unit cpupara;
                        (not(hp.vardef.typ in [floatdef,recorddef,arraydef]) or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         pushaddr or
                         is_dynamic_array(hp.vardef)) and
+=======
+                        pushaddr) and
+>>>>>>> graemeg/cpstrnew
 =======
                         pushaddr) and
 >>>>>>> graemeg/cpstrnew
@@ -933,7 +978,11 @@ unit cpupara;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcpuparamanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
+=======
+    procedure ti386paramanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure ti386paramanager.createtempparaloc(list: TAsmList;calloption : tproccalloption;parasym : tparavarsym;can_use_final_stack_loc : boolean;var cgpara:TCGPara);
 >>>>>>> graemeg/cpstrnew

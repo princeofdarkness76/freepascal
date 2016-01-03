@@ -18,6 +18,7 @@ uses
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
@@ -25,11 +26,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
   palette: TPTCPalette = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -44,6 +50,7 @@ begin
       { create console }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 
       { create format }
@@ -51,11 +58,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       console := TPTCConsole.Create;
 
       { create format }
       format := TPTCFormat.Create(8);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -66,6 +78,7 @@ begin
       { create surface }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(console.width, console.height, format);
 
       { create palette }
@@ -73,11 +86,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       surface := TPTCSurface.Create(console.width, console.height, format);
 
       { create palette }
       palette := TPTCPalette.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -87,6 +105,7 @@ begin
         data[i] := i;
 
       { load palette data }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       palette.Load(data);
@@ -99,6 +118,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       palette.load(data);
 
       { set console palette }
@@ -107,6 +128,9 @@ begin
       { set surface palette }
       surface.palette(palette);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -149,9 +173,12 @@ begin
     finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       console.close;
@@ -160,6 +187,9 @@ begin
       palette.Free;
       format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

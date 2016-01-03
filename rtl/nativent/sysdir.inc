@@ -19,7 +19,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_MkDir(const s: UnicodeString);
+=======
+procedure MkDir(s: pchar; len: sizeuint); [IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+>>>>>>> graemeg/cpstrnew
 =======
 procedure MkDir(s: pchar; len: sizeuint); [IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -35,8 +39,11 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SysUnicodeStringToNtStr(name, s);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if not Assigned(s) or (len <= 1) or (InOutRes <> 0) then
@@ -44,6 +51,9 @@ begin
 
   SysPCharToNtStr(name, s, len);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -81,7 +91,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_RmDir(const s: UnicodeString);
+=======
+procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+>>>>>>> graemeg/cpstrnew
 =======
 procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -96,6 +110,7 @@ var
   disp: TFileDispositionInformation;
   res: LongInt;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if s = '.' then
@@ -113,6 +128,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if (len = 1) and (s^ = '.') then
     InOutRes := 16;
   if not assigned(s) or (len = 0) or (InOutRes <> 0) then
@@ -122,6 +139,9 @@ begin
 
   SysPCharToNtStr(ntstr, s, len);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -164,7 +184,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_ChDir(const s: UnicodeString);
+=======
+procedure ChDir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+>>>>>>> graemeg/cpstrnew
 =======
 procedure ChDir(s: pchar; len: sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 >>>>>>> graemeg/cpstrnew
@@ -178,7 +202,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_GetDir(DriveNr: byte; var Dir: UnicodeString);
+=======
+procedure GetDir(DriveNr: byte; var Dir: ShortString);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure GetDir(DriveNr: byte; var Dir: ShortString);
 >>>>>>> graemeg/cpstrnew

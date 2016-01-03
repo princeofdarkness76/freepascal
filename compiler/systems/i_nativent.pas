@@ -37,7 +37,11 @@ unit i_nativent;
             shortname    : 'NativeNT';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_use_function_relative_addresses
+=======
+            flags        : [tf_files_case_aware,tf_use_function_relative_addresses,tf_smartlink_library
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_files_case_aware,tf_use_function_relative_addresses,tf_smartlink_library
 >>>>>>> graemeg/cpstrnew
@@ -52,7 +56,11 @@ unit i_nativent;
             unit_env     : 'NTUNITS';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             extradefines : 'NATIVENT;FPC_OS_UNICODE';
+=======
+            extradefines : 'NATIVENT,UNICODE';
+>>>>>>> graemeg/cpstrnew
 =======
             extradefines : 'NATIVENT,UNICODE';
 >>>>>>> graemeg/cpstrnew
@@ -86,8 +94,13 @@ unit i_nativent;
             assemextern  : as_gas;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             link         : ld_int_nativent;
             linkextern   : ld_none;
+=======
+            link         : nil;
+            linkextern   : nil;
+>>>>>>> graemeg/cpstrnew
 =======
             link         : nil;
             linkextern   : nil;
@@ -120,9 +133,13 @@ unit i_nativent;
             stacksize    : 16*1024*1024;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             stackalign   : 4;
             abi          : abi_default;
             llvmdatalayout : 'e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-f80:128:128-v64:64:64-v128:128:128-a0:0:64-f80:32:32-n8:16:32-S32';
+=======
+            abi          : abi_default;
+>>>>>>> graemeg/cpstrnew
 =======
             abi          : abi_default;
 >>>>>>> graemeg/cpstrnew
@@ -136,6 +153,7 @@ unit i_nativent;
 initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUI386}
   {$ifdef NATIVENT}
     set_source_info(system_i386_nativent_info);
@@ -144,12 +162,17 @@ initialization
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef CPU86}
   {$ifdef NATIVENT}
     set_source_info(system_i386_nativent_info);
   {$endif NATIVENT}
 {$endif CPU86}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

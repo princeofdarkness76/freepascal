@@ -338,9 +338,13 @@ begin
   test_move_large(500);   // 512 longints=2048 bytes
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef CPU16}
   test_move_large(500000);
 {$endif CPU16}
+=======
+  test_move_large(500000);
+>>>>>>> graemeg/cpstrnew
 =======
   test_move_large(500000);
 >>>>>>> graemeg/cpstrnew

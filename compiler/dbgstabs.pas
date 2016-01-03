@@ -29,9 +29,12 @@ interface
       cclasses,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       systems,dbgbase,cgbase,
       symconst,symtype,symdef,symsym,symtable,symbase,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       dbgbase,cgbase,
@@ -85,8 +88,11 @@ interface
         vardatadef: trecorddef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tagtypeprefix: ansistring;
         function use_tag_prefix(def : tdef) : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -110,10 +116,13 @@ interface
         function  get_appendsym_paravar_reg(sym:tparavarsym;const typ,stabstr:string;reg: tregister): ansistring;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         function  base_stabs_str(typ: longint; const other, desc, value: ansistring): ansistring;overload;
         function  base_stabs_str(const typ, other, desc, value: ansistring): ansistring;overload;virtual;
         function  gen_procdef_startsym_stabs(def: tprocdef): TAsmList;virtual;
         function  gen_procdef_endsym_stabs(def: tprocdef): TAsmList;virtual;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -178,6 +187,9 @@ implementation
       symconst,defutil,
       cpuinfo,cpubase,paramgr,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -915,8 +927,11 @@ implementation
         { VMT symbol }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         maybe_add_vmt_sym(list,def);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if (oo_has_vmt in def.objectoptions) and
@@ -1470,6 +1485,7 @@ implementation
         if regidx<>0 then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           result:=sym_stabstr_evaluate(sym,'"${name}:$1",'+base_stabs_str(regvar_stab,'0','${line}','$2'),[ltyp+stabstr,tostr(longint(regstabs_table[regidx]))]);
       end;
 
@@ -1577,6 +1593,9 @@ implementation
 =======
           result:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_RSYM},0,${line},$2',[ltyp+stabstr,tostr(longint(regstabs_table[regidx]))]);
 >>>>>>> graemeg/cpstrnew
+=======
+          result:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_RSYM},0,${line},$2',[ltyp+stabstr,tostr(longint(regstabs_table[regidx]))]);
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -1627,6 +1646,9 @@ implementation
                   ss:=sym_stabstr_evaluate(sym,'"$$t:$1",${N_TSYM},0,0,$2',
                         [c+def_stab_number(tprocdef(sym.owner.defowner).struct),tostr(sym.localloc.reference.offset)])
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1639,7 +1661,11 @@ implementation
                     regidx:=findreg_by_number(sym.localloc.register);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     ss:=sym_stabstr_evaluate(sym,'"$$t:$1",'+base_stabs_str(regvar_stab,'0','0','$2'),
+=======
+                    ss:=sym_stabstr_evaluate(sym,'"$$t:$1",${N_RSYM},0,0,$2',
+>>>>>>> graemeg/cpstrnew
 =======
                     ss:=sym_stabstr_evaluate(sym,'"$$t:$1",${N_RSYM},0,0,$2',
 >>>>>>> graemeg/cpstrnew
@@ -1680,8 +1706,12 @@ implementation
                   }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if (target_dbg.id<>dbg_stabx) and
                      (c='p') and
+=======
+                  if (c='p') and
+>>>>>>> graemeg/cpstrnew
 =======
                   if (c='p') and
 >>>>>>> graemeg/cpstrnew
@@ -1701,8 +1731,12 @@ implementation
                       else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         ss:=sym_stabstr_evaluate(sym,'"${name}:$1",'+base_stabs_str(localvarsymref_stab,'0','${line}','$2'),
                               [c+st,getparaoffsetstr(sym.paraloc[calleeside].location^.reference)]);
+=======
+                        ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.paraloc[calleeside].location^.reference.offset)]);
+>>>>>>> graemeg/cpstrnew
 =======
                         ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.paraloc[calleeside].location^.reference.offset)]);
 >>>>>>> graemeg/cpstrnew
@@ -1717,7 +1751,11 @@ implementation
                     so some optimizing will make things harder to debug }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   ss:=sym_stabstr_evaluate(sym,'"${name}:$1",'+base_stabs_str(paravarsymref_stab,'0','${line}','$2'),[c+st,getoffsetstr(sym.localloc.reference)])
+=======
+                  ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.localloc.reference.offset)])
+>>>>>>> graemeg/cpstrnew
 =======
                   ss:=sym_stabstr_evaluate(sym,'"${name}:$1",${N_TSYM},0,${line},$2',[c+st,tostr(sym.localloc.reference.offset)])
 >>>>>>> graemeg/cpstrnew
@@ -2049,6 +2087,7 @@ implementation
         inherited Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         dbgtype:=dbg_stabs;
         stabsdir:=stab_stabs;
 
@@ -2065,6 +2104,8 @@ implementation
         paravarsymref_stab:=STABS_N_TSYM;
         tagtypeprefix:='Tt';
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -24,9 +24,13 @@
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 >>>>>>> graemeg/cpstrnew
@@ -89,11 +93,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -118,11 +125,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -141,11 +154,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -164,7 +183,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -180,7 +202,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -193,6 +218,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -204,6 +230,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -222,13 +253,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -248,6 +283,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -334,7 +373,10 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -353,7 +395,10 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -412,7 +457,10 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -428,7 +476,10 @@ type
 	end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -440,7 +491,10 @@ type
 function CSSM_KR_SetEnterpriseRecoveryPolicy( const (*var*) RecoveryPolicyFileName: CSSM_DATA; const (*var*) OldPassPhrase: CSSM_ACCESS_CREDENTIALS; const (*var*) NewPassPhrase: CSSM_ACCESS_CREDENTIALS ): CSSM_RETURN; external name '_CSSM_KR_SetEnterpriseRecoveryPolicy';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -452,6 +506,7 @@ function CSSM_KR_SetEnterpriseRecoveryPolicy( const (*var*) RecoveryPolicyFileNa
 function CSSM_KR_CreateRecoveryRegistrationContext( KRSPHandle: CSSM_KRSP_HANDLE; var NewContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_CreateRecoveryRegistrationContext';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_CreateRecoveryEnablementContext( KRSPHandle: CSSM_KRSP_HANDLE; const (*var*) LocalProfile: CSSM_KR_PROFILE; const (*var*) RemoteProfile: CSSM_KR_PROFILE; var NewContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_CreateRecoveryEnablementContext';
@@ -471,12 +526,17 @@ function CSSM_KR_CreateRecoveryRequestContext( KRSPHandle: CSSM_KRSP_HANDLE; con
 function CSSM_KR_GetPolicyInfo( CCHandle: CSSM_CC_HANDLE; var EncryptionProhibited: CSSM_KR_POLICY_FLAGS; var WorkFactor: UInt32 ): CSSM_RETURN; external name '_CSSM_KR_GetPolicyInfo';
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 function CSSM_KR_CreateRecoveryEnablementContext( KRSPHandle: CSSM_KRSP_HANDLE; const (*var*) LocalProfile: CSSM_KR_PROFILE; const (*var*) RemoteProfile: CSSM_KR_PROFILE; var NewContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_CreateRecoveryEnablementContext';
 
 function CSSM_KR_CreateRecoveryRequestContext( KRSPHandle: CSSM_KRSP_HANDLE; const (*var*) LocalProfile: CSSM_KR_PROFILE; var NewContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_CreateRecoveryRequestContext';
 
 function CSSM_KR_GetPolicyInfo( CCHandle: CSSM_CC_HANDLE; var EncryptionProhibited: CSSM_KR_POLICY_FLAGS; var WorkFactor: UInt32 ): CSSM_RETURN; external name '_CSSM_KR_GetPolicyInfo';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 
@@ -485,10 +545,15 @@ function CSSM_KR_GetPolicyInfo( CCHandle: CSSM_CC_HANDLE; var EncryptionProhibit
 function CSSM_KR_RegistrationRequest( RecoveryRegistrationContext: CSSM_CC_HANDLE; const (*var*) KRInData: CSSM_DATA; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; KRFlags: CSSM_KR_POLICY_FLAGS; var EstimatedTime: SInt32; ReferenceHandle: CSSM_HANDLE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RegistrationRequest';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; KRProfile: CSSM_KR_PROFILE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RegistrationRetrieve';
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+
+function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; KRProfile: CSSM_KR_PROFILE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RegistrationRetrieve';
+>>>>>>> graemeg/cpstrnew
 =======
 
 function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; KRProfile: CSSM_KR_PROFILE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RegistrationRetrieve';
@@ -504,10 +569,15 @@ function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHa
 function CSSM_KR_GenerateRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CCHandle: CSSM_CC_HANDLE; const (*var*) KRSPOptions: CSSM_DATA; KRFlags: CSSM_KR_POLICY_FLAGS; KRFields: CSSM_DATA_PTR; var NewCCHandle: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_GenerateRecoveryFields';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CryptoContext: CSSM_CC_HANDLE; const (*var*) KRSPOptions: CSSM_DATA; KRFlags: CSSM_KR_POLICY_FLAGS; const (*var*) KRFields: CSSM_DATA; var NewCryptoContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_ProcessRecoveryFields';
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+
+function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CryptoContext: CSSM_CC_HANDLE; const (*var*) KRSPOptions: CSSM_DATA; KRFlags: CSSM_KR_POLICY_FLAGS; const (*var*) KRFields: CSSM_DATA; var NewCryptoContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_ProcessRecoveryFields';
+>>>>>>> graemeg/cpstrnew
 =======
 
 function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CryptoContext: CSSM_CC_HANDLE; const (*var*) KRSPOptions: CSSM_DATA; KRFlags: CSSM_KR_POLICY_FLAGS; const (*var*) KRFields: CSSM_DATA; var NewCryptoContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_ProcessRecoveryFields';
@@ -523,6 +593,7 @@ function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; Cryp
 function CSSM_KR_RecoveryRequest( RecoveryRequestContext: CSSM_CC_HANDLE; const (*var*) KRInData: CSSM_DATA; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; ReferenceHandle: CSSM_HANDLE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RecoveryRequest';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_RecoveryRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; CacheHandle: CSSM_HANDLE_PTR; var NumberOfRecoveredKeys: UInt32 ): CSSM_RETURN; external name '_CSSM_KR_RecoveryRetrieve';
@@ -539,6 +610,8 @@ function CSSM_KR_QueryPolicyInfo( KRSPHandle: CSSM_KRSP_HANDLE; AlgorithmID: CSS
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 function CSSM_KR_RecoveryRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; CacheHandle: CSSM_HANDLE_PTR; var NumberOfRecoveredKeys: UInt32 ): CSSM_RETURN; external name '_CSSM_KR_RecoveryRetrieve';
 
@@ -548,6 +621,9 @@ function CSSM_KR_RecoveryRequestAbort( KRSPHandle: CSSM_KRSP_HANDLE; CacheHandle
 
 function CSSM_KR_QueryPolicyInfo( KRSPHandle: CSSM_KRSP_HANDLE; AlgorithmID: CSSM_ALGORITHMS; Mode: CSSM_ENCRYPT_MODE; Class: CSSM_CONTEXT_TYPE; var PolicyInfoData: CSSM_KR_POLICY_INFO_PTR ): CSSM_RETURN; external name '_CSSM_KR_QueryPolicyInfo';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -558,7 +634,10 @@ function CSSM_KR_QueryPolicyInfo( KRSPHandle: CSSM_KRSP_HANDLE; AlgorithmID: CSS
 function CSSM_KR_PassThrough( KRSPHandle: CSSM_KRSP_HANDLE; KeyRecoveryContext: CSSM_CC_HANDLE; CryptoContext: CSSM_CC_HANDLE; PassThroughId: UInt32; InputParams: {const} UnivPtr; OutputParams: UnivPtrPtr ): CSSM_RETURN; external name '_CSSM_KR_PassThrough';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

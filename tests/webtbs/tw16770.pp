@@ -4,6 +4,7 @@
 {$r+}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   Count: Word;
 
@@ -15,6 +16,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure Test;
 var
   Count: Word;
@@ -24,6 +27,9 @@ begin
   Count := 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -37,8 +43,11 @@ end;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Count := 0;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

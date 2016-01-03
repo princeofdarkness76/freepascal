@@ -50,6 +50,11 @@ _dynamic_start:
 _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#       movq    %rdx,%r9                 /* Address of the shared library termination
+#               	                 function.  */
+>>>>>>> graemeg/cpstrnew
 =======
 #       movq    %rdx,%r9                 /* Address of the shared library termination
 #               	                 function.  */
@@ -82,6 +87,7 @@ _start:
 _haltproc:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movq    __dl_fini@GOTPCREL(%rip),%rax
         movq    (%rax),%rax
         testq   %rax,%rax
@@ -89,6 +95,8 @@ _haltproc:
         call    *%rax
 .LNoDlFiniCall:
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -259,6 +259,7 @@ unit optdfa;
                   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                 { NB: this node should typically have empty def set }
 =======
@@ -297,6 +298,23 @@ unit optdfa;
 
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
+                { NB: this node should typically have empty def set }                  
+                if assigned(node.successor) then
+                  DFASetDiff(l,node.successor.optinfo^.life,node.optinfo^.def)
+                else if assigned(resultnode) then
+                  DFASetDiff(l,resultnode.optinfo^.life,node.optinfo^.def)
+                else
+                  l:=nil;
+
+                { for repeat..until, node use set in included at the end of loop }
+                if not (lnf_testatbegin in twhilerepeatnode(node).loopflags) then
+                  DFASetIncludeSet(l,node.optinfo^.use);
+
+                DFASetIncludeSet(l,node.optinfo^.life);
+
 >>>>>>> graemeg/cpstrnew
                 save:=node.optinfo^.life;
                 { to process body correctly, we need life info in place (because
@@ -411,6 +429,9 @@ unit optdfa;
                 { the for loop always updates its control variable }
                 DFASetDiff(l,l,node.optinfo^.def);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -358,15 +358,21 @@ end ;
 
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
 begin
+<<<<<<< HEAD
   DateTimeToString(Result, 'c', DateTime ,FormatSettings);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   DateTimeToString(Result, 'c', DateTime);
 end ;
 
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
 begin
   DateTimeToString(Result, 'c', DateTime ,FormatSettings);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -398,8 +404,11 @@ begin
   ErrorMsg:='';   Result:=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   While (Len>0) and (S[Len-1] in [' ',#8,#9,#10,#12,#13]) do
     Dec(len);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -529,6 +538,9 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -543,6 +555,7 @@ begin
     Raise EConvertError.Create(Msg);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function StrToDate(const S: string; FormatSettings: TFormatSettings): TDateTime;
 var
@@ -562,10 +575,16 @@ function StrToDate(const S: ShortString; const useformat : string; separator : c
 begin
     result := StrToDate(@S[1],Length(s),UseFormat,separator);
 >>>>>>> graemeg/cpstrnew
+=======
+function StrToDate(const S: ShortString; const useformat : string; separator : char = #0): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),UseFormat,separator);
+>>>>>>> graemeg/cpstrnew
 end;
 
 function StrToDate(const S: AnsiString; const useformat : string; separator : char = #0): TDateTime;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
   result := StrToDate(PChar(S),Length(s),UseFormat,separator);
 end;
@@ -609,14 +628,26 @@ function StrToDate(const S: ShortString; separator : char): TDateTime;
 begin
     result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
 >>>>>>> graemeg/cpstrnew
+=======
+    result := StrToDate(@S[1],Length(s),UseFormat,separator);
+end;
+
+function StrToDate(const S: ShortString; separator : char): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+>>>>>>> graemeg/cpstrnew
 end;
 
 function StrToDate(const S: ShortString): TDateTime;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // S[1] always exists for shortstring. Length 0 will trigger an error.
   result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+=======
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+>>>>>>> graemeg/cpstrnew
 =======
     result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
 >>>>>>> graemeg/cpstrnew
@@ -629,7 +660,11 @@ function StrToDate(const S: AnsiString; separator : char): TDateTime;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     result := StrToDate(Pchar(S),Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+=======
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+>>>>>>> graemeg/cpstrnew
 =======
     result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
 >>>>>>> graemeg/cpstrnew
@@ -642,7 +677,11 @@ function StrToDate(const S: AnsiString): TDateTime;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   result := StrToDate(Pchar(S),Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+=======
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+>>>>>>> graemeg/cpstrnew
 =======
     result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
 >>>>>>> graemeg/cpstrnew
@@ -670,6 +709,7 @@ type
 var
    AmPm: integer;
    TimeValues: TTimeValues;
+<<<<<<< HEAD
 
     function StrPas(Src : PChar; len: integer = 0) : ShortString;
     begin
@@ -680,6 +720,18 @@ var
         move(src[0],result[1],len);
     end;
 
+=======
+
+    function StrPas(Src : PChar; len: integer = 0) : ShortString;
+    begin
+        //this is unsafe for len > 255, it will trash memory (I tested this)
+        //reducing it is safe, since whenever we use this a string > 255 is invalid anyway
+        if len > 255 then len := 255;
+        SetLength(Result, len);
+        move(src[0],result[1],len);
+    end;
+
+>>>>>>> graemeg/cpstrnew
    function SplitElements(out TimeValues: TTimeValues; out AmPm: Integer): Boolean;
    //Strict version. It does not allow #32 as Separator, it will treat it as whitespace always
    const
@@ -719,6 +771,7 @@ var
          OffSet := Cur;
          if (CurChar <> '0') then FirstSignificantDigit := OffSet else FirstSignificantDigit := -1;
          while (Cur < Len -1) and (S[Cur + 1] in Digits) do
+<<<<<<< HEAD
          begin
            //Mark first Digit that is not '0'
            if (FirstSignificantDigit = -1) and (S[Cur] <> '0') then FirstSignificantDigit := Cur;
@@ -731,6 +784,20 @@ var
          //this way we know that Val() will never overflow Value !
          if (ElemLen <= 2) or ((ElemLen <= 3) and (TimeIndex = tiMSec) ) then
          begin
+=======
+         begin
+           //Mark first Digit that is not '0'
+           if (FirstSignificantDigit = -1) and (S[Cur] <> '0') then FirstSignificantDigit := Cur;
+           Inc(Cur);
+         end;
+         if (FirstSignificantDigit = -1) then FirstSignificantDigit := Cur;
+         ElemLen := 1 + Cur - FirstSignificantDigit;
+         //writeln('  S[FirstSignificantDigit] = ',S[FirstSignificantDigit], ' S[Cur] = ',S[Cur],' ElemLen = ',ElemLen,' -> ', StrPas(S + Offset, ElemLen));
+         //writeln('  Cur = ',Cur);
+         //this way we know that Val() will never overflow Value !
+         if (ElemLen <= 2) or ((ElemLen <= 3) and (TimeIndex = tiMSec) ) then
+         begin
+>>>>>>> graemeg/cpstrnew
            Val(StrPas(S + FirstSignificantDigit, ElemLen), Value, Err);
            //writeln('  Value = ',Value,' HH = ',TimeValues[0],' MM = ',TimeValues[1],' SS = ',TimeValues[2],' MSec = ',Timevalues[3]);
            //This is safe now, because we know Value < High(Word)
@@ -802,6 +869,7 @@ var
      if (TimeIndex = tiHour) or ((AmPm <> AMPM_None) and ((TimeValues[tiHour] > 12) or (TimeValues[tiHour] = 0))) or DigitPending then Exit;
      Result := True;
    end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -946,6 +1014,9 @@ end;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> graemeg/cpstrnew
 begin
   if separator = #0 then
         separator := defs.TimeSeparator;
@@ -1003,6 +1074,7 @@ function StrToDateTime(const s: AnsiString; const FormatSettings : TFormatSettin
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TimeStr, DateStr: AnsiString;
   PartsFound: Integer;
 begin
@@ -1031,6 +1103,8 @@ begin
   A:=S;
   Result:=StrToDateTime(A,FormatSettings);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   I: integer;
@@ -1086,6 +1160,9 @@ begin
   else
     Result:=StrToDate(S,UseFormat.ShortDateFormat,UseFormat.DateSeparator);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1093,6 +1170,7 @@ end;
 
 {   FormatDateTime formats DateTime to the given format string FormatStr   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function FormatDateTime(const FormatStr: string; DateTime: TDateTime; Options : TFormatDateTimeOptions = []): string;
@@ -1106,6 +1184,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 function FormatDateTime(const FormatStr: string; DateTime: TDateTime): string;
 begin
   DateTimeToString(Result, FormatStr, DateTime, DefaultFormatSettings);
@@ -1115,6 +1195,9 @@ function FormatDateTime(const FormatStr: string; DateTime: TDateTime; const Form
 begin
   DateTimeToString(Result, FormatStr, DateTime, FormatSettings);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1122,6 +1205,7 @@ end;
 
 {   DateTimeToString formats DateTime to the given format in FormatStr   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure DateTimeToString(out Result: string; const FormatStr: string; 
@@ -1135,6 +1219,8 @@ procedure DateTimeToString(out Result: string; const FormatStr: string; const Da
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime);
 begin
   DateTimeToString(Result, FormatStr, DateTime, DefaultFormatSettings);
@@ -1142,6 +1228,9 @@ end;
 
 procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime; const FormatSettings: TFormatSettings);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1230,6 +1319,7 @@ var
   Year, Month, Day, DayOfWeek, Hour, Minute, Second, MilliSecond: word;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   procedure StoreFormat(const FormatStr: string; Nesting: Integer; TimeFlag: Boolean);
   var
@@ -1245,6 +1335,8 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
   procedure StoreFormat(const FormatStr: string; Nesting: Integer; TimeFlag: Boolean);
@@ -1258,6 +1350,9 @@ var
     tmp: integer;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1270,7 +1365,10 @@ var
     Clock12 := false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     isInterval := false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1304,7 +1402,10 @@ var
     lastformattoken := ' ';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     prevlasttoken := 'H';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1352,9 +1453,13 @@ var
         ':': StoreStr(@FormatSettings.TimeSeparator, 1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	'[': if (fdoInterval in Options) then isInterval := true else StoreStr(FormatCurrent, 1);
 	']': if (fdoInterval in Options) then isInterval := false else StoreStr(FormatCurrent, 1);
         ' ', 'C', 'D', 'H', 'M', 'N', 'S', 'T', 'Y', 'Z', 'F' :
+=======
+        ' ', 'C', 'D', 'H', 'M', 'N', 'S', 'T', 'Y','Z' :
+>>>>>>> graemeg/cpstrnew
 =======
         ' ', 'C', 'D', 'H', 'M', 'N', 'S', 'T', 'Y','Z' :
 >>>>>>> graemeg/cpstrnew
@@ -1376,9 +1481,12 @@ var
             'M': begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	      if isInterval and ((prevlasttoken = 'H') or TimeFlag) then
 	        StoreInt(Minute + (Hour + trunc(abs(DateTime))*24)*60, 0)
 	      else
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1414,11 +1522,15 @@ var
             end ;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'H': 
 	      if isInterval then
 	        StoreInt(Hour + trunc(abs(DateTime))*24, 0)
 	      else
 	      if Clock12 then
+=======
+            'H': if Clock12 then
+>>>>>>> graemeg/cpstrnew
 =======
             'H': if Clock12 then
 >>>>>>> graemeg/cpstrnew
@@ -1441,6 +1553,7 @@ var
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'N': if isInterval then
 	           StoreInt(Minute + (Hour + trunc(abs(DateTime))*24)*60, 0)
 		 else
@@ -1455,12 +1568,17 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             'N': if Count = 1 then
                    StoreInt(Minute, 0)
                  else
                    StoreInt(Minute, 2);
             'S': if Count = 1 then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1485,11 +1603,14 @@ var
                  end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'F': begin
                    StoreFormat(FormatSettings.ShortDateFormat, Nesting+1, False);
                    StoreString(' ');
                    StoreFormat(FormatSettings.LongTimeFormat, Nesting+1, True);
                  end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1508,7 +1629,10 @@ var
                    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 prevlasttoken := lastformattoken;  
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1528,7 +1652,10 @@ var
                    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		 prevlasttoken := lastformattoken;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1539,7 +1666,10 @@ var
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	  prevlasttoken := lastformattoken;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1632,7 +1762,10 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // S[1] always exists for shortstring. Length 0 will trigger an error.
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1651,6 +1784,7 @@ begin
   Result:=Length(S)<>0;
   If Result then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     Value:=IntStrToDate(Msg,PChar(S),Length(S),useformat,DefaultFormatSettings,Separator);
@@ -1789,6 +1923,85 @@ begin
     end;
 end;
 
+=======
+    Value:=IntStrToDate(Msg,@S[1],Length(S),useformat,DefaultFormatSettings,Separator);
+    Result:=(Msg='');
+    end;
+end;
+
+function TryStrToDate(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,Separator);
+end;
+
+
+function TryStrToDate(const S: AnsiString; out Value: TDateTime): Boolean;
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,#0);
+end;
+
+function TryStrToDate(const S: AnsiString; out Value: TDateTime; separator : char): Boolean;
+
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,Separator);
+end;
+
+function TryStrToDate(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+Var
+  Msg : Ansistring;
+
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+      Value:=IntStrToDate(Msg,@S[1],Length(S),FormatSettings.ShortDateFormat,FormatSettings,#0);
+      Result:=(Msg='');
+    end;
+end;
+
+function TryStrToTime(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
+
+Var
+  Msg : AnsiString;
+begin
+  Value:=IntStrToTime(Msg,@S[1],Length(S),DefaultFormatSettings,Separator);
+  result:=(Msg='');
+end;
+
+function TryStrToTime(const S: ShortString; out Value: TDateTime): Boolean;
+begin
+  Result := TryStrToTime(S,Value,#0);
+end;
+
+function TryStrToTime(const S: AnsiString; out Value: TDateTime; separator : char): Boolean;
+Var
+  Msg : AnsiString;
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+      Value:=IntStrToTime(Msg,@S[1],Length(S),DefaultFormatSettings,Separator);
+      Result:=(Msg='');
+    end;
+end;
+
+function TryStrToTime(const S: AnsiString; out Value: TDateTime): Boolean;
+begin
+    result := TryStrToTime(S,Value,#0);
+end;
+
+function TryStrToTime(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+Var msg : AnsiString;
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+      Value:=IntStrToTime(Msg,@S[1],Length(S),FormatSettings,#0);
+      Result:=(Msg='');
+    end;
+end;
+
+>>>>>>> graemeg/cpstrnew
 function TryStrToDateTime(const S: ShortString; out Value: TDateTime): Boolean;
   begin
     result:=true;
@@ -1801,6 +2014,7 @@ function TryStrToDateTime(const S: ShortString; out Value: TDateTime): Boolean;
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TryStrToTime(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
 
@@ -1846,6 +2060,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 function TryStrToDateTime(const S: AnsiString; out Value: TDateTime): Boolean;
   begin
     result:=true;
@@ -1865,6 +2081,7 @@ function TryStrToDateTime(const S: ShortString; out Value: TDateTime): Boolean;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TryStrToDateTime(const S: AnsiString; out Value: TDateTime): Boolean;
   begin
     result := TryStrToDateTime(S, Value, DefaultFormatSettings);
@@ -1908,6 +2125,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 function TryStrToDateTime(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
 var
   I: integer;
@@ -1945,6 +2164,9 @@ begin
    result := StrToTimeDef(S,DefValue,#0);
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function StrToDateTimeDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
 begin
@@ -1964,6 +2186,7 @@ begin
     result:=defvalue;
 end;
 
+<<<<<<< HEAD
 =======
 function TryStrToDateTime(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
 var
@@ -1993,21 +2216,33 @@ begin
 end;
 
 function StrToDateDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+=======
+function StrToDateDef(const S: AnsiString; const Defvalue : TDateTime): TDateTime;
+>>>>>>> graemeg/cpstrnew
 begin
    result := StrToDateDef(S,DefValue,#0);
 end;
 
+<<<<<<< HEAD
 function StrToTimeDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+=======
+function StrToTimeDef(const S: AnsiString; const Defvalue : TDateTime): TDateTime;
+>>>>>>> graemeg/cpstrnew
 begin
    result := StrToTimeDef(S,DefValue,#0);
 end;
 
+<<<<<<< HEAD
 function StrToDateTimeDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+=======
+function StrToDateTimeDef(const S: AnsiString; const Defvalue : TDateTime): TDateTime;
+>>>>>>> graemeg/cpstrnew
 begin
   if not TryStrToDateTime(s,Result) Then
     result:=defvalue;
 end;
 
+<<<<<<< HEAD
 function StrToDateDef(const S: ShortString; const Defvalue : TDateTime; separator : char): TDateTime;
 begin
   if not TryStrToDate(s,Result, separator) Then
@@ -2037,6 +2272,8 @@ begin
     result:=defvalue;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 function StrToDateDef(const S: AnsiString; const Defvalue : TDateTime; separator : char): TDateTime;
 begin
   if not TryStrToDate(s,Result, separator) Then

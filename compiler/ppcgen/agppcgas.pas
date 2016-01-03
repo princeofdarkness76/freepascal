@@ -561,7 +561,11 @@ unit agppcgas;
          supported_targets : [system_powerpc_darwin,system_powerpc64_darwin];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          flags : [af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
+=======
+         flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
+>>>>>>> graemeg/cpstrnew
 =======
          flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
 >>>>>>> graemeg/cpstrnew

@@ -220,6 +220,9 @@ begin
 =======
     if (Length (Pa) > 1) and (Pa [1] in ['A'..'Z', 'a'..'z']) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -659,7 +662,11 @@ end;
    directory at the same time for compatibility reasons - however this
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    support makes it impossible to use otherwise possibly valid name
+=======
+   support makes it impossible to use anotherwise possibly valid name
+>>>>>>> graemeg/cpstrnew
 =======
    support makes it impossible to use anotherwise possibly valid name
 >>>>>>> graemeg/cpstrnew

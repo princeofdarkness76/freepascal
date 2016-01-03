@@ -90,9 +90,13 @@ unit i_gba;
             stacksize    : 16384;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             stackalign   : 8;
             abi : abi_eabi;
             llvmdatalayout : 'todo';
+=======
+            abi : abi_eabi
+>>>>>>> graemeg/cpstrnew
 =======
             abi : abi_eabi
 >>>>>>> graemeg/cpstrnew

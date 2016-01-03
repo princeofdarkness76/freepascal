@@ -2,7 +2,11 @@
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ctypes, cl;
+=======
+  cl;
+>>>>>>> graemeg/cpstrnew
 =======
   cl;
 >>>>>>> graemeg/cpstrnew
@@ -30,7 +34,11 @@ var
   buf : array[0..99999] of char;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   bufwritten : csize_t;
+=======
+  bufwritten : LongWord;
+>>>>>>> graemeg/cpstrnew
 =======
   bufwritten : LongWord;
 >>>>>>> graemeg/cpstrnew

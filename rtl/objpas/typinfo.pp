@@ -227,9 +227,15 @@ unit typinfo;
                   ResultType : ShortString     // for mkFunction, mkClassFunction only
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   ResultTypeRef : PTypeInfo;  // for mkFunction, mkClassFunction only
                   CC : TCallConv;
                   ParamTypeRefs : array[1..ParamCount] of PTypeInfo;}
+=======
+                  ResultTypeRef : PPTypeInfo;  // for mkFunction, mkClassFunction only
+                  CC : TCallConv;
+                  ParamTypeRefs : array[1..ParamCount] of PPTypeInfo;}
+>>>>>>> graemeg/cpstrnew
 =======
                   ResultTypeRef : PPTypeInfo;  // for mkFunction, mkClassFunction only
                   CC : TCallConv;
@@ -586,6 +592,9 @@ type
 =======
   tsetarr = bitpacked array[0..31] of 0..1;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

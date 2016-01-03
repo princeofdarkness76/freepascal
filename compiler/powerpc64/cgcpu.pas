@@ -107,6 +107,15 @@ type
     }
     procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: aint);override;
 
+    { need to override this for ppc64 to avoid calling CG methods which allocate 
+      registers during creation of the interface wrappers to subtract ioffset from 
+      the self pointer. But register allocation does not take place for them (which
+      would probably be the generic fix) so we need to have a specialized method
+      that uses the R11 scratch register in these cases.
+      At the same time this allows > 32 bit offsets as well.
+    }
+    procedure g_adjust_self_value(list:TAsmList;procdef: tprocdef;ioffset: aint);override;
+
     procedure g_profilecode(list: TAsmList); override;
     procedure g_proc_entry(list: TAsmList; localsize: longint; nostackframe:
       boolean); override;
@@ -161,8 +170,11 @@ type
   
   procedure create_codegen;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   procedure create_codegen;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -310,7 +322,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure tcgppc.a_load_ref_cgpara(list: TAsmList; size: tcgsize; const r:
@@ -2031,7 +2046,10 @@ begin
   cg := tcgppc.create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cg128:=tcg128.create;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

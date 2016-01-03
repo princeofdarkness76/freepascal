@@ -67,6 +67,9 @@ interface
           procedure second_sar; virtual;
           procedure second_bsfbsr; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -157,6 +160,7 @@ implementation
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             in_aligned_x:
               begin
                 secondpass(tcallparanode(left).left);
@@ -164,6 +168,8 @@ implementation
                 if location.loc in [LOC_CREFERENCE,LOC_REFERENCE] then
                   location.reference.alignment:=0;
               end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -222,6 +228,9 @@ implementation
             in_bsr_x:
                second_BsfBsr;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -413,6 +422,9 @@ implementation
 =======
           cg.a_op_const_reg(current_asmdata.CurrAsmList,cgop,location.size,1,location.register);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -637,7 +649,12 @@ implementation
       var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tempreg1, tempreg2: tregister;
+=======
+        opsize : tcgsize;
+        tempreg1, tempreg2 : tregister;
+>>>>>>> graemeg/cpstrnew
 =======
         opsize : tcgsize;
         tempreg1, tempreg2 : tregister;
@@ -671,6 +688,9 @@ implementation
         cg.a_op_reg_reg_reg(current_asmdata.CurrAsmList, OP_XOR, OS_INT, left.location.register, tempreg1, tempreg2);
         cg.a_op_reg_reg_reg(current_asmdata.CurrAsmlist, OP_SUB, OS_INT, tempreg1, tempreg2, location.register);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -862,6 +882,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure tcginlinenode.second_fma;
       begin
         internalerror(2014032701);
@@ -911,6 +932,8 @@ implementation
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
     procedure tcginlinenode.second_sar;
       var
         {hcountreg : tregister;}
@@ -951,6 +974,9 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
     procedure tcginlinenode.second_BsfBsr;
     var
@@ -975,6 +1001,9 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

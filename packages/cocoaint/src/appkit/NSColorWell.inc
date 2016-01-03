@@ -47,6 +47,7 @@
     _action: SEL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __cwFlags: record
       case byte of
        0: (_anonbitfield_NSColorWell0: cuint);
@@ -54,11 +55,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __cwFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSColorWell0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -69,7 +75,10 @@
         reservedColorWell: 0..((1 shl 28)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

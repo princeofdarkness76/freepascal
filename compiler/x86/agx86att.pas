@@ -67,8 +67,11 @@ interface
     uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cutils,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       globtype,
@@ -179,10 +182,13 @@ interface
 {$ifdef x86_64}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                if (base<>NR_RIP) then
                  InternalError(2015011802);
                owner.writer.AsmWrite('@GOTPCREL');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
              begin
@@ -194,6 +200,9 @@ interface
                  owner.AsmWrite('@GOTPCREL');
              end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -320,7 +329,11 @@ interface
        i        : integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        sreg     : string;
+=======
+       comment  : tai_comment;
+>>>>>>> graemeg/cpstrnew
 =======
        comment  : tai_comment;
 >>>>>>> graemeg/cpstrnew
@@ -333,6 +346,7 @@ interface
         taicpu(hp).SetOperandOrder(op_att);
         op:=taicpu(hp).opcode;
         calljmp:=is_calljmp(op);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -376,6 +390,8 @@ interface
           end;
         owner.writer.AsmWrite(#9);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         { constant values in the 32 bit range are sign-extended to
@@ -498,6 +514,9 @@ interface
             WriteInstruction(hp);
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -576,6 +595,19 @@ interface
             comment : '# ';
           );
 
+       as_x86_64_gas_info : tasminfo =
+          (
+            id     : as_ggas;
+            idtxt  : 'GAS';
+            asmbin : 'gas';
+            asmcmd : '--64 -o $OBJ $ASM';
+            supported_targets : [system_x86_64_solaris];
+            flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf];
+            labelprefix : '.L';
+            comment : '# ';
+          );
+
+
 
 
 
@@ -632,9 +664,12 @@ interface
                                 system_i386_netwlibc,system_i386_wince,system_i386_embedded,system_i386_symbian,system_i386_haiku,system_x86_6432_linux,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 system_i386_nativent,system_i386_android,system_i386_aros];
             flags : [af_needar,af_smartlink_sections,af_supports_dwarf];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                                 system_i386_nativent];
@@ -671,7 +706,11 @@ interface
             supported_targets : [system_i386_linux,system_i386_OS2,system_i386_freebsd,system_i386_netbsd,system_i386_openbsd,system_i386_EMX,system_i386_embedded];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags : [af_needar,af_stabs_use_function_absolute_addresses];
+=======
+            flags : [af_allowdirect,af_needar,af_stabs_use_function_absolute_addresses];
+>>>>>>> graemeg/cpstrnew
 =======
             flags : [af_allowdirect,af_needar,af_stabs_use_function_absolute_addresses];
 >>>>>>> graemeg/cpstrnew
@@ -698,6 +737,9 @@ interface
             supported_targets : [system_i386_darwin,system_i386_iphonesim];
             flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -756,7 +798,10 @@ initialization
   RegisterAssembler(as_x86_64_as_info,Tx86ATTAssembler);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterAssembler(as_x86_64_yasm_info,Tx86ATTAssembler);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

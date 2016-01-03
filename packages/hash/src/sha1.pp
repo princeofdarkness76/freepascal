@@ -2,7 +2,11 @@
     This file is part of the Free Pascal packages.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2009-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2009 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2009 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -23,6 +27,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Normally, if an optimized version is available for OS/CPU, that will be used
 // Define to use existing unoptimized implementation
 { the assembler implementation does not work on darwin }
@@ -30,6 +35,8 @@
 {$DEFINE SHA1PASCAL}
 {$endif darwin}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -43,7 +50,11 @@ type
   TSHA1Digest = array[0..19] of Byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -59,7 +70,11 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { core }
+=======
+{ core }  
+>>>>>>> graemeg/cpstrnew
 =======
 { core }  
 >>>>>>> graemeg/cpstrnew
@@ -115,6 +130,7 @@ const
   K80 = $CA62C1D6;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$IF (NOT(DEFINED(SHA1PASCAL))) and (DEFINED(CPU386)) }
 // Use assembler version if we have a suitable CPU as well
@@ -122,6 +138,9 @@ const
 {$i sha1i386.inc}
 {$ELSE}
 // Use original version if asked for, or when we have no optimized assembler version
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -155,7 +174,11 @@ begin
   until i > 19;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -174,7 +197,11 @@ begin
   until i > 39;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -192,8 +219,13 @@ begin
     Inc(i);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   until i > 59;
 
+=======
+  until i > 59;  
+  
+>>>>>>> graemeg/cpstrnew
 =======
   until i > 59;  
   
@@ -213,7 +245,11 @@ begin
     Inc(i);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   until i > 79;
+=======
+  until i > 79;  
+>>>>>>> graemeg/cpstrnew
 =======
   until i > 79;  
 >>>>>>> graemeg/cpstrnew
@@ -231,7 +267,10 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -288,7 +327,11 @@ end;
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PADDING: array[0..63] of Byte =
+=======
+  PADDING: array[0..63] of Byte = 
+>>>>>>> graemeg/cpstrnew
 =======
   PADDING: array[0..63] of Byte = 
 >>>>>>> graemeg/cpstrnew
@@ -324,7 +367,11 @@ begin
   Invert(@ctx.State, @Digest, 20);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FillChar(ctx, sizeof(TSHA1Context), 0);
+=======
+  FillChar(ctx, sizeof(TSHA1Context), 0);  
+>>>>>>> graemeg/cpstrnew
 =======
   FillChar(ctx, sizeof(TSHA1Context), 0);  
 >>>>>>> graemeg/cpstrnew
@@ -364,6 +411,7 @@ begin
   Assign(F, Filename);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}{$i-}
   ofm := FileMode;
   FileMode := 0;
@@ -372,12 +420,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   {$i-}
   ofm := FileMode;
   FileMode := 0;
   Reset(F, 1);
   {$i+}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -423,6 +476,7 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$B+}
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
@@ -434,11 +488,16 @@ k
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   Result := (A[0] = B[0]) and (A[1] = B[1]) and (A[2] = B[2]) and (A[3] = B[3]) and (A[4] = B[4]);
 end;
 
 end.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

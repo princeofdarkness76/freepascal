@@ -157,7 +157,10 @@ type
     _EQUAL,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     _FALSE,
@@ -213,7 +216,10 @@ type
     _R12BASE,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _RTLPROC,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -241,7 +247,10 @@ type
     _NEGATIVE,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _NORETURN,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -316,6 +325,7 @@ type
     _GREATERTHANOREQUAL
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   );
 
   { sub_expr(opmultiply) is need to get -1 ** 4 to be
@@ -329,6 +339,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   );
 
 const
@@ -336,8 +348,11 @@ const
   tokenlenmax = 18;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   postfixoperator_tokens = [_CARET,_POINT,_LECKKLAMMER];
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -350,6 +365,7 @@ const
   last_operator = _GENERICSPECIALTOKEN;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   highest_precedence = oppower;
 
@@ -360,6 +376,8 @@ const
        [_CARET,_SYMDIF,_STARSTAR,_STAR,_SLASH,
         _OP_AS,_OP_IS,_OP_AND,_AMPERSAND,_OP_DIV,_OP_MOD,_OP_SHL,_OP_SHR],
        [_STARSTAR] );
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -963,6 +981,9 @@ const
       (str:'LESSTHANOREQUAL';special:false;keyword:m_none;op:NOTOKEN),    { delphi operator name }
       (str:'GREATERTHANOREQUAL';special:false;keyword:m_none;op:NOTOKEN)  { delphi operator name }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

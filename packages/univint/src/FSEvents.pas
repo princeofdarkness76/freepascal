@@ -5,7 +5,13 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 2006-2011 by Apple Inc. All rights reserved.
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 2006-2008 by Apple Computer, Inc.  All rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    CarbonCore-859.2~1
  
@@ -22,10 +28,13 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
@@ -33,6 +42,9 @@
 }
 {   Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -92,11 +104,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -121,11 +136,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -144,11 +165,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -167,7 +194,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -183,7 +213,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -196,6 +229,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -207,6 +241,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -223,6 +262,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -244,13 +284,20 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -517,6 +564,7 @@ const
 	kFSEventStreamCreateFlagWatchRoot = $00000004;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   {
    * Don't send events that were triggered by the current process. This
@@ -537,6 +585,10 @@ const
 	kFSEventStreamCreateFlagFileEvents = $00000010;
 	kFSEventStreamCreateFlagMarkSelf = $00000020;
 
+=======
+	kFSEventStreamCreateFlagIgnoreSelf = $00000008;
+
+>>>>>>> graemeg/cpstrnew
 =======
 	kFSEventStreamCreateFlagIgnoreSelf = $00000008;
 
@@ -662,6 +714,7 @@ const
    }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kFSEventStreamEventFlagUnmount = $00000080; { These flags are only set if you specified the FileEvents}
                                         { flags when creating the stream.}
 	kFSEventStreamEventFlagItemCreated = $00000100;
@@ -676,6 +729,9 @@ const
 	kFSEventStreamEventFlagItemIsDir = $00020000;
 	kFSEventStreamEventFlagItemIsSymlink = $00040000;
 	kFSEventStreamEventFlagOwnEvent = $00080000;
+=======
+	kFSEventStreamEventFlagUnmount = $00000080;
+>>>>>>> graemeg/cpstrnew
 =======
 	kFSEventStreamEventFlagUnmount = $00000080;
 >>>>>>> graemeg/cpstrnew
@@ -710,8 +766,12 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	FSEventStreamRef = ^__FSEventStream; { an opaque type }
 	__FSEventStream = record end;
+=======
+	FSEventStreamRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	FSEventStreamRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -904,7 +964,11 @@ type
 function FSEventStreamCreate( allocator: CFAllocatorRef; callback: FSEventStreamCallback; context: FSEventStreamContextPtr { can be NULL }; pathsToWatch: CFArrayRef; sinceWhen: FSEventStreamEventId; latency: CFTimeInterval; flags: FSEventStreamCreateFlags ): FSEventStreamRef; external name '_FSEventStreamCreate';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -988,7 +1052,11 @@ function FSEventStreamCreate( allocator: CFAllocatorRef; callback: FSEventStream
 function FSEventStreamCreateRelativeToDevice( allocator: CFAllocatorRef; callback: FSEventStreamCallback; var context: FSEventStreamContext; deviceToWatch: dev_t; pathsToWatchRelativeToDevice: CFArrayRef; sinceWhen: FSEventStreamEventId; latency: CFTimeInterval; flags: FSEventStreamCreateFlags ): FSEventStreamRef; external name '_FSEventStreamCreateRelativeToDevice';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1025,7 +1093,11 @@ function FSEventStreamCreateRelativeToDevice( allocator: CFAllocatorRef; callbac
 function FSEventStreamGetLatestEventId( streamRef: ConstFSEventStreamRef ): FSEventStreamEventId; external name '_FSEventStreamGetLatestEventId';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1057,7 +1129,11 @@ function FSEventStreamGetLatestEventId( streamRef: ConstFSEventStreamRef ): FSEv
 function FSEventStreamGetDeviceBeingWatched( streamRef: ConstFSEventStreamRef ): dev_t; external name '_FSEventStreamGetDeviceBeingWatched';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1090,7 +1166,11 @@ function FSEventStreamGetDeviceBeingWatched( streamRef: ConstFSEventStreamRef ):
 function FSEventStreamCopyPathsBeingWatched( streamRef: ConstFSEventStreamRef ): CFArrayRef; external name '_FSEventStreamCopyPathsBeingWatched';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1118,7 +1198,11 @@ function FSEventStreamCopyPathsBeingWatched( streamRef: ConstFSEventStreamRef ):
 function FSEventsGetCurrentEventId: FSEventStreamEventId; external name '_FSEventsGetCurrentEventId';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1162,7 +1246,11 @@ function FSEventsGetCurrentEventId: FSEventStreamEventId; external name '_FSEven
 function FSEventsCopyUUIDForDevice( dev: dev_t ): CFUUIDRef; external name '_FSEventsCopyUUIDForDevice';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1207,7 +1295,11 @@ function FSEventsCopyUUIDForDevice( dev: dev_t ): CFUUIDRef; external name '_FSE
 function FSEventsGetLastEventIdForDeviceBeforeTime( dev: dev_t; time: CFAbsoluteTime ): FSEventStreamEventId; external name '_FSEventsGetLastEventIdForDeviceBeforeTime';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1242,7 +1334,11 @@ function FSEventsGetLastEventIdForDeviceBeforeTime( dev: dev_t; time: CFAbsolute
 function FSEventsPurgeEventsForDeviceUpToEventId( dev: dev_t; eventId: FSEventStreamEventId ): Boolean; external name '_FSEventsPurgeEventsForDeviceUpToEventId';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1274,7 +1370,11 @@ function FSEventsPurgeEventsForDeviceUpToEventId( dev: dev_t; eventId: FSEventSt
 procedure FSEventStreamRetain( streamRef: FSEventStreamRef ); external name '_FSEventStreamRetain';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1304,7 +1404,11 @@ procedure FSEventStreamRetain( streamRef: FSEventStreamRef ); external name '_FS
 procedure FSEventStreamRelease( streamRef: FSEventStreamRef ); external name '_FSEventStreamRelease';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1348,7 +1452,11 @@ procedure FSEventStreamRelease( streamRef: FSEventStreamRef ); external name '_F
 procedure FSEventStreamScheduleWithRunLoop( streamRef: FSEventStreamRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_FSEventStreamScheduleWithRunLoop';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1383,7 +1491,11 @@ procedure FSEventStreamScheduleWithRunLoop( streamRef: FSEventStreamRef; runLoop
 procedure FSEventStreamUnscheduleFromRunLoop( streamRef: FSEventStreamRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_FSEventStreamUnscheduleFromRunLoop';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1431,7 +1543,11 @@ procedure FSEventStreamSetDispatchQueue( streamRef: FSEventStreamRef; q: dispatc
 *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
+=======
+// AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
+>>>>>>> graemeg/cpstrnew
 =======
 // AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
 >>>>>>> graemeg/cpstrnew
@@ -1464,7 +1580,11 @@ procedure FSEventStreamSetDispatchQueue( streamRef: FSEventStreamRef; q: dispatc
 procedure FSEventStreamInvalidate( streamRef: FSEventStreamRef ); external name '_FSEventStreamInvalidate';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1505,7 +1625,11 @@ procedure FSEventStreamInvalidate( streamRef: FSEventStreamRef ); external name 
 function FSEventStreamStart( streamRef: FSEventStreamRef ): Boolean; external name '_FSEventStreamStart';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1543,7 +1667,11 @@ function FSEventStreamStart( streamRef: FSEventStreamRef ): Boolean; external na
 function FSEventStreamFlushAsync( streamRef: FSEventStreamRef ): FSEventStreamEventId; external name '_FSEventStreamFlushAsync';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1578,7 +1706,11 @@ function FSEventStreamFlushAsync( streamRef: FSEventStreamRef ): FSEventStreamEv
 procedure FSEventStreamFlushSync( streamRef: FSEventStreamRef ); external name '_FSEventStreamFlushSync';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1611,7 +1743,11 @@ procedure FSEventStreamFlushSync( streamRef: FSEventStreamRef ); external name '
 procedure FSEventStreamStop( streamRef: FSEventStreamRef ); external name '_FSEventStreamStop';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1643,7 +1779,11 @@ procedure FSEventStreamStop( streamRef: FSEventStreamRef ); external name '_FSEv
 procedure FSEventStreamShow( streamRef: ConstFSEventStreamRef ); external name '_FSEventStreamShow';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1669,6 +1809,7 @@ procedure FSEventStreamShow( streamRef: ConstFSEventStreamRef ); external name '
  *    Non-Carbon CFM:   not available
  }
 function FSEventStreamCopyDescription( streamRef: ConstFSEventStreamRef ): CFStringRef; external name '_FSEventStreamCopyDescription';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
@@ -1699,11 +1840,16 @@ function FSEventStreamSetExclusionPaths( streamRef: FSEventStreamRef; pathsToExc
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 
 {$endc} {TARGET_OS_MAC}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

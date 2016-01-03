@@ -14,6 +14,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { ObjpasInt is the integer type, equivalent to Objpas.Integer (the Integer
   type in ObjFpc and Delphi modes). It is defined here for use in the
   implementation part of the System unit. }
@@ -28,12 +29,15 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 { The RTTI is implemented through a series of constants : }
 
 Const
    // please update tkManagedTypes below if you add new
    // values
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    tkUnknown        = 0;
@@ -69,6 +73,8 @@ Const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    tkUnknown       = 0;
    tkInteger       = 1;
    tkChar          = 2;
@@ -96,6 +102,9 @@ Const
    tkProcVar       = 23;
    tkUString       = 24;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -265,6 +274,7 @@ function do_isdevice(handle:thandle):boolean;forward;
   {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$i armdefines.inc}
   {$if defined(CPUTHUMB2)}
     {$i thumb2.inc}  { Case dependent, don't change }
@@ -277,11 +287,16 @@ function do_isdevice(handle:thandle):boolean;forward;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   {$if defined(CPUCORTEXM3) or defined(CPUARMV7M)}
     {$i thumb2.inc}  { Case dependent, don't change }
   {$else}
     {$i arm.inc}  { Case dependent, don't change }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -935,6 +950,7 @@ begin
 {$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef DEBUG}
   pt := PInitFinalTable(EntryInformation.InitFinalTable);
 {$endif}
@@ -943,6 +959,10 @@ begin
 {$ifdef DEBUG}
   pt := @InitFinalTable;
 {$endif}
+=======
+  with PInitFinalTable(EntryInformation.InitFinalTable)^ do
+{$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
+>>>>>>> graemeg/cpstrnew
 =======
   with PInitFinalTable(EntryInformation.InitFinalTable)^ do
 {$else FPC_HAS_INDIRECT_MAIN_INFORMATION}
@@ -1853,6 +1873,7 @@ Begin
 End;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
@@ -2029,6 +2050,8 @@ end;
 
 {$endif FPC_HAS_FEATURE_FILEIO}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

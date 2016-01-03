@@ -223,6 +223,7 @@ begin
   Row[2].Init(0, 0, 1);
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function FMatrix.Transpose: FMatrix; inline;
 begin
@@ -230,12 +231,17 @@ begin
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
 function FMatrix.Transpose: FMatrix; inline;
 begin
   Result.Init(Column0, Column1, Column2);
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure FMatrix.TransposeInPlace; inline;
 begin
@@ -531,7 +537,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure VLightPart(console: IPTCConsole; surface: IPTCSurface);
+=======
+procedure VLightPart(console: TPTCConsole; surface: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure VLightPart(console: TPTCConsole; surface: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
@@ -724,9 +734,15 @@ end;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
+=======
+  format: TPTCFormat = nil;
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   format: TPTCFormat = nil;
   console: TPTCConsole = nil;
@@ -752,6 +768,9 @@ begin
       { create console }
       console := TPTCConsole.Create;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -765,6 +784,9 @@ begin
 =======
       surface := TPTCSurface.Create(320, 200, format);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -783,6 +805,9 @@ begin
       surface.Free;
       format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

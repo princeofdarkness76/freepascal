@@ -23,6 +23,9 @@ uses
   Classes, consoletestrunner, testjsondata, testjsonparser,
   fpcunitconsolerunner, testjsonrtti, fpjsonrtti;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

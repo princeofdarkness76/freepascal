@@ -55,6 +55,7 @@ const
     _managedObjectContext: NSExpression;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __flags: record
       case byte of
        0: (_anonbitfield_NSFetchRequestExpression0: cuint);
@@ -65,6 +66,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __flags: bitpacked record
       case byte of
        0: (_anonbitfield_NSFetchRequestExpression0: cuint);
@@ -72,6 +75,9 @@ const
         isCountOnly: 0..1;
         _RESERVED: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -1247,6 +1247,7 @@ Begin
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if Result[PE+1] = '-' then
             Exponent := -Exponent;
           if (P+Exponent < PE) and (Exponent > -6) then begin
@@ -1305,6 +1306,8 @@ Begin
               { Delete leading zeros in exponent }
               System.Delete(Result,PE+1,1)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           Negative := Result[1] = '-';
@@ -2341,8 +2344,11 @@ Var
                     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   If thousand And (Not (Digits[N] in [' ','-'])) Then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                   If thousand And (Digits[N]<>'-') Then

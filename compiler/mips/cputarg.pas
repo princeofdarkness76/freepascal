@@ -36,10 +36,13 @@ implementation
 {$endif NOOPT}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef NOMIPSGAS}
       ,racpugas
 {$endif NOMIPSGAS}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -54,6 +57,7 @@ implementation
     {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$ifndef NOTARGETANDROID}
       {$ifdef MIPSEL}
         ,t_android
@@ -66,12 +70,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 {**************************************
              Assemblers
 **************************************}
 
       ,CpuGas
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       ,ogelf
@@ -94,6 +101,8 @@ implementation
       ,dbgdwarf
   {$endif NoDbgDwarf}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

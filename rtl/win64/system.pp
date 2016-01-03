@@ -75,7 +75,10 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 type
@@ -123,8 +126,11 @@ const
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   TDLL_Entry_Hook = procedure (dllparam : longint);
@@ -143,7 +149,10 @@ Const
   fmShareDenyNoneFlags : DWord = 3;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -453,7 +462,10 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
      asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         { allocate space for an exception frame }
@@ -478,6 +490,9 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
      StackTop:=st;
      asm
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -498,6 +513,9 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 {$endif}
         xorq %rbp,%rbp
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

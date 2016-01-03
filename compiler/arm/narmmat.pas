@@ -401,7 +401,11 @@ implementation
       var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+        op: tasmop;
+>>>>>>> graemeg/cpstrnew
 =======
         op: tasmop;
 >>>>>>> graemeg/cpstrnew
@@ -417,7 +421,11 @@ implementation
             begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,false);
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,false);
+>>>>>>> graemeg/cpstrnew
 =======
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,false);
 >>>>>>> graemeg/cpstrnew
@@ -430,6 +438,7 @@ implementation
                 cgsize2fpuoppostfix[def_cgsize(resultdef)]));
             end;
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           fpu_vfpv3,
@@ -639,6 +648,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           fpu_vfpv3:
             begin
               location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
@@ -656,6 +667,9 @@ implementation
             internalerror(2009112602);
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

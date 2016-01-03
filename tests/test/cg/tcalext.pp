@@ -411,6 +411,9 @@ begin
 =======
   if trunc(global_long_double) <> trunc(RESULT_LONGDOUBLE) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

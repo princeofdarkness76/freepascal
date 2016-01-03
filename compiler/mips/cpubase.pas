@@ -114,10 +114,13 @@ unit cpubase;
         C_EQ, C_NE, C_LT, C_LE, C_GT, C_GE, C_LTU, C_LEU, C_GTU, C_GEU,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         C_LTZ, C_LEZ, C_GTZ, C_GEZ,
         C_COP1TRUE,
         C_COP1FALSE
 =======
+=======
+>>>>>>> graemeg/cpstrnew
         C_FEQ,  {Equal}
         C_FNE, {Not Equal}
         C_FGT,  {Greater}
@@ -125,6 +128,7 @@ unit cpubase;
         C_FGE, {Greater or Equal}
         C_FLE  {Less or Equal}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
       );
 
@@ -154,16 +158,24 @@ unit cpubase;
 
       );
 
+=======
+      );
+
+>>>>>>> graemeg/cpstrnew
     const
       cond2str : array[TAsmCond] of string[3]=('',
         'eq','ne','lt','le','gt','ge','ltu','leu','gtu','geu',
         'feq','fne','fgt','flt','fge','fle'
       );
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 =======
         'feq','fne','fgt','flt','fge','fle'
       );
+
+>>>>>>> graemeg/cpstrnew
+=======
 
 >>>>>>> graemeg/cpstrnew
 {*****************************************************************************
@@ -237,6 +249,7 @@ unit cpubase;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       { PIC Code }
       NR_GP = NR_R28;
@@ -256,6 +269,10 @@ unit cpubase;
       STK2_PTR = NR_R23;
       NR_GP = NR_R28;
 >>>>>>> graemeg/cpstrnew
+=======
+      STK2_PTR = NR_R23;
+      NR_GP = NR_R28;
+>>>>>>> graemeg/cpstrnew
       NR_SP = NR_R29;
       NR_S8 = NR_R30;
       NR_FP = NR_R30;
@@ -263,6 +280,10 @@ unit cpubase;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      RS_GP = RS_R28;
+>>>>>>> graemeg/cpstrnew
 =======
       RS_GP = RS_R28;
 >>>>>>> graemeg/cpstrnew
@@ -310,8 +331,11 @@ unit cpubase;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       NR_DEFAULTFLAGS = NR_NO;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       NR_TCR0 = NR_R15;
@@ -323,6 +347,9 @@ unit cpubase;
       NR_TCR13 = NR_R19;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -349,6 +376,9 @@ unit cpubase;
 =======
       saved_mm_registers : array[0..0] of tsuperregister = (RS_NO);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -385,13 +415,19 @@ unit cpubase;
     function std_regnum_search(const s:string):Tregister;
     function std_regname(r:Tregister):string;
 <<<<<<< HEAD
+<<<<<<< HEAD
     function dwarf_reg(r:tregister):shortint;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
     var
       STK2_dummy: aint;
       STK2_Localsize: aint;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -420,6 +456,7 @@ unit cpubase;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         case regtype of
           R_FPUREGISTER:
             if s=OS_F32 then
@@ -434,11 +471,16 @@ unit cpubase;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         if s in [OS_64,OS_S64] then
           cgsize2subreg:=R_SUBQ
         else
           cgsize2subreg:=R_SUBWHOLE;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -474,6 +516,7 @@ unit cpubase;
         inverse: array[TAsmCond] of TAsmCond=(C_None,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         C_NE, C_EQ, C_GE, C_GT, C_LE, C_LT, C_GEU, C_GTU, C_LEU, C_LTU,
         C_GEZ, C_GTZ, C_LEZ, C_LTZ,
         C_COP1FALSE,
@@ -498,6 +541,21 @@ unit cpubase;
       end;      function findreg_by_number(r:Tregister):tregisterindex;
 >>>>>>> graemeg/cpstrnew
       begin
+=======
+        C_EQ, C_NE, C_LT, C_LE, C_GT, C_GE, C_LTU, C_LEU, C_GTU, C_GEU,
+        C_FEQ,  {Equal}
+        C_FNE, {Not Equal}
+        C_FGT,  {Greater}
+        C_FLT,  {Less}
+        C_FGE, {Greater or Equal}
+        C_FLE  {Less or Equal}
+
+        );
+      begin
+        result := inverse[c];
+      end;      function findreg_by_number(r:Tregister):tregisterindex;
+      begin
+>>>>>>> graemeg/cpstrnew
 =======
         C_EQ, C_NE, C_LT, C_LE, C_GT, C_GE, C_LTU, C_LEU, C_GTU, C_GEU,
         C_FEQ,  {Equal}
@@ -552,6 +610,7 @@ unit cpubase;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function dwarf_reg(r:tregister):shortint;
       begin
         result:=regdwarf_table[findreg_by_number(r)];
@@ -563,11 +622,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 begin
   STK2_dummy := 10;
   STK2_Localsize := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -2,9 +2,14 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Function to display help
 usage ()
 {
+=======
+
+if [ "$1" == "--help" ]; then
+>>>>>>> graemeg/cpstrnew
 =======
 
 if [ "$1" == "--help" ]; then
@@ -22,6 +27,7 @@ if [ "$1" == "--help" ]; then
   echo "with a single parameter specifying to which directory the libraries"
   echo "should be copied."
   echo "Possible parameters for this script:"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   echo "--forcestatic, to convert all -lname into $LINKLIB libname.a"
@@ -204,6 +210,8 @@ else
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   echo "implicitlibs=\"space separated list if system librairies used\""
 
 fi
@@ -223,6 +231,9 @@ else
   EXEEXT=
   libdir=/lib
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -231,6 +242,7 @@ fi
 echo "Deleting gdb${EXEEXT} to force recompile"
 rm -f gdb${EXEEXT}
 echo "Rebuilding gdb${EXEEXT}"
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -280,6 +292,8 @@ ${MAKE} libgdb.a ${MAKEOPT} XM_ADD_FILES=${XM_ADD_FILES}
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 MAKE=`which gmake 2> /dev/null`
 
 if [ "${MAKE}" == "" ]; then
@@ -289,6 +303,9 @@ fi
 ${MAKE} gdb${EXEEXT} | tee make.log
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -298,6 +315,7 @@ gdb_version1=`sed -n "s:.*version.*\"\([0-9]*\)\.\([0-9]*\).*:\1:p" version.c`
 gdb_version2=`sed -n "s:.*version.*\"\([0-9]*\)\.\([0-9]*\).*:\2:p" version.c`
 gdb_version=`sed -n "s:.*version.*\"\([0-9]*\)\.\([0-9]*\).*:\1.\2:p" version.c`
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 echo "found GDB full version is ${gdb_full_version}"
@@ -322,6 +340,8 @@ cat make.log | ${AWK} -v find_cmd=$find_cmd '
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 echo found full version is ${gdb_full_version}
 echo found version is ${gdb_version}
 if [ ${gdb_version2} -lt 10 ]; then
@@ -332,6 +352,9 @@ fi
 
 cat make.log | gawk '
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -342,7 +365,11 @@ doprint=0
 # either gcc or cc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 $0 ~ find_cmd { doprint=1; }
+=======
+/cc / { doprint=1; }
+>>>>>>> graemeg/cpstrnew
 =======
 /cc / { doprint=1; }
 >>>>>>> graemeg/cpstrnew
@@ -359,6 +386,7 @@ if ( doprint == 1 ) {
 ! /\\$/ { doprint=0; }
 ' | tee comp-cmd.log
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 if [ "x$MAKE_CC" = "x" ] ; then
@@ -396,12 +424,17 @@ if [ "$gcccompiler" != "" ]; then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 gcccompiler=`sed -n "s:\([A-Za-z0-9_-]*gcc\) .*:\1:p" comp-cmd.log`
 if [ "$gcccompiler" != "" ]; then
   gcclibs=`$gcccompiler -print-search-dirs | sed -n "s#.*libraries: =\(.*\)#\1#p" `
   if [ "$gcclibs" != "" ]; then
     libdir=${gcclibs//:/ }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -409,6 +442,7 @@ if [ "$gcccompiler" != "" ]; then
   fi
 fi
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 newlibdir=
@@ -448,11 +482,16 @@ BEGIN {
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 # Try to locate all libraries
 echo Creating ./copy-libs.sh script
 cat comp-cmd.log | gawk -v libdir="${libdir}" -v implibs="${implicitlibs}" '
 BEGIN {
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -473,6 +512,7 @@ BEGIN {
   print "fi"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   print "libdir=\"" libdir "\""
   print "# Copy gdblib.inc file"
   print "cp -p gdblib.inc ${destdir}"
@@ -488,6 +528,10 @@ BEGIN {
   print "# Copy gdblib.inc file"
   print "cp gdblib.inc ${destdir}"
 >>>>>>> graemeg/cpstrnew
+=======
+  print "# Copy gdblib.inc file"
+  print "cp gdblib.inc ${destdir}"
+>>>>>>> graemeg/cpstrnew
 }
 
 {
@@ -495,6 +539,7 @@ BEGIN {
 
   for (i=1; i<=nb; i++) {
     if ( list[i] ~ /lib[^ ]*\.a/ ) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       print "# Looking for static libs"
@@ -518,11 +563,16 @@ BEGIN {
       staticlib = gensub (/([^ ]*)(lib[^ ]*\.a)/,"\\1\\2 ","g",list[i]);
       print "cp " staticlib " ${destdir}";
 >>>>>>> graemeg/cpstrnew
+=======
+      staticlib = gensub (/([^ ]*)(lib[^ ]*\.a)/,"\\1\\2 ","g",list[i]);
+      print "cp " staticlib " ${destdir}";
+>>>>>>> graemeg/cpstrnew
     }
     if ( list[i] ~ /lib[^ ]*\.so/ ) {
       dynamiclib = gensub (/([^ ]*)(lib[^ ]*\.so)/,"\\1\\2 ","g",list[i]);
       print "echo " dynamiclib " found";
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     if ( list[i] ~ /^-l/ ) {
@@ -535,6 +585,8 @@ BEGIN {
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     if ( list[i] ~ /-l/ ) {
       systemlib = gensub (/-l([^ ]*)/,"lib\\1.a ","g",list[i]);
       print "systemlib=`find " libdir " -name " systemlib " 2> /dev/null `" ;
@@ -542,6 +594,9 @@ BEGIN {
       print "  echo System lib found: ${systemlib}";
       print "  cp ${systemlib} ${destdir}";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -558,6 +613,7 @@ END {
     print "echo Adding system library " systemlib;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     print "systemlib=`find $libdir -maxdepth 1 -iname " systemlib " -print 2> /dev/null `" ;
     print "if [ \"${systemlib}\" != \"\" ]; then";
     print "  echo System lib found: ${systemlib}";
@@ -565,11 +621,16 @@ END {
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     print "systemlib=`find " libdir " -name " systemlib " 2> /dev/null `" ;
     print "if [ \"${systemlib}\" != \"\" ]; then";
     print "  echo System lib found: ${systemlib}";
     print "  cp ${systemlib} ${destdir}";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -582,6 +643,7 @@ END {
 chmod u+x ./copy-libs.sh
 # For later
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 # Check if mingw executable contains
@@ -623,6 +685,8 @@ BEGIN {
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 echo Creating ./gdblib.inc file
 # Generate gdblib.inc file
 cat comp-cmd.log |gawk -v gdbcvs=${gdbcvs} -v implibs="${implicitlibs}" \
@@ -636,6 +700,9 @@ BEGIN {
   }
   print "{$ifdef COMPILING_GDBINT_UNIT }"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -645,6 +712,7 @@ BEGIN {
   nb = split ($0,list);
 
   for (i=1; i<=nb; i++) {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     if ( list[i] ~ /lib[^ ]*\.a/ ) {
@@ -723,6 +791,8 @@ END {
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if ( list[i] ~ /lib[^ ]*\.a/ ) {
     staticlib = gensub (/([^ ]*)(lib[^ ]*\.a)/,"{$LINKLIB \\2} { found in \\1 }","g",list[i]);
     print staticlib;
@@ -760,6 +830,9 @@ END {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

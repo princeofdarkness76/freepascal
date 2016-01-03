@@ -28,12 +28,15 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   node, ncgcal;
 
 type
   tMIPSELcallnode = class(tcgcallnode)
     function  pass_1 : tnode; override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   ncgcal;
@@ -43,6 +46,9 @@ type
     procedure extra_call_code; override;
     procedure extra_post_call_code; override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -54,7 +60,11 @@ implementation
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   globtype,cpubase,procinfo,
+=======
+  cpubase,
+>>>>>>> graemeg/cpstrnew
 =======
   cpubase,
 >>>>>>> graemeg/cpstrnew
@@ -67,6 +77,7 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TMIPSELcallnode.pass_1 : tnode;
 begin
   pass_1 := inherited pass_1;
@@ -75,6 +86,8 @@ begin
      (procdefinition.proccalloption=pocall_cdecl) then
     include(current_procinfo.flags,pi_needs_got);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure tMIPSELcallnode.extra_call_code;
@@ -89,6 +102,9 @@ begin
     current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg_const(A_ADDIU, NR_STACK_POINTER_REG, NR_STACK_POINTER_REG, pushedparasize));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

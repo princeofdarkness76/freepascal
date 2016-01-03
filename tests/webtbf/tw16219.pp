@@ -7,7 +7,11 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     #$ffffff' '
+=======
+    #$ffff' '
+>>>>>>> graemeg/cpstrnew
 =======
     #$ffff' '
 >>>>>>> graemeg/cpstrnew

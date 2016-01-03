@@ -49,9 +49,12 @@ type
   TCriticalSectionHandlerTryEnter = function (var cs):longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TInitThreadVarHandler = Procedure(var offset : {$ifdef cpu16}word{$else}dword{$endif};size : dword);
   TRelocateThreadVarHandler = Function(offset : {$ifdef cpu16}word{$else}dword{$endif}) : pointer;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   TInitThreadVarHandler = Procedure(var offset : dword;size : dword);

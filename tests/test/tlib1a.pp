@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %skiptarget=go32v2,os2 }
 { %opt=-gl -O- win32,win64%-WN }
 { %delopt=-XX }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { %skiptarget=go32v2 }

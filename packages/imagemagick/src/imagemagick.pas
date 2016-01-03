@@ -53,12 +53,21 @@ type
   Pcsize_t = ^size_t;
 {$endif}
 
+// Fix to compile in older FPC versions
+{$ifdef VER2_2}
+type
+  Pcsize_t = ^size_t;
+{$endif}
+
 const
 <<<<<<< HEAD
 {$ifdef Windows}
 =======
 {$ifdef Win32}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

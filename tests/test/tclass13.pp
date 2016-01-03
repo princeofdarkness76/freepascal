@@ -20,6 +20,7 @@ type
           en = (e1,e2);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           TOtherNode = class
           public
             type
@@ -33,6 +34,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       TOtherNode = class
       public
         type
@@ -44,6 +47,9 @@ type
         fx: TRootClass.TOtherNode.TNestedInOtherNode;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

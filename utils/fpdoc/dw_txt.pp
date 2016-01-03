@@ -84,7 +84,10 @@ Type
     procedure WriteOverviewMember(const ALabel,AName,ADescr : String); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Class Function FileNameExtension : String; override;
@@ -646,8 +649,12 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTXTWriter.WriteOverviewMember(const ALabel, AName, Access,
   ADescr: String);
+=======
+procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,Access,ADescr : String);
 >>>>>>> graemeg/cpstrnew
@@ -661,7 +668,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTXTWriter.WriteOverviewMember(const ALabel, AName, ADescr: String);
+=======
+procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TTxtWriter.WriteOverviewMember(const ALabel,AName,ADescr : String);
 >>>>>>> graemeg/cpstrnew

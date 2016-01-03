@@ -47,6 +47,7 @@
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __indexSetFlags: record
       case byte of
        0: (_anonbitfield_NSIndexSet0: NSUInteger);
@@ -54,11 +55,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __indexSetFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSIndexSet0: NSUInteger);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -66,6 +72,7 @@
         _hasSingleRange: 0..1;
         _cacheValid: 0..1;
         _reservedArrayBinderController: 0..((1 shl 29)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
        end;
@@ -82,12 +89,17 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     __singleRange: record
         _range: NSRange;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -97,8 +109,13 @@
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            );
     end;
+=======
+    __internal: record
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
     __internal: record
       end;

@@ -2,7 +2,11 @@
     This file is part of the Free Pascal run time library.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010, 2011, 2013 by Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (c) 2010 by Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2010 by Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -118,6 +122,7 @@ end;
 
 procedure GetKeyEvents;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   ev: IPTCEvent;
@@ -322,6 +327,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   ev: TPTCEvent;
   KeyEv: TPTCKeyEvent;
 begin
@@ -373,6 +380,9 @@ begin
     ev.Free;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

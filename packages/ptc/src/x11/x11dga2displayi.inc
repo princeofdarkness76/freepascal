@@ -2,7 +2,11 @@
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2012 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -71,7 +75,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA2Display.Open(ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; const AOpenGLAttributes: IPTCOpenGLAttributes);
+=======
+procedure TX11DGA2Display.open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11DGA2Display.open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
@@ -168,7 +176,12 @@ var
   i: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //  e: TXEvent;
+=======
+  e: TXEvent;
+  tmpArea: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 =======
   e: TXEvent;
   tmpArea: TPTCArea;
@@ -340,6 +353,9 @@ begin
     tmpArea.Free;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -348,6 +364,7 @@ begin
 
   FillChar(FXDGADevice^.data^,
     FXDGADevice^.mode.bytesPerScanline * FXDGADevice^.mode.imageHeight, 0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -359,11 +376,16 @@ procedure TX11DGA2Display.open(w: TWindow; _format: IPTCFormat);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 { not in DGA mode }
 procedure TX11DGA2Display.open(w: TWindow; const _format: TPTCFormat);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -374,7 +396,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA2Display.open(_window: TWindow; _format: IPTCFormat; x, y, w, h: Integer);
+=======
+procedure TX11DGA2Display.open(_window: TWindow; const _format: TPTCFormat; x, y, w, h: Integer);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11DGA2Display.open(_window: TWindow; const _format: TPTCFormat; x, y, w, h: Integer);
 >>>>>>> graemeg/cpstrnew
@@ -392,7 +418,10 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FOpen := False;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -439,6 +468,7 @@ begin
   end;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 procedure TX11DGA2Display.GetModes(var AModes: TPTCModeList);
@@ -456,6 +486,9 @@ procedure TX11DGA2Display.Update(AArea: IPTCArea);
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> graemeg/cpstrnew
 procedure TX11DGA2Display.GetModes(var AModes: TPTCModeDynArray);
 begin
   SetLength(AModes, 1);
@@ -469,6 +502,9 @@ end;
 
 procedure TX11DGA2Display.update(const _area: TPTCArea);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -506,10 +542,13 @@ var
     XKeyEvent: TXKeyEvent;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   begin
     XDGAKeyEventToXKeyEvent(@XDGAKeyEvent, @XKeyEvent);
     HandleKeyEvent(XKeyEvent);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     sym: TKeySym;
@@ -541,6 +580,9 @@ var
     end;
     FEventQueue.AddEvent(key);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -583,11 +625,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11DGA2Display.NextEvent(out event: IPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean;
 var
   tmpEvent: TXEvent;
 begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function TX11DGA2Display.NextEvent(var event: TPTCEvent; wait: Boolean; const EventMask: TPTCEventMask): Boolean;
@@ -596,6 +641,9 @@ var
 begin
   FreeAndNil(event);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -617,7 +665,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11DGA2Display.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): IPTCEvent;
+=======
+function TX11DGA2Display.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> graemeg/cpstrnew
 =======
 function TX11DGA2Display.PeekEvent(wait: Boolean; const EventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
@@ -655,7 +707,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11DGA2Display.Palette(_palette: IPTCPalette);
+=======
+procedure TX11DGA2Display.palette(const _palette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TX11DGA2Display.palette(const _palette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -701,11 +757,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11DGA2Display.IsOpen: Boolean;
 begin
   Result := FOpen;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

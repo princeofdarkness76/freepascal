@@ -36,7 +36,11 @@ unit i_go32v2;
             shortname    : 'Go32v2';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_use_8_3,tf_smartlink_sections];
+=======
+            flags        : [tf_use_8_3,tf_smartlink_library];
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_use_8_3,tf_smartlink_library];
 >>>>>>> graemeg/cpstrnew

@@ -47,6 +47,7 @@
     _temporaryWorkObjects: NSMutableArray;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __arrayControllerFlags: record
       case byte of
        0: (_anonbitfield_NSArrayController0: cuint);
@@ -54,11 +55,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __arrayControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSArrayController0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -80,7 +86,10 @@
         _reservedArrayController: 0..((1 shl 17)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

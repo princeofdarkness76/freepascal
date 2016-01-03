@@ -19,6 +19,7 @@ const
   // SPI EEPROM COMMANDS
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   SPI_EEPROM_WRSR   = $01;
   SPI_EEPROM_PP     = $02;	// Page Program
@@ -37,6 +38,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   EEPROM_WRSR = $01;
   EEPROM_WRDI = $04;
   EEPROM_RDSR = $05;
@@ -45,6 +48,9 @@ const
 
 // ROMCTRL register:
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -110,7 +116,10 @@ procedure cardReset(); cdecl; external;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure eepromWaitBusy(); inline;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

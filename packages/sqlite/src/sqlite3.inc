@@ -38,12 +38,15 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
   Header converted from Sqlite version 3.7.9
   SOURCE_ID = '2011-11-01 00:52:41 c7c6050ef060877ebe77b41d959e9df13f8c9b5e'
 }
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 (*
@@ -1093,6 +1096,7 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InitializeSqliteANSI(const LibraryName: AnsiString = ''): Integer; //needed as TLibraryLoadFunction
 function InitializeSqlite(const LibraryName: UnicodeString = ''): Integer;
 function TryInitializeSqlite(const LibraryName: Unicodestring = ''): Integer;
@@ -1104,6 +1108,8 @@ function InitialiseSQLite(const LibraryName: UnicodeString): Integer; deprecated
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 function InitializeSqlite(const LibraryName: String = ''): Integer;
 function TryInitializeSqlite(const LibraryName: string = ''): Integer;
 function ReleaseSqlite: Integer;
@@ -1111,6 +1117,9 @@ function ReleaseSqlite: Integer;
 function InitialiseSQLite: Integer; deprecated;
 function InitialiseSQLite(const LibraryName: String): Integer; deprecated;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1120,7 +1129,10 @@ var
   SQLiteDefaultLibrary: String = Sqlite3Lib;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SQLiteLoadedLibrary: UnicodeString;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1339,6 +1351,7 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TryInitializeSqlite(const LibraryName: UnicodeString): Integer;
 
 Var
@@ -1357,11 +1370,18 @@ begin
 >>>>>>> graemeg/cpstrnew
 function TryInitializeSqlite(const LibraryName: string): Integer;
 begin
+=======
+function TryInitializeSqlite(const LibraryName: string): Integer;
+begin
+>>>>>>> graemeg/cpstrnew
   result:=InterlockedIncrement(RefCount);
   if result  = 1 then
   begin
     SQLiteLibraryHandle := LoadLibrary(LibraryName);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1372,8 +1392,11 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     SQLiteLoadedLibrary := N;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     LoadedLibrary := LibraryName;
@@ -1383,6 +1406,7 @@ begin
 end;
 
 function InitialiseSQLite:integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 begin
@@ -1426,6 +1450,9 @@ begin
 =======
 >>>>>>> graemeg/cpstrnew
 begin
+=======
+begin
+>>>>>>> graemeg/cpstrnew
   result:=InitializeSqlite(SQLiteDefaultLibrary);
 end;
 
@@ -1442,6 +1469,7 @@ end;
 
 function  InitialiseSQLite(const LibraryName: String):integer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   ReleaseSQLite;
@@ -1471,5 +1499,22 @@ end;
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+  result:=InitializeSqlite(LibraryName);
+end;
+
+function  ReleaseSQLite:integer;
+begin
+  if InterlockedDecrement(RefCount) <= 0 then
+  begin
+    if SQLiteLibraryHandle <> NilHandle then
+      UnloadLibrary(SQLiteLibraryHandle);
+    SQLiteLibraryHandle := NilHandle;
+    LoadedLibrary := '';
+    RefCount := 0;
+  end;
+end;
+
 >>>>>>> graemeg/cpstrnew
 {$ENDIF}

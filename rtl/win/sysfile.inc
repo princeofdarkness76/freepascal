@@ -91,6 +91,9 @@ begin
       errno:=GetLastError;
       Errno2InoutRes;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -155,7 +158,12 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;
@@ -180,7 +188,12 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;
@@ -203,7 +216,12 @@ begin
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> graemeg/cpstrnew
 =======
     errno := GetLastError;
     Errno2InoutRes;

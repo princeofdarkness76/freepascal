@@ -68,6 +68,7 @@ type
     _delegate: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __piFlags: record
       case byte of
        0: (_anonbitfield_NSPathCell0: cuint);
@@ -77,12 +78,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __piFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPathCell0: cuint);
        1: (
         reserved: 0..((1 shl 32)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

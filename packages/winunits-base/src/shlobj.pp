@@ -28,7 +28,11 @@ uses
 Const 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    IID_IShellExtInit   : TGUID ='{000214E8-0000-0000-C000-000000000046}';
+=======
+   IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
+>>>>>>> graemeg/cpstrnew
 =======
    IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
 >>>>>>> graemeg/cpstrnew
@@ -927,6 +931,7 @@ Const
   FOS_FORCEPREVIEWPANEON  = $40000000;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SHGFP_TYPE_CURRENT      =  0;   // shgetfolderpath, current value for user, verify it exists
   SHGFP_TYPE_DEFAULT  	  =  1;   // shgetfolderpath, default value, may not exist
    
@@ -984,6 +989,9 @@ Const
   SFGAO_CONTENTSMASK      = $80000000;
   SFGAO_PKEYSFGAOMASK     = $81044000;
 
+=======
+   
+>>>>>>> graemeg/cpstrnew
 =======
    
 >>>>>>> graemeg/cpstrnew
@@ -2552,6 +2560,7 @@ type
     IShellExtInit = Interface(IUnknown)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ['{000214E8-0000-0000-C000-000000000046}']
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
@@ -2564,11 +2573,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           [IID_IShellExtInit]
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

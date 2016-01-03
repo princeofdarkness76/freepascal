@@ -80,7 +80,10 @@ type
     FImgExt : String;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FBeforeEmitNote : TWriterNoteEvent;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -728,6 +731,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TFPDocWriter.DoLog(const Msg: String);
 begin
   If Assigned(FEngine.OnLog) then
@@ -739,6 +743,8 @@ begin
   DoLog(Format(Fmt,Args));
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

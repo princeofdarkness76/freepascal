@@ -160,7 +160,11 @@ type
   nfs_args_rec		= record end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   isofs_args_rec       	= record end;
+=======
+  iso_args_rec		= record end;
+>>>>>>> graemeg/cpstrnew
 =======
   iso_args_rec		= record end;
 >>>>>>> graemeg/cpstrnew
@@ -177,7 +181,11 @@ type
         1: (mfs_args:     ^mfs_args_rec);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	2: (nfs_args:     ^nfs_args_rec);
+=======
+	2: (ntfs_args:    ^nfsfs_args_rec);
+>>>>>>> graemeg/cpstrnew
 =======
 	2: (ntfs_args:    ^nfsfs_args_rec);
 >>>>>>> graemeg/cpstrnew
@@ -190,6 +198,7 @@ type
 	6: (ntfs_args:    ^ntfs_args_rec);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	7: (__align: array[0..159] of char); { 64-bit alignment and room to grow }
     end;
 
@@ -198,12 +207,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	7: (__align: array[0..159] of char { 64-bit alignment and room to grow }
     end;
 
 // kernel statfs from mount.h
   TStatfs = packed record
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -213,6 +227,7 @@ type
     blocks,			  { total data block in file system }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     bfree		: cuint64;  { blocks free in fs }
     bavail		: cint64; { block available for non-superuser }
     files,			  { total file nodes in file system }
@@ -220,11 +235,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     bfree		: clong;  { blocks free in fs }
     bavail		: cint64; { block available for non-superuser }
     files,			  { total file nodes in file system }
     ffree		: clong;  { free files nodes in fs }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -234,7 +254,11 @@ type
     fsyncreads,			  { count of sync reads since mount }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fasyncreads		: cuint64;  { count of async reads since mount }
+=======
+    fasyncreads		: clong;  { count of async reads since mount }
+>>>>>>> graemeg/cpstrnew
 =======
     fasyncreads		: clong;  { count of async reads since mount }
 >>>>>>> graemeg/cpstrnew
@@ -281,9 +305,15 @@ const
     SYS_NMLN = 256;                {BSD utsname struct limit}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     SIG_MAXSIG      = 33;      	   // highest signal version
     // set in ostypes.inc wordsinsigset   = 4;           // words in sigset_t
+=======
+
+    SIG_MAXSIG      = 33;      	   // highest signal version
+    wordsinsigset   = 4;           // words in sigset_t
+>>>>>>> graemeg/cpstrnew
 =======
 
     SIG_MAXSIG      = 33;      	   // highest signal version
@@ -294,6 +324,7 @@ const
    Prio_Process = 0;
    Prio_PGrp    = 1;
    Prio_User    = 2;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { OpenBSD 5.5 specific variants  }
@@ -361,5 +392,7 @@ type
    Prio_Process = 0;
    Prio_PGrp    = 1;
    Prio_User    = 2;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

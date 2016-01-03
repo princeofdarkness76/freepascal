@@ -18,6 +18,7 @@ uses
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
@@ -29,6 +30,8 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
   surface: TPTCSurface = nil;
@@ -38,6 +41,9 @@ var
   area: TPTCArea = nil;
   color: TPTCColor = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -69,6 +75,7 @@ begin
       { get random area size }
       size := Random(width div 8);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       { setup clear area }
@@ -113,6 +120,21 @@ begin
         surface.copy(console);
 
 >>>>>>> graemeg/cpstrnew
+=======
+      try
+        { setup clear area }
+        area := TPTCArea.Create(x-size, y-size, x+size, y+size);
+
+        { create random color }
+        color := TPTCColor.Create(Random, Random, Random);
+
+        { clear surface area with color }
+        surface.clear(color, area);
+
+        { copy to console }
+        surface.copy(console);
+
+>>>>>>> graemeg/cpstrnew
         { update console }
         console.update;
       finally
@@ -125,6 +147,9 @@ begin
     surface.Free;
     format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

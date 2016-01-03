@@ -31,6 +31,7 @@ type
    TBStr = POleStr;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TBStrList = array[0..65535] of TBstr;
    PBStrList = ^TBStrList;
    POleStrList = ^TOleStrList;
@@ -38,11 +39,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    TBStrList = array[0..(high(integer) div sizeof(TBSTR))-1] of TBstr;
    PBStrList = ^TBStrList;
    POleStrList = ^TOleStrList;
    TOleStrList = array[0..(high(integer) div sizeof(POleStr))-1] of POleStr;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -75,6 +81,7 @@ type
    POleDate	       = ^TOleDate;	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TOleBool	       = wordbool;
    OLE_HANDLE	       = UINT;
    OLE_XSIZE_HIMETRIC = LONG;
@@ -105,6 +112,9 @@ type
 =======
    OLE_HANDLE	       = UINT;
 >>>>>>> graemeg/cpstrnew
+=======
+   OLE_HANDLE	       = UINT;
+>>>>>>> graemeg/cpstrnew
    LPOLE_HANDLE        = ^OLE_HANDLE;
    OLE_COLOR	       = DWORD;
    LPOLE_COLOR         = ^OLE_COLOR;
@@ -114,7 +124,10 @@ type
    POleColor           = LPOle_Color;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    HHandle             = UINT_PTR;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

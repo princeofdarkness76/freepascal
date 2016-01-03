@@ -5,9 +5,15 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    QuickTime 7.6.3
  
@@ -27,8 +33,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -91,11 +101,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -117,6 +130,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -125,12 +139,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -157,6 +180,11 @@ interface
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -166,7 +194,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -182,7 +213,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -193,6 +227,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -272,6 +307,28 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -311,9 +368,14 @@ interface
 uses MacTypes,Components,Dialogs,Movies,QuickTimeStreaming;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -644,8 +706,22 @@ function QTSSourcerSetInfo( inSourcer: QTSSourcer; inSelector: OSType; ioParams:
  }
 function QTSSourcerGetInfo( inSourcer: QTSSourcer; inSelector: OSType; ioParams: UnivPtr ): ComponentResult; external name '_QTSSourcerGetInfo';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
+const
+	kQTSInfo_InputDeviceName = FourCharCode('innm'); { Handle* }
+	kQTSInfo_InputSourceName = FourCharCode('srnm'); { Handle* }
+
+<<<<<<< HEAD
+
+{============================================================================
+        Stream Handler
+============================================================================}
+
+=======
 const
 	kQTSInfo_InputDeviceName = FourCharCode('innm'); { Handle* }
 	kQTSInfo_InputSourceName = FourCharCode('srnm'); { Handle* }
@@ -655,6 +731,7 @@ const
         Stream Handler
 ============================================================================}
 
+>>>>>>> graemeg/cpstrnew
 {
     Server edits are only valid for the current chunk
 }
@@ -716,6 +793,9 @@ const
 	kRTPInvalidSSRC = 0;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 { RTP standard content encodings for audio }
 const
@@ -772,6 +852,7 @@ const
     RTP Statistics
 -----------------------------------------}
 const
+<<<<<<< HEAD
 =======
 
 { RTP standard content encodings for audio }
@@ -829,6 +910,8 @@ const
     RTP Statistics
 -----------------------------------------}
 const
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 	kRTPTotalReceivedPktsStat = FourCharCode('trcp');
 	kRTPTotalLostPktsStat = FourCharCode('tlsp');
@@ -857,6 +940,7 @@ const
 	kRTPRetransmissionStat = FourCharCode('rrtx');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -864,7 +948,17 @@ const
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+{-----------------------------------------
+    Payload Info
+-----------------------------------------}
+const
+	kRTPPayloadSpeedTag = FourCharCode('sped'); { 0-255, 255 is fastest}
+	kRTPPayloadLossRecoveryTag = FourCharCode('loss'); { 0-255, 0 can't handle any loss, 128 can handle 50% packet loss}
+	kRTPPayloadConformanceTag = FourCharCode('conf'); { more than one of these can be present}
 
 >>>>>>> graemeg/cpstrnew
 {-----------------------------------------
@@ -914,10 +1008,17 @@ type
 ============================================================================}
 type
 	RTPReassembler = ComponentInstance;
+<<<<<<< HEAD
 const
 	kRTPReassemblerType = FourCharCode('rtpr');
 
 const
+=======
+const
+	kRTPReassemblerType = FourCharCode('rtpr');
+
+const
+>>>>>>> graemeg/cpstrnew
 	kRTPBaseReassemblerType = FourCharCode('gnrc');
 	kRTP261ReassemblerType = FourCharCode('h261');
 	kRTP263ReassemblerType = FourCharCode('h263');
@@ -2147,12 +2248,18 @@ type
 	RTPPacketBuilder = ComponentInstance;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	RTPPacketGroupRef = ^OpaqueRTPPacketGroupRef; { an opaque type }
 	OpaqueRTPPacketGroupRef = record end;
 	RTPPacketRef = ^OpaqueRTPPacketRef; { an opaque type }
 	OpaqueRTPPacketRef = record end;
 	RTPPacketRepeatedDataRef = ^OpaqueRTPPacketRepeatedDataRef; { an opaque type }
 	OpaqueRTPPacketRepeatedDataRef = record end;
+=======
+	RTPPacketGroupRef = ^SInt32; { an opaque type }
+	RTPPacketRef = ^SInt32; { an opaque type }
+	RTPPacketRepeatedDataRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	RTPPacketGroupRef = ^SInt32; { an opaque type }
 	RTPPacketRef = ^SInt32; { an opaque type }

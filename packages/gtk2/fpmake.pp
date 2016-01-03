@@ -65,7 +65,10 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.Install:=False;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1143,6 +1146,7 @@ begin
           AddInclude('gtktreemodelfilter.inc');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
           AddInclude('gtkseparatortoolitem.inc');
           AddInclude('gtkaboutdialog.inc');
@@ -1151,6 +1155,8 @@ begin
           AddInclude('gtkcellview.inc');
           AddInclude('gtkiconview.inc');
           AddInclude('gtkmenutoolbutton.inc');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1245,8 +1251,11 @@ begin
           AddInclude('pango-tabs.inc');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddInclude('pango-matrix.inc');
           AddInclude('pango-renderer.inc');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1299,6 +1308,7 @@ begin
          end;}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Sources.AddExampleFiles('examples/*',P.Directory,false,'.');
     P.Sources.AddExampleFiles('examples/filechooser/*',P.Directory,false,'filechooser');
     P.Sources.AddExampleFiles('examples/gettingstarted/*',P.Directory,false,'gettingstarted');
@@ -1310,6 +1320,8 @@ begin
     P.Sources.AddExampleFiles('examples/scribble_simple/*',P.Directory,false,'scribble_simple');
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

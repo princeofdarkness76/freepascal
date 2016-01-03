@@ -22,6 +22,9 @@ const
 	SYS_SD_READ_SECTORS     : FifoMessageType = $1240;
 	SYS_SD_WRITE_SECTORS    : FifoMessageType = $1241;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -82,6 +85,7 @@ type
 		  );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       6: (
         fwParams: record
           buffer: pointer;
@@ -90,6 +94,8 @@ type
         end;      
       );  
         
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

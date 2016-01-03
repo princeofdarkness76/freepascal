@@ -174,6 +174,7 @@ type
   function  objc_msgSendSuper2(const super: pobjc_super; op: SEL): id; cdecl; varargs; weakexternal libname; { Mac OS X 10.6 and later }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { the AArch64 ABI does not require special handling of struct returns, so no
   special handlers are provided/required }
 {$ifndef cpuaarch64}
@@ -187,6 +188,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   { The following two are declared as procedures with the hidden result pointer
     as their first parameter. This corresponds to the declaration below as far
     as the code generator is concerned (and is easier to handle in the compiler).  }
@@ -194,6 +197,9 @@ type
   function  objc_msgSendSuper_stret(const super: pobjc_super; op: SEL): tdummyrecbyaddrresult; cdecl; varargs; external libname;
   function  objc_msgSendSuper2_stret(const super: pobjc_super; op: SEL): tdummyrecbyaddrresult; cdecl; varargs; weakexternal libname;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -251,9 +257,13 @@ type
   function class_getMethodImplementation(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef cpuaarch64}
   function class_getMethodImplementation_stret(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
 {$endif cpuaarch64}
+=======
+  function class_getMethodImplementation_stret(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
+>>>>>>> graemeg/cpstrnew
 =======
   function class_getMethodImplementation_stret(cls:pobjc_class; name:SEL):IMP; cdecl; external libname;
 >>>>>>> graemeg/cpstrnew

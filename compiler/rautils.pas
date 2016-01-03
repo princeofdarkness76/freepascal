@@ -45,7 +45,11 @@ type
   TOprType=(OPR_NONE,OPR_CONSTANT,OPR_SYMBOL,OPR_LOCAL,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             OPR_REFERENCE,OPR_REGISTER,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS,OPR_SPECIALREG);
+=======
+            OPR_REFERENCE,OPR_REGISTER,OPR_REGLIST,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS);
+>>>>>>> graemeg/cpstrnew
 =======
             OPR_REFERENCE,OPR_REGISTER,OPR_REGLIST,OPR_COND,OPR_REGSET,OPR_SHIFTEROP,OPR_MODEFLAGS);
 >>>>>>> graemeg/cpstrnew
@@ -73,6 +77,7 @@ type
 {$ifdef arm}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       OPR_REGSET    : (regset : tcpuregisterset; regtype: tregistertype; subreg: tsubregister; usermode: boolean);
       OPR_SHIFTEROP : (shifterop : tshifterop);
       OPR_COND      : (cc : tasmcond);
@@ -85,10 +90,15 @@ type
       OPR_MODEFLAGS : (flags : tcpumodeflags);
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       OPR_REGSET    : (regset : tcpuregisterset; regtype: tregistertype; subreg: tsubregister);
       OPR_SHIFTEROP : (shifterop : tshifterop);
       OPR_COND      : (cc : tasmcond);
       OPR_MODEFLAGS : (flags : tcpumodeflags);
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endif arm}
 {$ifdef aarch64}
@@ -1135,12 +1145,15 @@ end;
               OPR_REGSET:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 ai.loadregset(i-1,regtype,subreg,regset,usermode);
               OPR_MODEFLAGS:
                 ai.loadmodeflags(i-1,flags);
               OPR_SPECIALREG:
                 ai.loadspecialreg(i-1,specialreg,specialregflags);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                 ai.loadregset(i-1,regtype,subreg,regset);
@@ -1151,6 +1164,9 @@ end;
               OPR_MODEFLAGS:
                 ai.loadmodeflags(i-1,flags);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

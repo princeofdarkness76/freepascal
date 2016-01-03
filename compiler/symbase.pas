@@ -99,7 +99,10 @@ interface
           currentlyoptional : boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           tableoptions : tsymtableoptions;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

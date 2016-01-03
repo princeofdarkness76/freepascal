@@ -426,8 +426,11 @@ begin
   FItems.Exchange(Index1,Index2);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FUpdateCount = 0 then
     FPONotifyObservers(Self,ooChange,Nil);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

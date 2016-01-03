@@ -509,7 +509,11 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FData.Count <= FDataOffset) then
+=======
+  if (FData.Count < (1+FDataOffset)) then
+>>>>>>> graemeg/cpstrnew
 =======
   if (FData.Count < (1+FDataOffset)) then
 >>>>>>> graemeg/cpstrnew

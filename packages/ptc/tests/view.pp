@@ -8,9 +8,15 @@ uses
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
@@ -27,6 +33,7 @@ var
 begin
   try
     try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
@@ -51,6 +58,8 @@ begin
       console.open('test', surface.width, surface.height, format);
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       console := TPTCConsole.Create;
 
       {$IFDEF FPC_LITTLE_ENDIAN}
@@ -62,6 +71,9 @@ begin
 
       console.open('test', surface.width, surface.height, format);
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       for I := 1 to 100 do
       begin
@@ -85,9 +97,12 @@ begin
     finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       console.close;
@@ -95,6 +110,9 @@ begin
       surface.Free;
       format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

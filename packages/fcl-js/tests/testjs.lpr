@@ -5,12 +5,15 @@ program testjs;
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cwstring,Classes, consoletestrunner, tcscanner, jsparser, jsscanner, jstree, jsbase,
   tcparser, jswriter, tctextwriter, tcwriter, jstoken;
 
 var
   Application: TTestRunner;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Classes, consoletestrunner, tcscanner, jsparser, jsscanner, jstree, jsbase,
@@ -28,6 +31,9 @@ type
 var
   Application: TMyTestRunner;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -37,10 +43,16 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DefaultFormat:=fplain;
   DefaultRunAllTests:=True;
   Application := TTestRunner.Create(nil);
   Application.Initialize;
+=======
+  Application := TMyTestRunner.Create(nil);
+  Application.Initialize;
+  Application.Title := 'FPCUnit Console test runner';
+>>>>>>> graemeg/cpstrnew
 =======
   Application := TMyTestRunner.Create(nil);
   Application.Initialize;

@@ -703,6 +703,7 @@ Unit raarmgas;
             is_ConditionCode := false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             case actopcode of
               A_IT,A_ITE,A_ITT,
@@ -728,6 +729,8 @@ Unit raarmgas;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             
             if actopcode in [A_IT,A_ITE,A_ITT,
                              A_ITEE,A_ITTE,A_ITET,A_ITTT,
@@ -749,6 +752,9 @@ Unit raarmgas;
                   end;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -786,6 +792,7 @@ Unit raarmgas;
               end;
           end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -862,6 +869,8 @@ Unit raarmgas;
             result:=getsupreg(reg);
         end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1041,7 +1050,11 @@ Unit raarmgas;
                 end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM,A_VLDM,A_VSTM,A_SRS,A_RFE]) then
+=======
+              else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM]) then
+>>>>>>> graemeg/cpstrnew
 =======
               else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM]) then
 >>>>>>> graemeg/cpstrnew
@@ -1067,6 +1080,7 @@ Unit raarmgas;
               subreg:=R_SUBNONE;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               while actasmtoken<>AS_RSBRACKET do
                 begin
                   if actasmtoken=AS_REGISTER then
@@ -1075,12 +1089,17 @@ Unit raarmgas;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               while true do
                 begin
                   if actasmtoken=AS_REGISTER then
                     begin
                       include(registerset,getsupreg(actasmregister));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1119,6 +1138,7 @@ Unit raarmgas;
               oper.opr.regset:=registerset;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if actasmtoken=AS_XOR then
                 begin
                   consume(AS_XOR);
@@ -1126,6 +1146,8 @@ Unit raarmgas;
                 end
               else
                 oper.opr.usermode:=false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1297,6 +1319,7 @@ Unit raarmgas;
         { sorted by length so longer postfixes will match first }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         postfix2strsorted : array[1..70] of string[9] = (
           '.F32.S32','.F32.U32','.S32.F32','.U32.F32','.F64.S32','.F64.U32','.S32.F64','.U32.F64',
           '.F32.S16','.F32.U16','.S16.F32','.U16.F32','.F64.S16','.F64.U16','.S16.F64','.U16.F64',
@@ -1322,6 +1345,8 @@ Unit raarmgas;
           PF_ED,PF_EA,PF_8,PF_S,PF_D,PF_E,
           PF_P,PF_X,PF_R,PF_B,PF_H,PF_T);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         postfix2strsorted : array[1..31] of string[3] = (
@@ -1504,6 +1529,15 @@ Unit raarmgas;
           end;
 <<<<<<< HEAD
 =======
+        { check for format postfix }
+        if length(hs)>0 then
+          begin
+            if upcase(copy(hs,1,2)) = '.W' then
+              begin
+                actwideformat:=true;
+                delete(hs,1,2);
+              end;
+          end;
         { check for format postfix }
         if length(hs)>0 then
           begin

@@ -64,6 +64,7 @@ type
     _lastKeyView: NSView;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tviFlags: record
       case byte of
        0: (_anonbitfield_NSTabViewItem0: cuint);
@@ -71,11 +72,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __tviFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTabViewItem0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -86,7 +92,10 @@ type
         RESERVED: 0..((1 shl 28)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

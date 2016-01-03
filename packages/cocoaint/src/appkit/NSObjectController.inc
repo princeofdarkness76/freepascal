@@ -46,6 +46,7 @@
     _managedProxy: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __objectControllerFlags: record
       case byte of
        0: (_anonbitfield_NSObjectController0: cuint);
@@ -53,11 +54,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __objectControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSObjectController0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -72,7 +78,10 @@
         _reservedObjectController: 0..((1 shl 24)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -8,7 +8,11 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure test(p: codepointer);
+=======
+procedure test(p: pointer);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure test(p: pointer);
 >>>>>>> graemeg/cpstrnew

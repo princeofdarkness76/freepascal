@@ -158,6 +158,9 @@ implementation
         systemunit.insert(tsyssym.create('ObjCSelector',in_objc_selector_x)); { objc only }
         systemunit.insert(tsyssym.create('ObjCEncode',in_objc_encode_x)); { objc only }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -265,6 +268,9 @@ implementation
               s80floattype:=tfloatdef.create(s80real);
               sc80floattype:=tfloatdef.create(sc80real);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -414,6 +420,9 @@ implementation
         sinttype:=s8inttype;
 {$endif cpu8bitalu}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -477,6 +486,7 @@ implementation
               (either "long double" or "double") }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if target_info.system in systems_android then
               { Android has "long double"="double" even for x86 }
               addtype('CExtended',s64floattype)
@@ -488,11 +498,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             if tfloatdef(pbestrealtype^).floattype=s80real then
               addtype('CExtended',sc80floattype)
             else
               addtype('CExtended',pbestrealtype^);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -679,6 +694,9 @@ implementation
         addfield(hrecst,tfieldvarsym.create('$self',vs_value,voidpointertype,[]));
         methodpointertype:=trecorddef.create('',hrecst);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -909,8 +927,14 @@ implementation
 {$endif SPARC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         aiclass[ait_symbolpair]:=tai_symbolpair;
         aiclass[ait_weak]:=tai_weak;
+=======
+{$ifdef arm}
+        aiclass[ait_thumb_func]:=tai_thumb_func;
+{$endif arm}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef arm}
         aiclass[ait_thumb_func]:=tai_thumb_func;

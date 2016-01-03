@@ -174,6 +174,7 @@
   {$define cpunodefaultint}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$define cpuneedsdivhelper}
   {$define cpuneedsmulhelper}
   {$define cpurefshaveindexreg}
@@ -184,10 +185,14 @@
 =======
   {$define cpuneedsdiv32helper}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$define cpuneedsdiv32helper}
+>>>>>>> graemeg/cpstrnew
 {$endif avr}
 
 {$ifdef mipsel}
   {$define mips}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$else not mipsel}
@@ -242,6 +247,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$endif mipsel}
 
 {$ifdef mips}
@@ -254,6 +261,9 @@
 {$endif mips}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -261,6 +271,7 @@
 {$DEFINE USE_FAKE_SYSUTILS}
 {$ENDIF MACOS}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { Stabs is not officially supported on 64 bit targets by gdb, except on Mac OS X
@@ -272,6 +283,8 @@
 {$endif}
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

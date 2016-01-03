@@ -26,6 +26,9 @@ begin
     P.Version:='2.2.2-0';
     P.Dependencies.Add('univint',[Darwin]);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -49,6 +52,9 @@ begin
 =======
     P.IncludePath.Add('src/win',AllWindowsOSes);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -69,11 +75,16 @@ begin
       T.ResourceStrings:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('singleinstance.pp');
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
     with T.Dependencies do
       AddUnit('singleinstance');
+=======
+    T:=P.Targets.AddUnit('custapp.pp');
+      T.ResourceStrings:=true;
+>>>>>>> graemeg/cpstrnew
 =======
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
@@ -124,8 +135,11 @@ begin
       T.ResourceStrings:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,EMX,nativent]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);

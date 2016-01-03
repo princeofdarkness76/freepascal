@@ -24,7 +24,11 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes,SysUtils,Variants,FmtBCD,MaskUtils;
+=======
+uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
+>>>>>>> graemeg/cpstrnew
 =======
 uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
 >>>>>>> graemeg/cpstrnew
@@ -283,7 +287,10 @@ type
     FEditMask: TEditMask;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFieldDef: TFieldDef;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -707,7 +714,11 @@ type
     procedure SetAsString(const AValue: string); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetAsInteger(AValue: Longint); override;
+=======
+    procedure SetAsInteger(AValue: Integer); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetAsInteger(AValue: Integer); override;
 >>>>>>> graemeg/cpstrnew
@@ -858,8 +869,12 @@ type
     function GetAsFloat: Double; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetAsLargeInt: LargeInt; override;
     function GetAsInteger: Longint; override;
+=======
+    function GetAsLongint: Longint; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function GetAsLongint: Longint; override;
 >>>>>>> graemeg/cpstrnew
@@ -875,8 +890,12 @@ type
     procedure SetAsFloat(AValue: Double); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetAsLargeInt(AValue: LargeInt); override;
     procedure SetAsInteger(AValue: Longint); override;
+=======
+    procedure SetAsLongint(AValue: Longint); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetAsLongint(AValue: Longint); override;
 >>>>>>> graemeg/cpstrnew
@@ -893,7 +912,11 @@ type
   published
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Precision: Longint read FPrecision write FPrecision default 18;
+=======
+    property Precision: Longint read FPrecision write FPrecision default 15;
+>>>>>>> graemeg/cpstrnew
 =======
     property Precision: Longint read FPrecision write FPrecision default 15;
 >>>>>>> graemeg/cpstrnew
@@ -2082,6 +2105,148 @@ type
     property DatabaseName: string read FDatabaseName write FDatabaseName;
     property KeepConnection: Boolean read FKeepConnection write FKeepConnection;
     property Params : TStrings read FParams Write SetParams;
+<<<<<<< HEAD
+=======
+  end;
+
+
+  { TParam }
+
+  TBlobData = string;
+
+  TParamBinding = array of integer;
+
+  TParamType = (ptUnknown, ptInput, ptOutput, ptInputOutput, ptResult);
+  TParamTypes = set of TParamType;
+
+  TParamStyle = (psInterbase,psPostgreSQL,psSimulated);
+
+  TParams = class;
+
+  TParam = class(TCollectionItem)
+  private
+    FNativeStr: string;
+    FValue: Variant;
+    FPrecision: Integer;
+    FNumericScale: Integer;
+    FName: string;
+    FDataType: TFieldType;
+    FBound: Boolean;
+    FParamType: TParamType;
+    FSize: Integer;
+    Function GetDataSet: TDataSet;
+    Function IsParamStored: Boolean;
+  protected
+    Procedure AssignParam(Param: TParam);
+    Procedure AssignTo(Dest: TPersistent); override;
+    Function GetAsBoolean: Boolean;
+    Function GetAsCurrency: Currency;
+    Function GetAsDateTime: TDateTime;
+    Function GetAsFloat: Double;
+    Function GetAsInteger: Longint;
+    Function GetAsLargeInt: LargeInt;
+    Function GetAsMemo: string;
+    Function GetAsString: string;
+    Function GetAsVariant: Variant;
+    Function GetDisplayName: string; override;
+    Function GetIsNull: Boolean;
+    Function IsEqual(AValue: TParam): Boolean;
+    Procedure SetAsBlob(const AValue: TBlobData);
+    Procedure SetAsBoolean(AValue: Boolean);
+    Procedure SetAsCurrency(const AValue: Currency);
+    Procedure SetAsDate(const AValue: TDateTime);
+    Procedure SetAsDateTime(const AValue: TDateTime);
+    Procedure SetAsFloat(const AValue: Double);
+    Procedure SetAsInteger(AValue: Longint);
+    Procedure SetAsLargeInt(AValue: LargeInt);
+    Procedure SetAsMemo(const AValue: string);
+    Procedure SetAsSmallInt(AValue: LongInt);
+    Procedure SetAsString(const AValue: string);
+    Procedure SetAsTime(const AValue: TDateTime);
+    Procedure SetAsVariant(const AValue: Variant);
+    Procedure SetAsWord(AValue: LongInt);
+    Procedure SetDataType(AValue: TFieldType);
+    Procedure SetText(const AValue: string);
+    function GetAsWideString: WideString;
+    procedure SetAsWideString(const aValue: WideString);
+  public
+    constructor Create(ACollection: TCollection); overload; override;
+    constructor Create(AParams: TParams; AParamType: TParamType); reintroduce; overload;
+    Procedure Assign(Source: TPersistent); override;
+    Procedure AssignField(Field: TField);
+    Procedure AssignToField(Field: TField);
+    Procedure AssignFieldValue(Field: TField; const AValue: Variant);
+    procedure AssignFromField(Field : TField);
+    Procedure Clear;
+    Procedure GetData(Buffer: Pointer);
+    Function  GetDataSize: Integer;
+    Procedure LoadFromFile(const FileName: string; BlobType: TBlobType);
+    Procedure LoadFromStream(Stream: TStream; BlobType: TBlobType);
+    Procedure SetBlobData(Buffer: Pointer; ASize: Integer);
+    Procedure SetData(Buffer: Pointer);
+    Property AsBlob : TBlobData read GetAsString write SetAsBlob;
+    Property AsBoolean : Boolean read GetAsBoolean write SetAsBoolean;
+    Property AsCurrency : Currency read GetAsCurrency write SetAsCurrency;
+    Property AsDate : TDateTime read GetAsDateTime write SetAsDate;
+    Property AsDateTime : TDateTime read GetAsDateTime write SetAsDateTime;
+    Property AsFloat : Double read GetAsFloat write SetAsFloat;
+    Property AsInteger : LongInt read GetAsInteger write SetAsInteger;
+    Property AsLargeInt : LargeInt read GetAsLargeInt write SetAsLargeInt;
+    Property AsMemo : string read GetAsMemo write SetAsMemo;
+    Property AsSmallInt : LongInt read GetAsInteger write SetAsSmallInt;
+    Property AsString : string read GetAsString write SetAsString;
+    Property AsTime : TDateTime read GetAsDateTime write SetAsTime;
+    Property AsWord : LongInt read GetAsInteger write SetAsWord;
+    Property Bound : Boolean read FBound write FBound;
+    Property Dataset : TDataset Read GetDataset;
+    Property IsNull : Boolean read GetIsNull;
+    Property NativeStr : string read FNativeStr write FNativeStr;
+    Property Text : string read GetAsString write SetText;
+    Property Value : Variant read GetAsVariant write SetAsVariant stored IsParamStored;
+    property AsWideString: WideString read GetAsWideString write SetAsWideString;
+  published
+    Property DataType : TFieldType read FDataType write SetDataType;
+    Property Name : string read FName write FName;
+    Property NumericScale : Integer read FNumericScale write FNumericScale default 0;
+    Property ParamType : TParamType read FParamType write FParamType;
+    Property Precision : Integer read FPrecision write FPrecision default 0;
+    Property Size : Integer read FSize write FSize default 0;
+  end;
+
+
+  { TParams }
+
+  TParams = class(TCollection)
+  private
+    FOwner: TPersistent;
+    Function  GetItem(Index: Integer): TParam;
+    Function  GetParamValue(const ParamName: string): Variant;
+    Procedure SetItem(Index: Integer; Value: TParam);
+    Procedure SetParamValue(const ParamName: string; const Value: Variant);
+  protected
+    Procedure AssignTo(Dest: TPersistent); override;
+    Function  GetDataSet: TDataSet;
+    Function  GetOwner: TPersistent; override;
+  public
+    Constructor Create(AOwner: TPersistent); overload;
+    Constructor Create; overload;
+    Procedure AddParam(Value: TParam);
+    Procedure AssignValues(Value: TParams);
+    Function  CreateParam(FldType: TFieldType; const ParamName: string; ParamType: TParamType): TParam;
+    Function  FindParam(const Value: string): TParam;
+    Procedure GetParamList(List: TList; const ParamNames: string);
+    Function  IsEqual(Value: TParams): Boolean;
+    Function  ParamByName(const Value: string): TParam;
+    Function  ParseSQL(SQL: String; DoCreate: Boolean): String; overload;
+    Function  ParseSQL(SQL: String; DoCreate, EscapeSlash, EscapeRepeat : Boolean; ParameterStyle : TParamStyle): String; overload;
+    Function  ParseSQL(SQL: String; DoCreate, EscapeSlash, EscapeRepeat : Boolean; ParameterStyle : TParamStyle; var ParamBinding: TParambinding): String; overload;
+    Function  ParseSQL(SQL: String; DoCreate, EscapeSlash, EscapeRepeat : Boolean; ParameterStyle : TParamStyle; var ParamBinding: TParambinding; var ReplaceString : string): String; overload;
+    Procedure RemoveParam(Value: TParam);
+    Procedure CopyParamValuesFromDataset(ADataset : TDataset; CopyBound : Boolean);
+    Property Dataset : TDataset Read GetDataset;
+    Property Items[Index: Integer] : TParam read GetItem write SetItem; default;
+    Property ParamValues[const ParamName: string] : Variant read GetParamValue write SetParamValue;
+>>>>>>> graemeg/cpstrnew
   end;
 
 
@@ -2139,6 +2304,9 @@ const
     varOleStr, varOleStr, varVariant, varUnknown, varDispatch, varOleStr,
     varOleStr, varDouble, varOleStr,varOleStr);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

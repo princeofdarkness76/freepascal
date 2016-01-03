@@ -61,6 +61,7 @@
     _scrollingView: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __mvFlags: record
       case byte of
        0: (_anonbitfield_NSMenuView0: cuint);
@@ -68,11 +69,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __mvFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMenuView0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -91,7 +97,10 @@
         RESERVED: 0..((1 shl 5)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

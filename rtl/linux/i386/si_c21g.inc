@@ -35,6 +35,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$asmmode att}
 
 { Some helpers }
@@ -61,6 +62,16 @@ end;
     See the file COPYING.FPC, included in this distribution,
     for details about the copyright.
 
+=======
+{
+    This file is part of the Free Pascal run time library.
+    Copyright (c) 2005 by Michael Van Canneyt, Peter Vreman,
+    & Daniel Mantione, members of the Free Pascal development team.
+
+    See the file COPYING.FPC, included in this distribution,
+    for details about the copyright.
+
+>>>>>>> graemeg/cpstrnew
 =======
 {
     This file is part of the Free Pascal run time library.
@@ -100,6 +111,7 @@ end;
 
 {$asmmode att}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { Some helpers }
 
@@ -121,6 +133,11 @@ end;
 
 { Some helpers }
 
+=======
+
+{ Some helpers }
+
+>>>>>>> graemeg/cpstrnew
 {$ifdef FPC_PIC}
 function fpc0geteipasebx : pointer; compilerproc; nostackframe; assembler; 
 asm  
@@ -134,6 +151,9 @@ asm
   ret
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 procedure gmon_mcleanup; cdecl; external name '_mcleanup';
 procedure gmon_monstartup (main,etext : pointer);cdecl;external name 'monstartup';
@@ -169,6 +189,7 @@ asm
   { First locate the start of the environment variables }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   popl    %ecx                    { Get argc in ecx }
 
@@ -197,6 +218,8 @@ asm
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
   popl    %ecx                    { Get argc in ecx }
 
@@ -223,6 +246,9 @@ asm
 	movl  %ecx,(%edx)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -249,6 +275,7 @@ asm
   	movl    %esp,initialstkptr
   {$endif FPC_PIC}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { int __libc_start_main(
 		int *(main) (int, char * *, char * *), 
@@ -354,6 +381,18 @@ end;
 		void (* stack_end)); } 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+        { int __libc_start_main(
+		int *(main) (int, char * *, char * *), 
+		int argc, 
+		char * * ubp_av, 
+		void (*init) (void), 
+		void (*fini) (void), 
+		void (*rtld_fini) (void), 
+		void (* stack_end)); } 
+
+>>>>>>> graemeg/cpstrnew
         pushl %ebp   			{ padding }
         pushl %esp   			{ stack_end }
         pushl %edx   			{ function to be registered with
@@ -435,6 +474,9 @@ begin
  end;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

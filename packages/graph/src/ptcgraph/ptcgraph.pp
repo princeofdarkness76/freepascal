@@ -2,7 +2,11 @@
     This file is part of the Free Pascal run time library.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010, 2011 by Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (c) 2010 by Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2010 by Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -26,7 +30,11 @@ unit ptcgraph;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {//$define logging}
+=======
+{$define logging}
+>>>>>>> graemeg/cpstrnew
 =======
 {$define logging}
 >>>>>>> graemeg/cpstrnew
@@ -43,11 +51,14 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef VER2_6}
 type
   CodePointer = Pointer;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -150,6 +161,12 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//uses
+//  termio{,x86};
+
+>>>>>>> graemeg/cpstrnew
 =======
 //uses
 //  termio{,x86};
@@ -323,12 +340,15 @@ const
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PTCWidth: Integer;
   PTCHeight: Integer;
   PTCFormat8: IPTCFormat;
   PTCFormat15: IPTCFormat;
   PTCFormat16: IPTCFormat;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 //  OldIO: TermIos;
@@ -343,6 +363,9 @@ var
   PTCFormat15: TPTCFormat;
   PTCFormat16: TPTCFormat;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -403,9 +426,12 @@ procedure ptc_update;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   { copy to console }
@@ -431,6 +457,9 @@ End;}
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -440,7 +469,10 @@ End;}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 var
@@ -448,6 +480,9 @@ var
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -463,7 +498,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {
@@ -500,6 +538,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -590,6 +631,10 @@ var
   PaletteData: PUint32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  r, g, b: Uint32;
+>>>>>>> graemeg/cpstrnew
 =======
   r, g, b: Uint32;
 >>>>>>> graemeg/cpstrnew
@@ -728,7 +773,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure ptc_InternalOpen(const ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; AVirtualPages: Integer);
+=======
+procedure ptc_InternalOpen(const ATitle: string; AWidth, AHeight: Integer; AFormat: TPTCFormat; AVirtualPages: Integer);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure ptc_InternalOpen(const ATitle: string; AWidth, AHeight: Integer; AFormat: TPTCFormat; AVirtualPages: Integer);
 >>>>>>> graemeg/cpstrnew
@@ -883,7 +932,11 @@ procedure ptc_Init640x200x16;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ptc_InitMode16_CGAEmu(640, 200, 4);
+=======
+  ptc_InitMode16_CGAEmu(640, 200, 3);
+>>>>>>> graemeg/cpstrnew
 =======
   ptc_InitMode16_CGAEmu(640, 200, 3);
 >>>>>>> graemeg/cpstrnew
@@ -1129,9 +1182,12 @@ end;
 procedure ptc_DirectPixelProc_16bpp(X,Y: smallint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   pixels:Pword;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1139,6 +1195,9 @@ var color:word;
     pixels:Pword;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1172,9 +1231,12 @@ end;
 procedure ptc_DirectPixelProc_8bpp(X,Y: smallint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   pixels:PByte;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1182,6 +1244,9 @@ var color:word;
     pixels:PByte;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1275,7 +1340,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1301,6 +1369,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1534,7 +1605,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1592,6 +1666,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1636,6 +1713,10 @@ end;
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//    SetRawMode(False);
+>>>>>>> graemeg/cpstrnew
 =======
 //    SetRawMode(False);
 >>>>>>> graemeg/cpstrnew
@@ -1654,6 +1735,7 @@ end;
   var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     PTCModeList: TPTCModeList;
 
     function ModeListEmpty: Boolean;
@@ -1662,12 +1744,17 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     PTCModeList: PPTCMode;
 
     function ModeListEmpty: Boolean;
     begin
       ModeListEmpty := (PTCModeList = nil) or (not PTCModeList[0].Valid);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1685,7 +1772,13 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       for I := Low(PTCModeList) to High(PTCModeList) do
+=======
+      I := 0;
+      while (PTCModeList[I].Valid) do
+      begin
+>>>>>>> graemeg/cpstrnew
 =======
       I := 0;
       while (PTCModeList[I].Valid) do
@@ -1705,6 +1798,11 @@ end;
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        Inc(I);
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
         Inc(I);
       end;
@@ -1728,7 +1826,13 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       for I := Low(PTCModeList) to High(PTCModeList) do
+=======
+      I := 0;
+      while (PTCModeList[I].Valid) do
+      begin
+>>>>>>> graemeg/cpstrnew
 =======
       I := 0;
       while (PTCModeList[I].Valid) do
@@ -1748,6 +1852,11 @@ end;
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        Inc(I);
+      end;
+>>>>>>> graemeg/cpstrnew
 =======
         Inc(I);
       end;
@@ -1763,7 +1872,10 @@ end;
     graphmode:Tmodeinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     d{,i} : longint;
@@ -1774,6 +1886,9 @@ end;
          depth_names:array[0..3] of string[5]=('256','64K','16M','16M32');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1794,7 +1909,10 @@ end;
      RestoreVideoState:=@ptc_restorevideostate;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {     if PTCConsole = nil then
@@ -1823,6 +1941,9 @@ end;
        end;
      addmode(graphmode);}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2229,7 +2350,11 @@ end;
        DriverNumber := EGA;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        HardwarePages := 3;
+=======
+       HardwarePages := 2;
+>>>>>>> graemeg/cpstrnew
 =======
        HardwarePages := 2;
 >>>>>>> graemeg/cpstrnew
@@ -2297,7 +2422,11 @@ end;
        DriverNumber := VGA;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        HardwarePages := 3;
+=======
+       HardwarePages := 2;
+>>>>>>> graemeg/cpstrnew
 =======
        HardwarePages := 2;
 >>>>>>> graemeg/cpstrnew
@@ -2959,7 +3088,11 @@ end;
        with graphmode do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        begin
+=======
+       begin  
+>>>>>>> graemeg/cpstrnew
 =======
        begin  
 >>>>>>> graemeg/cpstrnew
@@ -2993,6 +3126,7 @@ end;
      end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
 
 initialization
@@ -3000,6 +3134,8 @@ initialization
   PTCFormat15 := TPTCFormatFactory.CreateNew(16, $7C00, $03E0, $001F);
   PTCFormat16 := TPTCFormatFactory.CreateNew(16, $F800, $07E0, $001F);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -3084,6 +3220,9 @@ initialization
   PTCFormat15 := TPTCFormat.Create(16, $7C00, $03E0, $001F);
   PTCFormat16 := TPTCFormat.Create(16, $F800, $07E0, $001F);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3095,6 +3234,12 @@ finalization
   PTCWrapperObject.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  PTCFormat16.Free;
+  PTCFormat15.Free;
+  PTCFormat8.Free;
+>>>>>>> graemeg/cpstrnew
 =======
   PTCFormat16.Free;
   PTCFormat15.Free;

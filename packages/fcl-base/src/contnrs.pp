@@ -386,6 +386,9 @@ type
   protected
     function Chain(const index: Longword):TFPObjectList;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

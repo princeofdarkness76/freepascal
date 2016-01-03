@@ -24,6 +24,7 @@ unit gd;
 {$ENDIF MORPHOS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF AROS}
   {$UNDEF FPC_TARGET_SUPPORTS_DYNLIBS}
 {$ENDIF AROS}
@@ -33,6 +34,9 @@ unit gd;
 {$IFDEF NDS}
   {$UNDEF FPC_TARGET_SUPPORTS_DYNLIBS}
 {$ENDIF NDS}
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -103,6 +107,7 @@ uses
 {$ENDIF MORPHOS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF AROS}
   {$UNDEF LOAD_DYNAMICALLY}
   {$DEFINE gdlib := }
@@ -118,6 +123,8 @@ uses
   {$DEFINE gdlib := }
   {$DEFINE clib := }
 {$ENDIF NDS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -181,6 +181,7 @@ unit rgobj;
         live_registers:Tsuperregisterworklist;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         spillednodes: tsuperregisterworklist;
 
         { can be overridden to add cpu specific interferences }
@@ -189,11 +190,16 @@ unit rgobj;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { can be overridden to add cpu specific interferences }
         procedure add_cpu_interferences(p : tai);virtual;
         procedure add_constraints(reg:Tregister);virtual;
         function  get_alias(n:Tsuperregister):Tsuperregister;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -242,6 +248,7 @@ unit rgobj;
         backwards_was_first : tbitset;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         has_usedmarks: boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -249,6 +256,13 @@ unit rgobj;
 >>>>>>> graemeg/cpstrnew
 
         { Disposes of the reginfo array.}
+=======
+
+{$ifdef EXTDEBUG}
+        procedure writegraph(loopidx:longint);
+{$endif EXTDEBUG}
+        {# Disposes of the reginfo array.}
+>>>>>>> graemeg/cpstrnew
         procedure dispose_reginfo;
         { Prepare the register colouring.}
         procedure prepare_colouring;
@@ -433,9 +447,14 @@ unit rgobj;
          preserved_by_proc:=Apreserved_by_proc;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // default values set by newinstance
          // used_in_proc:=[];
          // ssa_safe:=false;
+=======
+         // default value set by newinstance
+         // used_in_proc:=[];
+>>>>>>> graemeg/cpstrnew
 =======
          // default value set by newinstance
          // used_in_proc:=[];
@@ -2096,9 +2115,15 @@ unit rgobj;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister;orgsupreg:tsuperregister);
       var
         ins:tai_cpu_abstract_sym;
+=======
+    procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
+      var
+        ins:Taicpu;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
       var
@@ -2128,6 +2153,9 @@ unit rgobj;
       var
         ins:Taicpu;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2216,6 +2244,7 @@ unit rgobj;
 <<<<<<< HEAD
     function trgobj.instr_get_oper_spilling_info(var regs: tspillregsinfo; const r: tsuperregisterset; instr: tai_cpu_abstract_sym; opidx: longint): boolean;
 =======
+
 
 
       var
@@ -2446,9 +2475,12 @@ unit rgobj;
                 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   loadreg:=getregisterinline(list,regs.reginfo[counter].spillregconstraints);
                   do_spill_read(list,tai(loadpos.previous),spilltemplist[orgreg],loadreg,orgreg);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                   tempreg:=getregisterinline(list,regs[counter].spillregconstraints);
@@ -2502,6 +2534,9 @@ unit rgobj;
                   if (not regread) then
                     tempreg:=getregisterinline(list,regs[counter].spillregconstraints);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

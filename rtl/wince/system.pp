@@ -107,9 +107,14 @@ function CreateFileW(lpFileName:pwidechar; dwDesiredAccess:DWORD; dwShareMode:DW
 {$ifdef CPUARM}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+{ the external directive isn't really necessary here because it is overridden by external (FK) }
+
+>>>>>>> graemeg/cpstrnew
+=======
 { the external directive isn't really necessary here because it is overridden by external (FK) }
 
 >>>>>>> graemeg/cpstrnew

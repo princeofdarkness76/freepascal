@@ -105,6 +105,7 @@ var
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __moreRepFlags: record
       case byte of
        0: (_anonbitfield_NSBitmapImageRep0: cuint);
@@ -113,12 +114,17 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __moreRepFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSBitmapImageRep0: cuint);
        1: (
         _bitsPerPixel: cuint;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -136,7 +142,10 @@ var
         compression: 0..((1 shl 20)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

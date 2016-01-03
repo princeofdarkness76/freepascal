@@ -69,6 +69,7 @@ var
     _defineButton: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __scFlags: record
       case byte of
        0: (_anonbitfield_NSSpellChecker0: cuint);
@@ -76,11 +77,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __scFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSSpellChecker0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -98,7 +104,10 @@ var
         _reserved: 0..((1 shl 21)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

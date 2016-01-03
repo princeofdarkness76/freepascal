@@ -926,6 +926,9 @@ begin
           if DataType = ftBCD then precision := (fields[i] as TBCDField).Precision
           else if DataType = ftFMTBcd then precision := (fields[i] as TFMTBCDField).Precision;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

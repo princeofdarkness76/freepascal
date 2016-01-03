@@ -45,6 +45,7 @@
     _groupItems: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __giFlags: record
       case byte of
        0: (_anonbitfield_NSToolbarItemGroup0: cuint);
@@ -55,6 +56,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __giFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSToolbarItemGroup0: cuint);
@@ -62,6 +65,9 @@
         dirtiedLayout: 0..1;
         reserved: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

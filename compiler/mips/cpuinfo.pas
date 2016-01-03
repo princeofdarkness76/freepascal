@@ -37,6 +37,7 @@ Type
       (cpu_none,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        cpu_mips1,
        cpu_mips2,
        cpu_mips3,
@@ -71,6 +72,12 @@ Type
 
    tfputype =(fpu_none,fpu_soft,fpu_mips2,fpu_mips3);
 >>>>>>> graemeg/cpstrnew
+=======
+       cpu_mips32
+      );
+
+   tfputype =(fpu_none,fpu_soft,fpu_mips2,fpu_mips3);
+>>>>>>> graemeg/cpstrnew
 
 Const
    {# Size of native extended floating point type }
@@ -86,6 +93,9 @@ Const
    target_cpu_string = 'mips';
 {$endif MIPSEL}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -143,6 +153,9 @@ type
      'SOFT',
      'FPU_MIPS2','FPU_MIPS3'
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -278,10 +291,16 @@ const
    { Supported optimizations, only used for information }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    supported_optimizerswitches = [cs_opt_regvar,cs_opt_loopunroll,cs_opt_nodecse,
                                   cs_opt_reorder_fields,cs_opt_fastmath];
 
    level1optimizerswitches = genericlevel1optimizerswitches;
+=======
+   supported_optimizerswitches = [cs_opt_regvar,cs_opt_loopunroll,cs_opt_nodecse];
+
+   level1optimizerswitches = [];
+>>>>>>> graemeg/cpstrnew
 =======
    supported_optimizerswitches = [cs_opt_regvar,cs_opt_loopunroll,cs_opt_nodecse];
 

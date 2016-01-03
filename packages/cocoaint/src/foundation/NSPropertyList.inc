@@ -65,7 +65,11 @@ type
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     reserved: array[0..(6)-1] of Pointer;
+=======
+        reserved: array[0..5] of Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
         reserved: array[0..5] of Pointer;
 >>>>>>> graemeg/cpstrnew

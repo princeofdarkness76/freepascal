@@ -207,6 +207,10 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$ifdef FPC_HAS_TYPE_EXTENDED}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
@@ -382,6 +386,9 @@ const
 =======
     {$endif FPC_SYSTEM_HAS_POWER}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

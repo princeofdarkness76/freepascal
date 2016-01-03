@@ -83,6 +83,9 @@ interface
          function  rtti_mangledname(rt:trttitype):string;virtual;abstract;
          function  OwnerHierarchyName: string; virtual; abstract;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -123,6 +126,7 @@ interface
          fileinfo   : tfileposinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { size of fileinfo is 10 bytes, so if a >word aligned type would follow,
            two bytes of memory would be wasted, so we put two one byte fields over here }
          visibility : tvisibility;
@@ -144,6 +148,11 @@ interface
          refs       : longint;
          reflist    : TLinkedList;
 >>>>>>> graemeg/cpstrnew
+=======
+         symoptions : tsymoptions;
+         refs       : longint;
+         reflist    : TLinkedList;
+>>>>>>> graemeg/cpstrnew
          visibility : tvisibility;
          { deprecated optionally can have a message }
          deprecatedmsg: pshortstring;
@@ -152,6 +161,9 @@ interface
          destructor  destroy;override;
          function  mangledname:string; virtual;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -318,12 +330,16 @@ implementation
       begin
         result:=OwnerHierarchyName;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
         if assigned(typesym) and
            not(typ in [procvardef,procdef]) and
            (typesym.realname[1]<>'$') then
           result:=result+typesym.realname
         else
           result:=result+GetTypeName;
+<<<<<<< HEAD
 <<<<<<< HEAD
       end;
 
@@ -339,6 +355,8 @@ implementation
         else
           result:=result+GetTypeName;
 <<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -363,7 +381,10 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -424,7 +445,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tdef.structalignment: shortint;
+=======
+    function tdef.packedbitsize:asizeint;
+>>>>>>> graemeg/cpstrnew
 =======
     function tdef.packedbitsize:asizeint;
 >>>>>>> graemeg/cpstrnew
@@ -517,7 +542,10 @@ implementation
          deprecatedmsg:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          symid:=symid_not_registered;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

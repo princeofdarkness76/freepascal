@@ -42,9 +42,13 @@ interface
          { global in the current program/library, but not visible outside it }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT,
          { a symbol that's internal to the compiler and used as a temp }
          AB_TEMP);
+=======
+         AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT);
+>>>>>>> graemeg/cpstrnew
 =======
          AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT);
 >>>>>>> graemeg/cpstrnew
@@ -154,11 +158,15 @@ interface
          sec_objc_nlcatlist,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          sec_objc_protolist,
          { stack segment for 16-bit DOS }
          sec_stack,
          { initial heap segment for 16-bit DOS }
          sec_heap
+=======
+         sec_objc_protolist
+>>>>>>> graemeg/cpstrnew
 =======
          sec_objc_protolist
 >>>>>>> graemeg/cpstrnew

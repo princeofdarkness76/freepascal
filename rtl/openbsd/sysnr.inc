@@ -17,11 +17,16 @@
  *
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * created from; OpenBSD: syscalls.master,v 1.104 2010/10/28 15:02:41 millert Exp
  *  (OpenBSD/i386 4.9 release)
 
   Checked with syscall.h release tags from 2.0 to 5.6 2014/10/14
 
+=======
+ * created from; OpenBSD: syscalls.master,v 1.104 2010/10/28 15:02:41 millert Exp 
+ *  (OpenBSD/i386 4.9 release)
+>>>>>>> graemeg/cpstrnew
 =======
  * created from; OpenBSD: syscalls.master,v 1.104 2010/10/28 15:02:41 millert Exp 
  *  (OpenBSD/i386 4.9 release)
@@ -587,6 +592,9 @@ var
         syscall_nr_getdirentries        = 312;
         syscall_nr_MAXSYSCALL   = 313;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

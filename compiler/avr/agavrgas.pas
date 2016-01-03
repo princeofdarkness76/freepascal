@@ -172,6 +172,7 @@ unit agavrgas;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       function getopstr(const o:toper) : string;
         var
@@ -198,6 +199,8 @@ unit agavrgas;
               else
                 getopstr:=getreferencestring(o.ref^);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function getopstr(const o:toper) : string;

@@ -72,6 +72,7 @@ type
     _srcId: NSString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_CAConstraintLayoutManager0: record
       case byte of
        0: (_anonbitfield_CAConstraintLayoutManager0: CAConstraintAttribute);
@@ -82,6 +83,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     _anoninternstruct_CAConstraintLayoutManager0: bitpacked record
       case byte of
        0: (_anonbitfield_CAConstraintLayoutManager0: CAConstraintAttribute);
@@ -89,6 +92,9 @@ type
         _srcAttr: 0..((1 shl 16)-1);
         _attr: 0..((1 shl 16)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

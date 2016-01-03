@@ -40,7 +40,11 @@ Procedure OpenKey_AES(Key: PAESKey256; OpenedKey: PAESOpenedKey); Assembler; NoS
    PSHUFD XMM1, XMM1, 011100111b; MOVD EBX, XMM1; XOR EAX, EBX; MOV [RCX], EAX; ADD RCX, 4
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    MOVDQU XMM4, [RDX]; AESKEYGENASSIST XMM4, XMM4, 0
+=======
+   MOVDQU XMM4, [RDX]; AESKEYGEN XMM4, XMM4, 0
+>>>>>>> graemeg/cpstrnew
 =======
    MOVDQU XMM4, [RDX]; AESKEYGEN XMM4, XMM4, 0
 >>>>>>> graemeg/cpstrnew
@@ -66,6 +70,7 @@ Asm
  LEA RCX, [RDX+$20]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  AESKEYGENASSIST XMM2, XMM3, $1;  CALL key_expansion
  AESKEYGENASSIST XMM2, XMM3, $2;  CALL key_expansion
  AESKEYGENASSIST XMM2, XMM3, $4;  CALL key_expansion
@@ -76,6 +81,8 @@ Asm
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  AESKEYGEN XMM2, XMM3, $1;  CALL key_expansion
  AESKEYGEN XMM2, XMM3, $2;  CALL key_expansion
  AESKEYGEN XMM2, XMM3, $4;  CALL key_expansion
@@ -84,6 +91,9 @@ Asm
  AESKEYGEN XMM2, XMM3, $20; CALL key_expansion
  AESKEYGEN XMM2, XMM3, $40; CALL key_expansion
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

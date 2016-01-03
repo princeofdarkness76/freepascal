@@ -62,8 +62,11 @@ implementation
       secnames : array[TAsmSectiontype] of string[4] = ('','',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'CODE','DATA','DATA','DATA','BSS','TLS',
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         'CODE','DATA','DATA','DATA','BSS','',
@@ -115,8 +118,11 @@ implementation
         '',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -127,8 +133,11 @@ implementation
       secnamesml64 : array[TAsmSectiontype] of string[7] = ('','',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '_TEXT','_DATA','_DATA','_DATA','_BSS','_TLS',
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         '_TEXT','_DATE','_DATA','_DATA','_BSS','',
@@ -180,8 +189,11 @@ implementation
         '',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -336,7 +348,11 @@ implementation
           top_const :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             writer.AsmWrite(tostr(o.val));
+=======
+            AsmWrite(tostr(o.val));
+>>>>>>> graemeg/cpstrnew
 =======
             AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
@@ -428,7 +444,11 @@ implementation
         top_const :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           writer.AsmWrite(tostr(o.val));
+=======
+          AsmWrite(tostr(o.val));
+>>>>>>> graemeg/cpstrnew
 =======
           AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
@@ -1047,7 +1067,10 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       { TODO: probably ml64 needs 'closing' last section, too }

@@ -50,6 +50,7 @@
     _userInfo: NSDictionary;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __propertyMappingFlags: record
       case byte of
        0: (_anonbitfield_NSPropertyMapping0: cuint);
@@ -60,6 +61,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __propertyMappingFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPropertyMapping0: cuint);
@@ -67,6 +70,9 @@
         _isInUse: 0..1;
         _reservedPropertyMapping: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

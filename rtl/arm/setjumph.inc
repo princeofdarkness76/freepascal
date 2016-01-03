@@ -18,7 +18,11 @@ type
    jmp_buf = packed record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FPUVFPV2) or defined(FPUVFPV3) or defined(FPUVFPV3_D16)}
+=======
+{$if defined(FPUVFPV2) or defined(FPUVFPV3)}
+>>>>>>> graemeg/cpstrnew
 =======
 {$if defined(FPUVFPV2) or defined(FPUVFPV3)}
 >>>>>>> graemeg/cpstrnew

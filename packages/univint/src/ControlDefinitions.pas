@@ -5,7 +5,11 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
+=======
+     Version:    HIToolbox-437~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    HIToolbox-437~1
 >>>>>>> graemeg/cpstrnew
@@ -26,7 +30,10 @@
 {       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -87,11 +94,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -113,6 +123,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -135,6 +146,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -151,6 +164,9 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -162,7 +178,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -178,7 +197,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -191,6 +213,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -202,6 +225,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -220,13 +248,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -254,6 +286,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -262,6 +296,9 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -304,12 +341,17 @@ interface
 uses MacTypes,TextEdit,AXUIElement,AEDataModel,CFBase,Events,QuickdrawTypes,IconsCore,CFData,CFDictionary,CFString,DateTimeUtils,Drag,TextCommon,Appearance,CarbonEvents,Controls,Lists,MacHelp,Menus,HIObject;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
@@ -378,6 +420,7 @@ const
 }
 
 { Edit Text proc IDs }
+<<<<<<< HEAD
 const
 	kControlEditTextProc = 272;
 	kControlEditTextPasswordProc = 274;
@@ -390,6 +433,33 @@ const
 const
 	kControlKindEditText = FourCharCode('etxt');
 <<<<<<< HEAD
+
+{$ifc not TARGET_CPU_64}
+{
+ *  CreateEditTextControl()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Use CreateEditUnicodeTextControl API instead.
+ *  
+ *  Summary:
+ *    Creates a new edit text control.
+ *  
+ *  Discussion:
+ *    This control is a legacy control. It is deprecated in favor of
+ *    the EditUnicodeText control, which handles Unicode and draws its
+ *    text using antialiasing.
+=======
+const
+	kControlEditTextProc = 272;
+	kControlEditTextPasswordProc = 274;
+
+{ proc IDs available with Appearance 1.1 or later }
+const
+	kControlEditTextInlineInputProc = 276; { Can't combine with the other variants}
+
+{ Control Kind Tag }
+const
+	kControlKindEditText = FourCharCode('etxt');
 
 {$ifc not TARGET_CPU_64}
 {
@@ -455,6 +525,104 @@ function CreateEditTextControl( window: WindowRef; const (*var*) boundsRect: Rec
 { ControlData tags supported only by the classic EditText control}
 {$endc} {not TARGET_CPU_64}
 
+const
+	kControlEditTextTEHandleTag = FourCharCode('than'); { The TEHandle of the text edit record}
+	kControlEditTextInlinePreUpdateProcTag = FourCharCode('prup'); { TSMTEPreUpdateUPP and TSMTEPostUpdateUpp. For use with inline input variant...}
+	kControlEditTextInlinePostUpdateProcTag = FourCharCode('poup'); { ...The refCon parameter will contain the ControlRef.}
+
+{
+    The classic EditText control also supports these tags defined for the EditUnicodeText control:
+    
+        kControlEditTextLockedTag
+        kControlEditTextStyleTag
+        kControlEditTextFixedTextTag
+        kControlEditTextTextTag
+        kControlEditTextKeyFilterTag
+        kControlEditTextValidationProcTag
+        kControlEditTextSelectionTag
+        kControlEditTextKeyScriptBehaviorTag
+        kControlEditTextCFStringTag
+        kControlEditTextPasswordTag
+        kControlEditTextPasswordCFStringTag
+}
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ PICTURE CONTROL (CDEF 19)                                                         }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  Value parameter should contain the ID of the picture you wish to display when       }
+{  creating controls of this type. If you don't want the control tracked at all, use   }
+{  the 'no track' variant.                                                             }
+{ Picture control proc IDs }
+const
+	kControlPictureProc = 304;
+	kControlPictureNoTrackProc = 305;   { immediately returns kControlPicturePart}
+
+{ Control Kind Tag }
+const
+	kControlKindPicture = FourCharCode('pict');
+
+{ The HIObject class ID for the HIPictureView class. }
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kHIPictureViewClassID CFSTRP('com.apple.HIPictureView')}
+{$endc}
+{$ifc not TARGET_CPU_64}
+{
+ *  CreatePictureControl()
+ *  
+ *  Summary:
+ *    Creates a picture control.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    window:
+<<<<<<< HEAD
+ *      The window in which the control should be placed. May be NULL
+ *      in 10.3 and later.
+ *    
+ *    boundsRect:
+ *      The bounds of the control, in local coordinates of the window.
+ *    
+ *    text:
+ *      The text of the control. May be NULL.
+ *    
+ *    isPassword:
+ *      A Boolean indicating whether the field is to be used as a
+ *      password field. Passing false indicates that the field is to
+ *      display entered text normally. True means that the field will
+ *      be used as a password field and any text typed into the field
+ *      will be displayed only as bullets.
+ *    
+ *    useInlineInput:
+ *      A Boolean indicating whether or not the control is to accept
+ *      inline input. Pass true to to accept inline input, otherwise
+ *      pass false.
+ *    
+ *    style:
+ *      The control's font style, size, color, and so on. May be NULL.
+ *    
+ *    outControl:
+ *      On exit, contains the new control (if noErr is returned as the
+ *      result code).
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CreateEditTextControl( window: WindowRef; const (*var*) boundsRect: Rect; text: CFStringRef { can be NULL }; isPassword: Boolean; useInlineInput: Boolean; {const} style: ControlFontStyleRecPtr { can be NULL }; var outControl: ControlRef ): OSStatus; external name '_CreateEditTextControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{ ControlData tags supported only by the classic EditText control}
+{$endc} {not TARGET_CPU_64}
+
 =======
 
 {$ifc not TARGET_CPU_64}
@@ -471,10 +639,66 @@ function CreateEditTextControl( window: WindowRef; const (*var*) boundsRect: Rec
  *    This control is a legacy control. It is deprecated in favor of
  *    the EditUnicodeText control, which handles Unicode and draws its
  *    text using antialiasing.
+=======
+ *      The window that should contain the control. May be NULL on 10.3
+ *      and later.
+ *    
+ *    boundsRect:
+ *      The bounding box of the control.
+ *    
+ *    content:
+ *      The descriptor for the picture you want the control to display.
+ *    
+ *    dontTrack:
+ *      A Boolean value indicating whether the control should hilite
+ *      when it is clicked on. False means hilite and track the mouse.
+ *    
+ *    outControl:
+ *      On exit, contains the new control.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CreatePictureControl( window: WindowRef { can be NULL }; const (*var*) boundsRect: Rect; const (*var*) content: ControlButtonContentInfo; dontTrack: Boolean; var outControl: ControlRef ): OSStatus; external name '_CreatePictureControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Tagged data supported by picture controls }
+{$endc} {not TARGET_CPU_64}
+
+const
+	kControlPictureHandleTag = FourCharCode('pich'); { PicHandle}
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ LIST BOX (CDEF 22)                                                                }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  Lists use an auxiliary resource to define their format. The resource type used is   }
+{  'ldes' and a definition for it can be found in Appearance.r. The resource ID for    }
+{  the ldes is passed in the 'value' parameter when creating the control. You may pass }
+{  zero in value. This tells the List Box control to not use a resource. The list will }
+{  be created with default values, and will use the standard LDEF (0). You can change  }
+{  the list by getting the list handle. You can set the LDEF to use by using the tag   }
+{  below (kControlListBoxLDEFTag)                                                      }
+{ List Box proc IDs }
+const
+	kControlListBoxProc = 352;
+	kControlListBoxAutoSizeProc = 353;
+
+{ Control Kind Tag }
+const
+	kControlKindListBox = FourCharCode('lbox');
+
+{$ifc not TARGET_CPU_64}
+{
+ *  CreateListBoxControl()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
+<<<<<<< HEAD
  *  Parameters:
  *    
  *    window:
@@ -568,6 +792,61 @@ const
  *  
  *  Summary:
  *    Creates a picture control.
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CreateListBoxControl( window: WindowRef; const (*var*) boundsRect: Rect; autoSize: Boolean; numRows: SInt16; numColumns: SInt16; horizScroll: Boolean; vertScroll: Boolean; cellHeight: SInt16; cellWidth: SInt16; hasGrowSpace: Boolean; const (*var*) listDef: ListDefSpec; var outControl: ControlRef ): OSStatus; external name '_CreateListBoxControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Tagged data supported by list box }
+{$endc} {not TARGET_CPU_64}
+
+const
+	kControlListBoxListHandleTag = FourCharCode('lhan'); { ListHandle}
+	kControlListBoxKeyFilterTag = kControlKeyFilterTag; { ControlKeyFilterUPP}
+	kControlListBoxFontStyleTag = kControlFontStyleTag; { ControlFontStyleRec}
+
+{ New tags in 1.0.1 or later }
+const
+	kControlListBoxDoubleClickTag = FourCharCode('dblc'); { Boolean. Was last click a double-click?}
+	kControlListBoxLDEFTag = FourCharCode('ldef'); { SInt16. ID of LDEF to use.}
+
+{ Resource Types }
+const
+	kControlListDescResType = FourCharCode('ldes'); { used for list box control (Appearance 1.0 and later)}
+
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  ¥ SCROLL TEXT BOX (CDEF 27)                                                         }
+{ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ}
+{  This control implements a scrolling box of (non-editable) text. This is useful for  }
+{  credits in about boxes, etc.                                                        }
+{  The standard version of this control has a scroll bar, but the autoscrolling        }
+{  variant does not. The autoscrolling variant needs two pieces of information to      }
+{  work: delay (in ticks) before the scrolling starts, and time (in ticks) between     }
+{  scrolls. It will scroll one pixel at a time, unless changed via SetControlData.     }
+{  Parameter                   What Goes Here                                          }
+{  ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ         ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ    }
+{  Value                       Resource ID of 'TEXT'/'styl' content.                   }
+{  Min                         Scroll start delay (in ticks)                       .   }
+{  Max                         Delay (in ticks) between scrolls.                       }
+{  NOTE: This control is only available with Appearance 1.1.                           }
+{ Scroll Text Box Proc IDs }
+const
+	kControlScrollTextBoxProc = 432;
+	kControlScrollTextBoxAutoScrollProc = 433;
+
+{ Control Kind Tag }
+const
+	kControlKindScrollingTextBox = FourCharCode('stbx');
+
+{$ifc not TARGET_CPU_64}
+{
+ *  CreateScrollingTextBoxControl()
+>>>>>>> graemeg/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -596,6 +875,7 @@ const
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  }
+<<<<<<< HEAD
 function CreatePictureControl( window: WindowRef { can be NULL }; const (*var*) boundsRect: Rect; const (*var*) content: ControlButtonContentInfo; dontTrack: Boolean; var outControl: ControlRef ): OSStatus; external name '_CreatePictureControl';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -698,6 +978,12 @@ function CreateScrollingTextBoxControl( window: WindowRef; const (*var*) boundsR
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+function CreateScrollingTextBoxControl( window: WindowRef; const (*var*) boundsRect: Rect; contentResID: SInt16; autoScroll: Boolean; delayBeforeAutoScroll: UInt32; delayBetweenAutoScroll: UInt32; autoScrollAmount: UInt16; var outControl: ControlRef ): OSStatus; external name '_CreateScrollingTextBoxControl';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 { Tagged data supported by Scroll Text Box }
 {$endc} {not TARGET_CPU_64}
 

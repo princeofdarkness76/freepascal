@@ -26,6 +26,9 @@ begin
     P.OSes:=[Linux];
     P.CPUs:=[i386];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

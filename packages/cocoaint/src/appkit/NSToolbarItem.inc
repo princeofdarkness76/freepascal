@@ -71,6 +71,7 @@ var
     _tag: NSInteger;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tbiFlags: record
       case byte of
        0: (_anonbitfield_NSToolbarItem0: cuint);
@@ -78,11 +79,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __tbiFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSToolbarItem0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -113,7 +119,10 @@ var
         RESERVED: 0..((1 shl 8)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

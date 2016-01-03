@@ -186,6 +186,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { contains a list of types that are extended by helper types; the key is
           the full name of the type and the data is a TFPObjectList of
           tobjectdef instances (the helper defs) }
@@ -216,6 +217,8 @@ interface
            -- actual type: tnode (but fmodule should not depend on node) }
          tcinitcode     : tobject;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -614,8 +617,11 @@ implementation
         deprecatedmsg:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         namespace:=nil;
         tcinitcode:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -632,7 +638,10 @@ implementation
         i : longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         current_debuginfo_reset : boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -697,8 +706,11 @@ implementation
         stringdispose(deprecatedmsg);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -852,9 +864,12 @@ implementation
         stringdispose(deprecatedmsg);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         stringdispose(namespace);
         tcinitcode.free;
         tcinitcode:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -987,7 +1002,10 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 

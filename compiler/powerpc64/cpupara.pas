@@ -47,8 +47,11 @@ type
       tvarargsparalist): longint; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
@@ -75,6 +78,9 @@ uses
 =======
   defutil,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -199,8 +205,12 @@ begin
       result :=
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         (varspez = vs_const) and
         (
+=======
+        ((varspez = vs_const) and
+>>>>>>> graemeg/cpstrnew
 =======
         ((varspez = vs_const) and
 >>>>>>> graemeg/cpstrnew
@@ -382,6 +392,7 @@ begin
     end
   else
     begin
+<<<<<<< HEAD
 =======
 procedure tppcparamanager.create_funcretloc_info(p: tabstractprocdef; side:
   tcallercallee);
@@ -416,6 +427,8 @@ begin
   else
     begin
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       retcgsize:=def_cgsize(def);
       result.intsize:=def.size;
     end;
@@ -448,6 +461,9 @@ begin
        paraloc^.size:=retcgsize;
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

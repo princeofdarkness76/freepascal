@@ -71,6 +71,7 @@ type
   __VFlags = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSView0: cuint);
     1: (data: bitpacked record
@@ -126,6 +127,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     rotatedFromBase: 0..1;
     rotatedOrScaledFromBase: 0..1;
@@ -174,6 +177,9 @@ type
     rotatedFromBase: 0..1;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -241,6 +247,7 @@ var
     _vFlags: _VFlags;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __vFlags2: record
       case byte of
        0: (_anonbitfield_NSView1: cuint);
@@ -248,11 +255,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __vFlags2: bitpacked record
       case byte of
        0: (_anonbitfield_NSView0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -264,7 +276,10 @@ var
         menuWasSet: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

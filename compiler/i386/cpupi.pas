@@ -78,9 +78,12 @@ unit cpupi;
           otherwise all those subl $2,%esp are meaningless PM }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if target_info.stackalign<=4 then
           result:=Align(tg.direction*tg.lasttemp,min(current_settings.alignment.localalignmax,4))
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
@@ -107,8 +110,11 @@ unit cpupi;
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_create_pic in current_settings.moduleswitches) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and

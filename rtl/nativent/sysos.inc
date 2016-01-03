@@ -370,6 +370,7 @@ begin
   aNtStr.Buffer := GetMem(aNtStr.Length);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to aLen-1 do
     aNtStr.Buffer[i] := aText[i];
 end;
@@ -401,11 +402,16 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   for i := 0 to aLen do
     aNtStr.Buffer[i] := aText[i];
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

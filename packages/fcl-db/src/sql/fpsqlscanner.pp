@@ -2,7 +2,11 @@
     This file is part of the Free Component Library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -39,7 +43,11 @@ resourcestring
   SErrInvalidPPEndif = '$ENDIF without matching $IFxxx';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SInvalidHexadecimalNumber = 'Invalid hexadecimal number';
+=======
+  SInvalidHexadecimalNumber = 'Invalid decimal number';
+>>>>>>> graemeg/cpstrnew
 =======
   SInvalidHexadecimalNumber = 'Invalid decimal number';
 >>>>>>> graemeg/cpstrnew
@@ -53,6 +61,7 @@ type
 
    TSQLToken = (tsqlUnknown,
    // Specials
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    tsqlEOF,tsqlWhiteSpace,
@@ -74,6 +83,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    tsqlEOF,tsqlWhiteSpace,tsqlString, tsqlIdentifier,tsqlIntegerNumber, tsqlFloatNumber, tsqlComment,
    tsqlBraceOpen,tsqlBraceClose,tsqlSquareBraceOpen,tsqlSquareBraceClose,
    tsqlPlaceHolder,tsqlCOMMA,tsqlCOLON, tsqlDOT,tsqlSEMICOLON, tsqlGT,tsqlLT,
@@ -85,6 +96,9 @@ type
    tsqlCOLLATE, tsqlCONTAINING, tsqlCOUNT, tsqlCREATE, tsqlCOLUMN, tsqlCONSTRAINT, tsqlChar,tsqlCHARACTER, tsqlCHECK, tsqlComputed,tsqlCASCADE, tsqlCast, tsqlCommit,tsqlConnect,tsqlCache,tsqlConditional,tsqlCString,
    tsqlDESC, tsqlDESCENDING, tsqlDISTINCT, tsqlDEFAULT, tsqlDELETE, tsqlDO, tsqlDECLARE, tsqlDROP, tsqlDomain, tsqlDecimal, tsqlDate,tsqlDatabase,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -100,6 +114,7 @@ type
    tsqlNOT, tsqlNULL, tsqlNUMERIC , tsqlNChar, tsqlNATIONAL,tsqlNO, tsqlNatural,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    tsqlOFF {not an FB reserved word; used in isql scripts}, tsqlON, tsqlOR, tsqlORDER, tsqlOUTER, tsqlOption,
    tsqlPrecision, tsqlPRIMARY,  tsqlProcedure, tsqlPosition, tsqlPlan, tsqlPassword, tsqlPage,tsqlPages,tsqlPageSize,tsqlPostEvent,tsqlPrivileges,tsqlPublic,
    tsqlRIGHT, tsqlROLE, tsqlReferences, tsqlRollBack, tsqlRelease,  tsqlretain,  tsqlReturningValues,tsqlReturns, tsqlrevoke,
@@ -108,12 +123,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    tsqlON, tsqlOR, tsqlORDER, tsqlOUTER, tsqlOption,
    tsqlPRIMARY,  tsqlProcedure, tsqlPosition, tsqlPlan, tsqlPassword, tsqlPage,tsqlPages,tsqlPageSize,tsqlPostEvent,tsqlPrivileges,tsqlPublic,
    tsqlRIGHT, tsqlROLE, tsqlReferences, tsqlRollBack, tsqlRelease,  tsqlretain,  tsqlReturningValues,tsqlReturns, tsqlrevoke,
    tsqlSELECT, tsqlSET, tsqlSINGULAR, tsqlSOME, tsqlSTARTING, tsqlSUM, tsqlSKIP,tsqlSUBTYPE,tsqlSize,tsqlSegment, tsqlSORT, tsqlSnapShot,tsqlSchema,tsqlShadow,tsqlSuspend,tsqlSQLCode,tsqlSmallint,
    tSQLTABLE, tsqlTrigger,tsqlTime,tsqlTimeStamp,tsqlType, tsqlTo, tsqlTransaction,tsqlThen,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -126,6 +146,7 @@ type
 const
   FirstKeyword = tsqlAll;
   LastKeyWord = tsqlWhen;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   sqlComparisons = [tsqleq,tsqlGE,tsqlLE,tsqlNE,tsqlGT,tsqlLT,tsqlIn,tsqlIS,
@@ -143,6 +164,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   sqlComparisons = [tsqleq,tsqlGE,tsqlLE,tsqlNE,tsqlGT,tsqlLT,tsqlIn, tsqlis,
                     tsqlbetween,tsqlLike,tsqlContaining,tsqlStarting,tsqlnot];
   sqlInvertableComparisons = [tsqlLike,tsqlContaining,tsqlStarting,tsqlin,tsqlis, tsqlbetween];
@@ -151,6 +174,9 @@ const
        // Specials
        'EOF','whitespace','String', 'identifier','integer number','float number', 'comment',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -158,6 +184,7 @@ const
        '?',',',':','.',';','>','<',
        '+','-','*','/','||',
        '=','>=','<=','<>',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
        // Identifiers last:
@@ -168,12 +195,17 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
        // Identifiers last
        'ALL', 'AND', 'ANY', 'ASC', 'ASCENDING', 'AVG', 'ALTER', 'ADD','ACTIVE','ACTION', 'AS', 'AT', 'AUTO', 'AFTER', 'ADMIN',
        'BETWEEN', 'BY', 'BLOB','BEGIN', 'BEFORE',
        'COLLATE', 'CONTAINING', 'COUNT', 'CREATE', 'COLUMN', 'CONSTRAINT', 'CHAR','CHARACTER','CHECK', 'COMPUTED','CASCADE','CAST', 'COMMIT', 'CONNECT', 'CACHE','CONDITIONAL', 'CSTRING',
        'DESC', 'DESCENDING', 'DISTINCT',  'DEFAULT', 'DELETE', 'DO', 'DECLARE', 'DROP', 'DOMAIN', 'DECIMAL', 'DATE','DATABASE',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -189,6 +221,7 @@ const
        'NOT', 'NULL', 'NUMERIC','NCHAR','NATIONAL', 'NO', 'NATURAL',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        'OFF', 'ON', 'OR', 'ORDER', 'OUTER', 'OPTION',
        'PRECISION', 'PRIMARY', 'PROCEDURE','POSITION','PLAN', 'PASSWORD','PAGE','PAGES','PAGE_SIZE','POST_EVENT','PRIVILEGES','PUBLIC',
        'RIGHT', 'ROLE', 'REFERENCES', 'ROLLBACK','RELEASE', 'RETAIN', 'RETURNING_VALUES', 'RETURNS','REVOKE',
@@ -197,12 +230,17 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
        'ON', 'OR', 'ORDER', 'OUTER', 'OPTION',
        'PRIMARY', 'PROCEDURE','POSITION','PLAN', 'PASSWORD','PAGE','PAGES','PAGE_SIZE','POST_EVENT','PRIVILEGES','PUBLIC',
        'RIGHT', 'ROLE', 'REFERENCES', 'ROLLBACK','RELEASE', 'RETAIN', 'RETURNING_VALUES', 'RETURNS','REVOKE',
        'SELECT', 'SET', 'SINGULAR', 'SOME', 'STARTING', 'SUM', 'SKIP','SUB_TYPE', 'SIZE', 'SEGMENT', 'SORT', 'SNAPSHOT','SCHEMA','SHADOW','SUSPEND','SQLCODE','SMALLINT',
        'TABLE','TRIGGER',  'TIME','TIMESTAMP',  'TYPE', 'TO', 'TRANSACTION','THEN',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -276,10 +314,14 @@ Type
     function CommentDiv: TSQLToken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Used to parse out an identifier/name and store it in the list of identifiers
     function DoIdentifier : TSQLToken;
     // Used to parse out a string containing symbols
     function DoSymbolString : TSQLToken;
+=======
+    function DoIdentifier : TSQLToken;
+>>>>>>> graemeg/cpstrnew
 =======
     function DoIdentifier : TSQLToken;
 >>>>>>> graemeg/cpstrnew
@@ -293,8 +335,11 @@ Type
     function DoWhiteSpace: TSQLToken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Reads a new line into TokenStr and returns true
     // If no new lines, returns false
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -334,7 +379,10 @@ implementation
 Var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Keeps track of identifiers used
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -345,7 +393,11 @@ Var
 Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrUnknownToken = 'Unknown token: %s';
+=======
+  SErrUNknownToken = 'Unknown token: %s';
+>>>>>>> graemeg/cpstrnew
 =======
   SErrUNknownToken = 'Unknown token: %s';
 >>>>>>> graemeg/cpstrnew
@@ -454,6 +506,7 @@ begin
       if not FetchLine then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
         FCurToken := Result;
         exit;
@@ -461,11 +514,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
        begin
        FCurToken := Result;
        exit;
        end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -605,7 +663,11 @@ begin
   for I:=FirstKeyword to LastKeyword do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (not Assigned(FExclude)) or (FExclude.IndexOf(TokenInfos[I])=-1) then
+=======
+    if (not Assigned(FExclude)) or (FExclude.INdexOf(TokenInfos[I])=-1) then
+>>>>>>> graemeg/cpstrnew
 =======
     if (not Assigned(FExclude)) or (FExclude.INdexOf(TokenInfos[I])=-1) then
 >>>>>>> graemeg/cpstrnew
@@ -775,7 +837,11 @@ Var
   Len : Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {I : TSQLToken;}
+=======
+  I : TSQLToken;
+>>>>>>> graemeg/cpstrnew
 =======
   I : TSQLToken;
 >>>>>>> graemeg/cpstrnew
@@ -800,7 +866,11 @@ begin
   // Check if this is a keyword or identifier
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // to do: Optimize this!
+=======
+  // !!!: Optimize this!
+>>>>>>> graemeg/cpstrnew
 =======
   // !!!: Optimize this!
 >>>>>>> graemeg/cpstrnew
@@ -813,7 +883,11 @@ begin
   If (P<>Nil) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=P^; //keyword found
+=======
+    Result:=P^;
+>>>>>>> graemeg/cpstrnew
 =======
     Result:=P^;
 >>>>>>> graemeg/cpstrnew
@@ -833,6 +907,7 @@ begin
     end;}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function TSQLScanner.DoSymbolString : TSQLToken;
@@ -866,6 +941,8 @@ begin
     end;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1039,7 +1116,11 @@ begin
       if TokenStr[0] = '=' then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	      begin
+=======
+	begin
+>>>>>>> graemeg/cpstrnew
 =======
 	begin
 >>>>>>> graemeg/cpstrnew
@@ -1058,9 +1139,13 @@ begin
    else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      // Symbol of some sort
      Result:=DoSymbolString;
      //Error(SErrUnknownToken,[TokenStr[0]]);
+=======
+     Error(SErrUnknownToken,[TokenStr[0]]);
+>>>>>>> graemeg/cpstrnew
 =======
      Error(SErrUnknownToken,[TokenStr[0]]);
 >>>>>>> graemeg/cpstrnew

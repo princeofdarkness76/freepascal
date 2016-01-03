@@ -434,6 +434,9 @@ begin
 =======
     Fconnection := tIBConnection.Create(nil);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -500,8 +503,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -712,6 +718,9 @@ begin
 =======
     sql.add('SELECT * FROM FPDEV WHERE ID < '+inttostr(n+1));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -728,7 +737,11 @@ begin
     sql.add('SELECT * FROM FPDEV_FIELD');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     UniDirectional:=TestUniDirectional;
+=======
+    tsqlquery(Result).UniDirectional:=TestUniDirectional;
+>>>>>>> graemeg/cpstrnew
 =======
     tsqlquery(Result).UniDirectional:=TestUniDirectional;
 >>>>>>> graemeg/cpstrnew

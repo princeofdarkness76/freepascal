@@ -23,7 +23,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate_flower(flower: IPTCSurface);
+=======
+procedure generate_flower(flower: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure generate_flower(flower: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
@@ -66,7 +70,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate(palette: IPTCPalette);
+=======
+procedure generate(palette: TPTCPalette);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure generate(palette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
@@ -83,6 +91,9 @@ begin
 =======
   data := palette.lock;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -131,6 +142,9 @@ begin
 =======
     palette.unlock;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -138,6 +152,7 @@ begin
 end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   console: IPTCConsole;
@@ -149,6 +164,8 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
   flower_surface: TPTCSurface = nil;
@@ -156,6 +173,9 @@ var
   palette: TPTCPalette = nil;
   area: TPTCArea = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -267,6 +287,9 @@ begin
       flower_surface.Free;
       console.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

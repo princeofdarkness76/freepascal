@@ -9,7 +9,11 @@ main=rtl
 loaders=prt0 cprt0 func dllprt
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar baseunix unixtype ctypes objpas macpas iso7185 extpas strings \
+=======
+units=system baseunix unixtype ctypes objpas macpas iso7185 strings \
+>>>>>>> graemeg/cpstrnew
 =======
 units=system baseunix unixtype ctypes objpas macpas iso7185 strings \
 >>>>>>> graemeg/cpstrnew

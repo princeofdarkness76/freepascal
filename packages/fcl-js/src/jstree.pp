@@ -3,7 +3,10 @@ unit jstree;
 {$mode objfpc}{$H+}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $DEFINE NOCLASSES}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -12,6 +15,7 @@ unit jstree;
 interface
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$IFNDEF NOCLASSES}  Classes, {$ENDIF} SysUtils, jsbase, jstoken;
@@ -81,6 +85,11 @@ Type
 
 Type
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, jsbase;
+
+Type
+>>>>>>> graemeg/cpstrnew
   TJSElementFlag = (elIsConst,elIsConstValid);
   TJSElementFlags = set of TJSElementFlag;
 
@@ -90,6 +99,7 @@ Type
 
   TJSObject = Class(TObject);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -129,6 +139,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   { TJSFuncDef }
 
   TJSFuncDef = Class(TJSObject)
@@ -136,10 +148,13 @@ Type
     FBody: TJSFunctionBody;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FIsEmpty: Boolean;
     FName: String;
     FParams: TStrings;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     FCache: TJSObject;
@@ -150,6 +165,9 @@ Type
     FParams: TStrings;
     FSec: TObject;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -162,8 +180,11 @@ Type
     Property Name : String Read FName Write FName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property IsEmpty : Boolean Read FIsEmpty Write FIsEmpty;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Property Common : TJSObject Read FCommon Write FCommon;
@@ -172,6 +193,9 @@ Type
     Property IsEmpty : Boolean Read FIsEmpty Write FIsEmpty;
     Property SecurityDomain : TObject Read FSec Write FSec;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -212,7 +236,11 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*  { TJSStringLiteral }
+=======
+  { TJSStringLiteral }
+>>>>>>> graemeg/cpstrnew
 =======
   { TJSStringLiteral }
 >>>>>>> graemeg/cpstrnew
@@ -228,7 +256,11 @@ Type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 *)
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -255,6 +287,7 @@ Type
   { TJSPrimaryExpressionIdent }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TJSPrimaryExpression = Class(TJSElement);
 
   TJSPrimaryExpressionIdent = Class(TJSPrimaryExpression)
@@ -267,6 +300,8 @@ Type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
   TJSPrimaryExpressionIdent = Class(TJSElement)
   private
@@ -276,6 +311,9 @@ Type
   end;
   TJSPrimaryExpressionThis = Class(TJSElement);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -299,10 +337,13 @@ Type
     function GetE(AIndex : Integer): TJSArrayLiteralElement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Function AddElement : TJSArrayLiteralElement;
     Property Elements[AIndex : Integer] : TJSArrayLiteralElement Read GetE ; default;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure SetE(AIndex : Integer; const AValue: TJSArrayLiteralElement);
@@ -310,6 +351,9 @@ Type
     Function AddElement : TJSArrayLiteralElement;
     Property Elements[AIndex : Integer] : TJSArrayLiteralElement Read GetE Write SetE; default;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -345,10 +389,13 @@ Type
     function GetE(AIndex : Integer): TJSObjectLiteralElement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Function AddElement : TJSObjectLiteralElement;
     Property Elements[AIndex : Integer] : TJSObjectLiteralElement Read GetE ; default;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure SetE(AIndex : Integer; const AValue: TJSObjectLiteralElement);
@@ -356,6 +403,9 @@ Type
     Function AddElement : TJSObjectLiteralElement;
     Property Elements[AIndex : Integer] : TJSObjectLiteralElement Read GetE Write SetE; default;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -435,6 +485,7 @@ Type
   Public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Class function PrefixOperatorToken : tjsToken; virtual;
     Class function PostFixOperatorToken : tjsToken; virtual;
     Class function PrefixOperator : String;
@@ -453,10 +504,16 @@ Type
     Property A : TJSElement Read FA Write FA;
   end;
 >>>>>>> graemeg/cpstrnew
+=======
+    Destructor Destroy; override;
+    Property A : TJSElement Read FA Write FA;
+  end;
+>>>>>>> graemeg/cpstrnew
 
   { TJSVariableStatement }
   TJSVariableStatement = Class(TJSUnary);
   TJSExpressionStatement = Class(TJSUnary);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -536,6 +593,8 @@ Type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   TJSThrowStatement = Class(TJSUnary);
   TJSUnaryExpression = Class(TJSUnary);
   TJSUnaryDeleteExpression = Class(TJSUnaryExpression);
@@ -550,6 +609,9 @@ Type
   TJSUnaryPostPlusPlusExpression = Class(TJSUnaryExpression);
   TJSUnaryPostMinusMinusExpression = Class(TJSUnaryExpression);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -569,7 +631,10 @@ Type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TJSBinaryClass = Class of TJSBinary;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -580,6 +645,7 @@ Type
   TJSStatementList = Class(TJSBinary); // A->first statement, B->next in list, chained.
   TJSVariableDeclarationList = Class(TJSBinary);
   TJSWithStatement = Class(TJSBinary); // A-> with expression, B->statement(s)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -749,6 +815,8 @@ Type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   TJSLogicalOrExpression = Class (TJSBinary);
   TJSLogicalAndExpression = Class (TJSBinary);
   TJSBitwiseAndExpression = Class (TJSBinary);
@@ -779,6 +847,9 @@ Type
   TJSMultiplicativeExpressionMod = Class(TJSMultiplicativeExpression);
   TJSCommaExpression = Class(TJSBinary);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -807,8 +878,11 @@ Type
     Destructor Destroy; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Class function OperatorToken : tjsToken; virtual;
     Class function OperatorString : String;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -817,6 +891,7 @@ Type
     Property LHS : TJSElement Read FLHS Write FLHS;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   TJSAssignStatementClass = Class of TJSAssignStatement;
@@ -895,6 +970,8 @@ Type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   TJSSimpleAssignStatement = Class(TJSAssignStatement);
   TJSMulEqAssignStatement = Class(TJSAssignStatement);
   TJSDivEqAssignStatement = Class(TJSAssignStatement);
@@ -908,6 +985,9 @@ Type
   TJSOREqAssignStatement = Class(TJSAssignStatement);
   TJSXOREqAssignStatement = Class(TJSAssignStatement);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -947,10 +1027,15 @@ Type
     FTarget: Cardinal;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FTargetName: TJSString;
   Public
     Property Target : Cardinal Read FTarget Write FTarget;
     Property TargetName : TJSString Read FTargetName Write FTargetName;
+=======
+  Public
+    Property Target : Cardinal Read FTarget Write FTarget;
+>>>>>>> graemeg/cpstrnew
 =======
   Public
     Property Target : Cardinal Read FTarget Write FTarget;
@@ -983,8 +1068,13 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TJSWhileStatement = Class(TJSCondLoopStatement);
   TJSDoWhileStatement = Class(TJSWhileStatement);
+=======
+  TJSWhileStatement = Class(TJSCondLoopStatement)
+  end;
+>>>>>>> graemeg/cpstrnew
 =======
   TJSWhileStatement = Class(TJSCondLoopStatement)
   end;
@@ -1051,10 +1141,13 @@ Type
     function GetC(AIndex : Integer): TJSCaseElement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Function AddCase : TJSCaseElement;
     Property Cases[AIndex : Integer] : TJSCaseElement Read GetC ;default;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure SetC(AIndex : Integer; const AValue: TJSCaseElement);
@@ -1062,6 +1155,9 @@ Type
     Function AddCase : TJSCaseElement;
     Property Cases[AIndex : Integer] : TJSCaseElement Read GetC Write SetC;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1088,12 +1184,18 @@ Type
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FLabel: TJSLabel;
     FTarget: Integer;
   Public
     Destructor Destroy; override;
     Property target: Integer Read FTarget Write FTarget;
     Property TheLabel : TJSLabel Read FLabel Write Flabel;
+=======
+    FTarget: Integer;
+  Public
+    Property target: Integer Read FTarget Write FTarget;
+>>>>>>> graemeg/cpstrnew
 =======
     FTarget: Integer;
   Public
@@ -1163,10 +1265,13 @@ Type
     function GetN(AIndex : Integer): TJSElementNode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Public
     Function AddNode : TJSElementNode;
     Property Nodes[AIndex : Integer] : TJSElementNode Read GetN ; default;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure SetN(AIndex : Integer; const AValue: TJSElementNode);
@@ -1174,6 +1279,9 @@ Type
     Function AddNode : TJSElementNode;
     Property Nodes[AIndex : Integer] : TJSElementNode Read GetN Write SetN; default;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1196,6 +1304,7 @@ Type
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$IFDEF NOCLASSES}
@@ -1800,6 +1909,75 @@ destructor TJSArrayLiteral.Destroy;
 begin
   FreeAndNil(FElements);
   inherited Destroy;
+=======
+{ TJSElement }
+
+constructor TJSElement.Create(ALine, ARow: Integer; Const ASource: String = '');
+begin
+  FLine:=ALine;
+  FRow:=ARow;
+  FSource:=ASource;
+end;
+
+{ TJSRegularExpressionLiteral }
+
+function TJSRegularExpressionLiteral.GetA(AIndex : integer): TJSValue;
+begin
+  Result:=FArgv[AIndex];
+end;
+
+procedure TJSRegularExpressionLiteral.SetA(AIndex : integer;
+  const AValue: TJSValue);
+begin
+  FArgv[AIndex]:=Avalue;
+end;
+
+constructor TJSRegularExpressionLiteral.Create(ALine, ARow: Integer;
+  const ASource: String);
+begin
+  inherited Create(ALine, ARow, ASource);
+  FPattern:=TJSValue.Create;
+  FPatternFlags:=TJSValue.Create;
+end;
+
+destructor TJSRegularExpressionLiteral.Destroy;
+begin
+  FreeAndNil(FPattern);
+  FreeAndNil(FPatternFlags);
+  Inherited Destroy;
+end;
+
+{ TJSArrayLiteralElements }
+
+function TJSArrayLiteralElements.GetE(AIndex : Integer): TJSArrayLiteralElement;
+begin
+  Result:=TJSArrayLiteralElement(Items[AIndex]);
+end;
+
+procedure TJSArrayLiteralElements.SetE(AIndex : Integer;
+  const AValue: TJSArrayLiteralElement);
+begin
+  Items[AIndex]:=AValue;
+end;
+
+function TJSArrayLiteralElements.AddElement: TJSArrayLiteralElement;
+begin
+  Result:=TJSArrayLiteralElement(Add);
+end;
+
+{ TJSArrayLiteral }
+
+constructor TJSArrayLiteral.Create(ALine, ARow: Integer; Const ASource: String = '');
+begin
+  inherited Create(ALine, ARow, ASource);
+  FElements:=TJSArrayLiteralElements.Create(TJSArrayLiteralElement);
+end;
+
+destructor TJSArrayLiteral.Destroy;
+begin
+  FreeAndNil(FElements);
+  inherited Destroy;
+>>>>>>> graemeg/cpstrnew
 end;
 
 { TJSObjectLiteralElements }
@@ -1812,7 +1990,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TJSObjectLiteralElements.SetE(AIndex : Integer;
@@ -1821,6 +2002,9 @@ begin
   Items[AIndex]:=AValue;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1889,6 +2073,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Class function TJSUnary.PrefixOperatorToken: tjsToken;
 begin
   Result:=tjsUnknown;
@@ -1936,6 +2121,9 @@ destructor TJSUnary.Destroy;
 =======
 destructor TJSUnary.Destroy;
 >>>>>>> graemeg/cpstrnew
+=======
+destructor TJSUnary.Destroy;
+>>>>>>> graemeg/cpstrnew
 begin
   FreeAndNil(FA);
   inherited Destroy;
@@ -1964,7 +2152,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Destructor TJSAssignStatement.Destroy;
+=======
+destructor TJSAssignStatement.Destroy;
+>>>>>>> graemeg/cpstrnew
 =======
 destructor TJSAssignStatement.Destroy;
 >>>>>>> graemeg/cpstrnew
@@ -1977,6 +2169,7 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Class function TJSAssignStatement.OperatorToken: tjsToken;
@@ -1996,6 +2189,8 @@ begin
     Result:='';
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2084,6 +2279,10 @@ begin
   FreeAndNil(FCases);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  FreeAndNil(FDefault);
+>>>>>>> graemeg/cpstrnew
 =======
   FreeAndNil(FDefault);
 >>>>>>> graemeg/cpstrnew
@@ -2103,7 +2302,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TJSCaseElements.SetC(AIndex : Integer; const AValue: TJSCaseElement);
@@ -2111,6 +2313,9 @@ begin
   Items[AIndex]:=AValue;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2144,6 +2349,7 @@ end;
 destructor TJSSourceElements.Destroy;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Var
   i : integer;
@@ -2154,6 +2360,11 @@ begin
   // Vars are owned by their statements, and those have been freed
   For I:=0 to FVars.Count-1 do
     FVars.Nodes[i].Node:=nil;
+=======
+begin
+  FreeAndNil(FStatements);
+  FreeAndNil(FFunctions);
+>>>>>>> graemeg/cpstrnew
 =======
 begin
   FreeAndNil(FStatements);
@@ -2177,7 +2388,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TJSElementNodes.SetN(AIndex : Integer; const AValue: TJSElementNode);
@@ -2185,6 +2399,9 @@ begin
   Items[AIndex]:=Avalue;
 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2208,7 +2425,11 @@ destructor TJSElementNode.Destroy;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FNode);
+=======
+  //FreeAndNil(FNode);
+>>>>>>> graemeg/cpstrnew
 =======
   //FreeAndNil(FNode);
 >>>>>>> graemeg/cpstrnew
@@ -2235,7 +2456,10 @@ destructor TJSFuncDef.Destroy;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FreeAndNil(FBody);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

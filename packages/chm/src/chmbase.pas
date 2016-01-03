@@ -176,8 +176,11 @@ begin
   buf := @Value;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   {$undef rangeon}
@@ -185,6 +188,9 @@ begin
      {$define rangeon}
   {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -205,7 +211,13 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$pop}
+=======
+  {$ifdef rangeon}
+    {$R+}
+  {$endif}
+>>>>>>> graemeg/cpstrnew
 =======
   {$ifdef rangeon}
     {$R+}

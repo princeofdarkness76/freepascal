@@ -42,7 +42,11 @@ unit cpupara;
           function create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
+=======
+          function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
+>>>>>>> graemeg/cpstrnew
 =======
           function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
 >>>>>>> graemeg/cpstrnew
@@ -215,7 +219,11 @@ unit cpupara;
             is always passed on the stack. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            if (nextintreg>RS_R9) and
+=======
+           if (nextintreg<=RS_R3) and
+>>>>>>> graemeg/cpstrnew
 =======
            if (nextintreg<=RS_R3) and
 >>>>>>> graemeg/cpstrnew
@@ -417,6 +425,7 @@ unit cpupara;
         create_funcretloc_info(p,side);
      end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 <<<<<<< HEAD
@@ -440,6 +449,16 @@ unit cpupara;
       end;
 
 
+=======
+
+
+    procedure tavrparamanager.create_funcretloc_info(p : tabstractprocdef; side: tcallercallee);
+      begin
+        p.funcretloc[side]:=get_funcretloc(p,side,p.returndef);
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -492,6 +511,9 @@ unit cpupara;
         { Return in FPU register? }
         if def.typ=floatdef then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -507,7 +529,10 @@ unit cpupara;
                       paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -518,7 +543,10 @@ unit cpupara;
                       paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -532,7 +560,10 @@ unit cpupara;
                       paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -549,7 +580,10 @@ unit cpupara;
                 paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -615,7 +649,10 @@ unit cpupara;
                 paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -626,7 +663,10 @@ unit cpupara;
                 paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -638,9 +678,14 @@ unit cpupara;
                 paraloc^.register:=NR_FUNCTION_RETURN_REG;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 paraloc^.size:=OS_INT;
                 paraloc^.def:=u16inttype;
               end;}
+=======
+                paraloc^.size:=OS_32;
+              end;
+>>>>>>> graemeg/cpstrnew
 =======
                 paraloc^.size:=OS_32;
               end;

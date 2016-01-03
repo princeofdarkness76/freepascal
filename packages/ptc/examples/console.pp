@@ -18,8 +18,13 @@ uses
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   palette: IPTCPalette;
+=======
+  console: TPTCConsole = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   palette: TPTCPalette = nil;
@@ -34,7 +39,11 @@ var
   width, height, pitch: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
+=======
+  format: TPTCFormat;
+>>>>>>> graemeg/cpstrnew
 =======
   format: TPTCFormat;
 >>>>>>> graemeg/cpstrnew
@@ -52,7 +61,11 @@ begin
       { create console }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
+=======
+      console := TPTCConsole.Create;
+>>>>>>> graemeg/cpstrnew
 =======
       console := TPTCConsole.Create;
 >>>>>>> graemeg/cpstrnew
@@ -66,7 +79,11 @@ begin
       { create palette }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       palette := TPTCPaletteFactory.CreateNew;
+=======
+      palette := TPTCPalette.Create;
+>>>>>>> graemeg/cpstrnew
 =======
       palette := TPTCPalette.Create;
 >>>>>>> graemeg/cpstrnew
@@ -81,6 +98,7 @@ begin
       { load palette data }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       palette.Load(data);
 
       { set console palette }
@@ -88,11 +106,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       palette.load(data);
 
       { set console palette }
       console.palette(palette);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -103,7 +126,11 @@ begin
         { lock console }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pixels := console.Lock;
+=======
+        pixels := console.lock;
+>>>>>>> graemeg/cpstrnew
 =======
         pixels := console.lock;
 >>>>>>> graemeg/cpstrnew
@@ -161,6 +188,7 @@ begin
           { unlock console }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           console.Unlock;
         end;
 
@@ -171,6 +199,8 @@ begin
       if Assigned(console) then
         console.Close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           console.unlock;
@@ -184,6 +214,9 @@ begin
       console.close;
       console.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

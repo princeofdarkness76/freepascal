@@ -28,7 +28,11 @@ interface
   uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     systems,globtype,constexp,cstreams;
+=======
+    globtype,constexp,cstreams;
+>>>>>>> graemeg/cpstrnew
 =======
     globtype,constexp,cstreams;
 >>>>>>> graemeg/cpstrnew
@@ -53,7 +57,11 @@ type
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentPPUVersion = 181;
+=======
+  CurrentPPUVersion = 127;
+>>>>>>> graemeg/cpstrnew
 =======
   CurrentPPUVersion = 127;
 >>>>>>> graemeg/cpstrnew
@@ -179,6 +187,7 @@ const
   uf_classinits          = $800000; { this unit has class constructors/destructors }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   uf_resstrinits        = $1000000; { this unit has string consts referencing resourcestrings }
   uf_i8086_far_code     = $2000000; { this unit uses an i8086 memory model with far code (i.e. medium, large or huge) }
   uf_i8086_far_data     = $4000000; { this unit uses an i8086 memory model with far data (i.e. compact or large) }
@@ -230,6 +239,8 @@ const
     { 16 } 64 {'aarch64'}
     );
 {$endif generic_cpu}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -297,7 +308,10 @@ type
     size             : integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     change_endian    : boolean; { Used in ppudump util }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -358,9 +372,12 @@ type
     function  getansistring:ansistring;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure getnormalset(out b);
     procedure getsmallset(out b);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure getnormalset(var b);
@@ -872,6 +889,16 @@ begin
 end;
 
 
+function tppufile.getasizeint:asizeint;
+begin
+{$ifdef cpu64bitaddr}
+  result:=getint64;
+{$else cpu64bitaddr}
+  result:=getlongint;
+{$endif cpu32bitaddr}
+end;
+
+
 function tppufile.getaword:aword;
 >>>>>>> graemeg/cpstrnew
 begin
@@ -1020,6 +1047,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function tppufile.getansistring:ansistring;
 var
   len: longint;
@@ -1033,11 +1061,18 @@ var
 function tppufile.getansistring: ansistring;
 var
 >>>>>>> graemeg/cpstrnew
+=======
+function tppufile.getansistring: ansistring;
+var
+>>>>>>> graemeg/cpstrnew
   l : longint;
 begin
   l:=getlongint;
   if entryidx+l>entry.size then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1048,9 +1083,15 @@ begin
    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   setlength(result,len);
   if len>0 then
     getdata(result[1],len);
+=======
+  SetLength(Result,l);
+  ReadData(result[1],l);
+  inc(entryidx,l);
+>>>>>>> graemeg/cpstrnew
 =======
   SetLength(Result,l);
   ReadData(result[1],l);
@@ -1418,6 +1459,7 @@ procedure tppufile.putstring(const s:string);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure tppufile.putansistring(const s:ansistring);
   var
     len: longint;
@@ -1429,6 +1471,8 @@ procedure tppufile.putansistring(const s:ansistring);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure tppufile.putansistring(const s: ansistring);
   var
     l : longint;
@@ -1437,6 +1481,9 @@ procedure tppufile.putansistring(const s: ansistring);
     putdata(l,4);
     putdata(s[1],l);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1466,7 +1513,10 @@ procedure tppufile.tempclose;
        f.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        f:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1484,6 +1534,7 @@ function tppufile.tempopen:boolean;
      exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    { MG: not sure, if this is correct
      f.position:=0;
        No, f was freed in tempclose above, we need to
@@ -1494,6 +1545,8 @@ function tppufile.tempopen:boolean;
       exit;
     end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     // MG: not sure, if this is correct
@@ -1510,6 +1563,9 @@ function tppufile.tempopen:boolean;
      exit;
     *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

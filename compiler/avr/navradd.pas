@@ -80,8 +80,11 @@ interface
                       GetResFlags:=F_NotPossible;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     else
                       internalerror(2014082020);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -115,8 +118,11 @@ interface
                       GetResFlags:=F_NotPossible;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     else
                       internalerror(2014082022);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -208,6 +214,7 @@ interface
         if getresflags(unsigned)=F_NotPossible then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             swapleftright;
             { if we have to swap back and left is a constant, force it to a register because we cannot generate
@@ -231,6 +238,8 @@ interface
           current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(A_CP,left.location.register,right.location.register));
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           swapleftright;

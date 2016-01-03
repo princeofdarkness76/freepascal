@@ -37,8 +37,11 @@ unit i_beos;
             flags        : [tf_under_development,tf_needs_symbol_size,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections, tf_smartlink_library];

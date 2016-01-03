@@ -51,7 +51,11 @@ var
     _private: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _bytes: array[0..(44)-1] of cuint8;
+=======
+        _bytes: array[0..43] of cuint8;
+>>>>>>> graemeg/cpstrnew
 =======
         _bytes: array[0..43] of cuint8;
 >>>>>>> graemeg/cpstrnew

@@ -58,6 +58,7 @@
     _propertyRanges: NSRangePtr; {garbage collector: __strong }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __entityDescriptionFlags: record
       case byte of
        0: (_anonbitfield_NSEntityDescription0: cuint);
@@ -65,11 +66,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __entityDescriptionFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSEntityDescription0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -83,7 +89,10 @@
         _reservedEntityDescription: 0..((1 shl 25)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

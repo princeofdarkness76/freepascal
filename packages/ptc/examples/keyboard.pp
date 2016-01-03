@@ -18,12 +18,15 @@ uses
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
   color: IPTCColor;
   key: IPTCKeyEvent;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   console: TPTCConsole = nil;
@@ -33,6 +36,9 @@ var
   key: TPTCKeyEvent = nil;
   area: TPTCArea;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -44,6 +50,12 @@ begin
     try
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      { create key }
+      key := TPTCKeyEvent.Create;
+
+>>>>>>> graemeg/cpstrnew
 =======
       { create key }
       key := TPTCKeyEvent.Create;
@@ -72,8 +84,11 @@ begin
       size := surface.width div 10;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       color := TPTCColorFactory.CreateNew(1, 1, 1);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       color := TPTCColor.Create(1, 1, 1);
@@ -122,6 +137,9 @@ begin
           area.Free;
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -135,9 +153,12 @@ begin
     finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       color.Free;
@@ -147,6 +168,9 @@ begin
       key.Free;
       format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

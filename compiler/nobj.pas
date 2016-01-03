@@ -53,6 +53,9 @@ interface
 =======
         destructor  destroy;override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -93,6 +96,9 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -201,10 +207,13 @@ implementation
       function found_entry(var vmtpd: tprocdef; var vmtentryvis: tvisibility; updatevalues: boolean): boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef jvm}
         var
           javanewtreeok: boolean;
 {$endif jvm}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -237,6 +246,7 @@ implementation
           { compare parameter types only, no specifiers yet }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           hasequalpara:=(compare_paras(vmtpd.paras,pd.paras,cp_none,[cpo_ignoreuniv,cpo_ignorehidden])>=te_equal);
 
           { check that we are not trying to override a final method }
@@ -253,12 +263,17 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           hasequalpara:=(compare_paras(vmtpd.paras,pd.paras,cp_none,[cpo_ignoreuniv])>=te_equal);
 
           { check that we are not trying to override a final method }
           if (po_finalmethod in vmtpd.procoptions) and
              hasequalpara and (po_overridingmethod in pd.procoptions) and is_class(_class) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -271,6 +286,7 @@ implementation
               not(po_virtualmethod in pd.procoptions) or
               (
                { new one does not have reintroduce in case of an objccategory }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                (is_objccategory(_class) and
@@ -290,6 +306,11 @@ implementation
                { new one does not have override in case of objpas/objc class/intf/proto }
                (is_class_or_interface_or_objc(_class) and not is_objccategory(_class) and not(po_overridingmethod in pd.procoptions))
 >>>>>>> graemeg/cpstrnew
+=======
+               (is_objccategory(_class) and not(po_reintroduce in pd.procoptions)) or
+               { new one does not have override in case of objpas/objc class/intf/proto }
+               (is_class_or_interface_or_objc(_class) and not is_objccategory(_class) and not(po_overridingmethod in pd.procoptions))
+>>>>>>> graemeg/cpstrnew
               )
              ) then
             begin
@@ -298,6 +319,7 @@ implementation
                   hasequalpara
                  ) then
                 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef jvm}
@@ -327,6 +349,10 @@ implementation
                   if not(po_reintroduce in pd.procoptions) then
                     if not(is_objc_class_or_protocol(_class)) then
 >>>>>>> graemeg/cpstrnew
+=======
+                  if not(po_reintroduce in pd.procoptions) then
+                    if not(is_objc_class_or_protocol(_class)) then
+>>>>>>> graemeg/cpstrnew
                       MessagePos1(pd.fileinfo,parser_w_should_use_override,pd.fullprocname(false))
                     else
                       begin
@@ -338,6 +364,7 @@ implementation
 
                           In case of external classes, we only give a hint,
                           because requiring override everywhere may make
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                           automated header translation tools too complex.
@@ -397,6 +424,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                           automated header translation tools too complex.  }
                         if not(oo_is_external in _class.objectoptions) then
                           if not is_objccategory(_class) then
@@ -417,6 +446,9 @@ implementation
                         result:=true;
                         exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -447,7 +479,11 @@ implementation
                     except abstract and override }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if (compare_paras(vmtpd.paras,pd.paras,cp_all,[cpo_ignoreuniv,cpo_ignorehidden])<te_equal) or
+=======
+                  if (compare_paras(vmtpd.paras,pd.paras,cp_all,[cpo_ignoreuniv])<te_equal) or
+>>>>>>> graemeg/cpstrnew
 =======
                   if (compare_paras(vmtpd.paras,pd.paras,cp_all,[cpo_ignoreuniv])<te_equal) or
 >>>>>>> graemeg/cpstrnew
@@ -467,6 +503,7 @@ implementation
                   { Give a note if the new visibility is lower. For a higher
                     visibility update the vmt info }
                   if vmtentryvis>pd.visibility then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     begin
@@ -496,6 +533,10 @@ implementation
                     MessagePos4(pd.fileinfo,parser_n_ignore_lower_visibility,pd.fullprocname(false),
                          visibilityname[pd.visibility],tobjectdef(vmtpd.owner.defowner).objrealname^,visibilityname[vmtentryvis])
 >>>>>>> graemeg/cpstrnew
+=======
+                    MessagePos4(pd.fileinfo,parser_n_ignore_lower_visibility,pd.fullprocname(false),
+                         visibilityname[pd.visibility],tobjectdef(vmtpd.owner.defowner).objrealname^,visibilityname[vmtentryvis])
+>>>>>>> graemeg/cpstrnew
                   else if pd.visibility>vmtentryvis then
                     begin
                       if updatevalues then
@@ -505,6 +546,7 @@ implementation
                   { override old virtual method in VMT }
                   if updatevalues then
                     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                       { in case we are overriding an abstract method,
@@ -522,6 +564,11 @@ implementation
                       if is_java_class_or_interface(_class) and
                          (pd.procsym.realname<>vmtpd.procsym.realname) then
                         pd.procsym.realname:=vmtpd.procsym.realname;
+=======
+                      if (vmtpd.extnumber<>i) then
+                        internalerror(200611084);
+                      pd.extnumber:=vmtpd.extnumber;
+>>>>>>> graemeg/cpstrnew
 =======
                       if (vmtpd.extnumber<>i) then
                         internalerror(200611084);
@@ -551,6 +598,7 @@ implementation
                          if not is_object(_class) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             not is_objc_class_or_protocol(_class) and
                             not is_java_class_or_interface(_class) then
                            MessagePos1(pd.fileinfo,parser_w_should_use_override,pd.fullprocname(false))
@@ -560,12 +608,17 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                             not is_objc_class_or_protocol(_class) then
                            MessagePos1(pd.fileinfo,parser_w_should_use_override,pd.fullprocname(false))
                          else
                            { objects don't allow starting a new virtual tree
                              and neither does Objective-C }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -629,7 +682,11 @@ implementation
            assigned(_class.childof) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            search_objc_helper(_class.childof,pd.procsym.name,srsym,st) then
+=======
+           search_class_helper(_class.childof,pd.procsym.name,srsym,st) then
+>>>>>>> graemeg/cpstrnew
 =======
            search_class_helper(_class.childof,pd.procsym.name,srsym,st) then
 >>>>>>> graemeg/cpstrnew
@@ -671,7 +728,11 @@ implementation
                     if (implprocdef.procsym=tprocsym(srsym)) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_ignoreuniv])>=te_equal) and
+=======
+                       (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_ignoreuniv])>=te_equal) and
+>>>>>>> graemeg/cpstrnew
 =======
                        (compare_paras(proc.paras,implprocdef.paras,cp_all,[cpo_ignorehidden,cpo_comparedefaultvalue,cpo_ignoreuniv])>=te_equal) and
 >>>>>>> graemeg/cpstrnew
@@ -739,6 +800,7 @@ implementation
                     if (tobjectdef(implprocdef.struct).objecttype<>odt_objcclass) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       begin
                         { in case of Java, copy the real name from the parent,
                           since overriding "Destroy" with "destroy" is not
@@ -748,6 +810,9 @@ implementation
                           implprocdef.procsym.realname:=tprocdef(def).procsym.realname;
                         ImplIntf.AddImplProc(implprocdef);
                       end
+=======
+                      ImplIntf.AddImplProc(implprocdef)
+>>>>>>> graemeg/cpstrnew
 =======
                       ImplIntf.AddImplProc(implprocdef)
 >>>>>>> graemeg/cpstrnew
@@ -1071,8 +1136,12 @@ implementation
         if assigned(_class.ImplementedInterfaces) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            not(is_objc_class_or_protocol(_class)) and
            not(is_java_class_or_interface(_class)) then
+=======
+           not(is_objc_class_or_protocol(_class)) then
+>>>>>>> graemeg/cpstrnew
 =======
            not(is_objc_class_or_protocol(_class)) then
 >>>>>>> graemeg/cpstrnew
@@ -1094,6 +1163,12 @@ implementation
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        current_structdef:=old_current_structdef;
+      end;
+
+>>>>>>> graemeg/cpstrnew
 =======
         current_structdef:=old_current_structdef;
       end;

@@ -82,7 +82,11 @@ begin
   repeat
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     inc(x[it.Data]);
+=======
+    inc(x[it.GetValue]);
+>>>>>>> graemeg/cpstrnew
 =======
     inc(x[it.GetValue]);
 >>>>>>> graemeg/cpstrnew

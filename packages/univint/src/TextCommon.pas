@@ -5,7 +5,13 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1995-2012 Apple Inc. All rights reserved.
+=======
+     Version:    CarbonCore-859.2~1
+ 
+     Copyright:  © 1995-2008 Apple Inc. All rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    CarbonCore-859.2~1
  
@@ -25,6 +31,10 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -87,11 +97,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -111,6 +124,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -154,6 +168,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -162,7 +193,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -171,6 +205,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -262,12 +297,42 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+>>>>>>> graemeg/cpstrnew
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -307,7 +372,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -401,6 +471,7 @@ const
 	kTextEncodingMacGeez = kTextEncodingMacEthiopic;
 	kTextEncodingMacEastEurRoman = kTextEncodingMacCentralEurRoman;
 	kTextEncodingMacUninterp = 32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -630,6 +701,20 @@ const
 }
 const
 	kTextEncodingMacUnicode = $7E;  { Meta-value, Unicode as a Mac encoding}
+=======
+
+
+{
+   Beginning in Mac OS 8.5, the following meta-value is used to indicate Unicode in some parts
+   of the Mac OS which previously only expected a Mac OS script code. In some of these places,
+   only 7 bits are available to indicate encoding (script code), so kTextEncodingUnicodeDefault
+   cannot be used. For example, kTextEncodingMacUnicode can be used to indicate Unicode in the
+   7-bit script code field of a Unicode input method's ComponentDescription.componentFlags field;
+   it can also be used to indicate Unicode in the 16-bit script code field of an AppleEvent's
+   typeIntlWritingCode text tag.
+}
+const
+	kTextEncodingMacUnicode = $7E;  { Meta-value, Unicode as a Mac encoding}
 
 { Variant Mac OS encodings that use script codes other than 0}
 const
@@ -816,7 +901,203 @@ const
 	kMacCroatianDefaultVariant = 0;    { meta value, maps to 1 or 2 depending on System }
 	kMacCroatianCurrencySignVariant = 1;  { Mac OS version < 8.5, 0xDB is CURRENCY SIGN       }
 	kMacCroatianEuroSignVariant = 2;     { Mac OS version >= 8.5, 0xDB is EURO SIGN      }
+>>>>>>> graemeg/cpstrnew
 
+{ Variant Mac OS encodings that use script codes other than 0}
+const
+{ The following use script code 4, smArabic}
+	kTextEncodingMacFarsi = $8C; { Like MacArabic but uses Farsi digits}
+                                        { The following use script code 7, smCyrillic}
+	kTextEncodingMacUkrainian = $98; { Meta-value in TEC 1.5 & later; maps to kTextEncodingMacCyrillic variant    }
+                                        { The following use script code 28, smEthiopic}
+	kTextEncodingMacInuit = $EC; { The following use script code 32, smUnimplemented}
+	kTextEncodingMacVT100 = $FC;  { VT100/102 font from Comm Toolbox: Latin-1 repertoire + box drawing etc}
+
+{ Special Mac OS encodings}
+const
+	kTextEncodingMacHFS = $FF;  { Meta-value, should never appear in a table.}
+
+<<<<<<< HEAD
+{ Unicode & ISO UCS encodings begin at 0x100}
+const
+	kTextEncodingUnicodeDefault = $0100; { Meta-value, should never appear in a table.}
+	kTextEncodingUnicodeV1_1 = $0101;
+	kTextEncodingISO10646_1993 = $0101; { Code points identical to Unicode 1.1}
+	kTextEncodingUnicodeV2_0 = $0103; { New location for Korean Hangul}
+	kTextEncodingUnicodeV2_1 = $0103; { We treat both Unicode 2.0 and Unicode 2.1 as 2.1}
+	kTextEncodingUnicodeV3_0 = $0104;
+	kTextEncodingUnicodeV3_1 = $0105; { Adds characters requiring surrogate pairs in UTF-16}
+	kTextEncodingUnicodeV3_2 = $0106;
+	kTextEncodingUnicodeV4_0 = $0108;
+	kTextEncodingUnicodeV5_0 = $010A;
+	kTextEncodingUnicodeV5_1 = $010B;
+
+{ ISO 8-bit and 7-bit encodings begin at 0x200}
+const
+	kTextEncodingISOLatin1 = $0201; { ISO 8859-1, Western European}
+	kTextEncodingISOLatin2 = $0202; { ISO 8859-2, Central European}
+	kTextEncodingISOLatin3 = $0203; { ISO 8859-3, South European (Maltese...)}
+	kTextEncodingISOLatin4 = $0204; { ISO 8859-4, North European & some Baltic}
+	kTextEncodingISOLatinCyrillic = $0205; { ISO 8859-5}
+	kTextEncodingISOLatinArabic = $0206; { ISO 8859-6, = ASMO 708, =DOS CP 708}
+	kTextEncodingISOLatinGreek = $0207; { ISO 8859-7}
+	kTextEncodingISOLatinHebrew = $0208; { ISO 8859-8}
+	kTextEncodingISOLatin5 = $0209; { ISO 8859-9, Turkish}
+	kTextEncodingISOLatin6 = $020A; { ISO 8859-10, Nordic                    }
+	kTextEncodingISOLatin7 = $020D; { ISO 8859-13, Baltic Rim                   }
+	kTextEncodingISOLatin8 = $020E; { ISO 8859-14, Celtic                    }
+	kTextEncodingISOLatin9 = $020F; { ISO 8859-15, 8859-1 changed for EURO & CP1252 letters  }
+	kTextEncodingISOLatin10 = $0210; { ISO 8859-16, Romanian}
+
+{ MS-DOS & Windows encodings begin at 0x400}
+const
+	kTextEncodingDOSLatinUS = $0400; { code page 437}
+	kTextEncodingDOSGreek = $0405; { code page 737 (formerly code page 437G)}
+	kTextEncodingDOSBalticRim = $0406; { code page 775}
+	kTextEncodingDOSLatin1 = $0410; { code page 850, "Multilingual"}
+	kTextEncodingDOSGreek1 = $0411; { code page 851}
+	kTextEncodingDOSLatin2 = $0412; { code page 852, Slavic}
+	kTextEncodingDOSCyrillic = $0413; { code page 855, IBM Cyrillic}
+	kTextEncodingDOSTurkish = $0414; { code page 857, IBM Turkish}
+	kTextEncodingDOSPortuguese = $0415; { code page 860}
+	kTextEncodingDOSIcelandic = $0416; { code page 861}
+	kTextEncodingDOSHebrew = $0417; { code page 862}
+	kTextEncodingDOSCanadianFrench = $0418; { code page 863}
+	kTextEncodingDOSArabic = $0419; { code page 864}
+	kTextEncodingDOSNordic = $041A; { code page 865}
+	kTextEncodingDOSRussian = $041B; { code page 866}
+	kTextEncodingDOSGreek2 = $041C; { code page 869, IBM Modern Greek}
+	kTextEncodingDOSThai = $041D; { code page 874, also for Windows}
+	kTextEncodingDOSJapanese = $0420; { code page 932, also for Windows; Shift-JIS with additions}
+	kTextEncodingDOSChineseSimplif = $0421; { code page 936, also for Windows; was EUC-CN, now GBK (EUC-CN extended)}
+	kTextEncodingDOSKorean = $0422; { code page 949, also for Windows; Unified Hangul Code (EUC-KR extended)}
+	kTextEncodingDOSChineseTrad = $0423; { code page 950, also for Windows; Big-5}
+	kTextEncodingWindowsLatin1 = $0500; { code page 1252}
+	kTextEncodingWindowsANSI = $0500; { code page 1252 (alternate name)}
+	kTextEncodingWindowsLatin2 = $0501; { code page 1250, Central Europe}
+	kTextEncodingWindowsCyrillic = $0502; { code page 1251, Slavic Cyrillic}
+	kTextEncodingWindowsGreek = $0503; { code page 1253}
+	kTextEncodingWindowsLatin5 = $0504; { code page 1254, Turkish}
+	kTextEncodingWindowsHebrew = $0505; { code page 1255}
+	kTextEncodingWindowsArabic = $0506; { code page 1256}
+	kTextEncodingWindowsBalticRim = $0507; { code page 1257}
+	kTextEncodingWindowsVietnamese = $0508; { code page 1258}
+	kTextEncodingWindowsKoreanJohab = $0510; { code page 1361, for Windows NT}
+
+{ Various national standards begin at 0x600}
+const
+	kTextEncodingUS_ASCII = $0600;
+	kTextEncodingANSEL = $0601; { ANSEL (ANSI Z39.47) for library use}
+	kTextEncodingJIS_X0201_76 = $0620; { JIS Roman and 1-byte katakana (halfwidth)}
+	kTextEncodingJIS_X0208_83 = $0621;
+	kTextEncodingJIS_X0208_90 = $0622;
+	kTextEncodingJIS_X0212_90 = $0623;
+	kTextEncodingJIS_C6226_78 = $0624;
+	kTextEncodingShiftJIS_X0213 = $0628; { Shift-JIS format encoding of JIS X0213 planes 1 and 2}
+	kTextEncodingJIS_X0213_MenKuTen = $0629; { JIS X0213 in plane-row-column notation (3 bytes)}
+	kTextEncodingGB_2312_80 = $0630;
+	kTextEncodingGBK_95 = $0631; { annex to GB 13000-93; for Windows 95; EUC-CN extended}
+	kTextEncodingGB_18030_2000 = $0632;
+	kTextEncodingKSC_5601_87 = $0640; { same as KSC 5601-92 without Johab annex}
+	kTextEncodingKSC_5601_92_Johab = $0641; { KSC 5601-92 Johab annex}
+	kTextEncodingCNS_11643_92_P1 = $0651; { CNS 11643-1992 plane 1}
+	kTextEncodingCNS_11643_92_P2 = $0652; { CNS 11643-1992 plane 2}
+	kTextEncodingCNS_11643_92_P3 = $0653; { CNS 11643-1992 plane 3 (was plane 14 in 1986 version)}
+
+{ ISO 2022 collections begin at 0x800}
+const
+	kTextEncodingISO_2022_JP = $0820; { RFC 1468}
+	kTextEncodingISO_2022_JP_2 = $0821; { RFC 1554}
+	kTextEncodingISO_2022_JP_1 = $0822; { RFC 2237}
+	kTextEncodingISO_2022_JP_3 = $0823; { JIS X0213}
+	kTextEncodingISO_2022_CN = $0830; { RFC 1922}
+	kTextEncodingISO_2022_CN_EXT = $0831; { RFC 1922}
+	kTextEncodingISO_2022_KR = $0840; { RFC 1557}
+
+{ EUC collections begin at 0x900}
+const
+	kTextEncodingEUC_JP = $0920; { ISO 646, 1-byte katakana, JIS 208, JIS 212}
+	kTextEncodingEUC_CN = $0930; { ISO 646, GB 2312-80}
+	kTextEncodingEUC_TW = $0931; { ISO 646, CNS 11643-1992 Planes 1-16}
+	kTextEncodingEUC_KR = $0940; { RFC 1557: ISO 646, KS C 5601-1987}
+=======
+{ Variants of kTextEncodingMacRomanian                                                     }
+const
+	kMacRomanianDefaultVariant = 0;    { meta value, maps to 1 or 2 depending on System }
+	kMacRomanianCurrencySignVariant = 1;  { Mac OS version < 8.5, 0xDB is CURRENCY SIGN       }
+	kMacRomanianEuroSignVariant = 2;     { Mac OS version >= 8.5, 0xDB is EURO SIGN      }
+>>>>>>> graemeg/cpstrnew
+
+{ Misc standards begin at 0xA00}
+const
+	kTextEncodingShiftJIS = $0A01; { plain Shift-JIS}
+	kTextEncodingKOI8_R = $0A02; { RFC 1489, Russian internet standard}
+	kTextEncodingBig5 = $0A03; { Big-5 (has variants)}
+	kTextEncodingMacRomanLatin1 = $0A04; { Mac OS Roman permuted to align with ISO Latin-1}
+	kTextEncodingHZ_GB_2312 = $0A05; { HZ (RFC 1842, for Chinese mail & news)}
+	kTextEncodingBig5_HKSCS_1999 = $0A06; { Big-5 with Hong Kong special char set supplement}
+	kTextEncodingVISCII = $0A07; { RFC 1456, Vietnamese}
+	kTextEncodingKOI8_U = $0A08; { RFC 2319, Ukrainian}
+	kTextEncodingBig5_E = $0A09; { Taiwan Big-5E standard}
+
+{ Other platform encodings}
+const
+	kTextEncodingNextStepLatin = $0B01; { NextStep Latin encoding}
+	kTextEncodingNextStepJapanese = $0B02; { NextStep Japanese encoding (variant of EUC-JP)}
+
+{ EBCDIC & IBM host encodings begin at 0xC00}
+const
+	kTextEncodingEBCDIC_LatinCore = $0C01; { Common base subset of EBCDIC Latin encodings}
+	kTextEncodingEBCDIC_CP037 = $0C02; { code page 037, extended EBCDIC (Latin-1 set) for US,Canada...}
+
+{ Special values}
+const
+	kTextEncodingMultiRun = $0FFF; { Multi-encoding text with external run info}
+	kTextEncodingUnknown = $FFFF; { Unknown or unspecified                  }
+
+{ The following are older names for backward compatibility}
+const
+	kTextEncodingEBCDIC_US = $0C01;
+
+
+{ TextEncodingVariant type & values }
+type
+	TextEncodingVariant = UInt32;
+{ Default TextEncodingVariant, for any TextEncodingBase}
+const
+	kTextEncodingDefaultVariant = 0;
+
+{ Variants of kTextEncodingMacRoman                                                        }
+const
+	kMacRomanDefaultVariant = 0;    { meta value, maps to 1 or 2 depending on System }
+	kMacRomanCurrencySignVariant = 1;    { Mac OS version < 8.5, 0xDB is CURRENCY SIGN}
+	kMacRomanEuroSignVariant = 2;     { Mac OS version >= 8.5, 0xDB is EURO SIGN      }
+
+{ Variants of kTextEncodingMacCyrillic (for TEC 1.5 and later)                             }
+const
+	kMacCyrillicDefaultVariant = 0;    { meta value, maps to 1, 2, or 3 depending on System}
+	kMacCyrillicCurrSignStdVariant = 1;   { Mac OS < 9.0 (RU,BG), 0xFF = CURRENCY SIGN, 0xA2/0xB6 = CENT / PARTIAL DIFF.}
+	kMacCyrillicCurrSignUkrVariant = 2;   { Mac OS < 9.0 (UA,LangKit), 0xFF = CURRENCY SIGN, 0xA2/0xB6 = GHE WITH UPTURN}
+	kMacCyrillicEuroSignVariant = 3;     { Mac OS >= 9.0, 0xFF is EURO SIGN, 0xA2/0xB6 = GHE WITH UPTURN}
+
+{ Variants of kTextEncodingMacIcelandic                                                    }
+const
+	kMacIcelandicStdDefaultVariant = 0;   { meta value, maps to 2 or 4 depending on System }
+	kMacIcelandicTTDefaultVariant = 1;    { meta value, maps to 3 or 5 depending on System }
+                                        { The following are for Mac OS version < 8.5, 0xDB is CURRENCY SIGN             }
+	kMacIcelandicStdCurrSignVariant = 2;  { 0xBB/0xBC are fem./masc. ordinal indicators}
+	kMacIcelandicTTCurrSignVariant = 3;   { 0xBB/0xBC are fi/fl ligatures}
+                                        { The following are for Mac OS version >= 8.5, 0xDB is EURO SIGN                  }
+	kMacIcelandicStdEuroSignVariant = 4;  { 0xBB/0xBC are fem./masc. ordinal indicators}
+	kMacIcelandicTTEuroSignVariant = 5;    { 0xBB/0xBC are fi/fl ligatures}
+
+{ Variants of kTextEncodingMacCroatian                                                     }
+const
+	kMacCroatianDefaultVariant = 0;    { meta value, maps to 1 or 2 depending on System }
+	kMacCroatianCurrencySignVariant = 1;  { Mac OS version < 8.5, 0xDB is CURRENCY SIGN       }
+	kMacCroatianEuroSignVariant = 2;     { Mac OS version >= 8.5, 0xDB is EURO SIGN      }
+
+<<<<<<< HEAD
 
 { Variants of kTextEncodingMacRomanian                                                     }
 const
@@ -865,6 +1146,8 @@ const
 	kMacRomanianEuroSignVariant = 2;     { Mac OS version >= 8.5, 0xDB is EURO SIGN      }
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { Variants of kTextEncodingMacJapanese}
@@ -1139,6 +1422,7 @@ type
 { Value for TECInfo format code}
 const
 	kTECInfoCurrentFormat = 2;     { any future formats will just add fields at the end}
+<<<<<<< HEAD
 
 {
    Defined feature/fix bits for tecUnicodeConverterFeatures field
@@ -1183,6 +1467,52 @@ const
                                     moves memory); otherwise, it won't.
 }
 
+=======
+
+{
+   Defined feature/fix bits for tecUnicodeConverterFeatures field
+   Bit:                             Meaning if set:
+   ----                             ---------------
+   kTECKeepInfoFixBit               Unicode Converter no longer ignores other control flags if
+                                    kUnicodeKeepInfoBit is set. Bug fix in TEC Manager 1.2.1.
+   kTECFallbackTextLengthFixBit     Unicode Converter honors the *srcConvLen and *destConvLen
+                                    returned by caller-supplied fallback handler for any status it
+                                    returns except for kTECUnmappableElementErr (previously it only
+                                    honored these values if noErr was returned). Bug fix in TEC
+                                    Manager 1.2.1.
+   kTECTextRunBitClearFixBit        ConvertFromUnicodeToTextRun & ConvertFromUnicodeToScriptCodeRun
+                                    function correctly if the kUnicodeTextRunBit is set (previously
+                                    their determination of best target encoding was incorrect). Bug
+                                    fix in TEC Manager 1.3.
+   kTECTextToUnicodeScanFixBit      ConvertFromTextToUnicode uses an improved scanner and maintains
+                                    some resulting state information, which it uses for mapping.
+                                    This has several effects:
+                                    - Improved mapping of 0x30-0x39 digits in Mac OS Arabic, fewer
+                                      direction overrides when mapping Mac OS Arabic & Hebrew, and
+                                      improved mapping of certain characters in Indic encodings.
+                                    - Malformed input produces kTextMalformedInputErr.
+                                    - ConvertFromTextToUnicode accepts and uses the control flags
+                                      kUnicodeKeepInfoMask and kUnicodeStringUnterminatedMask.
+                                    Bug fix and enhancement in TEC Manager 1.3.
+   kTECAddForceASCIIChangesBit      Define new control flag bits kUnicodeForceASCIIRangeBit and
+                                    kUnicodeNoHalfwidthCharsBit for use with
+                                    ConvertFromTextToUnicode, ConvertFromUnicodeToText, etc.
+                                    Enhancement in TEC Manager 1.4.
+   kTECPreferredEncodingFixBit      CreateUnicodeToTextRunInfo and related functions fix a problem
+                                    that occurred when a preferred encoding was specified that did
+                                    not match the System script; the preferred script was not
+                                    actually placed first in the ordered list of encodings to use.
+                                    Bug fix in TEC Manager 1.4.
+   kTECAddTextRunHeuristicsBit      Define new control flag bit kUnicodeTextRunHeuristicsBit for
+                                    use with ConvertFromUnicodeToTextRun.
+   kTECAddFallbackInterruptBit      Define new option kUnicodeFallbackInterruptSafeMask for use
+                                    with SetFallbackUnicodeToText. If a client fallback handler is
+                                    installed without specifying this bit, ConvertFromUnicodeToText
+                                    will HLock the tables it uses (in case the fallback handler
+                                    moves memory); otherwise, it won't.
+}
+
+>>>>>>> graemeg/cpstrnew
 const
 	kTECKeepInfoFixBit = 0;
 	kTECFallbackTextLengthFixBit = 1;
@@ -1209,6 +1539,9 @@ const
    -------------------------------------------------------------------------------------------------
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	kUnicodeByteOrderMark = $FEFF;
@@ -1217,7 +1550,10 @@ const
 	kUnicodeSwappedByteOrderMark = $FFFE; { not a Unicode char; byte-swapped version of FEFF}
 	kUnicodeNotAChar = $FFFF; { not a Unicode char; may be used as a terminator}
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 {
    -------------------------------------------------------------------------------------------------
@@ -1229,14 +1565,24 @@ const
 =======
 >>>>>>> graemeg/cpstrnew
 
+{
+   -------------------------------------------------------------------------------------------------
+   CONSTANTS & DATA STRUCTURES for Unicode Properties
+   -------------------------------------------------------------------------------------------------
+}
+
 type
 	UCCharPropertyType = SInt32;
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 	kUCCharPropTypeGenlCategory = 1;    { requests enumeration value}
 	kUCCharPropTypeCombiningClass = 2;    { requests numeric value 0..255}
 	kUCCharPropTypeBidiCategory = 3;    { requests enumeration value}
 	kUCCharPropTypeDecimalDigitValue = 4;  { requests numeric value 0..9 for decimal digit chars (get err for others)}
+<<<<<<< HEAD
 =======
 	kUnicodeByteOrderMark = $FEFF;
 	kUnicodeObjectReplacement = $FFFC; { placeholder for non-text object}
@@ -1342,6 +1688,77 @@ const
 
 {
    -------------------------------------------------------------------------------------------------
+=======
+
+type
+	UCCharPropertyValue = UInt32;
+{ General Category enumeration values (requested by kUCCharPropTypeGenlCategory)}
+const
+{ Normative categories:}
+	kUCGenlCatOtherNotAssigned = 0;    { Cn Other, Not Assigned}
+	kUCGenlCatOtherControl = 1;    { Cc Other, Control}
+	kUCGenlCatOtherFormat = 2;    { Cf Other, Format}
+	kUCGenlCatOtherSurrogate = 3;    { Cs Other, Surrogate}
+	kUCGenlCatOtherPrivateUse = 4;    { Co Other, Private Use}
+	kUCGenlCatMarkNonSpacing = 5;    { Mn Mark, Non-Spacing}
+	kUCGenlCatMarkSpacingCombining = 6;   { Mc Mark, Spacing Combining}
+	kUCGenlCatMarkEnclosing = 7;    { Me Mark, Enclosing}
+	kUCGenlCatNumberDecimalDigit = 8;    { Nd Number, Decimal Digit}
+	kUCGenlCatNumberLetter = 9;    { Nl Number, Letter}
+	kUCGenlCatNumberOther = 10;   { No Number, Other}
+	kUCGenlCatSeparatorSpace = 11;   { Zs Separator, Space}
+	kUCGenlCatSeparatorLine = 12;   { Zl Separator, Line}
+	kUCGenlCatSeparatorParagraph = 13;   { Zp Separator, Paragraph}
+	kUCGenlCatLetterUppercase = 14;   { Lu Letter, Uppercase}
+	kUCGenlCatLetterLowercase = 15;   { Ll Letter, Lowercase}
+	kUCGenlCatLetterTitlecase = 16;   { Lt Letter, Titlecase}
+                                        { Informative categories:}
+	kUCGenlCatLetterModifier = 17;   { Lm Letter, Modifier}
+	kUCGenlCatLetterOther = 18;   { Lo Letter, Other}
+	kUCGenlCatPunctConnector = 20;   { Pc Punctuation, Connector}
+	kUCGenlCatPunctDash = 21;   { Pd Punctuation, Dash}
+	kUCGenlCatPunctOpen = 22;   { Ps Punctuation, Open}
+	kUCGenlCatPunctClose = 23;   { Pe Punctuation, Close}
+	kUCGenlCatPunctInitialQuote = 24;   { Pi Punctuation, Initial quote}
+	kUCGenlCatPunctFinalQuote = 25;   { Pf Punctuation, Final quote}
+	kUCGenlCatPunctOther = 26;   { Po Punctuation, Other}
+	kUCGenlCatSymbolMath = 28;   { Sm Symbol, Math}
+	kUCGenlCatSymbolCurrency = 29;   { Sc Symbol, Currency}
+	kUCGenlCatSymbolModifier = 30;   { Sk Symbol, Modifier}
+	kUCGenlCatSymbolOther = 31;    { So Symbol, Other}
+
+{ Bidirectional Category enumeration values (requested by kUCCharPropTypeBidiCategory)}
+const
+	kUCBidiCatNotApplicable = 0;    { for now use this for unassigned}
+                                        { Strong types:}
+	kUCBidiCatLeftRight = 1;    { L  Left-to-Right}
+	kUCBidiCatRightLeft = 2;    { R  Right-to-Left}
+                                        { Weak types:}
+	kUCBidiCatEuroNumber = 3;    { EN European Number}
+	kUCBidiCatEuroNumberSeparator = 4;    { ES European Number Separator}
+	kUCBidiCatEuroNumberTerminator = 5;   { ET European Number Terminator}
+	kUCBidiCatArabicNumber = 6;    { AN Arabic Number}
+	kUCBidiCatCommonNumberSeparator = 7;  { CS Common Number Separator}
+                                        { Separators:}
+	kUCBidiCatBlockSeparator = 8;    { B  Paragraph Separator (was Block Separator)}
+	kUCBidiCatSegmentSeparator = 9;    { S  Segment Separator}
+                                        { Neutrals:}
+	kUCBidiCatWhitespace = 10;   { WS Whitespace}
+	kUCBidiCatOtherNeutral = 11;   { ON Other Neutrals (unassigned codes could use this)}
+                                        { New categories for Unicode 3.0}
+	kUCBidiCatRightLeftArabic = 12;   { AL Right-to-Left Arabic (was Arabic Letter)}
+	kUCBidiCatLeftRightEmbedding = 13;   { LRE    Left-to-Right Embedding}
+	kUCBidiCatRightLeftEmbedding = 14;   { RLE    Right-to-Left Embedding}
+	kUCBidiCatLeftRightOverride = 15;   { LRO    Left-to-Right Override}
+	kUCBidiCatRightLeftOverride = 16;   { RLO    Right-to-Left Override}
+	kUCBidiCatPopDirectionalFormat = 17;  { PDF    Pop Directional Format}
+	kUCBidiCatNonSpacingMark = 18;   { NSM    Non-Spacing Mark}
+	kUCBidiCatBoundaryNeutral = 19;    { BN Boundary Neutral}
+
+
+{
+   -------------------------------------------------------------------------------------------------
+>>>>>>> graemeg/cpstrnew
    Prototypes for TextEncoding functions
    -------------------------------------------------------------------------------------------------
 }
@@ -1358,7 +1775,11 @@ const
 function CreateTextEncoding( encodingBase: TextEncodingBase; encodingVariant: TextEncodingVariant; encodingFormat: TextEncodingFormat ): TextEncoding; external name '_CreateTextEncoding';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1378,7 +1799,11 @@ function CreateTextEncoding( encodingBase: TextEncodingBase; encodingVariant: Te
 function GetTextEncodingBase( encoding: TextEncoding ): TextEncodingBase; external name '_GetTextEncodingBase';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1398,7 +1823,11 @@ function GetTextEncodingBase( encoding: TextEncoding ): TextEncodingBase; extern
 function GetTextEncodingVariant( encoding: TextEncoding ): TextEncodingVariant; external name '_GetTextEncodingVariant';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1418,7 +1847,11 @@ function GetTextEncodingVariant( encoding: TextEncoding ): TextEncodingVariant; 
 function GetTextEncodingFormat( encoding: TextEncoding ): TextEncodingFormat; external name '_GetTextEncodingFormat';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1438,7 +1871,11 @@ function GetTextEncodingFormat( encoding: TextEncoding ): TextEncodingFormat; ex
 function ResolveDefaultTextEncoding( encoding: TextEncoding ): TextEncoding; external name '_ResolveDefaultTextEncoding';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1458,7 +1895,11 @@ function ResolveDefaultTextEncoding( encoding: TextEncoding ): TextEncoding; ext
 function GetTextEncodingName( iEncoding: TextEncoding; iNamePartSelector: TextEncodingNameSelector; iPreferredRegion: RegionCode; iPreferredEncoding: TextEncoding; iOutputBufLen: ByteCount; var oNameLength: ByteCount; oActualRegion: RegionCodePtr { can be NULL }; oActualEncoding: TextEncodingPtr { can be NULL }; oEncodingName: TextPtr ): OSStatus; external name '_GetTextEncodingName';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1478,7 +1919,11 @@ function GetTextEncodingName( iEncoding: TextEncoding; iNamePartSelector: TextEn
 function TECGetInfo( var tecInfo: TECInfoHandle ): OSStatus; external name '_TECGetInfo';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1498,7 +1943,11 @@ function TECGetInfo( var tecInfo: TECInfoHandle ): OSStatus; external name '_TEC
 function UpgradeScriptInfoToTextEncoding( iTextScriptID: ScriptCode; iTextLanguageID: LangCode; iRegionID: RegionCode; iTextFontname: StringPtr; var oEncoding: TextEncoding ): OSStatus; external name '_UpgradeScriptInfoToTextEncoding';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1514,6 +1963,7 @@ function UpgradeScriptInfoToTextEncoding( iTextScriptID: ScriptCode; iTextLangua
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in TextCommon 1.1 and later
+<<<<<<< HEAD
 <<<<<<< HEAD
  }
 function RevertTextEncodingToScriptInfo( iEncoding: TextEncoding; var oTextScriptID: ScriptCode; oTextLanguageID: LangCodePtr { can be NULL }; oTextFontname: StringPtr { can be NULL } ): OSStatus; external name '_RevertTextEncodingToScriptInfo';
@@ -1622,6 +2072,105 @@ function GetScriptInfoFromTextEncoding( iEncoding: TextEncoding; var oTextScript
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 =======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+ }
+function RevertTextEncodingToScriptInfo( iEncoding: TextEncoding; var oTextScriptID: ScriptCode; oTextLanguageID: LangCodePtr { can be NULL }; oTextFontname: StringPtr { can be NULL } ): OSStatus; external name '_RevertTextEncodingToScriptInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetTextEncodingFromScriptInfo()
+ *  
+ *  Summary:
+ *    Converts any combination of a Mac OS script code, a language
+ *    code, and a region code to a text encoding.
+ *  
+ *  Discussion:
+ *    This function is almost identical to
+ *    UpgradeScriptInfoToTextEncoding except it doesn't take a font
+ *    name and it is available in CoreServices.
+ *  
+ *  Parameters:
+ *    
+ *    iTextScriptID:
+ *      A valid Script Manager script code. The Mac OS Script Manager
+ *      defines constants for script codes using this format: smXxx. To
+ *      designate the system script, specify the meta-value of
+ *      smSystemScript. To indicate that you do not want to provide a
+ *      script code for this parameter, specify the constant
+ *      kTextScriptDontCare.
+ *    
+ *    iTextLanguageID:
+ *      A valid Script Manager language code. The Mac OS Script Manager
+ *      defines constants for language codes using this format:
+ *      langXxx. To indicate that you do not want to provide a language
+ *      code for this parameter, specify the constant
+ *      kTextLanguageDontCare.
+ *    
+ *    iTextRegionID:
+ *      A valid Script Manager region code. The Mac OS Script Manager
+ *      defines constants for region codes using this format: verXxx.
+ *      To indicate that you do not want to provide a region code for
+ *      this parameter, specify the constant kTextRegionDontCare.
+ *    
+ *    oEncoding:
+ *      A pointer to a value of type TextEncoding. On return, this
+ *      value holds the text encoding specification that the function
+ *      created from the other values you provided.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetTextEncodingFromScriptInfo( iTextScriptID: ScriptCode; iTextLanguageID: LangCode; iTextRegionID: RegionCode; var oEncoding: TextEncoding ): OSStatus; external name '_GetTextEncodingFromScriptInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  GetScriptInfoFromTextEncoding()
+ *  
+ *  Summary:
+ *    Converts the given Mac OS text encoding specification to the
+ *    corresponding script code and, if possible, language code.
+ *  
+ *  Discussion:
+ *    This function is almost identical to
+ *    RevertTextEncodingToScriptInfo except it doesn't return a font
+ *    name and it is available in CoreServices.
+ *  
+ *  Parameters:
+ *    
+ *    iEncoding:
+ *      The text encoding specification to be converted.
+ *    
+ *    oTextScriptID:
+ *      A pointer to a value of type ScriptCode. On return, a Mac OS
+ *      script code that corresponds to the text encoding specification
+ *      you identified in the iEncoding parameter. If you do not pass a
+ *      pointer for this parameter, the function returns a paramErr
+ *      result code.
+ *    
+ *    oTextLanguageID:
+ *      A pointer to a value of type LangCode. On input, if you do not
+ *      want the function to return the language code, specify NULL as
+ *      the value of this parameter. On return, the appropriate
+ *      language code, if the language can be unambiguously derived
+ *      from the text encoding specification, for example, Japanese,
+ *      and you did not set the parameter to NULL. If you do not
+ *      specify NULL on input and the language is ambiguousÑthat is,
+ *      the function cannot accurately derive it from the text encoding
+ *      specificationÑthe function returns a value of
+ *      kTextLanguageDontCare.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in CoreServices.framework
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.2 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetScriptInfoFromTextEncoding( iEncoding: TextEncoding; var oTextScriptID: ScriptCode; oTextLanguageID: LangCodePtr { can be NULL } ): OSStatus; external name '_GetScriptInfoFromTextEncoding';
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1736,7 +2285,11 @@ function GetScriptInfoFromTextEncoding( iEncoding: TextEncoding; var oTextScript
 function NearestMacTextEncodings( generalEncoding: TextEncoding; var bestMacEncoding: TextEncoding; var alternateMacEncoding: TextEncoding ): OSStatus; external name '_NearestMacTextEncodings';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1756,7 +2309,11 @@ function NearestMacTextEncodings( generalEncoding: TextEncoding; var bestMacEnco
 function UCGetCharProperty( charPtr: ConstUniCharPtr; textLength: UniCharCount; propType: UCCharPropertyType; var propValue: UCCharPropertyValue ): OSStatus; external name '_UCGetCharProperty';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

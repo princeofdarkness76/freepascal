@@ -107,7 +107,10 @@
   {$include arm9/sprite.inc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm9/window.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

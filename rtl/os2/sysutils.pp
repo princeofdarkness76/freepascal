@@ -853,6 +853,7 @@ procedure sysbeep;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DosBeep (800, 250);
 end;
 
@@ -864,6 +865,10 @@ end;
 end;
 >>>>>>> graemeg/cpstrnew
 
+=======
+  // Maybe implement later on ?
+
+>>>>>>> graemeg/cpstrnew
 end;
 
 >>>>>>> graemeg/cpstrnew
@@ -1289,8 +1294,11 @@ Initialization
   OnBeep:=@SysBeep;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LastOSError := 0;
   OrigOSErrorWatch := TOSErrorWatch (SetOSErrorTracking (@TrackLastOSError));
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

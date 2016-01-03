@@ -53,7 +53,11 @@ type
     procedure RetrieveFieldDefs; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function SqliteExec(ASQL: PAnsiChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+=======
+    function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function SqliteExec(ASQL: PChar; ACallback: TSqliteCdeclCallback; Data: Pointer): Integer; override;
 >>>>>>> graemeg/cpstrnew
@@ -173,7 +177,11 @@ begin
   FieldDefs.Clear;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
 >>>>>>> graemeg/cpstrnew
@@ -245,6 +253,7 @@ begin
       else
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         begin
           AType := ftString;
           DataSize := DefaultStringSize;
@@ -252,11 +261,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	    begin
           AType := ftString;
 		  DataSize := DefaultStringSize;
 		end;  		
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -266,7 +280,11 @@ begin
       AType := ftString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       DataSize := DefaultStringSize;
+=======
+	  DataSize := DefaultStringSize;
+>>>>>>> graemeg/cpstrnew
 =======
 	  DataSize := DefaultStringSize;
 >>>>>>> graemeg/cpstrnew
@@ -324,7 +342,11 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FReturnCode := sqlite3_prepare_v2(FSqliteHandle, PAnsiChar(FEffectiveSQL), -1, @vm, nil);
+=======
+  FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   FReturnCode := sqlite3_prepare(FSqliteHandle, PChar(FEffectiveSQL), -1, @vm, nil);
 >>>>>>> graemeg/cpstrnew

@@ -124,6 +124,7 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   __CFlags = record
     case byte of
     0: (_anonbitfield_NSCell0: cuint);
@@ -131,11 +132,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   __CFlags = bitpacked record
     case byte of
     0: (_anonbitfield_NSCell0: cuint);
     1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -190,7 +196,10 @@ type
           needsHighlightedTextHint: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

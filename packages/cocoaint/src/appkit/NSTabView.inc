@@ -79,6 +79,7 @@ type
     _originalNextKeyView: NSView;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __delegateRespondTo: record
       case byte of
        0: (_anonbitfield_NSTabView0: cuint);
@@ -86,11 +87,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __delegateRespondTo: bitpacked record
       case byte of
        0: (_anonbitfield_NSTabView0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -99,6 +105,7 @@ type
         didSelectTabViewItem: 0..1;
         didChangeNumberOfTabViewItems: 0..1;
         reserved: 0..((1 shl 28)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
        end;
@@ -111,6 +118,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       );
       end;
     __flags: bitpacked record
@@ -118,6 +127,9 @@ type
        0: (_anonbitfield_NSTabView1: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -131,7 +143,10 @@ type
         reserved: 0..((1 shl 22)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

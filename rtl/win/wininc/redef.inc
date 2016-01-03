@@ -576,6 +576,9 @@ function GetProcessWorkingSetSize(hProcess: THandle; var lpMinimumWorkingSetSize
 =======
 function GetProcessWorkingSetSize(hProcess: THandle; var lpMinimumWorkingSetSize, lpMaximumWorkingSetSize: DWORD): BOOL; external 'kernel32' name 'GetProcessWorkingSetSize';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

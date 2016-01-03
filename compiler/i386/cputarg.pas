@@ -88,9 +88,12 @@ implementation
     {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$ifndef NOTARGETAROS}
       ,t_aros
     {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -115,7 +118,10 @@ implementation
       ,ogmacho
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ,cpuelf
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

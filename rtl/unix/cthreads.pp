@@ -178,6 +178,7 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 {$endif DEBUG_MT}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { Restore tlskey value as it may already have been set to null,
           in which case
             a) DoneThread can't release the memory
@@ -189,11 +190,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { clean up }
         DoneThread;
         { the pthread routine that calls us is supposed to do this, but doesn't
           at least on Mac OS X 10.6 }
         pthread_setspecific(CleanupKey,nil);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         pthread_setspecific(tlskey,nil);
@@ -234,6 +238,8 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       end;
 
 
@@ -249,6 +255,9 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
         pthread_setspecific(CleanupKey,pointer(1));
       end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
     function CRelocateThreadvar(offset : dword) : pointer;
@@ -421,6 +430,9 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
       {$ifndef HAIKU}
       {$ifdef solaris}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -430,8 +442,11 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
       {$endif not solaris}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$ifend}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       {$endif}
@@ -491,6 +506,9 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 =======
 //      result := pthread_kill(threadHandle,SIGCONT);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

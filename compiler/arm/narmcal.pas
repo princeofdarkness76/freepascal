@@ -40,6 +40,7 @@ implementation
     symconst,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     cgbase,cgutils,cpuinfo,
     ncgutil,tgobj,
     systems;
@@ -53,6 +54,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     cgbase,
     cpubase,cpuinfo,
     ncgutil,
@@ -64,6 +67,9 @@ implementation
          ((cs_fp_emulation in current_settings.moduleswitches) or
           (current_settings.fputype in [fpu_vfpv2,fpu_vfpv3])) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -85,6 +91,7 @@ implementation
         end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       else if (resultdef.typ=floatdef) and
          (location.loc=LOC_REGISTER) and
          (current_settings.fputype in [fpu_fpa,fpu_fpa10,fpu_fpa11]) then
@@ -92,6 +99,8 @@ implementation
           location_reset_ref(location,LOC_REFERENCE,location.size,resultdef.alignment);
           tg.gethltemp(current_asmdata.CurrAsmList,resultdef,resultdef.size,tt_normal,location.reference);
         end
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

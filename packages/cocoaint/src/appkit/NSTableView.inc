@@ -56,6 +56,7 @@ type
   __TvFlags = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSTableView0: cuint);
     1: (data: bitpacked record
@@ -105,6 +106,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     allowsColumnReordering: 0..1;
     allowsColumnResizing: 0..1;
@@ -147,6 +150,9 @@ type
     allowsColumnReordering: 0..1;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -448,10 +448,13 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         secondpass(t1);
         if t1.location.loc in [LOC_FLAGS,LOC_JUMP] then
           hlcg.location_force_reg(current_asmdata.CurrAsmList,t1.location,t1.resultdef,t1.resultdef,false);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         isjump:=(t1.expectloc=LOC_JUMP);
@@ -471,6 +474,9 @@ implementation
             current_procinfo.CurrFalseLabel:=ofl;
           end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -503,8 +509,11 @@ implementation
          if right.location.loc in [LOC_FLAGS,LOC_JUMP] then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,right.resultdef,false);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
            location_force_reg(current_asmdata.CurrAsmList,right.location,def_cgsize(right.resultdef),false);
@@ -514,6 +523,9 @@ implementation
              current_procinfo.CurrFalseLabel:=ofl;
            end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1193,8 +1205,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hlcg.a_label(current_asmdata.CurrAsmList,exceptlabel);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          cg.a_label(current_asmdata.CurrAsmList,exceptlabel);
@@ -1203,6 +1218,9 @@ implementation
          free_exception(current_asmdata.CurrAsmList, excepttemps, 0, endexceptlabel, false);
 
          hlcg.a_label(current_asmdata.CurrAsmList,doexceptlabel);
+
+         { end cleanup }
+         current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
 
          { end cleanup }
          current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
@@ -1232,8 +1250,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hlcg.a_label(current_asmdata.CurrAsmList,lastonlabel);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          cg.a_label(current_asmdata.CurrAsmList,lastonlabel);
@@ -1392,6 +1413,9 @@ implementation
          { end cleanup }
          current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
 
+         { end cleanup }
+         current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
+
        errorexit:
          { restore all saved labels }
          endexceptlabel:=oldendexceptlabel;
@@ -1509,9 +1533,12 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          handle_nested_exception(current_asmdata.CurrAsmList,excepttemps,doobjectdestroyandreraise);
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          { don't generate lineinfo for internal cleanup }
@@ -1635,7 +1662,11 @@ implementation
          excepttemps : texceptiontemps;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          reasonreg : tregister;
+=======
+         retsym: tlocalvarsym;
+>>>>>>> graemeg/cpstrnew
 =======
          retsym: tlocalvarsym;
 >>>>>>> graemeg/cpstrnew
@@ -1700,8 +1731,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hlcg.a_label(current_asmdata.CurrAsmList,finallylabel);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          cg.a_label(current_asmdata.CurrAsmList,finallylabel);
@@ -1794,6 +1828,9 @@ implementation
            end;
          unget_exception_temps(current_asmdata.CurrAsmList,excepttemps);
          hlcg.a_label(current_asmdata.CurrAsmList,endfinallylabel);
+
+         { end cleanup }
+         current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));
 
          { end cleanup }
          current_asmdata.CurrAsmList.concat(tai_marker.create(mark_NoLineInfoEnd));

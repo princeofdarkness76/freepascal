@@ -1,7 +1,11 @@
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
+=======
+#   Makefile.fpc for wii units
+>>>>>>> graemeg/cpstrnew
 =======
 #   Makefile.fpc for wii units
 >>>>>>> graemeg/cpstrnew
@@ -14,11 +18,14 @@
 name=libogcfpc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 version=2.5.1
@@ -36,6 +43,9 @@ sourcedir=src tests
 [prerules]
 BINUTILSPREFIX=powerpc-eabi-
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -44,6 +54,7 @@ BINUTILSPREFIX=powerpc-eabi-
 fpcpackage=y
 
 [default]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 fpcdir=../..
@@ -136,6 +147,8 @@ endif
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 cpu=powerpc
 target=wii
 fpcdir=../..
@@ -150,6 +163,9 @@ build=n
 .NOTPARALLEL:
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

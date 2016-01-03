@@ -41,9 +41,12 @@ Function GetLoadErrorStr: string; inline;
 // Kylix/Delphi compability
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FreeLibrary(Lib : TLibHandle) : Boolean; inline;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
@@ -56,6 +59,9 @@ Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 Function FreeLibrary(Lib : TLibHandle) : Boolean;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -112,20 +118,28 @@ begin
   Result:=System.GetProcedureAddress(Lib, ProcName);
 end;
 
+<<<<<<< HEAD
 Function GetProcedureAddress(Lib : TLibHandle; Ordinal : TOrdinalEntry) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif};
 begin
   Result:=System.GetProcedureAddress(Lib, Ordinal);
 end;
+=======
+Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> graemeg/cpstrnew
 
 Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 begin
   Result:=System.UnloadLibrary(Lib);
 end;
 
+<<<<<<< HEAD
 Function GetLoadErrorStr: String;
 begin
   Result:=System.GetLoadErrorStr;
 end;
+=======
+Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
+>>>>>>> graemeg/cpstrnew
 
 Function FreeLibrary(Lib : TLibHandle) : Boolean;
 

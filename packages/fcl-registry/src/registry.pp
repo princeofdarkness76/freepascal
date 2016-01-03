@@ -134,8 +134,11 @@ type
     fPreferStringValues: Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function OpenSection(const Section: string; CreateSection : Boolean = false): boolean;
     procedure CloseSection;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

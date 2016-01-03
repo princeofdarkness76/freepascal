@@ -2,7 +2,11 @@
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -40,6 +44,7 @@
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TWinCEBitmapInfo = class(TObject)
   private
     FBitmapInfo: PBITMAPINFO;
@@ -48,12 +53,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   TWinCEBitmapInfo = Class(TObject)
   private
     FBitmapInfo: PBITMAPINFO;
 //    FPixels: Pointer;
     FFormat: TPTCFormat;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -67,7 +77,11 @@ type
     property Pitch: Integer read FPitch;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property Format: IPTCFormat read FFormat;
+=======
+    property Format: TPTCFormat read FFormat;
+>>>>>>> graemeg/cpstrnew
 =======
     property Format: TPTCFormat read FFormat;
 >>>>>>> graemeg/cpstrnew

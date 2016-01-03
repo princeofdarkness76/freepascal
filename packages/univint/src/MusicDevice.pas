@@ -5,7 +5,11 @@
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 2000-2011 by Apple, Inc., all rights reserved.
+=======
+     Copyright:  © 2000-2008 by Apple Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
      Copyright:  © 2000-2008 by Apple Inc., all rights reserved.
 >>>>>>> graemeg/cpstrnew
@@ -18,6 +22,7 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
@@ -26,11 +31,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
  
 }
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -91,11 +101,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -120,11 +133,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -143,11 +162,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -166,7 +191,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -182,7 +210,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -195,6 +226,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -206,6 +238,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -224,13 +261,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -250,6 +291,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -319,6 +364,7 @@ uses MacTypes,AUComponent,AudioComponents,CoreAudioTypes;
 	@discussion
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	A music device audio unit - what is commonly referred to as a music instrument - is used to render notes. 
 	A note is a sound, usually pitched, that is started and stopped with a note number or pitch specifier.	
 	A note is played on a group (in MIDI this is called a MIDI Channel) and the various state values of a 
@@ -344,6 +390,8 @@ uses MacTypes,AUComponent,AudioComponents,CoreAudioTypes;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	A music device audio unit - what is commonly referred to as a music instrument - is used to render notes. A note is a sound, usually pitched, that is started and stopped with a note number or pitch specifier.	A note is played on a group (in MIDI this is called a MIDI Channel) and the various state values of a group (such as pitch bend, after-touch, etc) is inherited and controlled by every playing note on a given group. A note can be individually stopped (which is the common case), or stopped with the "All Notes Off" message that is sent to a specific group.
 
 	A music instrument can be multi-timbral - that is, each group can have a particular patch (or sound) associated with it, and different groups can have different patches. This is a common case for music instruments that implement the General MIDI specification. In this case, the music instrument should return the number of available patches at a given time as the value for the _InstrumentCount property.
@@ -354,6 +402,9 @@ uses MacTypes,AUComponent,AudioComponents,CoreAudioTypes;
 
 	Notes can be created/started with one of two methods. To stop a note it must be stopped with the same API group as was used to start it (MIDI or the extended Start/Stop note API.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -384,8 +435,12 @@ type
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion This struct is the common usage for MusicDeviceStartNote, as most synths that implement this functionality 
 				will only allow for the specification of a note number and velocity when starting a new note.
+=======
+	@discussion This struct is the common usage for MusicDeviceStartNote, as most synths that implement this functionality will only allow for the specification of a note number and velocity when starting a new note.
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion This struct is the common usage for MusicDeviceStartNote, as most synths that implement this functionality will only allow for the specification of a note number and velocity when starting a new note.
 >>>>>>> graemeg/cpstrnew
@@ -398,8 +453,12 @@ type
 	@param			mPitch
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			The pitch of the new note, typically specified using a MIDI note number (and a fractional pitch) within the 
 					range of 0 < 128. So 60 is middle C, 60.5 is middle C + 50 cents.
+=======
+			The pitch of the new note, typically specified using a MIDI note number (and a fractional pitch) within the range of 0 < 128. So 60 is middle C, 60.5 is middle C + 50 cents.
+>>>>>>> graemeg/cpstrnew
 =======
 			The pitch of the new note, typically specified using a MIDI note number (and a fractional pitch) within the range of 0 < 128. So 60 is middle C, 60.5 is middle C + 50 cents.
 >>>>>>> graemeg/cpstrnew
@@ -423,8 +482,12 @@ type
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion This struct is used to describe a parameterID (a control in MIDI terminology, though it is not limited to 
 					MIDI CC specifications) and the value of this parameter.
+=======
+	@discussion This struct is used to describe a parameterID (a control in MIDI terminology, though it is not limited to MIDI CC specifications) and the value of this parameter.
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion This struct is used to describe a parameterID (a control in MIDI terminology, though it is not limited to MIDI CC specifications) and the value of this parameter.
 >>>>>>> graemeg/cpstrnew
@@ -450,10 +513,14 @@ type
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion The generic version of this structure describes an arg count (which is the number of mControls values 
 				+ 1 for mPitch and 1 for mVelocity). So, argCount should at least be two. See MusicDeviceStdNoteParams 
 				for the common use case, as many audio unit instruments will not respond to control values provided 
 				in the start note function
+=======
+	@discussion The generic version of this structure describes an arg count (which is the number of mControls values + 1 for mPitch and 1 for mVelocity). So, argCount should at least be two. See MusicDeviceStdNoteParams for the common use case, as many audio unit instruments will not respond to control values provided in the start note function
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion The generic version of this structure describes an arg count (which is the number of mControls values + 1 for mPitch and 1 for mVelocity). So, argCount should at least be two. See MusicDeviceStdNoteParams for the common use case, as many audio unit instruments will not respond to control values provided in the start note function
 >>>>>>> graemeg/cpstrnew
@@ -466,8 +533,12 @@ type
 	@param			mPitch
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			The pitch of the new note, typically specified using a MIDI note number (and a fractional pitch) within the 
 				range of 0 < 128. So 60 is middle C, 60.5 is middle C + 50 cents.
+=======
+			The pitch of the new note, typically specified using a MIDI note number (and a fractional pitch) within the range of 0 < 128. So 60 is middle C, 60.5 is middle C + 50 cents.
+>>>>>>> graemeg/cpstrnew
 =======
 			The pitch of the new note, typically specified using a MIDI note number (and a fractional pitch) within the range of 0 < 128. So 60 is middle C, 60.5 is middle C + 50 cents.
 >>>>>>> graemeg/cpstrnew
@@ -492,9 +563,13 @@ type
 	@enum	MusicNoteEvent
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion This is used to signify that the patch used to start a note (its sound) is defined by the current 
 					selection for the group ID; this is the normal usage in MIDI as any notes started on a given channel 
 					(group ID) use the sound (patch) defined for that channel. See MusicDeviceStartNote
+=======
+	@discussion This is used to signify that the patch used to start a note (its sound) is defined by the current selection for the group ID; this is the normal usage in MIDI as any notes started on a given channel (group ID) use the sound (patch) defined for that channel. See MusicDeviceStartNote
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion This is used to signify that the patch used to start a note (its sound) is defined by the current selection for the group ID; this is the normal usage in MIDI as any notes started on a given channel (group ID) use the sound (patch) defined for that channel. See MusicDeviceStartNote
 >>>>>>> graemeg/cpstrnew
@@ -516,8 +591,12 @@ const
 	@typedef		MusicDeviceGroupID
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion The type used to specify which group (channel number in MIDI) is used with a given command (new note, 
 				control or parameter value change)
+=======
+	@discussion The type used to specify which group (channel number in MIDI) is used with a given command (new note, control or parameter value change)
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion The type used to specify which group (channel number in MIDI) is used with a given command (new note, control or parameter value change)
 >>>>>>> graemeg/cpstrnew
@@ -532,10 +611,14 @@ type
 	@typedef		NoteInstanceID
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion The type used to hold an unique identifier returned by MusicDeviceStartNote that is used to then address 
 				that note (typically to turn the note off). An ID must be used for notes, because notes can be specified 
 				by fractional pitches, and so using the MIDI note number is not sufficient to identify the note to turn 
 				it off (or to apply polyphonic after touch). 
+=======
+	@discussion The type used to hold an unique identifier returned by MusicDeviceStartNote that is used to then address that note (typically to turn the note off). An ID must be used for notes, because notes can be specified by fractional pitches, and so using the MIDI note number is not sufficient to identify the note to turn it off (or to apply polyphonic after touch). 
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion The type used to hold an unique identifier returned by MusicDeviceStartNote that is used to then address that note (typically to turn the note off). An ID must be used for notes, because notes can be specified by fractional pitches, and so using the MIDI note number is not sufficient to identify the note to turn it off (or to apply polyphonic after touch). 
 >>>>>>> graemeg/cpstrnew
@@ -563,9 +646,13 @@ type
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion	This is the API used to send MIDI channel messages to an audio unit. The status and data parameters 
 				are used exactly as described by the MIDI specification, including the combination of channel and 
 				command in the status byte.
+=======
+	@discussion	This is the API used to send MIDI channel messages to an audio unit. The status and data parameters are used exactly as described by the MIDI specification, including the combination of channel and command in the status byte.
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion	This is the API used to send MIDI channel messages to an audio unit. The status and data parameters are used exactly as described by the MIDI specification, including the combination of channel and command in the status byte.
 >>>>>>> graemeg/cpstrnew
@@ -582,6 +669,7 @@ type
 	@param			inData2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				The second MIDI data byte (value is in the range 0 < 128). If the MIDI status byte only has one 
 					
 					data byte, this should be set to zero.
@@ -591,6 +679,11 @@ type
 					This allows you to schedule to the sample, the time when a MIDI command is applied and is particularly 
 					important when starting new notes. If you are not scheduling in the audio unit's render thread, 
 					then you should set this value to 0
+=======
+				The second MIDI data byte (value is in the range 0 < 128). If the MIDI status byte only has one data byte, this should be set to zero.
+	@param			inOffsetSampleFrame
+				If you are scheduling the MIDI Event from the audio unit's render thread, then you can supply a sample offset that the audio unit may apply when applying that event in its next audio unit render. This allows you to schedule to the sample, the time when a MIDI command is applied and is particularly important when starting new notes. If you are not scheduling in the audio unit's render thread, then you should set this value to 0
+>>>>>>> graemeg/cpstrnew
 =======
 				The second MIDI data byte (value is in the range 0 < 128). If the MIDI status byte only has one data byte, this should be set to zero.
 	@param			inOffsetSampleFrame
@@ -613,8 +706,12 @@ function MusicDeviceMIDIEvent( inUnit: MusicDeviceComponent; inStatus: UInt32; i
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion	This is used to send any non-channel MIDI event to an audio unit. In practise this is a System Exclusive 
 					(SysEx) MIDI message
+=======
+	@discussion	This is used to send any non-channel MIDI event to an audio unit. In practise this is a System Exclusive (SysEx) MIDI message
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion	This is used to send any non-channel MIDI event to an audio unit. In practise this is a System Exclusive (SysEx) MIDI message
 >>>>>>> graemeg/cpstrnew
@@ -641,6 +738,7 @@ function MusicDeviceSysEx( inUnit: MusicDeviceComponent; const inData: UnivPtr; 
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion	This function is used to start a note.  The caller must provide a NoteInstanceID to receive a 
 					token that is then used to stop the note. The MusicDeviceStopNote call should be used to stop 
 					notes started with this API. The token can also be used to address individual notes on the 
@@ -657,12 +755,17 @@ function MusicDeviceSysEx( inUnit: MusicDeviceComponent; const inData: UnivPtr; 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	@discussion	This function is used to start a note.  The caller must provide a NoteInstanceID to receive a token that is then used to stop the note. The MusicDeviceStopNote call should be used to stop notes started with this API. The token can also be used to address individual notes on the kAudioUnitScope_Note if the audio unit supports it. The instrumentID is no longer used and the kMusicNoteEvent_Unused constant should be specified (this takes the current patch for the specifed group as the sound to use for the note).
 	
 			The Audio unit must provide an unique ID for the note instance ID. This ID must be non-zero and not 0xFFFFFFFF (any other UInt32 value is valid).
 			
 			Not all Music Device audio units implement the semantics of this API (though it is strongly recommended that they do). A host application shoudl query the kMusicDeviceProperty_SupportsStartStopNote to check that this is supported.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -670,6 +773,7 @@ function MusicDeviceSysEx( inUnit: MusicDeviceComponent; const inData: UnivPtr; 
 	@param			inUnit
 				The audio unit
 	@param			inInstrument
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 				The instrumentID is no longer used and the kMusicNoteEvent_Unused constant should be specified (this takes 
@@ -688,6 +792,8 @@ function MusicDeviceSysEx( inUnit: MusicDeviceComponent; const inData: UnivPtr; 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 				The instrumentID is no longer used and the kMusicNoteEvent_Unused constant should be specified (this takes the current patch for the specifed group as the sound to use for the note)
 	@param			inGroupID
 				The group ID that this note will be attached too. As with MIDI, all notes sounding on a groupID can be controlled through the various parameters (such as pitch bend, etc) that can be specified on the Group Scope
@@ -696,6 +802,9 @@ function MusicDeviceSysEx( inUnit: MusicDeviceComponent; const inData: UnivPtr; 
 	@param			inOffsetSampleFrame
 				If you are scheduling the MIDI Event from the audio unit's render thread, then you can supply a sample offset that the audio unit may apply when starting the note in its next audio unit render. This allows you to schedule to the sample and is particularly important when starting new notes. If you are not scheduling in the audio unit's render thread, then you should set this value to 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -713,8 +822,12 @@ function MusicDeviceStartNote( inUnit: MusicDeviceComponent; inInstrument: Music
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion	This call is used to stop notes that have been started with the MusicDeviceStartNote call; both the group ID 
 					that the note was started on and the noteInstanceID should be specified.
+=======
+	@discussion	This call is used to stop notes that have been started with the MusicDeviceStartNote call; both the group ID that the note was started on and the noteInstanceID should be specified.
+>>>>>>> graemeg/cpstrnew
 =======
 	@discussion	This call is used to stop notes that have been started with the MusicDeviceStartNote call; both the group ID that the note was started on and the noteInstanceID should be specified.
 >>>>>>> graemeg/cpstrnew
@@ -766,9 +879,12 @@ const
 	@typedef		MusicDeviceMIDIEventProc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		This proc can be exported through the FastDispatch property or is used as the prototype for
 					an audio component dispatch for this selector. 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@discussion		This proc can be exported through the FastDispatch property. A host can
@@ -776,6 +892,9 @@ const
 					call into your audio unit bypassing the component dispatch glue which
 					can add considerable overhead and is desirable to avoid.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -798,9 +917,12 @@ type
 	@typedef		MusicDeviceSysExProc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		This proc can be exported through the FastDispatch property or is used as the prototype for
 					an audio component dispatch for this selector. 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@discussion		This proc can be exported through the FastDispatch property. A host can
@@ -808,6 +930,9 @@ type
 					call into your audio unit bypassing the component dispatch glue which
 					can add considerable overhead and is desirable to avoid.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -828,9 +953,12 @@ type
 	@typedef		MusicDeviceStartNoteProc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		This proc can be exported through the FastDispatch property or is used as the prototype for
 					an audio component dispatch for this selector. 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@discussion		This proc can be exported through the FastDispatch property. A host can
@@ -838,6 +966,9 @@ type
 					call into your audio unit bypassing the component dispatch glue which
 					can add considerable overhead and is desirable to avoid.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -861,9 +992,12 @@ type
 	@typedef		MusicDeviceStopNoteProc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		This proc can be exported through the FastDispatch property or is used as the prototype for
 					an audio component dispatch for this selector. 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@discussion		This proc can be exported through the FastDispatch property. A host can
@@ -871,6 +1005,9 @@ type
 					call into your audio unit bypassing the component dispatch glue which
 					can add considerable overhead and is desirable to avoid.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

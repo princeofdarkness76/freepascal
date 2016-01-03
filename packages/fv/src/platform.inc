@@ -61,7 +61,10 @@
 {  1.35    28 Nov 10  PM     64 bit OS Linux, Win64, FreeBSD }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  1.36    22 Mar 15  PM     64 bit OS DragonFly           }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -102,12 +105,15 @@
  FREEBSD  OS_FREEBSD  FPC      PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           OS_UNIX
 
  DRAGONFLY OS_DRAGONFLYBSD FPC PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
           OS_UNIX
 
  OPENBSD  OS_OPENBSD  FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -498,6 +504,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
 
 
@@ -535,7 +542,21 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$UNDEF BIT_32_OR_MORE}
 {$ELSE}
   {$DEFINE BIT_32_OR_MORE}
+=======
+>>>>>>> graemeg/cpstrnew
 {$ENDIF}
+
+
+{---------------------------------------------------------------------------}
+{  BIT_32_OR_MORE                                                           }
+{---------------------------------------------------------------------------}
+
+{$ifdef BIT_16}
+  {$UNDEF BIT_32_OR_MORE}
+{$ELSE}
+  {$DEFINE BIT_32_OR_MORE}
+{$ENDIF}
+
 
 
 

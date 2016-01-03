@@ -152,12 +152,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FileCreate (Const FileName : RawByteString; Rights:longint) : Longint;
 begin
   FileCreate:=FileCreate(FileName);
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

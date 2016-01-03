@@ -177,7 +177,11 @@ const
   STATFLAG_NONAME    	      = 1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   STATFLAG_NOOPEN    	      = 2;
+=======
+  STATFLAG_NOOPEN    	      = 2; 
+>>>>>>> graemeg/cpstrnew
 =======
   STATFLAG_NOOPEN    	      = 2; 
 >>>>>>> graemeg/cpstrnew
@@ -425,7 +429,11 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if IsRectEmpty(lRect) then
+=======
+  if IsRectEmpty(Rect) then
+>>>>>>> graemeg/cpstrnew
 =======
   if IsRectEmpty(Rect) then
 >>>>>>> graemeg/cpstrnew
@@ -442,7 +450,11 @@ begin
     UnionRect:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   end;
+=======
+  end;  
+>>>>>>> graemeg/cpstrnew
 =======
   end;  
 >>>>>>> graemeg/cpstrnew

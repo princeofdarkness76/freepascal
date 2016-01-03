@@ -50,8 +50,11 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  sLineBreak = LineEnding;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  sLineBreak : string[1] = LineEnding;
@@ -69,6 +72,9 @@ const
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -78,6 +84,10 @@ var
   envp: PPChar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+//  errno: integer;
+>>>>>>> graemeg/cpstrnew
 =======
 //  errno: integer;
 >>>>>>> graemeg/cpstrnew

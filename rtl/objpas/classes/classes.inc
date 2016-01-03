@@ -195,10 +195,15 @@ function ThreadProc(ThreadObjPtr: Pointer): PtrInt;
         So bypass user code if terminated. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if not Thread.Terminated then begin
         CurrentThreadVar := Thread;
         Thread.Execute;
       end;
+=======
+      if not Thread.Terminated then
+        Thread.Execute;
+>>>>>>> graemeg/cpstrnew
 =======
       if not Thread.Terminated then
         Thread.Execute;
@@ -230,6 +235,7 @@ begin
     what this method is for. }
   Resume;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 constructor TThread.Create(CreateSuspended: Boolean;
@@ -267,6 +273,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 function TThread.GetSuspended: Boolean;
 begin
@@ -282,8 +290,13 @@ begin
 // requires this field at least)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(unix) or defined(windows) or defined(os2) or defined(hasamiga)}
   if not FExternalThread and not FInitialSuspended then
+=======
+{$if defined(unix) or defined(windows)}
+  if not FInitialSuspended then
+>>>>>>> graemeg/cpstrnew
 =======
 {$if defined(unix) or defined(windows)}
   if not FInitialSuspended then
@@ -1383,6 +1396,9 @@ procedure ObjectBinaryToText(Input, Output: TStream; Encoding: TObjectTextEncodi
 =======
         end 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

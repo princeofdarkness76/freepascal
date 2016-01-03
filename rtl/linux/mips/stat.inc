@@ -2,7 +2,11 @@
     This file is part of the Free Pascal run time library.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> graemeg/cpstrnew
 =======
     
 >>>>>>> graemeg/cpstrnew
@@ -21,6 +25,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Stat = Record
@@ -59,6 +64,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   Stat = packed Record  // No unix typing because of differences
       st_dev    : dword;
           __pad1    : dword;
@@ -86,6 +93,9 @@
           st_pad5: array[0..13] of longint;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

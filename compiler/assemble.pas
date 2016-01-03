@@ -64,6 +64,7 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       TExternalAssembler = class;
 
       IExternalAssemblerOutputFileDecorator=interface
@@ -74,6 +75,8 @@ interface
 
       TExternalAssemblerOutputFile=class
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       {# This is the base class which should be overridden for each each
@@ -193,6 +196,9 @@ interface
         procedure AsmClose;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -216,6 +222,8 @@ interface
         property writer: TExternalAssemblerOutputFile read fwriter;
       end;
       TExternalAssemblerClass = class of TExternalAssembler;
+
+      { TInternalAssembler }
 
       { TInternalAssembler }
 
@@ -937,6 +945,9 @@ Implementation
           result:='-m68000 '+result;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1498,7 +1509,11 @@ Implementation
               so we must create it as undefined }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             indsym:=ObjData.CObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+=======
+            indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+>>>>>>> graemeg/cpstrnew
 =======
             indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
 >>>>>>> graemeg/cpstrnew
@@ -1602,9 +1617,15 @@ Implementation
                      begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if tai_directive(hp).name='' then
                          Internalerror(2009112101);
                        objsym:=ObjData.symbolref(tai_directive(hp).name);
+=======
+                       if tai_directive(hp).name = nil then
+                         Internalerror(2009112101);
+                       objsym:=ObjData.symbolref(tai_directive(hp).name^);
+>>>>>>> graemeg/cpstrnew
 =======
                        if tai_directive(hp).name = nil then
                          Internalerror(2009112101);
@@ -1622,10 +1643,13 @@ Implementation
                      ;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef ARM}
                    asd_thumb_func:
                      ObjData.ThumbFunc:=true;
 {$endif ARM}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1772,9 +1796,15 @@ Implementation
                    asd_indirect_symbol:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if tai_directive(hp).name='' then
                        Internalerror(2009101103)
                      else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name) then
+=======
+                     if tai_directive(hp).name = nil then
+                       Internalerror(2009101103)
+                     else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name^) then
+>>>>>>> graemeg/cpstrnew
 =======
                      if tai_directive(hp).name = nil then
                        Internalerror(2009101103)
@@ -1794,9 +1824,12 @@ Implementation
                      ;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    asd_thumb_func:
                      { ignore for now, but should be added}
                      ;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1823,6 +1856,7 @@ Implementation
         zerobuf : array[0..63] of byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         relative_reloc: boolean;
         pdata : pointer;
         ssingle : single;
@@ -1844,6 +1878,10 @@ Implementation
       begin
         fillchar(zerobuf,sizeof(zerobuf),0);
 >>>>>>> graemeg/cpstrnew
+=======
+      begin
+        fillchar(zerobuf,sizeof(zerobuf),0);
+>>>>>>> graemeg/cpstrnew
         { main loop }
         while assigned(hp) do
          begin
@@ -1852,8 +1890,11 @@ Implementation
                begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  if tai_align_abstract(hp).aligntype>ObjData.CurrObjSec.secalign then
                    InternalError(2012072301);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2023,12 +2064,15 @@ Implementation
                      ObjData.writebytes(Tai_const(hp).value,tai_const(hp).size);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    aitconst_half16bit,
                    aitconst_gs:
                      begin
                        tmp:=Tai_const(hp).value div 2;
                        ObjData.writebytes(tmp,2);
                      end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

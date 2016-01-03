@@ -5,7 +5,11 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    SpeechRecognition-4.1.5~11
+=======
+     Version:    SpeechRecognition-3.10.10~4
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    SpeechRecognition-3.10.10~4
 >>>>>>> graemeg/cpstrnew
@@ -23,8 +27,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -87,11 +95,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -111,6 +122,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -139,6 +151,20 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -171,7 +197,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -182,6 +211,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elsec}
@@ -190,7 +222,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
@@ -200,6 +235,7 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -211,6 +247,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -223,11 +264,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -290,6 +335,15 @@ interface
 {$elsec}
 >>>>>>> graemeg/cpstrnew
 =======
+{$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
@@ -468,12 +522,16 @@ const
 	kSRNoFeedbackHasListenModes = 2;     { next allocated recognizer has no feedback window but does use listening modes  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 { Speech Source Types }
 const
 	kSRDefaultSpeechSource = 0;
 	kSRLiveDesktopSpeechSource = FourCharCode('dklv'); { live desktop sound input }
 	kSRCanned22kHzSpeechSource = FourCharCode('ca22'); { AIFF file based 16 bit, 22.050 KHz sound input }
+<<<<<<< HEAD
 
 { Notification via Apple Event or Callback }
 { Notification Flags }
@@ -637,6 +695,82 @@ const
 	kSRDefaultSpeechSource = 0;
 	kSRLiveDesktopSpeechSource = FourCharCode('dklv'); { live desktop sound input }
 	kSRCanned22kHzSpeechSource = FourCharCode('ca22'); { AIFF file based 16 bit, 22.050 KHz sound input }
+
+{ Notification via Apple Event or Callback }
+{ Notification Flags }
+const
+	kSRNotifyRecognitionBeginning = 1 shl 0; { recognition can begin. client must now call SRContinueRecognition or SRCancelRecognition }
+	kSRNotifyRecognitionDone = 1 shl 1; { recognition has terminated. result (if any) is available. }
+
+{ Apple Event selectors }
+{ AppleEvent message class  }
+const
+	kAESpeechSuite = FourCharCode('sprc');
+
+{ AppleEvent message event ids }
+const
+	kAESpeechDone = FourCharCode('srsd');
+	kAESpeechDetected = FourCharCode('srbd');
+
+{ AppleEvent Parameter ids }
+const
+	keySRRecognizer = FourCharCode('krec');
+	keySRSpeechResult = FourCharCode('kspr');
+	keySRSpeechStatus = FourCharCode('ksst');
+
+{ AppleEvent Parameter types }
+const
+	typeSRRecognizer = FourCharCode('trec');
+	typeSRSpeechResult = FourCharCode('tspr');
+
+
+{ SRRecognizer Properties }
+const
+	kSRNotificationParam = FourCharCode('noti'); { SInt32: See notification flags below }
+	kSRCallBackParam = FourCharCode('call'); { type SRCallBackParam }
+	kSRSearchStatusParam = FourCharCode('stat'); { SInt32: see status flags below }
+	kSRAutoFinishingParam = FourCharCode('afin'); { SInt32: Automatic finishing applied on LM for search }
+	kSRForegroundOnly = FourCharCode('fgon'); { Boolean: Default is true. If true, client recognizer only active when in foreground.   }
+	kSRBlockBackground = FourCharCode('blbg'); { Boolean: Default is false. If true, when client recognizer in foreground, rest of LMs are inactive.    }
+	kSRBlockModally = FourCharCode('blmd'); { Boolean: Default is false. When true, this client's LM is only active LM; all other LMs are inactive. Be nice, don't be modal for long periods! }
+	kSRWantsResultTextDrawn = FourCharCode('txfb'); { Boolean: Default is true. If true, search results are posted to Feedback window }
+	kSRWantsAutoFBGestures = FourCharCode('dfbr'); { Boolean: Default is true. If true, client needn't call SRProcessBegin/End to get default feedback behavior }
+	kSRSoundInVolume = FourCharCode('volu'); { short in [0..100] log scaled sound input power. Can't set this property }
+	kSRReadAudioFSSpec = FourCharCode('aurd'); { *FSSpec: Specify FSSpec where raw audio is to be read (AIFF format) using kSRCanned22kHzSpeechSource. Reads until EOF }
+	kSRReadAudioURL = FourCharCode('aurl'); { CFURLRef: Specify CFURLRef where raw audio is to be read (AIFF format) using kSRCanned22kHzSpeechSource. Reads until EOF }
+	kSRCancelOnSoundOut = FourCharCode('caso'); { Boolean: Default is true.  If any sound is played out during utterance, recognition is aborted. }
+	kSRSpeedVsAccuracyParam = FourCharCode('sped'); { SRSpeedSetting between 0 and 100 }
+
+{ 0 means more accurate but slower. }
+{ 100 means (much) less accurate but faster. }
+const
+	kSRUseToggleListen = 0;    { listen key modes }
+	kSRUsePushToTalk = 1;
+
+const
+	kSRListenKeyMode = FourCharCode('lkmd'); { short: either kSRUseToggleListen or kSRUsePushToTalk }
+	kSRListenKeyCombo = FourCharCode('lkey'); { short: Push-To-Talk key combination; high byte is high byte of event->modifiers, the low byte is the keycode from event->message }
+	kSRListenKeyName = FourCharCode('lnam'); { Str63: string representing ListenKeyCombo }
+	kSRKeyWord = FourCharCode('kwrd'); { Str255: keyword preceding spoken commands in kSRUseToggleListen mode }
+	kSRKeyExpected = FourCharCode('kexp'); { Boolean: Must the PTT key be depressed or the key word spoken before recognition can occur? }
+
+{ Operational Status Flags }
+const
+	kSRIdleRecognizer = 1 shl 0; { engine is not active }
+	kSRSearchInProgress = 1 shl 1; { search is in progress }
+	kSRSearchWaitForAllClients = 1 shl 2; { search is suspended waiting on all clients' input }
+	kSRMustCancelSearch = 1 shl 3; { something has occurred (sound played, non-speech detected) requiring the search to abort }
+	kSRPendingSearch = 1 shl 4; { we're about to start searching }
+
+{ Recognition Result Properties }
+const
+	kSRTEXTFormat = FourCharCode('TEXT'); { raw text in user supplied memory }
+	kSRPhraseFormat = FourCharCode('lmph'); { SRPhrase containing result words }
+	kSRPathFormat = FourCharCode('lmpt'); { SRPath containing result phrases or words }
+	kSRLanguageModelFormat = FourCharCode('lmfm'); { top level SRLanguageModel for post parse }
+
+>>>>>>> graemeg/cpstrnew
+=======
 
 { Notification via Apple Event or Callback }
 { Notification Flags }

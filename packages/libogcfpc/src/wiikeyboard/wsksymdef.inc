@@ -2,6 +2,7 @@
 {$IFDEF OGC_INTERFACE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 VAR
   KS_BackSpace: byte = $08;
   KS_Tab: byte = $09;
@@ -212,6 +213,8 @@ VAR
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 const
   KS_BackSpace = $08;
   KS_Tab = $09;
@@ -416,6 +419,9 @@ const
   KS_Udoubleacute = $170;
   KS_udoubleacute = $171;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -424,6 +430,7 @@ const
   *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   KS_dead_grave: word = $0300;
@@ -436,6 +443,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   KS_dead_grave = $0300;
   KS_dead_acute = $0301;
   KS_dead_circumflex = $0302;
@@ -444,6 +453,9 @@ const
   KS_dead_abovering = $030a;
   KS_dead_cedilla = $0327;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -452,6 +464,7 @@ const
   *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   KS_Cyrillic_A: byte = $e1; public name 'KS_Cyrillic_A';
@@ -531,6 +544,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   KS_Cyrillic_A = $e1;
   KS_Cyrillic_BE = $e2;
   KS_Cyrillic_VE = $f7;
@@ -606,6 +621,9 @@ const
   KS_Cyrillic_yeukr = $a4;
   KS_Cyrillic_YEUKR = $b4;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -614,6 +632,7 @@ const
   *)
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   KS_L2_Aogonek: byte = $a1; public name 'KS_L2_Aogonek';
@@ -675,6 +694,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   KS_L2_Aogonek = $a1;
   KS_L2_breve = $a2;
   KS_L2_Lstroke = $a3;
@@ -732,6 +753,9 @@ const
   KS_L2_tcedilla = $fe;
   KS_L2_dotabove = $ff;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -739,6 +763,7 @@ const
  * Group Latin-5 (iso8859-9)
   *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 var
@@ -751,6 +776,8 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
   KS_L5_Gbreve = $d0;
   KS_L5_Idotabove = $dd;
@@ -759,6 +786,9 @@ var
   KS_L5_idotless = $fd;
   KS_L5_scedilla = $fe;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -766,6 +796,7 @@ var
  * Group Latin-7 (iso8859-13)
   *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 var
@@ -828,6 +859,8 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
   KS_L7_rightdblquot = $a1;
   KS_L7_dbllow9quot = $a5;
@@ -886,6 +919,9 @@ var
   KS_L7_zcaron = $fe;
   KS_L7_rightsnglquot = $ff;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -895,7 +931,11 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -972,6 +1012,7 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   KS_f1_: word = $f300; public name 'KS_f1';
   KS_f2_: word = $f301; public name 'KS_f2';
@@ -1017,6 +1058,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
   KS_f1 = $f300;
   KS_f2 = $f301;
@@ -1059,6 +1102,9 @@ const
   KS_F19 = $f352;
   KS_F20 = $f353;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1148,6 +1194,10 @@ const
 function KS_KEYCODE(v: cint): cint; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+function KS_KEYCODE(v: cint): cint; inline;
+>>>>>>> graemeg/cpstrnew
 =======
 function KS_KEYCODE(v: cint): cint; inline;
 >>>>>>> graemeg/cpstrnew
@@ -1199,7 +1249,11 @@ const
   KB_APPLE = $010000;  (* Apple specific layout  *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1244,7 +1298,11 @@ const
   	( KB_MACHDEP,	'machdep' ),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   	( KB_APPLE,	'apple' ));        *)
+=======
+  	( KB_APPLE,	'apple' ));
+>>>>>>> graemeg/cpstrnew
 =======
   	( KB_APPLE,	'apple' ));
 >>>>>>> graemeg/cpstrnew

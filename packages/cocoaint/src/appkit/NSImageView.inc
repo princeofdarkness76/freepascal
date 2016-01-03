@@ -44,6 +44,7 @@
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __ivFlags: record
       case byte of
        0: (_anonbitfield_NSImageView0: cuint);
@@ -51,11 +52,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __ivFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSImageView0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -68,7 +74,10 @@
         _editable: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

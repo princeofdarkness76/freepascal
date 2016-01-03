@@ -34,6 +34,7 @@ interface
           function  GetResFlags(unsigned:Boolean):TResFlags;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  GetFpuResFlags:TResFlags;
        public
           function pass_1 : tnode;override;
@@ -42,6 +43,11 @@ interface
        protected
           function first_addfloat: tnode; override;
           procedure second_addordinal;override;
+=======
+       public
+          function pass_1 : tnode;override;
+       protected
+>>>>>>> graemeg/cpstrnew
 =======
        public
           function pass_1 : tnode;override;
@@ -176,7 +182,10 @@ interface
         singleprec: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -195,12 +204,15 @@ interface
                 as both will be in a fpureg }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,right.location,right.resultdef,true);
 
               location_reset(location,LOC_FPUREGISTER,def_cgsize(resultdef));
               location.register:=cg.getfpuregister(current_asmdata.CurrAsmList,location.size);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
@@ -212,6 +224,9 @@ interface
               else
                 location.register:=right.location.register;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -234,6 +249,7 @@ interface
                  cgsize2fpuoppostfix[def_cgsize(resultdef)]));
             end;
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           fpu_vfpv3,
@@ -308,6 +324,23 @@ interface
               else
                 location.register:=cg.getmmregister(current_asmdata.CurrAsmList,location.size);
 
+=======
+          fpu_vfpv3:
+            begin
+              { force mmreg as location, left right doesn't matter
+                as both will be in a fpureg }
+              location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
+              location_force_mmregscalar(current_asmdata.CurrAsmList,right.location,true);
+
+              location_reset(location,LOC_MMREGISTER,def_cgsize(resultdef));
+              if left.location.loc<>LOC_CMMREGISTER then
+                location.register:=left.location.register
+              else if right.location.loc<>LOC_CMMREGISTER then
+                location.register:=right.location.register
+              else
+                location.register:=cg.getmmregister(current_asmdata.CurrAsmList,location.size);
+
+>>>>>>> graemeg/cpstrnew
               singleprec:=tfloatdef(left.resultdef).floattype=s32real;
               case nodetype of
                 addn :
@@ -336,6 +369,7 @@ interface
 
               current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg_reg(op,
                  location.register,left.location.register,right.location.register));
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
           fpu_vfpv3:
@@ -382,6 +416,8 @@ interface
               current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg_reg(op,
                  location.register,left.location.register,right.location.register));
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
             end;
           fpu_soft:
             { this case should be handled already by pass1 }
@@ -397,7 +433,10 @@ interface
         op: TAsmOp;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -419,11 +458,49 @@ interface
                 as both will be in a fpureg }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,right.location,right.resultdef,true);
 =======
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
               location_force_fpureg(current_asmdata.CurrAsmList,right.location,true);
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
+              location_force_fpureg(current_asmdata.CurrAsmList,right.location,true);
+
+              if nodetype in [equaln,unequaln] then
+                current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_CMF,
+                   left.location.register,right.location.register),
+                   cgsize2fpuoppostfix[def_cgsize(resultdef)]))
+              else
+                current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_CMFE,
+                   left.location.register,right.location.register),
+                   cgsize2fpuoppostfix[def_cgsize(resultdef)]));
+            end;
+          fpu_vfpv2,
+          fpu_vfpv3:
+            begin
+              location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
+              location_force_mmregscalar(current_asmdata.CurrAsmList,right.location,true);
+
+              if (tfloatdef(left.resultdef).floattype=s32real) then
+                if nodetype in [equaln,unequaln] then
+                  op:=A_FCMPS
+                 else
+                   op:=A_FCMPES
+              else if nodetype in [equaln,unequaln] then
+                op:=A_FCMPD
+              else
+                op:=A_FCMPED;
+              current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(op,
+                left.location.register,right.location.register));
+              current_asmdata.CurrAsmList.concat(taicpu.op_none(A_FMSTAT));
+            end;
+          fpu_soft:
+            { this case should be handled already by pass1 }
+            internalerror(2009112404);
+        end;
+>>>>>>> graemeg/cpstrnew
 
               if nodetype in [equaln,unequaln] then
                 current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_CMF,

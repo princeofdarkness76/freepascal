@@ -44,7 +44,11 @@ const
   gas_regname_table: array[tregisterindex] of string[7] = (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {$i rmipsgas.inc}
+=======
+        {$i rmipsstd.inc}
+>>>>>>> graemeg/cpstrnew
 =======
         {$i rmipsstd.inc}
 >>>>>>> graemeg/cpstrnew
@@ -62,7 +66,11 @@ function findreg_by_gasname(const s: string): tregisterindex;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   p: tregisterindex;
+=======
+  i, p: tregisterindex;
+>>>>>>> graemeg/cpstrnew
 =======
   i, p: tregisterindex;
 >>>>>>> graemeg/cpstrnew
@@ -111,8 +119,11 @@ end;
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {
@@ -122,6 +133,9 @@ end.
 
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

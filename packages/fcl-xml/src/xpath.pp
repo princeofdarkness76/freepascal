@@ -360,6 +360,8 @@ type
 
   TXPathNSResolver = TDOMNode {!!! experimental};
 
+  TXPathNSResolver = TDOMNode {!!! experimental};
+
 { XPath lexical scanner }
 
   TXPathScanner = class

@@ -105,8 +105,12 @@ begin
          WRITE_DEBUG('waiting for SuspendedInternal - ', LThread.ClassName);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          RtlEventWaitFor(LThread.FSuspendEvent);
          CurrentThreadVar := LThread;
+=======
+        CurrentTM.SemaphoreWait(LThread.FSem);
+>>>>>>> graemeg/cpstrnew
 =======
         CurrentTM.SemaphoreWait(LThread.FSem);
 >>>>>>> graemeg/cpstrnew
@@ -165,8 +169,11 @@ begin
   FSuspendedInternal := not CreateSuspended;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   WRITE_DEBUG('creating thread, self = ',ptruint(self));
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   WRITE_DEBUG('creating thread, self = ',longint(self));
@@ -251,9 +258,15 @@ begin
       WRITE_DEBUG('resuming thread after TThread construction',ptruint(self));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       RtlEventSetEvent(FSuspendEvent);
     end
   else
+=======
+      CurrentTM.SemaphorePost(FSem);
+    end
+  else if (not FSuspendedExternal) then
+>>>>>>> graemeg/cpstrnew
 =======
       CurrentTM.SemaphorePost(FSem);
     end

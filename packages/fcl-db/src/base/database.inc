@@ -577,6 +577,7 @@ procedure TCustomConnection.GetLoginParams(out ADatabaseName, AUserName, APasswo
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if IsPublishedProp(Self,'DatabaseName') then
     ADatabaseName := GetStrProp(Self,'DatabaseName');
   if IsPublishedProp(Self,'UserName') then
@@ -594,6 +595,8 @@ begin
   if IsPublishedProp(Self,'Password') then
     SetStrProp(Self,'Password',APassword);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   FBeforeDisconnect:=AValue;

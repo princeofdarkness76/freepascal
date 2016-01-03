@@ -17,7 +17,11 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: String);
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
@@ -31,7 +35,12 @@ var
   y: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   img_format: IPTCFormat;
+=======
+  img_format: TPTCFormat = nil;
+  img_palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   img_format: TPTCFormat = nil;
   img_palette: TPTCPalette = nil;
@@ -64,12 +73,15 @@ begin
     {$IFDEF FPC_LITTLE_ENDIAN}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     img_format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     img_format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
     {$ENDIF FPC_LITTLE_ENDIAN}
     surface.Load(pixels, width, height, width * 3, img_format, TPTCPaletteFactory.CreateNew);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     img_format := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
@@ -79,6 +91,9 @@ begin
     img_palette := TPTCPalette.Create;
     surface.load(pixels, width, height, width * 3, img_format, img_palette);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -90,6 +105,12 @@ begin
     FreeMem(pixels);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+    img_palette.Free;
+    img_format.Free;
+>>>>>>> graemeg/cpstrnew
 =======
 
     img_palette.Free;
@@ -106,9 +127,15 @@ end;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
@@ -125,6 +152,7 @@ begin
       { create console }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 
       { create format }
@@ -132,11 +160,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       console := TPTCConsole.Create;
 
       { create format }
       format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -153,7 +186,11 @@ begin
       { create surface }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
+=======
+      surface := TPTCSurface.Create(320, 200, format);
+>>>>>>> graemeg/cpstrnew
 =======
       surface := TPTCSurface.Create(320, 200, format);
 >>>>>>> graemeg/cpstrnew
@@ -177,9 +214,12 @@ begin
       { close console }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       console.close;
@@ -188,6 +228,9 @@ begin
       surface.Free;
       format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

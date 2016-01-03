@@ -79,6 +79,7 @@ const
      {garbage collector: volatile }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __progressIndicatorFlags: record
       case byte of
        0: (_anonbitfield_NSProgressIndicator0: cuint);
@@ -86,11 +87,16 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __progressIndicatorFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSProgressIndicator0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -111,7 +117,10 @@ const
         RESERVED: 0..((1 shl 8)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

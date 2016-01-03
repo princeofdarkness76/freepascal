@@ -9,6 +9,7 @@ main=rtl
 loaders=nwplibc nwl_main nwl_dlle
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       lineinfo lnfodwrf  heaptrc \
       nwsnut libc dos sysconst \
@@ -18,6 +19,8 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       rtlconsts math \
       dynlibs cmem ctypes
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
@@ -30,6 +33,9 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       rtlconsts math varutils freebidi utf8bidi \
       mouse video keyboard dynlibs cmem sockets ctypes
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

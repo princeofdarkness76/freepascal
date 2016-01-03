@@ -93,7 +93,11 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim,system_i386_android]) then
+=======
+        if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> graemeg/cpstrnew
 =======
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 >>>>>>> graemeg/cpstrnew
@@ -146,6 +150,9 @@ implementation
         if (target_info.system = system_i386_win32) and
             paramanager.ret_in_param(procdefinition.returndef,procdefinition.proccalloption) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

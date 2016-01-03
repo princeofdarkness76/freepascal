@@ -10,7 +10,10 @@ type
     ry : cint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     rz : cint;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

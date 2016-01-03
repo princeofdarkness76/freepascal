@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
@@ -21,6 +22,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 <?xml version="1.0"?>
 <CONFIG>
   <ProjectOptions>
@@ -38,6 +41,9 @@
       <CharSet Value=""/>
     </VersionInfo>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -52,6 +58,7 @@
         <FormatVersion Value="1"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <CommandLineParams Value="--suite=TTestStatementWriter"/>
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
@@ -63,6 +70,8 @@
     </RequiredPackages>
     <Units Count="16">
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <CommandLineParams Value="-a --format=plain"/>
@@ -79,6 +88,9 @@
     </RequiredPackages>
     <Units Count="7">
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -88,11 +100,14 @@
         <UnitName Value="testjs"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <WindowIndex Value="1"/>
         <TopLine Value="1"/>
         <CursorPos X="48" Y="3"/>
         <UsageCount Value="201"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <CursorPos X="11" Y="7"/>
@@ -101,6 +116,9 @@
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -111,11 +129,14 @@
         <UnitName Value="tcscanner"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <WindowIndex Value="1"/>
         <TopLine Value="1"/>
         <CursorPos X="17" Y="22"/>
         <UsageCount Value="201"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <CursorPos X="27" Y="427"/>
@@ -124,6 +145,9 @@
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -134,11 +158,14 @@
         <UnitName Value="jsbase"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <WindowIndex Value="1"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="12"/>
         <UsageCount Value="200"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <CursorPos X="1" Y="153"/>
@@ -147,6 +174,9 @@
         <UsageCount Value="196"/>
         <Loaded Value="True"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -155,6 +185,7 @@
         <Filename Value="../src/jsparser.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="jsparser"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="3"/>
@@ -173,11 +204,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="201"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="201"/>
+>>>>>>> graemeg/cpstrnew
       </Unit3>
       <Unit4>
         <Filename Value="../src/jsscanner.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="JSScanner"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="6"/>
@@ -196,11 +233,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="201"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="201"/>
+>>>>>>> graemeg/cpstrnew
       </Unit4>
       <Unit5>
         <Filename Value="../src/jstree.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="jstree"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="5"/>
@@ -219,11 +262,17 @@
         <TopLine Value="1"/>
         <UsageCount Value="200"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="200"/>
+>>>>>>> graemeg/cpstrnew
       </Unit5>
       <Unit6>
         <Filename Value="tcparser.pp"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="tcparser"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <EditorIndex Value="4"/>
@@ -349,6 +398,8 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <OtherUnitFiles Value="/home/michael/source/fcl-js/;..;../src"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <CursorPos X="3" Y="2059"/>
@@ -487,6 +538,9 @@
       <IncludeFiles Value="$(ProjOutDir)/"/>
       <OtherUnitFiles Value="/home/michael/source/fcl-js/;../"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -498,6 +552,7 @@
     </CodeGeneration>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Linking>
       <Debugging>
         <UseHeaptrc Value="True"/>
@@ -507,11 +562,14 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     <Other>
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
   <Debugging>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <BreakPoints Count="7">
@@ -567,12 +625,17 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     <BreakPoints Count="1">
       <Item1>
         <Source Value="../jsscanner.pp"/>
         <Line Value="717"/>
       </Item1>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -591,7 +654,10 @@
   </Debugging>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <EditorMacros Count="0"/>
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

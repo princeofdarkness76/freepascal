@@ -118,7 +118,10 @@ type
     procedure ReadWindows(mem:TMemoryStream);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   public
@@ -288,6 +291,9 @@ procedure TChmReader.ReadCommonData;
 =======
      until Pos(#0, buf) > -1;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1094,6 +1100,7 @@ end;
 procedure parselistingblock(p:pbyte);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
     itemstack:TObjectStack;
     curitemdepth : integer;
@@ -1130,6 +1137,11 @@ var hdr:PBTreeBlockHeader;
     head,tail : pbyte;
     isseealso,
 >>>>>>> graemeg/cpstrnew
+=======
+var hdr:PBTreeBlockHeader;
+    head,tail : pbyte;
+    isseealso,
+>>>>>>> graemeg/cpstrnew
     nrpairs : Integer;
     i : integer;
     PE : PBtreeBlockEntry;
@@ -1141,8 +1153,13 @@ var hdr:PBTreeBlockHeader;
     Name : AnsiString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   //setlength (curitem,10);
+=======
+    item : TChmSiteMapItem;
+begin
+>>>>>>> graemeg/cpstrnew
 =======
     item : TChmSiteMapItem;
 begin
@@ -1162,7 +1179,10 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   itemstack:=TObjectStack.create;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1173,7 +1193,10 @@ begin
   {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   curitemdepth:=0;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1192,6 +1215,7 @@ begin
       IsSeealso:=LEToN(PE^.isseealso);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       EntryDepth:=LEToN(PE^.entrydepth);
       CharIndex:=LEToN(PE^.CharIndex);
       {$ifdef binindex}
@@ -1203,6 +1227,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       CharIndex:=LEToN(PE^.CharIndex);
       {$ifdef binindex}
         Writeln('seealso:     ',IsSeeAlso);
@@ -1211,6 +1237,9 @@ begin
         Writeln('Nrpairs   :  ',NrPairs);
         writeln('seealso data : ');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1224,6 +1253,7 @@ begin
           // have to figure out first what to do with it.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           // is See Also really mutually exclusive with pairs?
           // or is the number of pairs equal to the number of seealso
           // strings?
@@ -1235,10 +1265,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         end
       else
         begin
          if NrPairs>0 Then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           begin
@@ -1246,6 +1279,8 @@ begin
              writeln('Pairs   : ');
             {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1266,7 +1301,10 @@ begin
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1282,7 +1320,10 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ItemStack.Free;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1312,10 +1353,16 @@ begin
                   // a child.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    TryTextual:=True;
    BHdr.LastLstBlock:=0;
    if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>=0) Then
+=======
+   TryTextual:=True;
+   BHdr.LastLstBlock:=0;
+   if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
+>>>>>>> graemeg/cpstrnew
 =======
    TryTextual:=True;
    BHdr.LastLstBlock:=0;
@@ -1347,8 +1394,12 @@ begin
       Result:=AbortAndTryTextual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     end
   else Index.Free;
+=======
+    end;
+>>>>>>> graemeg/cpstrnew
 =======
     end;
 >>>>>>> graemeg/cpstrnew
@@ -1432,7 +1483,11 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      // Binary Toc Exists
+=======
+   // Binary Toc Exists
+>>>>>>> graemeg/cpstrnew
 =======
    // Binary Toc Exists
 >>>>>>> graemeg/cpstrnew
@@ -1448,6 +1503,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    if EntryCount = 0 then
      begin
        Toc.Free;
@@ -1458,13 +1514,18 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    NextItem := EntryInfoOffset;
    repeat
      NextItem := AddTOCItem(Toc, NextItem, Result.Items);
    until NextItem = 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TOC.Free;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1748,7 +1809,11 @@ begin
   if not FileExists(AFileName) then exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AStream := TFileStream.Create(AFileName, fmOpenRead or fmShareDenyWrite);
+=======
+  AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
+>>>>>>> graemeg/cpstrnew
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
 >>>>>>> graemeg/cpstrnew

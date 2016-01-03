@@ -124,7 +124,11 @@ const
   _WIIUSE_READ_DATA: WIIUSE_EVENT_TYPE = 6;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   WIIUSE_ACK: WIIUSE_EVENT_TYPE = 7;
+=======
+  _WIIUSE_WRITE_DATA: WIIUSE_EVENT_TYPE = 7;
+>>>>>>> graemeg/cpstrnew
 =======
   _WIIUSE_WRITE_DATA: WIIUSE_EVENT_TYPE = 7;
 >>>>>>> graemeg/cpstrnew

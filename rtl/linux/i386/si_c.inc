@@ -65,8 +65,13 @@ asm
   {$ifdef FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl    %esp,%ebp               { Points to the arguments }
         movl    %ecx,%esi               
+=======
+        movl    %esp,_ebx               { Points to the arguments }
+        movl    %ecx,_ecx               
+>>>>>>> graemeg/cpstrnew
 =======
         movl    %esp,_ebx               { Points to the arguments }
         movl    %ecx,_ecx               
@@ -95,6 +100,7 @@ asm
         movl  operatingsystem_parameter_argc@GOT(%ebx),%ecx
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl  %esi,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
@@ -102,11 +108,16 @@ asm
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         movl  _ecx,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
         movl  _ebx,%eax
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -116,7 +127,11 @@ asm
         popl  %ecx
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl  %ebp,%ebx
+=======
+        movl  _ebx,%ebx
+>>>>>>> graemeg/cpstrnew
 =======
         movl  _ebx,%ebx
 >>>>>>> graemeg/cpstrnew
@@ -145,7 +160,12 @@ asm
         movl  libc_init_proc@GOT(%ebx),%ecx
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	movl  (%ecx),%edi
+=======
+	movl  (%ecx),%ecx
+	movl  %ecx,_libc_init_proc
+>>>>>>> graemeg/cpstrnew
 =======
 	movl  (%ecx),%ecx
 	movl  %ecx,_libc_init_proc
@@ -171,7 +191,11 @@ asm
   {$ifdef FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	call    *%edi
+=======
+	call    _libc_init_proc
+>>>>>>> graemeg/cpstrnew
 =======
 	call    _libc_init_proc
 >>>>>>> graemeg/cpstrnew
@@ -208,8 +232,11 @@ asm
 .Lhaltproc:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pushl   e
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -233,6 +260,9 @@ asm
   pushl   %ebx
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

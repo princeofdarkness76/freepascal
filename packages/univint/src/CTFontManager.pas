@@ -4,6 +4,7 @@
  *
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  Copyright (c) 2008-2012 Apple Inc. All rights reserved.
  *
  }
@@ -13,11 +14,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *  Copyright (c) 2008 Apple Inc. All rights reserved.
  *
  }
 {       Initial Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -77,11 +83,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -106,11 +115,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -129,11 +144,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -152,7 +173,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -168,7 +192,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -181,6 +208,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -192,6 +220,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -210,13 +243,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -236,6 +273,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -287,11 +328,14 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CTFontDescriptor,CTFontManagerErrors,CFBase,CFArray,CFData,CFError,CGFont;
 {$endc} {not MACOSALLINCLUDE}
 
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 uses MacTypes,CTFontDescriptor,CTFontManagerErrors,CFBase,CFArray,CFError;
@@ -301,6 +345,9 @@ uses MacTypes,CTFontDescriptor,CTFontManagerErrors,CFBase,CFArray,CFError;
 {$ifc TARGET_OS_MAC}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -318,7 +365,10 @@ uses MacTypes,CTFontDescriptor,CTFontManagerErrors,CFBase,CFArray,CFError;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -355,7 +405,11 @@ function CTFontManagerCopyAvailableFontFamilyNames: CFArrayRef; external name '_
 function CTFontManagerCopyAvailableFontURLs: CFArrayRef; external name '_CTFontManagerCopyAvailableFontURLs';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -368,7 +422,11 @@ function CTFontManagerCopyAvailableFontURLs: CFArrayRef; external name '_CTFontM
     @abstract   A CFComparatorFunction to compare font family names and sort them according to Apple guidelines.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @discussion This function compares font family names and sorts them in the preferred order for display in user interfaces.
+=======
+    @discussion This function compares font family names and sorts them in the Apple preferred order, accounting for foundry prefix. Family names with recognized prefixes are sorted after the un-prefixed names in prefix order.
+>>>>>>> graemeg/cpstrnew
 =======
     @discussion This function compares font family names and sorts them in the Apple preferred order, accounting for foundry prefix. Family names with recognized prefixes are sorted after the un-prefixed names in prefix order.
 >>>>>>> graemeg/cpstrnew
@@ -383,6 +441,7 @@ function CTFontManagerCopyAvailableFontURLs: CFArrayRef; external name '_CTFontM
                 Unused. Can be NULL.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @result     A CFComparisonResult value indicating the sort order for the two family names. kCFComparisonResultGreaterThan if family1 is greater than family2, kCFComparisonResultLessThan if family1 is less than family2, and kCFComparisonResultEqualTo if they are equal.
 }
 function CTFontManagerCompareFontFamilyNames( family1: {const} UnivPtr; family2: {const} UnivPtr; context: UnivPtr ): CFComparisonResult; external name '_CTFontManagerCompareFontFamilyNames';
@@ -390,11 +449,16 @@ function CTFontManagerCompareFontFamilyNames( family1: {const} UnivPtr; family2:
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     @result     A CFComparisonResult value indicating the sort order for the two family names. kCFComparisonResultGreatherThan if family1 is greater than family2, kCFComparisonResultLessThan if family1 is less than family2, and kCFComparisonResultEqualTo if they are equal.
 }
 function CTFontManagerCompareFontFamilyNames( family1: {const} UnivPtr; family2: {const} UnivPtr; context: UnivPtr ): CFComparisonResult; external name '_CTFontManagerCompareFontFamilyNames';
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -404,7 +468,11 @@ function CTFontManagerCompareFontFamilyNames( family1: {const} UnivPtr; family2:
     @abstract   Returns an array of font descriptors representing each of the fonts in the specified URL.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Note: these font descriptors are not available through font descriptor matching.
+=======
+				Note: these font descriptors are not availabe through font descriptor matching.
+>>>>>>> graemeg/cpstrnew
 =======
 				Note: these font descriptors are not availabe through font descriptor matching.
 >>>>>>> graemeg/cpstrnew
@@ -418,6 +486,7 @@ function CTFontManagerCompareFontFamilyNames( family1: {const} UnivPtr; family2:
     @result     This function returns a retained reference to a CFArray, or NULL on error. The caller is responsible for releasing the array.
 }
 function CTFontManagerCreateFontDescriptorsFromURL( fileURL: CFURLRef ): CFArrayRef; external name '_CTFontManagerCreateFontDescriptorsFromURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
@@ -441,6 +510,9 @@ function CTFontManagerCreateFontDescriptorFromData( data: CFDataRef ): CTFontDes
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {!
     @enum       CTFontManagerScope
@@ -451,10 +523,15 @@ function CTFontManagerCreateFontDescriptorFromData( data: CFDataRef ): CTFontDes
                 The font is available to all processes for the current user session and will be available in subsequent sessions unless unregistered.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 User scope is unsupported in iOS.
     @constant   kCTFontManagerScopeSession
                 The font is available to the current user session, and will not be available in subsequent sessions.
                 User scope is unsupported in iOS.
+=======
+    @constant   kCTFontManagerScopeSession
+                The font is available to the current user session, and will not be available in subsequent sessions.
+>>>>>>> graemeg/cpstrnew
 =======
     @constant   kCTFontManagerScopeSession
                 The font is available to the current user session, and will not be available in subsequent sessions.
@@ -490,7 +567,11 @@ type
 function CTFontManagerRegisterFontsForURL( fontURL: CFURLRef; scope: CTFontManagerScope; var error: CFErrorRef ): CBool; external name '_CTFontManagerRegisterFontsForURL';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_4_1) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -503,7 +584,10 @@ function CTFontManagerRegisterFontsForURL( fontURL: CFURLRef; scope: CTFontManag
     @abstract   Unregisters fonts from the specified font URL with the font manager. Unregistered fonts are no longer discoverable through font descriptor matching.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 iOS note: only fonts registered with CTFontManagerRegisterFontsForURL or CTFontManagerRegisterFontsForURLs can be unregistered with this API.
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -522,6 +606,7 @@ function CTFontManagerRegisterFontsForURL( fontURL: CFURLRef; scope: CTFontManag
 
 }
 function CTFontManagerUnregisterFontsForURL( fontURL: CFURLRef; scope: CTFontManagerScope; var error: CFErrorRef ): CBool; external name '_CTFontManagerUnregisterFontsForURL';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_4_1) *)
@@ -564,6 +649,9 @@ function CTFontManagerUnregisterGraphicsFont( font: CGFontRef; var error: CFErro
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 {!
     @function   CTFontManagerRegisterFontsForURLs
@@ -582,8 +670,13 @@ function CTFontManagerUnregisterGraphicsFont( font: CGFontRef; var error: CFErro
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CTFontManagerRegisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontManagerScope; var errors: CFArrayRef ): CBool; external name '_CTFontManagerRegisterFontsForURLs';
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_4_1) *)
+=======
+function CTFontManagerRegisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontManagerScope; errors: CFArrayRefPtr {can be null} ): CBool; external name '_CTFontManagerRegisterFontsForURLs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 function CTFontManagerRegisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontManagerScope; errors: CFArrayRefPtr {can be null} ): CBool; external name '_CTFontManagerRegisterFontsForURLs';
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -598,7 +691,10 @@ function CTFontManagerRegisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontM
     @abstract   Unregisters fonts from the specified font URLs with the font manager. Unregistered fonts are no longer discoverable through font descriptor matching.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 iOS note: only fonts registered with CTFontManagerRegisterFontsForURL or CTFontManagerRegisterFontsForURLs can be unregistered with this API.
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -617,10 +713,16 @@ function CTFontManagerRegisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontM
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CTFontManagerUnregisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontManagerScope; var errors: CFArrayRef ): CBool; external name '_CTFontManagerUnregisterFontsForURLs';
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_4_1) *)
 
 {$ifc TARGET_OS_MAC}
+=======
+function CTFontManagerUnregisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontManagerScope; errors: CFArrayRefPtr {can be null} ): CBool; external name '_CTFontManagerUnregisterFontsForURLs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 =======
 function CTFontManagerUnregisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFontManagerScope; errors: CFArrayRefPtr {can be null} ): CBool; external name '_CTFontManagerUnregisterFontsForURLs';
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -644,7 +746,11 @@ function CTFontManagerUnregisterFontsForURLs( fontURLs: CFArrayRef; scope: CTFon
 procedure CTFontManagerEnableFontDescriptors( descriptors: CFArrayRef; enable: CBool ); external name '_CTFontManagerEnableFontDescriptors';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -664,7 +770,11 @@ procedure CTFontManagerEnableFontDescriptors( descriptors: CFArrayRef; enable: C
 function CTFontManagerGetScopeForURL( fontURL: CFURLRef ): CTFontManagerScope; external name '_CTFontManagerGetScopeForURL';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -684,7 +794,11 @@ function CTFontManagerGetScopeForURL( fontURL: CFURLRef ): CTFontManagerScope; e
 function CTFontManagerIsSupportedFont( fontURL: CFURLRef ): CBool; external name '_CTFontManagerIsSupportedFont';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -705,7 +819,11 @@ function CTFontManagerIsSupportedFont( fontURL: CFURLRef ): CBool; external name
 var kCTFontManagerBundleIdentifier: CFStringRef; external name '_kCTFontManagerBundleIdentifier'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -748,7 +866,11 @@ type
 procedure CTFontManagerSetAutoActivationSetting( bundleIdentifier: CFStringRef; setting: CTFontManagerAutoActivationSetting ); external name '_CTFontManagerSetAutoActivationSetting';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -768,7 +890,11 @@ procedure CTFontManagerSetAutoActivationSetting( bundleIdentifier: CFStringRef; 
 function CTFontManagerGetAutoActivationSetting( bundleIdentifier: CFStringRef ): CTFontManagerAutoActivationSetting; external name '_CTFontManagerGetAutoActivationSetting';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -793,7 +919,11 @@ function CTFontManagerGetAutoActivationSetting( bundleIdentifier: CFStringRef ):
 var kCTFontManagerRegisteredFontsChangedNotification: CFStringRef; external name '_kCTFontManagerRegisteredFontsChangedNotification'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CT_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 >>>>>>> graemeg/cpstrnew

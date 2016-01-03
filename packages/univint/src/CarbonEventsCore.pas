@@ -5,7 +5,11 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
+=======
+     Version:    HIToolbox-437~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    HIToolbox-437~1
 >>>>>>> graemeg/cpstrnew
@@ -25,7 +29,10 @@
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -86,11 +93,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -110,6 +120,7 @@ interface
 {$ifc defined __ppc__ and __ppc__}
 	{$setc TARGET_CPU_PPC := TRUE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
@@ -138,6 +149,20 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> graemeg/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -170,7 +195,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -179,6 +207,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -274,6 +303,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -319,9 +376,15 @@ uses MacTypes,CFBase,CGEventTypes,HIGeometry;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -342,8 +405,12 @@ uses MacTypes,CFBase,CGEventTypes,HIGeometry;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventRef = ^OpaqueEventRef; { an opaque type }
 	OpaqueEventRef = record end;
+=======
+	EventRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	EventRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -651,8 +718,12 @@ type
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventLoopRef = ^OpaqueEventLoopRef; { an opaque type }
 	OpaqueEventLoopRef = record end;
+=======
+	EventLoopRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	EventLoopRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -1435,8 +1506,12 @@ function CopyEventCGEvent( inEvent: EventRef ): CGEventRef; external name '_Copy
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventQueueRef = ^OpaqueEventQueueRef; { an opaque type }
 	OpaqueEventQueueRef = record end;
+=======
+	EventQueueRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	EventQueueRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -2314,8 +2389,12 @@ function GetCurrentEventTime: EventTime; external name '_GetCurrentEventTime';
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventLoopTimerRef = ^__EventLoopTimer; { an opaque type }
 	__EventLoopTimer = record end;
+=======
+	EventLoopTimerRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	EventLoopTimerRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -2651,11 +2730,17 @@ function SetEventLoopTimerNextFireTime( inTimer: EventLoopTimerRef; inNextFire: 
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventHandlerRef = ^OpaqueEventHandlerRef; { an opaque type }
 	OpaqueEventHandlerRef = record end;
 	EventHandlerRefPtr = ^EventHandlerRef;
 	EventHandlerCallRef = ^OpaqueEventHandlerCallRef; { an opaque type }
 	OpaqueEventHandlerCallRef = record end;
+=======
+	EventHandlerRef = ^SInt32; { an opaque type }
+	EventHandlerRefPtr = ^EventHandlerRef;
+	EventHandlerCallRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	EventHandlerRef = ^SInt32; { an opaque type }
 	EventHandlerRefPtr = ^EventHandlerRef;
@@ -2745,8 +2830,12 @@ function InvokeEventHandlerUPP( inHandlerCallRef: EventHandlerCallRef; inEvent: 
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	EventTargetRef = ^OpaqueEventTargetRef; { an opaque type }
 	OpaqueEventTargetRef = record end;
+=======
+	EventTargetRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	EventTargetRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -2819,6 +2908,9 @@ type
 function InstallEventHandler( inTarget: EventTargetRef; inHandler: EventHandlerUPP; inNumTypes: ItemCount; {const} inList: {variable-size-array} EventTypeSpecPtr; inUserData: UnivPtr; outRef: EventHandlerRefPtr { can be NULL } ): OSStatus; external name '_InstallEventHandler';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2827,6 +2919,8 @@ function InstallEventHandler( inTarget: EventTargetRef; inHandler: EventHandlerU
 {
  *  RemoveEventHandler()
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
  *  
  *  Summary:
@@ -2911,9 +3005,81 @@ function RemoveEventHandler( inHandlerRef: EventHandlerRef ): OSStatus; external
  *    Non-Carbon CFM:   not available
  }
 function RemoveEventHandler( inHandlerRef: EventHandlerRef ): OSStatus; external name '_RemoveEventHandler';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$ifc not TARGET_CPU_64}
+{
+<<<<<<< HEAD
+ *  InstallStandardEventHandler()
+>>>>>>> graemeg/cpstrnew
+=======
+ *  RemoveStandardEventHandler()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Summary:
+ *    Removes the standard event handler (if any) for an event target.
+ *  
+ *  Discussion:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    As of Mac OS X 10.1, it is safe to remove an event handler from
+ *    inside the handler function. This is not safe to do in CarbonLib
+ *    or earlier releases of Mac OS X.
+=======
+ *    All event targets have default handlers installed on them by the
+ *    toolbox to perform certain basic operations common to that type
+ *    of target. Some targets also have standard handlers which are not
+ *    installed by default, but may be requested. A standard handler
+ *    typically provides higher-level behavior for its target. Prior to
+ *    Mac OS X 10.5, only  window event targets have a standard
+ *    handler; the window standard event hander may also be installed
+ *    by setting the kWindowStandardHandlerAttribute flag. In Mac OS X
+ *    10.5 and later, the application and menubar event targets also
+ *    support standard event handlers. Calling
+ *    InstallStandardEventHandler on any other type of target (control,
+ *    menu, etc.) has no effect. 
+ *    
+ *    In Mac OS X 10.5 and later, InstallStandardEventHandler records
+ *    the number of installation requests, and
+ *    RemoveStandardEventHandler does not actually remove the standard
+ *    handler until the count has been reduced to zero.
+>>>>>>> graemeg/cpstrnew
+=======
+ *    InstallStandardEventHandler records the number of installation
+ *    requests, and RemoveStandardEventHandler does not actually remove
+ *    the standard handler until the count has been reduced to zero.
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inTarget:
+ *      The target whose standard handler should be removed.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function RemoveEventHandler( inHandlerRef: EventHandlerRef ): OSStatus; external name '_RemoveEventHandler';
 =======
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function RemoveStandardEventHandler( inTarget: EventTargetRef ): OSStatus; external name '_RemoveStandardEventHandler';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {$ifc not TARGET_CPU_64}

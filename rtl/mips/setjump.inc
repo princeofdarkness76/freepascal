@@ -17,6 +17,7 @@ procedure fpc_longjmp(var s : jmp_buf;value:longint);assembler;nostackframe;[Pub
   asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     lw    $31,jmp_buf.ra($a0)
     lw    $sp,jmp_buf.sp($a0)
     lw    $s0,jmp_buf.s0($a0)
@@ -54,6 +55,8 @@ procedure fpc_longjmp(var s : jmp_buf;value:longint);assembler;nostackframe;[Pub
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     lw $31,0($4) #PC
     lw $sp,4($4) #SP
     lw $16,8($4) #S0,$16
@@ -70,6 +73,9 @@ procedure fpc_longjmp(var s : jmp_buf;value:longint);assembler;nostackframe;[Pub
     j $31
     nop
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -78,6 +84,7 @@ procedure fpc_longjmp(var s : jmp_buf;value:longint);assembler;nostackframe;[Pub
 
 function fpc_setjmp(var S:jmp_buf):longint;assembler;nostackframe;[Public,alias:'FPC_SETJMP'];compilerproc;
   asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     sw    $31,jmp_buf.ra($a0)
@@ -112,6 +119,8 @@ function fpc_setjmp(var S:jmp_buf):longint;assembler;nostackframe;[Public,alias:
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     sw $31,0($4) #PC
     sw $sp,4($4) #SP
     sw $16,8($4) #S0,$16
@@ -127,6 +136,9 @@ function fpc_setjmp(var S:jmp_buf):longint;assembler;nostackframe;[Public,alias:
 
     move $2,$0
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

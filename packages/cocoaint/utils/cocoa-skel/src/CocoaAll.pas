@@ -5,7 +5,10 @@ unit CocoaAll;
 {$modeswitch cvar} { for "external" after the semi-colon with external vars }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -70,6 +70,7 @@ type
     _attributeValueClassName: NSString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __attributeDescriptionFlags: record
       case byte of
        0: (_anonbitfield_NSAttributeDescription0: cuint);
@@ -80,6 +81,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __attributeDescriptionFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSAttributeDescription0: cuint);
@@ -87,6 +90,9 @@ type
         _useForLocking: 0..1;
         _reservedAttributeDescription: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

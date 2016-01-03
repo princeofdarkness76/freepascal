@@ -20,7 +20,10 @@ unit objcbase;
 {$modeswitch objectivec1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

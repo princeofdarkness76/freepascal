@@ -1083,6 +1083,9 @@ end;
 =======
 {$if defined(amiga) and defined(morphos)}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

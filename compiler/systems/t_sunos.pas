@@ -134,6 +134,10 @@ begin
   Inherited Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -166,7 +170,11 @@ procedure TLinkersolaris.SetDefaultInfo;
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   gld = 'gld $EMUL ';
+=======
+  gld = 'gld -m elf_x86_64 ';
+>>>>>>> graemeg/cpstrnew
 =======
   gld = 'gld -m elf_x86_64 ';
 >>>>>>> graemeg/cpstrnew
@@ -179,7 +187,11 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   gld = 'gld $EMUL';
+=======
+  gld = 'gld ';
+>>>>>>> graemeg/cpstrnew
 =======
   gld = 'gld ';
 >>>>>>> graemeg/cpstrnew
@@ -202,6 +214,7 @@ begin
      ExeCmd[1]:=gld + '$OPT $DYNLINK $STATIC $STRIP -L. -o $EXE $RES';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      ExeCmd[2]:=solaris_ld + '$OPT $DYNLINK $STATIC $STRIP -L . -o $EXE $RESDATA $REDIRECT';
      DllCmd[1]:=gld + '$OPT $INITFINI -shared -L. $MAP -o $EXE $RES';
      DllCmd[2]:='gstrip --strip-unneeded $EXE';
@@ -209,11 +222,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
      ExeCmd[2]:=solaris_ld + '$OPT $DYNLINK $STATIC $STRIP -L . -o $EXE $RESDATA';
      DllCmd[1]:=gld + '$OPT $INITFINI -shared -L. -o $EXE $RES';
      DllCmd[2]:='gstrip --strip-unneeded $EXE';
      DllCmd[3]:=solaris_ld + '$OPT $INITFINI -M $VERSIONFILE -G -Bdynamic -L. -o $EXE $RESDATA';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -294,7 +312,11 @@ begin
       LinkRes.add('VERSION');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       LinkRes.add('{ DEFAULT'); { gld 2.25 does not support anonymous version }
+=======
+      LinkRes.add('{');
+>>>>>>> graemeg/cpstrnew
 =======
       LinkRes.add('{');
 >>>>>>> graemeg/cpstrnew
@@ -403,6 +425,7 @@ begin
   else { not use_gnu_ld }
     begin
    { Open TlinkRes, will not be written to disk }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName+'2',false);
@@ -543,6 +566,82 @@ begin
 >>>>>>> graemeg/cpstrnew
    end;
 
+=======
+  LinkRes:=TLinkRes.Create(outputexedir+Info.ResName+'2');
+
+ { Write path to search libraries }
+  HPath:=TCmdStrListItem(current_module.locallibrarysearchpath.First);
+  while assigned(HPath) do
+   begin
+     LinkRes.Add('-L '+maybequoted(HPath.Str));
+     HPath:=TCmdStrListItem(HPath.Next);
+   end;
+  HPath:=TCmdStrListItem(LibrarySearchPath.First);
+  while assigned(HPath) do
+   begin
+     LinkRes.Add('-L '+maybequoted(HPath.Str));
+     HPath:=TCmdStrListItem(HPath.Next);
+   end;
+  { force local symbol resolution (i.e., inside the shared }
+  { library itself) for all non-exorted symbols, otherwise }
+  { several RTL symbols of FPC-compiled shared libraries   }
+  { will be bound to those of a single shared library or   }
+  { to the main program                                    }
+  if (isdll) then
+    begin
+      LinkRes2:=TLinkRes.Create(outputexedir+Info.ResName);
+      // LinkRes2.add('VERSION'); not needed for now
+      LinkRes2.add('  {');
+      if not texportlibunix(exportlib).exportedsymnames.empty then
+        begin
+          LinkRes2.add('    global:');
+          repeat
+            LinkRes2.add('      '+texportlibunix(exportlib).exportedsymnames.getfirst+';');
+          until texportlibunix(exportlib).exportedsymnames.empty;
+        end;
+      LinkRes2.add('    local:');
+      LinkRes2.add('      *;');
+      LinkRes2.add('  };');
+      LinkRes2.writetodisk;
+      LinkRes2.Free;
+    end;
+
+
+  { add objectfiles, start with prt0 always }
+  { solaris port contains _start inside the system unit, it
+    needs only one entry because it is linked always against libc
+  if prtobj<>'' then
+   LinkRes.AddFileName(FindObjectFile(prtobj,'',false));
+  }
+  { try to add crti and crtbegin if linking to C }
+  if linklibc then { Needed in solaris? }
+   begin
+{     if librarysearchpath.FindFile('crtbegin.o',s) then
+      LinkRes.AddFileName(s);}
+     if librarysearchpath.FindFile('crti.o',false,s) then
+      LinkRes.AddFileName(s);
+   end;
+  { main objectfiles }
+  while not ObjectFiles.Empty do
+   begin
+     s:=ObjectFiles.GetFirst;
+     if s<>'' then
+      LinkRes.AddFileName(maybequoted(s));
+   end;
+
+  { Write staticlibraries }
+  if not StaticLibFiles.Empty then
+   begin
+     linkres.add('-('); 
+     While not StaticLibFiles.Empty do
+      begin
+        S:=StaticLibFiles.GetFirst;
+        LinkRes.AddFileName(maybequoted(s))
+      end;
+     linkres.add('-)'); 
+   end;
+
+>>>>>>> graemeg/cpstrnew
   { Write sharedlibraries like -l<lib>, also add the needed dynamic linker
     here to be sure that it gets linked this is needed for glibc2 systems (PFV) }
   if not SharedLibFiles.Empty then
@@ -645,6 +744,7 @@ begin
     SplitBinCmd(Info.ExeCmd[2],binstr,cmdstr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$EXE',maybequoted(current_module.exefilename));
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
   if use_gnu_ld then
@@ -655,11 +755,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   Replace(cmdstr,'$EXE',maybequoted(current_module.exefilename^));
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
   if use_gnu_ld then
     Replace(cmdstr,'$RES',maybequoted(outputexedir+Info.ResName))
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -682,6 +787,7 @@ begin
   if BinStr[1]<>'/' then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     BinStr:=FindUtil(utilsprefix+BinStr);
 =======
     success:=DoExec(FindUtil(utilsprefix+BinStr),CmdStr,true,false)
@@ -691,6 +797,12 @@ begin
 
   { We need shell if output is redirected }
   success:=DoExec(BinStr,Trim(CmdStr),true,RedirectStr<>'');
+=======
+    success:=DoExec(FindUtil(utilsprefix+BinStr),CmdStr,true,false)
+  else { Using utilsprefix has no sense on /usr/bin/ld }
+    success:=DoExec(BinStr,Trim(CmdStr),true,false);
+
+>>>>>>> graemeg/cpstrnew
 =======
     success:=DoExec(FindUtil(utilsprefix+BinStr),CmdStr,true,false)
   else { Using utilsprefix has no sense on /usr/bin/ld }
@@ -712,8 +824,13 @@ var
   InitFiniStr : string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   binstr, RedirectStr,
   s, linkstr, MapStr,
+=======
+  binstr,
+  s, linkstr,
+>>>>>>> graemeg/cpstrnew
 =======
   binstr,
   s, linkstr,
@@ -733,6 +850,7 @@ begin
 { Write used files and libraries }
   WriteResponseFile(true);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   RedirectStr:='';
@@ -762,13 +880,22 @@ begin
 { initname and fininame may contain $, which can be wrongly interpreted
   in a link script, thus we surround them with single quotes 
 >>>>>>> graemeg/cpstrnew
+=======
+{ Create some replacements }
+{ initname and fininame may contain $, which can be wrongly interpreted
+  in a link script, thus we surround them with single quotes 
+>>>>>>> graemeg/cpstrnew
   in cs_link_nolink is in globalswitches }
   if use_gnu_ld then
     begin
       InitFiniStr:='-init ';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if need_quotes then
+=======
+      if cs_link_nolink in current_settings.globalswitches then
+>>>>>>> graemeg/cpstrnew
 =======
       if cs_link_nolink in current_settings.globalswitches then
 >>>>>>> graemeg/cpstrnew
@@ -782,7 +909,11 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if need_quotes then
+=======
+          if cs_link_nolink in current_settings.globalswitches then
+>>>>>>> graemeg/cpstrnew
 =======
           if cs_link_nolink in current_settings.globalswitches then
 >>>>>>> graemeg/cpstrnew
@@ -799,7 +930,11 @@ begin
       InitFiniStr:='-z initarray=';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if need_quotes then
+=======
+      if cs_link_nolink in current_settings.globalswitches then
+>>>>>>> graemeg/cpstrnew
 =======
       if cs_link_nolink in current_settings.globalswitches then
 >>>>>>> graemeg/cpstrnew
@@ -813,7 +948,11 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if need_quotes then
+=======
+          if cs_link_nolink in current_settings.globalswitches then
+>>>>>>> graemeg/cpstrnew
 =======
           if cs_link_nolink in current_settings.globalswitches then
 >>>>>>> graemeg/cpstrnew
@@ -833,6 +972,7 @@ begin
     SplitBinCmd(Info.DllCmd[3],binstr,cmdstr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$EXE',maybequoted(current_module.sharedlibfilename));
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
   Replace(cmdstr,'$INITFINI',InitFiniStr);
@@ -844,12 +984,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   Replace(cmdstr,'$EXE',maybequoted(current_module.sharedlibfilename^));
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
   Replace(cmdstr,'$INITFINI',InitFiniStr);
   if use_gnu_ld then
     Replace(cmdstr,'$RES',maybequoted(outputexedir+Info.ResName))
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -868,6 +1013,7 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Replace(cmdstr,'$REDIRECT',RedirectStr);
   Replace(cmdstr,'$MAP',MapStr);
   if BinStr[1]<>'/' then
@@ -877,6 +1023,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if BinStr[1]<>'/' then
     success:=DoExec(FindUtil(utilsprefix+BinStr),CmdStr,true,false)
   else { Using utilsprefix has no sense on /usr/bin/ld }
@@ -884,6 +1032,9 @@ begin
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -919,6 +1070,10 @@ initialization
 {$ifdef x86_64}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  RegisterExternalLinker(system_x86_64_solaris_info,TLinkersolaris);
+>>>>>>> graemeg/cpstrnew
 =======
   RegisterExternalLinker(system_x86_64_solaris_info,TLinkersolaris);
 >>>>>>> graemeg/cpstrnew

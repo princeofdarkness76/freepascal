@@ -94,9 +94,12 @@ var
   tmpd  : single;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   platformids : Pcl_platform_id;
   num_platforms : cl_uint;
   
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -107,6 +110,7 @@ begin
   for i:=0 to count - 1 do
     data[i]:= random;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   err:=clGetPlatformIDs(0,nil,@num_platforms);
@@ -130,6 +134,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   // Connect to a compute device
   // change CL_DEVICE_TYPE_CPU to CL_DEVICE_TYPE_GPU is you have powerful video (GeForce 8800/8600M or higher)
   gpu := CL_DEVICE_TYPE_GPU;
@@ -137,7 +143,11 @@ begin
   device_id:=nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   err := clGetDeviceIDs(platformids[0], gpu, 1, @device_id, nil);
+=======
+  err := clGetDeviceIDs(nil, gpu, 1, @device_id, nil);
+>>>>>>> graemeg/cpstrnew
 =======
   err := clGetDeviceIDs(nil, gpu, 1, @device_id, nil);
 >>>>>>> graemeg/cpstrnew

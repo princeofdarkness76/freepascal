@@ -5,9 +5,15 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    QuickTime 7.6.3
  
@@ -27,8 +33,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -91,11 +101,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -117,6 +130,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -125,12 +139,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -163,6 +186,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -175,7 +203,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -184,6 +215,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -238,6 +270,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -263,6 +297,11 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
+=======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -271,6 +310,7 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -279,6 +319,8 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -319,6 +361,7 @@ interface
 uses MacTypes,Aliases,Components,Dialogs,Events,Files,Menus,Video,ImageCompression,Movies,QuickdrawTypes,QDOffscreen,QuickTimeMusic,CFBase,CoreAudioTypes;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -326,6 +369,11 @@ uses MacTypes,Aliases,Components,Dialogs,Events,Files,Menus,Video,ImageCompressi
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -333,6 +381,9 @@ uses MacTypes,Aliases,Components,Dialogs,Events,Files,Menus,Video,ImageCompressi
 
 {$ifc not TARGET_CPU_64}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	clockComponentType = FourCharCode('clok');
@@ -340,6 +391,7 @@ const
 	systemSecondClock = FourCharCode('seco'); { subtype: seconds since 1904       }
 	systemMillisecondClock = FourCharCode('mill'); { subtype: 1000ths since boot       }
 	systemMicrosecondClock = FourCharCode('micr'); { subtype: 1000000ths since boot }
+<<<<<<< HEAD
 
 const
 =======
@@ -350,6 +402,10 @@ const
 	systemSecondClock = FourCharCode('seco'); { subtype: seconds since 1904       }
 	systemMillisecondClock = FourCharCode('mill'); { subtype: 1000ths since boot       }
 	systemMicrosecondClock = FourCharCode('micr'); { subtype: 1000000ths since boot }
+
+const
+>>>>>>> graemeg/cpstrnew
+=======
 
 const
 >>>>>>> graemeg/cpstrnew
@@ -534,6 +590,9 @@ const
    }
 	StandardCompressionSubTypeSound = FourCharCode('soun');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
   {
    * StandardCompressionSubTypeAudio is the StandardCompression
@@ -551,6 +610,7 @@ const
 type
 	SCModalFilterProcPtr = function( theDialog: DialogRef; var theEvent: EventRecord; var itemHit: SInt16; refcon: SIGNEDLONG ): Boolean;
 	SCModalFilterUPP = SCModalFilterProcPtr;
+<<<<<<< HEAD
 
 =======
 
@@ -570,6 +630,9 @@ type
 type
 	SCModalFilterProcPtr = function( theDialog: DialogRef; var theEvent: EventRecord; var itemHit: SInt16; refcon: SIGNEDLONG ): Boolean;
 	SCModalFilterUPP = SCModalFilterProcPtr;
+
+>>>>>>> graemeg/cpstrnew
+=======
 
 >>>>>>> graemeg/cpstrnew
 	SCModalHookProcPtr = function( theDialog: DialogRef; itemHit: SInt16; params: UnivPtr; refcon: SIGNEDLONG ): SInt16;
@@ -747,6 +810,15 @@ type
 {
  *  SCVideoMultiPassEncodingSettings
 <<<<<<< HEAD
+<<<<<<< HEAD
+ *  
+ *  Summary:
+ *    Struct for passing multi pass encoding settings through
+ *    scVideoMultiPassEncodingSettingsType
+ }
+type
+	SCVideoMultiPassEncodingSettings = record
+=======
  *  
  *  Summary:
  *    Struct for passing multi pass encoding settings through
@@ -1492,6 +1564,19 @@ function SCPositionRect( ci: ComponentInstance; var rp: Rect; var where: Point )
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+{
+ *  SCPositionDialog()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCPositionDialog( ci: ComponentInstance; id: SInt16; var where: Point ): ComponentResult; external name '_SCPositionDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 >>>>>>> graemeg/cpstrnew
 {
    * True if multi pass encoding can be performed.
@@ -1526,530 +1611,6 @@ const
  *    frame reordering and multi pass encoding settings.
  }
 const
-=======
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCPositionDialog( ci: ComponentInstance; id: SInt16; var where: Point ): ComponentResult; external name '_SCPositionDialog';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
-   * Indicates the client is ready to use the ICM compression session
-   * API to perform compression operations. StdCompression disables
-   * frame reordering and multi pass encoding if this flag is cleared.
-   }
-	scAllowEncodingWithCompressionSession = 1 shl 8;
-
-  {
-   * Indicates the client does not want the user to change the frame
-   * reordering setting.
-   }
-	scDisableFrameReorderingItem = 1 shl 9;
-
-  {
-   * Indicates the client does not want the user to change the multi
-   * pass encoding setting
-   }
-	scDisableMultiPassEncodingItem = 1 shl 10;
-
-
-{
-   ******************************************
-   StandardCompressionSubTypeAudio Properties
-   ******************************************
-}
-
-
-{
-   In StandardCompressionSubTypeAudio, instead of using Get/SetInfo, the developer will
-   get and set component properties.  (QTGetComponentPropertyInfo(), QTGetComponentProperty(),
-   QTSetComponentProperty(), QTAddComponentPropertyListener(), QTRemoveComponentPropertyListener())
-   These properties have a class and ID, instead of just a single selector.
-   Note that implementers of MovieExport "from procedures" getProperty procs (that choose
-   to opt-in to the new support; see kQTMovieExporterPropertyID_EnableHighResolutionAudioFeatures
-   in this header) will need to support these property IDs as new selectors.  In other
-   words, the MovieExporter getProperty proc API is not changing to add a class.  The
-   class is implied in that case.  Such procs, of course, do not implement any of the
-   list properties, or the non-settable properties, as well as some others.  The
-   properties getProperty procs can implement are marked below with the word "DataProc".
-}
-
-
-{
- *  Summary:
- *    ComponentPropertyClasses for StandardCompressionSubTypeAudio
- }
-const
-{
-   * All Component Properties used by StandardCompressionSubTypeAudio
-   * component use kQTPropertyClass_SCAudio, except for the following:
-   * kQTAudioPropertyID_FormatString - use kQTPropertyClass_Audio (see
-   * Movies.h) kQTAudioPropertyID_ChannelLayoutString - use
-   * kQTPropertyClass_Audio (see Movies.h)
-   * kQTAudioPropertyID_SampleRateString - use kQTPropertyClass_Audio
-   * (see Movies.h) kQTAudioPropertyID_SampleSizeString - use
-   * kQTPropertyClass_Audio (see Movies.h)
-   * kQTAudioPropertyID_BitRateString - use kQTPropertyClass_Audio (see
-   * Movies.h) kQTAudioPropertyID_SummaryString - use
-   * kQTPropertyClass_Audio (see Movies.h)
-   }
-	kQTPropertyClass_SCAudio = FourCharCode('scda');
-
-
-{
- *  Summary:
- *    ComponentPropertyID selectors for kQTPropertyClass_SCAudio
- }
-const
-{
-   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList:
-   * Specifies a client-restricted set of output compression formats
-   * that should be listed as available. Use QTGetComponentPropertyInfo
-   * to discover the number of bytes you should allocate to hold the
-   * array.
-   }
-	kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList = FourCharCode('crf#'); { C-style array of OSType's, Read/Write/Listen}
-
-  {
-   * kQTSCAudioPropertyID_AvailableCompressionFormatList: Specifies the
-   * list of available output compression formats. By default, this
-   * list includes all the kAudioEncoderComponentType components and
-   * kSoundCompressor type components on the system. The list may be
-   * restricted by clients using the
-   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList
-   * property. Use QTGetComponentPropertyInfo to discover the number of
-   * bytes you should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_AvailableCompressionFormatList = FourCharCode('acf#'); { C-style array of OSType's, Read/Listen }
-
-  {
-   * kQTSCAudioPropertyID_AvailableCompressionFormatNamesList:
-   * Specifies the human readable names for corresponding to each item
-   * in kQTSCAudioPropertyID_AvailableCompressionFormatList. Caller
-   * assumes responsibility for CFRelease()'ing the resulting
-   * CFArrayRef.
-   }
-	kQTSCAudioPropertyID_AvailableCompressionFormatNamesList = FourCharCode('cnm#'); { CFArrayRef of CFStringRef's, Read/Write }
-
-  {
-   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog: Some compression
-   * formats have format-specific properties that are only accessible
-   * via a compressor-provided dialog. 
-   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog lets you know if
-   * the current compression format has such a dialog.
-   }
-	kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog = FourCharCode('opn?'); { Boolean, Read/Listen }
-
-  {
-   * kQTSCAudioPropertyID_ConstantBitRateFormatsOnly: By default,
-   * constant as well as variable bit rate compression formats are
-   * shown in the available format list. a client may restrict the
-   * available formats to constant bit rate formats only by setting
-   * this property to true.
-   }
-	kQTSCAudioPropertyID_ConstantBitRateFormatsOnly = FourCharCode('!vbr'); { Boolean, Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList: Specifies a
-   * client-restricted set of output sample rate ranges that should be
-   * listed as available. Use QTGetComponentPropertyInfo to discover
-   * the number of bytes you should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_ClientRestrictedSampleRateList = FourCharCode('crr#'); { C-style array of AudioValueRange's, Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_AvailableSampleRateList: Specifies a list of
-   * available output sample rates.  This list is compression format
-   * specific, and takes into account any restrictions imposed by a
-   * client using the
-   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList property. Use
-   * QTGetComponentPropertyInfo to discover the number of bytes you
-   * should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_AvailableSampleRateList = FourCharCode('avr#'); { C-style array of AudioValueRange's, Read/Listen}
-
-  {
-   * kQTSCAudioPropertyID_ApplicableSampleRateList: Specifies which of
-   * the value ranges in the
-   * kQTSCAudioPropertyID_AvailableSampleRateList are currently
-   * applicable. The kQTSCAudioPropertyID_AvailableSampleRateList takes
-   * into account client restrictions, and a compression format's
-   * general sample rate restrictions. 
-   * kQTSCAudioPropertyID_ApplicableSampleRateList further filters the
-   * list to just those sample rates that are legal and valid given the
-   * current codec configuration.  Use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_ApplicableSampleRateList = FourCharCode('apr#'); { C-style array of AudioValueRanges, Read/Listen}
-
-  {
-   * kQTSCAudioPropertyID_SampleRateRecommended: Clients not wishing to
-   * set an output sample rate manually may set the output rate to the
-   * recommended rate.  Some compressors can perform rate conversion,
-   * and can pick optimal settings for a desired bitrate (AAC is an
-   * example).  For other formats, the "Recommended" rate is simply the
-   * closest output rate to the input rate that's allowed by the output
-   * format.  kQTSCAudioPropertyID_SampleRateIsRecommended is
-   * read-only.  To set the sample rate to recommended, a client sets
-   * the kQTSCAudioPropertyID_BasicDescription with mSampleRate = 0.0. 
-   * To unset the sample rate as recommended, the client sets the
-   * kQTSCAudioPropertyID_BasicDescription with a non-zero mSampleRate
-   * field.
-   }
-	kQTSCAudioPropertyID_SampleRateIsRecommended = FourCharCode('reco'); { Boolean, Read/Listen}
-
-  {
-   * kQTSCAudioPropertyID_InputMagicCookie: Some decompressors make use
-   * of untyped codec-specific data (a magic cookie) in order to decode
-   * their input. Magic cookies are variable size, so you must call
-   * QTGetComponentPropertyInfo in order to discover the size of the
-   * buffer you should allocate to hold the cookie.
-   }
-	kQTSCAudioPropertyID_InputMagicCookie = FourCharCode('ikki'); { void * (opaque data), Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_MagicCookie: Some compressors make use of
-   * untyped codec-specific data (a magic cookie) in order to configure
-   * their output. Magic cookies are variable size, so you must call
-   * QTGetComponentPropertyInfo in order to discover the size of the
-   * buffer you should allocate to hold the cookie.
-   }
-	kQTSCAudioPropertyID_MagicCookie = FourCharCode('kuki'); { void * (opaque data), Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList:
-   * Specifies a client-restricted set of output bits per channel that
-   * should be listed as available. Use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList = FourCharCode('crb#'); { C-style array of UInt32's, Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList: Specifies a
-   * list of available bits-per-channel.  This list is specific to
-   * LPCM, and takes into account any restrictions imposed by a client
-   * using the
-   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList
-   * property. Use QTGetComponentPropertyInfo to discover the number of
-   * bytes you should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList = FourCharCode('avb#'); { C-style array of UInt32's, Read/Listen }
-
-  {
-   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList: Specifies
-   * which of the values in the
-   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList are currently
-   * applicable. The
-   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList takes into
-   * account client restrictions, and LPCM's general bits per channel
-   * restrictions. 
-   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList further
-   * filters the list to just those bits per channel that are legal and
-   * valid given the current LPCM configuration.  Use
-   * QTGetComponentPropertyInfo to discover the number of bytes you
-   * should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList = FourCharCode('apb#'); { C-style array of UInt32's, Read/Listen}
-
-  {
-   * kQTSCAudioPropertyID_InputChannelLayout: Specifies the audio
-   * channel layout of the input description.  AudioChannelLayout is a
-   * variable size struct, so use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate.
-   }
-	kQTSCAudioPropertyID_InputChannelLayout = FourCharCode('icly'); { AudioChannelLayout (variable-size), Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_InputChannelLayoutName: Specifies the human
-   * readable name for kQTSCAudioPropertyID_InputChannelLayout (if one
-   * exists).  Caller assumes responsibility for CFRelease()'ing the
-   * resulting string.
-   }
-	kQTSCAudioPropertyID_InputChannelLayoutName = FourCharCode('icln'); { CFStringRef, Read }
-
-  {
-   * kQTSCAudioPropertyID_ChannelLayout: Specifies the audio channel
-   * layout of the output description.  AudioChannelLayout is a
-   * variable size struct, so use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate.
-   }
-	kQTSCAudioPropertyID_ChannelLayout = FourCharCode('clay'); { AudioChannelLayout (variable-size), Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_ChannelLayoutName: Specifies the human
-   * readable name for kQTSCAudioPropertyID_ChannelLayout (if one
-   * exists).  Caller assumes responsibility for CFRelease()'ing the
-   * resulting string.
-   }
-	kQTSCAudioPropertyID_ChannelLayoutName = FourCharCode('clyn'); { CFStringRef, Read }
-
-  {
-   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList:
-   * Specifies a client-restricted set of channel layout tags that
-   * should be listed as available. Use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList = FourCharCode('crl#'); { C-style array of AudioChannelLayoutTag's, Read/Write}
-
-  {
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList: Specifies a
-   * list of available audio channel layout tags.  This list is
-   * compression format specific, and takes into account any
-   * restrictions imposed by a client using the
-   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList
-   * property. Use QTGetComponentPropertyInfo to discover the number of
-   * bytes you should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_AvailableChannelLayoutTagList = FourCharCode('avl#'); { C-style array of AudioChannelLayoutTag's, Read/Listen }
-
-  {
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList: Specifies
-   * the human readable names for the AudioChannelLayoutTags in
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList. Each element
-   * in the array is a CFStringRef.  Caller assumes responsibility for
-   * CFRelease()'ing the array.
-   }
-	kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList = FourCharCode('vln#'); { CFArrayRef, Read}
-
-  {
-   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList: Specifies
-   * which of the values in the
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList are currently
-   * applicable. The kQTSCAudioPropertyID_AvailableChannelLayoutTagList
-   * takes into account client restrictions, and the current output
-   * format's general channel layout restrictions. 
-   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList further
-   * filters the list to just those channel layouts that are legal and
-   * valid given the current codec configuration.  Use
-   * QTGetComponentPropertyInfo to discover the number of bytes you
-   * should allocate to hold the array.
-   }
-	kQTSCAudioPropertyID_ApplicableChannelLayoutTagList = FourCharCode('apl#'); { C-style array of AudioChannelLayoutTag's, Read/Listen}
-
-  {
-   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList:
-   * Specifies the human readable names for the AudioChannelLayoutTags
-   * in kQTSCAudioPropertyID_ApplicableChannelLayoutTagList. Each
-   * element in the array is a CFStringRef.  Caller assumes
-   * responsibility for CFRelease()'ing the array.
-   }
-	kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList = FourCharCode('pln#'); { CFArrayRef, Read}
-
-  {
-   * kQTSCAudioPropertyID_ClientRestrictedLPCMFlags: Specifies a
-   * client-restricted set of flags corresponding to the mFormatFlags
-   * fields in an AudioStreamBasicDescription.  Data type is a
-   * SCAudioFormatFlagsRestrictions struct. For instance, if a client
-   * wishes to specify to the StandardAudioCompression component that
-   * his file format requires little endian pcm data, he may set this
-   * property, with formatFlagsMask set to kAudioFormatFlagIsBigEndian,
-   * and formatFlagsValues set to zero (indicating that the IsBigEndian
-   * bit should be interpreted as LittleEndian only).
-   }
-	kQTSCAudioPropertyID_ClientRestrictedLPCMFlags = FourCharCode('crlp'); { SCAudioFormatFlagsRestrictions (see below), Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_InputSoundDescription: Specifies the current
-   * input description as a SoundDescriptionHandle (lowest possible
-   * version for the current format).  When calling
-   * QTGetComponentProperty, the caller passes a pointer to an
-   * unallocated Handle, and assumes responsibility for calling
-   * DisposeHandle() when done.
-   }
-	kQTSCAudioPropertyID_InputSoundDescription = FourCharCode('isdh'); { SoundDescriptionHandle, Read/Write }
-
-  {
-   * kQTSCAudioPropertyID_SoundDescription: Specifies the current
-   * output description as a SoundDescriptionHandle (lowest possible
-   * version for the current format).  When calling
-   * QTGetComponentProperty, the caller passes a pointer to an
-   * unallocated Handle, and assumes responsibility for calling
-   * DisposeHandle() when done.
-   }
-	kQTSCAudioPropertyID_SoundDescription = FourCharCode('osdh'); { SoundDescriptionHandle, Read/Write }
-
-  {
-   * kQTSCAudioPropertyID_InputBasicDescription: Specifies the current
-   * input description as an AudioStreamBasicDescription.
-   }
-	kQTSCAudioPropertyID_InputBasicDescription = FourCharCode('isbd'); { AudioStreamBasicDescription, Read/Write/Listen/DataProc }
-
-  {
-   * kQTSCAudioPropertyID_BasicDescription: Specifies the current
-   * output description as an AudioStreamBasicDescription.
-   }
-	kQTSCAudioPropertyID_BasicDescription = FourCharCode('osbd'); { AudioStreamBasicDescription, Read/Write/Listen/DataProc }
-
-  {
-   * kQTSCAudioPropertyID_CodecSpecificSettingsArray: Some compressors
-   * publish a CFArray of CFDictionaries that describe various
-   * parameters specific to the configuring of the codec.  This array
-   * of dictionaries can be parsed to generate UI.  When any value in
-   * the array changes, a client should call QTSetComponentProperty,
-   * passing the entire array.
-   }
-	kQTSCAudioPropertyID_CodecSpecificSettingsArray = FourCharCode('cdst'); { CFArrayRef, Read/Write }
-
-  {
-   * kQTSCAudioPropertyID_BitRate: Specifies the current bitrate of the
-   * output audio format in bit per second. Note that this property may
-   * not be available for formats that are inherently very variable in
-   * bitrate and highly source-data dependent (such as Apple Lossless).
-   *  This property is available in QT 7.1 and later.
-   }
-	kQTSCAudioPropertyID_BitRate = kQTSoundDescriptionPropertyID_BitRate; { UInt32, Read}
-                                        { Old Sound Get/SetInfo types as property id's.}
-
-  {
-   * kQTSCAudioPropertyID_SettingsState: Used to save off the current
-   * state of the StandardCompressionSubTypeAudio component, such that
-   * the state may be restored at a later time with a single call.  The
-   * Handle returned from from QTGetComponentProperty(...
-   * kQTSCAudioPropertyID_SettingsState ...) contains classic atoms
-   * that have not been Endian flipped, so this Handle is not suitable
-   * for writing to disk.  If you wish to store settings from a
-   * scdi/audi component instance to disk (as a compression preset,
-   * etc.), use SCGetSettingsAsAtomContainer(), the result of which is
-   * a QTAtomContainer filled with settings that have been Endian
-   * flipped.  To restore a settings QTAtomContainer from disk at a
-   * later time, use SCSetSettingsFromAtomContainer().  Note that a
-   * scdi/audi instance will accept (via
-   * SCSetSettingsFromAtomContainer()) a QTAtomContainer produced by a
-   * legacy scdi/soun component.  And the QTAtomContainer produced by
-   * an scdi/audi component (using SCGetSettingsAsAtomContainer()) will
-   * contain settings that are backward compatible with a scdi/soun
-   * component, so long as the current state of the scdi/audi component
-   * instance reflects an output format capable of being described by a
-   * SoundDescriptionV1. Also note that the
-   * kQTSCAudioPropertyID_SettingsState Handle from a scdi/audi
-   * component and the Handle produced from a scdi/soun component's
-   * SCGetInfo(... scSettingsStateType ...) are not compatible with one
-   * another.
-   }
-	kQTSCAudioPropertyID_SettingsState = scSettingsStateType; { Handle, Read/Write }
-
-  {
-   * kQTSCAudioPropertyID_MaximumOutputPacketSize: Specifies the
-   * greatest size in bytes of a packet obtained using the
-   * SCAudioFillBuffer call. This size is dependent on the output
-   * format of the compression/decompression/transcode operation being
-   * performed.  This property is available in QT 7.1 and later.
-   * Maximum output packet size is a read-only property.
-   }
-	kQTSCAudioPropertyID_MaximumOutputPacketSize = FourCharCode('xops'); { UInt32, Read}
-
-  {
-   * kQTSCAudioPropertyID_OutputFormatIsExternallyFramed: Specifies
-   * whether the output format currently selected requires external
-   * framing information.  This information is necessary when using the
-   * SCAudioFillBuffer API call to determine whether
-   * AudioStreamPacketDescriptions must be passed.  If the format is
-   * externally framed, an array of AudioStreamPacketDescriptions must
-   * be passed to SCAudioFillBuffer, otherwise not.  This property is
-   * available in QT 7.1 and later. This property is read-only.
-   }
-	kQTSCAudioPropertyID_OutputFormatIsExternallyFramed = FourCharCode('fexf'); { Boolean, Read}
-
-  {
-   * kQTSCAudioPropertyID_RenderQuality: Specifies the quality with
-   * which QuickTime should render the audio stream during the
-   * compression/decompression/transcode operation.  Accepted constants
-   * are defined in Movies.h: kQTAudioRenderQuality_Max,
-   * kQTAudioRenderQuality_High, kQTAudioRenderQuality_Medium,
-   * kQTAudioRenderQuality_Low, kQTAudioRenderQuality_Min. This
-   * property is available in QT 7.1 and later.
-   }
-	kQTSCAudioPropertyID_RenderQuality = FourCharCode('qlty'); { UInt32, Read/Write/Listen}
-
-  {
-   * kQTSCAudioPropertyID_ExtendedProcs: Used to get/set an
-   * SCExtendedProcs struct.
-   }
-	kQTSCAudioPropertyID_ExtendedProcs = scExtendedProcsType; { SCExtendedProcs struct, Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_PreferenceFlags: Used to specify dialog
-   * preferences, such as scUseMovableModal.
-   }
-	kQTSCAudioPropertyID_PreferenceFlags = scPreferenceFlagsType; { SInt32, Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_WindowOptions: Used to set an
-   * SCWindowSettings struct, which tells the dialog about its parent
-   * window, so that it can draw itself as a sheet on top of the parent
-   * window.
-   }
-	kQTSCAudioPropertyID_WindowOptions = scWindowOptionsType; { SCWindowSettings struct, Read/Write/Listen }
-
-  {
-   * kQTSCAudioPropertyID_PreviewSourceMovie: Used for audio preview
-   * purposes. If a source movie has been specified prior to invoking
-   * the StdAudio dialog using SCRequestImageSettings(), the StdAudio
-   * dialog ui will contain an additional "preview/stop" button and a
-   * "play source" check box to allow quick toggling between the source
-   * audio and the encoded result.  The StdAudio dialog ui previews
-   * from the movie's current time (obtained from GetMovieTime()) and
-   * loops a segment of up to 10 seconds, starting at that time.  If
-   * the current movie time is at the end of the movie, the preview
-   * begins at the start of the movie instead.
-   }
-	kQTSCAudioPropertyID_PreviewSourceMovie = FourCharCode('prmv'); { Movie, Read/Write}
-
-  {
-   * kQTSCAudioPropertyID_PreviewSourceTrack: Used to specify a
-   * particular track for audio preview. The track must be found in the
-   * movie specified by kQTSCAudioPropertyID_PreviewSourceMovie.
-   }
-	kQTSCAudioPropertyID_PreviewSourceTrack = FourCharCode('prtk'); { Track, Read/Write}
-
-
-{
-   These are for movie export getProperty procs only (not SCAudio), so that variable size
-   properties can be handled in that API where there is no associated size parameter.
-   The getProperty proc can be asked the size first, then the caller can allocate memory
-   for the associated SCAudio property and call the getProperty proc again to get the
-   property.
-}
-const
-	movieExportChannelLayoutSize = FourCharCode('clsz'); { UInt32.  Proc only}
-	movieExportMagicCookieSize = FourCharCode('mcsz'); { UInt32.  Proc only}
-	movieExportUseHighResolutionAudioProperties = FourCharCode('hrau'); { Boolean. Proc only}
-
-
-{
- *  SCAudioFormatFlagsRestrictions
- *  
-<<<<<<< HEAD
- *  Summary:
- *    Struct describing the restrictions a client wishes to impose on
- *    the mFormatFlags fields of an AudioStreamBasicDescription.  In
- *    formatFlagsMask, the client specifies the fields to be
- *    restricted, and in formatFlagsValues, the client specifies the
- *    restricted value of each field set in the mask.
- }
-type
-	SCAudioFormatFlagsRestrictions = record
-{
-   * NOTE: Currently QuickTime only supports restrictions on the
-   * following bits: kAudioFormatFlagIsFloat,
-   * kAudioFormatFlagIsBigEndian, kAudioFormatFlagIsSignedInteger. If
-   * other bits are set in the formatFlagsMask, paramErr will be
-   * returned.
-   }
-		formatFlagsMask: UInt32;
-
-  {
-   * NOTE regarding the kAudioFormatFlagIsSignedInteger flag: Integer
-   * samples over 8 bits must always be signed.  Setting this bit
-   * applies to 8 bit integer samples only.
-   }
-		formatFlagsValues: UInt32;
-	end;
 =======
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
@@ -2063,6 +1624,530 @@ function SCSetTestImagePictHandle( ci: ComponentInstance; testPict: PicHandle; v
 
 >>>>>>> graemeg/cpstrnew
 {
+   * Indicates the client is ready to use the ICM compression session
+   * API to perform compression operations. StdCompression disables
+   * frame reordering and multi pass encoding if this flag is cleared.
+   }
+	scAllowEncodingWithCompressionSession = 1 shl 8;
+
+  {
+   * Indicates the client does not want the user to change the frame
+   * reordering setting.
+   }
+	scDisableFrameReorderingItem = 1 shl 9;
+
+  {
+   * Indicates the client does not want the user to change the multi
+   * pass encoding setting
+   }
+	scDisableMultiPassEncodingItem = 1 shl 10;
+
+
+{
+   ******************************************
+   StandardCompressionSubTypeAudio Properties
+   ******************************************
+}
+
+
+{
+   In StandardCompressionSubTypeAudio, instead of using Get/SetInfo, the developer will
+   get and set component properties.  (QTGetComponentPropertyInfo(), QTGetComponentProperty(),
+   QTSetComponentProperty(), QTAddComponentPropertyListener(), QTRemoveComponentPropertyListener())
+   These properties have a class and ID, instead of just a single selector.
+   Note that implementers of MovieExport "from procedures" getProperty procs (that choose
+   to opt-in to the new support; see kQTMovieExporterPropertyID_EnableHighResolutionAudioFeatures
+   in this header) will need to support these property IDs as new selectors.  In other
+   words, the MovieExporter getProperty proc API is not changing to add a class.  The
+   class is implied in that case.  Such procs, of course, do not implement any of the
+   list properties, or the non-settable properties, as well as some others.  The
+   properties getProperty procs can implement are marked below with the word "DataProc".
+}
+
+
+{
+ *  Summary:
+ *    ComponentPropertyClasses for StandardCompressionSubTypeAudio
+ }
+const
+{
+   * All Component Properties used by StandardCompressionSubTypeAudio
+   * component use kQTPropertyClass_SCAudio, except for the following:
+   * kQTAudioPropertyID_FormatString - use kQTPropertyClass_Audio (see
+   * Movies.h) kQTAudioPropertyID_ChannelLayoutString - use
+   * kQTPropertyClass_Audio (see Movies.h)
+   * kQTAudioPropertyID_SampleRateString - use kQTPropertyClass_Audio
+   * (see Movies.h) kQTAudioPropertyID_SampleSizeString - use
+   * kQTPropertyClass_Audio (see Movies.h)
+   * kQTAudioPropertyID_BitRateString - use kQTPropertyClass_Audio (see
+   * Movies.h) kQTAudioPropertyID_SummaryString - use
+   * kQTPropertyClass_Audio (see Movies.h)
+   }
+	kQTPropertyClass_SCAudio = FourCharCode('scda');
+
+
+{
+ *  Summary:
+ *    ComponentPropertyID selectors for kQTPropertyClass_SCAudio
+ }
+const
+{
+   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList:
+   * Specifies a client-restricted set of output compression formats
+   * that should be listed as available. Use QTGetComponentPropertyInfo
+   * to discover the number of bytes you should allocate to hold the
+   * array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList = FourCharCode('crf#'); { C-style array of OSType's, Read/Write/Listen}
+
+  {
+   * kQTSCAudioPropertyID_AvailableCompressionFormatList: Specifies the
+   * list of available output compression formats. By default, this
+   * list includes all the kAudioEncoderComponentType components and
+   * kSoundCompressor type components on the system. The list may be
+   * restricted by clients using the
+   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList
+   * property. Use QTGetComponentPropertyInfo to discover the number of
+   * bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableCompressionFormatList = FourCharCode('acf#'); { C-style array of OSType's, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableCompressionFormatNamesList:
+   * Specifies the human readable names for corresponding to each item
+   * in kQTSCAudioPropertyID_AvailableCompressionFormatList. Caller
+   * assumes responsibility for CFRelease()'ing the resulting
+   * CFArrayRef.
+   }
+	kQTSCAudioPropertyID_AvailableCompressionFormatNamesList = FourCharCode('cnm#'); { CFArrayRef of CFStringRef's, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog: Some compression
+   * formats have format-specific properties that are only accessible
+   * via a compressor-provided dialog. 
+   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog lets you know if
+   * the current compression format has such a dialog.
+   }
+	kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog = FourCharCode('opn?'); { Boolean, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ConstantBitRateFormatsOnly: By default,
+   * constant as well as variable bit rate compression formats are
+   * shown in the available format list. a client may restrict the
+   * available formats to constant bit rate formats only by setting
+   * this property to true.
+   }
+	kQTSCAudioPropertyID_ConstantBitRateFormatsOnly = FourCharCode('!vbr'); { Boolean, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList: Specifies a
+   * client-restricted set of output sample rate ranges that should be
+   * listed as available. Use QTGetComponentPropertyInfo to discover
+   * the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedSampleRateList = FourCharCode('crr#'); { C-style array of AudioValueRange's, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableSampleRateList: Specifies a list of
+   * available output sample rates.  This list is compression format
+   * specific, and takes into account any restrictions imposed by a
+   * client using the
+   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList property. Use
+   * QTGetComponentPropertyInfo to discover the number of bytes you
+   * should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableSampleRateList = FourCharCode('avr#'); { C-style array of AudioValueRange's, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_ApplicableSampleRateList: Specifies which of
+   * the value ranges in the
+   * kQTSCAudioPropertyID_AvailableSampleRateList are currently
+   * applicable. The kQTSCAudioPropertyID_AvailableSampleRateList takes
+   * into account client restrictions, and a compression format's
+   * general sample rate restrictions. 
+   * kQTSCAudioPropertyID_ApplicableSampleRateList further filters the
+   * list to just those sample rates that are legal and valid given the
+   * current codec configuration.  Use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ApplicableSampleRateList = FourCharCode('apr#'); { C-style array of AudioValueRanges, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_SampleRateRecommended: Clients not wishing to
+   * set an output sample rate manually may set the output rate to the
+   * recommended rate.  Some compressors can perform rate conversion,
+   * and can pick optimal settings for a desired bitrate (AAC is an
+   * example).  For other formats, the "Recommended" rate is simply the
+   * closest output rate to the input rate that's allowed by the output
+   * format.  kQTSCAudioPropertyID_SampleRateIsRecommended is
+   * read-only.  To set the sample rate to recommended, a client sets
+   * the kQTSCAudioPropertyID_BasicDescription with mSampleRate = 0.0. 
+   * To unset the sample rate as recommended, the client sets the
+   * kQTSCAudioPropertyID_BasicDescription with a non-zero mSampleRate
+   * field.
+   }
+	kQTSCAudioPropertyID_SampleRateIsRecommended = FourCharCode('reco'); { Boolean, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_InputMagicCookie: Some decompressors make use
+   * of untyped codec-specific data (a magic cookie) in order to decode
+   * their input. Magic cookies are variable size, so you must call
+   * QTGetComponentPropertyInfo in order to discover the size of the
+   * buffer you should allocate to hold the cookie.
+   }
+	kQTSCAudioPropertyID_InputMagicCookie = FourCharCode('ikki'); { void * (opaque data), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_MagicCookie: Some compressors make use of
+   * untyped codec-specific data (a magic cookie) in order to configure
+   * their output. Magic cookies are variable size, so you must call
+   * QTGetComponentPropertyInfo in order to discover the size of the
+   * buffer you should allocate to hold the cookie.
+   }
+	kQTSCAudioPropertyID_MagicCookie = FourCharCode('kuki'); { void * (opaque data), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList:
+   * Specifies a client-restricted set of output bits per channel that
+   * should be listed as available. Use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList = FourCharCode('crb#'); { C-style array of UInt32's, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList: Specifies a
+   * list of available bits-per-channel.  This list is specific to
+   * LPCM, and takes into account any restrictions imposed by a client
+   * using the
+   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList
+   * property. Use QTGetComponentPropertyInfo to discover the number of
+   * bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList = FourCharCode('avb#'); { C-style array of UInt32's, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList: Specifies
+   * which of the values in the
+   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList are currently
+   * applicable. The
+   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList takes into
+   * account client restrictions, and LPCM's general bits per channel
+   * restrictions. 
+   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList further
+   * filters the list to just those bits per channel that are legal and
+   * valid given the current LPCM configuration.  Use
+   * QTGetComponentPropertyInfo to discover the number of bytes you
+   * should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList = FourCharCode('apb#'); { C-style array of UInt32's, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_InputChannelLayout: Specifies the audio
+   * channel layout of the input description.  AudioChannelLayout is a
+   * variable size struct, so use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate.
+   }
+	kQTSCAudioPropertyID_InputChannelLayout = FourCharCode('icly'); { AudioChannelLayout (variable-size), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_InputChannelLayoutName: Specifies the human
+   * readable name for kQTSCAudioPropertyID_InputChannelLayout (if one
+   * exists).  Caller assumes responsibility for CFRelease()'ing the
+   * resulting string.
+   }
+	kQTSCAudioPropertyID_InputChannelLayoutName = FourCharCode('icln'); { CFStringRef, Read }
+
+  {
+   * kQTSCAudioPropertyID_ChannelLayout: Specifies the audio channel
+   * layout of the output description.  AudioChannelLayout is a
+   * variable size struct, so use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate.
+   }
+	kQTSCAudioPropertyID_ChannelLayout = FourCharCode('clay'); { AudioChannelLayout (variable-size), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ChannelLayoutName: Specifies the human
+   * readable name for kQTSCAudioPropertyID_ChannelLayout (if one
+   * exists).  Caller assumes responsibility for CFRelease()'ing the
+   * resulting string.
+   }
+	kQTSCAudioPropertyID_ChannelLayoutName = FourCharCode('clyn'); { CFStringRef, Read }
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList:
+   * Specifies a client-restricted set of channel layout tags that
+   * should be listed as available. Use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList = FourCharCode('crl#'); { C-style array of AudioChannelLayoutTag's, Read/Write}
+
+  {
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList: Specifies a
+   * list of available audio channel layout tags.  This list is
+   * compression format specific, and takes into account any
+   * restrictions imposed by a client using the
+   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList
+   * property. Use QTGetComponentPropertyInfo to discover the number of
+   * bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableChannelLayoutTagList = FourCharCode('avl#'); { C-style array of AudioChannelLayoutTag's, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList: Specifies
+   * the human readable names for the AudioChannelLayoutTags in
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList. Each element
+   * in the array is a CFStringRef.  Caller assumes responsibility for
+   * CFRelease()'ing the array.
+   }
+	kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList = FourCharCode('vln#'); { CFArrayRef, Read}
+
+  {
+   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList: Specifies
+   * which of the values in the
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList are currently
+   * applicable. The kQTSCAudioPropertyID_AvailableChannelLayoutTagList
+   * takes into account client restrictions, and the current output
+   * format's general channel layout restrictions. 
+   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList further
+   * filters the list to just those channel layouts that are legal and
+   * valid given the current codec configuration.  Use
+   * QTGetComponentPropertyInfo to discover the number of bytes you
+   * should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ApplicableChannelLayoutTagList = FourCharCode('apl#'); { C-style array of AudioChannelLayoutTag's, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList:
+   * Specifies the human readable names for the AudioChannelLayoutTags
+   * in kQTSCAudioPropertyID_ApplicableChannelLayoutTagList. Each
+   * element in the array is a CFStringRef.  Caller assumes
+   * responsibility for CFRelease()'ing the array.
+   }
+	kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList = FourCharCode('pln#'); { CFArrayRef, Read}
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedLPCMFlags: Specifies a
+   * client-restricted set of flags corresponding to the mFormatFlags
+   * fields in an AudioStreamBasicDescription.  Data type is a
+   * SCAudioFormatFlagsRestrictions struct. For instance, if a client
+   * wishes to specify to the StandardAudioCompression component that
+   * his file format requires little endian pcm data, he may set this
+   * property, with formatFlagsMask set to kAudioFormatFlagIsBigEndian,
+   * and formatFlagsValues set to zero (indicating that the IsBigEndian
+   * bit should be interpreted as LittleEndian only).
+   }
+	kQTSCAudioPropertyID_ClientRestrictedLPCMFlags = FourCharCode('crlp'); { SCAudioFormatFlagsRestrictions (see below), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_InputSoundDescription: Specifies the current
+   * input description as a SoundDescriptionHandle (lowest possible
+   * version for the current format).  When calling
+   * QTGetComponentProperty, the caller passes a pointer to an
+   * unallocated Handle, and assumes responsibility for calling
+   * DisposeHandle() when done.
+   }
+	kQTSCAudioPropertyID_InputSoundDescription = FourCharCode('isdh'); { SoundDescriptionHandle, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_SoundDescription: Specifies the current
+   * output description as a SoundDescriptionHandle (lowest possible
+   * version for the current format).  When calling
+   * QTGetComponentProperty, the caller passes a pointer to an
+   * unallocated Handle, and assumes responsibility for calling
+   * DisposeHandle() when done.
+   }
+	kQTSCAudioPropertyID_SoundDescription = FourCharCode('osdh'); { SoundDescriptionHandle, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_InputBasicDescription: Specifies the current
+   * input description as an AudioStreamBasicDescription.
+   }
+	kQTSCAudioPropertyID_InputBasicDescription = FourCharCode('isbd'); { AudioStreamBasicDescription, Read/Write/Listen/DataProc }
+
+  {
+   * kQTSCAudioPropertyID_BasicDescription: Specifies the current
+   * output description as an AudioStreamBasicDescription.
+   }
+	kQTSCAudioPropertyID_BasicDescription = FourCharCode('osbd'); { AudioStreamBasicDescription, Read/Write/Listen/DataProc }
+
+  {
+   * kQTSCAudioPropertyID_CodecSpecificSettingsArray: Some compressors
+   * publish a CFArray of CFDictionaries that describe various
+   * parameters specific to the configuring of the codec.  This array
+   * of dictionaries can be parsed to generate UI.  When any value in
+   * the array changes, a client should call QTSetComponentProperty,
+   * passing the entire array.
+   }
+	kQTSCAudioPropertyID_CodecSpecificSettingsArray = FourCharCode('cdst'); { CFArrayRef, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_BitRate: Specifies the current bitrate of the
+   * output audio format in bit per second. Note that this property may
+   * not be available for formats that are inherently very variable in
+   * bitrate and highly source-data dependent (such as Apple Lossless).
+   *  This property is available in QT 7.1 and later.
+   }
+	kQTSCAudioPropertyID_BitRate = kQTSoundDescriptionPropertyID_BitRate; { UInt32, Read}
+                                        { Old Sound Get/SetInfo types as property id's.}
+
+  {
+   * kQTSCAudioPropertyID_SettingsState: Used to save off the current
+   * state of the StandardCompressionSubTypeAudio component, such that
+   * the state may be restored at a later time with a single call.  The
+   * Handle returned from from QTGetComponentProperty(...
+   * kQTSCAudioPropertyID_SettingsState ...) contains classic atoms
+   * that have not been Endian flipped, so this Handle is not suitable
+   * for writing to disk.  If you wish to store settings from a
+   * scdi/audi component instance to disk (as a compression preset,
+   * etc.), use SCGetSettingsAsAtomContainer(), the result of which is
+   * a QTAtomContainer filled with settings that have been Endian
+   * flipped.  To restore a settings QTAtomContainer from disk at a
+   * later time, use SCSetSettingsFromAtomContainer().  Note that a
+   * scdi/audi instance will accept (via
+   * SCSetSettingsFromAtomContainer()) a QTAtomContainer produced by a
+   * legacy scdi/soun component.  And the QTAtomContainer produced by
+   * an scdi/audi component (using SCGetSettingsAsAtomContainer()) will
+   * contain settings that are backward compatible with a scdi/soun
+   * component, so long as the current state of the scdi/audi component
+   * instance reflects an output format capable of being described by a
+   * SoundDescriptionV1. Also note that the
+   * kQTSCAudioPropertyID_SettingsState Handle from a scdi/audi
+   * component and the Handle produced from a scdi/soun component's
+   * SCGetInfo(... scSettingsStateType ...) are not compatible with one
+   * another.
+   }
+	kQTSCAudioPropertyID_SettingsState = scSettingsStateType; { Handle, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_MaximumOutputPacketSize: Specifies the
+   * greatest size in bytes of a packet obtained using the
+   * SCAudioFillBuffer call. This size is dependent on the output
+   * format of the compression/decompression/transcode operation being
+   * performed.  This property is available in QT 7.1 and later.
+   * Maximum output packet size is a read-only property.
+   }
+	kQTSCAudioPropertyID_MaximumOutputPacketSize = FourCharCode('xops'); { UInt32, Read}
+
+  {
+   * kQTSCAudioPropertyID_OutputFormatIsExternallyFramed: Specifies
+   * whether the output format currently selected requires external
+   * framing information.  This information is necessary when using the
+   * SCAudioFillBuffer API call to determine whether
+   * AudioStreamPacketDescriptions must be passed.  If the format is
+   * externally framed, an array of AudioStreamPacketDescriptions must
+   * be passed to SCAudioFillBuffer, otherwise not.  This property is
+   * available in QT 7.1 and later. This property is read-only.
+   }
+	kQTSCAudioPropertyID_OutputFormatIsExternallyFramed = FourCharCode('fexf'); { Boolean, Read}
+
+  {
+   * kQTSCAudioPropertyID_RenderQuality: Specifies the quality with
+   * which QuickTime should render the audio stream during the
+   * compression/decompression/transcode operation.  Accepted constants
+   * are defined in Movies.h: kQTAudioRenderQuality_Max,
+   * kQTAudioRenderQuality_High, kQTAudioRenderQuality_Medium,
+   * kQTAudioRenderQuality_Low, kQTAudioRenderQuality_Min. This
+   * property is available in QT 7.1 and later.
+   }
+	kQTSCAudioPropertyID_RenderQuality = FourCharCode('qlty'); { UInt32, Read/Write/Listen}
+
+  {
+   * kQTSCAudioPropertyID_ExtendedProcs: Used to get/set an
+   * SCExtendedProcs struct.
+   }
+	kQTSCAudioPropertyID_ExtendedProcs = scExtendedProcsType; { SCExtendedProcs struct, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_PreferenceFlags: Used to specify dialog
+   * preferences, such as scUseMovableModal.
+   }
+	kQTSCAudioPropertyID_PreferenceFlags = scPreferenceFlagsType; { SInt32, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_WindowOptions: Used to set an
+   * SCWindowSettings struct, which tells the dialog about its parent
+   * window, so that it can draw itself as a sheet on top of the parent
+   * window.
+   }
+	kQTSCAudioPropertyID_WindowOptions = scWindowOptionsType; { SCWindowSettings struct, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_PreviewSourceMovie: Used for audio preview
+   * purposes. If a source movie has been specified prior to invoking
+   * the StdAudio dialog using SCRequestImageSettings(), the StdAudio
+   * dialog ui will contain an additional "preview/stop" button and a
+   * "play source" check box to allow quick toggling between the source
+   * audio and the encoded result.  The StdAudio dialog ui previews
+   * from the movie's current time (obtained from GetMovieTime()) and
+   * loops a segment of up to 10 seconds, starting at that time.  If
+   * the current movie time is at the end of the movie, the preview
+   * begins at the start of the movie instead.
+   }
+	kQTSCAudioPropertyID_PreviewSourceMovie = FourCharCode('prmv'); { Movie, Read/Write}
+
+  {
+   * kQTSCAudioPropertyID_PreviewSourceTrack: Used to specify a
+   * particular track for audio preview. The track must be found in the
+   * movie specified by kQTSCAudioPropertyID_PreviewSourceMovie.
+   }
+	kQTSCAudioPropertyID_PreviewSourceTrack = FourCharCode('prtk'); { Track, Read/Write}
+
+
+{
+   These are for movie export getProperty procs only (not SCAudio), so that variable size
+   properties can be handled in that API where there is no associated size parameter.
+   The getProperty proc can be asked the size first, then the caller can allocate memory
+   for the associated SCAudio property and call the getProperty proc again to get the
+   property.
+}
+const
+	movieExportChannelLayoutSize = FourCharCode('clsz'); { UInt32.  Proc only}
+	movieExportMagicCookieSize = FourCharCode('mcsz'); { UInt32.  Proc only}
+	movieExportUseHighResolutionAudioProperties = FourCharCode('hrau'); { Boolean. Proc only}
+
+
+{
+ *  SCAudioFormatFlagsRestrictions
+ *  
+<<<<<<< HEAD
+ *  Summary:
+ *    Struct describing the restrictions a client wishes to impose on
+ *    the mFormatFlags fields of an AudioStreamBasicDescription.  In
+ *    formatFlagsMask, the client specifies the fields to be
+ *    restricted, and in formatFlagsValues, the client specifies the
+ *    restricted value of each field set in the mask.
+ }
+type
+	SCAudioFormatFlagsRestrictions = record
+{
+   * NOTE: Currently QuickTime only supports restrictions on the
+   * following bits: kAudioFormatFlagIsFloat,
+   * kAudioFormatFlagIsBigEndian, kAudioFormatFlagIsSignedInteger. If
+   * other bits are set in the formatFlagsMask, paramErr will be
+   * returned.
+   }
+		formatFlagsMask: UInt32;
+
+  {
+   * NOTE regarding the kAudioFormatFlagIsSignedInteger flag: Integer
+   * samples over 8 bits must always be signed.  Setting this bit
+   * applies to 8 bit integer samples only.
+   }
+		formatFlagsValues: UInt32;
+	end;
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCSetTestImagePictFile( ci: ComponentInstance; testFileRef: SInt16; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePictFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
  *  SCAudioInvokeLegacyCodecOptionsDialog()
  *  
  *  Discussion:
@@ -2093,7 +2178,829 @@ function SCAudioInvokeLegacyCodecOptionsDialog( ci: ComponentInstance ): Compone
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+function SCSetTestImagePixMap( ci: ComponentInstance; testPixMap: PixMapHandle; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePixMap';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+   *************************************************
+   StandardCompressionSubTypeAudio Compression API's
+   *************************************************
+}
+
+{
+   The StandardCompressionSubTypeAudio component provides an SCAudioFillBuffer
+   call with the same parameters and behaviors of AudioConverterFillComplexBuffer.
+   One important difference between the AudioConverter and SCAudio component is
+   that the SCAudio compression API's can do mixing as well as n -> n channels 
+   conversion.  A client wishes to compress/decompress/transcode audio using
+   the SCAudioFillBuffer interface configures the StandardCompressionSubTypeAudio 
+   component with the desired input and output formats (or uses the SCRequestImageSettings
+   API to present a dialog and let a user pick an output format), then calls
+   SCAudioFillBuffer, providing an SCAudioInputDataProc callback which will be
+   called for audio in the specified source format.
+}
+
+
+{
+ *  SCAudioInputDataProc
+ *  
+ *  Discussion:
+ *    Clients using the SCAudioFillBuffer API call must provide an
+ *    input data proc in which they provide source packets of audio.
+ *    SCAudioInputDataProc is available in QT 7.1 and later.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      The client's connection to a StdAudio Compression component
+ *    
+ *    ioNumberDataPackets:
+ *      On input, the number of audio packets requested. On output, the
+ *      number of audio packets you've actually provided.
+ *    
+ *    ioData:
+ *      An AudioBufferList in which you store the requested data.
+ *    
+ *    outDataPacketDescription:
+ *      An array of AudioStreamPacketDescriptions you provide to inform
+ *      downstream components how to decode your externally framed
+ *      audio packets.
+ *    
+ *    inRefCon:
+ *      The ref con you provided to SCAudioFillBuffer.
+ *  
+ *  Result:
+ *    ComponentResult An error code you return.
+ }
+type
+	SCAudioInputDataProc = function( ci: ComponentInstance; var ioNumberDataPackets: UInt32; var ioData: AudioBufferList; var outDataPacketDescription: AudioStreamPacketDescriptionPtr; inRefCon: UnivPtr ): ComponentResult;
+
+
+{
+ *  SCAudioFillBuffer()
+ *  
+ *  Discussion:
+ *    Used to pull compressed frames from the StdAudio component in
+ *    kQTSCAudioPropertyID_BasicDescription format.  The StdAudio
+ *    component can perform any combination of
+ *    decompression/mixing/compression, combining the facilities of
+ *    CoreAudio AudioConverters and Matrix Mixer AudioUnits.  The
+ *    behavior of the SCAudioFillBuffer call (signalling end of data,
+ *    etc.) is identical to the AudioConverter's
+ *    AudioConverterFillComplexBuffer API.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      The client's connection to a StdAudio Compression component
+ *    
+ *    inInputDataProc:
+ *      The proc address of the function that will be called to supply
+ *      data in the kQTSCAudioPropertyID_InputBasicDescription format
+ *      to SCAudio.
+ *    
+ *    inInputDataProcRefCon:
+ *      The client refcon that will be passed to the user-provided
+ *      SCAudioInputDataProc function.
+ *    
+ *    ioOutputDataPacketSize:
+ *      On input, the number of desired packets.  On output, the actual
+ *      number of packets delivered (can be fewer than the input
+ *      desired packets).
+ *    
+ *    outOutputData:
+ *      An AudioBufferList providing sufficiently large buffers to hold
+ *      the requested number of packets.
+ *    
+ *    outPacketDescription:
+ *      An array of AudioStreamPacketDescriptions.  If the requested
+ *      output format requires external framing info (i.e. a VBR format
+ *      such as AAC), allocate and pass an array of packet descriptions
+ *      as large as the number of packets you are requesting.
+ *  
+ *  Result:
+ *    ComponentResult
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function SCAudioFillBuffer( ci: ComponentInstance; inInputDataProc: SCAudioInputDataProc; inInputDataProcRefCon: UnivPtr; var ioOutputDataPacketSize: UInt32; var outOutputData: AudioBufferList; var outPacketDescription: AudioStreamPacketDescription ): ComponentResult; external name '_SCAudioFillBuffer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCGetBestDeviceRect( ci: ComponentInstance; var r: Rect ): ComponentResult; external name '_SCGetBestDeviceRect';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  SCAudioReset()
+ *  
+ *  Discussion:
+ *    Used to reset an SCAudio conversion chain, flushing any latency
+ *    present in internal buffers
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      The client's connection to a StdAudio Compression component
+ *  
+ *  Result:
+ *    ComponentResult
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function SCAudioReset( ci: ComponentInstance ): ComponentResult; external name '_SCAudioReset';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+// #define SCGetCompression(ci, params, where) SCGetCompressionExtended(ci,params,where,0,0,0,0)
+{* These are Progress procedures *}
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCRequestImageSettings( ci: ComponentInstance ): ComponentResult; external name '_SCRequestImageSettings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  SCGetCompressionExtended()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function SCGetCompressionExtended( ci: ComponentInstance; var params: SCParams; where: Point; filterProc: SCModalFilterUPP; hookProc: SCModalHookUPP; refcon: SIGNEDLONG; customName: StringPtr ): ComponentResult; external name '_SCGetCompressionExtended';
+=======
+function SCCompressImage( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var desc: ImageDescriptionHandle; var data: Handle ): ComponentResult; external name '_SCCompressImage';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SCPositionRect()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function SCPositionRect( ci: ComponentInstance; var rp: Rect; var where: Point ): ComponentResult; external name '_SCPositionRect';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function SCCompressPicture( ci: ComponentInstance; srcPicture: PicHandle; dstPicture: PicHandle ): ComponentResult; external name '_SCCompressPicture';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+   * True if multi pass encoding can be performed.
+   }
+		allowMultiPassEncoding: Boolean;
+		maxEncodingPassCount: UInt8;
+	end;
+
+{
+ *  Summary:
+ *    SCGetInfo/SetInfo Selectors
+ }
+const
+{
+   * Specifies if frame reordering can occur in encoding.
+   }
+	scVideoAllowFrameReorderingType = FourCharCode('bfra'); { pointer to Boolean}
+
+  {
+   * The settings to control multi pass encoding.
+   }
+	scVideoMultiPassEncodingSettingsType = FourCharCode('mpes'); { pointer to SCVideoMultiPassEncodingSettings struct}
+
+
+{
+ *  Summary:
+ *    Preference Flags for scPreferenceFlagsType
+ *  
+<<<<<<< HEAD
+ *  Discussion:
+ *    Preference flags that specify how StdCompression should handle
+ *    frame reordering and multi pass encoding settings.
+ }
+const
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function SCPositionDialog( ci: ComponentInstance; id: SInt16; var where: Point ): ComponentResult; external name '_SCPositionDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function SCCompressPictureFile( ci: ComponentInstance; srcRefNum: SInt16; dstRefNum: SInt16 ): ComponentResult; external name '_SCCompressPictureFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+   * Indicates the client is ready to use the ICM compression session
+   * API to perform compression operations. StdCompression disables
+   * frame reordering and multi pass encoding if this flag is cleared.
+   }
+	scAllowEncodingWithCompressionSession = 1 shl 8;
+
+  {
+   * Indicates the client does not want the user to change the frame
+   * reordering setting.
+   }
+	scDisableFrameReorderingItem = 1 shl 9;
+
+  {
+   * Indicates the client does not want the user to change the multi
+   * pass encoding setting
+   }
+	scDisableMultiPassEncodingItem = 1 shl 10;
+
+
+{
+   ******************************************
+   StandardCompressionSubTypeAudio Properties
+   ******************************************
+}
+
+
+{
+   In StandardCompressionSubTypeAudio, instead of using Get/SetInfo, the developer will
+   get and set component properties.  (QTGetComponentPropertyInfo(), QTGetComponentProperty(),
+   QTSetComponentProperty(), QTAddComponentPropertyListener(), QTRemoveComponentPropertyListener())
+   These properties have a class and ID, instead of just a single selector.
+   Note that implementers of MovieExport "from procedures" getProperty procs (that choose
+   to opt-in to the new support; see kQTMovieExporterPropertyID_EnableHighResolutionAudioFeatures
+   in this header) will need to support these property IDs as new selectors.  In other
+   words, the MovieExporter getProperty proc API is not changing to add a class.  The
+   class is implied in that case.  Such procs, of course, do not implement any of the
+   list properties, or the non-settable properties, as well as some others.  The
+   properties getProperty procs can implement are marked below with the word "DataProc".
+}
+
+
+{
+ *  Summary:
+ *    ComponentPropertyClasses for StandardCompressionSubTypeAudio
+ }
+const
+{
+   * All Component Properties used by StandardCompressionSubTypeAudio
+   * component use kQTPropertyClass_SCAudio, except for the following:
+   * kQTAudioPropertyID_FormatString - use kQTPropertyClass_Audio (see
+   * Movies.h) kQTAudioPropertyID_ChannelLayoutString - use
+   * kQTPropertyClass_Audio (see Movies.h)
+   * kQTAudioPropertyID_SampleRateString - use kQTPropertyClass_Audio
+   * (see Movies.h) kQTAudioPropertyID_SampleSizeString - use
+   * kQTPropertyClass_Audio (see Movies.h)
+   * kQTAudioPropertyID_BitRateString - use kQTPropertyClass_Audio (see
+   * Movies.h) kQTAudioPropertyID_SummaryString - use
+   * kQTPropertyClass_Audio (see Movies.h)
+   }
+	kQTPropertyClass_SCAudio = FourCharCode('scda');
+
+
+{
+ *  Summary:
+ *    ComponentPropertyID selectors for kQTPropertyClass_SCAudio
+ }
+const
+{
+   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList:
+   * Specifies a client-restricted set of output compression formats
+   * that should be listed as available. Use QTGetComponentPropertyInfo
+   * to discover the number of bytes you should allocate to hold the
+   * array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList = FourCharCode('crf#'); { C-style array of OSType's, Read/Write/Listen}
+
+  {
+   * kQTSCAudioPropertyID_AvailableCompressionFormatList: Specifies the
+   * list of available output compression formats. By default, this
+   * list includes all the kAudioEncoderComponentType components and
+   * kSoundCompressor type components on the system. The list may be
+   * restricted by clients using the
+   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList
+   * property. Use QTGetComponentPropertyInfo to discover the number of
+   * bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableCompressionFormatList = FourCharCode('acf#'); { C-style array of OSType's, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableCompressionFormatNamesList:
+   * Specifies the human readable names for corresponding to each item
+   * in kQTSCAudioPropertyID_AvailableCompressionFormatList. Caller
+   * assumes responsibility for CFRelease()'ing the resulting
+   * CFArrayRef.
+   }
+	kQTSCAudioPropertyID_AvailableCompressionFormatNamesList = FourCharCode('cnm#'); { CFArrayRef of CFStringRef's, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog: Some compression
+   * formats have format-specific properties that are only accessible
+   * via a compressor-provided dialog. 
+   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog lets you know if
+   * the current compression format has such a dialog.
+   }
+	kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog = FourCharCode('opn?'); { Boolean, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ConstantBitRateFormatsOnly: By default,
+   * constant as well as variable bit rate compression formats are
+   * shown in the available format list. a client may restrict the
+   * available formats to constant bit rate formats only by setting
+   * this property to true.
+   }
+	kQTSCAudioPropertyID_ConstantBitRateFormatsOnly = FourCharCode('!vbr'); { Boolean, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList: Specifies a
+   * client-restricted set of output sample rate ranges that should be
+   * listed as available. Use QTGetComponentPropertyInfo to discover
+   * the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedSampleRateList = FourCharCode('crr#'); { C-style array of AudioValueRange's, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableSampleRateList: Specifies a list of
+   * available output sample rates.  This list is compression format
+   * specific, and takes into account any restrictions imposed by a
+   * client using the
+   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList property. Use
+   * QTGetComponentPropertyInfo to discover the number of bytes you
+   * should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableSampleRateList = FourCharCode('avr#'); { C-style array of AudioValueRange's, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_ApplicableSampleRateList: Specifies which of
+   * the value ranges in the
+   * kQTSCAudioPropertyID_AvailableSampleRateList are currently
+   * applicable. The kQTSCAudioPropertyID_AvailableSampleRateList takes
+   * into account client restrictions, and a compression format's
+   * general sample rate restrictions. 
+   * kQTSCAudioPropertyID_ApplicableSampleRateList further filters the
+   * list to just those sample rates that are legal and valid given the
+   * current codec configuration.  Use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ApplicableSampleRateList = FourCharCode('apr#'); { C-style array of AudioValueRanges, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_SampleRateRecommended: Clients not wishing to
+   * set an output sample rate manually may set the output rate to the
+   * recommended rate.  Some compressors can perform rate conversion,
+   * and can pick optimal settings for a desired bitrate (AAC is an
+   * example).  For other formats, the "Recommended" rate is simply the
+   * closest output rate to the input rate that's allowed by the output
+   * format.  kQTSCAudioPropertyID_SampleRateIsRecommended is
+   * read-only.  To set the sample rate to recommended, a client sets
+   * the kQTSCAudioPropertyID_BasicDescription with mSampleRate = 0.0. 
+   * To unset the sample rate as recommended, the client sets the
+   * kQTSCAudioPropertyID_BasicDescription with a non-zero mSampleRate
+   * field.
+   }
+	kQTSCAudioPropertyID_SampleRateIsRecommended = FourCharCode('reco'); { Boolean, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_InputMagicCookie: Some decompressors make use
+   * of untyped codec-specific data (a magic cookie) in order to decode
+   * their input. Magic cookies are variable size, so you must call
+   * QTGetComponentPropertyInfo in order to discover the size of the
+   * buffer you should allocate to hold the cookie.
+   }
+	kQTSCAudioPropertyID_InputMagicCookie = FourCharCode('ikki'); { void * (opaque data), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_MagicCookie: Some compressors make use of
+   * untyped codec-specific data (a magic cookie) in order to configure
+   * their output. Magic cookies are variable size, so you must call
+   * QTGetComponentPropertyInfo in order to discover the size of the
+   * buffer you should allocate to hold the cookie.
+   }
+	kQTSCAudioPropertyID_MagicCookie = FourCharCode('kuki'); { void * (opaque data), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList:
+   * Specifies a client-restricted set of output bits per channel that
+   * should be listed as available. Use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList = FourCharCode('crb#'); { C-style array of UInt32's, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList: Specifies a
+   * list of available bits-per-channel.  This list is specific to
+   * LPCM, and takes into account any restrictions imposed by a client
+   * using the
+   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList
+   * property. Use QTGetComponentPropertyInfo to discover the number of
+   * bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList = FourCharCode('avb#'); { C-style array of UInt32's, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList: Specifies
+   * which of the values in the
+   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList are currently
+   * applicable. The
+   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList takes into
+   * account client restrictions, and LPCM's general bits per channel
+   * restrictions. 
+   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList further
+   * filters the list to just those bits per channel that are legal and
+   * valid given the current LPCM configuration.  Use
+   * QTGetComponentPropertyInfo to discover the number of bytes you
+   * should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList = FourCharCode('apb#'); { C-style array of UInt32's, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_InputChannelLayout: Specifies the audio
+   * channel layout of the input description.  AudioChannelLayout is a
+   * variable size struct, so use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate.
+   }
+	kQTSCAudioPropertyID_InputChannelLayout = FourCharCode('icly'); { AudioChannelLayout (variable-size), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_InputChannelLayoutName: Specifies the human
+   * readable name for kQTSCAudioPropertyID_InputChannelLayout (if one
+   * exists).  Caller assumes responsibility for CFRelease()'ing the
+   * resulting string.
+   }
+	kQTSCAudioPropertyID_InputChannelLayoutName = FourCharCode('icln'); { CFStringRef, Read }
+
+  {
+   * kQTSCAudioPropertyID_ChannelLayout: Specifies the audio channel
+   * layout of the output description.  AudioChannelLayout is a
+   * variable size struct, so use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate.
+   }
+	kQTSCAudioPropertyID_ChannelLayout = FourCharCode('clay'); { AudioChannelLayout (variable-size), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_ChannelLayoutName: Specifies the human
+   * readable name for kQTSCAudioPropertyID_ChannelLayout (if one
+   * exists).  Caller assumes responsibility for CFRelease()'ing the
+   * resulting string.
+   }
+	kQTSCAudioPropertyID_ChannelLayoutName = FourCharCode('clyn'); { CFStringRef, Read }
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList:
+   * Specifies a client-restricted set of channel layout tags that
+   * should be listed as available. Use QTGetComponentPropertyInfo to
+   * discover the number of bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList = FourCharCode('crl#'); { C-style array of AudioChannelLayoutTag's, Read/Write}
+
+  {
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList: Specifies a
+   * list of available audio channel layout tags.  This list is
+   * compression format specific, and takes into account any
+   * restrictions imposed by a client using the
+   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList
+   * property. Use QTGetComponentPropertyInfo to discover the number of
+   * bytes you should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_AvailableChannelLayoutTagList = FourCharCode('avl#'); { C-style array of AudioChannelLayoutTag's, Read/Listen }
+
+  {
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList: Specifies
+   * the human readable names for the AudioChannelLayoutTags in
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList. Each element
+   * in the array is a CFStringRef.  Caller assumes responsibility for
+   * CFRelease()'ing the array.
+   }
+	kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList = FourCharCode('vln#'); { CFArrayRef, Read}
+
+  {
+   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList: Specifies
+   * which of the values in the
+   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList are currently
+   * applicable. The kQTSCAudioPropertyID_AvailableChannelLayoutTagList
+   * takes into account client restrictions, and the current output
+   * format's general channel layout restrictions. 
+   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList further
+   * filters the list to just those channel layouts that are legal and
+   * valid given the current codec configuration.  Use
+   * QTGetComponentPropertyInfo to discover the number of bytes you
+   * should allocate to hold the array.
+   }
+	kQTSCAudioPropertyID_ApplicableChannelLayoutTagList = FourCharCode('apl#'); { C-style array of AudioChannelLayoutTag's, Read/Listen}
+
+  {
+   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList:
+   * Specifies the human readable names for the AudioChannelLayoutTags
+   * in kQTSCAudioPropertyID_ApplicableChannelLayoutTagList. Each
+   * element in the array is a CFStringRef.  Caller assumes
+   * responsibility for CFRelease()'ing the array.
+   }
+	kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList = FourCharCode('pln#'); { CFArrayRef, Read}
+
+  {
+   * kQTSCAudioPropertyID_ClientRestrictedLPCMFlags: Specifies a
+   * client-restricted set of flags corresponding to the mFormatFlags
+   * fields in an AudioStreamBasicDescription.  Data type is a
+   * SCAudioFormatFlagsRestrictions struct. For instance, if a client
+   * wishes to specify to the StandardAudioCompression component that
+   * his file format requires little endian pcm data, he may set this
+   * property, with formatFlagsMask set to kAudioFormatFlagIsBigEndian,
+   * and formatFlagsValues set to zero (indicating that the IsBigEndian
+   * bit should be interpreted as LittleEndian only).
+   }
+	kQTSCAudioPropertyID_ClientRestrictedLPCMFlags = FourCharCode('crlp'); { SCAudioFormatFlagsRestrictions (see below), Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_InputSoundDescription: Specifies the current
+   * input description as a SoundDescriptionHandle (lowest possible
+   * version for the current format).  When calling
+   * QTGetComponentProperty, the caller passes a pointer to an
+   * unallocated Handle, and assumes responsibility for calling
+   * DisposeHandle() when done.
+   }
+	kQTSCAudioPropertyID_InputSoundDescription = FourCharCode('isdh'); { SoundDescriptionHandle, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_SoundDescription: Specifies the current
+   * output description as a SoundDescriptionHandle (lowest possible
+   * version for the current format).  When calling
+   * QTGetComponentProperty, the caller passes a pointer to an
+   * unallocated Handle, and assumes responsibility for calling
+   * DisposeHandle() when done.
+   }
+	kQTSCAudioPropertyID_SoundDescription = FourCharCode('osdh'); { SoundDescriptionHandle, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_InputBasicDescription: Specifies the current
+   * input description as an AudioStreamBasicDescription.
+   }
+	kQTSCAudioPropertyID_InputBasicDescription = FourCharCode('isbd'); { AudioStreamBasicDescription, Read/Write/Listen/DataProc }
+
+  {
+   * kQTSCAudioPropertyID_BasicDescription: Specifies the current
+   * output description as an AudioStreamBasicDescription.
+   }
+	kQTSCAudioPropertyID_BasicDescription = FourCharCode('osbd'); { AudioStreamBasicDescription, Read/Write/Listen/DataProc }
+
+  {
+   * kQTSCAudioPropertyID_CodecSpecificSettingsArray: Some compressors
+   * publish a CFArray of CFDictionaries that describe various
+   * parameters specific to the configuring of the codec.  This array
+   * of dictionaries can be parsed to generate UI.  When any value in
+   * the array changes, a client should call QTSetComponentProperty,
+   * passing the entire array.
+   }
+	kQTSCAudioPropertyID_CodecSpecificSettingsArray = FourCharCode('cdst'); { CFArrayRef, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_BitRate: Specifies the current bitrate of the
+   * output audio format in bit per second. Note that this property may
+   * not be available for formats that are inherently very variable in
+   * bitrate and highly source-data dependent (such as Apple Lossless).
+   *  This property is available in QT 7.1 and later.
+   }
+	kQTSCAudioPropertyID_BitRate = kQTSoundDescriptionPropertyID_BitRate; { UInt32, Read}
+                                        { Old Sound Get/SetInfo types as property id's.}
+
+  {
+   * kQTSCAudioPropertyID_SettingsState: Used to save off the current
+   * state of the StandardCompressionSubTypeAudio component, such that
+   * the state may be restored at a later time with a single call.  The
+   * Handle returned from from QTGetComponentProperty(...
+   * kQTSCAudioPropertyID_SettingsState ...) contains classic atoms
+   * that have not been Endian flipped, so this Handle is not suitable
+   * for writing to disk.  If you wish to store settings from a
+   * scdi/audi component instance to disk (as a compression preset,
+   * etc.), use SCGetSettingsAsAtomContainer(), the result of which is
+   * a QTAtomContainer filled with settings that have been Endian
+   * flipped.  To restore a settings QTAtomContainer from disk at a
+   * later time, use SCSetSettingsFromAtomContainer().  Note that a
+   * scdi/audi instance will accept (via
+   * SCSetSettingsFromAtomContainer()) a QTAtomContainer produced by a
+   * legacy scdi/soun component.  And the QTAtomContainer produced by
+   * an scdi/audi component (using SCGetSettingsAsAtomContainer()) will
+   * contain settings that are backward compatible with a scdi/soun
+   * component, so long as the current state of the scdi/audi component
+   * instance reflects an output format capable of being described by a
+   * SoundDescriptionV1. Also note that the
+   * kQTSCAudioPropertyID_SettingsState Handle from a scdi/audi
+   * component and the Handle produced from a scdi/soun component's
+   * SCGetInfo(... scSettingsStateType ...) are not compatible with one
+   * another.
+   }
+	kQTSCAudioPropertyID_SettingsState = scSettingsStateType; { Handle, Read/Write }
+
+  {
+   * kQTSCAudioPropertyID_MaximumOutputPacketSize: Specifies the
+   * greatest size in bytes of a packet obtained using the
+   * SCAudioFillBuffer call. This size is dependent on the output
+   * format of the compression/decompression/transcode operation being
+   * performed.  This property is available in QT 7.1 and later.
+   * Maximum output packet size is a read-only property.
+   }
+	kQTSCAudioPropertyID_MaximumOutputPacketSize = FourCharCode('xops'); { UInt32, Read}
+
+  {
+   * kQTSCAudioPropertyID_OutputFormatIsExternallyFramed: Specifies
+   * whether the output format currently selected requires external
+   * framing information.  This information is necessary when using the
+   * SCAudioFillBuffer API call to determine whether
+   * AudioStreamPacketDescriptions must be passed.  If the format is
+   * externally framed, an array of AudioStreamPacketDescriptions must
+   * be passed to SCAudioFillBuffer, otherwise not.  This property is
+   * available in QT 7.1 and later. This property is read-only.
+   }
+	kQTSCAudioPropertyID_OutputFormatIsExternallyFramed = FourCharCode('fexf'); { Boolean, Read}
+
+  {
+   * kQTSCAudioPropertyID_RenderQuality: Specifies the quality with
+   * which QuickTime should render the audio stream during the
+   * compression/decompression/transcode operation.  Accepted constants
+   * are defined in Movies.h: kQTAudioRenderQuality_Max,
+   * kQTAudioRenderQuality_High, kQTAudioRenderQuality_Medium,
+   * kQTAudioRenderQuality_Low, kQTAudioRenderQuality_Min. This
+   * property is available in QT 7.1 and later.
+   }
+	kQTSCAudioPropertyID_RenderQuality = FourCharCode('qlty'); { UInt32, Read/Write/Listen}
+
+  {
+   * kQTSCAudioPropertyID_ExtendedProcs: Used to get/set an
+   * SCExtendedProcs struct.
+   }
+	kQTSCAudioPropertyID_ExtendedProcs = scExtendedProcsType; { SCExtendedProcs struct, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_PreferenceFlags: Used to specify dialog
+   * preferences, such as scUseMovableModal.
+   }
+	kQTSCAudioPropertyID_PreferenceFlags = scPreferenceFlagsType; { SInt32, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_WindowOptions: Used to set an
+   * SCWindowSettings struct, which tells the dialog about its parent
+   * window, so that it can draw itself as a sheet on top of the parent
+   * window.
+   }
+	kQTSCAudioPropertyID_WindowOptions = scWindowOptionsType; { SCWindowSettings struct, Read/Write/Listen }
+
+  {
+   * kQTSCAudioPropertyID_PreviewSourceMovie: Used for audio preview
+   * purposes. If a source movie has been specified prior to invoking
+   * the StdAudio dialog using SCRequestImageSettings(), the StdAudio
+   * dialog ui will contain an additional "preview/stop" button and a
+   * "play source" check box to allow quick toggling between the source
+   * audio and the encoded result.  The StdAudio dialog ui previews
+   * from the movie's current time (obtained from GetMovieTime()) and
+   * loops a segment of up to 10 seconds, starting at that time.  If
+   * the current movie time is at the end of the movie, the preview
+   * begins at the start of the movie instead.
+   }
+	kQTSCAudioPropertyID_PreviewSourceMovie = FourCharCode('prmv'); { Movie, Read/Write}
+
+  {
+   * kQTSCAudioPropertyID_PreviewSourceTrack: Used to specify a
+   * particular track for audio preview. The track must be found in the
+   * movie specified by kQTSCAudioPropertyID_PreviewSourceMovie.
+   }
+	kQTSCAudioPropertyID_PreviewSourceTrack = FourCharCode('prtk'); { Track, Read/Write}
+
+
+{
+   These are for movie export getProperty procs only (not SCAudio), so that variable size
+   properties can be handled in that API where there is no associated size parameter.
+   The getProperty proc can be asked the size first, then the caller can allocate memory
+   for the associated SCAudio property and call the getProperty proc again to get the
+   property.
+}
+const
+	movieExportChannelLayoutSize = FourCharCode('clsz'); { UInt32.  Proc only}
+	movieExportMagicCookieSize = FourCharCode('mcsz'); { UInt32.  Proc only}
+	movieExportUseHighResolutionAudioProperties = FourCharCode('hrau'); { Boolean. Proc only}
+
+
+{
+ *  SCAudioFormatFlagsRestrictions
+ *  
+<<<<<<< HEAD
+ *  Summary:
+ *    Struct describing the restrictions a client wishes to impose on
+ *    the mFormatFlags fields of an AudioStreamBasicDescription.  In
+ *    formatFlagsMask, the client specifies the fields to be
+ *    restricted, and in formatFlagsValues, the client specifies the
+ *    restricted value of each field set in the mask.
+ }
+type
+	SCAudioFormatFlagsRestrictions = record
+{
+   * NOTE: Currently QuickTime only supports restrictions on the
+   * following bits: kAudioFormatFlagIsFloat,
+   * kAudioFormatFlagIsBigEndian, kAudioFormatFlagIsSignedInteger. If
+   * other bits are set in the formatFlagsMask, paramErr will be
+   * returned.
+   }
+		formatFlagsMask: UInt32;
+
+  {
+   * NOTE regarding the kAudioFormatFlagIsSignedInteger flag: Integer
+   * samples over 8 bits must always be signed.  Setting this bit
+   * applies to 8 bit integer samples only.
+   }
+		formatFlagsValues: UInt32;
+	end;
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function SCSetTestImagePictHandle( ci: ComponentInstance; testPict: PicHandle; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePictHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function SCRequestSequenceSettings( ci: ComponentInstance ): ComponentResult; external name '_SCRequestSequenceSettings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  SCAudioInvokeLegacyCodecOptionsDialog()
+ *  
+ *  Discussion:
+ *    If kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog is true,
+ *    SCAudioInvokeLegacyCodecOptionsDialog invokes the compressor's
+ *    options dialog. Note - this call blocks until the options dialog
+ *    "OK" or "Cancel" buttons are pressed.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      The client's connection to a StdAudio Compression component
+ *  
+ *  Result:
+ *    ComponentResult
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function SCAudioInvokeLegacyCodecOptionsDialog( ci: ComponentInstance ): ComponentResult; external name '_SCAudioInvokeLegacyCodecOptionsDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+=======
+=======
+>>>>>>> graemeg/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
 function SCSetTestImagePictFile( ci: ComponentInstance; testFileRef: SInt16; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePictFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function SCCompressSequenceBegin( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var desc: ImageDescriptionHandle ): ComponentResult; external name '_SCCompressSequenceBegin';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 
@@ -2201,6 +3108,7 @@ type
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -2208,12 +3116,19 @@ type
 function SCAudioFillBuffer( ci: ComponentInstance; inInputDataProc: SCAudioInputDataProc; inInputDataProcRefCon: UnivPtr; var ioOutputDataPacketSize: UInt32; var outOutputData: AudioBufferList; var outPacketDescription: AudioStreamPacketDescription ): ComponentResult; external name '_SCAudioFillBuffer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SCSetTestImagePixMap( ci: ComponentInstance; testPixMap: PixMapHandle; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePixMap';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function SCCompressSequenceFrame( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var data: Handle; var dataSize: SIGNEDLONG; var notSyncFlag: SInt16 ): ComponentResult; external name '_SCCompressSequenceFrame';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 
@@ -2235,6 +3150,7 @@ function SCSetTestImagePixMap( ci: ComponentInstance; testPixMap: PixMapHandle; 
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -2246,20 +3162,30 @@ function SCAudioReset( ci: ComponentInstance ): ComponentResult; external name '
 // #define SCGetCompression(ci, params, where) SCGetCompressionExtended(ci,params,where,0,0,0,0)
 {* These are Progress procedures *}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SCGetBestDeviceRect( ci: ComponentInstance; var r: Rect ): ComponentResult; external name '_SCGetBestDeviceRect';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function SCCompressSequenceEnd( ci: ComponentInstance ): ComponentResult; external name '_SCCompressSequenceEnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  SCGetCompressionExtended()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  *  
@@ -2271,12 +3197,19 @@ function SCGetBestDeviceRect( ci: ComponentInstance; var r: Rect ): ComponentRes
 function SCAudioFillBuffer( ci: ComponentInstance; inInputDataProc: SCAudioInputDataProc; inInputDataProcRefCon: UnivPtr; var ioOutputDataPacketSize: UInt32; var outOutputData: AudioBufferList; var outPacketDescription: AudioStreamPacketDescription ): ComponentResult; external name '_SCAudioFillBuffer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SCRequestImageSettings( ci: ComponentInstance ): ComponentResult; external name '_SCRequestImageSettings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function SCDefaultPictHandleSettings( ci: ComponentInstance; srcPicture: PicHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictHandleSettings';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 
@@ -2298,6 +3231,7 @@ function SCRequestImageSettings( ci: ComponentInstance ): ComponentResult; exter
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -2309,12 +3243,21 @@ function SCAudioReset( ci: ComponentInstance ): ComponentResult; external name '
 // #define SCGetCompression(ci, params, where) SCGetCompressionExtended(ci,params,where,0,0,0,0)
 {* These are Progress procedures *}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SCCompressImage( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var desc: ImageDescriptionHandle; var data: Handle ): ComponentResult; external name '_SCCompressImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function SCDefaultPictFileSettings( ci: ComponentInstance; srcRef: SInt16; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictFileSettings';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2324,6 +3267,9 @@ function SCCompressImage( ci: ComponentInstance; src: PixMapHandle; const (*var*
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2333,9 +3279,13 @@ function SCCompressImage( ci: ComponentInstance; src: PixMapHandle; const (*var*
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SCGetCompressionExtended( ci: ComponentInstance; var params: SCParams; where: Point; filterProc: SCModalFilterUPP; hookProc: SCModalHookUPP; refcon: SIGNEDLONG; customName: StringPtr ): ComponentResult; external name '_SCGetCompressionExtended';
 =======
 function SCCompressPicture( ci: ComponentInstance; srcPicture: PicHandle; dstPicture: PicHandle ): ComponentResult; external name '_SCCompressPicture';
+>>>>>>> graemeg/cpstrnew
+=======
+function SCDefaultPixMapSettings( ci: ComponentInstance; src: PixMapHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPixMapSettings';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -2350,9 +3300,13 @@ function SCCompressPicture( ci: ComponentInstance; srcPicture: PicHandle; dstPic
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SCPositionRect( ci: ComponentInstance; var rp: Rect; var where: Point ): ComponentResult; external name '_SCPositionRect';
 =======
 function SCCompressPictureFile( ci: ComponentInstance; srcRefNum: SInt16; dstRefNum: SInt16 ): ComponentResult; external name '_SCCompressPictureFile';
+>>>>>>> graemeg/cpstrnew
+=======
+function SCGetInfo( ci: ComponentInstance; infoType: OSType; info: UnivPtr ): ComponentResult; external name '_SCGetInfo';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -2363,11 +3317,18 @@ function SCCompressPictureFile( ci: ComponentInstance; srcRefNum: SInt16; dstRef
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SCPositionDialog( ci: ComponentInstance; id: SInt16; var where: Point ): ComponentResult; external name '_SCPositionDialog';
+=======
+function SCSetInfo( ci: ComponentInstance; infoType: OSType; info: UnivPtr ): ComponentResult; external name '_SCSetInfo';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2376,6 +3337,9 @@ function SCPositionDialog( ci: ComponentInstance; id: SInt16; var where: Point )
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2383,9 +3347,13 @@ function SCPositionDialog( ci: ComponentInstance; id: SInt16; var where: Point )
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SCSetTestImagePictHandle( ci: ComponentInstance; testPict: PicHandle; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePictHandle';
 =======
 function SCRequestSequenceSettings( ci: ComponentInstance ): ComponentResult; external name '_SCRequestSequenceSettings';
+>>>>>>> graemeg/cpstrnew
+=======
+function SCNewGWorld( ci: ComponentInstance; var gwp: GWorldPtr; var rp: Rect; flags: GWorldFlags ): ComponentResult; external name '_SCNewGWorld';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -2396,11 +3364,18 @@ function SCRequestSequenceSettings( ci: ComponentInstance ): ComponentResult; ex
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SCSetTestImagePictFile( ci: ComponentInstance; testFileRef: SInt16; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePictFile';
+=======
+function SCSetCompressFlags( ci: ComponentInstance; flags: SIGNEDLONG ): ComponentResult; external name '_SCSetCompressFlags';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2409,6 +3384,9 @@ function SCSetTestImagePictFile( ci: ComponentInstance; testFileRef: SInt16; var
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2416,9 +3394,13 @@ function SCSetTestImagePictFile( ci: ComponentInstance; testFileRef: SInt16; var
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SCSetTestImagePixMap( ci: ComponentInstance; testPixMap: PixMapHandle; var testRect: Rect; testFlags: SInt16 ): ComponentResult; external name '_SCSetTestImagePixMap';
 =======
 function SCCompressSequenceBegin( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var desc: ImageDescriptionHandle ): ComponentResult; external name '_SCCompressSequenceBegin';
+>>>>>>> graemeg/cpstrnew
+=======
+function SCGetCompressFlags( ci: ComponentInstance; var flags: SIGNEDLONG ): ComponentResult; external name '_SCGetCompressFlags';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -2429,11 +3411,19 @@ function SCCompressSequenceBegin( ci: ComponentInstance; src: PixMapHandle; cons
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function SCGetBestDeviceRect( ci: ComponentInstance; var r: Rect ): ComponentResult; external name '_SCGetBestDeviceRect';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCGetSettingsAsText( ci: ComponentInstance; var text: Handle ): ComponentResult; external name '_SCGetSettingsAsText';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2442,6 +3432,7 @@ function SCGetBestDeviceRect( ci: ComponentInstance; var r: Rect ): ComponentRes
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2453,6 +3444,13 @@ function SCRequestImageSettings( ci: ComponentInstance ): ComponentResult; exter
 =======
 function SCCompressSequenceFrame( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var data: Handle; var dataSize: SIGNEDLONG; var notSyncFlag: SInt16 ): ComponentResult; external name '_SCCompressSequenceFrame';
 >>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCGetSettingsAsAtomContainer( ci: ComponentInstance; var settings: QTAtomContainer ): ComponentResult; external name '_SCGetSettingsAsAtomContainer';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2462,6 +3460,7 @@ function SCCompressSequenceFrame( ci: ComponentInstance; src: PixMapHandle; cons
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2470,11 +3469,23 @@ function SCCompressImage( ci: ComponentInstance; src: PixMapHandle; const (*var*
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCSetSettingsFromAtomContainer( ci: ComponentInstance; settings: QTAtomContainer ): ComponentResult; external name '_SCSetSettingsFromAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Note: if you're using SCCompressSequenceFrameAsync with a scForceKeyValue setting, you must call SCAsyncIdle occasionally at main task time. }
+>>>>>>> graemeg/cpstrnew
 {
  *  SCCompressPicture()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -2486,6 +3497,13 @@ function SCCompressPicture( ci: ComponentInstance; srcPicture: PicHandle; dstPic
 =======
 function SCCompressSequenceEnd( ci: ComponentInstance ): ComponentResult; external name '_SCCompressSequenceEnd';
 >>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function SCCompressSequenceFrameAsync( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var data: Handle; var dataSize: SIGNEDLONG; var notSyncFlag: SInt16; asyncCompletionProc: ICMCompletionProcRecordPtr ): ComponentResult; external name '_SCCompressSequenceFrameAsync';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2494,6 +3512,7 @@ function SCCompressSequenceEnd( ci: ComponentInstance ): ComponentResult; extern
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2508,231 +3527,7 @@ function SCCompressPictureFile( ci: ComponentInstance; srcRefNum: SInt16; dstRef
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 <<<<<<< HEAD
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCRequestSequenceSettings( ci: ComponentInstance ): ComponentResult; external name '_SCRequestSequenceSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCCompressSequenceBegin()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 =======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-<<<<<<< HEAD
-function SCCompressSequenceBegin( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var desc: ImageDescriptionHandle ): ComponentResult; external name '_SCCompressSequenceBegin';
-=======
-function SCDefaultPictHandleSettings( ci: ComponentInstance; srcPicture: PicHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictHandleSettings';
->>>>>>> graemeg/cpstrnew
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCCompressSequenceFrame()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCCompressSequenceFrame( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var data: Handle; var dataSize: SIGNEDLONG; var notSyncFlag: SInt16 ): ComponentResult; external name '_SCCompressSequenceFrame';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCCompressSequenceEnd()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-<<<<<<< HEAD
-function SCCompressSequenceEnd( ci: ComponentInstance ): ComponentResult; external name '_SCCompressSequenceEnd';
-=======
-function SCDefaultPictFileSettings( ci: ComponentInstance; srcRef: SInt16; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictFileSettings';
->>>>>>> graemeg/cpstrnew
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCDefaultPictHandleSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCDefaultPictHandleSettings( ci: ComponentInstance; srcPicture: PicHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictHandleSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCDefaultPictFileSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCDefaultPictFileSettings( ci: ComponentInstance; srcRef: SInt16; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictFileSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCDefaultPixMapSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCDefaultPixMapSettings( ci: ComponentInstance; src: PixMapHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPixMapSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCGetInfo()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCGetInfo( ci: ComponentInstance; infoType: OSType; info: UnivPtr ): ComponentResult; external name '_SCGetInfo';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCSetInfo()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCSetInfo( ci: ComponentInstance; infoType: OSType; info: UnivPtr ): ComponentResult; external name '_SCSetInfo';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCNewGWorld()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCNewGWorld( ci: ComponentInstance; var gwp: GWorldPtr; var rp: Rect; flags: GWorldFlags ): ComponentResult; external name '_SCNewGWorld';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCSetCompressFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCSetCompressFlags( ci: ComponentInstance; flags: SIGNEDLONG ): ComponentResult; external name '_SCSetCompressFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCGetCompressFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCGetCompressFlags( ci: ComponentInstance; var flags: SIGNEDLONG ): ComponentResult; external name '_SCGetCompressFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCGetSettingsAsText()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCGetSettingsAsText( ci: ComponentInstance; var text: Handle ): ComponentResult; external name '_SCGetSettingsAsText';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCGetSettingsAsAtomContainer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCGetSettingsAsAtomContainer( ci: ComponentInstance; var settings: QTAtomContainer ): ComponentResult; external name '_SCGetSettingsAsAtomContainer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCSetSettingsFromAtomContainer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function SCSetSettingsFromAtomContainer( ci: ComponentInstance; settings: QTAtomContainer ): ComponentResult; external name '_SCSetSettingsFromAtomContainer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{ Note: if you're using SCCompressSequenceFrameAsync with a scForceKeyValue setting, you must call SCAsyncIdle occasionally at main task time. }
-{
- *  SCCompressSequenceFrameAsync()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function SCCompressSequenceFrameAsync( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var data: Handle; var dataSize: SIGNEDLONG; var notSyncFlag: SInt16; asyncCompletionProc: ICMCompletionProcRecordPtr ): ComponentResult; external name '_SCCompressSequenceFrameAsync';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  SCAsyncIdle()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
@@ -2793,38 +3588,57 @@ function TweenerInitialize( tc: TweenerComponent; container: QTAtomContainer; tw
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function SCRequestSequenceSettings( ci: ComponentInstance ): ComponentResult; external name '_SCRequestSequenceSettings';
+=======
 function TweenerDoTween( tc: TweenerComponent; var tr: TweenRecord ): ComponentResult; external name '_TweenerDoTween';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TweenerReset()
+ *  SCCompressSequenceBegin()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function SCCompressSequenceBegin( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var desc: ImageDescriptionHandle ): ComponentResult; external name '_SCCompressSequenceBegin';
+=======
+function SCDefaultPictHandleSettings( ci: ComponentInstance; srcPicture: PicHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictHandleSettings';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SCCompressSequenceFrame()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
 function TweenerReset( tc: TweenerComponent ): ComponentResult; external name '_TweenerReset';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
-<<<<<<< HEAD
 const
 	TCSourceRefNameType = FourCharCode('name');
 
 const
-=======
-const
-	TCSourceRefNameType = FourCharCode('name');
-
-const
->>>>>>> graemeg/cpstrnew
 	tcDropFrame = 1 shl 0;
 	tc24HourMax = 1 shl 1;
 	tcNegTimesOK = 1 shl 2;
@@ -2928,29 +3742,47 @@ function TCGetCurrentTimeCode( mh: MediaHandler; var frameNum: SIGNEDLONG; var t
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function SCCompressSequenceFrame( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var data: Handle; var dataSize: SIGNEDLONG; var notSyncFlag: SInt16 ): ComponentResult; external name '_SCCompressSequenceFrame';
+=======
 function TCGetTimeCodeAtTime( mh: MediaHandler; mediaTime: TimeValue; var frameNum: SIGNEDLONG; var tcdef: TimeCodeDef; var tcdata: TimeCodeRecord; var srcRefH: UserData ): HandlerError; external name '_TCGetTimeCodeAtTime';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCTimeCodeToString()
+ *  SCCompressSequenceEnd()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function SCCompressSequenceEnd( ci: ComponentInstance ): ComponentResult; external name '_SCCompressSequenceEnd';
+=======
+function SCDefaultPictFileSettings( ci: ComponentInstance; srcRef: SInt16; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictFileSettings';
+>>>>>>> graemeg/cpstrnew
+=======
 function TCTimeCodeToString( mh: MediaHandler; var tcdef: TimeCodeDef; var tcrec: TimeCodeRecord; tcStr: StringPtr ): HandlerError; external name '_TCTimeCodeToString';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCTimeCodeToFrameNumber()
+ *  SCDefaultPictHandleSettings()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
@@ -2958,131 +3790,210 @@ function TCTimeCodeToString( mh: MediaHandler; var tcdef: TimeCodeDef; var tcrec
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function SCDefaultPictHandleSettings( ci: ComponentInstance; srcPicture: PicHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictHandleSettings';
+=======
 function TCTimeCodeToFrameNumber( mh: MediaHandler; var tcdef: TimeCodeDef; var tcrec: TimeCodeRecord; var frameNumber: SIGNEDLONG ): HandlerError; external name '_TCTimeCodeToFrameNumber';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCFrameNumberToTimeCode()
+ *  SCDefaultPictFileSettings()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function SCDefaultPictFileSettings( ci: ComponentInstance; srcRef: SInt16; motion: SInt16 ): ComponentResult; external name '_SCDefaultPictFileSettings';
+=======
 function TCFrameNumberToTimeCode( mh: MediaHandler; frameNumber: SIGNEDLONG; var tcdef: TimeCodeDef; var tcrec: TimeCodeRecord ): HandlerError; external name '_TCFrameNumberToTimeCode';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCGetSourceRef()
+ *  SCDefaultPixMapSettings()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function SCDefaultPixMapSettings( ci: ComponentInstance; src: PixMapHandle; motion: SInt16 ): ComponentResult; external name '_SCDefaultPixMapSettings';
+=======
 function TCGetSourceRef( mh: MediaHandler; tcdH: TimeCodeDescriptionHandle; var srefH: UserData ): HandlerError; external name '_TCGetSourceRef';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCSetSourceRef()
+ *  SCGetInfo()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+function SCGetInfo( ci: ComponentInstance; infoType: OSType; info: UnivPtr ): ComponentResult; external name '_SCGetInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SCSetInfo()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function SCSetInfo( ci: ComponentInstance; infoType: OSType; info: UnivPtr ): ComponentResult; external name '_SCSetInfo';
+=======
 function TCSetSourceRef( mh: MediaHandler; tcdH: TimeCodeDescriptionHandle; srefH: UserData ): HandlerError; external name '_TCSetSourceRef';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCSetTimeCodeFlags()
+ *  SCNewGWorld()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-function TCSetTimeCodeFlags( mh: MediaHandler; flags: SIGNEDLONG; flagsMask: SIGNEDLONG ): HandlerError; external name '_TCSetTimeCodeFlags';
+function SCNewGWorld( ci: ComponentInstance; var gwp: GWorldPtr; var rp: Rect; flags: GWorldFlags ): ComponentResult; external name '_SCNewGWorld';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCGetTimeCodeFlags()
+ *  SCSetCompressFlags()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function SCSetCompressFlags( ci: ComponentInstance; flags: SIGNEDLONG ): ComponentResult; external name '_SCSetCompressFlags';
+=======
+function TCSetTimeCodeFlags( mh: MediaHandler; flags: SIGNEDLONG; flagsMask: SIGNEDLONG ): HandlerError; external name '_TCSetTimeCodeFlags';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SCGetCompressFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCGetCompressFlags( ci: ComponentInstance; var flags: SIGNEDLONG ): ComponentResult; external name '_SCGetCompressFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SCGetSettingsAsText()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCGetSettingsAsText( ci: ComponentInstance; var text: Handle ): ComponentResult; external name '_SCGetSettingsAsText';
+=======
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function TCGetTimeCodeFlags( mh: MediaHandler; var flags: SIGNEDLONG ): HandlerError; external name '_TCGetTimeCodeFlags';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCSetDisplayOptions()
+ *  SCGetSettingsAsAtomContainer()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCGetSettingsAsAtomContainer( ci: ComponentInstance; var settings: QTAtomContainer ): ComponentResult; external name '_SCGetSettingsAsAtomContainer';
+=======
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function TCSetDisplayOptions( mh: MediaHandler; textOptions: TCTextOptionsPtr ): HandlerError; external name '_TCSetDisplayOptions';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  TCGetDisplayOptions()
+ *  SCSetSettingsFromAtomContainer()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SCSetSettingsFromAtomContainer( ci: ComponentInstance; settings: QTAtomContainer ): ComponentResult; external name '_SCSetSettingsFromAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Note: if you're using SCCompressSequenceFrameAsync with a scForceKeyValue setting, you must call SCAsyncIdle occasionally at main task time. }
+{
+ *  SCCompressSequenceFrameAsync()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function SCCompressSequenceFrameAsync( ci: ComponentInstance; src: PixMapHandle; const (*var*) srcRect: Rect; var data: Handle; var dataSize: SIGNEDLONG; var notSyncFlag: SInt16; asyncCompletionProc: ICMCompletionProcRecordPtr ): ComponentResult; external name '_SCCompressSequenceFrameAsync';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+=======
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function TCGetDisplayOptions( mh: MediaHandler; textOptions: TCTextOptionsPtr ): HandlerError; external name '_TCGetDisplayOptions';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-
-{ The following are the 64-bit TimeCode Media API's}
-{
- *  TCGetCurrentFrameAndTimeCodeDef()
- *  
- *  Summary:
- *    Retrieves the frame number and time code format information for
- *    the current movie time.
- *  
- *  Parameters:
- *    
- *    mh:
- *      The time code media handler.
- *    
- *    outFrameNum:
- *      Pointer to a field that receives the current frame number.
- *    
- *    outTCDef:
- *      Pointer to field that receives the time code format information.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function TCGetCurrentFrameAndTimeCodeDef( mh: MediaHandler; var outFrameNum: SInt64; var outTCDef: TimeCodeDef ): HandlerError; external name '_TCGetCurrentFrameAndTimeCodeDef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
-
-=======
 
 
 { The following are the 64-bit TimeCode Media API's}
@@ -3405,8 +4316,1283 @@ const
 >>>>>>> graemeg/cpstrnew
 
 {
+ *  SCAsyncIdle()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function SCAsyncIdle( ci: ComponentInstance ): ComponentResult; external name '_SCAsyncIdle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+<<<<<<< HEAD
+=======
+const
+	kQTMediaConfigResourceType = FourCharCode('mcfg');
+	kQTMediaConfigResourceVersion = 2;
+	kQTMediaGroupResourceType = FourCharCode('mgrp');
+	kQTMediaGroupResourceVersion = 1;
+	kQTBrowserInfoResourceType = FourCharCode('brws');
+	kQTBrowserInfoResourceVersion = 1;
+>>>>>>> graemeg/cpstrnew
+
+{
+ *  SCCopyCompressionSessionOptions()
+ *  
+ *  Summary:
+ *    Retrieve relevant settings in a form of compression session
+ *    options that can be given to a compression session. The caller
+ *    must release it when it is done.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      A component instance of type StdCompression subtype
+ *      StandardCompressionSubTypeVideo.
+ *    
+ *    outOptions:
+ *      A pointer to ICMCompressionSettionOptionsRef where a reference
+ *      to a new instance of ICM Compression Session Options object is
+ *      returned.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function SCCopyCompressionSessionOptions( ci: ComponentInstance; var outOptions: ICMCompressionSessionOptionsRef ): ComponentResult; external name '_SCCopyCompressionSessionOptions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+<<<<<<< HEAD
+
+const
+	TweenComponentType = FourCharCode('twen');
+
+
+type
+	TweenerComponent = ComponentInstance;
+{
+ *  TweenerInitialize()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TweenerInitialize( tc: TweenerComponent; container: QTAtomContainer; tweenAtom: QTAtom; dataAtom: QTAtom ): ComponentResult; external name '_TweenerInitialize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TweenerDoTween()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TweenerDoTween( tc: TweenerComponent; var tr: TweenRecord ): ComponentResult; external name '_TweenerDoTween';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TweenerReset()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TweenerReset( tc: TweenerComponent ): ComponentResult; external name '_TweenerReset';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+const
+	kQTMediaMIMEInfoHasChanged = 1 shl 1; { the MIME type(s) is(are) new or has changed since the last time}
+                                        {  someone asked about it}
+	kQTMediaFileInfoHasChanged = 1 shl 2; { the file extension(s) is(are) new or has changed since the last time}
+                                        {  anyone asked about it}
+	kQTMediaConfigCanUseApp = 1 shl 18; { this MIME type can be configured to use app}
+	kQTMediaConfigCanUsePlugin = 1 shl 19; { this MIME type can be configured to use plug-in}
+	kQTMediaConfigUNUSED = 1 shl 20; { currently unused}
+	kQTMediaConfigBinaryFile = 1 shl 23; { file should be transfered in binary mode}
+	kQTMediaConfigTextFile = 0;    { not a bit, defined for clarity}
+	kQTMediaConfigMacintoshFile = 1 shl 24; { file's resource fork is significant}
+	kQTMediaConfigCanDoFileAssociation = 1 shl 26; { can configure this file association }
+	kQTMediaConfigAssociateByDefault = 1 shl 27; { Deprecated, use kQTMediaConfigTakeFileAssociationByDefault instead}
+	kQTMediaConfigTakeFileAssociationByDefault = 1 shl 27; { take this file association by default}
+	kQTMediaConfigUseAppByDefault = 1 shl 28; { use the app by default for this MIME type}
+	kQTMediaConfigUsePluginByDefault = 1 shl 29; { use the plug-in by default for this MIME type}
+	kQTMediaConfigDefaultsMask = kQTMediaConfigUseAppByDefault or kQTMediaConfigUsePluginByDefault;
+	kQTMediaConfigDefaultsShift = 12;   { ((flags & kQTMediaConfigDefaultsMask) >> kQTMediaConfigDefaultsShift) to get default setting }
+	kQTMediaConfigHasFileHasQTAtoms = 1 shl 30; { the file has a "QuickTime like" file format }
+
+
+{ mime type group constants for groupID field of 'mcfg' resource}
+const
+	kQTMediaConfigStreamGroupID = FourCharCode('strm');
+	kQTMediaConfigInteractiveGroupID = FourCharCode('intr');
+	kQTMediaConfigVideoGroupID = FourCharCode('eyes');
+	kQTMediaConfigAudioGroupID = FourCharCode('ears');
+	kQTMediaConfigMPEGGroupID = FourCharCode('mpeg');
+	kQTMediaConfigMP3GroupID = FourCharCode('mp3 ');
+	kQTMediaConfigImageGroupID = FourCharCode('ogle');
+	kQTMediaConfigMiscGroupID = FourCharCode('misc');
+
+{ file type group constants for groupID field of 'mcfg' resource}
+const
+	kQTMediaInfoNetGroup = FourCharCode('net ');
+	kQTMediaInfoWinGroup = FourCharCode('win ');
+	kQTMediaInfoMacGroup = FourCharCode('mac ');
+	kQTMediaInfoMiscGroup = $3F3F3F3F; { '????'}
+
+
+const
+	kMimeInfoMimeTypeTag = FourCharCode('mime');
+	kMimeInfoFileExtensionTag = FourCharCode('ext ');
+	kMimeInfoDescriptionTag = FourCharCode('desc');
+	kMimeInfoGroupTag = FourCharCode('grop');
+	kMimeInfoDoNotOverrideExistingFileTypeAssociation = FourCharCode('nofa');
+
+const
+	kQTFileTypeAIFF = FourCharCode('AIFF');
+	kQTFileTypeAIFC = FourCharCode('AIFC');
+	kQTFileTypeDVC = FourCharCode('dvc!');
+	kQTFileTypeMIDI = FourCharCode('Midi');
+	kQTFileTypePicture = FourCharCode('PICT');
+	kQTFileTypeMovie = FourCharCode('MooV');
+	kQTFileTypeText = FourCharCode('TEXT');
+	kQTFileTypeWave = FourCharCode('WAVE');
+	kQTFileTypeSystemSevenSound = FourCharCode('sfil');
+	kQTFileTypeMuLaw = FourCharCode('ULAW');
+	kQTFileTypeAVI = FourCharCode('VfW ');
+	kQTFileTypeSoundDesignerII = FourCharCode('Sd2f');
+	kQTFileTypeAudioCDTrack = FourCharCode('trak');
+	kQTFileTypePICS = FourCharCode('PICS');
+	kQTFileTypeGIF = FourCharCode('GIFf');
+	kQTFileTypePNG = FourCharCode('PNGf');
+	kQTFileTypeTIFF = FourCharCode('TIFF');
+	kQTFileTypePhotoShop = FourCharCode('8BPS');
+	kQTFileTypeSGIImage = FourCharCode('.SGI');
+	kQTFileTypeBMP = FourCharCode('BMPf');
+	kQTFileTypeJPEG = FourCharCode('JPEG');
+	kQTFileTypeJFIF = FourCharCode('JPEG');
+	kQTFileTypeMacPaint = FourCharCode('PNTG');
+	kQTFileTypeTargaImage = FourCharCode('TPIC');
+	kQTFileTypeQuickDrawGXPicture = FourCharCode('qdgx');
+	kQTFileTypeQuickTimeImage = FourCharCode('qtif');
+	kQTFileType3DMF = FourCharCode('3DMF');
+	kQTFileTypeFLC = FourCharCode('FLC ');
+	kQTFileTypeFlash = FourCharCode('SWFL');
+	kQTFileTypeFlashPix = FourCharCode('FPix');
+	kQTFileTypeMP4 = FourCharCode('mpg4');
+	kQTFileTypePDF = FourCharCode('PDF ');
+	kQTFileType3GPP = FourCharCode('3gpp');
+	kQTFileTypeAMR = FourCharCode('amr ');
+	kQTFileTypeSDV = FourCharCode('sdv ');
+	kQTFileType3GP2 = FourCharCode('3gp2');
+	kQTFileTypeAMC = FourCharCode('amc ');
+	kQTFileTypeJPEG2000 = FourCharCode('jp2 ');
+
+{ QTAtomTypes for atoms in import/export settings containers}
+const
+	kQTSettingsDVExportNTSC = FourCharCode('dvcv'); { True is export as NTSC, false is export as PAL. (Boolean)}
+	kQTSettingsDVExportLockedAudio = FourCharCode('lock'); { True if audio locked to video. (Boolean)}
+	kQTSettingsEffect = FourCharCode('effe'); { Parent atom whose contents are atoms of an effects description}
+	kQTSettingsGraphicsFileImportSequence = FourCharCode('sequ'); { Parent atom of graphic file movie import component}
+	kQTSettingsGraphicsFileImportSequenceEnabled = FourCharCode('enab'); { . If true, import numbered image sequence (Boolean)}
+	kQTSettingsMovieExportEnableVideo = FourCharCode('envi'); { Enable exporting of video track (Boolean)}
+	kQTSettingsMovieExportEnableSound = FourCharCode('enso'); { Enable exporting of sound track (Boolean)}
+	kQTSettingsMovieExportSaveOptions = FourCharCode('save'); { Parent atom of save options}
+	kQTSettingsMovieExportSaveForInternet = FourCharCode('fast'); { . Save for Internet}
+	kQTSettingsMovieExportSaveCompressedMovie = FourCharCode('cmpm'); { . Save compressed movie resource}
+	kQTSettingsMIDI = FourCharCode('MIDI'); { MIDI import related container}
+	kQTSettingsMIDISettingFlags = FourCharCode('sttg'); { . MIDI import settings (UInt32)}
+	kQTSettingsText = FourCharCode('text'); { Text related container}
+	kQTSettingsTextDescription = FourCharCode('desc'); { . Text import settings (TextDescription record)}
+	kQTSettingsTextSize = FourCharCode('size'); { . Width/height to create during import (FixedPoint)}
+	kQTSettingsTextSettingFlags = FourCharCode('sttg'); { . Text export settings (UInt32)}
+	kQTSettingsTextTimeFraction = FourCharCode('timf'); { . Movie time fraction for export (UInt32)}
+	kQTSettingsTime = FourCharCode('time'); { Time related container}
+	kQTSettingsTimeDuration = FourCharCode('dura'); { . Time related container}
+	kQTSettingsAudioCDTrack = FourCharCode('trak'); { Audio CD track related container}
+	kQTSettingsAudioCDTrackRateShift = FourCharCode('rshf'); { . Rate shift to be performed (SInt16)}
+	kQTSettingsDVExportDVFormat = FourCharCode('dvcf'); { Exported DV Format, DV('dv  ') or DVCPRO('dvp '). (OSType)}
+	kQTSettingsVideoSize = FourCharCode('isiz'); { Video size related container}
+	kQTSettingsImageWidth = FourCharCode('iwdt'); { . Destination width. If this is zero, it means the source width. (SInt32)}
+	kQTSettingsImageHeight = FourCharCode('ihgt'); { . Destination height. If this is zero, it means the source height. (SInt32)}
+	kQTSettingsCleanAperture = FourCharCode('clap'); { . Clean aperture for compression sessions. If this is all zeros, it means no clean aperture (i.e. full width and height). (CleanApertureImageDescriptionExtension)}
+	kQTSettingsPixelAspectRatio = FourCharCode('pasp'); { . Pixel aspect ratio for compression sessions. If this is all zeros, it means square pixels (i.e. 1:1). (PixelAspectRatioImageDescriptionExtension)}
+	kQTSettingsScalingMode = FourCharCode('scam'); { . Scaling mode for compression sessions. If this is zero, it means scaling mode based on the source aperture mode. (OSType)}
+	kQTSettingsUseCodecEnforcedDimensions = FourCharCode('uenf'); { . If true, compressor's enforced dimension overrides the image size settings. (Boolean)}
+	kQTSettingsDeinterlaceSource = FourCharCode('dint'); { . If true, deinterlacing is applied to source frames. (Boolean)}
+
+
+{
+ *  Summary:
+ *    Scaling modes
+ }
+const
+{
+   * Adjusts destination dimensions so that the source fits within the
+   * dimensions specified with kQTSettingsImageWidth and
+   * kQTSettingsImageHeight by fitting to the shortest side, and scales
+   * the source to the destination. Internally, the default scaling
+   * mode, which is based on the source aperture mode, Ê       is used
+   * for compression session, instead of this scaling mode.
+   }
+	kQTSpecialScalingMode_FitWithinDimensions = FourCharCode('fit ');
+
+type
+	MovieExportGetDataParamsPtr = ^MovieExportGetDataParams;
+	MovieExportGetDataParams = record
+		recordSize: SIGNEDLONG;
+
+		trackID: SIGNEDLONG;
+
+		sourceTimeScale: TimeScale;
+		requestedTime: TimeValue;
+		actualTime: TimeValue;
+>>>>>>> graemeg/cpstrnew
+
+		dataPtr: Ptr;
+		dataSize: SIGNEDLONG;
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+const
+	TCSourceRefNameType = FourCharCode('name');
+
+const
+=======
+const
+	TCSourceRefNameType = FourCharCode('name');
+
+const
+>>>>>>> graemeg/cpstrnew
+	tcDropFrame = 1 shl 0;
+	tc24HourMax = 1 shl 1;
+	tcNegTimesOK = 1 shl 2;
+	tcCounter = 1 shl 3;
+
+
+{$endc} {not TARGET_CPU_64}
+
+type
+	TimeCodeDefPtr = ^TimeCodeDef;
+	TimeCodeDef = record
+		flags: SInt32;                  { drop-frame, etc.}
+		fTimeScale: TimeScale;             { time scale of frameDuration (eg. 2997)}
+		frameDuration: TimeValue;          { duration of each frame (eg. 100)}
+		numFrames: UInt8;              { frames/sec for timecode (eg. 30) OR frames/tick for counter mode}
+		padding: UInt8;                { unused padding byte}
+=======
+		desc: SampleDescriptionHandle;
+		descType: OSType;
+		descSeed: SIGNEDLONG;
+
+		requestedSampleCount: SIGNEDLONG;
+		actualSampleCount: SIGNEDLONG;
+		durationPerSample: TimeValue;
+		sampleFlags: SIGNEDLONG;
+	end;
+type
+	MovieExportGetDataProcPtr = function( refCon: UnivPtr; var params: MovieExportGetDataParams ): OSErr;
+	MovieExportGetPropertyProcPtr = function( refcon: UnivPtr; trackID: SIGNEDLONG; propertyType: OSType; propertyValue: UnivPtr ): OSErr;
+	MovieExportStageReachedCallbackProcPtr = function( inStage: OSType; inMovie: Movie; inDataHandler: ComponentInstance; inDataRef: Handle; inDataRefType: OSType; refCon: UnivPtr ): OSErr;
+const
+	kQTPresetsListResourceType = FourCharCode('stg#');
+	kQTPresetsPlatformListResourceType = FourCharCode('stgp');
+
+const
+	kQTPresetInfoIsDivider = 1;
+
+type
+	QTPresetInfoPtr = ^QTPresetInfo;
+	QTPresetInfo = record
+		presetKey: OSType;              { unique key for this preset in presetsArray }
+		presetFlags: UInt32;            { flags about this preset }
+		settingsResourceType: OSType;   { resource type of settings resource }
+		settingsResourceID: SInt16;     { resource id of settings resource }
+		padding1: SInt16;
+		nameStringListID: SInt16;       { name string list resource id }
+		nameStringIndex: SInt16;        { name string index }
+		infoStringListID: SInt16;       { info string list resource id }
+		infoStringIndex: SInt16;        { info string index }
+	end;
+type
+	QTPresetListRecordPtr = ^QTPresetListRecord;
+	QTPresetListRecord = record
+		flags: UInt32;                  { flags for whole list }
+		count: UInt32;                  { number of elements in presetsArray }
+		reserved: UInt32;
+		presetsArray: array [0..0] of QTPresetInfo;			{  info about each preset  }
+>>>>>>> graemeg/cpstrnew
+	end;
+	TimeCodeDef_fix = TimeCodeDef;  { used as field type when a record declaration contains a TimeCodeDef field identifier }
+
+{$ifc not TARGET_CPU_64}
+
+const
+<<<<<<< HEAD
+	tctNegFlag = $80;  { negative bit is in minutes}
+
+type
+	TimeCodeTimePtr = ^TimeCodeTime;
+	TimeCodeTime = record
+		hours: UInt8;
+		minutes: UInt8;
+		seconds: UInt8;
+		frames: UInt8;
+	end;
+type
+	TimeCodeCounterPtr = ^TimeCodeCounter;
+	TimeCodeCounter = record
+		counter: SIGNEDLONG;
+	end;
+
+	TimeCodeRecordPtr = ^TimeCodeRecord;
+	TimeCodeRecord = record
+		case SInt16 of
+		0: (
+			t: TimeCodeTime;
+			);
+		1: (
+			c: TimeCodeCounter;
+			);
+	end;
+
+{$endc} {not TARGET_CPU_64}
+
+type
+	TimeCodeDescription = record
+		descSize: SInt32;               { standard sample description header}
+		dataFormat: SInt32;
+		resvd1: SInt32;
+		resvd2: SInt16;
+		dataRefIndex: SInt16;
+		flags: SInt32;                  { timecode specific stuff}
+		timeCodeDef: TimeCodeDef_fix;
+    srcRef: array [0..0] of SInt32;
+	end;
+	TimeCodeDescriptionPtr = ^TimeCodeDescription;
+type
+	TimeCodeDescriptionHandle = ^TimeCodeDescriptionPtr;
+
+{$ifc not TARGET_CPU_64}
+
+const
+	tcdfShowTimeCode = 1 shl 0;
+
+
+type
+	TCTextOptions = record
+		txFont: SInt16;
+		txFace: SInt16;
+		txSize: SInt16;
+		pad: SInt16;                    { let's make it longword aligned - thanks.. }
+		foreColor: RGBColor;
+		backColor: RGBColor;
+	end;
+	TCTextOptionsPtr = ^TCTextOptions;
+
+type
+	TimeCode64Counter = SInt64;
+=======
+	kQTMovieExportSourceInfoResourceType = FourCharCode('src#');
+	kQTMovieExportSourceInfoIsMediaType = 1 shl 0;
+	kQTMovieExportSourceInfoIsMediaCharacteristic = 1 shl 1;
+	kQTMovieExportSourceInfoIsSourceType = 1 shl 2;
+
+type
+	QTMovieExportSourceInfoPtr = ^QTMovieExportSourceInfo;
+	QTMovieExportSourceInfo = record
+		mediaType: OSType;              { Media type of source }
+		minCount: UInt16;               { min number of sources of this kind required, zero if none required }
+		maxCount: UInt16;               { max number of sources of this kind allowed, -1 if unlimited allowed }
+		flags: SIGNEDLONG;                  { reserved for flags }
+	end;
+type
+	QTMovieExportSourceRecordPtr = ^QTMovieExportSourceRecord;
+	QTMovieExportSourceRecord = record
+		count: SIGNEDLONG;
+		reserved: SIGNEDLONG;
+		sourceArray: array [0..0] of QTMovieExportSourceInfo;
+	end;
+type
+	MovieExportGetDataUPP = MovieExportGetDataProcPtr;
+	MovieExportGetPropertyUPP = MovieExportGetPropertyProcPtr;
+	MovieExportStageReachedCallbackUPP = MovieExportGetPropertyProcPtr;
+{
+ *  NewSCModalFilterUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSCModalFilterUPP( userRoutine: SCModalFilterProcPtr ): SCModalFilterUPP; external name '_NewSCModalFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetCurrentTimeCode()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCGetCurrentTimeCode( mh: MediaHandler; var frameNum: SIGNEDLONG; var tcdef: TimeCodeDef; var tcrec: TimeCodeRecord; var srcRefH: UserData ): HandlerError; external name '_TCGetCurrentTimeCode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewSCModalHookUPP( userRoutine: SCModalHookProcPtr ): SCModalHookUPP; external name '_NewSCModalHookUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetTimeCodeAtTime()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCGetTimeCodeAtTime( mh: MediaHandler; mediaTime: TimeValue; var frameNum: SIGNEDLONG; var tcdef: TimeCodeDef; var tcdata: TimeCodeRecord; var srcRefH: UserData ): HandlerError; external name '_TCGetTimeCodeAtTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewMovieExportGetDataUPP( userRoutine: MovieExportGetDataProcPtr ): MovieExportGetDataUPP; external name '_NewMovieExportGetDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCTimeCodeToString()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCTimeCodeToString( mh: MediaHandler; var tcdef: TimeCodeDef; var tcrec: TimeCodeRecord; tcStr: StringPtr ): HandlerError; external name '_TCTimeCodeToString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TCTimeCodeToFrameNumber()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCTimeCodeToFrameNumber( mh: MediaHandler; var tcdef: TimeCodeDef; var tcrec: TimeCodeRecord; var frameNumber: SIGNEDLONG ): HandlerError; external name '_TCTimeCodeToFrameNumber';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewMovieExportGetPropertyUPP( userRoutine: MovieExportGetPropertyProcPtr ): MovieExportGetPropertyUPP; external name '_NewMovieExportGetPropertyUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  NewMovieExportStageReachedCallbackUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewMovieExportStageReachedCallbackUPP( userRoutine: MovieExportStageReachedCallbackProcPtr ): MovieExportStageReachedCallbackUPP; external name '_NewMovieExportStageReachedCallbackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{
+ *  DisposeSCModalFilterUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSCModalFilterUPP( userUPP: SCModalFilterUPP ); external name '_DisposeSCModalFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCFrameNumberToTimeCode()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCFrameNumberToTimeCode( mh: MediaHandler; frameNumber: SIGNEDLONG; var tcdef: TimeCodeDef; var tcrec: TimeCodeRecord ): HandlerError; external name '_TCFrameNumberToTimeCode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeSCModalHookUPP( userUPP: SCModalHookUPP ); external name '_DisposeSCModalHookUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetSourceRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCGetSourceRef( mh: MediaHandler; tcdH: TimeCodeDescriptionHandle; var srefH: UserData ): HandlerError; external name '_TCGetSourceRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeMovieExportGetDataUPP( userUPP: MovieExportGetDataUPP ); external name '_DisposeMovieExportGetDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCSetSourceRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCSetSourceRef( mh: MediaHandler; tcdH: TimeCodeDescriptionHandle; srefH: UserData ): HandlerError; external name '_TCSetSourceRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TCSetTimeCodeFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCSetTimeCodeFlags( mh: MediaHandler; flags: SIGNEDLONG; flagsMask: SIGNEDLONG ): HandlerError; external name '_TCSetTimeCodeFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeMovieExportGetPropertyUPP( userUPP: MovieExportGetPropertyUPP ); external name '_DisposeMovieExportGetPropertyUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeMovieExportStageReachedCallbackUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeMovieExportStageReachedCallbackUPP( userUPP: MovieExportStageReachedCallbackUPP ); external name '_DisposeMovieExportStageReachedCallbackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{
+ *  InvokeSCModalFilterUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeSCModalFilterUPP( theDialog: DialogRef; var theEvent: EventRecord; var itemHit: SInt16; refcon: SIGNEDLONG; userUPP: SCModalFilterUPP ): Boolean; external name '_InvokeSCModalFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetTimeCodeFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCGetTimeCodeFlags( mh: MediaHandler; var flags: SIGNEDLONG ): HandlerError; external name '_TCGetTimeCodeFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeSCModalHookUPP( theDialog: DialogRef; itemHit: SInt16; params: UnivPtr; refcon: SIGNEDLONG; userUPP: SCModalHookUPP ): SInt16; external name '_InvokeSCModalHookUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCSetDisplayOptions()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCSetDisplayOptions( mh: MediaHandler; textOptions: TCTextOptionsPtr ): HandlerError; external name '_TCSetDisplayOptions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeMovieExportGetDataUPP( refCon: UnivPtr; var params: MovieExportGetDataParams; userUPP: MovieExportGetDataUPP ): OSErr; external name '_InvokeMovieExportGetDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetDisplayOptions()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TCGetDisplayOptions( mh: MediaHandler; textOptions: TCTextOptionsPtr ): HandlerError; external name '_TCGetDisplayOptions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+{ The following are the 64-bit TimeCode Media API's}
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeMovieExportGetPropertyUPP( refcon: UnivPtr; trackID: SIGNEDLONG; propertyType: OSType; propertyValue: UnivPtr; userUPP: MovieExportGetPropertyUPP ): OSErr; external name '_InvokeMovieExportGetPropertyUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  InvokeMovieExportStageReachedCallbackUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function InvokeMovieExportStageReachedCallbackUPP( inStage: OSType; inMovie: Movie; inDataHandler: ComponentInstance; inDataRef: Handle; inDataRefType: OSType; refCon: UnivPtr; userUPP: MovieExportStageReachedCallbackUPP ): OSErr; external name '_InvokeMovieExportStageReachedCallbackUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetCurrentFrameAndTimeCodeDef()
+ *  
+<<<<<<< HEAD
+ *  Summary:
+ *    Retrieves the frame number and time code format information for
+ *    the current movie time.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that receives the current frame number.
+ *    
+ *    outTCDef:
+ *      Pointer to field that receives the time code format information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCGetCurrentFrameAndTimeCodeDef( mh: MediaHandler; var outFrameNum: SInt64; var outTCDef: TimeCodeDef ): HandlerError; external name '_TCGetCurrentFrameAndTimeCodeDef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+=======
+
+
+{ The following are the 64-bit TimeCode Media API's}
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportHandle( ci: MovieImportComponent; dataH: Handle; theMovie: Movie; targetTrack: Track; var usedTrack: Track; atTime: TimeValue; var addedDuration: TimeValue; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportFile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportFile( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; targetTrack: Track; var usedTrack: Track; atTime: TimeValue; var addedDuration: TimeValue; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetSampleDuration()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetSampleDuration( ci: MovieImportComponent; duration: TimeValue; scale: TimeScale ): ComponentResult; external name '_MovieImportSetSampleDuration';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetCurrentFrameAndTimeCodeDef()
+ *  
+<<<<<<< HEAD
+ *  Summary:
+ *    Retrieves the frame number and time code format information for
+ *    the current movie time.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that receives the current frame number.
+ *    
+ *    outTCDef:
+ *      Pointer to field that receives the time code format information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCGetCurrentFrameAndTimeCodeDef( mh: MediaHandler; var outFrameNum: SInt64; var outTCDef: TimeCodeDef ): HandlerError; external name '_TCGetCurrentFrameAndTimeCodeDef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetSampleDescription( ci: MovieImportComponent; desc: SampleDescriptionHandle; mediaType: OSType ): ComponentResult; external name '_MovieImportSetSampleDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetMediaFile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetMediaFile( ci: MovieImportComponent; alias: AliasHandle ): ComponentResult; external name '_MovieImportSetMediaFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetDimensions()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetDimensions( ci: MovieImportComponent; width: Fixed; height: Fixed ): ComponentResult; external name '_MovieImportSetDimensions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
  *  TCGetFrameAndTimeCodeDefAtTime()
  *  
+<<<<<<< HEAD
+ *  Summary:
+ *    Retrieves the frame number and time code format information for a
+ *    specific movie time.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    mediaTime:
+ *      A const pointer to the field containing the media time at which
+ *      time code information is required.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that receives the frame number at time
+ *      mediaTime.
+ *    
+ *    outTCDef:
+ *      Pointer to field that receives the time code format information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCGetFrameAndTimeCodeDefAtTime( mh: MediaHandler; (*const*) var mediaTime: TimeValue64; var outFrameNum: SInt64; var outTCDef: TimeCodeDef ): HandlerError; external name '_TCGetFrameAndTimeCodeDefAtTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetChunkSize( ci: MovieImportComponent; chunkSize: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetChunkSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetProgressProc()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetProgressProc( ci: MovieImportComponent; proc: MovieProgressUPP; refcon: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetProgressProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetAuxiliaryData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetAuxiliaryData( ci: MovieImportComponent; data: Handle; handleType: OSType ): ComponentResult; external name '_MovieImportSetAuxiliaryData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  TCTimeCodeTimeToString()
+ *  
+<<<<<<< HEAD
+ *  Summary:
+ *    Converts a time value into a text string in the (-) HH:MM:SS:FF
+ *    format.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains time code format
+ *      info for the conversion.
+ *    
+ *    tCTime:
+ *      A const pointer to a SMPTETime structure that contains the time
+ *      value to convert.
+ *    
+ *    outTCStr:
+ *      Pointer to a CFStringRef that is to receive the converted time
+ *      value. Client responsible for disposing string.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCTimeCodeTimeToString( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCTime: SMPTETime; var outTCStr: CFStringRef ): HandlerError; external name '_TCTimeCodeTimeToString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetFromScrap( ci: MovieImportComponent; fromScrap: Boolean ): ComponentResult; external name '_MovieImportSetFromScrap';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportDoUserDialog()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportDoUserDialog( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theData: Handle; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetDuration()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetDuration( ci: MovieImportComponent; duration: TimeValue ): ComponentResult; external name '_MovieImportSetDuration';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  TCTimeCodeCounterToString()
+ *  
+<<<<<<< HEAD
+ *  Summary:
+ *    Converts a counter value into a text string.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains time code format
+ *      info for the conversion.
+ *    
+ *    tCCounter:
+ *      A const pointer to a TimeCode64Counter that contains the
+ *      counter value to convert.
+ *    
+ *    outTCStr:
+ *      Pointer to a CFStringRef that is to receive the converted time
+ *      value. Client reponsible for disposing string.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCTimeCodeCounterToString( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCCounter: TimeCode64Counter; var outTCStr: CFStringRef ): HandlerError; external name '_TCTimeCodeCounterToString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetAuxiliaryDataType( ci: MovieImportComponent; var auxType: OSType ): ComponentResult; external name '_MovieImportGetAuxiliaryDataType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportValidate()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportValidate( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theData: Handle; var valid: Boolean ): ComponentResult; external name '_MovieImportValidate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetFileType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetFileType( ci: MovieImportComponent; var fileType: OSType ): ComponentResult; external name '_MovieImportGetFileType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  TCTimeCodeTimeToFrameNumber()
+ *  
+ *  Summary:
+ *    Converts a time value into its corresponding frame number.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains time code format
+ *      info for the conversion.
+ *    
+ *    tCTime:
+ *      A const pointer to a SMPTETime structure that contains the time
+ *      value to convert.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that is to receive the frame number
+ *      corresponding to the time value in tCTime.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCTimeCodeTimeToFrameNumber( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCTime: SMPTETime; var outFrameNum: SInt64 ): HandlerError; external name '_TCTimeCodeTimeToFrameNumber';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; theMovie: Movie; targetTrack: Track; var usedTrack: Track; atTime: TimeValue; var addedDuration: TimeValue; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  TCTimeCodeCounterToFrameNumber()
+ *  
+ *  Summary:
+ *    Converts a counter value into its corresponding frame number.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains format info for
+ *      the conversion.
+ *    
+ *    tCCounter:
+ *      A const pointer to a TimeCode64Counter that contains the
+ *      counter value to convert.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that is to receive the frame number
+ *      corresponding to the counter value in tCCounter.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCTimeCodeCounterToFrameNumber( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCCounter: TimeCode64Counter; var outFrameNum: SInt64 ): HandlerError; external name '_TCTimeCodeCounterToFrameNumber';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetSampleDescription( ci: MovieImportComponent; var desc: SampleDescriptionHandle; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetSampleDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  TCFrameNumberToTimeCodeTime()
+ *  
+ *  Summary:
+ *    Converts a frame number to its corresponding timecode time value.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    frameNumber:
+ *      A const pointer to the field containing the frame number that
+ *      is to be converted.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains format info for
+ *      the conversion.
+ *    
+ *    outTCTime:
+ *      Pointer to a SMPTETime structure that is to receive the time
+ *      value.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCFrameNumberToTimeCodeTime( mh: MediaHandler; (*const*) var frameNumber: SInt64; const (*var*) tCDef: TimeCodeDef; var outTCTime: SMPTETime ): HandlerError; external name '_TCFrameNumberToTimeCodeTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetMIMETypeList( ci: MovieImportComponent; var mimeInfo: QTAtomContainer ): ComponentResult; external name '_MovieImportGetMIMETypeList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  TCFrameNumberToTimeCodeCounter()
+ *  
+ *  Summary:
+ *    Converts a frame number to its corresponding counter value.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    frameNumber:
+ *      A const pointer to the field containing the frame number that
+ *      is to be converted.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains format info for
+ *      the conversion.
+ *    
+ *    outTCCounter:
+ *      Pointer to a TimeCode64Counter that is to receive the counter
+ *      value.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function TCFrameNumberToTimeCodeCounter( mh: MediaHandler; (*const*) var frameNumber: SInt64; const (*var*) tCDef: TimeCodeDef; var outTCCounter: TimeCode64Counter ): HandlerError; external name '_TCFrameNumberToTimeCodeCounter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+
+type
+	MovieImportComponent = ComponentInstance;
+	MovieExportComponent = ComponentInstance;
+const
+	MovieImportType = FourCharCode('eat ');
+	MovieExportType = FourCharCode('spit');
+
+const
+	canMovieImportHandles = 1 shl 0;
+	canMovieImportFiles = 1 shl 1;
+	hasMovieImportUserInterface = 1 shl 2;
+	canMovieExportHandles = 1 shl 3;
+	canMovieExportFiles = 1 shl 4;
+	hasMovieExportUserInterface = 1 shl 5;
+	movieImporterIsXMLBased = 1 shl 5;
+	dontAutoFileMovieImport = 1 shl 6;
+	canMovieExportAuxDataHandle = 1 shl 7;
+	canMovieImportValidateHandles = 1 shl 8;
+	canMovieImportValidateFile = 1 shl 9;
+	dontRegisterWithEasyOpen = 1 shl 10;
+	canMovieImportInPlace = 1 shl 11;
+	movieImportSubTypeIsFileExtension = 1 shl 12;
+	canMovieImportPartial = 1 shl 13;
+	hasMovieImportMIMEList = 1 shl 14;
+	canMovieImportAvoidBlocking = 1 shl 15;
+	canMovieExportFromProcedures = 1 shl 15;
+	canMovieExportValidateMovie = 1 shl 16;
+	movieImportMustGetDestinationMediaType = 1 shl 16;
+	movieExportNeedsResourceFork = 1 shl 17;
+	canMovieImportDataReferences = 1 shl 18;
+	movieExportMustGetSourceMediaType = 1 shl 19;
+	canMovieImportWithIdle = 1 shl 20;
+	canMovieImportValidateDataReferences = 1 shl 21;
+	reservedForUseByGraphicsImporters = 1 shl 23;
+
+const
+	movieImportCreateTrack = 1;
+	movieImportInParallel = 2;
+	movieImportMustUseTrack = 4;
+	movieImportWithIdle = 16;
+
+const
+	movieImportResultUsedMultipleTracks = 8;
+	movieImportResultNeedIdles = 32;
+	movieImportResultComplete = 64;
+
+const
+	kMovieExportTextOnly = 0;
+	kMovieExportAbsoluteTime = 1;
+	kMovieExportRelativeTime = 2;
+
+{ Movie exporter property class}
+const
+	kQTPropertyClass_MovieExporter = FourCharCode('spit');
+
+{ kPropertyClass_MovieExporter IDs}
+const
+	kQTMovieExporterPropertyID_EnableHighResolutionAudioFeatures = FourCharCode('hrau'); { value is Boolean}
+
+const
+	kMIDIImportSilenceBefore = 1 shl 0;
+	kMIDIImportSilenceAfter = 1 shl 1;
+	kMIDIImport20Playable = 1 shl 2;
+	kMIDIImportWantLyrics = 1 shl 3;
+>>>>>>> graemeg/cpstrnew
+
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetOffsetAndLimit( ci: MovieImportComponent; offset: UNSIGNEDLONG; limit: UNSIGNEDLONG ): ComponentResult; external name '_MovieImportSetOffsetAndLimit';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TCGetFrameAndTimeCodeDefAtTime()
+ *  
+<<<<<<< HEAD
  *  Summary:
  *    Retrieves the frame number and time code format information for a
  *    specific movie time.
@@ -3436,10 +5622,22 @@ function TCGetFrameAndTimeCodeDefAtTime( mh: MediaHandler; (*const*) var mediaTi
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 
 <<<<<<< HEAD
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetSettingsAsAtomContainer( ci: MovieImportComponent; var settings: QTAtomContainer ): ComponentResult; external name '_MovieImportGetSettingsAsAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 {
  *  TCTimeCodeTimeToString()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Converts a time value into a text string in the (-) HH:MM:SS:FF
  *    format.
@@ -3468,11 +5666,22 @@ function TCGetFrameAndTimeCodeDefAtTime( mh: MediaHandler; (*const*) var mediaTi
  }
 function TCTimeCodeTimeToString( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCTime: SMPTETime; var outTCStr: CFStringRef ): HandlerError; external name '_TCTimeCodeTimeToString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetSettingsFromAtomContainer( ci: MovieImportComponent; settings: QTAtomContainer ): ComponentResult; external name '_MovieImportSetSettingsFromAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  TCTimeCodeCounterToString()
  *  
+<<<<<<< HEAD
  *  Summary:
  *    Converts a counter value into a text string.
  *  
@@ -3500,6 +5709,16 @@ function TCTimeCodeTimeToString( mh: MediaHandler; const (*var*) tCDef: TimeCode
  }
 function TCTimeCodeCounterToString( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCCounter: TimeCode64Counter; var outTCStr: CFStringRef ): HandlerError; external name '_TCTimeCodeCounterToString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieImportSetOffsetAndLimit64( ci: MovieImportComponent; const (*var*) offset: wide; const (*var*) limit: wide ): ComponentResult; external name '_MovieImportSetOffsetAndLimit64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3526,12 +5745,22 @@ function TCTimeCodeCounterToString( mh: MediaHandler; const (*var*) tCDef: TimeC
  *      corresponding to the time value in tCTime.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function TCTimeCodeTimeToFrameNumber( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCTime: SMPTETime; var outFrameNum: SInt64 ): HandlerError; external name '_TCTimeCodeTimeToFrameNumber';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieImportIdle( ci: MovieImportComponent; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportIdle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3558,12 +5787,22 @@ function TCTimeCodeTimeToFrameNumber( mh: MediaHandler; const (*var*) tCDef: Tim
  *      corresponding to the counter value in tCCounter.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function TCTimeCodeCounterToFrameNumber( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCCounter: TimeCode64Counter; var outFrameNum: SInt64 ): HandlerError; external name '_TCTimeCodeCounterToFrameNumber';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieImportValidateDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var valid: UInt8 ): ComponentResult; external name '_MovieImportValidateDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3590,12 +5829,22 @@ function TCTimeCodeCounterToFrameNumber( mh: MediaHandler; const (*var*) tCDef: 
  *      value.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function TCFrameNumberToTimeCodeTime( mh: MediaHandler; (*const*) var frameNumber: SInt64; const (*var*) tCDef: TimeCodeDef; var outTCTime: SMPTETime ): HandlerError; external name '_TCFrameNumberToTimeCodeTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function MovieImportGetLoadState( ci: MovieImportComponent; var importerLoadState: SIGNEDLONG ): ComponentResult; external name '_MovieImportGetLoadState';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3622,6 +5871,7 @@ function TCFrameNumberToTimeCodeTime( mh: MediaHandler; (*const*) var frameNumbe
  *      value.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -3758,6 +6008,15 @@ function TCGetFrameAndTimeCodeDefAtTime( mh: MediaHandler; (*const*) var mediaTi
  }
 function TCTimeCodeTimeToString( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCTime: SMPTETime; var outTCStr: CFStringRef ): HandlerError; external name '_TCTimeCodeTimeToString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function MovieImportGetMaxLoadedTime( ci: MovieImportComponent; var time: TimeValue ): ComponentResult; external name '_MovieImportGetMaxLoadedTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3784,12 +6043,22 @@ function TCTimeCodeTimeToString( mh: MediaHandler; const (*var*) tCDef: TimeCode
  *      value. Client reponsible for disposing string.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function TCTimeCodeCounterToString( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCCounter: TimeCode64Counter; var outTCStr: CFStringRef ): HandlerError; external name '_TCTimeCodeCounterToString';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MovieImportEstimateCompletionTime( ci: MovieImportComponent; var time: TimeRecord ): ComponentResult; external name '_MovieImportEstimateCompletionTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3816,12 +6085,22 @@ function TCTimeCodeCounterToString( mh: MediaHandler; const (*var*) tCDef: TimeC
  *      corresponding to the time value in tCTime.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function TCTimeCodeTimeToFrameNumber( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCTime: SMPTETime; var outFrameNum: SInt64 ): HandlerError; external name '_TCTimeCodeTimeToFrameNumber';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MovieImportSetDontBlock( ci: MovieImportComponent; dontBlock: Boolean ): ComponentResult; external name '_MovieImportSetDontBlock';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3848,12 +6127,22 @@ function TCTimeCodeTimeToFrameNumber( mh: MediaHandler; const (*var*) tCDef: Tim
  *      corresponding to the counter value in tCCounter.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function TCTimeCodeCounterToFrameNumber( mh: MediaHandler; const (*var*) tCDef: TimeCodeDef; const (*var*) tCCounter: TimeCode64Counter; var outFrameNum: SInt64 ): HandlerError; external name '_TCTimeCodeCounterToFrameNumber';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MovieImportGetDontBlock( ci: MovieImportComponent; var willBlock: Boolean ): ComponentResult; external name '_MovieImportGetDontBlock';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3880,12 +6169,22 @@ function TCTimeCodeCounterToFrameNumber( mh: MediaHandler; const (*var*) tCDef: 
  *      value.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  }
 function TCFrameNumberToTimeCodeTime( mh: MediaHandler; (*const*) var frameNumber: SInt64; const (*var*) tCDef: TimeCodeDef; var outTCTime: SMPTETime ): HandlerError; external name '_TCFrameNumberToTimeCodeTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportSetIdleManager( ci: MovieImportComponent; im: IdleManager ): ComponentResult; external name '_MovieImportSetIdleManager';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3912,6 +6211,7 @@ function TCFrameNumberToTimeCodeTime( mh: MediaHandler; (*const*) var frameNumbe
  *      value.
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -4358,6 +6658,69 @@ const
  *    Scaling modes
  }
 const
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportSetNewMovieFlags( ci: MovieImportComponent; newMovieFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetNewMovieFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  MovieImportGetDestinationMediaType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportGetDestinationMediaType( ci: MovieImportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetDestinationMediaType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  MovieImportSetMediaDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportSetMediaDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieImportSetMediaDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  MovieImportDoUserDialogDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportDoUserDialogDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialogDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  MovieExportToHandle()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportToHandle( ci: MovieExportComponent; dataH: Handle; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
    * Adjusts destination dimensions so that the source fits within the
    * dimensions specified with kQTSettingsImageWidth and
@@ -4457,6 +6820,7 @@ type
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewSCModalFilterUPP( userRoutine: SCModalFilterProcPtr ): SCModalFilterUPP; external name '_NewSCModalFilterUPP';
@@ -4489,12 +6853,22 @@ type
 	MovieExportGetDataUPP = MovieExportGetDataProcPtr;
 	MovieExportGetPropertyUPP = MovieExportGetPropertyProcPtr;
 	MovieExportStageReachedCallbackUPP = MovieExportGetPropertyProcPtr;
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportToFile( ci: MovieExportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  NewSCModalFilterUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewSCModalFilterUPP( userRoutine: SCModalFilterProcPtr ): SCModalFilterUPP; external name '_NewSCModalFilterUPP';
@@ -4504,49 +6878,99 @@ function NewSCModalFilterUPP( userRoutine: SCModalFilterProcPtr ): SCModalFilter
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetAuxiliaryData( ci: MovieExportComponent; dataH: Handle; var handleType: OSType ): ComponentResult; external name '_MovieExportGetAuxiliaryData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  NewSCModalHookUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewSCModalHookUPP( userRoutine: SCModalHookProcPtr ): SCModalHookUPP; external name '_NewSCModalHookUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportSetProgressProc( ci: MovieExportComponent; proc: MovieProgressUPP; refcon: SIGNEDLONG ): ComponentResult; external name '_MovieExportSetProgressProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  NewMovieExportGetDataUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewMovieExportGetDataUPP( userRoutine: MovieExportGetDataProcPtr ): MovieExportGetDataUPP; external name '_NewMovieExportGetDataUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportSetSampleDescription( ci: MovieExportComponent; desc: SampleDescriptionHandle; mediaType: OSType ): ComponentResult; external name '_MovieExportSetSampleDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  NewMovieExportGetPropertyUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewMovieExportGetPropertyUPP( userRoutine: MovieExportGetPropertyProcPtr ): MovieExportGetPropertyUPP; external name '_NewMovieExportGetPropertyUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportDoUserDialog( ci: MovieExportComponent; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue; var canceled: Boolean ): ComponentResult; external name '_MovieExportDoUserDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  NewMovieExportStageReachedCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
 function NewMovieExportStageReachedCallbackUPP( userRoutine: MovieExportStageReachedCallbackProcPtr ): MovieExportStageReachedCallbackUPP; external name '_NewMovieExportStageReachedCallbackUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetCreatorType( ci: MovieExportComponent; var creator: OSType ): ComponentResult; external name '_MovieExportGetCreatorType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 {
  *  DisposeSCModalFilterUPP()
@@ -4554,54 +6978,105 @@ function NewMovieExportStageReachedCallbackUPP( userRoutine: MovieExportStageRea
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeSCModalFilterUPP( userUPP: SCModalFilterUPP ); external name '_DisposeSCModalFilterUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportToDataRef( ci: MovieExportComponent; dataRef: Handle; dataRefType: OSType; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  DisposeSCModalHookUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeSCModalHookUPP( userUPP: SCModalHookUPP ); external name '_DisposeSCModalHookUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportFromProceduresToDataRef( ci: MovieExportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieExportFromProceduresToDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  DisposeMovieExportGetDataUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeMovieExportGetDataUPP( userUPP: MovieExportGetDataUPP ); external name '_DisposeMovieExportGetDataUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportAddDataSource( ci: MovieExportComponent; trackType: OSType; scale: TimeScale; var trackID: SIGNEDLONG; getPropertyProc: MovieExportGetPropertyUPP; getDataProc: MovieExportGetDataUPP; refCon: UnivPtr ): ComponentResult; external name '_MovieExportAddDataSource';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  DisposeMovieExportGetPropertyUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeMovieExportGetPropertyUPP( userUPP: MovieExportGetPropertyUPP ); external name '_DisposeMovieExportGetPropertyUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportValidate( ci: MovieExportComponent; theMovie: Movie; onlyThisTrack: Track; var valid: Boolean ): ComponentResult; external name '_MovieExportValidate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  DisposeMovieExportStageReachedCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
  }
 procedure DisposeMovieExportStageReachedCallbackUPP( userUPP: MovieExportStageReachedCallbackUPP ); external name '_DisposeMovieExportStageReachedCallbackUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetSettingsAsAtomContainer( ci: MovieExportComponent; var settings: QTAtomContainer ): ComponentResult; external name '_MovieExportGetSettingsAsAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
 
 {
  *  InvokeSCModalFilterUPP()
@@ -4609,48 +7084,89 @@ procedure DisposeMovieExportStageReachedCallbackUPP( userUPP: MovieExportStageRe
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeSCModalFilterUPP( theDialog: DialogRef; var theEvent: EventRecord; var itemHit: SInt16; refcon: SIGNEDLONG; userUPP: SCModalFilterUPP ): Boolean; external name '_InvokeSCModalFilterUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportSetSettingsFromAtomContainer( ci: MovieExportComponent; settings: QTAtomContainer ): ComponentResult; external name '_MovieExportSetSettingsFromAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  InvokeSCModalHookUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeSCModalHookUPP( theDialog: DialogRef; itemHit: SInt16; params: UnivPtr; refcon: SIGNEDLONG; userUPP: SCModalHookUPP ): SInt16; external name '_InvokeSCModalHookUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetFileNameExtension( ci: MovieExportComponent; var extension: OSType ): ComponentResult; external name '_MovieExportGetFileNameExtension';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  InvokeMovieExportGetDataUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeMovieExportGetDataUPP( refCon: UnivPtr; var params: MovieExportGetDataParams; userUPP: MovieExportGetDataUPP ): OSErr; external name '_InvokeMovieExportGetDataUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetShortFileTypeString( ci: MovieExportComponent; var typeString: Str255 ): ComponentResult; external name '_MovieExportGetShortFileTypeString';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  InvokeMovieExportGetPropertyUPP()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeMovieExportGetPropertyUPP( refcon: UnivPtr; trackID: SIGNEDLONG; propertyType: OSType; propertyValue: UnivPtr; userUPP: MovieExportGetPropertyUPP ): OSErr; external name '_InvokeMovieExportGetPropertyUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetSourceMediaType( ci: MovieExportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieExportGetSourceMediaType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  InvokeMovieExportStageReachedCallbackUPP()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   available as macro/inline
@@ -4663,11 +7179,65 @@ function InvokeMovieExportStageReachedCallbackUPP( inStage: OSType; inMovie: Mov
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieExportSetGetMoviePropertyProc( ci: MovieExportComponent; getPropertyProc: MovieExportGetPropertyUPP; refCon: UnivPtr ): ComponentResult; external name '_MovieExportSetGetMoviePropertyProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Text Export Display Info data structure}
+type
+	TextDisplayData = record
+		displayFlags: SIGNEDLONG;
+		textJustification: SIGNEDLONG;
+		bgColor: RGBColor;
+		textBox: Rect;
+
+		beginHilite: SInt16;
+		endHilite: SInt16;
+		hiliteColor: RGBColor;
+		doHiliteColor: Boolean;
+		filler: SInt8;
+		scrollDelayDur: TimeValue;
+		dropShadowOffset: Point;
+		dropShadowTransparency: SInt16;
+	end;
+
+type
+	TextExportComponent = ComponentInstance;
+	GraphicImageMovieImportComponent = ComponentInstance;
+{
+ *  TextExportGetDisplayData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+function TextExportGetDisplayData( ci: TextExportComponent; var textDisplay: TextDisplayData ): ComponentResult; external name '_TextExportGetDisplayData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TextExportGetTimeFraction()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
 function MovieImportHandle( ci: MovieImportComponent; dataH: Handle; theMovie: Movie; targetTrack: Track; var usedTrack: Track; atTime: TimeValue; var addedDuration: TimeValue; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportHandle';
+=======
+function TextExportGetTimeFraction( ci: TextExportComponent; var movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportGetTimeFraction';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4680,7 +7250,11 @@ function MovieImportHandle( ci: MovieImportComponent; dataH: Handle; theMovie: M
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MovieImportFile( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; targetTrack: Track; var usedTrack: Track; atTime: TimeValue; var addedDuration: TimeValue; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportFile';
+=======
+function TextExportSetTimeFraction( ci: TextExportComponent; movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportSetTimeFraction';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4693,7 +7267,11 @@ function MovieImportFile( ci: MovieImportComponent; const (*var*) theFile: FSSpe
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MovieImportSetSampleDuration( ci: MovieImportComponent; duration: TimeValue; scale: TimeScale ): ComponentResult; external name '_MovieImportSetSampleDuration';
+=======
+function TextExportGetSettings( ci: TextExportComponent; var setting: SIGNEDLONG ): ComponentResult; external name '_TextExportGetSettings';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4706,7 +7284,11 @@ function MovieImportSetSampleDuration( ci: MovieImportComponent; duration: TimeV
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MovieImportSetSampleDescription( ci: MovieImportComponent; desc: SampleDescriptionHandle; mediaType: OSType ): ComponentResult; external name '_MovieImportSetSampleDescription';
+=======
+function TextExportSetSettings( ci: TextExportComponent; setting: SIGNEDLONG ): ComponentResult; external name '_TextExportSetSettings';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4719,7 +7301,11 @@ function MovieImportSetSampleDescription( ci: MovieImportComponent; desc: Sample
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MovieImportSetMediaFile( ci: MovieImportComponent; alias: AliasHandle ): ComponentResult; external name '_MovieImportSetMediaFile';
+=======
+function MIDIImportGetSettings( ci: TextExportComponent; var setting: SIGNEDLONG ): ComponentResult; external name '_MIDIImportGetSettings';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4732,7 +7318,11 @@ function MovieImportSetMediaFile( ci: MovieImportComponent; alias: AliasHandle )
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function MovieImportSetDimensions( ci: MovieImportComponent; width: Fixed; height: Fixed ): ComponentResult; external name '_MovieImportSetDimensions';
+=======
+function MIDIImportSetSettings( ci: TextExportComponent; setting: SIGNEDLONG ): ComponentResult; external name '_MIDIImportSetSettings';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4742,10 +7332,17 @@ function MovieImportSetDimensions( ci: MovieImportComponent; width: Fixed; heigh
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function MovieImportSetChunkSize( ci: MovieImportComponent; chunkSize: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetChunkSize';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportNewGetDataAndPropertiesProcs( ci: MovieExportComponent; trackType: OSType; var scale: TimeScale; theMovie: Movie; theTrack: Track; startTime: TimeValue; duration: TimeValue; var getPropertyProc: MovieExportGetPropertyUPP; var getDataProc: MovieExportGetDataUPP; var refCon: UnivPtr ): ComponentResult; external name '_MovieExportNewGetDataAndPropertiesProcs';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4755,6 +7352,7 @@ function MovieImportSetChunkSize( ci: MovieImportComponent; chunkSize: SIGNEDLON
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
@@ -4780,885 +7378,7 @@ function MovieImportSetAuxiliaryData( ci: MovieImportComponent; data: Handle; ha
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportSetFromScrap( ci: MovieImportComponent; fromScrap: Boolean ): ComponentResult; external name '_MovieImportSetFromScrap';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportDoUserDialog()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportDoUserDialog( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theData: Handle; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialog';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportSetDuration()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportSetDuration( ci: MovieImportComponent; duration: TimeValue ): ComponentResult; external name '_MovieImportSetDuration';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetAuxiliaryDataType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportGetAuxiliaryDataType( ci: MovieImportComponent; var auxType: OSType ): ComponentResult; external name '_MovieImportGetAuxiliaryDataType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportValidate()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportValidate( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theData: Handle; var valid: Boolean ): ComponentResult; external name '_MovieImportValidate';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetFileType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportGetFileType( ci: MovieImportComponent; var fileType: OSType ): ComponentResult; external name '_MovieImportGetFileType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; theMovie: Movie; targetTrack: Track; var usedTrack: Track; atTime: TimeValue; var addedDuration: TimeValue; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetSampleDescription()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportGetSampleDescription( ci: MovieImportComponent; var desc: SampleDescriptionHandle; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetSampleDescription';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetMIMETypeList()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportGetMIMETypeList( ci: MovieImportComponent; var mimeInfo: QTAtomContainer ): ComponentResult; external name '_MovieImportGetMIMETypeList';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportSetOffsetAndLimit()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportSetOffsetAndLimit( ci: MovieImportComponent; offset: UNSIGNEDLONG; limit: UNSIGNEDLONG ): ComponentResult; external name '_MovieImportSetOffsetAndLimit';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetSettingsAsAtomContainer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportGetSettingsAsAtomContainer( ci: MovieImportComponent; var settings: QTAtomContainer ): ComponentResult; external name '_MovieImportGetSettingsAsAtomContainer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportSetSettingsFromAtomContainer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieImportSetSettingsFromAtomContainer( ci: MovieImportComponent; settings: QTAtomContainer ): ComponentResult; external name '_MovieImportSetSettingsFromAtomContainer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportSetOffsetAndLimit64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function MovieImportSetOffsetAndLimit64( ci: MovieImportComponent; const (*var*) offset: wide; const (*var*) limit: wide ): ComponentResult; external name '_MovieImportSetOffsetAndLimit64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportIdle()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function MovieImportIdle( ci: MovieImportComponent; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportIdle';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportValidateDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function MovieImportValidateDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var valid: UInt8 ): ComponentResult; external name '_MovieImportValidateDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetLoadState()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- }
-function MovieImportGetLoadState( ci: MovieImportComponent; var importerLoadState: SIGNEDLONG ): ComponentResult; external name '_MovieImportGetLoadState';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetMaxLoadedTime()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- }
-function MovieImportGetMaxLoadedTime( ci: MovieImportComponent; var time: TimeValue ): ComponentResult; external name '_MovieImportGetMaxLoadedTime';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportEstimateCompletionTime()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function MovieImportEstimateCompletionTime( ci: MovieImportComponent; var time: TimeRecord ): ComponentResult; external name '_MovieImportEstimateCompletionTime';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportSetDontBlock()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function MovieImportSetDontBlock( ci: MovieImportComponent; dontBlock: Boolean ): ComponentResult; external name '_MovieImportSetDontBlock';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportGetDontBlock()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 =======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-<<<<<<< HEAD
-function MovieImportGetDontBlock( ci: MovieImportComponent; var willBlock: Boolean ): ComponentResult; external name '_MovieImportGetDontBlock';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieImportSetIdleManager()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function MovieImportSetIdleManager( ci: MovieImportComponent; im: IdleManager ): ComponentResult; external name '_MovieImportSetIdleManager';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  MovieImportSetNewMovieFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function MovieImportSetNewMovieFlags( ci: MovieImportComponent; newMovieFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetNewMovieFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-=======
-function MovieImportEstimateCompletionTime( ci: MovieImportComponent; var time: TimeRecord ): ComponentResult; external name '_MovieImportEstimateCompletionTime';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
- *  MovieImportGetDestinationMediaType()
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function MovieImportGetDestinationMediaType( ci: MovieImportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetDestinationMediaType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-<<<<<<< HEAD
-=======
-=======
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function MovieImportSetDontBlock( ci: MovieImportComponent; dontBlock: Boolean ): ComponentResult; external name '_MovieImportSetDontBlock';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
- *  MovieImportSetMediaDataRef()
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
- }
-function MovieImportSetMediaDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieImportSetMediaDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-=======
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function MovieImportGetDontBlock( ci: MovieImportComponent; var willBlock: Boolean ): ComponentResult; external name '_MovieImportGetDontBlock';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-
-
-{
- *  MovieImportDoUserDialogDataRef()
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
- }
-function MovieImportDoUserDialogDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialogDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-=======
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function MovieImportSetIdleManager( ci: MovieImportComponent; im: IdleManager ): ComponentResult; external name '_MovieImportSetIdleManager';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
- *  MovieImportSetMediaDataRef()
- *  
- *  Availability:
-<<<<<<< HEAD
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
- }
-function MovieImportSetMediaDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieImportSetMediaDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-=======
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportToHandle( ci: MovieExportComponent; dataH: Handle; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToHandle';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function MovieImportSetNewMovieFlags( ci: MovieImportComponent; newMovieFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetNewMovieFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-
-
-{
- *  MovieImportDoUserDialogDataRef()
- *  
- *  Availability:
-<<<<<<< HEAD
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
- }
-function MovieImportDoUserDialogDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialogDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-=======
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportToFile( ci: MovieExportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToFile';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-=======
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function MovieImportGetDestinationMediaType( ci: MovieImportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetDestinationMediaType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  MovieImportSetMediaDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
- }
-function MovieImportSetMediaDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieImportSetMediaDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-
-
-{
- *  MovieImportDoUserDialogDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
- }
-function MovieImportDoUserDialogDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialogDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
->>>>>>> graemeg/cpstrnew
-
-
-{
- *  MovieExportToHandle()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportToHandle( ci: MovieExportComponent; dataH: Handle; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToHandle';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportToFile()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-<<<<<<< HEAD
-<<<<<<< HEAD
-function MovieExportToFile( ci: MovieExportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToFile';
-=======
-function MovieExportGetAuxiliaryData( ci: MovieExportComponent; dataH: Handle; var handleType: OSType ): ComponentResult; external name '_MovieExportGetAuxiliaryData';
->>>>>>> graemeg/cpstrnew
-=======
-function MovieExportToFile( ci: MovieExportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToFile';
->>>>>>> graemeg/cpstrnew
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportGetAuxiliaryData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportGetAuxiliaryData( ci: MovieExportComponent; dataH: Handle; var handleType: OSType ): ComponentResult; external name '_MovieExportGetAuxiliaryData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportSetProgressProc()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportSetProgressProc( ci: MovieExportComponent; proc: MovieProgressUPP; refcon: SIGNEDLONG ): ComponentResult; external name '_MovieExportSetProgressProc';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportSetSampleDescription()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportSetSampleDescription( ci: MovieExportComponent; desc: SampleDescriptionHandle; mediaType: OSType ): ComponentResult; external name '_MovieExportSetSampleDescription';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportDoUserDialog()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportDoUserDialog( ci: MovieExportComponent; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue; var canceled: Boolean ): ComponentResult; external name '_MovieExportDoUserDialog';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportGetCreatorType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportGetCreatorType( ci: MovieExportComponent; var creator: OSType ): ComponentResult; external name '_MovieExportGetCreatorType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportToDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportToDataRef( ci: MovieExportComponent; dataRef: Handle; dataRefType: OSType; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportFromProceduresToDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportFromProceduresToDataRef( ci: MovieExportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieExportFromProceduresToDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportAddDataSource()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportAddDataSource( ci: MovieExportComponent; trackType: OSType; scale: TimeScale; var trackID: SIGNEDLONG; getPropertyProc: MovieExportGetPropertyUPP; getDataProc: MovieExportGetDataUPP; refCon: UnivPtr ): ComponentResult; external name '_MovieExportAddDataSource';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportValidate()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportValidate( ci: MovieExportComponent; theMovie: Movie; onlyThisTrack: Track; var valid: Boolean ): ComponentResult; external name '_MovieExportValidate';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportGetSettingsAsAtomContainer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportGetSettingsAsAtomContainer( ci: MovieExportComponent; var settings: QTAtomContainer ): ComponentResult; external name '_MovieExportGetSettingsAsAtomContainer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportSetSettingsFromAtomContainer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportSetSettingsFromAtomContainer( ci: MovieExportComponent; settings: QTAtomContainer ): ComponentResult; external name '_MovieExportSetSettingsFromAtomContainer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportGetFileNameExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportGetFileNameExtension( ci: MovieExportComponent; var extension: OSType ): ComponentResult; external name '_MovieExportGetFileNameExtension';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportGetShortFileTypeString()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportGetShortFileTypeString( ci: MovieExportComponent; var typeString: Str255 ): ComponentResult; external name '_MovieExportGetShortFileTypeString';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportGetSourceMediaType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportGetSourceMediaType( ci: MovieExportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieExportGetSourceMediaType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportSetGetMoviePropertyProc()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function MovieExportSetGetMoviePropertyProc( ci: MovieExportComponent; getPropertyProc: MovieExportGetPropertyUPP; refCon: UnivPtr ): ComponentResult; external name '_MovieExportSetGetMoviePropertyProc';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-<<<<<<< HEAD
-
-
-=======
-
-
->>>>>>> graemeg/cpstrnew
-{ Text Export Display Info data structure}
-type
-	TextDisplayData = record
-		displayFlags: SIGNEDLONG;
-		textJustification: SIGNEDLONG;
-		bgColor: RGBColor;
-		textBox: Rect;
-
-		beginHilite: SInt16;
-		endHilite: SInt16;
-		hiliteColor: RGBColor;
-		doHiliteColor: Boolean;
-		filler: SInt8;
-		scrollDelayDur: TimeValue;
-		dropShadowOffset: Point;
-		dropShadowTransparency: SInt16;
-	end;
-
-type
-	TextExportComponent = ComponentInstance;
-	GraphicImageMovieImportComponent = ComponentInstance;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> graemeg/cpstrnew
-{
- *  TextExportGetDisplayData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function TextExportGetDisplayData( ci: TextExportComponent; var textDisplay: TextDisplayData ): ComponentResult; external name '_TextExportGetDisplayData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-<<<<<<< HEAD
-=======
->>>>>>> graemeg/cpstrnew
-{
- *  TextExportGetDisplayData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
-=======
-=======
-{
- *  TextExportGetTimeFraction()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-<<<<<<< HEAD
-function TextExportGetDisplayData( ci: TextExportComponent; var textDisplay: TextDisplayData ): ComponentResult; external name '_TextExportGetDisplayData';
-=======
-function TextExportGetTimeFraction( ci: TextExportComponent; var movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportGetTimeFraction';
->>>>>>> graemeg/cpstrnew
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  TextExportGetTimeFraction()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function TextExportGetTimeFraction( ci: TextExportComponent; var movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportGetTimeFraction';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  TextExportSetTimeFraction()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function TextExportSetTimeFraction( ci: TextExportComponent; movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportSetTimeFraction';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  TextExportGetSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function TextExportGetSettings( ci: TextExportComponent; var setting: SIGNEDLONG ): ComponentResult; external name '_TextExportGetSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  TextExportSetSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function TextExportSetSettings( ci: TextExportComponent; setting: SIGNEDLONG ): ComponentResult; external name '_TextExportSetSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MIDIImportGetSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MIDIImportGetSettings( ci: TextExportComponent; var setting: SIGNEDLONG ): ComponentResult; external name '_MIDIImportGetSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MIDIImportSetSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MIDIImportSetSettings( ci: TextExportComponent; setting: SIGNEDLONG ): ComponentResult; external name '_MIDIImportSetSettings';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportNewGetDataAndPropertiesProcs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function MovieExportNewGetDataAndPropertiesProcs( ci: MovieExportComponent; trackType: OSType; var scale: TimeScale; theMovie: Movie; theTrack: Track; startTime: TimeValue; duration: TimeValue; var getPropertyProc: MovieExportGetPropertyUPP; var getDataProc: MovieExportGetDataUPP; var refCon: UnivPtr ): ComponentResult; external name '_MovieExportNewGetDataAndPropertiesProcs';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  MovieExportDisposeGetDataAndPropertiesProcs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
@@ -5676,28 +7396,12 @@ const
 	movieExportSourceApertureMode = FourCharCode('srap'); { pointer to OSType. Source movie's aperture mode.ÊSet the aperture mode on the decompression session.}
 
 { Component Properties specific to Movie Export components}
-<<<<<<< HEAD
-<<<<<<< HEAD
 const
 	kQTMovieExporterPropertyID_StageReachedCallback = FourCharCode('stgr'); { value is a MovieExportStageReachedCallbackProcRecord}
 	kQTMovieExporterPropertyID_DeinterlaceVideo = FourCharCode('dint'); { value is a Boolean }
 
 { Stages passed to MovieExportStageReachedCallbackProc}
 const
-=======
-const
-=======
-const
->>>>>>> graemeg/cpstrnew
-	kQTMovieExporterPropertyID_StageReachedCallback = FourCharCode('stgr'); { value is a MovieExportStageReachedCallbackProcRecord}
-	kQTMovieExporterPropertyID_DeinterlaceVideo = FourCharCode('dint'); { value is a Boolean }
-
-{ Stages passed to MovieExportStageReachedCallbackProc}
-const
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
 	kQTMovieExportStage_EmptyMovieCreated = FourCharCode('empt');
 	kQTMovieExportStage_AllTracksAddedToMovie = FourCharCode('trax');
 
@@ -5781,16 +7485,21 @@ function PreviewShowData( p: pnotComponent; dataType: OSType; data: Handle; cons
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MovieImportSetFromScrap( ci: MovieImportComponent; fromScrap: Boolean ): ComponentResult; external name '_MovieImportSetFromScrap';
+=======
 function PreviewMakePreview( p: pnotComponent; var previewType: OSType; var previewResult: Handle; const (*var*) sourceFile: FSSpec; progress: ICMProgressProcRecordPtr ): ComponentResult; external name '_PreviewMakePreview';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  PreviewMakePreviewReference()
+ *  MovieImportDoUserDialog()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
@@ -5798,12 +7507,16 @@ function PreviewMakePreview( p: pnotComponent; var previewType: OSType; var prev
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MovieImportDoUserDialog( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theData: Handle; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialog';
+=======
 function PreviewMakePreviewReference( p: pnotComponent; var previewType: OSType; var resID: SInt16; const (*var*) sourceFile: FSSpec ): ComponentResult; external name '_PreviewMakePreviewReference';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  PreviewEvent()
+ *  MovieImportSetDuration()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
@@ -5811,6 +7524,22 @@ function PreviewMakePreviewReference( p: pnotComponent; var previewType: OSType;
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MovieImportSetDuration( ci: MovieImportComponent; duration: TimeValue ): ComponentResult; external name '_MovieImportSetDuration';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetAuxiliaryDataType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetAuxiliaryDataType( ci: MovieImportComponent; var auxType: OSType ): ComponentResult; external name '_MovieImportGetAuxiliaryDataType';
+=======
 function PreviewEvent( p: pnotComponent; var e: EventRecord; var handledEvent: Boolean ): ComponentResult; external name '_PreviewEvent';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -5850,11 +7579,92 @@ function DataCodecDecompress( dc: DataCodecComponent; srcData: UnivPtr; srcSize:
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function DataCodecGetCompressBufferSize( dc: DataCodecComponent; srcSize: UInt32; var dstSize: UInt32 ): ComponentResult; external name '_DataCodecGetCompressBufferSize';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
- *  DataCodecCompress()
+ *  MovieImportValidate()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportValidate( ci: MovieImportComponent; const (*var*) theFile: FSSpec; theData: Handle; var valid: Boolean ): ComponentResult; external name '_MovieImportValidate';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataCodecCompress( dc: DataCodecComponent; srcData: UnivPtr; srcSize: UInt32; dstData: UnivPtr; dstBufferSize: UInt32; var actualDstSize: UInt32; var decompressSlop: UInt32 ): ComponentResult; external name '_DataCodecCompress';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetFileType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetFileType( ci: MovieImportComponent; var fileType: OSType ): ComponentResult; external name '_MovieImportGetFileType';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataCodecBeginInterruptSafe( dc: DataCodecComponent; maxSrcSize: UNSIGNEDLONG ): ComponentResult; external name '_DataCodecBeginInterruptSafe';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; theMovie: Movie; targetTrack: Track; var usedTrack: Track; atTime: TimeValue; var addedDuration: TimeValue; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportDataRef';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataCodecEndInterruptSafe( dc: DataCodecComponent ): ComponentResult; external name '_DataCodecEndInterruptSafe';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetSampleDescription()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetSampleDescription( ci: MovieImportComponent; var desc: SampleDescriptionHandle; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetSampleDescription';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataCodecDecompressPartial( dc: DataCodecComponent; var next_in: UnivPtr; var avail_in: UNSIGNEDLONG; var total_in: UNSIGNEDLONG; var next_out: UnivPtr; var avail_out: UNSIGNEDLONG; var total_out: UNSIGNEDLONG; var didFinish: Boolean ): ComponentResult; external name '_DataCodecDecompressPartial';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetMIMETypeList()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
@@ -5862,14 +7672,1633 @@ function DataCodecGetCompressBufferSize( dc: DataCodecComponent; srcSize: UInt32
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
+function MovieImportGetMIMETypeList( ci: MovieImportComponent; var mimeInfo: QTAtomContainer ): ComponentResult; external name '_MovieImportGetMIMETypeList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+function DataCodecCompressPartial(dc: DataCodecComponent; var next_in: UnivPtr; var avail_in: UNSIGNEDLONG; var total_in: UNSIGNEDLONG; var next_out: UnivPtr; var avail_out: UNSIGNEDLONG; var total_out: UNSIGNEDLONG; tryToFinish: boolean; var didFinish: boolean): ComponentResult; external name '_DataCodecCompressPartial';
+type
+	DataHCompletionProcPtr = procedure( request: Ptr; refcon: SIGNEDLONG; err: OSErr );
+	DataHCompletionUPP = DataHCompletionProcPtr;
+
+const
+	kDataHCanRead = 1 shl 0;
+	kDataHSpecialRead = 1 shl 1;
+	kDataHSpecialReadFile = 1 shl 2;
+	kDataHCanWrite = 1 shl 3;
+	kDataHSpecialWrite = 1 shl 4;
+	kDataHSpecialWriteFile = 1 shl 5;
+	kDataHCanStreamingWrite = 1 shl 6;
+	kDataHMustCheckDataRef = 1 shl 7;
+
+{ Data reference records for specific data ref types}
+type
+	HandleDataRefRecordPtr = ^HandleDataRefRecord;
+	HandleDataRefRecord = record
+		dataHndl: Handle;
+	end;
+type
+	HandleDataRefPtr = HandleDataRefRecordPtr;
+	HandleDataRef = ^HandleDataRefPtr;
+	PointerDataRefRecordPtr = ^PointerDataRefRecord;
+	PointerDataRefRecord = record
+		data: UnivPtr;
+		dataLength: Size;
+	end;
+type
+	PointerDataRefPtr = PointerDataRefRecordPtr;
+	PointerDataRef = ^PointerDataRefPtr;
+{ Data reference extensions}
+const
+	kDataRefExtensionChokeSpeed = FourCharCode('chok');
+	kDataRefExtensionFileName = FourCharCode('fnam');
+	kDataRefExtensionMIMEType = FourCharCode('mime');
+	kDataRefExtensionMacOSFileType = FourCharCode('ftyp');
+	kDataRefExtensionInitializationData = FourCharCode('data');
+	kDataRefExtensionQuickTimeMediaType = FourCharCode('mtyp');
+
+const
+	kDataHChokeToMovieDataRate = 1 shl 0; { param is 0}
+	kDataHChokeToParam = 1 shl 1; { param is bytes per second}
+
+type
+	DataHChokeAtomRecordPtr = ^DataHChokeAtomRecord;
+	DataHChokeAtomRecord = record
+		flags: SIGNEDLONG;                  { one of kDataHChokeTo constants}
+		param: SIGNEDLONG;
+	end;
+
+type
+	DataHVolumeListRecordPtr = ^DataHVolumeListRecord;
+	DataHVolumeListRecord = record
+		vRefNum: SInt16;
+		flags: SIGNEDLONG;
+	end;
+type
+	DataHVolumeListPtr = DataHVolumeListRecordPtr;
+	DataHVolumeList = ^DataHVolumeListPtr;
+const
+	kDataHExtendedSchedule = FourCharCode('xtnd');
+
+type
+	DataHScheduleRecordPtr = ^DataHScheduleRecord;
+	DataHScheduleRecord = record
+		timeNeededBy: TimeRecord;
+		extendedID: SIGNEDLONG;             { always is kDataHExtendedSchedule}
+		extendedVers: SIGNEDLONG;           { always set to 0}
+		priority: Fixed;               { 100.0 or more means must have. lower numbersÉ}
+	end;
+type
+	DataHSchedulePtr = DataHScheduleRecordPtr;
+{ Flags for DataHGetInfoFlags}
+const
+	kDataHInfoFlagNeverStreams = 1 shl 0; { set if this data handler doesn't stream}
+	kDataHInfoFlagCanUpdateDataRefs = 1 shl 1; { set if this data handler might update data reference}
+	kDataHInfoFlagNeedsNetworkBandwidth = 1 shl 2; { set if this data handler may need to occupy the network}
+
+
+{ Types for DataHGetFileTypeOrdering}
+const
+	kDataHFileTypeMacOSFileType = FourCharCode('ftyp');
+	kDataHFileTypeExtension = FourCharCode('fext');
+	kDataHFileTypeMIME = FourCharCode('mime');
+
+type
+	DataHFileTypeOrderingPtr = OSTypePtr;
+	DataHFileTypeOrderingHandle = ^DataHFileTypeOrderingPtr;
+
+{
+ *  DataHGetData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetData( dh: DataHandler; h: Handle; hOffset: SIGNEDLONG; offset: SIGNEDLONG; size: SIGNEDLONG ): ComponentResult; external name '_DataHGetData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  MovieImportSetOffsetAndLimit()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetOffsetAndLimit( ci: MovieImportComponent; offset: UNSIGNEDLONG; limit: UNSIGNEDLONG ): ComponentResult; external name '_MovieImportSetOffsetAndLimit';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHPutData( dh: DataHandler; h: Handle; hOffset: SIGNEDLONG; var offset: SIGNEDLONG; size: SIGNEDLONG ): ComponentResult; external name '_DataHPutData';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetSettingsAsAtomContainer()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportGetSettingsAsAtomContainer( ci: MovieImportComponent; var settings: QTAtomContainer ): ComponentResult; external name '_MovieImportGetSettingsAsAtomContainer';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHFlushData( dh: DataHandler ): ComponentResult; external name '_DataHFlushData';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetSettingsFromAtomContainer()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieImportSetSettingsFromAtomContainer( ci: MovieImportComponent; settings: QTAtomContainer ): ComponentResult; external name '_MovieImportSetSettingsFromAtomContainer';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHOpenForWrite( dh: DataHandler ): ComponentResult; external name '_DataHOpenForWrite';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetOffsetAndLimit64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieImportSetOffsetAndLimit64( ci: MovieImportComponent; const (*var*) offset: wide; const (*var*) limit: wide ): ComponentResult; external name '_MovieImportSetOffsetAndLimit64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHCloseForWrite( dh: DataHandler ): ComponentResult; external name '_DataHCloseForWrite';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportIdle()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieImportIdle( ci: MovieImportComponent; inFlags: SIGNEDLONG; var outFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportIdle';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHOpenForRead( dh: DataHandler ): ComponentResult; external name '_DataHOpenForRead';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportValidateDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieImportValidateDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var valid: UInt8 ): ComponentResult; external name '_MovieImportValidateDataRef';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHCloseForRead( dh: DataHandler ): ComponentResult; external name '_DataHCloseForRead';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetLoadState()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function MovieImportGetLoadState( ci: MovieImportComponent; var importerLoadState: SIGNEDLONG ): ComponentResult; external name '_MovieImportGetLoadState';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetDataRef( dh: DataHandler; dataRef: Handle ): ComponentResult; external name '_DataHSetDataRef';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetMaxLoadedTime()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function MovieImportGetMaxLoadedTime( ci: MovieImportComponent; var time: TimeValue ): ComponentResult; external name '_MovieImportGetMaxLoadedTime';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetDataRef( dh: DataHandler; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRef';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportEstimateCompletionTime()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MovieImportEstimateCompletionTime( ci: MovieImportComponent; var time: TimeRecord ): ComponentResult; external name '_MovieImportEstimateCompletionTime';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHCompareDataRef( dh: DataHandler; dataRef: Handle; var equal: Boolean ): ComponentResult; external name '_DataHCompareDataRef';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetDontBlock()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MovieImportSetDontBlock( ci: MovieImportComponent; dontBlock: Boolean ): ComponentResult; external name '_MovieImportSetDontBlock';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHTask( dh: DataHandler ): ComponentResult; external name '_DataHTask';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportGetDontBlock()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+<<<<<<< HEAD
+function MovieImportGetDontBlock( ci: MovieImportComponent; var willBlock: Boolean ): ComponentResult; external name '_MovieImportGetDontBlock';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHScheduleData( dh: DataHandler; PlaceToPutDataPtr: Ptr; FileOffset: SIGNEDLONG; DataSize: SIGNEDLONG; RefCon: SIGNEDLONG; scheduleRec: DataHSchedulePtr; CompletionRtn: DataHCompletionUPP ): ComponentResult; external name '_DataHScheduleData';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieImportSetIdleManager()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportSetIdleManager( ci: MovieImportComponent; im: IdleManager ): ComponentResult; external name '_MovieImportSetIdleManager';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHFinishData( dh: DataHandler; PlaceToPutDataPtr: Ptr; Cancel: Boolean ): ComponentResult; external name '_DataHFinishData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  MovieImportSetNewMovieFlags()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportSetNewMovieFlags( ci: MovieImportComponent; newMovieFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetNewMovieFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+=======
+function MovieImportEstimateCompletionTime( ci: MovieImportComponent; var time: TimeRecord ): ComponentResult; external name '_MovieImportEstimateCompletionTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHFlushCache( dh: DataHandler ): ComponentResult; external name '_DataHFlushCache';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  MovieImportGetDestinationMediaType()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportGetDestinationMediaType( ci: MovieImportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetDestinationMediaType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+<<<<<<< HEAD
+=======
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MovieImportSetDontBlock( ci: MovieImportComponent; dontBlock: Boolean ): ComponentResult; external name '_MovieImportSetDontBlock';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHResolveDataRef( dh: DataHandler; theDataRef: Handle; var wasChanged: Boolean; userInterfaceAllowed: Boolean ): ComponentResult; external name '_DataHResolveDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  MovieImportSetMediaDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportSetMediaDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieImportSetMediaDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function MovieImportGetDontBlock( ci: MovieImportComponent; var willBlock: Boolean ): ComponentResult; external name '_MovieImportGetDontBlock';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetFileSize( dh: DataHandler; var fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetFileSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  MovieImportDoUserDialogDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportDoUserDialogDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialogDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportSetIdleManager( ci: MovieImportComponent; im: IdleManager ): ComponentResult; external name '_MovieImportSetIdleManager';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHCanUseDataRef( dh: DataHandler; dataRef: Handle; var useFlags: SIGNEDLONG ): ComponentResult; external name '_DataHCanUseDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  MovieImportSetMediaDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportSetMediaDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieImportSetMediaDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+=======
+>>>>>>> graemeg/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportToHandle( ci: MovieExportComponent; dataH: Handle; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportSetNewMovieFlags( ci: MovieImportComponent; newMovieFlags: SIGNEDLONG ): ComponentResult; external name '_MovieImportSetNewMovieFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function DataHGetVolumeList( dh: DataHandler; var volumeList: DataHVolumeList ): ComponentResult; external name '_DataHGetVolumeList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  MovieImportDoUserDialogDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportDoUserDialogDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialogDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+=======
+>>>>>>> graemeg/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportToFile( ci: MovieExportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function MovieImportGetDestinationMediaType( ci: MovieImportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieImportGetDestinationMediaType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+=======
+function DataHWrite( dh: DataHandler; data: Ptr; offset: SIGNEDLONG; size: SIGNEDLONG; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHWrite';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  MovieImportSetMediaDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportSetMediaDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieImportSetMediaDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHPreextend( dh: DataHandler; maxToAdd: UNSIGNEDLONG; var spaceAdded: UNSIGNEDLONG ): ComponentResult; external name '_DataHPreextend';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  MovieImportDoUserDialogDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function MovieImportDoUserDialogDataRef( ci: MovieImportComponent; dataRef: Handle; dataRefType: OSType; var canceled: Boolean ): ComponentResult; external name '_MovieImportDoUserDialogDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetFileSize( dh: DataHandler; fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHSetFileSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  MovieExportToHandle()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportToHandle( ci: MovieExportComponent; dataH: Handle; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToHandle';
+=======
+function DataHGetFreeSpace( dh: DataHandler; var freeSize: UNSIGNEDLONG ): ComponentResult; external name '_DataHGetFreeSpace';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportToFile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+function MovieExportToFile( ci: MovieExportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToFile';
+=======
+function MovieExportGetAuxiliaryData( ci: MovieExportComponent; dataH: Handle; var handleType: OSType ): ComponentResult; external name '_MovieExportGetAuxiliaryData';
+>>>>>>> graemeg/cpstrnew
+=======
+function MovieExportToFile( ci: MovieExportComponent; const (*var*) theFile: FSSpec; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToFile';
+>>>>>>> graemeg/cpstrnew
+=======
+function DataHCreateFile( dh: DataHandler; creator: OSType; deleteExisting: Boolean ): ComponentResult; external name '_DataHCreateFile';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportGetAuxiliaryData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportGetAuxiliaryData( ci: MovieExportComponent; dataH: Handle; var handleType: OSType ): ComponentResult; external name '_MovieExportGetAuxiliaryData';
+=======
+function DataHGetPreferredBlockSize( dh: DataHandler; var blockSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetPreferredBlockSize';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportSetProgressProc()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportSetProgressProc( ci: MovieExportComponent; proc: MovieProgressUPP; refcon: SIGNEDLONG ): ComponentResult; external name '_MovieExportSetProgressProc';
+=======
+function DataHGetDeviceIndex( dh: DataHandler; var deviceIndex: SIGNEDLONG ): ComponentResult; external name '_DataHGetDeviceIndex';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportSetSampleDescription()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportSetSampleDescription( ci: MovieExportComponent; desc: SampleDescriptionHandle; mediaType: OSType ): ComponentResult; external name '_MovieExportSetSampleDescription';
+=======
+function DataHIsStreamingDataHandler( dh: DataHandler; var yes: Boolean ): ComponentResult; external name '_DataHIsStreamingDataHandler';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportDoUserDialog()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportDoUserDialog( ci: MovieExportComponent; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue; var canceled: Boolean ): ComponentResult; external name '_MovieExportDoUserDialog';
+=======
+function DataHGetDataInBuffer( dh: DataHandler; startOffset: SIGNEDLONG; var size: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataInBuffer';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportGetCreatorType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportGetCreatorType( ci: MovieExportComponent; var creator: OSType ): ComponentResult; external name '_MovieExportGetCreatorType';
+=======
+function DataHGetScheduleAheadTime( dh: DataHandler; var millisecs: SIGNEDLONG ): ComponentResult; external name '_DataHGetScheduleAheadTime';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportToDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportToDataRef( ci: MovieExportComponent; dataRef: Handle; dataRefType: OSType; theMovie: Movie; onlyThisTrack: Track; startTime: TimeValue; duration: TimeValue ): ComponentResult; external name '_MovieExportToDataRef';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetCacheSizeLimit( dh: DataHandler; cacheSizeLimit: Size ): ComponentResult; external name '_DataHSetCacheSizeLimit';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportFromProceduresToDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportFromProceduresToDataRef( ci: MovieExportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_MovieExportFromProceduresToDataRef';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetCacheSizeLimit( dh: DataHandler; var cacheSizeLimit: Size ): ComponentResult; external name '_DataHGetCacheSizeLimit';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportAddDataSource()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportAddDataSource( ci: MovieExportComponent; trackType: OSType; scale: TimeScale; var trackID: SIGNEDLONG; getPropertyProc: MovieExportGetPropertyUPP; getDataProc: MovieExportGetDataUPP; refCon: UnivPtr ): ComponentResult; external name '_MovieExportAddDataSource';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetMovie( dh: DataHandler; var theMovie: Movie; var id: SInt16 ): ComponentResult; external name '_DataHGetMovie';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportValidate()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportValidate( ci: MovieExportComponent; theMovie: Movie; onlyThisTrack: Track; var valid: Boolean ): ComponentResult; external name '_MovieExportValidate';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHAddMovie( dh: DataHandler; theMovie: Movie; var id: SInt16 ): ComponentResult; external name '_DataHAddMovie';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportGetSettingsAsAtomContainer()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetSettingsAsAtomContainer( ci: MovieExportComponent; var settings: QTAtomContainer ): ComponentResult; external name '_MovieExportGetSettingsAsAtomContainer';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHUpdateMovie( dh: DataHandler; theMovie: Movie; id: SInt16 ): ComponentResult; external name '_DataHUpdateMovie';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportSetSettingsFromAtomContainer()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportSetSettingsFromAtomContainer( ci: MovieExportComponent; settings: QTAtomContainer ): ComponentResult; external name '_MovieExportSetSettingsFromAtomContainer';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHDoesBuffer( dh: DataHandler; var buffersReads: Boolean; var buffersWrites: Boolean ): ComponentResult; external name '_DataHDoesBuffer';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportGetFileNameExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportGetFileNameExtension( ci: MovieExportComponent; var extension: OSType ): ComponentResult; external name '_MovieExportGetFileNameExtension';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetFileName( dh: DataHandler; var str: Str255 ): ComponentResult; external name '_DataHGetFileName';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportGetShortFileTypeString()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportGetShortFileTypeString( ci: MovieExportComponent; var typeString: Str255 ): ComponentResult; external name '_MovieExportGetShortFileTypeString';
+=======
+function DataHGetAvailableFileSize( dh: DataHandler; var fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetAvailableFileSize';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportGetSourceMediaType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function MovieExportGetSourceMediaType( ci: MovieExportComponent; var mediaType: OSType ): ComponentResult; external name '_MovieExportGetSourceMediaType';
+=======
+function DataHGetMacOSFileType( dh: DataHandler; var fileType: OSType ): ComponentResult; external name '_DataHGetMacOSFileType';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportSetGetMoviePropertyProc()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MovieExportSetGetMoviePropertyProc( ci: MovieExportComponent; getPropertyProc: MovieExportGetPropertyUPP; refCon: UnivPtr ): ComponentResult; external name '_MovieExportSetGetMoviePropertyProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+<<<<<<< HEAD
+
+
+=======
+
+
+>>>>>>> graemeg/cpstrnew
+{ Text Export Display Info data structure}
+type
+	TextDisplayData = record
+		displayFlags: SIGNEDLONG;
+		textJustification: SIGNEDLONG;
+		bgColor: RGBColor;
+		textBox: Rect;
+
+		beginHilite: SInt16;
+		endHilite: SInt16;
+		hiliteColor: RGBColor;
+		doHiliteColor: Boolean;
+		filler: SInt8;
+		scrollDelayDur: TimeValue;
+		dropShadowOffset: Point;
+		dropShadowTransparency: SInt16;
+	end;
+
+type
+	TextExportComponent = ComponentInstance;
+	GraphicImageMovieImportComponent = ComponentInstance;
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetMIMEType( dh: DataHandler; var mimeType: Str255 ): ComponentResult; external name '_DataHGetMIMEType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TextExportGetDisplayData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TextExportGetDisplayData( ci: TextExportComponent; var textDisplay: TextDisplayData ): ComponentResult; external name '_TextExportGetDisplayData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetDataRefWithAnchor( dh: DataHandler; anchorDataRef: Handle; dataRefType: OSType; dataRef: Handle ): ComponentResult; external name '_DataHSetDataRefWithAnchor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  TextExportGetDisplayData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+{
+ *  TextExportGetTimeFraction()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function TextExportGetDisplayData( ci: TextExportComponent; var textDisplay: TextDisplayData ): ComponentResult; external name '_TextExportGetDisplayData';
+=======
+function TextExportGetTimeFraction( ci: TextExportComponent; var movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportGetTimeFraction';
+>>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetDataRefWithAnchor( dh: DataHandler; anchorDataRef: Handle; dataRefType: OSType; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRefWithAnchor';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TextExportGetTimeFraction()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TextExportGetTimeFraction( ci: TextExportComponent; var movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportGetTimeFraction';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetMacOSFileType( dh: DataHandler; fileType: OSType ): ComponentResult; external name '_DataHSetMacOSFileType';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TextExportSetTimeFraction()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TextExportSetTimeFraction( ci: TextExportComponent; movieTimeFraction: SIGNEDLONG ): ComponentResult; external name '_TextExportSetTimeFraction';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetTimeBase( dh: DataHandler; tb: TimeBase ): ComponentResult; external name '_DataHSetTimeBase';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TextExportGetSettings()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TextExportGetSettings( ci: TextExportComponent; var setting: SIGNEDLONG ): ComponentResult; external name '_TextExportGetSettings';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetInfoFlags( dh: DataHandler; var flags: UInt32 ): ComponentResult; external name '_DataHGetInfoFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHScheduleData64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHScheduleData64( dh: DataHandler; PlaceToPutDataPtr: Ptr; const (*var*) FileOffset: wide; DataSize: SIGNEDLONG; RefCon: SIGNEDLONG; scheduleRec: DataHSchedulePtr; CompletionRtn: DataHCompletionUPP ): ComponentResult; external name '_DataHScheduleData64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHWrite64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHWrite64( dh: DataHandler; data: Ptr; const (*var*) offset: wide; size: SIGNEDLONG; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHWrite64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetFileSize64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetFileSize64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHPreextend64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHPreextend64( dh: DataHandler; const (*var*) maxToAdd: wide; var spaceAdded: wide ): ComponentResult; external name '_DataHPreextend64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetFileSize64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHSetFileSize64( dh: DataHandler; const (*var*) fileSize: wide ): ComponentResult; external name '_DataHSetFileSize64';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TextExportSetSettings()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function TextExportSetSettings( ci: TextExportComponent; setting: SIGNEDLONG ): ComponentResult; external name '_TextExportSetSettings';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetFreeSpace64( dh: DataHandler; var freeSize: wide ): ComponentResult; external name '_DataHGetFreeSpace64';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MIDIImportGetSettings()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MIDIImportGetSettings( ci: TextExportComponent; var setting: SIGNEDLONG ): ComponentResult; external name '_MIDIImportGetSettings';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHAppend64( dh: DataHandler; data: UnivPtr; var fileOffset: wide; size: UNSIGNEDLONG ): ComponentResult; external name '_DataHAppend64';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MIDIImportSetSettings()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MIDIImportSetSettings( ci: TextExportComponent; setting: SIGNEDLONG ): ComponentResult; external name '_MIDIImportSetSettings';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHReadAsync( dh: DataHandler; dataPtr: UnivPtr; dataSize: UInt32; const (*var*) dataOffset: wide; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHReadAsync';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportNewGetDataAndPropertiesProcs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportNewGetDataAndPropertiesProcs( ci: MovieExportComponent; trackType: OSType; var scale: TimeScale; theMovie: Movie; theTrack: Track; startTime: TimeValue; duration: TimeValue; var getPropertyProc: MovieExportGetPropertyUPP; var getDataProc: MovieExportGetDataUPP; var refCon: UnivPtr ): ComponentResult; external name '_MovieExportNewGetDataAndPropertiesProcs';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHPollRead( dh: DataHandler; dataPtr: UnivPtr; var dataSizeSoFar: UInt32 ): ComponentResult; external name '_DataHPollRead';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MovieExportDisposeGetDataAndPropertiesProcs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MovieExportDisposeGetDataAndPropertiesProcs( ci: MovieExportComponent; getPropertyProc: MovieExportGetPropertyUPP; getDataProc: MovieExportGetDataUPP; refCon: UnivPtr ): ComponentResult; external name '_MovieExportDisposeGetDataAndPropertiesProcs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+const
+	movieExportUseConfiguredSettings = FourCharCode('ucfg'); { pointer to Boolean}
+	movieExportWidth = FourCharCode('wdth'); { pointer to Fixed}
+	movieExportHeight = FourCharCode('hegt'); { pointer to Fixed}
+	movieExportDuration = FourCharCode('dura'); { pointer to TimeRecord}
+	movieExportVideoFilter = FourCharCode('iflt'); { pointer to QTAtomContainer}
+	movieExportTimeScale = FourCharCode('tmsc'); { pointer to TimeScale}
+	movieExportSourceApertureMode = FourCharCode('srap'); { pointer to OSType. Source movie's aperture mode.ÊSet the aperture mode on the decompression session.}
+
+{ Component Properties specific to Movie Export components}
+<<<<<<< HEAD
+<<<<<<< HEAD
+const
+	kQTMovieExporterPropertyID_StageReachedCallback = FourCharCode('stgr'); { value is a MovieExportStageReachedCallbackProcRecord}
+	kQTMovieExporterPropertyID_DeinterlaceVideo = FourCharCode('dint'); { value is a Boolean }
+
+{ Stages passed to MovieExportStageReachedCallbackProc}
+const
+=======
+const
+=======
+const
+>>>>>>> graemeg/cpstrnew
+	kQTMovieExporterPropertyID_StageReachedCallback = FourCharCode('stgr'); { value is a MovieExportStageReachedCallbackProcRecord}
+	kQTMovieExporterPropertyID_DeinterlaceVideo = FourCharCode('dint'); { value is a Boolean }
+
+{ Stages passed to MovieExportStageReachedCallbackProc}
+const
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+	kQTMovieExportStage_EmptyMovieCreated = FourCharCode('empt');
+	kQTMovieExportStage_AllTracksAddedToMovie = FourCharCode('trax');
+
+type
+	MovieExportStageReachedCallbackProcRecord = record
+		stageReachedCallbackProc: MovieExportStageReachedCallbackUPP;
+		stageReachedCallbackRefCon: UnivPtr;
+	end;
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetDataAvailability( dh: DataHandler; offset: SIGNEDLONG; len: SIGNEDLONG; var missing_offset: SIGNEDLONG; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  GraphicsImageImportSetSequenceEnabled()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GraphicsImageImportSetSequenceEnabled( ci: GraphicImageMovieImportComponent; enable: Boolean ): ComponentResult; external name '_GraphicsImageImportSetSequenceEnabled';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetFileSizeAsync( dh: DataHandler; var fileSize: wide; completionRtn: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHGetFileSizeAsync';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GraphicsImageImportGetSequenceEnabled()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GraphicsImageImportGetSequenceEnabled( ci: GraphicImageMovieImportComponent; var enable: Boolean ): ComponentResult; external name '_GraphicsImageImportGetSequenceEnabled';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{----------------------------'brws' ¥ browser prefs configuration info ------------------------}
+const
+	kQTBrowserInfoCanUseSystemFolderPlugin = 1 shl 0; { Mac browser can use plug-in from System "Internet Plug-ins" folder }
+
+
+const
+	kQTPreFlightOpenComponent = 1 shl 1; { Open component as preflight check}
+
+type
+	ComponentPreflightFlagsPtr = ^ComponentPreflightFlags;
+	ComponentPreflightFlags = record
+		flags: SIGNEDLONG;
+	end;
+
+
+{**************
+
+    File Preview Components
+
+**************}
+
+type
+	pnotComponent = ComponentInstance;
+const
+	pnotComponentWantsEvents = 1;
+	pnotComponentNeedsNoCache = 2;
+
+const
+	ShowFilePreviewComponentType = FourCharCode('pnot');
+	CreateFilePreviewComponentType = FourCharCode('pmak');
+
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHGetDataRefAsType( dh: DataHandler; requestedType: OSType; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRefAsType';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  PreviewShowData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function PreviewShowData( p: pnotComponent; dataType: OSType; data: Handle; const (*var*) inHere: Rect ): ComponentResult; external name '_PreviewShowData';
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHSetDataRefExtension( dh: DataHandler; extension: Handle; idType: OSType ): ComponentResult; external name '_DataHSetDataRefExtension';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  PreviewMakePreview()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function PreviewMakePreview( p: pnotComponent; var previewType: OSType; var previewResult: Handle; const (*var*) sourceFile: FSSpec; progress: ICMProgressProcRecordPtr ): ComponentResult; external name '_PreviewMakePreview';
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHGetDataRefExtension( dh: DataHandler; var extension: Handle; idType: OSType ): ComponentResult; external name '_DataHGetDataRefExtension';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  PreviewMakePreviewReference()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function PreviewMakePreviewReference( p: pnotComponent; var previewType: OSType; var resID: SInt16; const (*var*) sourceFile: FSSpec ): ComponentResult; external name '_PreviewMakePreviewReference';
+=======
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHGetMovieWithFlags( dh: DataHandler; var theMovie: Movie; var id: SInt16; flags: SInt16 ): ComponentResult; external name '_DataHGetMovieWithFlags';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  PreviewEvent()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function PreviewEvent( p: pnotComponent; var e: EventRecord; var handledEvent: Boolean ): ComponentResult; external name '_PreviewEvent';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+type
+	DataCompressorComponent = ComponentInstance;
+	DataDecompressorComponent = ComponentInstance;
+	DataCodecComponent = ComponentInstance;
+const
+	DataCompressorComponentType = FourCharCode('dcom');
+	DataDecompressorComponentType = FourCharCode('ddec');
+	AppleDataCompressorSubType = FourCharCode('adec');
+	zlibDataCompressorSubType = FourCharCode('zlib');
+
+
+{* These are DataCodec procedures *}
+{
+ *  DataCodecDecompress()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataCodecDecompress( dc: DataCodecComponent; srcData: UnivPtr; srcSize: UInt32; dstData: UnivPtr; dstBufferSize: UInt32 ): ComponentResult; external name '_DataCodecDecompress';
+=======
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHGetFileTypeOrdering( dh: DataHandler; var orderingListHandle: DataHFileTypeOrderingHandle ): ComponentResult; external name '_DataHGetFileTypeOrdering';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ flags for DataHCreateFileWithFlags}
+const
+	kDataHCreateFileButDontCreateResFile = 1 shl 0;
+
+{
+ *  DataHCreateFileWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHCreateFileWithFlags( dh: DataHandler; creator: OSType; deleteExisting: Boolean; flags: UInt32 ): ComponentResult; external name '_DataHCreateFileWithFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetMIMETypeAsync()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHGetMIMETypeAsync( dh: DataHandler; var mimeType: Str255; completionRtn: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHGetMIMETypeAsync';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataCodecGetCompressBufferSize()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataCodecGetCompressBufferSize( dc: DataCodecComponent; srcSize: UInt32; var dstSize: UInt32 ): ComponentResult; external name '_DataCodecGetCompressBufferSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.1 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0.1 and later
+ *    Windows:          in qtmlClient.lib 5.0.1 and later
+ }
+function DataHGetInfo( dh: DataHandler; what: OSType; info: UnivPtr ): ComponentResult; external name '_DataHGetInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  DataCodecCompress()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
 function DataCodecCompress( dc: DataCodecComponent; srcData: UnivPtr; srcSize: UInt32; dstData: UnivPtr; dstBufferSize: UInt32; var actualDstSize: UInt32; var decompressSlop: UInt32 ): ComponentResult; external name '_DataCodecCompress';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHSetIdleManager( dh: DataHandler; im: IdleManager ): ComponentResult; external name '_DataHSetIdleManager';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  DataCodecBeginInterruptSafe()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -5890,12 +9319,70 @@ function DataCodecBeginInterruptSafe( dc: DataCodecComponent; maxSrcSize: UNSIGN
  }
 function DataCodecEndInterruptSafe( dc: DataCodecComponent ): ComponentResult; external name '_DataCodecEndInterruptSafe';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHDeleteFile( dh: DataHandler ): ComponentResult; external name '_DataHDeleteFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+const
+	kDataHMovieUsageDoAppendMDAT = 1 shl 0; { if set, datahandler should append wide and mdat atoms in append call}
+
+{
+ *  DataHSetMovieUsageFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHSetMovieUsageFlags( dh: DataHandler; flags: SIGNEDLONG ): ComponentResult; external name '_DataHSetMovieUsageFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+const
+	kDataHTempUseSameDirectory = 1 shl 0; { temp data ref should be in same directory as current data ref (vs. in temporary directory)}
+	kDataHTempUseSameVolume = 1 shl 1; { temp data ref should be on same volume as current data ref (vs. find "best" volume)}
+	kDataHTempCreateFile = 1 shl 2; { create the file}
+	kDataHTempOpenFile = 1 shl 3; { open temporary file for write (kDataHTempCreateFile must be passed, too)}
+
+{
+ *  DataHUseTemporaryDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHUseTemporaryDataRef( dh: DataHandler; inFlags: SIGNEDLONG ): ComponentResult; external name '_DataHUseTemporaryDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  DataHGetTemporaryDataRefCapabilities()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHGetTemporaryDataRefCapabilities( dh: DataHandler; var outUnderstoodFlags: SIGNEDLONG ): ComponentResult; external name '_DataHGetTemporaryDataRefCapabilities';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  DataCodecDecompressPartial()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -5905,12 +9392,111 @@ function DataCodecDecompressPartial( dc: DataCodecComponent; var next_in: UnivPt
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHRenameFile( dh: DataHandler; newDataRef: Handle ): ComponentResult; external name '_DataHRenameFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{ selector 74 skipped }
+{ selector 75 skipped }
+{ selector 76 skipped }
+{ selector 77 skipped }
+{
+ *  DataHGetAvailableFileSize64()
+ *  
+ *  Summary:
+ *    Returns the amount of contiguous data from the start of the file
+ *    that's currently available for reading.
+ *  
+ *  Discussion:
+ *    The 64-bit variant of DataHGetAvailableFileSize. Note that all
+ *    data handlers that support fast-start playback, e.g. an http data
+ *    handler, must implement DataHGetAvailableFileSize. Those that
+ *    support files larger than 2 GB must also implement
+ *    DataHGetAvailableFileSize64.
+ *  
+ *  Parameters:
+ *    
+ *    dh:
+ *      Component instance / instance globals.
+ *    
+ *    fileSize:
+ *      Points to a variable to receive the amount of contiguous data
+ *      from the start of the file that's currently available for
+ *      reading.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function DataHGetAvailableFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetAvailableFileSize64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  DataHGetDataAvailability64()
+ *  
+ *  Summary:
+ *    Checks the availability of the specified range of data and
+ *    returns the first range of missing data needed to satisfy a read
+ *    request. Returns an empty range starting at the end of the
+ *    specified range when a read request for the specified range can
+ *    be satisfied immediately.
+ *  
+ *  Discussion:
+ *    The 64-bit variant of DataHGetDataAvailability. Note that all
+ *    data handlers that support fast-start playback, e.g. an http data
+ *    handler, should implement DataHGetDataAvailability. Those that
+ *    support files larger than 2 GB should also implement
+ *    DataHGetDataAvailability64.
+ *  
+ *  Parameters:
+ *    
+ *    dh:
+ *      Component instance / instance globals.
+ *    
+ *    offset:
+ *      The start of the requested range of data.
+ *    
+ *    len:
+ *      The length of the requested range of data.
+ *    
+ *    missing_offset:
+ *      The offset from the start of the file of the first byte of data
+ *      within the requested range that's not yet available. If the
+ *      entire range is available, the offset returned is the offset of
+ *      the first byte after the requested range.
+ *    
+ *    missing_len:
+ *      The length of the range of data starting at missing_offset
+ *      that's not yet available. If the entire range of data is
+ *      available, the length returned is 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function DataHGetDataAvailability64( dh: DataHandler; const (*var*) offset: wide; len: SIGNEDLONG; var missing_offset: wide; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{ selector 80 skipped }
+{ selector 81 skipped }
+>>>>>>> graemeg/cpstrnew
 {
  *  DataCodecCompressPartial()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
@@ -6019,1225 +9605,7 @@ type
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetData( dh: DataHandler; h: Handle; hOffset: SIGNEDLONG; offset: SIGNEDLONG; size: SIGNEDLONG ): ComponentResult; external name '_DataHGetData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHPutData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHPutData( dh: DataHandler; h: Handle; hOffset: SIGNEDLONG; var offset: SIGNEDLONG; size: SIGNEDLONG ): ComponentResult; external name '_DataHPutData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHFlushData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHFlushData( dh: DataHandler ): ComponentResult; external name '_DataHFlushData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHOpenForWrite()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHOpenForWrite( dh: DataHandler ): ComponentResult; external name '_DataHOpenForWrite';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHCloseForWrite()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHCloseForWrite( dh: DataHandler ): ComponentResult; external name '_DataHCloseForWrite';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHOpenForRead()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHOpenForRead( dh: DataHandler ): ComponentResult; external name '_DataHOpenForRead';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHCloseForRead()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHCloseForRead( dh: DataHandler ): ComponentResult; external name '_DataHCloseForRead';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHSetDataRef( dh: DataHandler; dataRef: Handle ): ComponentResult; external name '_DataHSetDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetDataRef( dh: DataHandler; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHCompareDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHCompareDataRef( dh: DataHandler; dataRef: Handle; var equal: Boolean ): ComponentResult; external name '_DataHCompareDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHTask()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHTask( dh: DataHandler ): ComponentResult; external name '_DataHTask';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHScheduleData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHScheduleData( dh: DataHandler; PlaceToPutDataPtr: Ptr; FileOffset: SIGNEDLONG; DataSize: SIGNEDLONG; RefCon: SIGNEDLONG; scheduleRec: DataHSchedulePtr; CompletionRtn: DataHCompletionUPP ): ComponentResult; external name '_DataHScheduleData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHFinishData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHFinishData( dh: DataHandler; PlaceToPutDataPtr: Ptr; Cancel: Boolean ): ComponentResult; external name '_DataHFinishData';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHFlushCache()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHFlushCache( dh: DataHandler ): ComponentResult; external name '_DataHFlushCache';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHResolveDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHResolveDataRef( dh: DataHandler; theDataRef: Handle; var wasChanged: Boolean; userInterfaceAllowed: Boolean ): ComponentResult; external name '_DataHResolveDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetFileSize()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetFileSize( dh: DataHandler; var fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetFileSize';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHCanUseDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHCanUseDataRef( dh: DataHandler; dataRef: Handle; var useFlags: SIGNEDLONG ): ComponentResult; external name '_DataHCanUseDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetVolumeList()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetVolumeList( dh: DataHandler; var volumeList: DataHVolumeList ): ComponentResult; external name '_DataHGetVolumeList';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHWrite()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHWrite( dh: DataHandler; data: Ptr; offset: SIGNEDLONG; size: SIGNEDLONG; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHWrite';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHPreextend()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHPreextend( dh: DataHandler; maxToAdd: UNSIGNEDLONG; var spaceAdded: UNSIGNEDLONG ): ComponentResult; external name '_DataHPreextend';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetFileSize()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHSetFileSize( dh: DataHandler; fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHSetFileSize';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetFreeSpace()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetFreeSpace( dh: DataHandler; var freeSize: UNSIGNEDLONG ): ComponentResult; external name '_DataHGetFreeSpace';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHCreateFile()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHCreateFile( dh: DataHandler; creator: OSType; deleteExisting: Boolean ): ComponentResult; external name '_DataHCreateFile';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetPreferredBlockSize()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetPreferredBlockSize( dh: DataHandler; var blockSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetPreferredBlockSize';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetDeviceIndex()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetDeviceIndex( dh: DataHandler; var deviceIndex: SIGNEDLONG ): ComponentResult; external name '_DataHGetDeviceIndex';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHIsStreamingDataHandler()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHIsStreamingDataHandler( dh: DataHandler; var yes: Boolean ): ComponentResult; external name '_DataHIsStreamingDataHandler';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetDataInBuffer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetDataInBuffer( dh: DataHandler; startOffset: SIGNEDLONG; var size: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataInBuffer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetScheduleAheadTime()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetScheduleAheadTime( dh: DataHandler; var millisecs: SIGNEDLONG ): ComponentResult; external name '_DataHGetScheduleAheadTime';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetCacheSizeLimit()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHSetCacheSizeLimit( dh: DataHandler; cacheSizeLimit: Size ): ComponentResult; external name '_DataHSetCacheSizeLimit';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetCacheSizeLimit()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetCacheSizeLimit( dh: DataHandler; var cacheSizeLimit: Size ): ComponentResult; external name '_DataHGetCacheSizeLimit';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetMovie()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetMovie( dh: DataHandler; var theMovie: Movie; var id: SInt16 ): ComponentResult; external name '_DataHGetMovie';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHAddMovie()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHAddMovie( dh: DataHandler; theMovie: Movie; var id: SInt16 ): ComponentResult; external name '_DataHAddMovie';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHUpdateMovie()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHUpdateMovie( dh: DataHandler; theMovie: Movie; id: SInt16 ): ComponentResult; external name '_DataHUpdateMovie';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHDoesBuffer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHDoesBuffer( dh: DataHandler; var buffersReads: Boolean; var buffersWrites: Boolean ): ComponentResult; external name '_DataHDoesBuffer';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetFileName()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetFileName( dh: DataHandler; var str: Str255 ): ComponentResult; external name '_DataHGetFileName';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetAvailableFileSize()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetAvailableFileSize( dh: DataHandler; var fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetAvailableFileSize';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetMacOSFileType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetMacOSFileType( dh: DataHandler; var fileType: OSType ): ComponentResult; external name '_DataHGetMacOSFileType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetMIMEType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetMIMEType( dh: DataHandler; var mimeType: Str255 ): ComponentResult; external name '_DataHGetMIMEType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetDataRefWithAnchor()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHSetDataRefWithAnchor( dh: DataHandler; anchorDataRef: Handle; dataRefType: OSType; dataRef: Handle ): ComponentResult; external name '_DataHSetDataRefWithAnchor';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetDataRefWithAnchor()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHGetDataRefWithAnchor( dh: DataHandler; anchorDataRef: Handle; dataRefType: OSType; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRefWithAnchor';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetMacOSFileType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHSetMacOSFileType( dh: DataHandler; fileType: OSType ): ComponentResult; external name '_DataHSetMacOSFileType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetTimeBase()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function DataHSetTimeBase( dh: DataHandler; tb: TimeBase ): ComponentResult; external name '_DataHSetTimeBase';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetInfoFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHGetInfoFlags( dh: DataHandler; var flags: UInt32 ): ComponentResult; external name '_DataHGetInfoFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHScheduleData64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHScheduleData64( dh: DataHandler; PlaceToPutDataPtr: Ptr; const (*var*) FileOffset: wide; DataSize: SIGNEDLONG; RefCon: SIGNEDLONG; scheduleRec: DataHSchedulePtr; CompletionRtn: DataHCompletionUPP ): ComponentResult; external name '_DataHScheduleData64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHWrite64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHWrite64( dh: DataHandler; data: Ptr; const (*var*) offset: wide; size: SIGNEDLONG; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHWrite64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetFileSize64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHGetFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetFileSize64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHPreextend64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHPreextend64( dh: DataHandler; const (*var*) maxToAdd: wide; var spaceAdded: wide ): ComponentResult; external name '_DataHPreextend64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetFileSize64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHSetFileSize64( dh: DataHandler; const (*var*) fileSize: wide ): ComponentResult; external name '_DataHSetFileSize64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetFreeSpace64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHGetFreeSpace64( dh: DataHandler; var freeSize: wide ): ComponentResult; external name '_DataHGetFreeSpace64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHAppend64()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHAppend64( dh: DataHandler; data: UnivPtr; var fileOffset: wide; size: UNSIGNEDLONG ): ComponentResult; external name '_DataHAppend64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHReadAsync()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHReadAsync( dh: DataHandler; dataPtr: UnivPtr; dataSize: UInt32; const (*var*) dataOffset: wide; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHReadAsync';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHPollRead()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHPollRead( dh: DataHandler; dataPtr: UnivPtr; var dataSizeSoFar: UInt32 ): ComponentResult; external name '_DataHPollRead';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetDataAvailability()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHGetDataAvailability( dh: DataHandler; offset: SIGNEDLONG; len: SIGNEDLONG; var missing_offset: SIGNEDLONG; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetFileSizeAsync()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function DataHGetFileSizeAsync( dh: DataHandler; var fileSize: wide; completionRtn: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHGetFileSizeAsync';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetDataRefAsType()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- }
-function DataHGetDataRefAsType( dh: DataHandler; requestedType: OSType; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRefAsType';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHSetDataRefExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- }
-function DataHSetDataRefExtension( dh: DataHandler; extension: Handle; idType: OSType ): ComponentResult; external name '_DataHSetDataRefExtension';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetDataRefExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- }
-function DataHGetDataRefExtension( dh: DataHandler; var extension: Handle; idType: OSType ): ComponentResult; external name '_DataHGetDataRefExtension';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetMovieWithFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- }
-function DataHGetMovieWithFlags( dh: DataHandler; var theMovie: Movie; var id: SInt16; flags: SInt16 ): ComponentResult; external name '_DataHGetMovieWithFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-<<<<<<< HEAD
-{
- *  DataHGetFileTypeOrdering()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function DataHGetFileTypeOrdering( dh: DataHandler; var orderingListHandle: DataHFileTypeOrderingHandle ): ComponentResult; external name '_DataHGetFileTypeOrdering';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{ flags for DataHCreateFileWithFlags}
-const
-	kDataHCreateFileButDontCreateResFile = 1 shl 0;
-
 =======
->>>>>>> graemeg/cpstrnew
-{
- *  DataHCreateFileWithFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-<<<<<<< HEAD
-function DataHCreateFileWithFlags( dh: DataHandler; creator: OSType; deleteExisting: Boolean; flags: UInt32 ): ComponentResult; external name '_DataHCreateFileWithFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-=======
-function DataHGetFileTypeOrdering( dh: DataHandler; var orderingListHandle: DataHFileTypeOrderingHandle ): ComponentResult; external name '_DataHGetFileTypeOrdering';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{ flags for DataHCreateFileWithFlags}
-const
-	kDataHCreateFileButDontCreateResFile = 1 shl 0;
->>>>>>> graemeg/cpstrnew
-
-{
- *  DataHCreateFileWithFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
-=======
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function DataHCreateFileWithFlags( dh: DataHandler; creator: OSType; deleteExisting: Boolean; flags: UInt32 ): ComponentResult; external name '_DataHCreateFileWithFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetMIMETypeAsync()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.3 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
- *    Windows:          in qtmlClient.lib 5.0 and later
- }
-function DataHGetMIMETypeAsync( dh: DataHandler; var mimeType: Str255; completionRtn: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHGetMIMETypeAsync';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
- *  DataHGetInfo()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.1 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 5.0.1 and later
- *    Windows:          in qtmlClient.lib 5.0.1 and later
- }
-function DataHGetInfo( dh: DataHandler; what: OSType; info: UnivPtr ): ComponentResult; external name '_DataHGetInfo';
-(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
-
-
-{
- *  DataHSetIdleManager()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function DataHSetIdleManager( dh: DataHandler; im: IdleManager ): ComponentResult; external name '_DataHSetIdleManager';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  DataHDeleteFile()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
-<<<<<<< HEAD
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function DataHDeleteFile( dh: DataHandler ): ComponentResult; external name '_DataHDeleteFile';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-<<<<<<< HEAD
-const
-	kDataHMovieUsageDoAppendMDAT = 1 shl 0; { if set, datahandler should append wide and mdat atoms in append call}
-
-{
- *  DataHSetMovieUsageFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
-=======
-const
-	kDataHMovieUsageDoAppendMDAT = 1 shl 0; { if set, datahandler should append wide and mdat atoms in append call}
-
-{
- *  DataHSetMovieUsageFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function DataHSetMovieUsageFlags( dh: DataHandler; flags: SIGNEDLONG ): ComponentResult; external name '_DataHSetMovieUsageFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-const
-	kDataHTempUseSameDirectory = 1 shl 0; { temp data ref should be in same directory as current data ref (vs. in temporary directory)}
-	kDataHTempUseSameVolume = 1 shl 1; { temp data ref should be on same volume as current data ref (vs. find "best" volume)}
-	kDataHTempCreateFile = 1 shl 2; { create the file}
-	kDataHTempOpenFile = 1 shl 3; { open temporary file for write (kDataHTempCreateFile must be passed, too)}
-
-{
- *  DataHUseTemporaryDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-<<<<<<< HEAD
-function DataHUseTemporaryDataRef( dh: DataHandler; inFlags: SIGNEDLONG ): ComponentResult; external name '_DataHUseTemporaryDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-=======
-function DataHDeleteFile( dh: DataHandler ): ComponentResult; external name '_DataHDeleteFile';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-const
-	kDataHMovieUsageDoAppendMDAT = 1 shl 0; { if set, datahandler should append wide and mdat atoms in append call}
-
-{
- *  DataHSetMovieUsageFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function DataHSetMovieUsageFlags( dh: DataHandler; flags: SIGNEDLONG ): ComponentResult; external name '_DataHSetMovieUsageFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-const
-	kDataHTempUseSameDirectory = 1 shl 0; { temp data ref should be in same directory as current data ref (vs. in temporary directory)}
-	kDataHTempUseSameVolume = 1 shl 1; { temp data ref should be on same volume as current data ref (vs. find "best" volume)}
-	kDataHTempCreateFile = 1 shl 2; { create the file}
-	kDataHTempOpenFile = 1 shl 3; { open temporary file for write (kDataHTempCreateFile must be passed, too)}
-
->>>>>>> graemeg/cpstrnew
-{
- *  DataHUseTemporaryDataRef()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-<<<<<<< HEAD
-<<<<<<< HEAD
-function DataHSetMovieUsageFlags( dh: DataHandler; flags: SIGNEDLONG ): ComponentResult; external name '_DataHSetMovieUsageFlags';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-const
-	kDataHTempUseSameDirectory = 1 shl 0; { temp data ref should be in same directory as current data ref (vs. in temporary directory)}
-	kDataHTempUseSameVolume = 1 shl 1; { temp data ref should be on same volume as current data ref (vs. find "best" volume)}
-	kDataHTempCreateFile = 1 shl 2; { create the file}
-	kDataHTempOpenFile = 1 shl 3; { open temporary file for write (kDataHTempCreateFile must be passed, too)}
-
-=======
-function DataHGetTemporaryDataRefCapabilities( dh: DataHandler; var outUnderstoodFlags: SIGNEDLONG ): ComponentResult; external name '_DataHGetTemporaryDataRefCapabilities';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
- *  DataHUseTemporaryDataRef()
-=======
-function DataHUseTemporaryDataRef( dh: DataHandler; inFlags: SIGNEDLONG ): ComponentResult; external name '_DataHUseTemporaryDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  DataHGetTemporaryDataRefCapabilities()
->>>>>>> graemeg/cpstrnew
- *  
- *  Availability:
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-<<<<<<< HEAD
-<<<<<<< HEAD
-function DataHUseTemporaryDataRef( dh: DataHandler; inFlags: SIGNEDLONG ): ComponentResult; external name '_DataHUseTemporaryDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-=======
-function DataHRenameFile( dh: DataHandler; newDataRef: Handle ): ComponentResult; external name '_DataHRenameFile';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{ selector 74 skipped }
-{ selector 75 skipped }
-{ selector 76 skipped }
-{ selector 77 skipped }
-{
- *  DataHGetAvailableFileSize64()
- *  
- *  Summary:
- *    Returns the amount of contiguous data from the start of the file
- *    that's currently available for reading.
- *  
- *  Discussion:
- *    The 64-bit variant of DataHGetAvailableFileSize. Note that all
- *    data handlers that support fast-start playback, e.g. an http data
- *    handler, must implement DataHGetAvailableFileSize. Those that
- *    support files larger than 2 GB must also implement
- *    DataHGetAvailableFileSize64.
- *  
- *  Parameters:
- *    
- *    dh:
- *      Component instance / instance globals.
- *    
- *    fileSize:
- *      Points to a variable to receive the amount of contiguous data
- *      from the start of the file that's currently available for
- *      reading.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function DataHGetAvailableFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetAvailableFileSize64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
-
-
-{
- *  DataHGetDataAvailability64()
- *  
- *  Summary:
- *    Checks the availability of the specified range of data and
- *    returns the first range of missing data needed to satisfy a read
- *    request. Returns an empty range starting at the end of the
- *    specified range when a read request for the specified range can
- *    be satisfied immediately.
- *  
- *  Discussion:
- *    The 64-bit variant of DataHGetDataAvailability. Note that all
- *    data handlers that support fast-start playback, e.g. an http data
- *    handler, should implement DataHGetDataAvailability. Those that
- *    support files larger than 2 GB should also implement
- *    DataHGetDataAvailability64.
- *  
- *  Parameters:
- *    
- *    dh:
- *      Component instance / instance globals.
- *    
- *    offset:
- *      The start of the requested range of data.
- *    
- *    len:
- *      The length of the requested range of data.
- *    
- *    missing_offset:
- *      The offset from the start of the file of the first byte of data
- *      within the requested range that's not yet available. If the
- *      entire range is available, the offset returned is the offset of
- *      the first byte after the requested range.
- *    
- *    missing_len:
- *      The length of the range of data starting at missing_offset
- *      that's not yet available. If the entire range of data is
- *      available, the length returned is 0.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function DataHGetDataAvailability64( dh: DataHandler; const (*var*) offset: wide; len: SIGNEDLONG; var missing_offset: wide; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
-
-
-{ selector 80 skipped }
-{ selector 81 skipped }
->>>>>>> graemeg/cpstrnew
-=======
-function DataHGetTemporaryDataRefCapabilities( dh: DataHandler; var outUnderstoodFlags: SIGNEDLONG ): ComponentResult; external name '_DataHGetTemporaryDataRefCapabilities';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
- *  DataHGetTemporaryDataRefCapabilities()
- *  
- *  Availability:
-<<<<<<< HEAD
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function DataHGetTemporaryDataRefCapabilities( dh: DataHandler; var outUnderstoodFlags: SIGNEDLONG ): ComponentResult; external name '_DataHGetTemporaryDataRefCapabilities';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{
- *  DataHRenameFile()
- *  
- *  Availability:
-=======
->>>>>>> graemeg/cpstrnew
- *    Mac OS X:         in version 10.2 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.6 and later
- *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
- *    Windows:          in qtmlClient.lib 6.0 and later
- }
-function DataHRenameFile( dh: DataHandler; newDataRef: Handle ): ComponentResult; external name '_DataHRenameFile';
-(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
-
-
-{ selector 74 skipped }
-{ selector 75 skipped }
-{ selector 76 skipped }
-{ selector 77 skipped }
-{
- *  DataHGetAvailableFileSize64()
- *  
- *  Summary:
- *    Returns the amount of contiguous data from the start of the file
- *    that's currently available for reading.
- *  
- *  Discussion:
- *    The 64-bit variant of DataHGetAvailableFileSize. Note that all
- *    data handlers that support fast-start playback, e.g. an http data
- *    handler, must implement DataHGetAvailableFileSize. Those that
- *    support files larger than 2 GB must also implement
- *    DataHGetAvailableFileSize64.
- *  
- *  Parameters:
- *    
- *    dh:
- *      Component instance / instance globals.
- *    
- *    fileSize:
- *      Points to a variable to receive the amount of contiguous data
- *      from the start of the file that's currently available for
- *      reading.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function DataHGetAvailableFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetAvailableFileSize64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
-
-
-{
- *  DataHGetDataAvailability64()
- *  
- *  Summary:
- *    Checks the availability of the specified range of data and
- *    returns the first range of missing data needed to satisfy a read
- *    request. Returns an empty range starting at the end of the
- *    specified range when a read request for the specified range can
- *    be satisfied immediately.
- *  
- *  Discussion:
- *    The 64-bit variant of DataHGetDataAvailability. Note that all
- *    data handlers that support fast-start playback, e.g. an http data
- *    handler, should implement DataHGetDataAvailability. Those that
- *    support files larger than 2 GB should also implement
- *    DataHGetDataAvailability64.
- *  
- *  Parameters:
- *    
- *    dh:
- *      Component instance / instance globals.
- *    
- *    offset:
- *      The start of the requested range of data.
- *    
- *    len:
- *      The length of the requested range of data.
- *    
- *    missing_offset:
- *      The offset from the start of the file of the first byte of data
- *      within the requested range that's not yet available. If the
- *      entire range is available, the offset returned is the offset of
- *      the first byte after the requested range.
- *    
- *    missing_len:
- *      The length of the range of data starting at missing_offset
- *      that's not yet available. If the entire range of data is
- *      available, the length returned is 0.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function DataHGetDataAvailability64( dh: DataHandler; const (*var*) offset: wide; len: SIGNEDLONG; var missing_offset: wide; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability64';
-(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
-
-
-{ selector 80 skipped }
-{ selector 81 skipped }
-{
- *  DataHPlaybackHints()
- *  
- *  Availability:
-<<<<<<< HEAD
-=======
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
@@ -7284,6 +9652,2023 @@ const
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHSetTimeHints( dh: DataHandler; flags: SIGNEDLONG; bandwidthPriority: SIGNEDLONG; scale: TimeScale; minTime: TimeValue; maxTime: TimeValue ): ComponentResult; external name '_DataHSetTimeHints';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Standard type for video digitizers }
+const
+	videoDigitizerComponentType = FourCharCode('vdig');
+	vdigInterfaceRev = 2;
+
+{ Input Format Standards }
+const
+	ntscIn = 0;    { current input format }
+	currentIn = 0;    { ntsc input format }
+	palIn = 1;    { pal input format }
+	secamIn = 2;    { secam input format }
+	ntscReallyIn = 3;     { ntsc input format }
+
+{ Input Formats }
+const
+	compositeIn = 0;    { input is composite format }
+	sVideoIn = 1;    { input is sVideo format }
+	rgbComponentIn = 2;    { input is rgb component format }
+	rgbComponentSyncIn = 3;    { input is rgb component format (sync on green?)}
+	yuvComponentIn = 4;    { input is yuv component format }
+	yuvComponentSyncIn = 5;    { input is yuv component format (sync on green?) }
+	tvTunerIn = 6;
+	sdiIn = 7;
+
+
+{ Video Digitizer PlayThru States }
+const
+	vdPlayThruOff = 0;
+	vdPlayThruOn = 1;
+
+{ Input Color Space Modes }
+const
+	vdDigitizerBW = 0;    { black and white }
+	vdDigitizerRGB = 1;     { rgb color }
+
+{ Phase Lock Loop Modes }
+const
+	vdBroadcastMode = 0;    { Broadcast / Laser Disk video mode }
+	vdVTRMode = 1;     { VCR / Magnetic media mode }
+
+{ Field Select Options }
+const
+	vdUseAnyField = 0;    { Digitizers choice on field use }
+	vdUseOddField = 1;    { Use odd field for half size vert and smaller }
+	vdUseEvenField = 2;     { Use even field for half size vert and smaller }
+
+{ vdig types }
+const
+	vdTypeBasic = 0;    { basic, no clipping }
+	vdTypeAlpha = 1;    { supports clipping with alpha channel }
+	vdTypeMask = 2;    { supports clipping with mask plane }
+	vdTypeKey = 3;     { supports clipping with key color(s) }
+
+
+{ Digitizer Input Capability/Current Flags }
+const
+	digiInDoesNTSC = 1 shl 0; { digitizer supports NTSC input format }
+	digiInDoesPAL = 1 shl 1; { digitizer supports PAL input format }
+	digiInDoesSECAM = 1 shl 2; { digitizer supports SECAM input format }
+	digiInDoesGenLock = 1 shl 7; { digitizer does genlock }
+	digiInDoesComposite = 1 shl 8; { digitizer supports composite input type }
+	digiInDoesSVideo = 1 shl 9; { digitizer supports S-Video input type }
+	digiInDoesComponent = 1 shl 10; { digitizer supports component = rgb, input type }
+	digiInVTR_Broadcast = 1 shl 11; { digitizer can differentiate between the two }
+	digiInDoesColor = 1 shl 12; { digitizer supports color }
+	digiInDoesBW = 1 shl 13; { digitizer supports black & white }
+                                        { Digitizer Input Current Flags = these are valid only during active operating conditions,   }
+	digiInSignalLock = 1 shl 31; { digitizer detects input signal is locked, this bit = horiz lock || vertical lock }
+
+
+{ Digitizer Output Capability/Current Flags }
+const
+	digiOutDoes1 = 1 shl 0; { digitizer supports 1 bit pixels }
+	digiOutDoes2 = 1 shl 1; { digitizer supports 2 bit pixels }
+	digiOutDoes4 = 1 shl 2; { digitizer supports 4 bit pixels }
+	digiOutDoes8 = 1 shl 3; { digitizer supports 8 bit pixels }
+	digiOutDoes16 = 1 shl 4; { digitizer supports 16 bit pixels }
+	digiOutDoes32 = 1 shl 5; { digitizer supports 32 bit pixels }
+	digiOutDoesDither = 1 shl 6; { digitizer dithers in indexed modes }
+	digiOutDoesStretch = 1 shl 7; { digitizer can arbitrarily stretch }
+	digiOutDoesShrink = 1 shl 8; { digitizer can arbitrarily shrink }
+	digiOutDoesMask = 1 shl 9; { digitizer can mask to clipping regions }
+	digiOutDoesDouble = 1 shl 11; { digitizer can stretch to exactly double size }
+	digiOutDoesQuad = 1 shl 12; { digitizer can stretch exactly quadruple size }
+	digiOutDoesQuarter = 1 shl 13; { digitizer can shrink to exactly quarter size }
+	digiOutDoesSixteenth = 1 shl 14; { digitizer can shrink to exactly sixteenth size }
+	digiOutDoesRotate = 1 shl 15; { digitizer supports rotate transformations }
+	digiOutDoesHorizFlip = 1 shl 16; { digitizer supports horizontal flips Sx < 0 }
+	digiOutDoesVertFlip = 1 shl 17; { digitizer supports vertical flips Sy < 0 }
+	digiOutDoesSkew = 1 shl 18; { digitizer supports skew = shear,twist, }
+	digiOutDoesBlend = 1 shl 19;
+	digiOutDoesWarp = 1 shl 20;
+	digiOutDoesHW_DMA = 1 shl 21; { digitizer not constrained to local device }
+	digiOutDoesHWPlayThru = 1 shl 22; { digitizer doesn't need time to play thru }
+	digiOutDoesILUT = 1 shl 23; { digitizer does inverse LUT for index modes }
+	digiOutDoesKeyColor = 1 shl 24; { digitizer does key color functions too }
+	digiOutDoesAsyncGrabs = 1 shl 25; { digitizer supports async grabs }
+	digiOutDoesUnreadableScreenBits = 1 shl 26; { playthru doesn't generate readable bits on screen}
+	digiOutDoesCompress = 1 shl 27; { supports alternate output data types }
+	digiOutDoesCompressOnly = 1 shl 28; { can't provide raw frames anywhere }
+	digiOutDoesPlayThruDuringCompress = 1 shl 29; { digi can do playthru while providing compressed data }
+	digiOutDoesCompressPartiallyVisible = 1 shl 30; { digi doesn't need all bits visible on screen to do hardware compress }
+	digiOutDoesNotNeedCopyOfCompressData = 1 shl 31; { digi doesn't need any bufferization when providing compressed data }
+
+{ Types }
+type
+	VideoDigitizerComponent = ComponentInstance;
+	VideoDigitizerError = ComponentResult;
+	DigitizerInfoPtr = ^DigitizerInfo;
+	DigitizerInfo = record
+		vdigType: SInt16;
+		inputCapabilityFlags: SIGNEDLONG;
+		outputCapabilityFlags: SIGNEDLONG;
+		inputCurrentFlags: SIGNEDLONG;
+		outputCurrentFlags: SIGNEDLONG;
+		slot: SInt16;                   { temporary for connection purposes }
+		gdh: GDHandle;                    { temporary for digitizers that have preferred screen }
+		maskgdh: GDHandle;                { temporary for digitizers that have mask planes }
+		minDestHeight: SInt16;          { Smallest resizable height }
+		minDestWidth: SInt16;           { Smallest resizable width }
+		maxDestHeight: SInt16;          { Largest resizable height }
+		maxDestWidth: SInt16;           { Largest resizable width }
+		blendLevels: SInt16;            { Number of blend levels supported (2 if 1 bit mask) }
+		reserved: SIGNEDLONG;               { reserved }
+	end;
+type
+	VdigTypePtr = ^VdigType;
+	VdigType = record
+		digType: SIGNEDLONG;
+		reserved: SIGNEDLONG;
+	end;
+type
+	VdigTypeListPtr = ^VdigTypeList;
+	VdigTypeList = record
+		count: SInt16;
+		list: array [0..0] of VdigType;
+	end;
+type
+	VdigBufferRecPtr = ^VdigBufferRec;
+	VdigBufferRec = record
+		dest: PixMapHandle;
+		location: Point;
+		reserved: SIGNEDLONG;
+	end;
+type
+	VdigBufferRecList = record
+		count: SInt16;
+		matrix: MatrixRecordPtr;
+		mask: RgnHandle;
+		list: array [0..0] of VdigBufferRec;
+	end;
+	VdigBufferRecListPtr = ^VdigBufferRecList;
+type
+	VdigBufferRecListHandle = ^VdigBufferRecListPtr;
+	VdigIntProcPtr = procedure( flags: SIGNEDLONG; refcon: SIGNEDLONG );
+	VdigIntUPP = VdigIntProcPtr;
+	VDCompressionList = record
+		codec: CodecComponent;
+		cType: CodecType;
+		typeName: Str63;
+		name: Str63;
+		formatFlags: SIGNEDLONG;
+		compressFlags: SIGNEDLONG;
+		reserved: SIGNEDLONG;
+	end;
+	VDCompressionListPtr = ^VDCompressionList;
+type
+	VDCompressionListHandle = ^VDCompressionListPtr;
+const
+	dmaDepth1 = 1;
+	dmaDepth2 = 2;
+	dmaDepth4 = 4;
+	dmaDepth8 = 8;
+	dmaDepth16 = 16;
+	dmaDepth32 = 32;
+	dmaDepth2Gray = 64;
+	dmaDepth4Gray = 128;
+	dmaDepth8Gray = 256;
+
+const
+	kVDIGControlledFrameRate = -1;
+
+
+{
+ *  VDGetMaxSrcRect()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetMaxSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var maxSrcRect: Rect ): VideoDigitizerError; external name '_VDGetMaxSrcRect';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  VDGetActiveSrcRect()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetData( dh: DataHandler; h: Handle; hOffset: SIGNEDLONG; offset: SIGNEDLONG; size: SIGNEDLONG ): ComponentResult; external name '_DataHGetData';
+=======
+function VDGetActiveSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var activeSrcRect: Rect ): VideoDigitizerError; external name '_VDGetActiveSrcRect';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHPutData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHPutData( dh: DataHandler; h: Handle; hOffset: SIGNEDLONG; var offset: SIGNEDLONG; size: SIGNEDLONG ): ComponentResult; external name '_DataHPutData';
+=======
+function VDSetDigitizerRect( ci: VideoDigitizerComponent; var digitizerRect: Rect ): VideoDigitizerError; external name '_VDSetDigitizerRect';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHFlushData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHFlushData( dh: DataHandler ): ComponentResult; external name '_DataHFlushData';
+=======
+function VDGetDigitizerRect( ci: VideoDigitizerComponent; var digitizerRect: Rect ): VideoDigitizerError; external name '_VDGetDigitizerRect';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHOpenForWrite()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHOpenForWrite( dh: DataHandler ): ComponentResult; external name '_DataHOpenForWrite';
+=======
+function VDGetVBlankRect( ci: VideoDigitizerComponent; inputStd: SInt16; var vBlankRect: Rect ): VideoDigitizerError; external name '_VDGetVBlankRect';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHCloseForWrite()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHCloseForWrite( dh: DataHandler ): ComponentResult; external name '_DataHCloseForWrite';
+=======
+function VDGetMaskPixMap( ci: VideoDigitizerComponent; maskPixMap: PixMapHandle ): VideoDigitizerError; external name '_VDGetMaskPixMap';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHOpenForRead()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHOpenForRead( dh: DataHandler ): ComponentResult; external name '_DataHOpenForRead';
+=======
+function VDGetPlayThruDestination( ci: VideoDigitizerComponent; var dest: PixMapHandle; var destRect: Rect; var m: MatrixRecord; var mask: RgnHandle ): VideoDigitizerError; external name '_VDGetPlayThruDestination';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHCloseForRead()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHCloseForRead( dh: DataHandler ): ComponentResult; external name '_DataHCloseForRead';
+=======
+function VDUseThisCLUT( ci: VideoDigitizerComponent; colorTableHandle: CTabHandle ): VideoDigitizerError; external name '_VDUseThisCLUT';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHSetDataRef( dh: DataHandler; dataRef: Handle ): ComponentResult; external name '_DataHSetDataRef';
+=======
+function VDSetInputGammaValue( ci: VideoDigitizerComponent; channel1: Fixed; channel2: Fixed; channel3: Fixed ): VideoDigitizerError; external name '_VDSetInputGammaValue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetDataRef( dh: DataHandler; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRef';
+=======
+function VDGetInputGammaValue( ci: VideoDigitizerComponent; var channel1: Fixed; var channel2: Fixed; var channel3: Fixed ): VideoDigitizerError; external name '_VDGetInputGammaValue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHCompareDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHCompareDataRef( dh: DataHandler; dataRef: Handle; var equal: Boolean ): ComponentResult; external name '_DataHCompareDataRef';
+=======
+function VDSetBrightness( ci: VideoDigitizerComponent; var brightness: UInt16 ): VideoDigitizerError; external name '_VDSetBrightness';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHTask()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHTask( dh: DataHandler ): ComponentResult; external name '_DataHTask';
+=======
+function VDGetBrightness( ci: VideoDigitizerComponent; var brightness: UInt16 ): VideoDigitizerError; external name '_VDGetBrightness';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHScheduleData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHScheduleData( dh: DataHandler; PlaceToPutDataPtr: Ptr; FileOffset: SIGNEDLONG; DataSize: SIGNEDLONG; RefCon: SIGNEDLONG; scheduleRec: DataHSchedulePtr; CompletionRtn: DataHCompletionUPP ): ComponentResult; external name '_DataHScheduleData';
+=======
+function VDSetContrast( ci: VideoDigitizerComponent; var contrast: UInt16 ): VideoDigitizerError; external name '_VDSetContrast';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHFinishData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHFinishData( dh: DataHandler; PlaceToPutDataPtr: Ptr; Cancel: Boolean ): ComponentResult; external name '_DataHFinishData';
+=======
+function VDSetHue( ci: VideoDigitizerComponent; var hue: UInt16 ): VideoDigitizerError; external name '_VDSetHue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHFlushCache()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHFlushCache( dh: DataHandler ): ComponentResult; external name '_DataHFlushCache';
+=======
+function VDSetSharpness( ci: VideoDigitizerComponent; var sharpness: UInt16 ): VideoDigitizerError; external name '_VDSetSharpness';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHResolveDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHResolveDataRef( dh: DataHandler; theDataRef: Handle; var wasChanged: Boolean; userInterfaceAllowed: Boolean ): ComponentResult; external name '_DataHResolveDataRef';
+=======
+function VDSetSaturation( ci: VideoDigitizerComponent; var saturation: UInt16 ): VideoDigitizerError; external name '_VDSetSaturation';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetFileSize()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetFileSize( dh: DataHandler; var fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetFileSize';
+=======
+function VDGetContrast( ci: VideoDigitizerComponent; var contrast: UInt16 ): VideoDigitizerError; external name '_VDGetContrast';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHCanUseDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHCanUseDataRef( dh: DataHandler; dataRef: Handle; var useFlags: SIGNEDLONG ): ComponentResult; external name '_DataHCanUseDataRef';
+=======
+function VDGetHue( ci: VideoDigitizerComponent; var hue: UInt16 ): VideoDigitizerError; external name '_VDGetHue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetVolumeList()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetVolumeList( dh: DataHandler; var volumeList: DataHVolumeList ): ComponentResult; external name '_DataHGetVolumeList';
+=======
+function VDGetSharpness( ci: VideoDigitizerComponent; var sharpness: UInt16 ): VideoDigitizerError; external name '_VDGetSharpness';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHWrite()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHWrite( dh: DataHandler; data: Ptr; offset: SIGNEDLONG; size: SIGNEDLONG; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHWrite';
+=======
+function VDGetSaturation( ci: VideoDigitizerComponent; var saturation: UInt16 ): VideoDigitizerError; external name '_VDGetSaturation';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHPreextend()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHPreextend( dh: DataHandler; maxToAdd: UNSIGNEDLONG; var spaceAdded: UNSIGNEDLONG ): ComponentResult; external name '_DataHPreextend';
+=======
+function VDGrabOneFrame( ci: VideoDigitizerComponent ): VideoDigitizerError; external name '_VDGrabOneFrame';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetFileSize()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHSetFileSize( dh: DataHandler; fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHSetFileSize';
+=======
+function VDGetMaxAuxBuffer( ci: VideoDigitizerComponent; var pm: PixMapHandle; var r: Rect ): VideoDigitizerError; external name '_VDGetMaxAuxBuffer';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetFreeSpace()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetFreeSpace( dh: DataHandler; var freeSize: UNSIGNEDLONG ): ComponentResult; external name '_DataHGetFreeSpace';
+=======
+function VDGetDigitizerInfo( ci: VideoDigitizerComponent; var info: DigitizerInfo ): VideoDigitizerError; external name '_VDGetDigitizerInfo';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHCreateFile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHCreateFile( dh: DataHandler; creator: OSType; deleteExisting: Boolean ): ComponentResult; external name '_DataHCreateFile';
+=======
+function VDGetCurrentFlags( ci: VideoDigitizerComponent; var inputCurrentFlag: SIGNEDLONG; var outputCurrentFlag: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetCurrentFlags';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetPreferredBlockSize()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetPreferredBlockSize( dh: DataHandler; var blockSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetPreferredBlockSize';
+=======
+function VDSetKeyColor( ci: VideoDigitizerComponent; index: SIGNEDLONG ): VideoDigitizerError; external name '_VDSetKeyColor';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetDeviceIndex()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetDeviceIndex( dh: DataHandler; var deviceIndex: SIGNEDLONG ): ComponentResult; external name '_DataHGetDeviceIndex';
+=======
+function VDGetKeyColor( ci: VideoDigitizerComponent; var index: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetKeyColor';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHIsStreamingDataHandler()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHIsStreamingDataHandler( dh: DataHandler; var yes: Boolean ): ComponentResult; external name '_DataHIsStreamingDataHandler';
+=======
+function VDAddKeyColor( ci: VideoDigitizerComponent; var index: SIGNEDLONG ): VideoDigitizerError; external name '_VDAddKeyColor';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetDataInBuffer()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetDataInBuffer( dh: DataHandler; startOffset: SIGNEDLONG; var size: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataInBuffer';
+=======
+function VDGetNextKeyColor( ci: VideoDigitizerComponent; index: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetNextKeyColor';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetScheduleAheadTime()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetScheduleAheadTime( dh: DataHandler; var millisecs: SIGNEDLONG ): ComponentResult; external name '_DataHGetScheduleAheadTime';
+=======
+function VDSetKeyColorRange( ci: VideoDigitizerComponent; var minRGB: RGBColor; var maxRGB: RGBColor ): VideoDigitizerError; external name '_VDSetKeyColorRange';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetCacheSizeLimit()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHSetCacheSizeLimit( dh: DataHandler; cacheSizeLimit: Size ): ComponentResult; external name '_DataHSetCacheSizeLimit';
+=======
+function VDGetKeyColorRange( ci: VideoDigitizerComponent; var minRGB: RGBColor; var maxRGB: RGBColor ): VideoDigitizerError; external name '_VDGetKeyColorRange';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetCacheSizeLimit()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetCacheSizeLimit( dh: DataHandler; var cacheSizeLimit: Size ): ComponentResult; external name '_DataHGetCacheSizeLimit';
+=======
+function VDSetDigitizerUserInterrupt( ci: VideoDigitizerComponent; flags: SIGNEDLONG; userInterruptProc: VdigIntUPP; refcon: SIGNEDLONG ): VideoDigitizerError; external name '_VDSetDigitizerUserInterrupt';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetMovie()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetMovie( dh: DataHandler; var theMovie: Movie; var id: SInt16 ): ComponentResult; external name '_DataHGetMovie';
+=======
+function VDSetInputColorSpaceMode( ci: VideoDigitizerComponent; colorSpaceMode: SInt16 ): VideoDigitizerError; external name '_VDSetInputColorSpaceMode';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHAddMovie()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHAddMovie( dh: DataHandler; theMovie: Movie; var id: SInt16 ): ComponentResult; external name '_DataHAddMovie';
+=======
+function VDGetInputColorSpaceMode( ci: VideoDigitizerComponent; var colorSpaceMode: SInt16 ): VideoDigitizerError; external name '_VDGetInputColorSpaceMode';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHUpdateMovie()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHUpdateMovie( dh: DataHandler; theMovie: Movie; id: SInt16 ): ComponentResult; external name '_DataHUpdateMovie';
+=======
+function VDSetClipState( ci: VideoDigitizerComponent; clipEnable: SInt16 ): VideoDigitizerError; external name '_VDSetClipState';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHDoesBuffer()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHDoesBuffer( dh: DataHandler; var buffersReads: Boolean; var buffersWrites: Boolean ): ComponentResult; external name '_DataHDoesBuffer';
+=======
+function VDGetClipState( ci: VideoDigitizerComponent; var clipEnable: SInt16 ): VideoDigitizerError; external name '_VDGetClipState';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetFileName()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHGetFileName( dh: DataHandler; var str: Str255 ): ComponentResult; external name '_DataHGetFileName';
+=======
+function VDSetClipRgn( ci: VideoDigitizerComponent; clipRegion: RgnHandle ): VideoDigitizerError; external name '_VDSetClipRgn';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetAvailableFileSize()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetAvailableFileSize( dh: DataHandler; var fileSize: SIGNEDLONG ): ComponentResult; external name '_DataHGetAvailableFileSize';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDClearClipRgn( ci: VideoDigitizerComponent; clipRegion: RgnHandle ): VideoDigitizerError; external name '_VDClearClipRgn';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetMacOSFileType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetMacOSFileType( dh: DataHandler; var fileType: OSType ): ComponentResult; external name '_DataHGetMacOSFileType';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetCLUTInUse( ci: VideoDigitizerComponent; var colorTableHandle: CTabHandle ): VideoDigitizerError; external name '_VDGetCLUTInUse';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetMIMEType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetMIMEType( dh: DataHandler; var mimeType: Str255 ): ComponentResult; external name '_DataHGetMIMEType';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetPLLFilterType( ci: VideoDigitizerComponent; pllType: SInt16 ): VideoDigitizerError; external name '_VDSetPLLFilterType';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetDataRefWithAnchor()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetDataRefWithAnchor( dh: DataHandler; anchorDataRef: Handle; dataRefType: OSType; dataRef: Handle ): ComponentResult; external name '_DataHSetDataRefWithAnchor';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetPLLFilterType( ci: VideoDigitizerComponent; var pllType: SInt16 ): VideoDigitizerError; external name '_VDGetPLLFilterType';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetDataRefWithAnchor()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHGetDataRefWithAnchor( dh: DataHandler; anchorDataRef: Handle; dataRefType: OSType; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRefWithAnchor';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetMaskandValue( ci: VideoDigitizerComponent; blendLevel: UInt16; var mask: SIGNEDLONG; var value: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetMaskandValue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetMacOSFileType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetMacOSFileType( dh: DataHandler; fileType: OSType ): ComponentResult; external name '_DataHSetMacOSFileType';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetMasterBlendLevel( ci: VideoDigitizerComponent; var blendLevel: UInt16 ): VideoDigitizerError; external name '_VDSetMasterBlendLevel';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetTimeBase()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function DataHSetTimeBase( dh: DataHandler; tb: TimeBase ): ComponentResult; external name '_DataHSetTimeBase';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetPlayThruDestination( ci: VideoDigitizerComponent; dest: PixMapHandle; destRect: RectPtr; m: MatrixRecordPtr; mask: RgnHandle ): VideoDigitizerError; external name '_VDSetPlayThruDestination';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetInfoFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetInfoFlags( dh: DataHandler; var flags: UInt32 ): ComponentResult; external name '_DataHGetInfoFlags';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetPlayThruOnOff( ci: VideoDigitizerComponent; state: SInt16 ): VideoDigitizerError; external name '_VDSetPlayThruOnOff';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHScheduleData64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHScheduleData64( dh: DataHandler; PlaceToPutDataPtr: Ptr; const (*var*) FileOffset: wide; DataSize: SIGNEDLONG; RefCon: SIGNEDLONG; scheduleRec: DataHSchedulePtr; CompletionRtn: DataHCompletionUPP ): ComponentResult; external name '_DataHScheduleData64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetFieldPreference( ci: VideoDigitizerComponent; fieldFlag: SInt16 ): VideoDigitizerError; external name '_VDSetFieldPreference';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHWrite64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHWrite64( dh: DataHandler; data: Ptr; const (*var*) offset: wide; size: SIGNEDLONG; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHWrite64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetFieldPreference( ci: VideoDigitizerComponent; var fieldFlag: SInt16 ): VideoDigitizerError; external name '_VDGetFieldPreference';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetFileSize64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetFileSize64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDPreflightDestination( ci: VideoDigitizerComponent; var digitizerRect: Rect; var dest: PixMapPtr; destRect: RectPtr; m: MatrixRecordPtr ): VideoDigitizerError; external name '_VDPreflightDestination';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHPreextend64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHPreextend64( dh: DataHandler; const (*var*) maxToAdd: wide; var spaceAdded: wide ): ComponentResult; external name '_DataHPreextend64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDPreflightGlobalRect( ci: VideoDigitizerComponent; theWindow: GrafPtr; var globalRect: Rect ): VideoDigitizerError; external name '_VDPreflightGlobalRect';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetFileSize64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHSetFileSize64( dh: DataHandler; const (*var*) fileSize: wide ): ComponentResult; external name '_DataHSetFileSize64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetPlayThruGlobalRect( ci: VideoDigitizerComponent; theWindow: GrafPtr; var globalRect: Rect ): VideoDigitizerError; external name '_VDSetPlayThruGlobalRect';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetFreeSpace64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetFreeSpace64( dh: DataHandler; var freeSize: wide ): ComponentResult; external name '_DataHGetFreeSpace64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetInputGammaRecord( ci: VideoDigitizerComponent; inputGammaPtr: VDGamRecPtr ): VideoDigitizerError; external name '_VDSetInputGammaRecord';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHAppend64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHAppend64( dh: DataHandler; data: UnivPtr; var fileOffset: wide; size: UNSIGNEDLONG ): ComponentResult; external name '_DataHAppend64';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetInputGammaRecord( ci: VideoDigitizerComponent; var inputGammaPtr: VDGamRecPtr ): VideoDigitizerError; external name '_VDGetInputGammaRecord';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHReadAsync()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHReadAsync( dh: DataHandler; dataPtr: UnivPtr; dataSize: UInt32; const (*var*) dataOffset: wide; completion: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHReadAsync';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetBlackLevelValue( ci: VideoDigitizerComponent; var blackLevel: UInt16 ): VideoDigitizerError; external name '_VDSetBlackLevelValue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHPollRead()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHPollRead( dh: DataHandler; dataPtr: UnivPtr; var dataSizeSoFar: UInt32 ): ComponentResult; external name '_DataHPollRead';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetBlackLevelValue( ci: VideoDigitizerComponent; var blackLevel: UInt16 ): VideoDigitizerError; external name '_VDGetBlackLevelValue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetDataAvailability()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetDataAvailability( dh: DataHandler; offset: SIGNEDLONG; len: SIGNEDLONG; var missing_offset: SIGNEDLONG; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetWhiteLevelValue( ci: VideoDigitizerComponent; var whiteLevel: UInt16 ): VideoDigitizerError; external name '_VDSetWhiteLevelValue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetFileSizeAsync()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function DataHGetFileSizeAsync( dh: DataHandler; var fileSize: wide; completionRtn: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHGetFileSizeAsync';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetWhiteLevelValue( ci: VideoDigitizerComponent; var whiteLevel: UInt16 ): VideoDigitizerError; external name '_VDGetWhiteLevelValue';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetDataRefAsType()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHGetDataRefAsType( dh: DataHandler; requestedType: OSType; var dataRef: Handle ): ComponentResult; external name '_DataHGetDataRefAsType';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetVideoDefaults( ci: VideoDigitizerComponent; var blackLevel: UInt16; var whiteLevel: UInt16; var brightness: UInt16; var hue: UInt16; var saturation: UInt16; var contrast: UInt16; var sharpness: UInt16 ): VideoDigitizerError; external name '_VDGetVideoDefaults';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHSetDataRefExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHSetDataRefExtension( dh: DataHandler; extension: Handle; idType: OSType ): ComponentResult; external name '_DataHSetDataRefExtension';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetNumberOfInputs( ci: VideoDigitizerComponent; var inputs: SInt16 ): VideoDigitizerError; external name '_VDGetNumberOfInputs';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetDataRefExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHGetDataRefExtension( dh: DataHandler; var extension: Handle; idType: OSType ): ComponentResult; external name '_DataHGetDataRefExtension';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetInputFormat( ci: VideoDigitizerComponent; input: SInt16; var format: SInt16 ): VideoDigitizerError; external name '_VDGetInputFormat';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetMovieWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHGetMovieWithFlags( dh: DataHandler; var theMovie: Movie; var id: SInt16; flags: SInt16 ): ComponentResult; external name '_DataHGetMovieWithFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+<<<<<<< HEAD
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetInput( ci: VideoDigitizerComponent; input: SInt16 ): VideoDigitizerError; external name '_VDSetInput';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHGetFileTypeOrdering()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHGetFileTypeOrdering( dh: DataHandler; var orderingListHandle: DataHFileTypeOrderingHandle ): ComponentResult; external name '_DataHGetFileTypeOrdering';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ flags for DataHCreateFileWithFlags}
+const
+	kDataHCreateFileButDontCreateResFile = 1 shl 0;
+
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetInput( ci: VideoDigitizerComponent; var input: SInt16 ): VideoDigitizerError; external name '_VDGetInput';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHCreateFileWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+<<<<<<< HEAD
+function DataHCreateFileWithFlags( dh: DataHandler; creator: OSType; deleteExisting: Boolean; flags: UInt32 ): ComponentResult; external name '_DataHCreateFileWithFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+=======
+function DataHGetFileTypeOrdering( dh: DataHandler; var orderingListHandle: DataHFileTypeOrderingHandle ): ComponentResult; external name '_DataHGetFileTypeOrdering';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ flags for DataHCreateFileWithFlags}
+const
+	kDataHCreateFileButDontCreateResFile = 1 shl 0;
+>>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetInputStandard( ci: VideoDigitizerComponent; inputStandard: SInt16 ): VideoDigitizerError; external name '_VDSetInputStandard';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+
+{
+ *  DataHCreateFileWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHCreateFileWithFlags( dh: DataHandler; creator: OSType; deleteExisting: Boolean; flags: UInt32 ): ComponentResult; external name '_DataHCreateFileWithFlags';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetupBuffers( ci: VideoDigitizerComponent; bufferList: VdigBufferRecListHandle ): VideoDigitizerError; external name '_VDSetupBuffers';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetMIMETypeAsync()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHGetMIMETypeAsync( dh: DataHandler; var mimeType: Str255; completionRtn: DataHCompletionUPP; refCon: SIGNEDLONG ): ComponentResult; external name '_DataHGetMIMETypeAsync';
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGrabOneFrameAsync( ci: VideoDigitizerComponent; buffer: SInt16 ): VideoDigitizerError; external name '_VDGrabOneFrameAsync';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHGetInfo()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.1 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0.1 and later
+ *    Windows:          in qtmlClient.lib 5.0.1 and later
+ }
+function DataHGetInfo( dh: DataHandler; what: OSType; info: UnivPtr ): ComponentResult; external name '_DataHGetInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDDone( ci: VideoDigitizerComponent; buffer: SInt16 ): VideoDigitizerError; external name '_VDDone';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  DataHSetIdleManager()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHSetIdleManager( dh: DataHandler; im: IdleManager ): ComponentResult; external name '_DataHSetIdleManager';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetCompression( ci: VideoDigitizerComponent; compressType: OSType; depth: SInt16; var bounds: Rect; spatialQuality: CodecQ; temporalQuality: CodecQ; keyFrameRate: SIGNEDLONG ): VideoDigitizerError; external name '_VDSetCompression';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  DataHDeleteFile()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHDeleteFile( dh: DataHandler ): ComponentResult; external name '_DataHDeleteFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+<<<<<<< HEAD
+const
+	kDataHMovieUsageDoAppendMDAT = 1 shl 0; { if set, datahandler should append wide and mdat atoms in append call}
+
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDCompressOneFrameAsync( ci: VideoDigitizerComponent ): VideoDigitizerError; external name '_VDCompressOneFrameAsync';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{    Note that UInt8* queuedFrameCount replaces Boolean* done. 0(==false) still means no frames, and 1(==true) one, 
+    but if more than one are available the number should be returned here. The value 2 previously meant more than one frame,
+    so some VDIGs may return 2 even if more than 2 are available, and some will still return 1 as they are using the original definition }
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHSetMovieUsageFlags()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+=======
+const
+	kDataHMovieUsageDoAppendMDAT = 1 shl 0; { if set, datahandler should append wide and mdat atoms in append call}
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDCompressDone( ci: VideoDigitizerComponent; var queuedFrameCount: UInt8; var theData: Ptr; var dataSize: SIGNEDLONG; var similarity: UInt8; var t: TimeRecord ): VideoDigitizerError; external name '_VDCompressDone';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> graemeg/cpstrnew
+
+{
+ *  DataHSetMovieUsageFlags()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHSetMovieUsageFlags( dh: DataHandler; flags: SIGNEDLONG ): ComponentResult; external name '_DataHSetMovieUsageFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+const
+	kDataHTempUseSameDirectory = 1 shl 0; { temp data ref should be in same directory as current data ref (vs. in temporary directory)}
+	kDataHTempUseSameVolume = 1 shl 1; { temp data ref should be on same volume as current data ref (vs. find "best" volume)}
+	kDataHTempCreateFile = 1 shl 2; { create the file}
+	kDataHTempOpenFile = 1 shl 3; { open temporary file for write (kDataHTempCreateFile must be passed, too)}
+
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDReleaseCompressBuffer( ci: VideoDigitizerComponent; bufferAddr: Ptr ): VideoDigitizerError; external name '_VDReleaseCompressBuffer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHUseTemporaryDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+<<<<<<< HEAD
+function DataHUseTemporaryDataRef( dh: DataHandler; inFlags: SIGNEDLONG ): ComponentResult; external name '_DataHUseTemporaryDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+=======
+function DataHDeleteFile( dh: DataHandler ): ComponentResult; external name '_DataHDeleteFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+const
+	kDataHMovieUsageDoAppendMDAT = 1 shl 0; { if set, datahandler should append wide and mdat atoms in append call}
+
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetImageDescription( ci: VideoDigitizerComponent; desc: ImageDescriptionHandle ): VideoDigitizerError; external name '_VDGetImageDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHSetMovieUsageFlags()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHSetMovieUsageFlags( dh: DataHandler; flags: SIGNEDLONG ): ComponentResult; external name '_DataHSetMovieUsageFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+const
+	kDataHTempUseSameDirectory = 1 shl 0; { temp data ref should be in same directory as current data ref (vs. in temporary directory)}
+	kDataHTempUseSameVolume = 1 shl 1; { temp data ref should be on same volume as current data ref (vs. find "best" volume)}
+	kDataHTempCreateFile = 1 shl 2; { create the file}
+	kDataHTempOpenFile = 1 shl 3; { open temporary file for write (kDataHTempCreateFile must be passed, too)}
+
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDResetCompressSequence( ci: VideoDigitizerComponent ): VideoDigitizerError; external name '_VDResetCompressSequence';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHUseTemporaryDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function DataHSetMovieUsageFlags( dh: DataHandler; flags: SIGNEDLONG ): ComponentResult; external name '_DataHSetMovieUsageFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+const
+	kDataHTempUseSameDirectory = 1 shl 0; { temp data ref should be in same directory as current data ref (vs. in temporary directory)}
+	kDataHTempUseSameVolume = 1 shl 1; { temp data ref should be on same volume as current data ref (vs. find "best" volume)}
+	kDataHTempCreateFile = 1 shl 2; { create the file}
+	kDataHTempOpenFile = 1 shl 3; { open temporary file for write (kDataHTempCreateFile must be passed, too)}
+
+=======
+function DataHGetTemporaryDataRefCapabilities( dh: DataHandler; var outUnderstoodFlags: SIGNEDLONG ): ComponentResult; external name '_DataHGetTemporaryDataRefCapabilities';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetCompressionOnOff( ci: VideoDigitizerComponent; state: Boolean ): VideoDigitizerError; external name '_VDSetCompressionOnOff';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHUseTemporaryDataRef()
+=======
+function DataHUseTemporaryDataRef( dh: DataHandler; inFlags: SIGNEDLONG ): ComponentResult; external name '_DataHUseTemporaryDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  DataHGetTemporaryDataRefCapabilities()
+>>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function DataHUseTemporaryDataRef( dh: DataHandler; inFlags: SIGNEDLONG ): ComponentResult; external name '_DataHUseTemporaryDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+=======
+function DataHRenameFile( dh: DataHandler; newDataRef: Handle ): ComponentResult; external name '_DataHRenameFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{ selector 74 skipped }
+{ selector 75 skipped }
+{ selector 76 skipped }
+{ selector 77 skipped }
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetCompressionTypes( ci: VideoDigitizerComponent; h: VDCompressionListHandle ): VideoDigitizerError; external name '_VDGetCompressionTypes';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHGetAvailableFileSize64()
+ *  
+ *  Summary:
+ *    Returns the amount of contiguous data from the start of the file
+ *    that's currently available for reading.
+ *  
+ *  Discussion:
+ *    The 64-bit variant of DataHGetAvailableFileSize. Note that all
+ *    data handlers that support fast-start playback, e.g. an http data
+ *    handler, must implement DataHGetAvailableFileSize. Those that
+ *    support files larger than 2 GB must also implement
+ *    DataHGetAvailableFileSize64.
+ *  
+ *  Parameters:
+ *    
+ *    dh:
+ *      Component instance / instance globals.
+ *    
+ *    fileSize:
+ *      Points to a variable to receive the amount of contiguous data
+ *      from the start of the file that's currently available for
+ *      reading.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function DataHGetAvailableFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetAvailableFileSize64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetTimeBase( ci: VideoDigitizerComponent; t: TimeBase ): VideoDigitizerError; external name '_VDSetTimeBase';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  DataHGetDataAvailability64()
+ *  
+ *  Summary:
+ *    Checks the availability of the specified range of data and
+ *    returns the first range of missing data needed to satisfy a read
+ *    request. Returns an empty range starting at the end of the
+ *    specified range when a read request for the specified range can
+ *    be satisfied immediately.
+ *  
+ *  Discussion:
+ *    The 64-bit variant of DataHGetDataAvailability. Note that all
+ *    data handlers that support fast-start playback, e.g. an http data
+ *    handler, should implement DataHGetDataAvailability. Those that
+ *    support files larger than 2 GB should also implement
+ *    DataHGetDataAvailability64.
+ *  
+ *  Parameters:
+ *    
+ *    dh:
+ *      Component instance / instance globals.
+ *    
+ *    offset:
+ *      The start of the requested range of data.
+ *    
+ *    len:
+ *      The length of the requested range of data.
+ *    
+ *    missing_offset:
+ *      The offset from the start of the file of the first byte of data
+ *      within the requested range that's not yet available. If the
+ *      entire range is available, the offset returned is the offset of
+ *      the first byte after the requested range.
+ *    
+ *    missing_len:
+ *      The length of the range of data starting at missing_offset
+ *      that's not yet available. If the entire range of data is
+ *      available, the length returned is 0.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function DataHGetDataAvailability64( dh: DataHandler; const (*var*) offset: wide; len: SIGNEDLONG; var missing_offset: wide; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{ selector 80 skipped }
+{ selector 81 skipped }
+>>>>>>> graemeg/cpstrnew
+=======
+function DataHGetTemporaryDataRefCapabilities( dh: DataHandler; var outUnderstoodFlags: SIGNEDLONG ): ComponentResult; external name '_DataHGetTemporaryDataRefCapabilities';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetFrameRate( ci: VideoDigitizerComponent; framesPerSecond: Fixed ): VideoDigitizerError; external name '_VDSetFrameRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHGetTemporaryDataRefCapabilities()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHGetTemporaryDataRefCapabilities( dh: DataHandler; var outUnderstoodFlags: SIGNEDLONG ): ComponentResult; external name '_DataHGetTemporaryDataRefCapabilities';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetDataRate( ci: VideoDigitizerComponent; var milliSecPerFrame: SIGNEDLONG; var framesPerSecond: Fixed; var bytesPerSecond: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetDataRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  DataHRenameFile()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function DataHRenameFile( dh: DataHandler; newDataRef: Handle ): ComponentResult; external name '_DataHRenameFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{ selector 74 skipped }
+{ selector 75 skipped }
+{ selector 76 skipped }
+{ selector 77 skipped }
+{
+ *  DataHGetAvailableFileSize64()
+ *  
+ *  Summary:
+ *    Returns the amount of contiguous data from the start of the file
+ *    that's currently available for reading.
+ *  
+ *  Discussion:
+ *    The 64-bit variant of DataHGetAvailableFileSize. Note that all
+ *    data handlers that support fast-start playback, e.g. an http data
+ *    handler, must implement DataHGetAvailableFileSize. Those that
+ *    support files larger than 2 GB must also implement
+ *    DataHGetAvailableFileSize64.
+ *  
+ *  Parameters:
+ *    
+ *    dh:
+ *      Component instance / instance globals.
+ *    
+ *    fileSize:
+ *      Points to a variable to receive the amount of contiguous data
+ *      from the start of the file that's currently available for
+ *      reading.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function DataHGetAvailableFileSize64( dh: DataHandler; var fileSize: wide ): ComponentResult; external name '_DataHGetAvailableFileSize64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{
+ *  DataHGetDataAvailability64()
+ *  
+ *  Summary:
+ *    Checks the availability of the specified range of data and
+ *    returns the first range of missing data needed to satisfy a read
+ *    request. Returns an empty range starting at the end of the
+ *    specified range when a read request for the specified range can
+ *    be satisfied immediately.
+ *  
+ *  Discussion:
+ *    The 64-bit variant of DataHGetDataAvailability. Note that all
+ *    data handlers that support fast-start playback, e.g. an http data
+ *    handler, should implement DataHGetDataAvailability. Those that
+ *    support files larger than 2 GB should also implement
+ *    DataHGetDataAvailability64.
+ *  
+ *  Parameters:
+ *    
+ *    dh:
+ *      Component instance / instance globals.
+ *    
+ *    offset:
+ *      The start of the requested range of data.
+ *    
+ *    len:
+ *      The length of the requested range of data.
+ *    
+ *    missing_offset:
+ *      The offset from the start of the file of the first byte of data
+ *      within the requested range that's not yet available. If the
+ *      entire range is available, the offset returned is the offset of
+ *      the first byte after the requested range.
+ *    
+ *    missing_len:
+ *      The length of the range of data starting at missing_offset
+ *      that's not yet available. If the entire range of data is
+ *      available, the length returned is 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function DataHGetDataAvailability64( dh: DataHandler; const (*var*) offset: wide; len: SIGNEDLONG; var missing_offset: wide; var missing_len: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataAvailability64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+
+{ selector 80 skipped }
+{ selector 81 skipped }
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetSoundInputDriver( ci: VideoDigitizerComponent; var soundDriverName: Str255 ): VideoDigitizerError; external name '_VDGetSoundInputDriver';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHPlaybackHints()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function DataHPlaybackHints( dh: DataHandler; flags: SIGNEDLONG; minFileOffset: UNSIGNEDLONG; maxFileOffset: UNSIGNEDLONG; bytesPerSecond: SIGNEDLONG ): ComponentResult; external name '_DataHPlaybackHints';
+=======
+function VDGetDMADepths( ci: VideoDigitizerComponent; var depthArray: SIGNEDLONG; var preferredDepth: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetDMADepths';
+>>>>>>> graemeg/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  DataHPlaybackHints64()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ }
+function DataHPlaybackHints64( dh: DataHandler; flags: SIGNEDLONG; const (*var*) minFileOffset: wide; const (*var*) maxFileOffset: wide; bytesPerSecond: SIGNEDLONG ): ComponentResult; external name '_DataHPlaybackHints64';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Symbolic constants for DataHGetDataRate}
+const
+	kDataHGetDataRateInfiniteRate = $7FFFFFFF; { all the data arrived instantaneously}
+
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetPreferredTimeScale( ci: VideoDigitizerComponent; var preferred: TimeScale ): VideoDigitizerError; external name '_VDGetPreferredTimeScale';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHGetDataRate()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.3 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
+ *    Windows:          in qtmlClient.lib 5.0 and later
+ }
+function DataHGetDataRate( dh: DataHandler; flags: SIGNEDLONG; var bytesPerSecond: SIGNEDLONG ): ComponentResult; external name '_DataHGetDataRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Flags for DataHSetTimeHints}
+const
+	kDataHSetTimeHintsSkipBandwidthRequest = 1 shl 0; { set if this data handler should use the network without requesting bandwidth}
+
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDReleaseAsyncBuffers( ci: VideoDigitizerComponent ): VideoDigitizerError; external name '_VDReleaseAsyncBuffers';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ 83 is reserved for compatibility reasons }
+>>>>>>> graemeg/cpstrnew
+{
+ *  DataHSetTimeHints()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.3 and later
  *    Non-Carbon CFM:   in QuickTimeLib 5.0 and later
  *    Windows:          in qtmlClient.lib 5.0 and later
@@ -7497,6 +11882,16 @@ const
 
 
 <<<<<<< HEAD
+=======
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetDataRate( ci: VideoDigitizerComponent; bytesPerSecond: SIGNEDLONG ): VideoDigitizerError; external name '_VDSetDataRate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
 {
  *  VDGetMaxSrcRect()
  *  
@@ -7506,11 +11901,18 @@ const
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function VDGetMaxSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var maxSrcRect: Rect ): VideoDigitizerError; external name '_VDGetMaxSrcRect';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+function VDGetTimeCode( ci: VideoDigitizerComponent; var atTime: TimeRecord; timeCodeFormat: UnivPtr; timeCodeTime: UnivPtr ): VideoDigitizerError; external name '_VDGetTimeCode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 >>>>>>> graemeg/cpstrnew
 {
  *  VDGetMaxSrcRect()
@@ -7518,12 +11920,19 @@ function VDGetMaxSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var max
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function VDGetMaxSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var maxSrcRect: Rect ): VideoDigitizerError; external name '_VDGetMaxSrcRect';
+=======
+function VDUseSafeBuffers( ci: VideoDigitizerComponent; useSafeBuffers: Boolean ): VideoDigitizerError; external name '_VDUseSafeBuffers';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7532,12 +11941,19 @@ function VDGetMaxSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var max
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function VDGetActiveSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var activeSrcRect: Rect ): VideoDigitizerError; external name '_VDGetActiveSrcRect';
+=======
+function VDGetSoundInputSource( ci: VideoDigitizerComponent; videoInput: SIGNEDLONG; var soundInput: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetSoundInputSource';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7550,7 +11966,11 @@ function VDGetActiveSrcRect( ci: VideoDigitizerComponent; inputStd: SInt16; var 
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function VDSetDigitizerRect( ci: VideoDigitizerComponent; var digitizerRect: Rect ): VideoDigitizerError; external name '_VDSetDigitizerRect';
+=======
+function VDGetCompressionTime( ci: VideoDigitizerComponent; compressionType: OSType; depth: SInt16; var srcRect: Rect; var spatialQuality: CodecQ; var temporalQuality: CodecQ; var compressTime: UNSIGNEDLONG ): VideoDigitizerError; external name '_VDGetCompressionTime';
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7561,6 +11981,7 @@ function VDSetDigitizerRect( ci: VideoDigitizerComponent; var digitizerRect: Rec
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+<<<<<<< HEAD
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function VDGetDigitizerRect( ci: VideoDigitizerComponent; var digitizerRect: Rect ): VideoDigitizerError; external name '_VDGetDigitizerRect';
@@ -8959,12 +13380,19 @@ function VDSelectUniqueIDs( ci: VideoDigitizerComponent; (*const*) var inDeviceI
 function VDGetCompressionTime( ci: VideoDigitizerComponent; compressionType: OSType; depth: SInt16; var srcRect: Rect; var spatialQuality: CodecQ; var temporalQuality: CodecQ; var compressTime: UNSIGNEDLONG ): VideoDigitizerError; external name '_VDGetCompressionTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetPreferredPacketSize( ci: VideoDigitizerComponent; preferredPacketSizeInBytes: SIGNEDLONG ): VideoDigitizerError; external name '_VDSetPreferredPacketSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  VDCopyPreferredAudioDevice()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
@@ -9199,6 +13627,7 @@ const
  *    Non-Carbon CFM:   not available
  }
 =======
+=======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -9212,6 +13641,377 @@ function VDSetPreferredImageDimensions( ci: VideoDigitizerComponent; width: SIGN
  *  VDGetPreferredImageDimensions()
  *  
  *  Availability:
+>>>>>>> graemeg/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function VDSetPreferredImageDimensions( ci: VideoDigitizerComponent; width: SIGNEDLONG; height: SIGNEDLONG ): VideoDigitizerError; external name '_VDSetPreferredImageDimensions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+function VDGetPreferredImageDimensions( ci: VideoDigitizerComponent; var width: SIGNEDLONG; var height: SIGNEDLONG ): VideoDigitizerError; external name '_VDGetPreferredImageDimensions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  VDGetInputName()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDGetInputName( ci: VideoDigitizerComponent; videoInput: SIGNEDLONG; var name: Str255 ): VideoDigitizerError; external name '_VDGetInputName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  VDSetDestinationPort()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function VDSetDestinationPort( ci: VideoDigitizerComponent; destPort: CGrafPtr ): VideoDigitizerError; external name '_VDSetDestinationPort';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+   The following call is designed to give the VDIG a little more control over how it is presented to the User, to clarify the 
+   distinction between Devices and Inputs. Historically, the assumption has been that there is one component registered per device
+   and the component name is displayed. This change lets a component choose its name after registration.
+   vdDeviceFlagShowInputsAsDevices is meant for components that register once and support multiple devices 
+   The UI is clearer if these are presented as device rather than inputs, 
+   and this allows a VDIG to present itself this way without huge restructuring
+   vdDeviceFlagHideDevice is for the kind of VDIG that registers itself, and then can register a further VDIG for each device. 
+   If no hardware is available, returning this flag will omit it from the list. 
+   This call being made is also a good time to check for hardware and register further VDIG components if needed, 
+   allowing for lazy initialization when the Application needs to find a VDIG rather than on every launch or replug.
+}
+
+const
+	vdDeviceFlagShowInputsAsDevices = 1 shl 0; { Tell the Panel to promote Inputs to Devices}
+	vdDeviceFlagHideDevice = 1 shl 1; { Omit this Device entirely from the list}
+
+{
+ *  VDGetDeviceNameAndFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function VDGetDeviceNameAndFlags( ci: VideoDigitizerComponent; var outName: Str255; var outNameFlags: UInt32 ): VideoDigitizerError; external name '_VDGetDeviceNameAndFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+const
+	vdFlagCaptureStarting = 1 shl 0; { Capture is about to start; allocate bandwidth }
+	vdFlagCaptureStopping = 1 shl 1; { Capture is about to stop; stop queuing frames}
+	vdFlagCaptureIsForPreview = 1 shl 2; { Capture is just to screen for preview purposes}
+	vdFlagCaptureIsForRecord = 1 shl 3; { Capture is going to be recorded}
+	vdFlagCaptureLowLatency = 1 shl 4; { Fresh frames are more important than delivering every frame - don't queue too much}
+	vdFlagCaptureAlwaysUseTimeBase = 1 shl 5; { Use the timebase for every frame; don't worry about making durations uniform}
+	vdFlagCaptureSetSettingsBegin = 1 shl 6; { A series of calls are about to be made to restore settings.}
+	vdFlagCaptureSetSettingsEnd = 1 shl 7; { Finished restoring settings; any set calls after this are from the app or UI}
+
+{
+ *  VDCaptureStateChanging()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function VDCaptureStateChanging( ci: VideoDigitizerComponent; inStateFlags: UInt32 ): VideoDigitizerError; external name '_VDCaptureStateChanging';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+   These UniqueID calls are so that the VDIG can give the SG information enabling it to restore a particular
+   configuration - choose a particular device and input from those available.
+   For example, restoring the specific camera for a set of several hot-plugged FireWire cameras 
+   the caller can pass nil if it is not interested in one of the IDs
+   returning 0 in an ID means you don't have one
+}
+
+{
+ *  VDGetUniqueIDs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function VDGetUniqueIDs( ci: VideoDigitizerComponent; var outDeviceID: UInt64; var outInputID: UInt64 ): VideoDigitizerError; external name '_VDGetUniqueIDs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+   Note this is a 'Select' not a 'Set' - the assumption is that the Unique ID is a function of the hardware
+   and not modifiable by the calling application. Either a nil pointer or 0 an the ID means don't care.
+   return vdDontHaveThatUniqueIDErr if your device doesn't have a match.
+}
+
+{
+ *  VDSelectUniqueIDs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function VDSelectUniqueIDs( ci: VideoDigitizerComponent; (*const*) var inDeviceID: UInt64; (*const*) var inInputID: UInt64 ): VideoDigitizerError; external name '_VDSelectUniqueIDs';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+
+
+{
+ *  VDCopyPreferredAudioDevice()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function VDCopyPreferredAudioDevice( vdig: ComponentInstance; var outAudioDeviceUID: CFStringRef ): ComponentResult; external name '_VDCopyPreferredAudioDevice';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+   IIDC (Instrumentation & Industrial Digital Camera) Video Digitizers
+   Video Digitizers of subtype vdSubtypeIIDC support FireWire cameras which conform to the
+   "IIDC 1394-based Digital Camera Specification." 
+}
+
+const
+	vdSubtypeIIDC = FourCharCode('iidc'); { Subtype for IIDC 1394-Digital Camera video digitizer}
+
+{
+   vdIIDCAtomTypeFeature
+   Parent node for the QTAtoms which describe a given feature.  
+}
+const
+	vdIIDCAtomTypeFeature = FourCharCode('feat');
+
+{
+   vdIIDCAtomTypeFeatureAtomTypeAndID
+   This atom describes the feature's OSType/group/name and QTAtomType & QTAtomID needed to retrieve its settings.
+   The contents of this atom is a VDIIDCFeatureAtomTypeAndID structure.  
+}
+const
+	vdIIDCAtomTypeFeatureAtomTypeAndID = FourCharCode('t&id');
+	vdIIDCAtomIDFeatureAtomTypeAndID = 1;
+
+type
+	VDIIDCFeatureAtomTypeAndIDPtr = ^VDIIDCFeatureAtomTypeAndID;
+	VDIIDCFeatureAtomTypeAndID = record
+		feature: OSType;                { OSType of feature}
+		group: OSType;                  { OSType of group that feature is categorized into}
+		name: Str255;                   { Name of this feature}
+		atomType: QTAtomType;               { Atom type which contains feature's settings}
+		atomID: QTAtomID;                 { Atom ID which contains feature's settings}
+	end;
+{ IIDC Feature OSTypes}
+const
+	vdIIDCFeatureHue = FourCharCode('hue '); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureSaturation = FourCharCode('satu'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureSharpness = FourCharCode('shrp'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureBrightness = FourCharCode('brit'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureGain = FourCharCode('gain'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureIris = FourCharCode('iris'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureShutter = FourCharCode('shtr'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureExposure = FourCharCode('xpsr'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureWhiteBalanceU = FourCharCode('whbu'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureWhiteBalanceV = FourCharCode('whbv'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureGamma = FourCharCode('gmma'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureTemperature = FourCharCode('temp'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureZoom = FourCharCode('zoom'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureFocus = FourCharCode('fcus'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeaturePan = FourCharCode('pan '); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureTilt = FourCharCode('tilt'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureOpticalFilter = FourCharCode('opft'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureTrigger = FourCharCode('trgr'); { Trigger's setttings handled by VDIIDCTriggerSettings}
+	vdIIDCFeatureCaptureSize = FourCharCode('cpsz'); { Feature's settings is not defined}
+	vdIIDCFeatureCaptureQuality = FourCharCode('cpql'); { Feature's settings is not defined}
+	vdIIDCFeatureFocusPoint = FourCharCode('fpnt'); { Focus Point's settings handled by VDIIDCFocusPointSettings}
+	vdIIDCFeatureEdgeEnhancement = FourCharCode('eden'); { Feature's settings handled by VDIIDCFeatureSettings}
+	vdIIDCFeatureLightingHint = FourCharCode('lhnt'); { Feature's settings handled by VDIIDCLightingHintSettings}
+
+{
+   IIDC Group OSTypes that features are categorized into
+   (The values used for the constants cannot be the same as any of the IIDC Feature OSTypes constants)
+}
+const
+	vdIIDCGroupImage = FourCharCode('imag'); { Feature related to camera's image}
+	vdIIDCGroupColor = FourCharCode('colr'); { Feature related to camera's color control}
+	vdIIDCGroupMechanics = FourCharCode('mech'); { Feature related to camera's mechanics}
+	vdIIDCGroupTrigger = FourCharCode('trig'); { Feature related to camera's trigger}
+
+{
+   vdIIDCAtomTypeFeatureSettings
+   This atom describes the settings for the majority of features.
+   The contents of this atom is a VDIIDCFeatureSettings structure.
+}
+const
+	vdIIDCAtomTypeFeatureSettings = FourCharCode('fstg');
+	vdIIDCAtomIDFeatureSettings = 1;
+
+type
+	VDIIDCFeatureCapabilitiePtr = ^VDIIDCFeatureCapabilities;
+	VDIIDCFeatureCapabilities = record
+		flags: UInt32;
+		rawMinimum: UInt16;
+		rawMaximum: UInt16;
+		absoluteMinimum: QTFloatSingle;
+		absoluteMaximum: QTFloatSingle;
+	end;
+type
+	VDIIDCFeatureStatePtr = ^VDIIDCFeatureState;
+	VDIIDCFeatureState = record
+		flags: UInt32;
+		value: QTFloatSingle;
+	end;
+type
+	VDIIDCFeatureSettingsPtr = ^VDIIDCFeatureSettings;
+	VDIIDCFeatureSettings = record
+		capabilities: VDIIDCFeatureCapabilities;
+		state: VDIIDCFeatureState;
+	end;
+{
+   Flags for use in VDIIDCFeatureCapabilities.flags & VDIIDCFeatureState.flags
+   When indicating capabilities, the flag being set indicates that the feature can be put into the given state.
+   When indicating/setting state, the flag represents the current/desired state.
+   Note that certain combinations of flags are valid for capabilities (i.e. vdIIDCFeatureFlagOn | vdIIDCFeatureFlagOff)
+   but are mutually exclusive for state.
+}
+const
+	vdIIDCFeatureFlagOn = 1 shl 0;
+	vdIIDCFeatureFlagOff = 1 shl 1;
+	vdIIDCFeatureFlagManual = 1 shl 2;
+	vdIIDCFeatureFlagAuto = 1 shl 3;
+	vdIIDCFeatureFlagTune = 1 shl 4;
+	vdIIDCFeatureFlagRawControl = 1 shl 5;
+	vdIIDCFeatureFlagAbsoluteControl = 1 shl 6;
+
+{
+   vdIIDCAtomTypeTriggerSettings
+   This atom describes the settings for the trigger feature.
+   The contents of this atom is a VDIIDCTriggerSettings structure.
+}
+const
+	vdIIDCAtomTypeTriggerSettings = FourCharCode('tstg');
+	vdIIDCAtomIDTriggerSettings = 1;
+
+type
+	VDIIDCTriggerCapabilities = record
+		flags: UInt32;
+		absoluteMinimum: QTFloatSingle;
+		absoluteMaximum: QTFloatSingle;
+	end;
+type
+	VDIIDCTriggerState = record
+		flags: UInt32;
+		mode2TransitionCount: UInt16;
+		mode3FrameRateMultiplier: UInt16;
+		absoluteValue: QTFloatSingle;
+	end;
+type
+	VDIIDCTriggerSettings = record
+		capabilities: VDIIDCTriggerCapabilities;
+		state: VDIIDCTriggerState;
+	end;
+{
+   Flags for use in VDIIDCTriggerCapabilities.flags & VDIIDCTriggerState.flags
+   When indicating capabilities, the flag being set indicates that the trigger can be put into the given state.
+   When indicating/setting state, the flag represents the current/desired state.
+   Note that certain combinations of flags are valid for capabilities (i.e. vdIIDCTriggerFlagOn | vdIIDCTriggerFlagOff)
+   but are mutually exclusive for state.
+}
+const
+	vdIIDCTriggerFlagOn = 1 shl 0;
+	vdIIDCTriggerFlagOff = 1 shl 1;
+	vdIIDCTriggerFlagActiveHigh = 1 shl 2;
+	vdIIDCTriggerFlagActiveLow = 1 shl 3;
+	vdIIDCTriggerFlagMode0 = 1 shl 4;
+	vdIIDCTriggerFlagMode1 = 1 shl 5;
+	vdIIDCTriggerFlagMode2 = 1 shl 6;
+	vdIIDCTriggerFlagMode3 = 1 shl 7;
+	vdIIDCTriggerFlagRawControl = 1 shl 8;
+	vdIIDCTriggerFlagAbsoluteControl = 1 shl 9;
+
+
+{
+   vdIIDCAtomTypeFocusPointSettings
+   This atom describes the settings for the focus point feature.
+   The contents of this atom is a VDIIDCFocusPointSettings structure.
+}
+const
+	vdIIDCAtomTypeFocusPointSettings = FourCharCode('fpst');
+	vdIIDCAtomIDFocusPointSettings = 1;
+
+type
+	VDIIDCFocusPointSettings = record
+		focusPoint: Point;
+	end;
+{
+   vdIIDCAtomTypeLightingHintSettings
+   This atom describes the settings for the light hint feature.
+   The contents of this atom is a VDIIDCLightingHintSettings structure.
+}
+const
+	vdIIDCAtomTypeLightingHintSettings = FourCharCode('lhst');
+	vdIIDCAtomIDLightingHintSettings = 1;
+
+type
+	VDIIDCLightingHintSettings = record
+		capabilityFlags: UInt32;
+		stateFlags: UInt32;
+	end;
+{
+   Flags for use in VDIIDCLightingHintSettings.capabilityFlags & VDIIDCLightingHintSettings.capabilityFlags
+   When indicating capabilities, the flag being set indicates that the hint can be applied.
+   When indicating/setting state, the flag represents the current/desired hints applied/to apply.
+   Certain combinations of flags are valid for capabilities (i.e. vdIIDCLightingHintNormal | vdIIDCLightingHintLow)
+   but are mutually exclusive for state.
+}
+const
+	vdIIDCLightingHintNormal = 1 shl 0;
+	vdIIDCLightingHintLow = 1 shl 1;
+
+
+{
+   VDIIDC calls are additional calls for IIDC digitizers (vdSubtypeIIDC)
+   These calls are only valid for video digitizers of subtype vdSubtypeIIDC.
+}
+{
+ *  VDIIDCGetFeatures()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function VDIIDCGetFeatures( ci: VideoDigitizerComponent; var container: QTAtomContainer ): VideoDigitizerError; external name '_VDIIDCGetFeatures';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+{
+ *  VDIIDCSetFeatures()
+ *  
+ *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
@@ -9575,6 +14375,8 @@ function VDIIDCGetFeatures( ci: VideoDigitizerComponent; var container: QTAtomCo
  *  VDIIDCSetFeatures()
  *  
  *  Availability:
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -9606,8 +14408,13 @@ function VDIIDCGetDefaultFeatures( ci: VideoDigitizerComponent; var container: Q
 function VDIIDCGetCSRData( ci: VideoDigitizerComponent; offsetFromUnitBase: Boolean; offset: UInt32; var data: UInt32 ): VideoDigitizerError; external name '_VDIIDCGetCSRData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -10197,7 +15004,11 @@ type
 	SGOutputRecord = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		data: array [0..0] of SIGNEDLONG;
+=======
+		data: array [0..0] of SInt32;
+>>>>>>> graemeg/cpstrnew
 =======
 		data: array [0..0] of SInt32;
 >>>>>>> graemeg/cpstrnew
@@ -13504,6 +18315,7 @@ const
 	sgChannelDescription = FourCharCode('cdsc');
 	sgChannelSettings = FourCharCode('cset');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 const
 	sgDeviceNameType = FourCharCode('name');
@@ -13545,6 +18357,8 @@ const
 	sgcVideoDigitizerType = FourCharCode('vdig');
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 const
 	sgDeviceNameType = FourCharCode('name');
@@ -13556,6 +18370,22 @@ const
 	sgClipType = FourCharCode('clip');
 	sgMatrixType = FourCharCode('mtrx');
 	sgVolumeType = FourCharCode('volu');
+<<<<<<< HEAD
+
+const
+	sgPanelSettingsAtom = FourCharCode('ptom');
+	sgPanelDescription = FourCharCode('pdsc');
+	sgPanelSettings = FourCharCode('pset');
+
+const
+	sgcSoundCompressionType = FourCharCode('scmp');
+	sgcSoundCodecSettingsType = FourCharCode('cdec');
+	sgcSoundSampleRateType = FourCharCode('srat');
+	sgcSoundChannelCountType = FourCharCode('schn');
+	sgcSoundSampleSizeType = FourCharCode('ssiz');
+	sgcSoundInputType = FourCharCode('sinp');
+	sgcSoundGainType = FourCharCode('gain');
+=======
 
 const
 	sgPanelSettingsAtom = FourCharCode('ptom');
@@ -13572,6 +18402,26 @@ const
 	sgcSoundGainType = FourCharCode('gain');
 
 const
+	sgcVideoHueType = FourCharCode('hue ');
+	sgcVideoSaturationType = FourCharCode('satr');
+	sgcVideoContrastType = FourCharCode('trst');
+	sgcVideoSharpnessType = FourCharCode('shrp');
+	sgcVideoBrigtnessType = FourCharCode('brit');
+	sgcVideoBlackLevelType = FourCharCode('blkl');
+	sgcVideoWhiteLevelType = FourCharCode('whtl');
+	sgcVideoInputType = FourCharCode('vinp');
+	sgcVideoFormatType = FourCharCode('vstd');
+	sgcVideoFilterType = FourCharCode('vflt');
+	sgcVideoRectType = FourCharCode('vrct');
+	sgcVideoDigitizerType = FourCharCode('vdig');
+
+>>>>>>> graemeg/cpstrnew
+
+type
+	QTVideoOutputComponent = ComponentInstance;
+{ Component type and subtype enumerations}
+const
+<<<<<<< HEAD
 	sgcVideoHueType = FourCharCode('hue ');
 	sgcVideoSaturationType = FourCharCode('satr');
 	sgcVideoContrastType = FourCharCode('trst');
@@ -13593,6 +18443,8 @@ type
 	QTVideoOutputComponent = ComponentInstance;
 { Component type and subtype enumerations}
 const
+=======
+>>>>>>> graemeg/cpstrnew
 	QTVideoOutputComponentType = FourCharCode('vout');
 	QTVideoOutputComponentBaseSubType = FourCharCode('base');
 

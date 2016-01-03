@@ -53,7 +53,10 @@ const
   FileNameCaseSensitive : boolean = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FileNameCasePreserving: boolean = true;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -217,7 +220,11 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if i<argc-1 then
+=======
+     if i<argc then
+>>>>>>> graemeg/cpstrnew
 =======
      if i<argc then
 >>>>>>> graemeg/cpstrnew
@@ -247,6 +254,7 @@ procedure SysInitStdIO;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   OpenStdIO(Input,fmInput,StdInputHandle);
   OpenStdIO(Output,fmOutput,StdOutputHandle);
   OpenStdIO(ErrOutput,fmOutput,StdErrorHandle);
@@ -255,12 +263,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   OpenStdIO(Input,fmInput,0);
   OpenStdIO(Output,fmOutput,0);
   OpenStdIO(ErrOutput,fmOutput,0);
   OpenStdIO(StdOut,fmOutput,0);
   OpenStdIO(StdErr,fmOutput,0);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -277,6 +290,7 @@ begin
   StackLength := CheckInitialStkLen(InitialStkLen);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   StackBottom := Sptr - StackLength;
 { OS specific startup }
 
@@ -285,12 +299,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   StackBottom := StackTop - StackLength;
 { OS specific startup }
 
 { Set up signals handlers }
 //  fpc_cpucodeinit;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -300,10 +319,13 @@ begin
   SysInitExceptions;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   initunicodestringmanager;
   SetupCmdLine;
   
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -311,6 +333,9 @@ begin
   
   
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -327,6 +352,10 @@ begin
 {$endif FPC_HAS_FEATURE_THREADING}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  initvariantmanager;
+>>>>>>> graemeg/cpstrnew
 =======
   initvariantmanager;
 >>>>>>> graemeg/cpstrnew

@@ -54,6 +54,7 @@ var s,t:string;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    reset_textfile;
    lsock:=fpsocket(af_inet,sock_stream,0);
    if lsock=-1 then
@@ -61,6 +62,8 @@ begin
        writeln('socket call error:',socketerror);
        stop(1);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    lsock:=fpsocket(af_inet,sock_stream,0);
@@ -82,9 +85,12 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       writeln('bind call error:',socketerror);
       stop(1);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       writeln('bind:',socketerror);
@@ -96,9 +102,12 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       writeln('listen call error:',socketerror);
       stop(1);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       writeln('listen:',socketerror);
@@ -112,9 +121,12 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       writeln('accept call error:',SocketError);
       stop(1);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       writeln('accept:',SocketError);

@@ -48,7 +48,11 @@ implementation
        wpobase,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        scanner,pbase,pexpr,psystem,psub,pdecsub,ncgvmt,ncgrtti,
+=======
+       scanner,pbase,pexpr,psystem,psub,pdecsub,ptype,
+>>>>>>> graemeg/cpstrnew
 =======
        scanner,pbase,pexpr,psystem,psub,pdecsub,ptype,
 >>>>>>> graemeg/cpstrnew
@@ -250,6 +254,7 @@ implementation
         s: string;
         item: TTCInitItem;
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         item:=TTCInitItem(current_asmdata.WideInits.First);
         if item=nil then
@@ -289,6 +294,62 @@ implementation
         current_asmdata.asmlists[al_globals].concat(Tai_const.Create_sym(nil));
         current_asmdata.asmlists[al_globals].concat(Tai_symbol_end.Createname(s));
         current_module.flags:=current_module.flags or uf_wideinits;
+=======
+      begin
+        item:=TTCInitItem(current_asmdata.WideInits.First);
+        if item=nil then
+          exit;
+        s:=make_mangledname('WIDEINITS',current_module.localsymtable,'');
+        maybe_new_object_file(current_asmdata.asmlists[al_globals]);
+        new_section(current_asmdata.asmlists[al_globals],sec_data,s,sizeof(pint));
+        current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global(s,AT_DATA,0));
+        repeat
+          { address to initialize }
+          current_asmdata.asmlists[al_globals].concat(Tai_const.createname(item.sym.mangledname, item.offset));
+          { value with which to initialize }
+          current_asmdata.asmlists[al_globals].concat(Tai_const.Create_sym(item.datalabel));
+          item:=TTCInitItem(item.Next);
+        until item=nil;
+        { end-of-list marker }
+        current_asmdata.asmlists[al_globals].concat(Tai_const.Create_sym(nil));
+        current_asmdata.asmlists[al_globals].concat(Tai_symbol_end.Createname(s));
+        current_module.flags:=current_module.flags or uf_wideinits;
+      end;
+
+    procedure InsertWideInitsTablesTable;
+      var
+        hp: tused_unit;
+        lwiTables: TAsmList;
+        count: longint;
+      begin
+        lwiTables:=TAsmList.Create;
+        count:=0;
+        hp:=tused_unit(usedunits.first);
+        while assigned(hp) do
+         begin
+           if (hp.u.flags and uf_wideinits)=uf_wideinits then
+            begin
+              lwiTables.concat(Tai_const.Createname(make_mangledname('WIDEINITS',hp.u.globalsymtable,''),0));
+              inc(count);
+            end;
+           hp:=tused_unit(hp.next);
+         end;
+        { Add program widestring consts, if any }
+        if (current_module.flags and uf_wideinits)=uf_wideinits then
+         begin
+           lwiTables.concat(Tai_const.Createname(make_mangledname('WIDEINITS',current_module.localsymtable,''),0));
+           inc(count);
+         end;
+        { Insert TableCount at start }
+        lwiTables.insert(Tai_const.Create_32bit(count));
+        { insert in data segment }
+        maybe_new_object_file(current_asmdata.asmlists[al_globals]);
+        new_section(current_asmdata.asmlists[al_globals],sec_data,'FPC_WIDEINITTABLES',sizeof(pint));
+        current_asmdata.asmlists[al_globals].concat(Tai_symbol.Createname_global('FPC_WIDEINITTABLES',AT_DATA,0));
+        current_asmdata.asmlists[al_globals].concatlist(lwiTables);
+        current_asmdata.asmlists[al_globals].concat(Tai_symbol_end.Createname('FPC_WIDEINITTABLES'));
+        lwiTables.free;
+>>>>>>> graemeg/cpstrnew
       end;
 
     procedure InsertWideInitsTablesTable;
@@ -731,6 +792,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if m_extpas in current_settings.modeswitches then
           begin
             { basic procedures for Extended Pascal are for now provided by the iso unit }
@@ -746,6 +808,8 @@ implementation
         if m_default_unicodestring in current_settings.modeswitches then
           AddUnit('uuchar');
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -774,11 +838,14 @@ implementation
         { CPU targets with microcontroller support can add a controller specific unit }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if ControllerSupport and (target_info.system in systems_embedded) and
           (current_settings.controllertype<>ct_none) and
           (embedded_controllers[current_settings.controllertype].controllerunitstr<>'') then
           AddUnit(embedded_controllers[current_settings.controllertype].controllerunitstr);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$if defined(ARM) or defined(AVR)}
@@ -912,7 +979,11 @@ implementation
                { check hints }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                pu.check_hints;
+=======
+               pu.u.check_hints;
+>>>>>>> graemeg/cpstrnew
 =======
                pu.u.check_hints;
 >>>>>>> graemeg/cpstrnew
@@ -1043,6 +1114,7 @@ implementation
     procedure maybe_load_got;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(i386) or defined (sparc)}
        var
          gotvarsym : tstaticvarsym;
@@ -1052,6 +1124,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef i386}
        var
          gotvarsym : tstaticvarsym;
@@ -1059,6 +1133,9 @@ implementation
       begin
 {$ifdef i386}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1068,8 +1145,13 @@ implementation
              { insert symbol for got access in assembler code}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              gotvarsym:=cstaticvarsym.create('_GLOBAL_OFFSET_TABLE_',
                           vs_value,voidpointertype,[vo_is_external],true);
+=======
+             gotvarsym:=tstaticvarsym.create('_GLOBAL_OFFSET_TABLE_',
+                          vs_value,voidpointertype,[vo_is_external]);
+>>>>>>> graemeg/cpstrnew
 =======
              gotvarsym:=tstaticvarsym.create('_GLOBAL_OFFSET_TABLE_',
                           vs_value,voidpointertype,[vo_is_external]);
@@ -1086,7 +1168,11 @@ implementation
            end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif i386 or sparc}
+=======
+{$endif i386}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif i386}
 >>>>>>> graemeg/cpstrnew
@@ -1126,7 +1212,10 @@ implementation
     function try_consume_hintdirective(var moduleopt:tmoduleoptions; var deprecatedmsg:pshortstring):boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       var
@@ -1281,6 +1370,9 @@ type
          store_interface_crc,
          store_indirect_crc: cardinal;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1373,6 +1465,9 @@ type
          consume(_ID);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1443,11 +1538,14 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { consume the semicolon after maps have been updated else conditional compiling expressions
            might cause internal errors, see tw8611 }
          if consume_semicolon_after_uses then
            consume(_SEMICOLON);
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1531,6 +1629,9 @@ type
 =======
            exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1689,9 +1790,15 @@ type
            begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+              { the uf_finalize flag is only set after we checked that it
+                wasn't empty }
+
+>>>>>>> graemeg/cpstrnew
+=======
               { the uf_finalize flag is only set after we checked that it
                 wasn't empty }
 
@@ -1794,7 +1901,11 @@ type
          { Tables }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          cnodeutils.InsertThreadvars;
+=======
+         InsertThreadvars;
+>>>>>>> graemeg/cpstrnew
 =======
          InsertThreadvars;
 >>>>>>> graemeg/cpstrnew
@@ -1808,10 +1919,14 @@ type
          { Widestring typed constants }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          cnodeutils.InsertWideInits;
 
          { Resourcestring references }
          cnodeutils.InsertResStrInits;
+=======
+         InsertWideInits;
+>>>>>>> graemeg/cpstrnew
 =======
          InsertWideInits;
 >>>>>>> graemeg/cpstrnew
@@ -1860,9 +1975,15 @@ type
              if store_interface_crc<>current_module.interface_crc then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                Message1(unit_u_interface_crc_changed,current_module.ppufilename);
              if store_indirect_crc<>current_module.indirect_crc then
                Message1(unit_u_indirect_crc_changed,current_module.ppufilename);
+=======
+               Message1(unit_u_interface_crc_changed,current_module.ppufilename^);
+             if store_indirect_crc<>current_module.indirect_crc then
+               Message1(unit_u_indirect_crc_changed,current_module.ppufilename^);
+>>>>>>> graemeg/cpstrnew
 =======
                Message1(unit_u_interface_crc_changed,current_module.ppufilename^);
              if store_indirect_crc<>current_module.indirect_crc then
@@ -2693,6 +2814,7 @@ type
             end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          else
            begin
              if (target_info.system in systems_unit_program_exports) then
@@ -2702,6 +2824,8 @@ type
              setupglobalswitches;
            end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          else if (target_info.system in systems_unit_program_exports) then
@@ -2740,6 +2864,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { Load the units used by the program we compile. }
          if token=_USES then
            begin
@@ -2749,6 +2874,8 @@ type
          else
            consume_semicolon_after_uses:=false;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2771,11 +2898,14 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef jvm}
          { fake classdef to represent the class corresponding to the unit }
          addmoduleclass;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2849,6 +2979,12 @@ type
            begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+              { the uf_finalize flag is only set after we checked that it
+                wasn't empty }
+
+>>>>>>> graemeg/cpstrnew
 =======
               { the uf_finalize flag is only set after we checked that it
                 wasn't empty }
@@ -2982,9 +3118,15 @@ type
          { if an Objective-C module, generate rtti and module info }
          MaybeGenerateObjectiveCImageInfo(nil,current_module.localsymtable);
 
+         { if an Objective-C module, generate rtti and module info }
+         MaybeGenerateObjectiveCImageInfo(nil,current_module.localsymtable);
+
          { generate wrappers for interfaces }
          gen_intf_wrappers(current_asmdata.asmlists[al_procedures],current_module.localsymtable,false);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3010,6 +3152,7 @@ type
          { Windows widestring needing initialization }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          cnodeutils.InsertWideInits;
 
          { Resourcestring references (const foo:string=someresourcestring) }
@@ -3025,6 +3168,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
          InsertWideInits;
 
          { insert Tables and StackLength }
@@ -3037,6 +3182,9 @@ type
          if target_info.system in systems_interrupt_table then
            InsertInterruptTable;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

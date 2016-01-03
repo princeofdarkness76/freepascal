@@ -49,6 +49,7 @@
     _owner: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __wcFlags: record
       case byte of
        0: (_anonbitfield_NSWindowController0: cuint);
@@ -56,11 +57,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __wcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSWindowController0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -71,7 +77,10 @@
         RESERVED: 0..((1 shl 28)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

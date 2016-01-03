@@ -61,7 +61,11 @@ const
       cmInputLineLen         = 51269;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> graemeg/cpstrnew
 =======
       
 >>>>>>> graemeg/cpstrnew
@@ -725,6 +729,7 @@ type
              Procedure   HandleEvent(var Event : TEvent);virtual;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     TSearchHelperDialog = object(TDialog)
@@ -733,6 +738,9 @@ type
     end;
 
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+
 >>>>>>> graemeg/cpstrnew
 =======
 
@@ -6972,8 +6980,13 @@ begin
                    cminputlinelen : begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                       if PtrInt(Event.InfoPtr)=0 then
                                         okbutton^.DisableCommands([cmok])
+=======
+                                      if Event.InfoLong=0 then
+                                        okbutton^.DisableCommands([cmok]) 
+>>>>>>> graemeg/cpstrnew
 =======
                                       if Event.InfoLong=0 then
                                         okbutton^.DisableCommands([cmok]) 
@@ -6988,7 +7001,11 @@ begin
                                     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              end;
+=======
+             end;      
+>>>>>>> graemeg/cpstrnew
 =======
              end;      
 >>>>>>> graemeg/cpstrnew

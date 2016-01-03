@@ -1,10 +1,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %%% Reordering of errorda.msg respective to errore.msg
 %%% Contains all comments from errorda.msg
 #$
 #   $Id: errorda.msg 621 2006-07-02 15:44:03Z chrivers 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 #
@@ -3542,7 +3545,11 @@ option_logo=11023_[
 Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] til $FPCTARGET
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 Florian Klaempfl and others
+=======
+Copyright (c) 1993-2011 Florian Klaempfl
+>>>>>>> graemeg/cpstrnew
 =======
 Copyright (c) 1993-2011 Florian Klaempfl
 >>>>>>> graemeg/cpstrnew

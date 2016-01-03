@@ -87,9 +87,12 @@ type
 {$ifend}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   csigned                = cint;               pcsigned               = ^csigned;
   cunsigned              = cuint;              pcunsigned             = ^cunsigned;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -117,10 +120,13 @@ type
 {$ifend}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$if defined(darwin) and defined(cpuaarch64)}
   {$define longdouble_is_double}
 {$ifend}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -132,7 +138,11 @@ type
 {$else}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$if defined(cpui8086) or defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
+=======
+  {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
+>>>>>>> graemeg/cpstrnew
 =======
   {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
 >>>>>>> graemeg/cpstrnew

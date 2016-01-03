@@ -216,7 +216,11 @@ asm
 {$else FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    movq   _environ(%rip),%rcx
+=======
+   movq   _environ{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif},%rcx
+>>>>>>> graemeg/cpstrnew
 =======
    movq   _environ{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif},%rcx
 >>>>>>> graemeg/cpstrnew
@@ -234,7 +238,11 @@ asm
 {$else FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    movq   %rcx,_environ(%rip)
+=======
+   movq   %rcx,_environ{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
+>>>>>>> graemeg/cpstrnew
 =======
    movq   %rcx,_environ{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
 >>>>>>> graemeg/cpstrnew
@@ -249,7 +257,11 @@ asm
 {$else FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    movq   %rcx,envp(%rip)
+=======
+   movq   %rcx,envp{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
+>>>>>>> graemeg/cpstrnew
 =======
    movq   %rcx,envp{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
 >>>>>>> graemeg/cpstrnew
@@ -273,7 +285,11 @@ asm
 {$else FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    movq   %rdx,___Argv(%rip)
+=======
+   movq   %rdx,___Argv{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
+>>>>>>> graemeg/cpstrnew
 =======
    movq   %rdx,___Argv{$ifdef FPC_HAS_RIP_RELATIVE}(%rip){$endif}
 >>>>>>> graemeg/cpstrnew

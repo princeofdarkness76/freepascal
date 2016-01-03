@@ -51,6 +51,7 @@ const
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __sfFlags: record
       case byte of
        0: (_anonbitfield_NSSearchFieldCell0: cuint);
@@ -58,11 +59,16 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __sfFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSSearchFieldCell0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -78,7 +84,10 @@ const
         reserved: 0..((1 shl 16)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

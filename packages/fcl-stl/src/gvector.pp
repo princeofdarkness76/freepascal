@@ -19,6 +19,7 @@ interface
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   { TVector }
 
@@ -30,12 +31,17 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   generic TVector<T>=class
   private
   type
     PT=^ T;
     TArr=array of T;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -44,6 +50,7 @@ type
     FDataSize:SizeUInt;
     FData:TArr;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     procedure SetValue(Position: SizeUInt; const Value: T); inline;
@@ -88,6 +95,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure SetValue(Position:SizeUInt; Value:T);inline;
     function GetValue(Position:SizeUInt):T;inline;
     function GetMutable(Position:SizeUInt):PT;inline;
@@ -106,6 +115,9 @@ type
     procedure Reserve(Num:SizeUInt);inline;
     procedure Resize(Num:SizeUInt);inline;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -116,6 +128,7 @@ end;
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { TVector.TVectorEnumerator }
@@ -148,12 +161,15 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 constructor TVector.Create();
 begin
   FCapacity:=0;
   FDataSize:=0;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TVector.SetValue(Position: SizeUInt; const Value: T);
@@ -190,6 +206,8 @@ function TVector.Size(): SizeUInt;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TVector.SetValue(Position:SizeUInt; Value:T);inline;
 begin
   Assert(position < size, 'Vector position out of range');
@@ -222,6 +240,9 @@ end;
 
 function TVector.Size():SizeUInt;inline;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -231,6 +252,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TVector.IsEmpty(): boolean;
 begin
   IsEmpty := (Size() = 0);
@@ -238,6 +260,8 @@ end;
 
 procedure TVector.PushBack(const Value: T);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 function TVector.IsEmpty():boolean;inline;
@@ -250,6 +274,9 @@ end;
 
 procedure TVector.PushBack(Value:T);inline;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -262,7 +289,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TVector.IncreaseCapacity();
+=======
+procedure TVector.IncreaseCapacity();inline;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TVector.IncreaseCapacity();inline;
 >>>>>>> graemeg/cpstrnew
@@ -277,6 +308,7 @@ begin
   SetLength(FData, FCapacity);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function TVector.GetEnumerator: TVectorEnumerator;
@@ -327,6 +359,8 @@ procedure TVector.Clear;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TVector.PopBack();inline;
 begin
   if FDataSize>0 then
@@ -359,6 +393,9 @@ end;
 
 procedure TVector.Clear;inline;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -368,7 +405,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TVector.Reserve(Num: SizeUInt);
+=======
+procedure TVector.Reserve(Num:SizeUInt);inline;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TVector.Reserve(Num:SizeUInt);inline;
 >>>>>>> graemeg/cpstrnew
@@ -388,7 +429,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TVector.Resize(Num: SizeUInt);
+=======
+procedure TVector.Resize(Num:SizeUInt);inline;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TVector.Resize(Num:SizeUInt);inline;
 >>>>>>> graemeg/cpstrnew

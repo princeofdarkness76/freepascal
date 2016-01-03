@@ -55,6 +55,7 @@ const
     _badgeLabel: NSString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __dFlags: record
       case byte of
        0: (_anonbitfield_NSDockTile0: cuint);
@@ -69,6 +70,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __dFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSDockTile0: cuint);
@@ -80,6 +83,9 @@ const
     _dockTileSize: NSSize;
         reserved: array[0..4] of id;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

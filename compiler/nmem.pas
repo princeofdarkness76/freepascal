@@ -186,6 +186,7 @@ implementation
             resultdef:=left.resultdef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           recorddef,
           objectdef:
             begin
@@ -222,6 +223,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           objectdef,
           recorddef:
             { access to the classtype while specializing? }
@@ -247,6 +250,9 @@ implementation
             else
               resultdef:=tclassrefdef.create(left.resultdef);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -284,6 +290,7 @@ implementation
            begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if (is_objc_class_or_protocol(left.resultdef) or
                  is_objcclassref(left.resultdef)) then
                begin
@@ -304,6 +311,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
              { make sure that the isa field is loaded correctly in case
                of the non-fragile ABI }
              if is_objcclass(left.resultdef) and
@@ -320,6 +329,7 @@ implementation
                end
              else
                firstpass(left)
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -357,6 +367,23 @@ implementation
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+           end
+         else if not is_objcclass(left.resultdef) and
+                 not is_objcclassref(left.resultdef) then
+           begin
+             if not(nf_ignore_for_wpo in flags) and
+                (not assigned(current_procinfo) or
+                 (po_inline in current_procinfo.procdef.procoptions) or
+                  wpoinfomanager.symbol_live(current_procinfo.procdef.mangledname)) then
+             begin
+               { keep track of which classes might be instantiated via a classrefdef }
+               if (left.resultdef.typ=classrefdef) then
+                 tobjectdef(tclassrefdef(left.resultdef).pointeddef).register_maybe_created_object_type
+               else if (left.resultdef.typ=objectdef) then
+                 tobjectdef(left.resultdef).register_maybe_created_object_type
+             end
 >>>>>>> graemeg/cpstrnew
            end;
       end;
@@ -657,12 +684,18 @@ implementation
                not(tabsolutevarsym(tloadnode(hp).symtableentry).absseg) and
 {$endif i386}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
             if (hp.nodetype=loadn) and
                (tloadnode(hp).symtableentry.typ=absolutevarsym) and
 {$ifdef i386}
                not(tabsolutevarsym(tloadnode(hp).symtableentry).absseg) and
 {$endif i386}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
                (tabsolutevarsym(tloadnode(hp).symtableentry).abstyp=toaddr) then
                begin
@@ -1007,6 +1040,7 @@ implementation
          { maybe type conversion for the index value, but
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            do not convert range nodes }
          if (right.nodetype<>rangen) then
            case left.resultdef.typ of
@@ -1073,6 +1107,8 @@ implementation
                    inserttypeconv(right,htype)
                end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
            do not convert enums, char (why not? (JM))
@@ -1158,6 +1194,9 @@ implementation
                   { (can't use current_procdef, since it may be a nested procedure) }
                   not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1281,9 +1320,12 @@ implementation
            CGMessagePos(right.fileinfo,parser_e_illegal_expression)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          else if left.resultdef.typ=arraydef then
            result:=first_arraydef
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          else if (not is_packed_array(left.resultdef)) or

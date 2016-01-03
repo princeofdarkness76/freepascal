@@ -960,7 +960,11 @@ implementation
 {$ifdef cpu64bitaddr}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if (target_dbg.id = dbg_stabs) then
+=======
+                    if (paratargetdbg = dbg_stabs) then
+>>>>>>> graemeg/cpstrnew
 =======
                     if (paratargetdbg = dbg_stabs) then
 >>>>>>> graemeg/cpstrnew
@@ -1288,8 +1292,11 @@ implementation
             Add('    *(.jcr)');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             Add('    PROVIDE ('+target_info.Cprefix+'_tls_index = .);');
             Add('    LONG (0);');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1850,7 +1857,10 @@ initialization
 {$ifdef x86_64}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   RegisterExternalLinker(system_x64_win64_info,TExternalLinkerWin);

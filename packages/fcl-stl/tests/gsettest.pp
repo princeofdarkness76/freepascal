@@ -14,7 +14,10 @@ type TGSetTest = class(TTestCase)
     procedure SetTest;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure IteratorTest;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -27,6 +30,7 @@ type TGSetTest = class(TTestCase)
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TGSetTest.IteratorTest;
@@ -57,10 +61,15 @@ var it:setlli.pnode;
 procedure TGSetTest.SetTest;
 var it:setlli.pnode;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TGSetTest.SetTest;
+var it:setlli.pnode;
+>>>>>>> graemeg/cpstrnew
 begin
   data.insert(3);
   data.insert(5);
   data.insert(7);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   AssertEquals('Wrong min', 3, data.min().Data);
@@ -71,12 +80,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   AssertEquals('Wrong min', 3, data.min()^.data);
   AssertEquals('Wrong max', 7, data.max()^.data);
   data.delete(3);
   AssertEquals('Wrong size', 2, data.size);
   AssertEquals('Wrong min', 5, data.min()^.data);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -86,7 +100,11 @@ begin
   AssertEquals('Wrong size', 3, data.size);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEquals('Wrong min', 3, data.min().Data);
+=======
+  AssertEquals('Wrong min', 3, data.min()^.data);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('Wrong min', 3, data.min()^.data);
 >>>>>>> graemeg/cpstrnew
@@ -100,9 +118,15 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindLess(8).Data<>7) then
     Fail('Wrong less than 8');
   if(data.FindLess(7).Data<>5) then
+=======
+  if(data.FindLess(8)^.data<>7) then
+    Fail('Wrong less than 8');
+  if(data.FindLess(7)^.data<>5) then
+>>>>>>> graemeg/cpstrnew
 =======
   if(data.FindLess(8)^.data<>7) then
     Fail('Wrong less than 8');
@@ -119,6 +143,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindLessEqual(8).Data<>7) then
     Fail('Wrong less equal than 8');
   if(data.FindLessEqual(7).Data<>7) then
@@ -127,12 +152,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if(data.FindLessEqual(8)^.data<>7) then
     Fail('Wrong less equal than 8');
   if(data.FindLessEqual(7)^.data<>7) then
     Fail('Wrong less equal than 7');
   if(data.FindLessEqual(6)^.data<>5) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -142,9 +172,15 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindGreater(2).Data<>3) then
     Fail('Wrong greater than 2');
   if(data.Findgreater(3).Data<>5) then
+=======
+  if(data.FindGreater(2)^.data<>3) then
+    Fail('Wrong greater than 2');
+  if(data.Findgreater(3)^.data<>5) then
+>>>>>>> graemeg/cpstrnew
 =======
   if(data.FindGreater(2)^.data<>3) then
     Fail('Wrong greater than 2');
@@ -161,6 +197,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(data.FindGreaterEqual(2).Data<>3) then
     Fail('Wrong greater equal than 2');
   if(data.FindGreaterEqual(3).Data<>3) then
@@ -169,12 +206,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if(data.FindGreaterEqual(2)^.data<>3) then
     Fail('Wrong greater equal than 2');
   if(data.FindGreaterEqual(3)^.data<>3) then
     Fail('Wrong greater equal than 3');
   if(data.FindGreaterEqual(4)^.data<>5) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -185,6 +227,7 @@ begin
   data.insert(17);
 
   it:=data.min;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   AssertEquals('Wrong min', 3, it.Data);
@@ -206,6 +249,8 @@ begin
   AssertEquals('Wrong prev', 3, it.Data);
   AssertEquals('First prev not fail', false, it.prev);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   AssertEquals('Wrong min', 3, it^.data);
@@ -231,6 +276,9 @@ begin
   if(it<>nil) then
     AssertEquals('First not nil', 0, 1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

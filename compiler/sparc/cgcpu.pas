@@ -48,6 +48,12 @@ interface
         { parameter }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
+        procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
+        procedure a_loadaddr_ref_cgpara(list:TAsmList;const r:TReference;const paraloc:TCGPara);override;
+>>>>>>> graemeg/cpstrnew
 =======
         procedure a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);override;
         procedure a_load_ref_cgpara(list:TAsmList;sz:tcgsize;const r:TReference;const paraloc:TCGPara);override;
@@ -111,6 +117,9 @@ interface
        private
         g1_used : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -133,8 +142,11 @@ interface
       
     procedure create_codegen;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure create_codegen;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -364,7 +376,10 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure TCgSparc.a_load_const_cgpara(list:TAsmList;size:tcgsize;a:aint;const paraloc:TCGPara);
@@ -462,6 +477,9 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1255,6 +1273,9 @@ implementation
         paramanager.getintparaloc(pocall_default,3,paraloc3);
         a_load_const_cgpara(list,OS_INT,len,paraloc3);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1647,6 +1668,7 @@ implementation
         cg:=TCgSparc.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if target_info.system=system_sparc_linux then
           TCgSparc(cg).use_unlimited_pic_mode:=true
         else
@@ -1654,6 +1676,11 @@ implementation
         cg64:=TCg64Sparc.Create;
       end;
 
+=======
+        cg64:=TCg64Sparc.Create;
+      end;
+      
+>>>>>>> graemeg/cpstrnew
 =======
         cg64:=TCg64Sparc.Create;
       end;

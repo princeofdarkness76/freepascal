@@ -85,6 +85,24 @@ begin
 <<<<<<< HEAD
     P.Options.Add('-S2h');
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> graemeg/cpstrnew
+    P.Dependencies.Add('fcl-base');
+    P.Dependencies.Add('fcl-xml');
+    P.Dependencies.Add('ibase');
+    P.Dependencies.Add('mysql');
+    P.Dependencies.Add('odbc');
+    P.Dependencies.Add('oracle');
+    P.Dependencies.Add('postgres');
+    P.Dependencies.Add('sqlite');
+    P.Dependencies.Add('pxlib');
+
+    P.Options.Add('-S2h');
+
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
 =======
     P.Dependencies.Add('fcl-base');
     P.Dependencies.Add('fcl-xml');
@@ -100,18 +118,6 @@ begin
 
 >>>>>>> graemeg/cpstrnew
 =======
-    P.Dependencies.Add('fcl-base');
-    P.Dependencies.Add('fcl-xml');
-    P.Dependencies.Add('ibase');
-    P.Dependencies.Add('mysql');
-    P.Dependencies.Add('odbc');
-    P.Dependencies.Add('oracle');
-    P.Dependencies.Add('postgres');
-    P.Dependencies.Add('sqlite');
-    P.Dependencies.Add('pxlib');
-
-    P.Options.Add('-S2h');
-
 >>>>>>> graemeg/cpstrnew
     // base
     T:=P.Targets.AddUnit('bufdataset.pas');
@@ -124,8 +130,11 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('csvdataset.pp');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('bufdataset_parser.pp');
@@ -139,6 +148,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('bufdataset_parser.pp');
       with T.Dependencies do
         begin
@@ -148,6 +158,8 @@ begin
           AddUnit('dbconst');
         end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -195,8 +207,11 @@ begin
     // dbase
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('dbf.pas', DBaseOSes);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('dbf.pas');
@@ -364,6 +379,7 @@ begin
       with T.Dependencies do
         begin
           AddInclude('dbf_common.inc');
+<<<<<<< HEAD
           AddInclude('dbf_wnix.inc', AllOSes-AllWindowsOSes-[os2]);
           AddInclude('dbf_wos2.inc', [os2]);
         end;
@@ -372,6 +388,9 @@ begin
     T:=P.Targets.AddUnit('fpcgcreatedbf.pp', DatadictOSes);
 =======
 =======
+>>>>>>> graemeg/cpstrnew
+=======
+        end;
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('fpcgcreatedbf.pp');
 >>>>>>> graemeg/cpstrnew
@@ -394,8 +413,11 @@ begin
     T.ResourceStrings:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('fpcgtiopf.pp', DatadictOSes);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('fpcgtiopf.pp');
@@ -410,6 +432,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpcsvexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -424,6 +449,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpdatadict.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -437,6 +465,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpdbexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -450,6 +481,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpdbfexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -461,6 +495,7 @@ begin
           AddUnit('fpdbexport');
         end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     T:=P.Targets.AddUnit('fpddpopcode.pp', DatadictOSes);
@@ -475,6 +510,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('fpddpopcode.pp');
     T.ResourceStrings:=true;
     T.Dependencies.AddUnit('fpdatadict');
@@ -485,6 +522,9 @@ begin
 
     T:=P.Targets.AddUnit('fpddcodegen.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -599,7 +639,11 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('customsqliteds.pas', SqliteOSes);
+=======
+    T:=P.Targets.AddUnit('customsqliteds.pas');
+>>>>>>> graemeg/cpstrnew
 =======
     T:=P.Targets.AddUnit('customsqliteds.pas');
 >>>>>>> graemeg/cpstrnew
@@ -613,8 +657,12 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     T:=P.Targets.AddUnit('fpddsqldb.pp', DatadictOSes);
+=======
+    T:=P.Targets.AddUnit('fpddsqldb.pp');
+>>>>>>> graemeg/cpstrnew
 =======
     T:=P.Targets.AddUnit('fpddsqldb.pp');
 >>>>>>> graemeg/cpstrnew
@@ -641,6 +689,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpfixedexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -655,6 +706,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fprtfexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -669,6 +723,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpsimplejsonexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -683,6 +740,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpsimplexmlexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -697,6 +757,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpsqlexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -724,6 +787,7 @@ begin
 =======
     T:=P.Targets.AddUnit('fptexexport.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -734,6 +798,8 @@ begin
           AddUnit('fpdbexport');
         end;
     T:=P.Targets.AddUnit('fpxmlxsdexport.pp', DatadictOSes);
+=======
+>>>>>>> graemeg/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -757,6 +823,7 @@ begin
           AddUnit('db');
           AddUnit('dbconst');
           AddUnit('bufdataset');
+<<<<<<< HEAD
           AddUnit('ibconnection');
         end;
     T:=P.Targets.AddUnit('fbeventmonitor.pp', SqldbConnectionOSes);
@@ -768,6 +835,8 @@ begin
           AddUnit('bufdataset');
 <<<<<<< HEAD
           AddUnit('ibconnection');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -785,6 +854,9 @@ begin
 =======
     T:=P.Targets.AddUnit('mysql40conn.pas');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -802,6 +874,9 @@ begin
 =======
     T:=P.Targets.AddUnit('mysql41conn.pas');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -820,6 +895,9 @@ begin
 =======
     T:=P.Targets.AddUnit('mysql4conn.pas');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -838,6 +916,9 @@ begin
 =======
     T:=P.Targets.AddUnit('mysql50conn.pas');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -861,6 +942,7 @@ begin
           AddUnit('db');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddUnit('dbconst');
         end;
 
@@ -869,6 +951,8 @@ begin
       with T.Dependencies do
         begin
           AddInclude('mysqlconn.inc');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -883,6 +967,7 @@ begin
     T:=P.Targets.AddUnit('mysql57conn.pas', SqldbConnectionOSes);
 =======
     T:=P.Targets.AddUnit('oracleconnection.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -899,6 +984,9 @@ begin
 <<<<<<< HEAD
 
     T:=P.Targets.AddUnit('odbcconn.pas', SqldbConnectionOSes);
+=======
+    T.ResourceStrings:=true;
+>>>>>>> graemeg/cpstrnew
       with T.Dependencies do
         begin
           AddUnit('sqldb');
@@ -918,6 +1006,9 @@ begin
 =======
     T:=P.Targets.AddUnit('paradox.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -932,6 +1023,9 @@ begin
 =======
     T:=P.Targets.AddUnit('pqconnection.pp');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

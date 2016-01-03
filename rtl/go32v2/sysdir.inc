@@ -20,7 +20,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DosDir(func:byte;s:rawbytestring);
+=======
+procedure DosDir(func:byte;s:pchar;len:integer);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure DosDir(func:byte;s:pchar;len:integer);
 >>>>>>> graemeg/cpstrnew
@@ -37,6 +41,7 @@ begin
     but "\" and "c:\" should still be kept and accepted hopefully PM }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   len:=length(s);
   if (len>0) and (s[len]='\') and
      Not ((len=1) or ((len=3) and (s[2]=':'))) then
@@ -45,11 +50,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if (len>0) and (s[len-1]='\') and
      Not ((len=1) or ((len=3) and (s[1]=':'))) then
     s[len-1]:=#0;
   syscopytodos(longint(s),len+1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -64,6 +74,7 @@ begin
    GetInOutRes(lo(regs.realeax));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 Procedure do_MkDir(const s: rawbytestring);
@@ -90,6 +101,15 @@ begin
   DosDir($39,s,len);
 end;
 
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+begin
+ If not assigned(s) or (len=0) or (InOutRes <> 0) then
+   exit;
+  DosDir($39,s,len);
+end;
+
+>>>>>>> graemeg/cpstrnew
 Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 begin
   if (len=1) and (s[0] = '.' ) then
@@ -100,6 +120,7 @@ begin
 end;
 
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
@@ -120,10 +141,13 @@ end;
 
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 var
   regs : trealregs;
   len  : longint;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   len:=length(s);
@@ -132,11 +156,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
    exit;
 { First handle Drive changes }
   if (len>=2) and (s[1]=':') then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -162,8 +191,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_GetDir (DriveNr: byte; var Dir: RawByteString);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure GetDir (DriveNr: byte; var Dir: ShortString);

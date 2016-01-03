@@ -34,11 +34,14 @@ procedure ICFlashInvalidate; cdecl; external;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifdef HW_RVL}
 procedure L2Enhance(); cdecl; external;
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

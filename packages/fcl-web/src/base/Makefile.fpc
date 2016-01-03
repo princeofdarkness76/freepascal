@@ -6,6 +6,7 @@
 main=fcl-web
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [target]
@@ -20,6 +21,8 @@ units_beos=custfcgi fpfcgi
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 version=2.5.1
 
 [target]
@@ -31,6 +34,9 @@ rsts=fpcgi fphtml fpweb websession cgiapp
 # darwin (which does support the rest of fcl-web)
 units_beos=custfcgi fpfcgi
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -44,6 +50,7 @@ units_win32=custfcgi fpfcgi
 units_win64=custfcgi fpfcgi
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units_aix=custfcgi fpfcgi
 
 [require]
@@ -51,11 +58,16 @@ packages=fcl-base fcl-xml fcl-db fcl-process httpd22 fastcgi fcl-net httpd24
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 units_wince=custfcgi fpfcgi
 
 [require]
 packages=fcl-base fcl-xml fcl-db fcl-process httpd22 fastcgi fcl-net
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

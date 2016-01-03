@@ -931,7 +931,10 @@ var
   nsdoc: TXMLDocument;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   resolver: TXPathNSResolver;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -944,6 +947,7 @@ begin
       nsdoc := ParseString(tests[i].re);
       try
         try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           resolver := TXPathNSResolver.Create(nsdoc.DocumentElement);
@@ -959,12 +963,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           rslt := EvaluateXPathExpression(tests[i].expr, doc.DocumentElement, nsdoc.DocumentElement);
           try
             CheckResult(tests[i], rslt);
           finally
             rslt.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

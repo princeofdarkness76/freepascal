@@ -63,6 +63,7 @@ begin
          with sigcontext^.uc_mcontext.fpregs.fpchip_state do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            begin
              status:=status and not FPU_ExceptionMask;
              { Control word is index 0 }
@@ -72,6 +73,9 @@ begin
              { Tag word is index 2 }
              state[2]:=$ffff;
           end;
+=======
+           status:=status and not FPU_ExceptionMask;
+>>>>>>> graemeg/cpstrnew
 =======
            status:=status and not FPU_ExceptionMask;
 >>>>>>> graemeg/cpstrnew

@@ -20,8 +20,11 @@ type
   PWSTR = PWideChar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CCHAR = Byte;
   PCCHAR = ^CCHAR;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

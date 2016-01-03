@@ -3,10 +3,13 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Contains:   *** DEPRECATED *** WebServicesCore Method Invocation API
  
      Copyright:  (c) 2002-2011 Apple Inc. All rights reserved
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
      Contains:   WebServicesCore Method Invocation API
@@ -15,6 +18,9 @@
  
      Copyright:  © 2002-2008 by Apple Computer, Inc., all rights reserved
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -24,10 +30,13 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
  
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
@@ -35,6 +44,9 @@
 }
 {       Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -94,11 +106,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -123,11 +138,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -146,11 +167,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -169,7 +196,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -185,7 +215,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -198,6 +231,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -209,6 +243,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -225,6 +264,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -244,15 +284,22 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -334,6 +381,7 @@ uses MacTypes,CFBase,CFArray,CFData,CFDictionary,CFRunLoop,CFXMLNode,WSTypes;
 var kWSMethodInvocationResult: CFStringRef; external name '_kWSMethodInvocationResult'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 {
     Dictionary entries if the result is a fault
@@ -351,6 +399,8 @@ var kWSFaultExtra: CFStringRef; external name '_kWSFaultExtra'; (* attribute con
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {
     Dictionary entries if the result is a fault
 }
@@ -358,6 +408,9 @@ var kWSFaultString: CFStringRef; external name '_kWSFaultString'; (* attribute c
 var kWSFaultCode: CFStringRef; external name '_kWSFaultCode'; (* attribute const *)    { a CFNumber }
 var kWSFaultExtra: CFStringRef; external name '_kWSFaultExtra'; (* attribute const *)   { a CFString or CFDictionary, or NULL }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -373,6 +426,7 @@ var kWSFaultExtra: CFStringRef; external name '_kWSFaultExtra'; (* attribute con
 var kWSNetworkStreamFaultString: CFStringRef; external name '_kWSNetworkStreamFaultString'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 { A CFString (for debug purposes only) }
 var kWSStreamErrorMessage: CFStringRef; external name '_kWSStreamErrorMessage'; (* attribute const *)
@@ -383,6 +437,11 @@ var kWSStreamErrorDomain: CFStringRef; external name '_kWSStreamErrorDomain'; (*
 { A CFNumberRef }
 var kWSStreamErrorError: CFStringRef; external name '_kWSStreamErrorError'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSStreamErrorMessage: CFStringRef; external name '_kWSStreamErrorMessage'; (* attribute const *)           { A CFString (for debug purposes only) }
+var kWSStreamErrorDomain: CFStringRef; external name '_kWSStreamErrorDomain'; (* attribute const *)            { A CFNumberRef }
+var kWSStreamErrorError: CFStringRef; external name '_kWSStreamErrorError'; (* attribute const *)             { A CFNumberRef }
+>>>>>>> graemeg/cpstrnew
 =======
 var kWSStreamErrorMessage: CFStringRef; external name '_kWSStreamErrorMessage'; (* attribute const *)           { A CFString (for debug purposes only) }
 var kWSStreamErrorDomain: CFStringRef; external name '_kWSStreamErrorDomain'; (* attribute const *)            { A CFNumberRef }
@@ -411,6 +470,7 @@ var kWSStreamErrorError: CFStringRef; external name '_kWSStreamErrorError'; (* a
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CFHTTPMessageRef }
 var kWSHTTPMessage: CFStringRef; external name '_kWSHTTPMessage'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -425,11 +485,16 @@ var kWSHTTPResponseMessage: CFStringRef; external name '_kWSHTTPResponseMessage'
 var kWSHTTPMessage: CFStringRef; external name '_kWSHTTPMessage'; (* attribute const *)                  { CFHTTPMessageRef }
 var kWSHTTPResponseMessage: CFStringRef; external name '_kWSHTTPResponseMessage'; (* attribute const *)          { CFHTTPMessageRef }
 >>>>>>> graemeg/cpstrnew
+=======
+var kWSHTTPMessage: CFStringRef; external name '_kWSHTTPMessage'; (* attribute const *)                  { CFHTTPMessageRef }
+var kWSHTTPResponseMessage: CFStringRef; external name '_kWSHTTPResponseMessage'; (* attribute const *)          { CFHTTPMessageRef }
+>>>>>>> graemeg/cpstrnew
 {
     To avoid having to create an entire CFHTTPMessageRef, these properties are
     individually settable.  If they are set, they will override any CFHTTPMessageRef
     previously specified.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { a CFDictionary of ( key (CFString), val (CFString) ) pairs }
@@ -447,11 +512,16 @@ var kWSHTTPFollowsRedirects: CFStringRef; external name '_kWSHTTPFollowsRedirect
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 var kWSHTTPVersion: CFStringRef; external name '_kWSHTTPVersion'; (* attribute const *)                  { "http/1.1" }
 var kWSHTTPExtraHeaders: CFStringRef; external name '_kWSHTTPExtraHeaders'; (* attribute const *)             { a CFDictionary of ( key (CFString), val (CFString) ) pairs }
 var kWSHTTPProxy: CFStringRef; external name '_kWSHTTPProxy'; (* attribute const *)                    { CFURLRef }
 var kWSHTTPFollowsRedirects: CFStringRef; external name '_kWSHTTPFollowsRedirects'; (* attribute const *)         { kCFBooleanFalse }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -470,6 +540,7 @@ var kWSHTTPFollowsRedirects: CFStringRef; external name '_kWSHTTPFollowsRedirect
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { kCFBooleanFalse }
 var kWSDebugOutgoingHeaders: CFStringRef; external name '_kWSDebugOutgoingHeaders'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -485,11 +556,16 @@ var kWSDebugIncomingBody: CFStringRef; external name '_kWSDebugIncomingBody'; (*
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 var kWSDebugOutgoingHeaders: CFStringRef; external name '_kWSDebugOutgoingHeaders'; (* attribute const *)             { kCFBooleanFalse }
 var kWSDebugOutgoingBody: CFStringRef; external name '_kWSDebugOutgoingBody'; (* attribute const *)                { kCFBooleanFalse }
 var kWSDebugIncomingHeaders: CFStringRef; external name '_kWSDebugIncomingHeaders'; (* attribute const *)             { kCFBooleanFalse }
 var kWSDebugIncomingBody: CFStringRef; external name '_kWSDebugIncomingBody'; (* attribute const *)                { kCFBooleanFalse }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -498,6 +574,7 @@ var kWSDebugIncomingBody: CFStringRef; external name '_kWSDebugIncomingBody'; (*
     namespace and format itself.  Individual message elements can
     be modified using the kWSRecord constants below.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { CFStringRef }
@@ -513,11 +590,16 @@ var kWSSOAPStyleRPC: CFStringRef; external name '_kWSSOAPStyleRPC'; (* attribute
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 var kWSSOAPMethodNamespaceURI: CFStringRef; external name '_kWSSOAPMethodNamespaceURI'; (* attribute const *)   { CFStringRef }
 var kWSSOAPBodyEncodingStyle: CFStringRef; external name '_kWSSOAPBodyEncodingStyle'; (* attribute const *)    { CFStringRef ( kWSSOAPStyleDoc, kWSSOAPStyleRPC ) }
 var kWSSOAPStyleDoc: CFStringRef; external name '_kWSSOAPStyleDoc'; (* attribute const *)
 var kWSSOAPStyleRPC: CFStringRef; external name '_kWSSOAPStyleRPC'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -530,9 +612,13 @@ var kWSSOAPStyleRPC: CFStringRef; external name '_kWSSOAPStyleRPC'; (* attribute
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { CFArrayRef }
 var kWSSOAPMessageHeaders: CFStringRef; external name '_kWSSOAPMessageHeaders'; (* attribute const *)
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+var kWSSOAPMessageHeaders: CFStringRef; external name '_kWSSOAPMessageHeaders'; (* attribute const *)               { CFArrayRef }
+>>>>>>> graemeg/cpstrnew
 =======
 var kWSSOAPMessageHeaders: CFStringRef; external name '_kWSSOAPMessageHeaders'; (* attribute const *)               { CFArrayRef }
 >>>>>>> graemeg/cpstrnew
@@ -544,6 +630,7 @@ var kWSSOAPMessageHeaders: CFStringRef; external name '_kWSSOAPMessageHeaders'; 
     When serializing a record (dictionary) these keys present in
     the dictionary can modify the behavior of the serialization.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { CFArrayRef of CFStringRef }
@@ -565,6 +652,11 @@ var kWSRecordParameterOrder: CFStringRef; external name '_kWSRecordParameterOrde
 var kWSRecordNamespaceURI: CFStringRef; external name '_kWSRecordNamespaceURI'; (* attribute const *)       { CFStringRef }
 var kWSRecordType: CFStringRef; external name '_kWSRecordType'; (* attribute const *)               { CFStringRef }
 >>>>>>> graemeg/cpstrnew
+=======
+var kWSRecordParameterOrder: CFStringRef; external name '_kWSRecordParameterOrder'; (* attribute const *)     { CFArrayRef of CFStringRef }
+var kWSRecordNamespaceURI: CFStringRef; external name '_kWSRecordNamespaceURI'; (* attribute const *)       { CFStringRef }
+var kWSRecordType: CFStringRef; external name '_kWSRecordType'; (* attribute const *)               { CFStringRef }
+>>>>>>> graemeg/cpstrnew
 
 {
     Specifies that the result parameter will be found as this name.  This
@@ -573,7 +665,10 @@ var kWSRecordType: CFStringRef; external name '_kWSRecordType'; (* attribute con
 var kWSMethodInvocationResultParameterName: CFStringRef; external name '_kWSMethodInvocationResultParameterName'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -587,7 +682,10 @@ var kWSMethodInvocationResultParameterName: CFStringRef; external name '_kWSMeth
 var kWSMethodInvocationTimeoutValue: CFStringRef; external name '_kWSMethodInvocationTimeoutValue'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -608,10 +706,15 @@ type
 	OpaqueWSMethodInvocationRef = record end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {
  *  WSMethodInvocationGetTypeID()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationGetTypeID()
+>>>>>>> graemeg/cpstrnew
 =======
 {
  *  WSMethodInvocationGetTypeID()
@@ -627,7 +730,11 @@ type
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -640,6 +747,7 @@ type
 function WSMethodInvocationGetTypeID: CFTypeID; external name '_WSMethodInvocationGetTypeID';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -648,11 +756,16 @@ function WSMethodInvocationGetTypeID: CFTypeID; external name '_WSMethodInvocati
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  WSMethodInvocationCreate()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -684,7 +797,11 @@ function WSMethodInvocationGetTypeID: CFTypeID; external name '_WSMethodInvocati
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -697,6 +814,7 @@ function WSMethodInvocationGetTypeID: CFTypeID; external name '_WSMethodInvocati
 function WSMethodInvocationCreate( url: CFURLRef; methodName: CFStringRef; protocol: CFStringRef ): WSMethodInvocationRef; external name '_WSMethodInvocationCreate';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -705,11 +823,16 @@ function WSMethodInvocationCreate( url: CFURLRef; methodName: CFStringRef; proto
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  WSMethodInvocationCreateFromSerialization()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -733,7 +856,11 @@ function WSMethodInvocationCreate( url: CFURLRef; methodName: CFStringRef; proto
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -746,6 +873,7 @@ function WSMethodInvocationCreate( url: CFURLRef; methodName: CFStringRef; proto
 function WSMethodInvocationCreateFromSerialization( contract: CFDataRef ): WSMethodInvocationRef; external name '_WSMethodInvocationCreateFromSerialization';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -754,11 +882,16 @@ function WSMethodInvocationCreateFromSerialization( contract: CFDataRef ): WSMet
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  WSMethodInvocationCopySerialization()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -781,7 +914,11 @@ function WSMethodInvocationCreateFromSerialization( contract: CFDataRef ): WSMet
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -794,6 +931,7 @@ function WSMethodInvocationCreateFromSerialization( contract: CFDataRef ): WSMet
 function WSMethodInvocationCopySerialization( invocation: WSMethodInvocationRef ): CFDataRef; external name '_WSMethodInvocationCopySerialization';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -802,11 +940,16 @@ function WSMethodInvocationCopySerialization( invocation: WSMethodInvocationRef 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  WSMethodInvocationSetParameters()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -837,6 +980,7 @@ function WSMethodInvocationCopySerialization( invocation: WSMethodInvocationRef 
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -850,6 +994,8 @@ procedure WSMethodInvocationSetParameters( invocation: WSMethodInvocationRef; pa
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.2 and later
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -860,6 +1006,9 @@ procedure WSMethodInvocationSetParameters( invocation: WSMethodInvocationRef; pa
 {
  *  WSMethodInvocationCopyParameters()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -889,6 +1038,7 @@ procedure WSMethodInvocationSetParameters( invocation: WSMethodInvocationRef; pa
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -902,6 +1052,8 @@ function WSMethodInvocationCopyParameters( invocation: WSMethodInvocationRef; pa
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.2 and later
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -912,6 +1064,9 @@ function WSMethodInvocationCopyParameters( invocation: WSMethodInvocationRef; va
 {
  *  WSMethodInvocationSetProperty()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -945,7 +1100,11 @@ function WSMethodInvocationCopyParameters( invocation: WSMethodInvocationRef; va
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -958,6 +1117,7 @@ function WSMethodInvocationCopyParameters( invocation: WSMethodInvocationRef; va
 procedure WSMethodInvocationSetProperty( invocation: WSMethodInvocationRef; propertyName: CFStringRef; propertyValue: CFTypeRef ); external name '_WSMethodInvocationSetProperty';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -966,11 +1126,16 @@ procedure WSMethodInvocationSetProperty( invocation: WSMethodInvocationRef; prop
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  WSMethodInvocationCopyProperty()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -998,7 +1163,11 @@ procedure WSMethodInvocationSetProperty( invocation: WSMethodInvocationRef; prop
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -1011,6 +1180,7 @@ procedure WSMethodInvocationSetProperty( invocation: WSMethodInvocationRef; prop
 function WSMethodInvocationCopyProperty( invocation: WSMethodInvocationRef; propertyName: CFStringRef ): CFTypeRef; external name '_WSMethodInvocationCopyProperty';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
 
 
@@ -1019,11 +1189,16 @@ function WSMethodInvocationCopyProperty( invocation: WSMethodInvocationRef; prop
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
  *  WSMethodInvocationInvoke()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1050,6 +1225,7 @@ function WSMethodInvocationCopyProperty( invocation: WSMethodInvocationRef; prop
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -1060,6 +1236,8 @@ function WSMethodInvocationInvoke( invocation: WSMethodInvocationRef ): CFDictio
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  *    Mac OS X:         in version 10.2 and later
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
@@ -1067,6 +1245,9 @@ function WSMethodInvocationInvoke( invocation: WSMethodInvocationRef ): CFDictio
 function WSMethodInvocationInvoke( invocation: WSMethodInvocationRef ): CFDictionaryRef; external name '_WSMethodInvocationInvoke';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1120,11 +1301,16 @@ type
 	WSMethodInvocationCallBackProcPtr = procedure( invocation: WSMethodInvocationRef; info: UnivPtr; outRef: CFDictionaryRef );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSMethodInvocationSetCallBack()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationSetCallBack()
+>>>>>>> graemeg/cpstrnew
 =======
 {
  *  WSMethodInvocationSetCallBack()
@@ -1156,7 +1342,11 @@ type
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -1167,6 +1357,7 @@ type
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationSetCallBack( invocation: WSMethodInvocationRef; clientCB: WSMethodInvocationCallBackProcPtr; var context: WSClientContext ); external name '_WSMethodInvocationSetCallBack';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -1197,6 +1388,8 @@ procedure WSMethodInvocationSetCallBack( invocation: WSMethodInvocationRef; clie
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1222,6 +1415,9 @@ procedure WSMethodInvocationSetCallBack( invocation: WSMethodInvocationRef; clie
  *  Availability:
  *    Mac OS X:         in version 10.2 and later
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1229,6 +1425,7 @@ procedure WSMethodInvocationSetCallBack( invocation: WSMethodInvocationRef; clie
  *    Non-Carbon CFM:   not available
  }
 procedure WSMethodInvocationScheduleWithRunLoop( invocation: WSMethodInvocationRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_WSMethodInvocationScheduleWithRunLoop';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
@@ -1261,6 +1458,8 @@ procedure WSMethodInvocationScheduleWithRunLoop( invocation: WSMethodInvocationR
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {
@@ -1289,6 +1488,9 @@ procedure WSMethodInvocationScheduleWithRunLoop( invocation: WSMethodInvocationR
  *  Availability:
  *    Mac OS X:         in version 10.2 and later
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1298,7 +1500,10 @@ procedure WSMethodInvocationScheduleWithRunLoop( invocation: WSMethodInvocationR
 procedure WSMethodInvocationUnscheduleFromRunLoop( invocation: WSMethodInvocationRef; runLoop: CFRunLoopRef; runLoopMode: CFStringRef ); external name '_WSMethodInvocationUnscheduleFromRunLoop';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1317,7 +1522,11 @@ procedure WSMethodInvocationUnscheduleFromRunLoop( invocation: WSMethodInvocatio
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  WSMethodResultIsFault()   *** DEPRECATED ***
+=======
+ *  WSMethodResultIsFault()
+>>>>>>> graemeg/cpstrnew
 =======
  *  WSMethodResultIsFault()
 >>>>>>> graemeg/cpstrnew
@@ -1342,7 +1551,11 @@ procedure WSMethodInvocationUnscheduleFromRunLoop( invocation: WSMethodInvocatio
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -1355,7 +1568,10 @@ procedure WSMethodInvocationUnscheduleFromRunLoop( invocation: WSMethodInvocatio
 function WSMethodResultIsFault( methodResult: CFDictionaryRef ): Boolean; external name '_WSMethodResultIsFault';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1400,11 +1616,16 @@ type
 	WSMethodInvocationSerializationProcPtr = function( invocation: WSMethodInvocationRef; obj: CFTypeRef; info: UnivPtr ): CFStringRef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSMethodInvocationAddSerializationOverride()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationAddSerializationOverride()
+>>>>>>> graemeg/cpstrnew
 =======
 {
  *  WSMethodInvocationAddSerializationOverride()
@@ -1441,7 +1662,11 @@ type
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -1454,7 +1679,10 @@ type
 procedure WSMethodInvocationAddSerializationOverride( invocation: WSMethodInvocationRef; objType: CFTypeID; serializationProc: WSMethodInvocationSerializationProcPtr; var context: WSClientContext ); external name '_WSMethodInvocationAddSerializationOverride';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1494,11 +1722,16 @@ type
 	WSMethodInvocationDeserializationProcPtr = function( invocation: WSMethodInvocationRef; msgRoot: CFXMLTreeRef; deserializeRoot: CFXMLTreeRef; info: UnivPtr ): CFTypeRef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	
 	
 {
  *  WSMethodInvocationAddDeserializationOverride()   *** DEPRECATED ***
+=======
+{
+ *  WSMethodInvocationAddDeserializationOverride()
+>>>>>>> graemeg/cpstrnew
 =======
 {
  *  WSMethodInvocationAddDeserializationOverride()
@@ -1539,7 +1772,11 @@ type
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.2 and later but deprecated in 10.8
+=======
+ *    Mac OS X:         in version 10.2 and later
+>>>>>>> graemeg/cpstrnew
 =======
  *    Mac OS X:         in version 10.2 and later
 >>>>>>> graemeg/cpstrnew
@@ -1552,7 +1789,10 @@ type
 procedure WSMethodInvocationAddDeserializationOverride( invocation: WSMethodInvocationRef; typeNamespace: CFStringRef; typeName: CFStringRef; deserializationProc: WSMethodInvocationDeserializationProcPtr; var context: WSClientContext ); external name '_WSMethodInvocationAddDeserializationOverride';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_2,__MAC_10_8,__IPHONE_NA,__IPHONE_NA) *)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

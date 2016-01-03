@@ -29,7 +29,11 @@
 {$else KMODE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : PtrUInt): Pointer;
+=======
+   function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : Longword): Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
    function RtlAllocateHeap(hHeap : THandle; dwFlags : LongWord; Size : Longword): Pointer;
 >>>>>>> graemeg/cpstrnew

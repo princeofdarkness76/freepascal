@@ -497,9 +497,12 @@ Type
     FZipStream  : TStream;     { I/O file variables                         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     LocalHdr    : Local_File_Header_Type; //Local header, before compressed file data
     LocalZip64Fld   : Zip64_Extended_Info_Field_Type; //header is in LocalZip64ExtHdr
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     LocalHdr    : Local_File_Header_Type;
@@ -823,6 +826,7 @@ Var
   C : TCompressionStream;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   BytesNow : Int64;
   NextMark : Int64;
   OnBytes : Int64;
@@ -852,11 +856,23 @@ begin
   CRC32Val:=$FFFFFFFF;
   Buf:=GetMem(FBufferSize);
 >>>>>>> graemeg/cpstrnew
+=======
+  BytesNow : Integer;
+  NextMark : Integer;
+  OnBytes : Integer;
+  FSize    : Integer;
+begin
+  CRC32Val:=$FFFFFFFF;
+  Buf:=GetMem(FBufferSize);
+>>>>>>> graemeg/cpstrnew
   if FOnPercent = 0 then 
     FOnPercent := 1; 
   OnBytes:=Round((FInFile.Size * FOnPercent) / 100);
   BytesNow:=0; NextMark := OnBytes;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -881,7 +897,11 @@ begin
             inc(NextMark,OnBytes);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           end;
+=======
+          end;   
+>>>>>>> graemeg/cpstrnew
 =======
           end;   
 >>>>>>> graemeg/cpstrnew
@@ -1999,7 +2019,11 @@ Begin
   if FZipStream = nil then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FZipStream:=TFileStream.Create(FFileName,fmOpenRead or fmShareDenyWrite);
+=======
+    FZipStream:=TFileStream.Create(FFileName,fmOpenRead);
+>>>>>>> graemeg/cpstrnew
 =======
     FZipStream:=TFileStream.Create(FFileName,fmOpenRead);
 >>>>>>> graemeg/cpstrnew
@@ -2021,6 +2045,7 @@ Begin
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     The zip standard appnote.txt says zip files must have '/' as path
     separator, even on Windows: 4.4.17.1:
     "The path stored MUST not contain a drive or device letter, or a leading
@@ -2040,6 +2065,8 @@ Begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	(mantis 15836) On the other hand, many archives on 
 	 windows have '/' as pathseparator, even Windows 
 	 generated .odt files. So we disable this for windows.
@@ -2048,6 +2075,9 @@ Begin
   {$ifndef Windows}
   AllowDirectorySeparators:=[DirectorySeparator];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2105,7 +2135,11 @@ Var
 Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FZipStream.Seek(Item.HdrPos,soBeginning);
+=======
+  FZipStream.Seek(Item.HdrPos,soFromBeginning);
+>>>>>>> graemeg/cpstrnew
 =======
   FZipStream.Seek(Item.HdrPos,soFromBeginning);
 >>>>>>> graemeg/cpstrnew
@@ -2123,6 +2157,12 @@ Begin
       FZipStream.ReadBuffer(S[1],Filename_Length);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+      //SetLength(E,Extra_Field_Length);
+      //FZipStream.ReadBuffer(E[1],Extra_Field_Length);
+      FZipStream.Seek(Extra_Field_Length,soCurrent);
+>>>>>>> graemeg/cpstrnew
 =======
       //SetLength(E,Extra_Field_Length);
       //FZipStream.ReadBuffer(E[1],Extra_Field_Length);
@@ -2323,6 +2363,7 @@ Var
 Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FindEndHeaders(EndHdr, EndHdrPos,
     EndZip64Hdr, EndZip64HdrPos);
   if EndHdrPos=0 then
@@ -2337,6 +2378,8 @@ Begin
     CenDirPos := EndHdr.Start_Disk_Offset;
   FZipStream.Seek(CenDirPos,soBeginning);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   EndHdrPos:=FZipStream.Size-SizeOf(EndHdr);
@@ -2355,6 +2398,9 @@ Begin
     end;
   FZipStream.Seek(CenDirPos,soFrombeginning);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2395,8 +2441,11 @@ Begin
       FZipStream.ReadBuffer(S[1],Filename_Length);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       SavePos:=FZipStream.Position; //After fixed part of central directory...
       // and the filename; before any extra field(s)
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2413,6 +2462,7 @@ Begin
         NewNode.Attributes := External_Attributes;
       ZipDateTimeToDateTime(Last_Mod_Date,Last_Mod_Time,D);
       NewNode.DateTime:=D;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -2457,6 +2507,9 @@ Begin
 =======
       FZipStream.Seek(Extra_Field_Length+File_Comment_Length,soCurrent);
 >>>>>>> graemeg/cpstrnew
+=======
+      FZipStream.Seek(Extra_Field_Length+File_Comment_Length,soCurrent);
+>>>>>>> graemeg/cpstrnew
       end;
     end;
 end;
@@ -2491,10 +2544,14 @@ Var
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           if LocalZip64Fld.Compressed_Size>0 then
             Count:=Dest.CopyFrom(FZipStream,LocalZip64Fld.Compressed_Size)
           else
             Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size);
+=======
+          Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size)
+>>>>>>> graemeg/cpstrnew
 =======
           Count:=Dest.CopyFrom(FZipStream,LocalHdr.Compressed_Size)
 >>>>>>> graemeg/cpstrnew
@@ -2770,11 +2827,14 @@ begin
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FCompressionLevel:=cldefault;
   FDateTime:=now;
   FNeedsZip64:=false;
   FAttributes:=0;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

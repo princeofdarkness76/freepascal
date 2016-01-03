@@ -3,6 +3,7 @@
   <ProjectOptions>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
@@ -16,6 +17,8 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     <Version Value="7"/>
@@ -32,6 +35,9 @@
       <Icon Value="0"/>
       <ActiveWindowIndexAtStart Value="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -41,11 +47,16 @@
       <CharSet Value=""/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
+=======
+      <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
+    </VersionInfo>
+>>>>>>> graemeg/cpstrnew
 =======
       <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
     </VersionInfo>
@@ -83,7 +94,11 @@
     </RequiredPackages>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="2">
+=======
+    <Units Count="12">
+>>>>>>> graemeg/cpstrnew
 =======
     <Units Count="12">
 >>>>>>> graemeg/cpstrnew
@@ -96,9 +111,12 @@
         <UnitName Value="extdemo"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Unit0>
       <Unit1>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <EditorIndex Value="1"/>
@@ -122,6 +140,9 @@
       </Unit1>
       <Unit2>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -132,12 +153,15 @@
         <UnitName Value="wmext"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Unit1>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="10"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <EditorIndex Value="6"/>
@@ -294,6 +318,9 @@
   <CompilerOptions>
     <Version Value="8"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -301,6 +328,7 @@
       <Filename Value="extdemo.cgi"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -312,6 +340,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       <IncludeFiles Value="$(ProjOutDir)/"/>
     </SearchPaths>
     <Parsing>
@@ -321,6 +351,9 @@
     </Parsing>
     <Other>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

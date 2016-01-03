@@ -441,7 +441,11 @@ interface
          if (left.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            hlcg.location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,left.resultdef,false);
+=======
+           location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
+>>>>>>> graemeg/cpstrnew
 =======
            location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,false);
 >>>>>>> graemeg/cpstrnew
@@ -525,10 +529,14 @@ interface
       var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         href: treference;
         tmpreg: tregister;
         procvarrectype: trecorddef;
         procvarselfname: TIDString;
+=======
+        tmpreg: tregister;
+>>>>>>> graemeg/cpstrnew
 =======
         tmpreg: tregister;
 >>>>>>> graemeg/cpstrnew
@@ -589,6 +597,7 @@ interface
                   tmethodpointer record and set the "frame pointer" to nil }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 if not(left.location.loc in [LOC_REFERENCE,LOC_CREFERENCE]) then
                   internalerror(2013031503);
                 location_reset_ref(location,LOC_REFERENCE,int_cgsize(resultdef.size),sizeof(pint));
@@ -615,6 +624,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                 location_reset_ref(location,LOC_REFERENCE,int_cgsize(sizeof(pint)*2),sizeof(pint));
                 tg.gettemp(current_asmdata.CurrAsmList,resultdef.size,sizeof(pint),tt_normal,location.reference);
                 tmpreg:=cg.getaddressregister(current_asmdata.CurrAsmList);
@@ -627,6 +638,9 @@ interface
                 cg.a_load_const_ref(current_asmdata.CurrAsmList,OS_ADDR,0,location.reference);
                 dec(location.reference.offset,sizeof(pint));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

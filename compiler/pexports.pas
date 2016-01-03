@@ -136,10 +136,15 @@ implementation
                      end;
                     if try_to_consume(_INDEX) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                      begin
 <<<<<<< HEAD
                        pt:=comp_expr([ef_accept_equal]);
 =======
+                       pt:=comp_expr(true,false);
+>>>>>>> graemeg/cpstrnew
+=======
+                     begin
                        pt:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
                        if pt.nodetype=ordconstn then
@@ -148,7 +153,11 @@ implementation
                           begin
                             index:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
                             message3(type_e_range_check_error_bounds,tostr(Tordconstnode(pt).value),tostr(low(index)),tostr(high(index)))
+=======
+                            message(parser_e_range_check_error)
+>>>>>>> graemeg/cpstrnew
 =======
                             message(parser_e_range_check_error)
 >>>>>>> graemeg/cpstrnew
@@ -170,11 +179,17 @@ implementation
                     if try_to_consume(_NAME) then
                      begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                        pt:=comp_expr([ef_accept_equal]);
                        if pt.nodetype=stringconstn then
                          hpname:=strpas(tstringconstnode(pt).value_str)
                        else if is_constcharnode(pt) then
                          hpname:=chr(tordconstnode(pt).value.svalue and $ff)
+=======
+                       pt:=comp_expr(true,false);
+                       if pt.nodetype=stringconstn then
+                         hpname:=strpas(tstringconstnode(pt).value_str)
+>>>>>>> graemeg/cpstrnew
 =======
                        pt:=comp_expr(true,false);
                        if pt.nodetype=stringconstn then
@@ -187,6 +202,7 @@ implementation
                        DefString:=hpname+'='+InternalProcName;
                      end;
                     if try_to_consume(_RESIDENT) then
+<<<<<<< HEAD
                      begin
                        options:=options or eo_resident;
                        DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}
@@ -227,6 +243,12 @@ implementation
                        DefString:=hpname+'='+InternalProcName;
                      end;
                     if try_to_consume(_RESIDENT) then
+                     begin
+                       options:=options or eo_resident;
+                       DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}
+                     end;
+>>>>>>> graemeg/cpstrnew
+=======
                      begin
                        options:=options or eo_resident;
                        DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}

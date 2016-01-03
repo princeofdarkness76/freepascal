@@ -99,7 +99,11 @@ implementation
     fmodule,aasmbase,aasmtai,aasmdata,aasmcpu,cpubase,symsym,symdef,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     import,export,link,i_nwm,ogbase, ogcoff, ognlm, owar, cclasses
+=======
+    import,export,link,i_nwm,ogbase, ogcoff, ognlm, cclasses
+>>>>>>> graemeg/cpstrnew
 =======
     import,export,link,i_nwm,ogbase, ogcoff, ognlm, cclasses
 >>>>>>> graemeg/cpstrnew
@@ -603,7 +607,10 @@ end;
         inherited Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         CArObjectReader:=TArObjectReader;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -685,6 +692,10 @@ end;
           s,option : string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+          p : integer;
+>>>>>>> graemeg/cpstrnew
 =======
           p : integer;
 >>>>>>> graemeg/cpstrnew
@@ -744,6 +755,10 @@ end;
           s,option,keyword : string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+          p : integer;
+>>>>>>> graemeg/cpstrnew
 =======
           p : integer;
 >>>>>>> graemeg/cpstrnew
@@ -972,7 +987,11 @@ end;
               if copy(s,1,1) <> '#' then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 AddImportSymbol('!clib',s,s,0,false);
+=======
+                AddImportSymbol('!clib',s,0,false);
+>>>>>>> graemeg/cpstrnew
 =======
                 AddImportSymbol('!clib',s,0,false);
 >>>>>>> graemeg/cpstrnew
@@ -1012,7 +1031,10 @@ end;
       Comment(V_Error,'Make shared library not supported for netware');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       MakeSharedLibrary := false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1032,6 +1054,9 @@ initialization
   RegisterExternalLinker(system_i386_netware_info,TLinkerNetware);
   RegisterInternalLinker(system_i386_netware_info,TInternalLinkerNetware);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

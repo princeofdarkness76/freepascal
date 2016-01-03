@@ -1,9 +1,15 @@
 {$ifdef Delphi}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const msgtxt : array[0..000318] of string[240]=(
 {$else Delphi}
 const msgtxt : array[0..000318,1..240] of char=(
+=======
+const msgtxt : array[0..000245] of string[240]=(
+{$else Delphi}
+const msgtxt : array[0..000245,1..240] of char=(
+>>>>>>> graemeg/cpstrnew
 =======
 const msgtxt : array[0..000245] of string[240]=(
 {$else Delphi}
@@ -122,6 +128,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '02078_W_MAXSTACKSIZE is not supported by the target OS'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '02079_E_Il','legal state "$1" for $WARN directive'#000+
   '02080_E_Illegal set packing value'#000+
   '02081_W_PIC directive or switch ignored'#000+
@@ -157,6 +164,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '02080_E_Illegal set packing value'#000+
   '02081_W_PIC directive or switch ignored'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '02079_E_Illegal state "$1" for $WARN directive'#000+
+  '02080_E_Illegal set packing value'#000+
+  '02081_W_PIC directive or switch ignored'#000+
+>>>>>>> graemeg/cpstrnew
   '02082_','W_The switch "$1" is not supported by the currently selected t'+
   'arget'#000+
   '02084_W_Framework-related options are only supported for Darwin/Mac OS'+
@@ -166,12 +178,16 @@ const msgtxt : array[0..000245,1..240] of char=(
   'iously set to "$1"'#000+
   '02087_W_Illegal identifier "$1" for $WARN directive'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '03000_E_Parser - Syntax Error'#000+
   '03004_E_INTERRUPT procedure cannot be nested'#000+
   '03005_W_Procedure type "$1" ignored'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '03006_E_Not all declarations of "$1" are declared with OVERLOAD'#000+
@@ -193,11 +209,20 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03009_E_Duplicate exported function index $1'#000+
   '03010_E_Invalid index for exported function'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '03006_E_Not all declaration','s of "$1" are declared with OVERLOAD'#000+
+  '03008_E_Duplicate exported function name "$1"'#000+
+  '03009_E_Duplicate exported function index $1'#000+
+  '03010_E_Invalid index for exported function'#000+
+>>>>>>> graemeg/cpstrnew
   '03011_W_Relocatable DLL or executable $1 debug info does not work, d','i'+
   'sabled.'#000+
   '03012_W_To allow debugging for win32 code you need to disable relocati'+
   'on with -WN option'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -206,6 +231,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03016_E_Procedure type INLINE not supported'#000+
   '03018_W_Constructor sho','uld be public'#000+
   '03019_W_Destructor should be public'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '030','20_N_Class should have one destructor only'#000+
@@ -359,6 +385,37 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03046_E_type identifier not allowed here'#000+
   '03047_E_method identifier expected'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '03020_N_Class should have one destructor only'#000+
+  '03021_E_Local class definitions are not allowed'#000+
+  '03022_F_Anonymous class definitions are not allowed'#000+
+  '03023_N_The object "$1" has no VMT'#000+
+  '03024_E_I','llegal parameter list'#000+
+  '03026_E_Wrong number of parameters specified for call to "$1"'#000+
+  '03027_E_overloaded identifier "$1" isn'#039't a function'#000+
+  '03028_E_overloaded functions have the same parameter list'#000+
+  '03029_E_function header doesn'#039't match the prev','ious declaration "'+
+  '$1"'#000+
+  '03030_E_function header "$1" doesn'#039't match forward : var name chan'+
+  'ges $2 => $3'#000+
+  '03031_N_Values in enumeration types have to be ascending'#000+
+  '03033_E_With cannot be used for variables in a different segment'#000+
+  '03034_E_function ','nesting > 31'#000+
+  '03035_E_range check error while evaluating constants'#000+
+  '03036_W_range check error while evaluating constants'#000+
+  '03037_E_duplicate case label'#000+
+  '03038_E_Upper bound of case range is less than lower bound'#000+
+  '03039_E_typed constants of classe','s or interfaces are not allowed'#000+
+  '03040_E_functions variables of overloaded functions are not allowed'#000+
+  '03041_E_string length must be a value from 1 to 255'#000+
+  '03042_W_use extended syntax of NEW and DISPOSE for instances of object'+
+  's'#000+
+  '03043_W_use of N','EW or DISPOSE for untyped pointers is meaningless'#000+
+  '03044_E_use of NEW or DISPOSE is not possible for untyped pointers'#000+
+  '03045_E_class identifier expected'#000+
+  '03046_E_type identifier not allowed here'#000+
+  '03047_E_method identifier expected'#000+
+>>>>>>> graemeg/cpstrnew
   '03048_E_funct','ion header doesn'#039't match any method of this class "'+
   '$1"'#000+
   '03049_DL_procedure/function $1'#000+
@@ -422,6 +479,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03099_E_This overloaded function can'#039't be local (must be exported)'+
   #000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -434,6 +494,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03106_UL_Parsing implementation of $1'#000+
   '03107_DL_Compiling $1 for the second time'#000+
   '03109_E_No property found to override'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '03110_E_Only one default property is allowed'#000+
@@ -464,6 +525,8 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03134_E_This kind of property cannot be published'#000+
   '03136_E_An',' import name is required'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '03110_E_Only one default ','property is allowed'#000+
@@ -499,6 +562,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03139_E_Invalid floating point operation'#000+
   '03140_E_Upper bound of range is less than lower bound'#000+
   '03141_W_string "$1" is longer than "$2"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '03142_E_string length is larger than array of char leng','th'#000+
@@ -538,6 +602,12 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03144_E_Message handlers can take only one call by ref. parameter'#000+
   '03145_E_Duplicate message label: "$1"'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '03142_E_string le','ngth is larger than array of char length'#000+
+  '03143_E_Illegal expression after message directive'#000+
+  '03144_E_Message handlers can take only one call by ref. parameter'#000+
+  '03145_E_Duplicate message label: "$1"'#000+
+>>>>>>> graemeg/cpstrnew
   '03146_E_Self can only be an explicit paramet','er in methods which are '+
   'message handlers'#000+
   '03147_E_Threadvars can be only static or global'#000+
@@ -567,6 +637,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   'ng the $2.$3'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03169_E_interface identifier expected'#000+
   '03170_E_Type ','"$1" cannot be used as array index type'#000+
   '03171_E_Con- and destructors are not allowed in interfaces'#000+
@@ -581,6 +652,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '03169_E_int','erface identifier expected'#000+
   '03170_E_Type "$1" can'#039't be used as array index type'#000+
   '03171_E_Con- and destructors aren'#039't allowed in interfaces'#000+
@@ -593,6 +666,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03176_E_Some fields coming before "$1" weren'#039't initialized'#000+
   '03177_W_Some fields comi','ng after "$1" weren'#039't initialized'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -602,6 +678,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03180_E_Interface "$1" has no interface identification'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03181_E_Unknown class',' field or method identifier "$1"'#000+
   '03182_W_Overriding calling convention "$1" with "$2"'#000+
   '03183_E_Typed constants of the type "procedure of object" can only be '+
@@ -609,6 +686,8 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03184_E_Default value can only be assigned to one parameter'#000+
   '031','85_E_Default parameter required for "$1"'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '0318','1_E_Unknown class field or method identifier "$1"'#000+
@@ -624,7 +703,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03189_H_Type "$1" redefinition'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03190_W_cdecl'#039'ared functions have no hig','h parameter'#000+
+=======
+  '03190_W_cdecl'#039'ared func','tions have no high parameter'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '03190_W_cdecl'#039'ared func','tions have no high parameter'#000+
 >>>>>>> graemeg/cpstrnew
@@ -635,6 +718,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03192_E_Cannot initialize variables declared as threadvar'#000+
   '03193_E_Message directive is only allowed in Classes'#000+
   '03194_E_Procedure or Function expected'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '03195_W_Calling conve','ntion directive ignored: "$1"'#000+
@@ -651,6 +735,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '0319','5_W_Calling convention directive ignored: "$1"'#000+
   '03196_E_REINTRODUCE can'#039't be used in objects'#000+
   '03197_E_Each argument must have its own location'#000+
@@ -664,6 +750,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03204_E_Invalid integer expression'#000+
   '03205_E_','Illegal qualifier'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -673,8 +762,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03208_E_Illegal assignment to for-loop variable "$1"'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '03209_E_Cannot declare local variable ','as EXTERNAL'#000+
   '03210_E_Procedure is already declared EXTERNAL'#000+
+=======
+  '03209_E_Can'#039't declare local variable as EXTERNAL'#000+
+  '0321','0_E_Procedure is already declared EXTERNAL'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '03209_E_Can'#039't declare local variable as EXTERNAL'#000+
   '0321','0_E_Procedure is already declared EXTERNAL'#000+
@@ -689,6 +783,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03214_E_Protected or private expected'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '0','3215_E_SLICE cannot be used outside of parameter list'#000+
   '03216_E_A DISPINTERFACE cannot have a parent class'#000+
   '03217_E_A DISPINTERFACE needs a guid'#000+
@@ -697,12 +792,17 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '03215_E_SLICE can'#039,'t be used outside of parameter list'#000+
   '03216_E_A DISPINTERFACE can'#039't have a parent class'#000+
   '03217_E_A DISPINTERFACE needs a guid'#000+
   '03218_W_Overridden methods must have a related return type. This code '+
   'may crash, it depends on a Delphi parser bug ("','$2" is overridden by '+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -710,6 +810,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03219_E_Dispatch IDs must be ordinal constants'#000+
   '03220_E_The range of the array is too large'#000+
   '03221_E_The address cannot be taken of bit packed array elements and r'+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   'eco','rd fields'#000+
@@ -722,10 +823,15 @@ const msgtxt : array[0..000245,1..240] of char=(
   'ecord fields'#000+
   '03222_E_D','ynamic arrays cannot be packed'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  'ecord fields'#000+
+  '03222_E_D','ynamic arrays cannot be packed'#000+
+>>>>>>> graemeg/cpstrnew
   '03223_E_Bit packed array elements and record fields cannot be used as '+
   'loop variables'#000+
   '03224_E_VAR, TYPE and CONST are allowed only in records, objects and c'+
   'lasses'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '03225_E_This type cannot be ','a generic'#000+
@@ -743,6 +849,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '03225_E_This type can'#039't be a generic'#000+
   '03226_W_Do','n'#039't load LINEINFO unit manually, Use the -gl compiler '+
   'switch instead'#000+
@@ -756,6 +864,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03233_E_Cannot initialize variables declared as external'#000+
   '03234_E_Illegal f','unction result type'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -763,6 +874,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03236_E_Generics without specialization cannot be used as a type for a'+
   ' variable'#000+
   '03237_W_Register list is ignored for pure assembler routines'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '032','38_E_Implements property must have class or interface type'#000+
@@ -790,10 +902,15 @@ const msgtxt : array[0..000245,1..240] of char=(
   'found "$1" expected "$2"'#000+
   '03240_E_Implements-property must have read specifier'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   '03238_E_Implements proper','ty must have class or interface type'#000+
   '03239_E_Implements-property must implement interface of correct type, '+
   'found "$1" expected "$2"'#000+
   '03240_E_Implements-property must have read specifier'#000+
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   '03241_E_Implements-property must not have write-specifi','er'#000+
   '03242_E_Implements-property must not have stored-specifier'#000+
@@ -811,6 +928,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   'ass $3 ($4)'#000+
   '03251_E_Fields cannot appear after a method or prop','erty definition, '+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -818,6 +938,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '03252_E_Parameters or result types cannot contain local type definitio'+
   'ns. Use a separate type definition in a type block.'#000+
   '03253_E_ABSTRACT and SEALED conflict'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '03254','_E_Cannot create a descendant of the sealed class "$1"'#000+
@@ -833,6 +954,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '03254_E_Cannot create a des','cendant of the sealed class "$1"'#000+
   '03255_E_SEALED class cannot have an ABSTRACT method'#000+
   '03256_E_Only virtual methods can be final'#000+
@@ -844,6 +967,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   'e a function with the Boolean return type and no required arguments.'#000+
   '03262_E_Enumerator Current pattern',' property is not valid. Property m'+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -852,6 +978,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   't'#000+
   '03264_E_Only one enumerator Current property is allowed per class/obje'+
   'ct'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '03265_E_For in loop ','cannot be used for the type "$1"'#000+
@@ -1128,6 +1255,76 @@ const msgtxt : array[0..000245,1..240] of char=(
   'string at compile-time'#000+
   '04000_E_Type mismatch'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '03265_E_For in loop cannot be used for the',' type "$1"'#000+
+  '03266_E_Objective-C messages require their Objective-C selector name t'+
+  'o be specified using the "message" directive.'#000+
+  '03267_E_Objective-C does not have formal constructors nor destructors.'+
+  ' Use the alloc, initXXX and dealloc message','s.'#000+
+  '03268_E_Message name is too long (max. 255 characters)'#000+
+  '03269_E_Objective-C message symbol name for "$1" is too long'#000+
+  '03270_H_Defining a new Objective-C root class. To derive from another '+
+  'root class (e.g., NSObject), specify it as the pare','nt class.'#000+
+  '03271_E_Objective-C classes cannot have published sections.'#000+
+  '03272_F_This module requires an Objective-C mode switch to be compiled'+
+  #000+
+  '03273_E_Inherited methods can only be overridden in Objective-C, add "'+
+  'override" (inherited method d','efined in $1)'#000+
+  '03274_H_Inherited methods can only be overridden in Objective-C, add "'+
+  'override" (inherited method defined in $1).'#000+
+  '03275_E_Message name "$1" in inherited class is different from message'+
+  ' name "$2" in current class.'#000+
+  '03276_E_It is',' not yet possible to make unique copies of Objective-C '+
+  'types'#000+
+  '03277_E_Objective-C categories cannot be used as types'#000+
+  '03278_E_Categories do not override, but replace methods. Use "reintrod'+
+  'uce" instead.'#000+
+  '03279_E_Replaced methods can only be rei','ntroduced in Objective-C, ad'+
+  'd "reintroduce" (replaced method defined in $1).'#000+
+  '03280_H_Replaced methods can only be reintroduced in Objective-C, add '+
+  '"reintroduce" (replaced method defined in $1).'#000+
+  '03281_E_Getter for implements interface must u','se the target'#039's de'+
+  'fault calling convention.'#000+
+  '03282_E_Typed files cannot contain reference-counted types.'#000+
+  '03283_E_Operator is not overloaded: $2 "$1"'#000+
+  '03284_E_Operator is not overloaded: "$1" $2 "$3"'#000+
+  '03285_E_Expected another $1 array elements'#000,
+  '03286_E_String constant too long while ansistrings are disabled'#000+
+  '03287_E_Type cannot be used as univ parameter because its size is unkn'+
+  'own at compile time: "$1"'#000+
+  '03288_E_Only one class constructor can be declared in class: "$1"'#000+
+  '03289_E_Only o','ne class destructor can be declared in class: "$1"'#000+
+  '03290_E_Class constructors can'#039't have parameters'#000+
+  '03291_E_Class destructors can'#039't have parameters'#000+
+  '03293_F_This construct requires the \{\$modeswitch objectivec1\} mode '+
+  'switch to be active'#000+
+  '03','294_E_For-in Objective-Pascal loops require \{\$modeswitch Objecti'+
+  'veC2\} to be active'#000+
+  '03295_E_The compiler cannot find the NSFastEnumerationProtocol or NSFa'+
+  'stEnumerationState type in the CocoaAll unit'#000+
+  '03296_E_Typed constants of the type '#039'pr','ocedure is nested'#039' ca'+
+  'n only be initialized with NIL and global procedures/functions'#000+
+  '03297_F_Declaration of generic class inside another generic class is n'+
+  'ot allowed'#000+
+  '03298_E_Forward declaration of objcprotocol "$1" must be resolved befo'+
+  're an',' objcclass can conform to it'#000+
+  '03299_E_Record types cannot have published sections'#000+
+  '03300_E_Destructors aren'#039't allowed in records'#000+
+  '03301_E_Class methods must be static in records'#000+
+  '03302_E_Constructors aren'#039't allowed in records'#000+
+  '03303_E_Either the',' result or at least one parameter must be of type '+
+  '"$1"'#000+
+  '03304_E_Type parameters may require initialization/finalization - can'#039+
+  't be used in variant records'#000+
+  '03305_E_Variables being declared as external cannot be in a custom sec'+
+  'tion'#000+
+  '03306_E_Non','-static and non-global variables cannot have a section di'+
+  'rective'#000+
+  '03307_E_Invalid codepage'#000+
+  '03308_E_Unicodechar/string constants cannot be converted to ansi/short'+
+  'string at compile-time'#000+
+  '04000_E_Type mismatch'#000+
+>>>>>>> graemeg/cpstrnew
   '04001_E_Incompatible types: got "$1','" expected "$2"'#000+
   '04002_E_Type mismatch between "$1" and "$2"'#000+
   '04003_E_Type identifier expected'#000+
@@ -1136,6 +1333,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '04006_E_Boolean expression expected, but got "$1"'#000+
   '04007_E_Or','dinal expression expected'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1144,6 +1344,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '04011_E_Can'#039't evaluate constant expression'#000+
   '04012_E_Set elements are not compatible'#000+
   '04013_E_Operation not implemented for sets'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '04014_W_Automatic type conversion from floating type to COMP which is '+
@@ -1167,6 +1368,12 @@ const msgtxt : array[0..000245,1..240] of char=(
   '04015_H_use DIV instead to get an integer result'#000+
   '04016_E_String types have to match exactly in $V+ mode'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '04','014_W_Automatic type conversion from floating type to COMP which i'+
+  's an integer type'#000+
+  '04015_H_use DIV instead to get an integer result'#000+
+  '04016_E_String types have to match exactly in $V+ mode'#000+
+>>>>>>> graemeg/cpstrnew
   '04017_E_succ or pred on enums with assignments not p','ossible'#000+
   '04018_E_Can'#039't read or write variables of this type'#000+
   '04019_E_Can'#039't use readln or writeln on typed file'#000+
@@ -1174,12 +1381,16 @@ const msgtxt : array[0..000245,1..240] of char=(
   '04021_E_Type conflict between set elements'#000+
   '04022_W_lo/hi(dword/qword) returns the ','upper/lower word/dword'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '04023_E_Integer or real expression expected'#000+
   '04024_E_Wrong typ','e "$1" in array constructor'#000+
   '04025_E_Incompatible type for arg no. $1: Got "$2", expected "$3"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '04026_E_Method (variable) and Procedure (variable) are not compatible'#000+
@@ -1192,6 +1403,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '04026_E_Method (variable) and Procedure (variable) are not com','patibl'+
   'e'#000+
   '04027_E_Illegal constant passed to internal math function'#000+
@@ -1201,6 +1414,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   'e'#000+
   '04031_E_Can'#039't',' assign values to an address'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1208,6 +1424,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '04033_E_','Array type required'#000+
   '04034_E_interface type expected, but got "$1"'#000+
   '04035_H_Mixing signed expressions and longwords gives a 64bit result'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '04036_W_Mixing signed expressions and cardinals here may cause a range'+
@@ -1259,6 +1476,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '04036_W_Mixing signed ','expressions and cardinals here may cause a ran'+
   'ge check error'#000+
   '04037_E_Typecast has different size ($1 -> $2) in assignment'#000+
@@ -1304,6 +1523,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '04079_H_Converting the operands to "$1" before do','ing the add could p'+
   'revent overflow errors.'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1311,6 +1533,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   'd prevent overflow errors.'#000+
   '04081_H_Converting the operands to "$1" before doing the multiply coul'+
   'd prevent overflow errors.'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '04082_W_Converting pointers to signed ','integers may result in wrong c'+
@@ -1335,10 +1558,19 @@ const msgtxt : array[0..000245,1..240] of char=(
   '04085_E_Expected Objective-C m','ethod, but got $1'#000+
   '04086_E_Expected Objective-C method or constant method name'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '040','82_W_Converting pointers to signed integers may result in wrong c'+
+  'omparison results and range errors, use an unsigned type instead.'#000+
+  '04083_E_Interface type $1 has no valid GUID'#000+
+  '04084_E_Invalid selector name "$1"'#000+
+  '04085_E_Expected Objective-C m','ethod, but got $1'#000+
+  '04086_E_Expected Objective-C method or constant method name'#000+
+>>>>>>> graemeg/cpstrnew
   '04087_E_No type info available for this type'#000+
   '04088_E_Ordinal or string expression expected'#000+
   '04089_E_String expression expected'#000+
   '04090_W_Converting 0 to NIL'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '04091_E_Objective-C protocol type expected,',' but got "$1"'#000+
@@ -1398,6 +1630,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '04091_E_','Objective-C protocol type expected, but got "$1"'#000+
   '04092_E_The type "$1" is not supported for interaction with the Object'+
   'ive-C runtime.'#000+
@@ -1415,6 +1649,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05002_E_Duplicate identifier "$1"'#000+
   '05003_H_Ident','ifier already defined in $1 at line $2'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1422,6 +1659,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05005_E_Forward declaration not solved "$1"'#000+
   '05007_E_Error',' in type definition'#000+
   '05009_E_Forward type not resolved "$1"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '05010_E_Only static variables can be used in static methods or outside'+
@@ -1435,6 +1673,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '05010_E_Only static variables can be used in static m','ethods or outsi'+
   'de methods'#000+
   '05012_F_record or class type expected'#000+
@@ -1444,6 +1684,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05015_E_Label used but not defined "$1"'#000+
   '05016_E_Illegal label dec','laration'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1454,7 +1697,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05021_E_illegal type declaration of set elements'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05022_E_Forward class definition not resolved "$1"'#000+
+=======
+  '05022_E_Forward class definition not ','resolved "$1"'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '05022_E_Forward class definition not ','resolved "$1"'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1468,7 +1715,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05027_N_Local variable "$1" is assigned but never used'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05028_H_Local $1 "$2" is not used'#000+
+=======
+  '05028_H_Local',' $1 "$2" is not used'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '05028_H_Local',' $1 "$2" is not used'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1482,7 +1733,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05033_W_Function result does not seem to be set'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05034_W_Type "$1" is not aligned correctly in current record for C'#000+
+=======
+  '05','034_W_Type "$1" is not aligned correctly in current record for C'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '05','034_W_Type "$1" is not aligned correctly in current record for C'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1494,7 +1749,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05037_W_Variable "$1" does not seem to be initialized'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05038_E_identifier idents no member "$1"'#000+
+=======
+  '05038_E_identifi','er idents no member "$1"'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '05038_E_identifi','er idents no member "$1"'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1508,7 +1767,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05044_W_Symbol "$1" is not portable'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '05055_W_Symbol "$1" is not implemented'#000+
+=======
+  '05055_W_Symbol "$','1" is not implemented'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '05055_W_Symbol "$','1" is not implemented'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1518,6 +1781,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05056_E_Can'#039't create unique type from this type'#000+
   '05057_H_Local variable "$1" does not seem to be ','initialized'#000+
   '05058_H_Variable "$1" does not seem to be initialized'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '05059_W_Function result variable does not seem to be initialized'#000+
@@ -1588,6 +1852,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '05062_H_Found abstract method: $1'#000+
   '05063_W_Symbol "$1" is experimental'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '05059_W_Function result variable does not seem to initia','lized'#000+
+  '05060_H_Function result variable does not seem to be initialized'#000+
+  '05061_W_Variable "$1" read but nowhere assigned'#000+
+  '05062_H_Found abstract method: $1'#000+
+  '05063_W_Symbol "$1" is experimental'#000+
+>>>>>>> graemeg/cpstrnew
   '05064_W_Forward declaration "$1" not resolved, assu','med external'#000+
   '05065_W_Symbol "$1" is belongs to a library'#000+
   '05066_W_Symbol "$1" is deprecated: "$2"'#000+
@@ -1617,6 +1888,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '06015_E_EXPORT declared functions can'#039't be called'#000+
   '06016_W_Possible ','illegal call of constructor or destructor'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1625,6 +1899,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '06020_E_Abstract methods cannot be called directly'#000+
   '06027_DL_Register $1 weight $2 ','$3'#000+
   '06029_DL_Stack frame is omitted'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '06031_E_Object or class methods cannot be inline.'#000+
@@ -1666,6 +1941,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '06031_E_Object or class methods ','can'#039't be inline.'#000+
   '06032_E_Procvar calls cannot be inline.'#000+
   '06033_E_No code for inline procedure stored'#000+
@@ -1704,8 +1981,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07008_E_need to use OFFSET here'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07009_E_ne','ed to use $ here'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07009_E_need to use $ here'#000+
@@ -1717,6 +1997,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07014_E_Invalid reference syntax'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07015_E_You cannot ','reach $1 from that code'#000+
   '07016_E_Local symbols/labels are not allowed as references'#000+
   '07017_E_Invalid base and index register usage'#000+
@@ -1724,17 +2005,22 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07019_E_Wrong scale factor specified'#000+
   '07020_E_Multiple index reg','ister usage'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   '07015_E_You cannot reach $1 from that code'#000+
   '07016_E_Local symbols/labels aren'#039't allowed as references',#000+
   '07017_E_Invalid base and index register usage'#000+
   '07018_W_Possible error in object field handling'#000+
   '07019_E_Wrong scale factor specified'#000+
+<<<<<<< HEAD
 =======
   '07015_E_You cannot reach $1 from that code'#000+
   '07016_E_Local symbols/labels aren'#039't allowed as references',#000+
   '07017_E_Invalid base and index register usage'#000+
   '07018_W_Possible error in object field handling'#000+
   '07019_E_Wrong scale factor specified'#000+
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   '07020_E_Multiple index register usage'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1751,8 +2037,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07031_W_ENTER instruction is not supported by Linux kernel'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07032_W_Calli','ng an overload function in assembler'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07032_W_Calling an overload function in assembler'#000+
@@ -1764,8 +2053,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07037_E_Error converting binary $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07038_E_Error con','verting hexadecimal $1'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07038_E_Error converting hexadecimal $1'#000+
@@ -1776,7 +2068,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07042_E_Cannot use OLDEBP outside a nested procedure'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07043_W_Procedures cannot return any value i','n asm code'#000+
+=======
+  '07043_W_Procedures can'#039't return any value in asm code'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '07043_W_Procedures can'#039't return any value in asm code'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1789,7 +2085,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07047_E_Assembler syntax error'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07048_E_Invalid combination of opcode and op','erands'#000+
+=======
+  '07048_E_Invalid combination of opcode and operands'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '07048_E_Invalid combination of opcode and operands'#000+
 >>>>>>> graemeg/cpstrnew
@@ -1803,8 +2103,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07053_E_Unrecognized opcode $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07054_E_Inval','id or missing opcode'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07054_E_Invalid or missing opcode'#000+
@@ -1823,8 +2126,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07067_E_Invalid floating point constant $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07068_E_Invalid floating ','point expression'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07068_E_Invalid floating point expression'#000+
@@ -1836,8 +2142,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07073_E_Strings not allowed as constants'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07074_E_No',' type of variable specified'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07074_No type of variable specified'#000+
@@ -1848,8 +2157,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07078_E_Dollar token is used without an identifier'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07079_W_32bit consta','nt created for address'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07079_W_32bit constant created for address'#000+
@@ -1859,8 +2171,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07082_E_Can'#039't access fields of objects/classes directly'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07083_E_No size specified and unable to determine ','the size of the op'+
   'erands'#000+
+=======
+  '07083_E_No size specified and unable to determine the size of the oper'+
+  'ands'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '07083_E_No size specified and unable to determine the size of the oper'+
   'ands'#000+
@@ -1875,8 +2192,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07088_W_"$1 %st(n)" translated into "$1 %st(n),%st"'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '07089_E','_Char < not allowed here'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '07089_E_Char < not allowed here'#000+
@@ -1887,6 +2207,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07095_E_Invalid reglist for movem'#000+
   '07096_E_Reglist invalid for opcode'#000+
   '07097_E_Higher cpu mode required ($1)'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '07098_W_N','o size specified and unable to determine the size of the op'+
@@ -1972,6 +2293,23 @@ const msgtxt : array[0..000245,1..240] of char=(
   '07106_E_VMTOffset must be used in combination with a virtual method, a'+
   'nd "$1" is not virtual'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '07098_W_No size specified and unable to determine the size of the oper'+
+  'ands, using DWORD as def','ault'#000+
+  '07099_E_Syntax error while trying to parse a shifter operand'#000+
+  '07100_E_Address of packed component is not at a byte boundary'#000+
+  '07101_W_No size specified and unable to determine the size of the oper'+
+  'ands, using BYTE as default'#000+
+  '07102_W_Use of',' +offset(%ebp) for parameters invalid here'#000+
+  '07103_W_Use of +offset(%ebp) is not compatible with regcall convention'+
+  #000+
+  '07104_W_Use of -offset(%ebp) is not recommended for local variable acc'+
+  'ess'#000+
+  '07105_W_Use of -offset(%esp), access may cause a cra','sh or value may '+
+  'be lost'#000+
+  '07106_E_VMTOffset must be used in combination with a virtual method, a'+
+  'nd "$1" is not virtual'#000+
+>>>>>>> graemeg/cpstrnew
   '07107_E_Generating PIC, but reference is not PIC-safe'#000+
   '07108_E_All registers in a register set must be of the same kind and ',
   'width'#000+
@@ -1983,6 +2321,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '08002_F_Comp not supported'#000+
   '08003_F_Direc','t not support for binary writers'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1992,8 +2333,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '08007_E_Asm: $1 invalid combination of opcode and operands'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '08008_E_Asm: 16 Bit references not supported'#000+
   '0800','9_E_Asm: Invalid effective address'#000+
+=======
+  '08008_E_Asm: 16 Bit ','references not supported'#000+
+  '08009_E_Asm: Invalid effective address'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '08008_E_Asm: 16 Bit ','references not supported'#000+
   '08009_E_Asm: Invalid effective address'#000+
@@ -2008,7 +2354,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '08013_E_Asm: Undefined label $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '08014_E_Asm: Comp type not supported for this',' target'#000+
+=======
+  '08014_E_Asm: Com','p type not supported for this target'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '08014_E_Asm: Com','p type not supported for this target'#000+
 >>>>>>> graemeg/cpstrnew
@@ -2020,6 +2370,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '08017_E_Asm: Redefined label $1'#000+
   '08018_E_Asm: First defined here'#000+
   '08019_E_Asm: Invalid register $1'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '08020_E_Asm: 16 or 32 Bit references not suppo','rted'#000+
@@ -2059,6 +2410,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09001_I_Assembling (pipe) $1'#000+
   '09002_E_Can'#039't create assembler file: $1'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '08020_E_Asm: 16 o','r 32 Bit references not supported'#000+
+  '08021_E_Asm: 64 Bit operands not supported'#000+
+  '09000_W_Source operating system redefined'#000+
+  '09001_I_Assembling (pipe) $1'#000+
+  '09002_E_Can'#039't create assembler file: $1'#000+
+>>>>>>> graemeg/cpstrnew
   '09003_E_Can'#039't create object file: $1'#000+
   '09004_E_Can'#039't c','reate archive file: $1'#000+
   '09005_E_Assembler $1 not found, switching to external assembling'#000+
@@ -2068,6 +2426,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   'ssembling'#000+
   '09009','_I_Assembling $1'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2077,7 +2438,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09013_E_Error while linking'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '09014_E_Can'#039't call the l','inker, switching to external linking'#000+
+=======
+  '09014_E_Can'#039't call the linker, switching to external linki','ng'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '09014_E_Can'#039't call the linker, switching to external linki','ng'#000+
 >>>>>>> graemeg/cpstrnew
@@ -2093,6 +2458,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09020_I_Closing script $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '09021_E_resource compiler "$1" not found, switching to external mode'#000+
   '09022_I_Compiling resource $1'#000+
   '09023_T_unit $1 cannot be statically linked, switching to smart ','link'+
@@ -2104,6 +2470,8 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09028_D_Calling resource compiler "$1" with "$2" as command line'#000+
   '09029_E_Error while compiling resources'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '09021_E_','resource compiler "$1" not found, switching to external mode'+
@@ -2120,6 +2488,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09028_D_Calling resource compiler "$1" with "$2" as command line'#000+
   '09029_E_Error while c','ompiling resources'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2132,8 +2503,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09128_F_Can'#039't post process executable $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '09129_F_Can'#039't open executable $1'#000+
   '09130_X_Size of Code: $1',' bytes'#000+
+=======
+  '09129_F_Can'#039't open executable',' $1'#000+
+  '09130_X_Size of Code: $1 bytes'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '09129_F_Can'#039't open executable',' $1'#000+
   '09130_X_Size of Code: $1 bytes'#000+
@@ -2146,6 +2522,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09132_X_Size of uninitialized data: $1 bytes'#000+
   '09133_X_Stack space reserved: $1 bytes'#000+
   '09134_X_Stack space committed: $1 bytes'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '09200_F_Executable image size is too big for $1 target.'#000+
@@ -2168,6 +2545,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '09201_W_Object file "$1" contains 32-bit absolute relocation to symbol'+
   ' "$2".'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '09200_F_Executable image size is too b','ig for $1 target.'#000+
+  '09201_W_Object file "$1" contains 32-bit absolute relocation to symbol'+
+  ' "$2".'#000+
+>>>>>>> graemeg/cpstrnew
   '10000_T_Unitsearch: $1'#000+
   '10001_T_PPU Loading ','$1'#000+
   '10002_U_PPU Name: $1'#000+
@@ -2179,7 +2561,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '10008_U_PPU Invalid Version $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '10009_U_PPU is compiled for another processor'#000,
+=======
+  '10009_U_PPU is compiled for another processor'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '10009_U_PPU is compiled for another processor'#000+
 >>>>>>> graemeg/cpstrnew
@@ -2201,10 +2587,17 @@ const msgtxt : array[0..000245,1..240] of char=(
   '10022_F_Can'#039't find unit $1 used by $2'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '10023_W_Unit $1 was not found but $2 exist','s'#000+
   '10024_F_Unit $1 searched but $2 found'#000+
   '10025_W_Compiling the system unit requires the -Us switch'#000+
   '10026_F_There were $1 errors compiling module, stopping'#000+
+=======
+  '10023_W_Unit $1 was not found but $2 exists'#000+
+  '10024_F_Unit $1 searched but $2 found'#000+
+  '10025_W_Compiling the system unit requires the -Us switch'#000+
+  '1002','6_F_There were $1 errors compiling module, stopping'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '10023_W_Unit $1 was not found but $2 exists'#000+
   '10024_F_Unit $1 searched but $2 found'#000+
@@ -2223,10 +2616,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '10030_U_Recompiling unit, static lib is older than ppufile'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '10031_U_Recompiling unit, shared lib is older than ppufile'#000+
   '10032_U_Recompiling unit, obj and asm are older than ppufile'#000+
   '10033_U_Recompiling uni','t, obj is older than asm'#000+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '10031','_U_Recompiling unit, shared lib is older than ppufile'#000+
@@ -2237,6 +2633,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '10035_U_Parsing implementation of $1'#000+
   '10036_U_','Second load for unit $1'#000+
   '10037_U_PPU Check file $1 time $2'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '10040_W_Can'#039't recompile unit $1, but found modified include files'#000+
@@ -2267,6 +2664,14 @@ const msgtxt : array[0..000245,1..240] of char=(
   '10043_U_Loading interface units from $1'#000+
   '10044_U_Loading implementation units from $1'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '10040_W_Can'#039't recompile unit $1, but found modifed include files'#000+
+  '10041_U_File $1 is newer than the one used for creating PPU file $2'#000+
+  '10042_U_Trying to use a unit which was compiled w','ith a different FPU'+
+  ' mode'#000+
+  '10043_U_Loading interface units from $1'#000+
+  '10044_U_Loading implementation units from $1'#000+
+>>>>>>> graemeg/cpstrnew
   '10045_U_Interface CRC changed for unit $1'#000+
   '10046_U_Implementation CRC changed for unit $1'#000+
   '10047_U_Finished compiling unit $1'#000+
@@ -2283,8 +2688,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '10057_U_Registering new unit $1'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '10058_U_Re-resolving unit $1'#000,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '10058_U_Re-resolving unit $1'#000+
@@ -2292,6 +2700,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '10059_U_Skipping re-resolving unit $1, still loading used units'#000+
   '10060_U_Unloading resource unit $1 (not',' needed)'#000+
   '10061_E_Unit $1 was compiled using a different whole program optimizat'+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   'ion feedback input ($2, $3); recompile it without wpo or u','se the sam'+
@@ -2306,6 +2715,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   'ion feedback input ($2, $3); recompile it without wpo or use the same '+
   'wpo feedback input file for this compilation invocation'#000+
   '10062_U_Indirect interface (objects','/classes) CRC changed for unit $1'+
@@ -2316,6 +2727,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '11002_W_DEF file can be created only for OS/2'#000+
   '11003_E_nested response f','iles are not supported'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2342,6 +2756,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   'untered'#000+
   '11015_F_Open conditional at the end of the options file'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2352,9 +2769,15 @@ const msgtxt : array[0..000245,1..240] of char=(
   '11019_W_You are using the obsolete switch $1, please use $2'#000+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '11020_N_Swit','ching assembler to default source writing assembler'#000+
   '11021_W_Assembler output selected "$1" is not compatible with "$2"'#000+
   '11022_W_"$1" assembler use forced'#000+
+=======
+  '11020_N_Switching assembler to default source writing assembler'#000+
+  '11021_W_Assembler output selected "$1" is not compatible with "$2"'#000+
+  '11022_W_"$1" assembler us','e forced'#000+
+>>>>>>> graemeg/cpstrnew
 =======
   '11020_N_Switching assembler to default source writing assembler'#000+
   '11021_W_Assembler output selected "$1" is not compatible with "$2"'#000+
@@ -2376,6 +2799,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '11033_D_interpreting file option "$','1"'#000+
   '11034_D_Reading config file "$1"'#000+
   '11035_D_found source file name "$1"'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '11039_E_Unknown codepage "$1"'#000+
@@ -2501,6 +2925,39 @@ const msgtxt : array[0..000245,1..240] of char=(
   '12007_E_No collected information necessary to perform "$1" whole progr'+
   'am optimization found'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '11039_E_Unknown code page'#000+
+  '11040_F_Config file $1 is a directory'#000+
+  '11041_W_','Assembler output selected "$1" cannot generate debug info, d'+
+  'ebugging disabled'#000+
+  '11042_W_Use of ppc386.cfg is deprecated, please use fpc.cfg instead'#000+
+  '11043_F_In options file $1 at line $2 \var{\#ELSE} directive without \'+
+  'var{\#IF(N)DEF} found'#000+
+  '11','044_F_Option "$1" is not, or not yet, supported on the current tar'+
+  'get platform'#000+
+  '11045_F_The feature "$1" is not, or not yet, supported on the selected'+
+  ' target platform'#000+
+  '11046_N_DWARF debug information cannot be used with smart linking on t'+
+  'his ','target, switching to static linking'#000+
+  '11047_W_Option "$1" is ignored for the current target platform.'#000+
+  '11048_W_Disabling external debug information because it is unsupported'+
+  ' for the selected target/debug format combination.'#000+
+  '12000_F_Cannot open',' whole program optimization feedback file "$1"'#000+
+  '12001_D_Processing whole program optimization information in wpo feedb'+
+  'ack file "$1"'#000+
+  '12002_D_Finished processing the whole program optimization information'+
+  ' in wpo feedback file "$1"'#000+
+  '12003_E_Expe','cted section header, but got "$2" at line $1 of wpo feed'+
+  'back file'#000+
+  '12004_W_No handler registered for whole program optimization section "'+
+  '$2" at line $1 of wpo feedback file, ignoring'#000+
+  '12005_D_Found whole program optimization section "$1" with',' informati'+
+  'on about "$2"'#000+
+  '12006_F_The selected whole program optimizations require a previously '+
+  'generated feedback file (use -Fw to specify)'#000+
+  '12007_E_No collected information necessary to perform "$1" whole progr'+
+  'am optimization found'#000+
+>>>>>>> graemeg/cpstrnew
   '12008_F_S','pecify a whole program optimization feedback file to store '+
   'the generated info in (using -FW)'#000+
   '12009_E_Not generating any whole program optimization information, yet'+
@@ -2514,6 +2971,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '12013_E_Cannot extract symbol liveness information from program when s'+
   'tripping symbols, use -Xs-'#000+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2521,6 +2981,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   'hen not linking',#000+
   '12015_F_Cannot find "$1" or "$2" to extract symbol liveness informatio'+
   'n from linked program'#000+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '12016_E_','Error during reading symbol liveness information produced by'+
@@ -2554,11 +3015,24 @@ const msgtxt : array[0..000245,1..240] of char=(
   '12019_E_Cannot create specified whole program optimisation feedback fi'+
   'le "$1"'#000+
 >>>>>>> graemeg/cpstrnew
+=======
+  '12016_E_Error during reading symbol liveness information produced by "'+
+  '$1"'#000+
+  '12017_F_Error executing "$1" (exitcode: $2) to extract symbol informat'+
+  'ion',' from linked program'#000+
+  '12018_E_Collection of symbol liveness information can only help when u'+
+  'sing smart linking, use -CX -XX'#000+
+  '12019_E_Cannot create specified whole program optimisation feedback fi'+
+  'le "$1"'#000+
+>>>>>>> graemeg/cpstrnew
   '11023_Free Pascal Compiler version $FPC','FULLVERSION [$FPCDATE] for $F'+
   'PCCPU'#010+
   'Copyright (c) 1993-2011 by Florian Klaempfl and others'#000+
   '11024_Free Pascal Compiler version $FPCVERSION'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2592,7 +3066,10 @@ const msgtxt : array[0..000245,1..240] of char=(
   '  All'#010+
   '  $WPOPTIMIZATIO','NS'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   #010+
   'Supported Microcontroller types:'#010+
   '  $CONTROLLERTYPES'#010+
@@ -2602,7 +3079,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   'This program comes under the GNU General Public Licence'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   'For more information read COPYING.v2'#010+
+=======
+  'For more information read COPYING.FPC'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   'For more information read COPYING.FPC'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2638,6 +3119,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2al_List sourcecode lines in assembler file'#010+
   '**2an_List node info in ','assembler file'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2645,6 +3129,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2ar_List register allocation/release info in assembler file'#010+
   '**2at_List temp allocation/release info in assembler file'#010+
   '**1A<x>_Output format:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '**2Adefault_Use default assem','bler'#010+
@@ -2658,6 +3143,15 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2Anasmwin32_Win32 object file using Nasm'#010+
   '3*2Anasmwdosx_Win32/WDOSX object file using Nasm'#010+
   '3*2Anasmdarwin_macho32 object file using Nasm (experimental)'#010+
+=======
+  '**2Adefault_Use defa','ult assembler'#010+
+  '3*2Aas_Assemble using GNU AS'#010+
+  '3*2Amacho_Mach-O (Darwin, Intel 32 bit) using internal writer'#010+
+  '3*2Anasmcoff_COFF (Go32v2) file using Nasm'#010+
+  '3*2Anasmelf_ELF32 (Linux) file using Nasm'#010+
+  '3*2Anasmwin32_Win32 object file using Nasm'#010+
+  '3*2Anas','mwdosx_Win32/WDOSX object file using Nasm'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**2Adefault_Use defa','ult assembler'#010+
   '3*2Aas_Assemble using GNU AS'#010+
@@ -2702,7 +3196,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '6*2Amit_MIT Syntax (old GAS)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '6*2Amot_Standard Motorola ass','embler'#010+
+=======
+  '6*2Amot_Standard Motorola assem','bler'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '6*2Amot_Standard Motorola assem','bler'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2718,6 +3216,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**1C<x>_Code generation options:'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2C3_Turn on ieee error check','ing for constants'#010+
   '**2Ca<x>_Select ABI; see fpc -i or fpc -ia for possible values'#010+
   '**2Cb_Generate code for a big-endian variant of the target architectur'+
@@ -2728,6 +3227,8 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Cf<x>_Select fpu instruction set to use; see fpc -i or fpc -if for '+
   'possible values'#010+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '**2C3<x>_Turn on ieee error chec','king for constants'#010+
@@ -2744,8 +3245,12 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Ch<n>_<n> bytes heap (between 1023 and 67107840)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2Ci_IO-checking'#010+
   'A*2CI<x>_Select instruction set on ARM: ARM or THUMB'#010+
+=======
+  '**2Ci_','IO-checking'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**2Ci_','IO-checking'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2761,6 +3266,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2CP<x>=<y>_ packing settings'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**3CPPACKSET=<y>_ <y> set allocation: 0, 1 or DEFAULT or NORMAL, 2, 4 '+
   'and 8'#010+
   '**','3CPPACKENUM=<y>_ <y> enum packing: 0, 1, 2 and 4 or DEFAULT or NOR'+
@@ -2770,6 +3276,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '**3CPPACK','SET=<y>_ <y> set allocation: 0, 1 or DEFAULT or NORMAL, 2, '+
   '4 and 8'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2777,6 +3285,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2CR_Verify object method call validity'#010+
   '**2Cs<n>_Set stack ch','ecking size to <n>'#010+
   '**2Ct_Stack checking (for testing only, see manual)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '8*2CT<x>_Target-specific code generation options'#010+
@@ -2821,6 +3330,9 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
   '**2CX_Create also s','martlinked library'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  '**2CX_Create also s','martlinked library'#010+
+>>>>>>> graemeg/cpstrnew
   '**1d<x>_Defines the symbol <x>'#010+
   '**1D_Generate a DEF file'#010+
   '**2Dd<x>_Set description to <x>'#010+
@@ -2831,7 +3343,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**1fPIC_Same as -Cg'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**1F<x>_Set file names and paths:'#010+
+=======
+  '**1F<x>_Set ','file names and paths:'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**1F<x>_Set ','file names and paths:'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2845,7 +3361,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Fd_Disable the compiler'#039's internal directory cache'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2FD<x>_Set the directory where to search for compiler utilities'#010+
+=======
+  '**2FD<x>_Se','t the directory where to search for compiler utilities'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**2FD<x>_Se','t the directory where to search for compiler utilities'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2858,7 +3378,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Fi<x>_Add <x> to include path'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2Fl<x>_Add <x> to library path'#010+
+=======
+  '**2Fl<x>_Add <x> to libr','ary path'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**2Fl<x>_Add <x> to libr','ary path'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2874,7 +3398,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2FR<x>_Set resource (.res) linker to <x>'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2Fu<x>_Add <x> to unit path'#010+
+=======
+  '**2Fu<x>_Add',' <x> to unit path'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**2Fu<x>_Add',' <x> to unit path'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2887,7 +3415,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   'om <x>'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '*g1g_Generate debug information (default format for target)'#010+
+=======
+  '*g1g_Generate debug infor','mation (default format for target)'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '*g1g_Generate debug infor','mation (default format for target)'#010+
 >>>>>>> graemeg/cpstrnew
@@ -2898,6 +3430,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '*g2gh_Use heaptrace unit (for',' memory leak/corruption debugging)'#010+
   '*g2gl_Use line info unit (show more info with backtraces)'#010+
   '*g2go<x>_Set debug information options'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '*g3godwarfsets_ Enable DWARF '#039'set'#039' type debug information (bre'+
@@ -2957,6 +3490,19 @@ const msgtxt : array[0..000245,1..240] of char=(
   '*g2gv_Generates programs traceable with Valgrind'#010+
   '*g2gw_Generate DWARFv2 debug information (same as -gw2)'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  '*g3godwar','fsets_ Enable DWARF '#039'set'#039' type debug information (b'+
+  'reaks gdb < 6.5)'#010+
+  '*g3gostabsabsincludes_ Store absolute/full include file paths in Stabs'+
+  #010+
+  '*g3godwarfmethodclassprefix_ Prefix method names in DWARF with class n'+
+  'ame'#010+
+  '*g2gp_Preserve case in stab','s symbol names'#010+
+  '*g2gs_Generate Stabs debug information'#010+
+  '*g2gt_Trash local variables (to detect uninitialized uses)'#010+
+  '*g2gv_Generates programs traceable with Valgrind'#010+
+  '*g2gw_Generate DWARFv2 debug information (same as -gw2)'#010+
+>>>>>>> graemeg/cpstrnew
   '*g2gw2_Generate DWARFv','2 debug information'#010+
   '*g2gw3_Generate DWARFv3 debug information'#010+
   '*g2gw4_Generate DWARFv4 debug information (experimental)'#010+
@@ -2969,6 +3515,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2iTO_Return target OS'#010+
   '**2iTP_Return target processor'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2978,6 +3527,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**1M<x>_Set language mode to <x>'#010+
   '**2Mfpc_Free Pa','scal dialect (default)'#010+
   '**2Mobjfpc_FPC mode with Object Pascal support'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '**2Mdelphi_De','lphi 7 compatibility mode'#010+
@@ -2995,12 +3545,20 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Mtp_TP/BP 7.0 compatibility mode'#010+
   '**2Mmacpas_Macintosh Pascal dialects compatibility mode'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  '**2Mdelphi_Delphi 7 compatibility mode'#010+
+  '**2Mtp_TP/BP 7.0 compatibility mode'#010+
+  '**2Mmacpas_Macintosh Pascal dialects compatibility mode'#010+
+>>>>>>> graemeg/cpstrnew
   '**1n_Do not read the default config fil','es'#010+
   '**1N<x>_Node tree optimizations'#010+
   '**2Nu_Unroll loops'#010+
   '**1o<x>_Change the name of the executable produced to <x>'#010+
   '**1O<x>_Optimizations:'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3011,6 +3569,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2O4_Level 4 optimizations (-O3 + optimiz','ations which might have un'+
   'expected side effects)'#010+
   '**2Oa<x>=<y>_Set alignment'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '**2Oo[NO]<x>_Enable or disable optimizations; see fpc -i or fpc -io fo'+
@@ -3025,6 +3584,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '**2Oo[NO]<x>_Enable or disable optimizations, see fpc -i for possible '+
   'values'#010+
   '**2Op<x>_Set target cpu for optimizing, see ','fpc -i for possible valu'+
@@ -3035,6 +3596,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   'le values'#010+
   '**2Os_Optimize for size ra','ther than speed'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3050,9 +3614,12 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2Rintel_Read Intel style assembler'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '6*2RMOT_Read motorola style assembler'#010+
   '**1S<x>_Syntax',' options:'#010+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '6*2RMOT_Read mo','torola style assembler'#010+
@@ -3063,6 +3630,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Sa_Turn on assertions'#010+
   '**2Sd_Same as -Mdelphi'#010+
   '**2Se<x>_Error options. <x> is a combination of the following:'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '**3*_<n> : Compiler halts after the <n> errors ','(default is 1)'#010+
@@ -3083,10 +3651,15 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**3*_n : Compiler also halts after notes'#010+
   '**3*_h : Compiler also halts after hints'#010+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
   '**3*_<n> :',' Compiler halts after the <n> errors (default is 1)'#010+
   '**3*_w : Compiler also halts after warnings'#010+
   '**3*_n : Compiler also halts after notes'#010+
   '**3*_h : Compiler also halts after hints'#010+
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   '**2Sg_Enable LABEL and GOTO (default in -Mtp and -Mdelphi)'#010+
   '**2','Sh_Use ansistrings by default instead of shortstrings'#010+
@@ -3099,6 +3672,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Sm_Support macros like C (global)'#010+
   '**2So_Same as -Mtp'#010+
   '**2Ss_Constructor name must be init (destructor must be done)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '**2Sv_Support ','vector processing (use CPU vector extensions if availa'+
@@ -3124,6 +3698,9 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
   '**2Sx_Enable exception keywords (default in Delphi/ObjFPC modes)'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  '**2Sx_Enable exception keywords (default in Delphi/ObjFPC modes)'#010+
+>>>>>>> graemeg/cpstrnew
   '**1s_Do not call assembler and li','nker'#010+
   '**2sh_Generate script to link on host'#010+
   '**2st_Generate script to link on target'#010+
@@ -3134,6 +3711,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2Tfreebsd_FreeBSD'#010+
   '3*2Tgo32v2_Version 2 of DJ Delorie DOS extender'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3145,7 +3725,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2Tnetware_Novell Netware Module (clib)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '3*2Tnetwlibc_Novell Netware Module (libc)'#010+
+=======
+  '3*2Tnetwlibc_No','vell Netware Module (libc)'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '3*2Tnetwlibc_No','vell Netware Module (libc)'#010+
 >>>>>>> graemeg/cpstrnew
@@ -3156,6 +3740,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2Tos2_OS/2 / eComStation'#010+
   '3*2Tsunos_SunOS/Solaris'#010+
   '3*2Tsymbian_Symbian OS'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '3*2Tsolaris_Solaris'#010,
@@ -3188,11 +3773,21 @@ const msgtxt : array[0..000245,1..240] of char=(
   '4*2Tdarwin_Darwin/Mac OS X'#010+
   '4*2Tlinux_Linux'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  '3*2Tsolaris_Solaris'#010+
+  '3*2Twatcom_Watcom compatible DOS extender'#010+
+  '3*2Twdosx_WDOSX DOS extender'#010+
+  '3*2Twin32_Windows 32 Bit'#010+
+  '3*2','Twince_Windows CE'#010+
+  '4*2Tdarwin_Darwin/Mac OS X'#010+
+  '4*2Tlinux_Linux'#010+
+>>>>>>> graemeg/cpstrnew
   '4*2Twin64_Win64 (64 bit Windows systems)'#010+
   '6*2Tamiga_Commodore Amiga'#010+
   '6*2Tatari_Atari ST/STe/TT'#010+
   '6*2Tlinux_Linux'#010+
   '6*2Tpalmos_PalmOS'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '8*2Tmsdos_MS-DOS (and compatible)'#010+
@@ -3222,11 +3817,17 @@ const msgtxt : array[0..000245,1..240] of char=(
   'A*2Tlinux_Linux'#010+
   'A*2Tw','ince_Windows CE'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  'A*2Tdarwin_Darwin/iPhoneOS/iOS'#010+
+  'A*2Tlinux_Linux'#010+
+  'A*2Tw','ince_Windows CE'#010+
+>>>>>>> graemeg/cpstrnew
   'P*2Tamiga_AmigaOS'#010+
   'P*2Tdarwin_Darwin/Mac OS X'#010+
   'P*2Tlinux_Linux'#010+
   'P*2Tmacos_Mac OS (classic)'#010+
   'P*2Tmorphos_MorphOS'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   'P*2Tnetbsd_NetBSD'#010+
@@ -3241,13 +3842,20 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
   'S*2Tsolaris_Solaris'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  'S*2Tsolaris_Solaris'#010+
+>>>>>>> graemeg/cpstrnew
   'S*2Tlinux_Linux'#010+
   'V*2Tembedded_Embedded'#010+
   '**1u<x>_Undefines the symbol <x>'#010+
   '**1U_Unit options:'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2Un_Do not check where the unit name matches the file name'#010+
+=======
+  '**2Un_Do not check where the',' unit name matches the file name'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**2Un_Do not check where the',' unit name matches the file name'#010+
 >>>>>>> graemeg/cpstrnew
@@ -3259,8 +3867,11 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**1v<x>_Be verbose. <x> is a combination of the following letters:'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '**2*_e : Show errors (default)       0 : Show nothing (except errors)'#010+
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   '**2*_e : Show errors (default)       0 : Show',' nothing (except errors'+
@@ -3269,6 +3880,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2*_w : Show warnings               u : Show unit info'#010+
   '**2*_n : Show notes                ','  t : Show tried/used files'#010+
   '**2*_h : Show hints                  c : Show conditionals'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '**2*_i : Show general info           d : Show debug info'#010+
@@ -3292,6 +3904,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '**2*_i : Show general info           ','d : Show debug info'#010+
   '**2*_l : Show linenumbers            r : Rhide/GCC compatibility mode'#010+
   '**2*_s : Show time stamps            q : Show message numbers'#010+
@@ -3308,6 +3922,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2Wb_Create a bundle instead of a library (Darwin)'#010+
   'P*2Wb_Create a bundl','e instead of a library (Darwin)'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3324,10 +3941,13 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2WC_Specify console type application (EMX, OS/2, Windows)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '4*2WC_Specify console type application (Windows)'#010+
   'A*2WC_Specify console type application (Windows)'#010+
   'P*2WC_Specify console type application (Classic Mac OS)'#010,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   'A','*2WC_Specify console type application (Windows)'#010+
@@ -3338,9 +3958,14 @@ const msgtxt : array[0..000245,1..240] of char=(
   'A*2WD_Use DEFFILE to export functions of DLL or EXE (Windows)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '3*2We_Use external resources (Darwin)'#010+
   '4*2We_Use extern','al resources (Darwin)'#010+
   'a*2We_Use external resources (Darwin)'#010+
+=======
+  '3*2We_Use ex','ternal resources (Darwin)'#010+
+  '4*2We_Use external resources (Darwin)'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '3*2We_Use ex','ternal resources (Darwin)'#010+
   '4*2We_Use external resources (Darwin)'#010+
@@ -3355,8 +3980,12 @@ const msgtxt : array[0..000245,1..240] of char=(
   '3*2WF_Specify full-screen type application (EMX, OS/2)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '3*2WG_Speci','fy graphic type application (EMX, OS/2, Windows)'#010+
   '4*2WG_Specify graphic type application (Windows)'#010+
+=======
+  '3*2WG_S','pecify graphic type application (EMX, OS/2, Windows)'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '3*2WG_S','pecify graphic type application (EMX, OS/2, Windows)'#010+
 >>>>>>> graemeg/cpstrnew
@@ -3370,6 +3999,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   'a*2Wi_Use internal resources (Darwin)'#010+
   'A*2Wi_Use internal resources (Darwin)'#010+
   'P*2Wi_Use internal resources (Darwin)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   'p*2Wi_Use internal resources (Darwin)'#010+
@@ -3402,6 +4032,10 @@ const msgtxt : array[0..000245,1..240] of char=(
   'p*2Wi_','Use internal resources (Darwin)'#010+
   '3*2WN_Do not generate relocation code, needed for debugging (Windows)'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  'p*2Wi_','Use internal resources (Darwin)'#010+
+  '3*2WN_Do not generate relocation code, needed for debugging (Windows)'#010+
+>>>>>>> graemeg/cpstrnew
   'A*2WN_Do not generate relocation code, needed for debugging (Windows)'#010+
   'A*2Wp<x>_Specify the controller type; see fpc -i or fpc -iu for possib'+
   'le values'#010+
@@ -3415,6 +4049,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   'a*2WP<x>_Minimum iOS deployment version: 7.0, 7.1.2, ... (Darwin)'#010+
   'A*2WP<x>_Minimum iOS deployment version: 3.0, 5.0.1, ... (Darwin)'#010+
   '3*2WR_Generate relocation code (Windows)'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '4*2WR_Generate relocation code (Windows)'#010+
@@ -3438,6 +4073,8 @@ const msgtxt : array[0..000245,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   'A*2WR_Generate relocation c','ode (Windows)'#010+
   'P*2WT_Specify MPW tool type application (Classic Mac OS)'#010+
   '3*2WX_Enable executable stack (Linux)'#010+
@@ -3453,6 +4090,9 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Xg_Create debuginfo in a separate file and add a debugli','nk sectio'+
   'n to executable'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3464,6 +4104,7 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Xm','_Generate link map'#010+
   '**2XM<x>_Set the name of the '#039'main'#039' program routine (default i'+
   's '#039'main'#039')'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '**2Xn_Use target system native linker instead of GNU ld (Solaris, AIX)'+
@@ -3480,6 +4121,17 @@ const msgtxt : array[0..000245,1..240] of char=(
   '**2Xv_Generate table for Virtual Entry ca','lls'#010+
   '**2XV_Use VLink as external linker       (default on Amiga, MorphOS)'#010+
   '**2XX_Try to smartlink units             (defines FPC_LINK_SMART)'#010+
+=======
+  '**2XP<x>_Prepend the binu','tils names with the prefix <x>'#010+
+  '**2Xr<x>_Set the linker'#039's rlink-path to <x> (needed for cross comp'+
+  'ile, see the ld manual for more information) (BeOS, Linux)'#010+
+  '**2XR<x>_Prepend <x> to all linker search paths (BeOS, Darwin, FreeBSD'+
+  ', Linux, Mac O','S, Solaris)'#010+
+  '**2Xs_Strip all symbols from executable'#010+
+  '**2XS_Try to link units statically (default, defines FPC_LINK_STATIC)'#010+
+  '**2Xt_Link with static libraries (-static is passed to linker)'#010+
+  '**2XX_Try to smartlink units             (defines FPC_L','INK_SMART)'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '**2XP<x>_Prepend the binu','tils names with the prefix <x>'#010+
   '**2Xr<x>_Set the linker'#039's rlink-path to <x> (needed for cross comp'+

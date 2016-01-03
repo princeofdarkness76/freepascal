@@ -30,7 +30,11 @@ uses
   globtype, globals, verbose,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   aasmbase, aasmdata, aasmsym, aasmtai,
+=======
+  aasmbase, aasmtai,
+>>>>>>> graemeg/cpstrnew
 =======
   aasmbase, aasmtai,
 >>>>>>> graemeg/cpstrnew
@@ -43,6 +47,7 @@ const
   { "mov reg,reg" source operand number }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   O_MOV_SOURCE = 1;
   { "mov reg,reg" source operand number }
   O_MOV_DEST   = 0;
@@ -53,6 +58,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   O_MOV_SOURCE = 0;
   { "mov reg,reg" source operand number }
   O_MOV_DEST   = 1;
@@ -60,6 +67,9 @@ type
 type
   taicpu = class(tai_cpu_abstract)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -75,7 +85,10 @@ type
     constructor op_reg_const(op: tasmop; _op1: tregister; _op2: longint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor op_const_const(op: tasmop; _op1: aint; _op2: aint);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -87,9 +100,12 @@ type
     constructor op_reg_reg_const(op: tasmop; _op1, _op2: tregister; _op3: aint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { INS and EXT }
     constructor op_reg_reg_const_const(op: tasmop; _op1,_op2: tregister; _op3,_op4: aint);
     constructor op_reg_const_reg(op: tasmop; _op1: tregister; _op2: aint; _op3: tregister);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -113,11 +129,17 @@ type
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   procedure InitAsm;
   procedure DoneAsm;
 
   procedure fixup_jmps(list: TAsmList);
+=======
+
+  procedure InitAsm;
+  procedure DoneAsm;
+>>>>>>> graemeg/cpstrnew
 =======
 
   procedure InitAsm;
@@ -136,9 +158,12 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   uses
     cutils;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -149,6 +174,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -205,6 +235,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor taicpu.op_const_const(op: tasmop; _op1: aint; _op2: aint);
 begin
   inherited Create(op);
@@ -213,6 +244,8 @@ begin
   loadconst(1, _op2);
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -238,6 +271,7 @@ end;
 
 
 constructor taicpu.op_reg_reg_ref(op: tasmop; _op1, _op2: tregister; const _op3: treference);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 begin
@@ -283,6 +317,8 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  begin
    inherited create(op);
    ops := 3;
@@ -302,6 +338,9 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -311,8 +350,11 @@ begin
   inherited Create(op);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   is_jmp := op in [A_BC, A_BA];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   is_jmp := op in [A_J, A_BEQI, A_BNEI, A_BLTI, A_BLEI, A_BGTI, A_BGEI,
@@ -322,6 +364,9 @@ begin
     ];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -334,8 +379,11 @@ begin
    inherited create(op);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    is_jmp := op in [A_BC, A_BA];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    is_jmp := op in [A_J,
@@ -343,6 +391,9 @@ begin
      A_BGTUI, A_BGEUI,
      A_BEQ, A_BNE, A_BLT, A_BLE, A_BGT, A_BGE, A_BLTU, A_BLEU, A_BGTU, A_BGEU];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -357,8 +408,11 @@ begin
    inherited create(op);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    is_jmp := op in [A_BC, A_BA];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
    is_jmp := op in [A_J,
@@ -366,6 +420,9 @@ begin
      A_BGTUI, A_BGEUI,
      A_BEQ, A_BNE, A_BLT, A_BLE, A_BGT, A_BGE, A_BLTU, A_BLEU, A_BGTU, A_BGEU, A_BGTZ];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -444,10 +501,13 @@ end;
       A_NOR,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { We can get into trouble if an instruction can be interpreted as
   macros with different operands. The following commented out ones
   refer to elementary instructions: DIV[U], MULT[U] do not modify
   first operand. Rest are subject to check. }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -460,8 +520,13 @@ end;
       A_DMULOU,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //      A_DIV,
 //      A_DIVU,
+=======
+      A_DIV,
+      A_DIVU,
+>>>>>>> graemeg/cpstrnew
 =======
       A_DIV,
       A_DIVU,
@@ -478,6 +543,7 @@ end;
       A_DREMU,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 //      A_MULT,
       A_DMULT,
 //      A_MULTU,
@@ -485,6 +551,8 @@ end;
       A_MFHI,
       A_MFLO,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       A_MULT,
@@ -506,6 +574,9 @@ end;
       A_MODUG,
       A_DMODUG,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -580,6 +651,7 @@ end;
       A_SLEU,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       A_SNE,
       A_EXT,
       A_INS,
@@ -602,6 +674,8 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       A_SNE];
 
       begin
@@ -610,6 +684,9 @@ end;
           if opnr = 0 then
             result := operand_write;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -663,6 +740,7 @@ end;
 procedure InitAsm;
   begin
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -868,6 +946,8 @@ procedure fixup_jmps(list: TAsmList);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 procedure DoneAsm;
@@ -875,6 +955,9 @@ procedure DoneAsm;
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

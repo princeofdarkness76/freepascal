@@ -65,6 +65,11 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    { load a tlocation into a cgpara }
+    procedure gen_load_loc_cgpara(list: TAsmList; vardef: tdef; const l: tlocation; const cgpara: tcgpara);
+>>>>>>> graemeg/cpstrnew
 =======
     { load a tlocation into a cgpara }
     procedure gen_load_loc_cgpara(list: TAsmList; vardef: tdef; const l: tlocation; const cgpara: tcgpara);
@@ -83,8 +88,11 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure register_maybe_adjust_setbase(list: TAsmList; opdef: tdef; var l: tlocation; setbase: aint);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure register_maybe_adjust_setbase(list: TAsmList; var l: tlocation; setbase: aint);
@@ -162,6 +170,10 @@ interface
 
     procedure InsertInterruptTable;
 
+    procedure gen_fpc_dummy(list : TAsmList);
+
+    procedure InsertInterruptTable;
+
 implementation
 
   uses
@@ -183,6 +195,9 @@ implementation
     nbas,ncon,nld,nmem,nutils,
     tgobj,cgobj,cgcpu
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1101,7 +1116,10 @@ implementation
     procedure location_allocate_register(list: TAsmList;out l: tlocation;def: tdef;constant: boolean);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       begin
@@ -1286,6 +1304,7 @@ implementation
               location_reset(l,LOC_REGISTER,l.size);
 {$ifdef cpu64bitalu}
 <<<<<<< HEAD
+<<<<<<< HEAD
             if l.size in [OS_128,OS_S128,OS_F128] then
               begin
                 l.register128.reglo:=cg.getintregister(list,OS_64);
@@ -1315,6 +1334,8 @@ implementation
                             Init/Finalize Code
 ****************************************************************************}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
       trashintvalues: array[0..nroftrashvalues-1] of aint = ($5555555555555555,aint($AAAAAAAAAAAAAAAA),aint($EFEFEFEFEFEFEFEF),0);
 {$endif cpu64bitalu}
 {$ifdef cpu32bitalu}
@@ -1892,6 +1913,7 @@ implementation
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         paraloc:=para.location;
         if not assigned(paraloc) then
           internalerror(200408203);
@@ -2349,6 +2371,14 @@ implementation
               is_managed_type(hp^.def) then
             begin
 >>>>>>> graemeg/cpstrnew
+=======
+        hp:=tg.templist;
+        while assigned(hp) do
+         begin
+           if assigned(hp^.def) and
+              is_managed_type(hp^.def) then
+            begin
+>>>>>>> graemeg/cpstrnew
               include(current_procinfo.flags,pi_needs_implicit_finally);
               reference_reset_base(href,current_procinfo.framepointer,hp^.pos,sizeof(pint));
               cg.g_finalize(list,hp^.def,href);
@@ -2421,6 +2451,9 @@ implementation
             begin
              loc.register:=cg.getmmregister(list,loc.size);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2430,12 +2463,18 @@ implementation
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
       end;
 
 
+=======
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     procedure gen_alloc_regvar(list:TAsmList;sym: tabstractnormalvarsym; allocreg: boolean);
       begin
         if allocreg then
@@ -2583,6 +2622,7 @@ implementation
               else
 {$endif not cpu64bitalu}
 <<<<<<< HEAD
+<<<<<<< HEAD
                 begin
                   if assigned(paraloc^.next) then
                     internalerror(200410105);
@@ -2609,6 +2649,14 @@ implementation
                   inc(href.offset,TCGSize2Size[paraloc^.size]);
                   dec(sizeleft,TCGSize2Size[paraloc^.size]);
                   paraloc:=paraloc^.next;
+=======
+                begin
+                  if assigned(paraloc^.next) then
+                    internalerror(200410105);
+                  unget_para(paraloc^);
+                  gen_alloc_regloc(list,destloc);
+                  cg.a_load_cgparaloc_anyreg(list,destloc.size,paraloc^,destloc.register,sizeof(aint));
+>>>>>>> graemeg/cpstrnew
                 end;
               gen_alloc_regloc(list,destloc);
               cg.a_loadfpu_ref_reg(list,destloc.size,destloc.size,tempref,destloc.register);
@@ -2622,6 +2670,7 @@ implementation
                 internalerror(200410109);
 {$endif sparc}
             end;
+<<<<<<< HEAD
           LOC_MMREGISTER,
           LOC_CMMREGISTER :
             begin
@@ -2764,14 +2813,91 @@ implementation
                   }
                 end;
             end;
+=======
+          LOC_FPUREGISTER,
+          LOC_CFPUREGISTER :
+            begin
+{$if defined(sparc) or defined(arm)}
+              { Arm and Sparc passes floats in int registers, when loading to fpu register
+                we need a temp }
+              sizeleft := TCGSize2Size[destloc.size];
+              tg.GetTemp(list,sizeleft,sizeleft,tt_normal,tempref);
+              href:=tempref;
+              while assigned(paraloc) do
+                begin
+                  unget_para(paraloc^);
+                  cg.a_load_cgparaloc_ref(list,paraloc^,href,sizeleft,destloc.reference.alignment);
+                  inc(href.offset,TCGSize2Size[paraloc^.size]);
+                  dec(sizeleft,TCGSize2Size[paraloc^.size]);
+                  paraloc:=paraloc^.next;
+                end;
+              gen_alloc_regloc(list,destloc);
+              cg.a_loadfpu_ref_reg(list,destloc.size,destloc.size,tempref,destloc.register);
+              tg.UnGetTemp(list,tempref);
+{$else sparc}
+              unget_para(paraloc^);
+              gen_alloc_regloc(list,destloc);
+              { from register to register -> alignment is irrelevant }
+              cg.a_load_cgparaloc_anyreg(list,destloc.size,paraloc^,destloc.register,0);
+              if assigned(paraloc^.next) then
+                internalerror(200410109);
+{$endif sparc}
+            end;
+          LOC_MMREGISTER,
+          LOC_CMMREGISTER :
+            begin
+{$ifndef cpu64bitalu}
+              { ARM vfp floats are passed in integer registers }
+              if (para.size=OS_F64) and
+                 (paraloc^.size in [OS_32,OS_S32]) and
+                 use_vectorfpu(vardef) then
+                begin
+                  { we need 2x32bit reg }
+                  if not assigned(paraloc^.next) or
+                     assigned(paraloc^.next^.next) then
+                    internalerror(2009112421);
+                  unget_para(paraloc^);
+                  unget_para(paraloc^.next^);
+                  gen_alloc_regloc(list,destloc);
+                  if (target_info.endian=endian_big) then
+                    { paraloc^ -> high
+                      paraloc^.next -> low }
+                    reg64:=joinreg64(paraloc^.next^.register,paraloc^.register)
+                  else
+                    reg64:=joinreg64(paraloc^.register,paraloc^.next^.register);
+                  cg64.a_loadmm_intreg64_reg(list,OS_F64,reg64,destloc.register);
+                end
+              else
+{$endif not cpu64bitalu}
+                begin
+                  unget_para(paraloc^);
+                  gen_alloc_regloc(list,destloc);
+                  { from register to register -> alignment is irrelevant }
+                  cg.a_load_cgparaloc_anyreg(list,destloc.size,paraloc^,destloc.register,0);
+                  { data could come in two memory locations, for now
+                    we simply ignore the sanity check (FK)
+                  if assigned(paraloc^.next) then
+                    internalerror(200410108);
+                  }
+                end;
+            end;
+>>>>>>> graemeg/cpstrnew
           else
             internalerror(2010052903);
         end;
       end;
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 
     procedure gen_load_para_value(list:TAsmList);
 
+<<<<<<< HEAD
+=======
+    procedure gen_load_para_value(list:TAsmList);
+
+>>>>>>> graemeg/cpstrnew
        procedure get_para(const paraloc:TCGParaLocation);
          begin
             case paraloc.loc of
@@ -3199,6 +3325,9 @@ implementation
 =======
         paramanager.getintparaloc(pocall_default,1,paraloc1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3221,6 +3350,9 @@ implementation
 =======
         paramanager.getintparaloc(pocall_default,1,paraloc1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3393,8 +3525,11 @@ implementation
                       gen_alloc_regvar(list,vs,true);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       hlcg.varsym_set_localloc(list,vs);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                       setlocalloc(vs);
@@ -3852,6 +3987,7 @@ implementation
                         if (pi_has_label in current_procinfo.flags) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(cpu64bitalu)}
                           if def_cgsize(vardef) in [OS_128,OS_S128] then
                             begin
@@ -3861,6 +3997,8 @@ implementation
                           else
 {$elseif defined(cpu32bitalu)}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifndef cpu64bitalu}
@@ -4185,6 +4323,19 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+=======
+    procedure gen_fpc_dummy(list : TAsmList);
+      begin
+{$ifdef i386}
+        { fix me! }
+        list.concat(Taicpu.Op_const_reg(A_MOV,S_L,1,NR_EAX));
+        list.concat(Taicpu.Op_const(A_RET,S_W,12));
+{$endif i386}
+      end;
+
+
+>>>>>>> graemeg/cpstrnew
     procedure InsertInterruptTable;
 
       procedure WriteVector(const name: string);
@@ -4268,5 +4419,8 @@ implementation
       end;
 
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end.

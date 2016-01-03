@@ -53,7 +53,11 @@
     _designNibBundleIdentifier: NSString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(2)-1] of id;
+=======
+        _reserved: array[0..1] of id;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved: array[0..1] of id;
 >>>>>>> graemeg/cpstrnew

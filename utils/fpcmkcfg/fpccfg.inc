@@ -1,9 +1,15 @@
 {$ifdef Delphi}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const DefaultConfig : array[0..30] of string[240]=(
 {$else Delphi}
 const DefaultConfig : array[0..30,1..240] of char=(
+=======
+const DefaultConfig : array[0..25] of string[240]=(
+{$else Delphi}
+const DefaultConfig : array[0..25,1..240] of char=(
+>>>>>>> graemeg/cpstrnew
 =======
 const DefaultConfig : array[0..25] of string[240]=(
 {$else Delphi}
@@ -59,11 +65,17 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '-ap'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# path to Xcode 4.3+ utilities (no problem if it doesn'#039't exist)'#010+
   '-FD/Applications/Xcode.app/Contents/Developer/usr/bin'#010+
   '#endif'#010+
   #010+
   '# ----------------',#010+
+=======
+  '#endif'#010+
+  #010+
+  '# ----------------'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '#endif'#010+
   #010+
@@ -81,6 +93,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#      -Mfpc      free pascal dialect (default)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '#      -Mobjfpc   switch some Delphi 2 extensions on'#010+
   '#      -Mdelphi   tries to be Delphi compatible'#010+
   '#      -Mtp       tries to b','e TP/BP 7.0 compatible'#010+
@@ -90,6 +103,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '#      ','-Mobjfpc   switch some Delphi 2 extensions on'#010+
   '#      -Mdelphi   tries to be Delphi compatible'#010+
   '#      -Mtp       tries to be TP/BP 7.0 compatible'#010+
@@ -97,6 +112,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#      -Mmacpas   tries to be compatible to the ma','cintosh pascal dia'+
   'lects'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -107,6 +125,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# Assembler reader mode'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '#      -Rdefaul','t  use default assembler'#010+
   '#      -Ratt      read AT&T style assembler'#010+
   '#      -Rintel    read Intel style assembler'#010+
@@ -115,12 +134,17 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '#      -Rdefault  use default assembler'#010+
   '#      -Ratt      read AT&T style assembler'#010+
   '#      -Rintel    read Intel style assembler'#010+
   '#'#010+
   '# ','All assembler blocks are AT&T styled by default'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -128,6 +152,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
   '# Semantic checking'#010+
   '#      -S2        same as -Mobjfpc'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '#      -Sc ','       supports operators like C (*=,+=,/= and -=)'#010+
@@ -156,6 +181,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '#      -Sc        supports operators like C (*=,+=,/= and -=)'#010+
   '#      -Sa        include assertion code.'#010+
   '#      -Sd        same as',' -Mdelphi'#010+
@@ -180,6 +207,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#      -Sx        enable exception keywords (default in Delphi/ObjFPC '+
   'modes)'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -191,6 +221,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# Code generation'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# ---------------'#010+
   #010+
   '# Uncomment the next line if you always want static/dynamic units by d'+
@@ -199,12 +230,17 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '# ---------------'#010,
   #010+
   '# Uncomment the next line if you always want static/dynamic units by d'+
   'efault'#010+
   '# (can be overruled with -CD, -CS at the commandline)'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -216,7 +252,12 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# Set default codegeneration checks (iocheck, overflow, range, stack)'#010+
+=======
+  '# Set default codegeneration checks (iocheck, over','flow, range, stack'+
+  ')'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '# Set default codegeneration checks (iocheck, over','flow, range, stack'+
   ')'#010+
@@ -234,6 +275,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# -Os        generate smaller code'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# -Oa=N      set alignmen','t to N'#010+
   '# -O1        level 1 optimizations (quick optimizations, debuggable)'#010+
   '# -O2        level 2 optimizations (-O1 + optimizations which make deb'+
@@ -249,6 +291,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '# -Oa=N      set alignment to N'#010+
   '# -O1        level 1 optimizations (quick optimizations, debuggable)'#010+
   '# -O2        level 2 optimizations (-O1 + ','optimizations which make d'+
@@ -262,6 +306,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# -Op<x>     set target cpu for optimizing, see fpc -i for possible va'+
   'lues'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -275,7 +322,11 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# -----------------------'#010+
+=======
+  '# -----------------------',#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '# -----------------------',#010+
 >>>>>>> graemeg/cpstrnew
@@ -289,6 +340,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# path to the m','essagefile, not necessary anymore but can be used to '+
   'override'#010+
   '# the default language'#010+
@@ -297,12 +349,17 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '# path to the messagefile, not necessary anymore but can be used to ov'+
   'erride'#010+
   '# the default language'#010+
   '#-Fr%basepath%/msg/errore.msg'#010+
   '#-F','r%basepath%/msg/errorn.msg'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -310,6 +367,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#-Fr%basepath%/msg/errord.msg'#010+
   '#-Fr%basepath%/msg/errorr.msg'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '# s','earch path for unicode binary files (FPC 2.x does not know this s'+
@@ -331,11 +389,16 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '# searchpath for units and other system dependent things'#010+
   '-Fu%basepath%/units/$fpctarget'#010+
   '-Fu%basepath%/units/$fpctarget/*'#010,
   '-Fu%basepath%/units/$fpctarget/rtl'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -352,8 +415,13 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# searchpath for fppkg user-specific packages'#010+
   '-Fu%lo','calbasepath%/units/$FPCTARGET/*'#010+
+=======
+  '# searchpath for ','fppkg user-specific packages'#010+
+  '-Fu%localbasepath%/units/$FPCTARGET/*'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '# searchpath for ','fppkg user-specific packages'#010+
   '-Fu%localbasepath%/units/$FPCTARGET/*'#010+
@@ -371,7 +439,10 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#-Fl/lib;/usr/lib'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '-Fl%basepath%/lib/$FPCTARGET'#010+
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -380,6 +451,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# searchpath for tools'#010+
   '-FD%basepath%/bin/$FPCTARGET'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '%NEEDCROSSBINUTILSIFDEF%'#010,
@@ -412,6 +484,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
   '%NEEDCROSSBINUTILSI','FDEF%'#010+
 >>>>>>> graemeg/cpstrnew
+=======
+  '%NEEDCROSSBINUTILSI','FDEF%'#010+
+>>>>>>> graemeg/cpstrnew
   #010+
   '# binutils prefix for cross compiling'#010+
   '#IFDEF FPC_CROSSCOMPILING'#010+
@@ -427,8 +502,13 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '# generate always debuggi','ng information for GDB (slows down the comp'+
   'iling'#010+
+=======
+  '# generate always debugging information for GDB (slows down the comp','i'+
+  'ling'#010+
+>>>>>>> graemeg/cpstrnew
 =======
   '# generate always debugging information for GDB (slows down the comp','i'+
   'ling'#010+
@@ -444,7 +524,11 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#      -gh        use heap trace unit (for memory leak debugging)'#010+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   '#      -gl    ','    use line info unit to show more info for backtrace'+
+=======
+  '#      -gl        use line info unit to show more info fo','r backtrace'+
+>>>>>>> graemeg/cpstrnew
 =======
   '#      -gl        use line info unit to show more info fo','r backtrace'+
 >>>>>>> graemeg/cpstrnew
@@ -458,6 +542,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# Enable debuginfo and use the line info unit by default'#010+
   '#-gl'#010+
   #010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '# always pa','ss an option to the linker'#010+
@@ -481,6 +566,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '# always pass an option to the linker'#010+
   '#-k-s'#010+
   #010+
@@ -492,6 +579,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '# Miscellaneous'#010+
   '# -------------'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -501,6 +591,7 @@ const DefaultConfig : array[0..25,1..240] of char=(
   #010+
   '# Verbosity'#010+
   '#      e : Show errors (default)       d : Show debug info'#010+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   '#      w : Show warnings               u : Show unit info'#010+
@@ -519,6 +610,8 @@ const DefaultConfig : array[0..25,1..240] of char=(
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   '#      w : Show warnings               u',' : Show unit info'#010+
   '#      n : Show notes                  t : Show tried/used files'#010+
   '#      h : Show hints                  s : Show time stamps'#010+
@@ -533,6 +626,9 @@ const DefaultConfig : array[0..25,1..240] of char=(
   '#      v : write fpcdebug.txt with     p : Write tree.log with parse t'+
   'ree'#010+
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

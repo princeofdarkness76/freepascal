@@ -44,7 +44,10 @@ type
     progargs   : pchar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TBreakNumber,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

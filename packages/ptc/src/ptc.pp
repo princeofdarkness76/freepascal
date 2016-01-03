@@ -62,7 +62,11 @@ uses
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PTCPAS_VERSION = 'PTCPas 0.99.14';
+=======
+  PTCPAS_VERSION = 'PTCPas 0.99.11';
+>>>>>>> graemeg/cpstrnew
 =======
   PTCPAS_VERSION = 'PTCPas 0.99.11';
 >>>>>>> graemeg/cpstrnew
@@ -123,7 +127,11 @@ uses
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Windows, p_ddraw, glext;
+=======
+  Windows, p_ddraw;
+>>>>>>> graemeg/cpstrnew
 =======
   Windows, p_ddraw;
 >>>>>>> graemeg/cpstrnew
@@ -141,8 +149,11 @@ uses
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym, xkblib
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym
@@ -202,9 +213,15 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$INCLUDE core/log.inc}
 
+=======
+
+{$INCLUDE core/log.inc}
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 {$INCLUDE core/log.inc}
@@ -222,6 +239,7 @@ end;
 {$ENDIF GO32V2}
 
 {$IF defined(Win32) OR defined(Win64)}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$INCLUDE win32/base/win32cursord.inc}
@@ -267,6 +285,8 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$INCLUDE win32/base/cursord.inc}
 {$INCLUDE win32/base/cursormoded.inc}
 {$INCLUDE win32/base/monitord.inc}
@@ -300,6 +320,9 @@ end;
 {$INCLUDE win32/gdi/win32dibi.inc}
 {$INCLUDE win32/gdi/gdiconsolei.inc}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

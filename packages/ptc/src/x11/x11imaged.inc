@@ -2,7 +2,11 @@
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -47,7 +51,11 @@ type
   public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); virtual;
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); virtual;
+>>>>>>> graemeg/cpstrnew
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); virtual;
 >>>>>>> graemeg/cpstrnew
@@ -68,7 +76,11 @@ type
   public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); override;
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
+>>>>>>> graemeg/cpstrnew
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
@@ -92,7 +104,11 @@ type
   public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); override;
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
+>>>>>>> graemeg/cpstrnew
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew

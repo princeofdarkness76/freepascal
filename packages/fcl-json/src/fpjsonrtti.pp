@@ -7,7 +7,11 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, contnrs, typinfo, fpjson, rttiutils, jsonparser;
+=======
+  Classes, SysUtils, typinfo, fpjson, rttiutils, jsonparser;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, typinfo, fpjson, rttiutils, jsonparser;
 >>>>>>> graemeg/cpstrnew
@@ -30,9 +34,14 @@ Type
                        jsoTStringsAsObject,       // Stream TStrings as an object : string = { object }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        jsoDateTimeAsString,       // Format a TDateTime value as a string
                        jsoUseFormatString,        // Use FormatString when creating JSON strings.
                        jsoCheckEmptyDateTime);    // If TDateTime value is empty and jsoDateTimeAsString is used, 0 date returns empty string
+=======
+                       jsoDateTimeAsString,
+                       jsoUseFormatString);       // Use FormatString when creating JSON strings.
+>>>>>>> graemeg/cpstrnew
 =======
                        jsoDateTimeAsString,
                        jsoUseFormatString);       // Use FormatString when creating JSON strings.
@@ -82,8 +91,11 @@ Type
     function StreamCollection(Const ACollection: TCollection): TJSONArray;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Stream an objectlist - always returns an array
     function StreamObjectList(Const AnObjectList: TObjectList): TJSONArray;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -135,7 +147,10 @@ Type
     FOnRestoreProp: TJSONRestorePropertyEvent;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FCaseInsensitive : Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -174,8 +189,11 @@ Type
     Property OngetObject : TJSONGetObjectEvent Read FOnGetObject Write FOnGetObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // JSON is by definition case sensitive. Should properties be looked up case-insentive ?
     Property CaseInsensitive : Boolean Read FCaseInsensitive Write FCaseInsensitive;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -285,7 +303,10 @@ begin
         ntInt64   : Result:=Data.Asint64;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ntQWord   : Result:=Data.AsQWord;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -444,7 +465,11 @@ begin
     tkWString :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       SetWideStrProp(AObject,PI,PropData.AsUnicodeString);
+=======
+      SetWideStrProp(AObject,PI,PropData.AsString);
+>>>>>>> graemeg/cpstrnew
 =======
       SetWideStrProp(AObject,PI,PropData.AsString);
 >>>>>>> graemeg/cpstrnew
@@ -477,7 +502,11 @@ begin
     tkUString :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       SetUnicodeStrProp(AObject,PI,PropData.AsUnicodeString);
+=======
+      SetUnicodeStrProp(AObject,PI,PropData.AsString);
+>>>>>>> graemeg/cpstrnew
 =======
       SetUnicodeStrProp(AObject,PI,PropData.AsString);
 >>>>>>> graemeg/cpstrnew
@@ -513,7 +542,11 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         J:=JSON.IndexOfName(Pil.Items[i]^.Name,FCaseInsensitive);
+=======
+        J:=JSON.IndexOfName(Pil.Items[i]^.Name);
+>>>>>>> graemeg/cpstrnew
 =======
         J:=JSON.IndexOfName(Pil.Items[i]^.Name);
 >>>>>>> graemeg/cpstrnew
@@ -739,8 +772,11 @@ begin
       Result.Add('Items',StreamCollection(TCollection(AObject)))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     else If AObject is TObjectList then
       Result.Add('Objects',StreamObjectList(TObjectList(AObject)))
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -967,6 +1003,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONStreamer.StreamObjectList(const AnObjectList: TObjectList): TJSONArray;
 Var
   I : Integer;
@@ -985,6 +1022,9 @@ begin
 end;
 
 function TJSONStreamer.StreamClassProperty(const AObject: TObject): TJSONData;
+=======
+Function TJSONStreamer.StreamClassProperty(Const AObject : TObject): TJSONData;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSONStreamer.StreamClassProperty(Const AObject : TObject): TJSONData;
 >>>>>>> graemeg/cpstrnew
@@ -1013,8 +1053,11 @@ begin
     Result:=StreamCollection(TCollection(Aobject))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else If AObject is TObjectList then
     Result:=StreamObjectList(TObjectList(AObject))
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1091,8 +1134,12 @@ begin
       Result:=TJSONFloatNumber.Create(GetOrdProp(AObject,PropertyInfo));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tkObject :
       Result:=ObjectToJSON(GetObjectProp(AObject,PropertyInfo));
+=======
+    tkObject,
+>>>>>>> graemeg/cpstrnew
 =======
     tkObject,
 >>>>>>> graemeg/cpstrnew
@@ -1124,9 +1171,13 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (jsoCheckEmptyDateTime in Options) and (DateTime=0) then
     S:=''
   else if (DateTimeFormat<>'') then
+=======
+  if (DateTimeFormat<>'') then
+>>>>>>> graemeg/cpstrnew
 =======
   if (DateTimeFormat<>'') then
 >>>>>>> graemeg/cpstrnew

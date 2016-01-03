@@ -41,7 +41,11 @@ unit i_linux;
                             tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_needs_dwarf_cfi,tf_has_winlike_resources,
+=======
+                            tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
+>>>>>>> graemeg/cpstrnew
 =======
                             tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
 >>>>>>> graemeg/cpstrnew
@@ -115,9 +119,12 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,tf_smartlink_sections,
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_pic_uses_got{,tf_smartlink_sections},
@@ -188,10 +195,13 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,
                             tf_requires_proper_alignment, { Coldfire seems to need this at least (KB) }
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_smartlink_library,tf_has_winlike_resources];
@@ -331,8 +341,11 @@ unit i_linux;
             flags        : [tf_needs_symbol_size,tf_needs_symbol_type,tf_files_case_sensitive,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_requires_proper_alignment,tf_smartlink_sections,tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_requires_proper_alignment,tf_smartlink_library,tf_has_winlike_resources];
@@ -531,8 +544,13 @@ unit i_linux;
                 recordalignmin  : 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 recordalignmax  : 8;
                 maxCrecordalign : 8
+=======
+                recordalignmax  : 16;
+                maxCrecordalign : 16
+>>>>>>> graemeg/cpstrnew
 =======
                 recordalignmax  : 16;
                 maxCrecordalign : 16
@@ -564,6 +582,9 @@ unit i_linux;
                             tf_needs_symbol_type,tf_files_case_sensitive,tf_smartlink_library,
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -635,9 +656,12 @@ unit i_linux;
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
@@ -709,9 +733,12 @@ unit i_linux;
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
@@ -782,8 +809,11 @@ unit i_linux;
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_has_winlike_resources];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
@@ -848,6 +878,7 @@ unit i_linux;
 {$endif FPC_ARMEL}
 {$endif FPC_ARMHF}
 
+<<<<<<< HEAD
        system_aarch64_linux_info  : tsysteminfo =
           (
             system       : system_aarch64_linux;
@@ -1178,6 +1209,8 @@ unit i_linux;
             abi : abi_default
           );
 
+=======
+>>>>>>> graemeg/cpstrnew
        system_mips_linux_info : tsysteminfo =
           (
             system       : system_mips_LINUX;
@@ -1309,14 +1342,22 @@ unit i_linux;
   implementation
 
 initialization
+<<<<<<< HEAD
 {$ifdef CPUI386}
+=======
+{$ifdef CPU86}
+>>>>>>> graemeg/cpstrnew
   {$ifdef linux}
     { some FreeBSD versions define linux as well }
     {$ifndef FreeBSD}
       set_source_info(system_i386_linux_info);
     {$endif FreeBSD}
   {$endif}
+<<<<<<< HEAD
 {$endif CPUI386}
+=======
+{$endif CPU86}
+>>>>>>> graemeg/cpstrnew
 {$ifdef CPU68}
   {$ifdef linux}
     set_source_info(system_m68k_linux_info);
@@ -1327,6 +1368,14 @@ initialization
     set_source_info(system_x86_64_linux_info);
   {$endif linux}
 {$endif CPUX86_64}
+<<<<<<< HEAD
+=======
+{$ifdef CPUALPHA}
+  {$ifdef linux}
+    set_source_info(system_alpha_linux_info);
+  {$endif linux}
+{$endif CPUALPHA}
+>>>>>>> graemeg/cpstrnew
 {$ifdef CPUSPARC}
   {$ifdef linux}
     set_source_info(system_sparc_linux_info);
@@ -1340,11 +1389,14 @@ initialization
 {$ifdef CPUPOWERPC64}
   {$ifdef linux}
     set_source_info(system_powerpc64_linux_info);
+<<<<<<< HEAD
     { on a little endian PPC64 platform -> source is elfv2 }
     {$ifdef FPC_LITTLE_ENDIAN}
     source_info.endian:=endian_little;
     source_info.abi:=abi_powerpc_elfv2;
     {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
   {$endif linux}
 {$endif CPUPOWERPC64}
 {$ifdef CPUARM}
@@ -1352,6 +1404,7 @@ initialization
     set_source_info(system_arm_linux_info);
   {$endif linux}
 {$endif CPUARM}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef cpuaarch64}
@@ -1372,12 +1425,17 @@ initialization
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef CPUMIPS}
   {$ifdef linux}
     set_source_info(system_mipsel_linux_info);
   {$endif linux}
 {$endif CPUMIPS}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

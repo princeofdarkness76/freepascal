@@ -220,12 +220,18 @@ begin
   DoTestArray('[1234567890123456, 2234567890123456, 3234567890123456]',3);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Str(12/10,S1);
   Delete(S1,1,1);
   Str(34/10,S2);
   Delete(S2,1,1);
   Str(34/10,S3);
   Delete(S3,1,1);
+=======
+  Str(Double(1.2),S1);
+  Str(Double(2.3),S2);
+  Str(Double(3.4),S3);
+>>>>>>> graemeg/cpstrnew
 =======
   Str(Double(1.2),S1);
   Str(Double(2.3),S2);

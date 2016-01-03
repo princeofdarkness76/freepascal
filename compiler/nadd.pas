@@ -205,6 +205,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function taddnode.cmp_of_disjunct_ranges(var res : boolean) : boolean;
       var
         hp          : tnode;
@@ -368,6 +369,8 @@ implementation
       end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1015,6 +1018,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { slow simplifications }
         if (cs_opt_level2 in current_settings.optimizerswitches) then
           begin
@@ -1139,6 +1143,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { the comparison is might be expensive and the nodes are usually only
           equal if some previous optimizations were done so don't check
           this simplification always
@@ -1169,6 +1175,9 @@ implementation
                 end;
             end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1314,6 +1323,7 @@ implementation
         { use extended as default real type only when the x87 fpu is used }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$if defined(i386) or defined(i8086)}
         if not(current_settings.fputype=fpu_x87) then
           resultrealdef:=s64floattype
@@ -1330,6 +1340,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef i386}
         if not(current_settings.fputype=fpu_x87) then
 {$endif i386}
@@ -1342,6 +1354,9 @@ implementation
 {$endif x86}
           resultrealdef:=pbestrealtype^;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1628,8 +1643,13 @@ implementation
              { occupy an entire register                                   }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              { don't do it if either type is 64 bit (except for "and"),    }
              { since in that case we can't safely find a "common" type     }
+=======
+             { don't do it if either type is 64 bit, since in that case we }
+             { can't safely find a "common" type                           }
+>>>>>>> graemeg/cpstrnew
 =======
              { don't do it if either type is 64 bit, since in that case we }
              { can't safely find a "common" type                           }

@@ -55,6 +55,7 @@ var
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_NSDecimalNumber0: record
       case byte of
        0: (_anonbitfield_NSDecimalNumber0: cint);
@@ -62,11 +63,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     _anoninternstruct_NSDecimalNumber0: bitpacked record
       case byte of
        0: (_anonbitfield_NSDecimalNumber0: cint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -79,10 +85,16 @@ var
         _refs: 0..((1 shl 16)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
       );
       end;
     _mantissa: record end; { array of 0 elements in C, does not allocate space }
+=======
+      );
+      end;
+    _mantissa: cushort;
+>>>>>>> graemeg/cpstrnew
 =======
       );
       end;
@@ -135,6 +147,7 @@ var
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_NSDecimalNumber1: record
       case byte of
        0: (_anonbitfield_NSDecimalNumber1: cint);
@@ -142,11 +155,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     _anoninternstruct_NSDecimalNumber1: bitpacked record
       case byte of
        0: (_anonbitfield_NSDecimalNumber1: cint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -159,7 +177,10 @@ var
         _unused: 0..((1 shl 9)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

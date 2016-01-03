@@ -9,9 +9,12 @@ main=rtl
 loaders=
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar strings objpas macpas iso7185 extpas heaptrc getopts macostp macutils \
       unixutil dos cmem charset cpall ctypes
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 units=system strings objpas macpas iso7185 heaptrc getopts macostp macutils \

@@ -96,7 +96,10 @@ const
       {$linklib gthread-2.0}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$linklib pangocairo-1.0}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

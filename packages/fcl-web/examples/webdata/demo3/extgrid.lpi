@@ -3,6 +3,7 @@
   <ProjectOptions>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
@@ -23,6 +24,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     <Version Value="7"/>
     <General>
       <Flags>
@@ -39,6 +42,9 @@
       <ProjectVersion Value=""/>
     </VersionInfo>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -75,7 +81,11 @@
     </RequiredPackages>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="2">
+=======
+    <Units Count="16">
+>>>>>>> graemeg/cpstrnew
 =======
     <Units Count="16">
 >>>>>>> graemeg/cpstrnew
@@ -88,7 +98,10 @@
         <UnitName Value="extgrid"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <CursorPos X="24" Y="6"/>
@@ -97,6 +110,9 @@
         <UsageCount Value="21"/>
         <Loaded Value="True"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -109,12 +125,15 @@
         <UnitName Value="wmusers"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Unit1>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="10"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <CursorPos X="33" Y="60"/>
@@ -362,6 +381,9 @@
   <CompilerOptions>
     <Version Value="8"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -369,6 +391,7 @@
       <Filename Value="extgrid.cgi"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -382,6 +405,11 @@
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+=======
+      <IncludeFiles Value="$(ProjOutDir)/"/>
+    </SearchPaths>
+    <Other>
+>>>>>>> graemeg/cpstrnew
 =======
       <IncludeFiles Value="$(ProjOutDir)/"/>
     </SearchPaths>

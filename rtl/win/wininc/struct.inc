@@ -1562,6 +1562,7 @@ Const
      CPINFOEX   = CPINFOEXA;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      LPCPINFOEX = PCPINFOEXA;
      _cpinfoex  = CPINFOEXA;
      Tcpinfoex  = CPINFOEXA;
@@ -1575,6 +1576,8 @@ Const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
      LPCPINFOEX = ^CPINFOEXA;
      _cpinfoex  = CPINFOEXA;
      Tcpinfoex  = CPINFOEXA;
@@ -1586,6 +1589,9 @@ Const
      Tcpinfoex  = CPINFOEXW;
      Pcpinfoex  = ^CPINFOEXW;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4063,8 +4069,11 @@ Const
           dwContextId : DWORD_PTR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  // NOTE:  this is defined as DWORD in http://msdn.microsoft.com/en-us/library/windows/desktop/bb773313%28v=vs.85%29.asp
 // but mingw has it as DWORD_PTR, so we will use that
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -4922,6 +4931,9 @@ Const
 =======
           lpszIcon : LPCSTR;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5474,8 +5486,11 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      TEXTMETRICA = record
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
      TEXTMETRIC = record
@@ -5518,6 +5533,9 @@ Const
      TTEXTMETRICA = TEXTMETRICA;
      PTEXTMETRICA = ^TEXTMETRICA;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5553,6 +5571,7 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      {$IFNDEF UNICODE}
        LPTEXTMETRIC       = ^TEXTMETRICA;
@@ -5571,6 +5590,8 @@ Const
      {$ENDIF}
      {$PACKRECORDS C}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -5653,6 +5674,7 @@ Const
      TOUTLINETEXTMETRICW = OUTLINETEXTMETRICW;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      POUTLINETEXTMETRICW = LPOUTLINETEXTMETRICW;
 
      {$ifdef Unicode}
@@ -5672,6 +5694,8 @@ Const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
      POUTLINETEXTMETRICW = ^OUTLINETEXTMETRICW;
 
      {$ifdef Unicode}
@@ -5688,6 +5712,9 @@ Const
      OUTLINETEXTMETRIC   = OUTLINETEXTMETRICA;
      {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

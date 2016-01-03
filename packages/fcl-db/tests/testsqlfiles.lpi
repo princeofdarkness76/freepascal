@@ -3,7 +3,11 @@
   <ProjectOptions>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
+=======
+    <Version Value="8"/>
+>>>>>>> graemeg/cpstrnew
 =======
     <Version Value="8"/>
 >>>>>>> graemeg/cpstrnew
@@ -16,6 +20,7 @@
         <MainUnitHasTitleStatement Value="False"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
@@ -23,6 +28,8 @@
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <UseDefaultCompilerOptions Value="True"/>
@@ -35,6 +42,9 @@
       <Icon Value="0"/>
       <ActiveWindowIndexAtStart Value="0"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -47,11 +57,16 @@
       <CharSet Value=""/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="default" Default="True"/>
     </BuildModes>
+=======
+      <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
+    </VersionInfo>
+>>>>>>> graemeg/cpstrnew
 =======
       <StringTable Comments="" CompanyName="" FileDescription="" FileVersion="" InternalName="" LegalCopyright="" LegalTrademarks="" OriginalFilename="" ProductName="" ProductVersion=""/>
     </VersionInfo>
@@ -74,7 +89,11 @@
     </RunParams>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Units Count="4">
+=======
+    <Units Count="6">
+>>>>>>> graemeg/cpstrnew
 =======
     <Units Count="6">
 >>>>>>> graemeg/cpstrnew
@@ -85,6 +104,7 @@
         <Filename Value="testsqlfiles.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="testsqlfiles"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       </Unit0>
@@ -115,6 +135,8 @@
       <OtherUnitFiles Value="../src/sql"/>
       <UnitOutputDirectory Value="units/$(TargetCPU)-$(TargetOS)"/>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         <IsVisibleTab Value="True"/>
@@ -308,6 +330,9 @@
       <IncludeFiles Value="$(ProjOutDir)/"/>
       <OtherUnitFiles Value="/home/michael/fpc/packages/fcl-db/src/sql/"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

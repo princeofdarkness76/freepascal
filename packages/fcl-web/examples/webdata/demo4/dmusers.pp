@@ -7,7 +7,12 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, db, dbf, fpwebdata;
+=======
+  Classes, SysUtils, FileUtil, LResources, db, dbf,
+  fpwebdata;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, FileUtil, LResources, db, dbf,
   fpwebdata;
@@ -39,8 +44,12 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+uses dbugintf;
+>>>>>>> graemeg/cpstrnew
 =======
 uses dbugintf;
 >>>>>>> graemeg/cpstrnew
@@ -53,6 +62,10 @@ procedure TDataModule1.DataModuleCreate(Sender: TObject);
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  senddebug('Creating datamodule 1 '+InTToStr(Ord(WebDataProviderManager.Registering)));
+>>>>>>> graemeg/cpstrnew
 =======
   senddebug('Creating datamodule 1 '+InTToStr(Ord(WebDataProviderManager.Registering)));
 >>>>>>> graemeg/cpstrnew
@@ -72,6 +85,10 @@ end;
 initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  {$I dmusers.lrs}
+>>>>>>> graemeg/cpstrnew
 =======
   {$I dmusers.lrs}
 >>>>>>> graemeg/cpstrnew

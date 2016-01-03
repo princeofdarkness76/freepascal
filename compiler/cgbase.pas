@@ -106,6 +106,7 @@ interface
          {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          {$IFDEF AARCH64}
          ,addr_page
          ,addr_pageoffset
@@ -115,11 +116,16 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
          {$IFDEF AVR}
          ,addr_lo8
          ,addr_hi8
          {$ENDIF}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -406,8 +412,11 @@ interface
     function int_float_cgsize(const a: tcgint): tcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function tcgsize2str(cgsize: tcgsize):string;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

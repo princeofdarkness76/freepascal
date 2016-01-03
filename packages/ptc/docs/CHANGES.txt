@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 0.99.14
  - added new unit ptcmouse for use with ptcgraph & ptccrt applications. It is
    similar to the winmouse and msmouse units.
@@ -41,6 +42,8 @@
       relatively easy to fix. See the files INTF-CHANGES-0.99.12.txt and
       INTF-CHANGES-FAQ-0.99.12.txt for details.
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

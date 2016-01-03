@@ -1,6 +1,7 @@
 #
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -14,6 +15,8 @@ packages=rtl fpmkunit
 [install]
 fpcpackage=y
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 #   Makefile.fpc for Free Pascal ImLib 1.x Packages
@@ -39,6 +42,9 @@ sourcedir=src
 fpcpackage=y
 fpcsubdir=packages
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -46,6 +52,7 @@ fpcsubdir=packages
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [prerules]
@@ -136,12 +143,17 @@ endif
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 [shared]
 build=n
 
 [rules]
 .NOTPARALLEL:
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -281,6 +281,9 @@
      LPRECT = ^RECT;
      LPCRECT = ^RECT;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

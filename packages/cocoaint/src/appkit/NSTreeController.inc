@@ -50,6 +50,7 @@
     _selectionIndexPaths: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __treeControllerFlags: record
       case byte of
        0: (_anonbitfield_NSTreeController0: cuint);
@@ -57,11 +58,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __treeControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTreeController0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -80,7 +86,10 @@
         _reservedTreeController: 0..((1 shl 20)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

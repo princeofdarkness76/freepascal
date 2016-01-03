@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * This file is part of the Free Pascal run time library.
  * Copyright (c) 2011 by Thomas Schatzl,
@@ -15,6 +16,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -47,7 +50,10 @@ FPC_SHARED_LIB_START:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         ldr ip, =TC_SYSTEM_ISLIBRARY
@@ -55,6 +61,9 @@ FPC_SHARED_LIB_START:
         str a1, [ip]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -67,9 +76,13 @@ FPC_SHARED_LIB_START:
 _haltproc:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* reload exitcode */
         ldr r0,=operatingsystem_result
         ldr r0,[r0]
+=======
+        /* r0 contains exitcode */
+>>>>>>> graemeg/cpstrnew
 =======
         /* r0 contains exitcode */
 >>>>>>> graemeg/cpstrnew
@@ -84,9 +97,13 @@ _haltproc:
 _haltproc_eabi:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* reload exitcode */
         ldr r0,=operatingsystem_result
         ldr r0,[r0]
+=======
+        /* r0 contains exitcode */
+>>>>>>> graemeg/cpstrnew
 =======
         /* r0 contains exitcode */
 >>>>>>> graemeg/cpstrnew

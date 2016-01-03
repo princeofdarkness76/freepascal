@@ -212,6 +212,7 @@ type
    ENoWideStringSupport = Class(Exception);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ENoDynLibsSupport = class(Exception);
    ENotImplemented = class(Exception);
 
@@ -219,6 +220,9 @@ type
    EArgumentOutOfRangeException = class(EArgumentException);
 
    ENoConstructException = class(Exception);
+=======
+   ENotImplemented = class(Exception);
+>>>>>>> graemeg/cpstrnew
 =======
    ENotImplemented = class(Exception);
 >>>>>>> graemeg/cpstrnew
@@ -297,9 +301,12 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$macro on}
 {$define PathStr:=UnicodeString}
 {$define PathPChar:=PWideChar}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

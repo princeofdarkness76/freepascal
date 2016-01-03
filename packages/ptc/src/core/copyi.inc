@@ -2,7 +2,11 @@
     Free Pascal port of the OpenPTC C++ library.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -57,6 +61,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TPTCCopy.Request(ASource, ADestination: IPTCFormat);
 var
   hermes_source_format, hermes_destination_format: PHermesFormat;
@@ -66,6 +71,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TPTCCopy.Request(const ASource, ADestination: TPTCFormat);
 var
   hermes_source_format, hermes_destination_format: PHermesFormat;
@@ -73,6 +80,9 @@ begin
   hermes_source_format := @ASource.FFormat;
   hermes_destination_format := @ADestination.FFormat;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -81,6 +91,7 @@ begin
     raise TPTCError.Create('unsupported hermes pixel format conversion');
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TPTCCopy.Palette(ASource, ADestination: IPTCPalette);
@@ -94,6 +105,8 @@ procedure TPTCCopy.Copy(const ASourcePixels: Pointer; ASourceX, ASourceY,
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 procedure TPTCCopy.Palette(const ASource, ADestination: TPTCPalette);
 begin
   if not Hermes_ConverterPalette(FHandle, ASource.FHandle,
@@ -103,6 +116,9 @@ end;
 
 procedure TPTCCopy.copy(const ASourcePixels: Pointer; ASourceX, ASourceY,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

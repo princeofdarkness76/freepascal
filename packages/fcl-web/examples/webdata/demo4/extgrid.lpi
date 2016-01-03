@@ -3,10 +3,13 @@
   <ProjectOptions>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
     <General>
       <Flags>
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     <Version Value="7"/>
@@ -14,6 +17,9 @@
       <Flags>
         <SaveClosedFiles Value="False"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -23,6 +29,7 @@
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <UseXPManifest Value="True"/>
@@ -36,6 +43,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       <TargetFileExt Value=""/>
       <Icon Value="0"/>
       <UseXPManifest Value="True"/>
@@ -44,6 +53,9 @@
       <ProjectVersion Value=""/>
     </VersionInfo>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -110,7 +122,11 @@
   <CompilerOptions>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="10"/>
+=======
+    <Version Value="8"/>
+>>>>>>> graemeg/cpstrnew
 =======
     <Version Value="8"/>
 >>>>>>> graemeg/cpstrnew
@@ -121,6 +137,7 @@
       <Filename Value="extgrid.cgi"/>
     </Target>
     <SearchPaths>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <IncludeFiles Value="$(ProjOutDir)"/>
@@ -134,6 +151,11 @@
       <CompilerMessages>
         <UseMsgFile Value="True"/>
       </CompilerMessages>
+=======
+      <IncludeFiles Value="$(ProjOutDir)/"/>
+    </SearchPaths>
+    <Other>
+>>>>>>> graemeg/cpstrnew
 =======
       <IncludeFiles Value="$(ProjOutDir)/"/>
     </SearchPaths>

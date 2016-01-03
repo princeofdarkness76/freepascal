@@ -7,7 +7,11 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb; 
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb; 
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb; 
 >>>>>>> graemeg/cpstrnew
@@ -22,6 +26,10 @@ type
   TFPWebModule1 = class(TFPWebModule)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    procedure DataModuleCreate(Sender: TObject);
+>>>>>>> graemeg/cpstrnew
 =======
     procedure DataModuleCreate(Sender: TObject);
 >>>>>>> graemeg/cpstrnew
@@ -55,8 +63,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -67,7 +78,10 @@ Uses fpjson,jsonparser,fpjsonrpc,webjsonrpc, fpextdirect;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure TFPWebModule1.DataModuleCreate(Sender: TObject);
@@ -75,6 +89,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -160,7 +177,11 @@ procedure TFPWebModule1.TFPWebActions1Request(Sender: TObject;
   The handler is located on the owner module
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   (it is created run-time, though).
+=======
+  (it is created run-time, though)
+>>>>>>> graemeg/cpstrnew
 =======
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
@@ -221,9 +242,15 @@ procedure TFPWebModule1.TFPWebActions2Request(Sender: TObject;
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Demo 3. Use a dispatcher to dispatch the requests.
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
+=======
+  Demo 3. Use a dispatcher to dispatch the requests,
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> graemeg/cpstrnew
 =======
   Demo 3. Use a dispatcher to dispatch the requests,
   The handler is registered in the JSONFPCHandlerManager.
@@ -287,8 +314,13 @@ procedure TFPWebModule1.TFPWebActions3Request(Sender: TObject;
   Demo 4. Ext.Direct dispatcher
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
+=======
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> graemeg/cpstrnew
 =======
   The handler is registered in the JSONFPCHandlerManager.
   (it is created run-time, though)
@@ -351,8 +383,13 @@ procedure TFPWebModule1.TFPWebActions4Request(Sender: TObject;
   Demo 5. Using a TJSONRPCContentProducer.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
+=======
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> graemeg/cpstrnew
 =======
   The handler is registered in the JSONFPCHandlerManager.
   (it is created run-time, though)
@@ -397,9 +434,15 @@ procedure TFPWebModule1.TFPWebActions5Request(Sender: TObject;
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Demo 6. Creating an API response for Ext.Direct
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
+=======
+  Demo 6. creating an API response for Ext.Direct
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> graemeg/cpstrnew
 =======
   Demo 6. creating an API response for Ext.Direct
   The handler is registered in the JSONFPCHandlerManager.
@@ -440,7 +483,11 @@ procedure TFPWebModule1.TFPWebActions6Request(Sender: TObject;
   The handler is registered in the JSONFPCHandlerManager.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   (it is created run-time, though).
+=======
+  (it is created run-time, though)
+>>>>>>> graemeg/cpstrnew
 =======
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
@@ -470,6 +517,11 @@ end;
 initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  {$I wmdemo.lrs}
+
+>>>>>>> graemeg/cpstrnew
 =======
   {$I wmdemo.lrs}
 

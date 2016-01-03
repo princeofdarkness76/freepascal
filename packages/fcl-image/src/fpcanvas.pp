@@ -107,6 +107,9 @@ type
 =======
     property StrikeTrough : boolean index 8 read GetFlags write SetFlags;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -260,7 +263,11 @@ type
     FPenPos : TPoint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FClipRegion : TFPCustomRegion;
+=======
+    FClipRect : TRect;
+>>>>>>> graemeg/cpstrnew
 =======
     FClipRect : TRect;
 >>>>>>> graemeg/cpstrnew
@@ -367,6 +374,9 @@ type
     procedure FillRect(const ARect: TRect); 
     procedure FillRect(X1,Y1,X2,Y2: Integer);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -33,7 +33,10 @@ type
     procedure replacesamechild;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure insertbeforefirst;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -158,8 +161,13 @@ begin
   next := el.NextSibling;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AssertEqualsW('prev_name_before', 'child1', prev.NodeName);
   AssertEqualsW('next_name_before', 'child3', next.NodeName);
+=======
+  AssertEquals('prev_name_before', 'child1', prev.NodeName);
+  AssertEquals('next_name_before', 'child3', next.NodeName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('prev_name_before', 'child1', prev.NodeName);
   AssertEquals('next_name_before', 'child3', next.NodeName);
@@ -173,6 +181,7 @@ begin
   next := el.NextSibling;
   AssertNotNull('prev_after', prev);
   AssertNotNull('prev_after', next);  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   AssertEqualsW('prev_name_after', 'child1', prev.NodeName);
@@ -194,6 +203,10 @@ begin
   AssertEquals('prev', refchild.previoussibling, newchild);
   AssertEquals('next', newchild.nextsibling, refchild);
   AssertEquals('child', root.firstchild, newchild);
+=======
+  AssertEquals('prev_name_after', 'child1', prev.NodeName);
+  AssertEquals('next_name_after', 'child3', next.NodeName);
+>>>>>>> graemeg/cpstrnew
 =======
   AssertEquals('prev_name_after', 'child1', prev.NodeName);
   AssertEquals('next_name_after', 'child3', next.NodeName);
@@ -236,8 +249,13 @@ begin
   docElem := parsedDoc.documentElement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElem.localName);
   assertEqualsW('docElemNS', nsURI1, docElem.namespaceURI);
+=======
+  assertEquals('docElemLocalName', 'test', docElem.localName);
+  assertEquals('docElemNS', nsURI1, docElem.namespaceURI);
+>>>>>>> graemeg/cpstrnew
 =======
   assertEquals('docElemLocalName', 'test', docElem.localName);
   assertEquals('docElemNS', nsURI1, docElem.namespaceURI);
@@ -252,7 +270,11 @@ begin
   el := TDOMElement(list[0]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('ns2_nodeName', 'test', el.nodeName);
+=======
+  assertEquals('ns2_nodeName', 'test', el.nodeName);
+>>>>>>> graemeg/cpstrnew
 =======
   assertEquals('ns2_nodeName', 'test', el.nodeName);
 >>>>>>> graemeg/cpstrnew
@@ -289,8 +311,13 @@ begin
   docElem := parsedDoc.documentElement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElem.localName);
   assertEqualsW('docElemNS', nsURI1, docElem.namespaceURI);
+=======
+  assertEquals('docElemLocalName', 'test', docElem.localName);
+  assertEquals('docElemNS', nsURI1, docElem.namespaceURI);
+>>>>>>> graemeg/cpstrnew
 =======
   assertEquals('docElemLocalName', 'test', docElem.localName);
   assertEquals('docElemNS', nsURI1, docElem.namespaceURI);
@@ -305,7 +332,11 @@ begin
   el := TDOMElement(list[0]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('ns2_nodeName', 'b:test', el.nodeName);
+=======
+  assertEquals('ns2_nodeName', 'b:test', el.nodeName);
+>>>>>>> graemeg/cpstrnew
 =======
   assertEquals('ns2_nodeName', 'b:test', el.nodeName);
 >>>>>>> graemeg/cpstrnew
@@ -344,8 +375,13 @@ begin
   docElem := parsedDoc.documentElement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElem.localName);
   assertEqualsW('docElemNS', nsURI1, docElem.namespaceURI);
+=======
+  assertEquals('docElemLocalName', 'test', docElem.localName);
+  assertEquals('docElemNS', nsURI1, docElem.namespaceURI);
+>>>>>>> graemeg/cpstrnew
 =======
   assertEquals('docElemLocalName', 'test', docElem.localName);
   assertEquals('docElemNS', nsURI1, docElem.namespaceURI);
@@ -361,7 +397,11 @@ begin
   attr := el.GetAttributeNodeNS(nsURI1, 'attr');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('attr_nodeName', 'a:attr', attr.nodeName);
+=======
+  assertEquals('attr_nodeName', 'a:attr', attr.nodeName);
+>>>>>>> graemeg/cpstrnew
 =======
   assertEquals('attr_nodeName', 'a:attr', attr.nodeName);
 >>>>>>> graemeg/cpstrnew

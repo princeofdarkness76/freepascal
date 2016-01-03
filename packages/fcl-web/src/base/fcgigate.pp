@@ -484,7 +484,10 @@ begin
 {$IFDEF CGIGDEBUG}SendDebugFMT('Unknown record encountered : %d',[Rec^.ReqType]);{$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   EOR:=False;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -79,6 +79,9 @@ unit widestr;
     );
     function codepagebyname(const s : string) : tstringencoding;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -88,10 +91,14 @@ unit widestr;
     uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$if FPC_FULLVERSION>20700}
       { use only small codepage maps, others will be }
       { loaded on demand from -FM path               }
 
+=======
+      cp8859_1,cp850,cp437,cp1252,
+>>>>>>> graemeg/cpstrnew
 =======
       cp8859_1,cp850,cp437,cp1252,
 >>>>>>> graemeg/cpstrnew
@@ -271,9 +278,12 @@ unit widestr;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure unicode2ascii(r : pcompilerwidestring;p:pchar;cp : tstringencoding);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure unicode2ascii(r : pcompilerwidestring;p:pchar;cp : tstringencoding);
@@ -299,6 +309,9 @@ unit widestr;
       end;
 (*
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -484,6 +497,9 @@ unit widestr;
         if (p<>nil) then
           Result:=p^.cp; 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

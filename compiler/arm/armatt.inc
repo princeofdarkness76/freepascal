@@ -286,12 +286,15 @@
 'fmrrd',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'pop',
 'push',
 'sdiv',
 'udiv',
 'movt',
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 'asr',
@@ -304,6 +307,9 @@
 'ldrex',
 'strex',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -321,6 +327,7 @@
 'iteet',
 'ittet',
 'itett',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 'itttt',
@@ -389,6 +396,9 @@
 'frd',
 'lgn',
 'log'
+=======
+'itttt'
+>>>>>>> graemeg/cpstrnew
 =======
 'itttt'
 >>>>>>> graemeg/cpstrnew

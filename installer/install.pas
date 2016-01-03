@@ -95,12 +95,21 @@ program install;
   const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      installerversion='3.1.1';
      installercopyright='Copyright (c) 1993-2015 Florian Klaempfl';
 
 
      maxpacks=20;
      maxpackages=32;
+=======
+     installerversion='2.5.1';
+     installercopyright='Copyright (c) 1993-2011 Florian Klaempfl';
+
+
+     maxpacks=20;
+     maxpackages=40;
+>>>>>>> graemeg/cpstrnew
 =======
      installerversion='2.5.1';
      installercopyright='Copyright (c) 1993-2011 Florian Klaempfl';
@@ -930,10 +939,13 @@ program install;
           S := 'Extend your LIBPATH with ''' + S;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          System.Delete (S, Length (S) - 6, 7);
          S := S + 'dll''';
          R.Assign (2, YB - 15, 64, YB - 13);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          System.Delete (S, Length (S) - 3, 4);

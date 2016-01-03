@@ -63,6 +63,7 @@ unit charset;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     const
       BINARY_MAPPING_FILE_EXT = '.bcm';
 
@@ -93,6 +94,10 @@ unit charset;
     function loadunicodemapping(const cpname,f : string; cp :word) : punicodemap;
     procedure registermapping(p : punicodemap);
 >>>>>>> graemeg/cpstrnew
+=======
+    function loadunicodemapping(const cpname,f : string; cp :word) : punicodemap;
+    procedure registermapping(p : punicodemap);
+>>>>>>> graemeg/cpstrnew
     function getmap(const s : string) : punicodemap; 
     function getmap(cp : word) : punicodemap;   
     function mappingavailable(const s : string) : boolean;
@@ -110,6 +115,7 @@ unit charset;
     var
        mappings : punicodemap;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -294,6 +300,8 @@ unit charset;
         end;
     end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -676,6 +684,36 @@ unit charset;
               hp:=hp^.next;
            end;
          getmap:=nil;
+      end;////////
+
+    function getmap(cp : word) : punicodemap;
+
+      var
+         hp : punicodemap;
+
+      const
+         mapcache : word = 0;
+         mapcachep : punicodemap = nil;
+
+      begin
+         if (mapcache=cp) and assigned(mapcachep) and (mapcachep^.cp=cp) then
+           begin
+              getmap:=mapcachep;
+              exit;
+           end;
+         hp:=mappings;
+         while assigned(hp) do
+           begin
+              if hp^.cp=cp then
+                begin
+                   getmap:=hp;
+                   mapcache:=cp;
+                   mapcachep:=hp;
+                   exit;
+                end;
+              hp:=hp^.next;
+           end;
+         getmap:=nil;
       end;
 
     function mappingavailable(const s : string) : boolean;
@@ -712,6 +750,7 @@ unit charset;
          pd : ^tunicodechar;
 
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if (AAnsiStr=nil) or (AAnsiLen<=0) then
@@ -763,6 +802,8 @@ unit charset;
                       pd^:=UNKNOW_CHAR_W;
                   end
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          { at least map to '?' }

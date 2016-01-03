@@ -49,6 +49,7 @@
     _fPriority: cint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __fFlags: record
       case byte of
        0: (_anonbitfield_NSStatusItem0: cuint);
@@ -56,11 +57,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __fFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSStatusItem0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -73,7 +79,10 @@
         reserved: 0..((1 shl 23)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

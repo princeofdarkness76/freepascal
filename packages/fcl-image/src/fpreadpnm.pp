@@ -138,11 +138,15 @@ begin
   Img.SetSize(FWidth,FHeight);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Case FBitmapType of
     5,6 : FScanLineSize:=(FBitPP div 8) * FWidth;
   else  
     FScanLineSize:=FBitPP*((FWidth+7)shr 3);
   end;
+=======
+  FScanLineSize:=(FBitPP*FWidth+7) shr 3;  // (bits/line +7)
+>>>>>>> graemeg/cpstrnew
 =======
   FScanLineSize:=(FBitPP*FWidth+7) shr 3;  // (bits/line +7)
 >>>>>>> graemeg/cpstrnew

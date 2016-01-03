@@ -21,7 +21,10 @@ interface
 {$define HAS_CMDLINE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$define FPC_HAS_FEATURE_THREADING}
@@ -66,7 +69,10 @@ const
   FileNameCaseSensitive : boolean = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FileNameCasePreserving: boolean = true;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -250,7 +256,11 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if i<argc-1 then
+=======
+     if i<argc then
+>>>>>>> graemeg/cpstrnew
 =======
      if i<argc then
 >>>>>>> graemeg/cpstrnew
@@ -270,6 +280,10 @@ end;
 function get_cmdline:Pchar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -287,6 +301,7 @@ procedure SysInitStdIO;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   OpenStdIO(Input,fmInput,StdInputHandle);
   OpenStdIO(Output,fmOutput,StdOutputHandle);
   OpenStdIO(ErrOutput,fmOutput,StdErrorHandle);
@@ -295,12 +310,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   OpenStdIO(Input,fmInput,0);
   OpenStdIO(Output,fmOutput,0);
   OpenStdIO(ErrOutput,fmOutput,0);
   OpenStdIO(StdOut,fmOutput,0);
   OpenStdIO(StdErr,fmOutput,0);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -329,6 +349,10 @@ begin
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  
+>>>>>>> graemeg/cpstrnew
 =======
   
 >>>>>>> graemeg/cpstrnew

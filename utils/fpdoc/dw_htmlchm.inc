@@ -54,8 +54,11 @@ begin
     if not FileExists(FCSSFile) Then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Raise Exception.CreateFmt('Can''t find CSS file "%S"',[FCSSFILE]);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       begin
@@ -63,6 +66,9 @@ begin
         halt(1);
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

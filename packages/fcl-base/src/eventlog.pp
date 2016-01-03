@@ -75,8 +75,11 @@ Type
     Function UnRegisterMessageFile : Boolean; virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Pause;
     Procedure Resume;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -156,6 +159,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Procedure TEventLog.Pause;
 
@@ -170,6 +174,8 @@ begin
 end;
 
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -289,8 +295,11 @@ begin
   FStream:=TFileStream.Create(FFileName,fFileFlags);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if fAppendContent then
     FStream.Seek(0,soFromEnd);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

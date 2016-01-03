@@ -36,6 +36,7 @@ var
 procedure Hermes_Factory_Init;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF I386_ASSEMBLER}
 var
   res: Integer = 0;
@@ -44,11 +45,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 var
   res: Integer;
 begin
   res := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -66,9 +72,12 @@ begin
   {$ENDIF I386_ASSEMBLER}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF X86_64_ASSEMBLER}
     Processor := Processor or PROC_X86_64;
   {$ENDIF X86_64_ASSEMBLER}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -284,9 +293,13 @@ var
   found: Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF I386_ASSEMBLER}
   asm_found: Integer;
 {$ENDIF I386_ASSEMBLER}
+=======
+  asm_found: Integer;
+>>>>>>> graemeg/cpstrnew
 =======
   asm_found: Integer;
 >>>>>>> graemeg/cpstrnew

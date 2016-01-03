@@ -62,6 +62,9 @@ type
      WindowWidth : longint;
      TBreakNumber : longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -76,7 +79,10 @@ type
     procedure SetExe(const exefn:string);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     procedure SetTBreak(tbreakstring : string);
@@ -366,7 +372,11 @@ uses
 {$endif DOS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpredir,
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -654,8 +664,12 @@ procedure UpdateDebugViews;
 {$ifdef SUPPORT_REMOTE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
+=======
+     if isRemoteDebugging then
+>>>>>>> graemeg/cpstrnew
 =======
      if isRemoteDebugging then
 >>>>>>> graemeg/cpstrnew
@@ -681,8 +695,12 @@ procedure UpdateDebugViews;
 {$ifdef SUPPORT_REMOTE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
+=======
+     if isRemoteDebugging then
+>>>>>>> graemeg/cpstrnew
 =======
      if isRemoteDebugging then
 >>>>>>> graemeg/cpstrnew
@@ -734,9 +752,12 @@ begin
          (Errno : longint;addr,frame : longint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          [public,alias:'FPC_BREAK_ERROR'];}
       FPCBreakErrorNumber:=BreakpointInsert('FPC_BREAK_ERROR', []);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
          [public,alias:'FPC_BREAK_ERROR'];
@@ -773,7 +794,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -997,6 +1021,9 @@ begin
       s:=IDEApp.GetRemoteExecString;
       MessageBox(#3'Start in remote'#13#3+s,nil,mfOKbutton);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1176,6 +1203,7 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_RAW_OUTPUT}
       If StrLen(GetRaw)>0 then
         begin
@@ -1184,6 +1212,8 @@ begin
             gdbrawbuf.reset;
         end;
 {$endif GDB_RAW_OUTPUT}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

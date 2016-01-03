@@ -38,6 +38,7 @@ Function UpCase(const s : WideString) : WideString;
 
 Procedure Insert (Const Source : WideString; Var S : WideString; Index : SizeInt);
 Procedure Delete (Var S : WideString; Index,Size: SizeInt);
+<<<<<<< HEAD
 Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_widestr_pwidechar{$else}SetString{$endif}(Out S : WideString; Buf : PWideChar; Len : SizeInt); {$ifdef FPC_HAS_CPSTRING} compilerproc; {$endif FPC_HAS_CPSTRING}
 Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_widestr_pansichar{$else}SetString{$endif}(Out S : WideString; Buf : PChar; Len : SizeInt); {$ifdef FPC_HAS_CPSTRING} compilerproc; {$endif FPC_HAS_CPSTRING}
 
@@ -47,6 +48,12 @@ Procedure {$ifdef FPC_HAS_CPSTRING}fpc_setstring_widestr_pansichar{$else}SetStri
 procedure DefaultWide2AnsiMove(source:pwidechar;var dest:ansistring;cp : TSystemCodePage;len:SizeInt);
 >>>>>>> graemeg/cpstrnew
 =======
+procedure DefaultWide2AnsiMove(source:pwidechar;var dest:ansistring;cp : TSystemCodePage;len:SizeInt);
+>>>>>>> graemeg/cpstrnew
+=======
+Procedure SetString (Out S : WideString; Buf : PWideChar; Len : SizeInt);
+Procedure SetString (Out S : WideString; Buf : PChar; Len : SizeInt);
+
 procedure DefaultWide2AnsiMove(source:pwidechar;var dest:ansistring;cp : TSystemCodePage;len:SizeInt);
 >>>>>>> graemeg/cpstrnew
 procedure DefaultAnsi2WideMove(source:pchar;cp : TSystemCodePage;var dest:widestring;len:SizeInt);

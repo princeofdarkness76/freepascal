@@ -91,7 +91,10 @@ type
     FConnection: TLConnection;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FMSGBufferSize: integer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -165,7 +168,10 @@ type
     property Session: TLSession read FSession;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property MsgBufferSize : Integer Read FMsgBufferSize Write FMsgBufferSize;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -486,6 +492,7 @@ begin
   end;
   
   Result := True;
+<<<<<<< HEAD
 end;
 
 procedure TLSocket.Disconnect(const Forced: Boolean = True);
@@ -498,6 +505,20 @@ end;
 
 function TLSocket.LogError(const msg: string; const ernum: Integer): Boolean;
 begin
+=======
+end;
+
+procedure TLSocket.Disconnect(const Forced: Boolean = True);
+begin
+  if Forced then
+    HardDisconnect
+  else
+    SoftDisconnect;
+end;
+
+function TLSocket.LogError(const msg: string; const ernum: Integer): Boolean;
+begin
+>>>>>>> graemeg/cpstrnew
   Result := False;
   if Assigned(FOnError) then
     if ernum > 0 then
@@ -588,6 +609,7 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -666,6 +688,50 @@ begin
   end;
 end;
 
+=======
+end;
+
+procedure TLSocket.HardDisconnect(const NoShutdown: Boolean = False);
+var
+  NeedsShutdown: Boolean;
+begin
+  NeedsShutdown := (FConnectionStatus = scConnected) and (FSocketType = SOCK_STREAM)
+               and (not (ssServerSocket in FSocketState));
+  if NoShutdown then
+    NeedsShutdown := False;
+
+  FDispose := True;
+  FSocketState := FSocketState + [ssCanSend, ssCanReceive];
+  FIgnoreWrite := True;
+  if FConnectionStatus in [scConnected, scConnecting] then begin
+    FConnectionStatus := scNone;
+    if NeedsShutdown then
+      if fpShutDown(FHandle, SHUT_RDWR) <> 0 then
+        LogError('Shutdown error', LSocketError);
+
+    if Assigned(FEventer) then
+      FEventer.UnregisterHandle(Self);
+
+    if CloseSocket(FHandle) <> 0 then
+      LogError('Closesocket error', LSocketError);
+    FHandle := INVALID_SOCKET;
+  end;
+end;
+
+procedure TLSocket.SoftDisconnect;
+begin
+  if FConnectionStatus in [scConnected, scConnecting] then begin
+    if  (FConnectionStatus = scConnected) and (not (ssServerSocket in FSocketState))
+    and (FSocketType = SOCK_STREAM) then begin
+      FConnectionStatus := scDisconnecting;
+      if fpShutDown(FHandle, SHUT_WR) <> 0 then
+        LogError('Shutdown error', LSocketError);
+    end else
+      HardDisconnect; // UDP or ServerSocket
+  end;
+end;
+
+>>>>>>> graemeg/cpstrnew
 {procedure TLSocket.SetNoDelay(const aValue: Boolean);
 begin
   if FHandle >= 0 then // we already set our socket
@@ -730,6 +796,7 @@ begin
     LAF_INET  : Result := psockaddr(@FAddress.IPv4);
     LAF_INET6 : Result := psockaddr(@FAddress.IPv6);
 <<<<<<< HEAD
+<<<<<<< HEAD
   else
     raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
   end;
@@ -743,6 +810,21 @@ begin
   else
     raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
   end;
+=======
+  else
+    raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
+  end;
+end;
+
+function TLSocket.GetIPAddressLength: TSocklen;
+begin
+  case FSocketNet of
+    LAF_INET  : Result := SizeOf(FAddress.IPv4);
+    LAF_INET6 : Result := SizeOf(FAddress.IPv6);
+  else
+    raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
+  end;
+>>>>>>> graemeg/cpstrnew
 =======
   else
     raise Exception.Create('Unknown socket network type (not IPv4 or IPv6)');
@@ -797,6 +879,7 @@ begin
     FillAddressInfo(FPeerAddress, FSocketNet, LADDR_BR, aPort);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if FMSGBufferSize>0 then
       begin
       if fpsetsockopt(Handle, SOL_SOCKET, SO_RCVBUF, @FMSGBufferSize, Sizeof(integer))
@@ -807,6 +890,8 @@ begin
         Exit(Bail('SetSockOpt error setting snd buffer size', LSocketError));
       end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -823,7 +908,11 @@ begin
     Result := Sockets.fpSend(FHandle, @aData, aSize, LMSG)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else 
+=======
+  else
+>>>>>>> graemeg/cpstrnew
 =======
   else
 >>>>>>> graemeg/cpstrnew
@@ -899,7 +988,10 @@ begin
     Result := true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -937,7 +1029,11 @@ begin
     Disconnect(True);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> graemeg/cpstrnew
 =======
     
 >>>>>>> graemeg/cpstrnew
@@ -1718,6 +1814,9 @@ end;
 
 //*******************************TLSession*********************************
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 procedure TLSession.RegisterWithComponent(aConnection: TLConnection);
 begin
@@ -1729,6 +1828,9 @@ procedure TLSession.InitHandle(aHandle: TLHandle);
 begin
   TLSocket(aHandle).FSession := Self;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure TLSession.ReceiveEvent(aHandle: TLHandle);
@@ -1739,6 +1841,7 @@ end;
 
 procedure TLSession.SendEvent(aHandle: TLHandle);
 begin
+<<<<<<< HEAD
 =======
 
 procedure TLSession.RegisterWithComponent(aConnection: TLConnection);
@@ -1883,6 +1986,62 @@ end;
 
 >>>>>>> graemeg/cpstrnew
 =======
+end;
+
+>>>>>>> graemeg/cpstrnew
+=======
+  FActive := True;
+  CallSendEvent(aHandle);
+end;
+
+procedure TLSession.ErrorEvent(aHandle: TLHandle; const msg: string);
+begin
+  FActive := True;
+  CallErrorEvent(aHandle, msg);
+end;
+
+procedure TLSession.ConnectEvent(aHandle: TLHandle);
+begin
+  FActive := True;
+  CallConnectEvent(aHandle);
+end;
+
+procedure TLSession.AcceptEvent(aHandle: TLHandle);
+begin
+  FActive := True;
+  CallAcceptEvent(aHandle);
+end;
+
+procedure TLSession.DisconnectEvent(aHandle: TLHandle);
+begin
+  FActive := True;
+  CallDisconnectEvent(aHandle);
+end;
+
+procedure TLSession.CallReceiveEvent(aHandle: TLHandle); inline;
+begin
+  TLSocket(aHandle).FConnection.ReceiveEvent(TLSocket(aHandle));
+end;
+
+procedure TLSession.CallSendEvent(aHandle: TLHandle); inline;
+begin
+  TLSocket(aHandle).FConnection.CanSendEvent(TLSocket(aHandle));
+end;
+
+procedure TLSession.CallErrorEvent(aHandle: TLHandle; const msg: string);
+  inline;
+begin
+  TLSocket(aHandle).FConnection.ErrorEvent(TLSocket(aHandle), msg);
+end;
+
+procedure TLSession.CallConnectEvent(aHandle: TLHandle); inline;
+begin
+  TLSocket(aHandle).FConnection.ConnectEvent(TLSocket(aHandle));
+end;
+
+procedure TLSession.CallAcceptEvent(aHandle: TLHandle); inline;
+begin
+  TLSocket(aHandle).FConnection.AcceptEvent(TLSocket(aHandle));
 end;
 
 >>>>>>> graemeg/cpstrnew

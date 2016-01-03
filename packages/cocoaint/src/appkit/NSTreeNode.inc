@@ -50,6 +50,7 @@
     _parentNode: NSTreeNode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __NSTreeNodeFlags: record
       case byte of
        0: (_anonbitfield_NSTreeNode0: cuint);
@@ -60,6 +61,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __NSTreeNodeFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTreeNode0: cuint);
@@ -67,6 +70,9 @@
         ignoreObserving: 0..1;
         reserved: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

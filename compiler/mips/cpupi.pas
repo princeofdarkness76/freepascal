@@ -29,6 +29,7 @@ interface
     cutils,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     globtype,symdef,
     procinfo,cpuinfo,cpupara,
     psub,aasmdata,cgutils;
@@ -135,6 +136,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procinfo,cpuinfo,
     psub;
 
@@ -156,6 +159,9 @@ implementation
         inherited create(aparent);
         maxpushedparasize:=0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -164,6 +170,7 @@ implementation
 
     function TMIPSProcInfo.calc_stackframe_size:longint;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         result:=maxpushedparasize;
@@ -199,6 +206,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         {
           Stackframe layout:
           %fp
@@ -219,6 +228,9 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

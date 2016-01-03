@@ -311,12 +311,15 @@ class ObjectivePParser extends ObjectivePParserBase {
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// create a variant normal record with a first anonymous field of type
 	// first_bitpacked_type so that the compiler may correctly align it
 	// the actual bitpacked record is embedded inside
 	function BitPackedForceAlignment($first_bitpacked_type, $firstindent, $otherindents) {
 		$result = $firstindent . "case byte of\n" . $otherindents ."0: (" . $this->GetAnonBitFieldName() . ": $first_bitpacked_type);\n" . $otherindents . "1: (data: bitpacked record";
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	// create a variant record with a first anonymous field of type
@@ -326,6 +329,9 @@ class ObjectivePParser extends ObjectivePParserBase {
 	function BitPackedForceAlignment($first_bitpacked_type, $firstindent, $otherindents) {
 		$result = $firstindent . "case byte of\n" . $otherindents ."0: (" . $this->GetAnonBitFieldName() . ": $first_bitpacked_type);\n" . $otherindents . "1: (";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -596,6 +602,7 @@ class ObjectivePParser extends ObjectivePParserBase {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (eregi("\[([^]]+)\];", $line, $array_size)) {
 			if ($array_size[1] == "")
 				$io_field = "$name: array[0..0] of $type; { dynamically expanding, 0 elements in C }";
@@ -607,12 +614,17 @@ class ObjectivePParser extends ObjectivePParserBase {
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 		if (eregi("\[([0-9]+)\];", $line, $array_size)) {
 			$length = (int)$array_size[1] - 1;
 			if ($length > 0) {
 				$io_field = "    $name: array[0..$length] of $type;";
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -627,7 +639,11 @@ class ObjectivePParser extends ObjectivePParserBase {
 		
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if (preg_match("!:([0-9]+)\s*(?:__attribute__\(\([^)]*\)\))?\s*;\s*$!", $field, $bitpack)) {
+=======
+		if (preg_match("!:([0-9]+)\s*(?:__attribute__\(\([^)]*\)\))?\s*;$!", $field, $bitpack)) {
+>>>>>>> graemeg/cpstrnew
 =======
 		if (preg_match("!:([0-9]+)\s*(?:__attribute__\(\([^)]*\)\))?\s*;$!", $field, $bitpack)) {
 >>>>>>> graemeg/cpstrnew
@@ -2464,7 +2480,11 @@ class ObjectivePParser extends ObjectivePParserBase {
 	// Parses $line into the combined $struct_fields string
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	function ParseStructFields ($line, $protected_keywords, &$struct_fields, &$any_field_parsed, &$found_any_bitpacked, &$all_bitpacked, &$first_bitpacked_type) {
+=======
+	function ParseStructFields ($line, $protected_keywords, &$struct_fields, &$found_any_bitpacked, &$all_bitpacked, &$first_bitpacked_type) {
+>>>>>>> graemeg/cpstrnew
 =======
 	function ParseStructFields ($line, $protected_keywords, &$struct_fields, &$found_any_bitpacked, &$all_bitpacked, &$first_bitpacked_type) {
 >>>>>>> graemeg/cpstrnew
@@ -2484,10 +2504,16 @@ class ObjectivePParser extends ObjectivePParserBase {
 				$found_any_bitpacked |= $field_bitpacked;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				if (!$any_field_parsed) {
 					$all_bitpacked = $field_bitpacked;
 					$first_bitpacked_type = $bitpacked_real_type;
 					$any_field_parsed=true;
+=======
+				if ($struct_fields == "") {
+					$all_bitpacked = $field_bitpacked;
+					$first_bitpacked_type = $bitpacked_real_type;
+>>>>>>> graemeg/cpstrnew
 =======
 				if ($struct_fields == "") {
 					$all_bitpacked = $field_bitpacked;
@@ -2565,7 +2591,10 @@ class ObjectivePParser extends ObjectivePParserBase {
 			$file_name = substr($file, (strripos($file, "/")) + 1, strlen($file));	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			$any_field_parsed = false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2609,7 +2638,11 @@ class ObjectivePParser extends ObjectivePParserBase {
 					// collect fields
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					$this->ParseStructFields($line, array(), $struct_fields, $any_field_parsed, $any_field_bitpacked, $all_fields_bitpacked, $first_bitpacked_type);
+=======
+					$this->ParseStructFields($line, array(), $struct_fields, $any_field_bitpacked, $all_fields_bitpacked, $first_bitpacked_type);
+>>>>>>> graemeg/cpstrnew
 =======
 					$this->ParseStructFields($line, array(), $struct_fields, $any_field_bitpacked, $all_fields_bitpacked, $first_bitpacked_type);
 >>>>>>> graemeg/cpstrnew
@@ -2631,12 +2664,15 @@ class ObjectivePParser extends ObjectivePParserBase {
 						
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$struct = "$struct_comment$struct_name = $this->record_keyword\n";
 						if ($any_field_bitpacked) {
 							$struct .= $this->BitPackedForceAlignment($first_bitpacked_type, "    ", "    ") . "\n";
 							$struct_fields = str_replace("    ","          ",$struct_fields);
 							$struct_fields .= "         end;\n       );\n";
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 						if ($all_fields_bitpacked) {
@@ -2647,6 +2683,9 @@ class ObjectivePParser extends ObjectivePParserBase {
 						} else {
 							$struct = "$struct_comment$struct_name = $this->record_keyword\n";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2665,7 +2704,10 @@ class ObjectivePParser extends ObjectivePParserBase {
 						$got_struct = false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$any_field_parsed = false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2692,7 +2734,11 @@ class ObjectivePParser extends ObjectivePParserBase {
 							$field = trim($field);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 							$this->ParseStructFields($field.";", array(), $single_struct_fields, $any_field_parsed, $any_field_bitpacked, $all_fields_bitpacked, $first_bitpacked_type);
+=======
+							$this->ParseStructFields($field.";", array(), $single_struct_fields, $any_field_bitpacked, $all_fields_bitpacked, $first_bitpacked_type);
+>>>>>>> graemeg/cpstrnew
 =======
 							$this->ParseStructFields($field.";", array(), $single_struct_fields, $any_field_bitpacked, $all_fields_bitpacked, $first_bitpacked_type);
 >>>>>>> graemeg/cpstrnew
@@ -2705,6 +2751,7 @@ class ObjectivePParser extends ObjectivePParserBase {
 						$struct = "$comment\n"."$struct_name = ";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$struct .= "$this->record_keyword\n";
 						if ($any_field_bitpacked) {
 							$struct .= $this->BitPackedForceAlignment($first_bitpacked_type, "    ", "    ") . "\n";
@@ -2714,6 +2761,8 @@ class ObjectivePParser extends ObjectivePParserBase {
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 						if ($all_fields_bitpacked) {
 							$struct .= "$this->bitpacked_record_keyword\n";
 							$struct .= $this->BitPackedForceAlignment($first_bitpacked_type, "    ", "    ") . "\n";
@@ -2721,6 +2770,9 @@ class ObjectivePParser extends ObjectivePParserBase {
 							$single_struct_fields .= "       );\n";
 						}	else $struct .= "$this->record_keyword\n";
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2733,7 +2785,10 @@ class ObjectivePParser extends ObjectivePParserBase {
 						$this->dump["global_structs"][] = $struct_name;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$any_field_parsed = false;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2754,7 +2809,10 @@ class ObjectivePParser extends ObjectivePParserBase {
 						$got_struct = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						print("Parsing struct $struct_name\n");
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3446,12 +3504,15 @@ class ObjectivePParser extends ObjectivePParserBase {
 						// print inline-record type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						$this->dump[$file_name]["classes"][$current]["ivars"][] = $struct["name"].": ".$this->record_keyword;
 						if ($struct["bitpacked"]) {
 							$this->dump[$file_name]["classes"][$current]["ivars"][] = $this->BitPackedForceAlignment($struct["bitpacked_first_type"], "  ", "       ");
 						}
 						
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 						if ($struct["bitpacked"]) {
@@ -3463,6 +3524,9 @@ class ObjectivePParser extends ObjectivePParserBase {
 						
 						
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3472,10 +3536,14 @@ class ObjectivePParser extends ObjectivePParserBase {
 						}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						if ($struct["bitpacked"]) {
 							$this->dump[$file_name]["classes"][$current]["ivars"][] = "   end;";
 							$this->dump[$file_name]["classes"][$current]["ivars"][] = "  );";
 						}
+=======
+						if ($struct["bitpacked"]) $this->dump[$file_name]["classes"][$current]["ivars"][] = "  );";
+>>>>>>> graemeg/cpstrnew
 =======
 						if ($struct["bitpacked"]) $this->dump[$file_name]["classes"][$current]["ivars"][] = "  );";
 >>>>>>> graemeg/cpstrnew
@@ -3503,7 +3571,11 @@ class ObjectivePParser extends ObjectivePParserBase {
 					// instance var section terminated.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					if (preg_match("!^\s*}\s*[;]*$!", $line)) {
+=======
+					if (eregi("^\s*}\s*[;]*$", $line)) {
+>>>>>>> graemeg/cpstrnew
 =======
 					if (eregi("^\s*}\s*[;]*$", $line)) {
 >>>>>>> graemeg/cpstrnew
@@ -3521,7 +3593,11 @@ class ObjectivePParser extends ObjectivePParserBase {
 					if (!$this->dump[$file_name]["classes"][$current]["ivars"]) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						if (preg_match("!{\s*$!", $line)) {
+=======
+						if (eregi("{\s*$", $line)) {
+>>>>>>> graemeg/cpstrnew
 =======
 						if (eregi("{\s*$", $line)) {
 >>>>>>> graemeg/cpstrnew
@@ -3610,7 +3686,11 @@ class ObjectivePParser extends ObjectivePParserBase {
 					// check for instance variable section
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					if (preg_match("!{\s*$!", $line)) $got_instance_vars = true;
+=======
+					if (eregi("{\s*$", $line)) $got_instance_vars = true;
+>>>>>>> graemeg/cpstrnew
 =======
 					if (eregi("{\s*$", $line)) $got_instance_vars = true;
 >>>>>>> graemeg/cpstrnew

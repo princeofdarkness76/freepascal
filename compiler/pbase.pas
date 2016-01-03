@@ -265,6 +265,9 @@ implementation
       var
         hmodule: tmodule;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -371,6 +374,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function try_consume_unitsym_no_specialize(var srsym:tsym;var srsymtable:TSymtable;var tokentoconsume:ttoken;consume_id:boolean):boolean;
       var
         dummy: Boolean;
@@ -378,6 +382,8 @@ implementation
         result:=try_consume_unitsym(srsym,srsymtable,tokentoconsume,consume_id,false,dummy);
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -442,6 +448,7 @@ implementation
             begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if not assigned(deprecatedmsg) then
                 begin
                   if token=_CSTRING then
@@ -452,6 +459,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               if deprecatedmsg<>nil then
                 internalerror(200910181);
               if token=_CSTRING then
@@ -459,6 +468,9 @@ implementation
               else
                 deprecatedmsg:=stringdup(pattern);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

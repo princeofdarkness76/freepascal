@@ -43,6 +43,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
   B_RAW_DEVICE_DATA_IN = $01;
   B_RAW_DEVICE_COMMAND = 0;
@@ -61,6 +62,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 function USBStorage_Initialize(): cint32; cdecl; external;
 
@@ -73,8 +76,12 @@ function USBStorage_MountLUN(dev: pusbstorage_handle; lun: cuint8): cint32; cdec
 function USBStorage_Suspend(dev: pusbstorage_handle): cint32; cdecl; external;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function USBStorage_IsDVD(): cint32; cdecl; external;
 function USBStorage_ioctl(request: cint; args: array of const): cint; cdecl; external;
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew

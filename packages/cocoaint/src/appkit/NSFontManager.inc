@@ -86,6 +86,7 @@ const
     _selFont: NSFont;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __fmFlags: record
       case byte of
        0: (_anonbitfield_NSFontManager0: cuint);
@@ -93,11 +94,16 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __fmFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSFontManager0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -107,7 +113,10 @@ const
         _RESERVED: 0..((1 shl 12)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

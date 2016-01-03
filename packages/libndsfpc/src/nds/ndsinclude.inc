@@ -2,7 +2,10 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include libversion.inc} 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -24,7 +27,11 @@
 {$include fifomessages.inc} 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include input.inc} 
+=======
+{$include input.inc} // testing...
+>>>>>>> graemeg/cpstrnew
 =======
 {$include input.inc} // testing...
 >>>>>>> graemeg/cpstrnew
@@ -60,8 +67,11 @@
   {$include arm9/piano.inc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm9/dldi.inc}
   {$include arm9/window.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -76,7 +86,10 @@
   {$include arm7/serial.inc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm7/sdmmc.inc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

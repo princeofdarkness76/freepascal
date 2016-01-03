@@ -48,12 +48,16 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tforeachprocmethod = ({ children are processed before the parent node }
                           pm_preprocess,
                           { children are processed after the parent node }
                           pm_postprocess,
                           { children are processed after the parent node and
                             then the parent node is processed again }
+=======
+    tforeachprocmethod = (pm_preprocess,pm_postprocess,
+>>>>>>> graemeg/cpstrnew
 =======
     tforeachprocmethod = (pm_preprocess,pm_postprocess,
 >>>>>>> graemeg/cpstrnew
@@ -96,7 +100,10 @@ interface
     procedure doinlinesimplify(var n : tnode);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -110,6 +117,10 @@ interface
     function create_simplified_ord_const(value: tconstexprint; def: tdef; forinline: boolean): tnode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -127,10 +138,13 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { checks whether sym is a static field and if so, translates the access
       to the appropriate node tree }
     function handle_staticfield_access(sym: tsym; var p1: tnode): boolean;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -145,6 +159,7 @@ interface
       represented by n }
     function genloadfield(n: tnode; const fieldname: string): tnode;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     { returns true, if the tree given might have side effects }
@@ -178,6 +193,8 @@ interface
 
     { excludes the flags passed in nf from the node tree passed }
     procedure node_reset_flags(p : tnode;nf : tnodeflags);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -227,6 +244,9 @@ implementation
 =======
             result := foreachnode(traisenode(n).third,f,arg) or result;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -331,6 +351,9 @@ implementation
 =======
             result := foreachnodestatic(traisenode(n).third,f,arg) or result;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -608,8 +631,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function load_vmt_for_self_node(self_node: tnode): tnode;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function call_fail_node:tnode;
@@ -829,6 +855,9 @@ implementation
           end
         else if is_interfacecom_or_dispinterface(p.resultdef) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -917,11 +946,16 @@ implementation
                 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if is_implicit_pointer_object_type(tunarynode(p).left.resultdef) or
                     is_bitpacked_access(p) then
                     inc(result,2)
                   else if tstoreddef(p.resultdef).is_intregable then
                     inc(result,1);
+=======
+                  if is_implicit_pointer_object_type(tunarynode(p).left.resultdef) then
+                    inc(result,2);
+>>>>>>> graemeg/cpstrnew
 =======
                   if is_implicit_pointer_object_type(tunarynode(p).left.resultdef) then
                     inc(result,2);
@@ -1018,6 +1052,7 @@ implementation
                 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               exitn:
                 begin
                   inc(result,2);
@@ -1029,6 +1064,8 @@ implementation
                   p:=texitnode(p).left;
                 end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               stringconstn,
@@ -1069,6 +1106,9 @@ implementation
                     in_sqrt_real,
                     in_ln_real,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1239,6 +1279,9 @@ implementation
            not (lnf_simplify_processing in tloopnode(n).loopflags) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           begin
@@ -1256,6 +1299,7 @@ implementation
         else
           begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           begin
             // Try to simplify condition
@@ -1271,6 +1315,8 @@ implementation
           end
         else
           begin
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1314,7 +1360,10 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     function getpropaccesslist(propsym:tpropertysym; pap:tpropaccesslisttypes;out propaccesslist:tpropaccesslist):boolean;
@@ -1337,6 +1386,9 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1448,6 +1500,7 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function handle_staticfield_access(sym: tsym; var p1: tnode): boolean;
 
       function handle_generic_staticfield_access:boolean;
@@ -1514,6 +1567,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     function is_bitpacked_access(n: tnode): boolean;
       begin
         case n.nodetype of
@@ -1525,8 +1580,12 @@ implementation
                 isn't }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               (tvecnode(n).left.resultdef.typ = arraydef) and
               (tarraydef(tvecnode(n).left.resultdef).elementdef.typ in [orddef,enumdef]) and
+=======
+              (tvecnode(n).left.resultdef.typ in [orddef,enumdef]) and
+>>>>>>> graemeg/cpstrnew
 =======
               (tvecnode(n).left.resultdef.typ in [orddef,enumdef]) and
 >>>>>>> graemeg/cpstrnew
@@ -1590,6 +1649,7 @@ implementation
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         end;
       end;
 
@@ -1645,6 +1705,8 @@ implementation
           typeconvn:
             if ttypeconvnode(n^).retains_value_location then
               result:=actualtargetnode(@ttypeconvnode(n^).left);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

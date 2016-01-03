@@ -108,6 +108,7 @@ Resourcestring
   SErrCircularDataSourceReferenceNotAllowed = 'Circular datasource references are not allowed.';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SCommitting               = 'Committing transaction';
   SRollingBack              = 'Rolling back transaction';
   SCommitRetaining          = 'Commit and retaining transaction';
@@ -129,11 +130,16 @@ Resourcestring
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   SCommitting              = 'Committing transaction';
   SRollingBack             = 'Rolling back transaction';
   SCommitRetaining         = 'Commit and retaining transaction';
   SRollBackRetaining       = 'Rollback and retaining transaction';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

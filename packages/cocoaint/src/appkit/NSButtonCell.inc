@@ -63,6 +63,7 @@ type
   __BCFlags = record
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSButtonCell0: cuint);
     1: (data: bitpacked record
@@ -120,6 +121,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     pushIn: 0..1;
     changeContents: 0..1;
@@ -170,6 +173,9 @@ type
     pushIn: 0..1;
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -179,6 +185,7 @@ __BCFlagsPtr = ^__BCFlags;
 
 type
   __BCFlags2 = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     case byte of
@@ -204,6 +211,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifdef fpc_big_endian}
     keyEquivalentModifierMask: 0..((1 shl 24)-1);
     imageScaling: 0..((1 shl 2)-1);
@@ -220,6 +229,9 @@ type
     keyEquivalentModifierMask: 0..((1 shl 24)-1);
 {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

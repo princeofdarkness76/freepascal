@@ -545,6 +545,7 @@ end;
 {****************************************************************************}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 constructor TListEnumerator.Create(AList: TList);
 begin
@@ -561,6 +562,8 @@ end;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 constructor TListEnumerator.Create(AList: TList);
 begin
@@ -575,6 +578,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -740,7 +746,11 @@ begin
       Notify(AList[I], lnAdded);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
+=======
+end;            
+>>>>>>> graemeg/cpstrnew
 =======
 end;            
 >>>>>>> graemeg/cpstrnew

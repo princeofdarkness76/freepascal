@@ -33,8 +33,11 @@ uses
   ncgobjc,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { symtable }
   symcpu,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

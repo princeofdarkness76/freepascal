@@ -7,9 +7,12 @@ unit buildrtl;
       ctypes, strings,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       rtlconsts, sysconst, sysutils, math, types,
       typinfo, fgl, classes,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       matrix,
@@ -17,6 +20,9 @@ unit buildrtl;
       strutils, dateutils, varutils, variants, typinfo, fgl, classes,
       convutils, stdconvs,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -28,7 +34,12 @@ unit buildrtl;
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       charset, cpall, getopts;
+=======
+      charset, ucomplex, getopts,
+      fmtbcd;
+>>>>>>> graemeg/cpstrnew
 =======
       charset, ucomplex, getopts,
       fmtbcd;

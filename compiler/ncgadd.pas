@@ -91,9 +91,12 @@ interface
         tmpreg     : tregister;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pushedfpu  : boolean;
 {$endif x86 and not llvm}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef x86}
@@ -125,6 +128,9 @@ interface
 
 {$ifdef x86}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -138,7 +144,11 @@ interface
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif x86 and not llvm}
+=======
+{$endif x86}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif x86}
 >>>>>>> graemeg/cpstrnew
@@ -160,6 +170,9 @@ interface
           end;
 {$ifdef x86}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -187,7 +200,11 @@ interface
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif x86 and not llvm}
+=======
+{$endif x86}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif x86}
 >>>>>>> graemeg/cpstrnew
@@ -325,6 +342,7 @@ interface
                     internalerror(2010123001);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { make sure that location.register is different from
                     left.location.register, since right will overwrite it
                     and we'll use left afterwards }
@@ -342,6 +360,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                   { make sure we don't modify left/right.location, because we told
                     force_reg_left_right above that they can be constant }
                   cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_NOT,location.size,right.location.register,location.register);
@@ -350,6 +370,9 @@ interface
                   else
                     cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_AND,location.size,left.location.register,location.register);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -6,11 +6,14 @@
 name=fcl-xml
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
 packages=rtl fpmkunit
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 version=2.5.1
@@ -56,6 +59,7 @@ endif
 LOCALFPMAKE=./fpmake$(SRCEXEEXT)
 
 [rules]
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 # Do not pass the Makefile's unit and binary target locations. Fpmake uses it's own.
@@ -132,6 +136,9 @@ ifdef UNIXHier
 else
 	$(LOCALFPMAKE) archive $(FPMAKE_OPT) --zipprefix=$(DIST_DESTDIR)/$(ZIPPREFIX) --prefix=source\\$(INSTALL_FPCSUBDIR)\\\$$\(PACKAGEDIRECTORY\)
 endif
+=======
+.NOTPARALLEL:
+>>>>>>> graemeg/cpstrnew
 =======
 .NOTPARALLEL:
 >>>>>>> graemeg/cpstrnew

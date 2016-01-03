@@ -5,7 +5,11 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
+=======
+     Version:    HIServices-308~1
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    HIServices-308~1
 >>>>>>> graemeg/cpstrnew
@@ -32,6 +36,9 @@
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -92,11 +99,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -118,6 +128,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -140,6 +151,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -156,6 +169,9 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -167,7 +183,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -183,7 +202,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -196,6 +218,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -207,6 +230,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -225,13 +253,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -259,6 +291,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -267,6 +301,9 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1374,6 +1411,7 @@ function IconRefToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: I
  *      A pointer to the location that IconServices tests to see
  *      whether is falls within the mask of indicated icon.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    
  *    iconRect:
  *      A pointer to the rectangle defining the area that Icon Services
@@ -1389,6 +1427,23 @@ function IconRefToRgn( theRgn: RgnHandle; const (*var*) iconRect: Rect; align: I
  *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
  *      constant in this parameter.
  *    
+=======
+ *    
+ *    iconRect:
+ *      A pointer to the rectangle defining the area that Icon Services
+ *      uses to determine which icon is hit-tested. Use the same CGRect
+ *      value as when the icon was last drawn.
+ *    
+ *    align:
+ *      A value that specifies how the indicated icon is aligned within
+ *      the rectangle specified in the iconRect parameter. Use the same
+ *      IconAlignmentType value as when the icon was last drawn.
+ *    
+ *    iconServicesUsageFlags:
+ *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
+ *      constant in this parameter.
+ *    
+>>>>>>> graemeg/cpstrnew
 =======
  *    
  *    iconRect:
@@ -1433,6 +1488,7 @@ function IconRefContainsCGPoint( const (*var*) testPt: CGPoint; const (*var*) ic
  *      A pointer to the rectangle that IconServices tests to see
  *      whether is falls within the mask of indicated icon.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    
  *    iconRect:
  *      A pointer to the rectangle defining the area that Icon Services
@@ -1448,6 +1504,23 @@ function IconRefContainsCGPoint( const (*var*) testPt: CGPoint; const (*var*) ic
  *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
  *      constant in this parameter.
  *    
+=======
+ *    
+ *    iconRect:
+ *      A pointer to the rectangle defining the area that Icon Services
+ *      uses to determine which icon is hit-tested. Use the same CGRect
+ *      value as when the icon was last drawn.
+ *    
+ *    align:
+ *      A value that specifies how the indicated icon is aligned within
+ *      the rectangle specified in the iconRect parameter. Use the same
+ *      IconAlignmentType value as when the icon was last drawn.
+ *    
+ *    iconServicesUsageFlags:
+ *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
+ *      constant in this parameter.
+ *    
+>>>>>>> graemeg/cpstrnew
 =======
  *    
  *    iconRect:
@@ -1491,6 +1564,7 @@ function IconRefIntersectsCGRect( const (*var*) testRect: CGRect; const (*var*) 
  *      A pointer to the rectangle defining the area that Icon Services
  *      uses as the bounding box of the region.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    
  *    align:
  *      The value which determines how Icon Services aligns the region
@@ -1500,6 +1574,17 @@ function IconRefIntersectsCGRect( const (*var*) testRect: CGRect; const (*var*) 
  *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
  *      constant in this parameter.
  *    
+=======
+ *    
+ *    align:
+ *      The value which determines how Icon Services aligns the region
+ *      within the rectangle.
+ *    
+ *    iconServicesUsageFlags:
+ *      Reserved for future use. Pass the kIconServicesNormalUsageFlag
+ *      constant in this parameter.
+ *    
+>>>>>>> graemeg/cpstrnew
 =======
  *    
  *    align:
@@ -1558,6 +1643,7 @@ function GetIconSizesFromIconRef( iconSelectorInput: IconSelectorValue; var icon
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {
    IsIconRefMaskEmpty
@@ -1582,6 +1668,32 @@ function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIco
 
 
 {
+=======
+
+{
+   IsIconRefMaskEmpty
+   Returns true if the mask for this icon is blank
+}
+
+{$endc} {TARGET_CPU_64}
+
+{
+ *  IsIconRefMaskEmpty()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in ApplicationServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in IconServicesLib 8.5 and later
+ }
+function IsIconRefMaskEmpty( iconRef_: IconRef ): Boolean; external name '_IsIconRefMaskEmpty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+>>>>>>> graemeg/cpstrnew
 =======
 
 {

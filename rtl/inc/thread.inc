@@ -391,7 +391,10 @@ begin
   result:=dword(-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -400,6 +403,13 @@ procedure NoThreadSwitch;  {give time to other threads}
 begin
   NoThreadError;
 >>>>>>> graemeg/cpstrnew
+end;
+
+function NoCloseThread  (threadHandle : TThreadID):dword;
+
+begin
+ Result:=0;      // avoid warnings.
+ NoThreadError;
 end;
 
 function NoCloseThread  (threadHandle : TThreadID):dword;
@@ -455,6 +465,7 @@ end;
 function NoTryEnterCriticalSection(var CS):longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 begin
   if IsMultiThread then
@@ -463,6 +474,8 @@ begin
     ThreadingAlreadyUsed:=true;
   Result:=-1;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -505,11 +518,14 @@ function NoRelocateThreadvar(offset : {$ifdef cpu16}word{$else}dword{$endif}) : 
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   NoThreadError;
   result:=nil;
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   if IsMultiThread then
@@ -538,7 +554,10 @@ begin
     ThreadingAlreadyUsed:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   result:=nil;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -603,7 +622,10 @@ begin
   else
     ThreadingAlreadyUsed:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 end;
 
 procedure NORTLeventResetEvent(state:pRTLEvent);
@@ -613,6 +635,9 @@ begin
     NoThreadError
   else
     ThreadingAlreadyUsed:=true;
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 end;
 
@@ -665,7 +690,10 @@ begin
     ThreadingAlreadyUsed:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -677,6 +705,9 @@ begin
   else
     ThreadingAlreadyUsed:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

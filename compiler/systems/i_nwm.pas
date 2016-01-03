@@ -36,7 +36,11 @@ unit i_nwm;
             shortname    : 'Netware';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_smartlink_sections,tf_dwarf_only_local_labels];
+=======
+            flags        : [tf_smartlink_library,tf_smartlink_sections,tf_dwarf_only_local_labels];
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_smartlink_library,tf_smartlink_sections,tf_dwarf_only_local_labels];
 >>>>>>> graemeg/cpstrnew

@@ -82,6 +82,7 @@ var
     _syncPostEnabledCount: NSInteger;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tbFlags: record
       case byte of
        0: (_anonbitfield_NSToolbar0: cuint);
@@ -89,11 +90,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __tbFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSToolbar0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -126,7 +132,10 @@ var
         loadedMetrics: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

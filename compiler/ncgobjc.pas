@@ -60,6 +60,11 @@ procedure tcgobjcselectornode.pass_generate_code;
   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    if current_asmdata.ConstPools[sp_varnamerefs]=nil then
+      current_asmdata.ConstPools[sp_varnamerefs]:=THashSet.Create(64, True, False);
+>>>>>>> graemeg/cpstrnew
 =======
     if current_asmdata.ConstPools[sp_varnamerefs]=nil then
       current_asmdata.ConstPools[sp_varnamerefs]:=THashSet.Create(64, True, False);

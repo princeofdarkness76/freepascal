@@ -5,7 +5,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  (c) 1985-2008 by Apple, Inc., all rights reserved.
+=======
+     Copyright:  (c) 1985-2008 by Apple Inc., all rights reserved.
+>>>>>>> graemeg/cpstrnew
 =======
      Copyright:  (c) 1985-2008 by Apple Inc., all rights reserved.
 >>>>>>> graemeg/cpstrnew
@@ -18,6 +22,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      http://bugs.freepascal.org
 
 ==================================================================================================}
@@ -26,11 +31,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                      http://www.freepascal.org/bugs.html
 
 ==================================================================================================}
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -91,11 +101,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -120,11 +133,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -143,11 +162,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -166,7 +191,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -182,7 +210,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -195,6 +226,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -206,6 +238,11 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -224,13 +261,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -250,6 +291,10 @@ interface
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -305,6 +350,11 @@ uses MacTypes,CoreAudioTypes,AudioComponents;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -354,7 +404,11 @@ uses MacTypes,CoreAudioTypes,AudioComponents;
 	byte by byte). Input data fed to a decoder should be in terms of whole packets in the 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	encoded format if the format is variable bit rate and is not self framing (e.g. MPEG-4 AAC). 
+=======
+	encoded format if the format is variable bit rate and is not self framing (e.g. MPEG 4 AAC). 
+>>>>>>> graemeg/cpstrnew
 =======
 	encoded format if the format is variable bit rate and is not self framing (e.g. MPEG 4 AAC). 
 >>>>>>> graemeg/cpstrnew
@@ -424,7 +478,10 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_OS_IPHONE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -450,7 +507,10 @@ const
 	kAudioUnityCodecComponentType = FourCharCode('acdc');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc} {TARGET_OS_IPHONE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -475,7 +535,10 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@constant	kAudioCodecPropertyNameCFString
@@ -488,6 +551,9 @@ const
 					The name of the codec's format as a CFStringRef. The CFStringRef
 					retrieved via this property must be released by the caller.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -555,7 +621,10 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	kAudioCodecPropertyNameCFString = FourCharCode('lnam');
@@ -563,6 +632,9 @@ const
 	kAudioCodecPropertyFormatCFString = FourCharCode('lfor');
 	kAudioCodecPropertyHasVariablePacketByteSizes = FourCharCode('vpk?');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -661,7 +733,11 @@ const
 						else means the codec is initialized. This should never be settable directly.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Must be set by AudioCodecInitialize and AudioCodecUninitialize.
+=======
+						Must be set by AudioCodecInitialize and AudioCodecUnitialize.
+>>>>>>> graemeg/cpstrnew
 =======
 						Must be set by AudioCodecInitialize and AudioCodecUnitialize.
 >>>>>>> graemeg/cpstrnew
@@ -762,10 +838,13 @@ const
 						Writable if supported.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @constant		kAudioCodecPropertyDelayMode
                         A UInt32 specifying the delay mode. See enum below.                        
                         Encoders only, writable if supported.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	@constant		kAudioCodecPropertyMinimumDelayMode
@@ -775,6 +854,9 @@ const
 						encoding/ decoding delay which may be undesired and turned off with this property.
 						Writable if supported.
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -784,7 +866,10 @@ const
 	kAudioCodecPropertyPacketFrameSize = FourCharCode('pakf');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioCodecPropertyHasVariablePacketByteSizes = FourCharCode('vpk?');
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -813,7 +898,11 @@ const
 	kAudioCodecPropertySoundQualityForVBR = FourCharCode('vbrq');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioCodecPropertyDelayMode = FourCharCode('dmod');
+=======
+	kAudioCodecPropertyMinimumDelayMode = FourCharCode('mdel');
+>>>>>>> graemeg/cpstrnew
 =======
 	kAudioCodecPropertyMinimumDelayMode = FourCharCode('mdel');
 >>>>>>> graemeg/cpstrnew
@@ -903,6 +992,7 @@ const
 {!
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @enum			AudioCodecDelayMode
  
     @discussion		Constants defining various delay modes to be used with kAudioCodecPropertyDelayMode.
@@ -925,6 +1015,8 @@ const
 	kAudioCodecDelayMode_Optimal = 2;
 
 {!
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1060,8 +1152,11 @@ const
 	@constant		kAudioCodecResetSelect
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@constant		kAudioCodecAppendInputBufferListSelect
 	@constant		kAudioCodecProduceOutputBufferListSelect
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1078,8 +1173,11 @@ const
 	kAudioCodecResetSelect = $0008;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioCodecAppendInputBufferListSelect = $0009;
 	kAudioCodecProduceOutputBufferListSelect = $000A;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1204,7 +1302,11 @@ function AudioCodecSetProperty( inCodec: AudioCodec; inPropertyID: AudioCodecPro
 						Pointer to an input format structure
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@param			inOutputFormat
+=======
+	@param			inInputFormat
+>>>>>>> graemeg/cpstrnew
 =======
 	@param			inInputFormat
 >>>>>>> graemeg/cpstrnew
@@ -1305,6 +1407,7 @@ function AudioCodecProduceOutputPackets( inCodec: AudioCodec; outOutputData: Uni
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not TARGET_OS_IPHONE}
 function AudioCodecAppendInputBufferList( inCodec: AudioCodec; const (*var*) inBufferList: AudioBufferList; var ioNumberPackets: UInt32; const (*var*) inPacketDescription: AudioStreamPacketDescription; var outBytesConsumed: UInt32 ): OSStatus; external name '_AudioCodecAppendInputBufferList';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_NA) *)
@@ -1313,6 +1416,8 @@ function AudioCodecProduceOutputBufferList( inCodec: AudioCodec; var ioBufferLis
 (* __OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_NA) *)
 {$endc} {not TARGET_OS_IPHONE}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1331,6 +1436,7 @@ function AudioCodecProduceOutputBufferList( inCodec: AudioCodec; var ioBufferLis
 function AudioCodecReset( inCodec: AudioCodec ): OSStatus; external name '_AudioCodecReset';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 //=====================================================================================================================
@@ -1368,11 +1474,14 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 //=====================================================================================================================
 //#pragma mark -
 //#pragma mark Deprecated Properties
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {!
@@ -1408,6 +1517,8 @@ const
 	kAudioCodecPropertyNameCFString = FourCharCode('lnam');
 	kAudioCodecPropertyManufacturerCFString = FourCharCode('lmak');
 	kAudioCodecPropertyFormatCFString = FourCharCode('lfor');		
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1492,7 +1603,11 @@ const
 					This is deprecated. 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					Use kAudioCodecPropertyBitRateControlMode instead.
+=======
+					Use kAudioCodecVariablePacketSizeBitRateControlMode instead.
+>>>>>>> graemeg/cpstrnew
 =======
 					Use kAudioCodecVariablePacketSizeBitRateControlMode instead.
 >>>>>>> graemeg/cpstrnew
@@ -1561,6 +1676,10 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+{$endc} {TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endc} {TARGET_OS_MAC}
 >>>>>>> graemeg/cpstrnew

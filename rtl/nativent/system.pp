@@ -51,7 +51,11 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { FileNameCaseSensitive and FileNameCasePreserving are defined separately below!!! }
+=======
+{ FileNameCaseSensitive is defined separately below!!! }
+>>>>>>> graemeg/cpstrnew
 =======
 { FileNameCaseSensitive is defined separately below!!! }
 >>>>>>> graemeg/cpstrnew
@@ -97,7 +101,10 @@ const
   FileNameCaseSensitive : boolean = true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FileNameCasePreserving: boolean = true;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -117,7 +124,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fpc_pwidechar_length(p: PWideChar): SizeInt; external name 'FPC_PWIDECHAR_LENGTH';
+=======
+function fpc_pwidechar_length(p: PWideChar): LongInt; external name 'FPC_PWIDECHAR_LENGTH';
+>>>>>>> graemeg/cpstrnew
 =======
 function fpc_pwidechar_length(p: PWideChar): LongInt; external name 'FPC_PWIDECHAR_LENGTH';
 >>>>>>> graemeg/cpstrnew
@@ -361,7 +372,11 @@ begin
       // finalize units
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       internal_do_exit;
+=======
+      do_exit;
+>>>>>>> graemeg/cpstrnew
 =======
       do_exit;
 >>>>>>> graemeg/cpstrnew
@@ -409,12 +424,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SysInitStdIO;
 begin
   { This function is currently only called if the RTL is compiled for Usermode;
     one could think about adding a text driver that outputs using DbgPrint }
 {$ifndef KMODE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifndef kmode}
@@ -424,6 +442,9 @@ begin
 procedure SysInitStdIO;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -452,10 +473,13 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -467,6 +491,9 @@ end;
 {$endif}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -489,9 +516,13 @@ begin
   SysInitExceptions;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { we do not use winlike widestrings and also the RTL can't be compiled with
     2.2, so we can savely use the UnicodeString manager only. }
   initunicodestringmanager;
+=======
+  initvariantmanager;
+>>>>>>> graemeg/cpstrnew
 =======
   initvariantmanager;
 >>>>>>> graemeg/cpstrnew
@@ -508,6 +539,12 @@ begin
   errno := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  { we do not use winlike widestrings and also the RTL can't be compiled with
+    2.2, so we can savely use the UnicodeString manager only. }
+  initunicodestringmanager;
+>>>>>>> graemeg/cpstrnew
 =======
   { we do not use winlike widestrings and also the RTL can't be compiled with
     2.2, so we can savely use the UnicodeString manager only. }

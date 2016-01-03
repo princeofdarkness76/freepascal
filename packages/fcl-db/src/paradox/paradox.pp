@@ -746,6 +746,9 @@ begin
           D:=Longv+1721425-2415019;
           longv:=(Trunc(r) mod 86400);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

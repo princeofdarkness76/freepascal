@@ -8,8 +8,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit libc deprecated 'Unportable Kylix legacy unit that only exists on Linux/x86. see http://wiki.freepascal.org/libc_unit ';
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 unit libc;

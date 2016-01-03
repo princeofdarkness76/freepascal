@@ -73,6 +73,7 @@ type
     _relationshipMappings: NSMutableArray;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __entityMappingFlags: record
       case byte of
        0: (_anonbitfield_NSEntityMapping0: cuint);
@@ -83,6 +84,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __entityMappingFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSEntityMapping0: cuint);
@@ -90,6 +93,9 @@ type
         _isInUse: 0..1;
         _reservedEntityMapping: 0..((1 shl 31)-1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

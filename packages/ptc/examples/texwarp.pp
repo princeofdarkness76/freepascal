@@ -24,7 +24,11 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure blur(s: IPTCSurface);
+=======
+procedure blur(s: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure blur(s: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
@@ -70,7 +74,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate(surface: IPTCSurface);
+=======
+procedure generate(surface: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure generate(surface: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
@@ -274,6 +282,7 @@ end;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   texture: IPTCSurface;
   surface: IPTCSurface;
@@ -281,11 +290,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   format: TPTCFormat = nil;
   texture: TPTCSurface = nil;
   surface: TPTCSurface = nil;
   console: TPTCConsole = nil;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -304,6 +318,9 @@ begin
 =======
       format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -403,9 +420,12 @@ begin
     finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       console.close;
@@ -414,6 +434,9 @@ begin
       texture.Free;
       format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -17,7 +17,11 @@ uses
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure save(surface: IPTCSurface; filename: string);
+=======
+procedure save(surface: TPTCSurface; filename: string);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure save(surface: TPTCSurface; filename: string);
 >>>>>>> graemeg/cpstrnew
@@ -32,7 +36,12 @@ var
   pixels: PUint8 = nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
+=======
+  format: TPTCFormat = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   format: TPTCFormat = nil;
   palette: TPTCPalette = nil;
@@ -53,6 +62,7 @@ begin
     { get surface dimensions }
     width := surface.width;
     height := surface.height;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -188,6 +198,54 @@ end;
 end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+    { set targa image width }
+    header[12] := width and $FF;
+    header[13] := width shr 8;
+
+    { set targa image height }
+    header[14] := height and $FF;
+    header[15] := height shr 8;
+
+    { set bits per pixel }
+    header[16] := 24;
+
+    { write tga header }
+    BlockWrite(F, header, 18);
+
+    { calculate size of image pixels }
+    size := width * height * 3;
+
+    { allocate image pixels }
+    pixels := GetMem(size);
+
+    {$IFDEF FPC_LITTLE_ENDIAN}
+    format := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
+    {$ELSE FPC_LITTLE_ENDIAN}
+    format := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
+    {$ENDIF FPC_LITTLE_ENDIAN}
+    palette := TPTCPalette.Create;
+
+    { save surface to image pixels }
+    surface.save(pixels, width, height, width * 3, format, palette);
+
+    { write image pixels one line at a time }
+    for y := height - 1 DownTo 0 do
+      BlockWrite(F, pixels[width * y * 3], width * 3);
+
+  finally
+    { free image pixels }
+    FreeMem(pixels);
+
+    palette.Free;
+    format.Free;
+
+    CloseFile(F);
+  end;
+end;
+
+>>>>>>> graemeg/cpstrnew
 function calculate(real, imaginary: Single; maximum: Integer): Integer;
 var
   c_r, c_i: Single;
@@ -236,7 +294,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure mandelbrot(console: IPTCConsole; surface: IPTCSurface;
+=======
+procedure mandelbrot(console: TPTCConsole; surface: TPTCSurface;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure mandelbrot(console: TPTCConsole; surface: TPTCSurface;
 >>>>>>> graemeg/cpstrnew
@@ -265,7 +327,11 @@ var
   color: Uint32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   area: IPTCArea;
+=======
+  area: TPTCArea;
+>>>>>>> graemeg/cpstrnew
 =======
   area: TPTCArea;
 >>>>>>> graemeg/cpstrnew
@@ -355,6 +421,9 @@ begin
         area.Free;
       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -371,9 +440,15 @@ end;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
@@ -417,9 +492,12 @@ begin
     finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       console.close;
@@ -427,6 +505,9 @@ begin
       surface.Free;
       format.Free;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

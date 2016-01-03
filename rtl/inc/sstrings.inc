@@ -531,6 +531,9 @@ type
     end;
     { more data here, but not needed }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
   end;
 
   { Pascal data types for the ordinal enum value to string table. It consists of a header
@@ -542,6 +545,7 @@ type
   Tsearch_data={$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}packed{$endif}record
     value:longint;
     name:Pstring;
+<<<<<<< HEAD
   end;
 
 =======
@@ -556,6 +560,10 @@ type
   Tsearch_data={$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}packed{$endif}record
     value:longint;
     name:Pstring;
+  end;
+
+>>>>>>> graemeg/cpstrnew
+=======
   end;
 
 >>>>>>> graemeg/cpstrnew
@@ -605,9 +613,15 @@ begin
         member of Tenum_ord_to_string_lookup }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$R-}
         res:=enum_o2s^.lookup_data[ordinal];
 {$pop}
+=======
+{$PUSH}{$R-}
+        res:=enum_o2s^.lookup_data[ordinal];
+{$POP}
+>>>>>>> graemeg/cpstrnew
 =======
 {$PUSH}{$R-}
         res:=enum_o2s^.lookup_data[ordinal];
@@ -632,7 +646,11 @@ begin
         member of Tenum_ord_to_string_search }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$R-}
+=======
+{$PUSH}{$R-}
+>>>>>>> graemeg/cpstrnew
 =======
 {$PUSH}{$R-}
 >>>>>>> graemeg/cpstrnew
@@ -653,7 +671,11 @@ begin
       until false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$pop}
+=======
+{$POP}
+>>>>>>> graemeg/cpstrnew
 =======
 {$POP}
 >>>>>>> graemeg/cpstrnew
@@ -705,6 +727,20 @@ procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external 
 
 procedure fpc_shortstr_currency({$ifdef cpujvm}constref{$endif} c : currency; len,f : SizeInt; out s : shortstring);[public,alias:'FPC_SHORTSTR_CURRENCY']; compilerproc;
 =======
+procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external name 'FPC_SHORTSTR_BOOL';
+
+
+procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);[public,alias:'FPC_SHORTSTR_BOOL'];compilerproc;
+begin
+  if b then
+    s:='TRUE'
+  else
+    s:='FALSE';
+  if length(s)<len then
+    s:=space(len-length(s))+s;
+end;
+
+{ also define alias for internal use in the system unit }
 procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external name 'FPC_SHORTSTR_BOOL';
 
 
@@ -853,7 +889,11 @@ begin
 		  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  if i>tlen then
+=======
+		  if i>reslen then
+>>>>>>> graemeg/cpstrnew
 =======
 		  if i>reslen then
 >>>>>>> graemeg/cpstrnew
@@ -1100,11 +1140,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_STR_ENUM_INTERN}
 { currently, the avr code generator fails on this procedure, so we disable it,
   this is not a good solution but fixing compilation of this procedure for
   avr is hard, requires significant changes to the register allocator to take
   care of different register classes }
+=======
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1118,9 +1162,12 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef EXCLUDE_COMPLEX_PROCS}
   runerror(219);
 {$else EXCLUDE_COMPLEX_PROCS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1132,10 +1179,16 @@ begin
     maxlen:=high(a)+1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
 {$endif EXCLUDE_COMPLEX_PROCS}
 end;
 {$endif not FPC_STR_ENUM_INTERN}
+=======
+  move(ss[1],pchar(@a)^,maxlen);
+end;
+
+>>>>>>> graemeg/cpstrnew
 =======
   move(ss[1],pchar(@a)^,maxlen);
 end;
@@ -1159,6 +1212,7 @@ begin
     maxlen:=high(a)+1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
 end;
 
@@ -1166,6 +1220,8 @@ end;
 {$ifndef FPC_HAS_CHARARRAY_CURRENCY}
 {$define FPC_HAS_CHARARRAY_CURRENCY}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   move(ss[1],pchar(@a)^,maxlen);
@@ -1927,6 +1983,9 @@ begin
 { Decimal ? }
   if (length(s)>=code) and (s[code]='.') then
     begin
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
       inc(code);
       while (length(s)>=code) and (s[code] in ['0'..'9']) do
@@ -2008,8 +2067,11 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 { adjust exponent based on decimal point }
@@ -2025,6 +2087,9 @@ begin
   else
     inc(exponent,decpoint);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

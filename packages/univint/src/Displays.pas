@@ -70,11 +70,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -96,6 +99,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -124,6 +128,11 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -137,6 +146,9 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -148,13 +160,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -230,6 +246,8 @@ interface
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -256,6 +274,9 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$endc}
 
@@ -300,7 +321,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes,QuickdrawTypes,ColorSyncDeprecated,AEDataModel,ConditionalMacros,Components,Video,AppleEvents,Events,Processes,Dialogs;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -391,6 +417,7 @@ const
 	kUnMirrorDisplayBit = 11;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 const
@@ -593,10 +620,84 @@ const
 const
 { Should offline devices be put into the port list (such as dummy display) }
 	kPLIncludeOfflineDevicesBit = 0;
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 { confirmFlags for DMConfirmConfiguration }
 const
+<<<<<<< HEAD
+=======
+{ Notification Messages for extended call back routines }
+	kDMNotifyRequestConnectionProbe = 0;  { Like kDMNotifyRequestDisplayProbe only not for smart displays (used in wake before all busses are awake) }
+	kDMNotifyInstalled = 1;    { At install time }
+	kDMNotifyEvent = 2;    { Post change time }
+	kDMNotifyRemoved = 3;    { At remove time }
+	kDMNotifyPrep = 4;    { Pre change time }
+	kDMNotifyExtendEvent = 5;    { Allow registrees to extend apple event before it is sent }
+	kDMNotifyDependents = 6;    { Minor notification check without full update }
+	kDMNotifySuspendConfigure = 7;    { Temporary end of configuration }
+	kDMNotifyResumeConfigure = 8;    { Resume configuration }
+	kDMNotifyRequestDisplayProbe = 9;    { Request smart displays re-probe (used in sleep and hot plugging) }
+	kDMNotifyDisplayWillSleep = 10;   { Mac OS X only }
+	kDMNotifyDisplayDidWake = 11;   { Mac OS X only }
+                                        { Notification Flags }
+	kExtendedNotificationProc = 1 shl 16;
+
+
+{ types for notifyType }
+const
+	kFullNotify = 0;    { This is the appleevent whole nine yards notify }
+	kFullDependencyNotify = 1;     { Only sends to those who want to know about interrelated functionality (used for updating UI) }
+
+{ DisplayID/DeviceID constants }
+const
+	kDummyDeviceID = $00FF; { This is the ID of the dummy display, used when the last ÒrealÓ display is disabled.}
+	kInvalidDisplayID = $0000; { This is the invalid ID}
+	kFirstDisplayID = $0100;
+
+const
+{ bits for panelListFlags }
+	kAllowDuplicatesBit = 0;
+
+const
+{ bits for nameFlags }
+	kSuppressNumberBit = 0;
+	kSuppressNumberMask = 1;
+	kForceNumberBit = 1;
+	kForceNumberMask = 2;
+	kSuppressNameBit = 2;
+	kSuppressNameMask = 4;
+
+{ DMGetNameByAVID masks}
+const
+	kDMSupressNumbersMask = 1 shl 0; { Supress the numbers and return only names}
+	kDMForceNumbersMask = 1 shl 1; { Force numbers to always be shown (even on single display configs)}
+	kDMSupressNameMask = 1 shl 2; { Supress the names and return only numbers.}
+
+
+{ Constants for fidelity checks }
+const
+	kNoFidelity = 0;
+	kMinimumFidelity = 1;
+	kDefaultFidelity = 500;  { I'm just picking a number for Apple default panels and engines}
+	kDefaultManufacturerFidelity = 1000;  { I'm just picking a number for Manufacturer's panels and engines (overrides apple defaults)}
+
+const
+	kAnyPanelType = 0;    { Pass to DMNewEngineList for list of all panels (as opposed to specific types)}
+	kAnyEngineType = 0;    { Pass to DMNewEngineList for list of all engines}
+	kAnyDeviceType = 0;    { Pass to DMNewDeviceList for list of all devices}
+	kAnyPortType = 0;     { Pass to DMNewDevicePortList for list of all devices}
+
+{ portListFlags for DM_NewDevicePortList }
+const
+{ Should offline devices be put into the port list (such as dummy display) }
+	kPLIncludeOfflineDevicesBit = 0;
+
+
+{ confirmFlags for DMConfirmConfiguration }
+const
+>>>>>>> graemeg/cpstrnew
 	kForceConfirmBit = 0;    { Force a confirm dialog }
 	kForceConfirmMask = 1 shl kForceConfirmBit;
 
@@ -604,6 +705,9 @@ const
 { Flags for displayModeFlags }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -637,6 +741,9 @@ const
 	kDisplayGestaltViewAngleAffectsGammaMask = 1 shl 1; { Currently not used by color sync}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 type
@@ -645,6 +752,7 @@ type
    AVID is an ID for ports and devices the old DisplayID type
     is carried on for compatibility
 }
+<<<<<<< HEAD
 
 
 type
@@ -670,6 +778,11 @@ type
    AVID is an ID for ports and devices the old DisplayID type
     is carried on for compatibility
 }
+
+
+type
+>>>>>>> graemeg/cpstrnew
+=======
 
 
 type
@@ -777,6 +890,7 @@ type
 		model: UInt32;
 		serialNumber: UInt32;
 		manufactureDate: UInt32;
+<<<<<<< HEAD
 
 		makeReserved: array [0..3] of UInt32;
 	end;
@@ -798,8 +912,33 @@ const
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
 
+		makeReserved: array [0..3] of UInt32;
+	end;
+type
+	DMMakeAndModelPtr = DMMakeAndModelRecPtr;
+{ DMNewDisplayList displayListIncludeFlags}
+const
+	kIncludeOnlineActiveDisplaysMask = 1 shl 0;
+	kIncludeOnlineDisabledDisplaysMask = 1 shl 1;
+	kIncludeOfflineDisplaysMask = 1 shl 2;
+	kIncludeOfflineDummyDisplaysMask = 1 shl 3;
+	kIncludeHardwareMirroredDisplaysMask = 1 shl 4;
 
+>>>>>>> graemeg/cpstrnew
+
+const
+{ modeListFlags for DMNewDisplayModeList }
+	kDMModeListIncludeAllModesMask = 1 shl 0; { Include all timing modes not _explicitly_ excluded (see other bits)}
+	kDMModeListIncludeOfflineModesMask = 1 shl 1;
+	kDMModeListExcludeDriverModesMask = 1 shl 2; { Exclude old-style timing modes (cscGetNextResolution/kDisplayModeIDFindFirstResolution modes)}
+	kDMModeListExcludeDisplayModesMask = 1 shl 3; { Exclude timing modes that come from the display (always arbritrary timing modes)}
+	kDMModeListExcludeCustomModesMask = 1 shl 4; { Exclude custom modes that came neither from the driver or display (need a better name)}
+	kDMModeListPreferStretchedModesMask = 1 shl 5; { Prefer modes that are stretched over modes that are letterboxed when setting kDisplayModeListNotPreferredBit}
+	kDMModeListPreferSafeModesMask = 1 shl 6; { Prefer modes that are safe over modes that are not when setting kDisplayModeListNotPreferredBit}
+
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 const
 { modeListFlags for DMNewDisplayModeList }
@@ -811,6 +950,8 @@ const
 	kDMModeListPreferStretchedModesMask = 1 shl 5; { Prefer modes that are stretched over modes that are letterboxed when setting kDisplayModeListNotPreferredBit}
 	kDMModeListPreferSafeModesMask = 1 shl 6; { Prefer modes that are safe over modes that are not when setting kDisplayModeListNotPreferredBit}
 
+=======
+>>>>>>> graemeg/cpstrnew
 
 { DMNewDisplayList displayListFlags}
 type

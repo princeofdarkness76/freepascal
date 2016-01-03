@@ -1,12 +1,19 @@
 { CoreGraphics - CGDataProvider.h
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 1999-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
+=======
+ * Copyright (c) 1999-2008 Apple Inc.
+ * All rights reserved. }
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
  * Copyright (c) 1999-2008 Apple Inc.
  * All rights reserved. }
@@ -75,11 +82,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -101,6 +111,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -130,6 +141,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -145,11 +158,14 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -159,13 +175,17 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -268,6 +288,34 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -318,8 +366,12 @@ uses MacTypes,MacOSXPosix,CFBase,CFData,CGBase,CFURL;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGDataProviderRef = ^OpaqueCGDataProviderRef; { an opaque type }
 	OpaqueCGDataProviderRef = record end;
+=======
+	CGDataProviderRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CGDataProviderRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -435,8 +487,12 @@ function CGDataProviderCreateSequential( info: UnivPtr; const (*var*) callbacks:
 { Create a direct-access data provider using `callbacks' to supply `size'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    bytes of data. `info' is passed to each of the callback functions.
    The underlying data must not change for the life of the data provider. }
+=======
+   bytes of data. `info' is passed to each of the callback functions. }
+>>>>>>> graemeg/cpstrnew
 =======
    bytes of data. `info' is passed to each of the callback functions. }
 >>>>>>> graemeg/cpstrnew
@@ -470,6 +526,9 @@ function CGDataProviderCreateWithURL( url: CFURLRef ): CGDataProviderRef; extern
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -478,6 +537,7 @@ function CGDataProviderCreateWithURL( url: CFURLRef ): CGDataProviderRef; extern
 function CGDataProviderCreateWithFilename( filename: ConstCStringPtr ): CGDataProviderRef; external name '_CGDataProviderCreateWithFilename';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 
@@ -485,6 +545,9 @@ function CGDataProviderCreateWithFilename( filename: ConstCStringPtr ): CGDataPr
 
 function CGDataProviderCreateWithFilename( filename: ConstCStringPtr ): CGDataProviderRef; external name '_CGDataProviderCreateWithFilename';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
+
+>>>>>>> graemeg/cpstrnew
+=======
 
 >>>>>>> graemeg/cpstrnew
 =======
@@ -511,7 +574,10 @@ function CGDataProviderCopyData( provider: CGDataProviderRef ): CFDataRef; exter
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -536,6 +602,7 @@ type
      when the provider is freed. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 type
 	CGDataProviderCallbacks = record
@@ -605,6 +672,23 @@ type
 type
 	CGDataProviderGetBytesAtOffsetCallback = function( info: UnivPtr; buffer: UnivPtr; offset: size_t; count: size_t ): size_t;
 
+=======
+
+type
+	CGDataProviderCallbacks = record
+		getBytes: CGDataProviderGetBytesCallback;
+		skipBytes: CGDataProviderSkipBytesCallback;
+		rewind: CGDataProviderRewindCallback;
+		releaseProvider: CGDataProviderReleaseInfoCallback;
+	end;
+
+{ This callback is called to copy `count' bytes at byte offset `offset'
+   into `buffer'. }
+
+type
+	CGDataProviderGetBytesAtOffsetCallback = function( info: UnivPtr; buffer: UnivPtr; offset: size_t; count: size_t ): size_t;
+
+>>>>>>> graemeg/cpstrnew
 { Callbacks for directly accessing data.
    `getBytePointer', if non-NULL, is called to return a pointer to the
      provider's entire block of data.
@@ -628,6 +712,9 @@ type
 { Create a sequential-access data provider using `callbacks' to provide the
    data. `info' is passed to each of the callback functions. }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 function CGDataProviderCreate( info: UnivPtr; const (*var*) callbacks: CGDataProviderCallbacks ): CGDataProviderRef; external name '_CGDataProviderCreate';
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
@@ -639,7 +726,10 @@ function CGDataProviderCreateDirectAccess( info: UnivPtr; size: size_t; const (*
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -1,7 +1,12 @@
 'none',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'p_set_nomips16',
+=======
+'p_stk2',
+'p_lw',
+>>>>>>> graemeg/cpstrnew
 =======
 'p_stk2',
 'p_lw',
@@ -16,6 +21,7 @@
 'p_set_reorder',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'p_set_noat',
 'p_set_at',
 '.frame',
@@ -27,12 +33,17 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 'p_frame',
 'p_mask',
 'p_fmask',
 'p_sw',
 'sparc8unimp',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -42,7 +53,10 @@
 'negu',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'b ',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -126,7 +140,10 @@
 'mtlo',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 'multg',
@@ -142,6 +159,9 @@
 'modug',
 'dmodug',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -151,7 +171,10 @@
 'jalr',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 'beq',
@@ -171,6 +194,9 @@
 'bltzall',
 'bgezall',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -243,7 +269,10 @@
 'floor.l.d',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 'bc1t',
@@ -251,6 +280,9 @@
 'bc1tl',
 'bc1fl',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -262,7 +294,10 @@
 'c.lt.s',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 'beqi',
@@ -284,6 +319,9 @@
 'bgtu',
 'bgeu',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -296,6 +334,7 @@
 'sleu',
 'sne',
 'syscall',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 'break',
@@ -326,6 +365,8 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 'add64sub',
 'sub64sub',
 'mul64sub',
@@ -338,6 +379,9 @@
 'shr64sub',
 'xor64sub',
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

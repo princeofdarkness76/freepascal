@@ -72,6 +72,7 @@ type
     _controlView: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __icFlags: record
       case byte of
        0: (_anonbitfield_NSImageCell0: cuint);
@@ -79,11 +80,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __icFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSImageCell0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -94,7 +100,10 @@ type
         _style: 0..((1 shl 3)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

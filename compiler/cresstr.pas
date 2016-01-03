@@ -41,8 +41,13 @@ uses
    verbose,fmodule,ppu,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    aasmbase,aasmtai,aasmdata,aasmcnst,
    aasmcpu;
+=======
+   aasmbase,aasmtai,aasmdata,
+   aasmcpu,asmutils;
+>>>>>>> graemeg/cpstrnew
 =======
    aasmbase,aasmtai,aasmdata,
    aasmcpu,asmutils;
@@ -149,6 +154,9 @@ uses
         resstrlab : tasmsymbol;
         endsymlab : tasmsymbol;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -178,6 +186,7 @@ uses
         { Write unitname entry }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tcb.maybe_begin_aggregate(resstrdef);
         namelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],@current_module.localsymtable.name^[1],length(current_module.localsymtable.name^),getansistringcodepage);
         tcb.emit_string_offset(namelab,length(current_module.localsymtable.name^),st_ansistring,false,charpointertype);
@@ -192,6 +201,8 @@ uses
         );
         tcb.free;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         namelab:=emit_ansistring_const(current_asmdata.asmlists[al_const],@current_module.localsymtable.name^[1],length(current_module.localsymtable.name^),DefaultSystemCodePage,False);
@@ -212,6 +223,7 @@ uses
             if assigned(R.value) and (R.len<>0) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               valuelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],R.Value,R.Len,getansistringcodepage)
             else
               begin
@@ -221,6 +233,8 @@ uses
             current_asmdata.asmlists[al_const].concat(cai_align.Create(const_align(sizeof(pint))));
             namelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],@R.Name[1],length(R.name),getansistringcodepage);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
               valuelab:=emit_ansistring_const(current_asmdata.asmlists[al_const],R.Value,R.Len,DefaultSystemCodePage,False)
@@ -281,6 +295,9 @@ uses
         if (target_info.system in systems_darwin) then   
           current_asmdata.asmlists[al_resourcestrings].concat(Tai_const.create_sym(endsymlab));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

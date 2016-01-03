@@ -644,7 +644,10 @@
 'pmuldq',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'pmulld',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -656,7 +659,10 @@
 'roundsd',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'crc32',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -672,6 +678,7 @@
 'aesdec',
 'aesdeclast',
 'aesimc',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 'aeskeygenassist',
@@ -1037,11 +1044,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 'aeskeygen',
 'stosq',
 'lodsq',
 'cmpsq'
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

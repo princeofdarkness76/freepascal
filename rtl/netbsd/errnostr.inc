@@ -15,9 +15,15 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Checked using ../unix/scipts/check_errnostr.sh  }
 const
   sys_errn=97;
+=======
+{$warning FIX ME, I'am from FreeBSD }
+const
+  sys_errn=93;
+>>>>>>> graemeg/cpstrnew
 =======
 {$warning FIX ME, I'am from FreeBSD }
 const
@@ -34,6 +40,7 @@ const
         'No such file or directory',            { ENOENT }
         'No such process',                      { ESRCH }
         'Interrupted system call',              { EINTR }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         'Input/output error',                   { EIO }
@@ -61,6 +68,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         'I/O error',                            { EIO }
         'No such device or address',            { ENXIO }
         'Arg list too long',                    { E2BIG }
@@ -84,6 +93,9 @@ const
         'Not a typewriter',                     { ENOTTY }
         'Text (code segment) file busy',        { ETXTBSY  Text file busy.  The new process was
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -99,6 +111,7 @@ const
         'Read-only file system',                { EROFS }
         'Too many links',                       { EMLINK }
         'Broken pipe',                          { EPIPE }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         'Numerical argument out of domain',     { EDOM }
@@ -171,6 +184,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         'Math argument out of domain of func',  { EDOM }
         'Math result not representable',        { ERANGE }
         'Resource temporarily unavailable',        { EAGAIN }
@@ -235,6 +250,9 @@ const
         'Link has been severed',                              { ENOLINK }
         'Protocol error'                                             { EPROTO }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -90,6 +90,7 @@ type
     _layoutHoles: NSSortedArray;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __lmFlags: record
       case byte of
        0: (_anonbitfield_NSLayoutManager0: cuint);
@@ -97,11 +98,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __lmFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSLayoutManager0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -137,7 +143,10 @@ type
         useNonContig: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

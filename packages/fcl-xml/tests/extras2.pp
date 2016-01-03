@@ -118,7 +118,11 @@ begin
     nodeValue := TDOMProcessingInstruction(node).data;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> graemeg/cpstrnew
 =======
     assertEquals('trailingPIData', '', nodeValue);
 >>>>>>> graemeg/cpstrnew
@@ -188,7 +192,11 @@ begin
     nodeValue := TDOMProcessingInstruction(node).data;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> graemeg/cpstrnew
 =======
     assertEquals('trailingPIData', '', nodeValue);
 >>>>>>> graemeg/cpstrnew
@@ -241,7 +249,11 @@ begin
   attrValue := attr.nodeValue;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('titleValue', 'default', attrValue);
+=======
+  assertEquals('titleValue', 'default', attrValue);
+>>>>>>> graemeg/cpstrnew
 =======
   assertEquals('titleValue', 'default', attrValue);
 >>>>>>> graemeg/cpstrnew
@@ -282,6 +294,7 @@ begin
   docElemLocalName := docElem.localName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEqualsW('docElemNS', namespaceURI, docElemNS);
@@ -290,12 +303,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   assertEquals('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEquals('docElemNS', namespaceURI, docElemNS);
   attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
   assertEquals('properNSAttrValue', 'test value', attrValue);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -333,6 +351,7 @@ begin
   docElemLocalName := docElem.localName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEqualsW('docElemNS', namespaceURI, docElemNS);
@@ -341,12 +360,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   assertEquals('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEquals('docElemNS', namespaceURI, docElemNS);
   attrValue := docElem.getAttributeNS(namespaceURI, 'attr');
   assertEquals('properNSAttrValue', 'test value', attrValue);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

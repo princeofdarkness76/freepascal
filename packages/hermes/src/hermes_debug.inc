@@ -54,6 +54,7 @@ begin
   AssignFile(F, 'debug.txt');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}{$I-}
   Append(F);
   {$pop}
@@ -65,6 +66,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   {$I-}
   Append(F);
   {$I+}
@@ -74,6 +77,9 @@ begin
     Rewrite(F);
     {$I+}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

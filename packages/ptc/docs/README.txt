@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 PTCPas 0.99.14
+=======
+PTCPas 0.99.11
+>>>>>>> graemeg/cpstrnew
 =======
 PTCPas 0.99.11
 >>>>>>> graemeg/cpstrnew
@@ -34,7 +38,12 @@ PTCPas initially started out as a complete Object Pascal translation of the
 OpenPTC C++ library. Since then, OpenPTC development has stalled and PTCPas
 lives on as a fully independent Object Pascal project.
 
+PTCPas initially started out as a complete Object Pascal translation of the
+OpenPTC C++ library. Since then, OpenPTC development has stalled and PTCPas
+lives on as a fully independent Object Pascal project.
+
 Supported consoles:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   DirectX 3+ (should work on all x86 and x64 Windows versions since Windows 95,
@@ -47,6 +56,8 @@ Supported consoles:
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   DirectX 3+ (should work on all x86 Windows versions since Windows 95, except
               Windows CE. This currently means 95/98/ME/NT4/2000/XP/2003/Vista.
               It is compatible with the x64 editions of XP and 2003 (although
@@ -55,6 +66,9 @@ Supported consoles:
               do not have any DirectX preinstalled, so it has to be installed
               separately.)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -64,7 +78,12 @@ Supported consoles:
        and xf86dga extensions)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Vesa 1.0+ (DOS. Supports LFB and banked video memory access)
+=======
+  Vesa 1.0+ (DOS. Supports LFB and banked video memory access. Video pages not
+             yet supported)
+>>>>>>> graemeg/cpstrnew
 =======
   Vesa 1.0+ (DOS. Supports LFB and banked video memory access. Video pages not
              yet supported)

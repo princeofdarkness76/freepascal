@@ -133,7 +133,10 @@ begin
     inc(fPos);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CheckLoadBuffer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -301,7 +304,11 @@ begin
           s:=HandleQuotedString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fLastTokenWStr:=fLastTokenWStr+UnicodeString(s);
+=======
+          fLastTokenWStr:=fLastTokenWStr+s;
+>>>>>>> graemeg/cpstrnew
 =======
           fLastTokenWStr:=fLastTokenWStr+s;
 >>>>>>> graemeg/cpstrnew

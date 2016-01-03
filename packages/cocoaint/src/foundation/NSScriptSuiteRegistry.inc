@@ -45,7 +45,11 @@
     _isLoadingSDEFFiles: Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved1: array[0..(3)-1] of char;
+=======
+        _reserved1: array[0..2] of char;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved1: array[0..2] of char;
 >>>>>>> graemeg/cpstrnew
@@ -65,7 +69,11 @@
     _nextComplexTypeAppleEventCode: cuint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved2: array[0..(4)-1] of Pointer;
+=======
+        _reserved2: array[0..3] of Pointer;
+>>>>>>> graemeg/cpstrnew
 =======
         _reserved2: array[0..3] of Pointer;
 >>>>>>> graemeg/cpstrnew

@@ -445,7 +445,11 @@ implementation
               if left.location.loc in [LOC_SUBSETREG,LOC_CSUBSETREG,LOC_SUBSETREF,LOC_CSUBSETREF] then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,true);
+=======
+                location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,true);
+>>>>>>> graemeg/cpstrnew
 =======
                 location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,true);
 >>>>>>> graemeg/cpstrnew

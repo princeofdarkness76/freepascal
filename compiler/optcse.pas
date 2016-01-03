@@ -36,10 +36,13 @@ unit optcse;
       - call para nodes are cse barriers because they can be reordered and thus the
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         temp. creation could be done too late
       - the cse knows nothing about register pressure. In case of high register pressure, cse might
         have a negative impact
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         temp. creation can be done too late
@@ -50,6 +53,9 @@ unit optcse;
         have a negative impact
       - assignment nodes are currently cse borders: things like a[i,j]:=a[i,j]+1; are not improved
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -67,9 +73,16 @@ unit optcse;
       nutils,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       nbas,nld,ninl,ncal,nadd,nmem,
       pass_1,
       symconst,symdef,symsym,
+=======
+      procinfo,
+      nbas,nld,ninl,ncal,ncnv,nadd,
+      pass_1,
+      symconst,symtype,symdef,symsym,
+>>>>>>> graemeg/cpstrnew
 =======
       procinfo,
       nbas,nld,ninl,ncal,ncnv,nadd,
@@ -96,6 +109,9 @@ unit optcse;
         inn,symdifn,shrn,shln,ordconstn,realconstn,unaryminusn,pointerconstn,stringconstn,setconstn,
         isn,asn,starstarn,nothingn,temprefn,loadparentfpn {,callparan}];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -106,6 +122,7 @@ unit optcse;
           ((n.nodetype=inlinen) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            (tinlinenode(n).inlinenumber in [in_length_x,in_assigned_x,in_sqr_real,in_sqrt_real,in_sin_real,in_cos_real,in_abs_long,
              in_abs_real,in_exp_real,in_ln_real,in_pi_real,in_popcnt_x,in_arctan_real,in_round_real,in_trunc_real,
              { cse on fma will still not work because it would require proper handling of call nodes
@@ -113,6 +130,10 @@ unit optcse;
              in_fma_single,in_fma_double,in_fma_extended,in_fma_float128])
           ) or
           ((n.nodetype=callparan) and not(assigned(tcallparanode(n).right))) or
+=======
+           (tinlinenode(n).inlinenumber in [in_assigned_x])
+          ) or
+>>>>>>> graemeg/cpstrnew
 =======
            (tinlinenode(n).inlinenumber in [in_assigned_x])
           ) or
@@ -154,6 +175,7 @@ unit optcse;
         result:=collectnodes(n,arg);
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -198,11 +220,17 @@ unit optcse;
       var
         i,j : longint;
 >>>>>>> graemeg/cpstrnew
+=======
+    function collectnodes(var n:tnode; arg: pointer) : foreachnoderesult;
+      var
+        i,j : longint;
+>>>>>>> graemeg/cpstrnew
       begin
         result:=fen_false;
         { don't add the tree below an untyped const parameter: there is
           no information available that this kind of tree actually needs
           to be addresable, this could be improved }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         { the nodes below a type conversion node created for an absolute
@@ -225,10 +253,16 @@ unit optcse;
           (tcallparanode(n).left.resultdef.typ=formaldef) and
           (tcallparanode(n).parasym.varspez=vs_const)) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if ((n.nodetype=callparan) and
+          (tcallparanode(n).left.resultdef.typ=formaldef) and
+          (tcallparanode(n).parasym.varspez=vs_const)) then
+>>>>>>> graemeg/cpstrnew
           begin
             result:=fen_norecurse_false;
             exit;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if
@@ -295,6 +329,8 @@ unit optcse;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         { so far, we can handle only nodes being read }
         if (n.flags*[nf_write,nf_modify]=[]) and
           { node possible to add? }
@@ -332,6 +368,9 @@ unit optcse;
           }
           (not(is_constnode(n)) or (node_complexity(n)>1)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -351,6 +390,7 @@ unit optcse;
                     if plists(arg)^.equalto[i]<>pointer(-1) then
                       plists(arg)^.equalto[plists(arg)^.nodelist.count-1]:=plists(arg)^.equalto[i]
                     else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                       plists(arg)^.equalto[plists(arg)^.nodelist.count-1]:=pointer(ptrint(i));
@@ -389,6 +429,8 @@ unit optcse;
 {$endif}
        end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                       plists(arg)^.equalto[plists(arg)^.nodelist.count-1]:=pointer(i);
@@ -535,6 +577,7 @@ unit optcse;
                         def:=tstoreddef(tnode(lists.nodelist[i]).resultdef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         { we cannot handle register stored records or array in CSE yet
                           but we can store their reference }
                         addrstored:=((def.typ in [arraydef,recorddef]) or is_object(def)) and not(is_dynamic_array(def));
@@ -561,6 +604,10 @@ unit optcse;
                         templist[i]:=ctempcreatenode.create_value(def,def.size,tt_persistent,
                           def.is_intregable or def.is_fpuregable,tnode(lists.nodelist[i]));
 >>>>>>> graemeg/cpstrnew
+=======
+                        templist[i]:=ctempcreatenode.create_value(def,def.size,tt_persistent,
+                          def.is_intregable or def.is_fpuregable,tnode(lists.nodelist[i]));
+>>>>>>> graemeg/cpstrnew
                         { make debugging easier and set temp. location to the original location }
                         tnode(templist[i]).fileinfo:=tnode(lists.nodelist[i]).fileinfo;
 
@@ -574,10 +621,14 @@ unit optcse;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         if addrstored then
                           pnode(lists.locationlist[i])^:=cderefnode.Create(ctemprefnode.create(ttempcreatenode(templist[i])))
                         else
                           pnode(lists.locationlist[i])^:=ctemprefnode.create(ttempcreatenode(templist[i]));
+=======
+                        pnode(lists.locationlist[i])^:=ctemprefnode.create(ttempcreatenode(templist[i]));
+>>>>>>> graemeg/cpstrnew
 =======
                         pnode(lists.locationlist[i])^:=ctemprefnode.create(ttempcreatenode(templist[i]));
 >>>>>>> graemeg/cpstrnew
@@ -595,6 +646,7 @@ unit optcse;
                     { current node reference to another node? }
                     else if lists.equalto[i]<>pointer(-1) then
                       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                         def:=tstoreddef(tnode(lists.nodelist[i]).resultdef);
@@ -619,6 +671,8 @@ unit optcse;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$if defined(csedebug) or defined(csestats)}
                         printnode(output,tnode(lists.nodelist[i]));
                         writeln(i,'    equals   ',ptrint(lists.equalto[i]));
@@ -627,6 +681,9 @@ unit optcse;
                         templist[i]:=templist[ptrint(lists.equalto[i])];
                         pnode(lists.locationlist[i])^:=ctemprefnode.create(ttempcreatenode(templist[ptrint(lists.equalto[i])]));
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -50,6 +50,9 @@ Type
   TQueryResult = PMYSQL_RES;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -116,12 +119,15 @@ end;
 Function CreateQuery(Const ASQL : String) : TSQLQuery;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=TSQLQuery.Create(Connection);
   Result.Database:=Connection;
   Result.Transaction:=Connection.Transaction;
   Result.SQL.Text:=ASQL;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Function ConnectToDatabase(DatabaseName,Host,User,Password,Port : String) : Boolean;
@@ -227,7 +233,10 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { No warning if it fails }
 Function RunSilentQuery (Qry : String; Var res : TQueryResult) : Boolean ;
 
@@ -240,6 +249,9 @@ begin
     Res:=Mysql_store_result(@connection);
 end;
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 Function GetResultField (Res : TQueryResult; Id : Integer) : String;
@@ -281,6 +293,7 @@ Function StringQuery(Qry : String) : String;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   Res : TSQLQuery;
 
@@ -302,6 +315,9 @@ begin
   Verbose(V_SQL,'EscapeSQL : "'+S+'" -> "'+Result+'"');
 =======
 begin
+=======
+begin
+>>>>>>> graemeg/cpstrnew
 =======
 begin
 >>>>>>> graemeg/cpstrnew
@@ -449,8 +465,11 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Verbose(V_Debug,'Reading: '+FileName);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Verbose(V_Debug,'Reading '+FileName);
@@ -568,6 +587,7 @@ Const
              ' VALUES '+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              '(%d,%d,''%s'',''%s'',%d) RETURNING TR_ID';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -580,6 +600,8 @@ Var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
              '(%d,%d,"%s","%s",%d) ';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -590,6 +612,9 @@ Var
   Res : TQueryResult;
   updateValues : boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -598,6 +623,7 @@ begin
   Result:=-1;
   Qry:=Format(SInsertRes,
               [TestID,RunID,B[OK],B[Skipped],TestRes,EscapeSQL(Log)]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   Result:=IDQuery(Qry);
@@ -614,6 +640,8 @@ begin
     if Not ExecuteQuery(Qry,False) then
        Verbose(V_Warning,'Insert Log failed');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   If RunSilentQuery(Qry,Res) then
@@ -633,6 +661,9 @@ begin
           Verbose(V_Warning,'Insert Log failed');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

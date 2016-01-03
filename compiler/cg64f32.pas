@@ -101,7 +101,11 @@ unit cg64f32;
        symbase,symconst,symdef,symtable,defutil,paramgr,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        tgobj,hlcgobj;
+=======
+       tgobj;
+>>>>>>> graemeg/cpstrnew
 =======
        tgobj;
 >>>>>>> graemeg/cpstrnew
@@ -792,6 +796,9 @@ unit cg64f32;
         cg.a_load_reg_cgpara(list,OS_32,reg.reghi,tmplochi);
         cg.a_load_reg_cgpara(list,OS_32,reg.reglo,tmploclo);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -828,6 +835,9 @@ unit cg64f32;
         cg.a_load_const_cgpara(list,OS_32,aint(hi(value)),tmplochi);
         cg.a_load_const_cgpara(list,OS_32,aint(lo(value)),tmploclo);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -870,6 +880,9 @@ unit cg64f32;
         cg.a_load_ref_cgpara(list,OS_32,tmprefhi,tmplochi);
         cg.a_load_ref_cgpara(list,OS_32,tmpreflo,tmploclo);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

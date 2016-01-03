@@ -6,7 +6,11 @@
 name=compiler
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
+=======
+version=2.5.1
+>>>>>>> graemeg/cpstrnew
 =======
 version=2.5.1
 >>>>>>> graemeg/cpstrnew
@@ -42,7 +46,11 @@ unexport FPC_VERSION FPC_COMPILERINFO
 # Which platforms are ready for inclusion in the cycle
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k armeb mipsel mips avr jvm i8086 aarch64
+=======
+CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k armeb mipsel mips
+>>>>>>> graemeg/cpstrnew
 =======
 CYCLETARGETS=i386 powerpc sparc arm x86_64 powerpc64 m68k armeb mipsel mips
 >>>>>>> graemeg/cpstrnew
@@ -86,6 +94,7 @@ PPC_TARGET=mipsel
 endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifdef AVR
 PPC_TARGET=avr
 endif
@@ -98,6 +107,8 @@ endif
 ifdef AARCH64
 PPC_TARGET=aarch64
 endif
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -218,6 +229,7 @@ CPUSUF=mipsel
 endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifeq ($(CPC_TARGET),avr)
 CPUSUF=avr
 ALLOW_WARNINGS=1
@@ -235,6 +247,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 # Do not define the default -d$(CPU_TARGET) because that
 # will conflict with our -d$(CPC_TARGET)
@@ -246,7 +260,11 @@ MSGFILE=msg/error$(FPCLANG).msg
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 SVNVERSION:=$(firstword $(wildcard $(addsuffix /svnversion$(SRCEXEEXT),$(SEARCHPATH))))
+=======
+SVNVERSION:=$(wildcard $(addsuffix /svnversion$(SRCEXEEXT),$(SEARCHPATH)))
+>>>>>>> graemeg/cpstrnew
 =======
 SVNVERSION:=$(wildcard $(addsuffix /svnversion$(SRCEXEEXT),$(SEARCHPATH)))
 >>>>>>> graemeg/cpstrnew
@@ -265,11 +283,14 @@ ifeq ($(REVSTR),)
 ifneq ($(SVNVERSION),)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 REVSTR:=$(subst r,,$(subst r1:,,r$(shell $(SVNVERSION) -c .)))
 =======
 REVSTR:=$(shell $(SVNVERSION) -c .)
 =======
 REVSTR:=$(shell $(SVNVERSION) -c .)
+=======
+REVSTR:=$(shell $(SVNVERSION) -c .)
 export REVSTR
 else
 ifeq ($(REVINC),force)
@@ -284,7 +305,14 @@ export REVSTR
 else
 ifeq ($(REVINC),force)
 REVSTR:=exported
+>>>>>>> graemeg/cpstrnew
 export REVSTR
+else
+ifeq ($(REVINC),force)
+REVSTR:=exported
+export REVSTR
+endif
+endif
 endif
 endif
 endif
@@ -346,6 +374,7 @@ endif
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # jvm specific
 ifeq ($(PPC_TARGET),jvm)
 override LOCALOPT+=-Fujvm
@@ -359,6 +388,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 OPTWPOCOLLECT=-OWdevirtcalls,optvmts -FW$(BASEDIR)/pp1.wpo
 OPTWPOPERFORM=-Owdevirtcalls,optvmts -Fw$(BASEDIR)/pp1.wpo
@@ -366,7 +397,11 @@ OPTWPOPERFORM=-Owdevirtcalls,optvmts -Fw$(BASEDIR)/pp1.wpo
 # is forced by the Makefile when necessary)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ifneq ($(findstring $(OS_TARGET),darwin linux dragonfly freebsd solaris),)
+=======
+ifneq ($(findstring $(OS_TARGET),darwin linux freebsd solaris),)
+>>>>>>> graemeg/cpstrnew
 =======
 ifneq ($(findstring $(OS_TARGET),darwin linux freebsd solaris),)
 >>>>>>> graemeg/cpstrnew
@@ -381,6 +416,7 @@ endif
 endif
 endif
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 # Don't compile a native compiler & utilities for JVM and embedded
@@ -407,6 +443,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 
 [rules]
 #####################################################################
@@ -421,6 +459,9 @@ USE_CMP_FOR_DIFF=1
 endif
 ifeq ($(OS_TARGET),win64)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -493,8 +534,12 @@ endif
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 PPC_TARGETS=i386 m68k powerpc sparc arm armeb x86_64 powerpc64 mips mipsel avr jvm i8086 aarch64
 INSTALL_TARGETS=$(addsuffix _exe_install,$(sort $(CYCLETARGETS) $(PPC_TARGETS)))
+=======
+PPC_TARGETS=i386 m68k powerpc sparc arm armeb x86_64 powerpc64 alpha vis ia64 mips mipsel
+>>>>>>> graemeg/cpstrnew
 =======
 PPC_TARGETS=i386 m68k powerpc sparc arm armeb x86_64 powerpc64 alpha vis ia64 mips mipsel
 >>>>>>> graemeg/cpstrnew
@@ -556,9 +601,13 @@ tempclean:
 execlean :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         -$(DEL) ppc386$(EXEEXT) ppc68k$(EXEEXT) ppcx64$(EXEEXT) ppcppc$(EXEEXT) ppcsparc$(EXEEXT) ppcppc64$(EXEEXT)
         -$(DEL) ppcarm$(EXEEXT) ppcmips$(EXEEXT) ppcmipsel$(EXEEXT) ppcjvm$(EXEEXT) ppc8086$(EXEEXT) ppca64$(EXEEXT)
         -$(DEL) $(EXENAME) $(TEMPWPONAME1) $(TEMPWPONAME2)
+=======
+        -$(DEL) ppc386$(EXEEXT) ppc68k$(EXEEXT) ppcx64$(EXEEXT) ppcppc$(EXEEXT) ppcsparc$(EXEEXT) ppcppc64$(EXEEXT) ppcarm$(EXEEXT) ppcmips$(EXEEXT) ppcmipsel$(EXEEXT) $(EXENAME) $(TEMPWPONAME1) $(TEMPWPONAME2)
+>>>>>>> graemeg/cpstrnew
 =======
         -$(DEL) ppc386$(EXEEXT) ppc68k$(EXEEXT) ppcx64$(EXEEXT) ppcppc$(EXEEXT) ppcsparc$(EXEEXT) ppcppc64$(EXEEXT) ppcarm$(EXEEXT) ppcmips$(EXEEXT) ppcmipsel$(EXEEXT) $(EXENAME) $(TEMPWPONAME1) $(TEMPWPONAME2)
 >>>>>>> graemeg/cpstrnew
@@ -571,8 +620,12 @@ $(addsuffix _clean,$(ALLTARGETS)):
         -$(DEL) $(addprefix $(subst _clean,,$@)/,*$(OEXT) *$(PPUEXT) *$(RSTEXT) *$(ASMEXT) *$(STATICLIBEXT) *$(SHAREDLIBEXT) *$(PPLEXT))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         -$(DEL) $(addprefix $(subst _clean,,$@)/,ppc386$(EXEEXT) ppc68k$(EXEEXT) ppcx64$(EXEEXT) ppcppc$(EXEEXT) ppcsparc$(EXEEXT))
         -$(DEL) $(addprefix $(subst _clean,,$@)/,ppcppc64$(EXEEXT) ppcarm$(EXEEXT) ppcmips$(EXEEXT) ppcmipsel$(EXEEXT) ppcjvm$(EXEEXT) ppc8086$(EXEEXT) ppca64$(EXEEXT) $(EXENAME))
+=======
+        -$(DEL) $(addprefix $(subst _clean,,$@)/,ppc386$(EXEEXT) ppc68k$(EXEEXT) ppcx64$(EXEEXT) ppcppc$(EXEEXT) ppcsparc$(EXEEXT) ppcppc64$(EXEEXT) ppcarm$(EXEEXT) ppcmips$(EXEEXT) ppcmipsel$(EXEEXT) $(EXENAME))
+>>>>>>> graemeg/cpstrnew
 =======
         -$(DEL) $(addprefix $(subst _clean,,$@)/,ppc386$(EXEEXT) ppc68k$(EXEEXT) ppcx64$(EXEEXT) ppcppc$(EXEEXT) ppcsparc$(EXEEXT) ppcppc64$(EXEEXT) ppcarm$(EXEEXT) ppcmips$(EXEEXT) ppcmipsel$(EXEEXT) $(EXENAME))
 >>>>>>> graemeg/cpstrnew
@@ -708,6 +761,28 @@ revision :
 	$(DEL) revision.inc
 	$(MAKE) revision.inc
 
+# revision.inc rule
+revision.inc :
+ifneq ($(REVSTR),)
+ifdef USEZIPWRAPPER
+ifneq ($(ECHOREDIR),echo)
+        $(ECHOREDIR) "'$(REVSTR)'" > revision.inc
+else
+        $(ECHOREDIR) '$(REVSTR)' > revision.inc
+endif
+else
+        $(ECHOREDIR) "'$(REVSTR)'" > revision.inc
+endif
+else
+	$(MAKE) revision.inc REVINC=force
+endif
+
+.PHONY : revision
+
+revision :
+	$(DEL) revision.inc
+	$(MAKE) revision.inc
+
 # Make only the compiler
 # ECHOREDIR sometimes does not remove double quotes
 $(EXENAME) : $(wildcard *.pas) $(wildcard *.inc) msg \
@@ -719,11 +794,15 @@ ifdef USEZIPWRAPPER
 ifneq ($(ECHOREDIR),echo)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
         $(ECHOREDIR) "'$(REVSTR)'" > revision.inc
 else
         $(ECHOREDIR) '$(REVSTR)' > revision.inc
 endif
 else
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
         $(ECHOREDIR) "'$(REVSTR)'" > revision.inc
@@ -743,6 +822,9 @@ endif
         $(COMPILER) version.pas
 endif
         $(COMPILER) version.pas
+=======
+        $(ECHOREDIR) "'$(REVSTR)'" > revision.inc
+>>>>>>> graemeg/cpstrnew
 endif
         $(COMPILER) version.pas
 endif
@@ -785,6 +867,7 @@ wpocycle:
         $(RM) $(EXENAME)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(MAKE) 'FPC=$(BASEDIR)/$(TEMPNAME3)' 'OPT=$(strip $(LOCALOPT) $(OPTWPOCOLLECT) $(OPTNEW))' compiler
         $(RM) $(EXENAME)
         $(MAKE) 'FPC=$(BASEDIR)/$(TEMPNAME3)' 'OPT=$(strip $(RTLOPT) $(OPTWPOPERFORM) $(OPTNEW))' rtlclean rtl
@@ -795,6 +878,8 @@ wpocycle:
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         $(MAKE) 'FPC=$(BASEDIR)/$(TEMPNAME3)' 'OPT=$(LOCALOPT) $(OPTWPOCOLLECT)' compiler
         $(RM) $(EXENAME)
         $(MAKE) 'FPC=$(BASEDIR)/$(TEMPNAME3)' 'OPT=$(RTLOPT) $(OPTWPOPERFORM)' rtlclean rtl
@@ -803,6 +888,9 @@ wpocycle:
         $(MAKE) 'FPC=$(BASEDIR)/$(TEMPWPONAME1)' 'OPT=$(RTLOPT) $(subst pp1.wpo,pp2.wpo,$(OPTWPOPERFORM))' rtlclean rtl
         $(MAKE) 'FPC=$(BASEDIR)/$(TEMPWPONAME1)' 'OPT=$(LOCALOPT) $(subst pp1.wpo,pp2.wpo,$(OPTWPOPERFORM))' $(addsuffix _clean,$(ALLTARGETS)) compiler
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -892,6 +980,7 @@ ifneq ($(OS_TARGET),embedded)
 endif
 endif
 endif
+endif
 
 endif
 
@@ -927,6 +1016,7 @@ endif
 ifneq ($(OS_TARGET),embedded)
         $(MAKE) 'FPC=$(BASEDIR)/$(PPCROSSNAME)' 'OPT=$(OPT) $(CROSSOPT)' cycleclean compiler
 >>>>>>> graemeg/cpstrnew
+endif
 endif
 endif
 endif

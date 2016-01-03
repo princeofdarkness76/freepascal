@@ -7,6 +7,7 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, fpdocproj, dom, fptemplate;
 
 Type
@@ -15,6 +16,8 @@ Type
   TXMLFPDocOptions = Class(TComponent)
   private
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Classes, SysUtils, fpdocproj, dom;
@@ -27,6 +30,9 @@ Type
 
   TXMLFPDocOptions = Class(TComponent)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -36,6 +42,7 @@ Type
     Procedure LoadPackage(APackage : TFPDocPackage; E : TDOMElement); virtual;
     Procedure LoadPackages(Packages : TFPDocPackages; E : TDOMElement);
     Procedure LoadEngineOptions(Options : TEngineOptions; E : TDOMElement); virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     Procedure SaveEngineOptions(Options : TEngineOptions; XML : TXMLDocument; AParent : TDOMElement); virtual;
@@ -67,6 +74,8 @@ Uses XMLRead, XMLWrite;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   Public
     Procedure LoadOptionsFromFile(AProject : TFPDocProject; Const AFileName : String);
     Procedure LoadFromXML(AProject : TFPDocProject; XML : TXMLDocument); virtual;
@@ -77,6 +86,9 @@ implementation
 
 Uses XMLRead;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -88,8 +100,11 @@ Resourcestring
   SErrNoDescrFile = 'description tag without file attribute';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrNoImportFile = 'Import tag without file attribute';
   SErrNoImportPrefix = 'Import tag without prefix attribute';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -108,7 +123,10 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -145,6 +163,7 @@ procedure TXMLFPDocOptions.LoadPackage(APackage: TFPDocPackage; E: TDOMElement);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   begin
     Result:=I['file'];
     If (Result='') then
@@ -168,6 +187,8 @@ procedure TXMLFPDocOptions.LoadPackage(APackage: TFPDocPackage; E: TDOMElement);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   Var
     S : String;
 
@@ -182,6 +203,9 @@ Const
   OpNames : Array[0..OpCount] of string
           = ('');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -194,7 +218,11 @@ begin
   APackage.output:=E['output'];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   APackage.ContentFile:=E['content'];
+=======
+  APackage.ContentFile:=E['contentfile'];
+>>>>>>> graemeg/cpstrnew
 =======
   APackage.ContentFile:=E['contentfile'];
 >>>>>>> graemeg/cpstrnew
@@ -229,6 +257,7 @@ begin
         end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       else If (O.NodeName='imports') then
         begin
         S:=O.FirstChild;
@@ -239,6 +268,8 @@ begin
           S:=S.NextSibling;
           end;
         end
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -276,7 +307,10 @@ procedure TXMLFPDocOptions.LoadEngineOptions(Options: TEngineOptions;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Const
@@ -287,6 +321,9 @@ Const
             'mo-dir','parse-impl','format', 'language',
             'package');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -305,7 +342,11 @@ begin
       V:=TDOMElement(o)['value'];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Case IndexOfString(N,OptionNames) of
+=======
+      Case IndexOfString(N,ONames) of
+>>>>>>> graemeg/cpstrnew
 =======
       Case IndexOfString(N,ONames) of
 >>>>>>> graemeg/cpstrnew
@@ -325,8 +366,11 @@ begin
         10 : Options.DefaultPackageName:=V;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         11 : Options.DontTrim:=TrueValue(V);
         12 : Options.EmitNotes:=TrueValue(V);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -340,6 +384,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure TXMLFPDocOptions.SaveToXML(AProject: TFPDocProject; ADoc: TXMLDocument);
@@ -484,11 +529,16 @@ procedure TXMLFPDocOptions.LoadOptionsFromFile(AProject: TFPDocProject;
 procedure TXMLFPDocOptions.LoadOptionsFromFile(AProject: TFPDocProject;
   const AFileName: String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TXMLFPDocOptions.LoadOptionsFromFile(AProject: TFPDocProject;
+  const AFileName: String);
+>>>>>>> graemeg/cpstrnew
 
 Var
   XML : TXMLDocument;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   ReadXMLFile(XML,AFileName);
@@ -500,6 +550,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
    XMLRead.ReadXMLFile(XML,AFileName);
    try
      LoadFromXML(AProject,XML);
@@ -507,6 +559,9 @@ begin
      FreeAndNil(XML);
    end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -534,6 +589,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TXMLFPDocOptions.SaveOptionsToFile(AProject: TFPDocProject; const AFileName: String);
 
 Var
@@ -549,6 +605,8 @@ begin
   end;
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

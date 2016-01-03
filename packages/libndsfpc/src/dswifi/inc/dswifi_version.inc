@@ -4,8 +4,13 @@ const
   DSWIFI_MINOR    = 3;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DSWIFI_REVISION = 16;
   DSWIFI_VERSION  = '0.3.16';
+=======
+  DSWIFI_REVISION = 12;
+  DSWIFI_VERSION  = '0.3.12';
+>>>>>>> graemeg/cpstrnew
 =======
   DSWIFI_REVISION = 12;
   DSWIFI_VERSION  = '0.3.12';

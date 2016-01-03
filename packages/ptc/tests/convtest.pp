@@ -14,9 +14,15 @@ const
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   image: IPTCSurface;
   surface: IPTCSurface;
   format: IPTCFormat;
+=======
+  image: TPTCSurface = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> graemeg/cpstrnew
 =======
   image: TPTCSurface = nil;
   surface: TPTCSurface = nil;
@@ -51,7 +57,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generic(src, dest: IPTCSurface);
+=======
+procedure generic(src, dest: TPTCSurface);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure generic(src, dest: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
@@ -196,8 +206,13 @@ procedure test(sbits: Integer; sr, sg, sb: Uint32;
 var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   srcformat, destformat: IPTCFormat;
   src, dest: IPTCSurface;
+=======
+  srcformat, destformat: TPTCFormat;
+  src, dest: TPTCSurface;
+>>>>>>> graemeg/cpstrnew
 =======
   srcformat, destformat: TPTCFormat;
   src, dest: TPTCSurface;
@@ -210,6 +225,7 @@ var
   F: File;
 begin
   Writeln(sbits, ' ', sr, ' ', sg, ' ', sb, ' ', dbits, ' ', dr, ' ', dg, ' ', db, ' ', da);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   srcformat := TPTCFormatFactory.CreateNew(sbits, sr, sg, sb);
@@ -225,6 +241,8 @@ begin
 {    generic(src, dest);}
   generic(dest, surface);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   try
@@ -247,6 +265,9 @@ begin
     destformat.Free;
   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -268,7 +289,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: String);
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
@@ -302,6 +327,7 @@ end;
 begin
   TestNum := 0;
   try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     {$IFDEF FPC_LITTLE_ENDIAN}
@@ -392,6 +418,8 @@ begin
     test(32,$ff0000,$ff00,$ff,16,$f800,$7e0,$1f, 0, True);       { 16RGB565  }      { 58 }
     test(32,$ff0000,$ff00,$ff, 8,$e0,$1c,$3, 0 , True);          { 8RGB332   }      { 59 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     try
@@ -488,6 +516,9 @@ begin
       format.Free;
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

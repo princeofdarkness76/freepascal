@@ -241,11 +241,14 @@ unit nx86add;
            (tcgsize2unsigned[right.location.size]<>tcgsize2unsigned[opsize]) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,opdef,true);
         if (left.location.loc<>LOC_CONSTANT) and
            (tcgsize2unsigned[left.location.size]<>tcgsize2unsigned[opsize]) then
           hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,false);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
@@ -591,7 +594,11 @@ unit nx86add;
                 swapleftright;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,false);
+=======
+              location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
+>>>>>>> graemeg/cpstrnew
 =======
               location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
 >>>>>>> graemeg/cpstrnew

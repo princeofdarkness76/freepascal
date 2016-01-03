@@ -371,7 +371,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(generic_linux_syscalls)}
+=======
+{$ifndef NO_SYSCALL_UTIME}
+>>>>>>> graemeg/cpstrnew
 =======
 {$ifndef NO_SYSCALL_UTIME}
 >>>>>>> graemeg/cpstrnew
@@ -407,6 +411,7 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   tva[0].tv_sec := times^.actime;
   tva[0].tv_usec := 0;
   tva[1].tv_sec := times^.modtime;
@@ -415,6 +420,8 @@ begin
 end;
 
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   fputime:=do_syscall(syscall_nr_utime,TSysParam(path),TSysParam(times));
@@ -434,6 +441,9 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

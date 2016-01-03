@@ -135,6 +135,9 @@ implementation
         { generate jump table }
         if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -815,6 +818,9 @@ implementation
                   if (right.location.loc in [LOC_REGISTER,LOC_CREGISTER]) then
                     location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -153,7 +153,10 @@ type
     procedure Assign(Obj:TFPObjectList);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure ConcatListCopy(Obj:TFPObjectList);
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -228,7 +231,11 @@ type
     procedure Clear;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function NameOfIndex(Index: Integer): TSymStr;
+=======
+    function NameOfIndex(Index: Integer): ShortString;
+>>>>>>> graemeg/cpstrnew
 =======
     function NameOfIndex(Index: Integer): ShortString;
 >>>>>>> graemeg/cpstrnew
@@ -1584,6 +1591,9 @@ var
 begin
   prefetch(AName);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1597,8 +1607,11 @@ begin
              (HashValue=AHash) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              (AName=PSymStr(@FStrs[StrIndex])^) then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
              (AName=PShortString(@FStrs[StrIndex])^) then

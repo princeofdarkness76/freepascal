@@ -19,11 +19,14 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure do_MkDir(s: rawbytestring);
 var
     Rc : longint;
 begin
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
@@ -33,6 +36,9 @@ begin
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
     exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -40,6 +46,7 @@ begin
   Rc := _mkdir(pchar(s));
   if Rc <> 0 then
     SetFileError (Rc);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -69,6 +76,33 @@ begin
   DoDirSeparators(s);
   Rc := _rmdir(pchar(s));
 =======
+=======
+end;
+
+
+procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
+var Rc : longint;
+begin
+  if (len=1) and (s^ = '.' ) then
+    InOutRes := 16;
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+    exit;
+  DoDirSeparators(s);
+  Rc := _rmdir(pchar(s));
+  if Rc <> 0 then
+    SetFileError(Rc);
+end;
+
+
+procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+var RC: longint;
+begin
+  If not assigned(s) or (len=0) or (InOutRes <> 0) then
+    exit;
+  RC := _chdir (pchar(s));
+  if Rc <> 0 then
+    SetFileError(Rc);
+>>>>>>> graemeg/cpstrnew
 end;
 
 

@@ -78,6 +78,7 @@ type
     _obsMask: culonglong;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __aflags: record
       case byte of
        0: (_anonbitfield_NSRunningApplication0: cuint);
@@ -85,11 +86,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __aflags: bitpacked record
       case byte of
        0: (_anonbitfield_NSRunningApplication0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -104,7 +110,10 @@ type
         reserved1: 0..((1 shl 20)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

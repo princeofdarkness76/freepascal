@@ -25,7 +25,10 @@ resourcestring
   SErrInvalidCharacter = 'Invalid character at line %d, pos %d: ''%s''';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SUnterminatedComment = 'Unterminated comment at line %d, pos %d: ''%s''';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -52,7 +55,10 @@ type
     tkIdentifier,            // Any Javascript identifier
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tkComment,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -69,6 +75,8 @@ Const
   DefaultOptions = [joUTF8];
 
 Type
+
+  { TJSONScanner }
 
   { TJSONScanner }
 
@@ -104,6 +112,9 @@ Type
     constructor Create(Source : TStream); overload;
     constructor Create(const Source : String); overload;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -120,11 +131,15 @@ Type
     // Use strict JSON: " for strings, object members are strings, not identifiers
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property Strict : Boolean Index joStrict Read GetO Write SetO ; deprecated 'use options instead';
     // if set to TRUE, then strings will be converted to UTF8 ansistrings, not system codepage ansistrings.
     Property UseUTF8 : Boolean index joUTF8 Read GetO Write SetO; deprecated 'Use options instead';
     // Parsing options
     Property Options : TJSONOptions Read FOptions Write FOptions;
+=======
+    Property Strict : Boolean Read FStrict Write FStrict;
+>>>>>>> graemeg/cpstrnew
 =======
     Property Strict : Boolean Read FStrict Write FStrict;
 >>>>>>> graemeg/cpstrnew
@@ -151,7 +166,10 @@ const
     'identifier',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'comment',
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -198,7 +216,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TJSONScanner.Create(const Source: String; AOptions: TJSONOptions);
+=======
+constructor TJSONScanner.Create(const Source : String);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TJSONScanner.Create(const Source : String);
 >>>>>>> graemeg/cpstrnew
@@ -296,7 +318,11 @@ begin
         C:=TokenStr[0];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         If (C='''') and (joStrict in Options) then
+=======
+        If (C='''') and Strict then
+>>>>>>> graemeg/cpstrnew
 =======
         If (C='''') and Strict then
 >>>>>>> graemeg/cpstrnew
@@ -415,6 +441,9 @@ begin
         if SectionLength > 0 then
           Move(TokenStart^, FCurTokenString[1], SectionLength);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -447,6 +476,7 @@ begin
         Inc(TokenStr);
         Result := tkSquaredBraceClose;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     '/' :
@@ -500,6 +530,9 @@ begin
 =======
     'a'..'z','_':
 >>>>>>> graemeg/cpstrnew
+=======
+    'a'..'z','_':
+>>>>>>> graemeg/cpstrnew
       begin
         TokenStart := TokenStr;
         repeat
@@ -516,7 +549,11 @@ begin
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (joStrict in Options) then
+=======
+        if Strict then
+>>>>>>> graemeg/cpstrnew
 =======
         if Strict then
 >>>>>>> graemeg/cpstrnew

@@ -521,6 +521,9 @@ begin
   SockAddr.Port := ShortHostToNet(Port);
   SockAddr.Addr := Cardinal(HostAddr);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -576,6 +579,9 @@ begin
       Addr.Port := ShortHostToNet(Port);
       Addr.Addr := 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -5,7 +5,10 @@ type
     type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       TAlias = T;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

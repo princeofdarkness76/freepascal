@@ -365,6 +365,7 @@ begin
     DataNode:=Node.FirstChild;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     Case DataType of
       dtDWORD : S:=IntToStr(PCardinal(@Data)^);
@@ -373,6 +374,8 @@ begin
     else
       s:='';
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     // Reading <value></value> results in <value/>, i.e. no subkey exists any more. Create textnode.

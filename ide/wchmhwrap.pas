@@ -163,6 +163,7 @@ begin
       item:=findex.items.item[i];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       s:=formatalias(item.text);
       if s<>'' then
         begin
@@ -174,6 +175,8 @@ begin
           IndexEntries^.Insert(NewIndexEntry(  FormatAlias(item.text),ID,TLI));
         end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       if (length(item.local)>0) and (item.local[1]<>'/') then
@@ -288,6 +291,9 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 end;
@@ -328,6 +334,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 end;
 
@@ -366,6 +373,8 @@ begin
     end
 end;
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

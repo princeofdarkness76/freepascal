@@ -8,7 +8,12 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   windows;
+=======
+  windows,
+  strings;
+>>>>>>> graemeg/cpstrnew
 =======
   windows,
   strings;
@@ -71,7 +76,12 @@ uses
 Type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: {$ifdef FPC_UNICODE_RTL}PWideChar{$ELSE}PChar{$ENDIF}): HRESULT; stdcall;
+=======
+  PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
+
+>>>>>>> graemeg/cpstrnew
 =======
   PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
 
@@ -90,7 +100,11 @@ Procedure InitDLL;
 Var
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pathBuf: array[0..MAX_PATH-1] of {$ifdef FPC_UNICODE_RTL}WideChar{$else}Ansichar{$endif};
+=======
+  pathBuf: array[0..MAX_PATH-1] of char;
+>>>>>>> graemeg/cpstrnew
 =======
   pathBuf: array[0..MAX_PATH-1] of char;
 >>>>>>> graemeg/cpstrnew
@@ -112,7 +126,11 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,{$ifdef FPC_UNICODE_RTL}'SHGetFolderPathW'{$else}'SHGetFolderPathA'{$endif});
+=======
+      Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,'SHGetFolderPathA');
+>>>>>>> graemeg/cpstrnew
 =======
       Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,'SHGetFolderPathA');
 >>>>>>> graemeg/cpstrnew

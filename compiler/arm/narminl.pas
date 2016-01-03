@@ -77,7 +77,11 @@ implementation
             begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
+>>>>>>> graemeg/cpstrnew
 =======
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
 >>>>>>> graemeg/cpstrnew
@@ -94,11 +98,17 @@ implementation
           fpu_vfpv2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fpu_vfpv3,
           fpu_vfpv3_d16,
           fpu_fpv4_s16:
             begin
               hlcg.location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
+=======
+          fpu_vfpv3:
+            begin
+              location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
+>>>>>>> graemeg/cpstrnew
 =======
           fpu_vfpv3:
             begin
@@ -118,11 +128,14 @@ implementation
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fpu_soft:
             begin
               hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,left.resultdef,false);
               location_copy(location,left.location);
             end
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -139,12 +152,15 @@ implementation
         if (cs_fp_emulation in current_settings.moduleswitches) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             firstpass(left);
             expectloc:=LOC_REGISTER;
             first_abs_real:=nil;
           end
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           result:=inherited first_abs_real
@@ -159,6 +175,7 @@ implementation
               fpu_vfpv2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               fpu_vfpv3,
               fpu_vfpv3_d16:
                 expectloc:=LOC_MMREGISTER;
@@ -169,6 +186,10 @@ implementation
                   else
                     exit(inherited first_abs_real);
                 end;
+=======
+              fpu_vfpv3:
+                expectloc:=LOC_MMREGISTER;
+>>>>>>> graemeg/cpstrnew
 =======
               fpu_vfpv3:
                 expectloc:=LOC_MMREGISTER;
@@ -199,6 +220,7 @@ implementation
               fpu_vfpv2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               fpu_vfpv3,
               fpu_vfpv3_d16:
                 expectloc:=LOC_MMREGISTER;
@@ -209,6 +231,10 @@ implementation
                   else
                     exit(inherited first_sqr_real);
                 end;
+=======
+              fpu_vfpv3:
+                expectloc:=LOC_MMREGISTER;
+>>>>>>> graemeg/cpstrnew
 =======
               fpu_vfpv3:
                 expectloc:=LOC_MMREGISTER;
@@ -239,6 +265,7 @@ implementation
               fpu_vfpv2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               fpu_vfpv3,
               fpu_vfpv3_d16:
                 expectloc:=LOC_MMREGISTER;
@@ -249,6 +276,10 @@ implementation
                   else
                     exit(inherited first_sqrt_real);
                 end;
+=======
+              fpu_vfpv3:
+                expectloc:=LOC_MMREGISTER;
+>>>>>>> graemeg/cpstrnew
 =======
               fpu_vfpv3:
                 expectloc:=LOC_MMREGISTER;
@@ -299,7 +330,11 @@ implementation
         singleprec: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+        op: TAsmOp;
+>>>>>>> graemeg/cpstrnew
 =======
         op: TAsmOp;
 >>>>>>> graemeg/cpstrnew
@@ -314,6 +349,7 @@ implementation
           fpu_fpa11:
             current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_ABS,location.register,left.location.register),get_fpu_postfix(resultdef)));
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           fpu_vfpv3,
@@ -337,6 +373,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           fpu_vfpv3:
             begin
               if singleprec then
@@ -346,6 +384,9 @@ implementation
               current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(op,location.register,left.location.register));
             end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -360,7 +401,11 @@ implementation
         singleprec: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+        op: TAsmOp;
+>>>>>>> graemeg/cpstrnew
 =======
         op: TAsmOp;
 >>>>>>> graemeg/cpstrnew
@@ -377,6 +422,7 @@ implementation
           fpu_vfpv2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fpu_vfpv3,
           fpu_vfpv3_d16:
             begin
@@ -391,6 +437,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           fpu_vfpv3:
             begin
               if singleprec then
@@ -400,6 +448,9 @@ implementation
               current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg_reg(op,location.register,left.location.register,left.location.register));
             end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -414,7 +465,11 @@ implementation
         singleprec: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
+=======
+        op: TAsmOp;
+>>>>>>> graemeg/cpstrnew
 =======
         op: TAsmOp;
 >>>>>>> graemeg/cpstrnew
@@ -431,6 +486,7 @@ implementation
           fpu_vfpv2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fpu_vfpv3,
           fpu_vfpv3_d16:
             begin
@@ -445,6 +501,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
           fpu_vfpv3:
             begin
               if singleprec then
@@ -454,6 +512,9 @@ implementation
               current_asmdata.CurrAsmList.concat(taicpu.op_reg_reg(op,location.register,left.location.register));
             end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

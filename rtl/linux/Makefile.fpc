@@ -84,6 +84,7 @@ ifeq ($(ARCH),x86_64)
 CPU_UNITS=x86 ports cpu
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 SYSINIT_UNITS=si_prc si_c si_g si_dll
 override LOADERS+=abitag
 endif
@@ -93,6 +94,8 @@ ifeq ($(findstring 2.6.,$(FPC_VERSION)),)
 SYSINIT_UNITS=si_prc si_c si_g si_dll
 endif
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 SYSINIT_UNITS=   # si_prc si_c si_dll
@@ -380,11 +383,17 @@ macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) math$(PPUEXT) $(SYSTEMUNIT)$(
 ifeq ($(ARCH),x86_64)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT) objpas$(PPUEXT)
 	$(COMPILER) $(PROCINC)/cpu.pp
 else
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) objpas$(PPUEXT)
 	$(COMPILER) $(PROCINC)/cpu.pp
+=======
+cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT)
+else
+cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT)
+>>>>>>> graemeg/cpstrnew
 =======
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT)
 else

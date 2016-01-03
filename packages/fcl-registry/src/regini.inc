@@ -90,7 +90,11 @@ begin
   finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CloseSection;
+=======
+	  CloseKey;
+>>>>>>> graemeg/cpstrnew
 =======
 	  CloseKey;
 >>>>>>> graemeg/cpstrnew
@@ -107,6 +111,9 @@ begin
 =======
   if not OpenKey(fPath+Section,true) then Exit;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -122,7 +129,11 @@ begin
   finally
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CloseSection;
+=======
+    CloseKey;
+>>>>>>> graemeg/cpstrnew
 =======
     CloseKey;
 >>>>>>> graemeg/cpstrnew
@@ -134,6 +145,7 @@ end;
 
 procedure TRegIniFile.WriteString(const Section, Ident, Value: String);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   if OpenSection(Section,True) then
@@ -176,12 +188,17 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   if not OpenKey(fPath+Section,true) then Exit;
   try
    inherited WriteString(Ident,Value);
   finally
    CloseKey;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

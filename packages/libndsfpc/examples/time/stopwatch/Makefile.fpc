@@ -10,7 +10,11 @@ programs=stopwatch
 packages=libndsfpc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 tools=bin2s mmutil grit_fpc rmdir mv ndstool
+=======
+tools=bin2s mmutil grit
+>>>>>>> graemeg/cpstrnew
 =======
 tools=bin2s mmutil grit
 >>>>>>> graemeg/cpstrnew
@@ -27,6 +31,7 @@ cpu=arm
 target=nds
 fpcdir=../../../../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [compiler]
@@ -90,6 +95,8 @@ endif
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 [clean]
 files=*.elf *.o *.s *.nds *.nef *.h *.bin \
        $(BUILD)/*
@@ -108,6 +115,9 @@ ifneq ($(BUILD), $(CURDIR))
         $(MKDIR) $(BUILD)
 endif
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -116,6 +126,7 @@ soundbank.bin.o : $(AUDIO_FILES)
         $(BIN2S) $(BUILD)/soundbank.bin > $(BUILD)/soundbank.bin.s
         $(AS) -o $(BUILD)/soundbank.bin.o $(BUILD)/soundbank.bin.s
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 #
@@ -158,6 +169,11 @@ data.gbfs.o:
 # 
 make_filesystem:
 	@$(NDSTOOL) -c $(BIN)/$(TARGET_PROGRAMS).fs.nds -9 $(BIN)/$(TARGET_PROGRAMS).nef.bin -d $(CURDIR)/$(FILESYSTEM)
+=======
+$(GFX_FILES).o: 
+        $(GRIT) gfx/$(GFX_FILES) -fts -ff gfx/$(basename $(GFX_FILES)).grit -o$(BUILD)/$(GFX_FILES)
+        $(AS) -o $(BUILD)/$(basename $(GFX_FILES)).o $(BUILD)/$(basename $(GFX_FILES)).s
+>>>>>>> graemeg/cpstrnew
 =======
 $(GFX_FILES).o: 
         $(GRIT) gfx/$(GFX_FILES) -fts -ff gfx/$(basename $(GFX_FILES)).grit -o$(BUILD)/$(GFX_FILES)

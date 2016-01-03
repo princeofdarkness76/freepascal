@@ -783,8 +783,11 @@ implementation
         secnames : array[TAsmSectiontype] of string[length('__DATA, __datacoal_nt,coalesced')] = ('','',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { TODO: sec_rodata is still writable }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$ifdef userodata}
@@ -839,10 +842,13 @@ implementation
           '.obcj_nlcatlist',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           '.objc_protolist'
@@ -904,6 +910,9 @@ implementation
           '.obcj_nlcatlist',
           '.objc_protolist'
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -919,8 +928,11 @@ implementation
           begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             secname:=secnames[atype];
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
             if (cs_create_pic in current_settings.moduleswitches) and
@@ -929,6 +941,9 @@ implementation
             else
               secname:=secnames[atype];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -970,7 +985,10 @@ implementation
         symaddr : aint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         objreloc: TObjRelocation;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1498,6 +1516,9 @@ implementation
            { "no executable stack" marker for Linux }
            if (target_info.system in systems_linux) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

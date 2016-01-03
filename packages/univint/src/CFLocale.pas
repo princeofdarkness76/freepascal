@@ -1,9 +1,12 @@
 {	CFLocale.h
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 2002-2013, Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	Copyright (c) 2002-2009, Apple Inc. All rights reserved.
@@ -13,6 +16,9 @@
 {   Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 {	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -72,11 +78,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -98,6 +107,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -107,12 +117,17 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -120,6 +135,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -139,6 +155,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -156,7 +177,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -172,7 +196,10 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -183,6 +210,7 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -241,6 +269,8 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -261,6 +291,9 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -310,8 +343,12 @@ uses MacTypes,CFBase,CFArray,CFDictionary;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFLocaleRef = ^__CFLocale; { an opaque type }
 	__CFLocale = record end;
+=======
+	CFLocaleRef = ^SInt32; { an opaque type }
+>>>>>>> graemeg/cpstrnew
 =======
 	CFLocaleRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
@@ -363,7 +400,11 @@ function CFLocaleCopyISOCurrencyCodes: CFArrayRef; external name '_CFLocaleCopyI
 function CFLocaleCopyCommonISOCurrencyCodes: CFArrayRef; external name '_CFLocaleCopyCommonISOCurrencyCodes';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -376,7 +417,11 @@ function CFLocaleCopyCommonISOCurrencyCodes: CFArrayRef; external name '_CFLocal
 function CFLocaleCopyPreferredLanguages: CFArrayRef; external name '_CFLocaleCopyPreferredLanguages';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -402,6 +447,7 @@ function CFLocaleCreateCanonicalLocaleIdentifierFromScriptManagerCodes( allocato
 function CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode( allocator: CFAllocatorRef; lcid: UInt32 ): CFStringRef; external name '_CFLocaleCreateLocaleIdentifierFromWindowsLocaleCode';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
 	// Map a Windows LCID to the canonical locale identifier.
 
@@ -414,6 +460,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 	// Map a Windows LCID to the canonical locale identifier.
 
@@ -424,6 +472,9 @@ function CFLocaleGetWindowsLocaleCodeFromLocaleIdentifier( localeIdentifier: CFS
 type
 	CFLocaleLanguageDirection = SIGNEDLONG;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -437,6 +488,7 @@ const
 function CFLocaleGetLanguageCharacterDirection( isoLangCode: CFStringRef ): CFLocaleLanguageDirection; external name '_CFLocaleGetLanguageCharacterDirection';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
 
 function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleLanguageDirection; external name '_CFLocaleGetLanguageLineDirection';
@@ -444,11 +496,16 @@ function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleL
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 
 function CFLocaleGetLanguageLineDirection( isoLangCode: CFStringRef ): CFLocaleLanguageDirection; external name '_CFLocaleGetLanguageLineDirection';
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -501,7 +558,11 @@ function CFLocaleCopyDisplayNameForPropertyValue( displayLocale: CFLocaleRef; ke
 var kCFLocaleCurrentLocaleDidChangeNotification: CFStringRef; external name '_kCFLocaleCurrentLocaleDidChangeNotification'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_5, 2_0) *)
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -545,6 +606,7 @@ var kCFLocaleCurrencyCode: CFStringRef; external name '_kCFLocaleCurrencyCode'; 
 var kCFLocaleCollatorIdentifier: CFStringRef; external name '_kCFLocaleCollatorIdentifier'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
 var kCFLocaleQuotationBeginDelimiterKey: CFStringRef; external name '_kCFLocaleQuotationBeginDelimiterKey'; (* attribute const *)
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
@@ -557,6 +619,8 @@ var kCFLocaleAlternateQuotationEndDelimiterKey: CFStringRef; external name '_kCF
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 var kCFLocaleQuotationBeginDelimiterKey: CFStringRef; external name '_kCFLocaleQuotationBeginDelimiterKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -567,6 +631,9 @@ var kCFLocaleAlternateQuotationBeginDelimiterKey: CFStringRef; external name '_k
 var kCFLocaleAlternateQuotationEndDelimiterKey: CFStringRef; external name '_kCFLocaleAlternateQuotationEndDelimiterKey'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -589,6 +656,7 @@ var kCFJapaneseCalendar: CFStringRef; external name '_kCFJapaneseCalendar'; (* a
 var kCFRepublicOfChinaCalendar: CFStringRef; external name '_kCFRepublicOfChinaCalendar'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
 var kCFPersianCalendar: CFStringRef; external name '_kCFPersianCalendar'; (* attribute const *)
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
@@ -599,6 +667,8 @@ var kCFISO8601Calendar: CFStringRef; external name '_kCFISO8601Calendar'; (* att
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 var kCFPersianCalendar: CFStringRef; external name '_kCFPersianCalendar'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
@@ -607,6 +677,9 @@ var kCFIndianCalendar: CFStringRef; external name '_kCFIndianCalendar'; (* attri
 var kCFISO8601Calendar: CFStringRef; external name '_kCFISO8601Calendar'; (* attribute const *)
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

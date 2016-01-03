@@ -19,7 +19,10 @@ program fpcmkcfg;
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpmkunit,
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -31,7 +34,12 @@ uses
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpTemplate;
+=======
+  fpTemplate,
+  process;
+>>>>>>> graemeg/cpstrnew
 =======
   fpTemplate,
   process;
@@ -97,7 +105,10 @@ Resourcestring
   SErrCreateDirFailed = 'Error: Could not create the directory for file "%s".';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrDestDirectory   = 'Error: The output file "%s" is a directory.';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -108,7 +119,10 @@ Resourcestring
   SWarngccNotFound    = 'Warning: Could not find gcc. Unable to determine the gcclib path.';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SWarnCouldNotExecute= 'Warning: Could not execute command ''%s''';
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -198,6 +212,7 @@ function GetDefaultGCCDir: string;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   var
     OS: TOS;
     CPU: TCPU;
@@ -248,6 +263,8 @@ begin
        end
   end; {case}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 var GccExecutable: string;
@@ -362,6 +379,9 @@ begin
               GetGccDirArch('cpui386','-arch i386') + LineEnding +
               GetGccDirArch('cpux86_64','-arch x86_64');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -568,12 +588,15 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (OutputFileName<>'') and
      DirectoryExists(OutputFileName) then
     begin
       Writeln(StdErr,Format(SErrDestDirectory,[OutputFileName]));
       Halt(1);
     end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

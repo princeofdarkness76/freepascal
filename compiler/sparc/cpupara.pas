@@ -39,7 +39,11 @@ interface
         function  create_varargs_paraloc_info(p : TAbstractProcDef; varargspara:tvarargsparalist):longint;override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
+=======
+        function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
+>>>>>>> graemeg/cpstrnew
 =======
         function  get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
 >>>>>>> graemeg/cpstrnew
@@ -121,6 +125,9 @@ implementation
 
     function tsparcparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -128,6 +135,7 @@ implementation
         paraloc : pcgparalocation;
         retcgsize  : tcgsize;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if set_common_funcretloc_info(p,forcetempdef,retcgsize,result) then
@@ -139,11 +147,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         result.init;
         result.alignment:=get_para_align(p.proccalloption);
         { void has no location }
         if is_void(def) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
           begin
             paraloc:=result.add_location;
             result.size:=OS_NO;
@@ -162,6 +175,7 @@ implementation
           begin
             retcgsize:=def_cgsize(def);
             result.intsize:=def.size;
+<<<<<<< HEAD
           end;
 =======
           begin
@@ -182,6 +196,9 @@ implementation
           begin
             retcgsize:=def_cgsize(def);
             result.intsize:=def.size;
+          end;
+>>>>>>> graemeg/cpstrnew
+=======
           end;
 >>>>>>> graemeg/cpstrnew
         result.size:=retcgsize;
@@ -198,6 +215,9 @@ implementation
         { Return in FPU register? }
         if def.typ=floatdef then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -209,7 +229,10 @@ implementation
             paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -228,6 +251,9 @@ implementation
 =======
                if (side=callerside) or (po_inline in p.procoptions) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -235,6 +261,7 @@ implementation
                else
                  paraloc^.register:=NR_FUNCTION_RETURN64_HIGH_REG;
                paraloc^.size:=OS_32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                paraloc^.def:=u32inttype;
@@ -245,11 +272,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                { low }
                paraloc:=result.add_location;
                paraloc^.loc:=LOC_REGISTER;
                if (side=callerside) or (po_inline in p.procoptions) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -259,7 +291,10 @@ implementation
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -272,7 +307,10 @@ implementation
                paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

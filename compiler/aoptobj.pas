@@ -1318,9 +1318,12 @@ Unit AoptObj;
                       l.increfs;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       tasmlabel(JumpTargetOp(hp)^.ref^.symbol).decrefs;
                       JumpTargetOp(hp)^.ref^.symbol := l;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                       tasmlabel(hp.oper[0]^.ref^.symbol).decrefs;

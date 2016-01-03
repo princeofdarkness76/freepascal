@@ -129,10 +129,15 @@ Const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    sse_singlescalar = [fpu_sse64..fpu_avx2];
    sse_doublescalar = [fpu_sse64..fpu_avx2];
 
    fpu_avx_instructionsets = [fpu_avx,fpu_avx2];
+=======
+   sse_singlescalar : set of tfputype = [fpu_sse64,fpu_sse3];
+   sse_doublescalar : set of tfputype = [fpu_sse64,fpu_sse3];
+>>>>>>> graemeg/cpstrnew
 =======
    sse_singlescalar : set of tfputype = [fpu_sse64,fpu_sse3];
    sse_doublescalar : set of tfputype = [fpu_sse64,fpu_sse3];
@@ -150,8 +155,13 @@ Const
                                  [cs_opt_level1,cs_opt_level2,cs_opt_level3]+
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_stackframe,cs_userbp,
 				  cs_opt_tailrecursion,cs_opt_nodecse,cs_opt_reorder_fields,cs_opt_fastmath];
+=======
+                                 [cs_opt_regvar,cs_opt_loopunroll,cs_opt_stackframe,
+								  cs_opt_tailrecursion,cs_opt_nodecse];
+>>>>>>> graemeg/cpstrnew
 =======
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_stackframe,
 								  cs_opt_tailrecursion,cs_opt_nodecse];

@@ -30,8 +30,12 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   symtype,
   node, nmat, ncgmat, cgbase;
+=======
+  node, nmat, ncgmat;
+>>>>>>> graemeg/cpstrnew
 =======
   node, nmat, ncgmat;
 >>>>>>> graemeg/cpstrnew
@@ -46,8 +50,13 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   tMIPSELshlshrnode = class(tcgshlshrnode)
     procedure second_64bit;override;
+=======
+  tMIPSELshlshrnode = class(tshlshrnode)
+    procedure pass_generate_code;override;
+>>>>>>> graemeg/cpstrnew
 =======
   tMIPSELshlshrnode = class(tshlshrnode)
     procedure pass_generate_code;override;
@@ -66,10 +75,13 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TMIPSunaryminusnode = class(tcgunaryminusnode)
     procedure second_float; override;
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -81,6 +93,7 @@ uses
   cutils, verbose, globals,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   symconst, symdef,
   aasmbase, aasmcpu, aasmtai, aasmdata,
   defutil,
@@ -89,12 +102,17 @@ uses
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   symconst,
   aasmbase, aasmcpu, aasmtai, aasmdata,
   defutil,
   procinfo,
   cgbase, cgobj, pass_2,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -106,6 +124,7 @@ uses
                              TMipselMODDIVNODE
 *****************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 const
@@ -143,6 +162,8 @@ begin
       cg.g_div_const_reg_reg(current_asmdata.CurrAsmList,def_cgsize(resultdef),
         tordconstnode(right).value.svalue,numerator,location.register);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure tMIPSELmoddivnode.pass_generate_code;
@@ -183,6 +204,9 @@ begin
     cg.a_op_reg_reg(current_asmdata.CurrAsmList, OP_ADD, OS_INT, tmpreg, numerator);
     cg.a_op_const_reg_reg(current_asmdata.CurrAsmList, OP_SAR, OS_INT, aword(power), numerator, resultreg);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -190,6 +214,7 @@ begin
   else
   begin
     { load divider in a register if necessary }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     hlcg.location_force_reg(current_asmdata.CurrAsmList, right.location,
@@ -238,6 +263,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     location_force_reg(current_asmdata.CurrAsmList, right.location,
       def_cgsize(right.resultdef), True);
     divider := right.location.Register;
@@ -266,6 +293,9 @@ begin
   location.loc      := LOC_REGISTER;
   location.Register := resultreg;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -290,6 +320,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure tMIPSELshlshrnode.second_64bit;
@@ -329,6 +360,8 @@ begin
       location.register64.reglo:=cg.GetIntRegister(current_asmdata.CurrAsmList,OS_32);
       cg.a_op_const_reg_reg(current_asmdata.CurrAsmList, OP_SHR, OS_32, shiftval and 31, hreg64hi, location.register64.reglo);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 procedure tMIPSELshlshrnode.pass_generate_code;
@@ -394,6 +427,9 @@ begin
       location.register64.reghi := hreg64hi;
       location.register64.reglo := hreg64lo;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -401,6 +437,7 @@ begin
   end
   else
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     location.register64.reglo:=cg.GetIntRegister(current_asmdata.CurrAsmList,OS_32);
@@ -423,6 +460,8 @@ begin
           end;
       end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     { load left operators in a register }
@@ -454,6 +493,9 @@ begin
       cg.a_op_reg_reg_reg(current_asmdata.CurrAsmList, op, OS_32, right.location.Register, hregister1, resultreg);
     end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -467,6 +509,7 @@ end;
 
 procedure tMIPSELnotnode.second_boolean;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   tmpreg : TRegister;
@@ -492,6 +535,8 @@ begin
         else
           location.resflags.reg1:=left.location.register;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   hl: tasmlabel;
@@ -526,6 +571,9 @@ begin
         location_reset(location, LOC_REGISTER, OS_INT);
         location.Register := NR_TCR0;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -537,6 +585,7 @@ begin
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {*****************************************************************************
@@ -564,13 +613,18 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 begin
   cmoddivnode := tMIPSELmoddivnode;
   cshlshrnode := tMIPSELshlshrnode;
   cnotnode    := tMIPSELnotnode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cunaryminusnode := TMIPSunaryminusnode;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

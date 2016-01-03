@@ -381,6 +381,9 @@ function VirtualUnlock(lpAddress:LPVOID; dwSize:PTRUINT):WINBOOL; external 'kern
 function VirtualLock(lpAddress:LPVOID; dwSize:DWORD):WINBOOL; external 'kernel32' name 'VirtualLock';
 function VirtualUnlock(lpAddress:LPVOID; dwSize:DWORD):WINBOOL; external 'kernel32' name 'VirtualUnlock';
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1284,7 +1287,10 @@ function EndMenu:BOOL; external 'user32' name 'EndMenu';
 function GetMenuBarInfo(_hwnd:HWND; idObject:longint; idItem:longint; pmbi:LPMENUBARINFO):BOOL; external 'user32' name 'GetMenuBarInfo';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IMAGE_FIRST_SECTION(ntheader : PIMAGE_NT_HEADERS):PIMAGE_SECTION_HEADER;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

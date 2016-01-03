@@ -92,6 +92,7 @@ const
     _accessoryView: id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __fpFlags: record
       case byte of
        0: (_anonbitfield_NSFontPanel0: cuint);
@@ -99,11 +100,16 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __fpFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSFontPanel0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -121,7 +127,10 @@ const
         _reserved: 0..((1 shl 14)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -154,7 +163,11 @@ const
     {$ifndef cpu64}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _fpUnused: array[0..(72)-1] of id;
+=======
+        _fpUnused: array[0..71] of id;
+>>>>>>> graemeg/cpstrnew
 =======
         _fpUnused: array[0..71] of id;
 >>>>>>> graemeg/cpstrnew

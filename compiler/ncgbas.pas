@@ -73,8 +73,11 @@ interface
       nflw,pass_2,ncgutil,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgbase,cgobj,hlcgobj,
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       cgbase,cgobj,
@@ -215,6 +218,7 @@ interface
                   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 LOC_FPUREGISTER,
                 LOC_MMXREGISTER,
                 LOC_MMREGISTER :
@@ -245,6 +249,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                 LOC_MMREGISTER :
                   begin
                     if getoffset then
@@ -258,6 +264,9 @@ interface
                         op.reg:=sym.localloc.register;
                       end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -505,6 +514,7 @@ interface
             secondpass(tempinfo^.tempinitcode);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (ti_reference in tempinfo^.flags) then
               begin
                 case tempinfo^.tempinitcode.location.loc of
@@ -526,6 +536,8 @@ interface
                 end;
                 hlcg.g_reference_loc(current_asmdata.CurrAsmList,tempinfo^.typedef,tempinfo^.tempinitcode.location,tempinfo^.location);
               end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -57,6 +57,7 @@ type
     _textColor: NSColor;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __tfFlags: record
       case byte of
        0: (_anonbitfield_NSTextFieldCell0: cuint);
@@ -64,11 +65,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __tfFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSTextFieldCell0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -85,7 +91,10 @@ type
         reservedTextFieldCell: 0..((1 shl 16)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -23,6 +23,9 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       charset ucomplex getopts matrix \
       variants types rtlconsts sysconst dateutil lineinfo fgl varutils \
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

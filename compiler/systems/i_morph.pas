@@ -36,7 +36,11 @@ unit i_morph;
             shortname    : 'MorphOS';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_smartlink_library,tf_has_winlike_resources];
+=======
+            flags        : [tf_files_case_aware,tf_smartlink_library];
+>>>>>>> graemeg/cpstrnew
 =======
             flags        : [tf_files_case_aware,tf_smartlink_library];
 >>>>>>> graemeg/cpstrnew

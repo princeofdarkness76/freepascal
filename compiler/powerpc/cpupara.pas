@@ -42,8 +42,11 @@ unit cpupara;
           function create_varargs_paraloc_info(p : tabstractprocdef; varargspara:tvarargsparalist):longint;override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
@@ -276,6 +279,9 @@ unit cpupara;
 
     function tppcparamanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -283,6 +289,7 @@ unit cpupara;
         paraloc : pcgparalocation;
         retcgsize  : tcgsize;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         if set_common_funcretloc_info(p,forcetempdef,retcgsize,result) then
@@ -294,11 +301,16 @@ unit cpupara;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         result.init;
         result.alignment:=get_para_align(p.proccalloption);
         { void has no location }
         if is_void(def) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
           begin
             paraloc:=result.add_location;
             result.size:=OS_NO;
@@ -317,6 +329,7 @@ unit cpupara;
           begin
             retcgsize:=def_cgsize(def);
             result.intsize:=def.size;
+<<<<<<< HEAD
           end;
 =======
           begin
@@ -337,6 +350,9 @@ unit cpupara;
           begin
             retcgsize:=def_cgsize(def);
             result.intsize:=def.size;
+          end;
+>>>>>>> graemeg/cpstrnew
+=======
           end;
 >>>>>>> graemeg/cpstrnew
         result.size:=retcgsize;
@@ -353,6 +369,9 @@ unit cpupara;
         { Return in FPU register? }
         if def.typ=floatdef then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -362,7 +381,10 @@ unit cpupara;
             paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -382,7 +404,10 @@ unit cpupara;
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -397,7 +422,10 @@ unit cpupara;
                paraloc^.size:=OS_32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=u32inttype;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -413,7 +441,10 @@ unit cpupara;
                paraloc^.size:=retcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                paraloc^.def:=result.def;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -454,7 +485,11 @@ unit cpupara;
          paracgsize: tcgsize;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          firstparaloc: boolean;
+=======
+         sym: tfieldvarsym;
+>>>>>>> graemeg/cpstrnew
 =======
          sym: tfieldvarsym;
 >>>>>>> graemeg/cpstrnew
@@ -522,8 +557,11 @@ unit cpupara;
                     paralen := tcgsize2size[def_cgsize(paradef)];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   if (target_info.abi in [abi_powerpc_aix,abi_powerpc_darwin]) and
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                   if (target_info.abi = abi_powerpc_aix) and
@@ -550,6 +588,9 @@ unit cpupara;
                         begin
                           paradef:=sym.vardef;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -16,7 +16,10 @@ unit GdbInt;
 {$mode objfpc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$smartlink off}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -305,6 +308,7 @@ interface
   {$define GDB_HAS_DB_COMMANDS}
   {$define GDB_USES_BP_LOCATION}
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$define GDB_BP_LOCATION_HAS_GLOBAL_NEXT}
   {$define GDB_NEEDS_NO_ERROR_INIT}
   {$define GDB_USES_EXPAT_LIB}
@@ -360,6 +364,11 @@ interface
   {$define GDB_NEEDS_NO_ERROR_INIT}
   {$define GDB_USES_EXPAT_LIB}
   {$define GDB_HAS_DEBUG_FILE_DIRECTORY}
+=======
+  {$define GDB_NEEDS_NO_ERROR_INIT}
+  {$define GDB_USES_EXPAT_LIB}
+  {$define GDB_HAS_DEBUG_FILE_DIRECTORY}
+>>>>>>> graemeg/cpstrnew
 {$endif def GDB_V606}
 
 { 6.7.x }
@@ -368,6 +377,9 @@ interface
   {$define GDB_V6}
   {$define GDB_HAS_DB_COMMANDS}
   {$define GDB_USES_BP_LOCATION}
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$define GDB_NEEDS_NO_ERROR_INIT}
   {$define GDB_USES_EXPAT_LIB}
@@ -377,6 +389,7 @@ interface
     {$define GDB_USES_LIBPYTHON}
   {$endif}
   {$define GDB_HAS_DEBUG_FILE_DIRECTORY}
+<<<<<<< HEAD
 <<<<<<< HEAD
   {$define GDB_HAS_OBSERVER_NOTIFY_BREAKPOINT_CREATED}
   {$define GDB_TARGET_CLOSE_HAS_PTARGET_ARG}
@@ -422,6 +435,8 @@ interface
   {$define GDB_V6}
 {$endif def GDB_V600}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 {$endif def GDB_V607}
 
 { 6.8.x }
@@ -494,6 +509,9 @@ interface
   {$define GDB_HAS_BP_NONE}
 {$endif def GDB_V7}
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 
 {$ifdef GDB_V6}
@@ -505,10 +523,13 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_VERSION_RECOGNIZED}
   {$warning no recognized GDB_VXYZ conditional found, linking might fail. }
 {$endif}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -817,10 +838,13 @@ interface
   {$endif not USE_MINGW_GDB}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef GDB_USES_LIBADVAPI32}
     {$LINKLIB advapi32}
   {$endif GDB_USES_LIBADVAPI32}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   {$LINKLIB kernel32}
@@ -902,11 +926,14 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
   { AIX linker requires more precise external/public separation }
   {$define NEED_EXTERNAL_CVAR}
   {$undef NotImplemented}
 {$endif aix}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1119,6 +1146,9 @@ type
 =======
     stop_breakpoint_number,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1344,6 +1374,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      { pointer to structures that we don't need }
      pbp_ops = pointer;
      pbp_location_ops = pointer;
@@ -1352,6 +1383,8 @@ type
 
 {$PACKRECORDS C}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 {$PACKRECORDS 4}
@@ -1373,7 +1406,10 @@ type
 {$endif not GDB_USES_BP_LOCATION}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef GDB_USES_BP_OPS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1388,9 +1424,12 @@ type
           ignore_count : longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_BP_HAS_ENABLE_COUNT}
           enable_count : longint;
 {$endif GDB_BP_HAS_ENABLE_COUNT}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1402,7 +1441,10 @@ type
 {$endif not GDB_USES_BP_LOCATION}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1438,6 +1480,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      pagent_expr = pointer;
      tcondition_status = (condition_unchanged, condition_modified);
 
@@ -1457,6 +1500,11 @@ type
           placed_address_space : pointer;{paddress_space;}
           placed_address : CORE_ADDR;
 >>>>>>> graemeg/cpstrnew
+=======
+     bp_target_info = record
+          placed_address_space : pointer;{paddress_space;}
+          placed_address : CORE_ADDR;
+>>>>>>> graemeg/cpstrnew
           shadow_contents : array[0..15] of char;
           shadow_len : longint;
           placed_size : longint;
@@ -1464,6 +1512,7 @@ type
 
      bp_location = record
          next : pbp_location;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_BP_LOCATION_HAS_OPS}
@@ -1487,10 +1536,16 @@ type
          global_next : pbp_location;
 {$endif GDB_BP_LOCATION_HAS_GLOBAL_NEXT}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef GDB_BP_LOCATION_HAS_GLOBAL_NEXT}
+         global_next : pbp_location;
+{$endif GDB_BP_LOCATION_HAS_GLOBAL_NEXT}
+>>>>>>> graemeg/cpstrnew
          loc_type : bp_loc_type;
          owner : pbreakpoint;
 {$ifdef GDB_BP_LOCATION_HAS_GLOBAL_NEXT}
          cond : pointer;{pexpression;}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$ifdef GDB_BP_LOCATION_HAS_COND_BYTECODE}
@@ -1503,12 +1558,15 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
          shlib_disabled : byte;
          enabled : byte;
 {$endif GDB_BP_LOCATION_HAS_GLOBAL_NEXT}
          inserted : byte;
          duplicate : byte;
 {$ifdef GDB_BP_LOCATION_HAS_GDBARCH}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
          gdbarch : pgdbarch;
@@ -1518,11 +1576,16 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
          gdbarch : pointer;{pgdbarch;}
 {$endif GDB_BP_LOCATION_HAS_GDBARCH}
 {$ifdef GDB_HAS_PROGRAM_SPACE}
          pspace : pointer;{pprogram_space;}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1536,10 +1599,13 @@ type
          requested_address : CORE_ADDR;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_BP_LOCATION_HAS_RELATED_ADDRESS}
          related_address : CORE_ADDR;
          probe : pointer; { struct probe *probe; }
 {$endif}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1552,11 +1618,14 @@ type
          events_till_retirement : longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_USES_BP_OPS}
         { line and source file are in location }
           line_number : longint;
           source_file : pchar;
 {$endif not GDB_USES_BP_OPS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1616,10 +1685,13 @@ type
           explicit_line : longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { New field added in GDB 7.5 version }
           probe : pointer;{struct probe *probe; }
           { New field added in GDB 7.8? version }
           objfile : pointer; { struct objfile * }
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2081,8 +2153,12 @@ var
   quit_return  : jmp_buf;cvar;public;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   deprecated_query_hook : pointer;cvar;
 {$ifdef NEED_EXTERNAL_CVAR}external;{$else}public;{$endif}
+=======
+  deprecated_query_hook : pointer;cvar;public;
+>>>>>>> graemeg/cpstrnew
 =======
   deprecated_query_hook : pointer;cvar;public;
 >>>>>>> graemeg/cpstrnew
@@ -3069,9 +3145,13 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function QueryHook(question : pchar; arg : ppchar) : longint; cdecl;
 var local : pchar;
 
+=======
+function QueryHook(question : pchar; arg : pchar) : longint; cdecl;
+>>>>>>> graemeg/cpstrnew
 =======
 function QueryHook(question : pchar; arg : pchar) : longint; cdecl;
 >>>>>>> graemeg/cpstrnew
@@ -3083,6 +3163,7 @@ begin
     QueryHook:=0
   else
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       if curr_gdb^.reset_command and ((pos('Kill',question)>0) or
@@ -3104,11 +3185,16 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       if curr_gdb^.reset_command and (pos('Kill',question)>0) then
         QueryHook:=1
       else if pos('%s',question)>0 then
         QueryHook:=curr_gdb^.Query(question, arg)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3153,10 +3239,13 @@ begin
      invalid_breakpoint_line:=(b.line_number<>sym.line) and (b.line_number<>0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$else GDB_USES_BP_OPS}
      invalid_breakpoint_line:=(b.loc=nil) or
        ((b.loc^.line_number<>sym.line) and (b.loc^.line_number<>0));
 {$endif GDB_USES_BP_OPS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3182,11 +3271,15 @@ end;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_NOTIFY_BREAKPOINT_ARG_IS_BREAKPOINT_PTR}
   breakpoint_created_function_type = procedure (bpp : pbreakpoint); cdecl;
 {$else not GDB_NOTIFY_BREAKPOINT_ARG_IS_BREAKPOINT_PTR}
   breakpoint_created_function_type = procedure (bpnum : longint); cdecl;
 {$endif not GDB_NOTIFY_BREAKPOINT_ARG_IS_BREAKPOINT_PTR}
+=======
+  breakpoint_created_function_type = procedure (bpnum : longint); cdecl;
+>>>>>>> graemeg/cpstrnew
 =======
   breakpoint_created_function_type = procedure (bpnum : longint); cdecl;
 >>>>>>> graemeg/cpstrnew
@@ -3202,6 +3295,7 @@ procedure observer_detach_breakpoint_created(pob : pobserver);cdecl;external;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifdef GDB_NOTIFY_BREAKPOINT_ARG_IS_BREAKPOINT_PTR}
 procedure notify_breakpoint_created(bpp : pbreakpoint); cdecl;
@@ -3211,6 +3305,11 @@ end;
 {$else not GDB_NOTIFY_BREAKPOINT_ARG_IS_BREAKPOINT_PTR}
 var breakpoint_chain : pbreakpoint ;cvar;external;
 
+=======
+var breakpoint_chain : pbreakpoint ;cvar;external;
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 var breakpoint_chain : pbreakpoint ;cvar;external;
 
@@ -3239,6 +3338,7 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif not GDB_NOTIFY_BREAKPOINT_ARG_IS_BREAKPOINT_PTR}
 {$endif def GDB_HAS_OBSERVER_NOTIFY_BREAKPOINT_CREATED}
 
@@ -3248,6 +3348,9 @@ function relocate_gdb_directory(path : pchar) : pchar; cdecl; public;
 begin
   relocate_gdb_directory:=path;
 end;
+=======
+{$endif def GDB_HAS_OBSERVER_NOTIFY_BREAKPOINT_CREATED}
+>>>>>>> graemeg/cpstrnew
 =======
 {$endif def GDB_HAS_OBSERVER_NOTIFY_BREAKPOINT_CREATED}
 >>>>>>> graemeg/cpstrnew
@@ -3796,12 +3899,15 @@ var
   CurrentDir : AnsiString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_NEEDS_INTERPRETER_SETUP}
   type
      interpreter_struct_p = pointer; { to opaque type }
   function interp_lookup (name : pchar) : interpreter_struct_p;cdecl; external;
   function interp_set (interp : interpreter_struct_p) : longbool;cdecl; external;
 {$endif GDB_NEEDS_INTERPRETER_SETUP}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -3975,6 +4081,9 @@ var gdb_sysroot  : pchar; cvar;public;
     gdb_datadir  : pchar; cvar;public;
     python_libdir : pchar;cvar;public;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3998,11 +4107,15 @@ var gdb_sysroot  : pchar; cvar;public;
     batch_silent : longbool;cvar;public;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { batch_silent global variable is declared in main.h since 7.0, but
       instanciated in main.c since version 6.4 }
     batch_flag : longbool;cvar;public;
     { batch_flag global variable is declared in main.h and
       instanciated in main.c since version 7.2 }
+=======
+    batch_flag : longbool;cvar;public;
+>>>>>>> graemeg/cpstrnew
 =======
     batch_flag : longbool;cvar;public;
 >>>>>>> graemeg/cpstrnew

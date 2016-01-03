@@ -351,6 +351,7 @@ procedure TCustomSQLDBWebDataProvider.ApplySQLParams(AQuery : TSQLQuery; DoNewID
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function TryAdaptor (const aName: string; P: TParam) : boolean;
   var S : string;
   begin
@@ -361,6 +362,8 @@ procedure TCustomSQLDBWebDataProvider.ApplySQLParams(AQuery : TSQLQuery; DoNewID
       SetTypedParam(P,S);
   end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -384,6 +387,7 @@ begin
       begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       If (P.Name=IDFieldName) then
         begin
         if DoNewID then
@@ -401,6 +405,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
       If (P.Name=IDFieldName) and DoNewID then
         begin
         GetNewID;
@@ -412,6 +418,9 @@ begin
         SetTypedParam(P,S)
       else
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

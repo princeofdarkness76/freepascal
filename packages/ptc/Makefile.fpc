@@ -6,6 +6,7 @@
 name=ptc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -14,6 +15,8 @@ packages=rtl fpmkunit
 [install]
 fpcpackage=y
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 version=2.5.1
@@ -45,6 +48,7 @@ fpcdir=../..
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 [prerules]
 FPMAKE_BIN_CLEAN=$(wildcard ./fpmake$(SRCEXEEXT))
 ifdef OS_TARGET
@@ -54,6 +58,10 @@ ifdef CPU_TARGET
 FPC_TARGETOPT+=--cpu=$(CPU_TARGET)
 endif
 LOCALFPMAKE=./fpmake$(SRCEXEEXT)
+=======
+[install]
+fpcpackage=y
+>>>>>>> graemeg/cpstrnew
 =======
 [install]
 fpcpackage=y

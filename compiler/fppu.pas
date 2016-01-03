@@ -68,7 +68,10 @@ interface
           procedure reload_flagged_units;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           procedure end_of_parsing;override;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1557,6 +1560,7 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tppumodule.end_of_parsing;
       begin
         { module is now compiled }
@@ -1572,6 +1576,8 @@ var
         inherited end_of_parsing;
       end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1758,6 +1764,9 @@ var
 =======
               compile(mainsource^);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

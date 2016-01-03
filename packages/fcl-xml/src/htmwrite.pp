@@ -74,7 +74,11 @@ type
   public
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(AStream: TStream; ACapacity : Cardinal = 4096);
+=======
+    constructor Create(AStream: TStream);
+>>>>>>> graemeg/cpstrnew
 =======
     constructor Create(AStream: TStream);
 >>>>>>> graemeg/cpstrnew
@@ -121,7 +125,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor THTMLWriter.Create(AStream: TStream; ACapacity : Cardinal = 4096);
+=======
+constructor THTMLWriter.Create(AStream: TStream);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor THTMLWriter.Create(AStream: TStream);
 >>>>>>> graemeg/cpstrnew

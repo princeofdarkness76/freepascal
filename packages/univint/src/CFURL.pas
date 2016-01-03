@@ -1,9 +1,12 @@
 {	CFURL.h
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 	Copyright (c) 1998-2009, Apple Inc. All rights reserved.
@@ -11,6 +14,9 @@
 {	  Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, November 2005 }
 {	  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -70,11 +76,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -96,6 +105,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -115,6 +125,23 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
@@ -157,7 +184,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -166,6 +196,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -251,6 +282,34 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -294,7 +353,11 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CFBase,CFArray,CFData,CFDictionary,CFError,CFString,Files;
+=======
+uses MacTypes,CFBase,CFData,CFError,CFString,Files;
+>>>>>>> graemeg/cpstrnew
 =======
 uses MacTypes,CFBase,CFData,CFError,CFString,Files;
 >>>>>>> graemeg/cpstrnew
@@ -309,7 +372,11 @@ uses MacTypes,CFBase,CFData,CFError,CFString,Files;
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFURLPathStyle = CFIndex;
+=======
+	CFURLPathStyle = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 =======
 	CFURLPathStyle = SIGNEDLONG;
 >>>>>>> graemeg/cpstrnew
@@ -559,7 +626,11 @@ function CFURLGetBytes( url: CFURLRef; buffer: CStringPtr; bufferLength: CFIndex
 type
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFURLComponentType = CFIndex;
+=======
+	CFURLComponentType = SIGNEDLONG;
+>>>>>>> graemeg/cpstrnew
 =======
 	CFURLComponentType = SIGNEDLONG;
 >>>>>>> graemeg/cpstrnew
@@ -679,6 +750,7 @@ function CFURLCreateStringByAddingPercentEscapes( allocator: CFAllocatorRef; ori
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { #if (TARGET_OS_MAC || TARGET_OS_EMBEDDED || TARGET_OS_IPHONE) || CF_BUILDING_CF || NSBUILDINGFOUNDATION }
 { CF_IMPLICIT_BRIDGING_DISABLED }
@@ -747,6 +819,8 @@ function CFURLCreateFilePathURL( allocator: CFAllocatorRef; url: CFURLRef; var e
 
 // Note: CFURLCreateFromFSRef and CFURLGetFSRef have never been functional on iOS because the Carbon File Manager is not on iOS.
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 { Returns a file reference URL, a path-idependent form of file URL. }
 { Converts a file path URL if necessary. For non-file URLs, returns NULL. }
 { Also returns NULL when the conversion fails because the target resource doesn't exist. }
@@ -766,6 +840,7 @@ function CFURLCreateFilePathURL( allocator: CFAllocatorRef; url: CFURLRef; var e
 
 {#ifndef CF_OPEN_SOURCE}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 { Returns a file reference URL, a path-idependent form of file URL. }
@@ -788,6 +863,8 @@ function CFURLCreateFilePathURL( allocator: CFAllocatorRef; url: CFURLRef; var e
 {#ifndef CF_OPEN_SOURCE}
 
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 function CFURLCreateFromFSRef( allocator: CFAllocatorRef; const (*var*) fsRef_: FSRef ): CFURLRef; external name '_CFURLCreateFromFSRef';
@@ -802,8 +879,11 @@ function CFURLGetFSRef( url: CFURLRef; var fsRef_: FSRef ): Boolean; external na
 
 {$endc} {TARGET_OS_MAC}
 
+{$endc} {TARGET_OS_MAC}
+
 {#endif} // !CF_OPEN_SOURCE
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { Resource access
@@ -1531,6 +1611,8 @@ function CFURLStartAccessingSecurityScopedResource( url: CFURLRef ): Boolean; ex
 procedure CFURLStopAccessingSecurityScopedResource( url: CFURLRef ); external name '_CFURLStopAccessingSecurityScopedResource';
 (* CF_AVAILABLE_STARTING(10_7, NA) *)
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

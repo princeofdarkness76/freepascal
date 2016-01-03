@@ -281,9 +281,13 @@ implementation
           '.obcj_nlcatlist',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
 =======
           '.objc_protolist'
 >>>>>>> graemeg/cpstrnew
@@ -348,9 +352,13 @@ implementation
           '.obcj_nlcatlist',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
+=======
+          '.objc_protolist'
+>>>>>>> graemeg/cpstrnew
 =======
           '.objc_protolist'
 >>>>>>> graemeg/cpstrnew
@@ -395,8 +403,11 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if is_smart_section(atype) and (aname<>'') then
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         { For bss we need to set some flags that are target dependent,
@@ -410,6 +421,9 @@ implementation
            { on embedded systems every byte counts, so smartlink bss too }
            ((atype<>sec_bss) or (target_info.system in systems_embedded)) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -507,8 +521,11 @@ implementation
              if (atype in [sec_stub,sec_objc_data,sec_objc_const,sec_data_coalesced]) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                writer.AsmWrite('.section ');
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                AsmWrite('.section ');
@@ -621,6 +638,7 @@ implementation
                 assigned(hp.next) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  (tai(hp.next).typ in [ait_const,ait_datablock,ait_realconst])
               ) or
               (hp.sym.typ=AT_DATA);
@@ -637,6 +655,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                  (tai(hp.next).typ in [ait_const,ait_datablock,
                   ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_comp_64bit])
               ) or
@@ -649,6 +669,9 @@ implementation
         var
           i: longint;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -656,6 +679,7 @@ implementation
           last_align:=alignment;
           if alignment>1 then
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
               if not(target_info.system in (systems_darwin+systems_aix)) then
@@ -701,6 +725,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               if not(target_info.system in systems_darwin) then
                 begin
                   AsmWrite(#9'.balign '+tostr(alignment));
@@ -722,6 +748,9 @@ implementation
                 end;
               AsmLn;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -803,7 +832,11 @@ implementation
              begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align,lasthp);
+=======
+               doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
+>>>>>>> graemeg/cpstrnew
 =======
                doalign(tai_align_abstract(hp).aligntype,tai_align_abstract(hp).use_op,tai_align_abstract(hp).fillop,last_align);
 >>>>>>> graemeg/cpstrnew
@@ -1108,6 +1141,7 @@ implementation
 {$endif cpu64bitaddr}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            if constdef = aitconst_half16bit then
                              s:='('+s+')/2';
                            if constdef = aitconst_gs then
@@ -1115,6 +1149,8 @@ implementation
 
                            writer.AsmWrite(s);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                            AsmWrite(s);
@@ -1212,8 +1248,13 @@ implementation
                     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       writer.AsmWrite(#9'.private_extern ');
                       writer.AsmWriteln(tai_label(hp).labsym.name);
+=======
+                      AsmWrite(#9'.private_extern ');
+                      AsmWriteln(tai_label(hp).labsym.name);
+>>>>>>> graemeg/cpstrnew
 =======
                       AsmWrite(#9'.private_extern ');
                       AsmWriteln(tai_label(hp).labsym.name);
@@ -1249,7 +1290,10 @@ implementation
                if (tai_symbol(hp).sym.bind=AB_PRIVATE_EXTERN) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
                  begin
@@ -1336,6 +1380,7 @@ implementation
                  end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                if replaceforbidden then
                  if not(tai_symbol(hp).has_value) then
                    writer.AsmWriteLn(ReplaceForbiddenAsmSymbolChars(tai_symbol(hp).sym.name + ':'))
@@ -1378,10 +1423,13 @@ implementation
                  writer.AsmWriteLn(#9'.weak '+tai_weak(hp).sym^);
              end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
                if not(tai_symbol(hp).has_value) then
                  AsmWriteLn(tai_symbol(hp).sym.name + ':')
                else
                  AsmWriteLn(tai_symbol(hp).sym.name + '=' + tostr(tai_symbol(hp).value));
+<<<<<<< HEAD
              end;
 {$ifdef arm}
            ait_thumb_func:
@@ -1393,6 +1441,14 @@ implementation
                  AsmWriteLn(tai_symbol(hp).sym.name + ':')
                else
                  AsmWriteLn(tai_symbol(hp).sym.name + '=' + tostr(tai_symbol(hp).value));
+             end;
+{$ifdef arm}
+           ait_thumb_func:
+             begin
+               AsmWriteLn(#9'.thumb_func');
+             end;
+>>>>>>> graemeg/cpstrnew
+=======
              end;
 {$ifdef arm}
            ait_thumb_func:
@@ -1485,6 +1541,7 @@ implementation
            ait_marker :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              begin
 {$ifdef DEBUG_AGGAS}
                WriteStr(s,tai_marker(hp).Kind);
@@ -1496,6 +1553,8 @@ implementation
                  dec(InlineLevel);
              end;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
              if tai_marker(hp).kind=mark_NoLineInfoStart then
@@ -1786,6 +1845,9 @@ implementation
       { "no executable stack" marker for Linux }
       if (target_info.system in systems_linux) and
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1937,6 +1999,7 @@ implementation
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             sec_objc_meth_var_types:
               begin
                 if (target_info.system in systems_objc_nfabi) then
@@ -1959,13 +2022,20 @@ implementation
 =======
             sec_objc_meth_var_names,
 >>>>>>> graemeg/cpstrnew
+=======
+            sec_objc_meth_var_names,
+>>>>>>> graemeg/cpstrnew
             sec_objc_class_names:
               begin
                 if (target_info.system in systems_objc_nfabi) then
                   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     result:='.section __TEXT,__objc_classname,cstring_literals';
+=======
+                    result:='.cstring';
+>>>>>>> graemeg/cpstrnew
 =======
                     result:='.cstring';
 >>>>>>> graemeg/cpstrnew
@@ -2117,9 +2187,13 @@ implementation
          sec_none (* sec_objc_nlcatlist *),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          sec_none (* sec_objc_protlist *),
          sec_none (* sec_stack *),
          sec_none (* sec_heap *)
+=======
+         sec_none (* sec_objc_protlist *)
+>>>>>>> graemeg/cpstrnew
 =======
          sec_none (* sec_objc_protlist *)
 >>>>>>> graemeg/cpstrnew

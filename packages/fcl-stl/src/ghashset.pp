@@ -31,9 +31,14 @@ type
       function Next:boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       function GetData:T;
       property Data:T read GetData;
  end;
+=======
+      function GetValue:T;
+  end;
+>>>>>>> graemeg/cpstrnew
 =======
       function GetValue:T;
   end;
@@ -78,7 +83,11 @@ var i:SizeUInt;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i:=0 to FData.size-1 do
+=======
+  for i:=0 to FData.size do
+>>>>>>> graemeg/cpstrnew
 =======
   for i:=0 to FData.size do
 >>>>>>> graemeg/cpstrnew
@@ -183,9 +192,15 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THashSetIterator.GetData:T;
 begin
   GetData:=(FData[Fh])[Fp];
+=======
+function THashSetIterator.GetValue:T;
+begin
+  GetValue:=(FData[Fh])[Fp];
+>>>>>>> graemeg/cpstrnew
 =======
 function THashSetIterator.GetValue:T;
 begin

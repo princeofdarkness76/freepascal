@@ -50,6 +50,7 @@ _start:
         movq    %rsp,(%rax)   /* argv starts just at the current stack top.  */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         leaq    8(,%rsi,8),%rax
         addq    %rsp,%rax
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rcx
@@ -57,11 +58,16 @@ _start:
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
         leaq     8(,%rsi,8),%rax
         addq     %rsp,%rax
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rsi
         movq    %rax,(%rsi)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

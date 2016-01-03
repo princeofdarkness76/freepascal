@@ -125,7 +125,11 @@ implementation
     uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       comphook,fmodule,constexp,globals,cfileutl,switches;
+=======
+      comphook,fmodule,constexp,globals,cfileutl;
+>>>>>>> graemeg/cpstrnew
 =======
       comphook,fmodule,constexp,globals,cfileutl;
 >>>>>>> graemeg/cpstrnew
@@ -216,8 +220,11 @@ implementation
         tok  : string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         msgnr, code : longint;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         code : longint;
@@ -301,6 +308,9 @@ implementation
                  'M' : if inverse or
                          not ClearMessageVerbosity(s, i) then
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -481,7 +491,10 @@ implementation
               status.currentsourcepath:=module.sourcefiles.get_file_path(current_filepos.fileindex);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               status.sources_avail:=module.sources_avail;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -695,6 +708,7 @@ implementation
                       st:=GetMessageState(w);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     { We only want to know about local value }
                     st:= tmsgstate(ord(st) and ms_local_mask);
                     if st=ms_error then
@@ -704,11 +718,16 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
                     if st=ms_error then
                       begin
                         v:=v or V_Error;
                         inc(status.errorcount);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -722,7 +741,11 @@ implementation
                              if status.errorwarning then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
@@ -739,7 +762,11 @@ implementation
                              if status.errornote then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
@@ -756,7 +783,11 @@ implementation
                              if status.errorhint then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
+=======
+                              inc(status.errorcount)
+>>>>>>> graemeg/cpstrnew
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew

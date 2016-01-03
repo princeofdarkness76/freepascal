@@ -2,7 +2,11 @@
     This file is part of the Free Component Library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
@@ -207,8 +211,13 @@ type
     procedure TestSubtype;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestSum;
     procedure TestSuspend;
+=======
+    Procedure TestSum;
+    Procedure TestSuspend;
+>>>>>>> graemeg/cpstrnew
 =======
     Procedure TestSum;
     Procedure TestSuspend;
@@ -264,8 +273,11 @@ type
     procedure TestStringLiteral2;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestSymbolLiteral1;
     procedure TestSymbolLiteral2;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -319,7 +331,11 @@ begin
   J:=Scanner.FetchToken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   EN2:=GetEnumName(TypeInfo(TSQLToken),Ord(AToken));
+=======
+  EN2:=GetEnumName(TypeINfo(TSQLToken),Ord(AToken));
+>>>>>>> graemeg/cpstrnew
 =======
   EN2:=GetEnumName(TypeINfo(TSQLToken),Ord(AToken));
 >>>>>>> graemeg/cpstrnew
@@ -398,7 +414,11 @@ begin
   FScanner.Options:=AOptions;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=FScanner;
+=======
+  Result:=FSCanner;
+>>>>>>> graemeg/cpstrnew
 =======
   Result:=FSCanner;
 >>>>>>> graemeg/cpstrnew
@@ -688,6 +708,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSQLScanner.TestSymbolLiteral1;
 begin
   CheckToken(tsqlSymbolString,'%');
@@ -698,6 +719,8 @@ begin
   CheckToken(tsqlSymbolString,'%^');
 end;
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1452,8 +1475,13 @@ procedure TTestSQLScanner.TestIdentifier5;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // $0 should not be parsed as an identifier but as a symbol literal
   CheckToken(tsqlSymbolString,'$0');
+=======
+  FErrorSource:='$0';
+  AssertException('Identifier cannot start with _',ESQLScannerError,@TestErrorSource);
+>>>>>>> graemeg/cpstrnew
 =======
   FErrorSource:='$0';
   AssertException('Identifier cannot start with _',ESQLScannerError,@TestErrorSource);

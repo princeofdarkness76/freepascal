@@ -110,8 +110,11 @@ const
  DriveSeparator = '/';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  FileNameCasePreserving = true;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  FileNameCaseSensitive = true;

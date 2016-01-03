@@ -42,10 +42,13 @@ type
   {$IFNDEF FPC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$i memdsdelphi.inc} // should set ptrint is longint|intptr
 		       // & trecordbuffer ( if <2009)
   {$ENDIF}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   ptrint = Integer;
@@ -100,6 +103,9 @@ type
     ffieldsizes: PInteger;
     function GetCharPointer(p:PChar; Pos:Integer):PChar;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -172,8 +178,14 @@ type
     Function  DataSize : Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
     Procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
+=======
+
+    procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
+    procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
+>>>>>>> graemeg/cpstrnew
 =======
 
     procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
@@ -493,7 +505,11 @@ function TMemDataset.MDSGetFieldOffset(FieldNo: integer): integer;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:= getIntegerPointer(ffieldoffsets, fieldno-1)^;
+=======
+ result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
+>>>>>>> graemeg/cpstrnew
 =======
  result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
 >>>>>>> graemeg/cpstrnew
@@ -524,6 +540,9 @@ begin
   ftString:   result:=FieldDefs.Items[FieldNo-1].Size+1;
   ftFixedChar:result:=FieldDefs.Items[FieldNo-1].Size+1;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -950,10 +969,14 @@ begin
  else // Calculated, Lookup
    begin
 <<<<<<< HEAD
+<<<<<<< HEAD
    Inc(SrcBuffer, RecordSize + Field.Offset);
    result := Boolean(SrcBuffer[0]);
    if result and assigned(Buffer) then
      Move(SrcBuffer[1], Buffer^, Field.DataSize);
+=======
+   Move(getcharpointer(SrcBuffer,getintegerpointer(ffieldoffsets,I)^)^, Buffer^,GetIntegerPointer(FFieldSizes, I)^);
+>>>>>>> graemeg/cpstrnew
 =======
    Move(getcharpointer(SrcBuffer,getintegerpointer(ffieldoffsets,I)^)^, Buffer^,GetIntegerPointer(FFieldSizes, I)^);
 >>>>>>> graemeg/cpstrnew
@@ -1129,6 +1152,9 @@ begin
  FreeMem(ffieldoffsets);
  Freemem(ffieldsizes);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1147,9 +1173,15 @@ begin
    begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    GetIntegerPointer(FFieldOffsets, i)^ := FRecSize;
    GetIntegerPointer(FFieldSizes,   i)^ := MDSGetBufferSize(i+1);
    FRecSize:= FRecSize+GetIntegerPointer(FFieldSizes, i)^;
+=======
+   GetIntegerPointer(ffieldoffsets, i)^ := frecsize;
+   GetIntegerPointer(ffieldsizes,   i)^ := MDSGetbufferSize(i+1);
+   FRecSize:= FRecSize+GetIntegerPointeR(FFieldSizes, i)^;
+>>>>>>> graemeg/cpstrnew
 =======
    GetIntegerPointer(ffieldoffsets, i)^ := frecsize;
    GetIntegerPointer(ffieldsizes,   i)^ := MDSGetbufferSize(i+1);
@@ -1274,7 +1306,10 @@ begin
                 ftDateTime : F1.AsDateTime:=F2.AsDateTime;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 else         F1.AsString:=F2.AsString;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1429,6 +1464,18 @@ begin
   end
   else
     Result:=Null;
+end;
+
+function TMemDataset.GetCharPointer(p:PChar; Pos:Integer):PChar;
+begin
+  Result:=p;
+  inc(Result, Pos);
+end;
+
+function TMemDataset.GetIntegerPointer(p:PInteger; Pos:Integer):PInteger;
+begin
+  Result:=p;
+  inc(Result, Pos);
 end;
 
 function TMemDataset.GetCharPointer(p:PChar; Pos:Integer):PChar;

@@ -7,6 +7,7 @@ type
  TDerivedNSAffineTransform = objcclass (NSAffineTransform)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  extraptr: pointer
 ;end;
 type
@@ -1954,6 +1955,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
  extrabyte: byte;
 end;
 type
@@ -3882,6 +3885,9 @@ begin
  if class_getInstanceSize(TDerivedNSWorkspace) <> (class_getInstanceSize(NSWorkspace)+1) then
  writeln('size of NSWorkspace is wrong: ',class_getInstanceSize(TDerivedNSWorkspace),' <> ',class_getInstanceSize(NSWorkspace)+1);
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

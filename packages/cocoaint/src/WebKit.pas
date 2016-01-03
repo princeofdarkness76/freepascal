@@ -5,7 +5,10 @@ unit WebKit;
 {$modeswitch objectivec1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -75,7 +78,11 @@ implementation
 {$undef IMPLEMENTATION}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
+=======
+end.
+>>>>>>> graemeg/cpstrnew
 =======
 end.
 >>>>>>> graemeg/cpstrnew

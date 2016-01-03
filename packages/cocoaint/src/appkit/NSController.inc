@@ -53,6 +53,7 @@
     _modelKeysToRefreshEachTime: NSMutableArray;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __bindingsControllerFlags: record
       case byte of
        0: (_anonbitfield_NSController0: cuint);
@@ -60,11 +61,16 @@
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     __bindingsControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSController0: cuint);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -75,7 +81,10 @@
         _reservedController: 0..((1 shl 28)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

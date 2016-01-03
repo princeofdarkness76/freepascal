@@ -5,9 +5,15 @@
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> graemeg/cpstrnew
 =======
      Version:    QuickTime 7.6.3
  
@@ -27,8 +33,12 @@
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> graemeg/cpstrnew
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
@@ -91,11 +101,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
   {$setc __arm64__ := 0}
 {$endc}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -117,6 +130,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -125,12 +139,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -163,6 +186,11 @@ interface
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -175,7 +203,10 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -184,6 +215,7 @@ interface
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -238,6 +270,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -263,6 +297,11 @@ interface
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> graemeg/cpstrnew
+=======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -271,6 +310,7 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
 =======
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
@@ -279,6 +319,8 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
@@ -319,6 +361,7 @@ interface
 uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawTypes;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -326,15 +369,23 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> graemeg/cpstrnew
 
 {$ALIGN MAC68K}
 
 { QuickTime is not available to 64-bit clients }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -359,6 +410,9 @@ const
 	kaiLibraryInfoType = FourCharCode('linf');
 	kaiLibraryDescType = FourCharCode('ldsc');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -715,14 +769,20 @@ const
 	kQTMSKnobLastIDPlus1 = $02000040;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
 =======
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -752,9 +812,15 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		controllers: array [0..4-1] of UNSIGNEDLONG;         { array of 128 bits }
 		gmInstruments: array [0..4-1] of UNSIGNEDLONG;       { array of 128 bits }
 		gmDrums: array [0..4-1] of UNSIGNEDLONG;             { array of 128 bits }
+=======
+		controllers: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmInstruments: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmDrums: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+>>>>>>> graemeg/cpstrnew
 =======
 		controllers: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
 		gmInstruments: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
@@ -801,6 +867,9 @@ const
 	kInstrumentMatchGSNumber = 32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> graemeg/cpstrnew
 
 { KnobFlags}
 const
@@ -824,6 +893,7 @@ const
 	kKnobTypeButton = 10 shl 12; { momentary trigger push button }
 
 
+<<<<<<< HEAD
 =======
 
 { KnobFlags}
@@ -873,6 +943,8 @@ const
 	kKnobTypeButton = 10 shl 12; { momentary trigger push button }
 
 
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 const
 	kUnknownKnobValue = $7FFFFFFF; { a knob with this value means, we don't know it. }
@@ -894,7 +966,11 @@ type
 		knobCount: SIGNEDLONG;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		knob: array [0..1-1] of SIGNEDLONG;
+=======
+		knob: array [0..0] of SInt32;
+>>>>>>> graemeg/cpstrnew
 =======
 		knob: array [0..0] of SInt32;
 >>>>>>> graemeg/cpstrnew
@@ -931,6 +1007,7 @@ const
   noteChannelNotAllocatedErr = $8000F7DB;
   tunePlayerFullErr = $8000F7DA;
   tuneParseErr = $8000F7D9;
+<<<<<<< HEAD
 
 const
 	kGetAtomicInstNoExpandedSamples = 1 shl 0;
@@ -962,6 +1039,39 @@ const
  * Structures specific to the GenericMusicComponent
  }
 
+=======
+
+const
+	kGetAtomicInstNoExpandedSamples = 1 shl 0;
+	kGetAtomicInstNoOriginalSamples = 1 shl 1;
+	kGetAtomicInstNoSamples = kGetAtomicInstNoExpandedSamples or kGetAtomicInstNoOriginalSamples;
+	kGetAtomicInstNoKnobList = 1 shl 2;
+	kGetAtomicInstNoInstrumentInfo = 1 shl 3;
+	kGetAtomicInstOriginalKnobList = 1 shl 4;
+	kGetAtomicInstAllKnobs = 1 shl 5; { return even those that are set to default}
+
+{
+   For non-gm instruments, instrument number of tone description == 0
+   If you want to speed up while running, slam the inst num with what Get instrument number returns
+   All missing knobs are slammed to the default value
+}
+const
+	kSetAtomicInstKeepOriginalInstrument = 1 shl 0;
+	kSetAtomicInstShareAcrossParts = 1 shl 1; { inst disappears when app goes away}
+	kSetAtomicInstCallerTosses = 1 shl 2; { the caller isn't keeping a copy around (for NASetAtomicInstrument)}
+	kSetAtomicInstCallerGuarantees = 1 shl 3; { the caller guarantees a copy is around}
+	kSetAtomicInstInterruptSafe = 1 shl 4; { dont move memory at this time (but process at next task time)}
+	kSetAtomicInstDontPreprocess = 1 shl 7; { perform no further preprocessing because either 1)you know the instrument is digitally clean, or 2) you got it from a GetPartAtomic}
+
+const
+	kInstrumentNamesModifiable = 1;
+	kInstrumentNamesBoth = 2;
+
+{
+ * Structures specific to the GenericMusicComponent
+ }
+
+>>>>>>> graemeg/cpstrnew
 const
 	kGenericMusicComponentSubtype = FourCharCode('gene');
 
@@ -1044,7 +1154,10 @@ const
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
  * Calls specific to the GenericMusicComponent
@@ -1055,6 +1168,9 @@ const
 
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2391,8 +2507,13 @@ function TuneGetIndexedNoteChannel( tp: TunePlayer; i: SIGNEDLONG; var nc: NoteC
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -2450,8 +2571,13 @@ function TuneInstant( tp: TunePlayer; var tune: UNSIGNEDLONG; tunePosition: UNSI
 function TuneGetStatus( tp: TunePlayer; var status: TuneStatus ): ComponentResult; external name '_TuneGetStatus';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -2632,8 +2758,13 @@ function TuneSetHeaderWithSize( tp: TunePlayer; var header: UNSIGNEDLONG; size: 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -2680,6 +2811,7 @@ type
 {    QuickTime Music Track Event Formats:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2750,6 +2882,8 @@ type
 
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 
     At this time, QuickTime music tracks support 5 different event types -- REST events,
     short NOTE events, short CONTROL events, short GENERAL events, Long NOTE events, 
@@ -2816,6 +2950,9 @@ type
             Key Pressure, and Channel Pressure).    
 }
 
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

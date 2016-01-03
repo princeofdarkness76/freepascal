@@ -9,6 +9,7 @@ main=rtl
 loaders=
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #units=system objpas macpas iso7185 extpas buildrtl lineinfo lnfodwrf
 units=system uuchar objpas iso7185 extpas cpall buildrtl
 implicitunits=ndk ndkutils ddk \
@@ -31,6 +32,8 @@ rsts=math typinfo classes sysconst
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 #units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 units=system objpas iso7185 buildrtl
 implicitunits=ndk ndkutils ddk \
@@ -51,6 +54,9 @@ implicitunits=ndk ndkutils ddk \
 
 rsts=math varutils typinfo variants classes dateutils sysconst
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -81,7 +87,10 @@ NDKINC=ndk
 UNITPREFIX=rtl
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 SYSTEMUNIT=system
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -92,7 +101,11 @@ CPU_UNITS=
 ifeq ($(ARCH),i386)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 CPU_UNITS=cpu mmx
+=======
+CPU_UNITS=x86 cpu mmx
+>>>>>>> graemeg/cpstrnew
 =======
 CPU_UNITS=x86 cpu mmx
 >>>>>>> graemeg/cpstrnew
@@ -156,8 +169,11 @@ system$(PPUEXT) : system.pp $(SYSDEPS)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uuchar$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(INC)/uuchar.pp
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -172,9 +188,12 @@ buildrtl$(PPUEXT): buildrtl.pp system$(PPUEXT) objpas$(PPUEXT)
         $(COMPILER) -Fi$(OBJPASDIR)/sysutils -Fi$(OBJPASDIR)/classes -Fu$(PROCINC) -I$(OBJPASDIR) -Fi$(DDKINC) -I$(INC) -Fu$(INC) -Fu$(OBJPASDIR) buildrtl
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 cpall$(PPUEXT): $(RTL)/charmaps/cpall.pas system$(PPUEXT) objpas$(PPUEXT)
         $(COMPILER) -Fu$(INC) -Fi$(RTL)/charmaps $(RTL)/charmaps/cpall.pas
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

@@ -27,6 +27,7 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* MIPS OABI32 structure 
 struct sigcontext {
   unsigned int sc_regmask;
@@ -97,6 +98,8 @@ typedef struct ucontext
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
   PSigContext = ^TSigContext;
   TSigContext = record
     sigc_onstack,      { state to restore }
@@ -115,6 +118,9 @@ typedef struct ucontext
     { Windows to restore after signal }
     sigc_wbuf   : array[0..__SUNOS_MAXWIN] of twbuf;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

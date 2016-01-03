@@ -1,7 +1,11 @@
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 1999-2012 by Peter Vreman, Michael Van Canneyt
+=======
+    Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
 >>>>>>> graemeg/cpstrnew
@@ -30,8 +34,11 @@ program Delp;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode ObjFPC}{$H+}
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -42,12 +49,17 @@ uses
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Version   = 'Version 1.3';
   Title     = 'DelPascal';
   Copyright = 'Copyright (c) 1999-2012 by the Free Pascal Development Team';
 =======
   Version   = 'Version 1.2';
   Title     = 'DelPascal';
+=======
+  Version   = 'Version 1.2';
+  Title     = 'DelPascal';
+>>>>>>> graemeg/cpstrnew
 =======
   Version   = 'Version 1.2';
   Title     = 'DelPascal';
@@ -324,6 +336,7 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   While (I<=ParamCount) do
     begin
     BaseDir:=IncludeTrailingPathDelimiter(Paramstr(I));
@@ -333,6 +346,8 @@ begin
   if Not Quiet then
     PrintResults;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
   Total:=0;

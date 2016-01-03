@@ -21,10 +21,13 @@ Function Pos (c : Char; Const s : UnicodeString) : SizeInt;
 Function Pos (c : UnicodeChar; Const s : UnicodeString) : SizeInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Pos (const c : RawByteString; Const s : UnicodeString) : SizeInt;
 Function Pos (const c : UnicodeString; Const s : RawByteString) : SizeInt;
 Function Pos (const c : ShortString; Const s : UnicodeString) : SizeInt;
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 Function Pos (c : RawByteString; Const s : UnicodeString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -102,6 +105,9 @@ Type
     CompareWideStringProc : function(const s1, s2 : WideString) : PtrInt;
     CompareTextWideStringProc : function(const s1, s2 : WideString): PtrInt;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -152,6 +158,7 @@ function Utf8ToUnicode(Dest: PUnicodeChar; Source: PChar; MaxChars: SizeInt): Si
 function Utf8ToUnicode(Dest: PUnicodeChar; MaxDestChars: SizeUInt; Source: PChar; SourceBytes: SizeUInt): SizeUInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function UTF8Encode(const s : RawByteString) : RawByteString; inline;
 function UTF8Encode(const s : UnicodeString) : RawByteString;
 function UTF8Decode(const s : RawByteString): UnicodeString;
@@ -166,12 +173,17 @@ function Utf8ToAnsi(const s : RawByteString) : RawByteString;{$ifdef SYSTEMINLIN
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 function UTF8Encode(const s : RawByteString) : UTF8String; inline;
 function UTF8Encode(const s : UnicodeString) : UTF8String;
 function UTF8Decode(const s : UTF8String): UnicodeString;
 function AnsiToUtf8(const s : RawByteString): UTF8String;{$ifdef SYSTEMINLINE}inline;{$endif}
 function Utf8ToAnsi(const s : UTF8String) : RawByteString;{$ifdef SYSTEMINLINE}inline;{$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -193,10 +205,13 @@ function StringRefCount(const S : UnicodeString): SizeInt; overload;
 function StringCodePage(const S : UnicodeString): TSystemCodePage; overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Function ToSingleByteFileSystemEncodedFileName(const Str: UnicodeString): RawByteString;
 Function ToSingleByteFileSystemEncodedFileName(const arr: array of widechar): RawByteString;
 Function ToSingleByteFileSystemEncodedFileName(const Str: RawByteString): RawByteString;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

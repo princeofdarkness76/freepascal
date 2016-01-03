@@ -2,7 +2,11 @@ unit jsparser;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { $define debugparser}
+=======
+{$define debugparser}
+>>>>>>> graemeg/cpstrnew
 =======
 {$define debugparser}
 >>>>>>> graemeg/cpstrnew
@@ -16,7 +20,11 @@ interface
 uses
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, jsscanner, jstree, jstoken;
+=======
+  Classes, SysUtils, jsscanner, jstree;
+>>>>>>> graemeg/cpstrnew
 =======
   Classes, SysUtils, jsscanner, jstree;
 >>>>>>> graemeg/cpstrnew
@@ -31,7 +39,10 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -68,6 +79,9 @@ Type
   end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -167,7 +181,10 @@ Type
     Constructor Create(AScanner : TJSScanner);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Destructor Destroy; override;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -216,7 +233,11 @@ Resourcestring
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.CurrentToken: TJSToken;
+=======
+function TJSParser.CurrentToken: TJSToken;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.CurrentToken: TJSToken;
 >>>>>>> graemeg/cpstrnew
@@ -230,7 +251,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.CurrentTokenString: String;
+=======
+function TJSParser.CurrentTokenString: String;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.CurrentTokenString: String;
 >>>>>>> graemeg/cpstrnew
@@ -243,7 +268,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.GetNextToken: TJSToken;
+=======
+function TJSParser.GetNextToken: TJSToken;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.GetNextToken: TJSToken;
 >>>>>>> graemeg/cpstrnew
@@ -269,7 +298,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.PeekNextToken: TJSToken;
+=======
+function TJSParser.PeekNextToken: TJSToken;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.PeekNextToken: TJSToken;
 >>>>>>> graemeg/cpstrnew
@@ -288,7 +321,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.IsEndOfLine: Boolean;
+=======
+function TJSParser.IsEndOfLine: Boolean;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.IsEndOfLine: Boolean;
 >>>>>>> graemeg/cpstrnew
@@ -302,7 +339,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.CurPos: Integer;
+=======
+function TJSParser.CurPos: Integer;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.CurPos: Integer;
 >>>>>>> graemeg/cpstrnew
@@ -318,7 +359,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.CurLine: Integer;
+=======
+function TJSParser.CurLine: Integer;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.CurLine: Integer;
 >>>>>>> graemeg/cpstrnew
@@ -342,7 +387,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TJSParser.CheckParser;
+=======
+procedure TJSParser.CheckParser;
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TJSParser.CheckParser;
 >>>>>>> graemeg/cpstrnew
@@ -355,7 +404,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSParser.LeaveLabel;
+=======
+Procedure TJSParser.LeaveLabel;
+>>>>>>> graemeg/cpstrnew
 =======
 Procedure TJSParser.LeaveLabel;
 >>>>>>> graemeg/cpstrnew
@@ -430,7 +483,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.CurrentLabelSet: TJSLabelSet;
+=======
+function TJSParser.CurrentLabelSet: TJSLabelSet;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.CurrentLabelSet: TJSLabelSet;
 >>>>>>> graemeg/cpstrnew
@@ -458,7 +515,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.CreateElement(AElementClass: TJSElementClass): TJSElement;
+=======
+function TJSParser.CreateElement(AElementClass: TJSElementClass): TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.CreateElement(AElementClass: TJSElementClass): TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -471,7 +532,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TJSParser.Error(Msg: String);
+=======
+procedure TJSParser.Error(Msg: String);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TJSParser.Error(Msg: String);
 >>>>>>> graemeg/cpstrnew
@@ -493,7 +558,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TJSParser.Error(Fmt: String; Args: Array of const);
+=======
+procedure TJSParser.Error(Fmt: String; Args: array of const);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TJSParser.Error(Fmt: String; Args: array of const);
 >>>>>>> graemeg/cpstrnew
@@ -506,7 +575,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Constructor TJSParser.Create(AInput: TStream);
+=======
+constructor TJSParser.Create(AInput: TStream);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TJSParser.Create(AInput: TStream);
 >>>>>>> graemeg/cpstrnew
@@ -522,7 +595,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Constructor TJSParser.Create(AScanner: TJSScanner);
+=======
+constructor TJSParser.Create(AScanner: TJSScanner);
+>>>>>>> graemeg/cpstrnew
 =======
 constructor TJSParser.Create(AScanner: TJSScanner);
 >>>>>>> graemeg/cpstrnew
@@ -537,6 +614,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Destructor TJSParser.Destroy;
 begin
   if FFreeScanner then
@@ -547,6 +625,11 @@ end;
 
 
 procedure TJSParser.Expect(aToken: TJSToken);
+=======
+
+
+Procedure TJSParser.Expect(aToken : TJSToken);
+>>>>>>> graemeg/cpstrnew
 =======
 
 
@@ -579,7 +662,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSParser.Consume(aToken: TJSToken; AllowSemicolonInsert: Boolean);
+=======
+procedure TJSParser.Consume(aToken: TJSToken; AllowSemiColonInsert : Boolean = False);
+>>>>>>> graemeg/cpstrnew
 =======
 procedure TJSParser.Consume(aToken: TJSToken; AllowSemiColonInsert : Boolean = False);
 >>>>>>> graemeg/cpstrnew
@@ -721,7 +808,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseArrayLiteral: TJSElement;
+=======
+Function TJSParser.ParseArrayLiteral : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseArrayLiteral : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -766,7 +857,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseObjectLiteral: TJSElement;
+=======
+Function TJSParser.ParseObjectLiteral : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseObjectLiteral : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -790,7 +885,11 @@ begin
          GetNextToken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       If (CurrentToken in [tjsIdentifier,jstoken.tjsString,tjsnumber]) then
+=======
+      If (CurrentToken in [tjsIdentifier,jsscanner.tjsString,tjsnumber]) then
+>>>>>>> graemeg/cpstrnew
 =======
       If (CurrentToken in [tjsIdentifier,jsscanner.tjsString,tjsnumber]) then
 >>>>>>> graemeg/cpstrnew
@@ -820,7 +919,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseNumericLiteral: TJSElement;
+=======
+Function TJSParser.ParseNumericLiteral : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseNumericLiteral : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -852,7 +955,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseStringLiteral: TJSElement;
+=======
+Function TJSParser.ParseStringLiteral : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseStringLiteral : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -881,7 +988,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseRegularExpressionLiteral: TJSElement;
+=======
+Function TJSParser.ParseRegularExpressionLiteral : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseRegularExpressionLiteral : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -922,7 +1033,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseLiteral: TJSElement;
+=======
+Function TJSParser.ParseLiteral : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseLiteral : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -953,7 +1068,11 @@ begin
     tjsNumber : Result:=ParseNumericLiteral;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     jstoken.tjsString : Result:=ParseStringLiteral;
+=======
+    jsscanner.tjsString : Result:=ParseStringLiteral;
+>>>>>>> graemeg/cpstrnew
 =======
     jsscanner.tjsString : Result:=ParseStringLiteral;
 >>>>>>> graemeg/cpstrnew
@@ -969,7 +1088,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParsePrimaryExpression: TJSElement;
+=======
+Function TJSParser.ParsePrimaryExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParsePrimaryExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -996,7 +1119,11 @@ begin
         Result:=R;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         R.Name:=CurrentTokenString;
+=======
+        R.AString:=CurrentTokenString;
+>>>>>>> graemeg/cpstrnew
 =======
         R.AString:=CurrentTokenString;
 >>>>>>> graemeg/cpstrnew
@@ -1011,10 +1138,13 @@ begin
         begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Consume(tjsBraceOpen);
         Result:=ParseExpression;
         Consume(tjsBraceClose);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
         Writeln('Found brace !!');
@@ -1023,6 +1153,9 @@ begin
         Consume(tjsBraceClose);
         Writeln('Closed brace !!');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1040,6 +1173,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseMemberExpression: TJSElement;
 
 Var
@@ -1048,11 +1182,16 @@ Var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 Function TJSParser.ParseMemberExpression : TJSElement;
 
 Var
   M  : TJSDotMemberExpression;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1068,6 +1207,7 @@ begin
                   GetNextToken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   N:=TJSNewMemberExpression(CreateElement(TJSNewMemberExpression));
                   try
                     Result:=N;
@@ -1078,6 +1218,9 @@ begin
                     FreeAndNil(N);
                     Raise;
                   end;
+=======
+                  Result:=ParseMemberExpression();
+>>>>>>> graemeg/cpstrnew
 =======
                   Result:=ParseMemberExpression();
 >>>>>>> graemeg/cpstrnew
@@ -1125,7 +1268,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseArguments: TJSarguments;
+=======
+Function TJSParser.ParseArguments : TJSarguments;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseArguments : TJSarguments;
 >>>>>>> graemeg/cpstrnew
@@ -1159,7 +1306,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseLeftHandSideExpression: TJSElement;
+=======
+Function TJSParser.ParseLeftHandSideExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseLeftHandSideExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1208,6 +1359,10 @@ begin
          begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+         Writeln('Call expression !!');
+>>>>>>> graemeg/cpstrnew
 =======
          Writeln('Call expression !!');
 >>>>>>> graemeg/cpstrnew
@@ -1234,7 +1389,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParsePostFixExpression: TJSElement;
+=======
+Function TJSParser.ParsePostFixExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParsePostFixExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1268,7 +1427,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseUnaryExpression: TJSElement;
+=======
+Function TJSParser.ParseUnaryExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseUnaryExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1316,7 +1479,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseMultiplicativeExpression: TJSElement;
+=======
+Function TJSParser.ParseMultiplicativeExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseMultiplicativeExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1356,7 +1523,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseAdditiveExpression: TJSElement;
+=======
+Function TJSParser.ParseAdditiveExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseAdditiveExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1394,7 +1565,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseShiftExpression: TJSElement;
+=======
+Function TJSParser.ParseShiftExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseShiftExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1433,7 +1608,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseRelationalExpression: TJSElement;
+=======
+Function TJSParser.ParseRelationalExpression: TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseRelationalExpression: TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1479,7 +1658,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseEqualityExpression: TJSElement;
+=======
+Function TJSParser.ParseEqualityExpression: TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseEqualityExpression: TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1520,7 +1703,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseBitwiseAndExpression: TJSElement;
+=======
+Function TJSParser.ParseBitwiseAndExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseBitwiseAndExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1552,7 +1739,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseBitwiseXORExpression: TJSElement;
+=======
+Function TJSParser.ParseBitwiseXORExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseBitwiseXORExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1584,7 +1775,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseBitwiseORExpression: TJSElement;
+=======
+Function TJSParser.ParseBitwiseORExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseBitwiseORExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1616,7 +1811,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseLogicalAndExpression: TJSElement;
+=======
+Function TJSParser.ParseLogicalAndExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseLogicalAndExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1648,7 +1847,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseLogicalORExpression: TJSElement;
+=======
+Function TJSParser.ParseLogicalORExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseLogicalORExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1668,11 +1871,14 @@ begin
     GetNextToken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     L:=TJSLogicalOrExpression(CreateElement(TJSLogicalOrExpression));
     L.A:=Result;
     Result:=L;
     L.B:=ParseLogicalOrExpression();
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
     Writeln('a');
@@ -1683,6 +1889,9 @@ begin
     L.B:=ParseLogicalOrExpression();
     Writeln('C');
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1696,7 +1905,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseConditionalExpression: TJSElement;
+=======
+Function TJSParser.ParseConditionalExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseConditionalExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1734,7 +1947,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseAssignmentExpression: TJSElement;
+=======
+Function TJSParser.ParseAssignmentExpression : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseAssignmentExpression : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1795,7 +2012,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseVariableDeclaration: TJSElement;
+=======
+Function TJSParser.ParseVariableDeclaration : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseVariableDeclaration : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1820,7 +2041,13 @@ begin
     Result:=V;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FCurrentVars.AddNode.Node:=Result;
+=======
+    Writeln('Adding variable ',V.Name);
+    FCurrentVars.AddNode.Node:=Result;
+    Writeln('Current var count:  ',FCurrentVars.Count);
+>>>>>>> graemeg/cpstrnew
 =======
     Writeln('Adding variable ',V.Name);
     FCurrentVars.AddNode.Node:=Result;
@@ -1840,7 +2067,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSParser.ParseVariableDeclarationList: TJSElement;
+=======
+Function TJSParser.ParseVariableDeclarationList : TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 Function TJSParser.ParseVariableDeclarationList : TJSElement;
 >>>>>>> graemeg/cpstrnew
@@ -1855,7 +2086,11 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef debugparser}  Writeln('ParseVariableDeclarationList entry');{$endif debugparser}
+=======
+  Writeln('ParseVariableDeclarationList entry');
+>>>>>>> graemeg/cpstrnew
 =======
   Writeln('ParseVariableDeclarationList entry');
 >>>>>>> graemeg/cpstrnew
@@ -1881,7 +2116,11 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef debugparser}  Writeln('ParseVariableDeclarationList exit');{$endif debugparser}
+=======
+  Writeln('ParseVariableDeclarationList exit');
+>>>>>>> graemeg/cpstrnew
 =======
   Writeln('ParseVariableDeclarationList exit');
 >>>>>>> graemeg/cpstrnew
@@ -1899,7 +2138,11 @@ Var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef debugparser}  Writeln('ParseVariableStatement entry');{$endif debugparser}
+=======
+  Writeln('ParseVariableStatement entry');
+>>>>>>> graemeg/cpstrnew
 =======
   Writeln('ParseVariableStatement entry');
 >>>>>>> graemeg/cpstrnew
@@ -1920,7 +2163,11 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef debugparser}  Writeln('ParseVariableStatement exit');{$endif debugparser}
+=======
+  Writeln('ParseVariableStatement exit');
+>>>>>>> graemeg/cpstrnew
 =======
   Writeln('ParseVariableStatement exit');
 >>>>>>> graemeg/cpstrnew
@@ -1991,7 +2238,11 @@ begin
         GetNextToken;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         W:=TJSDoWhileStatement(CreateElement(TJSDoWhileStatement));
+=======
+        W:=TJSWhileStatement(CreateElement(TJSWhileStatement));
+>>>>>>> graemeg/cpstrnew
 =======
         W:=TJSWhileStatement(CreateElement(TJSWhileStatement));
 >>>>>>> graemeg/cpstrnew
@@ -2092,7 +2343,10 @@ begin
     LeaveLabel;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FreeCurrentLabelSet;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2128,7 +2382,10 @@ begin
     C.Target:=L.Labelset.Target;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     C.TargetName:=L.Name;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2162,7 +2419,10 @@ begin
     B.Target:=L.Labelset.Target;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     B.TargetName:=L.Name;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2260,9 +2520,13 @@ begin
       LeaveLabel;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       FreeCurrentLabelSet;
     end;
     Result:=N;
+=======
+    end;
+>>>>>>> graemeg/cpstrnew
 =======
     end;
 >>>>>>> graemeg/cpstrnew
@@ -2301,7 +2565,11 @@ Var
   BO,BC,BF : TJSElement;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Id : jstree.TJSString;
+=======
+  Id : TJSString;
+>>>>>>> graemeg/cpstrnew
 =======
   Id : TJSString;
 >>>>>>> graemeg/cpstrnew
@@ -2434,7 +2702,11 @@ begin
     I:=TJSPrimaryExpressionIdent(CreateElement(TJSPrimaryExpressionIdent));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     I.Name:=F.AFunction.Name;
+=======
+    I.AString:=F.AFunction.Name;
+>>>>>>> graemeg/cpstrnew
 =======
     I.AString:=F.AFunction.Name;
 >>>>>>> graemeg/cpstrnew
@@ -2477,7 +2749,11 @@ begin
       Repeat
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         LS.TheLabel:=EnterLabel(CurrentTokenString);
+=======
+        EnterLabel(CurrentTokenString);
+>>>>>>> graemeg/cpstrnew
 =======
         EnterLabel(CurrentTokenString);
 >>>>>>> graemeg/cpstrnew
@@ -2609,7 +2885,11 @@ Const
   StatementTokens = [tjsNULL, tjsTRUE, tjsFALSE,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tjsTHIS, tjsIdentifier,jstoken.tjsSTRING,tjsNUMBER,
+=======
+      tjsTHIS, tjsIdentifier,jsscanner.tjsSTRING,tjsNUMBER,
+>>>>>>> graemeg/cpstrnew
 =======
       tjsTHIS, tjsIdentifier,jsscanner.tjsSTRING,tjsNUMBER,
 >>>>>>> graemeg/cpstrnew
@@ -2622,8 +2902,13 @@ Const
       tjsPlus,tjsMinus,tjsNot,tjsNE,tjsSNE,tjsSemicolon,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tjsVAR,tjsIF,tjsDO,tjsWHILE,tjsFOR,jstoken.tjsCONTINUE,jstoken.tjsBREAK,jstoken.tjsReturn,
       tjsWith,jstoken.tjsSWITCH,tjsThrow,TjsTry,tjsDIV,tjsDIVEQ];
+=======
+      tjsVAR,tjsIF,tjsDO,tjsWHILE,tjsFOR,jsscanner.tjsCONTINUE,jsscanner.tjsBREAK,jsscanner.tjsReturn,
+      tjsWith,jsscanner.tjsSWITCH,tjsThrow,TjsTry,tjsDIV,tjsDIVEQ];
+>>>>>>> graemeg/cpstrnew
 =======
       tjsVAR,tjsIF,tjsDO,tjsWHILE,tjsFOR,jsscanner.tjsCONTINUE,jsscanner.tjsBREAK,jsscanner.tjsReturn,
       tjsWith,jsscanner.tjsSWITCH,tjsThrow,TjsTry,tjsDIV,tjsDIVEQ];
@@ -2650,7 +2935,11 @@ begin
         {$ifdef debugparser} Writeln('Sourceelements start:',GetEnumName(TypeInfo(TJSToken),Ord(CurrentToken)), ' As string: ',CurrentTokenString);{$endif debugparser}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         If (CurrentToken=jstoken.tjsFunction) then
+=======
+        If (CurrentToken=jsscanner.tjsFunction) then
+>>>>>>> graemeg/cpstrnew
 =======
         If (CurrentToken=jsscanner.tjsFunction) then
 >>>>>>> graemeg/cpstrnew
@@ -2709,7 +2998,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.ParseProgram: TJSFunctionDeclarationStatement;
+=======
+function TJSParser.ParseProgram : TJSFunctionDeclarationStatement;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.ParseProgram : TJSFunctionDeclarationStatement;
 >>>>>>> graemeg/cpstrnew
@@ -2734,7 +3027,11 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSParser.Parse: TJSElement;
+=======
+function TJSParser.Parse: TJSElement;
+>>>>>>> graemeg/cpstrnew
 =======
 function TJSParser.Parse: TJSElement;
 >>>>>>> graemeg/cpstrnew

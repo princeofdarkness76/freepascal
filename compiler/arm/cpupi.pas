@@ -92,6 +92,7 @@ unit cpupi;
                 register (= last register in list above) -> + 4 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               tg.setfirsttemp(-28-16)
             else
               { on Darwin first r4-r7,r14 are saved, then r7 is adjusted to
@@ -101,11 +102,16 @@ unit cpupi;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
               tg.setfirsttemp(-28-16+4)
             else
               { on Darwin r9 is not usable -> one less register to save }
               tg.setfirsttemp(-24-16+4)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -159,6 +165,7 @@ unit cpupi;
          r : byte;
          floatsavesize : aword;
          regs: tcpuregisterset;
+<<<<<<< HEAD
 <<<<<<< HEAD
       begin
 <<<<<<< HEAD
@@ -255,6 +262,8 @@ unit cpupi;
 
 
     procedure tarmprocinfo.init_framepointer;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
       begin

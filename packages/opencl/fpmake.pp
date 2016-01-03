@@ -16,9 +16,15 @@ begin
 {$ifdef ALLPACKAGES}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
+=======
+    P.Directory:='opencl';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.2-0';
+>>>>>>> graemeg/cpstrnew
 =======
     P.Directory:='opencl';
 {$endif ALLPACKAGES}
@@ -40,8 +46,11 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Dependencies.Add('opengl');
 
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======

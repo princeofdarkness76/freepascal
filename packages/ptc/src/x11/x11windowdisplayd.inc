@@ -2,7 +2,11 @@
     This file is part of the PTCPas framebuffer library
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> graemeg/cpstrnew
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
@@ -44,9 +48,13 @@ type
     {eventHandler}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOpen: Boolean;
     FWindow: TWindow;
     FVisual: PVisual;
+=======
+    FWindow: TWindow;
+>>>>>>> graemeg/cpstrnew
 =======
     FWindow: TWindow;
 >>>>>>> graemeg/cpstrnew
@@ -65,7 +73,10 @@ type
                              taken at the time 'open' was called }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FResizable: Boolean;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -80,11 +91,16 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FPreviousWidth, FPreviousHeight: Integer;
 
 {$IFDEF ENABLE_X11_EXTENSION_GLX}
     FGLXFBConfig: TX11GLXFBConfig;
 {$ENDIF ENABLE_X11_EXTENSION_GLX}
+=======
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+>>>>>>> graemeg/cpstrnew
 =======
     function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
@@ -104,6 +120,7 @@ type
     function CreateImage(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          AFormat: IPTCFormat): TX11Image; { Factory method }
     function CreateModeSwitcher: TX11Modes; { Factory method }
     procedure CreateColormap; { Register colour maps }
@@ -121,10 +138,16 @@ type
     function CreateModeSwitcher: TX11Modes; { Factory method }
     procedure CreateColormap; { Register colour maps }
 >>>>>>> graemeg/cpstrnew
+=======
+                         AFormat: TPTCFormat): TX11Image; { Factory method }
+    function CreateModeSwitcher: TX11Modes; { Factory method }
+    procedure CreateColormap; { Register colour maps }
+>>>>>>> graemeg/cpstrnew
   public
     constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); override;
     destructor Destroy; override;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     procedure Open(ATitle: string; AWidth, AHeight: Integer; AFormat: IPTCFormat; const AOpenGLAttributes: IPTCOpenGLAttributes); override;
@@ -141,6 +164,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); override;
     procedure Open(AWindow: TWindow; const AFormat: TPTCFormat); override;
     procedure Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer); override;
@@ -152,6 +177,9 @@ type
     procedure GetModes(var AModes: TPTCModeDynArray); override;
     procedure Palette(const APalette: TPTCPalette); override;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -159,6 +187,7 @@ type
     function GetX11Window: TWindow; override;
     function GetX11GC: TGC; virtual;
     function IsFullScreen: Boolean; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     function IsOpen: Boolean; override;
@@ -169,6 +198,10 @@ type
     procedure OpenGL_SetSwapInterval(AInterval: Integer); override;
     function OpenGL_GetSwapInterval: Integer; override;
 {$ENDIF ENABLE_X11_EXTENSION_GLX}
+=======
+    procedure SetCursor(AVisible: Boolean); override;
+    procedure SetMouseGrab(AGrabMouse: Boolean); override;
+>>>>>>> graemeg/cpstrnew
 =======
     procedure SetCursor(AVisible: Boolean); override;
     procedure SetMouseGrab(AGrabMouse: Boolean); override;

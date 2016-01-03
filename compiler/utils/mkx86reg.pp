@@ -366,6 +366,9 @@ begin
           write(nasmfile,'''',nasmnames[i],'''');
         end;
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew

@@ -1117,6 +1117,7 @@ Begin
 End;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_write_text_enum(typinfo,ord2strindex:pointer;len:sizeint;var t:text;ordinal:longint); iocheck; compilerproc;
 >>>>>>> graemeg/cpstrnew
 
@@ -1138,9 +1139,25 @@ end;
 
 =======
 =======
+=======
 
 Procedure fpc_Write_Text_Float_iso(rt,fixkomma,Len : Longint;var t : Text;r : ValReal); iocheck; compilerproc;
 var
+  s : String;
+Begin
+  If (InOutRes<>0) then
+   exit;
+  Str_real_iso(Len,fixkomma,r,treal_type(rt),s);
+  Write_Str(Len,t,s);
+End;
+{$endif}
+
+procedure fpc_write_text_enum(typinfo,ord2strindex:pointer;len:sizeint;var t:text;ordinal:longint); iocheck; compilerproc;
+>>>>>>> graemeg/cpstrnew
+
+Procedure fpc_Write_Text_Float_iso(rt,fixkomma,Len : Longint;var t : Text;r : ValReal); iocheck; compilerproc;
+var
+<<<<<<< HEAD
   s : String;
 Begin
   If (InOutRes<>0) then
@@ -1262,6 +1279,11 @@ begin
 {$else EXCLUDE_COMPLEX_PROCS}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+    s:string;
+
+begin
+>>>>>>> graemeg/cpstrnew
   if textrec(t).mode<>fmoutput then
     begin
       if textrec(t).mode=fminput then
@@ -1276,7 +1298,10 @@ begin
   fpc_writeBuffer(t,s[1],length(s));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif EXCLUDE_COMPLEX_PROCS}
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1813,6 +1838,7 @@ End;
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure fpc_Read_Text_AnsiStr(var f : Text;out s : RawByteString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}); [public, alias: 'FPC_READ_TEXT_ANSISTR']; iocheck; compilerproc;
 =======
 Procedure fpc_Read_Text_AnsiStr(var f : Text;out s : AnsiString); [public, alias: 'FPC_READ_TEXT_ANSISTR']; iocheck; compilerproc;
@@ -1953,12 +1979,16 @@ end;
 >>>>>>> graemeg/cpstrnew
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 procedure fpc_Read_Text_WideChar(var f : Text; out wc: widechar); iocheck;compilerproc;
+=======
+Procedure fpc_Read_Text_AnsiStr(var f : Text;out s : AnsiString); [public, alias: 'FPC_READ_TEXT_ANSISTR']; iocheck; compilerproc;
+>>>>>>> graemeg/cpstrnew
 var
   ws: widestring;
   i: longint;
   { maximum code point length is 6 characters (with UTF-8) }
   str: array[0..5] of char;
 Begin
+<<<<<<< HEAD
   fillchar(str[0],sizeof(str),0);
   for i:=low(str) to high(str) do
     begin
@@ -1987,6 +2017,134 @@ Begin
 =======
             widestringmanager.Ansi2WideMoveProc(@str[0],DefaultSystemCodePage,ws,i+1);
 >>>>>>> graemeg/cpstrnew
+            { has to be exactly one widechar }
+            if length(ws)=1 then
+              begin
+                wc:=ws[1];
+                exit
+              end
+            else
+              break;
+          end;
+      end;
+    end;
+  { invalid widechar input }
+  inoutres:=106;
+end;
+{$endif FPC_HAS_FEATURE_WIDESTRINGS}
+
+
+procedure fpc_Read_Text_Char_Iso(var f : Text; out c: char); iocheck;compilerproc;
+=======
+  slen:=0;
+  Repeat
+    // SetLength will reallocate the length.
+    SetLength(S,slen+255);
+    len:=ReadPCharLen(f,pchar(Pointer(S)+slen),255);
+    inc(slen,len);
+  Until len<255;
+  // Set actual length
+  SetLength(S,Slen);
+End;
+
+Procedure fpc_Read_Text_AnsiStr_Intern(var f : Text;out s : AnsiString); [external name 'FPC_READ_TEXT_ANSISTR'];
+{$endif FPC_HAS_FEATURE_ANSISTRINGS}
+
+
+{$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
+Procedure fpc_Read_Text_UnicodeStr(var f : Text;out us : UnicodeString); iocheck; compilerproc;
+var
+  s: AnsiString;
+Begin
+  // all standard input is assumed to be ansi-encoded
+  fpc_Read_Text_AnsiStr_Intern(f,s);
+  // Convert to unicodestring
+  us:=s;
+End;
+{$endif FPC_HAS_FEATURE_WIDESTRINGS}
+
+{$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+Procedure fpc_Read_Text_WideStr(var f : Text;out ws : WideString); iocheck; compilerproc;
+var
+  s: AnsiString;
+Begin
+  // all standard input is assumed to be ansi-encoded
+  fpc_Read_Text_AnsiStr_Intern(f,s);
+  // Convert to widestring
+  ws:=s;
+End;
+{$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+
+procedure fpc_Read_Text_Char(var f : Text; out c: char); [public, alias: 'FPC_READ_TEXT_CHAR']; iocheck;compilerproc;
+>>>>>>> graemeg/cpstrnew
+Begin
+  c:=' ';
+  If not CheckRead(f) then
+    exit;
+  If TextRec(f).BufPos>=TextRec(f).BufEnd Then
+    begin
+      c:=' ';
+      exit;
+    end;
+  c:=TextRec(f).Bufptr^[TextRec(f).BufPos];
+  inc(TextRec(f).BufPos);
+  if c=#13 then
+    begin
+      c:=' ';
+      If not CheckRead(f) or
+        (TextRec(f).BufPos>=TextRec(f).BufEnd) then
+        exit;
+      If TextRec(f).Bufptr^[TextRec(f).BufPos]=#10 then
+        inc(TextRec(f).BufPos);
+
+      { ignore #26 following a new line }
+      If not CheckRead(f) or
+        (TextRec(f).BufPos>=TextRec(f).BufEnd) then
+        exit;
+      If TextRec(f).Bufptr^[TextRec(f).BufPos]=#26 then
+        inc(TextRec(f).BufPos);
+    end
+  else if c=#10 then
+    begin
+      c:=' ';
+      { ignore #26 following a new line }
+      If not CheckRead(f) or
+        (TextRec(f).BufPos>=TextRec(f).BufEnd) then
+        exit;
+      If TextRec(f).Bufptr^[TextRec(f).BufPos]=#26 then
+        inc(TextRec(f).BufPos);
+      end
+  else if c=#26 then
+    c:=' ';
+end;
+
+procedure fpc_Read_Text_Char_intern(var f : Text; out c: char); iocheck; [external name 'FPC_READ_TEXT_CHAR'];
+
+
+{$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
+procedure fpc_Read_Text_WideChar(var f : Text; out wc: widechar); iocheck;compilerproc;
+var
+  ws: widestring;
+  i: longint;
+  { maximum code point length is 6 characters (with UTF-8) }
+  str: array[0..5] of char;
+Begin
+  fillchar(str[0],sizeof(str),0);
+  for i:=low(str) to high(str) do
+    begin
+      fpc_Read_Text_Char_intern(f,str[i]);
+      case widestringmanager.CodePointLengthProc(@str[0],i+1) of
+        -1: { possibly incomplete code point, try with an extra character }
+           ;
+        0: { null character }
+          begin
+            wc:=#0;
+            exit;
+          end;
+        else
+          begin
+            { valid code point -> convert to widestring}
+            widestringmanager.Ansi2WideMoveProc(@str[0],DefaultSystemCodePage,ws,i+1);
             { has to be exactly one widechar }
             if length(ws)=1 then
               begin
@@ -2435,10 +2593,13 @@ end;
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function EndOfLastCompleteUTF8CodePoint(var t: textrec): SizeInt;
 =======
 procedure WriteStrUnicode(var t: textrec);
 =======
+=======
+>>>>>>> graemeg/cpstrnew
 procedure WriteStrUnicode(var t: textrec);
 var
   temp: ansistring;
@@ -2469,6 +2630,7 @@ begin
   str^:=str^+temp;
   t.bufpos:=0;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 
@@ -2581,6 +2743,8 @@ begin
 end;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 
 procedure SetupWriteStrCommon(out t: textrec; cp: TSystemCodePage);
@@ -2649,6 +2813,23 @@ end;
 {$endif FPC_HAS_FEATURE_WIDESTRINGS}
 
 
+<<<<<<< HEAD
+=======
+{$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
+function fpc_SetupWriteStr_Unicodestr(out s: unicodestring): PText; compilerproc;
+begin
+  setupwritestrcommon(ReadWriteStrText);
+  PPointer(@ReadWriteStrText.userdata[StrPtrIndex])^:=@s;
+// automatically done by out-semantics
+//  setlength(s,0);
+  ReadWriteStrText.InOutFunc:=@WriteStrUnicode;
+  ReadWriteStrText.FlushFunc:=@WriteStrUnicode;
+  result:=@ReadWriteStrText;
+end;
+{$endif FPC_HAS_FEATURE_WIDESTRINGS}
+
+
+>>>>>>> graemeg/cpstrnew
 {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
 function fpc_SetupWriteStr_Widestr(out s: widestring): PText; compilerproc;
 >>>>>>> graemeg/cpstrnew
@@ -2662,6 +2843,7 @@ begin
   result:=@ReadWriteStrText;
 end;
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+<<<<<<< HEAD
 
 
 {$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
@@ -2693,6 +2875,8 @@ begin
   TextRec(ReadWriteStrText).FlushFunc:=@WriteStrWideFlush;
 end;
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+=======
+>>>>>>> graemeg/cpstrnew
 
 
 {$ifdef FPC_HAS_FEATURE_ANSISTRINGS}
@@ -2796,6 +2980,7 @@ end;
 {$ifdef FPC_HAS_FEATURE_WIDESTRINGS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_SetupReadStr_Unicodestr(var ReadWriteStrText: text; const s: unicodestring); compilerproc;
 =======
 function fpc_SetupReadStr_Unicodestr(const s: unicodestring): PText; compilerproc;
@@ -2818,11 +3003,24 @@ function fpc_SetupReadStr_Widestr(const s: widestring): PText; compilerproc;
 =======
 function fpc_SetupReadStr_Unicodestr(const s: unicodestring): PText; compilerproc;
 >>>>>>> graemeg/cpstrnew
+=======
+function fpc_SetupReadStr_Unicodestr(const s: unicodestring): PText; compilerproc;
+>>>>>>> graemeg/cpstrnew
 begin
   { we use an ansistring to avoid code duplication, and let the    }
   { assignment convert the widestring to an equivalent ansistring  }
   result:=fpc_SetupReadStr_Ansistr_Intern(s);
 >>>>>>> graemeg/cpstrnew
+end;
+{$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
+
+
+{$ifndef FPC_WIDESTRING_EQUAL_UNICODESTRING}
+function fpc_SetupReadStr_Widestr(const s: widestring): PText; compilerproc;
+begin
+  { we use an ansistring to avoid code duplication, and let the    }
+  { assignment convert the widestring to an equivalent ansistring  }
+  result:=fpc_SetupReadStr_Ansistr_Intern(s);
 end;
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
 

@@ -66,6 +66,7 @@ var
     wantsInvalid: char;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_NSConnection0: record
       case byte of
        0: (_anonbitfield_NSConnection0: char);
@@ -73,11 +74,16 @@ var
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
     _anoninternstruct_NSConnection0: bitpacked record
       case byte of
        0: (_anonbitfield_NSConnection0: char);
        1: (
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -91,7 +97,10 @@ var
         invalidateRP: 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
+=======
+>>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
