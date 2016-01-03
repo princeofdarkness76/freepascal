@@ -32,6 +32,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_erase(p: pchar; pchangeable: boolean);
 =======
 procedure do_erase(p: pchar);
@@ -42,12 +43,16 @@ procedure do_erase(p: pchar);
 =======
 procedure do_erase(p: pchar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure do_erase(p: pchar);
+>>>>>>> origin/cpstrnew
 begin
   if FileIODevice.FileIO.DoErase <> nil then
     FileIODevice.FileIO.DoErase(p);
 //  _unlink(p);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -61,6 +66,9 @@ procedure do_rename(p1, p2: pchar);
 =======
 procedure do_rename(p1, p2: pchar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure do_rename(p1, p2: pchar);
+>>>>>>> origin/cpstrnew
 begin
 //  _rename(p1, p2);
   if FileIODevice.FileIO.DoRename <> nil then
@@ -120,6 +128,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_open(var f; p: pchar; flags: longint; pchangeable: boolean);
 =======
 procedure do_open(var f; p: pchar; flags: longint);
@@ -130,6 +139,9 @@ procedure do_open(var f; p: pchar; flags: longint);
 =======
 procedure do_open(var f; p: pchar; flags: longint);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure do_open(var f; p: pchar; flags: longint);
+>>>>>>> origin/cpstrnew
 begin
 (*
 { close first if opened }

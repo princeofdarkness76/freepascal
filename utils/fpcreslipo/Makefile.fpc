@@ -45,6 +45,7 @@ FPMAKE_OPT+=-bu
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 fpmake$(SRCEXEEXT): fpmake.pp
 	$(FPCFPMAKE) fpmake.pp $(FPMAKE_SKIP_CONFIG) $(addprefix -Fu,$(COMPILER_FPMAKE_UNITDIR)) $(FPCMAKEOPT) $(OPT)
@@ -112,3 +113,6 @@ fpcreslipo$(EXEEXT): msghandler.pp paramparser.pp sourcehandler.pp fpcreslipo.pp
 =======
 fpcreslipo$(EXEEXT): msghandler.pp paramparser.pp sourcehandler.pp fpcreslipo.pp
 >>>>>>> graemeg/cpstrnew
+=======
+fpcreslipo$(EXEEXT): msghandler.pp paramparser.pp sourcehandler.pp fpcreslipo.pp
+>>>>>>> origin/cpstrnew

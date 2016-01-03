@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2000-2013 Apple Inc. All Rights Reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
@@ -11,23 +12,29 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  * Copyright (c) 2000-2008 Apple Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
  * 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
  * compliance with the License. Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -41,6 +48,9 @@
 =======
  * 
 >>>>>>> graemeg/cpstrnew
+=======
+ * 
+>>>>>>> origin/cpstrnew
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -48,6 +58,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,17 +73,22 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  * 
  * @APPLE_LICENSE_HEADER_END@
  }
 {      Pascal Translation:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -130,6 +146,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -141,6 +158,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -162,6 +181,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -182,6 +202,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -191,6 +216,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -211,6 +237,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -220,6 +251,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -227,6 +259,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -239,6 +273,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -246,6 +281,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -255,6 +292,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -281,6 +319,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -290,11 +333,15 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -331,6 +378,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -387,6 +438,7 @@ uses MacTypes,CFBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SecBase contains common declarations for the Security functions.
 =======
 	SecBase contains common declarations for the Security functions. 
@@ -397,6 +449,9 @@ uses MacTypes,CFBase;
 =======
 	SecBase contains common declarations for the Security functions. 
 >>>>>>> graemeg/cpstrnew
+=======
+	SecBase contains common declarations for the Security functions. 
+>>>>>>> origin/cpstrnew
 }
 
 
@@ -439,6 +494,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @abstract Contains keychain attributes.
 =======
     @abstract Contains keychain attributes. 
@@ -449,6 +505,9 @@ type
 =======
     @abstract Contains keychain attributes. 
 >>>>>>> graemeg/cpstrnew
+=======
+    @abstract Contains keychain attributes. 
+>>>>>>> origin/cpstrnew
     @field tag A 4-byte attribute tag.
     @field length The length of the buffer pointed to by data.
     @field data A pointer to the attribute data.
@@ -555,6 +614,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @abstract Represents an attribute.
     @field count The number of tag-format pairs in the respective arrays.
     @field tag A pointer to the first attribute tag in the array.
@@ -565,6 +625,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     @abstract Represents an attribute. 
     @field count The number of tag-format pairs in the respective arrays. 
     @field tag A pointer to the first attribute tag in the array.
@@ -572,11 +634,14 @@ type
     @discussion Each tag and format item form a pair.  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 type
 	SecKeychainAttributeInfoPtr = ^SecKeychainAttributeInfo;
@@ -599,6 +664,7 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @enum Security Error Codes
 @abstract Result codes returned from Security framework functions.
 @constant errSecSuccess No error.
@@ -617,6 +683,8 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 @enum Security Error Codes 
 @abstract Result codes returned from Security framework functions.
 @constant errSecSuccess No error.
@@ -625,11 +693,14 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 @constant errSecAllocate Failed to allocate memory.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 @constant errSecNotAvailable No keychain is available.
 @constant errSecReadOnly Read only error.
 @constant errSecAuthFailed Authorization/Authentication failed.
@@ -674,6 +745,7 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @constant errSecNoTrustSettings No Trust Settings were found.
 @constant errSecPkcs12VerifyFailure MAC verification failed during PKCS12 Import.
 @constant errSecDecode Unable to decode the provided data.
@@ -684,6 +756,8 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 @constant errSecNoTrustSettings No Trust Settings were found. 
 @constant errSecPkcs12VerifyFailure MAC verification failed during PKCS12 Import.
 @constant errSecDecode Unable to decode the provided data.
@@ -691,11 +765,14 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 @discussion The assigned error space is discontinuous: e.g. -25240..-25279, -25290..25329, and so on.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 
 {
@@ -708,6 +785,7 @@ function SecCopyErrorMessageString( status: OSStatus; reserved: UnivPtr ): CFStr
 const
 	errSecSuccess = 0;       { No error. }
 	errSecUnimplemented = -4;      { Function or operation not implemented. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -737,6 +815,11 @@ const
 	errSecAllocate = -108;    { Failed to allocate memory. }
 
 >>>>>>> graemeg/cpstrnew
+=======
+	errSecParam = -50;     { One or more parameters passed to a function were not valid. }
+	errSecAllocate = -108;    { Failed to allocate memory. }
+
+>>>>>>> origin/cpstrnew
 	errSecNotAvailable = -25291;	{ No keychain is available. You may need to restart your computer. }
 	errSecReadOnly = -25292;	{ This keychain cannot be modified. }
 	errSecAuthFailed = -25293;	{ The user name or passphrase you entered is not correct. }
@@ -768,6 +851,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	errSecInvalidPrefsDomain = -25319;	{ The specified preferences domain is not valid. }
 	errSecInDarkWake = -25320;	{ In dark wake, no UI possible }
 
@@ -783,10 +867,15 @@ const
 	errSecInvalidPrefsDomain = -25319;  { The specified preferences domain is not valid. }
 	
 >>>>>>> graemeg/cpstrnew
+=======
+	errSecInvalidPrefsDomain = -25319;  { The specified preferences domain is not valid. }
+	
+>>>>>>> origin/cpstrnew
 	errSecACLNotSimple = -25240;	{ The specified access control list is not in standard (simple) form. }
 	errSecPolicyNotFound = -25241;	{ The specified policy cannot be found. }
 	errSecInvalidTrustSetting = -25242;	{ The specified trust setting is invalid. }
 	errSecNoAccessForItem = -25243;	{ The specified item has no access control. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1126,6 +1215,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	errSecInvalidOwnerEdit = -25244;  { Invalid attempt to change the owner of this item. }
 	errSecTrustNotAvailable = -25245;	{ No trust results are available. }
 	errSecUnsupportedFormat = -25256;  { Import/Export format unsupported. }
@@ -1141,11 +1232,14 @@ const
 	errSecDecode = -26275;  { Unable to decode the provided data. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

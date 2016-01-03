@@ -774,17 +774,21 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           typecheckpass(result);
         end;
 
       begin
          result:=nil;
          init_block:=nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -795,6 +799,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          expectloc:=LOC_VOID;
 
          { evalutes the case expression }
@@ -816,6 +822,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              temp_cleanup := ctempdeletenode.create(tempcaseexpr);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -823,6 +830,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              typecheckpass(tnode(tempcaseexpr));
 
              addstatement(stmt, tempcaseexpr);
@@ -863,12 +872,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if_node:=makeifblock(labels, elseblock);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              endlabel:=clabelnode.create(cnothingnode.create,tlabelsym.create('$casestrofend'));
              stmt_block:=internalstatements(stmt);
              for i:=0 to blocks.count-1 do
@@ -885,15 +897,19 @@ implementation
              if_node := makeifblock(labels, elseblock);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
              if assigned(init_block) then
                firstpass(tnode(init_block));
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -911,6 +927,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              if_block := internalstatements(stmt);
 
              if assigned(init_block) then
@@ -924,11 +942,14 @@ implementation
              elseblock := nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              exit;
            end;
 
@@ -1194,6 +1215,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  result:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1201,6 +1223,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                end
           end;
 
@@ -1241,6 +1265,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               result:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1248,6 +1273,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             end;
         end;
 

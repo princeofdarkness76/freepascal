@@ -91,6 +91,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CloseSection;
 =======
 	  CloseKey;
@@ -101,6 +102,9 @@ begin
 =======
 	  CloseKey;
 >>>>>>> graemeg/cpstrnew
+=======
+	  CloseKey;
+>>>>>>> origin/cpstrnew
 	end;
 end;
 
@@ -112,11 +116,14 @@ begin
   if not OpenKey(fPath+Section,true) then Exit;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   try
     if not fPreferStringValues then
       inherited WriteInteger(Ident,Value)
@@ -130,6 +137,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CloseSection;
 =======
     CloseKey;
@@ -140,11 +148,15 @@ begin
 =======
     CloseKey;
 >>>>>>> graemeg/cpstrnew
+=======
+    CloseKey;
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 procedure TRegIniFile.WriteString(const Section, Ident, Value: String);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -190,6 +202,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if not OpenKey(fPath+Section,true) then Exit;
   try
    inherited WriteString(Ident,Value);
@@ -197,11 +211,14 @@ begin
    CloseKey;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 

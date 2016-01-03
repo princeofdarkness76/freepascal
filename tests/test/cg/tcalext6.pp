@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Tests passing of different records by value to C methods.
  One type of these records has one field which is a simple array of bytes,
  the other consists of a few fields of atomic size.
@@ -10,17 +11,22 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Tests passing of different records by value to C methods. 
  One type of these records has one field which is a simple array of bytes,
  the other consists of a few fields of atomic size.
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  Note that it does not only test a single field of these records, but all
  by comparing the sum of the field values with the sum returned by the
  C function.
@@ -36,6 +42,7 @@ program calext6;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(CPUARMEL) and defined(FPUSOFT)}
 =======
 {$ifdef CPUARMEL}
@@ -46,10 +53,14 @@ program calext6;
 =======
 {$ifdef CPUARMEL}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef CPUARMEL}
+>>>>>>> origin/cpstrnew
 { for softfloat calls in the C code }
 {$linklib gcc}
 {$endif}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -67,6 +78,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
   int8_t = shortint;
   pint8_t = ^int8_t;
@@ -76,6 +89,7 @@ type
 
 var
   success : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,6 +156,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$packrecords c}
 
@@ -177,6 +193,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -187,6 +204,9 @@ type
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
   struct7 = record
     v1 : single;
     v2 : int32_t;
@@ -234,6 +254,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   struct15 = record
 =======
@@ -248,6 +269,10 @@ type
   
   struct15 = record 
 >>>>>>> graemeg/cpstrnew
+=======
+  
+  struct15 = record 
+>>>>>>> origin/cpstrnew
     v1 : double;
     v2 : int32_t;
     v3 : single;
@@ -305,6 +330,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FPC_HAS_TYPE_EXTENDED) and (sizeof(double)<>sizeof(cextended))}
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
@@ -315,6 +341,9 @@ end;
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef FPC_HAS_TYPE_EXTENDED}
+>>>>>>> origin/cpstrnew
 procedure verify(val1, val2 : cextended; nr : Integer); overload;
 begin
   success := success and (val1 = val2);
@@ -468,6 +497,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef TestFPUStack }
   i : longint;
   {$endif TestFPUStack }
@@ -477,6 +507,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   s1, s1a: struct1;
   s2, s2a: struct2;
   s3, s3a: struct3;
@@ -498,6 +530,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -508,6 +541,9 @@ var
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
   ss: single;
 
 begin
@@ -520,6 +556,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   s3.v1:=4.5;
   s3.v2:=5.125;
@@ -570,6 +607,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   s3.v1:=4.5;
   s3.v2:=5.125;
@@ -617,11 +656,14 @@ begin
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   s16.v1:=26.5;
   s16.v2:=27.75;
   s16.v3:=28.25;
@@ -629,6 +671,7 @@ begin
 
   s17.v1:=31.25;
   s17.v2:=32.125;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1124,6 +1167,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   s31.v1:=32.625;
   s31.v2:=33.5;
@@ -1241,11 +1286,14 @@ begin
   verify(s31.v2,s31a.v2,132);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
 
 {$endif ndef nofloat}

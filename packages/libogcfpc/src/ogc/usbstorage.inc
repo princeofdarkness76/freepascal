@@ -44,6 +44,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
   B_RAW_DEVICE_DATA_IN = $01;
   B_RAW_DEVICE_COMMAND = 0;
@@ -64,6 +65,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function USBStorage_Initialize(): cint32; cdecl; external;
 
@@ -74,6 +77,7 @@ function USBStorage_Reset(dev: pusbstorage_handle): cint32; cdecl; external;
 function USBStorage_GetMaxLUN(dev: pusbstorage_handle): cint32; cdecl; external;
 function USBStorage_MountLUN(dev: pusbstorage_handle; lun: cuint8): cint32; cdecl; external;
 function USBStorage_Suspend(dev: pusbstorage_handle): cint32; cdecl; external;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -88,6 +92,9 @@ function USBStorage_ioctl(request: cint; args: array of const): cint; cdecl; ext
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 function USBStorage_ReadCapacity(dev: pusbstorage_handle; lun: cuint8; sector_size, n_sectors: pcuint32): cint32; cdecl; external;
 function USBStorage_Read(dev: pusbstorage_handle; lun: cuint8; sector: cuint32; n_sectors: cuint16; buffer: pcuint8): cint32; cdecl; external;
 function USBStorage_Write(dev: pusbstorage_handle; lun: cuint8; sector: cuint32; n_sectors: cuint16; const buffer: pcuint8): cint32; cdecl; external;

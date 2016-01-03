@@ -178,6 +178,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   STATFLAG_NOOPEN    	      = 2;
 =======
   STATFLAG_NOOPEN    	      = 2; 
@@ -188,6 +189,9 @@ const
 =======
   STATFLAG_NOOPEN    	      = 2; 
 >>>>>>> graemeg/cpstrnew
+=======
+  STATFLAG_NOOPEN    	      = 2; 
+>>>>>>> origin/cpstrnew
 
 {$ifndef Wince}
   // in Wince these are in unit windows. Under 32/64 in ActiveX.
@@ -430,6 +434,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if IsRectEmpty(lRect) then
 =======
   if IsRectEmpty(Rect) then
@@ -440,6 +445,9 @@ begin
 =======
   if IsRectEmpty(Rect) then
 >>>>>>> graemeg/cpstrnew
+=======
+  if IsRectEmpty(Rect) then
+>>>>>>> origin/cpstrnew
   begin
     FillChar(Rect,SizeOf(Rect),0);
     UnionRect:=false;
@@ -448,6 +456,7 @@ begin
   begin
     Rect:=lRect;
     UnionRect:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -461,6 +470,9 @@ begin
 =======
   end;  
 >>>>>>> graemeg/cpstrnew
+=======
+  end;  
+>>>>>>> origin/cpstrnew
 end;
 
 function IsRectEmpty(const Rect : TRect) : Boolean;

@@ -11,6 +11,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ptc, SysUtils;
 
 var
@@ -23,6 +24,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ptc;
 
 var
@@ -32,11 +35,14 @@ var
   event: TPTCEvent = nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   pixels: PUint32;
   color: Uint32;
   width, height: Integer;
@@ -51,6 +57,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       console := TPTCConsoleFactory.CreateNew;
 
       { create format }
@@ -60,17 +67,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console := TPTCConsole.Create;
 
       { create format }
       format := TPTCFormat.Create(32, $FF0000, $FF00, $FF);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       { open the console }
       console.open('Mouse example', format);
@@ -79,6 +91,7 @@ begin
       console.option('hide cursor');
 
       { create surface matching console dimensions }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -92,6 +105,9 @@ begin
 =======
       surface := TPTCSurface.Create(console.width, console.height, format);
 >>>>>>> graemeg/cpstrnew
+=======
+      surface := TPTCSurface.Create(console.width, console.height, format);
+>>>>>>> origin/cpstrnew
 
       { initialization }
       X := 0;
@@ -102,6 +118,7 @@ begin
         console.NextEvent(event, True, PTCAnyEvent);
 
         { handle mouse events }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -117,6 +134,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if event is TPTCMouseEvent then
         begin
           { if there's more than one mouse event, process them all... }
@@ -126,15 +145,19 @@ begin
             button := PTCMouseButton1 in (event as TPTCMouseEvent).ButtonState;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           until not console.NextEvent(event, False, [PTCMouseEvent]);
         end;
 
         { handle keyboard events }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -156,6 +179,11 @@ begin
         begin
           case (event as TPTCKeyEvent).Code of
 >>>>>>> graemeg/cpstrnew
+=======
+        if (event is TPTCKeyEvent) and (event as TPTCKeyEvent).Press then
+        begin
+          case (event as TPTCKeyEvent).Code of
+>>>>>>> origin/cpstrnew
             PTCKEY_G: console.Option('grab mouse');
             PTCKEY_U: console.Option('ungrab mouse');
             PTCKEY_ESCAPE: Done := True;
@@ -210,6 +238,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
@@ -217,6 +246,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console.close;
       console.Free;
       surface.Free;
@@ -224,11 +255,14 @@ begin
       event.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

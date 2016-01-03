@@ -3,6 +3,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$ifdef darwin}iosxwstr{$else}cwstring{$endif},
 =======
   cwstring,
@@ -13,10 +14,14 @@ uses
 =======
   cwstring,
 >>>>>>> graemeg/cpstrnew
+=======
+  cwstring,
+>>>>>>> origin/cpstrnew
 {$endif unix}
   SysUtils;
   
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -36,6 +41,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ts850 = type string<850>;
   ts1251 = type string<1251>;  
 var
@@ -49,11 +56,14 @@ begin
   if (a850<>a1251) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     halt(1);
   writeln('ok');
 end.

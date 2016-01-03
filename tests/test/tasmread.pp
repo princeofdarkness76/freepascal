@@ -23,6 +23,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      add ecx, _GLOBAL_OFFSET_TABLE_+1
 =======
      add ecx, _GLOBAL_OFFSET_TABLE_
@@ -33,6 +34,9 @@ begin
 =======
      add ecx, _GLOBAL_OFFSET_TABLE_
 >>>>>>> graemeg/cpstrnew
+=======
+     add ecx, _GLOBAL_OFFSET_TABLE_
+>>>>>>> origin/cpstrnew
      mov [test.l + ecx],5
 {$endif darwin}
 {$endif FPC_PIC}

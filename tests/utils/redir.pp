@@ -53,6 +53,7 @@ Interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
 {$define implemented}
 {$endif}
@@ -62,6 +63,8 @@ Interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Var
   IOStatus                   : Integer;
@@ -220,8 +223,11 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function ExecuteProcess(Const Path: AnsiString; Const ComLine: AnsiString;Flags:TExecuteFlags=[]):integer;
 // win specific  function
@@ -253,6 +259,7 @@ begin
 
   ExecInherits:=ExecInheritsHandles in Flags;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -356,6 +363,8 @@ begin
 
   ExecInherits:=ExecInheritsHandles in Flags;
 
+=======
+>>>>>>> origin/cpstrnew
   if not CreateProcess(nil, pchar(CommandLine),
     Nil, Nil, ExecInherits,$20, Nil, Nil, SI, PI) then
     begin
@@ -390,9 +399,12 @@ end;
 {$endif}
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef windows}
 var
   TempHOut, TempHIn,TempHError : longint;
@@ -526,13 +538,17 @@ begin
   fpclose:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -549,6 +565,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$I-}
 function FileExist(const FileName : PathStr) : Boolean;
@@ -1222,11 +1240,14 @@ end;
     ExecuteResult:=Shell(FixPath(Progname)+' '+Comline);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     if ExecuteResult<0 then
       begin
         IOStatus:=(-ExecuteResult) and $7f;

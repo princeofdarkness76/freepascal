@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
@@ -14,6 +15,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -71,6 +74,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -82,6 +86,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -99,6 +105,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -131,6 +138,8 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -140,14 +149,18 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -161,6 +174,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -170,6 +185,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -177,10 +193,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -305,6 +324,8 @@ interface
 {$elsec}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -336,7 +357,10 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -388,6 +412,7 @@ uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    the window server’s event queue, and notifies the window server. The
 =======
    the window serverÕs event queue, and notifies the window server. The
@@ -398,6 +423,9 @@ uses MacTypes,MacOSXPosix,CGRemoteOperation,CGBase;
 =======
    the window serverÕs event queue, and notifies the window server. The
 >>>>>>> graemeg/cpstrnew
+=======
+   the window serverÕs event queue, and notifies the window server. The
+>>>>>>> origin/cpstrnew
    window server creates a Quartz event, annotates the event, and dispatches
    the event to the appropriate run-loop port of the target process. There
    the event is picked up by the Carbon Event Manager and forwarded to the
@@ -412,6 +440,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGEventRef = ^__CGEvent; { an opaque type }
 	__CGEvent = record end;
 =======
@@ -423,6 +452,9 @@ type
 =======
 	CGEventRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	CGEventRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 { Constants that specify buttons on a one, two, or three-button mouse. }
 const
@@ -436,6 +468,7 @@ type
 const
 	kCGScrollEventUnitPixel = 0;
 	kCGScrollEventUnitLine = 1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -484,6 +517,11 @@ type
 	CGScrollEventUnit = UInt32;
 >>>>>>> graemeg/cpstrnew
 
+=======
+type
+	CGScrollEventUnit = UInt32;
+
+>>>>>>> origin/cpstrnew
 { Constants that indicate the modifier key state at the time an event is
    created, as well as other event-related states.
 
@@ -515,7 +553,10 @@ type
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Constants that specify the different types of input events. }
 
 { Event types }
@@ -627,12 +668,16 @@ const
 	kCGScrollWheelEventDeltaAxis2 = 12;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   { This field is not used. }
 	kCGScrollWheelEventDeltaAxis3 = 13;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -642,6 +687,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   { Key to access a field that contains scrolling data. The scrolling data
      represents a line-based or pixel-based change in vertical position
      since the last scrolling event from a Mighty Mouse scroller or a
@@ -678,6 +725,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
   {  }
 	kCGScrollWheelEventScrollPhase = 99;
@@ -692,10 +740,14 @@ const
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
   { Key to access an integer field that indicates whether the event should
      be ignored by the Inkwell subsystem. If the value is non-zero, the
      event should be ignored. }
 	kCGScrollWheelEventInstantMouser = 14;
+<<<<<<< HEAD
 
 =======
 
@@ -705,6 +757,9 @@ const
 	kCGScrollWheelEventInstantMouser = 14;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
   { Key to access an integer field that contains the absolute X coordinate
      in tablet space at full tablet resolution. }
 	kCGTabletEventPointX = 15;
@@ -834,6 +889,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   { Added in 10.5; made public in 10.7 }
 	kCGMouseEventWindowUnderMousePointer = 91;
@@ -844,6 +900,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
 	CGEventField = UInt32;
 
@@ -889,6 +947,7 @@ Generate an event mask for a single type of event.
 
 An event mask that represents all event types.
 #define kCGEventMaskForAllEvents	(~(CGEventMask)0)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -990,6 +1049,34 @@ type
 	CGEventTapCallBack = function( proxy: CGEventTapProxy; typ: CGEventType; event: CGEventRef; userInfo: UnivPtr ): CGEventRef;
 
 >>>>>>> graemeg/cpstrnew
+=======
+}
+
+
+{ An opaque type that represents state within the client application thatÕs
+   associated with an event tap. }
+type
+	CGEventTapProxy = ^SInt32; { an opaque type }
+
+{ A client-supplied callback function thatÕs invoked whenever an associated
+   event tap receives a Quartz event.
+
+   The callback is passed a proxy for the tap, the event type, the incoming
+   event, and the user-defined data specified when the event tap was
+   created. The function should return the (possibly modified) passed-in
+   event, a newly constructed event, or NULL if the event is to be deleted.
+
+   The event passed to the callback is retained by the calling code, and is
+   released after the callback returns and the data is passed back to the
+   event system. If a different event is returned by the callback function,
+   then that event will be released by the calling code along with the
+   original event, after the event data has been passed back to the event
+   system. }
+
+type
+	CGEventTapCallBack = function( proxy: CGEventTapProxy; typ: CGEventType; event: CGEventRef; userInfo: UnivPtr ): CGEventRef;
+
+>>>>>>> origin/cpstrnew
 { When an event tap is installed or released, a notification is posted. See
    notify(3) and notify.h for details. }
 
@@ -1024,6 +1111,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGEventSourceRef = ^__CGEventSource; { an opaque type }
 	__CGEventSource = record end;
 
@@ -1032,17 +1120,22 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	CGEventSourceRef = ^SInt32; { an opaque type }
 
 type
 	CGEventSourceStateID = UInt32;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Constants that specify the possible source states of an event source. }
 const
 	kCGEventSourceStatePrivate = -1;
@@ -1062,7 +1155,11 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 { A code that represents the type of keyboard used with a specified event
    source. }
 type

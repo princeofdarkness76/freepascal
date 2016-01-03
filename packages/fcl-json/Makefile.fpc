@@ -7,12 +7,15 @@ name=fcl-json
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
@@ -20,11 +23,14 @@ units=fpjson jsonscanner jsonparser jsonconf fpjsonrtti
 rsts=fpjson jsonscanner jsonparser jsonconf fpjsonrtti
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [require]
 packages=rtl fpmkunit
@@ -129,8 +135,11 @@ jsonconf$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
 fpjsonrtti$(PPUEXT): jsonparser$(PPUEXT) fpjson$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

@@ -119,11 +119,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   public
 >>>>>>> graemeg/cpstrnew
     constructor Create(AStream: TStream; FreeStreamOnDestroy: Boolean); override;
@@ -292,11 +295,14 @@ procedure TChmReader.ReadCommonData;
      until Pos(#0, buf) > -1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      if FixURL then
        Result := StringReplace(Result, '\', '/', [rfReplaceAll]);
    end;
@@ -1101,6 +1107,7 @@ procedure parselistingblock(p:pbyte);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
     itemstack:TObjectStack;
     curitemdepth : integer;
@@ -1142,6 +1149,11 @@ var hdr:PBTreeBlockHeader;
     head,tail : pbyte;
     isseealso,
 >>>>>>> graemeg/cpstrnew
+=======
+var hdr:PBTreeBlockHeader;
+    head,tail : pbyte;
+    isseealso,
+>>>>>>> origin/cpstrnew
     nrpairs : Integer;
     i : integer;
     PE : PBtreeBlockEntry;
@@ -1151,6 +1163,7 @@ var hdr:PBTreeBlockHeader;
     seealsostr,
     topic,
     Name : AnsiString;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1168,6 +1181,10 @@ begin
     item : TChmSiteMapItem;
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+    item : TChmSiteMapItem;
+begin
+>>>>>>> origin/cpstrnew
   hdr:=PBTreeBlockHeader(p);
   hdr^.Length          :=LEToN(hdr^.Length);
   hdr^.NumberOfEntries :=LEToN(hdr^.NumberOfEntries);
@@ -1180,6 +1197,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   itemstack:=TObjectStack.create;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1187,10 +1205,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef binindex}
   writeln('previndex  : ',hdr^.IndexOfPrevBlock);
   writeln('nextindex  : ',hdr^.IndexOfNextBlock);
   {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1201,6 +1222,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   while head<tail do
     begin
       if not ReadWCharString(Head,Tail,Name) Then
@@ -1213,6 +1236,7 @@ begin
       PE :=PBtreeBlockEntry(head);
       NrPairs  :=LEToN(PE^.nrpairs);
       IsSeealso:=LEToN(PE^.isseealso);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1229,6 +1253,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       CharIndex:=LEToN(PE^.CharIndex);
       {$ifdef binindex}
         Writeln('seealso:     ',IsSeeAlso);
@@ -1238,11 +1264,14 @@ begin
         writeln('seealso data : ');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       {$endif}
 
       inc(head,sizeof(TBtreeBlockEntry));
@@ -1251,6 +1280,7 @@ begin
           if not ReadWCharString(Head,Tail,SeeAlsoStr) Then
             Break;
           // have to figure out first what to do with it.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1267,10 +1297,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end
       else
         begin
          if NrPairs>0 Then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1285,6 +1318,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             for i:=0 to nrpairs-1 do
               begin
                 if head<tail Then
@@ -1302,6 +1337,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1309,6 +1345,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       if nrpairs<>0 Then
         createentry(Name,CharIndex,Topic,Title);
       inc(head,4); // always 1
@@ -1321,6 +1359,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ItemStack.Free;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1328,6 +1367,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 var TryTextual : boolean;
@@ -1354,6 +1395,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
    TryTextual:=True;
    BHdr.LastLstBlock:=0;
@@ -1373,6 +1415,11 @@ begin
    BHdr.LastLstBlock:=0;
    if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
 >>>>>>> graemeg/cpstrnew
+=======
+   TryTextual:=True;
+   BHdr.LastLstBlock:=0;
+   if LoadBtreeHeader(index,BHdr) and (BHdr.LastLstBlock>0) Then
+>>>>>>> origin/cpstrnew
     begin
        if BHdr.BlockSize=defblocksize then
          begin
@@ -1395,6 +1442,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     end
   else Index.Free;
 =======
@@ -1406,6 +1454,9 @@ begin
 =======
     end;
 >>>>>>> graemeg/cpstrnew
+=======
+    end;
+>>>>>>> origin/cpstrnew
 end;
 
 function TChmReader.GetTOCSitemap(ForceXML:boolean=false): TChmSiteMap;
@@ -1484,6 +1535,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      // Binary Toc Exists
 =======
    // Binary Toc Exists
@@ -1494,6 +1546,9 @@ begin
 =======
    // Binary Toc Exists
 >>>>>>> graemeg/cpstrnew
+=======
+   // Binary Toc Exists
+>>>>>>> origin/cpstrnew
    Result := TChmSiteMap.Create(stTOC);
 
    EntryInfoOffset := NtoLE(TOC.ReadDWord);
@@ -1501,6 +1556,7 @@ begin
    EntryCount      := NtoLE(TOC.ReadDWord);
    TOPICSOffset    := NtoLE(TOC.ReadDWord);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1516,10 +1572,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    NextItem := EntryInfoOffset;
    repeat
      NextItem := AddTOCItem(Toc, NextItem, Result.Items);
    until NextItem = 0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1530,6 +1589,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TChmReader.HasContextList: Boolean;
@@ -1810,6 +1871,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AStream := TFileStream.Create(AFileName, fmOpenRead or fmShareDenyWrite);
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
@@ -1820,6 +1882,9 @@ begin
 =======
   AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
 >>>>>>> graemeg/cpstrnew
+=======
+  AStream := TFileStream.Create(AFileName, fmOpenRead, fmShareDenyWrite);
+>>>>>>> origin/cpstrnew
   AChm := TChmReader.Create(AStream, True);
   AIndex := AddObject(AFileName, AChm);
   fLastChm := AChm;

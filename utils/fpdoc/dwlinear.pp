@@ -37,12 +37,15 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SortElementList(List : TFPList);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure SortElementList(List : TList);
 >>>>>>> graemeg/cpstrnew
     procedure StartListing(Frames: Boolean);
@@ -104,11 +107,14 @@ Type
     Property LastURL : DomString Read FLastURL Write FLastURL;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Public
     Constructor Create(APackage: TPasPackage; AEngine: TFPDocEngine); override;
     function InterpretOption(const Cmd, Arg: String): Boolean; override;
@@ -140,11 +146,14 @@ Type
     procedure WriteClassInterfacesOverView(ClassDecl: TPasClassType);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure WriteProperty(PropDecl: TPasProperty);
     procedure WriteExample(ADocNode: TDocNode);
     procedure WriteSeeAlso(ADocNode: TDocNode);
@@ -372,6 +381,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.StartVersion;
 =======
 Procedure TLinearWriter.StartVersion;
@@ -382,6 +392,9 @@ Procedure TLinearWriter.StartVersion;
 =======
 Procedure TLinearWriter.StartVersion;
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TLinearWriter.StartVersion;
+>>>>>>> origin/cpstrnew
 
 begin
   Writeln('');
@@ -391,12 +404,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.StartSeealso;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Procedure TLinearWriter.StartSeealso;
 >>>>>>> graemeg/cpstrnew
 
@@ -472,6 +488,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ConvertNotes(ClassDecl,DocNode.Notes);
   end;
 
@@ -491,6 +508,10 @@ begin
   end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+
+>>>>>>> origin/cpstrnew
   // Write Interfaces Overview;
   WriteClassInterfacesOverView(ClassDecl);
   // Write method overview
@@ -588,6 +609,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.WriteClassInterfacesOverview(ClassDecl: TPasClassType);
 =======
 procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
@@ -598,6 +620,9 @@ procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
 =======
 procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TLinearWriter.WriteClassInterfacesOverView(ClassDecl: TPasClassType);
+>>>>>>> origin/cpstrnew
 var
   lInterface: TPasElement;
   i: Integer;
@@ -622,6 +647,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       StartOverView(SDocInterface,False);
 =======
       StartOverView(False);
@@ -632,6 +658,9 @@ begin
 =======
       StartOverView(False);
 >>>>>>> graemeg/cpstrnew
+=======
+      StartOverView(False);
+>>>>>>> origin/cpstrnew
       for i := 0 to List.Count-1 do
       begin
         lInterface := TPasElement(List.Objects[i]);
@@ -666,6 +695,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TLinearWriter.WriteClassInheritanceOverview(ClassDecl: TPasClassType);
 begin
   { Do nothing by default. This will be implemented by descendant writers. See
@@ -678,6 +708,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function TLinearWriter.ConstValue(ConstDecl: TPasConst): String;
 begin
@@ -1016,6 +1048,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         EndListing;
         WriteLabel(TypeDecl);
         WriteIndex(TypeDecl);
@@ -1042,6 +1075,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       WriteDescr(TypeDecl);
       If Assigned(DocNode) and Assigned(DocNode.Version) then
         begin
@@ -1082,6 +1117,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ConvertNotes(VarDecl,DocNode.Notes);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1089,6 +1125,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end;
       DescrEndParaGraph;
     end;
@@ -1164,6 +1202,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ConvertNotes(ProcDecl,DocNode.Notes);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1171,6 +1210,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end
      else
       EndProcedure;
@@ -1288,6 +1329,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ConvertNotes(PropDecl,lNode.Notes);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1295,6 +1337,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       EndProperty;
       WriteExample(lNode);
     end
@@ -1642,6 +1686,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TLinearWriter.InterpretOption(const Cmd, Arg: String): Boolean;
 =======
 function TLinearWriter.InterpretOption(const Cmd: String; const Arg: String): Boolean;
@@ -1652,6 +1697,9 @@ function TLinearWriter.InterpretOption(const Cmd: String; const Arg: String): Bo
 =======
 function TLinearWriter.InterpretOption(const Cmd: String; const Arg: String): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function TLinearWriter.InterpretOption(const Cmd: String; const Arg: String): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result := True;
   if Cmd = cDupLinkedDocParam then
@@ -1663,6 +1711,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 class procedure TLinearWriter.Usage(List: TStrings);
@@ -1678,6 +1727,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 class procedure TLinearWriter.Usage(List: TStrings);
@@ -1690,11 +1741,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 end.
 

@@ -346,6 +346,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         u_array[(j shl 6) + i] := Integer(Trunc(intsc[2] * 0.2) shl 16);
 =======
         u_array[(j shl 6) + i] := Trunc(intsc[2] * 0.2) shl 16;
@@ -356,6 +357,9 @@ begin
 =======
         u_array[(j shl 6) + i] := Trunc(intsc[2] * 0.2) shl 16;
 >>>>>>> graemeg/cpstrnew
+=======
+        u_array[(j shl 6) + i] := Trunc(intsc[2] * 0.2) shl 16;
+>>>>>>> origin/cpstrnew
         v_array[(j shl 6) + i] := Trunc(abs(arctan2(intsc[1], intsc[0]) * 256 / pi)) shl 16;
 
         { Calculate the dotproduct between the normal vector and the vector }
@@ -407,6 +411,7 @@ begin
       iadr := (j shl 6) + i;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
       { Set up gradients }
       lu := u_array[iadr]; ru := u_array[iadr + 1];
@@ -439,6 +444,11 @@ begin
       { Set up gradients }
       lu := u_array[iadr]; ru := u_array[iadr + 1];
 >>>>>>> graemeg/cpstrnew
+=======
+
+      { Set up gradients }
+      lu := u_array[iadr]; ru := u_array[iadr + 1];
+>>>>>>> origin/cpstrnew
       liu := (u_array[iadr + 64] - lu) shr 3;
       riu := (u_array[iadr + 65] - ru) shr 3;
 
@@ -458,11 +468,14 @@ begin
         il := (rl - ll) shr 3;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
         { Mess up everything for the sake of cache optimised mapping :) }
         til_u := DWord(((lu shl 8) and $F8000000) or ((lu shr 1) and $00007FFF) or (lu and $00070000));
@@ -476,6 +489,7 @@ begin
         for x := 0 to 7 do
         begin
           { Interpolate texture u,v and light }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -493,6 +507,10 @@ begin
           Inc(til_u, til_iu);
           Inc(til_v, til_iv);
 >>>>>>> graemeg/cpstrnew
+=======
+          Inc(til_u, til_iu);
+          Inc(til_v, til_iv);
+>>>>>>> origin/cpstrnew
           Inc(l, il);
 
           adr := adr shr 16;
@@ -570,6 +588,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   surface: IPTCSurface;
   format: IPTCFormat;
@@ -588,6 +607,11 @@ var
   surface: TPTCSurface = nil;
   format: TPTCFormat = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+  format: TPTCFormat = nil;
+>>>>>>> origin/cpstrnew
   tunnel: TRayTunnel = nil;
   posz, phase_x, phase_y: Single;
   angle_x, angle_y: Integer;
@@ -595,6 +619,7 @@ var
 begin
   try
     try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -606,6 +631,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 
       console := TPTCConsole.create;
@@ -652,6 +679,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
       tunnel.Free;
@@ -660,6 +688,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console.close;
       console.Free;
       surface.Free;
@@ -667,11 +697,14 @@ begin
       format.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

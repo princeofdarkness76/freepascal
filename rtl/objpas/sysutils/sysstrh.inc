@@ -194,6 +194,7 @@ function StrToCurr(const S: string): Currency;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function StrToCurr(const S: string; Const FormatSettings: TFormatSettings): Currency;
 function TryStrToCurr(const S: string;Out Value : Currency): Boolean;
 function TryStrToCurr(const S: string;Out Value : Currency; Const FormatSettings: TFormatSettings): Boolean;
@@ -204,6 +205,8 @@ function StrToCurrDef(const S: string; Default : Currency; Const FormatSettings:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function StrToCurr(const S: string; Const FormatSettings: TFormatSettings): Currency;  
 function TryStrToCurr(const S: string;Out Value : Currency): Boolean;
 function TryStrToCurr(const S: string;Out Value : Currency; Const FormatSettings: TFormatSettings): Boolean;       
@@ -211,11 +214,14 @@ function StrToCurrDef(const S: string; Default : Currency): Currency;
 function StrToCurrDef(const S: string; Default : Currency; Const FormatSettings: TFormatSettings): Currency;  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Function FloatToTextFmt(Buffer: PChar; Value: Extended; format: PChar; FormatSettings : TFormatSettings): Integer;
 Function FloatToTextFmt(Buffer: PChar; Value: Extended; format: PChar): Integer;

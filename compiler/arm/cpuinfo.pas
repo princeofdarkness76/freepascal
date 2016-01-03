@@ -40,6 +40,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        cpu_armv4t,
        cpu_armv5,
        cpu_armv5t,
@@ -81,17 +82,28 @@ Type
       );
 
 >>>>>>> graemeg/cpstrnew
+=======
+       cpu_armv5,
+       cpu_armv6,
+       cpu_armv7m,
+       cpu_cortexm3
+      );
+
+>>>>>>> origin/cpstrnew
 Const
    cpu_arm = [cpu_none,cpu_armv3,cpu_armv4,cpu_armv5];
    cpu_thumb = [];
    cpu_thumb2 = [cpu_armv7m,cpu_cortexm3];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Type
    tfputype =
@@ -102,6 +114,7 @@ Type
       fpu_fpa10,
       fpu_fpa11,
       fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -118,6 +131,9 @@ Type
 =======
       fpu_vfpv3
 >>>>>>> graemeg/cpstrnew
+=======
+      fpu_vfpv3
+>>>>>>> origin/cpstrnew
      );
 
    tcontrollertype =
@@ -233,6 +249,7 @@ Type
       ct_at91sam7se256,
       ct_at91sam7x256,
       ct_at91sam7xc256,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -522,6 +539,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 		
       { STMicroelectronics }
       ct_stm32f103re,
@@ -530,11 +549,14 @@ Type
       stellaris
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      );
 
    tcontrollerdatatype = record
@@ -578,6 +600,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      'ARMV4T',
      'ARMV5',
      'ARMV5T',
@@ -598,17 +621,22 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      'ARMV5',
      'ARMV6',
      'ARMV7M',
      'CORTEXM3'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    );
 
    fputypestr : array[tfputype] of string[9] = ('',
@@ -618,6 +646,7 @@ Const
      'FPA10',
      'FPA11',
      'VFPV2',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1063,6 +1092,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      'VFPV3'
    );
 
@@ -1112,6 +1143,8 @@ Const
 
    vfp_scalar = [fpu_vfpv2,fpu_vfpv3];
 
+   vfp_scalar = [fpu_vfpv2,fpu_vfpv3];
+
    { Supported optimizations, only used for information }
    supported_optimizerswitches = genericlevel1optimizerswitches+
                                  genericlevel2optimizerswitches+
@@ -1119,6 +1152,7 @@ Const
                                  { no need to write info about those }
                                  [cs_opt_level1,cs_opt_level2,cs_opt_level3]+
                                  [cs_opt_regvar,cs_opt_loopunroll,cs_opt_tailrecursion,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1132,10 +1166,14 @@ Const
 =======
 								  cs_opt_stackframe,cs_opt_nodecse];
 >>>>>>> graemeg/cpstrnew
+=======
+								  cs_opt_stackframe,cs_opt_nodecse];
+>>>>>>> origin/cpstrnew
 
    level1optimizerswitches = genericlevel1optimizerswitches;
    level2optimizerswitches = genericlevel2optimizerswitches + level1optimizerswitches +
      [cs_opt_regvar,cs_opt_stackframe,cs_opt_tailrecursion,cs_opt_nodecse];
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1190,6 +1228,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    level3optimizerswitches = genericlevel3optimizerswitches + level2optimizerswitches + [{,cs_opt_loopunroll}];
 >>>>>>> graemeg/cpstrnew
 

@@ -23,12 +23,15 @@ function Fptime(tloc:pTime_t): Time_t; [public, alias : 'FPC_SYSC_TIME'];
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(generic_linux_syscalls) or defined(FPC_USEGETTIMEOFDAY)}
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef FPC_USEGETTIMEOFDAY}
 >>>>>>> graemeg/cpstrnew
 VAR tv     : timeval;
@@ -284,6 +287,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUTHUMB}
   // svc   #0x0
   // GNU 2.22 does not like svc #0x0
@@ -300,6 +304,9 @@ asm
 =======
   swi #0x0
 >>>>>>> graemeg/cpstrnew
+=======
+  swi #0x0
+>>>>>>> origin/cpstrnew
 {$else}
   swi syscall_nr_sigreturn
 {$endif}
@@ -331,6 +338,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUTHUMB}
   // svc   #0x0
   // GNU 2.22 does not like svc #0x0
@@ -347,6 +355,9 @@ asm
 =======
   swi #0x0
 >>>>>>> graemeg/cpstrnew
+=======
+  swi #0x0
+>>>>>>> origin/cpstrnew
 {$else}
   swi syscall_nr_rt_sigreturn
 {$endif}

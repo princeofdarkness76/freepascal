@@ -50,6 +50,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __modelMappingFlags: record
       case byte of
        0: (_anonbitfield_NSMappingModel0: cuint);
@@ -62,6 +63,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __modelMappingFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMappingModel0: cuint);
@@ -70,11 +73,14 @@
         _reservedModelMapping: 0..((1 shl 31)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     

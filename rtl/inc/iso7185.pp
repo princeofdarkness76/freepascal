@@ -37,6 +37,7 @@ unit iso7185;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Page;
     Procedure Page(Var t: Text);
 
@@ -68,6 +69,8 @@ unit iso7185;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   implementation
 
   {$i textrec.inc}
@@ -78,11 +81,14 @@ unit iso7185;
         Assign(t,'fpc_'+HexStr(random(1000000000),8)+'.tmp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -117,6 +123,7 @@ unit iso7185;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { not sure if this is correct, but we are always at eof when
           writing to a file }
         if TextRec(t).mode=fmOutput then
@@ -133,17 +140,22 @@ unit iso7185;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         OldCtrlZMarksEof:=CtrlZMarksEOF;
         CtrlZMarksEof:=false;
         Eof:=System.Eof(t);
         CtrlZMarksEof:=OldCtrlZMarksEOF;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -169,6 +181,7 @@ unit iso7185;
         Eoln:=Eoln(Input);
       End;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -238,6 +251,8 @@ end.
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   { we shouldn't do this because it might confuse user programs, but for now it
     is good enough to get pretty unique tmp file names }
@@ -249,8 +264,11 @@ end.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

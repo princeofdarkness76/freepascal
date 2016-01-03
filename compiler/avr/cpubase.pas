@@ -54,6 +54,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         A_SEC,A_SEH,A_SEI,A_SEN,A_SER,A_SES,A_SET,A_SEV,A_SEZ,
         A_CLC,A_CLH,A_CLI,A_CLN,A_CLR,A_CLS,A_CLT,A_CLV,A_CLZ,
         A_BST,A_BLD,A_BREAK,A_NOP,A_SLEEP,A_WDR);
@@ -66,6 +67,9 @@ unit cpubase;
 =======
         A_BST,A_BLD,A_Sxx,A_CLI,A_BRAK,A_NOP,A_SLEEP,A_WDR);
 >>>>>>> graemeg/cpstrnew
+=======
+        A_BST,A_BLD,A_Sxx,A_CLI,A_BRAK,A_NOP,A_SLEEP,A_WDR);
+>>>>>>> origin/cpstrnew
 
 
       { This should define the array of instructions as string }
@@ -77,6 +81,7 @@ unit cpubase;
       { Last value of opcode enumeration  }
       lastop  = high(tasmop);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,6 +101,10 @@ unit cpubase;
       jmp_instructions = [A_BRxx,A_SBIC,A_SBIS,A_JMP,A_RCALL,A_ICALL,A_EIJMP,
                           A_RJMP,A_CALL,A_RET,A_RETI,A_CPSE,A_IJMP];
 >>>>>>> graemeg/cpstrnew
+=======
+      jmp_instructions = [A_BRxx,A_SBIC,A_SBIS,A_JMP,A_RCALL,A_ICALL,A_EIJMP,
+                          A_RJMP,A_CALL,A_RET,A_RETI,A_CPSE,A_IJMP];
+>>>>>>> origin/cpstrnew
 
 {*****************************************************************************
                                   Registers
@@ -353,6 +362,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { returns the last virtual register }
     function GetLastReg(const r : TRegister) : TRegister;
 
@@ -369,6 +379,8 @@ unit cpubase;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   implementation
 
     uses
@@ -503,6 +515,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function GetLastReg(const r: TRegister): TRegister;
       begin
@@ -537,4 +550,6 @@ unit cpubase;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.

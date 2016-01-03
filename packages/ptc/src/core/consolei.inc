@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2013  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -42,6 +46,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -144,6 +149,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 const
  {$IFDEF GO32V2}
   ConsoleTypesNumber = 4;
@@ -161,6 +168,7 @@ const
     record
       ConsoleClass: class of TPTCBaseConsole;
       Names: array [1..2] of string;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -191,6 +199,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end =
   (
   {$IFDEF GO32V2}
@@ -214,15 +224,19 @@ const
    (ConsoleClass: TX11Console;       Names: ('X11', ''))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$ENDIF UNIX}
   );
 
 constructor TPTCConsole.Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -235,6 +249,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   I: Integer;
   {$IFDEF UNIX}
@@ -242,11 +258,14 @@ var
   {$ENDIF UNIX}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   inherited Create;
   FConsole := nil;
@@ -254,6 +273,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   FillChar(FModes, SizeOf(FModes), 0);
   for I := Low(FModes) to High(FModes) do
@@ -269,6 +289,11 @@ begin
   for I := Low(FModes) to High(FModes) do
     FModes[I] := TPTCMode.Create;
 >>>>>>> graemeg/cpstrnew
+=======
+  FillChar(FModes, SizeOf(FModes), 0);
+  for I := Low(FModes) to High(FModes) do
+    FModes[I] := TPTCMode.Create;
+>>>>>>> origin/cpstrnew
 
   {$IFDEF UNIX}
     Configure('/usr/share/ptcpas/ptcpas.conf');
@@ -298,6 +323,7 @@ destructor TPTCConsole.Destroy;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Close;
   FConsole := nil;
@@ -306,6 +332,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   I: Integer;
 begin
@@ -315,11 +343,14 @@ begin
     FModes[I].Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   inherited Destroy;
 end;
 
@@ -329,6 +360,7 @@ var
   S: string;
 begin
   AssignFile(F, AFile);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -350,10 +382,16 @@ begin
   Reset(F);
   {$I+}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$I-}
+  Reset(F);
+  {$I+}
+>>>>>>> origin/cpstrnew
   if IOResult <> 0 then
     exit;
   while not EoF(F) do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -375,6 +413,11 @@ begin
     Readln(F, S);
     {$I+}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$I-}
+    Readln(F, S);
+    {$I+}
+>>>>>>> origin/cpstrnew
     if IOResult <> 0 then
       Break;
     Option(S);
@@ -427,6 +470,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       PassOpenGLOptionsToInnerConsole;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -434,12 +478,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       ExecuteOptionsFromOptionsQueue;
 {      ClearOptionsQueue;}
       Result := True;
     end
     else
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -452,6 +499,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       { TODO: check if the option is supported by at least one console... }
       if {OptionSupported}True then
       begin
@@ -462,15 +511,19 @@ begin
         Result := False;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -485,6 +538,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TPTCConsole.Modes: PPTCMode;
 var
   _console: TPTCBaseConsole;
@@ -494,17 +549,21 @@ var
   tmp: TPTCMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   if Assigned(FConsole) then
     Result := FConsole.Modes
   else
   begin
     _console := nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -537,6 +596,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     index := -1;
     mode := 0;
     try
@@ -574,11 +635,14 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Result := FModes;
   end;
 end;
@@ -599,6 +663,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         FConsole := nil;
 =======
         FreeAndNil(FConsole);
@@ -609,6 +674,9 @@ begin
 =======
         FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+        FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
         if FHackyOptionConsoleFlag then
         begin
           FHackyOptionConsoleFlag := False;
@@ -630,6 +698,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         PassOpenGLOptionsToInnerConsole;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -637,6 +706,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ExecuteOptionsFromOptionsQueue;
         FConsole.Open(ATitle, APages);
 {        ClearOptionsQueue;}
@@ -653,6 +724,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           FConsole := nil;
 =======
           FreeAndNil(FConsole);
@@ -663,6 +735,9 @@ begin
 =======
           FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+          FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
           continue;
         end;
       end;
@@ -672,6 +747,7 @@ begin
   finally
     composite.Free;
     if not success then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -685,6 +761,8 @@ procedure TPTCConsole.Open(const ATitle: string; AFormat: IPTCFormat;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       FreeAndNil(FConsole);
   end;
 end;
@@ -692,11 +770,14 @@ end;
 procedure TPTCConsole.Open(const ATitle: string; const AFormat: TPTCFormat;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            APages: Integer);
 var
   composite, tmp: TPTCError;
@@ -713,6 +794,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         FConsole := nil;
 =======
         FreeAndNil(FConsole);
@@ -723,6 +805,9 @@ begin
 =======
         FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+        FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
         if FHackyOptionConsoleFlag then
         begin
           FHackyOptionConsoleFlag := False;
@@ -744,6 +829,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         PassOpenGLOptionsToInnerConsole;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -751,6 +837,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ExecuteOptionsFromOptionsQueue;
         FConsole.open(ATitle, AFormat, APages);
 {        ClearOptionsQueue;}
@@ -767,6 +855,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           FConsole := nil;
 =======
           FreeAndNil(FConsole);
@@ -777,6 +866,9 @@ begin
 =======
           FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+          FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
           Continue;
         end;
       end;
@@ -786,6 +878,7 @@ begin
   finally
     composite.Free;
     if not success then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -799,10 +892,14 @@ begin
 =======
       FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+      FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 procedure TPTCConsole.Open(const ATitle: string; AWidth, AHeight: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -816,6 +913,9 @@ procedure TPTCConsole.Open(const ATitle: string; AWidth, AHeight: Integer;
 =======
                            const AFormat: TPTCFormat; APages: Integer);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat; APages: Integer);
+>>>>>>> origin/cpstrnew
 var
   composite, tmp: TPTCError;
   index: Integer;
@@ -831,6 +931,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         FConsole := nil;
 =======
         FreeAndNil(FConsole);
@@ -841,6 +942,9 @@ begin
 =======
         FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+        FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
         if FHackyOptionConsoleFlag then
         begin
           FHackyOptionConsoleFlag := False;
@@ -862,6 +966,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         PassOpenGLOptionsToInnerConsole;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -869,6 +974,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ExecuteOptionsFromOptionsQueue;
         FConsole.Open(ATitle, AWidth, AHeight, AFormat, APages);
 {        ClearOptionsQueue;}
@@ -885,6 +992,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           FConsole := nil;
 =======
           FreeAndNil(FConsole);
@@ -895,6 +1003,9 @@ begin
 =======
           FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+          FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
           Continue;
         end;
       end;
@@ -904,6 +1015,7 @@ begin
   finally
     composite.Free;
     if not success then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -917,6 +1029,8 @@ procedure TPTCConsole.Open(const ATitle: string; AMode: IPTCMode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       FreeAndNil(FConsole);
   end;
 end;
@@ -924,11 +1038,14 @@ end;
 procedure TPTCConsole.Open(const ATitle: string; const AMode: TPTCMode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            APages: Integer);
 var
   composite, tmp: TPTCError;
@@ -945,6 +1062,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         FConsole := nil;
 =======
         FreeAndNil(FConsole);
@@ -955,6 +1073,9 @@ begin
 =======
         FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+        FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
         if FHackyOptionConsoleFlag then
         begin
           FHackyOptionConsoleFlag := False;
@@ -976,6 +1097,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         PassOpenGLOptionsToInnerConsole;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -983,6 +1105,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ExecuteOptionsFromOptionsQueue;
         FConsole.Open(ATitle, AMode, APages);
 {        ClearOptionsQueue;}
@@ -999,6 +1123,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           FConsole := nil;
 =======
           FreeAndNil(FConsole);
@@ -1009,6 +1134,9 @@ begin
 =======
           FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+          FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
           Continue;
         end;
       end;
@@ -1018,6 +1146,7 @@ begin
   finally
     composite.Free;
     if not success then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1031,6 +1160,9 @@ begin
 =======
       FreeAndNil(FConsole);
 >>>>>>> graemeg/cpstrnew
+=======
+      FreeAndNil(FConsole);
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -1062,6 +1194,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TPTCConsole.Update(AArea: IPTCArea);
 =======
 procedure TPTCConsole.Update(const AArea: TPTCArea);
@@ -1072,11 +1205,15 @@ procedure TPTCConsole.Update(const AArea: TPTCArea);
 =======
 procedure TPTCConsole.Update(const AArea: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCConsole.Update(const AArea: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Update(AArea);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1090,11 +1227,15 @@ procedure TPTCConsole.Copy(ASurface: TPTCBaseSurface);
 =======
 procedure TPTCConsole.Copy(ASurface: TPTCBaseSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCConsole.Copy(ASurface: TPTCBaseSurface);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Copy(ASurface);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1112,6 +1253,10 @@ procedure TPTCConsole.Copy(ASurface: TPTCBaseSurface;
 procedure TPTCConsole.Copy(ASurface: TPTCBaseSurface;
                            const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCConsole.Copy(ASurface: TPTCBaseSurface;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Copy(ASurface, ASource, ADestination);
@@ -1134,6 +1279,7 @@ procedure TPTCConsole.Load(const APixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette);
 =======
@@ -1148,6 +1294,10 @@ procedure TPTCConsole.Load(const APixels: Pointer;
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette);
@@ -1155,6 +1305,7 @@ end;
 
 procedure TPTCConsole.Load(const APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1176,6 +1327,11 @@ procedure TPTCConsole.Load(const APixels: Pointer;
                            const APalette: TPTCPalette;
                            const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette,
@@ -1187,6 +1343,7 @@ procedure TPTCConsole.Save(Apixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette);
 =======
@@ -1201,6 +1358,10 @@ procedure TPTCConsole.Save(Apixels: Pointer;
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Save(APixels, AWidth, AHeight, APitch, AFormat, APalette);
@@ -1208,6 +1369,7 @@ end;
 
 procedure TPTCConsole.Save(APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1229,6 +1391,11 @@ procedure TPTCConsole.Save(APixels: Pointer;
                            const APalette: TPTCPalette;
                            const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Save(APixels, AWidth, AHeight, APitch, AFormat, APalette,
@@ -1238,6 +1405,7 @@ end;
 procedure TPTCConsole.Clear;
 begin
   Check;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1263,6 +1431,8 @@ procedure TPTCConsole.Palette(APalette: IPTCPalette);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FConsole.clear;
 end;
 
@@ -1282,16 +1452,20 @@ end;
 procedure TPTCConsole.Palette(const APalette: TPTCPalette);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Palette(APalette);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1305,11 +1479,15 @@ function TPTCConsole.Palette: TPTCPalette;
 =======
 function TPTCConsole.Palette: TPTCPalette;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCConsole.Palette: TPTCPalette;
+>>>>>>> origin/cpstrnew
 begin
   Check;
   Result := FConsole.Palette;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1323,6 +1501,9 @@ procedure TPTCConsole.Clip(const AArea: TPTCArea);
 =======
 procedure TPTCConsole.Clip(const AArea: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCConsole.Clip(const AArea: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   Check;
   FConsole.Clip(AArea);
@@ -1355,6 +1536,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TPTCConsole.GetArea: IPTCArea;
 =======
 function TPTCConsole.GetArea: TPTCArea;
@@ -1365,11 +1547,15 @@ function TPTCConsole.GetArea: TPTCArea;
 =======
 function TPTCConsole.GetArea: TPTCArea;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCConsole.GetArea: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   Check;
   Result := FConsole.GetArea;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1383,11 +1569,15 @@ function TPTCConsole.Clip: TPTCArea;
 =======
 function TPTCConsole.Clip: TPTCArea;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCConsole.Clip: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   Check;
   Result := FConsole.Clip;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1401,6 +1591,9 @@ function TPTCConsole.GetFormat: TPTCFormat;
 =======
 function TPTCConsole.GetFormat: TPTCFormat;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCConsole.GetFormat: TPTCFormat;
+>>>>>>> origin/cpstrnew
 begin
   Check;
   Result := FConsole.GetFormat;
@@ -1441,6 +1634,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TPTCConsole.NextEvent(out AEvent: IPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 =======
 function TPTCConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
@@ -1451,11 +1645,15 @@ function TPTCConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEve
 =======
 function TPTCConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Check;
   Result := FConsole.NextEvent(AEvent, AWait, AEventMask);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1469,11 +1667,15 @@ function TPTCConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask):
 =======
 function TPTCConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> origin/cpstrnew
 begin
   Check;
   Result := FConsole.PeekEvent(AWait, AEventMask);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1496,6 +1698,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TPTCConsole.ConsoleCreate(AIndex: Integer): TPTCBaseConsole;
 begin
   Result := nil;
@@ -1503,16 +1707,20 @@ begin
     Result := ConsoleTypes[AIndex].ConsoleClass.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   if Result <> nil then
     Result.KeyReleaseEnabled := KeyReleaseEnabled;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1526,6 +1734,9 @@ function TPTCConsole.ConsoleCreate(const AName: string): TPTCBaseConsole;
 =======
 function TPTCConsole.ConsoleCreate(const AName: string): TPTCBaseConsole;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCConsole.ConsoleCreate(const AName: string): TPTCBaseConsole;
+>>>>>>> origin/cpstrnew
 var
   I, J: Integer;
 begin
@@ -1541,6 +1752,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Result := ConsoleCreate(I);
         exit;
 =======
@@ -1548,6 +1760,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         Result := ConsoleTypes[I].ConsoleClass.Create;
 
         if Result <> nil then
@@ -1557,11 +1771,14 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 end;
 
@@ -1570,6 +1787,7 @@ begin
   if FConsole = nil then
     raise TPTCError.Create('console is not open (core)');
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1624,3 +1842,5 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

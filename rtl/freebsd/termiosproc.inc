@@ -34,6 +34,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    on 32-bit systems 
    Solved by using TIoCtlRequest type for FpIOCtl second parameter }
    TCSANOW   : nr:=TIOCSETA;
@@ -44,17 +45,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    on 32-bit systems }
    TCSANOW   : nr:=cint(TIOCSETA);
    TCSADRAIN : nr:=cint(TIOCSETAW);
    TCSAFLUSH : nr:=cint(TIOCSETAF);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   else
    begin
      fpsetErrNo(ESysEINVAL);

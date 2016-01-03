@@ -71,6 +71,10 @@ interface
     function parse_generic_parameters:TFPObjectList;
     procedure insert_generic_parameter_types(def:tstoreddef;genericdef:tstoreddef;genericlist:TFPObjectList);
 
+    { generics support }
+    function parse_generic_parameters:TFPObjectList;
+    procedure insert_generic_parameter_types(def:tstoreddef;genericdef:tstoreddef;genericlist:TFPObjectList);
+
 implementation
 
     uses
@@ -84,6 +88,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        symconst,symbase,symtype,symcpu,symtable,symcreat,defutil,
 =======
        symconst,symbase,symtype,symtable,paramgr,defutil,
@@ -94,6 +99,9 @@ implementation
 =======
        symconst,symbase,symtype,symtable,paramgr,defutil,
 >>>>>>> graemeg/cpstrnew
+=======
+       symconst,symbase,symtype,symtable,paramgr,defutil,
+>>>>>>> origin/cpstrnew
        { pass 1 }
        htypechk,ninl,ncon,nobj,ngenutil,
        { parser }
@@ -125,6 +133,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         p:=comp_expr([ef_accept_equal]);
         nodetype:=p.nodetype;
 =======
@@ -136,6 +145,9 @@ implementation
 =======
         p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+        p:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
         storetokenpos:=current_tokenpos;
         current_tokenpos:=filepos;
         case p.nodetype of
@@ -233,6 +245,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure const_dec(out had_generic:boolean);
       begin
         consume(_CONST);
@@ -245,6 +258,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure const_dec;
       begin
         consume(_CONST);
@@ -254,11 +269,14 @@ implementation
     procedure consts_dec(in_structure: boolean);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       var
          orgname : TIDString;
          hdef : tdef;
@@ -293,12 +311,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    sym:=readconstant(orgname,filepos,nodetype);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    sym:=readconstant(orgname,filepos);
 >>>>>>> graemeg/cpstrnew
                    { Support hint directives }
@@ -311,6 +332,7 @@ implementation
                        sym.deprecatedmsg:=deprecatedmsg;
                        sym.visibility:=symtablestack.top.currentvisibility;
                        symtablestack.top.insert(sym);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -331,6 +353,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                      end
                    else
                      stringdispose(deprecatedmsg);
@@ -366,6 +390,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        sym:=cfieldvarsym.create(orgname,varspez,hdef,[],true);
                        symtablestack.top.insert(sym);
                        sym:=make_field_static(symtablestack.top,tfieldvarsym(sym));
@@ -378,6 +403,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                        { generate the symbol which reserves the space }
                        static_name:=lower(generate_nested_name(symtablestack.top,'_'))+'_'+orgname;
                        sym:=tstaticvarsym.create('$_static_'+static_name,varspez,hdef,[]);
@@ -395,11 +422,14 @@ implementation
                        sym:=tstaticvarsym.create(orgname,varspez,hdef,[]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                        sym.visibility:=symtablestack.top.currentvisibility;
                        symtablestack.top.insert(sym);
                      end;
@@ -441,11 +471,14 @@ implementation
                         tclist:=current_asmdata.asmlists[al_typedconsts];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                       read_typed_const(tclist,tstaticvarsym(sym),in_structure);
                     end;
                 end;
@@ -475,11 +508,14 @@ implementation
          until (token<>_ID)or(in_structure and (idtoken in [_PRIVATE,_PROTECTED,_PUBLIC,_PUBLISHED,_STRICT]));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          block_type:=old_block_type;
       end;
 
@@ -497,6 +533,7 @@ implementation
            else
              begin
                 if token=_ID then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -518,11 +555,17 @@ implementation
                 else
                   labelsym:=tlabelsym.create(pattern);
 >>>>>>> graemeg/cpstrnew
+=======
+                  labelsym:=tlabelsym.create(orgpattern)
+                else
+                  labelsym:=tlabelsym.create(pattern);
+>>>>>>> origin/cpstrnew
                 symtablestack.top.insert(labelsym);
                 if m_non_local_goto in current_settings.modeswitches then
                   begin
                     if symtablestack.top.symtabletype=localsymtable then
                       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -536,10 +579,14 @@ implementation
 =======
                         labelsym.jumpbuf:=tlocalvarsym.create('LABEL$_'+labelsym.name,vs_value,rec_jmp_buf,[]);
 >>>>>>> graemeg/cpstrnew
+=======
+                        labelsym.jumpbuf:=tlocalvarsym.create('LABEL$_'+labelsym.name,vs_value,rec_jmp_buf,[]);
+>>>>>>> origin/cpstrnew
                         symtablestack.top.insert(labelsym.jumpbuf);
                       end
                     else
                       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -561,6 +608,11 @@ implementation
                         symtablestack.top.insert(labelsym.jumpbuf);
                         insertbssdata(tstaticvarsym(labelsym.jumpbuf));
 >>>>>>> graemeg/cpstrnew
+=======
+                        labelsym.jumpbuf:=tstaticvarsym.create('LABEL$_'+labelsym.name,vs_value,rec_jmp_buf,[]);
+                        symtablestack.top.insert(labelsym.jumpbuf);
+                        insertbssdata(tstaticvarsym(labelsym.jumpbuf));
+>>>>>>> origin/cpstrnew
                       end;
                     include(labelsym.jumpbuf.symoptions,sp_internal);
                     { the buffer will be setup later, but avoid a hint }
@@ -573,6 +625,7 @@ implementation
          consume(_SEMICOLON);
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -654,6 +707,63 @@ implementation
           procvardef,procdef: st:=tabstractprocdef(def).parast;
           else
             internalerror(201101020);
+=======
+    function parse_generic_parameters:TFPObjectList;
+    var
+      generictype : ttypesym;
+    begin
+      result:=TFPObjectList.Create(false);
+      repeat
+        if token=_ID then
+          begin
+            generictype:=ttypesym.create(orgpattern,cundefinedtype);
+            include(generictype.symoptions,sp_generic_para);
+            result.add(generictype);
+          end;
+        consume(_ID);
+      until not try_to_consume(_COMMA) ;
+    end;
+
+    procedure insert_generic_parameter_types(def:tstoreddef;genericdef:tstoreddef;genericlist:TFPObjectList);
+      var
+        i: longint;
+        generictype: ttypesym;
+        st: tsymtable;
+      begin
+        def.genericdef:=genericdef;
+        if not assigned(genericlist) then
+          exit;
+
+        case def.typ of
+          recorddef,objectdef: st:=tabstractrecorddef(def).symtable;
+          arraydef: st:=tarraydef(def).symtable;
+          procvardef,procdef: st:=tabstractprocdef(def).parast;
+          else
+            internalerror(201101020);
+        end;
+
+        for i:=0 to genericlist.count-1 do
+          begin
+            generictype:=ttypesym(genericlist[i]);
+            if generictype.typedef.typ=undefineddef then
+              include(def.defoptions,df_generic)
+            else
+              include(def.defoptions,df_specialization);
+            st.insert(generictype);
+          end;
+       end;
+
+    procedure types_dec(in_structure: boolean);
+
+      procedure finalize_objc_class_or_protocol_external_status(od: tobjectdef);
+        begin
+          if  [oo_is_external,oo_is_forward] <= od.objectoptions then
+            begin
+              { formal definition: x = objcclass external; }
+              exclude(od.objectoptions,oo_is_forward);
+              include(od.objectoptions,oo_is_formal);
+            end;
+>>>>>>> origin/cpstrnew
         end;
 
         for i:=0 to genericlist.count-1 do
@@ -836,6 +946,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            if first then
              had_generic:=not(m_delphi in current_settings.modeswitches) and try_to_consume(_GENERIC);
            isgeneric:=had_generic;
@@ -848,6 +959,9 @@ implementation
 =======
            isgeneric:=not(m_delphi in current_settings.modeswitches) and try_to_consume(_GENERIC);
 >>>>>>> graemeg/cpstrnew
+=======
+           isgeneric:=not(m_delphi in current_settings.modeswitches) and try_to_consume(_GENERIC);
+>>>>>>> origin/cpstrnew
 
            typename:=pattern;
            orgtypename:=orgpattern;
@@ -887,6 +1001,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -894,6 +1009,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            consume(_EQ);
 
            { support 'ttype=type word' syntax }
@@ -918,6 +1035,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            sym:=tsym(symtablestack.top.find(gentypename));
 =======
            sym:=tsym(symtablestack.top.find(typename));
@@ -928,6 +1046,9 @@ implementation
 =======
            sym:=tsym(symtablestack.top.find(typename));
 >>>>>>> graemeg/cpstrnew
+=======
+           sym:=tsym(symtablestack.top.find(typename));
+>>>>>>> origin/cpstrnew
            newtype:=nil;
            { found a symbol with this name? }
            if assigned(sym) then
@@ -1071,6 +1192,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       if is_objc_class_or_protocol(hdef) or
                          is_java_class_or_interface(hdef) then
                         Message(parser_e_unique_unsupported);
@@ -1086,6 +1208,10 @@ implementation
                       if is_objc_class_or_protocol(hdef) then
                         Message(parser_e_no_objc_unique);
 >>>>>>> graemeg/cpstrnew
+=======
+                      if is_objc_class_or_protocol(hdef) then
+                        Message(parser_e_no_objc_unique);
+>>>>>>> origin/cpstrnew
 
                       hdef:=tstoreddef(hdef).getcopy;
 
@@ -1268,6 +1394,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     { change a forward and external class declaration into
                       formal external definition, so the compiler does not
                       expect an real definition later }
@@ -1279,6 +1406,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     { change a forward and external objcclass declaration into
                       formal external definition, so the compiler does not
                       expect an real definition later }
@@ -1286,11 +1415,14 @@ implementation
                       finalize_objc_class_or_protocol_external_status(tobjectdef(hdef));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
                     { Build VMT indexes, skip for type renaming and forward classes }
                     if (hdef.typesym=newtype) and
@@ -1333,6 +1465,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            if isgeneric and (not(hdef.typ in [objectdef,recorddef,arraydef,procvardef])
                or is_objectpascal_helper(hdef)) then
 =======
@@ -1344,6 +1477,9 @@ implementation
 =======
            if isgeneric and not(hdef.typ in [objectdef,recorddef,arraydef,procvardef]) then
 >>>>>>> graemeg/cpstrnew
+=======
+           if isgeneric and not(hdef.typ in [objectdef,recorddef,arraydef,procvardef]) then
+>>>>>>> origin/cpstrnew
              message(parser_e_cant_create_generics_of_this_type);
 
            { Stop recording a generic template }
@@ -1355,6 +1491,7 @@ implementation
                hdef.typesym:=newtype;
                generictypelist.free;
              end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1384,6 +1521,9 @@ implementation
 =======
          until (token<>_ID)or(in_structure and (idtoken in [_PRIVATE,_PROTECTED,_PUBLIC,_PUBLISHED,_STRICT]));
 >>>>>>> graemeg/cpstrnew
+=======
+         until (token<>_ID)or(in_structure and (idtoken in [_PRIVATE,_PROTECTED,_PUBLIC,_PUBLISHED,_STRICT]));
+>>>>>>> origin/cpstrnew
          { resolve type block forward declarations and restore a unit
            container for them }
          resolve_forward_types;
@@ -1400,6 +1540,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         types_dec(false,had_generic);
 =======
         types_dec(false);
@@ -1410,6 +1551,9 @@ implementation
 =======
         types_dec(false);
 >>>>>>> graemeg/cpstrnew
+=======
+        types_dec(false);
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -1425,6 +1569,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure property_dec;
     { parses a global property (fpc mode feature) }
 =======
@@ -1436,6 +1581,9 @@ implementation
 =======
     procedure property_dec(is_classpropery: boolean);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure property_dec(is_classpropery: boolean);
+>>>>>>> origin/cpstrnew
       var
          old_block_type: tblock_type;
       begin
@@ -1445,6 +1593,7 @@ implementation
          old_block_type:=block_type;
          block_type:=bt_const;
          repeat
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1458,6 +1607,9 @@ implementation
 =======
            read_property_dec(is_classpropery, nil);
 >>>>>>> graemeg/cpstrnew
+=======
+           read_property_dec(is_classpropery, nil);
+>>>>>>> origin/cpstrnew
            consume(_SEMICOLON);
          until token<>_ID;
          block_type:=old_block_type;
@@ -1515,6 +1667,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    p:=comp_expr([ef_accept_equal]);
 =======
                    p:=comp_expr(true,false);
@@ -1525,6 +1678,9 @@ implementation
 =======
                    p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                   p:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                    storetokenpos:=current_tokenpos;
                    current_tokenpos:=filepos;
                    sym:=nil;
@@ -1573,6 +1729,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               else
                 if not first and isgeneric and
                     (token in [_PROCEDURE, _FUNCTION, _CLASS]) then
@@ -1591,6 +1748,9 @@ implementation
 =======
               else consume(_EQ);
 >>>>>>> graemeg/cpstrnew
+=======
+              else consume(_EQ);
+>>>>>>> origin/cpstrnew
            end;
            first:=false;
          until token<>_ID;

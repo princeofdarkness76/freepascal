@@ -7,12 +7,15 @@ name=gdbint
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
@@ -62,8 +65,16 @@ GDBLIBINCFOUND=1
 GDBLIBINCCOND=-dUSE_GDBLIBINC
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+endif
+ifdef NO_GDBLIBINC
+GDBLIBINCFOUND=0
+GDBLIBINCCOND=
+endif
+>>>>>>> origin/cpstrnew
 endif
 ifdef NO_GDBLIBINC
 GDBLIBINCFOUND=0
@@ -161,11 +172,14 @@ gdbint$(PPUEXT): gdbint.pp gdbver.inc
         $(DEL) src/gdbver.inc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 endif
 	-$(DEL) $(LOCALFPMAKE)
 endif

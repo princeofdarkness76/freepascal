@@ -18,6 +18,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: string);
 =======
 procedure load(surface: TPTCSurface; filename: String);
@@ -28,11 +29,15 @@ procedure load(surface: TPTCSurface; filename: String);
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> origin/cpstrnew
 var
   F: File;
   width, height: Integer;
   pixels: PByte = nil;
   y: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,6 +54,10 @@ var
   tmp: TPTCFormat;
   tmp2: TPTCPalette;
 >>>>>>> graemeg/cpstrnew
+=======
+  tmp: TPTCFormat;
+  tmp2: TPTCPalette;
+>>>>>>> origin/cpstrnew
 begin
   { open image file }
   AssignFile(F, filename);
@@ -74,6 +83,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
@@ -84,6 +94,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     tmp := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     tmp := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
@@ -100,11 +112,14 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   finally
     { free image pixels }
     FreeMem(pixels);
@@ -115,6 +130,7 @@ begin
 end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -129,6 +145,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   image: TPTCSurface = nil;
@@ -138,11 +156,14 @@ var
   color: TPTCColor = nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   time: Double;
   zoom: Single;
   x, y, x1, y1, x2, y2, dx, dy: Integer;
@@ -238,11 +259,14 @@ begin
       timer.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

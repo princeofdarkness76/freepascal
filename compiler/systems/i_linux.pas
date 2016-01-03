@@ -42,6 +42,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_needs_dwarf_cfi,tf_has_winlike_resources,
 =======
                             tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
@@ -52,6 +53,9 @@ unit i_linux;
 =======
                             tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
 >>>>>>> graemeg/cpstrnew
+=======
+                            tf_smartlink_library,tf_needs_dwarf_cfi,tf_has_winlike_resources,
+>>>>>>> origin/cpstrnew
                             tf_safecall_exceptions, tf_safecall_clearstack];
             cpu          : cpu_i386;
             unit_env     : 'LINUXUNITS';
@@ -120,6 +124,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,tf_smartlink_sections,
                             tf_has_winlike_resources];
 =======
@@ -127,6 +132,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_pic_uses_got{,tf_smartlink_sections},
                             tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
@@ -196,6 +203,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,
                             tf_requires_proper_alignment, { Coldfire seems to need this at least (KB) }
                             tf_has_winlike_resources];
@@ -204,6 +212,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_m68k;
@@ -342,12 +352,15 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_requires_proper_alignment,tf_smartlink_sections,tf_has_winlike_resources];
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_requires_proper_alignment,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_powerpc64;
@@ -545,6 +558,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 recordalignmax  : 8;
                 maxCrecordalign : 8
 =======
@@ -559,6 +573,10 @@ unit i_linux;
                 recordalignmax  : 16;
                 maxCrecordalign : 16
 >>>>>>> graemeg/cpstrnew
+=======
+                recordalignmax  : 16;
+                maxCrecordalign : 16
+>>>>>>> origin/cpstrnew
               );
             first_parm_offset : 92;
             stacksize    : 8*1024*1024;
@@ -583,11 +601,14 @@ unit i_linux;
                             tf_requires_proper_alignment,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_has_winlike_resources];
             cpu          : cpu_arm;
             unit_env     : 'LINUXUNITS';
@@ -657,6 +678,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
@@ -664,6 +686,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_arm;
@@ -734,6 +758,7 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_pic_uses_got,
                             tf_has_winlike_resources];
 =======
@@ -741,6 +766,8 @@ unit i_linux;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_arm;
@@ -810,12 +837,15 @@ unit i_linux;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections,tf_has_winlike_resources];
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_smartlink_sections,tf_smartlink_library,tf_has_winlike_resources];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_arm;
@@ -878,6 +908,7 @@ unit i_linux;
 {$endif FPC_ARMEL}
 {$endif FPC_ARMHF}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
        system_aarch64_linux_info  : tsysteminfo =
           (
@@ -1211,6 +1242,8 @@ unit i_linux;
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        system_mips_linux_info : tsysteminfo =
           (
             system       : system_mips_LINUX;
@@ -1343,10 +1376,14 @@ unit i_linux;
 
 initialization
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPUI386}
 =======
 {$ifdef CPU86}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef CPU86}
+>>>>>>> origin/cpstrnew
   {$ifdef linux}
     { some FreeBSD versions define linux as well }
     {$ifndef FreeBSD}
@@ -1354,10 +1391,14 @@ initialization
     {$endif FreeBSD}
   {$endif}
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif CPUI386}
 =======
 {$endif CPU86}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif CPU86}
+>>>>>>> origin/cpstrnew
 {$ifdef CPU68}
   {$ifdef linux}
     set_source_info(system_m68k_linux_info);
@@ -1369,13 +1410,19 @@ initialization
   {$endif linux}
 {$endif CPUX86_64}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef CPUALPHA}
   {$ifdef linux}
     set_source_info(system_alpha_linux_info);
   {$endif linux}
 {$endif CPUALPHA}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef CPUSPARC}
   {$ifdef linux}
     set_source_info(system_sparc_linux_info);
@@ -1390,6 +1437,7 @@ initialization
   {$ifdef linux}
     set_source_info(system_powerpc64_linux_info);
 <<<<<<< HEAD
+<<<<<<< HEAD
     { on a little endian PPC64 platform -> source is elfv2 }
     {$ifdef FPC_LITTLE_ENDIAN}
     source_info.endian:=endian_little;
@@ -1397,6 +1445,8 @@ initialization
     {$endif}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$endif linux}
 {$endif CPUPOWERPC64}
 {$ifdef CPUARM}
@@ -1404,6 +1454,7 @@ initialization
     set_source_info(system_arm_linux_info);
   {$endif linux}
 {$endif CPUARM}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1427,6 +1478,8 @@ initialization
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef CPUMIPS}
   {$ifdef linux}
     set_source_info(system_mipsel_linux_info);
@@ -1434,9 +1487,12 @@ initialization
 {$endif CPUMIPS}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.

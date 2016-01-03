@@ -62,6 +62,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
   
 Var
@@ -97,4 +98,7 @@ begin
 =======
   FreeDBConnector;
 >>>>>>> graemeg/cpstrnew
+=======
+  FreeDBConnector;
+>>>>>>> origin/cpstrnew
 end.

@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb; 
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb; 
@@ -18,6 +19,9 @@ uses
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb; 
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb; 
+>>>>>>> origin/cpstrnew
 
 type
 
@@ -27,6 +31,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     procedure DataModuleCreate(Sender: TObject);
 >>>>>>> graemeg/cpstrnew
@@ -36,6 +41,9 @@ type
 =======
     procedure DataModuleCreate(Sender: TObject);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure DataModuleCreate(Sender: TObject);
+>>>>>>> origin/cpstrnew
     procedure TFPWebActions0Request(Sender: TObject; ARequest: TRequest;
       AResponse: TResponse; var Handled: Boolean);
     procedure TFPWebActions1Request(Sender: TObject; ARequest: TRequest;
@@ -64,6 +72,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
 =======
@@ -72,6 +81,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Uses fpjson,jsonparser,fpjsonrpc,webjsonrpc, fpextdirect;
 
 { TFPWebModule1 }
@@ -79,22 +90,28 @@ Uses fpjson,jsonparser,fpjsonrpc,webjsonrpc, fpextdirect;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TFPWebModule1.DataModuleCreate(Sender: TObject);
 begin
 end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TFPWebModule1.TFPWebActions0Request(Sender: TObject;
   ARequest: TRequest; AResponse: TResponse; var Handled: Boolean);
 {
@@ -178,6 +195,7 @@ procedure TFPWebModule1.TFPWebActions1Request(Sender: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   (it is created run-time, though).
 =======
   (it is created run-time, though)
@@ -188,6 +206,9 @@ procedure TFPWebModule1.TFPWebActions1Request(Sender: TObject;
 =======
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
+=======
+  (it is created run-time, though)
+>>>>>>> origin/cpstrnew
 }
 
 Var
@@ -243,6 +264,7 @@ procedure TFPWebModule1.TFPWebActions2Request(Sender: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Demo 3. Use a dispatcher to dispatch the requests.
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
@@ -261,6 +283,11 @@ procedure TFPWebModule1.TFPWebActions2Request(Sender: TObject;
   The handler is registered in the JSONFPCHandlerManager.
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
+=======
+  Demo 3. Use a dispatcher to dispatch the requests,
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> origin/cpstrnew
 }
 
 Var
@@ -315,6 +342,7 @@ procedure TFPWebModule1.TFPWebActions3Request(Sender: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
 =======
@@ -329,6 +357,10 @@ procedure TFPWebModule1.TFPWebActions3Request(Sender: TObject;
   The handler is registered in the JSONFPCHandlerManager.
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
+=======
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> origin/cpstrnew
 }
 
 Var
@@ -384,6 +416,7 @@ procedure TFPWebModule1.TFPWebActions4Request(Sender: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
 =======
@@ -398,6 +431,10 @@ procedure TFPWebModule1.TFPWebActions4Request(Sender: TObject;
   The handler is registered in the JSONFPCHandlerManager.
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
+=======
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> origin/cpstrnew
 }
 
 Var
@@ -435,6 +472,7 @@ procedure TFPWebModule1.TFPWebActions5Request(Sender: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Demo 6. Creating an API response for Ext.Direct
   The handler is registered in the JSONFPCHandlerManager
   (it is created run-time, though).
@@ -453,6 +491,11 @@ procedure TFPWebModule1.TFPWebActions5Request(Sender: TObject;
   The handler is registered in the JSONFPCHandlerManager.
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
+=======
+  Demo 6. creating an API response for Ext.Direct
+  The handler is registered in the JSONFPCHandlerManager.
+  (it is created run-time, though)
+>>>>>>> origin/cpstrnew
 }
 
 Var
@@ -484,6 +527,7 @@ procedure TFPWebModule1.TFPWebActions6Request(Sender: TObject;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   (it is created run-time, though).
 =======
   (it is created run-time, though)
@@ -494,6 +538,9 @@ procedure TFPWebModule1.TFPWebActions6Request(Sender: TObject;
 =======
   (it is created run-time, though)
 >>>>>>> graemeg/cpstrnew
+=======
+  (it is created run-time, though)
+>>>>>>> origin/cpstrnew
 }
 
 Var
@@ -518,6 +565,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   {$I wmdemo.lrs}
 
@@ -530,6 +578,10 @@ initialization
   {$I wmdemo.lrs}
 
 >>>>>>> graemeg/cpstrnew
+=======
+  {$I wmdemo.lrs}
+
+>>>>>>> origin/cpstrnew
   RegisterHTTPModule('echo', TFPWebModule1);
 end.
 

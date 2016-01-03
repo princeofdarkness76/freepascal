@@ -108,6 +108,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   { TSQLite3ConnectionDef }
 
@@ -138,10 +139,16 @@ Var
 Var
   SQLiteLibraryName : String = sqlite3lib; 
 >>>>>>> graemeg/cpstrnew
+=======
+  
+Var
+  SQLiteLibraryName : String = sqlite3lib; 
+>>>>>>> origin/cpstrnew
    
 implementation
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -157,6 +164,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   dbconst, sysutils, dateutils,FmtBCD;
  
 >>>>>>> graemeg/cpstrnew
@@ -234,6 +243,7 @@ begin
                 checkerror(sqlite3_bind_text(fstatement, I, PChar(str1), length(str1), sqlite3_destructor_type(SQLITE_TRANSIENT)));
                 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
         ftString,
         ftFixedChar,
         ftMemo: begin // According to SQLite documentation, CLOB's (ftMemo) have the Text affinity
@@ -254,15 +264,20 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ftstring,
         ftmemo: begin // According to SQLite documentation, CLOB's (ftMemo) have the Text affinity
                 str1:= p.asstring;
                 checkerror(sqlite3_bind_text(fstatement,I,pcharstr(str1), length(str1),@freebindstring));
                 end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ftblob: begin
 >>>>>>> graemeg/cpstrnew
                 str1:= P.asstring;
@@ -396,6 +411,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Res.fconnection:=Self;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -403,6 +419,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Result:=Res;
 end;
 
@@ -443,6 +461,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FieldMapCount = 28;
 =======
   FieldMapCount = 20;
@@ -453,6 +472,9 @@ Const
 =======
   FieldMapCount = 20;
 >>>>>>> graemeg/cpstrnew
+=======
+  FieldMapCount = 20;
+>>>>>>> origin/cpstrnew
   FieldMap : Array [1..FieldMapCount] of TFieldMap = (
    (n:'INT'; t: ftInteger),
    (n:'LARGEINT'; t:ftLargeInt),
@@ -559,6 +581,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Column declared as INTEGER PRIMARY KEY [AUTOINCREMENT] becomes ROWID for given table
     // declared data type must be INTEGER (not INT, BIGINT, NUMERIC etc.)
     if (FD='INTEGER') and SameText(FN, PrimaryKeyFields) then
@@ -569,6 +592,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // In case of an empty fieldtype (FD='', which is allowed and used in calculated
     // columns (aggregates) and by pragma-statements) or an unknown fieldtype,
     // use the field's affinity:
@@ -747,6 +772,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  int1 : integer;
  bcd: tBCD;
  bcdstr: FmtBCDStringtype;
@@ -755,6 +781,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  bcd: tBCD;
  StoreDecimalPoint: tDecimalPoint;
  bcdstr: FmtBCDStringtype;
@@ -872,8 +900,11 @@ begin
               pBCD(buffer)^:= bcd;
               end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
     ftFmtBCD: begin
               int1:= sqlite3_column_bytes(st,fnum);
               if int1>255 then
@@ -895,6 +926,7 @@ begin
                 bcd := 0;
               pBCD(buffer)^:= bcd;
               end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -920,6 +952,8 @@ begin
               pBCD(buffer)^:= bcd;
               end;
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     ftMemo,
     ftBlob: CreateBlob:=True;
   else { Case }
@@ -983,6 +1017,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   InitializeSQLite;
   filename := DatabaseName;
   checkerror(sqlite3_open(PAnsiChar(filename),@fhandle));
@@ -995,6 +1030,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   InitializeSqlite(SQLiteLibraryName);
   str1:= databasename;
   checkerror(sqlite3_open(pchar(str1),@fhandle));
@@ -1091,6 +1128,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLite3Connection.GetSchemaInfoSQL(SchemaType: TSchemaType;
   SchemaObjectName, SchemaPattern: string): string;
   
@@ -1168,6 +1206,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TSQLite3Connection.RowsAffected(cursor: TSQLCursor): TRowsCount;
 begin
   if assigned(cursor) then
@@ -1351,6 +1391,7 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 
@@ -1364,6 +1405,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 class function TSQLite3ConnectionDef.ConnectionClass: TSQLConnectionClass;
 begin

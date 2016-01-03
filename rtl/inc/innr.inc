@@ -87,6 +87,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    fpc_in_default_x         = 76;
    fpc_in_box_x             = 77; { managed platforms: wrap in class instance }
    fpc_in_unbox_x_y         = 78; { manage platforms: extract from class instance }
@@ -99,6 +100,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Internal constant functions }
    fpc_in_const_sqr        = 100;

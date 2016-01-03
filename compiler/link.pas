@@ -770,6 +770,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem; const addfilecmd : string) : TCmdStr;
 =======
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
@@ -780,6 +781,9 @@ Implementation
 =======
         function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
 >>>>>>> graemeg/cpstrnew
+=======
+        function GetNextFiles(const maxCmdLength : Longint; var item : TCmdStrListItem) : TCmdStr;
+>>>>>>> origin/cpstrnew
           begin
             result := '';
             while (assigned(item) and ((length(result) + length(item.str) + 1) < maxCmdLength)) do begin

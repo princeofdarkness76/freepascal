@@ -127,11 +127,14 @@ type
     function ResolveLinkID(const Name: String): DOMString;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function ResolveLinkIDInUnit(const Name,AUnitName: String): DOMString;
     function ResolveLinkWithinPackage(AElement: TPasElement;
       ASubpageIndex: Integer): String;
@@ -811,6 +814,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   TempStream: TMemoryStream;
 >>>>>>> graemeg/cpstrnew
@@ -820,6 +824,9 @@ var
 =======
   TempStream: TMemoryStream;
 >>>>>>> graemeg/cpstrnew
+=======
+  TempStream: TMemoryStream;
+>>>>>>> origin/cpstrnew
 
 begin
   if Engine.Output <> '' then
@@ -841,6 +848,7 @@ begin
         PageDoc.Free;
       end;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -922,6 +930,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   if FCSSFile <> '' then
   begin
@@ -936,11 +946,14 @@ begin
     TempStream.SaveToFile(Engine.output+ExtractFileName(FCSSFile));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     TempStream.Free;
   end;
 end;
@@ -1005,6 +1018,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (Result='') and (AUnitName<>'') and (length(Name)>0) and (Name[1]<>'#') then
      Result:=ResolveLinkID(AUnitName+'.'+Name);
 =======
@@ -1023,6 +1037,11 @@ function THTMLWriter.ResolveLinkID(const Name: String; Level : Integer = 0): DOM
     Result:=ResolveLinkID(AUnitName+'.'+Name);
 end;
 >>>>>>> graemeg/cpstrnew
+=======
+  If (Result='') and (AUnitName<>'')  then
+    Result:=ResolveLinkID(AUnitName+'.'+Name);
+end;
+>>>>>>> origin/cpstrnew
 
 var
   i: Integer;
@@ -2467,6 +2486,7 @@ procedure THTMLWriter.CreateClassHierarchyPage(AList : TStringList; AddUnit : Bo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Procedure AppendClass(E : TDomElement);
 =======
 	procedure THTMLWriter.CreateIndexPage(L : TStringList);
@@ -2477,6 +2497,9 @@ procedure THTMLWriter.CreateClassHierarchyPage(AList : TStringList; AddUnit : Bo
 =======
 	procedure THTMLWriter.CreateIndexPage(L : TStringList);
 >>>>>>> graemeg/cpstrnew
+=======
+	procedure THTMLWriter.CreateIndexPage(L : TStringList);
+>>>>>>> origin/cpstrnew
 
   Var
     N : TDomNode;
@@ -3422,11 +3445,14 @@ var
     s: String;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     ThisInterface,
     ThisClass: TPasClassType;
     HaveSeenTObject: Boolean;
@@ -3579,11 +3605,14 @@ var
       if ThisClass.Interfaces.count>0 then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         begin
           for i:=0 to ThisClass.interfaces.count-1 do
             begin

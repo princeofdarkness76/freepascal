@@ -228,6 +228,7 @@ unit typinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   ResultTypeRef : PTypeInfo;  // for mkFunction, mkClassFunction only
                   CC : TCallConv;
                   ParamTypeRefs : array[1..ParamCount] of PTypeInfo;}
@@ -246,6 +247,11 @@ unit typinfo;
                   CC : TCallConv;
                   ParamTypeRefs : array[1..ParamCount] of PPTypeInfo;}
 >>>>>>> graemeg/cpstrnew
+=======
+                  ResultTypeRef : PPTypeInfo;  // for mkFunction, mkClassFunction only
+                  CC : TCallConv;
+                  ParamTypeRefs : array[1..ParamCount] of PPTypeInfo;}
+>>>>>>> origin/cpstrnew
               );
             tkProcVar:
               (ProcSig: TProcedureSignature);
@@ -593,11 +599,14 @@ type
   tsetarr = bitpacked array[0..31] of 0..1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Var
   I : Integer;
   PTI : PTypeInfo;

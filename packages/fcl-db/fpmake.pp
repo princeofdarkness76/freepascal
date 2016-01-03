@@ -86,9 +86,12 @@ begin
     P.Options.Add('-S2h');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.Dependencies.Add('fcl-base');
     P.Dependencies.Add('fcl-xml');
     P.Dependencies.Add('ibase');
@@ -101,6 +104,7 @@ begin
 
     P.Options.Add('-S2h');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -119,6 +123,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // base
     T:=P.Targets.AddUnit('bufdataset.pas');
       with T.Dependencies do
@@ -131,12 +137,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('csvdataset.pp');
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('bufdataset_parser.pp');
 >>>>>>> graemeg/cpstrnew
       with T.Dependencies do
@@ -146,6 +155,7 @@ begin
         AddUnit('bufdataset');
         end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -164,6 +174,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('db.pas');
       with T.Dependencies do
         begin
@@ -208,12 +220,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('dbf.pas', DBaseOSes);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('dbf.pas');
 >>>>>>> graemeg/cpstrnew
       with T.Dependencies do
@@ -380,6 +395,7 @@ begin
         begin
           AddInclude('dbf_common.inc');
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddInclude('dbf_wnix.inc', AllOSes-AllWindowsOSes-[os2]);
           AddInclude('dbf_wos2.inc', [os2]);
         end;
@@ -392,6 +408,9 @@ begin
 =======
         end;
 >>>>>>> graemeg/cpstrnew
+=======
+        end;
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('fpcgcreatedbf.pp');
 >>>>>>> graemeg/cpstrnew
       with T.Dependencies do
@@ -414,12 +433,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('fpcgtiopf.pp', DatadictOSes);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('fpcgtiopf.pp');
 >>>>>>> graemeg/cpstrnew
       with T.Dependencies do
@@ -433,11 +455,14 @@ begin
     T:=P.Targets.AddUnit('fpcsvexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -450,11 +475,14 @@ begin
     T:=P.Targets.AddUnit('fpdatadict.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -466,11 +494,14 @@ begin
     T:=P.Targets.AddUnit('fpdbexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -482,11 +513,14 @@ begin
     T:=P.Targets.AddUnit('fpdbfexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -495,6 +529,7 @@ begin
           AddUnit('fpdbexport');
         end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -512,6 +547,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('fpddpopcode.pp');
     T.ResourceStrings:=true;
     T.Dependencies.AddUnit('fpdatadict');
@@ -523,11 +560,14 @@ begin
     T:=P.Targets.AddUnit('fpddcodegen.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -640,6 +680,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('customsqliteds.pas', SqliteOSes);
 =======
     T:=P.Targets.AddUnit('customsqliteds.pas');
@@ -650,11 +691,15 @@ begin
 =======
     T:=P.Targets.AddUnit('customsqliteds.pas');
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddUnit('customsqliteds.pas');
+>>>>>>> origin/cpstrnew
       with T.Dependencies do
         begin
           AddUnit('db');
           AddUnit('dbconst');
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -669,6 +714,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpddsqldb.pp');
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddUnit('fpddsqldb.pp');
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -690,11 +738,14 @@ begin
     T:=P.Targets.AddUnit('fpfixedexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -707,11 +758,14 @@ begin
     T:=P.Targets.AddUnit('fprtfexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -724,11 +778,14 @@ begin
     T:=P.Targets.AddUnit('fpsimplejsonexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -741,11 +798,14 @@ begin
     T:=P.Targets.AddUnit('fpsimplexmlexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -758,11 +818,14 @@ begin
     T:=P.Targets.AddUnit('fpsqlexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -788,6 +851,7 @@ begin
     T:=P.Targets.AddUnit('fptexexport.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -800,6 +864,8 @@ begin
     T:=P.Targets.AddUnit('fpxmlxsdexport.pp', DatadictOSes);
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -824,6 +890,7 @@ begin
           AddUnit('dbconst');
           AddUnit('bufdataset');
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddUnit('ibconnection');
         end;
     T:=P.Targets.AddUnit('fbeventmonitor.pp', SqldbConnectionOSes);
@@ -841,6 +908,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end;
     T:=P.Targets.AddUnit('memds.pp');
     T.ResourceStrings:=true;
@@ -855,11 +924,14 @@ begin
     T:=P.Targets.AddUnit('mysql40conn.pas');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -875,11 +947,14 @@ begin
     T:=P.Targets.AddUnit('mysql41conn.pas');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -896,11 +971,14 @@ begin
     T:=P.Targets.AddUnit('mysql4conn.pas');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -917,11 +995,14 @@ begin
     T:=P.Targets.AddUnit('mysql50conn.pas');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -943,6 +1024,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddUnit('dbconst');
         end;
 
@@ -957,6 +1039,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           AddUnit('bufdataset');
           AddUnit('sqldb');
           AddUnit('db');
@@ -969,9 +1053,12 @@ begin
     T:=P.Targets.AddUnit('oracleconnection.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -1007,11 +1094,14 @@ begin
     T:=P.Targets.AddUnit('paradox.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -1024,11 +1114,14 @@ begin
     T:=P.Targets.AddUnit('pqconnection.pp');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin

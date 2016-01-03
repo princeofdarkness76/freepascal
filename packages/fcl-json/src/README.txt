@@ -115,6 +115,7 @@ integer, int64, double, string, TJSONArray or TJSONObject.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 The Delete() call deletes an element from an array or object. The element is
 freed.
 =======
@@ -126,12 +127,16 @@ The Delete() call deletes an element from an array or object.
 =======
 The Delete() call deletes an element from an array or object.
 >>>>>>> graemeg/cpstrnew
+=======
+The Delete() call deletes an element from an array or object.
+>>>>>>> origin/cpstrnew
 
 Important remark:
 The array and object classes own their members: the members are destroyed as
 they are deleted. For this, the Extract() call exists: it removes an
 element/member from the array/object, without destroying it.
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,6 +180,8 @@ Scanner/Parser
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 The JSONSCanner unit contains a scanner for JSON data: TJSONScanner. 
 Currently it does not support full unicode, only UTF-8 is supported.
 
@@ -224,6 +231,7 @@ By default, this is accepted. Setting 'Strict' to true will reject this.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Customizing the classes : Factory support
 =========================================
@@ -257,3 +265,5 @@ The function checks whether sane classes are specified.;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

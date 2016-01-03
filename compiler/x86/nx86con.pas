@@ -53,6 +53,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if is_number_float(value_real) and not(use_vectorfpu(resultdef)) and ((value_real=1.0) or (value_real=0.0)) then
 =======
          if is_number_float(value_real) and not(use_vectorfpu(resultdef)) and (value_real=1.0) or (value_real=0.0) then
@@ -63,6 +64,9 @@ implementation
 =======
          if is_number_float(value_real) and not(use_vectorfpu(resultdef)) and (value_real=1.0) or (value_real=0.0) then
 >>>>>>> graemeg/cpstrnew
+=======
+         if is_number_float(value_real) and not(use_vectorfpu(resultdef)) and (value_real=1.0) or (value_real=0.0) then
+>>>>>>> origin/cpstrnew
            expectloc:=LOC_FPUREGISTER
          else
            expectloc:=LOC_CREFERENCE;

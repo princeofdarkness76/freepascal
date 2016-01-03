@@ -206,6 +206,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function taddnode.cmp_of_disjunct_ranges(var res : boolean) : boolean;
       var
         hp          : tnode;
@@ -375,6 +376,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function taddnode.simplify(forinline : boolean) : tnode;
       var
         t       : tnode;
@@ -1019,6 +1022,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { slow simplifications }
         if (cs_opt_level2 in current_settings.optimizerswitches) then
           begin
@@ -1145,6 +1149,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { the comparison is might be expensive and the nodes are usually only
           equal if some previous optimizations were done so don't check
           this simplification always
@@ -1176,11 +1182,14 @@ implementation
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -1324,6 +1333,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$if defined(i386) or defined(i8086)}
         if not(current_settings.fputype=fpu_x87) then
           resultrealdef:=s64floattype
@@ -1342,6 +1352,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef i386}
         if not(current_settings.fputype=fpu_x87) then
 {$endif i386}
@@ -1355,11 +1367,14 @@ implementation
           resultrealdef:=pbestrealtype^;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
         if (right.resultdef.typ=floatdef) or (left.resultdef.typ=floatdef) then
          begin
@@ -1644,6 +1659,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              { don't do it if either type is 64 bit (except for "and"),    }
              { since in that case we can't safely find a "common" type     }
 =======
@@ -1658,6 +1674,10 @@ implementation
              { don't do it if either type is 64 bit, since in that case we }
              { can't safely find a "common" type                           }
 >>>>>>> graemeg/cpstrnew
+=======
+             { don't do it if either type is 64 bit, since in that case we }
+             { can't safely find a "common" type                           }
+>>>>>>> origin/cpstrnew
              else if is_integer(ld) and is_integer(rd) and
                      not is_64bitint(ld) and not is_64bitint(rd) and
                      ((nodetype=andn) or

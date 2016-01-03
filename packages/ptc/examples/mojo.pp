@@ -224,12 +224,16 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 function FMatrix.Transpose: FMatrix; inline;
 begin
   Result.Init(Column0, Column1, Column2);
 end;
 
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -243,6 +247,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure FMatrix.TransposeInPlace; inline;
 begin
   Init(Column0, Column1, Column2);
@@ -256,12 +262,21 @@ begin
   Row[1] := Row[2]**Row[0];
   Row[1].Normalise;
 end;
+<<<<<<< HEAD
 
 operator * (const m: FMatrix; const a: Single): FMatrix; inline;
 begin
   Result.Init(m.Row[0]*a, m.Row[1]*a, m.Row[2]*a);
 end;
 
+=======
+
+operator * (const m: FMatrix; const a: Single): FMatrix; inline;
+begin
+  Result.Init(m.Row[0]*a, m.Row[1]*a, m.Row[2]*a);
+end;
+
+>>>>>>> origin/cpstrnew
 operator * (const m, a: FMatrix): FMatrix; inline;
 var
   v1, v2, v3: FVector;
@@ -538,6 +553,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure VLightPart(console: IPTCConsole; surface: IPTCSurface);
 =======
 procedure VLightPart(console: TPTCConsole; surface: TPTCSurface);
@@ -548,6 +564,9 @@ procedure VLightPart(console: TPTCConsole; surface: TPTCSurface);
 =======
 procedure VLightPart(console: TPTCConsole; surface: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure VLightPart(console: TPTCConsole; surface: TPTCSurface);
+>>>>>>> origin/cpstrnew
 var
   vl: VLight = nil;
   vl2: VLight = nil;
@@ -735,6 +754,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   console: IPTCConsole;
   surface: IPTCSurface;
@@ -753,6 +773,11 @@ var
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  format: TPTCFormat = nil;
+  console: TPTCConsole = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> origin/cpstrnew
 begin
   try
     try
@@ -769,11 +794,14 @@ begin
       console := TPTCConsole.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       { open console }
       console.open('mojo by statix', 320, 200, format);
@@ -785,11 +813,14 @@ begin
       surface := TPTCSurface.Create(320, 200, format);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       { do the light effect }
       VLightPart(console, surface);
@@ -806,11 +837,14 @@ begin
       format.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
 
     { print message to stdout }

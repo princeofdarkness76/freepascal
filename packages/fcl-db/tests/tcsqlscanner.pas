@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
 =======
     Copyright (c) 2010 by the Free Pascal development team
@@ -13,6 +14,9 @@
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> origin/cpstrnew
 
     SQL source lexical scanner test suite
 
@@ -212,6 +216,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestSum;
     procedure TestSuspend;
 =======
@@ -226,6 +231,10 @@ type
     Procedure TestSum;
     Procedure TestSuspend;
 >>>>>>> graemeg/cpstrnew
+=======
+    Procedure TestSum;
+    Procedure TestSuspend;
+>>>>>>> origin/cpstrnew
     Procedure TestTable;
     Procedure TestThen;
     Procedure TestTime;
@@ -274,6 +283,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestSymbolLiteral1;
     procedure TestSymbolLiteral2;
 =======
@@ -282,6 +292,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure TestStringError;
     procedure TestFloatError;
     Procedure TestOptionsoDoubleQuoteStringLiteral;
@@ -332,6 +344,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   EN2:=GetEnumName(TypeInfo(TSQLToken),Ord(AToken));
 =======
   EN2:=GetEnumName(TypeINfo(TSQLToken),Ord(AToken));
@@ -342,6 +355,9 @@ begin
 =======
   EN2:=GetEnumName(TypeINfo(TSQLToken),Ord(AToken));
 >>>>>>> graemeg/cpstrnew
+=======
+  EN2:=GetEnumName(TypeINfo(TSQLToken),Ord(AToken));
+>>>>>>> origin/cpstrnew
   AssertEquals(Format('Source %s should result in %s.',[ASource,EN2]),AToken,J);
 end;
 
@@ -415,6 +431,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=FScanner;
 =======
   Result:=FSCanner;
@@ -425,6 +442,9 @@ begin
 =======
   Result:=FSCanner;
 >>>>>>> graemeg/cpstrnew
+=======
+  Result:=FSCanner;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestSQLScanner.FreeScanner;
@@ -709,6 +729,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestSQLScanner.TestSymbolLiteral1;
 begin
   CheckToken(tsqlSymbolString,'%');
@@ -725,6 +746,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestSQLScanner.TestStarting;
 begin
   CheckToken(tsqlStarting,'starting');
@@ -1476,6 +1499,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // $0 should not be parsed as an identifier but as a symbol literal
   CheckToken(tsqlSymbolString,'$0');
 =======
@@ -1490,6 +1514,10 @@ begin
   FErrorSource:='$0';
   AssertException('Identifier cannot start with _',ESQLScannerError,@TestErrorSource);
 >>>>>>> graemeg/cpstrnew
+=======
+  FErrorSource:='$0';
+  AssertException('Identifier cannot start with _',ESQLScannerError,@TestErrorSource);
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestSQLScanner.TestIdentifierDotIdentifier;

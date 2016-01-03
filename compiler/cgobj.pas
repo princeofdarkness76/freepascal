@@ -145,6 +145,7 @@ unit cgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : TCGPara);virtual;
 =======
           procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : TCGPara);virtual;
@@ -155,6 +156,9 @@ unit cgobj;
 =======
           procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : TCGPara);virtual;
 >>>>>>> graemeg/cpstrnew
+=======
+          procedure a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : TCGPara);virtual;
+>>>>>>> origin/cpstrnew
           {# Pass the value of a parameter, which is located in memory, to a routine.
 
              A generic version is provided. This routine should
@@ -210,6 +214,7 @@ unit cgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           procedure a_load_cgparaloc_ref(list : TAsmList;const paraloc : TCGParaLocation;const ref : treference;sizeleft : tcgint;align : longint);
 =======
           procedure a_load_cgparaloc_ref(list : TAsmList;const paraloc : TCGParaLocation;const ref : treference;sizeleft : aint;align : longint);
@@ -220,6 +225,9 @@ unit cgobj;
 =======
           procedure a_load_cgparaloc_ref(list : TAsmList;const paraloc : TCGParaLocation;const ref : treference;sizeleft : aint;align : longint);
 >>>>>>> graemeg/cpstrnew
+=======
+          procedure a_load_cgparaloc_ref(list : TAsmList;const paraloc : TCGParaLocation;const ref : treference;sizeleft : aint;align : longint);
+>>>>>>> origin/cpstrnew
 
           {# Load a cgparaloc into any kind of register (int, fp, mm).
 
@@ -252,6 +260,7 @@ unit cgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           }
           procedure a_call_name(list : TAsmList;const s : string; weak: boolean);virtual; abstract;
           procedure a_call_reg(list : TAsmList;reg : tregister);virtual; abstract;
@@ -260,6 +269,8 @@ unit cgobj;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
              There is no a_call_ref because loading the reference will use
              a temp register on most cpu's resulting in conflicts with the
@@ -270,11 +281,14 @@ unit cgobj;
           procedure a_call_ref(list : TAsmList;ref : treference);virtual; abstract;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           { same as a_call_name, might be overridden on certain architectures to emit
             static calls without usage of a got trampoline }
           procedure a_call_name_static(list : TAsmList;const s : string);virtual;
@@ -300,6 +314,9 @@ unit cgobj;
           { Multiplication with doubling result size.
             dstlo or dsthi may be NR_NO, in which case corresponding half of result is discarded. }
           procedure a_mul_reg_reg_pair(list: TAsmList; size: tcgsize; src1,src2,dstlo,dsthi: TRegister);virtual;
+
+          { bit scan instructions }
+          procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: tcgsize; src, dst: TRegister); virtual; abstract;
 
           { bit scan instructions }
           procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: tcgsize; src, dst: TRegister); virtual; abstract;
@@ -336,6 +353,9 @@ unit cgobj;
           procedure a_opmm_loc_reg_reg(list: TAsmList;Op : TOpCG;size : tcgsize;const loc : tlocation;src,dst : tregister;shuffle : pmmshuffle); virtual;
           procedure a_opmm_reg_reg_reg(list: TAsmList; Op: TOpCG; size : tcgsize;src1,src2,dst: tregister;shuffle : pmmshuffle); virtual;
           procedure a_opmm_ref_reg_reg(list: TAsmList; Op: TOpCG; size : tcgsize;const ref: treference; src,dst: tregister;shuffle : pmmshuffle); virtual;
+
+          procedure a_loadmm_intreg_reg(list: TAsmList; fromsize, tosize : tcgsize; intreg, mmreg: tregister; shuffle: pmmshuffle); virtual;
+          procedure a_loadmm_reg_intreg(list: TAsmList; fromsize, tosize : tcgsize; mmreg, intreg: tregister; shuffle : pmmshuffle); virtual;
 
           procedure a_loadmm_intreg_reg(list: TAsmList; fromsize, tosize : tcgsize; intreg, mmreg: tregister; shuffle: pmmshuffle); virtual;
           procedure a_loadmm_reg_intreg(list: TAsmList; fromsize, tosize : tcgsize; mmreg, intreg: tregister; shuffle : pmmshuffle); virtual;
@@ -430,11 +450,14 @@ unit cgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
              @param(source Source reference of copy)
              @param(dest Destination reference of copy)
@@ -650,6 +673,7 @@ unit cgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function asmsym2indsymflags(sym: TAsmSymbol): tindsymflags;
 
 =======
@@ -658,6 +682,8 @@ unit cgobj;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure destroy_codegen;
 
 implementation
@@ -967,11 +993,14 @@ implementation
          paramanager.alloccgpara(list,cgpara);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          case cgpara.location^.loc of
             LOC_REGISTER,LOC_CREGISTER:
               a_load_reg_reg(list,size,cgpara.location^.size,r,cgpara.location^.register);
@@ -998,6 +1027,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : tcgint;const cgpara : TCGPara);
 =======
     procedure tcg.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : TCGPara);
@@ -1008,11 +1038,15 @@ implementation
 =======
     procedure tcg.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : TCGPara);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure tcg.a_load_const_cgpara(list : TAsmList;size : tcgsize;a : aint;const cgpara : TCGPara);
+>>>>>>> origin/cpstrnew
       var
          ref : treference;
       begin
          cgpara.check_simple_location;
          paramanager.alloccgpara(list,cgpara);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1024,6 +1058,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          case cgpara.location^.loc of
             LOC_REGISTER,LOC_CREGISTER:
               a_load_const_reg(list,cgpara.location^.size,a,cgpara.location^.register);
@@ -1047,6 +1083,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         sizeleft: tcgint;
 =======
         sizeleft: aint;
@@ -1057,6 +1094,9 @@ implementation
 =======
         sizeleft: aint;
 >>>>>>> graemeg/cpstrnew
+=======
+        sizeleft: aint;
+>>>>>>> origin/cpstrnew
         reghasvalue: boolean;
       begin
         location:=cgpara.location;
@@ -1085,6 +1125,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if location^.shiftval<0 then
                          a_op_const_reg(list,OP_SHL,location^.size,-location^.shiftval,location^.register);
 =======
@@ -1093,6 +1134,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                      end
                    { there's a lot more data left, and the current paraloc's
                      register is entirely filled with part of that data }
@@ -1103,6 +1146,7 @@ implementation
                    { we're at the end of the data, and it can be loaded into
                      the current location's register with a single regular
                      load }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1126,6 +1170,11 @@ implementation
                      begin
                        a_load_ref_reg(list,int_cgsize(sizeleft),location^.size,tmpref,location^.register);
 >>>>>>> graemeg/cpstrnew
+=======
+                   else if (sizeleft in [1,2{$ifndef cpu16bitalu},4{$endif}{$ifdef cpu64bitalu},8{$endif}]) then
+                     begin
+                       a_load_ref_reg(list,int_cgsize(sizeleft),location^.size,tmpref,location^.register);
+>>>>>>> origin/cpstrnew
                      end
                    { we're at the end of the data, and we need multiple loads
                      to get it in the register because it's an irregular size }
@@ -1189,6 +1238,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if location^.shiftval<0 then
                          a_op_const_reg(list,OP_SHL,location^.size,-location^.shiftval,location^.register);
 =======
@@ -1197,6 +1247,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                        { the loop will already adjust the offset and sizeleft }
                        dec(tmpref.offset,orgsizeleft);
                        sizeleft:=orgsizeleft;
@@ -1278,12 +1330,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcg.a_load_cgparaloc_ref(list : TAsmList;const paraloc : TCGParaLocation;const ref : treference;sizeleft : tcgint;align : longint);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure tcg.a_load_cgparaloc_ref(list : TAsmList;const paraloc : TCGParaLocation;const ref : treference;sizeleft : aint;align : longint);
       var
         href : treference;
@@ -2752,11 +2807,14 @@ implementation
             a_load_reg_subsetref(list,fromsize,loc.size,reg,loc.sref);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           LOC_MMREGISTER,LOC_CMMREGISTER:
             a_loadmm_intreg_reg(list,fromsize,loc.size,reg,loc.register,mms_movescalar);
           else
@@ -2971,6 +3029,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          paraloc: PCGParaLocation;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2978,10 +3037,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
          case cgpara.location^.loc of
           LOC_FPUREGISTER,LOC_CFPUREGISTER:
             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3011,6 +3073,11 @@ implementation
               paramanager.alloccgpara(list,cgpara);
               a_loadfpu_ref_reg(list,size,size,ref,cgpara.location^.register);
 >>>>>>> graemeg/cpstrnew
+=======
+              cgpara.check_simple_location;
+              paramanager.alloccgpara(list,cgpara);
+              a_loadfpu_ref_reg(list,size,size,ref,cgpara.location^.register);
+>>>>>>> origin/cpstrnew
             end;
           LOC_REFERENCE,LOC_CREFERENCE:
             begin
@@ -3514,6 +3581,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         a_loadmm_reg_ref(list,fromsize,fromsize,mmreg,tmpref,shuffle);
 =======
         cg.a_loadmm_reg_ref(list,fromsize,fromsize,mmreg,tmpref,shuffle);
@@ -3524,6 +3592,9 @@ implementation
 =======
         cg.a_loadmm_reg_ref(list,fromsize,fromsize,mmreg,tmpref,shuffle);
 >>>>>>> graemeg/cpstrnew
+=======
+        cg.a_loadmm_reg_ref(list,fromsize,fromsize,mmreg,tmpref,shuffle);
+>>>>>>> origin/cpstrnew
         a_load_ref_reg(list,tosize,tosize,tmpref,intreg);
         tg.ungettemp(list,tmpref);
       end;
@@ -4005,11 +4076,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
     procedure tcg.g_maybe_testself(list : TAsmList;reg:tregister);
@@ -4363,11 +4437,14 @@ implementation
                   if not(weak) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     current_asmdata.asmlists[al_picdata].concat(tai_directive.Create(asd_indirect_symbol,current_asmdata.RefAsmSymbol(symname).Name))
                   else
                     current_asmdata.asmlists[al_picdata].concat(tai_directive.Create(asd_indirect_symbol,current_asmdata.WeakRefAsmSymbol(symname).Name));
@@ -4645,6 +4722,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$else cpu64bitalu}
 
     function joinreg128(reglo, reghi: tregister): tregister128;
@@ -4887,6 +4965,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif cpu64bitalu}
 
     function asmsym2indsymflags(sym: TAsmSymbol): tindsymflags;
@@ -4898,6 +4978,7 @@ implementation
           include(result,is_weak);
       end;
 
+<<<<<<< HEAD
 =======
 {$endif cpu64bitalu}
 
@@ -4909,10 +4990,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure destroy_codegen;
       begin
         cg.free;
         cg:=nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4929,6 +5013,9 @@ implementation
 =======
 {$ifndef cpu64bitalu}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef cpu64bitalu}
+>>>>>>> origin/cpstrnew
         cg64.free;
         cg64:=nil;
 {$endif cpu64bitalu}

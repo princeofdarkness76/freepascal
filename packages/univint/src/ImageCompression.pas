@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
@@ -24,6 +25,11 @@
  
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> graemeg/cpstrnew
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -31,6 +37,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +52,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -102,6 +112,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -113,6 +124,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -131,6 +144,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -183,18 +197,32 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -204,6 +232,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -211,10 +240,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -272,6 +304,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -298,6 +332,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -322,6 +357,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -410,6 +454,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kDVCPROHD720p60CodecType = FourCharCode('dvhp');
 	kDVCPROHD720p50CodecType = FourCharCode('dvhq');
 	kDVCPROHD720pCodecType = kDVCPROHD720p60CodecType;
@@ -424,6 +469,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kDVCPro100NTSCCodecType = FourCharCode('dv1n');
 	kDVCPro100PALCodecType = FourCharCode('dv1p');
 	kDVCPROHD720pCodecType = FourCharCode('dvhp');
@@ -431,11 +478,14 @@ const
 	kDVCPROHD1080i50CodecType = FourCharCode('dvh5');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kBaseCodecType = FourCharCode('base');
 	kFLCCodecType = FourCharCode('flic');
 	kTargaCodecType = FourCharCode('tga ');
@@ -470,22 +520,30 @@ const
 	kH264CodecType = FourCharCode('avc1');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc not TARGET_CPU_64}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc not TARGET_CPU_64}
 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifc not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
 { one source effects }
 const
 	kBlurImageFilterType = FourCharCode('blur');
@@ -521,10 +579,14 @@ const
 	kZoomTransitionType = FourCharCode('zoom');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 { three source effects }
 const
 	kTravellingMatteEffectType = FourCharCode('trav');
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -536,6 +598,10 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/cpstrnew
 { Supported by QTNewGWorld in QuickTime 4.0 and later }
 const
 	kCMYKPixelFormat = FourCharCode('cmyk'); { CMYK, 8-bit }
@@ -550,10 +616,14 @@ const
 	k4444YpCbCrA8PixelFormat = FourCharCode('v408'); { Component Y'CbCrA 8-bit 4:4:4:4, ordered Cb Y' Cr A }
 	k4444YpCbCrA8RPixelFormat = FourCharCode('r408'); { Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased yuv, ordered A Y' Cb Cr }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 { Supported by QTNewGWorld in QuickTime 6.0 and later }
 const
 	kYUV420PixelFormat = FourCharCode('y420'); { Planar Component Y'CbCr 8-bit 4:2:0.  PixMap baseAddr points to a big-endian PlanarPixmapInfoYUV420 struct; see ImageCodec.i. }
+<<<<<<< HEAD
 =======
 
 { Supported by QTNewGWorld in QuickTime 4.0 and later }
@@ -649,6 +719,79 @@ const
 
 { output sequence flags}
 const
+=======
+
+
+{ These are the bits that are set in the Component flags, and also in the codecInfo struct. }
+const
+	codecInfoDoes1 = 1 shl 0; { codec can work with 1-bit pixels }
+	codecInfoDoes2 = 1 shl 1; { codec can work with 2-bit pixels }
+	codecInfoDoes4 = 1 shl 2; { codec can work with 4-bit pixels }
+	codecInfoDoes8 = 1 shl 3; { codec can work with 8-bit pixels }
+	codecInfoDoes16 = 1 shl 4; { codec can work with 16-bit pixels }
+	codecInfoDoes32 = 1 shl 5; { codec can work with 32-bit pixels }
+	codecInfoDoesDither = 1 shl 6; { codec can do ditherMode }
+	codecInfoDoesStretch = 1 shl 7; { codec can stretch to arbitrary sizes }
+	codecInfoDoesShrink = 1 shl 8; { codec can shrink to arbitrary sizes }
+	codecInfoDoesMask = 1 shl 9; { codec can mask to clipping regions }
+	codecInfoDoesTemporal = 1 shl 10; { codec can handle temporal redundancy }
+	codecInfoDoesDouble = 1 shl 11; { codec can stretch to double size exactly }
+	codecInfoDoesQuad = 1 shl 12; { codec can stretch to quadruple size exactly }
+	codecInfoDoesHalf = 1 shl 13; { codec can shrink to half size }
+	codecInfoDoesQuarter = 1 shl 14; { codec can shrink to quarter size }
+	codecInfoDoesRotate = 1 shl 15; { codec can rotate on decompress }
+	codecInfoDoesHorizFlip = 1 shl 16; { codec can flip horizontally on decompress }
+	codecInfoDoesVertFlip = 1 shl 17; { codec can flip vertically on decompress }
+	codecInfoHasEffectParameterList = 1 shl 18; { codec implements get effects parameter list call, once was codecInfoDoesSkew }
+	codecInfoDoesBlend = 1 shl 19; { codec can blend on decompress }
+	codecInfoDoesReorder = 1 shl 19; { codec can rearrange frames during compression }
+	codecInfoDoesWarp = 1 shl 20; { codec can warp arbitrarily on decompress }
+	codecInfoDoesMultiPass = 1 shl 20; { codec can perform multi-pass compression }
+	codecInfoDoesRecompress = 1 shl 21; { codec can recompress image without accumulating errors }
+	codecInfoDoesSpool = 1 shl 22; { codec can spool image data }
+	codecInfoDoesRateConstrain = 1 shl 23; { codec can data rate constrain }
+
+
+const
+	codecInfoDepth1 = 1 shl 0; { compressed data at 1 bpp depth available }
+	codecInfoDepth2 = 1 shl 1; { compressed data at 2 bpp depth available }
+	codecInfoDepth4 = 1 shl 2; { compressed data at 4 bpp depth available }
+	codecInfoDepth8 = 1 shl 3; { compressed data at 8 bpp depth available }
+	codecInfoDepth16 = 1 shl 4; { compressed data at 16 bpp depth available }
+	codecInfoDepth32 = 1 shl 5; { compressed data at 32 bpp depth available }
+	codecInfoDepth24 = 1 shl 6; { compressed data at 24 bpp depth available }
+	codecInfoDepth33 = 1 shl 7; { compressed data at 1 bpp monochrome depth  available }
+	codecInfoDepth34 = 1 shl 8; { compressed data at 2 bpp grayscale depth available }
+	codecInfoDepth36 = 1 shl 9; { compressed data at 4 bpp grayscale depth available }
+	codecInfoDepth40 = 1 shl 10; { compressed data at 8 bpp grayscale depth available }
+	codecInfoStoresClut = 1 shl 11; { compressed data can have custom cluts }
+	codecInfoDoesLossless = 1 shl 12; { compressed data can be stored in lossless format }
+	codecInfoSequenceSensitive = 1 shl 13; { compressed data is sensitive to out of sequence decoding }
+
+
+{ input sequence flags}
+const
+	codecFlagUseImageBuffer = 1 shl 0; { decompress}
+	codecFlagUseScreenBuffer = 1 shl 1; { decompress}
+	codecFlagUpdatePrevious = 1 shl 2; { compress}
+	codecFlagNoScreenUpdate = 1 shl 3; { decompress}
+	codecFlagWasCompressed = 1 shl 4; { compress}
+	codecFlagDontOffscreen = 1 shl 5; { decompress}
+	codecFlagUpdatePreviousComp = 1 shl 6; { compress}
+	codecFlagForceKeyFrame = 1 shl 7; { compress}
+	codecFlagOnlyScreenUpdate = 1 shl 8; { decompress}
+	codecFlagLiveGrab = 1 shl 9; { compress}
+	codecFlagDiffFrame = 1 shl 9; { decompress}
+	codecFlagDontUseNewImageBuffer = 1 shl 10; { decompress}
+	codecFlagInterlaceUpdate = 1 shl 11; { decompress}
+	codecFlagCatchUpDiff = 1 shl 12; { decompress}
+	codecFlagSupportDisable = 1 shl 13; { decompress}
+	codecFlagReenable = 1 shl 14; { decompress}
+
+
+{ output sequence flags}
+const
+>>>>>>> origin/cpstrnew
 	codecFlagOutUpdateOnNextIdle = 1 shl 9;
 	codecFlagOutUpdateOnDataSourceChange = 1 shl 10;
 	codecFlagSequenceSensitive = 1 shl 11;
@@ -656,6 +799,7 @@ const
 	codecFlagImageBufferNotSourceImage = 1 shl 13;
 	codecFlagUsedNewImageBuffer = 1 shl 14;
 	codecFlagUsedImageBuffer = 1 shl 15;
+<<<<<<< HEAD
 
 
 =======
@@ -813,6 +957,15 @@ const
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+const
+{ The minimum data size for spooling in or out data }
+	codecMinimumDataSize = 32768;
+
+
+>>>>>>> origin/cpstrnew
 const
 	compressorComponentType = FourCharCode('imco'); { the type for "Components" which compress images }
 	decompressorComponentType = FourCharCode('imdc'); { the type for "Components" which decompress images }
@@ -964,6 +1117,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
 
@@ -985,6 +1139,12 @@ type
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+{$ifc not TARGET_CPU_64}
+
+
+>>>>>>> origin/cpstrnew
 type
 	CodecInfoPtr = ^CodecInfo;
 	CodecInfo = record
@@ -1021,6 +1181,7 @@ type
 		list: array [0..0] of CodecNameSpec;
 	end;
 	CodecNameSpecListPtr = ^CodecNameSpecList;
+<<<<<<< HEAD
 const
 	defaultDither = 0;
 	forceDither = 1;
@@ -1033,6 +1194,20 @@ const
 	noDefaultOpcodes = 4;
 
 const
+=======
+const
+	defaultDither = 0;
+	forceDither = 1;
+	suppressDither = 2;
+	useColorMatching = 4;
+
+const
+	callStdBits = 1;
+	callOldBits = 2;
+	noDefaultOpcodes = 4;
+
+const
+>>>>>>> origin/cpstrnew
 	graphicsModeStraightAlpha = 256;
 	graphicsModePreWhiteAlpha = 257;
 	graphicsModePreBlackAlpha = 258;
@@ -1072,11 +1247,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 		recordSize: SIGNEDLONG;             { total number of bytes in ICMFrameTimeRecord}
 
 		frameNumber: SIGNEDLONG;            { number of frame, zero if not known}
 
+<<<<<<< HEAD
 =======
 
 		recordSize: SIGNEDLONG;             { total number of bytes in ICMFrameTimeRecord}
@@ -1098,6 +1277,8 @@ type
 		frameNumber: SIGNEDLONG;            { number of frame, zero if not known}
 
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 		flags: SIGNEDLONG;
 
 		virtualStartTime: wide;       { conceptual start time}
@@ -2744,6 +2925,7 @@ function ICMSequenceUnlockBits( seqID: ImageSequence; flags: SIGNEDLONG ): OSErr
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2756,6 +2938,15 @@ const
 	kICMPixelFormatHasAlphaChannel = 1 shl 7;
 =======
 >>>>>>> graemeg/cpstrnew
+
+const
+	kICMPixelFormatIsPlanarMask = $0F; { these bits in formatFlags indicate how many planes there are; they're 0 if chunky}
+	kICMPixelFormatIsIndexed = 1 shl 4;
+	kICMPixelFormatIsSupportedByQD = 1 shl 5;
+	kICMPixelFormatIsMonochrome = 1 shl 6;
+	kICMPixelFormatHasAlphaChannel = 1 shl 7;
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	kICMPixelFormatIsPlanarMask = $0F; { these bits in formatFlags indicate how many planes there are; they're 0 if chunky}
@@ -2782,6 +2973,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		horizontalSubsampling: array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
 		verticalSubsampling: array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
 =======
@@ -2796,6 +2988,10 @@ type
 		horizontalSubsampling:	array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
 		verticalSubsampling:	array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
 >>>>>>> graemeg/cpstrnew
+=======
+		horizontalSubsampling:	array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
+		verticalSubsampling:	array [0..13] of SInt16; { per plane; use 1 if plane is not subsampled}
+>>>>>>> origin/cpstrnew
                                               { new fields for QuickTime 6.5}
 		cmpCount: SInt16;               { for use in PixMap.cmpCount}
 		cmpSize: SInt16;                { for use in PixMap.cmpSize}
@@ -2835,6 +3031,8 @@ const
 	kICMGetChainChild = 2;
 	kICMGetChainUltimateChild = 3;
 
+<<<<<<< HEAD
+=======
 {
  *  ICMSequenceGetChainMember()
  *  
@@ -2848,6 +3046,27 @@ function ICMSequenceGetChainMember( seqID: ImageSequence; var retSeqID: ImageSeq
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+>>>>>>> origin/cpstrnew
+{
+ *  ICMSequenceGetChainMember()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ICMSequenceGetChainMember( seqID: ImageSequence; var retSeqID: ImageSequence; flags: SIGNEDLONG ): OSErr; external name '_ICMSequenceGetChainMember';
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function SetDSequenceTimeCode( seqID: ImageSequence; timeCodeFormat: UnivPtr; timeCodeTime: UnivPtr ): OSErr; external name '_SetDSequenceTimeCode';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
 {
  *  SetDSequenceTimeCode()
  *  
@@ -2857,7 +3076,11 @@ function ICMSequenceGetChainMember( seqID: ImageSequence; var retSeqID: ImageSeq
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function SetDSequenceTimeCode( seqID: ImageSequence; timeCodeFormat: UnivPtr; timeCodeTime: UnivPtr ): OSErr; external name '_SetDSequenceTimeCode';
+=======
+function CDSequenceNewMemory( seqID: ImageSequence; var data: Ptr; dataSize: Size; dataUse: SIGNEDLONG; memoryGoneProc: ICMMemoryDisposedUPP; refCon: UnivPtr ): OSErr; external name '_CDSequenceNewMemory';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2870,11 +3093,16 @@ function SetDSequenceTimeCode( seqID: ImageSequence; timeCodeFormat: UnivPtr; ti
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
+<<<<<<< HEAD
 function CDSequenceNewMemory( seqID: ImageSequence; var data: Ptr; dataSize: Size; dataUse: SIGNEDLONG; memoryGoneProc: ICMMemoryDisposedUPP; refCon: UnivPtr ): OSErr; external name '_CDSequenceNewMemory';
+=======
+function CDSequenceDisposeMemory( seqID: ImageSequence; data: Ptr ): OSErr; external name '_CDSequenceDisposeMemory';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
  *  CDSequenceDisposeMemory()
  *  
  *  Availability:
@@ -2892,6 +3120,12 @@ function CDSequenceDisposeMemory( seqID: ImageSequence; data: Ptr ): OSErr; exte
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+ *  CDSequenceNewDataSource()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2992,6 +3226,9 @@ function HitTestDSequenceData( seqID: ImageSequence; data: UnivPtr; dataSize: Si
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {
  *  SetDSequenceNonScheduledDisplayTime()
  *  
@@ -3000,6 +3237,7 @@ function HitTestDSequenceData( seqID: ImageSequence; data: UnivPtr; dataSize: Si
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+<<<<<<< HEAD
  }
 function SetDSequenceNonScheduledDisplayTime( sequence: ImageSequence; displayTime: TimeValue64; displayTimeScale: TimeScale; flags: UInt32 ): OSErr; external name '_SetDSequenceNonScheduledDisplayTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -3068,12 +3306,18 @@ function GetGraphicsImporterForFile( const (*var*) theFile: FSSpec; var gi: Comp
 function SetDSequenceNonScheduledDisplayTime( sequence: ImageSequence; displayTime: TimeValue64; displayTimeScale: TimeScale; flags: UInt32 ): OSErr; external name '_SetDSequenceNonScheduledDisplayTime';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+ }
+function SetDSequenceNonScheduledDisplayTime( sequence: ImageSequence; displayTime: TimeValue64; displayTimeScale: TimeScale; flags: UInt32 ): OSErr; external name '_SetDSequenceNonScheduledDisplayTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  GetDSequenceNonScheduledDisplayTime()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3178,70 +3422,24 @@ function ImageTranscodeSequenceBegin( var its: ImageTranscodeSequence; srcDesc: 
 =======
 function GetGraphicsImporterForFile( const (*var*) theFile: FSSpec; var gi: ComponentInstance ): OSErr; external name '_GetGraphicsImporterForFile';
 >>>>>>> graemeg/cpstrnew
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ }
+function GetDSequenceNonScheduledDisplayTime( sequence: ImageSequence; var displayTime: TimeValue64; var displayTimeScale: TimeScale ): OSErr; external name '_GetDSequenceNonScheduledDisplayTime';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 
 
 {
- *  GetGraphicsImporterForDataRef()
+ *  SetDSequenceNonScheduledDisplayDirection()
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-<<<<<<< HEAD
-function ImageTranscodeSequenceEnd( its: ImageTranscodeSequence ): OSErr; external name '_ImageTranscodeSequenceEnd';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-=======
-function GetGraphicsImporterForDataRef( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance ): OSErr; external name '_GetGraphicsImporterForDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-const
-	kDontUseValidateToFindGraphicsImporter = 1 shl 0;
-
->>>>>>> graemeg/cpstrnew
-{
- *  GetGraphicsImporterForFileWithFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
-<<<<<<< HEAD
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeFrame';
-=======
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForDataRefWithFlags';
->>>>>>> graemeg/cpstrnew
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
-<<<<<<< HEAD
-=======
- *  QTGetFileNameExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function QTGetFileNameExtension(const (*var*) fileName: StrFileName; fileType: OSType; var extension: OSType ): OSErr; external name '_QTGetFileNameExtension';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-=======
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
  }
 function SetDSequenceNonScheduledDisplayDirection( sequence: ImageSequence; rate: Fixed ): OSErr; external name '_SetDSequenceNonScheduledDisplayDirection';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -3258,7 +3456,6 @@ function SetDSequenceNonScheduledDisplayDirection( sequence: ImageSequence; rate
  }
 function GetDSequenceNonScheduledDisplayDirection( sequence: ImageSequence; var rate: Fixed ): OSErr; external name '_GetDSequenceNonScheduledDisplayDirection';
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
->>>>>>> graemeg/cpstrnew
 
 
 {
@@ -3270,15 +3467,42 @@ function GetDSequenceNonScheduledDisplayDirection( sequence: ImageSequence; var 
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
-<<<<<<< HEAD
-function ImageTranscodeSequenceBegin( var its: ImageTranscodeSequence; srcDesc: ImageDescriptionHandle; destType: OSType; var dstDesc: ImageDescriptionHandle; data: UnivPtr; dataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeSequenceBegin';
-=======
 function GetGraphicsImporterForFile( const (*var*) theFile: FSSpec; var gi: ComponentInstance ): OSErr; external name '_GetGraphicsImporterForFile';
->>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+ *  GetGraphicsImporterForDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetGraphicsImporterForDataRef( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance ): OSErr; external name '_GetGraphicsImporterForDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+const
+	kDontUseValidateToFindGraphicsImporter = 1 shl 0;
+
+{
+ *  GetGraphicsImporterForFileWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetGraphicsImporterForFileWithFlags( const (*var*) theFile: FSSpec; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForFileWithFlags';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
  *  GetGraphicsImporterForDataRef()
  *  
  *  Availability:
@@ -3307,39 +3531,6 @@ const
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
 <<<<<<< HEAD
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeFrame';
-=======
-=======
->>>>>>> graemeg/cpstrnew
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function GetGraphicsImporterForFileWithFlags( const (*var*) theFile: FSSpec; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForFileWithFlags';
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
-=======
->>>>>>> graemeg/cpstrnew
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> graemeg/cpstrnew
- *  ImageTranscodeDisposeFrameData()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function ImageTranscodeDisposeFrameData( its: ImageTranscodeSequence; dstData: UnivPtr ): OSErr; external name '_ImageTranscodeDisposeFrameData';
 =======
  *  GetGraphicsImporterForDataRefWithFlags()
  *  
@@ -3350,7 +3541,6 @@ function ImageTranscodeDisposeFrameData( its: ImageTranscodeSequence; dstData: U
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForDataRefWithFlags';
->>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3364,37 +3554,10 @@ function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: O
  *    Windows:          in qtmlClient.lib 3.0 and later
  }
 function QTGetFileNameExtension(const (*var*) fileName: StrFileName; fileType: OSType; var extension: OSType ): OSErr; external name '_QTGetFileNameExtension';
-=======
- *  GetGraphicsImporterForDataRefWithFlags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForDataRefWithFlags';
->>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
-<<<<<<< HEAD
-=======
- *  QTGetFileNameExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- }
-function QTGetFileNameExtension(const (*var*) fileName: StrFileName; fileType: OSType; var extension: OSType ): OSErr; external name '_QTGetFileNameExtension';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
-{
->>>>>>> graemeg/cpstrnew
  *  ImageTranscodeSequenceBegin()
  *  
  *  Availability:
@@ -3438,6 +3601,387 @@ function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; src
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeDisposeFrameData( its: ImageTranscodeSequence; dstData: UnivPtr ): OSErr; external name '_ImageTranscodeDisposeFrameData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  CDSequenceInvalidate()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeFrame';
+=======
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForDataRefWithFlags';
+>>>>>>> graemeg/cpstrnew
+=======
+function CDSequenceInvalidate( seqID: ImageSequence; invalRgn: RgnHandle ): OSErr; external name '_CDSequenceInvalidate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  CDSequenceSetTimeBase()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function CDSequenceSetTimeBase( seqID: ImageSequence; base: UnivPtr ): OSErr; external name '_CDSequenceSetTimeBase';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
+=======
+ *  QTGetFileNameExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function QTGetFileNameExtension(const (*var*) fileName: StrFileName; fileType: OSType; var extension: OSType ): OSErr; external name '_QTGetFileNameExtension';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ }
+function SetDSequenceNonScheduledDisplayDirection( sequence: ImageSequence; rate: Fixed ): OSErr; external name '_SetDSequenceNonScheduledDisplayDirection';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageFieldSequenceBegin( var ifs: ImageFieldSequence; desc1: ImageDescriptionHandle; desc2: ImageDescriptionHandle; descOut: ImageDescriptionHandle ): OSErr; external name '_ImageFieldSequenceBegin';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  GetDSequenceNonScheduledDisplayDirection()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ }
+function GetDSequenceNonScheduledDisplayDirection( sequence: ImageSequence; var rate: Fixed ): OSErr; external name '_GetDSequenceNonScheduledDisplayDirection';
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+
+{
+ *  GetGraphicsImporterForFile()
+ *  
+ *  Availability:
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function ImageTranscodeSequenceBegin( var its: ImageTranscodeSequence; srcDesc: ImageDescriptionHandle; destType: OSType; var dstDesc: ImageDescriptionHandle; data: UnivPtr; dataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeSequenceBegin';
+=======
+function GetGraphicsImporterForFile( const (*var*) theFile: FSSpec; var gi: ComponentInstance ): OSErr; external name '_GetGraphicsImporterForFile';
+>>>>>>> graemeg/cpstrnew
+=======
+function ImageFieldSequenceExtractCombine( ifs: ImageFieldSequence; fieldFlags: SIGNEDLONG; data1: UnivPtr; dataSize1: SIGNEDLONG; data2: UnivPtr; dataSize2: SIGNEDLONG; outputData: UnivPtr; var outDataSize: SIGNEDLONG ): OSErr; external name '_ImageFieldSequenceExtractCombine';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetGraphicsImporterForDataRef()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function ImageTranscodeSequenceEnd( its: ImageTranscodeSequence ): OSErr; external name '_ImageTranscodeSequenceEnd';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+=======
+function GetGraphicsImporterForDataRef( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance ): OSErr; external name '_GetGraphicsImporterForDataRef';
+=======
+function ImageFieldSequenceEnd( ifs: ImageFieldSequence ): OSErr; external name '_ImageFieldSequenceEnd';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+const
+<<<<<<< HEAD
+	kDontUseValidateToFindGraphicsImporter = 1 shl 0;
+
+>>>>>>> graemeg/cpstrnew
+=======
+	kICMTempThenAppMemory = 1 shl 12;
+	kICMAppThenTempMemory = 1 shl 13;
+
+{
+ *  QTNewGWorld()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function QTNewGWorld( var offscreenGWorld: GWorldPtr; PixelFormat: OSType; const (*var*) boundsRect: Rect; cTable: CTabHandle; aGDevice: GDHandle; flags: GWorldFlags ): OSErr; external name '_QTNewGWorld';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GetGraphicsImporterForFileWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeFrame';
+=======
+=======
+>>>>>>> graemeg/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetGraphicsImporterForFileWithFlags( const (*var*) theFile: FSSpec; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForFileWithFlags';
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function QTNewGWorldFromPtr( var gw: GWorldPtr; pixelFormat: OSType; const (*var*) boundsRect: Rect; cTable: CTabHandle; aGDevice: GDHandle; flags: GWorldFlags; baseAddr: UnivPtr; rowBytes: SIGNEDLONG ): OSErr; external name '_QTNewGWorldFromPtr';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> graemeg/cpstrnew
+ *  ImageTranscodeDisposeFrameData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeDisposeFrameData( its: ImageTranscodeSequence; dstData: UnivPtr ): OSErr; external name '_ImageTranscodeDisposeFrameData';
+=======
+ *  GetGraphicsImporterForDataRefWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForDataRefWithFlags';
+>>>>>>> graemeg/cpstrnew
+=======
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function QTUpdateGWorld( var offscreenGWorld: GWorldPtr; PixelFormat: OSType; const (*var*) boundsRect: Rect; cTable: CTabHandle; aGDevice: GDHandle; flags: GWorldFlags ): GWorldFlags; external name '_QTUpdateGWorld';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MakeImageDescriptionForPixMap()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function MakeImageDescriptionForPixMap( pixmap: PixMapHandle; var idh: ImageDescriptionHandle ): OSErr; external name '_MakeImageDescriptionForPixMap';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  QTGetFileNameExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function QTGetFileNameExtension(const (*var*) fileName: StrFileName; fileType: OSType; var extension: OSType ): OSErr; external name '_QTGetFileNameExtension';
+=======
+ *  GetGraphicsImporterForDataRefWithFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function GetGraphicsImporterForDataRefWithFlags( dataRef: Handle; dataRefType: OSType; var gi: ComponentInstance; flags: SIGNEDLONG ): OSErr; external name '_GetGraphicsImporterForDataRefWithFlags';
+>>>>>>> graemeg/cpstrnew
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function MakeImageDescriptionForEffect( effectType: OSType; var idh: ImageDescriptionHandle ): OSErr; external name '_MakeImageDescriptionForEffect';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  QTGetPixelSize()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function QTGetPixelSize( PixelFormat: OSType ): SInt16; external name '_QTGetPixelSize';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
+=======
+ *  QTGetFileNameExtension()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function QTGetFileNameExtension(const (*var*) fileName: StrFileName; fileType: OSType; var extension: OSType ): OSErr; external name '_QTGetFileNameExtension';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.2 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.6 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 6.0 and later
+ *    Windows:          in qtmlClient.lib 6.0 and later
+ }
+function QTGetPixelFormatDepthForImageDescription( PixelFormat: OSType ): SInt16; external name '_QTGetPixelFormatDepthForImageDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+>>>>>>> graemeg/cpstrnew
+ *  ImageTranscodeSequenceBegin()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeSequenceBegin( var its: ImageTranscodeSequence; srcDesc: ImageDescriptionHandle; destType: OSType; var dstDesc: ImageDescriptionHandle; data: UnivPtr; dataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeSequenceBegin';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function QTGetPixMapPtrRowBytes( pm: PixMapPtr ): SIGNEDLONG; external name '_QTGetPixMapPtrRowBytes';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ImageTranscodeSequenceEnd()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeSequenceEnd( its: ImageTranscodeSequence ): OSErr; external name '_ImageTranscodeSequenceEnd';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function QTGetPixMapHandleRowBytes( pm: PixMapHandle ): SIGNEDLONG; external name '_QTGetPixMapHandleRowBytes';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ImageTranscodeFrame()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscodeFrame( its: ImageTranscodeSequence; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): OSErr; external name '_ImageTranscodeFrame';
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function QTSetPixMapPtrRowBytes( pm: PixMapPtr; rowBytes: SIGNEDLONG ): OSErr; external name '_QTSetPixMapPtrRowBytes';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  ImageTranscodeDisposeFrameData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -3673,6 +4217,22 @@ const
 	kQTCCIR601VideoGammaLevel = $00023333; { 2.2, standard television video gamma.}
 
 {
+=======
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function QTSetPixMapHandleRowBytes( pm: PixMapHandle; rowBytes: SIGNEDLONG ): OSErr; external name '_QTSetPixMapHandleRowBytes';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+const
+	kQTUsePlatformDefaultGammaLevel = 0;  { When decompressing into this PixMap, gamma-correct to the platform's standard gamma. }
+	kQTUseSourceGammaLevel = -1;  { When decompressing into this PixMap, don't perform gamma-correction. }
+	kQTCCIR601VideoGammaLevel = $00023333; { 2.2, standard television video gamma.}
+
+{
+>>>>>>> origin/cpstrnew
  *  QTGetPixMapPtrGammaLevel()
  *  
  *  Availability:
@@ -3791,6 +4351,7 @@ function QuadToQuadMatrix( const (*var*) source: FixedPoint4; const (*var*) dest
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3805,6 +4366,17 @@ const
 	perspectiveMatrixType = $06;  { result if matrix is general 3 x 3 }
 =======
 >>>>>>> graemeg/cpstrnew
+
+const
+	identityMatrixType = $00; { result if matrix is identity }
+	translateMatrixType = $01; { result if matrix translates }
+	scaleMatrixType = $02; { result if matrix scales }
+	scaleTranslateMatrixType = $03; { result if matrix scales and translates }
+	linearMatrixType = $04; { result if matrix is general 2 x 2 }
+	linearTranslateMatrixType = $05; { result if matrix is general 2 x 2 and translates }
+	perspectiveMatrixType = $06;  { result if matrix is general 3 x 3 }
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	identityMatrixType = $00; { result if matrix is identity }
@@ -4255,6 +4827,7 @@ function FixPow( base: Fixed; exp: Fixed ): Fixed; external name '_FixPow';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -4265,6 +4838,10 @@ function FixPow( base: Fixed; exp: Fixed ): Fixed; external name '_FixPow';
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 type
 	GraphicsImportComponent = ComponentInstance;
 const
@@ -4537,6 +5114,7 @@ function GraphicsImportGetDataOffsetAndSize( ci: GraphicsImportComponent; var of
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4546,6 +5124,8 @@ function GraphicsImportGetDataOffsetAndSize( ci: GraphicsImportComponent; var of
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportReadData()
  *  
@@ -4819,6 +5399,7 @@ function GraphicsImportGetDataReferenceOffsetAndLimit( ci: GraphicsImportCompone
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4828,6 +5409,8 @@ function GraphicsImportGetDataReferenceOffsetAndLimit( ci: GraphicsImportCompone
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetAliasedDataReference()
  *  
@@ -5232,6 +5815,25 @@ function GraphicsImportSetImageIndexToThumbnail( ci: GraphicsImportComponent ): 
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+
+
+{$ifc TARGET_API_MAC_OSX}
+{
+ *  GraphicsImportCreateCGImage()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportCreateCGImage( ci: GraphicsImportComponent; var imageRefOut: CGImageRef; flags: UInt32 ): ComponentResult; external name '_GraphicsImportCreateCGImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$endc} {TARGET_API_MAC_OSX}
+
+=======
 
 
 {$ifc TARGET_API_MAC_OSX}
@@ -5518,7 +6120,7 @@ function GraphicsExportDoExport( ci: GraphicsExportComponent; var actualSizeWrit
 
 
 { Used for internal communication between the base and format-specific graphics exporter: }
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSaveAsPictureToDataRef()
  *  
@@ -5531,10 +6133,6 @@ function GraphicsExportDoExport( ci: GraphicsExportComponent; var actualSizeWrit
  }
 function GraphicsImportSaveAsPictureToDataRef( ci: GraphicsImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsImportSaveAsPictureToDataRef';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-=======
-
-
-{$ifc TARGET_API_MAC_OSX}
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
@@ -5543,56 +6141,7 @@ function GraphicsImportSaveAsPictureToDataRef( ci: GraphicsImportComponent; data
  }
 function GraphicsExportCanTranscode( ci: GraphicsExportComponent; var canTranscode: Boolean ): ComponentResult; external name '_GraphicsExportCanTranscode';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
- *  GraphicsImportCreateCGImage()
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- }
-function GraphicsImportCreateCGImage( ci: GraphicsImportComponent; var imageRefOut: CGImageRef; flags: UInt32 ): ComponentResult; external name '_GraphicsImportCreateCGImage';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-
-
-{$endc} {TARGET_API_MAC_OSX}
-
-=======
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function GraphicsExportDoTranscode( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoTranscode';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-
->>>>>>> graemeg/cpstrnew
-{
- *  GraphicsImportSaveAsPictureToDataRef()
- *  
- *  Availability:
-<<<<<<< HEAD
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
- }
-function GraphicsImportSaveAsPictureToDataRef( ci: GraphicsImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsImportSaveAsPictureToDataRef';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-=======
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- }
-function GraphicsExportCanUseCompressor( ci: GraphicsExportComponent; var canUseCompressor: Boolean; codecSettingsAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportCanUseCompressor';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -5613,9 +6162,9 @@ function GraphicsImportSaveAsQuickTimeImageFileToDataRef( ci: GraphicsImportComp
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportDoUseCompressor( ci: GraphicsExportComponent; codecSettingsAtomContainer: UnivPtr; var outDesc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportDoUseCompressor';
+function GraphicsExportDoTranscode( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoTranscode';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -5630,20 +6179,17 @@ function GraphicsExportDoUseCompressor( ci: GraphicsExportComponent; codecSettin
  }
 function GraphicsImportExportImageFileToDataRef( ci: GraphicsImportComponent; fileType: OSType; fileCreator: OSType; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsImportExportImageFileToDataRef';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-
-
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportDoStandaloneExport( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoStandaloneExport';
+function GraphicsExportCanUseCompressor( ci: GraphicsExportComponent; var canUseCompressor: Boolean; codecSettingsAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportCanUseCompressor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
-{ Queries applications can make of a format-specific graphics exporter: }
->>>>>>> graemeg/cpstrnew
 {
  *  GraphicsImportDoExportImageFileToDataRefDialog()
  *  
@@ -5666,11 +6212,11 @@ function GraphicsImportDoExportImageFileToDataRefDialog( ci: GraphicsImportCompo
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportGetDefaultFileTypeAndCreator( ci: GraphicsExportComponent; var fileType: OSType; var fileCreator: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileTypeAndCreator';
+function GraphicsExportDoUseCompressor( ci: GraphicsExportComponent; codecSettingsAtomContainer: UnivPtr; var outDesc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportDoUseCompressor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSetOverrideSourceColorSyncProfileRef()
  *  
@@ -5682,17 +6228,20 @@ function GraphicsExportGetDefaultFileTypeAndCreator( ci: GraphicsExportComponent
  }
 function GraphicsImportSetOverrideSourceColorSyncProfileRef( ci: GraphicsImportComponent; newOverrideSourceProfileRef: CMProfileRef ): ComponentResult; external name '_GraphicsImportSetOverrideSourceColorSyncProfileRef';
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
 =======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportGetDefaultFileNameExtension( ci: GraphicsExportComponent; var fileNameExtension: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileNameExtension';
+function GraphicsExportDoStandaloneExport( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoStandaloneExport';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
 
 
+{ Queries applications can make of a format-specific graphics exporter: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetOverrideSourceColorSyncProfileRef()
  *  
@@ -5713,13 +6262,11 @@ function GraphicsImportGetOverrideSourceColorSyncProfileRef( ci: GraphicsImportC
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportGetMIMETypeList( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMIMETypeList';
+function GraphicsExportGetDefaultFileTypeAndCreator( ci: GraphicsExportComponent; var fileType: OSType; var fileCreator: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileTypeAndCreator';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
-{ (1 unused selector) }
-{ Graphics exporter settings: }
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSetDestinationColorSyncProfileRef()
  *  
@@ -5737,9 +6284,9 @@ function GraphicsImportSetDestinationColorSyncProfileRef( ci: GraphicsImportComp
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportRequestSettings( ci: GraphicsExportComponent; filterProc: ModalFilterYDUPP; yourDataProc: UnivPtr ): ComponentResult; external name '_GraphicsExportRequestSettings';
+function GraphicsExportGetDefaultFileNameExtension( ci: GraphicsExportComponent; var fileNameExtension: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileNameExtension';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -5763,11 +6310,13 @@ function GraphicsImportGetDestinationColorSyncProfileRef( ci: GraphicsImportComp
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportSetSettingsFromAtomContainer( ci: GraphicsExportComponent; qtAtomContainer: UnivPtr ): ComponentResult; external name '_GraphicsExportSetSettingsFromAtomContainer';
+function GraphicsExportGetMIMETypeList( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMIMETypeList';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
->>>>>>> graemeg/cpstrnew
+{ (1 unused selector) }
+{ Graphics exporter settings: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportWillUseColorMatching()
  *  
@@ -5790,11 +6339,11 @@ function GraphicsImportWillUseColorMatching( ci: GraphicsImportComponent; var ou
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportGetSettingsAsAtomContainer( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetSettingsAsAtomContainer';
+function GraphicsExportRequestSettings( ci: GraphicsExportComponent; filterProc: ModalFilterYDUPP; yourDataProc: UnivPtr ): ComponentResult; external name '_GraphicsExportRequestSettings';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetGenericColorSyncProfile()
  *  
@@ -5826,12 +6375,11 @@ function GraphicsImportGetGenericColorSyncProfile( ci: GraphicsImportComponent; 
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
-function GraphicsExportGetSettingsAsText( ci: GraphicsExportComponent; var theText: Handle ): ComponentResult; external name '_GraphicsExportGetSettingsAsText';
+function GraphicsExportSetSettingsFromAtomContainer( ci: GraphicsExportComponent; qtAtomContainer: UnivPtr ): ComponentResult; external name '_GraphicsExportSetSettingsFromAtomContainer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
-{ Graphics exporters may implement some or none of the following: }
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSetReturnGenericColorSyncProfile()
  *  
@@ -5853,15 +6401,591 @@ function GraphicsImportSetReturnGenericColorSyncProfile( ci: GraphicsImportCompo
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+function GraphicsExportGetSettingsAsAtomContainer( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetSettingsAsAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportGetReturnGenericColorSyncProfile()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportGetReturnGenericColorSyncProfile( ci: GraphicsImportComponent; var returnGenericProfilesUnlessDontMatchFlagSet: Boolean ): ComponentResult; external name '_GraphicsImportGetReturnGenericColorSyncProfile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+type
+	GraphicsExportComponent = ComponentInstance;
+const
+	GraphicsExporterComponentType = FourCharCode('grex');
+	kBaseGraphicsExporterSubType = FourCharCode('base');
+
+{ Component flags for Graphics Exporter components }
+const
+	graphicsExporterIsBaseExporter = 1 shl 0;
+	graphicsExporterCanTranscode = 1 shl 1;
+	graphicsExporterUsesImageCompressor = 1 shl 2;
+
+type
+	QTResolutionSettingsPtr = ^QTResolutionSettings;
+	QTResolutionSettings = record
+		horizontalResolution: Fixed;
+		verticalResolution: Fixed;
+	end;
+type
+	QTTargetDataSizePtr = ^QTTargetDataSize;
+	QTTargetDataSize = record
+		targetDataSize: UNSIGNEDLONG;
+	end;
+type
+	QTThumbnailSettingsPtr = ^QTThumbnailSettings;
+	QTThumbnailSettings = record
+		enableThumbnail: SIGNEDLONG;        { a thoroughly padded Boolean}
+		maxThumbnailWidth: SIGNEDLONG;      { set to zero to let someone else decide}
+		maxThumbnailHeight: SIGNEDLONG;     { set to zero to let someone else decide}
+	end;
+const
+	kQTResolutionSettings = FourCharCode('reso');
+	kQTTargetDataSize = FourCharCode('dasz');
+	kQTDontRecompress = FourCharCode('dntr');
+	kQTInterlaceStyle = FourCharCode('ilac');
+	kQTColorSyncProfile = FourCharCode('iccp');
+	kQTThumbnailSettings = FourCharCode('thum');
+	kQTEnableExif = FourCharCode('exif'); { UInt8 (boolean)}
+	kQTMetaData = FourCharCode('meta');
+
+const
+	kQTTIFFCompressionMethod = FourCharCode('tifc'); { UInt32}
+	kQTTIFFCompression_None = 1;
+	kQTTIFFCompression_PackBits = 32773;
+	kQTTIFFLittleEndian = FourCharCode('tife'); { UInt8 (boolean)}
+
+const
+	kQTPNGFilterPreference = FourCharCode('pngf'); { UInt32}
+	kQTPNGFilterBestForColorType = FourCharCode('bflt');
+	kQTPNGFilterNone = 0;
+	kQTPNGFilterSub = 1;
+	kQTPNGFilterUp = 2;
+	kQTPNGFilterAverage = 3;
+	kQTPNGFilterPaeth = 4;
+	kQTPNGFilterAdaptivePerRow = FourCharCode('aflt');
+	kQTPNGInterlaceStyle = FourCharCode('ilac'); { UInt32}
+	kQTPNGInterlaceNone = 0;
+	kQTPNGInterlaceAdam7 = 1;
+
+const
+	kQTJPEGQuantizationTables = FourCharCode('jpqt');
+	kQTJPEGHuffmanTables = FourCharCode('jpht');
+
+
+{* These are GraphicsExport procedures *}
+{ To use: set the input and output (and other settings as desired) and call GEDoExport. }
+=======
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function GraphicsExportGetSettingsAsText( ci: GraphicsExportComponent; var theText: Handle ): ComponentResult; external name '_GraphicsExportGetSettingsAsText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Graphics exporters may implement some or none of the following: }
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsExportDoExport()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportDoExport( ci: GraphicsExportComponent; var actualSizeWritten: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportDoExport';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Used for internal communication between the base and format-specific graphics exporter: }
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetDontRecompress( ci: GraphicsExportComponent; dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportSetDontRecompress';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportSaveAsPictureToDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportSaveAsPictureToDataRef( ci: GraphicsImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsImportSaveAsPictureToDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+
+
+{$ifc TARGET_API_MAC_OSX}
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportCanTranscode( ci: GraphicsExportComponent; var canTranscode: Boolean ): ComponentResult; external name '_GraphicsExportCanTranscode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetDontRecompress( ci: GraphicsExportComponent; var dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportGetDontRecompress';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportCreateCGImage()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportCreateCGImage( ci: GraphicsImportComponent; var imageRefOut: CGImageRef; flags: UInt32 ): ComponentResult; external name '_GraphicsImportCreateCGImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$endc} {TARGET_API_MAC_OSX}
+
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportDoTranscode( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoTranscode';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInterlaceStyle( ci: GraphicsExportComponent; interlaceStyle: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetInterlaceStyle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportSaveAsPictureToDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportSaveAsPictureToDataRef( ci: GraphicsImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsImportSaveAsPictureToDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportCanUseCompressor( ci: GraphicsExportComponent; var canUseCompressor: Boolean; codecSettingsAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportCanUseCompressor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInterlaceStyle( ci: GraphicsExportComponent; var interlaceStyle: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInterlaceStyle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  GraphicsImportSaveAsQuickTimeImageFileToDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportSaveAsQuickTimeImageFileToDataRef( ci: GraphicsImportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsImportSaveAsQuickTimeImageFileToDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportDoUseCompressor( ci: GraphicsExportComponent; codecSettingsAtomContainer: UnivPtr; var outDesc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportDoUseCompressor';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetMetaData( ci: GraphicsExportComponent; userData: UnivPtr ): ComponentResult; external name '_GraphicsExportSetMetaData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  GraphicsImportExportImageFileToDataRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportExportImageFileToDataRef( ci: GraphicsImportComponent; fileType: OSType; fileCreator: OSType; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsImportExportImageFileToDataRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportDoStandaloneExport( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoStandaloneExport';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Queries applications can make of a format-specific graphics exporter: }
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetMetaData( ci: GraphicsExportComponent; userData: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMetaData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportDoExportImageFileToDataRefDialog()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportDoExportImageFileToDataRefDialog( ci: GraphicsImportComponent; inDataRef: Handle; inDataRefType: OSType; prompt: CFStringRef; filterProc: ModalFilterYDUPP; var outExportedType: OSType; var outDataRef: Handle; var outDataRefType: OSType ): ComponentResult; external name '_GraphicsImportDoExportImageFileToDataRefDialog';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$ifc TARGET_API_MAC_OSX}
+{ NOTE: If the source override ColorSync profile is NULL, then the image's ColorSync profile may be used if available, otherwise a generic ColorSync profile may be used. }
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportGetDefaultFileTypeAndCreator( ci: GraphicsExportComponent; var fileType: OSType; var fileCreator: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileTypeAndCreator';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetTargetDataSize( ci: GraphicsExportComponent; targetDataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetTargetDataSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportSetOverrideSourceColorSyncProfileRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportSetOverrideSourceColorSyncProfileRef( ci: GraphicsImportComponent; newOverrideSourceProfileRef: CMProfileRef ): ComponentResult; external name '_GraphicsImportSetOverrideSourceColorSyncProfileRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportGetDefaultFileNameExtension( ci: GraphicsExportComponent; var fileNameExtension: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileNameExtension';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetTargetDataSize( ci: GraphicsExportComponent; var targetDataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetTargetDataSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  GraphicsImportGetOverrideSourceColorSyncProfileRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportGetOverrideSourceColorSyncProfileRef( ci: GraphicsImportComponent; var outOverrideSourceProfileRef: CMProfileRef ): ComponentResult; external name '_GraphicsImportGetOverrideSourceColorSyncProfileRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{ NOTE: If the destination ColorSync profile is NULL, then a generic ColorSync profile may be used. }
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportGetMIMETypeList( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMIMETypeList';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ (1 unused selector) }
+{ Graphics exporter settings: }
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetCompressionMethod( ci: GraphicsExportComponent; compressionMethod: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetCompressionMethod';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportSetDestinationColorSyncProfileRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportSetDestinationColorSyncProfileRef( ci: GraphicsImportComponent; newDestinationProfileRef: CMProfileRef ): ComponentResult; external name '_GraphicsImportSetDestinationColorSyncProfileRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportRequestSettings( ci: GraphicsExportComponent; filterProc: ModalFilterYDUPP; yourDataProc: UnivPtr ): ComponentResult; external name '_GraphicsExportRequestSettings';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetCompressionMethod( ci: GraphicsExportComponent; var compressionMethod: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetCompressionMethod';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{
+ *  GraphicsImportGetDestinationColorSyncProfileRef()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportGetDestinationColorSyncProfileRef( ci: GraphicsImportComponent; var destinationProfileRef: CMProfileRef ): ComponentResult; external name '_GraphicsImportGetDestinationColorSyncProfileRef';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$endc} {TARGET_API_MAC_OSX}
+
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportSetSettingsFromAtomContainer( ci: GraphicsExportComponent; qtAtomContainer: UnivPtr ): ComponentResult; external name '_GraphicsExportSetSettingsFromAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetCompressionQuality( ci: GraphicsExportComponent; spatialQuality: CodecQ ): ComponentResult; external name '_GraphicsExportSetCompressionQuality';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportWillUseColorMatching()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportWillUseColorMatching( ci: GraphicsImportComponent; var outWillMatch: Boolean ): ComponentResult; external name '_GraphicsImportWillUseColorMatching';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$ifc TARGET_API_MAC_OSX}
+{ This convenience API is implemented by the base graphics importer for format-specific importers. }
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportGetSettingsAsAtomContainer( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetSettingsAsAtomContainer';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetCompressionQuality( ci: GraphicsExportComponent; var spatialQuality: CodecQ ): ComponentResult; external name '_GraphicsExportGetCompressionQuality';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportGetGenericColorSyncProfile()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsImportGetGenericColorSyncProfile( ci: GraphicsImportComponent; pixelFormat: OSType; reservedSetToNULL: UnivPtr; flags: UInt32; var genericColorSyncProfileOut: Handle ): ComponentResult; external name '_GraphicsImportGetGenericColorSyncProfile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$endc} {TARGET_API_MAC_OSX}
+
+{ Format-specific importers that implement GetColorSyncProfile and that want the base graphics 
+   importer to automatically support ColorSync matching should:
+   (a) implement GraphicsImportSetReturnGenericColorSyncProfile; when it is called, set an internal flag
+   (b) change GraphicsImportGetColorSyncProfile so that, if this internal flag is set,
+       when the source image file contains a profile 
+       and the kGraphicsImporterDontUseColorMatching flag is NOT set,
+       it returns a generic profile of the appropriate colorspace instead.
+   Other importers should *not* implement GraphicsImportSetReturnGenericColorSyncProfile. }
+{ WARNING: Applications should not call this API; it is internal graphics importer plumbing.
+   Set kGraphicsImporterDontUseColorMatching instead. }
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
+function GraphicsExportGetSettingsAsText( ci: GraphicsExportComponent; var theText: Handle ): ComponentResult; external name '_GraphicsExportGetSettingsAsText';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Graphics exporters may implement some or none of the following: }
+>>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetResolution( ci: GraphicsExportComponent; horizontalResolution: Fixed; verticalResolution: Fixed ): ComponentResult; external name '_GraphicsExportSetResolution';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
+{
+ *  GraphicsImportSetReturnGenericColorSyncProfile()
+ *  
+ *  Availability:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.5 and later
+ }
+function GraphicsImportSetReturnGenericColorSyncProfile( ci: GraphicsImportComponent; returnGenericProfilesUnlessDontMatchFlagSet: Boolean ): ComponentResult; external name '_GraphicsImportSetReturnGenericColorSyncProfile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{ WARNING: Applications should not call this API; it is internal graphics importer plumbing. }
+=======
+=======
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
 function GraphicsExportSetDontRecompress( ci: GraphicsExportComponent; dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportSetDontRecompress';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetResolution( ci: GraphicsExportComponent; var horizontalResolution: Fixed; var verticalResolution: Fixed ): ComponentResult; external name '_GraphicsExportGetResolution';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetReturnGenericColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
@@ -5942,16 +7066,25 @@ const
 {* These are GraphicsExport procedures *}
 { To use: set the input and output (and other settings as desired) and call GEDoExport. }
 =======
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 function GraphicsExportGetDontRecompress( ci: GraphicsExportComponent; var dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportGetDontRecompress';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetDepth( ci: GraphicsExportComponent; depth: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetDepth';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportDoExport()
  *  
@@ -5959,6 +7092,7 @@ function GraphicsExportGetDontRecompress( ci: GraphicsExportComponent; var dontR
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
@@ -5972,6 +7106,25 @@ function GraphicsExportDoExport( ci: GraphicsExportComponent; var actualSizeWrit
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function GraphicsExportSetInterlaceStyle( ci: GraphicsExportComponent; interlaceStyle: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetInterlaceStyle';
+=======
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function GraphicsExportGetDepth( ci: GraphicsExportComponent; var depth: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetDepth';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ (2 unused selectors) }
+{
+ *  GraphicsExportSetColorSyncProfile()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+function GraphicsExportSetColorSyncProfile( ci: GraphicsExportComponent; colorSyncProfile: Handle ): ComponentResult; external name '_GraphicsExportSetColorSyncProfile';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -5984,15 +7137,24 @@ function GraphicsExportSetInterlaceStyle( ci: GraphicsExportComponent; interlace
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 function GraphicsExportGetInterlaceStyle( ci: GraphicsExportComponent; var interlaceStyle: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInterlaceStyle';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetColorSyncProfile( ci: GraphicsExportComponent; var colorSyncProfile: Handle ): ComponentResult; external name '_GraphicsExportGetColorSyncProfile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Always implemented by the base graphics exporter: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSaveAsQuickTimeImageFileToDataRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6012,12 +7174,18 @@ function GraphicsExportCanTranscode( ci: GraphicsExportComponent; var canTransco
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 function GraphicsExportSetMetaData( ci: GraphicsExportComponent; userData: UnivPtr ): ComponentResult; external name '_GraphicsExportSetMetaData';
+=======
+function GraphicsExportSetProgressProc( ci: GraphicsExportComponent; progressProc: ICMProgressProcRecordPtr ): ComponentResult; external name '_GraphicsExportSetProgressProc';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6030,10 +7198,18 @@ function GraphicsExportSetMetaData( ci: GraphicsExportComponent; userData: UnivP
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 function GraphicsExportGetMetaData( ci: GraphicsExportComponent; userData: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMetaData';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+function GraphicsExportGetProgressProc( ci: GraphicsExportComponent; progressProc: ICMProgressProcRecordPtr ): ComponentResult; external name '_GraphicsExportGetProgressProc';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Sources for the input image: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportSetTargetDataSize()
  *  
@@ -6043,15 +7219,21 @@ function GraphicsExportGetMetaData( ci: GraphicsExportComponent; userData: UnivP
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 function GraphicsExportSetTargetDataSize( ci: GraphicsExportComponent; targetDataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetTargetDataSize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputDataReference( ci: GraphicsExportComponent; dataRef: Handle; dataRefType: OSType; desc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportSetInputDataReference';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  GraphicsImportExportImageFileToDataRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6064,11 +7246,14 @@ function GraphicsImportExportImageFileToDataRef( ci: GraphicsImportComponent; fi
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportDoTranscode( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoTranscode';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6077,12 +7262,17 @@ function GraphicsExportDoTranscode( ci: GraphicsExportComponent ): ComponentResu
 function GraphicsExportGetTargetDataSize( ci: GraphicsExportComponent; var targetDataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetTargetDataSize';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputDataReference( ci: GraphicsExportComponent; var dataRef: Handle; var dataRefType: OSType ): ComponentResult; external name '_GraphicsExportGetInputDataReference';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  GraphicsImportDoExportImageFileToDataRefDialog()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6099,11 +7289,14 @@ function GraphicsImportDoExportImageFileToDataRefDialog( ci: GraphicsImportCompo
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportCanUseCompressor( ci: GraphicsExportComponent; var canUseCompressor: Boolean; codecSettingsAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportCanUseCompressor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6116,10 +7309,17 @@ function GraphicsExportSetCompressionMethod( ci: GraphicsExportComponent; compre
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputFile( ci: GraphicsExportComponent; const (*var*) theFile: FSSpec; desc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportSetInputFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSetOverrideSourceColorSyncProfileRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6131,11 +7331,14 @@ function GraphicsImportSetOverrideSourceColorSyncProfileRef( ci: GraphicsImportC
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportDoUseCompressor( ci: GraphicsExportComponent; codecSettingsAtomContainer: UnivPtr; var outDesc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportDoUseCompressor';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6144,12 +7347,17 @@ function GraphicsExportDoUseCompressor( ci: GraphicsExportComponent; codecSettin
 function GraphicsExportGetCompressionMethod( ci: GraphicsExportComponent; var compressionMethod: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetCompressionMethod';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputFile( ci: GraphicsExportComponent; var theFile: FSSpec ): ComponentResult; external name '_GraphicsExportGetInputFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  GraphicsImportGetOverrideSourceColorSyncProfileRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6164,11 +7372,14 @@ function GraphicsImportGetOverrideSourceColorSyncProfileRef( ci: GraphicsImportC
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportDoStandaloneExport( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoStandaloneExport';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6182,10 +7393,17 @@ function GraphicsExportSetCompressionQuality( ci: GraphicsExportComponent; spati
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputHandle( ci: GraphicsExportComponent; h: Handle; desc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportSetInputHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSetDestinationColorSyncProfileRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6197,11 +7415,14 @@ function GraphicsImportSetDestinationColorSyncProfileRef( ci: GraphicsImportComp
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetDefaultFileTypeAndCreator( ci: GraphicsExportComponent; var fileType: OSType; var fileCreator: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileTypeAndCreator';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6210,12 +7431,17 @@ function GraphicsExportGetDefaultFileTypeAndCreator( ci: GraphicsExportComponent
 function GraphicsExportGetCompressionQuality( ci: GraphicsExportComponent; var spatialQuality: CodecQ ): ComponentResult; external name '_GraphicsExportGetCompressionQuality';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputHandle( ci: GraphicsExportComponent; var h: Handle ): ComponentResult; external name '_GraphicsExportGetInputHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  GraphicsImportGetDestinationColorSyncProfileRef()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6232,11 +7458,14 @@ function GraphicsImportGetDestinationColorSyncProfileRef( ci: GraphicsImportComp
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetDefaultFileNameExtension( ci: GraphicsExportComponent; var fileNameExtension: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileNameExtension';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6249,10 +7478,17 @@ function GraphicsExportSetResolution( ci: GraphicsExportComponent; horizontalRes
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputPtr( ci: GraphicsExportComponent; p: Ptr; size: UNSIGNEDLONG; desc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportSetInputPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportWillUseColorMatching()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6269,11 +7505,27 @@ function GraphicsImportWillUseColorMatching( ci: GraphicsImportComponent; var ou
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+function GraphicsExportGetInputPtr( ci: GraphicsExportComponent; var p: Ptr; var size: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GraphicsExportSetInputGraphicsImporter()
+ *  
+ *  Availability:
+>>>>>>> origin/cpstrnew
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetMIMETypeList( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMIMETypeList';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6288,10 +7540,17 @@ function GraphicsExportGetResolution( ci: GraphicsExportComponent; var horizonta
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputGraphicsImporter( ci: GraphicsExportComponent; grip: GraphicsImportComponent ): ComponentResult; external name '_GraphicsExportSetInputGraphicsImporter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetGenericColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6317,11 +7576,14 @@ function GraphicsImportGetGenericColorSyncProfile( ci: GraphicsImportComponent; 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportRequestSettings( ci: GraphicsExportComponent; filterProc: ModalFilterYDUPP; yourDataProc: UnivPtr ): ComponentResult; external name '_GraphicsExportRequestSettings';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6334,10 +7596,17 @@ function GraphicsExportSetDepth( ci: GraphicsExportComponent; depth: SIGNEDLONG 
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputGraphicsImporter( ci: GraphicsExportComponent; var grip: GraphicsImportComponent ): ComponentResult; external name '_GraphicsExportGetInputGraphicsImporter';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSetReturnGenericColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6353,11 +7622,14 @@ function GraphicsImportSetReturnGenericColorSyncProfile( ci: GraphicsImportCompo
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportSetSettingsFromAtomContainer( ci: GraphicsExportComponent; qtAtomContainer: UnivPtr ): ComponentResult; external name '_GraphicsExportSetSettingsFromAtomContainer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6371,10 +7643,17 @@ function GraphicsExportGetDepth( ci: GraphicsExportComponent; var depth: SIGNEDL
 
 { (2 unused selectors) }
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputPicture( ci: GraphicsExportComponent; picture: PicHandle ): ComponentResult; external name '_GraphicsExportSetInputPicture';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetReturnGenericColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6389,11 +7668,14 @@ function GraphicsImportGetReturnGenericColorSyncProfile( ci: GraphicsImportCompo
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetSettingsAsAtomContainer( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetSettingsAsAtomContainer';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6404,11 +7686,17 @@ function GraphicsExportSetColorSyncProfile( ci: GraphicsExportComponent; colorSy
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputPicture( ci: GraphicsExportComponent; var picture: PicHandle ): ComponentResult; external name '_GraphicsExportGetInputPicture';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 
 {
  *  GraphicsImportWillUseColorMatching()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6425,11 +7713,14 @@ function GraphicsImportWillUseColorMatching( ci: GraphicsImportComponent; var ou
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetSettingsAsText( ci: GraphicsExportComponent; var theText: Handle ): ComponentResult; external name '_GraphicsExportGetSettingsAsText';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6444,10 +7735,17 @@ function GraphicsExportGetColorSyncProfile( ci: GraphicsExportComponent; var col
 
 { Always implemented by the base graphics exporter: }
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputGWorld( ci: GraphicsExportComponent; gworld: GWorldPtr ): ComponentResult; external name '_GraphicsExportSetInputGWorld';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetGenericColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6473,11 +7771,14 @@ function GraphicsImportGetGenericColorSyncProfile( ci: GraphicsImportComponent; 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportSetDontRecompress( ci: GraphicsExportComponent; dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportSetDontRecompress';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6490,10 +7791,17 @@ function GraphicsExportSetProgressProc( ci: GraphicsExportComponent; progressPro
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputGWorld( ci: GraphicsExportComponent; var gworld: GWorldPtr ): ComponentResult; external name '_GraphicsExportGetInputGWorld';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportSetReturnGenericColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6509,11 +7817,14 @@ function GraphicsImportSetReturnGenericColorSyncProfile( ci: GraphicsImportCompo
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetDontRecompress( ci: GraphicsExportComponent; var dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportGetDontRecompress';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6527,10 +7838,17 @@ function GraphicsExportGetProgressProc( ci: GraphicsExportComponent; progressPro
 
 { Sources for the input image: }
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputPixmap( ci: GraphicsExportComponent; pixmap: PixMapHandle ): ComponentResult; external name '_GraphicsExportSetInputPixmap';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsImportGetReturnGenericColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -6612,11 +7930,14 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportSetInterlaceStyle( ci: GraphicsExportComponent; interlaceStyle: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetInterlaceStyle';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -6629,6 +7950,13 @@ function GraphicsExportSetInputDataReference( ci: GraphicsExportComponent; dataR
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputPixmap( ci: GraphicsExportComponent; var pixmap: PixMapHandle ): ComponentResult; external name '_GraphicsExportGetInputPixmap';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Only applicable when the input is a data reference, file, handle or ptr: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportDoExport()
  *  
@@ -6638,6 +7966,7 @@ function GraphicsExportSetInputDataReference( ci: GraphicsExportComponent; dataR
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportDoExport( ci: GraphicsExportComponent; var actualSizeWritten: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportDoExport';
@@ -6657,6 +7986,12 @@ function GraphicsExportGetInputDataReference( ci: GraphicsExportComponent; var d
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetInputOffsetAndLimit( ci: GraphicsExportComponent; offset: UNSIGNEDLONG; limit: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetInputOffsetAndLimit';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportCanTranscode()
  *  
@@ -6666,6 +8001,7 @@ function GraphicsExportGetInputDataReference( ci: GraphicsExportComponent; var d
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportCanTranscode( ci: GraphicsExportComponent; var canTranscode: Boolean ): ComponentResult; external name '_GraphicsExportCanTranscode';
@@ -6678,6 +8014,13 @@ function GraphicsExportSetInputFile( ci: GraphicsExportComponent; const (*var*) 
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+function GraphicsExportGetInputOffsetAndLimit( ci: GraphicsExportComponent; var offset: UNSIGNEDLONG; var limit: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputOffsetAndLimit';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Used by format-specific graphics exporters when transcoding: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportDoTranscode()
  *  
@@ -6689,6 +8032,7 @@ function GraphicsExportSetInputFile( ci: GraphicsExportComponent; const (*var*) 
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportDoTranscode( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoTranscode';
 =======
 function GraphicsExportGetMetaData( ci: GraphicsExportComponent; userData: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMetaData';
@@ -6696,6 +8040,9 @@ function GraphicsExportGetMetaData( ci: GraphicsExportComponent; userData: UnivP
 =======
 function GraphicsExportGetInputFile( ci: GraphicsExportComponent; var theFile: FSSpec ): ComponentResult; external name '_GraphicsExportGetInputFile';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportMayExporterReadInputData( ci: GraphicsExportComponent; var mayReadInputData: Boolean ): ComponentResult; external name '_GraphicsExportMayExporterReadInputData';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6710,6 +8057,7 @@ function GraphicsExportGetInputFile( ci: GraphicsExportComponent; var theFile: F
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportCanUseCompressor( ci: GraphicsExportComponent; var canUseCompressor: Boolean; codecSettingsAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportCanUseCompressor';
 =======
 function GraphicsExportSetTargetDataSize( ci: GraphicsExportComponent; targetDataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetTargetDataSize';
@@ -6717,6 +8065,9 @@ function GraphicsExportSetTargetDataSize( ci: GraphicsExportComponent; targetDat
 =======
 function GraphicsExportSetInputHandle( ci: GraphicsExportComponent; h: Handle; desc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportSetInputHandle';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputDataSize( ci: GraphicsExportComponent; var size: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputDataSize';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6731,6 +8082,7 @@ function GraphicsExportSetInputHandle( ci: GraphicsExportComponent; h: Handle; d
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportDoUseCompressor( ci: GraphicsExportComponent; codecSettingsAtomContainer: UnivPtr; var outDesc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportDoUseCompressor';
 =======
 function GraphicsExportGetTargetDataSize( ci: GraphicsExportComponent; var targetDataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetTargetDataSize';
@@ -6741,6 +8093,13 @@ function GraphicsExportGetInputHandle( ci: GraphicsExportComponent; var h: Handl
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+function GraphicsExportReadInputData( ci: GraphicsExportComponent; dataPtr: UnivPtr; dataOffset: UNSIGNEDLONG; dataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportReadInputData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Used by format-specific graphics exporters, especially when doing standalone export: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportDoStandaloneExport()
  *  
@@ -6750,6 +8109,7 @@ function GraphicsExportGetInputHandle( ci: GraphicsExportComponent; var h: Handl
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportDoStandaloneExport( ci: GraphicsExportComponent ): ComponentResult; external name '_GraphicsExportDoStandaloneExport';
@@ -6769,6 +8129,12 @@ function GraphicsExportSetInputPtr( ci: GraphicsExportComponent; p: Ptr; size: U
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputImageDescription( ci: GraphicsExportComponent; var desc: ImageDescriptionHandle ): ComponentResult; external name '_GraphicsExportGetInputImageDescription';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportGetDefaultFileTypeAndCreator()
  *  
@@ -6780,6 +8146,7 @@ function GraphicsExportSetInputPtr( ci: GraphicsExportComponent; p: Ptr; size: U
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportGetDefaultFileTypeAndCreator( ci: GraphicsExportComponent; var fileType: OSType; var fileCreator: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileTypeAndCreator';
 =======
 function GraphicsExportGetCompressionMethod( ci: GraphicsExportComponent; var compressionMethod: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetCompressionMethod';
@@ -6787,6 +8154,9 @@ function GraphicsExportGetCompressionMethod( ci: GraphicsExportComponent; var co
 =======
 function GraphicsExportGetInputPtr( ci: GraphicsExportComponent; var p: Ptr; var size: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputPtr';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputImageDimensions( ci: GraphicsExportComponent; var dimensions: Rect ): ComponentResult; external name '_GraphicsExportGetInputImageDimensions';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6801,6 +8171,7 @@ function GraphicsExportGetInputPtr( ci: GraphicsExportComponent; var p: Ptr; var
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportGetDefaultFileNameExtension( ci: GraphicsExportComponent; var fileNameExtension: OSType ): ComponentResult; external name '_GraphicsExportGetDefaultFileNameExtension';
 =======
 function GraphicsExportSetCompressionQuality( ci: GraphicsExportComponent; spatialQuality: CodecQ ): ComponentResult; external name '_GraphicsExportSetCompressionQuality';
@@ -6808,6 +8179,9 @@ function GraphicsExportSetCompressionQuality( ci: GraphicsExportComponent; spati
 =======
 function GraphicsExportSetInputGraphicsImporter( ci: GraphicsExportComponent; grip: GraphicsImportComponent ): ComponentResult; external name '_GraphicsExportSetInputGraphicsImporter';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetInputImageDepth( ci: GraphicsExportComponent; var inputDepth: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputImageDepth';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6820,6 +8194,7 @@ function GraphicsExportSetInputGraphicsImporter( ci: GraphicsExportComponent; gr
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetMIMETypeList( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMIMETypeList';
@@ -6840,6 +8215,13 @@ function GraphicsExportGetInputGraphicsImporter( ci: GraphicsExportComponent; va
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportDrawInputImage( ci: GraphicsExportComponent; gw: CGrafPtr; gd: GDHandle; const (*var*) srcRect: Rect; const (*var*) dstRect: Rect ): ComponentResult; external name '_GraphicsExportDrawInputImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Destinations for the output image: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportRequestSettings()
  *  
@@ -6851,6 +8233,7 @@ function GraphicsExportGetInputGraphicsImporter( ci: GraphicsExportComponent; va
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportRequestSettings( ci: GraphicsExportComponent; filterProc: ModalFilterYDUPP; yourDataProc: UnivPtr ): ComponentResult; external name '_GraphicsExportRequestSettings';
 =======
 function GraphicsExportSetResolution( ci: GraphicsExportComponent; horizontalResolution: Fixed; verticalResolution: Fixed ): ComponentResult; external name '_GraphicsExportSetResolution';
@@ -6858,6 +8241,9 @@ function GraphicsExportSetResolution( ci: GraphicsExportComponent; horizontalRes
 =======
 function GraphicsExportSetInputPicture( ci: GraphicsExportComponent; picture: PicHandle ): ComponentResult; external name '_GraphicsExportSetInputPicture';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetOutputDataReference( ci: GraphicsExportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsExportSetOutputDataReference';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6872,6 +8258,7 @@ function GraphicsExportSetInputPicture( ci: GraphicsExportComponent; picture: Pi
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportSetSettingsFromAtomContainer( ci: GraphicsExportComponent; qtAtomContainer: UnivPtr ): ComponentResult; external name '_GraphicsExportSetSettingsFromAtomContainer';
 =======
 function GraphicsExportGetResolution( ci: GraphicsExportComponent; var horizontalResolution: Fixed; var verticalResolution: Fixed ): ComponentResult; external name '_GraphicsExportGetResolution';
@@ -6879,6 +8266,9 @@ function GraphicsExportGetResolution( ci: GraphicsExportComponent; var horizonta
 =======
 function GraphicsExportGetInputPicture( ci: GraphicsExportComponent; var picture: PicHandle ): ComponentResult; external name '_GraphicsExportGetInputPicture';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetOutputDataReference( ci: GraphicsExportComponent; var dataRef: Handle; var dataRefType: OSType ): ComponentResult; external name '_GraphicsExportGetOutputDataReference';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6893,6 +8283,7 @@ function GraphicsExportGetInputPicture( ci: GraphicsExportComponent; var picture
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportGetSettingsAsAtomContainer( ci: GraphicsExportComponent; qtAtomContainerPtr: UnivPtr ): ComponentResult; external name '_GraphicsExportGetSettingsAsAtomContainer';
 =======
 function GraphicsExportSetDepth( ci: GraphicsExportComponent; depth: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetDepth';
@@ -6900,6 +8291,9 @@ function GraphicsExportSetDepth( ci: GraphicsExportComponent; depth: SIGNEDLONG 
 =======
 function GraphicsExportSetInputGWorld( ci: GraphicsExportComponent; gworld: GWorldPtr ): ComponentResult; external name '_GraphicsExportSetInputGWorld';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetOutputFile( ci: GraphicsExportComponent; const (*var*) theFile: FSSpec ): ComponentResult; external name '_GraphicsExportSetOutputFile';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6912,6 +8306,7 @@ function GraphicsExportSetInputGWorld( ci: GraphicsExportComponent; gworld: GWor
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetSettingsAsText( ci: GraphicsExportComponent; var theText: Handle ): ComponentResult; external name '_GraphicsExportGetSettingsAsText';
@@ -6932,6 +8327,12 @@ function GraphicsExportGetInputGWorld( ci: GraphicsExportComponent; var gworld: 
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetOutputFile( ci: GraphicsExportComponent; var theFile: FSSpec ): ComponentResult; external name '_GraphicsExportGetOutputFile';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportSetDontRecompress()
  *  
@@ -6943,6 +8344,7 @@ function GraphicsExportGetInputGWorld( ci: GraphicsExportComponent; var gworld: 
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportSetDontRecompress( ci: GraphicsExportComponent; dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportSetDontRecompress';
 =======
 function GraphicsExportSetColorSyncProfile( ci: GraphicsExportComponent; colorSyncProfile: Handle ): ComponentResult; external name '_GraphicsExportSetColorSyncProfile';
@@ -6950,6 +8352,9 @@ function GraphicsExportSetColorSyncProfile( ci: GraphicsExportComponent; colorSy
 =======
 function GraphicsExportSetInputPixmap( ci: GraphicsExportComponent; pixmap: PixMapHandle ): ComponentResult; external name '_GraphicsExportSetInputPixmap';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetOutputHandle( ci: GraphicsExportComponent; h: Handle ): ComponentResult; external name '_GraphicsExportSetOutputHandle';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -6962,6 +8367,7 @@ function GraphicsExportSetInputPixmap( ci: GraphicsExportComponent; pixmap: PixM
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetDontRecompress( ci: GraphicsExportComponent; var dontRecompress: Boolean ): ComponentResult; external name '_GraphicsExportGetDontRecompress';
@@ -6982,6 +8388,12 @@ function GraphicsExportGetInputPixmap( ci: GraphicsExportComponent; var pixmap: 
 
 { Only applicable when the input is a data reference, file, handle or ptr: }
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetOutputHandle( ci: GraphicsExportComponent; var h: Handle ): ComponentResult; external name '_GraphicsExportGetOutputHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportSetInterlaceStyle()
  *  
@@ -6993,6 +8405,7 @@ function GraphicsExportGetInputPixmap( ci: GraphicsExportComponent; var pixmap: 
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function GraphicsExportSetInterlaceStyle( ci: GraphicsExportComponent; interlaceStyle: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetInterlaceStyle';
 =======
 function GraphicsExportSetProgressProc( ci: GraphicsExportComponent; progressProc: ICMProgressProcRecordPtr ): ComponentResult; external name '_GraphicsExportSetProgressProc';
@@ -7000,6 +8413,9 @@ function GraphicsExportSetProgressProc( ci: GraphicsExportComponent; progressPro
 =======
 function GraphicsExportSetInputOffsetAndLimit( ci: GraphicsExportComponent; offset: UNSIGNEDLONG; limit: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetInputOffsetAndLimit';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetOutputOffsetAndMaxSize( ci: GraphicsExportComponent; offset: UNSIGNEDLONG; maxSize: UNSIGNEDLONG; truncateFile: Boolean ): ComponentResult; external name '_GraphicsExportSetOutputOffsetAndMaxSize';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7012,6 +8428,7 @@ function GraphicsExportSetInputOffsetAndLimit( ci: GraphicsExportComponent; offs
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetInterlaceStyle( ci: GraphicsExportComponent; var interlaceStyle: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInterlaceStyle';
@@ -7032,11 +8449,18 @@ function GraphicsExportGetInputOffsetAndLimit( ci: GraphicsExportComponent; var 
 
 { Used by format-specific graphics exporters when transcoding: }
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetOutputOffsetAndMaxSize( ci: GraphicsExportComponent; var offset: UNSIGNEDLONG; var maxSize: UNSIGNEDLONG; var truncateFile: Boolean ): ComponentResult; external name '_GraphicsExportGetOutputOffsetAndMaxSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportSetMetaData()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
@@ -7058,10 +8482,13 @@ function GraphicsExportMayExporterReadInputData( ci: GraphicsExportComponent; va
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetMetaData( ci: GraphicsExportComponent; userData: UnivPtr ): ComponentResult; external name '_GraphicsExportGetMetaData';
@@ -7071,6 +8498,9 @@ function GraphicsExportGetInputDataReference( ci: GraphicsExportComponent; var d
 =======
 function GraphicsExportGetInputDataSize( ci: GraphicsExportComponent; var size: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputDataSize';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetOutputFileTypeAndCreator( ci: GraphicsExportComponent; fileType: OSType; fileCreator: OSType ): ComponentResult; external name '_GraphicsExportSetOutputFileTypeAndCreator';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7079,6 +8509,7 @@ function GraphicsExportGetInputDataSize( ci: GraphicsExportComponent; var size: 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
@@ -7104,10 +8535,13 @@ function GraphicsExportReadInputData( ci: GraphicsExportComponent; dataPtr: Univ
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetTargetDataSize( ci: GraphicsExportComponent; var targetDataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetTargetDataSize';
@@ -7120,11 +8554,19 @@ function GraphicsExportGetInputImageDescription( ci: GraphicsExportComponent; va
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
+=======
+function GraphicsExportGetOutputFileTypeAndCreator( ci: GraphicsExportComponent; var fileType: OSType; var fileCreator: OSType ): ComponentResult; external name '_GraphicsExportGetOutputFileTypeAndCreator';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Used by format-specific graphics exporters: }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportSetCompressionMethod()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
@@ -7146,10 +8588,13 @@ function GraphicsExportGetInputImageDimensions( ci: GraphicsExportComponent; var
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetCompressionMethod( ci: GraphicsExportComponent; var compressionMethod: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetCompressionMethod';
@@ -7159,6 +8604,9 @@ function GraphicsExportGetInputHandle( ci: GraphicsExportComponent; var h: Handl
 =======
 function GraphicsExportGetInputImageDepth( ci: GraphicsExportComponent; var inputDepth: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputImageDepth';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportWriteOutputData( ci: GraphicsExportComponent; dataPtr: {const} UnivPtr; dataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportWriteOutputData';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7167,6 +8615,7 @@ function GraphicsExportGetInputImageDepth( ci: GraphicsExportComponent; var inpu
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
@@ -7192,10 +8641,13 @@ function GraphicsExportDrawInputImage( ci: GraphicsExportComponent; gw: CGrafPtr
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetCompressionQuality( ci: GraphicsExportComponent; var spatialQuality: CodecQ ): ComponentResult; external name '_GraphicsExportGetCompressionQuality';
@@ -7205,6 +8657,9 @@ function GraphicsExportGetInputPtr( ci: GraphicsExportComponent; var p: Ptr; var
 =======
 function GraphicsExportSetOutputDataReference( ci: GraphicsExportComponent; dataRef: Handle; dataRefType: OSType ): ComponentResult; external name '_GraphicsExportSetOutputDataReference';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportSetOutputMark( ci: GraphicsExportComponent; mark: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetOutputMark';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7213,6 +8668,7 @@ function GraphicsExportSetOutputDataReference( ci: GraphicsExportComponent; data
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
@@ -7234,10 +8690,13 @@ function GraphicsExportGetOutputDataReference( ci: GraphicsExportComponent; var 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetResolution( ci: GraphicsExportComponent; var horizontalResolution: Fixed; var verticalResolution: Fixed ): ComponentResult; external name '_GraphicsExportGetResolution';
@@ -7247,6 +8706,9 @@ function GraphicsExportGetInputGraphicsImporter( ci: GraphicsExportComponent; va
 =======
 function GraphicsExportSetOutputFile( ci: GraphicsExportComponent; const (*var*) theFile: FSSpec ): ComponentResult; external name '_GraphicsExportSetOutputFile';
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportGetOutputMark( ci: GraphicsExportComponent; var mark: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetOutputMark';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -7255,6 +8717,7 @@ function GraphicsExportSetOutputFile( ci: GraphicsExportComponent; const (*var*)
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+<<<<<<< HEAD
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
@@ -7276,10 +8739,13 @@ function GraphicsExportGetOutputFile( ci: GraphicsExportComponent; var theFile: 
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function GraphicsExportGetDepth( ci: GraphicsExportComponent; var depth: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetDepth';
@@ -7299,10 +8765,18 @@ function GraphicsExportSetOutputHandle( ci: GraphicsExportComponent; h: Handle )
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+function GraphicsExportReadOutputData( ci: GraphicsExportComponent; dataPtr: UnivPtr; dataOffset: UNSIGNEDLONG; dataSize: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportReadOutputData';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Allows embedded thumbnail creation, if supported. }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportSetColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -7318,12 +8792,22 @@ function GraphicsExportSetInputGWorld( ci: GraphicsExportComponent; gworld: GWor
 function GraphicsExportGetOutputHandle( ci: GraphicsExportComponent; var h: Handle ): ComponentResult; external name '_GraphicsExportGetOutputHandle';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.1 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.4 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0.2 and later
+ *    Windows:          in qtmlClient.lib 5.0.2 and later
+ }
+function GraphicsExportSetThumbnailEnabled( ci: GraphicsExportComponent; enableThumbnail: Boolean; maxThumbnailWidth: SIGNEDLONG; maxThumbnailHeight: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetThumbnailEnabled';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  GraphicsExportGetColorSyncProfile()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -7348,10 +8832,23 @@ function GraphicsExportSetOutputOffsetAndMaxSize( ci: GraphicsExportComponent; o
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.1 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.4 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0.2 and later
+ *    Windows:          in qtmlClient.lib 5.0.2 and later
+ }
+function GraphicsExportGetThumbnailEnabled( ci: GraphicsExportComponent; var thumbnailEnabled: Boolean; var maxThumbnailWidth: SIGNEDLONG; var maxThumbnailHeight: SIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetThumbnailEnabled';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+{ Allows export of Exif files, if supported.  This disables Exif-incompatible settings such as grayscale JPEG and compressed TIFF, and enables export of Exif metadata. }
+>>>>>>> origin/cpstrnew
 {
  *  GraphicsExportSetProgressProc()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -7367,6 +8864,15 @@ function GraphicsExportSetInputPixmap( ci: GraphicsExportComponent; pixmap: PixM
 function GraphicsExportGetOutputOffsetAndMaxSize( ci: GraphicsExportComponent; var offset: UNSIGNEDLONG; var maxSize: UNSIGNEDLONG; var truncateFile: Boolean ): ComponentResult; external name '_GraphicsExportGetOutputOffsetAndMaxSize';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.1 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.4 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0.2 and later
+ *    Windows:          in qtmlClient.lib 5.0.2 and later
+ }
+function GraphicsExportSetExifEnabled( ci: GraphicsExportComponent; enableExif: Boolean ): ComponentResult; external name '_GraphicsExportSetExifEnabled';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -7374,6 +8880,7 @@ function GraphicsExportGetOutputOffsetAndMaxSize( ci: GraphicsExportComponent; v
  *  GraphicsExportGetProgressProc()
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0.2 and later
  *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
@@ -7541,10 +9048,114 @@ function GraphicsExportSetInputPtr( ci: GraphicsExportComponent; p: Ptr; size: U
 =======
 function GraphicsExportSetOutputMark( ci: GraphicsExportComponent; mark: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportSetOutputMark';
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.1 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.4 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 5.0.2 and later
+ *    Windows:          in qtmlClient.lib 5.0.2 and later
+ }
+function GraphicsExportGetExifEnabled( ci: GraphicsExportComponent; var exifEnabled: Boolean ): ComponentResult; external name '_GraphicsExportGetExifEnabled';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+{$ifc TARGET_API_MAC_OSX}
+{
+ *  GraphicsExportSetInputCGImage()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsExportSetInputCGImage( ci: GraphicsExportComponent; imageRef: CGImageRef ): ComponentResult; external name '_GraphicsExportSetInputCGImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  GraphicsExportGetInputCGImage()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsExportGetInputCGImage( ci: GraphicsExportComponent; var imageRefOut: CGImageRef ): ComponentResult; external name '_GraphicsExportGetInputCGImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  GraphicsExportSetInputCGBitmapContext()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsExportSetInputCGBitmapContext( ci: GraphicsExportComponent; bitmapContextRef: CGContextRef ): ComponentResult; external name '_GraphicsExportSetInputCGBitmapContext';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  GraphicsExportGetInputCGBitmapContext()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsExportGetInputCGBitmapContext( ci: GraphicsExportComponent; var bitmapContextRefOut: CGContextRef ): ComponentResult; external name '_GraphicsExportGetInputCGBitmapContext';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{$endc} {TARGET_API_MAC_OSX}
+
+{
+ *  GraphicsExportSetFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsExportSetFlags( ci: GraphicsExportComponent; flags: UInt32 ): ComponentResult; external name '_GraphicsExportSetFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  GraphicsExportGetFlags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function GraphicsExportGetFlags( ci: GraphicsExportComponent; var flagsOut: UInt32 ): ComponentResult; external name '_GraphicsExportGetFlags';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+type
+	ImageTranscoderComponent = ComponentInstance;
+const
+	ImageTranscodererComponentType = FourCharCode('imtc');
+
+
+{* These are ImageTranscoder procedures *}
+{
+ *  ImageTranscoderBeginSequence()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscoderBeginSequence( itc: ImageTranscoderComponent; srcDesc: ImageDescriptionHandle; var dstDesc: ImageDescriptionHandle; data: UnivPtr; dataSize: SIGNEDLONG ): ComponentResult; external name '_ImageTranscoderBeginSequence';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
  *  GraphicsExportGetInputPtr()
  *  
  *  Availability:
@@ -7555,10 +9166,22 @@ function GraphicsExportSetOutputMark( ci: GraphicsExportComponent; mark: UNSIGNE
  *    Windows:          in qtmlClient.lib 4.0 and later
  }
 function GraphicsExportGetInputPtr( ci: GraphicsExportComponent; var p: Ptr; var size: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetInputPtr';
+=======
+ *  ImageTranscoderConvert()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscoderConvert( itc: ImageTranscoderComponent; srcData: UnivPtr; srcDataSize: SIGNEDLONG; var dstData: UnivPtr; var dstDataSize: SIGNEDLONG ): ComponentResult; external name '_ImageTranscoderConvert';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
  *  GraphicsExportSetInputGraphicsImporter()
  *  
  *  Availability:
@@ -7574,10 +9197,22 @@ function GraphicsExportSetInputGraphicsImporter( ci: GraphicsExportComponent; gr
 =======
 function GraphicsExportGetOutputMark( ci: GraphicsExportComponent; var mark: UNSIGNEDLONG ): ComponentResult; external name '_GraphicsExportGetOutputMark';
 >>>>>>> graemeg/cpstrnew
+=======
+ *  ImageTranscoderDisposeData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscoderDisposeData( itc: ImageTranscoderComponent; dstData: UnivPtr ): ComponentResult; external name '_ImageTranscoderDisposeData';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+<<<<<<< HEAD
  *  GraphicsExportGetInputGraphicsImporter()
  *  
  *  Availability:
@@ -7833,10 +9468,186 @@ function GraphicsExportGetExifEnabled( ci: GraphicsExportComponent; var exifEnab
 {$ifc TARGET_API_MAC_OSX}
 {
  *  GraphicsExportSetInputCGImage()
+=======
+ *  ImageTranscoderEndSequence()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ }
+function ImageTranscoderEndSequence( itc: ImageTranscoderComponent ): ComponentResult; external name '_ImageTranscoderEndSequence';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+//#if (MAC_OS_X_VERSION_MAX_ALLOWED == MAC_OS_X_VERSION_10_2) || //!defined(kComponentPropertyListenerCollectionContextVersion)
+
+{ MixedMode ProcInfo constants for component property calls }
+const
+	uppCallComponentGetComponentPropertyInfoProcInfo = $0003FFF0;
+	uppCallComponentGetComponentPropertyProcInfo = $0003FFF0;
+	uppCallComponentSetComponentPropertyProcInfo = $0000FFF0;
+	uppCallComponentAddComponentPropertyListenerProcInfo = $0000FFF0;
+	uppCallComponentRemoveComponentPropertyListenerProcInfo = $0000FFF0;
+
+
+{ == CallComponentGetComponentPropertyInfo flags == }
+const
+	kComponentPropertyFlagCanSetLater = 1 shl 0;
+	kComponentPropertyFlagCanSetNow = 1 shl 1;
+	kComponentPropertyFlagCanGetLater = 1 shl 2;
+	kComponentPropertyFlagCanGetNow = 1 shl 3;
+	kComponentPropertyFlagHasExtendedInfo = 1 shl 4;
+	kComponentPropertyFlagValueMustBeReleased = 1 shl 5;
+	kComponentPropertyFlagValueIsCFTypeRef = 1 shl 6;
+	kComponentPropertyFlagGetBufferMustBeInitialized = 1 shl 7;
+	kComponentPropertyFlagWillNotifyListeners = 1 shl 8;
+
+
+type
+	ComponentPropertyClass = OSType;
+	ComponentPropertyClassPtr = ^ComponentPropertyClass;
+	ComponentPropertyID = OSType;
+	ComponentPropertyIDPtr = ^ComponentPropertyID;
+	ComponentValueType = OSType;
+	ComponentValueTypePtr = ^ComponentValueType;
+	ComponentValuePtr = UnivPtr;
+	ComponentValuePtrPtr = ^ComponentValuePtr;
+	ConstComponentValuePtr = {const} UnivPtr;
+	ConstComponentValuePtrPtr = ^ConstComponentValuePtr;
+
+{ == standard property class constants == }
+const
+	kComponentPropertyClassPropertyInfo = FourCharCode('pnfo'); { property info class }
+                                        { property info property IDs }
+	kComponentPropertyInfoList = FourCharCode('list'); { array of ComponentPropertyInfo (CFData), one for each property }
+	kComponentPropertyCacheSeed = FourCharCode('seed'); { property cache seed value }
+	kComponentPropertyCacheFlags = FourCharCode('flgs'); { see kComponentPropertyCache flags }
+	kComponentPropertyExtendedInfo = FourCharCode('meta'); { CFDictionary with extended property information}
+
+
+{ values for kComponentPropertyClassPropertyInfo/kComponentPropertyCacheFlags standard component property }
+const
+	kComponentPropertyCacheFlagNotPersistent = 1 shl 0; { property metadata should not be saved in persistent cache}
+	kComponentPropertyCacheFlagIsDynamic = 1 shl 1; { property metadata should not cached at all}
+
+
+type
+	ComponentPropertyInfoPtr = ^ComponentPropertyInfo;
+	ComponentPropertyInfo = record
+		propClass: ComponentPropertyClass;
+		propID: ComponentPropertyID;
+		propType: ComponentValueType;
+		propSize: ByteCount;
+		propFlags: UInt32;
+	end;
+
+
+//#endif  { #MAC_OS_X_VERSION_10_3 <= MAC_OS_X_VERSION_MAX_ALLOWED } 
+
+
+{ == "QT" prefixed Component Property calls == }
+
+type
+	QTComponentPropertyListenerProcPtr = procedure( inComponent: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inUserData: UnivPtr );
+	QTComponentPropertyListenerUPP = QTComponentPropertyListenerProcPtr;
+
+{
+ *  QTGetComponentPropertyInfo()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function QTGetComponentPropertyInfo( inComponent: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; outPropType: ComponentValueTypePtr { can be NULL }; outPropValueSize: ByteCountPtr { can be NULL }; outPropertyFlags: UInt32Ptr { can be NULL } ): ComponentResult; external name '_QTGetComponentPropertyInfo';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  QTGetComponentProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function QTGetComponentProperty( inComponent: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inPropValueSize: ByteCount; outPropValueAddress: ComponentValuePtr; outPropValueSizeUsed: ByteCountPtr { can be NULL } ): ComponentResult; external name '_QTGetComponentProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  QTSetComponentProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function QTSetComponentProperty( inComponent: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inPropValueSize: ByteCount; inPropValueAddress: ConstComponentValuePtr ): ComponentResult; external name '_QTSetComponentProperty';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  QTAddComponentPropertyListener()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function QTAddComponentPropertyListener( inComponent: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inDispatchProc: QTComponentPropertyListenerUPP; inUserData: UnivPtr { can be NULL } ): ComponentResult; external name '_QTAddComponentPropertyListener';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{
+ *  QTRemoveComponentPropertyListener()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function QTRemoveComponentPropertyListener( inComponent: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inDispatchProc: QTComponentPropertyListenerUPP; inUserData: UnivPtr { can be NULL } ): ComponentResult; external name '_QTRemoveComponentPropertyListener';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+
+{ == "QT" prefixed Component Property Listener helpers == }
+
+
+type
+  QTComponentPropertyListenerCollectionContextPtr = ^QTComponentPropertyListenerCollectionContext;
+	QTComponentPropertyListenersRef = CFTypeRef;
+	QTComponentPropertyListenerFilterProcPtr = function( inCollection: QTComponentPropertyListenersRef; inCollectionContext: QTComponentPropertyListenerCollectionContextPtr { ptr to avoid circular reference with QTComponentPropertyListenerCollectionContext}; inNotifier: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inListenerCallbackProc: QTComponentPropertyListenerUPP; inListenerProcRefCon: {const} UnivPtr; inFilterProcRefCon: {const} UnivPtr ): Boolean;
+	QTComponentPropertyListenerFilterUPP = QTComponentPropertyListenerFilterProcPtr;
+	QTComponentPropertyListenerCollectionContext = record
+		version: UInt32;                { struct version }
+		filterProcUPP: QTComponentPropertyListenerFilterUPP;
+		filterProcData: UnivPtr;
+	end;
+const
+	kQTComponentPropertyListenerCollectionContextVersion = 1;
+
+{
+ *  NewQTComponentPropertyListenerUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewQTComponentPropertyListenerUPP( userRoutine: QTComponentPropertyListenerProcPtr ): QTComponentPropertyListenerUPP; external name '_NewQTComponentPropertyListenerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{
+ *  NewQTComponentPropertyListenerFilterUPP()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
+ *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 function GraphicsExportSetInputCGImage( ci: GraphicsExportComponent; imageRef: CGImageRef ): ComponentResult; external name '_GraphicsExportSetInputCGImage';
@@ -7845,10 +9656,20 @@ function GraphicsExportSetInputCGImage( ci: GraphicsExportComponent; imageRef: C
 
 {
  *  GraphicsExportGetInputCGImage()
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewQTComponentPropertyListenerFilterUPP( userRoutine: QTComponentPropertyListenerFilterProcPtr ): QTComponentPropertyListenerFilterUPP; external name '_NewQTComponentPropertyListenerFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{
+ *  DisposeQTComponentPropertyListenerUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 function GraphicsExportGetInputCGImage( ci: GraphicsExportComponent; var imageRefOut: CGImageRef ): ComponentResult; external name '_GraphicsExportGetInputCGImage';
@@ -7857,10 +9678,20 @@ function GraphicsExportGetInputCGImage( ci: GraphicsExportComponent; var imageRe
 
 {
  *  GraphicsExportSetInputCGBitmapContext()
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTComponentPropertyListenerUPP( userUPP: QTComponentPropertyListenerUPP ); external name '_DisposeQTComponentPropertyListenerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{
+ *  DisposeQTComponentPropertyListenerFilterUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 function GraphicsExportSetInputCGBitmapContext( ci: GraphicsExportComponent; bitmapContextRef: CGContextRef ): ComponentResult; external name '_GraphicsExportSetInputCGBitmapContext';
@@ -7869,10 +9700,20 @@ function GraphicsExportSetInputCGBitmapContext( ci: GraphicsExportComponent; bit
 
 {
  *  GraphicsExportGetInputCGBitmapContext()
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeQTComponentPropertyListenerFilterUPP( userUPP: QTComponentPropertyListenerFilterUPP ); external name '_DisposeQTComponentPropertyListenerFilterUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{
+ *  InvokeQTComponentPropertyListenerUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 function GraphicsExportGetInputCGBitmapContext( ci: GraphicsExportComponent; var bitmapContextRefOut: CGContextRef ): ComponentResult; external name '_GraphicsExportGetInputCGBitmapContext';
@@ -7883,10 +9724,20 @@ function GraphicsExportGetInputCGBitmapContext( ci: GraphicsExportComponent; var
 
 {
  *  GraphicsExportSetFlags()
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure InvokeQTComponentPropertyListenerUPP( inComponent: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inUserData: UnivPtr; userUPP: QTComponentPropertyListenerUPP ); external name '_InvokeQTComponentPropertyListenerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+{
+ *  InvokeQTComponentPropertyListenerFilterUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
+<<<<<<< HEAD
  *    Non-Carbon CFM:   not available
  }
 function GraphicsExportSetFlags( ci: GraphicsExportComponent; flags: UInt32 ): ComponentResult; external name '_GraphicsExportSetFlags';
@@ -14156,6 +16007,8 @@ function QTPixelBufferContextCreate( allocator: CFAllocatorRef { can be NULL }; 
 
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   available as macro/inline
  }
 function InvokeQTComponentPropertyListenerFilterUPP( inCollection: QTComponentPropertyListenersRef; const (*var*) inCollectionContext: QTComponentPropertyListenerCollectionContext; inNotifier: ComponentInstance; inPropClass: ComponentPropertyClass; inPropID: ComponentPropertyID; inListenerCallbackProc: QTComponentPropertyListenerUPP; inListenerProcRefCon: {const} UnivPtr; inFilterProcRefCon: {const} UnivPtr; userUPP: QTComponentPropertyListenerFilterUPP ): Boolean; external name '_InvokeQTComponentPropertyListenerFilterUPP';
@@ -14363,7 +16216,10 @@ const
 
 
 { UPP call backs }
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { selectors for component calls }
 const
@@ -19362,9 +21218,12 @@ function QTPixelBufferContextCreate( allocator: CFAllocatorRef { can be NULL }; 
 {$endc} {not TARGET_CPU_64}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

@@ -15,6 +15,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
@@ -25,6 +26,9 @@
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/cpstrnew
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/cpstrnew
 }
 {
   See the file COPYING.modifiedLGPL, included in this distribution,
@@ -387,6 +391,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -394,6 +399,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$R-}
   ChunkIndex:=PostHeader.ListChunkInfo.TopAOLIChunkIndex;
   if ChunkIndex = -1 then
@@ -448,6 +455,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$pop}
 =======
   {$R+}
@@ -458,6 +466,9 @@ begin
 =======
   {$R+}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$R+}
+>>>>>>> origin/cpstrnew
   Chunk.Free;
   Result := fCachedEntry.DecompressedLength;
 

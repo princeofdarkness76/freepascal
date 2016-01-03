@@ -64,8 +64,11 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   andl    $0xfffffff0,%esp        { Align stack to 16 bytes }
 =======
+=======
+>>>>>>> origin/cpstrnew
   andl    $0xfffffff8,%esp        { Align stack }
 >>>>>>> graemeg/cpstrnew
 =======
@@ -86,6 +89,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         addl  $_GLOBAL_OFFSET_TABLE_+1,%ebx
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
@@ -96,6 +100,9 @@ asm
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 >>>>>>> graemeg/cpstrnew
+=======
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+>>>>>>> origin/cpstrnew
 
 	movl  dlexitproc@GOT(%ebx),%ecx
 	movl  %edx,(%ecx)
@@ -127,6 +134,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         addl  $_GLOBAL_OFFSET_TABLE_+1,%ebx
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
@@ -137,6 +145,9 @@ asm
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 >>>>>>> graemeg/cpstrnew
+=======
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+>>>>>>> origin/cpstrnew
 	movl  initialstkptr@GOT(%ebx),%ebx
   	movl  %esp,(%ebx)
 	popl  %ebx
@@ -173,6 +184,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .Lhaltproc:
 >>>>>>> graemeg/cpstrnew
@@ -182,10 +194,14 @@ asm
 =======
 .Lhaltproc:
 >>>>>>> graemeg/cpstrnew
+=======
+.Lhaltproc:
+>>>>>>> origin/cpstrnew
   {$ifdef FPC_PIC}
         call  .Lpiclab
 .Lpiclab:
         popl  %ebx
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -199,6 +215,9 @@ asm
 =======
         addl  $_GLOBAL_OFFSET_TABLE_,%ebx
 >>>>>>> graemeg/cpstrnew
+=======
+        addl  $_GLOBAL_OFFSET_TABLE_,%ebx
+>>>>>>> origin/cpstrnew
         movl  dlexitproc@GOT(%ebx),%eax
         movl  (%eax),%eax
   {$else FPC_PIC}
@@ -209,6 +228,7 @@ asm
   call    *%eax
 .Lnodlexitproc:
   movl    syscall_nr_exit_group,%eax
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -225,6 +245,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifdef FPC_PIC}
   call    .Lpiclab2
@@ -272,9 +294,12 @@ asm
   jmp     .Lhaltproc
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;

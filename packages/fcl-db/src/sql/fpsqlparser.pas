@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 2010-2014 by the Free Pascal development team
 =======
     Copyright (c) 2010 by the Free Pascal development team
@@ -13,6 +14,9 @@
 =======
     Copyright (c) 2010 by the Free Pascal development team
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (c) 2010 by the Free Pascal development team
+>>>>>>> origin/cpstrnew
 
     SQL source syntax parser
 
@@ -64,6 +68,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure UnexpectedToken; overload;
     procedure UnexpectedToken(AExpected : TSQLTokens); overload;
     // All elements must be created with this factory function
@@ -85,6 +90,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Procedure UnexpectedToken; overload;
     Procedure UnexpectedToken(AExpected : TSQLTokens); overload;
     // All elements must be created with this factory function
@@ -98,11 +105,14 @@ Type
     Procedure Error(Fmt : String; Args : Array of const);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Expression support
     function ParseExprLevel1(AParent: TSQLElement; EO : TExpressionOptions): TSQLExpression;
     function ParseExprLevel2(AParent: TSQLElement; EO : TExpressionOptions): TSQLExpression;
@@ -189,6 +199,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Parses both create and alter statements
 =======
 >>>>>>> graemeg/cpstrnew
@@ -196,6 +207,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Function ParseCreateStatement(AParent : TSQLElement; IsAlter : Boolean = False) : TSQLCreateOrAlterStatement;
     Function ParseDropStatement(AParent : TSQLElement) : TSQLDropStatement;
     Function ParseRollbackStatement(AParent : TSQLElement) : TSQLRollbackStatement;
@@ -204,6 +217,7 @@ Type
     Function ParseConnectStatement(AParent : TSQLElement) : TSQLConnectStatement;
     Function ParseGrantStatement(AParent: TSQLElement): TSQLGrantStatement;
     Function ParseRevokeStatement(AParent: TSQLElement): TSQLGrantStatement;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -219,10 +233,14 @@ Type
 =======
     Function Parse : TSQLElement;
 >>>>>>> graemeg/cpstrnew
+=======
+    Function Parse : TSQLElement;
+>>>>>>> origin/cpstrnew
     Function ParseScript(AllowPartial : Boolean = False) : TSQLElementList;
     // Auxiliary stuff
     Function CurrentToken : TSQLToken;
     Function CurrentTokenString : String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -238,6 +256,9 @@ Type
 =======
     Function GetNextToken : TSQLToken;
 >>>>>>> graemeg/cpstrnew
+=======
+    Function GetNextToken : TSQLToken;
+>>>>>>> origin/cpstrnew
     Function PeekNextToken : TSQLToken;
     Function PreviousToken : TSQLToken;
     Function IsEndOfLine : Boolean;
@@ -275,6 +296,7 @@ Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrDomainNotAllowed = 'Domain name not allowed in type definition.';
   SErrExpectedChar = 'Expected CHAR or CHARACTER, got "%s"';
   SErrVaryingNotAllowed = 'VARYING not allowed at this point.';
@@ -293,6 +315,11 @@ Resourcestring
   SErrExpectedChar = 'Expected CHAR or CHARACTER, got "%s"';
   SERRVaryingNotAllowed = 'VARYING not allowed at this point.';
 >>>>>>> graemeg/cpstrnew
+=======
+  SErrDomainNotAllowed = 'Domain name not allowed in typ definition.';
+  SErrExpectedChar = 'Expected CHAR or CHARACTER, got "%s"';
+  SERRVaryingNotAllowed = 'VARYING not allowed at this point.';
+>>>>>>> origin/cpstrnew
   SErrUnknownBooleanOp = 'Unknown boolean operation';
   SErrUnknownComparison = 'unknown Comparison operation';
   SErrIntegerExpected = 'Integer expression expected';
@@ -309,6 +336,7 @@ Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrOuterWithout = 'OUTER without preceding LEFT, RIGHT or FULL';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -316,6 +344,8 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Function StringToSQLExtractElement(Const S : TSQLStringType; Out Res : TSQLExtractElement) : Boolean;
 
@@ -360,6 +390,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.Consume(aTokens: TSQLTokens);
 begin
   Expect(aTokens);
@@ -372,6 +403,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TSQLParser.CurSource: String;
 begin
   Result:=FScanner.CurFilename;
@@ -426,6 +459,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseTableRef(AParent: TSQLSelectStatement
   ): TSQLTableReference;
 =======
@@ -437,6 +471,9 @@ Function TSQLParser.ParseTableRef(AParent : TSQLSelectStatement) : TSQLTableRefe
 =======
 Function TSQLParser.ParseTableRef(AParent : TSQLSelectStatement) : TSQLTableReference;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseTableRef(AParent : TSQLSelectStatement) : TSQLTableReference;
+>>>>>>> origin/cpstrnew
 Var
   T : TSQLSimpleTablereference;
   J  : TSQLJoinTableReference;
@@ -463,6 +500,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      // Table aliases with and without AS keyword
      if (CurrentToken in [tsqlIdentifier,tsqlAs]) then
        begin
@@ -483,11 +521,16 @@ begin
      if (CurrentToken=tsqlIdentifier) then
        begin
 >>>>>>> graemeg/cpstrnew
+=======
+     if (CurrentToken=tsqlIdentifier) then
+       begin
+>>>>>>> origin/cpstrnew
        T.AliasName:=CreateIdentifier(T,CurrentTokenString);
        GetNextToken;
        end;
      end;
    Repeat
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -501,6 +544,9 @@ begin
 =======
      If CurrentToken in [tsqlInner,tsqlJoin,tsqlOuter,tsqlLeft,tsqlRight] then
 >>>>>>> graemeg/cpstrnew
+=======
+     If CurrentToken in [tsqlInner,tsqlJoin,tsqlOuter,tsqlLeft,tsqlRight] then
+>>>>>>> origin/cpstrnew
        begin
        J:=TSQLJoinTableReference(CreateElement(TSQLJoinTableReference,AParent));
        J.Left:=Result;
@@ -508,6 +554,7 @@ begin
        Case CurrentToken of
           tsqlInner : J.JoinType:=jtInner;
           tsqlJoin  : J.JoinType:=jtNone;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -521,11 +568,15 @@ begin
 =======
           tsqlOuter : J.JoinType:=jtOuter;
 >>>>>>> graemeg/cpstrnew
+=======
+          tsqlOuter : J.JoinType:=jtOuter;
+>>>>>>> origin/cpstrnew
           tsqlLeft  : J.JoinType:=jtLeft;
           tsqlRight : J.JoinType:=jtRight;
        end;
        if CurrentToken<>tsqlJoin then
          GetNextToken;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -543,11 +594,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        Consume(tsqlJoin);
        J.Right:=ParseTableRef(AParent);
        Consume(tsqlOn);
        J.JoinClause:=ParseExprLevel1(J,[eoJOIN]);
        end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -561,17 +615,22 @@ procedure TSQLParser.ParseFromClause(AParent: TSQLSelectStatement;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   until Not (CurrentToken in [tsqlInner,tsqlJoin,tsqlOuter,tsqlLeft,tsqlRight]);
 end;
 
 Procedure TSQLParser.ParseFromClause(AParent : TSQLSelectStatement; AList : TSQLElementList);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Var
   T : TSQLTableReference;
@@ -592,6 +651,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseSelectFieldList(AParent: TSQLSelectStatement;
   AList: TSQLElementList; Singleton: Boolean);
 =======
@@ -603,6 +663,9 @@ Procedure TSQLParser.ParseSelectFieldList(AParent : TSQLSelectStatement; AList :
 =======
 Procedure TSQLParser.ParseSelectFieldList(AParent : TSQLSelectStatement; AList : TSQLElementList; Singleton : Boolean);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseSelectFieldList(AParent : TSQLSelectStatement; AList : TSQLElementList; Singleton : Boolean);
+>>>>>>> origin/cpstrnew
 Var
   F : TSQLSelectField;
   B : Boolean;
@@ -654,6 +717,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseGroupBy(AParent: TSQLSelectStatement;
   AList: TSQLElementList);
 =======
@@ -665,6 +729,9 @@ Procedure TSQLParser.ParseGroupBy(AParent : TSQLSelectStatement; AList : TSQLEle
 =======
 Procedure TSQLParser.ParseGroupBy(AParent : TSQLSelectStatement; AList : TSQLElementList);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseGroupBy(AParent : TSQLSelectStatement; AList : TSQLElementList);
+>>>>>>> origin/cpstrnew
 
 Var
   N : TSQLStringType;
@@ -693,6 +760,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseForUpdate(AParent: TSQLSelectStatement
   ): TSQLElementList;
 =======
@@ -704,6 +772,9 @@ Function TSQLParser.ParseForUpdate(AParent : TSQLSelectStatement) : TSQLElementL
 =======
 Function TSQLParser.ParseForUpdate(AParent : TSQLSelectStatement) : TSQLElementList;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseForUpdate(AParent : TSQLSelectStatement) : TSQLElementList;
+>>>>>>> origin/cpstrnew
 
 begin
   // On entry we're on the FOR token.
@@ -725,6 +796,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseOrderBy(AParent: TSQLSelectStatement;
   AList: TSQLElementList);
 =======
@@ -736,10 +808,14 @@ Procedure TSQLParser.ParseOrderBy(AParent : TSQLSelectStatement; AList : TSQLEle
 =======
 Procedure TSQLParser.ParseOrderBy(AParent : TSQLSelectStatement; AList : TSQLElementList);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseOrderBy(AParent : TSQLSelectStatement; AList : TSQLElementList);
+>>>>>>> origin/cpstrnew
 
 Var
   O : TSQLOrderByElement;
   F : TSQLElement;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -750,6 +826,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   // On entry we're on the ORDER token.
@@ -757,6 +835,7 @@ begin
   Expect(tsqlBy);
   Repeat
     GetNextToken;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -780,17 +859,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Case CurrentToken of
       tsqlIdentifier :
         F:=CreateIdentifier(AParent,CurrentTokenString);
       tsqlIntegerNumber :
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         begin
         F:=TSQLIntegerLiteral(CreateElement(TSQLIntegerLiteral,AParent));
         TSQLIntegerLiteral(F).Value:=StrToInt(CurrentTokenString);
@@ -829,6 +913,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseSelectPlan(AParent: TSQLElement): TSQLSelectPlan;
 =======
 Function TSQLParser.ParseSelectPlan(AParent : TSQLElement) : TSQLSelectPlan;
@@ -839,6 +924,9 @@ Function TSQLParser.ParseSelectPlan(AParent : TSQLElement) : TSQLSelectPlan;
 =======
 Function TSQLParser.ParseSelectPlan(AParent : TSQLElement) : TSQLSelectPlan;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseSelectPlan(AParent : TSQLElement) : TSQLSelectPlan;
+>>>>>>> origin/cpstrnew
 
 Var
   E : TSQLSelectPlanExpr;
@@ -1105,6 +1193,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseTableFieldDef(AParent: TSQLElement): TSQLTableFieldDef;
 =======
 Function TSQLParser.ParseTableFieldDef(AParent : TSQLElement) : TSQLTableFieldDef;
@@ -1115,6 +1204,9 @@ Function TSQLParser.ParseTableFieldDef(AParent : TSQLElement) : TSQLTableFieldDe
 =======
 Function TSQLParser.ParseTableFieldDef(AParent : TSQLElement) : TSQLTableFieldDef;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseTableFieldDef(AParent : TSQLElement) : TSQLTableFieldDef;
+>>>>>>> origin/cpstrnew
 begin
   // on entry, we're on the field name
   Result:=TSQLTableFieldDef(CreateElement(TSQLTableFieldDef,AParent));
@@ -1133,6 +1225,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     else //not computed, regular field
 =======
     else
@@ -1143,6 +1236,9 @@ begin
 =======
     else
 >>>>>>> graemeg/cpstrnew
+=======
+    else
+>>>>>>> origin/cpstrnew
       Result.FieldType:=ParseTypeDefinition(Result,[ptfAllowDomainName,ptfAllowConstraint,ptfTableFieldDef]);
   except
     FreeAndNil(Result);
@@ -1503,6 +1599,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseProcedureParamList(AParent: TSQLElement;
   AList: TSQLElementList);
 =======
@@ -1514,6 +1611,9 @@ Procedure TSQLParser.ParseProcedureParamList(AParent: TSQLElement; AList : TSQLE
 =======
 Procedure TSQLParser.ParseProcedureParamList(AParent: TSQLElement; AList : TSQLElementList);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseProcedureParamList(AParent: TSQLElement; AList : TSQLElementList);
+>>>>>>> origin/cpstrnew
 
 Var
   P : TSQLProcedureParamDef;
@@ -1540,6 +1640,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseCreateProcedureVariableList(AParent: TSQLElement;
   AList: TSQLElementList);
 =======
@@ -1551,6 +1652,9 @@ Procedure TSQLParser.ParseCreateProcedureVariableList(AParent: TSQLElement; ALis
 =======
 Procedure TSQLParser.ParseCreateProcedureVariableList(AParent: TSQLElement; AList : TSQLElementList);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseCreateProcedureVariableList(AParent: TSQLElement; AList : TSQLElementList);
+>>>>>>> origin/cpstrnew
 
 Var
   P : TSQLProcedureParamDef;
@@ -1578,6 +1682,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseIfStatement(AParent: TSQLElement): TSQLIFStatement;
 =======
 Function TSQLParser.ParseIfStatement(AParent : TSQLElement) : TSQLIFStatement;
@@ -1588,6 +1693,9 @@ Function TSQLParser.ParseIfStatement(AParent : TSQLElement) : TSQLIFStatement;
 =======
 Function TSQLParser.ParseIfStatement(AParent : TSQLElement) : TSQLIFStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseIfStatement(AParent : TSQLElement) : TSQLIFStatement;
+>>>>>>> origin/cpstrnew
 
 Var
   Pt : TSQLToken;
@@ -1639,6 +1747,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseForStatement(AParent: TSQLElement): TSQLForStatement;
 =======
 Function TSQLParser.ParseForStatement(AParent : TSQLElement) : TSQLForStatement;
@@ -1649,6 +1758,9 @@ Function TSQLParser.ParseForStatement(AParent : TSQLElement) : TSQLForStatement;
 =======
 Function TSQLParser.ParseForStatement(AParent : TSQLElement) : TSQLForStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseForStatement(AParent : TSQLElement) : TSQLForStatement;
+>>>>>>> origin/cpstrnew
 
 begin
   // On Entry, we're on the FOR token
@@ -1670,6 +1782,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExceptionStatement(AParent: TSQLElement
   ): TSQLExceptionStatement;
 =======
@@ -1681,6 +1794,9 @@ Function TSQLParser.ParseExceptionStatement(AParent : TSQLElement) : TSQLExcepti
 =======
 Function TSQLParser.ParseExceptionStatement(AParent : TSQLElement) : TSQLExceptionStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExceptionStatement(AParent : TSQLElement) : TSQLExceptionStatement;
+>>>>>>> origin/cpstrnew
 
 begin
   // On Entry, we're on the EXCEPTION token
@@ -1699,6 +1815,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseAssignStatement(AParent: TSQLElement
   ): TSQLAssignStatement;
 =======
@@ -1710,6 +1827,9 @@ Function TSQLParser.ParseAssignStatement(AParent : TSQLElement) : TSQLAssignStat
 =======
 Function TSQLParser.ParseAssignStatement(AParent : TSQLElement) : TSQLAssignStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseAssignStatement(AParent : TSQLElement) : TSQLAssignStatement;
+>>>>>>> origin/cpstrnew
 
 Var
   N  : TSQLStringType;
@@ -1740,6 +1860,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParsePostEventStatement(AParent: TSQLElement
   ): TSQLPostEventStatement;
 =======
@@ -1751,6 +1872,9 @@ Function TSQLParser.ParsePostEventStatement(AParent : TSQLElement) : TSQLPostEve
 =======
 Function TSQLParser.ParsePostEventStatement(AParent : TSQLElement) : TSQLPostEventStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParsePostEventStatement(AParent : TSQLElement) : TSQLPostEventStatement;
+>>>>>>> origin/cpstrnew
 
 begin
   // On Entry, we're on the POST_EVENT token
@@ -1773,6 +1897,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseWhileStatement(AParent: TSQLElement
   ): TSQLWhileStatement;
 =======
@@ -1784,6 +1909,9 @@ Function TSQLParser.ParseWhileStatement(AParent : TSQLElement) : TSQLWhileStatem
 =======
 Function TSQLParser.ParseWhileStatement(AParent : TSQLElement) : TSQLWhileStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseWhileStatement(AParent : TSQLElement) : TSQLWhileStatement;
+>>>>>>> origin/cpstrnew
 
 begin
   // On entry, we're on the WHILE Token
@@ -1804,6 +1932,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseWhenStatement(AParent: TSQLElement): TSQLWhenStatement;
 =======
 Function TSQLParser.ParseWhenStatement(AParent : TSQLElement) : TSQLWhenStatement;
@@ -1814,6 +1943,9 @@ Function TSQLParser.ParseWhenStatement(AParent : TSQLElement) : TSQLWhenStatemen
 =======
 Function TSQLParser.ParseWhenStatement(AParent : TSQLElement) : TSQLWhenStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseWhenStatement(AParent : TSQLElement) : TSQLWhenStatement;
+>>>>>>> origin/cpstrnew
 
 Var
   E : TSQLWhenException;
@@ -1874,6 +2006,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseProcedureStatement(AParent: TSQLElement
   ): TSQLStatement;
 =======
@@ -1885,6 +2018,9 @@ Function TSQLParser.ParseProcedureStatement(AParent : TSQLElement) : TSQLStateme
 =======
 Function TSQLParser.ParseProcedureStatement(AParent : TSQLElement) : TSQLStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseProcedureStatement(AParent : TSQLElement) : TSQLStatement;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=Nil;
@@ -1922,6 +2058,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseStatementBlock(AParent: TSQLElement;
   Statements: TSQLElementList);
 =======
@@ -1933,6 +2070,9 @@ Procedure TSQLParser.ParseStatementBlock(AParent: TSQLElement; Statements : TSQL
 =======
 Procedure TSQLParser.ParseStatementBlock(AParent: TSQLElement; Statements : TSQLElementList);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseStatementBlock(AParent: TSQLElement; Statements : TSQLElementList);
+>>>>>>> origin/cpstrnew
 
 Var
   S: TSQLStatement;
@@ -1947,6 +2087,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Consume([tsqlSemicolon]);
 =======
       Consume(tsqlSemicolon);
@@ -1957,6 +2098,9 @@ begin
 =======
       Consume(tsqlSemicolon);
 >>>>>>> graemeg/cpstrnew
+=======
+      Consume(tsqlSemicolon);
+>>>>>>> origin/cpstrnew
     end;
   Consume(tsqlEnd);
 end;
@@ -2030,6 +2174,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseCharTypeDefinition(out DT: TSQLDataType; out
   Len: Integer; out ACharset: TSQLStringType);
 =======
@@ -2041,6 +2186,9 @@ Procedure TSQLParser.ParseCharTypeDefinition(Out DT : TSQLDataType; Out Len : In
 =======
 Procedure TSQLParser.ParseCharTypeDefinition(Out DT : TSQLDataType; Out Len : Integer; Out ACharset : TSQLStringType);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseCharTypeDefinition(Out DT : TSQLDataType; Out Len : Integer; Out ACharset : TSQLStringType);
+>>>>>>> origin/cpstrnew
 
 begin
   Len:=0;
@@ -2072,6 +2220,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Error(SErrVaryingNotAllowed);
 =======
       Error(SERRVaryingNotAllowed);
@@ -2082,6 +2231,9 @@ begin
 =======
       Error(SERRVaryingNotAllowed);
 >>>>>>> graemeg/cpstrnew
+=======
+      Error(SERRVaryingNotAllowed);
+>>>>>>> origin/cpstrnew
     end;
   If (CurrentToken=tsqlBraceOpen) then  // (LEN)
     begin
@@ -2109,6 +2261,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSQLParser.ParseBlobDefinition(var ASegmentSize, ABlobType: Integer;
   var ACharset: TSQLStringType);
 =======
@@ -2120,6 +2273,9 @@ Procedure TSQLParser.ParseBlobDefinition(Var ASegmentSize,ABlobType : Integer; V
 =======
 Procedure TSQLParser.ParseBlobDefinition(Var ASegmentSize,ABlobType : Integer; Var ACharset : TSQLStringType);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TSQLParser.ParseBlobDefinition(Var ASegmentSize,ABlobType : Integer; Var ACharset : TSQLStringType);
+>>>>>>> origin/cpstrnew
 
 begin
   // On entry, we are on the blob token.
@@ -2149,6 +2305,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Expect([tsqlIntegerNumber,tsqlBinary,tsqlText]);
       case CurrentToken of
         tsqlBinary: ABlobType:=0; //FB2.0+ see Language Reference Update
@@ -2168,6 +2325,10 @@ begin
       Expect(tsqlIntegerNumber);
       ABlobType:=StrtoInt(CurrentTokenString);
 >>>>>>> graemeg/cpstrnew
+=======
+      Expect(tsqlIntegerNumber);
+      ABlobType:=StrtoInt(CurrentTokenString);
+>>>>>>> origin/cpstrnew
       GetNextToken;
       end;
     If (CurrentToken=tsqlSegment) then // SEGMENT SIZE S
@@ -2192,6 +2353,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseForeignKeyDefinition(AParent: TSQLElement
   ): TSQLForeignKeyDefinition;
 =======
@@ -2203,6 +2365,9 @@ Function TSQLParser.ParseForeignKeyDefinition(AParent : TSQLElement) : TSQLForei
 =======
 Function TSQLParser.ParseForeignKeyDefinition(AParent : TSQLElement) : TSQLForeignKeyDefinition;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseForeignKeyDefinition(AParent : TSQLElement) : TSQLForeignKeyDefinition;
+>>>>>>> origin/cpstrnew
 
   // On entry, we're on ON Return true if On delete
   Function ParseForeignKeyAction (Out Res : TForeignKeyAction) : Boolean;
@@ -2281,6 +2446,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseFieldConstraint(AParent: TSQLElement
   ): TSQLFieldConstraint;
 =======
@@ -2292,6 +2458,9 @@ Function TSQLParser.ParseFieldConstraint(AParent : TSQLElement) : TSQLFieldConst
 =======
 Function TSQLParser.ParseFieldConstraint(AParent : TSQLElement) : TSQLFieldConstraint;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseFieldConstraint(AParent : TSQLElement) : TSQLFieldConstraint;
+>>>>>>> origin/cpstrnew
 
 Var
   N : TSQLStringType;
@@ -2371,6 +2540,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseTypeDefinition(AParent: TSQLElement;
   Flags: TParseTypeFlags): TSQLTypeDefinition;
 =======
@@ -2382,6 +2552,9 @@ Function TSQLParser.ParseTypeDefinition(AParent : TSQLElement; Flags : TParseTyp
 =======
 Function TSQLParser.ParseTypeDefinition(AParent : TSQLElement; Flags : TParseTypeFlags) : TSQLTypeDefinition;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseTypeDefinition(AParent : TSQLElement; Flags : TParseTypeFlags) : TSQLTypeDefinition;
+>>>>>>> origin/cpstrnew
 
 Var
   TN : String;
@@ -2401,6 +2574,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // We are positioned on the token prior to the type definition.
 =======
  // We are positioned on the token prior to the type definition.
@@ -2411,6 +2585,9 @@ begin
 =======
  // We are positioned on the token prior to the type definition.
 >>>>>>> graemeg/cpstrnew
+=======
+ // We are positioned on the token prior to the type definition.
+>>>>>>> origin/cpstrnew
   AA:=True;
   GN:=True;
   prec:=0;
@@ -2439,6 +2616,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      tsqlDouble:
        begin
        GetNextToken;
@@ -2451,6 +2629,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      tsqlFloat:
        dt:=sdtFloat;
      tsqlTime:
@@ -2508,6 +2688,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // We are now on array definition or rest of type.
 =======
   // We are now on array or rest of type.
@@ -2518,6 +2699,9 @@ begin
 =======
   // We are now on array or rest of type.
 >>>>>>> graemeg/cpstrnew
+=======
+  // We are now on array or rest of type.
+>>>>>>> origin/cpstrnew
   If (CurrentToken=tsqlSquareBraceOpen) then
     begin
     GetNextToken;
@@ -2577,6 +2761,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       // Firebird 2.5 generates/accepts NOT NULL after CHECK constraint instead
       // of before it in at least domain definitions:
       if (CurrentToken=tsqlNot) then
@@ -2592,6 +2777,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       // Constraint is before collation.
       if CurrentToken in [tsqlConstraint,tsqlCheck,tsqlUnique,tsqlprimary,tsqlReferences] then
         begin
@@ -2658,6 +2845,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:=TSQLLiteral(CreateElement(TSQLValueLiteral,AParent));
 =======
         Result:=TSQLLiteral(CreateElement(TSQLValueLiteral,AParent));
@@ -2668,6 +2856,9 @@ begin
 =======
         Result:=TSQLLiteral(CreateElement(TSQLValueLiteral,AParent));
 >>>>>>> graemeg/cpstrnew
+=======
+        Result:=TSQLLiteral(CreateElement(TSQLValueLiteral,AParent));
+>>>>>>> origin/cpstrnew
     tsqlUSER :
       Result:=TSQLLiteral(CreateElement(TSQLUserLiteral,AParent));
   else
@@ -2685,6 +2876,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExprLevel1(AParent: TSQLElement; EO: TExpressionOptions
   ): TSQLExpression;
 =======
@@ -2696,6 +2888,9 @@ Function TSQLParser.ParseExprLevel1(AParent : TSQLElement; EO : TExpressionOptio
 =======
 Function TSQLParser.ParseExprLevel1(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprLevel1(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 
 var
   tt: TSQLToken;
@@ -2749,6 +2944,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseInoperand(AParent: TSQLElement): TSQLExpression;
 =======
 Function TSQLParser.ParseInoperand(AParent : TSQLElement) : TSQLExpression;
@@ -2759,6 +2955,9 @@ Function TSQLParser.ParseInoperand(AParent : TSQLElement) : TSQLExpression;
 =======
 Function TSQLParser.ParseInoperand(AParent : TSQLElement) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseInoperand(AParent : TSQLElement) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 
 Var
   S : TSQLSelectExpression;
@@ -2796,6 +2995,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExprLevel2(AParent: TSQLElement; EO: TExpressionOptions
   ): TSQLExpression;
 =======
@@ -2807,6 +3007,9 @@ Function TSQLParser.ParseExprLevel2(AParent : TSQLElement; EO : TExpressionOptio
 =======
 Function TSQLParser.ParseExprLevel2(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprLevel2(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 var
   tt: TSQLToken;
   Right : TSQLExpression;
@@ -2814,6 +3017,7 @@ var
   T : TSQLTernaryExpression;
   O : TSQLBinaryOperation;
   U : TSQLUnaryExpression;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2827,6 +3031,9 @@ var
 =======
   I,bw,doin : Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+  I,bw,doin : Boolean;
+>>>>>>> origin/cpstrnew
 
 begin
   {$ifdef debugexpr}  Writeln('Level 2 ',TokenInfos[CurrentToken],': ',CurrentTokenString);{$endif debugexpr}
@@ -2835,6 +3042,7 @@ begin
     if (CurrentToken in sqlComparisons) then
       begin
       tt:=CurrentToken;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2848,6 +3056,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       I:=CurrentToken=tsqlnot;
       CheckEOF;
       GetNextToken;
@@ -2855,16 +3065,20 @@ begin
       if I then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         begin
         tt:=CurrentToken;
         if Not (tt in sqlInvertableComparisons) then
           Error(SErrUnexpectedToken,[CurrentTokenString]);
         GetNextToken;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2892,6 +3106,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         If (tt=tsqlStarting) and (CurrentToken=tsqlWith) then
           GetNextToken;
         end
@@ -2909,11 +3125,14 @@ begin
       doin:=false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       Case tt of
         tsqlLT : O:=boLT;
         tsqlLE : O:=boLE;
@@ -2922,6 +3141,7 @@ begin
         tsqlEq : O:=boEq;
         tsqlNE : O:=boNE;
         tsqlLike : O:=boLike;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2935,6 +3155,9 @@ begin
 =======
         tsqlIn : doin:=true;
 >>>>>>> graemeg/cpstrnew
+=======
+        tsqlIn : doin:=true;
+>>>>>>> origin/cpstrnew
         tsqlis : O:=boIs;
         tsqlContaining : O:=boContaining;
         tsqlStarting : O:=boStarting;
@@ -2986,6 +3209,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       If Inverted then
         if (Assigned(B)) and (B.Operation=boIs) then
 =======
@@ -3000,6 +3224,10 @@ begin
       If I then
         if B.Operation=boIs then
 >>>>>>> graemeg/cpstrnew
+=======
+      If I then
+        if B.Operation=boIs then
+>>>>>>> origin/cpstrnew
           B.Operation:=boIsNot
         else
           begin
@@ -3018,6 +3246,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExprLevel3(AParent: TSQLElement; EO: TExpressionOptions
   ): TSQLExpression;
 =======
@@ -3029,6 +3258,9 @@ Function TSQLParser.ParseExprLevel3(AParent : TSQLElement; EO : TExpressionOptio
 =======
 Function TSQLParser.ParseExprLevel3(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprLevel3(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 
   Function NegativeNumber : Boolean; inline;
 
@@ -3079,6 +3311,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExprLevel4(AParent: TSQLElement; EO: TExpressionOptions
   ): TSQLExpression;
 =======
@@ -3090,6 +3323,9 @@ Function TSQLParser.ParseExprLevel4(AParent : TSQLElement; EO : TExpressionOptio
 =======
 Function TSQLParser.ParseExprLevel4(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprLevel4(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 
 var
   tt : TSQLToken;
@@ -3123,6 +3359,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExprLevel5(AParent: TSQLElement; EO: TExpressionOptions
   ): TSQLExpression;
 =======
@@ -3134,6 +3371,9 @@ Function TSQLParser.ParseExprLevel5(AParent : TSQLElement; EO : TExpressionOptio
 =======
 Function TSQLParser.ParseExprLevel5(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprLevel5(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 
 Var
   tt : tsqltoken;
@@ -3168,6 +3408,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExprLevel6(AParent: TSQLElement; EO: TExpressionOptions
   ): TSQLExpression;
 =======
@@ -3179,6 +3420,9 @@ Function TSQLParser.ParseExprLevel6(AParent : TSQLElement ; EO : TExpressionOpti
 =======
 Function TSQLParser.ParseExprLevel6(AParent : TSQLElement ; EO : TExpressionOptions ) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprLevel6(AParent : TSQLElement ; EO : TExpressionOptions ) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 
 
 
@@ -3215,6 +3459,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseIdentifierList(AParent: TSQLElement;
   AList: TSQLelementList): integer;
 =======
@@ -3226,6 +3471,9 @@ Function TSQLParser.ParseIdentifierList(AParent : TSQLElement; AList : TSQLeleme
 =======
 Function TSQLParser.ParseIdentifierList(AParent : TSQLElement; AList : TSQLelementList) : integer;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseIdentifierList(AParent : TSQLElement; AList : TSQLelementList) : integer;
+>>>>>>> origin/cpstrnew
 
 Var
   Done : Boolean;
@@ -3249,6 +3497,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseValueList(AParent: TSQLElement; EO: TExpressionOptions
   ): TSQLElementList;
 =======
@@ -3260,6 +3509,9 @@ Function TSQLParser.ParseValueList(AParent : TSQLElement; EO : TExpressionOption
 =======
 Function TSQLParser.ParseValueList(AParent : TSQLElement; EO : TExpressionOptions) : TSQLElementList;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseValueList(AParent : TSQLElement; EO : TExpressionOptions) : TSQLElementList;
+>>>>>>> origin/cpstrnew
 
 Var
     E : TSQLExpression;
@@ -3309,6 +3561,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.CreateIdentifier(AParent: TSQLElement;
   const AName: TSQLStringType): TSQLIdentifierName;
 =======
@@ -3323,12 +3576,17 @@ function TSQLParser.CreateIdentifier(AParent : TSQLElement; Const AName: TSQLStr
 function TSQLParser.CreateIdentifier(AParent : TSQLElement; Const AName: TSQLStringType
   ): TSQLIdentifierName;
 >>>>>>> graemeg/cpstrnew
+=======
+function TSQLParser.CreateIdentifier(AParent : TSQLElement; Const AName: TSQLStringType
+  ): TSQLIdentifierName;
+>>>>>>> origin/cpstrnew
 begin
   Result:=TSQLIdentifierName(CreateElement(TSQLIdentifierName,AParent));
   Result.Name:=AName;
 end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3343,6 +3601,9 @@ Function TSQLParser.ParseExprAggregate(AParent : TSQLElement; EO : TExpressionOp
 =======
 Function TSQLParser.ParseExprAggregate(AParent : TSQLElement; EO : TExpressionOptions) : TSQLAggregateFunctionExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprAggregate(AParent : TSQLElement; EO : TExpressionOptions) : TSQLAggregateFunctionExpression;
+>>>>>>> origin/cpstrnew
 begin
   Result:=TSQLAggregateFunctionExpression(CreateElement(TSQLAggregateFunctionExpression,AParent));
   try
@@ -3384,6 +3645,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseExprPrimitive(AParent: TSQLElement;
   EO: TExpressionOptions): TSQLExpression;
 =======
@@ -3395,6 +3657,9 @@ Function TSQLParser.ParseExprPrimitive(AParent : TSQLElement; EO : TExpressionOp
 =======
 Function TSQLParser.ParseExprPrimitive(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseExprPrimitive(AParent : TSQLElement; EO : TExpressionOptions) : TSQLExpression;
+>>>>>>> origin/cpstrnew
 
 Var
   L : TSQLElementList;
@@ -3410,6 +3675,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tsqlIntegerNumber,
 =======
       tsqlintegerNumber,
@@ -3420,6 +3686,9 @@ begin
 =======
       tsqlintegerNumber,
 >>>>>>> graemeg/cpstrnew
+=======
+      tsqlintegerNumber,
+>>>>>>> origin/cpstrnew
       tsqlString,
       tsqlFloatNumber,
       tsqlNull, // True and False belong here
@@ -3538,6 +3807,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           // Plain identifier
           Result:=TSQLIdentifierExpression(CreateElement(TSQLIdentifierExpression,APArent));
           TSQLIdentifierExpression(Result).Identifier:=CreateIdentifier(Result,N);
@@ -3567,6 +3837,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           // plain identifier
           Result:=TSQLIdentifierExpression(CreateElement(TSQLIdentifierExpression,APArent));
           TSQLIdentifierExpression(Result).IDentifier:=CreateIdentifier(Result,N);
@@ -3581,11 +3853,14 @@ begin
              end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           end
         else
           begin
@@ -3663,6 +3938,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     begin //alter statement
 =======
     begin
@@ -3673,6 +3949,9 @@ begin
 =======
     begin
 >>>>>>> graemeg/cpstrnew
+=======
+    begin
+>>>>>>> origin/cpstrnew
     A:=Nil;
     NN:=False;
     try
@@ -3833,6 +4112,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Expect(tsqlidentifier);
     Result.ObjectName:=CreateIdentifier(Result,CurrentTokenString);
     GetNextToken;
@@ -3843,6 +4123,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     expect(tsqlidentifier);
     Result.ObjectName:=CreateIdentifier(Result,CurrentTokenString);
     GetNextToken;
@@ -3850,11 +4132,14 @@ begin
     expect(tsqlIntegerNumber);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Result.NewValue:=StrToInt(CurrentTokenString);
     GetNextToken;
   except
@@ -3866,6 +4151,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3873,6 +4159,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TSQLParser.ParseSecondaryFile(AParent: TSQLElement) : TSQLDatabaseFileInfo;
 
 Var
@@ -4139,6 +4427,7 @@ function TSQLParser.ParseRollbackStatement(AParent: TSQLElement
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ): TSQLRollbackStatement;
 =======
   ): TSQLRollBackStatement;
@@ -4149,6 +4438,9 @@ function TSQLParser.ParseRollbackStatement(AParent: TSQLElement
 =======
   ): TSQLRollBackStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+  ): TSQLRollBackStatement;
+>>>>>>> origin/cpstrnew
 
 
 begin
@@ -4290,6 +4582,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tsqlGenerator : Result:=ParseSetGeneratorStatement(AParent); //SET GENERATOR
 =======
     tsqlGenerator : Result:=ParseSetGeneratorStatement(AParent)
@@ -4300,6 +4593,9 @@ begin
 =======
     tsqlGenerator : Result:=ParseSetGeneratorStatement(AParent)
 >>>>>>> graemeg/cpstrnew
+=======
+    tsqlGenerator : Result:=ParseSetGeneratorStatement(AParent)
+>>>>>>> origin/cpstrnew
   else
     // For the time being
     UnexpectedToken;
@@ -4375,6 +4671,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseDeclareFunctionStatement(AParent: TSQLElement
   ): TSQLDeclareExternalFunctionStatement;
 =======
@@ -4386,6 +4683,9 @@ Function TSQLParser.ParseDeclareFunctionStatement(AParent : TSQLElement) : TSQLD
 =======
 Function TSQLParser.ParseDeclareFunctionStatement(AParent : TSQLElement) : TSQLDeclareExternalFunctionStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseDeclareFunctionStatement(AParent : TSQLElement) : TSQLDeclareExternalFunctionStatement;
+>>>>>>> origin/cpstrnew
 
 begin
   // On entry, we're on the EXTERNAL token
@@ -4423,6 +4723,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TSQLParser.ParseDeclareStatement(AParent: TSQLElement): TSQLStatement;
 =======
 Function TSQLParser.ParseDeclareStatement(AParent : TSQLElement) : TSQLStatement;
@@ -4433,6 +4734,9 @@ Function TSQLParser.ParseDeclareStatement(AParent : TSQLElement) : TSQLStatement
 =======
 Function TSQLParser.ParseDeclareStatement(AParent : TSQLElement) : TSQLStatement;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TSQLParser.ParseDeclareStatement(AParent : TSQLElement) : TSQLStatement;
+>>>>>>> origin/cpstrnew
 
 
 begin
@@ -4818,6 +5122,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if CurrentToken=tsqlEOF then begin
     Result:=nil;
     Exit;
@@ -4828,6 +5133,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   GetNextToken;
   Case CurrentToken of
     tsqlSelect : Result:=ParseSelectStatement(Nil,[]);
@@ -4848,6 +5155,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tsqlEOF : Result:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4855,6 +5163,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   else
     UnexpectedToken;
   end;
@@ -4872,6 +5182,7 @@ function TSQLParser.ParseScript(AllowPartial : Boolean = False): TSQLElementList
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   E : TSQLElement;
 =======
@@ -4886,6 +5197,10 @@ Var
 Var
    E : TSQLElement;
 >>>>>>> graemeg/cpstrnew
+=======
+Var
+   E : TSQLElement;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=TSQLElementList.Create(True);
@@ -4921,6 +5236,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Set if not already peeked; otherwise fetch and look
   If (FPeekToken<>tsqlUnknown) then
     begin
@@ -4934,6 +5250,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   If (FPeekToken<>tsqlunknown) then
      begin
      FCurrent:=FPeekToken;
@@ -4943,11 +5261,14 @@ begin
      end
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   else
     begin
     FCurrent:=FScanner.FetchToken;

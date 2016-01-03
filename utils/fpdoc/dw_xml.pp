@@ -26,6 +26,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses DOM, PasTree, dGlobals, dwriter, xmlWrite, SysUtils, Classes;
 =======
 uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
@@ -36,6 +37,9 @@ uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
 =======
 uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
 >>>>>>> graemeg/cpstrnew
+=======
+uses DOM, PasTree, dwriter, xmlWrite, SysUtils;
+>>>>>>> origin/cpstrnew
 
 Type
 
@@ -609,10 +613,13 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   if Engine.Output <> '' then
     Engine.Output := IncludeTrailingBackSlash(Engine.Output);
@@ -623,6 +630,7 @@ begin
     WriteXMLFile(doc, Engine.Output + TPasModule(Package.Modules[i]).Name + '.xml' );
     doc.Free;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 end;
@@ -655,6 +663,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 initialization

@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -52,6 +56,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); virtual;
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); virtual;
@@ -62,6 +67,9 @@ type
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); virtual;
 >>>>>>> graemeg/cpstrnew
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); virtual;
+>>>>>>> origin/cpstrnew
     procedure Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer); virtual; abstract;
     procedure Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,
                   AWidth, AHeight: Integer); virtual; abstract;
@@ -77,6 +85,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); override;
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
@@ -87,6 +96,9 @@ type
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
+>>>>>>> origin/cpstrnew
     destructor Destroy; override;
     procedure Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer); override;
     procedure Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,
@@ -105,6 +117,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: IPTCFormat); override;
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
@@ -115,6 +128,9 @@ type
 =======
     constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    constructor Create(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer; AFormat: TPTCFormat); override;
+>>>>>>> origin/cpstrnew
     destructor Destroy; override;
     procedure Put(AWindow: TWindow; AGC: TGC; AX, AY: Integer); override;
     procedure Put(AWindow: TWindow; AGC: TGC; ASX, ASY, ADX, ADY,

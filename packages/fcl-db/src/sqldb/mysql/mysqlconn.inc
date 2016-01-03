@@ -19,6 +19,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils,bufdataset,sqldb,db,ctypes,
 {$IFDEF mysql57}
   mysql57dyn;
@@ -46,6 +47,11 @@ uses
 {$IFDEF Mysql51}
   mysql51dyn;
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils,bufdataset,sqldb,db,dynlibs,
+{$IFDEF Mysql51}
+  mysql51dyn;
+>>>>>>> origin/cpstrnew
 {$ELSE}  
   {$IfDef mysql50}
     mysql50dyn;
@@ -61,6 +67,7 @@ uses
     {$EndIf}
   {$EndIf}
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -155,6 +162,27 @@ Const
   {$EndIf}
 {$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+
+Const
+{$IFDEF Mysql51}
+    MySQLVersion = '5.1';
+{$else}    
+  {$IfDef mysql50}
+    MySQLVersion = '5.0';
+  {$ELSE}
+    {$IfDef mysql41}
+      MySQLVersion = '4.1';
+    {$ELSE}
+      {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
+        MySQLVersion = '4.0';
+      {$ELSE}
+        MySQLVersion = '4.0';
+      {$EndIf}
+    {$EndIf}
+  {$EndIf}
+{$endif}
+>>>>>>> origin/cpstrnew
 
 Type
   TTransactionName = Class(TSQLHandle)
@@ -358,11 +386,14 @@ implementation
 uses dbconst,ctypes,strutils;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 const
   Mysql_Option_Names : array[mysql_option] of string = ('MYSQL_OPT_CONNECT_TIMEOUT','MYSQL_OPT_COMPRESS',
@@ -377,6 +408,7 @@ const
      'MYSQL_SECURE_AUTH'
 {$IFDEF MYSQL50_UP}
      ,'MYSQL_REPORT_DATA_TRUNCATION', 'MYSQL_OPT_RECONNECT'
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -403,6 +435,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF}
      );
 
@@ -488,8 +522,11 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 function MysqlOption(const OptionName: string; out AMysql_Option: mysql_option) : boolean;
 var AMysql_Option_i: mysql_option;
 begin
@@ -503,7 +540,10 @@ begin
       end;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { TConnectionName }
 
 function TConnectionName.StrToStatementType(s : string) : TStatementType;
@@ -559,11 +599,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   for i := 0 to Params.Count-1 do
     begin
@@ -703,6 +746,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FullVersion: string;
 begin
   InitialiseMysql;
@@ -733,17 +777,26 @@ begin
 begin
   InitialiseMysql;
 >>>>>>> graemeg/cpstrnew
+=======
+  FullVersion, 
+  ClientVerStr: string;
+begin
+  InitialiseMysql;
+>>>>>>> origin/cpstrnew
   Fullversion:=strpas(mysql_get_client_info());
   ClientVerStr := copy(FullVersion,1,3);
   If (ClientVerStr<>MySQLVersion) then
     Raise EInOutError.CreateFmt(SErrVersionMisMatch,[ClassName,MySQLVersion,FullVersion]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   inherited DoInternalConnect;
   ConnectToServer;
   SelectDatabase;
@@ -764,6 +817,7 @@ end;
 
 Function TConnectionName.AllocateCursorHandle: TSQLCursor;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -791,11 +845,20 @@ begin
     {$IfDef mysql50}
       Result:=TMySQL50Cursor.Create;
     {$ELSE}
+=======
+  {$IfDef mysql51}
+    Result:=TMySQL51Cursor.Create;
+  {$ELSE}
+    {$IfDef mysql50}
+      Result:=TMySQL50Cursor.Create;
+    {$ELSE}
+>>>>>>> origin/cpstrnew
       {$IfDef mysql41}
         Result:=TMySQL41Cursor.Create;
       {$ELSE}
         {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
           Result:=TMySQLCursor.Create;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
   {$IfDef mysql51}
@@ -823,6 +886,8 @@ begin
         {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
           Result:=TMySQLCursor.Create;
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         {$ELSE}
           Result:=TMySQL40Cursor.Create;
         {$EndIf}
@@ -1354,12 +1419,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ftFloat:
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef mysql50_up}
     FIELD_TYPE_NEWDECIMAL,
 {$endif}      
@@ -1506,11 +1574,14 @@ begin
   FConnOptions := FConnOptions + [sqEscapeRepeat] + [sqEscapeSlash];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FieldNameQuoteChars:=SingleBackQoutes;
   FMySQL := Nil;
 end;
@@ -1629,6 +1700,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF mysql57}
     Result:=TMySQL57Connection;
   {$ELSE}
@@ -1674,15 +1746,26 @@ begin
       Result:=TMySQL50Connection;
     {$ELSE}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$IfDef mysql51}
+    Result:=TMySQL51Connection;
+  {$ELSE}
+    {$IfDef mysql50}
+      Result:=TMySQL50Connection;
+    {$ELSE}
+>>>>>>> origin/cpstrnew
       {$IfDef mysql41}
         Result:=TMySQL41Connection;
       {$ELSE}
         {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
           Result:=TMySQLConnection;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         {$ELSE}
           Result:=TMySQL40Connection;
         {$EndIf}
@@ -1697,11 +1780,14 @@ begin
   {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 class function TMySQLConnectionDef.Description: String;
@@ -1714,6 +1800,7 @@ begin
   Result:=mysqlvlib;
 end;
 
+<<<<<<< HEAD
 class function TMySQLConnectionDef.LoadFunction: TLibraryLoadFunction;
 begin
   Result:=@InitialiseMySQL;
@@ -1811,6 +1898,26 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$IfDef mysql51}
+  initialization
+    RegisterConnection(TMySQL51ConnectionDef);
+  finalization
+    UnRegisterConnection(TMySQL51ConnectionDef);
+{$ELSE}
+  {$IfDef mysql50}
+    initialization
+      RegisterConnection(TMySQL50ConnectionDef);
+    finalization
+      UnRegisterConnection(TMySQL50ConnectionDef);
+  {$ELSE}
+    {$IfDef mysql41}
+      initialization
+        RegisterConnection(TMySQL41ConnectionDef);
+      finalization
+        UnRegisterConnection(TMySQL41ConnectionDef);
+    {$ELSE}
+>>>>>>> origin/cpstrnew
       {$IFDEF mysql4} // temporary backwards compatibility for Lazarus
         initialization
           RegisterConnection(TMySQL40ConnectionDef);
@@ -1818,11 +1925,14 @@ end;
           UnRegisterConnection(TMySQL40ConnectionDef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       {$ELSE}
         initialization
           RegisterConnection(TMySQL40ConnectionDef);
@@ -1838,11 +1948,14 @@ end;
   {$EndIf}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF}
 
 end.

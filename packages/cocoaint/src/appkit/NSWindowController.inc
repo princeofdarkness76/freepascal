@@ -50,6 +50,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __wcFlags: record
       case byte of
        0: (_anonbitfield_NSWindowController0: cuint);
@@ -59,22 +60,28 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __wcFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSWindowController0: cuint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _shouldCloseDocument: 0..1;
         shouldCascade: 0..1;
         nibIsLoaded: 0..1;
         nibNameIsPath: 0..1;
         RESERVED: 0..((1 shl 28)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,6 +92,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _frameAutosaveName: NSString;

@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb,
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb,
@@ -18,6 +19,9 @@ uses
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb,
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb,
+>>>>>>> origin/cpstrnew
   db, dbf, fpwebdata, fpextjs,extjsjson,extjsxml;
 
 type
@@ -51,6 +55,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$R *.lfm}
 
@@ -60,6 +65,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$define wmdebug}
 
 {$ifdef wmdebug}
@@ -321,6 +328,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   {$I wmusers.lrs}
 
@@ -333,6 +341,10 @@ initialization
   {$I wmusers.lrs}
 
 >>>>>>> graemeg/cpstrnew
+=======
+  {$I wmusers.lrs}
+
+>>>>>>> origin/cpstrnew
   RegisterHTTPModule('Provider', TFPWebModule1);
 end.
 

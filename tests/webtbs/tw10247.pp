@@ -7,6 +7,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       TAlias = T;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -14,6 +15,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       PT = ^T;
   private
     var
@@ -38,6 +41,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetV(v: TTNode.TAlias);
 =======
     procedure SetV(v: TTNode.T);
@@ -48,6 +52,9 @@ type
 =======
     procedure SetV(v: TTNode.T);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetV(v: TTNode.T);
+>>>>>>> origin/cpstrnew
   end;
 
 constructor TNode.Create;

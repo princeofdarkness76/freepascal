@@ -294,6 +294,7 @@ procedure recordpendingmessagestate(msg: longint; state: tmsgstate);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   var
     pstate : pmessagestaterecord;
   begin
@@ -314,6 +315,10 @@ procedure recordpendingmessagestate(msg: longint; state: tmsgstate);
   begin
     { todo }
 >>>>>>> graemeg/cpstrnew
+=======
+  begin
+    { todo }
+>>>>>>> origin/cpstrnew
   end;
 
 procedure recordpendinglocalswitch(sw: tlocalswitch; state: char);

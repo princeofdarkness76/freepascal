@@ -35,6 +35,7 @@ procedure ICFlashInvalidate; cdecl; external;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifdef HW_RVL}
 procedure L2Enhance(); cdecl; external;
@@ -46,6 +47,8 @@ procedure L2Enhance(); cdecl; external;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure ICEnable; cdecl; external;
 
 procedure ICDisable; cdecl; external;

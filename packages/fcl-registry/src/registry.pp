@@ -135,6 +135,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function OpenSection(const Section: string; CreateSection : Boolean = false): boolean;
     procedure CloseSection;
 =======
@@ -143,6 +144,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   public
     constructor Create(const FN: string); overload;
     constructor Create(const FN: string;aaccess:longword); overload;

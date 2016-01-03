@@ -302,6 +302,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     vramLock: array [0..1] of cint;				// Holds the current lock state of the VRAM banks
 =======
 >>>>>>> graemeg/cpstrnew
@@ -309,6 +310,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     
     // texture globals
     texturePtrs: DynamicArray;		// Pointers to each individual texture
@@ -373,6 +376,7 @@ procedure glColorTableEXT(target, empty1: cint; width: cuint16; empty2, empty3: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure glColorSubTableEXT(target, start, count, empty1, empty2: cint; const data: pcuint16); cdecl; external;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -380,6 +384,8 @@ procedure glColorSubTableEXT(target, start, count, empty1, empty2: cint; const d
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure glAssignColorTable(target, name: cint); cdecl; external;
 
 //procedure glTexLoadPal(const pal: pcuint16; count: cuint16; addr: cuint32); cdecl; external;
@@ -484,11 +490,14 @@ function intto12d3(n: cint): fixed12d3; inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   intto12d3 := fixed12d3(n shl 3);
 end;

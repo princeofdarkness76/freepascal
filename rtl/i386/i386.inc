@@ -135,11 +135,14 @@ procedure fpc_cpuinit;
       Default8087CW:=Get8087CW;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 {$ifndef darwin}
@@ -1267,6 +1270,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         test    %eax,%eax
         jz      .LStrLenDone
 =======
@@ -1275,6 +1279,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         movl    %edi,saveedi
         movl    %eax,%edi
         movl    $0xffffffff,%ecx
@@ -1714,11 +1720,14 @@ asm
 // [104] If declocked(l^) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef FPC_PIC}
 	pushl	%ebx
         call	fpc_geteipasebx
@@ -1820,6 +1829,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_SYSTEM_HAS_BSF_QWORD}
 {$define FPC_SYSTEM_HAS_BSF_QWORD}
 =======
@@ -1834,11 +1844,16 @@ end;
 {$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
 {$define FPC_SYSTEM_HAS_BSX_QWORD}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef FPC_SYSTEM_HAS_BSX_QWORD}
+{$define FPC_SYSTEM_HAS_BSX_QWORD}
+>>>>>>> origin/cpstrnew
 
 function BsfQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
 asm
      bsfl    4(%esp),%eax
      jnz     .L2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1860,6 +1875,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 .L1: bsfl    8(%esp),%eax
      add     $32,%eax
 .L2:
@@ -1867,17 +1884,21 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function BsrQWord(Const AValue : QWord): cardinal; assembler; nostackframe;
 asm
      bsrl    8(%esp),%eax
      jz     .L1
      add     $32,%eax
      jmp     .L2
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1915,6 +1936,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 .L1: bsrl    4(%esp),%eax
 .L2:
 end;
@@ -1922,8 +1945,11 @@ end;
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

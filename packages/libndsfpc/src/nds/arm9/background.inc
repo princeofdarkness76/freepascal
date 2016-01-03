@@ -284,6 +284,7 @@ procedure bgSetAffineMatrixScroll(id, hdx, vdx, hdy, vdy, scrollx, scrolly: cint
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure bgExtPaletteEnable(); inline; 
 procedure bgExtPaletteEnableSub(); inline; 
@@ -295,6 +296,8 @@ procedure bgExtPaletteDisableSub(); inline;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$endif NDS_INTERFACE}
 
@@ -618,6 +621,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure bgExtPaletteEnable(); inline; 
 begin 
   REG_DISPCNT^ := REG_DISPCNT^ or DISPLAY_BG_EXT_PALETTE; 
@@ -646,5 +650,8 @@ end;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 
 {$endif NDS_IMPLEMENTATION}

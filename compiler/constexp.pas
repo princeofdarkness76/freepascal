@@ -404,6 +404,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$push} {$Q-}
     aa:=qword(-a.svalue)
     {$pop}
@@ -422,6 +423,11 @@ begin
     aa:=qword(-a.svalue)
     {$ifdef ena_q}{$Q+}{$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$Q-}
+    aa:=qword(-a.svalue)
+    {$ifdef ena_q}{$Q+}{$endif}
+>>>>>>> origin/cpstrnew
   else
     aa:=a.uvalue;
   sb:=b.signed and (b.svalue<0);
@@ -429,6 +435,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     {$push} {$Q-}
     bb:=qword(-b.svalue)
     {$pop}
@@ -447,6 +454,11 @@ begin
     bb:=qword(-b.svalue)
     {$ifdef ena_q}{$Q+}{$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$Q-}
+    bb:=qword(-b.svalue)
+    {$ifdef ena_q}{$Q+}{$endif}
+>>>>>>> origin/cpstrnew
   else
     bb:=b.uvalue;
   if bb=0 then

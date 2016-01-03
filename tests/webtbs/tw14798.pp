@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%delfiles=dump.bin}
 
 =======
@@ -9,6 +10,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Source provided for Free Pascal Bug Report 14708 }
 { Submitted by "Anton Kavalenka" on  2009-11-11 }
 { e-mail:  }
@@ -141,6 +144,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if not ok then
 =======
   if not ok then 
@@ -151,6 +155,9 @@ begin
 =======
   if not ok then 
 >>>>>>> graemeg/cpstrnew
+=======
+  if not ok then 
+>>>>>>> origin/cpstrnew
     halt(1);
 end.
 

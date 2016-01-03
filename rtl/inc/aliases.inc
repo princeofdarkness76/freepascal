@@ -30,6 +30,7 @@ Procedure int_Initialize (Data,TypeInfo: Pointer); [external name 'FPC_INITIALIZ
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure int_FinalizeArray(data,typeinfo : pointer;count : SizeInt); [external name 'FPC_FINALIZE_ARRAY'];
 =======
 procedure int_FinalizeArray(data,typeinfo : pointer;count : longint); [external name 'FPC_FINALIZE_ARRAY'];
@@ -40,6 +41,9 @@ procedure int_FinalizeArray(data,typeinfo : pointer;count : longint); [external 
 =======
 procedure int_FinalizeArray(data,typeinfo : pointer;count : longint); [external name 'FPC_FINALIZE_ARRAY'];
 >>>>>>> graemeg/cpstrnew
+=======
+procedure int_FinalizeArray(data,typeinfo : pointer;count : longint); [external name 'FPC_FINALIZE_ARRAY'];
+>>>>>>> origin/cpstrnew
 
 {$if defined(FPC_HAS_FEATURE_RTTI) and not defined(cpujvm)}
 type

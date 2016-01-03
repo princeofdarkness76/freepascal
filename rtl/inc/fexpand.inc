@@ -221,11 +221,14 @@ begin
     if (Length (Pa) > 1) and (Pa [1] in ['A'..'Z', 'a'..'z']) and
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       (Pa [2] = DriveSeparator) and (DriveSeparator <> DirectorySeparator) then
 {$ENDIF FPC_FEXPAND_VOLUMES}
         begin
@@ -663,6 +666,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    support makes it impossible to use otherwise possibly valid name
 =======
    support makes it impossible to use anotherwise possibly valid name
@@ -673,6 +677,9 @@ end;
 =======
    support makes it impossible to use anotherwise possibly valid name
 >>>>>>> graemeg/cpstrnew
+=======
+   support makes it impossible to use anotherwise possibly valid name
+>>>>>>> origin/cpstrnew
    of '..'.
 
    FPC_FEXPAND_DIRSEP_IS_CURDIR - DirectorySeparator at the beginning of

@@ -31,6 +31,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetO(AIndex: TJSONOption): Boolean;
     function GetOptions: TJSONOptions;
     function ParseNumber: TJSONNumber;
@@ -51,6 +52,11 @@ Type
     function ParseNumber: TJSONNumber;
     procedure SetStrict(const AValue: Boolean);
 >>>>>>> graemeg/cpstrnew
+=======
+    FStrict: Boolean;
+    function ParseNumber: TJSONNumber;
+    procedure SetStrict(const AValue: Boolean);
+>>>>>>> origin/cpstrnew
   Protected
     procedure DoError(const Msg: String);
     function DoParse(AtCurrent,AllowEOF: Boolean): TJSONData;
@@ -71,6 +77,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property Strict : Boolean Index joStrict Read GetO Write SetO ; deprecated 'use options instead';
     // if set to TRUE, then strings will be converted to UTF8 ansistrings, not system codepage ansistrings.
     Property UseUTF8 : Boolean index joUTF8 Read GetO Write SetO; deprecated 'Use options instead';
@@ -85,6 +92,9 @@ Type
 =======
     Property Strict : Boolean Read FStrict Write SetStrict;
 >>>>>>> graemeg/cpstrnew
+=======
+    Property Strict : Boolean Read FStrict Write SetStrict;
+>>>>>>> origin/cpstrnew
   end;
   
   EJSONParser = Class(EParserError);
@@ -147,6 +157,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If CurrentToken in [tkString,tkIdentifier,tkNumber,tkComment] then
 =======
   If CurrentToken in [tkString,tkIdentifier,tkNumber] then
@@ -157,6 +168,9 @@ begin
 =======
   If CurrentToken in [tkString,tkIdentifier,tkNumber] then
 >>>>>>> graemeg/cpstrnew
+=======
+  If CurrentToken in [tkString,tkIdentifier,tkNumber] then
+>>>>>>> origin/cpstrnew
     Result:=FScanner.CurTokenString
   else
     Result:=TokenInfos[CurrentToken];
@@ -254,6 +268,7 @@ begin
   Result:=AIndex in Options;
 end;
 
+<<<<<<< HEAD
 function TJSONParser.GetOptions: TJSONOptions;
 begin
   Result:=FScanner.Options
@@ -280,6 +295,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TJSONParser.SetStrict(const AValue: Boolean);
 begin
   if (FStrict=AValue) then
@@ -290,11 +307,14 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 // Current token is {, on exit current token is }
 function TJSONParser.ParseObject: TJSONObject;
@@ -377,6 +397,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONParser.DoError(const Msg: String);
 =======
 Procedure TJSONParser.DoError(const Msg : String);
@@ -387,6 +408,9 @@ Procedure TJSONParser.DoError(const Msg : String);
 =======
 Procedure TJSONParser.DoError(const Msg : String);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure TJSONParser.DoError(const Msg : String);
+>>>>>>> origin/cpstrnew
 
 Var
   S : String;

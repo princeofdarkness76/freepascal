@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %%% Reordering of errorues.msg respective to errore.msg
 %%% Contains all comments from errorues.msg
 =======
@@ -9,6 +10,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 #
 #   This file is part of the Free Pascal Compiler
 #   Copyright (c) 1999-2000 by the Free Pascal Development team
@@ -2958,6 +2961,7 @@ exec_e_unit_not_shared_or_static_linkable=09027_E_La unidad $1 no admite enlazad
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 exec_d_resbin_params=09028_D_Calling resource compiler "$1" with "$2" as command line
 % An informational message showing which command line is used for the resource compiler.
 exec_e_error_while_compiling_resources=09029_E_Error while compiling resources
@@ -3025,6 +3029,14 @@ execinfo_x_initdatasize=09131_X_Tamaño de datos inicializados: $1 bytes
 execinfo_x_uninitdatasize=09132_X_Tamaño de datos sin inicializar: $1 bytes
 execinfo_x_stackreserve=09133_X_Espacio reservado para la pila: $1 bytes
 >>>>>>> graemeg/cpstrnew
+=======
+execinfo_f_cant_process_executable=09128_F_No se puede post-procesar el ejecutable $1
+execinfo_f_cant_open_executable=09129_F_No se puede abrir el ejecutable $1
+execinfo_x_codesize=09130_X_Tamaño de Código: $1 bytes
+execinfo_x_initdatasize=09131_X_Tamaño de datos inicializados: $1 bytes
+execinfo_x_uninitdatasize=09132_X_Tamaño de datos sin inicializar: $1 bytes
+execinfo_x_stackreserve=09133_X_Espacio reservado para la pila: $1 bytes
+>>>>>>> origin/cpstrnew
 execinfo_x_stackcommit=09134_X_Stack space commited: $1 bytes
 
 #
@@ -3507,6 +3519,7 @@ Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] for $FPCCPU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 by Florian Klaempfl and others
 =======
 Copyright (c) 1993-2011 by Florian Klaempfl
@@ -3517,6 +3530,9 @@ Copyright (c) 1993-2011 by Florian Klaempfl
 =======
 Copyright (c) 1993-2011 by Florian Klaempfl
 >>>>>>> graemeg/cpstrnew
+=======
+Copyright (c) 1993-2011 by Florian Klaempfl
+>>>>>>> origin/cpstrnew
 ]
 
 #

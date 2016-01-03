@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -49,6 +53,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOpen: Boolean;
     FWindow: TWindow;
     FVisual: PVisual;
@@ -61,6 +66,9 @@ type
 =======
     FWindow: TWindow;
 >>>>>>> graemeg/cpstrnew
+=======
+    FWindow: TWindow;
+>>>>>>> origin/cpstrnew
     FPrimary: TX11Image;
     FDestX, FDestY: Integer;
     FGC: TGC;
@@ -74,6 +82,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FResizable: Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -81,6 +90,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FFocus: Boolean;
     FModeSwitcher: TX11Modes;
 
@@ -89,6 +100,7 @@ type
     FPreviousMousePositionSaved: Boolean; { true, if FPreviousMouseX,
            FPreviousMouseY and FPreviousMouseButtonState contain valid values }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -109,6 +121,10 @@ type
     function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
     function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
 >>>>>>> graemeg/cpstrnew
+=======
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; override;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; override;
+>>>>>>> origin/cpstrnew
 
     procedure EnterFullScreen;
     procedure LeaveFullScreen;
@@ -118,6 +134,7 @@ type
     procedure HandleEvents;
     procedure Draw;
     function CreateImage(ADisplay: PDisplay; AScreen, AWidth, AHeight: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -143,10 +160,16 @@ type
     function CreateModeSwitcher: TX11Modes; { Factory method }
     procedure CreateColormap; { Register colour maps }
 >>>>>>> graemeg/cpstrnew
+=======
+                         AFormat: TPTCFormat): TX11Image; { Factory method }
+    function CreateModeSwitcher: TX11Modes; { Factory method }
+    procedure CreateColormap; { Register colour maps }
+>>>>>>> origin/cpstrnew
   public
     constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); override;
     destructor Destroy; override;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,6 +189,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); override;
     procedure Open(AWindow: TWindow; const AFormat: TPTCFormat); override;
     procedure Open(AWindow: TWindow; const AFormat: TPTCFormat; AX, AY, AWidth, AHeight: Integer); override;
@@ -178,15 +203,19 @@ type
     procedure Palette(const APalette: TPTCPalette); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function GetPitch: Integer; override;
     function GetX11Window: TWindow; override;
     function GetX11GC: TGC; virtual;
     function IsFullScreen: Boolean; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -210,4 +239,8 @@ type
     procedure SetCursor(AVisible: Boolean); override;
     procedure SetMouseGrab(AGrabMouse: Boolean); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetCursor(AVisible: Boolean); override;
+    procedure SetMouseGrab(AGrabMouse: Boolean); override;
+>>>>>>> origin/cpstrnew
   end;

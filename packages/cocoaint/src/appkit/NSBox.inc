@@ -75,6 +75,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __bFlags: record
       case byte of
        0: (_anonbitfield_NSBox0: NSBorderType);
@@ -84,17 +85,22 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __bFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSBox0: NSBorderType);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _borderType: 0..((1 shl 2)-1);
         _titlePosition: 0..((1 shl 3)-1);
         backgroundTransparent: 0..1;
@@ -107,6 +113,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -114,6 +121,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _unused: id;

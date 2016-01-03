@@ -23,6 +23,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   STATUS_NO_MORE_FILES                    = NTSTATUS($80000006);
   STATUS_NO_MORE_ENTRIES                  = NTSTATUS($8000001A);
 
@@ -47,3 +48,8 @@ const
   STATUS_OBJECT_NAME_COLLISION            = NTSTATUS($C0000035);
 
 >>>>>>> graemeg/cpstrnew
+=======
+  STATUS_OBJECT_TYPE_MISMATCH             = NTSTATUS($C0000024);
+  STATUS_OBJECT_NAME_COLLISION            = NTSTATUS($C0000035);
+
+>>>>>>> origin/cpstrnew

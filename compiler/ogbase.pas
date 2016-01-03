@@ -69,6 +69,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef i8086}
          RELOC_ABSOLUTE32,
          RELOC_RELATIVE32,
@@ -87,6 +88,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef arm}
          RELOC_RELATIVE_24,
          RELOC_RELATIVE_24_THUMB,
@@ -110,6 +113,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          RELOC_PIC_PAIR,
          { Relative to GOT/gp }
          RELOC_GOTOFF,
@@ -124,6 +128,9 @@ interface
 =======
          RELOC_PIC_PAIR
 >>>>>>> graemeg/cpstrnew
+=======
+         RELOC_PIC_PAIR
+>>>>>>> origin/cpstrnew
       );
 
 {$if not defined(x86_64) and not defined(i8086)}
@@ -213,6 +220,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        { Used by the OMF object format and its complicated relocation records }
        group: TObjSectionGroup;
 {$ifdef ARM}
@@ -225,6 +233,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        constructor create(AList:TFPHashObjectList;const AName:string);
        function  address:qword;
        procedure SetAddress(apass:byte;aobjsec:TObjSection;abind:TAsmsymbind;atyp:Tasmsymtype);
@@ -763,6 +773,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (bind in [AB_EXTERNAL,AB_LAZY]) or
           { Put all COMMON to GLOBAL in step 3 of
             TExeOutput.ResolveSymbols }
@@ -776,6 +787,9 @@ implementation
 =======
         if (bind in [AB_EXTERNAL,AB_LAZY]) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if (bind in [AB_EXTERNAL,AB_LAZY]) then
+>>>>>>> origin/cpstrnew
           begin
             { Do not change the AB_TYPE of common symbols yet }
             { This will be done in FixupSymbols }
@@ -1267,15 +1281,19 @@ implementation
           {stub} [oso_Data,oso_load,oso_readonly,oso_executable],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           {data_nonlazy}  [oso_Data,oso_load,oso_write],
           {data_lazy} [oso_Data,oso_load,oso_write],
           {init_func} [oso_Data,oso_load],
           {term_func} [oso_Data,oso_load],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1286,6 +1304,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           {stab} [oso_Data,oso_noload,oso_debug],
           {stabstr} [oso_Data,oso_noload,oso_strings,oso_debug],
 >>>>>>> graemeg/cpstrnew
@@ -1340,6 +1360,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           {sec_objc_protolist'} [oso_data,oso_load],
           {stack} [oso_load,oso_write],
           {heap} [oso_load,oso_write]
@@ -1352,6 +1373,9 @@ implementation
 =======
           {sec_objc_protolist'} [oso_data,oso_load]
 >>>>>>> graemeg/cpstrnew
+=======
+          {sec_objc_protolist'} [oso_data,oso_load]
+>>>>>>> origin/cpstrnew
         );
       begin
         result:=secoptions[atype];
@@ -1994,6 +2018,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         FixedSectionAlign:=True;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2001,6 +2026,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         FCExeSection:=TExeSection;
         FCObjData:=TObjData;
         FCObjSymbol:=TObjSymbol;

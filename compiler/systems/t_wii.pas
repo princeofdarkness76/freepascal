@@ -85,6 +85,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName,true);
 =======
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
@@ -95,6 +96,9 @@ begin
 =======
   LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
 >>>>>>> graemeg/cpstrnew
+=======
+  LinkRes:=TLinkRes.Create(outputexedir+Info.ResName);
+>>>>>>> origin/cpstrnew
 
   { Write path to search libraries }
   HPath:=TCmdStrListItem(current_module.locallibrarysearchpath.First);
@@ -114,6 +118,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      LinkRes.Add('SEARCH_DIR("'+s+'")');
 =======
      LinkRes.Add('SEARCH_DIR('+(maybequoted(s))+')');
@@ -124,6 +129,9 @@ begin
 =======
      LinkRes.Add('SEARCH_DIR('+(maybequoted(s))+')');
 >>>>>>> graemeg/cpstrnew
+=======
+     LinkRes.Add('SEARCH_DIR('+(maybequoted(s))+')');
+>>>>>>> origin/cpstrnew
     HPath:=TCmdStrListItem(HPath.Next);
    end;
 
@@ -265,6 +273,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Add('  bss1 PT_LOAD;');
     Add('  bss2 PT_LOAD;');
     Add('');
@@ -274,6 +283,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Add('}');
     Add('');
     Add('SECTIONS');
@@ -470,6 +481,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Add('	} :bss1');
 =======
     Add('	}');
@@ -480,6 +492,9 @@ begin
 =======
     Add('	}');
 >>>>>>> graemeg/cpstrnew
+=======
+    Add('	}');
+>>>>>>> origin/cpstrnew
     Add('');
     Add('	.bss       :');
     Add('	{');
@@ -501,6 +516,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Add('	} :bss2');
 =======
     Add('	}');
@@ -511,6 +527,9 @@ begin
 =======
     Add('	}');
 >>>>>>> graemeg/cpstrnew
+=======
+    Add('	}');
+>>>>>>> origin/cpstrnew
     Add('');
     Add('	_end = .;');
     Add('	PROVIDE(end = .);');
@@ -613,6 +632,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename,'.map'));
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
@@ -623,6 +643,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    StripStr:='-Map '+maybequoted(ChangeFileExt(current_module.exefilename^,'.map'));
   if create_smartlink_sections then
    GCSectionsStr:='--gc-sections';
@@ -630,11 +652,14 @@ begin
    Message1(exec_i_linking,current_module.exefilename^);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Write used files and libraries }
@@ -642,6 +667,7 @@ begin
 
 { Call linker }
   SplitBinCmd(Info.ExeCmd[1],binstr,cmdstr);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -655,6 +681,9 @@ begin
 =======
   Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
 >>>>>>> graemeg/cpstrnew
+=======
+  Replace(cmdstr,'$EXE',(maybequoted(ScriptFixFileName(ChangeFileExt(current_module.exefilename^,'.elf')))));
+>>>>>>> origin/cpstrnew
   Replace(cmdstr,'$OPT',Info.ExtraOptions);
   Replace(cmdstr,'$RES',(maybequoted(ScriptFixFileName(outputexedir+Info.ResName))));
   Replace(cmdstr,'$STATIC',StaticStr);
@@ -675,6 +704,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     success:=DoExec(FindUtil('elf2dol'),ChangeFileExt(current_module.exefilename,'.elf')+' '+ 
      current_module.exefilename,true,false);
 =======
@@ -689,6 +719,10 @@ begin
     success:=DoExec(FindUtil('elf2dol'),ChangeFileExt(current_module.exefilename^,'.elf')+' '+ 
      current_module.exefilename^,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+    success:=DoExec(FindUtil('elf2dol'),ChangeFileExt(current_module.exefilename^,'.elf')+' '+ 
+     current_module.exefilename^,true,false);
+>>>>>>> origin/cpstrnew
    end;
   MakeExecutable:=success;   { otherwise a recursive call to link method }
 end;
@@ -702,6 +736,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterLinker(ld_wii,TLinkerWii);
 =======
   RegisterExternalLinker(system_powerpc_wii_info,TLinkerWii);
@@ -712,5 +747,8 @@ initialization
 =======
   RegisterExternalLinker(system_powerpc_wii_info,TLinkerWii);
 >>>>>>> graemeg/cpstrnew
+=======
+  RegisterExternalLinker(system_powerpc_wii_info,TLinkerWii);
+>>>>>>> origin/cpstrnew
   RegisterTarget(system_powerpc_wii_info);
 end.

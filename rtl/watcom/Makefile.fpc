@@ -11,6 +11,7 @@ loaders=prt0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 extpas strings watcom dos \
       cpu charset cpall types getopts heaptrc lnfodwrf lineinfo ctypes fgl \
       math typinfo mmx \
@@ -23,6 +24,8 @@ implicitunits=exeinfo \
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 units=system objpas macpas iso7185 strings watcom dos crt objects \
       cpu charset types getopts heaptrc lnfodwrf lineinfo ctypes fgl \
       math typinfo mmx ucomplex \

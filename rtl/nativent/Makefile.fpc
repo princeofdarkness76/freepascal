@@ -10,6 +10,7 @@ loaders=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #units=system objpas macpas iso7185 extpas buildrtl lineinfo lnfodwrf
 units=system uuchar objpas iso7185 extpas cpall buildrtl
 implicitunits=ndk ndkutils ddk \
@@ -34,6 +35,8 @@ rsts=math typinfo classes sysconst
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 #units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 units=system objpas iso7185 buildrtl
 implicitunits=ndk ndkutils ddk \
@@ -55,11 +58,14 @@ implicitunits=ndk ndkutils ddk \
 rsts=math varutils typinfo variants classes dateutils sysconst
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [require]
 nortl=y
@@ -88,6 +94,7 @@ UNITPREFIX=rtl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 SYSTEMUNIT=system
 =======
 >>>>>>> graemeg/cpstrnew
@@ -95,10 +102,13 @@ SYSTEMUNIT=system
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 CPU_UNITS=
 
 ifeq ($(ARCH),i386)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -112,6 +122,9 @@ CPU_UNITS=x86 cpu mmx
 =======
 CPU_UNITS=x86 cpu mmx
 >>>>>>> graemeg/cpstrnew
+=======
+CPU_UNITS=x86 cpu mmx
+>>>>>>> origin/cpstrnew
 endif
 
 ifeq ($(ARCH),x86_64)
@@ -170,6 +183,7 @@ system$(PPUEXT) : system.pp $(SYSDEPS)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uuchar$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(INC)/uuchar.pp
 
 =======
@@ -178,6 +192,8 @@ uuchar$(PPUEXT): $(SYSTEMUNIT)$(PPUEXT) $(INC)/uuchar.pp
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 objpas$(PPUEXT): $(OBJPASDIR)/objpas.pp $(INC)/except.inc system$(PPUEXT)
         $(COMPILER) -I$(OBJPASDIR) $(OBJPASDIR)/objpas.pp
 
@@ -186,6 +202,7 @@ macpas$(PPUEXT) : $(INC)/macpas.pp objpas$(PPUEXT) buildrtl$(PPUEXT)
 
 buildrtl$(PPUEXT): buildrtl.pp system$(PPUEXT) objpas$(PPUEXT)
         $(COMPILER) -Fi$(OBJPASDIR)/sysutils -Fi$(OBJPASDIR)/classes -Fu$(PROCINC) -I$(OBJPASDIR) -Fi$(DDKINC) -I$(INC) -Fu$(INC) -Fu$(OBJPASDIR) buildrtl
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -198,3 +215,5 @@ cpall$(PPUEXT): $(RTL)/charmaps/cpall.pas system$(PPUEXT) objpas$(PPUEXT)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

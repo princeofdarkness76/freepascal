@@ -38,6 +38,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include obtypes.inc}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -45,6 +46,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$include pstypes.inc}
 {$include peb_teb.inc}
 

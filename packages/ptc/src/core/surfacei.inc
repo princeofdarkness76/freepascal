@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -42,6 +46,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -123,6 +128,9 @@ constructor TPTCSurface.Create(AWidth, AHeight: Integer; const AFormat: TPTCForm
 =======
 constructor TPTCSurface.Create(AWidth, AHeight: Integer; const AFormat: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TPTCSurface.Create(AWidth, AHeight: Integer; const AFormat: TPTCFormat);
+>>>>>>> origin/cpstrnew
 var
   size: Integer;
 begin
@@ -136,6 +144,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FFormat := AFormat;
 =======
   FFormat := TPTCFormat.Create(AFormat);
@@ -146,6 +155,9 @@ begin
 =======
   FFormat := TPTCFormat.Create(AFormat);
 >>>>>>> graemeg/cpstrnew
+=======
+  FFormat := TPTCFormat.Create(AFormat);
+>>>>>>> origin/cpstrnew
   FArea := TPTCArea.Create(0, 0, AWidth, AHeight);
   FClip := TPTCArea.Create(FArea);
   FPitch := AWidth * AFormat.Bytes;
@@ -170,26 +182,33 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FPalette.Free;
   FClip.Free;
   FArea.Free;
   FFormat.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FreeMem(FPixels);
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -203,10 +222,14 @@ procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface);
 =======
 procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface);
+>>>>>>> origin/cpstrnew
 begin
   ASurface.Load(FPixels, FWidth, FHeight, FPitch, FFormat, FPalette);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -224,6 +247,10 @@ procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface;
 procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface;
                            const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCSurface.Copy(ASurface: TPTCBaseSurface;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   ASurface.Load(FPixels, FWidth, FHeight, FPitch, FFormat, FPalette,
                 ASource, ADestination);
@@ -249,6 +276,7 @@ procedure TPTCSurface.Load(const APixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette);
 =======
@@ -256,17 +284,22 @@ procedure TPTCSurface.Load(const APixels: Pointer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette);
 var
   Area_: TPTCArea;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   if FClip.Equals(FArea) then
   begin
@@ -279,6 +312,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Load(APixels, AWidth, AHeight, APitch, AFormat, APalette,
          TPTCArea.Create(0, 0, AWidth, AHeight), FArea);
 =======
@@ -286,6 +320,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   begin
     Area_ := TPTCArea.Create(0, 0, AWidth, AHeight);
     try
@@ -296,15 +332,19 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TPTCSurface.Load(const APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -330,6 +370,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette;
                            const ASource, ADestination: TPTCArea);
@@ -357,15 +399,19 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TPTCSurface.Save(APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -376,17 +422,22 @@ procedure TPTCSurface.Save(APixels: Pointer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette);
 var
   area_: TPTCArea;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   if FClip.Equals(FArea) then
   begin
@@ -399,6 +450,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Save(APixels, AWidth, AHeight, APitch, AFormat, APalette,
          FArea, TPTCArea.Create(0, 0, width, height));
 =======
@@ -406,6 +458,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   begin
     area_ := TPTCArea.Create(0, 0, width, height);
     try
@@ -416,15 +470,19 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TPTCSurface.Save(APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -450,6 +508,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette;
                            const ASource, ADestination: TPTCArea);
@@ -477,15 +537,19 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TPTCSurface.Clear;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -499,11 +563,15 @@ var
 =======
   Color: TPTCColor;
 >>>>>>> graemeg/cpstrnew
+=======
+  Color: TPTCColor;
+>>>>>>> origin/cpstrnew
 begin
   if Format.Direct then
     Color := TPTCColor.Create(0, 0, 0, 0)
   else
     Color := TPTCColor.Create(0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -517,6 +585,8 @@ procedure TPTCSurface.Clear(AColor: IPTCColor);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   try
     Clear(Color);
   finally
@@ -527,15 +597,19 @@ end;
 procedure TPTCSurface.Clear(const AColor: TPTCColor);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   Clear(AColor, FArea);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -560,6 +634,8 @@ function TPTCSurface.Palette: IPTCPalette;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TPTCSurface.Clear(const AColor: TPTCColor; const AArea: TPTCArea);
 var
   clipped_area: TPTCArea;
@@ -582,15 +658,19 @@ end;
 function TPTCSurface.Palette: TPTCPalette;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   Result := FPalette;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -602,6 +682,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TPTCSurface.Clip(const AArea: TPTCArea);
 var
   tmp: TPTCArea;
@@ -614,11 +696,14 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TPTCSurface.GetWidth: Integer;
@@ -639,6 +724,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TPTCSurface.GetArea: IPTCArea;
 =======
 function TPTCSurface.GetArea: TPTCArea;
@@ -649,10 +735,14 @@ function TPTCSurface.GetArea: TPTCArea;
 =======
 function TPTCSurface.GetArea: TPTCArea;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCSurface.GetArea: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   Result := FArea;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -666,10 +756,14 @@ function TPTCSurface.Clip: TPTCArea;
 =======
 function TPTCSurface.Clip: TPTCArea;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCSurface.Clip: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   Result := FClip;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -683,6 +777,9 @@ function TPTCSurface.GetFormat: TPTCFormat;
 =======
 function TPTCSurface.GetFormat: TPTCFormat;
 >>>>>>> graemeg/cpstrnew
+=======
+function TPTCSurface.GetFormat: TPTCFormat;
+>>>>>>> origin/cpstrnew
 begin
   Result := FFormat;
 end;

@@ -1773,12 +1773,15 @@ type_w_instance_with_abstract=04046_W_Construction d´une classe "$1" avec des mé
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type_h_in_range_check=04047_H_L´opérande à gauche de l´opérateur IN doit avoir la longueur d´un octet (8 bits)
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type_h_in_range_check=L´opérande à gauche de l´opérateur IN doit avoir la longueur d´un octet (8 bits)
 >>>>>>> graemeg/cpstrnew
 % The left operand of the \var{in} operator is not an ordinal or enumeration which fits
@@ -3509,6 +3512,7 @@ option_logo=11023_[ Compilateur Free Pascal version $FPCFULLVERSION [$FPCDATE] f
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015, Florian Klaempfl and others]
 =======
 Copyright (c) 1993-2011, Florian Klaempfl ]
@@ -3519,6 +3523,9 @@ Copyright (c) 1993-2011, Florian Klaempfl ]
 =======
 Copyright (c) 1993-2011, Florian Klaempfl ]
 >>>>>>> graemeg/cpstrnew
+=======
+Copyright (c) 1993-2011, Florian Klaempfl ]
+>>>>>>> origin/cpstrnew
 #
 # Info (option -i)
 #

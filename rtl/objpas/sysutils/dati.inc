@@ -359,11 +359,14 @@ end ;
 function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
 begin
 <<<<<<< HEAD
+<<<<<<< HEAD
   DateTimeToString(Result, 'c', DateTime ,FormatSettings);
 >>>>>>> graemeg/cpstrnew
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   DateTimeToString(Result, 'c', DateTime);
 end ;
 
@@ -371,9 +374,12 @@ function DateTimeToStr(DateTime: TDateTime; const FormatSettings: TFormatSetting
 begin
   DateTimeToString(Result, 'c', DateTime ,FormatSettings);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 {   StrToDate converts the string S to a TDateTime value
@@ -405,6 +411,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   While (Len>0) and (S[Len-1] in [' ',#8,#9,#10,#12,#13]) do
     Dec(len);
 =======
@@ -413,6 +420,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if (Len=0) then
     begin
       FixErrorMsg(SInvalidDateFormat,'');
@@ -539,10 +548,17 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+
+function StrToDate(const S: PChar; Len : integer; const useformat : string; separator : char = #0): TDateTime;
+
+Var
+  MSg : AnsiString;
+=======
 
 function StrToDate(const S: PChar; Len : integer; const useformat : string; separator : char = #0): TDateTime;
 
@@ -555,6 +571,304 @@ begin
     Raise EConvertError.Create(Msg);
 end;
 
+function StrToDate(const S: ShortString; const useformat : string; separator : char = #0): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),UseFormat,separator);
+end;
+
+function StrToDate(const S: AnsiString; const useformat : string; separator : char = #0): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),UseFormat,separator);
+end;
+
+function StrToDate(const S: ShortString; separator : char): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+end;
+
+function StrToDate(const S: ShortString): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+end;
+
+function StrToDate(const S: AnsiString; separator : char): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
+end;
+
+function StrToDate(const S: AnsiString): TDateTime;
+begin
+    result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,#0);
+end;
+
+{   StrToTime converts the string S to a TDateTime value
+    if S does not represent a valid time value an
+    EConvertError will be raised   }
+
+
+function IntStrToTime(Out ErrorMsg : AnsiString; const S: PChar; Len : integer;const defs:TFormatSettings; separator : char = #0): TDateTime;
+const
+  AMPM_None = 0;
+  AMPM_AM = 1;
+  AMPM_PM = 2;
+  tiHour = 0;
+  tiMin = 1;
+  tiSec = 2;
+  tiMSec = 3;
+type
+  TTimeValues = array[tiHour..tiMSec] of Word;
+var
+   AmPm: integer;
+   TimeValues: TTimeValues;
+
+    function StrPas(Src : PChar; len: integer = 0) : ShortString;
+    begin
+        //this is unsafe for len > 255, it will trash memory (I tested this)
+        //reducing it is safe, since whenever we use this a string > 255 is invalid anyway
+        if len > 255 then len := 255;
+        SetLength(Result, len);
+        move(src[0],result[1],len);
+    end;
+
+   function SplitElements(out TimeValues: TTimeValues; out AmPm: Integer): Boolean;
+   //Strict version. It does not allow #32 as Separator, it will treat it as whitespace always
+   const
+     Digits = ['0'..'9'];
+   var
+      Cur, Offset, ElemLen, Err, TimeIndex, FirstSignificantDigit: Integer;
+      Value: Word;
+      DigitPending, MSecPending: Boolean;
+      AmPmStr: ShortString;
+      CurChar: Char;
+   begin
+     Result := False;
+     AmPm := AMPM_None; //No Am or PM in string found yet
+     MSecPending := False;
+     TimeIndex := 0; //indicating which TTimeValue must be filled next
+     FillChar(TimeValues, SizeOf(TTimeValues), 0);
+     Cur := 0;
+     //skip leading blanks
+     While (Cur < Len) and (S[Cur] =#32) do Inc(Cur);
+     Offset := Cur;
+     //First non-blank cannot be Separator or DecimalSeparator
+     if (Cur > Len - 1) or (S[Cur] = Separator) or (S[Cur] = defs.Decimalseparator) then Exit;
+     DigitPending := (S[Cur] in Digits);
+     While (Cur < Len) do
+     begin
+       //writeln;
+       //writeln('Main While loop:  Cur = ',Cur,' S[Cur] = "',S[Cur],'" Len = ',Len);
+       CurChar := S[Cur];
+       if CurChar in Digits then
+       begin//Digits
+         //HH, MM, SS, or Msec?
+         //writeln('Digit');
+         //Digits are only allowed after starting Am/PM or at beginning of string or after Separator
+         //and TimeIndex must be <= tiMSec
+         //Uncomment "or (#32 = Separator)" and it will allllow #32 as separator
+         if (not (DigitPending {or (#32 = Separator)})) or (TimeIndex > tiMSec) then Exit;
+         OffSet := Cur;
+         if (CurChar <> '0') then FirstSignificantDigit := OffSet else FirstSignificantDigit := -1;
+         while (Cur < Len -1) and (S[Cur + 1] in Digits) do
+         begin
+           //Mark first Digit that is not '0'
+           if (FirstSignificantDigit = -1) and (S[Cur] <> '0') then FirstSignificantDigit := Cur;
+           Inc(Cur);
+         end;
+         if (FirstSignificantDigit = -1) then FirstSignificantDigit := Cur;
+         ElemLen := 1 + Cur - FirstSignificantDigit;
+         //writeln('  S[FirstSignificantDigit] = ',S[FirstSignificantDigit], ' S[Cur] = ',S[Cur],' ElemLen = ',ElemLen,' -> ', StrPas(S + Offset, ElemLen));
+         //writeln('  Cur = ',Cur);
+         //this way we know that Val() will never overflow Value !
+         if (ElemLen <= 2) or ((ElemLen <= 3) and (TimeIndex = tiMSec) ) then
+         begin
+           Val(StrPas(S + FirstSignificantDigit, ElemLen), Value, Err);
+           //writeln('  Value = ',Value,' HH = ',TimeValues[0],' MM = ',TimeValues[1],' SS = ',TimeValues[2],' MSec = ',Timevalues[3]);
+           //This is safe now, because we know Value < High(Word)
+           TimeValues[TimeIndex] := Value;
+           Inc(TimeIndex);
+           DigitPending := False;
+         end
+         else  Exit; //Value to big, so it must be a wrong timestring
+       end//Digits
+       else if (CurChar = #32) then
+       begin
+         //writeln('#32');
+         //just skip, but we must adress this, or it will be parsed by either AM/PM or Separator
+       end
+       else if (CurChar = Separator) then
+       begin
+         //writeln('Separator');
+         if DigitPending or (TimeIndex > tiSec) then Exit;
+         DigitPending := True;
+         MSecPending := False;
+       end
+       else if (CurChar = defs.DecimalSeparator) then
+       begin
+         //writeln('DecimalSeparator');
+         if DigitPending or MSecPending or (TimeIndex <> tiMSec) then Exit;
+         DigitPending := True;
+         MSecPending := True;
+       end
+       else
+       begin//AM/PM?
+         //None of the above, so this char _must_ be the start of AM/PM string
+         //If we already have found AM/PM or we expect a digit then then timestring must be wrong at this point
+         //writeln('AM/PM?');
+         if (AmPm <> AMPM_None) or DigitPending then Exit;
+         OffSet := Cur;
+         while (Cur < Len -1) and (not (S[Cur + 1] in [Separator, #32, defs.DecimalSeparator]))
+           and not (S[Cur + 1] in Digits) do Inc(Cur);
+         ElemLen := 1 + Cur - OffSet;
+         //writeln('  S[Offset] = ',S[Offset], ' S[Cur] = ',S[Cur],' ElemLen = ',ElemLen,' -> ', StrPas(S + Offset, ElemLen));
+         //writeln('  Cur = ',Cur);
+         AmPmStr := StrPas(S + OffSet, ElemLen);
+
+         //writeln('AmPmStr = ',ampmstr,' (',length(ampmstr),')');
+         //We must compare to TimeAMString before hardcoded 'AM' for delphi compatibility
+         //Also it is perfectly legal, though insane to have TimeAMString = 'PM' and vice versa
+         if (AnsiCompareText(AmPmStr, defs.TimeAMString) = 0) then AmPm := AMPM_AM
+         else if (AnsiCompareText(AmPmStr, defs.TimePMString) = 0) then AmPm := AMPM_PM
+         else if (CompareText(AmPmStr, 'AM') = 0) then AmPm := AMPM_AM
+         else if (CompareText(AmPmStr, 'PM') = 0) then AmPm := AMPM_PM
+         else Exit; //If text does not match any of these, timestring must be wrong;
+         //if AM/PM is at beginning of string, then a digit is mandatory after it
+         if (TimeIndex = tiHour) then
+         begin
+           DigitPending := True;
+         end
+         //otherwise, no more TimeValues allowed after this
+         else
+         begin
+           TimeIndex := tiMSec + 1;
+           DigitPending := False;
+         end;
+       end;//AM/PM
+       Inc(Cur)
+     end;//while
+
+     //If we arrive here, parsing the elements has been successfull
+     //if not at least Hours specified then input is not valid
+     //when am/pm is specified Hour must be <= 12 and not 0
+     if (TimeIndex = tiHour) or ((AmPm <> AMPM_None) and ((TimeValues[tiHour] > 12) or (TimeValues[tiHour] = 0))) or DigitPending then Exit;
+     Result := True;
+   end;
+
+begin
+  if separator = #0 then
+        separator := defs.TimeSeparator;
+  AmPm := AMPM_None;
+  if not SplitElements(TimeValues, AmPm) then
+  begin
+    ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
+    Exit;
+  end;
+  if (AmPm=AMPM_PM) and (TimeValues[tiHour]<>12) then Inc(TimeValues[tiHour], 12)
+  else if (AmPm=AMPM_AM) and (TimeValues[tiHour]=12) then TimeValues[tiHour]:=0;
+
+  if not TryEncodeTime(TimeValues[tiHour], TimeValues[tiMin], TimeValues[tiSec], TimeValues[tiMSec], result) Then
+    //errormsg:='Invalid time.';
+    ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
+end ;
+
+function StrToTime(const S: PChar; Len : integer; separator : char = #0): TDateTime;
+
+Var
+  Msg : AnsiString;
+
+begin
+  Result:=IntStrToTime(Msg,S,Len,DefaultFormatSettings,Separator);
+  If (Msg<>'') then
+    Raise EConvertError.Create(Msg);
+end;
+
+function StrToTime(const s: ShortString; separator : char): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), separator);
+end;
+
+function StrToTime(const s: AnsiString; separator : char): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), separator);
+end;
+
+function StrToTime(const s: ShortString): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), #0);
+end;
+
+function StrToTime(const s: AnsiString): TDateTime;
+begin
+   result := StrToTime(@s[1], length(s), #0);
+end;
+
+{   StrToDateTime converts the string S to a TDateTime value
+    if S does not represent a valid date and/or time value
+    an EConvertError will be raised   }
+
+function StrToDateTime(const s: string): TDateTime;
+var
+  I: integer;
+begin
+  I:=Pos(DefaultFormatSettings.TimeSeparator,S);
+  If (I>0) then
+    begin
+    While (I>0) and (S[I]<>' ') do
+      Dec(I);
+    If I>0 then
+      result:=ComposeDateTime(StrToDate(Copy(S,1,I-1)),StrToTime(Copy(S,i+1, Length(S)-i)))
+    else
+      result:=StrToTime(S)
+    end
+  else
+    Result:=StrToDate(S);
+end;
+
+function StrToDateTime(const s: AnsiString; const UseFormat : TFormatSettings): TDateTime;
+var
+  I: integer;
+begin
+  I:=Pos(UseFormat.TimeSeparator,S);
+  If (I>0) then
+    begin
+    While (I>0) and (S[I]<>' ') do
+      Dec(I);
+    If I>0 then
+      result:=ComposeDateTime(StrToDate(Copy(S,1,I-1),UseFormat.ShortDateFormat,UseFormat.DateSeparator),
+                              StrToTime(Copy(S,i+1, Length(S)-i),UseFormat.TimeSeparator))
+    else
+      result:=StrToTime(S,UseFormat.TimeSeparator)
+    end
+  else
+    Result:=StrToDate(S,UseFormat.ShortDateFormat,UseFormat.DateSeparator);
+end;
+
+function StrToDateTime(const s: ShortString; const UseFormat : TFormatSettings): TDateTime;
+var
+  I: integer;
+begin
+  I:=Pos(UseFormat.TimeSeparator,S);
+  If (I>0) then
+    begin
+    While (I>0) and (S[I]<>' ') do
+      Dec(I);
+    If I>0 then
+      result:=ComposeDateTime(StrToDate(Copy(S,1,I-1),UseFormat.ShortDateFormat,UseFormat.DateSeparator),
+                              StrToTime(Copy(S,i+1, Length(S)-i),UseFormat.TimeSeparator))
+    else
+      result:=StrToTime(S,UseFormat.TimeSeparator)
+    end
+  else
+    Result:=StrToDate(S,UseFormat.ShortDateFormat,UseFormat.DateSeparator);
+end;
+>>>>>>> origin/cpstrnew
+
+begin
+  Result:=IntStrToDate(Msg,S,Len,useFormat,DefaultFormatSettings,Separator);
+  If (Msg<>'') then
+    Raise EConvertError.Create(Msg);
+end;
+
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function StrToDate(const S: string; FormatSettings: TFormatSettings): TDateTime;
@@ -610,18 +924,357 @@ function StrToDate(const S: ShortString; const useformat : string; separator : c
 begin
     result := StrToDate(@S[1],Length(s),UseFormat,separator);
 end;
+=======
+function FormatDateTime(const FormatStr: string; DateTime: TDateTime): string;
+begin
+  DateTimeToString(Result, FormatStr, DateTime, DefaultFormatSettings);
+end;
+
+function FormatDateTime(const FormatStr: string; DateTime: TDateTime; const FormatSettings: TFormatSettings): string;
+begin
+  DateTimeToString(Result, FormatStr, DateTime, FormatSettings);
+end;
+
+{   DateTimeToString formats DateTime to the given format in FormatStr   }
+
+procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime);
+begin
+  DateTimeToString(Result, FormatStr, DateTime, DefaultFormatSettings);
+end;
+
+procedure DateTimeToString(out Result: string; const FormatStr: string; const DateTime: TDateTime; const FormatSettings: TFormatSettings);
+var
+  ResultLen: integer;
+  ResultBuffer: array[0..255] of char;
+  ResultCurrent: pchar;
+{$IFDEF MSWindows}
+  isEnable_E_Format : Boolean;
+  isEnable_G_Format : Boolean;
+  eastasiainited : boolean;
+{$ENDIF MSWindows}
+
+{$IFDEF MSWindows}
+  procedure InitEastAsia;
+  var     ALCID : LCID;
+         PriLangID , SubLangID : Word;
+
+  begin
+    ALCID := GetThreadLocale;
+    PriLangID := ALCID and $3FF;
+    if (PriLangID>0) then
+       SubLangID := (ALCID and $FFFF) shr 10
+      else
+        begin
+          PriLangID := SysLocale.PriLangID;
+          SubLangID := SysLocale.SubLangID;
+        end;
+    isEnable_E_Format := (PriLangID = LANG_JAPANESE)
+                  or
+                  (PriLangID = LANG_KOREAN)
+                  or
+                  ((PriLangID = LANG_CHINESE)
+                   and
+                   (SubLangID = SUBLANG_CHINESE_TRADITIONAL)
+                  );
+    isEnable_G_Format := (PriLangID = LANG_JAPANESE)
+                  or
+                  ((PriLangID = LANG_CHINESE)
+                   and
+                   (SubLangID = SUBLANG_CHINESE_TRADITIONAL)
+                  );
+    eastasiainited :=true;
+  end;
+{$ENDIF MSWindows}
+
+  procedure StoreStr(Str: PChar; Len: Integer);
+  begin
+    if ResultLen + Len < SizeOf(ResultBuffer) then
+    begin
+      StrMove(ResultCurrent, Str, Len);
+      ResultCurrent := ResultCurrent + Len;
+      ResultLen := ResultLen + Len;
+    end;
+  end;
+
+  procedure StoreString(const Str: string);
+  var Len: integer;
+  begin
+   Len := Length(Str);
+   if ResultLen + Len < SizeOf(ResultBuffer) then
+     begin
+       StrMove(ResultCurrent, pchar(Str), Len);
+       ResultCurrent := ResultCurrent + Len;
+       ResultLen := ResultLen + Len;
+     end;
+  end;
+
+  procedure StoreInt(Value, Digits: Integer);
+  var
+    S: string[16];
+    Len: integer;
+  begin
+    System.Str(Value:Digits, S);
+    for Len := 1 to Length(S) do
+    begin
+      if S[Len] = ' ' then
+        S[Len] := '0'
+      else
+        Break;
+    end;
+    StoreStr(pchar(@S[1]), Length(S));
+  end ;
+
+var
+  Year, Month, Day, DayOfWeek, Hour, Minute, Second, MilliSecond: word;
+
+
+  procedure StoreFormat(const FormatStr: string; Nesting: Integer; TimeFlag: Boolean);
+  var
+    Token, lastformattoken: char;
+    FormatCurrent: pchar;
+    FormatEnd: pchar;
+    Count: integer;
+    Clock12: boolean;
+    P: pchar;
+    tmp: integer;
+
+  begin
+    if Nesting > 1 then  // 0 is original string, 1 is included FormatString
+      Exit;
+
+    FormatCurrent := PChar(FormatStr);
+    FormatEnd := FormatCurrent + Length(FormatStr);
+    Clock12 := false;
+    P := FormatCurrent;
+    // look for unquoted 12-hour clock token
+    while P < FormatEnd do
+    begin
+      Token := P^;
+      case Token of
+        '''', '"':
+        begin
+          Inc(P);
+          while (P < FormatEnd) and (P^ <> Token) do
+            Inc(P);
+        end;
+        'A', 'a':
+        begin
+          if (StrLIComp(P, 'A/P', 3) = 0) or
+             (StrLIComp(P, 'AMPM', 4) = 0) or
+             (StrLIComp(P, 'AM/PM', 5) = 0) then
+          begin
+            Clock12 := true;
+            break;
+          end;
+        end;
+      end;  // case
+      Inc(P);
+    end ;
+    token := #255;
+    lastformattoken := ' ';
+    while FormatCurrent < FormatEnd do
+    begin
+      Token := UpCase(FormatCurrent^);
+      Count := 1;
+      P := FormatCurrent + 1;
+      case Token of
+        '''', '"':
+        begin
+          while (P < FormatEnd) and (p^ <> Token) do
+            Inc(P);
+          Inc(P);
+          Count := P - FormatCurrent;
+          StoreStr(FormatCurrent + 1, Count - 2);
+        end ;
+        'A':
+        begin
+          if StrLIComp(FormatCurrent, 'AMPM', 4) = 0 then
+          begin
+            Count := 4;
+            if Hour < 12 then
+              StoreString(FormatSettings.TimeAMString)
+            else
+              StoreString(FormatSettings.TimePMString);
+          end
+          else if StrLIComp(FormatCurrent, 'AM/PM', 5) = 0 then
+          begin
+            Count := 5;
+            if Hour < 12 then StoreStr(FormatCurrent, 2)
+                         else StoreStr(FormatCurrent+3, 2);
+          end
+          else if StrLIComp(FormatCurrent, 'A/P', 3) = 0 then
+          begin
+            Count := 3;
+            if Hour < 12 then StoreStr(FormatCurrent, 1)
+                         else StoreStr(FormatCurrent+2, 1);
+          end
+          else
+            raise EConvertError.Create('Illegal character in format string');
+        end ;
+        '/': StoreStr(@FormatSettings.DateSeparator, 1);
+        ':': StoreStr(@FormatSettings.TimeSeparator, 1);
+        ' ', 'C', 'D', 'H', 'M', 'N', 'S', 'T', 'Y','Z' :
+        begin
+          while (P < FormatEnd) and (UpCase(P^) = Token) do
+            Inc(P);
+          Count := P - FormatCurrent;
+          case Token of
+            ' ': StoreStr(FormatCurrent, Count);
+            'Y': begin
+              if Count > 2 then
+                StoreInt(Year, 4)
+              else
+                StoreInt(Year mod 100, 2);
+            end;
+            'M': begin
+              if (lastformattoken = 'H') or TimeFlag then
+              begin
+                if Count = 1 then
+                  StoreInt(Minute, 0)
+                else
+                  StoreInt(Minute, 2);
+              end
+              else
+              begin
+                case Count of
+                  1: StoreInt(Month, 0);
+                  2: StoreInt(Month, 2);
+                  3: StoreString(FormatSettings.ShortMonthNames[Month]);
+                else
+                  StoreString(FormatSettings.LongMonthNames[Month]);
+                end;
+              end;
+            end;
+            'D': begin
+              case Count of
+                1: StoreInt(Day, 0);
+                2: StoreInt(Day, 2);
+                3: StoreString(FormatSettings.ShortDayNames[DayOfWeek]);
+                4: StoreString(FormatSettings.LongDayNames[DayOfWeek]);
+                5: StoreFormat(FormatSettings.ShortDateFormat, Nesting+1, False);
+              else
+                StoreFormat(FormatSettings.LongDateFormat, Nesting+1, False);
+              end ;
+            end ;
+            'H': if Clock12 then
+              begin
+                tmp := hour mod 12;
+                if tmp=0 then tmp:=12;
+                if Count = 1 then
+                  StoreInt(tmp, 0)
+                else
+                  StoreInt(tmp, 2);
+              end
+              else begin
+                if Count = 1 then
+		  StoreInt(Hour, 0)
+                else
+                  StoreInt(Hour, 2);
+              end;
+            'N': if Count = 1 then
+                   StoreInt(Minute, 0)
+                 else
+                   StoreInt(Minute, 2);
+            'S': if Count = 1 then
+                   StoreInt(Second, 0)
+                 else
+                   StoreInt(Second, 2);
+            'Z': if Count = 1 then
+                   StoreInt(MilliSecond, 0)
+                 else
+		   StoreInt(MilliSecond, 3);
+            'T': if Count = 1 then
+		   StoreFormat(FormatSettings.ShortTimeFormat, Nesting+1, True)
+                 else
+	           StoreFormat(FormatSettings.LongTimeFormat, Nesting+1, True);
+            'C': begin
+                   StoreFormat(FormatSettings.ShortDateFormat, Nesting+1, False);
+                   if (Hour<>0) or (Minute<>0) or (Second<>0) then
+                     begin
+                      StoreString(' ');
+                      StoreFormat(FormatSettings.LongTimeFormat, Nesting+1, True);
+                     end;
+                 end;
+{$IFDEF MSWindows}
+            'E':
+               begin
+                 if not Eastasiainited then InitEastAsia;
+                 if Not(isEnable_E_Format) then StoreStr(@FormatCurrent^, 1)
+                  else
+                   begin
+                     while (P < FormatEnd) and (UpCase(P^) = Token) do
+                     P := P + 1;
+                     Count := P - FormatCurrent;
+                     StoreString(ConvertEraYearString(Count,Year,Month,Day));
+                   end;
+                 lastformattoken:=token;
+               end;
+             'G':
+               begin
+                 if not Eastasiainited then InitEastAsia;
+                 if Not(isEnable_G_Format) then StoreStr(@FormatCurrent^, 1)
+                  else
+                   begin
+                     while (P < FormatEnd) and (UpCase(P^) = Token) do
+                     P := P + 1;
+                     Count := P - FormatCurrent;
+                     StoreString(ConvertEraString(Count,Year,Month,Day));
+                   end;
+                 lastformattoken:=token;
+               end;
+{$ENDIF MSWindows}
+          end;
+          lastformattoken := token;
+        end;
+        else
+          StoreStr(@Token, 1);
+      end ;
+      Inc(FormatCurrent, Count);
+    end;
+  end;
+
+begin
+{$ifdef MSWindows}
+  eastasiainited:=false;
+{$endif MSWindows}
+  DecodeDateFully(DateTime, Year, Month, Day, DayOfWeek);
+  DecodeTime(DateTime, Hour, Minute, Second, MilliSecond);
+  ResultLen := 0;
+  ResultCurrent := @ResultBuffer[0];
+  if FormatStr <> '' then
+    StoreFormat(FormatStr, 0, False)
+  else
+    StoreFormat('C', 0, False);
+  ResultBuffer[ResultLen] := #0;
+  result := StrPas(@ResultBuffer[0]);
+end ;
+
+
+Function DateTimeToFileDate(DateTime : TDateTime) : Longint;
+
+Var YY,MM,DD,H,m,s,msec : Word;
+>>>>>>> origin/cpstrnew
 
 function StrToDate(const S: AnsiString; const useformat : string; separator : char = #0): TDateTime;
 begin
     result := StrToDate(@S[1],Length(s),UseFormat,separator);
 end;
 
+<<<<<<< HEAD
 function StrToDate(const S: ShortString; separator : char): TDateTime;
 begin
     result := StrToDate(@S[1],Length(s),DefaultFormatSettings.ShortDateFormat,separator)
 >>>>>>> graemeg/cpstrnew
 =======
     result := StrToDate(@S[1],Length(s),UseFormat,separator);
+=======
+function CurrentYear: Word;
+var
+  SysTime: TSystemTime;
+begin
+  GetLocalTime(SysTime);
+  Result := SysTime.Year;
+>>>>>>> origin/cpstrnew
 end;
 
 function StrToDate(const S: ShortString; separator : char): TDateTime;
@@ -673,6 +1326,7 @@ begin
 >>>>>>> graemeg/cpstrnew
 end;
 
+<<<<<<< HEAD
 function StrToDate(const S: AnsiString): TDateTime;
 begin
 <<<<<<< HEAD
@@ -718,8 +1372,122 @@ var
         if len > 255 then len := 255;
         SetLength(Result, len);
         move(src[0],result[1],len);
+=======
+function TryStrToDate(const S: ShortString; out Value: TDateTime): Boolean;
+begin
+    result := TryStrToDate(S, Value, #0);
+end;
+
+function TryStrToDate(const S: ShortString; out Value: TDateTime;
+                    const useformat : string; separator : char = #0): Boolean;
+
+Var
+  Msg : Ansistring;
+
+begin
+  Value:=IntStrToDate(Msg,@S[1],Length(S),useformat,defaultformatsettings,separator);
+  Result:=(Msg='');
+end;
+
+function TryStrToDate(const S: AnsiString; out Value: TDateTime;
+                    const useformat : string; separator : char = #0): Boolean;
+
+Var
+  Msg : Ansistring;
+
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+    Value:=IntStrToDate(Msg,@S[1],Length(S),useformat,DefaultFormatSettings,Separator);
+    Result:=(Msg='');
+    end;
+end;
+
+function TryStrToDate(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,Separator);
+end;
+
+
+function TryStrToDate(const S: AnsiString; out Value: TDateTime): Boolean;
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,#0);
+end;
+
+function TryStrToDate(const S: AnsiString; out Value: TDateTime; separator : char): Boolean;
+
+begin
+  Result:=TryStrToDate(S,Value,DefaultFormatSettings.ShortDateFormat,Separator);
+end;
+
+function TryStrToDate(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+Var
+  Msg : Ansistring;
+
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+      Value:=IntStrToDate(Msg,@S[1],Length(S),FormatSettings.ShortDateFormat,FormatSettings,#0);
+      Result:=(Msg='');
+    end;
+end;
+
+function TryStrToTime(const S: ShortString; out Value: TDateTime; separator : char): Boolean;
+
+Var
+  Msg : AnsiString;
+begin
+  Value:=IntStrToTime(Msg,@S[1],Length(S),DefaultFormatSettings,Separator);
+  result:=(Msg='');
+end;
+
+function TryStrToTime(const S: ShortString; out Value: TDateTime): Boolean;
+begin
+  Result := TryStrToTime(S,Value,#0);
+end;
+
+function TryStrToTime(const S: AnsiString; out Value: TDateTime; separator : char): Boolean;
+Var
+  Msg : AnsiString;
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+      Value:=IntStrToTime(Msg,@S[1],Length(S),DefaultFormatSettings,Separator);
+      Result:=(Msg='');
+    end;
+end;
+
+function TryStrToTime(const S: AnsiString; out Value: TDateTime): Boolean;
+begin
+    result := TryStrToTime(S,Value,#0);
+end;
+
+function TryStrToTime(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+Var msg : AnsiString;
+begin
+  Result:=Length(S)<>0;
+  If Result then
+    begin
+      Value:=IntStrToTime(Msg,@S[1],Length(S),FormatSettings,#0);
+      Result:=(Msg='');
+    end;
+end;
+
+function TryStrToDateTime(const S: ShortString; out Value: TDateTime): Boolean;
+  begin
+    result:=true;
+    try
+      value:=StrToDateTime(s);
+    except
+      on EConvertError do
+        result:=false
+>>>>>>> origin/cpstrnew
     end;
 
+<<<<<<< HEAD
 =======
 
     function StrPas(Src : PChar; len: integer = 0) : ShortString;
@@ -878,6 +1646,9 @@ begin
         separator := defs.TimeSeparator;
   AmPm := AMPM_None;
   if not SplitElements(TimeValues, AmPm) then
+=======
+function TryStrToDateTime(const S: AnsiString; out Value: TDateTime): Boolean;
+>>>>>>> origin/cpstrnew
   begin
     ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
     Exit;
@@ -885,6 +1656,7 @@ begin
   if (AmPm=AMPM_PM) and (TimeValues[tiHour]<>12) then Inc(TimeValues[tiHour], 12)
   else if (AmPm=AMPM_AM) and (TimeValues[tiHour]=12) then TimeValues[tiHour]:=0;
 
+<<<<<<< HEAD
   if not TryEncodeTime(TimeValues[tiHour], TimeValues[tiMin], TimeValues[tiSec], TimeValues[tiMSec], result) Then
     //errormsg:='Invalid time.';
     ErrorMsg:=Format(SErrInvalidTimeFormat,[StrPas(S, Len)]);
@@ -917,11 +1689,95 @@ begin
 end;
 
 function StrToTime(const s: AnsiString; separator : char): TDateTime;
+=======
+function TryStrToDateTime(const S: string; out Value: TDateTime; const FormatSettings: TFormatSettings): Boolean;
+var
+  I: integer;
+  dtdate, dttime :TDateTime;
+begin
+  result:=false;
+  I:=Pos(FormatSettings.TimeSeparator,S);
+  If (I>0) then
+    begin
+      While (I>0) and (S[I]<>' ') do
+        Dec(I);
+      If I>0 then
+        begin
+          if not TryStrToDate(Copy(S,1,I-1),dtdate,Formatsettings) then
+            exit;
+          if not TryStrToTime(Copy(S,i+1, Length(S)-i),dttime,Formatsettings) then
+            exit;
+          Value:=ComposeDateTime(dtdate,dttime);
+          result:=true;
+        end
+      else
+         result:=TryStrToTime(s,Value,Formatsettings);
+    end
+  else
+    result:=TryStrToDate(s,Value,Formatsettings);
+end;
+
+function StrToDateDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+begin
+   result := StrToDateDef(S,DefValue,#0);
+end;
+
+function StrToTimeDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+begin
+   result := StrToTimeDef(S,DefValue,#0);
+end;
+
+function StrToDateTimeDef(const S: ShortString; const Defvalue : TDateTime): TDateTime;
+begin
+  if not TryStrToDateTime(s,Result) Then
+    result:=defvalue;
+end;
+
+function StrToDateDef(const S: ShortString; const Defvalue : TDateTime; separator : char): TDateTime;
+begin
+  if not TryStrToDate(s,Result, separator) Then
+    result:=defvalue;
+end;
+
+function StrToTimeDef(const S: ShortString; const Defvalue : TDateTime; separator : char): TDateTime;
+begin
+  if not TryStrToTime(s,Result, separator) Then
+    result:=defvalue;
+end;
+
+function StrToDateDef(const S: AnsiString; const Defvalue : TDateTime): TDateTime;
+begin
+   result := StrToDateDef(S,DefValue,#0);
+end;
+
+function StrToTimeDef(const S: AnsiString; const Defvalue : TDateTime): TDateTime;
+begin
+   result := StrToTimeDef(S,DefValue,#0);
+end;
+
+function StrToDateTimeDef(const S: AnsiString; const Defvalue : TDateTime): TDateTime;
+>>>>>>> origin/cpstrnew
 begin
    result := StrToTime(PChar(S), length(s), separator);
 end;
 
+<<<<<<< HEAD
 function StrToTime(const s: ShortString): TDateTime;
+=======
+function StrToDateDef(const S: AnsiString; const Defvalue : TDateTime; separator : char): TDateTime;
+begin
+  if not TryStrToDate(s,Result, separator) Then
+    result:=defvalue;
+end;
+
+function StrToTimeDef(const S: AnsiString; const Defvalue : TDateTime; separator : char): TDateTime;
+begin
+  if not TryStrToTime(s,Result, separator) Then
+    result:=defvalue;
+end;
+
+procedure ReplaceTime(var dati:TDateTime; NewTime : TDateTime);inline;
+>>>>>>> origin/cpstrnew
 begin
   // S[1] always exists for shortstring. Length 0 will trigger an error.
    result := StrToTime(@s[1], length(s), #0);

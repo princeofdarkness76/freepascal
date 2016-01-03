@@ -37,6 +37,7 @@ procedure Hermes_Factory_Init;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF I386_ASSEMBLER}
 var
   res: Integer = 0;
@@ -47,17 +48,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   res: Integer;
 begin
   res := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Processor := PROC_GENERIC;
 
   {$IFDEF I386_ASSEMBLER}
@@ -73,6 +79,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$IFDEF X86_64_ASSEMBLER}
     Processor := Processor or PROC_X86_64;
   {$ENDIF X86_64_ASSEMBLER}
@@ -82,6 +89,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function Hermes_Factory_getClearer(bits: Uint32): PHermesClearer;
@@ -294,6 +303,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF I386_ASSEMBLER}
   asm_found: Integer;
 {$ENDIF I386_ASSEMBLER}
@@ -306,6 +316,9 @@ var
 =======
   asm_found: Integer;
 >>>>>>> graemeg/cpstrnew
+=======
+  asm_found: Integer;
+>>>>>>> origin/cpstrnew
   c_found: Integer;
 begin
   found := False;

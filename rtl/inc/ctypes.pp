@@ -88,6 +88,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   csigned                = cint;               pcsigned               = ^csigned;
   cunsigned              = cuint;              pcunsigned             = ^cunsigned;
@@ -97,6 +98,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   csize_t                = ptruint;            pcsize_t               = pptruint;
 
@@ -121,6 +124,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$if defined(darwin) and defined(cpuaarch64)}
   {$define longdouble_is_double}
@@ -131,11 +135,14 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifndef FPUNONE}
 {$if defined(longdouble_is_double) or not defined(FPC_HAS_CEXTENDED)}
   clongdouble=double;
 {$else}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -149,6 +156,9 @@ type
 =======
   {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$if defined(cpui386) or defined(cpux86_64) or defined(cpuavr)}
+>>>>>>> origin/cpstrnew
   clongdouble = cextended;
   {$else}
   {$define longdouble_assignment_overload_real128}

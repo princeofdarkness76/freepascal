@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include libversion.inc} 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -10,6 +11,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { $include helper.inc}
 {$include ndstypes.inc}
 {$include bios.inc}
@@ -28,6 +31,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$include input.inc} 
 =======
 {$include input.inc} // testing...
@@ -38,6 +42,9 @@
 =======
 {$include input.inc} // testing...
 >>>>>>> graemeg/cpstrnew
+=======
+{$include input.inc} // testing...
+>>>>>>> origin/cpstrnew
  
 {$ifdef ARM9}
   {$include arm9/dynamicArray.inc}
@@ -68,6 +75,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm9/dldi.inc}
   {$include arm9/window.inc}
 =======
@@ -76,6 +84,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif ARM9}
 
 {$ifdef ARM7}
@@ -87,6 +97,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm7/sdmmc.inc}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -94,5 +105,7 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$include arm7/touch.inc}
 {$endif ARM7}

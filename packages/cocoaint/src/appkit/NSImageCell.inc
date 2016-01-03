@@ -73,6 +73,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __icFlags: record
       case byte of
        0: (_anonbitfield_NSImageCell0: cuint);
@@ -82,22 +83,28 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __icFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSImageCell0: cuint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _unused: 0..((1 shl 22)-1);
         _animates: 0..1;
         _align: 0..((1 shl 4)-1);
         _scale: 0..((1 shl 2)-1);
         _style: 0..((1 shl 3)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,6 +115,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     __animationState: Pointer;

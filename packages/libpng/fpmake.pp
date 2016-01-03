@@ -24,11 +24,14 @@ begin
     P.Version:='2.2.2-0';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.Dependencies.Add('zlib');
     P.SourcePath.Add('src');
     P.OSes := AllUnixOSes-[qnx]+[win32,os2,emx];

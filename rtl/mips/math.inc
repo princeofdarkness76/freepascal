@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef INTERNCONSTINTF}
 
@@ -29,6 +30,10 @@
 {$ifdef INTERNCONSTINTF}
 
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef INTERNCONSTINTF}
+
+>>>>>>> origin/cpstrnew
 {$ifndef FPC_SYSTEM_HAS_ABS}
     {$define FPC_SYSTEM_HAS_ABS}
     function fpc_abs_real(d : valreal) : valreal;compilerproc;
@@ -62,11 +67,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$else}
 
     {$define FPC_SYSTEM_HAS_ABS}
@@ -81,8 +89,11 @@
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

@@ -56,6 +56,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __dFlags: record
       case byte of
        0: (_anonbitfield_NSDockTile0: cuint);
@@ -72,6 +73,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __dFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSDockTile0: cuint);
@@ -84,11 +87,14 @@ const
         reserved: array[0..4] of id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     
   public
     function size: NSSize; message 'size';

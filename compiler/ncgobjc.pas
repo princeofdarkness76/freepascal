@@ -61,6 +61,7 @@ procedure tcgobjcselectornode.pass_generate_code;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     if current_asmdata.ConstPools[sp_varnamerefs]=nil then
       current_asmdata.ConstPools[sp_varnamerefs]:=THashSet.Create(64, True, False);
@@ -73,6 +74,10 @@ procedure tcgobjcselectornode.pass_generate_code;
     if current_asmdata.ConstPools[sp_varnamerefs]=nil then
       current_asmdata.ConstPools[sp_varnamerefs]:=THashSet.Create(64, True, False);
 >>>>>>> graemeg/cpstrnew
+=======
+    if current_asmdata.ConstPools[sp_varnamerefs]=nil then
+      current_asmdata.ConstPools[sp_varnamerefs]:=THashSet.Create(64, True, False);
+>>>>>>> origin/cpstrnew
     pool:=current_asmdata.ConstPools[sp_varnamerefs];
 
     case left.nodetype of

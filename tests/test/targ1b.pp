@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {%delfiles=targ1a}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -9,6 +10,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { This file is to check if there is some memory corruption
   due to startup code with argument loading

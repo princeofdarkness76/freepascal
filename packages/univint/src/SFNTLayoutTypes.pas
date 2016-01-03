@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    ATS
  
      Copyright:  © 1994-2012 by Apple Inc., all rights reserved.
@@ -66,6 +67,22 @@
                      Last comment:    <rdar://problem/4916090> updated copyright.
  
 >>>>>>> graemeg/cpstrnew
+=======
+     Copyright:  © 1994-2008 by Apple Inc., all rights reserved.
+ 
+     Warning:    *** APPLE INTERNAL USE ONLY ***
+                 This file may contain unreleased API's
+ 
+     BuildInfo:  Built by:            root
+                 On:                  Fri Jul 24 22:21:51 2009
+                 With Interfacer:     3.0d46   (Mac OS X for PowerPC)
+                 From:                SFNTLayoutTypes.i
+                     Revision:        1.3
+                     Dated:           2007/01/15 23:28:27
+                     Last change by:  kurita
+                     Last comment:    <rdar://problem/4916090> updated copyright.
+ 
+>>>>>>> origin/cpstrnew
      Bugs:       Report bugs to Radar component "System Interfaces", "Latest"
                  List the version information (from above) in the Problem Description.
  
@@ -74,11 +91,14 @@
 { Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -137,6 +157,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -148,6 +169,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -166,6 +189,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -188,6 +212,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -197,14 +223,18 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -221,6 +251,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -230,6 +262,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -237,10 +270,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -319,6 +355,8 @@ interface
 <<<<<<< HEAD
 {$elsec}
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -349,6 +387,7 @@ interface
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 {$elsec}
 >>>>>>> graemeg/cpstrnew
 =======
@@ -387,6 +426,9 @@ interface
 =======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -428,6 +470,7 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -453,6 +496,12 @@ uses MacTypes;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 //#pragma pack(push, 2)
 {$ALIGN MAC68K}
 
@@ -477,6 +526,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kLetterCaseType = 3;    { deprecated - use kLowerCaseType or kUpperCaseType instead }
 =======
 	kLetterCaseType = 3;
@@ -487,6 +537,9 @@ const
 =======
 	kLetterCaseType = 3;
 >>>>>>> graemeg/cpstrnew
+=======
+	kLetterCaseType = 3;
+>>>>>>> origin/cpstrnew
 	kVerticalSubstitutionType = 4;
 	kLinguisticRearrangementType = 5;
 	kNumberSpacingType = 6;
@@ -517,6 +570,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kCaseSensitiveLayoutType = 33;
 	kAlternateKanaType = 34;
 	kStylisticAlternativesType = 35;
@@ -529,6 +583,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kCJKRomanSpacingType = 103;
 	kLastFeatureType = -1;
 
@@ -568,6 +624,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kContextualLigaturesOnSelector = 18;
 	kContextualLigaturesOffSelector = 19;
 	kHistoricalLigaturesOnSelector = 20;
@@ -578,6 +635,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -598,6 +657,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kUpperAndLowerCaseSelector = 0;    { deprecated }
 	kAllCapsSelector = 1;    { deprecated }
 	kAllLowerCaseSelector = 2;    { deprecated }
@@ -609,6 +669,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kUpperAndLowerCaseSelector = 0;
 	kAllCapsSelector = 1;
 	kAllLowerCaseSelector = 2;
@@ -686,6 +748,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kScientificInferiorsSelector = 4;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -693,6 +756,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -751,6 +816,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kMathematicalGreekOnSelector = 10;
 	kMathematicalGreekOffSelector = 11;
 =======
@@ -759,6 +825,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -827,6 +895,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kJIS2004CharactersSelector = 11;
 	kHojoCharactersSelector = 12;
 	kNLCCharactersSelector = 13;
@@ -837,6 +906,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -859,6 +930,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kThirdWidthTextSelector = 3;
 	kQuarterWidthTextSelector = 4;
 	kAltProportionalTextSelector = 5;
@@ -869,6 +941,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -996,6 +1070,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {
@@ -1107,10 +1182,13 @@ const
 	kUpperCasePetiteCapsSelector = 2;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
  *  Summary:
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1118,6 +1196,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Selectors for feature type kCJKRomanSpacingType
  }
 const
@@ -1390,8 +1470,11 @@ type
 		glyphs: array[0..0] of UInt16;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	end;
 { A JUSTPCUnconditionalAddAction defines an unconditional glyph add action. }
 
@@ -1405,6 +1488,7 @@ type
 type
 	JustPCConditionalAddActionPtr = ^JustPCConditionalAddAction;
 	JustPCConditionalAddAction = record
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		substThreshold: Fixed;        { threshold of growth factor at which subst occurs }
@@ -1439,6 +1523,12 @@ type
 		substGlyph: UInt16;
 	end;
 >>>>>>> graemeg/cpstrnew
+=======
+		substThreshhold: Fixed;        { threshhold of growth factor at which subst occurs }
+		addGlyph: UInt16;
+		substGlyph: UInt16;
+	end;
+>>>>>>> origin/cpstrnew
 { A PCDuctilityAction defines a ductile axis along which the glyph will be varied. }
 type
 	JustPCDuctilityActionPtr = ^JustPCDuctilityAction;
@@ -1780,10 +1870,13 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 const
 	kPROPTag = $70726F70; { 'prop' }
 	kPROPCurrentVersion = $00030000; { current version number for 'prop' table }
@@ -1802,6 +1895,7 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 const
 	kPROPTag = $70726F70; { 'prop' }
@@ -1824,6 +1918,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kPROPLDirectionClass = 0;    { Left-to-Right }
 	kPROPRDirectionClass = 1;    { Right-to-Left }
 	kPROPALDirectionClass = 2;    { Right-to-Left Arabic Letter }
@@ -2086,12 +2182,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	KernSubtableHeaderPtr = ^KernSubtableHeader;
 >>>>>>> graemeg/cpstrnew
 	KernSubtableHeader = record
@@ -2337,7 +2436,10 @@ const
 { FORMATS FOR TABLE: 'bsln' }
 { CONSTANTS }
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kBSLNTag = $62736C6E; { 'bsln' }
 	kBSLNCurrentVersion = $00010000; { current version number for 'bsln' table }
 	kBSLNDistanceFormatNoMap = 0;
@@ -2421,6 +2523,7 @@ type
 	end;
 
 { The table format used in BaselineTable }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2525,6 +2628,12 @@ type
 { BaselineTable defines the top-level format of the baseline table in the font. }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+	BslnTableFormat = UInt16;
+{ BaselineTable defines the top-level format of the baseline table in the font. }
+
+>>>>>>> origin/cpstrnew
 	BslnTablePtr = ^BslnTable;
 	BslnTable = record
 		version: Fixed;
@@ -2581,11 +2690,14 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

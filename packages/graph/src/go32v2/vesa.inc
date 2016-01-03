@@ -1916,6 +1916,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$r-}
 {$q-}
@@ -1926,6 +1927,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifopt r+}
 {$define rangeOn}
 {$r-}
@@ -1945,11 +1948,14 @@ end;
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     if HLength=0 then
       LMask:=LMask and RMask;
     If CurrentWriteMode <> NotPut Then
@@ -1973,6 +1979,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$r-}
 {$q-}
@@ -1983,6 +1990,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifopt r+}
 {$define rangeOn}
 {$r-}
@@ -2002,11 +2011,14 @@ end;
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     {Port[$3ce]:=8;}{not needed, the register is already selected}
     if HLength>0 then
       begin
@@ -2035,6 +2047,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}
 {$r-}
 {$q-}
@@ -2045,6 +2058,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifopt r+}
 {$define rangeOn}
 {$r-}
@@ -2064,11 +2079,14 @@ end;
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
     { clean up }
     {Port[$3cf]:=0;}{not needed, the register is reset by the next operation:}

@@ -129,11 +129,14 @@ begin
     Owner.DoError(SErrServerNotActive,[Owner.ServerID]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   // Use the sharedenynone line to allow more then one client 
   // communicating with one server at the same time
   // see also mantis 15219

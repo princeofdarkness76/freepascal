@@ -22,6 +22,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses SysUtils, Classes, jstoken;
 =======
 uses SysUtils, Classes;
@@ -32,6 +33,9 @@ uses SysUtils, Classes;
 =======
 uses SysUtils, Classes;
 >>>>>>> graemeg/cpstrnew
+=======
+uses SysUtils, Classes;
+>>>>>>> origin/cpstrnew
 
 resourcestring
   SErrInvalidCharacter = 'Invalid character ''%s''';
@@ -44,6 +48,7 @@ resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrInvalidNonEqual = 'Syntax Error: != or !== expected';
   SErrInvalidRegularExpression = 'Syntax error in regular expression: / expected, got: %s';
 =======
@@ -51,6 +56,8 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SErrInvalidNonEqual = 'SyntaxError: != or !== expected';
 
 type
@@ -122,11 +129,14 @@ const
   );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Type
   TLineReader = class
@@ -193,6 +203,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function ReadRegex : TJSToken;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -200,6 +211,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   protected
     procedure Error(const Msg: string);overload;
     procedure Error(const Msg: string; Args: array of Const);overload;
@@ -211,6 +224,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Function FetchRegexprToken: TJSToken;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -218,6 +232,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Function FetchToken: TJSToken;
     Function IsEndOfLine : Boolean;
     Property WasEndOfLine : Boolean Read FWasEndOfLine;
@@ -290,6 +306,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSScanner.FetchRegexprToken: TJSToken;
 begin
   if (CurToken in [tjsDiv,tjsDivEq]) then
@@ -304,6 +321,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 procedure TJSScanner.Error(const Msg: string);
 begin
@@ -432,6 +451,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSScanner.ReadUnicodeEscape: WideChar;
 =======
 Function TJSScanner.ReadUnicodeEscape : WideChar;
@@ -442,6 +462,9 @@ Function TJSScanner.ReadUnicodeEscape : WideChar;
 =======
 Function TJSScanner.ReadUnicodeEscape : WideChar;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TJSScanner.ReadUnicodeEscape : WideChar;
+>>>>>>> origin/cpstrnew
 
 Var
   S : String;
@@ -463,6 +486,7 @@ begin
   Result:=WideChar(StrToInt('$'+S));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -520,6 +544,9 @@ Function TJSScanner.DoStringLiteral : TJSToken;
 =======
 Function TJSScanner.DoStringLiteral : TJSToken;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TJSScanner.DoStringLiteral : TJSToken;
+>>>>>>> origin/cpstrnew
 
 Var
   Delim : Char;
@@ -670,6 +697,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSScanner.FetchToken: TJSToken;
 =======
 function TJSScanner.FetchToken: TJSToken;
@@ -680,6 +708,9 @@ function TJSScanner.FetchToken: TJSToken;
 =======
 function TJSScanner.FetchToken: TJSToken;
 >>>>>>> graemeg/cpstrnew
+=======
+function TJSScanner.FetchToken: TJSToken;
+>>>>>>> origin/cpstrnew
 
 
 var
@@ -986,6 +1017,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TJSScanner.IsEndOfLine: Boolean;
 =======
 function TJSScanner.IsEndOfLine: Boolean;
@@ -996,6 +1028,9 @@ function TJSScanner.IsEndOfLine: Boolean;
 =======
 function TJSScanner.IsEndOfLine: Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function TJSScanner.IsEndOfLine: Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result:=(TokenStr=Nil) or (TokenStr[0] in [#0,#10,#13]);
 end;

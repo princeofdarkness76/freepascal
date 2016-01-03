@@ -11,6 +11,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ctypes, gctypes, gccore;
 =======
   ctypes, gctypes;
@@ -21,10 +22,14 @@ uses
 =======
   ctypes, gctypes;
 >>>>>>> graemeg/cpstrnew
+=======
+  ctypes, gctypes;
+>>>>>>> origin/cpstrnew
 
 const
   ISO_MAXPATHLEN = 128;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -46,6 +51,11 @@ function ISO9660_Mount: cbool; cdecl; external;
 function ISO9660_Unmount: cbool; cdecl; external;
 function ISO9660_LastAccess: cuint64; cdecl; external;
 >>>>>>> graemeg/cpstrnew
+=======
+function ISO9660_Mount: cbool; cdecl; external;
+function ISO9660_Unmount: cbool; cdecl; external;
+function ISO9660_LastAccess: cuint64; cdecl; external;
+>>>>>>> origin/cpstrnew
 
 implementation
 

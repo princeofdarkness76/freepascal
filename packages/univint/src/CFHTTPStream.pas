@@ -11,6 +11,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					 http://bugs.freepascal.org
  
 }
@@ -24,6 +25,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					 http://www.freepascal.org/bugs.html
  
 }
@@ -32,11 +35,14 @@
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -94,6 +100,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -105,6 +112,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -123,6 +132,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -173,6 +183,14 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -182,17 +200,21 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -226,6 +248,8 @@ interface
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -235,6 +259,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -281,6 +306,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -309,11 +336,14 @@ interface
 {$elsec}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -536,6 +566,7 @@ var kCFStreamPropertyHTTPSProxyPort: CFStringRef; external name '_kCFStreamPrope
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Stream property key. Value is a CFBoolean. Redirection is not
 =======
  *	Proxy dictionary key. Value is a CFBoolean. Redirection is not
@@ -546,6 +577,9 @@ var kCFStreamPropertyHTTPSProxyPort: CFStringRef; external name '_kCFStreamPrope
 =======
  *	Proxy dictionary key. Value is a CFBoolean. Redirection is not
 >>>>>>> graemeg/cpstrnew
+=======
+ *	Proxy dictionary key. Value is a CFBoolean. Redirection is not
+>>>>>>> origin/cpstrnew
  *	performed by default.
  *  
  *  Availability:
@@ -564,6 +598,7 @@ var kCFStreamPropertyHTTPShouldAutoredirect: CFStringRef; external name '_kCFStr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Stream property key. Value is a CFBoolean.  If this property is
 =======
  *	Proxy dictionary key. Value is a CFBoolean.  If this property is
@@ -574,6 +609,9 @@ var kCFStreamPropertyHTTPShouldAutoredirect: CFStringRef; external name '_kCFStr
 =======
  *	Proxy dictionary key. Value is a CFBoolean.  If this property is
 >>>>>>> graemeg/cpstrnew
+=======
+ *	Proxy dictionary key. Value is a CFBoolean.  If this property is
+>>>>>>> origin/cpstrnew
  *	set to kCFBooleanTrue, an HTTP stream will look for an
  *	appropriate extant persistent connection to use, and if it finds
  *	none, will try to create one. Persistent connections are not used
@@ -595,6 +633,7 @@ var kCFStreamPropertyHTTPAttemptPersistentConnection: CFStringRef; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *	Stream property key. Value is a CFNumber. This property can only
 =======
  *	Proxy dictionary key. Value is a CFNumber. This property can only
@@ -605,6 +644,9 @@ var kCFStreamPropertyHTTPAttemptPersistentConnection: CFStringRef; external name
 =======
  *	Proxy dictionary key. Value is a CFNumber. This property can only
 >>>>>>> graemeg/cpstrnew
+=======
+ *	Proxy dictionary key. Value is a CFNumber. This property can only
+>>>>>>> origin/cpstrnew
  *	be retrieved, not set. The number returned is the number of bytes
  *	from the body of the request that have been written to the
  *	underlying socket

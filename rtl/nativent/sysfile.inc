@@ -30,6 +30,7 @@ procedure do_close(h : thandle);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   res: LongInt;
 begin
@@ -50,6 +51,8 @@ procedure do_erase(p : pwidechar; pchangeable: boolean);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   if do_isdevice(h) then
     Exit;
@@ -60,11 +63,14 @@ end;
 procedure do_erase(p : pchar);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   ntstr: TNtUnicodeString;
   objattr: TObjectAttributes;
@@ -72,6 +78,7 @@ var
   h: THandle;
   disp: TFileDispositionInformation;
   res: LongInt;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -87,6 +94,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   InoutRes := 4;
   DoDirSeparators(p);
@@ -94,11 +103,14 @@ begin
   SysPCharToNtStr(ntstr, p, 0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SysInitializeObjectAttributes(objattr, @ntstr, 0, 0, Nil);
 
   res := NtCreateFile(@h, NT_DELETE or NT_SYNCHRONIZE, @objattr, @iostatus, Nil,
@@ -126,6 +138,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if p<>oldp then
     freemem(p);
 end;
@@ -137,17 +150,22 @@ procedure do_rename(p1,p2 : pwidechar; p1changeable, p2changeable: boolean);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
 procedure do_rename(p1,p2 : pchar);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   h: THandle;
   objattr: TObjectAttributes;
@@ -155,6 +173,7 @@ var
   dest, src: TNtUnicodeString;
   renameinfo: PFileRenameInformation;
   res: LongInt;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +190,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   DoDirSeparators(p1);
   DoDirSeparators(p2);
@@ -179,11 +200,14 @@ begin
   SysPCharToNtStr(dest, p2, 0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SysInitializeObjectAttributes(objattr, @dest, 0, 0, Nil);
 
   res := NtCreateFile(@h, 0, @objattr, @iostatus, Nil, 0,
@@ -198,6 +222,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     DoDirSeparators(p1,p1changeable);
     SysPWideCharToNtStr(src, p1, 0);
 =======
@@ -209,6 +234,9 @@ begin
 =======
     SysPCharToNtStr(src, p1, 0);
 >>>>>>> graemeg/cpstrnew
+=======
+    SysPCharToNtStr(src, p1, 0);
+>>>>>>> origin/cpstrnew
     SysInitializeObjectAttributes(objattr, @src, 0, 0, Nil);
 
     res := NtCreateFile(@h, GENERIC_ALL or NT_SYNCHRONIZE or FILE_READ_ATTRIBUTES,
@@ -250,6 +278,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if p1<>oldp1 then
     freemem(p1);
   if p2<>oldp2 then
@@ -260,6 +289,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -417,6 +448,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_open(var f;p:pwidechar;flags:longint; pchangeable: boolean);
 =======
 procedure do_open(var f;p:pchar;flags:longint);
@@ -427,6 +459,9 @@ procedure do_open(var f;p:pchar;flags:longint);
 =======
 procedure do_open(var f;p:pchar;flags:longint);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure do_open(var f;p:pchar;flags:longint);
+>>>>>>> origin/cpstrnew
 {
   filerec and textrec have both handle and mode as the first items so
   they could use the same routine for opening/creating.
@@ -440,6 +475,7 @@ var
   iostatus: TIoStatusBlock;
   ntstr: TNtUnicodeString;
   res: LongInt;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -457,6 +493,10 @@ begin
 begin
   DoDirSeparators(p);
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+  DoDirSeparators(p);
+>>>>>>> origin/cpstrnew
   { close first if opened }
   if ((flags and $10000)=0) then
    begin
@@ -481,6 +521,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if ((filemode and $F0) = fmShareCompat) or ((filemode and fmshareDenyWrite) = fmshareDenyWrite) then
 =======
     if (filemode = fmShareCompat) or ((filemode and fmshareDenyWrite) = fmshareDenyWrite) then
@@ -491,6 +532,9 @@ begin
 =======
     if (filemode = fmShareCompat) or ((filemode and fmshareDenyWrite) = fmshareDenyWrite) then
 >>>>>>> graemeg/cpstrnew
+=======
+    if (filemode = fmShareCompat) or ((filemode and fmshareDenyWrite) = fmshareDenyWrite) then
+>>>>>>> origin/cpstrnew
       shflags := FILE_SHARE_READ
   else
     if ((filemode and fmshareDenyRead) = fmshareDenyRead) then
@@ -542,6 +586,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldp:=p;
   DoDirSeparators(p,pchangeable);
   SysPWideCharToNtStr(ntstr, p, 0);
@@ -554,6 +599,9 @@ begin
 =======
   SysPCharToNtStr(ntstr, p, 0);
 >>>>>>> graemeg/cpstrnew
+=======
+  SysPCharToNtStr(ntstr, p, 0);
+>>>>>>> origin/cpstrnew
 
   SysInitializeObjectAttributes(objattr, @ntstr, OBJ_INHERIT, 0, Nil);
 
@@ -576,6 +624,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FileRec(f).mode:=fmclosed;
   end;
   if oldp<>p then
@@ -589,4 +638,7 @@ begin
 =======
   end;
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+>>>>>>> origin/cpstrnew
 end;

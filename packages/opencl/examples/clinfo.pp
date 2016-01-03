@@ -3,6 +3,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   ctypes, cl;
 =======
   cl;
@@ -13,6 +14,9 @@ uses
 =======
   cl;
 >>>>>>> graemeg/cpstrnew
+=======
+  cl;
+>>>>>>> origin/cpstrnew
 
 const
   device_str_info : array[1..5] of record id : dword; name : pchar end =
@@ -35,6 +39,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   bufwritten : csize_t;
 =======
   bufwritten : LongWord;
@@ -45,6 +50,9 @@ var
 =======
   bufwritten : LongWord;
 >>>>>>> graemeg/cpstrnew
+=======
+  bufwritten : LongWord;
+>>>>>>> origin/cpstrnew
 
 
 begin

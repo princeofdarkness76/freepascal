@@ -197,6 +197,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        protected
           function create_finalizer_procdef: tprocdef;
           procedure adjust_estimated_stack_size; virtual;
@@ -206,6 +207,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
        ttryfinallynodeclass = class of ttryfinallynode;
 
@@ -255,6 +258,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       pdecsub,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -262,6 +266,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     {$ifdef state_tracking}
       nstate,
     {$endif}
@@ -375,6 +381,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          itemsarraydef:=carraydef.create(1,16,u32inttype);
 =======
          itemsarraydef:=tarraydef.create(1,16,u32inttype);
@@ -385,6 +392,9 @@ implementation
 =======
          itemsarraydef:=tarraydef.create(1,16,u32inttype);
 >>>>>>> graemeg/cpstrnew
+=======
+         itemsarraydef:=tarraydef.create(1,16,u32inttype);
+>>>>>>> origin/cpstrnew
          itemsarraydef.elementdef:=objc_idtype;
          items:=ctempcreatenode.create(itemsarraydef,itemsarraydef.size,tt_persistent,false);
          addstatement(mainstatement,items);
@@ -433,6 +443,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          hp:=ccallnode.create(hp,tprocsym(sym),sym.owner,ctemprefnode.create(expressiontemp),[],nil);
 =======
          hp:=ccallnode.create(hp,tprocsym(sym),sym.owner,ctemprefnode.create(expressiontemp),[]);
@@ -443,6 +454,9 @@ implementation
 =======
          hp:=ccallnode.create(hp,tprocsym(sym),sym.owner,ctemprefnode.create(expressiontemp),[]);
 >>>>>>> graemeg/cpstrnew
+=======
+         hp:=ccallnode.create(hp,tprocsym(sym),sym.owner,ctemprefnode.create(expressiontemp),[]);
+>>>>>>> origin/cpstrnew
          addstatement(outerloopbodystatement,cassignmentnode.create(
            ctemprefnode.create(currentamount),hp));
          { if currentamount = 0, bail out (use copy of hloopvar, because we
@@ -504,6 +518,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           carraydef.create_from_pointer(tpointerdef(hp.resultdef)));
 =======
           tarraydef.create_from_pointer(tpointerdef(hp.resultdef).pointeddef));
@@ -514,6 +529,9 @@ implementation
 =======
           tarraydef.create_from_pointer(tpointerdef(hp.resultdef).pointeddef));
 >>>>>>> graemeg/cpstrnew
+=======
+          tarraydef.create_from_pointer(tpointerdef(hp.resultdef).pointeddef));
+>>>>>>> origin/cpstrnew
         hp:=cvecnode.create(hp,ctemprefnode.create(innerloopcounter));
         addstatement(innerloopbodystatement,
           cassignmentnode.create(hloopvar,hp));
@@ -527,6 +545,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           cordconstnode.create(0,pasbool8type,false),innerloop,false,true);
 =======
           cordconstnode.create(0,booltype,false),innerloop,false,true);
@@ -537,6 +556,9 @@ implementation
 =======
           cordconstnode.create(0,booltype,false),innerloop,false,true);
 >>>>>>> graemeg/cpstrnew
+=======
+          cordconstnode.create(0,booltype,false),innerloop,false,true);
+>>>>>>> origin/cpstrnew
         addstatement(outerloopbodystatement,hp);
 
         { create the outer repeat/until and add it to the the main body }
@@ -642,6 +664,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 convertdef:=carraydef.create(0,elementcount-1,s32inttype);
 =======
                 convertdef:=tarraydef.create(0,elementcount-1,s32inttype);
@@ -652,6 +675,9 @@ implementation
 =======
                 convertdef:=tarraydef.create(0,elementcount-1,s32inttype);
 >>>>>>> graemeg/cpstrnew
+=======
+                convertdef:=tarraydef.create(0,elementcount-1,s32inttype);
+>>>>>>> origin/cpstrnew
                 tarraydef(convertdef).elementdef:=tarraydef(tmpdef).elementdef;
                 expression:=expr.getcopy;
                 expression:=ctypeconvnode.create_internal(expression,convertdef);
@@ -660,6 +686,7 @@ implementation
               end;
           end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -674,6 +701,9 @@ implementation
 =======
         if (node_complexity(expression) > 1) and not is_open_array(expression.resultdef) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if (node_complexity(expression) > 1) and not is_open_array(expression.resultdef) then
+>>>>>>> origin/cpstrnew
           begin
             { create a temp variable for expression }
             arrayvar := ctempcreatenode.create(
@@ -841,6 +871,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             enum_get:=ccallnode.create(enum_get_params, tprocsym(enumerator_get.procsym), nil, nil, [],nil);
 =======
             enum_get:=ccallnode.create(enum_get_params, tprocsym(enumerator_get.procsym), nil, nil, []);
@@ -851,10 +882,14 @@ implementation
 =======
             enum_get:=ccallnode.create(enum_get_params, tprocsym(enumerator_get.procsym), nil, nil, []);
 >>>>>>> graemeg/cpstrnew
+=======
+            enum_get:=ccallnode.create(enum_get_params, tprocsym(enumerator_get.procsym), nil, nil, []);
+>>>>>>> origin/cpstrnew
             tcallnode(enum_get).procdefinition:=enumerator_get;
             addsymref(enumerator_get.procsym);
           end
         else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -868,6 +903,9 @@ implementation
 =======
           enum_get:=ccallnode.create(nil, tprocsym(enumerator_get.procsym), enumerator_get.owner, expr.getcopy, []);
 >>>>>>> graemeg/cpstrnew
+=======
+          enum_get:=ccallnode.create(nil, tprocsym(enumerator_get.procsym), enumerator_get.owner, expr.getcopy, []);
+>>>>>>> origin/cpstrnew
 
         addstatement(loopstatement,
           cassignmentnode.create(
@@ -877,6 +915,7 @@ implementation
 
         loopbody:=internalstatements(loopbodystatement);
         { for-in loop variable := enumerator.current }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -890,6 +929,9 @@ implementation
 =======
         if getpropaccesslist(enumerator_current,palt_read,propaccesslist) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if getpropaccesslist(enumerator_current,palt_read,propaccesslist) then
+>>>>>>> origin/cpstrnew
           begin
              case propaccesslist.firstsym^.sym.typ of
                fieldvarsym :
@@ -905,6 +947,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    enum_current:=ccallnode.create(nil,tprocsym(propaccesslist.firstsym^.sym),enumerator_current.owner,ctemprefnode.create(enumvar),[],nil);
 =======
                    enum_current:=ccallnode.create(nil,tprocsym(propaccesslist.firstsym^.sym),enumerator_current.owner,ctemprefnode.create(enumvar),[]);
@@ -915,6 +958,9 @@ implementation
 =======
                    enum_current:=ccallnode.create(nil,tprocsym(propaccesslist.firstsym^.sym),enumerator_current.owner,ctemprefnode.create(enumvar),[]);
 >>>>>>> graemeg/cpstrnew
+=======
+                   enum_current:=ccallnode.create(nil,tprocsym(propaccesslist.firstsym^.sym),enumerator_current.owner,ctemprefnode.create(enumvar),[]);
+>>>>>>> origin/cpstrnew
                    include(enum_current.flags,nf_isproperty);
                  end
                else
@@ -936,6 +982,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         enum_move:=ccallnode.create(nil, tprocsym(enumerator_move.procsym), enumerator_move.owner, ctemprefnode.create(enumvar), [],nil);
 =======
         enum_move:=ccallnode.create(nil, tprocsym(enumerator_move.procsym), enumerator_move.owner, ctemprefnode.create(enumvar), []);
@@ -946,6 +993,9 @@ implementation
 =======
         enum_move:=ccallnode.create(nil, tprocsym(enumerator_move.procsym), enumerator_move.owner, ctemprefnode.create(enumvar), []);
 >>>>>>> graemeg/cpstrnew
+=======
+        enum_move:=ccallnode.create(nil, tprocsym(enumerator_move.procsym), enumerator_move.owner, ctemprefnode.create(enumvar), []);
+>>>>>>> origin/cpstrnew
         whileloopnode:=cwhilerepeatnode.create(enum_move,loopbody,true,false);
 
         if enumerator_is_class then
@@ -960,6 +1010,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[],nil));
 =======
                     enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[]));
@@ -970,6 +1021,9 @@ implementation
 =======
                     enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[]));
 >>>>>>> graemeg/cpstrnew
+=======
+                    enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[]));
+>>>>>>> origin/cpstrnew
               end;
             { if getenumerator <> nil then do the loop }
             whileloopnode:=cifnode.create(
@@ -991,6 +1045,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[],nil));
 =======
                     enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[]));
@@ -1001,6 +1056,9 @@ implementation
 =======
                     enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[]));
 >>>>>>> graemeg/cpstrnew
+=======
+                    enumerator_destructor.procsym.owner,ctemprefnode.create(enumvar),[]));
+>>>>>>> origin/cpstrnew
               end;
           end;
 
@@ -1015,6 +1073,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         helperdef: tobjectdef;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1022,6 +1081,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         current: tpropertysym;
         storefilepos: tfileposinfo;
       begin
@@ -1060,6 +1121,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // if there is no operator then search for class/object enumerator method
                 if (pd=nil) and (expr.resultdef.typ in [objectdef,recorddef]) then
                   begin
@@ -1089,6 +1151,11 @@ implementation
                 if (pd=nil) and (expr.resultdef.typ in [objectdef,recorddef]) then
                   pd:=tabstractrecorddef(expr.resultdef).search_enumerator_get;
 >>>>>>> graemeg/cpstrnew
+=======
+                // if there is no operator then search for class/object/record enumerator method
+                if (pd=nil) and (expr.resultdef.typ in [objectdef,recorddef]) then
+                  pd:=tabstractrecorddef(expr.resultdef).search_enumerator_get;
+>>>>>>> origin/cpstrnew
                 if pd<>nil then
                   begin
                     // seach movenext and current symbols
@@ -1666,11 +1733,14 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function tfornode.simplify(forinline : boolean) : tnode;
       begin
         result:=nil;
@@ -1833,6 +1903,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
              result:=internalstatements(newstatement);
              addstatement(newstatement,left);
@@ -1848,6 +1919,9 @@ implementation
 =======
           typecheckpass(left);
 >>>>>>> graemeg/cpstrnew
+=======
+          typecheckpass(left);
+>>>>>>> origin/cpstrnew
         resultdef:=voidtype;
       end;
 
@@ -1987,6 +2061,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             else if ((m_non_local_goto in current_settings.modeswitches) and
               assigned(labelsym.owner)) or
               { nested exits don't need the non local goto switch }
@@ -2003,6 +2078,10 @@ implementation
             else if (m_non_local_goto in current_settings.modeswitches) and
               assigned(labelsym.owner) then
 >>>>>>> graemeg/cpstrnew
+=======
+            else if (m_non_local_goto in current_settings.modeswitches) and
+              assigned(labelsym.owner) then
+>>>>>>> origin/cpstrnew
               begin
                 if current_procinfo.procdef.parast.symtablelevel>labelsym.owner.symtablelevel then
                   begin
@@ -2031,6 +2110,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         exclude(current_procinfo.procdef.procoptions,po_inline);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2038,6 +2118,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                         result:=ccallnode.createintern('fpc_longjmp',
                           ccallparanode.create(cordconstnode.create(1,sinttype,true),
                           ccallparanode.create(cloadnode.create(labelsym.jumpbuf,labelsym.jumpbuf.owner),
@@ -2168,6 +2250,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             include(current_procinfo.flags,pi_has_interproclabel);
             exclude(current_procinfo.procdef.procoptions,po_inline);
@@ -2181,10 +2264,14 @@ implementation
 =======
           include(current_procinfo.flags,pi_has_interproclabel);
 >>>>>>> graemeg/cpstrnew
+=======
+          include(current_procinfo.flags,pi_has_interproclabel);
+>>>>>>> origin/cpstrnew
 
         if assigned(left) then
           firstpass(left);
         if (m_non_local_goto in current_settings.modeswitches) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2196,6 +2283,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           (current_procinfo.procdef.parast.symtablelevel<>labsym.owner.symtablelevel) then
           CGMessage(cg_e_labels_cannot_defined_outside_declaration_scope)
       end;

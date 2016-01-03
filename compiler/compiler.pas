@@ -132,6 +132,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aix}
   ,i_aix
 {$endif aix}
@@ -141,6 +142,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ,globtype;
 
 function Compile(const cmd:TCmdStr):longint;

@@ -500,6 +500,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.text','.data','.rdata','.rdata','.bss','.tls',
 =======
           '.text','.data','.data','.data','.bss','.tls',
@@ -510,6 +511,9 @@ implementation
 =======
           '.text','.data','.data','.data','.bss','.tls',
 >>>>>>> graemeg/cpstrnew
+=======
+          '.text','.data','.data','.data','.bss','.tls',
+>>>>>>> origin/cpstrnew
           '.pdata',{pdata}
           '.text', {stub}
           '.data',
@@ -560,6 +564,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           '.objc_protolist',
           '.stack',
           '.heap'
@@ -572,6 +577,9 @@ implementation
 =======
           '.objc_protolist'
 >>>>>>> graemeg/cpstrnew
+=======
+          '.objc_protolist'
+>>>>>>> origin/cpstrnew
         );
 
 const go32v2stub : array[0..2047] of byte=(
@@ -1019,6 +1027,7 @@ const pemagic : array[0..3] of byte = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (objreloc.typ = RELOC_ABSOLUTE32) and (objsec.name <> '.stab') then
 =======
             if (objreloc.typ = RELOC_ABSOLUTE32) and (name <> '.stab') then
@@ -1029,11 +1038,15 @@ const pemagic : array[0..3] of byte = (
 =======
             if (objreloc.typ = RELOC_ABSOLUTE32) and (name <> '.stab') then
 >>>>>>> graemeg/cpstrnew
+=======
+            if (objreloc.typ = RELOC_ABSOLUTE32) and (name <> '.stab') then
+>>>>>>> origin/cpstrnew
               begin
                 if assigned(objreloc.symbol) then
                   s:=objreloc.symbol.Name
                 else
                   s:=objreloc.objsection.Name;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1047,6 +1060,9 @@ const pemagic : array[0..3] of byte = (
 =======
                 Message2(link_w_32bit_absolute_reloc, ObjData.Name, s);
 >>>>>>> graemeg/cpstrnew
+=======
+                Message2(link_w_32bit_absolute_reloc, ObjData.Name, s);
+>>>>>>> origin/cpstrnew
               end;
 {$endif cpu64bitaddr}
           end;
@@ -1082,6 +1098,7 @@ const pemagic : array[0..3] of byte = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             { non-PECOFF targets lack rodata support }
             if (atype in [sec_rodata,sec_rodata_norel]) and
                not (target_info.system in systems_all_windows) then
@@ -1092,6 +1109,8 @@ const pemagic : array[0..3] of byte = (
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             secname:=coffsecnames[atype];
             if create_smartlink_sections and
                (aname<>'') then
@@ -1109,6 +1128,7 @@ const pemagic : array[0..3] of byte = (
             else
               result:=secname;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1131,6 +1151,8 @@ const pemagic : array[0..3] of byte = (
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -2173,6 +2195,7 @@ const pemagic : array[0..3] of byte = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 { some flags are invalid in executables, reset them }
                 sechdr.flags:=sechdr.flags and
                   not(PE_SCN_LNK_INFO or PE_SCN_LNK_REMOVE or
@@ -2183,6 +2206,8 @@ const pemagic : array[0..3] of byte = (
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               end
             else
               sechdr.flags:=djencodesechdrflags(SecOptions);
@@ -2465,6 +2490,7 @@ const pemagic : array[0..3] of byte = (
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             if SetPEOptFlagsSetExplicity then
               peoptheader.DllCharacteristics:=peoptflags
@@ -2476,6 +2502,8 @@ const pemagic : array[0..3] of byte = (
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             peoptheader.DllCharacteristics:=0;
 >>>>>>> graemeg/cpstrnew
             peoptheader.SizeOfStackReserve:=stacksize;

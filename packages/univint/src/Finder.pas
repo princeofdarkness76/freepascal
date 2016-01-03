@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1990-2011 by Apple Inc. All rights reserved.
 }
 =======
@@ -14,6 +15,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1990-2008 by Apple Computer, Inc., all rights reserved
@@ -27,11 +30,14 @@
 {    Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,6 +95,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -100,6 +107,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -118,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -182,6 +192,23 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -191,6 +218,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -198,6 +226,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -210,6 +240,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -217,6 +248,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -226,6 +259,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -242,12 +276,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -265,10 +305,13 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
@@ -324,6 +367,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -362,7 +414,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -379,6 +436,9 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 { Creator and type of Internet Location files }
 const
@@ -392,6 +452,7 @@ const
 	kInternetLocationAppleTalk = FourCharCode('ilat');
 	kInternetLocationNSL = FourCharCode('ilns');
 	kInternetLocationGeneric = FourCharCode('ilge');
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -424,6 +485,8 @@ const
 	kCustomBadgeResourceVersion = 0;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Creator and type of Internet Location files }
 const
@@ -454,6 +517,7 @@ const
 =======
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
 { Creator and type of Internet Location files }
 const
 <<<<<<< HEAD
@@ -470,6 +534,10 @@ const
 	kInternetLocationNSL = FourCharCode('ilns');
 	kInternetLocationGeneric = FourCharCode('ilge');
 >>>>>>> graemeg/cpstrnew
+=======
+const
+	kCustomIconResource = -16455; { Custom icon family resource ID }
+>>>>>>> origin/cpstrnew
 
 { In order to specify any of the information described in the }
 { CustomBadgeResource data structure you must clear the kExtendedFlagsAreInvalid }
@@ -481,6 +549,7 @@ const
 	kCustomBadgeResourceID = kCustomIconResource;
 	kCustomBadgeResourceVersion = 0;
 
+<<<<<<< HEAD
 const
 	kCustomIconResource = -16455; { Custom icon family resource ID }
 
@@ -522,6 +591,36 @@ type
     kSystemFolderType = 'macs'.
 }
 const
+=======
+type
+	CustomBadgeResource = record
+		version: SInt16;                { This is version kCustomBadgeResourceVersion}
+		customBadgeResourceID: SInt16;  { If not 0, the ID of a resource to use on top}
+                                              { of the icon for this file or folder}
+		customBadgeType: OSType;        { If not 0, the type and creator of an icon}
+		customBadgeCreator: OSType;     { to use on top of the icon}
+		windowBadgeType: OSType;        { If not 0, the type and creator of an icon}
+		windowBadgeCreator: OSType;     { to display in the header of the window for this }
+                                              { file or folder}
+		overrideType: OSType;           { If not 0, the type and creator of an icon to}
+		overrideCreator: OSType;        { use INSTEAD of the icon for this file or folder}
+	end;
+	CustomBadgeResourcePtr = ^CustomBadgeResource;
+type
+	CustomBadgeResourceHandle = ^CustomBadgeResourcePtr;
+{ You can specify routing information for a file by including a 'rout' 0 
+    resource in it and setting the kExtendedFlagHasRoutingInfo bit in the extended 
+    Finder flags. 
+    The 'rout' resource is an array of RoutingResourceEntry. Each entry is considered
+    in turn. The first matching entry is used.
+    If the creator and fileType match the file being dropped and targetFolder match
+    the folder ID of the folder being dropped onto, then the file is rerouted 
+    into the specified destination folder.
+    The only target folder currently supported is the system folder, 
+    kSystemFolderType = 'macs'.
+}
+const
+>>>>>>> origin/cpstrnew
 	kRoutingResourceType = FourCharCode('rout');
 	kRoutingResourceID = 0;
 
@@ -539,6 +638,7 @@ type
 	RoutingResourceHandle = ^RoutingResourcePtr;
 
 { Types for special container aliases }
+<<<<<<< HEAD
 const
 	kContainerFolderAliasType = FourCharCode('fdrp'); { type for folder aliases }
 	kContainerTrashAliasType = FourCharCode('trsh'); { type for trash folder aliases }
@@ -556,6 +656,25 @@ const
 
 { Types for Special folder aliases }
 const
+=======
+const
+	kContainerFolderAliasType = FourCharCode('fdrp'); { type for folder aliases }
+	kContainerTrashAliasType = FourCharCode('trsh'); { type for trash folder aliases }
+	kContainerHardDiskAliasType = FourCharCode('hdsk'); { type for hard disk aliases }
+	kContainerFloppyAliasType = FourCharCode('flpy'); { type for floppy aliases }
+	kContainerServerAliasType = FourCharCode('srvr'); { type for server aliases }
+	kApplicationAliasType = FourCharCode('adrp'); { type for application aliases }
+	kContainerAliasType = FourCharCode('drop'); { type for all other containers }
+	kDesktopPrinterAliasType = FourCharCode('dtpa'); { type for Desktop Printer alias }
+	kContainerCDROMAliasType = FourCharCode('cddr'); { type for CD-ROM alias }
+	kApplicationCPAliasType = FourCharCode('acdp'); { type for application control panel alias }
+	kApplicationDAAliasType = FourCharCode('addp'); { type for application DA alias }
+	kPackageAliasType = FourCharCode('fpka'); { type for plain package alias }
+	kAppPackageAliasType = FourCharCode('fapa'); { type for application package alias }
+
+{ Types for Special folder aliases }
+const
+>>>>>>> origin/cpstrnew
 	kSystemFolderAliasType = FourCharCode('fasy');
 	kAppleMenuFolderAliasType = FourCharCode('faam');
 	kStartupFolderAliasType = FourCharCode('fast');
@@ -725,6 +844,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		fdIconID: SInt16;              { Reserved (set to 0) }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -732,6 +852,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 		fdReserved: array [0..2] of SInt16;          { Reserved (set to 0) }
 		fdScript: SInt8;               { Extended flags. Script code if high-bit is set }
 		fdXFlags: SInt8;               { Extended flags }

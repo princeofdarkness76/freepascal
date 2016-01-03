@@ -92,11 +92,14 @@ begin
       Errno2InoutRes;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef WINCE}
     end
    else if (size<len) then
@@ -159,6 +162,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
 =======
     errno := GetLastError;
@@ -172,6 +176,10 @@ begin
     errno := GetLastError;
     Errno2InoutRes;
 >>>>>>> graemeg/cpstrnew
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> origin/cpstrnew
   end;
   do_filepos := int64(rslt);
 end;
@@ -189,6 +197,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
 =======
     errno := GetLastError;
@@ -202,6 +211,10 @@ begin
     errno := GetLastError;
     Errno2InoutRes;
 >>>>>>> graemeg/cpstrnew
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> origin/cpstrnew
   end;
 end;
 
@@ -217,6 +230,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Errno2InoutRes(GetLastError);
 =======
     errno := GetLastError;
@@ -230,6 +244,10 @@ begin
     errno := GetLastError;
     Errno2InoutRes;
 >>>>>>> graemeg/cpstrnew
+=======
+    errno := GetLastError;
+    Errno2InoutRes;
+>>>>>>> origin/cpstrnew
   end;
   do_seekend := int64(rslt);
 end;

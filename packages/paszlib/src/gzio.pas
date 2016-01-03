@@ -139,6 +139,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   old_file_mode: byte;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -146,6 +147,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
 
   if (path='') or (mode='') then begin
@@ -240,6 +243,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   doseek:=false;
   if ((s^.mode='a') and not exists) or (s^.mode='w') then
@@ -262,6 +266,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   doseek:=false;
   if ((s^.mode='a') and not exists) or (s^.mode='w') then

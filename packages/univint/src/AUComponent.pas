@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright:	© 2002-2008 by Apple, Inc., all rights reserved.
 =======
 	Copyright:	© 2002-2008 by Apple Inc., all rights reserved.
@@ -16,10 +17,14 @@
 =======
 	Copyright:	© 2002-2008 by Apple Inc., all rights reserved.
 >>>>>>> graemeg/cpstrnew
+=======
+	Copyright:	© 2002-2008 by Apple Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
 
 	Bugs?:		For bug reports, consult the following page on
 				the World Wide Web:
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -32,17 +37,22 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					http://www.freepascal.org/bugs.html
 }
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -100,6 +110,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -111,6 +122,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -132,6 +145,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -152,6 +166,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -161,6 +180,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -181,6 +201,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -190,6 +215,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -197,6 +223,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -209,6 +237,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -216,6 +245,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -225,6 +256,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -251,12 +283,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -267,10 +305,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -301,6 +342,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -358,6 +403,7 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	This file defines the collection of API calls for an audio unit. An audio unit is a plugin 
 	that can be loaded into an application's process and used to process or generate audio. An 
 	audio unit is an AudioComponent type and so
@@ -372,6 +418,8 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	This file defines the collection of API calls for an audio unit. An audio unit is a plugin that can be loaded
 	into an application's process and used to process or generate audio. An audio unit is an AudioComponent type and so
 	the AudioComponent APIs are used to find specific types of audio units, open and close them.
@@ -381,11 +429,14 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 	The IDs that are used for Type are specified by apple, the Manufacturer ID should be specified by an unique identifier
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	(as registered with apple). See AudioComponentDescription.
 	
 	Audio unit types are of the following (see below for more information)
@@ -403,6 +454,7 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	An audio unit's general operations are:
 =======
 	An audio unit's general opeartions are:
@@ -413,12 +465,16 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 =======
 	An audio unit's general opeartions are:
 >>>>>>> graemeg/cpstrnew
+=======
+	An audio unit's general opeartions are:
+>>>>>>> origin/cpstrnew
 		Open an audio unit (AudioComponentInstanceNew)
 		Configure it based on the context - AudioUnitSetProperty
 		Initialise the audio unit (AudioUnitInitialize)
 			- at this point the audio unit is in a state where it can render audio
 		Render audio (AudioUnitRender)
 		
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -441,6 +497,11 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 	to change the render effects; for instance to change the decay time of a reverb, the cut off frequency of a filter, etc.
 	These are called parameters, and AudioUnitGetParameter and AudioUnitSetParameter are used to interact with these.
 >>>>>>> graemeg/cpstrnew
+=======
+	An important part of a render operation for an audio unit is to manipulate the various controls that the unit provides
+	to change the render effects; for instance to change the decay time of a reverb, the cut off frequency of a filter, etc.
+	These are called parameters, and AudioUnitGetParameter and AudioUnitSetParameter are used to interact with these.
+>>>>>>> origin/cpstrnew
 	
 	If any reconfiguration of the audio unit is required, then:
 		uninitialise (AudioUnitUninitialise)
@@ -450,6 +511,7 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 	Once the host is finished with an audio unit, it closes it:
 		Dispose audio unit (AudioComponentInstanceDispose)
 	
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -465,6 +527,8 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	Audio units can be used programmatically (for instance a mixers could be used to render audio for a game, a generator 
 	to play audio files, etc), or they can be hosted in Digital Audio Workstation (DAW) applications such as Logic, Garage Band.
 	In the DAW case, it is common for an audio unit to provide a custom view to allow the user to interact with what can be
@@ -473,11 +537,14 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 	
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 
 
@@ -502,6 +569,7 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion			An audio unit is of type AudioComponentInstance as defined in 
 						AudioComponent.h
 =======
@@ -513,6 +581,9 @@ uses MacTypes,AudioComponents,CoreAudioTypes;
 =======
 	@discussion			An audio unit is of type AudioComponentInstance as defined in AudioComponent.h
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion			An audio unit is of type AudioComponentInstance as defined in AudioComponent.h
+>>>>>>> origin/cpstrnew
 }
 type
 	AudioUnit = AudioComponentInstance;
@@ -521,6 +592,7 @@ type
 {!
     @enum           Audio Unit Types
     @abstract		different types of audio units
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -621,6 +693,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		Audio unit's are classified into different types, where those types perform different roles and functions.
 					There are some general categories of functionality that apply across different types of audio units:
 					(1) Real-time usage
@@ -691,11 +765,14 @@ type
 					As such, offline effects also have a notion of a priming stage that can be performed before the actual rendering/processing phase is executed.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitType_Output = FourCharCode('auou');
@@ -716,6 +793,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     @discussion		the unique ID used to identifier audio units provided by Apple, Inc.
 =======
     @discussion		the unique ID used to identifier audio units provided by Apple Inc.
@@ -726,12 +804,16 @@ const
 =======
     @discussion		the unique ID used to identifier audio units provided by Apple Inc.
 >>>>>>> graemeg/cpstrnew
+=======
+    @discussion		the unique ID used to identifier audio units provided by Apple Inc.
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitManufacturer_Apple = FourCharCode('appl');
 	
 {!
 	@enum			Apple output audio unit sub types 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -747,6 +829,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		These are the subtypes for the various output units that apple ships. Output units add an additional notion of Start and Stop
 					see <AudioUnit/AudioOutputUnit.h>
 
@@ -754,15 +838,19 @@ const
 					A generic output unit provides the start/stop API, and provides the basic services to convert Linear PCM formats.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 	@constant		kAudioUnitSubType_HALOutput			
 						- desktop only
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -781,10 +869,15 @@ const
 					The audio unit that interfaces to any audio device. The user specifies which audio device to track. The audio unit
 					can do input from the device as well as output to the device. Bus 0 is used for the output side, bus 1 is used
 >>>>>>> graemeg/cpstrnew
+=======
+					The audio unit that interfaces to any audio device. The user specifies which audio device to track. The audio unit
+					can do input from the device as well as output to the device. Bus 0 is used for the output side, bus 1 is used
+>>>>>>> origin/cpstrnew
 					to get audio input from the device.
 					
 	@constant		kAudioUnitSubType_DefaultOutput		
 						- desktop only
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -800,6 +893,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					A specialisation of AUHAL that is used to track the user's selection of the default device as set in the Sound Prefs
 					
 	@constant		kAudioUnitSubType_SystemOutput		
@@ -807,15 +902,19 @@ const
 					A specialisation of AUHAL that is used to track the user's selection of the device to use for sound effects, alerts
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					and other UI sounds.
 
 	@constant		kAudioUnitSubType_RemoteIO			
 						- iPhone only
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -844,6 +943,11 @@ const
 					can do input as well as output. Bus 0 is used for the output side, bus 1 is used
 					to get audio input.
 >>>>>>> graemeg/cpstrnew
+=======
+					The audio unit that interfaces to the audio I/O pathways of the iPhone. The audio unit
+					can do input as well as output. Bus 0 is used for the output side, bus 1 is used
+					to get audio input.
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitSubType_GenericOutput = FourCharCode('genr');
@@ -860,6 +964,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitSubType_VoiceProcessingIO = FourCharCode('vpio');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -867,12 +972,15 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {!
 	@enum			Apple music instrument audio unit sub types 
 
 	@constant		kAudioUnitSubType_DLSSynth			
 						- desktop only
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -894,6 +1002,10 @@ const
 					A multi-timbral music device that can use sample banks in either DLS or SoundFont formats. It fully supports GM-MIDI
 					and the basic extensions of GS-MIDI
 >>>>>>> graemeg/cpstrnew
+=======
+					A multi-timbral music device that can use sample banks in either DLS or SoundFont formats. It fully supports GM-MIDI
+					and the basic extensions of GS-MIDI
+>>>>>>> origin/cpstrnew
 }
 //#if !TARGET_OS_IPHONE
 {$ifc not TARGET_OS_IPHONE}
@@ -901,6 +1013,7 @@ const
 	kAudioUnitSubType_DLSSynth = FourCharCode('dls ');
 //#endif
 {$endc} { not TARGET_OS_IPHONE }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -959,6 +1072,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {!
 	@enum			Apple converter audio unit sub types 
@@ -1000,17 +1115,21 @@ const
 					An audio unit that provides simple (and limited) control over playback rate and time.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitSubType_AUConverter = FourCharCode('conv');
 	
 //#if !TARGET_OS_IPHONE
 {$ifc not TARGET_OS_IPHONE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1030,6 +1149,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kAudioUnitSubType_TimePitch = FourCharCode('tmpt');
 	kAudioUnitSubType_Varispeed = FourCharCode('vari');
 	kAudioUnitSubType_DeferredRenderer = FourCharCode('defr');
@@ -1040,11 +1161,14 @@ const
 	kAudioUnitSubType_AUiPodTime			= FourCharCode('iptm');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 //#endif;
 {$endc} { not TARGET_OS_IPHONE }
 
@@ -1057,6 +1181,7 @@ const
 					A delay audio unit
 					
 	@constant		kAudioUnitSubType_LowPassFilter			
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1081,6 +1206,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 						- desktop only
 					A filter that passes frequencies below a specified cut-off frequency
 					
@@ -1105,11 +1232,14 @@ const
 					A parameteric EQ filter
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 	@constant		kAudioUnitSubType_GraphicEQ				
 						- desktop only
@@ -1119,6 +1249,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					A peak limiter
 					
 	@constant		kAudioUnitSubType_DynamicsProcessor		
@@ -1127,6 +1258,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 						- desktop only
 					A peak limiter
 					
@@ -1134,11 +1267,14 @@ const
 						- desktop only
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					A dynamics compressor/expander
 					
 	@constant		kAudioUnitSubType_MultiBandCompressor	
@@ -1154,6 +1290,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					A delay that is used to delay the input a specified number of samples until 
 					the output
 =======
@@ -1165,6 +1302,9 @@ const
 =======
 					A delay that is used to delay the input a specified number of samples until the output
 >>>>>>> graemeg/cpstrnew
+=======
+					A delay that is used to delay the input a specified number of samples until the output
+>>>>>>> origin/cpstrnew
 					
 	@constant		kAudioUnitSubType_Pitch					
 						- desktop only
@@ -1179,6 +1319,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					An audio unit that is used in conjunction with _NetReceive to send audio 
 					across the network (or between different applications)
 					
@@ -1188,21 +1329,27 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					An audio unit that is used in conjunction with _NetReceive to send audio across the network (or between different applications)
 					
 	@constant		kAudioUnitSubType_Distortion			
 						- desktop only
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					A distortion audio unit 
 					
 	@constant		kAudioUnitSubType_RogerBeep				
 						- desktop only
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1229,6 +1376,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					An audio unit that can be used to emit a short tone in gaps between speech - similar to the tones used in a walkie-talkie
 					
 	@constant		kAudioUnitSubType_AUiPodEQ				
@@ -1241,17 +1390,21 @@ const
 	kAudioUnitSubType_Delay = FourCharCode('dely');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kAudioUnitSubType_LowPassFilter = FourCharCode('lpas');
 	kAudioUnitSubType_HighPassFilter = FourCharCode('hpas');
 	kAudioUnitSubType_BandPassFilter = FourCharCode('bpas');
 	kAudioUnitSubType_HighShelfFilter = FourCharCode('hshf');
 	kAudioUnitSubType_LowShelfFilter = FourCharCode('lshf');
 	kAudioUnitSubType_ParametricEQ = FourCharCode('pmeq');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1274,12 +1427,18 @@ const
 	kAudioUnitSubType_PeakLimiter = FourCharCode('lmtr');
 	kAudioUnitSubType_DynamicsProcessor = FourCharCode('dcmp');
 >>>>>>> graemeg/cpstrnew
+=======
+	kAudioUnitSubType_GraphicEQ = FourCharCode('greq');
+	kAudioUnitSubType_PeakLimiter = FourCharCode('lmtr');
+	kAudioUnitSubType_DynamicsProcessor = FourCharCode('dcmp');
+>>>>>>> origin/cpstrnew
 	kAudioUnitSubType_MultiBandCompressor = FourCharCode('mcmp');
 	kAudioUnitSubType_MatrixReverb = FourCharCode('mrev');
 	kAudioUnitSubType_SampleDelay = FourCharCode('sdly');
 	kAudioUnitSubType_Pitch = FourCharCode('tmpt');
 	kAudioUnitSubType_AUFilter = FourCharCode('filt');
 	kAudioUnitSubType_NetSend = FourCharCode('nsnd');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1293,6 +1452,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kAudioUnitSubType_Distortion = FourCharCode('dist');
 	kAudioUnitSubType_RogerBeep = FourCharCode('rogr');
 //#else
@@ -1301,11 +1462,14 @@ const
 //#endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif} { not TARGET_OS_IPHONE }
 
 {!
@@ -1313,6 +1477,7 @@ const
 	@discussion		These are the subtypes for the various mixer units that apple ships
 
 	@constant		kAudioUnitSubType_MultiChannelMixer
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1331,6 +1496,10 @@ const
 					Can have any number of inputs, with any number of channels on any input to one output bus with any number of channels on 
 					the desktop. On iPhone the output number of channels is 2.
 >>>>>>> graemeg/cpstrnew
+=======
+					Can have any number of inputs, with any number of channels on any input to one output bus with any number of channels on 
+					the desktop. On iPhone the output number of channels is 2.
+>>>>>>> origin/cpstrnew
 				
 	@constant		kAudioUnitSubType_StereoMixer
 						- desktop only
@@ -1338,6 +1507,7 @@ const
 					
 	@constant		kAudioUnitSubType_3DMixer
 						- desktop only
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1352,12 +1522,16 @@ const
 =======
 					Inputs can be mono, in which case they can be panned around using 3D coordinates and parameters. 
 >>>>>>> graemeg/cpstrnew
+=======
+					Inputs can be mono, in which case they can be panned around using 3D coordinates and parameters. 
+>>>>>>> origin/cpstrnew
 					Stereo inputs are passed directly through to the output.
 					4 channel "ambisonic" inputs will be rendered to the output configuration
 					A single output of 2, 4, 5, 6, 7 or 8 channels.
 					
 	@constant		kAudioUnitSubType_MatrixMixer
 						- desktop only
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1376,6 +1550,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					Any number of input and output buses with any number of channels on any bus. The mix is presented as a matrix
 					of channels that can be controlled through input volume per channel, "cross-point" volume (a given input channel to a given output channel),
 					output volume per channel and a global volume across the whole matrix
@@ -1385,11 +1561,14 @@ const
 					A scaled-down version of the AU3DMixer that presents a stereo output, mono or stereo inputs
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitSubType_MultiChannelMixer = FourCharCode('mcmx');
@@ -1417,6 +1596,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					A panner unit that uses a moving pan between the two closes, adjacent channels 
 					in a 3D space to a
 =======
@@ -1428,6 +1608,9 @@ const
 =======
 					A panner unit that uses a moving pan between the two closes, adjacent channels in a 3D space to a
 >>>>>>> graemeg/cpstrnew
+=======
+					A panner unit that uses a moving pan between the two closes, adjacent channels in a 3D space to a
+>>>>>>> origin/cpstrnew
 					surround output
 					
 	@constant		kAudioUnitSubType_SoundFieldPanner
@@ -1456,6 +1639,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					A generator unit that can be used to schedule slices of audio to be played at 
 					a specified time. The audio is scheduled using the time stamps for the render 
 					operation, and can be scheduled from any thread.
@@ -1479,6 +1663,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 						- desktop only
 					A generator unit that can be used to schedule slices of audio to be played at a specified time. The audio
 					is scheduled using the time stamps for the render operation, and can be scheduled from any thread.
@@ -1501,11 +1687,14 @@ const
 //#endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc} { not TARGET_OS_IPHONE }
 
 //=====================================================================================================================
@@ -1513,6 +1702,7 @@ const
 //#pragma mark Audio Unit Constants and typedefs
 {!
 	@enum			AudioUnitRenderActionFlags
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1568,6 +1758,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		These flags can be set in a callback from an audio unit during an audio unit render operation from 
 					either the RenderNotify Proc or the render input callback.
 
@@ -1603,11 +1795,14 @@ const
 					ioData handed to the post-render notification will be invalid.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitRenderAction_PreRender = 1 shl 2;
@@ -1620,6 +1815,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kAudioUnitRenderAction_DoNotCheckRenderArgs = 1 shl 9;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1627,6 +1823,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
 	AudioUnitRenderActionFlags = UInt32;
 
@@ -1641,6 +1839,7 @@ type
 	@constant		kAudioUnitErr_InvalidElement
 					The specified element is not valid
 	@constant		kAudioUnitErr_NoConnection
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1665,6 +1864,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					There is no connection (generally an audio unit is asked to render but it has not input from which to gather data)
 	@constant		kAudioUnitErr_FailedInitialization
 					The audio unit is unable to be initialised
@@ -1679,16 +1880,20 @@ type
 					Returned if an operation requires an audio unit to be initialised and it is not.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@constant		kAudioUnitErr_InvalidScope
 					The specified scope is invalid
 	@constant		kAudioUnitErr_PropertyNotWritable
 					The property cannot be written
 	@constant		kAudioUnitErr_CannotDoInCurrentContext
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1717,6 +1922,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					Returned when an audio unit is in a state where it can't perform the requested action now - but it could later. Its usually used
 					to guard a render operation when a reconfiguration of its internal state is being performed.
 	@constant		kAudioUnitErr_InvalidPropertyValue
@@ -1733,11 +1940,14 @@ type
 					be used. A host can then present a UI to notify the user the audio unit is not able to be used in its current state.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitErr_InvalidProperty = -10879;
@@ -1764,6 +1974,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 						Properties are used to describe the state of an audio unit (for instance, 
 						the input or output audio format)
 =======
@@ -1775,11 +1986,15 @@ const
 =======
 						Properties are used to describe the state of an audio unit (for instance, the input or output audio format)
 >>>>>>> graemeg/cpstrnew
+=======
+						Properties are used to describe the state of an audio unit (for instance, the input or output audio format)
+>>>>>>> origin/cpstrnew
 }
 type
 	AudioUnitPropertyID = UInt32;
 {!
 	@typedef			AudioUnitScope
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1799,12 +2014,17 @@ type
 	@discussion			Type used for audio unit scopes. Apple reserves the 0 < 1024 range for audio unit scope identifiers.  
 						Scopes are used to delineate a major attribute of an audio unit (for instance, global, input, output)
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion			Type used for audio unit scopes. Apple reserves the 0 < 1024 range for audio unit scope identifiers.  
+						Scopes are used to delineate a major attribute of an audio unit (for instance, global, input, output)
+>>>>>>> origin/cpstrnew
 }
 type
 	AudioUnitScope = UInt32;
 {!
 	@typedef			AudioUnitElement
 	@discussion			Type used for audio unit elements.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1819,6 +2039,9 @@ type
 =======
 						Scopes can have one or more member, and a member of a scope is addressed / described by its element
 >>>>>>> graemeg/cpstrnew
+=======
+						Scopes can have one or more member, and a member of a scope is addressed / described by its element
+>>>>>>> origin/cpstrnew
 						For instance, input bus 1 is input scope, element 1
 }
 type
@@ -1826,6 +2049,7 @@ type
 {!
 	@typedef			AudioUnitParameterID
 	@discussion			Type used for audio unit parameters. 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1840,12 +2064,16 @@ type
 =======
 						Parameters are typically used to control and set render state (for instance, filter cut-off frequency)
 >>>>>>> graemeg/cpstrnew
+=======
+						Parameters are typically used to control and set render state (for instance, filter cut-off frequency)
+>>>>>>> origin/cpstrnew
 }
 type
 	AudioUnitParameterID = UInt32;
 {!
 	@typedef			AudioUnitParameterValue
 	@discussion			Type used for audio unit parameter values. 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1860,6 +2088,9 @@ type
 =======
 						The value of a given parameter is specified using this type (typically a Float32)
 >>>>>>> graemeg/cpstrnew
+=======
+						The value of a given parameter is specified using this type (typically a Float32)
+>>>>>>> origin/cpstrnew
 }
 type
 	AudioUnitParameterValue = Float32;
@@ -1873,6 +2104,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					The parameter event describes an immediate change to the parameter value to 
 					the new value
 	@constant		kParameterEvent_Ramped
@@ -1883,17 +2115,22 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					The parameter event describes an immediate change to the parameter value to the new value
 	@constant		kParameterEvent_Ramped
 					The parameter event describes a change to the parameter value that should be applied over
 					the specified period of time
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kParameterEvent_Immediate = 1;
@@ -1903,6 +2140,7 @@ type
 
 {!
 	@struct			AudioUnitParameterEvent
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1925,6 +2163,11 @@ type
 					how that change is to be applied (see AUParameterEventType). A parameter is uniquely defined through
 					the triplet of scope, element and parameterID.
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		A parameter event describes a change to a parameter's value, where the type of the event describes
+					how that change is to be applied (see AUParameterEventType). A parameter is uniquely defined through
+					the triplet of scope, element and parameterID.
+>>>>>>> origin/cpstrnew
 					
 					See AudioUnitScheduleParameters
 
@@ -1936,6 +2179,7 @@ type
 					The parameterID for the parameter
 	
 	@field			eventType
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1952,6 +2196,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					The event type. This field further defines how the union described by eventValues is to be interpreted.
 	
 	@field			eventValues
@@ -1959,11 +2205,14 @@ type
 					If the parameter event type is _Ramped, then the ramp struct of this union should be used.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 }
 type
@@ -1998,6 +2247,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		An audio unit parameter is defined by the triplet of audio unit scope, element 
 					and parameterID. This struct is used with the functions in AudioUnitUtilities.h 
 					to deal with audio unit parameters, but is included in this header file for 
@@ -2017,6 +2267,11 @@ type
 					is used with the functions in AudioUnitUtilities.h to deal with audio unit parameters, but is included
 					in this header file for completeness
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		An audio unit parameter is defined by the triplet of audio unit scope, element and parameterID. This struct
+					is used with the functions in AudioUnitUtilities.h to deal with audio unit parameters, but is included
+					in this header file for completeness
+>>>>>>> origin/cpstrnew
 
 	@field			mAudioUnit
 					The audio unit instance which the specified parameter applies too
@@ -2041,6 +2296,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		An audio unit property is defined by the triplet of audio unit scope, element
 					and propertyID. This struct is used with the functions in AudioUnitUtilities.h 
 					to deal with audio unit properties, but is included in this header file for 
@@ -2060,6 +2316,11 @@ type
 					is used with the functions in AudioUnitUtilities.h to deal with audio unit properties, but is included
 					in this header file for completeness
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		An audio unit property is defined by the triplet of audio unit scope, element and propertyID. This struct
+					is used with the functions in AudioUnitUtilities.h to deal with audio unit properties, but is included
+					in this header file for completeness
+>>>>>>> origin/cpstrnew
 
 	@field			mAudioUnit
 					The audio unit instance which the specified property applies too
@@ -2082,6 +2343,7 @@ type
 
 {!
 	@typedef		AURenderCallback
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2115,6 +2377,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		This is the prototype for a function callback Proc that is used both with the AudioUnit render notification
 					API and the render input callback. See kAudioUnitProperty_SetRenderCallback property or AudioUnitAddRenderNotify.
 					This callback is part of the process of a call to AudioUnitRender. As a notification it is called either before
@@ -2135,17 +2399,21 @@ type
 					The AudioBufferList that will be used to contain the rendered or provided audio data
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 type
 	AURenderCallback = function( inRefCon: UnivPtr; var ioActionFlags: AudioUnitRenderActionFlags; const (*var*) inTimeStamp: AudioTimeStamp; inBusNumber: UInt32; inNumberFrames: UInt32; var ioData: AudioBufferList ): OSStatus;
 
 {!
 	@typedef		AudioUnitPropertyListenerProc
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2164,6 +2432,10 @@ type
 	@discussion		This is the prototype for a function callback Proc that is registered with an audio unit to notify the caller
 					of any changes to a value of an audio unit property. See AudioUnitAddPropertyListener
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		This is the prototype for a function callback Proc that is registered with an audio unit to notify the caller
+					of any changes to a value of an audio unit property. See AudioUnitAddPropertyListener
+>>>>>>> origin/cpstrnew
 	
 	@param			inRefCon
 					The client data that is provided with the add property listener registration
@@ -2181,6 +2453,7 @@ type
 
 {!
 	@typedef		AUInputSamplesInOutputCallback
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2203,10 +2476,16 @@ type
 					of for the user of a varispeed or AUTimePitch audio unit where it is not clear what input sample is represented
 					in the rendered output samples.
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		This is the prototype for a function callback Proc that is registered with an audio unit to notify the caller
+					of for the user of a varispeed or AUTimePitch audio unit where it is not clear what input sample is represented
+					in the rendered output samples.
+>>>>>>> origin/cpstrnew
 	
 	@param			inRefCon
 					The client data that is provided with the add property listener registration
 	@param			inOutputTimeStamp
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2230,6 +2509,11 @@ type
 	@param			inInputSample
 					The sample number of the input that is represented in the first sample of that output time stamp
 >>>>>>> graemeg/cpstrnew
+=======
+					The time stamp that corresponds to the first sample of audio data produced in AudioUnitRender (its output data)
+	@param			inInputSample
+					The sample number of the input that is represented in the first sample of that output time stamp
+>>>>>>> origin/cpstrnew
 	@param			inNumberInputSamples
 					The number of input samples that are represented in an output buffer
 }
@@ -2243,6 +2527,7 @@ type
 {!
 	@function		AudioUnitInitialize
 	@abstract		initialize an audio unit
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2264,6 +2549,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		Upon success, the audio unit has been successfully initialised. This means that the formats for input
 					and output are valid and can be supported and it has based its allocations on the max number of frames
 					that it is able to render at any given time. Once initialised, it is in a state where it can be asked 
@@ -2277,11 +2564,14 @@ type
 	@result			noErr, or an error representing the reasons why the audio unit was not able to be initialised successfully
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 function AudioUnitInitialize( inUnit: AudioUnit ): OSStatus; external name '_AudioUnitInitialize';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0,__IPHONE_2_0) *)
@@ -2289,6 +2579,7 @@ function AudioUnitInitialize( inUnit: AudioUnit ): OSStatus; external name '_Aud
 {!
 	@function		AudioUnitUninitialize
 	@abstract		uninitialize and audio unit
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2309,6 +2600,8 @@ function AudioUnitInitialize( inUnit: AudioUnit ): OSStatus; external name '_Aud
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		Once an audio unit has been initialised, to change its state in response to some kind of environmental change,
 					the audio unit should be uninitialised. This will have the effect of the audio unit de-allocating its resources.
 					The caller can then reconfigure the audio unit to match the new environment (for instance, the sample rate to proces
@@ -2320,11 +2613,14 @@ function AudioUnitInitialize( inUnit: AudioUnit ): OSStatus; external name '_Aud
 					this call won't return an error unless the audio unit in question is no longer valid.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 function AudioUnitUninitialize( inUnit: AudioUnit ): OSStatus; external name '_AudioUnitUninitialize';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_0,__IPHONE_2_0) *)
@@ -2333,6 +2629,7 @@ function AudioUnitUninitialize( inUnit: AudioUnit ): OSStatus; external name '_A
 {!
 	@function		AudioUnitGetPropertyInfo
 	@abstract		retrieves information about a specified property
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2356,10 +2653,16 @@ function AudioUnitUninitialize( inUnit: AudioUnit ): OSStatus; external name '_A
 					get a general answer on the capability of an audio unit, this function should be called before the audio unit
 					is initialized (as some properties are writable when the audio unit is initialized, and others not)
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		The API can be used to retrieve both the size of the property, and whether it is writable or not. In order to 
+					get a general answer on the capability of an audio unit, this function should be called before the audio unit
+					is initialized (as some properties are writable when the audio unit is initialized, and others not)
+>>>>>>> origin/cpstrnew
 
 	@param			inUnit
 					the audio unit
 	@param			inID
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2373,11 +2676,15 @@ function AudioUnitUninitialize( inUnit: AudioUnit ): OSStatus; external name '_A
 =======
 					the proeprty identifier
 >>>>>>> graemeg/cpstrnew
+=======
+					the proeprty identifier
+>>>>>>> origin/cpstrnew
 	@param			inScope
 					the scope of the property
 	@param			inElement
 					the element of the scope
 	@param			outDataSize
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2401,6 +2708,11 @@ function AudioUnitUninitialize( inUnit: AudioUnit ): OSStatus; external name '_A
 	@param			outWritable	
 					if not null, then will retrieve whether the property can be written or not. if null, then it is ignored
 >>>>>>> graemeg/cpstrnew
+=======
+					if not null, then will retrieve the maximum size for the property. if null, then it is ignored
+	@param			outWritable	
+					if not null, then will retrieve whether the property can be written or not. if null, then it is ignored
+>>>>>>> origin/cpstrnew
 	
 	@result			noErr, or various audio unit errors related to properties
 }
@@ -2410,6 +2722,7 @@ function AudioUnitGetPropertyInfo( inUnit: AudioUnit; inID: AudioUnitPropertyID;
 {!
 	@function		AudioUnitGetProperty
 	@abstract		retrieves the value of a specified property
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2427,10 +2740,15 @@ function AudioUnitGetPropertyInfo( inUnit: AudioUnit; inID: AudioUnitPropertyID;
 	@discussion		The API can is used to retrieve the value of the property. Property values for audio units are always passed
 					by reference
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		The API can is used to retrieve the value of the property. Property values for audio units are always passed
+					by reference
+>>>>>>> origin/cpstrnew
 					
 	@param			inUnit
 					the audio unit
 	@param			inID
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2444,11 +2762,15 @@ function AudioUnitGetPropertyInfo( inUnit: AudioUnit; inID: AudioUnitPropertyID;
 =======
 					the proeprty identifier
 >>>>>>> graemeg/cpstrnew
+=======
+					the proeprty identifier
+>>>>>>> origin/cpstrnew
 	@param			inScope
 					the scope of the property
 	@param			inElement
 					the element of the scope
 	@param			outData
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2463,17 +2785,22 @@ function AudioUnitGetPropertyInfo( inUnit: AudioUnit; inID: AudioUnitPropertyID;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					used to retrieve the value of the property. It should point to memory at least as large as the value
 					desribed by ioDataSize 
 	@param			ioDataSize	
 					on input contains the size of the data pointed to by outData, on output, the size of the data that was returned.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 	@result			noErr, or various audio unit errors related to properties
 }
@@ -2483,6 +2810,7 @@ function AudioUnitGetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 {!
 	@function		AudioUnitSetProperty
 	@abstract		sets the value of a specified property
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2500,10 +2828,15 @@ function AudioUnitGetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 	@discussion		The API can is used to set the value of the property. Property values for audio units are always passed
 					by reference
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		The API can is used to set the value of the property. Property values for audio units are always passed
+					by reference
+>>>>>>> origin/cpstrnew
 					
 	@param			inUnit
 					the audio unit
 	@param			inID
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2517,11 +2850,15 @@ function AudioUnitGetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 =======
 					the proeprty identifier
 >>>>>>> graemeg/cpstrnew
+=======
+					the proeprty identifier
+>>>>>>> origin/cpstrnew
 	@param			inScope
 					the scope of the property
 	@param			inElement
 					the element of the scope
 	@param			inData
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2545,6 +2882,11 @@ function AudioUnitGetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 					and the call is then used to remove a previously set value for a property. This removal is only valid for
 					some properties, as most properties will always have a default value if not set.
 >>>>>>> graemeg/cpstrnew
+=======
+					if not null, then is the new value for the property that will be set. If null, then inDataSize should be zero,
+					and the call is then used to remove a previously set value for a property. This removal is only valid for
+					some properties, as most properties will always have a default value if not set.
+>>>>>>> origin/cpstrnew
 	@param			inDataSize	
 					the size of the data being provided in inData
 
@@ -2556,6 +2898,7 @@ function AudioUnitSetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 {!
 	@function		AudioUnitAddPropertyListener
 	@abstract		registration call to receive notifications for when a property changes
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2571,6 +2914,8 @@ function AudioUnitSetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		When an audio unit property value changes, a notification callback can be called by the audio unit to 
 					inform interested parties that this event has occurred. The notification is defined by the tuple of
 					inProc and inProcUserData as paired to the specified property ID, so the previously defined 
@@ -2578,15 +2923,19 @@ function AudioUnitSetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 					the inProcUserData to remove a given listener (so, you should use AudioUnitRemovePropertyListenerWithUserData).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 	@param			inUnit
 					the audio unit
 	@param			inID
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2608,6 +2957,11 @@ function AudioUnitSetProperty( inUnit: AudioUnit; inID: AudioUnitPropertyID; inS
 	@param			inProc
 					the proceedure to call when the property changes (on any scope or element)
 >>>>>>> graemeg/cpstrnew
+=======
+					the proeprty identifier
+	@param			inProc
+					the proceedure to call when the property changes (on any scope or element)
+>>>>>>> origin/cpstrnew
 	@param			inProcUserData
 					the user data to provide with the callback
 
@@ -2619,6 +2973,7 @@ function AudioUnitAddPropertyListener( inUnit: AudioUnit; inID: AudioUnitPropert
 {!
 	@function		AudioUnitRemovePropertyListenerWithUserData
 	@abstract		remove a previously registered property listener
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2636,10 +2991,15 @@ function AudioUnitAddPropertyListener( inUnit: AudioUnit; inID: AudioUnitPropert
 	@discussion		Removes a previously registered property listener as specified by the inProc and inProcUser data
 					as paired to the property identifier
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		Removes a previously registered property listener as specified by the inProc and inProcUser data
+					as paired to the property identifier
+>>>>>>> origin/cpstrnew
 					
 	@param			inUnit
 					the audio unit
 	@param			inID
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2661,6 +3021,11 @@ function AudioUnitAddPropertyListener( inUnit: AudioUnit; inID: AudioUnitPropert
 	@param			inProc
 					the proceedure previously registered
 >>>>>>> graemeg/cpstrnew
+=======
+					the proeprty identifier
+	@param			inProc
+					the proceedure previously registered
+>>>>>>> origin/cpstrnew
 	@param			inProcUserData
 					the user data paired with the provided inProc
 
@@ -2672,6 +3037,7 @@ function AudioUnitRemovePropertyListenerWithUserData( inUnit: AudioUnit; inID: A
 {!
 	@function		AudioUnitAddRenderNotify
 	@abstract		a notification callback to call when an audio unit is asked to render
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2689,6 +3055,8 @@ function AudioUnitRemovePropertyListenerWithUserData( inUnit: AudioUnit; inID: A
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		allows an application to register a callback with an audio unit for whenever the audio unit is asked
 					to render. The callback is called both before the audio unit performs its render operations (the render
 					flag's pre-render bit is set) and after the audio unit has completed its render operations (the render
@@ -2699,11 +3067,14 @@ function AudioUnitRemovePropertyListenerWithUserData( inUnit: AudioUnit; inID: A
 					and its inProcUserData must be specified
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 	@param			inUnit
 					the audio unit
@@ -2729,6 +3100,7 @@ function AudioUnitAddRenderNotify( inUnit: AudioUnit; inProc: AURenderCallback; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					the user data that was provided with the proc when it was previously 
 					registered
 =======
@@ -2740,6 +3112,9 @@ function AudioUnitAddRenderNotify( inUnit: AudioUnit; inProc: AURenderCallback; 
 =======
 					the user data that was provided with the proc when it was previously registered
 >>>>>>> graemeg/cpstrnew
+=======
+					the user data that was provided with the proc when it was previously registered
+>>>>>>> origin/cpstrnew
 
 	@result			noErr, or an audio unit error code
 }
@@ -2763,6 +3138,7 @@ function AudioUnitRemoveRenderNotify( inUnit: AudioUnit; inProc: AURenderCallbac
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					Must be non-null, and upon success will contain the current value for the 
 					specified parameter
 =======
@@ -2774,6 +3150,9 @@ function AudioUnitRemoveRenderNotify( inUnit: AudioUnit; inProc: AURenderCallbac
 =======
 					Must be non-null, and upon success will contain the current value for the specified parameter
 >>>>>>> graemeg/cpstrnew
+=======
+					Must be non-null, and upon success will contain the current value for the specified parameter
+>>>>>>> origin/cpstrnew
 	
 	@result			noErr, or an audio unit error code (such as InvalidParameter)
 }
@@ -2783,6 +3162,7 @@ function AudioUnitGetParameter( inUnit: AudioUnit; inID: AudioUnitParameterID; i
 {!
 	@function		AudioUnitSetParameter
 	@abstract		Set the value of a parameter
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2805,6 +3185,11 @@ function AudioUnitGetParameter( inUnit: AudioUnit; inID: AudioUnitParameterID; i
 					across all of the elements in a scope - so for a mixer, the "input volume" parameter can be applied
 					on any input, and the particular input is specified by the elementID.
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		Set the value of a parameter as specified by its ID, scope and element. Parameter IDs are consistent
+					across all of the elements in a scope - so for a mixer, the "input volume" parameter can be applied
+					on any input, and the particular input is specified by the elementID.
+>>>>>>> origin/cpstrnew
 	
 	@param			inUnit
 					the audio unit
@@ -2827,6 +3212,7 @@ function AudioUnitSetParameter( inUnit: AudioUnit; inID: AudioUnitParameterID; i
 {!
 	@function		AudioUnitScheduleParameters
 	@abstract		Schedule changes to the value of a parameter
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2853,6 +3239,8 @@ function AudioUnitSetParameter( inUnit: AudioUnit; inID: AudioUnitParameterID; i
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		This API is used to schedule intra-buffer changes to the value of a parameter (immediate) or to
 					ramp a parameter from a start value to an end value for a specified number of samples (ramp)
 					
@@ -2869,11 +3257,14 @@ function AudioUnitSetParameter( inUnit: AudioUnit; inID: AudioUnitParameterID; i
 					Parameters that can have events scheduled to them will indicate this through their parameter info struct
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 	@param			inUnit
 					the audio unit
@@ -2889,6 +3280,7 @@ function AudioUnitScheduleParameters( inUnit: AudioUnit; const inParameterEvent:
 
 {!
 	@function		AudioUnitRender
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2916,6 +3308,8 @@ function AudioUnitScheduleParameters( inUnit: AudioUnit; const inParameterEvent:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@abstract		the render operation where ioData will contain the results of the audio unit's render operations
 	@discussion		an audio unit will render the amount of audio data described by inNumberOfFrames and the results
 					of that render will be contained within ioData. The caller should provide audio time stamps 
@@ -2931,17 +3325,21 @@ function AudioUnitScheduleParameters( inUnit: AudioUnit; const inParameterEvent:
 					the audio unit is required to keep those buffers valid for the duration of the calling thread's I/O cycle
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					 
 	@param			inUnit
 					the audio unit
 	@param			ioActionFlags
 					any appropriate action flags for the render operation
 	@param			inTimeStamp
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2964,6 +3362,11 @@ function AudioUnitScheduleParameters( inUnit: AudioUnit; const inParameterEvent:
 					the time stamp will generally be the same for each output bus, so the audio unit is able to determine
 					without doubt that this the same render operation
 >>>>>>> graemeg/cpstrnew
+=======
+					the time stamp that applies to this particular render operation. when rendering for multiple output buses
+					the time stamp will generally be the same for each output bus, so the audio unit is able to determine
+					without doubt that this the same render operation
+>>>>>>> origin/cpstrnew
 	@param			inOutputBusNumber
 					the output bus to render for
 	@param			inNumberFrames
@@ -2976,6 +3379,7 @@ function AudioUnitScheduleParameters( inUnit: AudioUnit; const inParameterEvent:
 function AudioUnitRender( inUnit: AudioUnit; var ioActionFlags: AudioUnitRenderActionFlags; const (*var*) inTimeStamp: AudioTimeStamp; inOutputBusNumber: UInt32; inNumberFrames: UInt32; ioData: AudioBufferListPtr ): OSStatus; external name '_AudioUnitRender';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3005,6 +3409,8 @@ function AudioUnitProcessMultiple( inUnit: AudioUnit; var ioActionFlags: AudioUn
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {!
 	@function		AudioUnitReset
 	@abstract		reset an audio unit's render state
@@ -3018,11 +3424,14 @@ function AudioUnitProcessMultiple( inUnit: AudioUnit; var ioActionFlags: AudioUn
 					Initialize calls).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	
 	@param			inUnit
 					the audio unit
@@ -3042,6 +3451,7 @@ function AudioUnitReset( inUnit: AudioUnit; inScope: AudioUnitScope; inElement: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		the range of selectors that are used to dispatch through to the various audio 
 					unit API
 =======
@@ -3053,6 +3463,9 @@ function AudioUnitReset( inUnit: AudioUnit; inScope: AudioUnitScope; inElement: 
 =======
 	@discussion		the range of selectors that are used to dispatch through to the various audio unit API
 >>>>>>> graemeg/cpstrnew
+=======
+	@discussion		the range of selectors that are used to dispatch through to the various audio unit API
+>>>>>>> origin/cpstrnew
 
 	@constant		kAudioUnitRange
 	@constant		kAudioUnitInitializeSelect
@@ -3073,6 +3486,7 @@ function AudioUnitReset( inUnit: AudioUnit; inScope: AudioUnitScope; inElement: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@constant		kAudioUnitComplexRenderSelect
 	@constant		kAudioUnitProcessSelect
 	@constant		kAudioUnitProcessMultipleSelect
@@ -3082,6 +3496,8 @@ function AudioUnitReset( inUnit: AudioUnit; inScope: AudioUnitScope; inElement: 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 const
 	kAudioUnitRange = $0000;	// range of selectors for audio units
@@ -3100,6 +3516,7 @@ const
 	kAudioUnitScheduleParametersSelect = $0011;
 	kAudioUnitRenderSelect = $000E;
 	kAudioUnitResetSelect = $0009;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3166,6 +3583,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 //=====================================================================================================================
 //#pragma mark -
@@ -3178,15 +3597,19 @@ type
 					can add considerable overhead and is desirable to avoid.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 					The arguments are the same as are provided to the corresponding API call
 	
 	@param			inComponentStorage
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3201,6 +3624,9 @@ type
 =======
 					For a component manager component, this is the component instance storage pointer
 >>>>>>> graemeg/cpstrnew
+=======
+					For a component manager component, this is the component instance storage pointer
+>>>>>>> origin/cpstrnew
 	@param			inID
 	@param			inScope
 	@param			inElement
@@ -3214,6 +3640,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		This proc can be exported through the FastDispatch property or is used as the prototype for
 					an audio component dispatch for this selector. 
 =======
@@ -3221,21 +3648,27 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		This proc can be exported through the FastDispatch property. A host can
 					then retrieve this Proc using that property and thus make a direct
 					call into your audio unit bypassing the component dispatch glue which
 					can add considerable overhead and is desirable to avoid.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 					The arguments are the same as are provided to the corresponding API call
 	
 	@param			inComponentStorage
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3250,6 +3683,9 @@ type
 =======
 					For a component manager component, this is the component instance storage pointer
 >>>>>>> graemeg/cpstrnew
+=======
+					For a component manager component, this is the component instance storage pointer
+>>>>>>> origin/cpstrnew
 	@param			inID
 	@param			inScope
 	@param			inElement
@@ -3264,6 +3700,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@discussion		This proc can be exported through the FastDispatch property or is used as the prototype for
 					an audio component dispatch for this selector. 
 =======
@@ -3271,21 +3708,27 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		This proc can be exported through the FastDispatch property. A host can
 					then retrieve this Proc using that property and thus make a direct
 					call into your audio unit bypassing the component dispatch glue which
 					can add considerable overhead and is desirable to avoid.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					
 					The arguments are the same as are provided to the corresponding API call
 	
 	@param			inComponentStorage
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3300,6 +3743,9 @@ type
 =======
 					For a component manager component, this is the component instance storage pointer
 >>>>>>> graemeg/cpstrnew
+=======
+					For a component manager component, this is the component instance storage pointer
+>>>>>>> origin/cpstrnew
 	@param			ioActionFlags
 	@param			inTimeStamp
 	@param			inOutputBusNumber
@@ -3321,6 +3767,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 					Apple's DLS synth returns this error if information about a particular 
 					instrument patch is requested, but is not valid.
 	@constant		kAudioUnitErr_InstrumentTypeNotFound
@@ -3337,6 +3784,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					Apple's DLS synth returns this error if information about a particular instrument patch is requested, but is not valid.
 	@constant		kAudioUnitErr_InstrumentTypeNotFound
 					Apple's DLS synth returns this error if information about a particular instrument patch is requested, but is not valid.
@@ -3346,11 +3795,14 @@ type
 					If an audio unit uses external files as a data source, this error is returned if a file hasn't been set on it 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 					(Apple's DLS synth returns this error)
 }
 const

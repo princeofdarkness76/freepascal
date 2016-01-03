@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
@@ -13,6 +14,9 @@
 =======
     
 >>>>>>> graemeg/cpstrnew
+=======
+    
+>>>>>>> origin/cpstrnew
     Copyright (c) 1999-2003 by Jonas Maebe,
     member of the Free Pascal development team.
 
@@ -25,6 +29,7 @@
 
  **********************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -66,6 +71,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Stat = packed Record  // No unix typing because of differences
       st_dev    : dword;
           __pad1    : dword;
@@ -94,9 +101,12 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;

@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIServices-416~44
 =======
      Version:    HIServices-308~1
@@ -16,6 +17,9 @@
 =======
      Version:    HIServices-308~1
 >>>>>>> graemeg/cpstrnew
+=======
+     Version:    HIServices-308~1
+>>>>>>> origin/cpstrnew
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
  
@@ -53,6 +57,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -60,6 +65,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -117,6 +124,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -128,6 +136,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -146,6 +156,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -186,6 +197,14 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -196,11 +215,14 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -210,6 +232,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -217,10 +240,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -367,6 +393,39 @@ interface
 =======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -444,6 +503,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HIShapeRef = ^__HIShape; { an opaque type }
 	__HIShape = record end;
 	HIMutableShapeRef = ^__HIShape; { an opaque type }
@@ -459,6 +519,10 @@ type
 	HIShapeRef = ^SInt32; { an opaque type }
 	HIMutableShapeRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	HIShapeRef = ^SInt32; { an opaque type }
+	HIMutableShapeRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 {
  *  Summary:
@@ -475,6 +539,14 @@ const
    * portion of the shape.
    }
 	kHIShapeEnumerateRect = 2;
+<<<<<<< HEAD
+=======
+
+  {
+   * The callback receives this message at the end of enumeration.
+   }
+	kHIShapeEnumerateTerminate = 3;
+>>>>>>> origin/cpstrnew
 
   {
    * The callback receives this message at the end of enumeration.
@@ -621,6 +693,81 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+ *  HIShapeEnumerateProcPtr
+ *  
+ *  Summary:
+ *    Callback function that receives rectangles parsed from an HIShape.
+ *  
+ *  Parameters:
+ *    
+ *    inMessage:
+ *      One of kHIShapeEnumerateInit, kHIShapeEnumerateRect, or
+ *      kHIShapeEnumerateTerminate.
+ *    
+ *    inShape:
+ *      The shape being enumerated.
+ *    
+ *    inRect:
+ *      If inMessage is kHIShapeEnumerateRect, this parameter is a
+ *      rectangle that forms part of the shape. If inMessage is
+ *      kHIShapeEnumerateInit or kHIShapeEnumerateTerminate, the value
+ *      of this parameter is undefined.
+ *    
+ *    inRefcon:
+ *      Client-provided data that was passed to HIShapeEnumerate.
+ *  
+ *  Result:
+ *    The callback should return noErr to continue enumeration, or any
+ *    other error code to stop enumeration. If the callback returns a
+ *    value other than noErr in response to the Init message, then the
+ *    callback will not be called with the Rect or Terminate messages.
+ *    If the callback returns a value other than noErr in response to a
+ *    Rect message, then the callback will still be called with a
+ *    Terminate message. The first value other than noErr returned by
+ *    the callback is also returned from HIShapeEnumerate.
+ }
+type
+	HIShapeEnumerateProcPtr = function( inMessage: SInt32; inShape: HIShapeRef; const (*var*) inRect: CGRect; inRefcon: UnivPtr ): OSStatus;
+{
+ *  Summary:
+ *    Options for HIShapeEnumerate.
+ }
+const
+{
+   * Enumeration should begin at the top of the shape. This is the
+   * default behavior.
+   }
+	kHIShapeParseFromTop = 0;
+
+  {
+   * Enumeration should begin at the bottom of the shape.
+   }
+	kHIShapeParseFromBottom = 1 shl 0;
+
+  {
+   * Enumeration should begin at the left side of the shape. This is
+   * the default behavior.
+   }
+	kHIShapeParseFromLeft = 0;
+
+  {
+   * Enumeration should begin at the right side of the shape.
+   }
+	kHIShapeParseFromRight = 1 shl 1;
+
+  {
+   * Enumeration should begin at the top left corner of the shape. This
+   * is the default behavior.
+   }
+	kHIShapeParseFromTopLeft = kHIShapeParseFromTop or kHIShapeParseFromLeft;
+
+  {
+   * Enumeration should begin at the bottom right corner of the shape.
+   }
+	kHIShapeParseFromBottomRight = kHIShapeParseFromBottom or kHIShapeParseFromRight;
+
+
+{
  *  HIShapeEnumerateProcPtr
  *  
  *  Summary:

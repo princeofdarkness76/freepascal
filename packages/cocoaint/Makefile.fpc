@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 =======
 #   Makefile.fpc for Apple Universal Interfaces for Free Pascal
@@ -12,10 +13,14 @@
 =======
 #   Makefile.fpc for Apple Universal Interfaces for Free Pascal
 >>>>>>> graemeg/cpstrnew
+=======
+#   Makefile.fpc for Apple Universal Interfaces for Free Pascal
+>>>>>>> origin/cpstrnew
 #
 
 [package]
 name=cocoaint
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -28,6 +33,8 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
@@ -38,15 +45,19 @@ implicitunits=AnonClassDefinitionsQuartzcore AnonClassDefinitionsWebkit
 libversion=2.5.1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -143,6 +154,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 [compiler]
 sourcedir=src
 
@@ -158,8 +171,11 @@ WebKit$(PPUEXT): CocoaAll$(PPUEXT)
 CoreData$(PPUEXT): CocoaAll$(PPUEXT)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

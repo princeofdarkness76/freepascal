@@ -50,6 +50,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __peFlags: record
       case byte of
        0: (_anonbitfield_NSPredicateEditor0: cuint);
@@ -65,6 +66,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __peFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPredicateEditor0: cuint);
@@ -76,11 +79,14 @@
         _predicateEditorReserved: array[0..2] of id;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     
   public
     procedure setRowTemplates(rowTemplates_: NSArray); message 'setRowTemplates:';

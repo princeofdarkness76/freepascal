@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %TARGET=win32,win64,wince,linux,android }
 =======
 { %TARGET=win32,win64,wince}
@@ -11,6 +12,9 @@
 =======
 { %TARGET=win32,win64,wince}
 >>>>>>> graemeg/cpstrnew
+=======
+{ %TARGET=win32,win64,wince}
+>>>>>>> origin/cpstrnew
 program tsafecall4;
 
 {$mode objfpc}{$H+}

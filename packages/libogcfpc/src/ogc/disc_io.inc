@@ -35,6 +35,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PDISC_INTERFACE = ^DISC_INTERFACE;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -42,6 +43,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF}
 
 

@@ -85,6 +85,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: TCGSize; src, dst: TRegister); override;
 =======
         procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: TCGSize; src, dst: TRegister); override;
@@ -95,6 +96,9 @@ unit cgx86;
 =======
         procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: TCGSize; src, dst: TRegister); override;
 >>>>>>> graemeg/cpstrnew
+=======
+        procedure a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: TCGSize; src, dst: TRegister); override;
+>>>>>>> origin/cpstrnew
 
         { fpu move instructions }
         procedure a_loadfpu_reg_reg(list: TAsmList; fromsize, tosize: tcgsize; reg1, reg2: tregister); override;
@@ -187,6 +191,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function UseAVX: boolean;
 
     function UseIncDec: boolean;
@@ -200,6 +205,8 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   implementation
 
     uses
@@ -284,6 +291,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           OS_M64:
             result:=rg[R_MMREGISTER].getregister(list,R_SUBQ);
 =======
@@ -295,6 +303,9 @@ unit cgx86;
 =======
           OS_M64,
 >>>>>>> graemeg/cpstrnew
+=======
+          OS_M64,
+>>>>>>> origin/cpstrnew
           OS_M128:
             result:=rg[R_MMREGISTER].getregister(list,R_SUBMMWHOLE);
           else
@@ -454,6 +465,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         hreg:=NR_NO;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -461,11 +473,14 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { make_simple_ref() may have already been called earlier, and in that
           case make sure we don't perform the PIC-simplifications twice }
         if (ref.refaddr in [addr_pic,addr_pic_no_got]) then
           exit;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -475,6 +490,8 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef x86_64}
 >>>>>>> graemeg/cpstrnew
         { Only 32bit is allowed }
@@ -529,6 +546,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 { Local symbols must not be accessed via the GOT }
                 if (ref.symbol.bind=AB_LOCAL) then
 =======
@@ -536,6 +554,8 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 { Local data symbols must not be accessed via the GOT on
                   darwin/x86_64 under certain circumstances (and do not
                   have to be in other cases); however, linux/x86_64 does
@@ -546,11 +566,14 @@ unit cgx86;
                    (ref.symbol.typ=AT_DATA) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   begin
                     { unfortunately, RIP-based addresses don't support an index }
                     if (ref.base<>NR_NO) or
@@ -580,6 +603,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -589,6 +613,9 @@ unit cgx86;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
                     ref.symbol:=nil;
                   end;
 
@@ -607,6 +634,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     ref.base:=getaddressregister(list);
                     list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,ref.base));
 =======
@@ -614,6 +642,8 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,hreg));
                     ref.base:=hreg;
 >>>>>>> graemeg/cpstrnew
@@ -621,6 +651,7 @@ unit cgx86;
               end
             else
               { Always use RIP relative symbol addressing for Windows and Darwin targets. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -634,6 +665,9 @@ unit cgx86;
 =======
               if (target_info.system in (systems_all_windows+[system_x86_64_darwin])) and (ref.base<>NR_RIP) then
 >>>>>>> graemeg/cpstrnew
+=======
+              if (target_info.system in (systems_all_windows+[system_x86_64_darwin])) and (ref.base<>NR_RIP) then
+>>>>>>> origin/cpstrnew
                 begin
                   if (ref.refaddr=addr_no) and (ref.base=NR_NO) and (ref.index=NR_NO) then
                     begin
@@ -665,6 +699,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           ref.base:=getaddressregister(list);
                           list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,ref.base));
 =======
@@ -672,6 +707,8 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                           list.concat(taicpu.op_ref_reg(A_LEA,S_Q,href,hreg));
                           ref.base:=hreg;
 >>>>>>> graemeg/cpstrnew
@@ -697,11 +734,14 @@ unit cgx86;
                    (ref.symbol.bind in [AB_COMMON,AB_GLOBAL,AB_PRIVATE_EXTERN])) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                  begin
                    hreg:=g_indirect_sym_load(list,ref.symbol.name,asmsym2indsymflags(ref.symbol));
                    ref.symbol:=nil;
@@ -927,12 +967,15 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         result := current_asmdata.DefineAsmSymbol(stubname,AB_LOCAL,AT_FUNCTION);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         result := current_asmdata.RefAsmSymbol(stubname);
 >>>>>>> graemeg/cpstrnew
         current_asmdata.asmlists[al_imports].concat(Tai_symbol.Create(result,0));
@@ -972,6 +1015,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim,system_x86_64_iphonesim]) then
 =======
                not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim]) then
@@ -982,6 +1026,9 @@ unit cgx86;
 =======
                not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim]) then
 >>>>>>> graemeg/cpstrnew
+=======
+               not(target_info.system in [system_x86_64_darwin,system_i386_iphonesim]) then
+>>>>>>> origin/cpstrnew
               begin
 {$ifdef i386}
                 include(current_procinfo.flags,pi_needs_got);
@@ -1202,6 +1249,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                              and not(ref.symbol.bind=AB_LOCAL)
 =======
                              and not((ref.symbol.bind=AB_LOCAL) and
@@ -1215,6 +1263,10 @@ unit cgx86;
                              and not((ref.symbol.bind=AB_LOCAL) and
                                      (ref.symbol.typ=AT_DATA))
 >>>>>>> graemeg/cpstrnew
+=======
+                             and not((ref.symbol.bind=AB_LOCAL) and
+                                     (ref.symbol.typ=AT_DATA))
+>>>>>>> origin/cpstrnew
 {$endif x86_64}
                             then
                       begin
@@ -1237,6 +1289,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     else if (target_info.system in (systems_all_windows+[system_x86_64_darwin,system_x86_64_iphonesim]))
 =======
                     else if (target_info.system in (systems_all_windows+[system_x86_64_darwin]))
@@ -1247,6 +1300,9 @@ unit cgx86;
 =======
                     else if (target_info.system in (systems_all_windows+[system_x86_64_darwin]))
 >>>>>>> graemeg/cpstrnew
+=======
+                    else if (target_info.system in (systems_all_windows+[system_x86_64_darwin]))
+>>>>>>> origin/cpstrnew
 			 or (cs_create_pic in current_settings.moduleswitches)
 			 then
                       begin
@@ -1404,6 +1460,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (fromsize in [low(convertopsse)..high(convertopsse)]) and
            (tosize in [low(convertopsse)..high(convertopsse)]) then
           begin
@@ -1427,10 +1484,16 @@ unit cgx86;
            (tosize in [low(convertop)..high(convertop)]) then
           result:=convertop[fromsize,tosize]
 >>>>>>> graemeg/cpstrnew
+=======
+        if (fromsize in [low(convertop)..high(convertop)]) and
+           (tosize in [low(convertop)..high(convertop)]) then
+          result:=convertop[fromsize,tosize]
+>>>>>>> origin/cpstrnew
         { we can have OS_M64 (record in function result/LOC_MMREGISTER) to
           OS_64 (record in memory/LOC_REFERENCE) }
         else if (tcgsize2size[fromsize]=tcgsize2size[tosize]) and
                 (fromsize=OS_M64) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1449,6 +1512,9 @@ unit cgx86;
 =======
           result:=A_MOVQ
 >>>>>>> graemeg/cpstrnew
+=======
+          result:=A_MOVQ
+>>>>>>> origin/cpstrnew
         else
           internalerror(2010060104);
         if result=A_NONE then
@@ -2237,6 +2303,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      procedure tcgx86.a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; srcsize, dstsize: TCGSize; src, dst: TRegister);
      var
        tmpreg: tregister;
@@ -2272,6 +2339,8 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      procedure tcgx86.a_bit_scan_reg_reg(list: TAsmList; reverse: boolean; size: TCGSize; src, dst: TRegister);
      var
        opsize: topsize;
@@ -2283,11 +2352,14 @@ unit cgx86;
          list.concat(taicpu.op_reg_reg(A_BSR,opsize,src,dst));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      end;
 
 {*************** compare instructructions ****************}
@@ -3201,6 +3273,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim,system_i386_android]) then
 =======
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
@@ -3211,6 +3284,9 @@ unit cgx86;
 =======
            not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 >>>>>>> graemeg/cpstrnew
+=======
+           not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> origin/cpstrnew
           begin
             { .... also the segment registers }
             list.concat(Taicpu.Op_reg(A_PUSH,S_W,NR_GS));
@@ -3277,6 +3353,7 @@ unit cgx86;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                ((target_info.stackalign>sizeof(pint)) and
 =======
                ((target_info.system in systems_need_16_byte_stack_alignment) and
@@ -3287,10 +3364,14 @@ unit cgx86;
 =======
                ((target_info.system in systems_need_16_byte_stack_alignment) and
 >>>>>>> graemeg/cpstrnew
+=======
+               ((target_info.system in systems_need_16_byte_stack_alignment) and
+>>>>>>> origin/cpstrnew
                 (stackmisalignment <> 0) and
                 ((pi_do_call in current_procinfo.flags) or
                  (po_assembler in current_procinfo.procdef.procoptions))) then
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3302,6 +3383,8 @@ unit cgx86;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 if (target_info.system in systems_need_16_byte_stack_alignment) then
                   localsize := align(localsize+stackmisalignment,16)-stackmisalignment;
                 cg.g_stackpointer_alloc(list,localsize);

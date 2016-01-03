@@ -113,6 +113,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           objcprotocoln,    { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
           specializen       { parser-only node to handle Delphi-mode inline specializations }
 =======
@@ -124,6 +125,9 @@ interface
 =======
           objcprotocoln     { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
 >>>>>>> graemeg/cpstrnew
+=======
+          objcprotocoln     { node for an Objective-C @protocol() expression (returns metaclass associated with protocol) }
+>>>>>>> origin/cpstrnew
        );
 
        tnodetypeset = set of tnodetype;
@@ -210,6 +214,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           'objcprotocoln',
           'specializen');
 
@@ -229,6 +234,9 @@ interface
 =======
           'objcprotocoln');
 >>>>>>> graemeg/cpstrnew
+=======
+          'objcprotocoln');
+>>>>>>> origin/cpstrnew
 
     type
        { all boolean field of ttree are now collected in flags }

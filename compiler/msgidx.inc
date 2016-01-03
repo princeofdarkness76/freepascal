@@ -113,6 +113,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   scanner_e_illegal_alignment_directive=02088;
   scanner_f_illegal_utf8_bom=02089;
   scanner_w_directive_ignored_on_target=02090;
@@ -130,6 +131,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_syntax_error=03000;
   parser_e_dont_nest_interrupt=03004;
   parser_w_proc_directive_ignored=03005;
@@ -387,6 +390,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   parser_e_must_use_override=03273;
   parser_h_should_use_override=03274;
   parser_e_objc_message_name_changed=03275;
@@ -396,17 +400,22 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_must_use_override_objc=03273;
   parser_h_should_use_override_objc=03274;
   parser_e_objc_message_name_changed=03275;
   parser_e_no_objc_unique=03276;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_no_category_as_types=03277;
   parser_e_no_category_override=03278;
   parser_e_must_use_reintroduce_objc=03279;
@@ -425,6 +434,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   parser_f_modeswitch_objc_required=03292;
   parser_e_widestring_to_ansi_compile_time=03293;
 =======
@@ -436,10 +446,14 @@ const
 =======
   parser_f_modeswitch_objc_required=03293;
 >>>>>>> graemeg/cpstrnew
+=======
+  parser_f_modeswitch_objc_required=03293;
+>>>>>>> origin/cpstrnew
   parser_e_objc_enumerator_2_0=03294;
   parser_e_objc_missing_enumeration_defs=03295;
   parser_e_no_procvarnested_const=03296;
   parser_f_no_generic_inside_generic=03297;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -453,6 +467,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_forward_protocol_declaration_must_be_resolved=03298;
   parser_e_no_record_published=03299;
   parser_e_no_destructor_in_records=03300;
@@ -460,15 +476,19 @@ const
   parser_e_no_constructor_in_records=03302;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   parser_e_at_least_one_argument_must_be_of_type=03303;
   parser_e_cant_use_type_parameters_here=03304;
   parser_e_externals_no_section=03305;
   parser_e_section_no_locals=03306;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -521,6 +541,10 @@ const
   parser_e_invalid_codepage=03307;
   parser_e_widestring_to_ansi_compile_time=03308;
 >>>>>>> graemeg/cpstrnew
+=======
+  parser_e_invalid_codepage=03307;
+  parser_e_widestring_to_ansi_compile_time=03308;
+>>>>>>> origin/cpstrnew
   type_e_mismatch=04000;
   type_e_incompatible_types=04001;
   type_e_not_equal_types=04002;
@@ -613,6 +637,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   type_e_helper_type_expected=04099;
   type_e_record_type_expected=04100;
   type_e_class_helper_must_extend_subclass=04101;
@@ -644,6 +669,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   sym_e_id_not_found=05000;
   sym_f_internal_error_in_symtablestack=05001;
   sym_e_duplicate_id=05002;
@@ -713,6 +740,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   sym_e_formal_class_not_resolved=05080;
   sym_e_interprocgoto_into_init_final_code_not_allowed=05081;
   sym_e_external_class_name_mismatch1=05082;
@@ -734,17 +762,22 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   sym_e_objc_formal_class_not_resolved=05080;
   sym_e_interprocgoto_into_init_final_code_not_allowed=05081;
   sym_e_external_class_name_mismatch1=05082;
   sym_e_external_class_name_mismatch2=05083;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   cg_e_parasize_too_big=06009;
   cg_e_file_must_call_by_reference=06012;
   cg_e_cant_use_far_pointer_there=06013;
@@ -779,6 +812,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cg_e_mod_only_defined_for_pos_quotient=06054;
   cg_d_autoinlining=06055;
   cg_e_function_not_support_by_selected_instruction_set=06056;
@@ -789,6 +823,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   asmr_d_start_reading=07000;
   asmr_d_finish_reading=07001;
   asmr_e_none_label_contain_at=07002;
@@ -898,6 +934,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   asmr_w_general_segment_with_constant=07111;
   asmr_e_bad_seh_directive_offset=07112;
   asmr_e_bad_seh_directive_register=07113;
@@ -922,6 +959,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   asmw_f_too_many_asm_files=08000;
   asmw_f_assembler_output_not_supported=08001;
   asmw_f_comp_not_supported=08002;
@@ -1069,6 +1108,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   unit_u_ppu_invalid_memory_model=10063;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1076,6 +1116,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   option_usage=11000;
   option_only_one_source_support=11001;
   option_def_only_for_os2=11002;
@@ -1123,6 +1165,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   option_dwarf_smartlink_creation=11049;
   option_invalid_macosx_deployment_target=11050;
   option_invalid_iphoneos_deployment_target=11051;
@@ -1138,6 +1181,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   wpo_cant_find_file=12000;
   wpo_begin_processing=12001;
   wpo_end_processing=12002;
@@ -1162,6 +1207,7 @@ const
   option_info=11024;
   option_help_pages=11025;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1191,4 +1237,11 @@ const
     24,88,309,99,84,54,111,22,202,63,
     49,20,1,1,1,1,1,1,1,1
 >>>>>>> graemeg/cpstrnew
+=======
+  MsgTxtSize = 58873;
+
+  MsgIdxMax : array[1..20] of longint=(
+    24,88,309,99,84,54,111,22,202,63,
+    49,20,1,1,1,1,1,1,1,1
+>>>>>>> origin/cpstrnew
   );

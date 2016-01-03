@@ -66,11 +66,14 @@ const
     Function  FpTime       (var tloc : Time_t): Time_t; cdecl; external clib name 'time';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function  FpTimes	(var buffer : tms): TClock; cdecl; external clib name 'times';
 
     Function  FpAlarm      (seconds : cuint) : cuint; cdecl;external clib name 'alarm';
@@ -187,6 +190,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function FpSetRLimit(resource : cInt; rlim : PRLimit) : cInt; cdecl; external clib name 'setrlimit';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -194,6 +198,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     { not supported with syscalls }
     function  FpvFork  : TPid; cdecl; external clib name 'vfork';

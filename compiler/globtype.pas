@@ -95,6 +95,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef cpu16bitaddr}
        { on small CPUs such as i8086, we use LongInt to support data structures
          larger than 32767 bytes and up to 65535 bytes in size. Since asizeint
@@ -117,6 +118,10 @@ interface
        ASizeInt = PInt;
        ASizeUInt = PUInt;
 >>>>>>> graemeg/cpstrnew
+=======
+       ASizeInt = PInt;
+       ASizeUInt = PUInt;
+>>>>>>> origin/cpstrnew
 
        { type used for handling constants etc. in the code generator }
        TCGInt = Int64;
@@ -159,6 +164,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          cs_check_low_addr_load,
          { mmx }
          cs_mmx,cs_mmx_saturation,
@@ -170,6 +176,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          { mmx }
          cs_mmx,cs_mmx_saturation,
          { parser }
@@ -177,11 +185,14 @@ interface
          cs_varpropsetter,cs_scopedenums,cs_pointermath,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          { macpas specific}
          cs_external_var, cs_externally_visible,
          { jvm specific }
@@ -242,6 +253,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          cs_link_native,
          cs_link_pre_binutils_2_19,
          cs_link_vlink
@@ -254,6 +266,9 @@ interface
 =======
 	 cs_link_native
 >>>>>>> graemeg/cpstrnew
+=======
+	 cs_link_native
+>>>>>>> origin/cpstrnew
        );
        tglobalswitches = set of tglobalswitch;
 
@@ -332,6 +347,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources,
          f_unicodestring
 =======
@@ -343,6 +359,9 @@ interface
 =======
          f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources
 >>>>>>> graemeg/cpstrnew
+=======
+         f_processes,f_stackcheck,f_dynlibs,f_softfpu,f_objectivec1,f_resources
+>>>>>>> origin/cpstrnew
        );
        tfeatures = set of tfeature;
 
@@ -406,6 +425,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
        TargetSwitchStr : array[ttargetswitch] of ttargetswitchinfo = (
          (name: '';                    hasvalue: false; isglobal: true ; define: ''),
@@ -426,6 +446,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
        { switches being applied to all CPUs at the given level }
        genericlevel1optimizerswitches = [cs_opt_level1,cs_opt_peephole];
@@ -445,6 +467,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU','OBJECTIVEC1','RESOURCES',
          'UNICODESTRINGS'
 =======
@@ -456,12 +479,16 @@ interface
 =======
          'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU','OBJECTIVEC1','RESOURCES'
 >>>>>>> graemeg/cpstrnew
+=======
+         'PROCESSES','STACKCHECK','DYNLIBS','SOFTFPU','OBJECTIVEC1','RESOURCES'
+>>>>>>> origin/cpstrnew
        );
 
     type
        { Switches which can be changed by a mode (fpc,tp7,delphi) }
        tmodeswitch = (m_none,
          { generic }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -475,6 +502,9 @@ interface
 =======
          m_fpc,m_objfpc,m_delphi,m_tp7,m_mac,m_iso,
 >>>>>>> graemeg/cpstrnew
+=======
+         m_fpc,m_objfpc,m_delphi,m_tp7,m_mac,m_iso,
+>>>>>>> origin/cpstrnew
          {$ifdef fpc_mode}m_gpc,{$endif}
          { more specific }
          m_class,               { delphi class model }
@@ -505,6 +535,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          m_advanced_records,    { advanced record syntax with visibility sections, methods and properties }
          m_isolike_unary_minus, { unary minus like in iso pascal: same precedence level as binary minus/plus }
          m_systemcodepage,      { use system codepage as compiler codepage by default, emit ansistrings with system codepage }
@@ -528,6 +559,9 @@ interface
 =======
          m_advanced_records     { advanced record syntax with visibility sections, methods and properties }
 >>>>>>> graemeg/cpstrnew
+=======
+         m_advanced_records     { advanced record syntax with visibility sections, methods and properties }
+>>>>>>> origin/cpstrnew
        );
        tmodeswitches = set of tmodeswitch;
 
@@ -667,11 +701,14 @@ interface
          '','','','','','',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          {$ifdef fpc_mode}'',{$endif}
          { more specific }
          'CLASS',
@@ -701,6 +738,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          'ADVANCEDRECORDS',
          'ISOUNARYMINUS',
          'SYSTEMCODEPAGE',
@@ -721,6 +759,9 @@ interface
 =======
          'ADVANCEDRECORDS');
 >>>>>>> graemeg/cpstrnew
+=======
+         'ADVANCEDRECORDS');
+>>>>>>> origin/cpstrnew
 
 
      type
@@ -760,6 +801,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          pi_has_interproclabel,
          { subroutine has unwind info (win64) }
          pi_has_unwind_info,
@@ -784,6 +826,9 @@ interface
 =======
          pi_has_interproclabel
 >>>>>>> graemeg/cpstrnew
+=======
+         pi_has_interproclabel
+>>>>>>> origin/cpstrnew
        );
        tprocinfoflags=set of tprocinfoflag;
 
@@ -835,6 +880,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        tstringencoding = Word;
        tcodepagestring = string[20];
 =======
@@ -846,6 +892,9 @@ interface
 =======
       tstringencoding = word;
 >>>>>>> graemeg/cpstrnew
+=======
+      tstringencoding = word;
+>>>>>>> origin/cpstrnew
 
     const
        { link options }
@@ -858,6 +907,7 @@ interface
     type
       { a message state }
       tmsgstate = (
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -905,17 +955,22 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ms_on,    // turn on output
         ms_off,   // turn off output
         ms_error  // cast to error
       );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 

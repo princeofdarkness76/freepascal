@@ -72,6 +72,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   colmap: PWord = nil;
 =======
   colmap: PSmallInt = nil;
@@ -82,6 +83,9 @@ const
 =======
   colmap: PSmallInt = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  colmap: PSmallInt = nil;
+>>>>>>> origin/cpstrnew
 
 procedure set80x43; { Sets up 80x43, no blink, no cursor. }
 procedure set80x50; { Sets up 80x50, no blink, no cursor. }
@@ -465,11 +469,14 @@ begin
   colmap := GetMem(SizeOf(SmallInt) * COLMAPDIM * COLMAPDIM * COLMAPDIM);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   for r := 0 to COLMAPDIM - 1 do
   begin
     for g := 0 to COLMAPDIM - 1 do

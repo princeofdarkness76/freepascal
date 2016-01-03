@@ -140,8 +140,12 @@ GDBLIBINCFOUND=1
 GDBLIBINCCOND=-dUSE_GDBLIBINC -I$(GDBLIBDIR)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+endif
+>>>>>>> origin/cpstrnew
 endif
 >>>>>>> graemeg/cpstrnew
 endif

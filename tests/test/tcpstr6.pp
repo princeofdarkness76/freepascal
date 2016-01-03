@@ -4,6 +4,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Cp866String = type AnsiString(866);
   Cp1251String = type AnsiString(1251);
 =======
@@ -18,6 +19,10 @@ type
   Cp866String = string<866>;
   Cp1251String = string<1251>;
 >>>>>>> graemeg/cpstrnew
+=======
+  Cp866String = string<866>;
+  Cp1251String = string<1251>;
+>>>>>>> origin/cpstrnew
 
 procedure WriteString(const s: RawByteString);
 begin

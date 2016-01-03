@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright: (c) 2007 - 2010 by Apple, Inc., all rights reserved.
 =======
      Copyright: (c) 2007 - 2008 by Apple Inc., all rights reserved.
@@ -16,10 +17,14 @@
 =======
      Copyright: (c) 2007 - 2008 by Apple Inc., all rights reserved.
 >>>>>>> graemeg/cpstrnew
+=======
+     Copyright: (c) 2007 - 2008 by Apple Inc., all rights reserved.
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,6 +47,11 @@
 }
 {	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+                     http://www.freepascal.org/bugs.html
+}
+{	  Pascal Translation:  Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -100,6 +110,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -111,6 +122,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -132,6 +145,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -152,6 +166,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -161,6 +180,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -181,6 +201,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -190,6 +215,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -197,6 +223,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -209,6 +237,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -216,6 +245,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -225,6 +256,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -251,12 +283,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,10 +318,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -301,6 +342,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -345,6 +390,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses MacTypes,CoreAudioTypes,Components,CFBase,CFDictionary;
 =======
 uses MacTypes,CoreAudioTypes,Components,CFBase;
@@ -355,12 +401,16 @@ uses MacTypes,CoreAudioTypes,Components,CFBase;
 =======
 uses MacTypes,CoreAudioTypes,Components,CFBase;
 >>>>>>> graemeg/cpstrnew
+=======
+uses MacTypes,CoreAudioTypes,Components,CFBase;
+>>>>>>> origin/cpstrnew
 {$endc} {not MACOSALLINCLUDE}
 
 {$ALIGN POWER}
 
 
 //=====================================================================================================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -374,11 +424,15 @@ uses MacTypes,CoreAudioTypes,Components,CFBase;
 =======
 ////#pragma mark Overview
 >>>>>>> graemeg/cpstrnew
+=======
+////#pragma mark Overview
+>>>>>>> origin/cpstrnew
 
 {!
     @header AudioComponent
 
 	@discussion
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -537,6 +591,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	This file defines a collection of APIs that are designed to be used when finding and opening audio components
 	(such as audio units, audio codecs, audio file components).
 	
@@ -557,11 +613,14 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 //=====================================================================================================================
 //#pragma mark Data Types
@@ -570,6 +629,7 @@ const
 	@struct			AudioComponentDescription
 	@discussion		A structure used to describe the unique and identifying IDs of an audio component 
 	@field			componentType
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -583,6 +643,9 @@ const
 =======
 						A unique 4-byte code indentifying the generic type of an audio component
 >>>>>>> graemeg/cpstrnew
+=======
+						A unique 4-byte code indentifying the generic type of an audio component
+>>>>>>> origin/cpstrnew
 	@field			componentSubType
 						the particular flavor of this instance
 	@field			componentManufacturer
@@ -605,6 +668,7 @@ type
 	AudioComponentDescriptionPtr = ^AudioComponentDescription;
 //#pragma pack(pop)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -639,6 +703,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {!
 	@typedef		AudioComponent
@@ -662,15 +728,19 @@ type
 	AudioComponent = ^SInt32; { an opaque type }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {!
 	@typedef		AudioComponentInstance
 	@abstract		The type used to represent an instance of a particular audio component
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -685,21 +755,27 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@discussion		An audio component instance is created from its factory/producer audio component. It is the body of code that does the work.
 	
 					A special note: While on the desktop this is typedef'd to a ComponentInstanceRecord *, you should not always assume that this
 					will always be compatible and usable with ComponentMgr calls. 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 //#if TARGET_OS_IPHONE
 {$ifc TARGET_OS_IPHONE}
 type
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -714,6 +790,9 @@ type
 =======
 	AudioComponentInstance = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	AudioComponentInstance = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 //#else
 {$elsec}
 type
@@ -721,6 +800,7 @@ type
 //#endif
 {$endc}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -783,6 +863,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 //=====================================================================================================================
 //#pragma mark Functions
@@ -790,6 +872,7 @@ type
 
 {!
     @function       AudioComponentFindNext
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -812,6 +895,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     @abstract       find an audio component
     @discussion     This function is used to find an audio component that is the closest match to the provide values.
     @param          inComponent
@@ -825,17 +910,21 @@ type
 	@result			An audio component that matches the search parameters, or NULL if none found
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 function AudioComponentFindNext( inComponent: AudioComponent; const (*var*) inDesc: AudioComponentDescription ): AudioComponent; external name '_AudioComponentFindNext';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_2_0) *)
 
 {!
     @function       AudioComponentCount
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -853,6 +942,8 @@ function AudioComponentFindNext( inComponent: AudioComponent; const (*var*) inDe
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     @abstract       number of audio components
     @discussion     the number of AudioComponenents that match the specified AudioComponentDescription. 
 	@param			inDesc
@@ -861,17 +952,21 @@ function AudioComponentFindNext( inComponent: AudioComponent; const (*var*) inDe
 	@result			a UInt32. 0 (zero) means no audio components were found that matched the search parameters.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 }
 function AudioComponentCount( const (*var*) inDesc: AudioComponentDescription ): UInt32; external name '_AudioComponentCount';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_2_0) *)
 
 {!
     @function       AudioComponentCopyName
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -885,10 +980,14 @@ function AudioComponentCount( const (*var*) inDesc: AudioComponentDescription ):
 =======
     @abstract       used to retrieve the name of an audio component
 >>>>>>> graemeg/cpstrnew
+=======
+    @abstract       used to retrieve the name of an audio component
+>>>>>>> origin/cpstrnew
     @discussion     the name of an audio component
 	@param			inComponent
 						the audio component (must not be NULL)
 	@param			outName
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -903,6 +1002,9 @@ function AudioComponentCount( const (*var*) inDesc: AudioComponentDescription ):
 =======
 						a CFString that is the name of the audio component. This string should be released by the caller.
 >>>>>>> graemeg/cpstrnew
+=======
+						a CFString that is the name of the audio component. This string should be released by the caller.
+>>>>>>> origin/cpstrnew
     @result			an OSStatus result code.
 }
 function AudioComponentCopyName( inComponent: AudioComponent; var outName: CFStringRef ): OSStatus; external name '_AudioComponentCopyName';
@@ -910,6 +1012,7 @@ function AudioComponentCopyName( inComponent: AudioComponent; var outName: CFStr
 
 {!
     @function       AudioComponentGetDescription
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -928,6 +1031,10 @@ function AudioComponentCopyName( inComponent: AudioComponent; var outName: CFStr
     @abstract       used to retrieve the audio component's description
     @discussion     will return the fully specified audio component description for the provided audio component
 >>>>>>> graemeg/cpstrnew
+=======
+    @abstract       used to retrieve the audio component's description
+    @discussion     will return the fully specified audio component description for the provided audio component
+>>>>>>> origin/cpstrnew
 	@param			inComponent
 						the audio component (must not be NULL)
 	@param			outDesc
@@ -939,6 +1046,7 @@ function AudioComponentGetDescription( inComponent: AudioComponent; var outDesc:
 
 {!
     @function       AudioComponentGetVersion
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -956,6 +1064,10 @@ function AudioComponentGetDescription( inComponent: AudioComponent; var outDesc:
     @abstract       used to retrieve the audio component's version
     @discussion     will return the version number of a given audio component
 >>>>>>> graemeg/cpstrnew
+=======
+    @abstract       used to retrieve the audio component's version
+    @discussion     will return the version number of a given audio component
+>>>>>>> origin/cpstrnew
 	@param			inComponent
 						the audio component (must not be NULL)
 	@param			outVersion
@@ -967,6 +1079,7 @@ function AudioComponentGetVersion( inComponent: AudioComponent; var outVersion: 
 
 {!
     @function       AudioComponentInstanceNew
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -984,6 +1097,8 @@ function AudioComponentGetVersion( inComponent: AudioComponent; var outVersion: 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     @abstract       used to create an audio component instance
     @discussion     this call creates an instance of a given audio component. The audio component instance is the object
 					that does all of the work, whereas the audio component is the way that a program finds and then makes this object
@@ -992,11 +1107,14 @@ function AudioComponentGetVersion( inComponent: AudioComponent; var outVersion: 
 					to process, mix, synthesise, etc the audio tasks for which it was designed.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@param			inComponent
 						the audio component (must not be NULL)
 	@param			outInstance
@@ -1008,6 +1126,7 @@ function AudioComponentInstanceNew( inComponent: AudioComponent; var outInstance
 
 {!
     @function       AudioComponentInstanceDispose
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1029,6 +1148,11 @@ function AudioComponentInstanceNew( inComponent: AudioComponent; var outInstance
     @discussion     this call will dispose the audio component instance that was created with the New call. It will deallocate any resources
 					that the instance was using.
 >>>>>>> graemeg/cpstrnew
+=======
+    @abstract       used to dispose of an audio component instance
+    @discussion     this call will dispose the audio component instance that was created with the New call. It will deallocate any resources
+					that the instance was using.
+>>>>>>> origin/cpstrnew
 	@param			inInstance
 						the audio component instance to dispose (must not be NULL)
     @result			an OSStatus result code.
@@ -1036,6 +1160,7 @@ function AudioComponentInstanceNew( inComponent: AudioComponent; var outInstance
 function AudioComponentInstanceDispose( inInstance: AudioComponentInstance ): OSStatus; external name '_AudioComponentInstanceDispose';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_2_0) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1054,6 +1179,8 @@ function AudioComponentInstanceDispose( inInstance: AudioComponentInstance ): OS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 // retrieves the class object assosciated with the instance
 {!
     @function       AudioComponentInstanceGetComponent
@@ -1064,11 +1191,14 @@ function AudioComponentInstanceDispose( inInstance: AudioComponentInstance ): OS
 					audio component instance to work with 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	@param			inInstance
 						the audio component instance (must not be NULL, and instance must be valid - that is, not disposed)
     @result			a valid audio component or NULL if no component was found.
@@ -1078,6 +1208,7 @@ function AudioComponentInstanceGetComponent( inInstance: AudioComponentInstance 
 
 {!
     @function       AudioComponentInstanceCanDo
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1095,6 +1226,10 @@ function AudioComponentInstanceGetComponent( inInstance: AudioComponentInstance 
     @discussion     this call is used to determine if an audio component instance implements a particular component API call
 					as signified by the specified selector identifier token.
 >>>>>>> graemeg/cpstrnew
+=======
+    @discussion     this call is used to determine if an audio component instance implements a particular component API call
+					as signified by the specified selector identifier token.
+>>>>>>> origin/cpstrnew
 	@param			inInstance
 						the audio component instance
 	@param			inSelectorID
@@ -1104,6 +1239,7 @@ function AudioComponentInstanceGetComponent( inInstance: AudioComponentInstance 
 function AudioComponentInstanceCanDo( inInstance: AudioComponentInstance; inSelectorID: SInt16 ): Boolean; external name '_AudioComponentInstanceCanDo';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_3_0) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1156,6 +1292,8 @@ function AudioComponentCopyConfigurationInfo( inComponent: AudioComponent; var o
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

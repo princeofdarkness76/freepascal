@@ -164,6 +164,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       s:=formatalias(item.text);
       if s<>'' then
         begin
@@ -179,6 +180,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       if (length(item.local)>0) and (item.local[1]<>'/') then
         tli:=TopicLinks^.AddItem('/'+item.local)
       else
@@ -292,10 +295,13 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function CHMResolve( href: ansistring; var AFileId,ALinkId : longint):boolean;
@@ -335,6 +341,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 end;
 
@@ -378,6 +385,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function stringreplace(const s:ansistring;const oldstr:ansistring; const newstr:ansistring):ansistring;
 
 begin

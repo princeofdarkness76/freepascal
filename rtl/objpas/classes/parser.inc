@@ -134,6 +134,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CheckLoadBuffer;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -141,6 +142,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     inc(i);
   end;
   if (bom<>(#$EF+#$BB+#$BF)) then
@@ -305,6 +308,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fLastTokenWStr:=fLastTokenWStr+UnicodeString(s);
 =======
           fLastTokenWStr:=fLastTokenWStr+s;
@@ -315,6 +319,9 @@ begin
 =======
           fLastTokenWStr:=fLastTokenWStr+s;
 >>>>>>> graemeg/cpstrnew
+=======
+          fLastTokenWStr:=fLastTokenWStr+s;
+>>>>>>> origin/cpstrnew
           fLastTokenStr:=fLastTokenStr+s;
         end;
       '#'  :

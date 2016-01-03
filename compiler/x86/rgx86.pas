@@ -364,6 +364,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef x86_64}
 =======
             {$ifdef x86_64}
@@ -374,10 +375,14 @@ implementation
 =======
             {$ifdef x86_64}
 >>>>>>> graemeg/cpstrnew
+=======
+            {$ifdef x86_64}
+>>>>>>> origin/cpstrnew
             { 32 bit operations on 32 bit registers on x86_64 can result in
               zeroing the upper 32 bits of the register. This does not happen
               with memory operations, so we have to perform these calculations
               in registers.  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -399,6 +404,11 @@ implementation
               replaceoper:=-1;
             {$endif x86_64}
 >>>>>>> graemeg/cpstrnew
+=======
+            if (instr.opsize=S_L) then
+              replaceoper:=-1;
+            {$endif x86_64}
+>>>>>>> origin/cpstrnew
 
             { Replace register with spill reference }
             if replaceoper<>-1 then

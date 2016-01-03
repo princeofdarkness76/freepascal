@@ -46,11 +46,14 @@ Type
 	ElementSize : Word;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef CPU64}	
     { align fields  }
 	Dummy       : DWord;
@@ -60,6 +63,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     First       : UnicodeChar;
 >>>>>>> graemeg/cpstrnew
@@ -69,6 +73,9 @@ Type
 =======
     First       : UnicodeChar;
 >>>>>>> graemeg/cpstrnew
+=======
+    First       : UnicodeChar;
+>>>>>>> origin/cpstrnew
   end;
 
 Const
@@ -85,6 +92,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_DEFAULT_UNICODE_2_ANSI_MOVE}
 {$define FPC_HAS_DEFAULT_UNICODE_2_ANSI_MOVE}
 =======
@@ -93,12 +101,15 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure DefaultUnicode2AnsiMove(source:punicodechar;var dest:RawByteString;cp : TSystemCodePage;len:SizeInt);
 var
   i : SizeInt;
   p : PAnsiChar;
 begin
   setlength(dest,len);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,6 +122,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   p:=pointer(dest);         {SetLength guarantees that dest is unique}
   for i:=1 to len do
     begin
@@ -122,6 +135,7 @@ begin
       inc(p);
     end;
 end;
+<<<<<<< HEAD
 {$endif FPC_HAS_DEFAULT_UNICODE_2_ANSI_MOVE}
 
 
@@ -136,6 +150,10 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 procedure DefaultAnsi2UnicodeMove(source:pchar;cp : TSystemCodePage;var dest:unicodestring;len:SizeInt);
 var
   i : SizeInt;
@@ -226,6 +244,15 @@ function DefaultCharLengthPChar(const Str: PChar): PtrInt;
   end;
 
 
+<<<<<<< HEAD
+=======
+function DefaultCharLengthPChar(const Str: PChar): PtrInt;
+  begin
+    DefaultCharLengthPChar:=length(Str);
+  end;
+
+
+>>>>>>> origin/cpstrnew
 function DefaultCodePointLength(const Str: PChar; MaxLookAead: PtrInt): Ptrint;
   begin
     if str[0]<>#0 then
@@ -235,7 +262,10 @@ function DefaultCodePointLength(const Str: PChar; MaxLookAead: PtrInt): Ptrint;
   end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Procedure GetUnicodeStringManager (Var Manager : TUnicodeStringManager);
 begin
   manager:=widestringmanager;
@@ -304,6 +334,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       inc(p,UnicodeFirstOff);         { Points to string now }
       PUnicodeChar(P)^:=#0;           { Terminating #0 }
 =======
@@ -318,6 +349,10 @@ begin
       PUnicodeRec(P)^.First:=#0;      { Terminating #0 }
       inc(p,UnicodeFirstOff);         { Points to string now }
 >>>>>>> graemeg/cpstrnew
+=======
+      PUnicodeRec(P)^.First:=#0;      { Terminating #0 }
+      inc(p,UnicodeFirstOff);         { Points to string now }
+>>>>>>> origin/cpstrnew
     end
   else
     UnicodeStringError;
@@ -355,11 +390,14 @@ Begin
     DisposeUnicodeString(S);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 { alias for internal use }
@@ -426,6 +464,7 @@ begin
       { Terminating Zero }
       PUnicodeChar(Pointer(fpc_ShortStr_To_UnicodeStr)+Size*sizeof(UnicodeChar))^:=#0;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 end;
 {$endif FPC_HAS_SHORTSTR_TO_UNICODESTR}
@@ -442,6 +481,11 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+end;
+
+
+>>>>>>> origin/cpstrnew
 Function fpc_UnicodeStr_To_AnsiStr (const S2 : UnicodeString{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}): AnsiString; compilerproc;
 {
   Converts a UnicodeString to an AnsiString
@@ -456,6 +500,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cp:=DefaultSystemCodePage;
 =======
   cp:=$ffff;
@@ -466,11 +511,15 @@ begin
 =======
   cp:=$ffff;
 >>>>>>> graemeg/cpstrnew
+=======
+  cp:=$ffff;
+>>>>>>> origin/cpstrnew
 {$endif FPC_HAS_CPSTRING}
   result:='';
   Size:=Length(S2);
   if Size>0 then
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -504,6 +553,15 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+    if cp=$ffff then
+      cp:=DefaultSystemCodePage;
+    widestringmanager.Unicode2AnsiMoveProc(PUnicodeChar(Pointer(S2)),result,cp,Size);
+  end;
+end;
+
+
+>>>>>>> origin/cpstrnew
 Function fpc_AnsiStr_To_UnicodeStr (Const S2 : RawByteString): UnicodeString; compilerproc;
 {
   Converts an AnsiString to a UnicodeString;
@@ -516,6 +574,7 @@ begin
   Size:=Length(S2);
   if Size>0 then
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -535,6 +594,11 @@ begin
     if cp=$ffff then
       cp:=DefaultSystemCodePage;
 >>>>>>> graemeg/cpstrnew
+=======
+    cp:=StringCodePage(S2);
+    if cp=$ffff then
+      cp:=DefaultSystemCodePage;
+>>>>>>> origin/cpstrnew
     widestringmanager.Ansi2UnicodeMoveProc(PChar(S2),cp,result,Size);
   end;
 end;
@@ -558,6 +622,7 @@ Function fpc_WideStr_To_UnicodeStr (Const S2 : WideString): UnicodeString; compi
     SetLength(Result,Length(S2));
     Move(pointer(S2)^,Pointer(Result)^,Length(S2)*sizeof(WideChar));
   end;
+<<<<<<< HEAD
 {$endif FPC_HAS_WIDESTR_TO_UNICODESTR}
 
 
@@ -571,6 +636,10 @@ Function fpc_WideStr_To_UnicodeStr (Const S2 : WideString): UnicodeString; compi
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 Function fpc_PUnicodeChar_To_AnsiStr(const p : punicodechar{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}): ansistring; compilerproc;
 var
   Size : SizeInt;
@@ -661,6 +730,7 @@ begin
       widestringmanager.Unicode2AnsiMoveProc(p,temp,DefaultSystemCodePage,Size);
       res:=temp;
     end;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 end;
 {$endif FPC_HAS_PWIDECHAR_TO_UNICODESTR}
@@ -677,6 +747,12 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+end;
+{$endif FPC_STRTOSHORTSTRINGPROC}
+
+
+>>>>>>> origin/cpstrnew
 Function fpc_PWideChar_To_AnsiStr(const p : pwidechar{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}): ansistring; compilerproc;
 var
   Size : SizeInt;
@@ -685,6 +761,7 @@ var
 {$endif FPC_HAS_CPSTRING}
 begin
 {$ifndef FPC_HAS_CPSTRING}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -698,6 +775,9 @@ begin
 =======
   cp:=$ffff;
 >>>>>>> graemeg/cpstrnew
+=======
+  cp:=$ffff;
+>>>>>>> origin/cpstrnew
 {$endif FPC_HAS_CPSTRING}
   result:='';
   if p=nil then
@@ -879,6 +959,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_CHAR_TO_UNICODESTR}
 {$define FPC_HAS_CHAR_TO_UNICODESTR}
 =======
@@ -887,6 +968,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function fpc_Char_To_UnicodeStr(const c : Char): UnicodeString; compilerproc;
 {
   Converts a Char to a UnicodeString;
@@ -982,12 +1065,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   result:=s;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   res:=s;
 >>>>>>> graemeg/cpstrnew
 end;
@@ -1004,6 +1090,7 @@ begin
   Setlength (fpc_UChar_To_UnicodeStr,1);
   fpc_UChar_To_UnicodeStr[1]:= c;
 end;
+<<<<<<< HEAD
 {$endif FPC_HAS_UCHAR_TO_UNICODESTR}
 
 
@@ -1018,6 +1105,10 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 Function fpc_UChar_To_AnsiStr(const c : UnicodeChar{$ifdef FPC_HAS_CPSTRING};cp : TSystemCodePage{$endif FPC_HAS_CPSTRING}): AnsiString; compilerproc;
 {
   Converts a UnicodeChar to a AnsiString;
@@ -1026,11 +1117,14 @@ Function fpc_UChar_To_AnsiStr(const c : UnicodeChar{$ifdef FPC_HAS_CPSTRING};cp 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   cp : TSystemCodePage;
 {$endif FPC_HAS_CPSTRING}
@@ -1104,10 +1198,13 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if zerobased then
     begin
       if arr[0]=#0 Then
@@ -1120,6 +1217,7 @@ begin
         i:=high(arr)+1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   if zerobased then
     begin
@@ -1135,6 +1233,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end
   else
     i:=high(arr)+1;
@@ -1287,6 +1387,7 @@ begin
   widestringmanager.Wide2AnsiMoveProc (pwidechar(@arr),temp,DefaultSystemCodePage,len);
   res:=temp;
 end;
+<<<<<<< HEAD
 {$endif FPC_HAS_WIDECHARARRAY_TO_SHORTSTR}
 
 <<<<<<< HEAD
@@ -1301,6 +1402,10 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif FPC_STRTOSHORTSTRINGPROC}
+
+>>>>>>> origin/cpstrnew
 Function fpc_WideCharArray_To_AnsiStr(const arr: array of widechar; {$ifdef FPC_HAS_CPSTRING}cp : TSystemCodePage;{$endif FPC_HAS_CPSTRING} zerobased: boolean = true): AnsiString; compilerproc;
 var
   i  : SizeInt;
@@ -1309,6 +1414,7 @@ var
 {$endif FPC_HAS_CPSTRING}
 begin
 {$ifndef FPC_HAS_CPSTRING}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1322,6 +1428,9 @@ begin
 =======
   cp:=$ffff;
 >>>>>>> graemeg/cpstrnew
+=======
+  cp:=$ffff;
+>>>>>>> origin/cpstrnew
 {$endif FPC_HAS_CPSTRING}
   if (zerobased) then
     begin
@@ -1338,11 +1447,14 @@ begin
   widestringmanager.Wide2AnsiMoveProc (pwidechar(@arr),fpc_WideCharArray_To_AnsiStr,cp,i);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 {$endif FPC_HAS_WIDECHARARRAY_TO_ANSISTR}
 
@@ -1466,6 +1578,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     widestringmanager.ansi2widemoveproc(pchar(@src[1]),TranslatePlaceholderCP(StringCodePage(src)),temp,len);
 =======
     widestringmanager.ansi2widemoveproc(pchar(@src[1]),StringCodePage(src),temp,len);
@@ -1476,6 +1589,9 @@ begin
 =======
     widestringmanager.ansi2widemoveproc(pchar(@src[1]),StringCodePage(src),temp,len);
 >>>>>>> graemeg/cpstrnew
+=======
+    widestringmanager.unicode2ansimoveproc(punicodechar(@src[1]),temp,DefaultSystemCodePage,len);
+>>>>>>> origin/cpstrnew
   len := length(temp);
   if len > length(res) then
     len := length(res);
@@ -1504,9 +1620,102 @@ begin
     len := length(res);
 {$push}
 {$r-}
+<<<<<<< HEAD
   move(temp[1],res[0],len*sizeof(widechar));
   fillchar(res[len],(length(res)-len)*SizeOf(WideChar),0);
 {$pop}
+=======
+  { make sure we don't try to access element 1 of the ansistring if it's nil }
+  if len > 0 then
+    move(src[1],res[0],len*SizeOf(UnicodeChar));
+  fillchar(res[len],(length(res)-len)*SizeOf(UnicodeChar),0);
+{$ifdef RangeCheckWasOn}
+{$r+}
+{$endif}
+end;
+
+
+procedure fpc_ansistr_to_unicodechararray(out res: array of unicodechar; const src: AnsiString); compilerproc;
+var
+  len: SizeInt;
+  temp: unicodestring;
+begin
+  len := length(src);
+  { make sure we don't dereference src if it can be nil (JM) }
+  if len > 0 then
+    widestringmanager.ansi2unicodemoveproc(pchar(@src[1]),DefaultSystemCodePage,temp,len);
+  len := length(temp);
+  if len > length(res) then
+    len := length(res);
+
+{$r-}
+  move(temp[1],res[0],len*sizeof(unicodechar));
+  fillchar(res[len],(length(res)-len)*SizeOf(UnicodeChar),0);
+{$ifdef RangeCheckWasOn}
+{$r+}
+{$endif}
+end;
+
+procedure fpc_shortstr_to_unicodechararray(out res: array of unicodechar; const src: ShortString); compilerproc;
+var
+  len: longint;
+  temp : unicodestring;
+begin
+  len := length(src);
+  { make sure we don't access char 1 if length is 0 (JM) }
+  if len > 0 then
+    widestringmanager.ansi2unicodemoveproc(pchar(@src[1]),DefaultSystemCodePage,temp,len);
+  len := length(temp);
+  if len > length(res) then
+    len := length(res);
+{$r-}
+  move(temp[1],res[0],len*sizeof(unicodechar));
+  fillchar(res[len],(length(res)-len)*SizeOf(UnicodeChar),0);
+{$ifdef RangeCheckWasOn}
+{$r+}
+{$endif}
+end;
+
+procedure fpc_ansistr_to_widechararray(out res: array of widechar; const src: AnsiString); compilerproc;
+var
+  len: SizeInt;
+  temp: widestring;
+begin
+  len := length(src);
+  { make sure we don't dereference src if it can be nil (JM) }
+  if len > 0 then
+    widestringmanager.ansi2widemoveproc(pchar(@src[1]),StringCodePage(src),temp,len);
+  len := length(temp);
+  if len > length(res) then
+    len := length(res);
+
+{$r-}
+  move(temp[1],res[0],len*sizeof(widechar));
+  fillchar(res[len],(length(res)-len)*SizeOf(WideChar),0);
+{$ifdef RangeCheckWasOn}
+{$r+}
+{$endif}
+end;
+
+procedure fpc_shortstr_to_widechararray(out res: array of widechar; const src: ShortString); compilerproc;
+var
+  len: longint;
+  temp : widestring;
+begin
+  len := length(src);
+  { make sure we don't access char 1 if length is 0 (JM) }
+  if len > 0 then
+    widestringmanager.ansi2widemoveproc(pchar(@src[1]),DefaultSystemCodePage,temp,len);
+  len := length(temp);
+  if len > length(res) then
+    len := length(res);
+{$r-}
+  move(temp[1],res[0],len*sizeof(widechar));
+  fillchar(res[len],(length(res)-len)*SizeOf(WideChar),0);
+{$ifdef RangeCheckWasOn}
+{$r+}
+{$endif}
+>>>>>>> origin/cpstrnew
 end;
 {$endif FPC_HAS_SHORTSTR_TO_WIDECHARARRAY}
 
@@ -1586,6 +1795,7 @@ end;
 {$endif FPC_HAS_UNICODESTR_COMPARE_EQUAL}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 {$ifndef FPC_HAS_UNICODESTR_RANGECHECK}
@@ -1603,6 +1813,9 @@ begin
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 Procedure fpc_UnicodeStr_CheckRange(p: Pointer; index: SizeInt);[Public,Alias : 'FPC_UNICODESTR_RANGECHECK']; compilerproc;
 begin
   if (p=nil) or (index>PUnicodeRec(p-UnicodeFirstOff)^.len div 2) or (Index<1) then
@@ -1636,12 +1849,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           Pointer(s):=NewUnicodeString(nl);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           Pointer(s):=NewUnicodeString(l);
         end
       else
@@ -1653,11 +1869,14 @@ begin
             Inc(Pointer(S), UnicodeFirstOff);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end
       else
         if (PUnicodeRec(Pointer(S)-UnicodeFirstOff)^.Ref = 1) then
@@ -1692,6 +1911,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       PUnicodeRec(Pointer(S)-UnicodeFirstOff)^.Len:=nl;
 =======
       PUnicodeRec(Pointer(S)-UnicodeFirstOff)^.Len:=l;
@@ -1702,6 +1922,9 @@ begin
 =======
       PUnicodeRec(Pointer(S)-UnicodeFirstOff)^.Len:=l;
 >>>>>>> graemeg/cpstrnew
+=======
+      PUnicodeRec(Pointer(S)-UnicodeFirstOff)^.Len:=l;
+>>>>>>> origin/cpstrnew
     end
   else  { length=0, deallocate the string }
     fpc_unicodestr_decr_ref (Pointer(S));
@@ -1720,11 +1943,14 @@ function UnicodeCharToString(S : PUnicodeChar) : UnicodeString;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function StringToUnicodeChar(const Src : RawByteString;Dest : PUnicodeChar;DestSize : SizeInt) : PUnicodeChar;
   var
@@ -1759,6 +1985,7 @@ function WideCharToString(S : PWideChar) : UnicodeString;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_STRING_LEN_TO_WIDECHAR}
 {$define FPC_HAS_STRING_LEN_TO_WIDECHAR}
 =======
@@ -1767,12 +1994,15 @@ function WideCharToString(S : PWideChar) : UnicodeString;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function StringToWideChar(const Src : RawByteString;Dest : PWideChar;DestSize : SizeInt) : PWideChar;
   var
     temp: widestring;
     Len: SizeInt;
   begin
      widestringmanager.Ansi2WideMoveProc(PChar(Src),StringCodePage(Src),temp,Length(Src));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1793,6 +2023,8 @@ function StringToWideChar(const Src : RawByteString;Dest : PWideChar;DestSize : 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      if Length(temp)<DestSize then
        move(temp[1],Dest^,Length(temp)*SizeOf(WideChar))
      else
@@ -1804,6 +2036,7 @@ function StringToWideChar(const Src : RawByteString;Dest : PWideChar;DestSize : 
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 >>>>>>> graemeg/cpstrnew
@@ -1815,6 +2048,10 @@ function StringToWideChar(const Src : RawByteString;Dest : PWideChar;DestSize : 
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 function UnicodeCharLenToString(S : PUnicodeChar;Len : SizeInt) : UnicodeString;
   begin
     SetLength(result,Len);
@@ -1834,6 +2071,7 @@ procedure UnicodeCharLenToStrVar(Src : PUnicodeChar;Len : SizeInt;out Dest : Ans
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Dest:=AnsiString(UnicodeCharLenToString(Src,Len));
 =======
     Dest:=UnicodeCharLenToString(Src,Len);
@@ -1844,11 +2082,15 @@ procedure UnicodeCharLenToStrVar(Src : PUnicodeChar;Len : SizeInt;out Dest : Ans
 =======
     Dest:=UnicodeCharLenToString(Src,Len);
 >>>>>>> graemeg/cpstrnew
+=======
+    Dest:=UnicodeCharLenToString(Src,Len);
+>>>>>>> origin/cpstrnew
   end;
 
 
 procedure UnicodeCharToStrVar(S : PUnicodeChar;out Dest : AnsiString);
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1865,10 +2107,13 @@ procedure UnicodeCharToStrVar(S : PUnicodeChar;out Dest : AnsiString);
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
     Dest:=UnicodeCharToString(S);
   end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
     Dest:=UnicodeCharToString(S);
@@ -1876,11 +2121,14 @@ procedure UnicodeCharToStrVar(S : PUnicodeChar;out Dest : AnsiString);
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function WideCharLenToString(S : PWideChar;Len : SizeInt) : UnicodeString;
   begin
     SetLength(result,Len);
     Move(S^,Pointer(Result)^,Len*2);
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1891,6 +2139,8 @@ function WideCharLenToString(S : PWideChar;Len : SizeInt) : UnicodeString;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 procedure WideCharLenToStrVar(Src : PWideChar;Len : SizeInt;out Dest : UnicodeString);
@@ -1904,6 +2154,7 @@ procedure WideCharLenToStrVar(Src : PWideChar;Len : SizeInt;out Dest : AnsiStrin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Dest:=AnsiString(WideCharLenToString(Src,Len));
 =======
     Dest:=WideCharLenToString(Src,Len);
@@ -1914,6 +2165,9 @@ procedure WideCharLenToStrVar(Src : PWideChar;Len : SizeInt;out Dest : AnsiStrin
 =======
     Dest:=WideCharLenToString(Src,Len);
 >>>>>>> graemeg/cpstrnew
+=======
+    Dest:=WideCharLenToString(Src,Len);
+>>>>>>> origin/cpstrnew
   end;
 
 
@@ -1928,6 +2182,7 @@ procedure WideCharToStrVar(S : PWideChar;out Dest : AnsiString);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Dest:=AnsiString(WideCharToString(S));
 =======
     Dest:=WideCharToString(S);
@@ -1938,6 +2193,9 @@ procedure WideCharToStrVar(S : PWideChar;out Dest : AnsiString);
 =======
     Dest:=WideCharToString(S);
 >>>>>>> graemeg/cpstrnew
+=======
+    Dest:=WideCharToString(S);
+>>>>>>> origin/cpstrnew
   end;
 
 
@@ -2058,6 +2316,7 @@ begin
    end;
   pos:=0;
 end;
+<<<<<<< HEAD
 {$endif FPC_HAS_POS_UNICODECHAR_UNICODESTR}
 
 
@@ -2076,6 +2335,11 @@ Function Pos (c : RawByteString; Const s : UnicodeString) : SizeInt;{$ifdef SYST
 =======
 Function Pos (c : RawByteString; Const s : UnicodeString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+Function Pos (c : RawByteString; Const s : UnicodeString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/cpstrnew
   begin
     result:=Pos(UnicodeString(c),s);
   end;
@@ -2090,6 +2354,7 @@ Function Pos (const c : ShortString; Const s : UnicodeString) : SizeInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function Pos (const c : UnicodeString; Const s : RawByteString) : SizeInt;
 =======
 Function Pos (c : UnicodeString; Const s : RawByteString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -2100,6 +2365,9 @@ Function Pos (c : UnicodeString; Const s : RawByteString) : SizeInt;{$ifdef SYST
 =======
 Function Pos (c : UnicodeString; Const s : RawByteString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+Function Pos (c : UnicodeString; Const s : RawByteString) : SizeInt;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/cpstrnew
   begin
     result:=Pos(c,UnicodeString(s));
   end;
@@ -2135,6 +2403,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_DELETE_UNICODESTR}
 {$define FPC_HAS_DELETE_UNICODESTR}
 =======
@@ -2143,6 +2412,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Procedure Delete (Var S : UnicodeString; Index,Size: SizeInt);
 Var
   LS : SizeInt;
@@ -2215,6 +2486,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_HAS_LOWERCASE_UNICODECHAR}
 {$define FPC_HAS_LOWERCASE_UNICODECHAR}
 Function  LowerCase(c:UnicodeChar):UnicodeChar;
@@ -2248,6 +2520,9 @@ Procedure SetString (Out S : UnicodeString; Buf : PUnicodeChar; Len : SizeInt);
 =======
 Procedure SetString (Out S : UnicodeString; Buf : PUnicodeChar; Len : SizeInt);
 >>>>>>> graemeg/cpstrnew
+=======
+Procedure SetString (Out S : UnicodeString; Buf : PUnicodeChar; Len : SizeInt);
+>>>>>>> origin/cpstrnew
 begin
   SetLength(S,Len);
   If (Buf<>Nil) and (Len>0) then
@@ -2264,6 +2539,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     widestringmanager.Ansi2UnicodeMoveProc(Buf,DefaultSystemCodePage,S,Len)
   else
     SetLength(S,Len);
@@ -2276,6 +2552,9 @@ begin
 =======
     widestringmanager.Ansi2UnicodeMoveProc(Buf,DefaultSystemCodePage,S,Len);
 >>>>>>> graemeg/cpstrnew
+=======
+    widestringmanager.Ansi2UnicodeMoveProc(Buf,DefaultSystemCodePage,S,Len);
+>>>>>>> origin/cpstrnew
 end;
 {$endif FPC_HAS_SETSTRING_UNICODESTR_PCHAR}
 
@@ -2487,6 +2766,15 @@ end;
 
 <<<<<<< HEAD
 =======
+procedure fpc_unicodestr_bool(b : boolean;len:sizeint;out s:unicodestring);compilerproc;
+
+var ss:shortstring;
+
+begin
+  fpc_shortstr_bool(b,len,ss);
+  s:=ss;
+end;
+
 procedure fpc_unicodestr_bool(b : boolean;len:sizeint;out s:unicodestring);compilerproc;
 
 var ss:shortstring;
@@ -3001,6 +3289,7 @@ function UTF8ToUnicode(Dest: PUnicodeChar; MaxDestChars: SizeUInt; Source: PChar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function UTF8Encode(const s : RawByteString) : RawByteString; inline;
 =======
 function UTF8Encode(const s : RawByteString) : UTF8String; inline;
@@ -3011,6 +3300,9 @@ function UTF8Encode(const s : RawByteString) : UTF8String; inline;
 =======
 function UTF8Encode(const s : RawByteString) : UTF8String; inline;
 >>>>>>> graemeg/cpstrnew
+=======
+function UTF8Encode(const s : RawByteString) : UTF8String; inline;
+>>>>>>> origin/cpstrnew
   begin
     Result:=UTF8Encode(UnicodeString(s));
   end;
@@ -3061,6 +3353,7 @@ function UTF8Decode(const s : RawByteString): UnicodeString;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function AnsiToUtf8(const s : RawByteString): RawByteString;{$ifdef SYSTEMINLINE}inline;{$endif}
 =======
 function AnsiToUtf8(const s : RawByteString): UTF8String;{$ifdef SYSTEMINLINE}inline;{$endif}
@@ -3073,11 +3366,15 @@ function AnsiToUtf8(const s : RawByteString): UTF8String;{$ifdef SYSTEMINLINE}in
 
 function AnsiToUtf8(const s : RawByteString): UTF8String;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+function AnsiToUtf8(const s : RawByteString): UTF8String;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/cpstrnew
   begin
     Result:=Utf8Encode(s);
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3091,6 +3388,9 @@ function Utf8ToAnsi(const s : UTF8String) : RawByteString;{$ifdef SYSTEMINLINE}i
 =======
 function Utf8ToAnsi(const s : UTF8String) : RawByteString;{$ifdef SYSTEMINLINE}inline;{$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+function Utf8ToAnsi(const s : UTF8String) : RawByteString;{$ifdef SYSTEMINLINE}inline;{$endif}
+>>>>>>> origin/cpstrnew
   begin
     Result:=RawByteString(Utf8Decode(s));
   end;
@@ -3251,6 +3551,7 @@ function StringRefCount(const S: UnicodeString): SizeInt; overload;
   end;
 
 
+<<<<<<< HEAD
 function StringCodePage(const S: UnicodeString): TSystemCodePage; overload;
   begin
 {$ifdef FPC_HAS_CPSTRING}
@@ -3306,8 +3607,14 @@ function StringRefCount(const S: UnicodeString): SizeInt; overload;
   end;
 
 function StubCompareUnicodeString(const s1, s2 : UnicodeString; Options : TCompareOptions) : PtrInt;
+=======
+function StringElementSize(const S: UnicodeString): Word; overload;
+>>>>>>> origin/cpstrnew
   begin
-    unimplementedunicodestring;
+    if assigned(Pointer(S)) then
+      Result:=PUnicodeRec(pointer(S)-UnicodeFirstOff)^.ElementSize
+    else
+      Result:=SizeOf(UnicodeChar);
   end;
 
 <<<<<<< HEAD
@@ -3328,6 +3635,7 @@ function StringCodePage(const S: UnicodeString): TSystemCodePage; overload;
   end;
 
 
+<<<<<<< HEAD
 {$warnings off}
 function GenericUnicodeCase(const s : UnicodeString) : UnicodeString;
 >>>>>>> graemeg/cpstrnew
@@ -3368,6 +3676,41 @@ function StringCodePage(const S: UnicodeString): TSystemCodePage; overload;
 {$warnings off}
 function GenericUnicodeCase(const s : UnicodeString) : UnicodeString;
 >>>>>>> graemeg/cpstrnew
+=======
+function StringRefCount(const S: UnicodeString): SizeInt; overload;
+>>>>>>> origin/cpstrnew
+  begin
+    if assigned(Pointer(S)) then
+      Result:=PUnicodeRec(pointer(S)-UnicodeFirstOff)^.Ref
+    else
+      Result:=0;
+  end;
+
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+function CompareTextUnicodeString(const s1, s2 : UnicodeString): PtrInt;
+=======
+function StringCodePage(const S: UnicodeString): TSystemCodePage; overload;
+  begin
+{$ifdef FPC_HAS_CPSTRING}
+    if assigned(Pointer(S)) then
+      Result:=PUnicodeRec(pointer(S)-UnicodeFirstOff)^.CodePage
+    else
+{$endif FPC_HAS_CPSTRING}
+      Result:=DefaultUnicodeCodePage;
+  end;
+
+
+{$warnings off}
+function GenericUnicodeCase(const s : UnicodeString) : UnicodeString;
+>>>>>>> origin/cpstrnew
+  begin
+    unimplementedunicodestring;
+  end;
+>>>>>>> graemeg/cpstrnew
+=======
+function CompareUnicodeString(const s1, s2 : UnicodeString) : PtrInt;
   begin
     unimplementedunicodestring;
   end;
@@ -3390,7 +3733,7 @@ function CompareTextUnicodeString(const s1, s2 : UnicodeString): PtrInt;
   begin
     unimplementedunicodestring;
   end;
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 {$warnings on}
 
 procedure initunicodestringmanager;
@@ -3399,11 +3742,14 @@ procedure initunicodestringmanager;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     widestringmanager.Unicode2AnsiMoveProc:=@DefaultUnicode2AnsiMove;
     widestringmanager.Ansi2UnicodeMoveProc:=@DefaultAnsi2UnicodeMove;
     widestringmanager.UpperUnicodeStringProc:=@GenericUnicodeCase;
@@ -3428,11 +3774,14 @@ procedure initunicodestringmanager;
     widestringmanager.CodePointLengthProc:=@DefaultCodePointLength;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif FPC_WIDESTRING_EQUAL_UNICODESTRING}
     widestringmanager.Wide2AnsiMoveProc:=@DefaultUnicode2AnsiMove;
     widestringmanager.UpperWideStringProc:=@StubWideCase;

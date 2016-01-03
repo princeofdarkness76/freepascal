@@ -24,11 +24,14 @@ uses
   fpcunitconsolerunner, testjsonrtti, fpjsonrtti;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
   { TLazTestRunner }
    TMyTestRunner = class(TTestRunner)

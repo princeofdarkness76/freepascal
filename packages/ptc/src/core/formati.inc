@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2007, 2009-2012  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2006  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -42,6 +46,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -106,6 +111,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 constructor TPTCFormat.Create;
 begin
   { defaults }
@@ -164,6 +171,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TPTCFormat.Create(AFormat: IPTCFormat);
 =======
 constructor TPTCFormat.Create(const format: TPTCFormat);
@@ -174,11 +182,15 @@ constructor TPTCFormat.Create(const format: TPTCFormat);
 =======
 constructor TPTCFormat.Create(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TPTCFormat.Create(const format: TPTCFormat);
+>>>>>>> origin/cpstrnew
 begin
   { initialize hermes }
   if not Hermes_Init then
     raise TPTCError.Create('could not initialize hermes');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -192,6 +204,9 @@ begin
 =======
   Hermes_FormatCopy(@format.FFormat, @FFormat)
 >>>>>>> graemeg/cpstrnew
+=======
+  Hermes_FormatCopy(@format.FFormat, @FFormat)
+>>>>>>> origin/cpstrnew
 end;
 
 {$INFO TODO: check what happens if Hermes_Init blows up in the constructor...}
@@ -202,6 +217,7 @@ begin
   inherited Destroy;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -220,10 +236,14 @@ procedure TPTCFormat.Assign(const format: TPTCFormat);
 =======
 procedure TPTCFormat.Assign(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCFormat.Assign(const format: TPTCFormat);
+>>>>>>> origin/cpstrnew
 begin
   if Self = format then
     exit;
   Hermes_FormatCopy(@format.Fformat, @Fformat);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -267,6 +287,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TPTCFormat.Equals(const format: TPTCFormat): Boolean;
@@ -274,11 +296,14 @@ begin
   Result := Hermes_FormatEquals(@format.FFormat, @FFormat);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TPTCFormat.GetDirect: Boolean;

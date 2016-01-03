@@ -23,6 +23,7 @@ unit scan;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$H+}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -30,6 +31,8 @@ unit scan;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   interface
 

@@ -126,6 +126,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       comphook,fmodule,constexp,globals,cfileutl,switches;
 =======
       comphook,fmodule,constexp,globals,cfileutl;
@@ -136,6 +137,9 @@ implementation
 =======
       comphook,fmodule,constexp,globals,cfileutl;
 >>>>>>> graemeg/cpstrnew
+=======
+      comphook,fmodule,constexp,globals,cfileutl;
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************
                        Extra Handlers for default compiler
@@ -221,12 +225,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         msgnr, code : longint;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         code : longint;
         msgnr: longint;
 >>>>>>> graemeg/cpstrnew
@@ -309,11 +316,14 @@ implementation
                          not ClearMessageVerbosity(s, i) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                          begin
                            result:=false;
                            exit
@@ -492,6 +502,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               status.sources_avail:=module.sources_avail;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -499,6 +510,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               { if currentsourcepath is relative, make it absolute }
               if not path_absolute(status.currentsourcepath) then
                 status.currentsourcepath:=GetCurrentDir+status.currentsourcepath;
@@ -709,6 +722,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     { We only want to know about local value }
                     st:= tmsgstate(ord(st) and ms_local_mask);
                     if st=ms_error then
@@ -720,17 +734,22 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     if st=ms_error then
                       begin
                         v:=v or V_Error;
                         inc(status.errorcount);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                       end
                     else if st<>ms_off then
                       case ch of
@@ -742,6 +761,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
 =======
                               inc(status.errorcount)
@@ -752,6 +772,9 @@ implementation
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
+=======
+                              inc(status.errorcount)
+>>>>>>> origin/cpstrnew
                              else
                               inc(status.countWarnings);
                          end;
@@ -763,6 +786,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
 =======
                               inc(status.errorcount)
@@ -773,6 +797,9 @@ implementation
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
+=======
+                              inc(status.errorcount)
+>>>>>>> origin/cpstrnew
                              else
                               inc(status.countNotes);
                          end;
@@ -784,6 +811,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                               GenerateError
 =======
                               inc(status.errorcount)
@@ -794,6 +822,9 @@ implementation
 =======
                               inc(status.errorcount)
 >>>>>>> graemeg/cpstrnew
+=======
+                              inc(status.errorcount)
+>>>>>>> origin/cpstrnew
                              else
                               inc(status.countHints);
                          end;

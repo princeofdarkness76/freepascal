@@ -31,6 +31,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.Dependencies.AddInclude('src/md5i386.inc', [i386], AllOSes-[darwin]);
     T:=P.Targets.AddUnit('src/sha1.pp');
     T.Dependencies.AddInclude('src/sha1i386.inc', [i386], AllOSes-[darwin]);
@@ -43,6 +44,9 @@ begin
 =======
     T:=P.Targets.AddUnit('src/sha1.pp');
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddUnit('src/sha1.pp');
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('src/crc.pas');
     T:=P.Targets.AddUnit('src/ntlm.pas');
     T:=P.Targets.AddUnit('src/uuid.pas');
@@ -52,6 +56,7 @@ begin
     T:=P.Targets.AddExampleunit('examples/mdtest.pas');
     T:=P.Targets.AddExampleunit('examples/crctest.pas');
     T:=P.Targets.AddExampleunit('examples/sha1test.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -65,6 +70,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // md5.ref
 {$ifndef ALLPACKAGES}
     Run;

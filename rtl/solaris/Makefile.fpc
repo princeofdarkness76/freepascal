@@ -10,6 +10,7 @@ loaders=
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar unixtype ctypes strings objpas iso7185 extpas macpas \
 =======
 units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
@@ -20,6 +21,9 @@ units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
 =======
 units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
 >>>>>>> graemeg/cpstrnew
+=======
+units=$(SYSTEMUNIT) unixtype ctypes strings objpas iso7185 macpas \
+>>>>>>> origin/cpstrnew
       heaptrc lineinfo lnfodwrf \
       baseunix unixutil unixcp \
       termio unix initc cmem \
@@ -58,11 +62,14 @@ implicitunits=exeinfo
 rsts=math varutils typinfo classes variants dateutils sysconst rtlconst stdconvs
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [require]
 nortl=y
@@ -90,12 +97,15 @@ libunits=$(SYSTEMUNIT) objpas strings \
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       errors
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       errors sockets ipc
 >>>>>>> graemeg/cpstrnew
 
@@ -280,6 +290,15 @@ stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUE
         $(COMPILER) $(OBJPASDIR)/stdconvs.pp
 
 
+convutils$(PPUEXT) : $(OBJPASDIR)/convutils.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/convutils.pp
+
+stdconvs$(PPUEXT) : $(OBJPASDIR)/stdconvs.pp objpas$(PPUEXT) $(SYSTEMUNIT)$(PPUEXT) \
+                    sysutils$(PPUEXT)
+        $(COMPILER) $(OBJPASDIR)/stdconvs.pp
+
+
 #
 # Mac Pascal Model
 #
@@ -305,11 +324,14 @@ matrix$(PPUEXT) : $(INC)/matrix.pp $(SYSTEMUNIT)$(PPUEXT)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 ifeq ($(ARCH),x86_64)
 cpu$(PPUEXT) : $(PROCINC)/cpu.pp $(SYSTEMUNIT)$(PPUEXT) sysutils$(PPUEXT)
 else

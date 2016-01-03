@@ -148,6 +148,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure _FPC_libc21_haltproc(e: longint); assembler; public name '_haltproc';
 asm
 .Lhaltproc:
@@ -166,6 +167,11 @@ procedure _FPC_libc21_haltproc; assembler; nostackframe; public name '_haltproc'
 asm
 .Lhaltproc:
 >>>>>>> graemeg/cpstrnew
+=======
+procedure _FPC_libc21_haltproc; assembler; nostackframe; public name '_haltproc';
+asm
+.Lhaltproc:
+>>>>>>> origin/cpstrnew
 
   {$ifdef FPC_PIC}
         call    get3eipasebx
@@ -186,11 +192,14 @@ asm
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   pushl   %ebx
   call    uclibc_exit
   xorl    %eax,%eax

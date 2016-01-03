@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
@@ -21,6 +22,10 @@
 {	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
 {	 Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+{	 Pascal Translation:  Gale R Paeper, <gpaeper@empirenet.com>, 2006 }
+{	 Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -78,6 +83,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -89,6 +95,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -106,6 +114,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -139,6 +148,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -148,13 +159,17 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -168,6 +183,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -177,21 +194,28 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
@@ -269,6 +293,8 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -296,9 +322,12 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -342,6 +371,7 @@ uses MacTypes,CFBase,CGBase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -354,6 +384,10 @@ uses MacTypes,CFBase,CGBase;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -365,6 +399,7 @@ var kCGImagePropertyTIFFDictionary: CFStringRef; external name '_kCGImagePropert
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 var kCGImagePropertyGIFDictionary: CFStringRef; external name '_kCGImagePropertyGIFDictionary'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
@@ -460,6 +495,8 @@ var kCGImagePropertyMakerPentaxDictionary: CFStringRef; external name '_kCGImage
 var kCGImageProperty8BIMDictionary: CFStringRef; external name '_kCGImageProperty8BIMDictionary'; (* attribute const *)
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyGIFDictionary: CFStringRef; external name '_kCGImagePropertyGIFDictionary'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -488,18 +525,24 @@ var kCGImagePropertyMakerOlympusDictionary: CFStringRef; external name '_kCGImag
 var kCGImagePropertyMakerPentaxDictionary: CFStringRef; external name '_kCGImagePropertyMakerPentaxDictionary'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 var kCGImageProperty8BIMDictionary: CFStringRef; external name '_kCGImageProperty8BIMDictionary'; (* attribute const *)
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyDNGDictionary: CFStringRef; external name '_kCGImagePropertyDNGDictionary'; (* attribute const *)
 var kCGImagePropertyExifAuxDictionary: CFStringRef; external name '_kCGImagePropertyExifAuxDictionary'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {* Properties which may be returned by "CGImageSourceCopyProperties".  The
@@ -513,6 +556,7 @@ var kCGImagePropertyFileSize: CFStringRef; external name '_kCGImagePropertyFileS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -523,6 +567,9 @@ var kCGImagePropertyFileSize: CFStringRef; external name '_kCGImagePropertyFileS
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 {* Properties which may be returned by "CGImageSourceCopyPropertiesAtIndex".
@@ -535,6 +582,7 @@ var kCGImagePropertyPixelHeight: CFStringRef; external name '_kCGImagePropertyPi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 var kCGImagePropertyPixelWidth: CFStringRef; external name '_kCGImagePropertyPixelWidth'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
@@ -553,6 +601,11 @@ var kCGImagePropertyPixelWidth: CFStringRef; external name '_kCGImagePropertyPix
 var kCGImagePropertyPixelWidth: CFStringRef; external name '_kCGImagePropertyPixelWidth'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyPixelWidth: CFStringRef; external name '_kCGImagePropertyPixelWidth'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The DPI in the x- and y-dimensions, if known. If present, the value of
  * these keys is a CFNumberRef. }
@@ -561,6 +614,7 @@ var kCGImagePropertyDPIHeight: CFStringRef; external name '_kCGImagePropertyDPIH
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 var kCGImagePropertyDPIWidth: CFStringRef; external name '_kCGImagePropertyDPIWidth'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
@@ -579,6 +633,11 @@ var kCGImagePropertyDPIWidth: CFStringRef; external name '_kCGImagePropertyDPIWi
 var kCGImagePropertyDPIWidth: CFStringRef; external name '_kCGImagePropertyDPIWidth'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyDPIWidth: CFStringRef; external name '_kCGImagePropertyDPIWidth'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The number of bits in each color sample of each pixel. The value of this 
  * key is a CFNumberRef. }
@@ -587,6 +646,7 @@ var kCGImagePropertyDepth: CFStringRef; external name '_kCGImagePropertyDepth'; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -597,6 +657,9 @@ var kCGImagePropertyDepth: CFStringRef; external name '_kCGImagePropertyDepth'; 
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The intended display orientation of the image. If present, the value 
  * of this key is a CFNumberRef with the same value as defined by the 
@@ -615,6 +678,7 @@ var kCGImagePropertyOrientation: CFStringRef; external name '_kCGImagePropertyOr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -625,6 +689,9 @@ var kCGImagePropertyOrientation: CFStringRef; external name '_kCGImagePropertyOr
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The value of this key is kCFBooleanTrue if the image contains floating- 
  * point pixel samples } 
@@ -633,6 +700,7 @@ var kCGImagePropertyIsFloat: CFStringRef; external name '_kCGImagePropertyIsFloa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -643,6 +711,9 @@ var kCGImagePropertyIsFloat: CFStringRef; external name '_kCGImagePropertyIsFloa
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The value of this key is kCFBooleanTrue if the image contains indexed 
  * (a.k.a. paletted) pixel samples } 
@@ -651,6 +722,7 @@ var kCGImagePropertyIsIndexed: CFStringRef; external name '_kCGImagePropertyIsIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -661,6 +733,9 @@ var kCGImagePropertyIsIndexed: CFStringRef; external name '_kCGImagePropertyIsIn
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The value of this key is kCFBooleanTrue if the image contains an alpha 
  * (a.k.a. coverage) channel } 
@@ -669,6 +744,7 @@ var kCGImagePropertyHasAlpha: CFStringRef; external name '_kCGImagePropertyHasAl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -679,6 +755,9 @@ var kCGImagePropertyHasAlpha: CFStringRef; external name '_kCGImagePropertyHasAl
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The color model of the image such as "RGB", "CMYK", "Gray", or "Lab".
  * The value of this key is CFStringRef. } 
@@ -687,6 +766,7 @@ var kCGImagePropertyColorModel: CFStringRef; external name '_kCGImagePropertyCol
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -697,6 +777,9 @@ var kCGImagePropertyColorModel: CFStringRef; external name '_kCGImagePropertyCol
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { The name of the optional ICC profile embedded in the image, if known.  
  * If present, the value of this key is a CFStringRef. }
@@ -705,6 +788,7 @@ var kCGImagePropertyProfileName: CFStringRef; external name '_kCGImagePropertyPr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -715,6 +799,9 @@ var kCGImagePropertyProfileName: CFStringRef; external name '_kCGImagePropertyPr
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 
 { Possible values for kCGImagePropertyColorModel property }
@@ -723,6 +810,7 @@ var kCGImagePropertyColorModelRGB: CFStringRef; external name '_kCGImageProperty
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 var kCGImagePropertyColorModelGray: CFStringRef; external name '_kCGImagePropertyColorModelGray'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
@@ -743,6 +831,8 @@ var kCGImagePropertyColorModelLab: CFStringRef; external name '_kCGImageProperty
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyColorModelGray: CFStringRef; external name '_kCGImagePropertyColorModelGray'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -750,9 +840,12 @@ var kCGImagePropertyColorModelCMYK: CFStringRef; external name '_kCGImagePropert
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyColorModelLab: CFStringRef; external name '_kCGImagePropertyColorModelLab'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Possible keys for kCGImagePropertyTIFFDictionary }
@@ -761,6 +854,7 @@ var kCGImagePropertyTIFFCompression: CFStringRef; external name '_kCGImageProper
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 var kCGImagePropertyTIFFPhotometricInterpretation: CFStringRef; external name '_kCGImagePropertyTIFFPhotometricInterpretation'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
@@ -834,6 +928,8 @@ var kCGImagePropertyTIFFPrimaryChromaticities: CFStringRef; external name '_kCGI
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyTIFFPhotometricInterpretation: CFStringRef; external name '_kCGImagePropertyTIFFPhotometricInterpretation'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -869,6 +965,7 @@ var kCGImagePropertyTIFFWhitePoint: CFStringRef; external name '_kCGImagePropert
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyTIFFPrimaryChromaticities: CFStringRef; external name '_kCGImagePropertyTIFFPrimaryChromaticities'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -907,6 +1004,8 @@ var kCGImagePropertyTIFFWhitePoint: CFStringRef; external name '_kCGImagePropert
 var kCGImagePropertyTIFFPrimaryChromaticities: CFStringRef; external name '_kCGImagePropertyTIFFPrimaryChromaticities'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImagePropertyJFIFDictionary }
 
@@ -914,6 +1013,7 @@ var kCGImagePropertyJFIFVersion: CFStringRef; external name '_kCGImagePropertyJF
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 var kCGImagePropertyJFIFXDensity: CFStringRef; external name '_kCGImagePropertyJFIFXDensity'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
@@ -926,6 +1026,8 @@ var kCGImagePropertyJFIFIsProgressive: CFStringRef; external name '_kCGImageProp
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyJFIFXDensity: CFStringRef; external name '_kCGImagePropertyJFIFXDensity'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -935,6 +1037,7 @@ var kCGImagePropertyJFIFDensityUnit: CFStringRef; external name '_kCGImageProper
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyJFIFIsProgressive: CFStringRef; external name '_kCGImagePropertyJFIFIsProgressive'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -950,11 +1053,14 @@ var kCGImagePropertyJFIFIsProgressive: CFStringRef; external name '_kCGImageProp
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Possible keys for kCGImagePropertyExifDictionary }
 
 var kCGImagePropertyExifExposureTime: CFStringRef; external name '_kCGImagePropertyExifExposureTime'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1110,6 +1216,8 @@ var kCGImagePropertyExifAuxFirmware: CFStringRef; external name '_kCGImageProper
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyExifFNumber: CFStringRef; external name '_kCGImagePropertyExifFNumber'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -1245,15 +1353,19 @@ var kCGImagePropertyExifAuxFirmware: CFStringRef; external name '_kCGImageProper
 (* __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImagePropertyGIFDictionary }
 
 var kCGImagePropertyGIFLoopCount: CFStringRef; external name '_kCGImagePropertyGIFLoopCount'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1289,10 +1401,20 @@ var kCGImagePropertyGIFHasGlobalColorMap: CFStringRef; external name '_kCGImageP
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyGIFDelayTime: CFStringRef; external name '_kCGImagePropertyGIFDelayTime'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyGIFImageColorMap: CFStringRef; external name '_kCGImagePropertyGIFImageColorMap'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyGIFHasGlobalColorMap: CFStringRef; external name '_kCGImagePropertyGIFHasGlobalColorMap'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImagePropertyPNGDictionary }
 
 var kCGImagePropertyPNGGamma: CFStringRef; external name '_kCGImagePropertyPNGGamma'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1345,6 +1467,19 @@ var kCGImagePropertyPNGChromaticities: CFStringRef; external name '_kCGImageProp
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyPNGInterlaceType: CFStringRef; external name '_kCGImagePropertyPNGInterlaceType'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyPNGXPixelsPerMeter: CFStringRef; external name '_kCGImagePropertyPNGXPixelsPerMeter'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyPNGYPixelsPerMeter: CFStringRef; external name '_kCGImagePropertyPNGYPixelsPerMeter'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyPNGsRGBIntent: CFStringRef; external name '_kCGImagePropertyPNGsRGBIntent'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyPNGChromaticities: CFStringRef; external name '_kCGImagePropertyPNGChromaticities'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImagePropertyGPSDictionary }
 
@@ -1352,6 +1487,7 @@ var kCGImagePropertyGPSVersion: CFStringRef; external name '_kCGImagePropertyGPS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
 var kCGImagePropertyGPSLatitudeRef: CFStringRef; external name '_kCGImagePropertyGPSLatitudeRef'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_4_0) *)
@@ -1482,6 +1618,8 @@ var kCGImagePropertyGPSDifferental: CFStringRef; external name '_kCGImagePropert
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyGPSLatitudeRef: CFStringRef; external name '_kCGImagePropertyGPSLatitudeRef'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
@@ -1543,11 +1681,15 @@ var kCGImagePropertyGPSDateStamp: CFStringRef; external name '_kCGImagePropertyG
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyGPSDifferental: CFStringRef; external name '_kCGImagePropertyGPSDifferental'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImagePropertyIPTCDictionary }
 
 var kCGImagePropertyIPTCObjectTypeReference: CFStringRef; external name '_kCGImagePropertyIPTCObjectTypeReference'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1939,6 +2081,102 @@ var kCGImagePropertyIPTCLanguageIdentifier: CFStringRef; external name '_kCGImag
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyIPTCStarRating: CFStringRef; external name '_kCGImagePropertyIPTCStarRating'; (* attribute const *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCObjectAttributeReference: CFStringRef; external name '_kCGImagePropertyIPTCObjectAttributeReference'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCObjectName: CFStringRef; external name '_kCGImagePropertyIPTCObjectName'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCEditStatus: CFStringRef; external name '_kCGImagePropertyIPTCEditStatus'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCEditorialUpdate: CFStringRef; external name '_kCGImagePropertyIPTCEditorialUpdate'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCUrgency: CFStringRef; external name '_kCGImagePropertyIPTCUrgency'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCSubjectReference: CFStringRef; external name '_kCGImagePropertyIPTCSubjectReference'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCCategory: CFStringRef; external name '_kCGImagePropertyIPTCCategory'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCSupplementalCategory: CFStringRef; external name '_kCGImagePropertyIPTCSupplementalCategory'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCFixtureIdentifier: CFStringRef; external name '_kCGImagePropertyIPTCFixtureIdentifier'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCKeywords: CFStringRef; external name '_kCGImagePropertyIPTCKeywords'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCContentLocationCode: CFStringRef; external name '_kCGImagePropertyIPTCContentLocationCode'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCContentLocationName: CFStringRef; external name '_kCGImagePropertyIPTCContentLocationName'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCReleaseDate: CFStringRef; external name '_kCGImagePropertyIPTCReleaseDate'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCReleaseTime: CFStringRef; external name '_kCGImagePropertyIPTCReleaseTime'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCExpirationDate: CFStringRef; external name '_kCGImagePropertyIPTCExpirationDate'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCExpirationTime: CFStringRef; external name '_kCGImagePropertyIPTCExpirationTime'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCSpecialInstructions: CFStringRef; external name '_kCGImagePropertyIPTCSpecialInstructions'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCActionAdvised: CFStringRef; external name '_kCGImagePropertyIPTCActionAdvised'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCReferenceService: CFStringRef; external name '_kCGImagePropertyIPTCReferenceService'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCReferenceDate: CFStringRef; external name '_kCGImagePropertyIPTCReferenceDate'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCReferenceNumber: CFStringRef; external name '_kCGImagePropertyIPTCReferenceNumber'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCDateCreated: CFStringRef; external name '_kCGImagePropertyIPTCDateCreated'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCTimeCreated: CFStringRef; external name '_kCGImagePropertyIPTCTimeCreated'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCDigitalCreationDate: CFStringRef; external name '_kCGImagePropertyIPTCDigitalCreationDate'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCDigitalCreationTime: CFStringRef; external name '_kCGImagePropertyIPTCDigitalCreationTime'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCOriginatingProgram: CFStringRef; external name '_kCGImagePropertyIPTCOriginatingProgram'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCProgramVersion: CFStringRef; external name '_kCGImagePropertyIPTCProgramVersion'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCObjectCycle: CFStringRef; external name '_kCGImagePropertyIPTCObjectCycle'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCByline: CFStringRef; external name '_kCGImagePropertyIPTCByline'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCBylineTitle: CFStringRef; external name '_kCGImagePropertyIPTCBylineTitle'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCCity: CFStringRef; external name '_kCGImagePropertyIPTCCity'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCSubLocation: CFStringRef; external name '_kCGImagePropertyIPTCSubLocation'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCProvinceState: CFStringRef; external name '_kCGImagePropertyIPTCProvinceState'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCCountryPrimaryLocationCode: CFStringRef; external name '_kCGImagePropertyIPTCCountryPrimaryLocationCode'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCCountryPrimaryLocationName: CFStringRef; external name '_kCGImagePropertyIPTCCountryPrimaryLocationName'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCOriginalTransmissionReference: CFStringRef; external name '_kCGImagePropertyIPTCOriginalTransmissionReference'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCHeadline: CFStringRef; external name '_kCGImagePropertyIPTCHeadline'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCCredit: CFStringRef; external name '_kCGImagePropertyIPTCCredit'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCSource: CFStringRef; external name '_kCGImagePropertyIPTCSource'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCCopyrightNotice: CFStringRef; external name '_kCGImagePropertyIPTCCopyrightNotice'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCContact: CFStringRef; external name '_kCGImagePropertyIPTCContact'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCCaptionAbstract: CFStringRef; external name '_kCGImagePropertyIPTCCaptionAbstract'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCWriterEditor: CFStringRef; external name '_kCGImagePropertyIPTCWriterEditor'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCImageType: CFStringRef; external name '_kCGImagePropertyIPTCImageType'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCImageOrientation: CFStringRef; external name '_kCGImagePropertyIPTCImageOrientation'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCLanguageIdentifier: CFStringRef; external name '_kCGImagePropertyIPTCLanguageIdentifier'; (* attribute const *)
+(* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+var kCGImagePropertyIPTCStarRating: CFStringRef; external name '_kCGImagePropertyIPTCStarRating'; (* attribute const *)
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 var kCGImagePropertyIPTCCreatorContactInfo: CFStringRef; external name '_kCGImagePropertyIPTCCreatorContactInfo'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)	// IPTC Core
@@ -1948,11 +2186,14 @@ var kCGImagePropertyIPTCScene: CFStringRef; external name '_kCGImagePropertyIPTC
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)				// IPTC Core
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImagePropertyIPTCCreatorContactInfo dictionary (part of IPTC Core - above) }
 
@@ -1960,6 +2201,7 @@ var kCGImagePropertyIPTCContactInfoCity: CFStringRef; external name '_kCGImagePr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_4_0) *)
 var kCGImagePropertyIPTCContactInfoCountry: CFStringRef; external name '_kCGImagePropertyIPTCContactInfoCountry'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_4_0) *)
@@ -1980,6 +2222,8 @@ var kCGImagePropertyIPTCContactInfoWebURLs: CFStringRef; external name '_kCGImag
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
 var kCGImagePropertyIPTCContactInfoCountry: CFStringRef; external name '_kCGImagePropertyIPTCContactInfoCountry'; (* attribute const *)
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
@@ -1997,15 +2241,19 @@ var kCGImagePropertyIPTCContactInfoWebURLs: CFStringRef; external name '_kCGImag
 (* __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImageProperty8BIMDictionary }
 
 var kCGImageProperty8BIMLayerNames: CFStringRef; external name '_kCGImageProperty8BIMLayerNames'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2016,6 +2264,8 @@ var kCGImageProperty8BIMLayerNames: CFStringRef; external name '_kCGImagePropert
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Possible keys for kCGImagePropertyDNGDictionary }
@@ -2024,6 +2274,7 @@ var kCGImagePropertyDNGVersion: CFStringRef; external name '_kCGImagePropertyDNG
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_4_0) *)
 var kCGImagePropertyDNGBackwardVersion: CFStringRef; external name '_kCGImagePropertyDNGBackwardVersion'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_4_0) *)
@@ -2040,6 +2291,8 @@ var kCGImagePropertyDNGLensInfo: CFStringRef; external name '_kCGImagePropertyDN
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var kCGImagePropertyDNGBackwardVersion: CFStringRef; external name '_kCGImagePropertyDNGBackwardVersion'; (* attribute const *)
 var kCGImagePropertyDNGUniqueCameraModel: CFStringRef; external name '_kCGImagePropertyDNGUniqueCameraModel'; (* attribute const *)
 var kCGImagePropertyDNGLocalizedCameraModel: CFStringRef; external name '_kCGImagePropertyDNGLocalizedCameraModel'; (* attribute const *)
@@ -2047,11 +2300,14 @@ var kCGImagePropertyDNGCameraSerialNumber: CFStringRef; external name '_kCGImage
 var kCGImagePropertyDNGLensInfo: CFStringRef; external name '_kCGImagePropertyDNGLensInfo'; (* attribute const *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Possible keys for kCGImagePropertyCIFFDictionary }
@@ -2060,6 +2316,7 @@ var kCGImagePropertyCIFFDescription: CFStringRef; external name '_kCGImageProper
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_4_0) *)
 var kCGImagePropertyCIFFFirmware: CFStringRef; external name '_kCGImagePropertyCIFFFirmware'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_4_0) *)
@@ -2126,6 +2383,8 @@ var kCGImagePropertyCIFFMeasuredEV: CFStringRef; external name '_kCGImagePropert
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var kCGImagePropertyCIFFFirmware: CFStringRef; external name '_kCGImagePropertyCIFFFirmware'; (* attribute const *)
 var kCGImagePropertyCIFFOwnerName: CFStringRef; external name '_kCGImagePropertyCIFFOwnerName'; (* attribute const *)
 var kCGImagePropertyCIFFImageName: CFStringRef; external name '_kCGImagePropertyCIFFImageName'; (* attribute const *)
@@ -2147,9 +2406,12 @@ var kCGImagePropertyCIFFWhiteBalanceIndex: CFStringRef; external name '_kCGImage
 var kCGImagePropertyCIFFFlashExposureComp: CFStringRef; external name '_kCGImagePropertyCIFFFlashExposureComp'; (* attribute const *)
 var kCGImagePropertyCIFFMeasuredEV: CFStringRef; external name '_kCGImagePropertyCIFFMeasuredEV'; (* attribute const *)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Possible keys for kCGImagePropertyMakerNikonDictionary }
@@ -2158,6 +2420,7 @@ var kCGImagePropertyMakerNikonISOSetting: CFStringRef; external name '_kCGImageP
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_4_0) *)
 var kCGImagePropertyMakerNikonColorMode: CFStringRef; external name '_kCGImagePropertyMakerNikonColorMode'; (* attribute const *)
 (* IMAGEIO_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_4_0) *)
@@ -2236,10 +2499,30 @@ var kCGImagePropertyMakerNikonShootingMode: CFStringRef; external name '_kCGImag
 var kCGImagePropertyMakerNikonCameraSerialNumber: CFStringRef; external name '_kCGImagePropertyMakerNikonCameraSerialNumber'; (* attribute const *)
 var kCGImagePropertyMakerNikonShutterCount: CFStringRef; external name '_kCGImagePropertyMakerNikonShutterCount'; (* attribute const *)
 >>>>>>> graemeg/cpstrnew
+=======
+var kCGImagePropertyMakerNikonColorMode: CFStringRef; external name '_kCGImagePropertyMakerNikonColorMode'; (* attribute const *)
+var kCGImagePropertyMakerNikonQuality: CFStringRef; external name '_kCGImagePropertyMakerNikonQuality'; (* attribute const *)
+var kCGImagePropertyMakerNikonWhiteBalanceMode: CFStringRef; external name '_kCGImagePropertyMakerNikonWhiteBalanceMode'; (* attribute const *)
+var kCGImagePropertyMakerNikonSharpenMode: CFStringRef; external name '_kCGImagePropertyMakerNikonSharpenMode'; (* attribute const *)
+var kCGImagePropertyMakerNikonFocusMode: CFStringRef; external name '_kCGImagePropertyMakerNikonFocusMode'; (* attribute const *)
+var kCGImagePropertyMakerNikonFlashSetting: CFStringRef; external name '_kCGImagePropertyMakerNikonFlashSetting'; (* attribute const *)
+var kCGImagePropertyMakerNikonISOSelection: CFStringRef; external name '_kCGImagePropertyMakerNikonISOSelection'; (* attribute const *)
+var kCGImagePropertyMakerNikonFlashExposureComp: CFStringRef; external name '_kCGImagePropertyMakerNikonFlashExposureComp'; (* attribute const *)
+var kCGImagePropertyMakerNikonImageAdjustment: CFStringRef; external name '_kCGImagePropertyMakerNikonImageAdjustment'; (* attribute const *)
+var kCGImagePropertyMakerNikonLensAdapter: CFStringRef; external name '_kCGImagePropertyMakerNikonLensAdapter'; (* attribute const *)
+var kCGImagePropertyMakerNikonLensType: CFStringRef; external name '_kCGImagePropertyMakerNikonLensType'; (* attribute const *)
+var kCGImagePropertyMakerNikonLensInfo: CFStringRef; external name '_kCGImagePropertyMakerNikonLensInfo'; (* attribute const *)
+var kCGImagePropertyMakerNikonFocusDistance: CFStringRef; external name '_kCGImagePropertyMakerNikonFocusDistance'; (* attribute const *)
+var kCGImagePropertyMakerNikonDigitalZoom: CFStringRef; external name '_kCGImagePropertyMakerNikonDigitalZoom'; (* attribute const *)
+var kCGImagePropertyMakerNikonShootingMode: CFStringRef; external name '_kCGImagePropertyMakerNikonShootingMode'; (* attribute const *)
+var kCGImagePropertyMakerNikonCameraSerialNumber: CFStringRef; external name '_kCGImagePropertyMakerNikonCameraSerialNumber'; (* attribute const *)
+var kCGImagePropertyMakerNikonShutterCount: CFStringRef; external name '_kCGImagePropertyMakerNikonShutterCount'; (* attribute const *)
+>>>>>>> origin/cpstrnew
 
 { Possible keys for kCGImagePropertyMakerCanonDictionary }
 
 var kCGImagePropertyMakerCanonOwnerName: CFStringRef; external name '_kCGImagePropertyMakerCanonOwnerName'; (* attribute const *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2263,6 +2546,8 @@ var kCGImagePropertyMakerCanonAspectRatioInfo: CFStringRef; external name '_kCGI
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var kCGImagePropertyMakerCanonCameraSerialNumber: CFStringRef; external name '_kCGImagePropertyMakerCanonCameraSerialNumber'; (* attribute const *)
 var kCGImagePropertyMakerCanonImageSerialNumber: CFStringRef; external name '_kCGImagePropertyMakerCanonImageSerialNumber'; (* attribute const *)
 var kCGImagePropertyMakerCanonFlashExposureComp: CFStringRef; external name '_kCGImagePropertyMakerCanonFlashExposureComp'; (* attribute const *)
@@ -2276,11 +2561,14 @@ var kCGImagePropertyMakerCanonAspectRatioInfo: CFStringRef; external name '_kCGI
 {$endc} {TARGET_OS_MAC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

@@ -264,11 +264,14 @@ implementation
           location_force_reg(current_asmdata.CurrAsmList,left.location,left.location.size,false);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if use_vectorfpu(resultdef) and
 {$ifdef cpu64bitalu}
            (torddef(left.resultdef).ordtype in [s32bit,s64bit]) then
@@ -364,11 +367,14 @@ implementation
             location_force_mem(current_asmdata.CurrAsmList,left.location);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             { don't change left.location.reference, because if it's a temp we
               need the original location at the end so we can free it }
             leftref:=left.location.reference;
@@ -412,6 +418,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if use_bt then
                          begin
            {$if defined(cpu64bitalu) or defined(cpu32bitalu)}
@@ -449,6 +456,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                        inc(leftref.offset,4);
                        emit_const_ref(A_BT,S_L,31,leftref);
                        dec(leftref.offset,4);

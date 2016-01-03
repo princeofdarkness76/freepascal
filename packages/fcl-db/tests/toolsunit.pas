@@ -10,6 +10,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, DB, testdecorator, fpcunit;
 
 Const
@@ -23,6 +24,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Classes, SysUtils, DB, testdecorator, FmtBCD;
   
 Const MaxDataSet = 35;
@@ -42,6 +45,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        FChangedDatasets : array[0..MaxDataSet] of boolean;
        FUsedDatasets : TFPList;
        procedure SetTestUniDirectional(const AValue: boolean); virtual;
@@ -55,6 +59,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        procedure SetTestUniDirectional(const AValue: boolean); virtual;
        function GetTestUniDirectional: boolean; virtual;
        // These methods should be implemented by any descendents
@@ -172,11 +178,14 @@ const
   testCurrencyValues : Array[0..testValuesCount-1] of currency = (-100,-65.5,-54.34,-43.34,-2.50,-0.2,45.40,0.3,45.4,127,128,255,256,45,0.3,45.4,127,128,255,256,45,1234.56,43.23,43.43,99.88);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   testFmtBCDValues : Array[0..testValuesCount-1] of string = ('-100','-65.5','-54.3333','-43.3334','-2.5','-0.234567','45.4','0.3','45.414585','127','128','255','256','45','0.3','45.4','127','128','255','256','45','1234.56789','43.23','43.500001','99.88');
   testIntValues : Array[0..testValuesCount-1] of integer = (-maxInt,-maxInt+1,-maxSmallint-1,-maxSmallint,-256,-255,-128,-127,-1,0,1,127,128,255,256,maxSmallint,maxSmallint+1,MaxInt-1,MaxInt,100,130,150,-150,-132,234);
   testWordValues : Array[0..testValuesCount-1] of Word = (1,2,3,4,5,6,7,8,0,1,127,128,255,256,maxSmallint,maxSmallint+1,maxSmallInt-1,maxSmallInt,65535,100,130,150,151,132,234);
@@ -242,6 +251,7 @@ const
 
   testTimeValues : Array[0..testValuesCount-1] of string = (
 <<<<<<< HEAD
+<<<<<<< HEAD
     '10:45:12.000',
     '00:00:00.000',
     '24:00:00.000',
@@ -268,6 +278,8 @@ const
     '20:15:12.758',
     '23:59:59.000'
 =======
+=======
+>>>>>>> origin/cpstrnew
     '10:45:12:000',
     '00:00:00:000',
     '24:00:00:000',
@@ -293,6 +305,7 @@ const
     '12:25:12:000',
     '20:15:12:000',
     '12:25:12:000'
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
   );
 
@@ -358,6 +371,10 @@ const
   );
 
 >>>>>>> graemeg/cpstrnew
+=======
+  );
+
+>>>>>>> origin/cpstrnew
 
 var dbtype,
     dbconnectorname,
@@ -366,6 +383,7 @@ var dbtype,
     dbuser,
     dbhostname,
     dbpassword,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -381,6 +399,9 @@ var dbtype,
 =======
     dbQuoteChars   : string;
 >>>>>>> graemeg/cpstrnew
+=======
+    dbQuoteChars   : string;
+>>>>>>> origin/cpstrnew
     DataEvents     : string;
     DBConnector    : TDBConnector;
     testValues     : Array [TFieldType,0..testvaluescount -1] of string;
@@ -388,6 +409,7 @@ var dbtype,
 
 procedure InitialiseDBConnector;
 procedure FreeDBConnector;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -402,6 +424,8 @@ function StringToBytes(const s: ansistring): TBytes;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -415,6 +439,8 @@ var DBConnectorRefCount: integer;
 <<<<<<< HEAD
 constructor TDBConnector.Create;
 =======
+var DBConnectorRefCount: integer;
+
 var DBConnectorRefCount: integer;
 
 var DBConnectorRefCount: integer;
@@ -467,6 +493,16 @@ end;
 procedure TDBConnector.DataEvent(dataset : tdataset);
 begin
   DataEvents := DataEvents + 'DataEvent' + ';';
+end;
+
+function TDBConnector.GetTestUniDirectional: boolean;
+begin
+  result := false;
+end;
+
+procedure TDBConnector.SetTestUniDirectional(const AValue: boolean);
+begin
+  raise exception.create('Connector does not support tests for unidirectional datasets');
 end;
 
 function TDBConnector.GetTestUniDirectional: boolean;
@@ -694,6 +730,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   dblogfilename := IniFile.ReadString(dbtype,'LogFile','');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -701,6 +738,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   dbquotechars := IniFile.ReadString(dbtype,'QuoteChars','"');
 
   IniFile.Free;
@@ -748,6 +787,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   FormatSettings.DecimalSeparator:='.';
   FormatSettings.ThousandSeparator:=#0;
@@ -775,6 +815,11 @@ begin
   testValues[ftFixedChar] := testStringValues;
   testValues[ftTime] := testTimeValues;
 >>>>>>> graemeg/cpstrnew
+=======
+  testValues[ftString] := testStringValues;
+  testValues[ftFixedChar] := testStringValues;
+  testValues[ftTime] := testTimeValues;
+>>>>>>> origin/cpstrnew
   testValues[ftFMTBcd] := testFmtBCDValues;
   for i := 0 to testValuesCount-1 do
     begin
@@ -803,11 +848,14 @@ begin
     testValues[ftDate,i] := DateToStr(StrToDate(testDateValues[i], 'yyyy/mm/dd', '-'));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
 
   if dbconnectorname = '' then raise Exception.Create('There is no db connector specified');
@@ -822,8 +870,18 @@ begin
   inc(DBConnectorRefCount);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+end;
+
+procedure FreeDBConnector;
+begin
+  dec(DBConnectorRefCount);
+  if DBConnectorRefCount=0 then
+    FreeAndNil(DBConnector);
+>>>>>>> origin/cpstrnew
 end;
 
 procedure FreeDBConnector;
@@ -865,6 +923,12 @@ var
   minute     : word;
   hour       : word;
 =======
+procedure TTestDataLink.DataSetChanged;
+begin
+  DataEvents := DataEvents + 'DataSetChanged;';
+  inherited DataSetChanged;
+end;
+
 procedure TTestDataLink.DataSetChanged;
 begin
   DataEvents := DataEvents + 'DataSetChanged;';
@@ -974,8 +1038,21 @@ begin
   FreeDBConnector;
 end;
 
+{ TDBBasicsTestSetup }
+
+procedure TDBBasicsTestSetup.OneTimeSetup;
+begin
+  InitialiseDBConnector;
+end;
+
+procedure TDBBasicsTestSetup.OneTimeTearDown;
+begin
+  FreeDBConnector;
+end;
+
 initialization
   ReadIniFile;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -993,5 +1070,8 @@ finalization
 =======
   DBConnectorRefCount:=0;
 >>>>>>> graemeg/cpstrnew
+=======
+  DBConnectorRefCount:=0;
+>>>>>>> origin/cpstrnew
 end.
 

@@ -280,6 +280,7 @@ Begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   initunicodestringmanager;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -287,6 +288,8 @@ Begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Setup stdin, stdout and stderr }
   SysInitStdIO;

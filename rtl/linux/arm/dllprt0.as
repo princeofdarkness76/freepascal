@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
  * This file is part of the Free Pascal run time library.
  * Copyright (c) 2011 by Thomas Schatzl,
@@ -22,6 +23,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 .file   "dllprt0.as"
 .text
         .globl  _startlib
@@ -51,22 +54,28 @@ FPC_SHARED_LIB_START:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ldr ip, =TC_SYSTEM_ISLIBRARY
         mov a1, #1
         str a1, [ip]
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         /* call main and exit normally */
         bl PASCALMAIN
         ldmdb fp, {fp, sp, pc}
@@ -77,6 +86,7 @@ _haltproc:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* reload exitcode */
         ldr r0,=operatingsystem_result
         ldr r0,[r0]
@@ -89,6 +99,9 @@ _haltproc:
 =======
         /* r0 contains exitcode */
 >>>>>>> graemeg/cpstrnew
+=======
+        /* r0 contains exitcode */
+>>>>>>> origin/cpstrnew
         swi 0x900001
         b _haltproc
 
@@ -98,6 +111,7 @@ _haltproc_eabi:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         /* reload exitcode */
         ldr r0,=operatingsystem_result
         ldr r0,[r0]
@@ -110,6 +124,9 @@ _haltproc_eabi:
 =======
         /* r0 contains exitcode */
 >>>>>>> graemeg/cpstrnew
+=======
+        /* r0 contains exitcode */
+>>>>>>> origin/cpstrnew
         mov r7,#248
         swi 0x0
         b _haltproc_eabi

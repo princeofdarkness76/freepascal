@@ -27,11 +27,14 @@ begin
     P.CPUs:=[i386];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.SourcePath.Add('src');
     T:=P.Targets.AddUnit('unixutils.pp');
 

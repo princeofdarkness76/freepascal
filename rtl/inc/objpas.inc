@@ -86,6 +86,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure fpc_intf_assign(var D: pointer; const s: pointer); [external name 'FPC_INTF_ASSIGN'];
 =======
 >>>>>>> graemeg/cpstrnew
@@ -93,6 +94,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     {procedure fpc_intf_assign_by_iid(var D: pointer; const S: pointer; const iid: TGUID);[public,alias: 'FPC_INTF_ASSIGN2']; compilerproc;
       var
@@ -190,6 +193,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             // decrease reference count
             fpc_class_cast_intf:=nil;
@@ -204,6 +208,9 @@
 =======
           pointer(fpc_class_cast_intf):=tmpi
 >>>>>>> graemeg/cpstrnew
+=======
+          pointer(fpc_class_cast_intf):=tmpi
+>>>>>>> origin/cpstrnew
         else
           fpc_class_cast_intf:=nil;
       end;
@@ -525,6 +532,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         exceptaddr : codepointer) : HResult;
 =======
         exceptaddr : pointer) : HResult;
@@ -535,6 +543,9 @@
 =======
         exceptaddr : pointer) : HResult;
 >>>>>>> graemeg/cpstrnew
+=======
+        exceptaddr : pointer) : HResult;
+>>>>>>> origin/cpstrnew
 
         begin
           safecallexception:=E_UNEXPECTED;
@@ -752,6 +763,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := PCodePointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
 =======
                   Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
@@ -762,6 +774,9 @@
 =======
                   Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
 >>>>>>> graemeg/cpstrnew
+=======
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+>>>>>>> origin/cpstrnew
                   TInterfaceGetter(Getter)(obj);
                 end;
               etVirtualMethodClass:
@@ -770,6 +785,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := PCodePointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
 =======
                   Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
@@ -780,6 +796,9 @@
 =======
                   Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
 >>>>>>> graemeg/cpstrnew
+=======
+                  Getter.code := PPointer(PByte(PPointer(Instance)^) + IEntry^.IOffset)^;
+>>>>>>> origin/cpstrnew
                   TObject(obj) := TClassGetter(Getter)();
                 end;
               etStaticMethodResult:
@@ -787,6 +806,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := CodePointer(IEntry^.IOffset);
 =======
                   Getter.code := Pointer(IEntry^.IOffset);
@@ -797,6 +817,9 @@
 =======
                   Getter.code := Pointer(IEntry^.IOffset);
 >>>>>>> graemeg/cpstrnew
+=======
+                  Getter.code := Pointer(IEntry^.IOffset);
+>>>>>>> origin/cpstrnew
                   TInterfaceGetter(Getter)(obj);
                 end;
               etStaticMethodClass:
@@ -804,6 +827,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   Getter.code := CodePointer(IEntry^.IOffset);
 =======
                   Getter.code := Pointer(IEntry^.IOffset);
@@ -814,6 +838,9 @@
 =======
                   Getter.code := Pointer(IEntry^.IOffset);
 >>>>>>> graemeg/cpstrnew
+=======
+                  Getter.code := Pointer(IEntry^.IOffset);
+>>>>>>> origin/cpstrnew
                   TObject(obj) := TClassGetter(Getter)();
                 end;
             end;

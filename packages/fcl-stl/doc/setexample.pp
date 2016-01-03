@@ -6,6 +6,7 @@ type lesslli=specialize TLess<longint>;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var data:setlli; i:longint; iterator:setlli.TIterator;
 =======
 var data:setlli; i:longint; iterator:setlli.PNode;
@@ -16,6 +17,9 @@ var data:setlli; i:longint; iterator:setlli.PNode;
 =======
 var data:setlli; i:longint; iterator:setlli.PNode;
 >>>>>>> graemeg/cpstrnew
+=======
+var data:setlli; i:longint; iterator:setlli.PNode;
+>>>>>>> origin/cpstrnew
 
 begin
   data:=setlli.Create;
@@ -25,6 +29,7 @@ begin
 
   {Iteration through elements}
   iterator:=data.Min;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -42,6 +47,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   while iterator<>nil do begin
     writeln(iterator^.Data);
     iterator:=data.next(iterator);
@@ -50,11 +57,14 @@ begin
   writeln(data.FindLess(7)^.Data);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   data.Destroy;
 end.

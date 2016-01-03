@@ -38,6 +38,7 @@ unit i_nativent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_use_function_relative_addresses
 =======
             flags        : [tf_files_case_aware,tf_use_function_relative_addresses,tf_smartlink_library
@@ -48,12 +49,16 @@ unit i_nativent;
 =======
             flags        : [tf_files_case_aware,tf_use_function_relative_addresses,tf_smartlink_library
 >>>>>>> graemeg/cpstrnew
+=======
+            flags        : [tf_files_case_aware,tf_use_function_relative_addresses,tf_smartlink_library
+>>>>>>> origin/cpstrnew
                             ,tf_smartlink_sections{,tf_section_threadvars}{,tf_needs_dwarf_cfi},
                             tf_no_pic_supported,
                             tf_no_generic_stackcheck{,tf_has_winlike_resources},tf_under_development,
                             tf_dwarf_only_local_labels];
             cpu          : cpu_i386;
             unit_env     : 'NTUNITS';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -67,6 +72,9 @@ unit i_nativent;
 =======
             extradefines : 'NATIVENT,UNICODE';
 >>>>>>> graemeg/cpstrnew
+=======
+            extradefines : 'NATIVENT,UNICODE';
+>>>>>>> origin/cpstrnew
             exeext       : '.exe';
             defext       : '.def';
             scriptext    : '.bat';
@@ -95,6 +103,7 @@ unit i_nativent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             link         : ld_int_nativent;
             linkextern   : ld_none;
 =======
@@ -109,6 +118,10 @@ unit i_nativent;
             link         : nil;
             linkextern   : nil;
 >>>>>>> graemeg/cpstrnew
+=======
+            link         : nil;
+            linkextern   : nil;
+>>>>>>> origin/cpstrnew
             ar           : ar_gnu_ar;
             res          : res_gnu_windres;
             dbg          : dbg_stabs;
@@ -134,6 +147,7 @@ unit i_nativent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             stackalign   : 4;
             abi          : abi_default;
             llvmdatalayout : 'e-p:32:32:32-i1:8:8-i8:8:8-i16:16:16-i32:32:32-i64:64:64-f32:32:32-f64:64:64-f80:128:128-v64:64:64-v128:128:128-a0:0:64-f80:32:32-n8:16:32-S32';
@@ -146,11 +160,15 @@ unit i_nativent;
 =======
             abi          : abi_default;
 >>>>>>> graemeg/cpstrnew
+=======
+            abi          : abi_default;
+>>>>>>> origin/cpstrnew
           );
 
   implementation
 
 initialization
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -164,6 +182,8 @@ initialization
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef CPU86}
   {$ifdef NATIVENT}
     set_source_info(system_i386_nativent_info);
@@ -171,9 +191,12 @@ initialization
 {$endif CPU86}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.

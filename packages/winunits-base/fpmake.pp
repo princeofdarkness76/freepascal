@@ -61,6 +61,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddUnit('winutils');
           AddUnit('comserv');
           AddUnit('winspool');
@@ -82,6 +83,9 @@ begin
 =======
           AddUnit('winspool');
 >>>>>>> graemeg/cpstrnew
+=======
+          AddUnit('winspool');
+>>>>>>> origin/cpstrnew
         end;
     T:=P.Targets.AddImplicitUnit('activex.pp');
     T:=P.Targets.AddImplicitUnit('urlmon.pp');
@@ -110,6 +114,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddImplicitUnit('winutils.pp');
     T:=P.Targets.AddImplicitUnit('comserv.pp');
     T:=P.Targets.AddImplicitUnit('winspool.pp');
@@ -130,6 +135,9 @@ begin
 =======
     T:=P.Targets.AddImplicitUnit('winspool.pp');
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddImplicitUnit('winspool.pp');
+>>>>>>> origin/cpstrnew
     T.Dependencies.AddInclude('tmschema.inc');
     P.ExamplePath.Add('tests/');
     P.Targets.AddExampleProgram('testcom1.pp');

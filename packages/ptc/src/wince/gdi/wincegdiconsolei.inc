@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -45,6 +49,7 @@ constructor TWinCEGDIConsole.Create;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -54,6 +59,9 @@ constructor TWinCEGDIConsole.Create;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   inherited Create;
 
@@ -65,6 +73,7 @@ begin
   FClear := TPTCClear.Create;
   FArea := TPTCArea.Create;
   FClip := TPTCArea.Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -102,6 +111,18 @@ var
   I: Integer;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+  FModes[0] := TPTCMode.Create(FDisplayWidth, FDisplayHeight, FDefaultFormat);
+  FModes[1] := TPTCMode.Create;
+end;
+
+destructor TWinCEGDIConsole.Destroy;
+
+var
+  I: Integer;
+
+>>>>>>> origin/cpstrnew
 begin
   Close;
 
@@ -125,12 +146,16 @@ procedure TWinCEGDIConsole.Open(const ATitle: string; APages: Integer = 0);
     FModes[I].Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
   inherited Destroy;
 end;
 
 procedure TWinCEGDIConsole.Open(const ATitle: string; APages: Integer = 0);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 begin
   Open(ATitle, FDefaultFormat, APages);
@@ -205,6 +230,33 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+  Open(ATitle, FDefaultFormat, APages);
+end;
+
+procedure TWinCEGDIConsole.Open(const ATitle: string; const AFormat: TPTCFormat;
+                                APages: Integer = 0);
+
+begin
+  Open(ATitle, FDisplayWidth, FDisplayHeight, AFormat, APages);
+end;
+
+procedure TWinCEGDIConsole.Open(const ATitle: string; const AMode: TPTCMode;
+                                APages: Integer = 0);
+
+begin
+  Open(ATitle, AMode.Width, AMode.Height, AMode.Format, APages);
+end;
+
+procedure TWinCEGDIConsole.Open(const ATitle: string; AWidth, AHeight: Integer;
+                                const AFormat: TPTCFormat; APages: Integer = 0);
+
+var
+  DeviceContext: HDC;
+  tmp: TPTCArea;
+
+>>>>>>> origin/cpstrnew
 begin
   LOG('TWinCEGDIConsole.Open');
 
@@ -248,6 +300,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FArea := TPTCArea.Create(0, 0, FDisplayWidth, FDisplayHeight);
   FClip := FArea;
 =======
@@ -255,6 +308,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   tmp := TPTCArea.Create(0, 0, FDisplayWidth, FDisplayHeight);
   try
     FArea.Assign(tmp);
@@ -264,11 +319,14 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   FEventQueue := TEventQueue.Create;
   FKeyboard := TWinCEKeyboard.Create(FEventQueue);
@@ -283,6 +341,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TWinCEGDIConsole.Close;
 =======
@@ -300,6 +359,11 @@ procedure TWinCEGDIConsole.Close;
 procedure TWinCEGDIConsole.Close;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+procedure TWinCEGDIConsole.Close;
+
+>>>>>>> origin/cpstrnew
 begin
   LOG('TWinCEGDIConsole.Close');
 
@@ -323,6 +387,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TWinCEGDIConsole.Copy(ASurface: IPTCSurface);
 =======
@@ -338,6 +403,11 @@ procedure TWinCEGDIConsole.Copy(ASurface: TPTCBaseSurface);
 
 procedure TWinCEGDIConsole.Copy(ASurface: TPTCBaseSurface);
 
+=======
+
+procedure TWinCEGDIConsole.Copy(ASurface: TPTCBaseSurface);
+
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
 end;
@@ -345,11 +415,15 @@ end;
 procedure TWinCEGDIConsole.Copy(ASurface: TPTCBaseSurface;
                                 const ASource, ADestination: TPTCArea);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure TWinCEGDIConsole.Copy(ASurface: TPTCBaseSurface;
                                 const ASource, ADestination: TPTCArea);
@@ -407,6 +481,16 @@ var
   console_pixels: Pointer;
 
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TWinCEGDIConsole.Load(const APixels: Pointer;
+                                AWidth, AHeight, APitch: Integer;
+                                const AFormat: TPTCFormat;
+                                const APalette: TPTCPalette);
+var
+  Area_: TPTCArea;
+  console_pixels: Pointer;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen(    'TWinCEGDIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette)');
   CheckUnlocked('TWinCEGDIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette)');
@@ -431,12 +515,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, TPTCArea.Create(0, 0, width, height), Area);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   begin
     Area_ := TPTCArea.Create(0, 0, width, height);
     try
@@ -447,15 +534,19 @@ begin
   end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TWinCEGDIConsole.Load(const APixels: Pointer;
                                 AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -493,6 +584,24 @@ begin
   try
     console_pixels := Lock;
     try
+=======
+                                const AFormat: TPTCFormat;
+                                const APalette: TPTCPalette;
+                                const ASource, ADestination: TPTCArea);
+var
+  console_pixels: Pointer;
+  clipped_source, clipped_destination: TPTCArea;
+  tmp: TPTCArea;
+
+begin
+  CheckOpen(    'TWinCEGDIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, ASource, ADestination)');
+  CheckUnlocked('TWinCEGDIConsole.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, ASource, ADestination)');
+  clipped_source := nil;
+  clipped_destination := nil;
+  try
+    console_pixels := Lock;
+    try
+>>>>>>> origin/cpstrnew
       clipped_source := TPTCArea.Create;
       clipped_destination := TPTCArea.Create;
       tmp := TPTCArea.Create(0, 0, AWidth, AHeight);
@@ -503,11 +612,14 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       FCopy.request(AFormat, Format);
       FCopy.palette(APalette, Palette);
       FCopy.copy(APixels, clipped_source.left, clipped_source.top, clipped_source.width, clipped_source.height, APitch,
@@ -520,11 +632,14 @@ begin
       clipped_destination.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do
@@ -534,6 +649,7 @@ end;
 
 procedure TWinCEGDIConsole.Save(APixels: Pointer;
                                 AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -580,10 +696,16 @@ procedure TWinCEGDIConsole.Save(APixels: Pointer;
                                 const APalette: TPTCPalette;
                                 const ASource, ADestination: TPTCArea);
 
+=======
+                                const AFormat: TPTCFormat;
+                                const APalette: TPTCPalette);
+
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
 end;
 
+<<<<<<< HEAD
 function TWinCEGDIConsole.Lock: Pointer;
 
 <<<<<<< HEAD
@@ -595,31 +717,53 @@ function TWinCEGDIConsole.Lock: Pointer;
                                 const APalette: TPTCPalette;
                                 const ASource, ADestination: TPTCArea);
 
+=======
+procedure TWinCEGDIConsole.Save(APixels: Pointer;
+                                AWidth, AHeight, APitch: Integer;
+                                const AFormat: TPTCFormat;
+                                const APalette: TPTCPalette;
+                                const ASource, ADestination: TPTCArea);
+
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
 end;
 
 function TWinCEGDIConsole.Lock: Pointer;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   Result := FBitmapPixels; // todo...
   FLocked := True;
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TWinCEGDIConsole.Unlock;
 <<<<<<< HEAD
+=======
+
+procedure TWinCEGDIConsole.Unlock;
+
+>>>>>>> origin/cpstrnew
 begin
   FLocked := False;
 end;
 
 procedure TWinCEGDIConsole.Clear;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
 end;
 
+<<<<<<< HEAD
 procedure TWinCEGDIConsole.Clear(AColor: IPTCColor);
 =======
 =======
@@ -694,6 +838,28 @@ var
 =======
 >>>>>>> graemeg/cpstrnew
 begin
+=======
+procedure TWinCEGDIConsole.Clear(const AColor: TPTCColor);
+
+begin
+  {todo...}
+end;
+
+procedure TWinCEGDIConsole.Clear(const AColor: TPTCColor;
+                                 const AArea: TPTCArea);
+
+begin
+  {todo...}
+end;
+
+procedure TWinCEGDIConsole.Configure(const AFileName: String);
+
+var
+  F: Text;
+  S: string;
+
+begin
+>>>>>>> origin/cpstrnew
   AssignFile(F, AFileName);
   {$push}{$I-}
   Reset(F);
@@ -703,15 +869,19 @@ begin
   {$I+}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if IOResult <> 0 then
     exit;
   while not EoF(F) do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -733,12 +903,18 @@ begin
     Readln(F, S);
     {$I+}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$I-}
+    Readln(F, S);
+    {$I+}
+>>>>>>> origin/cpstrnew
     if IOResult <> 0 then
       Break;
     Option(S);
   end;
   CloseFile(F);
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -757,6 +933,11 @@ function TWinCEGDIConsole.Option(const AOption: String): Boolean;
 function TWinCEGDIConsole.Option(const AOption: String): Boolean;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.Option(const AOption: String): Boolean;
+
+>>>>>>> origin/cpstrnew
 begin
   LOG('console option', AOption);
 
@@ -764,6 +945,7 @@ begin
 
   Result := FCopy.Option(AOption);
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -793,6 +975,11 @@ procedure TWinCEGDIConsole.Palette(const APalette: TPTCPalette);
 procedure TWinCEGDIConsole.Palette(const APalette: TPTCPalette);
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+procedure TWinCEGDIConsole.Palette(const APalette: TPTCPalette);
+
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
 end;
@@ -817,11 +1004,14 @@ function TWinCEGDIConsole.Clip: TPTCArea;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.Clip');
   Result := FClip;
@@ -829,12 +1019,19 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TWinCEGDIConsole.Palette: IPTCPalette;
+=======
+
+function TWinCEGDIConsole.Palette: TPTCPalette;
+
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
 end;
 
+<<<<<<< HEAD
 function TWinCEGDIConsole.Modes: TPTCModeList;
 begin
   Result := FModes;
@@ -914,6 +1111,28 @@ function TWinCEGDIConsole.WndProc(Ahwnd: HWND; AuMsg: UINT; AwParam: WPARAM; AlP
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+function TWinCEGDIConsole.Modes: PPTCMode;
+
+begin
+  Result := @FModes[0];
+end;
+
+procedure TWinCEGDIConsole.Flush;
+
+begin
+  {todo...}
+end;
+
+procedure TWinCEGDIConsole.Finish;
+
+begin
+  {todo...}
+end;
+
+function TWinCEGDIConsole.WndProc(Ahwnd: HWND; AuMsg: UINT; AwParam: WPARAM; AlParam: LPARAM): LRESULT;
+
+>>>>>>> origin/cpstrnew
 begin
   case AuMsg of
   WM_CLOSE: begin
@@ -946,6 +1165,7 @@ procedure TWinCEGDIConsole.Update;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var
   ClientRect: RECT;
   DeviceContext, DeviceContext2: HDC;
@@ -954,6 +1174,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   ClientRect: RECT;
@@ -961,11 +1183,14 @@ var
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen(    'TWinCEGDIConsole.Update');
   CheckUnlocked('TWinCEGDIConsole.Update');
@@ -999,6 +1224,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TWinCEGDIConsole.Update(AArea: IPTCArea);
 =======
@@ -1016,10 +1242,16 @@ procedure TWinCEGDIConsole.Update(const AArea: TPTCArea);
 procedure TWinCEGDIConsole.Update(const AArea: TPTCArea);
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+procedure TWinCEGDIConsole.Update(const AArea: TPTCArea);
+
+>>>>>>> origin/cpstrnew
 begin
   {todo...}
   Update;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -1038,6 +1270,11 @@ function TWinCEGDIConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const
 function TWinCEGDIConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.NextEvent');
 //  CheckUnlocked('TWinCEGDIConsole.NextEvent');
@@ -1047,11 +1284,14 @@ begin
   FreeAndNil(AEvent);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   repeat
     { update window }
     FWindow.Update;
@@ -1061,6 +1301,7 @@ begin
   until (not AWait) or (AEvent <> Nil);
   Result := AEvent <> nil;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1081,6 +1322,11 @@ function TWinCEGDIConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventM
 function TWinCEGDIConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.PeekEvent');
 //  CheckUnlocked('TWinCEGDIConsole.PeekEvent');
@@ -1096,6 +1342,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TWinCEGDIConsole.GetWidth: Integer;
 =======
@@ -1113,6 +1360,11 @@ function TWinCEGDIConsole.GetWidth: Integer;
 function TWinCEGDIConsole.GetWidth: Integer;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.GetWidth: Integer;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.GetWidth');
   Result := FBitmapInfo.Width;
@@ -1122,6 +1374,7 @@ function TWinCEGDIConsole.GetHeight: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -1131,6 +1384,9 @@ function TWinCEGDIConsole.GetHeight: Integer;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.GetHeight');
   Result := FBitmapInfo.Height;
@@ -1138,6 +1394,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TWinCEGDIConsole.GetPitch: Integer;
 =======
@@ -1155,10 +1412,16 @@ function TWinCEGDIConsole.GetPitch: Integer;
 function TWinCEGDIConsole.GetPitch: Integer;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.GetPitch: Integer;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.GetPitch');
   Result := FBitmapInfo.Pitch;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1179,10 +1442,16 @@ function TWinCEGDIConsole.GetFormat: TPTCFormat;
 function TWinCEGDIConsole.GetFormat: TPTCFormat;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.GetFormat: TPTCFormat;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.GetFormat');
   Result := FBitmapInfo.Format;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -1201,6 +1470,11 @@ function TWinCEGDIConsole.GetArea: TPTCArea;
 function TWinCEGDIConsole.GetArea: TPTCArea;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.GetArea: TPTCArea;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.GetArea');
   Result := FArea;
@@ -1208,6 +1482,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TWinCEGDIConsole.GetPages: Integer;
 =======
@@ -1225,10 +1500,16 @@ function TWinCEGDIConsole.GetPages: Integer;
 function TWinCEGDIConsole.GetPages: Integer;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.GetPages: Integer;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.GetPages');
   Result := 2;
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1292,11 +1573,30 @@ function TWinCEGDIConsole.GetInformation: string;
 function TWinCEGDIConsole.GetInformation: string;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+function TWinCEGDIConsole.GetName: string;
+
+begin
+  Result := 'WinCE';
+end;
+
+function TWinCEGDIConsole.GetTitle: string;
+
+begin
+  CheckOpen('TWinCEGDIConsole.GetTitle');
+  Result := FTitle;
+end;
+
+function TWinCEGDIConsole.GetInformation: string;
+
+>>>>>>> origin/cpstrnew
 begin
   CheckOpen('TWinCEGDIConsole.GetInformation');
   Result := ''; // todo...
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1313,6 +1613,10 @@ procedure TWinCEGDIConsole.CheckOpen(AMessage: String);
 procedure TWinCEGDIConsole.CheckOpen(AMessage: String);
 
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TWinCEGDIConsole.CheckOpen(AMessage: String);
+
+>>>>>>> origin/cpstrnew
 begin
   if not FOpen then
   try
@@ -1323,6 +1627,7 @@ begin
   end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1339,6 +1644,10 @@ procedure TWinCEGDIConsole.CheckUnlocked(AMessage: String);
 procedure TWinCEGDIConsole.CheckUnlocked(AMessage: String);
 
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TWinCEGDIConsole.CheckUnlocked(AMessage: String);
+
+>>>>>>> origin/cpstrnew
 begin
   if FLocked then
   try

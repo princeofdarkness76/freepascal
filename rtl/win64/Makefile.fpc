@@ -10,6 +10,7 @@ loaders=$(LOADERS)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 buildrtl cpall lineinfo lnfodwrf
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
@@ -20,6 +21,9 @@ units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 >>>>>>> graemeg/cpstrnew
+=======
+units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
+>>>>>>> origin/cpstrnew
 implicitunits=ctypes strings \
       extpas \
       heaptrc \
@@ -44,11 +48,14 @@ implicitunits=ctypes strings \
       cpu signals
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 # mmx
 #      fpcmemdll
 #     winsysut signals

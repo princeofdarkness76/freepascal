@@ -46,6 +46,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _pad: array[0..(3)-1] of Pointer;
 =======
         _pad: array[0..2] of Pointer;
@@ -56,6 +57,9 @@
 =======
         _pad: array[0..2] of Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+        _pad: array[0..2] of Pointer;
+>>>>>>> origin/cpstrnew
     
   public
     class function colorWithCGColor(c: CGColorRef): CIColor; message 'colorWithCGColor:';

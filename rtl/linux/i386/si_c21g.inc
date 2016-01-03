@@ -36,6 +36,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$asmmode att}
 
 { Some helpers }
@@ -82,6 +83,16 @@ end;
     for details about the copyright.
 
 >>>>>>> graemeg/cpstrnew
+=======
+{
+    This file is part of the Free Pascal run time library.
+    Copyright (c) 2005 by Michael Van Canneyt, Peter Vreman,
+    & Daniel Mantione, members of the Free Pascal development team.
+
+    See the file COPYING.FPC, included in this distribution,
+    for details about the copyright.
+
+>>>>>>> origin/cpstrnew
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
@@ -112,6 +123,7 @@ end;
 {$asmmode att}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { Some helpers }
 
@@ -138,6 +150,11 @@ end;
 { Some helpers }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+{ Some helpers }
+
+>>>>>>> origin/cpstrnew
 {$ifdef FPC_PIC}
 function fpc0geteipasebx : pointer; compilerproc; nostackframe; assembler; 
 asm  
@@ -152,9 +169,12 @@ asm
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure gmon_mcleanup; cdecl; external name '_mcleanup';
 procedure gmon_monstartup (main,etext : pointer);cdecl;external name 'monstartup';
 
@@ -190,6 +210,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   popl    %ecx                    { Get argc in ecx }
 
@@ -220,6 +241,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   popl    %ecx                    { Get argc in ecx }
 
@@ -237,6 +260,7 @@ asm
 
 	movl  dlexitproc@GOT(%ebx),%ecx
 	movl  %edx,(%ecx)
+<<<<<<< HEAD
 
 	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
 	movl  %eax,(%ecx)
@@ -252,6 +276,16 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+	movl  operatingsystem_parameter_envp@GOT(%ebx),%ecx
+	movl  %eax,(%ecx)
+
+	movl  operatingsystem_parameter_argc@GOT(%ebx),%edx
+	popl  %ecx
+	movl  %ecx,(%edx)
+
+>>>>>>> origin/cpstrnew
 	movl  operatingsystem_parameter_argv@GOT(%ebx),%edx
 	popl  %ebx
 	movl  %ebx,(%edx)
@@ -276,6 +310,7 @@ asm
   {$endif FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { int __libc_start_main(
 		int *(main) (int, char * *, char * *), 
@@ -366,9 +401,35 @@ begin
   int     $0x80
   jmp     .Lhaltproc
  end;
+=======
+
+        { int __libc_start_main(
+		int *(main) (int, char * *, char * *), 
+		int argc, 
+		char * * ubp_av, 
+		void (*init) (void), 
+		void (*fini) (void), 
+		void (*rtld_fini) (void), 
+		void (* stack_end)); } 
+
+        pushl %ebp   			{ padding }
+        pushl %esp   			{ stack_end }
+        pushl %edx   			{ function to be registered with
+                      			  atexit(), passed by loader }
+        pushl $_init_fini_dummy
+        pushl $_init_fini_dummy
+        pushl %ebx                      { Push second argument: argv.  }
+        pushl %ecx                      { Push first argument: argc.  }
+
+        pushl $_FPC_libc21_gprof_gmon_start
+
+        call  libc_start_main
+	hlt
+>>>>>>> origin/cpstrnew
 end;
 =======
 
+<<<<<<< HEAD
 =======
 
         { int __libc_start_main(
@@ -408,6 +469,8 @@ end;
 	hlt
 end;
 
+=======
+>>>>>>> origin/cpstrnew
 procedure _FPC_libc21_gprof_haltproc(e:longint);cdecl;public name '_haltproc';
 begin
   if gmon_monstarted=1 then
@@ -475,8 +538,11 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

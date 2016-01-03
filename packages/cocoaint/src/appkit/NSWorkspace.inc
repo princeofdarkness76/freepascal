@@ -123,6 +123,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef cpu64}
     deviceStatusCount: cint;
     applicationStatusCount: cint;
@@ -139,6 +140,10 @@ var
     deviceStatusCount: cint;
     applicationStatusCount: cint;
 >>>>>>> graemeg/cpstrnew
+=======
+    deviceStatusCount: cint;
+    applicationStatusCount: cint;
+>>>>>>> origin/cpstrnew
     _reservedWorkspace1: id;
     
   public

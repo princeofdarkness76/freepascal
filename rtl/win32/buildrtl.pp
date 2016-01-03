@@ -21,11 +21,14 @@ unit buildrtl;
       video, mouse, keyboard, fmtbcd,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       winsysut, sharemem, fpintres, windirs;
 
   implementation

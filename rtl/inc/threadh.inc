@@ -50,6 +50,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TInitThreadVarHandler = Procedure(var offset : {$ifdef cpu16}word{$else}dword{$endif};size : dword);
   TRelocateThreadVarHandler = Function(offset : {$ifdef cpu16}word{$else}dword{$endif}) : pointer;
 =======
@@ -57,6 +58,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TInitThreadVarHandler = Procedure(var offset : dword;size : dword);
   TRelocateThreadVarHandler = Function(offset : dword) : pointer;
 >>>>>>> graemeg/cpstrnew

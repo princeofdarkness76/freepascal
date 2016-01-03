@@ -9,6 +9,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   windows;
 =======
   windows,
@@ -22,6 +23,10 @@ uses
   windows,
   strings;
 >>>>>>> graemeg/cpstrnew
+=======
+  windows,
+  strings;
+>>>>>>> origin/cpstrnew
 
 Const
   CSIDL_PROGRAMS                = $0002; { %SYSTEMDRIVE%\Program Files                                      }
@@ -77,6 +82,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: {$ifdef FPC_UNICODE_RTL}PWideChar{$ELSE}PChar{$ENDIF}): HRESULT; stdcall;
 =======
   PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
@@ -90,6 +96,10 @@ Type
   PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  PFNSHGetFolderPath = Function(Ahwnd: HWND; Csidl: Integer; Token: THandle; Flags: DWord; Path: PChar): HRESULT; stdcall;
+
+>>>>>>> origin/cpstrnew
 
 var
   SHGetFolderPath : PFNSHGetFolderPath = Nil;
@@ -98,6 +108,7 @@ var
 Procedure InitDLL;
 
 Var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,6 +122,9 @@ Var
 =======
   pathBuf: array[0..MAX_PATH-1] of char;
 >>>>>>> graemeg/cpstrnew
+=======
+  pathBuf: array[0..MAX_PATH-1] of char;
+>>>>>>> origin/cpstrnew
   pathLength: Integer;
 begin
   { Load shfolder.dll using a full path, in order to prevent spoofing (Mantis #18185)
@@ -127,6 +141,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,{$ifdef FPC_UNICODE_RTL}'SHGetFolderPathW'{$else}'SHGetFolderPathA'{$endif});
 =======
       Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,'SHGetFolderPathA');
@@ -137,6 +152,9 @@ begin
 =======
       Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,'SHGetFolderPathA');
 >>>>>>> graemeg/cpstrnew
+=======
+      Pointer(ShGetFolderPath):=GetProcAddress(CFGDLLHandle,'SHGetFolderPathA');
+>>>>>>> origin/cpstrnew
       If @ShGetFolderPath=nil then
       begin
         FreeLibrary(CFGDLLHandle);

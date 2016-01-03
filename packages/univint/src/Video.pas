@@ -71,6 +71,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -82,6 +83,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -100,6 +103,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -133,12 +137,24 @@ interface
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 >>>>>>> graemeg/cpstrnew
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -155,6 +171,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -164,6 +182,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -171,10 +190,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -271,6 +293,39 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -310,12 +365,17 @@ interface
 uses MacTypes,QuickdrawTypes;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
@@ -356,6 +416,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
 	thirtyTwoBitMode = 133;  {Id of ThirtyTwoBitMode Parameter list.}
@@ -571,6 +632,8 @@ const
 { csResolutionFlags bit flags for VDResolutionInfoRec }
 const
 =======
+=======
+>>>>>>> origin/cpstrnew
 const
 	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
 	thirtyTwoBitMode = 133;  {Id of ThirtyTwoBitMode Parameter list.}
@@ -739,6 +802,7 @@ const
 
 { csTimingFlags values in VDTimingInfoRec }
 const
+<<<<<<< HEAD
 =======
 const
 	sixteenBitMode = 132;  {Id of SixteenBitMode Parameter list.}
@@ -909,6 +973,8 @@ const
 { csTimingFlags values in VDTimingInfoRec }
 const
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kModeValid = 0;    { Says that this mode should NOT be trimmed. }
 	kModeSafe = 1;    { This mode does not need confirmation }
 	kModeDefault = 2;    { This is the default mode for this type of connection }
@@ -929,9 +995,12 @@ const
 { csResolutionFlags bit flags for VDResolutionInfoRec }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kResolutionHasMultipleDepthSizes = 0;  { Says that this mode has different csHorizontalPixels, csVerticalLines at different depths (usually slightly larger at lower depths) }
 
 
@@ -1175,6 +1244,7 @@ type
     For 'standard' sense code hardware, the raw sense is obtained as follows:
         ¥ Instruct the frame buffer controller NOT to actively drive any of the monitor sense lines
         ¥ Read the state of the monitor sense lines 2, 1, and 0.  (2 is the MSB, 0 the LSB)
+<<<<<<< HEAD
 
     IMPORTANT Note: 
     When the 'kTaggingInfoNonStandard' bit of 'csConnectFlags' is FALSE, then these constants 
@@ -1205,6 +1275,38 @@ const
         ¥ Drive sense line 'B' low and read the values of 'A' and 'C'.
         ¥ Drive sense line 'C' low and read the values of 'A' and 'B'.
 
+=======
+
+    IMPORTANT Note: 
+    When the 'kTaggingInfoNonStandard' bit of 'csConnectFlags' is FALSE, then these constants 
+    are valid 'csConnectTaggedType' values in 'VDDisplayConnectInfo' 
+
+}
+type
+	RawSenseCode = UInt8;
+const
+	kRSCZero = 0;
+	kRSCOne = 1;
+	kRSCTwo = 2;
+	kRSCThree = 3;
+	kRSCFour = 4;
+	kRSCFive = 5;
+	kRSCSix = 6;
+	kRSCSeven = 7;
+
+
+{ ExtendedSenseCode
+    This abstract data type is not exactly abstract.  Rather, it is merely enumerated constants
+    for the values which are possible when the extended sense algorithm is applied to hardware
+    which implements 'standard' sense code hardware.
+
+    For 'standard' sense code hardware, the extended sense code algorithm is as follows:
+    (Note:  as described here, sense line 'A' corresponds to '2', 'B' to '1', and 'C' to '0')
+        ¥ Drive sense line 'A' low and read the values of 'B' and 'C'.  
+        ¥ Drive sense line 'B' low and read the values of 'A' and 'C'.
+        ¥ Drive sense line 'C' low and read the values of 'A' and 'B'.
+
+>>>>>>> origin/cpstrnew
     In this way, a six-bit number of the form BC/AC/AB is generated. 
 
     IMPORTANT Note: 
@@ -1217,6 +1319,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kESCZero21Inch = $00; { 21" RGB                     }
 	kESCOnePortraitMono = $14; { Portrait Monochrome              }
@@ -1333,6 +1436,8 @@ type
 const
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 const
 	kESCZero21Inch = $00; { 21" RGB                     }
 	kESCOnePortraitMono = $14; { Portrait Monochrome              }
@@ -1370,7 +1475,10 @@ const
 type
 	DepthMode = UInt16;
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kDepthMode1 = 128;
 	kDepthMode2 = 129;
 	kDepthMode3 = 130;
@@ -1818,6 +1926,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -1834,6 +1943,10 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 const
 { csHorizontalSyncConfig and csVerticalSyncConfig}
 	kSyncPositivePolarityBit = 0;    { Digital separate sync polarity for analog interfaces (0 => negative polarity)}

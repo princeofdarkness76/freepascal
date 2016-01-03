@@ -116,6 +116,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (*
 =======
 {
@@ -126,6 +127,9 @@ end;
 =======
 {
 >>>>>>> graemeg/cpstrnew
+=======
+{
+>>>>>>> origin/cpstrnew
     //FROM MSDN (Error messages are different in MSDN.DllGetClassObject)
 
     HRESULT hres = E_OUTOFMEMORY;
@@ -140,6 +144,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 *)
 =======
 }
@@ -150,6 +155,9 @@ end;
 =======
 }
 >>>>>>> graemeg/cpstrnew
+=======
+}
+>>>>>>> origin/cpstrnew
 
 function DllGetClassObject(const rclsid: REFIID {should be REFCLSID}; const riid: REFIID; out ppv: Pointer): HResult; stdcall;
 var
@@ -234,6 +242,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind);
 =======
     OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
@@ -244,6 +253,9 @@ begin
 =======
     OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
 >>>>>>> graemeg/cpstrnew
+=======
+    OleCheck(ActiveX.UnRegisterTypeLib(ptla^.guid, ptla^.wMajorVerNum, ptla^.wMinorVerNum, ptla^.lcid, ptla^.syskind));
+>>>>>>> origin/cpstrnew
   finally
     TypeLib.ReleaseTLibAttr(ptla);
   end;

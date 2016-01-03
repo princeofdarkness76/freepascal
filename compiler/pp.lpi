@@ -15,12 +15,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Title Value="ppc386"/>
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       <Title Value="pp"/>
 >>>>>>> graemeg/cpstrnew
     </General>
@@ -38,6 +41,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <CommandLineParams Value="-n @\home\florian\bin\fpc.cfg \home\florian\fpc\tests\test\cg\tsar1.pp"/>
         <LaunchingApplication PathPlusParams="\usr\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
@@ -50,6 +54,10 @@
         <CommandLineParams Value="-n @\home\florian\bin\fpc.cfg \home\florian\fpc\tests\test\cg\tsar1.pp"/>
         <LaunchingApplication PathPlusParams="\usr\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CommandLineParams Value="-n @\home\florian\bin\fpc.cfg \home\florian\fpc\tests\test\cg\tsar1.pp"/>
+        <LaunchingApplication PathPlusParams="\usr\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
+>>>>>>> origin/cpstrnew
       </local>
     </RunParams>
     <Units Count="3">
@@ -74,6 +82,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="11"/>
 =======
     <Version Value="9"/>
@@ -84,6 +93,9 @@
 =======
     <Version Value="9"/>
 >>>>>>> graemeg/cpstrnew
+=======
+    <Version Value="9"/>
+>>>>>>> origin/cpstrnew
     <PathDelim Value="\"/>
     <Target>
       <Filename Value="i386\pp"/>

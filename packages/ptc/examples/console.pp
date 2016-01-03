@@ -19,6 +19,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   palette: IPTCPalette;
 =======
@@ -33,10 +34,15 @@ var
   console: TPTCConsole = nil;
   palette: TPTCPalette = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  console: TPTCConsole = nil;
+  palette: TPTCPalette = nil;
+>>>>>>> origin/cpstrnew
   data: array [0..255] of DWord;
   i: Integer;
   pixels: PByte;
   width, height, pitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -50,6 +56,9 @@ var
 =======
   format: TPTCFormat;
 >>>>>>> graemeg/cpstrnew
+=======
+  format: TPTCFormat;
+>>>>>>> origin/cpstrnew
   bits, bytes: Integer;
   x, y: Integer;
   color: DWord;
@@ -59,6 +68,7 @@ begin
   try
     try
       { create console }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -72,11 +82,15 @@ begin
 =======
       console := TPTCConsole.Create;
 >>>>>>> graemeg/cpstrnew
+=======
+      console := TPTCConsole.Create;
+>>>>>>> origin/cpstrnew
 
       { open the console with one page }
       console.open('Console example', 1);
 
       { create palette }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -90,12 +104,16 @@ begin
 =======
       palette := TPTCPalette.Create;
 >>>>>>> graemeg/cpstrnew
+=======
+      palette := TPTCPalette.Create;
+>>>>>>> origin/cpstrnew
 
       { generate palette }
       for i := 0 to 255 do
         data[i] := i;
 
       { load palette data }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,22 +126,28 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       palette.load(data);
 
       { set console palette }
       console.palette(palette);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       { loop until a key is pressed }
       while not console.KeyPressed do
       begin
         { lock console }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -137,6 +161,9 @@ begin
 =======
         pixels := console.lock;
 >>>>>>> graemeg/cpstrnew
+=======
+        pixels := console.lock;
+>>>>>>> origin/cpstrnew
 
         try
           { get console dimensions }
@@ -189,6 +216,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           console.Unlock;
         end;
 
@@ -203,6 +231,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           console.unlock;
         end;
 
@@ -215,11 +245,14 @@ begin
       console.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

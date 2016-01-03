@@ -75,6 +75,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           ait_symbolpair,
           ait_weak,
 =======
@@ -92,6 +93,11 @@ interface
           ait_thumb_func,
 {$endif arm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef arm}
+          ait_thumb_func,
+{$endif arm}
+>>>>>>> origin/cpstrnew
           { used to split into tiny assembler files }
           ait_cutobject,
           ait_regalloc,
@@ -224,6 +230,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           'symbolpair',
           'weak',
 =======
@@ -241,6 +248,11 @@ interface
           'thumb_func',
 {$endif arm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef arm}
+          'thumb_func',
+{$endif arm}
+>>>>>>> origin/cpstrnew
           'cut',
           'regalloc',
           'tempalloc',
@@ -273,11 +285,14 @@ interface
        ,top_modeflags
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif arm}
 {$if defined(arm) or defined(aarch64)}
        ,top_conditioncode
@@ -427,6 +442,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         asd_weak_definition,
         { for Jasmin }
         asd_jclass,asd_jinterface,asd_jsuper,asd_jfield,asd_jlimit,asd_jline,
@@ -445,6 +461,9 @@ interface
 =======
         asd_weak_definition
 >>>>>>> graemeg/cpstrnew
+=======
+        asd_weak_definition
+>>>>>>> origin/cpstrnew
       );
 
       TAsmSehDirective=(
@@ -471,6 +490,7 @@ interface
       directivestr : array[TAsmDirective] of string[23]=(
         'indirect_symbol',
         'extern','nasm_import', 'tc', 'reference',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -502,6 +522,9 @@ interface
 =======
         'no_dead_strip','weak_reference','lazy_reference','weak_definition'
 >>>>>>> graemeg/cpstrnew
+=======
+        'no_dead_strip','weak_reference','lazy_reference','weak_definition'
+>>>>>>> origin/cpstrnew
       );
 
     type
@@ -670,6 +693,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$warnings off}
          private
           { this constructor is made private on purpose }
@@ -681,17 +705,22 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          private
           { this constructor is made private on purpose }
           { because sections should be created via new_section() }
           constructor Create(Asectype:TAsmSectiontype;Aname:string;Aalign:byte;Asecorder:TasmSectionorder=secorder_default);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
 
 
@@ -700,6 +729,7 @@ interface
           is_global : boolean;
           sym       : tasmsymbol;
           size      : asizeint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -713,6 +743,9 @@ interface
 =======
           constructor Create(const _name : string;_size : aint);
 >>>>>>> graemeg/cpstrnew
+=======
+          constructor Create(const _name : string;_size : aint);
+>>>>>>> origin/cpstrnew
           constructor Create_global(const _name : string;_size : asizeint);
           constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
           procedure ppuwrite(ppufile:tcompilerppufile);override;
@@ -763,6 +796,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           constructor Createname(const name:string;ofs:asizeint);
           constructor Createname(const name:string;_symtyp:Tasmsymtype;ofs:asizeint);
           constructor Create_type_name(_typ:taiconst_type;const name:string;ofs:asizeint);
@@ -781,6 +815,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           constructor Createname(const name:string;ofs:aint);
 >>>>>>> graemeg/cpstrnew
           constructor ppuload(t:taitype;ppufile:tcompilerppufile);override;
@@ -1090,6 +1126,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cai_seh_directive: tai_seh_directive_class = tai_seh_directive;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1097,6 +1134,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       { hook to notify uses of registers }
       add_reg_instruction_hook : tadd_reg_instruction_proc;
@@ -1935,6 +1974,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor tai_const.Createname(const name:string;ofs:asizeint);
       begin
          self.Createname(name,AT_NONE,ofs);
@@ -1947,6 +1987,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     constructor tai_const.Createname(const name:string;ofs:aint);
 >>>>>>> graemeg/cpstrnew
       begin
@@ -2086,6 +2128,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           aitconst_32bit,aitconst_darwin_dwarf_delta32,
 	  aitconst_32bit_unaligned:
             result:=4;
@@ -2106,6 +2149,11 @@ implementation
             result:=4;
           aitconst_64bit,aitconst_darwin_dwarf_delta64:
 >>>>>>> graemeg/cpstrnew
+=======
+          aitconst_32bit,aitconst_darwin_dwarf_delta32:
+            result:=4;
+          aitconst_64bit,aitconst_darwin_dwarf_delta64:
+>>>>>>> origin/cpstrnew
             result:=8;
           aitconst_secrel32_symbol,
           aitconst_rva_symbol :
@@ -2205,11 +2253,14 @@ implementation
         savesize:=ppufile.getbyte;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -2227,11 +2278,14 @@ implementation
         ppufile.putbyte(savesize);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -2402,6 +2456,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         is_global:=(labsym.bind in [AB_GLOBAL,AB_PRIVATE_EXTERN]);
 >>>>>>> graemeg/cpstrnew
@@ -2411,6 +2466,9 @@ implementation
 =======
         is_global:=(labsym.bind in [AB_GLOBAL,AB_PRIVATE_EXTERN]);
 >>>>>>> graemeg/cpstrnew
+=======
+        is_global:=(labsym.bind in [AB_GLOBAL,AB_PRIVATE_EXTERN]);
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -3315,6 +3373,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {****************************************************************************
                               tai_seh_directive
@@ -3531,4 +3590,6 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.

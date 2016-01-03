@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -16,6 +17,9 @@
 =======
      Version:    HIToolbox-437~1
 >>>>>>> graemeg/cpstrnew
+=======
+     Version:    HIToolbox-437~1
+>>>>>>> origin/cpstrnew
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
  
@@ -40,6 +44,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -47,6 +52,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -104,6 +111,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -115,6 +123,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -133,6 +143,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -156,12 +167,24 @@ interface
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -188,6 +211,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -197,6 +222,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -204,10 +230,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -298,6 +327,9 @@ interface
 =======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -329,9 +361,12 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -478,6 +513,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	HIObjectClassRef = ^OpaqueHIObjectClassRef; { an opaque type }
 	OpaqueHIObjectClassRef = record end;
 	HIObjectClassRefPtr = ^HIObjectClassRef; { when a var xx:HIObjectClassRef parameter can be nil, it is changed to xx: HIObjectClassRefPtr }
@@ -498,6 +534,11 @@ type
 	HIObjectClassRefPtr = ^HIObjectClassRef; { when a var xx:HIObjectClassRef parameter can be nil, it is changed to xx: HIObjectClassRefPtr }
 	HIObjectRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	HIObjectClassRef = ^SInt32; { an opaque type }
+	HIObjectClassRefPtr = ^HIObjectClassRef; { when a var xx:HIObjectClassRef parameter can be nil, it is changed to xx: HIObjectClassRefPtr }
+	HIObjectRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 {--------------------------------------------------------------------------------------}
 {  ¥ Constants                                                                         }
 {--------------------------------------------------------------------------------------}
@@ -1235,6 +1276,325 @@ const
  *          The HIArchive reference into which the HIObject should be
  *          stored.
 >>>>>>> graemeg/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventDelegateGetGroupClasses = 5;
+
+{--------------------------------------------------------------------------------------}
+{  ¥ API                                                                               }
+{--------------------------------------------------------------------------------------}
+{
+ *  kEventClassHIObject / kEventHIObjectCreatedFromArchive
+ *  
+ *  Summary:
+ *    Your object has been recreated from an archive.
+ *  
+ *  Discussion:
+ *    This event is a notification that your object has been decoded
+ *    from an archive. This event is also sent by IBCarbonRuntime after
+ *    recreating a window, control, or menu from a nib file. The event
+ *    is provided so that your object can perform any necessary
+ *    post-decoding initialization or setup. 
+ *    
+ *    At the time this event is sent, the object has been completely
+ *    decoded and initialized using data from the archive. However, the
+ *    object has not yet been returned to the caller of the decoding
+ *    API (either HIArchiveCopyDecodedCFType, CreateWindowFromNib, or
+ *    CreateMenuFromNib), and so the caller will not be able to install
+ *    an event handler on the object for this event before the event is
+ *    sent. Therefore, there are only two ways to handle this event: an
+ *    object that is a custom subclass of HIObject or HIView can
+ *    install a handler for this event in its kEventHIObjectInitialize
+ *    handler, or an object (not necessarily a custom subclass) can
+ *    have the class ID of a delegate HIObject specified in its
+ *    archived data, and the delegate object can have a handler for
+ *    this event. 
+ *    
+ *    This event is only sent to the object that has been decoded; it
+ *    is not propagated past that object. It is sent to all handlers
+ *    registered for it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamHIObjectInstance (in, typeHIObjectRef)
+ *          The object that has been recreated from an archive.
+ *    
+ *    --> kEventParamDecodingForEditor (in, typeBoolean)
+ *          Indicates whether the client that is decoding the archive
+ *          is doing so for the purposes of editing the archive
+ *          contents. Event handlers for this event may choose to
+ *          ignore the event in this case, if appropriate.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventHIObjectCreatedFromArchive = 7;
+
+{
+ *  kEventClassHIObject / kEventHIObjectGetInitParameters
+ *  
+ *  Summary:
+ *    Requests information about the init event parameters supported by
+ *    this object.
+ *  
+ *  Discussion:
+ *    This event is typically used by UI editing environments that are
+ *    providing the ability to edit an instance of an object. The
+ *    object should respond to this event by first calling
+ *    CallNextEventHandler, so that superclasses can add their own
+ *    event parameters, and then by adding CFDictionaries containing
+ *    information about the init event parameters supported by this
+ *    object class. Each dictionary should, at a minimum, contain data
+ *    for two keys, kHIObjectInitParamEventName and
+ *    kHIObjectInitParamEventType, which are both CFStringRefs. The
+ *    contents of each string should be a four-character code,
+ *    indicating (respectively) the OSType for the event parameter, and
+ *    the OSType for the parameter type. The dictionary may optionally
+ *    contain data for other keys, as described above.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamHIObjectInstance (in, typeHIObjectRef)
+ *          The object whose parameters are being requested.
+ *    
+ *    --> kEventParamInitParameters (in, typeCFMutableArrayRef)
+ *          On entry, contains a mutable CFArrayRef. A handler for this
+ *          event should add CFDictionaries containing data about each
+ *          init event parameter supported by this HIObject class.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventHIObjectGetInitParameters = 8;
+
+{--------------------------------------------------------------------------------------}
+{  ¥ kEventClassDelegate                                                               }
+{--------------------------------------------------------------------------------------}
+
+const
+{
+   * The event class for events that are sent to HIObject delegate
+   * objects. This event class is available in Mac OS X 10.5 and later.
+   }
+	kEventClassDelegate = FourCharCode('dele');
+
+  {
+   * [typeHIObjectRef]  The HIObject to which a delegate is attached.
+   }
+	kEventParamDelegateTarget = FourCharCode('delt');
+
+  {
+   * [typeCFMutableArrayRef]  A list of HIObject classes to which a
+   * delegate can be attached.
+   }
+	kEventParamDelegateTargetClasses = FourCharCode('trgc');
+
+  {
+   * [typeCFMutableArrayRef]  A list of HIObject delegate classes that
+   * is installed automatically by this delegate.
+   }
+	kEventParamDelegateGroupClasses = FourCharCode('grpc');
+
+  {
+   * [typeCFDictionaryRef] This parameter is used with
+   * kEventHIObjectInitialize when that event is sent to a delegate
+   * group object. The event data is a dictionary containing custom
+   * archive data for the subdelegates of a delegate group. The keys
+   * are subdelegate class IDs, and the values are CFDictionaryRefs in
+   * the custom archive data format.
+   }
+	kEventParamDelegateGroupParameters = FourCharCode('grpp');
+
+{
+    kEventClassDelegate quick reference:
+    
+    These are the events that are sent to HIObjects that are serving as delegates to another object.
+    You should only need to be aware of these if you are implementing a delegate object.
+    
+    kEventDelegateInstalled         = 1,
+    kEventDelegateRemoved           = 2,
+    kEventDelegateGetTargetClasses  = 3,
+    kEventDelegateIsGroup           = 4,
+    kEventDelegateGetGroupClasses   = 5
+}
+{
+ *  kEventClassDelegate / kEventDelegateInstalled
+ *  
+ *  Summary:
+ *    Notifies a delegate that it has been installed on another object.
+ *  
+ *  Discussion:
+ *    Most delegate objects can ignore this event, but a delegate that
+ *    implements a delegate group should handle this event so it can
+ *    install its subdelegate objects. This event is sent to all
+ *    handlers registered for it. This event is only sent to the
+ *    delegate object, and is not propagated past it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeHIObjectRef)
+ *          The delegate object.
+ *    
+ *    --> kEventParamDelegateTarget (in, typeHIObjectRef)
+ *          The object on which the delegate is being installed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventDelegateInstalled = 1;
+
+{
+ *  kEventClassDelegate / kEventDelegateRemoved
+ *  
+ *  Summary:
+ *    Notifies a delegate that it has been removed from another object.
+ *  
+ *  Discussion:
+ *    Most delegate objects can ignore this event, but a delegate that
+ *    implements a delegate group should handle this event so it can
+ *    remove its subdelegate objects. This event is sent to all
+ *    handlers registered for it. This event is only sent to the
+ *    delegate object, and is not propagated past it.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeHIObjectRef)
+ *          The delegate object.
+ *    
+ *    --> kEventParamDelegateTarget (in, typeHIObjectRef)
+ *          The object from which the delegate is being removed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventDelegateRemoved = 2;
+
+{
+ *  kEventClassDelegate / kEventDelegateGetTargetClasses
+ *  
+ *  Summary:
+ *    Requests a list of HIObject classes to which a delegate can be
+ *    attached.
+ *  
+ *  Discussion:
+ *    This event is typically used by user interface editor
+ *    applications to determine whether a delegate object can be
+ *    attached to a particular HIObject. If this event is not handled,
+ *    the event sender should assume that the object can be attached to
+ *    any type of object.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeHIObjectRef)
+ *          The delegate object.
+ *    
+ *    --> kEventParamDelegateTargetClasses (in, typeCFMutableArrayRef)
+ *          On entry, contains a mutable CFArrayRef. A handler for this
+ *          event should add CFStringRefs containing the HIObject class
+ *          IDs to which this object can be attached.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventDelegateGetTargetClasses = 3;
+
+{
+ *  kEventClassDelegate / kEventDelegateIsGroup
+ *  
+ *  Summary:
+ *    Indicates whether a delegate is a delegate group.
+ *  
+ *  Discussion:
+ *    A delegate group is a delegate object that installs other
+ *    delegates when it is itself installed.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeHIObjectRef)
+ *          The delegate object.
+ *    
+ *    <-- kEventParamResult (out, typeBoolean)
+ *          On return, indicates whether the object is a delegate
+ *          group. If not present, the event sender should assume that
+ *          the object is not a group.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in Carbon.framework
+ *    CarbonLib:        not available
+ }
+const
+	kEventDelegateIsGroup = 4;
+
+{
+ *  kEventClassDelegate / kEventDelegateGetGroupClasses
+ *  
+ *  Summary:
+<<<<<<< HEAD
+ *    Retrieves the HIObject class IDs of the delegates that are
+ *    installed by a delegate group.
+=======
+ *    Your object is being requested to encode itself into an archive.
+ *  
+ *  Discussion:
+ *    HIArchiveEncodeCFType has been called on your HIObject, and you
+ *    are being asked to encode any relevant long-term instance data to
+ *    the HIArchive provided. Your handler should pass this event on to
+ *    the superclass first before handling this event, by calling
+ *    CallNextEventHandler with the event. If CallNextEventHandler does
+ *    not return noErr, you should not continue to encode your instance
+ *    data.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+<<<<<<< HEAD
+ *    --> kEventParamDirectObject (in, typeHIObjectRef)
+ *          The delegate object.
+ *    
+ *    --> kEventParamDelegateGroupClasses (in, typeCFMutableArrayRef)
+ *          On entry, contains a mutable CFArrayRef. A handler for this
+ *          event should add CFStringRefs containing the HIObject class
+ *          IDs which this object installs.
+=======
+ *    --> kEventParamHIArchive (in, typeCFTypeRef)
+ *          The HIArchive reference into which the HIObject should be
+ *          stored.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in Carbon.framework
@@ -2443,6 +2803,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	ControlRef = ^OpaqueControlRef; { an opaque type }
 	OpaqueControlRef = record end;
 =======
@@ -2454,6 +2815,9 @@ type
 =======
 	ControlRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	ControlRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	ControlRefPtr = ^ControlRef;
 { ControlHandle is obsolete. Use ControlRef.}
 type

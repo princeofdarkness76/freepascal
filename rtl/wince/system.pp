@@ -108,6 +108,7 @@ function CreateFileW(lpFileName:pwidechar; dwDesiredAccess:DWORD; dwShareMode:DW
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -118,6 +119,10 @@ function CreateFileW(lpFileName:pwidechar; dwDesiredAccess:DWORD; dwShareMode:DW
 { the external directive isn't really necessary here because it is overridden by external (FK) }
 
 >>>>>>> graemeg/cpstrnew
+=======
+{ the external directive isn't really necessary here because it is overridden by external (FK) }
+
+>>>>>>> origin/cpstrnew
 function addd(d1,d2 : double) : double; compilerproc;
    cdecl;external 'coredll' name '__addd';
 

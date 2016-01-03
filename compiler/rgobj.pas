@@ -182,6 +182,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         spillednodes: tsuperregisterworklist;
 
         { can be overridden to add cpu specific interferences }
@@ -192,17 +193,22 @@ unit rgobj;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { can be overridden to add cpu specific interferences }
         procedure add_cpu_interferences(p : tai);virtual;
         procedure add_constraints(reg:Tregister);virtual;
         function  get_alias(n:Tsuperregister):Tsuperregister;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         function  getregisterinline(list:TAsmList;const subregconstraints:Tsubregisterset):Tregister;
         procedure ungetregisterinline(list:TAsmList;r:Tregister);
         function  get_spill_subreg(r : tregister) : tsubregister;virtual;
@@ -249,6 +255,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         has_usedmarks: boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -257,6 +264,8 @@ unit rgobj;
 
         { Disposes of the reginfo array.}
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifdef EXTDEBUG}
         procedure writegraph(loopidx:longint);
@@ -448,6 +457,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          // default values set by newinstance
          // used_in_proc:=[];
          // ssa_safe:=false;
@@ -463,6 +473,10 @@ unit rgobj;
          // default value set by newinstance
          // used_in_proc:=[];
 >>>>>>> graemeg/cpstrnew
+=======
+         // default value set by newinstance
+         // used_in_proc:=[];
+>>>>>>> origin/cpstrnew
          live_registers.init;
          { Get reginfo for CPU registers }
          maxreginfo:=first_imaginary;
@@ -2116,6 +2130,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister;orgsupreg:tsuperregister);
       var
         ins:tai_cpu_abstract_sym;
@@ -2134,6 +2149,11 @@ unit rgobj;
       var
         ins:Taicpu;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure trgobj.do_spill_read(list:TAsmList;pos:tai;const spilltemp:treference;tempreg:tregister);
+      var
+        ins:Taicpu;
+>>>>>>> origin/cpstrnew
       begin
         ins:=spilling_create_load(spilltemp,tempreg);
         add_cpu_interferences(ins);
@@ -2154,11 +2174,14 @@ unit rgobj;
         ins:Taicpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         ins:=spilling_create_store(tempreg,spilltemp);
         add_cpu_interferences(ins);
@@ -2244,6 +2267,7 @@ unit rgobj;
 <<<<<<< HEAD
     function trgobj.instr_get_oper_spilling_info(var regs: tspillregsinfo; const r: tsuperregisterset; instr: tai_cpu_abstract_sym; opidx: longint): boolean;
 =======
+
 
 
 
@@ -2476,6 +2500,7 @@ unit rgobj;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   loadreg:=getregisterinline(list,regs.reginfo[counter].spillregconstraints);
                   do_spill_read(list,tai(loadpos.previous),spilltemplist[orgreg],loadreg,orgreg);
 =======
@@ -2483,6 +2508,8 @@ unit rgobj;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   tempreg:=getregisterinline(list,regs[counter].spillregconstraints);
                   do_spill_read(list,tai(loadpos.previous),spilltemplist[orgreg],tempreg);
 >>>>>>> graemeg/cpstrnew
@@ -2535,11 +2562,14 @@ unit rgobj;
                     tempreg:=getregisterinline(list,regs[counter].spillregconstraints);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   { The original instruction will be the next that uses this register, this
                     also needs to be done for read-write registers,
 

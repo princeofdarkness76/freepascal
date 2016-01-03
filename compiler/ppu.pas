@@ -29,6 +29,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     systems,globtype,constexp,cstreams;
 =======
     globtype,constexp,cstreams;
@@ -39,6 +40,9 @@ interface
 =======
     globtype,constexp,cstreams;
 >>>>>>> graemeg/cpstrnew
+=======
+    globtype,constexp,cstreams;
+>>>>>>> origin/cpstrnew
 
 { Also write the ppu if only crc if done, this can be used with ppudump to
   see the differences between the intf and implementation }
@@ -58,6 +62,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentPPUVersion = 181;
 =======
   CurrentPPUVersion = 127;
@@ -68,6 +73,9 @@ const
 =======
   CurrentPPUVersion = 127;
 >>>>>>> graemeg/cpstrnew
+=======
+  CurrentPPUVersion = 127;
+>>>>>>> origin/cpstrnew
 
 { buffer sizes }
   maxentrysize = 1024;
@@ -188,6 +196,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   uf_resstrinits        = $1000000; { this unit has string consts referencing resourcestrings }
   uf_i8086_far_code     = $2000000; { this unit uses an i8086 memory model with far code (i.e. medium, large or huge) }
   uf_i8086_far_data     = $4000000; { this unit uses an i8086 memory model with far data (i.e. compact or large) }
@@ -245,6 +254,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
   { bestreal is defined based on the target architecture }
@@ -309,6 +320,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     change_endian    : boolean; { Used in ppudump util }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -316,6 +328,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     { crc for the entire unit }
     crc,
     { crc for the interface definitions in this unit }
@@ -373,6 +387,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure getnormalset(out b);
     procedure getsmallset(out b);
 =======
@@ -380,6 +395,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure getnormalset(var b);
     procedure getsmallset(var b);
 >>>>>>> graemeg/cpstrnew
@@ -899,6 +916,16 @@ begin
 end;
 
 
+function tppufile.getasizeint:asizeint;
+begin
+{$ifdef cpu64bitaddr}
+  result:=getint64;
+{$else cpu64bitaddr}
+  result:=getlongint;
+{$endif cpu32bitaddr}
+end;
+
+
 function tppufile.getaword:aword;
 >>>>>>> graemeg/cpstrnew
 begin
@@ -1048,6 +1075,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function tppufile.getansistring:ansistring;
 var
   len: longint;
@@ -1076,11 +1104,20 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+function tppufile.getansistring: ansistring;
+var
+  l : longint;
+begin
+  l:=getlongint;
+  if entryidx+l>entry.size then
+>>>>>>> origin/cpstrnew
    begin
      error:=true;
      result:='';
      exit;
    end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1102,6 +1139,11 @@ begin
   ReadData(result[1],l);
   inc(entryidx,l);
 >>>>>>> graemeg/cpstrnew
+=======
+  SetLength(Result,l);
+  ReadData(result[1],l);
+  inc(entryidx,l);
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -1460,6 +1502,7 @@ procedure tppufile.putstring(const s:string);
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure tppufile.putansistring(const s:ansistring);
   var
     len: longint;
@@ -1473,6 +1516,8 @@ procedure tppufile.putansistring(const s:ansistring);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure tppufile.putansistring(const s: ansistring);
   var
     l : longint;
@@ -1482,11 +1527,14 @@ procedure tppufile.putansistring(const s: ansistring);
     putdata(s[1],l);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 
@@ -1514,6 +1562,7 @@ procedure tppufile.tempclose;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        f:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1521,6 +1570,8 @@ procedure tppufile.tempclose;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        closed:=true;
        tempclosed:=true;
      end;
@@ -1532,6 +1583,7 @@ function tppufile.tempopen:boolean;
     tempopen:=false;
     if not closed or not tempclosed then
      exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1549,6 +1601,8 @@ function tppufile.tempopen:boolean;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // MG: not sure, if this is correct
 
     f.Position:=0;
@@ -1564,11 +1618,14 @@ function tppufile.tempopen:boolean;
     *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     closed:=false;
     tempclosed:=false;
 

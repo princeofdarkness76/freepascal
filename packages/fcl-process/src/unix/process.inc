@@ -231,11 +231,14 @@ begin
       S.Insert(0,'xterm');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       {$endif}
       end;
     {$ifndef haiku}
@@ -364,6 +367,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           signal is delivered
 
           We also can't use vfork in case we have to change the working
@@ -386,6 +390,10 @@ begin
           signal is delivered }
         if not(poRunSuspended in Options) then
 >>>>>>> graemeg/cpstrnew
+=======
+          signal is delivered }
+        if not(poRunSuspended in Options) then
+>>>>>>> origin/cpstrnew
           Pid:=fpvfork
         else
           Pid:=fpfork;
@@ -442,6 +450,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               FForkEvent(Self);
 =======
               FForkEvent;
@@ -452,6 +461,9 @@ begin
 =======
               FForkEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+              FForkEvent;
+>>>>>>> origin/cpstrnew
             if (poRunSuspended in Options) then
               fpkill(fpgetpid,SIGSTOP);
             if FEnv<>Nil then

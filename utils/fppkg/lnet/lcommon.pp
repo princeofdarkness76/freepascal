@@ -515,6 +515,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   aAddrInfo.IPv4.sin_family := aFamily;
   aAddrInfo.IPv4.sin_Port := htons(aPort);
 =======
@@ -529,10 +530,15 @@ begin
   aAddrInfo.IPv4.family := aFamily;
   aAddrInfo.IPv4.Port := htons(aPort);
 >>>>>>> graemeg/cpstrnew
+=======
+  aAddrInfo.IPv4.family := aFamily;
+  aAddrInfo.IPv4.Port := htons(aPort);
+>>>>>>> origin/cpstrnew
 
   case aFamily of
     LAF_INET  :
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -554,6 +560,11 @@ begin
         if (Address <> LADDR_ANY) and (aAddrInfo.IPv4.Addr = 0) then
           aAddrInfo.IPv4.Addr := StrToNetAddr(GetHostIP(Address));
 >>>>>>> graemeg/cpstrnew
+=======
+        aAddrInfo.IPv4.Addr := StrToNetAddr(Address);
+        if (Address <> LADDR_ANY) and (aAddrInfo.IPv4.Addr = 0) then
+          aAddrInfo.IPv4.Addr := StrToNetAddr(GetHostIP(Address));
+>>>>>>> origin/cpstrnew
       end;
     LAF_INET6 :
       begin

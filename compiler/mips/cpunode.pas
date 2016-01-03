@@ -39,6 +39,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ncpuadd,ncpucall,ncpumat,ncpuinln,
     ncpuld,ncpucnv,ncpuset,
     { symtable }
@@ -53,5 +54,8 @@ implementation
 =======
     ncpuadd,ncpucall,ncpumat,ncpuinln,ncpucnv,ncpuset;
 >>>>>>> graemeg/cpstrnew
+=======
+    ncpuadd,ncpucall,ncpumat,ncpuinln,ncpucnv,ncpuset;
+>>>>>>> origin/cpstrnew
 
 end.

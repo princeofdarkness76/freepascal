@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %target=linux,darwin,solaris,freebsd,haiku,beos,aix }
 =======
 { %target=linux,darwin,solaris,freebsd,haiku,beos }
@@ -11,6 +12,9 @@
 =======
 { %target=linux,darwin,solaris,freebsd,haiku,beos }
 >>>>>>> graemeg/cpstrnew
+=======
+{ %target=linux,darwin,solaris,freebsd,haiku,beos }
+>>>>>>> origin/cpstrnew
 
 program TestSignal;
 

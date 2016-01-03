@@ -249,6 +249,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (smbtOBJECT in FSiteMapBodyTags) then
            begin
             if (FLevel > 0 ) then 
@@ -323,6 +324,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          if (FLevel > 0 ) and (smbtOBJECT in FSiteMapBodyTags) then begin
 
            if LowerCase(GetTagName(AActualTag)) = 'param' then begin
@@ -438,6 +441,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
                     
@@ -448,6 +452,9 @@ end;
 =======
                     
 >>>>>>> graemeg/cpstrnew
+=======
+                    
+>>>>>>> origin/cpstrnew
 procedure TChmSiteMap.SaveToStream(AStream: TStream);
 var
   Indent: Integer;

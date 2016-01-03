@@ -417,6 +417,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DCAP_BANK_VRAM_C      = 2;
   DCAP_BANK_VRAM_D      = 3;
 =======
@@ -431,6 +432,10 @@ const
   DCAP_BANK_VRAM_C      = 1;
   DCAP_BANK_VRAM_D      = 2;
 >>>>>>> graemeg/cpstrnew
+=======
+  DCAP_BANK_VRAM_C      = 1;
+  DCAP_BANK_VRAM_D      = 2;
+>>>>>>> origin/cpstrnew
 
 const
   GFX_CONTROL           : pcuint16 = pointer($04000060);

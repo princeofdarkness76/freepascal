@@ -6,6 +6,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       TAlias = T;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -13,6 +14,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       PT = T;
   private
     var

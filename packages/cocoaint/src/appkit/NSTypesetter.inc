@@ -63,6 +63,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(2)-1] of cuint;
 =======
         _reserved: array[0..1] of cuint;
@@ -73,6 +74,9 @@ type
 =======
         _reserved: array[0..1] of cuint;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reserved: array[0..1] of cuint;
+>>>>>>> origin/cpstrnew
     {$endif}
     
   public

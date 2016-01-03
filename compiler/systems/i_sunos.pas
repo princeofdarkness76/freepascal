@@ -39,6 +39,7 @@ unit i_sunos;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,tf_library_needs_pic,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -46,6 +47,8 @@ unit i_sunos;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_smartlink_library,tf_has_winlike_resources];
             cpu          : cpu_i386;
             unit_env     : 'SOLARISUNITS';
@@ -192,9 +195,12 @@ unit i_sunos;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        system_x86_64_solaris_info : tsysteminfo =
           (
             system       : system_x86_64_solaris;
@@ -262,9 +268,12 @@ unit i_sunos;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        system_sparc_solaris_info : tsysteminfo =
           (
             system       : system_sparc_solaris;
@@ -275,6 +284,7 @@ unit i_sunos;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_pic_uses_got,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -282,6 +292,8 @@ unit i_sunos;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_requires_proper_alignment,tf_smartlink_library,
                             tf_has_winlike_resources];
             cpu          : cpu_SPARC;
@@ -354,11 +366,14 @@ initialization
 {$endif CPU86}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef CPUX86_64}
   {$ifdef solaris}
     set_source_info(system_x86_64_solaris_info);

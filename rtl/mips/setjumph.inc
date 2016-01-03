@@ -19,6 +19,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ra,sp,s0,s1,s2,s3,s4,s5,s6,s7,fp,gp: longint;
 {$if defined(FPUMIPS2) or defined(FPUMIPS3)}
     _fcsr,f20,f21,f22,f23,f24,f25,f26,f27,f28,f29,f30,f31: longint;
@@ -32,6 +33,9 @@ type
 =======
     reg:array[1..12] of longint;
 >>>>>>> graemeg/cpstrnew
+=======
+    reg:array[1..12] of longint;
+>>>>>>> origin/cpstrnew
   end;
   Pjmp_buf=^jmp_buf;
 

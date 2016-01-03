@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2003, 2006, 2007, 2009-2011  Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2003  Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Glenn Fiedler (ptc@gaffer.org)
 
     This library is free software; you can redistribute it and/or
@@ -42,6 +46,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -88,6 +93,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 constructor TPTCPalette.Create;
 var
   zero: array [0..255] of Uint32;
@@ -116,6 +123,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TPTCPalette.Create(APalette: IPTCPalette);
 =======
 constructor TPTCPalette.Create(const APalette: TPTCPalette);
@@ -126,6 +134,9 @@ constructor TPTCPalette.Create(const APalette: TPTCPalette);
 =======
 constructor TPTCPalette.Create(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TPTCPalette.Create(const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   FLocked := False;
   if not Hermes_Init then
@@ -133,6 +144,7 @@ begin
   FHandle := Hermes_PaletteInstance;
   if FHandle = nil then
     raise TPTCError.Create('could not create hermes palette instance');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -146,6 +158,9 @@ begin
 =======
   Assign(APalette);
 >>>>>>> graemeg/cpstrnew
+=======
+  Assign(APalette);
+>>>>>>> origin/cpstrnew
 end;
 
 destructor TPTCPalette.Destroy;
@@ -160,6 +175,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 =======
 procedure TPTCPalette.Assign(const APalette: TPTCPalette);
@@ -170,6 +186,9 @@ procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 =======
 procedure TPTCPalette.Assign(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TPTCPalette.Assign(const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   if Self = APalette then
     exit;
@@ -184,6 +203,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 
@@ -194,6 +214,9 @@ end;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 function TPTCPalette.Lock: PUint32;
 begin
   if FLocked then
@@ -236,6 +259,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function TPTCPalette.GetHermesPaletteHandle: THermesPaletteHandle;
 begin
@@ -247,3 +271,5 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

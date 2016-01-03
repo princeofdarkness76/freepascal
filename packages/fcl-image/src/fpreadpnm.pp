@@ -139,6 +139,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Case FBitmapType of
     5,6 : FScanLineSize:=(FBitPP div 8) * FWidth;
   else  
@@ -153,6 +154,9 @@ begin
 =======
   FScanLineSize:=(FBitPP*FWidth+7) shr 3;  // (bits/line +7)
 >>>>>>> graemeg/cpstrnew
+=======
+  FScanLineSize:=(FBitPP*FWidth+7) shr 3;  // (bits/line +7)
+>>>>>>> origin/cpstrnew
   GetMem(FScanLine,FScanLineSize);
   try
     for Row:=0 to img.Height-1 do

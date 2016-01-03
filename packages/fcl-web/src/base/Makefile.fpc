@@ -7,6 +7,7 @@ main=fcl-web
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [target]
@@ -23,6 +24,8 @@ units_beos=custfcgi fpfcgi
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [target]
@@ -35,11 +38,14 @@ rsts=fpcgi fphtml fpweb websession cgiapp
 units_beos=custfcgi fpfcgi
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 units_haiku=custfcgi fpfcgi
 units_freebsd=custfcgi fpfcgi
 units_solaris=custfcgi fpfcgi
@@ -48,6 +54,7 @@ units_openbsd=custfcgi fpfcgi
 units_linux=custfcgi fpfcgi
 units_win32=custfcgi fpfcgi
 units_win64=custfcgi fpfcgi
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,17 +67,22 @@ packages=fcl-base fcl-xml fcl-db fcl-process httpd22 fastcgi fcl-net httpd24
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 units_wince=custfcgi fpfcgi
 
 [require]
 packages=fcl-base fcl-xml fcl-db fcl-process httpd22 fastcgi fcl-net
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 packages_darwin=univint
 packages_iphonesim=univint
 

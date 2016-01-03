@@ -80,6 +80,7 @@ unit cgutils;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef jvm}
          arrayreftype: tarrayreftype;
          indexbase: tregister;
@@ -93,6 +94,8 @@ unit cgutils;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          alignment : byte;
       end;
 
@@ -194,6 +197,7 @@ unit cgutils;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function location_reg2string(const locreg: tlocation): string;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -201,6 +205,8 @@ unit cgutils;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     { returns r with the given alignment }
     function setalignment(const r : treference;b : byte) : treference;
@@ -314,6 +320,7 @@ uses
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -490,5 +497,7 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.
 

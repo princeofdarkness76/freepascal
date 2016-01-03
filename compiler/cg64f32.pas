@@ -102,6 +102,7 @@ unit cg64f32;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        tgobj,hlcgobj;
 =======
        tgobj;
@@ -112,6 +113,9 @@ unit cg64f32;
 =======
        tgobj;
 >>>>>>> graemeg/cpstrnew
+=======
+       tgobj;
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************
                                      Helpers
@@ -797,11 +801,14 @@ unit cg64f32;
         cg.a_load_reg_cgpara(list,OS_32,reg.reglo,tmploclo);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         tmploclo.done;
         tmplochi.done;
       end;
@@ -836,11 +843,14 @@ unit cg64f32;
         cg.a_load_const_cgpara(list,OS_32,aint(lo(value)),tmploclo);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         tmploclo.done;
         tmplochi.done;
       end;
@@ -881,11 +891,14 @@ unit cg64f32;
         cg.a_load_ref_cgpara(list,OS_32,tmpreflo,tmploclo);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         tmploclo.done;
         tmplochi.done;
       end;

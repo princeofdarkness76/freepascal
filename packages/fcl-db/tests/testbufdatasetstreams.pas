@@ -36,6 +36,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure NullInsertChange(ADataset: TCustomBufDataset);
     procedure NullEditChange(ADataset: TCustomBufDataset);
     procedure AppendDeleteChange(ADataset: TCustomBufDataset);
@@ -48,6 +49,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   protected
     procedure SetUp; override;
     procedure TearDown; override;
@@ -98,12 +101,15 @@ type
     procedure TestCloseDatasetNoConnection; // bug 17623
   end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 implementation
 
 uses toolsunit, SQLDBToolsUnit, sqldb, XMLDatapacketReader;
@@ -208,6 +214,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.TestChangesXML(AUpdDatasetProc: TUpdDatasetProc);
 begin
   TestChanges(AUpdDatasetProc, dfXML);
@@ -222,6 +229,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestBufDatasetStreams.SimpleEditChange(ADataset: TCustomBufDataset);
 begin
   ADataset.next;
@@ -469,7 +478,10 @@ begin
   SaveDs.SaveToFile('Basics.xml',dfXML);
 
   LoadDs := TCustomBufDataset.Create(nil);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   LoadDs.LoadFromFile('Basics.xml');
 >>>>>>> graemeg/cpstrnew
   CompareDatasets(SaveDs,LoadDs);
@@ -713,6 +725,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TCustomBufDataset(ds).FileName:=TestBINFileName;
   ds.close;
 
@@ -752,12 +765,17 @@ begin
   LoadDs := DBConnector.GetNDataset(True,2);
   TCustomBufDataset(LoadDs).FileName:=TestXMLFileName;
 =======
+=======
+>>>>>>> origin/cpstrnew
   TCustomBufDataset(ds).FileName:='test.dat';
   ds.close;
 
   LoadDs := DBConnector.GetNDataset(True,2);
   TCustomBufDataset(LoadDs).FileName:='test.dat';
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   LoadDs.Open;
 
   ds := DBConnector.GetNDataset(true,4);
@@ -830,6 +848,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestBufDatasetStreams.NullInsertUpdateApplUpd;
 begin
   TestChangesApplyUpdates(@NullInsertChange, True);
@@ -854,6 +873,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 initialization
   if uppercase(dbconnectorname)='SQL' then
     RegisterTestDecorator(TDBBasicsTestSetup, TTestBufDatasetStreams);

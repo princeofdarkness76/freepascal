@@ -76,11 +76,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
   TStartupInfo = record
     cb : longint;
@@ -127,12 +130,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TDLL_Entry_Hook = procedure (dllparam : longint);
 >>>>>>> graemeg/cpstrnew
 
@@ -150,11 +156,14 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -463,11 +472,14 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { allocate space for an exception frame }
         pushq $0
         pushq %gs:(0)
@@ -491,11 +503,14 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
      asm
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         xorq %rax,%rax
         movw %ss,%ax
         movl %eax,_SS(%rip)
@@ -514,11 +529,14 @@ procedure Exe_entry;[public,alias:'_FPC_EXE_Entry'];
         xorq %rbp,%rbp
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         call PASCALMAIN
 {$endif FPC_USE_WIN64_SEH}
         movq %rsi,%rbp

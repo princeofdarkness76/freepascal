@@ -6,6 +6,7 @@ unit WebKit;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -13,6 +14,8 @@ unit WebKit;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 interface
 
@@ -79,6 +82,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
@@ -89,3 +93,6 @@ end.
 =======
 end.
 >>>>>>> graemeg/cpstrnew
+=======
+end.
+>>>>>>> origin/cpstrnew

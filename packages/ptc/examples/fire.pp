@@ -24,6 +24,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate(palette: IPTCPalette);
 =======
 procedure generate(palette: TPTCPalette);
@@ -34,6 +35,9 @@ procedure generate(palette: TPTCPalette);
 =======
 procedure generate(palette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure generate(palette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 var
   data: PUint32;
   i, c: Integer;
@@ -85,15 +89,19 @@ begin
     palette.unlock;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -106,17 +114,22 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   format: TPTCFormat = nil;
   console: TPTCConsole = nil;
   surface: TPTCSurface = nil;
   palette: TPTCPalette = nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   state: Integer;
   intensity: Single;
   pixels, pixel, p: PUint8;
@@ -125,6 +138,7 @@ var
   top, bottom, c1, c2: Uint32;
   generator: PUint8;
   color: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -138,6 +152,9 @@ var
 =======
   area: TPTCArea = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  area: TPTCArea = nil;
+>>>>>>> origin/cpstrnew
 begin
   try
     try
@@ -298,6 +315,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.Close;
 =======
@@ -305,6 +323,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console.Free;
       surface.Free;
       format.Free;
@@ -312,11 +332,14 @@ begin
       area.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

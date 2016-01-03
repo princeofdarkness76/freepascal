@@ -74,12 +74,15 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cgbase,cgobj,hlcgobj,
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       cgbase,cgobj,
 >>>>>>> graemeg/cpstrnew
       procinfo,
@@ -219,6 +222,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 LOC_FPUREGISTER,
                 LOC_MMXREGISTER,
                 LOC_MMREGISTER :
@@ -251,6 +255,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 LOC_MMREGISTER :
                   begin
                     if getoffset then
@@ -265,11 +271,14 @@ interface
                       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   end;
                 else
                   internalerror(201001031);
@@ -515,6 +524,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (ti_reference in tempinfo^.flags) then
               begin
                 case tempinfo^.tempinitcode.location.loc of
@@ -542,6 +552,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           end;
         { check if the temp is valid }
         if not(ti_valid in tempinfo^.flags) then

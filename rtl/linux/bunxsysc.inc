@@ -372,6 +372,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(generic_linux_syscalls)}
 =======
 {$ifndef NO_SYSCALL_UTIME}
@@ -396,11 +397,15 @@ begin
 end;
 
 {$elseif not defined(NO_SYSCALL_UTIME)}
+=======
+{$ifndef NO_SYSCALL_UTIME}
+>>>>>>> origin/cpstrnew
 
 Function fpUtime(path:pchar;times:putimbuf):cint;
 
 begin
   fputime:=do_syscall(syscall_nr_utime,TSysParam(path),TSysParam(times));
+<<<<<<< HEAD
 end;
 
 {$else}
@@ -425,6 +430,8 @@ end;
 =======
 >>>>>>> graemeg/cpstrnew
   fputime:=do_syscall(syscall_nr_utime,TSysParam(path),TSysParam(times));
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 {$else}
@@ -442,11 +449,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif}
 
 

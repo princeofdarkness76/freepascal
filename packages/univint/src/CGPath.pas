@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2001-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -26,6 +27,12 @@
 {       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+ * Copyright (c) 2001-2008 Apple Inc.
+ * All rights reserved. }
+{       Pascal Translation:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -83,6 +90,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -94,6 +102,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -112,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -152,6 +163,14 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -162,11 +181,14 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -176,22 +198,29 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -275,6 +304,8 @@ interface
 {$endc}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -297,9 +328,12 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -351,6 +385,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGMutablePathRef = ^OpaqueCGMutablePathRef; { an opaque type }
 	OpaqueCGMutablePathRef = record end;
 type
@@ -383,6 +418,11 @@ type
 type
 	CGPathRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	CGMutablePathRef = ^SInt32; { an opaque type }
+type
+	CGPathRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 type
 	CGLineCap = SInt32;
@@ -408,6 +448,7 @@ function CGPathCreateCopy( path: CGPathRef ): CGPathRef; external name '_CGPathC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 { Create a copy of `path' transformed by `transform'. }
 
@@ -419,11 +460,14 @@ function CGPathCreateCopyByTransformingPath( path: CGPathRef; const (*var*) tran
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Create a mutable copy of `path'. }
 
 function CGPathCreateMutableCopy( path: CGPathRef ): CGMutablePathRef; external name '_CGPathCreateMutableCopy';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -505,6 +549,8 @@ function CGPathCreateCopyByStrokingPath( path: CGPathRef; transform: {const} CGA
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Equivalent to `CFRetain(path)', except it doesn't crash (as CFRetain
    does) if `path' is NULL. }
@@ -548,6 +594,7 @@ procedure CGPathAddQuadCurveToPoint( path: CGMutablePathRef; m: CGAffineTransfor
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Append a cubic BÃ©zier curve from the current point to `(x,y)' with
 =======
 { Append a cubic BŽzier curve from the current point to `(x,y)' with
@@ -558,6 +605,9 @@ procedure CGPathAddQuadCurveToPoint( path: CGMutablePathRef; m: CGAffineTransfor
 =======
 { Append a cubic BŽzier curve from the current point to `(x,y)' with
 >>>>>>> graemeg/cpstrnew
+=======
+{ Append a cubic BŽzier curve from the current point to `(x,y)' with
+>>>>>>> origin/cpstrnew
    control points `(cp1x, cp1y)' and `(cp2x, cp2y)' in `path' and move the
    current point to `(x, y)'. If `m' is non-NULL, then transform all points
    by `m' first. }
@@ -597,6 +647,7 @@ procedure CGPathAddLines( path: CGMutablePathRef; m: CGAffineTransformPtr; {cons
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    approximated by a sequence of BÃ©zier curves. The center of the ellipse is
 =======
    approximated by a sequence of BŽzier curves. The center of the ellipse is
@@ -607,12 +658,16 @@ procedure CGPathAddLines( path: CGMutablePathRef; m: CGAffineTransformPtr; {cons
 =======
    approximated by a sequence of BŽzier curves. The center of the ellipse is
 >>>>>>> graemeg/cpstrnew
+=======
+   approximated by a sequence of BŽzier curves. The center of the ellipse is
+>>>>>>> origin/cpstrnew
    the midpoint of `rect'. If `rect' is square, then the ellipse will be
    circular with radius equal to one-half the width (equivalently, one-half
    the height) of `rect'. If `rect' is rectangular, then the major- and
    minor-axes will be the `width' and `height' of rect. The ellipse forms a
    complete subpath of `path' --- that is, it begins with a "move to" and
    ends with a "close subpath" --- oriented in the clockwise direction. If
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -626,10 +681,14 @@ procedure CGPathAddLines( path: CGMutablePathRef; m: CGAffineTransformPtr; {cons
 =======
    `m' is non-NULL, then the constructed BŽzier curves representing the
 >>>>>>> graemeg/cpstrnew
+=======
+   `m' is non-NULL, then the constructed BŽzier curves representing the
+>>>>>>> origin/cpstrnew
    ellipse will be transformed by `m' before they are added to `path'. }
 
 procedure CGPathAddEllipseInRect( path: CGMutablePathRef; m: CGAffineTransformPtr; rect: CGRect ); external name '_CGPathAddEllipseInRect';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 { Add an arc of a circle to `path', possibly preceded by a straight line
@@ -653,10 +712,16 @@ procedure CGPathAddRelativeArc( path: CGMutablePathRef; matrix: {const} CGAffine
 =======
    segment. The arc is approximated by a sequence of BŽzier curves. `(x, y)'
 >>>>>>> graemeg/cpstrnew
+=======
+
+{ Add an arc of a circle to `path', possibly preceded by a straight line
+   segment. The arc is approximated by a sequence of BŽzier curves. `(x, y)'
+>>>>>>> origin/cpstrnew
    is the center of the arc; `radius' is its radius; `startAngle' is the
    angle to the first endpoint of the arc; `endAngle' is the angle to the
    second endpoint of the arc; and `clockwise' is true if the arc is to be
    drawn clockwise, false otherwise. `startAngle' and `endAngle' are
+<<<<<<< HEAD
 <<<<<<< HEAD
    measured in radians. If `m' is non-NULL, then the constructed BÃ©zier
    curves representing the arc will be transformed by `m' before they are
@@ -726,6 +791,23 @@ procedure CGPathAddArc( path: CGMutablePathRef; m: CGAffineTransformPtr; x: CGFl
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+   measured in radians. If `m' is non-NULL, then the constructed BŽzier
+   curves representing the arc will be transformed by `m' before they are
+   added to `path'. }
+
+procedure CGPathAddArc( path: CGMutablePathRef; m: CGAffineTransformPtr; x: CGFloat; y: CGFloat; radius: CGFloat; startAngle: CGFloat; endAngle: CGFloat; clockwise: CBool ); external name '_CGPathAddArc';
+(* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
+
+{ Add an arc of a circle to `path', possibly preceded by a straight line
+   segment. The arc is approximated by a sequence of BŽzier curves. `radius'
+   is the radius of the arc. The resulting arc is tangent to the line from
+   the current point of `path' to `(x1, y1)', and the line from `(x1, y1)'
+   to `(x2, y2)'. If `m' is non-NULL, then the constructed BŽzier curves
+   representing the arc will be transformed by `m' before they are added to
+   `path'. }
+
+>>>>>>> origin/cpstrnew
 procedure CGPathAddArcToPoint( path: CGMutablePathRef; m: CGAffineTransformPtr; x1: CGFloat; y1: CGFloat; x2: CGFloat; y2: CGFloat; radius: CGFloat ); external name '_CGPathAddArcToPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
@@ -752,16 +834,20 @@ function CGPathIsRect( path: CGPathRef; var rect: CGRect ): CBool; external name
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function CGPathGetCurrentPoint( path: CGPathRef ): CGPoint; external name '_CGPathGetCurrentPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
 
 { Return the bounding box of `path'. The bounding box is the smallest
    rectangle completely enclosing all points in the path, including control
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
    points for BÃ©zier cubic and quadratic curves. If the path is empty, then
@@ -847,6 +933,8 @@ function CGPathContainsPoint( path: CGPathRef; m: CGAffineTransformPtr; point: C
 
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
    points for BŽzier cubic and quadratic curves. If the path is empty, then
    return `CGRectNull'. }
 
@@ -871,7 +959,10 @@ function CGPathGetPathBoundingBox( path: CGPathRef ): CGRect; external name '_CG
 function CGPathContainsPoint( path: CGPathRef; m: CGAffineTransformPtr; point: CGPoint; eoFill: CBool ): CBool; external name '_CGPathContainsPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0) *)
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { The types of path elements returned by `CGPathApply'. }
 
 type

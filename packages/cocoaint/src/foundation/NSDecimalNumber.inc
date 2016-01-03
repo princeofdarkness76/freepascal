@@ -56,6 +56,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_NSDecimalNumber0: record
       case byte of
        0: (_anonbitfield_NSDecimalNumber0: cint);
@@ -65,17 +66,22 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     _anoninternstruct_NSDecimalNumber0: bitpacked record
       case byte of
        0: (_anonbitfield_NSDecimalNumber0: cint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _exponent: 0..((1 shl 8)-1);
         _length: 0..((1 shl 4)-1);
         _isNegative: 0..1;
@@ -83,6 +89,7 @@ var
         _reserved: 0..1;
         _hasExternalRefCount: 0..1;
         _refs: 0..((1 shl 16)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -105,6 +112,11 @@ var
       end;
     _mantissa: cushort;
 >>>>>>> graemeg/cpstrnew
+=======
+      );
+      end;
+    _mantissa: cushort;
+>>>>>>> origin/cpstrnew
     
   public
     function initWithMantissa_exponent_isNegative(mantissa: culonglong; exponent: cshort; flag: Boolean): id; message 'initWithMantissa:exponent:isNegative:';
@@ -148,6 +160,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _anoninternstruct_NSDecimalNumber1: record
       case byte of
        0: (_anonbitfield_NSDecimalNumber1: cint);
@@ -157,17 +170,22 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     _anoninternstruct_NSDecimalNumber1: bitpacked record
       case byte of
        0: (_anonbitfield_NSDecimalNumber1: cint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _scale: 0..((1 shl 16)-1);
         _roundingMode: 0..((1 shl 3)-1);
         _raiseOnExactness: 0..1;
@@ -178,6 +196,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -185,6 +204,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _reserved2: Pointer;

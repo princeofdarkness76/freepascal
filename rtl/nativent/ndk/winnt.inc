@@ -21,6 +21,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CCHAR = Byte;
   PCCHAR = ^CCHAR;
 =======
@@ -29,6 +30,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 const
   NT_DELETE           = $00010000;

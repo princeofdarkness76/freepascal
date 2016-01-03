@@ -20,6 +20,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpmkunit,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -27,11 +28,14 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SysUtils,
   Classes,
 {$ifdef unix}
   baseunix,
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +52,10 @@ uses
   fpTemplate,
   process;
 >>>>>>> graemeg/cpstrnew
+=======
+  fpTemplate,
+  process;
+>>>>>>> origin/cpstrnew
 
 {
   The inc files must be built from a template with the data2inc
@@ -106,6 +114,7 @@ Resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrDestDirectory   = 'Error: The output file "%s" is a directory.';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -113,10 +122,13 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   SWarnIgnoringFile   = 'Warning: Ignoring non-existent file: ';
   SWarnIgnoringPair   = 'Warning: Ignoring wrong name/value pair: ';
   SWarngccNotFound    = 'Warning: Could not find gcc. Unable to determine the gcclib path.';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -127,6 +139,8 @@ Resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   SBackupCreated      = 'Saved old "%s" to "%s"';
 
@@ -213,6 +227,7 @@ function GetDefaultGCCDir: string;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   var
     OS: TOS;
     CPU: TCPU;
@@ -267,6 +282,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var GccExecutable: string;
 
   function GetGccExecutable: string;
@@ -380,11 +397,14 @@ begin
               GetGccDirArch('cpux86_64','-arch x86_64');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -589,6 +609,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (OutputFileName<>'') and
      DirectoryExists(OutputFileName) then
     begin
@@ -601,6 +622,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   If (OutputFileName<>'')
      and FileExists(OutputFileName)
      and not SkipBackup then

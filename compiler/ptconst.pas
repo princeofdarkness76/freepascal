@@ -926,8 +926,11 @@ implementation
                else if is_constcharnode(n) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   begin
                     case char_size of
                       1:
@@ -949,6 +952,7 @@ implementation
                   begin
                     case char_size of
                       1:
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                   begin
@@ -975,6 +979,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                         begin
                           inserttypeconv(n,cchartype);
                           if not is_constcharnode(n) then
@@ -1512,11 +1518,14 @@ implementation
         hrec         : threc;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         { mark the staticvarsym as typedconst }
         include(sym.varoptions,vo_is_typed_const);
@@ -1558,11 +1567,14 @@ implementation
         read_typed_const_data(hrec,sym.vardef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
         { Parse hints }
         try_consume_hintdirective(sym.symoptions,sym.deprecatedmsg);

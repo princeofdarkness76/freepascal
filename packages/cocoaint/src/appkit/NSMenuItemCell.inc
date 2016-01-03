@@ -51,6 +51,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __micFlags: record
       case byte of
        0: (_anonbitfield_NSMenuItemCell0: cuint);
@@ -60,23 +61,29 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __micFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMenuItemCell0: cuint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _needsSizing: 0..1;
         reserved: 0..1;
         _needsDisplay: 0..1;
         keyEquivGlyphWidth: 0..((1 shl 16)-1);
         uniqueAgainstMain: 0..1;
         _RESERVED: 0..((1 shl 12)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -87,6 +94,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     

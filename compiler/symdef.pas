@@ -122,11 +122,14 @@ interface
           function  OwnerHierarchyName: string; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           function  in_currentunit: boolean;
           { regvars }
           function is_intregable : boolean;
@@ -206,6 +209,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           constructor create(const s:string;const pos:tfileposinfo);virtual;
 =======
           constructor create(const s:string;const pos:tfileposinfo);
@@ -216,6 +220,9 @@ interface
 =======
           constructor create(const s:string;const pos:tfileposinfo);
 >>>>>>> graemeg/cpstrnew
+=======
+          constructor create(const s:string;const pos:tfileposinfo);
+>>>>>>> origin/cpstrnew
           destructor destroy;override;
           function getcopy:tstoreddef;override;
           function GetTypeName:string;override;
@@ -274,11 +281,14 @@ interface
           constructor createfar(def:tdef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           function getcopy:tstoreddef;override;
           constructor ppuload(ppufile:tcompilerppufile);
           { do not override this routine in platform-specific subclasses,
@@ -310,7 +320,11 @@ interface
        tprocdef = class;
        { tabstractrecorddef }
 
+       tprocdef = class;
+       { tabstractrecorddef }
+
        tabstractrecorddef= class(tstoreddef)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -334,10 +348,15 @@ interface
           objname,
           objrealname    : PShortString;
 >>>>>>> graemeg/cpstrnew
+=======
+          objname,
+          objrealname    : PShortString;
+>>>>>>> origin/cpstrnew
           symtable       : TSymtable;
           cloneddef      : tabstractrecorddef;
           cloneddefderef : tderef;
           objectoptions  : tobjectoptions;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -355,17 +374,22 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           constructor create(const n:string; dt:tdeftyp);
           constructor ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
           procedure ppuwrite(ppufile:tcompilerppufile);override;
           destructor destroy; override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           procedure check_forwards; virtual;
           function find_procdef_bytype(pt:tproctypeoption): tprocdef;
           function GetSymtable(t:tGetSymtable):TSymtable;override;
@@ -375,6 +399,7 @@ interface
           function search_enumerator_get: tprocdef; virtual;
           function search_enumerator_move: tprocdef; virtual;
           function search_enumerator_current: tsym; virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -405,12 +430,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
 
        trecorddef = class(tabstractrecorddef)
        public
           variantrecdesc : pvariantrecdesc;
           isunion       : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -427,6 +455,9 @@ interface
 =======
           constructor create(const n:string; p:TSymtable);
 >>>>>>> graemeg/cpstrnew
+=======
+          constructor create(const n:string; p:TSymtable);
+>>>>>>> origin/cpstrnew
           constructor ppuload(ppufile:tcompilerppufile);
           destructor destroy;override;
           function getcopy : tstoreddef;override;
@@ -500,6 +531,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { for Object Pascal helpers }
           extendeddef   : tdef;
           extendeddefderef: tderef;
@@ -515,6 +547,10 @@ interface
           { for C++ classes: name of the library this class is imported from }
           import_lib,
 >>>>>>> graemeg/cpstrnew
+=======
+          { for C++ classes: name of the library this class is imported from }
+          import_lib,
+>>>>>>> origin/cpstrnew
           { for Objective-C: protocols and classes can have the same name there }
           objextname     : pshortstring;
           { to be able to have a variable vmt position }
@@ -553,11 +589,14 @@ interface
           constructor create(ot:tobjecttyp;const n:string;c:tobjectdef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           constructor ppuload(ppufile:tcompilerppufile);
           destructor  destroy;override;
           function getcopy : tstoreddef;override;
@@ -583,6 +622,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  needs_separate_initrtti : boolean;override;
           function  rtti_mangledname(rt:trttitype):TSymStr;override;
           function  vmt_mangledname : TSymStr;
@@ -599,6 +639,10 @@ interface
           function  rtti_mangledname(rt:trttitype):string;override;
           function  vmt_mangledname : string;
 >>>>>>> graemeg/cpstrnew
+=======
+          function  rtti_mangledname(rt:trttitype):string;override;
+          function  vmt_mangledname : string;
+>>>>>>> origin/cpstrnew
           procedure check_forwards; override;
           procedure insertvmt;
           function  vmt_offset: asizeint;
@@ -643,11 +687,14 @@ interface
           function rtti_mangledname(rt:trttitype):string;override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           procedure register_created_object_type;override;
        end;
        tclassrefdefclass = class of tclassrefdef;
@@ -667,6 +714,7 @@ interface
           function elesize : asizeint;
           function elepackedbitsize : asizeint;
           function elecount : asizeuint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -690,6 +738,10 @@ interface
           constructor create_from_pointer(def:tdef);
           constructor create(l,h:asizeint;def:tdef);
 >>>>>>> graemeg/cpstrnew
+=======
+          constructor create_from_pointer(def:tdef);
+          constructor create(l,h:asizeint;def:tdef);
+>>>>>>> origin/cpstrnew
           constructor ppuload(ppufile:tcompilerppufile);
           destructor destroy; override;
           function getcopy : tstoreddef;override;
@@ -766,6 +818,8 @@ interface
 
        { tabstractprocdef }
 
+       { tabstractprocdef }
+
        tabstractprocdef = class(tstoreddef)
           { saves a definition to the return type }
           returndef       : tdef;
@@ -777,6 +831,7 @@ interface
           procoptions     : tprocoptions;
           callerargareasize,
           calleeargareasize: pint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -794,6 +849,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           { number of user visibile parameters }
           maxparacount,
           minparacount    : byte;
@@ -815,6 +872,7 @@ interface
           function  is_methodpointer:boolean;virtual;
           function  is_addressonly:boolean;virtual;
           function  no_self_node:boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -844,6 +902,11 @@ interface
           procedure init_paraloc_info(side: tcallercallee);
           function stack_tainting_parameter(side: tcallercallee): boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+          procedure check_mark_as_nested;
+          procedure init_paraloc_info(side: tcallercallee);
+          function stack_tainting_parameter(side: tcallercallee): boolean;
+>>>>>>> origin/cpstrnew
        private
           procedure count_para(p:TObject;arg:pointer);
           procedure insert_para(p:TObject;arg:pointer);
@@ -904,6 +967,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        timplprocdefinfo = record
           resultname : pshortstring;
           parentfpstruct: tsym;
@@ -924,6 +988,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        { tprocdef }
 
        tprocdef = class(tabstractprocdef)
@@ -976,6 +1042,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { generic support }
           genericdecltokenbuf : tdynamicarray;
 =======
@@ -984,6 +1051,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           { symbol owning this definition }
           procsym : tsym;
           procsymderef : tderef;
@@ -998,12 +1067,15 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           implprocoptions: timplprocoptions;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$if defined(powerpc) or defined(m68k)}
           { library symbol for AmigaOS/MorphOS }
           libsym : tsym;
@@ -1013,11 +1085,14 @@ interface
           resultname : pshortstring;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           { import info }
           import_dll,
           import_name : pshortstring;
@@ -1027,6 +1102,7 @@ interface
 {$ifdef oldregvars}
           regvarinfo: pregvarinfo;
 {$endif oldregvars}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1042,6 +1118,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           { First/last assembler symbol/instruction in aasmoutput list.
             Note: initialised after compiling the code for the procdef, but
               not saved to/restored from ppu. Used when inserting debug info }
@@ -1140,11 +1218,14 @@ interface
           procedure make_external;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
        tprocdefclass = class of tprocdef;
 
@@ -1160,6 +1241,7 @@ interface
           encoding   : tstringencoding;
           stringtype : tstringtype;
           len        : asizeint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1181,6 +1263,11 @@ interface
           constructor loadshort(ppufile:tcompilerppufile);
           constructor createlong(l : asizeint);
 >>>>>>> graemeg/cpstrnew
+=======
+          constructor createshort(l : byte);
+          constructor loadshort(ppufile:tcompilerppufile);
+          constructor createlong(l : asizeint);
+>>>>>>> origin/cpstrnew
           constructor loadlong(ppufile:tcompilerppufile);
           constructor createansi(aencoding: tstringencoding; doregister: boolean);virtual;
           constructor loadansi(ppufile:tcompilerppufile);
@@ -1211,9 +1298,12 @@ interface
 
        { tenumdef }
 
+       { tenumdef }
+
        tenumdef = class(tstoreddef)
           minval,
           maxval    : asizeint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1228,6 +1318,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           has_jumps : boolean;
           basedef   : tenumdef;
           basedefderef : tderef;
@@ -1236,11 +1328,14 @@ interface
           constructor create_subrange(_basedef:tenumdef;_min,_max:asizeint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           constructor ppuload(ppufile:tcompilerppufile);
           destructor destroy;override;
           function getcopy : tstoreddef;override;
@@ -1261,6 +1356,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function  int2enumsym(l: asizeint): tsym;
           { returns basedef if assigned, otherwise self }
           function getbasedef: tenumdef;
@@ -1270,6 +1366,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
        tenumdefclass = class of tenumdef;
 
@@ -1285,11 +1383,14 @@ interface
           constructor create(def:tdef;low, high : asizeint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           constructor ppuload(ppufile:tcompilerppufile);
           function getcopy : tstoreddef;override;
           { do not override this routine in platform-specific subclasses,
@@ -1330,6 +1431,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
        cfiledef: tfiledefclass;
        cvariantdef: tvariantdefclass;
@@ -1357,6 +1459,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     { default types }
        generrordef,               { error in definition }
@@ -1410,6 +1514,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        u128inttype,               { 128-bit unsigned integer }
        s128inttype,               { 128-bit signed integer }
 =======
@@ -1418,6 +1523,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        s32floattype,              { 32 bit floating point number }
        s64floattype,              { 64 bit floating point number }
        s80floattype,              { 80 bit floating point number }
@@ -1470,6 +1577,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        { jump buffer type, used by setjmp }
        rec_jmp_buf : trecorddef;
 
@@ -1491,6 +1599,11 @@ interface
        rec_jmp_buf : trecorddef;
 
 >>>>>>> graemeg/cpstrnew
+=======
+       { pointer to jump buffer }
+       rec_jmp_buf : trecorddef;
+
+>>>>>>> origin/cpstrnew
        { Objective-C base types }
        objc_metaclasstype,
        objc_superclasstype,
@@ -1503,6 +1616,7 @@ interface
        objc_fastenumeration      : tobjectdef;
        objc_fastenumerationstate : trecorddef;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1537,6 +1651,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     const
 {$ifdef i386}
        pbestrealtype : ^tdef = @s80floattype;
@@ -1584,6 +1700,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_any_interface_kind(def: tdef): boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1591,12 +1708,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function is_interfacecorba(def: tdef): boolean;
     function is_interface(def: tdef): boolean;
     function is_dispinterface(def: tdef): boolean;
     function is_object(def: tdef): boolean;
     function is_class(def: tdef): boolean;
     function is_cppclass(def: tdef): boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1607,12 +1727,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function is_objcclass(def: tdef): boolean;
     function is_objcclassref(def: tdef): boolean;
     function is_objcprotocol(def: tdef): boolean;
     function is_objccategory(def: tdef): boolean;
     function is_objc_class_or_protocol(def: tdef): boolean;
     function is_objc_protocol_or_category(def: tdef): boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1686,6 +1809,20 @@ interface
 
     function use_vectorfpu(def : tdef) : boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+    function is_class_or_interface(def: tdef): boolean;
+    function is_class_or_interface_or_objc(def: tdef): boolean;
+    function is_class_or_interface_or_object(def: tdef): boolean;
+    function is_class_or_interface_or_dispinterface(def: tdef): boolean;
+    function is_implicit_pointer_object_type(def: tdef): boolean;
+    function is_class_or_object(def: tdef): boolean;
+    function is_record(def: tdef): boolean;
+
+    procedure loadobjctypes;
+    procedure maybeloadcocoatypes;
+
+    function use_vectorfpu(def : tdef) : boolean;
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -1697,6 +1834,7 @@ implementation
       { target }
       systems,paramgr,
       { symtable }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1712,6 +1850,9 @@ implementation
 =======
       symsym,symtable,symutil,defutil,objcdef,
 >>>>>>> graemeg/cpstrnew
+=======
+      symsym,symtable,symutil,defutil,objcdef,
+>>>>>>> origin/cpstrnew
       { module }
       fmodule,
       { other }
@@ -1722,6 +1863,7 @@ implementation
 {****************************************************************************
                                   Helpers
 ****************************************************************************}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1768,6 +1910,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     function getparaencoding(def:tdef):tstringencoding; inline;
       begin
@@ -1888,6 +2032,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         { The mangled name is made out of at most 4 parts:
          1) Optional typeprefix given as first parameter
@@ -1905,6 +2050,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         result:='';
         if typeprefix<>'' then
           result:=result+typeprefix+'_$';
@@ -2547,11 +2694,34 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function tstoreddef.in_currentunit: boolean;
       var
         st: tsymtable;
       begin
 >>>>>>> graemeg/cpstrnew
+=======
+    function tstoreddef.OwnerHierarchyName: string;
+      var
+        tmp: tdef;
+      begin
+        tmp:=self;
+        result:='';
+        repeat
+          if tmp.owner.symtabletype in [ObjectSymtable,recordsymtable] then
+            tmp:=tdef(tmp.owner.defowner)
+          else
+            break;
+          result:=tabstractrecorddef(tmp).objrealname^+'.'+result;
+        until tmp=nil;
+      end;
+
+
+    function tstoreddef.in_currentunit: boolean;
+      var
+        st: tsymtable;
+      begin
+>>>>>>> origin/cpstrnew
         st:=owner;
         while not(st.symtabletype in [globalsymtable,staticsymtable]) do
           st:=st.defowner.owner;
@@ -2743,6 +2913,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             is_intregable:=tprocvardef(self).is_addressonly or (po_methodpointer in tprocvardef(self).procoptions);
 =======
             is_intregable:=tprocvardef(self).is_addressonly;
@@ -2753,6 +2924,9 @@ implementation
 =======
             is_intregable:=tprocvardef(self).is_addressonly;
 >>>>>>> graemeg/cpstrnew
+=======
+            is_intregable:=tprocvardef(self).is_addressonly;
+>>>>>>> origin/cpstrnew
           objectdef:
             is_intregable:=(is_implicit_pointer_object_type(self)) and not needs_inittable;
           setdef:
@@ -2765,6 +2939,7 @@ implementation
               recsize:=size;
               is_intregable:=
                 ispowerof2(recsize,temp) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2784,6 +2959,9 @@ implementation
 =======
                 (recsize <= sizeof(asizeint));
 >>>>>>> graemeg/cpstrnew
+=======
+                (recsize <= sizeof(asizeint));
+>>>>>>> origin/cpstrnew
             end;
         end;
      end;
@@ -2940,6 +3118,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor tstringdef.createlong(l: asizeint; doregister: boolean);
 =======
     constructor tstringdef.createlong(l : asizeint);
@@ -2950,6 +3129,9 @@ implementation
 =======
     constructor tstringdef.createlong(l : asizeint);
 >>>>>>> graemeg/cpstrnew
+=======
+    constructor tstringdef.createlong(l : asizeint);
+>>>>>>> origin/cpstrnew
       begin
          inherited create(stringdef,doregister);
          stringtype:=st_longstring;
@@ -2965,6 +3147,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          encoding:=0;
          len:=ppufile.getasizeint;
          ppuload_platform(ppufile);
@@ -2973,6 +3156,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          len:=ppufile.getasizeint;
          savesize:=sizeof(pint);
 >>>>>>> graemeg/cpstrnew
@@ -2986,6 +3171,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          encoding:=aencoding;
 =======
          encoding:=65535;
@@ -2996,6 +3182,9 @@ implementation
 =======
          encoding:=65535;
 >>>>>>> graemeg/cpstrnew
+=======
+         encoding:=65535;
+>>>>>>> origin/cpstrnew
          len:=-1;
       end;
 
@@ -3009,12 +3198,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ppuload_platform(ppufile);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          savesize:=sizeof(pint);
 >>>>>>> graemeg/cpstrnew
       end;
@@ -3024,6 +3216,7 @@ implementation
       begin
          inherited create(stringdef,doregister);
          stringtype:=st_widestring;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3040,6 +3233,9 @@ implementation
 =======
          encoding:=CP_UTF16;
 >>>>>>> graemeg/cpstrnew
+=======
+         encoding:=CP_UTF16;
+>>>>>>> origin/cpstrnew
          len:=-1;
       end;
 
@@ -3064,6 +3260,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if target_info.endian=endian_little then
            encoding:=CP_UTF16LE
          else
@@ -3077,6 +3274,9 @@ implementation
 =======
          encoding:=CP_UTF16;
 >>>>>>> graemeg/cpstrnew
+=======
+         encoding:=CP_UTF16;
+>>>>>>> origin/cpstrnew
          len:=-1;
       end;
 
@@ -3090,12 +3290,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ppuload_platform(ppufile);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          savesize:=sizeof(pint);
 >>>>>>> graemeg/cpstrnew
       end;
@@ -3262,6 +3465,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              ppuload_platform(ppufile);
            end
          else
@@ -3282,11 +3486,17 @@ implementation
          else
            begin
 >>>>>>> graemeg/cpstrnew
+=======
+           end
+         else
+           begin
+>>>>>>> origin/cpstrnew
              // create with nil defowner first to prevent values changes on insert
              symtable:=tenumsymtable.create(nil);
              tenumsymtable(symtable).ppuload(ppufile);
              symtable.defowner:=self;
            end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
       end;
@@ -3297,6 +3507,8 @@ implementation
         symtable:=nil;
         inherited destroy;
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
     destructor tenumdef.destroy;
@@ -3398,6 +3610,7 @@ implementation
         i:integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         for i := 0 to symtable.SymList.Count - 1 do
           begin
@@ -3409,6 +3622,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         for i := 0 to symtable.SymList.Count - 1 do
           begin
@@ -3428,9 +3643,12 @@ implementation
         else
           tenumsymtable(symtable).buildderef;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -3440,6 +3658,7 @@ implementation
         sym: tsym;
         bdef: tenumdef;
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3496,6 +3715,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         inherited deref;
         if df_copied_def in defoptions then
           begin
@@ -3503,6 +3724,7 @@ implementation
             symtable:=basedef.symtable.getcopy;
           end
         else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3516,6 +3738,9 @@ implementation
 =======
           tenumsymtable(symtable).deref;
 >>>>>>> graemeg/cpstrnew
+=======
+          tenumsymtable(symtable).deref;
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -3530,6 +3755,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          writeentry(ppufile,ibenumdef);
 =======
          ppufile.writeentry(ibenumdef);
@@ -3540,6 +3766,9 @@ implementation
 =======
          ppufile.writeentry(ibenumdef);
 >>>>>>> graemeg/cpstrnew
+=======
+         ppufile.writeentry(ibenumdef);
+>>>>>>> origin/cpstrnew
          if not (df_copied_def in defoptions) then
            tenumsymtable(symtable).ppuwrite(ppufile);
       end;
@@ -3660,6 +3889,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           varbyte,varword,varlongword,varqword,varUndefined,
           varshortint,varsmallint,varinteger,varint64,varUndefined,
           varboolean,varboolean,varboolean,varboolean,
@@ -3669,6 +3899,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           varbyte,varword,varlongword,varqword,
           varshortint,varsmallint,varinteger,varint64,
           varboolean,varboolean,varboolean,varUndefined,varUndefined,
@@ -3746,6 +3978,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             sc80real,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3753,6 +3986,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             s80real: result:=16;
             s64real,
             s64currency,
@@ -3787,6 +4022,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if target_info.system in [system_i386_darwin,
                   system_i386_iphonesim,system_x86_64_darwin,
                   system_x86_64_iphonesim,
@@ -3809,6 +4045,11 @@ implementation
                   system_x86_64_linux,system_x86_64_freebsd,
                   system_x86_64_solaris,system_x86_64_embedded] then
 >>>>>>> graemeg/cpstrnew
+=======
+             if target_info.system in [system_i386_darwin,system_i386_iphonesim,system_x86_64_darwin,
+                  system_x86_64_linux,system_x86_64_freebsd,
+                  system_x86_64_solaris,system_x86_64_embedded] then
+>>>>>>> origin/cpstrnew
                savesize:=16
              else
                savesize:=12;
@@ -3993,11 +4234,14 @@ implementation
 {$endif cpu8bitaddr}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -4180,6 +4424,7 @@ implementation
         is_far:=false;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
         has_pointer_math:=cs_pointermath in current_settings.localswitches;
       end;
@@ -4225,6 +4470,9 @@ implementation
 =======
         has_pointer_math:=cs_pointermath in current_settings.localswitches;
 >>>>>>> graemeg/cpstrnew
+=======
+        has_pointer_math:=cs_pointermath in current_settings.localswitches;
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -4237,11 +4485,14 @@ implementation
         has_pointer_math:=cs_pointermath in current_settings.localswitches;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -4256,11 +4507,14 @@ implementation
          has_pointer_math:=(ppufile.getbyte<>0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -4273,6 +4527,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           result:=cpointerdef.create(tforwarddef(pointeddef).getcopy)
         else
           result:=cpointerdef.create(pointeddef);
@@ -4281,17 +4536,22 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           result:=tpointerdef.create(tforwarddef(pointeddef).getcopy)
         else
           result:=tpointerdef.create(pointeddef);
         tpointerdef(result).is_far:=is_far;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         tpointerdef(result).has_pointer_math:=has_pointer_math;
         tpointerdef(result).savesize:=savesize;
       end;
@@ -4407,6 +4667,16 @@ implementation
       end;
 
 
+    function tclassrefdef.getcopy:tstoreddef;
+      begin
+        if pointeddef.typ=forwarddef then
+          result:=tclassrefdef.create(tforwarddef(pointeddef).getcopy)
+        else
+          result:=tclassrefdef.create(pointeddef);
+        tclassrefdef(result).savesize:=savesize;
+      end;
+
+
     function tclassrefdef.GetTypeName : string;
       begin
          GetTypeName:='Class Of '+pointeddef.typename;
@@ -4422,6 +4692,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tclassrefdef.rtti_mangledname(rt: trttitype): TSymStr;
 =======
     function tclassrefdef.rtti_mangledname(rt: trttitype): string;
@@ -4432,6 +4703,9 @@ implementation
 =======
     function tclassrefdef.rtti_mangledname(rt: trttitype): string;
 >>>>>>> graemeg/cpstrnew
+=======
+    function tclassrefdef.rtti_mangledname(rt: trttitype): string;
+>>>>>>> origin/cpstrnew
       begin
         if (tobjectdef(pointeddef).objecttype<>odt_objcclass) then
           result:=inherited rtti_mangledname(rt)
@@ -4452,6 +4726,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor tsetdef.create(def: tdef; low, high: asizeint; doregister: boolean);
 =======
     constructor tsetdef.create(def:tdef;low, high : asizeint);
@@ -4462,6 +4737,9 @@ implementation
 =======
     constructor tsetdef.create(def:tdef;low, high : asizeint);
 >>>>>>> graemeg/cpstrnew
+=======
+    constructor tsetdef.create(def:tdef;low, high : asizeint);
+>>>>>>> origin/cpstrnew
       var
         setallocbits: aint;
         packedsavesize: aint;
@@ -4612,6 +4890,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 
 
@@ -4669,6 +4948,10 @@ implementation
       end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+      end;
+
+>>>>>>> origin/cpstrnew
     destructor tarraydef.destroy;
       begin
         symtable.free;
@@ -4699,6 +4982,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ppuload_platform(ppufile);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4706,6 +4990,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          symtable:=tarraysymtable.create(self);
          tarraysymtable(symtable).ppuload(ppufile)
       end;
@@ -4734,6 +5020,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tarraysymtable(symtable).deref(false);
 =======
         tarraysymtable(symtable).deref;
@@ -4744,6 +5031,9 @@ implementation
 =======
         tarraysymtable(symtable).deref;
 >>>>>>> graemeg/cpstrnew
+=======
+        tarraysymtable(symtable).deref;
+>>>>>>> origin/cpstrnew
         _elementdef:=tdef(_elementdefderef.resolve);
         rangedef:=tdef(rangedefderef.resolve);
       end;
@@ -4763,11 +5053,14 @@ implementation
          ppufile.writeentry(ibarraydef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          tarraysymtable(symtable).ppuwrite(ppufile);
       end;
 
@@ -4971,6 +5264,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor tabstractrecorddef.create(const n:string; dt:tdeftyp;doregister:boolean);
       begin
         inherited create(dt,doregister);
@@ -5008,6 +5302,13 @@ implementation
         objname:=stringdup(upper(n));
         objrealname:=stringdup(n);
         objectoptions:=[];
+=======
+    constructor tabstractrecorddef.create(const n:string; dt:tdeftyp);
+      begin
+        inherited create(dt);
+        objname:=stringdup(upper(n));
+        objrealname:=stringdup(n);
+        objectoptions:=[];
       end;
 
     constructor tabstractrecorddef.ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
@@ -5030,6 +5331,178 @@ implementation
         stringdispose(objname);
         stringdispose(objrealname);
         inherited destroy;
+      end;
+
+    procedure tabstractrecorddef.check_forwards;
+      begin
+        tstoredsymtable(symtable).check_forwards;
+      end;
+
+    function tabstractrecorddef.find_procdef_bytype(pt:tproctypeoption): tprocdef;
+      var
+        i: longint;
+        sym: tsym;
+      begin
+        for i:=0 to symtable.SymList.Count-1 do
+          begin
+            sym:=tsym(symtable.SymList[i]);
+            if sym.typ=procsym then
+              begin
+                result:=tprocsym(sym).find_procdef_bytype(pt);
+                if assigned(result) then
+                  exit;
+              end;
+          end;
+          result:=nil;
+      end;
+
+    function tabstractrecorddef.GetSymtable(t:tGetSymtable):TSymtable;
+      begin
+        if t=gs_record then
+          GetSymtable:=symtable
+        else
+          GetSymtable:=nil;
+>>>>>>> origin/cpstrnew
+      end;
+
+    constructor tabstractrecorddef.ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
+      begin
+        inherited ppuload(dt,ppufile);
+        objrealname:=stringdup(ppufile.getstring);
+        objname:=stringdup(upper(objrealname^));
+        ppufile.getsmallset(objectoptions);
+      end;
+
+<<<<<<< HEAD
+    procedure tabstractrecorddef.ppuwrite(ppufile: tcompilerppufile);
+      begin
+        inherited ppuwrite(ppufile);
+        ppufile.putstring(objrealname^);
+        ppufile.putsmallset(objectoptions);
+      end;
+
+    destructor tabstractrecorddef.destroy;
+      begin
+        stringdispose(objname);
+        stringdispose(objrealname);
+        inherited destroy;
+=======
+    function tabstractrecorddef.RttiName: string;
+      var
+        tmp: tabstractrecorddef;
+      begin
+        Result:=OwnerHierarchyName+objrealname^;
+      end;
+
+    function tabstractrecorddef.search_enumerator_get: tprocdef;
+      var
+        sym : tsym;
+        i : integer;
+        pd : tprocdef;
+        hashedid : THashedIDString;
+      begin
+        result:=nil;
+        hashedid.id:='GETENUMERATOR';
+        sym:=tsym(symtable.FindWithHash(hashedid));
+        if assigned(sym) and (sym.typ=procsym) then
+          begin
+            for i := 0 to Tprocsym(sym).ProcdefList.Count - 1 do
+            begin
+              pd := tprocdef(Tprocsym(sym).ProcdefList[i]);
+              if (pd.proctypeoption = potype_function) and
+                 (is_class_or_interface_or_object(pd.returndef) or is_record(pd.returndef)) and
+                 (pd.visibility >= vis_public) then
+              begin
+                result:=pd;
+                exit;
+              end;
+            end;
+          end;
+      end;
+
+    function tabstractrecorddef.search_enumerator_move: tprocdef;
+      var
+        sym : tsym;
+        i : integer;
+        pd : tprocdef;
+        hashedid : THashedIDString;
+      begin
+        result:=nil;
+        // first search for po_enumerator_movenext method modifier
+        // then search for public function MoveNext: Boolean
+        for i:=0 to symtable.SymList.Count-1 do
+          begin
+            sym:=TSym(symtable.SymList[i]);
+            if (sym.typ=procsym) then
+            begin
+              pd:=Tprocsym(sym).find_procdef_byoptions([po_enumerator_movenext]);
+              if assigned(pd) then
+                begin
+                  result:=pd;
+                  exit;
+                end;
+            end;
+          end;
+        hashedid.id:='MOVENEXT';
+        sym:=tsym(symtable.FindWithHash(hashedid));
+        if assigned(sym) and (sym.typ=procsym) then
+          begin
+            for i:=0 to Tprocsym(sym).ProcdefList.Count-1 do
+            begin
+              pd := tprocdef(Tprocsym(sym).ProcdefList[i]);
+              if (pd.proctypeoption = potype_function) and
+                 is_boolean(pd.returndef) and
+                 (pd.minparacount = 0) and
+                 (pd.visibility >= vis_public) then
+              begin
+                result:=pd;
+                exit;
+              end;
+            end;
+          end;
+      end;
+
+    function tabstractrecorddef.search_enumerator_current: tsym;
+      var
+        sym: tsym;
+        i: integer;
+        hashedid : THashedIDString;
+      begin
+        result:=nil;
+        // first search for ppo_enumerator_current property modifier
+        // then search for public property Current
+        for i:=0 to symtable.SymList.Count-1 do
+          begin
+            sym:=TSym(symtable.SymList[i]);
+            if (sym.typ=propertysym) and (ppo_enumerator_current in tpropertysym(sym).propoptions) then
+            begin
+              result:=sym;
+              exit;
+            end;
+          end;
+        hashedid.id:='CURRENT';
+        sym:=tsym(symtable.FindWithHash(hashedid));
+        if assigned(sym) and (sym.typ=propertysym) and
+           (sym.visibility >= vis_public) and not tpropertysym(sym).propaccesslist[palt_read].empty then
+          begin
+            result:=sym;
+            exit;
+          end;
+      end;
+
+{***************************************************************************
+                                  trecorddef
+***************************************************************************}
+
+    constructor trecorddef.create(const n:string; p:TSymtable);
+      begin
+         inherited create(n,recorddef);
+         symtable:=p;
+         { we can own the symtable only if nobody else owns a copy so far }
+         if symtable.refcount=1 then
+           symtable.defowner:=self;
+         isunion:=false;
+>>>>>>> origin/cpstrnew
       end;
 
     procedure tabstractrecorddef.check_forwards;
@@ -6715,11 +7188,17 @@ implementation
 
     procedure tabstractprocdef.check_mark_as_nested;
       begin
+<<<<<<< HEAD
          { nested procvars require that nested functions use the Delphi-style
            nested procedure calling convention }
          if (parast.symtablelevel>normal_function_level) and
             (m_nested_procvars in current_settings.modeswitches) then
            include(procoptions,po_delphi_nested_cc);
+=======
+        result:=trecorddef.create(objrealname^,symtable.getcopy);
+        trecorddef(result).isunion:=isunion;
+        include(trecorddef(result).defoptions,df_copied_def);
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -6782,6 +7261,7 @@ implementation
         ploc: PCGParalocation;
         i: longint;
       begin
+<<<<<<< HEAD
         result:=false;
         init_paraloc_info(side);
         for i:=0 to parast.SymList.Count-1 do
@@ -6806,6 +7286,33 @@ implementation
                   ploc:=ploc^.next;
                 end;
             end;
+=======
+         inherited deref;
+         { now dereference the definitions }
+         if df_copied_def in defoptions then
+           begin
+             cloneddef:=trecorddef(cloneddefderef.resolve);
+             symtable:=cloneddef.symtable.getcopy;
+           end
+         else
+           tstoredsymtable(symtable).deref;
+
+         { assign TGUID? load only from system unit }
+         if not(assigned(rec_tguid)) and
+            (upper(typename)='TGUID') and
+            assigned(owner) and
+            assigned(owner.name) and
+            (owner.name^='SYSTEM') then
+           rec_tguid:=self;
+
+         { assign JMP_BUF? load only from system unit }
+         if not(assigned(rec_jmp_buf)) and
+            (upper(typename)='JMP_BUF') and
+            assigned(owner) and
+            assigned(owner.name) and
+            (owner.name^='SYSTEM') then
+           rec_jmp_buf:=self;
+>>>>>>> origin/cpstrnew
       end;
 
     function tabstractprocdef.is_pushleftright: boolean;
@@ -6825,7 +7332,11 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     procedure tabstractprocdef.declared_near;
+=======
+    function trecorddef.size:asizeint;
+>>>>>>> origin/cpstrnew
       begin
         Message1(parser_w_proc_directive_ignored,'NEAR');
       end;
@@ -6869,17 +7380,64 @@ implementation
 
     function tprocdef.GetParentFPStructPtrType: tdef;
       begin
+<<<<<<< HEAD
         if not assigned(implprocdefinfo) then
           internalerror(2014010305);
         result:=implprocdefinfo^.parentfpstructptrtype;
+=======
+         inherited create(dt);
+         parast:=tparasymtable.create(self,level);
+         paras:=nil;
+         minparacount:=0;
+         maxparacount:=0;
+         proctypeoption:=potype_none;
+         proccalloption:=pocall_none;
+         procoptions:=[];
+         returndef:=voidtype;
+         savesize:=sizeof(pint);
+         callerargareasize:=0;
+         calleeargareasize:=0;
+         has_paraloc_info:=callnoside;
+         funcretloc[callerside].init;
+         funcretloc[calleeside].init;
+         check_mark_as_nested;
+>>>>>>> origin/cpstrnew
       end;
 
 
     procedure tprocdef.SetParentFPInitBlock(AValue: tnode);
       begin
+<<<<<<< HEAD
         if not assigned(implprocdefinfo) then
           internalerror(2014010306);
         implprocdefinfo^.parentfpinitblock:=AValue;
+=======
+         if assigned(paras) then
+           begin
+{$ifdef MEMDEBUG}
+             memprocpara.start;
+{$endif MEMDEBUG}
+             paras.free;
+             paras:=nil;
+{$ifdef MEMDEBUG}
+             memprocpara.stop;
+{$endif MEMDEBUG}
+          end;
+         if assigned(parast) then
+          begin
+{$ifdef MEMDEBUG}
+            memprocparast.start;
+{$endif MEMDEBUG}
+            parast.free;
+            parast:=nil;
+{$ifdef MEMDEBUG}
+            memprocparast.stop;
+{$endif MEMDEBUG}
+          end;
+         funcretloc[callerside].done;
+         funcretloc[calleeside].done;
+         inherited destroy;
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -6923,19 +7481,33 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function tprocdef.Getforwarddef: boolean;
+=======
+    constructor tabstractprocdef.ppuload(dt:tdeftyp;ppufile:tcompilerppufile);
+>>>>>>> origin/cpstrnew
       begin
         if not assigned(implprocdefinfo) then
           internalerror(2014010312);
         result:=implprocdefinfo^.forwarddef;
       end;
 
+<<<<<<< HEAD
 
     function tprocdef.Gethasforward: boolean;
       begin
         if not assigned(implprocdefinfo) then
           internalerror(2014010313);
         result:=implprocdefinfo^.hasforward;
+=======
+         funcretloc[callerside].init;
+         if po_explicitparaloc in procoptions then
+           funcretloc[callerside].ppuload(ppufile);
+
+         savesize:=sizeof(pint);
+         if (po_explicitparaloc in procoptions) then
+           has_paraloc_info:=callerside;
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -7073,9 +7645,12 @@ implementation
          if (po_explicitparaloc in procoptions) then
            funcretloc[callerside].ppuwrite(ppufile);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -7298,6 +7873,80 @@ implementation
            include(procoptions,po_delphi_nested_cc);
       end;
 
+    function tabstractprocdef.no_self_node: boolean;
+      begin
+        Result:=([po_staticmethod,po_classmethod]<=procoptions)or
+                (proctypeoption in [potype_class_constructor,potype_class_destructor,potype_operator]);
+      end;
+
+
+    procedure tabstractprocdef.check_mark_as_nested;
+      begin
+         { nested procvars require that nested functions use the Delphi-style
+           nested procedure calling convention }
+         if (parast.symtablelevel>normal_function_level) and
+            (m_nested_procvars in current_settings.modeswitches) then
+           include(procoptions,po_delphi_nested_cc);
+      end;
+
+
+    procedure tabstractprocdef.init_paraloc_info(side: tcallercallee);
+      begin
+        if (side in [callerside,callbothsides]) and
+           not(has_paraloc_info in [callerside,callbothsides]) then
+          begin
+            callerargareasize:=paramanager.create_paraloc_info(self,callerside);
+            if has_paraloc_info in [calleeside,callbothsides] then
+              has_paraloc_info:=callbothsides
+            else
+              has_paraloc_info:=callerside;
+          end;
+        if (side in [calleeside,callbothsides]) and
+           not(has_paraloc_info in [calleeside,callbothsides]) then
+          begin
+            calleeargareasize:=paramanager.create_paraloc_info(self,calleeside);
+            if has_paraloc_info in [callerside,callbothsides] then
+              has_paraloc_info:=callbothsides
+            else
+              has_paraloc_info:=calleeside;
+          end;
+      end;
+
+
+    function tabstractprocdef.stack_tainting_parameter(side: tcallercallee): boolean;
+      var
+        p: tparavarsym;
+        ploc: PCGParalocation;
+        i: longint;
+      begin
+        result:=false;
+        init_paraloc_info(side);
+        for i:=0 to parast.SymList.Count-1 do
+          if tsym(parast.SymList[i]).typ=paravarsym then
+            begin
+              p:=tparavarsym(parast.SymList[i]);
+              { check if no parameter is located on the stack }
+              if is_open_array(p.vardef) or
+                 is_array_of_const(p.vardef) then
+                begin
+                  result:=true;
+                  exit;
+                end;
+              ploc:=p.paraloc[side].location;
+              while assigned(ploc) do
+                begin
+                  if (ploc^.loc=LOC_REFERENCE) then
+                    begin
+                      result:=true;
+                      exit
+                    end;
+                  ploc:=ploc^.next;
+                end;
+            end;
+      end;
+
+
+
 
     procedure tabstractprocdef.init_paraloc_info(side: tcallercallee);
       begin
@@ -7383,22 +8032,28 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef i386}
           fpu_used:=maxfpuregs;
 {$endif i386}
          interruptvector:=-1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -7434,12 +8089,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          synthetickind:=tsynthetickind(ppufile.getbyte);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef powerpc}
          { library symbol for AmigaOS/MorphOS }
          ppufile.getderef(libsymderef);
@@ -7621,12 +8279,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ppufile.putbyte(byte(synthetickind));
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef powerpc}
          { library symbol for AmigaOS/MorphOS }
          ppufile.putderef(libsymderef);
@@ -7725,6 +8386,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       var
         pno: tprocnameoptions;
       begin
@@ -7742,6 +8404,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       var
         s, rn : ansistring;
         t : ttoken;
@@ -7753,11 +8417,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if assigned(struct) then
          begin
            s:=struct.RttiName+'.';
@@ -7840,11 +8507,14 @@ implementation
           s:=s+' is nested';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         s:=s+';';
         { forced calling convention? }
         if (po_hascallingconvention in procoptions) then
@@ -7865,6 +8535,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         result:=(owner.symtabletype=ObjectSymtable)and not no_self_node;
 =======
         result:=owner.symtabletype=ObjectSymtable;
@@ -7875,12 +8546,16 @@ implementation
 =======
         result:=owner.symtabletype=ObjectSymtable;
 >>>>>>> graemeg/cpstrnew
+=======
+        result:=owner.symtabletype=ObjectSymtable;
+>>>>>>> origin/cpstrnew
       end;
 
 
     function tprocdef.is_addressonly:boolean;
       begin
         result:=assigned(owner) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7894,6 +8569,9 @@ implementation
 =======
                 (owner.symtabletype<>ObjectSymtable) and
 >>>>>>> graemeg/cpstrnew
+=======
+                (owner.symtabletype<>ObjectSymtable) and
+>>>>>>> origin/cpstrnew
                 (not(m_nested_procvars in current_settings.modeswitches) or
                  not is_nested_pd(self));
       end;
@@ -7903,6 +8581,7 @@ implementation
       begin
         include(procoptions,po_external);
         forwarddef:=false;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -7920,6 +8599,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -8178,6 +8859,7 @@ implementation
              'v',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              'h','t','j','y','',
              'a','s','i','x','',
              'b','b','b','b',
@@ -8205,6 +8887,12 @@ implementation
              'f','d','e','e',
              'd','d','g');
 {$endif NAMEMANGLING_GCC2}
+=======
+             'h','t','j','y',
+             'a','s','i','x',
+             'b','b','b','b','b',
+             'c','w','x');
+>>>>>>> origin/cpstrnew
 
            floattype2str : array[tfloattype] of string[1] = (
              'f','d','e','e',
@@ -8333,6 +9021,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  tprocdef.objcmangledname : TSymStr;
 =======
     function  tprocdef.objcmangledname : string;
@@ -8343,6 +9032,9 @@ implementation
 =======
     function  tprocdef.objcmangledname : string;
 >>>>>>> graemeg/cpstrnew
+=======
+    function  tprocdef.objcmangledname : string;
+>>>>>>> origin/cpstrnew
       var
         manglednamelen: longint;
         iscatmethod   : boolean;
@@ -8467,6 +9159,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ppuload_platform(ppufile);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -8474,6 +9167,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          tparasymtable(parast).ppuload(ppufile);
       end;
 
@@ -8509,11 +9204,14 @@ implementation
         for i:=low(tcallercallee) to high(tcallercallee) do
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           tprocvardef(result).funcretloc[i]:=funcretloc[i].getcopy;
         tprocvardef(result).has_paraloc_info:=has_paraloc_info;
 {$ifdef m68k}
@@ -8600,6 +9298,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         result:=inherited;
         tabstractprocdef(result).calcparas;
 =======
@@ -8607,6 +9306,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if not(po_methodpointer in procoptions) then
           if not is_nested_pd(self) then
             result:='procvar'
@@ -8616,11 +9317,14 @@ implementation
           result:='procvarofobj'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -8660,6 +9364,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { calling convention doesn't matter for blocks }
          if po_is_block in procoptions then
            GetTypeName := s+' is block;'
@@ -8670,6 +9375,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          GetTypeName := s+';'+ProcCallOptionStr[proccalloption]+'>';
 >>>>>>> graemeg/cpstrnew
       end;
@@ -8679,6 +9386,7 @@ implementation
                               TOBJECTDEF
 ***************************************************************************}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8700,6 +9408,11 @@ implementation
      begin
         inherited create(n,objectdef);
 >>>>>>> graemeg/cpstrnew
+=======
+   constructor tobjectdef.create(ot:tobjecttyp;const n:string;c:tobjectdef);
+     begin
+        inherited create(n,objectdef);
+>>>>>>> origin/cpstrnew
         fcurrent_dispid:=0;
         objecttype:=ot;
         childof:=nil;
@@ -8716,6 +9429,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if objecttype in [odt_class,odt_objcclass,odt_objcprotocol,odt_javaclass,odt_interfacejava] then
 =======
         if objecttype in [odt_class,odt_objcclass,odt_objcprotocol] then
@@ -8726,6 +9440,9 @@ implementation
 =======
         if objecttype in [odt_class,odt_objcclass,odt_objcprotocol] then
 >>>>>>> graemeg/cpstrnew
+=======
+        if objecttype in [odt_class,odt_objcclass,odt_objcprotocol] then
+>>>>>>> origin/cpstrnew
           ImplementedInterfaces:=TFPObjectList.Create(true)
         else
           ImplementedInterfaces:=nil;
@@ -8750,6 +9467,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          symtable:=tObjectSymtable.create(self,objrealname^,0,0,0);
          tObjectSymtable(symtable).datasize:=ppufile.getasizeint;
          tObjectSymtable(symtable).paddingsize:=ppufile.getword;
@@ -8762,6 +9480,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          import_lib:=stringdup(ppufile.getstring);
          { only used for external C++ classes }
          if (import_lib^='') then
@@ -8803,6 +9523,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if objecttype in [odt_class,odt_objcclass,odt_objcprotocol,odt_javaclass,odt_interfacejava] then
 =======
          if objecttype in [odt_class,odt_objcclass,odt_objcprotocol] then
@@ -8813,6 +9534,9 @@ implementation
 =======
          if objecttype in [odt_class,odt_objcclass,odt_objcprotocol] then
 >>>>>>> graemeg/cpstrnew
+=======
+         if objecttype in [odt_class,odt_objcclass,odt_objcprotocol] then
+>>>>>>> origin/cpstrnew
            begin
              ImplementedInterfaces:=TFPObjectList.Create(true);
              implintfcount:=ppufile.getlongint;
@@ -8861,6 +9585,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          if (objecttype=odt_javaclass) and
             not(oo_is_formal in objectoptions) then
            begin
@@ -8891,6 +9616,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          writing_class_record_dbginfo:=false;
        end;
 
@@ -8906,6 +9633,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
          stringdispose(import_lib);
 >>>>>>> graemeg/cpstrnew
@@ -8915,6 +9643,9 @@ implementation
 =======
          stringdispose(import_lib);
 >>>>>>> graemeg/cpstrnew
+=======
+         stringdispose(import_lib);
+>>>>>>> origin/cpstrnew
          stringdispose(iidstr);
          if assigned(ImplementedInterfaces) then
            begin
@@ -8948,6 +9679,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         result:=cobjectdef.create(objecttype,objrealname^,childof,true);
 =======
         result:=tobjectdef.create(objecttype,objrealname^,childof);
@@ -8958,6 +9690,9 @@ implementation
 =======
         result:=tobjectdef.create(objecttype,objrealname^,childof);
 >>>>>>> graemeg/cpstrnew
+=======
+        result:=tobjectdef.create(objecttype,objrealname^,childof);
+>>>>>>> origin/cpstrnew
         { the constructor allocates a symtable which we release to avoid memory leaks }
         tobjectdef(result).symtable.free;
         tobjectdef(result).symtable:=symtable.getcopy;
@@ -9017,6 +9752,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ppufile.putasizeint(tObjectSymtable(symtable).datasize);
          ppufile.putword(tObjectSymtable(symtable).paddingsize);
          ppufile.putbyte(byte(tObjectSymtable(symtable).fieldalignment));
@@ -9028,6 +9764,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          if assigned(import_lib) then
            ppufile.putstring(import_lib^)
          else
@@ -9163,11 +9901,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         if (tdef(def).typ<>procdef) then
           exit;
@@ -9253,11 +9994,14 @@ implementation
          if (objecttype=odt_objcclass) or
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             (oo_is_classhelper in objectoptions) then
            symtable.DefList.ForEachCall(@create_class_helper_for_procdef,nil);
       end;
@@ -9331,6 +10075,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (objecttype in [odt_class,odt_object,odt_objcclass,odt_javaclass]) then
 =======
         if (objecttype in [odt_class,odt_object,odt_objcclass]) then
@@ -9341,6 +10086,9 @@ implementation
 =======
         if (objecttype in [odt_class,odt_object,odt_objcclass]) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if (objecttype in [odt_class,odt_object,odt_objcclass]) then
+>>>>>>> origin/cpstrnew
           begin
             tObjectSymtable(symtable).datasize:=tObjectSymtable(symtable).datasize+tObjectSymtable(c.symtable).datasize;
             { inherit recordalignment }
@@ -9372,6 +10120,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol,odt_javaclass,odt_interfacejava] then
 =======
         if objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol] then
@@ -9382,6 +10131,9 @@ implementation
 =======
         if objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol] then
 >>>>>>> graemeg/cpstrnew
+=======
+        if objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol] then
+>>>>>>> origin/cpstrnew
           exit;
         if (oo_has_vmt in objectoptions) then
           internalerror(12345)
@@ -9399,6 +10151,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              vmt_field:=cfieldvarsym.create('_vptr$'+objname^,vs_value,voidpointertype,[],true);
              hidesym(vmt_field);
              tObjectSymtable(symtable).insert(vmt_field);
@@ -9408,6 +10161,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              vs:=tfieldvarsym.create('_vptr$'+objname^,vs_value,voidpointertype,[]);
              hidesym(vs);
              tObjectSymtable(symtable).insert(vs);
@@ -9418,11 +10173,14 @@ implementation
                vmt_offset:=vs.fieldoffset div 8;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              include(objectoptions,oo_has_vmt);
           end;
      end;
@@ -9444,6 +10202,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcprotocol,odt_interfacejava]) then
 =======
         if not(objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcprotocol]) then
@@ -9454,6 +10213,9 @@ implementation
 =======
         if not(objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcprotocol]) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if not(objecttype in [odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcprotocol]) then
+>>>>>>> origin/cpstrnew
           inherited;
         if (oo_is_forward in objectoptions) then
           begin
@@ -9467,11 +10229,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    { true if prot implements d (or if they are equal) }
    function is_related_protocol(prot: tobjectdef; d : tdef) : boolean;
      var
@@ -9543,11 +10308,14 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    function tobjectdef.find_destructor: tprocdef;
      var
        objdef: tobjectdef;
@@ -9574,6 +10342,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol,odt_helper,odt_javaclass,odt_interfacejava] then
           result:=voidpointertype.size
 =======
@@ -9581,6 +10350,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol] then
           result:=sizeof(pint)
 >>>>>>> graemeg/cpstrnew
@@ -9594,6 +10365,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol,odt_helper,odt_javaclass,odt_interfacejava] then
           alignment:=voidpointertype.alignment
 =======
@@ -9601,6 +10373,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol] then
           alignment:=sizeof(pint)
 >>>>>>> graemeg/cpstrnew
@@ -9622,15 +10396,19 @@ implementation
           vmtmethodoffset:=(index+10)*sizeof(pint)+2*sizeof(pint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         odt_objcclass,
         odt_objcprotocol:
           vmtmethodoffset:=0;
         odt_interfacecom,odt_interfacecorba,odt_dispinterface:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -9644,6 +10422,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           vmtmethodoffset:=index*sizeof(pint);
 >>>>>>> graemeg/cpstrnew
         else
@@ -9683,6 +10463,7 @@ implementation
         hp : tobjectdef;
       begin
          case objecttype of
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             odt_helper,
@@ -9927,6 +10708,8 @@ implementation
          case objecttype of
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             odt_class :
               needs_inittable:=false;
             odt_dispinterface,
@@ -10029,6 +10812,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
     function tobjectdef.rtti_mangledname(rt: trttitype): string;
       begin
         if not(objecttype in [odt_objcclass,odt_objcprotocol]) then
@@ -10134,6 +10918,9 @@ implementation
       end;
 
 =======
+=======
+    function tobjectdef.members_need_inittable : boolean;
+>>>>>>> origin/cpstrnew
       begin
         inc(fcurrent_dispid);
         result:=fcurrent_dispid;
@@ -10177,7 +10964,23 @@ implementation
           result:=childof.search_enumerator_get;
       end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+    function tobjectdef.get_next_dispid: longint;
+      begin
+        inc(fcurrent_dispid);
+        result:=fcurrent_dispid;
+      end;
+
+    function tobjectdef.search_enumerator_get: tprocdef;
+      begin
+        result:=inherited;
+        if not assigned(result) and assigned(childof) then
+          result:=childof.search_enumerator_get;
+      end;
+
+>>>>>>> origin/cpstrnew
     function tobjectdef.search_enumerator_move: tprocdef;
       begin
         result:=inherited;
@@ -10187,11 +10990,14 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function tobjectdef.search_enumerator_current: tsym;
       begin
         result:=inherited;
@@ -10390,6 +11196,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    current_module.AddExternalImport(tobjectdef(pd.struct).import_lib^,pd.mangledname,pd.mangledname,0,false,false)
 =======
                    current_module.AddExternalImport(tobjectdef(pd.struct).import_lib^,pd.mangledname,0,false,false)
@@ -10400,6 +11207,9 @@ implementation
 =======
                    current_module.AddExternalImport(tobjectdef(pd.struct).import_lib^,pd.mangledname,0,false,false)
 >>>>>>> graemeg/cpstrnew
+=======
+                   current_module.AddExternalImport(tobjectdef(pd.struct).import_lib^,pd.mangledname,0,false,false)
+>>>>>>> origin/cpstrnew
                  else
                    begin
                      { add import name to external list for DLL scanning }
@@ -10420,6 +11230,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -10427,6 +11238,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {****************************************************************************
                              TImplementedInterface
 ****************************************************************************}
@@ -10570,6 +11383,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         {$warning: this is completely wrong on so many levels...}
 >>>>>>> graemeg/cpstrnew
@@ -10579,10 +11393,14 @@ implementation
 =======
         {$warning: this is completely wrong on so many levels...}
 >>>>>>> graemeg/cpstrnew
+=======
+        {$warning: this is completely wrong on so many levels...}
+>>>>>>> origin/cpstrnew
         { 1) the procdefs list will be freed once for each copy
           2) since the procdefs list owns its elements, those will also be freed for each copy
           3) idem for the name mappings
         }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -10593,6 +11411,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         Move(pointer(self)^,pointer(result)^,InstanceSize);
         We need to make clean copies of the different fields
         this is not implemented yet, and thus we generate an internal
@@ -10629,6 +11449,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         result:=cforwarddef.create(tosymname^, forwardpos);
 =======
         result:=tforwarddef.create(tosymname^, forwardpos);
@@ -10639,6 +11460,9 @@ implementation
 =======
         result:=tforwarddef.create(tosymname^, forwardpos);
 >>>>>>> graemeg/cpstrnew
+=======
+        result:=tforwarddef.create(tosymname^, forwardpos);
+>>>>>>> origin/cpstrnew
       end;
 
 {****************************************************************************
@@ -10724,6 +11548,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_any_interface_kind(def: tdef): boolean;
       begin
         result:=
@@ -10739,6 +11564,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function is_interfacecorba(def: tdef): boolean;
       begin
         is_interfacecorba:=
@@ -10804,6 +11631,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_objectpascal_helper(def: tdef): boolean;
       begin
         result:=
@@ -10819,6 +11647,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function is_objcclassref(def: tdef): boolean;
       begin
         is_objcclassref:=
@@ -10871,6 +11701,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function is_classhelper(def: tdef): boolean;
       begin
          result:=
@@ -10883,6 +11714,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     function is_class_or_interface(def: tdef): boolean;
       begin
@@ -10902,6 +11735,7 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -10929,6 +11763,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function is_class_or_interface_or_object(def: tdef): boolean;
       begin
         result:=
@@ -10954,6 +11790,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           (((def.typ=objectdef) and
             (tobjectdef(def).objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol,odt_helper,odt_javaclass,odt_interfacejava])) or
            ((target_info.system in systems_jvm) and
@@ -10975,6 +11812,10 @@ implementation
           (def.typ=objectdef) and
           (tobjectdef(def).objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol]);
 >>>>>>> graemeg/cpstrnew
+=======
+          (def.typ=objectdef) and
+          (tobjectdef(def).objecttype in [odt_class,odt_interfacecom,odt_interfacecorba,odt_dispinterface,odt_objcclass,odt_objcprotocol]);
+>>>>>>> origin/cpstrnew
       end;
 
     function is_class_or_object(def: tdef): boolean;
@@ -10992,6 +11833,7 @@ implementation
           (def.typ=recorddef);
       end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11040,6 +11882,8 @@ implementation
       end;
 
 =======
+=======
+>>>>>>> origin/cpstrnew
     procedure loadobjctypes;
       begin
         objc_metaclasstype:=tpointerdef(search_named_unit_globaltype('OBJC','POBJC_CLASS',true).typedef);
@@ -11047,6 +11891,7 @@ implementation
         objc_idtype:=tpointerdef(search_named_unit_globaltype('OBJC','ID',true).typedef);
         objc_seltype:=tpointerdef(search_named_unit_globaltype('OBJC','SEL',true).typedef);
         objc_objecttype:=trecorddef(search_named_unit_globaltype('OBJC','OBJC_OBJECT',true).typedef);
+<<<<<<< HEAD
       end;
 
 >>>>>>> graemeg/cpstrnew
@@ -11114,6 +11959,8 @@ implementation
 
 
 =======
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -11136,7 +11983,10 @@ implementation
       end;
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function use_vectorfpu(def : tdef) : boolean;
       begin
 {$ifdef x86}
@@ -11151,6 +12001,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef aarch64}
 {$define use_vectorfpuimplemented}
         use_vectorfpu:=true;
@@ -11162,10 +12013,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef use_vectorfpuimplemented}
         use_vectorfpu:=false;
 {$endif}
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -11176,5 +12030,7 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 end.

@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fpc_setjmp(var S : jmp_buf) : smallint;assembler;[Public, alias : 'FPC_SETJMP'];nostackframe;compilerproc;
 =======
 function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_SETJMP'];nostackframe;compilerproc;
@@ -27,10 +28,14 @@ function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_S
 =======
 function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_SETJMP'];nostackframe;compilerproc;
 >>>>>>> graemeg/cpstrnew
+=======
+function fpc_setjmp(var S : jmp_buf) : longint;assembler;[Public, alias : 'FPC_SETJMP'];nostackframe;compilerproc;
+>>>>>>> origin/cpstrnew
   asm
   end;
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -44,6 +49,9 @@ procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias 
 =======
 procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias : 'FPC_LONGJMP'];compilerproc;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure fpc_longjmp(var S : jmp_buf;value : longint);assembler;[Public, alias : 'FPC_LONGJMP'];compilerproc;
+>>>>>>> origin/cpstrnew
   asm
   end;
 

@@ -7,6 +7,7 @@ program Project1;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure Foo1;
 var
   a: TObject;
@@ -23,6 +24,11 @@ procedure Foo;
 var
   a: TObject;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure Foo;
+var
+  a: TObject;
+>>>>>>> origin/cpstrnew
 begin
 {$ifdef cpu32}
   if ptruint(a)<>$55555555 then
@@ -33,6 +39,7 @@ begin
 {$endif}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 procedure Foo2;inline;
@@ -85,4 +92,8 @@ begin
 begin
   Foo;
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+  Foo;
+>>>>>>> origin/cpstrnew
 end.

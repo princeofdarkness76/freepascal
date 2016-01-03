@@ -927,11 +927,14 @@ begin
           else if DataType = ftFMTBcd then precision := (fields[i] as TFMTBCDField).Precision;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           end;
     finally
       FieldDefs.EndUpdate;

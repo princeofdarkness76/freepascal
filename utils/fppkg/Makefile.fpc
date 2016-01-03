@@ -63,11 +63,14 @@ packages_darwin=univint
 packages_iphonesim=univint
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [rules]
 # Do not pass the Makefile's unit and binary target locations. Fpmake uses it's own.

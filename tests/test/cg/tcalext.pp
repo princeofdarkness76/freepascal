@@ -412,11 +412,14 @@ begin
   if trunc(global_long_double) <> trunc(RESULT_LONGDOUBLE) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     failed := true;
 {$endif test_longdouble}
 

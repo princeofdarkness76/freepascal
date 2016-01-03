@@ -24,6 +24,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate_flower(flower: IPTCSurface);
 =======
 procedure generate_flower(flower: TPTCSurface);
@@ -34,6 +35,9 @@ procedure generate_flower(flower: TPTCSurface);
 =======
 procedure generate_flower(flower: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure generate_flower(flower: TPTCSurface);
+>>>>>>> origin/cpstrnew
 var
   data: PUint8;
   x, y, fx, fy, fx2, fy2: Integer;
@@ -71,6 +75,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate(palette: IPTCPalette);
 =======
 procedure generate(palette: TPTCPalette);
@@ -81,6 +86,9 @@ procedure generate(palette: TPTCPalette);
 =======
 procedure generate(palette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure generate(palette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 var
   data: PUint32;
   i, c: Integer;
@@ -92,11 +100,14 @@ begin
   data := palette.lock;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   try
     { black to yellow }
@@ -143,15 +154,19 @@ begin
     palette.unlock;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -166,6 +181,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
   flower_surface: TPTCSurface = nil;
@@ -174,11 +191,14 @@ var
   area: TPTCArea = nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   time, delta: Single;
   scr, map: PUint8;
   width, height, mapWidth: Integer;
@@ -288,11 +308,14 @@ begin
       console.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

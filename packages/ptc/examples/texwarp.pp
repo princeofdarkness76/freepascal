@@ -25,6 +25,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure blur(s: IPTCSurface);
 =======
 procedure blur(s: TPTCSurface);
@@ -35,6 +36,9 @@ procedure blur(s: TPTCSurface);
 =======
 procedure blur(s: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure blur(s: TPTCSurface);
+>>>>>>> origin/cpstrnew
 var
   d: PUint8;
   pitch: Integer;
@@ -75,6 +79,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure generate(surface: IPTCSurface);
 =======
 procedure generate(surface: TPTCSurface);
@@ -85,6 +90,9 @@ procedure generate(surface: TPTCSurface);
 =======
 procedure generate(surface: TPTCSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure generate(surface: TPTCSurface);
+>>>>>>> origin/cpstrnew
 var
   dest: PUint32;
   i: Integer;
@@ -283,6 +291,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   format: IPTCFormat;
   texture: IPTCSurface;
   surface: IPTCSurface;
@@ -292,17 +301,22 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   format: TPTCFormat = nil;
   texture: TPTCSurface = nil;
   surface: TPTCSurface = nil;
   console: TPTCConsole = nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   lighttable: PUint8 = nil;
   { texture grid }
   grid: array [0..41*26*3-1] of Uint32;
@@ -319,11 +333,14 @@ begin
       format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       { create texture surface }
       texture := TPTCSurfaceFactory.CreateNew(256, 256, format);
@@ -421,6 +438,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
@@ -428,6 +446,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console.close;
       console.Free;
       surface.Free;
@@ -435,11 +455,14 @@ begin
       format.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       FreeMem(lighttable);
     end;
   except

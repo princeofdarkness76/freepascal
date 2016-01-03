@@ -1185,6 +1185,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:={(index>=0) and }(index<fHdr.ncmds);
 =======
       Result:=(index>=0) and (index<fHdr.ncmds);
@@ -1195,6 +1196,9 @@ const
 =======
       Result:=(index>=0) and (index<fHdr.ncmds);
 >>>>>>> graemeg/cpstrnew
+=======
+      Result:=(index>=0) and (index<fHdr.ncmds);
+>>>>>>> origin/cpstrnew
       if not Result then
         Exit;
       Result:=true;
@@ -1213,6 +1217,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:={(cmdindex>=0) and }
 =======
       Result:=(cmdindex>=0) and
@@ -1223,6 +1228,9 @@ const
 =======
       Result:=(cmdindex>=0) and
 >>>>>>> graemeg/cpstrnew
+=======
+      Result:=(cmdindex>=0) and
+>>>>>>> origin/cpstrnew
               (cmdindex<fHdr.ncmds) and
               (cmds[cmdindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
 
@@ -1253,6 +1261,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if {(index<0) or}
 =======
       if (index<0) or
@@ -1263,6 +1272,9 @@ const
 =======
       if (index<0) or
 >>>>>>> graemeg/cpstrnew
+=======
+      if (index<0) or
+>>>>>>> origin/cpstrnew
          (index>=longword(length(cmdofs))) then
         Result:=0
       else
@@ -1284,6 +1296,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       Result:={(secindex>=0) and (segindex>=0) and }(segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
 =======
       Result:=(secindex>=0) and (segindex>=0) and (segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
@@ -1294,6 +1307,9 @@ const
 =======
       Result:=(secindex>=0) and (segindex>=0) and (segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
 >>>>>>> graemeg/cpstrnew
+=======
+      Result:=(secindex>=0) and (segindex>=0) and (segindex<fHdr.ncmds) and (cmds[segindex].cmd in [LC_SEGMENT, LC_SEGMENT_64]);
+>>>>>>> origin/cpstrnew
       if not Result then
         Exit;
 

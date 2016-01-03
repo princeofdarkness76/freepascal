@@ -46,6 +46,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     vec: array[0..(4)-1] of CGFloat;
 =======
         vec: array[0..3] of CGFloat;
@@ -56,6 +57,9 @@
 =======
         vec: array[0..3] of CGFloat;
 >>>>>>> graemeg/cpstrnew
+=======
+        vec: array[0..3] of CGFloat;
+>>>>>>> origin/cpstrnew
     ptr: CGFloatPtr;
     __u: record
       end;

@@ -63,12 +63,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'CODE','DATA','DATA','DATA','BSS','TLS',
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         'CODE','DATA','DATA','DATA','BSS','',
 >>>>>>> graemeg/cpstrnew
         '','','','','','',
@@ -119,6 +122,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
 =======
@@ -127,10 +131,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ''
       );
 
       secnamesml64 : array[TAsmSectiontype] of string[7] = ('','',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -140,6 +147,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         '_TEXT','_DATE','_DATA','_DATA','_BSS','',
 >>>>>>> graemeg/cpstrnew
         '','','','',
@@ -190,6 +199,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '',
         '',
 =======
@@ -198,6 +208,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ''
       );
 
@@ -349,6 +361,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             writer.AsmWrite(tostr(o.val));
 =======
             AsmWrite(tostr(o.val));
@@ -359,6 +372,9 @@ implementation
 =======
             AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
+=======
+            AsmWrite(tostr(o.val));
+>>>>>>> origin/cpstrnew
           top_ref :
             begin
               if o.ref^.refaddr in [addr_no,addr_pic,addr_pic_no_got] then
@@ -445,6 +461,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           writer.AsmWrite(tostr(o.val));
 =======
           AsmWrite(tostr(o.val));
@@ -455,6 +472,9 @@ implementation
 =======
           AsmWrite(tostr(o.val));
 >>>>>>> graemeg/cpstrnew
+=======
+          AsmWrite(tostr(o.val));
+>>>>>>> origin/cpstrnew
         top_ref :
           { what about lcall or ljmp ??? }
           begin
@@ -1068,11 +1088,14 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       { TODO: probably ml64 needs 'closing' last section, too }
 >>>>>>> graemeg/cpstrnew
       if LastSecType <> sec_none then

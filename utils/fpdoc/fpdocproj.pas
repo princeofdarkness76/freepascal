@@ -18,6 +18,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FImports: TStrings;
     FInputs: TStrings;
 =======
@@ -32,6 +33,10 @@ Type
     FIMports: TStrings;
     FinPuts: TStrings;
 >>>>>>> graemeg/cpstrnew
+=======
+    FIMports: TStrings;
+    FinPuts: TStrings;
+>>>>>>> origin/cpstrnew
     FName: String;
     FOutput: String;
   Public
@@ -68,6 +73,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FEmitNotes: Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -75,6 +81,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FFormat: String;
     FHidePrivate: Boolean;
     FHideProtected: Boolean;
@@ -87,6 +95,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FDontTrim : Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -94,6 +103,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure SetBackendOptions(const AValue: TStrings);
   Public
     Constructor Create;
@@ -115,6 +126,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property DontTrim : Boolean Read FDontTrim Write FDontTrim;
     Property EmitNotes : Boolean Read FEmitNotes Write FEmitNotes;
 =======
@@ -123,6 +135,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
   { TFPDocProject }
@@ -140,6 +154,7 @@ Type
     Property Options : TEngineOptions Read FOptions Write setOptions;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -207,6 +222,10 @@ implementation
 implementation
 
 >>>>>>> graemeg/cpstrnew
+=======
+implementation
+
+>>>>>>> origin/cpstrnew
 { TEngineOptions }
 
 procedure TEngineOptions.SetBackendOptions(const AValue: TStrings);

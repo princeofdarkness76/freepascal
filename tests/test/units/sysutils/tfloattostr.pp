@@ -12,6 +12,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure CheckVal(f: Extended);
 var
   s: string;
@@ -61,6 +62,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure CheckResult(const s, ref: string);
 begin
   if s <> ref then
@@ -79,6 +82,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   i: Integer;
   tests: array [0..4] of Double = (123456789123456789., 1e20, 1.6e20, 5e20, 9e20);
 =======
@@ -87,6 +91,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   e:=1234567890123.4;
   d:=12345.12345;
@@ -112,6 +118,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i := 0 to High(tests) do begin
     e := tests[i];
     CycleInc(e,1e20);
@@ -126,6 +133,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if ErrCount > 0 then
     begin
       writeln('Test failed. Errors: ', ErrCount);

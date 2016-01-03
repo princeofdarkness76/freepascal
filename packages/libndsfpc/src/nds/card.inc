@@ -20,6 +20,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   SPI_EEPROM_WRSR   = $01;
   SPI_EEPROM_PP     = $02;	// Page Program
@@ -40,6 +41,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   EEPROM_WRSR = $01;
   EEPROM_WRDI = $04;
   EEPROM_RDSR = $05;
@@ -49,11 +52,14 @@ const
 // ROMCTRL register:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   CARD_ACTIVATE   = (1 shl 31);  // when writing, get the ball rolling
   CARD_WR         = (1 shl 30);
   CARD_nRESET     = (1 shl 29);  // value on the /reset pin (1 = high out, not a reset state, 0 = low out = in reset)
@@ -117,6 +123,7 @@ procedure cardReset(); cdecl; external;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure eepromWaitBusy(); inline;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -124,6 +131,8 @@ procedure eepromWaitBusy(); inline;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 procedure cardReadEeprom(address: cuint32;  data: pcuint8;  length: cuint32;  addrtype: cuint32); cdecl; external; 
 procedure cardWriteEeprom(address: cuint32;  data: pcuint8;  length: cuint32;  addrtype: cuint32); cdecl; external; 

@@ -34,6 +34,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Ptimeval = ^Ttimeval;
   Ttimeval = record
     tv_sec  : longint;
@@ -49,6 +50,9 @@ type
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 (* Some libc functions *)
 //function printf(format: Pchar; args: array of const): longint; cdecl; external;
 function printf(format: Pchar): longint; cdecl; varargs; external;

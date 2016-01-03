@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -16,6 +17,9 @@
 =======
      Version:    HIToolbox-437~1
 >>>>>>> graemeg/cpstrnew
+=======
+     Version:    HIToolbox-437~1
+>>>>>>> origin/cpstrnew
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved.
  
@@ -30,6 +34,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -37,6 +42,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -94,6 +101,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -105,6 +113,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -123,6 +133,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -147,6 +158,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -164,11 +177,14 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -178,6 +194,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -185,6 +202,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -197,6 +216,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -204,6 +224,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -213,6 +235,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -239,6 +262,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -248,15 +276,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -287,6 +319,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
@@ -296,11 +330,14 @@ interface
 {$elsec}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -341,6 +378,7 @@ uses MacTypes,AEDataModel,CGImage,CGGeometry,Events,Files,AppleEvents,QuickdrawT
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -349,6 +387,9 @@ uses MacTypes,AEDataModel,CGImage,CGGeometry,Events,Files,AppleEvents,QuickdrawT
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
@@ -364,6 +405,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	DragRef = ^OpaqueDragRef; { an opaque type }
 	OpaqueDragRef = record end;
 =======
@@ -375,6 +417,9 @@ type
 =======
 	DragRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	DragRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 	DragRefPtr = ^DragRef;  { when a var xx:DragRef parameter can be nil, it is changed to xx: DragRefPtr }
 	DragItemRef = URefCon;
 	FlavorType = OSType;
@@ -599,12 +644,15 @@ function InvokeDragInputUPP( var mouse: Point; var modifiers: SInt16; dragInputR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -623,11 +671,14 @@ function SetDragInputProc( theDrag: DragRef; inputProc: DragInputUPP; dragInputR
  *  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
@@ -639,6 +690,7 @@ function SetDragInputProc( theDrag: DragRef; inputProc: DragInputUPP; dragInputR
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SetDragInputProc( theDrag: DragRef; inputProc: DragInputUPP; dragInputRefCon: UnivPtr ): OSErr; external name '_SetDragInputProc';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -647,6 +699,8 @@ function SetDragInputProc( theDrag: DragRef; inputProc: DragInputUPP; dragInputR
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function NewDrag( var theDrag: DragRef ): OSErr; external name '_NewDrag';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -669,9 +723,11 @@ function DisposeDrag( theDrag: DragRef ): OSErr; external name '_DisposeDrag';
 
 
 
+
 {
   _________________________________________________________________________________________________________
       
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -682,10 +738,14 @@ function DisposeDrag( theDrag: DragRef ): OSErr; external name '_DisposeDrag';
 =======
    ¥ DRAG PASTEBOARD
 >>>>>>> graemeg/cpstrnew
+=======
+   ¥ DRAG PASTEBOARD
+>>>>>>> origin/cpstrnew
   _________________________________________________________________________________________________________
 }
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  NewDrag()
@@ -705,6 +765,8 @@ function DisposeDrag( theDrag: DragRef ): OSErr; external name '_DisposeDrag';
  *    Creates a new Drag reference containing the pasteboard reference
  *    provided.
  *  
+=======
+ *  NewDragWithPasteboard()
 =======
  *  NewDragWithPasteboard()
  *  
@@ -793,40 +855,11 @@ function GetDragPasteboard( inDrag: DragRef; var outPasteboard: PasteboardRef ):
  *    API may be called  at any point during the drag to update the
  *    image.
  *  
->>>>>>> graemeg/cpstrnew
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
-<<<<<<< HEAD
- *    inPasteboard:
- *      A pasteboard created by the drag sender for use with the drag.
- *      Items may be added to the pasteboard via the Pasteboard Manager
- *      API either before or after this routine is called. It is still
- *      possible to add data via the Drag Manager API, but only after
- *      this routine is called. It is the drag sender's responsibility
- *      to clear the pasteboard before adding items. It is also the
- *      drag sender's responsibility to release the pasteboard.  This
- *      may be done at any time after this routine is called. The
- *      pasteboard is retained by the Drag Manager for the duration of
- *      the drag.
- *    
- *    outDrag:
- *      A drag reference which receives the newly created drag.
- *  
- *  Result:
- *    An operating system result code.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
- *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
- *    Non-Carbon CFM:   not available
- }
-function NewDragWithPasteboard( inPasteboard: PasteboardRef; var outDrag: DragRef ): OSStatus; external name '_NewDragWithPasteboard';
-(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
-
-=======
  *    inDrag:
  *      The drag reference for which the image will be displayed.
  *    
@@ -885,6 +918,552 @@ function SetDragImageWithCGImage( inDrag: DragRef; inCGImage: CGImageRef; const 
  }
 function ChangeDragBehaviors( theDrag: DragRef; inBehaviorsToSet: DragBehaviors; inBehaviorsToClear: DragBehaviors ): OSErr; external name '_ChangeDragBehaviors';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+  _________________________________________________________________________________________________________
+      
+   ¥ PERFORMING A DRAG
+  _________________________________________________________________________________________________________
+}
+
+{
+ *  TrackDrag()
+ *  
+ *  Summary:
+ *    Tracks a drag across the displays, returning when the drag has
+ *    completed, either via a drop action or a user cancel operation.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    theDrag:
+ *      A drag reference describing the data to be dragged.
+ *    
+ *    theEvent:
+ *      An event describing the start location for the drag and
+ *      modifier keys.
+ *    
+ *    theRegion:
+ *      A region describing the visible outline of the dragged data. If
+ *      no drag image was supplied, or if a drag image was supplied
+ *      along with the kDragRegionAndImage flag, this region is moved
+ *      across the displays as the user moves the mouse during the drag
+ *      operation. On Mac OS X 10.5 and later, you may pass NULL if you
+ *      only want the drag image to be shown.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function TrackDrag( theDrag: DragRef; const (*var*) theEvent: EventRecord; theRegion: RgnHandle ): OSErr; external name '_TrackDrag';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+  _________________________________________________________________________________________________________
+      
+   ¥ GETTING INFORMATION ABOUT A DRAG
+  _________________________________________________________________________________________________________
+}
+
+{
+ *  GetDragAttributes()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function GetDragAttributes( theDrag: DragRef; var flags: DragAttributes ): OSErr; external name '_GetDragAttributes';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetDragMouse()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function GetDragMouse( theDrag: DragRef; var mouse: Point; var globalPinnedMouse: Point ): OSErr; external name '_GetDragMouse';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SetDragMouse()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function SetDragMouse( theDrag: DragRef; globalPinnedMouse: Point ): OSErr; external name '_SetDragMouse';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetDragOrigin()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function GetDragOrigin( theDrag: DragRef; var globalInitialMouse: Point ): OSErr; external name '_GetDragOrigin';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetDragModifiers()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function GetDragModifiers( theDrag: DragRef; var modifiers: SInt16; var mouseDownModifiers: SInt16; var mouseUpModifiers: SInt16 ): OSErr; external name '_GetDragModifiers';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  GetDragItemBounds()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function GetDragItemBounds( theDrag: DragRef; theItemRef: DragItemRef; var itemBounds: Rect ): OSErr; external name '_GetDragItemBounds';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  SetDragItemBounds()
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function SetDragItemBounds( theDrag: DragRef; theItemRef: DragItemRef; const (*var*) itemBounds: Rect ): OSErr; external name '_SetDragItemBounds';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+  _________________________________________________________________________________________________________
+      
+   ¥ ACCESSING DRAG ACTIONS
+  _________________________________________________________________________________________________________
+}
+
+{
+ *  GetDragAllowableActions()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Discussion:
+ *    Gets the actions the drag sender has allowed the receiver to
+ *    perform. These are not requirements, but they highly suggested
+ *    actions which allows the drag receiver to improve harmony across
+ *    the system.  The allowable actions received are always those
+ *    local to the caller's process.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    theDrag:
+ *      The drag reference from which to retreive the allowable drag
+ *      actions.
+ *    
+ *    outActions:
+ *      A pointer to receive the field of allowable drag actions.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+>>>>>>> origin/cpstrnew
+ *    Non-Carbon CFM:   not available
+ }
+function GetDragAllowableActions( theDrag: DragRef; var outActions: DragActions ): OSStatus; external name '_GetDragAllowableActions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+{
+ *  SetDragAllowableActions()
+ *  
+ *  Discussion:
+ *    Sets the actions the receiver of the drag is allowed to perform. 
+ *    These are not requirements, but they highly suggested actions
+ *    which allows the drag receiver to improve harmony across the
+ *    system.  The caller may select wether these drag actions apply to
+ *    a local or remote process.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    theDrag:
+ *      The drag reference in which to set the allowable drag actions.
+ *    
+ *    inActions:
+ *      A field of allowable drag actions to be set.
+ *    
+ *    isLocal:
+ *      A boolean value allowing the drag sender to distinguish between
+ *      those drag actions allowable by the local receiver versus a
+ *      remote one.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+>>>>>>> origin/cpstrnew
+ *    Non-Carbon CFM:   not available
+ }
+function SetDragAllowableActions( theDrag: DragRef; inActions: DragActions; isLocal: Boolean ): OSStatus; external name '_SetDragAllowableActions';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+<<<<<<< HEAD
+{
+  _________________________________________________________________________________________________________
+      
+   ¥ SETTING THE DRAG IMAGE
+  _________________________________________________________________________________________________________
+}
+
+{
+ *  SetDragImageWithCGImage()
+ *  
+ *  Discussion:
+ *    Used by the sender of the drag to set the image, in CGImage
+ *    format, to be displayed as user feedback during the drag.  This
+ *    API may be called  at any point during the drag to update the
+ *    image.
+=======
+
+{
+ *  GetDragDropAction()
+ *  
+ *  Discussion:
+ *    Gets the action performed by the receiver of the drag.  More than
+ *    one action may have been performed.
+>>>>>>> origin/cpstrnew
+ *  
+>>>>>>> graemeg/cpstrnew
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    inPasteboard:
+ *      A pasteboard created by the drag sender for use with the drag.
+ *      Items may be added to the pasteboard via the Pasteboard Manager
+ *      API either before or after this routine is called. It is still
+ *      possible to add data via the Drag Manager API, but only after
+ *      this routine is called. It is the drag sender's responsibility
+ *      to clear the pasteboard before adding items. It is also the
+ *      drag sender's responsibility to release the pasteboard.  This
+ *      may be done at any time after this routine is called. The
+ *      pasteboard is retained by the Drag Manager for the duration of
+ *      the drag.
+ *    
+ *    outDrag:
+ *      A drag reference which receives the newly created drag.
+=======
+ *    theDrag:
+ *      The drag reference from which to retreive the performed drop
+ *      action.
+ *    
+ *    outAction:
+ *      A pointer to receive the drag action performed.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function GetDragDropAction( theDrag: DragRef; var outAction: DragActions ): OSStatus; external name '_GetDragDropAction';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+{
+ *  SetDragDropAction()
+ *  
+ *  Discussion:
+ *    Sets the action performed by the receiver of the drag.  More than
+ *    one action may be performed.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Parameters:
+ *    
+ *    theDrag:
+ *      The drag reference in which to set the performed drop action.
+ *    
+ *    inAction:
+ *      The drop action performed.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.3 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.3 and later
+ *    Non-Carbon CFM:   not available
+ }
+function NewDragWithPasteboard( inPasteboard: PasteboardRef; var outDrag: DragRef ): OSStatus; external name '_NewDragWithPasteboard';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+=======
+ *    inDrag:
+ *      The drag reference for which the image will be displayed.
+ *    
+ *    inCGImage:
+ *      The CGImageRef for the image to be displayed during the drag. 
+ *      The image is retained internally by the Drag Manager for the
+ *      duration of the drag so it may be released by the client
+ *      immediately after setting. For Mac OS X 10.4 and earlier only
+ *      images with an alpha info value between
+ *      kCGImageAlphaPremultipliedLast and kCGImageAlphaFirst inclusive
+ *      are properly accepted. All alpha info values are accepted in
+ *      later versions.
+ *    
+ *    inImageOffsetPt:
+ *      A pointer to the offset from the mouse to the upper left of the
+ *      image (normally expressed in negative values).  This differs
+ *      from the usage of the offset passed to SetDragImage().  Here,
+ *      an offset of ( -30, -30 ) will center a 60x60 pixel image on
+ *      the drag mouse. In order to support resolution independence the
+ *      kDragDoNotScaleImage flag must be set. In this case, the
+ *      inImageOffsetPt parameter will be interpreted in pixels rather
+ *      than points.
+ *    
+ *    inImageFlags:
+ *      The flags determining image drawing during the drag.
+=======
+ *    Mac OS X:         in version 10.1 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.1 and later
+ *    Non-Carbon CFM:   not available
+ }
+function SetDragDropAction( theDrag: DragRef; inAction: DragActions ): OSStatus; external name '_SetDragDropAction';
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+
+
+{
+  _________________________________________________________________________________________________________
+      
+   ¥ UTILITIES
+  _________________________________________________________________________________________________________
+}
+
+{
+ *  WaitMouseMoved()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Result:
+ *    An operating system result code.
+ *  
+ *  Availability:
+<<<<<<< HEAD
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x
+ *    Non-Carbon CFM:   not available
+ }
+function SetDragImageWithCGImage( inDrag: DragRef; inCGImage: CGImageRef; const (*var*) inImageOffsetPt: HIPoint; inImageFlags: DragImageFlags ): OSStatus; external name '_SetDragImageWithCGImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+=======
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in DragLib 1.1 and later
+ }
+function WaitMouseMoved( initialGlobalMouse: Point ): Boolean; external name '_WaitMouseMoved';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
+
+
+{--------------------------------------------------------------------------------------}
+{  ¥ DEPRECATED                                                                        }
+{  All functions below this point are either deprecated (they continue to function     }
+{  but are not the most modern nor most efficient solution to a problem), or they are  }
+{  completely unavailable on Mac OS X.                                                 }
+{--------------------------------------------------------------------------------------}
+{
+<<<<<<< HEAD
+  _________________________________________________________________________________________________________
+      
+   ¥ ALTERING THE BEHAVIOR OF A DRAG
+  _________________________________________________________________________________________________________
+}
+
+{
+ *  ChangeDragBehaviors()
+=======
+   The file dragging constants and structures have been deprecated in Leopard. Use kUTTypeFileURL,
+   kPasteboardTypeFileURLPromise and kPasteboardTypeFilePromiseContent from UTCoreTypes.h and Pasteboard.h instead.
+}
+
+{$endc} {not TARGET_CPU_64}
+
+const
+	kDragFlavorTypeHFS = FourCharCode('hfs '); { flavor type for HFS data}
+	kDragFlavorTypePromiseHFS = FourCharCode('phfs'); { flavor type for promised HFS data}
+	flavorTypeHFS = kDragFlavorTypeHFS; { old name}
+	flavorTypePromiseHFS = kDragFlavorTypePromiseHFS; { old name}
+
+const
+	kDragPromisedFlavorFindFile = FourCharCode('rWm1'); { promisedFlavor value for Find File}
+	kDragPromisedFlavor = FourCharCode('fssP'); { promisedFlavor value for everything else}
+
+const
+	kDragPseudoCreatorVolumeOrDirectory = FourCharCode('MACS'); { "creator code" for volume or directory}
+	kDragPseudoFileTypeVolume = FourCharCode('disk'); { "file type" for volume}
+	kDragPseudoFileTypeDirectory = FourCharCode('fold'); { "file type" for directory}
+
+{
+   The file dragging constants and structures have been deprecated in Leopard. Use kUTTypeFileURL,
+   kPasteboardTypeFileURLPromise and kPasteboardTypeFilePromiseContent from UTCoreTypes.h and Pasteboard.h instead.
+}
+
+type
+	HFSFlavorPtr = ^HFSFlavor;
+	HFSFlavor = record
+		fileType: OSType;               { file type }
+		fileCreator: OSType;            { file creator }
+		fdFlags: UInt16;                { Finder flags }
+		fileSpec: FSSpec;               { file system specification }
+	end;
+type
+	PromiseHFSFlavorPtr = ^PromiseHFSFlavor;
+	PromiseHFSFlavor = record
+		fileType: OSType;               { file type }
+		fileCreator: OSType;            { file creator }
+		fdFlags: UInt16;                { Finder flags }
+		promisedFlavor: FlavorType;         { promised flavor containing an FSSpec }
+	end;
+type
+	DragTrackingMessage = SInt16;
+const
+	kDragTrackingEnterHandler = 1;    { drag has entered handler}
+	kDragTrackingEnterWindow = 2;    { drag has entered window}
+	kDragTrackingInWindow = 3;    { drag is moving within window}
+	kDragTrackingLeaveWindow = 4;    { drag has exited window}
+	kDragTrackingLeaveHandler = 5;     { drag has exited handler}
+
+
+type
+	DragRegionMessage = SInt16;
+const
+	kDragRegionBegin = 1;    { initialize drawing}
+	kDragRegionDraw = 2;    { draw drag feedback}
+	kDragRegionHide = 3;    { hide drag feedback}
+	kDragRegionIdle = 4;    { drag feedback idle time}
+	kDragRegionEnd = 5;     { end of drawing}
+
+
+type
+	ZoomAcceleration = SInt16;
+const
+	kZoomNoAcceleration = 0;    { use linear interpolation}
+	kZoomAccelerate = 1;    { ramp up step size}
+	kZoomDecelerate = 2;     { ramp down step size}
+
+
+{
+ *  Summary:
+ *    Standard Drop Location constants
+>>>>>>> origin/cpstrnew
+ *  
+ *  Discussion:
+ *    The following constants define common "meta" drop locations.
+ }
+const
+{
+   * The drop location was in the trash.  This is set when a drag is
+   * dropped on the trash icon.  Setting this standard drop location
+   * sets the traditional drop location to an alias to the trash folder
+   * automatically.
+   }
+	kDragStandardDropLocationTrash = FourCharCode('trsh');
+
+  {
+   * The receiver did not specify a drop lcoation. This is the default.
+   }
+	kDragStandardDropLocationUnknown = FourCharCode('unkn');
+
+
+type
+	StandardDropLocation = OSType;
+	DragSendDataProcPtr = function( theType: FlavorType; dragSendRefCon: UnivPtr; theItemRef: DragItemRef; theDrag: DragRef ): OSErr;
+	DragTrackingHandlerProcPtr = function( message: DragTrackingMessage; theWindow: WindowRef; handlerRefCon: UnivPtr; theDrag: DragRef ): OSErr;
+	DragReceiveHandlerProcPtr = function( theWindow: WindowRef; handlerRefCon: UnivPtr; theDrag: DragRef ): OSErr;
+	DragDrawingProcPtr = function( message: DragRegionMessage; showRegion: RgnHandle; showOrigin: Point; hideRegion: RgnHandle; hideOrigin: Point; dragDrawingRefCon: UnivPtr; theDrag: DragRef ): OSErr;
+	DragSendDataUPP = DragSendDataProcPtr;
+	DragTrackingHandlerUPP = DragTrackingHandlerProcPtr;
+	DragReceiveHandlerUPP = DragReceiveHandlerProcPtr;
+	DragDrawingUPP = DragDrawingProcPtr;
+{
+ *  NewDragSendDataUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in DragLib 9.0 and later
+ }
+function ChangeDragBehaviors( theDrag: DragRef; inBehaviorsToSet: DragBehaviors; inBehaviorsToClear: DragBehaviors ): OSErr; external name '_ChangeDragBehaviors';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 
 
@@ -914,6 +1493,15 @@ function ChangeDragBehaviors( theDrag: DragRef; inBehaviorsToSet: DragBehaviors;
  *  
  *  Mac OS X threading:
  *    Not thread safe
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewDragSendDataUPP( userRoutine: DragSendDataProcPtr ): DragSendDataUPP; external name '_NewDragSendDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+ *  NewDragTrackingHandlerUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
@@ -956,8 +1544,9 @@ function GetDragPasteboard( inDrag: DragRef; var outPasteboard: PasteboardRef ):
 =======
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in DragLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 function TrackDrag( theDrag: DragRef; const (*var*) theEvent: EventRecord; theRegion: RgnHandle ): OSErr; external name '_TrackDrag';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -1069,12 +1658,42 @@ function GetDragMouse( theDrag: DragRef; var mouse: Point; var globalPinnedMouse
  *  
  *  Mac OS X threading:
  *    Not thread safe
+=======
+function NewDragTrackingHandlerUPP( userRoutine: DragTrackingHandlerProcPtr ): DragTrackingHandlerUPP; external name '_NewDragTrackingHandlerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+ *  NewDragReceiveHandlerUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewDragReceiveHandlerUPP( userRoutine: DragReceiveHandlerProcPtr ): DragReceiveHandlerUPP; external name '_NewDragReceiveHandlerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+ *  NewDragDrawingUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewDragDrawingUPP( userRoutine: DragDrawingProcPtr ): DragDrawingUPP; external name '_NewDragDrawingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+ *  DisposeDragSendDataUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in DragLib 9.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function ChangeDragBehaviors( theDrag: DragRef; inBehaviorsToSet: DragBehaviors; inBehaviorsToClear: DragBehaviors ): OSErr; external name '_ChangeDragBehaviors';
 =======
@@ -1103,6 +1722,13 @@ function SetDragMouse( theDrag: DragRef; globalPinnedMouse: Point ): OSErr; exte
  *  
  *  Mac OS X threading:
  *    Not thread safe
+=======
+procedure DisposeDragSendDataUPP( userUPP: DragSendDataUPP ); external name '_DisposeDragSendDataUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+ *  DisposeDragTrackingHandlerUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Parameters:
  *    
@@ -1127,8 +1753,9 @@ function SetDragMouse( theDrag: DragRef; globalPinnedMouse: Point ): OSErr; exte
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
  *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in DragLib 1.1 and later
+ *    Non-Carbon CFM:   available as macro/inline
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function TrackDrag( theDrag: DragRef; const (*var*) theEvent: EventRecord; theRegion: RgnHandle ): OSErr; external name '_TrackDrag';
 =======
@@ -1214,9 +1841,24 @@ function GetDragMouse( theDrag: DragRef; var mouse: Point; var globalPinnedMouse
 function SetDragItemBounds( theDrag: DragRef; theItemRef: DragItemRef; const (*var*) itemBounds: Rect ): OSErr; external name '_SetDragItemBounds';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
+=======
+procedure DisposeDragTrackingHandlerUPP( userUPP: DragTrackingHandlerUPP ); external name '_DisposeDragTrackingHandlerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 {
+ *  DisposeDragReceiveHandlerUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeDragReceiveHandlerUPP( userUPP: DragReceiveHandlerUPP ); external name '_DisposeDragReceiveHandlerUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  SetDragMouse()
 >>>>>>> graemeg/cpstrnew
@@ -2716,6 +3358,19 @@ procedure DisposeDragDrawingUPP( userUPP: DragDrawingUPP ); external name '_Disp
 
 {
 >>>>>>> graemeg/cpstrnew
+=======
+ *  DisposeDragDrawingUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeDragDrawingUPP( userUPP: DragDrawingUPP ); external name '_DisposeDragDrawingUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+{
+>>>>>>> origin/cpstrnew
  *  InvokeDragSendDataUPP()
  *  
  *  Availability:

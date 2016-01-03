@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Copyright (c) 1998-2013, Apple Inc. All rights reserved.
 }
 =======
@@ -9,17 +10,22 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	Copyright (c) 1998-2009, Apple, Inc. All rights reserved.
 }
 {   Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, September 2005 }
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -77,6 +83,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -88,6 +95,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -105,6 +114,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -148,6 +158,8 @@ interface
 	{$setc TARGET_CPU_PPC64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -155,8 +167,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -166,7 +181,10 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -176,6 +194,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -183,11 +202,16 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -195,11 +219,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -208,6 +235,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -229,6 +257,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -237,13 +270,17 @@ interface
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
@@ -309,6 +346,15 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -355,6 +401,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFPropertyListMutabilityOptions = CFOptionFlags;
 =======
 	CFPropertyListMutabilityOptions = UNSIGNEDLONG;
@@ -365,6 +412,9 @@ type
 =======
 	CFPropertyListMutabilityOptions = UNSIGNEDLONG;
 >>>>>>> graemeg/cpstrnew
+=======
+	CFPropertyListMutabilityOptions = UNSIGNEDLONG;
+>>>>>>> origin/cpstrnew
 const
 	kCFPropertyListImmutable = 0;
 	kCFPropertyListMutableContainers = 1;
@@ -377,6 +427,7 @@ const
 	and errorString is non-NULL, a human-readable description of the failure
 	is returned in errorString. It is the caller's responsibility to release
 	either the returned object or the error string, whichever is applicable.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -394,6 +445,10 @@ const
 
   This function is obsolete and will be deprecated soon. See CFPropertyListCreateWithData() for a replacement.
 >>>>>>> graemeg/cpstrnew
+=======
+
+  This function is obsolete and will be deprecated soon. See CFPropertyListCreateWithData() for a replacement.
+>>>>>>> origin/cpstrnew
 }
 function CFPropertyListCreateFromXMLData( allocator: CFAllocatorRef; xmlData: CFDataRef; mutabilityOption: CFOptionFlags; errorString: CFStringRefPtr ): CFPropertyListRef; external name '_CFPropertyListCreateFromXMLData';
 
@@ -406,6 +461,7 @@ function CFPropertyListCreateFromXMLData( allocator: CFAllocatorRef; xmlData: CF
 	appropriate for writing out to an XML file. Note that a data, not a
 	string, is returned because the bytes contain in them a description
 	of the string encoding used.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -423,6 +479,10 @@ function CFPropertyListCreateFromXMLData( allocator: CFAllocatorRef; xmlData: CF
 
   This function is obsolete and will be deprecated soon. See CFPropertyListCreateData() for a replacement.
 >>>>>>> graemeg/cpstrnew
+=======
+
+  This function is obsolete and will be deprecated soon. See CFPropertyListCreateData() for a replacement.
+>>>>>>> origin/cpstrnew
 }
 function CFPropertyListCreateXMLData( allocator: CFAllocatorRef; propertyList: CFPropertyListRef ): CFDataRef; external name '_CFPropertyListCreateXMLData';
 
@@ -440,6 +500,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CFPropertyListFormat = CFIndex;
 =======
 	CFPropertyListFormat = SIGNEDLONG;
@@ -450,6 +511,9 @@ type
 =======
 	CFPropertyListFormat = SIGNEDLONG;
 >>>>>>> graemeg/cpstrnew
+=======
+	CFPropertyListFormat = SIGNEDLONG;
+>>>>>>> origin/cpstrnew
 	CFPropertyListFormatPtr = ^CFPropertyListFormat;
 
 const
@@ -474,6 +538,7 @@ function CFPropertyListIsValid( plist: CFPropertyListRef; format: CFPropertyList
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * may be in the future, so they are not suitable for comparison. 
  *
  * This function is obsolete and will be deprecated soon. See CFPropertyListWrite() for a replacement. }
@@ -484,17 +549,22 @@ function CFPropertyListWriteToStream( propertyList: CFPropertyListRef; stream: C
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  * may be in the future, so they are not suitable for comparison.
  *
  * This function is obsolete and will be deprecated soon. See CFPropertyListWrite() for a replacement. }
 function CFPropertyListWriteToStream( propertyList: CFPropertyListRef; stream: CFWriteStreamRef; format: CFPropertyListFormat; var errorString: CFStringRef ): CFIndex; external name '_CFPropertyListWriteToStream';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Same as current function CFPropertyListCreateFromXMLData()
  * but takes a stream instead of data, and works on any plist file format.
@@ -504,6 +574,7 @@ function CFPropertyListWriteToStream( propertyList: CFPropertyListRef; stream: C
  * of the stream, which is expected to be the end of the plist, or up to the
  * number of bytes given by the length parameter if it is not 0. Error messages
  * are not currently localized, but may be in the future, so they are not
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -520,10 +591,13 @@ function CFPropertyListCreateFromStream( allocator: CFAllocatorRef; stream: CFRe
 
 {#endif}
 =======
+=======
+>>>>>>> origin/cpstrnew
  * suitable for comparison.
  *
  * This function is obsolete and will be deprecated soon. See CFPropertyListCreateWithStream() for a replacement. }
 function CFPropertyListCreateFromStream( allocator: CFAllocatorRef; stream: CFReadStreamRef; streamLength: CFIndex; mutabilityOption: CFOptionFlags; var format: CFPropertyListFormat; var errorString: CFStringRef ): CFPropertyListRef; external name '_CFPropertyListCreateFromStream';
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 
 {#if MAC_OS_X_VERSION_10_6 <= MAC_OS_X_VERSION_MAX_ALLOWED}
@@ -539,6 +613,8 @@ const
  }
 function CFPropertyListCreateWithData( allocator: CFAllocatorRef; data: CFDataRef; options: CFOptionFlags; format: CFPropertyListFormatPtr { can be NULL };  error: CFErrorRefPtr { can be NULL } ): CFPropertyListRef; external name '_CFPropertyListCreateWithData';
 (* CF_AVAILABLE_STARTING(10_6, 4_0) *)
+=======
+>>>>>>> origin/cpstrnew
 
 { Apple sets TARGET_OS_MAC to true for TARGET_IPHONE_SIMULATOR, but since we use unified
   headers for Mac OS X and iPhoneSimulator, that would result in many problems -> specify
@@ -599,6 +675,7 @@ const
 	kCFPropertyListWriteStreamError = 3851; (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)             // Stream error writing a property list
 {#endif}
 
+<<<<<<< HEAD
 { Create a property list with a CFData input. If the format parameter is non-NULL, it will be set to the format of the data after parsing is complete. The options parameter is used to specify CFPropertyListMutabilityOptions. If an error occurs while parsing the data, the return value will be NULL. Additionally, if an error occurs and the error parameter is non-NULL, the error parameter will be set to a CFError describing the problem, which the caller must release. If the parse succeeds, the returned value is a reference to the new property list. It is the responsibility of the caller to release this value.
  }
 function CFPropertyListCreateWithData( allocator: CFAllocatorRef; data: CFDataRef; options: CFOptionFlags; format: CFPropertyListFormatPtr { can be NULL };  error: CFErrorRefPtr { can be NULL } ): CFPropertyListRef; external name '_CFPropertyListCreateWithData';
@@ -623,6 +700,8 @@ function CFPropertyListCreateData( allocator: CFAllocatorRef; propertyList: CFPr
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 {#if MAC_OS_X_VERSION_10_6 <= MAC_OS_X_VERSION_MAX_ALLOWED}
 const
 	kCFPropertyListReadCorruptError = 3840; (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)             // Error parsing a property list
@@ -652,7 +731,10 @@ function CFPropertyListCreateData( allocator: CFAllocatorRef; propertyList: CFPr
 (* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
 
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

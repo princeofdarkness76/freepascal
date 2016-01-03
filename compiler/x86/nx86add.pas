@@ -242,6 +242,7 @@ unit nx86add;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           hlcg.location_force_reg(current_asmdata.CurrAsmList,right.location,right.resultdef,opdef,true);
         if (left.location.loc<>LOC_CONSTANT) and
            (tcgsize2unsigned[left.location.size]<>tcgsize2unsigned[opsize]) then
@@ -251,6 +252,8 @@ unit nx86add;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
         if (left.location.loc<>LOC_CONSTANT) and
            (tcgsize2unsigned[left.location.size]<>tcgsize2unsigned[opsize]) then
@@ -595,6 +598,7 @@ unit nx86add;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_reg(current_asmdata.CurrAsmList,left.location,left.resultdef,opdef,false);
 =======
               location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
@@ -605,6 +609,9 @@ unit nx86add;
 =======
               location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              location_force_reg(current_asmdata.CurrAsmList,left.location,opsize,false);
+>>>>>>> origin/cpstrnew
               emit_op_right_left(A_AND,opsize);
               op:=A_CMP;
               { warning: ugly hack, we need a JE so change the node to equaln }

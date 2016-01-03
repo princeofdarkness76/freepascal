@@ -32,6 +32,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pthread_attr_init(@attr);
 =======
   pthread_attr_init(attr);
@@ -42,10 +43,14 @@ begin
 =======
   pthread_attr_init(attr);
 >>>>>>> graemeg/cpstrnew
+=======
+  pthread_attr_init(attr);
+>>>>>>> origin/cpstrnew
   for i := 1 to N do
   begin
     Writeln('Creating thread #',i);
     arg[i] := i;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -59,6 +64,9 @@ begin
 =======
     if pthread_create(threads[i], attr, @Hello, @arg[i]) <> 0 then
 >>>>>>> graemeg/cpstrnew
+=======
+    if pthread_create(threads[i], attr, @Hello, @arg[i]) <> 0 then
+>>>>>>> origin/cpstrnew
       Writeln('Failed to create thread');
   end;
   for i := 1 to N do

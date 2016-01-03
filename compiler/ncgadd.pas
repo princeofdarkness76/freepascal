@@ -92,6 +92,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pushedfpu  : boolean;
 {$endif x86 and not llvm}
 =======
@@ -99,6 +100,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef x86}
         pushedfpu,
 {$endif x86}
@@ -129,11 +132,14 @@ interface
 {$ifdef x86}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { are too few registers free? }
         pushedfpu:=false;
         if (left.location.loc=LOC_FPUREGISTER) and
@@ -142,6 +148,7 @@ interface
             hlcg.location_force_mem(current_asmdata.CurrAsmList,left.location,left.resultdef);
             pushedfpu:=true;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -155,6 +162,9 @@ interface
 =======
 {$endif x86}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif x86}
+>>>>>>> origin/cpstrnew
 
         secondpass(right);
         if right.location.loc in [LOC_FLAGS,LOC_JUMP] then
@@ -171,11 +181,14 @@ interface
 {$ifdef x86}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if pushedfpu then
           begin
             if use_vectorfpu(left.resultdef) then
@@ -201,6 +214,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif x86 and not llvm}
 =======
 {$endif x86}
@@ -211,6 +225,9 @@ interface
 =======
 {$endif x86}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif x86}
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -343,6 +360,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   { make sure that location.register is different from
                     left.location.register, since right will overwrite it
                     and we'll use left afterwards }
@@ -362,6 +380,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   { make sure we don't modify left/right.location, because we told
                     force_reg_left_right above that they can be constant }
                   cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_NOT,location.size,right.location.register,location.register);
@@ -371,11 +391,14 @@ interface
                     cg.a_op_reg_reg(current_asmdata.CurrAsmList,OP_AND,location.size,left.location.register,location.register);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 end;
             end;
           else

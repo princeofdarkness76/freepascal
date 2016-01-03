@@ -91,6 +91,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 'cpsr',
 'fpscr',
 'spsr',
@@ -145,3 +146,7 @@
 'cpsr_c',
 'fpscr'
 >>>>>>> graemeg/cpstrnew
+=======
+'cpsr_c',
+'fpscr'
+>>>>>>> origin/cpstrnew

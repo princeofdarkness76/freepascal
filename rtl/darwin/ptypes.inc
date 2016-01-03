@@ -147,6 +147,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(cpuarm) or defined(cpuaarch64) or defined(iphonesim)}
 =======
 {$ifdef cpuarm}
@@ -157,6 +158,9 @@ type
 =======
 {$ifdef cpuarm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef cpuarm}
+>>>>>>> origin/cpstrnew
      { structure used on iPhoneOS and available on Mac OS X 10.6 and later }
      tstatfs = record
           bsize : cuint32;

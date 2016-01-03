@@ -587,6 +587,7 @@ resourcestring  menu_local_gotosource = '~G~oto source';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 label_remote_send_command = 'Remote ~S~end command';
                 label_remote_exec_command = 'Remote ~E~xec command';
                 label_remote_ssh_exec_command = 'Remote Ss~h~ exec command';
@@ -608,6 +609,11 @@ resourcestring  menu_local_gotosource = '~G~oto source';
                 label_remote_scp = 'Scp executable';
                 label_remote_ssh = 'Ssh executable';
 >>>>>>> graemeg/cpstrnew
+=======
+                label_remote_command = 'Remote ~c~ommand';
+                label_remote_scp = 'Scp executable';
+                label_remote_ssh = 'Ssh executable';
+>>>>>>> origin/cpstrnew
 
                 {Directories dialog.}
                 dialog_directories = 'Directories';

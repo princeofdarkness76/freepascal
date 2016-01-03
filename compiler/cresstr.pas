@@ -42,6 +42,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    aasmbase,aasmtai,aasmdata,aasmcnst,
    aasmcpu;
 =======
@@ -56,6 +57,10 @@ uses
    aasmbase,aasmtai,aasmdata,
    aasmcpu,asmutils;
 >>>>>>> graemeg/cpstrnew
+=======
+   aasmbase,aasmtai,aasmdata,
+   aasmcpu,asmutils;
+>>>>>>> origin/cpstrnew
 
     Type
       { These are used to form a singly-linked list, ordered by hash value }
@@ -155,11 +160,14 @@ uses
         endsymlab : tasmsymbol;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         R : TResourceStringItem;
         resstrdef: tdef;
         tcb : ttai_typedconstbuilder;
@@ -187,6 +195,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tcb.maybe_begin_aggregate(resstrdef);
         namelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],@current_module.localsymtable.name^[1],length(current_module.localsymtable.name^),getansistringcodepage);
         tcb.emit_string_offset(namelab,length(current_module.localsymtable.name^),st_ansistring,false,charpointertype);
@@ -205,6 +214,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         namelab:=emit_ansistring_const(current_asmdata.asmlists[al_const],@current_module.localsymtable.name^[1],length(current_module.localsymtable.name^),DefaultSystemCodePage,False);
         current_asmdata.asmlists[al_resourcestrings].concat(tai_const.create_sym(namelab));
         current_asmdata.asmlists[al_resourcestrings].concat(tai_const.create_sym(nil));
@@ -224,6 +235,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               valuelab:=tcb.emit_ansistring_const(current_asmdata.asmlists[al_const],R.Value,R.Len,getansistringcodepage)
             else
               begin
@@ -237,6 +249,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               valuelab:=emit_ansistring_const(current_asmdata.asmlists[al_const],R.Value,R.Len,DefaultSystemCodePage,False)
             else
               valuelab:=nil;
@@ -296,11 +310,14 @@ uses
           current_asmdata.asmlists[al_resourcestrings].concat(Tai_const.create_sym(endsymlab));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
     procedure Tresourcestrings.WriteRSJFile;

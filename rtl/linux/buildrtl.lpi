@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Version Value="9"/>
 =======
     <Version Value="7"/>
@@ -14,6 +15,9 @@
 =======
     <Version Value="7"/>
 >>>>>>> graemeg/cpstrnew
+=======
+    <Version Value="7"/>
+>>>>>>> origin/cpstrnew
     <General>
       <Flags>
         <MainUnitHasUsesSectionForAllUnits Value="False"/>
@@ -27,11 +31,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       <TargetFileExt Value=".exe"/>
 >>>>>>> graemeg/cpstrnew
       <Title Value="buildrtl"/>
@@ -67,6 +74,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <IncludeFiles Value="../inc;../$(TargetCPU);../unix;../objpas/classes;../objpas/sysutils;../objpas;$(TargetCPU)"/>
       <OtherUnitFiles Value="../objpas;../objpas/classes;../objpas/sysutils;../inc;../unix;../$(TargetCPU)"/>
 =======
@@ -74,6 +82,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       <IncludeFiles Value="../inc/;../$(TargetCPU)/;../unix/;../objpas/classes/;../objpas/sysutils/;../objpas/;$(TargetCPU)/"/>
       <OtherUnitFiles Value="../objpas/;../objpas/classes/;../objpas/sysutils/;../inc/;../unix/;../$(TargetCPU)/"/>
 >>>>>>> graemeg/cpstrnew

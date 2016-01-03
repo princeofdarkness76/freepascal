@@ -1341,12 +1341,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   InternalClear;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if FOwnsObjects then
     begin
       For I:=0 to FCount-1 do
@@ -1424,6 +1427,7 @@ Function TStringList.DoCompareText(const s1,s2 : string) : PtrInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TStringList.CompareStrings(const s1,s2 : string) : Integer;
 begin
   Result := DoCompareText(s1, s2);
@@ -1436,6 +1440,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function TStringList.Find(const S: string; Out Index: Integer): Boolean;
 
 var
@@ -1537,6 +1543,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   NameValueSeparator:='=';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1544,6 +1551,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   CheckSpecialChars;
 end;
 

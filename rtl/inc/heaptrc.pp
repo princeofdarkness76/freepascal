@@ -1391,6 +1391,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TraceRelocateHeap;
 =======
     initcriticalsection(todo_lock);
@@ -1401,6 +1402,9 @@ begin
 =======
     initcriticalsection(todo_lock);
 >>>>>>> graemeg/cpstrnew
+=======
+    initcriticalsection(todo_lock);
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TraceExit;

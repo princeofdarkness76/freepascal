@@ -26,6 +26,7 @@ function usb_sendbuffer_safe_ex(chn: cint32; buffer: pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   
 function usb_flashread(chn: cint32; offset: cuint32; buffer: pointer; length: cint): cint; cdecl; external;
@@ -38,5 +39,7 @@ function usb_flashverify(chn: cint32): cint; cdecl; external;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF OGC_INTERFACE}
 

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  - Mac OS X support
 =======
 >>>>>>> graemeg/cpstrnew
@@ -8,6 +9,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  - mouse grab support
  - add more event types (expose, focus in, focus out, etc.)
  - mouse support for the x11 dga console
@@ -16,6 +19,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
  - cross-platform opengl initialization support (like sdl or glut)
 >>>>>>> graemeg/cpstrnew
@@ -25,6 +29,9 @@
 =======
  - cross-platform opengl initialization support (like sdl or glut)
 >>>>>>> graemeg/cpstrnew
+=======
+ - cross-platform opengl initialization support (like sdl or glut)
+>>>>>>> origin/cpstrnew
  - make hermes thread safe
  - better timing under dos
  - delphi (kylix? c++?) bindings

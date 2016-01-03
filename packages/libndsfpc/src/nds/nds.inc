@@ -108,6 +108,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$include arm9/window.inc}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -115,6 +116,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$include arm9/trig_lut.inc}
   {$include arm9/video.inc}
   {$include arm9/videoGL.inc}

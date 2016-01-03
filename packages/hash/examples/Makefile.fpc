@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 programs=mdtest crctest sha1test md5performancetest  sha1performancetest
 =======
 programs=mdtest crctest sha1test
@@ -16,6 +17,9 @@ programs=mdtest crctest sha1test
 =======
 programs=mdtest crctest sha1test
 >>>>>>> graemeg/cpstrnew
+=======
+programs=mdtest crctest sha1test
+>>>>>>> origin/cpstrnew
 
 [require]
 packages=hash rtl-extra rtl-objpas

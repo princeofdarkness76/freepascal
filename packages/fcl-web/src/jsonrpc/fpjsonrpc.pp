@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the Free Component Library
 
@@ -21,6 +22,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 unit fpjsonrpc;
 
 {$mode objfpc}{$H+}
@@ -78,6 +81,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TJSONRPCCallContext }
 
   TJSONRPCCallContext = Class(TObject)
@@ -102,6 +106,9 @@ Type
 =======
   TJSONRPCCallContext = Class(TObject);
 >>>>>>> graemeg/cpstrnew
+=======
+  TJSONRPCCallContext = Class(TObject);
+>>>>>>> origin/cpstrnew
 
   TCustomJSONRPCHandler = Class(TComponent)
   private
@@ -189,6 +196,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Find handler. If none found, nil is returned. Executes OnFindHandler if needed.
     // On return 'DoFree' must be set to indicate that the hand
     Function FindHandler(Const AClassName,AMethodName : TJSONStringType;AContext : TJSONRPCCallContext; Out FreeObject : TComponent) : TCustomJSONRPCHandler; virtual;
@@ -199,17 +207,22 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     // Find handler. If none found, nil is returned. Executes OnFindHandler if needed.
     // On return 'DoFree' must be set to indicate that the hand
     Function FindHandler(Const AClassName,AMethodName : TJSONStringType;AContext : TJSONRPCCallContext; Out FreeObject : TComponent) : TCustomJSONRPCHandler; virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Execute method. Finds handler, and returns response.
     Function ExecuteMethod(Const AClassName, AMethodName : TJSONStringType; Params,ID : TJSONData; AContext : TJSONRPCCallContext) : TJSONData; virtual;
     // Check and Execute a single request. Exceptions are caught and converted to request error object.
@@ -273,6 +286,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FParamDefs: TJSONParamDefs;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -280,11 +294,14 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FPClass: TCustomJSONRPCHandlerClass;
     FDataModuleClass : TDataModuleClass;
     FHandlerMethodName: TJSONStringType;
     FHandlerClassName: TJSONStringType;
     procedure CheckNames(const AClassName, AMethodName: TJSONStringType);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -308,10 +325,16 @@ Type
     procedure SetHandlerClassName(const AValue: TJSONStringType);
     procedure SetHandlerMethodName(const AValue: TJSONStringType);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetFPClass(const AValue: TCustomJSONRPCHandlerClass);
+    procedure SetHandlerClassName(const AValue: TJSONStringType);
+    procedure SetHandlerMethodName(const AValue: TJSONStringType);
+>>>>>>> origin/cpstrnew
   protected
     Function CreateInstance(AOwner : TComponent; Out AContainer : TComponent) : TCustomJSONRPCHandler; virtual;
     Property DataModuleClass : TDataModuleClass Read FDataModuleClass;
   Public
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -323,12 +346,15 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Property HandlerClassName : TJSONStringType Read FHandlerClassName Write SetHandlerClassName;
     Property HandlerMethodName : TJSONStringType Read FHandlerMethodName Write SetHandlerMethodName;
     Property HandlerClass : TCustomJSONRPCHandlerClass Read FPClass Write SetFPClass;
     Property BeforeCreate : TBeforeCreateJSONRPCHandlerEvent Read FBeforeCreate Write FBeforeCreate;
     Property AfterCreate : TJSONRPCHandlerEvent Read FAfterCreate Write FAfterCreate;
     Property ArgumentCount : Integer Read FArgumentCount Write FArgumentCount;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -344,6 +370,9 @@ Type
 =======
   end;
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+>>>>>>> origin/cpstrnew
 
   { TJSONRPCHandlerDefs }
 
@@ -368,6 +397,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure DoClear; virtual;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -375,6 +405,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Handler support
     Procedure RemoveHandlerDef(Const Index : Integer); virtual; abstract;
     function AddHandlerDef(Const AClassName,AMethodName : TJSONStringType) : TJSONRPCHandlerDef; virtual; abstract;
@@ -396,6 +428,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Clear;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -403,6 +436,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // properties
     Property Registering : Boolean Read FRegistering;
     Property HandlerCount : Integer Read GetHandlerDefCount;
@@ -419,6 +454,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure DoClear; override;
     Function CreateDefs : TJSONRPCHandlerDefs; virtual;
 =======
@@ -427,6 +463,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Procedure RemoveHandlerDef(Const Index : Integer); override;
     function AddHandlerDef(Const AClassName,AMethodName : TJSONStringType) : TJSONRPCHandlerDef; override;
     function IndexOfHandlerDef(Const AClassName,AMethodName : TJSONStringType) : Integer; override;
@@ -467,6 +505,7 @@ Function JSONRPCHandlerManager : TCustomJSONRPCHandlerManager;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   // Class that will be created. Must be set before first call to JSONRPCHandlerManager.
   JSONRPCHandlerManagerClass : TCustomJSONRPCHandlerManagerClass = TJSONRPCHandlerManager;
@@ -477,17 +516,22 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 // Class that will be created. Must be set before first call to JSONRPCHandlerManager.
 Var
   JSONRPCHandlerManagerClass : TCustomJSONRPCHandlerManagerClass = TJSONRPCHandlerManager;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Const
   // JSON RPC 2.0 error codes
@@ -872,6 +916,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomJSONRPCDispatcher.ExecuteHandler(H : TCustomJSONRPCHandler; Params,ID: TJSONData;AContext : TJSONRPCCallContext): TJSONData;
 begin
   Result:=H.Execute(Params,AContext);
@@ -883,6 +928,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCustomJSONRPCDispatcher.ExecuteMethod(Const AClassName,AMethodName: TJSONStringType;
   Params,ID: TJSONData;AContext : TJSONRPCCallContext): TJSONData;
 
@@ -903,6 +950,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=ExecuteHandler(H,Params,ID,AContext);
 =======
     Result:=H.Execute(Params,AContext);
@@ -913,6 +961,9 @@ begin
 =======
     Result:=H.Execute(Params,AContext);
 >>>>>>> graemeg/cpstrnew
+=======
+    Result:=H.Execute(Params,AContext);
+>>>>>>> origin/cpstrnew
   finally
     If Assigned(FreeObject) then
       FreeAndNil(FreeObject);
@@ -957,6 +1008,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       If Assigned(AContext) then
         begin
         AContext.ClassName:=C;
@@ -970,12 +1022,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       Result:=ExecuteMethod(C,M,P,ID,AContext);
       // Do some sanity checks.
       If (Result=Nil) then
         begin
         // No response, and a response was expected.
         if (ID<>Nil) or not (jdoNotifications in Options) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -989,11 +1044,15 @@ begin
 =======
           Result:=CreateJSON2Error(SErrNoResponse,[M],EJSONRPCInternalError,ID,transactionProperty);
 >>>>>>> graemeg/cpstrnew
+=======
+          Result:=CreateJSON2Error(SErrNoResponse,[M],EJSONRPCInternalError,ID,transactionProperty);
+>>>>>>> origin/cpstrnew
         end
       else
         begin
         // A response was received, and no response was expected.
         if ((ID=Nil) or (ID is TJSONNull))  and (jdoStrictNotifications in Options) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1007,6 +1066,9 @@ begin
 =======
           Result:=CreateJSON2Error(SErrResponseFromNotification,[M],EJSONRPCInternalError,ID,transactionProperty);
 >>>>>>> graemeg/cpstrnew
+=======
+          Result:=CreateJSON2Error(SErrResponseFromNotification,[M],EJSONRPCInternalError,ID,transactionProperty);
+>>>>>>> origin/cpstrnew
         If (ID=Nil) or (ID is TJSONNull) then // Notification method, discard result.
           FreeAndNil(Result);
         end;
@@ -1022,6 +1084,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       If Assigned(ID) and not (ID is TJSONNull) then
 =======
       If Assigned(ID) then
@@ -1032,6 +1095,9 @@ begin
 =======
       If Assigned(ID) then
 >>>>>>> graemeg/cpstrnew
+=======
+      If Assigned(ID) then
+>>>>>>> origin/cpstrnew
         Result:=CreateJSON2Error(E.Message,EJSONRPCInternalError,ID.Clone,transactionproperty)
       else
         Result:=CreateJSON2Error(E.Message,EJSONRPCInternalError,Nil,transactionproperty);
@@ -1232,6 +1298,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TJSONRPCHandlerDef.CheckNames(const AClassName,
   AMethodName: TJSONStringType);
 =======
@@ -1243,6 +1310,9 @@ procedure TJSONRPCHandlerDef.CheckNames(Const AClassName,AMethodName : TJSONStri
 =======
 procedure TJSONRPCHandlerDef.CheckNames(Const AClassName,AMethodName : TJSONStringType);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TJSONRPCHandlerDef.CheckNames(Const AClassName,AMethodName : TJSONStringType);
+>>>>>>> origin/cpstrnew
 
 Var
   I : Integer;
@@ -1262,6 +1332,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TJSONRPCHandlerDef.GetParamDefs: TJSONParamDefs;
 begin
   IF (FParamDefs=Nil) then
@@ -1275,6 +1346,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TJSONRPCHandlerDef.SetHandlerClassName(const AValue: TJSONStringType);
 begin
   if FHandlerClassName=AValue then exit;
@@ -1290,6 +1363,7 @@ begin
   FHandlerMethodName:=AValue;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1310,6 +1384,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TJSONRPCHandlerDef.CreateInstance(AOwner: TComponent; out
   AContainer: TComponent): TCustomJSONRPCHandler;
 
@@ -1353,6 +1429,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 destructor TJSONRPCHandlerDef.Destroy;
 begin
   FreeAndNil(FParamDefs);
@@ -1370,6 +1447,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { TJSONRPCHandlerDefs }
 
 function TJSONRPCHandlerDefs.GetH(Index: Integer): TJSONRPCHandlerDef;
@@ -1435,6 +1514,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomJSONRPCHandlerManager.DoClear;
 Var
   I : Integer;
@@ -1460,6 +1540,9 @@ procedure TCustomJSONRPCHandlerManager.UnregisterHandler(const AClassName,
 =======
 procedure TCustomJSONRPCHandlerManager.UnregisterHandler(const AClassName,
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomJSONRPCHandlerManager.UnregisterHandler(const AClassName,
+>>>>>>> origin/cpstrnew
   AMethodName: TJSONStringType);
 
 Var
@@ -1479,6 +1562,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TCustomJSONRPCHandlerManager.RegisterDatamodule(
   Const AClass: TDatamoduleClass; Const AHandlerClassName: TJSONStringType);
 =======
@@ -1493,6 +1577,10 @@ procedure TCustomJSONRPCHandlerManager.RegisterDatamodule(
 procedure TCustomJSONRPCHandlerManager.RegisterDatamodule(
   const AClass: TDatamoduleClass; const AHandlerClassName: TJSONStringType);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomJSONRPCHandlerManager.RegisterDatamodule(
+  const AClass: TDatamoduleClass; const AHandlerClassName: TJSONStringType);
+>>>>>>> origin/cpstrnew
 
 Var
   DM : TDatamodule;
@@ -1525,6 +1613,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           D.ParamDefs:=TCustomJSONRPCHandler(C).ParamDefs;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1532,6 +1621,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           {$ifdef wmdebug}SendDebug('Registering provider '+C.Name);{$endif}
           D.FDataModuleClass:=TDataModuleClass(DM.ClassType);
           end;
@@ -1547,6 +1638,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomJSONRPCHandlerManager.RegisterHandler(
   Const AMethodName: TJSONStringType; AClass: TCustomJSONRPCHandlerClass;
   AArgumentCount: Integer): TJSONRPCHandlerDef;
@@ -1555,22 +1647,28 @@ Function TCustomJSONRPCHandlerManager.RegisterHandler(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCustomJSONRPCHandlerManager.RegisterHandler(
   const AMethodName: TJSONStringType;
   AClass: TCustomJSONRPCHandlerClass;
   AArgumentCount : Integer = 0): TJSONRPCHandlerDef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=RegisterHandler('',AMethodName,AClass,AArgumentCount);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1582,17 +1680,22 @@ Function TCustomJSONRPCHandlerManager.RegisterHandler(Const AClassName,
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCustomJSONRPCHandlerManager.RegisterHandler(
   const AClassName,AMethodName: String;
   AClass: TCustomJSONRPCHandlerClass;
   AArgumentCount : Integer = 0): TJSONRPCHandlerDef;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Var
   I : Integer;
@@ -1619,6 +1722,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomJSONRPCHandlerManager.FindHandlerDefByName(Const AClassName,
 =======
 function TCustomJSONRPCHandlerManager.FindHandlerDefByName(const AClassName,
@@ -1629,6 +1733,9 @@ function TCustomJSONRPCHandlerManager.FindHandlerDefByName(const AClassName,
 =======
 function TCustomJSONRPCHandlerManager.FindHandlerDefByName(const AClassName,
 >>>>>>> graemeg/cpstrnew
+=======
+function TCustomJSONRPCHandlerManager.FindHandlerDefByName(const AClassName,
+>>>>>>> origin/cpstrnew
   AMethodName: TJSONStringType): TJSONRPCHandlerDef;
 
 Var
@@ -1645,6 +1752,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomJSONRPCHandlerManager.GetHandlerDefByName(Const AClassName,
 =======
 function TCustomJSONRPCHandlerManager.GetHandlerDefByName(const AClassName,
@@ -1655,6 +1763,9 @@ function TCustomJSONRPCHandlerManager.GetHandlerDefByName(const AClassName,
 =======
 function TCustomJSONRPCHandlerManager.GetHandlerDefByName(const AClassName,
 >>>>>>> graemeg/cpstrnew
+=======
+function TCustomJSONRPCHandlerManager.GetHandlerDefByName(const AClassName,
+>>>>>>> origin/cpstrnew
   AMethodName: TJSONStringType): TJSONRPCHandlerDef;
 begin
   Result:=FindHandlerDefByName(AClassName,AMethodName);
@@ -1665,6 +1776,7 @@ begin
       JSONRPCError(SErrUnknownJSONRPCMethodHandler,[AMethodName]);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1682,6 +1794,10 @@ function TCustomJSONRPCHandlerManager.GetHandler(
 function TCustomJSONRPCHandlerManager.GetHandler(
   const ADef: TJSONRPCHandlerDef; AOwner: TComponent; out AContainer: TComponent
 >>>>>>> graemeg/cpstrnew
+=======
+function TCustomJSONRPCHandlerManager.GetHandler(
+  const ADef: TJSONRPCHandlerDef; AOwner: TComponent; out AContainer: TComponent
+>>>>>>> origin/cpstrnew
   ): TCustomJSONRPCHandler;
 
 Var
@@ -1695,6 +1811,7 @@ begin
   Result:=ADef.CreateInstance(O,AContainer);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1712,6 +1829,10 @@ function TCustomJSONRPCHandlerManager.GetHandler(const AClassName,
 function TCustomJSONRPCHandlerManager.GetHandler(const AClassName,
   AMethodName: TJSONStringType; AOwner: TComponent; out AContainer: TComponent
 >>>>>>> graemeg/cpstrnew
+=======
+function TCustomJSONRPCHandlerManager.GetHandler(const AClassName,
+  AMethodName: TJSONStringType; AOwner: TComponent; out AContainer: TComponent
+>>>>>>> origin/cpstrnew
   ): TCustomJSONRPCHandler;
 
 Var
@@ -1722,6 +1843,7 @@ begin
   Result:=GetHandler(D,AOwner,AContainer);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1778,6 +1900,8 @@ Procedure TJSONRPCHandlerManager.RemoveHandlerDef(Const Index: Integer);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomJSONRPCHandlerManager.GetClassNames(List: TStrings);
 begin
 
@@ -1794,15 +1918,19 @@ end;
 procedure TJSONRPCHandlerManager.RemoveHandlerDef(const Index: Integer);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   FHandlerDefs.Delete(Index);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1816,11 +1944,15 @@ function TJSONRPCHandlerManager.AddHandlerDef(const AClassName,
 =======
 function TJSONRPCHandlerManager.AddHandlerDef(const AClassName,
 >>>>>>> graemeg/cpstrnew
+=======
+function TJSONRPCHandlerManager.AddHandlerDef(const AClassName,
+>>>>>>> origin/cpstrnew
   AMethodName: TJSONStringType): TJSONRPCHandlerDef;
 begin
   Result:=FHandlerDefs.AddHandler(AClassName,AMethodName);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1834,6 +1966,9 @@ function TJSONRPCHandlerManager.IndexOfHandlerDef(const AClassName,
 =======
 function TJSONRPCHandlerManager.IndexOfHandlerDef(const AClassName,
 >>>>>>> graemeg/cpstrnew
+=======
+function TJSONRPCHandlerManager.IndexOfHandlerDef(const AClassName,
+>>>>>>> origin/cpstrnew
   AMethodName: TJSONStringType): Integer;
 begin
   Result:=FHandlerDefs.IndexOfHandler(AClassName,AMethodName);
@@ -1853,6 +1988,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Constructor TJSONRPCHandlerManager.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
@@ -1865,6 +2001,8 @@ Destructor TJSONRPCHandlerManager.Destroy;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 constructor TJSONRPCHandlerManager.Create(AOwner: TComponent);
 begin
   inherited Create(AOwner);
@@ -1874,11 +2012,14 @@ end;
 destructor TJSONRPCHandlerManager.Destroy;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   FreeAndNil(FHandlerDefs);
   inherited Destroy;

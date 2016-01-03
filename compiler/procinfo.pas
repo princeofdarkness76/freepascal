@@ -52,6 +52,7 @@ unit procinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        { This object gives information on the current routine being
          compiled.
 =======
@@ -59,6 +60,8 @@ unit procinfo;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        {# This object gives information on the current routine being
           compiled.
 >>>>>>> graemeg/cpstrnew
@@ -73,6 +76,7 @@ unit procinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { required alignment for this stackframe }
           fstackalignment : longint;
 =======
@@ -81,6 +85,8 @@ unit procinfo;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           procedure addnestedproc(child: tprocinfo);
        public
           { pointer to parent in nested procedures }
@@ -175,6 +181,7 @@ unit procinfo;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           { get frame pointer }
           procedure init_framepointer; virtual;
 
@@ -200,6 +207,8 @@ unit procinfo;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           { Destroy the entire procinfo tree, starting from the outermost parent }
           procedure destroy_tree;
 
@@ -213,11 +222,14 @@ unit procinfo;
           function has_nestedprocs: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
        tcprocinfo = class of tprocinfo;
 
@@ -261,11 +273,14 @@ implementation
         maxpushedparasize:=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if Assigned(parent) and (parent.procdef.parast.symtablelevel>=normal_function_level) then
           parent.addnestedproc(Self);
       end;
@@ -295,9 +310,12 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 =======
+=======
+>>>>>>> origin/cpstrnew
 
     procedure tprocinfo.addnestedproc(child: tprocinfo);
       begin
@@ -305,6 +323,36 @@ implementation
           nestedprocs:=TLinkedList.Create;
         nestedprocs.insert(child);
       end;
+<<<<<<< HEAD
+=======
+
+    function tprocinfo.get_first_nestedproc: tprocinfo;
+      begin
+        if assigned(nestedprocs) then
+          result:=tprocinfo(nestedprocs.first)
+        else
+          result:=nil;
+      end;
+
+    function tprocinfo.has_nestedprocs: boolean;
+      begin
+        result:=assigned(nestedprocs) and (nestedprocs.count>0);
+      end;
+
+    procedure tprocinfo.save_jump_labels(out saved: tsavedlabels);
+      begin
+        saved[false]:=CurrFalseLabel;
+        saved[true]:=CurrTrueLabel;
+        current_asmdata.getjumplabel(CurrTrueLabel);
+        current_asmdata.getjumplabel(CurrFalseLabel);
+      end;
+
+    procedure tprocinfo.restore_jump_labels(const saved: tsavedlabels);
+      begin
+        CurrFalseLabel:=saved[false];
+        CurrTrueLabel:=saved[true];
+      end;
+>>>>>>> origin/cpstrnew
 
     function tprocinfo.get_first_nestedproc: tprocinfo;
       begin

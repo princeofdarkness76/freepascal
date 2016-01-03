@@ -187,6 +187,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           recorddef,
           objectdef:
             begin
@@ -225,6 +226,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           objectdef,
           recorddef:
             { access to the classtype while specializing? }
@@ -251,11 +254,14 @@ implementation
               resultdef:=tclassrefdef.create(left.resultdef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           else
             CGMessage(parser_e_pointer_to_class_expected);
         end;
@@ -291,6 +297,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              if (is_objc_class_or_protocol(left.resultdef) or
                  is_objcclassref(left.resultdef)) then
                begin
@@ -313,6 +320,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              { make sure that the isa field is loaded correctly in case
                of the non-fragile ABI }
              if is_objcclass(left.resultdef) and
@@ -329,6 +338,7 @@ implementation
                end
              else
                firstpass(left)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -369,6 +379,8 @@ implementation
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
            end
          else if not is_objcclass(left.resultdef) and
                  not is_objcclassref(left.resultdef) then
@@ -384,7 +396,10 @@ implementation
                else if (left.resultdef.typ=objectdef) then
                  tobjectdef(left.resultdef).register_maybe_created_object_type
              end
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            end;
       end;
 
@@ -685,18 +700,24 @@ implementation
 {$endif i386}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             if (hp.nodetype=loadn) and
                (tloadnode(hp).symtableentry.typ=absolutevarsym) and
 {$ifdef i386}
                not(tabsolutevarsym(tloadnode(hp).symtableentry).absseg) and
 {$endif i386}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                (tabsolutevarsym(tloadnode(hp).symtableentry).abstyp=toaddr) then
                begin
                  if nf_typedaddr in flags then
@@ -1041,6 +1062,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            do not convert range nodes }
          if (right.nodetype<>rangen) then
            case left.resultdef.typ of
@@ -1111,6 +1133,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            do not convert enums, char (why not? (JM))
            and do not convert range nodes }
          if (right.nodetype<>rangen) and (is_integer(right.resultdef) or is_boolean(right.resultdef) or (left.resultdef.typ<>arraydef)) then
@@ -1195,11 +1219,14 @@ implementation
                   not(tprocdef(tparasymtable(tparavarsym(tloadnode(left).symtableentry).owner).defowner).proccalloption in cdecl_pocalls) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    begin
                      { expect to find the load node }
                      if get_open_const_array(left).nodetype<>loadn then
@@ -1321,6 +1348,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          else if left.resultdef.typ=arraydef then
            result:=first_arraydef
 =======
@@ -1328,6 +1356,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          else if (not is_packed_array(left.resultdef)) or
             ((tarraydef(left.resultdef).elepackedbitsize mod 8) = 0) then
            if left.expectloc=LOC_CREFERENCE then

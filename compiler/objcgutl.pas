@@ -63,6 +63,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       procedure gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmsymbol; classmethods, iscategory: Boolean);
 =======
       procedure gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmlabel; classmethods, iscategory: Boolean);
@@ -73,6 +74,9 @@ implementation
 =======
       procedure gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmlabel; classmethods, iscategory: Boolean);
 >>>>>>> graemeg/cpstrnew
+=======
+      procedure gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmlabel; classmethods, iscategory: Boolean);
+>>>>>>> origin/cpstrnew
       procedure gen_objc_protocol_elements(list: tasmlist; protocol: tobjectdef; out reqinstsym, optinstsym, reqclssym, optclssym: TAsmLabel);
       procedure gen_objc_protocol_list(list:TAsmList; protolist: TFPObjectList; out protolistsym: TAsmLabel);
       procedure gen_objc_cat_methods(list:TAsmList; items: TFPObjectList; section: tasmsectiontype;const sectname: string; out listsym: TAsmLabel);
@@ -106,6 +110,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { Used by PowerPC/64, ARM, x86_64 and AArch64 }
 =======
     { Used by PowerPC/64, ARM, and x86_64 }
@@ -116,6 +121,9 @@ implementation
 =======
     { Used by PowerPC/64, ARM, and x86_64 }
 >>>>>>> graemeg/cpstrnew
+=======
+    { Used by PowerPC/64, ARM, and x86_64 }
+>>>>>>> origin/cpstrnew
     tobjcrttiwriter_nonfragile = class(tobjcrttiwriter)
      protected
       ObjCEmptyCacheVar,
@@ -160,6 +168,7 @@ function objcaddprotocolentry(const p: shortstring; ref: TAsmSymbol): Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     if current_asmdata.ConstPools[sp_objcprotocolrefs]=nil then
       current_asmdata.ConstPools[sp_objcprotocolrefs]:=THashSet.Create(64, True, False);
@@ -175,6 +184,11 @@ function objcaddprotocolentry(const p: shortstring; ref: TAsmSymbol): Boolean;
       current_asmdata.ConstPools[sp_objcprotocolrefs]:=THashSet.Create(64, True, False);
 
 >>>>>>> graemeg/cpstrnew
+=======
+    if current_asmdata.ConstPools[sp_objcprotocolrefs]=nil then
+      current_asmdata.ConstPools[sp_objcprotocolrefs]:=THashSet.Create(64, True, False);
+
+>>>>>>> origin/cpstrnew
     item:=current_asmdata.constpools[sp_objcprotocolrefs].FindOrAdd(@p[1], length(p));
     Result:=(item^.Data=nil);
     if Result then
@@ -195,6 +209,7 @@ function objcreatestringpoolentryintern(p: pchar; len: longint; pooltype: tconst
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     if current_asmdata.ConstPools[pooltype]=nil then
        current_asmdata.ConstPools[pooltype]:=THashSet.Create(64, True, False);
@@ -207,6 +222,10 @@ function objcreatestringpoolentryintern(p: pchar; len: longint; pooltype: tconst
     if current_asmdata.ConstPools[pooltype]=nil then
        current_asmdata.ConstPools[pooltype]:=THashSet.Create(64, True, False);
 >>>>>>> graemeg/cpstrnew
+=======
+    if current_asmdata.ConstPools[pooltype]=nil then
+       current_asmdata.ConstPools[pooltype]:=THashSet.Create(64, True, False);
+>>>>>>> origin/cpstrnew
     pool := current_asmdata.constpools[pooltype];
 
     entry:=pool.FindOrAdd(p,len);
@@ -312,6 +331,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmsymbol; classmethods, iscategory: Boolean);
 =======
 procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmlabel; classmethods, iscategory: Boolean);
@@ -322,11 +342,15 @@ procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; 
 =======
 procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmlabel; classmethods, iscategory: Boolean);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; out methodslabel: tasmlabel; classmethods, iscategory: Boolean);
+>>>>>>> origin/cpstrnew
   const
     clsSectType : array [Boolean] of tasmsectiontype = (sec_objc_inst_meth, sec_objc_cls_meth);
     clsSectName : array [Boolean] of string = ('_OBJC_INST_METH','_OBJC_CLS_METH');
     catSectType : array [Boolean] of tasmsectiontype = (sec_objc_cat_inst_meth, sec_objc_cat_cls_meth);
     catSectName : array [Boolean] of string = ('_OBJC_CAT_INST_METH','_OBJC_CAT_CLS_METH');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -337,6 +361,8 @@ procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   type
     method_data = record
       def     : tprocdef;
@@ -374,6 +400,7 @@ procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       begin
         new_section(list,catSectType[classmethods],catSectName[classmethods],sizeof(ptrint));
         methodslabel:=current_asmdata.DefineAsmSymbol('l_OBJC_$_CATEGORY_'+instclsName[classmethods]+'_METHODS_'+objccls.objextname^+'_$_'+objccls.childof.objextname^,AB_LOCAL,AT_DATA);
@@ -390,6 +417,8 @@ procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       new_section(list,catSectType[classmethods],catSectName[classmethods],sizeof(ptrint))
     else
       new_section(list,clsSectType[classmethods],clsSectName[classmethods],sizeof(ptrint));
@@ -398,11 +427,14 @@ procedure tobjcrttiwriter.gen_objc_methods(list: tasmlist; objccls: tobjectdef; 
     list.Concat(tai_label.Create(methodslabel));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     if (abi=oa_fragile) then
       { not used, always zero }
@@ -793,6 +825,7 @@ procedure tobjcrttiwriter_fragile.gen_objc_category_sections(list:TAsmList; objc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     protolistsym  : TAsmLabel;
     instmthdlist,
     clsmthdlist,
@@ -811,6 +844,11 @@ procedure tobjcrttiwriter_fragile.gen_objc_category_sections(list:TAsmList; objc
     clsmthdlist,
     protolistsym  : TAsmLabel;
 >>>>>>> graemeg/cpstrnew
+=======
+    instmthdlist,
+    clsmthdlist,
+    protolistsym  : TAsmLabel;
+>>>>>>> origin/cpstrnew
     catstrsym,
     clsstrsym,
     catsym        : TAsmSymbol;
@@ -884,6 +922,7 @@ procedure tobjcrttiwriter_fragile.gen_objc_classes_sections(list:TAsmList; objcl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     mthdlist,
     clssym        : TAsmSymbol;
 =======
@@ -898,6 +937,10 @@ procedure tobjcrttiwriter_fragile.gen_objc_classes_sections(list:TAsmList; objcl
     clssym        : TAsmSymbol;
     mthdlist,
 >>>>>>> graemeg/cpstrnew
+=======
+    clssym        : TAsmSymbol;
+    mthdlist,
+>>>>>>> origin/cpstrnew
     ivarslist,
     protolistsym  : TAsmLabel;
     hiddenflag    : cardinal;
@@ -1157,6 +1200,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_ivars(list: tasmlist; objccls: tob
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     prefix:='';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1164,6 +1208,8 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_ivars(list: tasmlist; objccls: tob
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     vcnt:=0;
     setLength(vars,objccls.symtable.SymList.Count);
@@ -1274,6 +1320,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_protocol(list: tasmlist; protocol:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     list.Concat(tai_directive.Create(asd_weak_definition,lbl.name));
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1281,6 +1328,8 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_protocol(list: tasmlist; protocol:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     protocollabel:=lbl;
 
     { protocol's isa - always nil }
@@ -1331,6 +1380,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_category_sections(list:TAsmList; o
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     protolistsym  : TAsmLabel;
     instmthdlist,
     clsmthdlist,
@@ -1349,6 +1399,11 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_category_sections(list:TAsmList; o
     clsmthdlist,
     protolistsym  : TAsmLabel;
 >>>>>>> graemeg/cpstrnew
+=======
+    instmthdlist,
+    clsmthdlist,
+    protolistsym  : TAsmLabel;
+>>>>>>> origin/cpstrnew
     catstrsym,
     clssym,
     catsym        : TAsmSymbol;
@@ -1500,6 +1555,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_class_ro_part(list: tasmlist; objc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     methodssym,
     rosym        : TAsmSymbol;
 =======
@@ -1514,6 +1570,10 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_class_ro_part(list: tasmlist; objc
     rosym        : TAsmSymbol;
     methodslab,
 >>>>>>> graemeg/cpstrnew
+=======
+    rosym        : TAsmSymbol;
+    methodslab,
+>>>>>>> origin/cpstrnew
     ivarslab     : TAsmLabel;
     class_type   : tdef;
     start,
@@ -1567,6 +1627,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_class_ro_part(list: tasmlist; objc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     gen_objc_methods(list,objclss,methodssym,metaclass,false);
 =======
     gen_objc_methods(list,objclss,methodslab,metaclass,false);
@@ -1577,6 +1638,9 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_class_ro_part(list: tasmlist; objc
 =======
     gen_objc_methods(list,objclss,methodslab,metaclass,false);
 >>>>>>> graemeg/cpstrnew
+=======
+    gen_objc_methods(list,objclss,methodslab,metaclass,false);
+>>>>>>> origin/cpstrnew
     { generate ivars (nil for metaclass) }
     if metaclass then
       ivarslab:=nil
@@ -1602,6 +1666,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_class_ro_part(list: tasmlist; objc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ConcatSymOrNil(list,methodssym);
 =======
     ConcatSymOrNil(list,methodslab);
@@ -1612,6 +1677,9 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_class_ro_part(list: tasmlist; objc
 =======
     ConcatSymOrNil(list,methodslab);
 >>>>>>> graemeg/cpstrnew
+=======
+    ConcatSymOrNil(list,methodslab);
+>>>>>>> origin/cpstrnew
     ConcatSymOrNil(list,protolistsym);
     ConcatSymOrNil(list,ivarslab);
     { TODO: weak ivar layout for garbage collection }
@@ -1703,6 +1771,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_classes_sections(list:TAsmList; ob
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if not assigned(ObjCEmptyVtableVar) and
        not(target_info.system in [system_arm_darwin,system_aarch64_darwin,system_i386_iphonesim,system_x86_64_iphonesim]) then
       ObjCEmptyVtableVar:=current_asmdata.RefAsmSymbol(target_info.Cprefix+'_objc_empty_vtable');
@@ -1722,6 +1791,11 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_classes_sections(list:TAsmList; ob
       ObjCEmptyVtableVar:=current_asmdata.RefAsmSymbol(target_info.Cprefix+'_objc_empty_vtable');
     list.Concat(Tai_const.Create_sym(ObjCEmptyVtableVar));
 >>>>>>> graemeg/cpstrnew
+=======
+    if not assigned(ObjCEmptyVtableVar) then
+      ObjCEmptyVtableVar:=current_asmdata.RefAsmSymbol(target_info.Cprefix+'_objc_empty_vtable');
+    list.Concat(Tai_const.Create_sym(ObjCEmptyVtableVar));
+>>>>>>> origin/cpstrnew
     { the read-only part }
     list.Concat(Tai_const.Create_sym(metarosym));
 
@@ -1738,6 +1812,7 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_classes_sections(list:TAsmList; ob
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ConcatSymOrNil(list,ObjCEmptyVtableVar);
 =======
     list.Concat(Tai_const.Create_sym(ObjCEmptyVtableVar));
@@ -1748,6 +1823,9 @@ procedure tobjcrttiwriter_nonfragile.gen_objc_classes_sections(list:TAsmList; ob
 =======
     list.Concat(Tai_const.Create_sym(ObjCEmptyVtableVar));
 >>>>>>> graemeg/cpstrnew
+=======
+    list.Concat(Tai_const.Create_sym(ObjCEmptyVtableVar));
+>>>>>>> origin/cpstrnew
     { the read-only part }
     list.Concat(Tai_const.Create_sym(rosym));
 

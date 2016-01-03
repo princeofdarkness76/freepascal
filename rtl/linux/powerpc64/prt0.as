@@ -401,6 +401,7 @@ FUNCTION_PROLOG _haltproc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     mflr  0
     std   0,16(1)
     stdu  1,-144(1)
@@ -428,12 +429,15 @@ FUNCTION_PROLOG _haltproc
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     /* exit group call */
     LOAD_64BIT_VAL 3, operatingsystem_result
     lwz     3, 0(3)
     li      0, 234
     sc
     /* exit call */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     /* exit group call */
@@ -445,6 +449,8 @@ FUNCTION_PROLOG _haltproc
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     LOAD_64BIT_VAL 3, operatingsystem_result
     lwz     3, 0(3)
     li      0, 1
@@ -472,6 +478,7 @@ __stkptr:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     .type __dl_fini, @object
     .size __dl_fini, 8
@@ -484,6 +491,8 @@ __dl_fini:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     .type operatingsystem_parameters, @object
     .size operatingsystem_parameters, 24

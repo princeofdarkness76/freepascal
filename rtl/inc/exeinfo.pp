@@ -187,6 +187,7 @@ function getByte(var f:file):byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -197,6 +198,9 @@ function getByte(var f:file):byte;
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
   function get0String (var f:file) : string;
   var c : char;
   begin
@@ -211,6 +215,7 @@ function getByte(var f:file):byte;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -221,6 +226,9 @@ function getByte(var f:file):byte;
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
   function getint32 (var f:file): longint;
   begin
     blockread (F, getint32, 4);
@@ -240,6 +248,7 @@ var valid : boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -250,6 +259,9 @@ var valid : boolean;
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
 
   function getLString : String;
   var Res:string;
@@ -278,6 +290,7 @@ var valid : boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -288,6 +301,9 @@ var valid : boolean;
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
 
 begin
   e.sechdrofs := 0;
@@ -295,6 +311,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
   
@@ -305,6 +322,9 @@ begin
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
   // read and check header
   Skip (e.f,SIZE_OF_NLM_INTERNAL_FIXED_HEADER);
   getLString;  // NLM Description

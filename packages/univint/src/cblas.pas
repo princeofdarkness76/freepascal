@@ -14,6 +14,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -21,6 +22,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -78,6 +81,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -89,6 +93,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -110,6 +116,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -130,6 +137,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -139,6 +151,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -159,6 +172,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -168,6 +186,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -175,6 +194,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -187,6 +208,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -194,6 +216,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -203,6 +227,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -229,12 +254,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -258,10 +289,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -279,6 +313,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -327,6 +365,7 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
@@ -339,6 +378,10 @@ uses MacTypes;
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -418,6 +461,7 @@ function cblas_errprn( ierr: SInt32; info: SInt32; var form: char; ... ): SInt32
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 procedure cblas_xerbla( p: SInt32; var rout: char; var form: char; ... ); external name '_cblas_xerbla';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -427,6 +471,8 @@ procedure cblas_xerbla( p: SInt32; var rout: char; var form: char; ... ); extern
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {
  * ===========================================================================
@@ -437,6 +483,7 @@ function cblas_sdsdot( {const} N: SInt32; {const} alpha: Float32; X: Float32Ptr;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 function cblas_dsdot( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32; Y: Float32Ptr; {const} incY: SInt32 ): Float64; external name '_cblas_dsdot';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -459,6 +506,11 @@ function cblas_dsdot( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32; Y:
 function cblas_sdot( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32; Y: Float32Ptr; {const} incY: SInt32 ): Float32; external name '_cblas_sdot';
 function cblas_ddot( {const} N: SInt32; X: Float64Ptr; {const} incX: SInt32; Y: Float64Ptr; {const} incY: SInt32 ): Float64; external name '_cblas_ddot';
 >>>>>>> graemeg/cpstrnew
+=======
+function cblas_dsdot( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32; Y: Float32Ptr; {const} incY: SInt32 ): Float64; external name '_cblas_dsdot';
+function cblas_sdot( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32; Y: Float32Ptr; {const} incY: SInt32 ): Float32; external name '_cblas_sdot';
+function cblas_ddot( {const} N: SInt32; X: Float64Ptr; {const} incX: SInt32; Y: Float64Ptr; {const} incY: SInt32 ): Float64; external name '_cblas_ddot';
+>>>>>>> origin/cpstrnew
 {
  * Functions having prefixes Z and C only
  }
@@ -466,6 +518,7 @@ procedure cblas_cdotu_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 procedure cblas_cdotc_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; dotc: UnivPtr ); external name '_cblas_cdotc_sub';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -491,6 +544,12 @@ procedure cblas_cdotc_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: 
 procedure cblas_zdotu_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; dotu: UnivPtr ); external name '_cblas_zdotu_sub';
 procedure cblas_zdotc_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; dotc: UnivPtr ); external name '_cblas_zdotc_sub';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure cblas_cdotc_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; dotc: UnivPtr ); external name '_cblas_cdotc_sub';
+
+procedure cblas_zdotu_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; dotu: UnivPtr ); external name '_cblas_zdotu_sub';
+procedure cblas_zdotc_sub( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; dotc: UnivPtr ); external name '_cblas_zdotc_sub';
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -500,6 +559,7 @@ function cblas_snrm2( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32 ): 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 function cblas_sasum( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32 ): Float32; external name '_cblas_sasum';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -540,6 +600,18 @@ function cblas_dzasum( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+function cblas_sasum( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32 ): Float32; external name '_cblas_sasum';
+
+function cblas_dnrm2( {const} N: SInt32; X: Float64Ptr; {const} incX: SInt32 ): Float64; external name '_cblas_dnrm2';
+function cblas_dasum( {const} N: SInt32; X: Float64Ptr; {const} incX: SInt32 ): Float64; external name '_cblas_dasum';
+
+function cblas_scnrm2( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): Float32; external name '_cblas_scnrm2';
+function cblas_scasum( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): Float32; external name '_cblas_scasum';
+
+function cblas_dznrm2( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): Float64; external name '_cblas_dznrm2';
+function cblas_dzasum( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): Float64; external name '_cblas_dzasum';
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -549,6 +621,7 @@ function cblas_isamax( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32 ):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 function cblas_idamax( {const} N: SInt32; X: Float64Ptr; {const} incX: SInt32 ): CBLAS_INDEX; external name '_cblas_idamax';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -571,6 +644,11 @@ function cblas_idamax( {const} N: SInt32; X: Float64Ptr; {const} incX: SInt32 ):
 function cblas_icamax( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): CBLAS_INDEX; external name '_cblas_icamax';
 function cblas_izamax( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): CBLAS_INDEX; external name '_cblas_izamax';
 >>>>>>> graemeg/cpstrnew
+=======
+function cblas_idamax( {const} N: SInt32; X: Float64Ptr; {const} incX: SInt32 ): CBLAS_INDEX; external name '_cblas_idamax';
+function cblas_icamax( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): CBLAS_INDEX; external name '_cblas_icamax';
+function cblas_izamax( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt32 ): CBLAS_INDEX; external name '_cblas_izamax';
+>>>>>>> origin/cpstrnew
 
 {
  * ===========================================================================
@@ -581,6 +659,7 @@ function cblas_izamax( {const} N: SInt32; X: {const} UnivPtr; {const} incX: SInt
 {
  * Routines with standard 4 prefixes (s, d, c, z)
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -632,6 +711,8 @@ procedure catlas_zset( {const} N: SInt32; alpha: {const} UnivPtr; X: UnivPtr; {c
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_sswap( {const} N: SInt32; var X: Float32; {const} incX: SInt32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_sswap';
 procedure cblas_scopy( {const} N: SInt32; X: Float32Ptr; {const} incX: SInt32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_scopy';
 procedure cblas_saxpy( {const} N: SInt32; {const} alpha: Float32; X: Float32Ptr; {const} incX: SInt32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_saxpy';
@@ -657,11 +738,14 @@ procedure catlas_zaxpby( {const} N: SInt32; alpha: {const} UnivPtr; X: {const} U
 procedure catlas_zset( {const} N: SInt32; alpha: {const} UnivPtr; X: UnivPtr; {const} incX: SInt32 ); external name '_catlas_zset';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -671,6 +755,7 @@ procedure cblas_srotg( var a: Float32; var b: Float32; var c: Float32; var s: Fl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 procedure cblas_srotmg( var d1: Float32; var d2: Float32; var b1: Float32; {const} b2: Float32; var P: Float32 ); external name '_cblas_srotmg';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -688,6 +773,8 @@ procedure cblas_drot( {const} N: SInt32; var X: Float64; {const} incX: SInt32; v
 procedure cblas_drotm( {const} N: SInt32; var X: Float64; {const} incX: SInt32; var Y: Float64; {const} incY: SInt32; P: Float64Ptr ); external name '_cblas_drotm';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 =======
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_srotmg( var d1: Float32; var d2: Float32; var b1: Float32; {const} b2: Float32; var P: Float32 ); external name '_cblas_srotmg';
 procedure cblas_srot( {const} N: SInt32; var X: Float32; {const} incX: SInt32; var Y: Float32; {const} incY: SInt32; {const} c: Float32; {const} s: Float32 ); external name '_cblas_srot';
 procedure cblas_srotm( {const} N: SInt32; var X: Float32; {const} incX: SInt32; var Y: Float32; {const} incY: SInt32; P: Float32Ptr ); external name '_cblas_srotm';
@@ -696,6 +783,7 @@ procedure cblas_drotg( var a: Float64; var b: Float64; var c: Float64; var s: Fl
 procedure cblas_drotmg( var d1: Float64; var d2: Float64; var b1: Float64; {const} b2: Float64; var P: Float64 ); external name '_cblas_drotmg';
 procedure cblas_drot( {const} N: SInt32; var X: Float64; {const} incX: SInt32; var Y: Float64; {const} incY: SInt32; {const} c: Float64; {const} s: Float64 ); external name '_cblas_drot';
 procedure cblas_drotm( {const} N: SInt32; var X: Float64; {const} incX: SInt32; var Y: Float64; {const} incY: SInt32; P: Float64Ptr ); external name '_cblas_drotm';
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 procedure cblas_srotmg( var d1: Float32; var d2: Float32; var b1: Float32; {const} b2: Float32; var P: Float32 ); external name '_cblas_srotmg';
@@ -717,11 +805,14 @@ procedure cblas_drotmg( var d1: Float64; var d2: Float64; var b1: Float64; {cons
 procedure cblas_drot( {const} N: SInt32; var X: Float64; {const} incX: SInt32; var Y: Float64; {const} incY: SInt32; {const} c: Float64; {const} s: Float64 ); external name '_cblas_drot';
 procedure cblas_drotm( {const} N: SInt32; var X: Float64; {const} incX: SInt32; var Y: Float64; {const} incY: SInt32; P: Float64Ptr ); external name '_cblas_drotm';
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
  * Routines with S D C Z CS and ZD prefixes
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -742,6 +833,8 @@ procedure cblas_zdscal( {const} N: SInt32; {const} alpha: Float64; X: UnivPtr; {
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_sscal( {const} N: SInt32; {const} alpha: Float32; var X: Float32; {const} incX: SInt32 ); external name '_cblas_sscal';
 procedure cblas_dscal( {const} N: SInt32; {const} alpha: Float64; var X: Float64; {const} incX: SInt32 ); external name '_cblas_dscal';
 procedure cblas_cscal( {const} N: SInt32; alpha: {const} UnivPtr; X: UnivPtr; {const} incX: SInt32 ); external name '_cblas_cscal';
@@ -750,11 +843,14 @@ procedure cblas_csscal( {const} N: SInt32; {const} alpha: Float32; X: UnivPtr; {
 procedure cblas_zdscal( {const} N: SInt32; {const} alpha: Float64; X: UnivPtr; {const} incX: SInt32 ); external name '_cblas_zdscal';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {
  * Extra reference routines provided by ATLAS, but not mandated by the standard
@@ -763,6 +859,7 @@ procedure cblas_crotg( a: UnivPtr; b: UnivPtr; c: UnivPtr; s: UnivPtr ); externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 procedure cblas_zrotg( a: UnivPtr; b: UnivPtr; c: UnivPtr; s: UnivPtr ); external name '_cblas_zrotg';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -785,6 +882,11 @@ procedure cblas_zrotg( a: UnivPtr; b: UnivPtr; c: UnivPtr; s: UnivPtr ); externa
 procedure cblas_csrot( {const} N: SInt32; X: UnivPtr; {const} incX: SInt32; Y: UnivPtr; {const} incY: SInt32; {const} c: Float32; {const} s: Float32 ); external name '_cblas_csrot';
 procedure cblas_zdrot( {const} N: SInt32; X: UnivPtr; {const} incX: SInt32; Y: UnivPtr; {const} incY: SInt32; {const} c: Float64; {const} s: Float64 ); external name '_cblas_zdrot';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure cblas_zrotg( a: UnivPtr; b: UnivPtr; c: UnivPtr; s: UnivPtr ); external name '_cblas_zrotg';
+procedure cblas_csrot( {const} N: SInt32; X: UnivPtr; {const} incX: SInt32; Y: UnivPtr; {const} incY: SInt32; {const} c: Float32; {const} s: Float32 ); external name '_cblas_csrot';
+procedure cblas_zdrot( {const} N: SInt32; X: UnivPtr; {const} incX: SInt32; Y: UnivPtr; {const} incY: SInt32; {const} c: Float64; {const} s: Float64 ); external name '_cblas_zdrot';
+>>>>>>> origin/cpstrnew
 
 {
  * ===========================================================================
@@ -795,6 +897,7 @@ procedure cblas_zdrot( {const} N: SInt32; X: UnivPtr; {const} incX: SInt32; Y: U
 {
  * Routines with standard 4 prefixes (S, D, C, Z)
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -868,6 +971,8 @@ procedure cblas_ztbsv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {co
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_sgemv( {const} Order: CBLAS_ORDER; {const} TransA: CBLAS_TRANSPOSE; {const} M: SInt32; {const} N: SInt32; {const} alpha: Float32; A: Float32Ptr; {const} lda: SInt32; X: Float32Ptr; {const} incX: SInt32; {const} beta: Float32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_sgemv';
 procedure cblas_sgbmv( {const} Order: CBLAS_ORDER; {const} TransA: CBLAS_TRANSPOSE; {const} M: SInt32; {const} N: SInt32; {const} KL: SInt32; {const} KU: SInt32; {const} alpha: Float32; A: Float32Ptr; {const} lda: SInt32; X: Float32Ptr; {const} incX: SInt32; {const} beta: Float32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_sgbmv';
 procedure cblas_strmv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} TransA: CBLAS_TRANSPOSE; {const} Diag: CBLAS_DIAG; {const} N: SInt32; A: Float32Ptr; {const} lda: SInt32; var X: Float32; {const} incX: SInt32 ); external name '_cblas_strmv';
@@ -904,17 +1009,21 @@ procedure cblas_ztrsv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {co
 procedure cblas_ztbsv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} TransA: CBLAS_TRANSPOSE; {const} Diag: CBLAS_DIAG; {const} N: SInt32; {const} K: SInt32; A: {const} UnivPtr; {const} lda: SInt32; X: UnivPtr; {const} incX: SInt32 ); external name '_cblas_ztbsv';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_ztpsv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} TransA: CBLAS_TRANSPOSE; {const} Diag: CBLAS_DIAG; {const} N: SInt32; Ap: {const} UnivPtr; X: UnivPtr; {const} incX: SInt32 ); external name '_cblas_ztpsv';
 
 
 {
  * Routines with S and D prefixes only
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -956,6 +1065,8 @@ procedure cblas_dspr2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {co
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_ssymv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} alpha: Float32; A: Float32Ptr; {const} lda: SInt32; X: Float32Ptr; {const} incX: SInt32; {const} beta: Float32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_ssymv';
 procedure cblas_ssbmv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} K: SInt32; {const} alpha: Float32; A: Float32Ptr; {const} lda: SInt32; X: Float32Ptr; {const} incX: SInt32; {const} beta: Float32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_ssbmv';
 procedure cblas_sspmv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} alpha: Float32; const (*var*) Ap: Float32; X: Float32Ptr; {const} incX: SInt32; {const} beta: Float32; var Y: Float32; {const} incY: SInt32 ); external name '_cblas_sspmv';
@@ -975,11 +1086,14 @@ procedure cblas_dsyr2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {co
 procedure cblas_dspr2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} alpha: Float64; X: Float64Ptr; {const} incX: SInt32; Y: Float64Ptr; {const} incY: SInt32; var A: Float64 ); external name '_cblas_dspr2';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -989,6 +1103,7 @@ procedure cblas_chemv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {co
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
 procedure cblas_chbmv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} K: SInt32; alpha: {const} UnivPtr; A: {const} UnivPtr; {const} lda: SInt32; X: {const} UnivPtr; {const} incX: SInt32; beta: {const} UnivPtr; Y: UnivPtr; {const} incY: SInt32 ); external name '_cblas_chbmv';
 (* __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_4_0) *)
@@ -1046,6 +1161,8 @@ procedure cblas_zher2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {co
 procedure cblas_zhpr2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; alpha: {const} UnivPtr; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; Ap: UnivPtr ); external name '_cblas_zhpr2';
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_chbmv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} K: SInt32; alpha: {const} UnivPtr; A: {const} UnivPtr; {const} lda: SInt32; X: {const} UnivPtr; {const} incX: SInt32; beta: {const} UnivPtr; Y: UnivPtr; {const} incY: SInt32 ); external name '_cblas_chbmv';
 procedure cblas_chpmv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; alpha: {const} UnivPtr; Ap: {const} UnivPtr; X: {const} UnivPtr; {const} incX: SInt32; beta: {const} UnivPtr; Y: UnivPtr; {const} incY: SInt32 ); external name '_cblas_chpmv';
 procedure cblas_cgeru( {const} Order: CBLAS_ORDER; {const} M: SInt32; {const} N: SInt32; alpha: {const} UnivPtr; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; A: UnivPtr; {const} lda: SInt32 ); external name '_cblas_cgeru';
@@ -1064,6 +1181,7 @@ procedure cblas_zher( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {con
 procedure cblas_zhpr( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} alpha: Float64; X: {const} UnivPtr; {const} incX: SInt32; A: UnivPtr ); external name '_cblas_zhpr';
 procedure cblas_zher2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; alpha: {const} UnivPtr; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; A: UnivPtr; {const} lda: SInt32 ); external name '_cblas_zher2';
 procedure cblas_zhpr2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; alpha: {const} UnivPtr; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; Ap: UnivPtr ); external name '_cblas_zhpr2';
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 procedure cblas_chbmv( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; {const} K: SInt32; alpha: {const} UnivPtr; A: {const} UnivPtr; {const} lda: SInt32; X: {const} UnivPtr; {const} incX: SInt32; beta: {const} UnivPtr; Y: UnivPtr; {const} incY: SInt32 ); external name '_cblas_chbmv';
@@ -1085,6 +1203,8 @@ procedure cblas_zhpr( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {con
 procedure cblas_zher2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; alpha: {const} UnivPtr; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; A: UnivPtr; {const} lda: SInt32 ); external name '_cblas_zher2';
 procedure cblas_zhpr2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} N: SInt32; alpha: {const} UnivPtr; X: {const} UnivPtr; {const} incX: SInt32; Y: {const} UnivPtr; {const} incY: SInt32; Ap: UnivPtr ); external name '_cblas_zhpr2';
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {
  * ===========================================================================
@@ -1095,6 +1215,7 @@ procedure cblas_zhpr2( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {co
 {
  * Routines with standard 4 prefixes (S, D, C, Z)
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1154,6 +1275,8 @@ procedure cblas_ztrsm( {const} Order: CBLAS_ORDER; {const} Side: CBLAS_SIDE; {co
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_sgemm( {const} Order: CBLAS_ORDER; {const} TransA: CBLAS_TRANSPOSE; {const} TransB: CBLAS_TRANSPOSE; {const} M: SInt32; {const} N: SInt32; {const} K: SInt32; {const} alpha: Float32; A: Float32Ptr; {const} lda: SInt32; B: Float32Ptr; {const} ldb: SInt32; {const} beta: Float32; var C: Float32; {const} ldc: SInt32 ); external name '_cblas_sgemm';
 procedure cblas_ssymm( {const} Order: CBLAS_ORDER; {const} Side: CBLAS_SIDE; {const} Uplo: CBLAS_UPLO; {const} M: SInt32; {const} N: SInt32; {const} alpha: Float32; A: Float32Ptr; {const} lda: SInt32; B: Float32Ptr; {const} ldb: SInt32; {const} beta: Float32; var C: Float32; {const} ldc: SInt32 ); external name '_cblas_ssymm';
 procedure cblas_ssyrk( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} Trans: CBLAS_TRANSPOSE; {const} N: SInt32; {const} K: SInt32; {const} alpha: Float32; A: Float32Ptr; {const} lda: SInt32; {const} beta: Float32; var C: Float32; {const} ldc: SInt32 ); external name '_cblas_ssyrk';
@@ -1183,17 +1306,21 @@ procedure cblas_ztrmm( {const} Order: CBLAS_ORDER; {const} Side: CBLAS_SIDE; {co
 procedure cblas_ztrsm( {const} Order: CBLAS_ORDER; {const} Side: CBLAS_SIDE; {const} Uplo: CBLAS_UPLO; {const} TransA: CBLAS_TRANSPOSE; {const} Diag: CBLAS_DIAG; {const} M: SInt32; {const} N: SInt32; alpha: {const} UnivPtr; A: {const} UnivPtr; {const} lda: SInt32; B: UnivPtr; {const} ldb: SInt32 ); external name '_cblas_ztrsm';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
  * Routines with prefixes C and Z only
  }
 procedure cblas_chemm( {const} Order: CBLAS_ORDER; {const} Side: CBLAS_SIDE; {const} Uplo: CBLAS_UPLO; {const} M: SInt32; {const} N: SInt32; alpha: {const} UnivPtr; A: {const} UnivPtr; {const} lda: SInt32; B: {const} UnivPtr; {const} ldb: SInt32; beta: {const} UnivPtr; C: UnivPtr; {const} ldc: SInt32 ); external name '_cblas_chemm';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1249,6 +1376,8 @@ procedure ATLU_DestroyThreadMemory; external name '_ATLU_DestroyThreadMemory';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure cblas_cherk( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} Trans: CBLAS_TRANSPOSE; {const} N: SInt32; {const} K: SInt32; {const} alpha: Float32; A: {const} UnivPtr; {const} lda: SInt32; {const} beta: Float32; C: UnivPtr; {const} ldc: SInt32 ); external name '_cblas_cherk';
 procedure cblas_cher2k( {const} Order: CBLAS_ORDER; {const} Uplo: CBLAS_UPLO; {const} Trans: CBLAS_TRANSPOSE; {const} N: SInt32; {const} K: SInt32; alpha: {const} UnivPtr; A: {const} UnivPtr; {const} lda: SInt32; B: {const} UnivPtr; {const} ldb: SInt32; {const} beta: Float32; C: UnivPtr; {const} ldc: SInt32 ); external name '_cblas_cher2k';
 procedure cblas_zhemm( {const} Order: CBLAS_ORDER; {const} Side: CBLAS_SIDE; {const} Uplo: CBLAS_UPLO; {const} M: SInt32; {const} N: SInt32; alpha: {const} UnivPtr; A: {const} UnivPtr; {const} lda: SInt32; B: {const} UnivPtr; {const} ldb: SInt32; beta: {const} UnivPtr; C: UnivPtr; {const} ldc: SInt32 ); external name '_cblas_zhemm';
@@ -1291,15 +1420,19 @@ procedure ATLU_DestroyThreadMemory; external name '_ATLU_DestroyThreadMemory';
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	BLASParamErrorProc = procedure( funcName: ConstCStringPtr; paramName: ConstCStringPtr; (*const*) var paramPos: SInt32; (*const*) var paramValue: SInt32 );
 procedure SetBLASParamErrorProc( ErrorProc: BLASParamErrorProc ); external name '_SetBLASParamErrorProc';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1310,6 +1443,8 @@ procedure SetBLASParamErrorProc( ErrorProc: BLASParamErrorProc ); external name 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc not undefined TARGET_CPU_PPC or defined TARGET_CPU_PPC64}
 
@@ -1348,6 +1483,7 @@ procedure vMultMatMat_32x32( ConstVectorFloat A[32][8]; ConstVectorFloat B[32][8
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     {
      -------------------------------------------------------------------------------------------------
@@ -1364,6 +1500,8 @@ procedure vMultMatMat_32x32( ConstVectorFloat A[32][8]; ConstVectorFloat B[32][8
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {
    -------------------------------------------------------------------------------------------------
@@ -1377,11 +1515,14 @@ procedure vMultMatMat_32x32( ConstVectorFloat A[32][8]; ConstVectorFloat B[32][8
   
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure sMultVecMat_4x4( ConstVectorFloat X[1]; ConstVectorFloat A[4][1]; VectorFloat Y[1] ); external name '_sMultVecMat_4x4';
 procedure sMultMatVec_4x4( ConstVectorFloat A[4][1]; ConstVectorFloat X[1]; VectorFloat Y[1] ); external name '_sMultMatVec_4x4';
 procedure sMultMatMat_4x4( ConstVectorFloat A[4][1]; ConstVectorFloat B[4][1]; VectorFloat C[4][1] ); external name '_sMultMatMat_4x4';
@@ -1397,6 +1538,7 @@ procedure sMultMatMat_32x32( ConstVectorFloat A[32][8]; ConstVectorFloat B[32][8
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
 
@@ -1407,6 +1549,9 @@ procedure sMultMatMat_32x32( ConstVectorFloat A[32][8]; ConstVectorFloat B[32][8
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 procedure dMultVecMat_4x4( const double X[4]; const double A[4][4]; double Y[4] ); external name '_dMultVecMat_4x4';
 procedure dMultMatVec_4x4( const double A[4][4]; const double X[4]; double Y[4] ); external name '_dMultMatVec_4x4';
 procedure dMultMatMat_4x4( const double A[4][4]; const double B[4][4]; double C[4][4] ); external name '_dMultMatMat_4x4';
@@ -1425,6 +1570,7 @@ procedure dMultMatMat_32x32( const double A[32][32]; const double B[32][32]; dou
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 {$endc} {TARGET_OS_MAC}
@@ -1437,6 +1583,10 @@ procedure dMultMatMat_32x32( const double A[32][32]; const double B[32][32]; dou
 
 {$endc} {TARGET_OS_MAC}
 >>>>>>> graemeg/cpstrnew
+=======
+
+{$endc} {TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 
 end.

@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1985-2011 by Apple Inc. All rights reserved.
 }
 =======
@@ -15,6 +16,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
@@ -28,11 +31,14 @@
 {      Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -90,6 +96,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -101,6 +108,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -119,6 +128,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -152,6 +162,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -160,10 +172,13 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -174,9 +189,12 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -186,6 +204,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -193,6 +212,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -205,6 +226,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -212,6 +234,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -221,6 +245,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -247,12 +272,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -277,10 +308,13 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
@@ -304,6 +338,9 @@ interface
 =======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+>>>>>>> origin/cpstrnew
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
 
@@ -311,9 +348,12 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -352,7 +392,12 @@ interface
 {$setc TYPE_LONGLONG := TRUE}
 uses MacTypes;
 {$endc} {not MACOSALLINCLUDE}
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 
@@ -476,6 +521,7 @@ function NewGrowZoneUPP( userRoutine: GrowZoneProcPtr ): GrowZoneUPP; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -486,6 +532,9 @@ function NewGrowZoneUPP( userRoutine: GrowZoneProcPtr ): GrowZoneUPP; external n
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  NewPurgeUPP()
@@ -499,6 +548,7 @@ function NewPurgeUPP( userRoutine: PurgeProcPtr ): PurgeUPP; external name '_New
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -509,6 +559,9 @@ function NewPurgeUPP( userRoutine: PurgeProcPtr ): PurgeUPP; external name '_New
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  NewUserFnUPP()
@@ -522,6 +575,7 @@ function NewUserFnUPP( userRoutine: UserFnProcPtr ): UserFnUPP; external name '_
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -532,6 +586,9 @@ function NewUserFnUPP( userRoutine: UserFnProcPtr ): UserFnUPP; external name '_
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  DisposeGrowZoneUPP()
@@ -545,6 +602,7 @@ procedure DisposeGrowZoneUPP( userUPP: GrowZoneUPP ); external name '_DisposeGro
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -555,6 +613,9 @@ procedure DisposeGrowZoneUPP( userUPP: GrowZoneUPP ); external name '_DisposeGro
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  DisposePurgeUPP()
@@ -568,6 +629,7 @@ procedure DisposePurgeUPP( userUPP: PurgeUPP ); external name '_DisposePurgeUPP'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -578,6 +640,9 @@ procedure DisposePurgeUPP( userUPP: PurgeUPP ); external name '_DisposePurgeUPP'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  DisposeUserFnUPP()
@@ -591,6 +656,7 @@ procedure DisposeUserFnUPP( userUPP: UserFnUPP ); external name '_DisposeUserFnU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -601,6 +667,9 @@ procedure DisposeUserFnUPP( userUPP: UserFnUPP ); external name '_DisposeUserFnU
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  InvokeGrowZoneUPP()
@@ -614,6 +683,7 @@ function InvokeGrowZoneUPP( cbNeeded: Size; userUPP: GrowZoneUPP ): SIGNEDLONG; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -624,6 +694,9 @@ function InvokeGrowZoneUPP( cbNeeded: Size; userUPP: GrowZoneUPP ): SIGNEDLONG; 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  InvokePurgeUPP()
@@ -637,6 +710,7 @@ procedure InvokePurgeUPP( blockToPurge: Handle; userUPP: PurgeUPP ); external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -647,6 +721,9 @@ procedure InvokePurgeUPP( blockToPurge: Handle; userUPP: PurgeUPP ); external na
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 {
  *  InvokeUserFnUPP()
@@ -655,6 +732,7 @@ procedure InvokePurgeUPP( blockToPurge: Handle; userUPP: PurgeUPP ); external na
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   available as macro/inline
+<<<<<<< HEAD
  }
 procedure InvokeUserFnUPP( parameter: UnivPtr; userUPP: UserFnUPP ); external name '_InvokeUserFnUPP';
 <<<<<<< HEAD
@@ -670,6 +748,27 @@ procedure InvokeUserFnUPP( parameter: UnivPtr; userUPP: UserFnUPP ); external na
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+
+{$endc} {not TARGET_CPU_64}
+
+{
+ *  MemError()
+ *  
+ *  Summary:
+ *    Determines if an application’s last direct call to a Memory
+ *    Manager function executed successfully.
+ *  
+ *  Discussion:
+ *    MemError() yields the result code produced by the last Memory
+ *    Manager function your application called directly, and resets
+ *    MemError() to return noErr in the future. MemError() is useful
+ *    during application debugging. You might also use MemError as one
+ *    part of a memory-management scheme to identify instances in which
+ *    the Memory Manager rejects overly large memory requests by
+=======
+ }
+procedure InvokeUserFnUPP( parameter: UnivPtr; userUPP: UserFnUPP ); external name '_InvokeUserFnUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 {$endc} {not TARGET_CPU_64}
 
@@ -716,6 +815,68 @@ procedure InvokeUserFnUPP( parameter: UnivPtr; userUPP: UserFnUPP ); external na
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+function MemError: OSErr; external name '_MemError';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMGetMemErr()
+ *  
+ *  Summary:
+ *    Returns the result of the last Memory Manager function, without
+ *    clearing the value like MemError() does.
+ *  
+ *  Discussion:
+ *    LMGetMemErr yields the result code produced by the last Memory
+ *    Manager function your application called directly. Unlike
+ *    MemError(), this function does not reset the stored value, so
+ *    subsequent calls to LMGetMemErr() will still return this value
+ *    until the next Memory Manager routine is called or until
+ *    MemError() is called to reset the value. LMGetMemErr is useful
+ *    during application debugging. You might also use this value as
+ *    one part of a memory-management scheme to identify instances in
+ *    which the Memory Manager rejects overly large memory requests by
+>>>>>>> origin/cpstrnew
+ *    returning the error code memFullErr.
+ *    
+ *    To view the result codes that MemError() can produce, see "Memory
+ *    Manager Result Codes".
+ *    
+ *    Do not rely on MemError() as the only component of a
+ *    memory-management scheme. For example, suppose you call NewHandle
+ *    or NewPtr and receive the result code noErr, indicating that the
+ *    Memory Manager was able to allocate sufficient memory. In this
+ *    case, you have no guarantee that the allocation did not deplete
+ *    your application’s memory reserves to levels so low that simple
+ *    operations might cause your application to crash. Instead of
+ *    relying on MemError(), check before making a memory request that
+ *    there is enough memory both to fulfill the request and to support
+ *    essential operations.
+ *    
+ *    On Mac OS X 10.3 and later, the value of MemError() is kept for
+<<<<<<< HEAD
+ *    each thread; prior to Mac OS X 10.3.  MemError() is global to the
+ *    application.  Because of this, and other problems, the Memory
+ *    Manager APIs are not thread safe before Mac OS X 10.3.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+=======
+ *    each thread; prior to Mac OS X 10.3 there was one global value of
+ *    MemError() which all threads shared. Because of this, and other
+ *    problems, the Memory Manager APIs are not thread safe before Mac
+ *    OS X 10.3.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 function MemError: OSErr; external name '_MemError';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -808,6 +969,25 @@ function LMGetMemErr: SInt16; external name '_LMGetMemErr';
  *  Mac OS X threading:
  *    Not thread safe
  *  
+=======
+function LMGetMemErr: SInt16; external name '_LMGetMemErr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  LMSetMemErr()
+ *  
+ *  Summary:
+ *    Set the value which will be returned by MemError()
+ *  
+ *  Discussion:
+ *    User code shouldn't need to call this function, which is used to
+ *    set the value which the next call to MemError() will return.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+>>>>>>> origin/cpstrnew
  *  Parameters:
  *    
  *    value:
@@ -822,6 +1002,7 @@ procedure LMSetMemErr( value: SInt16 ); external name '_LMSetMemErr';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -832,6 +1013,9 @@ procedure LMSetMemErr( value: SInt16 ); external name '_LMSetMemErr';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -877,6 +1061,7 @@ function NewHandle( byteCount: Size ): Handle; external name '_NewHandle';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -887,6 +1072,9 @@ function NewHandle( byteCount: Size ): Handle; external name '_NewHandle';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -931,6 +1119,7 @@ function NewHandleClear( byteCount: Size ): Handle; external name '_NewHandleCle
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -941,6 +1130,9 @@ function NewHandleClear( byteCount: Size ): Handle; external name '_NewHandleCle
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -982,6 +1174,7 @@ function RecoverHandle( p: Ptr ): Handle; external name '_RecoverHandle';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -992,6 +1185,9 @@ function RecoverHandle( p: Ptr ): Handle; external name '_RecoverHandle';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1030,6 +1226,7 @@ function NewPtr( byteCount: Size ): Ptr; external name '_NewPtr';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1040,6 +1237,9 @@ function NewPtr( byteCount: Size ): Ptr; external name '_NewPtr';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1079,6 +1279,7 @@ function NewPtrClear( byteCount: Size ): Ptr; external name '_NewPtrClear';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -1091,6 +1292,11 @@ function NewPtrClear( byteCount: Size ): Ptr; external name '_NewPtrClear';
 >>>>>>> graemeg/cpstrnew
 
 
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 {$ifc not TARGET_CPU_64}
 {
  *  MaxBlock()   *** DEPRECATED ***
@@ -1117,6 +1323,7 @@ function MaxBlock: SIGNEDLONG; external name '_MaxBlock';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1127,6 +1334,9 @@ function MaxBlock: SIGNEDLONG; external name '_MaxBlock';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1147,6 +1357,7 @@ function StackSpace: SIGNEDLONG; external name '_StackSpace';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -1157,6 +1368,9 @@ function StackSpace: SIGNEDLONG; external name '_StackSpace';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -1177,7 +1391,10 @@ function StackSpace: SIGNEDLONG; external name '_StackSpace';
  *  Mac OS X threading:
  *    Thread safe since version 10.3
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -1190,6 +1407,7 @@ function NewEmptyHandle: Handle; external name '_NewEmptyHandle';
 
 {
  *  HLock()
+<<<<<<< HEAD
  *  
  *  Summary:
  *    Lock a relocatable block so that it does not move in the heap
@@ -1229,11 +1447,52 @@ function NewEmptyHandle: Handle; external name '_NewEmptyHandle';
  *      MemError() to noErr.
 >>>>>>> graemeg/cpstrnew
  *  
+=======
+ *  
+ *  Summary:
+ *    Lock a relocatable block so that it does not move in the heap
+ *  
+ *  Discussion:
+ *    The HLock procedure locks the relocatable block to which h is a
+ *    handle, preventing it from being moved within its heap zone. If
+ *    the block is already locked,HLock does nothing.
+ *    
+ *    On Mac OS X, the behaviour of the Memory Manager and of heaps in
+ *    general is different than on Mac OS 9.x and earlier. In
+ *    particular, the heap on Mac OS X is never purged or compacted. 
+ *    Therefore, an unlocked handle will never be relocated except as a
+ *    result of a direct action by something calling SetHandleSize() or
+ *    by using a function like PtrAndHand() which implicitly resizes
+ *    the handle to append data to it.  Because of this, most locking
+ *    and unlocking of handles is unnecessary on Mac OS X, and the use
+ *    of HLock() and other functions is being deprecated.  If you
+ *    define a macro named __MAC_OS_X_MEMORY_MANAGER_CLEAN__ to 1 in
+ *    your sources before you include MacMemory.h, then HLock() and
+ *    several other functions will become empty operations, removing
+ *    the overhead of a function call.
+ *    
+ *    However, some applications are relying on the behavior that
+ *    resizing a locked handle produces an error, or tracking the state
+ *    of the locked bit for a give handle via the HGetState() function.
+ *     Applications which rely on this can not use
+ *    __MAC_OS_X_MEMORY_MANAGER_CLEAN__.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    h:
+ *      the handle to lock.  If h is == NULL, then HLock() sets
+ *      MemError() to noErr.
+ *  
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function NewEmptyHandle: Handle; external name '_NewEmptyHandle';
 <<<<<<< HEAD
@@ -1339,6 +1598,28 @@ procedure HLock( h: Handle ); external name '_HLock';
  *  
  *  Mac OS X threading:
  *    Not thread safe
+=======
+procedure HLock( h: Handle ); external name '_HLock';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  HLockHi()
+ *  
+ *  Summary:
+ *    Lock a relocatable handle.
+ *  
+ *  Discussion:
+ *    The HLockHi() function locks a handle in memory.  On versions of
+ *    Mac OS before Mac OS X, it would first attempt to move the handle
+ *    as high in memory as feasible.  However, on Mac OS X and later,
+ *    there is no advantage to having handles high in memory, and so
+ *    this function never moves a handle before locking it.
+ *    See the discussion about handle locking above the function
+ *    HLock().
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
  *  
  *  Parameters:
  *    
@@ -1351,6 +1632,44 @@ procedure HLock( h: Handle ); external name '_HLock';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+procedure HLockHi( h: Handle ); external name '_HLockHi';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  HUnlock()
+ *  
+ *  Summary:
+ *    Unlock a relocatable block so that it does not move in the heap
+ *  
+ *  Discussion:
+ *    The HUnlock procedure unlocks the relocatable block to which h is
+ *    a handle, allowing it from being moved within its heap zone. If
+ *    the block is already unlocked, HUnlock does nothing.
+ *    
+ *    See the discussion about handles and locking on Mac OS X above
+ *    the HLock() function.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+>>>>>>> origin/cpstrnew
+ *  
+ *  Parameters:
+ *    
+ *    h:
+<<<<<<< HEAD
+ *      the handle to lock.  If h is == NULL, then HLockHi() sets
+=======
+ *      the handle to unlock.  If h is == NULL, then HUnlock() sets
+>>>>>>> origin/cpstrnew
+ *      MemError() to noErr.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
 procedure HLockHi( h: Handle ); external name '_HLockHi';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
@@ -1454,30 +1773,41 @@ procedure HUnlock( h: Handle ); external name '_HUnlock';
  *  Mac OS X threading:
  *    Thread safe since version 10.3
 >>>>>>> graemeg/cpstrnew
+=======
+procedure HUnlock( h: Handle ); external name '_HUnlock';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$ifc not TARGET_CPU_64}
+{
+ *  HPurge()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Mark a relocatable block so that it does can be purged if a
+ *    memory request cannot be fulfilled after compaction of the heap
+ *  
+ *  Discussion:
+ *    The HPurge procedure makes the relocatable block to which h is a
+ *    handle purgeable. If the block is already purgeable, HPurge does
+ *    nothing.
+ *    
+ *    On Mac OS X, heaps are never purged.  Therefore, the use of
+ *    HPurge() and its associated functios is deprecated. If you define
+ *    a macro __MAC_OS_X_MEMORY_MANAGER_CLEAN__ in your sources before
+ *    you include MacMemory.h, then any calls to HPurge() in your
+ *    program will essentially be removed.
+ *    
+ *    However, some applications may set the handle as purgeable, and
+ *    then later check the purgeBit for the handle via HGetState().  If
+ *    your application depends on the purge bit being set for handles,
+ *    you will not be able to take advantage of this macro.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
  *  
  *  Parameters:
  *    
  *    h:
-<<<<<<< HEAD
- *      the handle to lock.  If h is == NULL, then HLockHi() sets
- *      MemError() to noErr.
-=======
- *  
- *  Summary:
- *    Lock a relocatable handle.
- *  
- *  Discussion:
- *    The HLockHi() function locks a handle in memory.  On versions of
- *    Mac OS before Mac OS X, it would first attempt to move the handle
- *    as high in memory as feasible.  However, on Mac OS X and later,
- *    there is no advantage to having handles high in memory, and so
- *    this function never moves a handle before locking it.
- *    See the discussion about handle locking above the function
- *    HLock().
- *  
- *  Mac OS X threading:
- *    Not thread safe
-=======
  *      the handle to mark as purgeable.  If h is == NULL, then
  *      HPurge() just sets MemError() to noErr.
  *  
@@ -1503,6 +1833,69 @@ procedure HPurge( h: Handle ); external name '_HPurge';
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
+>>>>>>> origin/cpstrnew
+ *  
+ *  Parameters:
+ *    
+ *    h:
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *      the handle to lock.  If h is == NULL, then HLockHi() sets
+ *      MemError() to noErr.
+=======
+ *  
+ *  Summary:
+ *    Lock a relocatable handle.
+ *  
+ *  Discussion:
+ *    The HLockHi() function locks a handle in memory.  On versions of
+ *    Mac OS before Mac OS X, it would first attempt to move the handle
+ *    as high in memory as feasible.  However, on Mac OS X and later,
+ *    there is no advantage to having handles high in memory, and so
+ *    this function never moves a handle before locking it.
+ *    See the discussion about handle locking above the function
+ *    HLock().
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+=======
+ *      the handle to mark as purgeable.  If h is == NULL, then
+=======
+ *      the handle to mark as nonpurgeable.  If h is == NULL, then
+>>>>>>> origin/cpstrnew
+ *      HPurge() just sets MemError() to noErr.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+<<<<<<< HEAD
+procedure HPurge( h: Handle ); external name '_HPurge';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+=======
+procedure HNoPurge( h: Handle ); external name '_HNoPurge';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{$endc} {not TARGET_CPU_64}
+
+>>>>>>> origin/cpstrnew
+{
+ *  HNoPurge()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Mark a relocatable block so that it can not be purged.
+ *  
+ *  Discussion:
+ *    The HNoPurge procedure makes the relocatable block to which h is
+ *    a handle unpurgeable. See the discussion about purgable handles
+ *    above the HPurge() function.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
 >>>>>>> graemeg/cpstrnew
  *  
  *  Parameters:
@@ -1512,6 +1905,7 @@ procedure HPurge( h: Handle ); external name '_HPurge';
  *      the handle to lock.  If h is == NULL, then HLockHi() sets
  *      MemError() to noErr.
  *  
+<<<<<<< HEAD
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -1811,10 +2205,90 @@ function TempNewHandle( logicalSize: Size; var resultCode: OSErr ): Handle; exte
  }
 function TempNewHandle( logicalSize: Size; var resultCode: OSErr ): Handle; external name '_TempNewHandle';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+=======
+ *  Summary:
+ *    Allocate a relocatable memory block of a specified size.
+ *  
+ *  Discussion:
+ *    The TempNewHandle function attempts to allocate a new relocatable
+ *    block in the current heap zone with a logical size of logicalSize
+ *    bytes and then return a handle to the block. The new block is
+ *    unlocked and unpurgeable. If NewHandle cannot allocate a block of
+ *    the requested size, it returns NULL.  The memory block returned
+ *    likely will contain garbage.
+ *    
+ *    WARNING
+ *    
+ *    Do not try to manufacture your own handles without this function
+ *    by simply assigning the address of a variable of type Ptr to a
+ *    variable of type Handle. The resulting "fake handle" would not
+ *    reference a relocatable block and could cause a system crash.
+ *     If this function returns NIL, the error result can be determined
+ *    by calling the function MemError().
+ *    
+ *    On Mac OS X, there is no temporary memory heap, and thus no
+ *    difference between the handles returned by TempNewHandle() and
+ *    those returned by NewHandle().  The only difference between the
+ *    two is that TempNewHandle() also returns the error result of the
+ *    call in resultCode.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    logicalSize:
+ *      the size of the relocatable memory block to allocate.  If this
+ *      value is < 0, NIL will be returned. If this value is 0, a
+ *      handle to 0 byte block will be returned.
+ *    
+ *    resultCode:
+ *      On exit, this will be set to the result of the operation.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function TempNewHandle( logicalSize: Size; var resultCode: OSErr ): Handle; external name '_TempNewHandle';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {$ifc not TARGET_CPU_64}
 {
+ *  TempMaxMem()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Return the maximum amount of temporary memory available
+ *  
+ *  Discussion:
+ *    On Mac OS X, this function always returns a large value, because
+ *    virtual memory is always available to fulfill any request for
+ *    memory.  This function is deprecated on Mac OS X and later.  You
+ *    can assume that any reasonable memory allocation will succeed.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    grow:
+ *      If != NULL, then this is filled in with the the value 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function TempMaxMem( var grow: Size ): Size; external name '_TempMaxMem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+>>>>>>> origin/cpstrnew
+
+
+{$ifc not TARGET_CPU_64}
+{
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
  *  TempMaxMem()   *** DEPRECATED ***
  *  
@@ -1943,6 +2417,11 @@ function TempNewHandle( logicalSize: Size; var resultCode: OSErr ): Handle; exte
 =======
  *  
  *  Summary:
+=======
+ *  TempFreeMem()   *** DEPRECATED ***
+ *  
+ *  Summary:
+>>>>>>> origin/cpstrnew
  *    Return the maximum amount of free memory in the temporary heap.
  *  
  *  Discussion:
@@ -1954,13 +2433,17 @@ function TempNewHandle( logicalSize: Size; var resultCode: OSErr ): Handle; exte
  *  
  *  Mac OS X threading:
  *    Not thread safe
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function TempFreeMem: SIGNEDLONG; external name '_TempFreeMem';
@@ -1973,10 +2456,15 @@ function TempFreeMem: SIGNEDLONG; external name '_TempFreeMem';
 function TempFreeMem: SIGNEDLONG; external name '_TempFreeMem';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+function TempFreeMem: SIGNEDLONG; external name '_TempFreeMem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
  *  CompactMem()   *** DEPRECATED ***
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  
  *  Summary:
@@ -1990,6 +2478,8 @@ function TempFreeMem: SIGNEDLONG; external name '_TempFreeMem';
 =======
 function TempMaxMem( var grow: Size ): Size; external name '_TempMaxMem';
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Compact the heap by purging and moving blocks such that at least
@@ -2009,11 +2499,15 @@ function TempMaxMem( var grow: Size ): Size; external name '_TempMaxMem';
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function CompactMem( cbNeeded: Size ): Size; external name '_CompactMem';
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  TempFreeMem()   *** DEPRECATED ***
  *  
@@ -2028,6 +2522,8 @@ function CompactMem( cbNeeded: Size ): Size; external name '_CompactMem';
  *    that any reasonable memory allocation will succeed.
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
  *  PurgeMem()   *** DEPRECATED ***
  *  
  *  Summary:
@@ -2038,7 +2534,10 @@ function CompactMem( cbNeeded: Size ): Size; external name '_CompactMem';
  *    On Mac OS X and later, blocks are never purged and memory heaps
  *    will grow as necessary, so purging of a heap is never necessary
  *    nor performed.
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
@@ -2048,6 +2547,7 @@ function CompactMem( cbNeeded: Size ): Size; external name '_CompactMem';
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function CompactMem( cbNeeded: Size ): Size; external name '_CompactMem';
@@ -2077,11 +2577,29 @@ function TempFreeMem: SIGNEDLONG; external name '_TempFreeMem';
  *    On Mac OS X and later, blocks are never purged and memory heaps
  *    will grow as necessary, so compaction is never necessary nor
  *    performed.
+=======
+procedure PurgeMem( cbNeeded: Size ); external name '_PurgeMem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  FreeMem()   *** DEPRECATED ***
+ *  
+ *  Summary:
+ *    Return the maximum amount of free memory in the temporary heap.
+ *  
+ *  Discussion:
+ *    On Mac OS X, this function always returns a large value, because
+ *    virtual memory is always available to fulfill any request for
+ *    memory.  This function is deprecated on Mac OS X and later.  You
+ *    can assume that any reasonable memory allocation will succeed.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -2162,6 +2680,23 @@ function MacFreeMem: SInt32; external name '_FreeMem';
 {
  *  MaxMem()   *** DEPRECATED ***
  *  
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ *
+ *  Note:
+ *    FreeMem has been renamed MacFreeMem, to resolve a naming conflict with
+ *    FreeMem in the Turbo Pascal/Delphi/FreePascal runtime library
+ }
+function MacFreeMem: SInt32; external name '_FreeMem';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+
+
+{
+ *  MaxMem()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Return the maximum amount of free memory available
  *  
@@ -2170,6 +2705,7 @@ function MacFreeMem: SInt32; external name '_FreeMem';
  *    virtual memory is always available to fulfill any request for
  *    memory.  This function is deprecated on Mac OS X and later.  You
  *    can assume that any reasonable memory allocation will succeed.
+<<<<<<< HEAD
 =======
 procedure PurgeMem( cbNeeded: Size ); external name '_PurgeMem';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -2189,21 +2725,37 @@ procedure PurgeMem( cbNeeded: Size ); external name '_PurgeMem';
  *  
  *  Mac OS X threading:
  *    Not thread safe
+=======
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    grow:
+ *      If != NULL, then this is filled in with the the value 0.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+<<<<<<< HEAD
  *
  *  Note:
  *    FreeMem has been renamed MacFreeMem, to resolve a naming conflict with
  *    FreeMem in the Turbo Pascal/Delphi/FreePascal runtime library
  }
 function MacFreeMem: SInt32; external name '_FreeMem';
+=======
+ }
+function MaxMem( var grow: Size ): Size; external name '_MaxMem';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 
 
 {
+<<<<<<< HEAD
  *  MaxMem()   *** DEPRECATED ***
  *  
  *  Summary:
@@ -2235,19 +2787,27 @@ function MaxMem( var grow: Size ): Size; external name '_MaxMem';
 {
  *  SetGrowZone()   *** DEPRECATED ***
  *  
+=======
+ *  SetGrowZone()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Set a function which is called when a heap is grown
  *  
  *  Discussion:
  *    On Mac OS X and later, heaps never grow, and so the function set
  *    by SetGrowZone() is never called.
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Parameters:
  *    
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    grow:
  *      If != NULL, then this is filled in with the the value 0.
@@ -2324,6 +2884,23 @@ procedure SetGrowZone( growZone: GrowZoneUPP ); external name '_SetGrowZone';
  *  GetGrowZone()   *** DEPRECATED ***
  *  
 >>>>>>> graemeg/cpstrnew
+=======
+ *    growZone:
+ *      a upp for a function to call when a heap needs to be grown
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure SetGrowZone( growZone: GrowZoneUPP ); external name '_SetGrowZone';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  GetGrowZone()   *** DEPRECATED ***
+ *  
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Get the function which is called when a heap is grown
  *  
@@ -2343,6 +2920,7 @@ function GetGrowZone: GrowZoneUPP; external name '_GetGrowZone';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -2353,6 +2931,9 @@ function GetGrowZone: GrowZoneUPP; external name '_GetGrowZone';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2386,6 +2967,7 @@ procedure MoveHHi( h: Handle ); external name '_MoveHHi';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -2396,6 +2978,9 @@ procedure MoveHHi( h: Handle ); external name '_MoveHHi';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -2433,6 +3018,7 @@ procedure DisposePtr( p: Ptr ); external name '_DisposePtr';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2443,6 +3029,9 @@ procedure DisposePtr( p: Ptr ); external name '_DisposePtr';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2478,6 +3067,7 @@ function GetPtrSize( p: Ptr ): Size; external name '_GetPtrSize';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2488,6 +3078,9 @@ function GetPtrSize( p: Ptr ): Size; external name '_GetPtrSize';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2505,6 +3098,7 @@ procedure SetPtrSize( p: Ptr; newSize: Size ); external name '_SetPtrSize';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2515,6 +3109,9 @@ procedure SetPtrSize( p: Ptr; newSize: Size ); external name '_SetPtrSize';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2557,6 +3154,7 @@ procedure DisposeHandle( h: Handle ); external name '_DisposeHandle';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2567,6 +3165,9 @@ procedure DisposeHandle( h: Handle ); external name '_DisposeHandle';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2603,6 +3204,7 @@ procedure DisposeHandle( h: Handle ); external name '_DisposeHandle';
  *      the desired new logical size, in bytes, of the relocatable
  *      block.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -2623,6 +3225,8 @@ procedure SetHandleSize( h: Handle; newSize: Size ); external name '_SetHandleSi
 
 {
  *  GetHandleSize()
+=======
+>>>>>>> origin/cpstrnew
  *  
 =======
  *  
@@ -2638,7 +3242,10 @@ procedure SetHandleSize( h: Handle; newSize: Size ); external name '_SetHandleSi
 {
  *  GetHandleSize()
  *  
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  Summary:
  *    Returns the logical size of the relocatable block corresponding
  *    to a handle.
@@ -2669,6 +3276,7 @@ function GetHandleSize( h: Handle ): Size; external name '_GetHandleSize';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2679,6 +3287,9 @@ function GetHandleSize( h: Handle ): Size; external name '_GetHandleSize';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2723,6 +3334,7 @@ procedure ReallocateHandle( h: Handle; byteCount: Size ); external name '_Reallo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2733,6 +3345,9 @@ procedure ReallocateHandle( h: Handle; byteCount: Size ); external name '_Reallo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2781,6 +3396,7 @@ procedure EmptyHandle( h: Handle ); external name '_EmptyHandle';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2791,6 +3407,9 @@ procedure EmptyHandle( h: Handle ); external name '_EmptyHandle';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2811,6 +3430,7 @@ procedure HSetRBit( h: Handle ); external name '_HSetRBit';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2821,6 +3441,9 @@ procedure HSetRBit( h: Handle ); external name '_HSetRBit';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2841,6 +3464,7 @@ procedure HClrRBit( h: Handle ); external name '_HClrRBit';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2851,6 +3475,9 @@ procedure HClrRBit( h: Handle ); external name '_HClrRBit';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2909,6 +3536,7 @@ function HGetState( h: Handle ): SInt8; external name '_HGetState';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2919,6 +3547,9 @@ function HGetState( h: Handle ): SInt8; external name '_HGetState';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2952,6 +3583,7 @@ procedure HSetState( h: Handle; flags: SInt8 ); external name '_HSetState';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2970,6 +3602,13 @@ procedure HSetState( h: Handle; flags: SInt8 ); external name '_HSetState';
 {****************************************************************************
 
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{****************************************************************************
+
+>>>>>>> origin/cpstrnew
     Beginning in Mac OS X Tiger, BlockMove, BlockMoveData, BlockMoveUncached,
     BlockMoveDataUncached, BlockZero, and BlockZeroUncached are inlined to a
     direct call to the posix memmove or bzero functions; this allows the 
@@ -3046,6 +3685,7 @@ procedure BlockZeroUncached( destPtr: UnivPtr; byteCount: Size ); external name 
 {$endc} {not TARGET_CPU_64}
 
 
+<<<<<<< HEAD
 {
  *  HandToHand()
 <<<<<<< HEAD
@@ -3181,6 +3821,15 @@ function PtrToXHand( srcPtr: {const} UnivPtr; dstHndl: Handle; size: SIGNEDLONG 
  *    Copies all of the data from one relocatable block to a new
  *    relocatable block.
  *  
+=======
+{
+ *  HandToHand()
+ *  
+ *  Summary:
+ *    Copies all of the data from one relocatable block to a new
+ *    relocatable block.
+ *  
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    The HandToHand function attempts to copy the information in the
  *    relocatable block to which theHndl is a handle; if successful,
@@ -3201,6 +3850,7 @@ function PtrToXHand( srcPtr: {const} UnivPtr; dstHndl: Handle; size: SIGNEDLONG 
  *    Because HandToHand replaces its parameter with the new handle,
  *    you should retain the original parameter value somewhere else,
  *    otherwise you will not be able to access it.
+<<<<<<< HEAD
  *  
  *  Mac OS X threading:
  *    Thread safe since version 10.3
@@ -3390,11 +4040,25 @@ function PtrToHand( srcPtr: {const} UnivPtr; var dstHndl: Handle; size: SIGNEDLO
  *      the number of bytes to copy.
  *  
 >>>>>>> graemeg/cpstrnew
+=======
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    theHndl:
+ *      a handle to the relocatable block whose data HandToHand will
+ *      copy.  On return, theHndl contains a handle to a new
+ *      relocatable block whose data duplicates the original.
+ *  
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 function HandAndHand( hand1: Handle; hand2: Handle ): OSErr; external name '_HandAndHand';
 <<<<<<< HEAD
@@ -3561,10 +4225,49 @@ procedure TempHLock( h: Handle; var resultCode: OSErr ); external name '_TempHLo
  *  
 =======
 function PtrToHand( srcPtr: {const} UnivPtr; var dstHndl: Handle; size: SIGNEDLONG ): OSErr; external name '_PtrToHand';
+=======
+function HandToHand( var theHndl: Handle ): OSErr; external name '_HandToHand';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
 {
+ *  PtrToXHand()
+ *  
+ *  Summary:
+ *    Copies data referenced by a pointer to an existing relocatable
+ *    block.
+ *  
+ *  Discussion:
+ *    The PtrToXHand function copies the specified number of bytes from
+ *    the location specified by srcPtr to the handle specified by
+ *    dstHndl.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    srcPtr:
+ *      the address of the first byte to copy.
+ *    
+ *    dstHndl:
+ *      a handle to an existing relocatable block.
+ *    
+ *    size:
+ *      the number of bytes to copy.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function PtrToXHand( srcPtr: {const} UnivPtr; dstHndl: Handle; size: SIGNEDLONG ): OSErr; external name '_PtrToXHand';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+<<<<<<< HEAD
  *  HandAndHand()
  *  
  *  Summary:
@@ -3709,6 +4412,38 @@ function PtrToXHand( srcPtr: {const} UnivPtr; dstHndl: Handle; size: SIGNEDLONG 
  *    size:
  *      the number of bytes to copy.
  *  
+=======
+ *  PtrToHand()
+ *  
+ *  Summary:
+ *    Copies data referenced by a pointer to a new relocatable block.
+ *  
+ *  Discussion:
+ *    If you dereference and lock a handle, the PtrToHand function can
+ *    copy its data to a new handle. However, for copying data from one
+ *    handle to another, the HandToHand function is more efficient.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    srcPtr:
+ *      the address of the first byte to copy.
+ *    
+ *    dstHndl:
+ *      a handle for which you have not yet allocated any memory. The
+ *      PtrToHand function allocates memory for the handle and copies
+ *      the specified number of bytes beginning at srcPtr into it. The
+ *      dstHndl parameter is an output parameter that will hold the
+ *      result. Its value on entry is ignored. If no error occurs, on
+ *      exit it points to an unlocked, non-purgeable Handle of the
+ *      requested size.
+ *    
+ *    size:
+ *      the number of bytes to copy.
+ *  
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3720,6 +4455,7 @@ function PtrToHand( srcPtr: {const} UnivPtr; var dstHndl: Handle; size: SIGNEDLO
 
 {
  *  HandAndHand()
+<<<<<<< HEAD
  *  
  *  Summary:
  *    Use the HandAndHand function to concatenate two relocatable
@@ -3756,6 +4492,44 @@ function PtrToHand( srcPtr: {const} UnivPtr; var dstHndl: Handle; size: SIGNEDLO
  *      Manager expands so that it can concatenate the information from
  *      aHndl to the end of the contents of this block.
  *  
+=======
+ *  
+ *  Summary:
+ *    Use the HandAndHand function to concatenate two relocatable
+ *    blocks.
+ *  
+ *  Discussion:
+ *    The HandAndHand function concatenates the information from the
+ *    relocatable block to which aHndl is a handle onto the end of the
+ *    relocatable block to which bHndl is a handle. The aHndl variable
+ *    remains unchanged.
+ *    
+ *    WARNING
+ *    
+ *    The HandAndHand function dereferences the handle aHndl. You must
+ *    call the HLock procedure to lock the block before calling
+ *    HandAndHand. Afterward, you can call the HUnlock procedure to
+ *    unlock it. Alternatively, you can save the block's original state
+ *    by calling the HGetState function, lock the block by calling
+ *    HLock, and then restore the original settings by calling
+ *    HSetState.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    hand1:
+ *      A handle to the first relocatable block, whose contents do not
+ *      change but are concatenated to the end of the second
+ *      relocatable block.
+ *    
+ *    hand2:
+ *      A handle to the second relocatable block, whose size the Memory
+ *      Manager expands so that it can concatenate the information from
+ *      aHndl to the end of the contents of this block.
+ *  
+>>>>>>> origin/cpstrnew
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3771,6 +4545,7 @@ function HandAndHand( hand1: Handle; hand2: Handle ): OSErr; external name '_Han
  *  Summary:
  *    Concatenates part or all of a memory block to the end of a
  *    relocatable block.
+<<<<<<< HEAD
  *  
  *  Discussion:
  *    The PtrAndHand function takes the number of bytes specified by
@@ -3855,6 +4630,45 @@ procedure MoreMasters; external name '_MoreMasters';
 
 {
  *  MoreMasterPointers()   *** DEPRECATED ***
+=======
+ *  
+ *  Discussion:
+ *    The PtrAndHand function takes the number of bytes specified by
+ *    the size parameter, beginning at the location specified by ptr1,
+ *    and concatenates them onto the end of the relocatable block to
+ *    which hand2 is a handle. The contents of the source block remain
+ *    unchanged.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe since version 10.3
+ *  
+ *  Parameters:
+ *    
+ *    ptr1:
+ *      a pointer to the beginning of the data that the Memory Manager
+ *      is to concatenate onto the end of the relocatable block.
+ *    
+ *    hand2:
+ *      a handle to the relocatable block, whose size the Memory
+ *      Manager expands so that it can concatenate the information from
+ *      ptr1 onto the end of this block.
+ *    
+ *    size:
+ *      the number of bytes of the block referenced by ptr1 to copy.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function PtrAndHand( ptr1: {const} UnivPtr; hand2: Handle; size: SIGNEDLONG ): OSErr; external name '_PtrAndHand';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$ifc not TARGET_CPU_64}
+{
+ *  MoreMasters()   *** DEPRECATED ***
+>>>>>>> origin/cpstrnew
  *  
  *  Discussion:
  *    On Mac OS X and later, master pointers do not need to be
@@ -3862,16 +4676,20 @@ procedure MoreMasters; external name '_MoreMasters';
  *  
  *  Mac OS X threading:
  *    Not thread safe
+<<<<<<< HEAD
  *  
  *  Parameters:
  *    
  *    inCount:
  *      the number of master pointers to preallocate
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
 <<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
@@ -3889,6 +4707,32 @@ procedure TempHUnlock( h: Handle; var resultCode: OSErr ); external name '_TempH
  *  
 =======
 =======
+=======
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure MoreMasters; external name '_MoreMasters';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  MoreMasterPointers()   *** DEPRECATED ***
+ *  
+ *  Discussion:
+ *    On Mac OS X and later, master pointers do not need to be
+ *    pre-allocated.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inCount:
+ *      the number of master pointers to preallocate
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+>>>>>>> origin/cpstrnew
  *    Non-Carbon CFM:   not available
  }
 procedure MoreMasterPointers( inCount: UInt32 ); external name '_MoreMasterPointers';
@@ -3911,7 +4755,10 @@ procedure MoreMasterPointers( inCount: UInt32 ); external name '_MoreMasterPoint
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TempHLock( h: Handle; var resultCode: OSErr ); external name '_TempHLock';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
@@ -3939,9 +4786,12 @@ procedure TempHUnlock( h: Handle; var resultCode: OSErr ); external name '_TempH
  *  TempDisposeHandle()   *** DEPRECATED ***
  *  
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  Discussion:
  *    This function has been deprecated for many years; replace it with
  *    DisposeHandle()
@@ -3958,6 +4808,7 @@ procedure TempDisposeHandle( h: Handle; var resultCode: OSErr ); external name '
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_5, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
@@ -3968,6 +4819,9 @@ procedure TempDisposeHandle( h: Handle; var resultCode: OSErr ); external name '
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3989,6 +4843,7 @@ function TempTopMem: Ptr; external name '_TempTopMem';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -3999,6 +4854,9 @@ function TempTopMem: Ptr; external name '_TempTopMem';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4026,6 +4884,7 @@ function HoldMemory( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; external na
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4036,6 +4895,9 @@ function HoldMemory( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; external na
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4057,6 +4919,7 @@ function UnholdMemory( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; external 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4067,6 +4930,9 @@ function UnholdMemory( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; external 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4096,6 +4962,7 @@ function MakeMemoryResident( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; ext
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4106,6 +4973,9 @@ function MakeMemoryResident( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4135,6 +5005,7 @@ function ReleaseMemoryData( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; exte
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4145,6 +5016,9 @@ function ReleaseMemoryData( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; exte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4174,6 +5048,7 @@ function MakeMemoryNonResident( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4184,6 +5059,9 @@ function MakeMemoryNonResident( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4213,6 +5091,7 @@ function FlushMemory( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4223,6 +5102,9 @@ function FlushMemory( address: UnivPtr; count: UNSIGNEDLONG ): OSErr; external n
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4243,6 +5125,7 @@ function GZSaveHnd: Handle; external name '_GZSaveHnd';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4253,6 +5136,9 @@ function GZSaveHnd: Handle; external name '_GZSaveHnd';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4273,6 +5159,7 @@ function TopMem: Ptr; external name '_TopMem';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4283,6 +5170,9 @@ function TopMem: Ptr; external name '_TopMem';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4303,6 +5193,7 @@ procedure ReserveMem( cbNeeded: Size ); external name '_ReserveMem';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4313,6 +5204,9 @@ procedure ReserveMem( cbNeeded: Size ); external name '_ReserveMem';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4343,6 +5237,7 @@ procedure PurgeSpace( var total: SIGNEDLONG; var contig: SIGNEDLONG ); external 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4353,6 +5248,9 @@ procedure PurgeSpace( var total: SIGNEDLONG; var contig: SIGNEDLONG ); external 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4378,6 +5276,7 @@ function PurgeSpaceTotal: SIGNEDLONG; external name '_PurgeSpaceTotal';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4388,6 +5287,9 @@ function PurgeSpaceTotal: SIGNEDLONG; external name '_PurgeSpaceTotal';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4413,6 +5315,7 @@ function PurgeSpaceContiguous: SIGNEDLONG; external name '_PurgeSpaceContiguous'
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4423,6 +5326,9 @@ function PurgeSpaceContiguous: SIGNEDLONG; external name '_PurgeSpaceContiguous'
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 { Carbon routines to aid in debugging. }
@@ -4446,6 +5352,7 @@ function CheckAllHeaps: Boolean; external name '_CheckAllHeaps';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4456,6 +5363,9 @@ function CheckAllHeaps: Boolean; external name '_CheckAllHeaps';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -4478,6 +5388,7 @@ function IsHeapValid: Boolean; external name '_IsHeapValid';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -4488,6 +5399,9 @@ function IsHeapValid: Boolean; external name '_IsHeapValid';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { It is invalid to pass a NULL or an empty Handle to IsHandleValid }
@@ -4506,6 +5420,7 @@ function IsHandleValid( h: Handle ): Boolean; external name '_IsHandleValid';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -4516,6 +5431,9 @@ function IsHandleValid( h: Handle ): Boolean; external name '_IsHandleValid';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { It is invalid to pass a NULL Pointer to IsPointerValid }
@@ -4534,6 +5452,7 @@ function IsPointerValid( p: Ptr ): Boolean; external name '_IsPointerValid';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 
 =======
@@ -4545,6 +5464,9 @@ function IsPointerValid( p: Ptr ): Boolean; external name '_IsPointerValid';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {$ifc not TARGET_CPU_64}
@@ -4566,6 +5488,7 @@ function LMGetSysZone: THz; external name '_LMGetSysZone';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4576,6 +5499,9 @@ function LMGetSysZone: THz; external name '_LMGetSysZone';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4596,6 +5522,7 @@ procedure LMSetSysZone( value: THz ); external name '_LMSetSysZone';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4606,6 +5533,9 @@ procedure LMSetSysZone( value: THz ); external name '_LMSetSysZone';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4626,6 +5556,7 @@ function LMGetApplZone: THz; external name '_LMGetApplZone';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4636,6 +5567,9 @@ function LMGetApplZone: THz; external name '_LMGetApplZone';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4656,6 +5590,7 @@ procedure LMSetApplZone( value: THz ); external name '_LMSetApplZone';
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_4, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
@@ -4666,6 +5601,9 @@ procedure LMSetApplZone( value: THz ); external name '_LMSetApplZone';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}

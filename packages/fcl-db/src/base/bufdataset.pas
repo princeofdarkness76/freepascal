@@ -60,11 +60,14 @@ type
     FDataset    : TCustomBufDataset;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   protected
     function Seek(Offset: Longint; Origin: Word): Longint; override;
     function Read(var Buffer; Count: Longint): Longint; override;
@@ -77,6 +80,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -84,6 +88,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   { TCustomBufDataset }
 
   PBufRecLinkItem = ^TBufRecLinkItem;
@@ -138,11 +144,14 @@ type
                    NullBOff2   : PtrInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    Options     : TLocateOptions;
                    Desc        : Boolean;
                   end;
@@ -173,6 +182,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -180,6 +190,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     constructor Create(const ADataset : TCustomBufDataset); virtual;
     function ScrollBackward : TGetResult; virtual; abstract;
     function ScrollForward : TGetResult;  virtual; abstract;
@@ -478,7 +490,55 @@ type
     procedure EndUpdate; override;
   end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+  { TUniDirectionalBufIndex }
+
+  TUniDirectionalBufIndex = class(TBufIndex)
+  private
+    FSPareBuffer: PChar;
+  protected
+    function GetBookmarkSize: integer; override;
+    function GetCurrentBuffer: Pointer; override;
+    function GetCurrentRecord: PChar; override;
+    function GetIsInitialized: boolean; override;
+    function GetSpareBuffer: PChar; override;
+    function GetSpareRecord: PChar; override;
+  public
+    function ScrollBackward : TGetResult; override;
+    function ScrollForward : TGetResult; override;
+    function GetCurrent : TGetResult; override;
+    function ScrollFirst : TGetResult; override;
+    procedure ScrollLast; override;
+
+    procedure SetToFirstRecord; override;
+    procedure SetToLastRecord; override;
+
+    procedure StoreCurrentRecord; override;
+    procedure RestoreCurrentRecord; override;
+
+    function CanScrollForward : Boolean; override;
+    procedure DoScrollForward; override;
+
+    procedure StoreCurrentRecIntoBookmark(const ABookmark: PBufBookmark); override;
+    procedure StoreSpareRecIntoBookmark(const ABookmark: PBufBookmark); override;
+    procedure GotoBookmark(const ABookmark : PBufBookmark); override;
+
+    procedure InitialiseIndex; override;
+    procedure InitialiseSpareRecord(const ASpareRecord : PChar); override;
+    procedure ReleaseSpareRecord; override;
+
+    procedure RemoveRecordFromIndex(const ABookmark : TBufBookmark); override;
+    Function GetRecNo(const ABookmark : PBufBookmark) : integer; override;
+
+    procedure BeginUpdate; override;
+    procedure AddRecord; override;
+    procedure InsertRecordBeforeCurrentRecord(Const ARecord : PChar); override;
+    procedure EndUpdate; override;
+  end;
+
+>>>>>>> origin/cpstrnew
 
   { TArrayBufIndex }
 
@@ -533,6 +593,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure InsertRecordBeforeCurrentRecord(Const ARecord : TRecordBuffer); override;
     procedure RemoveRecordFromIndex(const ABookmark : TBufBookmark); override;
 =======
@@ -541,6 +602,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure EndUpdate; override;
   end;
 
@@ -586,11 +649,14 @@ type
     procedure RestoreRecord(ADataset : TCustomBufDataset); virtual; abstract;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Move the stream to the next record
     procedure GotoNextRecord; virtual; abstract;
 
@@ -607,11 +673,14 @@ type
     procedure StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0); virtual; abstract;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Is called after all records are stored
     procedure FinalizeStoreRecords; virtual; abstract;
     // Checks if the provided stream is of the right format for this class
@@ -677,11 +746,14 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TCustomBufDataset = class(TDBDataSet)
   private
     FFileName: string;
@@ -776,11 +848,14 @@ type
     procedure InitDefaultIndexes;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   protected
     // abstract & virtual methods of TDataset
     procedure SetPacketRecords(aValue : integer); virtual;
@@ -820,6 +895,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure DataEvent(Event: TDataEvent; Info: PtrInt); override;
     // virtual or methods, which can be used by descendants
     function GetNewBlobBuffer : PBlobBuffer;
@@ -839,6 +915,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure BeforeRefreshOpenCursor; virtual;
   {abstracts, must be overidden by descendents}
 >>>>>>> graemeg/cpstrnew
@@ -895,6 +973,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property MaxIndexesCount;
     // TDataset stuff
     property FieldDefs;
@@ -934,6 +1013,9 @@ type
 =======
     property FieldDefs;
 >>>>>>> graemeg/cpstrnew
+=======
+    property FieldDefs;
+>>>>>>> origin/cpstrnew
   end;
 
 
@@ -983,11 +1065,14 @@ function DBCompareText(subValue, aValue: pointer; size: integer; options: TLocat
 function DBCompareText(subValue, aValue: pointer; options: TLocateOptions): LargeInt;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   if [loCaseInsensitive,loPartialKey]=options then
     Result := AnsiStrLIComp(pchar(subValue),pchar(aValue),length(pchar(subValue)))
@@ -1076,6 +1161,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DBCompareBCD(subValue, aValue: pointer; size: integer; options: TLocateOptions): LargeInt;
 begin
   result:=BCDCompare(PBCD(subValue)^, PBCD(aValue)^);
@@ -1110,6 +1196,10 @@ begin
 function DBCompareBCD(subValue, aValue: pointer; options: TLocateOptions): LargeInt;
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+function DBCompareBCD(subValue, aValue: pointer; options: TLocateOptions): LargeInt;
+begin
+>>>>>>> origin/cpstrnew
   // A simple subtraction doesn't work, since it could be that the result
   // doesn't fit into a LargeInt
   if PBCD(subValue)^ < PBCD(aValue)^ then
@@ -1120,11 +1210,14 @@ begin
     result := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure unSetFieldIsNull(NullMask : pbyte;x : longint); //inline;
@@ -1145,6 +1238,7 @@ end;
 function IndexCompareRecords(Rec1,Rec2 : pointer; ADBCompareRecs : TDBCompareStruct) : LargeInt;
 var IndexFieldNr : Integer;
     IsNull1, IsNull2 : boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   for IndexFieldNr:=0 to length(ADBCompareRecs)-1 do with ADBCompareRecs[IndexFieldNr] do
@@ -1179,6 +1273,8 @@ begin
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 begin
   for IndexFieldNr:=0 to length(ADBCompareRecs)-1 do with ADBCompareRecs[IndexFieldNr] do
     begin
@@ -1202,6 +1298,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 { ---------------------------------------------------------------------
     TCustomBufDataset
   ---------------------------------------------------------------------}
@@ -1231,6 +1328,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { ---------------------------------------------------------------------
     TCustomBufDataset
   ---------------------------------------------------------------------}
@@ -1287,6 +1386,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Code to dump raw dataset data, including indexes information, useful for debugging
 =======
 // Code to dump raw dataset data, including indexes information, usefull for debugging
@@ -1297,6 +1397,9 @@ end;
 =======
 // Code to dump raw dataset data, including indexes information, usefull for debugging
 >>>>>>> graemeg/cpstrnew
+=======
+// Code to dump raw dataset data, including indexes information, usefull for debugging
+>>>>>>> origin/cpstrnew
   procedure DumpRawMem(const Data: pointer; ALength: PtrInt);
   var
     b: integer;
@@ -1539,6 +1642,7 @@ begin
   DblLinkIndex.FLastRecBuf[DblLinkIndex.IndNr].prior:=l;
 end;
 
+<<<<<<< HEAD
 procedure TCustomBufDataset.BuildIndexes;
 var i: integer;
 begin
@@ -1575,6 +1679,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCustomBufDataset.GetIndexDefs : TIndexDefs;
 
 begin
@@ -1595,6 +1701,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1669,10 +1776,33 @@ procedure TCustomBufDataset.FreeRecordBuffer(var Buffer: PChar);
 =======
 procedure TCustomBufDataset.FreeRecordBuffer(var Buffer: PChar);
 >>>>>>> graemeg/cpstrnew
+=======
+Function TCustomBufDataset.GetCanModify: Boolean;
+begin
+  Result:= True;
+end;
+
+function TCustomBufDataset.intAllocRecordBuffer: PChar;
+begin
+  // Note: Only the internal buffers of TDataset provide bookmark information
+  result := AllocMem(FRecordsize+sizeof(TBufRecLinkItem)*FMaxIndexesCount);
+end;
+
+function TCustomBufDataset.AllocRecordBuffer: PChar;
+begin
+  result := AllocMem(FRecordsize + BookmarkSize + CalcfieldsSize);
+// The records are initialised, or else the fields of an empty, just-opened dataset
+// are not null
+  InitRecord(result);
+end;
+
+procedure TCustomBufDataset.FreeRecordBuffer(var Buffer: PChar);
+>>>>>>> origin/cpstrnew
 begin
   ReAllocMem(Buffer,0);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1686,11 +1816,15 @@ procedure TCustomBufDataset.ClearCalcFields(Buffer: PChar);
 =======
 procedure TCustomBufDataset.ClearCalcFields(Buffer: PChar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.ClearCalcFields(Buffer: PChar);
+>>>>>>> origin/cpstrnew
 begin
   if CalcFieldsSize > 0 then
     FillByte((Buffer+RecordSize)^,CalcFieldsSize,0);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1710,12 +1844,15 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.InternalOpen;
 
 var IndexNr : integer;
     i : integer;
 
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1754,6 +1891,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   InitDefaultIndexes;
   if not Assigned(FDatasetReader) and (FileName<>'') then
     begin
@@ -1783,6 +1922,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomBufDataset.DoBeforeClose;
 begin
   inherited DoBeforeClose;
@@ -1796,6 +1936,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.InternalClose;
 
 var r  : integer;
@@ -1804,6 +1946,7 @@ var r  : integer;
 
 begin
   FOpen:=False;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1816,6 +1959,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if FIndexesCount>0 then with FIndexes[0] do if IsInitialized then
     begin
     iGetResult:=ScrollFirst;
@@ -1931,10 +2076,14 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TDoubleLinkedBufIndex.GetIsInitialized: boolean;
 =======
 constructor TBufIndex.Create(const ADataset: TCustomBufDataset);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TBufIndex.Create(const ADataset: TCustomBufDataset);
+>>>>>>> origin/cpstrnew
 begin
   Result := (FFirstRecBuf<>nil);
 end;
@@ -2156,11 +2305,14 @@ begin
     TmpRecBuffer := TmpRecBuffer[IndNr].next;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   FCurrentRecBuf := ARecord;
 end;
@@ -2177,6 +2329,7 @@ procedure TDoubleLinkedBufIndex.AddRecord;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var ARecord: TRecordBuffer;
 =======
 var ARecord: PChar;
@@ -2187,6 +2340,9 @@ var ARecord: PChar;
 =======
 var ARecord: PChar;
 >>>>>>> graemeg/cpstrnew
+=======
+var ARecord: PChar;
+>>>>>>> origin/cpstrnew
 begin
   ARecord := FDataset.IntAllocRecordBuffer;
   FLastRecBuf[IndNr].next := pointer(ARecord);
@@ -2267,6 +2423,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomBufDataset.CurrentRecordToBuffer(Buffer: TRecordBuffer);
 =======
 procedure TCustomBufDataset.CurrentRecordToBuffer(Buffer: PChar);
@@ -2277,6 +2434,9 @@ procedure TCustomBufDataset.CurrentRecordToBuffer(Buffer: PChar);
 =======
 procedure TCustomBufDataset.CurrentRecordToBuffer(Buffer: PChar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.CurrentRecordToBuffer(Buffer: PChar);
+>>>>>>> origin/cpstrnew
 var ABookMark : PBufBookmark;
 begin
   with FCurrentIndex do
@@ -2299,10 +2459,32 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ClearIndexes;
     FPacketRecords := 1; // temporary
     end;
 end;
+=======
+    SetLength(FIndexes,0);
+    FPacketRecords := 1; // temporary
+    FIndexesCount:=0;
+    end;
+end;
+
+procedure TCustomBufDataset.InitDefaultIndexes;
+begin
+  if FIndexesCount=0 then
+    begin
+    InternalAddIndex('DEFAULT_ORDER','',[],'','');
+    FCurrentIndex:=FIndexes[0];
+    if not IsUniDirectional then
+      InternalAddIndex('','',[],'','');
+    BookmarkSize := FCurrentIndex.BookmarkSize;
+    end;
+end;
+
+function TCustomBufDataset.GetRecord(Buffer: PChar; GetMode: TGetMode; DoCheck: Boolean): TGetResult;
+>>>>>>> origin/cpstrnew
 
 procedure TCustomBufDataset.SetReadOnly(AValue: Boolean);
 begin
@@ -2409,6 +2591,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomBufDataset.ProcessFieldsToCompareStruct(const AFields, ADescFields, ACInsFields: TList;
       const AIndexOptions: TIndexOptions; const ALocateOptions: TLocateOptions; out ACompareStruct: TDBCompareStruct);
 var i: integer;
@@ -2468,6 +2651,8 @@ end;
 
 procedure TCustomBufDataset.InitDefaultIndexes;
 =======
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.ProcessFieldCompareStruct(AField: TField; var ACompareRec : TDBCompareRec);
 begin
   case AField.DataType of
@@ -2498,10 +2683,14 @@ begin
 end;
 
 procedure TCustomBufDataset.SetIndexFieldNames(const AValue: String);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   if FIndexesCount=0 then
     begin
+<<<<<<< HEAD
 <<<<<<< HEAD
     InternalAddIndex('DEFAULT_ORDER','',[],'','');
     FCurrentIndex:=FIndexes[0];
@@ -2514,6 +2703,8 @@ end;
 procedure TCustomBufDataset.AddIndex(const AName, AFields : string; AOptions : TIndexOptions; const ADescFields: string = '';
   const ACaseInsFields: string = '');
 =======
+=======
+>>>>>>> origin/cpstrnew
     if FIndexesCount=0 then
       InitDefaultIndexes;
     FIndexes[1].FieldsName:=AValue;
@@ -2530,6 +2721,7 @@ procedure TCustomBufDataset.AddIndex(const AName, AFields : string; AOptions : T
 end;
 
 procedure TCustomBufDataset.SetIndexName(AValue: String);
+<<<<<<< HEAD
 var i : integer;
 >>>>>>> graemeg/cpstrnew
 begin
@@ -2645,6 +2837,8 @@ begin
 end;
 
 procedure TCustomBufDataset.SetIndexName(AValue: String);
+=======
+>>>>>>> origin/cpstrnew
 var i : integer;
 begin
   if AValue='' then AValue := 'DEFAULT_ORDER';
@@ -2658,8 +2852,11 @@ begin
       end;
 end;
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.SetMaxIndexesCount(const AValue: Integer);
 begin
   CheckInactive;
@@ -2669,6 +2866,7 @@ begin
     DatabaseError(SMinIndexes);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2682,10 +2880,14 @@ procedure TCustomBufDataset.InternalSetToRecord(Buffer: PChar);
 =======
 procedure TCustomBufDataset.InternalSetToRecord(Buffer: PChar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.InternalSetToRecord(Buffer: PChar);
+>>>>>>> origin/cpstrnew
 begin
   FCurrentIndex.GotoBookmark(PBufBookmark(Buffer+FRecordSize));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2699,10 +2901,14 @@ procedure TCustomBufDataset.SetBookmarkData(Buffer: PChar; Data: Pointer);
 =======
 procedure TCustomBufDataset.SetBookmarkData(Buffer: PChar; Data: Pointer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.SetBookmarkData(Buffer: PChar; Data: Pointer);
+>>>>>>> origin/cpstrnew
 begin
   PBufBookmark(Buffer + FRecordSize)^ := PBufBookmark(Data)^;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2716,10 +2922,14 @@ procedure TCustomBufDataset.SetBookmarkFlag(Buffer: PChar; Value: TBookmarkFlag)
 =======
 procedure TCustomBufDataset.SetBookmarkFlag(Buffer: PChar; Value: TBookmarkFlag);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.SetBookmarkFlag(Buffer: PChar; Value: TBookmarkFlag);
+>>>>>>> origin/cpstrnew
 begin
   PBufBookmark(Buffer + FRecordSize)^.BookmarkFlag := Value;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2733,10 +2943,14 @@ procedure TCustomBufDataset.GetBookmarkData(Buffer: PChar; Data: Pointer);
 =======
 procedure TCustomBufDataset.GetBookmarkData(Buffer: PChar; Data: Pointer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.GetBookmarkData(Buffer: PChar; Data: Pointer);
+>>>>>>> origin/cpstrnew
 begin
   PBufBookmark(Data)^ := PBufBookmark(Buffer + FRecordSize)^;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2750,6 +2964,9 @@ function TCustomBufDataset.GetBookmarkFlag(Buffer: PChar): TBookmarkFlag;
 =======
 function TCustomBufDataset.GetBookmarkFlag(Buffer: PChar): TBookmarkFlag;
 >>>>>>> graemeg/cpstrnew
+=======
+function TCustomBufDataset.GetBookmarkFlag(Buffer: PChar): TBookmarkFlag;
+>>>>>>> origin/cpstrnew
 begin
   Result := PBufBookmark(Buffer + FRecordSize)^.BookmarkFlag;
 end;
@@ -2876,6 +3093,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomBufDataset.LoadBuffer(Buffer : TRecordBuffer): TGetResult;
 =======
 function TCustomBufDataset.LoadBuffer(Buffer : PChar): TGetResult;
@@ -2886,6 +3104,9 @@ function TCustomBufDataset.LoadBuffer(Buffer : PChar): TGetResult;
 =======
 function TCustomBufDataset.LoadBuffer(Buffer : PChar): TGetResult;
 >>>>>>> graemeg/cpstrnew
+=======
+function TCustomBufDataset.LoadBuffer(Buffer : PChar): TGetResult;
+>>>>>>> origin/cpstrnew
 
 var NullMask        : pbyte;
     x               : longint;
@@ -2925,6 +3146,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomBufDataset.GetCurrentBuffer: TRecordBuffer;
 =======
 function TCustomBufDataset.GetCurrentBuffer: PChar;
@@ -2940,6 +3162,8 @@ begin
     else             Result := ActiveBuffer;
   end;
 =======
+=======
+>>>>>>> origin/cpstrnew
 function TCustomBufDataset.GetCurrentBuffer: PChar;
 begin
   if State = dsFilter then Result := FFilterBuffer
@@ -3042,6 +3266,7 @@ begin
       Move(Buffer^, CurrBuff^, Field.DataSize);
     end;
   if not (State in [dsCalcFields, dsFilter, dsNewValue]) then
+<<<<<<< HEAD
     DataEvent(deFieldChange, PtrInt(Field));
 end;
 
@@ -3055,6 +3280,12 @@ var RemRec : pointer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+    DataEvent(deFieldChange, Ptrint(Field));
+end;
+
+procedure TCustomBufDataset.InternalDelete;
+>>>>>>> origin/cpstrnew
 var i         : Integer;
     StartInd  : Integer;
     RemRec    : pointer;
@@ -3197,6 +3428,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomBufDataset.ApplyUpdates; // For backward compatibility
 =======
 procedure TCustomBufDataset.ApplyUpdates; // For backwards-compatibility
@@ -3207,6 +3439,9 @@ procedure TCustomBufDataset.ApplyUpdates; // For backwards-compatibility
 =======
 procedure TCustomBufDataset.ApplyUpdates; // For backwards-compatibility
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.ApplyUpdates; // For backwards-compatibility
+>>>>>>> origin/cpstrnew
 
 begin
   ApplyUpdates(0);
@@ -3317,10 +3552,13 @@ end;
 <<<<<<< HEAD
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.InternalCancel;
 
 Var i            : integer;
@@ -3447,6 +3685,7 @@ function TCustomBufDataset.GetIndexName: String;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   if FIndexesCount>0 then
     result := FCurrentIndex.Name
@@ -3495,6 +3734,8 @@ end;
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 begin
   if FIndexesCount>0 then
     result := FCurrentIndex.Name
@@ -3507,9 +3748,12 @@ begin
   result := IsUniDirectional;
 end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCustomBufDataset.GetRecordSize : Word;
 
 begin
@@ -3526,6 +3770,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomBufDataset.InternalInitRecord(Buffer:  TRecordBuffer);
 =======
 procedure TCustomBufDataset.InternalInitRecord(Buffer: PChar);
@@ -3536,6 +3781,9 @@ procedure TCustomBufDataset.InternalInitRecord(Buffer: PChar);
 =======
 procedure TCustomBufDataset.InternalInitRecord(Buffer: PChar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.InternalInitRecord(Buffer: PChar);
+>>>>>>> origin/cpstrnew
 
 begin
   FillChar(Buffer^, FRecordSize, #0);
@@ -3573,11 +3821,14 @@ end;
 function TCustomBufDataset.GetRecNo: Longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function TCustomBufDataset.GetRecNo: Longint;
 
@@ -3602,12 +3853,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomBufDataset.GetRecordCount: Longint;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function TCustomBufDataset.GetRecordCount: Longint;
 
 >>>>>>> graemeg/cpstrnew
@@ -3621,6 +3875,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TCustomBufDataset.UpdateStatus: TUpdateStatus;
 =======
 Function TCustomBufDataset.UpdateStatus: TUpdateStatus;
@@ -3631,6 +3886,9 @@ Function TCustomBufDataset.UpdateStatus: TUpdateStatus;
 =======
 Function TCustomBufDataset.UpdateStatus: TUpdateStatus;
 >>>>>>> graemeg/cpstrnew
+=======
+Function TCustomBufDataset.UpdateStatus: TUpdateStatus;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=usUnmodified;
@@ -3736,7 +3994,10 @@ begin
 =======
 
 begin
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FDataset := Field.DataSet as TCustomBufDataset;
   if mode = bmread then
     begin
@@ -3780,6 +4041,7 @@ end;
 function TCustomBufDataset.CreateBlobStream(Field: TField; Mode: TBlobStreamMode): TStream;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3795,6 +4057,10 @@ function TCustomBufDataset.CreateBlobStream(Field: TField; Mode: TBlobStreamMode
       FModified := True;
       end;
 end;
+=======
+
+var bufblob : TBufBlobField;
+>>>>>>> origin/cpstrnew
 
 destructor TBufBlobStream.Destroy;
 begin
@@ -3812,6 +4078,7 @@ begin
       FDataSet.DataEvent(deFieldChange, PtrInt(FField));
       end;
     end;
+<<<<<<< HEAD
   inherited Destroy;
 end;
 
@@ -3824,6 +4091,10 @@ function TCustomBufDataset.CreateBlobStream(Field: TField; Mode: TBlobStreamMode
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+end;
+
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.AddIndex(const AName, AFields : string; AOptions : TIndexOptions; const ADescFields: string = '';
                                const ACaseInsFields: string = '');
 begin
@@ -3842,11 +4113,14 @@ var bufblob : TBufBlobField;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.SaveToFile(AFileName: string;
   Format: TDataPacketFormat);
 var AFileStream : TFileStream;
@@ -3982,6 +4256,7 @@ procedure TCustomBufDataset.LoadFromStream(AStream: TStream; Format: TDataPacket
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var APacketReader : TDataPacketReader;
 begin
   CheckBiDirectional;
@@ -3991,6 +4266,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var APacketReaderReg : TDatapacketReaderRegistration;
     APacketReader : TDataPacketReader;
 begin
@@ -4045,6 +4322,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomBufDataset.SaveToFile(AFileName: string;
   Format: TDataPacketFormat);
 var AFileStream : TFileStream;
@@ -4069,6 +4347,9 @@ procedure TCustomBufDataset.CreateDataset;
 =======
 procedure TCustomBufDataset.CreateDataset;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.CreateDataset;
+>>>>>>> origin/cpstrnew
 begin
   CheckInactive;
   if ((Fields.Count=0) or (FieldDefs.Count=0)) then
@@ -4098,6 +4379,7 @@ function TCustomBufDataset.BookmarkValid(ABookmark: TBookmark): Boolean;
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=assigned(FCurrentIndex) and  FCurrentIndex.BookmarkValid(pointer(ABookmark));
 end;
 
@@ -4118,17 +4400,25 @@ end;
 end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  Result:=assigned(FCurrentIndex) and  FCurrentIndex.BookmarkValid(ABookmark);
+end;
+
+>>>>>>> origin/cpstrnew
 function TCustomBufDataset.CompareBookmarks(Bookmark1, Bookmark2: TBookmark
   ): Longint;
 begin
   if Assigned(FCurrentIndex) and FCurrentIndex.CompareBookmarks(Bookmark1,Bookmark2) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Result := 0
   else if not assigned(Bookmark1) then
     Result := 1
@@ -4143,6 +4433,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TCustomBufDataset.IntLoadFieldDefsFromFile;
 =======
 procedure TCustomBufDataset.IntLoadFielddefsFromFile;
@@ -4153,6 +4444,9 @@ procedure TCustomBufDataset.IntLoadFielddefsFromFile;
 =======
 procedure TCustomBufDataset.IntLoadFielddefsFromFile;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomBufDataset.IntLoadFielddefsFromFile;
+>>>>>>> origin/cpstrnew
 
 begin
   FReadFromFile := True;
@@ -4217,11 +4511,14 @@ begin
       FDatasetReader.RestoreRecord(self);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       FIndexes[0].AddRecord;
       inc(FBRecordCount);
 
@@ -4291,6 +4588,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   // rebuild indexes
   BuildIndexes;
 =======
@@ -4298,6 +4596,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TCustomBufDataset.InternalAddIndex(const AName, AFields : string; AOptions : TIndexOptions; const ADescFields: string;
                                        const ACaseInsFields: string);
 var StoreIndNr : Integer;
@@ -4376,6 +4676,7 @@ begin
   // only refresh if active
   if IsCursorOpen then
     Resync([]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4469,6 +4770,30 @@ end;
 function TCustomBufDataset.Fetch: boolean;
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+end;
+
+procedure TCustomBufDataset.InternalRefresh;
+var StoreDefaultFields: boolean;
+begin
+  StoreDefaultFields:=DefaultFields;
+  SetDefaultFields(False);
+  FreeFieldBuffers;
+  ClearBuffers;
+  InternalClose;
+  BeforeRefreshOpenCursor;
+  InternalOpen;
+  SetDefaultFields(StoreDefaultFields);
+end;
+
+procedure TCustomBufDataset.BeforeRefreshOpenCursor;
+begin
+  // Do nothing
+end;
+
+function TCustomBufDataset.Fetch: boolean;
+begin
+>>>>>>> origin/cpstrnew
   // Empty procedure to make it possible to use TCustomBufDataset as a memory dataset
   Result := False;
 end;
@@ -4544,11 +4869,14 @@ begin
   Result := False;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   CheckActive;
   if IsEmpty then exit;
 
@@ -4571,11 +4899,14 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   finally
     SearchFields.Free;
   end;
@@ -4597,11 +4928,14 @@ begin
   move((FCurrentIndex as TDoubleLinkedBufIndex).FLastRecBuf^,FilterBuffer^,FRecordsize+sizeof(TBufRecLinkItem)*FMaxIndexesCount);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   // Iterate through the records until a match is found
   ABookmark.BookmarkData:=nil;
@@ -4619,6 +4953,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         FFilterBuffer:=pointer(ABookmark.BookmarkData) + BufferOffset;
         // The dataset state is still dsFilter at this point, so we don't have to set it.
         DoFilterRecord(FilterAcceptable);
@@ -4628,17 +4963,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         FFilterBuffer:=pointer(CurrLinkItem)+(sizeof(TBufRecLinkItem)*MaxIndexesCount);
         // The dataset-state is still dsFilter at this point, so we don't have to set it.
         DoFilterRecord(FiltAcceptable);
         if FiltAcceptable then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           begin
           Result := True;
           break;
@@ -4653,6 +4993,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     end;
 
   RestoreState(SavedState);
@@ -4662,6 +5003,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     CurrLinkItem := CurrLinkItem[(FCurrentIndex as TDoubleLinkedBufIndex).IndNr].next;
     if CurrLinkItem = (FCurrentIndex as TDoubleLinkedBufIndex).FLastRecBuf then
       getnextpacket;
@@ -4926,6 +5269,7 @@ begin
   dec(FLastRecInd);
 end;
 
+<<<<<<< HEAD
 procedure TArrayBufIndex.BeginUpdate;
 begin
   //  inherited BeginUpdate;
@@ -4946,6 +5290,11 @@ var ARecord: PChar;
 var ARecord: PChar;
 >>>>>>> graemeg/cpstrnew
 begin
+=======
+procedure TArrayBufIndex.AddRecord;
+var ARecord: PChar;
+begin
+>>>>>>> origin/cpstrnew
   ARecord := FDataset.IntAllocRecordBuffer;
   inc(FLastRecInd);
   if FLastRecInd >= length(FRecordArray) then
@@ -5235,6 +5584,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TUniDirectionalBufIndex.GetCurrentRecord:  TRecordBuffer;
 =======
 procedure TFpcBinaryDatapacketReader.RestoreRecord(ADataset: TCustomBufDataset);
@@ -5245,10 +5595,14 @@ procedure TFpcBinaryDatapacketReader.RestoreRecord(ADataset: TCustomBufDataset);
 =======
 procedure TFpcBinaryDatapacketReader.RestoreRecord(ADataset: TCustomBufDataset);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TFpcBinaryDatapacketReader.RestoreRecord(ADataset: TCustomBufDataset);
+>>>>>>> origin/cpstrnew
 begin
   //  Result:=inherited GetCurrentRecord;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5258,6 +5612,8 @@ function TUniDirectionalBufIndex.GetIsInitialized: boolean;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TFpcBinaryDatapacketReader.StoreRecord(ADataset: TCustomBufDataset;
   ARowState: TRowState; AUpdOrder : integer);
 >>>>>>> graemeg/cpstrnew
@@ -5374,6 +5730,7 @@ begin
   DatabaseError(SUniDirectional);
 end;
 
+<<<<<<< HEAD
 procedure TUniDirectionalBufIndex.RestoreCurrentRecord;
 begin
   DatabaseError(SUniDirectional);
@@ -5390,6 +5747,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { TUniDirectionalBufIndex }
 
 function TUniDirectionalBufIndex.GetBookmarkSize: integer;
@@ -5479,9 +5838,12 @@ function TUniDirectionalBufIndex.CanScrollForward: Boolean;
 begin
   // should return true if a next record is already fetched
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   result := false;
 end;
 
@@ -5513,6 +5875,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TUniDirectionalBufIndex.InitialiseSpareRecord(const ASpareRecord:  TRecordBuffer);
 =======
 procedure TUniDirectionalBufIndex.InitialiseSpareRecord(const ASpareRecord: PChar);
@@ -5523,6 +5886,9 @@ procedure TUniDirectionalBufIndex.InitialiseSpareRecord(const ASpareRecord: PCha
 =======
 procedure TUniDirectionalBufIndex.InitialiseSpareRecord(const ASpareRecord: PChar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TUniDirectionalBufIndex.InitialiseSpareRecord(const ASpareRecord: PChar);
+>>>>>>> origin/cpstrnew
 begin
   FSPareBuffer:=ASpareRecord;
 end;
@@ -5532,6 +5898,7 @@ begin
   FSPareBuffer:=nil;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5548,6 +5915,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TUniDirectionalBufIndex.RemoveRecordFromIndex(const ABookmark: TBufBookmark);
 begin
   DatabaseError(SUniDirectional);
@@ -5558,11 +5927,14 @@ begin
   result := -1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TUniDirectionalBufIndex.BeginUpdate;
@@ -5571,6 +5943,7 @@ begin
 end;
 
 procedure TUniDirectionalBufIndex.AddRecord;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5598,10 +5971,13 @@ procedure TUniDirectionalBufIndex.InsertRecordBeforeCurrentRecord(const ARecord:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   // Do nothing
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5620,6 +5996,9 @@ procedure TUniDirectionalBufIndex.InsertRecordBeforeCurrentRecord(const ARecord:
 =======
 procedure TUniDirectionalBufIndex.InsertRecordBeforeCurrentRecord(const ARecord: PChar);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TUniDirectionalBufIndex.InsertRecordBeforeCurrentRecord(const ARecord: PChar);
+>>>>>>> origin/cpstrnew
 begin
   // Do nothing
 end;
@@ -5632,6 +6011,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -5639,6 +6019,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 initialization
   setlength(RegisteredDatapacketReaders,0);
 finalization

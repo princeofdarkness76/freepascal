@@ -45,6 +45,7 @@ function WStrLIComp(S1, S2: PWideChar; Len: Integer): Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure WStrLower(var S: XMLString);
 
 
@@ -58,6 +59,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure WStrLower(var S: WideString);
 
 type
@@ -67,11 +70,14 @@ const
   xmlVersionStr: array[TXMLVersion] of WideString = ('', '1.0', '1.1');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
   TXMLNodeType = (ntNone, ntElement, ntAttribute, ntText,
@@ -106,6 +112,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif}
 =======
 {$endif}  
@@ -116,6 +123,9 @@ type
 =======
 {$endif}  
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif}  
+>>>>>>> origin/cpstrnew
 
   PPHashItem = ^PHashItem;
   PHashItem = ^THashItem;
@@ -125,6 +135,7 @@ type
     Next: PHashItem;
     Data: TObject;
   end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,6 +153,9 @@ type
 =======
   THashItemArray = array[0..MaxInt div sizeof(Pointer)-1] of PHashItem;
 >>>>>>> graemeg/cpstrnew
+=======
+  THashItemArray = array[0..MaxInt div sizeof(Pointer)-1] of PHashItem;
+>>>>>>> origin/cpstrnew
   PHashItemArray = ^THashItemArray;
 
   THashForEach = function(Entry: PHashItem; arg: Pointer): Boolean;
@@ -181,6 +195,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef CPU16}
   TExpHashEntryArray = array[0..MaxSmallInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
 {$else CPU16}
@@ -195,6 +210,9 @@ type
 =======
   TExpHashEntryArray = array[0..MaxInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
 >>>>>>> graemeg/cpstrnew
+=======
+  TExpHashEntryArray = array[0..MaxInt div sizeof(TExpHashEntry)-1] of TExpHashEntry;
+>>>>>>> origin/cpstrnew
   PExpHashEntryArray = ^TExpHashEntryArray;
 
   TDblHashArray = class(TObject)
@@ -205,12 +223,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   public
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   public  
 >>>>>>> graemeg/cpstrnew
     procedure Init(NumSlots: Integer);
@@ -320,6 +341,37 @@ type
     FDenormalized: Boolean;        // Whether attribute value changes by normalization
   end;
 
+<<<<<<< HEAD
+=======
+{ Source location. This may be augmented with ByteOffset, UTF8Offset, etc. }
+  TLocation = record
+    Line: Integer;
+    LinePos: Integer;
+  end;
+
+{ generic node info record, shared between DOM and reader }
+
+  PNodeData = ^TNodeData;
+  TNodeData = record
+    FNext: PNodeData;
+    FQName: PHashItem;
+    FPrefix: PHashItem;
+    FNsUri: PHashItem;
+    FColonPos: Integer;
+    FTypeInfo: TObject;
+    FLoc: TLocation;
+    FLoc2: TLocation;              // for attributes: start of value
+    FIDEntry: PHashItem;           // ID attributes: entry in ID map
+    FNodeType: TXMLNodeType;
+
+    FValueStr: WideString;
+    FValueStart: PWideChar;
+    FValueLength: Integer;
+    FIsDefault: Boolean;
+    FDenormalized: Boolean;        // Whether attribute value changes by normalization
+  end;
+
+>>>>>>> origin/cpstrnew
 { TNSSupport provides tracking of prefix-uri pairs and namespace fixup for writer }
 
   TBinding = class
@@ -359,7 +411,10 @@ type
     procedure EndElement;
   end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Buffer builder, used to compose long strings without too much memory allocations }
 
   PWideCharBuf = ^TWideCharBuf;
@@ -670,6 +725,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure WStrLower(var S: XMLString);
 =======
 procedure WStrLower(var S: WideString);
@@ -680,6 +736,9 @@ procedure WStrLower(var S: WideString);
 =======
 procedure WStrLower(var S: WideString);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure WStrLower(var S: WideString);
+>>>>>>> origin/cpstrnew
 var
   i: Integer;
 begin
@@ -693,6 +752,7 @@ begin
   Result := InitValue;
   while KeyLen <> 0 do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -714,6 +774,11 @@ begin
     Result := Result * $F4243 xor ord(Key^);
 {$ifdef overflow_check}{$q+}{$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef overflow_check}{$q-}{$endif}
+    Result := Result * $F4243 xor ord(Key^);
+{$ifdef overflow_check}{$q+}{$endif}
+>>>>>>> origin/cpstrnew
     Inc(Key);
     Dec(KeyLen);
   end;
@@ -724,12 +789,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result := (Length(Key1)=Key2Len) and CompareMem(Pointer(Key1), Key2, Key2Len*2);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF FPC}
   Result := (Length(Key1)=Key2Len) and (CompareWord(Pointer(Key1)^, Key2^, Key2Len) = 0);
 {$ELSE}
@@ -737,11 +805,14 @@ begin
 {$ENDIF}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 { THashTable }
@@ -997,6 +1068,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr = uri) and
 =======
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
@@ -1007,6 +1079,9 @@ begin
 =======
     if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
 >>>>>>> graemeg/cpstrnew
+=======
+    if (HashValue = FData^[idx].hash) and (FData^[idx].uriPtr^ = uri^) and
+>>>>>>> origin/cpstrnew
       (FData^[idx].lnameLen = localLength) and
        CompareMem(FData^[idx].lname, localName, localLength * sizeof(WideChar)) then
       Exit;
@@ -1031,6 +1106,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TNSSupport.Create(aNameTable: THashTable);
 =======
 constructor TNSSupport.Create;
@@ -1041,10 +1117,14 @@ constructor TNSSupport.Create;
 =======
 constructor TNSSupport.Create;
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TNSSupport.Create;
+>>>>>>> origin/cpstrnew
 var
   b: TBinding;
 begin
   inherited Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1055,11 +1135,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FPrefixes := THashTable.Create(16, False);
   FBindings := TFPList.Create;
   SetLength(FBindingStack, 16);
 
   { provide implicit binding for the 'xml' prefix }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1078,6 +1161,10 @@ begin
   // TODO: move stduri_xml, etc. to this unit, so they are reused.
   DefineBinding('xml', 'http://www.w3.org/XML/1998/namespace', b);
 >>>>>>> graemeg/cpstrnew
+=======
+  // TODO: move stduri_xml, etc. to this unit, so they are reused.
+  DefineBinding('xml', 'http://www.w3.org/XML/1998/namespace', b);
+>>>>>>> origin/cpstrnew
 end;
 
 destructor TNSSupport.Destroy;
@@ -1094,6 +1181,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TNSSupport.BindPrefix(nsURI, aPrefix: PHashItem): TBinding;
 =======
 function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
@@ -1104,6 +1192,9 @@ function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBi
 =======
 function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
 >>>>>>> graemeg/cpstrnew
+=======
+function TNSSupport.BindPrefix(const nsURI: WideString; aPrefix: PHashItem): TBinding;
+>>>>>>> origin/cpstrnew
 begin
   { try to reuse an existing binding }
   result := FFreeBindings;
@@ -1117,11 +1208,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   { link it into chain of bindings at the current element level }
   result.Next := FBindingStack[FNesting];

@@ -238,6 +238,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _data: record
       case byte of
         1: (
@@ -247,6 +248,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     _mouse: record
         _eventNumber: cint;
         _clickCount: cint;
@@ -257,6 +260,7 @@ type
         _subtype: cint;
         _buttonNumber: cshort;
         reserved1: cshort;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,6 +284,11 @@ type
         {$endif}
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+            reserved2: array[0..2] of cint;
+        {$endif}
+      end;
+>>>>>>> origin/cpstrnew
     _key: record
         keys: NSString;
         unmodKeys: NSString;
@@ -287,6 +296,7 @@ type
         _isARepeat: Boolean;
         {$ifdef cpu64}
         eventFlags: cint;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -310,11 +320,17 @@ type
         {$endif}
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+            reserved: array[0..4] of cint;
+        {$endif}
+      end;
+>>>>>>> origin/cpstrnew
     _tracking: record
         _eventNumber: cint;
         _trackingNumber: NSInteger;
         _userData: Pointer;
         {$ifdef cpu64}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -338,6 +354,11 @@ type
         {$endif}
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+            reserved: array[0..5] of cint;
+        {$endif}
+      end;
+>>>>>>> origin/cpstrnew
     _scrollWheel: record
         _deltaX: CGFloat;
         _deltaY: CGFloat;
@@ -345,6 +366,7 @@ type
         {$ifdef cpu64}
         _subtype: cshort;
         reserved1: cshort;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -368,11 +390,17 @@ type
         {$endif}
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+            reserved2: array[0..5] of cint;
+        {$endif}
+      end;
+>>>>>>> origin/cpstrnew
     _axisGesture: record
         _deltaX: CGFloat;
         _deltaY: CGFloat;
         _deltaZ: CGFloat;
         {$ifdef cpu64}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -396,6 +424,11 @@ type
         {$endif}
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+            reserved: array[0..6] of cint;
+        {$endif}
+      end;
+>>>>>>> origin/cpstrnew
     _miscGesture: record
         _subtype: cshort;
         gestureEnded: Boolean;
@@ -403,6 +436,7 @@ type
         value: cint;
         percentage: single;
         {$ifdef cpu64}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -426,11 +460,17 @@ type
         {$endif}
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+            reserved2: array[0..6] of cint;
+        {$endif}
+      end;
+>>>>>>> origin/cpstrnew
     _misc: record
         _subtype: cint;
         _data1: NSInteger;
         _data2: NSInteger;
         {$ifdef cpu64}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -452,6 +492,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             reserved: array[0..5] of cint;
         {$endif}
       end;
@@ -463,11 +505,14 @@ type
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     _eventRef: Pointer;
     {$ifdef cpu64}
     reserved1: Pointer;

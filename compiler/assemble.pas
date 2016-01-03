@@ -65,6 +65,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       TExternalAssembler = class;
 
       IExternalAssemblerOutputFileDecorator=interface
@@ -79,6 +80,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       {# This is the base class which should be overridden for each each
          assembler writer. It is used to actually assembler a file,
          and write the output to the assembler file.
@@ -197,11 +200,14 @@ interface
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         {# This routine should be overridden for each assembler, it is used
            to actually write the abstract assembler stream to file.}
         procedure WriteTree(p:TAsmList);virtual;
@@ -222,6 +228,8 @@ interface
         property writer: TExternalAssemblerOutputFile read fwriter;
       end;
       TExternalAssemblerClass = class of TExternalAssembler;
+
+      { TInternalAssembler }
 
       { TInternalAssembler }
 
@@ -946,11 +954,14 @@ Implementation
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef arm}
         if (target_info.system=system_arm_darwin) then
           Replace(result,'$ARCH',lower(cputypestr[current_settings.cputype]));
@@ -1510,6 +1521,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             indsym:=ObjData.CObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
 =======
             indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
@@ -1520,6 +1532,9 @@ Implementation
 =======
             indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
 >>>>>>> graemeg/cpstrnew
+=======
+            indsym:=TObjSymbol.Create(ObjData.ObjSymbolList, indirectname);
+>>>>>>> origin/cpstrnew
             indsym.typ:=AT_NONE;
             indsym.bind:=AB_NONE;
           end;
@@ -1618,6 +1633,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        if tai_directive(hp).name='' then
                          Internalerror(2009112101);
                        objsym:=ObjData.symbolref(tai_directive(hp).name);
@@ -1636,11 +1652,17 @@ Implementation
                          Internalerror(2009112101);
                        objsym:=ObjData.symbolref(tai_directive(hp).name^);
 >>>>>>> graemeg/cpstrnew
+=======
+                       if tai_directive(hp).name = nil then
+                         Internalerror(2009112101);
+                       objsym:=ObjData.symbolref(tai_directive(hp).name^);
+>>>>>>> origin/cpstrnew
                        objsym.bind:=AB_LAZY;
                      end;
                    asd_reference:
                      { ignore for now, but should be added}
                      ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1654,6 +1676,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    else
                      internalerror(2010011101);
                  end;
@@ -1797,6 +1821,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      if tai_directive(hp).name='' then
                        Internalerror(2009101103)
                      else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name) then
@@ -1815,6 +1840,11 @@ Implementation
                        Internalerror(2009101103)
                      else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name^) then
 >>>>>>> graemeg/cpstrnew
+=======
+                     if tai_directive(hp).name = nil then
+                       Internalerror(2009101103)
+                     else if not SetIndirectToSymbol(Tai(hp.Previous), tai_directive(hp).name^) then
+>>>>>>> origin/cpstrnew
                        Internalerror(2009101102);
                    asd_lazy_reference:
                      { handled in TreePass0 }
@@ -1822,6 +1852,7 @@ Implementation
                    asd_reference:
                      { ignore for now, but should be added}
                      ;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1834,6 +1865,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    else
                      internalerror(2010011102);
                  end;
@@ -1854,6 +1887,7 @@ Implementation
         ref,
         objsymend : TObjSymbol;
         zerobuf : array[0..63] of byte;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1882,12 +1916,17 @@ Implementation
       begin
         fillchar(zerobuf,sizeof(zerobuf),0);
 >>>>>>> graemeg/cpstrnew
+=======
+      begin
+        fillchar(zerobuf,sizeof(zerobuf),0);
+>>>>>>> origin/cpstrnew
         { main loop }
         while assigned(hp) do
          begin
            case hp.typ of
              ait_align :
                begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1899,6 +1938,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                  if oso_data in ObjData.CurrObjSec.secoptions then
                    ObjData.writebytes(Tai_align_abstract(hp).calculatefillbuf(fillbuffer,oso_executable in ObjData.CurrObjSec.secoptions)^,
                      Tai_align_abstract(hp).fillsize)
@@ -2065,6 +2106,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    aitconst_half16bit,
                    aitconst_gs:
                      begin
@@ -2077,6 +2119,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    else
                      internalerror(200603254);
                  end;

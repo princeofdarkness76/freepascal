@@ -44,6 +44,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //procedure SystemSleep(); cdecl; external;
 procedure ledBlink(bm: cint); cdecl; external;
@@ -53,11 +54,14 @@ procedure ledBlink(bm: cint); cdecl; external;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   __dsimode: cbool; cvar; external;
 
 {$ifdef ARM9}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -79,6 +83,11 @@ procedure powerOn(bits: cint); cdecl; external;
 procedure powerOff(bits: cint); cdecl; external;
 procedure ledBlink(bm: cint); cdecl; external;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure powerOn(bits: cint); cdecl; external;
+procedure powerOff(bits: cint); cdecl; external;
+procedure ledBlink(bm: cint); cdecl; external;
+>>>>>>> origin/cpstrnew
 
 procedure systemMsgHandler(bytes: cint; user_data: pointer); cdecl; external;
 procedure systemValueHandler(value: cuint32; data: pointer); cdecl; external;
@@ -92,6 +101,7 @@ procedure systemShutDown(); inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure readFirmware(address: cuint32; buffer: pointer; length: cuint32); cdecl; external;
 function writeFirmware(address: cuint32; buffer: pointer; length: cuint32): cint; cdecl; external;
 
@@ -102,6 +112,8 @@ function writeFirmware(address: cuint32; buffer: pointer; length: cuint32): cint
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function getBatteryLevel(): cuint32; cdecl; external;
 
 procedure setVectorBase(highVector: cint); cdecl; external;
@@ -265,6 +277,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   BOOTSIG: cardinal = $62757473746F6F62; // ULL?
 =======
   BOOTSIG = $62757473746F6F62; // ULL?
@@ -275,6 +288,9 @@ const
 =======
   BOOTSIG = $62757473746F6F62; // ULL?
 >>>>>>> graemeg/cpstrnew
+=======
+  BOOTSIG = $62757473746F6F62; // ULL?
+>>>>>>> origin/cpstrnew
 
 
 type

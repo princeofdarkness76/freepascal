@@ -573,6 +573,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 procedure TCustomConnection.GetLoginParams(out ADatabaseName, AUserName, APassword: string);
 begin
 <<<<<<< HEAD
@@ -599,6 +600,10 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TCustomConnection.SetBeforeDisconnect(const AValue: TNotifyEvent);
+begin
+>>>>>>> origin/cpstrnew
   FBeforeDisconnect:=AValue;
 >>>>>>> graemeg/cpstrnew
 end;

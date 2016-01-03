@@ -83,6 +83,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Log(EventType : TEventType; const Msg : String);
     Procedure Log(EventType : TEventType; const Fmt : String; const Args : array of const);
 =======
@@ -94,6 +95,9 @@ Type
 =======
     Procedure Log(EventType : TEventType; const Msg : String); virtual;
 >>>>>>> graemeg/cpstrnew
+=======
+    Procedure Log(EventType : TEventType; const Msg : String); virtual;
+>>>>>>> origin/cpstrnew
     // Delphi properties
     property ExeName: string read GetExeName;
     property HelpFile: string read FHelpFile write FHelpFile;
@@ -295,6 +299,12 @@ begin
     On E : Exception do
       Log(etError,Format('Error formatting message "%s" with %d arguments: %s',[Fmt,Length(Args),E.Message]));
   end  
+end;
+
+Procedure TCustomApplication.Log(EventType : TEventType; const Msg : String);
+
+begin
+  // Do nothing. Override in descendent classes.
 end;
 
 Procedure TCustomApplication.Log(EventType : TEventType; const Msg : String);
@@ -664,6 +674,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           UsedArg:=False;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -671,6 +682,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           If HaveArg then
             OV:=Paramstr(I+1);
           If Not CaseSensitiveOptions then

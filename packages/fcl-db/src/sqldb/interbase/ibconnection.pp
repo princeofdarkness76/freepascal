@@ -66,6 +66,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     // Metadata:
     procedure GetDatabaseInfo; //Queries for various information from server once connected
@@ -79,6 +80,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure TranslateFldType(SQLType, SQLSubType, SQLLen, SQLScale : integer;
       var TrType : TFieldType; var TrLen : word);
 >>>>>>> graemeg/cpstrnew
@@ -157,6 +160,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   StrUtils, FmtBCD;
 
 const
@@ -172,6 +176,9 @@ const
 =======
   strutils;
 >>>>>>> graemeg/cpstrnew
+=======
+  strutils;
+>>>>>>> origin/cpstrnew
 
 
 procedure TIBConnection.CheckError(ProcName : string; Status : PISC_STATUS);
@@ -206,6 +213,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FConnOptions := FConnOptions + [sqSupportParams, sqEscapeRepeat, sqSupportReturning];
   FBlobSegmentSize := 65535; //Shows we're using the maximum segment size
   FDialect := INVALID_DATA;
@@ -215,6 +223,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FConnOptions := FConnOptions + [sqSupportParams] + [sqEscapeRepeat];
   FieldNameQuoteChars:=DoubleQuotes;
   FBLobSegmentSize := 80;
@@ -648,6 +658,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         TrType := ftDate;
 =======
       TrType := ftDate;
@@ -658,6 +669,9 @@ begin
 =======
       TrType := ftDate;
 >>>>>>> graemeg/cpstrnew
+=======
+      TrType := ftDate;
+>>>>>>> origin/cpstrnew
     SQL_TYPE_TIME :
         TrType := ftTime;
     SQL_TIMESTAMP :
@@ -672,6 +686,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if SQLSubType = isc_blob_text then
           TrType := ftMemo
         else
@@ -681,17 +696,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if SQLSubType = 1 then
            TrType := ftMemo
         else
            TrType := ftBlob;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         TrLen := SQLLen;
       end;
     SQL_SHORT :
@@ -786,6 +806,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // that a database trigger takes care of inserting null values, so
         // it should always be possible to pass null parameters. If that fails,
         // the database server will generate the appropriate error.
@@ -804,6 +825,11 @@ begin
         // it should always be possible to pass null-parameters. If that fails,
         // the database-server will generate the appropiate error.
 >>>>>>> graemeg/cpstrnew
+=======
+        // that a database-trigger takes care of inserting null-values, so
+        // it should always be possible to pass null-parameters. If that fails,
+        // the database-server will generate the appropiate error.
+>>>>>>> origin/cpstrnew
         sqltype := sqltype or 1;
         new(sqlind);
         end;
@@ -1295,11 +1321,14 @@ begin
           GetFloat(CurrBuff, Buffer, SQLDA^.SQLVar[x].SQLLen);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         ftBlob,
         ftMemo :
           begin  // load the BlobIb in field's buffer

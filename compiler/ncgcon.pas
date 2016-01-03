@@ -83,6 +83,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ncgutil,hlcgobj,cclasses,tgobj
 =======
       ncgutil, cclasses,asmutils
@@ -93,6 +94,9 @@ implementation
 =======
       ncgutil, cclasses,asmutils
 >>>>>>> graemeg/cpstrnew
+=======
+      ncgutil, cclasses,asmutils
+>>>>>>> origin/cpstrnew
       ;
 
 
@@ -147,11 +151,14 @@ implementation
           (ait_real_32bit,ait_real_64bit,ait_real_80bit,ait_real_80bit,ait_comp_64bit,ait_comp_64bit,ait_real_128bit);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       var
          lastlabel : tasmlabel;
          realait : tairealconsttype;
@@ -241,6 +248,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         current_asmdata.asmlists[al_typedconsts].concat(tai_realconst.create_s80real(value_real,tfloatdef(resultdef).size));
 =======
                         current_asmdata.asmlists[al_typedconsts].concat(Tai_real_80bit.Create(value_real,resultdef.size));
@@ -251,6 +259,9 @@ implementation
 =======
                         current_asmdata.asmlists[al_typedconsts].concat(Tai_real_80bit.Create(value_real,resultdef.size));
 >>>>>>> graemeg/cpstrnew
+=======
+                        current_asmdata.asmlists[al_typedconsts].concat(Tai_real_80bit.Create(value_real,resultdef.size));
+>>>>>>> origin/cpstrnew
 
                         { range checking? }
                         if floating_point_range_check_error and
@@ -319,6 +330,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          lastlabel: tasmlabofs;
          pc: pchar;
          l: longint;
@@ -327,6 +339,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          lastlabel   : tasmlabel;
          pc       : pchar;
          l: longint;
@@ -397,6 +411,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   datatcb:=ctai_typedconstbuilder.create([tcalo_is_lab,tcalo_make_dead_strippable]);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -404,12 +419,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    case cst_type of
                       cst_ansistring:
                         begin
                            if len=0 then
                              InternalError(2008032301)   { empty string should be handled above }
                            else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -432,6 +450,9 @@ implementation
 =======
                              lastlabel:=emit_ansistring_const(current_asmdata.AsmLists[al_typedconsts],value_str,len,tstringdef(resultdef).encoding);
 >>>>>>> graemeg/cpstrnew
+=======
+                             lastlabel:=emit_ansistring_const(current_asmdata.AsmLists[al_typedconsts],value_str,len,tstringdef(resultdef).encoding);
+>>>>>>> origin/cpstrnew
                         end;
                       cst_unicodestring,
                       cst_widestring:
@@ -439,6 +460,7 @@ implementation
                            if len=0 then
                              InternalError(2008032302)   { empty string should be handled above }
                            else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -469,6 +491,8 @@ implementation
                       cst_shortstring:
                         begin
 =======
+=======
+>>>>>>> origin/cpstrnew
                              lastlabel := emit_unicodestring_const(current_asmdata.AsmLists[al_typedconsts],
                                              value_str,
                                              tstringdef(resultdef).encoding,
@@ -476,6 +500,7 @@ implementation
                         end;
                       cst_shortstring:
                         begin
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
                              lastlabel := emit_unicodestring_const(current_asmdata.AsmLists[al_typedconsts],
@@ -486,6 +511,8 @@ implementation
                       cst_shortstring:
                         begin
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                           current_asmdata.getdatalabel(lastlabel);
                           maybe_new_object_file(current_asmdata.asmlists[al_typedconsts]);
                           new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(sizeof(pint)));
@@ -515,6 +542,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           current_asmdata.getglobaldatalabel(lastlabel.lab);
 
 =======
@@ -522,6 +550,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                           current_asmdata.getdatalabel(lastlabel);
                           maybe_new_object_file(current_asmdata.asmlists[al_typedconsts]);
                           new_section(current_asmdata.asmlists[al_typedconsts],sec_rodata_norel,lastlabel.name,const_align(sizeof(pint)));
@@ -550,6 +580,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    datatcb.free;
                    lab_str:=lastlabel.lab;
                    entry^.Data:=lastlabel.lab;
@@ -565,6 +596,10 @@ implementation
                    lab_str:=lastlabel;
                    entry^.Data:=lastlabel;
 >>>>>>> graemeg/cpstrnew
+=======
+                   lab_str:=lastlabel;
+                   entry^.Data:=lastlabel;
+>>>>>>> origin/cpstrnew
                 end;
            end;
          if cst_type in [cst_ansistring, cst_widestring, cst_unicodestring] then

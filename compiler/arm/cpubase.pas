@@ -112,6 +112,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31,RS_S1..RS_S15];
 =======
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
@@ -122,6 +123,9 @@ unit cpubase;
 =======
       VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
 >>>>>>> graemeg/cpstrnew
+=======
+      VOLATILE_MMREGISTERS =  [RS_D0..RS_D7,RS_D16..RS_D31];
+>>>>>>> origin/cpstrnew
 
       VOLATILE_INTREGISTERS_DARWIN = [RS_R0..RS_R3,RS_R9,RS_R12..RS_R14];
 
@@ -156,6 +160,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         PF_IAX,PF_DBX,PF_FDX,PF_EAX,
         { VFP postfixes }
         PF_8,PF_16,PF_32,PF_64,
@@ -178,6 +183,9 @@ unit cpubase;
 =======
         PF_IAX,PF_DBX,PF_FDX,PF_EAX
 >>>>>>> graemeg/cpstrnew
+=======
+        PF_IAX,PF_DBX,PF_FDX,PF_EAX
+>>>>>>> origin/cpstrnew
       );
 
       TOpPostfixes = set of TOpPostfix;
@@ -193,6 +201,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       oppostfix2str : array[TOpPostfix] of string[8] = ('',
 =======
       oppostfix2str : array[TOpPostfix] of string[3] = ('',
@@ -203,6 +212,9 @@ unit cpubase;
 =======
       oppostfix2str : array[TOpPostfix] of string[3] = ('',
 >>>>>>> graemeg/cpstrnew
+=======
+      oppostfix2str : array[TOpPostfix] of string[3] = ('',
+>>>>>>> origin/cpstrnew
         's',
         'd','e','p','ep',
         'x',
@@ -211,6 +223,7 @@ unit cpubase;
         'ia','ib','da','db','fd','fa','ed','ea',
         'iad','dbd','fdd','ead',
         'ias','dbs','fds','eas',
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -235,6 +248,9 @@ unit cpubase;
 =======
         'iax','dbx','fdx','eax');
 >>>>>>> graemeg/cpstrnew
+=======
+        'iax','dbx','fdx','eax');
+>>>>>>> origin/cpstrnew
 
       roundingmode2str : array[TRoundingMode] of string[1] = ('',
         'p','m','z');
@@ -293,6 +309,7 @@ unit cpubase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       tspecialregflag = (srC, srX, srS, srF);
       tspecialregflags = set of tspecialregflag;
 
@@ -302,6 +319,8 @@ unit cpubase;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {*****************************************************************************
                                  Constants
 *****************************************************************************}
@@ -650,6 +669,7 @@ unit cpubase;
         i : longint;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         {Loading 0-255 is simple}
         if (d and $FF) = d then
           result:=true
@@ -678,6 +698,8 @@ unit cpubase;
               end;
           end;
 =======
+=======
+>>>>>>> origin/cpstrnew
         if current_settings.cputype in cpu_thumb2 then
           begin
             for i:=0 to 24 do
@@ -703,7 +725,10 @@ unit cpubase;
               end;
           end;
         result:=false;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
     
     function is_continuous_mask(d : aint;var lsb, width: byte) : boolean;

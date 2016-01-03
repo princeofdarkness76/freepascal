@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    ATS
  
      Copyright:  © 1994-2012 by Apple Inc., all rights reserved.
@@ -79,6 +80,28 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+     Copyright:  © 1994-2008 by Apple Inc., all rights reserved.
+ 
+     Warning:    *** APPLE INTERNAL USE ONLY ***
+                 This file may contain unreleased API's
+ 
+     BuildInfo:  Built by:            root
+                 On:                  Fri Jul 24 22:21:51 2009
+                 With Interfacer:     3.0d46   (Mac OS X for PowerPC)
+                 From:                SFNTTypes.i
+                     Revision:        1.4
+                     Dated:           2006/09/13 22:38:46
+                     Last change by:  ntaylor
+                     Last comment:    Fix last checkin comment.
+ 
+     Bugs:       Report bugs to Radar component "System Interfaces", "Latest"
+                 List the version information (from above) in the Problem Description.
+ 
+}
+
+{ Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -137,6 +160,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -148,6 +172,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -166,6 +192,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -196,6 +223,11 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -210,11 +242,14 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -224,6 +259,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -231,6 +267,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -243,6 +281,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -250,6 +289,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -259,6 +300,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -275,12 +317,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
@@ -298,10 +346,13 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_CPU_ARM64 := TRUE}
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
@@ -357,6 +408,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -402,6 +462,7 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ALIGN MAC68K}
 =======
 {$ALIGN POWER}
@@ -412,6 +473,9 @@ uses MacTypes;
 =======
 {$ALIGN POWER}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ALIGN POWER}
+>>>>>>> origin/cpstrnew
 
 type
 	sfntDirectoryEntryPtr = ^sfntDirectoryEntry;
@@ -456,6 +520,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	kFontUnicode_FullRepertoire = 6;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -463,6 +528,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	kFontRomanScript = 0;
@@ -509,7 +576,136 @@ const
 	kFontMicrosoftSymbolScript = 0;
 	kFontMicrosoftStandardScript = 1;
 	kFontMicrosoftUCS4Script = 10;
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cpstrnew
+
+const
+	kFontCustom8BitScript = 0;
+	kFontCustom816BitScript = 1;
+	kFontCustom16BitScript = 2;
+
+{ Language codes are zero based everywhere but within a 'cmap' table }
+const
+	kFontEnglishLanguage = 0;
+	kFontFrenchLanguage = 1;
+	kFontGermanLanguage = 2;
+	kFontItalianLanguage = 3;
+	kFontDutchLanguage = 4;
+	kFontSwedishLanguage = 5;
+	kFontSpanishLanguage = 6;
+	kFontDanishLanguage = 7;
+	kFontPortugueseLanguage = 8;
+	kFontNorwegianLanguage = 9;
+	kFontHebrewLanguage = 10;
+	kFontJapaneseLanguage = 11;
+	kFontArabicLanguage = 12;
+	kFontFinnishLanguage = 13;
+	kFontGreekLanguage = 14;
+	kFontIcelandicLanguage = 15;
+	kFontMalteseLanguage = 16;
+	kFontTurkishLanguage = 17;
+	kFontCroatianLanguage = 18;
+	kFontTradChineseLanguage = 19;
+	kFontUrduLanguage = 20;
+	kFontHindiLanguage = 21;
+	kFontThaiLanguage = 22;
+	kFontKoreanLanguage = 23;
+	kFontLithuanianLanguage = 24;
+	kFontPolishLanguage = 25;
+	kFontHungarianLanguage = 26;
+	kFontEstonianLanguage = 27;
+	kFontLettishLanguage = 28;
+	kFontLatvianLanguage = kFontLettishLanguage;
+	kFontSaamiskLanguage = 29;
+	kFontLappishLanguage = kFontSaamiskLanguage;
+	kFontFaeroeseLanguage = 30;
+	kFontFarsiLanguage = 31;
+	kFontPersianLanguage = kFontFarsiLanguage;
+	kFontRussianLanguage = 32;
+	kFontSimpChineseLanguage = 33;
+	kFontFlemishLanguage = 34;
+	kFontIrishLanguage = 35;
+	kFontAlbanianLanguage = 36;
+	kFontRomanianLanguage = 37;
+	kFontCzechLanguage = 38;
+	kFontSlovakLanguage = 39;
+	kFontSlovenianLanguage = 40;
+	kFontYiddishLanguage = 41;
+	kFontSerbianLanguage = 42;
+	kFontMacedonianLanguage = 43;
+	kFontBulgarianLanguage = 44;
+	kFontUkrainianLanguage = 45;
+	kFontByelorussianLanguage = 46;
+	kFontUzbekLanguage = 47;
+	kFontKazakhLanguage = 48;
+	kFontAzerbaijaniLanguage = 49;
+	kFontAzerbaijanArLanguage = 50;
+	kFontArmenianLanguage = 51;
+	kFontGeorgianLanguage = 52;
+	kFontMoldavianLanguage = 53;
+	kFontKirghizLanguage = 54;
+	kFontTajikiLanguage = 55;
+	kFontTurkmenLanguage = 56;
+	kFontMongolianLanguage = 57;
+	kFontMongolianCyrLanguage = 58;
+	kFontPashtoLanguage = 59;
+	kFontKurdishLanguage = 60;
+	kFontKashmiriLanguage = 61;
+	kFontSindhiLanguage = 62;
+	kFontTibetanLanguage = 63;
+	kFontNepaliLanguage = 64;
+	kFontSanskritLanguage = 65;
+	kFontMarathiLanguage = 66;
+	kFontBengaliLanguage = 67;
+	kFontAssameseLanguage = 68;
+	kFontGujaratiLanguage = 69;
+	kFontPunjabiLanguage = 70;
+	kFontOriyaLanguage = 71;
+	kFontMalayalamLanguage = 72;
+	kFontKannadaLanguage = 73;
+	kFontTamilLanguage = 74;
+	kFontTeluguLanguage = 75;
+	kFontSinhaleseLanguage = 76;
+	kFontBurmeseLanguage = 77;
+	kFontKhmerLanguage = 78;
+	kFontLaoLanguage = 79;
+	kFontVietnameseLanguage = 80;
+	kFontIndonesianLanguage = 81;
+	kFontTagalogLanguage = 82;
+	kFontMalayRomanLanguage = 83;
+	kFontMalayArabicLanguage = 84;
+	kFontAmharicLanguage = 85;
+	kFontTigrinyaLanguage = 86;
+	kFontGallaLanguage = 87;
+	kFontOromoLanguage = kFontGallaLanguage;
+	kFontSomaliLanguage = 88;
+	kFontSwahiliLanguage = 89;
+	kFontRuandaLanguage = 90;
+	kFontRundiLanguage = 91;
+	kFontChewaLanguage = 92;
+	kFontMalagasyLanguage = 93;
+	kFontEsperantoLanguage = 94;
+	kFontWelshLanguage = 128;
+	kFontBasqueLanguage = 129;
+	kFontCatalanLanguage = 130;
+	kFontLatinLanguage = 131;
+	kFontQuechuaLanguage = 132;
+	kFontGuaraniLanguage = 133;
+	kFontAymaraLanguage = 134;
+	kFontTatarLanguage = 135;
+	kFontUighurLanguage = 136;
+	kFontDzongkhaLanguage = 137;
+	kFontJavaneseRomLanguage = 138;
+	kFontSundaneseRomLanguage = 139;
+
+{ The following are special "don't care" values to be used in interfaces }
+
+const
+	kFontNoPlatformCode = $FFFFFFFF;
+	kFontNoScriptCode = $FFFFFFFF;
+	kFontNoLanguageCode = $FFFFFFFF;
 
 const
 	kFontCustom8BitScript = 0;
@@ -845,6 +1041,7 @@ const
 	nonGlyphID = 65535;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 {   Deprecated "don't care" values - use kFontNoPlatformCode, kFontNoScriptCode, 
@@ -866,6 +1063,10 @@ const
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 {   Deprecated "don't care" values - use kFontNoPlatformCode, kFontNoScriptCode, 
      kFontNoLanguageCode, kFontNoName instead
 }
@@ -879,9 +1080,12 @@ const
 {  Data type used to access names from font name table }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	FontNameCode = UInt32;

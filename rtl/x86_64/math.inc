@@ -208,6 +208,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
@@ -217,6 +218,9 @@ const
 =======
 {$ifdef FPC_HAS_TYPE_EXTENDED}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef FPC_HAS_TYPE_EXTENDED}
+>>>>>>> origin/cpstrnew
     {$ifndef FPC_SYSTEM_HAS_EXP}
     {$define FPC_SYSTEM_HAS_EXP}
     { exp function adapted from AMath library (C) Copyright 2009-2013 Wolfgang Ehrhardt
@@ -387,9 +391,12 @@ const
     {$endif FPC_SYSTEM_HAS_POWER}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif FPC_HAS_TYPE_EXTENDED}

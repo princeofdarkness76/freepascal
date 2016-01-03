@@ -54,6 +54,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __bindingsControllerFlags: record
       case byte of
        0: (_anonbitfield_NSController0: cuint);
@@ -63,22 +64,28 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __bindingsControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSController0: cuint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _alwaysPresentsApplicationModalAlerts: 0..1;
         _refreshesAllModelKeys: 0..1;
         _multipleObservedModelObjects: 0..1;
         _isEditing: 0..1;
         _reservedController: 0..((1 shl 28)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -89,6 +96,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _reservedOther: NSMutableDictionary;

@@ -213,6 +213,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    ENoDynLibsSupport = class(Exception);
    ENotImplemented = class(Exception);
 
@@ -229,6 +230,9 @@ type
 =======
    ENotImplemented = class(Exception);
 >>>>>>> graemeg/cpstrnew
+=======
+   ENotImplemented = class(Exception);
+>>>>>>> origin/cpstrnew
 
    { Exception handling routines }
    function ExceptObject: TObject;
@@ -302,6 +306,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$macro on}
 {$define PathStr:=UnicodeString}
 {$define PathPChar:=PWideChar}
@@ -311,6 +316,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   { Read filename handling functions declaration }
   {$i finah.inc}
 {$define PathStr:=RawByteString}

@@ -90,6 +90,7 @@ function EncodeStringBase64(const s:string):String;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DecodeStringBase64(const s:string;strict:boolean=false):String;
 =======
 function DecodeStringBase64(const s:string):String;
@@ -100,6 +101,9 @@ function DecodeStringBase64(const s:string):String;
 =======
 function DecodeStringBase64(const s:string):String;
 >>>>>>> graemeg/cpstrnew
+=======
+function DecodeStringBase64(const s:string):String;
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -143,6 +147,7 @@ function TBase64EncodingStream.Flush : Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 function TBase64EncodingStream.Flush : Boolean;
 
@@ -155,6 +160,10 @@ function TBase64EncodingStream.Flush : Boolean;
 function TBase64EncodingStream.Flush : Boolean;
 
 >>>>>>> graemeg/cpstrnew
+=======
+function TBase64EncodingStream.Flush : Boolean;
+
+>>>>>>> origin/cpstrnew
 var
   WriteBuf: array[0..3] of Char;
 begin
@@ -447,6 +456,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DecodeStringBase64(const s:string;strict:boolean=false):String;
 =======
 function DecodeStringBase64(const s:string):String;
@@ -457,6 +467,9 @@ function DecodeStringBase64(const s:string):String;
 =======
 function DecodeStringBase64(const s:string):String;
 >>>>>>> graemeg/cpstrnew
+=======
+function DecodeStringBase64(const s:string):String;
+>>>>>>> origin/cpstrnew
 
 var 
   Instream, 
@@ -467,6 +480,7 @@ begin
   try
     Outstream:=TStringStream.Create('');
     try 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -482,6 +496,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       Decoder:=TBase64DecodingStream.Create(Instream,bdmMIME);
       try
          Outstream.CopyFrom(Decoder,Decoder.Size);
@@ -489,11 +505,14 @@ begin
          Result:=Outstream.ReadString(Outstream.Size);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       finally
         Decoder.Free;
         end;
@@ -522,6 +541,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:=Outstream.DataString;
 =======
     Outstream.Position:=0;
@@ -535,6 +555,10 @@ begin
     Outstream.Position:=0;
     Result:=Outstream.ReadString(Outstream.Size);
 >>>>>>> graemeg/cpstrnew
+=======
+    Outstream.Position:=0;
+    Result:=Outstream.ReadString(Outstream.Size);
+>>>>>>> origin/cpstrnew
   finally
     Outstream.free;
     end;

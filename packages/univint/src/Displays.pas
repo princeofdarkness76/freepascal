@@ -71,6 +71,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -82,6 +83,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -100,6 +103,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -139,6 +143,8 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -147,17 +153,30 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := TRUE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -187,6 +206,8 @@ interface
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -196,6 +217,7 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 {$elifc defined __arm__ and __arm__}
@@ -253,6 +275,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -275,9 +299,12 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -322,12 +349,17 @@ interface
 uses MacTypes,QuickdrawTypes,ColorSyncDeprecated,AEDataModel,ConditionalMacros,Components,Video,AppleEvents,Events,Processes,Dialogs;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
+=======
+
+
+>>>>>>> origin/cpstrnew
 {$ifc TARGET_OS_MAC}
 
 {$ALIGN MAC68K}
@@ -381,6 +413,7 @@ const
 const
 	dmOnlyActiveDisplays = true;
 	dmAllDisplays = false;
+<<<<<<< HEAD
 
 
 const
@@ -628,6 +661,45 @@ const
 const
 <<<<<<< HEAD
 =======
+=======
+
+
+const
+{ DMSendDependentNotification notifyClass }
+	kDependentNotifyClassShowCursor = FourCharCode('shcr'); { When display mgr shows a hidden cursor during an unmirror }
+	kDependentNotifyClassDriverOverride = FourCharCode('ndrv'); { When a driver is overridden }
+	kDependentNotifyClassDisplayMgrOverride = FourCharCode('dmgr'); { When display manager is upgraded }
+	kDependentNotifyClassProfileChanged = FourCharCode('prof'); { When DMSetProfileByAVID is called }
+
+
+const
+{ Switch Flags }
+	kNoSwitchConfirmBit = 0;    { Flag indicating that there is no need to confirm a switch to this mode }
+	kDepthNotAvailableBit = 1;    { Current depth not available in new mode }
+	kShowModeBit = 3;    { Show this mode even though it requires a confirm. }
+	kModeNotResizeBit = 4;    { Do not use this mode to resize display (for cards that mode drives a different connector). }
+	kNeverShowModeBit = 5;     { This mode should not be shown in the user interface. }
+
+{    Summary Change Flags (sticky bits indicating an operation was performed)
+    For example, moving a display then moving it back will still set the kMovedDisplayBit.
+}
+const
+	kBeginEndConfigureBit = 0;
+	kMovedDisplayBit = 1;
+	kSetMainDisplayBit = 2;
+	kSetDisplayModeBit = 3;
+	kAddDisplayBit = 4;
+	kRemoveDisplayBit = 5;
+	kNewDisplayBit = 6;
+	kDisposeDisplayBit = 7;
+	kEnabledDisplayBit = 8;
+	kDisabledDisplayBit = 9;
+	kMirrorDisplayBit = 10;
+	kUnMirrorDisplayBit = 11;
+
+
+const
+>>>>>>> origin/cpstrnew
 { Notification Messages for extended call back routines }
 	kDMNotifyRequestConnectionProbe = 0;  { Like kDMNotifyRequestDisplayProbe only not for smart displays (used in wake before all busses are awake) }
 	kDMNotifyInstalled = 1;    { At install time }
@@ -697,7 +769,10 @@ const
 
 { confirmFlags for DMConfirmConfiguration }
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kForceConfirmBit = 0;    { Force a confirm dialog }
 	kForceConfirmMask = 1 shl kForceConfirmBit;
 
@@ -706,11 +781,14 @@ const
 const
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kDisplayModeListNotPreferredBit = 0;
 	kDisplayModeListNotPreferredMask = 1 shl kDisplayModeListNotPreferredBit;
 
@@ -742,6 +820,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -787,6 +866,19 @@ type
 
 type
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+type
+	DMFidelityType = UInt32;
+{
+   AVID is an ID for ports and devices the old DisplayID type
+    is carried on for compatibility
+}
+
+
+type
+>>>>>>> origin/cpstrnew
 	DMListType = UnivPtr;
 	DMListIndexType = UInt32;
 	AVPowerStateRec = VDPowerStateRec;
@@ -891,6 +983,7 @@ type
 		serialNumber: UInt32;
 		manufactureDate: UInt32;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		makeReserved: array [0..3] of UInt32;
 	end;
@@ -953,6 +1046,33 @@ const
 =======
 >>>>>>> graemeg/cpstrnew
 
+=======
+
+		makeReserved: array [0..3] of UInt32;
+	end;
+type
+	DMMakeAndModelPtr = DMMakeAndModelRecPtr;
+{ DMNewDisplayList displayListIncludeFlags}
+const
+	kIncludeOnlineActiveDisplaysMask = 1 shl 0;
+	kIncludeOnlineDisabledDisplaysMask = 1 shl 1;
+	kIncludeOfflineDisplaysMask = 1 shl 2;
+	kIncludeOfflineDummyDisplaysMask = 1 shl 3;
+	kIncludeHardwareMirroredDisplaysMask = 1 shl 4;
+
+
+const
+{ modeListFlags for DMNewDisplayModeList }
+	kDMModeListIncludeAllModesMask = 1 shl 0; { Include all timing modes not _explicitly_ excluded (see other bits)}
+	kDMModeListIncludeOfflineModesMask = 1 shl 1;
+	kDMModeListExcludeDriverModesMask = 1 shl 2; { Exclude old-style timing modes (cscGetNextResolution/kDisplayModeIDFindFirstResolution modes)}
+	kDMModeListExcludeDisplayModesMask = 1 shl 3; { Exclude timing modes that come from the display (always arbritrary timing modes)}
+	kDMModeListExcludeCustomModesMask = 1 shl 4; { Exclude custom modes that came neither from the driver or display (need a better name)}
+	kDMModeListPreferStretchedModesMask = 1 shl 5; { Prefer modes that are stretched over modes that are letterboxed when setting kDisplayModeListNotPreferredBit}
+	kDMModeListPreferSafeModesMask = 1 shl 6; { Prefer modes that are safe over modes that are not when setting kDisplayModeListNotPreferredBit}
+
+
+>>>>>>> origin/cpstrnew
 { DMNewDisplayList displayListFlags}
 type
 	DisplayListEntryRecPtr = ^DisplayListEntryRec;

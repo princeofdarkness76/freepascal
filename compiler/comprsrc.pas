@@ -433,6 +433,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   dst:=CFileStreamClass.Create(current_module.outputpath+outf,fmCreate);
 =======
   dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
@@ -443,6 +444,9 @@ begin
 =======
   dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
 >>>>>>> graemeg/cpstrnew
+=======
+  dst:=CFileStreamClass.Create(current_module.outputpath^+outf,fmCreate);
+>>>>>>> origin/cpstrnew
   if CStreamError<>0 then
     begin
       Message1(exec_e_cant_write_resource_file, dst.FileName);

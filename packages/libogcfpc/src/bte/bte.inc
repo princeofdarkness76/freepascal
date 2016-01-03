@@ -20,6 +20,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   HIDP_CONTROL_CHANNEL = $11;
   HIDP_DATA_CHANNEL = $13;
 =======
@@ -34,6 +35,10 @@ const
   HIDP_OUTPUT_CHANNEL = $11;
   HIDP_INPUT_CHANNEL = $13;
 >>>>>>> graemeg/cpstrnew
+=======
+  HIDP_OUTPUT_CHANNEL = $11;
+  HIDP_INPUT_CHANNEL = $13;
+>>>>>>> origin/cpstrnew
   HIDP_HDR_TRANS_MASK = $f0;
   HIDP_HDR_PARAM_MASK = $0f;
   HIDP_TRANS_HANDSHAKE = $00;
@@ -115,6 +120,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ctl_pcb : Pl2cap_pcb;
     data_pcb : Pl2cap_pcb;
 =======
@@ -129,6 +135,10 @@ type
     out_pcb : Pl2cap_pcb;
     in_pcb : Pl2cap_pcb;
 >>>>>>> graemeg/cpstrnew
+=======
+    out_pcb : Pl2cap_pcb;
+    in_pcb : Pl2cap_pcb;
+>>>>>>> origin/cpstrnew
     recv : Trecv;
     conn_cfm : Tconn_cfm;
     disconn_cfm : Tdisconn_cfm;
@@ -154,6 +164,7 @@ function BTE_ReadStoredLinkKey(keys: Plinkkey_info; max_cnt: cuint8;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function BTE_ReadBdAddr(bdaddr: P_bd_addr; cb: btecallback): cint32; cdecl; external;
 
 =======
@@ -162,6 +173,8 @@ function BTE_ReadBdAddr(bdaddr: P_bd_addr; cb: btecallback): cint32; cdecl; exte
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
   TAuxCCB1 = procedure(bdaddr: P_bd_addr; reason: cuint8); cdecl;
   TAuxCCB0 = procedure(bdaddr: P_bd_addr; reason: cuint8); cdecl;

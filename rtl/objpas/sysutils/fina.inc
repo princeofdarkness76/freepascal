@@ -468,6 +468,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IncludeLeadingPathDelimiter(Const Path : PathStr) : PathStr;
 =======
 function IncludeLeadingPathDelimiter(Const Path : String) : String;
@@ -478,6 +479,9 @@ function IncludeLeadingPathDelimiter(Const Path : String) : String;
 =======
 function IncludeLeadingPathDelimiter(Const Path : String) : String;
 >>>>>>> graemeg/cpstrnew
+=======
+function IncludeLeadingPathDelimiter(Const Path : String) : String;
+>>>>>>> origin/cpstrnew
 
 Var
   l : Integer;
@@ -485,6 +489,7 @@ Var
 begin
   Result:=Path;
   l:=Length(Result);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -509,6 +514,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   If (L=0) or not(Result[1] in AllowDirectorySeparators) then
     Result:=DirectorySeparator+Result;
 end;
@@ -553,11 +560,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function GetFileHandle(var f : File):THandle;
 >>>>>>> graemeg/cpstrnew
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function ConcatPaths(const Paths: array of String): String;
 var
   I: Integer;
@@ -573,14 +583,18 @@ end;
 
 Function GetFileHandle(var f : File):THandle;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=(Index>0) and (Index<=Length(Path)) and CharInSet(Path[Index],AllowDirectorySeparators);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -596,6 +610,9 @@ Function GetFileHandle(var f : Text):THandle;
 =======
 Function GetFileHandle(var f : Text):THandle;
 >>>>>>> graemeg/cpstrnew
+=======
+Function GetFileHandle(var f : Text):THandle;
+>>>>>>> origin/cpstrnew
 begin
   if Length(Paths) > 0 then
   begin

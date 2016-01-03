@@ -11,6 +11,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     rz : cint;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -18,6 +19,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
   Pmouse_event = ^mouse_event;
 

@@ -12,6 +12,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef fpc}
   codeptr = codepointer;
 {$else}
@@ -23,6 +24,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Int = ptrint;
   pPtr = ^ptr;
   UInt = ptruint;
@@ -126,6 +129,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cn0, cn1, cn2: codeptr;
 =======
   cn0, cn1, cn2: ptr;
@@ -136,6 +140,9 @@ var
 =======
   cn0, cn1, cn2: ptr;
 >>>>>>> graemeg/cpstrnew
+=======
+  cn0, cn1, cn2: ptr;
+>>>>>>> origin/cpstrnew
 
 begin
   // VMT Pointers

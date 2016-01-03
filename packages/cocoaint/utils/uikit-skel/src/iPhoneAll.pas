@@ -6,6 +6,7 @@ unit iPhoneAll;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -13,6 +14,8 @@ unit iPhoneAll;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 interface
 
@@ -118,6 +121,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end.
 =======
 end.
@@ -128,3 +132,6 @@ end.
 =======
 end.
 >>>>>>> graemeg/cpstrnew
+=======
+end.
+>>>>>>> origin/cpstrnew

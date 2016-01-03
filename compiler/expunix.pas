@@ -62,6 +62,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   cgcpu,hlcgobj,hlcgcpu,
 =======
   cgcpu,
@@ -72,6 +73,9 @@ uses
 =======
   cgcpu,
 >>>>>>> graemeg/cpstrnew
+=======
+  cgcpu,
+>>>>>>> origin/cpstrnew
   ncgutil,
   verbose;
 
@@ -151,6 +155,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_hlcodegen;
 =======
   create_codegen;
@@ -161,6 +166,9 @@ begin
 =======
   create_codegen;
 >>>>>>> graemeg/cpstrnew
+=======
+  create_codegen;
+>>>>>>> origin/cpstrnew
   new_section(current_asmdata.asmlists[al_procedures],sec_code,'',0);
   hp2:=texported_item(current_module._exports.first);
   while assigned(hp2) do
@@ -181,6 +189,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris,system_i386_android,system_x86_64_dragonfly]) then
 =======
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
@@ -191,6 +200,9 @@ begin
 =======
              (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
 >>>>>>> graemeg/cpstrnew
+=======
+             (target_info.system in [system_i386_freebsd,system_x86_64_freebsd,system_x86_64_linux,system_i386_linux,system_x86_64_solaris,system_i386_solaris]) then
+>>>>>>> origin/cpstrnew
              begin
 {$ifdef x86}
                sym:=current_asmdata.RefAsmSymbol(pd.mangledname);
@@ -221,6 +233,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    destroy_hlcodegen;
 =======
    destroy_codegen;
@@ -231,6 +244,9 @@ begin
 =======
    destroy_codegen;
 >>>>>>> graemeg/cpstrnew
+=======
+   destroy_codegen;
+>>>>>>> origin/cpstrnew
 end;
 
 

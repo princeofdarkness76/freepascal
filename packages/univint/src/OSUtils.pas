@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1985-2011 by Apple Inc. All rights reserved.
 }
 =======
@@ -14,6 +15,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
@@ -29,11 +32,14 @@
 {      Pascal Translation Updated:  Gorazd Krosl, <gorazd_1957@yahoo.ca>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -91,6 +97,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -102,6 +109,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -120,6 +129,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -144,12 +154,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -184,6 +203,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -193,13 +217,17 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -293,6 +321,9 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
+=======
+{$elsec}
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
@@ -318,7 +349,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -460,6 +494,7 @@ type
 	end;
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  IsMetric()   *** DEPRECATED ***
  *  
  *  Deprecated:
@@ -555,6 +590,37 @@ type
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
+=======
+ *  IsMetric()
+ *  
+ *  Summary:
+ *    Verifies whether the current script system is using the metric
+ *    system or the English system of measurement.
+ *  
+ *  Discussion:
+ *    The IsMetric function examines the metricSys field of the
+ *    numeric-format resource (resource type 'itl0') to determine if
+ *    the current script is using the metric system. A value of 255 in
+ *    the metricSys field indicates that the metric system
+ *    (centimeters, kilometers, milligrams, degrees Celsius, and so on)
+ *    is being used. A value of 0 in the metricSys field indicates that
+ *    the English system of measurement (inches, miles, ounces, degrees
+ *    Fahrenheit, and so on) is used.
+ *    If you want to use units of measurement different from that of
+ *    the current script, you need to override the value of the
+ *    metricSys field in the current numeric-format resource. You can
+ *    do this by using your own version of the numeric-format resource
+ *    instead of the current script systemÕs default international
+ *    resource.
+ *    The IsMetric function is the same as the IUMetric function, which
+ *    was previously available with the International Utilities Package.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Result:
+ *    TRUE if the metric system is being used; FALSE if the English
+ *    system is being used.
 =======
  *  IsMetric()
  *  
@@ -714,20 +780,19 @@ function Dequeue( qElement: QElemPtr; qHeader: QHdrPtr ): OSErr; external name '
  *    
  *    length:
  *      the length of the data pointed to by the baseAddress parameter.
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only]
->>>>>>> graemeg/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
  }
 <<<<<<< HEAD
 function IsMetric: Boolean; external name '_IsMetric';
-(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
 procedure MakeDataExecutable( baseAddress: UnivPtr; length: UNSIGNEDLONG ); external name '_MakeDataExecutable';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
->>>>>>> graemeg/cpstrnew
 
 
 {$endc} {not TARGET_CPU_64}
@@ -789,13 +854,306 @@ procedure MakeDataExecutable( baseAddress: UnivPtr; length: UNSIGNEDLONG ); exte
  *      savings time (DST), or Greenwich mean time (GMT). If the
  *      geographic location record has never been set, all fields
  *      contain 0.
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
+<<<<<<< HEAD
+procedure Delay( numTicks: UNSIGNEDLONG; var finalTicks: UNSIGNEDLONG ); external name '_Delay';
+=======
+procedure ReadLocation( var loc: MachineLocation ); external name '_ReadLocation';
+>>>>>>> origin/cpstrnew
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  TickCount()
+ *  
+ *  Summary:
+ *    Obtains the current number of ticks (a tick is approximately 1/60
+ *    of a second) approximately since the system last started up.
+ *  
+ *  Discussion:
+ *    The TickCount function returns an unsigned 32-bit integer that
+ *    indicates the current number of ticks since the system last
+ *    started up. You can use this value to compare the number of ticks
+ *    that have elapsed since a given event or other action occurred.
+ *    For example, you could compare the current value returned by
+ *    TickCount with the value of the when field of an event
+ *    structure.
+ *    The tick count rolls over in approximately 2 years 3 months,
+ *    which means you should not use this to time intervals which may
+ *    exceed ( or even approach ) this interval.
+ *    Do not rely on the tick count being exact; it is usually accurate
+ *    to within one tick, but this level of accuracy is not guaranteed.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Result:
+ *    the tick count
+ *  
+ *  Summary:
+ *    Atomically adds a queue element to the given queue
+ *  
+ *  Discussion:
+ *    A queue ( represented by a QHdrPtr ) is a singly linked list of
+ *    elements.  Enqueue inserts the given element into the queue in a
+ *    multi-thread safe way.  If the element is already in the queue,
+ *    or in some other queue, the data structures will be corrupted and
+ *    will likely cause a crash or infinite loop.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    qElement:
+ *      a pointer to the element to be inserted
+ *    
+ *    qHeader:
+ *      a pointer to the queue header.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function TickCount: UInt32; external name '_TickCount';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  CSCopyUserName()
+ *  
+ *  Summary:
+ *    Returns a reference to the CFString that represents the user name.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    useShortName:
+ *      A Boolean value that specifies whether to return the short name
+ *      or full name of the user.
+ *  
+ *  Result:
+ *    the requested name in a CFStringRef.  You should release this
+ *    when you are done with it.
+ *  
+ *  Summary:
+ *    Atomically removes a queue element from the given queue
+ *  
+ *  Discussion:
+ *    A queue ( represented by a QHdrPtr ) is a singly linked list of
+ *    elements.  Dequeue removes the given element from the queue in a
+ *    multi-thread safe way.  If the element is not in the queue, qErr
+ *    is returned.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    qElement:
+ *      a pointer to the element to be removed
+ *    
+ *    qHeader:
+ *      a pointer to the queue header.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.5 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CSCopyUserName( useShortName: Boolean ): CFStringRef; external name '_CSCopyUserName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{$ifc not TARGET_CPU_64}
+{
+<<<<<<< HEAD
+ *  MakeDataExecutable()
+ *  
+ *  Summary:
+ *    Notifies the system that the specified data is subject to
+ *    execution.
+ *  
+ *  Discussion:
+ *    On some computer architectures it is necessary to tell the
+ *    processor that an area of memory should be made executable.  This
+ *    function does the necessary operations ( if possible ) to make it
+ *    possible to execute code in the given address range.
+ *    MakeDataExecutable is not supported for 64-bit applications. Use
+ *    sys_icache_invalidate(3) and/or mprotect(2) as appropriate.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    baseAddress:
+ *      the starting address to be made executable
+ *    
+ *    length:
+ *      the length of the data pointed to by the baseAddress parameter.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only]
+>>>>>>> graemeg/cpstrnew
+=======
+ *  CSCopyMachineName()
+ *  
+ *  Summary:
+ *    Returns a reference to the CFString that represents the computer
+ *    name.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Result:
+ *    the name of this machine in a CFStringRef.  You should release
+ *    this when you are done with it.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.5 and later
+ *    Non-Carbon CFM:   not available
+ }
+function CSCopyMachineName: CFStringRef; external name '_CSCopyMachineName';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+const
+	useFree = 0;
+	useATalk = 1;
+	useAsync = 2;
+	useExtClk = 3;    {Externally clocked}
+	useMIDI = 4;
+
+const
+	false32b = 0;    {24 bit addressing error}
+	true32b = 1;     {32 bit addressing error}
+
+type
+	SysPPtr = UnivPtr;
+
+function GetMMUMode: SInt8; inline;
+procedure SwapMMUMode( var mode: SInt8 ); inline;
+
+{$ifc not TARGET_CPU_64}
+{
+ *  GetSysPPtr()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    Don't use this function; it always returns NULL on Mac OS X.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.5 and later
+ }
+<<<<<<< HEAD
+<<<<<<< HEAD
+function IsMetric: Boolean; external name '_IsMetric';
+(* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
+=======
+procedure MakeDataExecutable( baseAddress: UnivPtr; length: UNSIGNEDLONG ); external name '_MakeDataExecutable';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> graemeg/cpstrnew
+
+=======
+function GetSysPPtr: SysPPtr; external name '_GetSysPPtr';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+>>>>>>> origin/cpstrnew
+
+{$endc} {not TARGET_CPU_64}
+
+{
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *  Delay()
+ *  
+ *  Summary:
+ *    Delays execture for the specified amount of time.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Parameters:
+ *    
+ *    numTicks:
+ *      the number of ticks to delay  for
+ *    
+ *    finalTicks:
+ *      on return, if not NULL, will contain the value of TickCount()
+ *      at the end of the delay period
+=======
+ *  ReadLocation()
+ *  
+ *  Summary:
+ *    Obtains information about a geographic location or time zone.
+ *  
+ *  Discussion:
+ *    The latitude and longitude are stored as Fract values, giving
+ *    accuracy to within one foot. For example, a Fract value of 1.0
+ *    equals 90 degrees Ð1.0 equals Ð90 degrees and Ð2.0 equals Ð180
+ *    degrees.
+ *    To convert these values to a degrees format, you need to convert
+ *    the Fract values first to the Fixed data type, then to the
+ *    LongInt data type. Use the Mathematical and Logical Utilities
+ *    functions Fract2Fix and Fix2Long to accomplish this task.
+ *    The DST value is a signed byte value that specifies the offset
+ *    for the hour fieldÑwhether to add one hour, subtract one hour, or
+ *    make no change at all.
+ *    The GMT value is in seconds east of GMT. For example, San
+ *    Francisco is at Ð28,800 seconds (8 hours * 3,600 seconds per
+ *    hour) east of GMT. The gmtDelta field is a 3-byte value contained
+ *    in a long word, so you must take care to get it properly.
+ *    For more information on the Fract data type and the conversion
+ *    routines Long2Fix, Fix2Fract, Fract2Fix, and Fix2Long, see
+ *    Mathematical and Logical Utilities.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    loc:
+ *      On return, the fields of the geographic location structure
+ *      containing the geographic location and the time-zone
+ *      information.
+ *      You can get values for the latitude, longitude, daylight
+ *      savings time (DST), or Greenwich mean time (GMT). If the
+ *      geographic location record has never been set, all fields
+ *      contain 0.
+>>>>>>> graemeg/cpstrnew
+=======
+    NOTE: SysBeep() has been moved to Sound.h.  
+ We could not automatically #include Sound.h in this file
+ because Sound.h indirectly #include's OSUtils.h which
+ would make a circular include.
+ }
+{$endc} {not TARGET_CPU_64}
+
+type
+	DeferredTaskProcPtr = procedure( dtParam: SIGNEDLONG );
+	DeferredTaskUPP = DeferredTaskProcPtr;
+{
+ *  NewDeferredTaskUPP()
+>>>>>>> origin/cpstrnew
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+<<<<<<< HEAD
 <<<<<<< HEAD
 procedure Delay( numTicks: UNSIGNEDLONG; var finalTicks: UNSIGNEDLONG ); external name '_Delay';
 <<<<<<< HEAD
@@ -856,10 +1214,18 @@ procedure ReadLocation( var loc: MachineLocation ); external name '_ReadLocation
  *    
  *    qHeader:
  *      a pointer to the queue header.
+=======
+function NewDeferredTaskUPP( userRoutine: DeferredTaskProcPtr ): DeferredTaskUPP; external name '_NewDeferredTaskUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+{
+ *  DisposeDeferredTaskUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 <<<<<<< HEAD
@@ -870,11 +1236,16 @@ procedure Enqueue( qElement: QElemPtr; qHeader: QHdrPtr ); external name '_Enque
 =======
 function TickCount: UInt32; external name '_TickCount';
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+procedure DisposeDeferredTaskUPP( userUPP: DeferredTaskUPP ); external name '_DisposeDeferredTaskUPP';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
 
-
 {
+<<<<<<< HEAD
  *  CSCopyUserName()
  *  
  *  Summary:
@@ -1650,6 +2021,9 @@ function DTInstall( dtTaskPtr: DeferredTaskPtr ): OSErr; external name '_DTInsta
  *    Thread safe
 =======
  *  ReadLocation()
+=======
+ *  InvokeDeferredTaskUPP()
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Obtains information about a geographic location or time zone.
@@ -1930,6 +2304,7 @@ function NewDeferredTaskUPP( userRoutine: DeferredTaskProcPtr ): DeferredTaskUPP
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
  *    CarbonLib:        in CarbonLib 1.0 and later
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
 function SetA5( newA5: SIGNEDLONG ): SIGNEDLONG; external name '_SetA5';
@@ -1964,6 +2339,10 @@ procedure DisposeDeferredTaskUPP( userUPP: DeferredTaskUPP ); external name '_Di
 function InitUtil: OSErr; external name '_InitUtil';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
 =======
+=======
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+>>>>>>> origin/cpstrnew
 procedure InvokeDeferredTaskUPP( dtParam: SIGNEDLONG; userUPP: DeferredTaskUPP ); external name '_InvokeDeferredTaskUPP';
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
@@ -2073,10 +2452,35 @@ function SetCurrentA5: SIGNEDLONG; external name '_SetCurrentA5';
 >>>>>>> graemeg/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
-
+type
+	DeferredTask = record
+		qLink: {volatile} QElemPtr;
+		qType: SInt16;
+		dtFlags: {volatile} SInt16;
+		dtAddr: DeferredTaskUPP;
+		dtParam: SIGNEDLONG;
+		dtReserved: SIGNEDLONG;
+	end;
+	DeferredTaskPtr = ^DeferredTask;
+{$ifc not TARGET_CPU_64}
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  WriteLocation()   *** DEPRECATED ***
+=======
+ *  DTInstall()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    The Deferred Task Manager is deprecated.  Look into restructuring
+ *    your code to use threads, or MPTasks, or some other threading
+ *    solution.
+ *  
+ *  Summary:
+ *    Adds the specified task record to the deferred-task queue.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+>>>>>>> origin/cpstrnew
  *  
  *  Deprecated:
  *    WriteLocation can not be used to set the geographic information
@@ -2087,14 +2491,19 @@ function SetCurrentA5: SIGNEDLONG; external name '_SetCurrentA5';
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.0
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-procedure WriteLocation( const (*var*) loc: MachineLocation ); external name '_WriteLocation';
-(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED *)
+function DTInstall( dtTaskPtr: DeferredTaskPtr ): OSErr; external name '_DTInstall';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
+<<<<<<< HEAD
 {$endc} {not TARGET_CPU_64}
 {$endc} {TARGET_OS_MAC}
 
@@ -2104,6 +2513,42 @@ procedure WriteLocation( const (*var*) loc: MachineLocation ); external name '_W
  *  
  *  Deprecated:
  *    You no longer need to use SetA5() on Mac OS X.
+=======
+{
+ *  DTUninstall()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    The Deferred Task Manager is deprecated.  Look into restructuring
+ *    your code to use threads, or MPTasks, or some other threading
+ *    solution.
+ *  
+ *  Summary:
+ *    Adds the specified task record to the deferred-task queue.
+>>>>>>> origin/cpstrnew
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+<<<<<<< HEAD
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function SetA5( newA5: SIGNEDLONG ): SIGNEDLONG; external name '_SetA5';
+=======
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ }
+function DTUninstall( dtTaskPtr: DeferredTaskPtr ): OSErr; external name '_DTUninstall';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  SetCurrentA5()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    You no longer need to use SetCurrentA5() on Mac OS X.
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -2113,21 +2558,30 @@ procedure WriteLocation( const (*var*) loc: MachineLocation ); external name '_W
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
  }
-function SetA5( newA5: SIGNEDLONG ): SIGNEDLONG; external name '_SetA5';
+function SetCurrentA5: SIGNEDLONG; external name '_SetCurrentA5';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
 
 
 {
+<<<<<<< HEAD
  *  InitUtil()   *** DEPRECATED ***
  *  
  *  Deprecated:
  *    It is not necessary to call InitUtil on Mac OS X.  You should
  *    remove all calls to this from your code.
+=======
+ *  SetA5()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    You no longer need to use SetA5() on Mac OS X.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -2162,11 +2616,47 @@ function WriteParam: OSErr; external name '_WriteParam';
  *    WriteLocation can not be used to set the geographic information
  *    on Mac OS X.  You should remove all calls to this function from
  *    your code.
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function SetA5( newA5: SIGNEDLONG ): SIGNEDLONG; external name '_SetA5';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  InitUtil()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    It is not necessary to call InitUtil on Mac OS X.  You should
+ *    remove all calls to this from your code.
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.3
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function InitUtil: OSErr; external name '_InitUtil';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3 *)
+
+
+{
+ *  WriteParam()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    This function no longer does anything on Mac OS X; you should
+ *    remove all calls to it from your code.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.0
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
@@ -2202,14 +2692,46 @@ procedure WriteLocation( const (*var*) loc: MachineLocation ); external name '_W
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED *)
 
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+function WriteParam: OSErr; external name '_WriteParam';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4 *)
+
+
+{
+ *  WriteLocation()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    WriteLocation can not be used to set the geographic information
+ *    on Mac OS X.  You should remove all calls to this function from
+ *    your code.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only] but deprecated in 10.0
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in InterfaceLib 7.1 and later
+ }
+procedure WriteLocation( const (*var*) loc: MachineLocation ); external name '_WriteLocation';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED *)
+
+>>>>>>> origin/cpstrnew
 
 {$endc} {not TARGET_CPU_64}
 {$endc} {TARGET_OS_MAC}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 implementation
 

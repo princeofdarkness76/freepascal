@@ -392,17 +392,27 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure NoThreadSwitch;  {give time to other threads}
 begin
   NoThreadError;
 >>>>>>> graemeg/cpstrnew
+end;
+
+function NoCloseThread  (threadHandle : TThreadID):dword;
+
+begin
+ Result:=0;      // avoid warnings.
+ NoThreadError;
 end;
 
 function NoCloseThread  (threadHandle : TThreadID):dword;
@@ -466,6 +476,7 @@ function NoTryEnterCriticalSection(var CS):longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 begin
   if IsMultiThread then
@@ -478,6 +489,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
   if IsMultiThread then
@@ -519,6 +532,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   NoThreadError;
   result:=nil;
 end;
@@ -528,6 +542,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if IsMultiThread then
     NoThreadError
   else
@@ -555,6 +571,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   result:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -562,6 +579,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure NoBasicEvent(state:peventstate);
@@ -623,9 +642,12 @@ begin
     ThreadingAlreadyUsed:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure NORTLeventResetEvent(state:pRTLEvent);
@@ -636,9 +658,12 @@ begin
   else
     ThreadingAlreadyUsed:=true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure NORTLeventWaitFor(state:pRTLEvent);
@@ -691,11 +716,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure NoSemaphoreDestroy(const FSem: Pointer);
@@ -706,11 +734,14 @@ begin
     ThreadingAlreadyUsed:=true;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 const

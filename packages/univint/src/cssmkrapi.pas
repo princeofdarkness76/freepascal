@@ -25,6 +25,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, October 2012 }
 {  Pascal Translation Update: Jonas Maebe <jonas@freepascal.org>, August 2015 }
@@ -37,6 +38,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
 >>>>>>> graemeg/cpstrnew
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, September 2010 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -94,6 +98,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -105,6 +110,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -126,6 +133,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -146,6 +154,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -155,6 +168,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -175,6 +189,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -184,6 +203,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -191,6 +211,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -203,6 +225,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -210,6 +233,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -219,6 +244,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -245,6 +271,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -254,15 +285,19 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
@@ -295,6 +330,10 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -374,6 +413,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -381,6 +421,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CSSM_KR_WRAPPEDPRODUCT_INFO_PTR = ^CSSM_KR_WRAPPEDPRODUCT_INFO;
@@ -396,6 +438,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -403,6 +446,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CSSM_KRSUBSERVICE_PTR = ^cssm_krsubservice;
@@ -458,6 +503,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -465,6 +511,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CSSM_KR_POLICY_INFO_PTR = ^cssm_kr_policy_info;
@@ -477,6 +525,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	(* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -484,6 +533,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Key Recovery Module Mangement Operations }
@@ -492,6 +543,7 @@ function CSSM_KR_SetEnterpriseRecoveryPolicy( const (*var*) RecoveryPolicyFileNa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -499,6 +551,8 @@ function CSSM_KR_SetEnterpriseRecoveryPolicy( const (*var*) RecoveryPolicyFileNa
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Key Recovery Context Operations }
@@ -507,6 +561,7 @@ function CSSM_KR_CreateRecoveryRegistrationContext( KRSPHandle: CSSM_KRSP_HANDLE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_CreateRecoveryEnablementContext( KRSPHandle: CSSM_KRSP_HANDLE; const (*var*) LocalProfile: CSSM_KR_PROFILE; const (*var*) RemoteProfile: CSSM_KR_PROFILE; var NewContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_CreateRecoveryEnablementContext';
@@ -528,6 +583,8 @@ function CSSM_KR_GetPolicyInfo( CCHandle: CSSM_CC_HANDLE; var EncryptionProhibit
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function CSSM_KR_CreateRecoveryEnablementContext( KRSPHandle: CSSM_KRSP_HANDLE; const (*var*) LocalProfile: CSSM_KR_PROFILE; const (*var*) RemoteProfile: CSSM_KR_PROFILE; var NewContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_CreateRecoveryEnablementContext';
 
@@ -535,9 +592,12 @@ function CSSM_KR_CreateRecoveryRequestContext( KRSPHandle: CSSM_KRSP_HANDLE; con
 
 function CSSM_KR_GetPolicyInfo( CCHandle: CSSM_CC_HANDLE; var EncryptionProhibited: CSSM_KR_POLICY_FLAGS; var WorkFactor: UInt32 ): CSSM_RETURN; external name '_CSSM_KR_GetPolicyInfo';
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Key Recovery Registration Operations }
@@ -546,6 +606,7 @@ function CSSM_KR_RegistrationRequest( RecoveryRegistrationContext: CSSM_CC_HANDL
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; KRProfile: CSSM_KR_PROFILE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RegistrationRetrieve';
@@ -562,6 +623,10 @@ function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHa
 
 function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; KRProfile: CSSM_KR_PROFILE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RegistrationRetrieve';
 >>>>>>> graemeg/cpstrnew
+=======
+
+function CSSM_KR_RegistrationRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; KRProfile: CSSM_KR_PROFILE_PTR ): CSSM_RETURN; external name '_CSSM_KR_RegistrationRetrieve';
+>>>>>>> origin/cpstrnew
 
 
 { Key Recovery Enablement Operations }
@@ -570,6 +635,7 @@ function CSSM_KR_GenerateRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CCH
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CryptoContext: CSSM_CC_HANDLE; const (*var*) KRSPOptions: CSSM_DATA; KRFlags: CSSM_KR_POLICY_FLAGS; const (*var*) KRFields: CSSM_DATA; var NewCryptoContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_ProcessRecoveryFields';
@@ -586,6 +652,10 @@ function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; Cryp
 
 function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CryptoContext: CSSM_CC_HANDLE; const (*var*) KRSPOptions: CSSM_DATA; KRFlags: CSSM_KR_POLICY_FLAGS; const (*var*) KRFields: CSSM_DATA; var NewCryptoContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_ProcessRecoveryFields';
 >>>>>>> graemeg/cpstrnew
+=======
+
+function CSSM_KR_ProcessRecoveryFields( KeyRecoveryContext: CSSM_CC_HANDLE; CryptoContext: CSSM_CC_HANDLE; const (*var*) KRSPOptions: CSSM_DATA; KRFlags: CSSM_KR_POLICY_FLAGS; const (*var*) KRFields: CSSM_DATA; var NewCryptoContext: CSSM_CC_HANDLE ): CSSM_RETURN; external name '_CSSM_KR_ProcessRecoveryFields';
+>>>>>>> origin/cpstrnew
 
 
 { Key Recovery Request Operations }
@@ -594,6 +664,7 @@ function CSSM_KR_RecoveryRequest( RecoveryRequestContext: CSSM_CC_HANDLE; const 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 
 function CSSM_KR_RecoveryRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; CacheHandle: CSSM_HANDLE_PTR; var NumberOfRecoveredKeys: UInt32 ): CSSM_RETURN; external name '_CSSM_KR_RecoveryRetrieve';
@@ -612,6 +683,8 @@ function CSSM_KR_QueryPolicyInfo( KRSPHandle: CSSM_KRSP_HANDLE; AlgorithmID: CSS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function CSSM_KR_RecoveryRetrieve( KRSPHandle: CSSM_KRSP_HANDLE; ReferenceHandle: CSSM_HANDLE; const (*var*) AccessCredentials: CSSM_ACCESS_CREDENTIALS; var EstimatedTime: SInt32; CacheHandle: CSSM_HANDLE_PTR; var NumberOfRecoveredKeys: UInt32 ): CSSM_RETURN; external name '_CSSM_KR_RecoveryRetrieve';
 
@@ -622,11 +695,14 @@ function CSSM_KR_RecoveryRequestAbort( KRSPHandle: CSSM_KRSP_HANDLE; CacheHandle
 function CSSM_KR_QueryPolicyInfo( KRSPHandle: CSSM_KRSP_HANDLE; AlgorithmID: CSSM_ALGORITHMS; Mode: CSSM_ENCRYPT_MODE; Class: CSSM_CONTEXT_TYPE; var PolicyInfoData: CSSM_KR_POLICY_INFO_PTR ): CSSM_RETURN; external name '_CSSM_KR_QueryPolicyInfo';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 { Extensibility Functions }
@@ -635,6 +711,7 @@ function CSSM_KR_PassThrough( KRSPHandle: CSSM_KRSP_HANDLE; KeyRecoveryContext: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -642,6 +719,8 @@ function CSSM_KR_PassThrough( KRSPHandle: CSSM_KRSP_HANDLE; KeyRecoveryContext: 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

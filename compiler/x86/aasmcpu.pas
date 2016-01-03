@@ -1164,23 +1164,29 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          (ref^.base<>NR_NO)
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                          { allow any base for assembler blocks }
                         ((assigned(current_procinfo) and
                          (pi_has_assembler_block in current_procinfo.flags) and
                          (ref^.base<>NR_NO)) or (ref^.base=NR_EBX))
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                         )
 {$endif i386}
 {$ifdef x86_64}
@@ -2569,6 +2575,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef i8086}
                   if oper[opidx]^.ref^.refaddr=addr_seg then
                     begin
@@ -2596,6 +2603,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef i386}
                   if (oper[opidx]^.ref^.refaddr=addr_pic) and
                      (tf_pic_uses_got in target_info.flags) then
@@ -2690,6 +2699,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         needed_VEX_Extension: boolean;
         needed_VEX: boolean;
         opmode: integer;
@@ -2701,6 +2711,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         { safety check }
         if objdata.currobjsec.size<>longword(insoffset) then
@@ -2962,11 +2974,14 @@ implementation
                 if assigned(currsym) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                  objdata_writereloc(currval,2,currsym,currabsreloc)
                 else
                  objdata.writebytes(currval,2);
@@ -3067,6 +3082,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  objdata_writereloc(currval,2,currsym,currrelreloc)
                 else
                  objdata_writereloc(currval-insend,2,nil,currabsreloc)
@@ -3088,6 +3104,11 @@ implementation
                 else
                  objdata_writereloc(currval-insend,4,nil,currabsreloc32)
 >>>>>>> graemeg/cpstrnew
+=======
+                 objdata_writereloc(currval,4,currsym,currrelreloc)
+                else
+                 objdata_writereloc(currval-insend,4,nil,currabsreloc32)
+>>>>>>> origin/cpstrnew
               end;
             &64,&65,&66 :  // 064..066 - select between 16/32 address mode, but we support only 32 (only 16 on i8086)
               begin
@@ -3103,9 +3124,12 @@ implementation
                 else
                  objdata_writereloc(currval-insend,4,nil,currabsreloc32)
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif i8086}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               end;
             &70,&71,&72 :  // 070..072 - long relative operand
               begin
@@ -3378,6 +3402,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef i8086}
                          if ea_data.bytes=2 then
                            currabsreloc:=RELOC_ABSOLUTE
@@ -3415,6 +3440,10 @@ implementation
                              currabsreloc:=RELOC_ABSOLUTE32;
 
 >>>>>>> graemeg/cpstrnew
+=======
+                             currabsreloc:=RELOC_ABSOLUTE32;
+
+>>>>>>> origin/cpstrnew
                            if (currabsreloc=RELOC_ABSOLUTE32) and
                             (Assigned(oper[opidx]^.ref^.relsymbol)) then
                            begin
@@ -3423,11 +3452,14 @@ implementation
                              currval:=relsym.offset;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            end;
                          objdata_writereloc(currval,ea_data.bytes,currsym,currabsreloc);
                          inc(s,ea_data.bytes);
@@ -3576,6 +3608,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             begin
               if getsubreg(r)=R_SUBH then
                 inc(tmpref.offset);
@@ -3587,6 +3620,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             { we don't need special code here for 32 bit loads on x86_64, since
               those will automatically zero-extend the upper 32 bits. }
             result:=taicpu.op_ref_reg(A_MOV,reg2opsize(r),ref,r);
@@ -3639,6 +3674,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tmpref: treference;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3646,6 +3682,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         tmpref:=ref;
 {$ifdef i8086}
@@ -3658,6 +3696,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if getsubreg(r)=R_SUBH then
                 inc(tmpref.offset);
 =======
@@ -3666,6 +3705,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               size:=reg2opsize(r);
 {$ifdef x86_64}
               { even if it's a 32 bit reg, we still have to spill 64 bits
@@ -3679,12 +3720,15 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               result:=taicpu.op_reg_ref(A_MOV,size,r,tmpref);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               result:=taicpu.op_reg_ref(A_MOV,size,r,ref);
             end;
           R_MMREGISTER :

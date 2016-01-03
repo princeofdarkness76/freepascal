@@ -137,6 +137,7 @@ implementation
                     if try_to_consume(_INDEX) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      begin
 <<<<<<< HEAD
                        pt:=comp_expr([ef_accept_equal]);
@@ -147,11 +148,16 @@ implementation
                      begin
                        pt:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                     begin
+                       pt:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                        if pt.nodetype=ordconstn then
                         if (Tordconstnode(pt).value<int64(low(index))) or
                            (Tordconstnode(pt).value>int64(high(index))) then
                           begin
                             index:=0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                             message3(type_e_range_check_error_bounds,tostr(Tordconstnode(pt).value),tostr(low(index)),tostr(high(index)))
@@ -161,6 +167,9 @@ implementation
 =======
                             message(parser_e_range_check_error)
 >>>>>>> graemeg/cpstrnew
+=======
+                            message(parser_e_range_check_error)
+>>>>>>> origin/cpstrnew
                           end
                         else
                           index:=Tordconstnode(pt).value.svalue
@@ -178,6 +187,7 @@ implementation
                      end;
                     if try_to_consume(_NAME) then
                      begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                        pt:=comp_expr([ef_accept_equal]);
@@ -195,6 +205,11 @@ implementation
                        if pt.nodetype=stringconstn then
                          hpname:=strpas(tstringconstnode(pt).value_str)
 >>>>>>> graemeg/cpstrnew
+=======
+                       pt:=comp_expr(true,false);
+                       if pt.nodetype=stringconstn then
+                         hpname:=strpas(tstringconstnode(pt).value_str)
+>>>>>>> origin/cpstrnew
                        else
                          consume(_CSTRING);
                        options:=options or eo_name;
@@ -202,6 +217,7 @@ implementation
                        DefString:=hpname+'='+InternalProcName;
                      end;
                     if try_to_consume(_RESIDENT) then
+<<<<<<< HEAD
 <<<<<<< HEAD
                      begin
                        options:=options or eo_resident;
@@ -254,6 +270,12 @@ implementation
                        DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}
                      end;
 >>>>>>> graemeg/cpstrnew
+=======
+                     begin
+                       options:=options or eo_resident;
+                       DefString:=srsym.realname+'='+InternalProcName;{Resident ignored!}
+                     end;
+>>>>>>> origin/cpstrnew
                     if (DefString<>'') and UseDeffileForExports then
                      DefFile.AddExport(DefString);
                   end;

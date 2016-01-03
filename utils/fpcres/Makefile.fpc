@@ -14,11 +14,14 @@ programs=fpcres
 units=closablefilestream msghandler paramparser sourcehandler target
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [require]
 packages=rtl fpmkunit
@@ -56,6 +59,7 @@ FPMAKE_OPT+=$(addprefix -o ,$(FPCOPT))
 FPMAKE_OPT+=--compiler=$(FPC)
 FPMAKE_OPT+=-bu
 .NOTPARALLEL:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -126,3 +130,6 @@ fpcres$(EXEEXT): target.pas msghandler.pas closablefilestream.pas paramparser.pa
 =======
 fpcres$(EXEEXT): target.pas msghandler.pas closablefilestream.pas paramparser.pas sourcehandler.pas fpcres.pas
 >>>>>>> graemeg/cpstrnew
+=======
+fpcres$(EXEEXT): target.pas msghandler.pas closablefilestream.pas paramparser.pas sourcehandler.pas fpcres.pas
+>>>>>>> origin/cpstrnew

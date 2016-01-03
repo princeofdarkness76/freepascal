@@ -29,6 +29,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    IID_IShellExtInit   : TGUID ='{000214E8-0000-0000-C000-000000000046}';
 =======
    IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
@@ -39,6 +40,9 @@ Const
 =======
    IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
 >>>>>>> graemeg/cpstrnew
+=======
+   IID_IShellExtInit    ='{000214E8-0000-0000-C000-000000000046}';
+>>>>>>> origin/cpstrnew
    IID_IShellFolder    : TGUID ='{000214E6-0000-0000-C000-000000000046}';
    IID_IEnumList       : TGUID ='{000214F2-0000-0000-C000-000000000046}';
    IID_IAutoComplete   : TGUID ='{00bb2762-6a77-11d0-a535-00c04fd7d062}';
@@ -932,6 +936,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SHGFP_TYPE_CURRENT      =  0;   // shgetfolderpath, current value for user, verify it exists
   SHGFP_TYPE_DEFAULT  	  =  1;   // shgetfolderpath, default value, may not exist
    
@@ -998,6 +1003,9 @@ Const
 =======
    
 >>>>>>> graemeg/cpstrnew
+=======
+   
+>>>>>>> origin/cpstrnew
 Type
       SFGAOF  = ULONG;
       TSFGAOF = SFGAOF;
@@ -2561,6 +2569,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          ['{000214E8-0000-0000-C000-000000000046}']
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
@@ -2575,17 +2584,22 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           [IID_IShellExtInit]
          function Initialize(pidlfolder: LPCITEMIDLIST; pdtobj : IDataObject;hkeyProgID : HKEY):HResult; stdcall;
          end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function SHGetMalloc(out ppmalloc: IMalloc):HResult;StdCall; external 'shell32' name 'SHGetMalloc';
 function SHGetDesktopFolder(out ppshf:IShellFolder):HResult;StdCall; external 'shell32' name 'SHGetDesktopFolder';
 

@@ -19,6 +19,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA
 =======
@@ -30,6 +31,9 @@
 =======
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 >>>>>>> graemeg/cpstrnew
+=======
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+>>>>>>> origin/cpstrnew
  *
  }
 

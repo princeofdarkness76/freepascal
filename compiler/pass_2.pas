@@ -155,6 +155,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              'objcprotocoln',
              'specializen'
 =======
@@ -166,6 +167,9 @@ implementation
 =======
              'objcprotocoln'
 >>>>>>> graemeg/cpstrnew
+=======
+             'objcprotocoln'
+>>>>>>> origin/cpstrnew
              );
       var
         p: pchar;

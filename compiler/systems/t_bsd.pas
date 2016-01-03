@@ -159,6 +159,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
                
@@ -169,6 +170,9 @@ begin
 =======
                
 >>>>>>> graemeg/cpstrnew
+=======
+               
+>>>>>>> origin/cpstrnew
                On 64bit systems, page zero is 4GB by default, so no problems
                there.
              }
@@ -178,6 +182,7 @@ begin
                programs with problems that require Valgrind will have more
                than 60KB of data (first 4KB of address space is always invalid)
              }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -227,6 +232,18 @@ begin
              else
                DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
 >>>>>>> graemeg/cpstrnew
+=======
+               ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
+             if not(cs_gdb_valgrind in current_settings.globalswitches) then
+               ExeCmd[1]:=ExeCmd[1]+' -pagezero_size 0x10000';
+{$else ndef cpu64bitaddr}
+             ExeCmd[1]:='ld $PRTOBJ $OPT $DYNLINK $STATIC $GCSECTIONS $STRIP -multiply_defined suppress -L. -o $EXE `cat $RES`';
+{$endif ndef cpu64bitaddr}
+             if (apptype<>app_bundle) then
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -dylib -multiply_defined suppress -L. -o $EXE `cat $RES`'
+             else
+               DllCmd[1]:='ld $PRTOBJ $OPT $GCSECTIONS -dynamic -bundle -multiply_defined suppress -L. -o $EXE `cat $RES`'
+>>>>>>> origin/cpstrnew
            end
        end
      else
@@ -376,6 +393,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           case target_info.system of
             system_powerpc_darwin,
             system_powerpc64_darwin,
@@ -420,6 +438,10 @@ begin
           if not librarysearchpath.FindFile('dylib1.o',false,result) then
             result:='/usr/lib/dylib1.o'
 >>>>>>> graemeg/cpstrnew
+=======
+          if not librarysearchpath.FindFile('dylib1.o',false,result) then
+            result:='/usr/lib/dylib1.o'
+>>>>>>> origin/cpstrnew
         end;
     end;
 end;
@@ -787,6 +809,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   success,
   useshell : boolean;
 =======
@@ -794,6 +817,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   success : boolean;
 >>>>>>> graemeg/cpstrnew
 begin
@@ -948,6 +973,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   linkscript:=nil;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -955,6 +981,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if not(cs_link_nolink in current_settings.globalswitches) then
    Message1(exec_i_linking,current_module.sharedlibfilename);
 
@@ -969,6 +997,7 @@ begin
     else
       GCSectionsStr:='-dead_strip -no_dead_strip_inits_and_terms';
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -992,6 +1021,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   InitStr:='-init FPC_LIB_START';
   FiniStr:='-fini FPC_LIB_EXIT';
   SoNameStr:='-soname '+ExtractFileName(current_module.sharedlibfilename);
@@ -1131,6 +1162,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
 >>>>>>> graemeg/cpstrnew
@@ -1140,6 +1172,9 @@ initialization
 =======
   RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
 >>>>>>> graemeg/cpstrnew
+=======
+  RegisterExternalLinker(system_i386_iphonesim_info,TLinkerBSD);
+>>>>>>> origin/cpstrnew
   RegisterImport(system_i386_iphonesim,timportlibdarwin);
   RegisterExport(system_i386_iphonesim,texportlibdarwin);
   RegisterTarget(system_i386_iphonesim_info);

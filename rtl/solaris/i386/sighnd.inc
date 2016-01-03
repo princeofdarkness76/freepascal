@@ -64,6 +64,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            begin
              status:=status and not FPU_ExceptionMask;
              { Control word is index 0 }
@@ -82,6 +83,9 @@ begin
 =======
            status:=status and not FPU_ExceptionMask;
 >>>>>>> graemeg/cpstrnew
+=======
+           status:=status and not FPU_ExceptionMask;
+>>>>>>> origin/cpstrnew
        end;
    SIGILL:
        if sse_check then

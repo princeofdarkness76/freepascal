@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -54,6 +58,7 @@ type
                    PTC_X11_DITHER,
                    PTC_X11_FULLSCREEN_CURSOR_VISIBLE,
                    PTC_X11_WINDOWED_CURSOR_INVISIBLE,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -219,6 +224,58 @@ type
     constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); virtual;
     destructor Destroy; override;
 
+=======
+                   PTC_X11_GRAB_MOUSE);
+  TX11Flags = set of TX11FlagsEnum;
+
+type
+  TX11Display = class
+  protected
+    { Conversion object }
+    FCopy: TPTCCopy;
+    FClear: TPTCClear;
+    FPalette: TPTCPalette;
+
+    FArea: TPTCArea;
+    FClip: TPTCArea;
+
+    FEventQueue: TEventQueue;
+
+    FFlags: TX11Flags;
+    FWidth, FHeight: Integer;
+    FFormat: TPTCFormat;
+
+    FDisplay: PDisplay;
+    FScreen: Integer;
+
+    FCMap: TColormap;
+    FColours: PXColor;
+
+    FFunctionKeys: PInteger;
+    FNormalKeys: PInteger;
+
+    function NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean; virtual; abstract;
+    function PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent; virtual; abstract;
+
+    function GetX11DirectFormat(ABitsPerPixel: Integer;
+                                AR, AG, AB: DWord;
+                                AByteOrder: cint): TPTCFormat;
+    function GetX11Format(const AFormat: TPTCFormat): TPTCFormat;
+
+    { initialise the keyboard mapping table }
+    procedure SetKeyMapping;
+
+    { Data access }
+    function GetWidth: Integer;
+    function GetHeight: Integer;
+    function GetPitch: Integer; virtual; abstract;
+    function GetFormat: TPTCFormat;
+    function GetArea: TPTCArea;
+  public
+    constructor Create(ADisplay: PDisplay; AScreen: Integer; const AFlags: TX11Flags); virtual;
+    destructor Destroy; override;
+
+>>>>>>> origin/cpstrnew
     procedure Open(ATitle: string; AWidth, AHeight: Integer; const AFormat: TPTCFormat); virtual; abstract;
 
     { This will always return a windowed console. The first version
@@ -233,16 +290,20 @@ type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function Lock: Pointer; virtual; abstract;
     procedure Unlock; virtual; abstract;
 
     { load pixels to console }
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -335,6 +396,8 @@ type
     procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
                    const AFormat: TPTCFormat; const APalette: TPTCPalette); virtual;
     procedure Load(const APixels: Pointer; AWidth, AHeight, APitch: Integer;
                    const AFormat: TPTCFormat; const APalette: TPTCPalette;
@@ -373,7 +436,10 @@ type
     procedure SetFlags(AFlags: TX11Flags);
 
     procedure GetModes(var AModes: TPTCModeDynArray); virtual; abstract;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     { X11 helper functions for your enjoyment }
 
@@ -389,6 +455,7 @@ type
     property Width: Integer read GetWidth;
     property Height: Integer read GetHeight;
     property Pitch: Integer read GetPitch;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -410,4 +477,8 @@ type
     property Area: TPTCArea read GetArea;
     property Format: TPTCFormat read GetFormat;
 >>>>>>> graemeg/cpstrnew
+=======
+    property Area: TPTCArea read GetArea;
+    property Format: TPTCFormat read GetFormat;
+>>>>>>> origin/cpstrnew
   end;

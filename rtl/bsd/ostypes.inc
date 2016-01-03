@@ -147,6 +147,7 @@ TYPE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef darwin_new_iostructs}
 {$ifdef dragonfly}
    dirent  = record
@@ -167,6 +168,9 @@ TYPE
 =======
 {$ifndef darwinarm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef darwinarm}
+>>>>>>> origin/cpstrnew
    dirent  = record
         d_fileno      : cuint32;                        // file number of entry
         d_reclen      : cuint16;                        // length of this record
@@ -174,6 +178,7 @@ TYPE
         d_namlen      : cuint8;                         // length of string in d_name
         d_name        : array[0..(255 + 1)-1] of char;  // name must be no longer than this
    end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -188,6 +193,9 @@ TYPE
 =======
 {$else not darwinarm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$else not darwinarm}
+>>>>>>> origin/cpstrnew
    {$packrecords 4}
    { available on Mac OS X 10.6 and later, and used by all iPhoneOS versions }
    dirent  = record
@@ -202,6 +210,7 @@ TYPE
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif darwin_new_iostructs}
 =======
 {$endif darwinarm}
@@ -212,6 +221,9 @@ TYPE
 =======
 {$endif darwinarm}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endif darwinarm}
+>>>>>>> origin/cpstrnew
    TDirent = dirent;
    pDirent = ^dirent;
 

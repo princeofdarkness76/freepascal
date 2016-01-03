@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Makefile.fpc for running fpmake
 #
 
@@ -16,6 +17,8 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 #   Makefile.fpc for Free Pascal Symbian Build Tool
 #
 
@@ -31,11 +34,14 @@ packages=
 [compiler]
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [install]
 fpcpackage=y
@@ -43,6 +49,7 @@ fpcpackage=y
 [default]
 fpcdir=../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -146,3 +153,8 @@ mksymbian$(EXEEXT): mksymbian.pas
 .NOTPARALLEL:
 mksymbian$(EXEEXT): mksymbian.pas
 >>>>>>> graemeg/cpstrnew
+=======
+[rules]
+.NOTPARALLEL:
+mksymbian$(EXEEXT): mksymbian.pas
+>>>>>>> origin/cpstrnew

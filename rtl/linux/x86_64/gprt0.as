@@ -51,6 +51,7 @@ _start:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         leaq    8(,%rsi,8),%rax
         addq    %rsp,%rax
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rcx
@@ -60,17 +61,22 @@ _start:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         leaq     8(,%rsi,8),%rax
         addq     %rsp,%rax
         movq    operatingsystem_parameter_envp@GOTPCREL(%rip),%rsi
         movq    %rax,(%rsi)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 	/* Align the stack to a 16 byte boundary to follow the ABI.  */
 	andq  $~15, %rsp

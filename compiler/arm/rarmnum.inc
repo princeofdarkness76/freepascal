@@ -28,6 +28,7 @@ tregister($04060000),
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 tregister($04060020),
 tregister($04070000),
 tregister($04060001),
@@ -79,6 +80,8 @@ tregister($0406002F),
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 tregister($04060000),
 tregister($04070000),
 tregister($04060001),
@@ -127,11 +130,14 @@ tregister($0406000F),
 tregister($0406000F),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 tregister($0407000F),
 tregister($04070010),
 tregister($04070011),
@@ -150,6 +156,7 @@ tregister($0407001D),
 tregister($0407001E),
 tregister($0407001F),
 tregister($05000000),
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -203,3 +210,6 @@ tregister($05000001)
 =======
 tregister($05000001)
 >>>>>>> graemeg/cpstrnew
+=======
+tregister($05000001)
+>>>>>>> origin/cpstrnew

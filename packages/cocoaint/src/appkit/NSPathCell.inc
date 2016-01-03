@@ -69,6 +69,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __piFlags: record
       case byte of
        0: (_anonbitfield_NSPathCell0: cuint);
@@ -80,6 +81,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __piFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPathCell0: cuint);
@@ -87,11 +90,14 @@ type
         reserved: 0..((1 shl 32)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _pathStyle: NSPathStyle;

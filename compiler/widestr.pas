@@ -80,15 +80,19 @@ unit widestr;
     function codepagebyname(const s : string) : tstringencoding;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   implementation
 
     uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -105,6 +109,9 @@ unit widestr;
 =======
       cp8859_1,cp850,cp437,cp1252,
 >>>>>>> graemeg/cpstrnew
+=======
+      cp8859_1,cp850,cp437,cp1252,
+>>>>>>> origin/cpstrnew
       { cyrillic code pages }
       cp1251,cp866,cp8859_5,
       { greek code page }
@@ -279,6 +286,7 @@ unit widestr;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     procedure unicode2ascii(r : pcompilerwidestring;p:pchar;cp : tstringencoding);
 =======
@@ -286,6 +294,8 @@ unit widestr;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure unicode2ascii(r : pcompilerwidestring;p:pchar;cp : tstringencoding);
       var
         m : punicodemap;
@@ -310,11 +320,14 @@ unit widestr;
 (*
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       var
         m : punicodemap;
         source : tcompilerwidecharptr;
@@ -498,11 +511,14 @@ unit widestr;
           Result:=p^.cp; 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 end.

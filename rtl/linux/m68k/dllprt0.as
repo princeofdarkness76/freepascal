@@ -24,6 +24,7 @@ _startlib:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # This is a normal C function with args (argc,argv,envp)
 FPC_SHARED_LIB_START:
         link.w   %a6,#0
@@ -38,6 +39,8 @@ FPC_SHARED_LIB_START:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 FPC_SHARED_LIB_START:
 |
 |       The args and envs are not tested yet
@@ -64,11 +67,14 @@ haltproc:
 FPC_SHARED_LIB_EXIT:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         moveq.l   #1,%d0
         move.w    operatingsystem_result,%d1
         trap      #0

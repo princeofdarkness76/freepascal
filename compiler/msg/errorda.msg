@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 %%% Reordering of errorda.msg respective to errore.msg
 %%% Contains all comments from errorda.msg
 #$
@@ -10,6 +11,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 #
 #   $Id: errorda.msg 621 2006-07-02 15:44:03Z chrivers $
 >>>>>>> graemeg/cpstrnew
@@ -3546,6 +3549,7 @@ Free Pascal Compiler version $FPCFULLVERSION [$FPCDATE] til $FPCTARGET
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 Florian Klaempfl and others
 =======
 Copyright (c) 1993-2011 Florian Klaempfl
@@ -3556,6 +3560,9 @@ Copyright (c) 1993-2011 Florian Klaempfl
 =======
 Copyright (c) 1993-2011 Florian Klaempfl
 >>>>>>> graemeg/cpstrnew
+=======
+Copyright (c) 1993-2011 Florian Klaempfl
+>>>>>>> origin/cpstrnew
 ]
 
 #

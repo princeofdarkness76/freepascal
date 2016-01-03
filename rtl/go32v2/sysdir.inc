@@ -21,6 +21,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure DosDir(func:byte;s:rawbytestring);
 =======
 procedure DosDir(func:byte;s:pchar;len:integer);
@@ -31,6 +32,9 @@ procedure DosDir(func:byte;s:pchar;len:integer);
 =======
 procedure DosDir(func:byte;s:pchar;len:integer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure DosDir(func:byte;s:pchar;len:integer);
+>>>>>>> origin/cpstrnew
 var
   regs   : trealregs;
   len    : longint;
@@ -39,6 +43,7 @@ begin
   { True DOS does not like backslashes at end
     Win95 DOS accepts this !!
     but "\" and "c:\" should still be kept and accepted hopefully PM }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -52,17 +57,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if (len>0) and (s[len-1]='\') and
      Not ((len=1) or ((len=3) and (s[1]=':'))) then
     s[len-1]:=#0;
   syscopytodos(longint(s),len+1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   regs.realedx:=tb_offset;
   regs.realds:=tb_segment;
   if LFNSupport then
@@ -74,6 +84,7 @@ begin
    GetInOutRes(lo(regs.realeax));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,11 +107,16 @@ Procedure do_ChDir(const s: rawbytestring);
 =======
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 begin
+=======
+Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
+begin
+>>>>>>> origin/cpstrnew
  If not assigned(s) or (len=0) or (InOutRes <> 0) then
    exit;
   DosDir($39,s,len);
 end;
 
+<<<<<<< HEAD
 =======
 Procedure MkDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_MKDIR'];
 begin
@@ -110,6 +126,8 @@ begin
 end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Procedure RmDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_RMDIR'];
 begin
   if (len=1) and (s[0] = '.' ) then
@@ -120,6 +138,7 @@ begin
 end;
 
 Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'];
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -143,10 +162,13 @@ Procedure ChDir(s: pchar;len:sizeuint);[IOCheck, public, alias : 'FPC_SYS_CHDIR'
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   regs : trealregs;
   len  : longint;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -158,17 +180,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   If not assigned(s) or (len=0) or (InOutRes <> 0) then
    exit;
 { First handle Drive changes }
   if (len>=2) and (s[1]=':') then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    begin
      regs.realedx:=(ord(s[0]) and (not 32))-ord('A');
      regs.realeax:=$0e00;
@@ -192,12 +219,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure do_GetDir (DriveNr: byte; var Dir: RawByteString);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure GetDir (DriveNr: byte; var Dir: ShortString);
 >>>>>>> graemeg/cpstrnew
 var

@@ -63,6 +63,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   PTCPAS_VERSION = 'PTCPas 0.99.14';
 =======
   PTCPAS_VERSION = 'PTCPas 0.99.11';
@@ -73,6 +74,9 @@ const
 =======
   PTCPAS_VERSION = 'PTCPas 0.99.11';
 >>>>>>> graemeg/cpstrnew
+=======
+  PTCPAS_VERSION = 'PTCPas 0.99.11';
+>>>>>>> origin/cpstrnew
 
 type
   PUint8  = ^Uint8;
@@ -128,6 +132,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Windows, p_ddraw, glext;
 =======
   Windows, p_ddraw;
@@ -138,6 +143,9 @@ uses
 =======
   Windows, p_ddraw;
 >>>>>>> graemeg/cpstrnew
+=======
+  Windows, p_ddraw;
+>>>>>>> origin/cpstrnew
 {$ENDIF defined(WIN32) OR defined(WIN64)}
 
 {$IFDEF WinCE}
@@ -150,12 +158,15 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym, xkblib
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   BaseUnix, Unix, ctypes, x, xlib, xutil, xatom, keysym
 >>>>>>> graemeg/cpstrnew
   {$IFDEF ENABLE_X11_EXTENSION_XRANDR}
@@ -214,6 +225,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$INCLUDE core/log.inc}
 
@@ -232,6 +244,11 @@ end;
 {$INCLUDE core/log.inc}
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+{$INCLUDE core/log.inc}
+
+>>>>>>> origin/cpstrnew
 {$INCLUDE core/coreimplementation.inc}
 
 {$IFDEF GO32V2}
@@ -239,6 +256,7 @@ end;
 {$ENDIF GO32V2}
 
 {$IF defined(Win32) OR defined(Win64)}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -287,6 +305,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$INCLUDE win32/base/cursord.inc}
 {$INCLUDE win32/base/cursormoded.inc}
 {$INCLUDE win32/base/monitord.inc}
@@ -321,11 +341,14 @@ end;
 {$INCLUDE win32/gdi/gdiconsolei.inc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF defined(Win32) OR defined(Win64)}
 
 {$IFDEF WinCE}

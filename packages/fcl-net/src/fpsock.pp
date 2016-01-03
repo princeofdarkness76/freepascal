@@ -522,11 +522,14 @@ begin
   SockAddr.Addr := Cardinal(HostAddr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if Sockets.FpConnect(Stream.Handle, @SockAddr, SizeOf(SockAddr))<>0 Then
     if (SocketError <> sys_EINPROGRESS) and (SocketError <> 0) then
       raise ESocketError.CreateFmt(SSocketConnectFailed,
@@ -580,11 +583,14 @@ begin
       Addr.Addr := 0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       if  fpBind(Socket, @Addr, SizeOf(Addr))<>0 then
         raise ESocketError.CreateFmt(SSocketBindingError,
           [Port, StrError(SocketError)]);

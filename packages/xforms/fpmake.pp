@@ -38,11 +38,14 @@ begin
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.Sources.AddSrc('README.txt');
 
     P.ExamplePath.Add('examples/');

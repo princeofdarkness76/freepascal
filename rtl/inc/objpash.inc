@@ -75,11 +75,14 @@
        vmtToString             = vmtMethodStart+sizeof(pointer)*12;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
        { IInterface }
        S_OK          = 0;
@@ -161,11 +164,14 @@
          vToString: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
 
        PGuid = ^TGuid;
@@ -200,6 +206,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          etFieldValue,
          etVirtualMethodClass,
          etStaticMethodClass,
@@ -209,17 +216,22 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          etFieldValue, 
          etVirtualMethodClass,
          etStaticMethodClass,
          etFieldValueClass           
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        );
 
        pinterfaceentry = ^tinterfaceentry;
@@ -265,6 +277,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             exceptaddr : codepointer) : HResult;virtual;
 =======
             exceptaddr : pointer) : HResult;virtual;
@@ -275,6 +288,9 @@
 =======
             exceptaddr : pointer) : HResult;virtual;
 >>>>>>> graemeg/cpstrnew
+=======
+            exceptaddr : pointer) : HResult;virtual;
+>>>>>>> origin/cpstrnew
           procedure DefaultHandler(var message);virtual;
 
           procedure Free;
@@ -457,6 +473,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPUNONE}
       vtExtended      = 3;
 {$endif}
@@ -475,6 +492,11 @@
       vtExtended      = 3;
 {$endif}              
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifndef FPUNONE}     
+      vtExtended      = 3;
+{$endif}              
+>>>>>>> origin/cpstrnew
       vtString        = 4;
       vtPointer       = 5;
       vtPChar         = 6;
@@ -498,6 +520,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef ENDIAN_BIG}
 =======
 {$ifdef ENDIAN_BIG}        
@@ -508,10 +531,14 @@
 =======
 {$ifdef ENDIAN_BIG}        
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef ENDIAN_BIG}        
+>>>>>>> origin/cpstrnew
            vtInteger       : ({$IFDEF CPU64}integerdummy1 : Longint;{$ENDIF CPU64}VInteger: Longint);
            vtBoolean       : ({$IFDEF CPU64}booldummy : Longint;{$ENDIF CPU64}booldummy1,booldummy2,booldummy3: byte; VBoolean: Boolean);
            vtChar          : ({$IFDEF CPU64}chardummy : Longint;{$ENDIF CPU64}chardummy1,chardummy2,chardummy3: byte; VChar: Char);
            vtWideChar      : ({$IFDEF CPU64}widechardummy : Longint;{$ENDIF CPU64}wchardummy1,VWideChar: WideChar);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -525,10 +552,14 @@
 =======
 {$else ENDIAN_BIG}         
 >>>>>>> graemeg/cpstrnew
+=======
+{$else ENDIAN_BIG}         
+>>>>>>> origin/cpstrnew
            vtInteger       : (VInteger: Longint);
            vtBoolean       : (VBoolean: Boolean);
            vtChar          : (VChar: Char);
            vtWideChar      : (VWideChar: WideChar);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -544,6 +575,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endif ENDIAN_BIG}        
 {$ifndef FPUNONE}          
            vtExtended      : (VExtended: PExtended);
@@ -553,11 +586,14 @@
            vtPChar         : (VPChar: PChar);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            vtObject        : (VObject: TObject);
            vtClass         : (VClass: TClass);
            vtPWideChar     : (VPWideChar: PWideChar);
@@ -578,15 +614,19 @@
     DispCallByIDProc : pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   const
     { for safe as operator support }
     IObjectInstance: TGuid = '{D91C9AF4-3C93-420F-A303-BF5BA82BFD23}';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -610,3 +650,5 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

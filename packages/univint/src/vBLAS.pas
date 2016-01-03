@@ -16,6 +16,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
@@ -27,6 +28,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -84,6 +88,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -95,6 +100,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -112,6 +119,7 @@ interface
 	{$setc TARGET_CPU_PPC64 := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -144,12 +152,24 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
 =======
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -177,6 +197,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -186,6 +208,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -193,10 +216,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -311,13 +337,43 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+>>>>>>> origin/cpstrnew
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -358,16 +414,20 @@ uses MacTypes,ConditionalMacros;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
 
 {$ifc TARGET_OS_MAC}
+=======
+>>>>>>> origin/cpstrnew
 
 <<<<<<< HEAD
 =======
 {$ifc TARGET_OS_MAC}
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 {$ALIGN POWER}
 
@@ -379,6 +439,12 @@ uses MacTypes,ConditionalMacros;
 {$ALIGN POWER}
 
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifc TARGET_OS_MAC}
+
+{$ALIGN POWER}
+
+>>>>>>> origin/cpstrnew
 { ==========================================================================================================================}
 
 
@@ -472,6 +538,7 @@ uses MacTypes,ConditionalMacros;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SDOT( (*const*) var N: SInt32; {const} X: Float32Ptr; (*const*) var incX: SInt32; {const} Y: Float32Ptr; (*const*) var incY: SInt32 ): Float32; external name '_SDOT';
 =======
 function SDOT( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; const (*var*) Y: Float32; (*const*) var incY: SInt32 ): Float32; external name '_SDOT';
@@ -482,6 +549,9 @@ function SDOT( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var 
 =======
 function SDOT( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; const (*var*) Y: Float32; (*const*) var incY: SInt32 ): Float32; external name '_SDOT';
 >>>>>>> graemeg/cpstrnew
+=======
+function SDOT( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; const (*var*) Y: Float32; (*const*) var incY: SInt32 ): Float32; external name '_SDOT';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -496,6 +566,7 @@ function SDOT( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SNRM2( (*const*) var N: SInt32; {const} X: Float32Ptr; (*const*) var incX: SInt32 ): Float32; external name '_SNRM2';
 =======
 function SNRM2( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): Float32; external name '_SNRM2';
@@ -506,6 +577,9 @@ function SNRM2( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var
 =======
 function SNRM2( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): Float32; external name '_SNRM2';
 >>>>>>> graemeg/cpstrnew
+=======
+function SNRM2( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): Float32; external name '_SNRM2';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -520,6 +594,7 @@ function SNRM2( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function SASUM( (*const*) var N: SInt32; {const} X: Float32Ptr; (*const*) var incX: SInt32 ): Float32; external name '_SASUM';
 =======
 function SASUM( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): Float32; external name '_SASUM';
@@ -530,6 +605,9 @@ function SASUM( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var
 =======
 function SASUM( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): Float32; external name '_SASUM';
 >>>>>>> graemeg/cpstrnew
+=======
+function SASUM( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): Float32; external name '_SASUM';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -544,6 +622,7 @@ function SASUM( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function ISAMAX( (*const*) var N: SInt32; {const} X: Float32Ptr; (*const*) var incX: SInt32 ): SInt32; external name '_ISAMAX';
 =======
 function ISAMAX( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): SInt32; external name '_ISAMAX';
@@ -554,6 +633,9 @@ function ISAMAX( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) va
 =======
 function ISAMAX( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): SInt32; external name '_ISAMAX';
 >>>>>>> graemeg/cpstrnew
+=======
+function ISAMAX( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32 ): SInt32; external name '_ISAMAX';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -568,6 +650,7 @@ function ISAMAX( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) va
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SSWAP( (*const*) var N: SInt32; X: Float32Ptr; (*const*) var incX: SInt32; Y: Float32Ptr; (*const*) var incY: SInt32 ); external name '_SSWAP';
 =======
 procedure SSWAP( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SSWAP';
@@ -578,6 +661,9 @@ procedure SSWAP( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SI
 =======
 procedure SSWAP( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SSWAP';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure SSWAP( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SSWAP';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -592,6 +678,7 @@ procedure SSWAP( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SI
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SCOPY( (*const*) var N: SInt32; {const} X: Float32Ptr; (*const*) var incX: SInt32; Y: Float32Ptr; (*const*) var incY: SInt32 ); external name '_SCOPY';
 =======
 procedure SCOPY( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SCOPY';
@@ -602,6 +689,9 @@ procedure SCOPY( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) va
 =======
 procedure SCOPY( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SCOPY';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure SCOPY( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SCOPY';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -616,6 +706,7 @@ procedure SCOPY( (*const*) var N: SInt32; const (*var*) X: Float32; (*const*) va
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SAXPY( (*const*) var N: SInt32; const (*var*) alpha: Float32; {const} X: Float32Ptr; (*const*) var incX: SInt32; Y: Float32Ptr; (*const*) var incY: SInt32 ); external name '_SAXPY';
 =======
 procedure SAXPY( (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*var*) X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SAXPY';
@@ -626,6 +717,9 @@ procedure SAXPY( (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*
 =======
 procedure SAXPY( (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*var*) X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SAXPY';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure SAXPY( (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*var*) X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SAXPY';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -640,6 +734,7 @@ procedure SAXPY( (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SROT( (*const*) var N: SInt32; X: Float32Ptr; (*const*) var incX: SInt32; Y: Float32Ptr; (*const*) var incY: SInt32; const (*var*) c: Float32; const (*var*) s: Float32 ); external name '_SROT';
 =======
 procedure SROT( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32; const (*var*) c: Float32; const (*var*) s: Float32 ); external name '_SROT';
@@ -650,6 +745,9 @@ procedure SROT( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SIn
 =======
 procedure SROT( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32; const (*var*) c: Float32; const (*var*) s: Float32 ); external name '_SROT';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure SROT( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SInt32; var Y: Float32; (*const*) var incY: SInt32; const (*var*) c: Float32; const (*var*) s: Float32 ); external name '_SROT';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -664,6 +762,7 @@ procedure SROT( (*const*) var N: SInt32; var X: Float32; (*const*) var incX: SIn
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SSCAL( (*const*) var N: SInt32; const (*var*) alpha: Float32; X: Float32Ptr; (*const*) var incX: SInt32 ); external name '_SSCAL';
 =======
 procedure SSCAL( (*const*) var N: SInt32; const (*var*) alpha: Float32; var X: Float32; (*const*) var incX: SInt32 ); external name '_SSCAL';
@@ -674,6 +773,9 @@ procedure SSCAL( (*const*) var N: SInt32; const (*var*) alpha: Float32; var X: F
 =======
 procedure SSCAL( (*const*) var N: SInt32; const (*var*) alpha: Float32; var X: Float32; (*const*) var incX: SInt32 ); external name '_SSCAL';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure SSCAL( (*const*) var N: SInt32; const (*var*) alpha: Float32; var X: Float32; (*const*) var incX: SInt32 ); external name '_SSCAL';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -688,6 +790,7 @@ procedure SSCAL( (*const*) var N: SInt32; const (*var*) alpha: Float32; var X: F
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SGEMV( transA: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; const (*var*) alpha: Float32; {const} A: Float32Ptr; (*const*) var lda: SInt32; {const} X: Float32Ptr; (*const*) var incX: SInt32; const (*var*) beta: Float32; Y: Float32Ptr; (*const*) var incY: SInt32 ); external name '_SGEMV';
 =======
 procedure SGEMV( transA: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*var*) A: Float32; (*const*) var lda: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; const (*var*) beta: Float32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SGEMV';
@@ -698,6 +801,9 @@ procedure SGEMV( transA: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var
 =======
 procedure SGEMV( transA: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*var*) A: Float32; (*const*) var lda: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; const (*var*) beta: Float32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SGEMV';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure SGEMV( transA: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; const (*var*) alpha: Float32; const (*var*) A: Float32; (*const*) var lda: SInt32; const (*var*) X: Float32; (*const*) var incX: SInt32; const (*var*) beta: Float32; var Y: Float32; (*const*) var incY: SInt32 ); external name '_SGEMV';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -712,6 +818,7 @@ procedure SGEMV( transA: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure SGEMM( transA: ConstCStringPtr; transB: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; (*const*) var K: SInt32; const (*var*) alpha: Float32; {const} A: Float32Ptr; (*const*) var lda: SInt32; {const} B: Float32Ptr; (*const*) var ldb: SInt32; const (*var*) beta: Float32; C: Float32Ptr; (*const*) var ldc: SInt32 ); external name '_SGEMM';
 =======
 procedure SGEMM( transA: ConstCStringPtr; transB: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; (*const*) var K: SInt32; const (*var*) alpha: Float32; const (*var*) A: Float32; (*const*) var lda: SInt32; const (*var*) B: Float32; (*const*) var ldb: SInt32; const (*var*) beta: Float32; var C: Float32; (*const*) var ldc: SInt32 ); external name '_SGEMM';
@@ -722,6 +829,9 @@ procedure SGEMM( transA: ConstCStringPtr; transB: ConstCStringPtr; (*const*) var
 =======
 procedure SGEMM( transA: ConstCStringPtr; transB: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; (*const*) var K: SInt32; const (*var*) alpha: Float32; const (*var*) A: Float32; (*const*) var lda: SInt32; const (*var*) B: Float32; (*const*) var ldb: SInt32; const (*var*) beta: Float32; var C: Float32; (*const*) var ldc: SInt32 ); external name '_SGEMM';
 >>>>>>> graemeg/cpstrnew
+=======
+procedure SGEMM( transA: ConstCStringPtr; transB: ConstCStringPtr; (*const*) var M: SInt32; (*const*) var N: SInt32; (*const*) var K: SInt32; const (*var*) alpha: Float32; const (*var*) A: Float32; (*const*) var lda: SInt32; const (*var*) B: Float32; (*const*) var ldb: SInt32; const (*var*) beta: Float32; var C: Float32; (*const*) var ldc: SInt32 ); external name '_SGEMM';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 

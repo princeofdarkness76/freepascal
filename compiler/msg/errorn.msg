@@ -3485,6 +3485,7 @@ Free Pascal Compiler versie $FPCFULLVERSION [$FPCDATE] voor $FPCTARGET
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 door Florian Klaempfl en anderen
 =======
 Copyright (c) 1998-2011 door Florian Klaempfl en anderen
@@ -3495,6 +3496,9 @@ Copyright (c) 1998-2011 door Florian Klaempfl en anderen
 =======
 Copyright (c) 1998-2011 door Florian Klaempfl en anderen
 >>>>>>> graemeg/cpstrnew
+=======
+Copyright (c) 1998-2011 door Florian Klaempfl en anderen
+>>>>>>> origin/cpstrnew
 ]
 #
 # Info (option -i)

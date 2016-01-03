@@ -747,11 +747,14 @@ begin
           longv:=(Trunc(r) mod 86400);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           PDateTime(Buffer)^:=D+(Longv/MSecsPerday);
           end;
         end;

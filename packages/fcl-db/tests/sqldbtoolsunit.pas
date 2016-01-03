@@ -435,11 +435,14 @@ begin
     Fconnection := tIBConnection.Create(nil);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
 
   if SQLServerType in [ssFirebird, ssInterbase, ssMSSQL, ssOracle, ssPostgreSQL, ssSybase] then
@@ -504,6 +507,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -512,6 +516,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TSQLDBConnector.SetTestUniDirectional(const AValue: boolean);
 begin
   FUniDirectional:=avalue;
@@ -719,11 +725,14 @@ begin
     sql.add('SELECT * FROM FPDEV WHERE ID < '+inttostr(n+1));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     UniDirectional:=TestUniDirectional;
     end;
 end;
@@ -738,6 +747,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     UniDirectional:=TestUniDirectional;
 =======
     tsqlquery(Result).UniDirectional:=TestUniDirectional;
@@ -748,6 +758,9 @@ begin
 =======
     tsqlquery(Result).UniDirectional:=TestUniDirectional;
 >>>>>>> graemeg/cpstrnew
+=======
+    tsqlquery(Result).UniDirectional:=TestUniDirectional;
+>>>>>>> origin/cpstrnew
     end;
 end;
 

@@ -98,6 +98,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      c : longint;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -105,6 +106,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
    if paramcount<>2 then

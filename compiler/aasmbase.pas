@@ -43,6 +43,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT,
          { a symbol that's internal to the compiler and used as a temp }
          AB_TEMP);
@@ -55,6 +56,9 @@ interface
 =======
          AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT);
 >>>>>>> graemeg/cpstrnew
+=======
+         AB_PRIVATE_EXTERN,AB_LAZY,AB_IMPORT);
+>>>>>>> origin/cpstrnew
 
        TAsmsymtype=(
          AT_NONE,AT_FUNCTION,AT_DATA,AT_SECTION,AT_LABEL,
@@ -159,6 +163,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          sec_objc_protolist,
          { stack segment for 16-bit DOS }
          sec_stack,
@@ -173,6 +178,9 @@ interface
 =======
          sec_objc_protolist
 >>>>>>> graemeg/cpstrnew
+=======
+         sec_objc_protolist
+>>>>>>> origin/cpstrnew
        );
 
        TAsmSectionOrder = (secorder_begin,secorder_default,secorder_end);

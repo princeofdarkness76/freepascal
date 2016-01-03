@@ -17,11 +17,14 @@ uses
   fpcunit, testutils, testregistry, testdecorator,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Classes, SysUtils, db, ToolsUnit;
 
 type
@@ -73,17 +76,21 @@ type
     procedure TestLocateCaseIns;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     procedure TestBlobBlobType; //bug 26064
 
     procedure TestCalculatedField;
     procedure TestCanModifySpecialFields;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -190,6 +197,8 @@ type
     procedure TestNegativeIntFilter; //Negative integer filter; bug 25168
     procedure TestStringFilter; //String filter expressions
 
+=======
+>>>>>>> origin/cpstrnew
     procedure TestNullAtOpen;
 =======
 =======
@@ -218,6 +227,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestFirst;
     procedure TestEofAfterFirst;           // bug 7211
 =======
@@ -225,6 +235,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure TestEofAfterFirst;           //bug 7211
     procedure TestDoubleClose;
     procedure TestCalculatedField;
@@ -251,6 +263,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure TestModified;
     // fields
     procedure TestFieldOldValueObsolete;
@@ -266,6 +279,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure TestExceptionLocateClosed;    // bug 13938
     procedure TestCanModifySpecialFields;
   end;
@@ -273,6 +288,7 @@ type
   { TTestBufDatasetDBBasics }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   TTestBufDatasetDBBasics = class(TTestCase)
   private
@@ -380,6 +396,9 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 
+=======
+
+>>>>>>> origin/cpstrnew
   TTestBufDatasetDBBasics = class(TTestCase)
   private
     procedure FTestXMLDatasetDefinition(ADataset : TDataset);
@@ -430,7 +449,10 @@ type
 
   { TDBBasicsUniDirectionalTestSetup }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TDBBasicsUniDirectionalTestSetup = class(TDBBasicsTestSetup)
   protected
     procedure OneTimeSetup; override;
@@ -440,6 +462,7 @@ type
 
 implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -458,6 +481,8 @@ type THackDataLink=class(TDataLink);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 uses bufdataset, variants, strutils, sqldb, FmtBCD;
 
 type THackDataLink=class(TdataLink);
@@ -588,6 +613,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         CheckEquals('deUpdateState:0;',DataEvents);
         DataEvents := '';
         while not EOF do
@@ -599,6 +625,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         AssertEquals('deUpdateState:0;',DataEvents);
         DataEvents := '';
         while not EOF do
@@ -607,15 +635,19 @@ begin
           AssertEquals('TestName'+inttostr(i),fields[1].AsString);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           inc(i);
 
           Next;
           if (i > ABufferCount) and not EOF then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -632,6 +664,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             AssertEquals('deCheckBrowseMode:0;deDataSetScroll:-1;DataSetScrolled:1;DataSetChanged;',DataEvents)
           else
             AssertEquals('deCheckBrowseMode:0;deDataSetScroll:0;DataSetScrolled:0;DataSetChanged;',DataEvents);
@@ -642,11 +676,14 @@ begin
         AssertEquals('deUpdateState:0;',DataEvents);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         DataEvents := '';
         end;
       end;
@@ -657,11 +694,14 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestDBBasics.TestdeFieldListChange;
@@ -873,7 +913,43 @@ end;
 
 procedure TTestDBBasics.TestdeFieldListChange;
 
+<<<<<<< HEAD
 var
+=======
+procedure TTestDBBasics.TestLayoutChangedEvents;
+var aDatasource : TDataSource;
+    aDatalink   : TDataLink;
+    ds          : tdataset;
+
+begin
+  aDatasource := TDataSource.Create(nil);
+  aDatalink := TTestDataLink.Create;
+  try
+    aDatalink.DataSource := aDatasource;
+    ds := DBConnector.GetNDataset(6);
+    aDatasource.DataSet:=ds;
+    with ds do
+      begin
+      open;
+
+      DataEvents := '';
+      DisableControls;
+      Active:=False;
+      Active:=True;
+      EnableControls;
+      AssertEquals('deLayoutChange:0;DataSetChanged;',DataEvents);
+
+      close;
+      end;
+  finally
+    aDatasource.Free;
+    aDatalink.Free;
+  end;
+end;
+
+procedure TTestDBBasics.TestDataEventsResync;
+var i,count     : integer;
+>>>>>>> origin/cpstrnew
     aDatasource : TDataSource;
     aDatalink   : TDataLink;
     ds          : TDataset;
@@ -881,6 +957,7 @@ var
 begin
   aDatasource := TDataSource.Create(nil);
   aDatalink := TTestDataLink.Create;
+<<<<<<< HEAD
   aDatalink.DataSource := aDatasource;
   ds := DBConnector.GetNDataset(1);
   with ds do
@@ -926,6 +1003,28 @@ begin
   end;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+  try
+    aDatalink.DataSource := aDatasource;
+    ds := DBConnector.GetNDataset(6);
+    ds.BeforeScroll := DBConnector.DataEvent;
+    with ds do
+      begin
+      aDatasource.DataSet := ds;
+      open;
+      DataEvents := '';
+      Resync([rmExact]);
+      AssertEquals('deDataSetChange:0;DataSetChanged;',DataEvents);
+      DataEvents := '';
+      next;
+      AssertEquals('deCheckBrowseMode:0;DataEvent;deDataSetScroll:0;DataSetScrolled:1;DataSetChanged;',DataEvents);
+      close;
+      end;
+  finally
+    aDatasource.Free;
+    aDatalink.Free;
+  end;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestCursorDBBasics.TestLastAppendCancel;
@@ -1101,11 +1200,14 @@ var passed: boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   with DBConnector.GetNDataset(15) do
     begin
@@ -1191,6 +1293,7 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestDBBasics.TestDetectionNonMatchingDataset;
 var
   F: TField;
@@ -1206,6 +1309,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestBufDatasetDBBasics.TestSafeAsXML;
 var ds    : TDataset;
     LoadDs: TCustomBufDataset;
@@ -1706,6 +1811,24 @@ begin
     end;
 end;
 
+procedure TTestDBBasics.TestLocateCaseIns;
+begin
+  with DBConnector.GetNDataset(true,13) do
+    begin
+    open;
+    assertfalse(Locate('name',vararrayof(['TEstName5']),[]));
+    asserttrue(Locate('name',vararrayof(['TEstName5']),[loCaseInsensitive]));
+    AssertEquals(5,FieldByName('id').AsInteger);
+
+    assertfalse(Locate('name',vararrayof(['TestN']),[]));
+    asserttrue(Locate('name',vararrayof(['TestN']),[loPartialKey]));
+
+    assertfalse(Locate('name',vararrayof(['TestNA']),[loPartialKey]));
+    asserttrue(Locate('name',vararrayof(['TestNA']),[loPartialKey, loCaseInsensitive]));
+    close;
+    end;
+end;
+
 procedure TTestDBBasics.TestSetFieldValues;
 var PassException : boolean;
 begin
@@ -1923,12 +2046,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestCursorDBBasics.TestOnFilterProc(DataSet: TDataSet; var Accept: Boolean);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestBufDatasetDBBasics.FTestXMLDatasetDefinition(ADataset: TDataset);
 var i : integer;
 begin
@@ -2452,11 +2578,14 @@ var ds : TCustomBufDataset;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FList : TStringList;
 >>>>>>> graemeg/cpstrnew
     LastValue : Variant;
@@ -2557,6 +2686,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestBufDatasetDBBasics.TestAddIndexFmtBCD;
 begin
   TestAddIndexFieldType(ftFmtBCD,False);
@@ -2568,6 +2698,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestBufDatasetDBBasics.TestAddIndex;
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
@@ -2744,11 +2876,14 @@ procedure TTestBufDatasetDBBasics.TestAddIndexActiveDS;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var ds   : TCustomBufDataset;
     I    : integer;
 >>>>>>> graemeg/cpstrnew
@@ -2761,11 +2896,14 @@ var ds        : TCustomBufDataset;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     I         : integer;
 >>>>>>> graemeg/cpstrnew
     LastValue : String;
@@ -2802,6 +2940,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestBufDatasetDBBasics.TestIndexFieldNamesActive;
 =======
 procedure TTestBufDatasetDBBasics.TestIndexFieldNamesAct;
@@ -2812,6 +2951,9 @@ procedure TTestBufDatasetDBBasics.TestIndexFieldNamesAct;
 =======
 procedure TTestBufDatasetDBBasics.TestIndexFieldNamesAct;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TTestBufDatasetDBBasics.TestIndexFieldNamesAct;
+>>>>>>> origin/cpstrnew
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
     FList : TStringList;
@@ -2983,6 +3125,7 @@ procedure TTestBufDatasetDBBasics.TestIndexEditRecord;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Tests index sorting for string field type by
 // editing an existing record in the middle
 // with a value at the end of the alphabet
@@ -2992,6 +3135,8 @@ procedure TTestBufDatasetDBBasics.TestIndexEditRecord;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
     OldID : Integer;
@@ -3027,6 +3172,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3101,6 +3247,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestBufDatasetDBBasics.TestIndexFieldNames;
 var ds : TCustomBufDataset;
     AFieldType : TFieldType;
@@ -3557,6 +3705,31 @@ begin
   ds.close;
 end;
 
+procedure TTestDBBasics.TestSupportTimeFields;
+var i          : byte;
+    ds         : TDataset;
+    Fld        : TField;
+    s          : string;
+    millisecond: word;
+    second     : word;
+    minute     : word;
+    hour       : word;
+begin
+  TestfieldDefinition(ftTime,8,ds,Fld);
+
+  for i := 0 to testValuesCount-1 do
+    begin
+    // Format the datetime in the format hh:nn:ss:zzz, where the hours can be bigger then 23.
+    DecodeTime(fld.AsDateTime,hour,minute,second,millisecond);
+    hour := hour + (trunc(Fld.AsDateTime) * 24);
+    s := Format('%.2d',[hour]) + ':' + format('%.2d',[minute]) + ':' + format('%.2d',[second]) + ':' + format('%.3d',[millisecond]);
+
+    AssertEquals(testTimeValues[i],s);
+    ds.Next;
+    end;
+  ds.close;
+end;
+
 procedure TTestDBBasics.TestSupportCurrencyFields;
 >>>>>>> graemeg/cpstrnew
 
@@ -3595,12 +3768,15 @@ begin
     begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     AssertEquals(testFmtBCDValues[i],Fld.AsString);
     AssertEquals(testFmtBCDValues[i],Fld.AsBCD);
     AssertEquals(StrToFloat(testFmtBCDValues[i]),Fld.AsFloat);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     AssertEquals(CurrToStr(testCurrencyValues[i]),Fld.AsString);
     AssertEquals(testCurrencyValues[i],Fld.AsCurrency);
     AssertEquals(testCurrencyValues[i],Fld.AsFloat);
@@ -3613,6 +3789,24 @@ end;
 procedure TTestDBBasics.TestSupportfmtBCDFields;
 <<<<<<< HEAD
 =======
+var i          : byte;
+    ds         : TDataset;
+    Fld        : TField;
+
+begin
+  TestfieldDefinition(ftFMTBcd,sizeof(TBCD),ds,Fld);
+
+  for i := 0 to testValuesCount-1 do
+    begin
+    AssertEquals(testFmtBCDValues[i],Fld.AsString);
+    AssertEquals(testFmtBCDValues[i],Fld.AsBCD);
+    AssertEquals(StrToFloat(testFmtBCDValues[i]),Fld.AsFloat);
+    ds.Next;
+    end;
+  ds.close;
+end;
+
+procedure TTestDBBasics.TestSupportfmtBCDFields;
 var i          : byte;
     ds         : TDataset;
     Fld        : TField;
@@ -3871,12 +4065,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestCursorDBBasics.TestBug7007;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestBufDatasetDBBasics.TestBufDatasetCancelUpd;
 var i : byte;
 begin
@@ -3936,6 +4133,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     CheckEquals('deCheckBrowseMode:0;deUpdateState:0;deDataSetChange:0;DataSetChanged;',DataEvents);
     CheckEquals(5, datalink1.ActiveRecord);
     CheckEquals(6, datalink1.RecordCount);
@@ -3954,6 +4152,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     AssertEquals('deCheckBrowseMode:0;deUpdateState:0;deDataSetChange:0;DataSetChanged;',DataEvents);
     AssertEquals(5, datalink1.ActiveRecord);
     AssertEquals(6, datalink1.RecordCount);
@@ -4017,12 +4217,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TTestCursorDBBasics.TestNullAtOpen;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TTestBufDatasetDBBasics.TestBufDatasetCancelUpd1;
 var i : byte;
 begin
@@ -4124,6 +4327,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 
 { TDBBasicsUniDirectionalTestSetup }
@@ -4148,6 +4352,8 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 { TDBBasicsUniDirectionalTestSetup }
@@ -4162,8 +4368,11 @@ procedure TDBBasicsUniDirectionalTestSetup.OneTimeTearDown;
 begin
   DBConnector.TestUniDirectional:=false;
   inherited OneTimeTearDown;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 { TTestBufDatasetDBBasics }
@@ -4178,11 +4387,14 @@ begin
   DBConnector.StopTest;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 {$endif fpc}
 
@@ -4190,6 +4402,7 @@ end;
 initialization
 {$ifdef fpc}
   RegisterTestDecorator(TDBBasicsTestSetup, TTestDBBasics);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4209,10 +4422,15 @@ initialization
 
   if uppercase(dbconnectorname)='SQL' then
 >>>>>>> graemeg/cpstrnew
+=======
+
+  if uppercase(dbconnectorname)='SQL' then
+>>>>>>> origin/cpstrnew
     begin
     RegisterTestDecorator(TDBBasicsTestSetup, TTestBufDatasetDBBasics);
     RegisterTestDecorator(TDBBasicsUniDirectionalTestSetup, TTestUniDirectionalDBBasics);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4225,4 +4443,6 @@ initialization
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.

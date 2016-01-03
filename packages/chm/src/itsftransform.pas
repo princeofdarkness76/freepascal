@@ -15,6 +15,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02111-1301, USA.
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
@@ -25,6 +26,9 @@
 =======
   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 >>>>>>> graemeg/cpstrnew
+=======
+  Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+>>>>>>> origin/cpstrnew
 }
 {
   See the file COPYING.modifiedLGPL, included in this distribution,

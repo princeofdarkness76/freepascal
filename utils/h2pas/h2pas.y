@@ -3,6 +3,7 @@ program h2pas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$H+}
 =======
 
@@ -13,6 +14,9 @@ program h2pas;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 (*
     Copyright (c) 1998-2000 by Florian Klaempfl
 
@@ -1087,6 +1091,7 @@ program h2pas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 if assigned(hp3^.p1) and
                                    (not assigned(hp3^.p1^.p3) or
                                    (hp3^.p1^.p3^.typ <> t_size_specifier)) then
@@ -1102,6 +1107,10 @@ program h2pas;
                                 if not assigned(hp3^.p1^.p3) or
                                    (hp3^.p1^.p3^.typ <> t_size_specifier) then
 >>>>>>> graemeg/cpstrnew
+=======
+                                if not assigned(hp3^.p1^.p3) or
+                                   (hp3^.p1^.p3^.typ <> t_size_specifier) then
+>>>>>>> origin/cpstrnew
                                   begin
                                      if is_sized then
                                        begin
@@ -1124,6 +1133,7 @@ program h2pas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 if assigned(hp3^.p1) and
                                    assigned(hp3^.p1^.p3) then
 =======
@@ -1135,6 +1145,9 @@ program h2pas;
 =======
                                 if assigned(hp3^.p1^.p3) then
 >>>>>>> graemeg/cpstrnew
+=======
+                                if assigned(hp3^.p1^.p3) then
+>>>>>>> origin/cpstrnew
                                   begin
                                      { we could use mask to implement this }
                                      { because we need to respect the positions }
@@ -2475,6 +2488,7 @@ special_type_name :
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        $$:=new(presobject,init_id(cshort_STR))
 =======
        $$:=new(presobject,init_id(csint_STR))
@@ -2485,6 +2499,9 @@ special_type_name :
 =======
        $$:=new(presobject,init_id(csint_STR))
 >>>>>>> graemeg/cpstrnew
+=======
+       $$:=new(presobject,init_id(csint_STR))
+>>>>>>> origin/cpstrnew
      else
        $$:=new(presobject,init_intid(SMALL_STR));
      } |

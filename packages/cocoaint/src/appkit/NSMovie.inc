@@ -47,6 +47,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __movieFlags: record
       case byte of
        0: (_anonbitfield_NSMovie0: cint);
@@ -59,6 +60,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __movieFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSMovie0: cint);
@@ -67,11 +70,14 @@
         reserved: 0..((1 shl 31)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _reserved1: clong;

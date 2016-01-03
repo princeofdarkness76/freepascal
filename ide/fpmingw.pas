@@ -50,6 +50,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef win32}
  fctMsvcrtLongJmp : pointer;cvar;external;
 {$else not win32}
@@ -64,6 +65,9 @@ var
 =======
  fctMsvcrtLongJmp : pointer;cvar;external;
 >>>>>>> graemeg/cpstrnew
+=======
+ fctMsvcrtLongJmp : pointer;cvar;external;
+>>>>>>> origin/cpstrnew
 
 function atexit(p:TCFunction):longint;cdecl; [public, alias : '_atexit'];
 
@@ -89,6 +93,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef DISABLE_CPU_FEATURES_INIT}
 {$ifdef win32}
   __cpu_features_init;        // load CPU features. Might be useful for debugger :-)
@@ -109,6 +114,11 @@ begin
   __cpu_features_init;        // load CPU features. Might be useful for debugger :-)
 {$endif win32}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifdef win32}
+  __cpu_features_init;        // load CPU features. Might be useful for debugger :-)
+{$endif win32}
+>>>>>>> origin/cpstrnew
 
  // fpreset; 		      // don't do this, we init our own fp mask
 

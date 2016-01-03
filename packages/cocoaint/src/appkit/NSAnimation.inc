@@ -95,6 +95,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __aFlags: record
       case byte of
        0: (_anonbitfield_NSAnimation0: cuint);
@@ -104,17 +105,22 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __aFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSAnimation0: cuint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         delegateAnimationShouldStart: 0..1;
         delegateAnimationDidStop: 0..1;
         delegateAnimationDidEnd: 0..1;
@@ -123,6 +129,7 @@ var
         animating: 0..1;
         blocking: 0..1;
         reserved: 0..((1 shl 25)-1);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -142,6 +149,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     __aSettings: bitpacked record
@@ -153,11 +162,14 @@ var
         reserved: 0..((1 shl 22)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _scheduledRunLoop: NSRunLoop;
@@ -211,6 +223,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __vaFlags: record
       case byte of
        0: (_anonbitfield_NSAnimation2: cuint);
@@ -222,6 +235,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __vaFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSAnimation2: cuint);
@@ -229,11 +244,14 @@ var
         reserved: 0..((1 shl 32)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _reserved5: NSUInteger;

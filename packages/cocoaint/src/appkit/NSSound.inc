@@ -52,6 +52,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _reserved: array[0..(6)-1] of id;
 =======
         _reserved: array[0..5] of id;
@@ -62,6 +63,9 @@ var
 =======
         _reserved: array[0..5] of id;
 >>>>>>> graemeg/cpstrnew
+=======
+        _reserved: array[0..5] of id;
+>>>>>>> origin/cpstrnew
     _sFlags: NSUInteger;
     
   public

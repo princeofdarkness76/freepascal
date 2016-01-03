@@ -17,6 +17,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TSpecialization1 = TClass1.specialize TNestedClass<Integer>;
 =======
   TSpecialization1 = specialize TClass1.TNestedClass<Integer>;
@@ -27,6 +28,9 @@ type
 =======
   TSpecialization1 = specialize TClass1.TNestedClass<Integer>;
 >>>>>>> graemeg/cpstrnew
+=======
+  TSpecialization1 = specialize TClass1.TNestedClass<Integer>;
+>>>>>>> origin/cpstrnew
 
 begin
 end.

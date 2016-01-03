@@ -18,6 +18,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure print(format: IPTCFormat);
 =======
 procedure print(const format: TPTCFormat);
@@ -28,6 +29,9 @@ procedure print(const format: TPTCFormat);
 =======
 procedure print(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure print(const format: TPTCFormat);
+>>>>>>> origin/cpstrnew
 begin
   { check format type }
   if format.direct then
@@ -47,6 +51,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
 =======
   console: TPTCConsole = nil;
@@ -57,6 +62,9 @@ var
 =======
   console: TPTCConsole = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  console: TPTCConsole = nil;
+>>>>>>> origin/cpstrnew
 begin
   try
     try
@@ -91,6 +99,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
@@ -105,6 +114,10 @@ begin
       console.close;
       console.Free;
 >>>>>>> graemeg/cpstrnew
+=======
+      console.close;
+      console.Free;
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

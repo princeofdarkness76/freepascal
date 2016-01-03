@@ -49,6 +49,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __pbFlags: record
       case byte of
        0: (_anonbitfield_NSPopUpButton0: cuint);
@@ -61,6 +62,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __pbFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPopUpButton0: cuint);
@@ -69,11 +72,14 @@ var
         RESERVED: 0..((1 shl 31)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     {$ifdef cpu64}

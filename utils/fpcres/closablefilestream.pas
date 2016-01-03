@@ -40,6 +40,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     procedure SetSize(NewSize: Longint); override;
 >>>>>>> graemeg/cpstrnew
@@ -49,6 +50,9 @@ type
 =======
     procedure SetSize(NewSize: Longint); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetSize(NewSize: Longint); override;
+>>>>>>> origin/cpstrnew
     procedure SetSize(const NewSize: Int64); override;
     function RetryOpen : boolean;
   public
@@ -59,6 +63,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     function Seek(Offset: Longint; Origin: Word): Longint; override;
 >>>>>>> graemeg/cpstrnew
@@ -68,6 +73,9 @@ type
 =======
     function Seek(Offset: Longint; Origin: Word): Longint; override;
 >>>>>>> graemeg/cpstrnew
+=======
+    function Seek(Offset: Longint; Origin: Word): Longint; override;
+>>>>>>> origin/cpstrnew
     function Seek(const Offset: Int64; Origin: TSeekOrigin): Int64; override;
     procedure CloseHandle;
 end;
@@ -250,11 +258,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TClosableFileStream.SetSize(NewSize: Longint);
 begin
   SetSize(int64(NewSize));
@@ -262,11 +273,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TClosableFileStream.SetSize(const NewSize: Int64);
 begin
   EnsureHandleOpen;
@@ -319,11 +333,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TClosableFileStream.Seek(Offset: Longint; Origin: Word): Longint;
 begin
   EnsureHandleOpen;
@@ -332,11 +349,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TClosableFileStream.Seek(const Offset: Int64; Origin: TSeekOrigin
   ): Int64;
 begin

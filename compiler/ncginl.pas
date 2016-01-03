@@ -68,11 +68,14 @@ interface
           procedure second_bsfbsr; virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
 
 implementation
@@ -161,6 +164,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             in_aligned_x:
               begin
                 secondpass(tcallparanode(left).left);
@@ -174,6 +178,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef SUPPORT_MMX}
             in_mmx_pcmpeqb..in_mmx_pcmpgtw:
               begin
@@ -229,11 +235,14 @@ implementation
                second_BsfBsr;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             else internalerror(9);
          end;
       end;
@@ -423,11 +432,14 @@ implementation
           cg.a_op_const_reg(current_asmdata.CurrAsmList,cgop,location.size,1,location.register);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -650,6 +662,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tempreg1, tempreg2: tregister;
 =======
         opsize : tcgsize;
@@ -663,6 +676,10 @@ implementation
         opsize : tcgsize;
         tempreg1, tempreg2 : tregister;
 >>>>>>> graemeg/cpstrnew
+=======
+        opsize : tcgsize;
+        tempreg1, tempreg2 : tregister;
+>>>>>>> origin/cpstrnew
       begin
         secondpass(left);
 <<<<<<< HEAD
@@ -689,11 +706,14 @@ implementation
         cg.a_op_reg_reg_reg(current_asmdata.CurrAsmlist, OP_SUB, OS_INT, tempreg1, tempreg2, location.register);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -883,6 +903,7 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure tcginlinenode.second_fma;
       begin
         internalerror(2014032701);
@@ -934,6 +955,8 @@ implementation
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure tcginlinenode.second_sar;
       var
         {hcountreg : tregister;}
@@ -975,9 +998,12 @@ implementation
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure tcginlinenode.second_BsfBsr;
     var
       reverse: boolean;
@@ -1002,11 +1028,14 @@ implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
    cinlinenode:=tcginlinenode;
 end.  s

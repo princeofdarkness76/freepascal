@@ -79,6 +79,7 @@ unit cpupi;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if target_info.stackalign<=4 then
           result:=Align(tg.direction*tg.lasttemp,min(current_settings.alignment.localalignmax,4))
 =======
@@ -86,6 +87,8 @@ unit cpupi;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
           result:=Align(tg.direction*tg.lasttemp,min(current_settings.alignment.localalignmin,4))
 >>>>>>> graemeg/cpstrnew
@@ -111,12 +114,15 @@ unit cpupi;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (cs_create_pic in current_settings.moduleswitches) then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) and
            (cs_create_pic in current_settings.moduleswitches) then
 >>>>>>> graemeg/cpstrnew

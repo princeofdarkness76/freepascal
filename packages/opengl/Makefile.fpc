@@ -7,6 +7,7 @@ name=opengl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -16,6 +17,8 @@ packages=rtl fpmkunit
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 version=2.5.1
 
 [require]
@@ -37,6 +40,8 @@ units_openbsd=glx glext
 units_darwin=glx glext
 exampledirs=examples
 >>>>>>> graemeg/cpstrnew
+
+implicitunits=freeglut
 
 implicitunits=freeglut
 

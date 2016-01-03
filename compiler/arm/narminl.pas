@@ -78,6 +78,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               hlcg.location_force_fpureg(current_asmdata.CurrAsmList,left.location,left.resultdef,true);
 =======
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
@@ -88,6 +89,9 @@ implementation
 =======
               location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
 >>>>>>> graemeg/cpstrnew
+=======
+              location_force_fpureg(current_asmdata.CurrAsmList,left.location,true);
+>>>>>>> origin/cpstrnew
               location_copy(location,left.location);
               if left.location.loc=LOC_CFPUREGISTER then
                 begin
@@ -96,6 +100,7 @@ implementation
                end;
             end;
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -119,6 +124,11 @@ implementation
             begin
               location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
 >>>>>>> graemeg/cpstrnew
+=======
+          fpu_vfpv3:
+            begin
+              location_force_mmregscalar(current_asmdata.CurrAsmList,left.location,true);
+>>>>>>> origin/cpstrnew
               location_copy(location,left.location);
               if left.location.loc=LOC_CMMREGISTER then
                 begin
@@ -126,6 +136,7 @@ implementation
                  location.loc := LOC_MMREGISTER;
                end;
             end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -140,6 +151,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           else
             internalerror(2009111801);
         end;
@@ -153,6 +166,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             firstpass(left);
             expectloc:=LOC_REGISTER;
@@ -163,6 +177,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           result:=inherited first_abs_real
 >>>>>>> graemeg/cpstrnew
         else
@@ -173,6 +189,7 @@ implementation
               fpu_fpa11:
                 expectloc:=LOC_FPUREGISTER;
               fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -198,6 +215,10 @@ implementation
               fpu_vfpv3:
                 expectloc:=LOC_MMREGISTER;
 >>>>>>> graemeg/cpstrnew
+=======
+              fpu_vfpv3:
+                expectloc:=LOC_MMREGISTER;
+>>>>>>> origin/cpstrnew
               else
                 internalerror(2009112401);
             end;
@@ -218,6 +239,7 @@ implementation
               fpu_fpa11:
                 expectloc:=LOC_FPUREGISTER;
               fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -243,6 +265,10 @@ implementation
               fpu_vfpv3:
                 expectloc:=LOC_MMREGISTER;
 >>>>>>> graemeg/cpstrnew
+=======
+              fpu_vfpv3:
+                expectloc:=LOC_MMREGISTER;
+>>>>>>> origin/cpstrnew
               else
                 internalerror(2009112402);
             end;
@@ -263,6 +289,7 @@ implementation
               fpu_fpa11:
                 expectloc:=LOC_FPUREGISTER;
               fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -288,6 +315,10 @@ implementation
               fpu_vfpv3:
                 expectloc:=LOC_MMREGISTER;
 >>>>>>> graemeg/cpstrnew
+=======
+              fpu_vfpv3:
+                expectloc:=LOC_MMREGISTER;
+>>>>>>> origin/cpstrnew
               else
                 internalerror(2009112403);
             end;
@@ -331,6 +362,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pf: TOpPostfix;
 =======
         op: TAsmOp;
@@ -341,6 +373,9 @@ implementation
 =======
         op: TAsmOp;
 >>>>>>> graemeg/cpstrnew
+=======
+        op: TAsmOp;
+>>>>>>> origin/cpstrnew
       begin
         load_fpu_location(singleprec);
         case current_settings.fputype of
@@ -349,6 +384,7 @@ implementation
           fpu_fpa11:
             current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_ABS,location.register,left.location.register),get_fpu_postfix(resultdef)));
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -375,6 +411,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           fpu_vfpv3:
             begin
               if singleprec then
@@ -385,11 +423,14 @@ implementation
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         else
           internalerror(2009111402);
         end;
@@ -399,6 +440,7 @@ implementation
     procedure tarminlinenode.second_sqr_real;
       var
         singleprec: boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -412,6 +454,9 @@ implementation
 =======
         op: TAsmOp;
 >>>>>>> graemeg/cpstrnew
+=======
+        op: TAsmOp;
+>>>>>>> origin/cpstrnew
       begin
         load_fpu_location(singleprec);
         case current_settings.fputype of
@@ -420,6 +465,7 @@ implementation
           fpu_fpa11:
             current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg_reg(A_MUF,location.register,left.location.register,left.location.register),get_fpu_postfix(resultdef)));
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -439,6 +485,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           fpu_vfpv3:
             begin
               if singleprec then
@@ -449,11 +497,14 @@ implementation
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         else
           internalerror(2009111403);
         end;
@@ -463,6 +514,7 @@ implementation
     procedure tarminlinenode.second_sqrt_real;
       var
         singleprec: boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -476,6 +528,9 @@ implementation
 =======
         op: TAsmOp;
 >>>>>>> graemeg/cpstrnew
+=======
+        op: TAsmOp;
+>>>>>>> origin/cpstrnew
       begin
         load_fpu_location(singleprec);
         case current_settings.fputype of
@@ -484,6 +539,7 @@ implementation
           fpu_fpa11:
             current_asmdata.CurrAsmList.concat(setoppostfix(taicpu.op_reg_reg(A_SQT,location.register,left.location.register),get_fpu_postfix(resultdef)));
           fpu_vfpv2,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -503,6 +559,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           fpu_vfpv3:
             begin
               if singleprec then
@@ -513,11 +571,14 @@ implementation
             end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         else
           internalerror(2009111402);
         end;

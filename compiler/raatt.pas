@@ -56,6 +56,7 @@ unit raatt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         AS_DATA,AS_TEXT,AS_INIT,AS_FINI,AS_RVA,
         AS_SET,AS_WEAK,AS_SECTION,AS_END,
 =======
@@ -63,6 +64,8 @@ unit raatt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         AS_DATA,AS_TEXT,AS_INIT,AS_FINI,AS_END,
 >>>>>>> graemeg/cpstrnew
         {------------------ Assembler Operators  --------------------}
@@ -93,6 +96,7 @@ unit raatt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         '.data','.text','.init','.fini','.rva',
         '.set','.weak','.section','END',
         'TYPE','SIZEOF','VMTOFFSET','%','<<','>>','!','&','|','^','~','@','lo','hi',
@@ -102,6 +106,8 @@ unit raatt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         '.data','.text','.init','.fini','END',
         'TYPE','SIZEOF','VMTOFFSET','%','<<','>>','!','&','|','^','~','@','lo','hi');
 >>>>>>> graemeg/cpstrnew
@@ -312,6 +318,7 @@ unit raatt;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            {
              Thumb-2 instructions can have a .W postfix to indicate 32bit instructions,
              Also in unified syntax sizes and types are indicated with something like a .<dt> prefix for example
@@ -324,10 +331,14 @@ unit raatt;
 =======
            { Thumb-2 instructions can have a .W postfix to indicate 32bit instructions
 >>>>>>> graemeg/cpstrnew
+=======
+           { Thumb-2 instructions can have a .W postfix to indicate 32bit instructions
+>>>>>>> origin/cpstrnew
            }
            case c of
              '.':
                begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -351,6 +362,9 @@ unit raatt;
 =======
                  actasmpattern:=actasmpattern+c;
 >>>>>>> graemeg/cpstrnew
+=======
+                 actasmpattern:=actasmpattern+c;
+>>>>>>> origin/cpstrnew
                  c:=current_scanner.asmgetchar;
 
                  if upcase(c) = 'W' then
@@ -359,6 +373,7 @@ unit raatt;
                      c:=current_scanner.asmgetchar;
                    end
                  else
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -383,17 +398,22 @@ unit raatt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                    internalerror(2010122301);
                end
            end;
 {$endif ARM}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            { Opcode ? }
            If is_asmopcode(upper(actasmpattern)) then
             Begin

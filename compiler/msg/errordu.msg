@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #   Based on errore.msg of SVN revision 30725
 #
 #   This file is part of the Free Pascal Compiler
@@ -16,6 +17,12 @@
 #   Based on errore.msg of SVN revision 16783
 =======
 #   Based on errore.msg of SVN revision 16783
+=======
+#   Based on errore.msg of SVN revision 16783
+#
+#   This file is part of the Free Pascal Compiler
+#   Copyright (c) 1998-2010 by the Free Pascal Development team
+>>>>>>> origin/cpstrnew
 #
 #   This file is part of the Free Pascal Compiler
 #   Copyright (c) 1998-2010 by the Free Pascal Development team
@@ -156,6 +163,7 @@ general_i_number_of_notes=01023_I_$1 Anmerkung(en) ausgegeben
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 general_f_ioerror=01024_F_I/O Fehler: $1
 % During compilation an I/O error happened which allows no further compilation.
 general_f_oserror=01025_F_Betriebsystemfehler: $1
@@ -166,6 +174,8 @@ general_f_oserror=01025_F_Betriebsystemfehler: $1
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -173,6 +183,7 @@ general_f_oserror=01025_F_Betriebsystemfehler: $1
 #
 # Scanner
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -186,6 +197,9 @@ general_f_oserror=01025_F_Betriebsystemfehler: $1
 =======
 # 02087 is the last used one
 >>>>>>> graemeg/cpstrnew
+=======
+# 02087 is the last used one
+>>>>>>> origin/cpstrnew
 #
 % \section{Scanner messages.}
 % This section lists the messages that the scanner emits. The scanner takes
@@ -424,6 +438,7 @@ scanner_w_illegal_warn_identifier=02087_W_Ungültige Bezeichner "$1" für die $W
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 scanner_e_illegal_alignment_directive=02088_E_Ungültige "alignment" Direktive
 % The alignment directive is not valid. Either the alignment type is not known or the alignment
 % value is not a power of two.
@@ -465,6 +480,8 @@ scan_e_illegal_hugepointernormalization=02098_E_Illegales Argument für HUGEPOIN
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -472,6 +489,7 @@ scan_e_illegal_hugepointernormalization=02098_E_Illegales Argument für HUGEPOIN
 #
 # Parser
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -485,6 +503,9 @@ scan_e_illegal_hugepointernormalization=02098_E_Illegales Argument für HUGEPOIN
 =======
 # 03304 is the last used one
 >>>>>>> graemeg/cpstrnew
+=======
+# 03304 is the last used one
+>>>>>>> origin/cpstrnew
 #
 % \section{Parser messages}
 % This section lists all parser messages. The parser takes care of the
@@ -1036,6 +1057,7 @@ parser_e_no_access_specifier_in_interfaces=03172_E_Zugriffsbezeichner können in
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % \var{published} cannot be used in interfaces, Objective-C protocols and categories because all methods
 % of an interface/protocol/category must be public.
 parser_e_no_vars_in_interfaces=03173_E_Ein Interface, ein Helfer, ein Objective-C Protokoll oder eine Kategorie darf keine Felder enthalten
@@ -1046,6 +1068,8 @@ parser_e_no_vars_in_interfaces=03173_E_Ein Interface, ein Helfer, ein Objective-
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 % \var{published} can't be used in interfaces, Objective-C protocols and categories because all methods
 % of an interface/protocol/category must be public.
 parser_e_no_vars_in_interfaces=03173_E_Ein Interface, ein Objective-C Protokoll oder eine Kategorie darf keine Felder enthalten
@@ -1053,11 +1077,14 @@ parser_e_no_vars_in_interfaces=03173_E_Ein Interface, ein Objective-C Protokoll 
 % An interface/protocol/category can contain only methods and properties with method read/write specifiers.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_no_local_proc_external=03174_E_Eine lokale Prozedur kann nicht als EXTERNAL deklariert werden
 % Declaring local procedures as external is not possible. Local procedures
 % get hidden parameters that will make the chance of errors very high.
@@ -1219,6 +1246,7 @@ parser_e_dispinterface_cant_have_parent=03216_E_Ein DISPINTERFACE kann keine Elt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % A DISPINTERFACE is a special type of interface which cannot have a parent class. Dispinterface always derive from IDispatch type.
 =======
 % A DISPINTERFACE is a special type of interface which can't have a parent class. Dispinterface always derive from IDispatch type.
@@ -1229,6 +1257,9 @@ parser_e_dispinterface_cant_have_parent=03216_E_Ein DISPINTERFACE kann keine Elt
 =======
 % A DISPINTERFACE is a special type of interface which can't have a parent class. Dispinterface always derive from IDispatch type.
 >>>>>>> graemeg/cpstrnew
+=======
+% A DISPINTERFACE is a special type of interface which can't have a parent class. Dispinterface always derive from IDispatch type.
+>>>>>>> origin/cpstrnew
 parser_e_dispinterface_needs_a_guid=03217_E_Ein DISPINTERFACE benötigt einen GUID
 % A DISPINTERFACE always needs an interface identification (a GUID).
 parser_w_overridden_methods_not_same_ret=03218_W_Überschriebene Methoden müssen einen entsprechenden Rückgabetyp haben. Dieser Code kann abstürzen, weil er von einem Delphi Parser Bug abhängt (Methode "$2" wird durch "$1" überschrieben, die einen anderen Rückgabetyp hat).
@@ -1334,11 +1365,14 @@ parser_n_ignore_lower_visibility=03250_N_Die virtuelle Methode "$1" hat eine nie
 % new child class will call the higher visible method in a parent class and ignores the private method.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_field_not_allowed_here=03251_E_Felder sind nach der Definition einer Methode oder Eigenschaft nicht erlaubt. Beginne vorher eine neue Sichtbarkeitssektion
 % Once a method or property has been defined in a class or object, you cannot define any fields afterwards
 % without starting a new visibility section (such as \var{public}, \var{private}, etc.). The reason is
@@ -1367,6 +1401,7 @@ parser_e_final_can_no_be_overridden=03257_E_Die finale Methode kann nicht übers
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_multiple_messages=03258_E_Pro Methode kann nur eine Nachricht verwendet werden
 =======
 parser_e_multiple_messages=03258_E_Pro Methode kann nur eine Nachricht verwendet werden.
@@ -1377,11 +1412,15 @@ parser_e_multiple_messages=03258_E_Pro Methode kann nur eine Nachricht verwendet
 =======
 parser_e_multiple_messages=03258_E_Pro Methode kann nur eine Nachricht verwendet werden.
 >>>>>>> graemeg/cpstrnew
+=======
+parser_e_multiple_messages=03258_E_Pro Methode kann nur eine Nachricht verwendet werden.
+>>>>>>> origin/cpstrnew
 % It is not possible to associate multiple messages with a single method.
 parser_e_invalid_enumerator_identifier=03259_E_Ungültiger Aufzählungsbezeichner: "$1"
 % Only "MoveNext" and "Current" enumerator identifiers are supported.
 parser_e_enumerator_identifier_required=03260_E_Aufzählungsbezeichner notwendig
 % "MoveNext" or "Current" identifier must follow the \var{enumerator} modifier.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1395,6 +1434,9 @@ parser_e_enumerator_movenext_is_not_valid=03261_E_Die Aufzählungs-pattern-metho
 =======
 parser_e_enumerator_movenext_is_not_valid=03261_E_Die Aufzählungs-pattern-methode MoveNext ist ungültig. Die Methode muss eine Funktion mit Rückgabetyp Boolean und ohne notwendige Argumente sein.
 >>>>>>> graemeg/cpstrnew
+=======
+parser_e_enumerator_movenext_is_not_valid=03261_E_Die Aufzählungs-pattern-methode MoveNext ist ungültig. Die Methode muss eine Funktion mit Rückgabetyp Boolean und ohne notwendige Argumente sein.
+>>>>>>> origin/cpstrnew
 % "MoveNext" enumerator pattern method must be a function with Boolean return type and no required arguments
 parser_e_enumerator_current_is_not_valid=03262_E_Die Aufzählungs-pattern-Eigenschaft "Current" ist ungültig. Die Eigenschaft benötigt einen "Getter"
 % "Current" enumerator pattern property must have a getter
@@ -1435,6 +1477,7 @@ parser_f_need_objc=03272_F_Dieses Modul erfordert, dass der Objective-C Mode-Sch
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_must_use_override=03273_E_Vererbte Methoden können nur in Objective-C und Java überschrieben werden, füge "override" hinzu (Vererbte Methode ist in $1 definiert)
 parser_h_should_use_override=03274_H_Vererbte Methoden können nur in Objective-C und Java überschrieben werden, füge "override" hinzu (Vererbte Methode ist in $1 definiert)
 % It is not possible to \var{reintroduce} methods in Objective-C or Java like in Object Pascal. Methods with the same
@@ -1450,6 +1493,8 @@ parser_h_should_use_override=03274_H_Vererbte Methoden können nur in Objective-
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_must_use_override_objc=03273_E_Vererbte Methoden können nur in Objective-C überschrieben werden, füge "override" hinzu (Vererbte Methode ist in $1 definiert)
 parser_h_should_use_override_objc=03274_H_Vererbte Methoden können nur in Objective-C überschrieben werden, füge "override" hinzu (Vererbte Methode ist in $1 definiert)
 % It is not possible to \var{reintroduce} methods in Objective-C like in Object Pascal. Methods with the same
@@ -1462,15 +1507,19 @@ parser_h_should_use_override_objc=03274_H_Vererbte Methoden können nur in Objec
 % be an objcclass or an objccategory.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_objc_message_name_changed=03275_E_Der Nachrichtenname "$1" in der vererbten Klasse unterscheidet sich vom Nachrichtennamen "$2" in der aktuellen Klasse
 % An overriding Objective-C method cannot have a different message name than an inherited method. The reason
 % is that these message names uniquely define the message to the Objective-C runtime, which means that
 % giving them a different message name breaks the ``override'' semantics.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1488,6 +1537,8 @@ parser_e_no_category_as_types=03277_E_Objective-C Kategorien und Object-Pascal K
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_no_objc_unique=03276_E_Noch können eindeutige Kopien von Objective-C Typen nicht erstellt werden
 % Duplicating an Objective-C type using \var{type x = type y;} is not yet supported. You may be able to
 % obtain the desired effect using \var{type x = objcclass(y) end;} instead.
@@ -1496,11 +1547,14 @@ parser_e_no_category_as_types=03277_E_Objective-C Kategorien können nicht als T
 % category adds methods to the scope of an existing class, but does not define a type by itself.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_no_category_override=03278_E_Kategorien überschreiben Methoden nicht, sondern ersetzen sie. "reintroduce" benutzen
 parser_e_must_use_reintroduce_objc=03279_E_Ersetzte Methoden können in Objective-C nur wieder eingeführt werden, füge "reintroduce" hinzu (Ersetzte Methode ist in $1 definiert)
 parser_h_should_use_reintroduce_objc=03280_H_Ersetzte Methoden können in Objective-C nur wieder eingeführt werden, füge "reintroduce" hinzu (Ersetzte Methode ist in $1 definiert)
@@ -1577,6 +1631,7 @@ parser_f_no_generic_inside_generic=03297_F_Die Deklaration einer generischen Kla
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser_e_forward_intf_declaration_must_be_resolved=03298_E_Die Vorwärts-Deklaration "$1" muss aufgelöst sein, bevor eine Klasse ihr folgen oder sie implementieren kann
 % An Objective-C protocol or Java Interface must be fully defined before classes can conform to it.
 % This error occurs in the following situation (example for Objective-C, but the same goes for Java interfaces):
@@ -1595,6 +1650,11 @@ parser_e_forward_protocol_declaration_must_be_resolved=03298_E_Vorwärts-Deklara
 % An objcprotocol must be fully defined before classes can conform to it.
 % This error occurs in the following situation:
 >>>>>>> graemeg/cpstrnew
+=======
+parser_e_forward_protocol_declaration_must_be_resolved=03298_E_Vorwärts-Deklarationen des ObjC-Protokolls "$1" müssen aufgelöst sein, bevor eine ObjC-Klasse ihr folgen kann
+% An objcprotocol must be fully defined before classes can conform to it.
+% This error occurs in the following situation:
+>>>>>>> origin/cpstrnew
 % \begin{verbatim}
 %  Type MyProtocol = objcprotoocl;
 %       ChildClass = Class(NSObject,MyProtocol)
@@ -1604,6 +1664,7 @@ parser_e_forward_protocol_declaration_must_be_resolved=03298_E_Vorwärts-Deklara
 % where \var{MyProtocol} is declared but not defined.
 parser_e_no_record_published=03299_E_Record -Typen können keine öffentlichen Abschnitte (published sections) haben
 % Published sections can be used only inside classes.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1747,6 +1808,8 @@ parser_u_already_compiled=03340_UL_Die Unit $1 wurde inzwischen bereits kompilie
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 parser_e_no_destructor_in_records=03300_E_Destruktoren sind in Records nicht erlaubt
 % Destructor declarations aren't allowed in records.
 parser_e_class_methods_only_static_in_records=03301_E_Klassenmethoden müssen in Records statisch sein
@@ -1762,11 +1825,14 @@ parser_e_cant_use_type_parameters_here=03304_E_Typ-Parameter können initializat
 % code which is implicitly generated by the compiler. 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -1774,6 +1840,7 @@ parser_e_cant_use_type_parameters_here=03304_E_Typ-Parameter können initializat
 #
 # Type Checking
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1787,6 +1854,9 @@ parser_e_cant_use_type_parameters_here=03304_E_Typ-Parameter können initializat
 =======
 # 04098 is the last used one
 >>>>>>> graemeg/cpstrnew
+=======
+# 04098 is the last used one
+>>>>>>> origin/cpstrnew
 #
 % \section{Type checking errors}
 % This section lists all errors that can occur when type checking is
@@ -2097,6 +2167,7 @@ type_e_protocol_type_expected=04091_E_Objective-C Protokolltyp erwartet, erhielt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type_e_objc_type_unsupported=04092_E_Der Typ "$1" wird für die Verwendung mit den Laufzeitumgebungen Objective-C- oder Blocks nicht unterstützt.
 % Objective-C and Blocks makes extensive use of run time type information (RTTI). This format
 =======
@@ -2111,10 +2182,15 @@ type_e_objc_type_unsupported=04092_E_Der Typ "$1" wird nicht für die Verwendung
 type_e_objc_type_unsupported=04092_E_Der Typ "$1" wird nicht für die Verwendung mit der Objective-C Laufzeitumgebung unterstützt.
 % Objective-C makes extensive use of run time type information (RTTI). This format
 >>>>>>> graemeg/cpstrnew
+=======
+type_e_objc_type_unsupported=04092_E_Der Typ "$1" wird nicht für die Verwendung mit der Objective-C Laufzeitumgebung unterstützt.
+% Objective-C makes extensive use of run time type information (RTTI). This format
+>>>>>>> origin/cpstrnew
 % is defined by the maintainers of the run time and can therefore not be adapted
 % to all possible Object Pascal types. In particular, types that depend on
 % reference counting by the compiler (such as ansistrings and certain kinds of
 % interfaces) cannot be used as fields of Objective-C classes, cannot be
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2128,6 +2204,9 @@ type_e_objc_type_unsupported=04092_E_Der Typ "$1" wird nicht für die Verwendung
 =======
 % directly passed to Objective-C methods, and cannot be encoded using \var{objc\_encode}.
 >>>>>>> graemeg/cpstrnew
+=======
+% directly passed to Objective-C methods, and cannot be encoded using \var{objc\_encode}.
+>>>>>>> origin/cpstrnew
 type_e_class_or_objcclass_type_expected=04093_E_Klasse oder Objective-C Klasse als Typ erwartet, erhielt aber "$1"
 % It is only possible to create class reference types of \var{class} and \var{objcclass}
 type_e_objcclass_type_expected=04094_E_Objective-C Klasse als Typ erwartet
@@ -2158,6 +2237,7 @@ type_w_procvar_univ_conflicting_para=04095_W_Erzwungener univ Parameter Typ in e
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % Note that this warning will not flag all potentially dangerous situations.
 =======
 % Note that this warning will not flagg all potentially dangerous situations.
@@ -2168,6 +2248,9 @@ type_w_procvar_univ_conflicting_para=04095_W_Erzwungener univ Parameter Typ in e
 =======
 % Note that this warning will not flagg all potentially dangerous situations.
 >>>>>>> graemeg/cpstrnew
+=======
+% Note that this warning will not flagg all potentially dangerous situations.
+>>>>>>> origin/cpstrnew
 % when \var{test} returns.
 type_e_generics_cannot_reference_itself=04096_E_Typ-Parameter bei der Spezialisation von Generics können den aktuel spezialisierten Typ nicht referenzieren
 % Recursive specializations of generics like \var{Type MyType = specialize MyGeneric<MyType>;} are not possible.
@@ -2175,6 +2258,7 @@ type_e_type_parameters_are_not_allowed_here=04097_E_Typ-Parameter sind für nich
 % Type parameters are only allowed for methods of generic classes, records or objects
 type_e_generic_declaration_does_not_match=04098_E_Die generische Deklaration von "$1" unterscheidet sich vom der vorherigen Deklaration
 % Generic declaration does not match the previous declaration
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2267,6 +2351,8 @@ type_e_function_reference_kind=04123_E_Unterprogrammreferenzen können nicht als
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -2274,6 +2360,7 @@ type_e_function_reference_kind=04123_E_Unterprogrammreferenzen können nicht als
 #
 # Symtable
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2287,6 +2374,9 @@ type_e_function_reference_kind=04123_E_Unterprogrammreferenzen können nicht als
 =======
 # 05083 is the last used one
 >>>>>>> graemeg/cpstrnew
+=======
+# 05083 is the last used one
+>>>>>>> origin/cpstrnew
 #
 % \section{Symbol handling}
 % This section lists all the messages that concern the handling of symbols.
@@ -2470,6 +2560,7 @@ sym_e_no_enumerator=05067_E_Kann keinen Zähler für den Typ "$1" finden
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % This means that compiler cannot find an appropriate enumerator to use in the for-in loop.
 % To create an enumerator you need to define an operator enumerator or add a public or published
 =======
@@ -2484,6 +2575,10 @@ sym_e_no_enumerator=05067_E_Kann keinen Zähler für den Typ "$1" finden
 % This means that compiler cannot find an apropriate enumerator to use in the for-in loop.
 % To create an enumerator you need to defind an operator enumerator or add a public or published
 >>>>>>> graemeg/cpstrnew
+=======
+% This means that compiler cannot find an apropriate enumerator to use in the for-in loop.
+% To create an enumerator you need to defind an operator enumerator or add a public or published
+>>>>>>> origin/cpstrnew
 % GetEnumerator method to the class or object definition.
 sym_e_no_enumerator_move=05068_E_Kann keine Methode "MoveNext" in der Aufzählung "$1" finden
 % This means that compiler cannot find a public MoveNext method with the Boolean return type in
@@ -2535,6 +2630,7 @@ sym_w_experimental_unit=05079_W_Unit "$1" ist experimentell
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 sym_e_formal_class_not_resolved=05080_E_Die vollständige Definition der formal deklarierten ObjC-Klasse "$1" fehlt in diesem Geltungsbereich
 % Objecive-C and Java classes can be imported formally, without using the unit in which it is fully declared.
 =======
@@ -2549,12 +2645,17 @@ sym_e_objc_formal_class_not_resolved=05080_E_Die vollständige Definition der fo
 sym_e_objc_formal_class_not_resolved=05080_E_Die vollständige Definition der formal deklarierten ObjC-Klasse "$1" fehlt in diesem Geltungsbereich
 % Objecive-C classes can be imported formally, without using the the unit in which it is fully declared.
 >>>>>>> graemeg/cpstrnew
+=======
+sym_e_objc_formal_class_not_resolved=05080_E_Die vollständige Definition der formal deklarierten ObjC-Klasse "$1" fehlt in diesem Geltungsbereich
+% Objecive-C classes can be imported formally, without using the the unit in which it is fully declared.
+>>>>>>> origin/cpstrnew
 % This enables making forward references to such classes and breaking circular dependencies amongst units.
 % However, as soon as you wish to actually do something with an entity of this class type (such as
 % access one of its fields, send a message to it, or use it to inherit from), the compiler requires the full definition
 % of the class to be in scope.
 sym_e_interprocgoto_into_init_final_code_not_allowed=05081_E_Gotos in die 'initialization'- oder 'finalization'-Blöcke einer Unit sind nicht erlaubt
 % Gotos into initialization or finalization blockse of units are not allowed.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2633,6 +2734,8 @@ sym_w_duplicate_id=05095_W_Duplikat des Bezeichners "$1"
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 sym_e_external_class_name_mismatch1=05082=E_Ungültiger externer Name "$1" für die formale Klasse "$2"
 sym_e_external_class_name_mismatch2=05083=E_Hierhin muss die vollständige Klassendefinition mit externem Namen "$1"
 % When a class is declared using a formal external definition, the actual external
@@ -2640,11 +2743,14 @@ sym_e_external_class_name_mismatch2=05083=E_Hierhin muss die vollständige Klass
 % (since both definitions refer to the same actual class type).
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -2652,6 +2758,7 @@ sym_e_external_class_name_mismatch2=05083=E_Hierhin muss die vollständige Klass
 #
 # Codegenerator
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2665,6 +2772,9 @@ sym_e_external_class_name_mismatch2=05083=E_Hierhin muss die vollständige Klass
 =======
 # 06052 is the last used one
 >>>>>>> graemeg/cpstrnew
+=======
+# 06052 is the last used one
+>>>>>>> origin/cpstrnew
 #
 % \section{Code generator messages}
 % This section lists all messages that can be displayed if the code
@@ -2807,6 +2917,7 @@ cg_e_goto_across_procedures_with_exceptions_not_allowed=06053_E_Eine Prozedur, d
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 cg_e_mod_only_defined_for_pos_quotient=06054_E_Im ISO-Modus ist der Operator mod nur für positive Quotienten definiert
 % In ISO pascal, only positive values are allowed for the quotient: \var{n mod m} is only valid if \var{m>0}.
 cg_d_autoinlining=06055_DL_Automatisches inlining: $1
@@ -2824,6 +2935,8 @@ cg_f_max_units_reached=06057_F_Maximale Anzahl an Units ($1) für das aktuelle Z
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -2831,6 +2944,7 @@ cg_f_max_units_reached=06057_F_Maximale Anzahl an Units ($1) für das aktuelle Z
 #
 # Assembler reader
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2844,6 +2958,9 @@ cg_f_max_units_reached=06057_F_Maximale Anzahl an Units ($1) für das aktuelle Z
 =======
 # 07110 is the last used one
 >>>>>>> graemeg/cpstrnew
+=======
+# 07110 is the last used one
+>>>>>>> origin/cpstrnew
 #
 asmr_d_start_reading=07000_DL_Starte $1 Stil Assembler Parsen
 % This informs you that an assembler block is being parsed
@@ -3098,6 +3215,7 @@ asmr_e_empty_regset=07109_E_Ein Registerset kann nicht leer sein
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 asmr_w_useless_got_for_local=07110_W_@GOTPCREL ist nutzlos und bei lokalen Symbole möglicherweise gefährlich
 % The use of @GOTPCREL supposes an extra indirection that is
 % not present if the symbol is local, which might lead to wrong assembler code
@@ -3171,6 +3289,8 @@ asmr_w_useless_got_for_local=07110_W_@GOTPCREL ist nutzlos und bei lokalen Symbo
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 
 asmr_w_useless_got_for_local=07110_W_@GOTPCREL ist nutzlos und bei lokalen Symbole möglicherweise gefährlich
 % The use of @GOTPCREL supposes an extra indirection that is
@@ -3179,7 +3299,10 @@ asmr_w_useless_got_for_local=07110_W_@GOTPCREL ist nutzlos und bei lokalen Symbo
 # Assembler/binary writers
 #
 # 08021 is the last used one
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 #
 asmw_f_too_many_asm_files=08000_F_Zu viele Assembler-Dateien
 % With smartlinking enabled, there are too many assembler
@@ -3332,6 +3455,7 @@ exec_e_cant_write_resource_file=09032_E_Kann die Resourcedatei "$1" nicht schrei
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 exec_n_backquote_cat_file_not_found=09033_N_Die Datei "$1" wurde mit dem Kommando cat nicht gefunden
 % The compiler did not find the file that should be expanded into linker parameters
 exec_w_init_file_not_found=09034_W_"$1" nicht gefunden; dies wird wahrscheinlich zu einem Fehler beim Linken führen
@@ -3346,6 +3470,8 @@ exec_e_static_lib_not_supported=09035_E_Statische Bibliotheken nicht unterstütz
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -3605,6 +3731,7 @@ unit_u_indirect_crc_changed=10062_U_Die CRC des indirekten Interface (Objekte/Kl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 unit_u_ppu_invalid_memory_model=10063_U_PPU ist für ein anderes i8086 Speichermodell kompiliert
 % This unit file was compiled for a different i8086 memory model and
 % cannot be read.
@@ -3614,6 +3741,8 @@ unit_u_ppu_invalid_memory_model=10063_U_PPU ist für ein anderes i8086 Speicherm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -3621,6 +3750,7 @@ unit_u_ppu_invalid_memory_model=10063_U_PPU ist für ein anderes i8086 Speicherm
 #
 # Options
 #
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3634,6 +3764,9 @@ unit_u_ppu_invalid_memory_model=10063_U_PPU ist für ein anderes i8086 Speicherm
 =======
 # 11048 is the last used one
 >>>>>>> graemeg/cpstrnew
+=======
+# 11048 is the last used one
+>>>>>>> origin/cpstrnew
 #
 # BeginOfTeX
 %
@@ -3644,6 +3777,7 @@ unit_u_ppu_invalid_memory_model=10063_U_PPU ist für ein anderes i8086 Speicherm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 option_usage=11000_O_$1 [Optionen] <Eingabedatei> [Optionen]
 =======
 >>>>>>> graemeg/cpstrnew
@@ -3651,6 +3785,8 @@ option_usage=11000_O_$1 [Optionen] <Eingabedatei> [Optionen]
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 option_only_one_source_support=11001_W_Es wird nur eine Quelldatei unterstützt. Wechsel für das Kompilieren von Quelldatei "$1" zu Quelldatei "$2"
 % You can specify only one source file on the command line. The last
 % one will be compiled, others will be ignored. This may indicate that
@@ -3774,6 +3910,7 @@ option_dwarf_smartlink_creation=11049_N_DWARF Debug-Information kann nicht benut
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 option_invalid_macosx_deployment_target=11050_E_Ungültiger Wert für die Umgebungsvariable MACOSX_DEPLOYMENT_TARGET: $1
 option_invalid_iphoneos_deployment_target=11051_E_Ungültiger Wert für die Umgebungsvariable IPHONEOS_DEPLOYMENT_TARGET: $1
 % On Mac OS X, the MACOSX\_DEPLOYMENT\_TARGET/IPHONEOS\_DEPLOYMENT\_TARGET environment variable can be
@@ -3796,6 +3933,8 @@ option_com_files_require_tiny_model=11057_E_Das Erstellen von .COM Dateien wird 
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 option_ignored_target=11047_W_Option "$1" wird für die ausgewählte Zielplattform ignoriert
 % Not all options are supported or implemented for all target platforms. This message informs you that a chosen
 % option is ignored for the currently selected target platform.
@@ -3804,11 +3943,14 @@ option_debug_external_unsupported=11048_W_Schalte externe Debuginformation aus, 
 % Mac OS X only DWARF debug information can be stored externally.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 %
 % \end{description}
 # EndOfTeX
@@ -3898,6 +4040,7 @@ Free Pascal Compiler Version $FPCFULLVERSION [$FPCDATE] für $FPCTARGET
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 Florian Klämpfl und andere
 =======
 Copyright (c) 1993-2011 Florian Klämpfl und andere
@@ -3908,6 +4051,9 @@ Copyright (c) 1993-2011 Florian Klämpfl und andere
 =======
 Copyright (c) 1993-2011 Florian Klämpfl und andere
 >>>>>>> graemeg/cpstrnew
+=======
+Copyright (c) 1993-2011 Florian Klämpfl und andere
+>>>>>>> origin/cpstrnew
 ]
 
 #
@@ -3971,6 +4117,7 @@ diskutiert werden können, usw.):
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #    8 = 8086 (16-bit) targets
 #    a = AArch64
 =======
@@ -3979,6 +4126,8 @@ diskutiert werden können, usw.):
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 #    A = ARM
 #    e = in extended debug mode only
 #    F = help for the 'fpc' binary (independent of the target compiler)
@@ -4016,6 +4165,7 @@ F*0*_Es werden nur Optionen aufgelistet, die für die voreingestellte oder ausge
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 8*2Anasm_Assembliere mit Hilfe von Nasm
 8*2Anasmobj_Assembliere mit Hilfe von Nasm
 3*2Anasm_Assembliere mit Hilfe von Nasm
@@ -4025,6 +4175,8 @@ F*0*_Es werden nur Optionen aufgelistet, die für die voreingestellte oder ausge
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 3*2Anasmcoff_COFF (Go32v2) Datei mit Hilfe von Nasm
 3*2Anasmelf_ELF32 (Linux) Datei mit Hilfe von Nasm
 3*2Anasmwin32_Win32 Objektdatei mit Hilfe von Nasm
@@ -4040,6 +4192,7 @@ F*0*_Es werden nur Optionen aufgelistet, die für die voreingestellte oder ausge
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 3*2Ayasm_Assembliere mit Hilfe von Yasm (experimentell)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4047,6 +4200,8 @@ F*0*_Es werden nur Optionen aufgelistet, die für die voreingestellte oder ausge
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 4*2Aas_Assembliere mit Hilfe von GNU AS
 4*2Agas_Assembliere mit Hilfe von GNU GAS
 4*2Agas-darwin_Assembliere darwin Mach-O64 mit Hilfe von GNU GAS
@@ -4073,6 +4228,7 @@ S*2Aas_Assembliere mit Hilfe von GNU AS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **2Ca<x>_Wähle ABI aus; fpc -i oder fpc -ia geben die möglichen Werte aus
 **2Cb_Erzeuge Code für die "big-endian"-Variante der Zielarchitektur
 =======
@@ -4080,6 +4236,8 @@ S*2Aas_Assembliere mit Hilfe von GNU AS
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2Ca<x>_Wähle ABI aus; fpc -i gibt die möglichen Werte aus
 **2Cb_Erzeuge "big-endian" Code
 >>>>>>> graemeg/cpstrnew
@@ -4168,6 +4326,7 @@ J*2Cv_Var/out Parameter copy-out Überprüfung
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 *g2gt_Lösche lokale Variablen (um eine Verwendung ohne Initialisierung zu finden; mehrere 't' ändern den Wert, mit dem überschrieben wird)
 =======
 *g2gt_Lösche lokale Variablen (um eine Verwendung ohne Initialisierung zu finden)
@@ -4178,10 +4337,14 @@ J*2Cv_Var/out Parameter copy-out Überprüfung
 =======
 *g2gt_Lösche lokale Variablen (um eine Verwendung ohne Initialisierung zu finden)
 >>>>>>> graemeg/cpstrnew
+=======
+*g2gt_Lösche lokale Variablen (um eine Verwendung ohne Initialisierung zu finden)
+>>>>>>> origin/cpstrnew
 *g2gv_Erzeuge ein mit Valgrind verfolgbares (traceable) Programm
 *g2gw_Erzeuge DWARFv2-Debug-Informationen (wie -gw2)
 *g2gw2_Erzeuge DWARFv2-Debug-Informationen
 *g2gw3_Erzeuge DWARFv3-Debug-Informationen
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4195,6 +4358,9 @@ J*2Cv_Var/out Parameter copy-out Überprüfung
 =======
 *g2gw4_Generate DWARFv4-Debug-Informationen (experimentell)
 >>>>>>> graemeg/cpstrnew
+=======
+*g2gw4_Generate DWARFv4-Debug-Informationen (experimentell)
+>>>>>>> origin/cpstrnew
 **1i_Zeige alle Informationen über den Compiler
 **2iD_Zeige Compilerdatum
 **2iSO_Zeige Compilerbetriebssystem
@@ -4269,6 +4435,7 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 **2Sv_Unterstütze Vektor-Verarbeitung (soweit vorhanden benutze CPU-Vektorerweiterungen)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4276,6 +4443,8 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2Sx_Exception Schlüsselwörter einschalten (Voreinstellung in Delphi/ObjFPC Moden)
 **2Sy_@<pointer> gibt einen typisierten Zeiger zurück, genau wie $T+
 **1s_Rufe weder Assembler noch Linker auf (nur mit -a)
@@ -4283,6 +4452,7 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 **2st_Erzeuge Script um auf dem Zielsystem zu linken
 **2sr_Überspringe die Phase der "register allocation" (mit -alr benutzen)
 **1T<x>_Zielbetriebssystem::
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4300,6 +4470,9 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 =======
 3*2Tdarwin_Darwin/Mac OS X
 >>>>>>> graemeg/cpstrnew
+=======
+3*2Tdarwin_Darwin/Mac OS X
+>>>>>>> origin/cpstrnew
 3*2Temx_OS/2 via EMX (einschliesslich EMX/RSX extender)
 3*2Tfreebsd_FreeBSD
 3*2Tgo32v2_Version 2 des DJ Delorie DOS extender
@@ -4322,6 +4495,7 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 4*2Tfreebsd_FreeBSD
 4*2Tiphonesim_iPhoneSimulator
 4*2Tlinux_Linux
@@ -4341,10 +4515,15 @@ F*2P<x>_Setze die Ziel-CPU (arm, avr, i386, jvm, m68k, mips, mipsel, powerpc, po
 4*2Tlinux_Linux
 4*2Twin64_Win64 (64 bit Windows systems)
 >>>>>>> graemeg/cpstrnew
+=======
+4*2Tlinux_Linux
+4*2Twin64_Win64 (64 bit Windows systems)
+>>>>>>> origin/cpstrnew
 6*2Tamiga_Commodore Amiga
 6*2Tatari_Atari ST/STe/TT
 6*2Tlinux_Linux
 6*2Tpalmos_PalmOS
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4363,10 +4542,14 @@ A*2Tdarwin_Darwin/iPhoneOS/iOS
 =======
 A*2Tdarwin_Darwin/iPhoneOS/iOS
 >>>>>>> graemeg/cpstrnew
+=======
+A*2Tdarwin_Darwin/iPhoneOS/iOS
+>>>>>>> origin/cpstrnew
 A*2Tlinux_Linux
 A*2Tnds_Nintendo DS
 A*2Tsymbian_Symbian
 A*2Twince_Windows CE
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4383,11 +4566,14 @@ P*2Taix_AIX
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 P*2Tamiga_AmigaOS
 P*2Tdarwin_Darwin und Mac OS X
 P*2Tlinux_Linux
 P*2Tmacos_Mac OS (classic)
 P*2Tmorphos_MorphOS
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4402,6 +4588,8 @@ p*2Tlinux_Linux
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 S*2Tsolaris_Solaris
 S*2Tlinux_Linux
 V*2Tembedded_Embedded
@@ -4453,6 +4641,7 @@ A*2WD_Benutze DEFFILE um Funktionen der DLL oder EXE zu exportieren (Windows)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 a*2We_Benutze externe Resourcen (Darwin)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -4460,6 +4649,8 @@ a*2We_Benutze externe Resourcen (Darwin)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 A*2We_Benutze externe Resourcen (Darwin)
 P*2We_Benutze externe Resourcen (Darwin)
 p*2We_Benutze externe Resourcen (Darwin)
@@ -4527,11 +4718,14 @@ F*2Xp<x>_Suche nach der Compilerbinary zuerst im Verzeichnis <x>
 **2XP<x>_Stelle den Namen der Compiler-Hilfsprogrammen den Prefix <x> voran
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 **2Xr<x>_Setze den rlink-Pfad des Linker zu <x> (benötigt für cross compile, siehe ld-Manual für mehr Informationen) (BeOS, Linux)
 **2XR<x>_Stelle allen Linker-Suchpfaden den Namen <x> voran (BeOS, Darwin, FreeBSD, Linux, Mac OS, Solaris)
 **2Xs_Entferne alle Symbole aus der ausführbaren Datei

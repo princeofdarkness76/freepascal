@@ -69,6 +69,7 @@ function DI_Identify(id: PDI_DriveID): cint; cdecl; external;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function DI_CheckDVDSupport(): cint; cdecl; external;
 =======
 
@@ -79,6 +80,9 @@ function DI_CheckDVDSupport(): cint; cdecl; external;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 function DI_ReadDiscID(id: pcuint64): cint; cdecl; external;
 function DI_GetError(error: Pcuint32): cint; cdecl; external;
 function DI_GetCoverRegister(status: Pcuint32): cint; cdecl; external;

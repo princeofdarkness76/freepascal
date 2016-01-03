@@ -59,6 +59,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AudioHardwareBase,
   AudioHardwareDeprecated,
 =======
@@ -67,6 +68,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   AudioOutputUnit,
   AudioUnitCarbonViews,
   AudioUnitParameters,
@@ -96,6 +99,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CFFileDescriptor,
   CFFileSecurity,
 =======
@@ -104,6 +108,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   CFHTTPAuthentication,
   CFHTTPMessage,
   CFHTTPStream,
@@ -197,6 +203,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   CSIdentityBase,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -204,6 +211,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   CSIdentityQuery,
   CTFont,
   CTFontCollection,
@@ -263,6 +272,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   DictionaryServices,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -270,6 +280,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   DigitalHubRegistry,
   Displays,
   Drag,
@@ -344,6 +356,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   KeyEvents,
 >>>>>>> graemeg/cpstrnew
@@ -353,6 +366,9 @@ uses
 =======
   KeyEvents,
 >>>>>>> graemeg/cpstrnew
+=======
+  KeyEvents,
+>>>>>>> origin/cpstrnew
   LSInfo,
   LSOpen,
   LSQuarantine,
@@ -428,6 +444,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   QLThumbnail,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -435,6 +452,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   QLThumbnailImage,
   QTML,
   QTSMovie,
@@ -467,6 +486,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SKAnalysis,
   SKDocument,
   SKIndex,
@@ -478,6 +498,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ScalerStreamTypes,
   Scrap,
   Script,
@@ -518,6 +540,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   acl,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -525,6 +548,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   cblas,
   certextensions,
   cssmapple,

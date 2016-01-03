@@ -10,6 +10,7 @@ loaders=$(LOADERS)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=system uuchar objpas macpas iso7185 buildrtl cpall lineinfo lnfodwrf
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
@@ -20,6 +21,9 @@ units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 =======
 units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
 >>>>>>> graemeg/cpstrnew
+=======
+units=system objpas macpas iso7185 buildrtl lineinfo lnfodwrf
+>>>>>>> origin/cpstrnew
 implicitunits=sysinitpas sysinitcyg sysinitgprof \
       extpas \
       ctypes strings \
@@ -43,11 +47,14 @@ implicitunits=sysinitpas sysinitcyg sysinitgprof \
       winsysut sharemem exeinfo fpintres windirs
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 # shared=$(DLLS)
 

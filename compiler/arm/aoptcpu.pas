@@ -71,6 +71,7 @@ Type
     { uses the same constructor as TAopObj }
     procedure PeepHoleOptPass2;override;
   End;
+<<<<<<< HEAD
 
   TCpuPreRegallocScheduler = class(TAsmScheduler)
     function SchedulerPass1Cpu(var p: tai): boolean;override;
@@ -91,6 +92,8 @@ Type
   End;
 
   function MustBeLast(p : tai) : boolean;
+=======
+>>>>>>> origin/cpstrnew
 
 Implementation
 
@@ -2362,6 +2365,7 @@ Implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   function TCpuAsmOptimizer.RegInInstruction(Reg: TRegister; p1: tai): Boolean;
     begin
       If (p1.typ = ait_instruction) and (taicpu(p1).opcode=A_BL) then
@@ -3038,6 +3042,8 @@ Implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   procedure TCpuThumb2AsmOptimizer.PeepHoleOptPass2;
     begin
@@ -3046,11 +3052,14 @@ Implementation
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   casmoptimizer:=TCpuAsmOptimizer;
   cpreregallocscheduler:=TCpuPreRegallocScheduler;

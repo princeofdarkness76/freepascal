@@ -54,6 +54,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function handle_threadvar_access: tnode; virtual;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -61,6 +62,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        public
           loadnodeflags : set of tloadnodeflags;
           symtableentry : tsym;
@@ -233,6 +236,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ppufile.getsmallset(loadnodeflags);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -240,6 +244,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -251,6 +257,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ppufile.putsmallset(loadnodeflags);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -258,6 +265,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -525,6 +534,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner),lpf_forpara);
 =======
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
@@ -535,6 +545,9 @@ implementation
 =======
                 left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
 >>>>>>> graemeg/cpstrnew
+=======
+                left:=cloadparentfpnode.create(tprocdef(p.owner.defowner));
+>>>>>>> origin/cpstrnew
               end;
           end
         { we should never go from nested to non-nested }
@@ -869,6 +882,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             not is_dynamic_array(left.resultdef) and
             not(target_info.system in systems_garbage_collected_managed_types) then
 =======
@@ -876,6 +890,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             not is_dynamic_array(left.resultdef) then
 >>>>>>> graemeg/cpstrnew
          begin

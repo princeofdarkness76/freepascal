@@ -19,6 +19,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
@@ -32,6 +33,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   console: TPTCConsole = nil;
   format: TPTCFormat = nil;
   surface: TPTCSurface = nil;
@@ -42,11 +45,14 @@ var
   color: TPTCColor = nil;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   try
     { create console }
@@ -75,6 +81,7 @@ begin
       { get random area size }
       size := Random(width div 8);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -135,6 +142,21 @@ begin
         surface.copy(console);
 
 >>>>>>> graemeg/cpstrnew
+=======
+      try
+        { setup clear area }
+        area := TPTCArea.Create(x-size, y-size, x+size, y+size);
+
+        { create random color }
+        color := TPTCColor.Create(Random, Random, Random);
+
+        { clear surface area with color }
+        surface.clear(color, area);
+
+        { copy to console }
+        surface.copy(console);
+
+>>>>>>> origin/cpstrnew
         { update console }
         console.update;
       finally
@@ -148,11 +170,14 @@ begin
     format.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   except
     on error: TPTCError do
       { report error }

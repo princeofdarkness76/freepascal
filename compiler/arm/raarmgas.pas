@@ -704,6 +704,7 @@ Unit raarmgas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             case actopcode of
               A_IT,A_ITE,A_ITT,
@@ -731,6 +732,8 @@ Unit raarmgas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             
             if actopcode in [A_IT,A_ITE,A_ITT,
                              A_ITEE,A_ITTE,A_ITET,A_ITTT,
@@ -753,11 +756,14 @@ Unit raarmgas;
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           end;
 
 
@@ -792,6 +798,7 @@ Unit raarmgas;
               end;
           end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -875,6 +882,8 @@ Unit raarmgas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       var
         tempreg : tregister;
         ireg : tsuperregister;
@@ -1051,6 +1060,7 @@ Unit raarmgas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM,A_VLDM,A_VSTM,A_SRS,A_RFE]) then
 =======
               else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM]) then
@@ -1061,6 +1071,9 @@ Unit raarmgas;
 =======
               else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM]) then
 >>>>>>> graemeg/cpstrnew
+=======
+              else if (actasmtoken=AS_NOT) and (actopcode in [A_LDM,A_STM,A_FLDM,A_FSTM]) then
+>>>>>>> origin/cpstrnew
                 begin
                   consume(AS_NOT);
                   oper.opr.typ:=OPR_REFERENCE;
@@ -1081,6 +1094,7 @@ Unit raarmgas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               while actasmtoken<>AS_RSBRACKET do
                 begin
                   if actasmtoken=AS_REGISTER then
@@ -1091,6 +1105,8 @@ Unit raarmgas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               while true do
                 begin
                   if actasmtoken=AS_REGISTER then
@@ -1098,11 +1114,14 @@ Unit raarmgas;
                       include(registerset,getsupreg(actasmregister));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                       if regtype<>R_INVALIDREGISTER then
                         begin
                           if (getregtype(actasmregister)<>regtype) or
@@ -1139,6 +1158,7 @@ Unit raarmgas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if actasmtoken=AS_XOR then
                 begin
                   consume(AS_XOR);
@@ -1152,6 +1172,8 @@ Unit raarmgas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               if (registerset=[]) then
                 Message(asmr_e_empty_regset);
             end;
@@ -1320,6 +1342,7 @@ Unit raarmgas;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         postfix2strsorted : array[1..70] of string[9] = (
           '.F32.S32','.F32.U32','.S32.F32','.U32.F32','.F64.S32','.F64.U32','.S32.F64','.U32.F64',
           '.F32.S16','.F32.U16','.S16.F32','.U16.F32','.F64.S16','.F64.U16','.S16.F64','.U16.F64',
@@ -1349,6 +1372,8 @@ Unit raarmgas;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         postfix2strsorted : array[1..31] of string[3] = (
           'IAD','DBD','FDD','EAD',
           'IAS','DBS','FDS','EAS',
@@ -1529,6 +1554,15 @@ Unit raarmgas;
           end;
 <<<<<<< HEAD
 =======
+        { check for format postfix }
+        if length(hs)>0 then
+          begin
+            if upcase(copy(hs,1,2)) = '.W' then
+              begin
+                actwideformat:=true;
+                delete(hs,1,2);
+              end;
+          end;
         { check for format postfix }
         if length(hs)>0 then
           begin

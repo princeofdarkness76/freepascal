@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FPUFPA) or defined(FPUFPA10) or defined(FPUFPA11) or defined(FPUVFPV2) or defined(FPUVFPV3) or defined(FPUVFPV3_D16)}
     {$ifndef FPC_SYSTEM_HAS_ABS}
 =======
@@ -28,6 +29,9 @@
 =======
 {$if defined(FPUFPA) or defined(FPUFPA10) or defined(FPUFPA11) or defined(FPUVFPV2) or defined(FPUVFPV3)}
 >>>>>>> graemeg/cpstrnew
+=======
+{$if defined(FPUFPA) or defined(FPUFPA10) or defined(FPUFPA11) or defined(FPUVFPV2) or defined(FPUVFPV3)}
+>>>>>>> origin/cpstrnew
     {$define FPC_SYSTEM_HAS_ABS}
     function fpc_abs_real(d : ValReal) : ValReal;compilerproc;
     begin

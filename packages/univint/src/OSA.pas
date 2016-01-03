@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    OSA-148~28
 =======
      Version:    OSA-136~14
@@ -16,6 +17,9 @@
 =======
      Version:    OSA-136~14
 >>>>>>> graemeg/cpstrnew
+=======
+     Version:    OSA-136~14
+>>>>>>> origin/cpstrnew
  
      Copyright:  © 1992-2008 by Apple Inc., all rights reserved
  
@@ -29,6 +33,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
@@ -36,6 +41,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Pascal Translation Updated: Gorazd Krosl <gorazd_1957@yahoo.ca>, October 2009 }
 
 >>>>>>> graemeg/cpstrnew
@@ -96,6 +103,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -107,6 +115,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -125,6 +135,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -186,6 +197,23 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -195,6 +223,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -202,10 +231,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -304,6 +336,8 @@ interface
 <<<<<<< HEAD
 {$elsec}
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -335,6 +369,7 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 {$elsec}
@@ -342,6 +377,8 @@ interface
 =======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -383,6 +420,7 @@ uses MacTypes,AEDataModel,MacErrors,AppleEvents,AEObjects,AEInteraction,Componen
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc TARGET_OS_MAC}
 
@@ -396,6 +434,11 @@ uses MacTypes,AEDataModel,MacErrors,AppleEvents,AEObjects,AEInteraction,Componen
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {$ALIGN POWER}
 
 
@@ -481,6 +524,7 @@ type
         OSAIDs allow transparent manipulation of scripts associated with
         various scripting systems.
     }
+<<<<<<< HEAD
 const
 	kOSANullScript = 0;
 
@@ -525,6 +569,37 @@ function NewOSACreateAppleEventUPP( userRoutine: OSACreateAppleEventProcPtr ): O
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 >>>>>>> graemeg/cpstrnew
+=======
+const
+	kOSANullScript = 0;
+
+{ No -script constant. }
+const
+	kOSANullMode = 0;    { sounds better }
+	kOSAModeNull = 0;     { tastes consistent }
+
+{
+        Some routines take flags that control their execution.  This constant
+        declares default mode settings are used.
+    }
+type
+	OSACreateAppleEventProcPtr = function( theAEEventClass: AEEventClass; theAEEventID: AEEventID; const (*var*) target: AEAddressDesc; returnID: SInt16; transactionID: SInt32; var result: AppleEvent; refCon: SRefCon ): OSErr;
+	OSASendProcPtr = function( const (*var*) theAppleEvent: AppleEvent; var reply: AppleEvent; sendMode: AESendMode; sendPriority: AESendPriority; timeOutInTicks: SInt32; idleProc: AEIdleUPP; filterProc: AEFilterUPP; refCon: SRefCon ): OSErr;
+	OSACreateAppleEventUPP = OSACreateAppleEventProcPtr;
+	OSASendUPP = OSASendProcPtr;
+
+{
+ *  NewOSACreateAppleEventUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ }
+function NewOSACreateAppleEventUPP( userRoutine: OSACreateAppleEventProcPtr ): OSACreateAppleEventUPP; external name '_NewOSACreateAppleEventUPP';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+>>>>>>> origin/cpstrnew
 {
  *  NewOSASendUPP()
  *  
@@ -997,6 +1072,7 @@ function OSAScriptError( scriptingComponent: ComponentInstance; selector: OSType
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 const
 	kOSAErrorNumber = keyErrorNumber;
@@ -1116,6 +1192,8 @@ const
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     }
 const
 	kOSAErrorNumber = keyErrorNumber;
@@ -1204,9 +1282,12 @@ const
 {  0x65726e67   }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	typeOSAErrorRange = FourCharCode('erng');
 
 { Field of a typeOSAErrorRange record of typeSInt16 }
@@ -2046,6 +2127,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {
         Special ResumeDispatchProc constant which may be passed to 
@@ -2128,6 +2210,13 @@ const
 {
         Special ResumeDispatchProc constant which may be passed to 
         OSASetResumeDispatchProc indicating that no dispatch should occur.
+=======
+
+{
+        Special ResumeDispatchProc constant which may be passed to 
+        OSASetResumeDispatchProc indicating that the handler registered
+        in the application with AEInstallEventHandler should be used.
+>>>>>>> origin/cpstrnew
         
         NOTE:   Had to remove the cast (AEEventHandlerUPP).  The C compiler
                 doesn't allow pointer types to be assigned to an enum.  All
@@ -2135,7 +2224,22 @@ const
                 Pascal.
     }
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+	kOSANoDispatch = kAENoDispatch;
+
+{
+        Special ResumeDispatchProc constant which may be passed to 
+        OSASetResumeDispatchProc indicating that no dispatch should occur.
+        
+        NOTE:   Had to remove the cast (AEEventHandlerUPP).  The C compiler
+                doesn't allow pointer types to be assigned to an enum.  All
+                constants must be assigned as enums to translate properly to
+                Pascal.
+    }
+const
+>>>>>>> origin/cpstrnew
 	kOSADontUsePhac = $0001;
 
 {

@@ -97,6 +97,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {$linklib pangocairo-1.0}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -104,6 +105,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     {$else}
       {$ifdef UseCustomLibs}
       gtklib = '';

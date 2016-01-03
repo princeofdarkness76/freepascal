@@ -177,23 +177,29 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$push}
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$undef rangeon}
   {$ifopt R+}
      {$define rangeon}
   {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$R-}
   while True do begin
     mask := $7f shl bit;
@@ -209,6 +215,7 @@ begin
     Inc(TheEnd);
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -228,6 +235,11 @@ begin
     {$R+}
   {$endif}
 >>>>>>> graemeg/cpstrnew
+=======
+  {$ifdef rangeon}
+    {$R+}
+  {$endif}
+>>>>>>> origin/cpstrnew
   
   buf := @Value;
   Result := TheEnd+1;

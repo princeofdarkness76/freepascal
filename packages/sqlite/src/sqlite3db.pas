@@ -352,6 +352,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    sqlite3_open(PAnsiChar(DBFileName), @fSQLite);
 =======
    sqlite3_open(name,@fSQLite);
@@ -362,6 +363,9 @@ begin
 =======
    sqlite3_open(name,@fSQLite);
 >>>>>>> graemeg/cpstrnew
+=======
+   sqlite3_open(name,@fSQLite);
+>>>>>>> origin/cpstrnew
    sqlite3_free(fPMsg);
    if fSQLite <> nil then
    begin

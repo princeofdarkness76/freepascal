@@ -51,6 +51,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __ptFlags: record
       case byte of
        0: (_anonbitfield_NSPredicateEditorRowTemplate0: cuint);
@@ -64,6 +65,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __ptFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSPredicateEditorRowTemplate0: cuint);
@@ -73,11 +76,14 @@
         reserved: 0..((1 shl 30)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _patternReserved: id;

@@ -45,6 +45,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {$i rmipsgas.inc}
 =======
         {$i rmipsstd.inc}
@@ -55,6 +56,9 @@ const
 =======
         {$i rmipsstd.inc}
 >>>>>>> graemeg/cpstrnew
+=======
+        {$i rmipsstd.inc}
+>>>>>>> origin/cpstrnew
     );
 
   gas_regname_index: array[tregisterindex] of tregisterindex = (
@@ -64,6 +68,7 @@ const
 
 function findreg_by_gasname(const s: string): tregisterindex;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +82,9 @@ var
 =======
   i, p: tregisterindex;
 >>>>>>> graemeg/cpstrnew
+=======
+  i, p: tregisterindex;
+>>>>>>> origin/cpstrnew
 begin
   for p := low(tregisterindex) to high(tregisterindex) do
   begin
@@ -120,12 +128,15 @@ end.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
   $Log: itcpugas.pas,v $
   Revision 1.7  2005/02/14 17:13:10  peter
@@ -134,8 +145,11 @@ end.
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

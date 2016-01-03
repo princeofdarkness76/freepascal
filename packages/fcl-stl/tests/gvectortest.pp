@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ASSERTIONS ON}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -9,6 +10,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 unit gvectortest;
 
@@ -48,6 +51,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
   writeln(data[11]);
 =======
@@ -56,6 +60,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   
   AssertEquals('Wrong size', 11, data.size);
   AssertEquals('IsEmpty', false, data.IsEmpty);

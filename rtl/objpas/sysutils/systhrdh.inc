@@ -27,6 +27,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_THREADING}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -34,6 +35,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    private
       crit : TRtlCriticalSection;
    public
@@ -50,6 +53,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_HAS_FEATURE_THREADING}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -57,6 +61,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    private
       freaderqueue: peventstate;
       fwritelock : TRtlCriticalSection;
@@ -73,6 +79,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$endif FPC_HAS_FEATURE_THREADING}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -80,4 +87,6 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    end;

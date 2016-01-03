@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2011 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -46,6 +50,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TX11Modes = class(TObject)
 =======
   TX11Modes = Class(TObject)
@@ -56,6 +61,9 @@ type
 =======
   TX11Modes = Class(TObject)
 >>>>>>> graemeg/cpstrnew
+=======
+  TX11Modes = Class(TObject)
+>>>>>>> origin/cpstrnew
   private
     FDisplay: PDisplay;
     FScreen: cint;
@@ -64,6 +72,7 @@ type
     function GetHeight: Integer; virtual; abstract;
   public
     constructor Create(ADisplay: PDisplay; AScreen: cint); virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +86,9 @@ type
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); virtual; abstract;
+>>>>>>> origin/cpstrnew
     procedure SetBestMode(AWidth, AHeight: Integer); virtual; abstract;
     procedure RestorePreviousMode; virtual; abstract;
     property Width: Integer read GetWidth;
@@ -94,6 +106,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat); override;
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
@@ -104,6 +117,9 @@ type
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
+>>>>>>> origin/cpstrnew
     procedure SetBestMode(AWidth, AHeight: Integer); override;
     procedure RestorePreviousMode; override;
   end;
@@ -139,6 +155,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat); override;
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
@@ -149,6 +166,9 @@ type
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
+>>>>>>> origin/cpstrnew
     procedure SetBestMode(AWidth, AHeight: Integer); override;
     procedure RestorePreviousMode; override;
   end;
@@ -174,6 +194,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetModes(var AModes: TPTCModeList; ACurrentDesktopFormat: IPTCFormat); override;
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
@@ -184,6 +205,9 @@ type
 =======
     procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure GetModes(var AModes: TPTCModeDynArray; ACurrentDesktopFormat: TPTCFormat); override;
+>>>>>>> origin/cpstrnew
     procedure SetBestMode(AWidth, AHeight: Integer); override;
     procedure RestorePreviousMode; override;
   end;

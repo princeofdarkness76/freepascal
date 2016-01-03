@@ -41,6 +41,7 @@ unit ccharset;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           cpname : string[20];
           cp : word;
 =======
@@ -55,6 +56,10 @@ unit ccharset;
           cpname : string[20];   
           cp : word;           
 >>>>>>> graemeg/cpstrnew
+=======
+          cpname : string[20];   
+          cp : word;           
+>>>>>>> origin/cpstrnew
           map : punicodecharmapping;
           lastchar : longint;
           next : punicodemap;
@@ -64,6 +69,7 @@ unit ccharset;
        tcp2unicode = class(tcsconvert)
        end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -92,6 +98,12 @@ unit ccharset;
     function getmap(const s : string) : punicodemap; 
     function getmap(cp : word) : punicodemap;     
 >>>>>>> graemeg/cpstrnew
+=======
+    function loadunicodemapping(const cpname,f : string; cp :word) : punicodemap;
+    procedure registermapping(p : punicodemap);
+    function getmap(const s : string) : punicodemap; 
+    function getmap(cp : word) : punicodemap;     
+>>>>>>> origin/cpstrnew
     function mappingavailable(const s : string) : boolean;
     function mappingavailable(cp :word) : boolean;
     function getunicode(c : char;p : punicodemap) : tunicodechar;
@@ -242,6 +254,7 @@ unit ccharset;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;////////
 =======
       end;    
@@ -252,6 +265,9 @@ unit ccharset;
 =======
       end;    
 >>>>>>> graemeg/cpstrnew
+=======
+      end;    
+>>>>>>> origin/cpstrnew
 
     function getmap(cp : word) : punicodemap;
 
@@ -284,6 +300,7 @@ unit ccharset;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       end;
 =======
       end;   
@@ -294,6 +311,9 @@ unit ccharset;
 =======
       end;   
 >>>>>>> graemeg/cpstrnew
+=======
+      end;   
+>>>>>>> origin/cpstrnew
 
     function mappingavailable(const s : string) : boolean;
 

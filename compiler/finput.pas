@@ -29,6 +29,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cutils,globtype,cclasses,cstreams;
 =======
       cutils,cclasses,cstreams;
@@ -39,6 +40,9 @@ interface
 =======
       cutils,cclasses,cstreams;
 >>>>>>> graemeg/cpstrnew
+=======
+      cutils,cclasses,cstreams;
+>>>>>>> origin/cpstrnew
 
     const
        InputFileBufSize=32*1024+1;
@@ -470,6 +474,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           fileopen:=CStreamError=0;
 =======
           fileopen:=true;
@@ -480,6 +485,9 @@ uses
 =======
           fileopen:=true;
 >>>>>>> graemeg/cpstrnew
+=======
+          fileopen:=true;
+>>>>>>> origin/cpstrnew
         except
         end;
       end;

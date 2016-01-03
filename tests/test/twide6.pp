@@ -26,6 +26,7 @@ var
   u1,u2,u3,u4: unicodestring;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   i: longint;
 >>>>>>> graemeg/cpstrnew
 begin
@@ -71,6 +72,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   i: longint;
 begin
   w1:='aé'#0'èàł'#$d87e#$dc04;
@@ -127,9 +130,12 @@ begin
     doerror(22);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -194,20 +200,26 @@ begin
   if (w4 <> w2) then
     doerror(22);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { normal lower case testing (widestring) }
 procedure testlower;
 var
@@ -306,7 +318,68 @@ end;
 { normal lower case testing (unicodestring) }
 procedure testloweru;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+var
+  s: ansistring;
+  w1,w2,w3,w4: unicodestring;
+  i: longint;
+begin
+  w1:='AÉ'#0'ÈÀŁ'#$d87e#$dc04;
+  w2:='aé'#0'èàł'#$d87e#$dc04;
+{$ifdef print}
+// the utf-8 output can confuse the testsuite parser
+  writeln('original: ',w1);
+  writeln('original lower: ',w2);
+{$endif print}
+  s:=w1;
+  w3:=s;
+  w4:=AnsiLowerCase(s);
+  { filter out unsupported characters }
+  for i:=1 to length(w3) do
+    if w3[i]='?' then
+      begin
+        w2[i]:='?';
+        w1[i]:='?';
+      end;
+  w1:=unicodelowercase(w1);
+{$ifdef print}
+  writeln('unicodelower: ',w1);
+  writeln('ansilower: ',w4);
+{$endif print}
+  if (w1 <> w2) then
+    doerror(3);
+  if (w4 <> w2) then
+    doerror(4);
+
+
+  w1:='AÉÈÀŁ'#$d87e#$dc04;
+  w2:='aéèàł'#$d87e#$dc04;
+  s:=w1;
+  w3:=s;
+  w4:=AnsiStrLower(pchar(s));
+  { filter out unsupported characters }
+  for i:=1 to length(w3) do
+    if w3[i]='?' then
+      begin
+        w2[i]:='?';
+        w1[i]:='?';
+      end;
+  w1:=unicodelowercase(w1);
+{$ifdef print}
+  writeln('unicodelower: ',w1);
+  writeln('ansistrlower: ',w4);
+{$endif print}
+  if (w1 <> w2) then
+    doerror(3);
+  if (w4 <> w2) then
+    doerror(4);
+end;
+
+{ upper case testing with a missing utf-16 pair at the end }
+procedure testupperinvalid;
+>>>>>>> origin/cpstrnew
 var
   s: ansistring;
   w1,w2,w3,w4: unicodestring;

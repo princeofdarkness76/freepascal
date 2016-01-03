@@ -37,6 +37,7 @@ unit Hermes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(darwin) and defined(cpui386)}
 { darwin/i386 requires a 16 byte aligned stack, and inserts code for that on
   entry in assembler routines (unless they are declared with "nostackframe").
@@ -71,6 +72,10 @@ interface
 interface
 
 >>>>>>> graemeg/cpstrnew
+=======
+interface
+
+>>>>>>> origin/cpstrnew
 const
   HERMES_CONVERT_NORMAL = 0;
   HERMES_CONVERT_DITHER = 1;
@@ -468,6 +473,7 @@ const
   );
   numConverters: array [0..4] of Integer = (10,10,10,11,4);
   refcount: Integer = 0;
+<<<<<<< HEAD
 
 var
   Clearers: array [0..3] of PHermesClearer;
@@ -477,6 +483,17 @@ var
 
 {$I hermes_debug.inc}
 
+=======
+
+var
+  Clearers: array [0..3] of PHermesClearer;
+  numClearers: Integer;
+  standardConverters: array [0..4] of ^PHermesConverter;
+  equalConverters: array [0..3] of PHermesConverter;
+
+{$I hermes_debug.inc}
+
+>>>>>>> origin/cpstrnew
 {$I hermes_dither.inc}
 {$I headp.inc}
 {$IFDEF I386_ASSEMBLER}

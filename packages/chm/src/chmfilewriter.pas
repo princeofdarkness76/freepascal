@@ -63,6 +63,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     fAnchorList    : TStringList;
     FSpareString   : TStringIndex;
     FBasePath      : String;     // location of the .hhp file. Needed to resolve relative paths
@@ -84,6 +85,10 @@ type
     FSpareString   : TStringIndex;
     FBasePath       : String;     // location of the .hhp file. Needed to resolve relative paths
 >>>>>>> graemeg/cpstrnew
+=======
+    FSpareString   : TStringIndex;
+    FBasePath       : String;     // location of the .hhp file. Needed to resolve relative paths
+>>>>>>> origin/cpstrnew
   protected
     function GetData(const DataName: String; out PathInChm: String; out FileName: String; var Stream: TStream): Boolean;
     procedure LastFileAdded(Sender: TObject);
@@ -95,6 +100,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function  SanitizeURL(const basepath, instring, localpath, localname:string; var outstring:String):Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -102,6 +108,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   public
     constructor Create; virtual;
     destructor Destroy; override;
@@ -109,6 +117,7 @@ type
     procedure LoadFromhhp (AFileName:String;LeaveInclude:Boolean); virtual;
     procedure SaveToFile(AFileName: String); virtual;
     procedure WriteChm(AOutStream: TStream); virtual;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -124,6 +133,9 @@ type
 =======
     function ProjectDir: String;
 >>>>>>> graemeg/cpstrnew
+=======
+    function ProjectDir: String;
+>>>>>>> origin/cpstrnew
     procedure AddFileWithContext(contextid:integer;filename:ansistring;contextname:ansistring='');
     procedure Error(errorkind:TChmProjectErrorKind;msg:String;detaillevel:integer=0);
     // though stored in the project file, it is only there for the program that uses the unit
@@ -150,6 +162,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property ReadmeMessage : String read FReadmeMessage write FReadmeMessage;
     property AllowedExtensions : TStringList read FAllowedExtensions;
     property Cores : integer read fcores write fcores; 
@@ -162,6 +175,9 @@ type
 =======
     property AllowedExtensions : TStringList read FAllowedExtensions;
 >>>>>>> graemeg/cpstrnew
+=======
+    property AllowedExtensions : TStringList read FAllowedExtensions;
+>>>>>>> origin/cpstrnew
   end;
 
   TChmContextNode = Class
@@ -178,6 +194,7 @@ Const
 implementation
 
 uses XmlCfg, CHMTypes;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -204,6 +221,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { TChmProject }
 
@@ -232,6 +251,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   writer.cores:=fcores;
   {$ifdef chmindex}
     Writeln('binindex filename ',IndexFileName);
@@ -245,6 +265,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$ifdef chmindex}
     Writeln('binindex filename ',IndexFileName);
   {$endif}
@@ -253,16 +275,20 @@ begin
     Writer.AppendIndex(IndexStream);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     if MakeBinaryIndex then
     begin
       {$ifdef chmindex}
         Writeln('into binindex ');
       {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -281,6 +307,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       IndexStream.Position := 0;
       IndexSitemap := TChmSiteMap.Create(stIndex);
       indexSitemap.LoadFromStream(IndexStream);
@@ -322,6 +350,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fAnchorList := TStringList.Create;
   fAnchorList.Sorted := True;
   fAnchorList.OwnsObjects := True;
@@ -331,6 +360,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 destructor TChmProject.Destroy;
@@ -348,6 +379,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fAllowedExtensions.Free;
   FToc.free;
   FIndex.free;
@@ -360,6 +392,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   inherited Destroy;
 end;
 
@@ -554,6 +588,7 @@ var i,j : integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     keyupper,valueupper : string;
 =======
     keyupper : string;
@@ -564,6 +599,9 @@ var i,j : integer;
 =======
     keyupper : string;
 >>>>>>> graemeg/cpstrnew
+=======
+    keyupper : string;
+>>>>>>> origin/cpstrnew
 begin
  { Defaults other than global }
    MakeBinaryIndex:=True;
@@ -584,6 +622,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     valueupper:=stringReplace(value, '\', '/', [rfReplaceAll]);
     valueupper:= StringReplace(valueupper, '//', '/', [rfReplaceAll]);
     node.URLName:=valueupper;
@@ -596,6 +635,9 @@ begin
 =======
     node.URLName:=value;
 >>>>>>> graemeg/cpstrnew
+=======
+    node.URLName:=value;
+>>>>>>> origin/cpstrnew
     node.contextname:=key;
   end
  else
@@ -731,6 +773,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           nd.urlname:=StringReplace(strs[j],'\', '/', [rfReplaceAll]);
 =======
           nd.urlname:=strs[j];
@@ -741,6 +784,9 @@ begin
 =======
           nd.urlname:=strs[j];
 >>>>>>> graemeg/cpstrnew
+=======
+          nd.urlname:=strs[j];
+>>>>>>> origin/cpstrnew
           nd.contextnumber:=0;
           nd.contextname:='';
           Files.AddObject(nd.urlname,nd);
@@ -883,6 +929,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    protocols   : array[0..3] of string = ('HTTP:','FTP:','MS-ITS:', 'MAILTO:');
    protocollen : array[0..3] of integer= ( 5 ,4 ,7, 7);
 
@@ -894,6 +941,8 @@ var i,j,len : integer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    protocols   : array[0..2] of string = ('HTTP:','FTP:','MS-ITS:');
    protocollen : array[0..2] of integer= ( 5 ,4 ,7);
 
@@ -901,11 +950,14 @@ function sanitizeurl(const basepath,instring:string;var outstring:String):Boolea
 var i,j,len : integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   result:=true; outstring:='';
   if instring='' then
@@ -917,6 +969,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   { Check for protocols before adding local path }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -924,6 +977,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   i:=0;
   while (i<=high(protocols)) do
     begin
@@ -931,6 +986,7 @@ begin
         exit(false);
       inc(i);
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -955,6 +1011,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    outstring:=instring;
 
    i:=pos('#',outstring);
@@ -962,11 +1020,14 @@ begin
      delete(outstring,i,length(outstring)-i+1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   outstring:=expandfilename(StringReplace(outstring,'%20',' ',[rfReplaceAll]));// expandfilename(instring));
 
@@ -992,6 +1053,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function findattribute(node:TDomNode;attributename:string):String;
 var
     Attributes: TDOMNamedNodeMap;
@@ -1004,6 +1066,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure checkattributes(node:TDomNode;attributename:string;filelist :TStringList);
 var
     Attributes: TDOMNamedNodeMap;
@@ -1013,15 +1077,19 @@ var
 begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if assigned(node) then
     begin
       Attributes:=node.Attributes;
       if assigned(attributes) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1057,6 +1125,8 @@ var chld: TDomNode;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          begin
            for n:=0 to attributes.length-1 do
              begin
@@ -1079,11 +1149,14 @@ var chld: TDomNode;
     s   : ansistring;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   result:=nil;
   if assigned(prnt )  then
@@ -1091,6 +1164,7 @@ begin
       chld:=prnt.firstchild;
       while assigned(chld) do
         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1104,12 +1178,16 @@ begin
 =======
           scantags(chld,filelist);  // depth first.
 >>>>>>> graemeg/cpstrnew
+=======
+          scantags(chld,filelist);  // depth first.
+>>>>>>> origin/cpstrnew
           if (chld is TDomElement) then
             begin
               s:=uppercase(tdomelement(chld).tagname);
               if s='LINK' then
                 begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1123,10 +1201,14 @@ begin
 =======
                   checkattributes(chld,'HREF',filelist);
 >>>>>>> graemeg/cpstrnew
+=======
+                  checkattributes(chld,'HREF',filelist);
+>>>>>>> origin/cpstrnew
                 end;
              if s='IMG'then
                begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1140,10 +1222,14 @@ begin
 =======
                   checkattributes(chld,'SRC',filelist);
 >>>>>>> graemeg/cpstrnew
+=======
+                  checkattributes(chld,'SRC',filelist);
+>>>>>>> origin/cpstrnew
                end;
              if s='A'then
                begin
                   //printattributes(chld,'');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1172,6 +1258,9 @@ begin
 =======
                   checkattributes(chld,'HREF',filelist);
 >>>>>>> graemeg/cpstrnew
+=======
+                  checkattributes(chld,'HREF',filelist);
+>>>>>>> origin/cpstrnew
                 end;
             end;
           chld:=chld.nextsibling;
@@ -1200,6 +1289,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      exit(true);
 =======
      exit(false);
@@ -1210,6 +1300,9 @@ begin
 =======
      exit(false);
 >>>>>>> graemeg/cpstrnew
+=======
+     exit(false);
+>>>>>>> origin/cpstrnew
    end;
 
   result:=false;
@@ -1245,6 +1338,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                scantags(domdoc,extractfilename(fn),localfilelist);
 =======
                scantags(domdoc,localfilelist);
@@ -1255,6 +1349,9 @@ begin
 =======
                scantags(domdoc,localfilelist);
 >>>>>>> graemeg/cpstrnew
+=======
+               scantags(domdoc,localfilelist);
+>>>>>>> origin/cpstrnew
                for i:=0 to localFilelist.count-1 do
                  begin
                    s:=localfilelist[i];
@@ -1302,6 +1399,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if sanitizeurl(fbasepath,x.local,'','Site Map for '+x.Text,S) then   // sanitize, remove stuff etc.
 =======
       if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
@@ -1312,6 +1410,9 @@ begin
 =======
       if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
 >>>>>>> graemeg/cpstrnew
+=======
+      if sanitizeurl(fbasepath,x.local,S) then   // sanitize, remove stuff etc.
+>>>>>>> origin/cpstrnew
         begin
           if not FileInTotalList(uppercase(s)) then
             begin
@@ -1357,6 +1458,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   x      : TChmSiteMap;
 >>>>>>> graemeg/cpstrnew
@@ -1366,6 +1468,9 @@ var
 =======
   x      : TChmSiteMap;
 >>>>>>> graemeg/cpstrnew
+=======
+  x      : TChmSiteMap;
+>>>>>>> origin/cpstrnew
   strrec : TStringIndex;
 begin
 
@@ -1401,6 +1506,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  if assigned(FToc) then
    begin
        Error(chmnote,'Scanning TOC file : '+FTableOfContentsFileName+'.',3);
@@ -1429,6 +1535,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  if FTableOfContentsFileName<>'' then
    begin
      if fileexists(FTableOfContentsFileName) then
@@ -1470,11 +1578,14 @@ begin
    end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  localfilelist.free;
 end;
 
@@ -1487,6 +1598,7 @@ var
   nd         : TChmContextNode;
   I          : Integer;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1506,6 +1618,10 @@ begin
   // Scan html for "rest" files.
 
 >>>>>>> graemeg/cpstrnew
+=======
+  // Scan html for "rest" files.
+
+>>>>>>> origin/cpstrnew
   If ScanHtmlContents Then
     ScanHtml;                 // Since this is slowing we opt to skip this step, and only do this on html load.
 
@@ -1535,6 +1651,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writer.IndexName := ExtractFileName(IndexFileName);
   Writer.TocName   := ExtractFileName(TableOfContentsFileName);
   Writer.ReadmeMessage := ReadmeMessage;
@@ -1554,6 +1671,11 @@ begin
   Writer.TocName   := TableOfContentsFileName;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  Writer.IndexName := IndexFileName;
+  Writer.TocName   := TableOfContentsFileName;
+
+>>>>>>> origin/cpstrnew
   for i:=0 to files.count-1 do
     begin
       nd:=TChmContextNode(files.objects[i]);
@@ -1567,6 +1689,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if FMergeFiles.Count>0 then
     Writer.Mergefiles:=FMergeFiles;
   if assigned(ftoc) then
@@ -1577,6 +1700,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   // and write!
 
@@ -1590,10 +1715,13 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TChmProject.ShowUndefinedAnchors;

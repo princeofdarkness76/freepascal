@@ -40,6 +40,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSBrowser0: cuint);
     1: (data: bitpacked record
@@ -107,6 +108,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef fpc_big_endian}
     allowsMultipleSelection: 0..1;
     allowsBranchSelection: 0..1;
@@ -166,11 +169,14 @@ type
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 _Brflags = __Brflags;
 __BrflagsPtr = ^__Brflags;

@@ -72,6 +72,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     case byte of
     0: (_anonbitfield_NSView0: cuint);
     1: (data: bitpacked record
@@ -129,6 +130,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef fpc_big_endian}
     rotatedFromBase: 0..1;
     rotatedOrScaledFromBase: 0..1;
@@ -178,11 +181,14 @@ type
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 _VFlags = __VFlags;
 __VFlagsPtr = ^__VFlags;
@@ -248,6 +254,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __vFlags2: record
       case byte of
        0: (_anonbitfield_NSView1: cuint);
@@ -257,23 +264,29 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __vFlags2: bitpacked record
       case byte of
        0: (_anonbitfield_NSView0: cuint);
        1: (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         nextKeyViewRefCount: 0..((1 shl 14)-1);
         previousKeyViewRefCount: 0..((1 shl 14)-1);
         isVisibleRect: 0..1;
         hasToolTip: 0..1;
         needsRealLockFocus: 0..1;
         menuWasSet: 0..1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -284,6 +297,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     

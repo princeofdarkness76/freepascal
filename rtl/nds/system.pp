@@ -22,11 +22,14 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$define FPC_HAS_FEATURE_THREADING}
 >>>>>>> graemeg/cpstrnew
 {$define FPC_HAS_FEATURE_CONSOLEIO}
@@ -70,6 +73,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FileNameCasePreserving: boolean = true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -77,6 +81,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   CtrlZMarksEOF: boolean = true; (* #26 not considered as end of file *)
 
   sLineBreak = LineEnding;
@@ -257,6 +263,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if i<argc-1 then
 =======
      if i<argc then
@@ -267,6 +274,9 @@ begin
 =======
      if i<argc then
 >>>>>>> graemeg/cpstrnew
+=======
+     if i<argc then
+>>>>>>> origin/cpstrnew
       buf[bufsize]:=' '
      else
       buf[bufsize]:=#0;
@@ -281,6 +291,7 @@ function get_cmdline:Pchar;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -290,6 +301,9 @@ function get_cmdline:Pchar;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 begin
   if calculated_cmdline=nil then
     setupcmdline;
@@ -299,6 +313,7 @@ end;
 
 procedure SysInitStdIO;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -312,6 +327,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   OpenStdIO(Input,fmInput,0);
   OpenStdIO(Output,fmOutput,0);
   OpenStdIO(ErrOutput,fmOutput,0);
@@ -319,11 +336,14 @@ begin
   OpenStdIO(StdErr,fmOutput,0);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -350,6 +370,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   
 >>>>>>> graemeg/cpstrnew
@@ -359,6 +380,9 @@ begin
 =======
   
 >>>>>>> graemeg/cpstrnew
+=======
+  
+>>>>>>> origin/cpstrnew
 {$ifdef FPC_HAS_FEATURE_CONSOLEIO}
   { Setup stdin, stdout and stderr }
   SysInitStdIO;

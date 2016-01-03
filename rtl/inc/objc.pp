@@ -6,6 +6,7 @@ unit objc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(iphonesim) or defined(cpuarm) or defined(cpux86_64) or defined(cpupowerpc64) or defined(cpuaarch64)}
 =======
 {$if defined(iphonesim) or defined(cpuarm) or defined(cpux86_64) or defined(cpupowerpc64)}
@@ -16,6 +17,9 @@ unit objc;
 =======
 {$if defined(iphonesim) or defined(cpuarm) or defined(cpux86_64) or defined(cpupowerpc64)}
 >>>>>>> graemeg/cpstrnew
+=======
+{$if defined(iphonesim) or defined(cpuarm) or defined(cpux86_64) or defined(cpupowerpc64)}
+>>>>>>> origin/cpstrnew
 {$i objcnf.inc}
 {$endif}
 

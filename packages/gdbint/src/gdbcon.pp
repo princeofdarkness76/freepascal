@@ -45,6 +45,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TBreakNumber,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -52,6 +53,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     start_break_number,
     in_command,
     init_count : longint;

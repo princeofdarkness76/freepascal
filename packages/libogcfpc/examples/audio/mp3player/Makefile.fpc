@@ -10,6 +10,7 @@ programs=playmp3
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 packages=libogcfpc mad
 =======
 packages=libogcfpc
@@ -20,6 +21,9 @@ packages=libogcfpc
 =======
 packages=libogcfpc
 >>>>>>> graemeg/cpstrnew
+=======
+packages=libogcfpc
+>>>>>>> origin/cpstrnew
 tools=bin2s rmdir gxtexconv
 nortl=y
 

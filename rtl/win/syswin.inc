@@ -386,6 +386,7 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            { SysInitMultithreading must not be called here,
              see comments in exec_tls_callback below }
            { Allocate Threadvars  }
@@ -402,6 +403,8 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            if Win32GetCurrentThreadId <> MainThreadIdWin32 then
            begin
              { Allocate Threadvars  }
@@ -417,17 +420,21 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
            Dll_entry:=true; { return value is ignored }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end;
        DLL_THREAD_DETACH :
          begin
            if assigned(Dll_Thread_Detach_Hook) then
              Dll_Thread_Detach_Hook(DllParam);
            { Release Threadvars }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -441,6 +448,9 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 =======
            if Win32GetCurrentThreadId<>MainThreadIdWin32 then
 >>>>>>> graemeg/cpstrnew
+=======
+           if Win32GetCurrentThreadId<>MainThreadIdWin32 then
+>>>>>>> origin/cpstrnew
              DoneThread; { Assume everything is idempotent there }
          end;
        DLL_PROCESS_DETACH :
@@ -452,6 +462,7 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
            Dll_entry:=true; { return value is ignored }
 		   if MainThreadIDWin32=0 then // already been here.
 		     exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -474,23 +485,31 @@ function Dll_entry{$ifdef FPC_HAS_INDIRECT_MAIN_INFORMATION}(const info : TEntry
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
            If SetJmp(DLLBuf) = 0 then
              FPC_Do_Exit;
            if assigned(Dll_Process_Detach_Hook) then
              Dll_Process_Detach_Hook(DllParam);
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            DoneThread;
            { Free TLS resources used by ThreadVars }
            SysFiniMultiThreading;
 		   MainThreadIDWin32:=0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          end;
      end;
      DllInitState:=-1;
@@ -626,11 +645,14 @@ const
   CP_UTF8 = 65001;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   WC_NO_BEST_FIT_CHARS = $400;
 
 function MultiByteToWideChar(CodePage:UINT; dwFlags:DWORD; lpMultiByteStr:PChar; cchMultiByte:longint; lpWideCharStr:PWideChar;cchWideChar:longint):longint;
@@ -661,6 +683,7 @@ procedure Win32Unicode2AnsiMove(source:punicodechar;var dest:RawByteString;cp : 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -670,6 +693,9 @@ procedure Win32Unicode2AnsiMove(source:punicodechar;var dest:RawByteString;cp : 
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 procedure Win32Ansi2UnicodeMove(source:pchar;cp : TSystemCodePage;var dest:UnicodeString;len:SizeInt);
   var
     destlen: SizeInt;
@@ -716,11 +742,14 @@ function Win32UnicodeLower(const s : UnicodeString) : UnicodeString;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
   PWStrInitEntry = ^TWStrInitEntry;
   TWStrInitEntry = record
@@ -753,11 +782,14 @@ procedure Win32Wide2AnsiMove(source:pwidechar;var dest:RawByteString;cp : TSyste
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure Win32Ansi2WideMove(source:pchar;cp : TSystemCodePage;var dest:widestring;len:SizeInt);
   var
     destlen: SizeInt;
@@ -795,6 +827,7 @@ function Win32WideLower(const s : WideString) : WideString;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 type
   PWStrInitEntry = ^TWStrInitEntry;
   TWStrInitEntry = record
@@ -816,11 +849,15 @@ function GetACP:UINT; external 'kernel32' name 'GetACP';
 =======
 function GetACP:UINT; external 'kernel32' name 'GetACP';
 >>>>>>> graemeg/cpstrnew
+=======
+function GetACP:UINT; external 'kernel32' name 'GetACP';
+>>>>>>> origin/cpstrnew
 
 {$if not(defined(VER2_2) or defined(VER2_4))}
 var
   WStrInitTablesTable: TWStrInitTablesTable; external name 'FPC_WIDEINITTABLES';
 {$endif}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -843,6 +880,8 @@ function Win32GetStandardCodePage(const stdcp: TStandardCodePageEnum): TSystemCo
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { there is a similiar procedure in sysutils which inits the fields which
   are only relevant for the sysutils units }
@@ -891,10 +930,13 @@ procedure InitWin32Widestrings;
     DefaultUnicodeCodePage:=CP_UTF16;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 

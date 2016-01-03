@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #if defined(__BORLANDC__)
 /* ## include <stdint.h> */
 #define long_long __int64
@@ -26,6 +27,9 @@
 =======
 #include <stdint.h>
 >>>>>>> graemeg/cpstrnew
+=======
+#include <stdint.h>
+>>>>>>> origin/cpstrnew
 
 struct struct1 {
   float v;
@@ -161,6 +165,7 @@ these four paragraphs for those parts of this code that are retained.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define LIT64(a) a##LL
 
 #define double2float64(a) (*(float64*)&(a))
@@ -179,6 +184,11 @@ these four paragraphs for those parts of this code that are retained.
 
 #define double2float64( a ) (*(float64*)&(a))
 >>>>>>> graemeg/cpstrnew
+=======
+#define LIT64( a ) a##LL
+
+#define double2float64( a ) (*(float64*)&(a))
+>>>>>>> origin/cpstrnew
 
 typedef char flag;
 
@@ -188,6 +198,7 @@ typedef int64_t sbits64;
 
 bits64 extractFloat64Frac( float64 a )
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -201,6 +212,9 @@ bits64 extractFloat64Frac( float64 a )
 =======
     return a & LIT64( 0x000FFFFFFFFFFFFF );
 >>>>>>> graemeg/cpstrnew
+=======
+    return a & LIT64( 0x000FFFFFFFFFFFFF );
+>>>>>>> origin/cpstrnew
 }
 
 int16_t extractFloat64Exp( float64 a )

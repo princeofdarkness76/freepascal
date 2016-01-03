@@ -108,11 +108,14 @@ type
     property StrikeTrough : boolean index 8 read GetFlags write SetFlags;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     property Orientation: Integer read GetOrientation write SetOrientation default 0;
         
   end;
@@ -264,6 +267,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FClipRegion : TFPCustomRegion;
 =======
     FClipRect : TRect;
@@ -274,6 +278,9 @@ type
 =======
     FClipRect : TRect;
 >>>>>>> graemeg/cpstrnew
+=======
+    FClipRect : TRect;
+>>>>>>> origin/cpstrnew
     function DoCreateDefaultFont : TFPCustomFont; virtual; abstract;
     function DoCreateDefaultPen : TFPCustomPen; virtual; abstract;
     function DoCreateDefaultBrush : TFPCustomBrush; virtual; abstract;
@@ -375,11 +382,14 @@ type
     procedure FillRect(X1,Y1,X2,Y2: Integer);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // using brush
     procedure FloodFill (x,y:integer); virtual;
     procedure Clear;

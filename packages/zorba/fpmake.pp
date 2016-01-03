@@ -17,6 +17,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -36,6 +37,11 @@ begin
 {$endif ALLPACKAGES}
     P.Version:='0.9.9';
 >>>>>>> graemeg/cpstrnew
+=======
+    P.Directory:='zorba';
+{$endif ALLPACKAGES}
+    P.Version:='0.9.9';
+>>>>>>> origin/cpstrnew
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 
@@ -55,6 +61,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings := True;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -62,6 +69,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('zorba.pas');
       with T.Dependencies do
         begin

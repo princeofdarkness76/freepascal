@@ -38,12 +38,15 @@ unit i_beos;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             tf_smartlink_sections];
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                             tf_smartlink_sections, tf_smartlink_library];
 >>>>>>> graemeg/cpstrnew
             cpu          : cpu_i386;

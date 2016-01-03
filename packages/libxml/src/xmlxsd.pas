@@ -37,6 +37,7 @@ function xsdNewChildBase64(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; V
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdNewChildCData(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: AnsiString): xmlNodePtr;
 function xsdNewChildString(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: AnsiString): xmlNodePtr;
 =======
@@ -51,6 +52,10 @@ function xsdNewChildString(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; V
 function xsdNewChildCData(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
 function xsdNewChildString(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdNewChildCData(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
+function xsdNewChildString(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
+>>>>>>> origin/cpstrnew
 function xsdNewChildBoolean(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Boolean; UseWords: Boolean = False): xmlNodePtr;
 function xsdNewChildDate(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Year, Month, Day: Longword; BC: Boolean = False; Timezone: PXsdTimezone = nil): xmlNodePtr;
 function xsdNewChildDate(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Date: TDateTime; Timezone: PXsdTimezone = nil): xmlNodePtr;
@@ -72,6 +77,7 @@ function xsdNewChildUnsignedLong(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlChar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdNewChildEnum(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of AnsiString; Value: Integer): xmlNodePtr;
 
 { Property creation functions }
@@ -89,11 +95,16 @@ function xsdNewChildEnum(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enu
 function xsdNewPropString(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlAttrPtr;
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 function xsdNewChildEnum(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of Utf8String; Value: Integer): xmlNodePtr;
 
 { Property creation functions }
 function xsdNewPropString(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlAttrPtr;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function xsdNewPropBoolean(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Boolean; UseWords: Boolean = False): xmlAttrPtr;
 function xsdNewPropDate(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Year, Month, Day: Longword; BC: Boolean = False; Timezone: PXsdTimezone = nil): xmlAttrPtr;
 function xsdNewPropDate(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Date: TDateTime; Timezone: PXsdTimezone = nil): xmlAttrPtr;
@@ -115,6 +126,7 @@ function xsdNewPropUnsignedLong(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdNewPropEnum(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of AnsiString; Value: Integer): xmlAttrPtr;
 =======
 function xsdNewPropEnum(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of Utf8String; Value: Integer): xmlAttrPtr;
@@ -125,6 +137,9 @@ function xsdNewPropEnum(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: 
 =======
 function xsdNewPropEnum(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of Utf8String; Value: Integer): xmlAttrPtr;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdNewPropEnum(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of Utf8String; Value: Integer): xmlAttrPtr;
+>>>>>>> origin/cpstrnew
 
 { Query functions }
 const
@@ -142,6 +157,7 @@ function xsdTryGetChildBase64(node: xmlNodePtr; name, nameSpace: xmlCharPtr; con
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: AnsiString; Index: Integer = 0): Boolean;
 =======
 function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer = 0): Boolean;
@@ -152,6 +168,9 @@ function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out
 =======
 function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer = 0): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer = 0): Boolean;
+>>>>>>> origin/cpstrnew
 function xsdTryGetChildBoolean(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Boolean; Index: Integer = 0): Boolean;
 function xsdTryGetChildDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Year, Month, Day: Longword; Timezone: PXsdTimezone = nil; BC: PBoolean = nil; Index: Integer = 0): Boolean;
 function xsdTryGetChildDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: TDateTime; Timezone: PXsdTimezone = nil; Index: Integer = 0): Boolean;
@@ -173,6 +192,7 @@ function xsdTryGetChildUnsignedLong(node: xmlNodePtr; name, nameSpace: xmlCharPt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer; Index: Integer = 0): Boolean;
 =======
 function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer = 0): Boolean;
@@ -183,10 +203,14 @@ function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum:
 =======
 function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer = 0): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer = 0): Boolean;
+>>>>>>> origin/cpstrnew
 
 function xsdGetChild(node: xmlNodePtr; name, nameSpace: xmlCharPtr; Index: Integer = 0): xmlNodePtr;
 function xsdGetChildChars(node: xmlNodePtr; name, nameSpace: xmlCharPtr; Index: Integer = 0): xmlCharPtr;
 procedure xsdGetChildBase64(node: xmlNodePtr; name, nameSpace: xmlCharPtr; const Value: TStream; Index: Integer = 0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -200,6 +224,9 @@ procedure xsdGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out V
 =======
 procedure xsdGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer = 0);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer = 0);
+>>>>>>> origin/cpstrnew
 procedure xsdGetChildBoolean(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Boolean; Index: Integer = 0);
 procedure xsdGetChildDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Year, Month, Day: Longword; Timezone: PXsdTimezone = nil; BC: PBoolean = nil; Index: Integer = 0);
 procedure xsdGetChildDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: TDateTime; Timezone: PXsdTimezone = nil; Index: Integer = 0);
@@ -221,6 +248,7 @@ procedure xsdGetChildUnsignedLong(node: xmlNodePtr; name, nameSpace: xmlCharPtr;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer; Index: Integer = 0);
 =======
 procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer = 0);
@@ -231,12 +259,16 @@ procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: a
 =======
 procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer = 0);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer = 0);
+>>>>>>> origin/cpstrnew
 
 { Node parsing functions }
 function xsdTryNext(var node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlNodePtr;
 function xsdTryNext(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out last: xmlNodePtr): Boolean;
 function xsdTryNextChars(var node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlCharPtr;
 function xsdTryNextBase64(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; const Value: TStream): Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -250,6 +282,9 @@ function xsdTryNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out
 =======
 function xsdTryNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
+>>>>>>> origin/cpstrnew
 function xsdTryNextBoolean(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Boolean): Boolean;
 function xsdTryNextDate(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Year, Month, Day: Longword; Timezone: PXsdTimezone = nil; BC: PBoolean = nil): Boolean;
 function xsdTryNextDate(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: TDateTime; Timezone: PXsdTimezone = nil): Boolean;
@@ -271,6 +306,7 @@ function xsdTryNextUnsignedLong(var node: xmlNodePtr; name, nameSpace: xmlCharPt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer): Boolean;
 =======
 function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
@@ -281,10 +317,14 @@ function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum:
 =======
 function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
+>>>>>>> origin/cpstrnew
 
 function xsdNext(var node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlNodePtr;
 function xsdNextChars(var node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlCharPtr;
 procedure xsdNextBase64(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; const Value: TStream);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -298,6 +338,9 @@ procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out V
 =======
 procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 procedure xsdNextBoolean(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Boolean);
 procedure xsdNextDate(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Year, Month, Day: Longword; Timezone: PXsdTimezone = nil; BC: PBoolean = nil);
 procedure xsdNextDate(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: TDateTime; Timezone: PXsdTimezone = nil);
@@ -319,6 +362,7 @@ procedure xsdNextUnsignedLong(var node: xmlNodePtr; name, nameSpace: xmlCharPtr;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer);
 =======
 procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
@@ -329,6 +373,9 @@ procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: a
 =======
 procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
+>>>>>>> origin/cpstrnew
 
 { Property query functions }
 function xsdTestPropNs(attr: xmlAttrPtr; nameSpace: xmlCharPtr): Boolean;
@@ -336,6 +383,7 @@ function xsdTestProp(attr: xmlAttrPtr; name, nameSpace: xmlCharPtr): Boolean;
 
 function xsdTryGetProp(node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlAttrPtr;
 function xsdTryGetPropChars(node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlCharPtr;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -349,6 +397,9 @@ function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out 
 =======
 function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
+>>>>>>> origin/cpstrnew
 function xsdTryGetPropBoolean(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Boolean): Boolean;
 function xsdTryGetPropDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Year, Month, Day: Longword; Timezone: PXsdTimezone = nil; BC: PBoolean = nil): Boolean;
 function xsdTryGetPropDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: TDateTime; Timezone: PXsdTimezone = nil): Boolean;
@@ -367,6 +418,7 @@ function xsdTryGetPropUnsignedByte(node: xmlNodePtr; name, nameSpace: xmlCharPtr
 function xsdTryGetPropUnsignedShort(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Word): Boolean;
 function xsdTryGetPropUnsignedInt(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Longword): Boolean;
 function xsdTryGetPropUnsignedLong(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: QWord): Boolean;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -394,6 +446,13 @@ function xsdGetProp(node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlAttrPtr;
 function xsdGetPropChars(node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlCharPtr;
 procedure xsdGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
+
+function xsdGetProp(node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlAttrPtr;
+function xsdGetPropChars(node: xmlNodePtr; name, nameSpace: xmlCharPtr): xmlCharPtr;
+procedure xsdGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 procedure xsdGetPropBoolean(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Boolean);
 procedure xsdGetPropDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Year, Month, Day: Longword; Timezone: PXsdTimezone = nil; BC: PBoolean = nil);
 procedure xsdGetPropDate(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: TDateTime; Timezone: PXsdTimezone = nil);
@@ -415,6 +474,7 @@ procedure xsdGetPropUnsignedLong(node: xmlNodePtr; name, nameSpace: xmlCharPtr; 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer);
 
 function xsdRemoveBlanks(content: xmlCharPtr; out cleaned: AnsiString): boolean;
@@ -433,6 +493,11 @@ procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: ar
 
 function xsdRemoveBlanks(content: xmlCharPtr; out cleaned: Utf8String): boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
+
+function xsdRemoveBlanks(content: xmlCharPtr; out cleaned: Utf8String): boolean;
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -451,6 +516,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -461,11 +527,15 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatBase64(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -479,12 +549,16 @@ function xsdNewChildCData(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Va
 =======
 function xsdNewChildCData(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdNewChildCData(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
+>>>>>>> origin/cpstrnew
 begin
   Result := xmlNewNode(ns, name);
   xmlAddChild(Result, xmlNewCDataBlock(parent^.doc, PChar(Value), Length(Value)));
   xmlAddChild(parent, Result);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -498,12 +572,16 @@ function xsdNewChildString(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; V
 =======
 function xsdNewChildString(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdNewChildString(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlNodePtr;
+>>>>>>> origin/cpstrnew
 begin
   Result := xmlNewChild(parent, ns, name, PChar(Value));
 end;
 
 function xsdNewChildBoolean(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Boolean; UseWords: Boolean): xmlNodePtr;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -517,6 +595,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatBoolean(Value, UseWords);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -527,6 +608,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -537,6 +619,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatTime(Hour, Minute, Second, Milliseconds, Timezone);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -547,6 +632,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -557,6 +643,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatTime(Time, Timezone);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -567,6 +656,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -577,6 +667,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDate(Year, Month, Day, BC, Timezone);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -587,6 +680,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -597,6 +691,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDate(Date, Timezone);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -607,6 +704,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -617,6 +715,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDateTime(Year, Month, Day, Hour, Minute, Second, Milliseconds, BC, Timezone);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -627,6 +728,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -637,6 +739,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDateTime(DateTime, Timezone);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -647,6 +752,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -657,6 +763,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDecimal(Value, Precision, Digits);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -667,6 +776,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -677,6 +787,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDouble(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -687,6 +800,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -697,6 +811,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatFloat(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -707,6 +824,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -717,6 +835,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatByte(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -727,6 +848,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -737,6 +859,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatShort(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -747,6 +872,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -757,6 +883,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatInt(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -767,6 +896,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -777,6 +907,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatLong(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -787,6 +920,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -797,6 +931,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedByte(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -807,6 +944,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -817,6 +955,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedShort(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -827,6 +968,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -837,6 +979,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedInt(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
@@ -847,6 +992,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -857,11 +1003,15 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedLong(Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -883,11 +1033,17 @@ function xsdNewChildEnum(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enu
 var
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdNewChildEnum(parent: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of Utf8String; Value: Integer): xmlNodePtr;
+var
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatEnum(enum, Value);
   Result := xmlNewChild(parent, ns, name, PChar(Tmp));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -901,12 +1057,16 @@ function xsdNewPropString(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Valu
 =======
 function xsdNewPropString(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlAttrPtr;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdNewPropString(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Utf8String): xmlAttrPtr;
+>>>>>>> origin/cpstrnew
 begin
   Result := xmlNewNsProp(node, ns, name, PChar(Value));
 end;
 
 function xsdNewPropBoolean(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; Value: Boolean; UseWords: Boolean): xmlAttrPtr;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -920,6 +1080,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatBoolean(Value, UseWords);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -930,6 +1093,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -940,6 +1104,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatTime(Hour, Minute, Second, Milliseconds, Timezone);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -950,6 +1117,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -960,6 +1128,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatTime(Time, Timezone);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -970,6 +1141,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -980,6 +1152,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDate(Year, Month, Day, BC, Timezone);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -990,6 +1165,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1000,6 +1176,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDate(Date, Timezone);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1010,6 +1189,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1020,6 +1200,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDateTime(Year, Month, Day, Hour, Minute, Second, Milliseconds, BC, Timezone);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1030,6 +1213,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1040,6 +1224,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDateTime(DateTime, Timezone);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1050,6 +1237,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1060,6 +1248,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDecimal(Value, Precision, Digits);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1070,6 +1261,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1080,6 +1272,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatDouble(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1090,6 +1285,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1100,6 +1296,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatFloat(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1110,6 +1309,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1120,6 +1320,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatByte(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1130,6 +1333,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1140,6 +1344,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatShort(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1150,6 +1357,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1160,6 +1368,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatInt(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1170,6 +1381,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1180,6 +1392,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatLong(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1190,6 +1405,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1200,6 +1416,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedByte(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1210,6 +1429,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1220,6 +1440,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedShort(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1230,6 +1453,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1240,6 +1464,9 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedInt(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1250,6 +1477,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Tmp: AnsiString;
 =======
   Tmp: Utf8String;
@@ -1260,11 +1488,15 @@ var
 =======
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatUnsignedLong(Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1286,6 +1518,11 @@ function xsdNewPropEnum(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: 
 var
   Tmp: Utf8String;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdNewPropEnum(node: xmlNodePtr; ns: xmlNsPtr; name: xmlCharPtr; enum: array of Utf8String; Value: Integer): xmlAttrPtr;
+var
+  Tmp: Utf8String;
+>>>>>>> origin/cpstrnew
 begin
   Tmp := xsdFormatEnum(enum, Value);
   Result := xmlNewNsProp(node, ns, name, PChar(Tmp));
@@ -1336,10 +1573,14 @@ end;
 
 function xsdTryGetChildBase64(node: xmlNodePtr; name, nameSpace: xmlCharPtr; const Value: TStream; Index: Integer): Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 begin
   Result := xsdTryParseBase64(xsdTryGetChildChars(node, name, nameSpace, Index), -1, Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: AnsiString; Index: Integer): Boolean;
@@ -1358,6 +1599,10 @@ end;
 function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer): Boolean;
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer): Boolean;
+begin
+>>>>>>> origin/cpstrnew
   Result := xsdTryParseString(xsdTryGetChildChars(node, name, nameSpace, Index), -1, Value);
 end;
 
@@ -1454,6 +1699,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer; Index: Integer): Boolean;
 =======
 function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer): Boolean;
@@ -1464,6 +1710,9 @@ function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum:
 =======
 function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result := xsdTryParseEnum(xsdTryGetChildChars(node, name, nameSpace, Index), -1, enum, Value);
 end;
@@ -1481,6 +1730,7 @@ begin
 end;
 
 procedure xsdGetChildBase64(node: xmlNodePtr; name, nameSpace: xmlCharPtr; const Value: TStream; Index: Integer);
+<<<<<<< HEAD
 <<<<<<< HEAD
 begin
   xsdParseBase64(xsdGetChildChars(node, name, nameSpace, Index), -1, Value);
@@ -1504,6 +1754,14 @@ end;
 procedure xsdGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer);
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+  xsdParseBase64(xsdGetChildChars(node, name, nameSpace, Index), -1, Value);
+end;
+
+procedure xsdGetChildString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String; Index: Integer);
+begin
+>>>>>>> origin/cpstrnew
   xsdParseString(xsdGetChildChars(node, name, nameSpace, Index), -1, Value);
 end;
 
@@ -1600,6 +1858,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer; Index: Integer);
 =======
 procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer);
@@ -1610,6 +1869,9 @@ procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: a
 =======
 procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdGetChildEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer; Index: Integer);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseEnum(xsdGetChildChars(node, name, nameSpace, Index), -1, enum, Value);
 end;
@@ -1640,10 +1902,14 @@ end;
 
 function xsdTryNextBase64(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; const Value: TStream): Boolean;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 begin
   Result := xsdTryParseBase64(xsdTryNextChars(node, name, nameSpace), -1, Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function xsdTryNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: AnsiString): Boolean;
@@ -1662,6 +1928,10 @@ end;
 function xsdTryNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
+begin
+>>>>>>> origin/cpstrnew
   Result := xsdTryParseString(xsdTryNextChars(node, name, nameSpace), -1, Value);
 end;
 
@@ -1758,6 +2028,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer): Boolean;
 =======
 function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
@@ -1768,6 +2039,9 @@ function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum:
 =======
 function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result := xsdTryParseEnum(xsdTryNextChars(node, name, nameSpace), -1, enum, Value);
 end;
@@ -1792,6 +2066,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: AnsiString);
 =======
 procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
@@ -1802,6 +2077,9 @@ procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out V
 =======
 procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdNextString(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseString(xsdNextChars(node, name, nameSpace), -1, Value);
 end;
@@ -1899,6 +2177,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer);
 =======
 procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
@@ -1909,6 +2188,9 @@ procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: a
 =======
 procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdNextEnum(var node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseEnum(xsdNextChars(node, name, nameSpace), -1, enum, Value);
 end;
@@ -1955,6 +2237,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: AnsiString): Boolean;
 =======
 function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
@@ -1965,6 +2248,9 @@ function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out 
 =======
 function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result := xsdTryParseString(xsdTryGetPropChars(node, name, nameSpace), -1, Value);
 end;
@@ -2062,6 +2348,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function xsdTryGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer): Boolean;
 =======
 function xsdTryGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
@@ -2072,6 +2359,9 @@ function xsdTryGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: 
 =======
 function xsdTryGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdTryGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result := xsdTryParseEnum(xsdTryGetPropChars(node, name, nameSpace), -1, enum, Value);
 end;
@@ -2091,6 +2381,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: AnsiString);
 =======
 procedure xsdGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
@@ -2101,6 +2392,9 @@ procedure xsdGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Va
 =======
 procedure xsdGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdGetPropString(node: xmlNodePtr; name, nameSpace: xmlCharPtr; out Value: Utf8String);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseString(xsdGetPropChars(node, name, nameSpace), -1, Value);
 end;
@@ -2198,6 +2492,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of AnsiString; out Value: Integer);
 =======
 procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
@@ -2208,10 +2503,14 @@ procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: ar
 =======
 procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure xsdGetPropEnum(node: xmlNodePtr; name, nameSpace: xmlCharPtr; enum: array of Utf8String; out Value: Integer);
+>>>>>>> origin/cpstrnew
 begin
   xsdParseEnum(xsdGetPropChars(node, name, nameSpace), -1, enum, Value);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2225,6 +2524,9 @@ function xsdRemoveBlanks(content: xmlCharPtr; out cleaned: Utf8String): boolean;
 =======
 function xsdRemoveBlanks(content: xmlCharPtr; out cleaned: Utf8String): boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function xsdRemoveBlanks(content: xmlCharPtr; out cleaned: Utf8String): boolean;
+>>>>>>> origin/cpstrnew
 var
   Space: Boolean;
   len: Integer;

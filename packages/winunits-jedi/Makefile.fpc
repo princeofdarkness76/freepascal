@@ -7,6 +7,7 @@ name=winunits-jedi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 version=3.1.1
 
 [require]
@@ -25,6 +26,11 @@ version=2.5.1
 
 [require]
 >>>>>>> graemeg/cpstrnew
+=======
+version=2.5.1
+
+[require]
+>>>>>>> origin/cpstrnew
 packages_win32=winunits-base fcl-registry fcl-base
 packages_win64=winunits-base fcl-registry fcl-base
 

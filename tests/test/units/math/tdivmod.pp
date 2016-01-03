@@ -5,6 +5,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   procedure DivMod(Dividend: LongInt; Divisor: Word;  var Result, Remainder: Word);
   procedure DivMod(Dividend: LongInt; Divisor: Word; var Result, Remainder: SmallInt);
   procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
@@ -16,6 +17,8 @@ procedure doerror(i : LongInt);
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   procedure DivMod(Dividend: Integer; Divisor: Word;  var Result, Remainder: Word);
   procedure DivMod(Dividend: Integer; Divisor: Word; var Result, Remainder: SmallInt);
   procedure DivMod(Dividend: DWord; Divisor: DWord; var Result, Remainder: DWord);
@@ -24,11 +27,14 @@ procedure doerror(i : LongInt);
 procedure doerror(i : integer);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   begin
     writeln('Error: ',i);
 	halt(1);
@@ -42,6 +48,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   QuotientLongInt,RemainderLongInt : LongInt;
 =======
   QuotientInteger,RemainderInteger : Integer;
@@ -52,6 +59,9 @@ var
 =======
   QuotientInteger,RemainderInteger : Integer;
 >>>>>>> graemeg/cpstrnew
+=======
+  QuotientInteger,RemainderInteger : Integer;
+>>>>>>> origin/cpstrnew
 
 begin
   DivMod($ffff,65,QuotientWord,RemainderWord);
@@ -78,6 +88,7 @@ begin
   if RemainderDWord<>15 then
     doerror(2004);
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -108,6 +119,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   DivMod($ffff,65,QuotientInteger,RemainderInteger);
   if QuotientInteger<>1008 then
     doerror(3001);
@@ -132,11 +145,14 @@ begin
   if RemainderInteger<>-4 then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     doerror(3008);
 	
 end.

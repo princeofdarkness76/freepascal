@@ -136,11 +136,14 @@ implementation
         if (target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           begin
             labeltyp:=aitconst_gotoff_symbol;
             jumpreg:=cg.getintregister(current_asmdata.CurrAsmList,OS_ADDR);
@@ -819,11 +822,14 @@ implementation
                     location_force_reg(current_asmdata.CurrAsmList,right.location,opsize,true);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   pleftreg:=left.location.register;
 
                   if (opsize >= OS_S8) or { = if signed }

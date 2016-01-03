@@ -416,11 +416,14 @@ begin
   Result:=fprecv(handle,@Buffer,count,flags);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 Function TSocketStream.Write (Const Buffer; Count : Longint) :Longint;
@@ -433,11 +436,14 @@ begin
   Result:=fpsend(handle,@Buffer,count,flags);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TSocketStream.GetLocalAddress: TSockAddr;
@@ -575,6 +581,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           DoConnect(Stream);
           end;
 =======
@@ -582,6 +589,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           If FAccepting and DoConnectQuery(NewSocket) Then
             begin
             Stream:=SockToStream(NewSocket);
@@ -770,11 +779,14 @@ begin
   Faddr.addr := LongWord(StrToNetAddr(FHost));
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if  Sockets.fpBind(FSocket, @FAddr, Sizeof(FAddr))<>0 then
     raise ESocketError.Create(seBindFailed, [IntToStr(FPort)]);
   FBound:=True;
@@ -798,6 +810,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF UNIX}
   R:=ESysEINTR;
   While (R=ESysEINTR) do
@@ -811,6 +824,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Result:=Sockets.fpAccept(Socket,@Faddr,@L);
   If Result<0 then
 >>>>>>> graemeg/cpstrnew
@@ -900,6 +915,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited Create(S,AHandler);
   if (AHandler=Nil) then // Backwards compatible behaviour.
     Connect;
@@ -908,6 +924,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   DoConnect(S);
   Inherited Create(S);
 >>>>>>> graemeg/cpstrnew

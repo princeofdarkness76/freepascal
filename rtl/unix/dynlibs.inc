@@ -69,17 +69,21 @@ uses dl;
 Function LoadLibrary(const Name : AnsiString) : TLibHandle;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Function SysLoadLibraryU(const Name: UnicodeString) : TLibHandle;
 begin
   Result := SysLoadLibraryA(ToSingleByteFileSystemEncodedFileName(Name));
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,6 +97,9 @@ Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Po
 =======
 Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+Function GetProcedureAddress(Lib : TLibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> origin/cpstrnew
 
 begin
   Result:=dlsym(lib,pchar(ProcName));

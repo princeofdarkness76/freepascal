@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TThread.SysCreate(CreateSuspended: Boolean;
                             const StackSize: SizeUInt);
 =======
@@ -17,6 +18,10 @@ constructor TThread.Create(CreateSuspended: Boolean;
 constructor TThread.Create(CreateSuspended: Boolean;
                            const StackSize: SizeUInt = DefaultStackSize);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TThread.Create(CreateSuspended: Boolean;
+                           const StackSize: SizeUInt = DefaultStackSize);
+>>>>>>> origin/cpstrnew
 begin
   FSuspended := CreateSuspended;
   FInitialSuspended := CreateSuspended;

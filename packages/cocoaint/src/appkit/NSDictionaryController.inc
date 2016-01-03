@@ -57,6 +57,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __dictionaryControllerFlags: record
       case byte of
        0: (_anonbitfield_NSDictionaryController0: cuint);
@@ -70,6 +71,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __dictionaryControllerFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSDictionaryController0: cuint);
@@ -79,11 +82,14 @@
         _reservedDictionaryController: 0..((1 shl 30)-1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     

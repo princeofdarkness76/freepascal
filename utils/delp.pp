@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (c) 1999-2012 by Peter Vreman, Michael Van Canneyt
 =======
     Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
@@ -12,6 +13,9 @@
 =======
     Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (c) 1999-2010 by Peter Vreman, Michael Van Canneyt
+>>>>>>> origin/cpstrnew
 
     Deletes all files generated for Pascal (*.exe,units,objects,libs)
 
@@ -35,6 +39,7 @@ program Delp;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$mode ObjFPC}{$H+}
 
 =======
@@ -43,10 +48,13 @@ program Delp;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 uses
   Sysutils,getopts;
 
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -64,6 +72,10 @@ const
   Version   = 'Version 1.2';
   Title     = 'DelPascal';
 >>>>>>> graemeg/cpstrnew
+=======
+  Version   = 'Version 1.2';
+  Title     = 'DelPascal';
+>>>>>>> origin/cpstrnew
   Copyright = 'Copyright (c) 1999-2010 by the Free Pascal Development Team';
 
 >>>>>>> graemeg/cpstrnew
@@ -337,6 +349,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   While (I<=ParamCount) do
     begin
     BaseDir:=IncludeTrailingPathDelimiter(Paramstr(I));
@@ -350,6 +363,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Total:=0;
   While (I<=ParamCount) do
     begin

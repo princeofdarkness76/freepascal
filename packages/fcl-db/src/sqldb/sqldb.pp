@@ -78,6 +78,10 @@ type
   TDBEventTypes = set of TDBEventType;
   TDBLogNotifyEvent = Procedure (Sender : TSQLConnection; EventType : TDBEventType; Const Msg : String) of object;
 
+  TDBEventType = (detCustom, detPrepare, detExecute, detFetch, detCommit,detRollBack);
+  TDBEventTypes = set of TDBEventType;
+  TDBLogNotifyEvent = Procedure (Sender : TSQLConnection; EventType : TDBEventType; Const Msg : String) of object;
+
   TSQLHandle = Class(TObject)
   end;
 
@@ -92,6 +96,7 @@ type
     FSchemaType    : TSchemaType;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -149,10 +154,14 @@ type TQuoteChars = array[0..1] of char;
 =======
 type TQuoteChars = array[0..1] of char;
 >>>>>>> graemeg/cpstrnew
+=======
+type TQuoteChars = array[0..1] of char;
+>>>>>>> origin/cpstrnew
 
 const
   SingleQuotes : TQuoteChars = ('''','''');
   DoubleQuotes : TQuoteChars = ('"','"');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +180,10 @@ const
   LogAllEvents = [detCustom, detPrepare, detExecute, detFetch, detCommit, detRollBack];
   StatementTokens : Array[TStatementType] of string = ('(none)', 'select',
 >>>>>>> graemeg/cpstrnew
+=======
+  LogAllEvents = [detCustom, detPrepare, detExecute, detFetch, detCommit, detRollBack];
+  StatementTokens : Array[TStatementType] of string = ('(none)', 'select',
+>>>>>>> origin/cpstrnew
                   'insert', 'update', 'delete',
                   'create', 'get', 'put', 'execute',
                   'start','commit','rollback', '?'
@@ -187,6 +200,7 @@ type
     procedure Update; override;
   end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -223,6 +237,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
 
   { TSQLConnection }
@@ -241,6 +257,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FOptions             : TSQLConnectionOptions;
 =======
     FLogEvents: TDBEventTypes;
@@ -254,6 +271,10 @@ type
     FLogEvents: TDBEventTypes;
     FOnLog: TDBLogNotifyEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+    FLogEvents: TDBEventTypes;
+    FOnLog: TDBLogNotifyEvent;
+>>>>>>> origin/cpstrnew
     FPassword            : string;
     FTransaction         : TSQLTransaction;
     FUserName            : string;
@@ -305,11 +326,14 @@ type
     Procedure Log(EventType : TDBEventType; Const Msg : String); virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Function AllocateCursorHandle : TSQLCursor; virtual; abstract;
     Procedure DeAllocateCursorHandle(var cursor : TSQLCursor); virtual; abstract;
     function StrToStatementType(s : string) : TStatementType; virtual;
@@ -372,12 +396,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property Options : TSQLConnectionOptions Read FOptions Write SetOptions;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     property Connected;
 >>>>>>> graemeg/cpstrnew
     Property Role :  String read FRole write FRole;
@@ -532,6 +559,7 @@ type
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   { TCustomSQLQuery }
 
   TSQLQueryOption = (sqoKeepOpenOnCommit, sqoAutoApplyUpdates, sqoAutoCommit, sqoCancelUpdatesOnRefresh, sqoRefreshUsingSelect);
@@ -543,6 +571,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TCustomSQLQuery = class (TCustomBufDataset)
   private
     FOptions             : TSQLQueryOptions;
@@ -601,6 +631,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     Function SQLParser(const ASQL : string) : TStatementType;
 >>>>>>> graemeg/cpstrnew
@@ -610,6 +641,9 @@ type
 =======
     Function SQLParser(const ASQL : string) : TStatementType;
 >>>>>>> graemeg/cpstrnew
+=======
+    Function SQLParser(const ASQL : string) : TStatementType;
+>>>>>>> origin/cpstrnew
     procedure ApplyFilter;
     Function AddFilter(SQLstr : string) : string;
   protected
@@ -662,11 +696,14 @@ type
     Procedure Log(EventType : TDBEventType; Const Msg : String); virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   public
     constructor Create(AOwner : TComponent); override;
     destructor Destroy; override;
@@ -676,6 +713,7 @@ type
     procedure SetSchemaInfo( ASchemaType : TSchemaType; ASchemaObjectName, ASchemaPattern : string); virtual;
     function RowsAffected: TRowsCount; virtual;
     function ParamByName(Const AParamName : String) : TParam;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -693,6 +731,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   protected
     // redeclared TDataSet properties
     property Active;
@@ -1095,11 +1135,14 @@ begin
   FFieldNameQuoteChars:=DoubleQuotes;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 Procedure TCustomSQLStatement.CopyParamsFromMaster(CopyBound: Boolean);
@@ -1143,6 +1186,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function TCustomSQLStatement.CreateParams: TSQLDBParams;
 =======
 function TSQLConnection.LogEvent(EventType: TDBEventType): Boolean;
@@ -1150,6 +1194,35 @@ function TSQLConnection.LogEvent(EventType: TDBEventType): Boolean;
 function TSQLConnection.LogEvent(EventType: TDBEventType): Boolean;
 =======
 function TSQLConnection.LogEvent(EventType: TDBEventType): Boolean;
+=======
+function TSQLConnection.LogEvent(EventType: TDBEventType): Boolean;
+begin
+  Result:=(Assigned(FOnLog) or Assigned(GlobalDBLogHook)) and (EventType in LogEvents);
+end;
+
+procedure TSQLConnection.Log(EventType: TDBEventType; const Msg: String);
+
+Var
+  M : String;
+
+begin
+  If LogEvent(EventType) then
+    begin
+    If Assigned(FonLog) then
+      FOnLog(Self,EventType,Msg);
+    If Assigned(GlobalDBLogHook) then
+      begin
+      If (Name<>'') then
+        M:=Name+' : '+Msg
+      else
+        M:=ClassName+' : '+Msg;
+      GlobalDBLogHook(Self,EventType,M);
+      end;
+    end;
+end;
+
+procedure TSQLConnection.FreeFldBuffers(cursor: TSQLCursor);
+>>>>>>> origin/cpstrnew
 begin
   Result:=(Assigned(FOnLog) or Assigned(GlobalDBLogHook)) and (EventType in LogEvents);
 end;
@@ -2604,6 +2677,7 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2620,6 +2694,12 @@ begin
     //       which is used as performance tuning option
     if (FQuery.FSchemaType = stNoSchema) and FParseSQL then
 =======
+=======
+end;
+
+procedure TSQLTransaction.Rollback;
+begin
+>>>>>>> origin/cpstrnew
   if active then
     begin
     closedatasets;
@@ -2661,11 +2741,14 @@ begin
     end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 { TCustomSQLQuery }
@@ -2747,9 +2830,12 @@ begin
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 procedure TSQLTransaction.Log(EventType: TDBEventType; const Msg: String);
 
@@ -2787,6 +2873,7 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 { TCustomSQLQuery }
@@ -2803,6 +2890,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TCustomSQLQuery.ParamByName(Const AParamName : String) : TParam;
 
 begin
@@ -3388,11 +3477,14 @@ begin
   until CurrentP^=#0;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TCustomSQLQuery.InternalOpen;
@@ -3576,6 +3668,7 @@ function TCustomSQLQuery.NeedLastInsertID: TField;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   I : Integer;
 =======
@@ -3583,6 +3676,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var FieldNamesQuoteChars : TQuoteChars;
 
   procedure InitialiseModifyQuery(var qry : TCustomSQLQuery; aSQL: String);
@@ -3731,12 +3826,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If LogEvent(EventType) then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   FieldNamesQuoteChars := TSQLConnection(DataBase).FieldNameQuoteChars;
 
   case UpdateKind of
@@ -3799,11 +3897,14 @@ begin
     Result:= FUpdateable and (not FReadOnly) and (not IsUniDirectional)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   else
     Result:=stUnknown;
 end;
@@ -3933,6 +4034,36 @@ begin
     end;
 end;
 
+procedure TCustomSQLQuery.BeforeRefreshOpenCursor;
+begin
+  // This is only necessary because TIBConnection can not re-open a
+  // prepared cursor. In fact this is wrong, but has never led to
+  // problems because in SetActive(false) queries are always
+  // unprepared. (which is also wrong, but has to be fixed later)
+  if IsPrepared then with TSQLConnection(DataBase) do
+    UnPrepareStatement(FCursor);
+end;
+
+function TCustomSQLQuery.LogEvent(EventType: TDBEventType): Boolean;
+begin
+  Result:=Assigned(Database) and TSQLConnection(Database).LogEvent(EventType);
+end;
+
+procedure TCustomSQLQuery.Log(EventType: TDBEventType; const Msg: String);
+
+Var
+  M : String;
+
+begin
+  If LogEvent(EventType) then
+    begin
+    M:=Msg;
+    If (Name<>'') then
+      M:=Name+' : '+M;
+    TSQLConnection(Database).Log(EventType,M);
+    end;
+end;
+
 function TCustomSQLQuery.GetStatementType : TStatementType;
 >>>>>>> graemeg/cpstrnew
 
@@ -3946,6 +4077,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FRefreshSQL.Assign(AValue);
 =======
   FDeleteSQL.Assign(AValue);
@@ -3956,11 +4088,15 @@ begin
 =======
   FDeleteSQL.Assign(AValue);
 >>>>>>> graemeg/cpstrnew
+=======
+  FDeleteSQL.Assign(AValue);
+>>>>>>> origin/cpstrnew
 end;
 
 
 procedure TCustomSQLQuery.SetParams(AValue: TParams);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3974,6 +4110,9 @@ begin
 =======
   FInsertSQL.Assign(AValue);
 >>>>>>> graemeg/cpstrnew
+=======
+  FInsertSQL.Assign(AValue);
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TCustomSQLQuery.SetDataSource(AValue: TDataSource);

@@ -4,6 +4,7 @@ Generally you need the latest stable version of the Free Pascal Compiler, which
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 currently means version 2.6.2.
 
  - Compiling the library:
@@ -16,6 +17,8 @@ For example: (windows, fpc version 2.6.2, default install dir)
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 currently means version 2.4.0. Generally FPC 2.2.4 should also work fine.
 
  - Compiling the library:
@@ -25,11 +28,14 @@ For example: (windows, fpc version 2.4.0, default install dir)
   set FPCDIR=c:\fpc\2.4.0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 To compile the library type:
 

@@ -514,10 +514,13 @@ end;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function FileRead (Handle : Longint; out Buffer; Count : longint) : Longint;
 
 begin
@@ -605,9 +608,12 @@ begin
     exit(-1)
   else 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Result:=UnixToWinAge(info.st_mtime);
 >>>>>>> graemeg/cpstrnew
 end;
@@ -1560,6 +1566,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 function GetLocalTimeOffset: Integer;
 
@@ -1572,6 +1579,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************
                               Initialization code

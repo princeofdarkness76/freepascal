@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Copyright (c) 2003-2006, 2008-2010 Apple Inc. All rights reserved.
 =======
  * Copyright (c) 2003-2006, 2008, 2009 Apple Inc. All rights reserved.
@@ -12,6 +13,9 @@
 =======
  * Copyright (c) 2003-2006, 2008, 2009 Apple Inc. All rights reserved.
 >>>>>>> graemeg/cpstrnew
+=======
+ * Copyright (c) 2003-2006, 2008, 2009 Apple Inc. All rights reserved.
+>>>>>>> origin/cpstrnew
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -41,11 +45,14 @@
 {   Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -103,6 +110,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -114,6 +122,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -132,6 +142,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -140,12 +151,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -178,6 +198,11 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -187,6 +212,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -194,10 +220,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -308,6 +337,39 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$endc}
+{$elifc defined __x86_64__ and __x86_64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := TRUE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -372,6 +434,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	SCNetworkConnectionRef = ^__SCNetworkConnection; { an opaque type }
 	__SCNetworkConnection = record end;
 =======
@@ -383,6 +446,9 @@ type
 =======
 	SCNetworkConnectionRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	SCNetworkConnectionRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 
 {!
@@ -549,6 +615,7 @@ type
  dictionary
  }
 
+<<<<<<< HEAD
 {!
 	@define kSCNetworkConnectionSelectionOptionOnDemandHostName
 	@discussion A host name that will be used to select the
@@ -563,6 +630,22 @@ type
 // #endif
 
 {!
+=======
+{!
+	@define kSCNetworkConnectionSelectionOptionOnDemandHostName
+	@discussion A host name that will be used to select the
+		"best" SCNetworkConnection.
+ }
+// #if	(__MAC_OS_X_VERSION_MIN_REQUIRED >= 1060) || (__IPHONE_OS_VERSION_MIN_REQUIRED >= 30000) || TARGET_IPHONE_SIMULATOR
+// Only on  Mac OS X 10.6+, iPhoneOS 3.0+, iPhoneSimulator
+{$ifc USE_CFSTR_CONSTANT_MACROS}
+{$definec kSCNetworkConnectionSelectionOptionOnDemandHostName CFSTRP('OnDemandHostName')}
+{$endc}	{ CFString }
+
+// #endif
+
+{!
+>>>>>>> origin/cpstrnew
 	@define kSCNetworkConnectionSelectionOptionOnDemandRetry
 	@discussion A boolean value used to indicate whether a DNS query has
 		already been issued for the specified OnDemand host name.
@@ -864,6 +947,7 @@ function SCNetworkConnectionUnscheduleFromRunLoop( connection: SCNetworkConnecti
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ifc not TARGET_OS_IPHONE}
 >>>>>>> graemeg/cpstrnew
@@ -873,6 +957,9 @@ function SCNetworkConnectionUnscheduleFromRunLoop( connection: SCNetworkConnecti
 =======
 {$ifc not TARGET_OS_IPHONE}
 >>>>>>> graemeg/cpstrnew
+=======
+{$ifc not TARGET_OS_IPHONE}
+>>>>>>> origin/cpstrnew
 {!
 	 @function SCNetworkConnectionSetDispatchQueue
 	 @discussion Caller provides a dispatch queue on which the callback contained in connection will run.
@@ -888,6 +975,7 @@ function SCNetworkConnectionSetDispatchQueue( connection: SCNetworkConnectionRef
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$endc} {not TARGET_OS_IPHONE}
 >>>>>>> graemeg/cpstrnew
@@ -897,6 +985,9 @@ function SCNetworkConnectionSetDispatchQueue( connection: SCNetworkConnectionRef
 =======
 {$endc} {not TARGET_OS_IPHONE}
 >>>>>>> graemeg/cpstrnew
+=======
+{$endc} {not TARGET_OS_IPHONE}
+>>>>>>> origin/cpstrnew
 
 {$endc} {TARGET_OS_MAC}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}

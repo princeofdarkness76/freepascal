@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {
      This file is part of the Free Pascal FCL library.
      BSD parts (c) 2011 Vlado Boza
@@ -78,6 +79,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
    This file is part of the Free Pascal FCL library.
    BSD parts (c) 2011 Vlado Boza
@@ -143,11 +146,14 @@ type
       property Items[i : TKey]: TValue read GetValue write Insert; default;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       function Iterator:TIterator;
   end;
@@ -165,6 +171,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   for i:=0 to FData.size-1 do
 =======
   for i:=0 to FData.size do
@@ -175,6 +182,9 @@ begin
 =======
   for i:=0 to FData.size do
 >>>>>>> graemeg/cpstrnew
+=======
+  for i:=0 to FData.size do
+>>>>>>> origin/cpstrnew
     (FData[i]).Destroy;
   FData.Destroy;
 end;
@@ -234,6 +244,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THashmap.GetData(key:TKey):TValue;inline;
 =======
 function THashmap.GetValue(key:TKey):TValue;inline;
@@ -244,6 +255,9 @@ function THashmap.GetValue(key:TKey):TValue;inline;
 =======
 function THashmap.GetValue(key:TKey):TValue;inline;
 >>>>>>> graemeg/cpstrnew
+=======
+function THashmap.GetValue(key:TKey):TValue;inline;
+>>>>>>> origin/cpstrnew
 var i,h,bs:longint;
 begin
   h:=Thash.hash(key,FData.size);
@@ -272,6 +286,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FDataSize > 5*FData.size) then
 =======
   if (FDataSize > 2*FData.size) then
@@ -282,6 +297,9 @@ begin
 =======
   if (FDataSize > 2*FData.size) then
 >>>>>>> graemeg/cpstrnew
+=======
+  if (FDataSize > 2*FData.size) then
+>>>>>>> origin/cpstrnew
     EnlargeTable;
 end;
 
@@ -318,6 +336,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function THashmapIterator.GetData:T;
 begin
   GetData:=(FData[Fh])[Fp];
@@ -336,6 +355,11 @@ function THashmapIterator.GetValue:T;
 begin
   GetValue:=(FData[Fh])[Fp];
 >>>>>>> graemeg/cpstrnew
+=======
+function THashmapIterator.GetValue:T;
+begin
+  GetValue:=(FData[Fh])[Fp];
+>>>>>>> origin/cpstrnew
 end;
 
 function THashmap.Iterator:TIterator;
@@ -354,6 +378,7 @@ begin
   Iterator.FData := FData;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -383,4 +408,6 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end.

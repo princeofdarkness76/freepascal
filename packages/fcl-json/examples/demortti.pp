@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$R *.res}
 
@@ -20,6 +21,10 @@ uses
 {$R *.res}
 
 >>>>>>> graemeg/cpstrnew
+=======
+{$R *.res}
+
+>>>>>>> origin/cpstrnew
 Var
   JS : TJSONStreamer;
 

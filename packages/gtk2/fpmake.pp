@@ -66,6 +66,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.Install:=False;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -73,6 +74,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     T:=P.Targets.AddImplicitUnit('src/atk/atk.pas');
      T.IncludePath.Add('src/atk');
@@ -1147,6 +1150,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
           AddInclude('gtkseparatortoolitem.inc');
           AddInclude('gtkaboutdialog.inc');
@@ -1161,6 +1165,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end;
     T:=P.Targets.AddImplicitUnit('src/gtkglext/gtkglext.pas');
       T.IncludePath.Add('src/gtkglext');
@@ -1252,6 +1258,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           AddInclude('pango-matrix.inc');
           AddInclude('pango-renderer.inc');
 =======
@@ -1260,6 +1267,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end;
     
     T:=P.Targets.AddImplicitUnit('src/pangocairo/pangocairo.pas');
@@ -1309,6 +1318,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Sources.AddExampleFiles('examples/*',P.Directory,false,'.');
     P.Sources.AddExampleFiles('examples/filechooser/*',P.Directory,false,'filechooser');
     P.Sources.AddExampleFiles('examples/gettingstarted/*',P.Directory,false,'gettingstarted');
@@ -1326,6 +1336,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef ALLPACKAGES}
     Run;
     end;

@@ -43,6 +43,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   {$i memdsdelphi.inc} // should set ptrint is longint|intptr
 		       // & trecordbuffer ( if <2009)
   {$ENDIF}
@@ -51,6 +52,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ptrint = Integer;
   {$ENDIF}
 
@@ -104,11 +107,14 @@ type
     function GetCharPointer(p:PChar; Pos:Integer):PChar;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function GetIntegerPointer(p:PInteger; Pos:Integer):PInteger;
 
     procedure calcrecordlayout;
@@ -179,6 +185,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
     Procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
 =======
@@ -196,6 +203,11 @@ type
     procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
     procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
 >>>>>>> graemeg/cpstrnew
+=======
+
+    procedure Clear(ClearDefs : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
+    procedure Clear;{$IFNDEF FPC} overload; {$ENDIF}
+>>>>>>> origin/cpstrnew
     Procedure SaveToFile(AFileName : String);{$IFNDEF FPC} overload; {$ENDIF}
     Procedure SaveToFile(AFileName : String; SaveData : Boolean);{$IFNDEF FPC} overload; {$ENDIF}
     Procedure SaveToStream(F : TStream); {$IFNDEF FPC} overload; {$ENDIF}
@@ -506,6 +518,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:= getIntegerPointer(ffieldoffsets, fieldno-1)^;
 =======
  result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
@@ -516,6 +529,9 @@ begin
 =======
  result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
 >>>>>>> graemeg/cpstrnew
+=======
+ result:= getIntegerpointer(ffieldoffsets, fieldno-1)^;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TMemDataset.RaiseError(Fmt: String; Args: array of const);
@@ -541,11 +557,14 @@ begin
   ftFixedChar:result:=FieldDefs.Items[FieldNo-1].Size+1;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ftBoolean:  result:=SizeOf(Wordbool);
   ftCurrency,
   ftFloat:    result:=SizeOf(Double);
@@ -970,6 +989,7 @@ begin
    begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Inc(SrcBuffer, RecordSize + Field.Offset);
    result := Boolean(SrcBuffer[0]);
    if result and assigned(Buffer) then
@@ -983,6 +1003,9 @@ begin
 =======
    Move(getcharpointer(SrcBuffer,getintegerpointer(ffieldoffsets,I)^)^, Buffer^,GetIntegerPointer(FFieldSizes, I)^);
 >>>>>>> graemeg/cpstrnew
+=======
+   Move(getcharpointer(SrcBuffer,getintegerpointer(ffieldoffsets,I)^)^, Buffer^,GetIntegerPointer(FFieldSizes, I)^);
+>>>>>>> origin/cpstrnew
    end;
 end;
 
@@ -1153,11 +1176,14 @@ begin
  Freemem(ffieldsizes);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  {$IFDEF FPC}
  FFieldOffsets:=getmem(Count*sizeof(integer));
  FFieldSizes:=getmem(Count*sizeof(integer));
@@ -1171,6 +1197,7 @@ begin
 {$ENDIF}
  for i:= 0 to Count-1 do
    begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1192,6 +1219,11 @@ begin
    GetIntegerPointer(ffieldsizes,   i)^ := MDSGetbufferSize(i+1);
    FRecSize:= FRecSize+GetIntegerPointeR(FFieldSizes, i)^;
 >>>>>>> graemeg/cpstrnew
+=======
+   GetIntegerPointer(ffieldoffsets, i)^ := frecsize;
+   GetIntegerPointer(ffieldsizes,   i)^ := MDSGetbufferSize(i+1);
+   FRecSize:= FRecSize+GetIntegerPointeR(FFieldSizes, i)^;
+>>>>>>> origin/cpstrnew
    end;
  FRecInfoOffset:=FRecSize;
  FRecSize:=FRecSize+SizeRecInfo;
@@ -1307,6 +1339,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 else         F1.AsString:=F2.AsString;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1314,6 +1347,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               end;
               end;
             Try
@@ -1464,6 +1499,18 @@ begin
   end
   else
     Result:=Null;
+end;
+
+function TMemDataset.GetCharPointer(p:PChar; Pos:Integer):PChar;
+begin
+  Result:=p;
+  inc(Result, Pos);
+end;
+
+function TMemDataset.GetIntegerPointer(p:PInteger; Pos:Integer):PInteger;
+begin
+  Result:=p;
+  inc(Result, Pos);
 end;
 
 function TMemDataset.GetCharPointer(p:PChar; Pos:Integer):PChar;

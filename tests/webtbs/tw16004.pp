@@ -14,6 +14,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	var a: array[0..5] of char = 'willow';
 =======
 	var a: array[0..5] of ansichar = 'willow';
@@ -24,6 +25,9 @@ end;
 =======
 	var a: array[0..5] of ansichar = 'willow';
 >>>>>>> graemeg/cpstrnew
+=======
+	var a: array[0..5] of ansichar = 'willow';
+>>>>>>> origin/cpstrnew
 	const b: array[0..2] of WideChar = 'ива';
 	begin
 		assert( verify(a, sizeof(a), [ord('w'), ord('i'), ord('l'), ord('l'), ord('o'), ord('w')]) );
@@ -34,6 +38,7 @@ end;
 {$endif}
 	end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +53,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 const c: array[0..9] of ansichar = 'rosenberg';
 var d: array[0..10] of WideChar = 'розенберг';
 	z: array[0..0] of WideChar = 'ы';
@@ -56,11 +63,14 @@ begin
 	assert( verify(c, sizeof(c), [114, 111, 115, 101, 110, 98, 101, 114, 103, 0]) );
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef endian_big}
 	assert( verify(d, sizeof(d), [$04,$40,$04,$3E,$04,$37,$04,$35,$04,$3D,$04,$31,$04,$35,$04,$40,$04,$33,0,0,0,0]) );
 {$else}
@@ -68,6 +78,7 @@ begin
 {$endif}
 	foo;
 {$ifdef endian_big}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -82,6 +93,8 @@ end.
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	assert( verify(z, sizeof(z), [$04,$4B]) );
 {$else}
 	assert( verify(z, sizeof(z), [$4B,$04]) );
@@ -90,8 +103,11 @@ end.
 end.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

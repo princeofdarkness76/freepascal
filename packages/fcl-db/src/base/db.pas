@@ -25,6 +25,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes,SysUtils,Variants,FmtBCD,MaskUtils;
 =======
 uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
@@ -35,6 +36,9 @@ uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
 =======
 uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
 >>>>>>> graemeg/cpstrnew
+=======
+uses Classes,Sysutils,Variants,FmtBCD,MaskUtils;
+>>>>>>> origin/cpstrnew
 
 const
 
@@ -288,6 +292,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFieldDef: TFieldDef;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -295,6 +300,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FFieldKind : TFieldKind;
     FFieldName : String;
     FFieldNo : Longint;
@@ -715,6 +722,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure SetAsInteger(AValue: Longint); override;
 =======
     procedure SetAsInteger(AValue: Integer); override;
@@ -725,6 +733,9 @@ type
 =======
     procedure SetAsInteger(AValue: Integer); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetAsInteger(AValue: Integer); override;
+>>>>>>> origin/cpstrnew
     procedure SetVarValue(const AValue: Variant); override;
   public
     constructor Create(AOwner: TComponent); override;
@@ -870,6 +881,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function GetAsLargeInt: LargeInt; override;
     function GetAsInteger: Longint; override;
 =======
@@ -881,6 +893,9 @@ type
 =======
     function GetAsLongint: Longint; override;
 >>>>>>> graemeg/cpstrnew
+=======
+    function GetAsLongint: Longint; override;
+>>>>>>> origin/cpstrnew
     function GetAsString: string; override;
     function GetAsVariant: variant; override;
     function GetDataSize: Integer; override;
@@ -888,6 +903,7 @@ type
     procedure GetText(var TheText: string; ADisplayText: Boolean); override;
     procedure SetAsBCD(const AValue: TBCD); override;
     procedure SetAsFloat(AValue: Double); override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -902,6 +918,9 @@ type
 =======
     procedure SetAsLongint(AValue: Longint); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetAsLongint(AValue: Longint); override;
+>>>>>>> origin/cpstrnew
     procedure SetAsString(const AValue: string); override;
     procedure SetAsCurrency(AValue: Currency); override;
     procedure SetVarValue(const AValue: Variant); override;
@@ -910,6 +929,7 @@ type
     function CheckRange(AValue : TBCD) : Boolean;
     property Value: TBCD read GetAsBCD write SetAsBCD;
   published
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -923,6 +943,9 @@ type
 =======
     property Precision: Longint read FPrecision write FPrecision default 15;
 >>>>>>> graemeg/cpstrnew
+=======
+    property Precision: Longint read FPrecision write FPrecision default 15;
+>>>>>>> origin/cpstrnew
     property Currency: Boolean read FCurrency write FCurrency;
     property MaxValue: string read GetMaxValue write SetMaxValue;
     property MinValue: string read GetMinValue write SetMinValue;
@@ -2106,7 +2129,10 @@ type
     property KeepConnection: Boolean read FKeepConnection write FKeepConnection;
     property Params : TStrings read FParams Write SetParams;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 
@@ -2305,11 +2331,14 @@ const
     varOleStr, varDouble, varOleStr,varOleStr);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 Const

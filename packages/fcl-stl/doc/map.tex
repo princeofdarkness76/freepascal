@@ -10,11 +10,14 @@ Usage example:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Some methods return type TMSet.PNode. Usefull fields are Data.Key, Data.Value, for retrieving
 actual Key and Value from node. This node can be also used for navigation between elements by methods of set class.
 You can also change value in node (but not key).
@@ -22,11 +25,14 @@ You can also change value in node (but not key).
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Memory complexity:
 Size of stored base + constant overhead for each stored element (3 pointers + one boolean).
 
@@ -51,6 +57,7 @@ new value assigned.} \\\hline\hline
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \verb!function InsertAndGetIterator! & $O(\lg N)$\\
 \verb!(key:TKey; value: TValue):TIterator! & \\ \hline
 \multicolumn{2}{|m{15cm}|}{Same as Insert but also returns iterator poiting to inserted element.} \\\hline\hline
@@ -61,10 +68,13 @@ new value assigned.} \\\hline\hline
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 \verb!procedure Delete(key: TKey)! &
 O(lg N) \\ \hline
 \multicolumn{2}{|m{15cm}|}{Deletes key (and associated value) from map. If element is not in map, nothing happens.} \\\hline\hline
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,6 +114,8 @@ nil.} \\\hline\hline
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 \verb!function Find(key: T):TMSet.PNode! & O(lg N) \\\hline
 \multicolumn{2}{|m{15cm}|}{Searches for key in map. If value is not there returns nil. Otherwise
 returns pointer to tree node (type TMSet.PNode), which can be used for retrieving data from map.} \\\hline\hline
@@ -148,17 +160,21 @@ smallest takes O(N) time \\\hline
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 \verb!property item[i: Key]: TValue; default;! & O(ln N) \\\hline
 \multicolumn{2}{|m{15cm}|}{Property for accessing key i in map. Can be used just by square
 brackets (its default property).} \\\hline\hline
 
 
 \end{longtable}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -195,3 +211,5 @@ objects.} \\\hline
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

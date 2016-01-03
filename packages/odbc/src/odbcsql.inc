@@ -57,6 +57,14 @@
 {$endif} 
 {$endif}
 
+{$ifndef DYNLOADINGODBC}
+{$IFDEF WINDOWS}
+  {$linklib odbc32}
+{$ELSE}
+  {$linklib odbc}
+{$endif} 
+{$endif}
+
 interface
 
 uses
@@ -1613,6 +1621,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if OverrideName='' then
 =======
     if OverrideName='' then 
@@ -1623,6 +1632,9 @@ begin
 =======
     if OverrideName='' then 
 >>>>>>> graemeg/cpstrnew
+=======
+    if OverrideName='' then 
+>>>>>>> origin/cpstrnew
        libname:=odbclib
      else
        libname:=OverrideName;

@@ -45,6 +45,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     _priv: array[0..(8)-1] of Pointer;
 =======
         _priv: array[0..7] of Pointer;
@@ -55,6 +56,9 @@
 =======
         _priv: array[0..7] of Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+        _priv: array[0..7] of Pointer;
+>>>>>>> origin/cpstrnew
     
   public
     class procedure loadAllPlugIns; message 'loadAllPlugIns';

@@ -111,12 +111,15 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  FileNameCasePreserving = true;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  FileNameCaseSensitive = true;
 >>>>>>> graemeg/cpstrnew
    {$ELSE UNIX}

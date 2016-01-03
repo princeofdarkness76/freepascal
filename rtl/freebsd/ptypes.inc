@@ -140,6 +140,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
    psem_t = ^sem_t;
    ppsem_t= ^psem_t;
@@ -173,6 +174,11 @@ type
    sem_t_rec		= record end;
    sem_t                = ^sem_t_rec;
 >>>>>>> graemeg/cpstrnew
+=======
+
+   sem_t_rec		= record end;
+   sem_t                = ^sem_t_rec;
+>>>>>>> origin/cpstrnew
    rlim_t		= int64;
    TRlim		= rlim_t;
   {

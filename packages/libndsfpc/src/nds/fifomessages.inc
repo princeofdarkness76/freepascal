@@ -23,11 +23,14 @@ const
 	SYS_SD_WRITE_SECTORS    : FifoMessageType = $1241;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
 {$PACKRECORDS 4} 
@@ -86,6 +89,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       6: (
         fwParams: record
           buffer: pointer;
@@ -100,6 +104,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
   TFifoMessage = FifoMessage;
   PFifoMessage = ^FifoMessage;

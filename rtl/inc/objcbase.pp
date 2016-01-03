@@ -21,6 +21,7 @@ unit objcbase;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$packrecords c}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -28,6 +29,8 @@ unit objcbase;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 interface
 

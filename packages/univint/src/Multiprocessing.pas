@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Copyright:  © 1995-2011 DayStar Digital, Inc.
 }
 =======
@@ -14,6 +15,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      Version:    CarbonCore-859.2~1
  
      Copyright:  © 1995-2008 DayStar Digital, Inc.
@@ -27,11 +30,14 @@
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -89,6 +95,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -100,6 +107,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -118,6 +127,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -126,12 +136,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -164,6 +183,11 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -173,6 +197,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -180,10 +205,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -249,6 +277,8 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -273,6 +303,7 @@ interface
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -315,6 +346,15 @@ interface
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -360,6 +400,7 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {********************************************************************************************
  
  The Multiprocessing Utilities are deprecated.  Callers should use blocks, libDispatch, or pthreads.
@@ -371,6 +412,8 @@ uses MacTypes;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
    ===========================================================================================
    *** WARNING: You must properly check the availability of MP services before calling them!
@@ -390,6 +433,7 @@ uses MacTypes;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
    ===========================================================================================
@@ -401,11 +445,14 @@ uses MacTypes;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    ===========================================================================================
 }
 
 {
    ===========================================================================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -413,6 +460,8 @@ uses MacTypes;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    This is the header file for version 2.2 of the Mac OS multiprocessing support.  This version
    has been totally reimplemented and has significant new services.  The main goal of the
    reimplementation has been to transfer task management into the core operating system to provide
@@ -569,6 +618,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	MPProcessID = ^OpaqueMPProcessID; { an opaque type }
 	OpaqueMPProcessID = record end;
 	MPProcessIDPtr = ^MPProcessID;
@@ -615,6 +665,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	MPProcessID = ^SInt32; { an opaque type }
 	MPProcessIDPtr = ^MPProcessID;
 	MPTaskID = ^SInt32; { an opaque type }
@@ -644,11 +696,14 @@ type
 	MPOpaqueID = ^SInt32; { an opaque type }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	MPOpaqueIDPtr = ^MPOpaqueID;
 const
 { Values for MPOpaqueIDClass.}
@@ -713,6 +768,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  MPProcessors()   *** DEPRECATED ***
 =======
  *  MPProcessors()
@@ -723,11 +779,15 @@ const
 =======
  *  MPProcessors()
 >>>>>>> graemeg/cpstrnew
+=======
+ *  MPProcessors()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Not thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -741,10 +801,14 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPProcessors: ItemCount; external name '_MPProcessors';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -764,6 +828,11 @@ function MPProcessors: ItemCount; external name '_MPProcessors';
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+>>>>>>> origin/cpstrnew
 { The physical total.}
 
 {
@@ -781,7 +850,11 @@ function MPProcessors: ItemCount; external name '_MPProcessors';
  *  Mac OS X threading:
  *    Not thread safe
  *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -795,10 +868,14 @@ function MPProcessors: ItemCount; external name '_MPProcessors';
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -812,6 +889,9 @@ function MPProcessorsScheduled: ItemCount; external name '_MPProcessorsScheduled
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { Those currently in use.}
@@ -842,6 +922,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  MPCreateTask()   *** DEPRECATED ***
 =======
  *  MPCreateTask()
@@ -852,11 +933,15 @@ type
 =======
  *  MPCreateTask()
 >>>>>>> graemeg/cpstrnew
+=======
+ *  MPCreateTask()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -870,10 +955,14 @@ type
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateTask( entryPoint: TaskProc; parameter: UnivPtr; stackSize: ByteCount; notifyQueue: MPQueueID; terminationParameter1: UnivPtr; terminationParameter2: UnivPtr; options: MPTaskOptions; task: MPTaskIDPtr ): OSStatus; external name '_MPCreateTask';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -887,6 +976,9 @@ function MPCreateTask( entryPoint: TaskProc; parameter: UnivPtr; stackSize: Byte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -904,7 +996,11 @@ function MPCreateTask( entryPoint: TaskProc; parameter: UnivPtr; stackSize: Byte
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -918,10 +1014,14 @@ function MPCreateTask( entryPoint: TaskProc; parameter: UnivPtr; stackSize: Byte
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPTerminateTask( task: MPTaskID; terminationStatus: OSStatus ): OSStatus; external name '_MPTerminateTask';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -935,6 +1035,9 @@ function MPTerminateTask( task: MPTaskID; terminationStatus: OSStatus ): OSStatu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -952,7 +1055,11 @@ function MPTerminateTask( task: MPTaskID; terminationStatus: OSStatus ): OSStatu
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -966,10 +1073,14 @@ function MPTerminateTask( task: MPTaskID; terminationStatus: OSStatus ): OSStatu
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetTaskWeight( task: MPTaskID; weight: MPTaskWeight ): OSStatus; external name '_MPSetTaskWeight';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -983,6 +1094,9 @@ function MPSetTaskWeight( task: MPTaskID; weight: MPTaskWeight ): OSStatus; exte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1000,7 +1114,11 @@ function MPSetTaskWeight( task: MPTaskID; weight: MPTaskWeight ): OSStatus; exte
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1014,10 +1132,14 @@ function MPSetTaskWeight( task: MPTaskID; weight: MPTaskWeight ): OSStatus; exte
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPTaskIsPreemptive( taskID: MPTaskID ): Boolean; external name '_MPTaskIsPreemptive';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1031,6 +1153,9 @@ function MPTaskIsPreemptive( taskID: MPTaskID ): Boolean; external name '_MPTask
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { May be kInvalidID.}
@@ -1050,7 +1175,11 @@ function MPTaskIsPreemptive( taskID: MPTaskID ): Boolean; external name '_MPTask
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1064,10 +1193,14 @@ function MPTaskIsPreemptive( taskID: MPTaskID ): Boolean; external name '_MPTask
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure MPExit( status: OSStatus ); external name '_MPExit';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1081,6 +1214,9 @@ procedure MPExit( status: OSStatus ); external name '_MPExit';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1098,7 +1234,11 @@ procedure MPExit( status: OSStatus ); external name '_MPExit';
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1112,10 +1252,14 @@ procedure MPExit( status: OSStatus ); external name '_MPExit';
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure MPYield; external name '_MPYield';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1129,6 +1273,9 @@ procedure MPYield; external name '_MPYield';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1146,7 +1293,11 @@ procedure MPYield; external name '_MPYield';
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1160,10 +1311,14 @@ procedure MPYield; external name '_MPYield';
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1177,6 +1332,9 @@ function MPCurrentTaskID: MPTaskID; external name '_MPCurrentTaskID';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1194,6 +1352,7 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_8, __IPHONE_NA, __IPHONE_NA) *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
@@ -1204,6 +1363,9 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -1230,7 +1392,11 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1244,10 +1410,14 @@ function MPSetTaskType( task: MPTaskID; taskType: OSType ): OSStatus; external n
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPAllocateTaskStorageIndex( var taskIndex: TaskStorageIndex ): OSStatus; external name '_MPAllocateTaskStorageIndex';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1261,6 +1431,9 @@ function MPAllocateTaskStorageIndex( var taskIndex: TaskStorageIndex ): OSStatus
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1278,7 +1451,11 @@ function MPAllocateTaskStorageIndex( var taskIndex: TaskStorageIndex ): OSStatus
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1292,10 +1469,14 @@ function MPAllocateTaskStorageIndex( var taskIndex: TaskStorageIndex ): OSStatus
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDeallocateTaskStorageIndex( taskIndex: TaskStorageIndex ): OSStatus; external name '_MPDeallocateTaskStorageIndex';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1309,6 +1490,9 @@ function MPDeallocateTaskStorageIndex( taskIndex: TaskStorageIndex ): OSStatus; 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1326,7 +1510,11 @@ function MPDeallocateTaskStorageIndex( taskIndex: TaskStorageIndex ): OSStatus; 
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1340,10 +1528,14 @@ function MPDeallocateTaskStorageIndex( taskIndex: TaskStorageIndex ): OSStatus; 
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetTaskStorageValue( taskIndex: TaskStorageIndex; value: TaskStorageValue ): OSStatus; external name '_MPSetTaskStorageValue';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1357,6 +1549,9 @@ function MPSetTaskStorageValue( taskIndex: TaskStorageIndex; value: TaskStorageV
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1374,7 +1569,11 @@ function MPSetTaskStorageValue( taskIndex: TaskStorageIndex; value: TaskStorageV
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1388,10 +1587,14 @@ function MPSetTaskStorageValue( taskIndex: TaskStorageIndex; value: TaskStorageV
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue; external name '_MPGetTaskStorageValue';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1405,6 +1608,9 @@ function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1430,7 +1636,11 @@ function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue;
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1444,10 +1654,14 @@ function MPGetTaskStorageValue( taskIndex: TaskStorageIndex ): TaskStorageValue;
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateQueue( var queue: MPQueueID ): OSStatus; external name '_MPCreateQueue';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1461,6 +1675,9 @@ function MPCreateQueue( var queue: MPQueueID ): OSStatus; external name '_MPCrea
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1478,7 +1695,11 @@ function MPCreateQueue( var queue: MPQueueID ): OSStatus; external name '_MPCrea
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1492,10 +1713,14 @@ function MPCreateQueue( var queue: MPQueueID ): OSStatus; external name '_MPCrea
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPDeleteQueue( queue: MPQueueID ): OSStatus; external name '_MPDeleteQueue';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1509,6 +1734,9 @@ function MPDeleteQueue( queue: MPQueueID ): OSStatus; external name '_MPDeleteQu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1526,7 +1754,11 @@ function MPDeleteQueue( queue: MPQueueID ): OSStatus; external name '_MPDeleteQu
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1540,10 +1772,14 @@ function MPDeleteQueue( queue: MPQueueID ): OSStatus; external name '_MPDeleteQu
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPNotifyQueue( queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; param3: UnivPtr ): OSStatus; external name '_MPNotifyQueue';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1557,6 +1793,9 @@ function MPNotifyQueue( queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; para
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1574,7 +1813,11 @@ function MPNotifyQueue( queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; para
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1588,10 +1831,14 @@ function MPNotifyQueue( queue: MPQueueID; param1: UnivPtr; param2: UnivPtr; para
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPWaitOnQueue( queue: MPQueueID; var param1: UnivPtr; var param2: UnivPtr; var param3: UnivPtr; timeout: Duration ): OSStatus; external name '_MPWaitOnQueue';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1605,6 +1852,9 @@ function MPWaitOnQueue( queue: MPQueueID; var param1: UnivPtr; var param2: UnivP
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1622,7 +1872,11 @@ function MPWaitOnQueue( queue: MPQueueID; var param1: UnivPtr; var param2: UnivP
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1636,10 +1890,14 @@ function MPWaitOnQueue( queue: MPQueueID; var param1: UnivPtr; var param2: UnivP
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetQueueReserve( queue: MPQueueID; count: ItemCount ): OSStatus; external name '_MPSetQueueReserve';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1653,6 +1911,9 @@ function MPSetQueueReserve( queue: MPQueueID; count: ItemCount ): OSStatus; exte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -1673,7 +1934,11 @@ function MPSetQueueReserve( queue: MPQueueID; count: ItemCount ): OSStatus; exte
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1687,10 +1952,14 @@ function MPSetQueueReserve( queue: MPQueueID; count: ItemCount ): OSStatus; exte
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateSemaphore( maximumValue: MPSemaphoreCount; initialValue: MPSemaphoreCount; var semaphore: MPSemaphoreID ): OSStatus; external name '_MPCreateSemaphore';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1704,6 +1973,9 @@ function MPCreateSemaphore( maximumValue: MPSemaphoreCount; initialValue: MPSema
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1721,7 +1993,11 @@ function MPCreateSemaphore( maximumValue: MPSemaphoreCount; initialValue: MPSema
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1735,10 +2011,14 @@ function MPCreateSemaphore( maximumValue: MPSemaphoreCount; initialValue: MPSema
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPDeleteSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name '_MPDeleteSemaphore';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1752,6 +2032,9 @@ function MPDeleteSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1769,7 +2052,11 @@ function MPDeleteSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1783,10 +2070,14 @@ function MPDeleteSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPSignalSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name '_MPSignalSemaphore';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1800,6 +2091,9 @@ function MPSignalSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1817,7 +2111,11 @@ function MPSignalSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1831,10 +2129,14 @@ function MPSignalSemaphore( semaphore: MPSemaphoreID ): OSStatus; external name 
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPWaitOnSemaphore( semaphore: MPSemaphoreID; timeout: Duration ): OSStatus; external name '_MPWaitOnSemaphore';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1849,6 +2151,9 @@ function MPWaitOnSemaphore( semaphore: MPSemaphoreID; timeout: Duration ): OSSta
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -1869,7 +2174,11 @@ function MPWaitOnSemaphore( semaphore: MPSemaphoreID; timeout: Duration ): OSSta
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1883,10 +2192,14 @@ function MPWaitOnSemaphore( semaphore: MPSemaphoreID; timeout: Duration ): OSSta
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPCreateCriticalRegion( var criticalRegion: MPCriticalRegionID ): OSStatus; external name '_MPCreateCriticalRegion';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1900,6 +2213,9 @@ function MPCreateCriticalRegion( var criticalRegion: MPCriticalRegionID ): OSSta
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1917,7 +2233,11 @@ function MPCreateCriticalRegion( var criticalRegion: MPCriticalRegionID ): OSSta
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1931,10 +2251,14 @@ function MPCreateCriticalRegion( var criticalRegion: MPCriticalRegionID ): OSSta
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPDeleteCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; external name '_MPDeleteCriticalRegion';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1948,6 +2272,9 @@ function MPDeleteCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -1965,7 +2292,11 @@ function MPDeleteCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus;
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1979,10 +2310,14 @@ function MPDeleteCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus;
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPEnterCriticalRegion( criticalRegion: MPCriticalRegionID; timeout: Duration ): OSStatus; external name '_MPEnterCriticalRegion';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1996,6 +2331,9 @@ function MPEnterCriticalRegion( criticalRegion: MPCriticalRegionID; timeout: Dur
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2013,7 +2351,11 @@ function MPEnterCriticalRegion( criticalRegion: MPCriticalRegionID; timeout: Dur
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2027,10 +2369,14 @@ function MPEnterCriticalRegion( criticalRegion: MPCriticalRegionID; timeout: Dur
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function MPExitCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; external name '_MPExitCriticalRegion';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2044,6 +2390,9 @@ function MPExitCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; e
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -2064,7 +2413,11 @@ function MPExitCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; e
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2078,10 +2431,14 @@ function MPExitCriticalRegion( criticalRegion: MPCriticalRegionID ): OSStatus; e
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPCreateEvent( var event: MPEventID ): OSStatus; external name '_MPCreateEvent';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2095,6 +2452,9 @@ function MPCreateEvent( var event: MPEventID ): OSStatus; external name '_MPCrea
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2112,7 +2472,11 @@ function MPCreateEvent( var event: MPEventID ): OSStatus; external name '_MPCrea
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2126,10 +2490,14 @@ function MPCreateEvent( var event: MPEventID ): OSStatus; external name '_MPCrea
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDeleteEvent( event: MPEventID ): OSStatus; external name '_MPDeleteEvent';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2143,6 +2511,9 @@ function MPDeleteEvent( event: MPEventID ): OSStatus; external name '_MPDeleteEv
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2160,7 +2531,11 @@ function MPDeleteEvent( event: MPEventID ): OSStatus; external name '_MPDeleteEv
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2174,10 +2549,14 @@ function MPDeleteEvent( event: MPEventID ): OSStatus; external name '_MPDeleteEv
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetEvent( event: MPEventID; flags: MPEventFlags ): OSStatus; external name '_MPSetEvent';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2191,6 +2570,9 @@ function MPSetEvent( event: MPEventID; flags: MPEventFlags ): OSStatus; external
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2208,7 +2590,11 @@ function MPSetEvent( event: MPEventID; flags: MPEventFlags ): OSStatus; external
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2222,10 +2608,14 @@ function MPSetEvent( event: MPEventID; flags: MPEventFlags ): OSStatus; external
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Duration ): OSStatus; external name '_MPWaitForEvent';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2239,6 +2629,9 @@ function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Dura
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2259,6 +2652,7 @@ function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Dura
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -2269,10 +2663,14 @@ function MPWaitForEvent( event: MPEventID; flags: MPEventFlagsPtr; timeout: Dura
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPCreateNotification( var notificationID: MPNotificationID ): OSStatus; external name '_MPCreateNotification';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2286,6 +2684,9 @@ function MPCreateNotification( var notificationID: MPNotificationID ): OSStatus;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2301,7 +2702,11 @@ function MPCreateNotification( var notificationID: MPNotificationID ): OSStatus;
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
@@ -2315,10 +2720,14 @@ function MPCreateNotification( var notificationID: MPNotificationID ): OSStatus;
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPDeleteNotification( notificationID: MPNotificationID ): OSStatus; external name '_MPDeleteNotification';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2332,6 +2741,9 @@ function MPDeleteNotification( notificationID: MPNotificationID ): OSStatus; ext
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2349,7 +2761,11 @@ function MPDeleteNotification( notificationID: MPNotificationID ): OSStatus; ext
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2363,10 +2779,14 @@ function MPDeleteNotification( notificationID: MPNotificationID ): OSStatus; ext
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPModifyNotification( notificationID: MPNotificationID; anID: MPOpaqueID; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr ): OSStatus; external name '_MPModifyNotification';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2380,6 +2800,9 @@ function MPModifyNotification( notificationID: MPNotificationID; anID: MPOpaqueI
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2397,7 +2820,11 @@ function MPModifyNotification( notificationID: MPNotificationID; anID: MPOpaqueI
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2411,10 +2838,14 @@ function MPModifyNotification( notificationID: MPNotificationID; anID: MPOpaqueI
 =======
  *    Mac OS X:         in version 10.1 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.1 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.3 and later
  }
 function MPModifyNotificationParameters( notificationID: MPNotificationID; kind: MPOpaqueIDClass; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr ): OSStatus; external name '_MPModifyNotificationParameters';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2428,6 +2859,9 @@ function MPModifyNotificationParameters( notificationID: MPNotificationID; kind:
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2445,7 +2879,11 @@ function MPModifyNotificationParameters( notificationID: MPNotificationID; kind:
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2459,10 +2897,14 @@ function MPModifyNotificationParameters( notificationID: MPNotificationID; kind:
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.1 and later
  }
 function MPCauseNotification( notificationID: MPNotificationID ): OSStatus; external name '_MPCauseNotification';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2476,6 +2918,9 @@ function MPCauseNotification( notificationID: MPNotificationID ): OSStatus; exte
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2503,6 +2948,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  MPDelayUntil()   *** DEPRECATED ***
 =======
  *  MPDelayUntil()
@@ -2513,11 +2959,15 @@ const
 =======
  *  MPDelayUntil()
 >>>>>>> graemeg/cpstrnew
+=======
+ *  MPDelayUntil()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2531,10 +2981,14 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external name '_MPDelayUntil';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2548,6 +3002,9 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2560,6 +3017,7 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -2570,6 +3028,10 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 {
  *  MPCreateTimer()   *** DEPRECATED ***
  *  
@@ -2585,7 +3047,11 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2599,10 +3065,14 @@ function MPDelayUntil( var expirationTime: AbsoluteTime ): OSStatus; external na
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPCreateTimer( var timerID: MPTimerID ): OSStatus; external name '_MPCreateTimer';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2616,6 +3086,9 @@ function MPCreateTimer( var timerID: MPTimerID ): OSStatus; external name '_MPCr
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2633,7 +3106,11 @@ function MPCreateTimer( var timerID: MPTimerID ): OSStatus; external name '_MPCr
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2647,10 +3124,14 @@ function MPCreateTimer( var timerID: MPTimerID ): OSStatus; external name '_MPCr
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPDeleteTimer( timerID: MPTimerID ): OSStatus; external name '_MPDeleteTimer';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2664,6 +3145,9 @@ function MPDeleteTimer( timerID: MPTimerID ): OSStatus; external name '_MPDelete
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2681,7 +3165,11 @@ function MPDeleteTimer( timerID: MPTimerID ): OSStatus; external name '_MPDelete
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2695,10 +3183,14 @@ function MPDeleteTimer( timerID: MPTimerID ): OSStatus; external name '_MPDelete
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetTimerNotify( timerID: MPTimerID; anID: MPOpaqueID; notifyParam1: UnivPtr; notifyParam2: UnivPtr; notifyParam3: UnivPtr ): OSStatus; external name '_MPSetTimerNotify';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2712,6 +3204,9 @@ function MPSetTimerNotify( timerID: MPTimerID; anID: MPOpaqueID; notifyParam1: U
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2729,7 +3224,11 @@ function MPSetTimerNotify( timerID: MPTimerID; anID: MPOpaqueID; notifyParam1: U
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2743,10 +3242,14 @@ function MPSetTimerNotify( timerID: MPTimerID; anID: MPOpaqueID; notifyParam1: U
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPArmTimer( timerID: MPTimerID; var expirationTime: AbsoluteTime; options: OptionBits ): OSStatus; external name '_MPArmTimer';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2760,6 +3263,9 @@ function MPArmTimer( timerID: MPTimerID; var expirationTime: AbsoluteTime; optio
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2777,7 +3283,11 @@ function MPArmTimer( timerID: MPTimerID; var expirationTime: AbsoluteTime; optio
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2791,10 +3301,14 @@ function MPArmTimer( timerID: MPTimerID; var expirationTime: AbsoluteTime; optio
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPCancelTimer( timerID: MPTimerID; timeRemaining: AbsoluteTimePtr ): OSStatus; external name '_MPCancelTimer';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2808,6 +3322,9 @@ function MPCancelTimer( timerID: MPTimerID; timeRemaining: AbsoluteTimePtr ): OS
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -2823,6 +3340,9 @@ const
 	kMPMaxAllocSize = 1073741824;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 const
 { Values for the alignment parameter to MPAllocateAligned.}
@@ -2837,10 +3357,13 @@ const
 	kMPAllocateVMXAligned = kMPAllocateAltiVecAligned; { The older, common name.}
 	kMPAllocateVMPageAligned = 254;  { Pseudo value, converted at runtime.}
 	kMPAllocateInterlockAligned = 255;   { Pseudo value, converted at runtime.}
+<<<<<<< HEAD
 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 const
 { Values for the alignment parameter to MPAllocateAligned.}
@@ -2867,6 +3390,7 @@ const
 	kMPAllocateResidentMask = $0004; { Allocate from the RAM-resident pool.}
 	kMPAllocateNoGrowthMask = $0010; { Do not attempt to grow the pool.}
 	kMPAllocateNoCreateMask = $0020; { Do not attempt to create the pool if it doesn't exist yet.}
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
@@ -2878,6 +3402,8 @@ const
 	kMPAllocateNoGrowthMask = $0010; { Do not attempt to grow the pool.}
 	kMPAllocateNoCreateMask = $0020; { Do not attempt to create the pool if it doesn't exist yet.}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 <<<<<<< HEAD
 { -------------------------------------------------------------------------------------------}
@@ -2914,10 +3440,15 @@ const
 	kMPAllocateNoGrowthMask = $0010; { Do not attempt to grow the pool.}
 	kMPAllocateNoCreateMask = $0020; { Do not attempt to create the pool if it doesn't exist yet.}
 
+<<<<<<< HEAD
+=======
+{ -------------------------------------------------------------------------------------------}
+>>>>>>> origin/cpstrnew
 
 { -------------------------------------------------------------------------------------------}
 >>>>>>> graemeg/cpstrnew
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 { -------------------------------------------------------------------------------------------}
@@ -2926,8 +3457,6 @@ const
 <<<<<<< HEAD
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
-
-<<<<<<< HEAD
 =======
 {
  *  MPAllocateAligned()
@@ -2945,9 +3474,9 @@ function MPAllocateAligned( size: ByteCount; alignment: UInt8; options: OptionBi
 
 
 { ! MPAllocateAligned is new in version 2.0.}
->>>>>>> graemeg/cpstrnew
+>>>>>>> origin/cpstrnew
 
->>>>>>> graemeg/cpstrnew
+<<<<<<< HEAD
 =======
 {
  *  MPAllocateAligned()
@@ -2965,6 +3494,48 @@ function MPAllocateAligned( size: ByteCount; alignment: UInt8; options: OptionBi
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPAllocateAligned( size: ByteCount; alignment: UInt8; options: OptionBits ): LogicalAddress; external name '_MPAllocateAligned';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+=======
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ }
+function MPAllocate( size: ByteCount ): LogicalAddress; external name '_MPAllocate';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{ Use MPAllocateAligned instead.}
+>>>>>>> origin/cpstrnew
+
+{ ! MPAllocateAligned is new in version 2.0.}
+>>>>>>> graemeg/cpstrnew
+
+>>>>>>> graemeg/cpstrnew
+=======
+{
+ *  MPAllocateAligned()
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+<<<<<<< HEAD
+<<<<<<< HEAD
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+function MPAllocateAligned( size: ByteCount; alignment: UInt8; options: OptionBits ): LogicalAddress; external name '_MPAllocateAligned';
+=======
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ }
+procedure MPFree( objct: LogicalAddress ); external name '_MPFree';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -2995,7 +3566,11 @@ function MPAllocate( size: ByteCount ): LogicalAddress; external name '_MPAlloca
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3018,11 +3593,23 @@ function MPAllocate( size: ByteCount ): LogicalAddress; external name '_MPAlloca
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+function MPGetAllocatedBlockSize( objct: LogicalAddress ): ByteCount; external name '_MPGetAllocatedBlockSize';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 >>>>>>> graemeg/cpstrnew
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
+<<<<<<< HEAD
+=======
+{ -------------------------------------------------------------------------------------------}
+>>>>>>> origin/cpstrnew
 
 >>>>>>> graemeg/cpstrnew
 { Use MPAllocateAligned instead.}
@@ -3039,7 +3626,11 @@ function MPAllocate( size: ByteCount ): LogicalAddress; external name '_MPAlloca
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
@@ -3069,6 +3660,14 @@ procedure MPFree( objct: LogicalAddress ); external name '_MPFree';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 1.0 and later
+ }
+procedure MPBlockCopy( source: LogicalAddress; destination: LogicalAddress; size: ByteCount ); external name '_MPBlockCopy';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3086,7 +3685,11 @@ procedure MPFree( objct: LogicalAddress ); external name '_MPFree';
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3168,8 +3771,17 @@ procedure MPBlockCopy( source: LogicalAddress; destination: LogicalAddress; size
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+procedure MPBlockClear( address: LogicalAddress; size: ByteCount ); external name '_MPBlockClear';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
+{$ifc not TARGET_CPU_64}
 {
  *  MPBlockClear()   *** DEPRECATED ***
  *  
@@ -3185,7 +3797,11 @@ procedure MPBlockCopy( source: LogicalAddress; destination: LogicalAddress; size
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3248,10 +3864,14 @@ procedure MPBlockClear( address: LogicalAddress; size: ByteCount ); external nam
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only]
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework [32-bit only]
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 procedure MPDataToCode( address: LogicalAddress; size: ByteCount ); external name '_MPDataToCode';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3265,6 +3885,9 @@ procedure MPDataToCode( address: LogicalAddress; size: ByteCount ); external nam
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { NOTE:    MPDataToCode is not supported for 64-bit applications. Use mprotect(2) instead.}
@@ -3317,6 +3940,9 @@ procedure MPDataToCode( address: LogicalAddress; size: ByteCount ); external nam
 {$endc} {not TARGET_CPU_64}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 const
 { Values for the TaskStateKind to MPExtractTaskState and MPSetTaskState.}
 	kMPTaskStateRegisters = 0;    { The task general registers.}
@@ -3400,6 +4026,30 @@ const
 { For kMPTaskStateTaskInfo, the version of the MPTaskInfo structure requested.}
 	kMPTaskInfoVersion = 3;
 >>>>>>> graemeg/cpstrnew
+
+		codePageFaults: ItemCount;         { Page faults from code execution}
+		dataPageFaults: ItemCount;         { Page faults from data access}
+		preemptions: ItemCount;            { Number of times task was preempted}
+
+		cpuID: MPCpuID;                  { ID of CPU where task previously ran}
+	end;
+type
+	MPTaskInfoVersion2Ptr = ^MPTaskInfoVersion2;
+	MPTaskInfoVersion2 = record
+		version: PBVersion;                { Version 2 of the data structure requested}
+
+		name: OSType;                   { Task name}
+
+		queueName: OSType;              { Task's queue owner name}
+		runState: UInt16;               { Running, ready, blocked}
+		lastCPU: UInt16;                { Address of CPU where task previously ran}
+		weight: UInt32;                 { Processing weight: 1 - 10,000}
+
+		processID: MPProcessID;              { Owning process ID}
+
+		cpuTime: AbsoluteTime;                { Accumulated task time}
+		schedTime: AbsoluteTime;              { Time when last scheduled}
+		creationTime: AbsoluteTime;           { Time when task created}
 
 		codePageFaults: ItemCount;         { Page faults from code execution}
 		dataPageFaults: ItemCount;         { Page faults from data access}
@@ -3438,6 +4088,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		name: OSType;                   { Task name}
 
@@ -3505,22 +4156,50 @@ type
 		blockedObject: MPOpaqueID;          { ID of blocked object.}
 		spaceID: MPAddressSpaceID;                { Address space ID of this task.}
 
+=======
+
+		name: OSType;                   { Task name}
+
+		queueName: OSType;              { Task's queue owner name}
+		runState: UInt16;               { Running, ready, blocked}
+		lastCPU: UInt16;                { Address of CPU where task previously ran}
+		weight: UInt32;                 { Processing weight: 1 - 10,000}
+
+		processID: MPProcessID;              { Owning process ID}
+
+		cpuTime: AbsoluteTime;                { Accumulated task time}
+		schedTime: AbsoluteTime;              { Time when last scheduled}
+		creationTime: AbsoluteTime;           { Time when task created}
+
+		codePageFaults: ItemCount;         { Page faults from code execution}
+		dataPageFaults: ItemCount;         { Page faults from data access}
+		preemptions: ItemCount;            { Number of times task was preempted}
+
+		cpuID: MPCpuID;                  { ID of CPU where task previously ran.}
+		blockedObject: MPOpaqueID;          { ID of blocked object.}
+		spaceID: MPAddressSpaceID;                { Address space ID of this task.}
+
+>>>>>>> origin/cpstrnew
 		stackBase: LogicalAddress;              { Base of stack (lowest address).}
 		stackLimit: LogicalAddress;             { Stack limit (highest address).}
 		stackCurr: LogicalAddress;              { Current stack address.}
 	end;
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
  *  MPSetExceptionHandler()   *** DEPRECATED ***
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Upon a task exception, the following message is sent to the designated queue:
       1. The MPTaskID, 
       2. The exception kind. These are enumerated in the interfaces header MachineExceptions.h 
       3. N/A
 }
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -3529,15 +4208,22 @@ type
 		creationTime: AbsoluteTime;           { Time when task created}
 
 <<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/cpstrnew
 { -------------------------------------------------------------------------------------------}
 
 
 {
  *  MPSetExceptionHandler()
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -3545,14 +4231,19 @@ type
  *  Availability:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatus; external name '_MPSetExceptionHandler';
+<<<<<<< HEAD
 <<<<<<< HEAD
 (* __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_7, __IPHONE_NA, __IPHONE_NA) *)
 =======
@@ -3588,19 +4279,30 @@ function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatu
  *  
  *  Mac OS X threading:
  *    Thread safe
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+
+
+{
+ *  MPDisposeTaskException()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatus; external name '_MPSetExceptionHandler';
@@ -3610,6 +4312,9 @@ function MPDisposeTaskException( task: MPTaskID; action: OptionBits ): OSStatus;
 =======
 function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatus; external name '_MPSetExceptionHandler';
 >>>>>>> graemeg/cpstrnew
+=======
+function MPDisposeTaskException( task: MPTaskID; action: OptionBits ): OSStatus; external name '_MPDisposeTaskException';
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -3619,6 +4324,7 @@ function MPSetExceptionHandler( task: MPTaskID; exceptionQ: MPQueueID ): OSStatu
  *  Mac OS X threading:
  *    Thread safe
  *  
+<<<<<<< HEAD
 <<<<<<< HEAD
  *  Mac OS X threading:
  *    Thread safe
@@ -3683,6 +4389,15 @@ function MPExtractTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPt
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in MPLibrary 2.0 and later
+ }
+function MPExtractTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ): OSStatus; external name '_MPExtractTaskState';
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3700,7 +4415,11 @@ function MPExtractTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPt
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3715,6 +4434,8 @@ function MPExtractTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPt
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
@@ -3723,11 +4444,14 @@ function MPSetTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ):
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3745,7 +4469,11 @@ function MPSetTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ):
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3774,10 +4502,14 @@ function MPSetTaskState( task: MPTaskID; kind: MPTaskStateKind; info: UnivPtr ):
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPThrowException( task: MPTaskID; kind: MPExceptionKind ): OSStatus; external name '_MPThrowException';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3791,6 +4523,9 @@ function MPThrowException( task: MPTaskID; kind: MPExceptionKind ): OSStatus; ex
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 { -------------------------------------------------------------------------------------------}
@@ -3808,6 +4543,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  MPRegisterDebugger()   *** DEPRECATED ***
 =======
  *  MPRegisterDebugger()
@@ -3818,11 +4554,15 @@ const
 =======
  *  MPRegisterDebugger()
 >>>>>>> graemeg/cpstrnew
+=======
+ *  MPRegisterDebugger()
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
  *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3836,10 +4576,14 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPRegisterDebugger( queue: MPQueueID; level: MPDebuggerLevel ): OSStatus; external name '_MPRegisterDebugger';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3853,6 +4597,9 @@ function MPRegisterDebugger( queue: MPQueueID; level: MPDebuggerLevel ): OSStatu
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3870,7 +4617,11 @@ function MPRegisterDebugger( queue: MPQueueID; level: MPDebuggerLevel ): OSStatu
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3884,10 +4635,14 @@ function MPRegisterDebugger( queue: MPQueueID; level: MPDebuggerLevel ): OSStatu
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPUnregisterDebugger( queue: MPQueueID ): OSStatus; external name '_MPUnregisterDebugger';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -3901,6 +4656,9 @@ function MPUnregisterDebugger( queue: MPQueueID ): OSStatus; external name '_MPU
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -3927,6 +4685,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *  MPRemoteCall()   *** DEPRECATED ***
 =======
  *  MPRemoteCall()
@@ -3937,6 +4696,9 @@ const
 =======
  *  MPRemoteCall()
 >>>>>>> graemeg/cpstrnew
+=======
+ *  MPRemoteCall()
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Calls a nonreentrant function and blocks the current task.
@@ -3968,6 +4730,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    using the MPRemoteCall function. %%     @deprecated Use blocks to
  *    make a call on anothed dispatch queue() and block on the result.
 =======
@@ -3979,6 +4742,9 @@ const
 =======
  *    using the MPRemoteCall function.
 >>>>>>> graemeg/cpstrnew
+=======
+ *    using the MPRemoteCall function.
+>>>>>>> origin/cpstrnew
  *  
  *  Mac OS X threading:
  *    Thread safe
@@ -4006,6 +4772,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -4016,10 +4783,14 @@ const
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; context: MPRemoteContext ): UnivPtr; external name '_MPRemoteCall';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4037,6 +4808,8 @@ function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; contex
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 
 
@@ -4044,11 +4817,14 @@ function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; contex
  *  MPRemoteCallCFM()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *  
  *  Summary:
  *    Calls a nonreentrant function and blocks the current task.
@@ -4099,6 +4875,7 @@ function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; contex
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework but deprecated in 10.7
 =======
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
@@ -4109,10 +4886,14 @@ function MPRemoteCall( remoteProc: MPRemoteProcedure; parameter: UnivPtr; contex
 =======
  *    Mac OS X:         in version 10.4 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.4 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   in MPLibrary 2.0 and later
  }
 function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; context: MPRemoteContext ): UnivPtr; external name '_MPRemoteCallCFM';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4126,6 +4907,9 @@ function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; con
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4207,7 +4991,11 @@ function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; con
  *  Mac OS X threading:
  *    Thread safe
  *  
+ *  Mac OS X threading:
+ *    Thread safe
+ *  
  *  Availability:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4221,10 +5009,14 @@ function MPRemoteCallCFM( remoteProc: MPRemoteProcedure; parameter: UnivPtr; con
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function _MPIsFullyInitialized: Boolean; external name '__MPIsFullyInitialized';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4238,6 +5030,9 @@ function _MPIsFullyInitialized: Boolean; external name '__MPIsFullyInitialized';
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -4251,6 +5046,7 @@ const
    Miscellaneous Services
    ======================
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -4272,21 +5068,30 @@ const
 
 {
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+{
+>>>>>>> origin/cpstrnew
  *  _MPLibraryVersion()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Ptr; minor: UInt32Ptr; release: UInt32Ptr; revision: UInt32Ptr ); external name '__MPLibraryVersion';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4300,6 +5105,9 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 
 {
@@ -4362,6 +5170,7 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework but deprecated in 10.7
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
@@ -4372,10 +5181,14 @@ procedure _MPLibraryVersion( versionCString: ConstCStringPtrPtr; major: UInt32Pt
 =======
  *    Mac OS X:         in version 10.0 and later in CoreServices.framework
 >>>>>>> graemeg/cpstrnew
+=======
+ *    Mac OS X:         in version 10.0 and later in CoreServices.framework
+>>>>>>> origin/cpstrnew
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in MPLibrary 1.0 and later
  }
 function _MPLibraryIsCompatible( versionCString: ConstCStringPtr; major: UInt32; minor: UInt32; release: UInt32; revision: UInt32 ): Boolean; external name '__MPLibraryIsCompatible';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4389,6 +5202,9 @@ function _MPLibraryIsCompatible( versionCString: ConstCStringPtr; major: UInt32;
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 {
    ¤

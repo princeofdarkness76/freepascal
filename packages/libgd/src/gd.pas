@@ -25,6 +25,7 @@ unit gd;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF AROS}
   {$UNDEF FPC_TARGET_SUPPORTS_DYNLIBS}
 {$ENDIF AROS}
@@ -43,6 +44,9 @@ unit gd;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 
 interface
 
@@ -108,6 +112,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF AROS}
   {$UNDEF LOAD_DYNAMICALLY}
   {$DEFINE gdlib := }
@@ -129,6 +134,8 @@ uses
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$IFNDEF LOAD_DYNAMICALLY}
   {$IFDEF darwin}

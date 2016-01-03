@@ -546,6 +546,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 constructor TListEnumerator.Create(AList: TList);
 begin
@@ -565,6 +566,9 @@ end;
 =======
 >>>>>>> graemeg/cpstrnew
 
+=======
+
+>>>>>>> origin/cpstrnew
 constructor TListEnumerator.Create(AList: TList);
 begin
   inherited Create;
@@ -579,11 +583,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TListEnumerator.MoveNext: Boolean;
 begin
   Inc(FPosition);
@@ -747,6 +754,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 end;
 =======
 end;            
@@ -757,6 +765,9 @@ end;
 =======
 end;            
 >>>>>>> graemeg/cpstrnew
+=======
+end;            
+>>>>>>> origin/cpstrnew
 
 procedure TList.Clear;
 

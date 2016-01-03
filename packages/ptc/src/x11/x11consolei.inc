@@ -3,6 +3,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Copyright (C) 2001-2013 Nikolay Nikolov (nickysn@users.sourceforge.net)
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
@@ -13,6 +14,9 @@
 =======
     Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
 >>>>>>> graemeg/cpstrnew
+=======
+    Copyright (C) 2001-2010 Nikolay Nikolov (nickysn@users.sourceforge.net)
+>>>>>>> origin/cpstrnew
     Original C++ version by Christian Nentwich (c.nentwich@cs.ucl.ac.uk)
 
     This library is free software; you can redistribute it and/or
@@ -67,6 +71,7 @@ destructor TX11Console.Destroy;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Close;
   FreeAndNil(FX11Display);
@@ -75,6 +80,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   I: Integer;
 begin
@@ -84,11 +91,14 @@ begin
     FreeAndNil(FModes[I]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   inherited Destroy;
 end;
 
@@ -106,15 +116,19 @@ begin
   {$I+}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if IOResult <> 0 then
     exit;
   while not EoF(F) do
   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -136,6 +150,11 @@ begin
     Readln(F, S);
     {$I+}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$I-}
+    Readln(F, S);
+    {$I+}
+>>>>>>> origin/cpstrnew
     if IOResult <> 0 then
       Break;
     Option(S);
@@ -265,6 +284,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if AOption = 'intercept window close' then
   begin
     FFlags := FFlags + [PTC_X11_INTERCEPT_WINDOW_CLOSE];
@@ -288,6 +308,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if AOption = 'enable logging' then
   begin
     LOG_enabled := True;
@@ -307,6 +329,7 @@ begin
     Result := False;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -332,6 +355,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TX11Console.Modes: PPTCMode;
 var
   I: Integer;
@@ -341,11 +366,14 @@ begin
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if FX11Display = nil then
     FX11Display := CreateDisplay;
 
@@ -357,15 +385,19 @@ begin
   Result := @FModes[0];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 {TODO: Find current pixel depth}
 procedure TX11Console.Open(const ATitle: string; APages: Integer = 0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -379,6 +411,8 @@ procedure TX11Console.Open(const ATitle: string; AFormat: IPTCFormat;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   tmp: TPTCFormat;
 begin
@@ -393,16 +427,20 @@ end;
 procedure TX11Console.Open(const ATitle: string; const AFormat: TPTCFormat;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            APages: Integer = 0);
 begin
   Open(ATitle, 640, 480, AFormat, APages);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -416,6 +454,9 @@ procedure TX11Console.Open(const ATitle: string; const AMode: TPTCMode;
 =======
 procedure TX11Console.Open(const ATitle: string; const AMode: TPTCMode;
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TX11Console.Open(const ATitle: string; const AMode: TPTCMode;
+>>>>>>> origin/cpstrnew
                            APages: Integer = 0);
 begin
   Open(ATitle, AMode.Width, AMode.Height, AMode.Format, APages);
@@ -425,6 +466,7 @@ function TX11Console.CreateDisplay: TX11Display;
 var
   display: PDisplay;
   screen: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -447,6 +489,11 @@ begin
   { Check if we can open an X display }
   display := XOpenDisplay(Nil);
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+  { Check if we can open an X display }
+  display := XOpenDisplay(Nil);
+>>>>>>> origin/cpstrnew
   if display = nil then
     raise TPTCError.Create('Cannot open X display');
 
@@ -463,6 +510,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (PTC_X11_TRY_DGA2 in FFlags) and not (PTC_X11_USE_OPENGL in FFlags) then
 =======
   if PTC_X11_TRY_DGA2 In FFlags then
@@ -473,6 +521,9 @@ begin
 =======
   if PTC_X11_TRY_DGA2 In FFlags then
 >>>>>>> graemeg/cpstrnew
+=======
+  if PTC_X11_TRY_DGA2 In FFlags then
+>>>>>>> origin/cpstrnew
   begin
     try
       Result := TX11DGA2Display.Create(display, screen, FFlags + [PTC_X11_LEAVE_DISPLAY]);
@@ -488,6 +539,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (PTC_X11_TRY_DGA1 in FFlags) and not (PTC_X11_USE_OPENGL in FFlags) then
 =======
   if PTC_X11_TRY_DGA1 In FFlags then
@@ -498,6 +550,9 @@ begin
 =======
   if PTC_X11_TRY_DGA1 In FFlags then
 >>>>>>> graemeg/cpstrnew
+=======
+  if PTC_X11_TRY_DGA1 In FFlags then
+>>>>>>> origin/cpstrnew
   begin
     try
       Result := TX11DGA1Display.Create(display, screen, FFlags + [PTC_X11_LEAVE_DISPLAY]);
@@ -515,6 +570,7 @@ procedure TX11Console.Open(const ATitle: string; AWidth, AHeight: Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat; APages: Integer = 0);
 =======
                            const AFormat: TPTCFormat; APages: Integer = 0);
@@ -525,6 +581,9 @@ procedure TX11Console.Open(const ATitle: string; AWidth, AHeight: Integer;
 =======
                            const AFormat: TPTCFormat; APages: Integer = 0);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat; APages: Integer = 0);
+>>>>>>> origin/cpstrnew
 begin
   Close;
   FTitle := ATitle;
@@ -543,6 +602,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TX11Console.InternalResize(AWidth, AHeight: Integer);
 begin
@@ -554,6 +614,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 procedure TX11Console.Flush;
 begin
@@ -573,6 +635,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TX11Console.Update(AArea: IPTCArea);
 =======
 procedure TX11Console.Update(const AArea: TPTCArea);
@@ -583,10 +646,14 @@ procedure TX11Console.Update(const AArea: TPTCArea);
 =======
 procedure TX11Console.Update(const AArea: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TX11Console.Update(const AArea: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   FX11Display.Update(AArea);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -600,10 +667,14 @@ function TX11Console.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEve
 =======
 function TX11Console.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+function TX11Console.NextEvent(var AEvent: TPTCEvent; AWait: Boolean; const AEventMask: TPTCEventMask): Boolean;
+>>>>>>> origin/cpstrnew
 begin
   Result := FX11Display.NextEvent(AEvent, AWait, AEventMask);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -617,10 +688,14 @@ function TX11Console.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask):
 =======
 function TX11Console.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
 >>>>>>> graemeg/cpstrnew
+=======
+function TX11Console.PeekEvent(AWait: Boolean; const AEventMask: TPTCEventMask): TPTCEvent;
+>>>>>>> origin/cpstrnew
 begin
   Result := FX11Display.PeekEvent(AWait, AEventMask);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -634,10 +709,14 @@ procedure TX11Console.Copy(ASurface: TPTCBaseSurface);
 =======
 procedure TX11Console.Copy(ASurface: TPTCBaseSurface);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TX11Console.Copy(ASurface: TPTCBaseSurface);
+>>>>>>> origin/cpstrnew
 begin
   {todo!...}
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -655,6 +734,10 @@ procedure TX11Console.Copy(ASurface: TPTCBaseSurface;
 procedure TX11Console.Copy(ASurface: TPTCBaseSurface;
                            const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TX11Console.Copy(ASurface: TPTCBaseSurface;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   {todo!...}
 end;
@@ -674,6 +757,7 @@ procedure TX11Console.Load(const APixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette);
 =======
@@ -688,6 +772,10 @@ procedure TX11Console.Load(const APixels: Pointer;
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   FX11Display.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette);
 end;
@@ -697,6 +785,7 @@ procedure TX11Console.Load(const APixels: Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                            AFormat: IPTCFormat;
                            APalette: IPTCPalette;
                            ASource, ADestination: IPTCArea);
@@ -715,12 +804,18 @@ procedure TX11Console.Load(const APixels: Pointer;
                            const APalette: TPTCPalette;
                            const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   FX11Display.Load(APixels, AWidth, AHeight, APitch, AFormat, APalette, ASource, ADestination);
 end;
 
 procedure TX11Console.Save(APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -738,12 +833,17 @@ procedure TX11Console.Save(APixels: Pointer;
                            const AFormat: TPTCFormat;
                            const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   {todo!...}
 end;
 
 procedure TX11Console.Save(APixels: Pointer;
                            AWidth, AHeight, APitch: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -765,12 +865,18 @@ procedure TX11Console.Save(APixels: Pointer;
                            const APalette: TPTCPalette;
                            const ASource, ADestination: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+                           const AFormat: TPTCFormat;
+                           const APalette: TPTCPalette;
+                           const ASource, ADestination: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   {todo!...}
 end;
 
 procedure TX11Console.Clear;
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -784,11 +890,15 @@ var
 =======
   tmp: TPTCColor;
 >>>>>>> graemeg/cpstrnew
+=======
+  tmp: TPTCColor;
+>>>>>>> origin/cpstrnew
 begin
   if Format.Direct then
     tmp := TPTCColor.Create(0, 0, 0, 0)
   else
     tmp := TPTCColor.Create(0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -800,6 +910,8 @@ procedure TX11Console.Clear(AColor: IPTCColor);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   try
     Clear(tmp);
   finally
@@ -808,6 +920,7 @@ procedure TX11Console.Clear(AColor: IPTCColor);
 end;
 
 procedure TX11Console.Clear(const AColor: TPTCColor);
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -822,10 +935,13 @@ end;
 
 procedure TX11Console.Clear(const AColor: TPTCColor);
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   FX11Display.Clear(AColor);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -843,10 +959,15 @@ procedure TX11Console.Clear(const AColor: TPTCColor;
 procedure TX11Console.Clear(const AColor: TPTCColor;
                             const AArea: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TX11Console.Clear(const AColor: TPTCColor;
+                            const AArea: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   FX11Display.Clear(AColor, AArea);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -860,10 +981,14 @@ procedure TX11Console.Palette(const APalette: TPTCPalette);
 =======
 procedure TX11Console.Palette(const APalette: TPTCPalette);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TX11Console.Palette(const APalette: TPTCPalette);
+>>>>>>> origin/cpstrnew
 begin
   FX11Display.Palette(APalette);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -877,10 +1002,14 @@ function TX11Console.Palette: TPTCPalette;
 =======
 function TX11Console.Palette: TPTCPalette;
 >>>>>>> graemeg/cpstrnew
+=======
+function TX11Console.Palette: TPTCPalette;
+>>>>>>> origin/cpstrnew
 begin
   Result := FX11Display.Palette;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -894,6 +1023,9 @@ procedure TX11Console.Clip(const AArea: TPTCArea);
 =======
 procedure TX11Console.Clip(const AArea: TPTCArea);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TX11Console.Clip(const AArea: TPTCArea);
+>>>>>>> origin/cpstrnew
 begin
   FX11Display.Clip(AArea);
 end;
@@ -921,6 +1053,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function TX11Console.GetArea: IPTCArea;
 =======
 function TX11Console.GetArea: TPTCArea;
@@ -931,10 +1064,14 @@ function TX11Console.GetArea: TPTCArea;
 =======
 function TX11Console.GetArea: TPTCArea;
 >>>>>>> graemeg/cpstrnew
+=======
+function TX11Console.GetArea: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   Result := FX11Display.Area;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -948,10 +1085,14 @@ function TX11Console.Clip: TPTCArea;
 =======
 function TX11Console.Clip: TPTCArea;
 >>>>>>> graemeg/cpstrnew
+=======
+function TX11Console.Clip: TPTCArea;
+>>>>>>> origin/cpstrnew
 begin
   Result := FX11Display.Clip;
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -965,6 +1106,9 @@ function TX11Console.GetFormat: TPTCFormat;
 =======
 function TX11Console.GetFormat: TPTCFormat;
 >>>>>>> graemeg/cpstrnew
+=======
+function TX11Console.GetFormat: TPTCFormat;
+>>>>>>> origin/cpstrnew
 begin
   Result := FX11Display.Format;
 end;
@@ -1038,6 +1182,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure TX11Console.OpenGL_SwapBuffers;
 begin
@@ -1059,3 +1204,5 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

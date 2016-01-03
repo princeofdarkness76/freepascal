@@ -46,6 +46,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function comp_expr(flags:texprflags):tnode;
 
     { reads a single factor }
@@ -55,23 +56,29 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function comp_expr(accept_equal,typeonly:boolean):tnode;
 
     { reads a single factor }
     function factor(getaddr,typeonly:boolean) : tnode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     procedure string_dec(var def: tdef; allowtypedef: boolean);
 
     function parse_paras(__colon,__namedpara : boolean;end_of_paras : ttoken) : tnode;
 
     { the ID token has to be consumed before calling this function }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,6 +92,9 @@ interface
 =======
     procedure do_member_read(structh:tabstractrecorddef;getaddr:boolean;sym:tsym;var p1:tnode;var again:boolean;callflags:tcallnodeflags);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure do_member_read(structh:tabstractrecorddef;getaddr:boolean;sym:tsym;var p1:tnode;var again:boolean;callflags:tcallnodeflags);
+>>>>>>> origin/cpstrnew
 
     function get_intconst:TConstExprInt;
     function get_stringconst:string;
@@ -127,11 +137,14 @@ implementation
     function sub_expr(pred_level:Toperator_precedence;accept_equal,typeonly:boolean):tnode;forward;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     const
        { true, if the inherited call is anonymous }
@@ -183,11 +196,14 @@ implementation
                end}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              else
                begin
                 if (tordconstnode(p).value<=0) then
@@ -198,6 +214,7 @@ implementation
                 if tordconstnode(p).value>255 then
                   begin
                     { longstring is currently unsupported (CEC)! }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -353,6 +370,49 @@ implementation
              p.free;
            end
 >>>>>>> graemeg/cpstrnew
+=======
+{                    t:=tstringdef.createlong(tordconstnode(p).value))}
+                    Message(parser_e_invalid_string_size);
+                    tordconstnode(p).value:=255;
+                    def:=tstringdef.createshort(int64(tordconstnode(p).value));
+                  end
+                else
+                  if tordconstnode(p).value<>255 then
+                    def:=tstringdef.createshort(int64(tordconstnode(p).value));
+                consume(_RECKKLAMMER);
+              end;
+             p.free;
+           end
+         else if token=_LSHARPBRACKET then
+           begin
+             if not(allowtypedef) then
+               Message(parser_e_no_local_para_def);
+             consume(_LSHARPBRACKET);
+             p:=comp_expr(true,false);
+             if not is_constintnode(p) then
+               begin
+                 Message(parser_e_illegal_expression);
+                 { error recovery }
+               end
+             else
+               begin
+                 if (tordconstnode(p).value<0) or (tordconstnode(p).value>65535) then
+                   begin
+                     Message(parser_e_invalid_codepage);
+                     tordconstnode(p).value:=0;
+                   end;
+                 if tordconstnode(p).value=CP_UTF16 then
+                   def:=tstringdef.createunicode
+                 else
+                   begin
+                     def:=tstringdef.createansi;
+                     tstringdef(def).encoding:=int64(tordconstnode(p).value);
+                   end;
+                 consume(_RSHARPBRACKET);
+               end;
+             p.free;
+           end
+>>>>>>> origin/cpstrnew
          else
            begin
              if cs_ansistrings in current_settings.localswitches then
@@ -362,11 +422,14 @@ implementation
            end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
        end;
 
 
@@ -405,6 +468,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                    p1:=comp_expr([ef_accept_equal]);
 =======
                    p1:=comp_expr(true,false);
@@ -415,10 +479,14 @@ implementation
 =======
                    p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                   p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                    named_args_allowed:=false;
                    if found_arg_name then
                      begin
                        argname:=p1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -432,6 +500,9 @@ implementation
 =======
                        p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                       p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                        p2:=ccallparanode.create(p1,p2);
                        tcallparanode(p2).parametername:=argname;
                      end
@@ -445,6 +516,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                p1:=comp_expr([ef_accept_equal]);
 =======
                p1:=comp_expr(true,false);
@@ -455,6 +527,9 @@ implementation
 =======
                p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+               p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                p2:=ccallparanode.create(p1,p2);
              end;
            { it's for the str(l:5,s); }
@@ -464,6 +539,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                p1:=comp_expr([ef_accept_equal]);
 =======
                p1:=comp_expr(true,false);
@@ -474,10 +550,14 @@ implementation
 =======
                p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+               p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                p2:=ccallparanode.create(p1,p2);
                include(tcallparanode(p2).callparaflags,cpf_is_colon_para);
                if try_to_consume(_COLON) then
                  begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -491,6 +571,9 @@ implementation
 =======
                    p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                   p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                    p2:=ccallparanode.create(p1,p2);
                    include(tcallparanode(p2).callparaflags,cpf_is_colon_para);
                  end
@@ -577,6 +660,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:=comp_expr([ef_accept_equal]);
 =======
               p1:=comp_expr(true,false);
@@ -587,6 +671,9 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               consume(_RKLAMMER);
               p1:=geninlinenode(in_ord_x,false,p1);
               statement_syssym := p1;
@@ -601,6 +688,7 @@ implementation
                     begin
                       if not(try_to_consume(_RKLAMMER)) then
                         begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -620,6 +708,10 @@ implementation
                           p1:=comp_expr(true,false);
                           consume(_RKLAMMER);
 >>>>>>> graemeg/cpstrnew
+=======
+                          p1:=comp_expr(true,false);
+                          consume(_RKLAMMER);
+>>>>>>> origin/cpstrnew
                           if (not assigned(current_procinfo) or
                               is_void(current_procinfo.procdef.returndef)) then
 >>>>>>> graemeg/cpstrnew
@@ -719,6 +811,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:=comp_expr([ef_accept_equal]);
 =======
               p1:=comp_expr(true,false);
@@ -729,12 +822,16 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               consume(_RKLAMMER);
               if p1.nodetype=typen then
                 ttypenode(p1).allowed:=true;
               { Allow classrefdef, which is required for
                 Typeof(self) in static class methods }
               if not(is_objc_class_or_protocol(p1.resultdef)) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -745,6 +842,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                  ((p1.resultdef.typ = objectdef) or
                   (assigned(current_procinfo) and
                    ((po_classmethod in current_procinfo.procdef.procoptions) or
@@ -767,6 +866,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:=comp_expr([ef_accept_equal]);
 =======
               p1:=comp_expr(true,false);
@@ -777,6 +877,9 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               consume(_RKLAMMER);
               if ((p1.nodetype<>typen) and
 
@@ -800,6 +903,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { allow helpers for SizeOf and BitSizeOf }
                  if p1.nodetype=typen then
                    ttypenode(p1).helperallowed:=true;
@@ -809,6 +913,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                  if (p1.resultdef.typ=forwarddef) then
                    Message1(type_e_type_is_not_completly_defined,tforwarddef(p1.resultdef).tosymname^);
                  if (l = in_sizeof_x) or
@@ -839,6 +945,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   p1:=comp_expr([ef_accept_equal]);
 =======
                   p1:=comp_expr(true,false);
@@ -849,6 +956,9 @@ implementation
 =======
                   p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                  p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                   { When reading a class type it is parsed as loadvmtaddrn,
                     typeinfo only needs the type so we remove the loadvmtaddrn }
                   if p1.nodetype=loadvmtaddrn then
@@ -859,6 +969,7 @@ implementation
                       p1:=p2;
                     end;
                   if p1.nodetype=typen then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -877,6 +988,9 @@ implementation
 =======
                     ttypenode(p1).allowed:=true;
 >>>>>>> graemeg/cpstrnew
+=======
+                    ttypenode(p1).allowed:=true;
+>>>>>>> origin/cpstrnew
     {              else
                     begin
                        p1.destroy;
@@ -897,6 +1011,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           in_aligned_x,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -904,11 +1019,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           in_unaligned_x :
             begin
               err:=false;
               consume(_LKLAMMER);
               in_args:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -922,6 +1040,9 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               p2:=ccallparanode.create(p1,nil);
               p2:=geninlinenode(l,false,p2);
               consume(_RKLAMMER);
@@ -936,6 +1057,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:=comp_expr([ef_accept_equal]);
 =======
               p1:=comp_expr(true,false);
@@ -946,6 +1068,9 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               { When reading a class type it is parsed as loadvmtaddrn,
                 typeinfo only needs the type so we remove the loadvmtaddrn }
               if p1.nodetype=loadvmtaddrn then
@@ -1015,11 +1140,14 @@ implementation
               p1:=caddrnode.create(p1);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               consume(_RKLAMMER);
               statement_syssym:=p1;
             end;
@@ -1040,11 +1168,14 @@ implementation
               p1:=comp_expr(true,false);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               p1:=caddrnode.create(p1);
               got_addrn:=false;
               { Ofs() returns a cardinal/qword, not a pointer }
@@ -1067,11 +1198,14 @@ implementation
               p1:=comp_expr(true,false);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               p1:=geninlinenode(in_seg_x,false,p1);
               got_addrn:=false;
               consume(_RKLAMMER);
@@ -1086,6 +1220,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:=comp_expr([ef_accept_equal]);
 =======
               p1:=comp_expr(true,false);
@@ -1096,6 +1231,9 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               p2:=geninlinenode(l,false,p1);
               consume(_RKLAMMER);
               statement_syssym:=p2;
@@ -1109,6 +1247,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:=comp_expr([ef_accept_equal]);
 =======
               p1:=comp_expr(true,false);
@@ -1119,6 +1258,9 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               p2:=geninlinenode(l,false,p1);
               consume(_RKLAMMER);
               statement_syssym:=p2;
@@ -1129,6 +1271,7 @@ implementation
             begin
               consume(_LKLAMMER);
               in_args:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1150,6 +1293,11 @@ implementation
               if try_to_consume(_COMMA) then
                 p2:=ccallparanode.create(comp_expr(true,false),nil)
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+              if try_to_consume(_COMMA) then
+                p2:=ccallparanode.create(comp_expr(true,false),nil)
+>>>>>>> origin/cpstrnew
               else
                 p2:=nil;
               p2:=ccallparanode.create(p1,p2);
@@ -1164,6 +1312,7 @@ implementation
                   message(parser_e_illegal_slice);
                   consume(_LKLAMMER);
                   in_args:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1185,6 +1334,11 @@ implementation
                   if try_to_consume(_COMMA) then
                     comp_expr(true,false).free;
 >>>>>>> graemeg/cpstrnew
+=======
+                  comp_expr(true,false).free;
+                  if try_to_consume(_COMMA) then
+                    comp_expr(true,false).free;
+>>>>>>> origin/cpstrnew
                   statement_syssym:=cerrornode.create;
                   consume(_RKLAMMER);
                 end
@@ -1192,6 +1346,7 @@ implementation
                 begin
                   consume(_LKLAMMER);
                   in_args:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1204,17 +1359,22 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   p1:=comp_expr(true,false);
                   Consume(_COMMA);
                   if not(codegenerror) then
                     p2:=ccallparanode.create(comp_expr(true,false),nil)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   else
                     p2:=cerrornode.create;
                   p2:=ccallparanode.create(p1,p2);
@@ -1249,6 +1409,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 p1:=comp_expr([ef_accept_equal]);
 =======
                 p1:=comp_expr(true,false);
@@ -1259,6 +1420,9 @@ implementation
 =======
                 p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                 if p2<>nil then
                   p2:=caddnode.create(addn,p2,p1)
                 else
@@ -1307,6 +1471,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   p1:=factor(true,[]);
 =======
                   p1:=factor(true,false);
@@ -1317,6 +1482,9 @@ implementation
 =======
                   p1:=factor(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                  p1:=factor(true,false);
+>>>>>>> origin/cpstrnew
                   p2:=geninlinenode(l,false,p1);
                   consume(_RKLAMMER);
                   statement_syssym:=p2;
@@ -1335,6 +1503,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:=comp_expr([ef_accept_equal]);
 =======
               p1:=comp_expr(true,false);
@@ -1345,6 +1514,9 @@ implementation
 =======
               p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               p2:=geninlinenode(l,false,p1);
               consume(_RKLAMMER);
               statement_syssym:=p2;
@@ -1381,6 +1553,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               p1:= ccallparanode.create(comp_expr([ef_accept_equal]), nil);
               consume(_COMMA);
               p2 := ccallparanode.create(comp_expr([ef_accept_equal]),p1);
@@ -1403,6 +1576,13 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:= ccallparanode.create(comp_expr(true,false), nil);
+              consume(_COMMA);
+              p2 := ccallparanode.create(comp_expr(true,false),p1);
+              if try_to_consume(_COMMA) then
+                p2 := ccallparanode.create(comp_expr(true,false),p2);
+>>>>>>> origin/cpstrnew
               consume(_RKLAMMER);
               p2 := geninlinenode(l,false,p2);
               statement_syssym := p2;
@@ -1413,6 +1593,7 @@ implementation
             begin
               consume(_LKLAMMER);
               in_args:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1434,6 +1615,11 @@ implementation
               consume(_COMMA);
               p2:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+              consume(_COMMA);
+              p2:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               statement_syssym:=geninlinenode(l,false,ccallparanode.create(p1,ccallparanode.create(p2,nil)));
               consume(_RKLAMMER);
             end;
@@ -1443,6 +1629,7 @@ implementation
             begin
               consume(_LKLAMMER);
               in_args:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1472,6 +1659,13 @@ implementation
               consume(_COMMA);
               paras:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+              consume(_COMMA);
+              p2:=comp_expr(true,false);
+              consume(_COMMA);
+              paras:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
               statement_syssym:=geninlinenode(l,false,ccallparanode.create(p1,ccallparanode.create(p2,ccallparanode.create(paras,nil))));
               consume(_RKLAMMER);
             end;
@@ -1480,6 +1674,7 @@ implementation
             begin
               consume(_LKLAMMER);
               in_args:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1501,6 +1696,11 @@ implementation
               if try_to_consume(_COMMA) then
                  p2:=comp_expr(true,false)
 >>>>>>> graemeg/cpstrnew
+=======
+              p1:=comp_expr(true,false);
+              if try_to_consume(_COMMA) then
+                 p2:=comp_expr(true,false)
+>>>>>>> origin/cpstrnew
               else
                begin
                  { then insert an empty string }
@@ -1525,6 +1725,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   p1:=comp_expr([ef_accept_equal]);
 =======
                   p1:=comp_expr(true,false);
@@ -1535,6 +1736,9 @@ implementation
 =======
                   p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                  p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                   p1.destroy;
                   consume(_RKLAMMER);
                 end;
@@ -1592,6 +1796,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                  { Escape nested procedures }
                  if assigned(current_procinfo) then
                    begin
@@ -1620,6 +1825,11 @@ implementation
                  if assigned(current_procinfo) and current_procinfo.procdef.no_self_node then
                    p1:=cloadvmtaddrnode.create(ctypenode.create(current_procinfo.procdef.struct))
 >>>>>>> graemeg/cpstrnew
+=======
+                 { We are calling from the static class method which has no self node }
+                 if assigned(current_procinfo) and current_procinfo.procdef.no_self_node then
+                   p1:=cloadvmtaddrnode.create(ctypenode.create(current_procinfo.procdef.struct))
+>>>>>>> origin/cpstrnew
                  else
                    p1:=load_self_node;
                  { We are calling a member }
@@ -1634,6 +1844,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure do_proc_call(sym:tsym;st:TSymtable;obj:tabstractrecorddef;getaddr:boolean;var again : boolean;var p1:tnode;callflags:tcallnodeflags;spezcontext:tspecializationcontext);
 =======
     procedure do_proc_call(sym:tsym;st:TSymtable;obj:tabstractrecorddef;getaddr:boolean;var again : boolean;var p1:tnode;callflags:tcallnodeflags);
@@ -1644,6 +1855,9 @@ implementation
 =======
     procedure do_proc_call(sym:tsym;st:TSymtable;obj:tabstractrecorddef;getaddr:boolean;var again : boolean;var p1:tnode;callflags:tcallnodeflags);
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure do_proc_call(sym:tsym;st:TSymtable;obj:tabstractrecorddef;getaddr:boolean;var again : boolean;var p1:tnode;callflags:tcallnodeflags);
+>>>>>>> origin/cpstrnew
       var
          membercall,
          prevafterassn : boolean;
@@ -1879,6 +2093,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if propsym.getpropaccesslist(palt_write,propaccesslist) then
 =======
               if getpropaccesslist(propsym,palt_write,propaccesslist) then
@@ -1889,6 +2104,9 @@ implementation
 =======
               if getpropaccesslist(propsym,palt_write,propaccesslist) then
 >>>>>>> graemeg/cpstrnew
+=======
+              if getpropaccesslist(propsym,palt_write,propaccesslist) then
+>>>>>>> origin/cpstrnew
                 begin
                    sym:=propaccesslist.firstsym^.sym;
                    case sym.typ of
@@ -1902,6 +2120,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          p1:=ccallnode.create(paras,tprocsym(sym),st,p1,callflags,nil);
 =======
                          p1:=ccallnode.create(paras,tprocsym(sym),st,p1,callflags);
@@ -1912,12 +2131,16 @@ implementation
 =======
                          p1:=ccallnode.create(paras,tprocsym(sym),st,p1,callflags);
 >>>>>>> graemeg/cpstrnew
+=======
+                         p1:=ccallnode.create(paras,tprocsym(sym),st,p1,callflags);
+>>>>>>> origin/cpstrnew
                          addsymref(sym);
                          paras:=nil;
                          consume(_ASSIGNMENT);
                          { read the expression }
                          if propsym.propdef.typ=procvardef then
                            getprocvardef:=tprocvardef(propsym.propdef);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1931,6 +2154,9 @@ implementation
 =======
                          p2:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                         p2:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                          if assigned(getprocvardef) then
                            handle_procvar(getprocvardef,p2);
                          tcallnode(p1).left:=ccallparanode.create(p2,tcallnode(p1).left);
@@ -1944,6 +2170,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          if not handle_staticfield_access(sym,p1) then
 =======
                          if not handle_staticfield_access(sym,false,p1) then
@@ -1954,10 +2181,14 @@ implementation
 =======
                          if not handle_staticfield_access(sym,false,p1) then
 >>>>>>> graemeg/cpstrnew
+=======
+                         if not handle_staticfield_access(sym,false,p1) then
+>>>>>>> origin/cpstrnew
                            propaccesslist_to_node(p1,st,propaccesslist);
                          include(p1.flags,nf_isproperty);
                          consume(_ASSIGNMENT);
                          { read the expression }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1971,6 +2202,9 @@ implementation
 =======
                          p2:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                         p2:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                          p1:=cassignmentnode.create(p1,p2);
                       end
                     else
@@ -1991,6 +2225,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if propsym.getpropaccesslist(palt_read,propaccesslist) then
 =======
               if getpropaccesslist(propsym,palt_read,propaccesslist) then
@@ -2001,12 +2236,16 @@ implementation
 =======
               if getpropaccesslist(propsym,palt_read,propaccesslist) then
 >>>>>>> graemeg/cpstrnew
+=======
+              if getpropaccesslist(propsym,palt_read,propaccesslist) then
+>>>>>>> origin/cpstrnew
                 begin
                    sym := propaccesslist.firstsym^.sym;
                    case sym.typ of
                      fieldvarsym :
                        begin
                          { generate access code }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2030,6 +2269,11 @@ implementation
                            propaccesslist_to_node(p1,st,propaccesslist);
                          include(p1.flags,nf_isproperty);
 >>>>>>> graemeg/cpstrnew
+=======
+                         if not handle_staticfield_access(sym,false,p1) then
+                           propaccesslist_to_node(p1,st,propaccesslist);
+                         include(p1.flags,nf_isproperty);
+>>>>>>> origin/cpstrnew
                        end;
                      procsym :
                        begin
@@ -2038,6 +2282,7 @@ implementation
                           membercall:=maybe_load_methodpointer(st,p1);
                           if membercall then
                             include(callflags,cnf_member_call);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2051,6 +2296,9 @@ implementation
 =======
                           p1:=ccallnode.create(paras,tprocsym(sym),st,p1,callflags);
 >>>>>>> graemeg/cpstrnew
+=======
+                          p1:=ccallnode.create(paras,tprocsym(sym),st,p1,callflags);
+>>>>>>> origin/cpstrnew
                           paras:=nil;
                           include(p1.flags,nf_isproperty);
                           include(p1.flags,nf_no_lvalue);
@@ -2079,6 +2327,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure do_member_read(structh:tabstractrecorddef;getaddr:boolean;sym:tsym;var p1:tnode;var again:boolean;callflags:tcallnodeflags;spezcontext:tspecializationcontext);
       var
         isclassref:boolean;
@@ -2097,6 +2346,11 @@ implementation
       var
          isclassref  : boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure do_member_read(structh:tabstractrecorddef;getaddr:boolean;sym:tsym;var p1:tnode;var again:boolean;callflags:tcallnodeflags);
+      var
+         isclassref  : boolean;
+>>>>>>> origin/cpstrnew
       begin
          if sym=nil then
            begin
@@ -2175,16 +2429,20 @@ implementation
                       if not handle_staticfield_access(sym,true,p1) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                         begin
                           if isclassref then
                             if assigned(p1) and
                               (
                                 is_self_node(p1) or
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2198,6 +2456,9 @@ implementation
 =======
                                 (assigned(current_procinfo) and (current_procinfo.procdef.no_self_node) and
 >>>>>>> graemeg/cpstrnew
+=======
+                                (assigned(current_procinfo) and (current_procinfo.procdef.no_self_node) and
+>>>>>>> origin/cpstrnew
                                 (current_procinfo.procdef.struct=structh))) then
                               Message(parser_e_only_class_members)
                             else
@@ -2219,6 +2480,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         p1:=comp_expr([ef_accept_equal]);
 =======
                         p1:=comp_expr(true,false);
@@ -2229,12 +2491,16 @@ implementation
 =======
                         p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                        p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                         consume(_RKLAMMER);
                         p1:=ctypeconvnode.create_explicit(p1,ttypesym(sym).typedef);
                       end
                      else
                        begin
                          p1:=ctypenode.create(ttypesym(sym).typedef);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2250,6 +2516,9 @@ implementation
 =======
                          if (is_class(ttypesym(sym).typedef) or is_objcclass(ttypesym(sym).typedef)) and
 >>>>>>> graemeg/cpstrnew
+=======
+                         if (is_class(ttypesym(sym).typedef) or is_objcclass(ttypesym(sym).typedef)) and
+>>>>>>> origin/cpstrnew
                             not(block_type in [bt_type,bt_const_type,bt_var_type]) then
                            p1:=cloadvmtaddrnode.create(p1);
                        end;
@@ -2259,6 +2528,9 @@ implementation
                      p1.free;
                      p1:=genconstsymtree(tconstsym(sym));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
                    end;
                  staticvarsym:
                    begin
@@ -2267,6 +2539,7 @@ implementation
                      p1.free;
                      p1:=cloadnode.create(sym,sym.Owner);
                    end;
+<<<<<<< HEAD
 =======
                    end;
                  staticvarsym:
@@ -2277,6 +2550,8 @@ implementation
                      p1:=cloadnode.create(sym,sym.Owner);
                    end;
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                  absolutevarsym:
                    begin
                      p1.free;
@@ -2314,10 +2589,13 @@ implementation
           recordsymtable:
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             begin
               memberparentdef:=tdef(st.defowner);
               exit;
@@ -2530,6 +2808,7 @@ implementation
                     else
                       Message1(sym_e_id_no_member,orgpattern);
                   end;
+<<<<<<< HEAD
                 if (result.nodetype<>errorn) and assigned(srsym) then
                   do_member_read(tabstractrecorddef(hdef),getaddr,srsym,result,again,[],spezcontext)
                 else
@@ -2583,6 +2862,11 @@ implementation
                      consume(_ID);
                    end;
                 end
+=======
+               { if nothing found give error and return errorsym }
+               if assigned(srsym) then
+                 check_hints(srsym,srsym.symoptions,srsym.deprecatedmsg)
+>>>>>>> origin/cpstrnew
                else
                 begin
                   result:=ctypenode.create(hdef);
@@ -2602,6 +2886,7 @@ implementation
           end;
       end;
 
+<<<<<<< HEAD
 {****************************************************************************
                                Factor
 ****************************************************************************}
@@ -2767,6 +3052,23 @@ implementation
           paracount:=0;
           { check arguments and create an assignment calls }
           if try_to_consume(_LKLAMMER) then
+=======
+           { Access to funcret or need to call the function? }
+           if (srsym.typ in [absolutevarsym,localvarsym,paravarsym]) and
+              (vo_is_funcret in tabstractvarsym(srsym).varoptions) and
+              { result(x) is not allowed }
+              not(vo_is_result in tabstractvarsym(srsym).varoptions) and
+              (
+               (token=_LKLAMMER) or
+               (
+                (
+                 (m_tp7 in current_settings.modeswitches) or
+                 (m_delphi in current_settings.modeswitches)
+                ) and
+                (afterassignment or in_args)
+               )
+              ) then
+>>>>>>> origin/cpstrnew
             begin
               assnode:=internalstatements(assstatement);
               repeat
@@ -2900,6 +3202,7 @@ implementation
         do_typecheckpass_changed(p1,nodechanged);
         result:=result or nodechanged;
 
+<<<<<<< HEAD
         if codegenerror then
          begin
            recoverconsume_postfixops;
@@ -2921,6 +3224,42 @@ implementation
                    p1:=ccallnode.create_procvar(nil,p1);
                    typecheckpass(p1);
                  end;
+=======
+                staticvarsym,
+                localvarsym,
+                paravarsym,
+                fieldvarsym :
+                  begin
+                    { check if we are reading a field of an object/class/   }
+                    { record. is_member_read() will deal with withsymtables }
+                    { if needed.                                            }
+                    p1:=nil;
+                    if is_member_read(srsym,srsymtable,p1,hdef) then
+                      begin
+                        { if the field was originally found in an    }
+                        { objectsymtable, it means it's part of self
+                          if only method from which it was called is
+                          not class static                          }
+                        if (srsymtable.symtabletype in [ObjectSymtable,recordsymtable]) then
+                          if assigned(current_procinfo) and current_procinfo.procdef.no_self_node then
+                            p1:=cloadvmtaddrnode.create(ctypenode.create(current_procinfo.procdef.struct))
+                          else
+                            p1:=load_self_node;
+                        { now, if the field itself is part of an objectsymtab }
+                        { (it can be even if it was found in a withsymtable,  }
+                        {  e.g., "with classinstance do field := 5"), then    }
+                        { let do_member_read handle it                        }
+                        if (srsym.owner.symtabletype in [ObjectSymtable,recordsymtable]) then
+                          do_member_read(tabstractrecorddef(hdef),getaddr,srsym,p1,again,[])
+                        else
+                          { otherwise it's a regular record subscript }
+                          p1:=csubscriptnode.create(srsym,p1);
+                      end
+                    else
+                      { regular non-field load }
+                      p1:=cloadnode.create(srsym,srsymtable);
+                  end;
+>>>>>>> origin/cpstrnew
 
                { iso file buf access? }
                if (m_isolike_io in current_settings.modeswitches) and
@@ -2971,6 +3310,7 @@ implementation
                      end
                    else
                      begin
+<<<<<<< HEAD
                        { The property symbol is referenced indirect }
                        protsym.IncRefCount;
                        handle_propertysym(protsym,protsym.owner,p1);
@@ -3422,6 +3762,56 @@ implementation
                                   else
                                     p1:=cspecializenode.create(p1,getaddr,srsym);
                                   erroroutp1:=false;
+=======
+                       { We need to know if this unit uses Variants }
+                       if (hdef=cvarianttype) and
+                          not(cs_compilesystem in current_settings.moduleswitches) then
+                         current_module.flags:=current_module.flags or uf_uses_variants;
+                       { if we get a generic then check that it is not an inline specialization }
+                       if (df_generic in hdef.defoptions) and
+                          (token=_LT) and
+                          (m_delphi in current_settings.modeswitches) then
+                          generate_specialization(hdef,false);
+                       if try_to_consume(_LKLAMMER) then
+                        begin
+                          p1:=comp_expr(true,false);
+                          consume(_RKLAMMER);
+                          p1:=ctypeconvnode.create_explicit(p1,hdef);
+                        end
+                       else { not LKLAMMER }
+                        if (token=_POINT) and
+                           (is_object(hdef) or is_record(hdef)) then
+                         begin
+                           consume(_POINT);
+                           { handles calling methods declared in parent objects
+                             using "parentobject.methodname()" }
+                           if assigned(current_structdef) and
+                              not(getaddr) and
+                              current_structdef.is_related(hdef) then
+                             begin
+                               p1:=ctypenode.create(hdef);
+                               { search also in inherited methods }
+                               searchsym_in_class(tobjectdef(hdef),tobjectdef(current_structdef),pattern,srsym,srsymtable);
+                               if assigned(srsym) then
+                                 check_hints(srsym,srsym.symoptions,srsym.deprecatedmsg);
+                               consume(_ID);
+                               do_member_read(tabstractrecorddef(hdef),false,srsym,p1,again,[]);
+                             end
+                           else
+                            begin
+                              { handles:
+                                  * @TObject.Load
+                                  * static methods and variables }
+                              p1:=ctypenode.create(hdef);
+                              { TP allows also @TMenu.Load if Load is only }
+                              { defined in an anchestor class              }
+                              srsym:=search_struct_member(tabstractrecorddef(hdef),pattern);
+                              if assigned(srsym) then
+                                begin
+                                  check_hints(srsym,srsym.symoptions,srsym.deprecatedmsg);
+                                      consume(_ID);
+                                      do_member_read(tabstractrecorddef(hdef),getaddr,srsym,p1,again,[]);
+>>>>>>> origin/cpstrnew
                                 end
                               else
                                 begin
@@ -3446,6 +3836,7 @@ implementation
                     begin
                       if isspecialize or (token=_ID) then
                         begin
+<<<<<<< HEAD
                           erroroutp1:=true;
                           srsym:=nil;
                           structh:=tobjectdef(p1.resultdef);
@@ -3479,6 +3870,29 @@ implementation
                                 end
                               else
                                 begin
+=======
+                          { class reference ? }
+                          if is_class(hdef) or
+                             is_objcclass(hdef) then
+                           begin
+                             if getaddr and (token=_POINT) then
+                              begin
+                                consume(_POINT);
+                                { allows @Object.Method }
+                                { also allows static methods and variables }
+                                p1:=ctypenode.create(hdef);
+                                { TP allows also @TMenu.Load if Load is only }
+                                { defined in an anchestor class              }
+                                srsym:=search_struct_member(tobjectdef(hdef),pattern);
+                                if assigned(srsym) then
+                                 begin
+                                   check_hints(srsym,srsym.symoptions,srsym.deprecatedmsg);
+                                   consume(_ID);
+                                   do_member_read(tabstractrecorddef(hdef),getaddr,srsym,p1,again,[]);
+                                 end
+                                else
+                                 begin
+>>>>>>> origin/cpstrnew
                                    Message1(sym_e_id_no_member,orgpattern);
                                    { try to clean up }
                                    consume(_ID);
@@ -3490,6 +3904,7 @@ implementation
                               p1:=cerrornode.create;
                             end
                           else
+<<<<<<< HEAD
                             if p1.nodetype<>specializen then
                               do_member_read(structh,getaddr,srsym,p1,again,[],spezcontext);
                         end
@@ -4171,12 +4586,37 @@ implementation
                       p1:=genconstsymtree(tconstsym(srsym));
                   end;
 
+=======
+                           p1:=ctypenode.create(hdef);
+                        end;
+                     end;
+                  end;
+
+                enumsym :
+                  begin
+                    p1:=genenumnode(tenumsym(srsym));
+                  end;
+
+                constsym :
+                  begin
+                    if tconstsym(srsym).consttyp=constresourcestring then
+                      begin
+                        p1:=cloadnode.create(srsym,srsymtable);
+                        do_typecheckpass(p1);
+                        p1.resultdef:=cansistringtype;
+                      end
+                    else
+                      p1:=genconstsymtree(tconstsym(srsym));
+                  end;
+
+>>>>>>> origin/cpstrnew
                 procsym :
                   begin
                     p1:=nil;
                     { check if it's a method/class method }
                     if is_member_read(srsym,srsymtable,p1,hdef) then
                       begin
+<<<<<<< HEAD
                         { if we are accessing a owner procsym from the nested }
                         { class we need to call it as a class member          }
                         if (srsymtable.symtabletype in [ObjectSymtable,recordsymtable]) and
@@ -4201,6 +4641,12 @@ implementation
 =======
                           do_member_read(tabstractrecorddef(hdef),getaddr,srsym,p1,again,[])
 >>>>>>> graemeg/cpstrnew
+=======
+                        { not srsymtable.symtabletype since that can be }
+                        { withsymtable as well                          }
+                        if (srsym.owner.symtabletype in [ObjectSymtable,recordsymtable]) then
+                          do_member_read(tabstractrecorddef(hdef),getaddr,srsym,p1,again,[])
+>>>>>>> origin/cpstrnew
                         else
                           { no procsyms in records (yet) }
                           internalerror(2007012006);
@@ -4217,6 +4663,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                      again,p1,callflags,spezcontext);
                         spezcontext:=nil;
 =======
@@ -4228,6 +4675,9 @@ implementation
 =======
                                      again,p1,callflags);
 >>>>>>> graemeg/cpstrnew
+=======
+                                     again,p1,callflags);
+>>>>>>> origin/cpstrnew
                       end;
                   end;
 
@@ -4238,6 +4688,7 @@ implementation
                     if is_member_read(srsym,srsymtable,p1,hdef) then
                       begin
                         if (srsymtable.symtabletype in [ObjectSymtable,recordsymtable]) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4258,12 +4709,17 @@ implementation
                            if assigned(current_procinfo) and current_procinfo.procdef.no_self_node then
                           { no self node in static class methods }
 >>>>>>> graemeg/cpstrnew
+=======
+                           if assigned(current_procinfo) and current_procinfo.procdef.no_self_node then
+                          { no self node in static class methods }
+>>>>>>> origin/cpstrnew
                             p1:=cloadvmtaddrnode.create(ctypenode.create(hdef))
                           else
                             p1:=load_self_node;
                         { not srsymtable.symtabletype since that can be }
                         { withsymtable as well                          }
                         if (srsym.owner.symtabletype in [ObjectSymtable,recordsymtable]) then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -4277,6 +4733,9 @@ implementation
 =======
                           do_member_read(tabstractrecorddef(hdef),getaddr,srsym,p1,again,[])
 >>>>>>> graemeg/cpstrnew
+=======
+                          do_member_read(tabstractrecorddef(hdef),getaddr,srsym,p1,again,[])
+>>>>>>> origin/cpstrnew
                         else
                           { no propertysyms in records (yet) }
                           internalerror(2009111510);
@@ -5022,6 +5481,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          callflags  : tcallnodeflags;
          idstr      : tidstring;
          dopostfix,
@@ -5031,12 +5491,15 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          again,
          updatefpos,
          nodechanged  : boolean;
       begin
         { can't keep a copy of p1 and compare pointers afterwards, because
           p1 may be freed and reallocated in the same place!  }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5047,6 +5510,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         updatefpos:=false;
         p1:=nil;
         filepos:=current_tokenpos;
@@ -5064,11 +5529,14 @@ implementation
               assigned(current_structdef) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              begin
                p1:=load_self_node;
                consume(_ID);
@@ -5086,6 +5554,7 @@ implementation
               filepos:=current_tokenpos;
             end;
            { handle post fix operators }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5124,6 +5593,9 @@ implementation
 =======
            updatefpos:=postfixoperators(p1,again);
 >>>>>>> graemeg/cpstrnew
+=======
+           updatefpos:=postfixoperators(p1,again);
+>>>>>>> origin/cpstrnew
          end
         else
          begin
@@ -5132,6 +5604,7 @@ implementation
              _RETURN :
                 begin
                   consume(_RETURN);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5155,17 +5628,22 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                   if not(token in [_SEMICOLON,_ELSE,_END]) then
                     p1 := cexitnode.create(comp_expr(true,false))
                   else
                     p1 := cexitnode.create(nil);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 end;
              _INHERITED :
                begin
@@ -5173,6 +5651,7 @@ implementation
                  consume(_INHERITED);
                  if assigned(current_procinfo) and
                     assigned(current_structdef) and
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5205,6 +5684,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     (current_structdef.typ=objectdef) then
                   begin
                     hclassdef:=tobjectdef(current_structdef).childof;
@@ -5216,11 +5697,14 @@ implementation
                       hclassdef:=hclassdef.childof;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     { if inherited; only then we need the method with
                       the same name }
                     if token <> _ID then
@@ -5241,6 +5725,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        { helpers have their own ways of dealing with inherited }
                        if is_objectpascal_helper(current_structdef) then
                          searchsym_in_helper(tobjectdef(current_structdef),tobjectdef(current_structdef),hs,srsym,srsymtable,[ssf_has_inherited])
@@ -5255,6 +5740,9 @@ implementation
 =======
                          searchsym_in_class(hclassdef,tobjectdef(current_structdef),hs,srsym,srsymtable);
 >>>>>>> graemeg/cpstrnew
+=======
+                         searchsym_in_class(hclassdef,tobjectdef(current_structdef),hs,srsym,srsymtable);
+>>>>>>> origin/cpstrnew
                      end
                     else
                      begin
@@ -5265,6 +5753,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        { helpers have their own ways of dealing with inherited }
                        if is_objectpascal_helper(current_structdef) then
                          searchsym_in_helper(tobjectdef(current_structdef),tobjectdef(current_structdef),hs,srsym,srsymtable,[ssf_has_inherited])
@@ -5279,6 +5768,9 @@ implementation
 =======
                        searchsym_in_class(hclassdef,tobjectdef(current_structdef),hs,srsym,srsymtable);
 >>>>>>> graemeg/cpstrnew
+=======
+                       searchsym_in_class(hclassdef,tobjectdef(current_structdef),hs,srsym,srsymtable);
+>>>>>>> origin/cpstrnew
                      end;
                     if assigned(srsym) then
                      begin
@@ -5288,6 +5780,7 @@ implementation
                        case srsym.typ of
                          procsym:
                            begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5321,6 +5814,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                              hdef:=hclassdef;
                              if (po_classmethod in current_procinfo.procdef.procoptions) or
                                 (po_staticmethod in current_procinfo.procdef.procoptions) then
@@ -5328,11 +5823,14 @@ implementation
                              p1:=ctypenode.create(hdef);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                            end;
                          propertysym:
                            ;
@@ -5342,6 +5840,7 @@ implementation
                              p1:=cerrornode.create;
                            end;
                        end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5359,6 +5858,9 @@ implementation
 =======
                        do_member_read(hclassdef,getaddr,srsym,p1,again,[cnf_inherited,cnf_anon_inherited]);
 >>>>>>> graemeg/cpstrnew
+=======
+                       do_member_read(hclassdef,getaddr,srsym,p1,again,[cnf_inherited,cnf_anon_inherited]);
+>>>>>>> origin/cpstrnew
                      end
                     else
                      begin
@@ -5368,6 +5870,7 @@ implementation
                           if (po_msgint in pd.procoptions) or
                              (po_msgstr in pd.procoptions) then
                             begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5381,10 +5884,14 @@ implementation
 =======
                               searchsym_in_class(hclassdef,hclassdef,'DEFAULTHANDLER',srsym,srsymtable);
 >>>>>>> graemeg/cpstrnew
+=======
+                              searchsym_in_class(hclassdef,hclassdef,'DEFAULTHANDLER',srsym,srsymtable);
+>>>>>>> origin/cpstrnew
                               if not assigned(srsym) or
                                  (srsym.typ<>procsym) then
                                 internalerror(200303171);
                               p1:=nil;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5398,6 +5905,9 @@ implementation
 =======
                               do_proc_call(srsym,srsym.owner,hclassdef,false,again,p1,[]);
 >>>>>>> graemeg/cpstrnew
+=======
+                              do_proc_call(srsym,srsym.owner,hclassdef,false,again,p1,[]);
+>>>>>>> origin/cpstrnew
                             end
                           else
                             begin
@@ -5420,6 +5930,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                      { in case of records we use a more clear error message }
                      if assigned(current_structdef) and
                          (current_structdef.typ=recorddef) then
@@ -5435,11 +5946,14 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                       Message(parser_e_generic_methods_only_in_methods);
                       again:=false;
                       p1:=cerrornode.create;
                    end;
                  postfixoperators(p1,again);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -5523,6 +6037,55 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+               end;
+
+             _INTCONST :
+               begin
+                 {Try first wether the value fits in an int64.}
+                 val(pattern,ic,code);
+                 if code=0 then
+                   begin
+                      consume(_INTCONST);
+                      int_to_type(ic,hdef);
+                      p1:=cordconstnode.create(ic,hdef,true);
+                   end
+                 else
+                   begin
+                     { try qword next }
+                     val(pattern,qc,code);
+                     if code=0 then
+                       begin
+                          consume(_INTCONST);
+                          int_to_type(qc,hdef);
+                          p1:=cordconstnode.create(qc,hdef,true);
+                       end;
+                   end;
+                 if code<>0 then
+                   begin
+                     { finally float }
+                     val(pattern,d,code);
+                     if code<>0 then
+                       begin
+                          Message(parser_e_invalid_integer);
+                          consume(_INTCONST);
+                          l:=1;
+                          p1:=cordconstnode.create(l,sinttype,true);
+                       end
+                     else
+                       begin
+                          consume(_INTCONST);
+                          p1:=crealconstnode.create(d,pbestrealtype^);
+                       end;
+                   end
+                 else
+                   { the necessary range checking has already been done by val }
+                   tordconstnode(p1).rangecheck:=false;
+               end;
+
+             _REALNUMBER :
+               begin
+>>>>>>> origin/cpstrnew
                  val(pattern,d,code);
                  if code<>0 then
                   begin
@@ -5549,11 +6112,14 @@ implementation
 {$endif FPC_HAS_STR_CURRENCY}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                end;
 
              _STRING :
@@ -5565,6 +6131,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     p1:=comp_expr([ef_accept_equal]);
 =======
                     p1:=comp_expr(true,false);
@@ -5575,10 +6142,14 @@ implementation
 =======
                     p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                    p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                     consume(_RKLAMMER);
                     p1:=ctypeconvnode.create_explicit(p1,hdef);
                     { handle postfix operators here e.g. string(a)[10] }
                     again:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5592,14 +6163,20 @@ implementation
 =======
                     postfixoperators(p1,again);
 >>>>>>> graemeg/cpstrnew
+=======
+                    postfixoperators(p1,again);
+>>>>>>> origin/cpstrnew
                   end
                  else
                   p1:=ctypenode.create(hdef);
                end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
              _FILE :
                begin
@@ -5610,6 +6187,7 @@ implementation
                   begin
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     p1:=comp_expr([ef_accept_equal]);
 =======
                     p1:=comp_expr(true,false);
@@ -5617,10 +6195,14 @@ implementation
 =======
                     p1:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                    p1:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
                     consume(_RKLAMMER);
                     p1:=ctypeconvnode.create_explicit(p1,hdef);
                     { handle postfix operators here e.g. string(a)[10] }
                     again:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                     postfixoperators(p1,again,getaddr);
@@ -5630,12 +6212,16 @@ implementation
 =======
                     postfixoperators(p1,again);
 >>>>>>> graemeg/cpstrnew
+=======
+                    postfixoperators(p1,again);
+>>>>>>> origin/cpstrnew
                   end
                  else
                   begin
                     p1:=ctypenode.create(hdef);
                   end;
                end;
+<<<<<<< HEAD
 
              _CSTRING :
                begin
@@ -5979,11 +6565,27 @@ implementation
                  consume(_CCHAR);
                end;
 
+=======
+
+             _CSTRING :
+               begin
+                 p1:=cstringconstnode.createpchar(ansistring2pchar(cstringpattern),length(cstringpattern));
+                 consume(_CSTRING);
+               end;
+
+             _CCHAR :
+               begin
+                 p1:=cordconstnode.create(ord(pattern[1]),cchartype,true);
+                 consume(_CCHAR);
+               end;
+
+>>>>>>> origin/cpstrnew
              _CWSTRING:
                begin
                  p1:=cstringconstnode.createwstr(patternw);
                  consume(_CWSTRING);
                end;
+<<<<<<< HEAD
 
              _CWCHAR:
                begin
@@ -6233,6 +6835,134 @@ implementation
                end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+             _CWCHAR:
+               begin
+                 p1:=cordconstnode.create(ord(getcharwidestring(patternw,0)),cwidechartype,true);
+                 consume(_CWCHAR);
+               end;
+
+             _KLAMMERAFFE :
+               begin
+                 consume(_KLAMMERAFFE);
+                 got_addrn:=true;
+                 { support both @<x> and @(<x>) }
+                 if try_to_consume(_LKLAMMER) then
+                  begin
+                    p1:=factor(true,false);
+                    if token in [_CARET,_POINT,_LECKKLAMMER] then
+                     begin
+                       again:=true;
+                       postfixoperators(p1,again);
+                     end
+                    else
+                    consume(_RKLAMMER);
+                  end
+                 else
+                  p1:=factor(true,false);
+                 if token in [_CARET,_POINT,_LECKKLAMMER] then
+                  begin
+                    again:=true;
+                    postfixoperators(p1,again);
+                  end;
+                 got_addrn:=false;
+                 p1:=caddrnode.create(p1);
+                 p1.fileinfo:=filepos;
+                 if cs_typed_addresses in current_settings.localswitches then
+                   include(p1.flags,nf_typedaddr);
+                 { Store the procvar that we are expecting, the
+                   addrn will use the information to find the correct
+                   procdef or it will return an error }
+                 if assigned(getprocvardef) and
+                    (taddrnode(p1).left.nodetype = loadn) then
+                   taddrnode(p1).getprocvardef:=getprocvardef;
+               end;
+
+             _LKLAMMER :
+               begin
+                 consume(_LKLAMMER);
+                 p1:=comp_expr(true,false);
+                 consume(_RKLAMMER);
+                 { it's not a good solution     }
+                 { but (a+b)^ makes some problems  }
+                 if token in [_CARET,_POINT,_LECKKLAMMER] then
+                  begin
+                    again:=true;
+                    postfixoperators(p1,again);
+                  end;
+               end;
+
+             _LECKKLAMMER :
+               begin
+                 consume(_LECKKLAMMER);
+                 p1:=factor_read_set;
+                 consume(_RECKKLAMMER);
+               end;
+
+             _PLUS :
+               begin
+                 consume(_PLUS);
+                 p1:=factor(false,false);
+                 p1:=cunaryplusnode.create(p1);
+               end;
+
+             _MINUS :
+               begin
+                 consume(_MINUS);
+                 if (token = _INTCONST) then
+                    begin
+                      { ugly hack, but necessary to be able to parse }
+                      { -9223372036854775808 as int64 (JM)           }
+                      pattern := '-'+pattern;
+                      p1:=sub_expr(oppower,false,false);
+                      {  -1 ** 4 should be - (1 ** 4) and not
+                         (-1) ** 4
+                         This was the reason of tw0869.pp test failure PM }
+                      if p1.nodetype=starstarn then
+                        begin
+                          if tbinarynode(p1).left.nodetype=ordconstn then
+                            begin
+                              tordconstnode(tbinarynode(p1).left).value:=-tordconstnode(tbinarynode(p1).left).value;
+                              p1:=cunaryminusnode.create(p1);
+                            end
+                          else if tbinarynode(p1).left.nodetype=realconstn then
+                            begin
+                              trealconstnode(tbinarynode(p1).left).value_real:=-trealconstnode(tbinarynode(p1).left).value_real;
+                              trealconstnode(tbinarynode(p1).left).value_currency:=-trealconstnode(tbinarynode(p1).left).value_currency;
+                              p1:=cunaryminusnode.create(p1);
+                            end
+                          else
+                            internalerror(20021029);
+                        end;
+                    end
+                 else
+                   begin
+                     p1:=sub_expr(oppower,false,false);
+                     p1:=cunaryminusnode.create(p1);
+                   end;
+               end;
+
+             _OP_NOT :
+               begin
+                 consume(_OP_NOT);
+                 p1:=factor(false,false);
+                 p1:=cnotnode.create(p1);
+               end;
+
+             _TRUE :
+               begin
+                 consume(_TRUE);
+                 p1:=cordconstnode.create(1,booltype,false);
+               end;
+
+             _FALSE :
+               begin
+                 consume(_FALSE);
+                 p1:=cordconstnode.create(0,booltype,false);
+               end;
+
+>>>>>>> origin/cpstrnew
              _NIL :
                begin
                  consume(_NIL);
@@ -6261,9 +6991,12 @@ implementation
              end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              else
                begin
                  Message(parser_e_illegal_expression);
@@ -6292,11 +7025,14 @@ implementation
         if (not assigned(p1.resultdef)) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           begin
             do_typecheckpass_changed(p1,nodechanged);
             updatefpos:=updatefpos or nodechanged;
@@ -6345,11 +7081,14 @@ implementation
     function sub_expr(pred_level:Toperator_precedence;accept_equal,typeonly:boolean):tnode;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     {Reads a subexpression while the operators are of the current precedence
      level, or any higher level. Replaces the old term, simpl_expr and
      simpl2_expr.}
@@ -6556,6 +7295,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           begin
             if factornode=nil then
               p1:=factor(false,flags)
@@ -6573,6 +7313,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           p1:=factor(false,typeonly)
         else
           p1:=sub_expr(succ(pred_level),true,typeonly);
@@ -6582,16 +7324,20 @@ implementation
              ((token<>_EQ) or accept_equal) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
            begin
              oldt:=token;
              filepos:=current_tokenpos;
              consume(token);
              if pred_level=highest_precedence then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6613,6 +7359,11 @@ implementation
              else
                p2:=sub_expr(succ(pred_level),true,typeonly);
 >>>>>>> graemeg/cpstrnew
+=======
+               p2:=factor(false,false)
+             else
+               p2:=sub_expr(succ(pred_level),true,typeonly);
+>>>>>>> origin/cpstrnew
              case oldt of
                _PLUS :
                  p1:=caddnode.create(addn,p1,p2);
@@ -6811,6 +7562,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function comp_expr(flags:texprflags):tnode;
 =======
     function comp_expr(accept_equal,typeonly:boolean):tnode;
@@ -6821,12 +7573,16 @@ implementation
 =======
     function comp_expr(accept_equal,typeonly:boolean):tnode;
 >>>>>>> graemeg/cpstrnew
+=======
+    function comp_expr(accept_equal,typeonly:boolean):tnode;
+>>>>>>> origin/cpstrnew
       var
          oldafterassignment : boolean;
          p1 : tnode;
       begin
          oldafterassignment:=afterassignment;
          afterassignment:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6840,6 +7596,9 @@ implementation
 =======
          p1:=sub_expr(opcompare,accept_equal,typeonly);
 >>>>>>> graemeg/cpstrnew
+=======
+         p1:=sub_expr(opcompare,accept_equal,typeonly);
+>>>>>>> origin/cpstrnew
          { get the resultdef for this expression }
          if not assigned(p1.resultdef) then
           do_typecheckpass(p1);
@@ -6861,6 +7620,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          p1:=sub_expr(opcompare,[ef_accept_equal],nil);
 =======
          p1:=sub_expr(opcompare,true,false);
@@ -6871,6 +7631,9 @@ implementation
 =======
          p1:=sub_expr(opcompare,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+         p1:=sub_expr(opcompare,true,false);
+>>>>>>> origin/cpstrnew
          { get the resultdef for this expression }
          if not assigned(p1.resultdef) and
             dotypecheck then
@@ -6886,6 +7649,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 p2:=sub_expr(opcompare,[ef_accept_equal],nil);
 =======
                 p2:=sub_expr(opcompare,true,false);
@@ -6896,6 +7660,9 @@ implementation
 =======
                 p2:=sub_expr(opcompare,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                p2:=sub_expr(opcompare,true,false);
+>>>>>>> origin/cpstrnew
                 p1:=crangenode.create(p1,p2);
              end;
            _ASSIGNMENT :
@@ -6906,6 +7673,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 p2:=sub_expr(opcompare,[ef_accept_equal],nil);
 =======
                 p2:=sub_expr(opcompare,true,false);
@@ -6916,6 +7684,9 @@ implementation
 =======
                 p2:=sub_expr(opcompare,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+                p2:=sub_expr(opcompare,true,false);
+>>>>>>> origin/cpstrnew
                 if assigned(getprocvardef) then
                   handle_procvar(getprocvardef,p2);
                 getprocvardef:=nil;
@@ -6927,6 +7698,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                p2:=sub_expr(opcompare,[ef_accept_equal],nil);
 =======
                p2:=sub_expr(opcompare,true,false);
@@ -6937,6 +7709,9 @@ implementation
 =======
                p2:=sub_expr(opcompare,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+               p2:=sub_expr(opcompare,true,false);
+>>>>>>> origin/cpstrnew
                p1:=gen_c_style_operator(addn,p1,p2);
             end;
           _MINUSASN :
@@ -6945,6 +7720,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                p2:=sub_expr(opcompare,[ef_accept_equal],nil);
 =======
                p2:=sub_expr(opcompare,true,false);
@@ -6955,6 +7731,9 @@ implementation
 =======
                p2:=sub_expr(opcompare,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+               p2:=sub_expr(opcompare,true,false);
+>>>>>>> origin/cpstrnew
                p1:=gen_c_style_operator(subn,p1,p2);
             end;
           _STARASN :
@@ -6963,6 +7742,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                p2:=sub_expr(opcompare,[ef_accept_equal],nil);
 =======
                p2:=sub_expr(opcompare,true,false);
@@ -6973,6 +7753,9 @@ implementation
 =======
                p2:=sub_expr(opcompare,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+               p2:=sub_expr(opcompare,true,false);
+>>>>>>> origin/cpstrnew
                p1:=gen_c_style_operator(muln,p1,p2);
             end;
           _SLASHASN :
@@ -6981,6 +7764,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                p2:=sub_expr(opcompare,[ef_accept_equal],nil);
 =======
                p2:=sub_expr(opcompare,true,false);
@@ -6991,6 +7775,9 @@ implementation
 =======
                p2:=sub_expr(opcompare,true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+               p2:=sub_expr(opcompare,true,false);
+>>>>>>> origin/cpstrnew
                p1:=gen_c_style_operator(slashn,p1,p2);
             end;
           else
@@ -7016,6 +7803,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       p:=comp_expr([ef_accept_equal]);
 =======
       p:=comp_expr(true,false);
@@ -7026,6 +7814,9 @@ implementation
 =======
       p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+      p:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
       if not codegenerror then
        begin
          if (p.nodetype<>ordconstn) or
@@ -7048,6 +7839,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       p:=comp_expr([ef_accept_equal]);
 =======
       p:=comp_expr(true,false);
@@ -7058,6 +7850,9 @@ implementation
 =======
       p:=comp_expr(true,false);
 >>>>>>> graemeg/cpstrnew
+=======
+      p:=comp_expr(true,false);
+>>>>>>> origin/cpstrnew
       if p.nodetype<>stringconstn then
         begin
           if (p.nodetype=ordconstn) and is_char(p.resultdef) then

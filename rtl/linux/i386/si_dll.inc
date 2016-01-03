@@ -15,6 +15,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 procedure PASCALMAIN; external name 'PASCALMAIN';
 
@@ -23,6 +24,8 @@ procedure PASCALMAIN; external name 'PASCALMAIN';
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$goto on}
 {
  Linux ELF startup code for Free Pascal
@@ -54,11 +57,14 @@ asm
 end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {******************************************************************************
                         Shared library start/halt
@@ -73,6 +79,7 @@ begin
   initialstkptr:=get_frame;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   asm
     { Save initial stackpointer }
@@ -104,6 +111,10 @@ begin
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+  IsLibrary:=true;
+
+>>>>>>> origin/cpstrnew
   asm
     { Save initial stackpointer }
     {$ifdef FPC_PIC}
@@ -116,12 +127,16 @@ begin
     {$endif FPC_PIC}
   end;
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   PASCALMAIN;
 end;
 
 { this routine is only called when the halt() routine of the RTL embedded in
   the shared library is called }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -137,6 +152,11 @@ asm
 procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name 'FPC_SHARED_LIB_EXIT'; public name '_haltproc';
 asm
 .Lhaltproc:
+=======
+procedure _FPC_shared_lib_haltproc; assembler; nostackframe; public name 'FPC_SHARED_LIB_EXIT'; public name '_haltproc';
+asm
+.Lhaltproc:
+>>>>>>> origin/cpstrnew
  {$ifdef FPC_PIC}
   call    get1eipasebx
   addl    $_GLOBAL_OFFSET_TABLE_,%ebx
@@ -155,11 +175,14 @@ asm
 {$endif FPC_PIC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   xorl    %eax,%eax
   incl    %eax                    { eax=1, exit call }
   int     $0x80

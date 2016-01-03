@@ -24,6 +24,7 @@ function NtOpenDirectoryObject(
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function NtQueryDirectoryObject(
   DirectoryHandle: HANDLE;
   Buffer: PVOID;
@@ -48,6 +49,8 @@ function NtQueryObject(
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function NtWaitForSingleObject(
   _Object: HANDLE;
   Alertable: NT_BOOLEAN;

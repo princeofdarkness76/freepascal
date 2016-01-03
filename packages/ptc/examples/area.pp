@@ -19,6 +19,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   console: IPTCConsole;
   format: IPTCFormat;
   surface: IPTCSurface;
@@ -37,10 +38,16 @@ var
   format: TPTCFormat = nil;
   surface: TPTCSurface = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> origin/cpstrnew
   pixels: PDWord;
   width, height: Integer;
   i: Integer;
   x, y, r, g, b: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -54,6 +61,9 @@ var
 =======
   area: TPTCArea = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  area: TPTCArea = nil;
+>>>>>>> origin/cpstrnew
 begin
   try
     try
@@ -70,6 +80,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(console.width div 2, console.height div 2, format);
 =======
       surface := TPTCSurface.Create(console.width div 2, console.height div 2, format);
@@ -80,10 +91,14 @@ begin
 =======
       surface := TPTCSurface.Create(console.width div 2, console.height div 2, format);
 >>>>>>> graemeg/cpstrnew
+=======
+      surface := TPTCSurface.Create(console.width div 2, console.height div 2, format);
+>>>>>>> origin/cpstrnew
 
       { setup destination area }
       x := console.width div 4;
       y := console.height div 4;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,6 +108,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       area := TPTCArea.Create(x, y, x + surface.width, y + surface.height);
 >>>>>>> graemeg/cpstrnew
 
@@ -136,6 +153,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
@@ -143,6 +161,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console.close;
       console.Free;
       surface.Free;
@@ -150,11 +170,14 @@ begin
       area.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

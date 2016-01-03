@@ -25,6 +25,7 @@ unit cpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      {$endif}
 =======
      {$endif} 
@@ -35,6 +36,9 @@ unit cpu;
 =======
      {$endif} 
 >>>>>>> graemeg/cpstrnew
+=======
+     {$endif} 
+>>>>>>> origin/cpstrnew
   {$endif}
 
     uses
@@ -42,6 +46,7 @@ unit cpu;
 
     function InterlockedCompareExchange128Support : boolean;inline;
     function AESSupport : boolean;inline;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,11 +62,14 @@ unit cpu;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     function InterlockedCompareExchange128(var Target: Int128Rec; NewValue: Int128Rec; Comperand: Int128Rec): Int128Rec;
 
   implementation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -78,6 +86,8 @@ unit cpu;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     var
       _AESSupport,
       _InterlockedCompareExchange128Support : boolean;
@@ -94,11 +104,14 @@ unit cpu;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     function InterlockedCompareExchange128(var Target: Int128Rec; NewValue: Int128Rec; Comperand: Int128Rec): Int128Rec; assembler;
      {
@@ -130,6 +143,7 @@ unit cpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
            .byte 0xF0,0x49,0x0F,0xC7,0x08
 =======
            .byte 0xF0,0x49,0x0F,0xC7,0x08 
@@ -140,6 +154,9 @@ unit cpu;
 =======
            .byte 0xF0,0x49,0x0F,0xC7,0x08 
 >>>>>>> graemeg/cpstrnew
+=======
+           .byte 0xF0,0x49,0x0F,0xC7,0x08 
+>>>>>>> origin/cpstrnew
         {$else}
         lock cmpxchg16b (%r8)
         {$endif}
@@ -180,6 +197,7 @@ unit cpu;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     function XGETBV(i : dword) : int64;assembler;
       asm
@@ -213,6 +231,11 @@ unit cpu;
       var
         _ecx : longint;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure SetupSupport;
+      var
+        _ecx : longint;
+>>>>>>> origin/cpstrnew
       begin
         asm
            pushq %rbx
@@ -222,6 +245,7 @@ unit cpu;
            popq %rbx
         end;
         _InterlockedCompareExchange128Support:=(_ecx and $2000)<>0;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -287,6 +311,9 @@ unit cpu;
 =======
         _AESSupport:=(_ecx and $2000000)<>0;        
 >>>>>>> graemeg/cpstrnew
+=======
+        _AESSupport:=(_ecx and $2000000)<>0;        
+>>>>>>> origin/cpstrnew
       end;
 
 

@@ -221,6 +221,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Str(12/10,S1);
   Delete(S1,1,1);
   Str(34/10,S2);
@@ -242,6 +243,11 @@ begin
   Str(Double(2.3),S2);
   Str(Double(3.4),S3);
 >>>>>>> graemeg/cpstrnew
+=======
+  Str(Double(1.2),S1);
+  Str(Double(2.3),S2);
+  Str(Double(3.4),S3);
+>>>>>>> origin/cpstrnew
   DoTestArray('['+S1+']',1);
   DoTestArray('['+S1+', '+S2+']',2);
   DoTestArray('['+S1+', '+S2+', '+S3+']',3);

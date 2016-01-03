@@ -225,15 +225,19 @@ begin
     DeleteFile(ExtractFilePath(dbname)+'fpdev_'+inttostr(n)+'.db');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TDBFDBConnector.DropFieldDataset;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -247,6 +251,9 @@ begin
 =======
   DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
 >>>>>>> graemeg/cpstrnew
+=======
+  DeleteFile(ExtractFilePath(dbname)+'fpdev_field.db');
+>>>>>>> origin/cpstrnew
 end;
 
 function TDBFDBConnector.InternalGetNDataset(n: integer): TDataset;

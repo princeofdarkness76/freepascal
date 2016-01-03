@@ -119,6 +119,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
 =======
     assertEquals('trailingPIData', '', nodeValue);
@@ -129,6 +130,9 @@ begin
 =======
     assertEquals('trailingPIData', '', nodeValue);
 >>>>>>> graemeg/cpstrnew
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> origin/cpstrnew
     node := node.nextSibling;
     nodeType := node.nodeType;
     assertEquals('TextisSixthChild', 3, nodeType);
@@ -193,6 +197,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     assertEqualsW('trailingPIData', '', nodeValue);
 =======
     assertEquals('trailingPIData', '', nodeValue);
@@ -203,6 +208,9 @@ begin
 =======
     assertEquals('trailingPIData', '', nodeValue);
 >>>>>>> graemeg/cpstrnew
+=======
+    assertEquals('trailingPIData', '', nodeValue);
+>>>>>>> origin/cpstrnew
     node := node.nextSibling;
     assertNull('SixthIsNull', node);
   end;
@@ -250,6 +258,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('titleValue', 'default', attrValue);
 =======
   assertEquals('titleValue', 'default', attrValue);
@@ -260,6 +269,9 @@ begin
 =======
   assertEquals('titleValue', 'default', attrValue);
 >>>>>>> graemeg/cpstrnew
+=======
+  assertEquals('titleValue', 'default', attrValue);
+>>>>>>> origin/cpstrnew
 end;
 
 { tests that namespace fixup is done while serializing }
@@ -295,6 +307,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEqualsW('docElemNS', namespaceURI, docElemNS);
@@ -305,6 +318,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   assertEquals('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEquals('docElemNS', namespaceURI, docElemNS);
@@ -312,11 +327,14 @@ begin
   assertEquals('properNSAttrValue', 'test value', attrValue);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 { tests that namespace fixup is done while serializing }
@@ -352,6 +370,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   assertEqualsW('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEqualsW('docElemNS', namespaceURI, docElemNS);
@@ -362,6 +381,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   assertEquals('docElemLocalName', 'test', docElemLocalName);
   docElemNS := TDOMNode(docElem).namespaceURI;
   assertEquals('docElemNS', namespaceURI, docElemNS);
@@ -369,11 +390,14 @@ begin
   assertEquals('properNSAttrValue', 'test value', attrValue);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 initialization

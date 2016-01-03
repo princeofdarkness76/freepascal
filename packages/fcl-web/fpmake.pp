@@ -24,11 +24,14 @@ begin
     P.Version:='2.2.2-0';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.Dependencies.Add('fcl-base');
     P.Dependencies.Add('fcl-db');
     P.Dependencies.Add('fcl-xml');
@@ -36,6 +39,7 @@ begin
     P.Dependencies.Add('fcl-net');
     P.Dependencies.Add('fcl-process');
     P.Dependencies.Add('fastcgi');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -58,6 +62,11 @@ begin
     // (Temporary) indirect dependencies, not detected by fpcmake:
     P.Dependencies.Add('univint',[MacOSX]);
 >>>>>>> graemeg/cpstrnew
+=======
+    P.Dependencies.Add('httpd22');
+    // (Temporary) indirect dependencies, not detected by fpcmake:
+    P.Dependencies.Add('univint',[MacOSX]);
+>>>>>>> origin/cpstrnew
 
     P.Author := 'FreePascal development team';
     P.License := 'LGPL with modification, ';
@@ -120,6 +129,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.Dependencies.AddUnit('httpprotocol');
     
     T.ResourceStrings:=true;
@@ -136,6 +146,10 @@ begin
     T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('websession.pp');
 >>>>>>> graemeg/cpstrnew
+=======
+    T.ResourceStrings:=true;
+    T:=P.Targets.AddUnit('websession.pp');
+>>>>>>> origin/cpstrnew
     T.ResourceStrings:=true;
       with T.Dependencies do
         begin
@@ -169,6 +183,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         OSes:=AllOses-[wince,darwin,iphonesim,aix,amiga,aros,morphos];
 =======
 >>>>>>> graemeg/cpstrnew
@@ -176,10 +191,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         Dependencies.AddUnit('custfcgi');
       end;
     with P.Targets.AddUnit('custfcgi.pp') do
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -193,12 +211,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         Dependencies.AddUnit('httpdefs');
         Dependencies.AddUnit('custweb');
         ResourceStrings:=true;
       end;
     with P.Targets.AddUnit('fpapache.pp') do
       begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -217,11 +238,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         Dependencies.AddUnit('fphttp');
         Dependencies.AddUnit('custweb');
         ResourceStrings:=true;
       end;
     T:=P.Targets.AddUnit('fcgigate.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -232,11 +256,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     With T.Dependencies do
       begin
       AddUnit('httpdefs');
       AddUnit('custcgi');
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -264,6 +291,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpwebdata.pp');
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddUnit('fpwebdata.pp');
+>>>>>>> origin/cpstrnew
     With T.Dependencies do
       begin
       AddUnit('httpdefs');
@@ -274,6 +304,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -281,6 +312,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     With T.Dependencies do
       begin
       AddUnit('fpwebdata');
@@ -290,6 +323,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -297,6 +331,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     With T.Dependencies do
       begin
       AddUnit('fpwebdata');
@@ -307,6 +343,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -314,12 +351,15 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     With T.Dependencies do
       begin
       AddUnit('fpwebdata');
       AddUnit('httpdefs');
       AddUnit('fpextjs');
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -334,6 +374,9 @@ begin
 =======
     T:=P.Targets.AddUnit('extjsjson.pp'); 
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddUnit('extjsjson.pp'); 
+>>>>>>> origin/cpstrnew
     With T.Dependencies do
       begin
       AddUnit('fpwebdata');
@@ -344,6 +387,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T.ResourceStrings:=true;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -351,11 +395,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('webjsonrpc.pp');
     With T.Dependencies do
       begin
       AddUnit('fpjsonrpc');
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -388,6 +435,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('fpextdirect.pp');
     With T.Dependencies do
       begin
@@ -396,11 +445,14 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef ALLPACKAGES}
     Run;
     end;

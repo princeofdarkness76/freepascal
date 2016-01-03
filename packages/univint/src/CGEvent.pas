@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
@@ -14,6 +15,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -71,6 +74,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -82,6 +86,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -100,6 +106,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -146,6 +153,14 @@ interface
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -155,9 +170,12 @@ interface
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -167,6 +185,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -174,17 +193,23 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
@@ -280,6 +305,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -301,7 +328,10 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -351,6 +381,9 @@ uses MacTypes,CFBase,CFData,CFMachPort,CGBase,CGDirectDisplay,CGEventTypes,CGGeo
 {$ifc TARGET_OS_MAC}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 { Return the type identifier for the opaque type `CGEventRef'. }
 
@@ -375,6 +408,7 @@ function CGEventCreateFromData( allocator: CFAllocatorRef; data: CFDataRef ): CG
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { Return a new mouse event.
+<<<<<<< HEAD
 
    The event source may be taken from another event, or may be NULL.
    `mouseType' should be one of the mouse event types. `mouseCursorPosition'
@@ -448,6 +482,64 @@ function CGEventCreateScrollWheelEvent( source: CGEventSourceRef; units: CGScrol
 { Return a copy of `event'. }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+   The event source may be taken from another event, or may be NULL.
+   `mouseType' should be one of the mouse event types. `mouseCursorPosition'
+   should be the position of the mouse cursor in global coordinates.
+   `mouseButton' should be the button that's changing state; `mouseButton'
+   is ignored unless `mouseType' is one of `kCGEventOtherMouseDown',
+   `kCGEventOtherMouseDragged', or `kCGEventOtherMouseUp'.
+
+   The current implemementation of the event system supports a maximum of
+   thirty-two buttons. Mouse button 0 is the primary button on the mouse.
+   Mouse button 1 is the secondary mouse button (right). Mouse button 2 is
+   the center button, and the remaining buttons are in USB device order. }
+
+function CGEventCreateMouseEvent( source: CGEventSourceRef; mouseType: CGEventType; mouseCursorPosition: CGPoint; mouseButton: CGMouseButton ): CGEventRef; external name '_CGEventCreateMouseEvent';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return a new keyboard event.
+
+   The event source may be taken from another event, or may be NULL. Based
+   on the virtual key code values entered, the appropriate key down, key up,
+   or flags changed events are generated.
+
+   All keystrokes needed to generate a character must be entered, including
+   SHIFT, CONTROL, OPTION, and COMMAND keys. For example, to produce a 'Z',
+   the SHIFT key must be down, the 'z' key must go down, and then the SHIFT
+   and 'z' key must be released:
+
+     CGEventCreateKeyboardEvent(source, (CGKeyCode)56, true);  // shift down
+     CGEventCreateKeyboardEvent(source, (CGKeyCode) 6, true);  // 'z' down
+     CGEventCreateKeyboardEvent(source, (CGKeyCode) 6, false); // 'z' up
+     CGEventCreateKeyboardEvent(source, (CGKeyCode)56, false); // 'shift up }
+
+function CGEventCreateKeyboardEvent( source: CGEventSourceRef; virtualKey: CGKeyCode; keyDown: CBool ): CGEventRef; external name '_CGEventCreateKeyboardEvent';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+                                                 
+{ Return a new scrollwheel event.
+
+   The event source may be taken from another event, or may be NULL. The
+   scrolling units may be specified in lines using `kCGScrollEventUnitLine'
+   or in pixels using `kCGScrollEventUnitPixel'. `kCGScrollEventUnitPixel'
+   will produce an event that most applications interpret as a smooth
+   scrolling event.
+
+   One or more wheels must be specified. The current implementation supports
+   up to three wheels.
+
+   Every scrollwheel event can be interpreted to be scrolling by pixel or by
+   line. The scale between the two is about 10 pixels per line by default.
+   The scale can be altered by setting a custom value for the event source,
+   using `CGEventSourceSetPixelsPerLine'. }
+ 
+function CGEventCreateScrollWheelEvent( source: CGEventSourceRef; units: CGScrollEventUnit; wheelCount: UInt32; wheel1: SInt32; ... ): CGEventRef; external name '_CGEventCreateScrollWheelEvent';
+(* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+
+{ Return a copy of `event'. }
+
+>>>>>>> origin/cpstrnew
 function CGEventCreateCopy( event: CGEventRef ): CGEventRef; external name '_CGEventCreateCopy';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 { 
@@ -503,6 +595,7 @@ function CGEventGetLocation( event: CGEventRef ): CGPoint; external name '_CGEve
 
 function CGEventGetUnflippedLocation( event: CGEventRef ): CGPoint; external name '_CGEventGetUnflippedLocation';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_NA) *)
+<<<<<<< HEAD
 
 { Set the location of an event in global display coordinates. }
 
@@ -738,6 +831,21 @@ function CGEventGetFlags( event: CGEventRef ): CGEventFlags; external name '_CGE
 
 { Set the event flags of an event. }
 
+=======
+
+{ Set the location of an event in global display coordinates. }
+
+procedure CGEventSetLocation( event: CGEventRef; location: CGPoint ); external name '_CGEventSetLocation';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Return the event flags of an event. }
+
+function CGEventGetFlags( event: CGEventRef ): CGEventFlags; external name '_CGEventGetFlags';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Set the event flags of an event. }
+
+>>>>>>> origin/cpstrnew
 procedure CGEventSetFlags( event: CGEventRef; flags: CGEventFlags ); external name '_CGEventSetFlags';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
@@ -763,14 +871,20 @@ procedure CGEventKeyboardSetUnicodeString( event: CGEventRef; stringLength: UniC
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Return the integer value of a field in an event. }
 
 function CGEventGetIntegerValueField( event: CGEventRef; field: CGEventField ): SInt64; external name '_CGEventGetIntegerValueField';
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 { Set the integer value of a field in an event.
 
@@ -787,6 +901,7 @@ procedure CGEventSetIntegerValueField( event: CGEventRef; field: CGEventField; v
 (* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
 
 { Return the floating-point value of a field in an event.
+<<<<<<< HEAD
 
    In cases where the field value is represented within the event by a fixed
    point number or an integer, the result is scaled to the appropriate range
@@ -901,10 +1016,48 @@ procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; va
    pre-existing filters, or appended after any pre-existing filters.
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+   In cases where the field value is represented within the event by a fixed
+   point number or an integer, the result is scaled to the appropriate range
+   as part of creating the floating-point representation. }
+
+function CGEventGetDoubleValueField( event: CGEventRef; field: CGEventField ): Float64; external name '_CGEventGetDoubleValueField';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Set the floating-point value of a field in an event.
+
+   Before calling this function, the event type must be set using a typed
+   event creation function such as `CGEventCreateMouseEvent', or by calling
+   `CGEventSetType'.
+
+   In cases where the fieldÕs value is represented within the event by a
+   fixed point number or integer, the value parameter is scaled as needed
+   and converted to the appropriate type. }
+
+procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; value: Float64 ); external name '_CGEventSetDoubleValueField';
+(* CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA) *)
+
+{ Event taps.
+
+   A function registers an event tap, taking a pointer to the program's tap
+   function and an arbitrary reference to be passed to the tap function, and
+   returning a `CFMachPortRef' the program can add to the appropriate run
+   loop by creating a surce and using `CFRunLoopAddSource'.
+
+   Taps may be placed at the point where HIDSystem events enter the server,
+   at the point where HIDSystem and remote control events enter a session,
+   at the point where events have been annotated to flow to a specific
+   application, or at the point where events are delivered to the
+   application. Taps may be inserted at a specified point at the head of
+   pre-existing filters, or appended after any pre-existing filters.
+
+>>>>>>> origin/cpstrnew
    Taps may be passive event listeners, or active filters. An active filter
    may pass an event through unmodified, modify an event, or discard an
    event. When a tap is registered, it identifies the set of events to be
    observed with a mask, and indicates if it is a passive or active event
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -918,6 +1071,9 @@ procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; va
 =======
    filter. Multiple event type bitmasks may be "OR"ed together.
 >>>>>>> graemeg/cpstrnew
+=======
+   filter. Multiple event type bitmasks may be "OR"ed together.
+>>>>>>> origin/cpstrnew
 
    Taps may only be placed at `kCGHIDEventTap' by a process running as the
    root user. NULL is returned for other users.
@@ -925,6 +1081,7 @@ procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; va
    Taps placed at `kCGHIDEventTap', `kCGSessionEventTap',
    `kCGAnnotatedSessionEventTap', or on a specific process may only receive
    key up and down events if access for assistive devices is enabled
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -941,6 +1098,8 @@ procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; va
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    (Preferences Universal Access panel, Keyboard view) or the caller is
    enabled for assistive device access, as by `AXMakeProcessTrusted'. If the
    tap is not permitted to monitor these events when the tap is created,
@@ -948,11 +1107,14 @@ procedure CGEventSetDoubleValueField( event: CGEventRef; field: CGEventField; va
    empty mask, then NULL is returned.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
    Releasing the CFMachPortRef will release the tap.
 

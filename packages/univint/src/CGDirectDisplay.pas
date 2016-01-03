@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    Copyright (c) 2000-2011 Apple Inc.
    All rights reserved. }
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
@@ -26,6 +27,12 @@
 {       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+   Copyright (c) 2000-2009 Apple Inc.
+   All rights reserved. }
+{       Pascal Translation Updated:  Peter N Lewis, <peter@stairways.com.au>, August 2005 }
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -83,6 +90,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -94,6 +102,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -112,6 +122,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -150,12 +161,24 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+>>>>>>> origin/cpstrnew
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -176,6 +199,8 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -185,6 +210,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -192,6 +218,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -204,6 +232,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -211,6 +240,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -220,6 +251,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -241,12 +273,18 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -267,10 +305,13 @@ interface
 	{$setc TARGET_CPU_ARM64 := TRUE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elsec}
@@ -283,10 +324,15 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
   {$setc TARGET_CPU_64 := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 {$elsec}
@@ -318,6 +364,9 @@ interface
 =======
 {$elsec}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -370,6 +419,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGDirectPaletteRef = ^OpaqueCGDirectPaletteRef; { an opaque type }
 	OpaqueCGDirectPaletteRef = record end;
 	CGDirectPaletteRefPtr = ^CGDirectPaletteRef;  { when a var xx:CGDirectPaletteRef parameter can be nil, it is changed to xx: CGDirectPaletteRefPtr }
@@ -382,6 +432,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	CGDirectPaletteRef = ^SInt32; { an opaque type }
 	CGDirectPaletteRefPtr = ^CGDirectPaletteRef;  { when a var xx:CGDirectPaletteRef parameter can be nil, it is changed to xx: CGDirectPaletteRefPtr }
 
@@ -389,11 +441,14 @@ type
 	CGDisplayModeRef = ^SInt32; { an opaque type }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	CGDisplayModeRefPtr = ^CGDisplayModeRef;
 
 const
@@ -401,6 +456,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc TARGET_OS_MAC}
 
@@ -422,23 +478,32 @@ function kCGDirectMainDisplay: CGDirectDisplayID; external name '_CGMainDisplayI
 {$ifc TARGET_OS_MAC}
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+{$ifc TARGET_OS_MAC}
+
+>>>>>>> origin/cpstrnew
 {GPC-FPC-ONLY-START}
 function kCGDirectMainDisplay: CGDirectDisplayID; external name '_CGMainDisplayID';
 {GPC-FPC-ONLY-END}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Return the display ID of the current main display. }
 
 function CGMainDisplayID: CGDirectDisplayID; external name '_CGMainDisplayID';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 
 { Mechanisms used to find screen IDs.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -498,6 +563,18 @@ function CGGetDisplaysWithOpenGLDisplayMask( mask: CGOpenGLDisplayMask; maxDispl
    specified criteria is returned in `matchingDisplayCount'. }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+   The following functions take an array length (`maxDisplays') and array of
+   pointers to CGDirectDisplayIDs (`displays'). The array is filled in with
+   the displays meeting the specified criteria; no more than `maxDisplays'.
+   will be stored in `displays'. The number of displays meeting the criteria
+   is returned in `matchingDisplayCount'.
+
+   If the `displays' array is NULL, only the number of displays meeting the
+   specified criteria is returned in `matchingDisplayCount'. }
+
+>>>>>>> origin/cpstrnew
 function CGGetDisplaysWithPoint( point: CGPoint; maxDisplays: UInt32; dspys: CGDirectDisplayIDPtr; var dspyCnt: UInt32 ): CGError; external name '_CGGetDisplaysWithPoint';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
@@ -511,11 +588,14 @@ function CGGetDisplaysWithOpenGLDisplayMask( mask: CGOpenGLDisplayMask; maxDispl
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    If `activeDisplays' is NULL, then `maxDisplays' is ignored, and
    `displayCount' is set to the number of displays. Otherwise, the list of
    active displays is stored in `activeDisplays'; no more than `maxDisplays'
@@ -529,6 +609,7 @@ function CGGetDisplaysWithOpenGLDisplayMask( mask: CGOpenGLDisplayMask; maxDispl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGGetActiveDisplayList( maxDisplays: UInt32; activeDisplays: CGDirectDisplayIDPtr; var displayCount: UInt32 ): CGError; external name '_CGGetActiveDisplayList';
 =======
 function CGGetActiveDisplayList( maxDisplays: UInt32; activeDspys: CGDirectDisplayIDPtr; var dspyCnt: UInt32 ): CGError; external name '_CGGetActiveDisplayList';
@@ -539,6 +620,9 @@ function CGGetActiveDisplayList( maxDisplays: UInt32; activeDspys: CGDirectDispl
 =======
 function CGGetActiveDisplayList( maxDisplays: UInt32; activeDspys: CGDirectDisplayIDPtr; var dspyCnt: UInt32 ): CGError; external name '_CGGetActiveDisplayList';
 >>>>>>> graemeg/cpstrnew
+=======
+function CGGetActiveDisplayList( maxDisplays: UInt32; activeDspys: CGDirectDisplayIDPtr; var dspyCnt: UInt32 ): CGError; external name '_CGGetActiveDisplayList';
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 
 { Return a list of online displays.
@@ -556,6 +640,7 @@ function CGGetActiveDisplayList( maxDisplays: UInt32; activeDspys: CGDirectDispl
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGGetOnlineDisplayList( maxDisplays: UInt32; onlineDisplays: CGDirectDisplayIDPtr; var displayCount: UInt32 ): CGError; external name '_CGGetOnlineDisplayList';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 
@@ -565,17 +650,22 @@ function CGGetOnlineDisplayList( maxDisplays: UInt32; onlineDisplays: CGDirectDi
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function CGGetOnlineDisplayList( maxDisplays: UInt32; onlineDspys: CGDirectDisplayIDPtr; var dspyCnt: UInt32 ): CGError; external name '_CGGetOnlineDisplayList';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_NA) *)
 
 { Return the OpenGL display mask for `display', or 0 is `display' is an
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    invalid display. }
 
 function CGDisplayIDToOpenGLDisplayMask( display: CGDirectDisplayID ): CGOpenGLDisplayMask; external name '_CGDisplayIDToOpenGLDisplayMask';
@@ -614,6 +704,7 @@ function CGDisplayCopyAllDisplayModes( display: CGDirectDisplayID; options: CFDi
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var kCGDisplayShowDuplicateLowResolutionModes: CFStringRef; external name '_kCGDisplayShowDuplicateLowResolutionModes'; (* attribute const *)
 (* CG_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_NA) *)
 
@@ -623,6 +714,8 @@ var kCGDisplayShowDuplicateLowResolutionModes: CFStringRef; external name '_kCGD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Return the current mode of the specified display, or NULL if `display'
    is invalid. }
    
@@ -648,6 +741,7 @@ function CGDisplaySetDisplayMode( display: CGDirectDisplayID; mode: CGDisplayMod
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Return the width in points of the specified display mode. }
 =======
 { Return the width in pixels of the specified display mode. }
@@ -658,10 +752,14 @@ function CGDisplaySetDisplayMode( display: CGDirectDisplayID; mode: CGDisplayMod
 =======
 { Return the width in pixels of the specified display mode. }
 >>>>>>> graemeg/cpstrnew
+=======
+{ Return the width in pixels of the specified display mode. }
+>>>>>>> origin/cpstrnew
 
 function CGDisplayModeGetWidth( mode: CGDisplayModeRef ): size_t; external name '_CGDisplayModeGetWidth';
 (* CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -675,6 +773,9 @@ function CGDisplayModeGetWidth( mode: CGDisplayModeRef ): size_t; external name 
 =======
 { Return the height in pixels of the specified display mode. }
 >>>>>>> graemeg/cpstrnew
+=======
+{ Return the height in pixels of the specified display mode. }
+>>>>>>> origin/cpstrnew
 
 function CGDisplayModeGetHeight( mode: CGDisplayModeRef ): size_t; external name '_CGDisplayModeGetHeight';
 (* CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
@@ -726,6 +827,7 @@ procedure CGDisplayModeRelease( mode: CGDisplayModeRef ); external name '_CGDisp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { Return the width in pixels of the specified display mode. }
 
 function CGDisplayModeGetPixelWidth( mode: CGDisplayModeRef ): size_t; external name '_CGDisplayModeGetPixelWidth';
@@ -742,6 +844,8 @@ function CGDisplayModeGetPixelHeight( mode: CGDisplayModeRef ): size_t; external
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Set the gamma function for `display' by specifying the coefficients of
    the gamma transfer function.
 
@@ -761,6 +865,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGGammaValuePtr = ^CGGammaValue;
 =======
 	CGGammaValuePtr					= ^CGGammaValue;
@@ -771,6 +876,9 @@ type
 =======
 	CGGammaValuePtr					= ^CGGammaValue;
 >>>>>>> graemeg/cpstrnew
+=======
+	CGGammaValuePtr					= ^CGGammaValue;
+>>>>>>> origin/cpstrnew
                                               
 function CGSetDisplayTransferByFormula( display: CGDirectDisplayID; redMin: CGGammaValue; redMax: CGGammaValue; redGamma: CGGammaValue; greenMin: CGGammaValue; greenMax: CGGammaValue; greenGamma: CGGammaValue; blueMin: CGGammaValue; blueMax: CGGammaValue; blueGamma: CGGammaValue ): CGError; external name '_CGSetDisplayTransferByFormula';
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
@@ -786,6 +894,7 @@ function CGGetDisplayTransferByFormula( display: CGDirectDisplayID; var redMin: 
 function CGDisplayGammaTableCapacity( display: CGDirectDisplayID ): UInt32; external name '_CGDisplayGammaTableCapacity';
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -806,6 +915,8 @@ function CGSetDisplayTransferByTable( display: CGDirectDisplayID; tableSize: UIn
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Return the RGB gamma table values for `display'.
 
    The number of entries in each array is specified by `capacity'; no more
@@ -839,6 +950,7 @@ procedure CGDisplayRestoreColorSyncSettings; external name '_CGDisplayRestoreCol
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const
 	kCGCaptureNoOptions = 0;	{ Default behavior. }
 	kCGCaptureNoFill = 1 shl 0;	{ Disables fill with black on capture. }
@@ -849,6 +961,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
 	CGCaptureOptions = UInt32;
 const
@@ -856,15 +970,19 @@ const
 	kCGCaptureNoFill = 1 shl 0;	{ Disables fill with black on capture. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Return true if `display' is captured; false otherwise. }
 
 function CGDisplayIsCaptured( display: CGDirectDisplayID ): boolean_t; external name '_CGDisplayIsCaptured';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -878,6 +996,9 @@ function CGDisplayIsCaptured( display: CGDirectDisplayID ): boolean_t; external 
 =======
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 { Capture `display' for exclusive use by an application. }
 
@@ -971,11 +1092,14 @@ procedure CGGetLastMouseDelta( var deltaX: SInt32; var deltaY: SInt32 ); externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Return true if the current display mode of `display' supports palettes,
    false otherwise. }
 
@@ -1012,11 +1136,14 @@ function CGDisplayBeamPosition( display: CGDirectDisplayID ): UInt32; external n
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Return a CGContext suitable for drawing to the captured display
    `display', or NULL if `display' has not been captured. The context is
    owned by the device and should not be released by the caller.
@@ -1026,6 +1153,7 @@ function CGDisplayBeamPosition( display: CGDirectDisplayID ): UInt32; external n
    reconfiguring the display invalidates the drawing context.
 
    The determine when the display configuration is changing, use
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1039,6 +1167,9 @@ function CGDisplayBeamPosition( display: CGDirectDisplayID ): UInt32; external n
 =======
    `CGRegisterDisplayRegisterReconfigurationCallback'. }
 >>>>>>> graemeg/cpstrnew
+=======
+   `CGRegisterDisplayRegisterReconfigurationCallback'. }
+>>>>>>> origin/cpstrnew
 
 function CGDisplayGetDrawingContext( display: CGDirectDisplayID ): CGContextRef; external name '_CGDisplayGetDrawingContext';
 (* CG_AVAILABLE_STARTING(__MAC_10_3, __IPHONE_NA) *)
@@ -1120,12 +1251,16 @@ function CGDisplayGetDrawingContext( display: CGDirectDisplayID ): CGContextRef;
 
 { These types are deprecated; don't use them. }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CGDisplayCount = UInt32;
 	CGDisplayErr = CGError;
 	CGBeamPosition = UInt32;
 	CGByteValue = UInt8;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     CGDisplayCoord = SInt32;
@@ -1135,6 +1270,9 @@ type
 =======
   CGDisplayCoord = SInt32;
 >>>>>>> graemeg/cpstrnew
+=======
+  CGDisplayCoord = SInt32;
+>>>>>>> origin/cpstrnew
 
 type
 	CGMouseDelta = SInt32;
@@ -1155,6 +1293,8 @@ function CGDisplayBaseAddress( display: CGDirectDisplayID ): UnivPtr; external n
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6,__IPHONE_NA, __IPHONE_NA) *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 =======
 
@@ -1166,6 +1306,37 @@ function CGDisplayBaseAddress( display: CGDirectDisplayID ): UnivPtr; external n
  * to read-only memory.
  }
 
+{ Use `CGDisplayCreateImageForRect' instead. }
+function CGDisplayAddressForPosition( display: CGDirectDisplayID; x: CGDisplayCoord; y: CGDisplayCoord ): UnivPtr; external name '_CGDisplayAddressForPosition';
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+
+{
+ * Display mode selection
+ * Display modes are represented as CFDictionaries
+ * All dictionaries and arrays returned via these mechanisms are
+ * owned by the framework and should not be released.  The framework
+ * will not release them out from under your application.
+ *
+ * Values associated with the following keys are CFNumber types.
+ * With CFNumberGetValue(), use kCFNumberLongType for best results.
+ * kCGDisplayRefreshRate encodes a double value, so to get the fractional
+ * refresh rate use kCFNumberDoubleType.
+ }
+ 
+{ Use `CGDisplayCreateImage' or `CGDisplayCreateImageForRect' instead. }
+function CGDisplayBytesPerRow( display: CGDirectDisplayID ): size_t; external name '_CGDisplayBytesPerRow';
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
+
+{
+ * return address for X,Y in global coordinates;
+ *	(0,0) represents the upper left corner of the main display.
+ * returns NULL for an invalid display or out of bounds coordinates
+ * If the display has not been captured, the returned address may refer
+ * to read-only memory.
+ }
+
+<<<<<<< HEAD
 { Use `CGDisplayCreateImageForRect' instead. }
 function CGDisplayAddressForPosition( display: CGDirectDisplayID; x: CGDisplayCoord; y: CGDisplayCoord ): UnivPtr; external name '_CGDisplayAddressForPosition';
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_1, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
@@ -1205,6 +1376,11 @@ function CGDisplayAddressForPosition( display: CGDirectDisplayID; x: CGDisplayCo
 function CGDisplayAvailableModes( display: CGDirectDisplayID ): CFArrayRef; external name '_CGDisplayAvailableModes';
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
 >>>>>>> graemeg/cpstrnew
+=======
+{ Use the CGDisplayMode APIs instead. }
+function CGDisplayAvailableModes( display: CGDirectDisplayID ): CFArrayRef; external name '_CGDisplayAvailableModes';
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+>>>>>>> origin/cpstrnew
 
 {
  * Display mode selection
@@ -1267,6 +1443,7 @@ function CGDisplayBytesPerRow( display: CGDirectDisplayID ): size_t; external na
 { Use the CGDisplayMode APIs instead. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function CGDisplayAvailableModes( display: CGDirectDisplayID ): CFArrayRef; external name '_CGDisplayAvailableModes';
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
 
@@ -1289,15 +1466,24 @@ function CGDisplayBestModeForParametersAndRefreshRateWithProperty( display: CGDi
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+function CGDisplayBestModeForParameters( display: CGDirectDisplayID; bitsPerPixel: size_t; width: size_t; height: size_t; var exactMatch: boolean_t ): CFDictionaryRef; external name '_CGDisplayBestModeForParameters';
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+
+{ Use the CGDisplayMode APIs instead. }
+>>>>>>> origin/cpstrnew
 function CGDisplayBestModeForParametersAndRefreshRate( display: CGDirectDisplayID; bitsPerPixel: size_t; width: size_t; height: size_t; refresh: CGRefreshRate; var exactMatch: boolean_t ): CFDictionaryRef; external name '_CGDisplayBestModeForParametersAndRefreshRate';
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
 
 { Use the CGDisplayMode APIs instead. }
 function CGDisplayBestModeForParametersAndRefreshRateWithProperty( display: CGDirectDisplayID; bitsPerPixel: size_t; width: size_t; height: size_t; refresh: CGRefreshRate; property: CFStringRef; var exactMatch: boolean_t ): CFDictionaryRef; external name '_CGDisplayBestModeForParametersAndRefreshRateWithProperty';
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_2, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
 
 {
@@ -1309,11 +1495,14 @@ function CGDisplayBestModeForParametersAndRefreshRateWithProperty( display: CGDi
 function CGDisplayCurrentMode( display: CGDirectDisplayID ): CFDictionaryRef; external name '_CGDisplayCurrentMode';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {
  * Switch display mode.  Note that after switching, 
@@ -1338,6 +1527,7 @@ function CGDisplaySwitchToMode( display: CGDirectDisplayID; mode: CFDictionaryRe
 { Use the CGDisplayMode APIs instead. }
 function CGDisplayBitsPerPixel( display: CGDirectDisplayID ): size_t; external name '_CGDisplayBitsPerPixel';
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+<<<<<<< HEAD
 
 { Use the CGDisplayMode APIs instead. }
 function CGDisplayBitsPerSample( display: CGDirectDisplayID ): size_t; external name '_CGDisplayBitsPerSample';
@@ -1512,6 +1702,17 @@ function CGDisplaySamplesPerPixel( display: CGDirectDisplayID ): size_t; externa
 (* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+{ Use the CGDisplayMode APIs instead. }
+function CGDisplayBitsPerSample( display: CGDirectDisplayID ): size_t; external name '_CGDisplayBitsPerSample';
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+
+{ Use the CGDisplayMode APIs instead. }
+function CGDisplaySamplesPerPixel( display: CGDirectDisplayID ): size_t; external name '_CGDisplaySamplesPerPixel';
+(* CG_AVAILABLE_BUT_DEPRECATED(__MAC_10_0, __MAC_10_6, __IPHONE_NA, __IPHONE_NA) *)
+
+>>>>>>> origin/cpstrnew
 {$endc}
 {$ifc not defined MACOSALLINCLUDE or not MACOSALLINCLUDE}
 

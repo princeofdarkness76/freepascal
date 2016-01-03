@@ -32,6 +32,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    TBStrList = array[0..65535] of TBstr;
    PBStrList = ^TBStrList;
    POleStrList = ^TOleStrList;
@@ -41,17 +42,22 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
    TBStrList = array[0..(high(integer) div sizeof(TBSTR))-1] of TBstr;
    PBStrList = ^TBStrList;
    POleStrList = ^TOleStrList;
    TOleStrList = array[0..(high(integer) div sizeof(POleStr))-1] of POleStr;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
    PBStr = ^TBStr;
    TOleEnum = type LongWord;
@@ -79,6 +85,7 @@ type
    BSTR	               = POLESTR;
    TOleDate	       = DATE;
    POleDate	       = ^TOleDate;	
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -115,6 +122,9 @@ type
 =======
    OLE_HANDLE	       = UINT;
 >>>>>>> graemeg/cpstrnew
+=======
+   OLE_HANDLE	       = UINT;
+>>>>>>> origin/cpstrnew
    LPOLE_HANDLE        = ^OLE_HANDLE;
    OLE_COLOR	       = DWORD;
    LPOLE_COLOR         = ^OLE_COLOR;
@@ -125,6 +135,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
    HHandle             = UINT_PTR;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -132,6 +143,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 CONST
    GUID_NULL  : TGUID =  '{00000000-0000-0000-0000-000000000000}';

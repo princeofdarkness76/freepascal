@@ -161,6 +161,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TTokens = set of TToken;
 
   { TMacroDef }
@@ -182,6 +183,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   TLineReader = class
   Private
@@ -207,6 +210,7 @@ type
     function IsEOF: Boolean; override;
     function ReadLine: string; override;
     property Filename: string read FFilename;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   end;
@@ -262,17 +266,24 @@ type
   end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+
+>>>>>>> origin/cpstrnew
   { TFileResolver }
 
   TFileResolver = class
   private
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FBaseDirectory: string;
     FIncludePaths: TStringList;
     FStrictFileCase : Boolean;
@@ -330,11 +341,14 @@ type
     property BaseDirectory: string read FBaseDirectory write FBaseDirectory;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
   EScannerError       = class(Exception);
@@ -350,6 +364,8 @@ type
   TPScannerLogHandler = Procedure (Sender : TObject; Const Msg : String) of object;
   TPScannerLogEvent = (sleFile,sleLineNumber,sleConditionals);
   TPScannerLogEvents = Set of TPScannerLogEvent;
+
+  { TPascalScanner }
 
   { TPascalScanner }
 
@@ -393,6 +409,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure HandleDefine(Param: String); virtual;
     procedure HandleIncludeFile(Param: String); virtual;
     procedure HandleUnDefine(Param: String);virtual;
@@ -404,6 +421,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function DoFetchTextToken: TToken;
     function DoFetchToken: TToken;
     procedure ClearFiles;
@@ -560,6 +579,7 @@ function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function IsNamedToken(Const AToken : String; Out T : TToken) : Boolean;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -567,6 +587,8 @@ function IsNamedToken(Const AToken : String; Out T : TToken) : Boolean;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 
@@ -682,6 +704,7 @@ function FilenameIsUnixAbsolute(const TheFilename: string): boolean;
 begin
   Result:=(TheFilename<>'') and (TheFilename[1]='/');
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -877,6 +900,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 constructor TFileLineReader.Create(const AFilename: string);
 
@@ -888,11 +913,14 @@ begin
   FFilename:=AFilename;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Assign(FTextFile, AFilename);
   Reset(FTextFile);
   SetTextBuf(FTextFile,FBuffer,SizeOf(FBuffer));
@@ -1035,6 +1063,7 @@ function TFileResolver.FindIncludeFile(const AName: string): TLineReader;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   FN : String;
 
@@ -1051,6 +1080,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   function SearchLowUpCase(FN: string): string;
   var
     Dir: String;
@@ -1115,11 +1146,14 @@ begin
       end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
 end;
 
@@ -1313,6 +1347,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Procedure TPascalScanner.PushStackItem;
 
 Var
@@ -1419,6 +1454,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function TPascalScanner.DoFetchToken: TToken;
 
   function FetchLine: Boolean;

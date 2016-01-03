@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jstoken, jsscanner;
 =======
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
@@ -18,6 +19,9 @@ uses
 =======
   Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, Typinfo, fpcunit, testutils, testregistry, jsscanner;
+>>>>>>> origin/cpstrnew
 
 type
 
@@ -173,6 +177,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Result:=FScanner;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -180,6 +185,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestJSScanner.FreeScanner;
@@ -808,6 +815,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Inherited;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -815,6 +823,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestJSScanner.DoTestFloat(F : Double);
@@ -837,6 +847,7 @@ Var
 
 begin
   CreateScanner(S);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -865,6 +876,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a number',tjsNumber,J);
   V:=FScanner.CurTokenString;
@@ -883,11 +896,14 @@ begin
   AssertEquals('Parsed float equals original float',F,C);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestJSScanner.TestFloat;
@@ -924,6 +940,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     J:=FScanner.FetchToken;
     AssertEquals(S+' is a string',tjsString,J);
@@ -938,6 +955,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   J:=FScanner.FetchToken;
   AssertEquals(S+' is a string',tjsString,J);
   If (Length(S)>0) and (S[1] in ['"','''']) then
@@ -945,11 +964,14 @@ begin
   AssertEquals('Correct string is returned',S,FScanner.CurTokenString);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestJSScanner.TestString;
@@ -968,6 +990,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   try
     While (FScanner.FetchToken<>tjsEOF) do ;
   finally
@@ -982,6 +1005,9 @@ begin
 =======
   While (FScanner.FetchToken<>tjsEOF) do ;
 >>>>>>> graemeg/cpstrnew
+=======
+  While (FScanner.FetchToken<>tjsEOF) do ;
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTestJSScanner.TestStringError;

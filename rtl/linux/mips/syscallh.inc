@@ -18,6 +18,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
     MA 02110-1301, USA.
 =======
@@ -29,6 +30,9 @@
 =======
     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 >>>>>>> graemeg/cpstrnew
+=======
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+>>>>>>> origin/cpstrnew
 
  ****************************************************************************
 
@@ -55,6 +59,7 @@ function Do_SysCall(sysnr,param1,param2,param3,param4,param5,param6:TSysParam):T
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -62,3 +67,5 @@ function Do_SysCall(sysnr,param1,param2,param3,param4,param5,param6:TSysParam):T
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

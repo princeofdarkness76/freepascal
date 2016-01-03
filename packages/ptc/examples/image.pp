@@ -18,6 +18,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure load(surface: IPTCSurface; filename: String);
 =======
 procedure load(surface: TPTCSurface; filename: String);
@@ -28,11 +29,15 @@ procedure load(surface: TPTCSurface; filename: String);
 =======
 procedure load(surface: TPTCSurface; filename: String);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure load(surface: TPTCSurface; filename: String);
+>>>>>>> origin/cpstrnew
 var
   F: File;
   width, height: Integer;
   pixels: PByte = nil;
   y: Integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,6 +54,10 @@ var
   img_format: TPTCFormat = nil;
   img_palette: TPTCPalette = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  img_format: TPTCFormat = nil;
+  img_palette: TPTCPalette = nil;
+>>>>>>> origin/cpstrnew
 begin
   { open image file }
   AssignFile(F, filename);
@@ -74,6 +83,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     img_format := TPTCFormatFactory.CreateNew(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     img_format := TPTCFormatFactory.CreateNew(24, $000000FF, $0000FF00, $00FF0000);
@@ -84,6 +94,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     img_format := TPTCFormat.Create(24, $00FF0000, $0000FF00, $000000FF);
     {$ELSE FPC_LITTLE_ENDIAN}
     img_format := TPTCFormat.Create(24, $000000FF, $0000FF00, $00FF0000);
@@ -92,11 +104,14 @@ begin
     surface.load(pixels, width, height, width * 3, img_format, img_palette);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   finally
     CloseFile(F);
@@ -106,6 +121,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     img_palette.Free;
@@ -121,10 +137,16 @@ begin
     img_palette.Free;
     img_format.Free;
 >>>>>>> graemeg/cpstrnew
+=======
+
+    img_palette.Free;
+    img_format.Free;
+>>>>>>> origin/cpstrnew
   end;
 end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -146,10 +168,16 @@ var
   format: TPTCFormat = nil;
   surface: TPTCSurface = nil;
 >>>>>>> graemeg/cpstrnew
+=======
+  console: TPTCConsole = nil;
+  format: TPTCFormat = nil;
+  surface: TPTCSurface = nil;
+>>>>>>> origin/cpstrnew
 begin
   try
     try
       { create console }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -162,17 +190,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console := TPTCConsole.Create;
 
       { create format }
       format := TPTCFormat.Create(32, $00FF0000, $0000FF00, $000000FF);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
       try
         { try to open the console matching the image resolution }
@@ -187,6 +220,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       surface := TPTCSurfaceFactory.CreateNew(320, 200, format);
 =======
       surface := TPTCSurface.Create(320, 200, format);
@@ -197,6 +231,9 @@ begin
 =======
       surface := TPTCSurface.Create(320, 200, format);
 >>>>>>> graemeg/cpstrnew
+=======
+      surface := TPTCSurface.Create(320, 200, format);
+>>>>>>> origin/cpstrnew
 
       { load image to surface }
       load(surface, 'image.tga');
@@ -215,6 +252,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       if Assigned(console) then
         console.close;
 =======
@@ -222,6 +260,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       console.close;
 
       console.Free;
@@ -229,11 +269,14 @@ begin
       format.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

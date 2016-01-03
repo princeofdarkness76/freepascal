@@ -93,6 +93,7 @@ unit cpupi;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               tg.setfirsttemp(-28-16)
             else
               { on Darwin first r4-r7,r14 are saved, then r7 is adjusted to
@@ -104,17 +105,22 @@ unit cpupi;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               tg.setfirsttemp(-28-16+4)
             else
               { on Darwin r9 is not usable -> one less register to save }
               tg.setfirsttemp(-24-16+4)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           end
         else
           tg.setfirsttemp(maxpushedparasize);
@@ -165,6 +171,7 @@ unit cpupi;
          r : byte;
          floatsavesize : aword;
          regs: tcpuregisterset;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       begin
@@ -266,6 +273,8 @@ unit cpupi;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       begin
         if (target_info.system in systems_darwin) or GenerateThumbCode then
           begin

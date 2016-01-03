@@ -37,6 +37,7 @@ unit i_amiga;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_has_winlike_resources];
 =======
             flags        : [tf_files_case_aware];
@@ -47,6 +48,9 @@ unit i_amiga;
 =======
             flags        : [tf_files_case_aware];
 >>>>>>> graemeg/cpstrnew
+=======
+            flags        : [tf_files_case_aware];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_m68k;
             unit_env     : 'AMIGAUNITS';
             extradefines : 'HASAMIGA';

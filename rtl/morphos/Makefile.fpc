@@ -10,6 +10,7 @@ loaders=prt0
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
       fpintres dos heaptrc ctypes \
       sysutils classes fgl math typinfo \
@@ -27,6 +28,8 @@ units=$(SYSTEMUNIT) uuchar objpas macpas iso7185 extpas strings \
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       dos heaptrc ctypes \
       sysutils classes fgl strutils math typinfo varutils \
@@ -38,11 +41,14 @@ units=$(SYSTEMUNIT) objpas macpas iso7185 strings \
       kvm video mouse keyboard sockets \
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 # these can be moved to packages later
 #      clipboard datatypes asl ahi tinygl get9 muihelper
 #implicitunits=exeinfo\
@@ -154,12 +160,15 @@ classes$(PPUEXT) : classes.pp $(wildcard $(OBJPASDIR)/classes/*.inc) \
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         $(COMPILER) -Fi$(OBJPASDIR)/classes $(AMIINC)/classes.pp
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         $(COMPILER) -Fi$(OBJPASDIR)/classes classes.pp
 >>>>>>> graemeg/cpstrnew
 

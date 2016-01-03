@@ -45,12 +45,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function getResourceURI(const res: XMLString): XMLString;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function getResourceURI(const res: WideString): WideString;
 >>>>>>> graemeg/cpstrnew
     function ContentTypeIs(const t: string): Boolean;

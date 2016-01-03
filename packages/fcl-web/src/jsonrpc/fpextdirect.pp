@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {
     This file is part of the Free Component Library
 
@@ -21,6 +22,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 unit fpextdirect;
 
 {$mode objfpc}{$H+}
@@ -29,6 +32,7 @@ unit fpextdirect;
 interface
 
 uses
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -53,6 +57,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Classes, SysUtils, fpjson, fpjsonrpc, webjsonrpc, httpdefs,websession;
 
 Const
@@ -104,11 +110,14 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TExtDirectDispatcher = Class(TCustomExtDirectDispatcher)
   Published
     Property NameSpace;
@@ -189,6 +198,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property OnNewSession;
     Property OnSessionExpired;
 =======
@@ -197,6 +207,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 implementation
@@ -209,6 +221,7 @@ Resourcestring
   SErrInvalidPath = 'Invalid path';
 
 { TCustomExtDirectDispatcher }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -226,6 +239,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Const
   DefaultNameSpace = 'FPWeb';
 
@@ -389,11 +404,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { TCustomExtDirectContentProducer }
 
 function TCustomExtDirectContentProducer.GetIDProperty: String;
@@ -539,6 +557,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     AResponse.SendResponse;
 >>>>>>> graemeg/cpstrnew
@@ -548,6 +567,9 @@ begin
 =======
     AResponse.SendResponse;
 >>>>>>> graemeg/cpstrnew
+=======
+    AResponse.SendResponse;
+>>>>>>> origin/cpstrnew
     end
   else
     JSONRPCError(SErrInvalidPath);

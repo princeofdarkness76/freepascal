@@ -66,6 +66,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if nitroFSInit(nil) then
 =======
   if (nitroFSInit()) then
@@ -76,6 +77,9 @@ begin
 =======
   if (nitroFSInit()) then
 >>>>>>> graemeg/cpstrnew
+=======
+  if (nitroFSInit()) then
+>>>>>>> origin/cpstrnew
   begin
     dirlist('/');
     begin

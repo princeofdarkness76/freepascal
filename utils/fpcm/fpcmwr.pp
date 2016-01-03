@@ -532,11 +532,14 @@ implementation
           packdirvar,unitdirvar : string;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           fpcmadedirvar : string;
         begin
           FOutput.Add('ifdef '+Prefix+VarName(pack));

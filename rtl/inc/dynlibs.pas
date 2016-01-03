@@ -42,6 +42,7 @@ Function GetLoadErrorStr: string; inline;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function FreeLibrary(Lib : TLibHandle) : Boolean; inline;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif}; inline;
 =======
@@ -49,6 +50,8 @@ Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : {$ifdef
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
 Function LoadLibrary(const Name : AnsiString) : TLibHandle;
 Function GetProcedureAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
@@ -60,11 +63,14 @@ Function FreeLibrary(Lib : TLibHandle) : Boolean;
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 Type
   HModule = TLibHandle; 
@@ -119,6 +125,7 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Function GetProcedureAddress(Lib : TLibHandle; Ordinal : TOrdinalEntry) : {$ifdef cpui8086}FarPointer{$else}Pointer{$endif};
 begin
   Result:=System.GetProcedureAddress(Lib, Ordinal);
@@ -126,12 +133,16 @@ end;
 =======
 Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
 >>>>>>> graemeg/cpstrnew
+=======
+Function GetProcAddress(Lib : TlibHandle; const ProcName : AnsiString) : Pointer;
+>>>>>>> origin/cpstrnew
 
 Function UnloadLibrary(Lib : TLibHandle) : Boolean;
 begin
   Result:=System.UnloadLibrary(Lib);
 end;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Function GetLoadErrorStr: String;
 begin
@@ -140,6 +151,9 @@ end;
 =======
 Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
 >>>>>>> graemeg/cpstrnew
+=======
+Function SafeLoadLibrary(const Name : AnsiString) : TLibHandle;
+>>>>>>> origin/cpstrnew
 
 Function FreeLibrary(Lib : TLibHandle) : Boolean;
 

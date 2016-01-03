@@ -37,6 +37,7 @@ F7,$02,$00,$07,f7,32,23
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ; odd numbered single registers must not be made available to the register
 ; allocator because it cannot deal with D0 conflicting with both S0 and S1. 
 ; This unfortunately means that we can only use 16 single precision registers 
@@ -96,6 +97,8 @@ S31,$04,$06,$2F,s31,0,0
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 ; S0/S1/D0 etc have the same register number because the register allocated
 ; cannot deal with D0 conflicting with both S0 and S1. This unfortunately
 ; means that we can only use 16 single precision registers instead of 32,
@@ -149,11 +152,14 @@ S30,$04,$06,$0F,s20,0,0
 S31,$04,$06,$0F,s21,0,0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 D15,$04,$07,$0F,d15,0,0
 D16,$04,$07,$10,d16,0,0
 D17,$04,$07,$11,d17,0,0
@@ -173,6 +179,7 @@ D30,$04,$07,$1E,d30,0,0
 D31,$04,$07,$1F,d31,0,0
 
 ; special registers
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -234,3 +241,7 @@ FPSCR,$05,$00,$01,fpscr,0,0
 CPSR_C,$05,$00,$00,cpsr_c,0,0
 FPSCR,$05,$00,$01,fpscr,0,0
 >>>>>>> graemeg/cpstrnew
+=======
+CPSR_C,$05,$00,$00,cpsr_c,0,0
+FPSCR,$05,$00,$01,fpscr,0,0
+>>>>>>> origin/cpstrnew

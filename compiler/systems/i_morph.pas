@@ -37,6 +37,7 @@ unit i_morph;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags        : [tf_files_case_aware,tf_smartlink_library,tf_has_winlike_resources];
 =======
             flags        : [tf_files_case_aware,tf_smartlink_library];
@@ -47,6 +48,9 @@ unit i_morph;
 =======
             flags        : [tf_files_case_aware,tf_smartlink_library];
 >>>>>>> graemeg/cpstrnew
+=======
+            flags        : [tf_files_case_aware,tf_smartlink_library];
+>>>>>>> origin/cpstrnew
             cpu          : cpu_powerpc;
             unit_env     : 'MORPHOSUNITS';
             extradefines : 'HASAMIGA';

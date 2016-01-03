@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Startup code for shared libraries, PowerPC64 version.
 =======
  * Startup code for normal programs, PowerPC64 version.
@@ -16,6 +17,9 @@
 =======
  * Startup code for normal programs, PowerPC64 version.
 >>>>>>> graemeg/cpstrnew
+=======
+ * Startup code for normal programs, PowerPC64 version.
+>>>>>>> origin/cpstrnew
  *
  * See the file COPYING.FPC, included in this distribution,
  * for details about the copyright.
@@ -71,6 +75,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ld      11, 16(11)
 =======
     ld      11, 8(11)
@@ -81,6 +86,9 @@
 =======
     ld      11, 8(11)
 >>>>>>> graemeg/cpstrnew
+=======
+    ld      11, 8(11)
+>>>>>>> origin/cpstrnew
     bctr
 .long 0
 .byte 0, 12, 128, 0, 0, 0, 0, 0
@@ -313,6 +321,9 @@ _savevr_31: addi r12,r0,-16
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 */
 /* The _restvr_M routines restore the vector registers from vM to v31. When the
  * routine is called, r0 must point to the word just beyound the end of the
@@ -345,6 +356,7 @@ _restvr_30: addi r12,r0,-32
 _restvr_31: addi r12,r0,-16
     lvx v31,r12,r0
     blr
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -415,6 +427,8 @@ _restvr_30: addi r12,r0,-32
 _restvr_31: addi r12,r0,-16
     lvx v31,r12,r0
     blr
+=======
+>>>>>>> origin/cpstrnew
 */
 
 /*
@@ -493,6 +507,7 @@ operatingsystem_parameters:
     .set operatingsystem_parameter_argc, operatingsystem_parameters+0
     .set operatingsystem_parameter_argv, operatingsystem_parameters+8
     .set operatingsystem_parameter_envp, operatingsystem_parameters+16
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 /*
@@ -660,4 +675,7 @@ operatingsystem_parameters:
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 .section .note.GNU-stack,"",%progbits

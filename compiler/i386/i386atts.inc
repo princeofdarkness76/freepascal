@@ -706,6 +706,7 @@ attsufNONE,
 attsufNONE,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 attsufMM,
 attsufMM,
 =======
@@ -1078,6 +1079,8 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufNONE,
+=======
+>>>>>>> origin/cpstrnew
 attsufNONE,
 attsufNONE,
 attsufNONE,
@@ -1109,7 +1112,10 @@ attsufNONE,
 attsufNONE,
 attsufNONE,
 attsufINT,
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 attsufNONE,
 attsufNONE,
 attsufNONE,

@@ -55,7 +55,10 @@ Procedure SetString (Out S : WideString; Buf : PWideChar; Len : SizeInt);
 Procedure SetString (Out S : WideString; Buf : PChar; Len : SizeInt);
 
 procedure DefaultWide2AnsiMove(source:pwidechar;var dest:ansistring;cp : TSystemCodePage;len:SizeInt);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure DefaultAnsi2WideMove(source:pchar;cp : TSystemCodePage;var dest:widestring;len:SizeInt);
 
 type

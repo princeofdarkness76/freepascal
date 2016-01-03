@@ -48,12 +48,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
     procedure create_funcretloc_info(p: tabstractprocdef; side: tcallercallee);
 >>>>>>> graemeg/cpstrnew
@@ -79,11 +82,14 @@ uses
   defutil,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   procinfo, cpupi;
 
 function tcpuparamanager.get_volatile_registers_int(calloption:
@@ -206,6 +212,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         (varspez = vs_const) and
         (
 =======
@@ -217,6 +224,9 @@ begin
 =======
         ((varspez = vs_const) and
 >>>>>>> graemeg/cpstrnew
+=======
+        ((varspez = vs_const) and
+>>>>>>> origin/cpstrnew
          (
           (not (calloption in [pocall_cdecl, pocall_cppdecl]) and
           (def.size > 8))
@@ -393,6 +403,7 @@ begin
   else
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 procedure tppcparamanager.create_funcretloc_info(p: tabstractprocdef; side:
   tcallercallee);
@@ -429,6 +440,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       retcgsize:=def_cgsize(def);
       result.intsize:=def.size;
     end;
@@ -462,11 +475,14 @@ begin
      end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function tcpuparamanager.create_paraloc_info(p: tabstractprocdef; side:

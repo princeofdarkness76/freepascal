@@ -510,6 +510,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (FData.Count <= FDataOffset) then
 =======
   if (FData.Count < (1+FDataOffset)) then
@@ -520,6 +521,9 @@ begin
 =======
   if (FData.Count < (1+FDataOffset)) then
 >>>>>>> graemeg/cpstrnew
+=======
+  if (FData.Count < (1+FDataOffset)) then
+>>>>>>> origin/cpstrnew
     Result := grEOF
   else
   begin

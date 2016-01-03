@@ -11,6 +11,7 @@ packages=libndsfpc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 tools=bin2s mmutil grit_fpc rmdir mv ndstool
 =======
 tools=bin2s mmutil grit
@@ -21,6 +22,9 @@ tools=bin2s mmutil grit
 =======
 tools=bin2s mmutil grit
 >>>>>>> graemeg/cpstrnew
+=======
+tools=bin2s mmutil grit
+>>>>>>> origin/cpstrnew
 nortl=y
 
 [install]
@@ -31,6 +35,7 @@ cpu=arm
 target=nds
 fpcdir=../../../../..
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -97,6 +102,8 @@ endif
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 [clean]
 files=*.elf *.o *.s *.nds *.nef *.h *.bin \
        $(BUILD)/*
@@ -116,16 +123,20 @@ ifneq ($(BUILD), $(CURDIR))
 endif
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 soundbank.bin.o : $(AUDIO_FILES)
         @$(MMUTIL) $^ -d -o$(BUILD)/soundbank.bin -h$(BUILD)/soundbank.h
         $(BIN2S) $(BUILD)/soundbank.bin > $(BUILD)/soundbank.bin.s
         $(AS) -o $(BUILD)/soundbank.bin.o $(BUILD)/soundbank.bin.s
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -184,3 +195,8 @@ $(GFX_FILES).o:
         $(GRIT) gfx/$(GFX_FILES) -fts -ff gfx/$(basename $(GFX_FILES)).grit -o$(BUILD)/$(GFX_FILES)
         $(AS) -o $(BUILD)/$(basename $(GFX_FILES)).o $(BUILD)/$(basename $(GFX_FILES)).s
 >>>>>>> graemeg/cpstrnew
+=======
+$(GFX_FILES).o: 
+        $(GRIT) gfx/$(GFX_FILES) -fts -ff gfx/$(basename $(GFX_FILES)).grit -o$(BUILD)/$(GFX_FILES)
+        $(AS) -o $(BUILD)/$(basename $(GFX_FILES)).o $(BUILD)/$(basename $(GFX_FILES)).s
+>>>>>>> origin/cpstrnew

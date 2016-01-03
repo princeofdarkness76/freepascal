@@ -51,12 +51,15 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  sLineBreak = LineEnding;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  sLineBreak : string[1] = LineEnding;
 >>>>>>> graemeg/cpstrnew
  DefaultTextLineBreakStyle : TTextLineBreakStyle = tlbsCRLF;
@@ -73,11 +76,14 @@ const
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   argc: LongInt = 0;
   argv: PPChar;
@@ -85,6 +91,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 //  errno: integer;
 >>>>>>> graemeg/cpstrnew
@@ -94,6 +101,9 @@ var
 =======
 //  errno: integer;
 >>>>>>> graemeg/cpstrnew
+=======
+//  errno: integer;
+>>>>>>> origin/cpstrnew
   fake_heap_end: ^byte; cvar; external;
 
 

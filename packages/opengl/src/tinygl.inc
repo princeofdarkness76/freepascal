@@ -338,6 +338,7 @@ syscall sysvbase TinyGLBase 1282;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
 
 {$IFDEF GLU_UNIT}
@@ -355,6 +356,9 @@ syscall sysvbase TinyGLBase 1348;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 procedure _GLCopyTexImage2D(gcl: pointer; target: GLenum; level: GLint; internalFormat: GLenum; x, y: GLint; width, height: GLsizei; border: GLint); inline;
 syscall sysvbase TinyGLBase 1402;
 {$ENDIF GL_UNIT}

@@ -84,11 +84,14 @@ interface
          function  OwnerHierarchyName: string; virtual; abstract;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          function  size:asizeint;virtual;abstract;
          function  packedbitsize:asizeint;virtual;
          function  alignment:shortint;virtual;abstract;
@@ -127,6 +130,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          { size of fileinfo is 10 bytes, so if a >word aligned type would follow,
            two bytes of memory would be wasted, so we put two one byte fields over here }
          visibility : tvisibility;
@@ -153,6 +157,11 @@ interface
          refs       : longint;
          reflist    : TLinkedList;
 >>>>>>> graemeg/cpstrnew
+=======
+         symoptions : tsymoptions;
+         refs       : longint;
+         reflist    : TLinkedList;
+>>>>>>> origin/cpstrnew
          visibility : tvisibility;
          { deprecated optionally can have a message }
          deprecatedmsg: pshortstring;
@@ -162,11 +171,14 @@ interface
          function  mangledname:string; virtual;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          function  prettyname:string; virtual;
          procedure buildderef;virtual;
          procedure deref;virtual;
@@ -331,14 +343,18 @@ implementation
         result:=OwnerHierarchyName;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if assigned(typesym) and
            not(typ in [procvardef,procdef]) and
            (typesym.realname[1]<>'$') then
           result:=result+typesym.realname
         else
           result:=result+GetTypeName;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       end;
@@ -361,6 +377,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -382,6 +400,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -389,6 +408,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function tdef.mangledparaname:string;
       begin
         result:=OwnerHierarchyName;
@@ -446,6 +467,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function tdef.structalignment: shortint;
 =======
     function tdef.packedbitsize:asizeint;
@@ -456,6 +478,9 @@ implementation
 =======
     function tdef.packedbitsize:asizeint;
 >>>>>>> graemeg/cpstrnew
+=======
+    function tdef.packedbitsize:asizeint;
+>>>>>>> origin/cpstrnew
       begin
         result:=alignment;
       end;
@@ -543,6 +568,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          symid:=symid_not_registered;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -550,6 +576,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
     destructor  Tsym.destroy;

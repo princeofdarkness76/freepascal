@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, August 2015 }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -14,6 +15,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {
     Modified for use with Free Pascal
@@ -72,6 +75,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -83,6 +87,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -101,6 +107,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -141,6 +148,14 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
@@ -151,11 +166,14 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -165,6 +183,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -172,6 +191,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
@@ -179,10 +200,13 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -190,17 +214,21 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := TRUE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
@@ -294,6 +322,23 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elifc defined __arm__ and __arm__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := FALSE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := TRUE}
+	{ will require compiler define when/if other Apple devices with ARM cpus ship }
+	{$setc TARGET_OS_MAC := FALSE}
+	{$setc TARGET_OS_IPHONE := TRUE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -345,6 +390,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	CGColorSpaceRef = ^OpaqueCGColorSpaceRef; { an opaque type }
 	OpaqueCGColorSpaceRef = record end;
 =======
@@ -356,6 +402,9 @@ type
 =======
 	CGColorSpaceRef = ^SInt32; { an opaque type }
 >>>>>>> graemeg/cpstrnew
+=======
+	CGColorSpaceRef = ^SInt32; { an opaque type }
+>>>>>>> origin/cpstrnew
 
 type
 	TristimulusValue = array[0..2] of CGFloat;
@@ -375,6 +424,7 @@ const
 	kCGRenderingIntentSaturation = 4;
 
 { The model of a color space. }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -425,6 +475,8 @@ var kCGColorSpaceAdobeRGB1998: CFStringRef; external name '_kCGColorSpaceAdobeRG
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 type
 	CGColorSpaceModel = SInt32;
@@ -469,11 +521,14 @@ var kCGColorSpaceAdobeRGB1998: CFStringRef; external name '_kCGColorSpaceAdobeRG
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { The name of the sRGB color space. The capitalization in the name, while
    strictly inaccurate, avoids interpretational ambiguity. For more
    information, see IEC 61966-2-1 (1999-10): "Multimedia systems and
@@ -518,6 +573,7 @@ function CGColorSpaceCreateCalibratedGray( const (*var*) whitePoint: Tristimulus
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -525,6 +581,8 @@ function CGColorSpaceCreateCalibratedGray( const (*var*) whitePoint: Tristimulus
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Create a calibrated RGB color space. `whitePoint' is an array of 3
    numbers specifying the tristimulus value, in the CIE 1931 XYZ-space, of
@@ -539,6 +597,7 @@ function CGColorSpaceCreateCalibratedRGB( const (*var*) whitePoint: TristimulusV
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
     
 =======
@@ -550,6 +609,9 @@ function CGColorSpaceCreateCalibratedRGB( const (*var*) whitePoint: TristimulusV
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 { Create an L*a*b* color space. `whitePoint' is an array of 3 numbers
    specifying the tristimulus value, in the CIE 1931 XYZ-space, of the
    diffuse white point. `blackPoint' is an array of 3 numbers specifying the
@@ -577,11 +639,14 @@ function CGColorSpaceCreateLab(const (*var*) whitePoint: TristimulusValue; const
  * respectively. }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { Create an ICC-based color space using the ICC profile specified by
    `data'. }
@@ -606,6 +671,7 @@ function CGColorSpaceCreateICCBased( nComponents: size_t; {const} range: {variab
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0) *)
 =======
 >>>>>>> graemeg/cpstrnew
@@ -613,6 +679,8 @@ function CGColorSpaceCreateICCBased( nComponents: size_t; {const} range: {variab
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {* Special colorspaces. *}
 
@@ -648,6 +716,7 @@ function CGColorSpaceCreateWithPlatformColorSpace( ref: {const} UnivPtr ): CGCol
 
 { Create a color space using `name' as the identifier for the color
    space. }
+<<<<<<< HEAD
 
 function CGColorSpaceCreateWithName( name: CFStringRef ): CGColorSpaceRef; external name '_CGColorSpaceCreateWithName';
 (* CG_AVAILABLE_STARTING(__MAC_10_2, __IPHONE_2_0) *)
@@ -778,6 +847,11 @@ function CGColorSpaceCopyName( space: CGColorSpaceRef ): CFStringRef; external n
 function CGColorSpaceGetTypeID: CFTypeID; external name '_CGColorSpaceGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 
 { Return the number of color components in the color space `space'. }
+=======
+
+function CGColorSpaceCreateWithName( name: CFStringRef ): CGColorSpaceRef; external name '_CGColorSpaceCreateWithName'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+{$endc}
+>>>>>>> origin/cpstrnew
 
 function CGColorSpaceGetNumberOfComponents( space: CGColorSpaceRef ): size_t; external name '_CGColorSpaceGetNumberOfComponents';
 
@@ -822,6 +896,19 @@ function CGColorSpaceCopyName( space: CGColorSpaceRef ): CFStringRef; external n
 
 {* Colorspace information. *}
 
+<<<<<<< HEAD
+=======
+{$ifc TARGET_OS_MAC}
+{ Return the name used to create the color space `space', or NULL if the
+   color space was not created using `CGColorSpaceCreateWithName'. }
+
+function CGColorSpaceCopyName( space: CGColorSpaceRef ): CFStringRef; external name '_CGColorSpaceCopyName';
+(* CG_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA) *)
+{$endc}
+
+{* Colorspace information. *}
+
+>>>>>>> origin/cpstrnew
 { Return the CFTypeID for CGColorSpaces. }
 
 function CGColorSpaceGetTypeID: CFTypeID; external name '_CGColorSpaceGetTypeID'; (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -856,7 +943,10 @@ function CGColorSpaceGetColorTableCount( space: CGColorSpaceRef ): size_t; exter
    `CGColorSpaceCreateIndexed'. To determine whether a color space is an
    indexed color space, use `CGColorSpaceGetModel'. }
 
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure CGColorSpaceGetColorTable( space: CGColorSpaceRef; table: UInt8Ptr ); external name '_CGColorSpaceGetColorTable';
 (* CG_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0) *)
 

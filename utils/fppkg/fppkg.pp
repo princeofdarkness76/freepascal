@@ -44,11 +44,14 @@ Type
     Procedure LoadCompilerDefaults;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Procedure ProcessCommandLine(FirstPass: boolean);
     Procedure DoRun; Override;
   end;
@@ -65,6 +68,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   GeneratedConfig,
   UseGlobalConfig : boolean;
@@ -77,6 +81,10 @@ var
   GeneratedConfig,
   UseGlobalConfig : boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+  GeneratedConfig,
+  UseGlobalConfig : boolean;
+>>>>>>> origin/cpstrnew
 begin
   // Default verbosity
   LogLevels:=DefaultLogLevels;
@@ -86,6 +94,7 @@ begin
         LogLevels:=AllLogLevels+[llDebug];
         break;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -100,6 +109,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   GeneratedConfig:=false;
   UseGlobalConfig:=false;
   // First try config file from command line
@@ -147,11 +158,14 @@ begin
   GlobalOptions.LogValues(vlDebug);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -241,6 +255,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Writeln('  uninstall         Uninstall package');
 =======
 >>>>>>> graemeg/cpstrnew
@@ -248,10 +263,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Writeln('  clean             Clean package');
   Writeln('  archive           Create archive of package');
   Writeln('  download          Download package');
   Writeln('  convertmk         Convert Makefile.fpc to fpmake.pp');
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -262,6 +280,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Writeln('  fixbroken         Recompile all (broken) packages with changed dependencies');
   Writeln('  listsettings      Show the values for all fppkg settings');
 //  Writeln('  addconfig          Add a compiler configuration for the supplied compiler');
@@ -476,6 +496,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             pkgglobals.Log(llWarning,E.Message);
 =======
             pkgglobals.Log(vlWarning,E.Message);
@@ -486,6 +507,9 @@ begin
 =======
             pkgglobals.Log(vlWarning,E.Message);
 >>>>>>> graemeg/cpstrnew
+=======
+            pkgglobals.Log(vlWarning,E.Message);
+>>>>>>> origin/cpstrnew
         end;
       end;
     LoadLocalAvailableRepository;
@@ -511,6 +535,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         pkgglobals.Log(llDebug,SLogCheckBrokenDependenvies);
 =======
         pkgglobals.Log(vlDebug,SLogCheckBrokenDependenvies);
@@ -521,6 +546,9 @@ begin
 =======
         pkgglobals.Log(vlDebug,SLogCheckBrokenDependenvies);
 >>>>>>> graemeg/cpstrnew
+=======
+        pkgglobals.Log(vlDebug,SLogCheckBrokenDependenvies);
+>>>>>>> origin/cpstrnew
         SL:=TStringList.Create;
         if FindBrokenPackages(SL) then
           Error(SErrBrokenPackagesFound);
@@ -548,6 +576,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 pkgglobals.Log(llDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
 =======
                 pkgglobals.Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
@@ -558,6 +587,9 @@ begin
 =======
                 pkgglobals.Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
 >>>>>>> graemeg/cpstrnew
+=======
+                pkgglobals.Log(vlDebug,SLogCommandLineAction,['['+ParaPackages[i]+']',ParaAction]);
+>>>>>>> origin/cpstrnew
                 pkghandler.ExecuteAction(ParaPackages[i],ParaAction);
               end;
           end;

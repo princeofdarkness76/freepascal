@@ -94,6 +94,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim,system_i386_android]) then
 =======
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
@@ -104,6 +105,9 @@ implementation
 =======
         if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
 >>>>>>> graemeg/cpstrnew
+=======
+        if not(target_info.system in [system_i386_darwin,system_i386_iphonesim]) then
+>>>>>>> origin/cpstrnew
           begin
             emit_none(A_PUSHF,S_L);
             emit_reg(A_PUSH,S_L,NR_CS);
@@ -151,11 +155,14 @@ implementation
             paramanager.ret_in_param(procdefinition.returndef,procdefinition.proccalloption) then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           inc(pop_size,sizeof(aint));
 
         { better than an add on all processors }

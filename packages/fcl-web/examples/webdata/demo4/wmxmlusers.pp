@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, 
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
@@ -18,6 +19,9 @@ uses
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
+>>>>>>> origin/cpstrnew
     fpwebdata, extjsxml;
 
 type
@@ -41,6 +45,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
 initialization
@@ -59,6 +64,11 @@ initialization
   {$I wmxmlusers.lrs}
 
 >>>>>>> graemeg/cpstrnew
+=======
+initialization
+  {$I wmxmlusers.lrs}
+
+>>>>>>> origin/cpstrnew
   RegisterHTTPModule('XMLProvider', TFPWebProviderDataModule2);
 end.
 

@@ -106,6 +106,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     __moreRepFlags: record
       case byte of
        0: (_anonbitfield_NSBitmapImageRep0: cuint);
@@ -116,6 +117,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     __moreRepFlags: bitpacked record
       case byte of
        0: (_anonbitfield_NSBitmapImageRep0: cuint);
@@ -123,11 +126,14 @@ var
         _bitsPerPixel: cuint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         _isPlanar: 0..1;
         explicitPlanes: 0..1;
         imageSourceIsIndexed: 0..1;
@@ -143,6 +149,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        end;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -150,6 +157,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       );
       end;
     _bytesPerRow: cuint;

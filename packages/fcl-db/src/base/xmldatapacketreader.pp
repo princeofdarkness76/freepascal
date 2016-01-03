@@ -56,16 +56,20 @@ type
     procedure StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0); override;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure FinalizeStoreRecords; override;
     procedure LoadFieldDefs(var AnAutoIncValue : integer); override;
     procedure InitLoadRecords; override;
     function GetCurrentRecord : boolean; override;
     function GetRecordRowState(out AUpdOrder : Integer) : TRowState; override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -79,6 +83,9 @@ type
 =======
     procedure RestoreRecord(ADataset : TCustomBufDataset); override;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure RestoreRecord(ADataset : TCustomBufDataset); override;
+>>>>>>> origin/cpstrnew
     procedure GotoNextRecord; override;
     class function RecognizeStream(AStream : TStream) : boolean; override;
   end;
@@ -361,6 +368,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.RestoreRecord;
 var FieldNr      : integer;
     AFieldNode   : TDomNode;
@@ -373,6 +381,8 @@ var FieldNr      : integer;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 procedure TXMLDatapacketReader.RestoreRecord(ADataset : TCustomBufDataset);
 var FieldNr    : integer;
     AFieldNode : TDomNode;
@@ -407,6 +417,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TXMLDatapacketReader.StoreRecord(ARowState : TRowState; AUpdOrder : integer = 0);
 =======
 procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
@@ -417,6 +428,9 @@ procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowSta
 =======
 procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TXMLDatapacketReader.StoreRecord(ADataset : TCustomBufDataset; ARowState : TRowState; AUpdOrder : integer = 0);
+>>>>>>> origin/cpstrnew
 var FieldNr : Integer;
     AFieldDef: TFieldDef;
     AField: TField;

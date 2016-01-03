@@ -24,6 +24,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure bug16395;
     procedure TestAdv;
 =======
@@ -32,6 +33,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 implementation
@@ -85,6 +88,7 @@ procedure TTestBasics.TestDoubleWrite;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   DeleteUserXmlFile;
   with TRegistry.Create do
@@ -95,6 +99,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifndef windows}
 Var
@@ -112,11 +118,14 @@ begin
       OpenKey('test', true);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       WriteString('LAYOUT', '');
       CloseKey;
     finally
@@ -124,6 +133,7 @@ begin
     end;
   with TRegistry.Create do
     try
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -137,11 +147,15 @@ begin
 =======
       OpenKey('test', true);
 >>>>>>> graemeg/cpstrnew
+=======
+      OpenKey('test', true);
+>>>>>>> origin/cpstrnew
       WriteString('LAYOUT', '');
       CloseKey;
     finally
       Free;
     end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -216,6 +230,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef windows}
   FN:=includetrailingpathdelimiter(GetAppConfigDir(False))+'reg.xml';
   if FileExists(FN) then
@@ -223,11 +239,14 @@ begin
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 initialization

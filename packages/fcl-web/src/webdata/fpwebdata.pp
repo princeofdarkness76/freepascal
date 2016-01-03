@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, httpdefs, fphttp, db;
 =======
   Classes, SysUtils, httpdefs, fphttp, db, websession;
@@ -18,6 +19,9 @@ uses
 =======
   Classes, SysUtils, httpdefs, fphttp, db, websession;
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, httpdefs, fphttp, db, websession;
+>>>>>>> origin/cpstrnew
 
 
 type
@@ -32,6 +36,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TTransCodeEvent = Procedure (Sender : TObject; Var S : String);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -39,10 +44,13 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   TCustomWebdataInputAdaptor = class(TComponent)
   private
     FAction: TWebDataAction;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -53,6 +61,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FRequest: TRequest;
     FBatchCount : Integer;
     FRequestPathInfo : String;
@@ -74,6 +84,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property OnTransCode : TTransCodeEvent Read FOntransCode Write FOnTransCode;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -81,6 +92,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
   TCustomWebdataInputAdaptorClass = Class of TCustomWebdataInputAdaptor;
 
@@ -650,6 +663,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   If (AValue<>'') and Assigned(FOnTranscode) then
     FOnTransCode(Self,Avalue);
 =======
@@ -658,6 +672,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function TCustomWebdataInputAdaptor.TryFieldValue(const AFieldName: String;

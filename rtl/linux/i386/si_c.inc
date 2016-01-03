@@ -66,6 +66,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl    %esp,%ebp               { Points to the arguments }
         movl    %ecx,%esi               
 =======
@@ -80,6 +81,10 @@ asm
         movl    %esp,_ebx               { Points to the arguments }
         movl    %ecx,_ecx               
 >>>>>>> graemeg/cpstrnew
+=======
+        movl    %esp,_ebx               { Points to the arguments }
+        movl    %ecx,_ecx               
+>>>>>>> origin/cpstrnew
   {$else FPC_PIC}
         movl    %esp,%ebx               { Points to the arguments }
   {$endif FPC_PIC}
@@ -101,6 +106,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         movl  %esi,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
@@ -110,21 +116,27 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         movl  _ecx,%eax
         movl  %eax,(%ecx)
         movl  operatingsystem_parameter_argv@GOT(%ebx),%ecx
         movl  _ebx,%eax
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         movl  %eax,(%ecx)
 	popl  %eax
 
         popl  %ecx
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -138,6 +150,9 @@ asm
 =======
         movl  _ebx,%ebx
 >>>>>>> graemeg/cpstrnew
+=======
+        movl  _ebx,%ebx
+>>>>>>> origin/cpstrnew
   {$else FPC_PIC}
 	movl    %eax,operatingsystem_parameter_envp    { Move the environment pointer }
 	movl    %ecx,operatingsystem_parameter_argc    { Move the argument counter    }
@@ -161,6 +176,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	movl  (%ecx),%edi
 =======
 	movl  (%ecx),%ecx
@@ -174,6 +190,10 @@ asm
 	movl  (%ecx),%ecx
 	movl  %ecx,_libc_init_proc
 >>>>>>> graemeg/cpstrnew
+=======
+	movl  (%ecx),%ecx
+	movl  %ecx,_libc_init_proc
+>>>>>>> origin/cpstrnew
   	popl    %ebx
         popl    %ecx
   {$else FPC_PIC}
@@ -192,6 +212,7 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	call    *%edi
 =======
 	call    _libc_init_proc
@@ -202,6 +223,9 @@ asm
 =======
 	call    _libc_init_proc
 >>>>>>> graemeg/cpstrnew
+=======
+	call    _libc_init_proc
+>>>>>>> origin/cpstrnew
   {$else FPC_PIC}
 	call    libc_init_proc
   {$endif FPC_PIC}
@@ -233,12 +257,15 @@ asm
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   pushl   e
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
  {$ifdef FPC_PIC}
   call    fpc_geteipasebx
@@ -261,11 +288,14 @@ asm
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   call    libc_exit
   xorl    %eax,%eax
   incl    %eax                    { eax=1, exit call }

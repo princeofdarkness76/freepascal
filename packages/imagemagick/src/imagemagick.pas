@@ -59,6 +59,12 @@ type
   Pcsize_t = ^size_t;
 {$endif}
 
+// Fix to compile in older FPC versions
+{$ifdef VER2_2}
+type
+  Pcsize_t = ^size_t;
+{$endif}
+
 const
 <<<<<<< HEAD
 {$ifdef Windows}
@@ -66,11 +72,14 @@ const
 {$ifdef Win32}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   MagickExport = 'CORE_RL_magick_.dll';
   WandExport = 'CORE_RL_wand_.dll';
 {$else}

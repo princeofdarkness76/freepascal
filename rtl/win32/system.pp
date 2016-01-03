@@ -97,12 +97,15 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   TDLL_Entry_Hook = procedure (dllparam : PtrInt);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TDLL_Entry_Hook = procedure (dllparam : longint);
 >>>>>>> graemeg/cpstrnew
 
@@ -709,6 +712,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_SECTION_THREADVARS}
 function fpc_tls_add(addr: pointer): pointer; assembler; nostackframe;
   [public,alias: 'FPC_TLS_ADD']; compilerproc;
@@ -816,6 +820,8 @@ function CheckInitialStkLen(stklen : SizeUInt) : SizeUInt;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {******************************************************************************}
 { include code common with win64 }
 

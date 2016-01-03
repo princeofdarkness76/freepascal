@@ -78,6 +78,7 @@ procedure fpc_varset_create_element(b,size : ptrint; var data); compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -88,6 +89,9 @@ procedure fpc_varset_create_element(b,size : ptrint; var data); compilerproc;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
 >>>>>>> graemeg/cpstrnew
+=======
+    tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
+>>>>>>> origin/cpstrnew
   begin
     FillChar(data,size,0);
     tbsetarray(data)[b]:=1;
@@ -104,6 +108,7 @@ procedure fpc_varset_set(const source;var dest; b,size : ptrint); compilerproc;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -114,6 +119,9 @@ procedure fpc_varset_set(const source;var dest; b,size : ptrint); compilerproc;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
 >>>>>>> graemeg/cpstrnew
+=======
+    tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
+>>>>>>> origin/cpstrnew
   begin
     move(source,dest,size);
     tbsetarray(dest)[b]:=1;
@@ -131,6 +139,7 @@ procedure fpc_varset_unset(const source;var dest; b,size : ptrint); compilerproc
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -141,6 +150,9 @@ procedure fpc_varset_unset(const source;var dest; b,size : ptrint); compilerproc
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
 >>>>>>> graemeg/cpstrnew
+=======
+    tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
+>>>>>>> origin/cpstrnew
   begin
     move(source,dest,size);
     tbsetarray(dest)[b]:=0;
@@ -157,6 +169,7 @@ procedure fpc_varset_set_range(const orgset; var dest;l,h,size : ptrint); compil
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tbsetarray = bitpacked array[0..high(sizeint)-1] of 0..1;
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
@@ -167,6 +180,9 @@ procedure fpc_varset_set_range(const orgset; var dest;l,h,size : ptrint); compil
 =======
     tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
 >>>>>>> graemeg/cpstrnew
+=======
+    tbsetarray = bitpacked array[0..sizeof(sizeint)-1] of 0..1;
+>>>>>>> origin/cpstrnew
   var
     i : ptrint;
   begin

@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    HIToolbox-624~3
 =======
      Version:    HIToolbox-437~1
@@ -16,6 +17,9 @@
 =======
      Version:    HIToolbox-437~1
 >>>>>>> graemeg/cpstrnew
+=======
+     Version:    HIToolbox-437~1
+>>>>>>> origin/cpstrnew
  
      Copyright:  © 1985-2008 by Apple Computer, Inc., all rights reserved
  
@@ -31,6 +35,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -38,6 +43,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -95,6 +102,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -106,6 +114,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -124,6 +134,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -133,19 +144,25 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -182,6 +199,11 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -191,6 +213,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -198,10 +221,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -295,6 +321,8 @@ interface
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -327,9 +355,12 @@ interface
   {$setc TARGET_CPU_64 := TRUE}
 {$elsec}
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -371,6 +402,7 @@ uses MacTypes,CFBase,CarbonEventsCore,QuickdrawTypes,Events,IconsCore,TextEdit,H
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -378,6 +410,10 @@ uses MacTypes,CFBase,CarbonEventsCore,QuickdrawTypes,Events,IconsCore,TextEdit,H
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+
+{$ifc TARGET_OS_MAC}
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc TARGET_OS_MAC}
 
@@ -899,6 +935,7 @@ const
    }
 	kStdAlertDoNotCloseOnHelp = 1 shl 4;
 
+<<<<<<< HEAD
 
 {
  *  AlertStdCFStringAlertParamRec
@@ -995,6 +1032,84 @@ type
 		flags: OptionBits;
 
 <<<<<<< HEAD
+=======
+
+{
+ *  AlertStdCFStringAlertParamRec
+ *  
+ *  Summary:
+ *    A CFString variant of AlertStdAlertParamRec. CFStrings are
+ *    preferred.
+ *  
+ *  Discussion:
+ *    As of Mac OS X 10.5, defaultButton can be the same as the
+ *    cancelButton. Prior to Mac OS X 10.5, having cancelButton and
+ *    defaultButton the same will cause a paramErr.
+ }
+type
+	AlertStdCFStringAlertParamRec = record
+{
+   * The version of the structure. Prior to Mac OS X 10.5, you must use
+   * kStdCFStringAlertVersionOne. In Mac OS X 10.5 or later, you may
+   * use either VersionOne or VersionTwo. If you use VersionTwo, you
+   * must set the icon field to NULL or a valid IconRef.
+   }
+		version: UInt32;
+
+  {
+   * Is the alert movable? This parameter is ignored on Mac OS X; all
+   * standard alerts are movable.
+   }
+		movable: Boolean;
+
+  {
+   * Is there a help button?
+   }
+		helpButton: Boolean;
+
+  {
+   * Text for the button in the OK position.
+   }
+		defaultText: CFStringRef;
+
+  {
+   * Text for the button in the Cancel position.
+   }
+		cancelText: CFStringRef;
+
+  {
+   * Text for the button in the leftmost/help position.
+   }
+		otherText: CFStringRef;
+
+  {
+   * Which button is default, i.e. activated by pressing Return. Prior
+   * to Mac OS X 10.5, this field must be set to a non-zero value in
+   * the range kAlertStdAlertOKButton..kAlertStdAlertOtherButton, and
+   * your alert will always have a default button. In Mac OS X 10.5 and
+   * later, you may set this field to zero to request no default button.
+   }
+		defaultButton: SInt16;
+
+  {
+   * Which button is default for cancelling, i.e. activated by pressing
+   * Escape. May be zero to request no cancel button; otherwise, must
+   * be in the range kAlertStdAlertOKButton..kAlertStdAlertOtherButton.
+   }
+		cancelButton: SInt16;
+
+  {
+   * Where to position the alert. kWindowDefaultPosition is the default
+   * and is equal to kWindowAlertPositionParentWindowScreen.
+   }
+		position: UInt16;
+
+  {
+   * Options for the behavior of the alert or sheet.
+   }
+		flags: OptionBits;
+
+>>>>>>> origin/cpstrnew
   {
    * Custom icon for display in the alert. Available on Mac OS X 10.5
    * and later when the version field is set to
@@ -1007,8 +1122,11 @@ type
 { ÑÑÑ end Appearance 1.0 or later stuff}
 
 
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc not TARGET_CPU_64}
 {
  *  NewDialog()

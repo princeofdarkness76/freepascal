@@ -26,6 +26,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contnrs, StreamEx, Avl_Tree, lzxcompressthread;
 =======
 uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contnrs, Avl_Tree{$IFDEF LZX_USETHREADS}, lzxcompressthread{$ENDIF};
@@ -36,6 +37,9 @@ uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contn
 =======
 uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contnrs, Avl_Tree{$IFDEF LZX_USETHREADS}, lzxcompressthread{$ENDIF};
 >>>>>>> graemeg/cpstrnew
+=======
+uses Classes, ChmBase, chmtypes, chmspecialfiles, HtmlIndexer, chmsitemap, contnrs, Avl_Tree{$IFDEF LZX_USETHREADS}, lzxcompressthread{$ENDIF};
+>>>>>>> origin/cpstrnew
 
 Const
    DefaultHHC = 'Default.hhc';
@@ -121,6 +125,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     {$IFDEF LZX_USETHREADS}
 >>>>>>> graemeg/cpstrnew
@@ -130,6 +135,9 @@ Type
 =======
     {$IFDEF LZX_USETHREADS}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$IFDEF LZX_USETHREADS}
+>>>>>>> origin/cpstrnew
     // callbacks for lzx compress threads
     function  LTGetData(Sender: TLZXCompressor; WantedByteCount: Integer; Buffer: Pointer): Integer;
     function  LTIsEndOfFile(Sender: TLZXCompressor): Boolean;
@@ -138,6 +146,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     {$ENDIF}
 >>>>>>> graemeg/cpstrnew
@@ -147,6 +156,9 @@ Type
 =======
     {$ENDIF}
 >>>>>>> graemeg/cpstrnew
+=======
+    {$ENDIF}
+>>>>>>> origin/cpstrnew
     // end callbacks
   public
     constructor Create(AOutStream: TStream; FreeStreamOnDestroy: Boolean); virtual;
@@ -164,6 +176,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property ReadmeMessage : String read fReadmeMessage write fReadmeMessage;
     property Cores : integer read fcores write fcores;
 =======
@@ -172,6 +185,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     //property LocaleID: dword read ITSFHeader.LanguageID write ITSFHeader.LanguageID;
   end;
 
@@ -195,6 +210,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FIDXHdrStream : TMemoryStream; // the #IDXHDR and chunk 13 in #SYSTEM
 =======
 >>>>>>> graemeg/cpstrnew
@@ -202,11 +218,14 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FTitle: String;
     FHasTOC: Boolean;
     FHasIndex: Boolean;
     FIndexedFiles: TIndexedWordList;
     FAvlStrings   : TAVLTree;    // dedupe strings
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -217,6 +236,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     FAvlURLStr    : TAVLTree;    // dedupe urltbl + binindex must resolve URL to topicid
     SpareString   : TStringIndex;
     SpareUrlStr   : TUrlStrIndex;
@@ -224,6 +245,7 @@ Type
     FDefaultWindow: String;
     FTocName      : String;
     FIndexName    : String;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -237,6 +259,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   protected
     procedure FileAdded(AStream: TStream; const AEntry: TFileEntryRec); override;
   private
@@ -251,6 +275,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure CreateIDXHDRStream;
     procedure WriteIDXHDR;
 =======
@@ -259,6 +284,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure WriteURL_STR_TBL;
     procedure WriteOBJINST;
     procedure WriteFiftiMain;
@@ -267,6 +294,7 @@ Type
     function AddString(AString: String): LongWord;
     function AddURL(AURL: String; TopicsIndex: DWord): LongWord;
     procedure CheckFileMakeSearchable(AStream: TStream; AFileEntry: TFileEntryRec);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -280,17 +308,22 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function AddTopic(ATitle,AnUrl:AnsiString):integer;
     function NextTopicIndex: Integer;
     procedure Setwindows (AWindowList:TObjectList);
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   public
     constructor Create(AOutStream: TStream; FreeStreamOnDestroy: Boolean); override;
     destructor Destroy; override;
@@ -305,6 +338,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure AddDummyALink;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -312,6 +346,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     property Title: String read FTitle write FTitle;
     property FullTextSearch: Boolean read FFullTextSearch write FFullTextSearch;
@@ -327,6 +363,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     property MergeFiles :TStringList read FMergeFiles write setmergefiles;
     property Tocsitemap :TChmSitemap read ftocsm write ftocsm;
 =======
@@ -335,6 +372,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 
 Function CompareStrings(Node1, Node2: Pointer): integer; // also used in filewriter
@@ -660,6 +699,7 @@ procedure TITSFWriter.WriteREADMEFile;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r)(tm) program, but by Free Pascal''s chm package '+chmpackageversion+'.'#13#10;
 =======
 const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r)(tm) program.';
@@ -670,6 +710,9 @@ const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r
 =======
 const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r)(tm) program.';
 >>>>>>> graemeg/cpstrnew
+=======
+const DISCLAIMER_STR = 'This archive was not made by the MS HTML Help Workshop(r)(tm) program.';
+>>>>>>> origin/cpstrnew
 var
   Entry: TFileEntryRec;
 begin
@@ -677,6 +720,7 @@ begin
   Entry.Compressed := False;
   Entry.DecompressedOffset := FSection0.Position;
   FSection0.Write(DISCLAIMER_STR, SizeOf(DISCLAIMER_STR));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -688,6 +732,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Entry.DecompressedSize := FSection0.Position - Entry.DecompressedOffset;
   Entry.Path := '/';
   Entry.Name := '_#_README_#_'; //try to use a name that won't conflict with normal names
@@ -899,6 +945,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$IFDEF LZX_USETHREADS}
 >>>>>>> graemeg/cpstrnew
@@ -908,6 +955,9 @@ end;
 =======
 {$IFDEF LZX_USETHREADS}
 >>>>>>> graemeg/cpstrnew
+=======
+{$IFDEF LZX_USETHREADS}
+>>>>>>> origin/cpstrnew
 function TITSFWriter.LTGetData(Sender: TLZXCompressor; WantedByteCount: Integer;
   Buffer: Pointer): Integer;
 begin
@@ -935,6 +985,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 {$ENDIF}
 
@@ -947,6 +998,10 @@ end;
 {$ENDIF}
 
 >>>>>>> graemeg/cpstrnew
+=======
+{$ENDIF}
+
+>>>>>>> origin/cpstrnew
 
 constructor TITSFWriter.Create(AOutStream: TStream; FreeStreamOnDestroy: Boolean);
 begin
@@ -1069,6 +1124,7 @@ begin
   AStream.Position := 0;
   TargetStream.CopyFrom(AStream, AStream.Size);
   FileAdded(AStream, Entry);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1308,6 +1364,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TITSFWriter.StartCompressingStream;
@@ -1349,6 +1407,7 @@ begin
   //Sleep(20000);
   Compressor.Free;
   {$ENDIF}
+<<<<<<< HEAD
 <<<<<<< HEAD
 end;
 
@@ -3305,6 +3364,219 @@ begin
 end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+end;
+
+
+procedure TChmWriter.WriteSystem;
+var
+  Entry: TFileEntryRec;
+  TmpStr: String;
+  TmpTitle: String;
+const
+  VersionStr = 'HHA Version 4.74.8702'; // does this matter?
+begin
+
+
+  // this creates the /#SYSTEM file
+  Entry.Name := '#SYSTEM';
+  Entry.Path := '/';
+  Entry.Compressed := False;
+  Entry.DecompressedOffset := FSection0.Position;
+
+ { if FileExists('#SYSTEM') then
+  begin
+    TmpStream := TMemoryStream.Create;
+    TmpStream.LoadFromFile('#SYSTEM');
+    TmpStream.Position := 0;
+    FSection0.CopyFrom(TmpStream, TmpStream.Size);
+  end;                                    }
+  // EntryCodeOrder: 10 9 4 2 3 16 6 0 1 5
+  FSection0.WriteDWord(NToLE(Word(3))); // Version
+  if Title <> '' then
+    TmpTitle := Title
+  else
+    TmpTitle := 'default';
+
+  // Code -> Length -> Data
+  // 10
+  FSection0.WriteWord(NToLE(Word(10)));
+  FSection0.WriteWord(NToLE(Word(SizeOf(DWord))));
+  FSection0.WriteDWord(NToLE(MilliSecondOfTheDay(Now)));
+  // 9
+  FSection0.WriteWord(NToLE(Word(9)));
+  FSection0.WriteWord(NToLE(Word(SizeOf(VersionStr)+1)));
+  FSection0.Write(VersionStr, SizeOf(VersionStr));
+  FSection0.WriteByte(0);
+  // 4 A struct that is only needed to set if full text search is on.
+  FSection0.WriteWord(NToLE(Word(4)));
+  FSection0.WriteWord(NToLE(Word(36))); // size
+
+  FSection0.WriteDWord(NToLE(DWord($0409)));
+  FSection0.WriteDWord(1);
+  FSection0.WriteDWord(NToLE(DWord(Ord(FFullTextSearch and FFullTextSearchAvailable))));
+  FSection0.WriteDWord(0);
+  FSection0.WriteDWord(0);
+
+  // two for a QWord
+  FSection0.WriteDWord(0);
+  FSection0.WriteDWord(0);
+
+  FSection0.WriteDWord(0);
+  FSection0.WriteDWord(0);
+
+
+
+
+  ////////////////////////<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  // 2  default page to load
+  if FDefaultPage <> '' then begin
+    FSection0.WriteWord(NToLE(Word(2)));
+    FSection0.WriteWord(NToLE(Word(Length(FDefaultPage)+1)));
+    FSection0.Write(FDefaultPage[1], Length(FDefaultPage));
+    FSection0.WriteByte(0);
+  end;
+  // 3  Title
+  if FTitle <> '' then begin
+    FSection0.WriteWord(NToLE(Word(3)));
+    FSection0.WriteWord(NToLE(Word(Length(FTitle)+1)));
+    FSection0.Write(FTitle[1], Length(FTitle));
+    FSection0.WriteByte(0);
+  end;
+
+  // 16 Default Font
+  if FDefaultFont <> '' then begin
+    FSection0.WriteWord(NToLE(Word(16)));
+    FSection0.WriteWord(NToLE(Word(Length(FDefaultFont)+1)));
+    FSection0.Write(FDefaultFont[1], Length(FDefaultFont));
+    FSection0.WriteByte(0);
+  end;
+
+  // 6
+  // unneeded. if output file is :  /somepath/OutFile.chm the value here is outfile(lowercase)
+  {FSection0.WriteWord(6);
+  FSection0.WriteWord(Length('test1')+1);
+  Fsection0.Write('test1', 5);
+  FSection0.WriteByte(0);}
+
+  // 0 Table of contents filename
+  if FHasTOC then begin
+    if fTocName ='' then
+      TmpStr := DefaultHHC
+    else
+      TmpStr := fTocName;
+    FSection0.WriteWord(0);
+    FSection0.WriteWord(NToLE(Word(Length(TmpStr)+1)));
+    FSection0.Write(TmpStr[1], Length(TmpStr));
+    FSection0.WriteByte(0);
+  end;
+  // 1
+  // hhk Index
+  if FHasIndex then begin
+    if fIndexName='' then
+      TmpStr := DefaultHHK
+    else
+      TmpStr := fIndexName;
+    FSection0.WriteWord(NToLE(Word(1)));
+    FSection0.WriteWord(NToLE(Word(Length(TmpStr)+1)));
+    FSection0.Write(TmpStr[1], Length(TmpStr));
+    FSection0.WriteByte(0);
+  end;
+  // 5 Default Window
+
+  if FDefaultWindow<>'' then
+    begin
+      FSection0.WriteWord(NTOLE(Word(5)));
+      tmpstr:=FDefaultWindow;
+      FSection0.WriteWord(NToLE(Word(Length(TmpStr)+1)));
+      FSection0.Write(TmpStr[1], Length(TmpStr));
+      FSection0.WriteByte(0);
+    end;
+
+  // 7 Binary Index
+  if FHasBinaryIndex then
+  begin
+    {$ifdef binindex}
+      logentry('binary index!');
+    {$endif}
+    FSection0.WriteWord(NToLE(Word(7)));
+    FSection0.WriteWord(NToLE(Word(4)));
+    FSection0.WriteDWord(DWord(0)); // what is this number to be?
+  end;
+
+  // 11 Binary TOC
+  if FHasBinaryTOC then
+  begin
+    FSection0.WriteWord(NToLE(Word(11)));
+    FSection0.WriteWord(NToLE(Word(4)));
+    FSection0.WriteDWord(DWord(0)); // what is this number to be?
+  end;
+
+
+  Entry.DecompressedSize := FSection0.Position - Entry.DecompressedOffset;
+  FInternalFiles.AddEntry(Entry);
+end;
+
+procedure TChmWriter.WriteITBITS;
+var
+  Entry: TFileEntryRec;
+begin
+  // This is an empty and useless file
+  Entry.Name := '#ITBITS';
+  Entry.Path := '/';
+  Entry.Compressed := False;
+  Entry.DecompressedOffset :=0;// FSection0.Position;
+  Entry.DecompressedSize := 0;
+
+  FInternalFiles.AddEntry(Entry);
+end;
+
+procedure TChmWriter.WriteSTRINGS;
+begin
+  if FStringsStream.Size = 0 then;
+    FStringsStream.WriteByte(0);
+  FStringsStream.Position := 0;
+  PostAddStreamToArchive('#STRINGS', '/', FStringsStream);
+end;
+
+procedure TChmWriter.WriteTOPICS;
+//var
+  //FHits: Integer;
+begin
+  if FTopicsStream.Size = 0 then
+    Exit;
+  FTopicsStream.Position := 0;
+  PostAddStreamToArchive('#TOPICS', '/', FTopicsStream);
+ // I commented the code below since the result seemed unused
+ // FHits:=0;
+ //   FIndexedFiles.ForEach(@IterateWord,FHits);
+end;
+
+procedure TChmWriter.WriteIVB;
+begin
+  if FContextStream = nil then exit;
+
+  FContextStream.Position := 0;
+  // the size of all the entries
+  FContextStream.WriteDWord(NToLE(DWord(FContextStream.Size-SizeOf(dword))));
+
+  FContextStream.Position := 0;
+  AddStreamToArchive('#IVB', '/', FContextStream);
+end;
+
+procedure TChmWriter.WriteURL_STR_TBL;
+begin
+  if FURLSTRStream.Size <> 0 then begin
+    FURLSTRStream.Position := 0;
+    PostAddStreamToArchive('#URLSTR', '/', FURLSTRStream);
+  end;
+  if FURLTBLStream.Size <> 0 then begin
+    FURLTBLStream.Position := 0;
+    PostAddStreamToArchive('#URLTBL', '/', FURLTBLStream);
+  end;
+end;
+
+>>>>>>> origin/cpstrnew
 procedure TChmWriter.WriteOBJINST;
 var
   i: Integer;
@@ -3327,10 +3599,13 @@ begin
   ObjStream.WriteDWord(NtoLE($4662DAAF));
   ObjStream.WriteWord(NtoLE($D393));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ObjStream.WriteWord(NtoLE($11D0));
   ObjStream.WriteWord(NtoLE($569A));
   ObjStream.WriteByte($00);

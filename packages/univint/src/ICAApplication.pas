@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 {  Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2012 }
 =======
@@ -19,6 +20,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -76,6 +80,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -87,6 +92,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -105,6 +112,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -114,19 +122,25 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -160,6 +174,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -169,6 +188,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -176,10 +196,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -239,15 +262,20 @@ interface
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ nor __arm64__ is defined.}
 =======
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 {$endc}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -271,11 +299,14 @@ interface
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$endc}
 
 {$ifc defined __LP64__ and __LP64__ }
@@ -320,6 +351,7 @@ interface
 uses MacTypes,AEDataModel,Files,CFBase,CFArray,CFData,CFDictionary;
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -327,6 +359,11 @@ uses MacTypes,AEDataModel,Files,CFBase,CFArray,CFData,CFDictionary;
 {$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
+=======
+
+
+{$ifc TARGET_OS_MAC}
+>>>>>>> origin/cpstrnew
 
 {$ALIGN MAC68K}
 
@@ -340,6 +377,7 @@ uses MacTypes,AEDataModel,Files,CFBase,CFArray,CFData,CFDictionary;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //------------------------------------------------------------------------------------------------------------------------------
 
@@ -358,6 +396,11 @@ uses MacTypes,AEDataModel,Files,CFBase,CFArray,CFData,CFDictionary;
 //------------------------------------------------------------------------------------------------------------------------------
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+>>>>>>> origin/cpstrnew
 type
 	ICAError = OSErr;
 
@@ -424,6 +467,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -492,6 +536,8 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/cpstrnew
 const
 	kICACommunicationErr = -9900;
 	kICADeviceNotFoundErr = -9901;
@@ -553,11 +599,14 @@ const
         Object is a generic file.
 }
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	kICADevice = FourCharCode('icdv');
 	kICADeviceCamera = FourCharCode('cmra');
 	kICADeviceScanner = FourCharCode('scan');
@@ -793,6 +842,7 @@ type
 		transactionID: UInt32;
 		params: array [0..3-1] of UInt32;			// up to 3 params. # of params = (dataLength - 12)/4
 	end;
+<<<<<<< HEAD
 
 //------------------------------------------------------------------------------------- Keys used in object property dictionary
 { Keys used in object property dictionary }
@@ -952,8 +1002,155 @@ type
 
 type
 	ICAImportFilterProc = function( imageInfo: CFDictionaryRef; refcon: UNSIGNEDLONG ): Boolean;
+=======
 
+//------------------------------------------------------------------------------------- Keys used in object property dictionary
+{ Keys used in object property dictionary }
+//#pragma mark -
+//#pragma mark TODO: document the data types of values for these keys
+
+// Keys returned by ICACopyObjectDictionary() for deviceList object returned by ICAGetDeviceList()
+
+var kICADevicesArrayKey: CFStringRef; external name '_kICADevicesArrayKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICAObjectKey: CFStringRef; external name '_kICAObjectKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAObjectNameKey: CFStringRef; external name '_kICAObjectNameKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAUSBVendorIDKey: CFStringRef; external name '_kICAUSBVendorIDKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAUSBProductIDKey: CFStringRef; external name '_kICAUSBProductIDKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADeviceTypeKey: CFStringRef; external name '_kICADeviceTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAExecutableArchitectureKey: CFStringRef; external name '_kICAExecutableArchitectureKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICARemoteDeviceKey: CFStringRef; external name '_kICARemoteDeviceKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADeviceSharedKey: CFStringRef; external name '_kICADeviceSharedKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADeviceWebSharedKey: CFStringRef; external name '_kICADeviceWebSharedKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADeviceUsedKey: CFStringRef; external name '_kICADeviceUsedKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICABonjourServiceTypeKey: CFStringRef; external name '_kICABonjourServiceTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICABonjourServiceNameKey: CFStringRef; external name '_kICABonjourServiceNameKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICABonjourTXTRecordKey: CFStringRef; external name '_kICABonjourTXTRecordKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADeviceCapabilitiesKey: CFStringRef; external name '_kICADeviceCapabilitiesKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICALockStatusKey: CFStringRef; external name '_kICALockStatusKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICADataPropertyKey: CFStringRef; external name '_kICADataPropertyKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADataTypeKey: CFStringRef; external name '_kICADataTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADataSizeKey: CFStringRef; external name '_kICADataSizeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAThumbnailPropertyKey: CFStringRef; external name '_kICAThumbnailPropertyKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAThumbnailSizeKey: CFStringRef; external name '_kICAThumbnailSizeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICARawKey: CFStringRef; external name '_kICARawKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICAMediaHeightKey: CFStringRef; external name '_kICAMediaHeightKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// value is a number
+var kICAMediaWidthKey: CFStringRef; external name '_kICAMediaWidthKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)	// value is a number
+var kICACreationDateStringKey: CFStringRef; external name '_kICACreationDateStringKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAModificationDateStringKey: CFStringRef; external name '_kICAModificationDateStringKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kMetaDataDictionaryKey: CFStringRef; external name '_kMetaDataDictionaryKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICAMediaDurationInSecondsKey: CFStringRef; external name '_kICAMediaDurationInSecondsKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICADeviceTypeCamera: CFStringRef; external name '_kICADeviceTypeCamera'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADeviceTypeScanner: CFStringRef; external name '_kICADeviceTypeScanner'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{
+    In addition to the above, the following keys may also be present in the object property dictionay:
+    
+        kICAUSBLocationIDKey
+        kICAFireWireGUIDKey
+}
+>>>>>>> origin/cpstrnew
+
+{ Transport types }
+var kICAUSBTransportType: CFStringRef; external name '_kICAUSBTransportType'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAFireWireTransportType: CFStringRef; external name '_kICAFireWireTransportType'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICABluetoothTransportType: CFStringRef; external name '_kICABluetoothTransportType'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICATCPIPTransportType: CFStringRef; external name '_kICATCPIPTransportType'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICASCSITransportType: CFStringRef; external name '_kICASCSITransportType'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICATWAINTransportType: CFStringRef; external name '_kICATWAINTransportType'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+{ Keys used for paramDictionary in ICALoadDeviceModulePB}
+var kICADeviceBrowserDeviceRefKey: CFStringRef; external name '_kICADeviceBrowserDeviceRefKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADeviceModulePathKey: CFStringRef; external name '_kICADeviceModulePathKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICADeviceIconPathKey: CFStringRef; external name '_kICADeviceIconPathKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICATransportTypeKey: CFStringRef; external name '_kICATransportTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICABluetoothAddressKey: CFStringRef; external name '_kICABluetoothAddressKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAUSBLocationIDKey: CFStringRef; external name '_kICAUSBLocationIDKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAFireWireGUIDKey: CFStringRef; external name '_kICAFireWireGUIDKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAIOServicePathKey: CFStringRef; external name '_kICAIOServicePathKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAIPAddressKey: CFStringRef; external name '_kICAIPAddressKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAIPPortKey: CFStringRef; external name '_kICAIPPortKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAIPNameKey: CFStringRef; external name '_kICAIPNameKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICAIPGUIDKey: CFStringRef; external name '_kICAIPGUIDKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+var kICATWAINDSPathKey: CFStringRef; external name '_kICATWAINDSPathKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+
+{!
+    @const
+        kICAUserAssignedDeviceNameKey
+    @abstract 
+        This key may be present in the property dictionary of a device if the device has a user-assigned name.
+    @discussion
+        Value is of type CFStringRef.
+}
+var kICAUserAssignedDeviceNameKey: CFStringRef; external name '_kICAUserAssignedDeviceNameKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+//-------------------------------------------------------------------------------------------------------------------- ICAHeader
+{!
+    @struct ICAHeader
+    @discussion
+        This is the first field in all parameter blocks used by APIs defined in ICAApplication.h.
+        Type of parameter passed to a callback function used by APIs defined in ICAApplication.h.
+        The parameter for the completion proc should to be casted to an appropriate type such as ICAGetChildCountPB* for it to be useful.
+    @field err
+        Error returned by an API. -->
+    @field refcon
+        An arbitrary refcon value passed to the callback. <--
+}
 type
+<<<<<<< HEAD
 	ICANotificationProc = procedure( notificationType: CFStringRef; notificationDictionary: CFDictionaryRef );
 
 //------------------------------------------------------------------------------------------------------------------- Object IDs
@@ -1993,6 +2190,450 @@ function ICARegisterForEventNotification( var params: ICARegisterForEventNotific
 // in ICADevices.framework
 
 >>>>>>> graemeg/cpstrnew
+=======
+	ICAHeaderPtr = ^ICAHeader;
+	ICAHeader = record
+		err: ICAError;
+		refcon: UNSIGNEDLONG;
+	end;
+
+//--------------------------------------------------------------------------------------------------------------- Callback procs
+
+type
+	ICACompletion = procedure( var pb: ICAHeader );
+
+type
+	ICAImportFilterProc = function( imageInfo: CFDictionaryRef; refcon: UNSIGNEDLONG ): Boolean;
+
+type
+	ICANotificationProc = procedure( notificationType: CFStringRef; notificationDictionary: CFDictionaryRef );
+
+//------------------------------------------------------------------------------------------------------------------- Object IDs
+
+type
+	ICAObject = UInt32;
+	ICAProperty = UInt32;
+	ICAConnectionID = UInt32;
+	ICASessionID = UInt32;
+	ICAScannerSessionID = ICASessionID;
+	ICAEventDataCookie = UInt32;
+
+//#pragma mark -
+//#pragma mark General APIs
+//--------------------------------------------------------------------------------------------------------------- ICAImportImage
+{!
+    @struct ICAObjectInfo
+    @field objectType
+        An object type, e.g., kICAFile.
+    @field objectSubtype
+        An object subtype, e.g., kICAFileImage.
+}
+type
+	ICAObjectInfoPtr = ^ICAObjectInfo;
+	ICAObjectInfo = record
+		objectType: OSType;
+		objectSubtype: OSType;
+	end;
+
+{!
+    @enum ImportImage flags.
+    @discussion
+        Flag values that can be used in ICAImportImagePB parameter block.
+    @constant kICAAllowMultipleImages
+        Use this constant to allow users to select multiple images in the Import Image dialog.
+    @constant kICADownloadAndReturnPathArray
+        Use this constant to download the images to a temporary location and return an array of paths to the downloaded images.
+}
+const
+	kICAAllowMultipleImages = $00000001;
+	kICADownloadAndReturnPathArray = $00000002;
+
+{!
+    @struct ICAImportImagePB
+    @field header
+        See description for ICAHeader.  <->
+    @field deviceObject
+        Object ID of a camera or scanner device. Set this to NULL to ge the default behavior: (a) if no device is connected, a panel saying that there’s no device connected is displayed, (b) if a single device is connected, an appropriate user interface to access that device will be displayed, (c) if several devices are connected, a device selector panel will be displayed. <--
+    @field flags
+        One or more flags (combined with an OR operator) defined in ImportImage flags enum. <--
+    @field supportedFileTypes
+        An array of file extension strings such as "jpg", "tif", etc., that are of interest to the calling application. Set to NULL to display all files. <--
+    @field filterProc
+        Specify a filter proc to that will be called for each file before it is displayed in the user interface. <--
+    @field importedImages
+        Returns an array of CFDataRefs for the imported images if the kICADownloadAndReturnPathArray flag is not specified. Otherwise returns an array of CFStringRefs holding the paths of the images that are downloaded. The caller should provide a pointer to a CFArrayRef object initialized to NULL. The caller is responsible for released the array returned by this function. -->
+}
+type
+	ICAImportImagePBPtr = ^ICAImportImagePB;
+	ICAImportImagePB = record
+		header: ICAHeader;
+		deviceObject: ICAObject;
+		flags: UInt32;
+		supportedFileTypes: CFArrayRef;
+		filterProc: ICAImportFilterProc;
+		importedImages: CFArrayRefPtr;
+	end;
+
+{!
+    @function ICAImportImage
+    @abstract
+        This API displays a Common User Interface panel similar to the user interface of Image Capture Application. This allows the user to work a camera or a scanner.
+    @discussion
+        Use this API to add Image Capture support to an application.
+
+<pre>
+@textblock
+        Example:
+        
+        void ImportImage()
+        (
+            OSErr             err;
+            CFArrayRef        imagesArray = NULL;
+            ICAImportImagePB  pb = ();
+
+            pb.deviceObject       = 0;
+            pb.flags              = 0;
+            pb.supportedFileTypes = (CFArrayRef)[NSArray arrayWithObjects: @"tif", @"tiff", @"jpg", NULL];
+            pb.importedImages     = &imagesArray;
+            
+            err = ICAImportImage(&pb, NULL);
+
+            if ( noErr != err )
+            (
+                // handle error
+            )
+            else
+            (
+                // Process the importedImages array
+                // pb.importedImages   // CFArrayRef *
+            )
+        )
+@/textblock
+</pre>
+
+    @param pb
+        A pointer to an <code><b>ICAImportImagePB</b></code> parameter block.
+    @param completion
+        A pointer to a completion routine that will be invoked at the completion of <code><b>ICAImportImage</b></code> function. Set this parameter to <code><b>NULL</b></code> to invoke this API synchronously. 
+    @result
+        Returns an error code defined in ICAApplication.h
+}
+function ICAImportImage( var pb: ICAImportImagePB; completion: ICACompletion ): ICAError; external name '_ICAImportImage';
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+
+//--------------------------------------------------------------------------------------------------------- ICAShowDeviceBrowser
+{!
+    @function ICAShowDeviceBrowser
+    @abstract
+        Use this API to display a device browser user interface from any Image Capture client application.
+    @discussion
+        The device browser user interface allows the user to do the following:
+          - enable and disable sharing of locally connected cameras and scanners.
+          - connect to or disconnect from cameras and scanners shared by other computers.
+          - configure WiFi capable cameras for use over the WiFi network.
+    @param options
+        Set options to NULL to display the device browser with default settings. <--
+        This parameter is intended for future use.
+    @result
+        Returns an error code defined in ICAApplication.h
+}
+function ICAShowDeviceBrowser( options: CFDictionaryRef ): ICAError; external name '_ICAShowDeviceBrowser';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+//---------------------------------------------------------------------------------------------- ICARegisterForEventNotification
+// Function prototype for an Image Capture notification callback proc
+type
+	ICANotification = procedure( notificationType: CFStringRef; notificationDictionary: CFDictionaryRef );
+
+{ The Image Capture notification callabck function will be called with a notificationDictionary that may
+   contain one or more key-value pairs as defined below:
+   
+    Key                                 Value Type        Comments
+    
+    kICANotificationICAObjectKey        CFNumberRef       An object associated with the notification.
+    kICANotificationDeviceICAObjectKey  CFNumberRef       A device object associated with the notification.
+    kICANotificationClassKey            CFStringRef       See below.
+    kICANotificationTypeKey             CFStringRef       See below.
+    kICANotificationRawEventKey         CFNumberRef       The unprocesssed event code sent by a device.
+    kICANotificationDataKey             CFDataRef         Data associated with the event.
+    kICANotificationDataSizeKey         CFNumberRef       Size of data associated with the event. This is used if the data is
+                                                          not sent with the notification. [Needed for backward compatiblity with pre-Leopard device modules].
+    kICANotificationDataCookieKey       CFNumberRef       A token identifying the data associated with this event.
+                                                          This data can be retrieved by calling ICAObjectSendMessage with messageType set to kICAMessageGetEventData, dataType set to value of kICANotificationDataCookieKeyand dataSize set to value of kICANotificationDataSizeKey.
+                                          
+    The following keys are present if the value of kICANotificationDataKey represents image data. The values of these
+    keys are CFNumbers representing the width, height, bytes per row, start row, and number of rows of the image:
+    
+    kICANotificationImageKey              CFDictionaryRef A dictionary that describes an Image associated
+                                                          with the notification.
+    kICANotificationImageDataKey          CFDataRef       Image data
+    kICANotificationImageWidthKey         CFNumberRef     Image width in pixels
+    kICANotificationImageHeightKey        CFNumberRef     Image height in pixels
+    kICANotificationImageBytesPerRowKey   CFNumberRef     Bytes per row in image
+    kICANotificationImageStartRowKey      CFNumberRef     Starting row number of the image.
+    kICANotificationImageNumberOfRowsKey  CFNumberRef     Number of rows of image data sent in this notification.
+}
+
+// Possible values for kICANotificationTypeKey:
+
+var kICANotificationTypeObjectAdded: CFStringRef; external name '_kICANotificationTypeObjectAdded'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeObjectRemoved: CFStringRef; external name '_kICANotificationTypeObjectRemoved'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeObjectInfoChanged: CFStringRef; external name '_kICANotificationTypeObjectInfoChanged'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationTypeStoreAdded: CFStringRef; external name '_kICANotificationTypeStoreAdded'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeStoreRemoved: CFStringRef; external name '_kICANotificationTypeStoreRemoved'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeStoreFull: CFStringRef; external name '_kICANotificationTypeStoreFull'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeStoreInfoChanged: CFStringRef; external name '_kICANotificationTypeStoreInfoChanged'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationTypeDeviceAdded: CFStringRef; external name '_kICANotificationTypeDeviceAdded'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeDeviceRemoved: CFStringRef; external name '_kICANotificationTypeDeviceRemoved'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationTypeDeviceInfoChanged: CFStringRef; external name '_kICANotificationTypeDeviceInfoChanged'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeDevicePropertyChanged: CFStringRef; external name '_kICANotificationTypeDevicePropertyChanged'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeDeviceWasReset: CFStringRef; external name '_kICANotificationTypeDeviceWasReset'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeDeviceStatusInfo: CFStringRef; external name '_kICANotificationTypeDeviceStatusInfo'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeDeviceStatusError: CFStringRef; external name '_kICANotificationTypeDeviceStatusError'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationTypeCaptureComplete: CFStringRef; external name '_kICANotificationTypeCaptureComplete'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeRequestObjectTransfer: CFStringRef; external name '_kICANotificationTypeRequestObjectTransfer'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeTransactionCanceled: CFStringRef; external name '_kICANotificationTypeTransactionCanceled'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationTypeUnreportedStatus: CFStringRef; external name '_kICANotificationTypeUnreportedStatus'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeProprietary: CFStringRef; external name '_kICANotificationTypeProprietary'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationTypeDeviceConnectionProgress: CFStringRef; external name '_kICANotificationTypeDeviceConnectionProgress'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeDownloadProgressStatus: CFStringRef; external name '_kICANotificationTypeDownloadProgressStatus'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeScanProgressStatus: CFStringRef; external name '_kICANotificationTypeScanProgressStatus'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeScannerSessionClosed: CFStringRef; external name '_kICANotificationTypeScannerSessionClosed'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeScannerScanDone: CFStringRef; external name '_kICANotificationTypeScannerScanDone'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeScannerPageDone: CFStringRef; external name '_kICANotificationTypeScannerPageDone'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeScannerButtonPressed: CFStringRef; external name '_kICANotificationTypeScannerButtonPressed'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationTypeScannerOverviewOverlayAvailable: CFStringRef; external name '_kICANotificationTypeScannerOverviewOverlayAvailable'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+// Possible keys in the notification dictionary:
+
+var kICAErrorKey: CFStringRef; external name '_kICAErrorKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICARefconKey: CFStringRef; external name '_kICARefconKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationICAObjectKey: CFStringRef; external name '_kICANotificationICAObjectKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationDeviceICAObjectKey: CFStringRef; external name '_kICANotificationDeviceICAObjectKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationDeviceListICAObjectKey: CFStringRef; external name '_kICANotificationDeviceListICAObjectKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationClassKey: CFStringRef; external name '_kICANotificationClassKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationTypeKey: CFStringRef; external name '_kICANotificationTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationRawEventKey: CFStringRef; external name '_kICANotificationRawEventKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationDataKey: CFStringRef; external name '_kICANotificationDataKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationDataSizeKey: CFStringRef; external name '_kICANotificationDataSizeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationDataCookieKey: CFStringRef; external name '_kICANotificationDataCookieKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationImageKey: CFStringRef; external name '_kICANotificationImageKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationImageWidthKey: CFStringRef; external name '_kICANotificationImageWidthKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationImageHeightKey: CFStringRef; external name '_kICANotificationImageHeightKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationImageBytesPerRowKey: CFStringRef; external name '_kICANotificationImageBytesPerRowKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationImageStartRowKey: CFStringRef; external name '_kICANotificationImageStartRowKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationImageNumberOfRowsKey: CFStringRef; external name '_kICANotificationImageNumberOfRowsKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationImageDataKey: CFStringRef; external name '_kICANotificationImageDataKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationImageDataSizeKey: CFStringRef; external name '_kICANotificationImageDataSizeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationDataIsBigEndianKey: CFStringRef; external name '_kICANotificationDataIsBigEndianKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationScannerDocumentNameKey: CFStringRef; external name '_kICANotificationScannerDocumentNameKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationScannerButtonTypeKey: CFStringRef; external name '_kICANotificationScannerButtonTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationNumerOfImagesRemainingKey: CFStringRef; external name '_kICANotificationNumerOfImagesRemainingKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationPercentDownloadedKey: CFStringRef; external name '_kICANotificationPercentDownloadedKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+var kICANotificationSubTypeKey: CFStringRef; external name '_kICANotificationSubTypeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationSubTypeWarmUpStarted: CFStringRef; external name '_kICANotificationSubTypeWarmUpStarted'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationSubTypeWarmUpDone: CFStringRef; external name '_kICANotificationSubTypeWarmUpDone'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationVendorErrorCodeKey: CFStringRef; external name '_kICANotificationVendorErrorCodeKey'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationSubTypePerformOverviewScan: CFStringRef; external name '_kICANotificationSubTypePerformOverviewScan'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+var kICANotificationSubTypeDocumentLoaded: CFStringRef; external name '_kICANotificationSubTypeDocumentLoaded'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+var kICANotificationSubTypeDocumentNotLoaded: CFStringRef; external name '_kICANotificationSubTypeDocumentNotLoaded'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER *)
+
+// Possible values in the notification dictionary:
+// ...
+
+// Possible values for kICANotificationClassKey
+var kICANotificationClassPTPStandard: CFStringRef; external name '_kICANotificationClassPTPStandard'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationClassPTPVendor: CFStringRef; external name '_kICANotificationClassPTPVendor'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICANotificationClassProprietary: CFStringRef; external name '_kICANotificationClassProprietary'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+// Device Properties
+
+var kICADevicePropUndefined: CFStringRef; external name '_kICADevicePropUndefined'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropBatteryLevel: CFStringRef; external name '_kICADevicePropBatteryLevel'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropFunctionalMode: CFStringRef; external name '_kICADevicePropFunctionalMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropImageSize: CFStringRef; external name '_kICADevicePropImageSize'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropCompressionSetting: CFStringRef; external name '_kICADevicePropCompressionSetting'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropWhiteBalance: CFStringRef; external name '_kICADevicePropWhiteBalance'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropRGBGain: CFStringRef; external name '_kICADevicePropRGBGain'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropFNumber: CFStringRef; external name '_kICADevicePropFNumber'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropFocalLength: CFStringRef; external name '_kICADevicePropFocalLength'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropFocusDistance: CFStringRef; external name '_kICADevicePropFocusDistance'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropFocusMode: CFStringRef; external name '_kICADevicePropFocusMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropExposureMeteringMode: CFStringRef; external name '_kICADevicePropExposureMeteringMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropFlashMode: CFStringRef; external name '_kICADevicePropFlashMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropExposureTime: CFStringRef; external name '_kICADevicePropExposureTime'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropExposureProgramMode: CFStringRef; external name '_kICADevicePropExposureProgramMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropExposureIndex: CFStringRef; external name '_kICADevicePropExposureIndex'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropExposureBiasCompensation: CFStringRef; external name '_kICADevicePropExposureBiasCompensation'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropDateTime: CFStringRef; external name '_kICADevicePropDateTime'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropCaptureDelay: CFStringRef; external name '_kICADevicePropCaptureDelay'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropStillCaptureMode: CFStringRef; external name '_kICADevicePropStillCaptureMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropContrast: CFStringRef; external name '_kICADevicePropContrast'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropSharpness: CFStringRef; external name '_kICADevicePropSharpness'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropDigitalZoom: CFStringRef; external name '_kICADevicePropDigitalZoom'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropEffectMode: CFStringRef; external name '_kICADevicePropEffectMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropBurstNumber: CFStringRef; external name '_kICADevicePropBurstNumber'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropBurstInterval: CFStringRef; external name '_kICADevicePropBurstInterval'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropTimelapseNumber: CFStringRef; external name '_kICADevicePropTimelapseNumber'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropTimelapseInterval: CFStringRef; external name '_kICADevicePropTimelapseInterval'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropFocusMeteringMode: CFStringRef; external name '_kICADevicePropFocusMeteringMode'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropUploadURL: CFStringRef; external name '_kICADevicePropUploadURL'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropArtist: CFStringRef; external name '_kICADevicePropArtist'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+var kICADevicePropCopyrightInfo: CFStringRef; external name '_kICADevicePropCopyrightInfo'; (* attribute const *)
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+{!
+    @struct ICARegisterForEventNotificationPB
+    @discussion
+        Use this parameter structure to specify a set of events associated with an object
+        about which notifications should be sent to the specified notification function.
+    @field header
+        See description for ICAHeader. <->
+    @field objectOfInterest
+        An object about which notifications are requested. <--
+    @field eventsOfInterest
+        An array of notification types of interest. <--
+    @field notificationProc
+        A callback function to receive the notifications. <--
+    @field options
+        Set options to NULL. This parameter is intended for future use. <--
+}
+
+type
+	ICARegisterForEventNotificationPBPtr = ^ICARegisterForEventNotificationPB;
+	ICARegisterForEventNotificationPB = record
+		header: ICAHeader;
+		objectOfInterest: ICAObject;
+		eventsOfInterest: CFArrayRef;
+		notificationProc: ICANotification;
+		options: CFDictionaryRef;
+	end;
+
+{!
+    @function ICARegisterForEventNotification
+    @abstract
+        Use this API to register with Image Capture framework to receive
+        notification about events of interest.
+    @param params
+        A pointer to ICARegisterForEventNotificationPB struct <--
+    @param completionProc
+        A pointer to a completion routine that will be invoked at the completion of
+        this function. Set this parameter to NULL to invoke this API synchronously. 
+    @result
+        Returns an error code defined in ICAApplication.h
+}
+function ICARegisterForEventNotification( var params: ICARegisterForEventNotificationPB; completionProc: ICACompletion ): ICAError; external name '_ICARegisterForEventNotification';
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+
+//---------------------------------------------------------------------------------------------------------- ICASendNotification
+// This parameter block is used with 'ICDSendNotification' and 'ICDSendNotificationAndWaitForReply' APIs defined
+// in ICADevices.framework
+
+>>>>>>> origin/cpstrnew
 type
 	ICASendNotificationPBPtr = ^ICASendNotificationPB;
 	ICASendNotificationPB = record
@@ -2005,6 +2646,7 @@ function ICASendNotification( var pb: ICASendNotificationPB ): ICAError; externa
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 function ICASendNotificationAndWaitForReply( var pb: ICASendNotificationPB ): ICAError; external name '_ICASendNotificationAndWaitForReply';
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
@@ -2017,6 +2659,9 @@ function ICASendNotificationAndWaitForReply( var pb: ICASendNotificationPB ): IC
 =======
 function ICASendNotificationAndWaitForReply( var pb: ICASendNotificationPB ): ICAError; external name '_ICASendNotificationAndWaitForReply';
 >>>>>>> graemeg/cpstrnew
+=======
+function ICASendNotificationAndWaitForReply( var pb: ICASendNotificationPB ): ICAError; external name '_ICASendNotificationAndWaitForReply';
+>>>>>>> origin/cpstrnew
 
 //#pragma mark -
 //#pragma mark Object related APIs
@@ -2075,6 +2720,7 @@ function ICAGetDeviceList( var pb: ICAGetDeviceListPB; completion: ICACompletion
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2085,6 +2731,9 @@ function ICAGetDeviceList( var pb: ICAGetDeviceListPB; completion: ICACompletion
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //---------------------------------------------------------------------------------------------- ICACopyObjectPropertyDictionary
 {!
@@ -2148,6 +2797,7 @@ function ICACopyObjectPropertyDictionary( var pb: ICACopyObjectPropertyDictionar
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
@@ -2158,6 +2808,9 @@ function ICACopyObjectPropertyDictionary( var pb: ICACopyObjectPropertyDictionar
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //------------------------------------------------------------------------------------------------------- ICACopyObjectThumbnail
 {!
@@ -2241,6 +2894,7 @@ function ICACopyObjectThumbnail( var pb: ICACopyObjectThumbnailPB; completion: I
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
@@ -2251,6 +2905,9 @@ function ICACopyObjectThumbnail( var pb: ICACopyObjectThumbnailPB; completion: I
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //------------------------------------------------------------------------------------------------------------ ICACopyObjectData
 {!
@@ -2295,6 +2952,7 @@ function ICACopyObjectData( var params: ICACopyObjectDataPB; completionProc: ICA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
@@ -2305,6 +2963,9 @@ function ICACopyObjectData( var params: ICACopyObjectDataPB; completionProc: ICA
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //--------------------------------------------------------------------------------------------------------- ICAObjectSendMessage
 {!
@@ -2400,6 +3061,7 @@ function ICAObjectSendMessage( var pb: ICAObjectSendMessagePB; completion: ICACo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
@@ -2410,6 +3072,9 @@ function ICAObjectSendMessage( var pb: ICAObjectSendMessagePB; completion: ICACo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //-------------------------------------------------------------------------------------------------------------- ICADownloadFile
 {!
@@ -2521,6 +3186,7 @@ function ICADownloadFile( var pb: ICADownloadFilePB; completion: ICACompletion )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
@@ -2531,6 +3197,9 @@ function ICADownloadFile( var pb: ICADownloadFilePB; completion: ICACompletion )
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //---------------------------------------------------------------------------------------------------------------- ICAUploadFile
 {!
@@ -2611,6 +3280,7 @@ function ICAUploadFile( var pb: ICAUploadFilePB; completion: ICACompletion ): IC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2621,6 +3291,9 @@ function ICAUploadFile( var pb: ICAUploadFilePB; completion: ICACompletion ): IC
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //#pragma mark -
 //#pragma mark Device related APIs
@@ -2675,6 +3348,7 @@ function ICALoadDeviceModule( var pb: ICALoadDeviceModulePB; completion: ICAComp
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2685,6 +3359,9 @@ function ICALoadDeviceModule( var pb: ICALoadDeviceModulePB; completion: ICAComp
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //--------------------------------------------------------------------------------------------------------- ICAUnloadDeviceModule
 {!
@@ -2718,6 +3395,7 @@ function ICAUnloadDeviceModule( var pb: ICAUnloadDeviceModulePB; completion: ICA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2728,6 +3406,9 @@ function ICAUnloadDeviceModule( var pb: ICAUnloadDeviceModulePB; completion: ICA
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //--------------------------------------------------------------------------------------------------------------- ICAOpenSession
 {!
@@ -2764,6 +3445,7 @@ function ICAOpenSession( var pb: ICAOpenSessionPB; completion: ICACompletion ): 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2774,6 +3456,9 @@ function ICAOpenSession( var pb: ICAOpenSessionPB; completion: ICACompletion ): 
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //-------------------------------------------------------------------------------------------------------------- ICACloseSession
 {!
@@ -2807,6 +3492,7 @@ function ICACloseSession( var pb: ICACloseSessionPB; completion: ICACompletion )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
@@ -2817,6 +3503,9 @@ function ICACloseSession( var pb: ICACloseSessionPB; completion: ICACompletion )
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //-------------------------------------------------------------------------------------------------------- ICAScannerOpenSession
 {!
@@ -2853,6 +3542,7 @@ function ICAScannerOpenSession( var pb: ICAScannerOpenSessionPB; completion: ICA
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -2863,6 +3553,9 @@ function ICAScannerOpenSession( var pb: ICAScannerOpenSessionPB; completion: ICA
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //------------------------------------------------------------------------------------------------------- ICAScannerCloseSession
 {!
@@ -2896,6 +3589,7 @@ function ICAScannerCloseSession( var pb: ICAScannerCloseSessionPB; completion: I
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -2906,6 +3600,9 @@ function ICAScannerCloseSession( var pb: ICAScannerCloseSessionPB; completion: I
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //--------------------------------------------------------------------------------------------------------- ICAScannerInitialize
 {!
@@ -2939,6 +3636,7 @@ function ICAScannerInitialize( var pb: ICAScannerInitializePB; completion: ICACo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -2949,6 +3647,9 @@ function ICAScannerInitialize( var pb: ICAScannerInitializePB; completion: ICACo
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //------------------------------------------------------------------------------------------------------ ICAScannerGetParameters
 {!
@@ -2985,6 +3686,7 @@ function ICAScannerGetParameters( var pb: ICAScannerGetParametersPB; completion:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -2995,6 +3697,9 @@ function ICAScannerGetParameters( var pb: ICAScannerGetParametersPB; completion:
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //------------------------------------------------------------------------------------------------------ ICAScannerSetParameters
 {!
@@ -3031,6 +3736,7 @@ function ICAScannerSetParameters( var pb: ICAScannerSetParametersPB; completion:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -3041,6 +3747,9 @@ function ICAScannerSetParameters( var pb: ICAScannerSetParametersPB; completion:
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //------------------------------------------------------------------------------------------------------------- ICAScannerStatus
 {!
@@ -3077,6 +3786,7 @@ function ICAScannerStatus( var pb: ICAScannerStatusPB; completion: ICACompletion
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -3087,6 +3797,9 @@ function ICAScannerStatus( var pb: ICAScannerStatusPB; completion: ICACompletion
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //-------------------------------------------------------------------------------------------------------------- ICAScannerStart
 {!
@@ -3120,6 +3833,7 @@ function ICAScannerStart( var pb: ICAScannerStartPB; completion: ICACompletion )
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_7 *)
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
@@ -3130,6 +3844,9 @@ function ICAScannerStart( var pb: ICAScannerStartPB; completion: ICACompletion )
 =======
 (* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
 >>>>>>> graemeg/cpstrnew
+=======
+(* AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER *)
+>>>>>>> origin/cpstrnew
 
 //------------------------------------------------------------------------------------------------------------------------------
 

@@ -154,6 +154,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure ConcatListCopy(Obj:TFPObjectList);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -161,6 +162,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure Pack; {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure Sort(Compare: TListSortCompare); {$ifdef CCLASSESINLINE}inline;{$endif}
     procedure ForEachCall(proc2call:TObjectListCallback;arg:pointer); {$ifdef CCLASSESINLINE}inline;{$endif}
@@ -232,6 +235,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function NameOfIndex(Index: Integer): TSymStr;
 =======
     function NameOfIndex(Index: Integer): ShortString;
@@ -242,6 +246,9 @@ type
 =======
     function NameOfIndex(Index: Integer): ShortString;
 >>>>>>> graemeg/cpstrnew
+=======
+    function NameOfIndex(Index: Integer): ShortString;
+>>>>>>> origin/cpstrnew
     function HashOfIndex(Index: Integer): LongWord;
     function GetNextCollision(Index: Integer): Integer;
     procedure Delete(Index: Integer);
@@ -1592,11 +1599,14 @@ begin
   prefetch(AName);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Result:=FHashTable^[AHash and FCapacityMask];
   PrevIndex:=-1;
   while Result<>-1 do
@@ -1608,12 +1618,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              (AName=PSymStr(@FStrs[StrIndex])^) then
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              (AName=PShortString(@FStrs[StrIndex])^) then
 >>>>>>> graemeg/cpstrnew
             exit;

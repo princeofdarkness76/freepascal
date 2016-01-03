@@ -179,6 +179,7 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         { Restore tlskey value as it may already have been set to null,
           in which case
             a) DoneThread can't release the memory
@@ -192,11 +193,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { clean up }
         DoneThread;
         { the pthread routine that calls us is supposed to do this, but doesn't
           at least on Mac OS X 10.6 }
         pthread_setspecific(CleanupKey,nil);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -240,6 +244,8 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -256,9 +262,12 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
       end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     function CRelocateThreadvar(offset : dword) : pointer;
       var
@@ -431,15 +440,19 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
       {$ifdef solaris}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       pthread_attr_setinheritsched(@thread_attr, PTHREAD_INHERIT_SCHED);
       {$else not solaris}
       pthread_attr_setinheritsched(@thread_attr, PTHREAD_EXPLICIT_SCHED);
       {$endif not solaris}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -449,6 +462,8 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       {$endif}
 >>>>>>> graemeg/cpstrnew
 
@@ -507,11 +522,14 @@ Type  PINTRTLEvent = ^TINTRTLEvent;
 //      result := pthread_kill(threadHandle,SIGCONT);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       result:=dword(-1);
     end;
 

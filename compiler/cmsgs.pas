@@ -56,6 +56,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     { set if changes with $WARN need to be cleared at next module change }
     has_local_changes : boolean;
 =======
@@ -64,6 +65,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     constructor Init(n:longint;const idxmax:array of longint);
     destructor  Done;
     function  LoadIntern(p:pointer;n:longint):boolean;
@@ -139,6 +142,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      { default value for msgstate is ms_on_global }
      for j:=0 to msgidxmax[i]-1 do
        msgstates[i]^[j]:=ms_on_global;
@@ -151,6 +155,9 @@ begin
 =======
      fillchar(msgstates[i]^,msgidxmax[i]*sizeof(tmsgstate),0);
 >>>>>>> graemeg/cpstrnew
+=======
+     fillchar(msgstates[i]^,msgidxmax[i]*sizeof(tmsgstate),0);
+>>>>>>> origin/cpstrnew
    end;
 end;
 
@@ -434,6 +441,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   oldstate : tmsgstate;
   is_global : boolean;
 =======
@@ -442,12 +450,15 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   result:=false;
   i:=nr div 1000;
   if (i < low(msgstates)) or
      (i > msgparts) then
     exit;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -467,6 +478,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   msgstates[i]^[nr mod 1000]:=ms_off;
   result:=true;
 >>>>>>> graemeg/cpstrnew

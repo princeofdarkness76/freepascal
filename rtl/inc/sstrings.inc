@@ -532,6 +532,7 @@ type
     { more data here, but not needed }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
   end;
@@ -567,6 +568,21 @@ type
   end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+
+  { Pascal data types for the ordinal enum value to string table. It consists of a header
+    that indicates what type of data the table stores, either a direct lookup table (when
+    o = lookup) or a set of ordered (ordinal value, string) tuples (when o = search). }
+
+  { A single entry in the set of ordered tuples }
+  Psearch_data=^Tsearch_data;
+  Tsearch_data={$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}packed{$endif}record
+    value:longint;
+    name:Pstring;
+  end;
+
+>>>>>>> origin/cpstrnew
   Penum_ord_to_string=^Tenum_ord_to_string;
   Tenum_ord_to_string={$ifndef FPC_REQUIRES_PROPER_ALIGNMENT}packed{$endif}record
     o:(lookup,search);
@@ -614,6 +630,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$R-}
         res:=enum_o2s^.lookup_data[ordinal];
 {$pop}
@@ -632,6 +649,11 @@ begin
         res:=enum_o2s^.lookup_data[ordinal];
 {$POP}
 >>>>>>> graemeg/cpstrnew
+=======
+{$PUSH}{$R-}
+        res:=enum_o2s^.lookup_data[ordinal];
+{$POP}
+>>>>>>> origin/cpstrnew
         if (not assigned(res)) then
           exit;
         s:=res^;
@@ -647,6 +669,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$push}{$R-}
 =======
 {$PUSH}{$R-}
@@ -657,6 +680,9 @@ begin
 =======
 {$PUSH}{$R-}
 >>>>>>> graemeg/cpstrnew
+=======
+{$PUSH}{$R-}
+>>>>>>> origin/cpstrnew
       h:=enum_o2s^.num_entries-1;
       repeat
         m:=(l+h) div 2;
@@ -672,6 +698,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$pop}
 =======
 {$POP}
@@ -682,6 +709,9 @@ begin
 =======
 {$POP}
 >>>>>>> graemeg/cpstrnew
+=======
+{$POP}
+>>>>>>> origin/cpstrnew
       s:=sorted_data[m].name^;
     end;
 
@@ -727,6 +757,20 @@ procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external 
 
 procedure fpc_shortstr_currency({$ifdef cpujvm}constref{$endif} c : currency; len,f : SizeInt; out s : shortstring);[public,alias:'FPC_SHORTSTR_CURRENCY']; compilerproc;
 =======
+procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external name 'FPC_SHORTSTR_BOOL';
+
+
+procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);[public,alias:'FPC_SHORTSTR_BOOL'];compilerproc;
+begin
+  if b then
+    s:='TRUE'
+  else
+    s:='FALSE';
+  if length(s)<len then
+    s:=space(len-length(s))+s;
+end;
+
+{ also define alias for internal use in the system unit }
 procedure fpc_shortstr_bool(b : boolean;len:sizeint;out s:shortstring);external name 'FPC_SHORTSTR_BOOL';
 
 
@@ -890,6 +934,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		  if i>tlen then
 =======
 		  if i>reslen then
@@ -900,6 +945,9 @@ begin
 =======
 		  if i>reslen then
 >>>>>>> graemeg/cpstrnew
+=======
+		  if i>reslen then
+>>>>>>> origin/cpstrnew
 		    begin
 			  inc(reslen);
 			  inc(tlen);
@@ -1141,6 +1189,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifndef FPC_STR_ENUM_INTERN}
 { currently, the avr code generator fails on this procedure, so we disable it,
   this is not a good solution but fixing compilation of this procedure for
@@ -1155,11 +1204,15 @@ end;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 procedure fpc_chararray_enum(ordinal,len:sizeint;typinfo,ord2strindex:pointer;out a : array of char);compilerproc;
 var
   ss : shortstring;
   maxlen : SizeInt;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1172,11 +1225,14 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   fpc_shortstr_enum(ordinal,len,typinfo,ord2strindex,ss);
   if length(ss)<high(a)+1 then
     maxlen:=length(ss)
   else
     maxlen:=high(a)+1;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1199,6 +1255,11 @@ end;
 end;
 
 >>>>>>> graemeg/cpstrnew
+=======
+  move(ss[1],pchar(@a)^,maxlen);
+end;
+
+>>>>>>> origin/cpstrnew
 
 procedure fpc_chararray_bool(b : boolean;len:sizeint;out a : array of char);compilerproc;
 var
@@ -1213,6 +1274,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpc_shortstr_chararray_intern_charmove(ss,a,maxlen);
 end;
 
@@ -1224,6 +1286,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   move(ss[1],pchar(@a)^,maxlen);
 end;
 
@@ -1984,9 +2048,12 @@ begin
   if (length(s)>=code) and (s[code]='.') then
     begin
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       inc(code);
       while (length(s)>=code) and (s[code] in ['0'..'9']) do
         begin
@@ -2068,12 +2135,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { adjust exponent based on decimal point }
   if esign>0 then
     begin
@@ -2088,11 +2158,14 @@ begin
     inc(exponent,decpoint);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { evaluate sign }
 { (before exponent, because the exponent may turn it into a denormal) }
   fpc_Val_Real_ShortStr:=hd*sign;

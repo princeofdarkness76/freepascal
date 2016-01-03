@@ -45,6 +45,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         'sec','seh','sei','sen','ser','ses','set','sev','sez',
         'clc','clh','cli','cln','clr','cls','clt','clv','clz',
         'bst','bld','break','nop','sleep','wdr');
@@ -57,6 +58,9 @@ interface
 =======
         'bst','bld','s','cli','brak','nop','sleep','wdr');
 >>>>>>> graemeg/cpstrnew
+=======
+        'bst','bld','s','cli','brak','nop','sleep','wdr');
+>>>>>>> origin/cpstrnew
 
     function gas_regnum_search(const s:string):Tregister;
     function gas_regname(r:Tregister):string;

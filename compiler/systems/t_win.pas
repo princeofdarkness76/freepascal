@@ -961,6 +961,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if (target_dbg.id = dbg_stabs) then
 =======
                     if (paratargetdbg = dbg_stabs) then
@@ -971,6 +972,9 @@ implementation
 =======
                     if (paratargetdbg = dbg_stabs) then
 >>>>>>> graemeg/cpstrnew
+=======
+                    if (paratargetdbg = dbg_stabs) then
+>>>>>>> origin/cpstrnew
                       imagebase:=$400000
                     else
                       imagebase:= $100000000;
@@ -1293,6 +1297,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             Add('    PROVIDE ('+target_info.Cprefix+'_tls_index = .);');
             Add('    LONG (0);');
 =======
@@ -1301,6 +1306,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             Add('    __data_end__ = . ;');
             Add('    *(.data_cygwin_nocopy)');
             Add('  }');
@@ -1858,11 +1865,14 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   RegisterExternalLinker(system_x64_win64_info,TExternalLinkerWin);
   RegisterInternalLinker(system_x64_win64_info,TInternalLinkerWin);
 >>>>>>> graemeg/cpstrnew

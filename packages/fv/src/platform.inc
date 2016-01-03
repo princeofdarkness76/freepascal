@@ -62,6 +62,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {  1.36    22 Mar 15  PM     64 bit OS DragonFly           }
 =======
 >>>>>>> graemeg/cpstrnew
@@ -69,6 +70,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {**********************************************************}
 
 { ****************************************************************************
@@ -106,6 +109,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           OS_UNIX
 
  DRAGONFLY OS_DRAGONFLYBSD FPC PPC_FPC      PROC_Protected  BIT_64  ASM_FPC
@@ -118,6 +122,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           OS_UNIX
 
  NETBSD   OS_NETBSD   FPC      PPC_FPC      PROC_Protected  BIT_32  ASM_FPC
@@ -505,6 +511,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ENDIF}
 
 
@@ -531,6 +538,8 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$DEFINE BIT_32_OR_MORE}
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ENDIF}
 
 
@@ -542,6 +551,7 @@ FOR FPC THESE ARE THE TRANSLATIONS
   {$UNDEF BIT_32_OR_MORE}
 {$ELSE}
   {$DEFINE BIT_32_OR_MORE}
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 {$ENDIF}
@@ -561,5 +571,10 @@ FOR FPC THESE ARE THE TRANSLATIONS
 
 
 
+=======
+{$ENDIF}
+
+
+>>>>>>> origin/cpstrnew
 
 

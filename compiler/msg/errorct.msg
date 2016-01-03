@@ -2103,6 +2103,7 @@ Free Pascal Compiler versió $FPCFULLVERSION [$FPCDATE] per $FPCCPU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 1993-2015 per Florian Klaempfl and others
 =======
 Copyright (c) 1993-2011 per Florian Klaempfl
@@ -2113,6 +2114,9 @@ Copyright (c) 1993-2011 per Florian Klaempfl
 =======
 Copyright (c) 1993-2011 per Florian Klaempfl
 >>>>>>> graemeg/cpstrnew
+=======
+Copyright (c) 1993-2011 per Florian Klaempfl
+>>>>>>> origin/cpstrnew
 ]
 
 #

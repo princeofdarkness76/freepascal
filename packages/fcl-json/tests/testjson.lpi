@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <SaveOnlyProjectUnits Value="True"/>
 =======
 >>>>>>> graemeg/cpstrnew
@@ -14,6 +15,8 @@
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         <LRSInOutputDirectory Value="False"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
@@ -37,6 +40,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <CommandLineParams Value="--suite=TTestParser.TestComment"/>
 =======
         <CommandLineParams Value="--format=plain --suite=TCJSONStreamer"/>
@@ -47,6 +51,9 @@
 =======
         <CommandLineParams Value="--format=plain --suite=TCJSONStreamer"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <CommandLineParams Value="--format=plain --suite=TCJSONStreamer"/>
+>>>>>>> origin/cpstrnew
         <LaunchingApplication PathPlusParams="/usr/X11R6/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
@@ -74,6 +81,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <UnitName Value="testjsonrtti"/>
 >>>>>>> graemeg/cpstrnew
@@ -83,6 +91,9 @@
 =======
         <UnitName Value="testjsonrtti"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <UnitName Value="testjsonrtti"/>
+>>>>>>> origin/cpstrnew
       </Unit3>
       <Unit4>
         <Filename Value="../src/fpjsonrtti.pp"/>
@@ -90,6 +101,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
         <UnitName Value="fpjsonrtti"/>
 >>>>>>> graemeg/cpstrnew
@@ -99,10 +111,14 @@
 =======
         <UnitName Value="fpjsonrtti"/>
 >>>>>>> graemeg/cpstrnew
+=======
+        <UnitName Value="fpjsonrtti"/>
+>>>>>>> origin/cpstrnew
       </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -116,6 +132,9 @@
 =======
     <Version Value="9"/>
 >>>>>>> graemeg/cpstrnew
+=======
+    <Version Value="9"/>
+>>>>>>> origin/cpstrnew
     <SearchPaths>
       <OtherUnitFiles Value="../src"/>
     </SearchPaths>
@@ -127,11 +146,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     <Linking>
       <Debugging>
         <GenerateDebugInfo Value="True"/>

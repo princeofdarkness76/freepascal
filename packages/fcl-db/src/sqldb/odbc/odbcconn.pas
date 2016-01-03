@@ -97,6 +97,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function RefreshLastInsertID(Query : TCustomSQLQuery; Field : TField): boolean; override;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -104,6 +105,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // - Result retrieving
     procedure AddFieldDefs(cursor:TSQLCursor; FieldDefs:TFieldDefs); override;
     function Fetch(cursor:TSQLCursor):boolean; override;
@@ -407,6 +410,7 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   NumericVal: SQL_NUMERIC_STRUCT;
   ColumnSize: SQLULEN;
   BufferLength, StrLenOrInd: SQLLEN;
@@ -415,6 +419,8 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   ColumnSize, BufferLength, StrLenOrInd: SQLINTEGER;
 >>>>>>> graemeg/cpstrnew
   CType, SqlType, DecimalDigits:SQLSMALLINT;
@@ -462,6 +468,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       ftString, ftFixedChar, ftBlob, ftMemo, ftGuid,
       ftBytes, ftVarBytes:
 =======
@@ -473,6 +480,9 @@ begin
 =======
       ftString, ftFixedChar, ftBlob, ftMemo:
 >>>>>>> graemeg/cpstrnew
+=======
+      ftString, ftFixedChar, ftBlob, ftMemo:
+>>>>>>> origin/cpstrnew
         begin
           StrVal:=AParams[ParamIndex].AsString;
           StrLenOrInd:=Length(StrVal);
@@ -489,6 +499,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ftBytes, ftVarBytes:
               begin
               CType:=SQL_C_BINARY;
@@ -500,6 +511,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             ftBlob:
               begin
               CType:=SQL_C_BINARY;
@@ -516,6 +529,7 @@ begin
               SqlType:=SQL_VARCHAR;
               end;
           end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -544,6 +558,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         end;
       ftFloat:
         begin
@@ -1227,6 +1243,19 @@ begin
     Result:=-1;
 end;
 
+function TODBCConnection.RowsAffected(cursor: TSQLCursor): TRowsCount;
+var
+  RowCount: SQLINTEGER;
+begin
+  if assigned(cursor) then
+    if ODBCSucces( SQLRowCount((cursor as TODBCCursor).FSTMTHandle, RowCount) ) then
+       Result:=RowCount
+    else
+       Result:=-1
+  else
+    Result:=-1;
+end;
+
 function TODBCConnection.Fetch(cursor: TSQLCursor): boolean;
 var
   ODBCCursor:TODBCCursor;
@@ -1274,6 +1303,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ftInteger,ftAutoInc:  // mapped to TLongintField
 =======
     ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
@@ -1284,6 +1314,9 @@ begin
 =======
     ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
 >>>>>>> graemeg/cpstrnew
+=======
+    ftInteger,ftWord,ftAutoInc:     // mapped to TLongintField
+>>>>>>> origin/cpstrnew
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_SLONG, buffer, SizeOf(Longint), @StrLenOrInd);
     ftWord:               // mapped to TWordField
       Res:=SQLGetData(ODBCCursor.FSTMTHandle, FieldDef.Index+1, SQL_C_USHORT, buffer, SizeOf(Word), @StrLenOrInd);

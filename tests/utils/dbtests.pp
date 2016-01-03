@@ -51,11 +51,14 @@ Type
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function  ConnectToDatabase(DatabaseName,Host,User,Password,Port : String) : Boolean;
 Procedure DisconnectDatabase;
 Function  InsertQuery(const Query : string) : Integer;
@@ -120,6 +123,7 @@ Function CreateQuery(Const ASQL : String) : TSQLQuery;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 begin
   Result:=TSQLQuery.Create(Connection);
   Result.Database:=Connection;
@@ -130,6 +134,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function ConnectToDatabase(DatabaseName,Host,User,Password,Port : String) : Boolean;
 
 Var
@@ -250,9 +256,24 @@ begin
 end;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{ No warning if it fails }
+Function RunSilentQuery (Qry : String; Var res : TQueryResult) : Boolean ;
+
+begin
+  Verbose(V_DEBUG,'Running silent query:'+Qry);
+  Result:=mysql_query(@Connection,PChar(qry))=0;
+  If Not Result then
+    Verbose(V_DEBUG,'Silent query : '+Qry+'Failed : '+Strpas(mysql_error(@connection)))
+  else
+    Res:=Mysql_store_result(@connection);
+end;
+
+>>>>>>> origin/cpstrnew
 
 Function GetResultField (Res : TQueryResult; Id : Integer) : String;
 >>>>>>> graemeg/cpstrnew
@@ -294,6 +315,7 @@ Function StringQuery(Qry : String) : String;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Var
   Res : TSQLQuery;
 
@@ -321,6 +343,9 @@ begin
 =======
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+>>>>>>> origin/cpstrnew
   Result:=StringReplace(S,'\','\\',[rfReplaceAll]);
   Result:=StringReplace(Result,'"','\"',[rfReplaceAll]);
   Verbose(V_DEBUG,'EscapeSQL : "'+S+'" -> "'+Result+'"');
@@ -466,12 +491,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Verbose(V_Debug,'Reading: '+FileName);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Verbose(V_Debug,'Reading '+FileName);
 >>>>>>> graemeg/cpstrnew
   assign(t,FileName);
@@ -588,6 +616,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
              '(%d,%d,''%s'',''%s'',%d) RETURNING TR_ID';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -602,6 +631,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              '(%d,%d,"%s","%s",%d) ';
   SSelectId='SELECT TR_ID FROM TESTRESULTS WHERE (TR_TEST_FK=%d) '+
             ' AND (TR_TESTRUN_FK=%d)';
@@ -613,16 +644,20 @@ Var
   updateValues : boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   updateValues:=false;
   Result:=-1;
   Qry:=Format(SInsertRes,
               [TestID,RunID,B[OK],B[Skipped],TestRes,EscapeSQL(Log)]);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -644,6 +679,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   If RunSilentQuery(Qry,Res) then
     Result:=mysql_insert_id(@connection)
   else
@@ -662,11 +699,14 @@ begin
         end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   { If test already existed, return false for is_new to avoid double counting }
   is_new:=not updateValues;

@@ -63,11 +63,14 @@ type
      TBreakNumber : longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
      FPCBreakErrorNumber : longint;
 {$ifdef SUPPORT_REMOTE}
      isRemoteDebugging,
@@ -80,11 +83,14 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure SetTBreak(tbreakstring : string);
     procedure SetWidth(AWidth : longint);
 >>>>>>> graemeg/cpstrnew
@@ -373,6 +379,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   fpredir,
 =======
 
@@ -383,6 +390,9 @@ uses
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
   App,Strings,
   FVConsts,
   MsgBox,
@@ -665,6 +675,7 @@ procedure UpdateDebugViews;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
 =======
@@ -676,6 +687,9 @@ procedure UpdateDebugViews;
 =======
      if isRemoteDebugging then
 >>>>>>> graemeg/cpstrnew
+=======
+     if isRemoteDebugging then
+>>>>>>> origin/cpstrnew
        PushStatus(msg_getting_info_on+RemoteMachine);
 {$endif SUPPORT_REMOTE}
      DeskTop^.Lock;
@@ -696,6 +710,7 @@ procedure UpdateDebugViews;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      if assigned(Debugger) and
         Debugger^.isRemoteDebugging then
 =======
@@ -707,6 +722,9 @@ procedure UpdateDebugViews;
 =======
      if isRemoteDebugging then
 >>>>>>> graemeg/cpstrnew
+=======
+     if isRemoteDebugging then
+>>>>>>> origin/cpstrnew
        PopStatus;
 {$endif SUPPORT_REMOTE}
   end;
@@ -753,6 +771,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          [public,alias:'FPC_BREAK_ERROR'];}
       FPCBreakErrorNumber:=BreakpointInsert('FPC_BREAK_ERROR', []);
 =======
@@ -760,6 +779,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
          [public,alias:'FPC_BREAK_ERROR'];
       Command('b HANDLEERRORADDRFRAME'); }
       Command('b FPC_BREAK_ERROR');
@@ -795,11 +816,14 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 procedure TDebugController.SetTBreak(tbreakstring : string);
 begin
@@ -1022,11 +1046,14 @@ begin
       MessageBox(#3'Start in remote'#13#3+s,nil,mfOKbutton);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       PopStatus;
     end
   else
@@ -1204,6 +1231,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef GDB_RAW_OUTPUT}
       If StrLen(GetRaw)>0 then
         begin
@@ -1218,6 +1246,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       If StrLen(GetOutput)>0 then
         begin
           GDBWindow^.WriteOutputText(GetOutput);

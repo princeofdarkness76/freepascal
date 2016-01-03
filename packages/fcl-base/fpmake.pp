@@ -27,11 +27,14 @@ begin
     P.Dependencies.Add('univint',[Darwin]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     P.Author := '<various>';
     P.License := 'LGPL with modification, ';
@@ -53,11 +56,14 @@ begin
     P.IncludePath.Add('src/win',AllWindowsOSes);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.IncludePath.Add('src/dummy',AllOSes);
 
     T:=P.Targets.AddUnit('ascii85.pp');
@@ -73,6 +79,7 @@ begin
       T.ResourceStrings:=true;
     T:=P.Targets.AddUnit('contnrs.pp');
       T.ResourceStrings:=true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -93,6 +100,10 @@ begin
     T:=P.Targets.AddUnit('custapp.pp');
       T.ResourceStrings:=true;
 >>>>>>> graemeg/cpstrnew
+=======
+    T:=P.Targets.AddUnit('custapp.pp');
+      T.ResourceStrings:=true;
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('eventlog.pp');
       T.ResourceStrings:=true;
       with T.Dependencies do
@@ -136,12 +147,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,EMX,nativent]);
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     T:=P.Targets.AddUnit('syncobjs.pp',AllOSes-[GO32v2,OS2,EMX]);
 >>>>>>> graemeg/cpstrnew
     T:=P.Targets.AddUnit('uriparser.pp');

@@ -3504,6 +3504,7 @@ Free Pascal Compiler versi $FPCFULLVERSION [$FPCDATE] untuk $FPCCPU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Hak Cipta (c) 1993-2015 oleh Florian Klaempfl and others
 =======
 Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
@@ -3514,6 +3515,9 @@ Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
 =======
 Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
 >>>>>>> graemeg/cpstrnew
+=======
+Hak Cipta (c) 1993-2011 oleh Florian Klaempfl
+>>>>>>> origin/cpstrnew
 ]
 
 #

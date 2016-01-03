@@ -66,6 +66,7 @@ function StringToOleStr(const source : UnicodeString) : PWideChar;inline;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 type
   TStartupInfo = record
@@ -94,6 +95,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { package stuff }
 type

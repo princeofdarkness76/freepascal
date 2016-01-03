@@ -32,6 +32,7 @@ Uses Windows;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifdef FPC_OS_UNICODE}
   {$define UNICODE}
 {$endif}
@@ -42,6 +43,8 @@ Uses Windows;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Const 
      IMAGE_SEPARATION    = 64*1024;  	
      DBHHEADER_DEBUGDIRS = $1;     

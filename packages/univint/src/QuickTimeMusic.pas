@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      Version:    QuickTime 7.7.1
  
      Copyright:  © 1990-2012 by Apple Inc., all rights reserved
@@ -24,6 +25,11 @@
  
      Copyright:  © 1990-2008 by Apple Inc., all rights reserved
 >>>>>>> graemeg/cpstrnew
+=======
+     Version:    QuickTime 7.6.3
+ 
+     Copyright:  © 1990-2008 by Apple Inc., all rights reserved
+>>>>>>> origin/cpstrnew
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -31,6 +37,7 @@
                      http://bugs.freepascal.org
  
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -45,6 +52,9 @@
 =======
 {       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
 >>>>>>> graemeg/cpstrnew
+=======
+{       Pascal Translation Updated:  Jonas Maebe, <jonas@freepascal.org>, October 2009 }
+>>>>>>> origin/cpstrnew
 {
     Modified for use with Free Pascal
     Version 308
@@ -102,6 +112,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -113,6 +124,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -131,6 +144,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -147,12 +161,21 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
@@ -195,6 +218,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -204,6 +232,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -211,10 +240,13 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -272,6 +304,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -298,6 +332,7 @@ interface
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$elsec}
 	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
 >>>>>>> graemeg/cpstrnew
@@ -322,6 +357,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -362,6 +406,7 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 {$endc} {not MACOSALLINCLUDE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> graemeg/cpstrnew
@@ -370,7 +415,11 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 
 {$ifc TARGET_OS_MAC}
 =======
+=======
 
+>>>>>>> origin/cpstrnew
+
+{$ifc TARGET_OS_MAC}
 
 {$ifc TARGET_OS_MAC}
 >>>>>>> graemeg/cpstrnew
@@ -381,6 +430,7 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 {$ifc not TARGET_CPU_64}
 =======
@@ -388,6 +438,8 @@ uses MacTypes,Components,Dialogs,Endian,Files,ImageCompression,Movies,QuickdrawT
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc not TARGET_CPU_64}
 
@@ -411,11 +463,14 @@ const
 	kaiLibraryDescType = FourCharCode('ldsc');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	kaiToneDescType = FourCharCode('tone');
@@ -770,6 +825,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> graemeg/cpstrnew
@@ -786,6 +842,10 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 const
 	kControllerMaximum = $00007FFF; { +01111111.11111111 }
 	kControllerMinimum = $FFFF8000; { -10000000.00000000 }
@@ -813,6 +873,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		controllers: array [0..4-1] of UNSIGNEDLONG;         { array of 128 bits }
 		gmInstruments: array [0..4-1] of UNSIGNEDLONG;       { array of 128 bits }
 		gmDrums: array [0..4-1] of UNSIGNEDLONG;             { array of 128 bits }
@@ -831,6 +892,11 @@ type
 		gmInstruments: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
 		gmDrums: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
 >>>>>>> graemeg/cpstrnew
+=======
+		controllers: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmInstruments: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+		gmDrums: array [0..3] of UNSIGNEDLONG;					{  array of 128 bits  }
+>>>>>>> origin/cpstrnew
 	end;
 const
 	kVoiceCountDynamic = -1;    { constant to use to specify dynamic voicing }
@@ -868,8 +934,11 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 { KnobFlags}
 const
@@ -893,6 +962,7 @@ const
 	kKnobTypeButton = 10 shl 12; { momentary trigger push button }
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -946,6 +1016,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 const
 	kUnknownKnobValue = $7FFFFFFF; { a knob with this value means, we don't know it. }
 	kDefaultKnobValue = $7FFFFFFE; { used to SET a knob to its default value. }
@@ -967,6 +1039,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		knob: array [0..1-1] of SIGNEDLONG;
 =======
 		knob: array [0..0] of SInt32;
@@ -977,6 +1050,9 @@ type
 =======
 		knob: array [0..0] of SInt32;
 >>>>>>> graemeg/cpstrnew
+=======
+		knob: array [0..0] of SInt32;
+>>>>>>> origin/cpstrnew
 	end;
 	GCInstrumentDataPtr = ^GCInstrumentData;
 type
@@ -1008,6 +1084,9 @@ const
   tunePlayerFullErr = $8000F7DA;
   tuneParseErr = $8000F7D9;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 
 const
 	kGetAtomicInstNoExpandedSamples = 1 shl 0;
@@ -1038,6 +1117,7 @@ const
 {
  * Structures specific to the GenericMusicComponent
  }
+<<<<<<< HEAD
 
 =======
 
@@ -1072,6 +1152,9 @@ const
  }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 const
 	kGenericMusicComponentSubtype = FourCharCode('gene');
 
@@ -1155,11 +1238,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  * Calls specific to the GenericMusicComponent
  }
 const
@@ -1169,11 +1255,14 @@ const
 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  * Flags in GenericMusicConfigure call
  }
 const
@@ -2508,6 +2597,7 @@ function TuneGetIndexedNoteChannel( tp: TunePlayer; i: SIGNEDLONG; var nc: NoteC
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -2522,6 +2612,10 @@ function TuneGetIndexedNoteChannel( tp: TunePlayer; i: SIGNEDLONG; var nc: NoteC
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 { Values for when to start. }
 const
 	kTuneStartNow = 1;    { start after buffer is implied }
@@ -2572,6 +2666,7 @@ function TuneGetStatus( tp: TunePlayer; var status: TuneStatus ): ComponentResul
 (* AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5 *)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -2582,6 +2677,10 @@ function TuneGetStatus( tp: TunePlayer; var status: TuneStatus ): ComponentResul
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 { Values for stopping. }
 const
 	kTuneStopFade = 1;    { do a quick, synchronous fadeout }
@@ -2759,6 +2858,7 @@ function TuneSetHeaderWithSize( tp: TunePlayer; var header: UNSIGNEDLONG; size: 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
@@ -2773,6 +2873,10 @@ function TuneSetHeaderWithSize( tp: TunePlayer; var header: UNSIGNEDLONG; size: 
 
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+>>>>>>> origin/cpstrnew
 { flags for part mix. }
 const
 	kTuneMixMute = 1;    { disable a part }
@@ -2812,6 +2916,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 
@@ -2884,6 +2989,8 @@ type
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
     At this time, QuickTime music tracks support 5 different event types -- REST events,
     short NOTE events, short CONTROL events, short GENERAL events, Long NOTE events, 
@@ -2951,11 +3058,14 @@ type
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { Defines for the implemented music event data fields}
 const
 	kRestEventType = $00000000; { lower 3-bits }

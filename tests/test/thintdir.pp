@@ -9,6 +9,8 @@ program thintdir;
 
 program thintdir;
 
+program thintdir;
+
 {$mode delphi}
 
 uses

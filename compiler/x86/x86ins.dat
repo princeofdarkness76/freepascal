@@ -955,6 +955,7 @@ mem                   \2\x0F\x01\203                  286,PRIV
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 mem32                 \325\1\xFF\205                  386,NOX86_64
 mem64                 \335\1\xFF\205                  X86_64
 mem16                 \324\1\xFF\205                  8086
@@ -963,6 +964,8 @@ mem16                 \324\1\xFF\205                  8086
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 rm16|32|64            \300\320\1\xFF\205              8086
 mem|far               \300\320\1\xFF\205              8086
 mem|near              \300\320\1\xFF\204              8086
@@ -1133,11 +1136,14 @@ xmmreg,reg64          \1\x66\326\2\x0F\x6E\110        WILLAMETTE,SSE2
 reg64,xmmreg          \1\x66\326\2\x0F\x7E\101        WILLAMETTE,SSE2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 [MOVSB]
 (Ch_All, Ch_None, Ch_None)
@@ -1484,6 +1490,7 @@ void                  \324\1\x61                      186,NOX86_64
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 void                  \327\1\x9D                      8086,NOX86_64
 void                  \326\1\x9D                      X86_64
 =======
@@ -1498,6 +1505,10 @@ void                  \2\x48\x9D                      X86_64
 void                  \327\1\x9D                      186,NOX86_64
 void                  \2\x48\x9D                      X86_64
 >>>>>>> graemeg/cpstrnew
+=======
+void                  \327\1\x9D                      186,NOX86_64
+void                  \2\x48\x9D                      X86_64
+>>>>>>> origin/cpstrnew
 
 [POPFD,popfl]
 (Ch_RWESP, Ch_WFlags, Ch_None)
@@ -1505,6 +1516,7 @@ void                  \325\1\x9D                      386,NOX86_64
 
 [POPFW]
 (Ch_RWESP, Ch_WFLAGS, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1518,10 +1530,14 @@ void                  \324\1\x9D                      186,NOX86_64
 =======
 void                  \324\1\x9D                      186,NOX86_64
 >>>>>>> graemeg/cpstrnew
+=======
+void                  \324\1\x9D                      186,NOX86_64
+>>>>>>> origin/cpstrnew
 void                  \1\x9D                          X86_64
 
 [POPFQ]
 (Ch_RWESP, Ch_WFlags, Ch_None)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1535,6 +1551,9 @@ void                  \2\x48\x9D                      X86_64
 =======
 void                  \2\x48\x9D                      X86_64
 >>>>>>> graemeg/cpstrnew
+=======
+void                  \2\x48\x9D                      X86_64
+>>>>>>> origin/cpstrnew
 
 [POR]
 (Ch_All, Ch_None, Ch_None)
@@ -1720,6 +1739,10 @@ void                  \324\1\x9C                      8086
 [PUSHFQ]
 (Ch_RWESP, Ch_RFlags, Ch_None)
 void                  \326\1\x9C                      X86_64
+
+[PUSHFQ]
+(Ch_RWESP, Ch_RFlags, Ch_None)
+void                  \2\x48\x9C                      X86_64
 
 [PUSHFQ]
 (Ch_RWESP, Ch_RFlags, Ch_None)
@@ -2533,6 +2556,7 @@ reg32,mmxreg,imm      \2\x0F\xC5\110\22               KATMAI,MMX,SB,AR2
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 reg32,xmmreg,imm      \361\2\x0F\xC5\110\26           SSE41
 mem32,xmmreg,imm      \361\3\x0F\x3A\x15\101\26       SSE41
 =======
@@ -2547,6 +2571,10 @@ mem32,xmmreg,imm      \1\x66\300\323\3\x0F\x3A\x15\101\26            SSE4
 reg32,xmmreg,imm      \1\x66\323\2\x0F\xC5\110\26                    SSE4
 mem32,xmmreg,imm      \1\x66\300\323\3\x0F\x3A\x15\101\26            SSE4
 >>>>>>> graemeg/cpstrnew
+=======
+reg32,xmmreg,imm      \1\x66\323\2\x0F\xC5\110\26                    SSE4
+mem32,xmmreg,imm      \1\x66\300\323\3\x0F\x3A\x15\101\26            SSE4
+>>>>>>> origin/cpstrnew
 
 
 [PINSRW]
@@ -3174,6 +3202,7 @@ mem,xmmreg              \333\2\x0F\x2B\101                        SSE4,SD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 mem,xmmreg              \334\325\2\x0F\x2B\101                SSE4 ;,SQ
 =======
 mem,xmmreg              \300\334\325\323\2\x0F\x2B\101                SSE4 ;,SQ
@@ -3184,6 +3213,9 @@ mem,xmmreg              \300\334\325\323\2\x0F\x2B\101                SSE4 ;,SQ
 =======
 mem,xmmreg              \300\334\325\323\2\x0F\x2B\101                SSE4 ;,SQ
 >>>>>>> graemeg/cpstrnew
+=======
+mem,xmmreg              \300\334\325\323\2\x0F\x2B\101                SSE4 ;,SQ
+>>>>>>> origin/cpstrnew
 
 [INSERTQ]
 (Ch_All, Ch_None, Ch_None)
@@ -3203,6 +3235,7 @@ reg32|64,regmem         \321\333\2\x0F\xBD\110                386,SM,SSE4
 ;*******************************************************************************
 ;**********SSSE3****************************************************************
 ;*******************************************************************************
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 [PABSB]
@@ -6290,6 +6323,8 @@ xmmreg,xmmreg,xmmrm                  \361\362\371\1\xBF\75\120            FMA
 =======
 >>>>>>> graemeg/cpstrnew
 =======
+=======
+>>>>>>> origin/cpstrnew
 ;Use SSE4, but need special flag for SSSE3 insructions set
 [PABSB]
 (Ch_All, Ch_None, Ch_None)
@@ -6664,6 +6699,7 @@ xmmreg,xmmreg         \1\x66\331\3\x0F\x38\x37\110                   SSE4
 xmmreg,mem            \1\x66\301\331\3\x0F\x38\x37\110               SSE4
 ;   CRC32
 [POPCNT,popcntX]
+<<<<<<< HEAD
 (Ch_All, Ch_None, Ch_None)
 reg16,rm16             \1\xF3\301\320\2\x0F\xB8\110                  386,SM,SSE4
 reg32,rm32             \1\xF3\301\320\2\x0F\xB8\110                  386,SM,SSE4
@@ -6726,3 +6762,57 @@ void                   \2\x48\xA7                                    X86_64
 =======
 void                   \2\x48\xA7                                    X86_64
 >>>>>>> graemeg/cpstrnew
+=======
+(Ch_All, Ch_None, Ch_None)
+reg16,rm16             \1\xF3\301\320\2\x0F\xB8\110                  386,SM,SSE4
+reg32,rm32             \1\xF3\301\320\2\x0F\xB8\110                  386,SM,SSE4
+reg64,rm64             \1\xF3\301\320\2\x0F\xB8\110                  386,SM,SSE4
+;*******************************************************************************
+;**********AES******************************************************************
+;*******************************************************************************
+;Use SSE4, but need special flag for AES insructions set
+
+[AESENC]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg         \1\x66\331\3\x0F\x38\xDC\110                   SSE4
+xmmreg,mem            \1\x66\301\331\3\x0F\x38\xDC\110               SSE4
+
+[AESENCLAST]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg         \1\x66\331\3\x0F\x38\xDD\110                   SSE4
+xmmreg,mem            \1\x66\301\331\3\x0F\x38\xDD\110               SSE4
+
+[AESDEC]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg         \1\x66\331\3\x0F\x38\xDE\110                   SSE4
+xmmreg,mem            \1\x66\301\331\3\x0F\x38\xDE\110               SSE4
+
+[AESDECLAST]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg         \1\x66\331\3\x0F\x38\xDF\110                   SSE4
+xmmreg,mem            \1\x66\301\331\3\x0F\x38\xDF\110               SSE4
+
+[AESIMC]
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg         \1\x66\331\3\x0F\x38\xDB\110                   SSE4
+xmmreg,mem            \1\x66\301\331\3\x0F\x38\xDB\110               SSE4
+
+[AESKEYGEN] ;AESKEYGENASIST
+(Ch_All, Ch_None, Ch_None)
+xmmreg,xmmreg,imm     \1\x66\331\3\x0F\x3A\xDF\110\26                SSE4
+xmmreg,mem,imm        \1\x66\301\331\3\x0F\x3A\xDF\110\26            SSE4
+;*******************************************************************************
+;*******************************************************************************
+;*******************************************************************************
+[STOSQ]
+(Ch_RRAX, Ch_WMemEDI, Ch_RWRDI)
+void                   \2\x48\xAB                                    X86_64  
+
+[LODSQ]
+(Ch_WRAX, Ch_RWRSI, Ch_None)
+void                   \2\x48\xAD                                    X86_64    
+
+[CMPSQ]
+(Ch_All, Ch_None, Ch_None)
+void                   \2\x48\xA7                                    X86_64
+>>>>>>> origin/cpstrnew

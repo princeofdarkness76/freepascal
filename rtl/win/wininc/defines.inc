@@ -1733,6 +1733,9 @@
 
 
 
+
+
+
      INVALID_HANDLE_VALUE = HANDLE(-1);
      INVALID_FILE_SIZE    = DWORD(-1);
 
@@ -5927,6 +5930,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     IMAGE_FILE_LARGE_ADDRESS_AWARE       = $20;    // for peflags.
 
   //
@@ -5995,6 +5999,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 
     GWLP_WNDPROC        		 = -4; 
@@ -6011,6 +6017,7 @@ const
     GCLP_WNDPROC                         = -24;
     GCLP_HICONSM                         = -34;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6040,6 +6047,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 // #if(WINVER >= 0x0500)
 {/*

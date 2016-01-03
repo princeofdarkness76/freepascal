@@ -30,6 +30,7 @@ Interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$IFDEF MORPHOS}
  {$DEFINE NO_UNIT_PROCESS}
  {$DEFINE NO_THREADING}
@@ -51,12 +52,15 @@ Interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$IFDEF OS2}
  {$DEFINE NO_UNIT_PROCESS}
 {$ENDIF OS2}
 
 {$IFDEF GO32V2}
  {$DEFINE NO_UNIT_PROCESS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -84,6 +88,10 @@ Interface
 {$ENDIF GO32V2}
 
 >>>>>>> graemeg/cpstrnew
+=======
+{$ENDIF GO32V2}
+
+>>>>>>> origin/cpstrnew
 {$ifndef NO_UNIT_PROCESS}
   {$define HAS_UNIT_PROCESS}
 {$endif NO_UNIT_PROCESS}
@@ -146,6 +154,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     win64,wince,gba,nds,embedded,symbian,haiku,iphonesim,
     aix,java,android,nativent,msdos,wii,aros,dragonfly,
     win16
@@ -158,12 +167,16 @@ Type
 =======
     win64,wince,gba,nds,embedded,symbian,haiku
 >>>>>>> graemeg/cpstrnew
+=======
+    win64,wince,gba,nds,embedded,symbian,haiku
+>>>>>>> origin/cpstrnew
   );
   TOSes = Set of TOS;
 
   TCompilerMode = (cmFPC,cmTP,cmObjFPC,cmDelphi,cmMacPas);
   TCompilerModes = Set of TCompilerMode;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -175,6 +188,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   TTargetType = (ttProgram,ttUnit,ttImplicitUnit,ttCleanOnlyUnit,ttExampleUnit,ttExampleProgram,ttFPDoc);
   TTargetTypes = set of TTargetType;
 
@@ -222,6 +237,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   AllUnixOSes  = [Linux,FreeBSD,NetBSD,OpenBSD,Darwin,QNX,BeOS,Solaris,Haiku,iphonesim,aix,Android,dragonfly];
   AllBSDOSes      = [FreeBSD,NetBSD,OpenBSD,Darwin,iphonesim,dragonfly];
 =======
@@ -229,6 +245,8 @@ Const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   AllUnixOSes  = [Linux,FreeBSD,NetBSD,OpenBSD,Darwin,QNX,BeOS,Solaris,Haiku];
   AllBSDOSes      = [FreeBSD,NetBSD,OpenBSD,Darwin];
 >>>>>>> graemeg/cpstrnew
@@ -315,11 +333,14 @@ Const
     { haiku }   ( false, true,  false, false, false, false, false, false, false, false) 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   );
 
   // Useful
@@ -830,6 +851,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure AddDocFiles(const AFileMask, ASearchPathPrefix: string; Recursive: boolean = False; AInstallSourcePath : String = '');
     procedure AddSrcFiles(const AFileMask, ASearchPathPrefix: string; Recursive: boolean = False);
     procedure AddExampleFiles(const AFileMask, ASearchPathPrefix: string; Recursive: boolean = False; AInstallSourcePath : String = '');
@@ -839,6 +861,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure AddDocFiles(const AFileMask: string; Recursive: boolean = False; AInstallSourcePath : String = '');
     procedure AddSrcFiles(const AFileMask: string; Recursive: boolean = False);
     procedure AddExampleFiles(const AFileMask: string; Recursive: boolean = False; AInstallSourcePath : String = '');
@@ -875,6 +899,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FBeforeManifestProc: TNotifyProcEvent;
     FBeforePkgList: TNotifyEvent;
     FBeforePkgListProc: TNotifyProcEvent;
@@ -895,6 +920,10 @@ Type
     FFPDocFormat: TFPDocFormats;
     FIsFPMakeAddIn: boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+    FFPDocFormat: TFPDocFormats;
+    FIsFPMakeAddIn: boolean;
+>>>>>>> origin/cpstrnew
     FUnitPath,
     FObjectPath,
     FIncludePath,
@@ -968,6 +997,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     procedure GetInstallSourceFiles(List: TStrings; SourceTypes : TSourceTypes; TargetTypes : TTargetTypes); virtual;
 =======
     procedure GetInstallSourceFiles(List: TStrings;Types : TSourceTypes); virtual;
@@ -978,6 +1008,9 @@ Type
 =======
     procedure GetInstallSourceFiles(List: TStrings;Types : TSourceTypes); virtual;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure GetInstallSourceFiles(List: TStrings;Types : TSourceTypes); virtual;
+>>>>>>> origin/cpstrnew
     Procedure GetArchiveFiles(List : TStrings; ACPU:TCPU; AOS : TOS); virtual;
     Procedure GetArchiveSourceFiles(List : TStrings); virtual;
     Procedure GetManifest(Manifest : TStrings);
@@ -1003,6 +1036,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property SupportBuildModes: TBuildModes read FSupportBuildModes write FSupportBuildModes;
     Property BuildMode: TBuildMode read FBuildMode;
     Property Flags: TStrings read FFlags;
@@ -1012,6 +1046,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Compiler options.
     Property OSes : TOSes Read FOSes Write FOSes;
     Property CPUs : TCPUs Read FCPUs Write FCPUs;
@@ -1086,6 +1122,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FFPUnitSourcePath: String;
     FIgnoreInvalidOptions: Boolean;
     FInstallExamples: Boolean;
@@ -1098,6 +1135,9 @@ Type
 =======
     FIgnoreInvalidOptions: Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+    FIgnoreInvalidOptions: Boolean;
+>>>>>>> origin/cpstrnew
     FMkDir: String;
     FMove: String;
     FOptions: TStrings;
@@ -1125,6 +1165,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FUseEnvironment: Boolean;
     FZipPrefix: String;
     FExplicitOSNone: Boolean;
@@ -1142,6 +1183,9 @@ Type
 =======
     function GetFPDocOutputDir: String;
 >>>>>>> graemeg/cpstrnew
+=======
+    function GetFPDocOutputDir: String;
+>>>>>>> origin/cpstrnew
     function GetLocalUnitDir: String;
     function GetGlobalUnitDir: String;
     function GetBaseInstallDir: String;
@@ -1221,6 +1265,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property FPUnitSourcePath: String read GetFPUnitSourcePath Write FFPUnitSourcePath;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1228,6 +1273,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Command tools. If not set, internal commands  will be used.
     Property Compiler : String Read GetCompiler Write FCompiler; // Compiler. Defaults to fpc
     Property Copy : String Read FCopy Write FCopy;             // copy $(FILES) to $(DEST)
@@ -1238,6 +1285,7 @@ Type
     Property MkDir : String Read FMkDir write FMkDir;          // Make $(DIRECTORY)
     Property Archive : String Read FArchive Write FArchive;    // zip $(ARCHIVE) $(FILESORDIRS)
     // Misc
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1256,6 +1304,9 @@ Type
 =======
     Property IgnoreInvalidOptions: Boolean read FIgnoreInvalidOptions write FIgnoreInvalidOptions;
 >>>>>>> graemeg/cpstrnew
+=======
+    Property IgnoreInvalidOptions: Boolean read FIgnoreInvalidOptions write FIgnoreInvalidOptions;
+>>>>>>> origin/cpstrnew
   end;
 
   { TBasicDefaults }
@@ -1284,6 +1335,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FProgressMax : integer;
     FProgressCount : integer;
 =======
@@ -1291,6 +1343,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef HAS_UNIT_ZIPPER}
     FZipFile: TZipper;
 {$endif HAS_UNIT_ZIPPER}
@@ -1340,11 +1394,14 @@ Type
     Function InstallPackageSourceFiles(APAckage : TPackage; tt : TSourceType; Const Dest : String):Boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Function FileNewer(const Src,Dest : String) : Boolean;
     Procedure LogSearchPath(APackage: TPackage;const ASearchPathName:string;Path:TConditionalStrings; ACPU:TCPU;AOS:TOS);
     Function FindFileInPath(APackage: TPackage; Path:TConditionalStrings; AFileName:String; var FoundPath:String;ACPU:TCPU;AOS:TOS):Boolean;
@@ -1359,6 +1416,7 @@ Type
   Public
     Constructor Create(AOwner : TComponent); override;
     destructor Destroy;override;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1379,6 +1437,10 @@ Type
 
     property Verbose : boolean read FVerbose write FVerbose;
 >>>>>>> graemeg/cpstrnew
+=======
+
+    property Verbose : boolean read FVerbose write FVerbose;
+>>>>>>> origin/cpstrnew
 
     // Public Copy/delete/Move/Archive/Mkdir Commands.
     Procedure ExecuteCommand(const Cmd,Args : String; const Env: TStrings = nil; IgnoreError : Boolean = False); virtual;
@@ -1392,6 +1454,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Procedure CmdRemoveDirs(List: TStrings);
     Procedure CmdRemoveTrees(List: TStrings);
     Procedure ExecuteCommands(Commands : TCommands; At : TCommandAt; APackage: TPackage = nil);
@@ -1400,6 +1463,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Procedure ExecuteCommands(Commands : TCommands; At : TCommandAt);
 >>>>>>> graemeg/cpstrnew
     // Dependency commands
@@ -1474,6 +1539,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FPackageVariantSettings: TStrings;
     FPackageVariants: TFPList;
     FNotifyEventCollection: TNotifyEventCollection;
@@ -1483,6 +1549,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   Protected
     Procedure Log(Level : TVerboseLevel; Const Msg : String);
     Procedure CreatePackages; virtual;
@@ -1512,6 +1580,7 @@ Type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Property BuildEngine : TBuildEngine Read FBuildEngine;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1519,6 +1588,8 @@ Type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     //files in package
     Property Packages : TPackages Read GetPackages;
     Property RunMode : TRunMode Read FRunMode;
@@ -1626,16 +1697,20 @@ Function FixPath (const APath : String; AIsDir : Boolean) : String;
 Function FixPath (const APath : String) : String;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function IsRelativePath(const APath : String) : boolean;
 Procedure ChangeDir(const APath : String);
 Procedure SplitCommand(Const Cmd : String; Var Exe,Options : String);
 Procedure AddCustomFpmakeCommandlineOption(const ACommandLineOption, HelpMessage : string);
 Function GetCustomFpmakeCommandlineOptionValue(const ACommandLineOption : string) : string;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1656,11 +1731,16 @@ procedure SearchFiles(const AFileName: string; Recursive: boolean; var List: TSt
 
 procedure SearchFiles(const AFileName: string; Recursive: boolean; var List: TStrings);
 >>>>>>> graemeg/cpstrnew
+=======
+
+procedure SearchFiles(const AFileName: string; Recursive: boolean; var List: TStrings);
+>>>>>>> origin/cpstrnew
 
 Implementation
 
 uses typinfo, rtlconsts;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1804,6 +1884,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 type
   TUnsortedDuplicatesStringList = class(TStringList)
   public
@@ -1813,6 +1895,7 @@ type
 var
   CustomFpmakeCommandlineOptions: TStrings;
   CustomFpMakeCommandlineValues: TStrings;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1830,6 +1913,8 @@ threadvar
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 ResourceString
   SErrInvalidCPU        = 'Invalid CPU name "%s"';
@@ -1847,6 +1932,7 @@ ResourceString
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrExtCommandNotFound= 'External command "%s" not found';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -1854,6 +1940,8 @@ ResourceString
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SErrCreatingDirectory = 'Failed to create directory "%s"';
   SErrDeletingFile      = 'Failed to delete file "%s"';
   SErrRemovingDirectory = 'Failed to remove directory "%s"';
@@ -1873,6 +1961,7 @@ ResourceString
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SErrUnsupportedBuildmode = 'Package does not support this buildmode';
   SErrPackVarNotExist   = 'There is no package variant with the name "%s"';
   SErrEventNotSupported = 'Unsupported event type';
@@ -1883,6 +1972,8 @@ ResourceString
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   SWarnCircularTargetDependency = 'Warning: Circular dependency detected when compiling target %s with target %s';
   SWarnCircularPackageDependency = 'Warning: Circular dependency detected when compiling package %s with package %s';
@@ -1894,6 +1985,7 @@ ResourceString
   SWarnDepUnitNotFound     = 'Warning: Dependency on unit %s is not supported for %s';
   SWarnTargetDependsOnPackage = 'Warning: Target %s of package %s depends on another package (%s). These kind of dependencies are not processed';
   SWarnDependOnOtherPlatformPackage = 'Warning: Package %s depends on package %s which is not available for the %s platform';
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1919,6 +2011,8 @@ ResourceString
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SWarnStartBuildingPackage = 'Start building package %s for target %s.';
   SWarnBuildingPackagecomplete = '[%3.0f%%] Built target %s';
   SWarnInstallationPackagecomplete = 'Installation package %s for target %s succeeded';
@@ -1927,11 +2021,14 @@ ResourceString
   SInfoCompilingPackage   = 'Compiling package %s';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SInfoPackageAlreadyProcessed = 'Package %s is already processed';
   SInfoCompilingTarget    = 'Compiling target %s';
   SInfoExecutingCommand   = 'Executing command "%s %s"';
@@ -1984,6 +2081,7 @@ ResourceString
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SDbgDirectoryDoesNotExist = 'Directory "%s" does not exist';
   SDbgDirectoryNotEmpty     = 'Directory "%s" is not empty. Will not remove';
   SDbgGenerateBuildUnit     = 'Generate build-unit %s';
@@ -2003,6 +2101,8 @@ ResourceString
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   // Help messages for usage
   SValue              = 'Value';
@@ -2036,6 +2136,7 @@ ResourceString
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SHelpInstExamples   = 'Install the example-sources.';
   SHelpSkipCrossProgs = 'Skip programs when cross-compiling/installing';
   SHelpIgnoreInvOpt   = 'Ignore further invalid options.';
@@ -2057,6 +2158,10 @@ ResourceString
   SHelpIgnoreInvOpt   = 'Ignore further invalid options.';
   sHelpFpdocOutputDir = 'Use indicated directory as fpdoc output folder.';
 >>>>>>> graemeg/cpstrnew
+=======
+  SHelpIgnoreInvOpt   = 'Ignore further invalid options.';
+  sHelpFpdocOutputDir = 'Use indicated directory as fpdoc output folder.';
+>>>>>>> origin/cpstrnew
 
 
 Const
@@ -2095,6 +2200,7 @@ Const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   KeyFlags    = 'Flags';
   KeyAddIn    = 'FPMakeAddIn';
   KeySourcePath = 'SourcePath';
@@ -2115,12 +2221,18 @@ Const
   KeySourcePath = 'SourcePath';
   KeyFPMakeOptions = 'FPMakeOptions';
 >>>>>>> graemeg/cpstrnew
+=======
+  KeyAddIn    = 'FPMakeAddIn';
+  KeySourcePath = 'SourcePath';
+  KeyFPMakeOptions = 'FPMakeOptions';
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************
                                 Helpers
 ****************************************************************************}
 
 {$ifdef HAS_UNIT_PROCESS}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2133,14 +2245,189 @@ var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 function ExecuteFPC(Verbose: boolean; const Path: string; const ComLine: string; ConsoleOutput: TMemoryStream): integer;
 var
   P: TProcess;
   BytesRead: longint;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+
+  function ReadFromStream: longint;
+
+  const
+    READ_BYTES = 2048;
+
+  type
+    TMessages = (mCompiling, mLinking);
+
+  var
+    //ifdef the MsgNum so it contains the correct message numbers for each compiler version.
+    MsgNum : array [TMessages] of integer = (3104, 9015);
+
+    n: longint;
+    BuffPos: longint;
+    sLine: string;
+    ch: char;
+    msg: TMessages;
+    ipos: integer;
+    snum: string;
+  begin
+    // make sure we have room
+    ConsoleOutput.SetSize(BytesRead + READ_BYTES);
+
+    // try reading it
+    n := P.Output.Read((ConsoleOutput.Memory + BytesRead)^, READ_BYTES);
+    if n > 0 then
+    begin
+      Inc(BytesRead, n);
+
+      sLine := '';
+      BuffPos := ConsoleOutput.Position;
+
+      //read lines from the stream
+      repeat
+        ConsoleOutput.Read(ch,1);
+
+        if ch in [#10, #13] then
+        begin
+          if Verbose then
+            writeln(sLine)
+          else
+            begin
+              for msg := Low(TMessages) to High(TMessages) do
+              begin
+                snum := Format('(%d)', [MsgNum[msg]]);
+                ipos := Pos(snum, sLine);
+                if ipos = 1 then
+                  writeln('      ', Copy(sLine, ipos + Length(snum), Length(sLine) - ipos - Length(snum) + 1));
+              end;
+            end;
+
+          sLine := '';
+          BuffPos := ConsoleOutput.Position;
+        end
+        else
+          sLine := sLine + ch;
+
+      until ConsoleOutput.Position >= BytesRead;
+
+      ConsoleOutput.Position := BuffPos;
+    end
+    else
+    begin
+      // no data, wait 100 ms
+      Sleep(100);
+    end;
+
+    Result := n;
+  end;
+
+begin
+  result := -1;
+  BytesRead := 0;
+  P := TProcess.Create(nil);
+  try
+    if Verbose then
+      P.CommandLine := Path + ' ' + ComLine
+    else
+      P.CommandLine := Path + ' -viq ' + ComLine;
+
+    P.Options := [poUsePipes];
+
+    P.Execute;
+    while P.Running do
+      ReadFromStream;
+
+    // read last part
+    repeat
+    until ReadFromStream = 0;
+    ConsoleOutput.SetSize(BytesRead);
+
+    result := P.ExitStatus;
+  finally
+    P.Free;
+  end;
+end;
+{$endif HAS_UNIT_PROCESS}
+
+function ParsecompilerOutput(M: TMemoryStream; Verbose: boolean): string;
+type
+  TParseCompilerOutputState = (cosBeginOfLine, cosSearchColon, cosParseNumber, cosOther);
+
+var
+  presult: pchar;
+  state: TParseCompilerOutputState;
+  ch: char;
+  eolchar: char;
+begin
+  m.Seek(0, soBeginning);
+  setlength(Result,M.Size);
+
+  if verbose then
+    begin
+      m.Read(Result[1],M.Size);
+      Exit;
+    end;
+
+  presult := @Result[1];
+  eolchar := RightStr(LineEnding,1)[1];
+  m.Seek(0,soBeginning);
+  state := cosBeginOfLine;
+  while m.Position<m.Size do
+    begin
+      ch := char(m.ReadByte);
+      case state of
+        cosBeginOfLine:
+          begin
+            if ch='(' then
+              state := cosParseNumber
+            else if ch=' ' then
+              begin
+                presult^ := ch;
+                inc(presult);
+              end
+            else
+              begin
+                presult^ := ch;
+                inc(presult);
+                state := cosSearchColon;
+              end;
+          end;
+        cosParseNumber:
+          begin
+            if ch=')' then
+              begin
+              state := cosOther;
+              // Omit the space behind the number
+              ch := char(m.ReadByte);
+              assert(ch=' ');
+              end;
+          end;
+        cosOther:
+          begin
+            presult^ := ch;
+            inc(presult);
+            if ch=eolchar then
+              state := cosBeginOfLine;
+          end;
+        cosSearchColon:
+          begin
+            presult^ := ch;
+            inc(presult);
+            if (ch=':') or (ch=eolchar) then
+              state := cosBeginOfLine;
+          end;
+      end;
+    end;
+  setlength(Result,presult-@result[1]);
+end;
+>>>>>>> origin/cpstrnew
 
   function ReadFromStream: longint;
 
@@ -3740,7 +4027,26 @@ begin
     end;
 end;
 
+<<<<<<< HEAD
 {$endif NO_THREADING}
+=======
+procedure AddCustomFpmakeCommandlineOption(const ACommandLineOption, HelpMessage : string);
+begin
+  if not assigned(CustomFpmakeCommandlineOptions) then
+    CustomFpmakeCommandlineOptions := TStringList.Create;
+  CustomFpmakeCommandlineOptions.Values[ACommandLineOption]:=HelpMessage;
+end;
+
+function GetCustomFpmakeCommandlineOptionValue(const ACommandLineOption: string): string;
+begin
+  if not assigned(CustomFpMakeCommandlineValues) then
+    result := ''
+  else
+    result := CustomFpMakeCommandlineValues.Values[ACommandLineOption];
+end;
+
+Function OptionListToString(L : TStrings) : String;
+>>>>>>> origin/cpstrnew
 
 {****************************************************************************
                            TUnsortedDuplicatesStringList
@@ -3760,6 +4066,22 @@ end;
 
 =======
 >>>>>>> graemeg/cpstrnew
+{****************************************************************************
+                           TUnsortedDuplicatesStringList
+****************************************************************************}
+
+function TUnsortedDuplicatesStringList.Add(const S: string): Integer;
+
+begin
+  result := IndexOf(S);
+  If result > -1 then
+    Case DUplicates of
+      DupIgnore : Exit;
+      DupError : Error(SDuplicateString,0)
+    end;
+  inherited Add(S);
+end;
+
 {****************************************************************************
                            TUnsortedDuplicatesStringList
 ****************************************************************************}
@@ -4129,11 +4451,14 @@ procedure TSources.AddDocFiles(const AFileMask, ASearchPathPrefix: string; Recur
 procedure TSources.AddDocFiles(const AFileMask: string; Recursive: boolean; AInstallSourcePath : String = '');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 var
   List : TStrings;
   i: integer;
@@ -4162,6 +4487,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TSources.AddExampleFiles(const AFileMask, ASearchPathPrefix: string; Recursive: boolean; AInstallSourcePath: String);
 =======
 procedure TSources.AddExampleFiles(const AFileMask: string; Recursive: boolean; AInstallSourcePath : String = '');
@@ -4172,6 +4498,9 @@ procedure TSources.AddExampleFiles(const AFileMask: string; Recursive: boolean; 
 =======
 procedure TSources.AddExampleFiles(const AFileMask: string; Recursive: boolean; AInstallSourcePath : String = '');
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TSources.AddExampleFiles(const AFileMask: string; Recursive: boolean; AInstallSourcePath : String = '');
+>>>>>>> origin/cpstrnew
 var
   List : TStrings;
   i: integer;
@@ -4390,6 +4719,20 @@ begin
       T:=FTargets.TargetItems[I];
       if (T.TargetType in TargetTypes) then
         T.GetArchiveFiles(List,Defaults.CPU,Defaults.OS);
+    end;
+end;
+
+
+procedure TPackage.GetInstallSourceFiles(List: TStrings; Types: TSourceTypes);
+Var
+  I : Integer;
+  S : TSource;
+begin
+  For I:=0 to FSources.Count-1 do
+    begin
+      S:=FSources.SourceItems[I];
+      if (S.SourceType in Types) then
+        S.GetInstallFiles(List);
     end;
 end;
 
@@ -4752,6 +5095,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         Flags.DelimitedText:=Values[KeyFlags];
 
         i := 1;
@@ -4794,6 +5138,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
   Finally
     L.Free;
@@ -5016,6 +5362,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   else if (Defaults.BuildOS=freebsd) or (Defaults.BuildOS=dragonfly) then
     Result:=Prefix+'share'+PathDelim+'doc'+PathDelim+'fpc-$(CompilerVersion)'+PathDelim+'$(PackageName)'
   else If UnixPaths then
@@ -5026,6 +5373,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   else
     Result:=BaseInstallDir+'docs'+PathDelim+'$(PackageName)';
 end;
@@ -5067,6 +5416,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Result:='';
 end;
 
@@ -5089,6 +5439,9 @@ begin
 =======
     Result:=BaseInstallDir+'units'+PathDelim+Target;
 >>>>>>> graemeg/cpstrnew
+=======
+    Result:=BaseInstallDir+'units'+PathDelim+Target;
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -5100,6 +5453,7 @@ end;
 function TCustomDefaults.GetFPDocOutputDir: String;
 begin
   If (FFPDocOutputDir<>'') then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5135,6 +5489,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     Result:=IncludeTrailingPathDelimiter(FixPath(FFPDocOutputDir))
   else
     Result:=IncludeTrailingPathDelimiter(FixPath('.'+PathDelim+'docs'));
@@ -5142,11 +5498,14 @@ end;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 function TCustomDefaults.GetGlobalUnitDir: String;
 begin
@@ -5663,6 +6022,7 @@ procedure TCustomInstaller.AnalyzeOptions;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Function CheckOption(Index : Integer;const Short,Long : String; AddToOptionString: boolean = false): Boolean;
 =======
   Function CheckOption(Index : Integer;const Short,Long : String; AddToOptionString: boolean = true): Boolean;
@@ -5673,11 +6033,15 @@ procedure TCustomInstaller.AnalyzeOptions;
 =======
   Function CheckOption(Index : Integer;const Short,Long : String; AddToOptionString: boolean = true): Boolean;
 >>>>>>> graemeg/cpstrnew
+=======
+  Function CheckOption(Index : Integer;const Short,Long : String; AddToOptionString: boolean = true): Boolean;
+>>>>>>> origin/cpstrnew
   var
     O : String;
   begin
     O:=Paramstr(Index);
     Result:=(O='-'+short) or (O='--'+long) or (copy(O,1,Length(Long)+3)=('--'+long+'='));
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5708,6 +6072,9 @@ procedure TCustomInstaller.AnalyzeOptions;
 =======
     if AddToOptionString and Result then FFPMakeOptionsString := FFPMakeOptionsString+' '+O;
 >>>>>>> graemeg/cpstrnew
+=======
+    if AddToOptionString and Result then FFPMakeOptionsString := FFPMakeOptionsString+' '+O;
+>>>>>>> origin/cpstrnew
   end;
 
   Function CheckCustomOption(Index : Integer; out CustOptName: string): Boolean;
@@ -5727,6 +6094,7 @@ procedure TCustomInstaller.AnalyzeOptions;
     CustOptName:=O;
     Result:=CustomFpmakeCommandlineOptions.IndexOfName(O)>-1;
     if Result then FFPMakeOptionsString := FFPMakeOptionsString+' '+Paramstr(Index);
+<<<<<<< HEAD
   end;
 
 =======
@@ -5758,6 +6126,10 @@ procedure TCustomInstaller.AnalyzeOptions;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+  end;
+
+>>>>>>> origin/cpstrnew
 
   Function CheckCommand(Index : Integer;const Short,Long : String): Boolean;
   var
@@ -5888,6 +6260,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     else if CheckOption(I,'o','options', true) then
       begin
         OptString := OptionArg(I, true);
@@ -5906,6 +6279,11 @@ begin
       begin
         OptString := OptionArg(I);
 >>>>>>> graemeg/cpstrnew
+=======
+    else if CheckOption(I,'o','options') then
+      begin
+        OptString := OptionArg(I);
+>>>>>>> origin/cpstrnew
         while OptString <> '' do
           Defaults.Options.Add(SplitSpaces(OptString));
       end
@@ -5913,6 +6291,7 @@ begin
       Defaults.Compiler:=OptionArg(I)
     else if CheckOption(I,'f','config') then
       DefaultsFileName:=OptionArg(I)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5933,21 +6312,27 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     else if CheckOption(I,'io','ignoreinvalidoption') then
       Defaults.IgnoreInvalidOptions:=true
     else if CheckOption(I,'d','doc-folder') then
       Defaults.FPDocOutputDir:=OptionArg(I)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     else if assigned(CustomFpmakeCommandlineOptions) and CheckCustomOption(I,CustOptName) then
       begin
       if not assigned(CustomFpMakeCommandlineValues) then
         CustomFpMakeCommandlineValues := TStringList.Create;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -5969,6 +6354,11 @@ begin
       end
     else if not Defaults.IgnoreInvalidOptions then
 >>>>>>> graemeg/cpstrnew
+=======
+      CustomFpMakeCommandlineValues.Values[CustOptName]:=OptionArg(I)
+      end
+    else if not Defaults.IgnoreInvalidOptions then
+>>>>>>> origin/cpstrnew
       begin
       Usage(SErrInValidArgument,[I,ParamStr(I)]);
       end;
@@ -6043,6 +6433,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   LogArgOption('d', 'doc-folder', sHelpFpdocOutputDir);
   LogArgOption('fsp', 'fpunitsrcpath', sHelpFPUnitSrcPath);
   LogArgOption('zp', 'zipprefix', sHelpZipPrefix);
@@ -6061,6 +6452,10 @@ begin
   LogArgOption('io','ignoreinvalidoption',SHelpIgnoreInvOpt);
   LogArgOption('d', 'doc-folder', sHelpFpdocOutputDir);
 >>>>>>> graemeg/cpstrnew
+=======
+  LogArgOption('io','ignoreinvalidoption',SHelpIgnoreInvOpt);
+  LogArgOption('d', 'doc-folder', sHelpFpdocOutputDir);
+>>>>>>> origin/cpstrnew
   if assigned(CustomFpmakeCommandlineOptions) then for i  := 0 to CustomFpmakeCommandlineOptions.Count-1 do
     LogArgOption(' ',CustomFpmakeCommandlineOptions.Names[i],CustomFpmakeCommandlineOptions.ValueFromIndex[i]);
   Log(vlInfo,'');
@@ -6076,6 +6471,7 @@ begin
   FNotifyEventCollection.CallEvents(neaBeforeCompile, Self);
   FBuildEngine.ForceCompile:=Force;
   FBuildEngine.Compile(Packages);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6106,6 +6502,8 @@ begin
 =======
   BuildEngine.Clean(Packages);
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -6121,14 +6519,19 @@ end;
 
 procedure TCustomInstaller.ZipInstall;
 begin
+<<<<<<< HEAD
   NotifyEventCollection.CallEvents(neaBeforeInstall, self);
   BuildEngine.ZipInstall(Packages);
   NotifyEventCollection.CallEvents(neaAfterInstall, self);
+=======
+  BuildEngine.Clean(Packages);
+>>>>>>> origin/cpstrnew
 end;
 
 
 procedure TCustomInstaller.UnInstall;
 begin
+<<<<<<< HEAD
   NotifyEventCollection.CallEvents(neaBeforeUnInstall, self);
   BuildEngine.UnInstall(Packages);
   NotifyEventCollection.CallEvents(neaAfterUnInstall, self);
@@ -6141,6 +6544,9 @@ begin
 =======
   BuildEngine.Install(Packages);
 >>>>>>> graemeg/cpstrnew
+=======
+  BuildEngine.Install(Packages);
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -6156,16 +6562,20 @@ begin
   BuildEngine.Archive(Packages);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
 procedure TCustomInstaller.Manifest;
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -6189,6 +6599,9 @@ begin
 =======
   BuildEngine.Manifest(Packages);
 >>>>>>> graemeg/cpstrnew
+=======
+  BuildEngine.Manifest(Packages);
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -6413,6 +6826,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         E:=ExecuteFPC(Verbose, cmd, args, env, ConsoleOutput);
 =======
         E:=ExecuteFPC(Verbose, cmd, args, ConsoleOutput);
@@ -6423,6 +6837,9 @@ begin
 =======
         E:=ExecuteFPC(Verbose, cmd, args, ConsoleOutput);
 >>>>>>> graemeg/cpstrnew
+=======
+        E:=ExecuteFPC(Verbose, cmd, args, ConsoleOutput);
+>>>>>>> origin/cpstrnew
         {$else}
         E:=ExecuteProcess(cmd,args);
         {$endif}
@@ -6642,6 +7059,7 @@ procedure TBuildEngine.SysDeleteTree(Const ADirectoryName: String);
   end;
 
 begin
+<<<<<<< HEAD
   if not DirectoryExists(ADirectoryName) then
     Log(vldebug,SDbgDirectoryDoesNotExist,[ADirectoryName])
   else If Not IntRemoveTree(ADirectoryName) then
@@ -6651,6 +7069,10 @@ begin
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+  if not FileExists(AFileName) then
+    Log(vldebug,SDbgFileDoesNotExist,[AFileName])
+>>>>>>> origin/cpstrnew
   else If Not DeleteFile(AFileName) then
     Error(SErrDeletingFile,[AFileName]);
 >>>>>>> graemeg/cpstrnew
@@ -6719,6 +7141,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
@@ -6743,6 +7166,8 @@ begin
           FOnCopyFile(APackage, AddPathPrefix(APackage, List[i]), DestDir+ExtractFileName(List[i]));
       Exit;
     end;
+=======
+>>>>>>> origin/cpstrnew
 
   // Copy the files to their new location on disk
   CmdCreateDir(DestDir);
@@ -6764,6 +7189,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           SysCopyFile(AddPathPrefix(APackage, List.Names[i]),DestFileName)
         end
       else
@@ -6773,17 +7199,22 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           SysCopyFile(List.names[i],DestFileName)
         end
       else
         SysCopyFile(List[i],DestDir);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
@@ -6888,6 +7319,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure TBuildEngine.CmdRemoveDirs(List: TStrings);
 Var
   Args : String;
@@ -6924,6 +7356,8 @@ end;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 Function TBuildEngine.FileNewer(const Src,Dest : String) : Boolean;
 
 Var
@@ -7102,6 +7536,7 @@ Procedure TBuildEngine.ResolveFileNames(APackage : TPackage; ACPU:TCPU;AOS:TOS;D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if WarnIfNotFound then
           Log(vlWarning,SWarnSourceFileNotFound,[T.SourceFileName,APackage.Name,MakeTargetString(ACPU,AOS)]);
         APackage.FAllFilesResolved:=false;
@@ -7114,6 +7549,9 @@ Procedure TBuildEngine.ResolveFileNames(APackage : TPackage; ACPU:TCPU;AOS:TOS;D
 =======
         Log(vlWarning,SWarnSourceFileNotFound,[T.SourceFileName,APackage.Name,MakeTargetString(ACPU,AOS)]);
 >>>>>>> graemeg/cpstrnew
+=======
+        Log(vlWarning,SWarnSourceFileNotFound,[T.SourceFileName,APackage.Name,MakeTargetString(ACPU,AOS)]);
+>>>>>>> origin/cpstrnew
         T.FTargetSourceFileName:='';
       end;
   end;
@@ -7155,6 +7593,7 @@ Procedure TBuildEngine.ResolveFileNames(APackage : TPackage; ACPU:TCPU;AOS:TOS;D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     if WarnIfNotFound then
                       Log(vlWarning,SWarnIncludeFileNotFound,[D.Value, APackage.Name, MakeTargetString(ACPU,AOS)]);
                     APackage.FAllFilesResolved:=false;
@@ -7167,6 +7606,9 @@ Procedure TBuildEngine.ResolveFileNames(APackage : TPackage; ACPU:TCPU;AOS:TOS;D
 =======
                     Log(vlWarning,SWarnIncludeFileNotFound,[D.Value, APackage.Name, MakeTargetString(ACPU,AOS)]);
 >>>>>>> graemeg/cpstrnew
+=======
+                    Log(vlWarning,SWarnIncludeFileNotFound,[D.Value, APackage.Name, MakeTargetString(ACPU,AOS)]);
+>>>>>>> origin/cpstrnew
                     D.TargetFileName:='';
                   end;
               end;
@@ -7193,6 +7635,7 @@ Procedure TBuildEngine.ResolveFileNames(APackage : TPackage; ACPU:TCPU;AOS:TOS;D
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if WarnIfNotFound then
           Log(vlWarning,SWarnSourceFileNotFound,[T.SourceFileName, APackage.Name, MakeTargetString(ACPU,AOS)]);
 =======
@@ -7204,6 +7647,9 @@ Procedure TBuildEngine.ResolveFileNames(APackage : TPackage; ACPU:TCPU;AOS:TOS;D
 =======
         Log(vlWarning,SWarnSourceFileNotFound,[T.SourceFileName, APackage.Name, MakeTargetString(ACPU,AOS)]);
 >>>>>>> graemeg/cpstrnew
+=======
+        Log(vlWarning,SWarnSourceFileNotFound,[T.SourceFileName, APackage.Name, MakeTargetString(ACPU,AOS)]);
+>>>>>>> origin/cpstrnew
         T.FTargetSourceFileName:='';
         APackage.FAllFilesResolved:=false;
       end;
@@ -7454,6 +7900,7 @@ Var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   s : string;
   ErrS: string;
 =======
@@ -7462,6 +7909,8 @@ Var
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   i : Integer;
 begin
   if ATarget.TargetSourceFileName = '' then
@@ -7790,6 +8239,10 @@ begin
                   begin
                     log(vlWarning,SWarnTargetDependsOnPackage,[ATarget.Name, APackage.Name, d.Value]);
                   end;
+                depPackage :
+                  begin
+                    log(vlWarning,SWarnTargetDependsOnPackage,[ATarget.Name, APackage.Name, d.Value]);
+                  end;
               end;
               if result then
                 break;
@@ -7995,6 +8448,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       F:=result.UnitConfigFileName;
       if (F<>'') then
         begin
@@ -8026,6 +8480,16 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+      F:=IncludeTrailingPathDelimiter(S)+UnitConfigFile;
+      if FileExists(F) then
+        begin
+          Log(vlDebug, Format(SDbgLoading, [F]));
+          Result.LoadUnitConfigFromFile(F);
+        end
+      else if FileExists(IncludeTrailingPathDelimiter(S)+FPMakePPFile) then
+        begin
+>>>>>>> origin/cpstrnew
           // The package is not installed, but the source-path is given.
           // It is an external package so it is impossible to compile it, so
           // assume that it has been compiled earlier.
@@ -8037,6 +8501,7 @@ begin
               Result.UnitDir := F;
               Result.FTargetState:=tsCompiled;
             end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
@@ -8093,6 +8558,8 @@ begin
              (P.InstalledChecksum<>D.RequireChecksum) then
             Log(vlDebug,SDbgPackageChecksumChanged,[P.Name]);
           APackage.InheritPackageVariantsFromDependency(P);
+=======
+>>>>>>> origin/cpstrnew
         end;
     end;
 end;
@@ -8117,19 +8584,26 @@ begin
                 begin
                   case P.State of
                     tsNeutral :
+<<<<<<< HEAD
                       result := cdNotYetAvailable;
+=======
+                      MaybeCompile(P);
+>>>>>>> origin/cpstrnew
                     tsConsidering :
                       Log(vlWarning,SWarnCircularPackageDependency,[APackage.Name,P.Name]);
                   end;
                 end
               else
                 Log(vlWarning,SWarnDependOnOtherPlatformPackage,[APackage.Name, D.Value, MakeTargetString(Defaults.CPU, Defaults.OS)]);
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             end
           else
             begin
@@ -8155,6 +8629,7 @@ Var
   sFPDocFormat: string;
   IFPDocFormat: TFPDocFormat;
   d: integer;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8288,6 +8763,12 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+  dep: TDependency;
+begin
+  cmdOpts := '';
+
+>>>>>>> origin/cpstrnew
   Try
     CreateOutputDir(APackage);
     AddPackageMacrosToDictionary(APackage, APackage.Dictionary);
@@ -8311,6 +8792,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         ttUnit:
           begin
             ProcessCompileTarget;
@@ -8322,6 +8804,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
         ttUnit,ttProgram:
           begin
@@ -8339,11 +8823,14 @@ begin
               end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           end;
         ttFPDoc:
           begin
@@ -8353,6 +8840,7 @@ begin
 
               //add unit dependencies
               if dep.DependencyType = depUnit then
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8366,6 +8854,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 cmdOpts := cmdOpts + ' --input=' + dep.Value;
             end;
 
@@ -8373,15 +8863,19 @@ begin
             cmdOpts := cmdOpts + ' --input=' + T.Directory + T.Name + T.Extension + ' --descr='+ T.XML;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
           end
         else
           log(vldebug, SDbgTargetIsNotAUnitOrProgram,[T.Name]);
         end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8435,6 +8929,8 @@ begin
         end;
       end;
 =======
+=======
+>>>>>>> origin/cpstrnew
       end;
 
     //compile documentation, because options were found
@@ -8463,6 +8959,7 @@ begin
           ExecuteProcess(Cmd, sFPDocFormat + cmdOpts);
         end;
       end;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
       end;
@@ -8524,6 +9021,8 @@ begin
         end;
       end;
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
 
     DoAfterCompile(APackage);
@@ -8539,6 +9038,7 @@ end;
 
 procedure TBuildEngine.MaybeCompile(APackage: TPackage);
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -8558,6 +9058,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   if APackage.State in [tsCompiled, tsNoCompile] then
     begin
       Log(vlInfo,SInfoPackageAlreadyProcessed,[APackage.Name]);
@@ -8731,6 +9233,24 @@ begin
   end;
 end;
 
+function TBuildEngine.InstallPackageSourceFiles(APAckage: TPackage; tt: TSourceType; const Dest: String): Boolean;
+Var
+  List : TStringList;
+begin
+  Result:=False;
+  List:=TStringList.Create;
+  Try
+    APackage.GetInstallSourceFiles(List,[tt]);
+    if (List.Count>0) then
+      begin
+        Result:=True;
+        CmdCopyFiles(List,Dest);
+      end;
+  Finally
+    List.Free;
+  end;
+end;
+
 
 procedure TBuildEngine.DoBeforeInstall(APackage: TPackage);
 begin
@@ -8817,11 +9337,14 @@ begin
     InstallPackageSourceFiles(APackage,stExample,D);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Done.
     APackage.FTargetState:=tsInstalled;
     DoAfterInstall(APackage);
@@ -9271,11 +9794,14 @@ begin
       log(vlWarning,SWarnBuildingPackagecomplete,[(I + 1)/Packages.Count * 100, P.Name]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   NotifyEventCollection.CallEvents(neaAfterInstall, Self);
 end;
@@ -9331,11 +9857,14 @@ begin
       log(vlWarning, SWarnInstallationPackagecomplete, [P.Name, Defaults.Target]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   NotifyEventCollection.CallEvents(neaAfterUnInstall, Self);
 end;
@@ -9458,11 +9987,14 @@ begin
     log(vlWarning, SWarnCleanPackagecomplete, [P.Name]);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   NotifyEventCollection.CallEvents(neaAfterClean, Self);
 end;
@@ -9738,6 +10270,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   FXML:=FixPath(AValue, False);
 =======
   FXML:=FixPath(AValue);
@@ -9748,6 +10281,9 @@ begin
 =======
   FXML:=FixPath(AValue);
 >>>>>>> graemeg/cpstrnew
+=======
+  FXML:=FixPath(AValue);
+>>>>>>> origin/cpstrnew
 end;
 
 procedure TTarget.GetCleanFiles(List: TStrings; const APrefixU, APrefixB : String; ACPU: TCPU; AOS : TOS);

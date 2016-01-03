@@ -17,6 +17,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Directory:=ADirectory;
 {$endif ALLPACKAGES}
     P.Version:='3.1.1';
@@ -35,6 +36,11 @@ begin
 {$endif ALLPACKAGES}
     P.Version:='2.2.2-0';
 >>>>>>> graemeg/cpstrnew
+=======
+    P.Directory:='opencl';
+{$endif ALLPACKAGES}
+    P.Version:='2.2.2-0';
+>>>>>>> origin/cpstrnew
     P.Author := ' Dmitry "skalogryz" Boyarintsev; Kronos group';
     P.License := 'Library: modified BSD, header: LGPL with modification, ';
     P.HomepageURL := 'www.freepascal.org';
@@ -47,6 +53,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.Dependencies.Add('opengl');
 
 =======
@@ -55,6 +62,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     P.SourcePath.Add('src');
     P.IncludePath.Add('src');
 

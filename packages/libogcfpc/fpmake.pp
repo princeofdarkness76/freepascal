@@ -16,6 +16,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     P.OSes:=[wii];
     P.CPUs:=[powerpc];
 {$ifdef ALLPACKAGES}
@@ -158,6 +159,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifdef ALLPACKAGES}
     P.Directory:='libogcfpc';
 {$endif ALLPACKAGES}
@@ -168,11 +171,14 @@ begin
     // not linux compilable, skip
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifndef ALLPACKAGES}
     Run;

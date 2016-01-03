@@ -242,6 +242,7 @@ function PageBookInfoRecordSize(ARecord: PTOCEntryPageBookInfo): Integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Const defvalidflags = [valid_Navigation_pane_style,valid_Window_style_flags,valid_Initial_window_position,valid_Navigation_pane_width,valid_Buttons,valid_Tab_position];
 =======
@@ -250,6 +251,8 @@ Const defvalidflags = [valid_Navigation_pane_style,valid_Window_style_flags,vali
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 implementation
 uses chmbase;
@@ -460,10 +463,13 @@ var
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 begin
  if i>len then exit('');
@@ -482,6 +488,7 @@ begin
    end;
  i:=ind+1; // skip ,
 end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -511,6 +518,9 @@ end;
 =======
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+>>>>>>> origin/cpstrnew
 function getnextint(const txt:string;var ind: integer;len:integer;var flags : TValidWindowFields;x:TValidWindowFieldsEnum):integer;
 
 var s : string;
@@ -533,6 +543,7 @@ var ind,len,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     bArr    : Boolean;
 begin
 =======
@@ -547,6 +558,10 @@ begin
 begin
   flags:=[];
 >>>>>>> graemeg/cpstrnew
+=======
+begin
+  flags:=[];
+>>>>>>> origin/cpstrnew
   j:=pos('=',txt);
   if j>0 then
     txt[j]:=',';
@@ -556,6 +571,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Toc_file          :=getnext(txt,ind,len);
   index_file        :=getnext(txt,ind,len);
 =======
@@ -570,12 +586,17 @@ begin
   index_file        :=getnext(txt,ind,len);
   Toc_file          :=getnext(txt,ind,len);
 >>>>>>> graemeg/cpstrnew
+=======
+  index_file        :=getnext(txt,ind,len);
+  Toc_file          :=getnext(txt,ind,len);
+>>>>>>> origin/cpstrnew
   Default_File      :=getnext(txt,ind,len);
   Home_button_file  :=getnext(txt,ind,len);
   Jumpbutton_1_File :=getnext(txt,ind,len);
   Jumpbutton_1_Text :=getnext(txt,ind,len);
   Jumpbutton_2_File :=getnext(txt,ind,len);
   Jumpbutton_2_Text :=getnext(txt,ind,len);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -616,6 +637,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
   nav_style         :=getnextint(txt,ind,len,flags,valid_navigation_pane_style);
   navpanewidth      :=getnextint(txt,ind,len,flags,valid_navigation_pane_width);
@@ -633,11 +656,14 @@ begin
   until (j<>0) or (ind>len);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   left  :=arr[0];
   top   :=arr[1];
   right :=arr[2];
@@ -714,6 +740,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  flags:=defvalidflags;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -721,6 +748,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
  if s<>'' then
    load_from_ini(s);
 end;

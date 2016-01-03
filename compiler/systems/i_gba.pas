@@ -91,6 +91,7 @@ unit i_gba;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             stackalign   : 8;
             abi : abi_eabi;
             llvmdatalayout : 'todo';
@@ -103,6 +104,9 @@ unit i_gba;
 =======
             abi : abi_eabi
 >>>>>>> graemeg/cpstrnew
+=======
+            abi : abi_eabi
+>>>>>>> origin/cpstrnew
           );
 
   implementation

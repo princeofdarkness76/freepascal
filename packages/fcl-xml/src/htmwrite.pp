@@ -75,6 +75,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     constructor Create(AStream: TStream; ACapacity : Cardinal = 4096);
 =======
     constructor Create(AStream: TStream);
@@ -85,6 +86,9 @@ type
 =======
     constructor Create(AStream: TStream);
 >>>>>>> graemeg/cpstrnew
+=======
+    constructor Create(AStream: TStream);
+>>>>>>> origin/cpstrnew
     destructor Destroy; override;
   end;
 
@@ -126,6 +130,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor THTMLWriter.Create(AStream: TStream; ACapacity : Cardinal = 4096);
 =======
 constructor THTMLWriter.Create(AStream: TStream);
@@ -136,6 +141,9 @@ constructor THTMLWriter.Create(AStream: TStream);
 =======
 constructor THTMLWriter.Create(AStream: TStream);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor THTMLWriter.Create(AStream: TStream);
+>>>>>>> origin/cpstrnew
 begin
   inherited Create;
   FStream := AStream;

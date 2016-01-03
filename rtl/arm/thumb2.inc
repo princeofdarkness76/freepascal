@@ -18,6 +18,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$asmmode divided}
 =======
 {$asmmode gas}
@@ -28,6 +29,9 @@
 =======
 {$asmmode gas}
 >>>>>>> graemeg/cpstrnew
+=======
+{$asmmode gas}
+>>>>>>> origin/cpstrnew
 
 {$ifndef FPC_SYSTEM_HAS_MOVE}
 {$define FPC_SYSTEM_FPC_MOVE}
@@ -48,6 +52,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$if defined(FPUFPA) or defined(FPUFPA10) or defined(FPUFPA11)}
 
 =======
@@ -56,10 +61,13 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     rfs r0
     and r0,r0,#0xffe0ffff
     orr r0,r0,#0x00070000
     wfs r0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -76,6 +84,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 {$endif}
@@ -94,6 +104,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   softfloat_exception_flags:=[];
 =======
   softfloat_exception_flags:=0;
@@ -104,11 +115,15 @@ begin
 =======
   softfloat_exception_flags:=0;
 >>>>>>> graemeg/cpstrnew
+=======
+  softfloat_exception_flags:=0;
+>>>>>>> origin/cpstrnew
 end;
 
 {$define FPC_SYSTEM_HAS_SYSINITFPU}
 Procedure SysInitFPU;{$ifdef SYSTEMINLINE}inline;{$endif}
 begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -122,6 +137,9 @@ begin
 =======
   softfloat_exception_mask:=float_flag_underflow or float_flag_inexact or float_flag_denormal;
 >>>>>>> graemeg/cpstrnew
+=======
+  softfloat_exception_mask:=float_flag_underflow or float_flag_inexact or float_flag_denormal;
+>>>>>>> origin/cpstrnew
   { Enable FPU exceptions, but disable INEXACT, UNDERFLOW, DENORMAL }
   { FPU precision 64 bit, rounding to nearest, affine infinity }
   _controlfp($000C0003, $030F031F);
@@ -150,6 +168,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function get_caller_addr(framebp:pointer;addr:pointer=nil):pointer;assembler;
 =======
 function get_caller_addr(framebp:pointer):pointer;assembler;
@@ -160,6 +179,9 @@ function get_caller_addr(framebp:pointer):pointer;assembler;
 =======
 function get_caller_addr(framebp:pointer):pointer;assembler;
 >>>>>>> graemeg/cpstrnew
+=======
+function get_caller_addr(framebp:pointer):pointer;assembler;
+>>>>>>> origin/cpstrnew
 asm
   movs r0,r0
   beq .Lg_a_null
@@ -169,6 +191,7 @@ end;
 
 
 {$define FPC_SYSTEM_HAS_GET_CALLER_FRAME}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -182,6 +205,9 @@ function get_caller_frame(framebp:pointer):pointer;assembler;
 =======
 function get_caller_frame(framebp:pointer):pointer;assembler;
 >>>>>>> graemeg/cpstrnew
+=======
+function get_caller_frame(framebp:pointer):pointer;assembler;
+>>>>>>> origin/cpstrnew
 asm
   movs r0,r0
   beq .Lgnf_null
@@ -419,12 +445,15 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure fpc_shortstr_to_shortstr(out res:shortstring;const sstr:shortstring);assembler;nostackframe;[public,alias: 'FPC_SHORTSTR_TO_SHORTSTR'];compilerproc;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifndef FPC_STRTOSHORTSTRINGPROC}
 function fpc_shortstr_to_shortstr(len:longint;const sstr:shortstring):shortstring;assembler;nostackframe;[public,alias: 'FPC_SHORTSTR_TO_SHORTSTR'];compilerproc;
 {$else}
@@ -432,11 +461,14 @@ procedure fpc_shortstr_to_shortstr(out res:shortstring;const sstr:shortstring);a
 {$endif}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {r0: __RESULT
  r1: len
  r2: sstr}
@@ -567,6 +599,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function fpc_Pchar_length(p:Pchar):sizeint;assembler;nostackframe;[public,alias:'FPC_PCHAR_LENGTH'];compilerproc;
 =======
 function fpc_Pchar_length(p:Pchar):longint;assembler;nostackframe;[public,alias:'FPC_PCHAR_LENGTH'];compilerproc;
@@ -577,6 +610,9 @@ function fpc_Pchar_length(p:Pchar):longint;assembler;nostackframe;[public,alias:
 =======
 function fpc_Pchar_length(p:Pchar):longint;assembler;nostackframe;[public,alias:'FPC_PCHAR_LENGTH'];compilerproc;
 >>>>>>> graemeg/cpstrnew
+=======
+function fpc_Pchar_length(p:Pchar):longint;assembler;nostackframe;[public,alias:'FPC_PCHAR_LENGTH'];compilerproc;
+>>>>>>> origin/cpstrnew
 
 asm
     cmp r0,#0
@@ -614,6 +650,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function InterLockedDecrement (var Target: longint) : longint; assembler; nostackframe;
 asm
 .Lloop:
@@ -629,6 +666,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 var
   fpc_system_lock: longint; export name 'fpc_system_lock';
@@ -658,16 +697,20 @@ asm
   .long fpc_system_lock
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
 function InterLockedIncrement (var Target: longint) : longint; assembler; nostackframe;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -684,6 +727,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 // lock
   ldr r3, .Lfpc_system_lock
   mov r1, #1
@@ -707,16 +752,20 @@ asm
   .long fpc_system_lock
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 
 function InterLockedExchange (var Target: longint;Source : longint) : longint; assembler; nostackframe;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -732,6 +781,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 // lock
   ldr r3, .Lfpc_system_lock
@@ -756,15 +807,19 @@ asm
   .long fpc_system_lock
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 function InterLockedExchangeAdd (var Target: longint;Source : longint) : longint; assembler; nostackframe;
 asm
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -795,6 +850,8 @@ asm
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 // lock
   ldr r3, .Lfpc_system_lock
   mov r2, #1
@@ -847,11 +904,14 @@ asm
   .long fpc_system_lock
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 end;
 
 {$define FPC_SYSTEM_HAS_DECLOCKED_LONGINT}
@@ -877,6 +937,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     ldrd r0,r1,[r0]
 =======
     ldrd r0,[r0]
@@ -887,6 +948,9 @@ begin
 =======
     ldrd r0,[r0]
 >>>>>>> graemeg/cpstrnew
+=======
+    ldrd r0,[r0]
+>>>>>>> origin/cpstrnew
   end;
   in_edsp_test:=false;
   if cpu_has_edsp then
@@ -898,19 +962,25 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {include hand-optimized assembler division code}
 {$i divide.inc}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew

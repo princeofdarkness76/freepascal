@@ -49,6 +49,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; forcetempdef: tdef): tcgpara;override;
 =======
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
@@ -59,6 +60,9 @@ unit cpupara;
 =======
           function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
 >>>>>>> graemeg/cpstrnew
+=======
+          function get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;override;
+>>>>>>> origin/cpstrnew
        end;
 
   implementation
@@ -81,8 +85,11 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
    ffi64.c - Copyright (c) 2002, 2007  Bo Thorsen <bo@suse.de>
              Copyright (c) 2008  Red Hat, Inc.
@@ -116,10 +123,14 @@ unit cpupara;
 
     type
 <<<<<<< HEAD
+<<<<<<< HEAD
       tx64paraclasstype = (
 =======
       tx64paraclass = (
 >>>>>>> graemeg/cpstrnew
+=======
+      tx64paraclass = (
+>>>>>>> origin/cpstrnew
         X86_64_NO_CLASS,
         X86_64_INTEGER_CLASS,X86_64_INTEGERSI_CLASS,
         X86_64_SSE_CLASS,X86_64_SSESF_CLASS,X86_64_SSEDF_CLASS,X86_64_SSEUP_CLASS,
@@ -127,6 +138,7 @@ unit cpupara;
         X86_64_COMPLEX_X87_CLASS,
         X86_64_MEMORY_CLASS
       );
+<<<<<<< HEAD
 <<<<<<< HEAD
 
       tx64paraclass = record
@@ -275,6 +287,8 @@ unit cpupara;
         i: longint;
       begin
 =======
+=======
+>>>>>>> origin/cpstrnew
       tx64paraclasses = array[0..MAX_PARA_CLASSES-1] of tx64paraclass;
 
     { Win64-specific helper }
@@ -366,6 +380,7 @@ unit cpupara;
           end
       end;
 
+<<<<<<< HEAD
 
     function classify_argument(def: tdef; varspez: tvarspez; real_size: aint; var classes: tx64paraclasses; byte_offset: aint): longint; forward;
 
@@ -1250,6 +1265,75 @@ unit cpupara;
       var
         i: longint;
       begin
+=======
+
+    function classify_argument(def: tdef; varspez: tvarspez; real_size: aint; var classes: tx64paraclasses; byte_offset: aint): longint; forward;
+
+    function init_aggregate_classification(def: tdef; varspez: tvarspez; out words: longint; out classes: tx64paraclasses): longint;
+      var
+        i: longint;
+      begin
+        words:=0;
+        { win64 follows a different convention here }
+        if (target_info.system=system_x86_64_win64) then
+          begin
+            if aggregate_in_registers_win64(varspez,def.size) then
+              begin
+                classes[0]:=X86_64_INTEGER_CLASS;
+                result:=1;
+              end
+            else
+              result:=0;
+            exit;
+          end;
+
+        (* If the struct is larger than 32 bytes, pass it on the stack.  *)
+        if def.size > 32 then
+          exit(0);
+
+        words:=(def.size+7) div 8;
+
+        (* Zero sized arrays or structures are NO_CLASS.  We return 0 to
+           signal memory class, so handle it as special case.  *)
+        if (words=0) then
+          begin
+            classes[0]:=X86_64_NO_CLASS;
+            exit(1);
+          end;
+
+        { we'll be merging the classes elements with the subclasses
+          elements, so initialise them first }
+        for i:=low(classes) to high(classes) do
+          classes[i]:=X86_64_NO_CLASS;
+        result:=words;
+      end;
+
+
+    function classify_aggregate_element(def: tdef; varspez: tvarspez; real_size: aint; var classes: tx64paraclasses; new_byte_offset: aint): longint;
+      var
+        subclasses: tx64paraclasses;
+        i,
+        pos: longint;
+      begin
+        result:=classify_argument(def,varspez,real_size,subclasses,new_byte_offset mod 8);
+        if (result=0) then
+          exit;
+        pos:=new_byte_offset div 8;
+        if result-1+pos>high(classes) then
+          internalerror(2010053108);
+        for i:=0 to result-1 do
+          begin
+            classes[i+pos] :=
+              merge_classes(subclasses[i],classes[i+pos]);
+          end;
+      end;
+
+
+    function finalize_aggregate_classification(def: tdef; words: longint; var classes: tx64paraclasses): longint;
+      var
+        i: longint;
+      begin
+>>>>>>> origin/cpstrnew
         if (words>2) then
           begin
             (* When size > 16 bytes, if the first one isn't
@@ -1329,7 +1413,10 @@ unit cpupara;
         num: longint;
       begin
         result:=init_aggregate_classification(def,varspez,words,classes);
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         if (words=0) then
           exit;
 
@@ -1341,9 +1428,12 @@ unit cpupara;
             vs:=tfieldvarsym(tabstractrecorddef(def).symtable.symlist[i]);
             num:=-1;
 <<<<<<< HEAD
+<<<<<<< HEAD
             checkalignment:=true;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             if not tabstractrecordsymtable(tabstractrecorddef(def).symtable).is_packed then
               begin
                 new_byte_offset:=byte_offset+vs.fieldoffset;
@@ -1353,6 +1443,7 @@ unit cpupara;
               begin
                 new_byte_offset:=byte_offset+vs.fieldoffset div 8;
                 if (vs.vardef.typ in [orddef,enumdef]) then
+<<<<<<< HEAD
 <<<<<<< HEAD
                   begin
                     { calculate the number of bytes spanned by
@@ -1374,12 +1465,17 @@ unit cpupara;
                 result:=0;
                 exit;
 =======
+=======
+>>>>>>> origin/cpstrnew
                   { calculate the number of bytes spanned by
                     this bitpacked field }
                   size:=((vs.fieldoffset+vs.vardef.packedbitsize+7) div 8)-(vs.fieldoffset div 8)
                 else
                   size:=vs.vardef.size
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               end;
             num:=classify_aggregate_element(vs.vardef,varspez,size,classes,new_byte_offset);
             if (num=0) then
@@ -1402,6 +1498,7 @@ unit cpupara;
         isbitpacked: boolean;
       begin
 <<<<<<< HEAD
+<<<<<<< HEAD
         size:=0;
         bitoffset:=0;
         result:=init_aggregate_classification(def,varspez,byte_offset,words,classes);
@@ -1409,6 +1506,9 @@ unit cpupara;
 =======
         result:=init_aggregate_classification(def,varspez,words,classes);
 >>>>>>> graemeg/cpstrnew
+=======
+        result:=init_aggregate_classification(def,varspez,words,classes);
+>>>>>>> origin/cpstrnew
         if (words=0) then
           exit;
 
@@ -1433,6 +1533,7 @@ unit cpupara;
               { size does not change }
               new_byte_offset:=byte_offset+i*elesize;
 <<<<<<< HEAD
+<<<<<<< HEAD
               { If [..] an object [..] contains unaligned fields, it has class
                 MEMORY }
               if align(new_byte_offset,def.alignment)<>new_byte_offset then
@@ -1442,6 +1543,8 @@ unit cpupara;
                 end;
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
             end
           else
             begin
@@ -1470,6 +1573,7 @@ unit cpupara;
           pointerdef,
           classrefdef:
 <<<<<<< HEAD
+<<<<<<< HEAD
             result:=classify_as_integer_argument(def,real_size,classes,byte_offset);
           formaldef:
             result:=classify_as_integer_argument(voidpointertype,voidpointertype.size,classes,byte_offset);
@@ -1477,16 +1581,22 @@ unit cpupara;
             begin
               classes[0].def:=def;
 =======
+=======
+>>>>>>> origin/cpstrnew
             result:=classify_as_integer_argument(real_size,classes,byte_offset);
           formaldef:
             result:=classify_as_integer_argument(voidpointertype.size,classes,byte_offset);
           floatdef:
             begin
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               case tfloatdef(def).floattype of
                 s32real:
                   begin
                     if byte_offset=0 then
+<<<<<<< HEAD
 <<<<<<< HEAD
                       classes[0].typ:=X86_64_SSESF_CLASS
                     else
@@ -1497,26 +1607,36 @@ unit cpupara;
                         classes[0].def:=carraydef.getreusable_no_free(s32floattype,2);
                       end;
 =======
+=======
+>>>>>>> origin/cpstrnew
                       classes[0]:=X86_64_SSESF_CLASS
                     else
                       { if we have e.g. a record with two successive "single"
                         fields, we need a 64 bit rather than a 32 bit load }
                       classes[0]:=X86_64_SSE_CLASS;
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     result:=1;
                   end;
                 s64real:
                   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                     classes[0].typ:=X86_64_SSEDF_CLASS;
 =======
                     classes[0]:=X86_64_SSEDF_CLASS;
 >>>>>>> graemeg/cpstrnew
+=======
+                    classes[0]:=X86_64_SSEDF_CLASS;
+>>>>>>> origin/cpstrnew
                     result:=1;
                   end;
                 s80real,
                 sc80real:
                   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                     classes[0].typ:=X86_64_X87_CLASS;
                     classes[1].typ:=X86_64_X87UP_CLASS;
@@ -1525,20 +1645,29 @@ unit cpupara;
                     classes[0]:=X86_64_X87_CLASS;
                     classes[1]:=X86_64_X87UP_CLASS;
 >>>>>>> graemeg/cpstrnew
+=======
+                    classes[0]:=X86_64_X87_CLASS;
+                    classes[1]:=X86_64_X87UP_CLASS;
+>>>>>>> origin/cpstrnew
                     result:=2;
                   end;
                 s64comp,
                 s64currency:
                   begin
 <<<<<<< HEAD
+<<<<<<< HEAD
                     classes[0].typ:=X86_64_INTEGER_CLASS;
 =======
                     classes[0]:=X86_64_INTEGER_CLASS;
 >>>>>>> graemeg/cpstrnew
+=======
+                    classes[0]:=X86_64_INTEGER_CLASS;
+>>>>>>> origin/cpstrnew
                     result:=1;
                   end;
                 s128real:
                   begin
+<<<<<<< HEAD
 <<<<<<< HEAD
                     classes[0].typ:=X86_64_SSE_CLASS;
                     classes[0].def:=carraydef.getreusable_no_free(s32floattype,2);
@@ -1548,6 +1677,10 @@ unit cpupara;
                     classes[0]:=X86_64_SSE_CLASS;
                     classes[1]:=X86_64_SSEUP_CLASS;
 >>>>>>> graemeg/cpstrnew
+=======
+                    classes[0]:=X86_64_SSE_CLASS;
+                    classes[1]:=X86_64_SSEUP_CLASS;
+>>>>>>> origin/cpstrnew
                     result:=2;
                   end;
                 else
@@ -1564,19 +1697,27 @@ unit cpupara;
               else
                 { all kinds of pointer types: class, objcclass, interface, ... }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 result:=classify_as_integer_argument(def,voidpointertype.size,classes,byte_offset);
 =======
                 result:=classify_as_integer_argument(voidpointertype.size,classes,byte_offset);
 >>>>>>> graemeg/cpstrnew
+=======
+                result:=classify_as_integer_argument(voidpointertype.size,classes,byte_offset);
+>>>>>>> origin/cpstrnew
             end;
           setdef:
             begin
               if is_smallset(def) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                 result:=classify_as_integer_argument(def,def.size,classes,byte_offset)
 =======
                 result:=classify_as_integer_argument(def.size,classes,byte_offset)
 >>>>>>> graemeg/cpstrnew
+=======
+                result:=classify_as_integer_argument(def.size,classes,byte_offset)
+>>>>>>> origin/cpstrnew
               else
                 result:=0;
             end;
@@ -1586,20 +1727,28 @@ unit cpupara;
                 result:=0
               else
 <<<<<<< HEAD
+<<<<<<< HEAD
                 result:=classify_as_integer_argument(def,def.size,classes,byte_offset);
 =======
                 result:=classify_as_integer_argument(def.size,classes,byte_offset);
 >>>>>>> graemeg/cpstrnew
+=======
+                result:=classify_as_integer_argument(def.size,classes,byte_offset);
+>>>>>>> origin/cpstrnew
             end;
           arraydef:
             begin
               { a dynamic array is treated like a pointer }
               if is_dynamic_array(def) then
 <<<<<<< HEAD
+<<<<<<< HEAD
                 result:=classify_as_integer_argument(def,voidpointertype.size,classes,byte_offset)
 =======
                 result:=classify_as_integer_argument(voidpointertype.size,classes,byte_offset)
 >>>>>>> graemeg/cpstrnew
+=======
+                result:=classify_as_integer_argument(voidpointertype.size,classes,byte_offset)
+>>>>>>> origin/cpstrnew
               { other special arrays are passed on the stack }
               else if is_open_array(def) or
                       is_array_of_const(def) then
@@ -1622,10 +1771,14 @@ unit cpupara;
               else
                 { pointer }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 result:=classify_as_integer_argument(def,def.size,classes,byte_offset);
 =======
                 result:=classify_as_integer_argument(def.size,classes,byte_offset);
 >>>>>>> graemeg/cpstrnew
+=======
+                result:=classify_as_integer_argument(def.size,classes,byte_offset);
+>>>>>>> origin/cpstrnew
             end;
           variantdef:
             begin
@@ -1633,6 +1786,7 @@ unit cpupara;
               def:=search_system_type('TVARDATA').typedef;
               result:=classify_argument(def,varspez,def.size,classes,byte_offset);
             end;
+<<<<<<< HEAD
 <<<<<<< HEAD
           undefineddef:
             { show shall we know?
@@ -1643,12 +1797,60 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
           else
             internalerror(2010021405);
+=======
+          else
+            internalerror(2010021405);
         end;
       end;
 
 
     procedure getvalueparaloc(varspez:tvarspez;def:tdef;var loc1,loc2:tx64paraclass);
       var
+        size: aint;
+        i: longint;
+        classes: tx64paraclasses;
+        numclasses: longint;
+      begin
+        { init the classes array, because even if classify_argument inits only
+          one element we copy both to loc1/loc2 in case "1" is returned }
+        for i:=low(classes) to high(classes) do
+          classes[i]:=X86_64_NO_CLASS;
+        { def.size internalerrors for open arrays and dynamic arrays, since
+          their size cannot be determined at compile-time.
+          classify_argument does not look at the realsize argument for arrays
+          cases, but we obviously do have to pass something... }
+        if is_special_array(def) then
+          size:=-1
+        else
+          size:=def.size;
+        numclasses:=classify_argument(def,varspez,size,classes,0);
+        case numclasses of
+          0:
+           begin
+             loc1:=X86_64_MEMORY_CLASS;
+             loc2:=X86_64_NO_CLASS;
+           end;
+          1,2:
+            begin
+              { If the class is X87, X87UP or COMPLEX_X87, it is passed in memory }
+              if classes[0] in [X86_64_X87_CLASS,X86_64_X87UP_CLASS,X86_64_COMPLEX_X87_CLASS] then
+                classes[0]:=X86_64_MEMORY_CLASS;
+              if classes[1] in [X86_64_X87_CLASS,X86_64_X87UP_CLASS,X86_64_COMPLEX_X87_CLASS] then
+                classes[1]:=X86_64_MEMORY_CLASS;
+              loc1:=classes[0];
+              loc2:=classes[1];
+            end
+          else
+            { 4 can only happen for _m256 vectors, not yet supported }
+            internalerror(2010021501);
+>>>>>>> origin/cpstrnew
+        end;
+      end;
+
+
+    procedure getvalueparaloc(varspez:tvarspez;def:tdef;var loc1,loc2:tx64paraclass);
+      var
+<<<<<<< HEAD
         size: aint;
         i: longint;
         classes: tx64paraclasses;
@@ -1780,6 +1982,25 @@ unit cpupara;
 =======
             result:=inherited ret_in_param(def,calloption);
 >>>>>>> graemeg/cpstrnew
+=======
+        classes: tx64paraclasses;
+        numclasses: longint;
+      begin
+        if ((target_info.system=system_x86_64_win64) and
+            (calloption=pocall_safecall)) then
+          exit(true);
+        case def.typ of
+          { for records it depends on their contents and size }
+          recorddef,
+          { make sure we handle 'procedure of object' correctly }
+          procvardef:
+            begin
+              numclasses:=classify_argument(def,vs_value,def.size,classes,0);
+              result:=(numclasses=0);
+            end;
+          else
+            result:=inherited ret_in_param(def,calloption);
+>>>>>>> origin/cpstrnew
         end;
       end;
 
@@ -1812,11 +2033,14 @@ unit cpupara;
     function tx86_64paramanager.push_addr_param(varspez:tvarspez;def : tdef;calloption : tproccalloption) : boolean;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       var
         classes: tx64paraclasses;
         numclasses: longint;
@@ -1850,6 +2074,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                        not(calloption in cdecl_pocalls)) or
 =======
                        not(calloption in [pocall_cdecl,pocall_cppdecl])) or
@@ -1860,6 +2085,9 @@ unit cpupara;
 =======
                        not(calloption in [pocall_cdecl,pocall_cppdecl])) or
 >>>>>>> graemeg/cpstrnew
+=======
+                       not(calloption in [pocall_cdecl,pocall_cppdecl])) or
+>>>>>>> origin/cpstrnew
                       (def.size=16) then
                 begin
                   numclasses:=classify_argument(def,vs_value,def.size,classes,0);
@@ -1876,6 +2104,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
               if ((calloption in cdecl_pocalls) and
 =======
               if ((calloption in [pocall_cdecl,pocall_cppdecl]) and
@@ -1886,6 +2115,9 @@ unit cpupara;
 =======
               if ((calloption in [pocall_cdecl,pocall_cppdecl]) and
 >>>>>>> graemeg/cpstrnew
+=======
+              if ((calloption in [pocall_cdecl,pocall_cppdecl]) and
+>>>>>>> origin/cpstrnew
                   is_array_of_const(def)) or
                  is_dynamic_array(def) then
                 result:=false
@@ -1995,9 +2227,12 @@ unit cpupara;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     function tx86_64paramanager.get_funcretloc(p : tabstractprocdef; side: tcallercallee; def: tdef): tcgpara;
       const
         intretregs: array[0..1] of tregister = (NR_FUNCTION_RETURN_REG,NR_FUNCTION_RETURN_REG_HIGH);
@@ -2053,6 +2288,7 @@ unit cpupara;
             case tfloatdef(def).floattype of
               s32real:
 <<<<<<< HEAD
+<<<<<<< HEAD
                 begin
                   paraloc^.loc:=LOC_MMREGISTER;
                   paraloc^.register:=newreg(R_MMREGISTER,RS_MM_RESULT_REG,R_SUBMMS);
@@ -2081,6 +2317,19 @@ unit cpupara;
                   paraloc^.size:=OS_F64;
                 end;
 >>>>>>> graemeg/cpstrnew
+=======
+                begin
+                  paraloc^.loc:=LOC_MMREGISTER;
+                  paraloc^.register:=newreg(R_MMREGISTER,RS_MM_RESULT_REG,R_SUBMMS);
+                  paraloc^.size:=OS_F32;
+                end;
+              s64real:
+                begin
+                  paraloc^.loc:=LOC_MMREGISTER;
+                  paraloc^.register:=newreg(R_MMREGISTER,RS_MM_RESULT_REG,R_SUBMMD);
+                  paraloc^.size:=OS_F64;
+                end;
+>>>>>>> origin/cpstrnew
               { the first two only exist on targets with an x87, on others
                 they are replace by int64 }
               s64currency,
@@ -2102,6 +2351,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             fillchar(classes,sizeof(classes),0);
             numclasses:=classify_argument(result.def,vs_value,result.def.size,classes,0);
 =======
@@ -2113,6 +2363,9 @@ unit cpupara;
 =======
             numclasses:=classify_argument(def,vs_value,def.size,classes,0);
 >>>>>>> graemeg/cpstrnew
+=======
+            numclasses:=classify_argument(def,vs_value,def.size,classes,0);
+>>>>>>> origin/cpstrnew
             { this would mean a memory return }
             if (numclasses=0) then
               internalerror(2010021502);
@@ -2124,6 +2377,7 @@ unit cpupara;
             for i:=0 to numclasses-1 do
               begin
                 paraloc:=result.add_location;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2226,6 +2480,14 @@ unit cpupara;
                       paraloc^.register:=intretregs[intretregidx];
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+                case classes[i] of
+                  X86_64_INTEGERSI_CLASS,
+                  X86_64_INTEGER_CLASS:
+                    begin
+                      paraloc^.loc:=LOC_REGISTER;
+                      paraloc^.register:=intretregs[intretregidx];
+>>>>>>> origin/cpstrnew
                       if classes[i]=X86_64_INTEGER_CLASS then
                         paraloc^.size:=OS_64
                       else if result.intsize in [1,2,4] then
@@ -2261,9 +2523,12 @@ unit cpupara;
                       end;
                       inc(mmretregidx);
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     end;
                   X86_64_NO_CLASS:
                     begin
@@ -2275,6 +2540,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                       paraloc^.def:=voidtype;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -2282,6 +2548,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                     end;
                   else
                     internalerror(2010021504);
@@ -2332,6 +2600,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 loc[1].typ:=X86_64_INTEGER_CLASS;
                 loc[2].typ:=X86_64_NO_CLASS;
 =======
@@ -2346,6 +2615,10 @@ unit cpupara;
                 loc[1]:=X86_64_INTEGER_CLASS;
                 loc[2]:=X86_64_NO_CLASS;
 >>>>>>> graemeg/cpstrnew
+=======
+                loc[1]:=X86_64_INTEGER_CLASS;
+                loc[2]:=X86_64_NO_CLASS;
+>>>>>>> origin/cpstrnew
                 paracgsize:=OS_ADDR;
                 paralen:=sizeof(pint);
                 paradef:=cpointerdef.getreusable_no_free(paradef);
@@ -2363,6 +2636,7 @@ unit cpupara;
                (target_info.system = system_x86_64_win64) and
                (paradef.typ = floatdef) then
               begin
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2396,6 +2670,8 @@ unit cpupara;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                 loc[2]:=X86_64_NO_CLASS;
                 if paracgsize=OS_F64 then
                   begin
@@ -2408,9 +2684,12 @@ unit cpupara;
                     paracgsize:=OS_32;
                   end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
               end;
 
             hp.paraloc[side].reset;
@@ -2427,6 +2706,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                   case loc[locidx].typ of
 =======
                   case loc[locidx] of
@@ -2437,6 +2717,9 @@ unit cpupara;
 =======
                   case loc[locidx] of
 >>>>>>> graemeg/cpstrnew
+=======
+                  case loc[locidx] of
+>>>>>>> origin/cpstrnew
                     X86_64_INTEGER_CLASS,
                     X86_64_INTEGERSI_CLASS:
                       inc(needintloc);
@@ -2460,6 +2743,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     loc[low(loc)].typ:=X86_64_MEMORY_CLASS;
                     loc[low(loc)].def:=paradef;
                     for locidx:=succ(low(loc)) to high(loc) do
@@ -2479,6 +2763,11 @@ unit cpupara;
                     for locidx:=succ(low(loc)) to high(loc) do
                       loc[locidx]:=X86_64_NO_CLASS;
 >>>>>>> graemeg/cpstrnew
+=======
+                    loc[low(loc)]:=X86_64_MEMORY_CLASS;
+                    for locidx:=succ(low(loc)) to high(loc) do
+                      loc[locidx]:=X86_64_NO_CLASS;
+>>>>>>> origin/cpstrnew
                   end;
 
                 locidx:=1;
@@ -2496,16 +2785,20 @@ unit cpupara;
                     case loc[locidx] of
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                       X86_64_INTEGER_CLASS,
                       X86_64_INTEGERSI_CLASS:
                         begin
                           paraloc:=hp.paraloc[side].add_location;
                           paraloc^.loc:=LOC_REGISTER;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2519,11 +2812,14 @@ unit cpupara;
 =======
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                           if (paracgsize=OS_NO) or (loc[2]<>X86_64_NO_CLASS) then
                             begin
                               if loc[locidx]=X86_64_INTEGER_CLASS then
                                 begin
                                   paraloc^.size:=OS_INT;
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
@@ -2535,11 +2831,14 @@ unit cpupara;
                                 begin
                                   paraloc^.size:=OS_INT;
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                                   subreg:=R_SUBWHOLE;
                                 end
                               else
                                 begin
                                   paraloc^.size:=OS_32;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2550,6 +2849,8 @@ unit cpupara;
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                                   subreg:=R_SUBD;
                                 end;
                             end
@@ -2590,6 +2891,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                           case loc[locidx].typ of
 =======
                           case loc[locidx] of
@@ -2600,6 +2902,9 @@ unit cpupara;
 =======
                           case loc[locidx] of
 >>>>>>> graemeg/cpstrnew
+=======
+                          case loc[locidx] of
+>>>>>>> origin/cpstrnew
                             X86_64_SSESF_CLASS:
                               begin
                                 subreg:=R_SUBMMS;
@@ -2615,6 +2920,7 @@ unit cpupara;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 subreg:=R_SUBQ;
 =======
                                 subreg:=R_SUBMMWHOLE;
@@ -2625,6 +2931,9 @@ unit cpupara;
 =======
                                 subreg:=R_SUBMMWHOLE;
 >>>>>>> graemeg/cpstrnew
+=======
+                                subreg:=R_SUBMMWHOLE;
+>>>>>>> origin/cpstrnew
                                 paraloc^.size:=OS_M64;
                               end;
                           end;

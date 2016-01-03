@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 { %needlibrary }
 { %target=darwin,linux,freebsd,solaris,beos,haiku,aix,android }
 =======
@@ -13,6 +14,9 @@
 =======
 { %target=darwin,linux,freebsd,solaris,beos,haiku }
 >>>>>>> graemeg/cpstrnew
+=======
+{ %target=darwin,linux,freebsd,solaris,beos,haiku }
+>>>>>>> origin/cpstrnew
 
 {$mode delphi}
 

@@ -18,6 +18,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure print(format: IPTCFormat);
 =======
 procedure print(const format: TPTCFormat);
@@ -28,6 +29,9 @@ procedure print(const format: TPTCFormat);
 =======
 procedure print(const format: TPTCFormat);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure print(const format: TPTCFormat);
+>>>>>>> origin/cpstrnew
 begin
   { check format type }
   if format.direct then
@@ -46,6 +50,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 procedure print(mode: IPTCMode);
 =======
 procedure print(const mode: TPTCMode);
@@ -56,6 +61,9 @@ procedure print(const mode: TPTCMode);
 =======
 procedure print(const mode: TPTCMode);
 >>>>>>> graemeg/cpstrnew
+=======
+procedure print(const mode: TPTCMode);
+>>>>>>> origin/cpstrnew
 begin
   { print mode width and height }
   Write(' ', mode.width:4, ' x ', mode.height);
@@ -75,6 +83,7 @@ begin
 end;
 
 var
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -109,6 +118,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   console: TPTCConsole = nil;
   modes: PPTCMode;
   index: Integer;
@@ -147,11 +158,14 @@ begin
       console.Free;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     end;
   except
     on error: TPTCError do

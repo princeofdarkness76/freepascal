@@ -366,6 +366,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     Case DataType of
       dtDWORD : S:=IntToStr(PCardinal(@Data)^);
@@ -378,6 +379,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     // Reading <value></value> results in <value/>, i.e. no subkey exists any more. Create textnode.
     if (DataNode=nil) then
       begin

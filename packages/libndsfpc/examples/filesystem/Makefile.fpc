@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 dirs=libfat nitrofs
 =======
 dirs=embedded_gbfs libfat nitrofs
@@ -16,6 +17,9 @@ dirs=embedded_gbfs libfat nitrofs
 =======
 dirs=embedded_gbfs libfat nitrofs
 >>>>>>> graemeg/cpstrnew
+=======
+dirs=embedded_gbfs libfat nitrofs
+>>>>>>> origin/cpstrnew
 
 [require]
 packages=libndsfpc

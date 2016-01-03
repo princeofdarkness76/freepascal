@@ -68,12 +68,15 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       cutils,
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       globtype,
       cutils,systems,
 >>>>>>> graemeg/cpstrnew
@@ -183,6 +186,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                if (base<>NR_RIP) then
                  InternalError(2015011802);
                owner.writer.AsmWrite('@GOTPCREL');
@@ -191,6 +195,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
              begin
                { local symbols don't have to (and in case of Mac OS X: cannot)
                  be accessed via the GOT
@@ -201,11 +207,14 @@ interface
              end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$else x86_64}
                owner.writer.AsmWrite('@GOT');
 {$endif x86_64}
@@ -330,6 +339,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
        sreg     : string;
 =======
        comment  : tai_comment;
@@ -340,12 +350,16 @@ interface
 =======
        comment  : tai_comment;
 >>>>>>> graemeg/cpstrnew
+=======
+       comment  : tai_comment;
+>>>>>>> origin/cpstrnew
       begin
         if hp.typ <> ait_instruction then
           exit;
         taicpu(hp).SetOperandOrder(op_att);
         op:=taicpu(hp).opcode;
         calljmp:=is_calljmp(op);
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -394,6 +408,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         { constant values in the 32 bit range are sign-extended to
           64 bits, but this is not what we want.  PM 2010-09-02
           the fix consists of simply setting only the 4-byte register
@@ -515,11 +531,14 @@ interface
           end;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
       end;
 
 
@@ -608,6 +627,7 @@ interface
           );
 
 
+<<<<<<< HEAD
 
 
 
@@ -625,6 +645,8 @@ interface
           );
 
 
+=======
+>>>>>>> origin/cpstrnew
 
        as_x86_64_gas_darwin_info : tasminfo =
           (
@@ -665,6 +687,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 system_i386_nativent,system_i386_android,system_i386_aros];
             flags : [af_needar,af_smartlink_sections,af_supports_dwarf];
 =======
@@ -672,6 +695,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
                                 system_i386_nativent];
             flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf];
 >>>>>>> graemeg/cpstrnew
@@ -707,6 +732,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             flags : [af_needar,af_stabs_use_function_absolute_addresses];
 =======
             flags : [af_allowdirect,af_needar,af_stabs_use_function_absolute_addresses];
@@ -717,6 +743,9 @@ interface
 =======
             flags : [af_allowdirect,af_needar,af_stabs_use_function_absolute_addresses];
 >>>>>>> graemeg/cpstrnew
+=======
+            flags : [af_allowdirect,af_needar,af_stabs_use_function_absolute_addresses];
+>>>>>>> origin/cpstrnew
             labelprefix : 'L';
             comment : '# ';
             dollarsign: '$';
@@ -738,6 +767,7 @@ interface
             flags : [af_allowdirect,af_needar,af_smartlink_sections,af_supports_dwarf,af_stabs_use_function_absolute_addresses];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
@@ -756,6 +786,8 @@ interface
             asmcmd : '-c -o $OBJ $EXTRAOPT -arch i386 $DARWINVERSION -x assembler $ASM';
             supported_targets : [system_i386_darwin,system_i386_iphonesim];
             flags : [af_needar,af_smartlink_sections,af_supports_dwarf];
+=======
+>>>>>>> origin/cpstrnew
             labelprefix : 'L';
             comment : '# ';
             dollarsign: '$';
@@ -799,6 +831,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   RegisterAssembler(as_x86_64_yasm_info,Tx86ATTAssembler);
 =======
 >>>>>>> graemeg/cpstrnew
@@ -806,6 +839,8 @@ initialization
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   RegisterAssembler(as_x86_64_gas_info,Tx86ATTAssembler);
   RegisterAssembler(as_x86_64_gas_darwin_info,Tx86AppleGNUAssembler);
   RegisterAssembler(as_x86_64_clang_darwin_info,Tx86AppleGNUAssembler);

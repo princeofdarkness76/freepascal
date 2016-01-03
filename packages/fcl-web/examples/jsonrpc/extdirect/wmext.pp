@@ -8,6 +8,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Classes, SysUtils, HTTPDefs, websession, fpHTTP, fpWeb, 
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
@@ -18,6 +19,9 @@ uses
 =======
   Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
 >>>>>>> graemeg/cpstrnew
+=======
+  Classes, SysUtils, FileUtil, LResources, HTTPDefs, websession, fpHTTP, fpWeb, 
+>>>>>>> origin/cpstrnew
     fpjsonrpc, webjsonrpc, fpextdirect, fpjson;
 
 type
@@ -42,6 +46,7 @@ implementation
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$R *.lfm}
 
 =======
@@ -50,6 +55,8 @@ implementation
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 { TDemoClass }
 
 procedure TDemoClass.AddExecute(Sender: TObject;
@@ -71,6 +78,7 @@ initialization
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   {$I wmext.lrs}
 
@@ -83,6 +91,10 @@ initialization
   {$I wmext.lrs}
 
 >>>>>>> graemeg/cpstrnew
+=======
+  {$I wmext.lrs}
+
+>>>>>>> origin/cpstrnew
   RegisterHTTPModule('demo', TDemoClass);
 end.
 

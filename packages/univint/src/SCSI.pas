@@ -71,6 +71,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 {$ifc not defined __arm64__ and defined CPUAARCH64}
   {$setc __arm64__ := 1}
 {$elsec}
@@ -82,6 +83,8 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 
 {$ifc defined cpu64}
   {$setc __LP64__ := 1}
@@ -100,6 +103,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
@@ -144,12 +148,15 @@ interface
 {$elifc defined __ppc64__ and __ppc64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := TRUE}
+=======
+>>>>>>> origin/cpstrnew
 	{$setc TARGET_CPU_X86 := FALSE}
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := FALSE}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 	{$setc TARGET_OS_MAC := TRUE}
@@ -161,6 +168,17 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+{$elifc defined __ppc64__ and __ppc64__}
+	{$setc TARGET_CPU_PPC := FALSE}
+	{$setc TARGET_CPU_PPC64 := TRUE}
+	{$setc TARGET_CPU_X86 := FALSE}
+	{$setc TARGET_CPU_X86_64 := FALSE}
+	{$setc TARGET_CPU_ARM := FALSE}
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __i386__ and __i386__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -170,6 +188,7 @@ interface
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
@@ -177,14 +196,19 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := TRUE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elsec}
 	{$setc TARGET_OS_MAC := TRUE}
 	{$setc TARGET_OS_IPHONE := FALSE}
@@ -192,11 +216,14 @@ interface
 {$endc}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := FALSE}
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 {$elifc defined __x86_64__ and __x86_64__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -205,6 +232,7 @@ interface
 	{$setc TARGET_CPU_ARM := FALSE}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
 {$ifc defined(iphonesim)}
  	{$setc TARGET_OS_MAC := FALSE}
@@ -221,6 +249,11 @@ interface
 	{$setc TARGET_OS_IPHONE := FALSE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
 >>>>>>> graemeg/cpstrnew
+=======
+	{$setc TARGET_OS_MAC := TRUE}
+	{$setc TARGET_OS_IPHONE := FALSE}
+	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+>>>>>>> origin/cpstrnew
 {$elifc defined __arm__ and __arm__}
 	{$setc TARGET_CPU_PPC := FALSE}
 	{$setc TARGET_CPU_PPC64 := FALSE}
@@ -228,11 +261,15 @@ interface
 	{$setc TARGET_CPU_X86_64 := FALSE}
 	{$setc TARGET_CPU_ARM := TRUE}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	{$setc TARGET_CPU_ARM64 := FALSE}
+=======
+>>>>>>> origin/cpstrnew
 	{ will require compiler define when/if other Apple devices with ARM cpus ship }
 	{$setc TARGET_OS_MAC := FALSE}
 	{$setc TARGET_OS_IPHONE := TRUE}
 	{$setc TARGET_IPHONE_SIMULATOR := FALSE}
+<<<<<<< HEAD
 	{$setc TARGET_OS_EMBEDDED := TRUE}
 {$elifc defined __arm64__ and __arm64__}
 	{$setc TARGET_CPU_PPC := FALSE}
@@ -318,6 +355,15 @@ interface
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+{$elsec}
+	{$error __ppc__ nor __ppc64__ nor __i386__ nor __x86_64__ nor __arm__ is defined.}
+{$endc}
+
+{$ifc defined __LP64__ and __LP64__ }
+  {$setc TARGET_CPU_64 := TRUE}
+{$elsec}
+>>>>>>> origin/cpstrnew
   {$setc TARGET_CPU_64 := FALSE}
 {$endc}
 
@@ -559,6 +605,9 @@ procedure InvokeSCSICallbackUPP( scsiPB: UnivPtr; userUPP: SCSICallbackUPP ); ex
  }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> origin/cpstrnew
 const
 	SCSINop = $00; { Execute nothing                          }
 	SCSIExecIO = $01; { Execute the specified IO                  }
@@ -568,6 +617,7 @@ const
 	SCSIResetBus = $11; { Reset the SCSI bus                         }
 	SCSIResetDevice = $12; { Reset the SCSI device                      }
 	SCSITerminateIO = $13;  { Terminate any pending IO                    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 const
@@ -594,6 +644,19 @@ const
 	vendorIDLength = 16;    { ASCII string len for Vendor ID  }
 
 >>>>>>> graemeg/cpstrnew
+=======
+
+const
+	vendorUnique = $C0;  { 0xC0 thru 0xFF }
+
+
+{ Allocation length defines for some of the fields }
+const
+	handshakeDataLength = 8;    { Handshake data length }
+	maxCDBLength = 16;   { Space for the CDB bytes/pointer }
+	vendorIDLength = 16;    { ASCII string len for Vendor ID  }
+
+>>>>>>> origin/cpstrnew
 { Define DeviceIdent structure }
 type
 	DeviceIdentPtr = ^DeviceIdent;
@@ -609,6 +672,7 @@ type
 { or an ATA device (kBusTypeATA).  The other        }
 { constants are pretty much deprecated.  Let me     }
 { know if you see any.                              }
+<<<<<<< HEAD
 const
 =======
 const
@@ -648,6 +712,9 @@ type
 { know if you see any.                              }
 const
 >>>>>>> graemeg/cpstrnew
+=======
+const
+>>>>>>> origin/cpstrnew
 	kBusTypeSCSI = 0;
 	kBusTypeATA = 1;
 	kBusTypePCMCIA = 2;
@@ -665,6 +732,7 @@ type
 		diReserved2: UInt8;
 	end;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 { Command Descriptor Block structure }
@@ -733,6 +801,12 @@ type
 { Command Descriptor Block structure }
 type
 >>>>>>> graemeg/cpstrnew
+=======
+
+
+{ Command Descriptor Block structure }
+type
+>>>>>>> origin/cpstrnew
 	CDBPtr = ^CDB;
 	CDB = record
 		case SInt16 of
@@ -1063,6 +1137,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1159,11 +1234,106 @@ const
 	scsiVendorSpecificErrorBase = scsiErrorBase + 128; { ??    = Start of third-party error range     }
 	scsiVendorSpecificErrorCount = 16;    { Number of third-party errors             }
 
+=======
+
+const
+	scsiErrorBase = -7936;
+
+const
+	scsiRequestInProgress = 1;    { 1   = PB request is in progress          }
+                                        { Execution failed  00-2F }
+	scsiRequestAborted = scsiErrorBase + 2; { -7934 = PB request aborted by the host        }
+	scsiUnableToAbort = scsiErrorBase + 3; { -7933 = Unable to Abort PB request          }
+	scsiNonZeroStatus = scsiErrorBase + 4; { -7932 = PB request completed with an err   }
+	scsiUnused05 = scsiErrorBase + 5; { -7931 =                        }
+	scsiUnused06 = scsiErrorBase + 6; { -7930 =                        }
+	scsiUnused07 = scsiErrorBase + 7; { -7929 =                        }
+	scsiUnused08 = scsiErrorBase + 8; { -7928 =                        }
+	scsiUnableToTerminate = scsiErrorBase + 9; { -7927 = Unable to Terminate I/O PB req        }
+	scsiSelectTimeout = scsiErrorBase + 10; { -7926 = Target selection timeout        }
+	scsiCommandTimeout = scsiErrorBase + 11; { -7925 = Command timeout              }
+	scsiIdentifyMessageRejected = scsiErrorBase + 12; { -7924 =                        }
+	scsiMessageRejectReceived = scsiErrorBase + 13; { -7923 = Message reject received           }
+	scsiSCSIBusReset = scsiErrorBase + 14; { -7922 = SCSI bus reset sent/received    }
+	scsiParityError = scsiErrorBase + 15; { -7921 = Uncorrectable parity error occured     }
+	scsiAutosenseFailed = scsiErrorBase + 16; { -7920 = Autosense: Request sense cmd fail  }
+	scsiUnused11 = scsiErrorBase + 17; { -7919 =                        }
+	scsiDataRunError = scsiErrorBase + 18; { -7918 = Data overrun/underrun error     }
+	scsiUnexpectedBusFree = scsiErrorBase + 19; { -7917 = Unexpected BUS free              }
+	scsiSequenceFailed = scsiErrorBase + 20; { -7916 = Target bus phase sequence failure  }
+	scsiWrongDirection = scsiErrorBase + 21; { -7915 = Data phase was in wrong direction  }
+	scsiUnused16 = scsiErrorBase + 22; { -7914 =                        }
+	scsiBDRsent = scsiErrorBase + 23; { -7913 = A SCSI BDR msg was sent to target  }
+	scsiTerminated = scsiErrorBase + 24; { -7912 = PB request terminated by the host  }
+	scsiNoNexus = scsiErrorBase + 25; { -7911 = Nexus is not established        }
+	scsiCDBReceived = scsiErrorBase + 26; { -7910 = The SCSI CDB has been received        }
+                                        { Couldn't begin execution  30-3F }
+	scsiTooManyBuses = scsiErrorBase + 48; { -7888 = Register failed because we're full }
+	scsiBusy = scsiErrorBase + 49; { -7887 = SCSI subsystem is busy           }
+	scsiProvideFail = scsiErrorBase + 50; { -7886 = Unable to provide requ. capability }
+	scsiDeviceNotThere = scsiErrorBase + 51; { -7885 = SCSI device not installed/there    }
+	scsiNoHBA = scsiErrorBase + 52; { -7884 = No HBA detected Error           }
+	scsiDeviceConflict = scsiErrorBase + 53; { -7883 = sorry, max 1 refNum per DeviceIdent    }
+	scsiNoSuchXref = scsiErrorBase + 54; { -7882 = no such RefNum xref              }
+	scsiQLinkInvalid = scsiErrorBase + 55; { -7881 = pre-linked PBs not supported      }
+                                        {   (The QLink field was nonzero)          }
+                                        { Parameter errors  40-7F }
+	scsiPBLengthError = scsiErrorBase + 64; { -7872 = (scsiPBLength is insuf'ct/invalid  }
+	scsiFunctionNotAvailable = scsiErrorBase + 65; { -7871 = The requ. func is not available    }
+	scsiRequestInvalid = scsiErrorBase + 66; { -7870 = PB request is invalid           }
+	scsiBusInvalid = scsiErrorBase + 67; { -7869 = Bus ID supplied is invalid        }
+	scsiTIDInvalid = scsiErrorBase + 68; { -7868 = Target ID supplied is invalid      }
+	scsiLUNInvalid = scsiErrorBase + 69; { -7867 = LUN supplied is invalid         }
+	scsiIDInvalid = scsiErrorBase + 70; { -7866 = The initiator ID is invalid     }
+	scsiDataTypeInvalid = scsiErrorBase + 71; { -7865 = scsiDataType requested not supported }
+	scsiTransferTypeInvalid = scsiErrorBase + 72; { -7864 = scsiTransferType field is too high     }
+	scsiCDBLengthInvalid = scsiErrorBase + 73; { -7863 = scsiCDBLength field is too big        }
+
+{ New errors for SCSI Family         }
+const
+	scsiUnused74 = scsiErrorBase + 74; { -7862 =                          }
+	scsiUnused75 = scsiErrorBase + 75; { -7861 =                          }
+	scsiBadDataLength = scsiErrorBase + 76; { -7860 = a zero data length in PB        }
+	scsiPartialPrepared = scsiErrorBase + 77; { -7859 = could not do full prepare mem for I/O}
+	scsiInvalidMsgType = scsiErrorBase + 78; { -7858 = Invalid message type (internal)       }
+	scsiUnused79 = scsiErrorBase + 79; { -7857 =                              }
+	scsiBadConnID = scsiErrorBase + 80; { -7856 = Bad Connection ID                }
+	scsiUnused81 = scsiErrorBase + 81; { -7855 =                          }
+	scsiIOInProgress = scsiErrorBase + 82; { -7854 = Can't close conn, IO in prog      }
+	scsiTargetReserved = scsiErrorBase + 83; { -7853 = Target already reserved          }
+	scsiUnused84 = scsiErrorBase + 84; { -7852 =                          }
+	scsiUnused85 = scsiErrorBase + 85; { -7851 =                          }
+	scsiBadConnType = scsiErrorBase + 86; { -7850 = Bad connection type              }
+	scsiCannotLoadPlugin = scsiErrorBase + 87; { -7849 = No matching service category      }
+
+{ +++ }
+{
+ * scsiFamilyInternalError and scsiPluginInternalError are intended to handle consistency check failures.
+ * For example, if the family stores a record on a lookaside queue, but does not find that record
+ * it can use this error to report this failure. SCSI Manager 4.3 uses dsIOCoreErr in a few places,
+ * but this is probably not the best error. In general, internal errors should be reported as bugs.
+ *
+ * The following range of errors is provided for third-party (non-Apple) SCSI SIM and device driver vendors.
+ * In general, they would be used for error conditions that are not covered by the standardized errors.
+ * They should not normally be conveyed to normal applications, but might be used for communication between
+ * a plug-in and a vendor-provided device driver (for example, to manage RAID hot-swapping).
+ *
+ * Note: I don't know how many SCSI errors are reserved in the error code architecture. Don't assume that
+ * we'll actually get sixteen, but we should reserve at least one.
+ }
+const
+	scsiFamilyInternalError = scsiErrorBase + 87; { -7849 = Internal consistency check failed  }
+	scsiPluginInternalError = scsiErrorBase + 88; { -7848 = Internal consistency check failed  }
+	scsiVendorSpecificErrorBase = scsiErrorBase + 128; { ??    = Start of third-party error range     }
+	scsiVendorSpecificErrorCount = 16;    { Number of third-party errors             }
+
+>>>>>>> origin/cpstrnew
 { --- }
 const
 	scsiExecutionErrors = scsiErrorBase;
 	scsiNotExecutedErrors = scsiTooManyBuses;
 	scsiParameterErrors = scsiPBLengthError;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1400,6 +1570,9 @@ const
 const
 =======
 
+=======
+
+>>>>>>> origin/cpstrnew
 { Defines for the scsiResultFlags field }
 const
 	scsiSIMQFrozen = $0001; { The SIM queue is frozen w/this err        }
@@ -1492,7 +1665,10 @@ const
 
 { Defines for the scsiDataType field }
 const
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	scsiDataBuffer = 0;    { single contiguous buffer supplied            }
 	scsiDataTIB = 1;    { TIB supplied (ptr in scsiDataPtr)           }
 	scsiDataSG = 2;    { scatter/gather list supplied             }
@@ -1533,9 +1709,12 @@ const
 { scsiWeirdStuff field bits }
 const
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 	scsiOddDisconnectUnsafeRead1 = $0001; { Disconnects on odd byte boundries are unsafe with DMA and/or blind reads }
 	scsiOddDisconnectUnsafeWrite1 = $0002; { Disconnects on odd byte boundries are unsafe with DMA and/or blind writes }
 	scsiBusErrorsUnsafe = $0004; { Non-handshaked delays or disconnects during blind transfers may cause a crash }
@@ -1547,6 +1726,7 @@ const
 
 { scsiHBAslotType values }
 const
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1832,6 +2012,22 @@ const
 
 {
 >>>>>>> graemeg/cpstrnew
+=======
+	scsiMotherboardBus = $00; { A built in Apple supplied bus            }
+	scsiNuBus = $01; { A SIM on a NuBus card                   }
+	scsiPDSBus = $03; {    "  on a PDS card                    }
+	scsiPCIBus = $04; {    "  on a PCI bus card                   }
+	scsiPCMCIABus = $05; {    "  on a PCMCIA card                  }
+	scsiFireWireBridgeBus = $06; {    "  connected through a FireWire bridge   }
+	scsiUSBBus = $07;  {    "  connected on a USB bus               }
+
+{ Defines for the scsiDriverFlags field (in SCSIDriverPB) }
+const
+	scsiDeviceSensitive = $0001; { Only driver should access this device          }
+	scsiDeviceNoOldCallAccess = $0002; { no old call access to this device            }
+
+{
+>>>>>>> origin/cpstrnew
  * SCSI bus status. These values are returned by the SCSI target in the status phase.
  * They are not related to Macintosh status values (except that values other than
  * scsiStatusGood will result in scsiResult set to scsiNonZeroStatus).

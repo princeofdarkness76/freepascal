@@ -485,6 +485,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   EOR:=False;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -492,6 +493,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   // Do nothing.
 {$IFDEF CGIGDEBUG}SendMethodEnter('ProcessUnknownRecord');{$ENDIF}
 end;

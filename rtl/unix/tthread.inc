@@ -106,6 +106,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
          RtlEventWaitFor(LThread.FSuspendEvent);
          CurrentThreadVar := LThread;
 =======
@@ -117,6 +118,9 @@ begin
 =======
         CurrentTM.SemaphoreWait(LThread.FSem);
 >>>>>>> graemeg/cpstrnew
+=======
+        CurrentTM.SemaphoreWait(LThread.FSem);
+>>>>>>> origin/cpstrnew
          WRITE_DEBUG('going into LThread.Execute - ', LThread.ClassName);
          LThread.Execute;
        end;
@@ -170,12 +174,15 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   WRITE_DEBUG('creating thread, self = ',ptruint(self));
 =======
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   WRITE_DEBUG('creating thread, self = ',longint(self));
 >>>>>>> graemeg/cpstrnew
   FHandle:= BeginThread(@ThreadFunc, Pointer(Self), FThreadID, StackSize);
@@ -259,6 +266,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       RtlEventSetEvent(FSuspendEvent);
     end
   else
@@ -277,6 +285,11 @@ begin
     end
   else if (not FSuspendedExternal) then
 >>>>>>> graemeg/cpstrnew
+=======
+      CurrentTM.SemaphorePost(FSem);
+    end
+  else if (not FSuspendedExternal) then
+>>>>>>> origin/cpstrnew
     begin
       if FSuspended and
          { don't compare with ord(true) or ord(longbool(true)), }

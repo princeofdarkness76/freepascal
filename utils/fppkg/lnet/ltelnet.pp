@@ -101,6 +101,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     FSubcommandCallbacks: TLSubcommandArray;
 =======
 >>>>>>> graemeg/cpstrnew
@@ -108,6 +109,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure InflateBuffer;
     function AddToBuffer(const aStr: string): Boolean; inline;
     
@@ -131,6 +134,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     function React(const Operation, Command: Char): boolean; virtual; abstract;
 =======
     procedure React(const Operation, Command: Char); virtual; abstract;
@@ -141,6 +145,9 @@ type
 =======
     procedure React(const Operation, Command: Char); virtual; abstract;
 >>>>>>> graemeg/cpstrnew
+=======
+    procedure React(const Operation, Command: Char); virtual; abstract;
+>>>>>>> origin/cpstrnew
     procedure SendCommand(const Command: Char; const Value: Boolean); virtual; abstract;
 
     procedure OnCs(aSocket: TLSocket);
@@ -167,11 +174,14 @@ type
     
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     procedure Disconnect(const Forced: Boolean = True); override;
     
     procedure SendCommand(const aCommand: Char; const How: TLHowEnum); virtual;
@@ -227,6 +237,7 @@ uses
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   Math;
 
 const   subcommandEndLength= 2;
@@ -239,6 +250,9 @@ const   subcommandEndLength= 2;
 =======
   SysUtils, Math;
 >>>>>>> graemeg/cpstrnew
+=======
+  SysUtils, Math;
+>>>>>>> origin/cpstrnew
 
 var
   zz: Char;
@@ -445,6 +459,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 (* If already set, the callback can be reverted to nil but it can't be changed  *)
 (* in a single step. The default response, if specified, is used by the         *)
 (* LTelnetSubcommandCallback() function and is available to others; the         *)
@@ -480,6 +495,10 @@ begin
 procedure TLTelnet.Disconnect(const Forced: Boolean = True);
 begin
 >>>>>>> graemeg/cpstrnew
+=======
+procedure TLTelnet.Disconnect(const Forced: Boolean = True);
+begin
+>>>>>>> origin/cpstrnew
   FConnection.Disconnect(Forced);
 end;
 
@@ -626,6 +645,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     TS_SB   : if not Assigned(FSubcommandCallbacks[command].callback) then
                 refuse(TS_WONT, command)
               else
@@ -641,6 +661,8 @@ begin
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   end;
 end;
 

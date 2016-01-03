@@ -103,6 +103,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 function FileCreate(const FileName: RawByteString; ShareMode : Integer; Rights: integer): LongInt;
 =======
 function FileRead(Handle: LongInt; Out Buffer; Count: LongInt): LongInt;
@@ -113,6 +114,9 @@ function FileRead(Handle: LongInt; Out Buffer; Count: LongInt): LongInt;
 =======
 function FileRead(Handle: LongInt; Out Buffer; Count: LongInt): LongInt;
 >>>>>>> graemeg/cpstrnew
+=======
+function FileRead(Handle: LongInt; Out Buffer; Count: LongInt): LongInt;
+>>>>>>> origin/cpstrnew
 begin
   result := FileCreate(FileName, Rights);
 end;
@@ -339,11 +343,14 @@ function ExecuteProcess (const Path: AnsiString;
                                   const ComLine: array of AnsiString;Flags:TExecuteFlags=[]): integer;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
 begin
   result := -1;
 end;

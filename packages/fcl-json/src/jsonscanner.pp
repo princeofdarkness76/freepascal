@@ -26,6 +26,7 @@ resourcestring
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   SUnterminatedComment = 'Unterminated comment at line %d, pos %d: ''%s''';
 =======
 >>>>>>> graemeg/cpstrnew
@@ -33,6 +34,8 @@ resourcestring
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
   SErrOpenString = 'string exceeds end of line';
 
 type
@@ -56,6 +59,7 @@ type
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     tkComment,
 =======
 >>>>>>> graemeg/cpstrnew
@@ -63,6 +67,8 @@ type
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     tkUnknown
     );
 
@@ -75,6 +81,8 @@ Const
   DefaultOptions = [joUTF8];
 
 Type
+
+  { TJSONScanner }
 
   { TJSONScanner }
 
@@ -113,11 +121,14 @@ Type
     constructor Create(const Source : String); overload;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     destructor Destroy; override;
     function FetchToken: TJSONToken;
 
@@ -129,6 +140,7 @@ Type
     property CurToken: TJSONToken read FCurToken;
     property CurTokenString: string read FCurTokenString;
     // Use strict JSON: " for strings, object members are strings, not identifiers
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -146,6 +158,9 @@ Type
 =======
     Property Strict : Boolean Read FStrict Write FStrict;
 >>>>>>> graemeg/cpstrnew
+=======
+    Property Strict : Boolean Read FStrict Write FStrict;
+>>>>>>> origin/cpstrnew
   end;
 
 const
@@ -167,6 +182,7 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     'comment',
 =======
 >>>>>>> graemeg/cpstrnew
@@ -174,6 +190,8 @@ const
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
     ''
   );
 
@@ -217,6 +235,7 @@ end;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 constructor TJSONScanner.Create(const Source: String; AOptions: TJSONOptions);
 =======
 constructor TJSONScanner.Create(const Source : String);
@@ -227,6 +246,9 @@ constructor TJSONScanner.Create(const Source : String);
 =======
 constructor TJSONScanner.Create(const Source : String);
 >>>>>>> graemeg/cpstrnew
+=======
+constructor TJSONScanner.Create(const Source : String);
+>>>>>>> origin/cpstrnew
 begin
   FSource:=TStringList.Create;
   FSource.Text:=Source;
@@ -319,6 +341,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         If (C='''') and (joStrict in Options) then
 =======
         If (C='''') and Strict then
@@ -329,6 +352,9 @@ begin
 =======
         If (C='''') and Strict then
 >>>>>>> graemeg/cpstrnew
+=======
+        If (C='''') and Strict then
+>>>>>>> origin/cpstrnew
           Error(SErrInvalidCharacter, [CurRow,CurColumn,TokenStr[0]]);
         Inc(TokenStr);
         TokenStart := TokenStr;
@@ -442,11 +468,14 @@ begin
           Move(TokenStart^, FCurTokenString[1], SectionLength);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> graemeg/cpstrnew
+=======
+>>>>>>> origin/cpstrnew
         If (FCurTokenString[1]='.') then
           FCurTokenString:='0'+FCurTokenString;
         Result := tkNumber;
@@ -476,6 +505,7 @@ begin
         Inc(TokenStr);
         Result := tkSquaredBraceClose;
       end;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -533,6 +563,9 @@ begin
 =======
     'a'..'z','_':
 >>>>>>> graemeg/cpstrnew
+=======
+    'a'..'z','_':
+>>>>>>> origin/cpstrnew
       begin
         TokenStart := TokenStr;
         repeat
@@ -550,6 +583,7 @@ begin
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (joStrict in Options) then
 =======
         if Strict then
@@ -560,6 +594,9 @@ begin
 =======
         if Strict then
 >>>>>>> graemeg/cpstrnew
+=======
+        if Strict then
+>>>>>>> origin/cpstrnew
           Error(SErrInvalidCharacter, [CurRow,CurColumn,TokenStr[0]])
         else
           Result:=tkIdentifier;
