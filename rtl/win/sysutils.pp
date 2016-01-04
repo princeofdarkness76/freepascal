@@ -558,7 +558,7 @@ Var
 begin
   FD := CreateFileW (PWideChar (FileName), GENERIC_READ or GENERIC_WRITE,
                      FILE_SHARE_WRITE, nil, OPEN_EXISTING,
-                     FILE_FLAG_BACKUP_SEMANTICS, 0);  
+                     FILE_FLAG_BACKUP_SEMANTICS, 0);
   If (Fd<>feInvalidHandle) then
     try
       Result:=FileSetDate(fd,Age);
@@ -568,7 +568,7 @@ begin
   else
     Result:=GetLastOSError;
 end;
-{$ENDIF}                                                                                
+{$ENDIF}
 
 Function FileGetAttr (Const FileName : UnicodeString) : Longint;
 begin
@@ -691,7 +691,7 @@ end;
 
 function GetLocalTimeOffset: Integer;
 
-var 
+var
   TZInfo: TTimeZoneInformation;
 
 begin
@@ -705,7 +705,7 @@ begin
      else
        Result := 0;
    end;
-end; 
+end;
 
 
 function GetTickCount: LongWord;
@@ -759,7 +759,7 @@ begin
 =======
 >>>>>>> origin/cpstrnew
 end;
-                                                                    
+
 
 {****************************************************************************
                               Misc Functions
@@ -1163,16 +1163,16 @@ function SysErrorMessage(ErrorCode: Integer): String;
 const
   MaxMsgSize = Format_Message_Max_Width_Mask;
 var
-  MsgBuffer: pChar;
+  MsgBuffer: PUnicodeChar;
 begin
-  GetMem(MsgBuffer, MaxMsgSize);
-  FillChar(MsgBuffer^, MaxMsgSize, #0);
-  FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM,
+  GetMem(MsgBuffer, MaxMsgSize*2);
+  FillChar(MsgBuffer^, MaxMsgSize*2, #0);
+  FormatMessageW(FORMAT_MESSAGE_FROM_SYSTEM,
                  nil,
                  ErrorCode,
                  MakeLangId(LANG_NEUTRAL, SUBLANG_DEFAULT),
-                 MsgBuffer,                 { This function allocs the memory }
-                 MaxMsgSize,                           { Maximum message size }
+                 MsgBuffer,
+                 MaxMsgSize,
                  nil);
   SysErrorMessage := MsgBuffer;
   FreeMem(MsgBuffer, MaxMsgSize);
@@ -1555,19 +1555,19 @@ function Win32CompareWideString(const s1, s2 : WideString) : PtrInt;
 
 <<<<<<< HEAD
 const
-  WinAPICompareFlags : array [TCompareOption] of LongWord 
-    = ({LINGUISTIC_IGNORECASE,  LINGUISTIC_IGNOREDIACRITIC, }NORM_IGNORECASE{, 
+  WinAPICompareFlags : array [TCompareOption] of LongWord
+    = ({LINGUISTIC_IGNORECASE,  LINGUISTIC_IGNOREDIACRITIC, }NORM_IGNORECASE{,
        NORM_IGNOREKANATYPE, NORM_IGNORENONSPACE, NORM_IGNORESYMBOLS, NORM_IGNOREWIDTH,
        NORM_LINGUISTIC_CASING, SORT_DIGITSASNUMBERS, SORT_STRINGSORT});
-       
+
 function Win32CompareWideString(const s1, s2 : WideString; Options : TCompareOptions) : PtrInt;
 
 Var
-  O : LongWord;              
+  O : LongWord;
   CO : TCompareOption;
-   
+
 begin
-  O:=0;  
+  O:=0;
   for CO in TCompareOption do
     if CO in Options then
       O:=O or WinAPICompareFlags[CO];
@@ -1672,11 +1672,11 @@ function Win32AnsiStrUpper(Str: PChar): PChar;
 function Win32CompareUnicodeString(const s1, s2 : UnicodeString; Options : TCompareOptions) : PtrInt;
 
 Var
-  O : LongWord;              
+  O : LongWord;
   CO : TCompareOption;
-   
+
 begin
-  O:=0;  
+  O:=0;
   for CO in TCompareOption do
     if CO in Options then
       O:=O or WinAPICompareFlags[CO];

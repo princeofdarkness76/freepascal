@@ -695,7 +695,6 @@ unit raatt;
 
              '''' : { char }
                begin
-                 current_scanner.in_asm_string:=true;
                  actasmpattern:='';
                  repeat
                    c:=current_scanner.asmgetchar;
@@ -720,13 +719,11 @@ unit raatt;
                  until false;
                  actasmpattern:=EscapeToPascal(actasmpattern);
                  actasmtoken:=AS_STRING;
-                 current_scanner.in_asm_string:=false;
                  exit;
                end;
 
              '"' : { string }
                begin
-                 current_scanner.in_asm_string:=true;
                  actasmpattern:='';
                  repeat
                    c:=current_scanner.asmgetchar;
@@ -751,7 +748,6 @@ unit raatt;
                  until false;
                  actasmpattern:=EscapeToPascal(actasmpattern);
                  actasmtoken:=AS_STRING;
-                 current_scanner.in_asm_string:=false;
                  exit;
                end;
 
@@ -792,12 +788,11 @@ unit raatt;
                    actasmtoken:=AS_LSBRACKET
                  else
                    begin
-                     dec(current_scanner.inputpointer);
-                     current_scanner.skipcomment;
+                     current_scanner.skipcomment(false);
                      GetToken;
                    end;
 {$else arm}
-                 current_scanner.skipcomment;
+                 current_scanner.skipcomment(true);
                  GetToken;
 {$endif arm}
                  exit;
@@ -864,8 +859,7 @@ unit raatt;
                  c:=current_scanner.asmgetchar;
                  if c='*' then
                    begin
-                     scanner.c:=#0;{Signal skipoldtpcomment to reload a char }
-                     current_scanner.skipoldtpcomment;
+                     current_scanner.skipoldtpcomment(true);
                      GetToken;
                    end
                  else

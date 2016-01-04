@@ -515,6 +515,7 @@ interface
         asd_ent,asd_ent_end,
         { supported by recent clang-based assemblers for data-in-code  }
         asd_data_region, asd_end_data_region,
+<<<<<<< HEAD
         { .thumb_func for ARM }
         asd_thumb_func
 =======
@@ -532,6 +533,10 @@ interface
 =======
         asd_weak_definition
 >>>>>>> origin/cpstrnew
+=======
+        { ARM }
+        asd_thumb_func,asd_code
+>>>>>>> graemeg/master
       );
 
       TAsmSehDirective=(
@@ -570,8 +575,9 @@ interface
         'ent','end',
         { supported by recent clang-based assemblers for data-in-code }
         'data_region','end_data_region',
-        { .thumb_func for ARM }
-        'thumb_func'
+        { ARM }
+        'thumb_func',
+        'code'
       );
       sehdirectivestr : array[TAsmSehDirective] of string[16]=(
         '.seh_proc','.seh_endproc',

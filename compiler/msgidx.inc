@@ -1026,6 +1026,7 @@ const
   asmr_e_seg_without_identifier=07126;
   asmr_e_CODE_or_DATA_without_SEG=07127;
   asmr_e_const16bit_for_segment=07128;
+<<<<<<< HEAD
 =======
 >>>>>>> graemeg/cpstrnew
 =======
@@ -1043,6 +1044,9 @@ const
   asmr_e_empty_regset=07109;
   asmr_w_useless_got_for_local=07110;
 >>>>>>> origin/cpstrnew
+=======
+  asmr_e_invalid_code_value=07129;
+>>>>>>> graemeg/master
   asmw_f_too_many_asm_files=08000;
   asmw_f_assembler_output_not_supported=08001;
   asmw_f_comp_not_supported=08002;
@@ -1322,10 +1326,14 @@ const
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   MsgTxtSize = 76521;
+=======
+  MsgTxtSize = 76571;
+>>>>>>> graemeg/master
 
   MsgIdxMax : array[1..20] of longint=(
-    27,99,344,124,96,58,129,32,208,64,
+    27,99,344,124,96,58,130,32,208,64,
     58,20,1,1,1,1,1,1,1,1
 =======
   MsgTxtSize = 58873;

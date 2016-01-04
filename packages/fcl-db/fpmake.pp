@@ -1016,6 +1016,7 @@ begin
           AddUnit('fpddsqldb');
           AddUnit('mssqlconn');
         end;
+<<<<<<< HEAD
     T:=P.Targets.AddUnit('fpddregstd.pp', DatadictOSes-SqldbWithoutOracleOSes);
 =======
     T:=P.Targets.AddUnit('fpddregstd.pp');
@@ -1023,6 +1024,9 @@ begin
 =======
     T:=P.Targets.AddUnit('fpddregstd.pp');
 >>>>>>> origin/fixes_2_2
+=======
+    T:=P.Targets.AddUnit('fpddregstd.pp', (DatadictOSes*MSSQLOses)-SqldbWithoutOracleOSes);
+>>>>>>> graemeg/master
       with T.Dependencies do
         begin
           AddUnit('fpdatadict');

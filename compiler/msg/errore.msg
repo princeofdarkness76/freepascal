@@ -3542,6 +3542,7 @@ cg_f_max_units_reached=06057_F_Maximum number of units ($1) reached for the curr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # 07128 is the last used one
 =======
 # 07110 is the last used one
@@ -3564,6 +3565,9 @@ cg_f_max_units_reached=06057_F_Maximum number of units ($1) reached for the curr
 =======
 # 07110 is the last used one
 >>>>>>> origin/cpstrnew
+=======
+# 07129 is the last used one
+>>>>>>> graemeg/master
 #
 asmr_d_start_reading=07000_DL_Starting $1 styled assembler parsing
 % This informs you that an assembler block is being parsed
@@ -3883,6 +3887,7 @@ asmr_e_const16bit_for_segment=07128_E_Not enough space (16 bits required) for th
 % Specifying a segment constant for a symbol via the SEG operator requires at
 % least 16 bits of space for the segment. This error occurs, if you specify
 % less, for example, if you use 'DB SEG symbol' instead of 'DW SEG symbol'.
+<<<<<<< HEAD
 
 =======
 =======
@@ -3908,6 +3913,10 @@ asmr_w_useless_got_for_local=07110_W_@GOTPCREL is useless and potentially danger
 >>>>>>> graemeg/cpstrnew
 =======
 >>>>>>> origin/cpstrnew
+=======
+asmr_e_invalid_code_value=07129_E_Invalid value of .code directive constant
+% The ARM assembler only allows the values 16 and 32 to be used as arguments to the .code directive
+>>>>>>> graemeg/master
 #
 # Assembler/binary writers
 #
